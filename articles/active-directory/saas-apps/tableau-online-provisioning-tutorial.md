@@ -17,10 +17,10 @@ ms.date: 03/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5fae770950810899f7c6583fa401110c3e85022b
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77064225"
 ---
 # <a name="tutorial-configure-tableau-online-for-automatic-user-provisioning"></a>Руководство. Настройка Tableau Online для автоматической подготовки пользователей
@@ -30,7 +30,7 @@ ms.locfileid: "77064225"
 > [!NOTE]
 > В этом руководстве описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. [в статье Автоматизация подготовки пользователей и ее отработки в приложения SaaS (программное обеспечение как услуга) с Azure Active Directory](../app-provisioning/user-provisioning.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом учебнике, предполагается, что у вас есть:
 
@@ -50,7 +50,7 @@ ms.locfileid: "77064225"
 
     ![Значок Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -72,7 +72,7 @@ Azure Active Directory использует концепцию, называем
 
 *   Мы рекомендуем назначить одного пользователя Azure AD для Tableau Online, чтобы протестировать конфигурацию автоматической подготовки пользователей. Позднее можно назначить дополнительных пользователей или группы.
 
-*   При назначении пользователя в Tableau Online выберите любую допустимую роль приложения, если она доступна, в диалоговом окне Назначение. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+*   При назначении пользователя в Tableau Online выберите любую допустимую роль приложения, если она доступна, в диалоговом окне Назначение. Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
 
 ## <a name="configure-automatic-user-provisioning-to-tableau-online"></a>Настройка автоматической подготовки пользователей в Tableau Online
 
@@ -83,7 +83,7 @@ Azure Active Directory использует концепцию, называем
 
 ### <a name="configure-automatic-user-provisioning-for-tableau-online-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Tableau Online в Azure AD
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения** > **все приложения** > **Tableau в сети**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения** > **все приложения** > ,**Tableau в сети**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -91,11 +91,11 @@ Azure Active Directory использует концепцию, называем
 
     ![Ссылка на Tableau Online в списке "приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Подготовка Tableau Online](./media/tableau-online-provisioning-tutorial/ProvisioningTab.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Режим подготовки Tableau Online](./media/tableau-online-provisioning-tutorial/ProvisioningCredentials.png)
 
@@ -130,7 +130,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Электронное уведомление Tableau Online](./media/tableau-online-provisioning-tutorial/EmailNotification.png)
 
-9. Щелкните **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Tableau Online**.
 
@@ -170,10 +170,10 @@ Azure Active Directory использует концепцию, называем
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 

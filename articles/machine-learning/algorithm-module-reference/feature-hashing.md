@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 09/01/2019
-ms.openlocfilehash: 4340ee4ed1edda8590726151e07eec45c0751ed6
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.date: 02/22/2020
+ms.openlocfilehash: 7178417a5c20afe5b1ed02bc526ec174704962df
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152267"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79456256"
 ---
 # <a name="feature-hashing-module-reference"></a>Справочник по модулю хэширования компонентов
 
@@ -94,7 +94,7 @@ ms.locfileid: "77152267"
 
     Например, если ввести 3, униграмм, биграмм и триграммов будут созданы.
 
-1. Запустили конвейер.
+1. Отправьте конвейер.
 
 ## <a name="results"></a>Результаты
 
@@ -111,7 +111,7 @@ ms.locfileid: "77152267"
 
 После создания преобразованного набора данных его можно использовать в качестве входных данных для модуля обучение модели.
  
-### <a name="best-practices"></a>Рекомендации
+## <a name="best-practices"></a>Рекомендации
 
 Следующие рекомендации помогут вам максимально эффективно использовать модуль хэширования функций:
 
@@ -129,6 +129,6 @@ ms.locfileid: "77152267"
 
 Оптимальный набор методов предварительной обработки, применяемых в любом решении, зависит от домена, словаря и потребности бизнеса. конвейер с данными, чтобы узнать, какие методы обработки текста наиболее эффективны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
             
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure 

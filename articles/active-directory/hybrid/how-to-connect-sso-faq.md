@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7241c8dfbedb24f95c29ea9e1c3f763218a5668d
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72025676"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Часто задаваемые вопросы о простом едином входе Azure Active Directory
@@ -45,24 +45,24 @@ ms.locfileid: "72025676"
 
 | имя приложения; | Используемый URL-адрес приложения |
 | -- | -- |
-| Панель доступа | HTTPS:\//myapps.microsoft.com/contoso.com |
-| Outlook on Web | HTTPS:\//outlook.office365.com/contoso.com |
+| Панель доступа | HTTPS:\//MyApps.Microsoft.com/contoso.com |
+| Outlook on Web | HTTPS:\//Outlook.Office365.com/contoso.com |
 | Порталы Office 365 | HTTPS:\//портал.оффице.ком? domain_hint = contoso. com, HTTPS:\//ВВВ.оффице.ком? domain_hint = contoso. com |
 
-Кроме того, пользователи получают возможность автоматического входа, если приложение отправляет запросы на вход в конечные точки Azure AD, настроенные как клиенты, то есть HTTPS:\//login.microsoftonline.com/contoso.com/<.. > или HTTPS:\//login.microsoftonline.com/<tenant_ID>/<.. > — вместо общей конечной точки Azure AD — т. е. HTTPS:\//login.microsoftonline.com/common/<... >. Ниже приведен неполный список приложений, которые выполняют такие типы запросов на вход.
+Кроме того, пользователи получают возможность автоматического входа, если приложение отправляет запросы на вход в конечные точки Azure AD, настроенные как клиенты, то есть HTTPS:\//Login.microsoftonline.com/contoso.com/<.. > или HTTPS:\//Login.microsoftonline.com/<tenant_ID>/<.. > — вместо общей конечной точки Azure AD — т. е. HTTPS:\//Login.microsoftonline.com/Common/<... >. Ниже приведен неполный список приложений, которые выполняют такие типы запросов на вход.
 
 | имя приложения; | Используемый URL-адрес приложения |
 | -- | -- |
-| SharePoint Online | HTTPS:\//contoso.sharepoint.com |
-| портале Azure | HTTPS:\//portal.azure.com/contoso.com |
+| SharePoint Online | HTTPS:\//contoso.SharePoint.com |
+| Портал Azure | HTTPS:\//Portal.Azure.com/contoso.com |
 
 В приведенных выше таблицах замените contoso.com своим доменным именем, чтобы получить соответствующие URL-адреса приложений для своего клиента.
 
 Если вы хотите использовать автоматический единый вход для других приложений, сообщите нам об этом в разделе отзывов.
 
-**Вопрос. поддерживает ли простой единый вход `Alternate ID` как имя пользователя вместо `userPrincipalName`?**
+**Вопрос. поддерживает `Alternate ID` ли простой единый вход в качестве имени пользователя, `userPrincipalName`а не?**
 
-Да. Поддерживает ли простой единый вход `Alternate ID` в качестве имени пользователя, если это настроено в Azure AD Connect, как показано [здесь](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Заявление о поддержке см. в документации на приложения.
+Да. Поддерживает ли простой единый вход `Alternate ID` в качестве имени пользователя, если это настроено в Azure AD Connect, как показано [здесь](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Заявление о поддержке см. в документации к приложению.
 
 **Вопрос. Какова разница между интерфейсом единого входа, обеспечиваемым [присоединением к Azure AD](../active-directory-azureadjoin-overview.md) и простым входом в систему?**
 
@@ -74,14 +74,14 @@ ms.locfileid: "72025676"
 
 Да, для этого сценария требуется версия 2.1 или более поздняя версия [клиента присоединения к рабочей области](https://www.microsoft.com/download/details.aspx?id=53554).
 
-**Вопрос. как можно переключать ключ расшифровки Kerberos для учетной записи `AZUREADSSOACC` компьютера?**
+**Вопрос. как можно переключать ключ расшифровки Kerberos для учетной `AZUREADSSOACC` записи компьютера?**
 
 Очень важно часто менять ключ расшифровки Kerberos компьютерной учетной записи `AZUREADSSOACC` (представляющей Azure AD) в локальном лесу AD.
 
 >[!IMPORTANT]
 >Мы настоятельно рекомендуем, чтобы вы меняли ключ расшифровки Kerberos хотя бы раз в 30 дней.
 
-Выполните следующие действия на локальном сервере, на котором выполняется Azure AD Connect:
+Выполните следующие действия на локальном сервере, на котором выполняется Azure AD Connect:
 
    **Шаг 1. Получение списка лесов AD, в которых включен простой единый вход**
 
@@ -89,11 +89,11 @@ ms.locfileid: "72025676"
    2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
    3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
    4. Откройте PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. Появится всплывающее окно для ввода учетных данных глобального администратора клиента.
-   5. Вызовите `Get-AzureADSSOStatus | ConvertFrom-Json`. Эта команда выводит список лесов AD (см. список "Домены"), в которых включена эта функция.
+   5. Вызовите процедуру `Get-AzureADSSOStatus | ConvertFrom-Json`. Эта команда выводит список лесов AD (см. список "Домены"), в которых включена эта функция.
 
    **Шаг 2. Обновите ключ расшифровки Kerberos в каждом лесу AD, в котором он был настроен.**
 
-   1. Вызовите `$creds = Get-Credential`. При запросе введите свои учетные данные администратора домена для нужного леса AD.
+   1. Вызовите процедуру `$creds = Get-Credential`. При запросе введите свои учетные данные администратора домена для нужного леса AD.
 
    > [!NOTE]
    >Имя пользователя учетных данных администратора домена необходимо указать в формате имени учетной записи SAM (contoso\johndoe или contoso. ком\жохндое). Мы используем доменную часть имени пользователя для указания контроллера домена администратора домена с помощью DNS.
@@ -101,7 +101,7 @@ ms.locfileid: "72025676"
    >[!NOTE]
    >Используемая учетная запись администратора домена не должна быть членом группы "защищенные пользователи". В этом случае операция завершится ошибкой.
 
-   2. Вызовите `Update-AzureADSSOForest -OnPremCredentials $creds`. Эта команда обновляет ключ расшифровки Kerberos для компьютерной учетной записи `AZUREADSSOACC` в этом лесу AD и обновляет его в Azure AD.
+   2. Вызовите процедуру `Update-AzureADSSOForest -OnPremCredentials $creds`. Эта команда обновляет ключ расшифровки Kerberos для компьютерной учетной записи `AZUREADSSOACC` в этом лесу AD и обновляет его в Azure AD.
    3. Повторите предыдущие шаги для каждого леса AD, где настроена эта функция.
 
    >[!IMPORTANT]
@@ -111,7 +111,7 @@ ms.locfileid: "72025676"
 
    **Шаг 1. Отключение функции в клиенте**
 
-   **Вариант а. Отключение с помощью Azure AD Connect**
+   **Вариант 1. Использование Azure AD Connect**
     
    1. Запустите Azure AD Connect, перейдите на страницу **Изменение параметров входа пользователя** и щелкните **Далее**.
    2. Затем снимите флажок **Включить единый вход**. Продолжайте выполнять указания мастера.
@@ -122,7 +122,7 @@ ms.locfileid: "72025676"
 
    Чтобы завершить очистку, выполните шаги 2 и 3 на локальном сервере с запущенным средством Azure AD Connect.
 
-   **Вариант б. Отключение с помощью PowerShell**
+   **Вариант 2. Использование PowerShell**
 
    Выполните следующие действия на локальном сервере с запущенным средством Azure AD Connect:
 
@@ -130,7 +130,7 @@ ms.locfileid: "72025676"
    2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
    3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
    4. Откройте PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. Появится всплывающее окно для ввода учетных данных глобального администратора клиента.
-   5. Вызовите `Enable-AzureADSSO -Enable $false`.
+   5. Вызовите процедуру `Enable-AzureADSSO -Enable $false`.
 
    >[!IMPORTANT]
    >Отключение простого единого входа с помощью PowerShell не изменит состояние в Azure AD Connect. Простой единый вход будет отображаться включенным на странице **Изменение параметров входа пользователя**.
@@ -143,13 +143,13 @@ ms.locfileid: "72025676"
    2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
    3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
    4. Откройте PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. Появится всплывающее окно для ввода учетных данных глобального администратора клиента.
-   5. Вызовите `Get-AzureADSSOStatus | ConvertFrom-Json`. Эта команда выводит список лесов AD (см. список "Домены"), в которых включена эта функция.
+   5. Вызовите процедуру `Get-AzureADSSOStatus | ConvertFrom-Json`. Эта команда выводит список лесов AD (см. список "Домены"), в которых включена эта функция.
 
-   **Шаг 3. Вручную удалите учетную запись `AZUREADSSOACCT` компьютера из каждого леса AD, который вы видите в списке.**
+   **Шаг 3. Вручную удалите учетную запись `AZUREADSSOACCT` компьютера из каждого леса AD, который отображается в списке.**
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [**Краткое руководство**](how-to-connect-sso-quick-start.md) . получение и запуск простого единого входа Azure AD.
 - [**Техническое руководство по сквозной проверке подлинности Azure Active Directory**](how-to-connect-sso-how-it-works.md). Сведения о том, как работает эта функция.
-- [**Устранение неполадок**](tshoot-connect-sso.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.
+- [**Устранение неполадок**](tshoot-connect-sso.md) . Узнайте, как устранить распространенные проблемы с этой функцией.
 - [**UserVoice**](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Отправка запросов новых функций.

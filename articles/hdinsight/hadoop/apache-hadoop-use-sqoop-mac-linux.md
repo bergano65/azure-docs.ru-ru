@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/28/2019
 ms.openlocfilehash: 21bc903349876a76576fb742840e9899f9d94bcd
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74769393"
 ---
 # <a name="use-apache-sqoop-to-import-and-export-data-between-apache-hadoop-on-hdinsight-and-sql-database"></a>Использование Apache Sqoop для импорта и экспорта между Apache Hadoop в HDInsight и базой данных SQL
@@ -21,7 +21,7 @@ ms.locfileid: "74769393"
 
 Узнайте, как использовать Apache Sqoop для импорта и экспорта между кластером Apache Hadoop в Azure HDInsight и Базой данных SQL Azure или базой данных Microsoft SQL Server. В этом руководстве используется команда `sqoop` ​​непосредственно из головного узла кластера Hadoop. В этом документе вы подключитесь к головному узлу, используя SSH, и выполните команды. Эта статья является продолжением [использования Apache Sqoop с Hadoop в HDInsight](./hdinsight-use-sqoop.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Завершение [настройки тестовой среды](./hdinsight-use-sqoop.md#create-cluster-and-sql-database) с [помощью Apache Sqoop с Hadoop в HDInsight](./hdinsight-use-sqoop.md).
 
@@ -65,7 +65,7 @@ ms.locfileid: "74769393"
     sqoop list-tables --connect $serverDbConnect
     ```
 
-1. Чтобы экспортировать данные из таблицы Hive `hivesampletable` в таблицу `mobiledata` базы данных SQL, введите следующую команду в открытом SSH-подключении:
+1. Чтобы экспортировать данные из таблицы Hive `hivesampletable` в `mobiledata` таблицу базы данных SQL, введите приведенную ниже команду в открытом SSH-подключении.
 
     ```bash
     sqoop export --connect $serverDbConnect \
@@ -88,7 +88,7 @@ ms.locfileid: "74769393"
 
 Из SQL Server в службу хранилища Azure.
 
-1. Введите приведенную ниже команду в открытом SSH-подключении, чтобы импортировать данные из таблицы `mobiledata` базы данных SQL в каталог `wasbs:///tutorials/usesqoop/importeddata` в HDInsight. Поля в данных разделены знаками табуляции, а строки завершаются символом новой строки.
+1. Введите приведенную ниже команду в открытом SSH-подключении, чтобы импортировать данные `mobiledata` из таблицы в базе данных SQL в `wasbs:///tutorials/usesqoop/importeddata` каталог в HDInsight. Поля в данных разделены знаками табуляции, а строки завершаются символом новой строки.
 
     ```bash
     sqoop import --connect $serverDbConnect \
@@ -119,7 +119,7 @@ ms.locfileid: "74769393"
 
 1. Используйте [Beeline](./apache-hadoop-use-hive-beeline.md) , чтобы убедиться, что таблица была создана в Hive.
 
-    1. Подключиться
+    1. Подключение
 
         ```bash
         beeline -u 'jdbc:hive2://headnodehost:10001/;transportMode=http'
@@ -134,7 +134,7 @@ ms.locfileid: "74769393"
         SELECT * FROM mobiledata_imported2 LIMIT 10;
         ```
 
-    1. Выйдите из Beeline с `!exit`.
+    1. Выйдите из `!exit`Beeline с помощью.
 
 ## <a name="limitations"></a>Ограничения
 

@@ -15,10 +15,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b4fdbbd4d71a9c97259678413cd9e59ee8aeae6b
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "69032675"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Сброс пароля пользователя в Azure Active Directory
@@ -51,16 +51,16 @@ ms.locfileid: "69032675"
     >[!Note]
     >Срок действия временного пароля не ограничен. При следующем входе пользователя пароль будет по-прежнему действующим, независимо от того, сколько времени прошло с момента создания временного пароля.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После сброса пароля пользователя можно выполнить следующие базовые операции:
 
-- [Добавить или удалить пользователя](add-users-azure-active-directory.md)
+- [Добавление или удаление пользователей](add-users-azure-active-directory.md)
 
 - [Назначение ролей пользователям](active-directory-users-assign-role-azure-portal.md)
 
-- [Добавить или изменить данные профиля](active-directory-users-profile-azure-portal.md)
+- [Добавление или изменение данных профиля](active-directory-users-profile-azure-portal.md)
 
-- [Создать простую группу и добавить в нее участников](active-directory-groups-create-azure-portal.md)
+- [Создание простой группы и добавление участников](active-directory-groups-create-azure-portal.md)
 
 Или можно выполнить более сложные сценарии пользователей, такие как назначение делегатов, использование политик и совместное использование учетных записей пользователей. Дополнительные сведения о других доступных действиях см. в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).

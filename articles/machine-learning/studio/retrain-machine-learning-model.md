@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/14/2019
-ms.openlocfilehash: 804aeee112d060c411a4e37b5d19e4766307b0a0
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 218c1c98a2ed775ae86c1657156991879708cc7a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169170"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79217934"
 ---
 # <a name="retrain-and-deploy-a-machine-learning-model"></a>Повторное обучение и развертывание модели машинного обучения
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Повторное обучение — один из способов поддерживать точность моделей машинного обучения и учитывать самые актуальные доступные данные. В этой статье показано, как переучить и развернуть модель машинного обучения в качестве новой веб-службы в Studio (классической). Если вас интересует повторное обучение для классической веб-службы, [изучите это практическое руководство.](retrain-classic-web-service.md)
 
@@ -59,7 +61,7 @@ ms.locfileid: "77169170"
 
 Следуйте приведенным ниже инструкциям, чтобы вызвать API переобучения:
 
-1. Создайте консольное приложение C# в Visual Studio (**Создать** > **Проект** > **Visual C#**  > **Классический рабочий стол Windows** > **Консольное приложение (.NET Framework**).
+1. Создание консольного приложения C# в Visual Studio: **Создание** > **проекта** > **Visual C#** > **классическое** > **консольное приложение Windows (.NET Framework)**.
 1. Войдите на портал веб-служб Машинного обучения.
 1. Щелкните веб-службу, с которой работаете.
 1. Щелкните **Consume**(Использование).
@@ -78,7 +80,7 @@ ms.locfileid: "77169170"
 
     const string apiKey = "abc123"; // Replace this with the API key for the web service
 
-В разделе **Basic consumption info** (Основные сведения об использовании) на странице **Consume** (Использование) найдите первичный ключ и скопируйте его в объявление **apiKey**.
+В разделе **Основные сведения о потреблении** на странице **Использование** выберите первичный ключ и скопируйте его в объявление **apiKey** .
 
 ### <a name="update-the-azure-storage-information"></a>Обновление сведений о службе хранилища Azure
 
@@ -188,7 +190,7 @@ ms.locfileid: "77169170"
 
     Update-AzMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 

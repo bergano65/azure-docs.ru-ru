@@ -5,16 +5,16 @@ author: mumian
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ab12b206d5bb82956a8b607368af44ea0eaca40e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 737e8a247a232278db73de716647fc5bb890fe39
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75471039"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82185002"
 ---
-# <a name="tutorial-troubleshoot-resource-manager-template-deployments"></a>Руководство. Устранение неполадок развертывания шаблонов Resource Manager
+# <a name="tutorial-troubleshoot-arm-template-deployments"></a>Руководство по устранению неполадок при развертывании шаблонов ARM
 
-Узнайте, как устранять неполадки при развертывании шаблонов Resource Manager. В этом руководстве вы настроите две ошибки в шаблоне и узнаете, как использовать журналы операций и историю развертывания для решения ошибок.
+Узнайте, как устранять неполадки при развертывании шаблонов Azure Resource Manager (ARM). В этом руководстве вы настроите две ошибки в шаблоне и узнаете, как использовать журналы операций и историю развертывания для решения ошибок.
 
 Существует два типа ошибок, связанных с развертыванием шаблона.
 
@@ -26,24 +26,22 @@ ms.locfileid: "75471039"
 В рамках этого руководства рассматриваются следующие задачи:
 
 > [!div class="checklist"]
-> * Создание проблемного шаблона
-> * Устранение ошибок проверки
-> * Устранение ошибок развертывания
-> * Очистка ресурсов
+> - Создание проблемного шаблона
+> - Устранение ошибок проверки
+> - Устранение ошибок развертывания
+> - Очистка ресурсов
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
+- Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
 
 ## <a name="create-a-problematic-template"></a>Создание проблемного шаблона
 
-Откройте шаблон [Создайте стандартную учетную запись хранения](https://azure.microsoft.com/resources/templates/101-storage-account-create/) из [Шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) и настройте две ошибки шаблона.
+Откройте шаблон [Create a standard storage account](https://azure.microsoft.com/resources/templates/101-storage-account-create/) (Создание стандартной учетной запись хранения) из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) и настройте две ошибки шаблона.
 
 1. В Visual Studio Code выберите **Файл**>**Открыть файл**.
 2. Скопируйте приведенный ниже URL-адрес и вставьте его в поле **Имя файла**.
@@ -51,12 +49,14 @@ ms.locfileid: "75471039"
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json
     ```
+
 3. Чтобы открыть файл, выберите **Открыть**.
 4. Измените строку **apiVersion** на следующую.
 
     ```json
     "apiVersion1": "2018-07-02",
     ```
+
     - **apiVersion1** является недопустимым именем элемента. Это ошибка проверки.
     - Версия API должна быть "2018-07-01".  Это ошибка развертывания.
 
@@ -64,7 +64,7 @@ ms.locfileid: "75471039"
 
 ## <a name="troubleshoot-the-validation-error"></a>Устранение ошибки проверки
 
-Дополнительные сведения о процедуре развертывания шаблона см. в [этом разделе](quickstart-create-templates-use-visual-studio-code.md#deploy-the-template).
+Дополнительные сведения о процедуре развертывания шаблона см. в [этом разделе](template-tutorial-create-multiple-instances.md#deploy-the-template).
 
 Вы получите сообщение об ошибке следующего содержания.
 
@@ -78,7 +78,7 @@ New-AzResourceGroupDeployment : 4:29:24 PM - Error: Code=InvalidRequestContent; 
 
 ## <a name="troubleshoot-the-deployment-error"></a>Устранение ошибки развертывания
 
-Дополнительные сведения о процедуре развертывания шаблона см. в [этом разделе](quickstart-create-templates-use-visual-studio-code.md#deploy-the-template).
+Дополнительные сведения о процедуре развертывания шаблона см. в [этом разделе](template-tutorial-create-multiple-instances.md#deploy-the-template).
 
 Вы получите сообщение об ошибке следующего содержания.
 
@@ -128,4 +128,4 @@ New-AzResourceGroupDeployment : 4:48:50 PM - Resource Microsoft.Storage/storageA
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как устранять ошибки развертывания шаблона Resource Manager.  Дополнительные сведения см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).
+Из этого руководства вы узнали, как устранять ошибки, связанные с развертыванием шаблона ARM.  Дополнительные сведения см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).

@@ -1,26 +1,18 @@
 ---
 title: Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 description: Сведения о развертывании приложения в Cloud Foundry в Azure
-services: virtual-machines-linux
-documentationcenter: ''
 author: seanmck
-manager: gwallace
-editor: ''
-tags: ''
-keywords: ''
-ms.assetid: 8fa04a58-56ad-4e6c-bef4-d02c80d4b60f
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 06/14/2017
 ms.author: seanmck
-ms.openlocfilehash: b1f9ab5289a41aacb5514e954f1ca01f6ad66152
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 793a8f291be4fcca6fad19d486849253dddc089f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036826"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80294790"
 ---
 # <a name="deploy-your-first-app-to-cloud-foundry-on-microsoft-azure"></a>Развертывание первого приложения в Cloud Foundry в Microsoft Azure
 
@@ -30,16 +22,16 @@ ms.locfileid: "74036826"
 
 Существует несколько способов создания среды Cloud Foundry в Azure.
 
-- Используйте [предложение "сводное Cloud Foundry][pcf-azuremarketplace] " в Azure Marketplace, чтобы создать стандартную среду, включающую в себя диспетчер PCF Ops и Service Broker Azure. [Полные инструкции][pcf-azuremarketplace-pivotaldocs] по развертыванию предложения Marketplace см. в сводной документации.
-- Создайте настраиваемую среду, [развернув сводную Cloud Foundry вручную][pcf-custom].
-- [Развертывайте пакеты Cloud Foundry с открытым исходным кодом напрямую][oss-cf-bosh] , настроив директор [Bosh](https://bosh.io) , виртуальную машину, которая координирует развертывание среды Cloud Foundry.
+- Используйте [предложение Pivotal Cloud Foundry][pcf-azuremarketplace] в Azure Marketplace для создания стандартной среды, содержащей диспетчер операций PCF и компонент Azure Service Broker. [Полные инструкции][pcf-azuremarketplace-pivotaldocs] по развертыванию предложения Marketplace представлены в документации по Pivotal.
+- Создайте пользовательскую среду, [развернув Pivotal Cloud Foundry вручную][pcf-custom].
+- [Разверните пакеты Cloud Foundry напрямую][oss-cf-bosh], настроив директор [BOSH](https://bosh.io), виртуальную машину, координирующую развертывание среды Cloud Foundry.
 
 > [!IMPORTANT] 
-> Если вы развертываете PCF из Azure Marketplace, запишите SYSTEMDOMAINURL и учетные данные администратора, необходимые для доступа к Pivotal Apps Manager (описано в руководстве по развертыванию Marketplace). Эти значения необходимы для работы с этим руководством. Для развертываний Marketplace значение SYSTEMDOMAINURL представлено в форме https://system.*ip-address*.cf.pcfazure.com.
+> Если вы развертываете PCF из Azure Marketplace, запишите SYSTEMDOMAINURL и учетные данные администратора, необходимые для доступа к Pivotal Apps Manager (описано в руководстве по развертыванию Marketplace). Эти значения необходимы для работы с этим руководством. Для развертываний Marketplace SYSTEMDOMAINURL имеет форму `https://system.*ip-address*.cf.pcfazure.com`.
 
 ## <a name="connect-to-the-cloud-controller"></a>Подключение к Cloud Controller
 
-Cloud Controller — основная точка входа в среду Cloud Foundry для развертывания приложений и управления ими. Основной API Cloud Controller — это REST API. Доступ к нему можно получить с помощью различных средств. В этом случае мы взаимодействуете с ним через интерфейс [командной строки Cloud Foundry][cf-cli]. Вы можете установить интерфейс командной строки в Linux, MacOS или Windows, но если вы предпочитаете не устанавливать его вообще, то он будет доступен предварительно установленным в [Azure Cloud Shell][cloudshell-docs].
+Cloud Controller — основная точка входа в среду Cloud Foundry для развертывания приложений и управления ими. Основной API Cloud Controller — это REST API. Доступ к нему можно получить с помощью различных средств. В этом случае взаимодействие с ним осуществляется с помощью [интерфейса командной строки Cloud Foundry][cf-cli]. Вы можете установить интерфейс командной строки в Linux, macOS или Windows, но если вы предпочитаете не устанавливать его вообще, то он будет доступен предварительно установленным в [Azure Cloud Shell][cloudshell-docs].
 
 Для входа добавьте `api` перед SYSTEMDOMAINURL, полученным из развертывания Marketplace. Так как развертывание по умолчанию использует самозаверяющий сертификат, следует также добавить параметр `skip-ssl-validation`.
 
@@ -72,7 +64,7 @@ cf target -o testorg -s dev
 Теперь при развертывании приложения оно автоматически создается в новой организации и пространстве. Чтобы убедиться, что в новой организации или пространстве нет приложений, введите `cf apps` еще раз.
 
 > [!NOTE] 
-> Дополнительные сведения о организации и пробелах, а также о том, как их можно использовать для управления доступом на основе ролей (RBAC), см. в [документации по Cloud Foundry][cf-orgs-spaces-docs].
+> Дополнительные сведения об организациях и пространствах, а также о том, как их можно использовать для управления доступом на основе ролей (RBAC), см. в [документации по Cloud Foundry][cf-orgs-spaces-docs].
 
 ## <a name="deploy-an-application"></a>Развертывание приложения
 
@@ -87,7 +79,7 @@ git clone https://github.com/cloudfoundry-samples/hello-spring-cloud
 cd hello-spring-cloud
 ```
 
-### <a name="build-the-application"></a>создание приложения;
+### <a name="build-the-application"></a>Построение приложения
 
 Создайте приложение с помощью [Apache Maven](https://maven.apache.org).
 
@@ -112,7 +104,7 @@ cf push
 ![Пользовательский интерфейс по умолчанию для приложения Hello Spring Cloud][hello-spring-cloud-basic]
 
 > [!NOTE] 
-> Дополнительные сведения о том, что происходит во время `cf push`, см. в разделе [размещение приложений][cf-push-docs] в Cloud Foundryной документации.
+> Дополнительные сведения о том, что происходит при выполнении команды `cf push`, см. в разделе [How Applications Are Staged][cf-push-docs] (Поэтапное развертывание приложений) в документации по Cloud Foundry.
 
 ## <a name="view-application-logs"></a>Просмотр журналов приложения
 
@@ -141,11 +133,11 @@ cf scale -i 2 hello-spring-cloud
 Если выполнить команду `cf app` в приложении, мы увидим, что Cloud Foundry создает другой экземпляр приложения. После запуска приложения Cloud Foundry автоматически запускает балансировку нагрузки по трафику к нему.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Ознакомьтесь с документацией по Cloud Foundry][cloudfoundry-docs]
-- [Настройка подключаемого модуля Azure DevOps Services для Cloud Foundry][vsts-plugin]
-- [Настройка сопел Microsoft Log Analytics для Cloud Foundry][loganalytics-nozzle]
+- [Настройте подключаемый модуль Azure DevOps Services для Cloud Foundry][vsts-plugin]
+- [Настройте Microsoft Log Analytics Nozzle для Cloud Foundry][loganalytics-nozzle]
 
 <!-- LINKS -->
 

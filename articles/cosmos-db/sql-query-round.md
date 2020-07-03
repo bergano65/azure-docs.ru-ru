@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 4bad140ea1c6b1c59c8f752bc5336bbd49952e16
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: b6aac5a963d0f58a3b21b9fb0958793169a3d444
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349515"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302123"
 ---
 # <a name="round-azure-cosmos-db"></a>ROUND (Azure Cosmos DB)
  Возвращает числовое значение, округленное до ближайшего целого значения в большую сторону.  
@@ -28,15 +28,15 @@ ROUND(<numeric_expr>)
 *numeric_expr*  
    Числовое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   
   Операция округления выполняется после среднего значения, округленного от нуля. Если входное значение является числовым выражением, которое находится в точности между двумя целыми числами, результатом будет ближайшее целое число от нуля.  
   
-  |< numeric_expr >|Округлено|
+  |<numeric_expr>|Округляется|
   |-|-|
   |— 6,5000|-7|
   |— 0,5|-1|
@@ -57,8 +57,12 @@ SELECT ROUND(2.4) AS r1, ROUND(2.6) AS r2, ROUND(2.5) AS r3, ROUND(-2.4) AS r4, 
 [{r1: 2, r2: 3, r3: 3, r4: -2, r5: -3}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция будет полезна из [индекса диапазона](index-policy.md#includeexclude-strategy).
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

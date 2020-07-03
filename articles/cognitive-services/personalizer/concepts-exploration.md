@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: diberry
 ms.openlocfilehash: 0b69c1fb070431ad61858322dce461f6496c35d7
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73490819"
 ---
 # <a name="exploration-and-exploitation"></a>Анализ и расшифровка
@@ -43,6 +43,6 @@ ms.locfileid: "73490819"
 
 Очень важно не изменять поведение приложения на основе действия Персонализатора (анализ или расшифровка). Это может привести к смещению обучения, что в конечном счете снижает потенциальную производительность.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Обучение с подкреплением](concepts-reinforcement-learning.md) 

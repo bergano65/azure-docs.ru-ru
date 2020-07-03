@@ -1,22 +1,24 @@
 ---
 title: Создание или изменение предложения | Azure Marketplace
 description: API для создания нового или обновления существующего предложения.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: reference
-ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: bfb9cfbe2c63caafef8487015f42a05b98afa29c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 04/08/2020
+ms.author: dsindona
+ms.openlocfilehash: 66e640ab199a884ebfab69cbe7db7f562d848720
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819720"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81256354"
 ---
 <a name="create-or-modify-an-offer"></a>Создание или изменение предложения
 =========================
+
+> [!NOTE]
+> Портал Cloud Partner API интегрированы с центром партнеров и продолжат работать после переноса ваших предложений в центр партнеров. Интеграция содержит небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-api-overview) , чтобы убедиться, что код будет продолжать работать после перехода в центр партнеров.
 
 Этот вызов обновляет конкретное предложение в пространстве имен издателя или создает новое предложение.
 
@@ -26,24 +28,24 @@ ms.locfileid: "73819720"
 <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 --------------
 
-|  **имя**         |  **Описание**                      |  **Тип данных**  |
+|  **Имя**         |  **Описание**                      |  **Тип данных**  |
 |  --------         |  ----------------                     |  -------------  |
-| publisherid       |  Идентификатор издателя, например `contoso` |   string |
-| OfferId           |  Идентификатор предложения                     |   string        |
+| publisherid       |  Идентификатор издателя, например `contoso` |   Строка |
+| offerId           |  Идентификатор предложения                     |   Строка        |
 | api-version       |  Последняя версия API            |   Дата           |
 |  |  |  |
 
 <a name="header"></a>Заголовок
 ------
 
-|  **имя**        |  **Значение**               |
+|  **Имя**        |  **Значение**               |
 |  ---------       |  ----------              | 
 | Content-Type     | `application/json`       |
 | Авторизация    | `Bearer YOUR_TOKEN`      |
 |  |  |
 
 
-<a name="body-example"></a>Пример текста
+<a name="body-example"></a>Пример текста запроса
 ------------
 
 В примере ниже показано создание предложения с помощью offerID `contosovirtualmachine`.
@@ -245,7 +247,7 @@ ms.locfileid: "73819720"
 
 ### <a name="response-status-codes"></a>Коды состояния ответа
 
-| **Код**  |  **Описание**                                                                            |
+| **Приведен**  |  **Описание**                                                                            |
 | --------  |  ---------------                                                                            |
 |  200      | `OK`. Запрос успешно обработан и предложение успешно изменено.           |
 |  201      | `Created`. Запрос успешно обработан и предложение успешно создано.   |

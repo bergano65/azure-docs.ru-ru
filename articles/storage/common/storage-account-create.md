@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 02/07/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 86aaebe652968a2ea33fd8e15f9de9c1dff31a30
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 7ff7db383a74ce01f7f1a7bf49a33e41f91decf8
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77086966"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82853494"
 ---
 # <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
@@ -24,15 +24,15 @@ ms.locfileid: "77086966"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
-Нет.
+Отсутствует.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Чтобы создать учетную запись хранения Azure с помощью PowerShell, убедитесь, что установлен модуль Azure PowerShell AZ версии 0,7 или более поздней. Дополнительные сведения см. [в разделе Введение в модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
@@ -44,7 +44,7 @@ Get-InstalledModule -Name "Az"
 
 Сведения об установке или обновлении Azure PowerShell см. в разделе [install Azure PowerShell Module](/powershell/azure/install-Az-ps).
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Вы можете войти в Azure и выполнить команды Azure CLI одним из двух способов:
 
@@ -59,25 +59,25 @@ Azure Cloud Shell — это бесплатная оболочка Bash, кот�
 
 Кнопка запускает интерактивную оболочку, которую можно использовать для выполнения действий, описанных в этой статье.
 
-[![Снимок экрана с окном Azure Cloud Shell на портале](./media/storage-quickstart-create-account/cloud-shell.png)](https://portal.azure.com)
+[![Снимок экрана, показывающий окно Cloud Shell на портале](./media/storage-quickstart-create-account/cloud-shell.png)](https://portal.azure.com)
 
 ### <a name="install-the-cli-locally"></a>Установка CLI локально
 
 Azure CLI также можно установить и применять локально. В этом руководстве требуется, чтобы вы выполняли Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
-Нет.
+Отсутствует.
 
 ---
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Войдите на [портал Azure](https://portal.azure.com).
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Чтобы выполнить проверку подлинности, войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
@@ -85,7 +85,7 @@ Azure CLI также можно установить и применять ло�
 Connect-AzAccount
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы запустить Azure Cloud Shell, войдите в [портал Azure](https://portal.azure.com).
 
@@ -95,9 +95,9 @@ Connect-AzAccount
 az login
 ```
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
-Недоступно
+Н/Д
 
 ---
 
@@ -109,11 +109,11 @@ az login
 
 Учетная запись хранения **общего назначения версии 2** предоставляет доступ ко всем службам хранилища Azure (большим двоичным объектам, файлам, очередям, таблицам и дискам). Шаги, описанные здесь, позволяют создать учетную запись хранения общего назначения версии 2, но действия по созданию учетной записи хранения любого типа похожи.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 [!INCLUDE [storage-create-account-portal-include](../../../includes/storage-create-account-portal-include.md)]
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Сначала создайте группу ресурсов с помощью PowerShell, используя команду [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
@@ -152,10 +152,10 @@ New-AzStorageAccount -ResourceGroupName $resourceGroup `
 |Хранилище, избыточное между зонами (ZRS)     |Standard_ZRS         |
 |Геоизбыточное хранилище (GRS)     |Standard_GRS         |
 |Геоизбыточное хранилище с доступом для чтения (RA-GRS)     |Standard_RAGRS         |
-|Хранилище, избыточное в геопоясе (ГЗРС) (Предварительная версия)    |Standard_GZRS         |
-|Хранилище, избыточное в геозону с доступом на чтение (RA-ГЗРС) (Предварительная версия)    |Standard_RAGZRS         |
+|Хранилище, геоизбыточное между зонами (GZRS)    |Standard_GZRS         |
+|Хранилище, избыточное в геопоясе, с доступом на чтение (RA-ГЗРС)    |Standard_RAGZRS         |
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Сначала создайте новую группу ресурсов с помощью Azure CLI, используя команду [az group create](/cli/azure/group#az_group_create).
 
@@ -195,12 +195,12 @@ az storage account create \
 |Хранилище, избыточное между зонами (ZRS)     |Standard_ZRS         |
 |Геоизбыточное хранилище (GRS)     |Standard_GRS         |
 |Геоизбыточное хранилище с доступом для чтения (RA-GRS)     |Standard_RAGRS         |
-|Хранилище, избыточное в геопоясе (ГЗРС) (Предварительная версия)    |Standard_GZRS         |
-|Хранилище, избыточное в геозону с доступом на чтение (RA-ГЗРС) (Предварительная версия)    |Standard_RAGZRS         |
+|Хранилище, геоизбыточное между зонами (GZRS)    |Standard_GZRS         |
+|Хранилище, избыточное в геопоясе, с доступом на чтение (RA-ГЗРС)    |Standard_RAGZRS         |
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
-Вы можете использовать Azure Powershell или Azure CLI, чтобы развернуть шаблон Resource Manager для создания учетной записи хранения. Шаблон, используемый в этой статье, относится к [Azure Resource Manager шаблонам](https://azure.microsoft.com/resources/templates/101-storage-account-create/)быстрого запуска. Чтобы запустить эти сценарии, выберите **Попробовать**, чтобы открыть Azure Cloud Shell. Чтобы вставить сценарий, щелкните правой кнопкой мыши оболочку и выберите **Вставить**.
+Чтобы развернуть шаблон диспетчер ресурсов для создания учетной записи хранения, можно использовать либо Azure PowerShell, либо Azure CLI. Шаблон, используемый в этой статье, относится к [Azure Resource Manager шаблонам](https://azure.microsoft.com/resources/templates/101-storage-account-create/)быстрого запуска. Чтобы запустить скрипты, выберите команду **попробовать** , чтобы открыть Azure Cloud Shell. Чтобы вставить сценарий, щелкните правой кнопкой мыши оболочку и выберите **Вставить**.
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -219,9 +219,12 @@ az group create --name $resourceGroupName --location "$location" &&
 az group deployment create --resource-group $resourceGroupName --template-file "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json"
 ```
 
-Чтобы узнать, как создавать шаблоны, см. следующие статьи:
+> [!NOTE]
+> Этот шаблон служит только в качестве примера. Существует множество параметров учетной записи хранения, которые не настроены как часть этого шаблона. Например, если вы хотите использовать [Azure Data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/), измените этот шаблон, задав `isHnsEnabledad` свойству `StorageAccountPropertiesCreateParameters` объекта значение. `true` 
 
-- [Документация по Azure Resource Manager](/azure/azure-resource-manager/).
+Сведения о том, как изменить этот шаблон или создать новые, см. в следующих статьях:
+
+- [Azure Resource Manager документация](/azure/azure-resource-manager/).
 - [Microsoft.Storage resource types](/azure/templates/microsoft.storage/allversions) (Типы ресурсов Microsoft.Storage).
 - [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Storage).
 
@@ -233,12 +236,12 @@ az group deployment create --resource-group $resourceGroupName --template-file "
 
 Удаление учетной записи хранения приведет к удалению всей учетной записи, включая все данные в учетной записи, и не может быть отменено.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. Перейдите к учетной записи хранения в [портал Azure](https://portal.azure.com).
 1. Щелкните **Удалить**.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Чтобы удалить учетную запись хранения, используйте команду [Remove-азсторажеаккаунт](/powershell/module/az.storage/remove-azstorageaccount) :
 
@@ -246,7 +249,7 @@ az group deployment create --resource-group $resourceGroupName --template-file "
 Remove-AzStorageAccount -Name <storage-account> -ResourceGroupName <resource-group>
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы удалить учетную запись хранения, используйте команду [AZ Storage Account Delete](/cli/azure/storage/account#az-storage-account-delete) :
 
@@ -254,7 +257,7 @@ Remove-AzStorageAccount -Name <storage-account> -ResourceGroupName <resource-gro
 az storage account delete --name <storage-account> --resource-group <resource-group>
 ```
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 Чтобы удалить учетную запись хранения, используйте либо Azure PowerShell, либо Azure CLI.
 
@@ -281,26 +284,26 @@ az storage account delete --name storageAccountName --resource-group resourceGro
 >
 > Если вы попытаетесь удалить учетную запись хранения, связанную с виртуальной машиной Azure, может появиться сообщение об ошибке, уведомляющее, что учетная запись хранения используется. Сведения об устранении этой ошибки см. в разделе [Устранение ошибок при удалении учетных записей хранения](../common/storage-resource-manager-cannot-delete-storage-account-container-vhd.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом пошаговом руководстве вы создали стандартную учетную запись хранения общего назначения версии 2. Чтобы узнать, как отправлять и скачивать большие двоичные объекты в учетной записи хранения, перейдите к одному из кратких руководств по хранилищу BLOB-объектов.
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью портала Azure](../blobs/storage-quickstart-blobs-portal.md)
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Azure PowerShell](../blobs/storage-quickstart-blobs-powershell.md)
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Azure CLI](../blobs/storage-quickstart-blobs-cli.md)
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 > [!div class="nextstepaction"]
 > [Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью портала Azure](../blobs/storage-quickstart-blobs-portal.md)

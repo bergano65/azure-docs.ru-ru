@@ -4,10 +4,10 @@ description: Service Fabric поддерживает использование 
 ms.topic: conceptual
 ms.date: 6/10/2018
 ms.openlocfilehash: 514a0cb12359d58e38ebc30ae12cdb277757f2b2
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75750046"
 ---
 # <a name="azure-files-volume-driver-for-service-fabric"></a>Драйвер тома файлов Azure для Service Fabric
@@ -18,7 +18,7 @@ ms.locfileid: "75750046"
 > Выпущена версия 6.5.661.9590 подключаемого модуля тома файлов Azure для общедоступной версии.
 >
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий.
 
 * Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
@@ -172,7 +172,7 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
 </ApplicationManifest>
 ```
 
-Имя драйвера для подключаемого модуля тома службы файлов Azure — **sfazurefile**. Это значение задается для атрибута **Driver** элемента тега **тома** в манифесте приложения.
+Имя драйвера подключаемого модуля тома файлов Azure — **сфазурефиле**. Это значение задается для атрибута **Driver** элемента тега **тома** в манифесте приложения.
 
 В теге **Volume** в приведенном выше фрагменте подключаемый модуль тома файлов Azure требует наличия следующих атрибутов:
 - **Source**. Это имя тома. Для тома можно выбрать любое имя.
@@ -210,7 +210,7 @@ docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:1
     DEBUG=1
 ```
 
-Чтобы использовать установленный драйвер тома или ведения журнала в своих приложениях, потребуется указать соответствующие значения в элементах **Volume** и **LogConfig** в разделе  **ContainerHostPolicies** в манифесте приложения.
+Чтобы использовать установленный драйвер тома или ведения журнала в своих приложениях, потребуется указать соответствующие значения в элементах **Volume** и **LogConfig** в разделе ** ContainerHostPolicies** в манифесте приложения.
 
 ```xml
 <ContainerHostPolicies CodePackageRef="NodeService.Code" Isolation="hyperv">
@@ -241,4 +241,4 @@ docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:1
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Примеры контейнеров, включая драйвер тома, приведены в разделе [Примеры контейнеров Service Fabric](https://github.com/Azure-Samples/service-fabric-containers).
-* Развертывание контейнеров в кластере Service Fabric описывается в разделе [Развертывание контейнера в Service Fabric](service-fabric-deploy-container.md).
+* Сведения о развертывании контейнеров в кластере Service Fabric см. в статье [развертывание контейнера в Service Fabric](service-fabric-deploy-container.md)

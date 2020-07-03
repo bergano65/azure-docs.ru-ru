@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 01/23/2018
 ms.author: apimpm
 ms.openlocfilehash: 4a0717bf7a284668af4808acae3050cc7f42f836
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75442528"
 ---
 # <a name="monitor-your-apis-with-azure-api-management-event-hubs-and-moesif"></a>Мониторинг API-интерфейсов с помощью Управления API Azure, Центров событий и Moesif
@@ -294,7 +294,7 @@ public class MoesifHttpMessageProcessor : IHttpMessageProcessor
 }
 ```
 
-`MoesifHttpMessageProcessor` использует [библиотеку API C# для Moesif](https://www.moesif.com/docs/api?csharp#events), которая упрощает передачу данных событий HTTP в их службу. Для отправки данных HTTP в API сборщика Моесиф требуется учетная запись и идентификатор приложения. Вы получаете идентификатор приложения Моесиф, создав учетную запись на [веб-сайте моесиф](https://www.moesif.com) , а затем перейдем к _меню в правом верхнем_ углу -> _установки приложения_.
+`MoesifHttpMessageProcessor` использует [библиотеку API C# для Moesif](https://www.moesif.com/docs/api?csharp#events), которая упрощает передачу данных событий HTTP в их службу. Для отправки данных HTTP в API сборщика Моесиф требуется учетная запись и идентификатор приложения. Вы получаете идентификатор приложения моесиф, создав учетную запись на [веб-сайте моесиф](https://www.moesif.com) , а затем перейдем к -> _установке приложения_в _меню справа_.
 
 ## <a name="complete-sample"></a>Полный пример
 [Исходный код](https://github.com/dgilling/ApimEventProcessor) и тесты для этого примера доступны на сайте GitHub. Чтобы запустить этот пример, вам потребуются [служба управления API](get-started-create-service-instance.md), [подключенный к ней концентратор событий](api-management-howto-log-event-hubs.md) и [учетная запись хранения](../storage/common/storage-create-storage-account.md).   

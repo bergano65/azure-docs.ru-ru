@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/06/2019
 ms.author: erhopf
-ms.openlocfilehash: a7715577936b0e95392f2d561e4b492b20c9dbf5
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.openlocfilehash: 4dbf9dddd46e38ae9b8cec3288bdacccb1ef1c78
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69906936"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83586904"
 ---
 [!INCLUDE [Prerequisites](prerequisites-csharp.md)]
 
@@ -239,9 +239,9 @@ dotnet run
 
 Удалите из исходного кода примера приложения все конфиденциальные сведения, например ключи подписки.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Просмотрите справочник по API, чтобы составить представление обо всех возможностях API "Перевод текстов".
+Просмотрите справочник по API, чтобы получить представление обо всех возможностях Переводчика.
 
 > [!div class="nextstepaction"]
 > [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)

@@ -48,6 +48,8 @@
   href: code-samples.md
 - name: Основные понятия
   items:
+    - name: "Рекомендации по Azure\_AD\_B2C"
+      href: best-practices.md
     - name: Типы приложений
       href: application-types.md
     - name: Протоколы проверки подлинности
@@ -72,6 +74,10 @@
           href: custom-policy-overview.md
     - name: Учетные записи пользователей
       href: user-overview.md
+    - name: Атрибуты профиля пользователя
+      href: user-profile-attributes.md
+    - name: Сеансы единого входа
+      href: session-overview.md
 - name: Практические руководства
   items:
     - name: Интеграция приложений
@@ -81,6 +87,9 @@
         - name: Регистрация поставщика служб SAML
           href: connect-with-saml-service-providers.md
           displayName: 'SP, RP, service provider, connect'
+        - name: Регистрация приложения Graph
+          href: microsoft-graph-get-started.md
+          displayName: 'migrate, migration, microsoft graph'
         - name: Добавление приложения веб-API
           href: add-web-application.md
         - name: Добавление собственного клиентского приложения
@@ -177,11 +186,13 @@
             - name: Настройка пользовательского интерфейса
               href: custom-policy-ui-customization.md
               displayName: 'ux, input, cors, html, css'
-            - name: Настройка динамического содержимого в пользовательском интерфейсе
-              href: custom-policy-ui-customization-dynamic.md
+            - name: Настройка языка
+              href: custom-policy-localization.md
             - name: Настраиваемый адрес электронной почты
               href: custom-email.md
               displayName: verification
+            - name: Отключение проверки по электронной почте
+              href: custom-policy-disable-email-verification.md
             - name: Включение JavaScript
               href: javascript-samples.md
             - name: Сложность пароля
@@ -215,7 +226,9 @@
         - name: Управление токенами и сеансами
           items:
             - name: Настройка токенов
-              href: custom-policy-manage-sso-and-token-config.md
+              href: configure-tokens-custom-policy.md
+            - name: Настройка поведения сеанса
+              href: session-behavior-custom-policy.md
         - name: Транзитный внешний токен IdP
           href: idp-pass-through-custom.md
         - name: Адаптивное взаимодействие
@@ -224,18 +237,16 @@
               href: direct-signin.md
         - name: Добавление собственной бизнес-логики
           items:
+            - name: "Интеграция REST\_API"
+              href: custom-policy-rest-api-intro.md
             - name: Проверка вводимых пользователем данных
               href: custom-policy-rest-api-claims-validation.md
               displayName: 'rest claims validation, validate'
             - name: Получение дополнительных утверждений
               href: custom-policy-rest-api-claims-exchange.md
               displayName: rest claims exchange
-            - name: Добавление собственных REST API
-              href: rest-api-claims-exchange-dotnet.md
-            - name: Защита REST API с помощью обычной аутентификации
-              href: secure-rest-api-dotnet-basic-auth.md
-            - name: Защита REST API с помощью аутентификации на основе сертификата
-              href: secure-rest-api-dotnet-certificate-auth.md
+            - name: "Безопасный REST\_API"
+              href: secure-rest-api.md
         - name: Определение настраиваемых атрибутов
           href: custom-policy-custom-attributes.md
         - name: Устранение неполадок
@@ -278,7 +289,7 @@
                       href: social-transformations.md
                     - name: StringCollection
                       href: stringcollection-transformations.md
-                    - name: String
+                    - name: Строка
                       href: string-transformations.md
                 - name: Предикаты
                   href: predicates.md
@@ -302,13 +313,15 @@
                   items:
                     - name: Сведения о технических профилях
                       href: technical-profiles-overview.md
+                    - name: Сведения о технических профилях проверки
+                      href: validation-technical-profile.md
+                    - name: Application Insights
+                      href: application-insights-technical-profile.md
+                    - name: Azure Active Directory
+                      href: active-directory-technical-profile.md
                     - name: Многофакторная идентификация Azure
                       href: multi-factor-auth-technical-profile.md
                       displayName: mfa
-                    - name: Арбитры утверждений
-                      href: claim-resolver-overview.md
-                    - name: Azure Active Directory
-                      href: active-directory-technical-profile.md
                     - name: Преобразование утверждений
                       href: claims-transformation-technical-profile.md
                     - name: Поставщик токенов JWT
@@ -322,21 +335,25 @@
                       displayName: otp
                     - name: OpenID Connect
                       href: openid-connect-technical-profile.md
+                    - name: PhoneFactor
+                      href: phone-factor-technical-profile.md
                     - name: REST
                       href: restful-technical-profile.md
-                    - name: SAML
-                      href: saml-technical-profile.md
+                    - name: Поставщик удостоверений SAML
+                      href: saml-identity-provider-technical-profile.md
+                    - name: Издатель токенов JWT
+                      href: saml-issuer-technical-profile.md
                     - name: Профиль с самостоятельным подтверждением
                       href: self-asserted-technical-profile.md
                     - name: Сеанс единого входа
                       href: custom-policy-reference-sso.md
                       displayName: single sign-on
-                    - name: Проверка
-                      href: validation-technical-profile.md
             - name: UserJourneys
               href: userjourneys.md
             - name: RelyingParty
               href: relyingparty.md
+            - name: Арбитры утверждений
+              href: claim-resolver-overview.md
     - name: Использование b2clogin.com
       items:
         - name: Общие сведения о b2clogin.com
@@ -349,10 +366,15 @@
         - name: Azure Monitor
           href: azure-monitor.md
           displayName: 'log, logs, logging, usage, events'
-        - name: Экспорт отчета об использовании
-          href: view-usage-reports.md
-        - name: Управление учетными записями
+        - name: "Управление пользователями\_— Microsoft Graph"
           href: manage-user-accounts-graph-api.md
+          displayName: 'account, accounts'
+        - name: Развертывание с использованием Azure Pipelines
+          href: deploy-custom-policies-devops.md
+          displayName: 'azure devops, ci/cd, cicd, custom policy, policies'
+        - name: Управление политиками с помощью PowerShell
+          href: manage-custom-policies-powershell.md
+          displayName: 'scripting, scripts, psh, custom policy'
     - name: Журналы аудита
       href: view-audit-logs.md
     - name: "Управление пользователями\_— портал Azure"
@@ -373,30 +395,30 @@
       items:
         - name: Перенос пользователей
           href: user-migration.md
-        - name: Перенос учетных записей пользователей с использованием внешних удостоверений
-          href: migrate-social-identities.md
 - name: Справочник
   items:
-    - name: Заметки о выпуске Identity Experience Framework
-      href: custom-policy-developer-notes.md
+    - name: Модель выставления счетов
+      href: billing.md
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=active-directory-b2c'
-    - name: Версии макета страницы
-      href: page-layout.md
     - name: Определения файлов cookie
       href: cookie-definitions.md
       displayName: 'cookies, SameSite'
     - name: Коды ошибок
       href: error-codes.md
+    - name: Приложение расширений
+      href: extensions-app.md
+    - name: Заметки о выпуске IEF
+      href: custom-policy-developer-notes.md
+    - name: Операции Microsoft Graph API
+      href: microsoft-graph-operations.md
+    - name: Версии макета страницы
+      href: page-layout.md
     - name: Доступность в регионах и размещение данных
       href: data-residency.md
-    - name: Включение выставления счетов
-      href: billing.md
     - name: Управление угрозами
       href: threat-management.md
       displayName: security
-    - name: Приложение расширений
-      href: extensions-app.md
     - name: Версии потоков на уровне пользователя
       href: user-flow-versions.md
 - name: Ресурсы

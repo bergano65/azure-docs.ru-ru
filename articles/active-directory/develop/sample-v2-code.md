@@ -1,28 +1,23 @@
 ---
-title: Примеры кода для платформы Microsoft Identity | Документация Майкрософт
+title: Примеры кода для платформы Microsoft Identity
 description: Содержит индекс доступных примеров кода платформы Microsoft Identity Platform (версии 2.0), упорядоченных по сценарию.
 services: active-directory
-documentationcenter: dev-center-name
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: a242a5ff-7300-40c2-ba83-fb6035707433
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 0282336cb5df7d010571a15e9d1f9d93b82d461e
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 713fa09319f1b95fe2bcc0d15c973a2096a250ec
+ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77160328"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82801164"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Примеры кода платформы удостоверений Microsoft Identity (версия 2.0, конечная точка)
 
@@ -44,13 +39,15 @@ ms.locfileid: "77160328"
 
 В этих примерах показано, как создать одностраничное приложение, защищенное с помощью платформы идентификации Майкрософт. В этих примерах используется одна из разновидностей MSAL. js.
 
-| Платформа | Description | Ссылка |
+| Платформа | Описание | Ссылка |
 | -------- | --------------------- | -------- |
-| ![этом изображении показан логотип JavaScript](media/sample-v2-code/logo_js.png) [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызывает Microsoft Graph |[javascript-graphapi-web-v2](https://github.com/Azure-Samples/active-directory-javascript-graphapi-web-v2) |
-| ![этом изображении показан логотип JavaScript](media/sample-v2-code/logo_js.png) [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызывает B2C |[B2C-JavaScript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) |
-| ![этом изображении показан логотип JavaScript](media/sample-v2-code/logo_js.png) [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) | Вызывает собственный веб-API |[JavaScript-singlepageapp-DotNet-webapi-v2](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi-v2) |
-| ![этом изображении показан логотип угловой JS](media/sample-v2-code/logo_angular.png) [JavaScript (MSAL AngularJS)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angularjs)| Вызывает Microsoft Graph  | [MsalAngularjsDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/MsalAngularjsDemoApp)
-| ![этом изображении показан угловой логотип](media/sample-v2-code/logo_angular.png) [JavaScript (MSAL под углом)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)| Вызывает Microsoft Graph  | [MSALAngularDemoApp](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/samples/MSALAngularDemoApp) |
+| ![На этом рисунке показан логотип](media/sample-v2-code/logo_js.png) JavaScript [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) . | Вызывает Microsoft Graph |[javascript-graphapi-v2](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2) |
+| ![На этом рисунке показан логотип](media/sample-v2-code/logo_js.png) JavaScript [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) . | Вызывает Microsoft Graph с помощью потока кода проверки подлинности w/PKCE |[JavaScript — v2](https://github.com/Azure-Samples/ms-identity-javascript-v2) |
+| ![На этом рисунке показан логотип](media/sample-v2-code/logo_js.png) JavaScript [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) . | Вызывает B2C |[B2C-JavaScript-msal-singlepageapp](https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp) |
+| ![На этом изображении показана](media/sample-v2-code/logo_angular.png) угловая эмблема [JavaScript (MSAL под углом)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)| Вызывает собственный веб-API | [MS-Identity-JavaScript-угловой-Spa-aspnetcore-webapi](https://github.com/Azure-Samples/ms-identity-javascript-angular-spa-aspnetcore-webapi) |
+| ![На этом изображении показана](media/sample-v2-code/logo_angular.png) угловая эмблема [JavaScript (MSAL под углом)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular)| Вызывает Microsoft Graph  | [Active-Directory-JavaScript-singlepageapp-угловой](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular) |
+| ![На этом рисунке показан логотип](media/sample-v2-code/logo_react.png) [JavaScript (msal. js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core) .| Вызывает собственный веб-API, который, в свою очередь, вызывает Microsoft Graph  | [MS-Identity-JavaScript-реакция — Spa-команда dotnetcore-webapi-OBO](https://github.com/Azure-Samples/ms-identity-javascript-react-spa-dotnetcore-webapi-obo) |
+| ![На этом изображении показана](media/sample-v2-code/logo_angular.png) угловая эмблема [JavaScript (MSAL под углом)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular) | Вызывает B2C |[Active-Directory-B2C-JavaScript-угловой — Spa](https://github.com/Azure-Samples/active-directory-b2c-javascript-angular-spa) |
 
 ## <a name="web-applications"></a>Веб-приложения
 
@@ -58,31 +55,30 @@ ms.locfileid: "77160328"
 
 | Платформа | Только вход пользователей | Выполняет вход пользователей и вызывает Microsoft Graph |
 | -------- | ------------------- | --------------------------------- |
-| ![На этом рисунке показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2,2 | [Руководство пользователя ASP.NET Core WebApp входа в систему](https://aka.ms/aspnetcore-webapp-sign-in) | Тот же пример в [ASP.NET Core веб-приложение вызывает этап Microsoft Graph](https://aka.ms/aspnetcore-webapp-call-msgraph) |
+| ![На этом рисунке показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | [Руководство пользователя ASP.NET Core WebApp входа в систему](https://aka.ms/aspnetcore-webapp-sign-in) | Тот же пример в [ASP.NET Core веб-приложение вызывает этап Microsoft Graph](https://aka.ms/aspnetcore-webapp-call-msgraph) |
 | ![На этом рисунке показан логотип ASP.NET](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [Краткое руководство по ASP.NET](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
 | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_java.png)  |                   | [MS-Identity-Java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp) |
-| ![На этом рисунке показан логотип Python](media/sample-v2-code/logo_python.png)  |                   | [MS-Identity-Python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp) |
-| ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png)  |                   | [Краткое руководство по Node.js](https://github.com/azureadquickstarts/appmodelv2-webapp-openidconnect-nodejs) |
+| ![На этом рисунке показан логотип Python](media/sample-v2-code/logo_python.png)  |                   | [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp) |
 | ![На этом изображении показан логотип Ruby](media/sample-v2-code/logo_ruby.png) |                   | [msgraph-training-rubyrailsapp](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) |
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Общедоступные клиентские приложения — классические и мобильные
 
 В следующих примерах показаны общедоступные клиентские приложения (настольные или мобильные приложения), которые обращаются к Microsoft Graph API, или собственный веб-API в имени пользователя. Все эти клиентские приложения используют библиотеку проверки подлинности Майкрософт (MSAL).
 
-| Клиентское приложение | Платформа | Поток или предоставление | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET Core 2,0 |
+| Клиентское приложение | Платформа | Поток или предоставление | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET Core |
 | ------------------ | -------- |  ----------| ---------- | ------------------------- |
-| Классическое приложение (WPF)      | ![На этом изображении показан .NETC# /Logo](media/sample-v2-code/logo_NET.png) | [интерактивный](msal-authentication-flows.md#interactive)| [dotnet-desktop-msgraph-v2](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [dotnet-native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi) |
-| Классическое приложение (консольное)   | ![На этом изображении показан логотипC# .NET/(Desktop)](media/sample-v2-code/logo_NET.png) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication) | [dotnet-iwa-v2](https://github.com/azure-samples/active-directory-dotnet-iwa-v2) |  |
-| Классическое приложение (консольное)   | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_java.png) | [Встроенная аутентификация Windows](msal-authentication-flows.md#integrated-windows-authentication) |[MS-Identity-Java-Desktop](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
-| Классическое приложение (консольное)   | ![На этом изображении показан логотипC# .NET/(Desktop)](media/sample-v2-code/logo_NETcore.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[dotnetcore-up-v2](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) |  |
-| Desktop (консоль) с WAM  | ![На этом изображении показан логотипC# .NET/(Desktop)](media/sample-v2-code/logo_NETcore.png) | [Интерактивный с WAM](msal-authentication-flows.md#interactive) |[dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) |  |
-| Классическое приложение (консольное)   | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_java.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[MS-Identity-Java-Desktop](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
-| Классическое приложение (консольное)   | ![На этом рисунке показан логотип Python](media/sample-v2-code/logo_python.png) | [Имя пользователя или пароль](msal-authentication-flows.md#usernamepassword) |[MS-Identity-Python — Настольный компьютер](https://github.com/Azure-Samples/ms-identity-python-desktop) |  |
-| Мобильное приложение (Android, iOS, UWP)   | ![На этом рисунке изображена эмблема .NET/C# (Xamarin).](media/sample-v2-code/logo_xamarin.png) | [интерактивный](msal-authentication-flows.md#interactive) |[xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) |  |
-| Мобильное приложение (iOS)       | ![На этом рисунке показана iOS/объектив-C или SWIFT.](media/sample-v2-code/logo_iOS.png) | [интерактивный](msal-authentication-flows.md#interactive) |[iOS-SWIFT-ObjC-Native-v2](https://github.com/azure-samples/active-directory-ios-swift-native-v2) </p> [ios-native-nxoauth2-v2](https://github.com/azure-samples/active-directory-ios-native-nxoauth2-v2) |  |
-| Desktop (macOS)       | macOS | [интерактивный](msal-authentication-flows.md#interactive) |[macOS-SWIFT-ObjC-Native-v2](https://github.com/Azure-Samples/ms-identity-macOS-swift-objc) |  |
-| Mobile (Android-Java)   | ![На этом рисунке показан логотип Android](media/sample-v2-code/logo_Android.png) | [интерактивный](msal-authentication-flows.md#interactive) |  [Android — Java](https://github.com/Azure-Samples/ms-identity-android-java) |  |
-| Mobile (Android-Котлин)   | ![На этом рисунке показан логотип Android](media/sample-v2-code/logo_Android.png) | [интерактивный](msal-authentication-flows.md#interactive) |  [Android — Котлин](https://github.com/Azure-Samples/ms-identity-android-kotlin) |  |
+| Классическое приложение (WPF)      | ![На этом рисунке показан логотип .NET/C#](media/sample-v2-code/logo_NET.png) | [Интерактивный](msal-authentication-flows.md#interactive)| [dotnet-desktop-msgraph-v2](https://github.com/azure-samples/active-directory-dotnet-desktop-msgraph-v2) | [dotnet-native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi) |
+| Классическое приложение (консольное)   | ![На этом изображении показан логотип .NET/C# (Desktop)](media/sample-v2-code/logo_NET.png) | [Встроенная проверка подлинности Windows](msal-authentication-flows.md#integrated-windows-authentication) | [dotnet-iwa-v2](https://github.com/azure-samples/active-directory-dotnet-iwa-v2) |  |
+| Классическое приложение (консольное)   | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_java.png) | [Встроенная проверка подлинности Windows](msal-authentication-flows.md#integrated-windows-authentication) |[MS-Identity-Java-Desktop](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
+| Классическое приложение (консольное)   | ![На этом изображении показан логотип .NET/C# (Desktop)](media/sample-v2-code/logo_NETcore.png) | [Имя пользователя и пароль](msal-authentication-flows.md#usernamepassword) |[dotnetcore-up-v2](https://github.com/azure-samples/active-directory-dotnetcore-console-up-v2) |  |
+| Desktop (консоль) с WAM  | ![На этом изображении показан логотип .NET/C# (Desktop)](media/sample-v2-code/logo_NETcore.png) | [Интерактивный с WAM](msal-authentication-flows.md#interactive) |[dotnet-native-uwp-wam](https://github.com/azure-samples/active-directory-dotnet-native-uwp-wam) |  |
+| Классическое приложение (консольное)   | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_java.png) | [Имя пользователя и пароль](msal-authentication-flows.md#usernamepassword) |[MS-Identity-Java-Desktop](https://github.com/Azure-Samples/ms-identity-java-desktop/) |  |
+| Классическое приложение (консольное)   | ![На этом рисунке показан логотип Python](media/sample-v2-code/logo_python.png) | [Имя пользователя и пароль](msal-authentication-flows.md#usernamepassword) |[MS-Identity-Python — Настольный компьютер](https://github.com/Azure-Samples/ms-identity-python-desktop) |  |
+| Мобильное приложение (Android, iOS, UWP)   | ![На этом рисунке показан логотип .NET/C# (Xamarin).](media/sample-v2-code/logo_xamarin.png) | [Интерактивный](msal-authentication-flows.md#interactive) |[xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) |  |
+| Мобильное приложение (iOS)       | ![На этом рисунке показана iOS/объектив-C или SWIFT.](media/sample-v2-code/logo_iOS.png) | [Интерактивный](msal-authentication-flows.md#interactive) |[iOS-SWIFT-ObjC-Native-v2](https://github.com/azure-samples/active-directory-ios-swift-native-v2) </p> [ios-native-nxoauth2-v2](https://github.com/azure-samples/active-directory-ios-native-nxoauth2-v2) |  |
+| Desktop (macOS)       | macOS | [Интерактивный](msal-authentication-flows.md#interactive) |[macOS-SWIFT-ObjC-Native-v2](https://github.com/Azure-Samples/ms-identity-macOS-swift-objc) |  |
+| Mobile (Android-Java)   | ![На этом рисунке показан логотип Android](media/sample-v2-code/logo_Android.png) | [Интерактивный](msal-authentication-flows.md#interactive) |  [Android — Java](https://github.com/Azure-Samples/ms-identity-android-java) |  |
+| Mobile (Android-Котлин)   | ![На этом рисунке показан логотип Android](media/sample-v2-code/logo_Android.png) | [Интерактивный](msal-authentication-flows.md#interactive) |  [Android — Котлин](https://github.com/Azure-Samples/ms-identity-android-kotlin) |  |
 
 ## <a name="daemon-applications"></a>Управляющие программы
 
@@ -101,7 +97,7 @@ ms.locfileid: "77160328"
 
 | Клиентское приложение | Платформа | Поток или предоставление | Вызывает Microsoft Graph |
 | ------------------ | -------- |  ----------| ---------- |
-| Классическое приложение (консольное)   | ![На этом изображении показан логотипC# .NET/(Desktop)](media/sample-v2-code/logo_NETcore.png) | [Поток кода устройства](msal-authentication-flows.md#device-code) |[dotnetcore-devicecodeflow-v2](https://github.com/azure-samples/active-directory-dotnetcore-devicecodeflow-v2) |
+| Классическое приложение (консольное)   | ![На этом изображении показан логотип .NET/C# (Desktop)](media/sample-v2-code/logo_NETcore.png) | [Поток кода устройства](msal-authentication-flows.md#device-code) |[dotnetcore-devicecodeflow-v2](https://github.com/azure-samples/active-directory-dotnetcore-devicecodeflow-v2) |
 | Классическое приложение (консольное)   | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_java.png) | [Поток кода устройства](msal-authentication-flows.md#device-code) |[MS-Identity-Java-девицекодефлов](https://github.com/Azure-Samples/ms-identity-java-devicecodeflow) |
 | Классическое приложение (консольное)   | ![На этом рисунке показан логотип Python](media/sample-v2-code/logo_python.png) | [Поток кода устройства](msal-authentication-flows.md#device-code) |[MS-Identity-Python-девицекодефлов](https://github.com/Azure-Samples/ms-identity-python-devicecodeflow) |
 
@@ -109,19 +105,21 @@ ms.locfileid: "77160328"
 
 В следующих примерах показано, как защитить веб-API с помощью конечной точки платформы Microsoft Identity и как вызывать подчиненный API из веб-API.
 
-| Платформа | Образец |
+| Платформа | Пример |
 | -------- | ------------------- |
-| ![На этом рисунке показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2,2 | ASP.NET Core веб-API (служба) [DotNet-Native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi-calls-msgraph)  |
+| ![На этом рисунке показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | ASP.NET Core веб-API (служба) [DotNet-Native-aspnetcore-v2](https://aka.ms/msidentity-aspnetcore-webapi-calls-msgraph)  |
 | ![На этом рисунке показан логотип ASP.NET](media/sample-v2-code/logo_NET.png)</p>ASP.NET MVC 3 | Веб-API (служба) [MS-Identity-ASPNET-webapi-OnBehalfOf](https://github.com/Azure-Samples/ms-identity-aspnet-webapi-onbehalfof) |
 | ![На этом рисунке показан логотип Java](media/sample-v2-code/logo_java.png) | Веб-API (служба) [MS-Identity-Java-webapi](https://github.com/Azure-Samples/ms-identity-java-webapi) |
+| ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png) | Веб-API (служба) [Active-Directory-JavaScript-NodeJS-webapi-v2](https://github.com/Azure-Samples/active-directory-javascript-nodejs-webapi-v2) |
+| ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png) | Веб-API B2C (служба) для [Active-Directory-B2C-JavaScript-NodeJS-webapi](https://github.com/Azure-Samples/active-directory-b2c-javascript-nodejs-webapi) |
 
 ## <a name="azure-functions-as-web-apis"></a>Функции Azure в качестве веб-API
 
 В следующих примерах показано, как защитить функцию Azure с помощью HttpTrigger и предоставить доступ к веб-API с помощью конечной точки платформы идентификации Майкрософт, а также как вызвать подчиненный API из веб-API.
 
-| Платформа | Образец |
+| Платформа | Пример |
 | -------- | ------------------- |
-| ![На этом рисунке показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core 2,2 | ASP.NET Core службы веб-API (служба) Azure [DotNet-Native-aspnetcore-v2](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions)  |
+| ![На этом рисунке показан логотип ASP.NET Core](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | ASP.NET Core службы веб-API (служба) Azure [DotNet-Native-aspnetcore-v2](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions)  |
 | ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Веб-API (служба) [NodeJS и Passport-Azure-AD](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions) |
 | ![На этом рисунке показан логотип Python](media/sample-v2-code/logo_python.png)</p>Python | Веб-API (служба) [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions) |
 | ![На этом рисунке показан логотип Node. js](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Веб-API (служба) [NodeJS и Passport-AD, используя от имени](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) |
@@ -133,5 +131,4 @@ ms.locfileid: "77160328"
 ## <a name="see-also"></a>См. также раздел
 
 - [Azure Active Directory (версия 1.0): руководством разработчика](../azuread-dev/v1-overview.md)
-- [Основные понятия и справочные материалы по Azure AD API Graph](https://msdn.microsoft.com/library/azure/hh974476.aspx)
-- [Библиотека вспомогательных методов для Azure AD Graph API](https://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)
+- [Общие сведения о Microsoft Graph API и справочнике](https://docs.microsoft.com/graph/use-the-api?context=graph%2Fapi%2Fbeta&view=graph-rest-beta)

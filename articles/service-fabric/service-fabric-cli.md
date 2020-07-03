@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: conceptual
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: b4ddc5bb52aeef622a33ace7b3ffad4694d7c072
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 46c5e1ed0a1d0db100c3415c40f59d46f62b21f9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76904821"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79258945"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -18,7 +18,7 @@ ms.locfileid: "76904821"
 
 [!INCLUDE [links to azure cli and service fabric cli](../../includes/service-fabric-sfctl.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем начать установку, убедитесь, что в вашей среде установлены Python и pip. Дополнительные сведения см. в [кратком руководстве по началу работы с pip](https://pip.pypa.io/en/latest/quickstart/) и официальной [документации по установке Python](https://wiki.python.org/moin/BeginnersGuide/Download).
 
@@ -41,7 +41,7 @@ ms.locfileid: "76904821"
 
 При необходимости можно указать целевую версию интерфейса командной строки для установки, добавив к команде `pip install` суффикс `==<version>`. Например, для версии 1.1.0 синтаксис будет выглядеть следующим образом:
 
-```
+```shell
 pip install -I sfctl==1.1.0
 ```
 
@@ -67,14 +67,14 @@ pip install -I sfctl==1.1.0
 
 Теперь можно открыть новое командное окно, чтобы узнать версию Python и pip.
 
-```bat
+```shell
 python --version
 pip --version
 ```
 
 Затем выполните следующую команду, чтобы установить CLI Azure Service Fabric (sfctl) и просмотреть страницу справки CLI:
 
-```bat
+```shell
 pip install sfctl
 sfctl -h
 ```
@@ -103,7 +103,7 @@ sfctl -h
 
 ```bash
 export PATH=$PATH:~/.local/bin
-echo "export PATH=$PATH:~/.local/bin" >> .bashrc
+echo "export PATH=$PATH:~/.local/bin" >> .shellrc
 ```
 
 Если установка подсистемы Windows для Linux завершается сбоем из-за неверных разрешений папки, может потребоваться повторить попытку с повышенным уровнем разрешений.
@@ -126,7 +126,7 @@ sudo pip3 install sfctl
 Чтобы протестировать установку, выполните действия из раздела **Подсистема Ubuntu и Windows для Linux**.
 
 <a name = "cli-mac"></a>
-### <a name="macos"></a>macOS
+### <a name="macos"></a>MacOS
 
 Для MacOS мы рекомендуем использовать [диспетчер пакетов HomeBrew](https://brew.sh). Если диспетчер HomeBrew еще не установлен, установите его, выполнив следующую команду:
 
@@ -148,7 +148,7 @@ sfctl -h
 
 Команды подчиняются повторяющейся структуре, где целевой объект команды указан перед командой (глаголом) или действием.
 
-```azurecli
+```shell
 sfctl <object> <action>
 ```
 
@@ -161,7 +161,7 @@ sfctl <object> <action>
 > [!WARNING]
 > Не используйте незащищенные кластеры Service Fabric в рабочей среде.
 
-```azurecli
+```shell
 sfctl cluster select --endpoint http://testcluster.com:19080
 ```
 
@@ -169,7 +169,7 @@ sfctl cluster select --endpoint http://testcluster.com:19080
 
 Для кластеров, защищенных с помощью сертификата, можно указать сертификат в кодировке PEM. Сертификат можно указать как один файл или как пару "сертификат — ключ". Если это самозаверяющий сертификат, который не подписан центром сертификации (ЦС), вы можете передать параметр `--no-verify` для обхода проверки ЦС.
 
-```azurecli
+```shell
 sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./client.pem --no-verify
 ```
 
@@ -181,7 +181,7 @@ sfctl cluster select --endpoint https://testsecurecluster.com:19080 --pem ./clie
 
 Например, чтобы получить сведения о работоспособности кластера Service Fabric, используйте следующую команду:
 
-```azurecli
+```shell
 sfctl cluster health
 ```
 
@@ -218,13 +218,13 @@ sfctl cluster health
 
 Интерфейс командной строки Service Fabric поддерживает клиентские сертификаты, такие как PEM-файлы. При использовании PFX-файлов из Windows эти сертификаты необходимо преобразовать в формат PEM. Чтобы преобразовать PFX-файл в PEM-файл, используйте следующую команду:
 
-```bash
+```shell
 openssl pkcs12 -in certificate.pfx -out mycert.pem -nodes
 ```
 
 Аналогично, чтобы преобразовать PEM-файл в PFX-файл, можно использовать следующую команду (здесь не нужно вводить пароль):
 
-```bash
+```shell
 openssl  pkcs12 -export -out Certificates.pfx -inkey Certificates.pem -in Certificates.pem -passout pass:'' 
 ```
 
@@ -246,13 +246,13 @@ openssl  pkcs12 -export -out Certificates.pfx -inkey Certificates.pem -in Certif
 
 Для получения справки по определенной команде или группе команд используйте флаг `-h`.
 
-```azurecli
+```shell
 sfctl application -h
 ```
 
 Вот еще один пример:
 
-```azurecli
+```shell
 sfctl application create -h
 ```
 
@@ -260,12 +260,12 @@ sfctl application create -h
 
 Чтобы обновить интерфейс командной строки Service Fabric, выполните следующие команды (замените параметр `pip` на `pip3` в зависимости от того, какой вы выбрали во время первоначальной установки):
 
-```bash
+```shell
 pip uninstall sfctl
 pip install sfctl
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Manage an Azure Service Fabric application by using Azure Service Fabric CLI](service-fabric-application-lifecycle-sfctl.md) (Управление приложением Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric)
 * [Prepare your development environment on Linux](service-fabric-get-started-linux.md) (Подготовка среды разработки в Linux)

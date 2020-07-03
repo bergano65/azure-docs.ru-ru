@@ -17,10 +17,10 @@ ms.date: 05/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0d70cdade93b028c90c9f62374cd6b997556dd52
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67101289"
 ---
 # <a name="tutorial-integrate-helper-helper-with-azure-active-directory"></a>Руководство по интеграции Helper Helper с Azure Active Directory
@@ -35,9 +35,9 @@ ms.locfileid: "67101289"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Helper Helper с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -76,14 +76,14 @@ ms.locfileid: "67101289"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вам нужно настроить единый вход, инициируемый **поставщиком удостоверений**, и у вас есть **файл метаданных поставщика услуг**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
     >[!NOTE]
     >Чтобы получить файл метаданных поставщика службы, перейдите по URL-адресу `https://sso.helperhelper.com/saml/<customer_id>`. Обратитесь в [службу поддержки клиентов Helper Helper](mailto:info@helperhelper.com), чтобы получить идентификатор `<customer_id>`.
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
@@ -127,7 +127,7 @@ ms.locfileid: "67101289"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon и как предоставить этому пользователю доступ к Helper Helper.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Helper Helper**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -155,4 +155,4 @@ ms.locfileid: "67101289"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 09/09/2019
+ms.date: 03/15/2020
 ms.author: memildin
-ms.openlocfilehash: b2ab769fc2595af9fd1ea41f1ef492944cb5e7fa
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.openlocfilehash: 98fc339e473ffb2bf54e7119634e93046cca1ef3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75665774"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79415665"
 ---
 # <a name="manage-security-incidents-in-azure-security-center"></a>Управление инцидентами безопасности в центре безопасности Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "75665774"
 
 ## <a name="what-is-a-security-incident"></a>Что такое инцидент?
 
-В центре безопасности инцидентом считается совокупность всех оповещений для ресурса, которые соответствуют схемам [этапов нарушения безопасности](https://blogs.technet.microsoft.com/office365security/addressing-your-cxos-top-five-cloud-security-concerns/) . Инциденты отображаются в списке [оповещения системы безопасности](security-center-managing-and-responding-alerts.md) . Щелкните инцидент, чтобы просмотреть связанные с ним предупреждения, которые позволяют получить дополнительные сведения о каждом вхождении.
+В центре безопасности инцидентом считается совокупность всех оповещений для ресурса, которые соответствуют схемам [этапов нарушения безопасности](alerts-reference.md#intentions) . Инциденты отображаются в списке [оповещения системы безопасности](security-center-managing-and-responding-alerts.md) . Щелкните инцидент, чтобы просмотреть связанные с ним предупреждения, которые позволяют получить дополнительные сведения о каждом вхождении.
 
 ## <a name="managing-security-incidents"></a>Управление инцидентами
 
@@ -44,24 +44,10 @@ ms.locfileid: "75665774"
 
 1. Выполните действия по исправлению, заданные для каждого оповещения.
 
-Дополнительные сведения об оповещениях см. [в статье Управление оповещениями безопасности и реагирование на них](security-center-managing-and-responding-alerts.md).
-
-В следующих разделах описываются различные предупреждения в соответствии с типами ресурсов.
-
-* [Предупреждения о виртуальных машинах и серверах IaaS](security-center-alerts-iaas.md)
-* [Встроенные предупреждения вычислений](security-center-alerts-compute.md)
-* [Оповещения служб данных](security-center-alerts-data-services.md)
-
-В следующих разделах объясняется, как центр безопасности использует различные данные телеметрии, собираемые при интеграции с инфраструктурой Azure, чтобы применить дополнительные уровни защиты для ресурсов, развернутых в Azure:
-
-* [Предупреждения уровня службы](security-center-alerts-service-layer.md)
-* [Обнаружение угроз для Azure WAF и Azure от атак DDoS Protection](security-center-alerts-integration.md)
 
 ## <a name="see-also"></a>См. также
-Этот документ содержит подробные сведения о функции инцидентов в центре безопасности Azure. Дополнительные сведения о Центре безопасности см. в следующих статьях:
+Этот документ содержит подробные сведения о функции инцидентов в центре безопасности Azure. Дополнительные сведения см. в следующих разделах:
 
-* [Оповещения системы безопасности в центре безопасности Azure](security-center-alerts-overview.md).
+* [Защита от угроз с помощью Центра безопасности Azure](threat-protection.md)
+* [Оповещения безопасности в Центре безопасности Azure](security-center-alerts-overview.md)
 * [Управление оповещениями системы безопасности](security-center-managing-and-responding-alerts.md)
-* [Руководство по планированию использования центра безопасности Azure и работе в нем](security-center-planning-and-operations-guide.md)
-* [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md)— часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) — публикации блога, посвященные безопасности и соответствию требованиям в Azure.

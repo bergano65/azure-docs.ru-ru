@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 266234f2872cfe99509d564c9460bfba4a0e2bf2
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75932543"
 ---
 # <a name="complete-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Выполнение проверки доступа для групп и приложений в проверках доступа Azure AD
@@ -29,7 +29,7 @@ ms.locfileid: "75932543"
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure AD Premium P2
 - Глобальный администратор, администратор пользователей, администратор безопасности или читатель безопасности
@@ -48,7 +48,7 @@ ms.locfileid: "75932543"
 
     Чтобы просмотреть серию проверок доступа, перейдите к проверке доступа, и вы увидите предстоящие вхождения в плановых проверках.
 
-    На странице **Обзор** можно увидеть ход выполнения. Права доступа не изменяются в каталоге до завершения проверки.
+    На странице **Обзор** можно увидеть ход выполнения. Права доступа в каталоге не изменяются до завершения проверки.
 
     ![Ход выполнения проверок доступа](./media/complete-access-review/overview-progress.png)
 

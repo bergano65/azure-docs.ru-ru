@@ -1,19 +1,20 @@
 ---
-title: Дополнительные сведения о Azure Image Builder для виртуальных машин Linux (Предварительная версия)
-description: Дополнительные сведения о Azure Image Builder.
+title: Дополнительные сведения о построителе образов Azure (Предварительная версия)
+description: Узнайте больше о построителе образов Azure для виртуальных машин в Azure.
 author: cynthn
 ms.author: cynthn
 ms.date: 05/02/2019
-ms.topic: article
-ms.service: virtual-machines-linux
-manager: gwallace
-ms.openlocfilehash: 80982529ad891f7bd64e321c6c5d6edcaf32744c
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.topic: conceptual
+ms.service: virtual-machines
+ms.subservice: imaging
+ms.reviewer: danis
+ms.openlocfilehash: 4cacc96975d6a366e2d353580d22c9818b19a321
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67667577"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792060"
 ---
-# <a name="preview-azure-image-builder-overview"></a>Предварительный просмотр: Общие сведения о Azure Image Builder
+# <a name="preview-azure-image-builder-overview"></a>Предварительная версия: Обзор построителя образов Azure
 
 [!INCLUDE [virtual-machines-image-builder-overview](../../../includes/virtual-machines-image-builder-overview.md)]

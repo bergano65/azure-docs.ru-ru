@@ -1,15 +1,15 @@
 ---
-title: Добавление или удаление узлов в автономном кластере Service Fabric
+title: Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него
 description: Узнайте, как добавлять узлы в кластер Azure Service Fabric или удалять их из него на физическом или виртуальном компьютере под управлением Windows Server, расположенном в локальной системе или в любом облаке.
 author: dkkapur
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: dekapur
 ms.openlocfilehash: f9bee35ee8e82070b4cf601139b471562ba5e10b
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75934205"
 ---
 # <a name="add-or-remove-nodes-to-a-standalone-service-fabric-cluster-running-on-windows-server"></a>Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него
@@ -29,7 +29,7 @@ ms.locfileid: "75934205"
 
 5. Запустите PowerShell с повышенными привилегиями и перейдите в расположение распакованного пакета.
 
-6. Запустите скрипт *AddNode.ps1*, указав параметры, описывающие новый узел, который будет добавлен. В следующем примере добавляется новый узел с именем VM5 с типом NodeType0 и IP-адресом 182.17.34.52, в ДО1 и демон:/DC1/R0. `ExistingClusterConnectionEndPoint` — это конечная точка подключения для узла, уже существующего в существующем кластере, который может быть IP-адресом *любого* узла в кластере. 
+6. Запустите скрипт *AddNode.ps1*, указав параметры, описывающие новый узел, который будет добавлен. В следующем примере добавляется новый узел с именем VM5 с типом NodeType0 и IP-адресом 182.17.34.52, в ДО1 и демон:/DC1/R0. `ExistingClusterConnectionEndPoint`— Это конечная точка подключения для узла, уже существующего в существующем кластере, который может быть IP-адресом *любого* узла в кластере. 
 
    Небезопасные (создание прототипов):
 
@@ -69,7 +69,7 @@ ms.locfileid: "75934205"
    Ход выполнения обновления можно отслеживать с помощью Service Fabric Explorer. Кроме того, можно выполнить команду [Get-ServiceFabricClusterUpgrade](/powershell/module/servicefabric/get-servicefabricclusterupgrade?view=azureservicefabricps).
 
 ### <a name="add-nodes-to-clusters-configured-with-windows-security-using-gmsa"></a>Добавление узлов в кластеры, настроенные с помощью Windows Security, с использованием gMSA
-Для кластеров, настроенных с помощью групповой управляемой учетной записи службы (https://technet.microsoft.com/library/hh831782.aspx) ), можно добавить новый узел, используя обновление конфигурации.
+Для кластеров, настроенных с помощью групповой управляемой учетной записи службы (https://technet.microsoft.com/library/hh831782.aspx)), можно добавить новый узел, используя обновление конфигурации.
 1. Выполните команду [Get-ServiceFabricClusterConfiguration](/powershell/module/servicefabric/get-servicefabricclusterconfiguration?view=azureservicefabricps) на любом из имеющихся узлов, чтобы получить самый последний файл конфигурации, и добавьте сведения о новом узле, который нужно добавить в раздел узлов. Убедитесь, что новый узел входит в ту же учетную запись, которой управляет группа. Этой учетной записи нужно назначить роль "Администратор" на всех компьютерах.
 
     ```
@@ -139,8 +139,8 @@ ms.locfileid: "75934205"
 Замену основных узлов следует выполнять последовательно, вместо того чтобы удалять, а затем добавлять их массово.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Параметры конфигурации для автономного кластера Windows](service-fabric-cluster-manifest.md)
-* [Защита автономного кластера под управлением Windows с помощью сертификатов](service-fabric-windows-cluster-x509-security.md)
+* [Защита автономного кластера в Windows с помощью сертификатов X509](service-fabric-windows-cluster-x509-security.md)
 * [Create a three node standalone Service Fabric cluster with Azure virtual machines running Windows Server (Создание автономного кластера Service Fabric с тремя узлами на виртуальных машинах Azure под управлением Windows)](service-fabric-cluster-creation-with-windows-azure-vms.md)
 

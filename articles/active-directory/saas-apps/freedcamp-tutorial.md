@@ -17,10 +17,10 @@ ms.date: 05/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4de1ae135df4cd070fe9c6ee322e304caa1e17c9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67101910"
 ---
 # <a name="tutorial-integrate-freedcamp-with-azure-active-directory"></a>Руководство по Интеграция Freedcamp с Azure Active Directory
@@ -35,9 +35,9 @@ ms.locfileid: "67101910"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Freedcamp с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -76,7 +76,7 @@ ms.locfileid: "67101910"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
@@ -119,7 +119,7 @@ ms.locfileid: "67101910"
 
     ![Конфигурация Freedcamp](./media/freedcamp-tutorial/config02.png)
 
-    a. В текстовом поле **Title** (Заголовок) введите заголовок.
+    а. В текстовом поле **Title** (Заголовок) введите заголовок.
 
     b. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
@@ -127,7 +127,7 @@ ms.locfileid: "67101910"
 
     d. Откройте сертификат в кодировке Base64 в Блокноте, скопируйте его содержимое и вставьте его в текстовое поле **Certificate** (Сертификат).
 
-    д. Нажмите кнопку **Submit**(Отправить).
+    д) Щелкните **Отправить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -145,7 +145,7 @@ ms.locfileid: "67101910"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Freedcamp.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Freedcamp**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -175,7 +175,7 @@ ms.locfileid: "67101910"
 
     ![Конфигурация Freedcamp](./media/freedcamp-tutorial/config04.png)
 
-    a. Щелкните **Add or invite Users** (Добавить или пригласить пользователей).
+    а. Щелкните **Add or invite Users** (Добавить или пригласить пользователей).
 
     b. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например `Brittasimon@contoso.com`.
 
@@ -191,4 +191,4 @@ ms.locfileid: "67101910"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

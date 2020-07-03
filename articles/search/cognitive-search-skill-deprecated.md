@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 5f3587e4398be28cbaa2372be720258196bb48ff
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72792020"
 ---
 # <a name="deprecated-cognitive-skills-in-azure-cognitive-search"></a>Нерекомендуемые профессиональные навыки в Azure Когнитивный поиск
@@ -145,8 +145,8 @@ ms.locfileid: "72792020"
         }
         ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Навык распознавания сущностей](cognitive-search-skill-entity-recognition.md)

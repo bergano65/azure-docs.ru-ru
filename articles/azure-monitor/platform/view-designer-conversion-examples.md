@@ -3,16 +3,15 @@ title: Примеры преобразования конструктора пр
 description: ''
 author: austonli
 ms.author: aul
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: a93b4aa289a18de3076a189f0cf8f382be0298f0
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: b50d8cfa4731c487997e2bf431a9c71eff08f5d1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77171115"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79274168"
 ---
 # <a name="view-designer-conversion-examples"></a>Примеры преобразования конструктора представлений
 

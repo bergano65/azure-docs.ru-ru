@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: anroth
 ms.openlocfilehash: c6ed8869f6d33609381a42fd22d728e9e5542802
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73721199"
 ---
 # <a name="test-and-retrain-a-model-with-custom-vision-service"></a>Тестирование и переобучение модели с помощью Пользовательской службы визуального распознавания
@@ -57,6 +57,6 @@ ms.locfileid: "73721199"
 
 3. Нажмите кнопку __Train__ (Обучение), чтобы переобучить классификатор.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Усовершенствование классификатора](getting-started-improving-your-classifier.md)

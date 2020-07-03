@@ -3,20 +3,20 @@ title: Настройка потока учетных данных для пар
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить поток учетных данных для пароля владельца ресурса (РОПК) с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/06/2018
-ms.author: marsma
+ms.date: 04/01/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 95601735064451a91530907e5e6b59f579ff0e28
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 207f4aecfb57480293c138c95ed6e8f6562bbc7b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840270"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80529160"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-active-directory-b2c-using-a-custom-policy"></a>Настройка потока учетных данных пароля владельца ресурса в Azure Active Directory B2C с помощью пользовательской политики
 
@@ -24,19 +24,9 @@ ms.locfileid: "76840270"
 
 В Azure Active Directory B2C (Azure AD B2C) поток учетных данных для пароля владельца ресурса (РОПК) является стандартным потоком проверки подлинности OAuth. В этом потоке приложение, также известное как проверяющая сторона, обменивает действительные учетные данные на маркеры проверки подлинности. Учетные данные включают идентификатор пользователя и пароль. Возвращается маркер идентификации, маркер доступа и маркер обновления.
 
-В потоке ROPC поддерживаются следующие параметры.
+[!INCLUDE [active-directory-b2c-ropc-notes](../../includes/active-directory-b2c-ropc-notes.md)]
 
-- **Собственный клиент**. Взаимодействие с пользователем во время аутентификации происходит, когда код выполняется на устройстве на стороне пользователя.
-- **Поток общедоступного клиента**. При вызове API отправляются только учетные данные, полученные приложением. Учетные данные приложения не отправляются.
-- **Добавление новых утверждений**. Содержимое токена идентификатора можно изменить для добавления новых утверждений.
-
-Следующие потоки не поддерживаются.
-
-- **Сервер — сервер**. Системе защиты идентификации требуются надежные IP-адреса, полученные от вызывающего объекта (собственного клиента) в рамках взаимодействия. При вызове API на стороне сервера используется только IP-адрес сервера. После большого количества неудачных попыток входа система защиты идентификации может рассматривать повторяющийся IP-адрес как злоумышленника.
-- **Одностраничное приложение** — клиентское приложение, написанное главным образом на JavaScript. Часто приложение создается с помощью таких платформ, как AngularJS, Ember.js или Durandal.
-- **Поток конфиденциального клиента**. Проверка идентификатора клиента приложения выполняется, но секрет приложения не проверяется.
-
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 
@@ -261,12 +251,12 @@ ms.locfileid: "76840270"
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Значение |
+| Клавиши | Значение |
 | --- | ----- |
 | username | `user-account` |
-| password | `password1` |
-| grant_type | password |
-| область | openid `application-id` offline_access |
+| пароль | `password1` |
+| grant_type | пароль |
+| scope | openid `application-id` offline_access |
 | client_id | `application-id` |
 | response_type | token id_token |
 
@@ -306,12 +296,12 @@ username=contosouser.outlook.com.ws&password=Passxword1&grant_type=password&scop
 - Замените `your-tenant-name` именем вашего клиента Azure AD B2C.
 - Замените `B2C_1A_ROPC_Auth` полным именем политики учетных данных пароля владельца ресурса.
 
-| Ключ | Значение |
+| Клавиши | Значение |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |
 | client_id | `application-id` |
-| ресурс | `application-id` |
+| resource | `application-id` |
 | refresh_token | `refresh-token` |
 
 - Замените `application-id` на идентификатор приложения из регистрации *ROPC_Auth_app*.

@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 10/11/2019
 ms.author: benoah
 ms.openlocfilehash: a529ac8b7ce16d3ee4463f1b4bc2e8007e5b79b5
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73836762"
 ---
 # <a name="guidelines-for-responsible-deployment-of-synthetic-voice-technology"></a>Рекомендации для ответственного развертывания технологии искусственного голоса
 Ниже приведены общие рекомендации корпорации Майкрософт по проектированию технологии искусственного голоса. Они были разработаны в ходе исследований, которые корпорация Майкрософт проработала с специалистами по голосовой связи, потребителями, а также людьми с речью, от речь о ответственной разработке искусственного голоса.
 
-## <a name="general-considerations"></a>Общие рекомендации
+## <a name="general-considerations"></a>Общие вопросы
 Для развертывания технологии искусственного распознавания речи в большинстве случаев применяются следующие рекомендации.
 
 ### <a name="disclose-when-the-voice-is-synthetic"></a>Раскрывать при использовании искусственного голоса
@@ -62,7 +62,7 @@ ms.locfileid: "73836762"
 * [Как раскрывать](concepts-disclosure-guidelines.md)
 * [Шаблоны проектирования раскрытия](concepts-disclosure-patterns.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Раскрытие голоса для речи](https://aka.ms/disclosure-voice-talent)
 * [Как раскрывать](concepts-disclosure-guidelines.md)

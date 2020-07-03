@@ -12,12 +12,12 @@ ms.date: 12/05/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25097f8b72c7c8dde742701ce576c1b0e2fbabd2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 476bdfdd2c0b81d86900cee18024cc261ee80a07
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480948"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79481268"
 ---
 # <a name="azure-ad-powershell-examples-for-azure-ad-application-proxy"></a>Примеры Azure AD PowerShell для Azure AD Application Proxy
 
@@ -45,6 +45,6 @@ ms.locfileid: "75480948"
 | [Получение всех приложений прокси приложения с помощью публикации с использованием подстановочных знаков](scripts/powershell-get-all-wildcard-apps.md) | Список всех приложений прокси приложения, использующих публикацию с подстановочными знаками. |
 |**Конфигурация пользовательского домена**||
 | [Получение всех приложений прокси приложения, использующих личные домены и сведения о сертификате](scripts/powershell-get-all-custom-domains-and-certs.md) | Список всех приложений прокси приложения, использующих личные домены, и сведения о сертификате, связанные с пользовательскими доменами. |
-| [Получение всех опубликованных приложений прокси-сервера Azure AD без отправленного сертификата](scripts/powershell-get-all-custom-domain-no-cert.md) | Список всех приложений прокси приложения, использующих пользовательские домены, но не имеющих действительного SSL-сертификата. |
+| [Получение всех опубликованных приложений прокси-сервера Azure AD без отправленного сертификата](scripts/powershell-get-all-custom-domain-no-cert.md) | Список всех приложений прокси приложения, использующих пользовательские домены, но не имеющих действительного сертификата TLS/SSL. |
 | [Получение всех приложений прокси-сервера Azure AD, опубликованных с помощью идентичного сертификата](scripts/powershell-get-custom-domain-identical-cert.md) | Список всех приложений прокси-сервера Azure AD, опубликованных с помощью идентичного сертификата. |
 | [Получить все приложения прокси-сервера Azure AD, опубликованные с помощью идентичного сертификата, и заменить их](scripts/powershell-get-custom-domain-replace-cert.md) | Для приложений прокси-сервера Azure AD, опубликованных с помощью идентичного сертификата, можно выполнить небольшую замену сертификата. |

@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 08/19/2019
 ms.author: johndeu
 ms.openlocfilehash: be4009d418f2f8f3dff755e2e990efee593f070b
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76514227"
 ---
 # <a name="smooth-streaming-protocol-ms-sstr-amendment-for-hevc"></a>Поправка к протоколу Smooth Streaming (MS-SSTR) для HEVC 
 
-## <a name="1-introduction"></a>1\. Введение 
+## <a name="1-introduction"></a>1. Введение 
 
 В этой статье приводятся подробные поправки, которые необходимо применить к спецификации протокола Smooth Streaming [MS-SSTR] для включения потоковой передачи видео в формате HEVC. Здесь описываются только те изменения, которые необходимы для доставки видеокодека HEVC. В статье используется та же схема нумерации, что и в спецификации [MS-SSTR]. Пустые заголовки, представленные в статье, предназначены для ориентирования читателей в соответствии с их позицией в спецификации [MS-SSTR].  "(Без изменения)" означает, что текст скопирован только для разъяснений.
 
-В этой статье приводятся требования к технической реализации для сигнализации видеокодека HEVC (с использованием hev1 или дорожек формата hvc1) в манифесте Smooth Streaming и нормативные ссылки обновляются для ссылки на текущие стандарты MPEG, которые включить HEVC, Common Encryption HEVC, а имена полей для формата ISO-файла основного носителя были обновлены, чтобы соответствовать последним спецификациям. 
+В этой статье приводятся требования к технической реализации для сигнализации видеокодека HEVC (с использованием "hev1" или "hvc1") в манифесте Smooth Streaming и нормативные ссылки обновляются так, чтобы они ссылались на текущие стандарты MPEG, включающие HEVC, Common Encryption HEVC, а имена полей для формата ISO Base-файлов были обновлены так, чтобы соответствовать последним спецификациям. 
 
 В указанной спецификации протокола Smooth Streaming [MS-SSTR] описывается формат подключения, используемый для доставки файлов мультимедиа по требованию и в режиме реального времени, например аудио- и видеофайлов следующим образом: от кодировщика на веб-сервер, от сервера на другой сервер и от сервера на HTTP-клиент.
 Использование доставки структуры данных на основе файла MPEG-4 ([[MPEG4-RA])](https://go.microsoft.com/fwlink/?LinkId=327787) через протокол HTTP позволяет осуществлять плавное переключение в режиме реального времени между различными уровнями качества сжатого содержимого медиафайлов. Результатом является постоянное воспроизведение для пользователя HTTP-клиента, даже если условия отрисовки видео и сети меняются для клиентского компьютера или устройства.
@@ -64,7 +64,7 @@ ms.locfileid: "76514227"
 
 ### <a name="121-normative-references"></a>1.2.1. Нормативные ссылки 
 
->  [MS-SSTR] *V20140502* протокола Smooth Streaming [https://msdn.microsoft.com/library/ff469518.aspx](https://msdn.microsoft.com/library/ff469518.aspx)
+>  [MS-SSTR] *V20140502* протокола Smooth Streaming[https://msdn.microsoft.com/library/ff469518.aspx](https://msdn.microsoft.com/library/ff469518.aspx)
 > 
 >   [ISO/IEC 14496-12]. Международная организация по стандартизации (ISO). "Information technology -- Coding of audio-visual objects -- Part 12: ISO Base Media File Format" (Информационные технологии. Кодирование аудиовизуальных объектов. Часть 12. Формат базового медиафайла ISO), ISO/IEC 14496-12:2014, издание 4, добавлено исправление 1, поправки 1, 2.
 >   <https://standards.iso.org/ittf/PubliclyAvailableStandards/c061988_ISO_IEC_14496-12_2012.zip>
@@ -78,17 +78,17 @@ ms.locfileid: "76514227"
 > 
 >   [RFC-6381] IETF RFC-6381, “The 'Codecs' and 'Profiles' Parameters for "Bucket" Media Types” (Параметры "кодеков" и "профилей" для типов медиафайлов "контейнеры") <https://tools.ietf.org/html/rfc6381>
 > 
->   [MPEG4-RA]. Центр регистрации MP4 "MP4REG", [http://www.mp4ra.org](https://go.microsoft.com/fwlink/?LinkId=327787)
+>   [MPEG4-RA] Центр регистрации MP4, "MP4REG",[http://www.mp4ra.org](https://go.microsoft.com/fwlink/?LinkId=327787)
 > 
->   [RFC2119]. С. Браднер (Bradner, S.) "Key words for use in RFCs to Indicate Requirement Levels" (Ключевые слова для обозначения уровня требований в RFC), BCP 14, RFC 2119, март 1997 г., [https://www.rfc-editor.org/rfc/rfc2119.txt](https://go.microsoft.com/fwlink/?LinkId=90317)
+>   RFC2119 Браднер (bradner, S., "Ключевые слова для использования в RFC для указания уровней требований", BCP 14, RFC 2119, 1997 марта,[https://www.rfc-editor.org/rfc/rfc2119.txt](https://go.microsoft.com/fwlink/?LinkId=90317)
 
 ### <a name="122-informative-references"></a>1.2.2. Справочные ссылки 
 
 >   [MS-GLOS]. Корпорация Майкрософт "*Windows Protocols Master Glossary*" (Главный глоссарий протоколов Windows).
 > 
->   [RFC3548]. С. Юсефссон (Josefsson, S.) "The Base16, Base32, and Base64 Data Encodings" (Кодировки данных Base16, Base32 и Base64), RFC 3548, июль 2003 г., [https://www.ietf.org/rfc/rfc3548.txt](https://go.microsoft.com/fwlink/?LinkId=90432)
+>   RFC3548 (Josefsson, S., ED., "Base16, base32 и Base64 кодировка данных", RFC 3548, июнь 2003,[https://www.ietf.org/rfc/rfc3548.txt](https://go.microsoft.com/fwlink/?LinkId=90432)
 > 
->   [RFC5234]. Д. Крокер (Crocker, D.) и П. Оверел (Overell, P.) "Augmented BNF for Syntax Specifications: ABNF" (Расширенный BNF для спецификаций синтаксиса: ABNF), STD 68, RFC 5234, январь 2008 г., [https://www.rfc-editor.org/rfc/rfc5234.txt](https://go.microsoft.com/fwlink/?LinkId=123096)
+>   RFC5234 Крокер (Crocker, D., ED. и Оверел (overell, P., "дополненные BNF для спецификаций синтаксиса: ABNF", STD 68, RFC 5234, Январь 2008,[https://www.rfc-editor.org/rfc/rfc5234.txt](https://go.microsoft.com/fwlink/?LinkId=123096)
 
 
 ## <a name="13-overview"></a>1.3. Обзор 
@@ -112,7 +112,7 @@ ms.locfileid: "76514227"
 
 ## <a name="19-standards-assignments"></a>1.9. Назначения стандартов 
 
-## <a name="2-messages"></a>2\. Сообщения 
+## <a name="2-messages"></a>2. Сообщения 
 
 ## <a name="21-transport"></a>2.1. Транспортировка
 
@@ -207,7 +207,7 @@ ms.locfileid: "76514227"
 
 #### <a name="2247-trunbox"></a>2.2.4.7. TrunBox 
 
->   Поле **TrunBox** и связанные с ним поля инкапсулируют значения для метаданных образца в запрошенном фрагменте. Синтаксис **TrunBox** представляет собой строгое подмножество поля запуска фрагмента дорожки версии 1, определенного в разделе 8.8.8 спецификации [[ISO/IEC-14496-](https://go.microsoft.com/fwlink/?LinkId=183695)*12]* .
+>   Поле **TrunBox** и связанные с ним поля инкапсулируют значения для метаданных образца в запрошенном фрагменте. Синтаксис **TrunBox** представляет собой строгое подмножество поля запуска фрагмента дорожки версии 1, определенного в разделе 8.8.8 спецификации [[ISO/IEC-14496-](https://go.microsoft.com/fwlink/?LinkId=183695)*12]*.
 > 
 >   **SampleCompositionTimeOffset (4 байта):** смещение времени композиции образца каждого образца настроено таким образом, чтобы время представления первого представленного образца в фрагменте соответствовало времени декодирования первого декодированного образца. Отрицательные смещения композиции видеообразца ДОЛЖНЫ использоваться
 > 
@@ -265,7 +265,7 @@ ms.locfileid: "76514227"
 
 ### <a name="228-server-to-server-ingest"></a>2.2.8. Прием между серверами (сервер — сервер) 
 
-## <a name="3-protocol-details"></a>3\. Сведения о протоколе 
+## <a name="3-protocol-details"></a>3. Сведения о протоколе 
 
 
 ## <a name="31-client-details"></a>3.1. Сведения о клиенте 
@@ -280,8 +280,8 @@ ms.locfileid: "76514227"
 > 
 > * **MajorVersion**
 > * **MinorVersion**
-> * **TimeScale**
-> * **Длительность**
+> * **Временной**
+> * **Duration**
 > * **IsLive**
 > * **LookaheadCount**
 > * **DVRWindowLength**
@@ -346,9 +346,9 @@ ms.locfileid: "76514227"
 
 ## <a name="33-live-encoder-details"></a>3.3. Сведения о динамическом кодировщике 
 
-## <a name="4-protocol-examples"></a>4\. Примеры протокола 
+## <a name="4-protocol-examples"></a>4. Примеры протокола 
 
-## <a name="5-security"></a>5\. Безопасность 
+## <a name="5-security"></a>5. Безопасность 
 
 ## <a name="51-security-considerations-for-implementers"></a>5.1. Вопросы безопасности для разработчиков
 
@@ -385,7 +385,7 @@ ms.locfileid: "76514227"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 [image1]: ./media/media-services-fmp4-live-ingest-overview/media-services-image1.png

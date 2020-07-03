@@ -9,13 +9,13 @@ ms.service: iot-central
 services: iot-central
 manager: eliotgra
 ms.openlocfilehash: 99b27ec53d955079b5f73986408e698955c0969b
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77021650"
 ---
-# <a name="tutorial-build-a-power-bi-provider-dashboard"></a>Руководство. Создание панели мониторинга для поставщика Power BI
+# <a name="tutorial-build-a-power-bi-provider-dashboard"></a>Руководство по Создание панели мониторинга для поставщика Power BI
 
 
 
@@ -144,7 +144,7 @@ ms.locfileid: "77021650"
     |Параметр|Значение|
     |---|---|
     |Имя|Имя_интерфейса|
-    |Тип|String|
+    |Тип|Строка|
 
     Щелкните **Сохранить**. 
 

@@ -7,18 +7,20 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 11/07/2019
 ms.author: abnarain
-ms.openlocfilehash: b8492e8934c782451fb77d5a0ff56b96c34c9a00
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f298b331d53eb8bab67a6f99194065dc5f889236
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75439874"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81414895"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок в локальной среде выполнения интеграции
 
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 В этой статье рассматриваются распространенные методы устранения неполадок для локальной среды выполнения интеграции в фабрике данных Azure.
 
-## <a name="common-errors-and-resolutions"></a>Распространенные ошибки и способы их устранения
+## <a name="common-errors-and-resolutions"></a>Распространенные ошибки ASR и способы их устранения
 
 ### <a name="error-message-self-hosted-integration-runtime-cant-connect-to-cloud-service"></a>Сообщение об ошибке: локальной среде выполнения интеграции не удается подключиться к облачной службе
 
@@ -28,7 +30,7 @@ ms.locfileid: "75439874"
 
 Локальная среда выполнения интеграции не может подключиться к службе фабрики данных (серверной части). Эта проблема обычно вызвана параметрами сети в брандмауэре.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
 1. Проверьте, запущена ли служба среды выполнения интеграции.
     
@@ -43,7 +45,7 @@ ms.locfileid: "75439874"
     ```
         
    > [!NOTE]     
-   > URL-адрес службы может отличаться в зависимости от расположения фабрики данных. URL-адрес службы можно найти в **пользовательском интерфейсе ADF** > **подключения** > **среды выполнения интеграции** > изменить локальные **узлы** **IR** >  > **просмотра URL-адресов служб**.
+   > URL-адрес службы может отличаться в зависимости от расположения фабрики данных. URL-адрес службы можно найти в разделе "**подключения** >  **пользовательского интерфейса** > ADF**среды выполнения** > интеграции" изменить локальные**узлы** > **IR** > **Просмотр URL-адресов служб**.
             
     Ниже приведен ожидаемый ответ.
             
@@ -52,8 +54,8 @@ ms.locfileid: "75439874"
 1. Если ожидаемый ответ не получен, используйте один из следующих методов в зависимости от ситуации.
             
     * Если вы получаете сообщение "удаленное имя не удалось разрешить", существует проблема с DNS-именем. Чтобы устранить эту проблему, обратитесь к команде сети.
-    * Если появляется сообщение "сертификат SSL/TLS не является доверенным", проверьте, является ли сертификат для https://wu2.frontend.clouddatahub.net/ доверенным на компьютере, а затем установите открытый сертификат с помощью диспетчера сертификатов. Это действие должно устранить эту ошибку.
-    * Перейдите в **окно просмотра событий Windows > (журналы)**  > **приложения и службы журналы** > **Integration Runtime** и проверьте на наличие ошибок, вызванных DNS, правилом брандмауэра или корпоративными параметрами сети. (Если вы обнаружите такой сбой, принудительно Закройте подключение.) Так как в каждой компании настроены параметры сети, обратитесь к группе сети, чтобы устранить эти проблемы.
+    * Если появляется сообщение "сертификат SSL/TLS не является доверенным", проверьте, https://wu2.frontend.clouddatahub.net/ является ли сертификат доверенным на компьютере, а затем установите открытый сертификат с помощью диспетчера сертификатов. Это действие должно устранить эту ошибку.
+    * Перейдите в **Windows** > **окно просмотра событий Windows (журналы)** >  > **журналы приложений и служб****Integration Runtime** и проверьте наличие ошибок, вызванных DNS, правилом брандмауэра или корпоративными параметрами сети. (Если вы обнаружите такой сбой, принудительно Закройте подключение.) Так как в каждой компании настроены параметры сети, обратитесь к группе сети, чтобы устранить эти проблемы.
 
 1. Если в локальной среде выполнения интеграции настроен параметр "Proxy", убедитесь, что прокси-сервер имеет доступ к конечной точке службы. Пример команды см. в разделе [PowerShell, веб-запросы и прокси](https://stackoverflow.com/questions/571429/powershell-web-requests-and-proxies).    
                 
@@ -80,9 +82,9 @@ ms.locfileid: "75439874"
 
 > [!NOTE] 
 > Вопросы прокси-сервера:
-> * Убедитесь, что прокси-сервер должен быть размещен в списке надежных получателей. Если это так, убедитесь, что [эти домены](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations#firewall-requirements-for-on-premisesprivate-network) находятся в списке Надежные получатели.
-> * Проверьте, является ли сертификат TLS/SSL "wu2.frontend.clouddatahub.net/" доверенным на прокси-сервере.
-> * Если вы используете Active Directoryную проверку подлинности на прокси-сервере, измените учетную запись службы на учетную запись пользователя, которая может обращаться к прокси-серверу как "служба Integration Runtime".
+> *    Убедитесь, что прокси-сервер должен быть размещен в списке надежных получателей. Если это так, убедитесь, что [эти домены](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations#firewall-requirements-for-on-premisesprivate-network) находятся в списке Надежные получатели.
+> *    Проверьте, является ли сертификат TLS/SSL "wu2.frontend.clouddatahub.net/" доверенным на прокси-сервере.
+> *    Если вы используете Active Directoryную проверку подлинности на прокси-сервере, измените учетную запись службы на учетную запись пользователя, которая может обращаться к прокси-серверу как "служба Integration Runtime".
 
 ### <a name="error-message-self-hosted-integration-runtime-node-logical-shir-is-in-inactive-running-limited-state"></a>Сообщение об ошибке: узел локальной среды выполнения интеграции/логический Шир находится в неактивном состоянии или "выполняется (ограничено)"
 
@@ -94,9 +96,9 @@ ms.locfileid: "75439874"
 
 Такое поведение возникает, когда узлы не могут взаимодействовать друг с другом.
 
-#### <a name="resolution"></a>Разрешение
+#### <a name="resolution"></a>Решение
 
-1. Войдите на виртуальную машину, размещенную на узле. В разделе **журналы приложений и служб** > **Integration Runtime**, откройте Просмотр событий и отфильтруйте все журналы ошибок.
+1. Войдите на виртуальную машину, размещенную на узле. В разделе >  **журналы приложений и служб****Integration Runtime**Откройте Просмотр событий и отфильтруйте все журналы ошибок.
 
 1. Проверьте, содержит ли журнал ошибок следующую ошибку: 
     
@@ -117,7 +119,7 @@ ms.locfileid: "75439874"
         
    ![Command-line error](media/self-hosted-integration-runtime-troubleshoot-guide/command-line-error.png)
         
-1.  Check whether the error log contains the following:
+1.    Check whether the error log contains the following:
 
     ```Error log: Cannot connect to worker manager: net.tcp://xxxxxx:8060/ExternalService.svc/ No DNS entries exist for host azranlcir01r1. No such host is known Exception detail: System.ServiceModel.EndpointNotFoundException: No DNS entries exist for host xxxxx. ---> System.Net.Sockets.SocketException: No such host is known at System.Net.Dns.GetAddrInfo(String name) at System.Net.Dns.InternalGetHostByName(String hostName, Boolean includeIPv6) at System.Net.Dns.GetHostEntry(String hostNameOrAddress) at System.ServiceModel.Channels.DnsCache.Resolve(Uri uri) --- End of inner exception stack trace --- Server stack trace: at System.ServiceModel.Channels.DnsCache.Resolve(Uri uri)```
     

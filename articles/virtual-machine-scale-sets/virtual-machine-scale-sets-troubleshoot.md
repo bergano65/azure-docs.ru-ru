@@ -1,23 +1,23 @@
 ---
 title: Устранение неполадок автомасштабирования с помощью масштабируемых наборов виртуальных машин
 description: Устранение неполадок при автомасштабировании масштабируемых наборов виртуальных машин. Описание типичных проблем и способов их устранения.
-author: mayanknayar
-tags: azure-resource-manager
-ms.assetid: c7d87b72-ee24-4e52-9377-a42f337f76fa
+author: avirishuv
+ms.author: avverma
+ms.topic: troubleshooting
 ms.service: virtual-machine-scale-sets
-ms.tgt_pltfrm: windows
-ms.topic: conceptual
+ms.subservice: autoscale
 ms.date: 11/16/2017
-ms.author: manayar
-ms.openlocfilehash: 923967a902f611ce845fbdc096fd2c02e681bb6e
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviwer: jushiman
+ms.custom: avverma
+ms.openlocfilehash: 2ef50704d96cc51881594c778d1a4b109a1eae82
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76272428"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125151"
 ---
 # <a name="troubleshooting-autoscale-with-virtual-machine-scale-sets"></a>Устранение неполадок при автомасштабировании масштабируемых наборов виртуальных машин
-**Описание проблемы**. Вы создали в Azure Resource Manager инфраструктуру автомасштабирования с помощью масштабируемых наборов виртуальных машин (например, развернув шаблон, похожий на этот: https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-bottle-autoscale ) и установили определенные правила масштабирования. Все работает великолепно, но независимо от уровня нагрузки на виртуальные машины автомасштабирование не выполняется.
+**Описание проблемы**. Вы создали в Azure Resource Manager инфраструктуру автомасштабирования с помощью масштабируемых наборов виртуальных машин (например, развернув шаблон, похожий на этот: https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-bottle-autoscale) и установили определенные правила масштабирования. Все работает великолепно, но независимо от уровня нагрузки на виртуальные машины автомасштабирование не выполняется.
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 Вот некоторые моменты, которые следует проверить в такой ситуации.

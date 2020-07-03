@@ -13,10 +13,10 @@ ms.date: 07/18/2019
 ms.author: curtand
 ms.custom: user-help
 ms.openlocfilehash: 7d1d27cede6c593150d3937bb3aa0ca59394eea9
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77062172"
 ---
 # <a name="sign-in-using-two-step-verification-or-security-info"></a>Вход с помощью двухфакторной проверки подлинности или сведений для защиты
@@ -88,7 +88,7 @@ ms.locfileid: "77062172"
 
 3. При необходимости можно обновить свои методы проверки, как только вы вернетесь в свою учетную запись. Дополнительные сведения о добавлении или изменении методов см. в статье [Управление параметрами двухфакторной проверки подлинности](multi-factor-authentication-end-user-manage-settings.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительную информацию о сведениях для защиты см. в [этой статье](user-help-security-info-overview.md).
 

@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: 598fdd5e3682226253ef8f2611ede2bbeba596f7
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 867c011cb3086cab736d17501e72bc477d0d2889
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190440"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82160006"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -35,14 +35,14 @@ ms.locfileid: "77190440"
 Сведения об этом см. в статье [Приобретение и настройка имени личного домена для службы приложений Azure](manage-custom-dns-buy-domain.md).
 
 
-## <a name="how-do-i-upload-and-configure-an-existing-ssl-certificate-for-my-web-app"></a>Как загрузить и настроить существующий сертификат SSL для веб-приложения?
+## <a name="how-do-i-upload-and-configure-an-existing-tlsssl-certificate-for-my-web-app"></a>Разделы справки отправить и настроить существующий сертификат TLS/SSL для моего веб-приложения?
 
-Сведения о том, как отправить и настроить существующий пользовательский SSL-сертификат, см. в статье [Добавление SSL-сертификата в приложение службы приложений](configure-ssl-certificate.md).
+Сведения о том, как отправить и настроить существующий настраиваемый сертификат TLS/SSL, см. в статье [Добавление сертификата TLS/SSL в приложение службы приложений](configure-ssl-certificate.md).
 
 
-## <a name="how-do-i-purchase-and-configure-a-new-ssl-certificate-in-azure-for-my-web-app"></a>Как приобрести и настроить новый сертификат SSL в Azure для веб-приложения?
+## <a name="how-do-i-purchase-and-configure-a-new-tlsssl-certificate-in-azure-for-my-web-app"></a>Разделы справки приобрести и настроить новый сертификат TLS/SSL в Azure для моего веб-приложения?
 
-Сведения об этом см. в статье [Приобретение и настройка сертификата SSL для службы приложений Azure](configure-ssl-certificate.md).
+Чтобы узнать, как приобрести и настроить сертификат TLS/SSL для веб-приложения службы приложений, см. статью [Добавление сертификата TLS/SSL в приложение службы приложений](configure-ssl-certificate.md).
 
 
 ## <a name="how-do-i-move-application-insights-resources"></a>Как перемещать ресурсы Application Insights?
@@ -63,7 +63,7 @@ ms.locfileid: "77190440"
 2. В разделе **Параметры приложения** добавьте параметр:
     * Ключ = WEBSITE_TIME_ZONE
     * Значение = *требуемый часовой пояс*
-3. Нажмите кнопку **Сохранить**.
+3. Щелкните **Сохранить**.
 
 Для служб приложений, работающих в Windows, см. столбец **TimeZone** в статье [по умолчанию часовых поясов](https://docs.microsoft.com/windows-hardware/manufacture/desktop/default-time-zones) для принятых значений. Для служб приложений, работающих в Linux, задайте [имя базы данных](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) в качестве значения часового пояса. Ниже приведен пример имени базы данных с именем: America/Адак.
 
@@ -84,7 +84,7 @@ ms.locfileid: "77190440"
 
 ## <a name="how-do-i-get-a-reserved-or-dedicated-inbound-ip-address-for-my-web-app"></a>Как получить зарезервированный или выделенный входящий IP-адрес для веб-приложения?
 
-Настройте выделенный или зарезервированный IP-адрес для входящих вызовов, поступающих на веб-сайт приложения Azure, установите и настройте сертификат SSL на основе IP-адресов.
+Чтобы настроить выделенный или зарезервированный IP-адрес для входящих вызовов веб-сайта приложения Azure, установите и настройте сертификат TLS/SSL на основе IP-адреса.
 
 Чтобы использовать выделенный или зарезервированный IP-адрес для входящих вызовов, требуется план службы приложений категории "Базовый" или выше.
 
@@ -105,7 +105,7 @@ ms.locfileid: "77190440"
 
 ## <a name="how-do-i-remove-a-header-from-the-http-response"></a>Как удалить заголовок ответа HTTP?
 
-Чтобы удалить заголовки из HTTP-ответа, обновите файл сайта web.config. Дополнительные сведения см. в статье [Remove standard server headers on your Azure websites](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) (Удаление стандартных заголовков сервера на веб-сайтах Azure).
+Чтобы удалить заголовки из HTTP-ответа, обновите файл Web. config сайта. Дополнительные сведения см. в статье [Remove standard server headers on your Azure websites](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) (Удаление стандартных заголовков сервера на веб-сайтах Azure).
 
 ## <a name="is-app-service-compliant-with-pci-standard-30-and-31"></a>Соответствует ли служба приложений стандарту PCI версий 3.0 и 3.1?
 
@@ -125,7 +125,7 @@ ms.locfileid: "77190440"
 
 Просмотр журналов веб-задания
 
-1. Перейдите на [веб-сайт Kudu](https://*yourwebsitename*.scm.azurewebsites.net).
+1. Войдите на **веб-сайт KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net`).
 2. Выберите веб-задание.
 3. Нажмите кнопку **Переключить выходные данные**.
 4. Чтобы загрузить выходной файл, выберите ссылку **загрузки**.
@@ -141,7 +141,7 @@ ms.locfileid: "77190440"
 Exception: System.Data.Entity.Core.EntityException: The underlying provider failed on Open. —> System.OverflowException: Arithmetic operation resulted in an overflow. or (64 bit Web app) System.OverflowException: Array dimensions exceeded supported range, at System.Data.SqlClient.TdsParser.ConsumePreLoginHandshake
 ```
 
-### <a name="resolution"></a>Решение
+### <a name="resolution"></a>Разрешение
 
 Исключение было порождено из-за проблемы с диспетчером гибридных подключений, которая затем была исправлена. Не забудьте [обновить диспетчер гибридных подключений](https://go.microsoft.com/fwlink/?LinkID=841308), чтобы устранить эту проблему.
 
@@ -183,11 +183,11 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 ### <a name="f12-console-output"></a>Вывод F12 на консоль
 
 1. Выберите вкладку **Консоль**.
-2. Выберите все вкладки с элементами больше нуля (**Ошибка**, **Предупреждение** или **Информация**). Если вкладка не выбрана, при перемещении указателя мыши за пределы значка вкладки он станет черным или серым.
+2. Выберите все вкладки с элементами больше нуля (**Ошибка**, **Предупреждение** или **Информация**). Если вкладка не выбрана, значок табуляции отображается серым или черным цветом при перемещении курсора из него.
 3. Щелкните правой кнопкой мыши в области сообщений на панели и выберите **Копировать все**.
 4. Вставьте скопированный текст в файл и сохраните файл.
 
-Чтобы просмотреть HAR-файл, можно использовать [средство просмотра HAR](https://www.softwareishard.com/har/viewer/).
+Чтобы просмотреть HAR-файл, можно использовать [средство просмотра HAR](http://www.softwareishard.com/har/viewer/).
 
 ## <a name="why-do-i-get-an-error-when-i-try-to-connect-an-app-service-web-app-to-a-virtual-network-that-is-connected-to-expressroute"></a>Почему при попытке подключить веб-приложение службы приложений к виртуальной сети с ExpressRoute отображается сообщение об ошибке?
 
@@ -199,7 +199,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 
 В настоящее время нельзя подключить веб-приложение службы приложений к виртуальной сети со шлюзом статической маршрутизации (на основе политики). Если необходимая виртуальная сеть уже существует, перед подключением приложения в ней необходимо активировать VPN-подключение типа "точка — сеть", использующее шлюз с динамической маршрутизацией. Если шлюз настроен для статической маршрутизации, активировать VPN-подключение "точка-сеть" нельзя. 
 
-Дополнительные сведения см. в разделе [Приступая к работе](web-sites-integrate-with-vnet.md#getting-started).
+Дополнительные сведения см. в разделе [Приступая к работе](web-sites-integrate-with-vnet.md).
 
 ## <a name="in-my-app-service-environment-why-can-i-create-only-one-app-service-plan-even-though-i-have-two-workers-available"></a>Почему в среде службы приложений можно создать только один план службы приложений, даже если доступны две рабочие роли?
 
@@ -212,7 +212,7 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 Иногда при создании среды службы приложений происходят сбои. В таких случаях в журналах действий отображается следующее сообщение об ошибке:
 ```
 ResourceID: /subscriptions/{SubscriptionID}/resourceGroups/Default-Networking/providers/Microsoft.Web/hostingEnvironments/{ASEname}
-Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provision operation did not complete within the allowed timeout period.”}}
+Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provision operation did not complete within the allowed timeout period."}}
 ```
 
 Чтобы устранить эту проблему, убедитесь в отсутствии какого-либо из условий ниже.
@@ -248,7 +248,7 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 
 ## <a name="how-do-i-configure-a-custom-domain-name-for-an-app-service-web-app-that-uses-traffic-manager"></a>Как настроить имя пользовательского домена для веб-приложения службы приложений, использующего диспетчер трафика?
 
-Чтобы узнать, как использовать имя пользовательского домена для веб-приложения службы приложений с диспетчером трафика Azure для балансировки нагрузки, см. статью [Настройка личного доменного имени для веб-приложения в службе приложений Azure, использующей диспетчер трафика](web-sites-traffic-manager-custom-domain-name.md).
+Чтобы узнать, как использовать имя пользовательского домена для веб-приложения службы приложений с диспетчером трафика Azure для балансировки нагрузки, см. статью [Настройка личного доменного имени для веб-приложения в службе приложений Azure, использующей диспетчер трафика](configure-domain-traffic-manager.md).
 
 ## <a name="my-app-service-certificate-is-flagged-for-fraud-how-do-i-resolve-this"></a>Мой сертификат службы приложений помечен как мошеннический. Как решить эту проблему?
 
@@ -256,7 +256,7 @@ Error:{"error":{"code":"ResourceDeploymentFailure","message":"The resource provi
 
 При проверке домена после покупки сертификата службы приложений может появиться следующее сообщение:
 
-"Сертификат помечен как возможно мошеннический. Запрос находится на рассмотрении. Если сертификат не станет доступным для использования в течение 24 часов, обратитесь в службу поддержки Azure"
+"Сертификат помечен как возможно мошеннический. Запрос находится на рассмотрении. Если сертификат не станет доступным для использования в течение 24 часов, обратитесь в службу поддержки Azure"
 
 Как указано в сообщении, проверка на мошенничество может занять до 24 часов. Сообщение будет отображаться в течение этого периода.
 
@@ -282,7 +282,7 @@ Invoke-AzResourceAction -ResourceGroupName "<App Service Certificate Resource Gr
 
 ## <a name="how-do-i-redirect-the-default-azurewebsitesnet-domain-to-my-azure-web-apps-custom-domain"></a>Как перенаправить домен по умолчанию *.azurewebsites.net в пользовательский домен моего веб-приложения Azure?
 
-При создании нового веб-сайта с помощью функции "Веб-приложения" в Azure домен *sitename*.azurewebsites.net по умолчанию присваивается вашему сайту. Если вы добавляете к сайту имя пользовательского узла и не хотите предоставлять пользователям доступ к домену по умолчанию *.azurewebsites.net, можно перенаправить URL-адрес по умолчанию. Чтобы узнать, как перенаправлять весь трафик с домена веб-сайта по умолчанию в пользовательский домен, см. статью [Redirect the default domain to your custom domain in Azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/) (Перенаправление домена по умолчанию в пользовательский домен в службе "Веб-приложения" в Azure).
+При создании нового веб-сайта с помощью функции "Веб-приложения" в Azure домен *sitename*.azurewebsites.net по умолчанию присваивается вашему сайту. Если вы добавите на сайт пользовательское имя узла и не хотите, чтобы пользователи могли получить доступ к домену *. azurewebsites.net по умолчанию, можно перенаправить URL-адрес по умолчанию. Чтобы узнать, как перенаправлять весь трафик с домена веб-сайта по умолчанию в пользовательский домен, см. статью [Redirect the default domain to your custom domain in Azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/) (Перенаправление домена по умолчанию в пользовательский домен в службе "Веб-приложения" в Azure).
 
 ## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>Как определить, какая версия платформы .NET установлена в службе приложений?
 

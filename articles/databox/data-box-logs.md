@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: article
 ms.date: 08/08/2019
 ms.author: alkohli
-ms.openlocfilehash: 72e1d3b0ad72b1e68b88eb0550cbe839ade9d929
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 74d38af4a64a184b26bd6ba1105db0d2530d8ba6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69535171"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81676411"
 ---
 # <a name="tracking-and-event-logging-for-your-azure-data-box-and-azure-data-box-heavy"></a>Отслеживание и ведение журнала событий для Azure Data Box и Azure Data Box Heavy
 
@@ -23,9 +23,9 @@ ms.locfileid: "69535171"
 
 | Стадия заказа Data Box       | Средство для мониторинга и аудита                                                                        |
 |----------------------------|------------------------------------------------------------------------------------------------|
-| Создать заказ               | [Настройка контроля доступа в порядке через RBAC](#set-up-access-control-on-the-order)                                                    |
-| Порядок обработки            | [Отслеживание порядка](#track-the-order) по <ul><li> портала Azure </li><li> Веб-сайт перевозчика для доставки </li><li>Уведомления по электронной почте</ul> |
-| Настроить устройство              | [Журналы действий](#query-activity-logs-during-setup) доступа к учетным данным устройства                                              |
+| Создание заказа               | [Настройка контроля доступа в порядке через RBAC](#set-up-access-control-on-the-order)                                                    |
+| Порядок обработки            | [Отслеживание порядка](#track-the-order) по <ul><li> Портал Azure </li><li> Веб-сайт перевозчика для доставки </li><li>Уведомления по электронной почте</ul> |
+| Настройка устройства              | [Журналы действий](#query-activity-logs-during-setup) доступа к учетным данным устройства                                              |
 | Копирование данных на устройство        | [Просмотр файлов *Error. XML* ](#view-error-log-during-data-copy) для копирования данных                                                             |
 | Подготовка к отправке            | [Проверка файлов спецификации](#inspect-bom-during-prepare-to-ship) или файлов манифеста на устройстве                                      |
 | Отправка данных в Azure       | [Просмотрите журналы копирования](#review-copy-log-during-upload-to-azure) для ошибок при отправке данных в центре Azure                         |
@@ -47,7 +47,7 @@ ms.locfileid: "69535171"
 - Назначение роли на уровне заказа. Пользователь обладает только такими разрешениями, которые определены ролями для взаимодействия только с определенным порядком Data Box и ничего другого.
 - Назначение роли на уровне группы ресурсов пользователь имеет доступ ко всем Data Boxным заказам в группе ресурсов.
 
-Дополнительные сведения о предлагаемом использовании RBAC см. в разделе рекомендации [по использованию RBAC](../role-based-access-control/overview.md#best-practice-for-using-rbac).
+Дополнительные сведения о предлагаемом использовании RBAC см. в статье рекомендации [по использованию Azure RBAC](../role-based-access-control/best-practices.md).
 
 ## <a name="track-the-order"></a>Отслеживание заказа
 
@@ -352,7 +352,7 @@ The authentication information fields provide detailed information about this sp
 ```
 
 
-## <a name="download-order-history"></a>Скачать журнал заказов
+## <a name="download-order-history"></a>Скачивание журнала заказов
 
 Журнал заказов доступен в портал Azure. Если заказ завершен и очистка устройства (очистки данных с дисков) завершена, перейдите к заказу устройства и перейдите к **сведениям о заказе**. Доступен параметр **Скачать журнал заказов**. Дополнительные сведения см. в статье [История заказа загрузки](data-box-portal-admin.md#download-order-history).
 
@@ -411,6 +411,6 @@ Audit Logs Path      : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 BOM Files Path       : azuredatabox-chainofcustodylogs\<GUID>\<Device-serial-no>
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [устранять неполадки Data Box и Data Box Heavy](data-box-troubleshoot.md).

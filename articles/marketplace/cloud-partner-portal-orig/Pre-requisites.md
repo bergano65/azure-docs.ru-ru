@@ -1,20 +1,18 @@
 ---
 title: Предварительные требования для проверки приложения
 description: Устаревшая статья CPP, связанная со статьей ПК; WAS — "список предварительных требований для приложения контроль".
-services: Azure, Marketplace, Cloud Partner Portal,
-author: ChJenk
-manager: Ricardo.Villalobos
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 98a50481612d93a9a2d9d7d5bfb04bfa22db6e00
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: e907c51e69b5b57da9986fa017d59fed2e58320d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819805"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80280581"
 ---
 # <a name="prerequisites-for-application-curation"></a>Предварительные требования для проверки приложения
 

@@ -5,14 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: troubleshooting
-ms.date: 12/13/2019
+ms.date: 03/31/2020
 ms.author: helohr
-ms.openlocfilehash: bcf22ec1eaf05f5dda6396cca017fa21fd6ddbf5
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+manager: lizross
+ms.openlocfilehash: 76348a0aee48cc6d768e8233e376f266eca31917
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75968177"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83006000"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Устранение неполадок клиента удаленный рабочий стол
 
@@ -20,21 +21,15 @@ ms.locfileid: "75968177"
 
 ## <a name="remote-desktop-client-for-windows-7-or-windows-10-stops-responding-or-cannot-be-opened"></a>удаленный рабочий стол клиент для Windows 7 или Windows 10 перестает отвечать на запросы или не может быть открыт
 
-Используйте следующие командлеты PowerShell для очистки реестров клиента по внешнему каналу (OOB).
+Начиная с версии 1.2.790 можно сбрасывать данные пользователя на странице About или с помощью команды.
 
-```PowerShell
-Remove-ItemProperty 'HKCU:\Software\Microsoft\Terminal Server Client\Default' - Name FeedURLs
+Используйте следующую команду, чтобы удалить данные пользователя, восстановить параметры по умолчанию и отменить подписывание для всех рабочих областей.
 
-#Remove RdClientRadc registry key
-Remove-Item 'HKCU:\Software\Microsoft\RdClientRadc' -Recurse
-
-#Remove all files under %appdata%\RdClientRadc
-Remove-Item C:\Users\pavithir\AppData\Roaming\RdClientRadc\* -Recurse
+```cmd
+msrdcw.exe /reset [/f]
 ```
 
-Перейдите по адресу **%аппдата%\рдклиентрадк** и удалите все содержимое.
-
-Удалите и переустановите удаленный рабочий стол клиент для Windows 7 и Windows 10.
+Если вы используете более раннюю версию клиента удаленный рабочий стол, рекомендуется удалить и переустановить клиент.
 
 ## <a name="web-client-wont-open"></a>Веб-клиент не открывается
 
@@ -65,6 +60,12 @@ nslookup rdweb.wvd.microsoft.com
 3. Очистите кэш браузера. См. раздел [Очистка кэша браузера для браузера](https://binged.it/2RKyfdU).
 4. Откройте браузер в частном режиме.
 
+## <a name="web-client-does-not-show-my-resources"></a>Веб-клиент не отображает мои ресурсы
+
+Сначала проверьте используемую учетную запись Azure Active Directory. Если вы уже вошли в систему с учетной записью Azure Active Directory, отличной от той, которую вы хотите использовать для виртуального рабочего стола запуск, то следует либо подписать наш или использовать частное окно браузера.
+
+Если вы используете выпуск 2019 для виртуальных рабочих столов Windows, используйте ссылку на веб-клиент в [этой статье](./virtual-desktop-fall-2019/connect-web-2019.md) для подключения к ресурсам.
+
 ## <a name="web-client-stops-responding-or-disconnects"></a>Веб-клиент перестает отвечать или отключается
 
 Попробуйте подключиться с помощью другого браузера или клиента.
@@ -86,7 +87,7 @@ nslookup rdweb.wvd.microsoft.com
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
-- Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues.md).
+- Сведения об устранении неполадок при создании среды виртуальных рабочих столов Windows и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула среды и узла](troubleshoot-set-up-issues.md).
 - Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
 - Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
 - Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).

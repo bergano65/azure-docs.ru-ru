@@ -9,13 +9,13 @@ metadata:
   ms.topic: landing-page
   author: cherylmc
   ms.author: cherylmc
-  ms.date: 11/13/2019
-  ms.openlocfilehash: f004b965901f161d16034f0cea91a99c50cc2575
-  ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+  ms.date: 05/08/2020
+  ms.openlocfilehash: 02385eaefec2ed095b0922d5b098139caf56daec
+  ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/14/2019
-  ms.locfileid: "74072234"
+  ms.lasthandoff: 05/10/2020
+  ms.locfileid: "83005453"
 landingContent:
 - title: Общие сведения о Виртуальной глобальной сети
   linkLists:
@@ -27,7 +27,7 @@ landingContent:
     links:
     - text: Работа с регионами и партнерами
       url: virtual-wan-locations-partners.md
-    - text: Часто задаваемые вопросы
+    - text: ВОПРОСЫ И ОТВЕТЫ
       url: virtual-wan-faq.md
 - title: Начало работы
   linkLists:
@@ -49,15 +49,17 @@ landingContent:
     links:
     - text: Политики по умолчанию для подключения IPsec
       url: virtual-wan-ipsec.md
-- title: Архитектура
+- title: Architecture
   linkLists:
   - linkListType: concept
     links:
-    - text: Архитектура глобальной транзитной сети
-      url: virtual-wan-global-transit-network-architecture.md
     - text: Переход на Виртуальную глобальную сеть
       url: migrate-from-hub-spoke-topology.md
-- title: Справочные материалы
+    - text: Архитектура глобальной транзитной сети
+      url: virtual-wan-global-transit-network-architecture.md
+    - text: Архитектура подключения SD-WAN
+      url: sd-wan-connectivity-architecture.md
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:

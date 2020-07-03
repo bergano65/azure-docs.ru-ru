@@ -8,10 +8,10 @@ ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 384f4c2ee3021678c530aa5c98eaf4dbfd661e95
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73572276"
 ---
 # <a name="use-gateway-for-data-sources-on-an-azure-virtual-network-vnet"></a>Использование шлюза для источников данных в виртуальной сети Azure
@@ -29,7 +29,7 @@ ms.locfileid: "73572276"
 
 ## <a name="configure-alwaysusegateway-property"></a>Настройка свойства AlwaysUseGateway
 
-1. Последовательно выберите SSMS > сервер > **Свойства** > **Общие** > **Показать дополнительные (все) свойства**.
+1. В среде SSMS > Server > **Свойства** > **Общие**выберите параметр **Показывать дополнительные (все) свойства**.
 2. Для параметра **ASPaaS\AlwaysUseGateway** выберите **true**.
 
     ![Свойство AlwaysUseGateway](media/analysis-services-vnet-gateway/aas-ssms-always-property.png)

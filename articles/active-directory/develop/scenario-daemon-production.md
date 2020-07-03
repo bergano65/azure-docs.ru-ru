@@ -2,25 +2,21 @@
 title: Перемещение управляющего приложения, вызывающего веб-API, в рабочую среду — платформа Microsoft Identity | Службы
 description: Узнайте, как переместить управляющее приложение, которое вызывает веб-API в рабочую среду.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: db5f52c95daf4e93c140b4c93f39dad19971319d
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: e5d25169aa3daee33a9f02e605cbff91776dc7f1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775205"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885435"
 ---
 # <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Приложение управляющей программы, вызывающее веб-API — переместить в рабочую среду
 
@@ -41,7 +37,7 @@ ms.locfileid: "76775205"
 
 Вот несколько ссылок, которые помогут вам получить дополнительные сведения:
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 - Краткое руководство. [Получение маркера и вызов Microsoft Graph API из консольного приложения с помощью удостоверения приложения](./quickstart-v2-netcore-daemon.md).
 - Справочная документация по:
@@ -60,11 +56,11 @@ ms.locfileid: "76775205"
 
     ![Топология](media/scenario-daemon-app/damon-app-sample-web.svg)
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Попробуйте [получить маркер и вызвать Microsoft Graph API из консольного приложения Python, используя удостоверение приложения](./quickstart-v2-python-daemon.md).
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 MSAL Java в настоящее время находится в общедоступной предварительной версии. Дополнительные сведения см. в статье [MSAL Java dev Samples](https://github.com/AzureAD/microsoft-authentication-library-for-java/tree/dev/src/samples).
 

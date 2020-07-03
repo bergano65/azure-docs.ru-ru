@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 96a4afff3e58bfa1ebf661909f380aa525fea76e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 6c8ceeaf49d8ebfa15a83118e8b518190f6ff85e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73820138"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80241056"
 ---
 # <a name="deploy-opc-twin-module-and-dependencies-from-scratch"></a>Развертывание модуля и зависимостей OPC двойника с нуля
 
@@ -109,25 +109,25 @@ ms.locfileid: "73820138"
 
 Самый простой способ развертывания модулей на Azure IoT Edge устройстве шлюза — это портал Azure.  
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
-1. Развернуть [зависимости](howto-opc-twin-deploy-dependencies.md) OPC двойника и получить полученный файл `.env`. Обратите внимание на развернутое `hub name` переменной `PCS_IOTHUBREACT_HUB_NAME` в результирующем `.env` файле.
+1. Развернуть [зависимости](howto-opc-twin-deploy-dependencies.md) OPC двойника и получить получившийся `.env` файл. Обратите внимание `hub name` на развернутую `PCS_IOTHUBREACT_HUB_NAME` переменную `.env` в результирующем файле.
 
-2. Зарегистрируйте и запустите [Linux](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux) или [Windows](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-windows) IOT Edge Gateway и запишите его `device id`.
+2. Зарегистрируйте и запустите шлюз [Linux](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-linux) или [Windows](https://docs.microsoft.com/azure/iot-edge/how-to-install-iot-edge-windows) IOT EDGE и запишите `device id`его.
 
 ### <a name="deploy-to-an-edge-device"></a>Развертывание на пограничном устройстве
 
-1. Войдите на [портал Azure](https://portal.azure.com/) и перейдите к своему Центру Интернета вещей.
+1. Войдите в [портал Azure](https://portal.azure.com/) и перейдите в центр Интернета вещей.
 
 2. Выберите **IOT Edge** в меню слева.
 
 3. Щелкните идентификатор целевого устройства в списке устройств.
 
-4. Щелкните **Set Modules** (Настроить модули).
+4. Выберите **задать модули**.
 
 5. В разделе **модули развертывания** страницы выберите **Добавить** и **IOT Edge модуль.**
 
-6. В диалоговом окне **IOT Edge пользовательский модуль** используйте `opctwin` в качестве имени модуля, а затем укажите *универсальный код ресурса (URI) образа* контейнера.
+6. В диалоговом окне **IOT Edge пользовательский модуль** используйте `opctwin` в качестве имени для модуля, а затем укажите *универсальный код ресурса (URI) образа* контейнера.
 
    ```bash
    mcr.microsoft.com/iotedge/opc-twin:latest
@@ -143,7 +143,7 @@ ms.locfileid: "73820138"
 
 7. Выберите **сохранить** и повторите шаг **5**.  
 
-8. В диалоговом окне IoT Edge пользовательский модуль используйте `opcpublisher` в качестве имени модуля, а *URI образа* контейнера — как 
+8. В диалоговом окне IoT Edge настраиваемый модуль `opcpublisher` используйте в качестве имени модуля, а *URI образа* контейнера — как 
 
    ```bash
    mcr.microsoft.com/iotedge/opc-publisher:latest
@@ -176,32 +176,32 @@ ms.locfileid: "73820138"
 
 ## <a name="deploying-using-azure-cli"></a>Развертывание с помощью Azure CLI
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 1. Установите последнюю версию [интерфейса командной строки Azure (AZ)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) [отсюда](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-### <a name="quickstart"></a>Быстрый запуск
+### <a name="quickstart"></a>Краткое руководство
 
-1. Сохраните приведенный выше манифест развертывания в файл `deployment.json`.  
+1. Сохраните приведенный выше манифест развертывания в `deployment.json` файл.  
 
 2. Следующая команда применяет конфигурацию к устройству IoT Edge:
 
-   ```bash
+   ```azurecli
    az iot edge set-modules --device-id [device id] --hub-name [hub name] --content ./deployment.json
    ```
 
-   Параметр `device id` учитывает регистр. Параметр content указывает на сохраненный ранее файл манифеста развертывания. 
+   `device id` Параметр учитывает регистр. Параметр content указывает на сохраненный ранее файл манифеста развертывания. 
     ![AZ IoT Edge Set-modules Output](https://docs.microsoft.com/azure/iot-edge/media/how-to-deploy-cli/set-modules.png)
 
 3. Завершив развертывание модулей на устройстве, вы можете просмотреть их список с помощью следующей команды:
 
-   ```bash
+   ```azurecli
    az iot hub module-identity list --device-id [device id] --hub-name [hub name]
    ```
 
    В параметре идентификатора устройства учитывается регистр. ![Выходные данные команды az iot hub module-identity list](https://docs.microsoft.com/azure/iot-edge/media/how-to-deploy-cli/list-modules.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как развернуть OPC двойника с нуля, предлагаем следующий шаг:
 

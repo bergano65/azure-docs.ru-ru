@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: iot-hub
 author: dominicbetts
 ms.service: iot-hub
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/07/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 1e919f22d5dd7975f055f262ec9ba69230aebd17
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 68260bf8aafbbe5afd46ec7dfb763eb88ee2123e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68780857"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78892978"
 ---
 В этом разделе описано, как с помощью Azure CLI создать удостоверение устройства для этой статьи. Идентификаторы устройств чувствительны к регистру.
 
@@ -22,7 +22,7 @@ ms.locfileid: "68780857"
 1. В Azure Cloud Shell выполните следующую команду, чтобы установить Microsoft Azure расширение Интернета вещей для Azure CLI:
 
     ```azurecli-interactive
-    az extension add --name azure-cli-iot-ext
+    az extension add --name azure-iot
     ```
 
 2. Создайте новое удостоверение устройства с `myDeviceId` именем и получите строку подключения устройства с помощью следующих команд:

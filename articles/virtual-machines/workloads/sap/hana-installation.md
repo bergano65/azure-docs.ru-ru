@@ -4,7 +4,7 @@ description: Установка SAP HANA на SAP HANA в Azure (крупные 
 services: virtual-machines-linux
 documentationcenter: ''
 author: hermanndms
-manager: gwallace
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c08036f16cd30a1c10963accd8d486d77c9683ee
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 4db072cf881c936db6721845e7823082388515b0
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264175"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83117127"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>Как установить и настроить SAP HANA в Azure (крупные экземпляры)
 
@@ -33,8 +33,8 @@ ms.locfileid: "76264175"
 
 Перед началом установки HANA проверьте следующее:
 - [единицы HLI](#validate-the-hana-large-instance-units);
-- [конфигурацию операционной системы](#operating-system);
-- [Конфигурация сети](#networking)
+- [конфигурация операционной системы;](#operating-system)
+- [Сетевая конфигурация](#networking)
 - [Конфигурация хранилища](#storage)
 
 
@@ -90,7 +90,7 @@ ms.locfileid: "76264175"
 Дополнительные сведения и полезные ссылки по SAP в SUSE см. ниже.
 
 - [SAP HANA на сайте SUSE Linux](https://wiki.scn.sap.com/wiki/display/ATopics/SAP+on+SUSE).
-- [Best Practice for SAP: Enqueue Replication — SAP NetWeaver on SUSE Linux Enterprise 12](https://www.suse.com/docrepcontent/container.jsp?containerId=9113) (Рекомендации по SAP. Постановка репликации в очередь — SAP NetWeaver в SUSE Linux Enterprise 12).
+- [Best Practice for SAP: Enqueue Replication — SAP NetWeaver on SUSE Linux Enterprise 12](https://www.suse.com/media/guide/SLES4SAP-NetWeaver-ha-guide-EnqRepl-12_color_en.pdf) (Рекомендации по SAP. Постановка репликации в очередь — SAP NetWeaver в SUSE Linux Enterprise 12).
 - [ClamSAP — SLES Virus Protection for SAP](https://scn.sap.com/community/linux/blog/2014/04/14/clamsap--suse-linux-enterprise-server-integrates-virus-protection-for-sap) (ClamSAP — защита от вирусов на сервере SLES для SAP) (включая SLES 12 для приложений SAP).
 
 Примечания по поддержке SAP, применимые к реализации SAP HANA на SLES 12, см. ниже.
@@ -99,7 +99,7 @@ ms.locfileid: "76264175"
 - [SAP Support Note #2205917 — SAP HANA DB Recommended OS Settings for SLES 12 for SAP Applications](https://launchpad.support.sap.com/#/notes/2205917/E) (Примечание по поддержке SAP №2205917. База данных SAP HANA: рекомендуемые параметры ОС для SLES 12 для приложений SAP).
 - [SAP Support Note #1984787 — SUSE Linux Enterprise Server 12: Installation Notes](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP №1984787. Заметки об установке SUSE Linux Enterprise Server 12).
 - [SAP Support Note #171356 — SAP Software on Linux: General Information](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP №171356. Общие сведения о ПО SAP на платформе Linux).
-- [SAP Support Note #1391070 — Linux UUID Solutions](https://launchpad.support.sap.com/#/notes/1391070) (Примечание по поддержке SAP №1391070. Решения UUID для Linux).
+- [Примечание о поддержке SAP #1391070 — решения UUID Linux](https://launchpad.support.sap.com/#/notes/1391070)
 
 [Red Hat Enterprise Linux для SAP HANA](https://www.redhat.com/en/resources/red-hat-enterprise-linux-sap-hana) — еще одно решение для запуска SAP HANA на крупных экземплярах HANA. Выпуски RHEL 7,2 и 7,3 доступны и поддерживаются. 
 
@@ -108,9 +108,9 @@ ms.locfileid: "76264175"
 
 Примечания по поддержке SAP, применимые к реализации SAP HANA на SLES 12, приведены ниже.
 
-- [SAP Support Note #2009879 — SAP HANA Guidelines for Red Hat Enterprise Linux (RHEL) Operating System](https://launchpad.support.sap.com/#/notes/2009879/E) (Примечание по поддержке SAP №2009879. Рекомендации по установке SAP HANA в ОС Red Hat Enterprise Linux (RHEL)).
+- [Примечание о поддержке SAP #2009879-SAP HANA рекомендации по использованию операционной системы Red Hat Enterprise Linux (RHEL)](https://launchpad.support.sap.com/#/notes/2009879/E)
 - [SAP Support Note #2292690 — SAP HANA DB: Recommended OS settings for RHEL 7](https://launchpad.support.sap.com/#/notes/2292690) (Примечание по поддержке SAP №2292690. База данных SAP HANA: рекомендуемые параметры операционной системы для RHEL 7).
-- [SAP Support Note #1391070 — Linux UUID Solutions](https://launchpad.support.sap.com/#/notes/1391070) (Примечание по поддержке SAP №1391070. Решения UUID для Linux).
+- [Примечание о поддержке SAP #1391070 — решения UUID Linux](https://launchpad.support.sap.com/#/notes/1391070)
 - [SAP Support Note #2228351 — Linux: SAP HANA Database SPS 11 revision 110 (or higher) on RHEL 6 or SLES 11](https://launchpad.support.sap.com/#/notes/2228351) (Примечание по поддержке SAP №2228351. Linux: база данных SAP HANA SPS 11, редакция 110 (или более поздняя), в RHEL 6 или SLES 11).
 - [SAP Support Note #2397039 — FAQ: SAP on RHEL](https://launchpad.support.sap.com/#/notes/2397039) (Примечание по поддержке SAP №2397039. Часто задаваемые вопросы: SAP в RHEL).
 - [SAP Support Note #2002167 — Red Hat Enterprise Linux 7.x: Installation and Upgrade](https://launchpad.support.sap.com/#/notes/2002167) (Примечание по поддержке SAP №1496410. Установка и обновление Red Hat Enterprise Linux 7.x).
@@ -124,19 +124,19 @@ ms.locfileid: "76264175"
 В результате потребуется отдельный сервер времени, который будут использовать серверы приложений SAP, работающие на виртуальных машинах Azure, и экземпляры баз данных SAP HANA, работающие на HANA (крупные экземпляры). Для инфраструктуры хранения в стеках крупных экземпляров время синхронизируется с серверами NTP.
 
 
-## <a name="networking"></a>Работа в сети
+## <a name="networking"></a>Сеть
 В этом разделе предполагается, что вы следовали рекомендациям по проектированию виртуальных сетей Azure и их подключению к крупным экземплярам HANA, приведенным в следующих документах:
 
-- [Обзор и описание архитектуры SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
-- [Инфраструктура и возможности подключения SAP HANA в Azure (крупные экземпляры)](hana-overview-infrastructure-connectivity.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Обзор и архитектура SAP HANA (крупные экземпляры) в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
+- [Инфраструктура и возможности подключения SAP HANA (крупные экземпляры) в Azure](hana-overview-infrastructure-connectivity.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 При проектировании сети отдельной единицы следует учитывать некоторые моменты. Каждой единице крупного экземпляра HANA выделяется два или три IP-адреса, которые назначаются соответствующему числу портов сетевого адаптера. Три IP-адреса используются в масштабируемых конфигурациях HANA или в сценарии репликации системы HANA. Один из IP-адресов, назначенных сетевому адаптеру единицы, выделяется из диапазона серверного пула IP-адресов. Дополнительные сведения см. в статье [Обзор и описание архитектуры SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture).
 
 Дополнительные сведения о Ethernet по архитектуре см. в разделе [Поддерживаемые сценарии для крупных экземпляров HANA](hana-supported-scenario.md).
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Память
 
-Структура хранилища для SAP HANA в Azure (крупные экземпляры) настраивается SAP HANA в `service management` Azure с помощью рекомендуемых рекомендаций SAP. Рекомендации описаны в техническом документе с описанием [требований к хранилищу SAP HANA](https://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html). 
+Структура хранилища для SAP HANA в Azure (крупные экземпляры) настраивается SAP HANA в Azure с `service management` помощью рекомендуемых правил SAP. Рекомендации описаны в техническом документе с описанием [требований к хранилищу SAP HANA](https://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html). 
 
 Приблизительные размеры разных томов с различными SKU крупных экземпляров HANA задокументированы в статье [Что такое SAP HANA в Azure (большие экземпляры)?](hana-overview-architecture.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
@@ -144,8 +144,8 @@ ms.locfileid: "76264175"
 
 | Использование хранилища | Имя подключения | Имя тома | 
 | --- | --- | ---|
-| Данные HANA | /hana/data/SID/mnt0000\<m > | IP хранилища: /hana_data_SID_mnt00001_tenant_vol |
-| Журнал HANA | /hana/log/SID/mnt0000\<m > | IP хранилища: /hana_log_SID_mnt00001_tenant_vol |
+| Данные HANA | /hana/data/SID/mnt0000 \< m> | IP хранилища: /hana_data_SID_mnt00001_tenant_vol |
+| Журнал HANA | /hana/log/SID/mnt0000 \< m> | IP хранилища: /hana_log_SID_mnt00001_tenant_vol |
 | Резервная копия журнала HANA | /hana/log/backups | IP хранилища: /hana_log_backups_SID_mnt00001_tenant_vol |
 | Общий HANA | /hana/shared/SID | IP хранилища: /hana_shared_SID_mnt00001_tenant_vol/shared |
 | usr/sap | /usr/sap/SID | IP хранилища: /hana_shared_SID_mnt00001_tenant_vol/usr_sap |
@@ -164,7 +164,7 @@ HANA usr/sap предоставляет общий доступ к тому. В 
 
 Кроме предоставленного хранилища можно приобрести дополнительную емкость хранилища с шагом приращения 1 ТБ. Это дополнительное хранилище добавляется к HANA (крупные экземпляры) как новые тома.
 
-Во время адаптации с SAP HANA в Azure `service management`клиент указывает идентификатор пользователя (UID) и идентификатор группы (GID) для пользователя sidadm и группы sapsys (например: 1 000 500). Во время установки системы SAP HANA необходимо использовать эти же значения. Так как вы хотите развернуть несколько экземпляров HANA, вы получите несколько наборов томов (один набор для каждого экземпляра). В результате во время развертывания необходимо определить следующие моменты:
+Во время адаптации с SAP HANA в Azure `service management` клиент указывает идентификатор пользователя (UID) и идентификатор группы (GID) для пользователя sidadm и группы sapsys (например: 1 000 500). Во время установки системы SAP HANA необходимо использовать эти же значения. Так как вы хотите развернуть несколько экземпляров HANA, вы получите несколько наборов томов (один набор для каждого экземпляра). В результате во время развертывания необходимо определить следующие моменты:
 
 - Идентификатор SID разных экземпляров HANA (на его основе получается sidadm).
 - Объемы памяти разных экземпляров HANA. Объем памяти каждого экземпляра определяет размер тома в каждом отдельном наборе томов.
@@ -211,7 +211,7 @@ HANA usr/sap предоставляет общий доступ к тому. В 
 Для изучения макета хранилища вашей архитектуры см. статью [Поддерживаемые сценарии для крупных экземпляров HANA](hana-supported-scenario.md).
 
 
-**Дальнейшие действия**
+**Следующие шаги**
 
 - См. статью [Пример установки SAP HANA на крупных экземплярах HANA](hana-example-installation.md).
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/11/2020
 ms.author: yushwang
 ms.openlocfilehash: a95cd6ea85a16b0e0bf5f67f5dfc20d57f11463b
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77198107"
 ---
 # <a name="add-a-site-to-site-connection-to-a-vnet-with-an-existing-vpn-gateway-connection-classic"></a>Добавление подключения типа "сеть-сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза (классическая модель)
@@ -41,7 +41,7 @@ ms.locfileid: "77198107"
 
 Если к вашей виртуальной сети уже подключен статический шлюз, вы можете изменить его тип на динамический, не перестраивая виртуальную сеть, чтобы обеспечить многосайтовое подключение. Прежде чем менять тип маршрутизации, убедитесь, что локальный VPN-шлюз поддерживает конфигурации VPN на основе маршрутов.
 
-![схема с несколькими сайтами](./media/vpn-gateway-multi-site/multisite.png "несколько сайтов")
+![схема многосайтового подключения](./media/vpn-gateway-multi-site/multisite.png "несколько сайтов")
 
 ## <a name="points-to-consider"></a>Что необходимо учесть
 
@@ -74,7 +74,7 @@ ms.locfileid: "77198107"
 1. Создайте виртуальную сеть с VPN-подключением типа "сеть — сеть" с помощью указаний в [этой статье](vpn-gateway-site-to-site-create.md).  
 2. Настройте шлюз с динамической маршрутизацией с помощью следующей процедуры: [Настройка VPN-шлюза](vpn-gateway-configure-vpn-gateway-mp.md). Не забудьте выбрать **динамическую маршрутизацию** в качестве типа шлюза.
 
-## <a name="export"></a>2. Экспортируйте файл конфигурации сети.
+## <a name="2-export-the-network-configuration-file"></a><a name="export"></a>2. Экспортируйте файл конфигурации сети.
 
 Откройте консоль PowerShell с повышенными правами. Чтобы переключиться на управление службами, используйте следующую команду:
 
@@ -172,7 +172,7 @@ Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 ## <a name="6-download-keys"></a>6. скачивание ключей
 После добавления новых туннелей используйте командлет PowerShell "Get-AzureVNetGatewayKey", чтобы получить общие ключи IPsec/IKE для каждого туннеля.
 
-Например:
+Пример:
 
 ```powershell
 Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site1"
@@ -216,6 +216,6 @@ Get-AzureVnetConnection -VNetName VNET1
     OperationStatus           : Succeeded
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы больше узнать о VPN-шлюзах, см. статью [Шлюзы VPN](vpn-gateway-about-vpngateways.md).

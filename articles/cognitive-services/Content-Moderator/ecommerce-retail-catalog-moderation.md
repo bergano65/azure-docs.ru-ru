@@ -1,5 +1,5 @@
 ---
-title: Руководство. Модерация изображений товаров для электронной коммерции с помощью Content Moderator
+title: Руководство по Модерация изображений товаров для электронной коммерции с помощью Content Moderator
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве описано, как настроить приложение, которое анализирует изображения товаров, и классифицирует их по указанным меткам (с использованием Компьютерного зрения Azure и Пользовательского визуального распознавания). Добавляйте теги к изображениям, нежелательным для дальнейшего просмотра (с помощью Azure Content Moderator).
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.date: 01/27/2020
 ms.author: pafarley
 ms.openlocfilehash: 5e74eda9e30c536c0eba4e847019344c87e10cce
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76774335"
 ---
-# <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство. Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
+# <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство по Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
 В этом руководстве описано, как с помощью служб Azure Cognitive Services, включая Content Moderator, классифицировать и модерировать изображения товаров в сценарии электронной коммерции. Вы будете использовать Компьютерное зрение и Пользовательское визуальное распознавание для присвоения изображениям тегов (меток) с последующим проведением командной проверки. В основе интеллектуальной системы модерации лежит сочетание технологий машинного обучения в Content Moderator и усилий людей из команды проверки.
 

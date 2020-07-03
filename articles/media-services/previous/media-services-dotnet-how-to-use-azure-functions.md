@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 618acae10b874eb5ebd5b6da7fe081368528dbd8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61217531"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79251171"
 ---
 # <a name="develop-azure-functions-with-media-services"></a>Разработка Функций Azure с помощью служб мультимедиа
 
@@ -27,7 +27,7 @@ ms.locfileid: "61217531"
 
 Если вы хотите изучить и развернуть существующие службы "Функции Azure", использующие службы мультимедиа Azure, ознакомьтесь с [функциями Azure для служб мультимедиа](https://github.com/Azure-Samples/media-services-dotnet-functions-integration). Этот репозиторий содержит примеры, которые используют службы мультимедиа, чтобы показать рабочие процессы, связанные с приемом содержимого напрямую от хранилища BLOB-объектов, шифрованием и записью содержимого обратно в хранилище BLOB-объектов. В нем также содержатся примеры отслеживания уведомлений заданий через объекты webhook и очереди Azure. Можно также разработать свои функции на основе примеров из репозитория [Функций Azure для служб мультимедиа](https://github.com/Azure-Samples/media-services-dotnet-functions-integration). Для развертывания функций нажмите кнопку **Развертывание в Azure**.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Чтобы создавать функции, вам нужна активная учетная запись Azure. Если у вас ее нет, воспользуйтесь [бесплатной учетной записью Azure](https://azure.microsoft.com/free/).
 - Если вы хотите создать Функции Azure, которые выполняют определенные действия в учетной записи служб мультимедиа Azure (AMS) или прослушивают события, отправляемые службами мультимедиа, вам необходимо создать учетную запись AMS, следуя приведенным [здесь](media-services-portal-create-account.md) инструкциям.
@@ -46,13 +46,13 @@ ms.locfileid: "61217531"
 
 В функции, определенной в этой статье, предполагается, что в параметрах приложения настроены следующие переменные среды.
 
-**AMSAADTenantDomain**. Конечная точка клиента Azure AD. Дополнительные сведения о подключении к AMS API см. в [этой статье](media-services-use-aad-auth-to-access-ams-api.md).
+**AMSAADTenantDomain** — конечная точка клиента Azure AD. Дополнительные сведения о подключении к AMS API см. в [этой статье](media-services-use-aad-auth-to-access-ams-api.md).
 
-**AMSRESTAPIEndpoint**.  Универсальный код ресурса (URI), соответствующий конечной точке REST API. 
+**AMSRESTAPIEndpoint** — универсальный код ресурса, соответствующий конечной точке REST API. 
 
-**AMSClientId**. Идентификатор клиента приложения Azure AD.
+**AMSClientId** — идентификатор клиента приложения Azure AD.
 
-**AMSClientSecret**. Секрет клиента приложения Azure AD.
+**AMSClientSecret** — секрет клиента приложения Azure AD.
 
 **StorageConnection** — подключение хранилища учетной записи, связанной с учетной записью служб мультимедиа. Это значение используется в файлах **function.json** и **run.csx** (как описано ниже).
 
@@ -135,7 +135,7 @@ ms.locfileid: "61217531"
 
 В реальном сценарии скорее всего потребуется отслеживать ход выполнения задания, а затем опубликовать закодированный ресурс. Дополнительные сведения см. в статье [Использование объектов Webhook Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET](media-services-dotnet-check-job-progress-with-webhooks.md). Дополнительные примеры приведены в разделе [функций Azure для служб мультимедиа](https://github.com/Azure-Samples/media-services-dotnet-functions-integration).  
 
-Замените содержимое существующего файла run.csx следующим кодом. После определения функции щелкните **Сохранить и запустить**.
+Замените содержимое имеющегося файла run.csx следующим кодом. Определив функцию, щелкните **Сохранить и запустить**.
 
 ```csharp
 #r "Microsoft.WindowsAzure.Storage"
@@ -333,14 +333,14 @@ public static async Task<IAsset> CreateAssetFromBlobAsync(CloudBlockBlob blob, s
 Чтобы протестировать функцию, необходимо передать MP4-файл в контейнер учетной записи хранения **input**, указанный в строке подключения.  
 
 1. Выберите учетную запись хранилища, которую вы указали в переменной среды **StorageConnection**.
-2. Щелкните **Большие двоичные объекты**.
+2. Щелкните **BLOB-объекты**.
 3. Щелкните **+ Container** (+ Контейнер). Введите имя для **входных данных** контейнера.
 4. Щелкните **Отправить** и найдите MP4-файл, который требуется отправить.
 
 >[!NOTE]
 > Если используется триггер BLOB-объекта в плане потребления, то после того как приложение-функция стало неактивным, обработка новых BLOB-объектов может осуществляться с задержкой до 10 минут. После запуска приложения-функции большие двоичные объекты обрабатываются немедленно. Дополнительные сведения см. в статье о [привязках и триггерах хранилища BLOB-объектов](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 На этом этапе вы готовы начать разработку приложения служб мультимедиа. 
  
@@ -348,6 +348,6 @@ public static async Task<IAsset> CreateAssetFromBlobAsync(CloudBlockBlob blob, s
 
 Кроме того, ознакомьтесь с разделом [Использование объектов Webhook Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET](media-services-dotnet-check-job-progress-with-webhooks.md). 
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

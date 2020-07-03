@@ -12,59 +12,61 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/07/2019
+ms.date: 03/17/2020
 ms.author: b-juche
-ms.openlocfilehash: 7cf382f511d2ba8452d77bf207f36b749cb31e94
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: c8e3b616dee1ab4e6bb6e77c6a8bab5661d4e20b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848794"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79460438"
 ---
 # <a name="metrics-for-azure-netapp-files"></a>Метрики для Azure NetApp Files
 
-Служба Azure NetApp Files предоставляет метрики для выделенного хранилища, фактического использования емкости хранилища, пропускной способности тома, операций ввода-вывода в секунду и задержки. Проанализировав эти метрики, вы сможете узнать больше о производительности томов и шаблонах использования учетных записей NetApp.  
+Azure NetApp Files предоставляет метрики для выделенного хранилища, фактического использования хранилища, операций ввода-вывода томов и задержки. Проанализировав эти метрики, вы сможете узнать больше о производительности томов и шаблонах использования учетных записей NetApp.  
 
-## <a name="capacity_pools"></a>Использование метрик для пулов емкости
+## <a name="usage-metrics-for-capacity-pools"></a><a name="capacity_pools"></a>Использование метрик для пулов емкости
 
 <!-- 
-- *Volume pool allocated size*  
-    The size (GiB) of the provisioned capacity pool  
+- *Pool Provisioned Size*  
+    The logical space (GiB) the capacity pool is provisioned with.  
+    This size is the size you selected during capacity pool creation. 
 --> 
-- *Volume pool allocated used* (Используемый размер выделенного пула для тома)  
-    Общая квота тома (гиб) в заданном пуле емкости (т. е. Общее количество подготовленных объемов томов в пуле емкости)  
-    Размер, выбранный в процессе создания тома.  
-- *Volume pool total logical size* (Общий логический размер пула для тома)  
-    Общий объем логического пространства (гиб), используемого в томах в пуле емкости  
+- *Пул, выделенный для размера тома*  
+    Суммарная квота тома (гиб) в заданном пуле емкости (то есть общая сумма подготовленных объемов томов в пуле емкости).  
+    Этот размер равен размеру, выбранному при создании тома.  
+- *Размер использованного пула*  
+    Общий объем логического пространства (гиб), используемого на томах в пуле емкости.  
 <!-- 
-- *Volume pool total snapshot size*  
-    The total of incremental logical space used by the snapshots  
+- *Pool Consumed Snapshot Size*  
+    The total of logical space (GiB) used by snapshots across all volumes in a capacity pool. 
 -->
 
-## <a name="volumes"></a>Показатели использования для томов
+## <a name="usage-metrics-for-volumes"></a><a name="volumes"></a>Показатели использования для томов
 
-<!-- 
-- *Volume allocated size*   
-    The volume size (quota) provisioned in GiB  
---> 
-- *Volume logical size*  (Логический размер тома)  
-    Общее логическое пространство, используемое в томе (гиб)  
+<!--
+- *Volume Quota Size*    
+    The quota size (GiB) the volume is provisioned with.   
+    This size is the size you selected during capacity pool creation. 
+-->
+- *Объем использованного объема тома*   
+    Общее логическое пространство, используемое в томе (гиб).  
     Сюда можно отнести логическое пространство используемое активными файлами системы и моментальными снимками.  
-- *Volume snapshot size*  (Размер моментальных снимков в томе)  
-   Добавочное логическое пространство, используемое моментальными снимками в томе  
+- *Размер моментального снимка тома*   
+   Добавочное логическое пространство, используемое моментальными снимками в томе.  
 
 ## <a name="performance-metrics-for-volumes"></a>Метрики производительности для томов
 
 - *аверажереадлатенци*   
-    Среднее время чтения с тома (в миллисекундах)
+    Среднее время чтения с тома в миллисекундах.
 - *аверажеврителатенци*   
-    Среднее время записи с тома в миллисекундах
+    Среднее время записи с тома в миллисекундах.
 - *реадиопс*   
-    Число операций чтения в томе в секунду
+    Количество операций чтения в томе в секунду.
 - *вритеиопс*   
-    Число операций записи в том в секунду
+    Число операций записи в том в секунду.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Общие сведения об иерархии хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
 * [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)

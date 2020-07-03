@@ -9,13 +9,13 @@ ms.topic: article
 ms.date: 04/27/2017
 ms.author: sewatson
 ms.openlocfilehash: 15a89a03e07deb02a812e54c01e857f972681931
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "64710775"
 ---
-# <a name="windows-virtual-machines-documentation"></a>Документация по виртуальным машинам Windows
+# <a name="windows-virtual-machines-documentation"></a>Документация по Виртуальным машинам Windows
 
 Виртуальные машины Windows Azure предоставляют по запросу безопасную высокомасштабируемую виртуализированную инфраструктуру с использованием Windows Server. Узнайте, как создавать, настраивать, масштабировать виртуальные машины Windows и управлять ими, используя наши шаблоны быстрого запуска, примеры и руководства.
 
@@ -23,25 +23,25 @@ ms.locfileid: "64710775"
 
 Сведения о развертывании веб сервера IIS на виртуальной машине под управлением Windows Server 2016:
 
-- [портал Azure](/azure/virtual-machines/virtual-machines-windows-quick-create-portal?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+- [портале Azure](/azure/virtual-machines/virtual-machines-windows-quick-create-portal?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 - [Azure PowerShell](/azure/virtual-machines/virtual-machines-windows-quick-create-powershell?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-- [Интерфейс командной строки Azure](/azure/virtual-machines/virtual-machines-windows-quick-create-cli?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+- [Azure CLI](/azure/virtual-machines/virtual-machines-windows-quick-create-cli?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
-## <a name="step-by-step-tutorials"></a>Пошаговые руководства
+## <a name="step-by-step-tutorials"></a>Пошаговые инструкции
 
 Сведения о развертывании, администрировании и мониторинге виртуальных машин Windows в Azure.
 
-- [Manage Windows virtual machines with Azure PowerShell](/azure/virtual-machines/windows/tutorial-manage-vm) (Управление виртуальными машинами Windows с помощью Azure PowerShell)
-- [Manage Azure disks with the Azure CLI](/azure/virtual-machines/windows/tutorial-manage-data-disk) (Управление дисками Azure с помощью Azure CLI)
+- [Создание виртуальных машин Windows и управление ими](/azure/virtual-machines/windows/tutorial-manage-vm)
+- [Создание дисков виртуальных машин и управление ими](/azure/virtual-machines/windows/tutorial-manage-data-disk)
 - [Автоматизация настройки виртуальной машины](/azure/virtual-machines/windows/tutorial-automate-vm-deployment)
-- [Создание образа настраиваемой виртуальной машины](/azure/virtual-machines/windows/tutorial-custom-images)
+- [Создание пользовательских образов виртуальной машины](/azure/virtual-machines/windows/tutorial-custom-images)
 - [Создание высокодоступных виртуальных машин](/azure/virtual-machines/windows/tutorial-availability-sets)
-- [Create a Virtual Machine Scale Set and deploy a highly available app on Linux](/azure/virtual-machines/windows/tutorial-create-vmss) (Создание масштабируемого набора виртуальных машин и развертывание высокодоступного приложения в Linux)
-- [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](/azure/virtual-machines/windows/tutorial-load-balancer)
-- [Управление виртуальными сетями Azure и виртуальными машинами Windows с помощью Azure PowerShell](/azure/virtual-machines/windows/tutorial-virtual-network)
-- [Back up Windows virtual machines in Azure](/azure/virtual-machines/windows/tutorial-backup-vms) (Резервное копирование виртуальных машин Windows в Azure)
-- [How to monitor a Linux virtual machine in Azure](/azure/virtual-machines/windows/tutorial-monitoring) (Мониторинг виртуальной машины Linux в Azure)
-- [Monitor VM security with the Azure Security Center](/azure/virtual-machines/windows/tutorial-azure-security) (Мониторинг безопасности виртуальных машин с помощью центра безопасности Azure)
+- [Создание масштабируемого набора виртуальной машины](/azure/virtual-machines/windows/tutorial-create-vmss)
+- [Балансировка нагрузки виртуальных машин](/azure/virtual-machines/windows/tutorial-load-balancer)
+- [Управление виртуальными сетями и виртуальными машинами](/azure/virtual-machines/windows/tutorial-virtual-network)
+- [Резервное копирование виртуальных машин](/azure/virtual-machines/windows/tutorial-backup-vms)
+- [Монитор виртуальных машин](/azure/virtual-machines/windows/tutorial-monitoring)
+- [Управление безопасностью на виртуальных машинах](/azure/virtual-machines/windows/tutorial-azure-security)
 
 
 ## <a name="free-pluralsight-video-training"></a>Бесплатные видеоуроки Pluralsight
@@ -52,7 +52,7 @@ ms.locfileid: "64710775"
 
 Развертывание первого приложения в Azure.
 
-- [Интерфейс командной строки Azure](/azure/virtual-machines/virtual-machines-windows-cli-samples?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+- [Azure CLI](/azure/virtual-machines/virtual-machines-windows-cli-samples?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 - [Azure PowerShell](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 ## <a name="more"></a>Подробнее

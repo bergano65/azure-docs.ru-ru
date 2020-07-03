@@ -5,17 +5,17 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: jroth
 ms.openlocfilehash: fe5daa38c43723c85fb464e191ee4a3e85700e0b
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "67185243"
 ---
 1. После создания и запуска виртуальной машины Azure щелкните значок "Виртуальные машины" на портале Azure для просмотра виртуальных машин.
 
 1. Нажмите кнопку с многоточием **…** для новой виртуальной машины.
 
-1. Щелкните **Подключить**.
+1. Нажмите кнопку **Соединить**.
 
    ![Подключение к виртуальной машине на портале](./media/virtual-machines-sql-server-remote-desktop-connect/azure-virtual-machine-connect.png)
 

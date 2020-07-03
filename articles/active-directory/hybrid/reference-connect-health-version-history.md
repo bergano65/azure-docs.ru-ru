@@ -17,10 +17,10 @@ ms.date: 03/20/2019
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ace8d170a5ba48c00775c3b376df8bb70a337d5d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76897040"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: история выпусков версий
@@ -91,7 +91,7 @@ ms.locfileid: "76897040"
 
 ## <a name="august-2018"></a>Август 2018 г. 
 *  Агент Azure AD Connect Health для синхронизации (версия 3.1.7.0) выпущен вместе с Azure AD Connect версии 1.1.880.0.    
-   1. Исправление проблемы с [высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync).
+   1. Исправление [высокой нагрузки на ЦП агента мониторинга с выпусками .NET Framework KB](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync)
 
 ## <a name="june-2018"></a>Июнь 2018 г. 
 **Новые функции предварительной версии:** 
@@ -99,10 +99,10 @@ ms.locfileid: "76897040"
 
 **Обновление агента:** 
 * Агент Azure AD Connect Health для AD DS (версия 3.1.7.0).    
-  1. Исправление проблемы с [высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync).
+  1. Исправление [высокой нагрузки на ЦП агента мониторинга с выпусками .NET Framework KB](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync)
    
 * Агент Azure AD Connect Health для AD FS (версия 3.1.7.0).  
-  1. Исправление проблемы с [высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync).
+  1. Исправление [высокой нагрузки на ЦП агента мониторинга с выпусками .NET Framework KB](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync)
   2. Исправления по результатам тестов для сервера-получателя ADFS Server 2016.
    
 * Агент Azure AD Connect Health для AD FS (версия 3.1.2.0).  
@@ -196,7 +196,7 @@ ms.locfileid: "76897040"
 
 * Отчеты об ошибках синхронизации для Azure AD Connect.
 
-**Новые функции:**
+**Новые возможности:**
 
 * Azure AD Connect Health для AD FS — поле IP-адреса доступно в отчете о первых 50 пользователях с неверным именем пользователя и/или паролем.
 
@@ -210,12 +210,12 @@ ms.locfileid: "76897040"
 
 * Агент Azure AD Connect Health для AD FS (версия 2.6.91.1512).
 
-**Новые функции:**
+**Новые возможности:**
 
 * [Средство проверки подключения для агентов Azure AD Connect Health.](how-to-connect-health-agent-install.md#test-connectivity-to-azure-ad-connect-health-service)
 
 ## <a name="november-2015"></a>Ноябрь 2015 г.
-**Новые функции:**
+**Новые возможности:**
 
 * Поддержка [управления доступом на основе ролей](how-to-connect-health-operations.md#manage-access-with-role-based-access-control)
 
@@ -228,7 +228,7 @@ ms.locfileid: "76897040"
 * Исправления ошибок, возникающих во время регистрации агента.
 
 ## <a name="september-2015"></a>Сентябрь 2015 г.
-**Новые функции:**
+**Новые возможности:**
 
 * Отчет о неправильном имени пользователя или пароле для AD FS.
 * Возможность настроить прокси-сервер HTTP без проверки подлинности.
@@ -243,7 +243,7 @@ ms.locfileid: "76897040"
 ## <a name="june-2015"></a>Июнь 2015 г.
 **Первоначальный выпуск Azure AD Connect Health для AD FS и прокси-сервера AD FS.**
 
-**Новые функции:**
+**Новые возможности:**
 
 * Предупреждения, касающиеся наблюдения за AD FS и прокси-серверами AD FS, с помощью уведомлений по электронной почте.
 * Простой доступ к топологии и шаблонам AD FS в счетчиках производительности AD FS.
@@ -251,6 +251,6 @@ ms.locfileid: "76897040"
 * Тенденции неудачных запросов на серверах AD FS, сгруппированные по приложениям, типам ошибок и т. д.
 * Упрощенное развертывание агентов с помощью учетных данных глобального администратора Azure AD.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о [мониторинге локальной инфраструктуры идентификации и служб синхронизации в облаке](whatis-hybrid-identity-health.md).
 

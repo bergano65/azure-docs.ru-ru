@@ -5,21 +5,21 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 12/17/2019
+ms.date: 02/19/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 9b106ea43e6a11d616ed2212636975bbbbf65631
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.openlocfilehash: ec684e5e6fa2ef8e9ed30be49f59e8aa7ef3a28b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75752408"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79117095"
 ---
 ### <a name="how-many-vpn-client-endpoints-can-i-have-in-my-point-to-site-configuration"></a>Сколько конечных точек VPN-клиента можно настроить в конфигурации "точка — сеть"?
 
 Это зависит от SKU шлюза. Дополнительные сведения о количестве поддерживаемых подключений см. в разделе [SKU шлюзов](../articles/vpn-gateway/vpn-gateway-about-vpngateways.md#gwsku).
 
-### <a name="supportedclientos"></a>Какие клиентские операционные системы можно использовать для подключения типа "точка — сеть"?
+### <a name="what-client-operating-systems-can-i-use-with-point-to-site"></a><a name="supportedclientos"></a>Какие клиентские операционные системы можно использовать для подключения типа "точка — сеть"?
 
 Поддерживаются следующие клиентские операционные системы:
 
@@ -29,7 +29,7 @@ ms.locfileid: "75752408"
 * Windows Server 2012 (только 64-разрядная версия)
 * Windows Server 2012 R2 (только 64-разрядная версия)
 * Windows Server 2016 (только 64-разрядная версия)
-* Windows 10
+* Windows 10
 * Mac OS X версии 10.11 или более поздней
 * Linux (StrongSwan)
 * iOS
@@ -58,9 +58,13 @@ Azure поддерживает три типа параметров VPN типа
 
 Да. Для модели развертывания с помощью Resource Manager требуется VPN-шлюз с маршрутизацией на основе маршрутов. В классической модели развертывания требуется динамический шлюз. Подключения типа "точка — сеть" для VPN-шлюзов со статической маршрутизацией или маршрутизацией на основе политик не поддерживаются.
 
+### <a name="can-i-configure-a-point-to-site-client-to-connect-to-multiple-virtual-network-gateways-at-the-same-time"></a>Можно ли настроить клиент "точка — сеть" для подключения к нескольким шлюзам виртуальной сети одновременно?
+
+В зависимости от используемого клиентского программного обеспечения VPN, возможно, удастся подключиться к нескольким шлюзам виртуальной сети, к которым подключены виртуальные сети, не имеющих конфликтующих адресных пространств между ними или с сетью, с которой соединяется клиент.  Клиент VPN Azure поддерживает множество VPN-подключений, но в любой конкретный момент времени может быть подключено только одно подключение.
+
 ### <a name="can-i-configure-a-point-to-site-client-to-connect-to-multiple-virtual-networks-at-the-same-time"></a>Можно ли настроить клиент "точка — сеть" для подключения к нескольким виртуальным сетям одновременно?
 
-Нет. Клиент для подключения типа "точка — сеть" может подключаться только к ресурсам в виртуальной сети, в которой находится шлюз виртуальной сети.
+Да, подключения типа "точка — сеть" к шлюзу виртуальной сети, развернутому в сети, который является одноранговым с другими виртуальных сетей, могут иметь доступ к другим одноранговым виртуальных сетей.  Если виртуальных сетей использует функции UseRemoteGateway/AllowGatewayTransit, клиент с подключением "точка — сеть" сможет подключаться к этим одноранговым виртуальных сетей.  Дополнительные сведения см. в [этой](../articles/vpn-gateway/vpn-gateway-about-point-to-site-routing.md) статье.
 
 ### <a name="how-much-throughput-can-i-expect-through-site-to-site-or-point-to-site-connections"></a>На какую пропускную способность можно рассчитывать в конфигурациях подключения "сеть — сеть" и "точка — сеть"?
 
@@ -80,9 +84,9 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 
    | Версия ОС | Дата | Номер или ссылка |
    |---|---|---|
-   | Windows Server 2016<br>Windows 10 версии 1607 | 17 января 2018 г. | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
+   | Windows Server 2016<br>Windows 10 версии 1607 | 17 января 2018 г. | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
    | Windows 10 версии 1703 | 17 января 2018 г. | [KB4057144](https://support.microsoft.com/help/4057144/windows-10-update-kb4057144) |
-   | Windows 10 версии 1709 | 22 марта 2018 г. | [KB4089848](https://www.catalog.update.microsoft.com/search.aspx?q=kb4089848) |
+   | Windows 10 версии 1709 | 22 марта 2018 г. | [KB4089848](https://www.catalog.update.microsoft.com/search.aspx?q=kb4089848) |
    |  |  |  |
 
 2. Установите значение раздела реестра. Создайте или задайте для ключа REG_DWORD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\ IKEv2\DisableCertReqPayload" в реестре значение 1.
@@ -98,3 +102,21 @@ Azure поддерживает VPN-подключения "точка — сет
 ### <a name="i-already-have-an-azure-vpn-gateway-deployed-can-i-enable-radius-andor-ikev2-vpn-on-it"></a>У меня уже развернут VPN-шлюз Azure. Можно ли включить на нем RADIUS и/или IKEv2 для VPN?
 
 Да, эти новые функции можно включить для уже развернутых шлюзов с помощью Powershell или портала Azure при условии, что используемый шлюз SKU поддерживает RADIUS и/или IKEv2. Например, VPN-шлюз со SKU "Базовый" не поддерживает RADIUS или IKEv2.
+
+### <a name="how-do-i-remove-the-configuration-of-a-p2s-connection"></a><a name="removeconfig"></a>Разделы справки удалить конфигурацию подключения P2S?
+
+Конфигурацию P2S можно удалить с помощью Azure CLI и PowerShell с помощью следующих команд:
+
+#### <a name="azure-powershell"></a>Azure PowerShell
+
+```azurepowershell-interactive
+$gw=Get-AzVirtualNetworkGateway -name <gateway-name>`  
+$gw.VPNClientConfiguration = $null`  
+Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw`
+```
+
+#### <a name="azure-cli"></a>Azure CLI
+
+```azurecli-interactive
+az network vnet-gateway update --name <gateway-name> --resource-group <resource-group name> --remove "vpnClientConfiguration"
+```

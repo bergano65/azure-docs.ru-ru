@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: overview
 ms.date: 07/12/2019
 ms.author: tomfitz
-ms.openlocfilehash: 4508b69261cd7b1fb5e400eaf7ffaae67d5cb476
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 0615830e525ab60bbb2167dd39d9c4bf14cc91b3
+ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647965"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81391578"
 ---
 # <a name="azure-managed-applications-overview"></a>Обзор управляемых приложений Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "75647965"
 Управляемое приложение похоже на шаблон решения Marketplace, за исключением одного существенного отличия. В управляемом приложении ресурсы развертываются в группе ресурсов, управляемой поставщиком приложения. Группа ресурсов расположена в подписке пользователя, но идентификатор в клиенте издателя имеет доступ к группе ресурсов. Как издатель, вы указываете стоимость текущей поддержки решения.
 
 > [!NOTE]
-> Ранее документация для поставщиков клиентов Azure была включена в документацию по управляемым приложениям. Эта документация была перемещена. См. [Настраиваемые поставщики Azure](../custom-providers/overview.md).
+> Ранее документация по настраиваемым поставщикам Azure была включена в документацию по управляемым приложениям. Эта документация была перемещена. См. [Настраиваемые поставщики Azure](../custom-providers/overview.md).
 
 ## <a name="advantages-of-managed-applications"></a>Преимущества управляемых приложений
 
@@ -84,4 +84,4 @@ ms.locfileid: "75647965"
 В этой статье вы узнали о преимуществах использования управляемых приложений. Перейдите к следующей статье, чтобы создать определение управляемого приложения.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Публикация определения для управляемого приложения Azure](publish-managed-app-definition-quickstart.md)
+> [Краткое руководство. Публикация определения для управляемого приложения Azure](publish-service-catalog-app.md)

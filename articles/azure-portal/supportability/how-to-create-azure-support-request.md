@@ -7,27 +7,27 @@ manager: scotthit
 ms.assetid: fd6841ea-c1d5-4bb7-86bd-0c708d193b89
 ms.service: azure-supportability
 ms.topic: article
-ms.date: 01/23/2020
+ms.date: 03/31/2020
 ms.author: kfollis
-ms.openlocfilehash: 6218a1089352ce9ee3e2d1d10f3282e64eae8c51
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 2b68b6ddf19d6b07475e7009b47e162bfb2d0d2f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547665"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80478982"
 ---
-# <a name="how-to-create-an-azure-support-request"></a>Как создать запрос на получение поддержки Azure
+# <a name="how-to-create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
 ## <a name="overview"></a>Обзор
 
-Клиенты Azure могут создавать запросы на поддержку в [портал Azure](https://portal.azure.com)и управлять ими.
+Azure позволяет создавать запросы на поддержку, также называемые билетами на поддержку, и управлять ими. Вы можете создавать запросы и управлять ими в [портал Azure](https://portal.azure.com), как описано в этой статье. Вы также можете создавать запросы и управлять ими программно с помощью REST API запросов в [службу поддержки Azure](/rest/api/support).
 
 > [!NOTE]
 > URL-адрес портал Azure зависит от облака Azure, в которой развернута ваша организация.
 >
->* Портал Azure для коммерческого использования: [https://portal.azure.com](https://portal.azure.com)
->* Портал Azure для Германии: [https://portal.microsoftazure.de](https://portal.microsoftazure.de)
->* Портал Azure для США государственных организаций: [https://portal.azure.us](https://portal.azure.us)
+>* Портал Azure для коммерческого использования:[https://portal.azure.com](https://portal.azure.com)
+>* Портал Azure для Германии:[https://portal.microsoftazure.de](https://portal.microsoftazure.de)
+>* Портал Azure для США государственных организаций:[https://portal.azure.us](https://portal.azure.us)
 >
 >
 
@@ -41,19 +41,19 @@ ms.locfileid: "76547665"
 
 **Справку и поддержку** можно получить в портал Azure. Он доступен в меню портал Azure, в глобальном заголовке или в меню ресурсов для службы. Прежде чем можно будет отправить запрос в службу поддержки, необходимо иметь соответствующие разрешения.
 
-### <a name="role-based-access-control"></a>Контроль доступа на основе ролей
+### <a name="role-based-access-control"></a>Управление доступом на основе ролей
 
-Чтобы создать запрос на поддержку, необходимо быть администратором или назначить роль [участника "запрос поддержки](../../role-based-access-control/built-in-roles.md#support-request-contributor) ".
+Чтобы создать запрос на поддержку, необходимо быть [владельцем](../../role-based-access-control/built-in-roles.md#owner), [участником](../../role-based-access-control/built-in-roles.md#contributor) или назначить роль [участника "запрос на поддержку](../../role-based-access-control/built-in-roles.md#support-request-contributor) " на уровне подписки. Чтобы создать запрос в службу поддержки без подписки, например Azure Active Directory (AAD), необходимо быть [администратором](../../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
 ### <a name="go-to-help--support-from-the-global-header"></a>Перейдите в раздел Справка и поддержка из глобального заголовка.
 
 Чтобы начать запрос в службу поддержки из любого места портал Azure:
 
-1. Выберите значок **?** . в глобальном заголовке. Затем выберите **Справка и поддержка**.
+1. Выберите **?** в глобальном заголовке. Затем выберите **Справка и поддержка**.
 
    ![Справка и поддержка](./media/how-to-create-azure-support-request/helpandsupportnewlower.png)
 
-2. Выберите **Новый запрос в службу поддержки**. Следуйте инструкциям на экране, чтобы предоставить нам сведения о проблеме. Мы предоставим некоторые возможные решения, соберите сведения о ней и поможем отправить и отвести запрос на поддержку.
+2. Выберите **новый запрос в службу поддержки**. Следуйте инструкциям на экране, чтобы предоставить нам сведения о проблеме. Мы предоставим некоторые возможные решения, соберите сведения о ней и поможем отправить и отвести запрос на поддержку.
 
    ![Новый запрос на поддержку](./media/how-to-create-azure-support-request/newsupportrequest2lower.png)
 
@@ -106,7 +106,7 @@ ms.locfileid: "76547665"
 
 ## <a name="all-support-requests"></a>Все запросы на поддержку
 
-Сведения и состояние запросов на поддержку см. в разделе **Справка и поддержка** >  **все запросы на поддержку**.
+Подробные сведения и состояние запросов на поддержку можно просмотреть, перейдя по **Help + support** >  **запросу**Справка и поддержка.
 
 ![Все запросы на поддержку](./media/how-to-create-azure-support-request/allrequestslower.png)
 
@@ -124,7 +124,7 @@ ms.locfileid: "76547665"
 
 > [!VIDEO https://www.youtube.com/embed/gNhzR5FE9DY]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Отправьте нам свои отзывы и предложения](https://feedback.azure.com/forums/266794-support-feedback)
 * Общайтесь с нами в [Twitter](https://twitter.com/azuresupport)

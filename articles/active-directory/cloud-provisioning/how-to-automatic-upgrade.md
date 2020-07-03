@@ -15,16 +15,16 @@ ms.date: 12/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3786386f75f4b85fe89562254eab63471de6cb2
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: f09b2fc685881aa8a7bd87b6a855c657af9ef43d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75549403"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78190319"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-agent-automatic-upgrade"></a>Azure AD Connect агент подготовки облака: автоматическое обновление
 
-Проверка того, что ваша Azure Active Directory (Azure AD) Connect Cloud Подготовка агента подготовки к работе в облаке, всегда является самой простой функцией автоматического обновления. Эта функция включена по умолчанию и не может быть отключена.
+Проверка того, что ваша Azure Active Directory (Azure AD) Connect Cloud Подготовка агента подготовки к работе в облаке, всегда является самой простой функцией автоматического обновления.
 
 Агент устанавливается здесь: "Program Files\azure Multi AD Connect подготовка Ажент\аадконнектпровисионингажент.ЕКСЕ"
 
@@ -41,14 +41,14 @@ ms.locfileid: "75549403"
 ## <a name="uninstall-the-agent"></a>Удаление агента
 Чтобы удалить агент, перейдите к разделу **Удаление или изменение программы** и удалите следующее:
 
-- **Microsoft Azure AD подключить обновление агента**
-- **Агент подготовки Microsoft Azure AD подключения**
-- **Пакет агента подготовки Microsoft Azure AD подключения**
+- **Microsoft Azure AD Connect Agent Updater;**
+- **агент подготовки Microsoft Azure AD Connect;**
+- **пакет агента подготовки Microsoft Azure AD Connect.**
 
 ![Удаление агента](media/how-to-automatic-upgrade/agent3.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
+- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)
 

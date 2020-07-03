@@ -5,17 +5,17 @@ author: cedarbaum
 ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 07/12/2019
-ms.openlocfilehash: 1854a99cac3ead386f38c1c7fe27a56b672f365c
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.date: 03/11/2020
+ms.openlocfilehash: 13f48a9e0bc3ed8f8c4d5f1b7da4b6c03f54cdf8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73664302"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79129974"
 ---
-# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output-preview"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure (Предварительная версия)
+# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure
 
-[Проверка подлинности управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для выходных данных в хранилище BLOB-объектов Azure доступна для Azure Stream Analytics в качестве предварительной версии. Это дает Stream Analytics заданиям прямой доступ к учетной записи хранения вместо использования строки подключения. Помимо улучшенной безопасности, эта функция также позволяет записывать данные в учетную запись хранения в виртуальной сети (VNET) в Azure.
+[Проверка подлинности с помощью управляемого удостоверения](../active-directory/managed-identities-azure-resources/overview.md) для выходных данных в хранилище BLOB-объектов Azure предоставляет Stream Analytics заданиям прямой доступ к учетной записи хранения вместо использования строки подключения. Помимо улучшенной безопасности, эта функция также позволяет записывать данные в учетную запись хранения в виртуальной сети (VNET) в Azure.
 
 В этой статье показано, как включить управляемое удостоверение для выходных данных большого двоичного объекта Stream Analytics задания с помощью портал Azure и развертывания Azure Resource Manager.
 
@@ -235,7 +235,7 @@ ms.locfileid: "73664302"
 
 4. [Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md) , не поддерживается. Это означает, что пользователь не может ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба необходимо создавать с помощью Azure Stream Analytics.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Описание выходных данных из Azure Stream Analytics](./stream-analytics-define-outputs.md)
-* [Azure Stream Analytics секционирование выходных данных пользовательского BLOB-объекта](./stream-analytics-custom-path-patterns-blob-storage-output.md)
+* [Секционирование выходных данных пользовательского большого двоичного объекта Azure Stream Analytics](./stream-analytics-custom-path-patterns-blob-storage-output.md)

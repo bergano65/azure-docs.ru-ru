@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 09/06/2018
 ms.author: robinsh
 ms.openlocfilehash: c43c142b22709d42416b2dd14dfc78812970916a
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169609"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79284737"
 ---
 # <a name="create-an-iot-hub-using-the-azure-portal"></a>Создание Центра Интернета вещей с помощью портала Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "76169609"
 
 В этой статье описывается создание Центров Интернета вещей и управление ими с помощью [портала Azure](https://portal.azure.com).
 
-Для выполнения шагов в этом руководстве вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Для выполнения шагов в этом руководстве вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -118,10 +118,10 @@ ms.locfileid: "76169609"
 
 Чтобы удалить центр Интернета вещей, найдите его, а затем нажмите кнопку **Удалить** под именем центра Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
 * [Руководство. Настройка маршрутизации сообщений с Центром Интернета вещей](tutorial-routing.md)
-* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
+* [Метрики Центра Интернета вещей](iot-hub-metrics.md)
 * [Мониторинг операций](iot-hub-operations-monitoring.md)

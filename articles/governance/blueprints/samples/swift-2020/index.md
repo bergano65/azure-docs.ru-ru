@@ -1,14 +1,14 @@
 ---
 title: Краткое описание примера схемы SWIFT CSP-CSCF v2020
 description: Обзор примера схемы SWIFT CSP-CSCF v2020. Этот пример схемы помогает клиентам оценить определенные средства управления SWIFT CSP-CSCF.
-ms.date: 09/24/2019
+ms.date: 05/13/2020
 ms.topic: sample
-ms.openlocfilehash: ee8670522bc4549dbb687a9ebe35bb20d53b0f17
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 04afbe2b0ef3b632d81b832e6a94bce2618fc851
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74546452"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83657046"
 ---
 # <a name="overview-of-the-swift-csp-cscf-v2020-blueprint-sample"></a>Обзор примера схемы SWIFT CSP-CSCF v2020
 
@@ -18,7 +18,7 @@ ms.locfileid: "74546452"
 
 В разделе о сопоставлении средств управления описаны политики, используемые в этой схеме, и то, как эти политики соотносятся с разными средствами управления в новейшей версии ISWIFT CSP-CSCF. Назначаемые архитектуре ресурсы оцениваются Политикой Azure на предмет соответствия назначенным политикам. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../../policy/overview.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы ознакомились с общими сведениями о примере схемы SWIFT CSP-CSCF v2020. Дополнительные сведения о сопоставлении элементов управления и развертывании этого примера см. в следующих статьях:
 

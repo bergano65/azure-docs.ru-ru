@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
-ms.openlocfilehash: 30cda7a83feddaeb41385252a61d1dc68a881a47
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: d7fb7b6b409a4e24be97ee61fc7ba1f0c0a93202
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75646512"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792638"
 ---
 # <a name="migrate-an-apache-hbase-cluster-to-a-new-version"></a>Перенос данных кластера Apache HBase в новую версию
 
@@ -32,17 +32,17 @@ ms.locfileid: "75646512"
 
 | Тип совместимости | Основной номер версии| Дополнительный номер версии | Обновление |
 | --- | --- | --- | --- |
-| Совместимость клиента и сервера на уровне передачи данных | N | Да | Да |
-| Совместимость серверов | N | Да | Да |
-| Совместимость форматов файлов | N | Да | Да |
-| Совместимость API клиента | N | Да | Да |
-| Совместимость клиента на уровне двоичного кода | N | N | Да |
+| Совместимость клиента и сервера на уровне передачи данных | Нет | Да | Y |
+| Совместимость серверов | Нет | Да | Y |
+| Совместимость форматов файлов | Нет | Да | Y |
+| Совместимость API клиента | Нет | Да | Y |
+| Совместимость клиента на уровне двоичного кода | Нет | Нет | Да |
 | **Ограниченная совместимость API на стороне сервера** |  |  |  |
-| объем стабилен | N | Да | Да |
-| Развитие | N | N | Да |
-| Работает неустойчиво | N | N | N |
-| Совместимость зависимостей | N | Да | Да |
-| Совместимость операций | N | N | Да |
+| объем стабилен | Нет | Да | Y |
+| Развитие | Нет | Нет | Да |
+| Работает неустойчиво | Нет | Нет | Нет |
+| Совместимость зависимостей | Нет | Да | Y |
+| Совместимость операций | Нет | Нет | Да |
 
 ## <a name="upgrade-with-same-apache-hbase-major-version"></a>Обновление с тем же основным номером версии Apache HBase
 
@@ -176,28 +176,28 @@ ms.locfileid: "75646512"
 
 1. Чтобы убедиться, что все последние данные в хранилище memstore записаны на диск, еще раз выполните предыдущий скрипт.
 
-1. Войдите в [Apache Ambari](https://ambari.apache.org/) в старом кластере (`https://OLDCLUSTERNAME.azurehdidnsight.net`) и отключите службы HBase. При появлении запроса подтвердить, что вы хотите отключить службы, установите флажок, чтобы включить режим обслуживания для HBase. Подробные сведения о подключении к платформе Ambari и ее использовании см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md).
+1. Войдите в [Apache Ambari](https://ambari.apache.org/) в старом кластере (`https://OLDCLUSTERNAME.azurehdidnsight.net`) и завершите работу служб HBase. При появлении запроса подтвердить, что вы хотите отключить службы, установите флажок, чтобы включить режим обслуживания для HBase. Подробные сведения о подключении к платформе Ambari и ее использовании см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md).
 
-    ![В Ambari щелкните Службы > > HBase в разделе действия службы.](./media/apache-hbase-migrate-new-version/stop-hbase-services1.png)
+    ![В Ambari щелкните службы > > HBase в разделе действия службы.](./media/apache-hbase-migrate-new-version/stop-hbase-services1.png)
 
     ![Проверьте, установлен ли флажок Turn On Maintenance Mode for HBase (Включить режим обслуживания HBase), а затем подтвердите остановку.](./media/apache-hbase-migrate-new-version/turn-on-maintenance-mode.png)
 
-1. Войдите в Ambari в новом кластере HDInsight. Измените параметр HDFS `fs.defaultFS`, чтобы указать имя контейнера, используемого в исходном кластере. Этот параметр находится в разделе **HDFS > Configs (Конфигурации) > Advanced (Расширенные) > Advanced core-site (Расширенный основной сайт)** .
+1. Войдите в Ambari в новом кластере HDInsight. Измените параметр HDFS `fs.defaultFS`, чтобы указать имя контейнера, используемого в исходном кластере. Этот параметр находится в разделе **HDFS > Configs (Конфигурации) > Advanced (Расширенные) > Advanced core-site (Расширенный основной сайт)**.
 
-    ![В Ambari щелкните Службы > HDFS > configs > Дополнительно.](./media/apache-hbase-migrate-new-version/hdfs-advanced-settings.png)
+    ![В Ambari щелкните службы > HDFS > configs > дополнительно.](./media/apache-hbase-migrate-new-version/hdfs-advanced-settings.png)
 
     ![Изменение имени контейнера в Ambari](./media/apache-hbase-migrate-new-version/change-container-name.png)
 
 1. Если вы не используете кластеры HBase с функцией расширенной записи, пропустите этот шаг. Он нужен только для кластеров HBase с функцией расширенной записи.
 
-   Измените путь `hbase.rootdir`, чтобы он указывал на контейнер исходного кластера.
+   Измените `hbase.rootdir` путь, чтобы он указывал на контейнер исходного кластера.
 
     ![В Ambari измените имя контейнера для рутдир HBase.](./media/apache-hbase-migrate-new-version/change-container-name-for-hbase-rootdir.png)
 
 1. Если вы обновляете HDInsight 3,6 до 4,0, выполните описанные ниже действия, в противном случае перейдите к шагу 10.
-    1. Перезапустите все необходимые службы в Ambari, выбрав **службы** > **перезапустить все обязательные**.
+    1. Перезапустите все необходимые службы в Ambari, выбрав **службы** > **все необходимые для перезапуска**.
     1. Завершите работу службы HBase.
-    1. Подключитесь к узлу Zookeeper по протоколу SSH и выполните `rmr /hbase-unsecure` команду [zkCli](https://github.com/go-zkcli/zkcli), чтобы удалить корневой znode будет удален HBase из Zookeeper.
+    1. Подключитесь к узлу Zookeeper по протоколу SSH [zkCli](https://github.com/go-zkcli/zkcli) и выполните `rmr /hbase-unsecure` команду zkCli, чтобы удалить корневой znode будет удален HBase из Zookeeper.
     1. Перезапустите HBase.
 
 1. При обновлении до любой другой версии HDInsight, кроме 4,0, выполните следующие действия.
@@ -220,4 +220,4 @@ ms.locfileid: "75646512"
 * [Обновление кластера HDInsight до более новой версии](../hdinsight-upgrade-cluster.md)
 * [Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari](../hdinsight-hadoop-manage-ambari.md)
 * [Компоненты и версии Apache Hadoop](../hdinsight-component-versioning.md)
-* [Оптимизация конфигураций с использованием Apache Ambari](../hdinsight-changing-configs-via-ambari.md#apache-hbase-optimization-with-the-ambari-web-ui)
+* [Оптимизация Apache HBase](../optimize-hbase-ambari.md)

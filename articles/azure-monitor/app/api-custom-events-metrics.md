@@ -1,18 +1,14 @@
 ---
 title: API Application Insights для пользовательских событий и метрик | Документация Майкрософт
 description: Вставьте несколько строк кода в свое устройство или классическое приложение, на веб-страницу или в службу, чтобы отслеживать использование приложения и диагностировать неполадки.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
-ms.date: 03/27/2019
-ms.openlocfilehash: 2136ab9a6d0cef7ad5650c8414f9a17b78498abc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 05/11/2020
+ms.openlocfilehash: ae96609446818802b70cab9c31f6527264046eb9
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432672"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83115665"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -35,7 +31,7 @@ ms.locfileid: "75432672"
 
 Вы можете [прикрепить свойства и метрики](#properties) к большинству этих вызовов телеметрии.
 
-## <a name="prep"></a>Перед началом работы
+## <a name="before-you-start"></a><a name="prep"></a>Перед началом работы
 
 Если у вас еще нет ссылки на пакет SDK Application Insights, выполните указанные ниже действия.
 
@@ -43,18 +39,18 @@ ms.locfileid: "75432672"
 
   * [проект ASP.NET;](../../azure-monitor/app/asp-net.md)
   * [ASP.NET Core проект](../../azure-monitor/app/asp-net-core.md)
-  * [проект Java;](../../azure-monitor/app/java-get-started.md)
+  * [Проект Java](../../azure-monitor/app/java-get-started.md)
   * [проект Node.js;](../../azure-monitor/app/nodejs.md)
   * [JavaScript на каждой веб-странице.](../../azure-monitor/app/javascript.md) 
 * В программный код устройства или веб-сервера необходимо добавить:
 
-    *C#:* `using Microsoft.ApplicationInsights;`
+    *C#:*`using Microsoft.ApplicationInsights;`
 
-    *Visual Basic:* `Imports Microsoft.ApplicationInsights`
+    *Visual Basic:*`Imports Microsoft.ApplicationInsights`
 
-    *Java:* `import com.microsoft.applicationinsights.TelemetryClient;`
+    *Java:*`import com.microsoft.applicationinsights.TelemetryClient;`
 
-    *Node. js:* `var applicationInsights = require("applicationinsights");`
+    *Node. js:*`var applicationInsights = require("applicationinsights");`
 
 ## <a name="get-a-telemetryclient-instance"></a>Получение экземпляра TelemetryClient
 
@@ -62,11 +58,14 @@ ms.locfileid: "75432672"
 
 Для приложений [ASP.NET Core](asp-net-core.md#how-can-i-track-telemetry-thats-not-automatically-collected) и [не HTTP/Worker для приложений .NET и .NET Core](worker-service.md#how-can-i-track-telemetry-thats-not-automatically-collected) рекомендуется получить экземпляр `TelemetryClient` из контейнера внедрения зависимостей, как описано в соответствующей документации.
 
+Если вы используете Азурефунктионс v2 + или веб-задания Azure v3 + – следуйте этому документу:https://docs.microsoft.com/azure/azure-functions/functions-monitoring#version-2x-and-higher
+
 *C#*
 
 ```csharp
 private TelemetryClient telemetry = new TelemetryClient();
 ```
+Для всех, кто видит этот метод, — это устаревшие сообщения. Дополнительные сведения см. в [Microsoft/ApplicationInsights-DotNet # 1152](https://github.com/microsoft/ApplicationInsights-dotnet/issues/1152) .
 
 *Visual Basic*
 
@@ -108,7 +107,7 @@ telemetry.getContext().getDevice().setId("...");
 
 ## <a name="trackevent"></a>TrackEvent (Отслеживание событий)
 
-В Application Insights *пользовательское событие* — это точка данных, которую можно отобразить как суммарное значение в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md), а также как отдельные значения на вкладке [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md). (Оно не связано с MVC и другими "событиями" платформы.)
+В Application Insights *пользовательское событие* — это точка данных, которую можно отобразить как суммарное значение в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md), а также как отдельные значения на вкладке [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md). (Оно не связано с MVC и другими "событиями" платформы.)
 
 Вставьте вызовы `TrackEvent` в код для подсчета различных событий: как часто пользователи выбирают определенный компонент, как часто они достигают определенных целей, а также как часто возникают те или иные ошибки.
 
@@ -148,96 +147,11 @@ telemetry.trackEvent({name: "WinGame"});
 
 Данные телеметрии доступны в таблице `customEvents` в [службе аналитики Application Insights](analytics.md). Каждая строка представляет собой вызов `trackEvent(..)` в приложении.
 
-Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, следует использовать такой код, как `customEvents | summarize sum(itemCount)`.
+Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, необходимо использовать код, такой как `customEvents | summarize sum(itemCount)` .
 
 ## <a name="getmetric"></a>GetMetric
 
-### <a name="examples"></a>Примеры
-
-*C#*
-
-```csharp
-namespace User.Namespace.Example01
-{
-    using System;
-    using Microsoft.ApplicationInsights;
-    using Microsoft.ApplicationInsights.DataContracts;
-
-    /// <summary>
-    /// Most simple cases are one-liners.
-    /// This is all possible without even importing an additional namespace.
-    /// </summary>
-
-    public class Sample01
-    {
-        /// <summary />
-        public static void Exec()
-        {
-            // *** SENDING METRICS ***
-
-            // Recall how you send custom telemetry with Application Insights in other cases, e.g. Events.
-            // The following will result in an EventTelemetry object to be sent to the cloud right away.
-            TelemetryClient client = new TelemetryClient();
-            client.TrackEvent("SomethingInterestingHappened");
-
-            // Metrics work very similar. However, the value is not sent right away.
-            // It is aggregated with other values for the same metric, and the resulting summary (aka "aggregate" is sent automatically every minute.
-            // To mark this difference, we use a pattern that is similar, but different from the established TrackXxx(..) pattern that sends telemetry right away:
-
-            client.GetMetric("CowsSold").TrackValue(42);
-
-            // *** MULTI-DIMENSIONAL METRICS ***
-
-            // The above example shows a zero-dimensional metric.
-            // Metrics can also be multi-dimensional.
-            // In the initial version we are supporting up to 2 dimensions, and we will add support for more in the future as needed.
-            // Here is an example for a one-dimensional metric:
-
-            Metric animalsSold = client.GetMetric("AnimalsSold", "Species");
-
-            animalsSold.TrackValue(42, "Pigs");
-            animalsSold.TrackValue(24, "Horses");
-
-            // The values for Pigs and Horses will be aggregated separately from each other and will result in two distinct aggregates.
-            // You can control the maximum number of number data series per metric (and thus your resource usage and cost).
-            // The default limits are no more than 1000 total data series per metric, and no more than 100 different values per dimension.
-            // We discuss elsewhere how to change them.
-            // We use a common .NET pattern: TryXxx(..) to make sure that the limits are observed.
-            // If the limits are already reached, Metric.TrackValue(..) will return False and the value will not be tracked. Otherwise it will return True.
-            // This is particularly useful if the data for a metric originates from user input, e.g. a file:
-
-            Tuple<int, string> countAndSpecies = ReadSpeciesFromUserInput();
-            int count = countAndSpecies.Item1;
-            string species = countAndSpecies.Item2;
-
-            if (!animalsSold.TrackValue(count, species))
-
-            {
-                client.TrackTrace($"Data series or dimension cap was reached for metric {animalsSold.Identifier.MetricId}.", SeverityLevel.Error);
-            }
-
-            // You can inspect a metric object to reason about its current state. For example:
-            int currentNumberOfSpecies = animalsSold.GetDimensionValues(1).Count;
-        }
-
-        private static void ResetDataStructure()
-        {
-            // Do stuff
-        }
-
-        private static Tuple<int, string> ReadSpeciesFromUserInput()
-        {
-            return Tuple.Create(18, "Cows");
-        }
-
-        private static int AddItemsToDataStructure()
-        {
-            // Do stuff
-            return 5;
-        }
-    }
-}
-```
+Чтобы узнать, как эффективно использовать вызов методаической метрики () для отслеживания локальных предварительно агрегированных метрик для приложений .NET и .NET Core, посетите [документацию по функции](../../azure-monitor/app/get-metric.md) Intel.
 
 ## <a name="trackmetric"></a>TrackMetric (Отслеживание метрик)
 
@@ -423,7 +337,7 @@ using (var operation = telemetryClient.StartOperation<RequestTelemetry>("operati
 
 Элементы телеметрии, о которых поступают сведения в пределах операции, становятся дочерними элементами такой операции. Контексты операции могут быть вложенными.
 
-В колонке поиска контекст операции используется для создания списка **связанных элементов**.
+В области поиска контекст операции используется для создания списка **связанных элементов** :
 
 ![Связанные элементы](./media/api-custom-events-metrics/21.png)
 
@@ -444,7 +358,7 @@ requests
 
 Отправляйте исключения в Application Insights, чтобы:
 
-* [определить их количество](../../azure-monitor/app/metrics-explorer.md) (для указания на частоту возникновения проблемы);
+* [определить их количество](../../azure-monitor/platform/metrics-charts.md) (для указания на частоту возникновения проблемы);
 * [проверить отдельные значения.](../../azure-monitor/app/diagnostic-search.md)
 
 Отчеты содержат данные по трассировкам стеков.
@@ -522,7 +436,7 @@ exceptions
 | summarize sum(itemCount) by type
 ```
 
-Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Пример.
+Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Пример:
 
 ```kusto
 exceptions
@@ -538,7 +452,7 @@ exceptions
 
 ## <a name="tracktrace"></a>TrackTrace (Отслеживание трассировки)
 
-Используйте TrackTrace для диагностики неполадок, отправляя навигационную цепочку в Application Insights. Вы можете отправлять блоки диагностических данных и проверять их с помощью [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md).
+Используйте TrackTrace для диагностики неполадок, отправляя навигационную цепочку в Application Insights. Вы можете отсылать блоки диагностических данных и проверять их в [поиске](../../azure-monitor/app/diagnostic-search.md)по журналу диагностики.
 
 В .NET [адаптеры журнала](../../azure-monitor/app/asp-net-trace-logs.md) используют этот API для отправки журналов сторонних производителей на портал.
 
@@ -574,7 +488,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 
 Зарегистрируйте событие диагностики, например вход в метод или выход из него.
 
- Параметр | Description
+ Параметр | Описание
 ---|---
 `message` | Диагностические данные Могут содержать не только имя.
 `properties` | Преобразование строки в строку: дополнительные данные, используемые для [фильтрации исключений](https://azure.microsoft.com/documentation/articles/app-insights-api-custom-events-metrics/#properties) на портале. Значение по умолчанию: empty.
@@ -583,9 +497,9 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 Вы можете выполнять поиск содержимого сообщения, но (в отличие от значений свойств) не можете фильтровать его.
 
 Ограничения по размеру `message` гораздо выше, чем ограничение для свойств.
-Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.  
+Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных,  например данных POST.  
 
-Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример.
+Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример:
 
 *C#*
 
@@ -735,7 +649,7 @@ telemetry.flush();
 
 ## <a name="authenticated-users"></a>Прошедшие проверку пользователи
 
-В веб-приложении пользователи по умолчанию идентифицируются файлами cookie. Пользователь может быть учтен более одного раза при доступе к приложению с другого компьютера или браузера либо при удалении файлов cookie.
+В веб-приложении пользователи (по умолчанию) [определяются файлами cookie](../../azure-monitor/app/usage-segmentation.md#the-users-sessions-and-events-segmentation-tool). Пользователь может быть учтен более одного раза при доступе к приложению с другого компьютера или браузера либо при удалении файлов cookie.
 
 Если пользователи входят в ваше приложение, более точное их количество можно узнать, указав идентификатор пользователя, прошедшего аутентификацию, в коде браузера.
 
@@ -775,11 +689,11 @@ function Authenticated(signInId) {
 appInsights.setAuthenticatedUserContext(validatedId, accountId);
 ```
 
-В [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) можно создать диаграмму для отображения количества **пользователей, прошедших проверку подлинности**, а также **учетных записей пользователей**.
+В [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) можно создать диаграмму для отображения количества **пользователей, прошедших проверку подлинности**, а также **учетных записей пользователей**.
 
 Кроме того, можно [выполнить поиск](../../azure-monitor/app/diagnostic-search.md) точек данных клиентов с определенными именами пользователей и учетными записями.
 
-## <a name="properties"></a>Фильтрация, поиск и сегментация данных с помощью свойств
+## <a name="filtering-searching-and-segmenting-your-data-by-using-properties"></a><a name="properties"></a>Фильтрация, поиск и сегментация данных с помощью свойств
 
 Вы можете прикрепить свойства и результаты измерений к своим событиям, а также метрикам, просмотрам страниц, исключениям и другим данным телеметрии.
 
@@ -910,7 +824,7 @@ requests
 * При извлечении значения из JSON customDimensions или customMeasurements оно имеет динамический тип, поэтому его необходимо привести к `tostring` или `todouble`.
 * С учетом возможности [выборки](../../azure-monitor/app/sampling.md) следует использовать `sum(itemCount)`, а не `count()`.
 
-## <a name="timed"></a> События времени
+## <a name="timing-events"></a><a name="timed"></a> События времени
 
 Иногда требуется отобразить на диаграмме продолжительность выполнения действия. Например, может потребоваться определить, сколько времени нужно пользователям для выбора решений в игре. Для этого можно использовать параметр измерения.
 
@@ -953,7 +867,7 @@ properties.put("signalSource", currentSignalSource.getName());
 telemetry.trackEvent("SignalProcessed", properties, metrics);
 ```
 
-## <a name="defaults"></a>Свойства по умолчанию для настраиваемой телеметрии
+## <a name="default-properties-for-custom-telemetry"></a><a name="defaults"></a>Свойства по умолчанию для настраиваемой телеметрии
 
 Если для некоторых создаваемых пользовательских событий требуется задать значения свойств по умолчанию, можно сделать это в экземпляре TelemetryClient. Они прикреплены к каждому элементу телеметрии, отправляемой из этого клиента.
 
@@ -1003,7 +917,7 @@ gameTelemetry.TrackEvent({name: "WinGame"});
 
 Вызовы отдельных данных телеметрии могут переопределить значения по умолчанию в словарях свойства.
 
-*Для веб-клиентов JavaScript* используйте инициализаторы телеметрии JavaScript.
+*Для веб-клиентов JavaScript*используйте инициализаторы телеметрии JavaScript.
 
 *Чтобы добавить свойства для всей телеметрии*, включая данные из модулей стандартной коллекции, [реализуйте `ITelemetryInitializer`](../../azure-monitor/app/api-filtering-sampling.md#add-properties).
 
@@ -1017,7 +931,7 @@ gameTelemetry.TrackEvent({name: "WinGame"});
 
 [Выборка](../../azure-monitor/app/api-filtering-sampling.md) представляет собой упакованное решение для сокращения объема данных, отправляемых из приложения на портал. На отображаемые метрики выборка не влияет. Возможность диагностировать проблемы путем перехода между связанными элементами, такими как исключения, запросы и просмотры страниц, также не затрагивается.
 
-[Узнайте больше](../../azure-monitor/app/api-filtering-sampling.md).
+[Подробнее](../../azure-monitor/app/api-filtering-sampling.md).
 
 ## <a name="disabling-telemetry"></a>Отключение телеметрии
 
@@ -1059,7 +973,7 @@ applicationInsights.setup()
 
 Чтобы отключить эти сборщики после инициализации, используйте объект конфигурации `applicationInsights.Configuration.setAutoCollectRequests(false)`.
 
-## <a name="debug"></a>Режим разработчика
+## <a name="developer-mode"></a><a name="debug"></a>Режим разработчика
 
 Во время отладки полезно передавать телеметрию через конвейер, чтобы результаты можно было увидеть немедленно. Кроме того, вы можете получать дополнительные сообщения, которые помогают трассировать любые проблемы с телеметрией. Отключите этот режим в рабочей среде, так как он может замедлить работу приложения.
 
@@ -1077,7 +991,7 @@ TelemetryConfiguration.Active.TelemetryChannel.DeveloperMode = True
 
 *Node.js*
 
-Для Node. js можно включить режим разработчика, включив внутреннее ведение журнала с помощью `setInternalLogging` и установив `maxBatchSize` равным 0, что приводит к отправке данных телеметрии сразу после сбора.
+Для Node. js можно включить режим разработчика, включив внутреннее ведение журнала с помощью `setInternalLogging` и установив значение `maxBatchSize` 0, что приводит к отправке данных телеметрии сразу после сбора.
 
 ```js
 applicationInsights.setup("ikey")
@@ -1086,7 +1000,7 @@ applicationInsights.setup("ikey")
 applicationInsights.defaultClient.config.maxBatchSize = 0;
 ```
 
-## <a name="ikey"></a> Установка ключа инструментирования для выбранной пользовательской телеметрии
+## <a name="setting-the-instrumentation-key-for-selected-custom-telemetry"></a><a name="ikey"></a> Установка ключа инструментирования для выбранной пользовательской телеметрии
 
 *C#*
 
@@ -1096,9 +1010,9 @@ telemetry.InstrumentationKey = "---my key---";
 // ...
 ```
 
-## <a name="dynamic-ikey"></a> Динамический ключ инструментирования
+## <a name="dynamic-instrumentation-key"></a><a name="dynamic-ikey"></a> Динамический ключ инструментирования
 
-Во избежание смешивания телеметрии из среды разработки, тестовой и рабочей среды вы можете [создавать отдельные ресурсы Application Insights](../../azure-monitor/app/create-new-resource.md ) и менять их ключи в зависимости от среды.
+Чтобы не смешивать данные телеметрии из сред разработки, тестирования и рабочей среды, можно [создать отдельные ресурсы Application Insights](../../azure-monitor/app/create-new-resource.md ) и изменить их ключи в зависимости от среды.
 
 Вместо получения ключа инструментирования из файла конфигурации можно задать его в коде. Задайте ключ в методе инициализации, таком как global.aspx.cs, в службе ASP.NET:
 
@@ -1148,7 +1062,7 @@ var appInsights = window.appInsights || function(config){ ...
 
 ## <a name="telemetrycontext"></a>Класс TelemetryContext
 
-Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Пример.
+Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Пример:
 
 ```csharp
 telemetry.Context.Operation.Name = "MyOperationName";
@@ -1164,9 +1078,9 @@ telemetry.Context.Operation.Name = "MyOperationName";
   * **ID**: созданное значение, которое сопоставляет различные события, чтобы при проверке любого события в поиске по журналу диагностики можно было найти связанные элементы.
   * **Name**: идентификатор, обычно URL-адрес HTTP-запроса.
   * **SyntheticSource:** если эта строка не пустая и не имеет значение null, она означает, что источник запроса был определен как программа-робот или веб-тест. По умолчанию он исключается из вычислений в обозревателе метрик.
-* **Properties:** свойства, которые отправляются со всеми данными телеметрии. Это значение можно переопределить в отдельных вызовах Track*.
+* **Свойства**: свойства, которые отправляются со всеми данными телеметрии. Это значение можно переопределить в отдельных вызовах Track*.
 * **Session:** сеанс пользователя. Для Id задается созданное значение, которое изменяется, если пользователь был неактивным в течение некоторого времени.
-* **User:** информация о пользователе.
+* **Пользователь**: сведения о пользователе.
 
 ## <a name="limits"></a>Ограничения
 
@@ -1176,33 +1090,31 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 Сведения о том, как определить, как долго хранятся данные, см. в статье [Сбор и хранение данных в Application Insights](../../azure-monitor/app/data-retention-privacy.md).
 
-## <a name="reference-docs"></a>Справочные документы
+## <a name="reference-docs"></a>Справочная документация
 
 * [Справочник по ASP.NET](https://docs.microsoft.com/dotnet/api/overview/azure/insights?view=azure-dotnet)
 * [Справочник по Java](https://docs.microsoft.com/java/api/overview/azure/appinsights?view=azure-java-stable/)
 * [Справочник по JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
 
-
 ## <a name="sdk-code"></a>Код пакета SDK
 
-* [Базовый пакет SDK для ASP.NET](https://github.com/Microsoft/ApplicationInsights-aspnetcore)
+* [Базовый пакет SDK для ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
 * [ASP.NET](https://github.com/Microsoft/ApplicationInsights-dotnet)
-* [Пакеты Windows Server](https://github.com/Microsoft/applicationInsights-dotnet-server)
-* [пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
+* [Пакеты Windows Server](https://github.com/Microsoft/ApplicationInsights-dotnet)
+* [Пакет SDK для Java](https://github.com/Microsoft/ApplicationInsights-Java)
 * [Пакет SDK для Node.js](https://github.com/Microsoft/ApplicationInsights-Node.js)
 * [Пакет SDK для JavaScript](https://github.com/Microsoft/ApplicationInsights-JS)
-
 
 ## <a name="questions"></a>Вопросы
 
 * *Какие исключения могут создаваться при вызовах Track_()?*
 
-    Нет подходящих вариантов. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
+    Нет. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
 * *Существует ли REST API для получения данных из портала?*
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](../../azure-monitor/app/export-power-bi.md ) и [непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).
 
-## <a name="next"></a>Следующие шаги
+## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 
 * [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md)
 * [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)

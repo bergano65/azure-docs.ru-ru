@@ -8,10 +8,10 @@ ms.topic: include
 ms.date: 10/07/2019
 ms.author: dapine
 ms.openlocfilehash: 3d32ab72cfa16ad5e2d627c4d1ab585b2128363f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73500204"
 ---
 ### <a name="text-analytics-support-notes"></a>** Примечания о поддержке анализа текста

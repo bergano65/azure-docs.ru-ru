@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 652204416c201ccca024aff0239fc10dcc3eb105
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 08c069de70684a8562e86963ddb2e84ee889e7cc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74870995"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302259"
 ---
 # <a name="ltrim-azure-cosmos-db"></a>LTRIM (Azure Cosmos DB)
  Возвращает строковое выражение после удаления начальных пробелов.  
@@ -28,7 +28,7 @@ LTRIM(<str_expr>)
 *str_expr*  
    Является строковым выражением.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает строковое выражение.  
   
@@ -46,8 +46,12 @@ SELECT LTRIM("  abc") AS l1, LTRIM("abc") AS l2, LTRIM("abc   ") AS l3
 [{"l1": "abc", "l2": "abc", "l3": "abc   "}]  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

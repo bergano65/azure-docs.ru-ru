@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 2027629e1e9e297c97cbf40485ebe7dc2e3e6c0d
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 4673bcb71fc2f45c3b02f8fe5e463184395e8ef8
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368965"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891282"
 ---
 # <a name="azure-event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий Azure" для функций Azure
 
@@ -21,11 +21,11 @@ ms.locfileid: "77368965"
 
 ## <a name="example"></a>Пример
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Пример триггера HTTP см. [в разделе Receive Events to a HTTP Endpoint](../event-grid/receive-events.md).
 
-### <a name="c-2x-and-higher"></a>C#(2. x и выше)
+### <a name="c-2x-and-higher"></a>C# (2. x и более поздние версии)
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая выполняет привязку к `EventGridEvent`:
 
@@ -76,7 +76,7 @@ namespace Company.Function
 }
 ```
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку.
 
@@ -97,7 +97,7 @@ namespace Company.Function
 
 ### <a name="version-2x-and-higher"></a>Версии 2. x и выше
 
-Ниже приведен пример, который привязывается к `EventGridEvent`:
+Ниже приведен пример, который выполняет привязку `EventGridEvent`к:
 
 ```csharp
 #r "Microsoft.Azure.EventGrid"
@@ -128,7 +128,7 @@ public static void Run(JObject eventGridEvent, TraceWriter log)
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 В следующем примере показана привязка триггера в файле *function.json* и [функция JavaScript](functions-reference-node.md), которая использует привязку.
 
@@ -159,7 +159,7 @@ module.exports = function (context, eventGridEvent) {
 };
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 В следующем примере показаны привязка триггера в файле *function.json* и [функция Python](functions-reference-python.md), использующая эту привязку.
 
@@ -200,16 +200,16 @@ def main(event: func.EventGridEvent):
     logging.info('Python EventGrid trigger processed an event: %s', result)
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 Этот раздел содержит следующие примеры.
 
 * [Триггер сетки событий, строковый параметр](#event-grid-trigger-string-parameter)
 * [Триггер сетки событий, параметр POJO](#event-grid-trigger-pojo-parameter)
 
-В следующих примерах показана привязка триггера в [Java](functions-reference-java.md) , использующая привязку и выводимое на печать событие, сначала получающая событие как `String`, а второе — как POJO.
+В следующих примерах показана привязка триггера в [Java](functions-reference-java.md) , использующая привязку и выводимое на печать `String` событие, сначала получающее событие как, а второе — как POJO.
 
-### <a name="event-grid-trigger-string-parameter"></a>Триггер сетки событий, параметр строки
+### <a name="event-grid-trigger-string-parameter"></a>Триггер сетки событий, строковый параметр
 
 ```java
   @FunctionName("eventGridMonitorString")
@@ -269,7 +269,7 @@ public class EventSchema {
 
 ## <a name="attributes-and-annotations"></a>Атрибуты и заметки
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [EventGridTrigger](https://github.com/Azure/azure-functions-eventgrid-extension/blob/master/src/EventGridExtension/TriggerBinding/EventGridTriggerAttribute.cs).
 
@@ -285,37 +285,37 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 
 Полный пример см. в разделе "Пример C#".
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются C# сценарием.
+Атрибуты не поддерживаются скриптом C#.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Атрибуты не поддерживаются в JavaScript.
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Атрибуты не поддерживаются в Python.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 Заметка [EventGridTrigger](https://github.com/Azure/azure-functions-java-library/blob/master/src/main/java/com/microsoft/azure/functions/annotation/EventGridTrigger.java) позволяет декларативно настроить привязку сетки событий, предоставляя значения конфигурации. Дополнительные сведения см. в разделах [примеры](#example) и [Конфигурация](#configuration) .
 
 ---
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json*. В атрибуте `EventGridTrigger` не задаются параметры или свойства конструкции.
 
-|свойство function.json |Description|
+|свойство function.json |Описание|
 |---------|---------|
 | **type** | Обязательное. Необходимо задать значение `eventGridTrigger`. |
-| **direction** | Обязательное. Необходимо задать значение `in`. |
+| **двух** | Обязательное. Необходимо задать значение `in`. |
 | **name** | Обязательное. Имя переменной, используемой в коде функции, для параметра, получающего данные события. |
 
 ## <a name="usage"></a>Использование
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 В функциях Azure 1. x можно использовать следующие типы параметров для триггера службы "Сетка событий":
 
@@ -329,7 +329,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 > [!NOTE]
 > В службе "Функции" 1.х при попытке сделать привязку к `Microsoft.Azure.WebJobs.Extensions.EventGrid.EventGridEvent` в компиляторе появится сообщение о том, что это не рекомендуется, и совет использовать `Microsoft.Azure.EventGrid.Models.EventGridEvent`. Чтобы использовать более новый тип, ссылайтесь на пакет NuGet [Microsoft.Azure.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.EventGrid) и полностью определите имя типа `EventGridEvent`, добавив префикс `Microsoft.Azure.EventGrid.Models`.
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 В функциях Azure 1. x можно использовать следующие типы параметров для триггера службы "Сетка событий":
 
@@ -343,17 +343,17 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, ILog
 > [!NOTE]
 > В службе "Функции" 1.х при попытке сделать привязку к `Microsoft.Azure.WebJobs.Extensions.EventGrid.EventGridEvent` в компиляторе появится сообщение о том, что это не рекомендуется, и совет использовать `Microsoft.Azure.EventGrid.Models.EventGridEvent`. Чтобы использовать более новый тип, ссылайтесь на пакет NuGet [Microsoft.Azure.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.EventGrid) и полностью определите имя типа `EventGridEvent`, добавив префикс `Microsoft.Azure.EventGrid.Models`. Сведения о том, как ссылаться на пакеты NuGet в функции сценария C#, см. в разделе [об использовании пакетов NuGet](functions-reference-csharp.md#using-nuget-packages).
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Экземпляр сетки событий доступен через параметр, настроенный в свойстве `name` файла *Function. JSON* .
+Экземпляр сетки событий доступен через параметр, настроенный в `name` свойстве файла *Function. JSON* .
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-Экземпляр сетки событий доступен через параметр, настроенный в свойстве `name` файла *Function. JSON* , типизированный как `func.EventGridEvent`.
+Экземпляр сетки событий доступен через параметр, настроенный в `name` свойстве файла *Function. JSON* , типизированный как. `func.EventGridEvent`
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Экземпляр события сетки событий доступен через параметр, связанный с атрибутом `EventGridTrigger`, который типизирован как `EventSchema`. Дополнительные сведения см. в [примере](#example) .
+Экземпляр события сетки событий доступен через параметр, связанный с `EventGridTrigger` атрибутом, типизированный как. `EventSchema` Дополнительные сведения см. в [примере](#example) .
 
 ---
 
@@ -570,4 +570,4 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Отправка события сетки событий](./functions-bindings-event-grid-trigger.md)
+* [Отправка события сетки событий](./functions-bindings-event-grid-output.md)

@@ -1,6 +1,6 @@
 ---
 title: Переопределение подсети диспетчера трафика Azure с помощью Azure PowerShell | Документация Майкрософт
-description: Эта статья поможет вам понять, как переопределение подсети диспетчера трафика переопределяет метод маршрутизации профиля диспетчера трафика, чтобы направить трафик в конечную точку на основе IP-адреса конечного пользователя через предопределенный диапазон IP-адресов для сопоставления конечных точек с помощью Azure. Оболочк.
+description: Эта статья поможет вам понять, как переопределение подсети диспетчера трафика используется для переопределения метода маршрутизации профиля диспетчера трафика, чтобы направить трафик в конечную точку на основе IP-адреса конечного пользователя через предопределенный диапазон IP-адресов для сопоставления конечных точек с помощью Azure PowerShell.
 services: traffic-manager
 documentationcenter: ''
 author: rohinkoul
@@ -10,10 +10,10 @@ ms.service: traffic-manager
 ms.date: 09/18/2019
 ms.author: rohink
 ms.openlocfilehash: 323093ec78a9486d19496b0ee90e37cb42eea341
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76938422"
 ---
 # <a name="traffic-manager-subnet-override-using-azure-powershell"></a>Переопределение подсети диспетчера трафика с помощью Azure PowerShell
@@ -111,7 +111,7 @@ ms.locfileid: "76938422"
 
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. дополнительные сведения в статье [Методы маршрутизации трафика диспетчером трафика](traffic-manager-routing-methods.md).
 
 Сведения о [методе маршрутизации трафика подсети](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods#subnet-traffic-routing-method)

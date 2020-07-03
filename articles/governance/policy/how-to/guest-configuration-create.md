@@ -1,43 +1,59 @@
 ---
-title: Создание политик конфигурации гостя
-description: Узнайте, как создать политику гостевой конфигурации политики Azure для виртуальных машин Windows или Linux с Azure PowerShell.
-ms.date: 12/16/2019
+title: Создание политик конфигурации гостя для Windows
+description: Узнайте, как создать политику гостевой конфигурации политики Azure для Windows.
+ms.date: 03/20/2020
 ms.topic: how-to
-ms.openlocfilehash: 8bd769b61ed87c9ded45ceca11586cfe105740c9
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: a75525b25945dd9548d7c293d5965cc67eb463dc
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77167186"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509624"
 ---
-# <a name="how-to-create-guest-configuration-policies"></a>Создание политик конфигурации гостя
+# <a name="how-to-create-guest-configuration-policies-for-windows"></a>Создание политик конфигурации гостя для Windows
 
-Конфигурация гостя использует модуль ресурсов [Desired State Configuration](/powershell/scripting/dsc/overview/overview) (DSC), чтобы создать конфигурацию для аудита компьютеров Azure. Конфигурация DSC определяет условие, в котором должен находиться компьютер. Если при вычислении конфигурации произошел сбой, то активируется действие политики **помощью параметров auditifnotexists** , и компьютер **считается несовместимым.**
+Перед созданием настраиваемых политик рекомендуется прочитать концептуальную информацию на странице [Настройка гостевой системы политики Azure](../concepts/guest-configuration.md).
+ 
+Дополнительные сведения о создании политик гостевой конфигурации для Linux см. на странице [Создание политик конфигурации гостей для Linux](./guest-configuration-create-linux.md) .
+
+При аудите Windows Гостевая конфигурация использует модуль ресурсов [Desired State Configuration](/powershell/scripting/dsc/overview/overview) (DSC) для создания файла конфигурации. Конфигурация DSC определяет условие, в котором должен находиться компьютер.
+Если при вычислении конфигурации произошел сбой, то активируется действие политики **помощью параметров auditifnotexists** , и компьютер **считается несовместимым.**
 
 [Гостевую конфигурацию политики Azure](../concepts/guest-configuration.md) можно использовать только для аудита параметров внутри компьютеров. Исправление параметров в виртуальных машинах пока недоступно.
 
-Используйте следующие действия, чтобы создать собственную конфигурацию для проверки состояния компьютера Azure.
+Используйте следующие действия, чтобы создать собственную конфигурацию для проверки состояния виртуальной машины Azure или платформы, отличной от Azure.
 
 > [!IMPORTANT]
 > Настраиваемые политики с гостевой конфигурацией — это предварительная версия функции.
+>
+> Для проведения аудита на виртуальных машинах Azure требуется расширение конфигурации гостевой виртуальной машины.
+> Чтобы развернуть расширение в масштабе на всех компьютерах Windows, назначьте следующие определения политик:
+>   - [Развертывание необходимых компонентов для политики гостевой конфигурации на виртуальных машинах Windows](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0ecd903d-91e7-4726-83d3-a229d7f2e293)
 
-## <a name="add-the-guestconfiguration-resource-module"></a>Добавление модуля ресурсов Гуестконфигуратион
+## <a name="install-the-powershell-module"></a>Установка модуля PowerShell
 
-Чтобы создать политику конфигурации гостевой системы, необходимо добавить модуль ресурсов. Этот модуль ресурсов можно использовать с локально установленным PowerShell с [Azure Cloud Shell](https://shell.azure.com)или с [образом DOCKER Azure PowerShell Core](https://hub.docker.com/r/azuresdk/azure-powershell-core).
+Создание артефакта конфигурации гостя, автоматическое тестирование артефакта, создание определения политики и публикация политики, полностью автоматизируются с помощью модуля гостевой настройки в PowerShell. Модуль можно установить на компьютере под управлением Windows, macOS или Linux с помощью PowerShell 6,2 или более поздней версии, локально или [Azure Cloud Shell](https://shell.azure.com)или с [образом Azure PowerShell Core DOCKER](https://hub.docker.com/r/azuresdk/azure-powershell-core).
 
 > [!NOTE]
-> Хотя модуль **гуестконфигуратион** работает в указанных выше средах, действия по компиляции конфигурации DSC должны быть выполнены в Windows PowerShell 5,1.
+> Компиляция конфигураций еще не поддерживается в Linux.
 
 ### <a name="base-requirements"></a>Основные требования
 
+Операционные системы, в которых можно установить модуль:
+
+- Linux
+- macOS
+- Windows
+
 Для модуля ресурсов гостевой настройки требуется следующее программное обеспечение:
 
-- PowerShell. Если она еще не установлена, выполните [эти инструкции](/powershell/scripting/install/installing-powershell).
+- PowerShell 6,2 или более поздней версии. Если она еще не установлена, выполните [эти инструкции](/powershell/scripting/install/installing-powershell).
 - Azure PowerShell 1.5.0 или более поздней версии. Если она еще не установлена, выполните [эти инструкции](/powershell/azure/install-az-ps).
+  - Требуются только модули AZ "az. Accounts" и "az. Resources".
 
 ### <a name="install-the-module"></a>Установка модуля
 
-Конфигурация гостя использует модуль ресурсов **гуестконфигуратион** для создания конфигураций DSC и их публикации в политике Azure:
+Чтобы установить модуль **гуестконфигуратион** в PowerShell, выполните следующие действия.
 
 1. В командной строке PowerShell выполните следующую команду:
 
@@ -53,21 +69,21 @@ ms.locfileid: "77167186"
    Get-Command -Module 'GuestConfiguration'
    ```
 
-## <a name="create-custom-guest-configuration-configuration-and-resources"></a>Создание настраиваемой конфигурации гостевой конфигурации и ресурсов
+## <a name="guest-configuration-artifacts-and-policy-for-windows"></a>Артефакты и политика гостевой настройки для Windows
 
-Первым шагом в создании настраиваемой политики для гостевой конфигурации является создание конфигурации DSC. Общие сведения о понятиях и терминологии DSC см. в статье [Общие сведения о POWERSHELL DSC](/powershell/scripting/dsc/overview/overview).
+Конфигурация гостя использует настройку требуемого состояния PowerShell в качестве абстракции языка для записи данных аудита в Windows. Агент загружает отдельный экземпляр PowerShell 6,2, поэтому нет конфликтов с использованием PowerShell DSC в Windows PowerShell 5,1, и нет необходимости в предварительной установке PowerShell 6,2 или более поздней версии.
 
-Если для вашей конфигурации требуются только ресурсы, встроенные в установку агента гостевой конфигурации, необходимо создать только MOF-файл конфигурации. Если необходимо выполнить дополнительный скрипт, необходимо создать настраиваемый модуль ресурсов.
+Общие сведения о понятиях и терминологии DSC см. в статье [Общие сведения о POWERSHELL DSC](/powershell/scripting/dsc/overview/overview).
 
-### <a name="requirements-for-guest-configuration-custom-resources"></a>Требования к настраиваемым ресурсам настройки гостевой системы
+### <a name="how-guest-configuration-modules-differ-from-windows-powershell-dsc-modules"></a>Отличия модулей конфигурации виртуальной машины от модулей DSC Windows PowerShell
 
-Когда гостевая конфигурация выполняет аудит компьютера, сначала выполняется `Test-TargetResource`, чтобы определить, находится ли он в правильном состоянии. Логическое значение, возвращаемое функцией, определяет, является ли состояние Azure Resource Manager для назначения гостя соответствующим или несоответствующим. Если логическое значение `$false` для любого ресурса в конфигурации, то поставщик будет запущен `Get-TargetResource`. Если логическое значение `$true`, то `Get-TargetResource` не вызывается.
+Когда гостевая конфигурация выполняет аудит компьютера:
 
-#### <a name="configuration-requirements"></a>Требования настройки
+1. Сначала агент запускает `Test-TargetResource` , чтобы определить, находится ли конфигурация в правильном состоянии.
+1. Логическое значение, возвращаемое функцией, определяет, является ли состояние Azure Resource Manager для назначения гостя соответствующим или несоответствующим.
+1. Поставщик выполняется `Get-TargetResource` для возврата текущего состояния каждого параметра, чтобы получить сведения о том, почему компьютер не соответствует требованиям, и убедиться, что текущее состояние соответствует требованиям.
 
-Единственным требованием настройки гостевой конфигурации является использование настраиваемой конфигурации для того, чтобы имя конфигурации было одинаково использовано везде, где она используется. Это требование к имени включает в себя имя ZIP-файла для пакета содержимого, имя конфигурации в MOF-файле, хранящееся в пакете содержимого, и имя конфигурации, используемое в шаблоне диспетчер ресурсов в качестве имени назначения гостя.
-
-#### <a name="get-targetresource-requirements"></a>Требования Get-TargetResource
+### <a name="get-targetresource-requirements"></a>Требования Get-TargetResource
 
 Функция `Get-TargetResource` имеет особые требования к гостевой конфигурации, которые не требуются для настройки требуемого состояния Windows.
 
@@ -77,12 +93,12 @@ ms.locfileid: "77167186"
 
 Свойство reasons используется службой для стандартизации представления информации о том, что компьютер не соответствует требованиям. Каждый элемент можно представить по причинам «причина», если ресурс не соответствует требованиям. Свойство является массивом, так как ресурс может не соответствовать требованиям по более чем одной причине.
 
-Служба ожидает **код** и **фразу** свойств. При создании настраиваемого ресурса задайте текст (обычно stdout), который будет отображаться как причина, по которой ресурс не соответствует значению **фразы**. **Код** имеет определенные требования к форматированию, поэтому отчеты могут четко отображать сведения о ресурсе, который использовался для проведения аудита. Это решение делает конфигурацию гостя расширяемой. Для аудита компьютера можно выполнить любую команду, если выходные данные могут быть захвачены и возвращены в виде строкового значения для свойства **фразы** .
+Служба ожидает **код** и **фразу** свойств. При создании настраиваемого ресурса задайте текст (обычно stdout), который будет отображаться как причина, по которой ресурс не соответствует значению **фразы**. **Код** имеет определенные требования к форматированию, поэтому отчеты могут четко отображать сведения о ресурсе, используемом для аудита. Это решение делает конфигурацию гостя расширяемой. Любая команда может выполняться, пока выходные данные могут быть возвращены в виде строкового значения для свойства **фразы** .
 
 - **Code** (строка): имя ресурса, повторяющееся, а затем короткое имя без пробелов в качестве идентификатора причины. Эти три значения должны быть заключены в двоеточие без пробелов.
-  - Примером может быть `registry:registry:keynotpresent`
+  - В качестве примера можно привести`registry:registry:keynotpresent`
 - **Phrase** (строка): понятный для человека текст, поясняющий причину несоответствия параметра.
-  - Примером может быть `The registry key $key is not present on the machine.`
+  - В качестве примера можно привести`The registry key $key is not present on the machine.`
 
 ```powershell
 $reasons = @()
@@ -95,39 +111,57 @@ return @{
 }
 ```
 
-#### <a name="scaffolding-a-guest-configuration-project"></a>Формирование шаблонов проекта гостевой конфигурации
+Свойство reasons также должно быть добавлено в MOF-файл схемы для ресурса в качестве внедренного класса.
 
-Для разработчиков, которые хотели бы ускорить процесс начала и работы с примером кода, проект сообщества с именем **проекта гостевой конфигурации** существует как шаблон для модуля [Пластер](https://github.com/powershell/plaster) PowerShell. Это средство можно использовать для формирования шаблонов проекта, включая рабочую конфигурацию и образец ресурса, а также набор [Pester](https://github.com/pester/pester) тестов для проверки проекта. Этот шаблон также включает средства выполнения задач для Visual Studio Code автоматизации создания и проверки гостевого пакета конфигурации. Дополнительные сведения см. в разделе [проект гостевой конфигурации](https://github.com/microsoft/guestconfigurationproject)проекта GitHub.
-
-### <a name="custom-guest-configuration-configuration-on-linux"></a>Настраиваемая конфигурация гостевой конфигурации в Linux
-
-Конфигурация DSC для гостевой конфигурации в Linux использует ресурс `ChefInSpecResource`, чтобы предоставить подсистему имя определения Chef в [спецификации](https://www.chef.io/inspec/) . **Имя** является единственным обязательным свойством ресурса.
-
-В следующем примере создается конфигурация с именем **Baseline**, импортируется модуль ресурсов **гуестконфигуратион** , а в `ChefInSpecResource` ресурсу задается имя определения спецификации в **Linux-Patch-Baseline**:
-
-```powershell
-# Define the DSC configuration and import GuestConfiguration
-Configuration baseline
+```mof
+[ClassVersion("1.0.0.0")] 
+class Reason
 {
-    Import-DscResource -ModuleName 'GuestConfiguration'
+    [Read] String Phrase;
+    [Read] String Code;
+};
 
-    ChefInSpecResource 'Audit Linux patch baseline'
-    {
-        Name = 'linux-patch-baseline'
-    }
-}
-
-# Compile the configuration to create the MOF files
-baseline
+[ClassVersion("1.0.0.0"), FriendlyName("ResourceName")]
+class ResourceName : OMI_BaseResource
+{
+    [Key, Description("Example description")] String Example;
+    [Read, EmbeddedInstance("Reason")] String Reasons[];
+};
 ```
 
-Дополнительные сведения см. [в разделе запись, компиляция и применение конфигурации](/powershell/scripting/dsc/configurations/write-compile-apply-configuration).
+### <a name="configuration-requirements"></a>Требования настройки
 
-### <a name="custom-guest-configuration-configuration-on-windows"></a>Настраиваемая конфигурация гостевой конфигурации в Windows
+Имя пользовательской конфигурации должно быть одинаковым по всему миру. Имя ZIP-файла для пакета содержимого, имя конфигурации в MOF-файле и имя назначения гостя в шаблоне диспетчер ресурсов должны совпадать.
 
-Конфигурация DSC политики Azure используется только гостевым агентом конфигурации, она не конфликтует с конфигурацией требуемого состояния Windows PowerShell.
+### <a name="scaffolding-a-guest-configuration-project"></a>Формирование шаблонов проекта гостевой конфигурации
 
-В следующем примере создается конфигурация с именем **аудитбитлоккер**, импортируется модуль ресурсов **гуестконфигуратион** и используется ресурс `Service` для аудита работающей службы.
+Разработчики, которые хотели бы ускорить процесс начала и работы с примером кода, могут установить проект сообщества с именем " **проект гостевой конфигурации**". Проект устанавливает шаблон для модуля PowerShell [Пластер](https://github.com/powershell/plaster) . Это средство можно использовать для формирования шаблонов проекта, включая рабочую конфигурацию и образец ресурса, а также набор [Pester](https://github.com/pester/pester) тестов для проверки проекта. Этот шаблон также включает средства выполнения задач для Visual Studio Code автоматизации создания и проверки гостевого пакета конфигурации. Дополнительные сведения см. в разделе [проект гостевой конфигурации](https://github.com/microsoft/guestconfigurationproject)проекта GitHub.
+
+Дополнительные сведения о работе с конфигурациями в целом см. в разделе [запись, компиляция и применение конфигурации](/powershell/scripting/dsc/configurations/write-compile-apply-configuration).
+
+### <a name="expected-contents-of-a-guest-configuration-artifact"></a>Ожидаемое содержимое артефакта конфигурации виртуальной машины
+
+Завершенный пакет используется гостевой конфигурацией для создания определений политик Azure. Пакет состоит из следующих компонентов:
+
+- Скомпилированная конфигурация DSC в MOF
+- Папка для модулей
+  - Модуль Гуестконфигуратион
+  - Модуль Дскнативересаурцес
+  - Windows Модули ресурсов DSC, необходимые для MOF
+
+Командлеты PowerShell помогают при создании пакета.
+Папка с корневым уровнем или папка версии не требуется.
+Формат пакета должен быть ZIP-файлом.
+
+### <a name="storing-guest-configuration-artifacts"></a>Хранение артефактов гостевой конфигурации
+
+ZIP-пакет должен храниться в расположении, доступном для управляемых виртуальных машин.
+Примеры включают репозитории GitHub, репозиторий Azure или службу хранилища Azure. Если вы предпочитаете не делать этот пакет общедоступным, можно включить [маркер SAS](../../../storage/common/storage-dotnet-shared-access-signature-part-1.md) в URL-адрес.
+Вы также можете реализовать [конечную точку службы](../../../storage/common/storage-network-security.md#grant-access-from-a-virtual-network) для компьютеров в частной сети, хотя эта конфигурация применяется только к пакету и не взаимодействует со службой.
+
+## <a name="step-by-step-creating-a-custom-guest-configuration-audit-policy-for-windows"></a>Пошаговые инструкции по созданию пользовательской политики аудита настройки гостевой конфигурации для Windows
+
+Создайте конфигурацию DSC для параметров аудита. Следующий пример скрипта PowerShell создает конфигурацию с именем **аудитбитлоккер**, импортирует модуль ресурсов **псдскресаурцес** и использует `Service` ресурс для аудита работающей службы. Скрипт конфигурации можно выполнить на компьютере с Windows или macOS.
 
 ```powershell
 # Define the DSC configuration and import GuestConfiguration
@@ -135,88 +169,123 @@ Configuration AuditBitLocker
 {
     Import-DscResource -ModuleName 'PSDscResources'
 
-    Service 'Ensure BitLocker service is present and running'
-    {
-        Name = 'BDESVC'
-        Ensure = 'Present'
-        State = 'Running'
+    Node AuditBitlocker {
+      Service 'Ensure BitLocker service is present and running'
+      {
+          Name = 'BDESVC'
+          Ensure = 'Present'
+          State = 'Running'
+      }
     }
 }
 
 # Compile the configuration to create the MOF files
-AuditBitLocker
+AuditBitLocker ./Config
 ```
 
-Дополнительные сведения см. [в разделе запись, компиляция и применение конфигурации](/powershell/scripting/dsc/configurations/write-compile-apply-configuration).
+Сохраните этот файл с именем `config.ps1` в папке проекта. Запустите его в PowerShell, выполнив `./config.ps1` в терминале. Будет создан новый MOF-файл.
 
-## <a name="create-guest-configuration-custom-policy-package"></a>Создать пакет настраиваемой политики гостевой конфигурации
+`Node AuditBitlocker` Команда не является технически необходимой, но создает файл с именем `AuditBitlocker.mof` , а не по умолчанию, `localhost.mof`. Наличие имени MOF-файла соответствует конфигурации, что позволяет легко организовать множество файлов при масштабе работы.
 
-После компиляции MOF вспомогательные файлы должны быть упакованы вместе. Завершенный пакет используется гостевой конфигурацией для создания определений политик Azure. Пакет состоит из следующих компонентов:
+После компиляции MOF вспомогательные файлы должны быть упакованы вместе. Завершенный пакет используется гостевой конфигурацией для создания определений политик Azure.
 
-- Скомпилированная конфигурация DSC в MOF
-- Папка для модулей
-  - Модуль Гуестконфигуратион
-  - Модуль Дскнативересаурцес
-  - Linux Папка с определением Chef и дополнительным содержимым
-  - Windows Модули ресурсов DSC, которые не встроены
-
-Командлет `New-GuestConfigurationPackage` создает пакет. Для создания пользовательского пакета используется следующий формат:
-
-```azurepowershell-interactive
-New-GuestConfigurationPackage -Name '{PackageName}' -Configuration '{PathToMOF}' `
-    -Path '{OutputFolder}' -Verbose
-```
-
-Параметры командлета `New-GuestConfigurationPackage`:
+`New-GuestConfigurationPackage` Командлет создает пакет. Модули, необходимые для конфигурации, должны быть доступны в `$Env:PSModulePath`. Параметры `New-GuestConfigurationPackage` командлета при создании содержимого Windows:
 
 - **Имя**: имя гостевого пакета конфигурации.
 - **Конфигурация**: закомпилированный полный путь к документу конфигурации DSC.
 - **Путь**: путь к выходной папке. Это необязательный параметр. Если этот параметр не указан, пакет создается в текущем каталоге.
-- **Чефпрофилепас**: полный путь к профилю с неполными характеристиками. Этот параметр поддерживается только при создании содержимого для аудита Linux.
 
-Готовый пакет должен храниться в расположении, доступном для управляемых виртуальных машин. Примеры включают репозитории GitHub, репозиторий Azure или службу хранилища Azure. Если вы предпочитаете не делать этот пакет общедоступным, можно включить [маркер SAS](../../../storage/common/storage-dotnet-shared-access-signature-part-1.md) в URL-адрес.
-Вы также можете реализовать [конечную точку службы](../../../storage/common/storage-network-security.md#grant-access-from-a-virtual-network) для компьютеров в частной сети, хотя эта конфигурация применяется только к пакету и не взаимодействует со службой.
-
-## <a name="test-a-guest-configuration-package"></a>Тестирование пакета гостевой конфигурации
-
-После создания пакета конфигурации, но перед его публикацией в Azure можно протестировать функциональность пакета с рабочей станции или среды CI/CD. Модуль Гуестконфигуратион включает командлет `Test-GuestConfigurationPackage`, который загружает в среду разработки тот же агент, который используется на компьютерах Azure. С помощью этого решения можно выполнить локальное тестирование интеграции перед тем, как выпустить спецификацию "тестирование/контроль качества/Рабочая среда".
+Выполните следующую команду, чтобы создать пакет с использованием конфигурации, заданной на предыдущем шаге.
 
 ```azurepowershell-interactive
-Test-GuestConfigurationPackage -Path .\package\AuditWindowsService\AuditWindowsService.zip -Verbose
+New-GuestConfigurationPackage `
+  -Name 'AuditBitlocker' `
+  -Configuration './Config/AuditBitlocker.mof'
 ```
 
-Параметры командлета `Test-GuestConfigurationPackage`:
+После создания пакета конфигурации, но перед его публикацией в Azure можно протестировать пакет с рабочей станции или среды CI/CD. Командлет `Test-GuestConfigurationPackage` гуестконфигуратион включает в среду разработки тот же агент, который используется на компьютерах Azure. С помощью этого решения можно выполнить локальное тестирование интеграции перед выпуском в выставляемые облачные среды.
+
+Так как агент фактически оценивает локальную среду, в большинстве случаев необходимо выполнить командлет Test-на той же платформе операционной системы, что и вы планируете проводить аудит. В тесте будут использоваться только модули, входящие в пакет содержимого.
+
+Параметры `Test-GuestConfigurationPackage` командлета:
 
 - **Имя**: имя политики конфигурации гостя.
 - **Параметр**: параметры политики, указанные в формате Hashtable.
 - **Путь**: полный путь к пакету конфигурации гостя.
 
-Командлет также поддерживает входные данные из конвейера PowerShell. Передаем выходные данные командлета `New-GuestConfigurationPackage` в командлет `Test-GuestConfigurationPackage`.
+Выполните следующую команду, чтобы протестировать пакет, созданный на предыдущем шаге:
 
 ```azurepowershell-interactive
-New-GuestConfigurationPackage -Name AuditWindowsService -Configuration .\DSCConfig\localhost.mof -Path .\package -Verbose | Test-GuestConfigurationPackage -Verbose
+Test-GuestConfigurationPackage `
+  -Path ./AuditBitlocker.zip
 ```
 
-Дополнительные сведения о тестировании с параметрами см. в разделе ниже [Использование параметров в пользовательских политиках гостевой конфигурации](#using-parameters-in-custom-guest-configuration-policies).
-
-## <a name="create-the-azure-policy-definition-and-initiative-deployment-files"></a>Создание файлов определения политики Azure и инициативы развертывания
-
-После создания и отправки пакета настраиваемой политики гостевой конфигурации в расположение, доступное для компьютеров, создайте определение политики гостевой конфигурации для политики Azure. Командлет `New-GuestConfigurationPolicy` принимает общедоступный пакет настраиваемой политики гостевой конфигурации и создает определение политики **помощью параметров auditifnotexists** и **deployIfNotExists** . Также создается определение инициативы политики, включающее в себя оба определения политик.
-
-В следующем примере создаются определения политики и инициативы в указанном пути из пакета настраиваемой политики гостевой конфигурации для Windows, а также имя, описание и версия.
+Командлет также поддерживает входные данные из конвейера PowerShell. Передать выходные данные `New-GuestConfigurationPackage` командлета в `Test-GuestConfigurationPackage` командлет.
 
 ```azurepowershell-interactive
-New-GuestConfigurationPolicy
-    -ContentUri 'https://storageaccountname.blob.core.windows.net/packages/AuditBitLocker.zip?st=2019-07-01T00%3A00%3A00Z&se=2024-07-01T00%3A00%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=JdUf4nOCo8fvuflOoX%2FnGo4sXqVfP5BYXHzTl3%2BovJo%3D' `
-    -DisplayName 'Audit BitLocker Service.' `
-    -Description 'Audit if BitLocker is not enabled on Windows machine.' `
-    -Path '.\policyDefinitions' `
-    -Platform 'Windows' `
-    -Version 1.2.3.4 `
-    -Verbose
+New-GuestConfigurationPackage -Name AuditBitlocker -Configuration ./Config/AuditBitlocker.mof | Test-GuestConfigurationPackage
 ```
 
-Параметры командлета `New-GuestConfigurationPolicy`:
+Следующим шагом является публикация файла в хранилище BLOB-объектов. Приведенный ниже сценарий содержит функцию, которую можно использовать для автоматизации этой задачи. Для команд, используемых в `publish` функции, требуется `Az.Storage` модуль.
+
+```azurepowershell-interactive
+function publish {
+    param(
+    [Parameter(Mandatory=$true)]
+    $resourceGroup,
+    [Parameter(Mandatory=$true)]
+    $storageAccountName,
+    [Parameter(Mandatory=$true)]
+    $storageContainerName,
+    [Parameter(Mandatory=$true)]
+    $filePath,
+    [Parameter(Mandatory=$true)]
+    $blobName
+    )
+
+    # Get Storage Context
+    $Context = Get-AzStorageAccount -ResourceGroupName $resourceGroup `
+        -Name $storageAccountName | `
+        ForEach-Object { $_.Context }
+
+    # Upload file
+    $Blob = Set-AzStorageBlobContent -Context $Context `
+        -Container $storageContainerName `
+        -File $filePath `
+        -Blob $blobName `
+        -Force
+
+    # Get url with SAS token
+    $StartTime = (Get-Date)
+    $ExpiryTime = $StartTime.AddYears('3')  # THREE YEAR EXPIRATION
+    $SAS = New-AzStorageBlobSASToken -Context $Context `
+        -Container $storageContainerName `
+        -Blob $blobName `
+        -StartTime $StartTime `
+        -ExpiryTime $ExpiryTime `
+        -Permission rl `
+        -FullUri
+
+    # Output
+    return $SAS
+}
+
+# replace the $storageAccountName value below, it must be globally unique
+$resourceGroup        = 'policyfiles'
+$storageAccountName   = 'youraccountname'
+$storageContainerName = 'artifacts'
+
+$uri = publish `
+  -resourceGroup $resourceGroup `
+  -storageAccountName $storageAccountName `
+  -storageContainerName $storageContainerName `
+  -filePath ./AuditBitlocker.zip `
+  -blobName 'AuditBitlocker'
+```
+
+После создания и отправки пакета настраиваемой политики гостевой конфигурации Создайте определение политики гостевой конфигурации. `New-GuestConfigurationPolicy` Командлет принимает пользовательский пакет политики и создает определение политики.
+
+Параметры `New-GuestConfigurationPolicy` командлета:
 
 - **Контентури**: общедоступный HTTP (s) URI пакета содержимого гостевой конфигурации.
 - **DisplayName**: отображаемое имя политики.
@@ -226,7 +295,20 @@ New-GuestConfigurationPolicy
 - **Путь**: путь назначения, по которому создаются определения политик.
 - **Платформа**: Целевая платформа (Windows/Linux) для политики конфигурации гостя и пакета содержимого.
 
-Следующие файлы создаются с помощью `New-GuestConfigurationPolicy`:
+В следующем примере создаются определения политик в указанном пути из пакета настраиваемой политики.
+
+```azurepowershell-interactive
+New-GuestConfigurationPolicy `
+    -ContentUri 'https://storageaccountname.blob.core.windows.net/packages/AuditBitLocker.zip?st=2019-07-01T00%3A00%3A00Z&se=2024-07-01T00%3A00%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=JdUf4nOCo8fvuflOoX%2FnGo4sXqVfP5BYXHzTl3%2BovJo%3D' `
+    -DisplayName 'Audit BitLocker Service.' `
+    -Description 'Audit if BitLocker is not enabled on Windows machine.' `
+    -Path './policies' `
+    -Platform 'Windows' `
+    -Version 1.0.0 `
+    -Verbose
+```
+
+Следующие файлы создаются `New-GuestConfigurationPolicy`:
 
 - **Помощью параметров auditifnotexists. JSON**
 - **deployIfNotExists. JSON**
@@ -234,15 +316,52 @@ New-GuestConfigurationPolicy
 
 Выходные данные командлета возвращают объект, содержащий отображаемое имя инициативы и путь к файлам политики.
 
-Если вы хотите использовать эту команду для формирования шаблона проекта настраиваемой политики, можно внести изменения в эти файлы. В качестве примера можно изменить раздел if, чтобы определить наличие определенного тега для компьютеров. Дополнительные сведения о создании политик см. в разделе [программное создание политик](./programmatically-create.md).
+Наконец, опубликуйте определения политик с помощью `Publish-GuestConfigurationPolicy` командлета. Командлет содержит только параметр **path** , указывающий на расположение JSON файлов, созданных `New-GuestConfigurationPolicy`.
+
+Чтобы выполнить команду публикации, необходимо получить доступ к созданию политик в Azure. Конкретные требования к авторизации описаны на странице [Обзор политики Azure](../overview.md) . Наиболее подходящей встроенной ролью является **участник политики ресурсов**.
+
+```azurepowershell-interactive
+Publish-GuestConfigurationPolicy -Path '.\policyDefinitions'
+```
+
+`Publish-GuestConfigurationPolicy` Командлет принимает путь из конвейера PowerShell. Эта функция означает, что вы можете создать файлы политики и опубликовать их в одном наборе команд с последовательностью.
+
+```azurepowershell-interactive
+New-GuestConfigurationPolicy `
+ -ContentUri 'https://storageaccountname.blob.core.windows.net/packages/AuditBitLocker.zip?st=2019-07-01T00%3A00%3A00Z&se=2024-07-01T00%3A00%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=JdUf4nOCo8fvuflOoX%2FnGo4sXqVfP5BYXHzTl3%2BovJo%3D' `
+  -DisplayName 'Audit BitLocker service.' `
+  -Description 'Audit if the BitLocker service is not enabled on Windows machine.' `
+  -Path './policies' `
+ | Publish-GuestConfigurationPolicy
+```
+
+С помощью политики, созданной в Azure, последним шагом является назначение инициативы. Узнайте, как назначить инициативу с помощью [портала](../assign-policy-portal.md), [Azure CLI](../assign-policy-azurecli.md)и [Azure PowerShell](../assign-policy-powershell.md).
+
+> [!IMPORTANT]
+> Политики конфигурации гостя **всегда** должны быть назначены с помощью инициативы, объединяющей политики _помощью параметров auditifnotexists_ и _DeployIfNotExists_ . Если назначена только политика _помощью параметров auditifnotexists_ , предварительные требования не развертываются, а политика всегда показывает, что серверы "0" соответствуют требованиям.
+
+Для назначения определения политики с _DeployIfNotExistsным_ результатом требуется дополнительный уровень доступа. Чтобы предоставить минимальные привилегии, можно создать пользовательское определение роли, расширяющее **участника политики ресурсов**. В приведенном ниже примере создается роль с именем **участник политики ресурсов, проверять** с дополнительным разрешениями _Microsoft. Authorization/roleAssignments/Write_.
+
+```azurepowershell-interactive
+$subscriptionid = '00000000-0000-0000-0000-000000000000'
+$role = Get-AzRoleDefinition "Resource Policy Contributor"
+$role.Id = $null
+$role.Name = "Resource Policy Contributor DINE"
+$role.Description = "Can assign Policies that require remediation."
+$role.Actions.Clear()
+$role.Actions.Add("Microsoft.Authorization/roleAssignments/write")
+$role.AssignableScopes.Clear()
+$role.AssignableScopes.Add("/subscriptions/$subscriptionid")
+New-AzRoleDefinition -Role $role
+```
 
 ### <a name="using-parameters-in-custom-guest-configuration-policies"></a>Использование параметров в пользовательских политиках гостевой конфигурации
 
 Конфигурация гостя поддерживает переопределение свойств конфигурации во время выполнения. Эта функция означает, что значения в MOF-файле в пакете не обязательно должны рассматриваться как статические. Переопределяемые значения предоставляются с помощью политики Azure и не влияют на то, как создаются или компилируются конфигурации.
 
-Командлеты `New-GuestConfigurationPolicy` и `Test-GuestConfigurationPolicyPackage` включают параметр с именем **Parameters**. Этот параметр принимает определение Hashtable, включая все сведения о каждом параметре, и автоматически создает все необходимые разделы файлов, используемых для создания каждого определения политики Azure.
+Командлеты `New-GuestConfigurationPolicy` и `Test-GuestConfigurationPolicyPackage` включают параметр с именем **Parameters**. Этот параметр принимает определение Hashtable, включая все сведения о каждом параметре, и создает необходимые разделы каждого файла, используемого для определения политики Azure.
 
-В следующем примере создается политика Azure для аудита службы, где пользователь выбирает из списка служб во время назначения политики.
+В следующем примере создается определение политики для аудита службы, где пользователь выбирает из списка во время назначения политики.
 
 ```azurepowershell-interactive
 $PolicyParameterInfo = @(
@@ -264,75 +383,15 @@ New-GuestConfigurationPolicy
     -Description 'Audit if a Windows Service is not enabled on Windows machine.' `
     -Path '.\policyDefinitions' `
     -Parameters $PolicyParameterInfo `
-    -Platform 'Windows' `
-    -Version 1.2.3.4 `
-    -Verbose
+    -Version 1.0.0
 ```
-
-Для политик Linux Включите свойство **аттрибутесимлконтент** в конфигурацию и при необходимости перезапишите значения. Агент конфигурации гостя автоматически создает файл YAML, используемый в параметре спец для хранения атрибутов. См. пример ниже.
-
-```powershell
-Configuration FirewalldEnabled {
-
-    Import-DscResource -ModuleName 'GuestConfiguration'
-
-    Node FirewalldEnabled {
-
-        ChefInSpecResource FirewalldEnabled {
-            Name = 'FirewalldEnabled'
-            AttributesYmlContent = "DefaultFirewalldProfile: [public]"
-        }
-    }
-}
-```
-
-Для каждого дополнительного параметра добавьте хэш-таблицу в массив. В файлах политики вы увидите свойства, добавленные в конфигурацию гостя виртуальной машины, которая определяет тип ресурса, имя, свойство и значение.
-
-```json
-{
-    "apiVersion": "2018-11-20",
-    "type": "Microsoft.Compute/virtualMachines/providers/guestConfigurationAssignments",
-    "name": "[concat(parameters('vmName'), '/Microsoft.GuestConfiguration/', parameters('configurationName'))]",
-    "location": "[parameters('location')]",
-    "properties": {
-        "guestConfiguration": {
-            "name": "[parameters('configurationName')]",
-            "version": "1.*",
-            "configurationParameter": [{
-                "name": "[Service]windowsService;Name",
-                "value": "[parameters('ServiceName')]"
-            }]
-        }
-    }
-}
-```
-
-## <a name="publish-to-azure-policy"></a>Опубликовать в политике Azure
-
-Модуль ресурсов **гуестконфигуратион** предлагает способ создания определений политик и определения инициативы в Azure с одним шагом через командлет `Publish-GuestConfigurationPolicy`.
-Командлет содержит параметр **path** , указывающий на расположение трех файлов JSON, созданных `New-GuestConfigurationPolicy`.
-
-```azurepowershell-interactive
-Publish-GuestConfigurationPolicy -Path '.\policyDefinitions' -Verbose
-```
-
-Командлет `Publish-GuestConfigurationPolicy` принимает путь из конвейера PowerShell. Эта функция означает, что вы можете создать файлы политики и опубликовать их в одном наборе команд с последовательностью.
-
-```azurepowershell-interactive
-New-GuestConfigurationPolicy -ContentUri 'https://storageaccountname.blob.core.windows.net/packages/AuditBitLocker.zip?st=2019-07-01T00%3A00%3A00Z&se=2024-07-01T00%3A00%3A00Z&sp=rl&sv=2018-03-28&sr=b&sig=JdUf4nOCo8fvuflOoX%2FnGo4sXqVfP5BYXHzTl3%2BovJo%3D' -DisplayName 'Audit BitLocker service.' -Description 'Audit if the BitLocker service is not enabled on Windows machine.' -Path '.\policyDefinitions' -Platform 'Windows' -Version 1.2.3.4 -Verbose | ForEach-Object {$_.Path} | Publish-GuestConfigurationPolicy -Verbose
-```
-
-С помощью определений политики и инициативы, созданных в Azure, последним шагом является назначение инициативы. Узнайте, как назначить инициативу с помощью [портала](../assign-policy-portal.md), [Azure CLI](../assign-policy-azurecli.md)и [Azure PowerShell](../assign-policy-powershell.md).
-
-> [!IMPORTANT]
-> Политики конфигурации гостя **всегда** должны быть назначены с помощью инициативы, объединяющей политики _помощью параметров auditifnotexists_ и _DeployIfNotExists_ . Если назначена только политика _помощью параметров auditifnotexists_ , предварительные требования не развертываются, а политика всегда показывает, что серверы "0" соответствуют требованиям.
 
 ## <a name="policy-lifecycle"></a>Жизненный цикл политики
 
-После публикации настраиваемой политики Azure с помощью пакета настраиваемого содержимого необходимо обновить два поля, которые должны быть обновлены, если вы хотите опубликовать новый выпуск.
+Если вы хотите отпустить обновление политики, есть два поля, требующие внимания.
 
-- **Версия**: при запуске командлета `New-GuestConfigurationPolicy` необходимо указать номер версии, превышающий текущую публикацию. Свойство обновляет версию назначения гостевой конфигурации в новом файле политики, чтобы расширение знало, что пакет был обновлен.
-- **контенсаш**: это свойство автоматически обновляется командлетом `New-GuestConfigurationPolicy`. Это хэш-значение пакета, созданного `New-GuestConfigurationPackage`. Для публикуемого файла `.zip` свойство должно быть правильным. Если обновляется только свойство **контентури** , например в случае, когда кто-либо может изменить определение политики на портале вручную, расширение не будет принимать пакет содержимого.
+- **Версия**: при запуске `New-GuestConfigurationPolicy` командлета необходимо указать номер версии, превышающий текущую публикацию. Свойство обновляет версию назначения гостевой конфигурации, чтобы агент распознал обновленный пакет.
+- **контенсаш**: это свойство автоматически обновляется `New-GuestConfigurationPolicy` командлетом. Это хэш-значение пакета, созданного `New-GuestConfigurationPackage`. Свойство должно быть правильным для публикуемого `.zip` файла. Если обновляется только свойство **контентури** , расширение не принимает пакет содержимого.
 
 Самый простой способ выпуска обновленного пакета — повторить процедуру, описанную в этой статье, и указать обновленный номер версии. Этот процесс гарантирует, что все свойства были правильно обновлены.
 
@@ -343,24 +402,22 @@ New-GuestConfigurationPolicy -ContentUri 'https://storageaccountname.blob.core.w
 
 ## <a name="optional-signing-guest-configuration-packages"></a>Необязательно. Подписывание пакетов конфигурации гостей
 
-Пользовательские политики конфигурации гостя по умолчанию используют хэш SHA256 для проверки того, что пакет политики не изменился с момента его публикации в момент, когда он был прочитан сервером, для которого выполняется аудит.
+Настраиваемые политики гостевой конфигурации используют хэш SHA256 для проверки того, что пакет политики не изменился.
 При необходимости клиенты также могут использовать сертификат для подписывания пакетов и принудительно настроить гостевой модуль настройки, разрешающий только подписанное содержимое.
 
 Чтобы включить этот сценарий, необходимо выполнить два действия. Запустите командлет, чтобы подписать пакет содержимого, и добавьте тег на компьютеры, требующие подписания кода.
 
-Чтобы использовать функцию проверки подписи, запустите командлет `Protect-GuestConfigurationPackage`, чтобы подписать пакет перед его публикацией. Для этого командлета требуется сертификат подписи кода.
+Чтобы использовать функцию проверки подписи, запустите `Protect-GuestConfigurationPackage` командлет, чтобы подписать пакет перед его публикацией. Для этого командлета требуется сертификат подписи кода.
 
 ```azurepowershell-interactive
 $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {($_.Subject-eq "CN=mycert") }
 Protect-GuestConfigurationPackage -Path .\package\AuditWindowsService\AuditWindowsService.zip -Certificate $Cert -Verbose
 ```
 
-Параметры командлета `Protect-GuestConfigurationPackage`:
+Параметры `Protect-GuestConfigurationPackage` командлета:
 
 - **Путь**: полный путь к пакету конфигурации гостя.
 - **Сертификат**: сертификат подписи кода для подписи пакета. Этот параметр поддерживается только при подписывании содержимого для Windows.
-- **Приватегпгкэйпас**: закрытый путь к ключу GPG. Этот параметр поддерживается только при подписывании содержимого для Linux.
-- **Публикгпгкэйпас**: путь к открытому ключу GPG. Этот параметр поддерживается только при подписывании содержимого для Linux.
 
 Агент Гуестконфигуратион ждет, что открытый ключ сертификата находится в разделе "Доверенные корневые центры сертификации" на компьютерах Windows и в пути `/usr/local/share/ca-certificates/extra` на компьютерах Linux. Чтобы узел проверял подписанное содержимое, установите открытый ключ сертификата на компьютере перед применением настраиваемой политики. Этот процесс можно выполнить с помощью любой методики в виртуальной машине или с помощью политики Azure. Пример шаблона [приведен здесь](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-push-certificate-windows).
 Политика доступа Key Vault должна разрешить поставщику ресурсов вычислений доступ к сертификатам во время развертывания. Подробные инструкции см. [в разделе настройка Key Vault для виртуальных машин в Azure Resource Manager](../../../virtual-machines/windows/key-vault-setup.md#use-templates-to-set-up-key-vault).
@@ -372,9 +429,7 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {($_.Subject-eq
 $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-Хороший справочник по созданию ключей GPG для использования с компьютерами Linux приведен в статье на сайте GitHub, [создающей новый ключ GPG](https://help.github.com/en/articles/generating-a-new-gpg-key).
-
-После публикации содержимого добавьте тег с именем `GuestConfigPolicyCertificateValidation` и значением `enabled` на все виртуальные машины, где требуется подписывание кода. См. [Примеры тегов](../samples/built-in-policies.md#tags) для доставки тегов в масштабе с помощью политики Azure. После создания тега определение политики, созданное с помощью командлета `New-GuestConfigurationPolicy`, обеспечивает требование с помощью модуля настройки гостевой конфигурации.
+После публикации содержимого добавьте тег с именем `GuestConfigPolicyCertificateValidation` и значением `enabled` для всех виртуальных машин, где требуется подписывание кода. См. [Примеры тегов](../samples/built-in-policies.md#tags) для доставки тегов в масштабе с помощью политики Azure. После создания тега определение политики, созданное с помощью `New-GuestConfigurationPolicy` командлета, обеспечивает требование с помощью модуля настройки гостевой конфигурации.
 
 ## <a name="troubleshooting-guest-configuration-policy-assignments-preview"></a>Устранение неполадок назначений политик гостевой конфигурации (Предварительная версия)
 
@@ -382,7 +437,7 @@ $Cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 Для получения дополнительных сведений о командлетах в этом средстве используйте команду Get-Help в PowerShell, чтобы отобразить встроенные инструкции. Так как средство получает частые обновления, это лучший способ получить самую свежую информацию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как проводить аудит виртуальных машин с помощью [гостевой конфигурации](../concepts/guest-configuration.md).
 - Узнайте, как [программно создавать политики](programmatically-create.md).

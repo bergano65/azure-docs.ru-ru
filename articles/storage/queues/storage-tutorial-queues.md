@@ -9,17 +9,17 @@ ms.subservice: queues
 ms.topic: tutorial
 ms.reviewer: cbrooks
 ms.openlocfilehash: 9cbdc5231fdc9f836f300b1a3a81a237a9efc123
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75968202"
 ---
-# <a name="tutorial-work-with-azure-storage-queues"></a>Руководство. Работа с очередями хранилища Azure
+# <a name="tutorial-work-with-azure-storage-queues"></a>Руководство по Работа с очередями хранилища Azure
 
 Хранилище очередей Azure реализует облачный механизм очередей для поддержки взаимодействия между компонентами распределенного приложения. Каждая очередь отслеживает список сообщений, которые добавляются компонентом отправителя и обрабатываются компонентом получателя. Очередь позволяет мгновенно масштабировать приложение при любом изменении нагрузки. В этой статье описаны основные процессы работы с очередью хранилища Azure.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 >
@@ -33,7 +33,7 @@ ms.locfileid: "75968202"
 > - Проверка аргументов командной строки
 > - Создание и запуск приложения
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Получите бесплатную копию межплатформенного редактора [Visual Studio Code](https://code.visualstudio.com/download).
 - Скачайте и установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).

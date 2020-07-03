@@ -8,13 +8,13 @@ ms.author: heidist
 ms.devlang: nodejs
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 11/04/2019
-ms.openlocfilehash: fd8a053eb4ff0805b95dc11db4206e1dd2edb184
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.date: 02/25/2020
+ms.openlocfilehash: 8761a8f6daf0e15a00dc989e77339fea9536b330
+ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74406940"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82801286"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-nodejs-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Node.js с помощью REST API
 > [!div class="op_single_selector"]
@@ -25,25 +25,30 @@ ms.locfileid: "74406940"
 > * [Python](search-get-started-python.md)
 > * [Postman](search-get-started-postman.md)
 
-Из этой статьи вы узнаете, как создать приложение Node.js, которое создает, загружает индекс службы "Когнитивный поиск Azure" и отправляет к нему запросы. Здесь вы найдете пошаговое руководство по созданию приложения. Вы также можете [загрузить исходный код и данные](https://github.com/Azure-Samples/azure-search-javascript-samples/tree/master/quickstart/) и запустить приложение из командной строки.
+Из этой статьи вы узнаете, как создать приложение Node.js, которое создает, загружает индекс службы "Когнитивный поиск Azure" и отправляет к нему запросы. Здесь вы найдете пошаговое руководство по созданию приложения. Вы также можете [скачать исходный код и данные](https://github.com/Azure-Samples/azure-search-javascript-samples/tree/master/quickstart/) и запустить приложение из командной строки.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом кратком руководстве используются приведенные ниже службы, инструменты и данные.
+Для сборки и тестирования в рамках этого краткого руководства мы использовали следующее программное обеспечение и службы:
 
-+ [Node.js](https://nodejs.org).
-+ Node.js должен установить [NPM](https://www.npmjs.com).
-+ Примерная структура индекса и соответствующие документы приведены в этой статье и в [каталоге **quickstart** в репозитории](https://github.com/Azure-Samples/azure-search-javascript-samples/).
++ [Node.js](https://nodejs.org)
+
++ [NPM](https://www.npmjs.com) устанавливается с помощью Node.js
+
++ Пример структуры индекса и соответствующие документы доступны как в этой статье, так и в [каталоге **quickstart** в репозитории](https://github.com/Azure-Samples/azure-search-javascript-samples/).
+
 + [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
 Рекомендация:
 
-* [Visual Studio Code](https://code.visualstudio.com).
+* [Visual Studio Code](https://code.visualstudio.com)
+
 * Расширения [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) и [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) для VSCode.
 
 <a name="get-service-info"></a>
+
 ## <a name="get-keys-and-urls"></a>Получение ключей и URL-адресов
 
 Вызовы к службе требуют конечную точку URL-адреса и ключ доступа при каждом запросе. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Когнитивный поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
@@ -108,16 +113,17 @@ ms.locfileid: "74406940"
       }
     }
     ```
-Создайте файл **azure_search_config.json** для данных службы поиска:
 
-```json
-{
-    "serviceName" : "[SERVICE_NAME]",
-    "adminKey" : "[ADMIN_KEY]",
-    "queryKey" : "[QUERY_KEY]",
-    "indexName" : "hotels-quickstart"
-}
-```
+5. Создайте файл **azure_search_config.json** для данных службы поиска:
+
+    ```json
+    {
+        "serviceName" : "[SEARCH_SERVICE_NAME]",
+        "adminKey" : "[ADMIN_KEY]",
+        "queryKey" : "[QUERY_KEY]",
+        "indexName" : "hotels-quickstart"
+    }
+    ```
 
 Замените значение `[SERVICE_NAME]` именем службы поиска. Замените `[ADMIN_KEY]` и `[QUERY_KEY]` значениями ключей, которые вы записали ранее. 
 
@@ -398,12 +404,12 @@ const indexDefinition = require('./hotels_quickstart_index.json');
 const AzureSearchClient = require('./AzureSearchClient.js');
 ```
 
-[Пакет **nconf**](https://github.com/indexzero/nconf) позволяет задавать данные конфигурации в нескольких форматах, таких как переменные среды или командная строка. В этом примере применяются базовые возможности **nconf**, чтобы считать файл **azure_search_config.json** и вернуть его содержимое в виде словаря. С помощью функции **nconf** `get(key)` вы можете быстро проверить, правильно ли изменены значения конфигурации. В завершение своей работы функция возвращает конфигурацию:
+[Пакет **nconf**](https://github.com/indexzero/nconf) позволяет задавать данные конфигурации в нескольких форматах, таких как переменные среды или командная строка. В этом примере применяются базовые возможности **nconf**, чтобы считать файл **azure_search_config.json** и вернуть его содержимое в виде словаря. С помощью функции **nconf**`get(key)` вы можете быстро проверить, правильно ли изменены значения конфигурации. В завершение своей работы функция возвращает конфигурацию:
 
 ```javascript
 function getAzureConfiguration() {
     const config = nconf.file({ file: 'azure_search_config.json' });
-    if (config.get('serviceName') === '[SEARCH_SERVICE_NAME' ) {
+    if (config.get('serviceName') === '[SEARCH_SERVICE_NAME]' ) {
         throw new Error("You have not set the values in your azure_search_config.json file. Change them to match your search service's values.");
     }
     return config;
@@ -433,7 +439,7 @@ function sleep(ms) {
 const run = async () => {
     try {
         const cfg = getAzureConfiguration();
-        const client = new AzureSearchClient(cfg.get("serviceName"), cfg.get("adminKey"), cfg.get("queryKey"), cfg.get["serviceName"]);
+        const client = new AzureSearchClient(cfg.get("serviceName"), cfg.get("adminKey"), cfg.get("queryKey"), cfg.get("indexName"));
         
         const exists = await client.indexExistsAsync();
         await exists ? client.deleteIndexAsync() : Promise.resolve();
@@ -452,7 +458,7 @@ run();
 
 Обратите внимание, что `AzureSearchClient.indexExistsAsync()` и `AzureSearchClient.deleteIndexAsync()` не принимают параметры. Эти функции вызывают `AzureSearchClient.request()` без аргумента `bodyJson`. Поскольку `bodyJson === null` имеет значение `true`, структура `init` в `AzureSearchClient.request()` будет просто глаголом HTTP ("GET" для `indexExistsAsync()` или "DELETE" для `deleteIndexAsync()`) с заголовками, которые указывают ключ запроса.  
 
-И наоборот, метод `AzureSearchClient.createIndexAsync(indexDefinition)` _принимает_ параметр. Функция `run` из `index.js` передает содержимое файла **hotels_quickstart_index.json** в метод `AzureSearchClient.createIndexAsync(indexDefinition)`. Метод `createIndexAsync()` передает это определение в `AzureSearchClient.request()`. Так как `bodyJson === null` теперь имеет значение `false`, структура `init` в `AzureSearchClient.request()` не только содержит глагол HTTP ("PUT") и заголовки, но и указывает `body` как данные определения индекса.
+И наоборот, метод `AzureSearchClient.createIndexAsync(indexDefinition)`_принимает_ параметр. Функция `run` из `index.js` передает содержимое файла **hotels_quickstart_index.json** в метод `AzureSearchClient.createIndexAsync(indexDefinition)`. Метод `createIndexAsync()` передает это определение в `AzureSearchClient.request()`. Так как `bodyJson === null` теперь имеет значение `false`, структура `init` в `AzureSearchClient.request()` не только содержит глагол HTTP ("PUT") и заголовки, но и указывает `body` как данные определения индекса.
 
 ### <a name="prepare-and-run-the-sample"></a>Подготовка и запуск примера
 
@@ -692,7 +698,7 @@ async queryAsync(searchTerm) {
 
 При работе с бесплатной версией службы помните о том, что вам доступно максимум три индекса, индексатора и источника данных. Вы можете удалить отдельные элементы на портале, чтобы не превысить лимит. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства для Node.js вы выполнили ряд задач по созданию индекса, загрузке документов в него и выполнению запросов. Мы простейшим образом выполнили определенные действия, например чтение конфигурации и определение запросов. В реальном приложении вам будет лучше разместить эти задачи в разных модулях, чтобы обеспечить гибкость и инкапсуляцию. 
  

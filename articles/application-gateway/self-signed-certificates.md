@@ -8,18 +8,18 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: victorh
-ms.openlocfilehash: 3cf4f2314c7de2b2f7d581faeea88fe3c3177e81
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 5ceefb076b63df942cfff202946f6b82050bbab9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975063"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81311942"
 ---
 # <a name="generate-an-azure-application-gateway-self-signed-certificate-with-a-custom-root-ca"></a>Создание самозаверяющего сертификата шлюза приложений Azure с помощью пользовательского корневого ЦС
 
-В SKU шлюза приложений v2 используется Доверенные корневые сертификаты для поддержки внутренних серверов. Это приведет к удалению сертификатов проверки подлинности, которые были необходимы в номере SKU версии 1. *Корневой сертификат* является Base-64 в кодировке X. 509 (. CER). отформатируйте корневой сертификат на сервере серверных сертификатов. Он определяет корневой центр сертификации (ЦС), выдавший сертификат сервера, а затем использует сертификат сервера для SSL-соединения.
+В SKU шлюза приложений v2 используется Доверенные корневые сертификаты для поддержки внутренних серверов. Это приведет к удалению сертификатов проверки подлинности, которые были необходимы в номере SKU версии 1. *Корневой сертификат* является Base-64 в кодировке X. 509 (. CER). отформатируйте корневой сертификат на сервере серверных сертификатов. Он определяет корневой центр сертификации (ЦС), выдавший сертификат сервера, а затем использует сертификат сервера для обмена данными TLS/SSL.
 
-Шлюз приложений доверяет сертификату вашего веб-сайта по умолчанию, если он подписан известным центром сертификации (например, GoDaddy или DigiCert). В этом случае вам не нужно явно загружать корневой сертификат. Дополнительные сведения см. в разделе Общие сведения о [завершении SSL и сквозном использовании SSL с помощью шлюза приложений](ssl-overview.md). Однако если у вас есть среда разработки и тестирования и вы не хотите приобретать проверенный сертификат, подписанный центром сертификации, можно создать собственный пользовательский ЦС и создать самозаверяющий сертификат. 
+Шлюз приложений доверяет сертификату вашего веб-сайта по умолчанию, если он подписан известным центром сертификации (например, GoDaddy или DigiCert). В этом случае вам не нужно явно загружать корневой сертификат. Дополнительные сведения см. в разделе Общие сведения о [завершении работы TLS и сквозном TLS с помощью шлюза приложений](ssl-overview.md). Однако если у вас есть среда разработки и тестирования и вы не хотите приобретать проверенный сертификат, подписанный центром сертификации, можно создать собственный пользовательский ЦС и создать самозаверяющий сертификат. 
 
 > [!NOTE]
 > Самозаверяющие сертификаты не являются доверенными по умолчанию и могут быть сложными в обслуживании. Кроме того, они могут использовать устаревшие пакеты хэширования и шифра, которые могут быть не надежными. Для повышения безопасности приобретите сертификат, подписанный хорошо известным центром сертификации.
@@ -30,7 +30,7 @@ ms.locfileid: "74975063"
 - Создание самозаверяющего сертификата, подписанного пользовательским центром сертификации
 - Отправка самозаверяющего корневого сертификата в шлюз приложений для проверки подлинности внутреннего сервера
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - **[OpenSSL](https://www.openssl.org/) на компьютере под управлением Windows или Linux** 
 
@@ -88,7 +88,7 @@ ms.locfileid: "74975063"
 CSR — это открытый ключ, предоставляемый ЦС при запросе сертификата. ЦС выдает сертификат для этого конкретного запроса.
 
 > [!NOTE]
-> CN (общее имя) для сертификата сервера должно отличаться от имени домена издателя. Например, в данном случае это CN-имя для издателя `www.contoso.com`, а `www.fabrikam.com`сертификата сервера имеет значение CN.
+> CN (общее имя) для сертификата сервера должно отличаться от имени домена издателя. Например, в этом случае CN для издателя — `www.contoso.com` , а имя сертификата сервера —. `www.fabrikam.com`
 
 
 1. Чтобы создать CSR, используйте следующую команду:
@@ -125,15 +125,15 @@ CSR — это открытый ключ, предоставляемый ЦС п
    - Fabrikam. CRT
    - Fabrikam. key
 
-## <a name="configure-the-certificate-in-your-web-servers-ssl-settings"></a>Настройка сертификата в параметрах SSL веб-сервера
+## <a name="configure-the-certificate-in-your-web-servers-tls-settings"></a>Настройка сертификата в параметрах TLS веб-сервера
 
-На веб-сервере настройте SSL с помощью файлов Fabrikam. CRT и Fabrikam. key. Если веб-сервер не может принимать два файла, их можно объединить в один файл PEM или PFX с помощью команд OpenSSL.
+На веб-сервере настройте TLS с помощью файлов Fabrikam. CRT и Fabrikam. key. Если веб-сервер не может принимать два файла, их можно объединить в один файл PEM или PFX с помощью команд OpenSSL.
 
 ### <a name="iis"></a>IIS
 
 Инструкции по импорту сертификата и его передаче в качестве сертификата сервера в IIS см. в разделе [как установить импортированные сертификаты на веб-сервере в Windows server 2003](https://support.microsoft.com/help/816794/how-to-install-imported-certificates-on-a-web-server-in-windows-server).
 
-Инструкции по привязке SSL см. в разделе [Настройка SSL в IIS 7](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis#create-an-ssl-binding-1).
+Инструкции по привязке TLS см. в разделе [Настройка SSL в IIS 7](https://docs.microsoft.com/iis/manage/configuring-security/how-to-set-up-ssl-on-iis#create-an-ssl-binding-1).
 
 ### <a name="apache"></a>Apache
 
@@ -151,9 +151,9 @@ CSR — это открытый ключ, предоставляемый ЦС п
 
 ### <a name="nginx"></a>NGINX
 
-Ниже приведен пример [nginx Server Block](https://nginx.org/docs/http/configuring_https_servers.html) с конфигурацией SSL:
+Ниже приведен пример [nginx Server Block](https://nginx.org/docs/http/configuring_https_servers.html) с конфигурацией TLS.
 
-![NGINX с SSL](media/self-signed-certificates/nginx-ssl.png)
+![NGINX с TLS](media/self-signed-certificates/nginx-ssl.png)
 
 ## <a name="access-the-server-to-verify-the-configuration"></a>Доступ к серверу для проверки конфигурации
 
@@ -179,7 +179,7 @@ openssl s_client -connect localhost:443 -servername www.fabrikam.com -showcerts
 
 Чтобы отправить сертификат в шлюзе приложений, необходимо экспортировать CRT-сертификат в формате CER с кодировкой 64. Поскольку CRT уже содержит открытый ключ в формате Base-64, просто Переименуйте расширение файла с CRT на CER. 
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Чтобы отправить доверенный корневой сертификат с портала, выберите **Параметры HTTP** и выберите протокол **HTTPS** .
 
@@ -230,9 +230,9 @@ $probe = Get-AzApplicationGatewayProbeConfig `
   -Name testprobe `
   -ApplicationGateway $gw
 
-## Add the configuration to the HTTP Setting and don’t forget to set the “hostname” field
+## Add the configuration to the HTTP Setting and don't forget to set the "hostname" field
 ## to the domain name of the server certificate as this will be set as the SNI header and
-## will be used to verify the backend server’s certificate. Note that SSL handshake will
+## will be used to verify the backend server's certificate. Note that TLS handshake will
 ## fail otherwise and might lead to backend servers being deemed as Unhealthy by the probes
 
 Add-AzApplicationGatewayBackendHttpSettings `
@@ -262,14 +262,15 @@ Add-AzApplicationGatewayRequestRoutingRule `
 
 Set-AzApplicationGateway -ApplicationGateway $gw 
 ```
+
 ### <a name="verify-the-application-gateway-backend-health"></a>Проверка работоспособности серверной части шлюза приложений
 
 1. Щелкните представление **работоспособность серверной** части шлюза приложений, чтобы проверить работоспособность пробы.
-1.  Должно отобразиться состояние " **Исправен** " для проверки HTTPS.
+1. Должно отобразиться состояние " **Исправен** " для проверки HTTPS.
 
-    ![Проверка HTTPS](media/self-signed-certificates/https-probe.png)
+![Проверка HTTPS](media/self-signed-certificates/https-probe.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения о ССЛ\ТЛС в шлюзе приложений см. в разделе [Общие сведения о завершении работы SSL и сквозном использовании SSL с помощью шлюза приложений](ssl-overview.md).
+Дополнительные сведения о ССЛ\ТЛС в шлюзе приложений см. в статье [Общие сведения о завершении работы TLS и сквозном TLS с помощью шлюза приложений](ssl-overview.md).
 

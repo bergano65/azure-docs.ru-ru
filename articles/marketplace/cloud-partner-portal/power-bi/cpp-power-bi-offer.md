@@ -1,52 +1,19 @@
 ---
-title: Предложение приложения Power BI | Azure Marketplace
-description: Сведения о публикации Power BI приложения в Microsoft AppSource Marketplace.
-services: Azure, AppSource, Marketplace, Cloud Partner Portal, Power BI
-author: v-miclar
+title: Предложение приложения Power BI — коммерческий магазин Майкрософт
+description: Как опубликовать Power BI приложение для Microsoft AppSource.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 03/27/2019
-ms.author: pabutler
-ms.openlocfilehash: d1974133562c0bb8b8006ea2ef323e6797643b67
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 05/05/2020
+ms.author: dsindona
+ms.openlocfilehash: 2bf340a03f3d80f87afdbfc57e8bfa2ee6d1d65f
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826074"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864544"
 ---
-# <a name="power-bi-app-offer"></a>Предложение приложения Power BI
+# <a name="power-bi-app-offer"></a>Предложение приложения Power BI
 
-|              |                                |
-|--------------|--------------------------------|
-| В этой статье объясняется, как опубликовать Power BI приложение в Microsoft [AppSource Marketplace](https://appsource.microsoft.com/).  Power BI приложения, настраиваемые Power BI содержимое, включая наборы данных, отчеты и панели мониторинга. Затем можно развернуть приложение для других Power BI клиентов через AppSource, выполнить корректировки и настройки, разрешенные разработчиком, и подключить их к собственным данным. | ![Значок Power BI](./media/powerbi-icon.png) |
-
-
-Эта статья состоит из трех основных частей:
-
--   [Предварительные требования](./cpp-prerequisites.md). Технические и бизнес-требования для создания и публикации предложения Power BI приложения.
--   [Создание предложения приложения Power BI](./cpp-create-offer.md). Создание записи предложения Power BI приложения с помощью [портал Cloud Partner](https://cloudpartner.azure.com).
--   [Публикация предложения Power BI приложения](./cpp-publish-offer.md). Как отправить новое предложение в AppSource для публикации и обновить существующее предложение.
-
-
-## <a name="publishing-steps"></a>Этапы публикации
-
-Ниже приведены общие действия для публикации предложения Power BI приложения.
-
-![Этапы публикации предложения приложения Power BI](media/publishing-steps.png)
-
-Вот Power BI процесс публикации предложения приложения:
-
-1. Создайте шаблонное приложение в Power BI. Это действие создает URL-адрес установки пакета, который представляет основной технический ресурс для предложения. На данный момент вы можете повысить уровень тестового пакета до подготовительной. Дополнительные сведения см. в разделе [что такое Power BI шаблонных приложений?](https://docs.microsoft.com/power-bi/service-template-apps-overview). 
-2. Собирайте или создавайте маркетинговые материалы для предложения, включая официальное название, описание, логотипы и т. д. 
-3. Собирайте или создавайте документы с юридическими и вспомогательными предложениями: *условия использования*, *Политика конфиденциальности*, *Политика поддержки*, Справка пользователя и т. д.
-4. Создание предложения. Используйте Портал Cloud Partner для настройки сведений о предложении, включая описание предложения, маркетинговые материалы, юридические сведения, сведения о поддержке и спецификации активов.  После полного указания предложения отправьте его для публикации.
-5. Отслеживайте процесс публикации в Портал Cloud Partner.  На этом этапе команда адаптации AppSource тестирует, проверяет и удостоверяет Ваше приложение. 
-6. После успешной сертификации приложения проверьте его в тестовой среде и выпустите его. 
-7. Power BIное приложение указано в AppSource (оно переходит в активное место).
-8. В Power BI передвигайте Подготовительный пакет в рабочую среду. Дополнительные сведения см. [в разделе Управление выпуском шаблона приложения](https://docs.microsoft.com/power-bi/service-template-apps-create#manage-the-template-app-release).
-
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-Перед созданием предложения приложения Power BI и его публикации в AppSource необходимо обеспечить соответствие [требованиям](./cpp-prerequisites.md) для публикации Power BI приложения в AppSource.
+Портал Cloud Partner больше не поддерживает создание и Управление предложениями Power BI приложений. Эта функция была перемещена в [Центр партнеров](https://partner.microsoft.com/pcv/)Майкрософт. Дополнительные сведения см. [в статье создание Power BI приложения для Microsoft AppSource](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-power-bi-app-offer).

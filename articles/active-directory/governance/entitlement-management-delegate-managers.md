@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: efdc61b82a19cc5d370d6069e8c9dcd3ce5e8ae5
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73174354"
 ---
 # <a name="delegate-access-governance-to-access-package-managers-in-azure-ad-entitlement-management"></a>Делегирование управления доступом для доступа к диспетчерам пакетов в управлении назначением Azure AD
@@ -68,8 +68,8 @@ ms.locfileid: "73174354"
 
 1. Добавьте флажок рядом с диспетчером пакетов доступа, который необходимо удалить.
 
-1. Нажмите кнопку **Удалить**.
+1. Щелкните **Удалить**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Создать новый пакет Access](entitlement-management-access-package-create.md)
+- [Создание пакета для доступа](entitlement-management-access-package-create.md)

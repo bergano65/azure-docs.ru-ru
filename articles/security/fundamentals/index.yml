@@ -12,12 +12,12 @@ metadata:
   ms.author: terrylan
   manager: rkarlin
   ms.date: 10/28/2019
-  ms.openlocfilehash: 4744c6668de55b28725f1e1662f93030b5f61007
-  ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+  ms.openlocfilehash: 62a0bc67624c27ccd8185edb8be1a8cb3f16a9b1
+  ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 10/29/2019
-  ms.locfileid: "73055917"
+  ms.lasthandoff: 04/10/2020
+  ms.locfileid: "81115227"
 landingContent:
 - title: Сведения о системе безопасности Azure
   linkLists:
@@ -63,8 +63,6 @@ landingContent:
       url: iaas.md
     - text: Управление удостоверениями и контроль доступа
       url: identity-management-best-practices.md
-    - text: Безопасность базы данных
-      url: database-best-practices.md
     - text: Развертывания PaaS
       url: paas-deployments.md
     - text: Шифрование и обеспечение защиты данных

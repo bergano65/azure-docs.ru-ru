@@ -1,18 +1,15 @@
 ---
 title: Сведения о том, как работает автоматическая миграция Azure Monitor классические оповещения
 description: Узнайте, как работает процесс автоматической миграции.
-author: snehithm
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 08/19/2019
-ms.author: snmuvva
 ms.subservice: alerts
-ms.openlocfilehash: e0ac349554fa580c4ac88b26e76d0bea1ecf738b
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 8df83439d6754440648688ac1cc36ff66556a4e4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932710"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77668253"
 ---
 # <a name="understand-the-automatic-migration-process-for-your-classic-alert-rules"></a>Общие сведения о процессе автоматической миграции для классических правил генерации оповещений
 
@@ -57,7 +54,7 @@ ms.locfileid: "72932710"
   > [!NOTE]
   > Если требуется действие от клиента, например временное отключение блокировки ресурса или изменение назначения политики, клиенты должны будут решить все проблемы до 31 октября 2019 г. Если проблемы не устранены, то успешное перемещение классических оповещений не гарантируется.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Подготовка к миграции](alerts-prepare-migration.md)
+- [Подготовка к переносу](alerts-prepare-migration.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

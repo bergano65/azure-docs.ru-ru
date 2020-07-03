@@ -1,25 +1,21 @@
 ---
 title: Развертывание решения для самостоятельного управления платформой OpenShift Container 3,11 в Azure
 description: Развертывание OpenShift контейнера Platform 3,11 с самостоятельно управляемым предложением Marketplace в Azure.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: haroldwongms
 manager: mdotson
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 235efd746562ea4bd52b9cb57da0d8165d60de02
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 1cf6c7417aa86d47e59e08786e7807e32c175a25
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75561326"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759572"
 ---
 # <a name="configure-prerequisites"></a>Настройка необходимых компонентов
 
@@ -67,7 +63,7 @@ ms.locfileid: "75561326"
 |-----------------------|-----------------|
 | Имя пользователя администратора виртуальной машины | Пользователь с правами администратора, который будет создан на всех экземплярах виртуальных машин |
 | Открытый ключ SSH для пользователя с правами администратора | Открытый ключ SSH, используемый для входа на виртуальную машину, не должен иметь парольную фразу |
-| Subscription | Подписка Azure для развертывания кластера |
+| Подписка | Подписка Azure для развертывания кластера |
 | Группа ресурсов | Создайте новую группу ресурсов или выберите существующую пустую группу ресурсов для ресурсов кластера. |
 | Расположение | Регион Azure для развертывания кластера |
 
@@ -127,7 +123,7 @@ ms.locfileid: "75561326"
    ![Диапазон настраиваемых IP-адресов инфраструктуры предложений](media/openshift-marketplace-self-managed/ocp-customiprange.png)  
 <br>
 
-**Платформа OpenShift Container 3,11**
+**Платформа контейнеров OpenShift 3.11**
 
 Введите значения входных параметров и нажмите кнопку **ОК** .
 
@@ -179,7 +175,7 @@ ms.locfileid: "75561326"
    ![Колонка сводки предложения](media/openshift-marketplace-self-managed/ocp-summary.png)  
 <br>
 
-**Купить**
+**Приобретение**
 
 Подтвердите контактную информацию на странице покупки и щелкните **купить** , чтобы принять условия использования и запустить развертывание кластера платформы контейнера OpenShift.
 
@@ -203,7 +199,7 @@ $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com
 az group delete --name openshiftrg
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Задачи, выполняемые после развертывания](./openshift-container-platform-3x-post-deployment.md)
 - [Устранение неполадок с развертыванием OpenShift в Azure](./openshift-container-platform-3x-troubleshooting.md)

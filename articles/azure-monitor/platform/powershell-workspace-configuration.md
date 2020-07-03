@@ -1,24 +1,23 @@
 ---
-title: Использование PowerShell для создания и настройки рабочей области Log Analytics | Документация Майкрософт
+title: Создание & Настройка Log Analytics с помощью PowerShell
 description: Log Analytics рабочие области в Azure Monitor хранят данные с серверов в локальной или облачной инфраструктуре. При генерировании системой диагностики Azure можно брать данные компьютера из хранилища Azure.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/19/2019
-ms.openlocfilehash: 68cd0d51c16ecd63a1446c284f81c5dea07b8c06
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2584cedceab1386cbab9c72bb4b510eebe2122bd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75363546"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80054696"
 ---
 # <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочей областью Log Analytics в Azure Monitor с помощью PowerShell
 
 [Командлеты PowerShell log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/) можно использовать для выполнения различных функций в log Analytics рабочей области в Azure Monitor из командной строки или в составе скрипта.  Примеры задач, которые можно выполнять с помощью PowerShell.
 
-* Создание рабочего пространства
+* Создание рабочей области
 * Добавление или удаление решения
 * Импорт и экспорт сохраненных поисков
 * Создание группы компьютеров
@@ -37,14 +36,14 @@ ms.locfileid: "75363546"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 Эти примеры работают с версией 1.0.0 или более поздней версии модуля AZ. OperationalInsights.
 
 
 ## <a name="create-and-configure-a-log-analytics-workspace"></a>Создание и настройка рабочей области Log Analytics
 Этот пример сценария иллюстрирует следующие задачи.
 
-1. Создание рабочего пространства
+1. Создание рабочей области
 2. Вывод списка доступных решений
 3. Добавление решений в рабочую область
 4. Импорт сохраненных поисков
@@ -159,7 +158,7 @@ New-AzOperationalInsightsComputerGroup -ResourceGroupName $ResourceGroup -Worksp
 Enable-AzOperationalInsightsIISLogCollection -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName
 
 # Linux Perf
-New-AzOperationalInsightsLinuxPerformanceObjectDataSource -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName -ObjectName "Logical Disk" -InstanceName "*"  -CounterNames @("% Used Inodes", "Free Megabytes", "% Used Space", "Disk Transfers/sec", "Disk Reads/sec", "Disk Reads/sec", "Disk Writes/sec") -IntervalSeconds 20  -Name "Example Linux Disk Performance Counters"
+New-AzOperationalInsightsLinuxPerformanceObjectDataSource -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName -ObjectName "Logical Disk" -InstanceName "*"  -CounterNames @("% Used Inodes", "Free Megabytes", "% Used Space", "Disk Transfers/sec", "Disk Reads/sec", "Disk Writes/sec") -IntervalSeconds 20  -Name "Example Linux Disk Performance Counters"
 Enable-AzOperationalInsightsLinuxPerformanceCollection -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName
 
 # Linux Syslog
@@ -209,12 +208,12 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 | Data Lake Store         | Да | |
 | пул эластичных баз данных SQL;        |     | Да |
 | пространство имен концентратора событий;     |     | Да |
-| Центры Интернета вещей.                |     | Да |
+| Центры Интернета вещей;                |     | Да |
 | Key Vault               | Да | |
-| подсистемы балансировки нагрузки;          | Да | |
-| Приложения логики              | Да | Да |
-| Группы безопасности сети | Да | |
-| Кэш Azure для Redis             |     | Да |
+| Балансировщики нагрузки          | Да | |
+| Logic Apps              | Да | Да |
+| группы сетевой безопасности; | Да | |
+| Кэш Redis для Azure             |     | Да |
 | Службы поиска         | Да | Да |
 | Пространство имен служебной шины   |     | Да |
 | SQL (версия 12)               |     | Да |
@@ -274,6 +273,6 @@ Remove-AzOperationalInsightsStorageInsight -ResourceGroupName $workspace.Resourc
 Кроме того, вы можете использовать предыдущий сценарий для сбора журналов из учетных записей хранения, которые находятся в разных подписках. Этот сценарий может работать в нескольких подписках, так как вы предоставляете идентификатор ресурса учетной записи хранения и соответствующий ключ доступа. При изменении ключа доступа необходимо обновить данные хранилища с учетом нового ключа.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/).
 

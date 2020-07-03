@@ -4,16 +4,16 @@ description: Как администратор, вы узнаете, как уп
 author: v-krghan
 ms.author: v-krghan
 ms.date: 12/09/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 58503784f28a3ba0a6290a2209ce9fdccc14b4e4
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 888b9f31b8082ac124a773cc489293b335d7d255
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023775"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80157531"
 ---
 # <a name="manage-your-bill-in-an-iot-central-application"></a>Управление счетами в IoT Central приложении
 

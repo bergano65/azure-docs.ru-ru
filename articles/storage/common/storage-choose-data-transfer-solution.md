@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 838d65da90ec0daef69375e5a75bcb497a0c3512
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: df261dbf8af8ffdb4ccb10626594626150245748
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900400"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82176402"
 ---
 # <a name="choose-an-azure-solution-for-data-transfer"></a>Выбор решения Azure для передачи данных
 
@@ -50,31 +50,30 @@ ms.locfileid: "69900400"
 
 - Пропускная способность вашей сети невелика или практически отсутствует, но вы хотите передавать большие наборы данных?
   
-    Если да, то вам подойдет этот вариант: [Сценарий 1. Передача больших наборов данных с низкой или нулевой пропускной способностью сети](storage-solution-large-dataset-low-network.md).
+    Если да, см. раздел [Сценарий 1. Перенос больших наборов данных с отсутствием или низкой пропускной способностью сети](storage-solution-large-dataset-low-network.md).
 - Вы хотите передать большие наборы данных по сети с пропускной способностью выше средней?
 
-    Если да, то вам подойдет этот вариант: [Сценарий 2. Передача больших наборов данных со средней или высокой пропускной способностью сети](storage-solution-large-dataset-moderate-high-network.md).
+    Если да, см. раздел [Сценарий 2. Перенос больших наборов данных с умеренной на высокую пропускную способность сети](storage-solution-large-dataset-moderate-high-network.md).
 - Вам нужно лишь иногда передавать по сети небольшое количество файлов?
 
-    Если да, то вам подойдет этот вариант: [Сценарий 3. Передача небольших наборов данных с небольшой или средней пропускной способностью сети](storage-solution-small-dataset-low-moderate-network.md).
+    Если да, см. [Сценарий 3. Перенос небольших наборов данных с ограничением средней пропускной способности сети](storage-solution-small-dataset-low-moderate-network.md).
 - Вам нужна регулярная передача данных в строго определенные моменты времени?
 
-    Если да, то вам подойдут решения на основе скриптов или программ, описанные здесь: [Сценарий 4. Периодическая передача данных](storage-solution-periodic-data-transfer.md).
+    Если да, используйте параметры сценария и программ, описанные в [сценарии 4: периодическая передача данных](storage-solution-periodic-data-transfer.md).
 - Вам нужно организовать постоянный и непрерывный процесс передачи данных?
 
-    Если так, то вам подойдет этот вариант: [Сценарий 4. Периодическая передача данных](storage-solution-periodic-data-transfer.md).
- 
+    Если да, используйте параметры в [сценарии 4: периодическая передача данных](storage-solution-periodic-data-transfer.md).
 
 ## <a name="data-transfer-feature-in-azure-portal"></a>Функция пересылки данных в портал Azure
 
 Вы также можете открыть учетную запись хранения Azure в портал Azure и выбрать функцию **пересылки данных** . Укажите пропускную способность сети в вашей среде, размер данных, которые требуется передавать, и частоту передачи данных. Вы увидите оптимальные решения для обмена данными, соответствующие предоставленным данным. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Introduction to Microsoft Azure Storage Explorer](https://azure.microsoft.com/resources/videos/introduction-to-microsoft-azure-storage-explorer/) (Общие сведения об Обозревателе службы хранилища Azure).
 - [Общие сведения об AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10).
-- [Сведения об использовании Azure PowerShell со службой хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-powershell-guide-full).
-- [Сведения об использовании Azure CLI со службой хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-azure-cli).
+- [Краткое руководство. Отправка, скачивание и вывод списка больших двоичных объектов с помощью PowerShell](../blobs/storage-quickstart-blobs-powershell.md)
+- [Краткое руководство. Создание, скачивание и вывод списка больших двоичных объектов с помощью Azure CLI](../blobs/storage-quickstart-blobs-cli.md)
 - Кроме того, вы узнаете о таких возможностях, как:
 
     - [Azure Data Box, Диск Azure Data Box и Azure Data Box Heavy для передачи данных вне сети](https://docs.microsoft.com/azure/databox/);
@@ -83,4 +82,4 @@ ms.locfileid: "69900400"
 - Использование интерфейсов REST API для передачи данных:
 
     - [в .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage);
-    - [в Java](https://docs.microsoft.com/java/api/overview/azure/storage).
+    - [В Java](https://docs.microsoft.com/java/api/overview/azure/storage)

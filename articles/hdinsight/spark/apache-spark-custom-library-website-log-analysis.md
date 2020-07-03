@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/27/2019
 ms.openlocfilehash: c6bf26d8f3a73db6ee69b2aa0de73872911893bf
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75552718"
 ---
 # <a name="analyze-website-logs-using-a-custom-python-library-with-apache-spark-cluster-on-hdinsight"></a>Анализ журналов веб-сайтов с помощью пользовательской библиотеки Python и кластера Apache Spark в HDInsight
 
 Данная записная книжка показывает, как анализировать данные журналов с помощью настраиваемой библиотеки с кластером Apache Spark в HDInsight. В качестве пользовательской библиотеки используется библиотека Python с именем **iislogparser.py**.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 
@@ -29,7 +29,7 @@ ms.locfileid: "75552718"
 
 После сохранения данных в виде таблицы Apache Hive в следующем разделе мы будем подключаться к таблице Hive с помощью средств бизнес-аналитики, таких как Power BI и Tableau.
 
-1. В веб-браузере перейдите к `https://CLUSTERNAME.azurehdinsight.net/jupyter`, где `CLUSTERNAME` — имя кластера.
+1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net/jupyter`, где `CLUSTERNAME` — это имя вашего кластера.
 
 1. Создайте новую записную книжку. Выберите **создать**, а затем **PySpark**.
 
@@ -37,7 +37,7 @@ ms.locfileid: "75552718"
 
 1. Будет создана и открыта записная книжка с именем Untitled.pynb. Выберите имя записной книжки вверху и введите понятное имя.
 
-    ![Укажите имя записной книжки](./media/apache-spark-custom-library-website-log-analysis/hdinsight-name-jupyter-notebook.png "Указание имени для записной книжки")
+    ![Указание имени для записной книжки](./media/apache-spark-custom-library-website-log-analysis/hdinsight-name-jupyter-notebook.png "Указание имени для записной книжки")
 
 1. Так как вы создали записную книжку с помощью ядра PySpark, вам не нужно явно создавать контексты. Контексты Spark и Hive будут созданы автоматически при выполнении первой ячейки кода. Можно начать с импорта различных типов, необходимых для этого сценария. Вставьте следующий фрагмент кода в пустую ячейку и нажмите клавиши **SHIFT + ВВОД**.
 
@@ -46,7 +46,7 @@ ms.locfileid: "75552718"
     from pyspark.sql.types import *
     ```
 
-1. Создайте RDD, используя пример данных журнала, уже доступных в кластере. Вы можете получить доступ к данным в учетной записи хранения по умолчанию, связанной с кластером, по адресу `\HdiSamples\HdiSamples\WebsiteLogSampleData\SampleLog\909f2b.log`. Выполните следующий код.
+1. Создайте RDD, используя пример данных журнала, уже доступных в кластере. Доступ к данным в учетной записи хранения по умолчанию, связанной с кластером, можно получить по адресу `\HdiSamples\HdiSamples\WebsiteLogSampleData\SampleLog\909f2b.log`. Выполните следующий код.
 
     ```pyspark
     logs = sc.textFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/909f2b.log')
@@ -70,9 +70,9 @@ ms.locfileid: "75552718"
 
 ## <a name="analyze-log-data-using-a-custom-python-library"></a>Анализ данных журнала с помощью пользовательской библиотеки Python
 
-1. В приведенном выше примере выходных данных первые несколько строк содержат сведения о заголовке, а все последующие строки соответствуют схеме, описанной в этом заголовке. Анализ таких журналов может быть сложным, поэтому мы используем настраиваемую библиотеку Python (**iislogparser.py**), которая делает эту задачу намного проще. По умолчанию эта библиотека входит в кластер Spark в HDInsight на `/HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py`.
+1. В приведенном выше примере выходных данных первые несколько строк содержат сведения о заголовке, а все последующие строки соответствуют схеме, описанной в этом заголовке. Анализ таких журналов может быть сложным, поэтому мы используем настраиваемую библиотеку Python (**iislogparser.py**), которая делает эту задачу намного проще. По умолчанию эта библиотека входит в кластер Spark в HDInsight по адресу `/HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py`.
 
-    Однако эта библиотека не находится в `PYTHONPATH`, поэтому мы не можем использовать ее с помощью оператора import, например `import iislogparser`. Чтобы использовать эту библиотеку, необходимо распространить ее на все рабочие узлы. Выполните следующий фрагмент кода.
+    Однако эта библиотека отсутствует в, `PYTHONPATH` поэтому мы не можем использовать ее с помощью оператора import, например `import iislogparser`. Чтобы использовать эту библиотеку, необходимо распространить ее на все рабочие узлы. Выполните следующий фрагмент кода.
 
     ```pyspark
     sc.addPyFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py')
@@ -110,7 +110,7 @@ ms.locfileid: "75552718"
     errors.map(lambda p: str(p)).saveAsTextFile('wasbs:///HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/909f2b-2.log')
     ```
 
-    Выходные данные должны иметь состояние `There are 30 errors and 646 log entries`.
+    Выходные данные должны иметь `There are 30 errors and 646 log entries`состояние.
 
 1. Кроме того, для визуализации данных вы можете использовать **Matplotlib** . Например, если вы хотите установить причину длительного выполнения некоторых запросов, найдите файлы с наибольшим средним временем обработки. Код в представленном ниже фрагменте выдает первые 25 ресурсов с максимальным временем обработки запросов.
 

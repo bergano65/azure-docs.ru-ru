@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/26/2019
 ms.author: manayar
 ms.openlocfilehash: 633f7f9231e08acdb0e08ee97067d2a469bbdb45
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75980180"
 ---
 Предыдущий шаблон можно развернуть, следуя указаниям, описанным в [документации по Azure Resource Manager](../articles/azure-resource-manager/templates/deploy-powershell.md).

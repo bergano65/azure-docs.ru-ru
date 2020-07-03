@@ -1,23 +1,22 @@
 ---
-author: IEvangelist
+author: trevorbye
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/13/2020
-ms.author: dapine
-ms.openlocfilehash: 731248c88855e2c23d2d7e94a01a9681d30259ce
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.author: trbye
+ms.openlocfilehash: 629fc5e3bc41377fe852a1648680d77b22395d02
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75942754"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81400967"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 
 > [!div class="checklist"]
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=linux&pivots=programmming-language-cpp)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?pivots=programmming-language-cpp)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=linux&pivots=programmming-language-cpp).
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
 > * [Отправить исходный файл в большой двоичный объект Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
 

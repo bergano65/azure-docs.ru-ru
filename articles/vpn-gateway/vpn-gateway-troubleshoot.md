@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 01/31/2018
 ms.author: cherylmc
 ms.openlocfilehash: d73bc8e9c39c14a254e8f7bae1d7b1a96a6c3225
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75780170"
 ---
 # <a name="troubleshoot-vpn-gateway"></a>Устранение неполадок VPN-шлюза
@@ -26,8 +26,8 @@ ms.locfileid: "75780170"
 
 * [Подключения "точка — сеть"](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md)<br>В этой статье перечисляются распространенные проблемы подключения типа "точка — сеть", которые могут возникнуть. Кроме того, здесь рассматриваются возможные причины этих проблем и способы их устранения.
 
-* [Подключения "сеть — сеть"](vpn-gateway-troubleshoot-site-to-site-cannot-connect.md)<br>После настройки подключения VPN типа "сеть — сеть" между локальной сетью и виртуальной сетью Azure VPN-подключение внезапно завершается сбоем и его невозможно восстановить. В этой статье приведены действия по устранению этой проблемы.
+* [Подключения "сеть — сеть"](vpn-gateway-troubleshoot-site-to-site-cannot-connect.md)<br>После настройки подключения VPN типа "сеть — сеть" между локальной сетью и виртуальной сетью Azure VPN-подключение внезапно завершается сбоем и его невозможно восстановить. В этой статье приведены действия по устранению этой проблемы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Эту процедуру можно также использовать, чтобы [проверить подключения виртуальной сети и VPN-подключения](https://support.microsoft.com/help/4032151/configuring-and-validating-vnet-or-vpn-connections).

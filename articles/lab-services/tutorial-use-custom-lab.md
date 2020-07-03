@@ -15,14 +15,14 @@ ms.custom: mvc
 ms.date: 01/18/2019
 ms.author: spelluru
 ms.openlocfilehash: ee9a68df685095244fc9471b7d4ab0f6cee0642d
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68360259"
 ---
-# <a name="tutorial-access-a-lab-in-azure-devtest-labs"></a>Руководство по Доступ к лаборатории в Azure DevTest Labs
-В этом руководстве применяется лаборатория, которую вы создали при работе со статьей [Руководство. Настройка лаборатории с помощью Azure DevTest Labs](tutorial-create-custom-lab.md).
+# <a name="tutorial-access-a-lab-in-azure-devtest-labs"></a>Руководство. Доступ к лаборатории в Azure DevTest Labs
+В рамках этого руководства применяется лаборатория, которую вы создали при работе с [руководством по созданию лаборатории в Azure DevTest Labs](tutorial-create-custom-lab.md).
 
 Вот какие действия выполняются в этом руководстве:
 
@@ -35,7 +35,7 @@ ms.locfileid: "68360259"
 
 ## <a name="access-the-lab"></a>Вход в лабораторию
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Все ресурсы** в меню слева. 
 3. Выберите **DevTest Labs** в качестве типа ресурса. 
 4. Выберите лабораторию. 
@@ -82,9 +82,9 @@ ms.locfileid: "68360259"
 1. Убедитесь, что имя виртуальной машины отображается в списке **Виртуальные машины, для которых разрешены заявки на доступ** в нижней части страницы.
 
     
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как открыть и использовать лабораторию, которая была создана с помощью Azure DevTest Labs. Дополнительные сведения об открытии и использовании виртуальных машин в лаборатории вы найдете по приведенной ниже ссылке. 
 
 > [!div class="nextstepaction"]
-> [How to: виртуальные машины в лаборатории](devtest-lab-add-vm.md)
+> [Как использовать виртуальные машины в лаборатории](devtest-lab-add-vm.md)
 

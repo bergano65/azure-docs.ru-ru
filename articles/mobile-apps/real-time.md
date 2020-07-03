@@ -1,18 +1,18 @@
 ---
 title: Легко создавайте мобильные приложения в режиме реального времени с помощью службы Azure SignalR
 description: Сведения о службе, которая позволяет создавать приложения в режиме реального времени с помощью службы SignalR Azure.
-author: elamalani
+author: codemillmatt
 ms.assetid: 34a8a070-0123-4678-8588-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: 988d5f9a66baeae46661ae363029aed0f521c8e4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: 242a929e4a4ebe00dd0a2101b27ab8a8bef3fbeb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454406"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80240832"
 ---
 # <a name="build-real-time-applications-with-azure-signalr-service"></a>Создание приложений в режиме реального времени с помощью службы Azure SignalR
 

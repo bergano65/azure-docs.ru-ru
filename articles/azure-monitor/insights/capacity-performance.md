@@ -1,18 +1,17 @@
 ---
 title: Емкость и производительность решение в Azure Monitor | Документация Майкрософт
 description: Используйте решение Емкость и производительность в мониторе, чтобы получить представление о емкости серверов Hyper-V.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/13/2017
-ms.openlocfilehash: c444991166d9c7d3f1d8ed39e19e333d3c27f982
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 75c65cf9f76e711a3aeed764de8b92ed619bad2f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75405741"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77666949"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Планирование емкости виртуальных машин Hyper-V с помощью решения Емкость и производительность (не рекомендуется)
 
@@ -40,19 +39,19 @@ ms.locfileid: "75405741"
 
 В следующей таблице описаны подключенные источники, которые поддерживаются этим решением.
 
-| Подключенный источник | Поддержка | Description |
+| Подключенный источник | Поддержка | Описание |
 |---|---|---|
 | [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Да | Решение собирает сведения о емкости и производительности из агентов Windows. |
 | [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет    | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
 | [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Да |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
 | [Учетная запись хранения Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md) | Нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Агенты Windows или Operations Manager должны быть установлены на узлах Hyper-V под управлением Windows Server 2012 (или более поздней версии), а не на виртуальных машинах.
 
 
-## <a name="configuration"></a>Настройка
+## <a name="configuration"></a>Конфигурация
 
 Чтобы добавить решение "Емкость и производительность" в рабочую область, сделайте следующее:
 
@@ -86,7 +85,7 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 Щелкните плитку "Емкость и производительность", чтобы открыть соответствующую панель мониторинга. Панель мониторинга содержит столбцы, перечисленные в приведенной ниже таблице. В каждом столбце содержится максимум десять элементов, соответствующих таким указанным критериям, как область действия и диапазон времени. Можно выполнить поиск по журналам, в результате которого возвращаются все записи, если щелкнуть заголовок этого столбца или **Показать все** внизу столбца.
 
-- **Узлы**
+- **Включает**
     - **Загрузка ЦП узла**. Показывает в виде графика сведения об использовании ресурсов ЦП главных компьютеров в течение указанного периода времени, а также содержит список узлов. Чтобы просмотреть сведения на определенный момент времени, наведите указатель мыши на график. Щелкните график, чтобы просмотреть дополнительные сведения в поиске по журналам. Чтобы открыть поиск по журналам и просмотреть показатели счетчика ЦП для размещенных виртуальных машин, щелкните любое имя узла.
     - **Использование памяти узла**. Показывает в виде графика сведения об использовании памяти главных компьютеров в течение указанного периода времени, а также содержит список узлов. Чтобы просмотреть сведения на определенный момент времени, наведите указатель мыши на график. Щелкните график, чтобы просмотреть дополнительные сведения в поиске по журналам. Чтобы открыть поиск по журналам и просмотреть показатели счетчика памяти для размещенных виртуальных машин, щелкните любое имя узла.
 - **Виртуальные машины**
@@ -118,7 +117,7 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 В приведенной ниже таблице содержатся примеры поисков по журналу для получения сведений о емкости и производительности, собранных и рассчитанных этим решением.
 
 
-| Запрос | Description |
+| query | Описание |
 |:--- |:--- |
 | Конфигурация памяти всех узлов | Perf &#124; where ObjectName == "Capacity and Performance" and CounterName == "Host Assigned Memory MB" &#124; summarize MB = avg(CounterValue) by InstanceName |
 | Конфигурация памяти всех виртуальных машин | Perf &#124; where ObjectName == "Capacity and Performance" and CounterName == "VM Assigned Memory MB" &#124; summarize MB = avg(CounterValue) by InstanceName |
@@ -129,5 +128,5 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 | Показатель общей задержки на всех общих томах кластера | Perf &#124; where ObjectName == "Capacity and Performance" and (CounterName == "CSV Read Latency" or CounterName == "CSV Write Latency") &#124; summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 1h), CounterName, InstanceName |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Используйте [поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.

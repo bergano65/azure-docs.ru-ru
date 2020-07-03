@@ -8,10 +8,10 @@
     - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
-- name: Краткие руководства по REST API
+- name: Краткие руководства
   expanded: true
   items:
-    - name: "REST\_API"
+    - name: REST API
       items:
         - name: 'Использование C#'
           href: quickstarts/csharp.md
@@ -27,15 +27,9 @@
           href: quickstarts/ruby.md
     - name: SDK
       items:
-        - name: 'Использование C#'
-          href: quickstarts/sdk-csharp-quickstart.md
-        - name: Использование Node.js
-          href: quickstarts/sdk-node-quickstart.md
-        - name: Использование Python
-          href: quickstarts/sdk-python-quickstart.md
-        - name: Использование Java
-          href: quickstarts/sdk-java-quickstart.md
-- name: Руководства
+        - name: Клиентские библиотеки Поиска видео Bing
+          href: ./quickstarts/client-libraries.md
+- name: Учебники
   items:
     - name: Создание одностраничного веб-приложения
       href: tutorial-bing-video-search-single-page-app.md
@@ -43,7 +37,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Video+Search'
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Получение полезных сведений из видео
       href: video-insights.md
@@ -63,7 +57,7 @@
       href: concepts/get-videos.md
     - name: Отправка поисковых запросов
       href: concepts/sending-requests.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: API Поиска видео Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference'
@@ -72,7 +66,7 @@
     - name: Пакеты SDK
       items:
         - name: .NET
-          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingvideo?view=azure-dotnet'
+          href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingvideosearch?view=azure-dotnet'
         - name: Java
           href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingvideosearch?view=azure-java-stable'
         - name: Python
@@ -105,5 +99,5 @@
     - name: Аналитика для API Поиска видео Bing
       maintainContext: true
       href: ../bing-web-search/bing-web-stats.md
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

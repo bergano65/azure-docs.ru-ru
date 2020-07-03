@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: juliako
 ms.openlocfilehash: 6b12dcee2303632c4ec2ccc3602348a4e17fcd05
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76705893"
 ---
 # <a name="media-services-v3-with-playready-license-template"></a>Шаблон лицензии служб мультимедиа v3 с PlayReady 
@@ -58,7 +58,7 @@ XML-код соответствует XML-схеме шаблона лиценз
     </PlayReadyLicenseResponseTemplate>
 
 
-## <a id="classes"></a>Настройка шаблонов лицензий с помощью API-интерфейсов Служб мультимедиа
+## <a name="use-media-services-apis-to-configure-license-templates"></a><a id="classes"></a>Настройка шаблонов лицензий с помощью API-интерфейсов Служб мультимедиа
 
 Службы мультимедиа предоставляют типы, которые можно использовать для настройки шаблона лицензии PlayReady. 
 
@@ -88,7 +88,7 @@ objContentKeyPolicyPlayReadyLicense = new ContentKeyPolicyPlayReadyLicense
 };
 ```
 
-## <a id="schema"></a>XML-схема шаблона лицензий PlayReady
+## <a name="playready-license-template-xml-schema"></a><a id="schema"></a>XML-схема шаблона лицензий PlayReady
     <?xml version="1.0" encoding="utf-8"?>
     <xs:schema xmlns:tns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1" xmlns:xs="https://www.w3.org/2001/XMLSchema">
       <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
@@ -311,6 +311,6 @@ objContentKeyPolicyPlayReadyLicense = new ContentKeyPolicyPlayReadyLicense
     </xs:schema>
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте о возможностях [защиты с помощью технологии DRM](protect-with-drm.md).

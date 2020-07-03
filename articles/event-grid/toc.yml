@@ -13,23 +13,23 @@
   items:
     - name: События хранилища
       items:
-        - name: Azure CLI
-          href: ../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
-        - name: PowerShell
-          href: ../storage/blobs/storage-blob-event-quickstart-powershell.md?toc=%2fazure%2fevent-grid%2ftoc.json
         - name: Портал
           href: blob-event-quickstart-portal.md
-        - name: Шаблон
-          displayName: 'arm, resource manager template'
+        - name: Azure CLI
+          href: ../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
+        - name: Azure PowerShell
+          href: ../storage/blobs/storage-blob-event-quickstart-powershell.md?toc=%2fazure%2fevent-grid%2ftoc.json
+        - name: Шаблон ARM
+          displayName: Resource Manager
           href: blob-event-quickstart-template.md
     - name: Настраиваемые события
       items:
+        - name: Портал
+          href: custom-event-quickstart-portal.md
         - name: Azure CLI
           href: custom-event-quickstart.md
         - name: PowerShell
           href: custom-event-quickstart-powershell.md
-        - name: Портал
-          href: custom-event-quickstart-portal.md
     - name: Функции Azure в качестве обработчика событий
       href: custom-event-to-function.md
     - name: Хранилище очередей в качестве обработчика событий
@@ -94,36 +94,114 @@
       href: 'https://docs.microsoft.com/samples/browse/?term=Event%20Grid'
 - name: Основные понятия
   items:
-    - name: Основные понятия службы "Сетка событий"
+    - name: 'Термины, связанные с Сеткой событий'
       href: concepts.md
-    - name: Безопасность и проверка подлинности
-      href: security-authentication.md
-    - name: Доставка и повторные попытки доставки
-      href: delivery-and-retry.md
-    - name: Фильтрация событий
-      href: event-filtering.md
+    - name: Пользовательские разделы
+      href: custom-topics.md
+    - name: Системные разделы
+      items:
+        - name: Общие сведения о системных разделах
+          href: system-topics.md
+        - name: Источники событий
+          items:
+            - name: Конфигурация приложений Azure
+              href: event-schema-app-configuration.md
+            - name: Служба приложений Azure
+              href: event-schema-app-service.md
+            - name: хранилище BLOB-объектов Azure
+              href: event-schema-blob-storage.md
+            - name: Реестр контейнеров Azure
+              href: event-schema-container-registry.md
+            - name: Центры событий Azure
+              href: event-schema-event-hubs.md
+            - name: Центр Интернета вещей Azure
+              href: event-schema-iot-hub.md
+            - name: Azure Key Vault
+              href: event-schema-key-vault.md
+            - name: Машинное обучение Azure
+              href: event-schema-machine-learning.md
+            - name: Azure Maps
+              href: event-schema-azure-maps.md
+            - name: Службы мультимедиа Azure
+              href: event-schema-media-services.md
+            - name: Группы ресурсов Azure
+              href: event-schema-resource-groups.md
+            - name: Служебная шина Azure
+              href: event-schema-service-bus.md
+            - name: Azure SignalR
+              href: event-schema-azure-signalr.md
+            - name: Подписки Azure
+              href: event-schema-subscriptions.md
+    - name: Партнерские разделы
+      items:
+        - name: Общие сведения о партнерских разделах
+          href: partner-topics-overview.md
+        - name: Auth0
+          href: auth0-overview.md
+        - name: Как стать партнером Сетки событий
+          href: partner-onboarding-overview.md
     - name: Домены событий
       href: event-domains.md
-    - name: Источники событий
-      href: event-sources.md
+    - name: Форматы схемы событий
+      items:
+        - name: Схема событий службы "Сетка событий Azure"
+          href: event-schema.md
+        - name: Схема событий облака
+          href: cloud-event-schema.md
     - name: Обработчики событий
       href: event-handlers.md
-    - name: Аварийное восстановление с георепликацией
-      href: geo-disaster-recovery.md
+      items:
+        - name: Веб-перехватчики
+          displayName: 'Azure Automation, Webhooks, Logic Apps'
+          href: handler-webhooks.md
+        - name: Функции Azure
+          href: handler-functions.md
+        - name: Центры событий
+          href: handler-event-hubs.md
+        - name: Служебная шина
+          href: handler-service-bus.md
+        - name: Гибридные подключения Relay
+          href: handler-relay-hybrid-connections.md
+        - name: Очереди службы хранилища
+          href: handler-storage-queues.md
+    - name: Доставка событий
+      items:
+        - name: Фильтрация событий
+          href: event-filtering.md
+        - name: Доставка и повторные попытки доставки
+          href: delivery-and-retry.md
+        - name: Доставка событий веб-перехватчика
+          href: webhook-event-delivery.md
+    - name: Аварийное восстановление
+      items:
+        - name: Аварийное восстановление с георепликацией
+          href: geo-disaster-recovery.md
+    - name: Безопасность
+      items:
+        - name: Аутентификация
+          href: security-authentication.md
+        - name: Авторизация
+          href: security-authorization.md
+        - name: Безопасность сети
+          href: network-security.md
+    - name: Мониторинг и устранение неполадок
+      items:
+        - name: Журналы диагностики
+          href: diagnostic-logs.md
+        - name: Метрики
+          href: metrics.md
 - name: Практические руководства
   items:
     - name: Публикация в пользовательском разделе
       href: post-to-custom-topic.md
+    - name: Подписка на события Auth0
+      href: auth0-how-to.md
     - name: Получение событий в конечной точке HTTP
       href: receive-events.md
-    - name: Защита веб-перехватчика с помощью AAD
-      href: secure-webhook-delivery.md
     - name: Обработка недоставленных сообщений и повторные попытки
       href: manage-event-delivery.md
     - name: События фильтра
       href: how-to-filter-events.md
-    - name: Мониторинг доставки событий
-      href: monitor-event-delivery.md
     - name: Обращение к подпискам на события
       href: query-event-subscriptions.md
     - name: Подписка через портал
@@ -136,10 +214,28 @@
       href: how-to-event-domains.md
     - name: Реализация отработки отказа на стороне клиента
       href: custom-disaster-recovery.md
-    - name: Устранение неполадок
-      href: troubleshoot-errors.md
-    - name: Включение журналов диагностики для раздела
-      href: enable-diagnostic-logs-topic.md
+    - name: Отслеживание асинхронных операций REST
+      href: ../azure-resource-manager/management/async-operations.md?toc=%2fazure%2fevent-grid%2ftoc.json
+    - name: Безопасность
+      items:
+        - name: Настройка частных конечных точек
+          href: configure-private-endpoints.md
+        - name: Настройка брандмауэра IP-адресов (предварительная версия)
+          href: configure-firewall.md
+        - name: Защита веб-перехватчика с помощью AAD
+          href: secure-webhook-delivery.md
+        - name: Доставка событий с использованием управляемого удостоверения
+          href: managed-service-identity.md
+    - name: Диагностика
+      items:
+        - name: Включение журналов диагностики
+          href: enable-diagnostic-logs-topic.md
+        - name: Устранение неполадок
+          href: troubleshoot-errors.md
+        - name: Устранение неполадок при проверке подписки
+          href: troubleshoot-subscription-validation.md
+        - name: Мониторинг доставки событий
+          href: monitor-event-delivery.md
 - name: Справочник
   items:
     - name: Azure CLI
@@ -156,37 +252,10 @@
       href: /python/api/overview/azure/event-grid
     - name: Node.js
       href: /javascript/api/overview/azure/eventgrid
+    - name: Квоты и ограничения
+      href: quotas-limits.md
     - name: Схема подписки
       href: subscription-creation-schema.md
-    - name: Схема событий
-      href: event-schema.md
-      items:
-        - name: Подписки Azure
-          href: event-schema-subscriptions.md
-        - name: Хранилище BLOB-объектов
-          href: event-schema-blob-storage.md
-        - name: Реестр контейнеров
-          href: event-schema-container-registry.md
-        - name: Центры событий
-          href: event-schema-event-hubs.md
-        - name: Центр Интернета вещей
-          href: event-schema-iot-hub.md
-        - name: Key Vault
-          href: event-schema-key-vault.md
-        - name: Службы мультимедиа
-          href: ../media-services/latest/media-services-event-schemas.md?toc=%2fazure%2fevent-grid%2ftoc.json
-        - name: Группы ресурсов
-          href: event-schema-resource-groups.md
-        - name: Служебная шина
-          href: event-schema-service-bus.md
-        - name: Azure Maps
-          href: event-schema-azure-maps.md
-        - name: Конфигурация приложений
-          href: event-schema-app-configuration.md
-        - name: Azure SignalR
-          href: event-schema-azure-signalr.md
-        - name: Машинное обучение Azure
-          href: event-schema-machine-learning.md
     - name: Ресурсы шаблона
       items:
         - name: Подписки на события

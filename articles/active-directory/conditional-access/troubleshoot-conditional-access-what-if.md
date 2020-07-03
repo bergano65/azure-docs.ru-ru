@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 661afc08c76c6cde61b02a29a55b4a8bec932e21
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73175797"
 ---
 # <a name="troubleshooting-conditional-access-using-the-what-if-tool"></a>Устранение неполадок условного доступа с помощью средства What If
@@ -37,7 +37,7 @@ ms.locfileid: "73175797"
 
 * Облачные приложения или действия
 * IP-адрес 
-* Страна
+* Country
 * Платформа устройства
 * Клиентские приложения (Предварительная версия)
 * Состояние устройства (Предварительная версия) 
@@ -73,9 +73,9 @@ ms.locfileid: "73175797"
 
 Этот тест можно расширить, чтобы включить другие точки данных для ограничения области.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Что такое условный доступ?](overview.md)
-* [Что такое Защита идентификации Azure Active Directory?](../identity-protection/overview-v2.md)
+* [Что такое условный доступ](overview.md)
+* [Что такое защита идентификации Azure Active Directory?](../identity-protection/overview-v2.md)
 * [Что такое удостоверение устройства?](../devices/overview.md)
 * [Как это работает: служба Многофакторной идентификации Azure](../authentication/concept-mfa-howitworks.md)

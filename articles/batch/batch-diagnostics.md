@@ -1,25 +1,15 @@
 ---
-title: Метрики, оповещения и журналы диагностики. Пакетная служба Azure | Документация Майкрософт
+title: Метрики, оповещения и журналы диагностики
 description: Запись и анализ событий журнала диагностики для ресурсов учетной записи пакетной службы Azure, таких как пулы и задачи.
-services: batch
-documentationcenter: ''
-author: LauraBrenner
-manager: evansma
-editor: ''
-ms.assetid: ''
-ms.service: batch
 ms.topic: article
-ms.tgt_pltfrm: multiple
-ms.workload: big-compute
 ms.date: 12/05/2018
-ms.author: labrenne
 ms.custom: seodec18
-ms.openlocfilehash: 70c53ea9a8fc64615a9a493efc42405631a3f06d
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 7f75a8302c8ba368138e6c8edee6c6069c5031d8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77025169"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82117307"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
@@ -44,12 +34,17 @@ ms.locfileid: "77025169"
 
 Чтобы просмотреть все метрики пакетной учетной записи, сделайте следующее: 
 
-1. Выберите на портале **Все службы** > **Учетные записи пакетной службы** и щелкните имя нужной учетной записи.
+1. На портале последовательно выберите **все службы** > **учетные записи Пакетная**служба, а затем щелкните имя учетной записи пакета.
 2. В разделе **Мониторинг** щелкните **Метрики**.
 3. Выберите одну или несколько метрик. Чтобы выбрать метрики для дополнительных ресурсов, используйте раскрывающиеся списки **Подписки**, **Группы ресурсов**, **Тип ресурсов** и **Ресурсы**.
     * Для метрик на основе количества (например, "число выделенных ядер" или "число узлов с низким приоритетом") используйте статистическое вычисление "среднее". Для метрик на основе событий (например, "события изменения размера пула") используйте агрегат "Count".
 
-    ![Метрики пакетной службы](media/batch-diagnostics/metrics-portal.png)
+> [!WARNING]
+> Не используйте агрегат "Sum", который суммирует значения всех точек данных, полученных за период диаграммы
+> 
+> 
+
+    ![Batch metrics](media/batch-diagnostics/metrics-portal.png)
 
 Метрики можно получить программным способом с помощью API-интерфейсов Azure Monitor. Изучите пример [получения данных метрик Azure Monitor с помощью .NET](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/).
 
@@ -67,11 +62,11 @@ ms.locfileid: "77025169"
 
 Чтобы настроить оповещение метрики на портале, сделайте следующее:
 
-1. Выберите **Все службы** > **Учетные записи пакетной службы** и щелкните имя учетной записи пакетной службы.
+1. Щелкните **все службы** > **пакетные учетные записи**, а затем щелкните имя учетной записи пакета.
 2. В разделе **Мониторинг** щелкните **Правила оповещений** > **Добавить оповещение метрики**.
 3. Выберите метрику и условие оповещения (например, если метрика превышает определенное значение за некоторый период), а также одно или несколько уведомлений.
 
-Также с помощью [API-интерфейса REST](https://docs.microsoft.com/rest/api/monitor/) вы можете настроить оповещения практически в реальном времени. Дополнительные сведения см. в статье [Обзор оповещений в Microsoft Azure](../azure-monitor/platform/alerts-overview.md).
+Также с помощью [API-интерфейса REST](https://docs.microsoft.com/rest/api/monitor/) вы можете настроить оповещения практически в реальном времени. Дополнительные сведения см. в разделе Общие сведения о [предупреждениях](../azure-monitor/platform/alerts-overview.md). Чтобы включить сведения о задании, задаче или пуле в оповещениях, см. сведения в запросах поиска в разделе [реагирование на события с помощью оповещений Azure Monitor](../azure-monitor/learn/tutorial-response.md) .
 
 ## <a name="batch-diagnostics"></a>Диагностика пакетной службы
 
@@ -99,13 +94,13 @@ ms.locfileid: "77025169"
 
 ### <a name="enable-collection-of-batch-diagnostic-logs"></a>Включение сбора журналов диагностики пакетной службы
 
-1. Выберите на портале **Все службы** > **Учетные записи пакетной службы** и щелкните имя нужной учетной записи.
+1. На портале последовательно выберите **все службы** > **учетные записи Пакетная**служба, а затем щелкните имя учетной записи пакета.
 2. В разделе **Мониторинг** щелкните **Журналы диагностики** > **Включить диагностику**.
 3. В окне **параметры диагностики**введите имя параметра и выберите назначение журнала (существующая учетная запись хранения, концентратор событий или журналы Azure Monitor). Выберите **ServiceLog**, **AllMetrics** или оба параметра сразу.
 
     При выборе учетной записи хранилища можно настроить политику хранения (необязательно). Если вы не укажете число дней для хранения, данные будут храниться в течение всего срока существования учетной записи хранения.
 
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
     ![Диагностика пакетной службы](media/batch-diagnostics/diagnostics-portal.png)
 
@@ -130,9 +125,9 @@ insights-metrics-pt1m/resourceId=/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX
 RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/
 BATCHACCOUNTS/MYBATCHACCOUNT/y=2018/m=03/d=05/h=22/m=00/PT1H.json
 ```
-Каждый файл большого двоичного объекта `PT1H.json` содержит события в формате JSON, которые произошли в течение часа, указанного в URL-адресе большого двоичного объекта (например, `h=12`). В течение текущего часа события добавляются в файл `PT1H.json` по мере их возникновения. Значение минуты (`m=00`) всегда `00`, так как события журнала диагностики разбиваются на отдельные большие двоичные объекты в час. (Все значения времени указаны в формате UTC.)
+Каждый `PT1H.json` файл большого двоичного объекта содержит события в формате JSON, которые произошли в течение часа, указанного в URL `h=12`-адресе большого двоичного объекта (например,). В течение текущего часа события добавляются к `PT1H.json` файлу по мере их возникновения. Значение минуты (`m=00`) всегда `00`равно, так как события журнала диагностики разбиваются на отдельные большие двоичные объекты в час. (Все значения времени указаны в формате UTC.)
 
-Ниже приведен пример записи `PoolResizeCompleteEvent` в файле журнала `PT1H.json`. Он содержит сведения о текущем и целевом количестве узлов с выделенным и низким приоритетом, а также время начала и окончания операции.
+Ниже приведен пример `PoolResizeCompleteEvent` записи в файле `PT1H.json` журнала. Он содержит сведения о текущем и целевом количестве узлов с выделенным и низким приоритетом, а также время начала и окончания операции.
 
 ```
 { "Tenant": "65298bc2729a4c93b11c00ad7e660501", "time": "2019-08-22T20:59:13.5698778Z", "resourceId": "/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/BATCHACCOUNTS/MYBATCHACCOUNT/", "category": "ServiceLog", "operationName": "PoolResizeCompleteEvent", "operationVersion": "2017-06-01", "properties": {"id":"MYPOOLID","nodeDeallocationOption":"Requeue","currentDedicatedNodes":10,"targetDedicatedNodes":100,"currentLowPriorityNodes":0,"targetLowPriorityNodes":0,"enableAutoScale":false,"isAutoPool":false,"startTime":"2019-08-22 20:50:59.522","endTime":"2019-08-22 20:59:12.489","resultCode":"Success","resultMessage":"The operation succeeded"}}
@@ -170,17 +165,17 @@ BATCHACCOUNTS/MYBATCHACCOUNT/y=2018/m=03/d=05/h=22/m=00/PT1H.json
 | **События журнала службы** |
 | --- |
 | [Создание пула](batch-pool-create-event.md) |
-| [Начало удаления пула](batch-pool-delete-start-event.md) |
-| [Завершение удаления пула](batch-pool-delete-complete-event.md) |
+| [Pool delete start](batch-pool-delete-start-event.md) |
+| [Pool delete complete](batch-pool-delete-complete-event.md) |
 | [Начало изменения размера пула](batch-pool-resize-start-event.md) |
-| [Завершение изменения размера пула](batch-pool-resize-complete-event.md) |
+| [Pool resize complete](batch-pool-resize-complete-event.md) |
 | [Начало выполнения задачи](batch-task-start-event.md) |
-| [Завершение выполнения задачи](batch-task-complete-event.md) |
-| [Сбой выполнения задачи](batch-task-fail-event.md) |
+| [Task complete](batch-task-complete-event.md) |
+| [Task fail](batch-task-fail-event.md) |
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения об [API-интерфейсах и средствах пакетной службы](batch-apis-tools.md) для сборки решений пакетной службы.
 * См. дополнительные сведения о [мониторинге решений пакетной службы](monitoring-overview.md).

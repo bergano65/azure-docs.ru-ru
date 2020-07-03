@@ -13,18 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: genli
-ms.openlocfilehash: 6faab5bffaddbbd5d8deb9c3834bf3d8fe3e3445
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.openlocfilehash: becbf88aeda164f7d916cbc1f1ace89262cc1a3f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71058647"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77921629"
 ---
 # <a name="reset-local-windows-password-for-azure-vm-offline"></a>Сброс локального пароля Windows для виртуальной машины Azure вне сети
 Локальный пароль Windows для виртуальной машины Azure можно сбросить с помощью [портала Azure или Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (если установлен гостевой агент Azure). Этот метод является основным способом сброса пароля для виртуальной машины Azure. Если в работе гостевого агента Azure возникают неполадки (агент не отвечает или не устанавливается после передачи пользовательского образа), то можно сбросить пароль Windows вручную. В этой статье описывается, как сбросить пароль локальной учетной записи, подключив исходный виртуальный диск операционной системы к другой виртуальной машине. Действия, описанные в этой статье, не применяются к контроллерам домена Windows. 
 
 > [!WARNING]
-> Этот метод следует использовать только в крайнем случае. Всегда рекомендуется сначала попытаться сбросить пароль с помощью [портала Azure или Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+> Этот метод следует использовать только в крайнем случае. Всегда пытайтесь сбросить пароль с помощью [портал Azure или Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) .
 
 ## <a name="overview-of-the-process"></a>Описание процесса
 Ниже приводятся основные шаги, выполнив которые можно сбросить локальный пароль для виртуальной машины Windows в Azure, если нет доступа к гостевому агенту Azure.
@@ -102,6 +102,8 @@ ms.locfileid: "71058647"
 
 ## <a name="detailed-steps-for-classic-vm"></a>Подробные инструкции для классической виртуальной машины
 
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 > [!NOTE]
 > Приведенные действия не применяются к контроллерам домена Windows. Они подходят только для отдельного сервера или сервера, который является членом домена.
 
@@ -115,13 +117,13 @@ ms.locfileid: "71058647"
 
 2. Подключите диск операционной системы исходной виртуальной машины к машине для устранения неполадок. Виртуальная машина для устранения неполадок должна находиться в том же регионе, что и диск операционной системы исходной виртуальной машины (например `West US`).
    
-   1. Выберите виртуальную машину для устранения неполадок на портале Azure. Щелкните *Диски* | *Подключить существующий*:
+   1. Выберите виртуальную машину для устранения неполадок на портале Azure. Щелкните *диски* | *подключить существующий*:
      
       ![Подключение существующего диска](./media/reset-local-password-without-agent/disks-attach-existing-classic.png)
      
    2. Выберите *VHD-файл*, а затем выберите учетную запись хранения, которая содержит вашу исходную виртуальную машину:
      
-      ![Выберите учетную запись хранения](./media/reset-local-password-without-agent/disks-select-storage-account-classic.png)
+      ![Выбор учетной записи хранения](./media/reset-local-password-without-agent/disks-select-storage-account-classic.png)
      
    3. Установите флажок *Показывать Классические учетные записи хранения*, а затем выберите исходный контейнер. Как правило, исходный контейнер — *vhds*:
      
@@ -135,7 +137,7 @@ ms.locfileid: "71058647"
 
    5. Нажмите кнопку ОК, чтобы подключить диск.
 
-      ![Подключить существующий диск](./media/reset-local-password-without-agent/disks-attach-okay-classic.png)
+      ![Подключение существующего диска](./media/reset-local-password-without-agent/disks-attach-okay-classic.png)
 
 3. Подключитесь к виртуальной машине для устранения неполадок, используя удаленный рабочий стол, и убедитесь, что диск операционной системы исходной виртуальной машины отображается.
 
@@ -147,7 +149,7 @@ ms.locfileid: "71058647"
      
       ![Просмотр подключенного диска данных](./media/reset-local-password-without-agent/troubleshooting-vm-file-explorer-classic.png)
 
-4. Создайте `gpt.ini` `gpt.ini` `gpt.ini.bak`в `\Windows\System32\GroupPolicy` на диске исходной виртуальной машины (если существует, переименуйте в):
+4. Создайте `gpt.ini` в `\Windows\System32\GroupPolicy` на диске исходной виртуальной машины (если `gpt.ini` существует, переименуйте в `gpt.ini.bak`):
    
    > [!WARNING]
    > Убедитесь, что вы случайно не создаете следующие файлы в `C:\Windows`, диск операционной системы для виртуальной машины для устранения неполадок. Создайте файлы на диске операционной системы исходной виртуальной машины, который подключен в качестве диска данных.
@@ -193,9 +195,9 @@ ms.locfileid: "71058647"
    
    2. Выберите диск данных, подключенный на шаге 2, щелкните **отсоединить**, а затем нажмите кнопку **ОК**.
 
-     ![Отсоединить диск](./media/reset-local-password-without-agent/data-disks-classic.png)
+     ![Отключение диска](./media/reset-local-password-without-agent/data-disks-classic.png)
      
-     ![Отсоединить диск](./media/reset-local-password-without-agent/detach-disk-classic.png)
+     ![Отключение диска](./media/reset-local-password-without-agent/detach-disk-classic.png)
 
 8. Создайте виртуальную машину на основе диска операционной системы исходной виртуальной машины.
    
@@ -211,12 +213,12 @@ ms.locfileid: "71058647"
 
 2. В режиме удаленного сеанса на новой виртуальной машине удалите следующие файлы, чтобы очистить среду:
     
-    * От`%windir%\System32`
+    * От `%windir%\System32`
       * отменит`FixAzureVM.cmd`
-    * От`%windir%\System32\GroupPolicy\Machine\Scripts`
+    * От `%windir%\System32\GroupPolicy\Machine\Scripts`
       * отменит`scripts.ini`
-    * От`%windir%\System32\GroupPolicy`
-      * Удалите `gpt.ini` (если `gpt.ini` существовали до, и вы переименовали `.bak` его в `gpt.ini.bak`, переименуйте `gpt.ini`файл обратно в).
+    * От `%windir%\System32\GroupPolicy`
+      * Удалите `gpt.ini` (если `gpt.ini` существовали до, и вы переименовали его `gpt.ini.bak`в `.bak` , переименуйте `gpt.ini`файл обратно в).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Если все еще не удается подключиться с помощью удаленного рабочего стола, то см. статью [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). [Подробное руководство по устранению неполадок с подключением к удаленному рабочему столу на виртуальной машине Windows в Azure](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) скорее посвящено методам устранения неполадок, чем конкретным действиям. Вы также можете [отправить запрос в службу поддержки Azure](https://azure.microsoft.com/support/options/) и получить практическую помощь.

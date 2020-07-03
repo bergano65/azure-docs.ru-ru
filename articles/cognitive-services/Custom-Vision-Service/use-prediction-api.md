@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: anroth
-ms.openlocfilehash: dcb12da680d70e1f0ce4cd763bee340bb3416c6b
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 88aaa3d54ea44a15f7900aba093bf28c70c19695
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169954"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82129858"
 ---
 # <a name="use-your-model-with-the-prediction-api"></a>Использование модели с API-интерфейсом прогнозирования
 
@@ -49,7 +49,7 @@ ms.locfileid: "76169954"
 
 ## <a name="create-the-application"></a>Создание приложения
 
-1. В Visual Studio создайте новое C# консольное приложение.
+1. В Visual Studio создайте новое консольное приложение C#.
 
 1. Используйте следующий код в файле __Program.cs__:
 
@@ -109,7 +109,7 @@ ms.locfileid: "76169954"
     ```
 
 1. Измените следующие сведения:
-   * Задайте в поле `namespace` имя проекта.
+   * Присвойте `namespace` полю имя проекта.
    * Замените заполнитель `<Your prediction key>` значением ключа, полученным ранее.
    * Замените заполнитель `<Your prediction URL>` URL-адресом, полученным ранее.
 
@@ -130,12 +130,8 @@ ms.locfileid: "76169954"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В этом руководство вы узнали, как отправлять изображения в классификатор или детектор пользовательского образа, а также как получить ответ программным путем с C# помощью пакета SDK. Далее вы узнаете, как выполнять комплексные сценарии с C#или приступить к работе с другим ЯЗЫКОВым пакетом SDK.
+В этом руководство вы узнали, как отправлять изображения в классификатор или детектор пользовательского образа, а также как получить ответ программным способом с помощью пакета SDK для C#. Далее вы узнаете, как выполнять комплексные сценарии в C# или приступить к работе с другим языковым пакетом SDK.
 
-* [Краткое руководство. пакет SDK для .NET](csharp-tutorial.md)
-* [Краткое руководство. пакет SDK для Python](python-tutorial.md)
-* [Краткое руководство. пакет SDK для Java](java-tutorial.md)
-* [Краткое руководство. пакет SDK для Node](node-tutorial.md)
-* [Краткое руководство. пакет SDK для Go](go-tutorial.md)
+* [Краткое руководство. Пользовательское визуальное распознавание SDK](quickstarts/image-classification.md)

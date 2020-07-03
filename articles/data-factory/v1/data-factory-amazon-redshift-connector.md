@@ -13,11 +13,11 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: c2e2394bbcee5294bfb752a0af2969457ffff0ee
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894207"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79260531"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -34,7 +34,7 @@ ms.locfileid: "75894207"
 > [!TIP]
 > Чтобы обеспечить наилучшую производительность при копировании больших объемов данных из Amazon Redshift, рекомендуется использовать встроенную команду Redshift **UNLOAD** через Amazon Simple Storage Service (Amazon S3). Дополнительные сведения см. в разделе [Копирование данных из Amazon Redshift с помощью UNLOAD](#use-unload-to-copy-data-from-amazon-redshift).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 * Для перемещения данных в локальное хранилище установите [шлюз управления данными](data-factory-data-management-gateway.md) на локальный компьютер. Предоставьте доступ для шлюза в кластер Amazon Redshift с помощью IP-адреса локального компьютера. Инструкции см. в статье об [авторизации доступа к кластеру](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
 * Дополнительные сведения о перемещении в хранилище данных Azure см. в статье [Microsoft Azure Datacenter IP Ranges ](https://www.microsoft.com/download/details.aspx?id=41653) (Диапазоны IP-адресов центра обработки данных Microsoft Azure).
 
@@ -51,7 +51,7 @@ ms.locfileid: "75894207"
 2. Создайте наборы данных, которые представляют входные и выходные данные для операции копирования.
 3. Создайте конвейер с действием копирования, который принимает входной набор данных и возвращает выходной набор данных.
 
-При использовании мастера копирования для этих сущностей фабрики данных автоматически создаются определения JSON. При использовании инструментов или интерфейсов API (за исключением API .NET) вы самостоятельно определяете сущности фабрики данных в формате JSON. Пример JSON. копирование данных из Amazon RedShift в хранилище BLOB-объектов Azure содержит определения JSON для сущностей фабрики данных, которые используются для копирования данных из хранилища данных Amazon RedShift.
+При использовании мастера копирования для этих сущностей фабрики данных автоматически создаются определения JSON. При использовании инструментов или интерфейсов API (за исключением API .NET) вы самостоятельно определяете сущности фабрики данных в формате JSON. В разделе Пример JSON. Копирование данных из Amazon Redshift в хранилище больших двоичных объектов Azure показаны определения JSON для сущностей фабрики данных, которые используются для копирования данных из локального хранилища данных Amazon Redshift.
 
 В следующих разделах описаны свойства JSON, используемые для определения сущностей фабрики данных для Amazon Redshift.
 
@@ -59,13 +59,13 @@ ms.locfileid: "75894207"
 
 В таблице ниже приведены описания элементов JSON, которые относятся к связанной службе Amazon Redshift.
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
 | **type** |Этому свойству необходимо задать значение **AmazonRedshift**. |Да |
-| **server** |IP-адрес или имя узла сервера Amazon Redshift. |Да |
-| **port** |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет (значение по умолчанию — 5439) |
+| **сервером** |IP-адрес или имя узла сервера Amazon Redshift. |Да |
+| **порту** |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет (значение по умолчанию — 5439) |
 | **database** |Имя базы данных Amazon Redshift. |Да |
-| **username** |Имя пользователя, имеющего доступ к базе данных. |Да |
+| **имен** |Имя пользователя, имеющего доступ к базе данных. |Да |
 | **password** |Пароль для учетной записи пользователя. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
@@ -74,7 +74,7 @@ ms.locfileid: "75894207"
 
 Раздел **typeProperties** во всех типах наборов данных разный. Он содержит сведения о расположении данных в хранилище. Раздел **typeProperties** набора данных типа **RelationalTable** (который включает в себя набор данных Amazon Redshift) содержит следующие свойства:
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
 | **tableName** |Имя таблицы в базе данных Amazon Redshift, на которое ссылается связанная служба. |Нет (если указано свойство **query** действия копирования типа **RelationalSource**). |
 
@@ -84,18 +84,18 @@ ms.locfileid: "75894207"
 
 Если действие копирования относится к типу **AmazonRedshiftSource**, в разделе **typeProperties** для него доступны следующие свойства:
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
-| **query** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
+| **запрос** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
 | **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет |
 | **s3LinkedServiceName** | Используется Amazon S3 в качестве промежуточного хранилища. Связанная служба указывается с помощью имени типа фабрики данных Azure **AwsAccessKey**. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 | **bucketName** | Указывает контейнер Amazon S3 для хранения промежуточных данных. Если это свойство не указано, действие копирования автоматически создаст контейнер. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 
 Кроме того, можно использовать тип **RelationalSource** (включающий Amazon Redshift) со следующим свойством в разделе **typeProperties**. Обратите внимание, что этот тип источника не поддерживает Redshift команду **UNLOAD**.
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
-| **query** |Используйте пользовательский запрос для чтения данных. | Нет (если для свойства **tableName** задано значение dataset). |
+| **запрос** |Используйте пользовательский запрос для чтения данных. | Нет (если для свойства **tableName** задано значение dataset). |
 
 ## <a name="use-unload-to-copy-data-from-amazon-redshift"></a>Копирование данных из Amazon Redshift с помощью UNLOAD
 
@@ -142,9 +142,9 @@ ms.locfileid: "75894207"
 
 Образец состоит из следующих сущностей фабрики данных.
 
-* Связанная служба типа [AmazonRedshift](#linked-service-properties).
+* Связанная служба типа [AmazonRedshift](#linked-service-properties)
 * Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
-* Входной [набор данных](data-factory-create-datasets.md) типа [RelationalTable](#dataset-properties).
+* Входной [набор данных](data-factory-create-datasets.md) типа [RelationalTable](#dataset-properties)
 * Выходной [набор данных](data-factory-create-datasets.md) типа [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties)
 * [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются свойства [RelationalSource](#copy-activity-properties) и [BlobSink](data-factory-azure-blob-connector.md#copy-activity-properties).
 
@@ -333,14 +333,14 @@ ms.locfileid: "75894207"
 | INTEGER |Int32 |
 | bigint |Int64 |
 | DECIMAL |Decimal |
-| real |Отдельная |
+| real |Single |
 | DOUBLE PRECISION |Double |
-| BOOLEAN |String |
-| CHAR |String |
-| VARCHAR |String |
-| DATE |Дата и время |
-| timestamp |Дата и время |
-| TEXT |String |
+| BOOLEAN |Строка |
+| CHAR |Строка |
+| VARCHAR |Строка |
+| DATE |DateTime |
+| timestamp |DateTime |
+| TEXT |Строка |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника
 Сведения о сопоставлении столбцов в наборе данных, используемом в качестве источника, со столбцами в приемнике см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).

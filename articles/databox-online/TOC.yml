@@ -7,7 +7,7 @@
       items:
         - name: Общие сведения о Шлюзе Data Box
           href: data-box-gateway-overview.md
-    - name: Руководства
+    - name: Учебники
       items:
         - name: 1. Подготовка
           href: data-box-gateway-deploy-prep.md
@@ -25,7 +25,7 @@
           href: data-box-gateway-system-requirements.md
         - name: Изучение ограничений
           href: data-box-gateway-limits.md
-        - name: Обзор системы безопасности
+        - name: Общие сведения о безопасности
           href: data-box-gateway-security.md
         - name: Варианты использования
           href: data-box-gateway-use-cases.md
@@ -43,15 +43,17 @@
               href: data-box-gateway-manage-access-power-connectivity-mode.md
             - name: Использование PowerShell
               href: data-box-gateway-connect-powershell-interface.md
-        - name: Мониторинг
+        - name: Монитор
           href: data-box-gateway-monitor.md
-        - name: Устранение неполадок
+        - name: Диагностика
           href: data-box-gateway-troubleshoot.md
         - name: Обращение в службу поддержки Майкрософт
-          href: data-box-edge-contact-microsoft-support.md
+          href: azure-stack-edge-contact-microsoft-support.md
     - name: Заметки о выпуске
       items:
-        - name: 1906 (текущий)
+        - name: "1911\_— текущая версия"
+          href: data-box-gateway-1911-release-notes.md
+        - name: 1906
           href: data-box-gateway-1906-release-notes.md
         - name: 1905
           href: data-box-gateway-1905-release-notes.md
@@ -62,62 +64,68 @@
     - name: Обзор
       items:
         - name: Что такое Azure Stack Edge?
-          href: data-box-edge-overview.md
+          href: azure-stack-edge-overview.md
     - name: Учебники
       items:
         - name: 1. Подготовка
-          href: data-box-edge-deploy-prep.md
+          href: azure-stack-edge-deploy-prep.md
         - name: "2.\_Установка"
-          href: data-box-edge-deploy-install.md
+          href: azure-stack-edge-deploy-install.md
         - name: '3. Подключение, настройка и активация'
-          href: data-box-edge-deploy-connect-setup-activate.md
+          href: azure-stack-edge-deploy-connect-setup-activate.md
         - name: 4. Добавление общего ресурса и подключение к нему
-          href: data-box-edge-deploy-add-shares.md
+          href: azure-stack-edge-deploy-add-shares.md
         - name: 5a. Настройка вычислений (простая)
-          href: data-box-edge-deploy-configure-compute.md
+          href: azure-stack-edge-deploy-configure-compute.md
         - name: 5a. Настройка вычислений (сложная)
-          href: data-box-edge-deploy-configure-compute-advanced.md
+          href: azure-stack-edge-deploy-configure-compute-advanced.md
     - name: Основные понятия
       items:
         - name: Обзор требований
-          href: data-box-edge-system-requirements.md
+          href: azure-stack-edge-system-requirements.md
         - name: Изучение ограничений
-          href: data-box-edge-limits.md
-        - name: Обзор системы безопасности
-          href: data-box-edge-security.md
+          href: azure-stack-edge-limits.md
+        - name: Общие сведения о безопасности
+          href: azure-stack-edge-security.md
         - name: Просмотр спецификаций
-          href: data-box-edge-technical-specifications-compliance.md
+          items:
+            - name: Характеристики устройства
+              href: azure-stack-edge-technical-specifications-compliance.md
+            - name: Характеристики кабелей питания
+              href: azure-stack-edge-technical-specifications-power-cords-regional.md
     - name: Практическое руководство
       items:
         - name: 'Разработка модуля C#'
-          href: data-box-edge-create-iot-edge-module.md
+          href: azure-stack-edge-create-iot-edge-module.md
         - name: Управление
           items:
             - name: Пограничные вычисления
-              href: data-box-edge-manage-compute.md
+              href: azure-stack-edge-manage-compute.md
             - name: Сеть пограничных вычислений
-              href: data-box-edge-extend-compute-access-modules.md
+              href: azure-stack-edge-extend-compute-access-modules.md
             - name: Общие папки
-              href: data-box-edge-manage-shares.md
+              href: azure-stack-edge-manage-shares.md
             - name: Пользователи
-              href: data-box-edge-manage-users.md
+              href: azure-stack-edge-manage-users.md
             - name: Графики пропускной способности
-              href: data-box-edge-manage-bandwidth-schedules.md
+              href: azure-stack-edge-manage-bandwidth-schedules.md
             - name: 'Питание, доступ, подключение'
-              href: data-box-edge-manage-access-power-connectivity-mode.md
+              href: azure-stack-edge-manage-access-power-connectivity-mode.md
             - name: Использование PowerShell
-              href: data-box-edge-connect-powershell-interface.md
-        - name: Устранение неполадок
-          href: data-box-edge-troubleshoot.md
+              href: azure-stack-edge-connect-powershell-interface.md
+        - name: Диагностика
+          href: azure-stack-edge-troubleshoot.md
         - name: Обращение в службу поддержки Майкрософт
-          href: data-box-edge-contact-microsoft-support.md
-        - name: Мониторинг
-          href: data-box-edge-monitor.md
+          href: azure-stack-edge-contact-microsoft-support.md
+        - name: Монитор
+          href: azure-stack-edge-monitor.md
         - name: Возврат или замена устройства
-          href: data-box-edge-return-device.md
+          href: azure-stack-edge-return-device.md
     - name: Заметки о выпуске
       items:
-        - name: 1906 (текущий)
+        - name: "1911\_— текущая версия"
+          href: data-box-gateway-1911-release-notes.md
+        - name: 1906
           href: data-box-gateway-1906-release-notes.md
         - name: 1905
           href: data-box-gateway-1905-release-notes.md

@@ -6,17 +6,16 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 08/06/2019
+ms.date: 04/20/2020
 ms.author: dech
-Customer intent: As a developer, I want to build a Node.js console application to access and manage SQL API account resources in Azure Cosmos DB, so that customers can better use the service.
-ms.openlocfilehash: a273b89d864d97d9bc71acff476371f77cfff066
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: ef493b6b21eb0ba0ad6d22a21e4e205a9fecacb6
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754821"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858066"
 ---
-# <a name="tutorial-build-a-nodejs-console-app-with-the-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство. Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
+# <a name="tutorial-build-a-nodejs-console-app-with-the-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство по Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-get-started.md)
@@ -27,7 +26,7 @@ ms.locfileid: "72754821"
 
 Как у разработчика у вас могут быть приложения, использующие данные документов NoSQL. Вы можете использовать учетную запись API SQL в Azure Cosmos DB для хранения этих данных документов и получения доступа к ним. В этом руководстве показано, как создать консольное приложение Node.js, которое создает ресурсы Azure Cosmos DB, и запросить эти ресурсы.
 
-Изучив данный учебник, вы научитесь:
+Выполняя данное руководство, вы сделаете следующее:
 
 > [!div class="checklist"]
 > * создавать учетную запись Azure Cosmos DB и подключаться к ней;
@@ -53,21 +52,25 @@ ms.locfileid: "72754821"
 
 [!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
-## <a id="SetupNode"></a>Настройка приложения Node.js
+## <a name="set-up-your-nodejs-application"></a><a id="SetupNode"></a>Настройка приложения Node.js
 
 Прежде чем вы начнете писать код для создания приложения, можете создать платформу для приложения. Выполните следующие шаги, чтобы настроить приложение Node.js, содержащее код платформы:
 
 1. Откройте удобный для вас терминал.
 2. Перейдите в папку или каталог, где вы хотите сохранить приложение Node.js.
-3. Создайте два пустых файла JavaScript с помощью следующих команд:
+3. Создайте пустые файлы JavaScript с помощью следующих команд.
 
    * Windows:
-     * ```fsutil file createnew app.js 0```
-     * ```fsutil file createnew config.js 0```
+     * `fsutil file createnew app.js 0`
+     * `fsutil file createnew config.js 0`
+     * `md data`
+     * `fsutil file createnew data\databaseContext.js 0`
 
    * Linux или OS X:
-     * ```touch app.js```
-     * ```touch config.js```
+     * `touch app.js`
+     * `touch config.js`
+     * `mkdir data`
+     * `touch data/databaseContext.js`
 
 4. Создание и инициализация файла `package.json`. Используйте следующую команду:
    * ```npm init -y```
@@ -75,536 +78,95 @@ ms.locfileid: "72754821"
 5. Установите модуль @azure/cosmos с помощью npm. Используйте следующую команду:
    * ```npm install @azure/cosmos --save```
 
-## <a id="Config"></a>Настройка конфигурации приложения
+## <a name="set-your-apps-configurations"></a><a id="Config"></a>Настройка конфигурации приложения
 
 Теперь, когда ваше приложение существует, необходимо убедиться, что оно может взаимодействовать с Azure Cosmos DB. Как показано в следующих шагах, обновляя некоторые параметры конфигурации, вы можете настроить свое приложение для взаимодействия с Azure Cosmos DB.
 
-1. Откройте файл ```config.js``` в предпочитаемом текстовом редакторе.
+1. Откройте файл *config.js* в любом текстовом редакторе.
 
-1. Скопируйте и вставьте приведенный ниже фрагмент кода, после чего задайте URI конечной точки и первичный ключ Azure Cosmos DB в качестве значений свойств ```config.endpoint``` и ```config.key```. Обе эти конфигурации можно найти на [портале Azure](https://portal.azure.com).
+1. Скопируйте и вставьте приведенный ниже фрагмент кода в файл *config.js*, после чего задайте URI конечной точки и первичный ключ Azure Cosmos DB в качестве значений для свойств `endpoint` и `key`. В базе данных контейнеры имеют имена **Tasks** и **Items**. Для этого приложения будет использоваться ключ раздела **/category**.
+
+   :::code language="javascript" source="~/cosmosdb-nodejs-get-started/config.js":::
+
+   Сведения о конечной точке и ключе можно найти на панели **Ключи** [портала Azure](https://portal.azure.com).
 
    ![Снимок экрана получения ключей на портале Azure][keys]
 
-   ```javascript
-   // ADD THIS PART TO YOUR CODE
-   var config = {}
+В пакете SDK для JavaScript используются универсальные термины — *контейнер* и *элемент*. Контейнер может представлять собой коллекцию, граф или таблицу. Элемент может представлять собой документ, ребро, вершину или запись и является содержимым внутри контейнера. В предыдущем фрагменте кода `module.exports = config;` используется для экспорта объекта конфигурации, чтобы на него можно было ссылаться в файле *app.js*.
 
-   config.endpoint = "~your Azure Cosmos DB endpoint uri here~";
-   config.key = "~your primary key here~";
-   ``` 
+## <a name="create-a-database-and-a-container"></a>Создание базы данных и контейнера
 
-1. Скопируйте данные ```database```, ```container``` и ```items```, а затем вставьте их в объект ```config``` ниже, где задавались значения свойств ```config.endpoint``` и ```config.key```. Если у вас уже есть данные, которые вы хотите сохранить в своей базе данных, вы можете использовать средство переноса данных в Azure Cosmos DB вместо определения данных здесь. Файл config.js должен содержать следующий код:
+1. Откройте файл *databaseContext.js* в любом текстовом редакторе.
 
-   [!code-javascript[nodejs-get-started](~/cosmosdb-nodejs-get-started/config.js)]
+1. Скопируйте и вставьте в файл *databaseContext.js* приведенный ниже код. Этот код определяет функцию, которая создает базу данных и контейнер (Tasks и Items), если они еще не существуют в вашей учетной записи Azure Cosmos:
 
-   Пакет SDK для JavaScript использует универсальные термины: *контейнер* и *элемент*. Контейнер может представлять собой коллекцию, граф или таблицу. Элемент может представлять собой документ, ребро, вершину или запись и является содержимым внутри контейнера. 
-   
-   Код `module.exports = config;` используется для экспорта объекта ```config```. Вы можете ссылаться на него в файле ```app.js```.
+   :::code language="javascript" source="~/cosmosdb-nodejs-get-started/data/databaseContext.js" id="createDatabaseAndContainer":::
 
-## <a id="Connect"></a>Подключение к учетной записи Azure Cosmos DB
+   База данных представляет собой логический контейнер элементов, разделенных между контейнерами. Чтобы создать базу данных, используйте метод `createIfNotExists` или функцию create из класса **Databases**. Контейнер состоит из элементов, которые в случае API SQL являются документами JSON. Контейнер создается с помощью метода `createIfNotExists` или функции create из класса **Containers**. После создания контейнера вы сможете сохранять и запрашивать данные.
 
-1. Откройте пустой файл ```app.js``` в текстовом редакторе. Скопируйте и вставьте следующий код, чтобы импортировать модуль ```@azure/cosmos``` и созданный модуль ```config```.
+   > [!WARNING]
+   > Создание контейнера связано с ценовыми требованиями. Посетите нашу [страницу с ценами](https://azure.microsoft.com/pricing/details/cosmos-db/), чтобы знать, чего следует ожидать.
 
-   ```javascript
-   // ADD THIS PART TO YOUR CODE
-   const CosmosClient = require('@azure/cosmos').CosmosClient;
+## <a name="import-the-configuration"></a>Импорт конфигурации
 
-   const config = require('./config');
-   ```
+1. Откройте файл *app.js* в любом текстовом редакторе.
 
-1. Скопируйте и вставьте код, чтобы использовать ранее сохраненные значения ```config.endpoint``` и ```config.key``` и создать CosmosClient.
+1. Скопируйте и вставьте приведенный ниже код, чтобы импортировать модуль `@azure/cosmos`, конфигурацию и databaseContext, определенные на предыдущих шагах. 
 
-   ```javascript
-   const config = require('./config');
+   :::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="ImportConfiguration":::
 
-   // ADD THIS PART TO YOUR CODE
-   const endpoint = config.endpoint;
-   const key = config.key;
+## <a name="connect-to-the-azure-cosmos-account"></a>Подключение к учетной записи Azure Cosmos
 
-   const client = new CosmosClient({ endpoint, key });
-   ```
-   
+Скопируйте и вставьте в файл *app.js* приведенный ниже код, чтобы на основании ранее сохраненных значений конечной точки и ключа создать объект CosmosClient.
+
+:::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="CreateClientObjectDatabaseContainer":::
+
 > [!Note]
-> При подключении к **эмулятору Cosmos DB** отключите проверку SSL для процесса узла.
->   ```
+> При подключении к **эмулятору Cosmos DB** отключите проверку TLS для процесса node.
+>   ```javascript
 >   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 >   const client = new CosmosClient({ endpoint, key });
 >   ```
 
 Теперь, когда у нас есть код для инициализации клиента Azure Cosmos DB, давайте рассмотрим принципы работы с ресурсами Azure Cosmos DB.
 
-## <a name="create-a-database"></a>Создание базы данных
+## <a name="query-items"></a><a id="QueryItem"></a>Элементы запроса
 
-1. Скопируйте и вставьте приведенный ниже код, чтобы задать идентификатор базы данных и идентификатор контейнера. По этим идентификаторам клиент Azure Cosmos DB найдет нужные базу данных и контейнер.
+Azure Cosmos DB поддерживает полнофункциональные запросы по элементам JSON, хранящимся в каждом контейнере. В следующем примере кода показан запрос, который вы можете выполнить по элементам в контейнере. Для обращения к элементам можно использовать функцию query из класса `Items`. Добавьте следующий код в файл *app.js*, чтобы получить элементы из учетной записи Azure Cosmos:
 
-   ```javascript
-   const client = new CosmosClient({ endpoint, key });
+:::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="QueryItems":::
 
-   // ADD THIS PART TO YOUR CODE
-   const HttpStatusCodes = { NOTFOUND: 404 };
+## <a name="create-an-item"></a><a id="CreateItem"></a>Создание элемента
 
-   const databaseId = config.database.id;
-   const containerId = config.container.id;
-   const partitionKey = { kind: "Hash", paths: ["/Country"] };
-   ```
+Элемент можно создать с помощью функции create из класса `Items`. При использовании API SQL элементы проецируются как документы, которые являются содержимым JSON, определенным пользователем (произвольным). В этом руководстве описано, как создать элемент в базе данных Tasks.
 
-   Вы можете создать базу данных с помощью метода `createIfNotExists` или функции create класса **Databases**. База данных представляет собой логический контейнер элементов, разделенных между контейнерами. 
+1. В файле app.js укажите определение элемента:
 
-2. Скопируйте и вставьте методы **createDatabase** и **readDatabase** в файл app.js в определениях ```databaseId``` и ```containerId```. Функция **createDatabase** создаст базу данных с идентификатором ```FamilyDatabase```, взятым из объекта ```config```, если она не была создана ранее. Функция **readDatabase** считает определение базы данных, чтобы удостовериться в ее наличии.
+   :::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="DefineNewItem":::
 
-   ```javascript
-   /**
-    * Create the database if it does not exist
-    */
-   async function createDatabase() {
-       const { database } = await client.databases.createIfNotExists({ id: databaseId });
-       console.log(`Created database:\n${database.id}\n`);
-   }
+1. Добавьте следующий код, чтобы создать ранее определенный элемент:
 
-   /**
-   * Read the database definition
-   */
-   async function readDatabase() {
-      const { resource: databaseDefinition } = await client.database(databaseId).read();
-      console.log(`Reading database:\n${databaseDefinition.id}\n`);
-   }
-   ```
+   :::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="CreateItem":::
 
-3. Скопируйте и вставьте приведенный ниже код, в котором вы задали функции **createDatabase** и **readDatabase**, для добавления функции вспомогательного приложения **exit**, которая выведет сообщение о выходе. 
+## <a name="update-an-item"></a><a id="ReplaceItem"></a>Обновление элемента
 
-   ```javascript
-   // ADD THIS PART TO YOUR CODE
-   function exit(message) {
-      console.log(message);
-      console.log('Press any key to exit');
-      process.stdin.setRawMode(true);
-      process.stdin.resume();
-      process.stdin.on('data', process.exit.bind(process, 0));
-   };
-   ```
+Azure Cosmos DB поддерживает замену содержимого элементов. Скопируйте следующий код и вставьте его в файл *app.js*. Этот код позволяет получить элемент из контейнера и обновить поле *isComplete*, присвоив ему значение true.
 
-4. Скопируйте и вставьте приведенный ниже код, в котором вы задали функцию **exit**, для вызова функций **createDatabase** и **readDatabase**.
+:::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="UpdateItem":::
 
-   ```javascript
-   createDatabase()
-     .then(() => readDatabase())
-     .then(() => { exit(`Completed successfully`); })
-     .catch((error) => { exit(`Completed with error \${JSON.stringify(error)}`) });
-   ```
+## <a name="delete-an-item"></a><a id="DeleteItem"></a>Удаление элемента
 
-   На этом этапе ваш код в ```app.js``` теперь должен выглядеть так, как показано ниже:
+Azure Cosmos DB поддерживает удаление элементов JSON. В следующем примере кода показано, как получить и удалить элемент по его идентификатору. Скопируйте следующий код и вставьте его в файл *app.js*.
 
-   ```javascript
-   const CosmosClient = require('@azure/cosmos').CosmosClient;
+:::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js" id="DeleteItem":::
 
-   const config = require('./config');
-
-   const endpoint = config.endpoint;
-   const key = config.key;
-
-   const client = new CosmosClient({ endpoint, key });
-
-   const HttpStatusCodes = { NOTFOUND: 404 };
-
-   const databaseId = config.database.id;
-   const containerId = config.container.id;
-   const partitionKey = { kind: "Hash", paths: ["/Country"] };
-
-    /**
-    * Create the database if it does not exist
-    */
-    async function createDatabase() {
-     const { database } = await client.databases.createIfNotExists({ id: databaseId });
-     console.log(`Created database:\n${database.id}\n`);
-   }
-
-   /**
-   * Read the database definition
-   */
-   async function readDatabase() {
-     const { resource: databaseDefinition } = await client.database(databaseId).read();
-    console.log(`Reading database:\n${databaseDefinition.id}\n`);
-   }
-
-   /**
-   * Exit the app with a prompt
-   * @param {message} message - The message to display
-   */
-   function exit(message) {
-     console.log(message);
-     console.log('Press any key to exit');
-     process.stdin.setRawMode(true);
-     process.stdin.resume();
-     process.stdin.on('data', process.exit.bind(process, 0));
-   }
-
-   createDatabase()
-     .then(() => readDatabase())
-     .then(() => { exit(`Completed successfully`); })
-     .catch((error) => { exit(`Completed with error ${JSON.stringify(error) }`) });
-   ```
-
-5. В окне терминала перейдите к файлу ```app.js``` и выполните эту команду: 
-
-   ```bash 
-   node app.js
-   ```
-
-## <a id="CreateContainer"></a>Создание контейнера
-
-Затем создайте контейнер в учетной записи Azure Cosmos DB, чтобы можно было хранить и запрашивать данные. 
-
-> [!WARNING]
-> Создание контейнера связано с ценовыми требованиями. Посетите нашу [страницу с ценами](https://azure.microsoft.com/pricing/details/cosmos-db/), чтобы знать, чего следует ожидать.
-
-Контейнер можно создать с помощью метода `createIfNotExists` или функции create из класса **Containers**.  Контейнер состоит из элементов (которые в случае API SQL являются документами JSON) и связанной логики приложения JavaScript.
-
-1. Скопируйте и вставьте функции **createContainer** и **readContainer** после функции **readDatabase** в файле app.js. Функция **createContainer** создаст контейнер с идентификатором ```containerId```, указанным из объекта ```config```, если он не был создан ранее. Функция **readContainer** будет считывать определение контейнера, чтобы проверить наличие контейнера.
-
-   ```javascript
-   /**
-   * Create the container if it does not exist
-   */
-
-   async function createContainer() {
-
-    const { container } = await client.database(databaseId).containers.createIfNotExists({ id: containerId, partitionKey }, { offerThroughput: 400 });
-    console.log(`Created container:\n${config.container.id}\n`);
-   }
-
-   /**
-    * Read the container definition
-   */
-   async function readContainer() {
-      const { resource: containerDefinition } = await client.database(databaseId).container(containerId).read();
-    console.log(`Reading container:\n${containerDefinition.id}\n`);
-   }
-   ```
-
-1. Скопируйте и вставьте код после вызова функции **readDatabase**, чтобы выполнить функции **createContainer** и **readContainer**.
-
-   ```javascript
-   createDatabase()
-     .then(() => readDatabase())
-
-     // ADD THIS PART TO YOUR CODE
-     .then(() => createContainer())
-     .then(() => readContainer())
-     // ENDS HERE
-
-     .then(() => { exit(`Completed successfully`); })
-     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
-   ```
-
-   На этом этапе ваш код в ```app.js``` теперь должен выглядеть так, как показано ниже:
-
-   ```javascript
-   const CosmosClient = require('@azure/cosmos').CosmosClient;
-
-   const config = require('./config');
-
-   const endpoint = config.endpoint;
-   const key = config.key;
-
-   const client = new CosmosClient({ endpoint, key });
-
-   const HttpStatusCodes = { NOTFOUND: 404 };
-
-   const databaseId = config.database.id;
-   const containerId = config.container.id;
-   const partitionKey = { kind: "Hash", paths: ["/Country"] };
-
-   /**
-   * Create the database if it does not exist
-   */
-   async function createDatabase() {
-     const { database } = await client.databases.createIfNotExists({ id: databaseId });
-     console.log(`Created database:\n${database.id}\n`);
-   }
-
-   /**
-   * Read the database definition
-   */
-   async function readDatabase() {
-     const { body: databaseDefinition } = await client.database(databaseId).read();
-     console.log(`Reading database:\n${databaseDefinition.id}\n`);
-   }
-
-   /**
-   * Create the container if it does not exist
-   */
-
-   async function createContainer() {
-
-    const { container } = await client.database(databaseId).containers.createIfNotExists({ id: containerId, partitionKey }, { offerThroughput: 400 });
-    console.log(`Created container:\n${config.container.id}\n`);
-   }
-
-   /**
-    * Read the container definition
-   */
-   async function readContainer() {
-      const { resource: containerDefinition } = await client.database(databaseId).container(containerId).read();
-    console.log(`Reading container:\n${containerDefinition.id}\n`);
-   }
-
-   /**
-   * Exit the app with a prompt
-   * @param {message} message - The message to display
-   */
-   function exit(message) {
-     console.log(message);
-     console.log('Press any key to exit');
-     process.stdin.setRawMode(true);
-     process.stdin.resume();
-     process.stdin.on('data', process.exit.bind(process, 0));
-   }
-
-   createDatabase()
-     .then(() => readDatabase())
-     .then(() => createContainer())
-     .then(() => readContainer())
-     .then(() => { exit(`Completed successfully`); })
-     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
-   ```
-
-1. В окне терминала перейдите к файлу ```app.js``` и выполните эту команду: 
-
-   ```bash 
-   node app.js
-   ```
-
-## <a id="CreateItem"></a>Создание элемента
-
-Элемент можно создать с помощью функции create класса **Items**. При использовании API SQL элементы проецируются как документы, которые являются содержимым JSON, определенным пользователем (произвольным). Теперь можно вставить элемент в Azure Cosmos DB.
-
-1. Скопируйте и вставьте функцию **createFamilyItem** после функции **readContainer**. Функция **createFamilyItem** создает элементы, содержащие данные JSON, сохраненные в объекте ```config```. Перед созданием элемента нужно проверить, нет ли другого элемента с таким же идентификатором.
-
-   ```javascript
-   /**
-   * Create family item
-   */
-   async function createFamilyItem(itemBody) {
-      const { item } = await client.database(databaseId).container(containerId).items.upsert(itemBody);
-      console.log(`Created family item with id:\n${itemBody.id}\n`);
-   };
-   ```
-
-1. Скопируйте и вставьте код после вызова функции **readContainer**, чтобы выполнить функцию **createFamilyItem**.
-
-   ```javascript
-   createDatabase()
-     .then(() => readDatabase())
-     .then(() => createContainer())
-     .then(() => readContainer())
-
-     // ADD THIS PART TO YOUR CODE
-     .then(() => createFamilyItem(config.items.Andersen))
-     .then(() => createFamilyItem(config.items.Wakefield))
-     // ENDS HERE
-
-     .then(() => { exit(`Completed successfully`); })
-     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
-   ```
-
-1. В окне терминала перейдите к файлу ```app.js``` и выполните эту команду: 
-
-   ```bash 
-   node app.js
-   ```
-
-
-## <a id="Query"></a>Запрос ресурсов Azure Cosmos DB
-
-Azure Cosmos DB поддерживает полнофункциональные запросы к документам JSON, хранящимся в каждом контейнере. В следующем примере кода показан выполняемый запрос к документам в контейнере.
-
-1. Скопируйте и вставьте функцию **queryContainer** после функции **createFamilyItem** в файле app.js. Azure Cosmos DB поддерживает SQL-подобные запросы, как показано ниже.
-
-   ```javascript
-   /**
-   * Query the container using SQL
-    */
-   async function queryContainer() {
-     console.log(`Querying container:\n${config.container.id}`);
-
-     // query to return all children in a family
-     const querySpec = {
-        query: "SELECT VALUE r.children FROM root r WHERE r.lastName = @lastName",
-        parameters: [
-            {
-                name: "@lastName",
-                value: "Andersen"
-            }
-        ]
-    };
-
-    const { resources } = await client.database(databaseId).container(containerId).items.query(querySpec, {enableCrossPartitionQuery:true}).fetchAll();
-    for (var queryResult of resources) {
-        let resultString = JSON.stringify(queryResult);
-        console.log(`\tQuery returned ${resultString}\n`);
-    }
-   };
-   ```
-
-1. Скопируйте и вставьте код после вызовов функции **createFamilyItem**, чтобы выполнить функцию **queryContainer**.
-
-   ```javascript
-   createDatabase()
-     .then(() => readDatabase())
-     .then(() => createContainer())
-     .then(() => readContainer())
-     .then(() => createFamilyItem(config.items.Andersen))
-     .then(() => createFamilyItem(config.items.Wakefield))
-
-     // ADD THIS PART TO YOUR CODE
-     .then(() => queryContainer())
-     // ENDS HERE
-
-     .then(() => { exit(`Completed successfully`); })
-     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
-   ```
-
-1. В окне терминала перейдите к файлу ```app.js``` и выполните эту команду:
-
-   ```bash 
-   node app.js
-   ```
-
-
-## <a id="ReplaceItem"></a>Замена элемента
-Azure Cosmos DB поддерживает замену содержимого элементов.
-
-1. Скопируйте и вставьте функцию **replaceFamilyItem** после функции **queryContainer** в файле app.js. Обратите внимание, что мы сменили значение свойства grade дочернего элемента с 5 на 6.
-
-   ```javascript
-   // ADD THIS PART TO YOUR CODE
-   /**
-   * Replace the item by ID.
-   */
-   async function replaceFamilyItem(itemBody) {
-      console.log(`Replacing item:\n${itemBody.id}\n`);
-      // Change property 'grade'
-      itemBody.children[0].grade = 6;
-     const { item } = await client.database(databaseId).container(containerId).item(itemBody.id, itemBody.Country).replace(itemBody);
-   };
-   ```
-
-1. Скопируйте и вставьте код после вызова функции **queryContainer**, чтобы выполнить функцию **replaceFamilyItem**. Кроме того, добавьте код, чтобы еще раз вызвать функцию **queryContainer** и проверить успешное изменение элемента.
-
-   ```javascript
-   createDatabase()
-     .then(() => readDatabase())
-     .then(() => createContainer())
-     .then(() => readContainer())
-     .then(() => createFamilyItem(config.items.Andersen))
-     .then(() => createFamilyItem(config.items.Wakefield))
-     .then(() => queryContainer())
-
-     // ADD THIS PART TO YOUR CODE
-     .then(() => replaceFamilyItem(config.items.Andersen))
-     .then(() => queryContainer())
-     // ENDS HERE
-
-     .then(() => { exit(`Completed successfully`); })
-     .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
-   ```
-
-1. В окне терминала перейдите к файлу ```app.js``` и выполните эту команду:
-
-   ```bash 
-   node app.js
-   ```
-
-
-## <a id="DeleteItem"></a>Удаление элемента
-
-Azure Cosmos DB поддерживает удаление элементов JSON.
-
-1. Скопируйте функцию **deleteFamilyItem** и вставьте ее после функции **replaceFamilyItem**.
-
-   ```javascript
-   /**
-   * Delete the item by ID.
-   */
-   async function deleteFamilyItem(itemBody) {
-     await client.database(databaseId).container(containerId).item(itemBody.id, itemBody.Country).delete(itemBody);
-      console.log(`Deleted item:\n${itemBody.id}\n`);
-   };
-   ```
-
-1. Скопируйте и вставьте код после вызова второй функции **queryContainer**, чтобы выполнить функцию **deleteFamilyItem**.
-
-   ```javascript
-   createDatabase()
-      .then(() => readDatabase())
-      .then(() => createContainer())
-      .then(() => readContainer())
-      .then(() => createFamilyItem(config.items.Andersen))
-      .then(() => createFamilyItem(config.items.Wakefield))
-      .then(() => queryContainer
-      ())
-      .then(() => replaceFamilyItem(config.items.Andersen))
-      .then(() => queryContainer())
-
-    // ADD THIS PART TO YOUR CODE
-      .then(() => deleteFamilyItem(config.items.Andersen))
-    // ENDS HERE
-
-    .then(() => { exit(`Completed successfully`); })
-    .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
-   ```
-
-1. В окне терминала перейдите к файлу ```app.js``` и выполните эту команду: 
-
-   ```bash 
-   node app.js
-   ```
-
-
-## <a id="DeleteDatabase"></a>Удаление базы данных
-
-Удаление созданной базы данных приведет к удалению базы данных и всех дочерних ресурсов (контейнеров, элементов и т. д.).
-
-1. Скопируйте функцию **cleanup** и вставьте ее после функции **deleteFamilyItem**, чтобы удалить базу данных и все ее дочерние ресурсы.
-
-   ```javascript
-   /**
-   * Cleanup the database and container on completion
-   */
-   async function cleanup() {
-     await client.database(databaseId).delete();
-   }
-   ```
-
-1. Скопируйте код и вставьте его после вызова функции **deleteFamilyItem**, чтобы выполнить функцию **cleanup**.
-
-   ```javascript
-   createDatabase()
-      .then(() => readDatabase())
-      .then(() => createContainer())
-      .then(() => readContainer())
-      .then(() => createFamilyItem(config.items.Andersen))
-      .then(() => createFamilyItem(config.items.Wakefield))
-      .then(() => queryContainer())
-      .then(() => replaceFamilyItem(config.items.Andersen))
-      .then(() => queryContainer())
-      .then(() => deleteFamilyItem(config.items.Andersen))
-
-      // ADD THIS PART TO YOUR CODE
-      .then(() => cleanup())
-      // ENDS HERE
-
-      .then(() => { exit(`Completed successfully`); })
-      .catch((error) => { exit(`Completed with error ${JSON.stringify(error)}`) });
-   ```
-
-## <a id="Run"></a>Запуск приложения Node.js
+## <a name="run-your-nodejs-application"></a><a id="Run"></a>Запуск приложения Node.js
 
 В целом, код должен выглядеть следующим образом:
 
-[!code-javascript[nodejs-get-started](~/cosmosdb-nodejs-get-started/app.js)]
+:::code language="javascript" source="~/cosmosdb-nodejs-get-started/app.js":::
 
-В окне терминала перейдите к файлу ```app.js``` и выполните эту команду: 
+В окне терминала перейдите к файлу ```app.js``` и выполните эту команду:
 
 ```bash 
 node app.js
@@ -612,53 +174,34 @@ node app.js
 
 Должны отобразиться выходные данные вашего приложения. Выходные данные должны соответствовать примеру текста ниже.
 
-   ```
-    Created database:
-    FamilyDatabase
+```
+Created database:
+Tasks
 
-    Reading database:
-    FamilyDatabase
+Created container:
+Items
 
-    Created container:
-    FamilyContainer
+Querying container: Items
+1 - Pick up apples and strawberries.
 
-    Reading container:
-    FamilyContainer
+Created new item: 3 - Complete Cosmos DB Node.js Quickstart ⚡
 
-    Created family item with id:
-    Anderson.1
+Updated item: 3 - Complete Cosmos DB Node.js Quickstart ⚡
+Updated isComplete to true
 
-    Created family item with id:
-    Wakefield.7
+Deleted item with id: 3
+```
 
-    Querying container:
-    FamilyContainer
-            Query returned [{"firstName":"Henriette Thaulow","gender":"female","grade":5,"pets":[{"givenName":"Fluffy"}]}]
+## <a name="get-the-complete-nodejs-tutorial-solution"></a><a id="GetSolution"></a>Получение полного решения для руководства по Node.js
 
-    Replacing item:
-    Anderson.1
+Если вы не располагаете временем, чтобы выполнить шаги из этого руководства, или просто хотите скачать код, это можно сделать на портале [GitHub](https://github.com/Azure-Samples/azure-cosmos-db-sql-api-nodejs-getting-started ).
 
-    Querying container:
-    FamilyContainer
-            Query returned [{"firstName":"Henriette Thaulow","gender":"female","grade":6,"pets":[{"givenName":"Fluffy"}]}]
+Чтобы запустить решение по началу работы, которое содержит все коды из этой статьи, вам понадобится следующее:
 
-    Deleted item:
-    Anderson.1
+* [Учетная запись Azure Cosmos DB][create-account].
+* Решение для [начала работы](https://github.com/Azure-Samples/azure-cosmos-db-sql-api-nodejs-getting-started), доступное на GitHub.
 
-    Completed successfully
-    Press any key to exit
-   ```
-
-## <a id="GetSolution"></a>Получение полного решения для руководства по Node.js 
-
-Если вы не располагаете временем, чтобы выполнить шаги из этого руководства, или просто хотите скачать код, это можно сделать на портале [GitHub](https://github.com/Azure-Samples/azure-cosmos-db-sql-api-nodejs-getting-started ). 
-
-Чтобы запустить решение по началу работы, которое содержит все коды из этой статьи, вам понадобится следующее: 
-
-* [Учетная запись Azure Cosmos DB][create-account]. 
-* Решение для [начала работы](https://github.com/Azure-Samples/azure-cosmos-db-sql-api-nodejs-getting-started), доступное на GitHub. 
-
-Установите зависимости проекта с помощью npm. Используйте следующую команду: 
+Установите зависимости проекта с помощью npm. Используйте следующую команду:
 
 * ```npm install``` 
 
@@ -674,7 +217,7 @@ node app.js
 
 Можно удалить группу ресурсов, учетную запись Azure Cosmos DB и все связанные ресурсы, когда они больше не нужны. Для этого выберите группу ресурсов, которая использовалась для учетной записи Azure Cosmos DB, выберите **Удалить**, а затем подтвердите имя удаляемой группы ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Мониторинг Azure Cosmos DB](monitor-accounts.md)

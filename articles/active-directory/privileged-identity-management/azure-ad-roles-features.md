@@ -16,18 +16,19 @@ ms.date: 12/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69c633dd3e28047d542e16a58211f997669188f0
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f5d63577cbdbdf18cb17618bdb5c9e3b5de0e44a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76896424"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79245984"
 ---
 # <a name="management-capabilities-for-azure-ad-roles-in-privileged-identity-management"></a>Возможности управления для ролей Azure AD в управление привилегированными пользователями
 
 Интерфейс управления для ролей Azure AD в управление привилегированными пользователями был обновлен, чтобы унифицировать управление ролями Azure AD и ролями ресурсов Azure. Ранее в управление привилегированными пользователями для ролей ресурсов Azure существовало несколько ключевых функций, которые не были доступны для ролей Azure AD.
 
 После обновления в настоящее время мы объединяем эти две функции в единый процесс управления, и в нем вы получаете те же функциональные возможности для ролей Azure AD, что и для ролей ресурсов Azure. Эта статья информирует вас о обновленных функциях и требованиях.
+
 
 ## <a name="time-bound-assignments"></a>Назначения с ограниченным временем
 
@@ -53,17 +54,17 @@ ms.locfileid: "76896424"
 
 Для обоих действий, инициированных пользователем, требуется утверждение от глобального администратора или администратора привилегированных ролей. Администраторам больше не нужно будет управлять этими сроками действия. Они просто ожидают расширения или запросы на продление и утверждают их, если запрос является допустимым.
 
-## <a name="api-changes"></a>Изменения в API
+## <a name="api-changes"></a>Изменения API
 
-Когда клиенты получат обновленную версию в своей организации Azure AD, существующий API Graph перестанет работать. Необходимо перейти на использование [API Graph для ролей ресурсов Azure](https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagement-resources?view=graph-rest-beta). Чтобы управлять ролями Azure AD с помощью этого API, замените `/azureResources` `/aadroles` в сигнатуре и используйте идентификатор каталога для `resourceId`.
+Когда клиенты получат обновленную версию в своей организации Azure AD, существующий API Graph перестанет работать. Необходимо перейти на использование [API Graph для ролей ресурсов Azure](https://docs.microsoft.com/graph/api/resources/privilegedidentitymanagement-resources?view=graph-rest-beta). Для управления ролями Azure AD с помощью этого API замените `/azureResources` `/aadroles` на в сигнатуре и используйте идентификатор каталога для `resourceId`.
 
-Мы попытались связаться со всеми клиентами, которые используют предыдущий API, чтобы сообщить им об этом изменении заранее. Если ваша организация Azure AD перешла на новую версию, и вы по-прежнему зависели от старого API, обратитесь к группе по адресу pim_preview@microsoft.com.
+Мы попытались связаться со всеми клиентами, которые используют предыдущий API, чтобы сообщить им об этом изменении заранее. Если ваша организация Azure AD перешла на новую версию, и вы по-прежнему зависели от старого API, обратитесь к группе по pim_preview@microsoft.comадресу.
 
 ## <a name="powershell-change"></a>Изменение PowerShell
 
-Для клиентов, использующих модуль управление привилегированными пользователями PowerShell для ролей Azure AD, PowerShell перестанет работать с этим обновлением. Вместо предыдущих командлетов необходимо использовать командлеты управление привилегированными пользователями в модуле PowerShell предварительной версии Azure AD. Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Командлеты создаются на основе API Graph.
+Для клиентов, использующих модуль управление привилегированными пользователями PowerShell для ролей Azure AD, PowerShell перестанет работать с этим обновлением. Вместо предыдущих командлетов необходимо использовать командлеты управление привилегированными пользователями в модуле PowerShell предварительной версии Azure AD. Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Теперь вы можете [ознакомиться с документацией и примерами операций PIM в этом модуле PowerShell](powershell-for-azure-ad-roles.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)

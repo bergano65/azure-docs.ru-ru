@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 12/10/2018
 ms.author: allensu
 ms.openlocfilehash: 4311c1dca2ad299ac8b064769db5eb928e6a4513
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74048712"
 ---
 # <a name="azure-powershell-samples-for-load-balancer"></a>Примеры Azure PowerShell для подсистемы балансировки нагрузки.
@@ -25,6 +25,6 @@ ms.locfileid: "74048712"
 
 | | |
 |-|-|
-| [Балансировка трафика на виртуальных машинах для обеспечения высокого уровня доступности](./scripts/load-balancer-windows-powershell-sample-nlb.md) | Создает несколько виртуальных машин с высокодоступной конфигурацией с балансировкой нагрузки. |
+| [Балансировка трафика на виртуальных машинах для обеспечения высокой доступности](./scripts/load-balancer-windows-powershell-sample-nlb.md) | Создает несколько виртуальных машин с высокодоступной конфигурацией с балансировкой нагрузки. |
 | [Балансировка нагрузки нескольких веб-сайтов на виртуальных машинах](./scripts/load-balancer-windows-powershell-load-balance-multiple-websites-vm.md) | Создание двух виртуальных машин с несколькими IP-конфигурациями, присоединенных к группе доступности Azure, которые доступны через Azure Load Balancer. |
 | | |

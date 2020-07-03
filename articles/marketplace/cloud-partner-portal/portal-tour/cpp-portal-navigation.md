@@ -1,19 +1,18 @@
 ---
 title: Портал Cloud Partner навигации для Azure Marketplace
 description: Описание навигации в Портал Cloud Partner для Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/09/2018
-ms.author: pabutler
-ms.openlocfilehash: 57ccc7fb738dc23956e56e70c68405cc995a9a99
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 2c1d0eafe96d6e1533bb980ae0e4fd3c43f0e56b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821480"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278422"
 ---
 # <a name="cloud-partner-portal-navigation"></a>Навигация на Портале Cloud Partner
 
@@ -78,7 +77,7 @@ ms.locfileid: "73821480"
 | ![Элемент "Все издатели"](./media/left-navbar4.png) | Страница [Все издатели](./cpp-all-publishers-page.md) — список всех зарегистрированных на текущий момент облачных издателей. |
 | ![Элемент "Пользователи"](./media/left-navbar5.png) | Страница [Пользователи](./cpp-users-page.md) — список всех учетных записей пользователей, связанных на текущий момент с зарегистрированными облачными партнерами. |
 | ![Элемент "Журнал"](./media/left-navbar6.png) | Страница [Журнал](./cpp-history-page.md) — перечисление всех событий публикации и изменения предложений для всех издателей. |
-| ![Элемент "Аналитические сведения"](./media/left-navbar7.png) | Страница [Аналитические сведения](./cpp-insights-page.md) — отображение панелей мониторинга, которые относятся к компоненту портала *Seller Insights*. |
+| ![Элемент "Аналитические сведения"](./media/left-navbar7.png) | Страница [Insights](./cpp-insights-page.md) содержит различные панели мониторинга, которые включают в себя функцию " *Продавец Insights* " на этом портале. |
 | ![Элемент "Документация"](./media/left-navbar8.png) | Открывает новую вкладку с домашней страницей документации по Порталу Cloud Partner (соответствует пункту в меню **Помощь**). |
 | ![Элемент "Форум"](./media/left-navbar9.png)  | Открывает в браузере новую вкладку с домашней страницей документации по сообществу партнеров AppSource и Azure Marketplace (соответствует пункту в меню **Помощь**). |
 |  |  |
@@ -87,6 +86,6 @@ ms.locfileid: "73821480"
 > Так как это меню периодически обновляется, чтобы включить новые возможности портала, элементы, которые вы видите, могут не совпадать с перечисленными выше.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующая статья посвящена [меню "Новое предложение"](./cpp-new-offer-menu.md). В ней перечислены типы предложений, которые можно создать с помощью меню **Новое предложение**.

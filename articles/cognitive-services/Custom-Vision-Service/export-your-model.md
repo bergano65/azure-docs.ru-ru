@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: anroth
 ms.openlocfilehash: f734f4f1a11f57b759615e7a9ce2cd2f7f8028fb
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73718951"
 ---
 # <a name="export-your-model-for-use-with-mobile-devices"></a>Экспорт модели для использования на мобильных устройствах
@@ -28,7 +28,7 @@ ms.locfileid: "73718951"
 * __Tensorflow__ для __Android__;
 * __CoreML__ для __iOS11__;
 * __ONNX__ для __Windows ML__.
-* __[Набор для разработки искусственного интеллекта](https://azure.github.io/Vision-AI-DevKit-Pages/)__ .
+* __[Набор для разработки искусственного интеллекта](https://azure.github.io/Vision-AI-DevKit-Pages/)__.
 * __Контейнер DOCKER__ для архитектуры Windows, Linux или ARM. Контейнер включает модель Tensorflow и код службы для использования API Пользовательское визуальное распознавание.
 
 > [!IMPORTANT]
@@ -73,7 +73,7 @@ ms.locfileid: "73718951"
 
 1. Выберите нужный формат экспорта и щелкните __Экспорт__ , чтобы скачать модель.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Интегрируйте экспортированную модель в приложение, изучив одну из следующих статей или примеров:
 

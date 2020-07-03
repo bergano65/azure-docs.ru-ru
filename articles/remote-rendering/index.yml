@@ -1,0 +1,68 @@
+### YamlMime:Landing
+title: Документация по Удаленной отрисовке Azure
+summary: Удаленная отрисовка Azure — это служба, которая позволяет преобразовывать для просмотра высокосложные трехмерные модели в реальном времени на таких устройствах, как HoloLens 2. Сейчас предоставляется предварительная версия Удаленной отрисовки Azure.
+metadata:
+  title: Документация по Удаленной отрисовке Azure
+  description: Узнайте, как использовать Удаленную отрисовку Azure для удаленного преобразования для просмотра высокосложных трехмерных моделей в реальном времени и отображения результатов на таких устройствах, как HoloLens 2.
+  ms.service: azure-remote-rendering
+  ms.topic: landing-page
+  author: florianborn71
+  ms.author: flborn
+  ms.date: 03/26/2020
+  ms.openlocfilehash: e379515ea34206e21f80ceb23a465858d6d4da81
+  ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/21/2020
+  ms.locfileid: "83773225"
+landingContent:
+- title: Сведения об Удаленной отрисовке Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Удаленная отрисовка Azure?
+      url: overview/about.md
+    - text: Требования к системе
+      url: overview/system-requirements.md
+    - text: Создание учетной записи для Удаленной отрисовки Azure
+      url: how-tos/create-an-account.md
+- title: Ознакомьтесь с основными понятиями, которые помогут начать работу с Удаленной отрисовкой Azure.
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Настройка аутентификации
+      url: how-tos/authentication.md
+    - text: Сеансы Удаленной отрисовки
+      url: concepts/sessions.md
+    - text: Сущности
+      url: concepts/entities.md
+    - text: Components
+      url: concepts/components.md
+    - text: Модели
+      url: concepts/models.md
+    - text: Преобразование моделей
+      url: how-tos/conversion/model-conversion.md
+- title: Преобразование и визуализация первой модели
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Отрисовка модели с помощью Unity
+      url: quickstarts/render-model.md
+    - text: Развертывание примера Unity в HoloLens
+      url: quickstarts/deploy-to-hololens.md
+    - text: Развертывание примера Unity на рабочем столе
+      url: quickstarts/deploy-to-desktop.md
+    - text: Преобразование модели для отрисовки
+      url: quickstarts/convert-model.md
+- title: Узнайте, как создать собственное приложение в Unity
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Unity. Настройка проекта с нуля
+      url: tutorials/unity/project-setup.md
+    - text: Unity. Работа с удаленными сущностями
+      url: tutorials/unity/working-with-remote-entities.md
+    - text: Unity. Изменение среды и материалов
+      url: tutorials/unity/changing-environment-and-materials.md
+    - text: Нативный C++. Интеграция Удаленной отрисовки в голографическом приложении HoloLens
+      url: tutorials/native-cpp/hololens/integrate-remote-rendering-into-holographic-app.md

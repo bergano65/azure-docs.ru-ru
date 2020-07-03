@@ -9,10 +9,10 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 5da3a2e5d003a191bff66af6599cae4d34ab60c6
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74038089"
 ---
 # <a name="azcopy"></a>azcopy
@@ -23,7 +23,7 @@ AzCopy — это программа командной строки, котор
 
 Общий формат команд: `azcopy [command] [arguments] --[flag-name]=[flag-value]`.
 
-Чтобы сообщить о проблемах или узнать больше об этом средстве, см. [https://github.com/Azure/azure-storage-azcopy](https://github.com/Azure/azure-storage-azcopy).
+Чтобы сообщить о проблемах или узнать больше об этом средстве, [https://github.com/Azure/azure-storage-azcopy](https://github.com/Azure/azure-storage-azcopy)см. раздел.
 
 ## <a name="related-conceptual-articles"></a>Связанные концептуальные статьи
 
@@ -43,19 +43,19 @@ AzCopy — это программа командной строки, котор
 ## <a name="see-also"></a>См. также
 
 - [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
-- [azcopy Bench](storage-ref-azcopy-bench.md)
-- [копирование azcopy](storage-ref-azcopy-copy.md)
+- [azcopy bench](storage-ref-azcopy-bench.md)
+- [azcopy copy](storage-ref-azcopy-copy.md)
 - [azcopy doc](storage-ref-azcopy-doc.md)
 - [azcopy env](storage-ref-azcopy-env.md)
-- [задания azcopy](storage-ref-azcopy-jobs.md)
-- [Очистка заданий azcopy](storage-ref-azcopy-jobs-clean.md)
-- [список заданий azcopy](storage-ref-azcopy-jobs-list.md)
-- [Удаление заданий azcopy](storage-ref-azcopy-jobs-remove.md)
-- [возобновление заданий azcopy](storage-ref-azcopy-jobs-resume.md)
-- [отображаются задания azcopy](storage-ref-azcopy-jobs-show.md)
-- [Список azcopy](storage-ref-azcopy-list.md)
-- [имя входа azcopy](storage-ref-azcopy-login.md)
-- [azcopy Logout](storage-ref-azcopy-logout.md)
-- [azcopy](storage-ref-azcopy-make.md)
-- [azcopy удалить](storage-ref-azcopy-remove.md)
-- [Синхронизация azcopy](storage-ref-azcopy-sync.md)
+- [azcopy jobs](storage-ref-azcopy-jobs.md)
+- [azcopy jobs clean](storage-ref-azcopy-jobs-clean.md)
+- [azcopy jobs list](storage-ref-azcopy-jobs-list.md)
+- [azcopy jobs remove](storage-ref-azcopy-jobs-remove.md)
+- [azcopy jobs resume](storage-ref-azcopy-jobs-resume.md)
+- [azcopy jobs show](storage-ref-azcopy-jobs-show.md)
+- [azcopy list](storage-ref-azcopy-list.md)
+- [azcopy login](storage-ref-azcopy-login.md)
+- [azcopy logout](storage-ref-azcopy-logout.md)
+- [azcopy make](storage-ref-azcopy-make.md)
+- [azcopy remove](storage-ref-azcopy-remove.md)
+- [azcopy sync](storage-ref-azcopy-sync.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Ceridian Dayforce HCM | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Ceridian Dayforce HCM | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Ceridian Dayforce HCM.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f488f22535c290b5fecbd0ffa9f8867f0b715bac
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158685"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ceridian-dayforce-hcm"></a>Руководство по Интеграция Azure Active Directory с Ceridian Dayforce HCM
+# <a name="tutorial-azure-active-directory-integration-with-ceridian-dayforce-hcm"></a>Учебник. Интеграция Azure Active Directory с Ceridian Dayforce HCM
 
 В этом учебнике описано, как интегрировать Ceridian Dayforce HCM с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Ceridian Dayforce HCM обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73158685"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Ceridian Dayforce HCM, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Ceridian Dayforce HCM с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73158685"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Ceridian Dayforce HCM](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес, используемый пользователями для входа в приложение Ceridian Dayforce HCM.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес, используемый пользователями для входа в приложение Ceridian Dayforce HCM.
 
     | Среда | URL-адрес |
     | :-- | :-- |
@@ -136,11 +136,11 @@ ms.locfileid: "73158685"
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
     
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | ---------| --------- |
     | name  | user.extensionattribute2 |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -152,9 +152,9 @@ ms.locfileid: "73158685"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. Из списка **Атрибут источника** выберите атрибут пользователя, который хотите использовать в своей реализации. Например, если в качестве уникального идентификатора пользователя вы хотите использовать EmployeeID и сохранили значение атрибута в ExtensionAttribute2, выберите user.extensionattribute2.
+    д) Из списка **Атрибут источника** выберите атрибут пользователя, который хотите использовать в своей реализации. Например, если в качестве уникального идентификатора пользователя вы хотите использовать EmployeeID и сохранили значение атрибута в ExtensionAttribute2, выберите user.extensionattribute2.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -166,11 +166,11 @@ ms.locfileid: "73158685"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-ceridian-dayforce-hcm-single-sign-on"></a>Настройка единого входа Ceridian Dayforce HCM
 

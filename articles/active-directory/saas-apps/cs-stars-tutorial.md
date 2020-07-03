@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с CS Stars | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с приложением CS Stars | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и CS Stars.
 services: active-directory
 documentationCenter: na
@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0c4cb553ee7edc92b5cb3d319631a985de476b8
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 15b31bf14b01a215d99814ce57eb9cd5f2cb2773
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73159301"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81869438"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cs-stars"></a>Руководство. Интеграция Azure Active Directory с CS Stars
 
@@ -35,11 +35,11 @@ ms.locfileid: "73159301"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с CS Stars, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка CS Stars с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,12 +106,12 @@ ms.locfileid: "73159301"
 
     ![Сведения о домене и URL-адресах единого входа для приложения CS Stars](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.csstars.com/enterprise/default.cmdx?ssoclient=<uniqueid>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.csstars.com/enterprise/default.cmdx?ssoclient=<uniqueid>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.csstars.com/enterprise/`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов CS Stars](http://www.riskonnectclearsight.com/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов CS Stars](https://riskonnect.com/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -121,15 +121,15 @@ ms.locfileid: "73159301"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-cs-stars-single-sign-on"></a>Настройка единого входа в CS Stars
 
-Чтобы настроить единый вход на стороне **CS Stars**, вам необходимо отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки CS Stars](http://www.riskonnectclearsight.com/support/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **CS Stars**, вам необходимо отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки CS Stars](https://riskonnect.com/support/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -184,7 +184,7 @@ ms.locfileid: "73159301"
 
 ### <a name="create-cs-stars-test-user"></a>Создание тестового пользователя в CS Stars
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении CS Stars. Обратитесь в  [группу поддержки CS Stars](http://www.riskonnectclearsight.com/support/), чтобы добавить пользователей на платформу CS Stars. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении CS Stars. Обратитесь в  [группу поддержки CS Stars](https://riskonnect.com/support/), чтобы добавить пользователей на платформу CS Stars. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

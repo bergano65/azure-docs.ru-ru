@@ -1,23 +1,23 @@
 ---
 title: SSL-подключение. база данных Azure для MySQL
 description: Сведения о настройке базы данных Azure для MySQL и связанных приложений для правильного использования SSL-соединений.
-author: ajlam
-ms.author: andrela
+author: kummanish
+ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/13/2020
-ms.openlocfilehash: 6c1f52c69104e19ff0a7a7cae255dd7029e1a4b8
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.date: 03/10/2020
+ms.openlocfilehash: 6a12ef851823ab5eff2b11905d05be1950c82ef0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941795"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79474277"
 ---
 # <a name="ssl-connectivity-in-azure-database-for-mysql"></a>SSL-соединения в базе данных Azure для MySQL
 
 База данных Azure для MySQL поддерживает подключение сервера базы данных к клиентским приложениям с помощью SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
-## <a name="default-settings"></a>Параметры по умолчанию
+## <a name="ssl-default-settings"></a>Параметры SSL по умолчанию
 
 По умолчанию в службе базы данных должно быть настроено обязательное использование SSL-соединений при подключении к MySQL.  Мы рекомендуем не отключать параметр SSL без необходимости.
 
@@ -25,11 +25,8 @@ ms.locfileid: "75941795"
 
 Строки подключения для различных языков программирования отображаются на портале Azure. Они включают необходимые параметры SSL для подключения к базе данных. На портале Azure выберите свой сервер. В разделе **Параметры** выберите **Строки подключения**. Значение параметра SSL зависит от соединителя. Например, может использоваться "ssl=true", "sslmode=require", "sslmode=required" или другой вариант.
 
-> [!NOTE]
-> Сейчас версия TLS, поддерживаемая для базы данных Azure для MySQL, — это TLS 1,0, TLS 1,1, TLS 1,2.
-
 Чтобы узнать, как включить или отключить SSL-соединение при разработке приложения, ознакомьтесь со [статьей, посвященной настройке SSL](howto-configure-ssl.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Библиотеки подключений для базы данных Azure для MySQL](concepts-connection-libraries.md)

@@ -2,19 +2,19 @@
 title: Azure COMPUTE — диагностическое расширение Linux
 description: Сведения о настройке диагностического расширения Azure (LAD) для сбора метрик и журналов событий из виртуальных машин Linux, работающих в Azure.
 services: virtual-machines-linux
-author: MicahMcKittrick-MSFT
+author: axayjo
 manager: gwallace
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
-ms.author: mimckitt
-ms.openlocfilehash: 5b4ddc177359a08aad404c78b5cc0793f8d80e93
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.author: akjosh
+ms.openlocfilehash: 7a7c1af1193ba391550438229a22c4a8c116e6be
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156528"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80289181"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Отслеживание метрик и журналов с помощью диагностического расширения Linux
 
@@ -23,7 +23,7 @@ ms.locfileid: "76156528"
 > [!IMPORTANT]
 > Сведения о версии 2.3 и более ранних см. в [этом документе](../linux/classic/diagnostic-extension-v2.md).
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 
 Диагностическое расширение Linux помогает отслеживать работоспособность виртуальных машин Linux, работающих на платформе Microsoft Azure. Оно предоставляет следующие возможности.
 
@@ -49,7 +49,7 @@ ms.locfileid: "76156528"
 
 Доступная для скачивания конфигурация — всего лишь пример. Измените ее в соответствии со своими потребностями.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные условия
 
 * **Агент Linux для Azure 2.2.0 или более поздней версии**. Большинство образов в коллекции виртуальных машин Azure на базе Linux включает версию 2.2.7 или более позднюю. Чтобы проверить версию, установленную в виртуальной машине, выполните команду `/usr/sbin/waagent -version`. Если в виртуальной машине установлена более старая версия гостевого агента, выполните [эти инструкции](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent) по ее обновлению.
 * **Azure CLI**. [Установите среду Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на компьютере.
@@ -61,7 +61,7 @@ ms.locfileid: "76156528"
 
 Заполните правильные значения переменных в первом разделе перед выполнением:
 
-```bash
+```azurecli
 # Set your Azure VM diagnostic variables correctly below
 my_resource_group=<your_azure_resource_group_name_containing_your_azure_linux_vm>
 my_linux_vm=<your_azure_linux_vm_name>
@@ -89,85 +89,34 @@ my_lad_protected_settings="{'storageAccountName': '$my_diagnostic_storage_accoun
 az vm extension set --publisher Microsoft.Azure.Diagnostics --name LinuxDiagnostic --version 3.0 --resource-group $my_resource_group --vm-name $my_linux_vm --protected-settings "${my_lad_protected_settings}" --settings portal_public_settings.json
 ```
 
-URL-адрес образца конфигурации и его содержимое могут меняться. Скачайте копию JSON-файла с параметрами портала и настройте ее в соответствии со своими потребностями. Все создаваемые вами шаблоны или средства автоматизации должны использовать вашу собственную копию, а не скачивать каждый раз файл по этому URL-адресу.
+Пример конфигурации, скачанный в этих примерах, собирает набор стандартных данных и отправляет их в хранилище таблиц. URL-адрес образца конфигурации и его содержимое могут быть изменены. В большинстве случаев следует скачать копию JSON-файла параметров портала и настроить его в нужных случаях, а затем использовать для создаваемых шаблонов или автоматизации собственную версию файла конфигурации, а не загружать его каждый раз.
 
 #### <a name="powershell-sample"></a>Пример для PowerShell
 
-```Powershell
-// Set your Azure VM diagnostics variables correctly below - don't forget to replace the VMResourceID
+```powershell
+$storageAccountName = "yourStorageAccountName"
+$storageAccountResourceGroup = "yourStorageAccountResourceGroupName"
+$vmName = "yourVMName"
+$VMresourceGroup = "yourVMResourceGroupName"
 
-$SASKey = '<SASKeyForDiagStorageAccount>'
+# Get the VM object
+$vm = Get-AzVM -Name $vmName -ResourceGroupName $VMresourceGroup
 
-$ladCfg = "{
-'diagnosticMonitorConfiguration': {
-'performanceCounters': {
-'sinks': 'WADMetricEventHub,WADMetricJsonBlob',
-'performanceCounterConfiguration': [
-{
-'unit': 'Percent',
-'type': 'builtin',
-'counter': 'PercentProcessorTime',
-'counterSpecifier': '/builtin/Processor/PercentProcessorTime',
-'annotation': [
-{
-'locale': 'en-us',
-'displayName': 'Aggregate CPU %utilization'
-}
-],
-'condition': 'IsAggregate=TRUE',
-'class': 'Processor'
-},
-{
-'unit': 'Bytes',
-'type': 'builtin',
-'counter': 'UsedSpace',
-'counterSpecifier': '/builtin/FileSystem/UsedSpace',
-'annotation': [
-{
-'locale': 'en-us',
-'displayName': 'Used disk space on /'
-}
-],
-'condition': 'Name='/'',
-'class': 'Filesystem'
-}
-]
-},
-'metrics': {
-'metricAggregation': [
-{
-'scheduledTransferPeriod': 'PT1H'
-},
-{
-'scheduledTransferPeriod': 'PT1M'
-}
-],
-'resourceId': '<VMResourceID>'
-},
-'eventVolume': 'Large',
-'syslogEvents': {
-'sinks': 'SyslogJsonBlob,LoggingEventHub',
-'syslogEventConfiguration': {
-'LOG_USER': 'LOG_INFO'
-}
-}
-}
-}"
-$ladCfg = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($ladCfg))
-$perfCfg = "[
-{
-'query': 'SELECT PercentProcessorTime, PercentIdleTime FROM SCX_ProcessorStatisticalInformation WHERE Name='_TOTAL'',
-'table': 'LinuxCpu',
-'frequency': 60,
-'sinks': 'LinuxCpuJsonBlob'
-}
-]"
+# Get the public settings template from GitHub and update the templated values for storage account and resource ID
+$publicSettings = (Invoke-WebRequest -Uri https://raw.githubusercontent.com/Azure/azure-linux-extensions/master/Diagnostic/tests/lad_2_3_compatible_portal_pub_settings.json).Content
+$publicSettings = $publicSettings.Replace('__DIAGNOSTIC_STORAGE_ACCOUNT__', $storageAccountName)
+$publicSettings = $publicSettings.Replace('__VM_RESOURCE_ID__', $vm.Id)
 
-// Get the VM Resource
-Get-AzureRmVM -ResourceGroupName <RGName> -VMName <VMName>
+# If you have your own customized public settings, you can inline those rather than using the template above: $publicSettings = '{"ladCfg":  { ... },}'
 
-// Finally tell Azure to install and enable the extension
-Set-AzureRmVMExtension -ExtensionType LinuxDiagnostic -Publisher Microsoft.Azure.Diagnostics -ResourceGroupName <RGName> -VMName <VMName> -Location <Location> -Name LinuxDiagnostic -Settings @{'StorageAccount'='<DiagStorageAccount>'; 'sampleRateInSeconds' = '15' ; 'ladCfg'=$ladCfg; 'perfCfg' = $perfCfg} -ProtectedSettings @{'storageAccountName' = '<DiagStorageAccount>'; 'storageAccountSasToken' = $SASKey } -TypeHandlerVersion 3.0
+# Generate a SAS token for the agent to use to authenticate with the storage account
+$sasToken = New-AzStorageAccountSASToken -Service Blob,Table -ResourceType Service,Container,Object -Permission "racwdlup" -Context (Get-AzStorageAccount -ResourceGroupName $storageAccountResourceGroup -AccountName $storageAccountName).Context
+
+# Build the protected settings (storage account SAS token)
+$protectedSettings="{'storageAccountName': '$storageAccountName', 'storageAccountSasToken': '$sasToken'}"
+
+# Finally install the extension with the settings built above
+Set-AzVMExtension -ResourceGroupName $VMresourceGroup -VMName $vmName -Location $vm.Location -ExtensionType LinuxDiagnostic -Publisher Microsoft.Azure.Diagnostics -Name LinuxDiagnostic -SettingString $publicSettings -ProtectedSettingString $protectedSettings -TypeHandlerVersion 3.0 
 ```
 
 ### <a name="updating-the-extension-settings"></a>Изменение параметров расширения
@@ -223,7 +172,7 @@ sinksConfig | Сведения об альтернативных местах н
 1. Заполните соответствующие разделы, как описано выше.
 1. Нажмите кнопку "Создать SAS".
 
-![изображение](./media/diagnostics-linux/make_sas.png)
+![Изображение](./media/diagnostics-linux/make_sas.png)
 
 Скопируйте созданный адрес SAS в поле storageAccountSasToken; удалите начальный вопросительный знак ("?").
 
@@ -272,7 +221,7 @@ type | Тип определяемого приемника. Определяе�
 
 Если вы успешно создали адрес SAS в полночь (UTC) 1 января 2018 г., значение sasURL может быть следующим:
 
-```url
+```https
 https://contosohub.servicebus.windows.net/syslogmsgs?sr=contosohub.servicebus.windows.net%2fsyslogmsgs&sig=xxxxxxxxxxxxxxxxxxxxxxxxx&se=1514764800&skn=writer
 ```
 
@@ -388,7 +337,7 @@ scheduledTransferPeriod | Частота, с которой совокупные
 
 Элемент | Значение
 ------- | -----
-sinks | Разделенный запятыми список имен приемников, в которые LAD отправляет агрегированные результаты метрик (необязательно). Все агрегированные метрики публикуются в каждом приемнике из списка. См. [sinksConfig](#sinksconfig). Пример: `"EHsink1, myjsonsink"`.
+sinks | Разделенный запятыми список имен приемников, в которые LAD отправляет агрегированные результаты метрик (необязательно). Все агрегированные метрики публикуются в каждом приемнике из списка. См. [sinksConfig](#sinksconfig). Например, `"EHsink1, myjsonsink"`.
 type | Определяет фактический поставщик метрики.
 class | Вместе с элементом counter определяет конкретную метрику в пространстве имен поставщика.
 Счетчик | Вместе с элементом class определяет конкретную метрику в пространстве имен поставщика.
@@ -463,7 +412,7 @@ minSeverity | Уровень серьезности системного жур�
 
 Элемент | Значение
 ------- | -----
-пространство имен | Пространство имен OMI, в котором должен выполняться запрос (необязательно). Если этот элемент не задан, значение по умолчанию — "root/scx", реализуемое [кроссплатформенными поставщиками System Center](https://github.com/Microsoft/SCXcore).
+namespace | Пространство имен OMI, в котором должен выполняться запрос (необязательно). Если этот элемент не задан, значение по умолчанию — "root/scx", реализуемое [кроссплатформенными поставщиками System Center](https://github.com/Microsoft/SCXcore).
 query | Запрос OMI, который следует выполнить.
 table | Таблица службы хранилища Azure в назначенной учетной записи хранения (см. раздел [Защищенные параметры](#protected-settings)) (необязательно).
 frequency | Число секунд между выполнениями запроса (необязательно). Значение по умолчанию — 300 (5 минут); минимальное значение — 15 секунд.
@@ -501,7 +450,7 @@ sinks | Разделенный запятыми список имен допол
 * Память
 * Сеть
 * Файловая система
-* Диски
+* Диск
 
 ### <a name="builtin-metrics-for-the-processor-class"></a>Встроенные метрики для класса "Процессор"
 
@@ -765,7 +714,7 @@ az vm extension set *resource_group_name* *vm_name* LinuxDiagnostic Microsoft.Az
 
 Для просмотра данных производительности или настройки оповещений используйте портал Azure:
 
-![изображение](./media/diagnostics-linux/graph_metrics.png)
+![Изображение](./media/diagnostics-linux/graph_metrics.png)
 
 Данные `performanceCounters` всегда хранятся в таблице службы хранилища Azure. Интерфейсы API службы хранилища Azure доступны для множества языков и платформ.
 
@@ -774,15 +723,15 @@ az vm extension set *resource_group_name* *vm_name* LinuxDiagnostic Microsoft.Az
 Для доступа к данным в службе хранилища Azure также можно использовать следующие средства пользовательского интерфейса:
 
 * Обозреватель сервера Visual Studio.
-* [Обозреватель службы хранилища Microsoft Azure](https://azurestorageexplorer.codeplex.com/ "Обозреватель хранилища Azure").
+* [Обозреватель службы хранилища Microsoft Azure](https://azurestorageexplorer.codeplex.com/ "Обозреватель службы хранилища Azure").
 
 На этом моментальном снимке сеанса обозревателя хранилищ Microsoft Azure показаны таблицы и контейнеры службы хранилища Azure, созданные в результате правильной настройки расширения LAD 3.0 в тестовой виртуальной машине. Это изображение не соответствует в точности [образцу конфигурации LAD 3.0](#an-example-lad-30-configuration).
 
-![изображение](./media/diagnostics-linux/stg_explorer.png)
+![Изображение](./media/diagnostics-linux/stg_explorer.png)
 
 Сведения о получении сообщений, публикуемых в конечной точке EventHubs, см. в соответствующей [документации по EventHubs](../../event-hubs/event-hubs-what-is-event-hubs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Создайте оповещения метрик в [Azure Monitor](../../monitoring-and-diagnostics/insights-alerts-portal.md) для собираемых метрик.
 * Создайте [диаграммы мониторинга](../../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) для метрик.

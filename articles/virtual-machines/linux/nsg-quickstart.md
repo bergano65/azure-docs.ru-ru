@@ -1,27 +1,22 @@
 ---
-title: Открытие портов для виртуальной машины Linux с Azure CLI
-description: Узнайте, как открыть порт или создать конечную точку для виртуальной машины Linux, используя модель развертывания с помощью Azure Resource Manager и Azure CLI.
-services: virtual-machines-linux
-documentationcenter: ''
+title: Открытие портов для виртуальной машины с Azure CLI
+description: Узнайте, как открыть порт или создать конечную точку для виртуальной машины с помощью Azure CLI.
 author: cynthn
 manager: gwallace
-editor: ''
-ms.assetid: eef9842b-495a-46cf-99a6-74e49807e74e
-ms.service: virtual-machines-linux
-ms.devlang: azurecli
+ms.service: virtual-machines
+ms.subservice: networking
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: cynthn
-ms.openlocfilehash: cfcea8c775b2d6a9bee3c078cf67f0a942af5984
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c29fb075fc2d8b512070d7a6cf3fef949def5894
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75354052"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80066629"
 ---
-# <a name="open-ports-and-endpoints-to-a-linux-vm-with-the-azure-cli"></a>Открытие портов и конечных точек для виртуальной машины Linux с помощью интерфейса командной строки Azure
+# <a name="open-ports-and-endpoints-to-a-vm-with-the-azure-cli"></a>Откройте порты и конечные точки для виртуальной машины с помощью Azure CLI
 
 Чтобы открыть порт или создать конечную точку для виртуальной машины в Azure, создайте сетевой фильтр для подсети или сетевого интерфейса виртуальной машины. Эти фильтры, контролирующие входящий и исходящий трафик, добавляются в группу безопасности сети и присоединяются к ресурсу, который будет получать трафик. Давайте используем распространенный пример веб-трафика через порт 80. В этой статье показано, как открыть порт для виртуальной машины с помощью Azure CLI. 
 
@@ -34,7 +29,7 @@ ms.locfileid: "75354052"
 ## <a name="quickly-open-a-port-for-a-vm"></a>Как быстро открыть порт для виртуальной машины
 Если вам нужно быстро открыть порт для виртуальной машины в рамках сценария разработки и тестирования, можно воспользоваться командой [az vm open-port](/cli/azure/vm). С помощью этой команды можно создать группу безопасности сети, добавить правило и применить его к виртуальной машине или подсети. В следующем примере открывается порт *80* виртуальной машины *myVM*, входящей в группу ресурсов с именем *myResourceGroup*.
 
-```azure-cli
+```azurecli
 az vm open-port --resource-group myResourceGroup --name myVM --port 80
 ```
 
@@ -42,7 +37,7 @@ az vm open-port --resource-group myResourceGroup --name myVM --port 80
 
 
 ## <a name="create-a-network-security-group-and-rules"></a>Создание группы безопасности сети и правил
-Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg). В следующем примере создается группа безопасности сети *myNetworkSecurityGroup* в расположении *eastus*.
+Создайте группу безопасности сети с помощью команды [az network nsg create](/cli/azure/network/nsg). В следующем примере создается группа безопасности сети с именем *myNetworkSecurityGroup* в расположении *eastus* :
 
 ```azurecli
 az network nsg create \
@@ -89,8 +84,8 @@ az network vnet subnet update \
 
 Для веб-приложений с высокой доступностью необходимо поместить виртуальную машину за Azure Load Balancer. Балансировщик нагрузки распределяет трафик между виртуальными машинами с группой безопасности сети, обеспечивающей фильтрацию трафика. Подробные сведения см. в статье [Балансировка нагрузки виртуальных машин Windows в Azure для создания высокодоступного приложения](tutorial-load-balancer.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом примере создано простое правило, разрешающее трафик HTTP. Информацию о создании более детализированных сред можно найти в следующих статьях.
 
-* [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md)
-* [Группа безопасности сети](../../virtual-network/security-overview.md)
+* [Обзор Azure Resource Manager](../../azure-resource-manager/management/overview.md)
+* [Что такое группа безопасности сети (NSG)?](../../virtual-network/security-overview.md)

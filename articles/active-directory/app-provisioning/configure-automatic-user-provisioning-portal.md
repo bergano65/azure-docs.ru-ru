@@ -6,21 +6,18 @@ documentationcenter: ''
 author: msmimart
 manager: CelesteDG
 ms.service: active-directory
-ms.subservice: app-mgmt
-ms.devlang: na
+ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/25/2019
 ms.author: mimart
 ms.reviewer: arvinh
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34f9f5935737bcd95082e4f08d0c979a0fac830b
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 02f3198a9c3d35a0031fdd65ceefbb72b0f8bb31
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066971"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593817"
 ---
 # <a name="managing-user-account-provisioning-for-enterprise-apps-in-the-azure-portal"></a>Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure
 
@@ -80,7 +77,7 @@ ms.locfileid: "77066971"
 
 * Добавление нового сопоставления атрибутов. Выберите **Добавить новое сопоставление** в нижней части панели **сопоставление атрибутов** . Заполните форму **Изменение атрибута** и нажмите кнопку **ОК** , чтобы добавить новое сопоставление в список.
 
-### <a name="settings"></a>Настройки
+### <a name="settings"></a>"Настройки"
 
 Службу подготовки Azure AD для выбранного приложения можно запустить и отключить в области **Параметры** экрана **подготовки** . Также можно очистить кэш инициализации и перезапустить службу.
 

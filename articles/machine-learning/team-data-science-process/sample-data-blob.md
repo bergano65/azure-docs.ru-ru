@@ -12,13 +12,13 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 4832762a88073f4d819925659bf9078e18f60c2d
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76720288"
 ---
-# <a name="heading"></a>Выборка данных в хранилище больших двоичных объектов Azure
+# <a name="sample-data-in-azure-blob-storage"></a><a name="heading"></a>Выборка данных в хранилище BLOB-объектов Azure
 
 В этой статья описывается выборка данных, содержащихся в хранилище BLOB-объектов Azure, путем их программной загрузки и последующей выборки с использованием процедур на языке Python.
 
@@ -53,7 +53,7 @@ ms.locfileid: "76720288"
         #directly ready from file on disk
         dataframe_blobdata = pd.read_csv(LOCALFILE)
 
-3. Уменьшить выборку данных с помощью `numpy``random.choice`:
+3. Уменьшить выборку данных с помощью `random.choice``numpy`:
    
         # A 1 percent sample
         sample_ratio = 0.01 
@@ -63,7 +63,7 @@ ms.locfileid: "76720288"
 
 Теперь вы можете работать с приведенным выше кадром данных с примером "один процент" для дальнейшего исследования и создания компонентов.
 
-## <a name="heading"></a>Передача данных и их считывание в службу машинного обучения Azure
+## <a name="upload-data-and-read-it-into-azure-machine-learning"></a><a name="heading"></a>Передача данных и их считывание в службу машинного обучения Azure
 С помощью следующего образца кода можно уменьшить выборку данных и использовать их непосредственно в Машинном обучении Azure.
 
 1. Запись фрейма данных в локальный файл

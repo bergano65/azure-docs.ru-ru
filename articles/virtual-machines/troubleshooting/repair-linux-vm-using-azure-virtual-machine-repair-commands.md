@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 09/10/2019
 ms.author: v-miegge
 ms.openlocfilehash: 49fdfde402938ce8d0ee1b141a47e68c99c502e7
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73796204"
 ---
 # <a name="repair-a-linux-vm-by-using-the-azure-virtual-machine-repair-commands"></a>Восстановление виртуальной машины Linux с помощью команд восстановления виртуальной машины Azure
@@ -60,13 +60,13 @@ ms.locfileid: "73796204"
    az extension add -n vm-repair
    ```
 
-   Если вы ранее использовали `az vm repair` команды, примените все обновления к расширению восстановления виртуальной машины.
+   Если вы ранее использовали эти `az vm repair` команды, примените все обновления к расширению восстановления виртуальной машины.
 
    ```azurecli-interactive
    az extension update -n vm-repair
    ```
 
-3. Запустите `az vm repair create`. Эта команда создает копию диска ОС для нефункциональной виртуальной машины, создает виртуальную машину для восстановления и подключает диск.
+3. Выполните команду `az vm repair create`. Эта команда создает копию диска ОС для нефункциональной виртуальной машины, создает виртуальную машину для восстановления и подключает диск.
 
    ```azurecli-interactive
    az vm repair create -g MyResourceGroup -n myVM --repair-username username --repair-password password!234 --verbose
@@ -74,7 +74,7 @@ ms.locfileid: "73796204"
 
 4. Выполните все необходимые действия по устранению проблем с созданной виртуальной машиной восстановления, а затем перейдите к шагу 5.
 
-5. Запустите `az vm repair restore`. Эта команда переставит исправленный диск ОС на исходный диск ОС виртуальной машины.
+5. Выполните команду `az vm repair restore`. Эта команда переставит исправленный диск ОС на исходный диск ОС виртуальной машины.
 
    ```azurecli-interactive
    az vm repair restore -g MyResourceGroup -n MyVM --verbose
@@ -84,7 +84,7 @@ ms.locfileid: "73796204"
 
 В следующем примере на виртуальной машине ``myVMDeployed`` в группе ресурсов ``myResourceGroup`` включается расширение диагностики:
 
-Azure CLI
+Azure CLI
 
 ```azurecli-interactive
 az vm boot-diagnostics enable --name myVMDeployed --resource-group myResourceGroup --storage https://mystor.blob.core.windows.net/

@@ -8,16 +8,18 @@ ms.author: normesta
 ms.reviewer: dineshm
 ms.date: 05/29/2019
 ms.subservice: blobs
-ms.openlocfilehash: a35239354d23f75361d5577d6b7efc8254943147
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 57ba59288cbf65c1ef588302965d480ee357ea4d
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906592"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82779983"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 
 Вы можете обрабатывать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$Web*. Размещение содержимого в службе хранилища Azure позволяет использовать бессерверные архитектуры, включающие [функции Azure](/azure/azure-functions/functions-overview) и другие службы "платформа как услуга" (PaaS).
+
+[!INCLUDE [updated-for-az](../../../includes/storage-data-lake-gen2-support.md)]
 
 > [!NOTE]
 > Если ваш сайт зависит от кода на стороне сервера, используйте вместо него [службу приложений Azure](/azure/app-service/overview) .
@@ -39,8 +41,8 @@ ms.locfileid: "76906592"
 Вы можете использовать любое из этих средств для отправки содержимого в контейнер **$Web** :
 
 > [!div class="checklist"]
-> * [Azure CLI](storage-blob-static-website-how-to.md#cli)
-> * [Overview of Azure PowerShell](storage-blob-static-website-how-to.md#powershell) (Общие сведения об Azure PowerShell)
+> * [Azure CLI](storage-blob-static-website-how-to.md?tabs=azure-cli)
+> * [модуль Azure PowerShell;](storage-blob-static-website-how-to.md?tabs=azure-powershell)
 > * [AzCopy](../common/storage-use-azcopy-v10.md)
 > * [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
 > * [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/)
@@ -50,13 +52,13 @@ ms.locfileid: "76906592"
 
 Пользователи могут просматривать содержимое сайта в браузере с помощью общедоступного URL-адреса веб – сайта. URL-адрес можно найти с помощью портал Azure, Azure CLI или PowerShell. Используйте эту таблицу в качестве справочника.
 
-|Средство| Руководство |
+|Инструмент| Руководство |
 |----|----|
 |**Портал Azure** | [Поиск URL-адреса веб-сайта с помощью портал Azure](storage-blob-static-website-how-to.md#portal-find-url) |
 |**Azure CLI** | [Поиск URL-адреса веб-сайта с помощью Azure CLI](storage-blob-static-website-how-to.md#cli-find-url) |
-|**Overview of Azure PowerShell** (Общие сведения об Azure PowerShell) | [Поиск URL-адреса веб-сайта с помощью PowerShell](storage-blob-static-website-how-to.md#powershell-find-url) |
+|**модуль Azure PowerShell;** | [Поиск URL-адреса веб-сайта с помощью PowerShell](storage-blob-static-website-how-to.md#powershell-find-url) |
 
-URL-адрес сайта содержит региональный код. Например, URL-адрес `https://contosoblobaccount.z22.web.core.windows.net/` содержит региональные `z22`кода.
+URL-адрес сайта содержит региональный код. Например, URL- `https://contosoblobaccount.z22.web.core.windows.net/` адрес содержит региональный `z22`код.
 
 Хотя этот код должен оставаться в URL-адресе, он предназначен только для внутреннего использования, и вам не придется использовать этот код другим способом.
 
@@ -77,9 +79,9 @@ URL-адрес сайта содержит региональный код. На
 
 Хотя основная конечная точка веб-сайта не затрагивается, изменение общедоступного уровня доступа влияет на конечную точку основной службы больших двоичных объектов.
 
-Например, если изменить уровень общего доступа **$Web** контейнера с **Private (без анонимного доступа)** на **BLOB-объект (анонимный доступ на чтение только для больших двоичных объектов)** , то уровень общего доступа к основной конечной точке веб-сайта `https://contosoblobaccount.z22.web.core.windows.net/index.html` не изменится.
+Например, если изменить уровень общего доступа контейнера **$Web** с **закрытого (без анонимного доступа)** на **BLOB-объект (анонимный доступ на чтение только для больших двоичных объектов)**, то уровень общего доступа к основной конечной точке `https://contosoblobaccount.z22.web.core.windows.net/index.html` веб-сайта не изменится.
 
-Однако открытый доступ к основной конечной точке службы BLOB-объектов `https://contosoblobaccount.blob.core.windows.net/$web/index.html` меняется с Private на public. Теперь пользователи могут открыть этот файл с помощью любой из этих двух конечных точек.
+Однако открытый доступ к конечной точке `https://contosoblobaccount.blob.core.windows.net/$web/index.html` основной службы BLOB-объектов меняется с Private на public. Теперь пользователи могут открыть этот файл с помощью любой из этих двух конечных точек.
 
 ## <a name="mapping-a-custom-domain-to-a-static-website-url"></a>Сопоставление пользовательского домена с URL-адресом статического веб-сайта
 
@@ -92,7 +94,13 @@ URL-адрес сайта содержит региональный код. На
 > [!TIP]
 > Рассмотрите возможность размещения домена в Azure. Дополнительные сведения см. [в разделе Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md).
 
-## <a name="pricing"></a>Стоимость
+## <a name="adding-http-headers"></a>Добавление HTTP-заголовков
+
+Не существует способа настройки заголовков в составе статического компонента веб-сайта. Однако Azure CDN можно использовать для добавления заголовков и добавления (или перезаписи) значений заголовков. Azure CDN см. [в справочнике по стандартным обработчикам правил](https://docs.microsoft.com/azure/cdn/cdn-standard-rules-engine-reference).
+
+Если вы хотите использовать заголовки для управления кэшированием, см. раздел [управление Azure CDN кэширования с помощью правил кэширования](https://docs.microsoft.com/azure/cdn/cdn-caching-rules).
+
+## <a name="pricing"></a>Цены
 
 Можно включить бесплатное размещение статических веб-сайтов. Вы оплачиваете только хранилище BLOB-объектов, которое использует ваш сайт, и затраты на эксплуатацию. Дополнительные сведения о ценах на хранилище BLOB-объектов Azure см. на [странице цен](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
@@ -105,8 +113,8 @@ URL-адрес сайта содержит региональный код. На
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Размещение статического веб-сайта в службе хранилища Azure](storage-blob-static-website-how-to.md)
-* [Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure](storage-custom-domain-name.md)
+* [Map a custom domain to an Azure Blob Storage endpoint](storage-custom-domain-name.md) (Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure)
 * [Функции Azure](/azure/azure-functions/functions-overview)
-* [Служба приложений Azure](/azure/app-service/overview)
+* [служба приложений Azure](/azure/app-service/overview);
 * [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
 * [Руководство. Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)

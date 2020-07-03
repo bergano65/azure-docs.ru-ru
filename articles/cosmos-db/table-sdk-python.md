@@ -9,10 +9,10 @@ ms.date: 11/20/2018
 author: sakash279
 ms.author: akshanka
 ms.openlocfilehash: 420c9e5a1e86f54e52905e7d7d2459fa2f68e405
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76771289"
 ---
 # <a name="azure-cosmos-db-table-api-sdk-for-python-release-notes-and-resources"></a>Пакет SDK для API таблиц Azure Cosmos DB на Python: заметки о выпуске и ресурсы
@@ -26,7 +26,7 @@ ms.locfileid: "76771289"
 
 |   |   |
 |---|---|
-|**Скачивание пакета SDK**|[PyPI](https://pypi.python.org/pypi/azure-cosmosdb-table/)|
+|**Загрузка пакета SDK**|[PyPI](https://pypi.python.org/pypi/azure-cosmosdb-table/)|
 |**Документация по API**|[Справочная документация по API Python](https://docs.microsoft.com/python/api/overview/azure/cosmosdb?view=azure-python)|
 |**Инструкции по установке пакета SDK**|[Инструкции по установке пакета SDK для Python](https://github.com/Azure/azure-cosmosdb-python/tree/master/azure-cosmosdb-table)|
 |**Участие в разработке пакета SDK**|[GitHub](https://github.com/Azure/azure-cosmosdb-python/tree/master/azure-cosmosdb-table)|
@@ -38,10 +38,10 @@ ms.locfileid: "76771289"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="a-name100100"></a><a name="1.0.0"/>1.0.0
+### <a name="100"></a><a name="1.0.0"/>1.0.0
 * Выпуск общедоступной версии
 
-### <a name="a-name03710371"></a><a name="0.37.1"/>0.37.1
+### <a name="0371"></a><a name="0.37.1"/>0.37.1
 * Предварительная версия пакета SDK
 
 ## <a name="release-and-retirement-dates"></a>Даты выпуска и выбытия
@@ -57,7 +57,7 @@ ms.locfileid: "76771289"
 | [0.37.1](#0.37.1) |5 октября 2017 г. |--- |
 
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>часто задаваемые вопросы
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>См. также

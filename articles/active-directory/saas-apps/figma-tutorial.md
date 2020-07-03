@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с Figma | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Figma | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Figma.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 10/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfa07b3df7071ed99a02b854ff41ad6a5137c8dc
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76292847"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-figma"></a>Руководство. интеграции единого входа Azure Active Directory с Figma
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-figma"></a>Руководство по интеграции единого входа Azure Active Directory с Figma
 
 В этом учебнике описано, как интегрировать Figma с Azure Active Directory (Azure AD). Интеграция Figma с Azure AD обеспечивает следующие возможности:
 

@@ -17,10 +17,10 @@ ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: edf918b57212cf2adfbffb358a0257d9dbea85e9
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74275875"
 ---
 # <a name="remove-a-user-or-group-assignment-from-an-enterprise-app-in-azure-active-directory"></a>Удаление назначения доступа к корпоративному приложению для пользователя или группы в Azure Active Directory
@@ -33,8 +33,8 @@ ms.locfileid: "74275875"
 ## <a name="how-do-i-remove-a-user-or-group-assignment-to-an-enterprise-app-in-the-azure-portal"></a>Как удалить назначение доступа к корпоративному приложению для пользователя или группы на портале Azure?
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора каталога.
-1. Выберите **Все службы**, в текстовом поле введите **Azure Active Directory**, а затем нажмите клавишу **ВВОД**.
-1. На странице **Azure Active Directory- *директоринаме***  (то есть на странице Azure AD для каталога, которым вы управляете) выберите **корпоративные приложения**.
+1. Выберите **все службы**, введите **Azure Active Directory** в текстовом поле, а затем нажмите клавишу **Ввод**.
+1. На странице **Azure Active Directory- *директоринаме* ** (то есть на странице Azure AD для каталога, которым вы управляете) выберите **корпоративные приложения**.
 1. На странице **корпоративные приложения — все приложения** вы увидите список приложений, которыми вы можете управлять. Выберите приложение.
 1. На странице "Обзор" ***AppName*** (то есть на странице с именем выбранного приложения в заголовке) выберите **Пользователи & группы**.
 1. На странице ***имя_приложения*** **— User & Group Assignment** (Назначение групп и пользователей) выберите одного из нескольких пользователей или групп, а затем щелкните **Удалить**. При появлении запроса подтвердите свое решение.
@@ -64,7 +64,7 @@ ms.locfileid: "74275875"
     Remove-AzureADServiceAppRoleAssignment -ObjectId $spo.ObjectId -AppRoleAssignmentId $assignments[assignment #].ObjectId
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 - [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)

@@ -1,20 +1,18 @@
 ---
 title: Библиотеки бизнес-процессов | Azure Marketplace
 description: Эта статья CPP устарела и связана со статьей ПК. Было «объяснением библиотек и методологий бизнес-процессов».
-services: Azure, Marketplace, Cloud Partner Portal,
-author: ChJenk
-manager: Ricardo.Villalobos
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: f23bc3374b50271398979271bd43ab7533f5214b
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 60c83f037f95f1a1ec59075708caacdce4e5be81
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819766"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80280564"
 ---
 # <a name="business-process-libraries"></a>Библиотеки бизнес-процессов
 

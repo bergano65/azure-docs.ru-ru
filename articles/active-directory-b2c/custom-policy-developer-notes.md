@@ -3,20 +3,20 @@ title: Заметки разработчика для пользовательс
 titleSuffix: Azure AD B2C
 description: Примечания для разработчиков по настройке и обслуживанию Azure AD B2C с помощью настраиваемых политик.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/12/2020
-ms.author: marsma
+ms.date: 04/28/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 6439393b72eb724ca017edc17ce7a7c36c275fca
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 471c2d45e28e634adde78c2d96d407ec219be68c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77166964"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82229669"
 ---
 # <a name="developer-notes-for-custom-policies-in-azure-active-directory-b2c"></a>Примечания разработчика для пользовательских политик в Azure Active Directory B2C
 
@@ -59,85 +59,103 @@ ms.locfileid: "77166964"
 
 Пользовательские возможности инфраструктуры и процедур идентификации находятся в режиме постоянной и быстрой разработки. В следующей таблице приведен индекс компонентов и доступность компонентов.
 
-### <a name="identity-providers-tokens-protocols"></a>Поставщики удостоверений, токены и протоколы
+
+### <a name="protocols-and-authorization-flows"></a>Протоколы и потоки авторизации
 
 | Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 |-------- | :-----------: | :-------: | :--: | ----- |
-| IDP-OpenIDConnect |  |  | X | Например, Google +.  |
-| IDP-OAUTH2 |  |  | X | Например, Facebook.  |
-| IDP-OAUTH1 (Twitter) |  | X |  | Например, Twitter. |
-| IDP-OAUTH1 (ex — Twitter) |  |  |  | Не поддерживается |
-| IDP-SAML |  |   | X | Например, Salesforce, ADFS. |
-| IDP-WSFED | X |  |  |  |
-| OAUTH1 проверяющей стороны |  |  |  | Не поддерживается. |
-| OAUTH2 проверяющей стороны |  |  | X |  |
-| Протокол OIDC проверяющей стороны |  |  | X |  |
-| Протокол SAML проверяющей стороны |  |X  |  |  |
-| Протокол WSFED проверяющей стороны | X |  |  |  |
-| REST API с проверкой подлинности Basic и сертификата |  |  | X | Например, Azure Logic Apps. |
+| [Код авторизации OAuth2](authorization-code-flow.md) |  |  | X |  |
+| Код авторизации OAuth2 с PKCE |  |  | X | Только мобильные приложения  |
+| [Неявный поток OAuth2](implicit-flow-single-page-application.md) |  |  | X |  |
+| [Учетные данные пароля владельца ресурса OAuth2](ropc-custom.md) |  | X |  |  |
+| [OIDC подключение](openid-connect.md) |  |  | X |  |
+| [SAML2](connect-with-saml-service-providers.md)  |  |X  |  | Привязки POST и Redirect. |
+| OAuth1 |  |  |  | Не поддерживается. |
+| WSFED | X |  |  |  |
+
+### <a name="identify-providers-federation"></a>Выявление Федерации поставщиков 
+
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+|-------- | :-----------: | :-------: | :--: | ----- |
+| [OpenID Connect](openid-connect-technical-profile.md) |  |  | X | Например, Google +.  |
+| [OAuth2](oauth2-technical-profile.md) |  |  | X | Например, Facebook.  |
+| [OAuth1](oauth1-technical-profile.md) |  | X |  | Например, Twitter. |
+| [SAML2](saml-identity-provider-technical-profile.md) |  |   | X | Например, Salesforce, ADFS. |
+| WSFED| X |  |  |  |
+
+
+### <a name="rest-api-integration"></a>Интеграция REST API
+
+| Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
+|-------- | :-----------: | :-------: | :--: | ----- |
+| [REST API с обычной проверкой подлинности](secure-rest-api.md#http-basic-authentication) |  |  | X |  |
+| [REST API с проверкой подлинности сертификата клиента](secure-rest-api.md#https-client-certificate-authentication) |  |  | X |  |
+| [REST API с проверкой подлинности носителя OAuth2](secure-rest-api.md#oauth2-bearer-authentication) |  | X |  |  |
 
 ### <a name="component-support"></a>Поддержка компонентов
 
 | Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
-| Многофакторная идентификация Azure |  |  | X |  |
-| Azure Active Directory в качестве локального каталога |  |  | X |  |
+| [Аутентификация по телефонному фактору](phone-factor-technical-profile.md) |  |  | X |  |
+| [Проверка подлинности Azure MFA](multi-factor-auth-technical-profile.md) |  | X |  |  |
+| [Одноразовый пароль](one-time-password-technical-profile.md) |  | X |  |  |
+| [Azure Active Directory](active-directory-technical-profile.md) в качестве локального каталога |  |  | X |  |
 | Подсистема электронной почты Azure для проверки электронной почты |  |  | X |  |
-| Многоязыковая поддержка|  |  | X |  |
-| Проверки предикатов |  |  | X | Например, сложность пароля. |
-| Использование сторонних поставщиков услуг электронной почты |  |X  |  |  |
+| [Сторонние поставщики услуг электронной почты](custom-email.md) |  |X  |  |  |
+| [Многоязыковая поддержка](localization.md)|  |  | X |  |
+| [Проверки предикатов](predicates.md) |  |  | X | Например, сложность пароля. |
+| [Отображение элементов управления](display-controls.md) |  |X  |  |  |
 
-### <a name="content-definition"></a>Определение содержимого
+
+### <a name="page-layout-versions"></a>Версии макета страницы
 
 | Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
-| Страница ошибки (api.error) |  |  | X |  |
-| Страница выбора поставщика удостоверений (api.idpselections) |  |  | X |  |
-| Выбор поставщика удостоверений для регистрации (api.idpselections.signup) |  |  | X |  |
-| Восстановление пароля (api.localaccountpasswordreset) |  |  | X |  |
-| Вход в локальную учетную запись (api.localaccountsignin) |  |  | X |  |
-| Регистрация локальной учетной записи (api.localaccountsignup) |  |  | X |  |
-| Страница многофакторной проверки подлинности (api.phonefactor) |  |  | X |  |
-| Регистрация с самостоятельно подтвержденной учетной записью социального страхования, API. selfasserted |  |  | X |  |
-| Обновление профиля с самостоятельным подтверждением (api.selfasserted.profileupdate) |  |  | X |  |
-| Унифицированная регистрация или страница входа, API. signuporsignin с параметром "Дисаблесигнуп" |  |  | X |  |
-| JavaScript/макет страницы |  | X |  |  |
+| [2.0.0](page-layout.md#200) |  | X |  |  |
+| [1.2.0](page-layout.md#120) |  | X |  |  |
+| [1.1.0](page-layout.md#110) |  |  | X |  |
+| [1.0.0](page-layout.md#100) |  |  | X |  |
+| [Поддержка JavaScript](javascript-samples.md) |  | X |  |  |
 
 ### <a name="app-ief-integration"></a>Интеграция приложения с Identity Experience Framework
 
 | Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
-| Параметр строки запроса domain_hint |  |  | X | Доступно как утверждение, может быть передано в IDP. |
-| Параметр строки запроса login_hint |  |  | X | Доступно как утверждение, может быть передано в IDP. |
-| Вставка данных в формате JSON в UserJourney с помощью параметра client_assertion | X |  |  | Будет считаться устаревшим. |
-| Вставка данных в формате JSON в UserJourney в виде параметра id_token_hint. |  | X |  | Метод Go-Forward для передачи JSON. |
-| Передача ТОКЕНа IDP в приложение |  | X |  | Например, из Facebook в приложение. |
+| Параметр строки запроса`domain_hint` |  |  | X | Доступно как утверждение, может быть передано в IDP. |
+| Параметр строки запроса`login_hint` |  |  | X | Доступно как утверждение, может быть передано в IDP. |
+| Вставка JSON в пути взаимодействия пользователя с помощью`client_assertion` | X |  |  | Будет считаться устаревшим. |
+| Вставка JSON в пути взаимодействия пользователя`id_token_hint` |  | X |  | Метод Go-Forward для передачи JSON. |
+| [Передача токена поставщика удостоверений в приложение](idp-pass-through-custom.md) |  | X |  | Например, из Facebook в приложение. |
 
 ### <a name="session-management"></a>Управление сеансом
 
 | Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
-| Поставщик сеансов единого входа |  |  | X |  |
-| Поставщик сеансов внешнего входа |  |  | X |  |
-| Поставщик сеансов единого входа SAML |  |  | X |  |
-| Поставщик сеанса единого входа по умолчанию |  |  | X |  |
+| [Поставщик сеанса единого входа по умолчанию](custom-policy-reference-sso.md#defaultssosessionprovider) |  |  | X |  |
+| [Поставщик сеанса внешнего входа](custom-policy-reference-sso.md#externalloginssosessionprovider) |  |  | X |  |
+| [Поставщик сеанса единого входа SAML](custom-policy-reference-sso.md#samlssosessionprovider) |  |  | X |  |
+| [оаусссосессионпровидер](custom-policy-reference-sso.md#oauthssosessionprovider)  |  | X |  |  |
+| [Единый выход](session-overview.md#sign-out)  |  | X |  |  |
 
-### <a name="security"></a>безопасность
+### <a name="security"></a>Безопасность
 
 | Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 |-------- | :-----------: | :-------: | :--: | ----- |
 | Ключи политики — создание, смена вручную и передача |  |  | X |  |
 | Ключи политики — RSA или сертификаты, секреты |  |  | X |  |
-| Отправка политики |  |  | X |  |
+
 
 ### <a name="developer-interface"></a>Интерфейс разработчика
 
 | Компонент | Разработка | Preview (Предварительный просмотр) | GA | Примечания |
 | ------- | :-----------: | :-------: | :--: | ----- |
 | Пользовательский интерфейс Identity Experience Framework на портале Azure |  |  | X |  |
-| Журналы UserJourney в Application Insights |  | X |  | Используется для устранения неполадок во время разработки.  |
-| Application Insights журналов событий (через шаги оркестрации) |  | X |  | Используется для мониторинга потоков пользователей в рабочей среде. |
+| Отправка политики |  |  | X |  |
+| [Application Insights журналов пути взаимодействия пользователя](troubleshoot-with-application-insights.md) |  | X |  | Используется для устранения неполадок во время разработки.  |
+| [Application Insights журналов событий](application-insights-technical-profile.md) |  | X |  | Используется для мониторинга потоков пользователей в рабочей среде. |
 
-## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [пользовательских политиках и различиях между потоками пользователей](custom-policy-overview.md).
+## <a name="next-steps"></a>Следующие шаги
+
+- Проверьте [Microsoft Graph операции, доступные для Azure AD B2C](microsoft-graph-operations.md)
+- Дополнительные сведения о [пользовательских политиках и различиях между потоками пользователей](custom-policy-overview.md).

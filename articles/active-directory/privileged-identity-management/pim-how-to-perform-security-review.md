@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 10/22/2019
+ms.date: 04/24/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76eccb5d62b68865b7a117312be62753f203e2cb
-ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
+ms.openlocfilehash: 6aacf45bf33663c448aa21d63900d69d5d870e0d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73847088"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82183404"
 ---
 # <a name="review-access-to-azure-ad-roles-in-privileged-identity-management"></a>Проверка доступа к ролям Azure AD в управление привилегированными пользователями
 
@@ -31,10 +31,10 @@ ms.locfileid: "73847088"
 
 ## <a name="add-a-pim-dashboard-tile"></a>Добавление плитки панели мониторинга PIM
 
-Если служба Azure AD Privileged Identity Management не закреплена на панели мониторинга в портал Azure, выполните следующие действия, чтобы приступить к работе.
+Если служба управление привилегированными пользователями не закреплена на панели мониторинга в портал Azure, выполните следующие действия, чтобы приступить к работе.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Щелкните свое имя пользователя в правом верхнем углу портала Azure и выберите каталог, с которым будете работать.
+2. Выберите свое имя пользователя в правом верхнем углу портал Azure и выберите организацию Azure AD, в которой вы будете работать.
 3. Выберите **Все службы** и введите **Azure AD Privileged Identity Management** в текстовом поле "Фильтр".
 4. Установите флажок **Закрепить на панели мониторинга** и нажмите кнопку **Создать**. Откроется приложение "Управление привилегированными пользователями".
 
@@ -49,7 +49,6 @@ ms.locfileid: "73847088"
 4. Выберите **Утвердить** или **Запретить**. Возможно, в текстовом поле **Указание причины** потребуется ввести причину своего решения.  
 5. Закройте колонку **Проверка ролей Azure AD** .
 
-<!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Выполнение проверки доступа своих ролей ресурсов Azure в PIM](pim-resource-roles-perform-access-review.md)

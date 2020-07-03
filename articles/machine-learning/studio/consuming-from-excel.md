@@ -10,16 +10,18 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: 3314852de2a5fc76ff152d05649fabb5eac2757e
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 333ed411ab818cff77a7cba6c7de4f42c36f5b6b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168892"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79218212"
 ---
 # <a name="consuming-an-azure-machine-learning-studio-classic-web-service-from-excel"></a>Использование веб-службы Машинное обучение Azure Studio (классической) из Excel
 
- Машинное обучение Azure Studio (классическая модель) упрощает вызов веб-служб непосредственно из Excel без необходимости написания кода.
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
+Машинное обучение Azure Studio (классическая модель) упрощает вызов веб-служб непосредственно из Excel без необходимости написания кода.
 
 При использовании Excel 2013 (или более поздней версии) или Excel Online рекомендуется также использовать [надстройку Excel](excel-add-in-for-web-services.md).
 

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: lazzeri
 author: FrancescaLazzeri
-ms.date: 11/04/2019
-ms.openlocfilehash: 1217028dc6c206633f13fe44951732809cd72d22
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.date: 03/05/2020
+ms.openlocfilehash: b024010583ba1c6e0ffdf663f7335011ce212bf1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75762804"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81414581"
 ---
 # <a name="deep-learning-vs-machine-learning"></a>Сравнение глубокого обучения и машинного обучения
 
@@ -82,7 +82,7 @@ ms.locfileid: "75762804"
 
 С помощью соответствующего преобразования данных нейронная сеть может понимать текст, звук и визуальные сигналы. Машинный перевод можно использовать для распознавания фрагментов звука в больших звуковых файлах и транскрипция слово или изображение в виде текста.
 
-### <a name="text-analytics"></a>Анализ текста
+### <a name="text-analytics"></a>Текстовая аналитика
 
 Текстовая аналитика, основанная на методах глубокого обучения, включает анализ больших объемов текстовых данных (например, медицинских документов или расходов на расходы), распознавание закономерностей и создание упорядоченной и краткой информации.
 
@@ -108,7 +108,7 @@ ms.locfileid: "75762804"
 
 Свертки нейронных сетей использовались в таких областях, как распознавание видео, распознавание изображений и системы рекомендаций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В следующих статьях показано, как использовать технологию глубокого обучения в [машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/?WT.mc_id=docs-article-lazzeri).
 
@@ -118,6 +118,6 @@ ms.locfileid: "75762804"
 
 - [Классификация изображений с помощью модели Pytorch](https://docs.microsoft.com/azure/machine-learning/how-to-train-pytorch?WT.mc_id=docs-article-lazzeri)
 
-- [Классификация рукописных цифр с помощью модели цепочки](https://docs.microsoft.com/azure/machine-learning/how-to-train-chainer?WT.mc_id=docs-article-lazzeri)
+- [Классификация рукописных цифр с помощью модели цепочки](https://docs.microsoft.com/azure/machine-learning/how-to-train-ml-models)
 
 Кроме того, используйте [таблицу машинное обучение алгоритм Памятка по](algorithm-cheat-sheet.md) , чтобы выбрать алгоритмы для модели.

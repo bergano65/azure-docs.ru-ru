@@ -12,15 +12,15 @@ ms.date: 05/23/2019
 ms.author: celested
 ms.reviewer: japere
 ms.openlocfilehash: c49535ad11139ac5145d4f283374bf9cc6d71f52
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "72025788"
 ---
 # <a name="understand-and-solve-azure-active-directory-application-proxy-cors-issues"></a>Общие сведения и решение проблем Azure Active Directory Application Proxy CORS
 
-[Общий доступ к ресурсам в разных источниках (CORS)](https://www.w3.org/TR/cors/) иногда может представлять проблемы для приложений и интерфейсов API, которые публикуются с помощью Azure Active Directory Application proxy. В этой статье обсуждаются проблемы и решения Azure AD Application Proxy CORS.
+[Общий доступ к ресурсам между источниками (CORS)](https://www.w3.org/TR/cors/) иногда может представлять проблемы для приложений и API, которые публикуются с помощью Azure Active Directory Application proxy. В этой статье обсуждаются проблемы и решения Azure AD Application Proxy CORS.
 
 Безопасность в браузере обычно предотвращает выполнение запросов AJAX к другому домену на веб-странице. Это ограничение называется *политикой того же происхождения*и предотвращает чтение вредоносных данных с другого сайта злоумышленником. Однако иногда может потребоваться разрешить другим сайтам вызывать веб-API. CORS — это стандарт консорциума W3C, который позволяет серверу использовать политику одинакового происхождения и разрешать некоторые запросы между источниками, а также отклонять другие.
 
@@ -28,15 +28,15 @@ ms.locfileid: "72025788"
 
 Два URL-адреса имеют одинаковый источник, если они имеют идентичные схемы, узлы и порты ([RFC 6454](https://tools.ietf.org/html/rfc6454)), например:
 
--   http:\//contoso.com/foo.html
--   http:\//contoso.com/bar.html
+-   http:\//contoso.com/foo.HTML
+-   http:\//contoso.com/Bar.HTML
 
 Следующие URL-адреса имеют разные источники, отличные от предыдущих двух:
 
--   http:\//contoso.net-другой домен
--   http:\//contoso.com:9000/foo.html-другой порт
--   HTTPS:\/или contoso.com/foo.html-другая схема
--   http:\//www.contoso.com/foo.html-другой поддомен
+-   http:\//contoso.NET-другой домен
+-   http:\//contoso.com:9000/foo.HTML-другой порт
+-   HTTPS:\//contoso.com/foo.HTML — другая схема
+-   http:\//www.contoso.com/foo.HTML-другой поддомен
 
 Политика с одним источником предотвращает доступ приложений к ресурсам из других источников, если они не используют правильные заголовки управления доступом. Если заголовки CORS отсутствуют или неверны, запросы между источниками завершаются сбоем. 
 
@@ -46,7 +46,7 @@ ms.locfileid: "72025788"
 1. Нажмите клавишу **F12** , чтобы открыть консоль отладки.
 1. Попробуйте воспроизвести транзакцию и проверьте сообщение консоли. Нарушение CORS приводит к ошибке консоли в отношении источника.
 
-На следующем снимке экрана при нажатии кнопки **попробовать** вызвать сообщение об ошибке CORS, что https:\//corswebclient-contoso.msappproxy.NET не найден в заголовке Access-Control-Allow-Origin.
+На следующем снимке экрана при нажатии кнопки **попробовать** вызвать сообщение об ошибке CORS, что\/HTTPS:/corswebclient-contoso.msappproxy.NET не найден в заголовке Access-Control-Allow-Origin.
 
 ![Проблемы CORS](./media/application-proxy-understand-cors-issues/image3.png)
 
@@ -82,8 +82,8 @@ ms.locfileid: "72025788"
 
 Итоговые URL-адреса приложений эффективно устраняют проблему CORS:
 
-- HTTPS:\//corswebclient-contoso.msappproxy.net/CORSWebService
-- HTTPS:\//corswebclient-contoso.msappproxy.net/CORSWebClient
+- HTTPS:\//corswebclient-contoso.msappproxy.NET/CORSWebService
+- HTTPS:\//corswebclient-contoso.msappproxy.NET/CORSWebClient
 
 ### <a name="option-3-update-http-headers"></a>Вариант 3. Обновление заголовков HTTP
 
@@ -93,15 +93,15 @@ ms.locfileid: "72025788"
 
 Это изменение не требует внесения изменений в код. Его можно проверить в трассировках Fiddler:
 
-**Публикация\ добавления заголовков**
+**Публикация добавления заголовка**\
 HTTP/1.1 200 OK \
 Cache-Control: без кэша \
 Pragma: No-cache \
-Content-Type: text/plain; charset=utf-8\
+Тип содержимого: text/plain; charset = UTF-8 \
 Срок действия истекает:-1 \
 Разное: Accept-Encoding \
 Сервер: Microsoft-IIS/8.5 Microsoft-HTTPAPI/2.0 \
-**Доступ — управление-разрешение-источник: https\://corswebclient-contoso.msappproxy.net**\
+**Доступ — управление-разрешение-источник: HTTPS\://corswebclient-contoso.msappproxy.NET**\
 X-AspNet-Version: 4.0.30319 \
 X-питание от: ASP.NET \
 Длина содержимого: 17

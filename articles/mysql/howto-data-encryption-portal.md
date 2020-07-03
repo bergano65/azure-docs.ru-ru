@@ -1,17 +1,17 @@
 ---
-title: Шифрование данных для базы данных Azure для MySQL с помощью портал Azure
+title: Шифрование данных — портал Azure — база данных Azure для MySQL
 description: Узнайте, как настроить шифрование данных для базы данных Azure для MySQL и управлять им с помощью портал Azure.
 author: kummanish
 ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 42b7ceb86e360f192c55fc1090f291f5b7fe7ac5
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: 9d1e89919647d9d94b287618da2f9a77278425a5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77252031"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81459089"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-portal"></a>Шифрование данных для базы данных Azure для MySQL с помощью портал Azure
 
@@ -22,13 +22,13 @@ ms.locfileid: "77252031"
 * Подписка Azure и права администратора для нее.
 * В Azure Key Vault создайте хранилище ключей и ключ, который будет использоваться для ключа, управляемого клиентом.
 * Для использования в качестве ключа, управляемого клиентом, хранилище ключей должно иметь следующие свойства:
-  * [Обратимое удаление](../key-vault/key-vault-ovw-soft-delete.md)
+  * [Обратимое удаление](../key-vault/general/overview-soft-delete.md)
 
     ```azurecli-interactive
     az resource update --id $(az keyvault show --name \ <key_vault_name> -o tsv | awk '{print $1}') --set \ properties.enableSoftDelete=true
     ```
 
-  * [Очистить защищенные](../key-vault/key-vault-ovw-soft-delete.md#purge-protection)
+  * [Очистить защищенные](../key-vault/general/overview-soft-delete.md#purge-protection)
 
     ```azurecli-interactive
     az keyvault update --name <key_vault_name> --resource-group <resource_group_name>  --enable-purge-protection true
@@ -37,11 +37,11 @@ ms.locfileid: "77252031"
 * Ключ должен иметь следующие атрибуты для использования в качестве ключа, управляемого клиентом:
   * без даты окончания срока действия;
   * не отключено;
-  * Возможность выполнять операции получения, переноса ключа, распаковки ключей
+  * возможность выполнять операции получения, упаковки ключа и распаковки ключа.
 
 ## <a name="set-the-right-permissions-for-key-operations"></a>Задайте правильные разрешения для операций с ключами.
 
-1. В Key Vault выберите **политики доступа** > **Добавить политику доступа**.
+1. В Key Vault выберите **политики** > доступа**Добавить политику доступа**.
 
    ![Снимок экрана Key Vault с выделенными политиками доступа и добавлением политики доступа](media/concepts-data-access-and-security-data-encryption/show-access-policy-overview.png)
 
@@ -65,11 +65,11 @@ ms.locfileid: "77252031"
 
 4. Чтобы убедиться, что все файлы (включая временные файлы) полностью зашифрованы, перезапустите сервер.
 
-## <a name="restore-or-create-a-replica-of-the-server"></a>Восстановление или создание реплики сервера
+## <a name="using-data-encryption-for-restore-or-replica-servers"></a>Использование шифрования данных для серверов восстановления или реплик
 
 После того как база данных Azure для MySQL шифруется с помощью управляемого ключа клиента, хранящегося в Key Vault, все вновь созданные копии сервера также шифруются. Эту новую копию можно создать с помощью локальной или географической операции либо с помощью операции реплики (локальной или кросс-региона). Для зашифрованного сервера MySQL можно выполнить следующие действия, чтобы создать зашифрованный восстановленный сервер.
 
-1. На сервере выберите **обзор** > **восстановить**.
+1. На сервере выберите **Обзор** > **восстановить**.
 
    ![Снимок экрана базы данных Azure для MySQL с выделенным обзором и восстановлением](media/concepts-data-access-and-security-data-encryption/show-restore.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "77252031"
 
    ![Снимок экрана базы данных Azure для MySQL с выделенным состоянием "недоступно"](media/concepts-data-access-and-security-data-encryption/show-restore-data-encryption.png)
 
-3. Чтобы сделать сервер доступным, повторно проверьте ключ на восстановленном сервере. Выберите **Шифрование данных** > повторно **проверить ключ**.
+3. Чтобы сделать сервер доступным, повторно проверьте ключ на восстановленном сервере. Выберите ключ повторной > **проверки** **шифрования данных**.
 
    > [!NOTE]
    > Первая попытка повторной проверки завершится ошибкой, так как субъекту-службе нового сервера необходимо предоставить доступ к хранилищу ключей. Чтобы создать субъект-службу, выберите повторно **проверить ключ**, в котором будет отображаться сообщение об ошибке, но создается субъект-служба. После этого ознакомьтесь с [этими действиями](#set-the-right-permissions-for-key-operations) ранее в этой статье.
@@ -94,6 +94,6 @@ ms.locfileid: "77252031"
 
    ![Снимок экрана базы данных Azure для MySQL с восстановленными функциями](media/concepts-data-access-and-security-data-encryption/restore-successful.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
  Дополнительные сведения о шифровании данных см. в статье [Шифрование данных в базе данных Azure для MySQL с помощью ключа, управляемого клиентом](concepts-data-encryption-mysql.md).

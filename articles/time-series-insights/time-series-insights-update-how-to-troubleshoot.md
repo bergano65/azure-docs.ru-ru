@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.custom: seodec18
-ms.openlocfilehash: a306707f0ed47fba8fd854d820554bc1bd80e8bc
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: 667dee6365f38ae058e91c61c24838d8912df26a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110302"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80152670"
 ---
 # <a name="diagnose-and-troubleshoot-a-preview-environment"></a>Диагностика и устранение неполадок в среде предварительной версии
 
@@ -35,7 +35,7 @@ ms.locfileid: "77110302"
 
     Убедитесь, что источник события, представляющий собой концентратор событий или центр Интернета вещей, получает данные из ваших тегов или экземпляров. Для этого перейдите к странице обзора вашего ресурса на портале Azure.
 
-    [Обзор метрик панели мониторинга ![.](media/preview-troubleshoot/verify-dashboard-metrics.png)](media/preview-troubleshoot/verify-dashboard-metrics.png#lightbox)
+    [![Обзор метрик панели мониторинга.](media/preview-troubleshoot/verify-dashboard-metrics.png)](media/preview-troubleshoot/verify-dashboard-metrics.png#lightbox)
 
 - Источник события не содержит данные в формате JSON.
 
@@ -45,13 +45,13 @@ ms.locfileid: "77110302"
 
   * Для Центра Интернета вещей необходимо указать ключ с разрешением на **подключение службы**.
 
-    [![проверить разрешения центра Интернета вещей.](media/preview-troubleshoot/verify-correct-permissions.png)](media/preview-troubleshoot/verify-correct-permissions.png#lightbox)
+    [![Проверьте разрешения центра Интернета вещей.](media/preview-troubleshoot/verify-correct-permissions.png)](media/preview-troubleshoot/verify-correct-permissions.png#lightbox)
 
     * Политики **iothubowner** и **Service** работают, так как у них есть разрешение на **Подключение к службе** .
 
   * Для концентратора событий необходимо указать ключ с разрешением на **прослушивание**.
   
-    [![проверить разрешения концентратора событий.](media/preview-troubleshoot/verify-eh-permissions.png)](media/preview-troubleshoot/verify-eh-permissions.png#lightbox)
+    [![Проверьте разрешения концентратора событий.](media/preview-troubleshoot/verify-eh-permissions.png)](media/preview-troubleshoot/verify-eh-permissions.png#lightbox)
 
     * Политики **чтения** и **управления** работают, так как они имеют разрешение на **прослушивание** .
 
@@ -73,6 +73,20 @@ ms.locfileid: "77110302"
     > [!NOTE]
     > В настоящее время служба "Аналитика временных рядов" поддерживает максимальную скорость приема данных 6 Мбит/с.
 
+## <a name="problem-data-was-showing-but-now-ingestion-has-stopped"></a>Проблема: данные были показаны, но теперь прием остановлен
+
+- Возможно, ключ источника события был повторно создан, и в среде предварительного просмотра требуется новый ключ источника события.
+
+Эта проблема возникает, когда ключ, указанный при создании источника события, больше не является допустимым. В концентраторе будут отображаться данные телеметрии, но не входящие сообщения, полученные в ходе анализа временных рядов. Если вы не уверены, был ли ключ создан повторно, можно выполнить поиск в журнале действий "Создание или обновление правил авторизации пространства имен" или выполнить поиск по запросу "Создание или обновление ресурса IotHub" для центра Интернета вещей. 
+
+Чтобы обновить среду предварительного просмотра аналитики временных рядов с помощью нового ключа, откройте ресурс-концентратор в портал Azure и скопируйте новый ключ. Перейдите к ресурсу TSI и щелкните источники событий. 
+
+   [![Обновление ключа.](media/preview-troubleshoot/update-hub-key-step-1.png)](media/preview-troubleshoot/update-hub-key-step-1.png#lightbox)
+
+Выберите источники событий, которые были остановлены при приеме, вставьте новый ключ и нажмите кнопку Сохранить.
+
+   [![Обновление ключа.](media/preview-troubleshoot/update-hub-key-step-2.png)](media/preview-troubleshoot/update-hub-key-step-2.png#lightbox)
+
 ## <a name="problem-my-event-sources-timestamp-property-name-doesnt-work"></a>Проблема. имя свойства метки времени источника событий не работает
 
 Убедитесь, что имя и значение соответствуют следующим правилам:
@@ -80,7 +94,7 @@ ms.locfileid: "77110302"
 * В имени свойства метки времени учитывается регистр.
 * Значение свойства timestamp, которое берется из источника события в виде строки JSON, имеет формат `yyyy-MM-ddTHH:mm:ss.FFFFFFFK`. Пример такой строки — `“2008-04-12T12:53Z”`.
 
-Самый простой способ убедиться, что имя свойства метки времени зафиксировано и работает правильно, — использовать обозреватель службы "Аналитика временных рядов" (предварительная версия). В этом обозревателе с помощью схемы выберите период времени после предоставления имени свойства метки времени. Щелкните выделение правой кнопкой мыши и выберите параметр **обзора событий**. Заголовок первого столбца — это имя вашего свойства метки времени. Рядом со словом `($ts)` должен находиться аргумент `Timestamp` вместо приведенных ниже вариантов:
+Самый простой способ убедиться, что имя свойства метки времени зафиксировано и работает правильно, — использовать обозреватель службы "Аналитика временных рядов" (предварительная версия). В этом обозревателе с помощью схемы выберите период времени после предоставления имени свойства метки времени. Щелкните выделение правой кнопкой мыши и выберите параметр **обзора событий**. Заголовок первого столбца — это имя вашего свойства метки времени. Рядом со словом `Timestamp` должен находиться аргумент `($ts)` вместо приведенных ниже вариантов:
 
 * `(abc)` указывает на то, что служба "Аналитика временных рядов" считывает значения данных в виде строк.
 * Значок **календаря** , указывающий, что Time Series Insights считывает значение данных как DateTime.
@@ -99,7 +113,7 @@ ms.locfileid: "77110302"
 
    Модели временных рядов поддерживаются только в средах с оплатой по мере использования. Дополнительные сведения о доступе к среде S1 или S2 из обозревателя предварительного просмотра аналитики временных рядов см. [в статье Визуализация данных в обозревателе](./time-series-insights-update-explorer.md).
 
-   [![в среде нет событий.](media/preview-troubleshoot/troubleshoot-no-events.png)](media/preview-troubleshoot/troubleshoot-no-events.png#lightbox)
+   [![Нет событий в окружении.](media/preview-troubleshoot/troubleshoot-no-events.png)](media/preview-troubleshoot/troubleshoot-no-events.png#lightbox)
 
 - Возможно, у вас нет прав на просмотр и изменение модели.
 
@@ -109,9 +123,9 @@ ms.locfileid: "77110302"
 
 Эта проблема может возникнуть, если в вашей среде не определена иерархия модели временных рядов. Дополнительные сведения см. [в статье работа с моделями временных рядов](./time-series-insights-update-how-to-tsm.md).
 
-  [![неродительские экземпляры будут отображать предупреждение.](media/preview-troubleshoot/unparented-instances.png)](media/preview-troubleshoot/unparented-instances.png#lightbox)
+  [![Экземпляры, не являющиеся родительскими, будут отображать предупреждение.](media/preview-troubleshoot/unparented-instances.png)](media/preview-troubleshoot/unparented-instances.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Data modeling in Azure Time Series Insights Preview](./time-series-insights-update-how-to-tsm.md) (Моделирование данных в службе "Аналитика временных рядов Azure" (предварительная версия))
 

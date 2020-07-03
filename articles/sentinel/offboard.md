@@ -3,7 +3,7 @@ title: Удаление Sentinel Azure | Документация Майкрос
 description: Удаление экземпляра Sentinel Azure.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/29/2019
-ms.author: rkarlin
-ms.openlocfilehash: d71a9fc21cca75312696a1bc17c4896c2e5bce2d
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: 4042f7b9d0f6fdf293f338c89d5783fe266c4edf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610371"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77581690"
 ---
 # <a name="remove-azure-sentinel-from-your-workspace"></a>Удаление Sentinel Azure из рабочей области
 
@@ -44,7 +44,7 @@ ms.locfileid: "75610371"
 После того как отключение будет идентифицировано, начинается процесс отключения.
 
 **Конфигурация этих соединителей удалена:**
--   Office 365
+-   Office 365
 
 -   AWS
 
@@ -76,6 +76,6 @@ ms.locfileid: "75610371"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как удалить службу Sentinel Azure. Если вы передумали и хотите установить ее снова:
 - Начало работы [с подсистемой Azure Sentinel](quickstart-onboard.md).

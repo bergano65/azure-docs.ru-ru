@@ -1,18 +1,14 @@
 ---
 title: Мониторинг приложений Docker в Azure Application Insights | Документация Майкрософт
 description: Счетчики производительности, события и исключения Docker могут отображаться в Application Insights вместе с данными телеметрии из контейнерных приложений.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 03/14/2019
-ms.openlocfilehash: 66a2481d25c863bbdbf4d72c4683a309918776db
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 5ff3d6a2b31425a3fb6857c8c6aed45f7ef18d64
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677925"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77669613"
 ---
 # <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений DOCKER в Application Insights (не рекомендуется)
 
@@ -85,7 +81,7 @@ ms.locfileid: "72677925"
 ### <a name="docker-context-added-to-app-telemetry"></a>Добавление контекста Docker в телеметрию приложения
 Запрос данных телеметрии, отправленный из приложения, инструментированного с помощью пакета SDK AI, с дополнительной контекстной информацией Docker:
 
-## <a name="q--a"></a>Контроль качества
+## <a name="q--a"></a>Вопросы и ответы
 *Какие возможности Application Insights отсутствуют в Docker?*
 
 * Подробные показатели счетчиков производительности по контейнерам и образам.
@@ -96,12 +92,12 @@ ms.locfileid: "72677925"
 
 * Установите пакет SDK Application Insights в приложении. Узнайте, как это сделать в [веб-приложениях Java](../../azure-monitor/app/java-get-started.md) и [Windows](../../azure-monitor/app/asp-net.md).
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Application Insights для Java](../../azure-monitor/app/java-get-started.md)
-* [Application Insights для Node.js](../../azure-monitor/app/nodejs.md)
+* [Использование Application Insights с Node.js](../../azure-monitor/app/nodejs.md)
 * [Application Insights для ASP.NET](../../azure-monitor/app/asp-net.md)

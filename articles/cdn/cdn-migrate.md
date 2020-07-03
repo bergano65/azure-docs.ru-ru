@@ -3,7 +3,7 @@ title: Перенос профиля Azure CDN из Verizon Standard в Verizon 
 description: Сведения о переносе профиля из Verizon категории "Стандартный" в Verizon категории "Премиум".
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2018
-ms.author: magattus
+ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: 8ab66117be4f05550b00defafc883108646be283
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 61c472281c64fba451bb9b05f69ebee09bc763fd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083055"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81260467"
 ---
 # <a name="migrate-an-azure-cdn-profile-from-standard-verizon-to-premium-verizon"></a>Перенос профиля Azure CDN из Verizon категории "Стандартный" в Verizon категории "Премиум"
 
@@ -49,6 +49,6 @@ ms.locfileid: "74083055"
    - [Анализ в реальном времени](cdn-real-time-alerts.md)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения об обработчике правил см. в [Справке по обработчику правил Azure CDN](cdn-rules-engine-reference.md).
 

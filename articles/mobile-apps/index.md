@@ -1,18 +1,18 @@
 ---
 title: Создание мобильных приложений с помощью Центра приложений Visual Studio и служб Azure
 description: Узнайте, как использовать такие службы, как Центр приложений Visual Studio, которые позволяют создавать реальные мобильные приложения, вместе с другими службами Azure.
-author: elamalani
+author: codemillmatt
 ms.assetid: 98899889-9b3c-4faf-8588-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: 6e60aa223b3c4f362ed13411c54212e9d1fa2c87
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: 19d317ca564f925562994a5f90cd3892d0ee1d08
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454422"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80240836"
 ---
 # <a name="mobile-application-development-in-microsoft"></a>Разработка мобильных приложений в Майкрософт
 Сотрудникам, ответственным за принятие решений, командам разработчиков и ИТ-отделам следует создать надежную стратегию разработки мобильных приложений для решения таких задач:

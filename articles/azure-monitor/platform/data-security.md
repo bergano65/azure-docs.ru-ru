@@ -1,18 +1,17 @@
 ---
 title: Защита данных Log Analytics | Документация Майкрософт
 description: Узнайте, как Log Analytics сохраняет вашу конфиденциальность и защищает данные.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/04/2019
-ms.openlocfilehash: 4ad762cc3a7388628b7385afb07b45819ef882b5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 63d8d8d3701a9adca4bd01e6e061877f5d0bd245
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75363852"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80333360"
 ---
 # <a name="log-analytics-data-security"></a>Защита данных Log Analytics
 В этом документе описываются функции Azure Log Analytics, компонента службы Azure Monitor, для дополнения информации о [центре управления безопасностью Azure](../../security/fundamentals/trust-center.md).  
@@ -44,14 +43,14 @@ ms.locfileid: "75363852"
 | --- | --- | --- |
 |Linux | Как правило, дистрибутивы Linux для поддержки протокола TLS 1.2 используют [OpenSSL](https://www.openssl.org).  | Убедитесь, что ваша версия OpenSSL поддерживается, проверив [журнал изменений OpenSSL](https://www.openssl.org/news/changelog.html).|
 | Windows 8.0–10 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings).  |
-| Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings). |
+| Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Проверка того, что все еще используются [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 
 ## <a name="data-segregation"></a>Разделение данных
 После того, как ваши данные будут приняты службой Log Analytics, они будут логическим образом отделены для каждого компонента службы. Все данные отмечаются тегами по рабочим областям. Эти теги существуют в течение всего жизненного цикла данных и используются на каждом уровне службы. Данные хранятся в выделенной базе данных в кластере хранения в выбранном регионе.
 
 ## <a name="data-retention"></a>Хранение данных
-Индексированные данные поиска по журналу хранятся и удерживаются согласно ценовому плану. Дополнительные сведения см. на странице [цен на Log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/).
+Индексированные данные поиска по журналу хранятся и удерживаются согласно ценовому плану. Дополнительные сведения см. в разделе [цены на log Analytics](https://azure.microsoft.com/pricing/details/log-analytics/).
 
 В рамках [соглашения о подписке](https://azure.microsoft.com/support/legal/subscription-agreement/) по его условиям корпорация Майкрософт будет сохранять данные.  Физические диски при этом не затрагиваются.  
 
@@ -61,19 +60,19 @@ ms.locfileid: "75363852"
 | --- | --- |
 | Capacity and Performance |Данные производительности и метаданные. |
 | Управление обновлениями |Метаданные и данные о состоянии. |
-| Управление журналом |Пользовательские журналы событий, журналы событий Windows и журналы IIS. |
+| Управление журналами; |Пользовательские журналы событий, журналы событий Windows и журналы IIS. |
 | Отслеживание изменений |Инвентаризация программного обеспечения, метаданные управляющей программы Linux и службы Windows, метаданные файлов Windows и Linux |
 | Оценка SQL и Active Directory. |Данные WMI, данные реестра, данные производительности и результаты динамического управления SQL Server. |
 
 В следующей таблице показаны примеры типов данных:
 
-| **Data type** | **Fields** |
+| **Тип данных** | **Поля** |
 | --- | --- |
-| Оповещение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
-| Настройка |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
-| Мероприятие |EventId, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, PublisherName, FullNumber, Number, Category, ChannelLevel, LoggingComputer, EventData, EventParameters, TimeGenerated, TimeAdded <br>**Примечание.** Log Analytics собирает данные событий с настраиваемыми полями при их записи в журнал событий Windows. |
+| Предупреждение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
+| Конфигурация |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
+| событие |EventId, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, PublisherName, FullNumber, Number, Category, ChannelLevel, LoggingComputer, EventData, EventParameters, TimeGenerated, TimeAdded <br>**Примечание.** Log Analytics собирает данные событий с настраиваемыми полями при их записи в журнал событий Windows. |
 | Метаданные |BaseManagedEntityId, ObjectStatus, OrganizationalUnit, ActiveDirectoryObjectSid, PhysicalProcessors, NetworkName, IPAddress, ForestDNSName, NetbiosComputerName, VirtualMachineName, LastInventoryDate, HostServerNameIsVirtualMachine, IP Address, NetbiosDomainName, LogicalProcessors, DNSName, DisplayName, DomainDnsName, ActiveDirectorySite, PrincipalName, OffsetInMinuteFromGreenwichTime |
-| Ориентированное на производительность |ObjectName, CounterName, PerfmonInstanceName, PerformanceDataId, PerformanceSourceInternalID, SampleValue, TimeSampled, TimeAdded |
+| Тестирование |ObjectName, CounterName, PerfmonInstanceName, PerformanceDataId, PerformanceSourceInternalID, SampleValue, TimeSampled, TimeAdded |
 | Состояние |StateChangeEventId, StateId, NewHealthState, OldHealthState, Context, TimeGenerated, TimeAdded, StateId2, BaseManagedEntityId, MonitorId, HealthState, LastModified, LastGreenAlertGenerated, DatabaseTimeModified |
 
 ## <a name="physical-security"></a>Физическая безопасность
@@ -124,7 +123,7 @@ Azure Log Analytics соответствует следующим требова
 * [элементы управления организацией служб (SOC) 1 типа 1 и SOC 2 типа 1](https://www.microsoft.com/en-us/TrustCenter/Compliance/SOC1-and-2);
 * требования [HIPAA и HITECH](https://www.microsoft.com/en-us/TrustCenter/Compliance/hipaa) для компаний, заключивших Соглашение с бизнес-партнерами HIPAA.
 * Общие условия проектирования для Windows
-* Защищенные информационные системы корпорации Майкрософт
+* Защищенные информационные системы Майкрософт
 * как служба Azure, Log Analytics использует компоненты, которые отвечают нормативным требованиям Azure. Дополнительные сведения см. на странице [центра соответствия требованиям Майкрософт](https://www.microsoft.com/en-us/trustcenter/compliance/default.aspx).
 
 > [!NOTE]
@@ -152,7 +151,7 @@ Azure Log Analytics соответствует следующим требова
 Каждый тип агента собирает данные для Log Analytics. Тип собираемых данных зависит от типов используемых решений. Сведения о сборе данных см. в статье [Добавление решений Log Analytics из коллекции решений](../../azure-monitor/insights/solutions.md). Кроме того, подробные сведения о сборе доступны для большинства решений. Решением является набор заранее определенных представлений, запросов поиска в журналах, правил сбора данных и логики обработки. Для импорта решения Log Analytics могут использовать только администраторы. После импорта решение перемещается на серверы управления Operations Manager (если они используются), а затем — на любые выбранные агенты. После этого агенты собирают данные.
 
 ## <a name="2-send-data-from-agents"></a>2. Отправка данных от агентов
-Все агенты регистрируются с помощью ключа регистрации. После этого между агентом и службой Log Analytics устанавливается безопасное подключение с помощью проверки подлинности на основе сертификата и SSL с портом 443. Для создания и обслуживания ключей в Log Analytics используется секретное хранилище. Закрытые ключи меняются каждые 90 дней, хранятся в Azure и управляются с помощью операций Azure согласно строгим рекомендациям соответствия нормативам и требованиям.
+Вы регистрируете все типы агентов с помощью ключа регистрации и устанавливаете безопасное подключение между агентом и службой Log Analytics, используя проверку подлинности на основе сертификатов и TLS с портом 443. Для создания и обслуживания ключей в Log Analytics используется секретное хранилище. Закрытые ключи меняются каждые 90 дней, хранятся в Azure и управляются с помощью операций Azure согласно строгим рекомендациям соответствия нормативам и требованиям.
 
 В Operations Manager группа управления, зарегистрированная в рабочей области Log Analytics, устанавливает безопасное подключение HTTPS с сервером управления Operations Manager.
 
@@ -162,7 +161,7 @@ Azure Log Analytics соответствует следующим требова
 
 Кэшированные данные Windows или агента сервера управления защищены хранилищем учетных данных операционной системы. Если в течение 2 часов служба не может обработать данные, агенты помещают их в очередь. Если очередь переполняется, агент начинает удалять данные по типам, начиная с данных производительности. Предел очереди агента — это раздел реестра. При необходимости его можно изменить. Собранные данные сжимаются и отправляются в службу, минуя группу управления Operations Manager базы данных, то есть к ним не применяется никакой дополнительной нагрузки. После отправки собранных данных они удаляются из кэша.
 
-Как описано выше, данные с сервера управления или подключенных напрямую агентов отправляются по протоколу SSL в центры обработки данных Microsoft Azure. Для дополнительной защиты данных можно также использовать ExpressRoute. ExpressRoute — это способ напрямую подключаться к Azure из существующей глобальной сети, например MPLS VPN, предоставленной поставщиком сетевой службы. Дополнительные сведения см. в статье об [ExpressRoute](https://azure.microsoft.com/services/expressroute/).
+Как описано выше, данные с сервера управления или агентов с прямым подключением передаются по протоколу TLS в Microsoft Azure центров обработки данных. Для дополнительной защиты данных можно также использовать ExpressRoute. ExpressRoute — это способ напрямую подключаться к Azure из существующей глобальной сети, например MPLS VPN, предоставленной поставщиком сетевой службы. Дополнительные сведения см. в статье об [ExpressRoute](https://azure.microsoft.com/services/expressroute/).
 
 ## <a name="3-the-log-analytics-service-receives-and-processes-data"></a>3. Служба Log Analytics получает и обрабатывает данные.
 Служба Log Analytics обеспечивает надежность источника входящих данных, проверяя сертификаты и целостность данных с помощью проверки подлинности Azure. Необработанные данные затем сохраняются в концентраторе событий Azure в регионе, в котором данные будут в конечном итоге храниться как неактивные. Тип хранящихся данных зависит от типов решений, которые были импортированы и используется для сбора данных. Затем Log Analytics обрабатывает необработанные данные и принимает их в базу данных.
@@ -172,7 +171,7 @@ Azure Log Analytics соответствует следующим требова
 ## <a name="4-use-log-analytics-to-access-the-data"></a>4. Использование Log Analytics для доступа к данным
 Чтобы получить доступ в рабочую область Log Analytics, войдите на портал Azure с помощью учетной записи организации или учетной записи Майкрософт, настроенной ранее. Весь трафик между порталом и Log Analytics в службе отправляется через защищенный канал HTTPS. При использовании портала идентификатор сеанса создается в клиенте пользователя (веб-браузер), а данные хранятся в локальном кэше до завершения сеанса. После завершения сеанса кэш удаляется. Файлы cookie со стороны клиента, не содержащие сведений, по которым можно установить личность, не удаляются автоматически. Файлы cookie сеанса помечены как HTTPOnly и защищены. По истечении предопределенного периода простоя сеанс работы с порталом Azure прерывается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения по сбору данных с помощью Log Analytics для виртуальных машин Azure см. в [руководстве по виртуальным машинам Azure](../../azure-monitor/learn/quick-collect-azurevm.md).  
 
 *  Если вы хотите собирать данные с физических или виртуальных компьютеров Windows и Linux в своей среде, ознакомьтесь со статьей [Сбор данных с компьютеров Linux, размещенных в вашем окружении](../../azure-monitor/learn/quick-collect-linux-computer.md) и [Сбор данных с компьютеров Windows, размещенных в вашей среде](../../azure-monitor/learn/quick-collect-windows-computer.md).

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/24/2020
 ms.openlocfilehash: dd79618b8d9f016c92166edb9ecdb0bfb113947e
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76768946"
 ---
 # <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для PostgreSQL — один сервер из портал Azure
@@ -18,7 +18,7 @@ ms.locfileid: "76768946"
 В этой статье описано, как создавать реплики чтения и управлять ими в службе "База данных Azure для PostgreSQL" с помощью портала Azure. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-database-portal.md) в качестве главного.
 
 ## <a name="prepare-the-master-server"></a>Подготовка главного сервера
@@ -100,7 +100,7 @@ ms.locfileid: "76768946"
 
    ![Выбор реплики](./media/howto-read-replicas-portal/select-replica.png)
  
-4. Щелкните **Остановить репликацию**.
+4. Выберите пункт " **отменить репликацию**".
 
    ![Команда "Остановить репликацию"](./media/howto-read-replicas-portal/select-stop-replication.png)
  
@@ -162,7 +162,7 @@ ms.locfileid: "76768946"
 
 1.  На портале Azure выберите главный сервер службы "База данных Azure для PostgreSQL".
 
-2.  Выберите **Метрики**. В окне **Метрики** выберите **Max Lag Across Replicas** (Максимальная задержка между репликами).
+2.  Выберите **метрики**. В окне **Метрики** выберите **Max Lag Across Replicas** (Максимальная задержка между репликами).
 
     ![Отслеживание максимальной задержки между репликами](./media/howto-read-replicas-portal/select-max-lag.png)
  
@@ -174,12 +174,12 @@ ms.locfileid: "76768946"
 
 1. На портале Azure выберите реплику чтения службы "База данных Azure для PostgreSQL".
 
-2. Выберите **Метрики**. В окне **Метрики** выберите **Replica Lag** (Задержка реплики).
+2. Выберите **метрики**. В окне **Метрики** выберите **Replica Lag** (Задержка реплики).
 
    ![Отслеживание задержки реплики](./media/howto-read-replicas-portal/select-replica-lag.png)
  
 3. Для параметра **агрегирования** установите значение **Макс.** 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * См. дополнительные сведения о [репликах чтения в Базе данных Azure для PostgreSQL](concepts-read-replicas.md).
 * Узнайте, как [создавать реплики чтения и управлять ими в Azure CLI и REST API](howto-read-replicas-cli.md).

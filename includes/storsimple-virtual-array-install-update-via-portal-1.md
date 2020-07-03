@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: b4c3fcb86fb098263840accc561785a40b767952
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67185475"
 ---
 #### <a name="to-install-updates-via-the-azure-portal"></a>Установка обновлений с помощью портала Azure
@@ -33,7 +33,7 @@ ms.locfileid: "67185475"
 
     ![обновление устройства](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate6m.png)
 
-5. В колонке **новых обновлений** просмотрите заметки о выпуске. Обратите внимание, что после скачивания обновлений необходимо подтвердить установку. Последовательно выберите **ОК**.
+5. В колонке **новых обновлений** просмотрите заметки о выпуске. Обратите внимание, что после скачивания обновлений необходимо подтвердить установку. Нажмите кнопку **ОК**.
 
     ![обновление устройства](../includes/media/storsimple-virtual-array-install-update-via-portal-1/azupdate7m.png)
 

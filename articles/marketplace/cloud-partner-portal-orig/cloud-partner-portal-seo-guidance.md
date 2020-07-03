@@ -1,19 +1,18 @@
 ---
 title: Руководство по SEO для Azure Marketplace
 description: Дополнительные сведения по улучшению оптимизация для поисковых систем (SEO).
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/09/2019
-ms.author: pabutler
-ms.openlocfilehash: 7115798faadc3209413d22a384433417ec0ddff0
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 761cdc2233bce3619d4c2c9ce1d7d7177d3bc407
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819586"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80280156"
 ---
 # <a name="azure-marketplace-seo-guidance"></a>Руководство по SEO для Azure Marketplace
 

@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -8,24 +8,24 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 03c67ccf88a8c73fe04f062c6af9520115c185a1
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: b2609a069872ec55ac9068fadcbb3f312d68a630
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75774267"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81680767"
 ---
 В этом разделе описывается выполнение следующих операций изменения для прямого пиринга.
 
-* Добавление соединений с прямыми пиринга
-* Удаление подключений прямого пиринга
+* Добавление соединений с прямым пирингом.
+* Удалите прямые соединения пиринга.
 * Обновление или понижение пропускной способности для активных соединений.
-* Добавить сеанс IPv4/IPv6 в активных соединениях.
-* Удаление сеанса IPv4 или IPv6 на активных подключениях.
+* Добавьте сеансы IPv4 или IPv6 на активные соединения.
+* Удалите сеансы IPv4 или IPv6 на активных подключениях.
 
 ### <a name="add-direct-peering-connections"></a>Добавление соединений с прямыми пиринга
 
-В приведенном ниже примере описывается добавление подключений к существующему прямому пиринг.
+В этом примере описывается добавление подключений к существующему прямому пиринг.
 
 ```powershell
 
@@ -46,7 +46,7 @@ $directPeering | Update-AzPeering
 
 ### <a name="remove-direct-peering-connections"></a>Удаление подключений прямого пиринга
 
-Удаление подключения в настоящее время не поддерживается в PowerShell. Обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).
+Удаление подключения в настоящее время не поддерживается в PowerShell. Для получения дополнительных сведений обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).
 
 <!--
 ```powershell
@@ -58,7 +58,7 @@ $directPeering | Update-AzPeering
 
 ### <a name="upgrade-or-downgrade-bandwidth-on-active-connections"></a>Обновление или понижение пропускной способности для активных соединений
 
-В приведенном ниже примере описывается добавление 10 Гбит/к существующему прямому соединению.
+В этом примере описывается добавление 10 Гбит/с для существующего прямого подключения.
 
 ```powershell
 
@@ -68,9 +68,9 @@ $directPeering | Update-AzPeering
 
 ```
 
-### <a name="add-ipv4ipv6-session-on-active-connections"></a>Добавить сеанс IPv4/IPv6 в активных соединениях.
+### <a name="add-ipv4-or-ipv6-sessions-on-active-connections"></a>Добавление сеансов IPv4 или IPv6 для активных соединений
 
-В приведенном ниже примере описывается добавление сеанса IPv6 для существующего прямого подключения только с сеансом IPv4. 
+В этом примере описывается добавление сеанса IPv6 в существующее прямое соединение только с сеансом IPv4. 
 
 ```powershell
 
@@ -80,6 +80,6 @@ $directPeering | Update-AzPeering
 
 ```
 
-### <a name="remove-ipv4ipv6-session-on-active-connections"></a>Удаление сеанса IPv4 или IPv6 на активных подключениях.
+### <a name="remove-ipv4-or-ipv6-sessions-on-active-connections"></a>Удаление сеансов IPv4 или IPv6 на активных подключениях
 
-Удаление сеанса IPv4 или IPv6 из существующего подключения в настоящее время не поддерживается в PowerShell. Обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).
+Удаление сеанса IPv4 или IPv6 из существующего подключения сейчас не поддерживается в PowerShell. Для получения дополнительных сведений обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).

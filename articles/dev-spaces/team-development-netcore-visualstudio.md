@@ -9,12 +9,12 @@ ms.date: 12/09/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для командной разработки в приложении .NET Core в службе Azure Kubernetes
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: f88a0b146a53a5b14ab17ae0d959e9b8a5567302
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c84c77fe7a425318700903427ff1c4aaa4e73a11
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438182"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166042"
 ---
 # <a name="team-development-using-net-core-and-visual-studio-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в .NET Core и Visual Studio
 
@@ -64,7 +64,7 @@ _Без_ использования сред Dev Spaces у Василия был
 1. Выберите вкладку **Отладка** слева, чтобы отобразить параметры Azure Dev Spaces.
 1. Выберите **Изменить**, чтобы создать пространство, которое будет использоваться в службе при нажатии клавиш F5 или Ctrl+F5.
 1. В раскрывающемся списке пространства выберите **\<Create New Space…\>** (Создать пространство…).
-1. Убедитесь, что родительскому пространству присвоено значение **\<none\>** , и введите имя **dev** для пространства. Нажмите кнопку «ОК».
+1. Убедитесь, что родительскому пространству присвоено значение **\<none\>** , и введите имя **dev** для пространства. Щелкните ОК.
 1. Нажмите сочетание клавиш Ctrl+F5, чтобы запустить _mywebapi_ без подключенного отладчика.
 1. Переключитесь в окно Visual Studio с проектом _webfrontend_ и нажмите сочетание клавиш CTRL+F5, чтобы запустить и его.
 
@@ -122,7 +122,7 @@ _Без_ использования сред Dev Spaces у Василия был
 Эта встроенная возможность Azure Dev Spaces позволяет выполнять комплексное тестирование кода в общей среде, не требуя от каждого разработчика повторно создавать множество служб в своем пространстве. Для такой маршрутизации требуется, чтобы заголовки распространения передавались в код приложения, как показано на предыдущем шаге этого руководства.
 
 ### <a name="test-code-running-in-the-_devscott_-space"></a>Тестирование кода, выполняемого в пространстве _dev/scott_
-Чтобы проверить свою новую версию *mywebapi* в сочетании с *webfrontend*, откройте в браузере URL-адрес общедоступной точки доступа для *webfrontend* (например, http://dev.webfrontend.123456abcdef.eus.azds.io) и перейдите на страницу About (Сведения). Вы увидите исходное сообщение "Hello from webfrontend and Hello from mywebapi".
+Чтобы проверить свою новую версию *mywebapi* в сочетании с *webfrontend*, перейдите в браузере по URL-адресу общедоступной точки доступа для *webfrontend* (например, `http://dev.webfrontend.123456abcdef.eus.azds.io`), а затем перейдите на страницу About (Сведения). Вы увидите исходное сообщение "Hello from webfrontend and Hello from mywebapi".
 
 Теперь добавьте часть "scott.s" в URL-адрес, чтобы получилось http\:/scott.s.dev.webfrontend.123456abcdef.eus.azds.io, и обновите браузер. Должна сработать точка останова, заданная в проекте *mywebapi*. Нажмите клавишу F5, чтобы продолжить. В браузере вы должны увидеть новое сообщение "Hello from webfrontend and mywebapi now says something new". Это происходит, так как путь к обновленному коду в *mywebapi* используется в пространстве _dev/scott_.
 
@@ -146,6 +146,9 @@ _Без_ использования сред Dev Spaces у Василия был
 С помощью приведенного ниже примера кода можно вывести список контроллеров Azure Dev Spaces в активной подписке, а затем удалить контроллер Azure Dev Spaces, связанный с кластером AKS myaks в группе ресурсов myaks-rg.
 
 ```cmd
-    azds controller list
-    az aks remove-dev-spaces --name myaks --resource-group myaks-rg
+azds controller list
+```
+
+```azurecli
+az aks remove-dev-spaces --name myaks --resource-group myaks-rg
 ```

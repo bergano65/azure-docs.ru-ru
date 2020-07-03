@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 08/26/2019
 ms.author: Zhchia
 ms.openlocfilehash: 5dd4f5ac6152c22b5e2a84ecc0774672bcd5590b
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77064200"
 ---
 # <a name="tutorial-configure-wrike-for-automatic-user-provisioning"></a>Учебник. Настройка Врике для автоматической подготовки пользователей
@@ -31,7 +31,7 @@ ms.locfileid: "77064200"
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения об общих Microsoft Azure условиях использования предварительных версий функций см. в разделе Дополнительные [условия использования для предварительного просмотра Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -62,7 +62,7 @@ Azure Active Directory использует концепцию, называем
 
 2.  Перейдите в **Azure AD** и выберите его.
 
-    ![Azure AD](media/Wrike-provisioning-tutorial/Capture01.png)
+    ![Azure AD](media/Wrike-provisioning-tutorial/Capture01.png)
 
 3.  Выберите SCIM. Скопируйте **базовый URL-адрес**.
 
@@ -91,7 +91,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -121,11 +121,11 @@ Azure Active Directory использует концепцию, называем
 
     ![Ссылка на Wrike в списке "Приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Режим подготовки установлен в значение "автоматически"](common/provisioning-automatic.png)
 
@@ -137,7 +137,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
-8. Щелкните **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 
 9. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с врике**.
 
@@ -167,9 +167,9 @@ Azure Active Directory использует концепцию, называем
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

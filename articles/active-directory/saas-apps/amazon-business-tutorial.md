@@ -17,10 +17,10 @@ ms.date: 07/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d7ac085beaa85a7ddf3a6c3bfc61820e8e5a63ea
-ms.sourcegitcommit: 5604661655840c428045eb837fb8704dca811da0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68496569"
 ---
 # <a name="tutorial-integrate-amazon-business-with-azure-active-directory"></a>Руководство по интеграция Amazon Business с Azure Active Directory
@@ -35,9 +35,9 @@ ms.locfileid: "68496569"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
+* Подписка Azure AD. Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
 * подписка Amazon Business с поддержкой единого входа. Перейдите на [страницу Amazon Business](https://www.amazon.com/business/register/org/landing?ref_=ab_reg_mlp), чтобы создать учетную запись Amazon Business.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "68496569"
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 5. **[Создание тестового пользователя Amazon Business](#create-amazon-business-test-user)** требуется, чтобы в Amazon Web Services (AWS) существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,7 +79,7 @@ ms.locfileid: "68496569"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
 
@@ -116,11 +116,11 @@ ms.locfileid: "68496569"
 
 1. В дополнение к описанному выше приложение Amazon Business ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **User Attributes & Claims** (Утверждения и атрибуты пользователя) в диалоговом окне **Утверждения группы** выполните следующие действия:
 
-    a. Щелкните **значок ручки** рядом с параметром **Группы, возвращенные в утверждении**.
+    а. Щелкните **значок ручки** рядом с параметром **Группы, возвращенные в утверждении**.
 
-    ![image](./media/amazon-business-tutorial/config04.png)
+    ![Изображение](./media/amazon-business-tutorial/config04.png)
 
-    ![image](./media/amazon-business-tutorial/config05.png)
+    ![Изображение](./media/amazon-business-tutorial/config05.png)
 
     b. Установите переключатель **Все группы** в списке.
 
@@ -128,7 +128,7 @@ ms.locfileid: "68496569"
 
     d. Установите флажок **Изменение имени утверждения группы** и введите имя группы в соответствии с требованиями организации.
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных** и нажмите кнопку **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 
@@ -176,27 +176,27 @@ ms.locfileid: "68496569"
 
 1. В мастере **данных подключения Amazon** нажмите кнопку **Next** (Далее).
 
-    ![Подключение](media/amazon-business-tutorial/amazon-connect.png)
+    ![Соединение](media/amazon-business-tutorial/amazon-connect.png)
 
 1. Проверьте **состояние** настроенных шагов и нажмите кнопку **Start testing** (Начать тестирование).
 
-    ![Подключение](media/amazon-business-tutorial/sso-connection1.png)
+    ![Соединение](media/amazon-business-tutorial/sso-connection1.png)
 
 1. В мастере **проверки подключения единого входа** нажмите кнопку **Test** (Проверка).
 
-    ![Подключение](media/amazon-business-tutorial/sso-connection2.png)
+    ![Соединение](media/amazon-business-tutorial/sso-connection2.png)
 
 1. В мастере **URL-адрес, инициируемый поставщиком удостоверений** перед нажатием кнопки **Activate** (Активировать) скопируйте значение, заданное для **idpid**, и вставьте его в параметр **idpid** в **URL-адресе ответа** в разделе**Базовая конфигурация SAML** на портале Azure.
 
-    ![Подключение](media/amazon-business-tutorial/sso-connection3.png)
+    ![Соединение](media/amazon-business-tutorial/sso-connection3.png)
 
 1. В мастере **Are you ready to switch to active SSO?** (Вы готовы переключиться на активный единый вход?) установите флажок **I have fully tested SSO and am ready to go live** (Я полностью проверил единый вход и готов к переходу в динамический режим) и нажмите кнопку **Switch to active** (Перейти в состояние "Активно").
 
-    ![Подключение](media/amazon-business-tutorial/sso-connection4.png)
+    ![Соединение](media/amazon-business-tutorial/sso-connection4.png)
 
 1. Наконец, в разделе **SSO Connection details** (Сведения о подключении единого входа) **состояние** отображается как **Активно**.
 
-    ![Подключение](media/amazon-business-tutorial/sso-connection5.png)
+    ![Соединение](media/amazon-business-tutorial/sso-connection5.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -231,7 +231,7 @@ ms.locfileid: "68496569"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив ему доступ к Amazon Business.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Amazon Business**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -287,8 +287,8 @@ ms.locfileid: "68496569"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

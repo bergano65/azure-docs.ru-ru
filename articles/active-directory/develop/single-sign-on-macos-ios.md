@@ -3,26 +3,22 @@ title: Настройка единого входа для macOS и iOS
 titleSuffix: Microsoft identity platform
 description: Узнайте, как настроить единый вход (SSO) в macOS и iOS.
 services: active-directory
-documentationcenter: dev-center-name
 author: mmacy
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/03/2020
 ms.author: marsma
 ms.reviewer: ''
 ms.custom: aaddev
-ms.openlocfilehash: 91a55520b37c549c8f1d94ba6cf08ecd24db85b5
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 25389348476552298ddb947ccb59acb8b3d5bc57
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77085536"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80881254"
 ---
 # <a name="how-to-configure-sso-on-macos-and-ios"></a>Как настроить единый вход для macOS и iOS
 
@@ -101,8 +97,8 @@ URI перенаправления App3: `msauth.com.contoso.mytestapp3://auth`
 #### <a name="add-a-new-keychain-group"></a>Добавить новую группу цепочки ключей
 
 Добавьте новую группу цепочки ключей в **возможности**проекта. Группа цепочки ключей должна быть:
-* `com.microsoft.adalcache` в iOS 
-* `com.microsoft.identity.universalstorage` в macOS.
+* `com.microsoft.adalcache`в iOS 
+* `com.microsoft.identity.universalstorage`в macOS.
 
 ![Пример цепочки ключей](media/single-sign-on-macos-ios/keychain-example.png)
 
@@ -110,7 +106,7 @@ URI перенаправления App3: `msauth.com.contoso.mytestapp3://auth`
 
 ## <a name="configure-the-application-object"></a>Настройка объекта приложения
 
-После включения назначений цепочки ключей в каждом из приложений и готовности к использованию единого входа настройте `MSALPublicClientApplication` с группой доступа к цепочке ключей, как показано в следующем примере:
+После того как в каждом из ваших приложений будет включено назначение цепочки ключей, и вы готовы использовать единый вход, настройте `MSALPublicClientApplication` его с помощью группы доступа к цепочке ключей, как показано в следующем примере:
 
 Objective-C.
 
@@ -149,7 +145,7 @@ MSAL обеспечивает поддержку проверки подлинн
 
 Чтобы включить единый вход с помощью брокера проверки подлинности для приложения, выполните следующие действия.
 
-1. Зарегистрируйте формат URI перенаправления, совместимого с брокером, для приложения в файле info. plist приложения. Формат URI перенаправления, совместимый с брокером, — `msauth.<app.bundle.id>://auth`. Замените "< App. пучок. ID >" "ИДЕНТИФИКАТОРом пакета вашего приложения. Пример:
+1. Зарегистрируйте формат URI перенаправления, совместимого с брокером, для приложения в файле info. plist приложения. Формат URI для перенаправления, совместимый с брокером: `msauth.<app.bundle.id>://auth`. Замените "<app.bundle.id>" "ИДЕНТИФИКАТОРом пакета вашего приложения. Пример:
 
     ```xml
     <key>CFBundleURLSchemes</key>
@@ -158,7 +154,7 @@ MSAL обеспечивает поддержку проверки подлинн
     </array>
     ```
 
-1. Добавьте следующие схемы в приложение info. plist в разделе `LSApplicationQueriesSchemes`:
+1. Добавьте следующие схемы в сведения о приложении. plist в разделе `LSApplicationQueriesSchemes`:
 
     ```xml
     <key>LSApplicationQueriesSchemes</key>
@@ -168,7 +164,7 @@ MSAL обеспечивает поддержку проверки подлинн
     </array>
     ```
 
-1. Добавьте следующий файл в `AppDelegate.m` для управления обратными вызовами:
+1. Добавьте следующий объект в `AppDelegate.m` файл для управления обратными вызовами:
 
     Objective-C.
     
@@ -187,7 +183,7 @@ MSAL обеспечивает поддержку проверки подлинн
     }
     ```
     
-**Если вы используете Xcode 11**, вместо этого следует поместить обратный вызов MSAL в файл `SceneDelegate`.
+**Если вы используете Xcode 11**, вместо этого следует поместить обратный вызов MSAL в `SceneDelegate` файл.
 Если UISceneDelegate и UIApplicationDelegate поддерживаются для совместимости с более старыми версиями iOS, то обратный вызов MSAL потребуется поместить в оба файла.
 
 Objective-C.

@@ -4,19 +4,19 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/11/2019
 ms.author: cynthn
-ms.openlocfilehash: 4259868ff3b3c9ca9f9818532acd7e865e0300d7
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: a2083de1ddf400b368815877725d3b8dd446156b
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77205699"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82844560"
 ---
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
 
 - Автоматизация настройки виртуальных машин:
-    - [Ansible](#ansible), [Chef](#chef) и [Puppet](#puppet);
+    - К средствам относятся [Ansible](#ansible), [Chef](#chef), [Puppet](#puppet)и [шаблон Azure Resource Manager](#azure-resource-manager-template).
     - средства для настройки определенных виртуальных машин, например [cloud-init](#cloud-init) для виртуальных машин Linux, [PowerShell Desired State Configuration (DSC)](#powershell-dsc) и [расширение пользовательских скриптов Azure](#azure-custom-script-extension) для всех виртуальных машин Azure.
- 
+
 - Автоматизация управления инфраструктурой:
     - средства автоматизации сборки настраиваемых образов виртуальных машин, например [Packer](#packer), и инфраструктуры, например [Terraform](#terraform);
     - [служба автоматизации Azure](#azure-automation), которая может выполнять действия в инфраструктуре Azure и локальной среде.
@@ -30,7 +30,7 @@ ms.locfileid: "77205699"
 Вы узнаете, как выполнять следующие задачи:
 
 - [Установка и настройка Ansible для управления виртуальными машинами в Azure](../articles/ansible/ansible-install-configure.md)
-- [Создание виртуальной машины Linux](../articles/ansible/ansible-create-vm.md)
+- [Создайте виртуальную машину Linux](../articles/ansible/ansible-create-vm.md).
 - [Управление виртуальной машиной Linux](../articles/ansible/ansible-manage-linux-vm.md)
 
 
@@ -40,7 +40,7 @@ ms.locfileid: "77205699"
 Вы узнаете, как выполнять следующие задачи:
 
 - [Build, deploy, and manage with Chef Automate, the Continuous Automation Platform](https://azuremarketplace.microsoft.com/marketplace/apps/chef-software.chef-automate?tab=Overview) (Создание, развертывание и управление с помощью платформы непрерывной автоматизации Chef Automate)
-- [Автоматизация развертывания виртуальной машины Azure с помощью Chef](../articles/virtual-machines/windows/chef-automation.md)
+- [Автоматизация развертывания виртуальной машины Azure с помощью Chef](../articles/chef/chef-automation.md)
 
 
 ## <a name="puppet"></a>Puppet
@@ -48,7 +48,7 @@ ms.locfileid: "77205699"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Puppet Enterprise lets you automate the entire lifecycle of your Azure infrastructure](https://azuremarketplace.microsoft.com/marketplace/apps/puppet.puppet-enterprise-2017-2?tab=Overview) (Автоматизация жизненного цикла инфраструктуры Azure с помощью Puppet Enterprise)
+- [Puppet Enterprise lets you automate the entire lifecycle of your Azure infrastructure](https://azuremarketplace.microsoft.com/marketplace/apps/Puppet.puppet-agent-windows-asm?tab=Overview) (Автоматизация жизненного цикла инфраструктуры Azure с помощью Puppet Enterprise)
 
 
 ## <a name="cloud-init"></a>Cloud-init
@@ -56,7 +56,8 @@ ms.locfileid: "77205699"
 
 Кроме того, cloud-init работает с разными дистрибутивами. Например, для установки пакета не используется **apt-get install** или **yum install**. Вместо этого можно определить список пакетов для установки. Файл cloud-init автоматически использует собственный инструмент управления пакетами из выбранного дистрибутива.
 
-Мы активно сотрудничаем с нашими утвержденными партнерами, работающими над дистрибутивами Linux, чтобы образы с поддержкой cloud-init стали доступными в Azure Marketplace. Эти образы обеспечивают бесперебойную работу развертываний и конфигураций cloud-init с виртуальными машинами и масштабируемыми наборами виртуальных машин (VMSS). Дополнительные сведения о cloud-init в Azure:
+Мы активно сотрудничаем с нашими утвержденными партнерами, работающими над дистрибутивами Linux, чтобы образы с поддержкой cloud-init стали доступными в Azure Marketplace. Эти образы обеспечивают бесперебойную работу развертываний и конфигураций cloud-init с виртуальными машинами и масштабируемыми наборами виртуальных машин (VMSS).
+Дополнительные сведения о cloud-init в Azure:
 
 - [Поддержка cloud-init для виртуальных машин Linux в Azure](../articles/virtual-machines/linux/using-cloud-init.md)
 - [Руководство по автоматизации настройки виртуальных машин при помощи cloud-init](../articles/virtual-machines/linux/tutorial-automate-vm-deployment.md)
@@ -75,7 +76,7 @@ ms.locfileid: "77205699"
 
 
 ## <a name="azure-custom-script-extension"></a>Расширение пользовательских скриптов Azure
-Расширение пользовательских скриптов Azure для [Linux](../articles/virtual-machines/linux/extensions-customscript.md) или [Windows](../articles/virtual-machines/windows/extensions-customscript.md) скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать при создании виртуальной машины или с любой другой целью после ее создания. 
+Расширение пользовательских скриптов Azure для [Linux](../articles/virtual-machines/linux/extensions-customscript.md) или [Windows](../articles/virtual-machines/windows/extensions-customscript.md) скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать при создании виртуальной машины или с любой другой целью после ее создания.
 
 Скрипты можно скачать из хранилища Azure или любого общедоступного расположения, например репозитория GitHub. Расширение пользовательских скриптов позволяет создавать скрипты на любом языке, выполняющемся на исходной виртуальной машине. С помощью этих скриптов вы можете устанавливать приложения или нужным образом настраивать виртуальную машину. Чтобы защитить учетные данные, конфиденциальные сведения, например пароли, можно хранить в защищенной конфигурации. Эти учетные данные расшифровываются только на виртуальной машине.
 
@@ -99,8 +100,8 @@ ms.locfileid: "77205699"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](../articles/virtual-machines/linux/terraform-install-configure.md)
-- [Создание базовой инфраструктуры в Azure с помощью Terraform](../articles/virtual-machines/linux/terraform-create-complete-vm.md)
+- [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](/azure/developer/terraform/install-configure)
+- [Создание базовой инфраструктуры в Azure с помощью Terraform](/azure/developer/terraform/create-linux-virtual-machine-with-infrastructure)
 
 
 ## <a name="azure-automation"></a>Служба автоматизации Azure
@@ -110,12 +111,12 @@ ms.locfileid: "77205699"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Мой первый модуль Runbook PowerShell](../articles/automation/automation-first-runbook-textual-powershell.md)
+- [Создайте Runbook PowerShell](../articles/automation/automation-first-runbook-textual-powershell.md).
 - [Использование гибридной рабочей роли Runbook для управления локальными ресурсами](../articles/automation/automation-hybrid-runbook-worker.md).
 - [Приступая к работе с DSC службы автоматизации Azure](../articles/automation/automation-dsc-getting-started.md)
 
 
-## <a name="azure-devops-services"></a>Azure DevOps Services
+## <a name="azure-devops-services"></a>Azure DevOps Services
 [Azure DevOps Services](https://www.visualstudio.com/team-services/) — это набор средств, позволяющих отслеживать код и предоставлять к нему общий доступ, использовать автоматизированные сборки и создавать конвейеры непрерывной интеграции и разработки (CI/CD). Azure DevOps Services интегрируется с Visual Studio и другими редакторами, что упрощает его использование. Кроме того, этот набор средств позволяет создавать и настраивать виртуальные машины Azure, а затем развертывать код на них.
 
 См. также:
@@ -124,12 +125,23 @@ ms.locfileid: "77205699"
 
 
 ## <a name="jenkins"></a>Jenkins
-[Jenkins](https://www.jenkins.io) — это сервер непрерывной интеграции, который помогает развертывать и тестировать приложения, а также создать автоматизированные конвейеры доставки кода. Базовую платформу Jenkins можно расширить с помощью большого количества подключаемых модулей, а веб-перехватчики позволяют интегрировать ее с другими продуктами. Вы можете вручную установить Jenkins на виртуальной машине Azure, запустить Jenkins в контейнере Docker или использовать готовый образ Azure Marketplace.
+[Jenkins](https://jenkins.io) — это сервер непрерывной интеграции, который помогает развертывать и тестировать приложения, а также создать автоматизированные конвейеры доставки кода. Базовую платформу Jenkins можно расширить с помощью большого количества подключаемых модулей, а веб-перехватчики позволяют интегрировать ее с другими продуктами. Вы можете вручную установить Jenkins на виртуальной машине Azure, запустить Jenkins в контейнере Docker или использовать готовый образ Azure Marketplace.
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](../articles/virtual-machines/linux/tutorial-jenkins-github-docker-cicd.md)
+- [Как создать инфраструктуру непрерывной интеграции и непрерывного развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker](../articles/jenkins/tutorial-jenkins-github-docker-cicd.md)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
+[Azure Resource Manager](../articles/azure-resource-manager/templates/overview.md) — это служба развертывания и управления для Azure. Она обеспечивает уровень управления, позволяющий создавать, обновлять и удалять ресурсы в подписке Azure. Вы можете использовать ее функции управления, такие как управление доступом, блокировка и добавление тегов, чтобы защитить и упорядочить ресурсы после развертывания.
+
+Вы узнаете, как выполнять следующие задачи:
+
+- [Развертывание плашечных виртуальных машин с помощью шаблона диспетчер ресурсов](../articles/virtual-machines/linux/spot-template.md).
+- [Развертывание виртуальной машины Azure с помощью C# и шаблона диспетчер ресурсов](../articles/virtual-machines/windows/csharp-template.md).
+- [Создайте виртуальную машину Windows на основе шаблона диспетчер ресурсов](../articles/virtual-machines/windows/ps-template.md).
+- [Скачайте шаблон для виртуальной машины](../articles/virtual-machines/windows/download-template.md).
+- [Создайте шаблон Azure Image Builder](../articles/virtual-machines/linux/image-builder-json.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
 Средства автоматизации инфраструктуры в Azure позволяют выполнять разные задачи. Вы можете использовать решения, которые максимально отвечают вашим потребностям и требованиям среды. Чтобы приступить к работе и оценить несколько стандартных средств Azure, ознакомьтесь с руководством по автоматизации настройки виртуальной машины [Linux](../articles/virtual-machines/linux/tutorial-automate-vm-deployment.md) или [Windows](../articles/virtual-machines/windows/tutorial-automate-vm-deployment.md).

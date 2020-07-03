@@ -12,18 +12,18 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/06/2019
+ms.date: 03/13/2020
 ms.author: mimart
 ms.reviewer: paulgarn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eafd209073b36265d24dbad4a66b3870d8f593db
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 0082d841faf22745e609d38444f4a97553b3c867
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73148642"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79365872"
 ---
-# <a name="how-to-configure-azure-ad-saml-token-encryption-preview"></a>Как настроить шифрование маркеров SAML для Azure AD (Предварительная версия)
+# <a name="how-to-configure-azure-ad-saml-token-encryption"></a>Как настроить шифрование маркеров SAML в Azure AD
 
 > [!NOTE]
 > Шифрование токенов — это функция уровня "Премиум" в Azure Active Directory (Azure AD). Дополнительные сведения о выпусках, функциях и ценах на Azure AD см. на странице [цен на Azure AD](https://azure.microsoft.com/pricing/details/active-directory/).
@@ -67,7 +67,7 @@ ms.locfileid: "73148642"
     > [!NOTE]
     > Параметр **Шифрование токенов** доступен только для приложений SAML, настроенных в колонке **Корпоративные приложения** на портале Azure (из коллекции приложений или из приложения, не входящего в коллекцию). Для других приложений этот пункт меню отключен. Для приложений, зарегистрированных с помощью функции **Регистрация приложений** на портале Azure, можно настроить шифрование токенов SAML с использованием манифеста приложения, Microsoft Graph или PowerShell.
 
-1. На странице **Шифрование токенов** щелкните **Импорт сертификата**, чтобы импортировать CER-файл, содержащий открытый сертификат X.509.
+1. На странице **Шифрование токенов** выберите **импортировать сертификат** , чтобы импортировать CER-файл, содержащий общедоступный сертификат X. 509.
 
     ![Импорт CER-файла, содержащего сертификат X.509](./media/howto-saml-token-encryption/import-certificate-small.png)
 
@@ -81,7 +81,7 @@ ms.locfileid: "73148642"
 
 1. На портале Azure перейдите в колонку **Azure Active Directory > Корпоративные приложения** и выберите приложение, в котором включено шифрование токенов SAML.
 
-1. На странице приложения щелкните **Шифрование токенов**, найдите сертификат, а затем щелкните **...** , чтобы открыть раскрывающееся меню.
+1. На странице приложения щелкните **Шифрование токенов**, найдите сертификат, а затем щелкните **...**, чтобы открыть раскрывающееся меню.
 
 1. Щелкните **Deactivate token encryption** (Деактивировать шифрование токенов).
 
@@ -123,26 +123,21 @@ ms.locfileid: "73148642"
 
 ### <a name="to-configure-token-encryption-using-powershell"></a>Настройка шифрования токенов с помощью PowerShell
 
-Эта функция будет доступна в ближайшее время. 
+1. Используйте последнюю версию модуля Azure AD PowerShell для подключения к вашему клиенту.
 
-<!--
-1. Use the latest Azure AD PowerShell module to connect to your tenant.
-
-1. Set the token encryption settings using the **[Set-AzureApplication](https://docs.microsoft.com/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)** command.
+1. Задайте параметры шифрования маркеров с помощью команды **[Set-азуреаппликатион](https://docs.microsoft.com/powershell/module/azuread/set-azureadapplication?view=azureadps-2.0-preview)** .
 
     ```
     Set-AzureADApplication -ObjectId <ApplicationObjectId> -KeyCredentials "<KeyCredentialsObject>"  -TokenEncryptionKeyId <keyID>
     ```
 
-1. Read the token encryption settings using the following commands.
+1. Прочтите параметры шифрования маркеров с помощью следующих команд.
 
     ```powershell
     $app=Get-AzureADApplication -ObjectId <ApplicationObjectId>
     $app.KeyCredentials
     $app.TokenEncryptionKeyId
     ```
-
--->
 
 ### <a name="to-configure-token-encryption-using-the-application-manifest"></a>Настройка шифрования токенов с использованием манифеста приложения
 
@@ -223,7 +218,7 @@ ms.locfileid: "73148642"
     }  
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Как в Azure AD используется протокол SAML](../develop/active-directory-saml-protocol-reference.md)
 * Узнайте о формате, характеристиках безопасности и содержимом в статье [Справочник по токенам SAML в Azure AD](../develop/reference-saml-tokens.md).

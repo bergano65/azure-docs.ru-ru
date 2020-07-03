@@ -1,24 +1,24 @@
 ---
-title: Вопросы и ответы по защите локальных паролей — Azure Active Directory
-description: Вопросы и ответы о локальной службе защиты паролем Azure AD
+title: Вопросы и ответы о локальной службе защиты паролем Azure AD
+description: Ознакомьтесь с часто задаваемыми вопросами о защите паролей Azure AD в локальной среде служб домен Active Directory
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: troubleshooting
+ms.topic: how-to
 ms.date: 11/21/2019
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7b4c941272906e7ff5a017c78c8bc7c5084a667
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 16537ba72eb9f11abd8de47256150818c121a140
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74847836"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80652639"
 ---
-# <a name="azure-ad-password-protection-on-premises---frequently-asked-questions"></a>Часто задаваемые вопросы о локальной службе защиты паролем Azure AD
+# <a name="azure-ad-password-protection-on-premises-frequently-asked-questions"></a>Часто задаваемые вопросы о защите паролей Azure AD
 
 В этом разделе содержатся ответы на часто задаваемые вопросы о защите паролей Azure AD.
 

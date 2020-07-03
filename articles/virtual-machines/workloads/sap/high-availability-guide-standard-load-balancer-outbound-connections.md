@@ -1,5 +1,5 @@
 ---
-title: Подключение к общедоступной конечной точке для виртуальных машин с помощью Load Balancer (цен. категория "Стандартный") Azure в сценариях высокого уровня доступности SAP
+title: Подключение общедоступной конечной точки для виртуальных машин Azure&Standard ILB в сценариях с высоким уровнем доступности SAP
 description: Подключение к общедоступной конечной точке для виртуальных машин с помощью Load Balancer (цен. категория "Стандартный") Azure в сценариях высокого уровня доступности SAP
 services: virtual-machines-windows,virtual-network,storage,
 documentationcenter: saponazure
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 02/07/2020
 ms.author: radeltch
-ms.openlocfilehash: 52179f15829981d59ff060784a49eccef89bb186
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 4fd01764c183098a8bd78d502eea7ab173fa22cc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77083708"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80293916"
 ---
 # <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>Подключение к общедоступной конечной точке для виртуальных машин с помощью Load Balancer (цен. категория "Стандартный") Azure в сценариях высокого уровня доступности SAP
 
@@ -87,7 +87,7 @@ ms.locfileid: "77083708"
 >[!TIP]
 >Там, где это возможно, используйте [теги службы](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) , чтобы уменьшить сложность группы безопасности сети. 
 
-### <a name="deployment-steps"></a>Шаги по развертыванию
+### <a name="deployment-steps"></a>Шаги развертывания
 
 1. Создание балансировщика нагрузки  
    1. В [портал Azure](https://portal.azure.com) щелкните все ресурсы, добавить, а затем выполните поиск по запросу **Load Balancer**  
@@ -102,7 +102,7 @@ ms.locfileid: "77083708"
    1. Выберите виртуальные машины и их IP-адреса и добавьте их в внутренний пул.  
 3. [Создание правил для исходящих подключений](https://docs.microsoft.com/azure/load-balancer/configure-load-balancer-outbound-cli#create-outbound-rule). Сейчас невозможно создать правила исходящего трафика из портал Azure. Правила для исходящего трафика можно создать с помощью [Azure CLI](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest).  
 
-   ```
+   ```azurecli
     az network lb outbound-rule create --address-pool MyBackendPoolOfPublicILB --frontend-ip-configs MyPublicILBFrondEndIP --idle-timeout 30 --lb-name MyPublicILB --name MyOutBoundRules  --outbound-ports 10000 --enable-tcp-reset true --protocol All --resource-group MyResourceGroup
    ```
 
@@ -139,7 +139,7 @@ ms.locfileid: "77083708"
 >[!TIP]
 >Там, где это возможно, используйте [теги службы](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) , чтобы уменьшить сложность правил брандмауэра Azure.  
 
-### <a name="deployment-steps"></a>Шаги по развертыванию
+### <a name="deployment-steps"></a>Шаги развертывания
 
 1. В шагах развертывания предполагается, что у вас уже есть виртуальная сеть и подсеть, определенные для виртуальных машин.  
 2. Создайте подсеть **азурефиреваллсубнет** в той же виртуальной сети, где развернуты виртуальные машины и Load Balancer (цен. Категория "Стандартный").  
@@ -162,7 +162,7 @@ ms.locfileid: "77083708"
    1. Введите имя MyRouteTable, выберите подписку, группу ресурсов и расположение (соответствующее расположение виртуальной сети и брандмауэра).  
    1. Сохранять  
 
-   Правило брандмауэра будет выглядеть следующим образом: ![исходящее подключение с помощью брандмауэра Azure](./media/high-availability-guide-standard-load-balancer/high-availability-guide-standard-load-balancer-firewall-rule.png)
+   Правило брандмауэра будет выглядеть следующим образом: ![исходящее подключение с помощью брандмауэра Azure.](./media/high-availability-guide-standard-load-balancer/high-availability-guide-standard-load-balancer-firewall-rule.png)
 
 6. Создайте определяемый пользователем маршрут из подсети виртуальных машин на частный IP-адрес **мязурефиревалл**.
    1. По мере расположения в таблице маршрутов щелкните Routes (маршруты). Выберите "Добавить". 
@@ -176,7 +176,7 @@ ms.locfileid: "77083708"
 ### <a name="important-considerations"></a>Важные сведения
 
   - Если на месте уже имеется корпоративный прокси-сервер, можно направить исходящие вызовы в общедоступные конечные точки. Исходящие вызовы к общедоступным конечным точкам будут проходить через корпоративную точку управления.  
-  - Убедитесь, что конфигурация прокси-сервера разрешает исходящее подключение к API управления Azure: https://management.azure.com  
+  - Убедитесь, что конфигурация прокси-сервера разрешает исходящее подключение к API управления Azure:`https://management.azure.com`  
   - Убедитесь в наличии маршрута от виртуальных машин к прокси-серверу.  
   - Прокси-сервер будет обслуживать только вызовы HTTP/HTTPS. Если есть необходимость делать исходящие вызовы к общедоступной конечной точке по различным протоколам (например, RFC), потребуется альтернативное решение.  
   - Чтобы избежать нестабильности в кластере Pacemaker, необходимо обеспечить высокий уровень доступности для решения прокси-сервера.  
@@ -188,8 +188,9 @@ ms.locfileid: "77083708"
 В отрасли доступно множество различных вариантов прокси-сервера. Пошаговые инструкции по развертыванию прокси-сервера выходят за рамки этого документа. В приведенном ниже примере предполагается, что прокси-сервер отвечает на **мипроксисервице** и ожидает передачи данных через порт **MyProxyPort**.  
 Чтобы разрешить Pacemaker взаимодействовать с API управления Azure, выполните следующие действия на всех узлах кластера:  
 
-1. Измените файл конфигурации Pacemaker/ЕТК/сисконфиг/пацемакер и добавьте следующие строки (все узлы кластера):  
-   ```
+1. Измените файл конфигурации Pacemaker/ЕТК/сисконфиг/пацемакер и добавьте следующие строки (все узлы кластера):
+
+   ```console
    sudo vi /etc/sysconfig/pacemaker
    # Add the following lines
    http_proxy=http://MyProxyService:MyProxyPort
@@ -197,8 +198,9 @@ ms.locfileid: "77083708"
    ```
 
 2. Перезапустите службу Pacemaker на **всех** узлах кластера.  
-  - SUSE  
-     ```
+  - SUSE
+ 
+     ```console
      # Place the cluster in maintenance mode
      sudo crm configure property maintenance-mode=true
      #Restart on all nodes
@@ -208,7 +210,8 @@ ms.locfileid: "77083708"
      ```
 
   - Red Hat  
-     ```
+
+     ```console
      # Place the cluster in maintenance mode
      sudo pcs property set maintenance-mode=true
      #Restart on all nodes
@@ -217,7 +220,7 @@ ms.locfileid: "77083708"
      sudo pcs property set maintenance-mode=false
      ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте, как настроить Pacemaker в SUSE в Azure.](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker)
 * [Узнайте, как настроить Pacemaker на Red Hat в Azure.](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-pacemaker)

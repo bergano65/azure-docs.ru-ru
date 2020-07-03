@@ -1,20 +1,20 @@
 ---
-title: Ссылка на C# конечную точку настраиваемого поставщика
-description: Содержит базовый справочник по конечной точке RESTful настраиваемых поставщиков C# Azure. Конечная точка предоставляется через приложение-функцию Azure.
+title: Ссылка на нестандартный поставщик C# конечная точка RESTFUL
+description: Содержит базовый справочник по конечной точке RESTFUL для пользовательских поставщиков Azure на C#. Конечная точка предоставляется через приложение-функцию Azure.
 ms.topic: conceptual
 ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
 ms.openlocfilehash: b6ecb22cb968e0d963242c8c2d5dd1a6cb24229c
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75651180"
 ---
-# <a name="custom-provider-c-restful-endpoint-reference"></a>Ссылка на C# конечную точку настраиваемого поставщика
+# <a name="custom-provider-c-restful-endpoint-reference"></a>Ссылка на нестандартный поставщик C# конечная точка RESTFUL
 
-Эта статья является основной ссылкой на настраиваемую конечную C# точку RESTful поставщика. Если вы еще не знакомы с настраиваемыми поставщиками Azure, перейдите к этой [обзорной статье](overview.md).
+Эта статья является основной ссылкой на пользовательскую конечную точку RESTFUL в C# поставщика. Если вы еще не знакомы с настраиваемыми поставщиками Azure, перейдите к этой [обзорной статье](overview.md).
 
 ## <a name="azure-function-app-restful-endpoint"></a>Конечная точка RESTFUL приложения функции Azure
 

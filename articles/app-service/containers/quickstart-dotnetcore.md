@@ -5,14 +5,14 @@ keywords: служба приложений azure, веб-приложение, 
 ms.assetid: c02959e6-7220-496a-a417-9b2147638e2e
 ms.tgt_pltfrm: linux
 ms.topic: quickstart
-ms.date: 03/27/2019
-ms.custom: seodec18
-ms.openlocfilehash: ea9449a89bcfbdb1378f0cceb31a07a288661bf7
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.date: 04/22/2020
+ms.custom: mvc, cli-validate, seodec18
+ms.openlocfilehash: 1eeb5bbd4b10ef660a50f40d6c1300b0ca214561
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687560"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82206682"
 ---
 # <a name="create-an-aspnet-core-app-in-app-service-on-linux"></a>Создание приложения .NET Core в Службе приложений в Linux
 
@@ -33,7 +33,7 @@ ms.locfileid: "74687560"
 Для работы с этим кратким руководством сделайте следующее:
 
 * <a href="https://git-scm.com/" target="_blank">установите Git</a>;
-* <a href="https://www.microsoft.com/net/core/" target="_blank">установите .NET Core</a>.
+* <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1" target="_blank">установите пакет SDK для .NET Core 3.1 с последними обновлениями</a>.
 
 ## <a name="create-the-app-locally"></a>Локальное создание приложения
 
@@ -89,7 +89,7 @@ git commit -m "first commit"
 Перейдите к только что созданному веб-приложению. Замените _&lt;app-name>_ именем своего приложения.
 
 ```bash
-http://<app-name>.azurewebsites.net
+https://<app-name>.azurewebsites.net
 ```
 
 Новое приложение должно выглядеть следующим образом.
@@ -98,34 +98,32 @@ http://<app-name>.azurewebsites.net
 
 [!INCLUDE [Push to Azure](../../../includes/app-service-web-git-push-to-azure.md)] 
 
-```bash
-Counting objects: 22, done.
-Delta compression using up to 8 threads.
-Compressing objects: 100% (18/18), done.
-Writing objects: 100% (22/22), 51.21 KiB | 3.94 MiB/s, done.
-Total 22 (delta 1), reused 0 (delta 0)
+<pre>
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 285 bytes | 95.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Deploy Async
 remote: Updating branch 'master'.
 remote: Updating submodules.
-remote: Preparing deployment for commit id '741f16d1db'.
-remote: Generating deployment script.
-remote: Project file path: ./hellodotnetcore.csproj
-remote: Generated deployment script files
-remote: Running deployment command...
-remote: Handling ASP.NET Core Web Application deployment.
-remote: ...............................................................................................
-remote:   Restoring packages for /home/site/repository/hellodotnetcore.csproj...
-remote: ....................................
-remote:   Installing System.Xml.XPath 4.0.1.
-remote:   Installing System.Diagnostics.Tracing 4.1.0.
-remote:   Installing System.Threading.Tasks.Extensions 4.0.0.
-remote:   Installing System.Reflection.Emit.ILGeneration 4.0.1.
-remote:   ...
-remote: Finished successfully.
-remote: Running post deployment command(s)...
+remote: Preparing deployment for commit id 'd6b54472f7'.
+remote: Repository path is /home/site/repository
+remote: Running oryx build...
+remote: Build orchestrated by Microsoft Oryx, https://github.com/Microsoft/Oryx
+remote: You can report issues at https://github.com/Microsoft/Oryx/issues
+remote:
+remote: Oryx Version      : 0.2.20200114.13, Commit: 204922f30f8e8d41f5241b8c218425ef89106d1d, ReleaseTagName: 20200114.13
+remote: Build Operation ID: |imoMY2y77/s=.40ca2a87_
+remote: Repository Commit : d6b54472f7e8e9fd885ffafaa64522e74cf370e1
+.
+.
+.
 remote: Deployment successful.
-To https://<app-name>.scm.azurewebsites.net/<app-name>.git
- * [new branch]      master -> master
-```
+remote: Deployment Logs : 'https://&lt;app-name&gt;.scm.azurewebsites.net/newui/jsonviewer?view_url=/api/deployments/d6b54472f7e8e9fd885ffafaa64522e74cf370e1/log'
+To https://&lt;app-name&gt;.scm.azurewebsites.net:443/&lt;app-name&gt;.git
+   d87e6ca..d6b5447  master -> master
+</pre>
 
 ## <a name="browse-to-the-app"></a>Переход в приложение
 
@@ -176,7 +174,7 @@ git push azure master
 
 [!INCLUDE [cli-samples-clean-up](../../../includes/cli-samples-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. по приложению ASP.NET Core с Базой данных SQL](tutorial-dotnetcore-sqldb-app.md)

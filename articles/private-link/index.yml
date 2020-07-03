@@ -10,12 +10,12 @@ metadata:
   author: malopMSFT
   ms.author: allensu
   ms.date: 09/16/2019
-  ms.openlocfilehash: d8ee3a04ccd1f5fbc9e788946538668e04dd988e
-  ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+  ms.openlocfilehash: c062c0aa38037485e6bd892b3dbce67160f64995
+  ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/25/2019
-  ms.locfileid: "75452987"
+  ms.lasthandoff: 04/24/2020
+  ms.locfileid: "82127621"
 landingContent:
 - title: Сведения о Приватном канале Azure
   linkLists:
@@ -29,6 +29,8 @@ landingContent:
     links:
     - text: Что собой представляет частная конечная точка?
       url: private-endpoint-overview.md
+    - text: Интеграция с частными конечными точками DNS
+      url: private-endpoint-dns.md
   - linkListType: quickstart
     links:
     - text: Создание частной конечной точки

@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 1b042c0279e458cf83bd5c81147f4b1f25d7687d
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645146"
 ---
 # <a name="azure-data-factory---frequently-asked-questions"></a>Фабрика данных Azure — часто задаваемые вопросы
@@ -50,16 +50,16 @@ ms.locfileid: "75645146"
 Вы можете проектировать и создавать фабрики данных с помощью одного из следующих инструментов или пакетов SDK.
 
 * **Visual Studio.** Фабрику данных Azure можно создать с помощью Visual Studio. Дополнительные сведения см. в разделе [Создание первой фабрики данных Azure с помощью Microsoft Visual Studio](data-factory-build-your-first-pipeline-using-vs.md).
-* **Azure PowerShell.** В разделе [Создание первой фабрики данных Azure с помощью Azure PowerShell](data-factory-build-your-first-pipeline-using-powershell.md) приведено пошаговое руководство по созданию фабрики данных с помощью PowerShell. Подробную документацию по командлетам фабрики данных см. в справочном материале по [командлетам фабрики данных][adf-powershell-reference] в библиотеке MSDN.
-* **Библиотека классов .NET.** Фабрики данных можно создавать программными средствами с помощью пакета SDK .NET для фабрик данных. Пошаговое руководство по созданию фабрики данных с помощью пакета SDK для .NET см. в разделе [Создание, мониторинг фабрик данных и управление ими с помощью пакета SDK для .NET](data-factory-create-data-factories-programmatically.md). Исчерпывающую документацию по пакету SDK .NET для фабрик данных см. в [справочнике по библиотеке классов фабрики данных][msdn-class-library-reference] .
-* Для создания и развертывания фабрик данных можно также использовать **REST API**, предоставляемый службой фабрики данных Azure. Подробную документацию по фабрике данных REST API см. в [справочнике по фабрике данных REST API][msdn-rest-api-reference] .
+* **Azure PowerShell.** В разделе [Создание первой фабрики данных Azure с помощью Azure PowerShell](data-factory-build-your-first-pipeline-using-powershell.md) приведено пошаговое руководство по созданию фабрики данных с помощью PowerShell. Полная документация по командлетам фабрики данных содержится в [справочнике по командлетам фабрики данных][adf-powershell-reference], который можно найти в библиотеке MSDN.
+* **Библиотека классов .NET.** Фабрики данных можно создавать программными средствами с помощью пакета SDK .NET для фабрик данных. Пошаговое руководство по созданию фабрики данных с помощью пакета SDK для .NET см. в разделе [Создание, мониторинг фабрик данных и управление ими с помощью пакета SDK для .NET](data-factory-create-data-factories-programmatically.md). Полную документация по пакету SDK .NET для фабрик данных см. в [справочнике по библиотеке классов фабрики данных][msdn-class-library-reference].
+* Для создания и развертывания фабрик данных можно также использовать **REST API**, предоставляемый службой фабрики данных Azure. Полную документацию по REST API для фабрик данных см. в [справочнике по REST API фабрики данных][msdn-rest-api-reference].
 * **Шаблон Azure Resource Manager.** Дополнительные сведения см. в статье [Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager](data-factory-build-your-first-pipeline-using-arm.md).
 
 ### <a name="can-i-rename-a-data-factory"></a>Можно ли переименовать фабрику данных?
 Нет. Как и для других ресурсов Azure, имя фабрики данных Azure изменить нельзя.
 
 ### <a name="can-i-move-a-data-factory-from-one-azure-subscription-to-another"></a>Можно ли переместить фабрику данных из одной подписки Azure в другую?
-Да. Используйте кнопку **Переместить** в колонке фабрики данных, как показано на схеме ниже.
+Да. Используйте кнопку **переместить** в колонке фабрики данных, как показано на следующей схеме:
 
 ![Перемещение фабрики данных](media/data-factory-faq/move-data-factory.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "75645146"
 | [Кластер HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) |[DotNet](data-factory-use-custom-activities.md), [Hive](data-factory-hive-activity.md), [Pig](data-factory-pig-activity.md), [MapReduce](data-factory-map-reduce.md), [потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |
 | [Пакетная служба Azure](data-factory-compute-linked-services.md#azure-batch-linked-service) |[DotNet](data-factory-use-custom-activities.md) |
 | [Машинное обучение Azure](data-factory-compute-linked-services.md#azure-machine-learning-linked-service) |[Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |
-| [Azure Data Lake Analytics](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
+| [Azure Data Lake Analytics](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Аналитика озера данных U-SQL](data-factory-usql-activity.md) |
 | [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [хранилище данных Azure SQL](data-factory-compute-linked-services.md#azure-sql-data-warehouse-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Хранимая процедура](data-factory-stored-proc-activity.md) |
 
 ### <a name="how-does-azure-data-factory-compare-with-sql-server-integration-services-ssis"></a>Чем отличаются возможности фабрики данных Azure и SQL Server Integration Services (SSIS)? 
@@ -105,7 +105,7 @@ ms.locfileid: "75645146"
 
 ## <a name="hdinsight-activity---faq"></a>Действие HDInsight — вопросы и ответы
 ### <a name="what-regions-are-supported-by-hdinsight"></a>В каких регионах поддерживается HDInsight?
-См. раздел географическая доступность в следующей статье: или [сведения о ценах на HDInsight][hdinsight-supported-regions].
+Ознакомьтесь с разделом "Географическая доступность" в следующей статье или см. [сведения о ценах на HDInsight][hdinsight-supported-regions].
 
 ### <a name="what-region-is-used-by-an-on-demand-hdinsight-cluster"></a>Какой регион используется кластером HDInsight по запросу?
 Кластер HDInsight по запросу создается в том же регионе, где существует хранилище, которое вы указали для использования с кластером.    
@@ -113,8 +113,8 @@ ms.locfileid: "75645146"
 ### <a name="how-to-associate-additional-storage-accounts-to-your-hdinsight-cluster"></a>Как связать дополнительные учетные записи хранения с кластером HDInsight?
 Если вы используете собственный кластер HDInsight (BYOC), ознакомьтесь со следующими разделами:
 
-* [Использование кластера HDInsight с альтернативными учетными записями хранения и Метахранилища][hdinsight-alternate-storage]
-* [Использование дополнительных учетных записей хранения в HDInsight Hive][hdinsight-alternate-storage-2]
+* [Использование кластера HDInsight с дополнительными учетными записями хранения и метахранилищами][hdinsight-alternate-storage]
+* [Использование дополнительных учетных записей хранения с Hive HDInsight][hdinsight-alternate-storage-2]
 
 При использовании кластера по запросу, созданного службой фабрики данных, следует указать дополнительные учетные записи хранения для связанной службы HDInsight, чтобы служба фабрики данных могла зарегистрировать их от вашего имени. В определении JSON для связанной службы по запросу используйте свойство **additionalLinkedServiceNames** , чтобы указать дополнительные хранилища учетных записей, как показано в следующем фрагменте кода JSON:
 
@@ -147,7 +147,7 @@ ms.locfileid: "75645146"
 
 Если имеется другая фабрика данных с конвейером, который принимает набор данных 4 (созданный конвейером 2 в фабрике данных 1), то следует пометить набор данных 4 как внешний (external), так как он производится фабрикой данных (фабрикой данных 1, не фабрикой данных 2).  
 
-**Фабрика данных 2**    
+**DataFactory2**    
 Конвейер 1: набор данных 4 -> действие 4 -> набор данных 5.
 
 Если свойство external задано неверно, проверьте, существуют ли входные данные в расположении, заданном в определении входного набора данных.

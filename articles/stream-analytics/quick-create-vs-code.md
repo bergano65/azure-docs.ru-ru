@@ -7,16 +7,19 @@ ms.author: mamccrea
 ms.date: 01/18/2020
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: e3e878b4f548da64ab04eb079d51b0846cf35c57
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: fe666359b9ed2773f615ff496f4032bda5e74dc2
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76313881"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81767773"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-in-visual-studio-code-preview"></a>Краткое руководство. Создание задания Azure Stream Analytics в Visual Studio Code (предварительная версия)
 
 В этом кратком руководстве показано, как запустить задание Stream Analytics с помощью расширения "Инструменты Azure Stream Analytics" для Visual Studio Code. Пример задания считывает данные потоковой передачи из устройства Центра Интернета вещей. Вы определяете задание, которое вычисляет среднюю температуру, когда она превышает 27 °, и записывает полученный результат события в новый файл в хранилище BLOB-объектов.
+
+> [!NOTE]
+> Средства Visual Studio и Visual Studio Code не поддерживают выполнение заданий в регионах "Восточный Китай", "Северный Китай", "Центральная Германия" и "Северо-Восточная Германия".
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -140,14 +143,6 @@ ms.locfileid: "76313881"
    FROM Input
    HAVING Temperature > 27
    ```
-
-## <a name="test-the-query-locally-with-sample-data"></a>Локальное тестирование запроса с использованием примеров данных
-
-Прежде чем выполнять запрос в облаке, его можно протестировать локально для проверки логики, используя локальный файл с примерами данных или динамически переданные на вход данные.
-
-См. сведения о том, как [локально тестировать запросы с использованием примеров данных](visual-studio-code-local-run.md).
-
- ![Тестирование с использованием примеров данных в Visual Studio Code](./media/vscode-local-run/localrun-localinput.gif)
 
 ## <a name="define-a-live-input"></a>Определение источника динамических входных данных
 
@@ -279,6 +274,8 @@ ms.locfileid: "76313881"
 В этом кратком руководстве описано, как развернуть простое задание Stream Analytics, используя Visual Studio Code. Вы также можете развертывать задания Stream Analytics, используя [портал Azure](stream-analytics-quick-create-portal.md), [PowerShell](stream-analytics-quick-create-powershell.md) и [Visual Studio](stream-analytics-quick-create-vs.md).
 
 Чтобы узнать о расширении "Инструменты Azure Stream Analytics" для Visual Studio Code, перейдите к следующим статьям:
+
+* [Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code](visual-studio-code-local-run.md)
 
 * [Локальное тестирование запросов Azure Stream Analytics с использованием источника динамических входных данных в Visual Studio Code](visual-studio-code-local-run-live-input.md)
 

@@ -1,18 +1,17 @@
 ---
 title: Работа со значениями даты и времени в запросах журнала Azure Monitor | Документация Майкрософт
 description: В этой статье описывается работа с данными даты и времени в запросах журнала Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: d659be5b817317e7cec5726718f154825674349e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ea7c98a1b5b4059c5fea0cf1e8ea2ff5ef08d9d1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75365348"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77655384"
 ---
 # <a name="working-with-date-time-values-in-azure-monitor-log-queries"></a>Работа со значениями даты и времени в запросах журнала Azure Monitor
 
@@ -32,9 +31,9 @@ ms.locfileid: "75365348"
 |сокращение   | единица времени    |
 |:---|:---|
 |d           | day          |
-|ч           | ч.         |
-|мин           | minute       |
-|с           | second       |
+|h           | hour         |
+|m           | minute       |
+|s           | second       |
 |ms          | миллисекунда  |
 |микросекунда | микросекунда  |
 |галочка        | наносекунда   |
@@ -85,7 +84,7 @@ Event
 | extend timeAgo = now() - TimeGenerated 
 ```
 
-Столбец `timeAgo` содержит такие значения: "00:09:31.5118992", то есть они форматируются как чч: мм: СС. fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
+`timeAgo` Столбец содержит такие значения: "00:09:31.5118992", то есть они форматируются как чч: мм: СС. fffffff. Если вы хотите форматировать эти значения в `numver` минут с времени начала, укажите timeAgo/1m.
 
 ```Kusto
 Event
@@ -147,21 +146,21 @@ Event
 
 ## <a name="related-functions"></a>Связанные функции
 
-| Категория | Компонент |
+| Категория | Функция |
 |:---|:---|
-| Преобразование типов данных | [ToDateTime](/azure/kusto/query/todatetimefunction)  [тотимеспан](/azure/kusto/query/totimespanfunction)  |
-| Округление значения до размера ячейки | [bin](/azure/kusto/query/binfunction) |
-| Получение конкретной даты или времени | [назад](/azure/kusto/query/agofunction) [](/azure/kusto/query/nowfunction)   |
-| Получение части значения | [datetime_part](/azure/kusto/query/datetime-partfunction) [](/azure/kusto/query/getmonthfunction) [монсофеар](/azure/kusto/query/monthofyearfunction) [г](/azure/kusto/query/getyearfunction) . в [DayOfMonth](/azure/kusto/query/dayofmonthfunction) [DayOfWeek](/azure/kusto/query/dayofweekfunction) [DayOfYear](/azure/kusto/query/dayofyearfunction) [WeekOfYear](/azure/kusto/query/weekofyearfunction) |
-| Получение значения относительной даты  | [ендофдай](/azure/kusto/query/endofdayfunction) [ендофвик](/azure/kusto/query/endofweekfunction) [EndOfMonth](/azure/kusto/query/endofmonthfunction) [endofyear](/azure/kusto/query/endofyearfunction) [стартофдай](/azure/kusto/query/startofdayfunction) [startofweek](/azure/kusto/query/startofweekfunction) [StartOfMonth](/azure/kusto/query/startofmonthfunction) [startofyear](/azure/kusto/query/startofyearfunction) |
+| Преобразование типов данных | [todatetime](/azure/kusto/query/todatetimefunction)  [totimespan](/azure/kusto/query/totimespanfunction)  |
+| Округление значения до размера ячейки | [ячейки](/azure/kusto/query/binfunction) |
+| Получение конкретной даты или времени | [ago](/azure/kusto/query/agofunction) [now](/azure/kusto/query/nowfunction)   |
+| Получение части значения | [datetime_part](/azure/kusto/query/datetime-partfunction) [getmonth](/azure/kusto/query/getmonthfunction) [monthofyear](/azure/kusto/query/monthofyearfunction) [getyear](/azure/kusto/query/getyearfunction) [dayofmonth](/azure/kusto/query/dayofmonthfunction) [dayofweek](/azure/kusto/query/dayofweekfunction) [dayofyear](/azure/kusto/query/dayofyearfunction) [weekofyear](/azure/kusto/query/weekofyearfunction) |
+| Получение значения относительной даты  | [endofday](/azure/kusto/query/endofdayfunction) [endofweek](/azure/kusto/query/endofweekfunction) [endofmonth](/azure/kusto/query/endofmonthfunction) [endofyear](/azure/kusto/query/endofyearfunction) [startofday](/azure/kusto/query/startofdayfunction) [startofweek](/azure/kusto/query/startofweekfunction) [startofmonth](/azure/kusto/query/startofmonthfunction) [startofyear](/azure/kusto/query/startofyearfunction) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
 
-- [Работа со строками](string-operations.md)
-- [Статистические функции в запросах Log Analytics](aggregations.md)
-- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
-- [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
+- [Операции со строками](string-operations.md)
+- [Агрегатные функции](aggregations.md)
+- [Расширенные агрегатные функции](advanced-aggregations.md)
+- [JSON и структуры данных](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Joins](joins.md)
-- [Создание графиков](charts.md)
+- [Соединения](joins.md)
+- [Диаграммы](charts.md)

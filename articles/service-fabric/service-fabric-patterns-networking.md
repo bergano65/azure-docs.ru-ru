@@ -4,18 +4,18 @@ description: Описываются распространенные схемы 
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.openlocfilehash: 065c311fffe409b20e02a3fddf1e9e7e6a82a2a1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75466292"
 ---
 # <a name="service-fabric-networking-patterns"></a>Схемы сетевых подключений Service Fabric
 Кластер Azure Service Fabric можно интегрировать с другими сетевыми компонентами Azure. В этой статье показано, как создавать кластеры, использующие следующие компоненты:
 
 - [существующая виртуальная сеть или подсеть](#existingvnet);
-- [статический общедоступный IP-адрес](#staticpublicip);
-- [подсистема балансировки нагрузки только для внутреннего использования](#internallb);
+- [Статический общедоступный IP-адрес](#staticpublicip)
+- [Подсистема балансировки нагрузки только для внутреннего использования](#internallb)
 - [внутренняя и внешняя подсистемы балансировки нагрузки](#internalexternallb).
 
 Service Fabric выполняется в стандартном масштабируемом наборе виртуальных машин. Любые функции, которые можно использовать в масштабируемом наборе виртуальных машин, можно также использовать и в кластере Service Fabric. Сетевые компоненты шаблонов Azure Resource Manager для масштабируемых наборов виртуальных машин и Service Fabric идентичны. После развертывания в существующей виртуальной сети легко внедрить другие сетевые компоненты, такие как Azure ExpressRoute, VPN-шлюз Azure, группа безопасности сети и пиринговая виртуальная сеть.
@@ -259,7 +259,7 @@ DnsSettings              : {
                     ],
     ```
 
-7. В ресурсе `Microsoft.ServiceFabric/clusters` измените элемент `managementEndpoint`, указав полное доменное имя DNS-сервера статического IP-адреса. При использовании защищенного кластера обязательно измените *http://* на *https://* . (Обратите внимание, что этот шаг применяется только к кластерам Service Fabric. Если вы используете масштабируемый набор виртуальных машин, то пропустите этот шаг.)
+7. В ресурсе `Microsoft.ServiceFabric/clusters` измените элемент `managementEndpoint`, указав полное доменное имя DNS-сервера статического IP-адреса. При использовании защищенного кластера обязательно измените *http://* на *https://*. (Обратите внимание, что этот шаг применяется только к кластерам Service Fabric. Если вы используете масштабируемый набор виртуальных машин, то пропустите этот шаг.)
 
     ```json
                     "fabricSettings": [],
@@ -279,7 +279,7 @@ DnsSettings              : {
     New-AzResourceGroupDeployment -Name deployment -ResourceGroupName sfnetworkingstaticip -TemplateFile C:\SFSamples\Final\template\_staticip.json -existingStaticIPResourceGroup $staticip.ResourceGroupName -existingStaticIPName $staticip.Name -existingStaticIPDnsFQDN $staticip.DnsSettings.Fqdn
     ```
 
-После развертывания вы можете увидеть, что подсистема балансировки нагрузки привязана к общедоступному статическому IP-адресу из другой группы ресурсов. Конечная точка подключения клиента Service Fabric и конечная точка [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) указывают на полное доменное имя DNS-сервера статического IP-адреса.
+После развертывания вы можете увидеть, что подсистема балансировки нагрузки привязана к общедоступному статическому IP-адресу из другой группы ресурсов. Конечная точка подключения клиента Service Fabric и конечная точка [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) указывают на полное доменное имя DNS статического IP-адреса.
 
 <a id="internallb"></a>
 ## <a name="internal-only-load-balancer"></a>Подсистема балансировки нагрузки только для внутреннего использования
@@ -361,7 +361,7 @@ DnsSettings              : {
                     ],
     ```
 
-6. В ресурсе `Microsoft.ServiceFabric/clusters` измените значение параметра `managementEndpoint`, указав адрес внутренней подсистемы балансировки нагрузки. При использовании защищенного кластера обязательно измените *http://* на *https://* . (Обратите внимание, что этот шаг применяется только к кластерам Service Fabric. Если вы используете масштабируемый набор виртуальных машин, то пропустите этот шаг.)
+6. В ресурсе `Microsoft.ServiceFabric/clusters` измените значение параметра `managementEndpoint`, указав адрес внутренней подсистемы балансировки нагрузки. При использовании защищенного кластера обязательно измените *http://* на *https://*. (Обратите внимание, что этот шаг применяется только к кластерам Service Fabric. Если вы используете масштабируемый набор виртуальных машин, то пропустите этот шаг.)
 
     ```json
                     "fabricSettings": [],

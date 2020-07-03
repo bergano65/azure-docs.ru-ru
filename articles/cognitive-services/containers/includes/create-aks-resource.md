@@ -3,18 +3,18 @@ title: Создание ресурса кластера Azure Kubernetes Service
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как создать ресурс Azure Kubernetes Service (AKS).
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/21/2019
-ms.author: dapine
-ms.openlocfilehash: 4e3102912e88ef904fed3e680f8cdd23242b1f17
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: d01245a76c5210a1843307b543f98d4f1d59d2cc
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383422"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80877856"
 ---
 ## <a name="create-an-azure-kubernetes-service-cluster-resource"></a>Создание ресурса кластера Azure Kubernetes Service
 
@@ -22,13 +22,13 @@ ms.locfileid: "74383422"
 
 1. На вкладке **основы** введите следующие сведения.
 
-    |Настройка|Значение|
+    |Параметр|Значение|
     |--|--|
-    |подписку|Выберите соответствующую подписку.|
+    |Подписка|Выберите соответствующую подписку.|
     |Группа ресурсов|Выберите доступную группу ресурсов.|
     |Имя кластера Kubernetes|Введите имя (в нижнем регистре).|
     |Регион|Выберите ближайшее расположение.|
-    |Версия Kubernetes|Любое значение помечено как **(по умолчанию)** .|
+    |Версия Kubernetes|Любое значение помечено как **(по умолчанию)**.|
     |Префикс DNS-имени|Создается автоматически, но можно переопределить.|
     |Размер узла|Стандартные DS2 v2:<br>`2 vCPUs`, `7 GB`|
     |Число узлов|Оставьте ползунок в значении по умолчанию.|
@@ -37,10 +37,10 @@ ms.locfileid: "74383422"
 1. На вкладке **Проверка подлинности** оставьте **субъект-служба** и включите для параметра **RBAC** значения по умолчанию.
 1. На вкладке **Сетевые подключения** введите следующие параметры.
 
-    |Настройка|Значение|
+    |Параметр|Применение|
     |--|--|
     |Маршрутизация приложений HTTP|Нет|
-    |Конфигурация сети|базовая;|
+    |Конфигурация сети|Basic|
 
 1. На вкладке **мониторинг** убедитесь, что для параметра **включить мониторинг контейнеров** задано значение **Да**, и оставьте **log Analytics рабочей области** в качестве значения по умолчанию.
 1. На вкладке **теги** оставьте в поле пары имя-значение пустыми.

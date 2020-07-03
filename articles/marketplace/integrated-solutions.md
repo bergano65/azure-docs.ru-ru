@@ -1,19 +1,18 @@
 ---
 title: Интегрированные решения в Azure Marketplace
 description: Интегрированные решения в Azure Marketplace и AppSource
-services: Azure, Marketplace, Compute, Storage, Networking
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 12/16/2019
-ms.author: v-chjen
-ms.openlocfilehash: 11f1504e8bd57fe34eb7acdc50598403225adcd9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.topic: conceptual
+ms.date: 04/15/2020
+ms.author: dsindona
+ms.openlocfilehash: 4c32fe80b681e6d82d40b0f5c94d5e9288f72cd6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427180"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81684399"
 ---
 # <a name="integrated-solutions-in-microsoft-appsource-and-azure-marketplace"></a>Интегрированные решения в Microsoft AppSource и Azure Marketplace
 
@@ -33,11 +32,11 @@ ms.locfileid: "75427180"
 
 Дополнительные сведения см. в статье [Публикация интегрированного решения](https://docs.microsoft.com/azure/marketplace/integrated-solutions-for-publishers).
 
-## <a name="submit-a-nomination"></a>Отправка предварительного утверждения
+## <a name="submit-a-nomination"></a>Подайте заявку.
 
 Партнеры, желающие участвовать в программе, должны распознать других партнеров, с которыми они хотят работать. Они должны заполнить [форму встроенных решений предварительного утверждения](https://assetsprod.microsoft.com/mpn/integrated-solutions-partner-nomination.docx). Группа разработчиков интегрированных решений просматривает предварительного утверждения и выполняет следующие действия в течение 10 рабочих дней. Команда предоставляет утверждение и дальнейшие действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы найти интегрированные решения и подключиться к этим партнерам, посетите их следующие списки:
 
@@ -50,4 +49,4 @@ ms.locfileid: "75427180"
 * [Быстрый запуск консолидации центра обработки данных](https://azuremarketplace.microsoft.com/marketplace/consulting-services/rivermeadowsoftwareinc.rapid-datacenter-consolidation-jumpstart?flightCodes=100discovermigrate)
 * [Девицетоне IoT для службы связанных полей](https://azuremarketplace.microsoft.com/marketplace/apps/marketplaceprodware.devicetone_iot_for_connected_field_service?tab=Overview)
 * [Одновременном: единое решение для управления маркетингом](https://appsource.microsoft.com/marketplace/consulting-services/barhead_solutions.unison_p2p?pub_source=email&pub_status=success)
-* [Интеллектуальные M & комплексная экспертиза](https://azuremarketplace.microsoft.com/marketplace/consulting-services/avanadeinc.intelligent_ma_due_diligence)
+* [Интеллектуальные M&комплексная экспертиза](https://azuremarketplace.microsoft.com/marketplace/consulting-services/avanadeinc.intelligent_ma_due_diligence)

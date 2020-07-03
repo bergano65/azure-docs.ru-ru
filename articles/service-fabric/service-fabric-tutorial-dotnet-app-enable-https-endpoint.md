@@ -4,14 +4,14 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 077c2ab67efa51542baa3048eb678fa22b0bc2eb
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: b9e1800d07d418ff385f2c5e7af112b170e3fd44
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614083"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780204"
 ---
-# <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство. Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
+# <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
 Это руководство представляет собой первую часть цикла.  Вы узнаете, как включить HTTPS в службе ASP.NET Core, работающей в Service Fabric. Когда вы закончите, у вас будет приложение для голосования с внешним веб-интерфейсом ASP.NET Core с поддержкой HTTPS, прослушивающего порт 443. Если вы не хотите вручную создавать приложение для голосования в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md), вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
 
@@ -20,7 +20,7 @@ ms.locfileid: "75614083"
 > [!div class="checklist"]
 > * Определение конечной точки HTTPS в службе.
 > * Настройка Kestrel для использования HTTPS
-> * Настройка SSL-сертификата на узлах удаленного кластера.
+> * Настройка TLS/SSL-сертификата на узлах удаленного кластера
 > * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
 > * Открытие порта 443 в подсистеме балансировки нагрузки Azure
 > * Развертывание приложения в удаленном кластере.
@@ -36,12 +36,12 @@ ms.locfileid: "75614083"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Установите Visual Studio 2019](https://www.visualstudio.com/) (15.5 или более поздней версии), а также рабочие нагрузки **Разработка для Azure** и **ASP.NET и разработка веб-приложений**.
+* [Установите Visual Studio 2019](https://www.visualstudio.com/) версии 16.5 (или выше), а также рабочие нагрузки **Разработка для Azure** и **ASP.NET и разработка веб-приложений**.
 * [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 
 ## <a name="obtain-a-certificate-or-create-a-self-signed-development-certificate"></a>Получение сертификата или создание самозаверяющего сертификат разработки
@@ -128,7 +128,7 @@ serviceContext =>
                     int port = serviceContext.CodePackageActivationContext.GetEndpoint("EndpointHttps").Port;
                     opt.Listen(IPAddress.IPv6Any, port, listenOptions =>
                     {
-                        listenOptions.UseHttps(GetHttpsCertificateFromStore());
+                        listenOptions.UseHttps(FindMatchingCertificateBySubject());
                         listenOptions.NoDelay = true;
                     });
                 })
@@ -156,27 +156,42 @@ serviceContext =>
 Имейте в виду, что при локальном развертывании на `localhost` предпочтительнее использовать CN = localhost, чтобы избежать исключений при проверке подлинности.
 
 ```csharp
-private X509Certificate2 GetHttpsCertificateFromStore()
+private X509Certificate2 FindMatchingCertificateBySubject(string subjectCommonName)
 {
     using (var store = new X509Store(StoreName.My, StoreLocation.LocalMachine))
     {
-        store.Open(OpenFlags.ReadOnly);
+        store.Open(OpenFlags.OpenExistingOnly | OpenFlags.ReadOnly);
         var certCollection = store.Certificates;
-        var currentCerts = certCollection.Find(X509FindType.FindBySubjectDistinguishedName, "CN=<your_CN_value>", false);
+        var matchingCerts = new X509Certificate2Collection();
+    
+    foreach (var enumeratedCert in certCollection)
+    {
+      if (StringComparer.OrdinalIgnoreCase.Equals(subjectCommonName, enumeratedCert.GetNameInfo(X509NameType.SimpleName, forIssuer: false))
+        && DateTime.Now < enumeratedCert.NotAfter
+        && DateTime.Now >= enumeratedCert.NotBefore)
+        {
+          matchingCerts.Add(enumeratedCert);
+        }
+    }
+
+        if (matchingCerts.Count == 0)
+    {
+        throw new Exception($"Could not find a match for a certificate with subject 'CN={subjectCommonName}'.");
+    }
         
-        if (currentCerts.Count == 0)
-                {
-                    throw new Exception("Https certificate is not found.");
-                }
-        
-        return currentCerts[0];
+        return matchingCerts[0];
     }
 }
+
+
 ```
 
-## <a name="give-network-service-access-to-the-certificates-private-key"></a>Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
+## <a name="grant-network-service-access-to-the-certificates-private-key"></a>Предоставление службе NETWORK SER VICE доступа к закрытому ключу сертификата
 
 На предыдущем шаге вы импортировали сертификат в хранилище `Cert:\LocalMachine\My` на компьютере разработки.  Теперь нужно предоставить доступ к закрытому ключу сертификата учетной записи, из которой запускается служба (по умолчанию NETWORK SERVICE). Этот шаг можно выполнить вручную (используя средство certlm.msc), но лучше автоматически запустить скрипт PowerShell, [настроив скрипт запуска](service-fabric-run-script-at-service-startup.md) в **SetupEntryPoint** манифеста службы.
+
+>[!NOTE]
+> Service Fabric поддерживает объявление сертификатов конечной точки по отпечатку или общему имени субъекта. В этом случае среда выполнения настроит привязку и список управления доступом (ACL) закрытого ключа сертификата для удостоверения, от имени которого выполняется служба. Среда выполнения также будет отслеживать изменения и продления сертификата и будет вносить изменения в список ACL для соответствующего закрытого ключа.
 
 ### <a name="configure-the-service-setup-entry-point"></a>Настройка точки входа установки службы
 
@@ -385,7 +400,7 @@ $slb | Set-AzLoadBalancer
 
 Сохраните все файлы, переключитесь с версии для отладки на версию выпуска и нажмите F6 для повторного создания.  Щелкните правой кнопкой мыши проект в **приложении для голосования** и выберите пункт **Опубликовать**. Выберите конечную точку подключения кластера, созданного в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md) или выберите другой кластер.  Нажмите кнопку **Опубликовать**, чтобы опубликовать приложение на удаленном кластере.
 
-При развертывании приложения откройте браузер и выберите [https://mycluster.region.cloudapp.azure.com:443](https://mycluster.region.cloudapp.azure.com:443) (обновите URL-адрес, используя конечную точку подключения кластера). Если вы используете самозаверяющий сертификат, вы увидите предупреждение о том, что ваш компьютер не доверяет безопасности этого веб-сайта.  Перейдите к веб-странице.
+При развертывании приложения откройте веб-браузер и перейдите по адресу `https://mycluster.region.cloudapp.azure.com:443` (обновите URL-адрес, используя конечную точку подключения кластера). Если вы используете самозаверяющий сертификат, вы увидите предупреждение о том, что ваш компьютер не доверяет безопасности этого веб-сайта.  Перейдите к веб-странице.
 
 ![Приложение для голосования][image3]
 
@@ -396,7 +411,7 @@ $slb | Set-AzLoadBalancer
 > [!div class="checklist"]
 > * Определение конечной точки HTTPS в службе.
 > * Настройка Kestrel для использования HTTPS
-> * Настройка SSL-сертификата на узлах удаленного кластера.
+> * Настройка TLS/SSL-сертификата на узлах удаленного кластера
 > * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
 > * Открытие порта 443 в подсистеме балансировки нагрузки Azure
 > * Развертывание приложения в удаленном кластере.

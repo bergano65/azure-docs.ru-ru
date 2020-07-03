@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/24/2018
 ms.author: allensu
-ms.openlocfilehash: 6bc7f45d84d525156a3d25bdceef4d1012844afa
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: d2966f32fcf7f8be2a93d1639f0a63f49768c306
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75931988"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80981857"
 ---
 # <a name="overview-of-ipv6-for-azure-load-balancer"></a>Общие сведения о поддержке IPv6 для Azure Load Balancer
 
@@ -40,7 +40,7 @@ ms.locfileid: "75931988"
 
 После развертывания Интернет-клиент с поддержкой IPv4 или IPv6 может взаимодействовать с общедоступными IPv4 или IPv6-адресами (или именами узлов) балансировщика нагрузки Azure Load Balancer для Интернета. Балансировщик нагрузки маршрутизирует пакеты IPv6 на частные IPv6-адреса виртуальных машин с помощью преобразования сетевых адресов (NAT). Интернет-клиент с поддержкой IPv6 не может напрямую взаимодействовать с IPv6-адресами виртуальных машин.
 
-## <a name="features"></a>Возможности
+## <a name="features"></a>Функции
 
 Встроенная поддержка IPv6 для виртуальных машин, развернутых с помощью Azure Resource Manager, предоставляет следующие возможности:
 
@@ -81,8 +81,9 @@ ms.locfileid: "75931988"
 * Изменение параметра loadDistributionMethod для IPv6 **пока не поддерживается**.
 * Зарезервированные IP-адреса IPv6 (где IPAllocationMethod = static) **пока не поддерживаются**.
 * NAT64 (преобразование IPv6 в IPv4) не поддерживается.
+* Подключение дополнительного сетевого адаптера, ссылающегося на подсеть IPv6 к внутреннему пулу, **в настоящее время не поддерживается**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как выполнять развертывание балансировщика нагрузки с IPv6.
 

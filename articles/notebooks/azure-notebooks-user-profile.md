@@ -4,25 +4,25 @@ description: Как создать профиль пользователя и и
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.openlocfilehash: d90eebf1b7b463e038bc5e54f51df0eb6ca746c4
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75646285"
 ---
 # <a name="your-profile-and-user-id-for-azure-notebooks-preview"></a>Ваш профиль и идентификатор пользователя для предварительной версии Azure Notebook Preview
 
 В эффективном пространстве для совместной работы службы "Записные книжки Azure" ваш профиль пользователя представляет публичный образ для других пользователей:
 
-[![Страница профиля в службе "Записные книжки Azure"](media/accounts/profile-page.png)](media/accounts/profile-page.png#lightbox)
+[![Страница профиля записных книжек Azure](media/accounts/profile-page.png)](media/accounts/profile-page.png#lightbox)
 
 Идентификатор пользователя является частью URL-адреса, используемого для предоставления общего доступа к проектам и записным книжкам. Ниже перечислены различные шаблоны URL-адресов:
 
-- `https://notebooks.azure.com/<user_id>`: страница профиля.
-- `https://notebooks.azure.com/<user_id>/projects`: ваши проекты. Вы видите все проекты, в то время как другие пользователи видят только общие.
-- `https://notebooks.azure.com/<user_id>/projects/<project_id>`: файлы проекта.
-- `https://notebooks.azure.com/<user_id>/projects/<project_id>/clones`— клоны конкретных проектов.
-- `https://notebooks.azure.com/<user_id>/projects/<project_id>/html/<notebook>.ipynb`: предварительный просмотр HTML конкретной записной книжки или файла.
+- `https://notebooks.azure.com/<user_id>`: Страница профиля.
+- `https://notebooks.azure.com/<user_id>/projects`: Ваши проекты. Вы видите все проекты, в то время как другие пользователи видят только общие.
+- `https://notebooks.azure.com/<user_id>/projects/<project_id>`: Файлы проекта.
+- `https://notebooks.azure.com/<user_id>/projects/<project_id>/clones`: Клоны конкретных проектов.
+- `https://notebooks.azure.com/<user_id>/projects/<project_id>/html/<notebook>.ipynb`: Предварительный просмотр HTML конкретной записной книжки или файла.
 
 [!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
@@ -49,7 +49,7 @@ ms.locfileid: "75646285"
 
 Чтобы изменить профиль, воспользуйтесь командой **Edit Profile Information** (Изменить сведения профиля) на странице профиля. Ниже приведены разделы профиля.
 
-| Section | Контент |
+| Раздел | Содержимое |
 | --- | --- |
 | Profile photo (Фотография профиля) | Изображение, отображаемое на странице профиля. |
 | Сведения об учетной записи | Отображаемое имя, идентификатор пользователя и публичная учетная запись электронной почты. Учетная запись электронной почты предоставляет другим пользователям способ связи с вами и может отличаться от почты [учетной записи](azure-notebooks-user-account.md), которую вы используете для входа в службу "Записные книжки Azure". |

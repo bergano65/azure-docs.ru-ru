@@ -42,6 +42,18 @@
     - name: 'Использование Flask для перевода текста, анализа тональности и синтезирования речи'
       maintainContext: true
       href: 'https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis'
+    - name: Извлечение сведений в Excel с помощью Power Automate
+      href: tutorials/extract-excel-information.md
+- name: Основные понятия
+  items:
+    - name: Типы именованных сущностей
+      href: named-entity-types.md
+    - name: Поддержка языков
+      href: language-support.md
+    - name: Смещение текста
+      href: concepts/text-offsets.md
+    - name: Ограничения данных
+      href: concepts/data-limits.md
 - name: Практические руководства
   items:
     - name: Вызов API "Анализ текста"
@@ -83,7 +95,7 @@
             - name: .NET
               href: 'https://aka.ms/azsdk-net-textanalytics-ref-docs'
             - name: Python
-              href: 'https://azuresdkdocs.blob.core.windows.net/$web/python/azure-ai-textanalytics/1.0.0b1/azure.ai.textanalytics.html'
+              href: 'https://aka.ms/azsdk-python-textanalytics-ref-docs'
             - name: Java
               href: 'https://aka.ms/azsdk-java-textanalytics-ref-docs'
             - name: Node.js
@@ -102,16 +114,10 @@
               href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v2.1/textanalytics'
 - name: Ресурсы
   items:
-    - name: Определение тональности комментариев в группе Yammer с помощью MS Flow
-      href: 'https://docs.microsoft.com/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure'
     - name: Внешние материалы и материалы сообщества
       href: text-analytics-resource-external-community.md
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: text-analytics-resource-faq.md
-    - name: Поддержка языков и региональных параметров
-      href: language-support.md
-    - name: Типы именованных сущностей
-      href: named-entity-types.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/'
     - name: Доступность по регионам
@@ -120,9 +126,7 @@
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/text-analytics-api'
-    - name: Ключ подписки
-      href: 'https://azure.microsoft.com/try/cognitive-services/?api=text-analytics'
     - name: Тестирование
       href: 'https://azure.microsoft.com/services/cognitive-services/text-analytics/'
-    - name: UserVoice
+    - name: Отправка отзывов
       href: 'https://cognitive.uservoice.com/forums/555922-text-analytics'

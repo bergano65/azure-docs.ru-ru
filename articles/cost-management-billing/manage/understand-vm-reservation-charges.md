@@ -1,21 +1,17 @@
 ---
-title: Сведения о скидках на зарезервированные экземпляры виртуальной машины Azure | Документация Майкрософт
+title: Сведения о скидках на Azure Reserved VM Instances
 description: Узнайте, как скидка на зарезервированные экземпляры применяется к работающим виртуальным машинам.
 author: yashesvi
-manager: yashar
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 9ebc418327d8c73198d43d3c40e14d48c73ad209
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: ca54d5a0d196cbc39256668f21e19bdf9162dfbf
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76290246"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79202796"
 ---
 # <a name="how-the-azure-reservation-discount-is-applied-to-virtual-machines"></a>Применения скидки на резервирование Azure к виртуальным машинам
 

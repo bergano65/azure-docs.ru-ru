@@ -13,21 +13,21 @@ ms.workload: infrastructure-services
 ms.date: 03/29/2017
 ms.author: rohink
 ms.openlocfilehash: 3d8f899a7899243129d31c2620a51dc764a8e917
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76938665"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79250937"
 ---
 # <a name="traffic-manager-endpoints"></a>Конечные точки диспетчера трафика
 
-С помощью диспетчера трафика Microsoft Azure можно управлять распределением сетевого трафика среди приложений, развернутых в различных центрах обработки данных. В диспетчере трафика каждое развертывание приложения необходимо настроить в качестве конечной точки. Когда диспетчер трафика получает запрос DNS, затем выбирает доступную конечную точку и возвращает ее в ответе DNS. Выбор конечной точки зависит от ее текущего состояния и метода маршрутизации трафика. Дополнительные сведения см. в статье [Как работает диспетчер трафика](traffic-manager-how-it-works.md).
+С помощью диспетчера трафика Microsoft Azure можно управлять распределением сетевого трафика среди приложений, развернутых в различных центрах обработки данных. В диспетчере трафика каждое развертывание приложения необходимо настроить в качестве конечной точки. Когда диспетчер трафика получает запрос DNS, затем выбирает доступную конечную точку и возвращает ее в ответе DNS. Выбор конечной точки зависит от ее текущего состояния и метода маршрутизации трафика. Дополнительные сведения см. в разделе [как работает диспетчер трафика](traffic-manager-how-it-works.md).
 
 Диспетчер трафика поддерживает три типа конечных точек:
 
 * **конечные точки Azure** , используемые для служб, размещенных в Azure;
-* **Внешние конечные точки** используются для адресов IPv4/IPv6, полных доменных имен или для служб, размещенных за пределами Azure, которые могут быть либо локальными, либо разными поставщиками услуг размещения.
-* **вложенные конечные точки** , используемые для объединения профилей диспетчера трафика, что позволяет создавать более гибкие и эффективные схемы маршрутизации трафика для поддержки потребностей более крупных и сложных развертываний.
+* **Внешние конечные точки**, используемые для IPv4- или IPv6-адресов, полных доменных имен или для служб, размещенных за пределами Azure: локально или с помощью другого поставщика услуг размещения.
+* **Вложенные конечные точки** используются для объединения профилей диспетчера трафика с целью создания более гибких схем маршрутизации трафика для поддержки потребностей более крупных и более сложных развертываний.
 
 Разные типы конечных точек можно объединять в одном профиле диспетчера трафика без каких-либо ограничений. В каждом профиле может содержаться любое сочетание типов конечных точек.
 
@@ -91,20 +91,20 @@ PublicIPAddress — это ресурсы Azure Resource Manager. Они отс
 
 Если все конечные точки в профиле отключены или отключен сам профиль, диспетчер трафика в ответ на новый запрос DNS отправляет ответ NXDOMAIN.
 
-## <a name="faqs"></a>Часто задаваемые вопросы
+## <a name="faqs"></a>Частые вопросы
 
-* [Можно ли использовать диспетчер трафика с конечными точками из нескольких подписок?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-endpoints-from-multiple-subscriptions)
+* [Можно ли использовать в диспетчере трафика конечные точки из нескольких подписок?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-endpoints-from-multiple-subscriptions)
 
 * [Можно ли использовать диспетчер трафика с промежуточными слотами облачной службы?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-cloud-service-staging-slots)
 
-* [Поддерживает ли диспетчер трафика конечные точки IPv6?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-ipv6-endpoints)
+* [Поддерживает ли диспетчер трафика конечные точки IP версии 6?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-ipv6-endpoints)
 
-* [Можно ли использовать диспетчер трафика с несколькими веб-приложениями в одном регионе?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-more-than-one-web-app-in-the-same-region)
+* [Можно ли использовать в диспетчере трафика несколько веб-приложений в одном и том же регионе?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-more-than-one-web-app-in-the-same-region)
 
-* [Разделы справки переместить конечные точки Azure профиля диспетчера трафика в другую группу ресурсов?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group-or-subscription)
+* [Как переместить конечные точки Azure профиля диспетчера трафика в другую группу ресурсов?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group-or-subscription)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Узнайте больше о том, [как работает диспетчер трафика](traffic-manager-how-it-works.md).
+* Узнайте, [как работает диспетчер трафика](traffic-manager-how-it-works.md).
 * Узнайте больше о [мониторинге конечных точек и автоматической отработке отказов](traffic-manager-monitoring.md)диспетчера трафика.
 * Узнайте больше о [методах маршрутизации трафика](traffic-manager-routing-methods.md)в диспетчере трафика.

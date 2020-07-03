@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением Splunk Enterprise and Splunk Cloud | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложениями Splunk Enterprise и Splunk Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Splunk Enterprise и Splunk Cloud.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb0941a6cdde5b60b71da6f58ea6b0fd2ccbb262
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: d64307c4f91839c466b5f3f495cad8d7410ed364
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160966"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81867310"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-splunk-enterprise-and-splunk-cloud"></a>Руководство по Интеграция Azure Active Directory с приложением Splunk Enterprise and Splunk Cloud
+# <a name="tutorial-azure-active-directory-integration-with-splunk-enterprise-and-splunk-cloud"></a>Руководство. Интеграция Azure Active Directory с приложениями Splunk Enterprise и Splunk Cloud
 
 В этом руководстве описано, как интегрировать Splunk Enterprise и Splunk Cloud с Azure Active Directory (Azure AD).
 Интеграция Splunk Enterprise и Splunk Cloud с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73160966"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложениями Splunk Enterprise и Splunk Cloud, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Splunk Enterprise and Splunk Cloud с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,14 +106,14 @@ ms.locfileid: "73160966"
 
     ![Сведения о домене Splunk Enterprise and Splunk Cloud и URL-адресах единого входа](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<splunkserverUrl>/en-US/app/launcher/home`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<splunkserverUrl>/en-US/app/launcher/home`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `<splunkserverUrl>`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<splunkserver>/saml/acs`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Splunk Enterprise и Splunk Cloud](https://www.splunk.com/about-us/contact.html#tabs/customer-support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Splunk Enterprise и Splunk Cloud](https://www.splunk.com/en_us/about-splunk/contact-us.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -121,7 +121,7 @@ ms.locfileid: "73160966"
 
 ### <a name="configure-splunk-enterprise-and-splunk-cloud-single-sign-on"></a>Настройка единого входа в Splunk Enterprise and Splunk Cloud
 
-Для настройки единого входа на стороне **Splunk Enterprise and Splunk Cloud** необходимо отправить загруженный **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Splunk Enterprise and Splunk Cloud](https://www.splunk.com/about-us/contact.html#tabs/customer-support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Для настройки единого входа на стороне **Splunk Enterprise and Splunk Cloud** необходимо отправить загруженный **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Splunk Enterprise and Splunk Cloud](https://www.splunk.com/en_us/about-splunk/contact-us.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -176,7 +176,7 @@ ms.locfileid: "73160966"
 
 ### <a name="create-splunk-enterprise-and-splunk-cloud-test-user"></a>Создание тестового пользователя Splunk Enterprise and Splunk Cloud
 
-В этом разделе описано, как создать пользователя Britta Simon в Splunk Enterprise и Splunk Cloud. Чтобы добавить пользователей на платформу Splunk Enterprise and Splunk Cloud, обратитесь к  [группе поддержки Splunk Enterprise and Splunk Cloud](https://www.splunk.com/about-us/contact.html#tabs/customer-support). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Splunk Enterprise и Splunk Cloud. Чтобы добавить пользователей на платформу Splunk Enterprise and Splunk Cloud, обратитесь к  [группе поддержки Splunk Enterprise and Splunk Cloud](https://www.splunk.com/en_us/about-splunk/contact-us.html). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

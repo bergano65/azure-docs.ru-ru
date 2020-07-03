@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: scottwhi
 ms.openlocfilehash: b6bc323f4e8deaf975c292f92d862b1fbe0e2714
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60510128"
 ---
 # <a name="default-insights-tag"></a>Тег аналитических сведений по умолчанию
@@ -100,7 +100,7 @@ ms.locfileid: "60510128"
 
 ## <a name="pagesincluding-insight"></a>Аналитические сведения PagesIncluding
 
-Аналитические сведения PagesIncluding возвращают список веб-страниц с указанным изображением. Это фактически список `Image` объектов и `hostPageUrl` поле содержит URL-адрес веб-страницу, которая включает образ. Пример использования см. в разделе [пример insight PagesIncluding](./bing-insights-usage.md#pagesincluding-insight-example).
+Аналитические сведения PagesIncluding возвращают список веб-страниц с указанным изображением. На самом деле это список `Image` объектов, а `hostPageUrl` поле содержит URL-адрес веб-страницы, содержащей изображение. Пример использования см. в разделе [Пример пажесинклудинг Insight](./bing-insights-usage.md#pagesincluding-insight-example).
 
 ```json
       {
@@ -139,7 +139,7 @@ ms.locfileid: "60510128"
 
 ## <a name="shoppingsources-insight"></a>Аналитические сведения ShoppingSources
 
-Аналитические сведения ShoppingSources содержат список веб-сайтов, на которых пользователь может купить товар, изображенный на рисунке. Список предложений включает URL-адрес веб-страницы, где пользователь может приобрести элемента, цену элемента и оценку или отзыв сведения. Пример использования ShoppingSources см. [здесь](./bing-insights-usage.md#shoppingsources-insight-example).
+Аналитические сведения ShoppingSources содержат список веб-сайтов, на которых пользователь может купить товар, изображенный на рисунке. Список предложений включает URL-адрес веб-страницы, с которой пользователь может купить товар, цену элемента, рейтинг или сведения об отзыве. Пример использования ShoppingSources см. [здесь](./bing-insights-usage.md#shoppingsources-insight-example).
 
 ```json
       {
@@ -168,7 +168,7 @@ ms.locfileid: "60510128"
 
 ## <a name="moresizes-insight"></a>Аналитические сведения MoreSizes
 
-Анализ MoreSizes определяет число (больше или меньше) размеров изображения, которое Bing найти в Интернете (см. в разделе `availableSizesCount` поля):
+Моресизес Insights определяет число размеров (большего или меньшего) изображения, которое обнаруживает Bing в Интернете (см. `availableSizesCount` поле):
 
 ```json
       {
@@ -203,7 +203,7 @@ ms.locfileid: "60510128"
 
 ## <a name="visualsearch-insight"></a>Аналитические сведения VisualSearch
 
-Аналитические сведения VisualSearch предоставляют список изображений, визуально похожих на исходное изображение (с содержимым похожим на содержимое исходного изображения). Пример использования см. в разделе [пример insight VisualSearch](./bing-insights-usage.md#visualsearch-insight-example).
+Аналитические сведения VisualSearch предоставляют список изображений, визуально похожих на исходное изображение (с содержимым похожим на содержимое исходного изображения). Пример использования см. в разделе [Пример висуалсеарч Insight](./bing-insights-usage.md#visualsearch-insight-example).
 
 ```json
       {
@@ -243,7 +243,7 @@ ms.locfileid: "60510128"
 
 ## <a name="recipes-insight"></a>Аналитические сведения Recipes
 
-Аналитические сведения Recipes содержат список веб-страниц, на которых есть инструкции по приготовлению блюда, изображенного на рисунке. Пример использования см. в разделе [пример insight рецепты](./bing-insights-usage.md#recipes-insight-example).
+Аналитические сведения Recipes содержат список веб-страниц, на которых есть инструкции по приготовлению блюда, изображенного на рисунке. Пример использования см. в разделе [Пример рецепта](./bing-insights-usage.md#recipes-insight-example).
 
 ```json
       {
@@ -278,7 +278,7 @@ ms.locfileid: "60510128"
 
 ## <a name="imagebyid-insight"></a>Аналитические сведения ImageById
 
-Предоставляет анализ ImageById `Image` объект изображения, которое вы запросили insights для:
+Имажебид Insights предоставляет `Image` объект образа, для которого вы запросили аналитику:
 
 ```json
       {
@@ -377,7 +377,7 @@ ms.locfileid: "60510128"
 
 ## <a name="relatedsearches-insight"></a>Аналитические сведения RelatedSearches
 
-Аналитические сведения RelatedSearches возвращают список связанных поисковых запросов, выполненных другими пользователями (с учетом условий поиска, заданных другими пользователями). Пример использования см. в разделе [пример insight RelatedSearches](./bing-insights-usage.md#relatedsearches-insight-example).
+Аналитические сведения RelatedSearches возвращают список связанных поисковых запросов, выполненных другими пользователями (с учетом условий поиска, заданных другими пользователями). Пример использования см. в разделе [Пример релатедсеарчес Insight](./bing-insights-usage.md#relatedsearches-insight-example).
 
 ```json
       {
@@ -400,7 +400,7 @@ ms.locfileid: "60510128"
 
 ## <a name="documentlevelsuggestions-insight"></a>Аналитические сведения DocumentLevelSuggestions
 
-Анализ DocumentLevelSuggestions предоставляет список предлагаемых поисковый запрос на основе содержимого образа:
+Документлевелсугжестионс Insight содержит список предлагаемых условий поиска на основе содержимого изображения:
 
 ```json
       {
@@ -421,8 +421,8 @@ ms.locfileid: "60510128"
       }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Ознакомьтесь с [использования примеров из Bing insights](bing-insights-usage.md) чтобы увидеть, как Bing может отображаться visual insights.
+Ознакомьтесь с [примерами использования Bing Insights](bing-insights-usage.md) , чтобы увидеть, как Bing может отображать визуальную аналитику.
 
-Сведения о том, как быстро создать первый запрос, см. в кратких руководствах по [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node.js](quickstarts/nodejs.md) | [Python](quickstarts/python.md).
+Чтобы быстро приступить к работе с первым запросом, см. Краткие руководства: [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node. js](quickstarts/nodejs.md) | [Python](quickstarts/python.md).

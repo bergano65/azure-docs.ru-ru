@@ -9,10 +9,10 @@ metadata:
   ms.service: postgresql
   ms.topic: landing-page
   ms.openlocfilehash: 4deeec3686d2e3b0a150b74a222f7f1eab0a93fd
-  ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/12/2019
+  ms.lasthandoff: 03/25/2020
   ms.locfileid: "73932228"
 landingContent:
 - title: Сведения о Базе данных Azure для PostgreSQL
@@ -103,7 +103,7 @@ landingContent:
       url: connect-ruby.md
     - text: Подключение с использованием PHP
       url: connect-php.md
-    - text: Подключение с использованием .Net
+    - text: Подключение с использованием .NET
       url: connect-csharp.md
     - text: Подключение с использованием Go
       url: connect-go.md

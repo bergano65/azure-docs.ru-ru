@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со SmarterU | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory со SmarterU | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SmarterU.
 services: active-directory
 documentationCenter: na
@@ -15,17 +15,17 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 712e7bcf513592f97950902faff2f7754093b9fc
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 9e44aecc5015986079afb3190101cdaabc4a6874
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549297"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82981975"
 ---
+# <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Руководство по Интеграция Azure Active Directory со SmarterU
+
 > [!NOTE]
 > Процесс интеграции SmarterU с Azure Active Directory также задокументирован и поддерживается в [Справочной системе SmarterU](https://help.smarteru.com/ID2053086).
-
-# <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Руководство. Интеграция Azure Active Directory со SmarterU
 
 В этом учебнике описано, как интегрировать SmarterU с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением SmarterU обеспечивает следующие преимущества.

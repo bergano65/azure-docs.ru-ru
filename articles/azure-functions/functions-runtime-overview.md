@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: anwestg
 ms.openlocfilehash: ab04aa4ca7f54e8de120d078a313c3096a350aa5
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74226628"
 ---
 # <a name="azure-functions-runtime-overview-preview"></a>Обзор среды выполнения Функций Azure (предварительная версия)
@@ -45,7 +45,7 @@ ms.locfileid: "74226628"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Установите [предварительную версию среды выполнения Функций Azure](https://aka.ms/azafrdoc).
+Установка [предварительной версии среда выполнения функций Azure](https://aka.ms/azafrdoc)
 
 <!--Image references-->
 [1]: ./media/functions-runtime-overview/AzureFunctionsRuntime_Portal.png

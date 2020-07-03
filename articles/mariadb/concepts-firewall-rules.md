@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 01/15/2020
-ms.openlocfilehash: a09d9ebe0defc970e1c3b9e74a25f23fe94e6634
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.date: 3/18/2020
+ms.openlocfilehash: 743e3f50d747993250399493d97fc2becab19319
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76157106"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79532048"
 ---
 # <a name="azure-database-for-mariadb-server-firewall-rules"></a>Правила брандмауэра сервера Базы данных Azure для MariaDB
 Брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -66,9 +66,9 @@ ms.locfileid: "76157106"
 
    * Получите статические IP-адреса для клиентских компьютеров, а затем добавьте IP-адреса как правила брандмауэра.
 
-* **IP-адрес сервера выглядит как общедоступный:** Подключения к серверу базы данных Azure для MariaDB направляются через общедоступный шлюз Azure. Однако фактический IP-адрес сервера защищен брандмауэром. Дополнительные сведения см. в статье об [архитектуре подключения](concepts-connectivity-architecture.md). 
+* **IP-адрес сервера выглядит как общедоступный:** Подключения к серверу базы данных Azure для MariaDB направляются через общедоступный шлюз Azure. Однако фактический IP-адрес сервера защищен брандмауэром. Дополнительные сведения см. в [статье Архитектура подключения](concepts-connectivity-architecture.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью портала Azure](./howto-manage-firewall-portal.md)
-- [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими с помощью Azure CLI](./howto-manage-firewall-cli.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure](./howto-manage-firewall-portal.md)
+- [Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI](./howto-manage-firewall-cli.md)
 - [Конечные точки службы виртуальной сети в базе данных Azure для MariaDB](./concepts-data-access-security-vnet.md)

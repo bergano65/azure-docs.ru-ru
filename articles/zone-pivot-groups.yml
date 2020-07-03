@@ -1,29 +1,5 @@
 ### YamlMime:ZonePivotGroups
 groups:
-- id: programming-languages-set-one
-  title: Языки программирования
-  prompt: Выбор языка программирования
-  pivots:
-  - id: programming-language-csharp
-    title: C#
-  - id: programming-language-java
-    title: Java
-  - id: programming-language-python
-    title: Python
-  - id: programming-language-nodejs
-    title: Node.js
-  - id: programming-language-go
-    title: Go
-- id: cogsvcs-text-analytics-features
-  title: Функции Анализа текста
-  prompt: Выбор предложения функции Анализа текста
-  pivots:
-  - id: text-analytics-key-phrase-extraction
-    title: Извлечение ключевых фраз
-  - id: text-analytics-language-detection
-    title: Распознавание языка
-  - id: text-analytics-sentiment-analysis
-    title: Анализ тональности
 - id: client-operating-system
   title: Языки программирования
   prompt: Выбор клиентской операционной системы
@@ -31,9 +7,31 @@ groups:
   - id: client-operating-system-linux
     title: Linux
   - id: client-operating-system-macos
-    title: MacOS
+    title: macOS
   - id: client-operating-system-windows
     title: Windows
+- id: URL-test-interface
+  title: Средство проверки URL-адресов
+  prompt: 'Выберите один из вариантов:'
+  pivots:
+  - id: url-test-tool-curl
+    title: cURL
+  - id: url-test-tool-postman
+    title: Postman
+- id: programming-languages-set-one
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-go
+    title: Go
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-python
+    title: Python
 - id: programming-languages-set-two
   title: Языки программирования
   prompt: Выбор языка программирования
@@ -56,10 +54,14 @@ groups:
     title: C#
   - id: programming-language-cpp
     title: C++
+  - id: programming-language-go
+    title: Go
   - id: programming-language-java
     title: Java
   - id: programming-language-python
     title: Python
+  - id: programming-language-javascript
+    title: JavaScript
 - id: programming-languages-set-four
   title: Языки программирования
   prompt: Выбор языка программирования
@@ -78,12 +80,12 @@ groups:
   pivots:
   - id: programming-language-csharp
     title: C#
-  - id: programming-language-python
-    title: Python
-  - id: programming-language-nodejs
-    title: Node.js
   - id: programming-language-go
     title: Go
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-python
+    title: Python
   - id: programming-language-ruby
     title: Ruby
 - id: programming-languages-set-six
@@ -92,10 +94,10 @@ groups:
   pivots:
   - id: programming-language-csharp
     title: C#
+  - id: programming-language-javascript
+    title: JavaScript
   - id: programming-language-python
     title: Python
-  - id: programming-language-nodejs
-    title: Node.js
 - id: programming-languages-set-seven
   title: Языки программирования
   prompt: Выбор языка программирования
@@ -104,28 +106,6 @@ groups:
     title: C#
   - id: programming-language-cpp
     title: C++
-- id: programming-languages-set-functions
-  title: Языки программирования
-  prompt: Выбор языка программирования
-  pivots:
-  - id: programming-language-csharp
-    title: C#
-  - id: programming-language-javascript
-    title: JavaScript
-  - id: programming-language-powershell
-    title: PowerShell
-  - id: programming-language-python
-    title: Python
-  - id: programming-language-typescript
-    title: TypeScript
-- id: URL-test-interface
-  title: Средство проверки URL-адресов
-  prompt: 'Выберите один из вариантов:'
-  pivots:
-  - id: url-test-tool-curl
-    title: cURL
-  - id: url-test-tool-postman
-    title: Postman
 - id: programming-languages-set-eight
   title: Языки программирования
   prompt: Выбор языка программирования
@@ -162,18 +142,48 @@ groups:
   pivots:
   - id: programming-language-csharp
     title: C#
-  - id: programming-language-python
-    title: Python
-  - id: programming-language-nodejs
-    title: Node.js
   - id: programming-language-java
     title: Java
-- id: programming-languages-set-functions01
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-python
+    title: Python
+- id: programming-languages-set-eleven
   title: Языки программирования
   prompt: Выбор языка программирования
   pivots:
   - id: programming-language-csharp
     title: C#
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+- id: programming-languages-set-fifteen
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-go
+    title: Go
+- id: cogsvcs-text-analytics-features
+  title: Функции Анализа текста
+  prompt: Выбор предложения функции Анализа текста
+  pivots:
+  - id: text-analytics-key-phrase-extraction
+    title: Извлечение ключевых фраз
+  - id: text-analytics-language-detection
+    title: Распознавание языка
+  - id: text-analytics-sentiment-analysis
+    title: Анализ тональности
+- id: programming-languages-set-functions
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-java
+    title: Java
   - id: programming-language-javascript
     title: JavaScript
   - id: programming-language-powershell
@@ -182,20 +192,272 @@ groups:
     title: Python
   - id: programming-language-typescript
     title: TypeScript
+- id: programming-languages-text-analytics
+  title: Языки программирования
+  prompt: Выберите язык программирования.
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-other
+    title: Другие языки…
 - id: programming-languages-set-diberry-3core
   title: Языки программирования
   prompt: Выбор языка программирования
   pivots:
   - id: programming-language-csharp
     title: C#
+  - id: programming-language-javascript
+    title: JavaScript
   - id: programming-language-python
     title: Python
-  - id: programming-language-nodejs
-    title: Node.js
+- id: java-build-tools-set
+  title: Инструменты сборки
+  prompt: Выбор средства сборки
+  pivots:
+  - id: java-build-tools-maven
+    title: Maven
+  - id: java-build-tools-gradle
+    title: Gradle
+- id: platforms-set-of-three
+  title: Платформы
+  prompt: Выберите платформу
+  pivots:
+  - id: platform-windows
+    title: Windows
+  - id: platform-linux
+    title: Linux
+  - id: platform-android
+    title: Android
+- id: programming-languages-set-twelve
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C+
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-objectivec
+    title: Objective-C
+- id: programming-languages-set-thirteen
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C+
+  - id: programming-language-java
+    title: Java
+- id: code-editors-set-one
+  title: Редакторы кода
+  prompt: Выбор редактора кода
+  pivots:
+  - id: code-editor-vscode
+    title: Visual Studio Code
+  - id: code-editor-visualstudio
+    title: Visual Studio
+- id: programming-languages-set-fourteen
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-more
+    title: Другие языки...
+- id: programming-languages-set-fifteen
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-go
+    title: Go
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-more
+    title: Другие языки...
+- id: programming-languages-set-sixteen
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-go
+    title: Go
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-more
+    title: Другие языки...
+- id: programming-languages-set-seventeen
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-more
+    title: Другие языки...
+- id: programming-languages-set-eighteen
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-go
+    title: Go
+  - id: programming-language-python
+    title: Python
+- id: programming-languages-set-two-with-js
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-more
+    title: Другие языки...
+- id: programming-languages-set-two-with-js-spx
+  title: Языки программирования
+  prompt: Выбор языка программирования или интерфейса командной строки
+  pivots:
+  - id: programmer-tool-spx
+    title: CLI
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-more
+    title: Другие языки...
+- id: programming-languages-set-two-with-js-go
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-go
+    title: Go
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-more
+    title: Другие языки...
+- id: programming-languages-set-two-with-js-go-spx
+  title: Языки программирования
+  prompt: Выбор языка программирования или интерфейса командной строки
+  pivots:
+  - id: programmer-tool-spx
+    title: CLI
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-go
+    title: Go
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-more
+    title: Другие языки...
+- id: programming-languages-speech-services-one-nomore
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-go
+    title: Go
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-javascript
+    title: JavaScript
+- id: programming-languages-speech-services-one-nomore-no-go
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-javascript
+    title: JavaScript
+- id: programming-languages-speech-services-nomore-variant
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-javascript
+    title: JavaScript
+  - id: programming-language-objectivec
+    title: Objective-C
+- id: programming-languages-set-nineteen
+  title: Языки программирования
+  prompt: Выбор языка программирования
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-cpp
+    title: C++
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-objectivec
+    title: Objective-C
 metadata:
-  ms.openlocfilehash: 033752fef517ff3e1903f02fcbaf263cae244c15
-  ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+  ms.openlocfilehash: 3888e33063df9251d2e53322e9372d79d15b4222
+  ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/04/2020
-  ms.locfileid: "76986127"
+  ms.lasthandoff: 05/22/2020
+  ms.locfileid: "83800461"

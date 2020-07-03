@@ -2,31 +2,25 @@
 title: Установка драйвера GPU для Azure серии N для Linux
 description: Как установить драйверы NVIDIA GPU для виртуальных машин серии N под управлением Linux в Azure
 services: virtual-machines-linux
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.assetid: d91695d0-64b9-4e6b-84bd-18401eaecdde
 ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: cynthn
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6ebc991d54ef902eb653cf2d99b2f74f18551568
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: cb2d5c43b8c04829dd6830126b7bc01bee07133b
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035623"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628198"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
-Чтобы воспользоваться преимуществами GPU виртуальных машин Azure серии N под управлением Linux, необходимо установить графические драйверы GPU NVIDIA. [Расширение драйвера GPU NVIDIA](../extensions/hpccompute-gpu-linux.md) устанавливает необходимые драйверы CUDA или GRID NVIDIA на виртуальную машину серии N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure CLI и шаблоны Azure Resource Manager. Сведения о поддерживаемых дистрибутивах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](../extensions/hpccompute-gpu-linux.md).
+Чтобы воспользоваться преимуществами возможностей GPU виртуальных машин Azure серии N, поддерживающих графические процессоры NVIDIA, необходимо установить драйверы NVIDIA GPU. [Расширение драйвера GPU NVIDIA](../extensions/hpccompute-gpu-linux.md) устанавливает необходимые драйверы CUDA или GRID NVIDIA на виртуальную машину серии N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure CLI и шаблоны Azure Resource Manager. Сведения о поддерживаемых дистрибутивах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](../extensions/hpccompute-gpu-linux.md).
 
-Если вы решили установить драйверы GPU вручную, то в этой статье вы найдете сведения о поддерживаемых дистрибутивах, ссылки на драйвера и инструкции по установке и проверке. Сведения о ручной установке драйверов также доступны для [виртуальных машин Windows](../windows/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Если вы решили установить драйверы NVIDIA GPU вручную, в этой статье содержатся Поддерживаемые дистрибутивы, драйверы, а также действия по установке и проверке. Сведения о ручной установке драйверов также доступны для [виртуальных машин Windows](../windows/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Характеристики виртуальных машин серии N, сведения о дисках и объеме памяти см. в статье [Размеры виртуальных машин Linux, оптимизированных для GPU](sizes-gpu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). 
 
@@ -155,9 +149,9 @@ sudo reboot
 
 ![Состояние устройства NVIDIA](./media/n-series-driver-setup/smi.png)
 
-## <a name="rdma-network-connectivity"></a>Сетевое подключение к RDMA
+## <a name="rdma-network-connectivity"></a>Сетевое подключение RDMA
 
-Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в одной группе доступности или в одной группе размещения в масштабируемом наборе виртуальных машин. Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих Intel MPI 5.x или более поздней версии. Дополнительные требования приведены ниже.
+Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в той же группе доступности или в одной из групп размещения в масштабируемом наборе виртуальных мачиине (VM). Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих Intel MPI 5.x или более поздней версии. Дополнительные требования приведены ниже.
 
 ### <a name="distributions"></a>Дистрибутивы
 
@@ -190,7 +184,7 @@ sudo reboot
    
    sudo apt-get install linux-azure -y
    ```
-3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (Используйте драйвер NVIDIA только на виртуальных машинах NV или NVv2.) Для этого создайте файл в `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
+3. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (Используйте драйвер NVIDIA только на виртуальных машинах NV или NVv2.) Для этого создайте файл с `/etc/modprobe.d` именем `nouveau.conf` со следующим содержимым:
 
    ```
    blacklist nouveau
@@ -230,7 +224,7 @@ sudo reboot
    EnableUI=FALSE
    ```
    
-9. Удалите следующие `/etc/nvidia/gridd.conf`, если она есть:
+9. Удалите следующие из `/etc/nvidia/gridd.conf` , если она есть:
  
    ```
    FeatureType=0
@@ -254,7 +248,7 @@ sudo reboot
    sudo yum install hyperv-daemons
    ```
 
-2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (Используйте драйвер NVIDIA только на виртуальных машинах NV или NV2.) Для этого создайте файл в `/etc/modprobe.d` с именем `nouveau.conf` со следующим содержимым:
+2. Отключите драйвер ядра Nouveau, который несовместим с драйвером NVIDIA. (Используйте драйвер NVIDIA только на виртуальных машинах NV или NV2.) Для этого создайте файл с `/etc/modprobe.d` именем `nouveau.conf` со следующим содержимым:
 
    ```
    blacklist nouveau
@@ -302,7 +296,7 @@ sudo reboot
    IgnoreSP=FALSE
    EnableUI=FALSE 
    ```
-9. Удалите следующие `/etc/nvidia/gridd.conf`, если она есть:
+9. Удалите следующие из `/etc/nvidia/gridd.conf` , если она есть:
  
    ```
    FeatureType=0
@@ -362,8 +356,8 @@ fi
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 * Когда необходимо запрашивать карты, для быстрого получения выходных данных команды можно задать режим сохранения с помощью команды `nvidia-smi`. Чтобы задать режим сохранения, выполните `nvidia-smi -pm 1`. Обратите внимание, что в случае перезапуска виртуальной машины настройка режима не сохранится. Всегда можно написать сценарий настройки режима для выполнения при запуске.
-* Если вы обновили драйверы NVIDIA CUDA до последней версии и обнаружите, что RDMA коннективЦити больше не работает, [переустановите драйверы RDMA](https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup#rdma-network-connectivity) , чтобы реистаблиш это подключение. 
+* Если вы обновили драйверы NVIDIA CUDA до последней версии и обнаружите, что подключение RDMA больше не работает, [переустановите драйверы RDMA](https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup#rdma-network-connectivity) , чтобы восстановить подключение. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы записать образ виртуальной машины Linux с установленными драйверами NVIDIA, см. статью [Как подготовить к работе и записать образ виртуальной машины Linux](capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

@@ -1,25 +1,25 @@
 ---
-title: Тип сущности, изученной компьютером — LUIS
+title: Тип сущности машинного обучения — LUIS
 titleSuffix: Azure Cognitive Services
-description: Сущность, занятая компьютером, является предпочтительной сущностью для создания LUIS приложений.
+description: Сущность машинного обучения — это предпочтительная сущность для создания LUIS приложений.
 services: cognitive-services
 author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 12/30/2019
+ms.date: 04/30/2020
 ms.author: diberry
-ms.openlocfilehash: aac4ba3ec63d425cac782f5db65bba923d24ed71
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: ddaf5c921f92aeaefd8a8b0cb13602bc70a4dd5d
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552004"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83684575"
 ---
-# <a name="machine-learned-entity"></a>Сущность, прошедшая машинное обучение
+# <a name="machine-learning-entity"></a>Сущность машинного обучения
 
-Сущность, занятая компьютером, является предпочтительной сущностью для создания LUIS приложений.
+Сущность машинного обучения — это предпочтительная сущность для создания LUIS приложений.
 
 
 ## <a name="example-json"></a>Пример JSON
@@ -36,15 +36,15 @@ ms.locfileid: "75552004"
 
 
 
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
-Поскольку сущность, предназначенная для компьютера, может иметь множество компонентов с ограничениями и дескрипторами, это только пример. Он должен рассматриваться как пошаговое описание того, что будет возвращено сущностью.
+Поскольку сущность машинного обучения может иметь множество вложенных сущностей с необходимыми функциями, это только пример. Он должен рассматриваться как пошаговое описание того, что будет возвращено сущностью.
 
 Рассмотрим запрос:
 
 `deliver 1 large cheese pizza on thin crust and 2 medium pepperoni pizzas on deep dish crust`
 
-Это JSON, если в строке запроса задано `verbose=false`:
+Это JSON, если `verbose=false` в строке запроса задано:
 
 ```json
 "entities": {
@@ -102,7 +102,7 @@ ms.locfileid: "75552004"
 
 ```
 
-Это JSON, если в строке запроса задано `verbose=true`:
+Это JSON, если `verbose=true` в строке запроса задано:
 
 ```json
 "entities": {
@@ -341,13 +341,13 @@ ms.locfileid: "75552004"
     }
 }
 ```
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
 
 Эта сущность недоступна в среде выполнения прогнозирования версии 2.
 * * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Узнайте больше о сущности, занятой компьютером, включая [учебник](tutorial-machine-learned-entity.md), [Основные понятия](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководство](luis-how-to-add-entities.md#create-a-machine-learned-entity).
+Узнайте больше о сущности машинного обучения, включая [учебник](tutorial-machine-learned-entity.md), [Основные понятия](luis-concept-entity-types.md#design-entities-for-decomposition)и [руководство](luis-how-to-add-entities.md#create-a-machine-learned-entity).
 
 Сведения о сущности [списка](reference-entity-list.md) и сущности [регулярного выражения](reference-entity-regular-expression.md) .

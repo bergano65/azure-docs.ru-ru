@@ -1,14 +1,14 @@
 ---
 title: Краткое описание примера схемы теста производительности CIS для платформ Microsoft Azure
 description: Общие сведения о примере схемы теста производительности CIS для платформ Microsoft Azure. Этот пример схемы помогает клиентам оценить определенные средства управления.
-ms.date: 08/09/2019
+ms.date: 05/06/2020
 ms.topic: sample
-ms.openlocfilehash: 414c6d5a38821767dd43e62aa9f42edd8633dbe2
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: cc2d2e31ddf71ad5cebf21bc8f23e20331b24617
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74544582"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864153"
 ---
 # <a name="overview-of-the-cis-microsoft-azure-foundations-benchmark-blueprint-sample"></a>Общие сведения о примере схемы теста производительности CIS для платформ Microsoft Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "74544582"
 
 В разделе о сопоставлении рекомендаций приводятся сведения о политиках, используемых в этой схеме, а также об их соотношении с разными рекомендациями в тесте производительности CIS для платформ Microsoft Azure (версия 1.1.0). Назначаемые архитектуре ресурсы оцениваются Политикой Azure на предмет соответствия назначенным политикам. Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../../policy/overview.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы ознакомились с основными сведениями о примере схемы теста производительности CIS для платформ Microsoft Azure.
 Дополнительные сведения о сопоставлении рекомендаций см. в следующих статьях:

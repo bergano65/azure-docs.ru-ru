@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 01/31/2020
 ms.author: diberry
-ms.openlocfilehash: 7800edafca46a2210b9552299605d54c9db07f1f
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 96129b9141b4759fd61b539fa08354f02af3af7b
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76966627"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80151204"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -21,7 +21,7 @@ ms.locfileid: "76966627"
 * Импорт приложения [TravelAgent](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/quickstarts/change-model/TravelAgent.json) из репозитория GitHub cognitive-services-language-understanding.
 * Идентификатор приложения LUIS для импортированного приложения TravelAgent. Идентификатор приложения отображается на панели мониторинга приложения.
 * Идентификатор версии приложения, которое получает речевые фрагменты. Идентификатор по умолчанию — 0.1.
-* [.NET Core версий 2.2+](https://dotnet.microsoft.com/download)
+* [.NET Core 3.1.](https://dotnet.microsoft.com/download)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
 ## <a name="example-utterances-json-file"></a>Файл JSON с примерами высказываний.
@@ -29,8 +29,6 @@ ms.locfileid: "76966627"
 [!INCLUDE [Quickstart explanation of example utterance JSON file](get-started-get-model-json-example-utterances.md)]
 
 ## <a name="change-model-programmatically"></a>Изменение модели программными средствами
-
-На C# добавьте [API](https://aka.ms/luis-apim-v3-authoring) сущности машинного обучения в приложение.
 
 1. Создайте консольное приложение для языка C# с проектом и именем папки `model-with-rest`.
 

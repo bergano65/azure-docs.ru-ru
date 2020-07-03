@@ -9,10 +9,10 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 67d685684c5227377a0f8a7e822a06e785a69d89
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74034048"
 ---
 # <a name="azcopy-make"></a>azcopy make
@@ -42,14 +42,14 @@ azcopy make "https://[account-name].[blob,file,dfs].core.windows.net/[top-level-
 
 ## <a name="options"></a>Параметры
 
-|Параметр|ОПИСАНИЕ|
+|Параметр|Описание|
 |--|--|
 |-h, --help|Отображение содержимого справки для команды make. |
 |--UInt32 с квотой в ГБ|Указывает максимальный размер общей папки в гигабайтах (гиб), 0 означает, что квота файловой службы по умолчанию принимается.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|ОПИСАНИЕ|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|

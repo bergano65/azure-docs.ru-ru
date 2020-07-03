@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 90995b1c9d10c7b589706f5abf37f92d76e4362b
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: 95386af4522adca1d65e04b01c2a349a80e9ab8a
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75560357"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81273483"
 ---
 # <a name="configure-a-point-to-site-p2s-vpn-on-windows-for-use-with-azure-files"></a>Настройка VPN-подключения "точка — сеть" (P2S) в Windows для использования с файлами Azure
 Вы можете использовать VPN-подключение "точка — сеть" (P2S) для подключения файловых ресурсов Azure по протоколу SMB вне Azure, не открывая порт 445. VPN-подключение "точка — сеть" — это VPN-подключение между Azure и отдельным клиентом. Чтобы использовать VPN-подключение P2S к службе "Файлы Azure", необходимо настроить это подключение для каждого клиента, которому требуется подключиться. Если у вас много клиентов, которым требуется подключение к общим файловым ресурсам Azure из локальной сети, вместо подключения "точка — сеть" для каждого клиента можно использовать VPN-подключение "сеть — сеть" (S2S). Дополнительные сведения см. в статье [Настройка VPN-подключения "сеть — сеть" для использования с Файлами Azure](storage-files-configure-s2s-vpn.md).
@@ -21,21 +21,12 @@ ms.locfileid: "75560357"
 
 В статье подробно описано, как настроить VPN-подключение "точка — сеть" в Windows (клиент Windows и Windows Server) для непосредственного локального подключения общих файловых ресурсов Azure. Если вы хотите направить трафик Синхронизации файлов Azure через VPN, см. статью [Параметры брандмауэра и прокси-сервера Синхронизации файлов Azure](storage-sync-files-firewall-and-proxy.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 - Последняя версия модуля Azure PowerShell. Дополнительные сведения об установке Azure PowerShell см. в статье [Установка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) и выберите операционную систему. Если вы предпочитаете использовать Azure CLI в Windows, обратите внимание, что приведенные ниже инструкции представлены для Azure PowerShell.
 
-- Частная зона DNS в модуле Azure PowerShell. В настоящее время она не распространяется в составе модуля Azure PowerShell, поэтому ее можно установить с помощью следующего метода:
-    ```PowerShell
-    if ($PSVersionTable.PSVersion -ge [System.Version]::new(6, 0)) {
-        Install-Module -Name Az.PrivateDns -AllowClobber -AllowPrerelease
-    } else {
-        Install-Module -Name Az.PrivateDns -RequiredVersion "0.1.3"
-    }
+- Общая папка Azure, которую вы хотите подключить локально. Общие папки Azure развертываются в учетных записях хранения. Эти учетные записи являются компонентами управления, представляющие собой общий пул носителей, который можно использовать для развертывания нескольких общих папок и других ресурсов хранения, например контейнеров больших двоичных объектов или очередей. Дополнительные сведения о развертывании общих папок Azure и учетных записей хранения см. в статье [Создание общей папки Azure](storage-how-to-create-file-share.md).
 
-    Import-Module -Name Az.PrivateDns
-    ```  
-
-- Общая папка Azure, которую вы хотите подключить локально. Вы можете использовать общую папку категории [Стандартный](storage-how-to-create-file-share.md) или [Премиум](storage-how-to-create-premium-fileshare.md) с VPN-подключением "точка — сеть".
+- Частная конечная точка учетной записи хранения, содержащей общую папку Azure, которую вы хотите подключить локально. Дополнительные сведения о создании частной конечной точки см. в статье [Настройка конечных точек сети в службе "Файлы Azure"](storage-files-networking-endpoints.md?tabs=azure-powershell). 
 
 ## <a name="deploy-a-virtual-network"></a>развертывать виртуальную сеть;
 Чтобы получить доступ к общей папке Azure и другим ресурсам Azure из локальной среды через VPN-подключение "точка — сеть", необходимо создать виртуальную сеть или VNet. VPN-подключение P2S, которое будет создано автоматически, — это мост между локальным компьютером Windows и этой виртуальной сетью Azure.
@@ -85,91 +76,6 @@ $privateEndpointSubnet = $virtualNetwork.Subnets | `
     Where-Object { $_.Name -eq "PrivateEndpointSubnet" }
 $gatewaySubnet = $virtualNetwork.Subnets | ` 
     Where-Object { $_.Name -eq "GatewaySubnet" }
-```
-
-## <a name="restrict-the-storage-account-to-the-virtual-network"></a>Ограничение учетной записи хранения виртуальной сетью
-По умолчанию при создании учетной записи хранения доступ к ней можно получить из любой точки мира при наличии средств проверки подлинности запроса (например, с помощью идентификатора Active Directory или ключа учетной записи хранения). Чтобы ограничить доступ к этой учетной записи хранения только что созданной виртуальной сети, необходимо создать набор сетевых правил, который разрешает доступ в виртуальной сети и запрещает все остальные права доступа.
-
-Для ограничения доступа к учетной записи хранения для виртуальной сети требуется использовать конечную точку службы. Конечная точка службы — это сетевая конструкция, с помощью которой можно настроить доступ к общедоступному DNS- или IP-адресу для работы только в пределах виртуальной сети. Так как не гарантировано, что общедоступный IP-адрес останется прежним, мы в конечном счете хотим использовать для учетной записи хранилища частную конечную точку, а не конечную точку службы, однако ограничить учетную запись хранилища можно только в том случае, если доступ к конечной точке службы также будет предоставлен.
-
-Не забудьте заменить `<storage-account-name>` учетной записью хранения, к которой требуется получить доступ.
-
-```PowerShell
-$storageAccountName = "<storage-account-name>"
-
-$storageAccount = Get-AzStorageAccount `
-    -ResourceGroupName $resourceGroupName `
-    -Name $storageAccountName
-
-$networkRule = Add-AzStorageAccountNetworkRule `
-    -ResourceGroupName $resourceGroupName `
-    -Name $storageAccountName `
-    -VirtualNetworkResourceId $serviceEndpointSubnet.Id
-
-Update-AzStorageAccountNetworkRuleSet `
-    -ResourceGroupName $resourceGroupName `
-    -Name $storageAccountName `
-    -Bypass AzureServices `
-    -DefaultAction Deny `
-    -VirtualNetworkRule $networkRule | Out-Null
-``` 
-
-## <a name="create-a-private-endpoint-preview"></a>Создание частной конечной точки (предварительная версия)
-При создании частной конечной точки для учетной записи хранения она получает IP-адрес в пространстве IP-адресов виртуальной сети. При подключении общей папки Azure из локальной среды с помощью этого частного IP-адреса правила маршрутизации, автоматически определяемые установкой VPN, будут маршрутизировать запрос на подключение к учетной записи хранения через VPN. 
-
-```PowerShell
-$internalVnet = Get-AzResource `
-    -ResourceId $virtualNetwork.Id `
-    -ApiVersion "2019-04-01"
-
-$internalVnet.Properties.subnets[1].properties.privateEndpointNetworkPolicies = "Disabled"
-$internalVnet | Set-AzResource -Force | Out-Null
-
-$privateEndpointConnection = New-AzPrivateLinkServiceConnection `
-    -Name "myConnection" `
-    -PrivateLinkServiceId $storageAccount.Id `
-    -GroupId "file"
-
-$privateEndpoint = New-AzPrivateEndpoint `
-    -ResourceGroupName $resourceGroupName `
-    -Name "$storageAccountName-privateEndpoint" `
-    -Location $region `
-    -Subnet $privateEndpointSubnet `
-    -PrivateLinkServiceConnection $privateEndpointConnection
-
-$zone = Get-AzPrivateDnsZone -ResourceGroupName $resourceGroupName
-if ($null -eq $zone) {
-    $zone = New-AzPrivateDnsZone `
-        -ResourceGroupName $resourceGroupName `
-        -Name "privatelink.file.core.windows.net"
-} else {
-    $zone = $zone[0]
-}
-
-$link = New-AzPrivateDnsVirtualNetworkLink `
-    -ResourceGroupName $resourceGroupName `
-    -ZoneName $zone.Name `
-    -Name ($virtualNetwork.Name + "-link") `
-    -VirtualNetworkId $virtualNetwork.Id
-
-$internalNic = Get-AzResource `
-    -ResourceId $privateEndpoint.NetworkInterfaces[0].Id `
-    -ApiVersion "2019-04-01"
-
-foreach($ipconfig in $internalNic.Properties.ipConfigurations) {
-    foreach($fqdn in $ipconfig.properties.privateLinkConnectionProperties.fqdns) {
-        $recordName = $fqdn.split('.', 2)[0]
-        $dnsZone = $fqdn.split('.', 2)[1]
-        New-AzPrivateDnsRecordSet `
-            -ResourceGroupName $resourceGroupName `
-            -Name $recordName `
-            -RecordType A `
-            -ZoneName $zone.Name `
-            -Ttl 600 `
-            -PrivateDnsRecords (New-AzPrivateDnsRecordConfig `
-                -IPv4Address $ipconfig.properties.privateIPAddress) | Out-Null
-    }
-}
 ```
 
 ## <a name="create-root-certificate-for-vpn-authentication"></a>Создание корневого сертификата для проверки подлинности VPN
@@ -232,7 +138,7 @@ $vpnName = "<desired-vpn-name-here>"
 $publicIpAddressName = "$vpnName-PublicIP"
 
 $publicIPAddress = New-AzPublicIpAddress `
-    -ResourceGroupName $resourceGroupName ` 
+    -ResourceGroupName $resourceGroupName `
     -Name $publicIpAddressName `
     -Location $region `
     -Sku Basic `
@@ -336,7 +242,7 @@ foreach ($session in $sessions) {
         -ArgumentList `
             $mypwd, `
             $vpnTemp, `
-            $virtualNetworkName
+            $virtualNetworkName `
         -ScriptBlock { 
             $mypwd = $args[0] 
             $vpnTemp = $args[1]
@@ -361,7 +267,7 @@ foreach ($session in $sessions) {
 
             Add-VpnConnection `
                 -Name $virtualNetworkName `
-                -ServerAddress $vpnProfile.VpnServer ` 
+                -ServerAddress $vpnProfile.VpnServer `
                 -TunnelType Ikev2 `
                 -EncryptionLevel Required `
                 -AuthenticationMethod MachineCertificate `

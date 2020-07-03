@@ -186,8 +186,6 @@
               href: wrangling-data-flow-functions.md
     - name: Роли и разрешения
       href: concepts-roles-permissions.md
-    - name: Основные сведения о ценах
-      href: pricing-concepts.md
     - name: Правила именования
       href: naming-rules.md
 - name: Практические руководства
@@ -368,6 +366,8 @@
           href: connector-servicenow.md
         - name: SFTP
           href: connector-sftp.md
+        - name: "Список SharePoint\_Online"
+          href: connector-sharepoint-online-list.md
         - name: Shopify
           href: connector-shopify.md
         - name: Spark
@@ -392,20 +392,30 @@
       items:
         - name: Копирование данных с помощью действия копирования
           href: copy-activity-overview.md
+        - name: Мониторинг действия копирования
+          href: copy-activity-monitoring.md
         - name: Удаление файлов с помощью действия удаления
           href: delete-activity.md
         - name: Средство копирования данных
           href: copy-data-tool.md
         - name: Поддержка сжатия и форматирования
           href: supported-file-formats-and-compression-codecs.md
-        - name: Производительность и настройка
-          href: copy-activity-performance.md
+        - name: Производительность действия копирования
+          items:
+            - name: Руководство по производительности и масштабируемости
+              href: copy-activity-performance.md
+            - name: Устранение неполадок с производительностью
+              href: copy-activity-performance-troubleshooting.md
+            - name: Функции для повышения производительности
+              href: copy-activity-performance-features.md
         - name: Сохранение метаданных и списков ACL
           href: copy-activity-preserve-metadata.md
         - name: Сопоставление типа и схемы
           href: copy-activity-schema-and-type-mapping.md
         - name: Отказоустойчивость
           href: copy-activity-fault-tolerance.md
+        - name: Проверка согласованности данных
+          href: copy-activity-data-consistency.md
         - name: Поддержка сжатия и форматирования (устаревшая функция)
           href: supported-file-formats-and-compression-codecs-legacy.md
     - name: Преобразование данных
@@ -479,6 +489,8 @@
           href: control-flow-webhook-activity.md
     - name: Преобразования потока данных
       items:
+        - name: Общие сведения о преобразовании
+          href: data-flow-transformation-overview.md
         - name: Статистическое
           href: data-flow-aggregate.md
         - name: Изменение строк
@@ -491,6 +503,8 @@
           href: data-flow-exists.md
         - name: Filter
           href: data-flow-filter.md
+        - name: Преобразование в плоскую структуру
+          href: data-flow-flatten.md
         - name: Join
           href: data-flow-join.md
         - name: Поиск
@@ -525,10 +539,12 @@
           href: control-flow-system-variables.md
         - name: Параметризация потоков данных для сопоставления
           href: parameters-data-flow.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Вопросы безопасности при перемещении данных
           href: data-movement-security-considerations.md
+        - name: Стратегии получения доступа к данным
+          href: data-access-strategies.md
         - name: IP-адреса Azure Integration Runtime
           href: azure-integration-runtime-ip-addresses.md
         - name: Хранение учетных данных в Azure Key Vault
@@ -539,6 +555,8 @@
           href: encrypt-credentials-self-hosted-integration-runtime.md
         - name: Управляемое удостоверение для Фабрики данных
           href: data-factory-service-identity.md
+        - name: Шифрование на базе управляемых клиентом ключей
+          href: quickstart-enable-customer-managed-key.md
     - name: Отслеживание и управление
       items:
         - name: Визуальный мониторинг
@@ -565,10 +583,14 @@
           href: create-azure-ssis-integration-runtime.md
         - name: Общая локальная среда выполнения интеграции
           href: create-shared-self-hosted-integration-runtime-powershell.md
+        - name: Скрипты автоматизации локальной среды выполнения интеграции
+          href: self-hosted-integration-runtime-automation-scripts.md
     - name: Запуск пакетов служб Integration Services в Azure
       items:
         - name: Запуск пакетов Integration Services в Azure из SSDT
           href: how-to-invoke-ssis-package-ssdt.md
+        - name: Запуск пакетов служб SSIS с помощью агента Управляемого экземпляра SQL Azure
+          href: how-to-invoke-ssis-package-managed-instance-agent.md
         - name: Запуск пакетов служб SSIS с помощью программы dtexec с поддержкой Azure
           href: how-to-invoke-ssis-package-azure-enabled-dtexec.md
         - name: Запуск пакетов Integration Services с помощью действия выполнения пакета Integration Services
@@ -585,6 +607,8 @@
           href: enable-aad-authentication-azure-ssis-ir.md
         - name: Настройка выпуска Enterprise Edition для Azure-SSIS IR
           href: how-to-configure-azure-ssis-ir-enterprise-edition.md
+        - name: Встроенные и предварительно установленные компоненты в Azure-SSIS IR
+          href: built-in-preinstalled-components-ssis-integration-runtime.md
         - name: Настройка Azure-SSIS IR
           href: how-to-configure-azure-ssis-ir-custom-setup.md
         - name: Установка лицензированных компонентов для Azure-SSIS IR
@@ -595,6 +619,10 @@
           href: configure-bcdr-azure-ssis-integration-runtime.md
         - name: Очистка журналов SSISDB с помощью заданий обработки эластичных баз данных
           href: how-to-clean-up-ssisdb-logs-with-elastic-jobs.md
+        - name: Использование Управляемого экземпляра SQL Azure с Azure-SSIS IR
+          href: how-to-use-sql-managed-instance-with-ir.md
+        - name: Перенос заданий SSIS с использованием SSMS
+          href: how-to-migrate-ssis-job-ssms.md
     - name: Создание триггеров
       items:
         - name: Создание триггера на основе событий
@@ -623,8 +651,14 @@
           href: solution-template-migration-s3-azure.md
         - name: Перемещение файлов
           href: solution-template-move-files.md
-        - name: Преобразование данных с помощью Databricks
+        - name: Преобразование с помощью Azure Databricks
           href: solution-template-databricks-notebook.md
+    - name: Основные сведения о ценах
+      items:
+        - name: Планирование затрат и управление ими
+          href: plan-manage-costs.md
+        - name: Примеры цен
+          href: pricing-concepts.md
     - name: Руководства по устранению неполадок
       items:
         - name: Действия
@@ -657,6 +691,8 @@
           href: how-to-fixed-width.md
         - name: Обработка строк ошибок
           href: how-to-data-flow-error-rows.md
+        - name: Миграция из Базы данных SQL Azure в CosmosDB
+          href: how-to-sqldb-to-cosmosdb.md
     - name: Перенос рабочих нагрузок SSIS из локальных систем
       items:
         - name: Обзор переноса рабочих нагрузок SSIS
@@ -685,8 +721,10 @@
       href: frequently-asked-questions.md
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=data-factory'
-    - name: "Задать вопрос\_— форум MSDN"
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataFactory&filter=alltypes&sort=lastpostdesc'
+    - name: Блог
+      href: 'https://techcommunity.microsoft.com/t5/azure-data-factory/bg-p/AzureDataFactoryBlog#'
+    - name: Задание вопроса. Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-data-factory.html'
     - name: "Задать вопрос\_— Stack Overflow"
       href: 'https://stackoverflow.com/questions/tagged/azure-data-factory'
     - name: Запрашивание функции

@@ -9,18 +9,18 @@ ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 5fa515515c06466e121a5c0ee925fd4d14245363
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 0bc8da02a523479c3c543eff28a376136e29098f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74895232"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82176215"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell
 
 Большинство людей используют общедоступное облако Azure для глобального развертывания Azure. Но есть и независимые развертывания Microsoft Azure для обеспечения автономности и других целей. Такие независимые развертывания называются средами. Ниже приведен список независимых облаков, доступных в настоящее время:
 
-* [Облако Azure для государственных организаций](https://azure.microsoft.com/features/gov/).
+* [Azure Government Cloud (Облако Azure для государственных организаций)](https://azure.microsoft.com/features/gov/)
 * [Облако Azure Китая 21Vianet, управляемое 21Vianet, в Китае](http://www.windowsazure.cn/)
 * [Облако Azure для Германии](../../germany/germany-welcome.md).
 
@@ -60,10 +60,10 @@ Get-AzLocation | select Location, DisplayName
 
 В следующей таблице показаны расположения, доступные в облаке для Германии.
 
-|Location | Отображаемое имя |
+|Расположение | Отображаемое имя |
 |----|----|
 | `germanycentral` | Центральная Германия|
-| `germanynortheast` | Северо-Восточная Германия |
+| `germanynortheast` | Северо-восточная Германия |
 
 
 ## <a name="endpoint-suffix"></a>Суффикс конечной точки
@@ -84,7 +84,7 @@ Get-AzEnvironment | select Name, StorageEndpointSuffix
 
 Эта команда возвращает следующие результаты:
 
-| Name| StorageEndpointSuffix|
+| Имя| StorageEndpointSuffix|
 |----|----|
 | AzureChinaCloud; | core.chinacloudapi.cn|
 | AzureCloud; | core.windows.net |
@@ -99,9 +99,9 @@ Get-AzEnvironment -Name AzureGermanCloud
 
 Результаты похожи на следующие значения:
 
-|Имя свойства|Value|
+|Имя свойства|Значение|
 |----|----|
-| Name | `AzureGermanCloud` |
+| Имя | `AzureGermanCloud` |
 | EnableAdfsAuthentication | `False` |
 | ActiveDirectoryServiceEndpointResourceI | `http://management.core.cloudapi.de/` |
 | GalleryURL | `https://gallery.cloudapi.de/` |
@@ -152,7 +152,7 @@ table endpoint = http://myexistingstorageaccount.table.core.usgovcloudapi.net/
 
 ## <a name="after-setting-the-environment"></a>После настройки среды
 
-Теперь вы можете использовать тот же скрипт PowerShell, с помощью которого управляли учетными записями хранения и осуществляли доступ к плоскости данных, как описано в статье [Использование Azure PowerShell со службой хранилища Azure](storage-powershell-guide-full.md).
+Теперь вы можете использовать PowerShell для управления учетными записями хранения и доступа к данным больших двоичных объектов, очередей, файлов и таблиц. Дополнительные сведения см. в разделе [AZ. Storage](/powershell/module/az.storage).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -165,7 +165,7 @@ Remove-AzResourceGroup -Name $resourceGroup
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование учетных данных для входа в разных сеансах PowerShell](/powershell/azure/context-persistence).
-* [Azure Government storage](../../azure-government/documentation-government-services-storage.md) (Хранилище Azure для государственных организаций).
-* [Azure Government developer guide](../../azure-government/documentation-government-developer-guide.md) (Руководство для разработчиков Microsoft Azure для государственных организаций).
+* [Хранилище Azure для государственных организаций](../../azure-government/documentation-government-services-storage.md)
+* [Руководство для разработчиков Microsoft Azure Government](../../azure-government/documentation-government-developer-guide.md)
 * [Примечания для разработчиков для приложений Azure для Китая в Китае](https://msdn.microsoft.com/library/azure/dn578439.aspx)
 * [Документация по Azure для Германии](../../germany/germany-welcome.md).

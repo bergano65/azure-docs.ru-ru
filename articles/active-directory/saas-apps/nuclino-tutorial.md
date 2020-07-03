@@ -17,10 +17,10 @@ ms.date: 10/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0a75869c257e6b875a00036218b05db5521e8d0b
-ms.sourcegitcommit: 6eecb9a71f8d69851bc962e2751971fccf29557f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72532953"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-nuclino"></a>Руководство по интеграции единого входа Azure Active Directory с Nuclino
@@ -35,9 +35,9 @@ ms.locfileid: "72532953"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Nuclino с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "72532953"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Nuclino](#configure-nuclino-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя приложения Nuclino](#create-nuclino-test-user)** требуется для того, чтобы в Nuclino существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,13 +79,13 @@ ms.locfileid: "72532953"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.nuclino.com/api/sso/<UNIQUE-ID>/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://api.nuclino.com/api/sso/<UNIQUE-ID>/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.nuclino.com/api/sso/<UNIQUE-ID>/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.nuclino.com/api/sso/<UNIQUE-ID>/acs`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора и URL-адреса ответа из раздела **Authentication** (Проверка подлинности), который описывается далее в этом руководстве.
@@ -99,11 +99,11 @@ ms.locfileid: "72532953"
 
 6. Приложение Nuclino ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
 7. В дополнение к описанному выше приложение Nuclino ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ |  Исходный атрибут|
+    | Имя |  Исходный атрибут|
     | ---------------| --------- |
     | first_name | user.givenname |
     | last_name | user.surname |
@@ -132,7 +132,7 @@ ms.locfileid: "72532953"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B. Simon, предоставив этому пользователю доступ к Nuclino.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Nuclino**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -174,7 +174,7 @@ ms.locfileid: "72532953"
 
     ![Настройка Nuclino](./media/nuclino-tutorial/configure4.png)
 
-    a. Выберите **SAML-based single sign-on (SSO)** (Единый вход на основе SAML).
+    а. Выберите **SAML-based single sign-on (SSO)** (Единый вход на основе SAML).
 
     b. Скопируйте значение **ACS URL (You need to copy and paste this to your SSO provider)** (URL-адрес ACS (вам нужно скопировать и вставить его в свой поставщик SSO)) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -182,9 +182,9 @@ ms.locfileid: "72532953"
 
     d. В текстовое поле **SSO URL** (URL-адрес единого входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
-    д. В текстовое поле **Идентификатор сущности** вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
+    д) В текстовое поле **Идентификатор сущности** вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
-    Е. Откройте скачанный файл **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **Public certificate** (Общедоступный сертификат).
+    е) Откройте скачанный файл **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **Public certificate** (Общедоступный сертификат).
 
     ж. Нажмите кнопку **Сохранить изменения**.
 
@@ -203,9 +203,9 @@ ms.locfileid: "72532953"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -49,7 +49,7 @@
           href: dns-alias.md
         - name: Делегирование с помощью Azure DNS
           href: dns-domain-delegation.md
-        - name: Часто задаваемые вопросы
+        - name: ВОПРОСЫ И ОТВЕТЫ
           href: dns-faq.md
         - name: Оповещения и метрики DNS
           href: dns-alerts-metrics.md
@@ -69,7 +69,7 @@
           href: private-dns-scenarios.md
         - name: Разрешение DNS в виртуальных сетях
           href: ../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md
-        - name: Часто задаваемые вопросы
+        - name: ВОПРОСЫ И ОТВЕТЫ
           href: dns-faq-private.md
 - name: Практическое руководство
   items:
@@ -113,11 +113,15 @@
           href: dns-sdk.md
         - name: Личные домены для ресурсов Azure
           href: dns-custom-domain.md
-    - name: Устранение неполадок
+    - name: Частная зона DNS
+      items:
+        - name: Защита частных зон и записей DNS
+          href: dns-protect-private-zones-recordsets.md
+    - name: Диагностика
       items:
         - name: Руководство по устранению неполадок
           href: dns-troubleshoot.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Общедоступное имя DNS
       items:
@@ -145,7 +149,7 @@
           href: /azure/templates/microsoft.network/dns-allversions
     - name: Частная зона DNS
       items:
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: /cli/azure/network/private-dns
         - name: Azure PowerShell
           href: /powershell/module/az.PrivateDns
@@ -153,30 +157,14 @@
           href: /dotnet/api/overview/azure/privatedns/management
         - name: REST
           href: /rest/api/dns/privatedns/privatezones
-- name: Сопутствующие материалы
-  items:
-    - name: Приватный канал
-      href: ../private-link/private-link-overview.md
-    - name: Шлюз приложений
-      href: /azure/application-gateway/
-    - name: Виртуальная сеть
-      href: /azure/virtual-network/
-    - name: Виртуальная машина
-      href: /azure/virtual-machines/
-    - name: Load Balancer
-      href: /azure/load-balancer/
-    - name: Диспетчер трафика
-      href: /azure/traffic-manager/
-    - name: Веб-приложения
-      href: /azure/app-service/
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
     - name: Запросы функций
       href: 'https://feedback.azure.com/forums/217313-networking/category/77466-domain-name-service-dns-traffic-manager'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/en-us/answers/topics/azure-virtual-network.html'
     - name: Блог о сетях
       href: 'https://azure.microsoft.com/blog/topics/networking'
     - name: Цены

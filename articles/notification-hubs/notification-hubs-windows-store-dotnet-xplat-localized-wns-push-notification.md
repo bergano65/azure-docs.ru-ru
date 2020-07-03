@@ -18,10 +18,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 03/22/2019
 ms.openlocfilehash: 4ccf62dd8a249c9ba23bbb4510164b35a58db917
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72387397"
 ---
 # <a name="tutorial-send-localized-push-notifications-to-windows-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Windows с использованием Центров уведомлений Azure
@@ -39,7 +39,7 @@ ms.locfileid: "72387397"
 
 Когда вы завершите работу с руководством, в мобильном приложении можно будет зарегистрироваться в интересующих вас категориях, а также указать язык получения уведомлений. Внутреннее приложение отправляет уведомления, локализованные на указанном языке и с учетом устройства.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Обновление приложения Windows для поддержки информации о языковом стандарте
@@ -48,7 +48,7 @@ ms.locfileid: "72387397"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Завершите работу со статьей [Руководство по отправке push-уведомлений на конкретные устройства Windows Phone с помощью Центров уведомлений Azure](notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md).
+Пройдите [руководство по по отправке push-уведомлений на конкретные устройства Windows Phone с помощью Центров уведомлений Azure](notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md).
 
 В рамках статьи [Руководство по отправке push-уведомлений на конкретные устройства Windows Phone с помощью Центров уведомлений Azure](notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md) создается приложение, использующее **теги** для подписки на уведомления в разных новостных **категориях**. В этом руководстве будут продемонстрированы способы использования **шаблонов** Центров уведомлений, которые позволяют легко доставлять **локализованные** уведомления об экстренных новостях.
 
@@ -264,12 +264,12 @@ private static async void SendTemplateNotificationAsync()
 
 ![Сообщения уведомлений](./media/notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification/notifications.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как отправлять локализованные push-уведомления на определенные устройства, с регистрацией которых связаны теги. Сведения о том, как принудительно отправлять уведомления конкретным пользователям, которые могут использовать несколько устройств, см. в следующем руководстве:
 
 > [!div class="nextstepaction"]
->[Уведомление пользователей посредством концентраторов уведомлений с помощью серверной части .NET](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md)
+>[Отправка push-уведомлений определенным пользователям](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md)
 
 <!-- Anchors. -->
 [Template concepts]: #concepts

@@ -1,19 +1,19 @@
 ---
-title: Устранение неполадок проектов службы "миграция Azure"
+title: Устранение неполадок с проектами Миграции Azure
 description: Помогает устранять неполадки при создании проектов службы "миграция Azure" и управлении ими.
 ms.topic: troubleshooting
 author: musa-57
 ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/01/2020
-ms.openlocfilehash: 3b8c2f6ec33965317d2aaa23a36b6becff11a54a
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.openlocfilehash: b1fc4bce988b13a9ff76fd961d524ce945876054
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75725732"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81535406"
 ---
-# <a name="troubleshoot-azure-migrate-projects"></a>Устранение неполадок проектов службы "миграция Azure"
+# <a name="troubleshoot-azure-migrate-projects"></a>Устранение неполадок с проектами Миграции Azure
 
 Эта статья поможет вам устранить неполадки при создании проектов службы " [Миграция Azure](migrate-services-overview.md) " и управлении ими.
 
@@ -32,7 +32,7 @@ ms.locfileid: "75725732"
 
 ## <a name="cant-find-a-geography"></a>Не удается найти географию
 
-Вы можете создать проект службы "миграция Azure" в [поддерживаемых географических регионах](migrate-support-matrix.md#supported-geographies). Обратите внимание, что География проекта используется для хранения обнаруженных метаданных компьютера. Вы также можете оценивать или переносить компьютеры в других расположениях.
+Вы можете создать проект службы "миграция Azure" в поддерживаемых географических регионах для [общедоступных](migrate-support-matrix.md#supported-geographies-public-cloud) и [правительственных облаков](migrate-support-matrix.md#supported-geographies-azure-government).
 
 ## <a name="what-are-vm-limits"></a>Что такое ограничения виртуальной машины?
 
@@ -63,6 +63,6 @@ ms.locfileid: "75725732"
 
 Убедитесь, что выбран нужный проект. В центре миграции Azure > **серверы** или в **базы данных**нажмите кнопку **изменить** рядом с пунктом **Миграция проекта (изменить)** в правом верхнем углу экрана. Выберите правильную подписку и имя проекта > **ОК**. Страница должна быть обновлена с помощью добавленных инструментов выбранного проекта.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".

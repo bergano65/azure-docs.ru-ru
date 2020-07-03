@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: b-juche
 ms.openlocfilehash: 0398cc6a5336141f51dde26ed7cf4cce8c2c0bb4
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75832585"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Уровни обслуживания для Azure NetApp Files
@@ -32,11 +32,11 @@ Azure NetApp Files поддерживает три уровня обслужив
 
     Уровень Ultra Storage предоставляет до 128 MiB/с пропускной способностью в 1 Тиб назначенной квоты тома. 
 
-* <a name="Premium"></a>Хранилище класса "Премиум"
+* <a name="Premium"></a>Хранилище класса Premium
 
     Уровень хранилища Premium предоставляет до 64 MiB/с пропускной способностью в 1 Тиб назначенной квоты тома. 
 
-* <a name="Standard"></a>Хранилище класса "Стандартный".
+* <a name="Standard"></a>Хранилище уровня "Стандартный"
 
     Уровень хранилища "Стандартный" предоставляет до 16 MiB/с пропускной способностью в 1 Тиб назначенной квоты тома.
 
@@ -54,7 +54,7 @@ Azure NetApp Files поддерживает три уровня обслужив
 
 В примере 2 для тома из пула емкости с уровнем хранилища Premium, которому назначено 100 гиб квоты, будет назначено ограничение пропускной способности 6,25 MiB/s (0,09765625 Тиб * 64 MiB/s). Этот сценарий применим независимо от размера пула емкости или фактического потребления объема данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения о ценах на разные уровни обслуживания см. на странице [Цены на службу Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
 - Расчет потребления емкости в пуле мощностей см. в статье [модель стоимости для Azure NetApp Files](azure-netapp-files-cost-model.md) . 

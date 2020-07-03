@@ -2,22 +2,22 @@
 title: Функции шаблонов — развертывание
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения сведений о развертывании.
 ms.topic: conceptual
-ms.date: 11/27/2019
-ms.openlocfilehash: b241aaf43ee3204c9960d0099ce3c61d4c1a80ee
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.date: 04/27/2020
+ms.openlocfilehash: a52b4eae9df4ad3fdf9e481ee0a40aac48f6665b
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207287"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82203800"
 ---
-# <a name="deployment-functions-for-azure-resource-manager-templates"></a>Функции развертывания для шаблонов Azure Resource Manager 
+# <a name="deployment-functions-for-arm-templates"></a>Функции развертывания для шаблонов ARM
 
-Диспетчер ресурсов предоставляет следующие функции для получения значений, связанных с текущим развертыванием:
+Диспетчер ресурсов предоставляет следующие функции для получения значений, связанных с текущим развертыванием шаблона Azure Resource Manager (ARM):
 
-* [deployment](#deployment)
+* [развертывания](#deployment)
 * [PXE](#environment)
-* [parameters](#parameters)
-* [variables](#variables)
+* [Вход](#parameters)
+* [среды](#variables)
 
 Сведения о получении значений из ресурсов, групп ресурсов или подписки см. в разделе [Функции для работы с ресурсами](template-functions-resource.md).
 
@@ -29,7 +29,12 @@ ms.locfileid: "77207287"
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Эта функция возвращает объект, который передается во время развертывания. Свойства в возвращаемом объекте зависят от того, передается ли объект развертывания в виде ссылки или встроенного объекта. Когда объект развертывания передается встроенным (например, при использовании параметра **-TemplateFile** в Azure PowerShell для определения локального файла), формат возвращаемого объекта будет таким:
+Эта функция возвращает объект, который передается во время развертывания. Свойства возвращаемого объекта различаются в зависимости от того, что вы используете:
+
+* Развертывание шаблона, который является локальным файлом, или развертывание шаблона, который является удаленным файлом, доступ к которому осуществляется через универсальный код ресурса (URI).
+* развертывание в группе ресурсов или развертывание в одной из других областей ([Подписка Azure](deploy-to-subscription.md), [Группа управления](deploy-to-management-group.md)или [клиент](deploy-to-tenant.md)).
+
+При развертывании локального шаблона в группе ресурсов: функция возвращает следующий формат:
 
 ```json
 {
@@ -44,6 +49,7 @@ ms.locfileid: "77207287"
             ],
             "outputs": {}
         },
+        "templateHash": "",
         "parameters": {},
         "mode": "",
         "provisioningState": ""
@@ -51,7 +57,7 @@ ms.locfileid: "77207287"
 }
 ```
 
-Когда объект передается в виде ссылки, как, например, при использовании параметра **-TemplateUri** для указания на удаленный объект, объект возвращается в следующем формате. 
+При развертывании удаленного шаблона в группе ресурсов: функция возвращает следующий формат:
 
 ```json
 {
@@ -68,6 +74,7 @@ ms.locfileid: "77207287"
             "resources": [],
             "outputs": {}
         },
+        "templateHash": "",
         "parameters": {},
         "mode": "",
         "provisioningState": ""
@@ -75,7 +82,26 @@ ms.locfileid: "77207287"
 }
 ```
 
-При [развертывании в подписку Azure](deploy-to-subscription.md) возвращаемый объект содержит свойство `location`, а не группу ресурсов. Свойство расположения включается при развертывании локального или внешнего шаблона.
+При развертывании в подписке Azure, группе управления или клиенте возвращаемый объект содержит `location` свойство. Свойство расположения включается при развертывании локального или внешнего шаблона. Формат будет следующим:
+
+```json
+{
+    "name": "",
+    "location": "",
+    "properties": {
+        "template": {
+            "$schema": "",
+            "contentVersion": "",
+            "resources": [],
+            "outputs": {}
+        },
+        "templateHash": "",
+        "parameters": {},
+        "mode": "",
+        "provisioningState": ""
+    }
+}
+```
 
 ### <a name="remarks"></a>Remarks
 
@@ -99,7 +125,7 @@ ms.locfileid: "77207287"
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
-        "subscriptionOutput": {
+        "deploymentOutput": {
             "value": "[deployment()]",
             "type" : "object"
         }
@@ -118,20 +144,19 @@ ms.locfileid: "77207287"
       "contentVersion": "1.0.0.0",
       "resources": [],
       "outputs": {
-        "subscriptionOutput": {
+        "deploymentOutput": {
           "type": "Object",
           "value": "[deployment()]"
         }
       }
     },
+    "templateHash": "13135986259522608210",
     "parameters": {},
     "mode": "Incremental",
     "provisioningState": "Accepted"
   }
 }
 ```
-
-Если используется шаблон уровня подписки, в котором применяется функция развертывания, ознакомьтесь с [этой функцией](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/deploymentsubscription.json). Она развертывается с помощью команды `az deployment create` или `New-AzDeployment`.
 
 ## <a name="environment"></a>Среда
 
@@ -239,7 +264,7 @@ ms.locfileid: "77207287"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | parameterName |Да |строка |Имя параметра, который требуется вернуть. |
 
@@ -328,11 +353,11 @@ ms.locfileid: "77207287"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| stringOutput | String | вариант 1 |
+| stringOutput | Строка | вариант 1 |
 | intOutput | Int | 1 |
 | objectOutput | Объект | {"one": "a", "two": "b"} |
-| arrayOutput | Array | [1, 2, 3] |
-| crossOutput | String | вариант 1 |
+| arrayOutput | Массив | [1, 2, 3] |
+| crossOutput | Строка | вариант 1 |
 
 Дополнительные сведения об использовании параметров см. [в разделе Параметры в Azure Resource Manager шаблоне](template-parameters.md).
 
@@ -344,9 +369,9 @@ ms.locfileid: "77207287"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
-| variableName |Да |String |Имя переменной, которую необходимо вернуть. |
+| variableName |Да |Строка |Имя переменной, которую необходимо вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -392,7 +417,7 @@ ms.locfileid: "77207287"
         "var4": {
             "property1": "value1",
             "property2": "value2"
-        }
+          }
     },
     "resources": [],
     "outputs": {
@@ -420,16 +445,13 @@ ms.locfileid: "77207287"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| exampleOutput1 | String | myVariable |
-| exampleOutput2 | Array | [1, 2, 3, 4] |
-| exampleOutput3 | String | myVariable |
+| exampleOutput1 | Строка | myVariable |
+| exampleOutput2 | Массив | [1, 2, 3, 4] |
+| exampleOutput3 | Строка | myVariable |
 | exampleOutput4 |  Объект | {"property1": "value1", "property2": "value2"} |
 
 Дополнительные сведения об использовании переменных см. [в разделе переменные в шаблоне Azure Resource Manager](template-variables.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
-* Инструкции по объединению нескольких шаблонов см. в статье [Функции развертывания для шаблонов Azure Resource Manager](linked-templates.md).
-* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
-* Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
+## <a name="next-steps"></a>Дальнейшие шаги
 
+* Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

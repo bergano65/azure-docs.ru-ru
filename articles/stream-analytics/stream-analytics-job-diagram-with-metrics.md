@@ -8,15 +8,15 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/01/2017
 ms.openlocfilehash: 3c0c29e1793e56efae8d13cb01d57faf257d8805
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75426077"
 ---
 # <a name="data-driven-debugging-by-using-the-job-diagram"></a>Отладка на основе данных с помощью схемы заданий
 
-Схема заданий в колонке **Мониторинг** на портале Azure может вам помочь визуализировать конвейер заданий. На ней представлены сведения о входных и выходных данных, а также о шагах запроса. С помощью схемы заданий можно проанализировать метрики на каждом шаге, чтобы быстро выявить источник проблемы при устранении неполадок.
+Схема задания в колонке **мониторинг** портал Azure может помочь визуализировать конвейер заданий. На ней представлены сведения о входных и выходных данных, а также о шагах запроса. С помощью схемы заданий можно проанализировать метрики на каждом шаге, чтобы быстро выявить источник проблемы при устранении неполадок.
 
 ## <a name="using-the-job-diagram"></a>Использование схемы заданий
 
@@ -55,7 +55,7 @@ ms.locfileid: "75426077"
 *   **InputEventsSourcesTotal** содержит число прочитанных единиц данных, например больших двоичных объектов.
 *   Метрика **InputEventsTotal** содержит число прочитанных событий. Эта метрика доступна для каждого раздела.
 *   Метрика **InputEventsInBytesTotal** содержит число прочитанных байтов.
-*   Метрика **InputEventsLastArrivalTime** обновляется после размещения в очереди каждого полученного события.
+*   **Инпутевентсластарривалтиме** обновляется со временем каждого полученного события в очереди.
  
 ### <a name="is-time-moving-forward-if-actual-events-are-read-punctuation-might-not-be-issued"></a>Отсчитывается ли время? Если фактические события считываются, знаки препинания могут быть опущены.
 
@@ -78,12 +78,12 @@ ms.locfileid: "75426077"
 *   Метрика **Итого отложенных входных событий** сообщает, сколько сообщений должен прочитать концентратор событий, и указывает входные данные Центра Интернета вещей Azure. Если это число больше 0, это означает, что задание не может обработать данные по мере их поступления. В таком случае попробуйте увеличить число единиц потоковой передачи и (или) проверьте, может ли задание выполняться параллельно. См. дополнительные сведения о [параллелизации запросов](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization). 
 
 
-## <a name="get-help"></a>Справка
+## <a name="get-help"></a>Получить справку
 Дополнительную помощь вы можете получить на нашем [форуме Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)
-* [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности базы данных](stream-analytics-scale-jobs.md)
-* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
+* [Начало работы со Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Масштабирование заданий Stream Analytics](stream-analytics-scale-jobs.md)
+* [Справочник по языку запросов Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Stream Analytics management REST API reference](https://msdn.microsoft.com/library/azure/dn835031.aspx) (Справочник по API-интерфейсу REST для управления Stream Analytics)

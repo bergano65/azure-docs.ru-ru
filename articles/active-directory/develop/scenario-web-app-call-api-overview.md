@@ -2,30 +2,27 @@
 title: Создание веб-приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как создать веб-приложение, вызывающее веб-API (обзор)
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: d121d6c198cb0d92cd098a40096e2f2300f65537
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 5af9e34baf6115e801fbfe35e6e3895e48b360e7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76758995"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80881729"
 ---
 # <a name="scenario-a-web-app-that-calls-web-apis"></a>Сценарий: веб-приложение, вызывающее веб-API
 
 Узнайте, как создать веб-приложение, которое подписывает пользователей на платформу Microsoft Identity, а затем вызывает веб-API от имени пользователя, выполнившего вход.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [Prerequisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
@@ -38,7 +35,7 @@ ms.locfileid: "76758995"
 
 Вы можете добавить проверку подлинности в веб-приложение, чтобы он мог подписывать пользователей и вызывать веб-API от имени пользователя, выполнившего вход.
 
-![Веб-приложение, которое вызывает веб-API](./media/scenario-webapp/web-app.svg)
+![Веб-приложение, вызывающее веб-API](./media/scenario-webapp/web-app.svg)
 
 Веб-приложения, вызывающие веб-API, являются конфиденциальными клиентскими приложениями.
 Вот почему они регистрируют секрет (пароль приложения или сертификат) с помощью Azure Active Directory (Azure AD). Этот секрет передается во время вызова Azure AD для получения маркера.
@@ -48,7 +45,7 @@ ms.locfileid: "76758995"
 > [!NOTE]
 > Добавление входа в веб-приложение — это защита самого веб-приложения. Эта защита достигается с помощью библиотек по *промежуточного слоя* , а не библиотеки проверки подлинности Майкрософт (MSAL). Приведенный выше сценарий — [веб-приложение, которое выполняет вход пользователей](scenario-web-app-sign-user-overview.md).
 >
-> В этом сценарии описывается вызов веб-API из веб-приложения. Для этих веб-API необходимо получить маркеры доступа. Чтобы получить эти маркеры, используйте библиотеки MSAL для получения этих маркеров.
+> В этом сценарии описывается вызов веб-API из веб-приложения. Для этих веб-API необходимо получить маркеры доступа. Для получения этих маркеров используются библиотеки MSAL.
 
 Разработка для этого сценария включает следующие конкретные задачи:
 

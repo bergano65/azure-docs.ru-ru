@@ -1,18 +1,16 @@
 ---
 title: Пошаговое руководство по REST API Azure Monitor
 description: Эта статья содержит сведения об аутентификации запросов и использовании REST API Azure Monitor для получения доступных определений и значений метрик.
-ms.service: azure-monitor
-ms.subservice: ''
+ms.subservice: metrics
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
 ms.date: 03/19/2018
-ms.openlocfilehash: 6dff1fe974ad4ffa993e4df03b4903d7e46e1990
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.custom: has-adal-ref
+ms.openlocfilehash: 1de3afc380c5c3c82a869de0ff2319b013e26438
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77162265"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82610893"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 
@@ -97,7 +95,7 @@ $authHeader = @{
 
 **Метод**: GET
 
-**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
+**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/*{SubscriptionId}*/resourceGroups/*{resourceGroupName}*/providers/*{resourceProviderNamespace}*/*{ResourceType}*/*{resourceName}*/providers/Microsoft.Insights/metricDefinitions? API-Version =*{apiVersion}*
 
 Например, запрос на получение определений метрик для учетной записи хранения Azure будет выглядеть следующим образом:
 
@@ -119,7 +117,7 @@ Invoke-RestMethod -Uri $request `
 
 Полученный текст ответа JSON будет аналогичен приведенному ниже примеру. (Обратите внимание, что вторая метрика имеет измерения.)
 
-```JSON
+```json
 {
     "value": [
         {
@@ -241,7 +239,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: HTTPS\://Management.Azure.com/Subscriptions/ *{Subscription-ID}* /resourceGroups/ *{Resource-Group-Name}* /providers/ *{ресурс-поставщик-пространство имен* }/ *{ресурс-тип}* / *{Resource-Name}* /providers/Microsoft.Insights/Metrics? metricnames = *{Метрика}* & TimeSpan = *{StartTime/EndTime}* & $Filter = *{Filter}* & resultType = метаданные & API-Version = *{ apiVersion}*
+**URI запроса**: HTTPS\://Management.Azure.com/Subscriptions/*{Subscription-ID}*/resourceGroups/*{ресурс-Group-Name}*/providers/*{ресурс-поставщик-пространство имен}*/*{ресурс-тип}*/*{Resource-Name}*/providers/Microsoft.Insights/Metrics? metricnames =*{Метрика}*&TimeSpan =*{StartTime/EndTime}*&$Filter =*{Filter}*&resultType = метаданные&API-Version =*{apiVersion}*
 
 Например, чтобы получить список значений измерений, которые были созданы для параметра "API Name dimension" (Измерение имени API) метрики "Транзакции", где измерение GeoType = "Primary" в течение указанного интервала времени, используйте следующий запрос:
 
@@ -257,7 +255,7 @@ Invoke-RestMethod -Uri $request `
 
 Полученный текст ответа JSON будет аналогичен приведенному ниже примеру.
 
-```JSON
+```json
 {
   "timespan": "2018-03-01T00:00:00Z/2018-03-02T00:00:00Z",
   "value": [
@@ -314,7 +312,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https://management.azure.com/subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/ *{пространство_имен_поставщиков_ресурсов}* / *{тип_ресурса}* / *{имя_ресурса}* /providers/microsoft.insights/metrics?metricnames= *{метрика}* &timespan= *{время_начала/время_окончания}* &$filter= *{фильтр}* &interval= *{интервал_времени}* &aggregation= *{агрегирование}* &api-version= *{версия_API}*
+**URI запроса**: https:\//Management.Azure.com/Subscriptions/*{Subscription-ID}*/resourceGroups/*{ресурс-Group-Name}*/providers/*{ресурс-поставщик-пространство имен}*/*{Resource-Type}*/*{Resource-Name}*/providers/Microsoft.Insights/Metrics? metricnames =*{Метрика}*&TimeSpan =*{StartTime/EndTime}*&$Filter =*{Filter}*&интервал =*{timeGrain}*&агрегат =*{агрегирование}*&API-Version =*{apiVersion}*
 
 Например, чтобы вывести первые 3 API-интерфейса в убывающем порядке по величине показателя "Транзакции" в течение 5-минутного диапазона, где для GeoType установлено значение "Primary", используйте следующий запрос:
 
@@ -330,7 +328,7 @@ Invoke-RestMethod -Uri $request `
 
 Полученный текст ответа JSON будет аналогичен приведенному ниже примеру.
 
-```JSON
+```json
 {
   "cost": 0,
   "timespan": "2018-03-01T02:00:00Z/2018-03-01T02:05:00Z",
@@ -393,7 +391,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/ *{SubscriptionId}* /resourceGroups/ *{resourceGroupName}* /providers/ *{resourceProviderNamespace}* / *{ResourceType}* / *{resourceName}* /providers/Microsoft.Insights/metricDefinitions? API-Version = *{apiVersion}*
+**URI запроса**: https:\/\/Management.Azure.com/Subscriptions/*{SubscriptionId}*/resourceGroups/*{resourceGroupName}*/providers/*{resourceProviderNamespace}*/*{ResourceType}*/*{resourceName}*/providers/Microsoft.Insights/metricDefinitions? API-Version =*{apiVersion}*
 
 Например, чтобы получить определения метрик для приложения логики Azure, запрос будет выглядеть следующим образом:
 
@@ -414,7 +412,7 @@ Invoke-RestMethod -Uri $request `
 
 Полученный текст ответа JSON будет аналогичен приведенному ниже примеру.
 
-```JSON
+```json
 {
   "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azmon-rest-api-walkthrough/providers/Microsoft.Logic/workflows/ContosoTweets/providers/microsoft.insights/metricdefinitions",
   "value": [
@@ -466,7 +464,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https://management.azure.com/subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/ *{пространство_имен_поставщиков_ресурсов}* / *{тип_ресурса}* / *{имя_ресурса}* /providers/microsoft.insights/metrics?$filter= *{фильтр}* &api-version= *{версия_API}*
+**URI запроса**:`https:\//management.azure.com/subscriptions/\*{subscription-id}*/resourceGroups/*{resource-group-name}*/providers/*{resource-provider-namespace}*/*{resource-type}*/*{resource-name}*/providers/microsoft.insights/metrics?$filter=*{filter}*&api-version=*{apiVersion}*`
 
 Например, запрос для получения точек данных метрики RunsSucceeded в заданном диапазоне времени с интервалом в 1 час будет выглядеть следующим образом.
 
@@ -482,7 +480,7 @@ Invoke-RestMethod -Uri $request `
 
 Полученный текст ответа JSON будет аналогичен приведенному ниже примеру.
 
-```JSON
+```json
 {
   "value": [
     {
@@ -530,7 +528,7 @@ Invoke-RestMethod -Uri $request `
 
 Полученный текст ответа JSON будет аналогичен приведенному ниже примеру.
 
-```JSON
+```json
 {
   "value": [
     {
@@ -590,7 +588,7 @@ Invoke-RestMethod -Uri $request `
 
 Например, чтобы получить определения метрик для конкретного приложения логики, выполните следующую команду:
 
-```
+```console
 armclient GET /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azmon-rest-api-walkthrough/providers/Microsoft.Logic/workflows/ContosoTweets/providers/microsoft.insights/metricDefinitions?api-version=2016-03-01
 ```
 
@@ -604,13 +602,13 @@ armclient GET /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups
 
 Приведенный ниже список содержит несколько примеров форматов идентификаторов различных ресурсов Azure.
 
-* **Центр Интернета вещей**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Devices/IotHubs/ *{имя_центра}* .
-* **Пул эластичных баз данных SQL**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Sql/servers/ *{база_данных_в_пуле}* /elasticpools/ *{имя_пула_SQL}* .
-* **База данных SQL (версии 12)** : /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Sql/servers/ *{имя_сервера}* /databases/ *{имя_базы_данных}* .
-* **Служебная шина**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.ServiceBus/ *{пространство_имен}* / *{имя_служебной_шины}* .
-* **Масштабируемые наборы виртуальных машин**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Compute/virtualMachineScaleSets/ *{имя_ВМ}* .
-* **Виртуальные машины**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.Compute/virtualMachines/ *{имя_ВМ}* .
-* **Центры событий**: /subscriptions/ *{ИД_подписки}* /resourceGroups/ *{имя_группы_ресурсов}* /providers/Microsoft.EventHub/namespaces/ *{пространство_имен_центров_событий}* .
+* **Центр Интернета вещей**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Devices/IotHubs/*{имя_центра}*.
+* **Пул эластичных баз данных SQL**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Sql/servers/*{база_данных_в_пуле}*/elasticpools/*{имя_пула_SQL}*.
+* **База данных SQL (версии 12)**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Sql/servers/*{имя_сервера}*/databases/*{имя_базы_данных}*.
+* **Служебная шина**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.ServiceBus/*{пространство_имен}*/*{имя_служебной_шины}*.
+* **Масштабируемые наборы виртуальных машин**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Compute/virtualMachineScaleSets/*{имя_ВМ}*.
+* **Виртуальные машины**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.Compute/virtualMachines/*{имя_ВМ}*.
+* **Центры событий**: /subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/Microsoft.EventHub/namespaces/*{пространство_имен_центров_событий}*.
 
 Существуют альтернативные подходы к извлечению идентификатора ресурса, включая использование Azure Resource Explorer, PowerShell, интерфейса командной строки Azure и просмотр требуемого ресурса на портале Azure.
 
@@ -636,7 +634,7 @@ Get-AzLogicApp -ResourceGroupName azmon-rest-api-walkthrough -Name contosotweets
 
 Результаты должны иметь следующий вид:
 
-```
+```output
 Id             : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/azmon-rest-api-walkthrough/providers/Microsoft.Logic/workflows/ContosoTweets
 Name           : ContosoTweets
 Type           : Microsoft.Logic/workflows
@@ -656,15 +654,15 @@ Version        : 08586982649483762729
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Чтобы получить идентификатор ресурса для учетной записи хранения Azure с помощью Azure CLI, выполните команду `az storage account show`, как показано в следующем примере:
+Чтобы получить идентификатор ресурса для учетной записи хранения Azure с помощью Azure CLI, выполните `az storage account show` команду, как показано в следующем примере:
 
-```
+```azurecli
 az storage account show -g azmon-rest-api-walkthrough -n contosotweets2017
 ```
 
 Результаты должны иметь следующий вид:
 
-```JSON
+```json
 {
   "accessTier": null,
   "creationTime": "2017-08-18T19:58:41.840552+00:00",

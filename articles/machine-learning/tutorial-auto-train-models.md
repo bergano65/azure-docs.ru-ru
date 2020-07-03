@@ -9,15 +9,15 @@ ms.topic: tutorial
 author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
-ms.date: 11/04/2019
-ms.openlocfilehash: 83c4ad92cc367deb52e4e9e5cd8b76ddab409933
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.date: 02/10/2020
+ms.openlocfilehash: 75e61ea3f4fa6c2b346f912a9effd66ad94e7e93
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75532217"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77116450"
 ---
-# <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Руководство. Использованию автоматического машинного обучения для прогнозирования тарифов на такси
+# <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Руководство по Использованию автоматического машинного обучения для прогнозирования тарифов на такси
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом руководстве показано, как с помощью функции автоматизированного машинного обучения в Машинном обучении Azure создать модель регрессии для прогнозирования тарифов на такси в Нью-Йорке. В ходе этого процесса добавляются данные для обучения и настраиваются параметры, а также выполняется автоматическая итерация с использованием комбинаций разных методов нормализации или стандартизации признаков, моделей и настроек гиперпараметров для получения оптимальной модели.
@@ -33,10 +33,10 @@ ms.locfileid: "75532217"
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию](https://aka.ms/AMLFree) Машинного обучения Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Выполните инструкции из [руководства по установке](tutorial-1st-experiment-sdk-setup.md), если у вас еще нет рабочей области Машинного обучения Azure или виртуальной машины записных книжек.
-* Завершив установку, откройте записную книжку**tutorials/regression-automated-ml.ipynb**, используя тот же сервер записной книжки.
+* Завершив настройку, откройте записную книжку *tutorials/regression-automl-nyc-taxi-data/regression-automated-ml.ipynb*, используя тот же сервер записных книжек.
 
 Это руководство также доступно на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите запустить его в собственной [локальной среде](how-to-configure-environment.md#local). Выполните команду `pip install azureml-sdk[automl] azureml-opendatasets azureml-widgets`, чтобы получить необходимые пакеты.
 
@@ -894,7 +894,7 @@ x_train, x_test, y_train, y_test = train_test_split(x_df, y_df, test_size=0.2, r
 
 Определите параметры эксперимента и модели для обучения. Просмотрите полный список параметров [здесь](how-to-configure-auto-train.md). Отправка эксперимента с этими параметрами по умолчанию занимает примерно 5–20 минут, но если вы хотите снизить время выполнения, уменьшите значение параметра `experiment_timeout_minutes`.
 
-|Свойство| Значение в этом руководстве |Description|
+|Свойство| Значение в этом руководстве |Описание|
 |----|----|---|
 |**iteration_timeout_minutes**|2|Максимальная длительность каждой итерации в минутах. Уменьшите это значение, чтобы уменьшить общее время выполнения.|
 |**experiment_timeout_minutes**|20|Максимальное количество времени в минутах, в течение которого могут быть пройдены все итерации до завершения эксперимента.|

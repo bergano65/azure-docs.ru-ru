@@ -1,10 +1,9 @@
 ---
-title: Протоколы проверки подлинности платформы Microsoft Identity | Документация Майкрософт
+title: Протоколы проверки подлинности платформы Microsoft Identity
 description: Обзор протоколов проверки подлинности, поддерживаемых платформой идентификации Майкрософт
 author: rwike77
 services: active-directory
 manager: CelesteDG
-ms.assetid: 7a838ae2-c24c-4304-b6c0-e77fb888e6c0
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
@@ -13,12 +12,12 @@ ms.date: 12/18/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
-ms.openlocfilehash: 43168ec7217d8f016857ba6dc54ca30bce2dd594
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 41ea41b4d7c181dad9246653a68c329387ac5381
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76699297"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80884687"
 ---
 # <a name="microsoft-identity-platform-authentication-protocols"></a>Протоколы проверки подлинности платформы Microsoft Identity
 

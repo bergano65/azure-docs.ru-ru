@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: d86170a53b4bfbe712bbca12db4d6063214aba21
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74768169"
 ---
 # <a name="azure-database-for-postgresql---single-server"></a>База данных Azure для PostgreSQL — отдельный сервер
@@ -39,12 +39,12 @@ ms.locfileid: "74768169"
 |||
 |:--|:--|
 | **Аутентификация и авторизация** | Сервер базы данных Azure для PostgreSQL поддерживает собственную аутентификацию PostgreSQL. Подключиться к серверу и выполнить аутентификацию можно с помощью учетных данных администратора сервера. |
-| **Протокол** | Служба поддерживает протокол на основе сообщений, используемый PostgreSQL. |
+| **протокол**; | Служба поддерживает протокол на основе сообщений, используемый PostgreSQL. |
 | **TCP/IP** | Протокол работает через TCP/IP, а также через сокеты домена Unix. |
 | **Брандмауэр** | Для защиты данных правило брандмауэра запрещает любой доступ к серверу и базам данных, пока не будут указаны компьютеры, которые имеют разрешение. См. статью  [Правила брандмауэра сервера Базы данных Azure для PostgreSQL](concepts-firewall-rules.md). |
 
 ## <a name="managing-your-server"></a>Управление сервером
-Серверами Базы данных Azure для PostgreSQL можно управлять с помощью [портала Azure](https://portal.azure.com) и [Azure CLI](/cli/azure/postgres).
+Вы можете управлять серверами базы данных Azure для PostgreSQL с помощью [портал Azure](https://portal.azure.com) или [Azure CLI](/cli/azure/postgres).
 
 При создании сервера вы настраиваете учетные данные для вашего администратора. Администратор — это пользователь с самым высоким уровнем привилегий на сервере. Эти привилегии относятся к роли azure_pg_admin. Эта роль не имеет полных прав суперпользователя. 
 
@@ -63,7 +63,7 @@ ms.locfileid: "74768169"
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Общие сведения о службе приведены в статье  [Что такое База данных Azure для PostgreSQL](overview.md).
+- Общие сведения о службе см. в статье [Обзор базы данных Azure для PostgreSQL](overview.md).
 - Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб**, см. в разделе [уровни служб](concepts-pricing-tiers.md).
 - Сведения о подключении к службе см. в статье  [Библиотеки подключений для Базы данных Azure для PostgreSQL](concepts-connection-libraries.md).
 - Просмотр и изменение параметров сервера с помощью [портала Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).

@@ -10,16 +10,16 @@ ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/05/2019
+ms.date: 03/12/2020
 ms.custom: seodec18
-ms.openlocfilehash: 03ea130011b23704731d68e5685e4ea0938e19b5
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: dcd5668fa2c6e1840eed13a9ee0cbd30d8d8a25a
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771808"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82983250"
 ---
-# <a name="monitor-azure-ml-experiment-runs-and-metrics"></a>Мониторинг запусков и метрик экспериментов машинного обучения Azure
+# <a name="monitor-azure-ml-experiment-runs-and-metrics"></a>Мониторинг запусков и метрик экспериментов в Машинном обучении Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Улучшите процесс создания модели, отслеживая эксперименты и отслеживайте метрики запуска. В этой статье вы узнаете, как добавить код ведения журнала в обучающий сценарий, отправить запуск эксперимента, отслеживать выполнение и проверить результаты в Машинное обучение Azure.
@@ -34,15 +34,15 @@ ms.locfileid: "75771808"
 
 Следующие метрики можно добавить к выполнению во время обучения эксперимента. Чтобы просмотреть подробный список того, что можно отслеживать при выполнении, ознакомьтесь со [справочной документацией по классу Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py).
 
-|Тип| Функция Python | Примечания|
+|Type| Функция Python | Примечания|
 |----|:----|:----|
-|Скалярные значения |Функция:<br>`run.log(name, value, description='')`<br><br>Пример:<br>run.log("accuracy", 0.95) |Запишите числовое или строковое значение в выполнение с заданным именем. Запись метрики в выполнение приводит к тому, что метрика будет сохранена в записи о выполнении в эксперименте.  Одну и ту же метрику можно несколько раз записать в рамках выполнения. Результат будет считаться вектором этой метрики.|
-|Списки|Функция:<br>`run.log_list(name, value, description='')`<br><br>Пример:<br>run.log_list("accuracies", [0.6, 0.7, 0.87]) | Запишите список значений в выполнение с заданным именем.|
-|Строка|Функция:<br>`run.log_row(name, description=None, **kwargs)`<br>Пример:<br>run.log_row("Y over X", x=1, y=0.4) | С помощью *log_row* создается метрика с несколькими столбцами, как описано в kwargs. Каждый именованный параметр создает столбец с указанным значением.  *log_row* можно вызвать один раз, чтобы записать произвольный кортеж, или несколько раз в цикле, чтобы создать полную таблицу.|
-|Таблицы|Функция:<br>`run.log_table(name, value, description='')`<br><br>Пример:<br>run.log_table("Y over X", {"x":[1, 2, 3], "y":[0.6, 0.7, 0.89]}) | Запишите объект словаря в выполнение с заданным именем. |
-|Образы|Функция:<br>`run.log_image(name, path=None, plot=None)`<br><br>Пример:<br>`run.log_image("ROC", plt)` | Запишите изображение в запись о выполнении. Используйте log_image, чтобы записать файл изображения или график matplotlib в выполнение.  Эти изображения будут видимы, и их можно сравнить в записи о выполнении.|
-|Добавление тега к выполнению|Функция:<br>`run.tag(key, value=None)`<br><br>Пример:<br>run.tag("selected", "yes") | Добавление тега к выполнению с использованием строкового ключа и дополнительного значения строки.|
-|Отправка файла или каталога|Функция:<br>`run.upload_file(name, path_or_stream)`<br> <br> Пример:<br>run.upload_file("best_model.pkl", "./model.pkl") | Отправка файла в запись о выполнении. Выполняет автоматическую запись файла в указанном каталоге вывода, который по умолчанию имеет значение "./outputs" для большинства типов выполнения.  Используйте upload_file только в том случае, если необходимо отправить дополнительные файлы или не указан выходной каталог. Мы советуем добавлять `outputs` к имени для того, чтобы файл отправлялся в выходной каталог. Вы можете перечислить все файлы, связанные с этой записью о выполнении, вызвав `run.get_file_names()`.|
+|Скалярные значения |Функция:<br>`run.log(name, value, description='')`<br><br>Пример<br>run.log("accuracy", 0.95) |Запишите числовое или строковое значение в выполнение с заданным именем. Запись метрики в выполнение приводит к тому, что метрика будет сохранена в записи о выполнении в эксперименте.  Одну и ту же метрику можно несколько раз записать в рамках выполнения. Результат будет считаться вектором этой метрики.|
+|Списки|Функция:<br>`run.log_list(name, value, description='')`<br><br>Пример<br>run.log_list("accuracies", [0.6, 0.7, 0.87]) | Запишите список значений в выполнение с заданным именем.|
+|Строка|Функция:<br>`run.log_row(name, description=None, **kwargs)`<br>Пример<br>run.log_row("Y over X", x=1, y=0.4) | С помощью *log_row* создается метрика с несколькими столбцами, как описано в kwargs. Каждый именованный параметр создает столбец с указанным значением.  *log_row* можно вызвать один раз, чтобы записать произвольный кортеж, или несколько раз в цикле, чтобы создать полную таблицу.|
+|Таблица|Функция:<br>`run.log_table(name, value, description='')`<br><br>Пример<br>run.log_table("Y over X", {"x":[1, 2, 3], "y":[0.6, 0.7, 0.89]}) | Запишите объект словаря в выполнение с заданным именем. |
+|Изображения|Функция:<br>`run.log_image(name, path=None, plot=None)`<br><br>Пример<br>`run.log_image("ROC", plot=plt)` | Запишите изображение в запись о выполнении. Для записи в журнал используйте log_image. Файл изображения PNG или Matplotlib график выполнения.  Эти изображения будут видимы, и их можно сравнить в записи о выполнении.|
+|Добавление тега к выполнению|Функция:<br>`run.tag(key, value=None)`<br><br>Пример<br>run.tag("selected", "yes") | Добавление тега к выполнению с использованием строкового ключа и дополнительного значения строки.|
+|Отправка файла или каталога|Функция:<br>`run.upload_file(name, path_or_stream)`<br> <br> Пример<br>run.upload_file("best_model.pkl", "./model.pkl") | Отправка файла в запись о выполнении. Выполняет автоматическую запись файла в указанном каталоге вывода, который по умолчанию имеет значение "./outputs" для большинства типов выполнения.  Используйте upload_file только в том случае, если необходимо отправить дополнительные файлы или не указан выходной каталог. Мы советуем добавлять `outputs` к имени для того, чтобы файл отправлялся в выходной каталог. Вы можете перечислить все файлы, связанные с этой записью о выполнении, вызвав `run.get_file_names()`.|
 
 > [!NOTE]
 > Метрики для скалярных значений, списков, строк и таблиц могут быть типа: число с плавающей точкой, целое число или строка.
@@ -58,76 +58,27 @@ ms.locfileid: "75771808"
 
 1. Загрузите рабочую область. Дополнительные сведения о настройке конфигурации рабочей области см. в разделе [файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
 
-   ```python
-   from azureml.core import Experiment, Run, Workspace
-   import azureml.core
-  
-   ws = Workspace.from_config()
-   ```
-  
+[! Notebook-Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-висин-нотебук/траин-висин-нотебук.ипинб? Name = load_ws)]
+
+
 ## <a name="option-1-use-start_logging"></a>Вариант 1. Использование start_logging
 
 **start_logging** создает интерактивное выполнение для использования в таких сценариях, как записные книжки. Все метрики, записанные во время сеанса, добавляются в запись о выполнении эксперимента.
 
 В следующем примере простая модель sklearn Ridge обучается локально в локальной записной книжке Jupyter. Дополнительные сведения о отправке экспериментов в различные среды см. в разделе [Настройка целевых объектов вычислений для обучения модели с помощью машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/how-to-set-up-training-targets).
 
-1. Создайте сценарий обучения в локальной записной книжке Jupyter. 
+### <a name="load-the-data"></a>Загрузка данных
 
-   ```python
-   # load diabetes dataset, a well-known small dataset that comes with scikit-learn
-   from sklearn.datasets import load_diabetes
-   from sklearn.linear_model import Ridge
-   from sklearn.metrics import mean_squared_error
-   from sklearn.model_selection import train_test_split
-   from sklearn.externals import joblib
+В этом примере используется набор данных диабета — хорошо известный небольшой набор данных, входящий в состав scikit-учиться. Эта ячейка загружает набор данных и разделяет его на случайные обучающие и проверочные наборы.
 
-   X, y = load_diabetes(return_X_y = True)
-   columns = ['age', 'gender', 'bmi', 'bp', 's1', 's2', 's3', 's4', 's5', 's6']
-   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
-   data = {
-      "train":{"X": X_train, "y": y_train},        
-      "test":{"X": X_test, "y": y_test}
-   }
-   reg = Ridge(alpha = 0.03)
-   reg.fit(data['train']['X'], data['train']['y'])
-   preds = reg.predict(data['test']['X'])
-   print('Mean Squared Error is', mean_squared_error(preds, data['test']['y']))
-   joblib.dump(value = reg, filename = 'model.pkl');
-   ```
+[! Notebook-Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-висин-нотебук/траин-висин-нотебук.ипинб? Name = load_data)]
 
-2. Добавьте Отслеживание экспериментов с помощью пакета SDK для Машинное обучение Azure и отправьте сохраненную модель в запись запуска эксперимента. Следующий код добавляет теги, журналы и отправляет файл модели в выполнение эксперимента.
+### <a name="add-tracking"></a>Добавить отслеживание
+Добавьте Отслеживание экспериментов с помощью пакета SDK для Машинное обучение Azure и отправьте сохраненную модель в запись запуска эксперимента. Следующий код добавляет теги, журналы и отправляет файл модели в выполнение эксперимента.
 
-   ```python
-    # Get an experiment object from Azure Machine Learning
-    experiment = Experiment(workspace=ws, name="train-within-notebook")
-    
-    # Create a run object in the experiment
-    run =  experiment.start_logging()
-    # Log the algorithm parameter alpha to the run
-    run.log('alpha', 0.03)
-    
-    # Create, fit, and test the scikit-learn Ridge regression model
-    regression_model = Ridge(alpha=0.03)
-    regression_model.fit(data['train']['X'], data['train']['y'])
-    preds = regression_model.predict(data['test']['X'])
-    
-    # Output the Mean Squared Error to the notebook and to the run
-    print('Mean Squared Error is', mean_squared_error(data['test']['y'], preds))
-    run.log('mse', mean_squared_error(data['test']['y'], preds))
-    
-    # Save the model to the outputs directory for capture
-    model_file_name = 'outputs/model.pkl'
-    
-    joblib.dump(value = regression_model, filename = model_file_name)
-    
-    # upload the model file explicitly into artifacts 
-    run.upload_file(name = model_file_name, path_or_stream = model_file_name)
-    
-    # Complete the run
-    run.complete()
-   ```
+[! Notebook-Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-висин-нотебук/траин-висин-нотебук.ипинб? Name = create_experiment)]
 
-    Сценарий оканчивается на ```run.complete()```, что помечает выполнение как завершенное.  Обычно эта функция используется в сценариях интерактивной записной книжки.
+Сценарий оканчивается на ```run.complete()```, что помечает выполнение как завершенное.  Обычно эта функция используется в сценариях интерактивной записной книжки.
 
 ## <a name="option-2-use-scriptrunconfig"></a>Вариант 2. Использование ScriptRunConfig
 
@@ -137,94 +88,23 @@ ms.locfileid: "75771808"
 
 1. Создайте сценарий обучения `train.py`.
 
-   ```python
-   # train.py
-
-   import os
-   from sklearn.datasets import load_diabetes
-   from sklearn.linear_model import Ridge
-   from sklearn.metrics import mean_squared_error
-   from sklearn.model_selection import train_test_split
-   from azureml.core.run import Run
-   from sklearn.externals import joblib
-
-   import numpy as np
-
-   #os.makedirs('./outputs', exist_ok = True)
-
-   X, y = load_diabetes(return_X_y = True)
-
-   run = Run.get_context()
-
-   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
-   data = {"train": {"X": X_train, "y": y_train},
-          "test": {"X": X_test, "y": y_test}}
-
-   # list of numbers from 0.0 to 1.0 with a 0.05 interval
-   alphas = mylib.get_alphas()
-
-   for alpha in alphas:
-      # Use Ridge algorithm to create a regression model
-      reg = Ridge(alpha = alpha)
-      reg.fit(data["train"]["X"], data["train"]["y"])
-
-      preds = reg.predict(data["test"]["X"])
-      mse = mean_squared_error(preds, data["test"]["y"])
-      # log the alpha and mse values
-      run.log('alpha', alpha)
-      run.log('mse', mse)
-
-      model_file_name = 'ridge_{0:.2f}.pkl'.format(alpha)
-      # save model in the outputs folder so it automatically get uploaded
-      with open(model_file_name, "wb") as file:
-          joblib.dump(value = reg, filename = model_file_name)
-
-      # upload the model file explicitly into artifacts 
-      run.upload_file(name = model_file_name, path_or_stream = model_file_name)
-
-      # register the model
-      #run.register_model(file_name = model_file_name)
-
-      print('alpha is {0:.2f}, and mse is {1:0.2f}'.format(alpha, mse))
-  
-   ```
+   [! code-Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-он-локал/траин.Пи)]
 
 2. Сценарий `train.py` ссылается на `mylib.py`, который позволяет получить список альфа-значений для использования в модели ridge.
 
-   ```python
-   # mylib.py
-  
-   import numpy as np
-
-   def get_alphas():
-      # list of numbers from 0.0 to 1.0 with a 0.05 interval
-      return np.arange(0.0, 1.0, 0.05)
-   ```
+   [! code-Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-он-локал/милиб.Пи)] 
 
 3. Настройте управляемую пользователем локальную среду.
 
-   ```python
-   from azureml.core.environment import Environment
-    
-   # Editing a run configuration property on-fly.
-   user_managed_env = Environment("user-managed-env")
-    
-   user_managed_env.python.user_managed_dependencies = True
-    
-   # You can choose a specific Python environment by pointing to a Python path 
-   #user_managed_env.python.interpreter_path = '/home/johndoe/miniconda3/envs/myenv/bin/python'
-   ```
+   [! Notebook-Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-он-локал/траин-он-локал.ипинб? Name = user_managed_env)]
+
 
 4. Отправьте сценарий ```train.py``` для выполнения в среде, управляемой пользователем. Вся папка сценария отправляется для обучения, в том числе файл ```mylib.py```.
 
-   ```python
-   from azureml.core import ScriptRunConfig
-    
-   exp = Experiment(workspace=ws, name="train-on-local")
-   src = ScriptRunConfig(source_directory='./', script='train.py')
-   src.run_config.environment = user_managed_env
-   run = exp.submit(src)
-   ```
+   [! Notebook-Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-он-локал/траин-он-локал.ипинб? Name = src)] [! Записная книжка — Python [] (~/Мачинелеарнингнотебукс/хов-то-усе-азуремл/Траининг/траин-он-локал/траин-он-локал.ипинб? Name = Run)]
+
+
+
 
 ## <a name="manage-a-run"></a>Управление запуском
 
@@ -269,7 +149,7 @@ ms.locfileid: "75771808"
    print(run.get_portal_url())
    ```
 
-2. **[Для автоматических запусков машинного обучения]** Доступ к диаграммам из предыдущего выполнения. Замените `<<experiment_name>>` именем соответствующего эксперимента:
+2. **[Для автоматических запусков машинного обучения]** Доступ к диаграммам из предыдущего выполнения. Замените `<<experiment_name>>` на имя соответствующего эксперимента:
 
    ``` 
    from azureml.widgets import RunDetails
@@ -297,7 +177,7 @@ ms.locfileid: "75771808"
 Метрики обученной модели можно просмотреть с помощью ```run.get_metrics()```. Теперь можно получить все метрики, которые были зарегистрированы в примере выше, чтобы определить оптимальную модель.
 
 <a name="view-the-experiment-in-the-web-portal"></a>
-## <a name="view-the-experiment-in-your-workspace-in-azure-machine-learning-studiohttpsmlazurecom"></a>Просмотр эксперимента в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com)
+## <a name="view-the-experiment-in-your-workspace-in-azure-machine-learning-studio"></a>Просмотр эксперимента в рабочей области в [машинное обучение Azure Studio](https://ml.azure.com)
 
 После завершения эксперимента можно просмотреть записи о выполнении в эксперименте. Доступ к журналу можно получить из [машинное обучение Azure Studio](https://ml.azure.com).
 

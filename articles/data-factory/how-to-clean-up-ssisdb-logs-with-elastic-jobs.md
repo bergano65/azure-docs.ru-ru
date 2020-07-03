@@ -10,14 +10,16 @@ author: swinarko
 ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
-ms.openlocfilehash: 331a2317f11fbb6f0dd1437a0b41f7ad110a63c7
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 02952c3baea5d9089061b10f2429be57a9322398
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928024"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81606179"
 ---
 # <a name="clean-up-ssisdb-logs-with-azure-elastic-database-jobs"></a>Очистка журналов SSISDB с помощью заданий обработки эластичных баз данных Azure
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как использовать задания обработки эластичных баз данных Azure для активации хранимой процедуры очистки журналов `SSISDB` для базы данных каталога SQL Server Integration Services.
 
@@ -260,7 +262,7 @@ SELECT * FROM jobs.job_executions WHERE is_active = 1
 ORDER BY start_time DESC
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для управления и отслеживания задач, относящихся к Azure-SSIS Integration Runtime, ознакомьтесь со следующими статьями. Azure-SSIS IR — это механизм среды выполнения для пакетов служб SSIS, хранящихся в SSISDB в Базе данных SQL Azure.
 

@@ -1,22 +1,15 @@
 ---
 title: Подключение виртуальной файловой системы к пулу (пакетная служба Azure) | Документация Майкрософт
 description: Узнайте, как подключить виртуальную файловую систему к пулу пакетной службы.
-services: batch
-documentationcenter: ''
-author: LauraBrenner
-manager: evansma
-ms.service: batch
-ms.workload: big-compute
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/13/2019
 ms.author: labrenne
-ms.openlocfilehash: a22117505dff35f9b92e3dd3c91dc8540557b218
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 703b65f0a1571659d7be479776dd8fdf02d86731
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023044"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82117035"
 ---
 # <a name="mount-a-virtual-file-system-on-a-batch-pool"></a>Подключение виртуальной файловой системы в пуле пакетной службы
 
@@ -39,17 +32,17 @@ ms.locfileid: "77023044"
 
 Подключение виртуальной файловой системы к пулу делает файловую систему доступной каждому кластерному узлу в пуле. Файловая система настраивается либо при присоединении к пулу, либо при перезапуске или пересоздании образа узла.
 
-Чтобы подключить файловую систему в пуле, создайте объект `MountConfiguration`. Выберите объект, соответствующий виртуальной файловой системе: `AzureBlobFileSystemConfiguration`, `AzureFileShareConfiguration`, `NfsMountConfiguration`или `CifsMountConfiguration`.
+Чтобы подключить файловую систему к пулу, создайте `MountConfiguration` объект. Выберите объект, соответствующий виртуальной файловой системе `AzureBlobFileSystemConfiguration`:, `AzureFileShareConfiguration`, `NfsMountConfiguration`или. `CifsMountConfiguration`
 
 Все объекты конфигурации подключения должны иметь следующие базовые параметры. Некоторые конфигурации подключения имеют параметры, относящиеся к используемой файловой системе, которые более подробно обсуждаются в примерах кода.
 
 - **Имя учетной записи или источник**. чтобы подключить виртуальную общую папку, вам потребуется имя учетной записи хранения или ее источник.
-- **Относительный путь подключения или источник**: расположение файловой системы, смонтированной на узле вычислений, относительно каталога Standard `fsmounts`, доступного на узле с помощью `AZ_BATCH_NODE_MOUNTS_DIR`. Точное расположение зависит от операционной системы, используемой на узле. Например, физическое расположение на узле Ubuntu сопоставляется с `mnt\batch\tasks\fsmounts`, а на узле CentOS он сопоставляется с `mnt\resources\batch\tasks\fsmounts`.
+- **Относительный путь подключения или источник**: расположение файловой системы, смонтированной на кластерном узле, по отношению `fsmounts` к стандартному каталогу, `AZ_BATCH_NODE_MOUNTS_DIR`доступному на узле через. Точное расположение зависит от операционной системы, используемой на узле. Например, физическое расположение на узле Ubuntu сопоставляется с `mnt\batch\tasks\fsmounts`, и на CentOS узле, которому `mnt\resources\batch\tasks\fsmounts`он сопоставлен.
 - Параметры **подключения или параметры blobfuse**. Эти параметры описывают конкретные параметры для подключения файловой системы.
 
-После создания объекта `MountConfiguration` назначьте объект свойству `MountConfigurationList` при создании пула. Файловая система монтируется при присоединении узла к пулу или при перезапуске или пересоздании образа узла.
+После создания `MountConfiguration` объекта назначьте его `MountConfigurationList` свойству при создании пула. Файловая система монтируется при присоединении узла к пулу или при перезапуске или пересоздании образа узла.
 
-При подключении файловой системы создается переменная среды `AZ_BATCH_NODE_MOUNTS_DIR`, которая указывает расположение подключенных файловых систем, а также файлы журналов, которые полезны для устранения неполадок и отладки. Файлы журнала более подробно описаны в разделе [Диагностика ошибок подключения](#diagnose-mount-errors) .  
+При подключении файловой системы создается переменная `AZ_BATCH_NODE_MOUNTS_DIR` среды, указывающая на расположение подключенных файловых систем, а также файлы журналов, которые полезны для устранения неполадок и отладки. Файлы журнала более подробно описаны в разделе [Диагностика ошибок подключения](#diagnose-mount-errors) .  
 
 > [!IMPORTANT]
 > Максимальное число смонтированных файловых систем в пуле — 10. Дополнительные сведения и другие ограничения см. в разделе [квоты и ограничения пакетной службы](batch-quota-limit.md#other-limits) .
@@ -85,12 +78,9 @@ new PoolAddParameter
 
 ### <a name="azure-blob-file-system"></a>Файловая система BLOB-объектов Azure
 
-Другой вариант — использовать хранилище BLOB-объектов Azure через [blobfuse](../storage/blobs/storage-how-to-mount-container-linux.md). Для подключения файловой системы BLOB-объектов требуется `AccountKey` или `SasKey` учетной записи хранения. Сведения о получении этих ключей см. в разделе [Управление ключами доступа к учетной записи хранения](../storage/common/storage-account-keys-manage.md)или [использование подписанных URL-адресов (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md). Дополнительные сведения об использовании blobfuse см. в статье [часто задаваемые вопросы об устранении неполадок](https://github.com/Azure/azure-storage-fuse/wiki/3.-Troubleshoot-FAQ)blobfuse. Чтобы получить доступ по умолчанию к подключенному каталогу blobfuse, запустите задачу от имени **администратора**. Blobfuse подключает каталог в пространстве пользователя, и при создании пула он монтируется в качестве корневого. В Linux все задачи **администратора** являются корневыми. Все параметры для модуля ПРЕДОХРАНИТЕЛей описаны на [странице справочника по предохранителю](https://manpages.ubuntu.com/manpages/xenial/man8/mount.fuse.8.html).
+Другой вариант — использовать хранилище BLOB-объектов Azure через [blobfuse](../storage/blobs/storage-how-to-mount-container-linux.md). Для подключения файловой системы BLOB-объектов `AccountKey` требуется `SasKey` учетная запись хранения или. Сведения о получении этих ключей см. в разделе [Управление ключами доступа к учетной записи хранения](../storage/common/storage-account-keys-manage.md)или [использование подписанных URL-адресов (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md). Дополнительные сведения об использовании blobfuse см. в статье [часто задаваемые вопросы об устранении неполадок](https://github.com/Azure/azure-storage-fuse/wiki/3.-Troubleshoot-FAQ)blobfuse. Чтобы получить доступ по умолчанию к подключенному каталогу blobfuse, запустите задачу от имени **администратора**. Blobfuse подключает каталог в пространстве пользователя, и при создании пула он монтируется в качестве корневого. В Linux все задачи **администратора** являются корневыми. Все параметры для модуля ПРЕДОХРАНИТЕЛей описаны на [странице справочника по предохранителю](https://manpages.ubuntu.com/manpages/xenial/man8/mount.fuse.8.html).
 
 В дополнение к руководству по устранению неполадок, проблемы GitHub в репозитории blobfuse — это полезный способ проверки текущих проблем и решений blobfuse. Дополнительные сведения см. в разделе [проблемы blobfuse](https://github.com/Azure/azure-storage-fuse/issues).
-
-> [!NOTE]
-> В настоящее время Blobfuse не поддерживается в Debian. Дополнительные сведения см. в разделе [Поддерживаемые номера SKU](#supported-skus) .
 
 ```csharp
 new PoolAddParameter
@@ -114,7 +104,7 @@ new PoolAddParameter
 }
 ```
 
-### <a name="network-file-system"></a>Сетевая файловая система
+### <a name="network-file-system"></a>NFS
 
 Сетевые файловые системы (NFS) также могут быть подключены к узлам пула, что позволяет узлам пакетной службы Azure легко получать доступ к традиционным файловым системам. Это может быть один сервер NFS, развернутый в облаке, или локальный сервер NFS, доступ к которому осуществляется через виртуальную сеть. Кроме того, воспользуйтесь преимуществами распределенного в памяти кэша [Авере вфкст](../avere-vfxt/avere-vfxt-overview.md) , который обеспечивает бесперебойное подключение к локальному хранилищу, считывание данных по запросу в свой кэш и обеспечивает высокую производительность и масштабируемость облачных кластерных узлов.
 
@@ -164,17 +154,18 @@ new PoolAddParameter
 
 ## <a name="diagnose-mount-errors"></a>Диагностика ошибок подключения
 
-В случае сбоя конфигурации подключения кластерный узел в пуле завершится сбоем и состояние узла станет непригодным для использования. Чтобы диагностировать сбой конфигурации подключения, проверьте свойство [`ComputeNodeError`](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) , чтобы узнать подробности об ошибке.
+В случае сбоя конфигурации подключения кластерный узел в пуле завершится сбоем и состояние узла станет непригодным для использования. Чтобы диагностировать сбой конфигурации подключения, проверьте [`ComputeNodeError`](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) свойство на наличие подробных сведений об ошибке.
 
-Чтобы получить файлы журналов для отладки, используйте [OutputFiles](batch-task-output-files.md) для передачи файлов `*.log`. Файлы `*.log` содержат сведения об монтировании файловой системы в расположении `AZ_BATCH_NODE_MOUNTS_DIR`. Файлы журнала подключения имеют формат: `<type>-<mountDirOrDrive>.log` для каждого подключения. Например, `cifs` подключения в каталоге подключения с именем `test` будет иметь файл журнала подключения с именем: `cifs-test.log`.
+Чтобы получить файлы журналов для отладки, используйте [OutputFiles](batch-task-output-files.md) для передачи `*.log` файлов. `*.log` Файлы содержат сведения об монтировании файловой системы в `AZ_BATCH_NODE_MOUNTS_DIR` расположении. Файлы журнала подключения имеют формат: `<type>-<mountDirOrDrive>.log` для каждого подключения. Например, `cifs` подключение в каталоге подключения с именем `test` будет иметь файл журнала подключения с именем:. `cifs-test.log`
 
 ## <a name="supported-skus"></a>Поддерживаемые номера SKU
 
-| Издатель | Предложение | SKU | Файловый ресурс Azure | Blobfuse | Подключение NFS | Подключение CIFS |
+| Издатель | ПРЕДЛОЖЕНИЕ | номер SKU | Файловый ресурс Azure | Blobfuse | Подключение NFS | Подключение CIFS |
 |---|---|---|---|---|---|---|
-| пакетная_служба | rendering-centos73 | rendering | :heavy_check_mark: <br>Примечание. совместимо с CentOS 7,7</br>| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| пакет (1) | rendering-centos73 | rendering | :heavy_check_mark: <br>Примечание. совместимо с CentOS 7,7</br>| :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | Canonical | UbuntuServer | 16,04-LTS, 18,04-LTS | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Credativ | Debian | 8, 9 | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| Credativ | Debian | 8| :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| Credativ | Debian | 9 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | microsoft-ads | linux-data-science-vm | linuxdsvm | :heavy_check_mark: <br>Примечание. совместимо с CentOS 7,4. </br> | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | microsoft-azure-batch | centos-container | 7.6 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | microsoft-azure-batch | centos-container-rdma | 7.4 | :heavy_check_mark: <br>Примечание. поддерживает A_8 или 9 хранилище</br> | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -182,10 +173,10 @@ new PoolAddParameter
 | microsoft-dsvm | linux-data-science-vm-ubuntu | линуксдсвмубунту | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | OpenLogic | CentOS | 7.6 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | OpenLogic | CentOS-HPC | 7,4, 7,3, 7,1 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| Oracle | Oracle-Linux | 7.6 | :x: | :x: | :x: | :x: |
+| Oracle; | Oracle-Linux | 7.6 | :x: | :x: | :x: | :x: |
 | Windows | WindowsServer | 2012, 2016, 2019 | :heavy_check_mark: | :x: | :x: | :x: |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о подключении общего файлового ресурса Azure с [Windows](../storage/files/storage-how-to-use-files-windows.md) или [Linux](../storage/files/storage-how-to-use-files-linux.md).
 - Узнайте, как использовать и подключать виртуальные файловые системы [blobfuse](https://github.com/Azure/azure-storage-fuse) .

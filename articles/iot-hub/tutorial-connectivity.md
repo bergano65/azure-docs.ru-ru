@@ -5,41 +5,46 @@ services: iot-hub
 author: wesmc7777
 manager: philmea
 ms.author: wesmc
-ms.custom: mvc
+ms.custom:
+- mvc
+- amqp
+- mqtt
 ms.date: 02/22/2019
 ms.topic: tutorial
 ms.service: iot-hub
-ms.openlocfilehash: caa249dda4215dfcef13df96d2dd4245cae49efd
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: e42b403717eb83db06a9f719a6451cbca74c2929
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595758"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81770043"
 ---
-# <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство по Проверка подключения к центру Интернета вещей с помощью имитированного устройства
+# <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство. Проверка подключения к центру Интернета вещей с помощью имитированного устройства
 
 В этом руководстве описано, как применять инструменты на портале Центра Интернета вещей Azure и команды Azure CLI для проверки возможности подключения устройств. В этом руководстве используется простая имитация устройства, выполняемая на обычном компьютере.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 > [!div class="checklist"]
 > * проверка аутентификации устройств;
-> * проверка подключения с устройства в облако;
-> * проверка подключения из облака на устройство;
+> * Проверка подключения с устройства в облако
+> * Проверка подключения из облака на устройство
 > * проверка синхронизации двойников устройств.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Сценарии CLI, которые вы будете выполнять при работе с этим руководством, используют [расширение Интернета вещей Microsoft Azure для Azure CLI](https://github.com/Azure/azure-iot-cli-extension/blob/master/README.md). Чтобы установить это расширение, выполните следующую команду CLI:
 
 ```azurecli-interactive
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 ```
 
-Приложение имитации устройства, которое вы выполните в этом руководстве, создано на основе Node.js. Вам потребуется установить Node.js 10 x.x или более позднюю версию на компьютере для разработки.
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
+
+Приложение имитации устройства, которое вы выполните в этом руководстве, создано на основе Node.js. Вам потребуется установить Node.js 10 x.x или более поздней версии на компьютере для разработки.
 
 Node.js, предназначенный для нескольких платформ, можно скачать здесь: [nodejs.org](https://nodejs.org).
 
@@ -50,6 +55,8 @@ node --version
 ```
 
 Скачайте пример имитации устройства в виде проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip и разверните этот ZIP-архив.
+
+Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -101,7 +108,7 @@ node SimulatedDevice-1.js "{your device connection string}"
 read key < <(date +%s | sha256sum | base64 | head -c 32)
 
 # Requires the IoT Extension for Azure CLI
-# az extension add --name azure-cli-iot-ext
+# az extension add --name azure-iot
 
 # Reset the primary device key for MyTestDevice
 az iot hub device-identity update --device-id MyTestDevice --set authentication.symmetricKey.primaryKey=$key --hub-name {YourIoTHubName}
@@ -257,7 +264,7 @@ az iot hub device-twin update --set properties.desired='{"mydesiredproperty":"pr
 
 Если вам больше не требуется Центр Интернета вещей, удалите его и группу ресурсов на портале. Для этого выберите группу ресурсов **tutorials-iot-hub-rg**, содержащую Центр Интернета вещей, и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве описано, как можно проверить ключи устройства, подключение с устройства в облако, подключение из облака на устройство и синхронизацию двойников устройств. Дополнительные сведения о мониторинге для Центра Интернета вещей вы можете найти в статье с практическими примерами.
 

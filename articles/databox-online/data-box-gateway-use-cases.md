@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 03/02/2019
 ms.author: alkohli
-ms.openlocfilehash: e72113313e27949819db567c550401b1f051473f
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: dde84f0973cc7e21e57574bbabe398b38581358f
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022687"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82562420"
 ---
 # <a name="use-cases-for-azure-data-box-gateway"></a>Сценарии использования для шлюза Azure Data Box
 
@@ -77,7 +77,7 @@ ms.locfileid: "77022687"
 
 ### <a name="ongoing-feed-with-data-box-gateway"></a>Постоянный канал передачи через Шлюз Data Box
 
-Выполните описанные ниже действия, чтобы настроить текущий прием данных в Шлюзе Data Box.
+Выполните описанные ниже действия, чтобы настроить текущий прием данных в Шлюзе Data Box. 
 
 1. Создайте общую облачную папку в Шлюзе Data Box. Все данные из этой папки будут автоматически отправляться в учетную запись хранения Azure. Перейдите к **списку общих папок** в ресурсе "Шлюз Data Box" и щелкните **+ Добавить общую папку**.
 

@@ -5,16 +5,16 @@ ms.topic: include
 ms.date: 03/05/2019
 ms.author: alkohli
 ms.openlocfilehash: 880b630ae48eda086f6454f0d7108d27d3403b77
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185955"
 ---
-Если загружается в среде без DHCP, выполните следующие действия для развертывания виртуальной машины для шлюза поле данных.
+При загрузке в среде без DHCP выполните следующие действия, чтобы развернуть виртуальную машину для Шлюз Data Box.
 
-1. [Подключение к интерфейсу Windows PowerShell устройства](#connect-to-the-powershell-interface).
-2. Используйте `Get-HcsIpAddress` командлет, чтобы получить список сетевых интерфейсов, включенных на виртуальном устройстве. Если на устройстве включен один сетевой интерфейс, по умолчанию ему назначается имя `Ethernet`.
+1. [Подключитесь к интерфейсу Windows PowerShell устройства](#connect-to-the-powershell-interface).
+2. Используйте командлет `Get-HcsIpAddress` , чтобы вывести список сетевых интерфейсов, включенных на вашем виртуальном устройстве. Если на устройстве включен один сетевой интерфейс, по умолчанию ему назначается имя `Ethernet`.
 
     В следующем примере показано использование этого командлета:
 
@@ -28,7 +28,7 @@ ms.locfileid: "67185955"
     Gateway           : 10.100.10.1
     ```
 
-3. Для настройки сети используйте командлет `Set-HcsIpAddress` . Как в этом примере:
+3. Для настройки сети используйте командлет `Set-HcsIpAddress` . См. следующий пример.
 
     ```
     Set-HcsIpAddress –Name Ethernet –IpAddress 10.161.22.90 –Netmask 255.255.255.0 –Gateway 10.161.22.1

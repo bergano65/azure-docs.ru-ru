@@ -6,13 +6,13 @@ ms.assetid: 0f4c1fa4-e344-46e7-8d24-a25e247ae138
 ms.topic: quickstart
 ms.date: 08/05/2019
 ms.author: ccompy
-ms.custom: seodec18
-ms.openlocfilehash: 3bbc2dcc86d50e0a88e2f3e96c426cb317f41dea
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.custom: mvc, seodec18
+ms.openlocfilehash: b7fa447e8564fcbf77702f1d3d474cceb48705c5
+ms.sourcegitcommit: fb23286d4769442631079c7ed5da1ed14afdd5fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75375038"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81114637"
 ---
 # <a name="create-and-use-an-internal-load-balancer-app-service-environment"></a>Создание и использование среды Службы приложений с внутренней подсистемой балансировки нагрузки 
 
@@ -60,6 +60,9 @@ ASE с внутренней подсистемой балансировки на
 
     ![создание ASE](media/creating_and_using_an_internal_load_balancer_with_app_service_environment/createilbase.png)
 
+> [!NOTE]
+> Длина имени Среды службы приложений не должна превышать 37 символов.
+
 6. Выберите "Сети".
 
 7. Выберите или создайте виртуальную сеть. Если вы создаете виртуальную сеть, она будет определена с диапазоном адресов 192.168.250.0/23. Чтобы создать виртуальную сеть с другим диапазоном адресов или в группе ресурсов, отличной от группы ресурсов ASE, используйте портал создания виртуальных сетей Azure. 
@@ -69,6 +72,7 @@ ASE с внутренней подсистемой балансировки на
     ![Сеть ASE][1]
 
 7. Выберите **Просмотр и создание**, затем выберите **Создать**.
+
 
 ## <a name="create-an-app-in-an-ilb-ase"></a>Создание приложения в ASE с внутренним балансировщиком нагрузки ##
 

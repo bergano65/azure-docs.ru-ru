@@ -1,22 +1,21 @@
 ---
-author: erhopf
+author: trevorbye
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 01/14/2020
-ms.author: erhopf
-ms.openlocfilehash: ee34993a41f280b9bb5944533b0bae66bedc24ac
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.date: 04/04/2020
+ms.author: trbye
+ms.openlocfilehash: 85124a51b986b6e3d6444b35aa264e136abcdb76
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156455"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81400614"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=jre)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=jre)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=jre&pivots=programming-language-java).
 
 [!INCLUDE [Audio input format](~/articles/cognitive-services/speech-service/includes/audio-input-format-chart.md)]
 
@@ -49,8 +48,7 @@ ms.locfileid: "77156455"
                // Replace below with your own subscription key
                String speechSubscriptionKey = "YourSubscriptionKey";
 
-               // Replace with your own subscription key and service region (e.g., "westus", use the one of SpeechSDKParameters
-               // from here: https://aka.ms/speech/sdkregion).
+               // Replace with your own subscription key and region identifier from here: https://aka.ms/speech/sdkregion
                String serviceRegion = "YourServiceRegion";
 
                // Replace below with your own filename.
@@ -132,4 +130,4 @@ ms.locfileid: "77156455"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](./footer.md)]
+[!INCLUDE [Speech recognition basics](../../speech-to-text-next-steps.md)]

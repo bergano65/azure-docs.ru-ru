@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 10/28/2019
+ms.date: 04/04/2020
 ms.author: erhopf
-ms.openlocfilehash: 17e5f35e83f5cb6e8115a9d344f93abf84e5b38a
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: d3d0a807e8742419ee321f38daebf6f70d6b0be1
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156176"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81274740"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,8 +23,7 @@ ms.locfileid: "77156176"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=dotnet&pivots=programming-language-csharp).
 
 ## <a name="open-your-project-in-visual-studio"></a>Откройте проект в Visual Studio.
 
@@ -65,8 +64,7 @@ namespace helloworld
 Перед инициализацией объекта `SpeechSynthesizer` необходимо создать конфигурацию, использующую ключ и регион подписки. Вставьте код в метод `SynthesisToAudioFileAsync()`.
 
 ````C#
-// Replace with your own subscription key and service region (e.g., "westus", use the one of SpeechSDKParameters
-// from here: https://aka.ms/speech/sdkregion).
+// Replace with your own subscription key and region identifier from here: https://aka.ms/speech/sdkregion
 // The default language is "en-us".
 var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 ````
@@ -198,7 +196,7 @@ namespace helloworld
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](./footer.md)]
+[!INCLUDE [Speech synthesis basics](../../text-to-speech-next-steps.md)]
 
 ## <a name="see-also"></a>См. также раздел
 

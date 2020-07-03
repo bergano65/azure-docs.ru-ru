@@ -8,13 +8,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: trbye
-ms.date: 07/12/2019
-ms.openlocfilehash: 65db6cfa64658edc4e604a009e672ba3aa5e86f3
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.date: 03/05/2020
+ms.openlocfilehash: 73b9ae6bc3c15526bfdafd74330c7b86286631b1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75893985"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78396137"
 ---
 # <a name="enable-logging-in-azure-machine-learning"></a>Включение ведения журнала в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "75893985"
 > * как включить ведение журнала для развернутых моделей:
 > * как задать параметры `logging` в Python.
 
-[Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md). Для получения дополнительных сведений о пакете SDK воспользуйтесь [руководством](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) .
+[Создайте рабочую область машинное обучение Azure](how-to-manage-workspace.md). Для получения дополнительных сведений о пакете SDK воспользуйтесь [руководством](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) .
 
 ## <a name="training-models-and-compute-target-logging"></a>Ведение журнала для обучаемых моделей и целевых объектов вычислений
 
@@ -101,7 +101,7 @@ logs = service.get_logs()
 service.update(enable_app_insights=True)
 ```
 
-Дополнительные сведения о работе с Application Insights в Машинное обучение Azure Studio см. [в этой статье](how-to-enable-app-insights.md) .
+Дополнительные сведения см. в статье [мониторинг и получение данных из конечных точек веб-службы ML](how-to-enable-app-insights.md).
 
 ## <a name="python-native-logging-settings"></a>Параметры собственного ведения журнала Python
 
@@ -111,3 +111,7 @@ service.update(enable_app_insights=True)
 import logging
 logging.basicConfig(level=logging.DEBUG)
 ```
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+* [Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения](how-to-enable-app-insights.md)

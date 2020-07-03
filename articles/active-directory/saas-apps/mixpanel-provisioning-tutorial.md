@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: Zhchia
 ms.openlocfilehash: 0182d0158144a010274799cc41991ba87120e9d8
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76907608"
 ---
 # <a name="tutorial-configure-mixpanel-for-automatic-user-provisioning"></a>Учебник. Настройка Mixpanel для автоматической подготовки пользователей
@@ -35,7 +35,7 @@ ms.locfileid: "76907608"
 > * Подготавливайте группы и членство в группах в Mixpanel
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/mixpanel-tutorial) в Mixpanel (рекомендуется)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 * [Клиент Azure AD;](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
@@ -52,7 +52,7 @@ ms.locfileid: "76907608"
 ## <a name="step-2-configure-mixpanel-to-support-provisioning-with-azure-ad"></a>Шаг 2. Настройка Mixpanel для поддержки подготовки с помощью Azure AD
 1. Сведения о настройке единого входа и утверждении домена см. [здесь](https://help.mixpanel.com/hc/articles/360036428871-Single-Sign-On).
 2. После этого необходимо создать токен SCIM на вкладке SCIM раздела Безопасность доступа в параметрах Организации.
-![маркера Mixpanel](./media/mixpanel-provisioning-tutorial/mixpanelscim.png)
+![Токен Mixpanel](./media/mixpanel-provisioning-tutorial/mixpanelscim.png)
 
 
 ## <a name="step-3-add-mixpanel-from-the-azure-ad-application-gallery"></a>Шаг 3. Добавление Mixpanel из коллекции приложений Azure AD
@@ -82,11 +82,11 @@ ms.locfileid: "76907608"
 
     ![Ссылка на Mixpanel в списке "Приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "76907608"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Mixpanel**.
 
@@ -106,8 +106,8 @@ ms.locfileid: "76907608"
 
    |attribute|Тип|
    |---|---|
-   |userName|String|
-   |displayName|String|
+   |userName|Строка|
+   |displayName|Строка|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Mixpanel**.
 
@@ -115,8 +115,8 @@ ms.locfileid: "76907608"
 
       |attribute|Тип|
       |---|---|
-      |displayName|String|
-      |members|Справочные материалы|
+      |displayName|Строка|
+      |members|Справочник|
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -146,6 +146,6 @@ ms.locfileid: "76907608"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

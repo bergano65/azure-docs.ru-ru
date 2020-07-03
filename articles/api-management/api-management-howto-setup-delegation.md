@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/04/2019
 ms.author: apimpm
-ms.openlocfilehash: a69babdf2fffb4cb9d963f1806f3c85755e50294
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: c28872e6cffa973f01b3f5a87c423d9dd93a2aa5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74454357"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81259108"
 ---
 # <a name="how-to-delegate-user-registration-and-product-subscription"></a>Делегирование пользователю регистрации и подписки на продукт
 
@@ -26,7 +26,7 @@ ms.locfileid: "74454357"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="delegate-signin-up"> </a>Делегирование входа и регистрации разработчика
+## <a name="delegating-developer-sign-in-and-sign-up"></a><a name="delegate-signin-up"> </a>Делегирование входа и регистрации разработчика
 
 Чтобы делегировать разработчика, войти в систему и зарегистрироваться на существующем веб-сайте, необходимо создать специальную конечную точку делегирования на сайте. Он должен действовать в качестве точки входа для любого такого запроса, инициированного на портале разработчика управления API.
 
@@ -48,7 +48,7 @@ ms.locfileid: "74454357"
 
 1. Получите запрос в следующей форме:
    
-   > *http:\//ВВВ.йоурвебсите.ком/апимделегатион? Operation = Signing & returnUrl = {URL-адрес исходной страницы} & salt = {строка} & SIG = {String}*
+   > *http:\//www.yourwebsite.com/apimdelegation?Operation=SignIn&ReturnUrl = {URL-адрес исходной страницы} &salt = {строка} &SIG = {String}*
    > 
    > 
    
@@ -92,7 +92,7 @@ ms.locfileid: "74454357"
 * **salt**– специальная строка случайных данных, используемая для вычисления хэша безопасности.
 * **sig**– вычисленный хэш безопасности, который будет сравниваться с вашим вычисленным хэшем.
 
-## <a name="delegate-product-subscription"> </a>Делегирование подписки на продукт
+## <a name="delegating-product-subscription"></a><a name="delegate-product-subscription"> </a>Делегирование подписки на продукт
 Делегирование подписки на продукт работает аналогично делегированию входа пользователя. Итоговый рабочий процесс будет иметь следующий вид:
 
 1. Разработчик выбирает продукт на портале разработчика управления API и нажимает кнопку подписывать.
@@ -105,7 +105,7 @@ ms.locfileid: "74454357"
 
 1. Получите запрос в следующей форме:
    
-   > *http:\//ВВВ.йоурвебсите.ком/апимделегатион? Operation = {Operation} & productId = {продукт для подписки} & userId = {запрос пользователя} & salt = {строка} & SIG = {String}*
+   > *http:\//ВВВ.йоурвебсите.ком/апимделегатион? Operation = {operation} &ProductID = {продукт для подписки} &UserID = {пользователь, выполняющий запрос} &Salt = {string} &SIG = {строка}*
    >
    
     Параметры запроса для подписки на продукт:
@@ -129,9 +129,9 @@ ms.locfileid: "74454357"
      > 
    * Сравните вычисленный выше хэш со значением параметра запроса **sig**. Если два хэша совпадают друг с другом, перейдите к следующему шагу. Если нет, отклоните запрос.
 3. Обработка подписки на продукт на основе типа операции, запрошенной в **операции** . Например, выставление счетов, дальнейшие вопросы и т. д.
-4. В случае успешной подписки пользователя на продукт на стороне пользователя Подпишитесь на продукт управления API, [вызов REST API для подписок].
+4. В случае успешной подписки пользователя на продукт на стороне пользователя Подпишитесь на продукт управления API, [вызвав REST API для подписок].
 
-## <a name="delegate-example-code"> </a> Пример кода
+## <a name="example-code"></a><a name="delegate-example-code"> </a> Пример кода
 
 В следующих примерах кода показано, как:
 
@@ -177,7 +177,7 @@ var signature = digest.toString('base64');
 > [!IMPORTANT]
 > Чтобы изменения делегирования вступили в силу, необходимо [повторно опубликовать портал разработчика](api-management-howto-developer-portal-customize.md#publish) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительную информацию о делегировании см. в следующем видео.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/AzureApiMgmt/Delegating-User-Authentication-and-Product-Subscription-to-a-3rd-Party-Site/player]
@@ -186,9 +186,9 @@ var signature = digest.toString('base64');
 
 [Delegating developer sign in and sign up]: #delegate-signin-up
 [Delegating product subscription]: #delegate-product-subscription
-[запросите маркер единого входа (SSO)]: https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/User/GenerateSsoUrl
-[Создание пользователя]: https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/user/createorupdate
-[вызов REST API для подписок]: https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/subscription/createorupdate
+[запросите маркер единого входа (SSO)]: https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/User/GenerateSsoUrl
+[Создание пользователя]: https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/user/createorupdate
+[вызов REST API для подписок]: https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/subscription/createorupdate
 [Next steps]: #next-steps
 [на приведенном ниже примере кода]: #delegate-example-code
 

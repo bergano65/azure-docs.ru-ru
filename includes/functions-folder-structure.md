@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 author: ggailey777
 ms.service: azure-functions
@@ -8,10 +8,10 @@ ms.date: 09/12/2018
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: 5f5f682c8c31c17f1a645bcdacdc78f32bd5c001
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77205744"
 ---
 Код всех функций конкретного приложения-функции хранится в корневой папке проекта, содержащей файл конфигурации главного узла и одну или несколько вложенных папок. Каждая вложенная папка содержит код для отдельной функции. Структура папок показана в следующем представлении:
@@ -34,7 +34,7 @@ FunctionApp
 Файл [Host. JSON](../articles/azure-functions/functions-host-json.md) содержит конфигурации, зависящие от среды выполнения, и находится в корневой папке приложения-функции. Папка *bin* содержит пакеты и другие файлы библиотеки, необходимые приложению-функции. См. требования конкретного языка для проекта приложения-функции:
 
 * [Библиотека классов C# (.csproj)](../articles/azure-functions/functions-dotnet-class-library.md#functions-class-library-project)
-* [Скрипт C# (CSX)](../articles/azure-functions/functions-reference-csharp.md#folder-structure)
+* [Скрипт C# (.csx)](../articles/azure-functions/functions-reference-csharp.md#folder-structure)
 * [Скрипт F#](../articles/azure-functions/functions-reference-fsharp.md#folder-structure)
 * [Java](../articles/azure-functions/functions-reference-java.md#folder-structure)
 * [JavaScript](../articles/azure-functions/functions-reference-node.md#folder-structure)

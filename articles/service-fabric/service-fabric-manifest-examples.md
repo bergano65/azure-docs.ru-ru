@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: pepogors
 ms.openlocfilehash: 6f44d2ddaac11545a3a3dc52fd20e02263c6ad67
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75451644"
 ---
 # <a name="service-fabric-application-and-service-manifest-examples"></a>Примеры манифестов приложений и служб Service Fabric
@@ -17,9 +17,9 @@ ms.locfileid: "75451644"
 
 Ниже приведен список возможностей и примеры манифестов, частью которых они являются.
 
-|Функция|Manifest|
+|Функция|манифеста|
 |---|---|
-|[Система управления ресурсами](service-fabric-resource-governance.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest), [манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
+|[Управление ресурсами](service-fabric-resource-governance.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest), [манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Запуск службы с использованием учетной записи локального администратора](service-fabric-application-runas-security.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest)|
 |[Применение политики по умолчанию ко всем пакетам кода службы](service-fabric-application-runas-security.md#apply-a-default-policy-to-all-service-code-packages)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest)|
 |[Создание субъектов пользователей и групп](service-fabric-application-runas-security.md)|[Манифест приложения Reliable Services](service-fabric-manifest-example-reliable-services-app.md#application-manifest)|
@@ -31,7 +31,7 @@ ms.locfileid: "75451644"
 |[Объявление пакета данных](service-fabric-application-and-service-manifests.md)|[Манифест службы VotingData](service-fabric-manifest-example-reliable-services-app.md#votingdata-service-manifest)|
 |[Переопределение переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables)|[Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Настройка сопоставления порта контейнера с узлом](service-fabric-get-started-containers.md#configure-container-port-to-host-port-mapping-and-container-to-container-discovery)| [Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
-|[Настройка аутентификации в реестре контейнеров](service-fabric-get-started-containers.md#configure-container-repository-authentication)|[Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
+|[Настройка проверки подлинности в реестре контейнеров](service-fabric-get-started-containers.md#configure-container-repository-authentication)|[Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Настройка режима изоляции](service-fabric-get-started-containers.md#configure-isolation-mode)|[Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Указание образов контейнеров для конкретной сборки ОС](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)|[Манифест приложения контейнера](service-fabric-manifest-example-container-app.md#application-manifest)|
 |[Настройка переменных среды](service-fabric-get-started-containers.md#configure-and-set-environment-variables)|[Манифест службы FrontEndService контейнера](service-fabric-manifest-example-container-app.md#frontendservice-service-manifest), [манифест службы BackEndService контейнера](service-fabric-manifest-example-container-app.md#backendservice-service-manifest)|

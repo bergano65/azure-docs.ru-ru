@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Talent Palette | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Talent Palette | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Talent Palette.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9dee0013d227cfc3809d9effe7f4f633bc22f6fa
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159914"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-talent-palette"></a>Руководство по Интеграция Azure Active Directory с Talent Palette
+# <a name="tutorial-azure-active-directory-integration-with-talent-palette"></a>Руководство по интеграции Azure Active Directory с Talent Palette
 
 В этом руководстве описано, как интегрировать Talent Palette с Azure Active Directory (Azure AD).
 Интеграция Talent Palette с Azure AD обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73159914"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Talent Palette, вам потребуется следующее:
 
-* подписка Azure AD Если у вас нет среды Azure AD, можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка с поддержкой единого входа в Talent Palette
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -103,7 +103,7 @@ ms.locfileid: "73159914"
 
     ![Правка базовой конфигурации SAML](common/edit_urls.png)
 
-4. Если вы хотите настроить приложение в режиме, инициируемом **IDP**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа в Talent Palette](common/both_replyurl.png)
 
@@ -116,7 +116,7 @@ ms.locfileid: "73159914"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://talent-p.net/saml/sso/<tenantID>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Для получения этих значений обратитесь в [службу поддержки клиентов Talent Palette](mailto:talent-support@pa-consul.co.jp). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Для получения этих значений обратитесь в [службу поддержки клиентов Talent Palette](mailto:talent-support@pa-consul.co.jp). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (необработанный)** из предложенных вариантов и сохранить его на компьютере.
 
@@ -126,11 +126,11 @@ ms.locfileid: "73159914"
 
     ![Копирование URL-адресов настройки](common/copy_configuration_urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-talent-palette-single-sign-on"></a>Настройка единого входа в Talent Palette
 

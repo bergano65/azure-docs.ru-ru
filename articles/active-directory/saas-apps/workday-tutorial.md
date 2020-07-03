@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с Workday | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Workday | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Workday.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/16/2020
+ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 843dd403bc5434e2c79ee0bb85eb781b56bf3ec9
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 83fd986e31410e34871d1b795db0c8c83ece688e
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291453"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83648615"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Руководство. интеграции единого входа Azure Active Directory с Workday
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Руководство по интеграции единого входа Azure Active Directory с Workday
 
 В этом руководстве описано, как интегрировать Workday с Azure Active Directory (Azure AD). Интеграция Workday с Azure AD обеспечивает следующие возможности.
 
@@ -45,7 +45,7 @@ ms.locfileid: "76291453"
 
 * Workday поддерживает единый вход, инициируемый **поставщиком услуг**.
 
-* После настройки Workday можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Workday можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-workday-from-the-gallery"></a>Добавление Workday из коллекции
 
@@ -247,7 +247,7 @@ ms.locfileid: "76291453"
 
 ### <a name="create-workday-test-user"></a>Создание тестового пользователя Workday
 
-В этом разделе вы создадите пользователя с именем B. Simon в приложении Workday. Обратитесь к [группе поддержки клиентов Workday](https://www.workday.com/partners-services/services/support.html), чтобы добавить пользователей на платформу Workday. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе вы создадите пользователя с именем B. Simon в приложении Workday. Обратитесь к [группе поддержки клиентов Workday](https://www.workday.com/en-us/partners-services/services/support.html), чтобы добавить пользователей на платформу Workday. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа
 
@@ -263,6 +263,6 @@ ms.locfileid: "76291453"
 
 - [Проверьте работу Workday в Azure AD](https://aad.portal.azure.com)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/protect-workday)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
-- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/protect-workday)

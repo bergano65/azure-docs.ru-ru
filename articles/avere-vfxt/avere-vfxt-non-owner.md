@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 12/19/2019
 ms.author: rohogue
 ms.openlocfilehash: 1b411fe465a67f8ea5421ac0dc93348b4e92e8ec
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76153281"
 ---
 # <a name="authorize-non-owners-to-deploy-avere-vfxt"></a>Разрешение на развертывание Avere vFXT для пользователей без роли владельца
@@ -62,7 +62,7 @@ ms.locfileid: "76153281"
 
    `az role definition create --role-definition <PATH_TO_FILE>`
 
-    Пример:
+    Пример.
 
     ```azurecli
     az role definition create --role-definition ./averecreatecluster.json

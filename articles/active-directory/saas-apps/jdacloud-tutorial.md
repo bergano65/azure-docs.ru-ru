@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с JDA Cloud | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с JDA Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и JDA Cloud.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: e7a6aa3cd023533dc1197e1addf3c9be76a9c1db
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67099750"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jda-cloud"></a>Руководство по Интеграция Azure Active Directory с JDA Cloud
+# <a name="tutorial-azure-active-directory-integration-with-jda-cloud"></a>Руководство по интеграции Azure Active Directory с JDA Cloud
 
 В этом руководстве описано, как интегрировать приложение JDA Cloud с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением JDA Cloud обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67099750"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением JDA Cloud, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка на JDA Cloud с возможностью единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "67099750"
 
     ![Сведения о домене и URL-адресах единого входа приложения JDA Cloud](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.jdadelivers.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.jdadelivers.com`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.jdadelivers.com/sp/ACS.saml2`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.jdadelivers.com/sp/ACS.saml2`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67099750"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -203,4 +203,4 @@ ms.locfileid: "67099750"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

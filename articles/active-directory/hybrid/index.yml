@@ -12,12 +12,12 @@ metadata:
   ms.subservice: na
   ms.topic: landing-page
   services: active-directory
-  ms.openlocfilehash: fa9007d0e9ad59ee0ffb29fe1c5c74c8530d84fa
-  ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+  ms.openlocfilehash: 12c9cadab9ff93b40941e833dcb3823deb84ee35
+  ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/29/2019
-  ms.locfileid: "70162204"
+  ms.lasthandoff: 04/16/2020
+  ms.locfileid: "81535746"
 landingContent:
 - title: Сведения о гибридной идентификации
   linkLists:
@@ -47,7 +47,7 @@ landingContent:
       url: whatis-phs.md
     - text: Сведения о сквозной проверке подлинности
       url: how-to-connect-pta.md
-    - text: Сведения о федерации
+    - text: Что такое федерация
       url: whatis-fed.md
     - text: Сведения о едином входе
       url: how-to-connect-sso.md

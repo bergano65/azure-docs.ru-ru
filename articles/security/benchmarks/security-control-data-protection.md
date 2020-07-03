@@ -1,19 +1,18 @@
 ---
 title: Управление безопасностью Azure — защита данных
-description: Защита данных в системе безопасности
+description: Защита данных в контроле безопасности Azure
 author: msmbaldwin
-manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 12/30/2019
+ms.date: 04/14/2020
 ms.author: mbaldwin
-ms.custom: security-recommendations
-ms.openlocfilehash: 5482495f87e87e5d05d8adca6b053810a62dcb4e
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.custom: security-benchmark
+ms.openlocfilehash: 035894c80e619851264aae91daa2d7852d156964
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934520"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81408546"
 ---
 # <a name="security-control-data-protection"></a>Управление безопасностью: защита данных
 
@@ -21,146 +20,115 @@ ms.locfileid: "75934520"
 
 ## <a name="41-maintain-an-inventory-of-sensitive-information"></a>4,1: поддержание инвентаризации конфиденциальной информации
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 4.1 | Версия 13.1 | Customer |
 
 Используйте теги для отслеживания ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
 
-Создание и использование тегов:
-
-https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
 ## <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: Изолируйте системы, хранящие или обрабатывающие конфиденциальные данные
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 4.2 | 13.2 | Customer |
+| 4.2 | 13,2, 2,10 | Customer |
 
-Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Ресурсы должны быть разделены виртуальной сетью или подсетью, помечены соответствующим образом и защищены брандмауэром NSG или Azure. Ресурсы, которые хранят или обрабатывают конфиденциальные данные, должны быть достаточно изолированы. Для виртуальных машин, которые хранят или обрабатывают конфиденциальные данные, реализуйте политику и процедуры, чтобы отключить их, когда они не используются.
+Реализуйте изоляцию с помощью отдельных подписок и групп управления для отдельных доменов безопасности, таких как тип среды и уровень конфиденциальности данных. Вы можете ограничить уровень доступа к ресурсам Azure, которые требуются для приложений и корпоративных сред. Доступ к ресурсам Azure можно контролировать с помощью Azure Active Directory управления доступом на основе ролей. 
 
-Как создать дополнительные подписки Azure:
+- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
 
-https://docs.microsoft.com/azure/billing/billing-create-subscription
+- [Создание Группы управления](https://docs.microsoft.com/azure/governance/management-groups/create)
 
-Создание Группы управления:
-
-https://docs.microsoft.com/azure/governance/management-groups/create
-
-Создание и использование тегов:
-
-https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
-
-Создание виртуальной сети.
-
-https://docs.microsoft.com/azure/virtual-network/quick-create-portal
-
-Создание NSG с конфигурацией безопасности:
-
-https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
-
-Как развернуть брандмауэр Azure:
-
-https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal
-
-Как настроить оповещение или оповещение и запретить его с помощью брандмауэра Azure:
-
-https://docs.microsoft.com/azure/firewall/threat-intel
+- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
 ## <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4,3: Отслеживайте и блокируйте несанкционированную пересылку конфиденциальной информации
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 4.3 | 13.3 | Customer |
+| 4.3 | 13,3 | Shared |
 
-Развертывайте автоматизированное средство на периметре сети, которое отслеживает несанкционированную передачу конфиденциальной информации и блокирует такие передачи при оповещении специалистов по информационной безопасности.
+Используйте сторонние решения из Azure Marketplace на периметрах сети, которые отслеживают несанкционированную передачу конфиденциальной информации и блокируют такие передачи при оповещении специалистов по информационной безопасности.
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и защищенным от потери и раскрытия данных клиента. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
+
+- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
 
 ## <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: шифрование всех конфиденциальных данных во время передачи
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 4.4. | 14.4 | Общая |
+| 4.4. | 14,4 | Shared |
 
 Зашифруйте всю конфиденциальную информацию во время передачи. Убедитесь, что все клиенты, подключающиеся к ресурсам Azure, могут согласовать TLS 1,2 или более поздней версии.
 
 Следуйте рекомендациям центра безопасности Azure для шифрования неактивных данных и шифрования при передаче, где это применимо.
 
-Общие сведения о шифровании при передаче с помощью Azure:
-
-https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit
+- [Общие сведения о шифровании при передаче с помощью Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
 
 ## <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4,5: использование активного средства обнаружения для распознавания конфиденциальных данных
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 4.5. | 14,5 | Customer |
+| 4.5. | 14,5 | Shared |
 
-Если для вашей службы в Azure нет доступных функций, используйте средство активного обнаружения стороннего производителя для обнаружения всех конфиденциальных данных, хранимых, обрабатываемых или передаваемых технологическими системами Организации, включая те, которые находятся на сайте или в Удаленный поставщик услуг и обновляет данные инвентаризации конфиденциальной информации Организации.
+Если для вашей службы в Azure нет доступных функций, используйте средство активного обнаружения стороннего производителя для обнаружения всех конфиденциальных данных, которые хранятся, обрабатываются или передаются технологическими системами Организации, включая те, которые находятся на сайте или на удаленном поставщике услуг, а также обновляют данные инвентаризации конфиденциальной информации Организации.
 
 Используйте Azure Information Protection для идентификации конфиденциальной информации в документах Office 365.
 
 Используйте Information Protection Azure SQL для помощи в классификации и маркировке информации, хранящейся в базах данных SQL Azure.
 
-Как реализовать обнаружение данных SQL Azure:
+- [Как реализовать обнаружение данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-data-discovery-and-classification)
 
-https://docs.microsoft.com/azure/sql-database/sql-database-data-discovery-and-classification
+- [Реализация Azure Information Protection](https://docs.microsoft.com/azure/information-protection/deployment-roadmap)
 
-Как реализовать Azure Information Protection:
+- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
 
-https://docs.microsoft.com/azure/information-protection/deployment-roadmap
+## <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
 
-## <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4,6. Использование Azure RBAC для управления доступом к ресурсам
-
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 4.6 | 14,6 | Customer |
 
 Используйте Azure AD RBAC для управления доступом к данным и ресурсам. в противном случае используйте специфические методы управления доступом к службам.
 
-Общие сведения об Azure RBAC:
-
-https://docs.microsoft.com/azure/role-based-access-control/overview
-
-Как настроить RBAC в Azure:
-
-https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal
+- [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 
 ## <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4,7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 4,7 | 14,7 | Customer |
+| 4,7 | 14,7 | Shared |
 
-Реализуйте сторонние средства, такие как автоматизированное решение для защиты от потери данных на основе узлов, чтобы принудительно применять элементы управления доступом к данным даже при копировании данных из системы.
+Если требуется для обеспечения соответствия в ресурсах вычислений, реализуйте сторонние средства, такие как автоматизированное решение для защиты от потери данных на узлах, чтобы принудительно применять элементы управления доступом к данным даже при копировании данных из системы.
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и имеет большую длину для защиты от потери данных и доступности клиентов. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
+
+- [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
 
 ## <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: шифрование конфиденциальной информации при хранении
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 4.8 | 14,8 | Customer |
 
 Используйте шифрование неактивных ресурсов на всех ресурсах Azure. Корпорация Майкрософт рекомендует разрешить Azure управлять ключами шифрования, однако существует возможность управлять собственными ключами в некоторых экземплярах. 
 
-Общие сведения о шифровании неактивных в Azure:
+- [Общие сведения о шифровании неактивных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)
 
-https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest
-
-Как настроить ключи шифрования, управляемые клиентом:
-
-https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal
+- [Настройка ключей шифрования, управляемых клиентом](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal)
 
 ## <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: журналы и оповещения об изменениях критических ресурсов Azure
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 4,9 | 14,9 | Customer |
 
 Используйте Azure Monitor с журналом действий Azure, чтобы создавать оповещения о том, когда изменения выполняются с важными ресурсами Azure.
 
-Создание оповещений для событий журнала действий Azure:
+- [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
 
-https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-См. следующий контроль безопасности: [Управление уязвимостью](security-control-vulnerability-management.md)
+- См. следующий контроль безопасности: [Управление уязвимостью](security-control-vulnerability-management.md)

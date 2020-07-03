@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 08/26/2019
 ms.author: apimpm
 ms.openlocfilehash: 3294a7b2112e9527041ef343f4452aedb7a2a272
-ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70073468"
 ---
 # <a name="how-to-migrate-azure-api-management-across-regions"></a>Перенос управления API Azure в разных регионах
@@ -25,7 +25,7 @@ ms.locfileid: "70073468"
 > [!NOTE]
 > Резервное копирование и восстановление не будут работать при миграции между разными типами облака. Для этого необходимо экспортировать ресурс в [качестве шаблона](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-portal#export-resource-groups-to-templates). Затем адаптируйте экспортированный шаблон к целевому региону Azure и повторно создайте ресурс. 
 
-## <a name="option-1-use-a-different-api-management-instance-name"></a>Вариант 1. Использовать другое имя экземпляра управления API
+## <a name="option-1-use-a-different-api-management-instance-name"></a>Вариант 1. Использование другого имени экземпляра управления API
 
 1. В целевом регионе создайте новый экземпляр управления API с той же ценовой категорией, что и исходный экземпляр управления API. Новый экземпляр должен иметь другое имя. 
 1. Резервное копирование существующего экземпляра службы управления API в учетную запись хранения.
@@ -33,7 +33,7 @@ ms.locfileid: "70073468"
 1. Если у вас есть пользовательский домен, указывающий на экземпляр управления API исходного региона, обновите запись CNAME пользовательского домена, чтобы она указывала на новый экземпляр управления API. 
 
 
-## <a name="option-2-use-the-same-api-management-instance-name"></a>Вариант 2. Использовать одно и то же имя экземпляра управления API
+## <a name="option-2-use-the-same-api-management-instance-name"></a>Вариант 2. использование того же имени экземпляра управления API
 
 > [!NOTE]
 > Этот параметр приведет к простою во время миграции.
@@ -44,6 +44,6 @@ ms.locfileid: "70073468"
 1. Восстановите резервную копию, созданную на шаге 1, в новый экземпляр управления API в целевом регионе.  
 
 
-## <a name="next-steps"> </a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next-steps"> </a>Дальнейшие действия
 * Дополнительные сведения о функции резервного копирования и восстановления см. [в разделе Реализация аварийного восстановления](api-management-howto-disaster-recovery-backup-restore.md).
 * Сведения о переносе ресурсов Azure см. в [статье Руководство по миграции в различные регионы Azure](https://github.com/Azure/Azure-Migration-Guidance).

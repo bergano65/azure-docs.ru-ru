@@ -7,17 +7,17 @@ ms.reviewer: jehollan, klam, logicappspm
 ms.topic: article
 ms.date: 11/08/2019
 ms.openlocfilehash: afd2735bae2a79ad942c347219019ef200b61070
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75428707"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 
 Вы можете использовать [функции Azure](../azure-functions/functions-overview.md) для активации приложения логики, когда требуется развернуть долгосрочный прослушиватель или задачу. Например, можно создать функцию Azure, которая прослушивает очередь [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) и сразу же запускает приложение логики в качестве триггера push-уведомлений.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -25,7 +25,7 @@ ms.locfileid: "75428707"
 
 * Приложение-функция Azure, которое является контейнером для функций Azure. Если у вас нет приложения-функции, [сначала создайте приложение-функцию](../azure-functions/functions-create-first-azure-function.md)и убедитесь, что в качестве стека среды выполнения выбрано .NET.
 
-* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 ## <a name="create-logic-app"></a>Создание приложения логики
 
@@ -109,21 +109,21 @@ ms.locfileid: "75428707"
 
      ![Выберите шаблон для нового приложения функции](./media/logic-apps-scenario-function-sb-trigger/current-add-queue-trigger-template.png)
 
-   * Для существующего приложения-функции выберите этот шаблон: **триггер очереди служебной шины — C#**
+   * Для существующего приложения-функции выберите этот шаблон: **триггер очереди служебной шины — C#** .
 
      ![Выбор шаблона для существующего приложения функции](./media/logic-apps-scenario-function-sb-trigger/legacy-add-queue-trigger-template.png)
 
-1. В области **триггер очереди служебной шины Azure** укажите имя для триггера и настройте подключение служебной **шины** для очереди, в которой используется средство прослушивания пакетов SDK служебной шины Azure `OnMessageReceive()` прослушиватель, и нажмите кнопку **создать**.
+1. В области **триггер очереди служебной шины Azure** укажите имя для триггера и настройте подключение служебной **шины** для очереди, в которой используется прослушиватель пакета SDK `OnMessageReceive()` служебной шины Azure, и нажмите кнопку **создать**.
 
 1. Напишите базовую функцию для вызова ранее созданной конечной точки приложения логики, используя сообщение очереди в качестве триггера. Прежде чем писать функцию, ознакомьтесь со следующими соображениями.
 
    * В примере используется сообщение с типом содержимого `application/json`. При необходимости этот тип можно изменить.
    
-   * Из-за возможных одновременно выполняемых функций, больших объемов или интенсивных загрузок не рекомендуется создавать экземпляры [класса HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) с помощью инструкции `using` и непосредственно создавать HttpClient экземпляров на каждый запрос. Дополнительные сведения см. [в статье Использование хттпклиентфактори для реализации устойчивых HTTP-запросов](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net-core).
+   * Из-за возможных одновременно выполняемых функций, больших объемов или интенсивных загрузок не рекомендуется создавать экземпляры [класса HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) с помощью `using` инструкции и напрямую создавать экземпляр HttpClient для каждого запроса. Дополнительные сведения см. [в статье Использование хттпклиентфактори для реализации устойчивых HTTP-запросов](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net-core).
    
    * По возможности повторно используйте экземпляр HTTP-клиентов. Дополнительные сведения см. [в статье Управление подключениями в функциях Azure](../azure-functions/manage-connections.md).
 
-   В этом примере используется [метод`Task.Run`](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run) в [асинхронном](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async) режиме. Дополнительные сведения см. [в разделе Асинхронное программирование с использованием Async и await](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/).
+   В этом примере используется [ `Task.Run` метод](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run) в [асинхронном](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async) режиме. Дополнительные сведения см. [в разделе Асинхронное программирование с использованием Async и await](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/).
 
    ```csharp
    using System;

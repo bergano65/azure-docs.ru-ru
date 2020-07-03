@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Qumu Cloud | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Qumu Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Qumu Cloud.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2a772dfb1fb30e9de93afa91bd0485147029d88e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67093216"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-qumu-cloud"></a>Руководство по Интеграция Azure Active Directory с Qumu Cloud
+# <a name="tutorial-azure-active-directory-integration-with-qumu-cloud"></a>Руководство. Интеграция Azure Active Directory с Qumu Cloud
 
 В этом руководстве описано, как интегрировать приложение Qumu Cloud с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Qumu Cloud обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67093216"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Qumu Cloud, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Qumu Cloud с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -108,9 +108,9 @@ ms.locfileid: "67093216"
 
     ![Сведения о домене и URL-адресах единого входа приложения Qumu Cloud](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.qumucloud.com/saml/SSO`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.qumucloud.com/saml/SSO`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.qumucloud.com/saml/SSO`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.qumucloud.com/saml/SSO`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -127,14 +127,14 @@ ms.locfileid: "67093216"
 
 7. В дополнение к описанному выше приложение Qumu Cloud ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | ---------------| --------------- |    
     | urn:oid:2.5.4.42 | user.givenname |
     | urn:oid:2.5.4.4 | user.surname |
     | urn:oid:0.9.2342.19200300.100.1.3 | user.mail |
     | urn:oid:0.9.2342.19200300.100.1.1 | user.userprincipalname |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -146,9 +146,9 @@ ms.locfileid: "67093216"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 8. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -158,7 +158,7 @@ ms.locfileid: "67093216"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -237,5 +237,5 @@ ms.locfileid: "67093216"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

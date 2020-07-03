@@ -1,18 +1,17 @@
 ---
 title: Работа со строками в запросах журнала Azure Monitor | Документация Майкрософт
 description: В этой статье содержится руководство по использованию Azure Monitor Log Analytics в портал Azure для запроса и анализа данных журнала в Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: 940c82e9ef7016639a3ab334040c408f83996e2b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f792820b7b0dff20e647031410ba87ac26c2495a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75365314"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80672972"
 ---
 # <a name="working-with-json-and-data-structures-in-azure-monitor-log-queries"></a>Работа с JSON и структурой данных в запросах журнала Azure Monitor
 
@@ -26,7 +25,7 @@ ms.locfileid: "75365314"
 ## <a name="working-with-json-strings"></a>Работа со строками JSON
 Используйте `extractjson`, чтобы получить доступ к определенному элементу JSON с известным путем. Эта функция требует выражение пути, которое использует следующие правила.
 
-- _$_ для обращения к корневой папке
+- _$_ Ссылка на корневую папку
 - Использование скобок или точечной нотации для обращения к индексам и элементам, как показано в следующих примерах.
 
 
@@ -49,7 +48,7 @@ print hosts_report
 Если имеется только один элемент, можно использовать только точечную нотацию:
 
 ```Kusto
-let hosts_report='{"location":"North_DC", "status":"running", "rate":5}';
+let hosts_report=dynamic({"location":"North_DC", "status":"running", "rate":5});
 print hosts_report 
 | extend status = hosts_report.status
 ```
@@ -124,13 +123,13 @@ print hosts_object
 
 ![Создание схемы](media/json-data-structures/buildschema.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с дополнительными уроками об использовании запросов журнала в Azure Monitor.
 
-- [Работа со строками](string-operations.md)
-- [Работа со значениями даты и времени](datetime-operations.md)
-- [Статистические функции в запросах Log Analytics](aggregations.md)
-- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
+- [Операции со строками](string-operations.md)
+- [Операции с датой и временем](datetime-operations.md)
+- [Агрегатные функции](aggregations.md)
+- [Расширенные агрегатные функции](advanced-aggregations.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Joins](joins.md)
-- [Создание графиков](charts.md)
+- [Соединения](joins.md)
+- [Диаграммы](charts.md)

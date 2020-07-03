@@ -3,16 +3,15 @@ title: Конструктор представлений Azure Monitor для п
 description: ''
 author: austonli
 ms.author: aul
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: 444535f0fcc96685a9562a8f9536c0a2c2998946
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 5559dac916262998d621b40757398088ec613609
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77171544"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77658750"
 ---
 # <a name="view-designer-to-workbooks-conversion-common-tasks"></a>Конструктор представлений для преобразования книг преобразование общих задач
 [Конструктор представлений](view-designer.md) — это функция Azure Monitor, которая позволяет создавать пользовательские представления, помогающие визуализировать данные в рабочей области log Analytics, с диаграммами, списками и временными шкалами. Они выводятся и заменяются книгами, которые предоставляют дополнительные функциональные возможности. В этой статье приводятся общие сведения о задачах преобразования представлений в книги.
@@ -41,7 +40,7 @@ ms.locfileid: "77171544"
 
 Сохраните параметр в левом верхнем углу меню боковой панели. Можно оставить раскрывающийся список *по* умолчанию или выбрать значение **TimeRange** по умолчанию, например *24 часа*. Нажмите кнопку **done Edit (Готово**).
 
-Параметры можно использовать в запросах, добавляя фигурные скобки {} вокруг имени параметра. Дополнительные сведения о параметрах можно найти в [документации по параметрам книги](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/Parameters/Parameters.md).
+Параметры можно использовать в запросах, добавив фигурные скобки {} вокруг имени параметра. Дополнительные сведения о параметрах можно найти в [документации по параметрам книги](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/Parameters/Parameters.md).
 
 ## <a name="updating-queries-with-the-timerange-parameter"></a>Обновление запросов с помощью параметра TimeRange
 
@@ -51,7 +50,7 @@ ms.locfileid: "77171544"
 
 ### <a name="option-2-update-your-log-queries"></a>Вариант 2. Обновление запросов журналов
 
-В запросе добавьте строку: `| where TimeGenerated {TimeRange}`, как показано в следующем примере:
+В запросе добавьте строку: `| where TimeGenerated {TimeRange}` , как показано в следующем примере:
 
 Исходный запрос
 ```KQL
@@ -112,7 +111,7 @@ search *
 ```
 
 Выберите **Параметры столбца**.
-![параметры столбцов](media/view-designer-conversion-tasks/column-settings.png)
+![Параметры столбцов](media/view-designer-conversion-tasks/column-settings.png)
 
 Обновите раскрывающийся список **визуализации столбцов** , чтобы он был *областью Spark*.
 ![Спарклайны](media/view-designer-conversion-tasks/sparkline.png)
@@ -155,5 +154,5 @@ search *
 ![Раскрывающийся список ресурсов подписки](media/view-designer-conversion-tasks/subscription-resource.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-- [Преобразования плиток](view-designer-conversion-tiles.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Преобразование плиток](view-designer-conversion-tiles.md)

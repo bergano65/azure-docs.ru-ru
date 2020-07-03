@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 2fbd4270221cb23a4f99a0f8155bb1de76472f31
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 2171bbaea065ce1ab3a8d90f32e6ea6dc1f1e821
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74976984"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81404226"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Руководство по Модерация видео и расшифровок речи
 
@@ -42,9 +42,9 @@ ms.locfileid: "74976984"
 
 ## <a name="enter-credentials"></a>Ввод учетных данных
 
-Измените файл `App.config` и добавьте имя клиента, конечные точки службы и ключи подписки Active Directory, помеченные `#####`. Вам понадобятся следующие сведения:
+Измените файл `App.config` и добавьте имя клиента, конечные точки службы и ключи подписки Active Directory, помеченные `#####`. Потребуются следующие сведения:
 
-|Ключ|ОПИСАНИЕ|
+|Клавиши|Описание|
 |-|-|
 |`AzureMediaServiceRestApiEndpoint`|Конечная точка для API Служб мультимедиа Azure (AMS)|
 |`ClientSecret`|Ключи подписки для Службы мультимедиа Azure|
@@ -60,7 +60,7 @@ ms.locfileid: "74976984"
 
 ### <a name="methods-of-program-class"></a>Методы класса Program
 
-|Метод|ОПИСАНИЕ|
+|Метод|Описание|
 |-|-|
 |`Main`|Анализирует командную строку, собирает входные данные пользователя и начинает обработку|
 |`ProcessVideo`|Сжимает, отправляет, выполняет модерацию и создает проверки видео|
@@ -82,13 +82,13 @@ ms.locfileid: "74976984"
 Если аргументов командной строки нет, `Main()` вызывает `GetUserInputs()`. Этот метод предлагает пользователю ввести путь к одному видеофайлу и указать, нужно ли создать расшифровку текста.
 
 > [!NOTE]
-> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
+> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
 
 ### <a name="initialize-and-processvideo-methods"></a>Инициализация и методы ProcessVideo
 
 Независимо от того, поступили ли параметры программы из командной строки или от интерактивного пользователя, `Main()` вызывает `Initialize()` для создания следующих экземпляров:
 
-|Класс|ОПИСАНИЕ|
+|Class|Описание|
 |-|-|
 |`AMSComponent`|Сжимает файлы видео перед их отправкой на модерацию|
 |`AMSconfigurations`|Связывается с помощью интерфейса с данными конфигурации приложения в `App.config`|
@@ -121,7 +121,7 @@ ms.locfileid: "74976984"
 
 [!code-csharp[CompressVideo](~/VideoReviewConsoleApp/Microsoft.ContentModerator.AMSComponent/AMSComponentClient/AMSComponent.cs?range=31-59)]
 
-Код выполняет следующие действия.
+Код выполняет следующие действия:
 
 - Проверяет наличие в конфигурации `App.config` всех необходимых данных.
 - Проверяет наличие двоичного объекта `ffmpeg`.
@@ -223,7 +223,7 @@ ms.locfileid: "74976984"
 Если флаг `GenerateVTT` установлен, также выполняется транскрибирование аудиофайла.
 
 > [!NOTE]
-> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
+> В консольном приложении используется [API индексатора мультимедийных данных Azure](https://docs.microsoft.com/azure/media-services/media-services-process-content-with-indexer2) для создания расшифровок из звуковой дорожки отправленного видео. Результаты предоставляются в формате WebVTT. Дополнительные сведения об этом формате см. в статье [Web Video Text Tracks Format (WebVTT)](https://developer.mozilla.org/docs/Web/API/WebVTT_API) (Формат Web Video Text Tracks (WebVTT)).
 
 ## <a name="create-a-human-review"></a>Создание пользовательской проверки
 
@@ -299,7 +299,7 @@ ms.locfileid: "74976984"
 
 ### <a name="parse-the-transcript-for-captions"></a>Анализ расшифровки на наличие субтитров
 
-Далее проанализируйте расшифровку в формате VTT на наличие субтитров и меток времени. Средство просмотра отображает эти субтитры на вкладке "Запись разговоров" на экране просмотра видео. Метки времени используются для синхронизации субтитров с соответствующими видеокадрами.
+Далее проанализируйте расшифровку в формате VTT на наличие субтитров и меток времени. Средство проверки отображает эти субтитры на вкладке расшифровки на экране проверки видео. Метки времени используются для синхронизации субтитров с соответствующими видеокадрами.
 
 [!code-csharp[TextScreen2](~/VideoReviewConsoleApp/Microsoft.ContentModerator.AMSComponent/AMSComponentClient/VideoReviewAPI.cs?range=528-567)]
 
@@ -308,7 +308,7 @@ ms.locfileid: "74976984"
 Далее мы сканируем субтитры проанализированного текста с помощью API для работы с текстами Content Moderator.
 
 > [!NOTE]
-> Ключ службы Content Moderator предусматривает ограничение частоты на количество запросов в секунду (RPS). Если превысить ограничение, пакет SDK порождает исключение с кодом ошибки 429.
+> Ключ службы Content Moderator предусматривает ограничение частоты запросов в секунду (RPS). Если превысить ограничение, пакет SDK порождает исключение с кодом ошибки 429.
 >
 > Для ключа бесплатного уровня предусмотрен лимит в один запрос в секунду.
 
@@ -357,7 +357,7 @@ Video review successfully completed...
 Total Elapsed Time: 00:05:56.8420355
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как настроить приложение, которое модерирует видеоконтент &mdash;, в том числе транскрипты &mdash;, и создает проверки в инструменте проверки. Теперь переходите к подробному изучению модерации видео.
 

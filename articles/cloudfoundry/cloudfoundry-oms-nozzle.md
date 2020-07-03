@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 07/22/2017
 ms.author: ningk
 ms.openlocfilehash: bf6691310ec964a1d6293f3a60c151e3d6f8e641
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76277360"
 ---
 # <a name="deploy-azure-log-analytics-nozzle-for-cloud-foundry-system-monitoring"></a>Развертывание компонента Azure Log Analytics Nozzle для мониторинга системы Cloud Foundry
@@ -28,7 +28,7 @@ Log Analyticsная сопла (сопла) — это компонент Cloud 
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для развертывания Nozzle необходимо выполнить следующие шаги.
 
@@ -183,7 +183,7 @@ cf apps
 
 ### <a name="1-import-the-oms-view"></a>1. Импорт представления OMS
 
-На портале OMS выберите **Конструктор представлений** > **Импорт** > **Обзор**, а затем — один из файлов OMSVIEW, например *Cloud Foundry.omsview*, и сохраните представление. Теперь на главной странице **Обзор** отображается элемент. Выберите его, чтобы просмотреть визуализированные метрики.
+На портале OMS перейдите к **просмотру конструктора** > **Импорт** > **Обзор**и выберите один из файлов omsview. например *Cloud Foundry.omsview*, и сохраните представление. Теперь на главной странице **Обзор** отображается элемент. Выберите его, чтобы просмотреть визуализированные метрики.
 
 Можно настроить эти представления или создать другие в **конструкторе представлений**.
 
@@ -193,7 +193,7 @@ cf apps
 
 В случае необходимости можно [создавать оповещения](https://docs.microsoft.com/azure/log-analytics/log-analytics-alerts), настраивать запросы и пороговые значения. Ниже приведены рекомендуемые оповещения.
 
-| Поисковый запрос                                                                  | Создать оповещение на основе | Description                                                                       |
+| Поисковый запрос                                                                  | Создать оповещение на основе | Описание                                                                       |
 | ----------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------- |
 | Type=CF_ValueMetric_CL Origin_s=bbs Name_s="Domain.cf-apps"                   | Число результатов < 1   | **bbs.Domain.cf-apps** указывает, актуальны ли данные домена cf-apps, то есть синхронизированы ли выполняемые запросы приложения CF из Cloud Controller с bbs.LRPsDesired (ИИ Diego-desired). Если данные не получены, это означает, что данные домена cf-apps не являются актуальными в указанный период времени. |
 | Type=CF_ValueMetric_CL Origin_s=rep Name_s=UnhealthyCell Value_d>1            | Число результатов > 0   | Для ячеек Diego 0 означает работоспособное состояние, а 1 — неработоспособное. Установите оповещение, срабатывающее при обнаружении нескольких неработоспособных ячеек Diego в указанный период времени. |
@@ -204,7 +204,7 @@ cf apps
 | Type=CF_ValueMetric_CL Name_s=slowConsumerAlert                               | Число результатов > 0   | Когда сопла получает оповещение о медленных потребителях от loggregator, оно отправляет **оповещение slowconsumeralert** о valuemetric в журналы Azure Monitor. |
 | Type=CF_CounterEvent_CL Job_s=nozzle Name_s=eventsLost Delta_d>0              | Число результатов > 0   | Если количество потерянных событий достигает порогового значения, это может указывать на проблемы в работе Nozzle. |
 
-## <a name="scale"></a>Масштаб
+## <a name="scale"></a>Масштабирование
 
 Nozzle и Loggregator можно масштабировать.
 
@@ -219,14 +219,14 @@ Nozzle и Loggregator можно масштабировать.
 Loggregator отправляет сообщение журнала **LGR**, чтобы сообщить о проблемах процесса ведения журнала. Вы можете отслеживать это оповещение, чтобы определить, нужно ли увеличить масштаб Loggregator.
 Чтобы увеличить масштаб Loggregator, увеличьте размер буфера Doppler или добавьте дополнительные сущности сервера Doppler в манифест CF. Дополнительные сведения см. в статье [Configuring System Logging](https://docs.cloudfoundry.org/running/managing-cf/logging-config.html#scaling) (Настройка ведения системного журнала).
 
-## <a name="update"></a>Обновить
+## <a name="update"></a>Обновление:
 
 Чтобы установить более новую версию Nozzle, скачайте новый выпуск Nozzle, выполните указания в разделе "Развертывание Nozzle" и отправьте приложение еще раз.
 
 ### <a name="remove-the-nozzle-from-ops-manager"></a>Удаление Nozzle из Operations Manager
 
 1. Войдите в Operations Manager.
-2. Найдите элемент **Microsoft Azure Log Analytics Nozzle for PCF** (Microsoft Azure Log Analytics Nozzle для PCF).
+2. Откройте плитку **Microsoft Azure log Analytics сопла для PCF** .
 3. Выберите значок корзины и подтвердите удаление.
 
 ### <a name="remove-the-nozzle-from-your-development-computer"></a>Удаление Nozzle из компьютера разработчика

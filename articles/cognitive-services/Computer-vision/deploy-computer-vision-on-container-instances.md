@@ -3,19 +3,19 @@ title: Запуск Компьютерное зрение контейнера �
 titleSuffix: Azure Cognitive Services
 description: Разверните контейнер Компьютерное зрение в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.author: dapine
-ms.openlocfilehash: 1c858432a3382e6dbc8e479aab11b18dc5eebfe4
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: ecb0b6a6577161a5349d9d701dd6c116f69411f0
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499084"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80876103"
 ---
 # <a name="deploy-the-computer-vision-container-to-azure-container-instances"></a>Развертывание контейнера Компьютерное зрение в службе "экземпляры контейнеров Azure"
 

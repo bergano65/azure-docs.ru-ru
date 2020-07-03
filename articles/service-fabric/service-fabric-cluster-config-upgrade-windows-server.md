@@ -5,21 +5,21 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: 8e7e01dac29cb9ba91c83270dac4e46c73b2089e
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 8d0279cc323f7eee87feb2a596a4c2df0b4667e1
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610133"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790853"
 ---
 # <a name="upgrade-the-configuration-of-a-standalone-cluster"></a>Обновление конфигурации изолированного кластера 
 
 Для любой современной системы возможность обновления является ключом к успеху вашего продукта в долгосрочной перспективе. Кластер Azure Service Fabric — это ресурс, владельцем которого вы являетесь. Из этой статьи вы узнаете, как обновить параметры конфигурации для изолированного кластера Service Fabric.
 
 ## <a name="customize-cluster-settings-in-the-clusterconfigjson-file"></a>Настройка параметров кластера в файле ClusterConfig.json
-Изолированные кластеры настраиваются с помощью файла *ClusterConfig.json*. Дополнительные сведения о различных параметрах см. в статье [Параметры конфигурации для изолированного кластера Windows](service-fabric-cluster-manifest.md).
+Автономные кластеры настраиваются с помощью файла *ClusterConfig. JSON* . Дополнительные сведения о различных параметрах см. в статье [Параметры конфигурации для изолированного кластера Windows](service-fabric-cluster-manifest.md).
 
-В файле *ClusterConfig.json* в разделе `fabricSettings`[свойств кластера](./service-fabric-cluster-manifest.md#cluster-properties) можно добавлять, изменять и удалять параметры. 
+Добавить, обновить или удалить параметры можно в `fabricSettings` разделе [Свойства кластера](./service-fabric-cluster-manifest.md#cluster-properties) в *ClusterConfig. JSON*. 
 
 Например, следующий JSON добавляет новый параметр *MaxDiskQuotaInMB* в разделе *Diagnostics* в строке `fabricSettings`:
 
@@ -75,7 +75,7 @@ Start-ServiceFabricClusterConfigurationUpgrade -ClusterConfigPath <Path to Confi
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как настроить некоторые [параметры кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
-* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md).
+* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-in-out.md).
 * Узнайте об [обновлениях приложений](service-fabric-application-upgrade.md).
 
 <!--Image references-->

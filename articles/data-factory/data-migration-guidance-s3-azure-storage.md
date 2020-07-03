@@ -11,25 +11,27 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 8/04/2019
-ms.openlocfilehash: 6f2db91a35573bc2cbdd0df2cb1ac09914cc956b
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 3f40ad7346219b48a38ade38b2a75ddf71940875
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122650"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81416419"
 ---
 # <a name="use-azure-data-factory-to-migrate-data-from-amazon-s3-to-azure-storage"></a>Перенос данных из Amazon S3 в службу хранилища Azure с помощью фабрики данных Azure 
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Фабрика данных Azure предоставляет производительный, надежный и экономичный механизм переноса данных из Amazon S3 в хранилище BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения.  Эта статья содержит следующие сведения для инженеров и разработчиков данных: 
 
 > [!div class="checklist"]
-> * Ориентированное на производительность 
+> * Тестирование 
 > * Устойчивость к копированию
 > * Безопасность сети
 > * Архитектура высокого уровня решения 
 > * Рекомендации по реализации  
 
-## <a name="performance"></a>Ориентированное на производительность
+## <a name="performance"></a>Тестирование
 
 ADF предлагает бессерверную архитектуру, которая обеспечивает параллелизм на разных уровнях, что позволяет разработчикам создавать конвейеры для полного использования пропускной способности сети, а также операций ввода-вывода и пропускной способности хранилища для максимального увеличения пропускной способности перемещения данных для вашей среды. 
 
@@ -80,7 +82,7 @@ ADF предлагает бессерверную архитектуру, кот
 ### <a name="authentication-and-credential-management"></a>Проверка подлинности и управление учетными данными 
 
 - Для аутентификации в учетной записи Amazon S3 необходимо использовать [ключ доступа для учетной записи IAM](https://docs.microsoft.com/azure/data-factory/connector-amazon-simple-storage-service#linked-service-properties). 
-- Для подключения к хранилищу BLOB-объектов Azure поддерживаются несколько типов проверки подлинности.  Настоятельно рекомендуется использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#managed-identity) , основанные на автоматически управляемой идентификации ADF в Azure AD. она позволяет настраивать конвейеры без предоставления учетных данных в определении связанной службы.  Кроме того, можно выполнить аутентификацию в хранилище BLOB-объектов Azure с помощью [субъекта-службы](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#service-principal-authentication), [подписанного URL-имени](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication) или [ключа учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#account-key-authentication). 
+- Для подключения к хранилищу BLOB-объектов Azure поддерживаются несколько типов проверки подлинности.  Настоятельно рекомендуется использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#managed-identity) , основанные на автоматически управляемой идентификации ADF в Azure AD. она позволяет настраивать конвейеры без предоставления учетных данных в определении связанной службы.  Кроме того, можно выполнить аутентификацию в хранилище BLOB-объектов Azure с помощью [субъекта-службы](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#service-principal-authentication), [подписанного](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#shared-access-signature-authentication)URL- [имени или ключа учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage#account-key-authentication). 
 - Для подключения к Azure Data Lake Storage 2-го поколения также поддерживаются несколько типов проверки подлинности.  Настоятельно рекомендуется использовать [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#managed-identity) , хотя также можно использовать [субъект-службу](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#service-principal-authentication) или [ключ учетной записи хранения](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#account-key-authentication) . 
 - Если вы не используете управляемые удостоверения для ресурсов Azure, настоятельно рекомендуется [хранить учетные данные в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault) , чтобы упростить централизованное управление и вращение ключей без изменения связанных служб ADF.  Это также один из рекомендаций [по интеграции и откомпакт-диску](https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd). 
 
@@ -135,14 +137,14 @@ ADF предлагает бессерверную архитектуру, кот
 
 ![цены — таблица](media/data-migration-guidance-s3-to-azure-storage/pricing-table.png)
 
-### <a name="additional-references"></a>Дополнительные ссылки 
+### <a name="additional-references"></a>Дополнительная справка 
 - [Соединитель простой службы хранилища Amazon](https://docs.microsoft.com/azure/data-factory/connector-amazon-simple-storage-service)
 - [Соединитель хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage)
 - [Copy data to or from Azure Data Lake Storage Gen2 Preview using Azure Data Factory (Preview)](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage) (Копирование данных в Azure Data Lake Storage Gen2 (предварительная версия) или из него с помощью фабрики данных Azure)
 - [Краткое руководств по настройке производительности действий копирования](https://docs.microsoft.com/azure/data-factory/copy-activity-performance)
 - [Создание и Настройка автономных Integration Runtime](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime)
 - [Высокая доступность и масштабируемость локальной среды выполнения интеграции](https://docs.microsoft.com/azure/data-factory/create-self-hosted-integration-runtime#high-availability-and-scalability)
-- [Вопросы безопасности перемещения данных](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
+- [Вопросы безопасности при перемещении данных](https://docs.microsoft.com/azure/data-factory/data-movement-security-considerations)
 - [Хранение учетных данных в Azure Key Vault](https://docs.microsoft.com/azure/data-factory/store-credentials-in-key-vault)
 - [Копировать файл добавочно в соответствии с временным секционированным именем файла](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-partitioned-file-name-copy-data-tool)
 - [Копировать новые и измененные файлы на основе LastModifiedDate](https://docs.microsoft.com/azure/data-factory/tutorial-incremental-copy-lastmodified-copy-data-tool)
@@ -152,6 +154,6 @@ ADF предлагает бессерверную архитектуру, кот
 
 Ниже приведен [шаблон](solution-template-migration-s3-azure.md) , с которого начинается миграция петабайтов данных, состоящих из сотен миллионов файлов из Amazon S3, в Azure Data Lake Storage 2-го поколения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure](solution-template-copy-files-multiple-containers.md)
+- [Копирование файлов из нескольких контейнеров с помощью Фабрики данных Azure](solution-template-copy-files-multiple-containers.md)

@@ -9,10 +9,10 @@ ms.date: 02/25/2019
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: f3044a2701b0f1cd0e5f9ab3ab60c1d60cfb8f45
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75436815"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute
@@ -26,7 +26,7 @@ ms.locfileid: "75436815"
 
 [!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a><a name="architecture"></a>Архитектура
 
 
   ![Общие сведения о подключениях](./media/site-to-site-vpn-over-microsoft-peering/IPsecER_Overview.png)
@@ -43,7 +43,7 @@ VPN-туннели через пиринговый канал Майкрософ
 >
 >
 
-## <a name="workflow"></a>Рабочий процесс
+## <a name="workflow"></a><a name="workflow"></a>Рабочий процесс
 
 1. Настройте пиринг Майкрософт для своего канала ExpressRoute.
 2. Объявите выбранные региональные префиксы Azure в своей локальной сети через пиринг Майкрософт.
@@ -53,7 +53,7 @@ VPN-туннели через пиринговый канал Майкрософ
 6. (Необязательно.) Настройте брандмауэры или фильтрацию на локальном VPN-устройстве.
 7. Протестируйте и проверьте обмен данными IPsec через канал ExpressRoute.
 
-## <a name="peering"></a>1. Настройка пиринга Майкрософт
+## <a name="1-configure-microsoft-peering"></a><a name="peering"></a>1. Настройка пиринга Майкрософт
 
 Чтобы настроить VPN-подключение типа "сеть — сеть" через ExpressRoute, вы должны использовать пиринг Майкрософт ExpressRoute.
 
@@ -65,7 +65,7 @@ VPN-туннели через пиринговый канал Майкрософ
 
 ![канал](./media/site-to-site-vpn-over-microsoft-peering/ExpressRouteCkt.png)
 
-## <a name="routefilter"></a>2. Настройка фильтров маршрутов
+## <a name="2-configure-route-filters"></a><a name="routefilter"></a>2. Настройка фильтров маршрутов
 
 Фильтр маршрутов позволяет вам идентифицировать службы, которые можно использовать через пиринг Майкрософт по каналу ExpressRoute. По сути, это список разрешений для всех значений сообщества BGP. 
 
@@ -75,11 +75,11 @@ VPN-туннели через пиринговый канал Майкрософ
 
 В пределах фильтра маршрутов вам также необходимо выбрать каналы ExpressRoute, для которых применяется фильтр. Вы можете выбрать каналы ExpressRoute, щелкнув **Добавить цепь**. На предыдущем рисунке фильтр маршрутов связан с примером канала ExpressRoute.
 
-### <a name="configfilter"></a>2.1 Настройка фильтра маршрутов
+### <a name="21-configure-the-route-filter"></a><a name="configfilter"></a>2.1 Настройка фильтра маршрутов
 
 Создайте фильтр маршрутов. Инструкции см. в статье [Configure route filters for Microsoft peering: Azure portal](how-to-routefilter-portal.md) (Настройка фильтров маршрутов для пиринга Майкрософт с помощью портала Azure).
 
-### <a name="verifybgp"></a>2.2 Проверка маршрутов BGP
+### <a name="22-verify-bgp-routes"></a><a name="verifybgp"></a>2.2 Проверка маршрутов BGP
 
 Создав пиринг Майкрософт через канал ExpressRoute и связав с ним фильтр маршрутов, вы можете проверить маршруты BGP, полученные от маршрутизаторов MSEE на устройствах PE, которые устанавливают пиринг с этими маршрутизаторами. Команда проверки может измениться в зависимости от операционной системы ваших устройств PE.
 
@@ -91,7 +91,7 @@ VPN-туннели через пиринговый канал Майкрософ
 show ip bgp vpnv4 vrf 10 summary
 ```
 
-В следующих частичных выходных данных показано, что префиксы 68 были получены от соседа \*. 243.229.34 с ASN 12076 (MSEE):
+В следующих частичных выходных данных показано, что префиксы 68 были получены \*из соседнего узла. 243.229.34 с ASN 12076 (MSEE):
 
 ```
 ...
@@ -112,7 +112,7 @@ sh ip bgp vpnv4 vrf 10 neighbors X.243.229.34 received-routes
 Get-AzBgpServiceCommunity
 ```
 
-## <a name="vpngateway"></a>3. Настройка VPN-шлюза и туннелей IPsec
+## <a name="3-configure-the-vpn-gateway-and-ipsec-tunnels"></a><a name="vpngateway"></a>3. Настройка VPN-шлюза и туннелей IPsec
 
 В этом разделе между VPN-шлюзом Azure и локальным VPN-устройством создаются VPN-туннели IPsec. В примерах используются VPN-устройства маршрутизатора облачной службы Cisco (CSR1000).
 
@@ -137,7 +137,7 @@ Get-AzBgpServiceCommunity
 >
 >
 
-### <a name="variables3"></a>3.1 Объявление переменных
+### <a name="31-declare-the-variables"></a><a name="variables3"></a>3.1 Объявление переменных
 
 В этом примере объявление переменных соответствует примеру сети. При объявлении переменных измените этот раздел в соответствии со своей средой.
 
@@ -175,7 +175,7 @@ Get-AzBgpServiceCommunity
 },
 ```
 
-### <a name="vnet"></a>3.2 Создание виртуальной сети
+### <a name="32-create-virtual-network-vnet"></a><a name="vnet"></a>3.2 Создание виртуальной сети
 
 Если вы связываете VPN-туннели с существующей виртуальной сетью, этот шаг можно пропустить.
 
@@ -210,7 +210,7 @@ Get-AzBgpServiceCommunity
 },
 ```
 
-### <a name="ip"></a>3.3 Назначение общедоступных IP-адресов экземплярам VPN-шлюза
+### <a name="33-assign-public-ip-addresses-to-vpn-gateway-instances"></a><a name="ip"></a>3.3 Назначение общедоступных IP-адресов экземплярам VPN-шлюза
  
 Назначьте общедоступный IP-адрес для каждого экземпляра VPN-шлюза.
 
@@ -237,7 +237,7 @@ Get-AzBgpServiceCommunity
   },
 ```
 
-### <a name="termination"></a>3.4 Указание завершения локального VPN-туннеля (шлюз локальной сети)
+### <a name="34-specify-the-on-premises-vpn-tunnel-termination-local-network-gateway"></a><a name="termination"></a>3.4 Указание завершения локального VPN-туннеля (шлюз локальной сети)
 
 Локальные VPN-устройства называются **шлюзами локальной сети**. В следующем фрагменте кода json указаны сведения об удаленном пиринговом узле BGP:
 
@@ -262,7 +262,7 @@ Get-AzBgpServiceCommunity
 },
 ```
 
-### <a name="creategw"></a>3.5 Создание VPN-шлюза
+### <a name="35-create-the-vpn-gateway"></a><a name="creategw"></a>3.5 Создание VPN-шлюза
 
 В этом разделе шаблона настраивается VPN-шлюз с необходимыми параметрами для конфигурации "активный — активный". Не забывайте о следующих требованиях:
 
@@ -324,7 +324,7 @@ Get-AzBgpServiceCommunity
   },
 ```
 
-### <a name="ipsectunnel"></a>3.6 Установка туннелей IPsec
+### <a name="36-establish-the-ipsec-tunnels"></a><a name="ipsectunnel"></a>3.6 Установка туннелей IPsec
 
 Последнее действие сценария создает туннели IPsec между VPN-шлюзом Azure и локальным VPN-устройством.
 
@@ -354,7 +354,7 @@ Get-AzBgpServiceCommunity
   }
 ```
 
-## <a name="device"></a>4. Настройка локального VPN-устройства
+## <a name="4-configure-the-on-premises-vpn-device"></a><a name="device"></a>4. Настройка локального VPN-устройства
 
 VPN-шлюз Azure совместим со многими VPN-устройствами от разных поставщиков. Сведения о конфигурации и устройства, сертифицированные для работы с VPN-шлюзом, см. в статье [VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз](../vpn-gateway/vpn-gateway-about-vpn-devices.md).
 
@@ -365,7 +365,7 @@ VPN-шлюз Azure совместим со многими VPN-устройств
 
 Обычно пиринговые узлы eBGP подключены напрямую (часто через глобальную сеть). Однако при настройке eBGP через VPN-туннели IPsec с помощью пиринга Майкрософт ExpressRoute между узлами eBGP есть несколько доменов маршрутизации. Используйте команду **​bgp-multihop**, чтобы установить соседнюю связь eBGP между двумя пиринговыми узлами, подключенными не напрямую. Целое число после команды ebgp-multihop указывает значение срока жизни в пакетах BGP. Команда **maximum-paths eibgp 2** обеспечивает балансировку нагрузки трафика между двумя путями BGP.
 
-### <a name="cisco1"></a>Пример Cisco CSR1000
+### <a name="cisco-csr1000-example"></a><a name="cisco1"></a>Пример Cisco CSR1000
 
 В следующем примере показана конфигурация Cisco CSR1000 на виртуальной машине Hyper-V в качестве локального VPN-устройства:
 
@@ -475,11 +475,11 @@ ip route 10.2.0.229 255.255.255.255 Tunnel1
 !
 ```
 
-## <a name="firewalls"></a>5. Настройка фильтрации и брандмауэров VPN-устройств (необязательно)
+## <a name="5-configure-vpn-device-filtering-and-firewalls-optional"></a><a name="firewalls"></a>5. Настройка фильтрации и брандмауэров VPN-устройств (необязательно)
 
 Настройте брандмауэр и фильтрацию в соответствии с требованиями.
 
-## <a name="testipsec"></a>6. Тестирование и проверка туннеля IPsec
+## <a name="6-test-and-validate-the-ipsec-tunnel"></a><a name="testipsec"></a>6. Тестирование и проверка туннеля IPsec
 
 Статус туннелей IPsec можно проверить в VPN-шлюзе Azure с помощью команд PowerShell:
 
@@ -597,7 +597,7 @@ csr1#show crypto ipsec sa | inc encaps|decaps
     #pkts decaps: 746, #pkts decrypt: 746, #pkts verify: 746
 ```
 
-### <a name="verifye2e"></a>Проверка сквозной связи между внутренней локальной сетью и виртуальной сетью Azure
+### <a name="verify-end-to-end-connectivity-between-the-inside-network-on-premises-and-the-azure-vnet"></a><a name="verifye2e"></a>Проверка сквозной связи между внутренней локальной сетью и виртуальной сетью Azure
 
 Если туннели IPsec работают и статические маршруты настроены правильно, вы сможете проверить связь с IP-адресом удаленного узла BGP:
 
@@ -615,7 +615,7 @@ Sending 5, 100-byte ICMP Echos to 10.2.0.229, timeout is 2 seconds:
 Success rate is 100 percent (5/5), round-trip min/avg/max = 4/5/6 ms
 ```
 
-### <a name="verifybgp"></a>Проверка сеансов BGP через IPsec
+### <a name="verify-the-bgp-sessions-over-ipsec"></a><a name="verifybgp"></a>Проверка сеансов BGP через IPsec
 
 Проверьте состояние узла BGP в VPN-шлюзе Azure:
 
@@ -711,4 +711,4 @@ Total number of prefixes 2
 
 * [Настройка решения "Монитор производительности сети" для ExpressRoute](how-to-npm.md)
 
-* [Add a Site-to-Site connection to a VNet with an existing VPN gateway connection](../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md) (Добавление подключения типа "сеть — сеть" к виртуальной сети с помощью существующего подключения VPN-шлюза)
+* [Добавление подключения типа "сеть — сеть" в виртуальную сеть с существующим VPN-шлюзом](../vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md)

@@ -8,14 +8,14 @@ manager: timlt
 editor: spelluru
 ms.service: service-bus-messaging
 ms.topic: article
-ms.date: 01/16/2020
+ms.date: 03/12/2020
 ms.author: aschhab
-ms.openlocfilehash: 683a28ca3cdabd5a7ffbf6e9ffdc3ed0c58d3247
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 267965ee41280a677050d1676285dda8734bc044
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264701"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81606056"
 ---
 # <a name="best-practices-for-performance-improvements-using-service-bus-messaging"></a>Рекомендации по повышению производительности с помощью обмена сообщениями через служебную шину
 
@@ -31,121 +31,279 @@ ms.locfileid: "76264701"
 
 1. Протокол AMQP
 2. Протокол SBMP
-3. HTTP
+3. Протокол HTTP
 
-Протоколы AMQP и SBMP более эффективны, так как они поддерживают подключение к служебной шине, пока существует фабрика обмена сообщениями. Он также реализует функции пакетной обработки и предварительной выборки. Если явно не указано иное, в этой статье предполагается использование протокола AMQP или SBMP.
+AMQP является наиболее эффективным, так как поддерживает подключение к служебной шине. Он также реализует функции пакетной обработки и предварительной выборки. Если явно не указано иное, в этой статье предполагается использование протокола AMQP или SBMP.
+
+> [!IMPORTANT]
+> SBMP доступен только для .NET Framework. AMQP используется по умолчанию для .NET Standard.
+
+## <a name="choosing-the-appropriate-service-bus-net-sdk"></a>Выбор соответствующего пакета SDK для .NET служебной шины
+
+Существует два поддерживаемых пакета SDK для .NET служебной шины Azure. Их API-интерфейсы очень похожи, и его можно использовать для выбора. Сведения о принятии решений см. в следующей таблице. Мы рекомендуем использовать пакет SDK Microsoft. Azure. ServiceBus, так как он является более современным, производительным и совместимым с несколькими платформами. Кроме того, он поддерживает AMQP через WebSockets и является частью коллекции SDK Azure .NET для проектов с открытым кодом.
+
+| Пакет NuGet | Основные пространства имен | Минимальная платформа (-ы) | Протокол(-ы) |
+|---------------|----------------------|---------------------|-------------|
+| <a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus" target="_blank">Microsoft. Azure. ServiceBus<span class="docon docon-navigate-external x-hidden-focus"></span></a> | `Microsoft.Azure.ServiceBus`<br>`Microsoft.Azure.ServiceBus.Management` | .NET Core 2.0;<br>.NET Framework 4.6.1<br>Mono 5.4<br>Xamarin.iOS 10.14<br>Xamarin.Mac 3.8<br>Xamarin.Android 8.0;<br>универсальная платформа Windows 10.0.16299. | AMQP<br>HTTP |
+| <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus" target="_blank">WindowsAzure. ServiceBus<span class="docon docon-navigate-external x-hidden-focus"></span></a> | `Microsoft.ServiceBus`<br>`Microsoft.ServiceBus.Messaging` | .NET Framework 4.6.1 | AMQP<br>SBMP<br>HTTP |
+
+Дополнительные сведения о минимальной .NET Standard поддержки платформ см. в разделе [Поддержка реализации .NET](https://docs.microsoft.com/dotnet/standard/net-standard#net-implementation-support).
 
 ## <a name="reusing-factories-and-clients"></a>Повторное использование фабрик и клиентов
 
-Клиентские объекты служебной шины, такие как [QueueClient][QueueClient] или [MessageSender][MessageSender], создаются с помощью объекта [MessagingFactory][MessagingFactory]. Этот объект также обеспечивает внутреннее управление подключениями. Закрывать фабрики обмена сообщениями или клиенты очередей, разделов и подписок после отправки сообщения, а затем повторно создавать их при отправке следующего сообщения не рекомендуется. При закрытии фабрики обмена сообщениями удаляется подключение к службе служебной шины, а при повторном создании фабрики устанавливается новое подключение. Установка подключения является ресурсоемкой операцией, которую можно исключить, если повторно использовать одну и ту же фабрику и клиентские объекты для нескольких операций. Вы можете безопасно использовать объекты клиента для параллельных асинхронных операций из нескольких потоков. 
+# <a name="microsoftazureservicebus-sdk"></a>[Пакет SDK Microsoft. Azure. ServiceBus](#tab/net-standard-sdk)
+
+Клиентские объекты служебной шины, такие как реализации [`IQueueClient`][QueueClient] или [`IMessageSender`][MessageSender], должны быть зарегистрированы для внедрения зависимостей в виде Singleton-элементов (или создается один раз и совместно используются). Закрывать фабрики обмена сообщениями или клиенты очередей, разделов и подписок после отправки сообщения, а затем повторно создавать их при отправке следующего сообщения не рекомендуется. При закрытии фабрики обмена сообщениями удаляется подключение к службе служебной шины, а при повторном создании фабрики устанавливается новое подключение. Установка подключения является ресурсоемкой операцией, которую можно исключить, если повторно использовать одну и ту же фабрику и клиентские объекты для нескольких операций. Вы можете безопасно использовать объекты клиента для параллельных асинхронных операций из нескольких потоков.
+
+# <a name="windowsazureservicebus-sdk"></a>[Пакет SDK для WindowsAzure. ServiceBus](#tab/net-framework-sdk)
+
+Клиентские объекты служебной шины, `QueueClient` такие `MessageSender`как или, создаются с помощью объекта [MessagingFactory][MessagingFactory] , который также обеспечивает внутреннее управление соединениями. Закрывать фабрики обмена сообщениями или клиенты очередей, разделов и подписок после отправки сообщения, а затем повторно создавать их при отправке следующего сообщения не рекомендуется. При закрытии фабрики обмена сообщениями удаляется подключение к службе служебной шины, а при повторном создании фабрики устанавливается новое подключение. Установка подключения является ресурсоемкой операцией, которую можно исключить, если повторно использовать одну и ту же фабрику и клиентские объекты для нескольких операций. Вы можете безопасно использовать объекты клиента для параллельных асинхронных операций из нескольких потоков.
+
+---
 
 ## <a name="concurrent-operations"></a>Параллельные операции
 
-Выполнение любой операции (отправка, получение, удаление и т. д.) занимает определенное время. В это время входит обработка операции службой Service Bus, а также задержка запроса и ответа. Чтобы увеличить количество операций в единицу времени, необходимо выполнять их параллельно. 
+Выполнение любой операции (отправка, получение, удаление и т. д.) занимает определенное время. Это время включает обработку операции службой служебной шины в дополнение к задержке запроса и ответа. Чтобы увеличить количество операций в единицу времени, необходимо выполнять их параллельно.
 
 Клиент планирует параллельные операции за счет асинхронных операций. Следующий запрос запускается до завершения предыдущего запроса. Вот пример фрагмента кода асинхронной операции отправки:
-  
- ```csharp
-  Message m1 = new BrokeredMessage(body);
-  Message m2 = new BrokeredMessage(body);
-  
-  Task send1 = queueClient.SendAsync(m1).ContinueWith((t) => 
-    {
-      Console.WriteLine("Sent message #1");
-    });
-  Task send2 = queueClient.SendAsync(m2).ContinueWith((t) => 
-    {
-      Console.WriteLine("Sent message #2");
-    });
-  Task.WaitAll(send1, send2);
-  Console.WriteLine("All messages sent");
-  ```
-  
-  Вот пример асинхронной операции получения. Полную программу см. [здесь](https://github.com/Azure/azure-service-bus/blob/master/samples/DotNet/Microsoft.Azure.ServiceBus/SendersReceiversWithQueues):
-  
-  ```csharp
-  var receiver = new MessageReceiver(connectionString, queueName, ReceiveMode.PeekLock);
-  var doneReceiving = new TaskCompletionSource<bool>();
 
-  receiver.RegisterMessageHandler(...);
-  ```
+# <a name="microsoftazureservicebus-sdk"></a>[Пакет SDK Microsoft. Azure. ServiceBus](#tab/net-standard-sdk)
+
+```csharp
+var messageOne = new Message(body);
+var messageTwo = new Message(body);
+
+var sendFirstMessageTask =
+    queueClient.SendAsync(messageOne).ContinueWith(_ =>
+    {
+        Console.WriteLine("Sent message #1");
+    });
+var sendSecondMessageTask =
+    queueClient.SendAsync(messageTwo).ContinueWith(_ =>
+    {
+        Console.WriteLine("Sent message #2");
+    });
+
+await Task.WhenAll(sendFirstMessageTask, sendSecondMessageTask);
+Console.WriteLine("All messages sent");
+```
+
+# <a name="windowsazureservicebus-sdk"></a>[Пакет SDK для WindowsAzure. ServiceBus](#tab/net-framework-sdk)
+
+```csharp
+var messageOne = new BrokeredMessage(body);
+var messageTwo = new BrokeredMessage(body);
+
+var sendFirstMessageTask =
+    queueClient.SendAsync(messageOne).ContinueWith(_ =>
+    {
+        Console.WriteLine("Sent message #1");
+    });
+var sendSecondMessageTask =
+    queueClient.SendAsync(messageTwo).ContinueWith(_ =>
+    {
+        Console.WriteLine("Sent message #2");
+    });
+
+await Task.WhenAll(sendFirstMessageTask, sendSecondMessageTask);
+Console.WriteLine("All messages sent");
+```
+
+---
+
+Вот пример асинхронной операции получения.
+
+# <a name="microsoftazureservicebus-sdk"></a>[Пакет SDK Microsoft. Azure. ServiceBus](#tab/net-standard-sdk)
+
+Полные <a href="https://github.com/Azure/azure-service-bus/blob/master/samples/DotNet/Microsoft.Azure.ServiceBus/SendersReceiversWithQueues" target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"> </span>примеры исходного кода </a>см. в репозитории GitHub:
+
+```csharp
+var receiver = new MessageReceiver(connectionString, queueName, ReceiveMode.PeekLock);
+
+static Task LogErrorAsync(Exception exception)
+{
+    Console.WriteLine(exception);
+    return Task.CompletedTask;
+};
+
+receiver.RegisterMessageHandler(
+    async (message, cancellationToken) =>
+    {
+        Console.WriteLine("Handle message");
+        await receiver.CompleteAsync(message.SystemProperties.LockToken);
+    },
+    new MessageHandlerOptions(e => LogErrorAsync(e.Exception))
+    {
+        AutoComplete = false,
+        MaxConcurrentCalls = 20
+    });
+```
+
+Экземпляр `MessageReceiver` объекта создается с помощью строки подключения, имени очереди и режима получения просмотра. Затем `receiver` экземпляр используется для регистрации обработчика сообщений.
+
+# <a name="windowsazureservicebus-sdk"></a>[Пакет SDK для WindowsAzure. ServiceBus](#tab/net-framework-sdk)
+
+Полные <a href="https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/SendersReceiversWithQueues" target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"> </span>примеры исходного кода </a>см. в репозитории GitHub:
+
+```csharp
+var factory = MessagingFactory.CreateFromConnectionString(connectionString);
+var receiver = await factory.CreateMessageReceiverAsync(queueName, ReceiveMode.PeekLock);
+
+// Register the handler to receive messages asynchronously
+receiver.OnMessageAsync(
+    async message =>
+    {
+        Console.WriteLine("Handle message");
+        await message.CompleteAsync();
+    },
+    new OnMessageOptions
+    {
+        AutoComplete = false,
+        MaxConcurrentCalls = 20
+    });
+```
+
+`MessagingFactory` Создает `factory` объект из строки подключения. `factory` Экземпляр `MessageReceiver` создает экземпляр. Затем `receiver` экземпляр используется для регистрации обработчика сообщений.
+
+---
 
 ## <a name="receive-mode"></a>Режим получения
 
-При создании клиента очереди или подписки вы можете выбрать режим получения: *блокировка для просмотра* или *получение и удаление*. По умолчанию используется режим [блокировки для просмотра][PeekLock]. В этом режиме клиент отправляет запрос на получение сообщения из служебной шины. После получения сообщения клиент отправляет запрос на завершение сообщения.
+При создании клиента очереди или подписки вы можете выбрать режим получения: *блокировка для просмотра* или *получение и удаление*. Режим получения по умолчанию — `PeekLock`. При работе в режиме по умолчанию клиент отправляет запрос на получение сообщения из служебной шины. После получения сообщения клиент отправляет запрос на завершение сообщения.
 
-Если установить режим [получения и удаления][ReceiveAndDelete], оба этих действия объединяются в один запрос. В результате этих шагов уменьшается общее количество операций, что может повысить общую пропускную способность для сообщений. Однако такое повышение производительности сопряжено с риском потери сообщений.
+При установке режима получения `ReceiveAndDelete` оба действия объединяются в одном запросе. В результате этих шагов уменьшается общее количество операций, что может повысить общую пропускную способность для сообщений. Однако такое повышение производительности сопряжено с риском потери сообщений.
 
 Служебная шина не поддерживает транзакции для операций получения и удаления. Кроме того, иногда требуется семантика блокировки для просмотра (например, если клиенту необходимо отложить сообщение или [пометить его как недоставленное](service-bus-dead-letter-queues.md)).
 
 ## <a name="client-side-batching"></a>Пакетная обработка на стороне клиента
 
-Пакетная обработка на стороне клиента позволяет клиенту очереди или раздела задержать отправку сообщения на определенный период времени. Если в течение этого времени клиент будет отправлять дополнительные сообщения, они будут переданы в одном пакете. Кроме того, пакетная обработка на стороне клиента очереди или подписки позволяет объединить несколько запросов на **завершение** в один. Пакетная обработка возможна только для асинхронных операций **отправки** и **завершения**. Синхронные операции отправляются в службу служебной шины незамедлительно. Пакетная обработка недоступна для операций просмотра или получения. Также пакетную обработку нельзя использовать для объединения операций нескольких клиентов.
+Пакетная обработка на стороне клиента позволяет клиенту очереди или раздела задержать отправку сообщения на определенный период времени. Если в течение этого времени клиент будет отправлять дополнительные сообщения, они будут переданы в одном пакете. Кроме того, пакетная обработка на стороне клиента очереди или подписки позволяет объединить несколько запросов на **завершение** в один. Пакетная обработка может использоваться только для асинхронных операций **отправки** и **завершения**. Синхронные операции отправляются в службу служебной шины незамедлительно. Пакетная обработка недоступна для операций просмотра или получения. Также пакетную обработку нельзя использовать для объединения операций нескольких клиентов.
+
+# <a name="microsoftazureservicebus-sdk"></a>[Пакет SDK Microsoft. Azure. ServiceBus](#tab/net-standard-sdk)
+
+Функция пакетной обработки для пакета SDK для .NET Standard пока не предоставляет свойство для управления.
+
+# <a name="windowsazureservicebus-sdk"></a>[Пакет SDK для WindowsAzure. ServiceBus](#tab/net-framework-sdk)
 
 По умолчанию интервал пакетной обработки в клиенте составляет 20 мс. Интервал пакетной обработки можно изменить с помощью свойства [BatchFlushInterval][BatchFlushInterval], которое задается перед созданием фабрики обмена сообщениями. Этот параметр влияет на все клиенты, создаваемые этой фабрикой.
 
-Чтобы отключить пакетную обработку, задайте для свойства [BatchFlushInterval][BatchFlushInterval] значение **TimeSpan.Zero**. Пример.
+Чтобы отключить пакетную обработку, задайте для свойства [BatchFlushInterval][BatchFlushInterval] значение **TimeSpan.Zero**. Пример:
 
 ```csharp
-MessagingFactorySettings mfs = new MessagingFactorySettings();
-mfs.TokenProvider = tokenProvider;
-mfs.NetMessagingTransportSettings.BatchFlushInterval = TimeSpan.FromSeconds(0.05);
-MessagingFactory messagingFactory = MessagingFactory.Create(namespaceUri, mfs);
+var settings = new MessagingFactorySettings
+{
+    NetMessagingTransportSettings =
+    {
+        BatchFlushInterval = TimeSpan.Zero
+    }
+};
+var factory = MessagingFactory.Create(namespaceUri, settings);
 ```
 
 Пакетная обработка не влияет на количество оплачиваемых операций обмена сообщениями и доступна только для протокола клиента служебной шины с использованием библиотеки [Microsoft.ServiceBus.Messaging](https://www.nuget.org/packages/WindowsAzure.ServiceBus/). Протокол HTTP не поддерживает пакетную обработку.
 
 > [!NOTE]
-> Установка BatchFlushInterval гарантирует, что Пакетная обработка будет неявной с точки зрения приложения. т. е. приложение выполняет вызовы SendAsync () и Комплетеасинк () и не выполняет определенные пакетные вызовы.
+> Параметр `BatchFlushInterval` гарантирует, что Пакетная обработка будет неявной с точки зрения приложения. т. е. приложение создает `SendAsync` и `CompleteAsync` вызывает и не выполняет определенные вызовы пакетной службы.
 >
-> Явная Пакетная обработка на стороне клиента может быть реализована с использованием приведенного ниже вызова метода. 
+> Явную пакетную обработку на стороне клиента можно реализовать, используя следующий вызов метода:
 > ```csharp
-> Task SendBatchAsync (IEnumerable<BrokeredMessage> messages);
+> Task SendBatchAsync(IEnumerable<BrokeredMessage> messages);
 > ```
 > Здесь общий размер сообщений должен быть меньше, чем максимальный размер, поддерживаемый ценовой категорией.
 
+---
+
 ## <a name="batching-store-access"></a>Пакетный доступ к хранилищу
 
-Чтобы увеличить пропускную способность очереди, раздела или подписки, служебная шина объединяет несколько сообщений в пакеты, когда записывает их в свое внутреннее хранилище. Если эта функция включена для очереди или раздела, сообщения записываются в хранилище в пакетном режиме. Если эта функция включена для очереди или подписки, сообщения будут удаляться из хранилища в пакетном режиме. Если пакетный доступ к хранилищу включен для сущности, служебная шина будет задерживать операцию записи для этой сущности на период до 20 мс. 
+Чтобы увеличить пропускную способность очереди, раздела или подписки, служебная шина объединяет несколько сообщений в пакеты, когда записывает их в свое внутреннее хранилище. Если эта функция включена для очереди или раздела, сообщения записываются в хранилище в пакетном режиме. Если эта функция включена для очереди или подписки, сообщения будут удаляться из хранилища в пакетном режиме. Если пакетный доступ к хранилищу включен для сущности, служебная шина будет задерживать операцию записи для этой сущности на период до 20 мс.
 
 > [!NOTE]
-> При пакетной обработке нет опасности потерять сообщения, даже если по истечении 20 мс такой обработки происходит сбой службы "Служебная шина". 
+> При пакетной обработке нет опасности потерять сообщения, даже если по истечении 20 мс такой обработки происходит сбой службы "Служебная шина".
 
-Последующие операции с хранилищем, выполняемые в течение этого периода, добавляются в пакет. Пакетный доступ к хранилищу влияет только на операции **отправки** и **завершения**. Операции получения не затрагиваются. Пакетный доступ к хранилищу является свойством сущности. Пакетная обработка применяется ко всем сущностям, для которых включен пакетный доступ к хранилищу.
+Последующие операции с хранилищем, выполняемые в течение этого периода, добавляются в пакет. Доступ к хранилищу в пакетном режиме влияет только на операции **отправки** и **завершения**. Операции получения этот режим не затрагивает. Пакетный доступ к хранилищу является свойством сущности. Пакетная обработка применяется ко всем сущностям, для которых включен пакетный доступ к хранилищу.
 
-При создании новой очереди, раздела или подписки пакетный доступ к хранилищу включен по умолчанию. Чтобы отключить пакетный доступ к хранилищу, задайте для свойства [EnableBatchedOperations][EnableBatchedOperations] значение **false** перед созданием сущности. Пример.
+При создании новой очереди, раздела или подписки пакетный доступ к хранилищу включен по умолчанию.
+
+# <a name="microsoftazureservicebus-sdk"></a>[Пакет SDK Microsoft. Azure. ServiceBus](#tab/net-standard-sdk)
+
+Для отключения пакетного доступа к хранилищу необходим экземпляр `ManagementClient`. Создайте очередь из описания очереди, которая задает для `EnableBatchedOperations` `false`свойства значение.
 
 ```csharp
-QueueDescription qd = new QueueDescription();
-qd.EnableBatchedOperations = false;
-Queue q = namespaceManager.CreateQueue(qd);
+var queueDescription = new QueueDescription(path)
+{
+    EnableBatchedOperations = false
+};
+var queue = await managementClient.CreateQueueAsync(queueDescription);
 ```
+
+Дополнительные сведения см. в следующих разделах:
+* <a href="https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.management.queuedescription.enablebatchedoperations?view=azure-dotnet" target="_blank">`Microsoft.Azure.ServiceBus.Management.QueueDescription.EnableBatchedOperations` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.management.subscriptiondescription.enablebatchedoperations?view=azure-dotnet" target="_blank">`Microsoft.Azure.ServiceBus.Management.SubscriptionDescription.EnableBatchedOperations` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.management.topicdescription.enablebatchedoperations?view=azure-dotnet" target="_blank">`Microsoft.Azure.ServiceBus.Management.TopicDescription.EnableBatchedOperations` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+
+# <a name="windowsazureservicebus-sdk"></a>[Пакет SDK для WindowsAzure. ServiceBus](#tab/net-framework-sdk)
+
+Для отключения пакетного доступа к хранилищу необходим экземпляр `NamespaceManager`. Создайте очередь из описания очереди, которая задает для `EnableBatchedOperations` `false`свойства значение.
+
+```csharp
+var queueDescription = new QueueDescription(path)
+{
+    EnableBatchedOperations = false
+};
+var queue = namespaceManager.CreateQueue(queueDescription);
+```
+
+Дополнительные сведения см. в следующих разделах:
+* <a href="https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.queuedescription.enablebatchedoperations?view=azure-dotnet" target="_blank">`Microsoft.ServiceBus.Messaging.QueueDescription.EnableBatchedOperations` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.subscriptiondescription.enablebatchedoperations?view=azure-dotnet" target="_blank">`Microsoft.ServiceBus.Messaging.SubscriptionDescription.EnableBatchedOperations` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.topicdescription.enablebatchedoperations?view=azure-dotnet" target="_blank">`Microsoft.ServiceBus.Messaging.TopicDescription.EnableBatchedOperations` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+
+---
 
 Пакетный доступ к хранилищу не влияет на количество оплачиваемых операций обмена сообщениями и является свойством очереди, раздела или подписки. Он не зависит от режима получения и протокола, используемого для подключения между клиентом и службой служебной шины.
 
 ## <a name="prefetching"></a>Предварительная выборка
 
-[Предварительная выборка](service-bus-prefetch.md) позволяет клиенту очереди или подписки загружать из службы дополнительные сообщения при выполнении операции получения. Клиент сохраняет эти сообщения в локальном кэше. Размер кэша определяется свойствами [QueueClient.PrefetchCount][QueueClient.PrefetchCount] и [SubscriptionClient.PrefetchCount][SubscriptionClient.PrefetchCount]. В каждом клиенте с включенной предварительной выборкой создается собственный кэш. Кэш не может использоваться одновременно несколькими клиентами. Если клиент инициирует операцию получения и его кэш пуст, служба передает пакет сообщений. Размер пакета равен размеру кэша или 256 КБ (в зависимости от того, какое значение меньше). Если клиент инициирует операцию получения и в кэше имеется сообщение, это сообщение извлекается из кэша.
+[Предварительная выборка](service-bus-prefetch.md) позволяет клиенту очереди или подписки загружать дополнительные сообщения из службы при выполнении операции получения. Клиент сохраняет эти сообщения в локальном кэше. Размер кэша определяется свойствами `QueueClient.PrefetchCount` или. `SubscriptionClient.PrefetchCount` В каждом клиенте с включенной предварительной выборкой создается собственный кэш. Кэш не может использоваться одновременно несколькими клиентами. Если клиент инициирует операцию получения и его кэш пуст, служба передает пакет сообщений. Размер пакета равен размеру кэша или 256 КБ (в зависимости от того, какое значение меньше). Если клиент инициирует операцию получения и в кэше имеется сообщение, это сообщение извлекается из кэша.
 
 При использовании предварительной выборки сообщений служба блокирует выбранное сообщение. В результате блокировки это сообщение не может быть получено другим получателем. Если получатель не может завершить сообщение до истечения периода блокировки, сообщение станет доступным другим получателям. Копия предварительно выбранного сообщения остается в кэше. Если получатель обратится к кэшированной копии, срок действия которой истек, то при попытке завершить это сообщение будет создано исключение. По умолчанию период блокировки сообщения составляет 60 секунд. Это значение можно увеличить до 5 минут. Во избежание использования сообщений с истекшим сроком действия размер кэша всегда должен быть меньше, чем количество сообщений, которые могут быть использованы клиентом в течение периода блокировки.
 
-При использовании срока действия блокировки по умолчанию (60 секунд) хорошее значение для [PrefetchCount][SubscriptionClient.PrefetchCount] составляет 20 раз больше, чем максимальная скорость обработки всех получателей фабрики. Например, фабрика создает трех получателей, каждый из которых может обработать до 10 сообщений в секунду. Число объектов предварительной выборки не должно превышать 20 х 3 х 10 = 600. По умолчанию [PrefetchCount][QueueClient.PrefetchCount] имеет значение 0, что означает, что дополнительные сообщения из службы не извлекаться.
+При использовании срока блокировки по умолчанию в 60 секунд для `PrefetchCount` хорошо подходит значение, в 20 раз превышающее максимальную скорость обработки для всех получателей фабрики. Например, фабрика создает трех получателей, каждый из которых может обработать до 10 сообщений в секунду. Число объектов предварительной выборки не должно превышать 20 х 3 х 10 = 600. По умолчанию `PrefetchCount` имеет значение 0, что означает, что никакие дополнительные сообщения из службы не извлекаться.
 
 Предварительная выборка сообщений увеличивает совокупную пропускную способность очереди или подписки, так как уменьшает общее количество операций с сообщениями (так называемых круговых путей). Тем не менее предварительная выборка первого сообщения займет больше времени (из-за увеличенного размера сообщения). Получение предварительно выбранных сообщений будет выполняться быстрее, так как эти сообщения уже загружены клиентом.
 
-Свойство срока жизни сообщения проверяется сервером в момент отправки сообщения клиенту. При получении сообщения клиент не проверяет свойство срока жизни сообщения. Сообщение может быть получено клиентом во время кэширования, даже если срок жизни сообщения истек.
+Свойство срока жизни сообщения проверяется сервером в момент отправки сообщения клиенту. Клиент не проверяет свойство TTL сообщения при получении сообщения. Вместо этого сообщение может быть получено, даже если срок жизни сообщения истек, пока сообщение было кэшировано клиентом.
 
 Предварительная выборка не влияет на количество оплачиваемых операций обмена сообщениями и доступна только для протокола клиента служебной шины. Протокол HTTP не поддерживает предварительную выборку. Предварительная выборка доступна как для синхронных, так и для асинхронных операций получения.
 
+# <a name="microsoftazureservicebus-sdk"></a>[Пакет SDK Microsoft. Azure. ServiceBus](#tab/net-standard-sdk)
+
+Дополнительные сведения см. в следующих `PrefetchCount` свойствах:
+
+* <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.servicebus.queueclient.prefetchcount?view=azure-dotnet" target="_blank">`Microsoft.Azure.ServiceBus.QueueClient.PrefetchCount` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.servicebus.subscriptionclient.prefetchcount?view=azure-dotnet" target="_blank">`Microsoft.Azure.ServiceBus.SubscriptionClient.PrefetchCount` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+
+# <a name="windowsazureservicebus-sdk"></a>[Пакет SDK для WindowsAzure. ServiceBus](#tab/net-framework-sdk)
+
+Дополнительные сведения см. в следующих `PrefetchCount` свойствах:
+
+* <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.messaging.queueclient.prefetchcount?view=azure-dotnet" target="_blank">`Microsoft.ServiceBus.Messaging.QueueClient.PrefetchCount` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.messaging.subscriptionclient.prefetchcount?view=azure-dotnet" target="_blank">`Microsoft.ServiceBus.Messaging.SubscriptionClient.PrefetchCount` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+
+---
+
 ## <a name="prefetching-and-receivebatch"></a>Упреждающая выборка и Рецеивебатч
 
-Хотя основные понятия, связанные с выборке нескольких сообщений, имеют схожую семантику для обработки сообщений в пакете (Рецеивебатч), существуют некоторые небольшие отличия, которые следует учитывать при использовании этих компонентов вместе.
+> [!NOTE]
+> Этот раздел применим только к пакету SDK для WindowsAzure. ServiceBus, так как пакет SDK Microsoft. Azure. ServiceBus не предоставляет функции пакетной службы.
 
-Предварительная выборка — это конфигурация (или режим) на клиенте (QueueClient и SubscriptionClient), а Рецеивебатч — операция (с семантикой запросов-ответов).
+Хотя основные понятия, связанные с выборке нескольких сообщений, имеют схожую семантику для обработки сообщений в пакете`ReceiveBatch`(), существуют некоторые небольшие отличия, которые следует помнить при использовании этих компонентов вместе.
+
+Предварительная выборка — это конфигурация (или режим) на`QueueClient` клиенте `SubscriptionClient`(и `ReceiveBatch` ), которая является операцией (с семантикой запросов и ответов).
 
 При совместном использовании следует учитывать следующие случаи.
 
-* Предвыборка должна быть больше или равна количеству сообщений, которые вы ожидаете получать от Рецеивебатч.
+* Предвыборка должна быть больше или равна количеству сообщений, из `ReceiveBatch`которых ожидается получение.
 * При выборке может быть не более n/3 раз больше количества сообщений, обрабатываемых в секунду, где n — продолжительность блокировки по умолчанию.
 
 Существуют некоторые трудности с беспроблемным подходом (т. е. поддержание счетчика предварительной выборки очень высоким), так как это означает, что сообщение заблокировано определенным получателем. Рекомендуется испробовать значения предварительного выборки между пороговыми значениями, упомянутыми выше, и определить, что помещается.
@@ -156,9 +314,12 @@ Queue q = namespaceManager.CreateQueue(qd);
 
 ## <a name="development-and-testing-features"></a>Возможности для разработки и тестирования
 
-В служебной шине доступна одна функция, используемая специально для разработки, которую **никогда не следует использовать в рабочих конфигурациях**: [TopicDescription.EnableFilteringMessagesBeforePublishing][].
+> [!NOTE]
+> Этот раздел применим только к пакету SDK для WindowsAzure. ServiceBus, так как пакет SDK Microsoft. Azure. ServiceBus не предоставляет эти функции.
 
-При добавлении новых правил или фильтров в раздел вы можете использовать функцию [TopicDescription.EnableFilteringMessagesBeforePublishing][], чтобы проверить правильность работы выражения нового фильтра.
+В служебной шине есть один компонент, используемый специально для разработки, который **никогда не должен использоваться в рабочих конфигурациях**: [`TopicDescription.EnableFilteringMessagesBeforePublishing`][TopicDescription.EnableFiltering].
+
+При добавлении к разделу новых правил или фильтров можно использовать [`TopicDescription.EnableFilteringMessagesBeforePublishing`][TopicDescription.EnableFiltering] для проверки правильности работы нового критерия фильтра.
 
 ## <a name="scenarios"></a>Сценарии
 
@@ -243,16 +404,16 @@ Queue q = namespaceManager.CreateQueue(qd);
 * Не отключайте пакетный доступ к хранилищу. Это повысит общую скорость записи сообщений в раздел.
 * Для количества элементов предварительной выборки установите значение, в 20 раз превышающее ожидаемую скорость получения в секундах. Это снизит число передач по протоколу клиента служебной шины.
 
+<!-- .NET Standard SDK, Microsoft.Azure.ServiceBus -->
 [QueueClient]: /dotnet/api/microsoft.azure.servicebus.queueclient
 [MessageSender]: /dotnet/api/microsoft.azure.servicebus.core.messagesender
+
+<!-- .NET Framework SDK, Microsoft.Azure.ServiceBus -->
 [MessagingFactory]: /dotnet/api/microsoft.servicebus.messaging.messagingfactory
-[PeekLock]: /dotnet/api/microsoft.azure.servicebus.receivemode
-[ReceiveAndDelete]: /dotnet/api/microsoft.azure.servicebus.receivemode
 [BatchFlushInterval]: /dotnet/api/microsoft.servicebus.messaging.messagesender.batchflushinterval
-[EnableBatchedOperations]: /dotnet/api/microsoft.servicebus.messaging.queuedescription.enablebatchedoperations
-[QueueClient.PrefetchCount]: /dotnet/api/microsoft.azure.servicebus.queueclient.prefetchcount
-[SubscriptionClient.PrefetchCount]: /dotnet/api/microsoft.azure.servicebus.subscriptionclient.prefetchcount
 [ForcePersistence]: /dotnet/api/microsoft.servicebus.messaging.brokeredmessage.forcepersistence
 [EnablePartitioning]: /dotnet/api/microsoft.servicebus.messaging.queuedescription.enablepartitioning
+[TopicDescription.EnableFiltering]: /dotnet/api/microsoft.servicebus.messaging.topicdescription.enablefilteringmessagesbeforepublishing
+
+<!-- Local links -->
 [Partitioned messaging entities]: service-bus-partitioning.md
-[TopicDescription.EnableFilteringMessagesBeforePublishing]: /dotnet/api/microsoft.servicebus.messaging.topicdescription.enablefilteringmessagesbeforepublishing

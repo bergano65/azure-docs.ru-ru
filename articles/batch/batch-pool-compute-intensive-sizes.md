@@ -1,27 +1,19 @@
 ---
 title: Использование виртуальных машин Azure с интенсивным использованием вычислительных ресурсов с пакетной службой
 description: Как использовать преимущества размеров виртуальных машин HPC и GPU в пулах пакетной службы Azure. Узнайте о зависимостях ОС и ознакомьтесь с несколькими примерами сценариев.
-documentationcenter: ''
-author: LauraBrenner
-manager: evansma
-editor: ''
-ms.assetid: ''
-ms.service: batch
-ms.workload: big-compute
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/17/2018
 ms.author: labrenne
-ms.openlocfilehash: 17cd9db1e86a66630d3b93c8295915933abb1ec2
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 674ee6c5b96c7aaf2926b51824488d03fc56d0a6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023605"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82115964"
 ---
 # <a name="use-rdma-or-gpu-instances-in-batch-pools"></a>Использование экземпляров RDMA или GPU в пулах пакетной службы
 
-Для выполнения некоторых пакетных заданий можно воспользоваться размерами виртуальных машин Azure, предназначенными для крупномасштабных вычислений. Пример.
+Для выполнения некоторых пакетных заданий можно воспользоваться размерами виртуальных машин Azure, предназначенными для крупномасштабных вычислений. Пример:
 
 * для запуска [рабочих нагрузок MPI](batch-mpi.md) с несколькими экземплярами выберите размеры серии H или другие размеры, имеющие сетевой интерфейс для удаленного доступа к памяти (RDMA). Эти размеры подключаются к сети InfiniBand для обмена данными между узлами, что может ускорить приложения MPI. 
 
@@ -42,23 +34,23 @@ ms.locfileid: "77023605"
 
 ### <a name="linux-pools---virtual-machine-configuration"></a>Пулы Linux — конфигурация виртуальной машины
 
-| Размер | Возможность | Операционные системы | Необходимое программное обеспечение | Параметры пула |
+| Size | Функция | Операционные системы | Необходимое программное обеспечение | Параметры пула |
 | -------- | -------- | ----- |  -------- | ----- |
-| [H16r, H16mr, A8, A9](../virtual-machines/linux/sizes-hpc.md#rdma-capable-instances)<br/>[NC24r, NC24rs_v2, NC24rs_v3, ND24rs<sup>*</sup>](../virtual-machines/linux/n-series-driver-setup.md#rdma-network-connectivity) | RDMA | Ubuntu 16.04 LTS или<br/>Экземпляр HPC на платформе CentOS<br/>(Microsoft Azure Marketplace) | Intel MPI 5<br/><br/>Драйверы RDMA Linux | Включение связи между узлами, отключение параллельного выполнения задач |
-| [Серия NC, NCv2, NCv3, NDv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Ubuntu 16.04 LTS или<br/>CentOS 7.3 или 7.4<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit | Н/Д | 
-| [Серия NV, NVv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla M60 | Ubuntu 16.04 LTS или<br/>CentOS 7.3<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA GRID | Н/Д |
+| [H16r, H16mr, A8, A9](../virtual-machines/linux/sizes-hpc.md)<br/>[NC24r, NC24rs_v2, NC24rs_v3, ND24rs<sup>*</sup>](../virtual-machines/linux/n-series-driver-setup.md#rdma-network-connectivity) | RDMA | Ubuntu 16.04 LTS или<br/>Экземпляр HPC на платформе CentOS<br/>(Microsoft Azure Marketplace) | Intel MPI 5<br/><br/>Драйверы RDMA Linux | Включение связи между узлами, отключение параллельного выполнения задач |
+| [Серия NC, NCv2, NCv3, NDv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Ubuntu 16.04 LTS или<br/>CentOS 7.3 или 7.4<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit | Недоступно | 
+| [Серия NV, NVv2](../virtual-machines/linux/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla M60 | Ubuntu 16.04 LTS или<br/>CentOS 7.3<br/>(Microsoft Azure Marketplace) | Драйверы NVIDIA GRID | Недоступно |
 
-<sup>*</sup>Размеры серии N с поддержкой RDMA также включают графические процессоры NVIDIA Tesla
+<sup>*</sup>Размеры серии N, поддерживающие RDMA, также включают графические процессоры NVIDIA Tesla
 
 ### <a name="windows-pools---virtual-machine-configuration"></a>Пулы Windows — конфигурация виртуальной машины
 
-| Размер | Возможность | Операционные системы | Необходимое программное обеспечение | Параметры пула |
+| Size | Функция | Операционные системы | Необходимое программное обеспечение | Параметры пула |
 | -------- | ------ | -------- | -------- | ----- |
-| [H16r, H16mr, A8, A9](../virtual-machines/windows/sizes-hpc.md#rdma-capable-instances)<br/>[NC24r, NC24rs_v2, NC24rs_v3, ND24rs<sup>*</sup>](../virtual-machines/windows/n-series-driver-setup.md#rdma-network-connectivity) | RDMA | Windows Server 2016, 2012 R2 или<br/>2012 (Azure Marketplace) | Microsoft MPI 2012 R2 или более поздней версии либо<br/> Intel MPI 5<br/><br/>Драйверы RDMA Windows | Включение связи между узлами, отключение параллельного выполнения задач |
-| [Серия NC, NCv2, NCv3, ND, NDv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Windows Server 2016 или <br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit| Н/Д | 
-| [Серия NV, NVv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla M60 | Windows Server 2016 или<br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA GRID | Н/Д |
+| [H16r, H16mr, A8, A9](../virtual-machines/sizes-hpc.md)<br/>[NC24r, NC24rs_v2, NC24rs_v3, ND24rs<sup>*</sup>](../virtual-machines/windows/n-series-driver-setup.md#rdma-network-connectivity) | RDMA | Windows Server 2016, 2012 R2 или<br/>2012 (Azure Marketplace) | Microsoft MPI 2012 R2 или более поздней версии либо<br/> Intel MPI 5<br/><br/>Драйверы RDMA Windows | Включение связи между узлами, отключение параллельного выполнения задач |
+| [Серия NC, NCv2, NCv3, ND, NDv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla (зависит от серии) | Windows Server 2016 или <br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA CUDA или из набора средств CUDA Toolkit| Недоступно | 
+| [Серия NV, NVv2](../virtual-machines/windows/n-series-driver-setup.md) | Графический процессор NVIDIA Tesla M60 | Windows Server 2016 или<br/>2012 R2 (Azure Marketplace) | Драйверы NVIDIA GRID | Недоступно |
 
-<sup>*</sup>Размеры серии N с поддержкой RDMA также включают графические процессоры NVIDIA Tesla
+<sup>*</sup>Размеры серии N, поддерживающие RDMA, также включают графические процессоры NVIDIA Tesla
 
 ### <a name="windows-pools---cloud-services-configuration"></a>Пулы Windows — конфигурация облачных служб
 
@@ -66,17 +58,17 @@ ms.locfileid: "77023605"
 > Размеры серии N не поддерживаются в пулах пакетной службы с использованием конфигурации облачных служб.
 >
 
-| Размер | Возможность | Операционные системы | Необходимое программное обеспечение | Параметры пула |
+| Size | Функция | Операционные системы | Необходимое программное обеспечение | Параметры пула |
 | -------- | ------- | -------- | -------- | ----- |
-| [H16r, H16mr, A8, A9](../virtual-machines/windows/sizes-hpc.md#rdma-capable-instances) | RDMA | Windows Server 2016, 2012 R2, 2012 или<br/>2008 R2 (семейство версий гостевой ОС) | Microsoft MPI 2012 R2 или более поздней версии либо<br/>Intel MPI 5<br/><br/>Драйверы RDMA Windows | Включение связи между узлами,<br/> отключение параллельного выполнения задач |
+| [H16r, H16mr, A8, A9](../virtual-machines/sizes-hpc.md) | RDMA | Windows Server 2016, 2012 R2, 2012 или<br/>2008 R2 (семейство версий гостевой ОС) | Microsoft MPI 2012 R2 или более поздней версии либо<br/>Intel MPI 5<br/><br/>Драйверы RDMA Windows | Включение связи между узлами,<br/> отключение параллельного выполнения задач |
 
 ## <a name="pool-configuration-options"></a>Варианты настройки пула
 
 Для настройки специализированного размера виртуальной машины для пула пакетной службы есть несколько вариантов для установки необходимого программного обеспечения или драйверов.
 
-* Для пулов в конфигурации виртуальной машины выберите стандартный образ виртуальной машины [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) с предустановленными драйверами и программным обеспечением. Примеры. 
+* Для пулов в конфигурации виртуальной машины выберите стандартный образ виртуальной машины [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) с предустановленными драйверами и программным обеспечением. Примеры 
 
-  * [HPC версии 7.4 на базе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased74HPC?tab=Overview) — включает драйверы RDMA и Intel MPI 5.1;
+  * [HPC версии 7.4 на базе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/openlogic.centos-hpc?tab=Overview) — включает драйверы RDMA и Intel MPI 5.1;
 
   * [виртуальная машина для обработки и анализа данных](../machine-learning/data-science-virtual-machine/overview.md) для Linux или Windows — включает драйверы NVIDIA CUDA.
 
@@ -103,18 +95,18 @@ ms.locfileid: "77023605"
 
 1. Скачайте пакет установки для драйверов GPU в Windows Server 2016 с [веб-сайта NVIDIA](https://www.nvidia.com/Download/index.aspx), например [версию 411.82](https://us.download.nvidia.com/Windows/Quadro_Certified/411.82/411.82-tesla-desktop-winserver2016-international.exe). Сохраните файл локально, используя короткое имя, например *GPUDriverSetup.exe*.
 2. Создайте ZIP-файл пакета.
-3. Отправьте пакет в учетную запись пакетной службы. Пошаговые инструкции см. в руководстве для [пакетов приложений](batch-application-packages.md). Укажите идентификатор приложения, например *GPUDriver*, и его версию, например *411.82*.
+3. Отправьте пакет в учетную запись пакетной службы. Пошаговые инструкции см. в руководстве для [пакетов приложений](batch-application-packages.md). Укажите идентификатор приложения, например *гпудривер*, и версию *411,82*.
 1. Используйте API пакетной службы или портал Azure для создания пула в конфигурации виртуальных машин с нужным количеством узлов и необходимым масштабом. В следующей таблице показаны примеры параметров для автоматической установки драйверов GPU NVIDIA с помощью задачи запуска.
 
 | Параметр | Значение |
 | ---- | ----- | 
 | **Тип образа** | Marketplace (Linux/Windows) |
-| **Издатель** | MicrosoftWindowsServer |
-| **ПРЕДЛОЖЕНИЕ** | WindowsServer |
+| **Издателя** | MicrosoftWindowsServer |
+| **Предложение** | WindowsServer |
 | **SKU** | 2016-Datacenter |
 | **Размер узла** | NC6 уровня "Стандартный" |
 | **Ссылки на пакет приложения** | GPUDriver, версия 411.82 |
-| **Start task enabled** (Включена задача запуска) | Да<br>**Командная строка** - `cmd /c "%AZ_BATCH_APP_PACKAGE_GPUDriver#411.82%\\GPUDriverSetup.exe /s"`<br/>**Удостоверение пользователя.** Автоматический пользователь пула, администратор<br/>**Ожидать успешное выполнение.** True
+| **Start task enabled** (Включена задача запуска) | True<br>**Командная строка** - `cmd /c "%AZ_BATCH_APP_PACKAGE_GPUDriver#411.82%\\GPUDriverSetup.exe /s"`<br/>**Удостоверение пользователя.** Автоматический пользователь пула, администратор<br/>**Ожидать успешное выполнение.** True
 
 ## <a name="example-nvidia-gpu-drivers-on-a-linux-nc-vm-pool"></a>Пример: драйверы NVIDIA GPU в пуле виртуальных машин под управлением Linux
 
@@ -125,7 +117,7 @@ ms.locfileid: "77023605"
 ) в виртуальную машину с помощью портала Azure, клиентского компьютера, подключенного к подписке Azure, или Azure Cloud Shell. Кроме того, можно выполнить соответствующие инструкции, чтобы подключить виртуальную машину и [установить драйверы CUDA](../virtual-machines/linux/n-series-driver-setup.md) вручную.
 3. Выполните действия, чтобы создать [образ общей коллекции образов](batch-sig-images.md) для пакетной службы.
 4. Создайте учетную запись пакетной службы в регионе, поддерживающем виртуальные машины NC.
-5. Используйте API пакетной службы или портал Azure для создания пула [с помощью пользовательского образа](batch-sig-images.md) с нужным числом узлов и в нужном масштабе. В следующей таблице приведены примеры параметров пула для образа:
+5. С помощью API-интерфейсов или портал Azure пакетной службы создайте пул [с помощью пользовательского образа](batch-sig-images.md) и нужного количества узлов и масштаба. В следующей таблице приведены примеры параметров пула для образа:
 
 | Параметр | Значение |
 | ---- | ---- |
@@ -139,8 +131,7 @@ ms.locfileid: "77023605"
 Чтобы выполнять приложения Windows MPI в пуле узлов виртуальных машин H16r в Azure, необходимо настроить расширение HpcVmDrivers и установить [Microsoft MPI](https://docs.microsoft.com/message-passing-interface/microsoft-mpi). Ниже приведен пример процедуры по развертыванию пользовательского образа Windows Server 2016 с необходимыми драйверами и программным обеспечением.
 
 1. Выполните развертывание виртуальной машины H16r Azure под управлением Windows Server 2016. Например, создайте виртуальную машину в западной части США. 
-2. Добавьте расширение HpcVmDrivers в виртуальную машину, [выполнив команду Azure PowerShell](../virtual-machines/windows/sizes-hpc.md#rdma-capable-instances
-) на клиентском компьютере, который подключен к вашей подписке Azure, или с помощью Azure Cloud Shell. 
+2. Добавьте расширение HpcVmDrivers в виртуальную машину, [выполнив команду Azure PowerShell](../virtual-machines/sizes-hpc.md) на клиентском компьютере, который подключен к вашей подписке Azure, или с помощью Azure Cloud Shell. 
 1. Откройте подключение к удаленному рабочему столу своей виртуальной машины.
 1. Скачайте [пакет установки](https://www.microsoft.com/download/details.aspx?id=57467) (MSMpiSetup.exe) с последней версией Microsoft MPI и установите Microsoft MPI.
 1. Выполните действия, чтобы создать [образ общей коллекции образов](batch-sig-images.md) для пакетной службы.
@@ -152,26 +143,26 @@ ms.locfileid: "77023605"
 | **Пользовательский образ** | *Имя образа* |
 | **Номер SKU агента узла** | batch.node.windows amd64 |
 | **Размер узла** | H16r Standard |
-| **Включена связь между узлами** | Да |
+| **Включена связь между узлами** | True |
 | **Максимальное число заданий на узел** | 1 |
 
 ## <a name="example-intel-mpi-on-a-linux-h16r-vm-pool"></a>Пример: Intel MPI в пуле виртуальных машин Linux H16r
 
-Для выполнения приложений MPI в пуле узлов Linux серии H можно, например, использовать образ [HPC версии 7.4 на базе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/RogueWave.CentOSbased74HPC?tab=Overview) из Azure Marketplace. Драйверы RDMA Linux и Intel MPI предварительно установлены. Этот образ также поддерживает рабочие нагрузки контейнеров Docker.
+Для выполнения приложений MPI в пуле узлов Linux серии H можно, например, использовать образ [HPC версии 7.4 на базе CentOS](https://azuremarketplace.microsoft.com/marketplace/apps/openlogic.centos-hpc?tab=Overview) из Azure Marketplace. Драйверы RDMA Linux и Intel MPI предварительно установлены. Этот образ также поддерживает рабочие нагрузки контейнеров Docker.
 
 Используйте API пакетной службы или портал Azure для создания пула с помощью этого образа с нужным количеством узлов и в нужном масштабе. В следующей таблице приведены примеры параметров пула.
 
 | Параметр | Значение |
 | ---- | ---- |
 | **Тип образа** | Marketplace (Linux/Windows) |
-| **Издатель** | OpenLogic |
-| **ПРЕДЛОЖЕНИЕ** | CentOS-HPC |
+| **Издателя** | OpenLogic |
+| **Предложение** | CentOS-HPC |
 | **SKU** | 7.4 |
 | **Размер узла** | H16r Standard |
-| **Включена связь между узлами** | Да |
+| **Включена связь между узлами** | True |
 | **Максимальное число заданий на узел** | 1 |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Для выполнения заданий MPI в пуле пакетной службы Azure ознакомьтесь с примерами для [Windows](batch-mpi.md) или [Linux](https://blogs.technet.microsoft.com/windowshpc/2016/07/20/introducing-mpi-support-for-linux-on-azure-batch/).
 

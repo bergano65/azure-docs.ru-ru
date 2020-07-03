@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9b8d20b31e96973a492355f0515d0532deea0ac9
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77185489"
 ---
 # <a name="an-app-page-shows-an-error-message-after-the-user-signs-in"></a>Страница приложения отображает сообщение об ошибке после входа пользователя
@@ -62,7 +62,7 @@ ms.locfileid: "77185489"
 
    1. Нажмите кнопку **Добавить атрибут**. Введите **имя**и выберите **значение** из раскрывающегося списка.
 
-   1.  Нажмите кнопку **Сохранить**. Вы увидите новый атрибут в таблице.
+   1.  Щелкните **Сохранить**. Вы увидите новый атрибут в таблице.
 
 9. Сохраните конфигурацию.
 
@@ -163,5 +163,5 @@ Azure AD выбирает формат атрибута **NameID** (иденти
 
    В следующий раз, когда пользователь войдет в приложение, Azure AD подпишет токен SAML с помощью алгоритма SHA-1.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Отладка единого входа на основе SAML в приложения в Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-saml-debugging).

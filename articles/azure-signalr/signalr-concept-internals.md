@@ -6,26 +6,24 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 62afa5ee6993aa1bb3c7b5926e5320ab1fa510a2
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.openlocfilehash: 8ba34edfc382f0f03abe080d78a6a47dcb65501b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74157593"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82105766"
 ---
 # <a name="azure-signalr-service-internals"></a>Внутренние компоненты службы Azure SignalR
 
-Служба Azure SignalR создана на основе платформы ASP.NET Core SignalR. Она также поддерживает ASP.NET SignalR как предварительную версию функции.
+Служба Azure SignalR создана на основе платформы ASP.NET Core SignalR. Он также поддерживает ASP.NET SignalR путем повторного внедрения протокола данных ASP.NET SignalR поверх платформы ASP.NET Core Framework.
 
-> Чтобы поддерживать ASP.NET SignalR, служба Azure SignalR повторно реализует протокол ASP.NET SignalR на базе платформы ASP.NET Core.
-
-Вы можете легко перенести локальный веб-узел ASP. NET Core SignalR для работы со Службой SignalR с минимальным изменением кода.
+Вы можете легко перенести локальное ASP.NET Core приложение SignalR или приложение SignalR ASP.NET для работы со службой SignalR с помощью нескольких строк кода.
 
 На схеме ниже описывается типичная архитектура для использования Службы SignalR с сервером приложений.
 
 Кроме того, рассматриваются отличия от локального приложения ASP.NET Core SignalR.
 
-![Архитектура](./media/signalr-concept-internals/arch.png)
+![Architecture](./media/signalr-concept-internals/arch.png)
 
 ## <a name="server-connections"></a>Подключения к серверу
 

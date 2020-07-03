@@ -1,18 +1,16 @@
 ---
 title: Создание и запуск пользовательских тестов доступности с помощью функций Azure
 description: В этом документе рассматривается создание функции Azure с TrackAvailability (), которая будет выполняться периодически в соответствии с конфигурацией, заданной в функции TimerTrigger. Результаты этого теста будут отправлены в ресурс Application Insights, где вы сможете запрашивать данные о результатах доступности и получать оповещения о них. Настроенные тесты позволяют создавать более сложные тесты доступности, чем возможно с помощью пользовательского интерфейса портала, мониторинга приложения в виртуальной сети Azure, изменения адреса конечной точки или создания теста доступности, если он недоступен в вашем регионе.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: morgangrobin
-ms.author: mogrobin
-ms.date: 11/22/2019
-ms.openlocfilehash: c7a8ffb9873fd70353f38bb2b2bbfdb584992377
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+author: mrbullwinkle
+ms.author: mbullwin
+ms.date: 05/04/2020
+ms.openlocfilehash: 81040adf6cfbb8820ec7f306c7d614830e3a2613
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74815615"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791121"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Создание и запуск пользовательских тестов доступности с помощью функций Azure
 
@@ -39,15 +37,15 @@ ms.locfileid: "74815615"
     - По умолчанию при создании приложения "функции Azure" будет создан ресурс Application Insights.
     - Следуйте инструкциям, чтобы [создать ресурс функций Azure и функцию, активируемую с помощью таймера](https://docs.microsoft.com/azure/azure-functions/functions-create-scheduled-function) (до завершения очистки).
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 
 Скопируйте приведенный ниже код в файл run. CSX (это заменит уже существующий код). Для этого перейдите в приложение функций Azure и выберите функцию триггера таймера слева.
 
 >[!div class="mx-imgBorder"]
->![функции Azure Run. CSX в портал Azure](media/availability-azure-functions/runcsx.png)
+>![Функция Azure Run. CSX в портал Azure](media/availability-azure-functions/runcsx.png)
 
 > [!NOTE]
-> Для адреса конечной точки, который будет использоваться: `EndpointAddress= https://dc.services.visualstudio.com/v2/track`. Если ресурс не находится в регионе, например Azure для государственных организаций или Azure для Китая, в этом случае обратитесь к этой статье, чтобы узнать о [переопределении конечных точек по умолчанию](https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification) и выбрать соответствующую конечную точку канала телеметрии для вашего региона.
+> Для адреса конечной точки, который будет использоваться `EndpointAddress= https://dc.services.visualstudio.com/v2/track`:. Если ресурс не находится в регионе, например Azure для государственных организаций или Azure для Китая, в этом случае обратитесь к этой статье, чтобы узнать о [переопределении конечных точек по умолчанию](https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification) и выбрать соответствующую конечную точку канала телеметрии для вашего региона.
 
 ```C#
 #load "runAvailabilityTest.csx"
@@ -144,7 +142,7 @@ public async static Task Run(TimerInfo myTimer, ILogger log)
 ```
 
 >[!div class="mx-imgBorder"]
->![справа выберите команду Добавить. Присвойте файлу имя Function. proj](media/availability-azure-functions/addfile.png)
+>![Справа выберите Добавить. Назовите файл function. proj](media/availability-azure-functions/addfile.png)
 
 Справа в разделе Просмотр файлов выберите **Добавить**. Вызовите новый файл **рунаваилабилититест. CSX** со следующей конфигурацией.
 
@@ -162,20 +160,18 @@ public async static Task RunAvailbiltyTestAsync(ILogger log)
 Чтобы убедиться, что все работает, можно просмотреть диаграмму на вкладке доступность Application Insights ресурса.
 
 > [!NOTE]
-> Если вы реализовали собственную бизнес-логику в Рунаваилабилититест. CSX, вы увидите результаты, как на снимках экрана ниже, если вы не сделали этого, вы увидите результаты с ошибками.
+> Если вы реализовали собственную бизнес-логику в Рунаваилабилититест. CSX, вы увидите результаты, как на снимках экрана ниже, если вы не сделали этого, вы увидите результаты с ошибками. Тесты, созданные `TrackAvailability()` с помощью, будут отображаться с **настраиваемым** рядом с именем теста.
 
 >[!div class="mx-imgBorder"]
->Вкладка «доступность ![» с успешными результатами](media/availability-azure-functions/availtab.png)
-
-При настройке теста с помощью функций Azure вы заметите, что в отличие от использования команды **добавить тест** на вкладке доступность имя теста не отображается, и вы не сможете взаимодействовать с ним. Результаты являются визуально, но вы получаете представление сводки, а не то же подробное представление, которое вы получаете при создании теста доступности с помощью портала.
+>![Вкладка "доступность" с успешными результатами](media/availability-azure-functions/availability-custom.png)
 
 Чтобы просмотреть сведения о сквозной транзакции, выберите **успех** или **сбой** в разделе Детализация, а затем выберите пример. Можно также перейти к подробным сведениям о транзакции, выбрав на диаграмме точку данных.
 
 >[!div class="mx-imgBorder"]
->![выбор тестового теста доступности](media/availability-azure-functions/sample.png)
+>![Выбор примера теста доступности](media/availability-azure-functions/sample.png)
 
 >[!div class="mx-imgBorder"]
->![сведений о сквозной транзакции](media/availability-azure-functions/end-to-end.png)
+>![Сведения о сквозной транзакции](media/availability-azure-functions/end-to-end.png)
 
 Если вы запускали все как есть (без добавления бизнес-логики), вы увидите, что тест не пройден.
 
@@ -184,12 +180,12 @@ public async static Task RunAvailbiltyTestAsync(ILogger log)
 С помощью журналов (Analytics) можно просматривать результаты доступности, зависимости и многое другое. Дополнительные сведения о журналах см. в статье [Обзор запросов журналов](../../azure-monitor/log-query/log-query-overview.md).
 
 >[!div class="mx-imgBorder"]
->![результатов доступности](media/availability-azure-functions/availabilityresults.png)
+>![Результаты доступности](media/availability-azure-functions/availabilityresults.png)
 
 >[!div class="mx-imgBorder"]
 >![Зависимости](media/availability-azure-functions/dependencies.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
-- [Диагностика транзакций](../../azure-monitor/app/transaction-diagnostics.md)
+- [Схема приложений](../../azure-monitor/app/app-map.md)
+- [Диагностика транзакции](../../azure-monitor/app/transaction-diagnostics.md)

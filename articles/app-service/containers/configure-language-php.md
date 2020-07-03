@@ -1,15 +1,15 @@
 ---
 title: Настройка приложений PHP
-description: Узнайте, как настроить предварительно построенный контейнер PHP для приложения. В этой статье приведены наиболее распространенные задачи настройки.
+description: Узнайте, как настроить предварительно построенный контейнер PHP для приложения. В этой статье показаны наиболее распространенные задачи настройки.
 ms.devlang: php
 ms.topic: article
 ms.date: 03/28/2019
-ms.openlocfilehash: a3de4769193d95a3ef483924c4d65c4fa1cc9f8d
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 9e87466f810dc4ebf767c36ad74c358cbf6069e5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671836"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758875"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения PHP для Linux для службы приложений Azure
 
@@ -39,52 +39,26 @@ az webapp list-runtimes --linux | grep PHP
 az webapp config set --name <app-name> --resource-group <resource-group-name> --linux-fx-version "PHP|7.2"
 ```
 
-## <a name="run-composer"></a>Запуск Composer
+## <a name="customize-build-automation"></a>Настройка автоматизации сборки
 
-По умолчанию KUDU не запускает [Composer](https://getcomposer.org/). Чтобы включить автоматизацию Composer во время развертывания KUDU, необходимо предоставить [Пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script).
+Если приложение развертывается с использованием Git или zip-пакетов с включенной автоматизацией сборки, то Автоматизация сборки службы приложений проходит через следующую последовательность:
 
-В локальном окне терминала перейдите в каталог корневого каталога репозитория. Чтобы скачать *Composer. Phar*, следуйте инструкциям по [установке из командной строки](https://getcomposer.org/download/) .
+1. Запустить пользовательский скрипт, если он `PRE_BUILD_SCRIPT_PATH`указан в.
+1. Выполните команду `php composer.phar install`.
+1. Запустить пользовательский скрипт, если он `POST_BUILD_SCRIPT_PATH`указан в.
 
-Выполните следующие команды:
+`PRE_BUILD_COMMAND`и `POST_BUILD_COMMAND` представляют собой переменные среды, которые по умолчанию являются пустыми. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`.
 
-```bash
-npm install kuduscript -g
-kuduscript --php --scriptType bash --suppressPrompt
+В следующем примере указываются две переменные для ряда команд, разделенных запятыми.
+
+```azurecli-interactive
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PRE_BUILD_COMMAND="echo foo, scripts/prebuild.sh"
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings POST_BUILD_COMMAND="echo foo, scripts/postbuild.sh"
 ```
 
-Корневой каталог репозитория теперь содержит два новых файла, помимо *Composer. Phar*: *. Deployment* и *deploy.sh*. Эти файлы работают как для Windows, так и для Linux в службе приложений.
+Дополнительные переменные среды для настройки автоматизации сборки см. в разделе [Орикс Configuration](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md).
 
-Откройте *deploy.sh* и найдите раздел `Deployment`. Замените весь раздел следующим кодом:
-
-```bash
-##################################################################################################################################
-# Deployment
-# ----------
-
-echo PHP deployment
-
-# 1. KuduSync
-if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
-  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
-  exitWithMessageOnError "Kudu Sync failed"
-fi
-
-# 3. Initialize Composer Config
-initializeDeploymentConfig
-
-# 4. Use composer
-echo "$DEPLOYMENT_TARGET"
-if [ -e "$DEPLOYMENT_TARGET/composer.json" ]; then
-  echo "Found composer.json"
-  pushd "$DEPLOYMENT_TARGET"
-  php composer.phar install $COMPOSER_ARGS
-  exitWithMessageOnError "Composer install failed"
-  popd
-fi
-##################################################################################################################################
-```
-
-Зафиксируйте все изменения и разверните код еще раз. Теперь компоновщик должен работать как часть автоматизации развертывания.
+Дополнительные сведения о том, как служба приложений работает и создает приложения PHP в Linux, см. в [документации по Орикс: как обнаруживаются и строятся приложения PHP](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/php.md).
 
 ## <a name="customize-start-up"></a>Настройка запуска
 
@@ -104,7 +78,7 @@ getenv("DB_HOST")
 
 ## <a name="change-site-root"></a>Изменить корень сайта
 
-Выбранная вами веб-платформа может использовать подкаталог в качестве корня сайта. Например, [Laravel](https://laravel.com/)использует подкаталог `public/` в качестве корневого каталога сайта.
+Выбранная вами веб-платформа может использовать подкаталог в качестве корня сайта. Например, [Laravel](https://laravel.com/)использует `public/` подкаталог в качестве корневого каталога сайта.
 
 Используемый по умолчанию образ PHP для службы приложений использует Apache и не позволяет настраивать корневой каталог сайта для приложения. Чтобы обойти это ограничение, добавьте в корень репозитория файл *. htaccess* со следующим содержимым:
 
@@ -112,7 +86,7 @@ getenv("DB_HOST")
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
-    RewriteRule ^.*$ /public/$1 [NC,L,QSA]
+    RewriteRule ^(.*)$ /public/$1 [NC,L,QSA]
 </IfModule>
 ```
 
@@ -138,11 +112,11 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 > Лучший способ увидеть версию PHP и текущую конфигурацию *PHP. ini* — вызвать [функцию phpinfo ()](https://php.net/manual/function.phpinfo.php) в приложении.
 >
 
-### <a name="Customize-non-PHP_INI_SYSTEM directives"></a>Настройка-не PHP_INI_SYSTEM директивы
+### <a name="customize-non-php_ini_system-directives"></a><a name="Customize-non-PHP_INI_SYSTEM directives"></a>Настройка-не PHP_INI_SYSTEM директивы
 
 Чтобы настроить директивы PHP_INI_USER, PHP_INI_PERDIR и PHP_INI_ALL (см [. раздел директивы PHP. ini](https://www.php.net/manual/ini.list.php)), добавьте *htaccess* -файл в корневой каталог приложения.
 
-В файле *htaccess* добавьте директивы, используя синтаксис `php_value <directive-name> <value>`. Пример.
+В файле *htaccess* добавьте директивы, используя `php_value <directive-name> <value>` синтаксис. Пример:
 
 ```
 php_value upload_max_filesize 1000M
@@ -158,9 +132,9 @@ php_value upload_max_filesize 10M
 
 В качестве альтернативы использованию *. htaccess*можно использовать в приложении [ini_set ()](https://www.php.net/manual/function.ini-set.php) , чтобы настроить эти директивы, не относящиеся к PHP_INI_SYSTEM.
 
-### <a name="customize-php_ini_system-directives"></a>Настройка директив PHP_INI_SYSTEM
+### <a name="customize-php_ini_system-directives"></a><a name="customize-php_ini_system-directives"></a>Настройка директив PHP_INI_SYSTEM
 
-Чтобы настроить директивы PHP_INI_SYSTEM (см [. раздел директивы PHP. ini](https://www.php.net/manual/ini.list.php)), нельзя использовать подход *. htaccess* . Служба приложений предоставляет отдельный механизм, используя параметр приложения `PHP_INI_SCAN_DIR`.
+Чтобы настроить директивы PHP_INI_SYSTEM (см [. раздел директивы PHP. ini](https://www.php.net/manual/ini.list.php)), нельзя использовать подход *. htaccess* . Служба приложений предоставляет отдельный механизм, `PHP_INI_SCAN_DIR` используя параметр приложения.
 
 Сначала выполните следующую команду в [Cloud Shell](https://shell.azure.com) , чтобы добавить параметр приложения с именем `PHP_INI_SCAN_DIR`:
 
@@ -168,11 +142,11 @@ php_value upload_max_filesize 10M
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PHP_INI_SCAN_DIR="/usr/local/etc/php/conf.d:/home/site/ini"
 ```
 
-`/usr/local/etc/php/conf.d` является каталогом по умолчанию, где существует *PHP. ini* . `/home/site/ini` — это пользовательский каталог, в который добавляется настраиваемый *ini* -файл. Значения разделяются `:`.
+`/usr/local/etc/php/conf.d`Каталог по умолчанию, где существует *PHP. ini* . `/home/site/ini`— Это пользовательский каталог, в который добавляется пользовательский *ini* -файл. Значения разделяются на `:`.
 
-Перейдите к сеансу веб-SSH с вашим контейнером Linux (`https://<app-name>.scm.azurewebsites.net/webssh/host`).
+Перейдите к сеансу веб-SSH с вашим контейнером`https://<app-name>.scm.azurewebsites.net/webssh/host`Linux ().
 
-Создайте каталог в `/home/site` с именем `ini`, а затем создайте *ini* -файл в каталоге `/home/site/ini` (например, *Settings. ini)* с директивами, которые требуется настроить. Используйте тот же синтаксис, который используется в файле *PHP. ini* . 
+Создайте `/home/site` каталог с именем `ini`, а затем создайте *ini* -файл в `/home/site/ini` каталоге (например, *Settings. ini)* с директивами, которые требуется настроить. Используйте тот же синтаксис, который используется в файле *PHP. ini* . 
 
 > [!TIP]
 > В встроенных контейнерах Linux в службе приложений */Home* используется в качестве постоянного общего хранилища. 
@@ -198,7 +172,7 @@ echo "expose_php = Off" >> ini/setting.ini
 
 Чтобы включить дополнительные расширения, выполните следующие действия.
 
-Добавьте `bin` каталог в корневой каталог приложения и вставьте в него файлы расширения `.so` (например, *MongoDB.so*). Убедитесь, что расширения совместимы с версией PHP в Azure и не совместимы с VC9 и непотокобезопасным (NTS).
+Добавьте `bin` каталог в корневой каталог приложения и вставьте в него файлы `.so` расширения (например, *MongoDB.so*). Убедитесь, что расширения совместимы с версией PHP в Azure и не совместимы с VC9 и непотокобезопасным (NTS).
 
 Разверните изменения.
 
@@ -219,31 +193,23 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 
 [!INCLUDE [Open SSH session in browser](../../../includes/app-service-web-ssh-connect-builtin-no-h.md)]
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если рабочее приложение PHP работает иначе в службе приложений или содержит ошибки, попробуйте выполнить следующие действия.
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложения Node. js в рабочем режиме, поэтому необходимо убедиться, что проект работает в режиме рабочей среды локально. Пример.
-    - В зависимости от версии *Composer. JSON*различные пакеты могут быть установлены для рабочего режима (`require` и `require-dev`).
+- Протестируйте приложение локально в рабочем режиме. Служба приложений запускает приложения Node. js в рабочем режиме, поэтому необходимо убедиться, что проект работает в режиме рабочей среды локально. Пример:
+    - В зависимости от версии *Composer. JSON*различные пакеты могут быть установлены для рабочего режима (`require` VS `require-dev`).
     - Некоторые веб-платформы могут развертывать статические файлы в рабочем режиме по-разному.
     - При работе в рабочем режиме некоторые веб-платформы могут использовать пользовательские сценарии запуска.
-- Запустите приложение в службе приложений в режиме отладки. Например, в [Laravel](https://meanjs.org/)можно настроить приложение для вывода отладочных сообщений в рабочей среде, [задав для параметра приложения `APP_DEBUG` значение `true`](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
+- Запустите приложение в службе приложений в режиме отладки. Например, в [Laravel](https://meanjs.org/)можно настроить приложение для вывода отладочных сообщений в рабочей среде, [задав `APP_DEBUG` для `true`параметра приложения ](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings)значение.
 
-### <a name="robots933456"></a>robots933456
+[!INCLUDE [robots933456](../../../includes/app-service-web-configure-robots933456.md)]
 
-В журналах контейнеров может появиться следующее сообщение:
-
-```
-2019-04-08T14:07:56.641002476Z "-" - - [08/Apr/2019:14:07:56 +0000] "GET /robots933456.txt HTTP/1.1" 404 415 "-" "-"
-```
-
-Это сообщение можно спокойно проигнорировать. `/robots933456.txt` — это фиктивный URL-путь, который служба приложений использует для проверки того, способен ли контейнер обслуживать запросы. Ответ 404 означает, что путь не существует, но он позволяет службе приложений определить, что контейнер работоспособен и готов к реагированию на запросы.
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Учебник. приложение PHP с MySQL](tutorial-php-mysql-app.md)
+> [Руководство по приложению PHP с MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

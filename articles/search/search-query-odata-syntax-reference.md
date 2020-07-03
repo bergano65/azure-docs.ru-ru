@@ -20,15 +20,15 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: f3422fd10e062ae87bc165491e0d01ac2b4943d2
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72793235"
 ---
 # <a name="odata-expression-syntax-reference-for-azure-cognitive-search"></a>Справочник по синтаксису выражений OData для Azure Когнитивный поиск
 
-Azure Когнитивный поиск использует [выражения OData](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html) в качестве параметров во всех API. Наиболее часто выражения OData используются для параметров `$orderby` и `$filter`. Эти выражения могут быть сложными, содержащими несколько предложений, функций и операторов. Однако даже простые выражения OData, такие как пути к свойствам, используются во многих частях REST API Когнитивный поиск Azure. Например, выражения пути используются для ссылки на вложенные поля сложных полей везде в API, например при перечислении вложенных полей в [предложении](index-add-suggesters.md), [функции оценки](index-add-scoring-profiles.md), параметре `$select` или даже [при поиске по полям в запросах Lucene. ](query-lucene-syntax.md).
+Azure Когнитивный поиск использует [выражения OData](https://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html) в качестве параметров во всех API. Чаще всего для параметров `$orderby` и `$filter` используются выражения OData. Эти выражения могут быть сложными, содержащими несколько предложений, функций и операторов. Однако даже простые выражения OData, такие как пути к свойствам, используются во многих частях REST API Когнитивный поиск Azure. Например, выражения пути используются для ссылки на вложенные поля сложных полей везде в API, например при перечислении вложенных полей в [предложении](index-add-suggesters.md), [функции оценки](index-add-scoring-profiles.md), `$select` параметре или даже [при поиске по полям в запросах Lucene](query-lucene-syntax.md).
 
 В этой статье описываются все формы выражений OData с использованием формальной грамматики. Также есть [Интерактивная схема](#syntax-diagram) , позволяющая визуально изучить грамматику.
 
@@ -36,10 +36,10 @@ Azure Когнитивный поиск использует [выражения
 
 Мы можем описать подмножество языка OData, поддерживаемого Когнитивный поиском Azure, с помощью грамматики EBNF ([Расширенная форма Backus-Наура](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)). Правила перечислены "сверху вниз", начиная с наиболее сложных выражений и разбивая их на более простые выражения. В верхней части представлены правила грамматики, соответствующие определенным параметрам REST API Когнитивный поиск Azure:
 
-- [`$filter`](search-query-odata-filter.md), определяемое правилом `filter_expression`.
-- [`$orderby`](search-query-odata-orderby.md), определяемое правилом `order_by_expression`.
-- [`$select`](search-query-odata-select.md), определяемое правилом `select_expression`.
-- Пути к полям, определяемые правилом `field_path`. Пути к полям используются через API. Они могут ссылаться либо на поля верхнего уровня индекса, либо на подполя с одним или несколькими предками [поля](search-howto-complex-data-types.md) .
+- [`$filter`](search-query-odata-filter.md), определяемое `filter_expression` правилом.
+- [`$orderby`](search-query-odata-orderby.md), определяемое `order_by_expression` правилом.
+- [`$select`](search-query-odata-select.md), определяемое `select_expression` правилом.
+- Пути к полям, определяемые `field_path` правилом. Пути к полям используются через API. Они могут ссылаться либо на поля верхнего уровня индекса, либо на подполя с одним или несколькими предками [поля](search-howto-complex-data-types.md) .
 
 После того как EBNF представляет собой отображаемую [схему синтаксиса](https://en.wikipedia.org/wiki/Syntax_diagram) , которая позволяет интерактивно исследовать грамматику и связи между ее правилами.
 
@@ -214,9 +214,9 @@ search_mode ::= "'any'" | "'all'"
 > [!div class="nextstepaction"]
 > [Схема синтаксиса OData для Когнитивный поиск Azure](https://azuresearch.github.io/odata-syntax-diagram/)
 
-## <a name="see-also"></a>Дополнительные материалы  
+## <a name="see-also"></a>См. также раздел  
 
 - [Фильтры в Когнитивный поиск Azure](search-filters.md)
-- [Поиск документов &#40;Когнитивный поиск Azure REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
 - [Синтаксис запросов Lucene](query-lucene-syntax.md)
 - [Простой синтаксис запросов в Azure Когнитивный поиск](query-simple-syntax.md)

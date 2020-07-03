@@ -10,25 +10,25 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/15/2020
+ms.date: 04/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: b8c2ba54fcc69ba126bf5f68aed99b25f8156155
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: b564373780da5bba71bc46ddbac3dc69a0c94a4a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76046181"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81382783"
 ---
 # <a name="azure-time-series-insights-explorer"></a>Обозреватель службы "Аналитика временных рядов Azure"
 
 В этой статье описываются функции и варианты общедоступности [веб-приложения обозревателя](https://insights.timeseries.azure.com/)службы "аналитика временных рядов Azure". Обозреватель службы "аналитика временных рядов" демонстрирует эффективные возможности визуализации данных, предоставляемые службой, и к ним можно обращаться в собственной среде.
 
-Azure Time Series Insights — это полностью управляемая служба аналитики, хранения и визуализации, которая позволяет легко просматривать и анализировать миллиарды событий Интернета вещей одновременно. Она дает вам глобальное представление данных, позволяя быстро проверить решение Интернета вещей и избежать дорогостоящих простоев в работе критически важных устройств. Вы можете обнаруживать скрытые тенденции, аномалии и выполнять анализ их причин практически в реальном времени. Обозреватель службы "Аналитика временных рядов Azure" находится в общедоступной предварительной версии.
+"Аналитика временных рядов Azure" — это полностью управляемая служба аналитики, хранения и визуализации, которая позволяет легко просматривать и анализировать миллиарды событий Интернета вещей одновременно. Она дает вам глобальное представление данных, позволяя быстро проверить решение Интернета вещей и избежать дорогостоящих простоев в работе критически важных устройств. Вы можете обнаруживать скрытые тенденции, аномалии и выполнять анализ их причин практически в реальном времени. Обозреватель службы "Аналитика временных рядов Azure" находится в общедоступной предварительной версии.
 
 > [!TIP]
 > Краткий обзор демонстрационной среды см. в [кратком руководстве по службе "аналитика временных рядов Azure](time-series-quickstart.md)".
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 ### <a name="learn-about-querying-data-by-using-the-time-series-insights-explorer-br"></a>Сведения о запросах данных с помощью обозревателя "аналитика временных рядов". </br>
 
@@ -37,7 +37,7 @@ Azure Time Series Insights — это полностью управляемая
 >[!NOTE]
 >Воспроизведение предыдущего видео <a href="https://www.youtube.com/watch?v=6ehNf6AJkFo">"Начало работы с аналитикой временных рядов с помощью акселератора решений Интернета вещей Azure".</a>
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем использовать обозреватель службы "Аналитика временных рядов Azure", необходимо сделать следующее:
 
@@ -57,7 +57,7 @@ Azure Time Series Insights — это полностью управляемая
 
 1. С помощью значка Azure Cloud вы переходите к своей среде в портал Azure.
 
-   [Выбор среды "аналитика временных рядов" ![](media/time-series-insights-explorer/tsi-ga-explorer-environments.png)](media/time-series-insights-explorer/tsi-ga-explorer-environments.png#lightbox)
+   [![Выбор среды "аналитика временных рядов"](media/time-series-insights-explorer/tsi-ga-explorer-environments.png)](media/time-series-insights-explorer/tsi-ga-explorer-environments.png#lightbox)
 
 1. Затем отображается диаграмма, показывающая количество всех событий в выбранном интервале времени. Здесь доступно несколько элементов управления.
 
@@ -67,20 +67,20 @@ Azure Time Series Insights — это полностью управляемая
       - Можно включить интерполяцию шагов, отобразить минимальное и максимальное значения и настроить ось y с помощью панели управления рядом с элементом **мера**. Вы также можете настроить отображение данных в виде числа, среднего или суммы данных.
       - Можно добавить до пяти условий для просмотра на одной оси x. Выберите **Добавить** , чтобы добавить новый термин, или используйте кнопку **клонировать этот термин** , чтобы добавить копию существующего термина.
 
-        [![условий выбора, фильтрации и запросов](media/time-series-insights-explorer/tsi-ga-explorer-add-or-clone.png)](media/time-series-insights-explorer/tsi-ga-explorer-add-or-clone.png#lightbox)
+        [![Выбор терминов, фильтрация и панель запросов](media/time-series-insights-explorer/tsi-ga-explorer-add-or-clone.png)](media/time-series-insights-explorer/tsi-ga-explorer-add-or-clone.png#lightbox)
 
       - **Предикат**. используйте предикат для быстрой фильтрации событий с помощью набора операндов, перечисленных в следующей таблице. Если поиск выполняется путем выбора или щелчка, то предикат автоматически обновляется на основе этого поиска. Поддерживаемые типы операнд:
 
          |Операция  |Поддерживаемые типы  |Примечания  |
          |---------|---------|---------|
-         |**<** , **>** , **<=** , **>=**    |  **Double**, **DateTime**, **TimeSpan**       |         |
-         |**=** , **! =** , **<>**     | **String**, **bool**, **Double**, **DateTime**, **TimeSpan**, **null**        |         |
-         |**IN**     | **String**, **bool**, **Double**, **DateTime**, **TimeSpan**, **null**        |  Все операнды должны быть одного типа или иметь константу **null** .        |
-         |**ИМЕЕТ**     | **String**        |  В правой части разрешены только константные строковые литералы. Пустые строки и **значения NULL** не допускаются.       |
+         |**<**, **>**, **<=**, **>=**    |  **Double**, **DateTime**, **TimeSpan**       |         |
+         |**=**, **!=**,**<>**     | **String**, **bool**, **Double**, **DateTime**, **TimeSpan**, **null**        |         |
+         |**ОКНЕ**     | **String**, **bool**, **Double**, **DateTime**, **TimeSpan**, **null**        |  Все операнды должны быть одного типа или иметь константу **null** .        |
+         |**HAS**     | **String**        |  В правой части разрешены только константные строковые литералы. Пустые строки и **значения NULL** не допускаются.       |
 
       - **Примеры запросов**
 
-         [![Пример общедоступных запросов](media/time-series-insights-explorer/tsi-ga-example-queries.png)](media/time-series-insights-explorer/tsi-ga-example-queries.png#lightbox)
+         [![Примеры общедоступных запросов](media/time-series-insights-explorer/tsi-ga-example-queries.png)](media/time-series-insights-explorer/tsi-ga-example-queries.png#lightbox)
 
 1. С помощью ползунка **Размер интервала** можно увеличить и уменьшить интервалы для одного и того же интервала времени. Ползунок обеспечивает более точное управление перемещением между крупными срезами времени, которые показывают гладкие тенденции до срезов, например, в миллисекундах, что позволяет отображать и анализировать детализированные, разрешающие пути к данным. Начальная точка ползунка по умолчанию устанавливается как наиболее оптимальное представление данных, выбранных для балансировки разрешения, скорость выполнения запросов и степень детализации.
 
@@ -88,13 +88,13 @@ Azure Time Series Insights — это полностью управляемая
 
 1. Щелкните значок **сохранить** , чтобы сохранить текущий запрос и предоставить его другим пользователям среды. При выборе значка **Открыть** можно просматривать все сохраненные запросы и все общие запросы других пользователей в средах, к которым у вас есть доступ.
 
-   [Запросы ![](media/time-series-insights-explorer/tsi-ga-explorer-saved-queries.png)](media/time-series-insights-explorer/tsi-ga-explorer-saved-queries.png#lightbox)
+   [![Запросы](media/time-series-insights-explorer/tsi-ga-explorer-saved-queries.png)](media/time-series-insights-explorer/tsi-ga-explorer-saved-queries.png#lightbox)
 
 ## <a name="visualize-data"></a>Визуализируйте данные
 
 1. Используйте инструмент « **перспективное представление** » для одновременного просмотра до четырех уникальных запросов. Кнопка **представление перспективы** находится в правом верхнем углу диаграммы.
 
-   [![выбрать запросы для добавления в область перспектива](media/time-series-insights-explorer/tsi-ga-explorer-perspective-panes.png)](media/time-series-insights-explorer/tsi-ga-explorer-perspective-panes.png#lightbox)
+   [![Выберите запросы для добавления в область перспектива](media/time-series-insights-explorer/tsi-ga-explorer-perspective-panes.png)](media/time-series-insights-explorer/tsi-ga-explorer-perspective-panes.png#lightbox)
 
 1. Просмотрите диаграмму, чтобы визуально исследовать данные и использовать средства работы с **диаграммами** .
 
@@ -104,26 +104,26 @@ Azure Time Series Insights — это полностью управляемая
     - В области фильтра слева от диаграммы можно просмотреть все отображаемые ряды данных и переупорядочить их по значению или имени. Вы также можете просматривать все ряды данных или все закрепленные или незакрепленные ряды. Можно выбрать один ряд данных и разделить ряд по другому столбцу, добавить ряд в качестве нового термина, отобразить только выбранный ряд, исключить выбранный ряд, закрепить этот ряд или просмотреть события из выбранного ряда.
     - При одновременном просмотре нескольких терминов можно выполнить стопку, дестекировать, просмотреть дополнительные данные о ряде данных и использовать одну ось y для всех терминов. Используйте кнопки в правом верхнем углу диаграммы.
 
-    [![параметров верхнего правого угла средства диаграммы](media/time-series-insights-explorer/tsi-ga-example-chart-options.png)](media/time-series-insights-explorer/tsi-ga-example-chart-options.png#lightbox)
+    [![Параметры параметра "верхний правый угол" для инструмента "Диаграмма"](media/time-series-insights-explorer/tsi-ga-example-chart-options.png)](media/time-series-insights-explorer/tsi-ga-example-chart-options.png#lightbox)
 
 1. Используйте **тепловой карты** для быстрого выявления уникальных или аномальных рядов данных в определенном запросе. Только один поисковой запрос можно визуализировать в виде тепловой карты.
 
-    [![построения диаграмм в обозревателе тепловой карты](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png)](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png#lightbox)
+    [![Построение диаграмм в тепловой карты Explorer](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png)](media/time-series-insights-explorer/tsi-ga-example-heatmap-charting.png#lightbox)
 
 1. При просмотре событий путем выбора или щелчком правой кнопкой мыши панель **событий** становится доступной. Здесь можно просматривать все необработанные события и экспортировать события как файлы JSON или CSV. В аналитике временных рядов хранятся все необработанные данные.
 
-    [События ![](media/time-series-insights-explorer/tsi-ga-explorer-events-panel.png)](media/time-series-insights-explorer/tsi-ga-explorer-events-panel.png#lightbox)
+    [![События](media/time-series-insights-explorer/tsi-ga-explorer-events-panel.png)](media/time-series-insights-explorer/tsi-ga-explorer-events-panel.png#lightbox)
 
 1. После изучения событий для предоставления шаблонов и статистики столбцов перейдите на вкладку **Статистика** .
 
     - **Patterns**: Эта функция заранее охватывает наиболее значимые статистические шаблоны в выбранной области данных. Вам не нужно просматривать тысячи событий, чтобы понять, какие закономерности занимают больше всего времени и энергии. Благодаря службе "аналитика временных рядов" можно перейти непосредственно к этим статистически значимым шаблонам, чтобы продолжить проведение анализа. Эта возможность также полезна для последующего анализа журнала данных.
     - **Статистика столбцов**: статистика столбцов предоставляет диаграммы и таблицы, разворачивающие данные из каждого столбца выбранного ряда данных за выбранный временной интервал.
 
-      [гистограммы и параметры ![статистики](media/time-series-insights-explorer/tsi-ga-explorer-stat-column.png)](media/time-series-insights-explorer/tsi-ga-explorer-stat-column.png#lightbox)
+      [![Диаграмма и параметры столбцов статистики](media/time-series-insights-explorer/tsi-ga-explorer-stat-column.png)](media/time-series-insights-explorer/tsi-ga-explorer-stat-column.png#lightbox)
 
 Теперь вы узнали о ключевых функциях, параметрах конфигурации и параметрах вывода, доступных в веб-приложении обозревателя "аналитика временных рядов".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [диагностировать и устранять проблемы](time-series-insights-diagnose-and-solve-problems.md) в среде "аналитика временных рядов".
 

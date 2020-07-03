@@ -1,19 +1,15 @@
 ---
 title: Схема сопоставления приложений в Azure Application Insights | Документация Майкрософт
 description: Мониторинг топологий сложных приложений с помощью схемы приложения
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 006ea071ce1ab0354ecf191cdde2e031255ef4ce
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7c5c9173704535b1e34ffde5867bd512e3e02ed8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407698"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80989533"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -55,7 +51,7 @@ ms.locfileid: "75407698"
 
 ### <a name="investigate-performance"></a>Исследование производительности
 
-Чтобы устранить неполадки с производительностью, нажмите кнопку **Анализ работы**.
+Чтобы устранить проблемы с производительностью, выберите **проверить производительность**.
 
 ![Снимок экрана с кнопкой "Анализ работы"](media/app-map/investigate-performance.png)
 
@@ -71,13 +67,13 @@ ms.locfileid: "75407698"
 
 ### <a name="view-logs-analytics"></a>Просмотр журналов (аналитика)
 
-Для дальнейшего запроса и изучения данных приложений щелкните **Просмотр в журналах (аналитика)** .
+Для дальнейшего запроса и изучения данных приложений щелкните **Просмотр в журналах (аналитика)**.
 
 ![Снимок экрана с кнопкой "Просмотр в службе Analytics"](media/app-map/view-logs.png)
 
 ![Снимок экрана с аналитическими возможностями. Линейный график, суммирующий среднюю продолжительность ответа запроса за последние 12 часов.](media/app-map/log-analytics.png)
 
-### <a name="alerts"></a>Оповещения
+### <a name="alerts"></a>Предупреждения
 
 Чтобы просмотреть активные оповещения и основные правила, которые их активируют, щелкните **Оповещения**.
 
@@ -89,7 +85,7 @@ ms.locfileid: "75407698"
 
 Схема приложения использует свойство **имя роли облака** для обнаружения компонентов на карте. Пакет SDK для Application Insights автоматически добавляет свойство имени роли облака в данные телеметрии, созданные компонентами. Например, пакет SDK добавит имя веб-сайта или роли службы в свойство имя роли облака. Но бывают случаи, когда необходимо переопределить значение по умолчанию. Чтобы переопределить имя роли облака и изменить то, что отображается на схеме приложения:
 
-### <a name="netnet-core"></a>.NET и .NET Core
+# <a name="netnetcore"></a>[.NET/. NetCore](#tab/net)
 
 **Напишите пользовательский TelemetryInitializer, как показано ниже.**
 
@@ -142,11 +138,11 @@ namespace CustomInitializer.Telemetry
 ```
 
 > [!NOTE]
-> Добавление инициализатора с помощью `ApplicationInsights.config` или `TelemetryConfiguration.Active` недопустимо для приложений ASP.NET Core. 
+> Добавление инициализатора `ApplicationInsights.config` с помощью `TelemetryConfiguration.Active` или using недопустимо для приложений ASP.NET Core. 
 
 **ASP.NET Core приложения: Загрузка инициализатора в Телеметриконфигуратион**
 
-Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений добавление нового `TelemetryInitializer` выполняется путем его добавления в контейнер внедрения зависимостей, как показано ниже. Это делается в методе `ConfigureServices` класса `Startup.cs`.
+Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений Добавление нового `TelemetryInitializer` выполняется путем добавления его в контейнер внедрения зависимостей, как показано ниже. Это делается в `ConfigureServices` методе `Startup.cs` класса.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
@@ -157,7 +153,44 @@ namespace CustomInitializer.Telemetry
 }
 ```
 
-### <a name="nodejs"></a>Node.js
+# <a name="java"></a>[Java](#tab/java)
+
+**Агент Java**
+
+Для [агента Java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) имя роли облака задается следующим образом:
+
+```json
+{
+  "instrumentationSettings": {
+    "preview": {
+      "roleName": "my cloud role name"
+    }
+  }
+}
+```
+
+Вы также можете задать имя роли облака с помощью переменной ```APPLICATIONINSIGHTS_ROLE_NAME```среды.
+
+**Пакет SDK для Java**
+
+Если вы используете пакет SDK, начиная с Application Insights пакета SDK 2.5.0 для Java, можно указать имя облачной роли, добавив `<RoleName>` в `ApplicationInsights.xml` файл, например
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings" schemaVersion="2014-05-30">
+   <InstrumentationKey>** Your instrumentation key **</InstrumentationKey>
+   <RoleName>** Your role name **</RoleName>
+   ...
+</ApplicationInsights>
+```
+
+Если вы используете Spring Boot с начальным набором Application Insights Spring Boot, все, что необходимо изменить, — задать пользовательское имя приложения в файле application.properties.
+
+`spring.application.name=<name-of-app>`
+
+Начальная загрузка с пружиной автоматически присвоит имя облачной роли значению, введенному для свойства spring.application.name.
+
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
 ```javascript
 var appInsights = require("applicationinsights");
@@ -178,26 +211,7 @@ appInsights.defaultClient.addTelemetryProcessor(envelope => {
 });
 ```
 
-### <a name="java"></a>Java
-
-Начиная с Application Insights пакета SDK 2.5.0 для Java можно указать имя облачной роли, добавив `<RoleName>` в файл `ApplicationInsights.xml`, например
-
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings" schemaVersion="2014-05-30">
-   <InstrumentationKey>** Your instrumentation key **</InstrumentationKey>
-   <RoleName>** Your role name **</RoleName>
-   ...
-</ApplicationInsights>
-```
-
-Если вы используете Spring Boot с начальным набором Application Insights Spring Boot, все, что необходимо изменить, — задать пользовательское имя приложения в файле application.properties.
-
-`spring.application.name=<name-of-app>`
-
-Начальная загрузка с пружиной автоматически присвоит имя облачной роли значению, введенному для свойства spring.application.name.
-
-### <a name="clientbrowser-side-javascript"></a>JavaScript на стороне клиента или браузера
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 appInsights.queue.push(() => {
@@ -207,6 +221,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 });
 });
 ```
+---
 
 ### <a name="understanding-cloud-role-name-within-the-context-of-the-application-map"></a>Основные сведения об имени облачной роли в контексте схемы приложения
 
@@ -214,7 +229,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Снимок экрана со схемой приложения](media/app-map/cloud-rolename.png)
 
-В схеме приложения выше каждое из имен в зеленом окне является значениями имени облачной роли для различных аспектов этого конкретного распределенного приложения. Итак, для этого приложения его роли состоят из: `Authentication`, `acmefrontend`, `Inventory Management`, `Payment Processing Worker Role`. 
+В схеме приложения выше каждое из имен в зеленом окне является значениями имени облачной роли для различных аспектов этого конкретного распределенного приложения. Итак, для этого приложения его роли состоят из `Authentication`: `acmefrontend`, `Inventory Management`,, `Payment Processing Worker Role`а. 
 
 В случае этого приложения каждое из этих имен облачных ролей также представляет отдельный уникальный Application Insights ресурс с собственными ключами инструментирования. Поскольку владелец этого приложения имеет доступ к каждому из четырех разнородных Application Insightsных ресурсов, схема приложения может объединить карту базовых связей.
 
@@ -236,7 +251,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
@@ -258,7 +273,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Схема приложений конструирует узел приложения для каждого уникального имени облачной роли, присутствующей в телеметрии запросов, и узел зависимости для каждой уникальной комбинации типа, целевого объекта и имени облачной роли в телеметрии зависимостей. Если в телеметрии более 10 000 узлов, то схема приложений не сможет получить все узлы и ссылки, поэтому ваша схема будет неполной. В этом случае при просмотре схемы появится предупреждающее сообщение.
 
-Кроме того, схема приложений поддерживает до 1000 отдельных несгруппированных узлов, отображаемых одновременно. Схема приложений сокращает сложность визуального элемента за счет группирования зависимостей вместе с одинаковым типом и вызывающими объектами, но если в телеметрии слишком много уникальных имен облачных ролей или слишком много типов зависимостей, это группирование будет недостаточным, и Map не сможет обрабатывает.
+Кроме того, схема приложений поддерживает до 1000 отдельных несгруппированных узлов, отображаемых одновременно. Схема приложений сокращает сложность визуального элемента за счет группирования зависимостей вместе, имеющих одинаковый тип и вызывающие объекты, но если в телеметрии слишком много уникальных имен облачных ролей или слишком много типов зависимостей, это группирование будет недостаточным, и карту не удастся отобразить.
 
 Чтобы устранить эту проблему, необходимо изменить инструментирование, чтобы правильно задать имя роли облака, тип зависимости и целевые поля зависимости.
 
@@ -274,8 +289,8 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](https://docs.microsoft.com/azure/application-insights/application-insights-correlation).
+* Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](correlation.md).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.
 * Дополнительные сценарии корреляции в ASP.NET Core и ASP.NET см. в статье [Track Custom Operations](custom-operations-tracking.md) .

@@ -4,10 +4,10 @@ description: В этой статье представлен обзор комп
 ms.topic: conceptual
 ms.date: 02/11/2020
 ms.openlocfilehash: 089d981284986a2b6eb0ee7f1dbd401fc7ce4fcd
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77162843"
 ---
 # <a name="physical-server-to-azure-disaster-recovery-architecture"></a>Архитектура для аварийного восстановления физических серверов в Azure
@@ -27,7 +27,7 @@ ms.locfileid: "77162843"
 
 **Архитектура: репликация физических компьютеров в Azure**
 
-![Components](./media/physical-azure-architecture/arch-enhanced.png)
+![Компоненты](./media/physical-azure-architecture/arch-enhanced.png)
 
 ## <a name="replication-process"></a>Процесс репликации
 
@@ -39,7 +39,7 @@ ms.locfileid: "77162843"
    - Сервер конфигурации управляет управлением репликацией с помощью Azure через HTTPS порт 443 исходящего трафика.
    - Сервер обработки получает данные с исходных компьютеров, оптимизирует и шифрует их и отправляет в службу хранилища Azure через HTTPS порт 443 исходящий трафик.
    - Если включить согласованность между виртуальными машинами, компьютеры в группе репликации будут обмениваться данными друг с другом через порт 20004. Эту функция используется, если вы объединяете несколько компьютеров в группы репликации, и они совместно используют отказоустойчивые и согласованные точки восстановления после отработки отказа. Эти группы полезны, если компьютеры работают под одной и той же рабочей нагрузкой и должны быть единообразными.
-1. Трафик реплицируется в общедоступные конечные точки службы хранилища Azure через Интернет. Кроме того, можно использовать [общедоступный пиринг](../expressroute/about-public-peering.md) Azure ExpressRoute.
+1. Трафик реплицируется в общедоступные конечные точки службы хранилища Azure через Интернет. Кроме того, можно использовать [общедоступный пиринг](../expressroute/about-public-peering.md)Azure ExpressRoute.
 
    > [!NOTE]
    > Репликация не поддерживается через VPN-подключение типа "сеть — сеть" с локального сайта или [частного пиринга](concepts-expressroute-with-site-recovery.md#on-premises-to-azure-replication-with-expressroute)Azure ExpressRoute.
@@ -73,6 +73,6 @@ ms.locfileid: "77162843"
 
 ![Восстановление размещения](./media/physical-azure-architecture/enhanced-failback.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Инструкции](physical-azure-disaster-recovery.md)по настройке аварийного восстановления для физических серверов в Azure см. в этом разделе.

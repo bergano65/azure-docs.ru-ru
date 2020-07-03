@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: c8d2ef0330a32d5cab88355cc749322ec3a5ea30
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: d27c648980338b3a9e12bd618eb4620fe9988fd7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530941"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80436919"
 ---
-# <a name="frequently-asked-questions-about-apache-kafka-in-azure-hdinsight"></a>Часто задаваемые вопросы о Apache Kafka в Azure HDInsight
+# <a name="frequently-asked-questions-about-apache-kafka-in-azure-hdinsight"></a>Frequently asked questions about Apache Kafka in Azure HDInsight (Часто задаваемые вопросы о Apache Kafka в Azure HDInsight)
 
 В этой статье рассматриваются некоторые распространенные вопросы об использовании Apache Kafka в Azure HDInsight.
 
@@ -50,7 +50,7 @@ ms.locfileid: "75530941"
 
 ## <a name="is-my-data-encrypted-can-i-use-my-own-keys"></a>Зашифрованы ли данные? Можно ли использовать собственные ключи?
 
-Все сообщения Kafka на управляемых дисках шифруются с помощью [Azure шифрование службы хранилища (SSE)](../../storage/common/storage-service-encryption.md). Транзитные данные (например, данные, передаваемые от клиентов в брокеры и наоборот), не шифруются по умолчанию. Можно зашифровать такой трафик, [настроив SSL самостоятельно](./apache-kafka-ssl-encryption-authentication.md). Кроме того, HDInsight позволяет управлять собственными ключами для шифрования неактивных данных. Дополнительные сведения см. в статье о том, как получить [собственный ключ для Apache Kafka в Azure HDInsight](apache-kafka-byok.md).
+Все сообщения Kafka на управляемых дисках шифруются с помощью [Azure шифрование службы хранилища (SSE)](../../storage/common/storage-service-encryption.md). Транзитные данные (например, данные, передаваемые от клиентов в брокеры и наоборот), не шифруются по умолчанию. Вы можете зашифровать такой трафик, [настроив собственный протокол TLS](./apache-kafka-ssl-encryption-authentication.md). Кроме того, HDInsight позволяет управлять собственными ключами для шифрования неактивных данных. Дополнительные сведения см. в разделе [Шифрование диска, управляемое клиентом](../disk-encryption.md).
 
 ## <a name="how-do-i-connect-clients-to-my-cluster"></a>Разделы справки подключить клиентов к кластеру?
 
@@ -94,7 +94,7 @@ ms.locfileid: "75530941"
 
 Используйте Azure Monitor для анализа [журналов Kafka](./apache-kafka-log-analytics-operations-management.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Настройка шифрования и проверки подлинности SSL (SSL) для Apache Kafka в Azure HDInsight](./apache-kafka-ssl-encryption-authentication.md)
+* [Настройка шифрования и проверки подлинности TLS для Apache Kafka в Azure HDInsight](./apache-kafka-ssl-encryption-authentication.md)
 * [Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker](./apache-kafka-mirroring.md)

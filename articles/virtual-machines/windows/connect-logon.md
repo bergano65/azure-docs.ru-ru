@@ -1,37 +1,30 @@
 ---
 title: Подключение к виртуальной машине Windows Server
 description: Узнайте, как подключиться к виртуальной машине Windows и войти на нее с помощью портала Azure и модели развертывания Resource Manager.
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: ef62b02e-bf35-468d-b4c3-71b63fe7f409
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 152df830f11cd5a73235559c5c5d65ced44f22fa
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 92f7ba30e2a3c66218974ab65502c35139ab1f8c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74842124"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82086221"
 ---
 # <a name="how-to-connect-and-sign-on-to-an-azure-virtual-machine-running-windows"></a>Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее
 Чтобы запустить сеанс удаленного рабочего стола, на портале Azure нажмите кнопку **Подключиться** на рабочем столе Windows. Сначала подключитесь к виртуальной машине, а затем войдите в систему.
 
 Чтобы подключиться к виртуальной машине Windows с компьютера Mac, необходимо установить клиент RDP для Mac, например [Удаленный рабочий стол (Майкрософт)](https://aka.ms/rdmac).
 
-## <a name="connect-to-the-virtual-machine"></a>Подключение к виртуальной машине
-1. Перейдите к [портал Azure](https://portal.azure.com/) , чтобы подключиться к виртуальной машине. Найдите и выберите **виртуальные машины**.
+## <a name="connect-to-the-virtual-machine"></a>Подключитесь к виртуальной машине
+1. Перейдите к [портал Azure](https://portal.azure.com/) , чтобы подключиться к виртуальной машине. Найдите и щелкните **Виртуальные машины**.
 2. Затем выберите виртуальную машину из списка.
 3. В начале страницы виртуальной машины выберите **подключить**.
 4. На странице **Подключение к виртуальной машине** выберите **RDP**и укажите соответствующий **IP-адрес** и **номер порта**. В большинстве случаев следует использовать IP-адрес и порт по умолчанию. Щелкните **Скачать RDP-файл**. Если на виртуальной машине существует набор политики JIT, сначала нужно нажать кнопку **​​Запросить доступ**, прежде чем вы сможете загрузить RDP-файл. Дополнительные сведения о политике JIT см. в статье [Управление доступом к виртуальным машинам с помощью JIT-доступа](../../security-center/security-center-just-in-time.md).
-5. Откройте скачанный RDP-файл и при появлении запроса щелкните **Подключиться**. Появится предупреждение о том, что издатель файла `.rdp` неизвестен. Это ожидаемое поведение. Чтобы продолжить, в окне **Remote Desktop Connection** (Подключение к удаленному рабочему столу) выберите **Подключиться**.
+5. Откройте скачанный RDP-файл и при появлении запроса щелкните **Подключиться**. Появится предупреждение о том, что издатель файла `.rdp` неизвестен. Такое поведение является стандартным. Чтобы продолжить, в окне **Remote Desktop Connection** (Подключение к удаленному рабочему столу) выберите **Подключиться**.
    
     ![Снимок экрана с предупреждением о неизвестном издателе.](./media/connect-logon/rdp-warn.png)
 3. В окне **Безопасность Windows** выберите **Варианты выбора** и нажмите **Использовать другую учетную запись**. На виртуальной машине введите учетные данные учетной записи и нажмите кнопку **ОК**.
@@ -55,7 +48,7 @@ ms.locfileid: "74842124"
 
  
 
-Если вы используете PowerShell и установили модуль Azure PowerShell, можно также подключиться с помощью командлета `Get-AzRemoteDesktopFile`, как показано ниже.
+Если вы используете PowerShell и установили модуль Azure PowerShell, можно также подключиться с помощью `Get-AzRemoteDesktopFile` командлета, как показано ниже.
 
 Этот пример немедленно устанавливает RDP-подключение с отображением аналогичных инструкций, как показано выше.
 
@@ -69,6 +62,6 @@ Get-AzRemoteDesktopFile -ResourceGroupName "RgName" -Name "VmName" -Launch
 Get-AzRemoteDesktopFile -ResourceGroupName "RgName" -Name "VmName" -LocalPath "C:\Path\to\folder"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Если у вас возникли проблемы с подключением, ознакомьтесь со статьей [Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 

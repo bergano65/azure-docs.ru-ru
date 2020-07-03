@@ -1,217 +1,316 @@
+### YamlMime:TOC
 - name: Устранение неполадок с виртуальными машинами Azure
-  href: index.md
-- name: Ошибки распределения ресурсов
+  href: index.yml
+- name: Устранение сбоев развертывания
+  items:
+    - name: Windows
+      href: troubleshoot-deploy-vm-windows.md
+    - name: Linux
+      href: troubleshoot-deploy-vm-linux.md
+    - name: Группы доступности
+      href: virtual-machines-availability-set-supportability.md
+- name: Руководство по развертыванию виртуальных машин
+  items:
+    - name: Новые развертывания виртуальных машин
+      items:
+        - name: Linux
+          href: troubleshoot-deployment-new-vm-linux.md
+        - name: Windows
+          href: troubleshoot-deployment-new-vm-windows.md
+    - name: Повторное развертывание виртуальной машины
+      items:
+        - name: Linux
+          href: redeploy-to-new-node-linux.md
+        - name: Windows
+          href: redeploy-to-new-node-windows.md
+    - name: Сброс сетевой карты
+      href: reset-network-interface.md
+- name: Устранение неполадок выделения ресурсов
   items:
     - name: Ошибки распределения ресурсов
       href: allocation-failure.md
-    - name: Ошибки распределения для классических развертываний
+    - name: Классическая модель развертывания
       href: allocation-failure-classic.md
-    - name: Группы доступности
-      href: virtual-machines-availability-set-supportability.md
-- name: RDP
-  href: rdp.md
+- name: Проблемы с перезапуском виртуальных машин
   items:
-    - name: Сброс RDP
-      href: reset-rdp.md
-    - name: Устранение неполадок с RDP
-      href: troubleshoot-rdp-connection.md
-    - name: Подробные сведения об устранении неполадок с RDP
-      href: detailed-troubleshoot-rdp.md
-    - name: Устранение ошибок с RDP-подключением из-за отключения DHCP
-      href: troubleshoot-rdp-dhcp-disabled.md
-    - name: 'Устранение ошибок RDP-подключения, возникающих из-за параметров NSG'
-      href: troubleshoot-rdp-nsg-problem.md
-    - name: Устранение определенных ошибок
-      href: troubleshoot-specific-rdp-errors.md
-    - name: 'Устранение ошибок, связанных с отсутствием сервера лицензирования'
-      href: troubleshoot-rdp-no-license-server.md
-    - name: Устранение неполадок со службами удаленных рабочих столов
-      href: troubleshoot-remote-desktop-services-issues.md
-    - name: Устранение внутренней ошибки
-      href: Troubleshoot-rdp-internal-error.md
-    - name: Устранение проблем с частыми отключениями
-      href: troubleshoot-rdp-intermittent-connectivity.md
-    - name: Устранение общей ошибки
-      href: troubleshoot-rdp-general-error.md
-    - name: Устранение ошибок аутентификации
-      href: troubleshoot-authentication-error-rdp-vm.md
-    - name: Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события
-      href: event-id-troubleshoot-vm-rdp-connecton.md
-    - name: 'Устранение ошибок RDP-подключения, возникающих из-за статического IP-адреса'
-      href: troubleshoot-rdp-static-ip.md
-    - name: 'Устранение ошибок RDP-подключения к виртуальной машине, возникающих из-за отключенного сетевого адаптера'
-      href: troubleshoot-rdp-nic-disabled.md
-    - name: 'Устранение ошибки RDP-подключения, возникающей из-за использования безопасного режима'
-      href: troubleshoot-rdp-safe-mode.md
-    - name: Отключение брандмауэра гостевой ОС на виртуальной машине Azure
-      href: disable-guest-os-firewall-windows.md
-    - name: Включение или отключение правила брандмауэра в гостевой ОС
-      href: enable-disable-firewall-rule-guest-os.md
-    - name: Входящий трафик блокируется брандмауэром гостевой ОС
-      href: guest-os-firewall-blocking-inbound-traffic.md
-    - name: Брандмауэр гостевой ОС настроен неправильно
-      href: guest-os-firewall-misconfigured.md
-    - name: Устранение ошибки файла netvsc.sys при RDP-подключениях
-      href: troubleshoot-rdp-driver-netvsc.md
-- name: SSH
-  items:
-    - name: Устранение неполадок с SSH
-      href: troubleshoot-ssh-connection.md
-    - name: Устранение ошибок файловой системы
-      href: linux-recovery-cannot-start-file-system-errors.md
-    - name: 'Устранение проблем с загрузкой, связанных с ядром'
-      href: 'https://support.microsoft.com/help/4091524'
-    - name: Восстановление виртуальных машин с настроенным диспетчером логических томов (виртуальная машина не загружается)
-      href: chroot-logical-volume-manager.md
-    - name: Устранение ошибок fstab
-      href: linux-virtual-machine-cannot-start-fstab-errors.md
-    - name: Подробные сведения об устранении неполадок с SSH
-      href: detailed-troubleshoot-ssh-connection.md
-- name: Распространенные сообщения об ошибках
-  href: error-messages.md
-- name: Устранение проблем с производительностью виртуальной машины Azure
-  items:
-    - name: Проблемы с производительностью в Linux или Windows
-      href: troubleshoot-performance-virtual-machine-linux-windows.md
-    - name: Диагностика производительности
-      href: performance-diagnostics.md
-- name: Поддержка 32-разрядных операционных систем
-  href: support-32-bit-operating-systems-virtual-machines.md
-- name: PerfInsights
-  items:
-    - name: Windows
-      items:
-        - name: Как использовать PerfInsights
-          href: how-to-use-perfinsights.md
-        - name: Расширение для диагностики производительности
-          href: performance-diagnostics-vm-extension.md
-    - name: Linux
-      items:
-        - name: Как использовать PerfInsights
-          href: how-to-use-perfinsights-linux.md
-- name: Установка агента виртуальной машины Windows в автономном режиме
-  href: install-vm-agent-offline.md
-- name: Повторное развертывание виртуальной машины
-  items:
-    - name: Linux
-      href: redeploy-to-new-node-linux.md
-    - name: Windows
-      href: redeploy-to-new-node-windows.md
-- name: Сброс пароля к виртуальной машине
-  items:
-    - name: Windows
-      href: reset-local-password-without-agent.md
-    - name: Linux
-      href: reset-password.md
-- name: Сброс сетевой карты
-  href: reset-network-interface.md
-- name: Перезапуск или изменение размера виртуальной машины
-  href: restart-resize-error-troubleshooting.md
-- name: Серийная консоль
-  items:
-    - name: Общие сведения о последовательной консоли
-      href: serial-console-overview.md
-    - name: Последовательная консоль для Linux
-      href: serial-console-linux.md
-      items:
-        - name: Загрузчик GRUB в последовательной консоли / Однопользовательский режим
-          href: serial-console-grub-single-user-mode.md
-        - name: Немаскируемое прерывание в последовательной консоли / SysRq
-          href: serial-console-nmi-sysrq.md
-        - name: Заблаговременная настройка GRUB и Серийной консоли
-          href: serial-console-grub-proactive-configuration.md
-    - name: Последовательная консоль для Windows
-      href: serial-console-windows.md
-      items:
-        - name: CMD и команды PowerShell
-          href: serial-console-cmd-ps-commands.md
-    - name: Включение и отключение последовательной консоли
-      href: serial-console-enable-disable.md
-    - name: Параметры электропитания в последовательной консоли
-      href: serial-console-power-options.md
-    - name: Распространенные ошибки последовательностей консоли
-      href: serial-console-errors.md
-- name: Ошибки при удалении ресурсов хранилища
-  href: storage-resource-deletion-errors.md
-- name: Ошибки при удалении ресурсов классического хранилища
-  href: storage-classic-cannot-delete-storage-account-container-vhd.md
-- name: Устранение неполадок с перезапуском виртуальных машин
+    - name: Перезапуск или изменение размера виртуальной машины
+      href: restart-resize-error-troubleshooting.md
+    - name: 'Перезапуск, завершение работы или остановка служб'
+      href: boot-error-troubleshoot-windows.md
+- name: Непредвиденный перезапуск
   items:
     - name: Непредвиденные перезагрузки виртуальных машин с подключенными VHD
       href: unexpected-reboots-attached-vhds.md
     - name: Общие сведения о перезагрузке системы
       href: understand-vm-reboot.md
-- name: Активация Windows
+- name: Не удается запустить или остановить виртуальную машину
+  items:
+    - name: Запуск и остановка виртуальных машин с помощью службы автоматизации Azure
+      href: ../../automation/troubleshoot/start-stop-vm.md
+    - name: Перезапуск или изменение размера виртуальной машины
+      href: restart-resize-error-troubleshooting.md
+    - name: Ошибки распределения для классических развертываний
+      href: allocation-failure-classic.md
+    - name: Зависание виртуальной машины при запуске
+      href: troubleshoot-vm-boot-configure-update.md
+    - name: Жизненный цикл и состояния виртуальной машины
+      href: ../windows/states-lifecycle.md
+- name: Виртуальная машина не загружается
+  items:
+    - name: Linux
+      href: boot-error-troubleshoot-linux.md
+      items:
+        - name: Ошибка Grub Rescue
+          href: troubleshoot-vm-boot-error.md
+    - name: Windows
+      href: boot-error-troubleshoot.md
+      items:
+        - name: Диагностика загрузки
+          href: boot-diagnostics.md
+        - name: Ошибки BitLocker
+          href: troubleshoot-bitlocker-boot-error.md
+        - name: Ошибки "синий экран"
+          href: troubleshoot-common-blue-screen-error.md
+        - name: Проверка ошибок файловой системы
+          href: troubleshoot-check-disk-boot-error.md
+        - name: Критический процесс отключен
+          href: troubleshoot-guide-critical-process-died.md
+        - name: Сбой критически важной службы
+          href: troubleshoot-critical-service-failed-boot-error.md
+        - name: "Устранение ошибки загрузки\_— состояние не найдено"
+          href: boot-error-status-not-found.md
+        - name: 'Устранение неполадок в Центре обновления Windows, связанных с нехваткой места для установки'
+          href: windows-update-installation-capacity.md
+        - name: 'Диск, не поддерживающий загрузку'
+          href: troubleshoot-guide-not-bootable-disk.md
+        - name: Цикл перезагрузки
+          href: troubleshoot-reboot-loop.md
+        - name: Зависание при запуске обновления Windows
+          href: troubleshoot-stuck-updating-boot-error.md
+        - name: Зависание виртуальной машины при запуске
+          href: troubleshoot-vm-boot-configure-update.md
+        - name: Не удается загрузить виртуальную машину из-за диспетчера загрузки Windows
+          href: troubleshoot-guide-windows-boot-manager-menu.md
+        - name: Виртуальная машина не отвечает из-за обновления
+          href: unresponsive-vm-apply-windows-update.md
+        - name: При применении групповой политики виртуальная машина не отвечает
+          href: unresponsive-vm-apply-group-policy.md
+- name: Не удается подключиться к виртуальной машине
+  items:
+    - name: RDP
+      href: rdp.md
+      items:
+        - name: Сброс RDP
+          href: reset-rdp.md
+        - name: Устранение неполадок с RDP
+          href: troubleshoot-rdp-connection.md
+        - name: Подробные сведения об устранении неполадок с RDP
+          href: detailed-troubleshoot-rdp.md
+        - name: Устранение ошибок с RDP-подключением из-за отключения DHCP
+          href: troubleshoot-rdp-dhcp-disabled.md
+        - name: 'Устранение ошибок RDP-подключения, возникающих из-за параметров NSG'
+          href: troubleshoot-rdp-nsg-problem.md
+        - name: Устранение определенных ошибок
+          href: troubleshoot-specific-rdp-errors.md
+        - name: 'Устранение ошибок, связанных с отсутствием сервера лицензирования'
+          href: troubleshoot-rdp-no-license-server.md
+        - name: Устранение неполадок со службами удаленных рабочих столов
+          href: troubleshoot-remote-desktop-services-issues.md
+        - name: Устранение внутренней ошибки
+          href: Troubleshoot-rdp-internal-error.md
+        - name: Устранение проблем с частыми отключениями
+          href: troubleshoot-rdp-intermittent-connectivity.md
+        - name: Устранение общей ошибки
+          href: troubleshoot-rdp-general-error.md
+        - name: Устранение ошибок аутентификации
+          href: troubleshoot-authentication-error-rdp-vm.md
+        - name: Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события
+          href: event-id-troubleshoot-vm-rdp-connecton.md
+        - name: 'Устранение ошибок RDP-подключения, возникающих из-за статического IP-адреса'
+          href: troubleshoot-rdp-static-ip.md
+        - name: 'Устранение ошибок RDP-подключения к виртуальной машине, возникающих из-за отключенного сетевого адаптера'
+          href: troubleshoot-rdp-nic-disabled.md
+        - name: 'Устранение ошибки RDP-подключения, возникающей из-за использования безопасного режима'
+          href: troubleshoot-rdp-safe-mode.md
+        - name: Отключение брандмауэра гостевой ОС на виртуальной машине Azure
+          href: disable-guest-os-firewall-windows.md
+        - name: Включение или отключение правила брандмауэра в гостевой ОС
+          href: enable-disable-firewall-rule-guest-os.md
+        - name: Входящий трафик блокируется брандмауэром гостевой ОС
+          href: guest-os-firewall-blocking-inbound-traffic.md
+        - name: Брандмауэр гостевой ОС настроен неправильно
+          href: guest-os-firewall-misconfigured.md
+        - name: Устранение ошибки файла netvsc.sys при RDP-подключениях
+          href: troubleshoot-rdp-driver-netvsc.md
+    - name: SSH
+      items:
+        - name: Устранение неполадок с SSH
+          href: troubleshoot-ssh-connection.md
+        - name: Устранение ошибок файловой системы
+          href: linux-recovery-cannot-start-file-system-errors.md
+        - name: 'Устранение проблем с загрузкой, связанных с ядром'
+          href: 'https://support.microsoft.com/help/4091524'
+        - name: Восстановление виртуальных машин с настроенным диспетчером логических томов (виртуальная машина не загружается)
+          href: chroot-logical-volume-manager.md
+        - name: Устранение ошибок fstab
+          href: linux-virtual-machine-cannot-start-fstab-errors.md
+        - name: Подробные сведения об устранении неполадок с SSH
+          href: detailed-troubleshoot-ssh-connection.md
+    - name: Ошибки доступа к приложению
+      href: troubleshoot-app-connection.md
+- name: Справочные сведения о сбросе пароля виртуальной машины
+  items:
+    - name: Windows
+      href: reset-local-password-without-agent.md
+    - name: Linux
+      href: reset-password.md
+    - name: Доступ к восстановлению виртуальной машины
+      items:
+        - name: Windows
+          items:
+            - name: PowerShell
+              href: troubleshoot-recovery-disks-windows.md
+            - name: Портал Azure
+              href: troubleshoot-recovery-disks-portal-windows.md
+        - name: Linux
+          items:
+            - name: CLI
+              href: troubleshoot-recovery-disks-linux.md
+            - name: Портал Azure
+              href: troubleshoot-recovery-disks-portal-linux.md
+        - name: Изменение имен устройств
+          href: troubleshoot-device-names-problems.md
+- name: Проблемы с управлением виртуальными дисками
+  items:
+    - name: Обзор
+      href: ../windows/managed-disks-overview.md
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: ../windows/faq-for-disks.md
+    - name: Ошибки при удалении ресурсов хранилища
+      href: storage-resource-deletion-errors.md
+    - name: Ошибки при удалении ресурсов классического хранилища
+      href: storage-classic-cannot-delete-storage-account-container-vhd.md
+    - name: Использование вложенной виртуализации
+      href: troubleshoot-vm-by-use-nested-virtualization.md
+- name: Проблемы с производительностью виртуальной машины
+  items:
+    - name: Устранение проблем с производительностью виртуальной машины Azure
+      items:
+        - name: Проблемы с производительностью в Linux или Windows
+          href: troubleshoot-performance-virtual-machine-linux-windows.md
+        - name: Диагностика производительности
+          href: performance-diagnostics.md
+    - name: PerfInsights
+      items:
+        - name: Windows
+          items:
+            - name: Как использовать PerfInsights
+              href: how-to-use-perfinsights.md
+            - name: Расширение для диагностики производительности
+              href: performance-diagnostics-vm-extension.md
+        - name: Linux
+          items:
+            - name: Как использовать PerfInsights
+              href: how-to-use-perfinsights-linux.md
+- name: Проблемы с расширением виртуальной машины
+  items:
+    - name: Обзор расширений Azure
+      href: ../extensions/overview.md
+    - name: Устранение неполадок с расширениями
+      href: ../extensions/troubleshoot.md
+    - name: Установка агента виртуальной машины Windows в автономном режиме
+      href: install-vm-agent-offline.md
+- name: Резервное копирование и восстановление
+  items:
+    - name: Устранение сбоев резервного копирования на виртуальной машине Azure
+      href: ../../backup/backup-azure-vms-troubleshoot.md
+- name: Корректировка работы виртуальной машины с помощью команд
+  items:
+    - name: Windows
+      href: repair-windows-vm-using-azure-virtual-machine-repair-commands.md
+    - name: Linux
+      href: repair-linux-vm-using-azure-virtual-machine-repair-commands.md
+- name: Проблемы с активацией Windows
   items:
     - name: Проблемы с активацией Windows
       href: troubleshoot-activation-problems.md
     - name: Проблема с активацией при принудительном туннелировании
       href: custom-routes-enable-kms-activation.md
-- name: Ошибки доступа к приложению
-  href: troubleshoot-app-connection.md
-- name: Новые развертывания виртуальных машин
-  items:
-    - name: Linux
-      href: troubleshoot-deployment-new-vm-linux.md
-    - name: Windows
-      href: troubleshoot-deployment-new-vm-windows.md
-- name: Устранение неполадок развертываний
-  items:
-    - name: Linux
-      href: troubleshoot-deploy-vm-linux.md
-    - name: Windows
-      href: troubleshoot-deploy-vm-windows.md
-- name: Изменение имен устройств
-  href: troubleshoot-device-names-problems.md
-- name: Доступ к восстановлению виртуальной машины
-  items:
-    - name: Windows
-      items:
-        - name: PowerShell
-          href: troubleshoot-recovery-disks-windows.md
-        - name: Портал Azure
-          href: troubleshoot-recovery-disks-portal-windows.md
-    - name: Linux
-      items:
-        - name: CLI
-          href: troubleshoot-recovery-disks-linux.md
-        - name: Портал Azure
-          href: troubleshoot-recovery-disks-portal-linux.md
-- name: Ошибки при загрузке Linux
-  href: boot-error-troubleshoot-linux.md
-  items:
-    - name: Ошибка Grub Rescue
-      href: troubleshoot-vm-boot-error.md
-- name: Ошибки при загрузке Windows
-  href: boot-error-troubleshoot.md
-  items:
-    - name: Диагностика загрузки
-      href: boot-diagnostics.md
-    - name: Ошибки BitLocker
-      href: troubleshoot-bitlocker-boot-error.md
-    - name: Проверка ошибок файловой системы
-      href: troubleshoot-check-disk-boot-error.md
-    - name: Ошибки "синий экран"
-      href: troubleshoot-common-blue-screen-error.md
-    - name: Зависание виртуальной машины при запуске
-      href: troubleshoot-vm-boot-configure-update.md
-    - name: Сбой критически важной службы
-      href: troubleshoot-critical-service-failed-boot-error.md
-    - name: Цикл перезагрузки
-      href: troubleshoot-reboot-loop.md
-    - name: 'Перезапуск, завершение работы или остановка служб'
-      href: boot-error-troubleshoot-windows.md
-    - name: Зависание при запуске обновления Windows
-      href: troubleshoot-stuck-updating-boot-error.md
-- name: Ошибки регулирования
-  href: troubleshooting-throttling-errors.md
-- name: Использование вложенной виртуализации
-  href: troubleshoot-vm-by-use-nested-virtualization.md
 - name: Средства удаленного устранения неполадок
   href: remote-tools-troubleshoot-azure-vm-issues.md
-- name: Восстановление виртуальной машины
   items:
-    - name: Восстановление виртуальной машины Windows с помощью команд восстановления виртуальной машины Azure
-      href: repair-windows-vm-using-azure-virtual-machine-repair-commands.md
-    - name: Восстановление виртуальной машины Linux с помощью команд восстановления виртуальной машины Azure
-      href: repair-linux-vm-using-azure-virtual-machine-repair-commands.md
+    - name: Серийная консоль
+      items:
+        - name: Обзор
+          href: serial-console-overview.md
+        - name: Последовательная консоль для Linux
+          href: serial-console-linux.md
+          items:
+            - name: Загрузчик GRUB в последовательной консоли / Однопользовательский режим
+              href: serial-console-grub-single-user-mode.md
+            - name: Немаскируемое прерывание в последовательной консоли / SysRq
+              href: serial-console-nmi-sysrq.md
+            - name: Заблаговременная настройка GRUB и Серийной консоли
+              href: serial-console-grub-proactive-configuration.md
+        - name: Последовательная консоль для Windows
+          href: serial-console-windows.md
+          items:
+            - name: CMD и команды PowerShell
+              href: serial-console-cmd-ps-commands.md
+        - name: Включение и отключение последовательной консоли
+          href: serial-console-enable-disable.md
+        - name: Параметры электропитания в последовательной консоли
+          href: serial-console-power-options.md
+        - name: Распространенные ошибки последовательностей консоли
+          href: serial-console-errors.md
+- name: Проблемы с шифрованием дисков Azure
+  items:
+    - name: Windows
+      items:
+        - name: Обзор
+          href: ../windows/disk-encryption-overview.md
+        - name: Диагностика
+          href: ../windows/disk-encryption-troubleshooting.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: ../windows/disk-encryption-faq.md
+    - name: Linux
+      items:
+        - name: Обзор
+          href: ../linux/disk-encryption-overview.md
+        - name: Диагностика
+          href: ../linux/disk-encryption-troubleshooting.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: ../linux/disk-encryption-faq.md
+- name: Увеличение квоты
+  items:
+    - name: Увеличение лимита виртуальных ЦП
+      items:
+        - name: Модель развертывания диспетчера ресурсов
+          items:
+            - name: Увеличение лимита виртуальных ЦП для серии виртуальных машин
+              href: ../../azure-portal/supportability/per-vm-quota-requests.md
+            - name: Общее региональное увеличение лимита виртуальных ЦП
+              href: ../../azure-portal/supportability/regional-quota-requests.md
+            - name: Увеличение квоты на точечные виртуальные машины
+              href: ../../azure-portal/supportability/low-priority-quota.md
+        - name: Классическая модель развертывания
+          href: ../../azure-portal/supportability/classic-deployment-model-quota-increase-requests.md
+    - name: Увеличение лимита сети
+      href: ../../azure-portal/supportability/networking-quota-requests.md
+- name: Проблемы с миграцией и переносом
+  items:
+    - name: Вопросы и ответы о миграции в Azure Resource Manager (из ASM в ARM)
+      href: ../windows/migration-classic-resource-manager-overview.md
+- name: Плановое техническое обслуживание
+  items:
+    - name: Обзор
+      href: ../maintenance-notifications.md
+- name: Распространенные сообщения об ошибках
+  href: error-messages.md
+  items:
+    - name: Ошибки регулирования
+      href: troubleshooting-throttling-errors.md
+- name: Поддержка инструкций
+  items:
+    - name: Поддержка 32-разрядных операционных систем
+      href: support-32-bit-operating-systems-virtual-machines.md

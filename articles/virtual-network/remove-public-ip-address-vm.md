@@ -4,20 +4,21 @@ titlesuffix: Azure Virtual Network
 description: Узнайте, как отменить связь между общедоступным IP-адресом и виртуальной машиной.
 services: virtual-network
 documentationcenter: ''
-author: KumudD
+author: asudbring
 ms.service: virtual-network
+ms.subservice: ip-services
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2019
-ms.author: kumud
-ms.openlocfilehash: 1c27af30f97ea967d170b2cccaefb2e95f8fedaf
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.author: allensu
+ms.openlocfilehash: f29e29f809faeeb486e5b6b9bacc84a61380a012
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74900747"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82144457"
 ---
 # <a name="dissociate-a-public-ip-address-from-an-azure-vm"></a>Отмена связи общедоступного IP-адреса с виртуальной машиной Azure 
 
@@ -25,9 +26,9 @@ ms.locfileid: "74900747"
 
 Чтобы отменить связь между общедоступным IP-адресом и виртуальной машиной, можно использовать [портал Azure](#azure-portal), [интерфейс командной строки](#azure-cli) Azure (CLI) или [PowerShell](#powershell) .
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>Портал Azure
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Найдите виртуальную машину, для которой необходимо отменить связь с общедоступным IP-адресом, или найдите ее.
 3. На странице Виртуальная машина выберите **Обзор**, выберите общедоступный IP-адрес, как показано на следующем рисунке.
 
@@ -39,7 +40,7 @@ ms.locfileid: "74900747"
 
 5. В окне Отмена связи с **общедоступным IP-адресом**выберите **Да**.
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
 Установите [Azure CLI](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json)или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **попробовать** в следующих командах интерфейса командной строки. При нажатии кнопки " **попробовать** " вызывается Cloud Shell, который можно использовать для входа в учетную запись Azure с помощью.
 
@@ -85,7 +86,7 @@ ms.locfileid: "74900747"
 
 Установите [PowerShell](/powershell/azure/install-az-ps)или используйте Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка, которую можно запускать непосредственно на портале Azure. Он включает предварительно установленный PowerShell и настроен для использования с вашей учетной записью. Нажмите кнопку **попробовать** в следующих командах PowerShell. При нажатии кнопки " **попробовать** " вызывается Cloud Shell, который можно использовать для входа в учетную запись Azure с помощью.
 
-1. Если вы используете PowerShell локально, войдите в Azure с помощью `Connect-AzAccount`.
+1. Если вы используете PowerShell локально, войдите в Azure с `Connect-AzAccount`помощью.
 2. Общедоступный IP-адрес связан с IP-конфигурацией сетевого интерфейса, подключенного к виртуальной машине. Используйте команду [Get-азнетворкинтерфаце](/powershell/module/Az.Network/Get-AzNetworkInterface) , чтобы получить сетевой интерфейс. Задайте для параметра общедоступный IP-адрес значение null, а затем используйте команду [Set-азнетворкинтерфаце](/powershell/module/Az.Network/Set-AzNetworkInterface) , чтобы записать новую IP-конфигурацию в сетевой интерфейс.
 
    В следующем примере общедоступный IP-адрес с именем *myVMPublicIP* удаляется из сетевого интерфейса с именем *myVMVMNic* , подключенного к виртуальной машине с именем *myVM*. Все ресурсы находятся в группе ресурсов с именем *myResourceGroup*.
@@ -122,6 +123,6 @@ ms.locfileid: "74900747"
      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myVMVMNic/ipConfigurations/ipconfigmyVM"
      ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [связать общедоступный IP-адрес с виртуальной машиной](associate-public-ip-address-vm.md).

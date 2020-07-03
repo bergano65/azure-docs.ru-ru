@@ -1,18 +1,17 @@
 ---
 title: Соединитель управления ИТ-службами в Azure Log Analytics | Документация Майкрософт
 description: В этой статье представлен обзор соединителя управления ИТ-услугами (ITSMC) и сведения о том, как использовать это решение для централизованного мониторинга рабочих элементов ITSM и управления ими в Azure Log Analytics, а также для быстрого устранения каких-либо проблем.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
-ms.openlocfilehash: 68aff01ea541a24be1f8d526fecbb6a9d2c30086
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 50bab4c26046059b993c19a030a8f840ae336ef2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76990680"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79274545"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
 
@@ -81,17 +80,17 @@ ms.locfileid: "76990680"
 
 - [System Center Service Manager](../../azure-monitor/platform/itsmc-connections.md#connect-system-center-service-manager-to-it-service-management-connector-in-azure);
 - [ServiceNow](../../azure-monitor/platform/itsmc-connections.md#connect-servicenow-to-it-service-management-connector-in-azure)
-- [Provance](../../azure-monitor/platform/itsmc-connections.md#connect-provance-to-it-service-management-connector-in-azure);  
+- [Provance;](../../azure-monitor/platform/itsmc-connections.md#connect-provance-to-it-service-management-connector-in-azure)  
 - [Cherwell](../../azure-monitor/platform/itsmc-connections.md#connect-cherwell-to-it-service-management-connector-in-azure)
 
 Подготовив инструмент ITSM, выполните приведенные ниже шаги, чтобы создать подключение.
 
-1. Перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)** .
+1. Перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**.
 2. В области слева в разделе **Источники данных рабочей области** щелкните **Подключения ITSM**.
    ![Подключения ITSM](media/itsmc-overview/itsm-connections.png)
 
    На этой странице отобразится список подключений.
-3. Щелкните **Добавить подключение**.
+3. Нажмите кнопку **Добавить подключение**.
 
    ![Добавление подключения ITSM](media/itsmc-overview/add-new-itsm-connection.png)
 
@@ -175,14 +174,14 @@ ms.locfileid: "76990680"
 **Рабочий элемент:** **инциденты**  
 ServiceDeskWorkItemType_s="Incident"
 
-**Fields**
+**Поля**
 
 - ServiceDeskConnectionName;
 - "Идентификатор службы поддержки";
 - Состояние
 - "Срочность";
 - Влияние
-- Приоритет
+- Priority
 - Escalation (Эскалация);
 - Автор
 - "Кем разрешено";
@@ -190,8 +189,8 @@ ServiceDeskWorkItemType_s="Incident"
 - Источник
 - Кому назначено
 - Категория
-- Title
-- Description
+- Заголовок
+- Описание
 - "Дата создания";
 - Closed Date (Дата закрытия);
 - Resolved Date (Дата разрешения);
@@ -203,22 +202,22 @@ ServiceDeskWorkItemType_s="Incident"
 
 ServiceDeskWorkItemType_s="ChangeRequest"
 
-**Fields**
+**Поля**
 - ServiceDeskConnectionName;
 - "Идентификатор службы поддержки";
 - Автор
 - Closed By (Кем закрыто);
 - Источник
 - Кому назначено
-- Title
+- Название
 - Тип
 - Категория
 - Состояние
 - Escalation (Эскалация);
 - Conflict Status (Состояние конфликта);
 - "Срочность";
-- Приоритет
-- "Риск";
+- Priority
+- Риск
 - Влияние
 - Кому назначено
 - "Дата создания";
@@ -229,7 +228,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - Planned End Date (Планируемая дата окончания);
 - Work Start Date (Дата начала работы);
 - Work End Date (Дата окончания работы);
-- Description
+- Описание
 - Компьютер
 
 ## <a name="output-data-for-a-servicenow-incident"></a>Выходные данные инцидента ServiceNow
@@ -240,7 +239,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | IncidentState_s | Состояние |
 | Urgency_s |"Срочность"; |
 | Impact_s |Влияние|
-| Priority_s | Приоритет |
+| Priority_s | Priority |
 | CreatedBy_s | Opened by (Кем открыто) |
 | ResolvedBy_s | "Кем разрешено"|
 | ClosedBy_s  | Closed By (Кем закрыто) |
@@ -263,12 +262,12 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | ClosedBy_s | Closed By (Кем закрыто) |
 | AssignedTo_s | Кому назначено  |
 | Title_s|  Краткое описание |
-| Type_s|  Тип |
+| Type_s|  Type |
 | Category_s|  Категория |
 | CRState_s|  Состояние|
 | Urgency_s|  "Срочность"; |
-| Priority_s| Приоритет|
-| Risk_s| "Риск";|
+| Priority_s| Priority|
+| Risk_s| Риск|
 | Impact_s| Влияние|
 | RequestedDate_t  | Requested by date |
 | ClosedDate_t | Closed Date (Дата закрытия) |
@@ -276,13 +275,13 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | PlannedEndDate_t  |   Planned End Date (Планируемая дата окончания) |
 | WorkStartDate_t  | Actual start date (Фактическая дата начала) |
 | WorkEndDate_t | Actual end date (Фактическая дата окончания)|
-| Description_s | Description |
+| Description_s | Описание |
 | Компьютер  | Элемент конфигурации |
 
 
 ## <a name="troubleshoot-itsm-connections"></a>Устранение неполадок с подключениями ITSM
 1. Если сбой подключения происходит из пользовательского интерфейса подключенного источника с сообщением **Ошибка при сохранении подключения**, сделайте следующее:
-   - При использовании подключений ServiceNow, Cherwell и Provance  
+   - При использовании подключений ServiceNow, Cherwell и Provance   
    - проверьте правильность ввода ими пользователя и пароля, а также идентификатора и секрета клиента каждого подключения.  
    - Проверьте наличие необходимых прав в соответствующем продукте ITSM, чтобы установить подключение.  
    - При использовании Service Manager  
@@ -299,9 +298,9 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 3.  Если вам не удается создать пространство имен ретранслятора шины обслуживания, убедитесь, в подписке зарегистрирован требуемый поставщик ресурсов. Если он не зарегистрирован, создайте пространство имен ретранслятора служебной шины на портале Azure вручную. Его также можно создать на портале Azure во время создания [гибридного подключения](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).
 
 
-## <a name="contact-us"></a>Связаться с нами
+## <a name="contact-us"></a>Свяжитесь с нами
 
-Свяжитесь с нами по адресу [omsitsmfeedback@microsoft.com](mailto:omsitsmfeedback@microsoft.com), чтобы оставить отзывы или запросы касательно соединителя управления ИТ-службами.
+Для получения любых запросов или отзывов о Соединитель управления ИТ-услугами свяжитесь с нами по [omsitsmfeedback@microsoft.com](mailto:omsitsmfeedback@microsoft.com)адресу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами (предварительная версия)](../../azure-monitor/platform/itsmc-connections.md)

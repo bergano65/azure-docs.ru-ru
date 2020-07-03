@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 08/17/2018
-ms.openlocfilehash: c1b48ae8191e2e5313d9037c791eca73c8a55691
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 19a1883685193e80da5f1365ec2a30db0b8754f6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77191381"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81450148"
 ---
 # <a name="improve-security-for-b2b-messages-by-using-certificates"></a>Повышение безопасности сообщений B2B с помощью сертификатов
 
@@ -30,7 +30,7 @@ ms.locfileid: "77191381"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="upload-a-public-certificate"></a>Передача общего сертификата
+## <a name="upload-a-public-certificate"></a>Передача открытого сертификата
 
 Чтобы использовать *открытый сертификат* в приложениях логики с возможностями "бизнес-бизнес", необходимо сначала передать его в учетную запись интеграции. После определения свойств в создаваемых [соглашениях](logic-apps-enterprise-integration-agreements.md) сертификат можно будет использовать для защиты сообщений "бизнес-бизнес".
 
@@ -46,9 +46,9 @@ ms.locfileid: "77191381"
 
    | Свойство | Значение | Описание | 
    |----------|-------|-------------|
-   | **Название** | <*certificate-name*> | Имя сертификата, в этом примере — "publicCert" | 
+   | **имя**; | <*имя сертификата*> | Имя сертификата, в этом примере — "publicCert" | 
    | **Тип сертификата** | Открытый | Тип вашего сертификата |
-   | **Сертификат** | <*certificate-file-name*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. |
+   | **Сертификат** | <*имя файла сертификата*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. |
    ||||
 
    ![Щелкните "Добавить" и укажите данные сертификата](media/logic-apps-enterprise-integration-certificates/public-certificate-details.png)
@@ -66,7 +66,7 @@ ms.locfileid: "77191381"
 > [!NOTE]
 > Для частных сертификатов обязательно добавьте соответствующий открытый сертификат, который отображается в параметрах **отправки и получения** [соглашения AS2](logic-apps-enterprise-integration-as2.md) для подписи и шифрования сообщений.
 
-1. [Добавьте закрытый ключ в хранилище Azure Key Vault](../key-vault/certificate-scenarios.md#import-a-certificate) и укажите **имя ключа**.
+1. [Добавьте закрытый ключ в хранилище Azure Key Vault](../key-vault/certificates/certificate-scenarios.md#import-a-certificate) и укажите **имя ключа**.
    
 2. Авторизуйте Azure Logic Apps для выполнения операций в Azure Key Vault. Для предоставления доступа субъекту-службе Logic Apps используйте команду PowerShell [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy), например:
 
@@ -85,12 +85,12 @@ ms.locfileid: "77191381"
 
    | Свойство | Значение | Описание | 
    |----------|-------|-------------|
-   | **Название** | <*certificate-name*> | Имя сертификата, в этом примере — "privateCert" | 
+   | **имя**; | <*имя сертификата*> | Имя сертификата, в этом примере — "privateCert" | 
    | **Тип сертификата** | Private | Тип вашего сертификата |
-   | **Сертификат** | <*certificate-file-name*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. При использовании хранилища ключей для закрытого ключа отправленный файл будет общедоступным сертификатом. | 
-   | **Группа ресурсов** | <*integration-account-resource-group*> | Группа ресурсов учетной записи интеграции, в этом примере — "MyResourceGroup" | 
-   | **хранилище ключей;** | <*key-vault-name*> | Имя хранилища ключей Azure |
-   | **Имя ключа** | <*key-name*> | Имя ключа |
+   | **Сертификат** | <*имя файла сертификата*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. При использовании хранилища ключей для закрытого ключа отправленный файл будет общедоступным сертификатом. | 
+   | **Группа ресурсов** | <*Интеграция-учетная запись-ресурс-группа*> | Группа ресурсов учетной записи интеграции, в этом примере — "MyResourceGroup" | 
+   | **Хранилище ключей** | <*ключ-хранилище — имя*> | Имя хранилища ключей Azure |
+   | **Имя ключа** | <*имя ключа*> | Имя ключа |
    ||||
 
    ![Щелкните "Добавить" и укажите данные сертификата](media/logic-apps-enterprise-integration-certificates/private-certificate-details.png)
@@ -99,6 +99,6 @@ ms.locfileid: "77191381"
 
    ![Отображение нового сертификата в Azure](media/logic-apps-enterprise-integration-certificates/new-private-certificate.png) 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание соглашения "бизнес-бизнес"](logic-apps-enterprise-integration-agreements.md)

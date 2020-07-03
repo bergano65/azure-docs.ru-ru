@@ -1,25 +1,21 @@
 ---
 title: Просмотр журналов трассировки .NET в Application Insights
 description: Поиск журналов, созданных трассировкой, NLog или Log4Net.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/08/2019
-ms.openlocfilehash: 33dc415e06b7f49f75697abb05248750444fea7c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 273d5a2f4e1155541e159332312bdaa68aa175d7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432642"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79276274"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>Изучение журналов трассировки .NET и .NET Core и Python в Application Insights
 
 Отправка журналов трассировки диагностики для приложения ASP.NET/ASP.NET Core из ILogger, NLog, log4Net или System. Diagnostics. Trace в [Azure Application Insights][start]. Для приложений Python отправьте журналы трассировки диагностики с помощью Азурелогхандлер в Опенценсус Python для Azure Monitor. После этого можно просматривать и искать их. Эти журналы объединяются с другими файлами журналов из приложения, поэтому можно выявление трассировок, связанных с каждым запросом пользователя, и их сопоставление с другими событиями и отчетами об исключениях.
 
 > [!NOTE]
-> Нужен ли модуль записи журнала? Это полезный адаптер для средств ведения журнала сторонних поставщиков. Но если вы еще не используете NLog, log4Net или System. Diagnostics. Trace, попробуйте просто вызвать [**Application Insights TrackTrace ()** ](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace) напрямую.
+> Нужен ли модуль записи журнала? Это полезный адаптер для средств ведения журнала сторонних поставщиков. Но если вы еще не используете NLog, log4Net или System. Diagnostics. Trace, попробуйте просто вызвать [**Application Insights TrackTrace ()**](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace) напрямую.
 >
 >
 ## <a name="install-logging-on-your-app"></a>Установка ведения журнала в приложении
@@ -38,14 +34,14 @@ ms.locfileid: "75432642"
 ```
 
 ## <a name="configure-application-insights-to-collect-logs"></a>Настройка Application Insights для сбора журналов
-[Добавьте Application Insights в проект](../../azure-monitor/app/asp-net.md) , если вы еще этого не сделали. Вы увидите параметр для включения сборщика журналов.
+[Добавьте Application Insights в свой проект](../../azure-monitor/app/asp-net.md), если вы еще этого не сделали. Вы увидите параметр для включения сборщика журналов.
 
 Или щелкните правой кнопкой мыши проект в обозреватель решений, чтобы **настроить Application Insights**. Выберите параметр **Настройка сбора трассировки** .
 
 > [!NOTE]
-> Нет Application Insights меню или сборщика журналов? Попробуйте выполнить [Устранение неполадок](#troubleshooting).
+> Вы не видите меню Application Insights или параметр для включения сборщика журналов? Попробуйте выполнить [Устранение неполадок](#troubleshooting).
 
-## <a name="manual-installation"></a>Ручная установка
+## <a name="manual-installation"></a>Установка вручную
 Используйте этот метод, если ваш тип проекта не поддерживается программой установки Application Insights (например, если у вас проект настольного приложения Windows).
 
 1. Если вы планируете использовать log4Net или NLog, установите его в свой проект.
@@ -57,7 +53,7 @@ ms.locfileid: "75432642"
 [![NuGet](https://img.shields.io/nuget/vpre/Microsoft.Extensions.Logging.ApplicationInsights.svg)](https://www.nuget.org/packages/Microsoft.Extensions.Logging.ApplicationInsights/)
    - Для NLog: [Microsoft. ApplicationInsights. нлогтаржет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.NLogTarget/)
 [![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.NLogTarget.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.NLogTarget/)
-   - Для Log4Net: [Microsoft. ApplicationInsights. Log4NetAppender](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/)
+   - Для log4net: [Microsoft. ApplicationInsights. Log4NetAppender](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/)
 [![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.Log4NetAppender.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Log4NetAppender/)
    - Для System. Diagnostics: [Microsoft. ApplicationInsights. TraceListener](https://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener/)
 [![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.TraceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.TraceListener/)
@@ -65,8 +61,8 @@ ms.locfileid: "75432642"
 [![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.DiagnosticSourceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener/)
    - [Microsoft. ApplicationInsights. етвколлектор](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector/)
 [![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.EtwCollector.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector/)
-   - [Microsoft.ApplicationInsights.EventSourceListener](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/)
-[![Nuget](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.EventSourceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/)
+   - [Microsoft. ApplicationInsights. евентсаурцелистенер](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/)
+[![NuGet](https://img.shields.io/nuget/vpre/Microsoft.ApplicationInsights.EventSourceListener.svg)](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener/)
 
 Пакет NuGet устанавливает необходимые сборки и изменяет файл Web. config или App. config, если это применимо.
 
@@ -100,7 +96,7 @@ ms.locfileid: "75432642"
  * **Ключевые слова** (необязательно) укажите целочисленное значение сочетаний ключевых слов для использования.
 
 ## <a name="use-diagnosticsource-events"></a>Использование событий DiagnosticSource
-Можно настроить отправку событий [System.Diagnostics.DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md) в Application Insights в виде трассировок. Сначала установите пакет NuGet [`Microsoft.ApplicationInsights.DiagnosticSourceListener`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener). Затем измените раздел "Телеметримодулес" файла [ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) .
+Можно настроить отправку событий [System.Diagnostics.DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md) в Application Insights в виде трассировок. Сначала установите пакет [`Microsoft.ApplicationInsights.DiagnosticSourceListener`](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DiagnosticSourceListener) NuGet. Затем измените раздел "Телеметримодулес" файла [ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) .
 
 ```xml
     <Add Type="Microsoft.ApplicationInsights.DiagnosticSourceListener.DiagnosticSourceTelemetryModule, Microsoft.ApplicationInsights.DiagnosticSourceListener">
@@ -135,14 +131,14 @@ ms.locfileid: "75432642"
 ## <a name="use-the-trace-api-directly"></a>Использование API трассировки напрямую
 API трассировки в Application Insights можно вызывать напрямую. Адаптеры ведения журналов используют этот API.
 
-Пример.
+Пример:
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow response - database01");
 
-Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.
+Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных,  например данных POST.
 
-Можно также добавить уровень серьезности к сообщению. И, как и другие данные телеметрии, можно добавить значения свойств, чтобы помочь фильтровать или искать различные наборы трассировок. Пример.
+Можно также добавить уровень серьезности к сообщению. И, как и другие данные телеметрии, можно добавить значения свойств, чтобы помочь фильтровать или искать различные наборы трассировок. Пример:
 
     var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
     telemetry.TrackTrace("Slow database response",
@@ -184,34 +180,34 @@ logger.warning('Hello, World!')
 >Если приложение отправляет большой объем данных и вы используете Application Insights пакет SDK для ASP.NET версии 2.0.0-beta3 или более поздней, функция *адаптивной выборки* может выполнять работу и отправлять только часть вашей телеметрии. [Дополнительная информация о выборке.](../../azure-monitor/app/sampling.md)
 >
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 ### <a name="how-do-i-do-this-for-java"></a>Как это сделать в Java?
 Используйте [адаптеры журналов Java](../../azure-monitor/app/java-trace-logs.md).
 
-### <a name="theres-no-application-insights-option-on-the-project-context-menu"></a>В контекстном меню проекта нет пункта для Application Insights
-* Убедитесь, что на компьютере разработки установлен Developer Analytics Tools. В Visual Studio **tools** > **Extensions and Updates**(поиск **Developer Analytics Tools**). Если она отсутствует на вкладке **установлен** , откройте вкладку в **сети** и установите ее.
+### <a name="theres-no-application-insights-option-on-the-project-context-menu"></a>В контекстном меню проекта нет пункта для Application Insights 
+* Убедитесь, что на компьютере разработки установлен Developer Analytics Tools. На странице**расширения и обновления** **инструментов** > Visual Studio найдите **Developer Analytics Tools**. Если она отсутствует на вкладке **установлен** , откройте вкладку в **сети** и установите ее.
 * Это может быть тип проекта, который не поддерживает средства аналитики Девлопер. Используйте [установку вручную](#manual-installation).
 
 ### <a name="theres-no-log-adapter-option-in-the-configuration-tool"></a>В средстве настройки отсутствует параметр "адаптер журнала"
 * Сначала установите платформу ведения журнала.
 * Если вы используете System. Diagnostics. Trace, убедитесь, что он [настроен в *файле Web. config*](https://msdn.microsoft.com/library/system.diagnostics.eventlogtracelistener.aspx).
-* Убедитесь, что у вас установлена последняя версия Application Insights. В Visual Studio последовательно выберите **сервис** > **расширения и обновления**, а затем откройте вкладку **обновления** . Если **Developer Analytics Tools** , выберите его, чтобы обновить.
+* Убедитесь, что у вас установлена последняя версия Application Insights. В Visual Studio последовательно выберите **инструменты** > **расширения и обновления**и откройте вкладку **обновления** . Если **Developer Analytics Tools** , выберите его, чтобы обновить.
 
-### <a name="emptykey"></a>Я получаю сообщение об ошибке "ключ инструментирования не может быть пустым"
+### <a name="i-get-the-instrumentation-key-cannot-be-empty-error-message"></a><a name="emptykey"></a>Я получаю сообщение об ошибке "ключ инструментирования не может быть пустым"
 Возможно, вы установили пакет NuGet для адаптера ведения журнала без установки Application Insights. В обозреватель решений щелкните правой кнопкой мыши *файл ApplicationInsights. config*и выберите **Update Application Insights (обновить**). Вам будет предложено войти в Azure и создать Application Insights ресурс или повторно использовать существующий. Это устранит проблему.
 
 ### <a name="i-can-see-traces-but-not-other-events-in-diagnostic-search"></a>Я могу видеть трассировки, но не другие события в поиске по журналу диагностики
 Получение всех событий и запросов через конвейер может занять некоторое время.
 
-### <a name="limits"></a>Какой объем данных сохраняется?
+### <a name="how-much-data-is-retained"></a><a name="limits"></a>Какой объем данных сохраняется?
 На объем хранящихся данных влияют несколько факторов. Дополнительные сведения см. в разделе [ограничения](../../azure-monitor/app/api-custom-events-metrics.md#limits) страницы метрики событий клиента.
 
 ### <a name="i-dont-see-some-log-entries-that-i-expected"></a>Я не вижу некоторые ожидаемые записи журнала
 Если приложение отправляет волуминаус объемы данных и вы используете пакет SDK Application Insights для ASP.NET версии 2.0.0-beta3 или более поздней, функция адаптивной выборки может выполнять работу и отправлять только часть телеметрии. [Дополнительная информация о выборке.](../../azure-monitor/app/sampling.md)
 
-## <a name="add"></a>Следующие шаги
+## <a name="next-steps"></a><a name="add"></a>Следующие шаги
 
-* [Диагностика сбоев и исключений в ASP.NET][exceptions]
+* [Диагностика ошибок и исключений в ASP.NET][exceptions]
 * [Дополнительные сведения о поиске][diagnostic]
 * [Наблюдение за доступностью и скоростью реагирования веб-сайта][availability]
 * [Устранение неполадок][qna]

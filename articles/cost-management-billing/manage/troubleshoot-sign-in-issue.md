@@ -1,24 +1,20 @@
 ---
 title: Устранение проблем со входом для подписки Azure
 description: Эта статья поможет вам устранить проблемы со входом на портал Azure или в Центр управления учетной записью Azure.
-services: azure
+services: cost-management-billing
 author: v-miegge
 manager: dcscontentpm
-editor: na
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
-ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 08/12/2019
+ms.topic: conceptual
+ms.date: 02/12/2020
 ms.author: v-miegge
-ms.openlocfilehash: 74cf3f197895823bcbd94db0bf3c7bd8065df767
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 08f278d56e742659ebe197695fae8dfa35383b17
+ms.sourcegitcommit: d791f8f3261f7019220dd4c2dbd3e9b5a5f0ceaf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75988140"
+ms.lasthandoff: 04/18/2020
+ms.locfileid: "81639204"
 ---
 # <a name="troubleshoot-azure-subscription-sign-in-issues"></a>Устранение проблем со входом для подписки Azure
 
@@ -46,7 +42,7 @@ ms.locfileid: "75988140"
 
 ### <a name="i-can-sign-in-but-i-see-no-subscriptions-found"></a>Я могу войти, но вижу сообщение *Подписки не найдены*
 
-Эта проблема возникает, если вы выбрали неправильный каталог или учетная запись не предоставляет необходимых разрешений.
+Эта проблема возникает, если вы выбрали неправильный каталог или у учетной записи нет необходимых разрешений.
 
 **Сценарий 1.** Сообщение об ошибке получено на [портале Azure](https://portal.azure.com/)
 

@@ -4,16 +4,16 @@ description: В этой статье рассказывается о том, к
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.openlocfilehash: a3c92e1b39261af32085e4d9b6cb2462d5c0eb64
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75458348"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Добавление и удаление сертификатов для кластера Service Fabric в Azure
 Рекомендуется ознакомиться с тем, как Service Fabric использует сертификаты X.509, и просмотреть раздел [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md). Необходимо понять, что такое сертификат кластера и для чего он используется, прежде чем продолжить.
 
-Пакет SDK для структуры служб Azure по умолчанию использует заданный сертификат с датой истечения срока действия в будущем; независимо от их первичного или вторичного определения конфигурации. Возврат к классическому поведению является нерекомендуемым расширенным действием и требует установки значения false для параметра "Усесекондарифневер" в конфигурации `Fabric.Code`.
+Пакет SDK для структуры служб Azure по умолчанию использует заданный сертификат с датой истечения срока действия в будущем; независимо от их первичного или вторичного определения конфигурации. Возврат к классическому поведению является нерекомендуемым расширенным действием и требует установки значения false для параметра "Усесекондарифневер" в `Fabric.Code` конфигурации.
 
 Service Fabric позволяет указать в дополнение к сертификатам клиента два сертификата кластера, основной и дополнительный. Сделать это можно при настройке сертификата безопасности во время создания кластера. Чтобы узнать больше об их настройке во время создания, ознакомьтесь с процедурой [создания кластера Azure с помощью портала](service-fabric-cluster-creation-via-portal.md) или [создания кластера Azure с помощью Azure Resource Manager](service-fabric-cluster-creation-via-arm.md). Если во время создания указан только один сертификат кластера, то он используется в качестве основного сертификата. После создания кластера можно добавить новый сертификат в качестве дополнительного.
 
@@ -42,13 +42,13 @@ Service Fabric позволяет указать в дополнение к се
 В этих инструкциях предполагается, что у вас есть опыт работы с Resource Manager, вы развернули хотя бы один кластер Service Fabric с помощью шаблона Resource Manager и у вас есть шаблон, который использовался для настройки этого кластера. Предполагается также, что вы уверенно используете JSON.
 
 > [!NOTE]
-> Если вам нужен пример шаблона и параметров, которые можно использовать в качестве образца или отправной точки, скачайте его из этого репозитория [git-repo](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Cert-Rollover-Sample). 
+> Если вы ищете пример шаблона и параметры, которые можно использовать для отслеживания или в качестве отправной точки, скачайте его из этого [репозитория Git](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Cert-Rollover-Sample). 
 > 
 > 
 
 ### <a name="edit-your-resource-manager-template"></a>Изменение шаблона Resource Manager
 
-Для удобства выполнения инструкций пример 5-VM-1-NodeTypes-Secure_Step2.JSON содержит все изменения, которые мы будем вносить. Этот пример доступен в репозитории [git-repo](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Cert-Rollover-Sample).
+Для удобства выполнения инструкций пример 5-VM-1-NodeTypes-Secure_Step2.JSON содержит все изменения, которые мы будем вносить. образец доступен в [репозитории Git-](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Cert-Rollover-Sample)Repository.
 
 **Обязательные шаги**
 
@@ -106,7 +106,7 @@ Service Fabric позволяет указать в дополнение к се
          }
     ``` 
 
-4. Внесите изменения во **все** определения ресурсов **Microsoft.Compute/virtualMachineScaleSets**. Для этого найдите определение ресурса Microsoft.Compute/virtualMachineScaleSets. Перейдите к подразделу "publisher": "Microsoft.Azure.ServiceFabric" в разделе "virtualMachineProfile".
+4. Внесите изменения во **все** определения ресурсов **Microsoft. COMPUTE/virtualMachineScaleSets** — выделите определение ресурса Microsoft. COMPUTE/virtualMachineScaleSets. Перейдите к подразделу "publisher": "Microsoft.Azure.ServiceFabric" в разделе "virtualMachineProfile".
 
     В списке параметров издателя Service Fabric должно отображаться примерно следующее.
     
@@ -281,7 +281,7 @@ Get-ServiceFabricClusterHealth
 
 Сведения о развертывании сертификата, используемого для приложений в кластере, см. в [этом образце сценария PowerShell](scripts/service-fabric-powershell-add-application-certificate.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об управлении кластерами доступны в следующих статьях.
 
 * [Обновление кластера Service Fabric](service-fabric-cluster-upgrade.md)

@@ -2,22 +2,19 @@
 title: Просмотр налоговых документов для счета Azure
 description: Из этой статьи вы узнаете, как просматривать и скачивать налоговые квитанции своего профиля выставления счетов.
 author: bandersmsft
-manager: amberb
+ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 4c578b4eec8aa66681ba2dfa5154836999676611
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: dacae693020fea2f77a80b5b8bad44a07e471367
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77134999"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79237927"
 ---
 # <a name="view-and-download-tax-documents-for-your-azure-invoice"></a>Просмотр и скачивание налоговых документов для счета Azure
 

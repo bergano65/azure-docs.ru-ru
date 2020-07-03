@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: event-grid
 author: tfitzmac
 ms.service: event-grid
@@ -9,10 +9,10 @@ ms.date: 11/06/2018
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: d32beb2d799a60cb9c5be061c39e4ec834da8dcf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "66814722"
 ---
 Эта функция предоставляется в предварительной версии. Для этого нужно установить расширение предварительной версии или модуль.
@@ -28,9 +28,9 @@ ms.locfileid: "66814722"
 
 При локальной установке:
 
-1. [Установка Azure CLI](/cli/azure/install-azure-cli). Убедитесь, что у вас есть последняя версия, путем проверки с `az --version`.
+1. [Установите Azure CLI](/cli/azure/install-azure-cli). Убедитесь, что у вас установлена последняя версия, путем проверки `az --version`.
 1. Удалите предыдущие версии расширения `az extension remove -n eventgrid`.
-1. Установка `eventgrid` расширения с помощью `az extension add -n eventgrid`
+1. Установите `eventgrid` расширение с помощью`az extension add -n eventgrid`
 
 ### <a name="install-module-for-powershell"></a>Установка модуля для PowerShell
 

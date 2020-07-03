@@ -3,18 +3,18 @@ title: Дочерние ресурсы в шаблонах
 description: Описывает, как задать имя и тип для дочерних ресурсов в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 6de2b476fe19a057a62e4a54963dd8fde0d11579
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 3a69829e674925982c618807f49433a033d8c5f9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207899"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80743834"
 ---
 # <a name="set-name-and-type-for-child-resources"></a>Задать имя и тип для дочерних ресурсов
 
 Дочерние ресурсы — это ресурсы, которые существуют только в контексте другого ресурса. Например, [расширение виртуальной машины](/azure/templates/microsoft.compute/2019-03-01/virtualmachines/extensions) не может существовать без [виртуальной машины](/azure/templates/microsoft.compute/2019-03-01/virtualmachines). Ресурс расширения является дочерним для виртуальной машины.
 
-В шаблоне диспетчера ресурсов можно указать дочерний ресурс либо в родительском ресурсе, либо вне родительского ресурса. В следующем примере показан дочерний ресурс, входящий в свойство Resources родительского ресурса.
+В шаблоне диспетчер ресурсов можно указать дочерний ресурс либо в родительском ресурсе, либо вне родительского ресурса. В следующем примере показан дочерний ресурс, входящий в свойство Resources родительского ресурса.
 
 ```json
 "resources": [
@@ -130,7 +130,7 @@ ms.locfileid: "77207899"
 ]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](template-syntax.md).
 

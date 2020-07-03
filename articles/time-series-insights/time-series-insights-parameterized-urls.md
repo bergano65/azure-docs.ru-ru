@@ -8,14 +8,14 @@ ms.author: dpalled
 manager: cshankar
 ms.topic: conceptual
 ms.workload: big-data
-ms.date: 02/04/2020
+ms.date: 04/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9dfe499a7d6084a23fd71ab98db472befe71fc04
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 10616c8003d9bbbe42cb70bd1bac4193044907c0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024370"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81416992"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
@@ -29,7 +29,7 @@ ms.locfileid: "77024370"
 
 ## <a name="environment-id"></a>Идентификатор среды
 
-Параметр `environmentId=<guid>` указывает идентификатор целевой среды. Это компонент полного доменного имени для доступа к данным, и его можно найти в правом верхнем углу окна "Общие сведения о среде" в портал Azure. Это все символы, которые предшествуют `env.timeseries.azure.com`.
+Параметр `environmentId=<guid>` указывает идентификатор целевой среды. Это компонент полного доменного имени для доступа к данным, и его можно найти в правом верхнем углу окна "Общие сведения о среде" в портал Azure. Это все, что предшествует `env.timeseries.azure.com`.
 
 Пример параметра идентификатора среды: `?environmentId=10000000-0000-0000-0000-100000000108`.
 
@@ -55,20 +55,20 @@ ms.locfileid: "77024370"
 
 Допустимые значения соответствуют меню **быстрого времени** обозревателя "аналитика временных рядов" и включают:
 
-* `1800000` (последние 30 минут)
-* `3600000` (последние 60 мин)
-* `10800000` (последние 3 часа)
-* `21600000` (последние 6 часов)
-* `43200000` (последние 12 часов)
-* `86400000` (за последние 24 часа)
-* `604800000` (за последние 7 дней)
-* `2592000000` (последние 30 часов)
+* `1800000`(Последние 30 минут)
+* `3600000`(Последние 60 мин.)
+* `10800000`(Последние 3 часа)
+* `21600000`(Последние 6 часов)
+* `43200000`(Последние 12 часов)
+* `86400000`(Последние 24 часа)
+* `604800000`(За последние 7 дней)
+* `2592000000`(Последние 30 часов)
 
 ### <a name="optional-parameters"></a>Необязательные параметры
 
-Параметр `timeSeriesDefinitions=<collection of term objects>` задает термины предиката, которые будут отображаться в представлении "аналитика временных рядов":
+`timeSeriesDefinitions=<collection of term objects>` Параметр задает термины предиката, которые будут отображаться в представлении Time Series Insights:
 
-| Параметр | Элемент URL-адреса | Description |
+| Параметр | Элемент URL-адреса | Описание |
 | --- | --- | --- |
 | **name** | `\<string>` | имя *условия*; |
 | **сплитби** | `\<string>` | имя столбца, по которому выполняется *разбиение*; |
@@ -78,18 +78,18 @@ ms.locfileid: "77024370"
 
 > [!NOTE]
 > Если `Events` выбрана мера **усесум** , то счетчик будет выбран по умолчанию.  
-> Если `Events` не выбран, по умолчанию выбирается Average. |
+> Если `Events` параметр не выбран, по умолчанию выбирается Average. |
 
-* `multiChartStack=<true/false>` пара "ключ-значение" позволяет включать в диаграмму стек.
-* `multiChartSameScale=<true/false>` пара "ключ-значение" обеспечивает одинаковую шкалу по оси Y в пределах необязательного параметра.  
-* `timeBucketUnit=<Unit>&timeBucketSize=<integer>` позволяет настроить ползунок интервала, чтобы обеспечить более детализированное или более гладкое, более обобщенное представление диаграммы.  
-* Параметр `timezoneOffset=<integer>` позволяет задать часовой пояс для просматриваемой диаграммы в качестве смещения в формате UTC.
+* Пара `multiChartStack=<true/false>` "ключ-значение" позволяет включить в диаграмму стек.
+* Пара `multiChartSameScale=<true/false>` "ключ-значение" обеспечивает одинаковую шкалу по оси Y для разных терминов в пределах необязательного параметра.  
+* `timeBucketUnit=<Unit>&timeBucketSize=<integer>` Позволяет настроить ползунок интервала, чтобы обеспечить более детализированное или более гладкое, более обобщенное представление диаграммы.  
+* `timezoneOffset=<integer>` Параметр позволяет задать часовой пояс для просматриваемой диаграммы в качестве смещения в формате UTC.
 
-| Пары | Description |
+| Пары | Описание |
 | --- | --- |
-| `multiChartStack=false` | `true` включен по умолчанию, поэтому передайте `false` в стек. |
-| `multiChartStack=false&multiChartSameScale=true` | Чтобы использовать одну и ту же шкалу оси Y для разных условий, должно быть включено наложение.  Это `false` по умолчанию, поэтому передача `true` включает эту функцию. |
-| `timeBucketUnit=<Unit>&timeBucketSize=<integer>` | Units = `days`, `hours`, `minutes`, `seconds`, `milliseconds`.  Единицы всегда следует писать прописными буквами. </br> Определите количество единиц, передав нужное целое число для **timeBucketSize**.  |
+| `multiChartStack=false` | `true`параметр включен по умолчанию, `false` поэтому он передается в стек. |
+| `multiChartStack=false&multiChartSameScale=true` | Чтобы использовать одну и ту же шкалу оси Y для разных условий, должно быть включено наложение.  `false` Это по умолчанию, поэтому передача `true` включает эту функцию. |
+| `timeBucketUnit=<Unit>&timeBucketSize=<integer>` | Единицы измерения `days`= `hours`, `minutes`, `seconds`, `milliseconds`,.  Единицы всегда следует писать прописными буквами. </br> Определите количество единиц, передав нужное целое число для **timeBucketSize**.  |
 | `timezoneOffset=-<integer>` | Значение целого числа всегда указывается в миллисекундах. |
 
 > [!NOTE]
@@ -117,7 +117,7 @@ ms.locfileid: "77024370"
 https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0000-100000000108&relativeMillis=3600000&timeSeriesDefinitions=[{"name":"F1PressureId","splitBy":"Id","measureName":"Pressure","predicate":"'Factory1'"},{"name":"F2TempStation","splitBy":"Station","measureName":"Temperature","predicate":"'Factory2'"},{"name":"F3VibrationPL","splitBy":"ProductionLine","measureName":"Vibration","predicate":"'Factory3'"}]
 ```
 
-[параметризованный URL-адрес обозревателя аналитики временных рядов ![](media/parameterized-url/share-parameterized-url.png)](media/parameterized-url/share-parameterized-url.png#lightbox)
+[![Параметризованный URL-адрес обозревателя аналитики временных рядов](media/parameterized-url/share-parameterized-url.png)](media/parameterized-url/share-parameterized-url.png#lightbox)
 
 > [!TIP]
 > См. Обозреватель в режиме реального времени, используя приведенный выше пример [URL-адреса](https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0000-100000000108&relativeMillis=3600000&timeSeriesDefinitions=[{"name":"F1PressureId","splitBy":"Id","measureName":"Pressure","predicate":"'Factory1'"},{"name":"F2TempStation","splitBy":"Station","measureName":"Temperature","predicate":"'Factory2'"},{"name":"F3VibrationPL","splitBy":"ProductionLine","measureName":"Vibration","predicate":"'Factory3'"}]) .
@@ -126,14 +126,14 @@ https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0
 
 * Параметризованные предикаты.
 
-  [![в обозревателе "аналитика временных рядов" параметризованные предикаты.](media/parameterized-url/share-parameterized-url-predicates.png)](media/parameterized-url/share-parameterized-url-predicates.png#lightbox)
+  [![В обозревателе "аналитика временных рядов" параметризованные предикаты.](media/parameterized-url/share-parameterized-url-predicates.png)](media/parameterized-url/share-parameterized-url-predicates.png#lightbox)
 
 * Общее полное представление диаграммы.
 
-  [![представление общего полного представления диаграммы.](media/parameterized-url/share-parameterized-url-full-chart.png)](media/parameterized-url/share-parameterized-url-full-chart.png#lightbox)
+  [![Общее полное представление диаграммы.](media/parameterized-url/share-parameterized-url-full-chart.png)](media/parameterized-url/share-parameterized-url-full-chart.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Узнайте, как [запрашивать данные C#с помощью ](time-series-insights-query-data-csharp.md).
+* Узнайте, как [запрашивать данные с помощью C#](time-series-insights-query-data-csharp.md).
 
 * Сведения о [обозревателе "аналитика временных рядов](./time-series-insights-explorer.md)".

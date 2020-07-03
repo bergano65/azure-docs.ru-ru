@@ -1,19 +1,18 @@
 ---
 title: Поддержка Портал Cloud Partner | Azure Marketplace
 description: Получите поддержку на портале Cloud Partner.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/17/2018
-ms.author: pabutler
-ms.openlocfilehash: 30fc0ea4a8baba4f0677c9cceb12a7887d205f21
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: d27482fbec91700f24e5d0f25d4796ab24f1a9e5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827673"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80276178"
 ---
 # <a name="get-support-for-cloud-partner-portal"></a>Получение поддержки на портале Cloud Partner
 

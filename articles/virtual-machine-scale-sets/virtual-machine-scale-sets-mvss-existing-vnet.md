@@ -1,19 +1,20 @@
 ---
 title: Ссылка на существующую виртуальную сеть в шаблоне масштабируемого набора Azure
 description: Узнайте, как добавить виртуальную сеть в существующий шаблон масштабируемого набора виртуальных машин Azure.
-author: mayanknayar
-tags: azure-resource-manager
-ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
+ms.subservice: networking
 ms.date: 04/26/2019
-ms.author: manayar
-ms.openlocfilehash: e725e75b8b19fd8b3295226639b5e5aeb3736e34
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: fab6e6742fa43e1e38ee661b67896ae4aa11b3ed
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76275534"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124828"
 ---
 # <a name="add-reference-to-an-existing-virtual-network-in-an-azure-scale-set-template"></a>Добавление ссылки на существующую виртуальную сеть в шаблон масштабируемого набора Azure
 
@@ -23,7 +24,7 @@ ms.locfileid: "76275534"
 
 В [предыдущей статье](virtual-machine-scale-sets-mvss-start.md) мы создали шаблон базового масштабируемого набора. Теперь мы будем использовать этот шаблон и изменим его, чтобы создать шаблон, который развертывает масштабируемый набор в существующей виртуальной сети. 
 
-Сначала добавьте параметр `subnetId`. Эта строка будет передана в конфигурацию масштабируемого набора, благодаря чему он сможет идентифицировать предварительно созданную подсеть для развертывания виртуальных машин. Эта строка должна иметь следующий вид: `/subscriptions/<subscription-id>resourceGroups/<resource-group-name>/providers/Microsoft.Network/virtualNetworks/<virtual-network-name>/subnets/<subnet-name>`
+Сначала добавьте параметр `subnetId`. Эта строка будет передана в конфигурацию масштабируемого набора, благодаря чему он сможет идентифицировать предварительно созданную подсеть для развертывания виртуальных машин. Эта строка должна иметь следующий вид:`/subscriptions/<subscription-id>resourceGroups/<resource-group-name>/providers/Microsoft.Network/virtualNetworks/<virtual-network-name>/subnets/<subnet-name>`
 
 Например, чтобы развернуть масштабируемый набор в существующей виртуальной сети с именем `myvnet`, подсети `mysubnet`, группе ресурсов `myrg` и подписке `00000000-0000-0000-0000-000000000000`, идентификатор подсети должен быть таким: `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myrg/providers/Microsoft.Network/virtualNetworks/myvnet/subnets/mysubnet`.
 
@@ -82,7 +83,7 @@ ms.locfileid: "76275534"
          "capacity": 2
 ```
 
-Наконец, передайте параметр `subnetId`, заданный пользователем (вместо того, чтобы использовать `resourceId` для получения идентификатора виртуальной сети в том же развертывании, что делает шаблон базового приемлемого масштабируемого набора).
+Наконец, передайте `subnetId` параметр, заданный пользователем (вместо использования `resourceId` для получения идентификатора виртуальной сети в том же развертывании, что делает шаблон базового приемлемого масштабируемого набора).
 
 ```diff
                        "name": "myIpConfig",

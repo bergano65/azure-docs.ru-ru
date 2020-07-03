@@ -1,25 +1,17 @@
 ---
 title: Скачивание виртуального жесткого диска Linux из Azure
 description: Скачайте виртуальный жесткий диск Linux с помощью Azure CLI и портала Azure.
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-windows
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
+ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 08/21/2019
 ms.author: cynthn
-ms.openlocfilehash: 257f3f723fc8a971b8253699f4beb002cf46ce52
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 02c3ee483e6a31960fd5123070a49f568ac4c690
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036292"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78968798"
 ---
 # <a name="download-a-linux-vhd-from-azure"></a>Скачивание виртуального жесткого диска Linux из Azure
 
@@ -57,7 +49,7 @@ VHD невозможно скачать из Azure, если он подключ
 Для использования VHD в качестве диска для нового экземпляра существующей виртуальной машины или диска данных выполните следующие действия:
 
 1.  Войдите на [портал Azure](https://portal.azure.com/).
-2.  В меню слева выберите **Виртуальные машины**.
+2.  В меню слева выберите **виртуальные машины**.
 3.  Выберите виртуальную машину из списка.
 4.  На странице виртуальной машины выберите пункт **прерывать**.
 
@@ -65,25 +57,25 @@ VHD невозможно скачать из Azure, если он подключ
 
 ## <a name="generate-sas-url"></a>Создание URL-адреса SAS
 
-Чтобы скачать VHD-файл, необходимо создать [подписанный URL-адрес (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Когда этот URL-адрес создан, ему назначается срок действия.
+Чтобы скачать VHD-файл, необходимо создать URL для [подписи общего доступа (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) . Когда этот URL-адрес создан, ему назначается срок действия.
 
 1.  В меню страницы виртуальной машины выберите **диски**.
-2.  Выберите диск операционной системы для виртуальной машины, а затем щелкните **Экспорт диска**.
-3.  Выберите **создать URL-адрес**.
+2.  Выберите диск операционной системы для виртуальной машины и щелкните **Экспорт диска**.
+3.  Щелкните **Создать URL-адрес**.
 
     ![Создание URL-адреса](./media/download-vhd/export-generate.png)
 
 ## <a name="download-vhd"></a>Скачивание VHD
 
-1.  В разделе с созданным URL-адресом выберите **скачать файл виртуального жесткого диска**.
+1.  Под созданным URL-адресом щелкните ссылку **Скачать VHD-файл**.
 **
-    ![скачать VHD](./media/download-vhd/export-download.png)
+    ![Скачать виртуальный жесткий диск](./media/download-vhd/export-download.png)
 
 2.  Чтобы начать загрузку, может потребоваться выбрать **сохранить** в браузере. По умолчанию VHD-файлу присваивается имя *abcd*.
 
     ![Выберите сохранить в браузере.](./media/download-vhd/export-save.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [передать пользовательский диск и создать на его основе виртуальную машину Linux с помощью Azure CLI](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). 
 - [Управление дисками Azure с помощью Azure CLI](tutorial-manage-disks.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

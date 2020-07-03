@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: dbda73e022ebaad283641ce2f54a5962aeb4cb60
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 91a1b6cc877b31fbcef638e34d3147d3377ce85c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436829"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79476123"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-cli"></a>Создание и изменение пиринга для канала ExpressRoute с помощью интерфейса командной строки
 
@@ -39,7 +39,7 @@ ms.locfileid: "75436829"
 
 Вы можете настроить частный пиринг и пиринг Майкрософт для канала ExpressRoute (общедоступный пиринг Azure является устаревшим для новых каналов). Пиринг можно настроить в любом порядке. главное, выполнять их конфигурацию по очереди. Дополнительную информацию о доменах маршрутизации и пиринге см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md). Сведения об общедоступном пиринга см. в статье [общедоступный пиринг ExpressRoute](about-public-peering.md).
 
-## <a name="msft"></a>Пиринг Майкрософт
+## <a name="microsoft-peering"></a><a name="msft"></a>Пиринг Майкрософт
 
 Этот раздел поможет создать, получить, обновить и (или) удалить конфигурацию пиринга Майкрософт для канала ExpressRoute.
 
@@ -50,28 +50,28 @@ ms.locfileid: "75436829"
 
 ### <a name="to-create-microsoft-peering"></a>Создание пиринга Майкрософт
 
-1. Установите последнюю версию Azure CLI. Используйте последнюю версию интерфейса командной строки (CLI) Azure.* Прежде чем начинать настройку, изучите [предварительные условия](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md).
+1. Установите последнюю версию Azure CLI. Используйте последнюю версию интерфейса командной строки Azure (CLI). Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
 
-   ```azurecli-interactive
+   ```azurecli
    az login
    ```
 
    Выберите подписку, для которой будете создавать канал ExpressRoute.
 
-   ```azurecli-interactive
+   ```azurecli
    az account set --subscription "<subscription ID>"
    ```
 2. Создайте канал ExpressRoute. Выполните инструкции по созданию [канала ExpressRoute](howto-circuit-cli.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения оказывает услуги третьего уровня, он может включить для вас пиринг Майкрософт. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не берет на себя управление маршрутизацией, выполните приведенные ниже инструкции для настройки конфигурации после создания канала. 
 
 3. Убедитесь, что канал ExpressRoute подготовлен и включен. Используйте следующий пример:
 
-   ```azurecli-interactive
+   ```azurecli
    az network express-route list
    ```
 
    Ответ будет выглядеть примерно так:
 
-   ```azurecli
+   ```output
    "allowClassicOperations": false,
    "authorizations": [],
    "circuitProvisioningState": "Enabled",
@@ -113,27 +113,27 @@ ms.locfileid: "75436829"
 
    Чтобы настроить пиринг Майкрософт для своего канала, выполните следующий пример кода:
 
-   ```azurecli-interactive
+   ```azurecli
    az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 123.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 123.0.0.4/30 --vlan-id 300 --peering-type MicrosoftPeering --advertised-public-prefixes 123.1.0.0/24
    ```
 
-### <a name="getmsft"></a>Просмотр сведений о пиринге Майкрософт
+### <a name="to-view-microsoft-peering-details"></a><a name="getmsft"></a>Просмотр сведений о пиринге Майкрософт
 
 Для получения сведений о конфигурации можно использовать следующий пример кода:
 
-```azurecli-interactive
+```azurecli
 az network express-route peering show -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzureMicrosoftPeering
 ```
 > [!IMPORTANT]
 > Корпорация Майкрософт проверяет, назначены ли вам указанные "объявленные общедоступные префиксы" и "одноранговый ASN" (или "клиент ASN") в реестре Интернет-маршрутизации. Если вы получаете общедоступные префиксы из другой сущности и если назначение не записано в реестре маршрутизации, автоматическая проверка не будет завершена и потребуется проверка вручную. Если автоматическая проверка завершается неудачно, в выходных данных вышеуказанной команды будет отображаться "Адвертиседпубликпрефиксесстате" как "Проверка требуется". 
 > 
-> Если отображается сообщение "требуется проверка", собирайте документы, которые отображают открытые префиксы, для вашей организации назначается сущность, указанная в качестве владельца префиксов в реестре маршрутизации, и отправка этих документов для проверки вручную открыв запрос в службу поддержки, как показано ниже. 
+> Если вы видите сообщение "требуется проверка", собирайте документы, которые отображают открытые префиксы, в вашу организацию, используя сущность, указанную в качестве владельца префиксов в реестре маршрутизации, и отправьте эти документы для проверки вручную, открыв запрос в службу поддержки, как показано ниже. 
 > 
 >
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
 
-```azurecli
+```output
 {
   "azureAsn": 12076,
   "etag": "W/\"2e97be83-a684-4f29-bf3c-96191e270666\"",
@@ -165,29 +165,29 @@ az network express-route peering show -g ExpressRouteResourceGroup --circuit-nam
 }
 ```
 
-### <a name="updatemsft"></a>Обновление конфигурации пиринга Майкрософт
+### <a name="to-update-microsoft-peering-configuration"></a><a name="updatemsft"></a>Обновление конфигурации пиринга Майкрософт
 
 Вы можете обновить любую часть конфигурации. Следующий пример кода изменяет объявленные для канала префиксы с 123.1.0.0/24 на 124.1.0.0/24:
 
-```azurecli-interactive
+```azurecli
 az network express-route peering update --circuit-name MyCircuit -g ExpressRouteResourceGroup --peering-type MicrosoftPeering --advertised-public-prefixes 124.1.0.0/24
 ```
 
-### <a name="addIPv6msft"></a>Добавление параметров пиринга Майкрософт IPv6 к существующей конфигурации IPv4
+### <a name="to-add-ipv6-microsoft-peering-settings-to-an-existing-ipv4-configuration"></a><a name="addIPv6msft"></a>Добавление параметров пиринга Майкрософт IPv6 к существующей конфигурации IPv4
 
-```azurecli-interactive
+```azurecli
 az network express-route peering update -g ExpressRouteResourceGroup --circuit-name MyCircuit --peering-type MicrosoftPeering --ip-version ipv6 --primary-peer-subnet 2002:db00::/126 --secondary-peer-subnet 2003:db00::/126 --advertised-public-prefixes 2002:db00::/126
 ```
 
-### <a name="deletemsft"></a>Удаление пиринга Майкрософт
+### <a name="to-delete-microsoft-peering"></a><a name="deletemsft"></a>Удаление пиринга Майкрософт
 
 Для удаления конфигурации пиринга выполните следующий пример кода:
 
-```azurecli-interactive
+```azurecli
 az network express-route peering delete -g ExpressRouteResourceGroup --circuit-name MyCircuit --name MicrosoftPeering
 ```
 
-## <a name="private"></a>Частный пиринг Azure
+## <a name="azure-private-peering"></a><a name="private"></a>Частный пиринг Azure
 
 Этот раздел поможет вам создать, получить, обновить и (или) удалить конфигурацию частного пиринга Azure для канала ExpressRoute.
 
@@ -195,26 +195,26 @@ az network express-route peering delete -g ExpressRouteResourceGroup --circuit-n
 
 1. Установите последнюю версию Azure CLI. Используйте последнюю версию интерфейса командной строки (CLI) Azure.* Прежде чем начинать настройку, изучите [предварительные условия](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md).
 
-   ```azurecli-interactive
+   ```azurecli
    az login
    ```
 
    Выберите подписку, необходимую для создания канала ExpressRoute
 
-   ```azurecli-interactive
+   ```azurecli
    az account set --subscription "<subscription ID>"
    ```
 2. Создайте канал ExpressRoute. Выполните инструкции по созданию [канала ExpressRoute](howto-circuit-cli.md). Поставщик услуг подключения должен подготовить его. Если поставщик услуг подключения предоставляет управляемые службы уровня 3, он может включить для вас частный пиринг Azure. В этом случае инструкции в следующих разделах выполнять не нужно. Если же поставщик услуг подключения не берет на себя управление маршрутизацией, выполните приведенные ниже инструкции для настройки конфигурации после создания канала.
 
 3. Убедитесь, что канал ExpressRoute подготовлен и включен. Используйте следующий пример:
 
-   ```azurecli-interactive
+   ```azurecli
    az network express-route show --resource-group ExpressRouteResourceGroup --name MyCircuit
    ```
 
    Ответ будет выглядеть примерно так:
 
-   ```azurecli
+   ```output
    "allowClassicOperations": false,
    "authorizations": [],
    "circuitProvisioningState": "Enabled",
@@ -253,13 +253,13 @@ az network express-route peering delete -g ExpressRouteResourceGroup --circuit-n
 
    Чтобы настроить для канала частный пиринг Azure, выполните код из следующего примера:
 
-   ```azurecli-interactive
+   ```azurecli
    az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 10.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 10.0.0.4/30 --vlan-id 200 --peering-type AzurePrivatePeering
    ```
 
    Если вы решили использовать MD5-хэш, используйте следующий пример:
 
-   ```azurecli-interactive
+   ```azurecli
    az network express-route peering create --circuit-name MyCircuit --peer-asn 100 --primary-peer-subnet 10.0.0.0/30 -g ExpressRouteResourceGroup --secondary-peer-subnet 10.0.0.4/30 --vlan-id 200 --peering-type AzurePrivatePeering --SharedKey "A1B2C3D4"
    ```
 
@@ -268,17 +268,17 @@ az network express-route peering delete -g ExpressRouteResourceGroup --circuit-n
    > 
    > 
 
-### <a name="getprivate"></a>Просмотр сведений о частном пиринге Azure
+### <a name="to-view-azure-private-peering-details"></a><a name="getprivate"></a>Просмотр сведений о частном пиринге Azure
 
 Для получения сведений о конфигурации можно использовать следующий пример кода:
 
-```azurecli-interactive
+```azurecli
 az network express-route peering show -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePrivatePeering
 ```
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
 
-```azurecli
+```output
 {
   "azureAsn": 12076,
   "etag": "W/\"2e97be83-a684-4f29-bf3c-96191e270666\"",
@@ -304,15 +304,15 @@ az network express-route peering show -g ExpressRouteResourceGroup --circuit-nam
 }
 ```
 
-### <a name="updateprivate"></a>Обновление конфигурации частного пиринга Azure
+### <a name="to-update-azure-private-peering-configuration"></a><a name="updateprivate"></a>Обновление конфигурации частного пиринга Azure
 
 С помощью следующего примера можно обновить любую часть конфигурации. В приведенном ниже примере значение идентификатора виртуальной локальной сети для канала изменяется со 100 на 500.
 
-```azurecli-interactive
+```azurecli
 az network express-route peering update --vlan-id 500 -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePrivatePeering
 ```
 
-### <a name="deleteprivate"></a>Удаление частного пиринга Azure
+### <a name="to-delete-azure-private-peering"></a><a name="deleteprivate"></a>Удаление частного пиринга Azure
 
 Для удаления конфигурации пиринга выполните следующий пример кода:
 
@@ -321,12 +321,12 @@ az network express-route peering update --vlan-id 500 -g ExpressRouteResourceGro
 > 
 > 
 
-```azurecli-interactive
+```azurecli
 az network express-route peering delete -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePrivatePeering
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](howto-linkvnet-cli.md).
 

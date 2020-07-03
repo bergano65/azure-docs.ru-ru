@@ -9,31 +9,31 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: bf2a2385b3129ddf24ede7f6d851701186b0e33c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f5c6562c6def1fa588724b3bc5da502536b16aa9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445710"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80985649"
 ---
 # <a name="use-bulk-executor-java-library-to-perform-bulk-operations-on-azure-cosmos-db-data"></a>Выполнение массовых операций с данными Azure Cosmos DB с помощью библиотеки Java массового исполнителя
 
-В этом руководстве приведены инструкции по использованию библиотеки BulkExecutor Java в Azure Cosmos DB для импорта и обновления документов Azure Cosmos DB. Подробнее о библиотеке массового исполнителя и о том, как с ее помощью эффективно использовать пропускную способность и хранилище, можно узнать в статье с [общими сведениями о библиотеке массового исполнителя](bulk-executor-overview.md). В этом руководстве вы создадите приложение Java, которое создает случайные документы и выполняет их импорт в контейнер Azure Cosmos. После импорта вы массово обновите некоторые свойства документа. 
+В этом учебнике приводятся инструкции по использованию библиотеки для импорта и обновления документов Azure Cosmos DB в Azure Cosmos DB библиотеке Java. Подробнее о библиотеке массового исполнителя и о том, как с ее помощью эффективно использовать пропускную способность и хранилище, можно узнать в статье с [общими сведениями о библиотеке массового исполнителя](bulk-executor-overview.md). В этом руководстве вы создадите приложение Java, которое создает случайные документы и выполняет их импорт в контейнер Azure Cosmos. После импорта вы массово обновите некоторые свойства документа. 
 
 В настоящее время библиотека небольшого выполнителя поддерживается Azure Cosmos DB только учетными записями API SQL и Gremlin API. В этой статье описывается, как использовать библиотеку Java для выполнения операций с учетными записями SQL API. Дополнительные сведения об использовании библиотеки массового исполнителя .NET с помощью API Gremlin см. в разделе [Использование библиотеки BulkExecutor .NET для выполнения массовых операций с графами в API Gremlin в Azure Cosmos DB](bulk-executor-graph-dotnet.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.  
+* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.  
 
 * Вы можете [попробовать Azure Cosmos DB бесплатно](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, бесплатной оплаты и обязательств. Или вы можете применить [эмулятор Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) с конечной точкой `https://localhost:8081`. Первичный ключ предоставляется в разделе [Выполнение проверки подлинности запросов](local-emulator.md#authenticating-requests).  
 
-* [Комплект разработчика Java (JDK 1.7+)](https://aka.ms/azure-jdks)  
+* [Пакет Java Development Kit (JDK) 1.7 +](/java/azure/jdk/?view=azure-java-stable)  
   - В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.  
 
   - Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 
-* [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив [Maven](https://maven.apache.org/).  
+* [Скачивание](https://maven.apache.org/download.cgi) и [Установка](https://maven.apache.org/install.html) двоичного архива [Maven](https://maven.apache.org/)  
   
   - В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
 
@@ -51,7 +51,7 @@ ms.locfileid: "75445710"
 
 ## <a name="bulk-import-data-to-azure-cosmos-db"></a>Массовый импорт данных в Azure Cosmos DB
 
-1. Строки подключения Azure Cosmos DB считываются в качестве аргументов и присваиваются переменным, определенным в файле CmdLineConfiguration.java.  
+1. Строки подключения Azure Cosmos DB считываются в виде аргументов и присваиваются переменным, определенным в файле Кмдлинеконфигуратион. Java.  
 
 2. Далее инициализируется объект DocumentClient с помощью следующих операторов:  
 
@@ -118,8 +118,8 @@ ms.locfileid: "75445710"
    |int getNumberOfDocumentsImported()  |   Общее число документов, которые были успешно импортированы, среди предоставленных для вызова API массового импорта.      |
    |double getTotalRequestUnitsConsumed()   |  Общее число единиц запросов (ЕЗ), потребляемых вызовом API массового импорта.       |
    |Duration getTotalTimeTaken()   |    Общее время, затрачиваемое на выполнение вызова API массового импорта.     |
-   |Вывод списка исключений\<> ошибок () |  Получает список ошибок, если не удается вставить некоторые документы за пределами пакета, предоставленного вызову API массового импорта.       |
-   |Перечисление\<объекта > Жетбадинпутдокументс ()  |    Список документов с неверным форматом, которые не были успешно импортированы при вызове API массового импорта. Пользователь должен исправить возвращенные документы и повторить импорт. Документы с неверным форматом включают в себя документы, значение идентификаторов которых не является строкой (NULL или любой другой тип данных считается недействительным).     |
+   |Вывод\<списка исключений> ошибок () |  Получает список ошибок, если не удается вставить некоторые документы за пределами пакета, предоставленного вызову API массового импорта.       |
+   |Объект\<List> жетбадинпутдокументс ()  |    Список документов с неверным форматом, которые не были успешно импортированы при вызове API массового импорта. Пользователь должен исправить возвращенные документы и повторить импорт. Документы с неверным форматом включают в себя документы, значение идентификаторов которых не является строкой (NULL или любой другой тип данных считается недействительным).     |
 
 5. После того, как приложение массового импорта будет готово, создайте программу командной строки из источника, выполнив команду mvn clean package. Эта команда создает JAR-файл в целевой папке:  
 
@@ -130,7 +130,7 @@ ms.locfileid: "75445710"
 6. После создания целевых зависимостей вы можете вызвать приложения массового импорта, выполнив следующую команду:  
 
    ```java
-   java -Xmx12G -jar bulkexecutor-sample-1.0-SNAPSHOT-jar-with-dependencies.jar -serviceEndpoint *<Fill in your Azure Cosmos DB’s endpoint>*  -masterKey *<Fill in your Azure Cosmos DB’s master key>* -databaseId bulkImportDb -collectionId bulkImportColl -operation import -shouldCreateCollection -collectionThroughput 1000000 -partitionKey /profileid -maxConnectionPoolSize 6000 -numberOfDocumentsForEachCheckpoint 1000000 -numberOfCheckpoints 10
+   java -Xmx12G -jar bulkexecutor-sample-1.0-SNAPSHOT-jar-with-dependencies.jar -serviceEndpoint *<Fill in your Azure Cosmos DB's endpoint>*  -masterKey *<Fill in your Azure Cosmos DB's master key>* -databaseId bulkImportDb -collectionId bulkImportColl -operation import -shouldCreateCollection -collectionThroughput 1000000 -partitionKey /profileid -maxConnectionPoolSize 6000 -numberOfDocumentsForEachCheckpoint 1000000 -numberOfCheckpoints 10
    ```
 
    Средство массового импорта создает базу данных и коллекцию с именем базы данных, именем коллекции и значениями пропускной способности, указанными в файле App.config. 
@@ -150,7 +150,7 @@ ms.locfileid: "75445710"
    updateOperations.add(descriptionUpdate);
 
    List<UpdateItem> updateItems = new ArrayList<>(cfg.getNumberOfDocumentsForEachCheckpoint());
-   IntStream.range(0, cfg.getNumberOfDocumentsForEachCheckpoint()).mapToObj(j -> {                      
+   IntStream.range(0, cfg.getNumberOfDocumentsForEachCheckpoint()).mapToObj(j -> {                        
     return new UpdateItem(Long.toString(prefix + j), Long.toString(prefix + j), updateOperations);
     }).collect(Collectors.toCollection(() -> updateItems));
    ```
@@ -182,7 +182,7 @@ ms.locfileid: "75445710"
    |int getNumberOfDocumentsUpdated()  |   Общее число документов, которые были успешно обновлены из документов, предоставленных для вызова API массового обновления.      |
    |double getTotalRequestUnitsConsumed() |  Общее число единиц запросов (ЕЗ), потребляемых вызовом API массового обновления.       |
    |Duration getTotalTimeTaken()  |   Общее время, затрачиваемое на выполнение вызова API массового обновления.      |
-   |Вывод списка исключений\<> ошибок ()   |    Получает список ошибок, если не удается вставить некоторые документы за пределами пакета, предоставленного вызову API массового обновления.      |
+   |Вывод\<списка исключений> ошибок ()   |       Получает список ошибок, если не удается вставить некоторые документы за пределами пакета, предоставленного вызову API массового обновления.      |
 
 3. После того, как приложение массового обновления будет готово, создайте программу командной строки из источника, выполнив команду mvn clean package. Эта команда создает JAR-файл в целевой папке:  
 
@@ -193,7 +193,7 @@ ms.locfileid: "75445710"
 4. После создания целевых зависимостей вы можете вызвать приложения массового обновления, выполнив следующую команду:
 
    ```
-   java -Xmx12G -jar bulkexecutor-sample-1.0-SNAPSHOT-jar-with-dependencies.jar -serviceEndpoint **<Fill in your Azure Cosmos DB’s endpoint>* -masterKey **<Fill in your Azure Cosmos DB’s master key>* -databaseId bulkUpdateDb -collectionId bulkUpdateColl -operation update -collectionThroughput 1000000 -partitionKey /profileid -maxConnectionPoolSize 6000 -numberOfDocumentsForEachCheckpoint 1000000 -numberOfCheckpoints 10
+   java -Xmx12G -jar bulkexecutor-sample-1.0-SNAPSHOT-jar-with-dependencies.jar -serviceEndpoint **<Fill in your Azure Cosmos DB's endpoint>* -masterKey **<Fill in your Azure Cosmos DB's master key>* -databaseId bulkUpdateDb -collectionId bulkUpdateColl -operation update -collectionThroughput 1000000 -partitionKey /profileid -maxConnectionPoolSize 6000 -numberOfDocumentsForEachCheckpoint 1000000 -numberOfCheckpoints 10
    ```
 
 ## <a name="performance-tips"></a>Советы по улучшению производительности 
@@ -203,7 +203,7 @@ ms.locfileid: "75445710"
 * Для достижения оптимальной производительности запустите приложение на виртуальной машине Azure в том же регионе, где находится регион записи вашей учетной записи Cosmos DB.  
 * Чтобы получить более высокую пропускную способность, сделайте следующее:  
 
-   * Установите для размера кучи виртуальной машины Java достаточно высокое значение, чтобы избежать проблем с памятью при обработке большого количества документов. Рекомендуемый размер кучи: максимум (3 ГБ, 3 * sizeof (все документы, переданные в API массового импорта в одном пакете)).  
+   * Задайте для размера кучи ВИРТУАЛЬНОЙ машины Java большой объем, чтобы избежать проблем с памятью при обработке большого количества документов. Рекомендуемый размер кучи: максимум (3 ГБ, 3 * sizeof (все документы, переданные в API массового импорта в одном пакете)).  
    * Имеется время предварительной обработки, из-за которого вы получаете более высокую пропускную способность при выполнении массовых операций с большим количеством документов. Таким образом, если вы хотите импортировать 10 000 000 документов, лучше всего 10 раз выполнить массовый импорт 10 пакетов документов, размер которых соответствует 1 000 000 документов, чем 100 раз выполнить массовый импорт 100 пакетов документов, размер которых соответствует 100 000 документов.  
 
 * Рекомендуется создать экземпляр одного объекта Документбулкексекутор для всего приложения в пределах одной виртуальной машины, которая соответствует конкретному контейнеру Azure Cosmos.  
@@ -211,7 +211,7 @@ ms.locfileid: "75445710"
 * Это полезно, так как однократное выполнение API массовой операции потребляет большую часть ресурсов ЦП и операций ввода-вывода сети клиентского компьютера. Это происходит при порождении нескольких задач изнутри. Избегайте появления в процессе приложения нескольких параллельных задач, каждая из которых выполняет вызовы API массовой операции. Если один вызов API массовой операции, который выполняется на одной виртуальной машине, не может использовать всю пропускную способность вашего контейнера (если пропускная способность контейнера > 1 млн ЕЗ/с), предпочтительнее создавать отдельные виртуальные машины для одновременного выполнения вызовов API.
 
     
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о пакете Maven и заметки о выпуске библиотеки Java массового исполнителя см. в статье [со сведениями о пакете SDK массового исполнителя](sql-api-sdk-bulk-executor-java.md).
 
 

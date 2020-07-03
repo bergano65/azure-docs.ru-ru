@@ -7,16 +7,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 02/12/2019
-ms.openlocfilehash: 2eb455ba6fa40538bfa03018be47232066036c23
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: cd1342ae5912a9a91f1bd8d1bdacecdb5a2bbdb0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930423"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81416514"
 ---
 # <a name="create-azure-data-factory-data-flow"></a>Создание потока данных Фабрики данных Azure
 
-
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Сопоставление потоков данных в ADF обеспечивает способ преобразования данных в масштабе без какого-либо кодирования. Вы можете создать задание преобразования данных в конструкторе потока данных, создав серию преобразований. Начните с произвольным количеством исходных преобразований, за которыми следуют шаги преобразования данных. Затем заполните поток данных с помощью приемника, чтобы получить результаты в пункте назначения.
 
@@ -40,6 +40,6 @@ ms.locfileid: "74930423"
 
 ![Параметры потока данных](media/data-flow/newresource.png "Новый ресурс")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Начните создавать преобразование данных с помощью [преобразования «источник](data-flow-source.md)».

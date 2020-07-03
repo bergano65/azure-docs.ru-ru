@@ -15,18 +15,18 @@ ms.topic: conceptual
 ms.date: 10/03/2019
 ms.author: mimart
 ms.reviewer: japere
-ms.openlocfilehash: de2b40ea0339b564b97d17601415d1071bdc6a6e
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: a6efe74008b2271b960f877f5f0f6b2b6b549a8d
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367915"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583083"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Часто задаваемые вопросы о прокси приложения Active Directory (Azure AD)
 
 На этой странице приведены ответы на часто задаваемые вопросы о Azure Active Directory прокси приложения (Azure AD).
 
-## <a name="enabling-azure-ad-application-proxy"></a>Включение Azure AD Application Proxy
+## <a name="enabling-azure-ad-application-proxy"></a>Включение прокси приложения Azure AD
 
 ### <a name="what-license-is-required-to-use-azure-ad-application-proxy"></a>Какая лицензия необходима для использования AD Application Proxy Azure?
 
@@ -49,13 +49,12 @@ ms.locfileid: "77367915"
 
 Рекомендации см. в статье [Высокая доступность и балансировка нагрузки соединителей прокси приложения и приложений](application-proxy-high-availability-load-balancing.md).
 
+### <a name="is-tls-termination-tlshttps-inspection-or-acceleration-on-traffic-from-the-connector-servers-to-azure-supported"></a>Поддерживается ли прерывание TLS (проверка или ускорение TLS/HTTPS) на трафике с серверов соединителей в Azure?
+
+Соединитель прокси приложения выполняет проверку подлинности на основе сертификата в Azure. Прерывание TLS (проверка или ускорение TLS/HTTPS) прерывает этот метод проверки подлинности и не поддерживается. Трафик из соединителя в Azure должен обходить любые устройства, выполняющие завершение TLS.  
+
 ### <a name="can-i-place-a-forward-proxy-device-between-the-connector-servers-and-the-back-end-application-server"></a>Можно ли разместить устройство с прямым прокси-сервером между серверами соединителей и сервером серверных приложений?
-
-Нет, этот сценарий не поддерживается. Только соединители и службы обновления можно настроить для использования прокси-сервера пересылки для исходящего трафика в Azure. См. раздел [Работа с существующими локальными прокси-серверами](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-connectors-with-proxy-servers) .
-
-### <a name="is-ssl-termination-sslhttps-inspection-or-acceleration-on-traffic-from-the-connector-servers-to-azure-supported"></a>Поддерживается ли прерывание SSL (проверка или ускорение SSL/HTTPS) на трафике с серверов соединителей в Azure?
-
-Соединитель прокси приложения выполняет проверку подлинности на основе сертификата в Azure. Прерывание SSL (проверка или ускорение SSL/HTTPS) прерывает этот метод проверки подлинности и не поддерживается. Трафик из соединителя в Azure должен обходить все устройства, выполняющие завершение SSL.  
+Да, этот сценарий поддерживается начиная с соединителя версии 1.5.1526.0. См. раздел [Работа с существующими локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md).
 
 ### <a name="should-i-create-a-dedicated-account-to-register-the-connector-with-azure-ad-application-proxy"></a>Следует ли создать выделенную учетную запись для регистрации соединителя в Azure AD Application Proxy?
 
@@ -66,14 +65,14 @@ ms.locfileid: "77367915"
 Существуют счетчики системного монитора, которые устанавливаются вместе с соединителем. Чтобы просмотреть эти элементы:  
 
 1. Нажмите кнопку **Пуск**, введите "PerfMon" и нажмите клавишу ВВОД.
-2. Выберите **системный монитор** и щелкните зеленый значок **+** .
+2. Выберите **системный монитор** и щелкните зеленый **+** значок.
 3. Добавьте счетчики **соединителя прокси приложения Microsoft AAD** , которые необходимо отслеживать.
 
 ### <a name="does-the-azure-ad-application-proxy-connector-have-to-be-on-the-same-subnet-as-the-resource"></a>Должен ли соединитель Azure AD Application Proxy находиться в той же подсети, что и ресурс?
 
 Соединитель не обязательно должен находиться в той же подсети. Однако ему требуется разрешение имен (DNS, файл Hosts) для ресурса и необходимое сетевое подключение (маршрутизация к ресурсу, порты, открытые на ресурсе и т. д.). Рекомендации см. в разделе [рекомендации по топологии сети при использовании Azure Active Directory Application proxy](application-proxy-network-topology.md).
 
-## <a name="application-configuration"></a>Конфигурация приложений
+## <a name="application-configuration"></a>Настройка приложения
 
 ### <a name="what-is-the-length-of-the-default-and-long-back-end-timeout-can-the-timeout-be-extended"></a>Какова длина значения по умолчанию и времени ожидания серверной части "Long"? Можно ли увеличить время ожидания?
 
@@ -97,6 +96,10 @@ ms.locfileid: "77367915"
 Если серверы соединителей и учетная запись службы веб-приложения находятся в разных доменах, используется делегирование на основе ресурсов. Разрешения на делегирование настраиваются на целевом веб-сервере и в учетной записи службы веб-приложений. Этот метод ограниченного делегирования является относительно новым. Этот метод появился в Windows Server 2012, который поддерживает делегирование между доменами, позволяя владельцу ресурса (веб-службе) управлять тем, какие компьютеры и учетные записи служб могут быть делегированы. Нет пользовательского интерфейса для помощи с этой конфигурацией, поэтому вам потребуется использовать PowerShell.
 Дополнительные сведения см. в техническом документе [об ограниченном делегировании Kerberos с помощью прокси приложения](https://aka.ms/kcdpaper).
 
+### <a name="does-ntlm-authentication-work-with-azure-ad-application-proxy"></a>Работает ли проверка подлинности NTLM с Azure AD Application Proxy?
+
+Проверку подлинности NTLM нельзя использовать в качестве метода предварительной проверки подлинности или единого входа. Проверка подлинности NTLM может использоваться только в том случае, если ее можно согласовать непосредственно между клиентом и опубликованным веб-приложением. Использование проверки подлинности NTLM обычно приводит к отображению запроса на вход в браузере.
+
 ## <a name="pass-through-authentication"></a>Сквозная аутентификация
 
 ### <a name="can-i-use-conditional-access-policies-for-applications-published-with-pass-through-authentication"></a>Можно ли использовать политики условного доступа для приложений, опубликованных с помощью сквозной проверки подлинности?
@@ -113,19 +116,19 @@ ms.locfileid: "77367915"
 
 См. статью [публикация удаленный рабочий стол с помощью AD application proxy Azure](application-proxy-integrate-with-remote-desktop-services.md).
 
-### <a name="can-i-use-kerberos-constrained-delegation-in-the-remote-desktop-gateway-publishing-scenario"></a>Можно ли использовать ограниченное делегирование Kerberos в сценарии публикации шлюза удаленный рабочий стол?
+### <a name="can-i-use-kerberos-constrained-delegation-single-sign-on---windows-integrated-authentication-in-the-remote-desktop-gateway-publishing-scenario"></a>Можно ли использовать ограниченное делегирование Kerberos (единый вход — встроенная проверка подлинности Windows) в сценарии публикации шлюза удаленный рабочий стол?
 
 Нет, этот сценарий не поддерживается.  
 
-### <a name="my-users-dont-use-internet-explorer-11-and-the-pre-authentication-scenario-doesnt-work-for-them-is-this-expected"></a>Пользователи не используют Internet Explorer 11, и сценарий предварительной проверки подлинности не подходит для них. Ожидается ли это?
+### <a name="my-users-dont-use-internet-explorer-11-and-the-pre-authentication-scenario-doesnt-work-for-them-is-this-expected"></a>Пользователи не используют Internet Explorer 11, и сценарий предварительной проверки подлинности не подходит для них. Так и должно быть?
 
 Да, это ожидаемое значение. Для сценария предварительной проверки подлинности требуется элемент управления ActiveX, который не поддерживается сторонними браузерами.
 
-### <a name="is-the-remote-desktop-web-client-supported"></a>Поддерживается ли веб-клиент удаленный рабочий стол?
+### <a name="is-the-remote-desktop-web-client-html5-supported"></a>Поддерживается ли удаленный рабочий стол веб-клиентом (HTML5)?
 
 Нет, в настоящее время этот сценарий не поддерживается. Ознакомьтесь с нашим форумом по обратной связи [UserVoice](https://aka.ms/aadapuservoice) , чтобы получить обновления для этой функции.
 
-### <a name="after-i-configured-the-pre-authentication-scenario-i-realized-that-the-user-has-to-authenticate-twice-first-on-the-azure-ad-sign-in-form-and-then-on-the-rdweb-sign-in-form-is-this-expected-how-can-i-reduce-this-to-one-sign-in"></a>После настройки сценария предварительной проверки подлинности я понял, что пользователь должен пройти проверку подлинности дважды: сначала на форме входа в Azure AD, а затем на форме входа RDWeb. Ожидается ли это? Как можно сократить это до одного входа?
+### <a name="after-i-configured-the-pre-authentication-scenario-i-realized-that-the-user-has-to-authenticate-twice-first-on-the-azure-ad-sign-in-form-and-then-on-the-rdweb-sign-in-form-is-this-expected-how-can-i-reduce-this-to-one-sign-in"></a>После настройки сценария предварительной проверки подлинности я понял, что пользователь должен пройти проверку подлинности дважды: сначала на форме входа в Azure AD, а затем на форме входа RDWeb. Так и должно быть? Как можно сократить это до одного входа?
 
 Да, это ожидаемое значение. Если компьютер пользователя подключен к Azure AD, он автоматически входит в Azure AD. Пользователь должен предоставить свои учетные данные только в форме входа RDWeb.
 
@@ -134,6 +137,10 @@ ms.locfileid: "77367915"
 ### <a name="how-can-i-publish-sharepoint-over-azure-ad-application-proxy"></a>Как опубликовать SharePoint через Azure AD Application Proxy?
 
 См. статью [Включение удаленного доступа к SharePoint с помощью AD application proxy Azure](application-proxy-integrate-with-sharepoint-server.md).
+
+### <a name="can-i-use-the-sharepoint-mobile-app-ios-android-to-access-a-published-sharepoint-server"></a>Можно ли использовать мобильное приложение SharePoint (iOS и Android) для доступа к опубликованному серверу SharePoint?
+
+[Мобильное приложение SharePoint](https://docs.microsoft.com/sharepoint/administration/supporting-the-sharepoint-mobile-apps-online-and-on-premises) не поддерживает Azure Active Directory предварительную проверку подлинности в настоящее время.
 
 ## <a name="active-directory-federation-services-ad-fs-publishing"></a>Публикация службы федерации Active Directory (AD FS) (AD FS) 
 
@@ -147,7 +154,7 @@ ms.locfileid: "77367915"
 
 В настоящее время поддержка протокола WebSocket по-прежнему доступна в общедоступной предварительной версии, и она может не работать для других приложений. Некоторые клиенты успешно выполнили смешанный успешный протокол WebSocket с другими приложениями. При тестировании таких сценариев мы будем рады услышать результаты. Отправьте нам свой отзыв по адресу aadapfeedback@microsoft.com.
 
-Функции (EventLog, PowerShell и службы удаленных рабочих столов) в центре администрирования Windows (ВАК) или веб-клиенте удаленный рабочий стол не работают с Azure AD Application Proxy в настоящее время.
+Функции (EventLog, PowerShell и службы удаленных рабочих столов) в центре администрирования Windows (ВАК) или удаленный рабочий стол веб-клиента (HTML5) не работают в Azure AD Application Proxy в настоящее время.
 
 ## <a name="link-translation"></a>Преобразование ссылок
 

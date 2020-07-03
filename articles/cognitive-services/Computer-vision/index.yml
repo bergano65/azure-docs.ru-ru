@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 10/01/2019
-  ms.openlocfilehash: b17796fe07f37931c4a4924c6d4daaa8399562d2
-  ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+  ms.openlocfilehash: 35c37f5b2b307bb1a3d90b9876f148b5a1120490
+  ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/06/2019
-  ms.locfileid: "73647841"
+  ms.lasthandoff: 05/20/2020
+  ms.locfileid: "83713636"
 landingContent:
 - title: Сведения о Компьютерном зрении
   linkLists:
@@ -24,6 +24,10 @@ landingContent:
     links:
     - text: Что собой представляет Компьютерное зрение
       url: Home.md
+  - linkListType: whats-new
+    links:
+    - text: Новые возможности
+      url: whats-new.md
   - linkListType: video
     links:
     - text: Создание интеллектуальных приложений с помощью интерфейсов API Компьютерного зрения
@@ -37,15 +41,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: С помощью пакета SDK для .NET
-      url: quickstarts-sdk/csharp-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-csharp
     - text: С помощью пакета SDK для Python
-      url: quickstarts-sdk/python-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-python
     - text: Использование пакета SDK для Java
-      url: quickstarts-sdk/java-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-java
     - text: Использование пакета SDK для Node
-      url: quickstarts-sdk/node-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
     - text: Использование пакета SDK для Go
-      url: quickstarts-sdk/go-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-go
 - title: Распознавание объектов на изображениях
   linkLists:
   - linkListType: concept
@@ -55,15 +59,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: С помощью пакета SDK для .NET
-      url: quickstarts-sdk/csharp-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-csharp
     - text: С помощью пакета SDK для Python
-      url: quickstarts-sdk/python-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-python
     - text: Использование пакета SDK для Java
-      url: quickstarts-sdk/java-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-java
     - text: Использование пакета SDK для Node
-      url: quickstarts-sdk/node-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
     - text: Использование пакета SDK для Go
-      url: quickstarts-sdk/go-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-go
 - title: Применение тегов содержимого к изображениям
   linkLists:
   - linkListType: concept
@@ -73,15 +77,15 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: С помощью пакета SDK для .NET
-      url: quickstarts-sdk/csharp-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-csharp
     - text: С помощью пакета SDK для Python
-      url: quickstarts-sdk/python-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-python
     - text: Использование пакета SDK для Java
-      url: quickstarts-sdk/java-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-java
     - text: Использование пакета SDK для Node
-      url: quickstarts-sdk/node-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
     - text: Использование пакета SDK для Go
-      url: quickstarts-sdk/go-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-go
 - title: Использование контейнеров
   linkLists:
   - linkListType: get-started
@@ -107,25 +111,25 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: С помощью пакета SDK для .NET
-      url: quickstarts-sdk/csharp-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-csharp
     - text: С помощью пакета SDK для Python
-      url: quickstarts-sdk/python-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-python
     - text: Использование пакета SDK для Java
-      url: quickstarts-sdk/java-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-java
     - text: Использование пакета SDK для Node
-      url: quickstarts-sdk/node-sdk.md
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-javascript
     - text: Использование пакета SDK для Go
-      url: quickstarts-sdk/go-sdk.md
-- title: Справочные материалы
+      url: quickstarts-sdk/client-library.md?pivots=programming-language-go
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:
+    - text: API "Компьютерное зрение" версии 3.0
+      url: https://aka.ms/computer-vision-v3-ref
     - text: API "Компьютерное зрение" версии 2.1
       url: https://westus.dev.cognitive.microsoft.com/docs/services/5cd27ec07268f6c679a3e641/operations/56f91f2e778daf14a499f21b
     - text: API Компьютерного зрения версии 2.0
       url: https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44
-    - text: API Компьютерного зрения версии 1.0
-      url: https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739
     - text: Пакет SDK для .NET
       url: https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/computervision?view=azure-dotnet
     - text: Пакет SDK для Python

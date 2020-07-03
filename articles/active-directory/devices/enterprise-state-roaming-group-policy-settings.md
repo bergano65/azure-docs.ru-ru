@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: na
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11a18715385eca85c199b17f6a675be1a7e60153
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: bdffbc3a140bd13dcd6d352db8c192803d39b03e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77194319"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78672369"
 ---
 # <a name="group-policy-and-mdm-settings"></a>Параметры групповой политики и управления мобильными устройствами
 
@@ -26,7 +26,7 @@ ms.locfileid: "77194319"
 В следующих таблицах описаны доступные параметры политики.
 
 > [!NOTE]
-> Эта статья относится к устаревшему браузеру на основе HTML Microsoft, запущенному с Windows 10 за июль 2015. Статья не относится к новому браузеру на основе Microsoft Chromium, выпущенному 15 января 2020 г. Дополнительные сведения о поведении синхронизации для нового Microsoft ребра см. в статье [Microsoft ребра Sync](https://docs.microsoft.com/deployedge/microsoft-edge-enterprise-sync).
+> Эта статья относится к устаревшему браузеру на основе HTML Microsoft, запущенному с Windows 10 за июль 2015. Статья не относится к новому браузеру на основе Microsoft Chromium, выпущенному 15 января 2020 г. Дополнительные сведения о поведении синхронизации для нового Microsoft ребра см. в статье [Microsoft ребра Sync](/deployedge/microsoft-edge-enterprise-sync).
 
 ## <a name="mdm-settings"></a>Параметры MDM
 
@@ -57,6 +57,6 @@ ms.locfileid: "77194319"
 | Не синхронизировать параметры приложений |Отключает перемещение данных приложений |
 | Не синхронизировать параметры запуска |Не используйте. Не действует |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Общие сведения см. в [обзоре службы Enterprise State Roaming](enterprise-state-roaming-overview.md).
+Общие сведения см. в статье [Общие сведения о роуминге состояния предприятия](enterprise-state-roaming-overview.md).

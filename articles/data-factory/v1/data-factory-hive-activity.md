@@ -13,10 +13,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: d153f8c316cbb76e063f07f7f823c8d9c4a21f87
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74703354"
 ---
 # <a name="transform-data-using-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hive в фабрике данных Azure 
@@ -24,10 +24,10 @@ ms.locfileid: "74703354"
 > * [Действие Hive](data-factory-hive-activity.md) 
 > * [Действие Pig](data-factory-pig-activity.md)
 > * [Действие MapReduce](data-factory-map-reduce.md)
-> * [Потоковая активность Hadoop](data-factory-hadoop-streaming-activity.md)
+> * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
-> * [Действие "Обновить ресурс" в службе машинного обучения](data-factory-azure-ml-update-resource-activity.md)
+> * [Действие выполнения пакета в службе Машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие обновления ресурса в службе Машинного обучения](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
@@ -35,10 +35,10 @@ ms.locfileid: "74703354"
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. руководство по [преобразованию данных с помощью действия Hive в службе "Фабрика данных"](../transform-data-using-hadoop-hive.md).
 
-Действие Hive HDInsight в [конвейере](data-factory-create-pipelines.md) фабрики данных выполняет запросы Hive к [вашему собственному](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) кластеру HDInsight или кластеру HDInsight [по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) под управлением Windows или Linux. Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
+Действие Hive в HDInsight в [конвейере](data-factory-create-pipelines.md) фабрики данных выполняет запросы Hive в [собственном](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) кластере HDInsight или на основе Windows или Linux по [запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) . Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
 
 > [!NOTE] 
-> Если вы не знакомы с фабрикой данных Azure, ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и [Руководство. Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md) перед ознакомлением с этой статьей. 
+> Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и руководством [Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md). 
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -72,15 +72,15 @@ ms.locfileid: "74703354"
 }
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 | --- | --- | --- |
-| name |Имя действия. |ДА |
-| Description (Описание) |Текст, описывающий, для чего используется действие |Нет |
-| Тип |HDInsightHive. |ДА |
+| name |Имя действия. |Да |
+| description |Текст, описывающий, для чего используется действие |Нет |
+| type |HDInsightHive. |Да |
 | inputs |Входные данные, используемые действием Hive |Нет |
-| outputs |Выходные данные, создаваемые действием Hive |ДА |
-| linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |ДА |
-| script |Указывается встроенный сценарий Hive. |Нет |
+| outputs |Выходные данные, создаваемые действием Hive |Да |
+| linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
+| скрипт |Указывается встроенный сценарий Hive. |Нет |
 | scriptPath |Путь к файлу сценария Hive в хранилище BLOB-объектов Azure. Можно использовать либо свойство script, либо свойство scriptPath, но не оба сразу. В имени файла учитывается регистр знаков. |Нет |
 | defines |Параметры в виде пары "ключ-значение", ссылки на которые указываются в сценарии Hive с помощью элемента hiveconf. |Нет |
 
@@ -129,7 +129,7 @@ FROM HiveSampleIn Group by ProfileID
 1. Создайте связанную службу для регистрации [собственного вычислительного кластера HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) или настройте [вычислительный кластер HDInsight по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). Назовем эту связанную службу HDInsightLinkedService.
 2. Создайте [связанную службу](data-factory-azure-blob-connector.md) для настройки подключения к хранилищу BLOB-объектов Azure, в котором хранятся данные. Назовем эту связанную службу StorageLinkedService.
 3. Создайте [наборы данных](data-factory-create-datasets.md) , указывающие на входные и выходные данные. Назовем входной набор данных HiveSampleIn, а выходной — HiveSampleOut.
-4. Скопируйте запрос Hive в файл и сохраните его в хранилище BLOB-объектов Azure, настроенном на шаге 2. Если хранилище, в котором размещаются данные, отличается от хранилища, в котором размещаются этот файл запроса, создайте отдельную связанную службу хранилища Azure и добавьте ссылку на нее в действие. Используйте свойство **scriptPath**, чтобы указать путь к файлу запроса Hive, и **scriptLinkedService**, чтобы определить службу хранилища Azure, содержащую файл сценария. 
+4. Скопируйте запрос Hive в файл и сохраните его в хранилище BLOB-объектов Azure, настроенном на шаге 2. Если хранилище, в котором размещаются данные, отличается от хранилища, в котором размещаются этот файл запроса, создайте отдельную связанную службу хранилища Azure и добавьте ссылку на нее в действие. Используйте **scriptPath** , чтобы указать путь к файлу запроса Hive и **scriptLinkedService** , чтобы указать хранилище Azure, содержащее файл скрипта. 
    
    > [!NOTE]
    > Также можно добавить сценарий Hive непосредственно в определение действия, используя свойство **script** . Мы не рекомендуем это делать, так как вам потребуется экранировать все специальные знаки в сценарии в документе JSON, что может вызвать проблемы при отладке. Мы рекомендуем следовать инструкциям, описанным в шаге 4.
@@ -215,7 +215,7 @@ FROM HiveSampleIn Group by ProfileID
       }
     }
     ```
-* Добавьте ссылку на параметр в сценарий Hive с помощью элемента **${hiveconf:parameterName}** . 
+* Добавьте ссылку на параметр в сценарий Hive с помощью элемента **${hiveconf:parameterName}**. 
   
     ```
     DROP TABLE IF EXISTS HiveSampleIn; 
@@ -241,10 +241,10 @@ FROM HiveSampleIn Group by ProfileID
         SUM(Duration)
     FROM HiveSampleIn Group by ProfileID
     ```
-  ## <a name="see-also"></a>См. также
+  ## <a name="see-also"></a>См. также:
 * [Действие Pig](data-factory-pig-activity.md)
 * [Действие MapReduce](data-factory-map-reduce.md)
-* [Потоковая активность Hadoop](data-factory-hadoop-streaming-activity.md)
+* [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 * [Вызов программ Spark](data-factory-spark.md)
 * [Вызов сценариев R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample)
 

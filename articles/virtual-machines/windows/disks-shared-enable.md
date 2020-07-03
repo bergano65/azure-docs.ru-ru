@@ -2,17 +2,17 @@
 title: Включение общих дисков для управляемых дисков Azure
 description: Настройка управляемого диска Azure с общими дисками (Предварительная версия) для совместного использования на нескольких виртуальных машинах
 author: roygara
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 04/09/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 7eb2f808269ec0f91725644d5afb82e12cbb885d
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 0dbb1844d4c670abfdc5562580b0ee8b4549b6bd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77202363"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82085489"
 ---
 # <a name="enable-shared-disk"></a>Включить общий диск
 

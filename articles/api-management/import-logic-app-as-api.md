@@ -10,20 +10,20 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 08/01/2019
+ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 4077187fe04e3be914a6f7fba84c03df1b79d06a
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: b6cb0fa3611da44726dabd879c37fec357fc3031
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74108393"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202780"
 ---
 # <a name="import-a-logic-app-as-an-api"></a>импорт приложения логики в виде API;
 
 В этой статье описано, как импортировать и протестировать приложение логики в виде API.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 >
@@ -38,9 +38,9 @@ ms.locfileid: "74108393"
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
-## <a name="create-api"> </a>Импорт и публикация API серверной части
+## <a name="import-and-publish-a-back-end-api"></a><a name="create-api"> </a>Импорт и публикация API серверной части
 
-1. Выберите **Интерфейсы API** в разделе **УПРАВЛЕНИЕ API**.
+1. На портале Azure перейдите к службе "Управление API" и в меню выберите **Интерфейсы API**.
 2. Выберите **Приложение логики** в списке **Add a new API** (Добавление нового API).
 
     ![Приложение логики](./media/import-logic-app-as-api/logic-app-api.png)
@@ -57,7 +57,8 @@ ms.locfileid: "74108393"
     - **Starter**
     - **Unlimited**
 
-7. Нажмите кнопку **Создать**.
+7. Введите другие параметры API. Вы можете задать значения во время создания или настроить их позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
+8. Нажмите кнопку **создания**.
 
 ## <a name="test-the-api-in-the-azure-portal"></a>проверка API на портале Azure;
 
@@ -80,7 +81,7 @@ ms.locfileid: "74108393"
 
 [!INCLUDE [api-management-define-api-topics.md](../../includes/api-management-define-api-topics.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 >

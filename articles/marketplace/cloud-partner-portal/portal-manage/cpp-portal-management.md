@@ -1,19 +1,18 @@
 ---
 title: Управление Портал Cloud Partner | Azure Marketplace
 description: Устаревшая статья CPP, указанная в статье о ПК; WAS "описывает типы операций, доступных для управления учетными записями для Портал Cloud Partner в Azure Marketplace".
-services: Azure, Marketplace, Cloud Partner Portal, Partner Center
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.author: v-chjen
-ms.openlocfilehash: 4d586e45b0d86bedce61eef69a87d3fc187cf279
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.author: dsindona
+ms.openlocfilehash: ce7e56352533072c625d0ea54a77fa6c4860f2e3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666398"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80288450"
 ---
 # <a name="cloud-partner-portal-management"></a>Управление Портал Cloud Partner
 

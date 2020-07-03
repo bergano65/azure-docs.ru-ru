@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с CylancePROTECT | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с CylancePROTECT | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и CylancePROTECT.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/10/2020
+ms.date: 04/27/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1df0a295cb48925587e9741fa29d4d02376441a8
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 8d9b246d8190a01b34fa0d2e8eba9e48ce879a76
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983509"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83647420"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cylanceprotect"></a>Руководство. Интеграция единого входа Azure Active Directory с CylancePROTECT
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cylanceprotect"></a>Руководство по Интеграция единого входа Azure Active Directory с CylancePROTECT
 
 В этом руководстве вы узнаете, как интегрировать CylancePROTECT с Azure Active Directory (Azure AD). Интеграция CylancePROTECT с Azure AD обеспечивает следующие возможности.
 
@@ -148,7 +148,7 @@ ms.locfileid: "76983509"
 
 ## <a name="configure-cylanceprotect-sso"></a>Настройка единого входа в CylancePROTECT
 
-Чтобы настроить единый вход на стороне **CylancePROTECT**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки CylancePROTECT](mailto:Ibrahim.nafea@toyota.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах. Дополнительные сведения см. в документации по Cylance: [https://support.cylance.com/s/article/Use-Microsoft-Azure-with-CylancePROTECT4](https://support.cylance.com/s/article/Use-Microsoft-Azure-with-CylancePROTECT4).
+Чтобы настроить единый вход на стороне **CylancePROTECT**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки CylancePROTECT](https://www.cylance.com/en-us/resources/support/support-overview.html). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах. Дополнительные сведения см. в документации по Cylance: [https://support.cylance.com/s/article/Use-Microsoft-Azure-with-CylancePROTECT4](https://support.cylance.com/s/article/Use-Microsoft-Azure-with-CylancePROTECT4).
 
 ### <a name="create-cylanceprotect-test-user"></a>Создание тестового пользователя CylancePROTECT
 

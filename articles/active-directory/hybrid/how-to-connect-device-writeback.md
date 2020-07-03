@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Включение обратной записи устройств | Документация Майкрософт'
+title: 'Azure AD Connect: включение обратной записи устройств | Документация Майкрософт'
 description: В этом документе объясняется, как включить функцию обратной записи устройств с помощью службы Azure AD Connect
 services: active-directory
 documentationcenter: ''
@@ -17,13 +17,13 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 632f6f80184c6ba3409bd30ae070cbaefc77f036
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67109497"
 ---
-# <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect выполняет следующие функции: включение обратной записи устройств
+# <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect: включение обратной записи устройств
 > [!NOTE]
 > Для обратной записи устройств требуется подписка Azure AD Premium.
 > 
@@ -31,10 +31,10 @@ ms.locfileid: "67109497"
 
 Следующая документация содержит сведения о том, как включить функцию обратной записи устройств в службе Azure AD Connect. Обратная запись устройств используется в ситуациях,
 
-* Включить [Windows Hello для бизнеса с помощью доверенного сертификата гибридного развертывания](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust-prereqs#device-registration)
-* Включение условного доступа на основе устройств для служб федерации Active Directory (2012 R2 или более поздней версии) защищенных приложений (доверия с проверяющей стороной).
+* Включение [Windows Hello для бизнеса с помощью развертывания гибридного доверия сертификатов](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust-prereqs#device-registration)
+* Включение условного доступа на основе устройств в службы ADFS (2012 R2 или более поздней версии) защищенных приложений (отношения доверия с проверяющей стороной).
 
-Это обеспечивает дополнительную защиту и гарантию того, что доступ к приложениям предоставляется только доверенным устройствам. Дополнительные сведения о настройке условного доступа см. в разделе [управление рисками с помощью условного доступа](../active-directory-conditional-access-azure-portal.md) и [Настройка локального условного доступа, с помощью регистрации устройств Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md).
+Это обеспечивает дополнительную защиту и гарантию того, что доступ к приложениям предоставляется только доверенным устройствам. Дополнительные сведения об условном доступе см. в статьях [Управление рисками с помощью условного доступа](../active-directory-conditional-access-azure-portal.md) и [Настройка локального условного доступа с использованием регистрация устройств Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md).
 
 > [!IMPORTANT]
 > <li>Устройства должны находиться в том же лесу, что и пользователи. Поскольку обратная запись устройств должна производиться в один лес, эта функция в настоящий момент не поддерживает развертывание с несколькими лесами пользователей.</li>
@@ -59,9 +59,9 @@ ms.locfileid: "67109497"
 
 4. Страница **Контейнер устройств** содержит параметр подготовки Active Directory с использованием одного из двух вариантов:
 
-    a. **Предоставление учетных данных администратора предприятия**. Если учетные данные администратора предприятия предоставлены для леса, в который необходимо выполнить обратную запись устройств, Azure AD Connect автоматически подготовит лес во время настройки обратной записи устройства.
+    а. **Предоставление учетных данных администратора предприятия**. Если учетные данные администратора предприятия предоставлены для леса, в который необходимо выполнить обратную запись устройств, Azure AD Connect автоматически подготовит лес во время настройки обратной записи устройства.
 
-    2\. **Скачивание сценария PowerShell** . Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Предоставьте загруженный сценарий PowerShell **CreateDeviceContainer.psq** администратору предприятия леса, в который будет выполнена обратная запись устройств.
+    b. **Загрузка сценария PowerShell **. Azure AD Connect автоматически создает сценарий PowerShell, который может подготовить Active Directory для обратной записи устройства. Если учетные данные администратора предприятия не могут быть предоставлены в Azure AD Connect, предлагаем загрузить сценарий PowerShell. Предоставьте загруженный сценарий PowerShell **CreateDeviceContainer.psq** администратору предприятия леса, в который будет выполнена обратная запись устройств.
     ![Подготовка леса Active Directory](./media/how-to-connect-device-writeback/devicecontainercreds.png)
     
     Для подготовки леса Active Directory выполняются следующие операции:
@@ -82,7 +82,7 @@ ms.locfileid: "67109497"
 
    ![Центр администрирования Active Directory: список зарегистрированных устройств](./media/how-to-connect-device-writeback/devicewriteback6.png)
 
-## <a name="enable-conditional-access"></a>Включение условного доступа
+## <a name="enable-conditional-access"></a>Включить условный доступ
 Подробные инструкции о включении этого сценария см. в статье [Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
@@ -97,7 +97,7 @@ ms.locfileid: "67109497"
   * В меню "Пуск" щелкните **Служба синхронизации**.
   * Откройте вкладку **Соединители** .
   * Найдите соединитель с типом "Доменные службы Active Directory" и выберите его.
-  * В разделе **Действия** выберите **Свойства**.
+  * В разделе **действия**выберите **свойства**.
   * Выберите **Подключиться к лесу Active Directory**. Убедитесь, что домен и имя пользователя, указанные в этом окне, совпадают с учетной записью, указанной в сценарии.
     ![Учетная запись соединителя в диспетчере службы синхронизации](./media/how-to-connect-device-writeback/connectoraccount.png)
 
@@ -125,10 +125,10 @@ ms.locfileid: "67109497"
 
 ![Устранение неполадок, проверка разрешений в конфигурации регистрации устройства](./media/how-to-connect-device-writeback/troubleshoot6.png)
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 * [Управление рисками с помощью условного доступа](../active-directory-conditional-access-azure-portal.md)
-* [Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md)
+* [Настройка локального условного доступа с помощью Регистрация устройств Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/13/2020
-ms.openlocfilehash: 607020f1d540e83a4d049b96b9ab9a4ebcd385f0
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: abc3cc8c526e37e18f1e67b109a9a8e15ff8c989
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76157259"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302718"
 ---
 # <a name="run-mapreduce-jobs-with-apache-hadoop-on-hdinsight-using-rest"></a>Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST
 
@@ -22,7 +22,7 @@ ms.locfileid: "76157259"
 > [!NOTE]  
 > Если вы уже знакомы с использованием серверов Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь с документом [Сведения об использовании HDInsight в Linux](../hdinsight-hadoop-linux-information.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Кластер Apache Hadoop в HDInsight. См. раздел [Создание кластеров Apache Hadoop с помощью портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
@@ -57,7 +57,7 @@ ms.locfileid: "76157259"
    * **-u**: имя пользователя и пароль, используемые для аутентификации запроса.
    * **-G**: указывает, что это запрос GET.
 
-   Начало URI, `https://CLUSTERNAME.azurehdinsight.net/templeton/v1`, одинаково для всех запросов.
+   Начало URI `https://CLUSTERNAME.azurehdinsight.net/templeton/v1` одинаковое для всех запросов.
 
     Вы должны получить ответ, аналогичный показанному ниже коду JSON.
 
@@ -77,7 +77,7 @@ ms.locfileid: "76157259"
 
     Конец универсального кода ресурса (/mapreduce/jar) сообщает WebHCat, что этот запрос запускает задание MapReduce из класса в JAR-файле. Ниже приведены параметры, используемые в этой команде:
 
-   * **-d**: `-G` не используется, поэтому запрос по умолчанию имеет метод POST. `-d` задает значения данных, отправляемые в запросе.
+   * **-d**: `-G` не используется, поэтому запрос по умолчанию использует метод POST. `-d` задает значения данных, отправляемые в запросе.
      * **user.name**— пользователь, выполняющий команду.
      * **jar**: расположение JAR-файла, содержащего класс для запуска.
      * **class**: класс, содержащий логику MapReduce.
@@ -171,9 +171,9 @@ ms.locfileid: "76157259"
 
 1. После изменения состояния задания на `SUCCEEDED` результаты задания можно получить из хранилища BLOB-объектов Azure. Параметр `statusdir`, передаваемый в запросе, содержит расположение выходного файла. В данном случае это `/example/curl`. Этот адрес задает каталог `/example/curl` для сохранения выходных данных задания, который размещен в хранилище по умолчанию для кластера.
 
-Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). Дополнительные сведения о работе с большими двоичными объектами с помощью интерфейса командной строки Azure CLI см. в документе [Использование Azure CLI со службой хранилища Microsoft Azure](../../storage/common/storage-azure-cli.md#create-and-manage-blobs).
+Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI для работы с хранилищем BLOB-объектов Azure см. в разделе [Краткое руководство. Создание, скачивание и перечисление больших двоичных объектов с помощью Azure CLI](../../storage/blobs/storage-quickstart-blobs-cli.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight:
 

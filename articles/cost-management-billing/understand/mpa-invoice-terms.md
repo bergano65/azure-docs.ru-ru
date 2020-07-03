@@ -2,21 +2,18 @@
 title: Общие сведения о счете Соглашения с партнером Майкрософт в Azure
 description: Узнайте, как правильно интерпретировать счет Соглашения с партнером Майкрософт в Azure.
 author: bandersmsft
-manager: amberb
+ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 02/10/2020
 ms.author: banders
-ms.openlocfilehash: fcebe02d62beba1e48759c0298a18b26f3a61cbf
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 2aca67b5e73bf7f02ac6bca27569265339b0eae6
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77133311"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77200169"
 ---
 # <a name="terms-in-your-microsoft-partner-agreement-invoice"></a>Термины в счете Соглашения с партнером Майкрософт
 
@@ -36,7 +33,7 @@ ms.locfileid: "77133311"
 
 <!-- add screenshot -->
 
-| Термин | Описание |
+| Термин | Description |
 | --- | --- |
 | Покупатель |Адрес юридического лица в свойствах учетной записи выставления счетов|
 | Получатель счета |Адрес выставления счета для получающего счет профиля выставления счетов в свойствах профиля выставления счетов|
@@ -52,7 +49,7 @@ ms.locfileid: "77133311"
 
 <!-- add screenshot -->
 
-| Термин | Описание |
+| Термин | Description |
 | --- | --- |
 | Расходы|Общая сумма расходов корпорации Майкрософт для этого профиля выставления счетов с последнего расчетного периода |
 | Баллы |Деньги на счете, полученные от возвратов |

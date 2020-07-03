@@ -2,20 +2,20 @@
 title: Общие сведения об учетных записях пользователей в Azure Active Directory B2C
 description: Сведения о типах учетных записей пользователей, которые можно использовать в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/05/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f9573f4d226df4eb6068af679f2eb45dc87c7e40
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 9630e1f23b6595ca690ecafcf0c4b9bfff603f2e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840066"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78185664"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Общие сведения об учетных записях пользователей в Azure Active Directory B2C
 
@@ -27,7 +27,7 @@ ms.locfileid: "76840066"
 - **Гостевая учетная запись**. Гостевая учетная запись может быть только учетной записью корпорации Майкрософт или пользователя Azure Active Directory, которая может использоваться для доступа к приложениям или для управления клиентами.
 - **Учетная запись потребителя** . учетная запись потребителя используется пользователями приложений, зарегистрированных с Azure AD B2C. Учетные записи потребителей могут создаваться:
   - Пользователь, который проходит через пользовательский поток регистрации в приложении Azure AD B2C
-  - Использование Azure AD API Graph
+  - Использование Microsoft Graph API
   - Использование портала Azure
 
 ## <a name="work-account"></a>Рабочая учетная запись
@@ -76,12 +76,12 @@ ms.locfileid: "76840066"
 
 ## <a name="consumer-user"></a>Потребитель
 
-Потребитель может входить в приложение, защищенное Azure AD B2C, однако не имеет доступа к таким ресурсам Azure, как портал Azure. Потребитель может использовать локальную учетную запись или федеративную учетную запись, такую как Facebook или Twitter. Учетная запись потребителя создается с помощью [пользовательского потока регистрации или входа](user-flow-overview.md), с помощью API Graph Azure AD или с помощью портал Azure.
+Потребитель может входить в приложение, защищенное Azure AD B2C, однако не имеет доступа к таким ресурсам Azure, как портал Azure. Потребитель может использовать локальную учетную запись или федеративную учетную запись, такую как Facebook или Twitter. Учетная запись потребителя создается с помощью [пользовательского интерфейса регистрации или входа](user-flow-overview.md)с помощью Microsoft Graph API или с помощью портал Azure.
 
 Укажите данные, получаемые при создании учетной записи потребителя, с использованием настраиваемых атрибутов пользователя. Дополнительные сведения см. в статье [Определение настраиваемых атрибутов в Azure Active Directory B2C](user-flow-custom-attributes.md).
 
-Дополнительные сведения по созданию учетной записи потребителя Azure AD B2C см. в разделе **Создание учетных записей пользователей-клиентов** статьи [Azure AD B2C. Использование API Graph Azure AD](manage-user-accounts-graph-api.md). Сведения из раздела **Обновление учетных записей пользователей-клиентов** той же статьи можно использовать для управления свойствами учетной записи.
+Дополнительные сведения об управлении учетными записями потребителей см. [в статье Управление учетными записями пользователей Azure AD B2C с помощью Microsoft Graph](manage-user-accounts-graph-api.md).
 
 ### <a name="migrate-consumer-user-accounts"></a>Миграция учетных записей потребителей
 
-Возможно, вам потребуется перенести существующие учетные записи потребителей из любого поставщика удостоверений в Azure AD B2C. Дополнительные сведения см. в статье [Azure Active Directory B2C. Миграция пользователей](user-migration.md) или [Azure Active Directory B2C. Перемещение пользователей с удостоверениями социальных сетей](migrate-social-identities.md).
+Возможно, вам потребуется перенести существующие учетные записи потребителей из любого поставщика удостоверений в Azure AD B2C. Дополнительные сведения см. [в статье Миграция пользователей в Azure AD B2C](user-migration.md).

@@ -16,10 +16,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2efcf77d65fa2f9e203ed805cd7d78b9802ee3aa
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74021938"
 ---
 # <a name="invite-guest-users-and-assign-azure-resource-roles-in-privileged-identity-management"></a>Приглашение гостевых пользователей и назначение ролей ресурсов Azure в управление привилегированными пользователями
@@ -27,7 +27,7 @@ ms.locfileid: "74021938"
 Гостевые пользователи Azure Active Directory (Azure AD) являются частью возможностей совместной работы B2B в Azure AD, что позволяет управлять внешними гостевыми пользователями и поставщиками в качестве гостевых в Azure AD. При объединении службы совместной работы B2B с Azure AD Privileged Identity Management (PIM) вы можете расширить требования к соответствию и управлению гостями. Например, эти управление привилегированными пользователями функции можно использовать для задач Azure Identity с гостями.
 
 - назначение доступа к определенным ресурсам Azure;
-- включение JIT-доступа;
+- Включение JIT-доступа
 - выбор длительности и даты окончания назначения;
 - Требовать многофакторную проверку подлинности при активном назначении или активации
 - выполнение проверок доступа;
@@ -69,7 +69,7 @@ ms.locfileid: "74021938"
 
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который является членом роли администратора [привилегированных ролей](../users-groups-roles/directory-assign-admin-roles.md#privileged-role-administrator) или [администратора пользователей](../users-groups-roles/directory-assign-admin-roles.md#user-administrator) .
 
-1. Откройте страницу **Azure AD Privileged Identity Management**.
+1. Откройте **Azure AD privileged Identity Management**.
 
 1. Щелкните **Ресурсы Azure**.
 
@@ -157,13 +157,13 @@ ms.locfileid: "74021938"
 
     ![Ресурсы Azure. страница "аудит ресурсов" со списком времени, запрашивающей стороны и действия](./media/pim-resource-roles-external-users/audit-resource.png)
 
-1. Чтобы просмотреть действие для гостя, выберите **Azure Active Directory** > **Пользователи** > *имя гостя*.
+1. Чтобы просмотреть действие для гостя, выберите **Azure Active Directory** > **пользователей** > *имя гостя*.
 
 1. Выберите **журналы аудита** , чтобы просмотреть журналы аудита для Организации. Если потребуется, примените фильтры.
 
     ![Журнал аудита каталогов: Дата, цель, инициировано и действие](./media/pim-resource-roles-external-users/audit-directory.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Назначение ролей администратора Azure AD в управление привилегированными пользователями](pim-how-to-add-role-to-user.md)
 - [Что такое доступ гостевых пользователей в службе совместной работы Azure AD B2B?](../b2b/what-is-b2b.md)

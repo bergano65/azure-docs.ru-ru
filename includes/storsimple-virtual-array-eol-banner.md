@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: storsimple
 author: alkohli
 ms.service: storsimple
@@ -9,10 +9,10 @@ ms.date: 07/26/2019
 ms.author: alkohli
 ms.custom: include file
 ms.openlocfilehash: f33174f7c23d0458d952d7606852eb821df7154a
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "68589998"
 ---
 > [!IMPORTANT]

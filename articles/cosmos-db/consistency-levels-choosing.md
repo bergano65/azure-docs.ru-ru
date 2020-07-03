@@ -5,14 +5,14 @@ author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 07/23/2019
+ms.date: 04/23/2020
 ms.reviewer: sngun
-ms.openlocfilehash: cea157e272a2bf464141e592b8e742f314a83233
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: aa8a020dc4a7e9d4e7de0671b566755e413caeb2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75441924"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82191759"
 ---
 # <a name="choose-the-right-consistency-level"></a>Выбор правильного уровня согласованности 
 
@@ -22,7 +22,7 @@ ms.locfileid: "75441924"
 
 Если приложение создано с помощью API SQL или API таблиц, учитывайте следующие моменты:
 
-- Для многих сценариев из реальной жизни оптимальным и рекомендуемым вариантом является согласованность на уровне сеанса. Дополнительные сведения см. в разделе [Использование маркеров сеанса](how-to-manage-consistency.md#utilize-session-tokens).
+- Для многих сценариев из реальной жизни оптимальным и рекомендуемым вариантом является согласованность на уровне сеанса. Дополнительные сведения см. в разделе [как управлять маркером сеанса для приложения](how-to-manage-consistency.md#utilize-session-tokens).
 
 - Если вашему приложению необходима строгая согласованность, рекомендуем использовать уровень согласованности "Ограниченное устаревание".
 

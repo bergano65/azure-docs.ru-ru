@@ -10,11 +10,11 @@ ms.custom: mvc
 ms.date: 03/08/2019
 ms.author: dobett
 ms.openlocfilehash: cecf23d61d6a12c20aa3e64e4ee0ddacddbe7823
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58183362"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "62106819"
 ---
 # <a name="quickstart-try-a-cloud-based-solution-to-run-a-predictive-maintenance-analysis-on-my-connected-devices"></a>Краткое руководство. Использование облачных решений для анализа прогнозного обслуживания на подключенных устройствах
 
@@ -84,11 +84,11 @@ ms.locfileid: "58183362"
 
 ![Удаление решения](media/quickstart-predictive-maintenance-deploy/deletesolution.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы развернули акселератор решения для прогнозного обслуживания и запустили имитацию.
 
 Дополнительные сведения об акселераторе решения и имитации самолетных двигателей см. в следующей статье.
 
 > [!div class="nextstepaction"]
-> [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-walkthrough.md)
+> [Обзор акселератора решений для прогнозного обслуживания](iot-accelerators-predictive-walkthrough.md)

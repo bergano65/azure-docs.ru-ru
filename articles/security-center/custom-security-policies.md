@@ -6,22 +6,22 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 04/22/2020
 ms.author: memildin
-ms.openlocfilehash: 34dbace304ccf70891ef53dd768de60d87e26967
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.openlocfilehash: d703ea38c39ed556102271ac0cf9a609ce449bc3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75666641"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82195924"
 ---
-# <a name="using-custom-security-policies-preview"></a>Использование настраиваемых политик безопасности (Предварительная версия)
+# <a name="using-custom-security-policies"></a>Использование настраиваемых политик безопасности
 
 Для защиты систем и среды центр безопасности Azure создает рекомендации по безопасности. Эти рекомендации основаны на рекомендациях отрасли, которые включены в общую политику безопасности по умолчанию, предоставляемую всем клиентам. Они также могут поступать из знаний центра безопасности о отраслевых и нормативных стандартах.
 
-С помощью этой предварительной версии можно добавлять собственные *пользовательские* инициативы. Вы получите рекомендации, если ваша среда не соответствует созданным политикам. Любые пользовательские инициативы, которые вы создадите, будут отображаться рядом со встроенными инициативами на панели мониторинга соответствия нормативным требованиям, описанной в руководстве [улучшение соответствия нормативным требованиям](security-center-compliance-dashboard.md).
+С помощью этой функции можно добавить собственные *пользовательские* инициативы. Вы получите рекомендации, если ваша среда не соответствует созданным политикам. Все созданные вами пользовательские инициативы будут отображаться рядом со встроенными инициативами на панели мониторинга соответствия нормативным требованиям, как описано в руководстве [улучшение соответствия нормативным требованиям](security-center-compliance-dashboard.md).
 
-Как обсуждалось [здесь](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#definition-location) в документации по политике Azure, при указании расположения для пользовательской инициативы она должна быть группой управления или подпиской. 
+Как описано в [документации по политике Azure](https://docs.microsoft.com/azure/governance/policy/concepts/definition-structure#definition-location), при указании расположения для пользовательской инициативы она должна быть группой управления или подпиской. 
 
 ## <a name="to-add-a-custom-initiative-to-your-subscription"></a>Добавление пользовательской инициативы в подписку 
 
@@ -29,16 +29,16 @@ ms.locfileid: "75666641"
 
 1. Выберите подписку или группу управления, к которым вы хотите добавить пользовательскую инициативу.
 
-    [![выбрать подписку, для которой вы создадите настраиваемую политику](media/custom-security-policies/custom-policy-selecting-a-subscription.png)](media/custom-security-policies/custom-policy-selecting-a-subscription.png#lightbox)
+    [![Выбор подписки, для которой создается настраиваемая политика](media/custom-security-policies/custom-policy-selecting-a-subscription.png)](media/custom-security-policies/custom-policy-selecting-a-subscription.png#lightbox)
 
     > [!NOTE]
     > Для оценки и отображения в центре безопасности необходимо добавить пользовательские стандарты на уровне подписки (или выше). 
     >
     > При добавлении пользовательского стандарта ему назначается *инициатива* для этой области. Поэтому рекомендуется выбрать самую широкую область, необходимую для этого назначения.
 
-1. На странице Политика безопасности в разделе Пользовательские инициативы (Предварительная версия) щелкните **добавить пользовательскую инициативу**.
+1. На странице Политика безопасности в разделе Пользовательские инициативы щелкните **добавить пользовательскую инициативу**.
 
-    [![щелкните * * Добавить пользовательскую инициативу * *](media/custom-security-policies/custom-policy-add-initiative.png)](media/custom-security-policies/custom-policy-add-initiative.png#lightbox)
+    [![Щелкните * * Добавить пользовательскую инициативу * *](media/custom-security-policies/custom-policy-add-initiative.png)](media/custom-security-policies/custom-policy-add-initiative.png#lightbox)
 
     Появится следующая страница:
 
@@ -53,7 +53,7 @@ ms.locfileid: "75666641"
     1. Выберите политики для включения и нажмите кнопку **Добавить**.
     1. Введите необходимые параметры.
     1. Выберите команду **Сохранить**.
-    1. На странице Добавление пользовательских инициатив нажмите кнопку обновить, и новая инициатива будет отображаться как доступная.
+    1. На странице Добавление пользовательских инициатив нажмите кнопку Обновить. Новая инициатива будет отображаться как доступная.
     1. Щелкните **Добавить** и назначьте его подписке.
 
     > [!NOTE]
@@ -67,7 +67,76 @@ ms.locfileid: "75666641"
 
 1. Чтобы просмотреть итоговые рекомендации для политики, щелкните **рекомендации** на боковой панели, чтобы открыть страницу рекомендации. Рекомендации будут отображаться с "настраиваемой" меткой и будут доступны примерно в течение одного часа.
 
-    [![настраиваемые рекомендации](media/custom-security-policies/custom-policy-recommendations.png)](media/custom-security-policies/custom-policy-recommendations-in-context.png#lightbox)
+    [![Настраиваемые рекомендации](media/custom-security-policies/custom-policy-recommendations.png)](media/custom-security-policies/custom-policy-recommendations-in-context.png#lightbox)
+
+## <a name="enhancing-your-custom-recommendations-with-detailed-information"></a>Усовершенствование пользовательских рекомендаций с подробными сведениями
+
+Встроенные рекомендации, предоставляемые центром безопасности Azure, включают такие сведения, как уровни серьезности и инструкции по исправлению. Если вы хотите добавить эти сведения в пользовательские рекомендации, чтобы они появлялись в портал Azure или при любом доступе к рекомендациям, необходимо использовать REST API. 
+
+Ниже приведены два типа сведений, которые можно добавить.
+
+- **Ремедиатиондескриптион** — строка
+- **Серьезность** — перечисление [низкий, средний, высокий]
+
+Метаданные должны быть добавлены в определение политики для политики, которая является частью пользовательской инициативы. Он должен находиться в свойстве "Секуритицентер", как показано ниже.
+
+```json
+ "metadata": {
+    "securityCenter": {
+        "RemediationDescription": "Custom description goes here",
+        "Severity": "High",
+    },
+```
+
+Ниже приведен пример настраиваемой политики, включая свойство Metadata/Секуритицентер.
+
+  ```json
+  {
+"properties": {
+    "displayName": "Security - ERvNet - AuditRGLock",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Audit required resource groups lock",
+    "metadata": {
+        "securityCenter": {
+            "remediationDescription": "Resource Group locks can be set via Azure Portal -> Resource Group -> Locks",
+            "severity": "High",
+        },
+    },
+    "parameters": {
+        "expressRouteLockLevel": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Lock level",
+                "description": "Required lock level for ExpressRoute resource groups."
+            },
+            "allowedValues": [
+                "CanNotDelete",
+                "ReadOnly"
+            ]
+        }
+    },
+    "policyRule": {
+        "if": {
+            "field": "type",
+            "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+        },
+        "then": {
+            "effect": "auditIfNotExists",
+            "details": {
+                "type": "Microsoft.Authorization/locks",
+                "existenceCondition": {
+                    "field": "Microsoft.Authorization/locks/level",
+                    "equals": "[parameters('expressRouteLockLevel')]"
+                }
+            }
+        }
+    }
+}
+}
+  ```
+
+Еще один пример использования свойства Секуритицентер см. [в этом разделе документации по REST API](https://docs.microsoft.com/rest/api/securitycenter/assessmentsmetadata/createinsubscription#examples).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

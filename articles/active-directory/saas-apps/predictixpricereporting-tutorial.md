@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Predictix Price Reporting | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Predictix Price Reporting | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить единый вход Azure Active Directory в Predictix Price Reporting.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 808b2d964bb39af6b410a84563717102ebece454
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67094106"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Руководство по Интеграция Azure Active Directory с Predictix Price Reporting
+# <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Учебник. Интеграция Azure Active Directory с Predictix Price Reporting
 
 В этом руководстве описано, как интегрировать Predictix Price Reporting с Azure Active Directory (Azure AD).
 
@@ -36,11 +36,11 @@ ms.locfileid: "67094106"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Predictix Price Reporting, вам потребуется:
 
-* подписка Azure AD Если у вас нет среды Azure AD, вы можете получить [пробную подписку на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить [пробную подписку на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 * подписка Predictix Price Reporting с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -204,4 +204,4 @@ ms.locfileid: "67094106"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

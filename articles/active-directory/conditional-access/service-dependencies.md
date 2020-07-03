@@ -5,24 +5,27 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: article
-ms.date: 11/21/2019
+ms.date: 05/04/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b39238575c05d35a2d87999e08c49c0c77e99bfb
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: a108c952c4f1f9b8298e57c8fd94c767bb065f00
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74380009"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82981779"
 ---
 # <a name="what-are-service-dependencies-in-azure-active-directory-conditional-access"></a>Что такое зависимости служб в Azure Active Directory условном доступе? 
 
 С помощью политик условного доступа можно указать требования доступа к веб-сайтам и службам. Например, требования к доступу могут включать в себя требование многофакторной проверки подлинности (MFA) или [управляемых устройств](require-managed-devices.md). 
 
-При непосредственном доступе к сайту или службе влияние связанной политики обычно легко оценивается. Например, если имеется политика, требующая настройки MFA для SharePoint Online, для каждого входа на веб-портал SharePoint применяется MFA. Однако это не всегда прямо вперед, чтобы оценить влияние политики, поскольку существуют облачные приложения с зависимостями от других облачных приложений. Например, Microsoft Teams может предоставить доступ к ресурсам в SharePoint Online. Таким образом, при обращении к Microsoft Teams в нашем текущем сценарии вы также налагаетесь на политику MFA SharePoint.   
+При непосредственном доступе к сайту или службе влияние связанной политики обычно легко оценивается. Например, если имеется политика, для которой требуется многофакторная проверка подлинности (MFA) для SharePoint Online, для каждого входа на веб-портал SharePoint применяется сервер MFA. Однако это не всегда прямо вперед, чтобы оценить влияние политики, поскольку существуют облачные приложения с зависимостями от других облачных приложений. Например, Microsoft Teams может предоставить доступ к ресурсам в SharePoint Online. Таким образом, при обращении к Microsoft Teams в нашем текущем сценарии вы также налагаетесь на политику MFA SharePoint. 
+
+> [!TIP]
+> Использование приложения [office 365 (Предварительная версия)](concept-conditional-access-cloud-apps.md#office-365-preview) предназначено для всех приложений Office во избежание проблем с зависимостями служб в стеке Office.
 
 ## <a name="policy-enforcement"></a>Принудительное применение политики 
 
@@ -37,11 +40,13 @@ ms.locfileid: "74380009"
 
 Рекомендуется устанавливать общие политики для связанных приложений и служб везде, где это возможно. Обеспечение единообразного уровня безопасности обеспечивает оптимальное взаимодействие с пользователем. Например, при настройке общей политики для Exchange Online, SharePoint Online, Microsoft Teams и Skype для бизнеса значительно сокращается количество непредвиденных запросов, которые могут возникнуть из-за применения различных политик к подчиненным службам. 
 
+Отличный способ добиться этого с помощью приложений в стеке Office — использовать [Office 365 (Предварительная версия)](concept-conditional-access-cloud-apps.md#office-365-preview) вместо назначения отдельных приложений.
+
 В таблице ниже перечислены дополнительные зависимости служб, которые должны соответствовать клиентским приложениям.  
 
-| Клиентские приложения         | Подчиненная служба                          | Стиль |
+| Клиентские приложения         | Подчиненная служба                          | Принудительное применение |
 | :--                 | :--                                         | ---         | 
-| Озеро данных Azure     | Управление Microsoft Azure (портал и API) | Раннее связывание |
+| Azure Data Lake     | Управление Microsoft Azure (портал и API) | Раннее связывание |
 | Аудитория Майкрософт | Exchange                                    | Раннее связывание |
 |                     | SharePoint                                  | Раннее связывание |
 | Microsoft Teams     | Exchange                                    | Раннее связывание |
@@ -54,13 +59,13 @@ ms.locfileid: "74380009"
 |                     | SharePoint                                  | Раннее связывание |
 | PowerApps.           | Управление Microsoft Azure (портал и API) | Раннее связывание |
 |                     | Microsoft Azure Active Directory              | Раннее связывание |
-| Project             | Dynamics CRM                                | Раннее связывание |
+| Проект             | Dynamics CRM                                | Раннее связывание |
 | Skype для бизнеса  | Exchange                                    | Раннее связывание |
 | Visual Studio       | Управление Microsoft Azure (портал и API) | Раннее связывание |
 | Microsoft Forms     | Exchange                                    | Раннее связывание |
 |                     | SharePoint                                  | Раннее связывание |
 | Microsoft To-Do     | Exchange                                    | Раннее связывание |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения о реализации условного доступа см.в статье [How To: Plan your Conditional Access deployment in Azure Active Directory](plan-conditional-access.md) (Практическое руководство. Планирование развертывания с условным доступом в Azure Active Directory).
+Сведения о реализации условного доступа в среде см. в статье [Планирование развертывания условного доступа в Azure Active Directory](plan-conditional-access.md).

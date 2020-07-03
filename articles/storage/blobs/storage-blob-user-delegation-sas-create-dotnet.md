@@ -10,18 +10,18 @@ ms.date: 12/18/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: 385d2c3b88bc2e4d653dae2dc9670cb9e9388faf
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: fa0754505d887b77cc3d11ebde9c246d4a00eb59
+ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75371842"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82883317"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-net"></a>Создание SAS делегирования пользователя для контейнера или большого двоичного объекта с помощью .NET
 
 [!INCLUDE [storage-auth-sas-intro-include](../../../includes/storage-auth-sas-intro-include.md)]
 
-В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с клиентской библиотекой хранилища Azure для .NET.
+В этой статье показано, как использовать учетные данные Azure Active Directory (Azure AD) для создания SAS делегирования пользователя для контейнера или большого двоичного объекта с клиентской библиотекой хранилища Azure для .NET версии 12.
 
 [!INCLUDE [storage-auth-user-delegation-include](../../../includes/storage-auth-user-delegation-include.md)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "75371842"
 
 ## <a name="add-using-directives"></a>Добавление директив using
 
-Добавьте в код следующие директивы `using` для использования Azure Identity и клиентских библиотек службы хранилища Azure.
+Добавьте следующие `using` директивы в код для использования Azure Identity и клиентских библиотек службы хранилища Azure.
 
 ```csharp
 using System;
@@ -235,7 +235,7 @@ private static async Task ReadBlobWithSasAsync(Uri sasUri)
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](../common/storage-sas-overview.md)
 - [Операция получения ключа делегирования пользователя](/rest/api/storageservices/get-user-delegation-key)

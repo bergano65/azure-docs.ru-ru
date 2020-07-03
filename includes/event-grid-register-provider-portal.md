@@ -1,19 +1,19 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: event-grid
-author: tfitzmac
+author: spelluru
 ms.service: event-grid
 ms.topic: include
-ms.date: 07/05/2018
-ms.author: tomfitz
+ms.date: 04/16/2020
+ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: c3677e7897498aa06d7bd547988ad4dc0326f39b
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 8833bb75f5f50372deda3e71c1df90bed9a20054
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185376"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605563"
 ---
 ## <a name="enable-event-grid-resource-provider"></a>Включение поставщика ресурсов службы "Сетка событий"
 
@@ -21,7 +21,7 @@ ms.locfileid: "67185376"
 
 На портале Azure выполните следующие действия.
 
-1. Выберите **Подписки**.
+1. В меню слева выберите **Подписки**.
 1. Выберите подписку, которую используете для службы "Сетка событий".
 1. В разделе **Параметры** выберите **Поставщики ресурсов**.
 1. Найдите **Microsoft.EventGrid**.

@@ -1,19 +1,17 @@
 ---
 title: Воронки Azure Application Insights
 description: Узнайте, как использовать воронки, чтобы узнать как клиенты взаимодействуют с вашим приложением.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 07/17/2017
 ms.reviewer: mbullwin
-ms.openlocfilehash: d6a6e34f9688747891ac91401941a96b6e85d76a
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
-ms.translationtype: MT
+ms.openlocfilehash: 09c1899004bd93d0f2365c3bbc000c37459e8d89
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899471"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83797833"
 ---
 # <a name="discover-how-customers-are-using-your-application-with-application-insights-funnels"></a>Узнайте, как клиенты используют ваше приложение, с помощью воронок Application Insights.
 
@@ -48,7 +46,7 @@ ms.locfileid: "72899471"
   * [Общие сведения об использовании](usage-overview.md)
   * [Анализ пользователей, сеансов и событий в Application Insights](usage-segmentation.md)
   * [Сохранение](usage-retention.md)
-  * [Книги](../../azure-monitor/app/usage-workbooks.md)
+  * [книги](../../azure-monitor/platform/workbooks-overview.md)
   * [Добавление контекста пользователей](usage-send-user-context.md)
   * [Экспорт в Power BI](../../azure-monitor/app/export-power-bi.md )
 

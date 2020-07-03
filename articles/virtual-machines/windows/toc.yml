@@ -134,16 +134,31 @@
           items:
             - name: Шифрование виртуальной машины и дисков данных
               href: ./../scripts/virtual-machines-windows-cli-sample-encrypt-vm.md
-            - name: Монитор
-              items:
-                - name: Azure Monitor
-                  href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-oms.md
+        - name: Монитор
+          items:
+            - name: Azure Monitor
+              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-oms.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ../policy-samples.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
 - name: Основные понятия
   items:
+    - name: Изображения
+      href: shared-image-galleries.md
     - name: Azure Resource Manager
       href: ../../azure-resource-manager/management/overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+      items:
+        - name: Шаблоны Resource Manager
+          href: template-description.md
     - name: Регионы
       href: regions.md
+      items:
+        - name: О расширениях Azure
+          href: ../extensions/overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Агент виртуальной машины Linux
+          href: ../extensions/agent-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Компоненты
+          href: ../extensions/features-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Доступность и производительность
       items:
         - name: Доступность
@@ -153,61 +168,115 @@
         - name: проблемы с производительностью сети;
           href: ../../virtual-network/virtual-network-optimize-network-bandwidth.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Типы и размеры виртуальных машин
-      href: null
       items:
-        - name: Семейства размеров
+        - name: Размеры виртуальной машины
           href: sizes.md
         - name: Виртуальные машины 2-го поколения
           href: generation-2.md
         - name: Общего назначения
-          href: sizes-general.md
-          displayName: Dsv3 Dv3 DSv2 Dv2 Av2
           items:
+            - name: Обзор
+              href: ../sizes-general.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия Av2
+              href: ../av2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Серия B с накапливаемыми ресурсами
-              href: b-series-burstable.md
+              href: ../sizes-b-series-burstable.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия DCv2
+              href: ../dcv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серии Dv2 и DSv2
+              href: ../dv2-dsv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серии Dv3 и Dsv3
+              href: ../dv3-dsv3-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серии Dav4 и Dasv4
+              href: ../dav4-dasv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Оптимизированные для вычислений
-          href: sizes-compute.md
-          displayName: Fsv2 Fs F-series
-        - name: Оптимизированные для операций в памяти
-          href: sizes-memory.md
-          displayName: Esv3 Ev3 M-series GS G-series DSv2 Dv2
           items:
+            - name: Обзор
+              href: ../sizes-compute.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия Fsv2
+              href: ../fsv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Оптимизированные для операций в памяти
+          displayName: Esv3 Ev3 Easv4 Eav4 M-series GS G-series DSv2 Dv2
+          items:
+            - name: Обзор
+              href: ../sizes-memory.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серии Dv2 и DSv2 (11–15)
+              href: ../dv2-dsv2-series-memory.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серии Ev3 и Esv3
+              href: ../ev3-esv3-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серии Eav4 и Easv4
+              href: ../eav4-easv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия M
+              href: ../m-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия Mv2
+              href: ../mv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Ограниченное число виртуальных ЦП
               href: constrained-vcpu.md
         - name: Оптимизированные для операций в хранилище
-          displayName: ls
-          href: sizes-storage.md
           items:
+            - name: Обзор
+              href: ../sizes-storage.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия Lsv2
+              href: ../lsv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Оптимизация производительности
               href: storage-performance.md
-        - name: Ускорение вычислений
+        - name: 'GPU: ускорение вычислений'
           items:
-            - name: Оптимизированные для GPU
-              href: sizes-gpu.md
+            - name: Обзор
+              href: sizes-gpu.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия NC
+              href: ../nc-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия NCv2
+              href: ../ncv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия NCv3
+              href: ../ncv3-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия ND
+              href: ../nd-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия NDv2
+              href: ../ndv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия NV
+              href: ../nv-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия NVv3
+              href: ../nvv3-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия NVv4
+              href: ../nvv4-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Настройка драйверов NVIDIA для GPU
               href: n-series-driver-setup.md
             - name: Настройка драйверов GPU AMD
               href: n-series-amd-driver-setup.md
         - name: Для высокопроизводительных вычислений
           displayName: H-series
-          href: sizes-hpc.md
+          items:
+            - name: Обзор
+              href: ../sizes-hpc.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия H
+              href: ../h-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: "Серия\_HB"
+              href: ../hb-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Серия HBv2
+              href: ../hbv2-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: "Серия\_HC"
+              href: ../hc-series.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Зарезервированные экземпляры
           items:
             - name: Предоплата за виртуальные машины
               href: prepay-reserved-vm-instances.md
+            - name: Предоплата за выделенные узлы
+              href: ../prepay-dedicated-hosts-reserved-instances.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
             - name: Основные сведения о резервировании в Azure
               href: ../../billing/billing-save-compute-costs-reservations.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
             - name: Гибкость размера экземпляра виртуальной машины
               href: reserved-vm-instance-size-flexibility.md
         - name: Точечные виртуальные машины
           href: spot-vms.md
+          displayName: 'pre-empt, preempt'
         - name: Предыдущие поколения
-          href: sizes-previous-gen.md
+          href: ../sizes-previous-gen.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
           displayName: D-series Ds-series A-series Basic
         - name: Размеры изолированных виртуальных машин
           href: isolation.md
         - name: Единицы вычислений Azure (ACU)
-          href: acu.md
+          href: ../acu.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Результаты теста производительности
           href: compute-benchmark-scores.md
         - name: Квоты на виртуальные ЦП
@@ -260,12 +329,18 @@
           href: disk-encryption-overview.md
         - name: Встроенные средства управления безопасностью
           href: virtual-machines-windows-security-controls.md
+        - name: Бастион
+          href: ../../bastion/bastion-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Состояния и жизненный цикл
       href: states-lifecycle.md
     - name: Наблюдение
-      href: monitor.md
+      href: ../../azure-monitor/insights/monitor-vm-azure.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Резервное копирование и восстановление
       href: backup-recovery.md
+    - name: Cloud Adoption Framework
+      href: 'https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json'
+    - name: Центр архитектуры
+      href: 'https://docs.microsoft.com/en-us/azure/architecture/'
     - name: Пример инфраструктуры
       href: infrastructure-example.md
 - name: Практические руководства
@@ -284,7 +359,8 @@
               href: spot-portal.md
             - name: PowerShell
               href: spot-powershell.md
-            - name: Шаблон
+            - name: Шаблон ARM
+              displayName: Azure Resource Manager
               href: ../linux/spot-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
             - name: Коды ошибок
               href: ../error-codes-spot.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
@@ -296,16 +372,17 @@
               href: create-vm-specialized-portal.md
             - name: PowerShell
               href: create-vm-specialized.md
-        - name: 'Использование шаблона с C#'
+        - name: 'Использование шаблона ARM с C#'
           href: csharp-template.md
+          displayName: Azure Resource Manager
         - name: Создание виртуальной машины с помощью Chef
-          href: chef-automation.md
+          href: ../../chef/chef-automation.md
         - name: Использование Java
           href: java.md
         - name: Использование Python
           href: python.md
-        - name: Использование шаблона
-          displayName: 'Azure Resource Manager template, ARM'
+        - name: Использование шаблона ARM
+          displayName: Azure Resource Manager template
           href: ps-template.md
         - name: Подключение к виртуальной машине
           href: connect-logon.md
@@ -313,12 +390,141 @@
           href: hybrid-use-benefit-licensing.md
         - name: "Использование прав на мультитенантное размещение для Windows\_10"
           href: windows-desktop-multitenant-hosting-deployment.md
+    - name: Перейдите с классической модели развертывания на модель Azure Resource Manager
+      items:
+        - name: "Прекращение поддержки с 1\_марта 2023\_г."
+          href: ../classic-vm-deprecation.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Общие сведения о переносе
+          href: migration-classic-resource-manager-overview.md
+        - name: Подробный обзор миграции
+          href: migration-classic-resource-manager-deep-dive.md
+        - name: Планирование миграции
+          href: migration-classic-resource-manager-plan.md
+        - name: Миграция с помощью PowerShell
+          href: migration-classic-resource-manager-ps.md
+        - name: Распространенные ошибки миграции
+          href: migration-classic-resource-manager-errors.md
+        - name: 'Средства миграции, созданные сообществом'
+          href: migration-classic-resource-manager-community-tools.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: migration-classic-resource-manager-faq.md
+    - name: Использование образов
+      displayName: 'SIG, AMI, image'
+      items:
+        - name: Создание и совместное использование образов
+          items:
+            - name: PowerShell
+              items:
+                - name: Создание коллекции
+                  href: ../shared-images-powershell.md
+                - name: Создание образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../image-version-vm-powershell.md
+                    - name: Перенос из управляемого образа
+                      href: ../image-version-managed-image-powershell.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-powershell.md
+                - name: Создание виртуальной машины
+                  items:
+                    - name: Универсальный
+                      href: ../vm-generalized-image-version-powershell.md
+                    - name: Специализированный
+                      href: ../vm-specialized-image-version-powershell.md
+                - name: Обновление ресурсов образа
+                  href: ../update-image-resources-powershell.md
+            - name: CLI
+              items:
+                - name: Создание коллекции
+                  href: ../linux/shared-images.md
+                - name: Создание образа
+                  items:
+                    - name: Из виртуальной машины
+                      href: ../image-version-vm-cli.md
+                    - name: Перенос из управляемого образа
+                      href: ../image-version-managed-image-cli.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-cli.md
+                    - name: Копирование из другой коллекции
+                      href: ../image-version-another-gallery-cli.md
+                - name: Создание виртуальной машины
+                  items:
+                    - name: Универсальный
+                      href: ../vm-generalized-image-version-cli.md
+                - name: Обновление ресурсов образа
+                  href: ../update-image-resources-cli.md
+            - name: Портал
+              items:
+                - name: 'Создание коллекции, образа и виртуальной машины'
+                  href: shared-images-portal.md
+            - name: Шаблоны Resource Manager
+              items:
+                - name: Создание Общей коллекции образов.
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-create/'
+                - name: Создание определения образа в Общей коллекции образов
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/'
+                - name: Создание версии образа в Общей коллекции образов
+                  href: 'https://azure.microsoft.com/resources/templates/101-sig-image-version-create/'
+                - name: Создание виртуальной машины из версии образа
+                  href: 'https://azure.microsoft.com/resources/templates/101-vm-from-sig/'
+            - name: Устранение неполадок с общими образами
+              href: troubleshooting-shared-images.md
+            - name: Использование управляемых клиентом ключей
+              displayName: 'SSE, CMK, encrypt'
+              href: ../image-version-encryption.md
+        - name: Конструктор изображений (предварительная версия)
+          items:
+            - name: Обзор
+              href: ../linux/image-builder-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Использование Azure CLI
+              href: image-builder.md
+            - name: Сборка для коллекций образов
+              href: image-builder-gallery.md
+            - name: Обновление существующего образа
+              href: image-builder-gallery-update-image-version.md
+            - name: Хранение скриптов
+              href: ../linux/image-builder-user-assigned-identity.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Справочник по шаблонам ARM
+              displayName: Azure Resource Manager
+              href: ../linux/image-builder-json.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Диагностика
+              href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
+        - name: Поиск и использование образов
+          href: cli-ps-findimage.md
+        - name: Подготовка виртуальной машины к отправке
+          href: prepare-for-upload-vhd-image.md
+        - name: Запись образа виртуальной машины
+          href: capture-image-resource.md
+        - name: Использование универсального образа
+          href: create-vm-generalized-managed.md
+        - name: Создание образа с помощью Packer
+          href: build-image-with-packer.md
+        - name: Использование образов клиентских версий Windows
+          href: client-images.md
+        - name: Скачивание существующего диска
+          href: download-vhd.md
     - name: Защита виртуальных машин
       items:
         - name: Рекомендации
           href: security-recommendations.md
         - name: JIT-доступ
           href: ../../security-center/security-center-just-in-time.md
+        - name: Использование службы "Бастион"
+          items:
+            - name: Создание узла-бастиона
+              items:
+                - name: Портал
+                  href: ../../bastion/bastion-create-host-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: PowerShell
+                  href: ../../bastion/bastion-create-host-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: CLI
+                  href: ../../bastion/create-host-cli.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Использование службы "Бастион" для подключения
+              items:
+                - name: Подключение SSH через бастион
+              href: ../../bastion/bastion-connect-vm-ssh.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Подключение RDP через бастион
+              href: ../../bastion/bastion-connect-vm-rdp.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Шифрование
           items:
             - name: Сценарии шифрования дисков для Windows
@@ -402,7 +608,8 @@
           href: change-drive-letter.md
         - name: Изменение группы доступности
           href: change-availability-set.md
-        - name: Скачивание шаблона
+        - name: Экспорт шаблона ARM
+          displayName: Azure Resource Manager
           href: download-template.md
         - name: Агент виртуальной машины Azure
           href: ../extensions/agent-windows.md
@@ -426,68 +633,127 @@
               href: ../maintenance-notifications-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Управление обслуживанием
           items:
-            - name: PowerShell
-              href: ../maintenance-control-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Обзор
+              href: ../maintenance-control.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: CLI
               href: ../maintenance-control-cli.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: PowerShell
+              href: ../maintenance-control-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Портал
+              href: ../maintenance-control-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Запланированные события
           href: scheduled-events.md
         - name: Служба запланированных событий Windows
           href: scheduled-event-service.md
     - name: Мониторинг виртуальных машин
       items:
-        - name: Azure Monitor для виртуальных машин
-          href: ../../azure-monitor/insights/vminsights-overview.md
-        - name: Создание оповещений о метриках
-          href: ../../azure-monitor/platform/alerts-metric.md
-        - name: Создание оповещений журнала
-          href: ../../azure-monitor/platform/alerts-log.md
-    - name: Использование образов
-      items:
-        - name: Общие образы
+        - name: Мониторинг виртуальных машин Azure
+          href: ../../azure-monitor/insights/monitor-vm-azure.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Агенты
           items:
-            - name: Обзор
-              href: shared-image-galleries.md
-            - name: PowerShell
-              href: shared-images.md
-            - name: Портал
-              href: shared-images-portal.md
-            - name: CLI
-              href: ../linux/shared-images.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-            - name: Регистрация приложения для совместного использования
-              href: share-images-across-tenants.md
-            - name: Устранение неполадок с общими образами
-              href: troubleshooting-shared-images.md
-        - name: Конструктор изображений (предварительная версия)
-          items:
-            - name: Обзор
-              href: ../linux/image-builder-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-            - name: Использование Azure CLI
-              href: image-builder.md
-            - name: Сборка для коллекций образов
-              href: image-builder-gallery.md
-            - name: Обновление существующего образа
-              href: image-builder-gallery-update-image-version.md
-            - name: Хранение скриптов
-              href: ../linux/image-builder-user-assigned-identity.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-            - name: Справочник по шаблонам
-              href: ../linux/image-builder-json.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Общие сведения об агентах
+              href: ../../azure-monitor/platform/agents-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: '../../azure-monitor/faq.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json#agents'
+            - name: Расширение службы "Диагностика Azure"
+              items:
+                - name: Обзор
+                  href: ../../azure-monitor/platform/diagnostics-extension-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                  items:
+                    - name: Отправка данных в Azure Monitor в качестве метрик
+                      items:
+                        - name: Виртуальная машина
+                          href: ../../azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vm.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                        - name: Масштабируемый набор виртуальных машин
+                          href: ../../azure-monitor/platform/collect-custom-metrics-guestos-resource-manager-vmss.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Отправка в Центры событий
+                      href: ../../azure-monitor/platform/diagnostics-extension-stream-event-hubs.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Отправка данных в журналы
+                      href: ../../azure-monitor/platform/diagnostics-extension-logs.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Отправка в Application Insights
+                      href: ../../azure-monitor/platform/diagnostics-extension-to-application-insights.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Журнал версий
+                      href: ../../azure-monitor/platform/diagnostics-extension-versions.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Формат JSON Lines для журналов ресурсов
+                      href: ../../azure-monitor/platform/diagnostic-logs-append-blobs.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Устранение неполадок
+                      href: ../../azure-monitor/platform/diagnostics-extension-troubleshooting.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Агент Log Analytics
+              items:
+                - name: Обзор
+                  href: ../../azure-monitor/platform/log-analytics-agent.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Агенты Windows
+                  href: ../../azure-monitor/platform/agent-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Расширение виртуальной машины для Windows
+                  href: ../../azure-monitor/../virtual-machines/windows/extensions-oms.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json?toc=/azure/azure-monitor/toc.json
+                - name: Шлюз службы анализа журналов
+                  href: ../../azure-monitor/platform/gateway.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Управление агентами
+                  href: ../../azure-monitor/platform/agent-manage.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Работоспособность агентов
+                  href: ../../azure-monitor/insights/solution-agenthealth.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Источники данных
+                  items:
+                    - name: Обзор
+                      href: ../../azure-monitor/platform/agent-data-sources.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: События Windows
+                      href: ../../azure-monitor/platform/data-sources-windows-events.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Настраиваемые данные JSON
+                      href: ../../azure-monitor/platform/data-sources-json.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Сбор данных о производительности из CollectD
+                      href: ../../azure-monitor/platform/data-sources-collectd.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Системный журнал
+                      href: ../../azure-monitor/platform/data-sources-syslog.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Счетчики производительности
+                      href: ../../azure-monitor/platform/data-sources-performance-counters.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Журналы IIS
+                      href: ../../azure-monitor/platform/data-sources-iis-logs.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Пользовательские журналы
+                      href: ../../azure-monitor/platform/data-sources-custom-logs.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                    - name: Пользовательские поля
+                      href: ../../azure-monitor/platform/custom-fields.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Диагностика
-              href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
-        - name: Поиск и использование образов
-          href: cli-ps-findimage.md
-        - name: Подготовка виртуальной машины к отправке
-          href: prepare-for-upload-vhd-image.md
-        - name: Запись образа виртуальной машины
-          href: capture-image-resource.md
-        - name: Использование универсального образа
-          href: create-vm-generalized-managed.md
-        - name: Создание образа с помощью Packer
-          href: build-image-with-packer.md
-        - name: Использование образов клиентских версий Windows
-          href: client-images.md
-        - name: Скачивание существующего диска
-          href: download-vhd.md
+              items:
+                - name: Расширение службы анализа журналов для виртуальной машины
+                  displayname: 'troubleshoot, troubleshooting'
+                  href: ../../azure-monitor/platform/vmext-troubleshoot.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Агент Log Analytics для Windows
+                  displayname: 'troubleshoot, troubleshooting'
+                  href: ../../azure-monitor/platform/agent-windows-troubleshoot.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Azure Monitor для виртуальных машин
+          items:
+            - name: Обзор
+              href: ../../azure-monitor/insights/vminsights-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Часто задаваемые вопросы об общедоступной версии
+              href: ../../azure-monitor/insights/vminsights-ga-release-faq.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: '../../azure-monitor/faq.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json#azure-monitor-for-vms'
+            - name: Включение мониторинга
+              items:
+                - name: Общие сведения о включении мониторинга
+                  href: ../../azure-monitor/insights/vminsights-enable-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Включение для отдельной виртуальной машины Azure
+                  href: ../../azure-monitor/insights/vminsights-enable-single-vm.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Включение при помощи Политики Azure
+                  href: ../../azure-monitor/insights/vminsights-enable-at-scale-policy.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Включить при помощи Azure PowerShell
+                  href: ../../azure-monitor/insights/vminsights-enable-at-scale-powershell.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+                - name: Включение в гибридной среде
+                  href: ../../azure-monitor/insights/vminsights-enable-hybrid-cloud.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Сопоставление зависимостей
+              href: ../../azure-monitor/insights/vminsights-maps.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Мониторинг производительности
+              href: ../../azure-monitor/insights/vminsights-performance.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Анализ данных с помощью запросов к журналу
+              href: ../../azure-monitor/insights/vminsights-log-search.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Визуализация данных с помощью книг
+              href: ../../azure-monitor/insights/vminsights-workbooks.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Создание правил генерации оповещений
+              href: ../../azure-monitor/insights/vminsights-alerts.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Обновление агента зависимостей
+              href: ../../azure-monitor/insights/vminsights-dependency-agent-maintenance.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Отключение мониторинга
+              href: ../../azure-monitor/insights/vminsights-optout.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Высокая доступность и масштабирование
       items:
         - name: Масштабируемые наборы виртуальных машин Microsoft Azure
@@ -508,6 +774,8 @@
               href: create-portal-availability-zone.md
     - name: Использование средств автоматизации
       items:
+        - name: Пользовательские данные
+          href: ../custom-data.md
         - name: Chef
           href: chef-automation.md
         - name: Публикация веб-приложения из Visual Studio
@@ -547,7 +815,8 @@
               href: attach-managed-disk-portal.md
         - name: Отсоединение диска
           href: detach-disk.md
-        - name: Развертывание дисков с помощью шаблона
+        - name: Развертывание дисков с помощью шаблона ARM
+          displayName: Azure Resource Manager
           href: using-managed-disks-template-deployments.md
         - name: Включение общих дисков
           href: disks-shared-enable.md
@@ -561,8 +830,10 @@
           href: snapshot-copy-managed-disk.md
         - name: Зарезервировать Хранилище дисков
           href: disks-reserved-capacity.md
-        - name: Создание добавочного моментального снимка
+        - name: "Создание добавочного моментального снимка\_— PowerShell"
           href: disks-incremental-snapshots.md
+        - name: "Создание добавочного моментального снимка\_— портал"
+          href: disks-incremental-snapshots-portal.md
         - name: Резервное копирование неуправляемых дисков
           href: incremental-snapshots.md
         - name: Миграция и преобразование
@@ -611,20 +882,72 @@
     - name: Настройка управляемых удостоверений
       items:
         - name: Портал
-          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm?context=azure/virtual-machines/windows/context/windows-vm-context
+          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: CLI
-          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm?context=azure/virtual-machines/windows/context/windows-vm-context
+          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: PowerShell
-          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm?context=azure/virtual-machines/windows/context/windows-vm-context
+          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Шаблон Azure Resource Manager
-          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm?context=azure/virtual-machines/windows/context/windows-vm-context
+          displayName: ARM
+          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: REST
-          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-rest-vm?context=azure/virtual-machines/windows/context/windows-vm-context
+          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-rest-vm?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Пакеты Azure SDK
-          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm?context=azure/virtual-machines/windows/context/windows-vm-context
-    - name: Использование расширений виртуальной машины
-      href: ../extensions/overview.md
-    - name: Перемещение и миграция виртуальных машин
+          href: /azure/active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+    - name: Использование расширений
+      items:
+        - name: Ограничение установки расширения
+          href: ../extensions/extensions-rmpolicy-howto-ps.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Экспорт расширений
+          href: ../extensions/export-templates.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Диагностика
+          href: ../extensions/troubleshoot.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Шифрование дисков Azure
+          href: ../extensions/azure-disk-enc-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Azure Key Vault
+          href: ../extensions/key-vault-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Azure Backup для SQL Server
+          href: ../extensions/backup-azure-sql-server-running-azure-vm.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Пользовательский скрипт
+          href: ../extensions/custom-script-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Антивредоносное ПО IaaS для Windows
+          href: ../extensions/iaas-antimalware-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Моментальный снимок виртуальной машины
+          href: ../extensions/vmsnapshot-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Агент службы "Наблюдатель за сетями"
+          href: ../extensions/network-watcher-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Драйверы NVIDIA для GPU
+          href: ../extensions/hpccompute-gpu-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Драйверы для GPU AMD
+          href: ../extensions/hpccompute-amd-gpu-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Azure Monitor
+          items:
+            - name: Расширение системы диагностики
+              href: ../extensions/../../azure-monitor/platform/diagnostics-extension-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json?toc=/azure/virtual-machines/extensions/toc.json
+            - name: Log Analytics
+              href: ../extensions/oms-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Azure Monitor Windows Dependency Agent
+              href: ../extensions/agent-dependency-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: "PowerShell\_DSC"
+          href: ../extensions/dsc-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+          items:
+            - name: DSC и Windows
+              href: ../extensions/dsc-windows.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Обработка учетных данных
+              href: ../extensions/dsc-credentials.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Использование шаблонов
+              href: ../extensions/dsc-template.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Доступ к виртуальной машине
+          href: ../extensions/vmaccess.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Расширения сторонних разработчиков
+          items:
+            - name: Chef
+              href: ../extensions/chef.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Функция повторного отслеживания от Stackify
+              href: ../extensions/stackify-retrace-linux.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+            - name: Symantec
+              href: ../extensions/symantec.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+    - name: Перемещение виртуальных машин
       items:
         - name: Изменение подписки или группы ресурсов
           href: move-vm.md
@@ -632,6 +955,10 @@
           href: ../../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Перемещение в зону доступности
           href: ../../site-recovery/move-azure-vms-avset-azone.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Перемещение конфигураций управления обслуживанием в другой регион
+          href: ../move-region-maintenance-configuration.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Перемещение ресурсов конфигураций управления обслуживанием в другой регион
+          href: ../move-region-maintenance-configuration-resources.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Миграция AWS и локальных виртуальных машин
           href: on-prem-to-azure.md
           items:
@@ -641,23 +968,8 @@
               href: aws-to-azure.md
             - name: Использование Azure Site Recovery
               href: ../../site-recovery/site-recovery-migrate-to-azure.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-        - name: Переход с классической модели развертывания на модель Azure Resource Manager
-          href: migration-classic-resource-manager-overview.md
-          items:
-            - name: Подробный обзор миграции
-              href: migration-classic-resource-manager-deep-dive.md
-            - name: Планирование миграции
-              href: migration-classic-resource-manager-plan.md
-            - name: Миграция с помощью PowerShell
-              href: migration-classic-resource-manager-ps.md
-            - name: Распространенные ошибки миграции
-              href: migration-classic-resource-manager-errors.md
-            - name: 'Средства миграции, созданные сообществом'
-              href: migration-classic-resource-manager-community-tools.md
-            - name: ВОПРОСЫ И ОТВЕТЫ
-              href: migration-classic-resource-manager-faq.md
 - name: Диагностика
-  href: ../troubleshooting/index.md
+  href: ../troubleshooting/index.yml
 - name: Справочник
   items:
     - name: Azure CLI
@@ -681,7 +993,10 @@
       href: /azure/templates/microsoft.compute/allversions
 - name: Ресурсы
   items:
-    - name: Создание шаблонов
+    - name: Вопросы и ответы
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-machines.html'
+    - name: Создание шаблонов ARM
+      displayName: Azure Resource Manager
       href: ../../azure-resource-manager/templates/template-syntax.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-virtual-machines
@@ -690,7 +1005,7 @@
     - name: Шаблоны от сообщества
       href: 'https://azure.microsoft.com/documentation/templates'
     - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/#Linux'
+      href: 'https://azure.microsoft.com/pricing/details/#Windows'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Stack Overflow

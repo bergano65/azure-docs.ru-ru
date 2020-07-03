@@ -1,44 +1,44 @@
 ---
-title: Чтение данных из базы данных SQL Azure и запись в нее с использованием Apache Spark
-description: Узнайте, как настроить подключение между кластером HDInsight Spark и базой данных SQL Azure для чтения данных из базы данных SQL, а также записи и потоковой передачи данных в нее.
+title: Использование Apache Spark для чтения и записи данных в базе данных SQL Azure
+description: Узнайте, как настроить подключение между кластером HDInsight Spark и базой данных SQL Azure. Чтение данных, запись данных и потоковая передача данных в базу данных SQL
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/03/2019
-ms.openlocfilehash: cc225f4cae3935212844c19464afc716092e73ca
-ms.sourcegitcommit: f9e81b39693206b824e40d7657d0466246aadd6e
+ms.custom: hdinsightactive,seoapr2020
+ms.date: 04/20/2020
+ms.openlocfilehash: c04280bf1cffea08204e1ea5ab54dbb87c23cf9b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72035201"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82193213"
 ---
-# <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Чтение данных из базы данных SQL Azure и запись в нее с использованием кластера HDInsight Spark
+# <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Использование кластера HDInsight Spark для чтения и записи данных в базе данных SQL Azure
 
-Узнайте, как подключить кластер Apache Spark в Azure HDInsight с помощью базы данных SQL Azure, а также как выполнять чтение из базы данных SQL, запись и потоковую передачу данных в нее. В приведенных здесь инструкциях для выполнения фрагментов кода Scala используется [Jupyter Notebook](https://jupyter.org/). Тем не менее вы можете создать изолированное приложение на языке Scala или Python и выполнять такие же задачи.
+Узнайте, как подключить кластер Apache Spark в Azure HDInsight к базе данных SQL Azure. Затем чтение, запись и потоковая передача данных в базу данных SQL. В инструкциях, приведенных в этой статье, используется Jupyter Notebook для выполнения фрагментов кода Scala. Однако можно создать автономное приложение в Scala или Python и выполнить те же задачи.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Azure HDInsight Spark кластер *.  Инструкции см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
+* Кластер Azure HDInsight Spark.  Инструкции см. в статье [Создание кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
 
-* База данных SQL Azure. Инструкции см. в статье [Создание базы данных SQL Azure на портале Azure](../../sql-database/sql-database-get-started-portal.md). Создайте базу данных с примером схемы и данными **AdventureWorksLT**. Создайте также правило брандмауэра на уровне сервера, чтобы предоставить клиентским IP-адресам доступ к базе данных SQL на сервере. Инструкции по добавлению правила брандмауэра находятся в той же статье. После создания базы данных SQL Azure убедитесь, что вы хотите использовать следующие значения. Они понадобятся вам для подключения к базе данных из кластера Spark.
+* База данных SQL Azure. Следуйте инструкциям в статье [Создание базы данных SQL Azure](../../sql-database/sql-database-get-started-portal.md). Создайте базу данных с примером схемы и данными **AdventureWorksLT**. Создайте также правило брандмауэра на уровне сервера, чтобы предоставить клиентским IP-адресам доступ к базе данных SQL на сервере. Инструкции по добавлению правила брандмауэра находятся в той же статье. После создания базы данных SQL Azure убедитесь, что вы хотите использовать следующие значения. Они понадобятся вам для подключения к базе данных из кластера Spark.
 
-    * Имя сервера, на котором размещена база данных SQL Azure.
-    * Имя базы данных SQL Azure.
-    * Имя и пароль администратора базы данных SQL Azure.
+    * Имя сервера, на котором размещена база данных SQL Azure.
+    * Имя базы данных SQL Azure.
+    * Имя пользователя и пароль администратора базы данных SQL Azure.
 
 * SQL Server Management Studio (SSMS). Инструкции см. в статье [Подключайтесь к базе данных Azure SQL и создавайте запросы к ней с помощью SQL Server Management Studio](../../sql-database/sql-database-connect-query-ssms.md).
 
 ## <a name="create-a-jupyter-notebook"></a>Создание записной книжки Jupyter
 
-Сначала создайте [записную книжку Jupyter](https://jupyter.org/), связанную с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье.
+Начните с создания Jupyter Notebook, связанного с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье.
 
 1. Откройте кластер на [портале Azure](https://portal.azure.com/).
 1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если **панели мониторинга кластера**не отображаются, выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
 
-    ![Записная книжка Jupyter на Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Jupyter Notebook в Spark")
+    ![Записная книжка Jupyter на Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Записная книжка Jupyter в Spark")
 
    > [!NOTE]  
    > Вы также можете получить доступ к записной книжке Jupyter в кластере Spark, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
@@ -54,103 +54,125 @@ ms.locfileid: "72035201"
    > [!NOTE]  
    > В этой статье используется ядро Spark (Scala), так как в настоящее время потоковая передача данных из Spark в базу данных SQL поддерживается только на Scala и Java. Несмотря на то что чтение и запись в SQL можно выполнить с помощью Python, для обеспечения согласованности в этой статье мы используем Scala для всех трех операций.
 
-1. После этого откроется новая записная книжка с именем по умолчанию **Untitled** (Без имени). Щелкните это имя и введите имя по своему усмотрению.
+1. Откроется новая Записная книжка с именем по умолчанию без **названия**. Щелкните это имя и введите имя по своему усмотрению.
 
     ![Указание имени для записной книжки](./media/apache-spark-connect-to-sql-database/hdinsight-spark-jupyter-notebook-name.png "Указание имени для записной книжки")
 
 Теперь можно приступить к созданию приложения.
 
-## <a name="read-data-from-azure-sql-database"></a>Cчитывание данных из базы данных SQL Azure
+## <a name="read-data-from-azure-sql-database"></a>Чтение данных из базы данных SQL Azure
 
 В этом разделе вы выполняете операцию чтения данных из таблицы (например, **SalesLT.Address**), которая находится в базе данных AdventureWorks.
 
-1. В новой записной книжке Jupyter в ячейку кода вставьте следующий фрагмент кода и замените значения заполнителей значениями для базы данных SQL Azure.
+1. В новой записной книжке Jupyter в ячейке кода вставьте следующий фрагмент и замените значения заполнителей значениями для базы данных SQL Azure.
 
-       // Declare the values for your Azure SQL database
+    ```scala
+    // Declare the values for your Azure SQL database
 
-       val jdbcUsername = "<SQL DB ADMIN USER>"
-       val jdbcPassword = "<SQL DB ADMIN PWD>"
-       val jdbcHostname = "<SQL SERVER NAME HOSTING SDL DB>" //typically, this is in the form or servername.database.windows.net
-       val jdbcPort = 1433
-       val jdbcDatabase ="<AZURE SQL DB NAME>"
+    val jdbcUsername = "<SQL DB ADMIN USER>"
+    val jdbcPassword = "<SQL DB ADMIN PWD>"
+    val jdbcHostname = "<SQL SERVER NAME HOSTING SDL DB>" //typically, this is in the form or servername.database.windows.net
+    val jdbcPort = 1433
+    val jdbcDatabase ="<AZURE SQL DB NAME>"
+    ```
 
     Чтобы выполнить ячейку кода, нажмите клавиши **SHIFT+ВВОД**.  
 
-1. Используйте приведенный ниже фрагмент кода, чтобы создать URL-адрес JDBC, который можно передать в интерфейсы API кадров Spark. Код создает объект `Properties` для хранения параметров. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+1. Используйте приведенный ниже фрагмент кода, чтобы создать URL-адрес JDBC, который можно передать в интерфейсы API кадров Spark. Код создает `Properties` объект для хранения параметров. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
-       import java.util.Properties
+    ```scala
+    import java.util.Properties
 
-       val jdbc_url = s"jdbc:sqlserver://${jdbcHostname}:${jdbcPort};database=${jdbcDatabase};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=60;"
-       val connectionProperties = new Properties()
-       connectionProperties.put("user", s"${jdbcUsername}")
-       connectionProperties.put("password", s"${jdbcPassword}")         
+    val jdbc_url = s"jdbc:sqlserver://${jdbcHostname}:${jdbcPort};database=${jdbcDatabase};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=60;"
+    val connectionProperties = new Properties()
+    connectionProperties.put("user", s"${jdbcUsername}")
+    connectionProperties.put("password", s"${jdbcPassword}")
+    ```
 
-1. С помощью приведенного ниже фрагмента кода создается кадр данных с данными из таблицы в базе данных SQL Azure. Для этого фрагмента используется таблица **SalesLT.Address**. Она доступна как часть базы данных **AdventureWorksLT**. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+1. Используйте приведенный ниже фрагмент кода, чтобы создать кадр данных с данными из таблицы в базе данных SQL Azure. В этом фрагменте кода используется `SalesLT.Address` таблица, доступная как часть базы данных **AdventureWorksLT** . Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
-       val sqlTableDF = spark.read.jdbc(jdbc_url, "SalesLT.Address", connectionProperties)
+    ```scala
+    val sqlTableDF = spark.read.jdbc(jdbc_url, "SalesLT.Address", connectionProperties)
+    ```
 
-1. Теперь вы можете выполнять операции над кадром данных (например, получение схемы данных).
+1. Теперь вы можете выполнять операции с таблицей данных, например получить схему:
 
-       sqlTableDF.printSchema
+    ```scala
+    sqlTableDF.printSchema
+    ```
 
-    Должен отобразиться следующий результат:
+    Вы увидите результат, аналогичный следующему изображению:
 
-    (./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "выходные данные схемы") ![вывода схемы]
+    ![выходные данные схемы](./media/apache-spark-connect-to-sql-database/read-from-sql-schema-output.png "выходные данные схемы")
 
-1. Вы также можете выполнять такие операции, как извлечение первых 10 строк.
+1. Вы также можете выполнять такие операции, как получение первых 10 строк.
 
-       sqlTableDF.show(10)
+    ```scala
+    sqlTableDF.show(10)
+    ```
 
 1. Можно также извлечь определенные столбцы из набора данных.
 
-       sqlTableDF.select("AddressLine1", "City").show(10)
+    ```scala
+    sqlTableDF.select("AddressLine1", "City").show(10)
+    ```
 
 ## <a name="write-data-into-azure-sql-database"></a>Запись данных в базу данных SQL Azure
 
-В этом разделе для создания таблицы в базе данных SQL Azure и заполнения ее данными используется пример CSV-файла, доступный в кластере. Пример CSV-файла (**HVAC.csv**) содержится во всех кластерах HDInsight в папке `HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv`.
+В этом разделе мы используем пример CSV-файла, доступного в кластере, чтобы создать таблицу в базе данных SQL Azure и заполнить ее данными. Пример CSV-файла (**HVAC.csv**) содержится во всех кластерах HDInsight в папке `HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv`.
 
-1. В новой записной книжке Jupyter в ячейку кода вставьте следующий фрагмент кода и замените значения заполнителей значениями для базы данных SQL Azure.
+1. В новой записной книжке Jupyter в ячейке кода вставьте следующий фрагмент и замените значения заполнителей значениями для базы данных SQL Azure.
 
-       // Declare the values for your Azure SQL database
+    ```scala
+    // Declare the values for your Azure SQL database
 
-       val jdbcUsername = "<SQL DB ADMIN USER>"
-       val jdbcPassword = "<SQL DB ADMIN PWD>"
-       val jdbcHostname = "<SQL SERVER NAME HOSTING SDL DB>" //typically, this is in the form or servername.database.windows.net
-       val jdbcPort = 1433
-       val jdbcDatabase ="<AZURE SQL DB NAME>"
+    val jdbcUsername = "<SQL DB ADMIN USER>"
+    val jdbcPassword = "<SQL DB ADMIN PWD>"
+    val jdbcHostname = "<SQL SERVER NAME HOSTING SDL DB>" //typically, this is in the form or servername.database.windows.net
+    val jdbcPort = 1433
+    val jdbcDatabase ="<AZURE SQL DB NAME>"
+    ```
 
     Чтобы выполнить ячейку кода, нажмите клавиши **SHIFT+ВВОД**.  
 
-1. В следующем фрагменте кода создается URL-адрес JDBC, который можно передать в интерфейсы API "кадры данных Spark". Код создает объект `Properties` для хранения параметров. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+1. В следующем фрагменте кода создается URL-адрес JDBC, который можно передать в интерфейсы API "кадры данных Spark". Код создает `Properties` объект для хранения параметров. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
-       import java.util.Properties
+    ```scala
+    import java.util.Properties
 
-       val jdbc_url = s"jdbc:sqlserver://${jdbcHostname}:${jdbcPort};database=${jdbcDatabase};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=60;"
-       val connectionProperties = new Properties()
-       connectionProperties.put("user", s"${jdbcUsername}")
-       connectionProperties.put("password", s"${jdbcPassword}")
+    val jdbc_url = s"jdbc:sqlserver://${jdbcHostname}:${jdbcPort};database=${jdbcDatabase};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=60;"
+    val connectionProperties = new Properties()
+    connectionProperties.put("user", s"${jdbcUsername}")
+    connectionProperties.put("password", s"${jdbcPassword}")
+    ```
 
 1. В приведенном ниже фрагменте кода извлекается схема данных в HVAC.csv и с ее помощью данные загружаются из CSV-файла в кадр данных `readDf`. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
-       val userSchema = spark.read.option("header", "true").csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv").schema
-       val readDf = spark.read.format("csv").schema(userSchema).load("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
+    ```scala
+    val userSchema = spark.read.option("header", "true").csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv").schema
+    val readDf = spark.read.format("csv").schema(userSchema).load("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
+    ```
 
 1. Используя кадр данных `readDf`, создайте временную таблицу `temphvactable`. Затем с ее помощью создайте таблицу hive `hvactable_hive`.
 
-       readDf.createOrReplaceTempView("temphvactable")
-       spark.sql("create table hvactable_hive as select * from temphvactable")
+    ```scala
+    readDf.createOrReplaceTempView("temphvactable")
+    spark.sql("create table hvactable_hive as select * from temphvactable")
+    ```
 
-1. Наконец, с помощью таблицы hive создайте таблицу в базе данных SQL Azure. Следующий фрагмент кода создает `hvactable` в базе данных SQL Azure.
+1. Наконец, используйте таблицу Hive для создания таблицы в базе данных SQL Azure. Следующий фрагмент кода создается `hvactable` в базе данных SQL Azure.
 
-       spark.table("hvactable_hive").write.jdbc(jdbc_url, "hvactable", connectionProperties)
+    ```scala
+    spark.table("hvactable_hive").write.jdbc(jdbc_url, "hvactable", connectionProperties)
+    ```
 
-1. Подключитесь к базе данных SQL Azure с помощью SSMS и убедитесь, что вы видите таблицу `dbo.hvactable`.
+1. Подключитесь к базе данных SQL Azure с помощью SSMS и убедитесь, что `dbo.hvactable` там отображается.
 
-    1\. Запустите SSMS и подключитесь к базе данных SQL Azure, указав сведения о подключении, как показано на снимке экрана.
+    а. Запустите SSMS и подключитесь к базе данных SQL Azure, предоставив сведения о подключении, как показано на снимке экрана ниже.
 
     ![Подключение к базе данных SQL с помощью SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Подключение к базе данных SQL с помощью SSMS1")
 
-    2\. В **обозревателе объектов**разверните базу данных SQL Azure и узел таблицы, чтобы увидеть созданную таблицу **dbo. таблицу hvactable** .
+    b. В **обозревателе объектов**разверните базу данных SQL Azure и узел таблицы, чтобы увидеть созданную таблицу **dbo. таблицу hvactable** .
 
     ![Подключение к базе данных SQL с помощью SSMS2](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Подключение к базе данных SQL с помощью SSMS2")
 
@@ -162,9 +184,9 @@ ms.locfileid: "72035201"
 
 ## <a name="stream-data-into-azure-sql-database"></a>Потоковая передача данных в базу данных SQL Azure
 
-В этом разделе мы выполним потоковую передачу данных в таблицу **hvactable**, которую вы ранее создали в базе данных SQL Azure.
+В этом разделе мы будем передавать данные в базу `hvactable` данных SQL Azure, которая уже была создана в предыдущем разделе.
 
-1. Сначала проверьте, что таблица **hvactable** пустая. С помощью SSMS выполните следующий запрос к таблице.
+1. В качестве первого шага убедитесь, что в нет записей `hvactable`. С помощью SSMS выполните следующий запрос к таблице.
 
     ```sql
     TRUNCATE TABLE [dbo].[hvactable]
@@ -172,71 +194,77 @@ ms.locfileid: "72035201"
 
 1. Создайте записную книжку Jupyter в кластере HDInsight Spark. Вставьте следующий фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**.
 
-       import org.apache.spark.sql._
-       import org.apache.spark.sql.types._
-       import org.apache.spark.sql.functions._
-       import org.apache.spark.sql.streaming._
-       import java.sql.{Connection,DriverManager,ResultSet}
+    ```scala
+    import org.apache.spark.sql._
+    import org.apache.spark.sql.types._
+    import org.apache.spark.sql.functions._
+    import org.apache.spark.sql.streaming._
+    import java.sql.{Connection,DriverManager,ResultSet}
+    ```
 
-1. Мы выполняем потоковую передачу данных из **HVAC.csv** в hvactable. Файл отопления. csv доступен в кластере по адресу `/HdiSamples/HdiSamples/SensorSampleData/HVAC/`. В следующем фрагменте кода мы сначала получаем схему данных для потоковой передачи. Затем создаем кадр данных потоковой передачи с помощью этой схемы. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+1. Потоковая передача данных из файла **отопления. csv** в `hvactable`. Файл отопления. csv доступен в кластере по адресу `/HdiSamples/HdiSamples/SensorSampleData/HVAC/`. В следующем фрагменте кода мы сначала получаем схему данных для потоковой передачи. Затем создаем кадр данных потоковой передачи с помощью этой схемы. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
-       val userSchema = spark.read.option("header", "true").csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv").schema
-       val readStreamDf = spark.readStream.schema(userSchema).csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/") 
-       readStreamDf.printSchema
+    ```scala
+    val userSchema = spark.read.option("header", "true").csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv").schema
+    val readStreamDf = spark.readStream.schema(userSchema).csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/") 
+    readStreamDf.printSchema
+    ```
 
-1. Выходные данные будут содержать схему файла **HVAC.csv**. В таблице **hvactable** также есть схема. В выходных данных перечислены столбцы в таблице.
+1. Выходные данные будут содержать схему файла **HVAC.csv**. Также `hvactable` имеет ту же схему. В выходных данных перечислены столбцы в таблице.
 
-    схема ![таблицы схемы Apache Spark hdinsight](./media/apache-spark-connect-to-sql-database/hdinsight-schema-table.png "в таблице")
+    !["Таблица схемы hdinsight Apache Spark"](./media/apache-spark-connect-to-sql-database/hdinsight-schema-table.png "Схема таблицы")
 
-1. Наконец, используйте следующий фрагмент кода, чтобы считать данные из HVAC.csv и передать их в **hvactable** в базе данных SQL Azure. Вставьте фрагмент кода в ячейку кода, замените значения заполнителей значениями для базы данных SQL Azure, а затем нажмите клавиши **SHIFT+ENTER**, чтобы выполнить код.
+1. Наконец, используйте следующий фрагмент кода для чтения данных из файла отопления. csv и потоковой передачи их `hvactable` в базу данных SQL Azure. Вставьте фрагмент в ячейку кода, замените значения заполнителей значениями для базы данных SQL Azure, а затем нажмите клавиши **SHIFT + ВВОД** для запуска.
 
-       val WriteToSQLQuery  = readStreamDf.writeStream.foreach(new ForeachWriter[Row] {
-          var connection:java.sql.Connection = _
-          var statement:java.sql.Statement = _
-          
-          val jdbcUsername = "<SQL DB ADMIN USER>"
-          val jdbcPassword = "<SQL DB ADMIN PWD>"
-          val jdbcHostname = "<SQL SERVER NAME HOSTING SDL DB>" //typically, this is in the form or servername.database.windows.net
-          val jdbcPort = 1433
-          val jdbcDatabase ="<AZURE SQL DB NAME>"
-          val driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-          val jdbc_url = s"jdbc:sqlserver://${jdbcHostname}:${jdbcPort};database=${jdbcDatabase};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
-  
-         def open(partitionId: Long, version: Long):Boolean = {
-           Class.forName(driver)
-           connection = DriverManager.getConnection(jdbc_url, jdbcUsername, jdbcPassword)
-           statement = connection.createStatement
-           true
-         }
-  
-         def process(value: Row): Unit = {
-           val Date  = value(0)
-           val Time = value(1)
-           val TargetTemp = value(2)
-           val ActualTemp = value(3)
-           val System = value(4)
-           val SystemAge = value(5)
-           val BuildingID = value(6)  
-    
-           val valueStr = "'" + Date + "'," + "'" + Time + "'," + "'" + TargetTemp + "'," + "'" + ActualTemp + "'," + "'" + System + "'," + "'" + SystemAge + "'," + "'" + BuildingID + "'"
-           statement.execute("INSERT INTO " + "dbo.hvactable" + " VALUES (" + valueStr + ")")   
-           }
+    ```scala
+    val WriteToSQLQuery  = readStreamDf.writeStream.foreach(new ForeachWriter[Row] {
+        var connection:java.sql.Connection = _
+        var statement:java.sql.Statement = _
 
-         def close(errorOrNull: Throwable): Unit = {
-            connection.close
-          }
-         })
-        
-         var streamingQuery = WriteToSQLQuery.start()
+        val jdbcUsername = "<SQL DB ADMIN USER>"
+        val jdbcPassword = "<SQL DB ADMIN PWD>"
+        val jdbcHostname = "<SQL SERVER NAME HOSTING SDL DB>" //typically, this is in the form or servername.database.windows.net
+        val jdbcPort = 1433
+        val jdbcDatabase ="<AZURE SQL DB NAME>"
+        val driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+        val jdbc_url = s"jdbc:sqlserver://${jdbcHostname}:${jdbcPort};database=${jdbcDatabase};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
 
-1. Убедитесь, что данные передаются в таблицу **hvactable**, выполнив следующий запрос в SQL Server Management Studio. При каждом выполнении запроса отображется большее количество строк в таблице.
+        def open(partitionId: Long, version: Long):Boolean = {
+        Class.forName(driver)
+        connection = DriverManager.getConnection(jdbc_url, jdbcUsername, jdbcPassword)
+        statement = connection.createStatement
+        true
+        }
+
+        def process(value: Row): Unit = {
+        val Date  = value(0)
+        val Time = value(1)
+        val TargetTemp = value(2)
+        val ActualTemp = value(3)
+        val System = value(4)
+        val SystemAge = value(5)
+        val BuildingID = value(6)  
+
+        val valueStr = "'" + Date + "'," + "'" + Time + "'," + "'" + TargetTemp + "'," + "'" + ActualTemp + "'," + "'" + System + "'," + "'" + SystemAge + "'," + "'" + BuildingID + "'"
+        statement.execute("INSERT INTO " + "dbo.hvactable" + " VALUES (" + valueStr + ")")
+        }
+
+        def close(errorOrNull: Throwable): Unit = {
+        connection.close
+        }
+        })
+
+    var streamingQuery = WriteToSQLQuery.start()
+    ```
+
+1. Убедитесь, что данные передаются в поток `hvactable` , выполнив следующий запрос в SQL Server Management Studio (SSMS). При каждом выполнении запроса отображется большее количество строк в таблице.
 
     ```sql
     SELECT COUNT(*) FROM hvactable
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage](apache-spark-use-with-data-lake-store.md)
-* [Структурированная потоковая передача Apache Spark в HDInsight для обработки событий из концентраторов событий](apache-spark-eventhub-structured-streaming.md)
+* [Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](apache-spark-load-data-run-query.md)
 * [Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-kafka-spark-structured-streaming.md)

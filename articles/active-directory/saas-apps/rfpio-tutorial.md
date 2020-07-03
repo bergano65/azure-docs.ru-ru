@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с RFPIO | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с RFPIO | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и RFPIO.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 63d7b6af8ff76c890b98c29ded0e8bdc637b45dd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67092851"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rfpio"></a>Руководство по Интеграция Azure Active Directory с RFPIO
+# <a name="tutorial-azure-active-directory-integration-with-rfpio"></a>Руководство по интеграции Azure Active Directory с RFPIO
 
 В этом руководстве описано, как интегрировать RFPIO с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением RFPIO обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67092851"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с RFPIO, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка RFPIO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "67092851"
 
     ![Сведения о домене и URL-адресах единого входа для приложения RFPIO](common/idp-identifier.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.rfpio.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.rfpio.com`.
 
     b. Щелкните **Задать дополнительные URL-адреса**.
 
@@ -131,7 +131,7 @@ ms.locfileid: "67092851"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -161,16 +161,16 @@ ms.locfileid: "67092851"
 
     ![Настройка единого входа](./media/rfpio-tutorial/app5.png)
     
-    a. Скопируйте содержимое **скачанного XML-файла с метаданными** и вставьте его в текстовое поле **Identity configuration** (Конфигурация удостоверений).
+    а. Скопируйте содержимое **скачанного XML-файла с метаданными** и вставьте его в текстовое поле **Identity configuration** (Конфигурация удостоверений).
 
     > [!NOTE]
     >Чтобы скопировать содержимое скачанного **XML-файла метаданных федерации**, используйте **Notepad++** или соответствующий **редактор XML**.
 
-    b. Щелкните **Проверить**.
+    b. Нажмите кнопку **Проверить**.
 
     c. После нажатия кнопки **Validate** (Проверить) установите переключатель **SAML(Enabled)** (SAML (Включено)) в положение "Вкл.".
 
-    d. Нажмите кнопку **Submit**(Отправить).
+    d. Щелкните **Отправить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -246,7 +246,7 @@ ms.locfileid: "67092851"
 
     ![Настройка единого входа](./media/rfpio-tutorial/app8.png)
 
-    a. Введите **адрес электронной почты** в текстовом поле **Enter one email per line** (Введите один адрес электронной почты в каждой строке).
+    а. Введите **адрес электронной почты** в текстовом поле **Enter one email per line** (Введите один адрес электронной почты в каждой строке).
 
     b. Выберите **роль** в соответствии с требованиями.
 
@@ -267,5 +267,5 @@ ms.locfileid: "67092851"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

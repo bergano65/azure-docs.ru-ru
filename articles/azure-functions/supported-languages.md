@@ -4,10 +4,10 @@ description: Узнайте, какие языки поддерживаются 
 ms.topic: conceptual
 ms.date: 11/27/2019
 ms.openlocfilehash: 029ea753439dca3093bf214a5adfb6d58a1fe567
-ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74942262"
 ---
 # <a name="supported-languages-in-azure-functions"></a>Поддерживаемые языки в решении "Функции Azure"
@@ -44,8 +44,8 @@ ms.locfileid: "74942262"
 
 Дополнительные сведения о разработке функций на поддерживаемых языках см. в следующих ресурсах:
 
-+ [C#Справочник разработчика библиотеки классов](functions-dotnet-class-library.md)
-+ [C#Справочник разработчика скриптов](functions-reference-csharp.md)
++ [Справочник разработчика по библиотеке классов C#](functions-dotnet-class-library.md)
++ [Справочник разработчика по скриптам C#](functions-reference-csharp.md)
 + [Справочник разработчика Java](functions-reference-java.md)
 + [Справочник разработчика JavaScript](functions-reference-node.md)
 + [Справочник разработчика по PowerShell](functions-reference-powershell.md)

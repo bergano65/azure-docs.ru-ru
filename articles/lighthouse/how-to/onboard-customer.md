@@ -1,14 +1,14 @@
 ---
 title: Подключение клиента к системе делегированного управления ресурсами Azure
 description: Узнайте, как подключить клиента к системе делегированного управления ресурсами Azure, предоставив доступ к ресурсам и возможность управления ими через собственный клиент.
-ms.date: 01/20/2020
+ms.date: 04/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: b3868987fa76d4ce0d4c34e81b46301ea106203d
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 2b8bf3125dd97397f83a2a2cbf23090bce41ad40
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76543415"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82161114"
 ---
 # <a name="onboard-a-customer-to-azure-delegated-resource-management"></a>Подключение клиента к системе делегированного управления ресурсами Azure
 
@@ -16,15 +16,12 @@ ms.locfileid: "76543415"
 
 Вы можете повторить этот процесс, если управляете ресурсами для нескольких клиентов. Затем, когда полномочный пользователь входит в клиент, он может быть авторизован во всех областях аренды клиента для выполнения операций управления без необходимости входа в каждый отдельный клиент.
 
-Чтобы отразить влияние на участие клиентов и получить распознавание, свяжите свой идентификатор Microsoft Partner Network (MPN) с подключенными подписками. Дополнительные сведения см. в статье [Link a partner ID to your Azure accounts](../../billing/billing-partner-admin-link-started.md) (Привязка идентификатора партнера к учетной записи Azure). Обратите внимание, что эту привязку необходимо выполнять в клиенте поставщика службы.
+Чтобы отразить влияние на участие клиентов и получить распознавание, свяжите идентификатор Microsoft Partner Network (MPN) с по крайней мере одной учетной записью пользователя, имеющей доступ к каждой из ваших подключенных подписок. Обратите внимание, что эту привязку необходимо выполнять в клиенте поставщика службы. Для простоты рекомендуется создать в клиенте учетную запись субъекта-службы, связанную с ИДЕНТИФИКАТОРом MPN, и предоставить ей доступ для чтения каждому заказчику. Дополнительные сведения см. в статье [связывание идентификатора партнера с учетными записями Azure](../../billing/billing-partner-admin-link-started.md). 
 
 > [!NOTE]
 > Клиенты могут также быть подключены при покупке предложения управляемых служб (общедоступных или частных), которое вы опубликовали в Azure Marketplace. Дополнительные сведения см. в статье [Publish a managed services offer to Azure Marketplace](publish-managed-services-offers.md) (Публикация предложения управляемых служб в Azure Marketplace). Вы также можете использовать процесс адаптации, описанный здесь, вместе с предложением, опубликованным в Azure Marketplace.
 
 Для процесса подключения требуется, чтобы действия выполнялись в клиенте поставщика услуг и клиенте пользователя. Все эти шаги описаны в данной статье.
-
-> [!IMPORTANT]
-> В настоящее время вы не можете подключить подписку (или группу ресурсов в подписке) для системы делегированного управления ресурсами Azure, если в подписке используется Azure Databricks. Аналогичным образом, если подписка зарегистрирована для подключения к поставщику ресурсов **Microsoft.ManagedServices**, вы не сможете на данный момент создать рабочее пространство Databricks для этой подписки.
 
 ## <a name="gather-tenant-and-subscription-details"></a>Сбор сведений о клиентах и подписках
 
@@ -51,7 +48,7 @@ ms.locfileid: "76543415"
 Select-AzSubscription <subscriptionId>
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell
@@ -68,6 +65,9 @@ az account show
 Как поставщик услуг вы можете выполнять для одного клиента несколько задач, требующих разных прав доступа для нескольких областей. Вы можете определить столько авторизаций, сколько требуется, чтобы [назначить встроенные роли управления доступом на основе ролей (RBAC)](../../role-based-access-control/built-in-roles.md) пользователям в арендаторе.
 
 Чтобы упростить управление, для каждой роли рекомендуется использовать группы пользователей Azure AD. Благодаря этому можно добавлять или удалять отдельных пользователей в группе, а не назначать разрешения непосредственно этому пользователю. Вы также можете назначить роли субъекту-службе. Обязательно следуйте принципам минимальных привилегий, чтобы у пользователей были только разрешения, необходимые для выполнения их обязанностей. Рекомендации и сведения о поддерживаемых ролях см. в разделе [Арендаторы, роли и пользователи в сценариях Azure Lighthouse](../concepts/tenants-users-roles.md).
+
+> [!IMPORTANT]
+> Чтобы добавить разрешения для группы Azure AD, **Тип группы** должен быть " **Безопасность** ", а не **Office 365**. Этот параметр выбирается при создании группы. Дополнительные сведения см. в разделе [Создание базовой группы и добавление членов с помощью Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
 Чтобы определить разрешения, необходимо знать значения ИДЕНТИФИКАТОРов для каждого пользователя, группы пользователей или субъекта-службы в клиенте поставщика услуг, которому требуется предоставить доступ. Вам также потребуется идентификатор определения роли для каждой встроенной роли, которую вы хотите назначить. Если у вас их еще нет, их можно получить, выполнив приведенные ниже команды в клиенте поставщика услуг.
 
@@ -89,7 +89,7 @@ az account show
 (Get-AzRoleDefinition -Name '<roleName>').id
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell
@@ -98,7 +98,7 @@ az account show
 az ad group list --query "[?displayName == '<yourGroupName>'].objectId" --output tsv
 
 # To retrieve the objectId for an Azure AD user
-az ad user show --upn-or-object-id "<yourUPN>" –-query "objectId" --output tsv
+az ad user show --id "<yourUPN>" --query "objectId" --output tsv
 
 # To retrieve the objectId for an SPN
 az ad sp list --query "[?displayName == '<spDisplayName>'].objectId" --output tsv
@@ -107,7 +107,7 @@ az ad sp list --query "[?displayName == '<spDisplayName>'].objectId" --output ts
 az role definition list --name "<roleName>" | grep name
 ```
 > [!TIP]
-> Рекомендуется назначать роль [Managed Services Registration Assignment Delete](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) (Удаление назначенных регистраций управляемых служб) при подключении клиента, чтобы пользователи в арендаторе позже могли при необходимости [удалить доступ к делегированию](#remove-access-to-a-delegation). Если эта роль не назначена, делегированные ресурсы могут быть удалены только пользователем в арендаторе клиента.
+> Рекомендуется назначать роль [Managed Services Registration Assignment Delete](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) (Удаление назначенных регистраций управляемых служб) при подключении клиента, чтобы пользователи в арендаторе позже могли при необходимости [удалить доступ к делегированию](remove-delegation.md). Если эта роль не назначена, делегированные ресурсы могут быть удалены только пользователем в арендаторе клиента.
 
 ## <a name="create-an-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
 
@@ -118,28 +118,25 @@ az role definition list --name "<roleName>" | grep name
 |**mspOfferName**     |Имя, описывающее это определение. Это значение отображается для клиента в виде заголовка предложения.         |
 |**mspOfferDescription**     |Краткое описание предложения (например, "Contoso VM Management предложение").      |
 |**managedByTenantId**     |Идентификатор клиента.          |
-|**Авторизации**     |Значения **principalId** для пользователей/групп или имен участников-служб из клиента, каждый из которых имеет **принЦипалиддисплайнаме** , чтобы помочь клиенту понять назначение авторизации и сопоставить его со встроенным значением **roleDefinitionId** , чтобы указать уровень доступа.      |
+|**авторизации**     |Значения **principalId** для пользователей/групп или имен участников-служб из клиента, каждый из которых имеет **принЦипалиддисплайнаме** , чтобы помочь клиенту понять назначение авторизации и сопоставить его со встроенным значением **roleDefinitionId** , чтобы указать уровень доступа.      |
 
-> [!TIP]
-> Убедитесь, что записи **манажедбитенантид**, **принЦипалиддисплайнаме**и **roleDefinitionId** идентичны значениям, используемым Azure. Не используйте прописные буквы в этих значениях.
-
-Для процесса адаптации требуется шаблон Azure Resource Manager (указанный в [репозитории примеров](https://github.com/Azure/Azure-Lighthouse-samples/) и соответствующий файл параметров, который изменяется в соответствии с конфигурацией, и определяются разрешения.
+Для процесса адаптации требуется шаблон Azure Resource Manager (в нашем [репозитории примеров](https://github.com/Azure/Azure-Lighthouse-samples/)) и соответствующий файл параметров, который изменяется в соответствии с конфигурацией, и определяются разрешения.
 
 Выбранный шаблон будет зависеть от того, выполняется ли подключение ко всей подписке, группе ресурсов или нескольким группам ресурсов в рамках подписки. Мы также предоставляем шаблон для клиентов, которые приобрели предложение управляемых служб, опубликованное в Azure Marketplace, если вы предпочитаете таким образом подключать свои подписки.
 
 |Чтобы подключить  |Используйте этот шаблон Azure Resource Manager  |И измените этот файл параметров |
 |---------|---------|---------|
-|Subscription   |[delegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/delegated-resource-management/delegatedResourceManagement.json)  |[delegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/delegated-resource-management/delegatedResourceManagement.parameters.json)    |
-|Группа ресурсов   |[rgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)  |[rgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)    |
-|Несколько групп ресурсов в рамках подписки   |[multipleRgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/multipleRgDelegatedResourceManagement.json)  |[multipleRgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/multipleRgDelegatedResourceManagement.parameters.json)    |
-|Подписка (при использовании предложения, опубликованного в Azure Marketplace)   |[marketplaceDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/marketplace-delegated-resource-management/marketplaceDelegatedResourceManagement.json)  |[marketplaceDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/marketplace-delegated-resource-management/marketplaceDelegatedResourceManagement.parameters.json)    |
+|Подписка   |[delegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/delegated-resource-management/delegatedResourceManagement.json)  |[delegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/delegated-resource-management/delegatedResourceManagement.parameters.json)    |
+|Группа ресурсов   |[rgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)  |[rgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)    |
+|Несколько групп ресурсов в рамках подписки   |[multipleRgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/multipleRgDelegatedResourceManagement.json)  |[multipleRgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/multipleRgDelegatedResourceManagement.parameters.json)    |
+|Подписка (при использовании предложения, опубликованного в Azure Marketplace)   |[marketplaceDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/marketplace-delegated-resource-management/marketplaceDelegatedResourceManagement.json)  |[marketplaceDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/marketplace-delegated-resource-management/marketplaceDelegatedResourceManagement.parameters.json)    |
 
 > [!IMPORTANT]
 > Описанный здесь процесс требует отдельного развертывания на уровне подписки для каждой подключенной подписки, даже если подписки направляются в одном клиенте клиента. Отдельные развертывания также требуются при подключении нескольких групп ресурсов в разных подписках одного клиента. Однако подключение нескольких групп ресурсов в одной подписке может выполняться в одном развертывании на уровне подписки.
 >
 > Для нескольких предложений, применяемых к одной подписке (или к группам ресурсов в рамках подписки), также необходимы отдельные развертывания. Каждое применимое предложение должно использовать разные значения **mspOfferName**.
 
-В следующем примере показан измененный файл **делегатедресаурцеманажемент. parameters. JSON** , который можно использовать для подключения подписки. Файлы параметров группы ресурсов (расположенные в папке [rg-delegated-resource-management](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management)) аналогичны, но также содержат параметр **rgName** для определения конкретных групп ресурсов, которые должны быть подключены.
+В следующем примере показан измененный файл **делегатедресаурцеманажемент. parameters. JSON** , который можно использовать для подключения подписки. Файлы параметров группы ресурсов (расположенные в папке [rg-delegated-resource-management](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/rg-delegated-resource-management)) аналогичны, но также содержат параметр **rgName** для определения конкретных групп ресурсов, которые должны быть подключены.
 
 ```json
 {
@@ -202,6 +199,8 @@ az role definition list --name "<roleName>" | grep name
 
 > [!IMPORTANT]
 > Это развертывание на уровне подписки должно выполняться учетной записью, отличной от гостевой, в клиенте клиента, у которого есть [Встроенная роль владельца](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#owner) подписки (или содержащая группы ресурсов, для которых выполняется подключение). Чтобы найти пользователей, которые могут делегировать подписку, пользователь клиента может выбрать подписку на портале Azure, открыть **управление доступом (IAM)** и [просмотреть всех пользователей с ролью владельца](../../role-based-access-control/role-assignments-list-portal.md#list-owners-of-a-subscription).
+>
+> Если подписка была создана с помощью [программы поставщика облачных решений (CSP)](../concepts/cloud-solution-provider.md), любой пользователь, имеющий роль [агента администратора](https://docs.microsoft.com/partner-center/permissions-overview#manage-commercial-transactions-in-partner-center-azure-ad-and-csp-roles) в клиенте поставщика услуг, может выполнить развертывание.
 
 ### <a name="powershell"></a>PowerShell
 
@@ -209,21 +208,21 @@ az role definition list --name "<roleName>" | grep name
 # Log in first with Connect-AzAccount if you're not using Cloud Shell
 
 # Deploy Azure Resource Manager template using template and parameter file locally
-New-AzDeployment -Name <deploymentName> `
+New-AzSubscriptionDeployment -Name <deploymentName> `
                  -Location <AzureRegion> `
                  -TemplateFile <pathToTemplateFile> `
                  -TemplateParameterFile <pathToParameterFile> `
                  -Verbose
 
 # Deploy Azure Resource Manager template that is located externally
-New-AzDeployment -Name <deploymentName> `
+New-AzSubscriptionDeployment -Name <deploymentName> `
                  -Location <AzureRegion> `
                  -TemplateUri <templateUri> `
                  -TemplateParameterUri <parameterUri> `
                  -Verbose
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell
@@ -275,7 +274,7 @@ az deployment create --name <deploymentName> \
 Get-AzContext
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 # Log in first with az login if you're not using Cloud Shell
@@ -283,77 +282,8 @@ Get-AzContext
 az account list
 ```
 
-## <a name="remove-access-to-a-delegation"></a>Удаление доступа к делегированию
-
-По умолчанию пользователи в клиенте клиента с соответствующими разрешениями могут удалить доступ поставщика услуг к делегированным ресурсам на [странице поставщики услуг](view-manage-service-providers.md#add-or-remove-service-provider-offers) портал Azure. При этом пользователи в клиенте поставщика услуг не смогут получить доступ к ресурсам, которые ранее были делегированы.
-
-Если у вас есть подключенные пользователи с [ролью удаление назначения регистрации управляемых служб](../../role-based-access-control/built-in-roles.md#managed-services-registration-assignment-delete-role) при подключении клиента для управления делегированными ресурсами Azure, эти пользователи также смогут удалить делегирование.
-
-В приведенном ниже примере показано назначение роли **Managed Services Registration Assignment Delete** (Удаление назначенных регистраций управляемых служб), которую можно добавить в файл параметров.
-
-```json
-    "authorizations": [ 
-        { 
-            "principalId": "cfa7496e-a619-4a14-a740-85c5ad2063bb", 
-            "principalIdDisplayName": "MSP Operators", 
-            "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46" 
-        } 
-    ] 
-```
-
-Пользователь с этим разрешением может удалить делегирование одним из следующих способов.
-
-### <a name="azure-portal"></a>Портал Azure
-
-1. Перейдите на страницу [Мои клиенты](view-manage-customers.md).
-2. Выберите **делегирования**.
-3. Найдите делегирование, которое требуется удалить, а затем щелкните значок корзины, который отображается в строке.
-
-### <a name="powershell"></a>PowerShell
-
-```azurepowershell-interactive
-# Log in first with Connect-AzAccount if you're not using Cloud Shell
-
-# Sign in as a user from the managing tenant directory 
-
-Login-AzAccount
-
-# Select the subscription that is delegated - or contains the delegated resource group(s)
-
-Select-AzSubscription -SubscriptionName "<subscriptionName>"
-
-# Get the registration assignment
-
-Get-AzManagedServicesAssignment -Scope "/subscriptions/{delegatedSubscriptionId}"
-
-# Delete the registration assignment
-
-Remove-AzManagedServicesAssignment -ResourceId "/subscriptions/{delegatedSubscriptionId}/providers/Microsoft.ManagedServices/registrationAssignments/{assignmentGuid}"
-```
-
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
-
-```azurecli-interactive
-# Log in first with az login if you're not using Cloud Shell
-
-# Sign in as a user from the managing tenant directory
-
-az login
-
-# Select the subscription that is delegated – or contains the delegated resource group(s)
-
-az account set -s <subscriptionId/name>
-
-# List registration assignments
-
-az managedservices assignment list
-
-# Delete the registration assignment
-
-az managedservices assignment delete --assignment <id or full resourceId>
-```
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).
 - [Просматривайте клиентов и управляйте ими](view-manage-customers.md), перейдя в раздел **Мои клиенты** на портале Azure.
+- Узнайте, как [Удалить доступ к делегированию](remove-delegation.md) , которое ранее было подключено.

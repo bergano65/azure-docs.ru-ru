@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 01/15/2020
 ms.author: shvija
 ms.openlocfilehash: da950c2219d3faf679953690d207372b64913ba8
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77162064"
 ---
 # <a name="git-repositories-with-samples-for-azure-event-hubs"></a>Репозитории Git с примерами кодов для Центров событий Azure 
@@ -66,9 +66,9 @@ ms.locfileid: "77162064"
 ## <a name="apache-kafka-samples"></a>Примеры для Apache Kafka
 Примеры использования функции "Центры событий для Apache Kafka" можно найти в репозитории GitHub [azure-event-hubs-for-kafka](https://github.com/Azure/azure-event-hubs-for-kafka).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Чтобы узнать больше о Центрах событий, обратитесь к следующим статьям:
 
 - [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
-- [Возможности Центров событий](event-hubs-features.md)
-- [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
+- [Функции Центров событий](event-hubs-features.md)
+- [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)

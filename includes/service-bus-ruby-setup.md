@@ -4,12 +4,12 @@ ms.service: service-bus
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: spelluru
-ms.openlocfilehash: 16ce537a54fc77fc0f72b859d6d193501d86c1fc
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
-ms.translationtype: MT
+ms.openlocfilehash: aec13c6beb8dbfcdd5f38e7f96b86bf03e42fa37
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185520"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80986762"
 ---
 ## <a name="create-a-ruby-application"></a>Создание приложения Ruby
 Инструкции см. в разделе [Создание приложения Ruby в Azure](../articles/virtual-machines/linux/classic/ruby-rails-web-app.md).
@@ -42,3 +42,14 @@ sb_host = "https://#{Azure.sb_namespace}.servicebus.windows.net"
 ```
 
 Задайте для пространства имен только созданное значение, а не весь URL-адрес. Например, используйте **yourexamplenamespace**, а не yourexamplenamespace.servicebus.windows.net.
+
+Если вы используете несколько пространств имен, можете передать ключ и его имя в конструктор при создании объектов `SharedAccessSigner`.
+
+```ruby
+sb_namespace = '<your azure service bus namespace>'
+sb_sas_key_name = '<your azure service bus access keyname>'
+sb_sas_key = '<your azure service bus access key>'
+
+signer = Azure::ServiceBus::Auth::SharedAccessSigner.new(sb_sas_key_name, sb_sas_key)
+sb_host = "https://#{sb_namespace}.servicebus.windows.net"
+```

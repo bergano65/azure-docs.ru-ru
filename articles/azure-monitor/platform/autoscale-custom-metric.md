@@ -4,20 +4,21 @@ description: Узнайте, как масштабировать ресурс н
 ms.topic: conceptual
 ms.date: 05/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: f8aaaf8890c3642884b72cc6c8fc2759fec357fa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7758c440c75af5819099110dcbdaf5a86a1d2a04
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75364549"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77425125"
 ---
 # <a name="get-started-with-auto-scale-by-custom-metric-in-azure"></a>Начало работы с автомасштабированием на основе пользовательской метрики в Azure
 В этой статье описывается, как масштабировать ресурс на основе пользовательской метрики на портале Azure.
 
-Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/), [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/) и [службами управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts).
+Azure Monitor Автомасштабирование применяется только к [масштабируемым наборам виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачным службам](https://azure.microsoft.com/services/cloud-services/), [службам приложений, веб-приложениям](https://azure.microsoft.com/services/app-service/web/), [кластеру Azure обозреватель данных](https://azure.microsoft.com/services/data-explorer/) .   
+Среда службы интеграции и [службы управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts).
 
 ## <a name="lets-get-started"></a>Начало работы
-В данной статье предполагается, что у вас есть веб-приложение, для которого настроена среда Application Insights. Если вы еще не сделали этого, вы можете [настроить Application Insights для веб-сайта ASP.NET][1] .
+В данной статье предполагается, что у вас есть веб-приложение, для которого настроена среда Application Insights. Если у вас его нет, вы можете [установить Application Insights для веб-сайта ASP.NET][1].
 
 - Открыть [портал Azure][2]
 - В левой области навигации щелкните значок Azure Monitor.

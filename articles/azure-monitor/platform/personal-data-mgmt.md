@@ -1,18 +1,17 @@
 ---
 title: Руководство по хранению персональных данных в Azure Log Analytics | Документация Майкрософт
 description: В этой статье описывается управление персональными данными, которые хранятся в Azure Log Analytics, и методы обнаружения и удаления таких данных.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2018
-ms.openlocfilehash: 7f8b40094b30a01e4189bcf04d4c194e5b0b4285
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a720627e1783d2e29ef180b7855132ea59444cab
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75394754"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79248753"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Руководство по хранению персональных данных в Log Analytics и Application Insights
 
@@ -52,7 +51,7 @@ Log Analytics — это масштабируемое хранилище, опи
 * *Пользовательские данные*. Log Analytics позволяет собирать данные различным образом: пользовательские журналы и настраиваемые поля, [API-интерфейс сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md) и пользовательские данные, собранные как часть журналов системных событий. Все они восприимчивы к содержанию частных данных и должны быть просмотрены, чтобы проверить, существуют ли такие данные.
 * *Данные, взятые из решения*. Поскольку механизм решения является открытым, мы рекомендуем просмотреть все таблицы, созданные решениями, чтобы обеспечить соответствие.
 
-### <a name="application-data"></a>Данные приложения
+### <a name="application-data"></a>Данные приложений
 
 * *IP-адреса*. По умолчанию Application Insights маскирует все значения в полях IP-адресов, заменяя их строкой 0.0.0.0, но для сохранения сведений о сеансах в них часто сохраняются реальные значения клиентских IP-адресов. Приведенный ниже запрос Analytics позволяет найти все таблицы, в которых содержатся поля IP-адресов со значениями, отличными от 0.0.0.0, за последние 24 часа:
     ```
@@ -103,27 +102,27 @@ Log Analytics — это масштабируемое хранилище, опи
 #### <a name="log-data"></a>Данные журнала
 
 * [POST purge](https://docs.microsoft.com/rest/api/loganalytics/workspaces%202015-03-20/purge) — принимает объект с параметрами удаляемых данных и возвращает идентификатор GUID. 
-* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Пример.
+* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Пример:
 
     ```
     x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/Microsoft.OperationalInsights/workspaces/[WorkspaceName]/operations/purge-[PurgeOperationId]?api-version=2015-03-20
     ```
 
 > [!IMPORTANT]
->  Предполагается, что большинство операций очистки будут выполняться намного быстрее, чем указано в Соглашении об уровне обслуживания. Но из-за сильного влияния таких операций на платформу данных Log Analytics в **Соглашении об уровне обслуживания предусмотрен период в 30 дней для завершения операций очистки**. 
+>  Хотя мы предполагаем, что подавляющее большинство операций очистки выполняется гораздо быстрее, чем наше соглашение об уровне обслуживания, из-за большого влияния на платформу данных, используемую Log Analytics, **формальное соглашение об уровне обслуживания для завершения операций очистки задается в течение 30 дней**. 
 
-#### <a name="application-data"></a>Данные приложения
+#### <a name="application-data"></a>Данные приложений
 
 * [POST purge](https://docs.microsoft.com/rest/api/application-insights/components/purge) — принимает объект с параметрами удаляемых данных и возвращает идентификатор GUID.
-* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Пример.
+* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Пример:
 
    ```
    x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/microsoft.insights/components/[ComponentName]/operations/purge-[PurgeOperationId]?api-version=2015-05-01
    ```
 
 > [!IMPORTANT]
->  Хотя большинство операций очистки будут выполняться намного быстрее, чем указано в соглашениях об уровне обслуживания, из-за сильного влияния таких операций на платформу данных, используемую Application Insights, в **соглашение об уровне обслуживания включается период 30 дней на завершение операций очистки**.
+>  Хотя подавляющее большинство операций очистки может завершиться гораздо быстрее, чем соглашение об уровне обслуживания, из-за большого влияния на платформу данных, используемую Application Insights, **формальное соглашение об уровне обслуживания для завершения операций очистки задается в течение 30 дней**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о сборе, обработке и защите данных в Log Analytics см. в [этой статье](../../azure-monitor/platform/data-security.md).
 - Дополнительные сведения о сборе, обработке и защите данных в Application Insights см. в [этой статье](../../azure-monitor/app/data-retention-privacy.md).

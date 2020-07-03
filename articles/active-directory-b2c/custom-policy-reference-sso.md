@@ -3,97 +3,173 @@ title: Управление сеансами единого входа с пом
 titleSuffix: Azure AD B2C
 description: Узнайте, как для управлять сеансами единого входа с помощью настраиваемых политик в Azure AD B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
-ms.author: marsma
+ms.date: 05/07/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ee32b13820cb50fc1649672b78b34e7e293d65b5
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 4aa9f4839c8bfc04cee4bb03ea0eac98cb8b25c0
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849088"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926125"
 ---
 # <a name="single-sign-on-session-management-in-azure-active-directory-b2c"></a>Управление сеансами единого входа в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Управление сеансами единого входа (SSO) в Azure Active Directory B2C (Azure AD B2C) позволяет администратору управлять взаимодействием с пользователем после того, как пользователь уже прошел проверку подлинности. Например, администратор может управлять отображением выбранных поставщиков удостоверений или необходимостью повторного ввода данных локальной учетной записи. В этой статье описывается настройка параметров единого входа для Azure AD B2C.
-
-Управление сеансами единого входа состоит из двух частей. Первая относится к непосредственному взаимодействию пользователя с Azure AD B2C, а вторая — к взаимодействию пользователя с внешними сторонами, например Facebook. Azure AD B2C не переопределяет и не обходит сеансы единого входа, которые могут поддерживаться внешними сторонами. Вместо этого маршрут для доступа к внешней стороне, проходящий через Azure AD B2C, "запоминается", устраняя необходимость повторно предлагать пользователю выбрать поставщик удостоверений социальных сетей или поставщик корпоративных удостоверений. Окончательный выбор сеанса единого входа остается за внешней стороной.
-
-Для управления сеансами единого входа используется та же семантика, что и для любого другого технического профиля в настраиваемых политиках. При выполнении шага оркестрации из технического профиля, связанного с шагом, запрашиваются ссылка на `UseTechnicalProfileForSessionManagement`. Затем, при наличии такового, указанный поставщик сеансов единого входа проверяется, чтобы определить, является ли пользователь участником сеанса. Если это так, то поставщик сеансов единого входа используется для повторного заполнения данных сеанса. Аналогичным образом после выполнения шага оркестрации поставщик используется для сохранения сведений в сеансе, если был указан поставщик сеансов единого входа.
+Управление [сеансами единого входа (SSO)](session-overview.md) использует ту же семантику, что и любой другой технический профиль в пользовательских политиках. При выполнении шага оркестрации из технического профиля, связанного с шагом, запрашиваются ссылка на `UseTechnicalProfileForSessionManagement`. Затем, при наличии такового, указанный поставщик сеансов единого входа проверяется, чтобы определить, является ли пользователь участником сеанса. Если это так, то поставщик сеансов единого входа используется для повторного заполнения данных сеанса. Аналогичным образом после выполнения шага оркестрации поставщик используется для сохранения сведений в сеансе, если был указан поставщик сеансов единого входа.
 
 В Azure AD B2C можно использовать определенное количество поставщиков сеансов единого входа.
 
-* NoopSSOSessionProvider
-* DefaultSSOSessionProvider
-* ExternalLoginSSOSessionProvider
-* SamlSSOSessionProvider
+|Поставщик сеанса  |Область  |
+|---------|---------|
+|[NoopSSOSessionProvider](#noopssosessionprovider)     |  Отсутствуют       |       
+|[DefaultSSOSessionProvider](#defaultssosessionprovider)    | Azure AD B2C диспетчер внутренних сеансов.      |       
+|[ExternalLoginSSOSessionProvider](#externalloginssosessionprovider)     | Между Azure AD B2C и OAuth1, OAuth2 или OpenID Connect Connect Identity Provider.        |         |
+|[оаусссосессионпровидер](#oauthssosessionprovider)     | Между приложением проверяющей стороны OAuth2 или OpenID Connect и Azure AD B2C.        |        
+|[SamlSSOSessionProvider](#samlssosessionprovider)     | Между Azure AD B2C и поставщиком удостоверений SAML. И между поставщиком службы SAML (приложение проверяющей стороны) и Azure AD B2C.  |        
 
-Классы управления единым входом указываются с помощью элемента `<UseTechnicalProfileForSessionManagement ReferenceId=“{ID}" />` технического профиля.
 
-## <a name="noopssosessionprovider"></a>NoopSSOSessionProvider
 
-Как можно понять из названия, этот поставщик не выполняет никаких действий. Его можно использовать для подавления реакции службы единого входа на события для конкретного технического профиля.
 
-## <a name="defaultssosessionprovider"></a>DefaultSSOSessionProvider
+Классы управления единым входом указываются с помощью элемента `<UseTechnicalProfileForSessionManagement ReferenceId="{ID}" />` технического профиля.
 
-Этот поставщик можно использовать для хранения утверждений в сеансе. Как правило, этот поставщик указывается в техническом профиле, используемом для управления локальными учетными записями. При использовании DefaultSSOSessionProvider для хранения утверждений в рамках сеанса необходимо убедиться в следующем. Все утверждения, которые будут возвращены в приложение или использоваться в соответствии с предварительными условиями в последующих шагах, должны храниться в сеансе или считываться из из профиля пользователя в каталоге. Это убережет вас от сбоя аутентификации из-за отсутствующих утверждений.
+## <a name="input-claims"></a>Входящие утверждения
+
+`InputClaims` Элемент пуст или отсутствует.
+
+## <a name="persisted-claims"></a>Материализованные утверждения
+
+Утверждения, которые должны быть возвращены в приложение или использоваться предусловиями в последующих шагах, должны храниться в сеансе или дополняться считыванием из профиля пользователя в каталоге. Использование материализованных утверждений гарантирует, что пути проверки подлинности не будут завершаться сбоем в случае отсутствия утверждений. Чтобы добавить утверждения в сеанс, используйте элемент `<PersistedClaims>` технического профиля. При использовании этого поставщика для повторного заполнения данных сеанса сохраненные утверждения добавляются в контейнер утверждений.
+
+## <a name="output-claims"></a>Исходящие утверждения
+
+`<OutputClaims>` Используется для получения утверждений из сеанса.
+
+## <a name="session-providers"></a>Поставщики сеансов
+
+### <a name="noopssosessionprovider"></a>NoopSSOSessionProvider
+
+Как можно понять из названия, этот поставщик не выполняет никаких действий. Его можно использовать для подавления реакции службы единого входа на события для конкретного технического профиля. Следующий `SM-Noop` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).
+
+```XML
+<TechnicalProfile Id="SM-Noop">
+  <DisplayName>Noop Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.NoopSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+</TechnicalProfile>
+```
+
+### <a name="defaultssosessionprovider"></a>DefaultSSOSessionProvider
+
+Этот поставщик можно использовать для хранения утверждений в сеансе. Этот поставщик обычно упоминается в техническом профиле, который используется для управления локальными и федеративными учетными записями. Следующий `SM-AAD` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).
 
 ```XML
 <TechnicalProfile Id="SM-AAD">
-    <DisplayName>Session Mananagement Provider</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.DefaultSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <PersistedClaims>
-        <PersistedClaim ClaimTypeReferenceId="objectId" />
-        <PersistedClaim ClaimTypeReferenceId="newUser" />
-        <PersistedClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" />
-    </PersistedClaims>
-    <OutputClaims>
-        <OutputClaim ClaimTypeReferenceId="objectIdFromSession" DefaultValue="true" />
-    </OutputClaims>
+  <DisplayName>Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.DefaultSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <PersistedClaims>
+    <PersistedClaim ClaimTypeReferenceId="objectId" />
+    <PersistedClaim ClaimTypeReferenceId="signInName" />
+    <PersistedClaim ClaimTypeReferenceId="authenticationSource" />
+    <PersistedClaim ClaimTypeReferenceId="identityProvider" />
+    <PersistedClaim ClaimTypeReferenceId="newUser" />
+    <PersistedClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" />
+  </PersistedClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="objectIdFromSession" DefaultValue="true"/>
+  </OutputClaims>
 </TechnicalProfile>
 ```
 
-Чтобы добавить утверждения в сеанс, используйте элемент `<PersistedClaims>` технического профиля. При использовании этого поставщика для повторного заполнения данных сеанса сохраненные утверждения добавляются в контейнер утверждений. `<OutputClaims>` используется для получения утверждений из сеанса.
 
-## <a name="externalloginssosessionprovider"></a>ExternalLoginSSOSessionProvider
+Следующий `SM-MFA` технический профиль включен в `SocialAndLocalAccountsWithMfa` [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack) . Этот технический профиль управляет сеансом многофакторной проверки подлинности.
 
-Этот поставщик используется для подавления экрана "Выбор поставщика удостоверений". Обычно он указывается в техническом профиле, настроенном для внешнего поставщика удостоверений, например Facebook.
+```XML
+<TechnicalProfile Id="SM-MFA">
+  <DisplayName>Session Mananagement Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.DefaultSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <PersistedClaims>
+    <PersistedClaim ClaimTypeReferenceId="Verified.strongAuthenticationPhoneNumber" />
+  </PersistedClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="isActiveMFASession" DefaultValue="true"/>
+  </OutputClaims>
+</TechnicalProfile>
+```
+
+### <a name="externalloginssosessionprovider"></a>ExternalLoginSSOSessionProvider
+
+Этот поставщик используется для подавления экрана "Выбор поставщика удостоверений" и выхода из федеративного поставщика удостоверений. Он обычно упоминается в техническом профиле, настроенном для федеративного поставщика удостоверений, например Facebook, или Azure Active Directory. Следующий `SM-SocialLogin` технический профиль включен в [начальный пакет пользовательской политики](custom-policy-get-started.md#custom-policy-starter-pack).
 
 ```XML
 <TechnicalProfile Id="SM-SocialLogin">
-    <DisplayName>Session Mananagement Provider</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.ExternalLoginSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <DisplayName>Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.ExternalLoginSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="AlwaysFetchClaimsFromProvider">true</Item>
+  </Metadata>
+  <PersistedClaims>
+    <PersistedClaim ClaimTypeReferenceId="AlternativeSecurityId" />
+  </PersistedClaims>
 </TechnicalProfile>
 ```
 
-## <a name="samlssosessionprovider"></a>SamlSSOSessionProvider
+#### <a name="metadata"></a>Метаданные
 
-Этот поставщик используется для управления сеансами SAML в Azure AD B2C между приложениями, а также сеансами внешних поставщиков удостоверений SAML.
+| Атрибут | Обязательный | Описание|
+| --- | --- | --- |
+| алвайсфетчклаимсфромпровидер | нет | В настоящее время не используется, может игнорироваться. |
+
+### <a name="oauthssosessionprovider"></a>оаусссосессионпровидер
+
+Этот поставщик используется для управления Azure AD B2C сеансами между OAuth2 или OpenID Connect и Azure AD B2C.
+
+```xml
+<TechnicalProfile Id="SM-jwt-issuer">
+  <DisplayName>Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.OAuthSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+</TechnicalProfile>
+```
+
+### <a name="samlssosessionprovider"></a>SamlSSOSessionProvider
+
+Этот поставщик используется для управления Azure AD B2C сеансов SAML между приложением проверяющей стороны или федеративным поставщиком удостоверений SAML. При использовании поставщика единого входа для хранения сеанса поставщика удостоверений SAML `RegisterServiceProviders` необходимо установить значение. `false` `SM-Saml-idp` [Технический профиль поставщика удостоверений SAML](saml-identity-provider-technical-profile.md)использует следующий технический профиль.
 
 ```XML
-<TechnicalProfile Id="SM-Reflector-SAML">
-    <DisplayName>Session Management Provider</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Metadata>
-        <Item Key="IncludeSessionIndex">false</Item>
-        <Item Key="RegisterServiceProviders">false</Item>
-    </Metadata>
+<TechnicalProfile Id="SM-Saml-idp">
+  <DisplayName>Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="RegisterServiceProviders">false</Item>
+  </Metadata>
 </TechnicalProfile>
 ```
 
-Технический профиль содержит два элемента метаданных.
+При использовании поставщика для хранения сеанса SAML B2C параметр `RegisterServiceProviders` должен иметь значение. `true` Для завершения выхода из сеанса SAML требуются `SessionIndex` и `NameID`.
 
-| Элемент | Значение по умолчанию | Возможные значения | Description
-| --- | --- | --- | --- |
-| IncludeSessionIndex | true | true/false | Указывает поставщику, что следует сохранить индекс сеанса. |
-| RegisterServiceProviders | true | true/false | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. |
+`SM-Saml-issuer` [Технический профиль издателя SAML](saml-issuer-technical-profile.md) использует следующий технический профиль
 
-При использовании поставщика для хранения сеанса поставщика удостоверений SAML указанные выше элементы должны иметь значение false. При использовании поставщика для хранения сеанса SAML B2C указанные выше элементы должны иметь значение true или должны быть опущены, так как значением по умолчанию является true. Для завершения выхода из сеанса SAML требуются `SessionIndex` и `NameID`.
+```XML
+<TechnicalProfile Id="SM-Saml-issuer">
+  <DisplayName>Session Management Provider</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.SSO.SamlSSOSessionProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+</TechnicalProfile>
+```
 
+#### <a name="metadata"></a>Метаданные
+
+| Атрибут | Обязательный | Описание|
+| --- | --- | --- |
+| IncludeSessionIndex | нет | В настоящее время не используется, может игнорироваться.|
+| RegisterServiceProviders | нет | Указывает, что поставщик должен зарегистрировать все поставщики услуг SAML, которыми было выдано утверждение. Возможные значения: `true` (по умолчанию) или `false`.|
+
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
+- Узнайте, как [настроить поведение сеанса в пользовательских политиках](session-behavior-custom-policy.md).

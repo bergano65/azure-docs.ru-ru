@@ -4,17 +4,17 @@ description: Ниже приведен индекс доступных Service F
 ms.date: 12/03/2018
 ms.topic: conceptual
 ms.openlocfilehash: c944ddc26f2e2d099cf9552acb8287c363d0c768
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75461907"
 ---
 # <a name="find-service-fabric-mesh-samples"></a>Примеры экземпляров Сетки Service Fabric
 
 В этой таблице перечислены доступные примеры приложений Сетки Service Fabric. Исходный код в этих примерах показывает, как достичь определенного сценария с помощью модели ресурсов Service Fabric.
 
-Дополнительные сведения о развертывании шаблонов непосредственно в Azure см. в разделе [Страница примера шаблона GitHub](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/README.md).
+Дополнительные сведения о развертывании шаблонов непосредственно в Azure см. на [странице Пример шаблона на сайте GitHub.](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/README.md)
 
 |Пример шаблона|Описание сценария|Исходный код|Средства для разработчиков|
 |------------|--------------------|----------|----------------------|

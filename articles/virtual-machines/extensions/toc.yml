@@ -64,6 +64,10 @@
           href: hpccompute-gpu-linux.md
         - name: Windows
           href: hpccompute-gpu-windows.md
+    - name: Драйверы для GPU AMD
+      items:
+        - name: Windows
+          href: hpccompute-amd-gpu-windows.md
     - name: Azure Monitor
       items:
         - name: Расширение системы диагностики
@@ -125,3 +129,5 @@
       href: export-templates.md
     - name: Диагностика
       href: troubleshoot.md
+    - name: "Проблемы с системами Linux с поддержкой Python\_3"
+      href: issues-using-vm-extensions-python-3.md

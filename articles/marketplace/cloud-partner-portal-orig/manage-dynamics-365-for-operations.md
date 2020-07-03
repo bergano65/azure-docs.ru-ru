@@ -1,20 +1,18 @@
 ---
 title: Создание предложения Dynamics 365 for Operations с помощью портала Cloud Partner
 description: Устаревшая статья CPP, связанная со статьей ПК; "как создать Dynamics 365 для операций с помощью облачного портала для партнеров"
-services: Azure, Marketplace, Cloud Partner Portal,
-author: ChJenk
-manager: Ricardo.Villalobos
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 81fc6b16469594215b12eeaa5814131ebc955272
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 6ae9eacfe6f4c5a104a87e468611a86a971ef2c2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819914"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80289062"
 ---
 # <a name="how-to-create-dynamics-365-for-operations-offer-via-cloud-partner-portal"></a>Создание предложения Dynamics 365 for Operations с помощью портала Cloud Partner
 

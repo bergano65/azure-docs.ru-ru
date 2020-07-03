@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Adobe Sign | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Adobe Sign | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Adobe Sign.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 788c1292b844088f171479b40fc566ff5cfc8a57
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73154021"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство по Интеграция Azure Active Directory с Adobe Sign
+# <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство по интеграции Azure Active Directory с Adobe Sign
 
 В этом руководстве описано, как интегрировать Adobe Sign с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Adobe Sign обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73154021"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Adobe Sign, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Adobe Sign с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73154021"
 
     ![Сведения о домене и URL-адресах для единого входа в приложении Adobe Sign](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com`.
 
@@ -121,17 +121,17 @@ ms.locfileid: "73154021"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-adobe-sign-single-sign-on"></a>Настройка единого входа в Adobe Sign
 
 1. Перед настройкой необходимо обратиться к [группе поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html), чтобы добавить свой домен в список разрешений Adobe Sign. Домен можно добавить следующим образом:
 
-    a. [Группа поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html) отправит случайно сгенерированный токен. Для вашего домена токен будет выглядеть примерно так: **adobe-sign-verification= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
+    а. [Группа поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html) отправит случайно сгенерированный токен. Для вашего домена токен будет выглядеть примерно так: **adobe-sign-verification= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
 
     b. Опубликуйте токен проверки в текстовой записи DNS и отправьте уведомление [группе поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html).
     
@@ -152,7 +152,7 @@ ms.locfileid: "73154021"
 
 1. В меню SAML выберите **Параметры учетной записи** > **Параметры SAML**.
    
-    ![Страница параметров SAML на веб-сайте Adobe Sign](./media/adobe-echosign-tutorial/ic789520.png "Учетная запись.")
+    ![Страница параметров SAML на веб-сайте Adobe Sign](./media/adobe-echosign-tutorial/ic789520.png "Учетная запись")
 
 1. В разделе **SAML Settings** (Параметры SAML) выполните следующие действия.
   
@@ -160,7 +160,7 @@ ms.locfileid: "73154021"
    
    ![Параметры SAML](./media/adobe-echosign-tutorial/ic789522.png "Настройка SAML")
 
-   a. В разделе **SAML Mode** (Режим SAML) выберите параметр **SAML Mandatory** (SAML обязательно).
+   а. В разделе **SAML Mode** (Режим SAML) выберите параметр **SAML Mandatory** (SAML обязательно).
    
    b. Установите флажок **Allow EchoSign Account Administrators to log in using their EchoSign Credentials** (Разрешить администраторам учетных записей EchoSign вход с использованием учетных данных EchoSign).
    
@@ -168,9 +168,9 @@ ms.locfileid: "73154021"
 
    d. Вставьте **идентификатор Azure AD**, скопированный на портале Azure, в текстовое поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений).
     
-   д. Вставьте **URL-адрес входа**, скопированный на портале Azure, в текстовое поле **Idp Login URL** (URL-адрес входа поставщика удостоверений).
+   д) Вставьте **URL-адрес входа**, скопированный на портале Azure, в текстовое поле **Idp Login URL** (URL-адрес входа поставщика удостоверений).
    
-   Е. Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле **Idp Logout URL** (URL-адрес выхода поставщика удостоверений).
+   е) Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле **Idp Logout URL** (URL-адрес выхода поставщика удостоверений).
 
    ж. Откройте скачанный файл **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **сертификата поставщика удостоверений**.
 
@@ -238,13 +238,13 @@ ms.locfileid: "73154021"
 
 2. В верхней области меню выберите **Учетная запись**. Затем в левой области выберите **Пользователи и группы** > **Создать нового пользователя**.
    
-    ![Корпоративный веб-сайт Adobe Sign с выделенными параметрами "Учетная запись", "Пользователи и группы" и "Создать нового пользователя"](./media/adobe-echosign-tutorial/ic789524.png "Учетная запись.")
+    ![Корпоративный веб-сайт Adobe Sign с выделенными параметрами "Учетная запись", "Пользователи и группы" и "Создать нового пользователя"](./media/adobe-echosign-tutorial/ic789524.png "Учетная запись")
    
 3. В разделе **Создание нового пользователя** выполните следующие действия.
    
     ![Раздел "Создание нового пользователя"](./media/adobe-echosign-tutorial/ic789525.png "Создать пользователя")
    
-    a. Введите в текстовые поля **Адрес электронной почты**, **Имя** и **Фамилия** соответствующие данные действующей учетной записи Azure AD, которую нужно подготовить.
+    а. Введите в текстовые поля **Адрес электронной почты**, **Имя** и **Фамилия** соответствующие данные действующей учетной записи Azure AD, которую нужно подготовить.
    
     b. Нажмите кнопку **Создать пользователя**.
 

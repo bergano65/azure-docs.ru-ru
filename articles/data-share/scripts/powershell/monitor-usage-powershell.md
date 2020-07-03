@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
 ms.openlocfilehash: 0a4084d309dd0160970f1c03540705b310eb8e75
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70307206"
 ---
 # <a name="use-powershell-to-monitor-the-usage-of-a-sent-data-share"></a>Использование PowerShell для отслеживания использования отправленных общих ресурсов данных
@@ -42,13 +42,13 @@ Get-AzDataShareSynchronizationDetails -ResourceGroupName $resourceGroupName -Acc
 
 Этот сценарий использует следующие команды: 
 
-| Command | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Get-Аздаташаресинчронизатион](/powershell/module/az.datashare/get-azdatasharesynchronization?view=azps-2.6.0) | Вывод списка синхронизаций в общей папке. |
 | [Get-Аздаташаресинчронизатиондетаилс](/powershell/module/az.datashare/get-azdatasharesynchronizationdetail?view=azps-2.6.0) | Возвращает сведения о синхронизации общей папки. |
 |||
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

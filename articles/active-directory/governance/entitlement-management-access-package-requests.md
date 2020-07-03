@@ -3,7 +3,7 @@ title: Просмотр запросов для пакета Access в упра�
 description: Узнайте, как просматривать запросы к пакету Access в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
-author: msaburnley
+author: barclayn
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 10/15/2019
-ms.author: ajburnle
+ms.date: 03/22/2020
+ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: addc7db2aa2f0f9ba16438d2a31d6c7cc6bfa49e
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.openlocfilehash: f210602817c03b73ca4c48da2c3dad5549777f47
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174494"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80128732"
 ---
 # <a name="view-requests-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр запросов для пакета Access в управлении назначениями Azure AD
 
@@ -29,7 +29,7 @@ ms.locfileid: "73174494"
 
 ## <a name="view-requests"></a>Просмотр запросов
 
-**Предварительная роль:** Глобальный администратор, администратор пользователей, владелец каталога или диспетчер пакетов Access
+**Требуемая роль:** Глобальный администратор, Администратор пользователей, Владелец каталога или Диспетчер пакетов для доступа.
 
 1. На портале Azure щелкните **Azure Active Directory** и выберите **Управление удостоверениями**.
 

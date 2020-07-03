@@ -4,10 +4,10 @@ description: Управляйте секретами приложений, чт�
 ms.date: 4/2/2019
 ms.topic: conceptual
 ms.openlocfilehash: d7946092a0bebe374404870fcd711ad33cc98b11
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75461917"
 ---
 # <a name="manage-service-fabric-mesh-application-secrets"></a>Управление секретами приложения "Сетка Service Fabric"
@@ -200,9 +200,9 @@ az mesh deployment create –-<template-file> or --<template-uri>
 ```
 Передайте или **template-file**, или **template-uri** (но не оба).
 
-Пример.
+Пример:
 - az mesh deployment create — c:\MyMeshTemplates\SecretTemplate1.txt
-- AZ сеток развертывание Create--HTTPS:\//www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
+- AZ сетка развертывание Create--HTTPS:\//www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
 
 ### <a name="show-a-secret"></a>Отображение секрета
 Возвращает описание секрета (но не его значение).
@@ -241,6 +241,6 @@ az mesh secretvalue show --Resource-group <myResourceGroup> --secret-name <mySec
 az mesh secretvalue delete --Resource-group <myResourceGroup> --secret-name <mySecret> --version <N>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
 - [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)

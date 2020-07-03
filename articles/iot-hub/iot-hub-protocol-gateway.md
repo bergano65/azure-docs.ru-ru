@@ -8,12 +8,15 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 07/11/2017
-ms.openlocfilehash: 9dbb7905c2a0fed65ede610577e0fa11a1deef92
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: bfd000e2b69f052e25f0ea6cd286b0ca3aef7519
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60345402"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759705"
 ---
 # <a name="support-additional-protocols-for-iot-hub"></a>Поддержка дополнительных протоколов для Центра Интернета вещей
 
@@ -31,7 +34,7 @@ ms.locfileid: "60345402"
 
 Для дополнительной гибкости шлюз протокола Azure IoT и реализация MQTT предоставляются в виде проекта с открытым кодом. При помощи проекта с открытым кодом можно добавлять поддержку различных протоколов и их версий или настраивать реализацию сценария. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы подробнее узнать о шлюзе протокола IoT Azure и о том, как развернуть его для вашего решения IoT, обратитесь к следующим документам и ресурсам:
 
@@ -41,8 +44,8 @@ ms.locfileid: "60345402"
 
 Дополнительные сведения о планировании развертывания Центра Интернета вещей см. в следующих руководствах:
 
-* [Сравнение с концентраторами событий](iot-hub-compare-event-hubs.md)
+* [Сравнение центра IoT и Центров событий](iot-hub-compare-event-hubs.md)
 
-* [Масштабирование, высокий уровень доступности и аварийного восстановления](iot-hub-scaling.md)
+* [Масштабируемость, высокая доступность и аварийное восстановление](iot-hub-scaling.md)
 
 * [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide.md)

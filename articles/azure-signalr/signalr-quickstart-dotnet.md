@@ -8,10 +8,10 @@ ms.topic: quickstart
 ms.date: 04/20/2019
 ms.author: zhshang
 ms.openlocfilehash: ec5b7a75bced4b7cd81a120925558b8c1be57818
-ms.sourcegitcommit: 28688c6ec606ddb7ae97f4d0ac0ec8e0cd622889
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "74158181"
 ---
 # <a name="quickstart-create-a-chat-room-with-aspnet-and-signalr-service"></a>Краткое руководство. Создание комнаты чата с помощью ASP.NET и Службы SignalR
@@ -42,7 +42,7 @@ ms.locfileid: "74158181"
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
-Пока служба развертывается, давайте перейдем к коду. Клонируйте [пример приложения из GitHub ](https://github.com/aspnet/AzureSignalR-samples/tree/master/aspnet-samples/ChatRoom), задайте строку подключения службы SignalR и запустите приложение локально.
+Пока служба развертывается, давайте перейдем к коду. Клонируйте [пример приложения из GitHub](https://github.com/aspnet/AzureSignalR-samples/tree/master/aspnet-samples/ChatRoom), задайте строку подключения службы SignalR и запустите приложение в локальной среде.
 
 1. Откройте окно терминала Git. Перейдите в папку, в которую вы хотите клонировать пример проекта.
 
@@ -110,11 +110,11 @@ ms.locfileid: "74158181"
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях к этому краткому руководству была использована группа ресурсов с именем *SignalRTestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
    
-![Удаление](./media/signalr-quickstart-dotnet-core/signalr-delete-resource-group.png)
+![DELETE](./media/signalr-quickstart-dotnet-core/signalr-delete-resource-group.png)
 
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали ресурс Службы Azure SignalR и использовали его с веб-приложением ASP.NET. Далее вы узнаете, как разработать приложения в режиме реального времени с помощью Службы Azure SignalR с использованием ASP.NET Core.
 

@@ -7,27 +7,27 @@ ms.topic: conceptual
 ms.date: 12/19/2016
 ms.author: stewu
 ms.openlocfilehash: a645049665bc1d51efa94a879b9d2e4e5529282f
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73904594"
 ---
 # <a name="performance-tuning-guidance-for-mapreduce-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Storage 1-го поколения
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. См. статью [Создание кластера HDInsight с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
+* **Учетная запись Azure Data Lake Storage 1-го поколения**. Инструкции по ее созданию см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 * **Использование MapReduce в HDInsight**. См. дополнительные сведения об [использовании MapReduce в Hadoop и HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-mapreduce)
-* **Ознакомьтесь с рекомендациями по настройке производительности для Data Lake Storage 1-го поколения**. Общие вопросы производительности описаны в [рекомендациях по настройке производительности Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance).
+* **Ознакомьтесь с рекомендациями по настройке производительности для Data Lake Storage 1-го поколения**. Общие понятия производительности см. в разделе [Data Lake Storage 1-го поколения рекомендации по настройке производительности](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance) .
 
-## <a name="parameters"></a>parameters
+## <a name="parameters"></a>Параметры
 
 Ниже перечислены наиболее важные параметры, которые можно настроить, чтобы оптимизировать производительность Data Lake Storage 1-го поколения при выполнении заданий MapReduce.
 
-|Параметр      | ОПИСАНИЕ  |
+|Параметр      | Описание  |
 |---------|---------|
 |`Mapreduce.map.memory.mb`  |  Объем памяти, выделяемой для каждого модуля сопоставления.  |
 |`Mapreduce.job.maps`     |  Число задач Map на задание.  |
@@ -36,7 +36,7 @@ ms.locfileid: "73904594"
 
 ### <a name="mapreducemapmemory--mapreducereducememory"></a>MapReduce. Map. Memory/MapReduce. reduce. Memory
 
-Измените это число в зависимости от объема памяти, необходимой для задачи Map или reduce. Можно просмотреть значения по умолчанию `mapreduce.map.memory` и `mapreduce.reduce.memory` в Ambari с помощью конфигурации Yarn. В Ambari перейдите по адресу YARN и просмотрите вкладку **configs (конфигурации** ). Будет отображена память YARN.
+Измените это число в зависимости от объема памяти, необходимой для задачи Map или reduce. Вы можете просмотреть значения по умолчанию `mapreduce.map.memory` и `mapreduce.reduce.memory` в Ambari с помощью конфигурации Yarn. В Ambari перейдите по адресу YARN и просмотрите вкладку **configs (конфигурации** ). Будет отображена память YARN.
 
 ### <a name="mapreducejobmaps--mapreducejobreduces"></a>MapReduce. job. Maps/MapReduce. job. reduces
 
@@ -66,7 +66,7 @@ ms.locfileid: "73904594"
 
 `# of YARN containers = total YARN memory / mapreduce.map.memory`
 
-### <a name="step-5-set-mapreducejobmapsmapreducejobreduces"></a>Шаг 5. Задание MapReduce. job. Maps/MapReduce. job. reduces
+### <a name="step-5-set-mapreducejobmapsmapreducejobreduces"></a>Шаг 5. Установка mapreduce.job.maps/mapreduce.job.reduces
 
 Установите для mapreduce.job.maps/mapreduce.job.reduces по крайней мере число доступных контейнеров. Вы можете поэкспериментировать, увеличивая число модулей сопоставления и уменьшения, чтобы понять, помогает ли это оптимизировать производительность. Имейте в виду, что большое число модулей сопоставления может увеличить нагрузку, что, в свою очередь, может привести к снижению производительности.
 
@@ -90,11 +90,11 @@ ms.locfileid: "73904594"
 
 `total memory from the cluster is 8 nodes * 96GB of YARN memory for a D14 = 768GB`
 
-### <a name="step-4-calculate--of-yarn-containers"></a>Шаг 4. Вычисление числа контейнеров YARN
+### <a name="step-4-calculate--of-yarn-containers"></a>Шаг 4. Расчет числа контейнеров YARN
 
 `# of YARN containers = 768 GB of available memory / 3 GB of memory = 256`
 
-### <a name="step-5-set-mapreducejobmapsmapreducejobreduces"></a>Шаг 5. Задание MapReduce. job. Maps/MapReduce. job. reduces
+### <a name="step-5-set-mapreducejobmapsmapreducejobreduces"></a>Шаг 5. Установка mapreduce.job.maps/mapreduce.job.reduces
 
 `mapreduce.map.jobs = 256`
 

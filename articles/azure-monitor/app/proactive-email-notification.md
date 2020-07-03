@@ -1,19 +1,17 @@
 ---
 title: Изменение уведомления интеллектуального обнаружения — Azure Application Insights
 description: Переход на получателей уведомлений по умолчанию от интеллектуального обнаружения. Интеллектуальное обнаружение позволяет отслеживать трассировки приложений с помощью Azure Application Insights для необычных шаблонов в телеметрии трассировки.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: harelbr
 ms.author: harelbr
 ms.date: 03/13/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 493deea89586347d5847895acd5eb73a866f84ac
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f73e5bbdd8585b3367e529a8fa00630042e56cac
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75432452"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77671789"
 ---
 # <a name="smart-detection-e-mail-notification-change"></a>Изменение уведомлений по электронной почте для службы интеллектуального обнаружения
 
@@ -21,7 +19,7 @@ ms.locfileid: "75432452"
 
 ## <a name="what-is-changing"></a>Что изменяется?
 
-Сейчас уведомления по электронной почте от службы интеллектуального обнаружения по умолчанию отправляются пользователям с такими ролями: _Владелец подписки_, _Участник подписки_ и _Читатель подписки_. Эти роли часто назначаются пользователям, которые не принимают активного участия в мониторинге и которым не нужно получать такие уведомления. Чтобы улучшить вашу работу, мы меняем параметры отправки уведомлений, и теперь по умолчанию они будут отправляться только пользователям с ролями [Читатель данных мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) и [Участник мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor).
+Сейчас уведомления по электронной почте от службы интеллектуального обнаружения по умолчанию отправляются пользователям с такими ролями: _Владелец подписки_, _Участник подписки_ и _Читатель подписки_. Эти роли часто назначаются пользователям, которые не принимают активное участие в мониторинге и которым не нужно получать такие уведомления. Чтобы улучшить вашу работу, мы меняем параметры отправки уведомлений, и теперь по умолчанию они будут отправляться только пользователям с ролями [Читатель данных мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) и [Участник мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor).
 
 ## <a name="scope-of-this-change"></a>Область применения этого изменения
 
@@ -42,7 +40,7 @@ ms.locfileid: "75432452"
 
 Если у вас есть вопросы или замечания по этому изменению, [свяжитесь с нами](mailto:smart-alert-feedback@microsoft.com).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об интеллектуальном обнаружении:
 

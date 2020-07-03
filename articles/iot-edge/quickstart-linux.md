@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 4a076f9e6ae67b9a4dc27fcd058945716dfebe75
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: e015999d8c1f60340fb30609c6563f770c5c824f
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264616"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83726236"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-linux-device"></a>Краткое руководство. Развертывание модуля IoT Edge на виртуальном устройстве Linux
 
@@ -40,8 +40,10 @@ ms.locfileid: "76264616"
 Добавьте расширение Интернета вещей Azure в экземпляр Cloud Shell.
 
    ```azurecli-interactive
-   az extension add --name azure-cli-iot-ext
+   az extension add --name azure-iot
    ```
+   
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -100,7 +102,7 @@ ms.locfileid: "76264616"
    az iot hub device-identity create --hub-name {hub_name} --device-id myEdgeDevice --edge-enabled
    ```
 
-   Если отобразится сообщение об ошибке при использовании ключей политики iothubowner, убедитесь, что в Cloud Shell установлена последняя версия расширения azure-cli-iot-ext.
+   Если отобразится сообщение об ошибке при использовании ключей политики iothubowner, убедитесь, что в Cloud Shell установлена последняя версия расширения azure-iot.
 
 2. Получите строку подключения для устройства, которая связывает физическое устройство с его идентификатором в Центре Интернета вещей.
 
@@ -136,7 +138,7 @@ ms.locfileid: "76264616"
 
 Остальная часть команд из этого краткого руководства выполняется на вашем устройстве IoT Edge, таким образом, вы можете увидеть происходящее на устройстве. Если вы используете виртуальную машину, подключитесь к ней сейчас с помощью общедоступного IP-адреса, который был выведен командой создания. Общедоступный IP-адрес можно также узнать на странице общих сведений о виртуальной машине на портале Azure. Подключитесь к виртуальной машине, используя приведенную ниже команду. Замените значение `{azureuser}`, если вы использовали имя пользователя, отличное от предложенного в предварительных требованиях. Замените `{publicIpAddress}` адресом своей виртуальной машины.
 
-   ```azurecli-interactive
+   ```console
    ssh azureuser@{publicIpAddress}
    ```
 

@@ -1,5 +1,5 @@
 ---
-title: Устранение задержки с помощью журналов Аналитика Службы хранилища
+title: Устранение неполадок с помощью журналов Аналитики Службы хранилища
 description: Выявление и устранение проблем с задержкой с помощью аналитических журналов службы хранилища Azure и оптимизация клиентского приложения.
 author: v-miegge
 ms.topic: troubleshooting
@@ -11,13 +11,13 @@ ms.subservice: common
 services: storage
 tags: ''
 ms.openlocfilehash: 2197a149235c0dca98a24a57549538b2a4cbb1c8
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74196509"
 ---
-# <a name="troubleshoot-latency-using-storage-analytics-logs"></a>Устранение задержки с помощью журналов Аналитика Службы хранилища
+# <a name="troubleshoot-latency-using-storage-analytics-logs"></a>Устранение неполадок с помощью журналов Аналитики Службы хранилища
 
 Диагностика и устранение неполадок — это ключевой навык создания и поддержки клиентских приложений с помощью службы хранилища Azure.
 
@@ -97,12 +97,12 @@ ms.locfileid: "74196509"
 
    В следующей таблице приведены сведения о OperationType и результатах состоянии RequestStatus высокой задержки.
 
-   |   |Состоянии RequestStatus =<br>Успешно|Состоянии RequestStatus =<br>ЖЕСТКИХ NetworkError|Рекомендации|
+   |   |Состоянии RequestStatus =<br>Успех|Состоянии RequestStatus =<br>ЖЕСТКИХ NetworkError|Рекомендация|
    |---|---|---|---|
-   |GetBlob|Yes|Нет|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = успешное завершение](#getblob-operation-requeststatus--success)|
-   |GetBlob|Нет|Yes|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = (SAS) NetworkError](#getblob-operation-requeststatus--sasnetworkerror)|
-   |PutBlob|Yes|Нет|[**Операция размещения:** Состоянии RequestStatus = успешное завершение](#put-operation-requeststatus--success)|
-   |PutBlob|Нет|Yes|[**Операция размещения:** Состоянии RequestStatus = (SAS) NetworkError](#put-operation-requeststatus--sasnetworkerror)|
+   |GetBlob|Да|Нет|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = успешное завершение](#getblob-operation-requeststatus--success)|
+   |GetBlob|Нет|Да|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = (SAS) NetworkError](#getblob-operation-requeststatus--sasnetworkerror)|
+   |PutBlob|Да|Нет|[**Операция размещения:** Состоянии RequestStatus = успешное завершение](#put-operation-requeststatus--success)|
+   |PutBlob|Нет|Да|[**Операция размещения:** Состоянии RequestStatus = (SAS) NetworkError](#put-operation-requeststatus--sasnetworkerror)|
 
 ## <a name="status-results"></a>Результаты состояния
 

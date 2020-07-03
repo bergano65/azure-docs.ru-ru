@@ -9,24 +9,38 @@ ms.subservice: translator-text
 ms.date: 12/09/2019
 ms.author: swmachan
 ms.topic: quickstart
-ms.openlocfilehash: 82f2acb811bcb239f6329ab8d8b4008e13ac6490
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c86a387e66cce914f9d0b92793893b0cba08e7bc
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75446746"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83587105"
 ---
 # <a name="quickstart-build-deploy-and-use-a-custom-model-for-translation"></a>Краткое руководство. Создание, развертывание и использование пользовательской модели для перевода
 
 В этой статье приведена пошаговая инструкция по созданию системы перевода с помощью Custom Translator.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Чтобы войти на портал [Custom Translator](https://portal.customtranslator.azure.ai) и использовать его, вам потребуется [учетная запись Майкрософт](https://signup.live.com) или [Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) (размещенная в Azure учетная запись организации).
 
-2. Подписка на API перевода текстов, которую можно получить на портале Azure. Вам потребуется связать ключ подписки API перевода текстов с рабочей областью в Custom Translator. [Сведения о регистрации для использования API перевода текстов](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup).
+2. Подписка на Переводчика, которую можно получить на портале Azure. Вам потребуется связать ключ подписки Переводчика с рабочей областью в Пользовательском переводчике См. сведения о [регистрации для использования Переводчика](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup).
 
-3. Если у вас есть все указанные выше компоненты, войдите на портал [Custom Translator](https://portal.customtranslator.azure.ai). На портале Custom Translator перейдите на страницу параметров, где вы можете связать ключ подписки API перевода текстов Майкрософт с рабочей областью.
+3. Если у вас есть все указанные выше компоненты, войдите на портал [Пользовательского переводчика](https://portal.customtranslator.azure.ai), чтобы создавать рабочие области и проекты, загружать файлы, а также создавать и развертывать модели.
+
+## <a name="create-a-workspace"></a>Создание рабочей области
+
+Если раньше вы не работали с этим продуктом, вам будет предложено принять условия предоставления услуг, создать рабочую область и связать рабочую область с подпиской Переводчика.
+
+![Создание рабочей области](media/quickstart/terms-of-service.png)
+![Создание рабочей области](media/quickstart/create-workspace-1.png)
+![Создание рабочей области](media/quickstart/create-workspace-2.png)
+![Создание рабочей области](media/quickstart/create-workspace-3.png)
+![Создание рабочей области](media/quickstart/create-workspace-4.png)
+![Создание рабочей области](media/quickstart/create-workspace-5.png)
+![Создание рабочей области](media/quickstart/create-workspace-6.png)
+
+В один из последующих визитов на портал Пользовательского переводчика перейдите на страницу параметров, где вы сможете администрировать рабочую область, создать дополнительные рабочие области, связать ключ подписки Переводчика с рабочими областями, добавить совладельцев, а также изменить ключ подписки.
 
 ## <a name="create-a-project"></a>Создание проекта
 
@@ -69,7 +83,7 @@ ms.locfileid: "75446746"
 
 ## <a name="use-a-deployed-model"></a>Использование развернутой модели
 
-Доступ к развернутым моделям можно получить через [API перевода текстов Майкрософт версии 3, указав идентификатор категории](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl). Дополнительные сведения об API перевода текстов можно найти на [этой веб-странице](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference).
+Доступ к развернутым моделям можно получить через [API перевода текстов Майкрософт версии 3, указав идентификатор категории](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl). Дополнительные сведения о Переводчике текстов см. в [справочнике по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: 1dcf1b9f62f94b8f75ef2fe77f3e237a387c53eb
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73890650"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
@@ -62,6 +62,6 @@ ms.locfileid: "73890650"
 
 ## <a name="links-to-additional-documentation"></a>Ссылки на дополнительную документацию
 
-Полная документация по API службы подготовки устройств находится по ссылке [https://docs.microsoft.com/rest/api/iot-dps](https://docs.microsoft.com/rest/api/iot-dps).
+Полная документация по API службы подготовки устройств находится по адресу [https://docs.microsoft.com/rest/api/iot-dps](https://docs.microsoft.com/rest/api/iot-dps).
 
 [Функции запроса данных клиента](../iot-hub/iot-hub-customer-data-requests.md) Центра Интернета вещей Azure.

@@ -14,10 +14,10 @@ ms.custom: ''
 ms.date: 05/15/2019
 ms.author: ikbarmen
 ms.openlocfilehash: 18f2cf3daa281400151ba223e1735e7138d97e8e
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76990510"
 ---
 # <a name="manage-multiple-tenants"></a>Управление несколькими арендаторами
@@ -77,6 +77,6 @@ ms.locfileid: "76990510"
 * Это единственный вариант, который позволяет раздельно выставлять счета.
 * Такая интеграция влечет больше накладных расходов на управление, чем отдельная учетная запись Индексатора видео для каждого арендатора. Если раздельное выставление счетов не является обязательным, мы рекомендуем выбрать другой вариант из числа описанных в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Обзор](video-indexer-overview.md)

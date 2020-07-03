@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
-ms.openlocfilehash: f0a79fb0f90a633095343c162ccdc80ebc48f1d4
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: f221a0bdf579dbbf42ecf64e18803decfb718456
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75747668"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80060663"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение
 В этой статье вы узнаете, как найти и исправить проблемы, возникающие из-за ошибок Secure Shell (SSH), сбоев SSH-соединения или отказа SSH при попытке подключения к виртуальной машине Linux. Для устранения неполадок и решения проблем с подключением можно воспользоваться порталом Azure, Azure CLI или расширением для доступа к виртуальной машине для Linux.
@@ -29,14 +29,14 @@ ms.locfileid: "75747668"
 ## <a name="quick-troubleshooting-steps"></a>Действия по устранению неполадок
 После выполнения каждого шага устранения неполадок попробуйте подключиться к виртуальной машине еще раз.
 
-1. [Выполните сброс конфигурации SSH](#reset-config).
+1. [Сбросьте конфигурацию SSH](#reset-config).
 2. [Сбросьте учетные данные](#reset-credentials) пользователя.
 3. Убедитесь, что правила [группы безопасности сети](../../virtual-network/security-overview.md) разрешают трафик SSH.
    * Убедитесь, что правило для разрешения трафика SSH есть в [группе безопасности сети](#security-rules) (по умолчанию — TCP-порт 22).
    * Нельзя использовать перенаправление и сопоставление портов, не используя Azure Load Balancer.
 4. Проверьте [работоспособность ресурсов виртуальной машины](../../resource-health/resource-health-overview.md).
    * Убедитесь, что виртуальная машина работоспособна.
-   * Если [включена диагностика загрузки](boot-diagnostics.md), убедитесь, что виртуальная машина не сообщала об ошибках загрузки в журналах.
+   * Если [включена Диагностика загрузки](boot-diagnostics.md), убедитесь, что виртуальная машина не сообщает об ошибках загрузки в журналах.
 5. [Перезапустите виртуальную машину](#restart-vm).
 6. [Заново разверните виртуальную машину](#redeploy-vm).
 
@@ -46,7 +46,7 @@ ms.locfileid: "75747668"
 Вы можете сбросить учетные данные или конфигурацию SSH одним из следующих методов:
 
 * [Портал Azure](#use-the-azure-portal) отлично подходит, когда нужно быстро сбросить конфигурацию или ключ SSH, а у вас не установлены инструменты Azure.
-* [Последовательная консоль виртуальной машины Azure](https://aka.ms/serialconsolelinux) . последовательная консоль виртуальной машины будет работать независимо от конфигурации SSH и предоставит вам интерактивную консоль для виртуальной машины. На самом деле, «не может SSH» — именно то, что последовательное консоль разрабатывалась для решения этой проблемы. Дополнительные сведения приведены ниже.
+* [Последовательная консоль виртуальной машины Azure](https://aka.ms/serialconsolelinux) . последовательная консоль виртуальной машины будет работать независимо от конфигурации SSH и предоставит вам интерактивную консоль для виртуальной машины. На самом деле, «не может SSH» — именно то, что последовательное консоль разрабатывалась для решения этой проблемы. Дополнительные сведения см. ниже.
 * [Azure CLI](#use-the-azure-cli). Если вы уже открыли командную строку, быстро сбросьте конфигурацию SSH или учетные данные. Если вы работаете на классической виртуальной машине, можно использовать [классический интерфейс командной строки Azure](#use-the-azure-classic-cli).
 * [Расширение Azure VMAccessForLinux.](#use-the-vmaccess-extension) Создайте и повторно используйте файлы определения JSON для сброса учетных данных пользователя или конфигурации SSH.
 
@@ -59,15 +59,15 @@ ms.locfileid: "75747668"
 
 ![Сброс конфигурации SSH или учетных данных на портале Azure](./media/troubleshoot-ssh-connection/reset-credentials-using-portal.png)
 
-### <a name="a-idreset-config-reset-the-ssh-configuration"></a><a id="reset-config" />Сброс конфигурации SSH
+### <a name="reset-the-ssh-configuration"></a><a id="reset-config" />Сброс конфигурации SSH
 Чтобы сбросить конфигурацию SSH, выберите `Reset configuration only` в разделе **Режим**, как показано на предыдущем снимке экрана, а затем — **Обновление**. Сделав это, попытайтесь снова войти в виртуальною машину.
 
-### <a name="a-idreset-credentials-reset-ssh-credentials-for-a-user"></a><a id="reset-credentials" />Сброс учетных данных SSH пользователя
+### <a name="reset-ssh-credentials-for-a-user"></a><a id="reset-credentials" />Сброс учетных данных SSH пользователя
 Чтобы сбросить учетные данные имеющегося пользователя, в разделе **Режим** выберите `Reset SSH public key` или `Reset password`, как на приведенном выше снимке экрана. Укажите имя пользователя и ключ SSH или новый пароль, а затем щелкните **Обновление**.
 
 Кроме того, в этом меню можно создать пользователя с привилегиями sudo на виртуальной машине. Введите новое имя пользователя и соответствующий пароль или ключ SSH, а затем щелкните **Обновление**.
 
-### <a name="a-idsecurity-rules-check-security-rules"></a><a id="security-rules" />Проверка правил безопасности
+### <a name="check-security-rules"></a><a id="security-rules" />Проверка правил безопасности
 
 Используйте [проверку потока для IP-адреса](../../network-watcher/network-watcher-check-ip-flow-verify-portal.md), чтобы определить, блокирует ли правило в группе безопасности сети входящий или исходящий трафик виртуальной машины. Кроме того, вы можете просмотреть действующие правила группы безопасности и убедиться, что для порта SSH (22 по умолчанию) существует и является приоритетным правило NSG, разрешающее входящий трафик. Дополнительные сведения см. в разделе [Использование действующих правил безопасности для устранения проблем с потоком трафика в виртуальной машине](../../virtual-network/diagnose-network-traffic-filter-problem.md).
 
@@ -80,18 +80,24 @@ ms.locfileid: "75747668"
 
 ### <a name="check-that-ssh-is-running"></a>Убедитесь, что SSH работает
 Чтобы проверить, работает ли SSH на виртуальной машине, можно использовать следующую команду:
+
+```console
+ps -aux | grep ssh
 ```
-$ ps -aux | grep ssh
-```
+
 При наличии выходных данных SSH работает и работает.
 
 ### <a name="check-which-port-ssh-is-running-on"></a>Проверьте, на каком порту работает SSH.
+
 Чтобы проверить, на каком порту выполняется SSH, можно использовать следующую команду:
+
+```console
+sudo grep Port /etc/ssh/sshd_config
 ```
-$ sudo grep Port /etc/ssh/sshd_config
-```
+
 Выходные данные будут выглядеть примерно так:
-```
+
+```output
 Port 22
 ```
 
@@ -200,7 +206,7 @@ azure vm reset-access --resource-group myResourceGroup --name myVM \
     --user-name myUsername --ssh-key-file ~/.ssh/id_rsa.pub
 ```
 
-## <a name="a-idrestart-vm-restart-a-vm"></a><a id="restart-vm" />Перезапуск виртуальной машины
+## <a name="restart-a-vm"></a><a id="restart-vm" />Перезапуск виртуальной машины
 Если вы сбросили учетные данные пользователя и конфигурацию SSH или столкнулись с ошибкой при этом, попробуйте перезапустить виртуальную машину, чтобы устранить неполадки с базовыми вычислительными ресурсами.
 
 ### <a name="azure-portal"></a>Портал Azure
@@ -208,7 +214,7 @@ azure vm reset-access --resource-group myResourceGroup --name myVM \
 
 ![Перезапуск виртуальной машины на портале Azure](./media/troubleshoot-ssh-connection/restart-vm-using-portal.png)
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 В следующем примере используется команда [az vm restart](/cli/azure/vm), чтобы перезапустить виртуальную машину `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -216,13 +222,16 @@ az vm restart --resource-group myResourceGroup --name myVM
 ```
 
 ### <a name="azure-classic-cli"></a>Классический Azure CLI
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 В следующем примере перезапускается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
-```azurecli
+```console
 azure vm restart --resource-group myResourceGroup --name myVM
 ```
 
-## <a name="a-idredeploy-vm-redeploy-a-vm"></a><a id="redeploy-vm" />Повторное развертывание виртуальной машины
+## <a name="redeploy-a-vm"></a><a id="redeploy-vm" />Повторное развертывание виртуальной машины
 Виртуальную машину можно повторно развернуть на другом узле в Azure, что поможет устранить любые базовые сетевые проблемы. Сведения о [повторном развертывании виртуальной машины на новом узле Azure см](../windows/redeploy-to-new-node.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 > [!NOTE]
@@ -235,7 +244,7 @@ azure vm restart --resource-group myResourceGroup --name myVM
 
 ![Повторное развертывание виртуальной машины на портале Azure](./media/troubleshoot-ssh-connection/redeploy-vm-using-portal.png)
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 В следующем примере используется команда [az vm restart](/cli/azure/vm), чтобы повторно развернуть виртуальную машину `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
 ```azurecli
@@ -243,13 +252,17 @@ az vm redeploy --resource-group myResourceGroup --name myVM
 ```
 
 ### <a name="azure-classic-cli"></a>Классический Azure CLI
+
 В следующем примере повторно развертывается виртуальная машина `myVM` в группе ресурсов `myResourceGroup`. Используйте свои значения следующим образом:
 
-```azurecli
+```console
 azure vm redeploy --resource-group myResourceGroup --name myVM
 ```
 
 ## <a name="vms-created-by-using-the-classic-deployment-model"></a>Виртуальные машины, созданные с использованием классической модели развертывания
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 Для устранения наиболее распространенных сбоев SSH-подключения для виртуальных машин, созданных с помощью классической модели развертывания, попробуйте выполнить указанные ниже действия. После выполнения каждого шага попробуйте подключиться к виртуальной машине еще раз.
 
 * Выполните сброс удаленного доступа на [портале Azure](https://portal.azure.com). На портале Azure выберите свою виртуальную машину и щелкните **Reset Remote...** (Удаленный сброс...).
@@ -264,7 +277,7 @@ azure vm redeploy --resource-group myResourceGroup --name myVM
   * Создайте учетную запись пользователя *sudo*.
   * сбросить конфигурацию SSH.
 * Проверьте работоспособность ресурсов виртуальной машины, чтобы выявить любые проблемы, связанные с платформой.<br>
-     Выберите свою виртуальную машину и прокрутите вниз до раздела **Параметры** > **Проверка работоспособности**.
+     Выберите виртуальную машину и прокрутите вниз **Параметры** > **проверить работоспособность**.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * Если вам по-прежнему не удается выполнить SSH-подключение к виртуальной машине, см. [дополнительные действия по устранению неполадок](detailed-troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), которые позволят просмотреть дополнительные шаги по устранению проблемы.

@@ -1,30 +1,42 @@
 ---
 title: Устранение проблем с оплатой Azure
 description: Устранение проблемы при обновлении учетной записи сведений об оплате на портале Microsoft Azure или в центре учетных записей.
-services: azure
 author: v-miegge
-manager: dcscontentpm
-editor: v-jesits
+ms.reviewerr: dcscontentpm
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
-ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 08/12/2019
+ms.topic: conceptual
+ms.date: 03/06/2020
 ms.author: jaserano
-ms.openlocfilehash: 986af72ed2ac10a285cfe32768d8541b7fce2428
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 59cad232ae4d16b8f74942e1e6026171ae1b8269
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989999"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80408418"
 ---
 # <a name="troubleshoot-azure-payment-issues"></a>Устранение проблем с оплатой Azure
 
 Вы можете столкнуться с проблемой или ошибкой при обновлении учетной записи сведений об оплате на портале Microsoft Azure или в центре учетных записей.
 
 Чтобы устранить проблему, выберите раздел ниже, содержимое в котором сильнее всего похоже на вашу ошибку.
+
+## <a name="my-credit-card-was-declined-when-i-tried-to-sign-up-for-azure"></a>Моя кредитная карта отклонена при попытке зарегистрироваться в Azure
+
+Информацию об устранении неполадок, связанных с отклоненной картой, см. в статье [Устранение проблем, связанных с отклонением карты при регистрации в Azure](troubleshoot-declined-card.md).
+
+## <a name="unable-to-see-subscriptions-under-my-account-to-update-the-payment-method"></a>Не удалось просмотреть подписки в учетной записи для изменения метода оплаты
+
+Возможно, вы используете идентификатор электронной почты, отличающийся от того, который используется для подписок.
+
+Для устранения этой проблемы см. [No subscriptions found sign-in error for Azure portal or Azure account center](no-subscriptions-found.md) (Ошибка "Подписки не найдены" при попытке входа на портал Azure или в Центр управления учетной записью Azure).
+
+## <a name="unable-to-use-a-virtual-or-prepaid-credit-or-debit-card-as-a-payment-method"></a>В качестве метода оплаты нельзя использовать виртуальную или предоплаченную кредитную или дебетовую карту.
+
+*   Оплата с использованием виртуальных или предоплаченных кредитных карт для подписок Azure не поддерживается.
+*   Оплата с использованием дебетовых карт для подписок Azure не поддерживается.
+
+Дополнительные сведения см. в статье [Устранение проблем, связанных с отклонением карты при регистрации в Azure](troubleshoot-declined-card.md).
 
 ## <a name="unable-to-remove-a-credit-card-from-a-saved-billing-payment-method"></a>Не удалось удалить кредитную карту из сохраненного метода оплаты счетов
 
@@ -34,19 +46,11 @@ ms.locfileid: "75989999"
 
 ## <a name="unable-to-delete-an-old-payment-method-after-adding-a-new-payment-method"></a>Не удалось удалить старый метод оплаты после добавления нового
 
-Новое платежное средство может не быть связано с подпиской. Чтобы связать платежное средство с подпиской, см. раздел [Add, update, or remove a credit card for Azure](change-credit-card.md) (Добавление, обновление или удаление кредитной карты для Azure).
-
-Информацию об устранении неполадок, связанных с отклоненной картой, см. в разделе [How to troubleshoot a declined card at Azure sign-up](troubleshoot-declined-card.md) (Устранение неполадок с отклоненной картой при регистрации в Azure).
+Новое платежное средство может не быть связано с подпиской. Сведения о том, как связать платежное средство с подпиской, см. в статье [Добавление, обновление или удаление кредитной карты для Azure](change-credit-card.md).
 
 ## <a name="unable-to-delete-a-payment-method-because-of-cannot-delete-payment-method-error"></a>Не удалось удалить метод оплаты из-за ошибки *Не удается удалить метод оплаты*
 
 Это происходит из-за задолженности. Погасите все задолженности, прежде чем удалять метод оплаты.
-
-## <a name="unable-to-see-subscriptions-under-my-account-to-update-the-payment-method"></a>Не удалось просмотреть подписки в учетной записи для изменения метода оплаты
-
-Возможно, вы используете идентификатор электронной почты, отличающийся от того, который используется для подписок.
-
-Для устранения этой проблемы см. [No subscriptions found sign-in error for Azure portal or Azure account center](no-subscriptions-found.md) (Ошибка "Подписки не найдены" при попытке входа на портал Azure или в Центр управления учетной записью Azure).
 
 ## <a name="unable-to-make-payment-for-a-subscription"></a>Не удается выполнить оплату для подписки
 

@@ -4,14 +4,14 @@ ms.service: container-instances
 ms.topic: include
 ms.date: 02/13/2019
 ms.author: danlep
-ms.openlocfilehash: 055fbc652d0d72925cccfae40efff8b8eef2a8c2
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 33a82a55b03cde79d2d80826041ee6d43565476a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75904422"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80334815"
 ---
-| Ресурс | Ограничение по умолчанию |
+| Ресурс | Ограничение |
 | --- | :--- |
 | Группы контейнеров уровня "Стандартный" для каждого региона на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) | 100<sup>1</sup> |
 | Выделенные группы контейнеров SKU для каждого региона на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) | 0<sup>1</sup> |
@@ -26,7 +26,7 @@ ms.locfileid: "75904422"
 | Удаленных контейнеров в 5 мин | 100<sup>1</sup> |
 
 
-<sup>1</sup> Чтобы запросить увеличение лимита, создайте [Поддержка Azure][azure-support].<br />
+<sup>1</sup>Чтобы увеличить лимит, отправьте [запрос в службу поддержки Azure][azure-support].<br />
 
 <!-- LINKS - External -->
 [azure-support]: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest

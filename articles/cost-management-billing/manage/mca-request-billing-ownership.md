@@ -2,22 +2,17 @@
 title: Получение права владения на выставление счетов в подписках Azure
 description: Узнайте о запросе прав владения на выставление счетов в подписках Azure от других пользователей.
 author: amberbhargava
-manager: amberb
-editor: banders
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 07/01/2019
+ms.date: 05/01/2020
 ms.author: banders
-ms.openlocfilehash: f7d6c6cbe5b99cb429b5399df7ba9765c1553901
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3aaf2a949d5b3e6670e7885adea4579ac2802428
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75991117"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82692328"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-from-other-accounts"></a>Получение права владения на выставление счетов в подписках Azure от других пользователей
 
@@ -182,7 +177,7 @@ ms.locfileid: "75991117"
 
 ### <a name="azure-reservations-transfer"></a>Перемещение Azure Reserved Virtual Machine Instances
 
-Azure Reserved Virtual Machine Instances не перемещаются с подписками автоматически. Чтобы переместить резервирования, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+Если вы переносите подписки EA (Соглашение Enterprise), резервирование Azure не будет автоматически перемещаться вместе с подписками. Чтобы переместить резервирования, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="access-to-azure-services"></a>Доступ к службам Azure
 

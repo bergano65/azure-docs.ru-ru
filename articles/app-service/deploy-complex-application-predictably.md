@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 01/06/2016
 ms.custom: seodec18
 ms.openlocfilehash: 62d0bf776b2d0c97d95b992ed6a1fd2a356e467a
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75967377"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
@@ -105,7 +105,7 @@ ms.locfileid: "75967377"
 > 
 > 
 
-#### <a name="sql-server"></a>SQL Server
+#### <a name="sql-server"></a>SQL Server
 Затем щелкните ресурс SQL Server с именем **SQLServer** в структуре JSON.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-4-sqlserver.png)
@@ -182,8 +182,8 @@ ms.locfileid: "75967377"
 ## <a name="deploy-the-resource-group-template-yourself"></a>Развертывание шаблона группы ресурсов вручную
 Кнопка **Развертывание в Azure** — это отлично, но она позволяет развернуть шаблон группы ресурсов в azuredeploy.json только в том случае, если azuredeploy.json уже помещен в GitHub. Пакет SDK для Azure .NET также предоставляет средства для развертывания любого файла шаблона JSON непосредственно с локального компьютера. Для этого сделайте следующее.
 
-1. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
-2. Выберите **Visual C#**  > **Облако** > **Группа ресурсов Azure**, а затем нажмите кнопку **ОК**.
+1. В Visual Studio щелкните **файл** > **создать** > **проект**.
+2. Щелкните **Visual C#** > **Cloud** > **Группа ресурсов Azure**, а затем нажмите кнопку **ОК**.
    
    ![](./media/app-service-deploy-complex-application-predictably/deploy-1-vsproject.png)
 3. В разделе **Выберите шаблон Azure** выберите **Пустой шаблон** и нажмите кнопку **ОК**.
@@ -209,7 +209,7 @@ ms.locfileid: "75967377"
 11. Найдите свойства `location` и `isEnabled`, а затем задайте их, как показано ниже. Выполните то же самое для других трех предупреждений (фиолетового цвета).
     
     ![](./media/app-service-deploy-complex-application-predictably/deploy-7-alerts.png)
-12. Теперь все готово для развертывания. Щелкните правой кнопкой мыши проект и выберите **Развернуть** > **New Развернутьment**.
+12. Теперь все готово для развертывания. Щелкните проект правой кнопкой мыши и выберите пункт **развернуть** > **новое развертывание**.
     
     ![](./media/app-service-deploy-complex-application-predictably/deploy-8-newdeployment.png)
 13. Войдите в свою учетную запись Azure, если вы еще этого не сделали.
@@ -220,7 +220,7 @@ ms.locfileid: "75967377"
     Теперь в удобной таблице можно изменить все параметры, определенные в файле шаблона. Параметры, определяющие значения по умолчанию, уже будут иметь значения по умолчанию, а параметры, определяющие список допустимых значений, будут отображаться в виде раскрывающихся списков.
     
     ![](./media/app-service-deploy-complex-application-predictably/deploy-10-parametereditor.png)
-15. Заполните все пустые параметры и используйте [адрес репозитория GitHub для ToDoApp](https://github.com/azure-appservice-samples/ToDoApp.git) в **repoUrl**. Нажмите кнопку **Сохранить**.
+15. Заполните все пустые параметры и используйте [адрес репозитория GitHub для ToDoApp](https://github.com/azure-appservice-samples/ToDoApp.git) в **repoUrl**. Затем нажмите кнопку **Сохранить**.
     
     ![](./media/app-service-deploy-complex-application-predictably/deploy-11-parametereditorfilled.png)
     
@@ -228,9 +228,9 @@ ms.locfileid: "75967377"
     > Автоматическое масштабирование — это функция, предлагаемая в категории **Standard** или более высокой категории. Предупреждения уровня плана — это возможности, предлагаемые в категории **Basic** или более высокой. Для просмотра всех новых ресурсов App Insights необходимо задать для параметра **sku** значение **Standard** или **Premium**.
     > 
     > 
-16. Щелкните **Развернуть**. Если вы выбрали параметр **Сохранить пароль**, пароль будет сохранен в файле параметров **в виде обычного текста**. В противном случае вам будет предложено ввести пароль для базы данных во время развертывания.
+16. Нажмите кнопку **Развернуть**. Если вы выбрали параметр **Сохранить пароль**, пароль будет сохранен в файле параметров **в виде обычного текста**. В противном случае вам будет предложено ввести пароль для базы данных во время развертывания.
 
-Это все! Теперь нужно просто перейти на [портал Azure](https://portal.azure.com/) и с помощью инструмента [Обозреватель ресурсов Azure](https://resources.azure.com) просмотреть новые параметры автоматического масштабирования и предупреждения, добавляемые в развертываемое приложение JSON.
+Вот и все! Теперь нужно просто перейти на [портал Azure](https://portal.azure.com/) и с помощью инструмента [Обозреватель ресурсов Azure](https://resources.azure.com) просмотреть новые параметры автоматического масштабирования и предупреждения, добавляемые в развертываемое приложение JSON.
 
 Действия, описанные в этом разделе, главным образом охватывают следующее.
 
@@ -251,20 +251,20 @@ ms.locfileid: "75967377"
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 * [Язык шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/templates/template-syntax.md)
-* [Создание шаблонов диспетчера ресурсов Azure](../azure-resource-manager/templates/template-syntax.md)
+* [Создание шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
 * [Функции шаблонов в диспетчере ресурсов Azure](../azure-resource-manager/templates/template-functions.md)
 * [Развертывание приложения с использованием шаблона диспетчера ресурсов Azure](../azure-resource-manager/templates/deploy-powershell.md)
 * [Использование Azure PowerShell с диспетчером ресурсов Azure](../azure-resource-manager/powershell-azure-resource-manager.md)
 * [Устранение неполадок при развертывании групп ресурсов в Azure](../azure-resource-manager/templates/common-deployment-errors.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о синтаксисе JSON и свойствах для типов ресурсов, развертываемых в этой статье, см. таких справочниках:
 
 * [Microsoft.Sql/servers](/azure/templates/microsoft.sql/servers)
 * [Microsoft.Sql/servers/databases](/azure/templates/microsoft.sql/servers/databases)
-* [Microsoft.Sql/servers/firewallRules](/azure/templates/microsoft.sql/servers/firewallrules)
-* [Microsoft.Web/serverfarms](/azure/templates/microsoft.web/serverfarms)
-* [Microsoft.Web/sites](/azure/templates/microsoft.web/sites)
+* [Microsoft. SQL/Servers/Фиреваллрулес](/azure/templates/microsoft.sql/servers/firewallrules)
+* [Microsoft. Web/serverfarms](/azure/templates/microsoft.web/serverfarms)
+* [Microsoft. Web/Sites](/azure/templates/microsoft.web/sites)
 * [Microsoft.Web/sites/slots](/azure/templates/microsoft.web/sites/slots)
-* [Microsoft.Insights/autoscalesettings](/azure/templates/microsoft.insights/autoscalesettings)
+* [Microsoft. Insights/autoscalesettings](/azure/templates/microsoft.insights/autoscalesettings)

@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 12/19/2019
 ms.author: memildin
 ms.openlocfilehash: 74ed55e1d460495bfa8d3d4c00bd37bb7f05260e
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75552871"
 ---
 # <a name="protect-azure-data-and-storage-services"></a>Защита данных и служб хранилища Azure
@@ -32,13 +32,13 @@ ms.locfileid: "75552871"
 
 1. В разделе **безопасность ресурсов санации** щелкните **ресурсы данных и хранилища**.
 
-    ![Ресурсы данных и хранилища](./media/security-center-monitoring/click-data.png)
+    ![Ресурсы хранилища & данных](./media/security-center-monitoring/click-data.png)
 
     Откроется страница **безопасность данных** с рекомендациями по ресурсам данных.
 
-    [![ресурсов данных](./media/security-center-monitoring/sql-overview.png)](./media/security-center-monitoring/sql-overview.png#lightbox)
+    [![Ресурсы данных](./media/security-center-monitoring/sql-overview.png)](./media/security-center-monitoring/sql-overview.png#lightbox)
 
-    На этой странице можно выполнить следующие действия.
+    На этой странице можно выполнить следующие действия:
 
     * Перейдите на вкладку **Обзор** , в которой перечислены все рекомендации по ресурсам данных для исправления. 
     * Щелкните каждую вкладку и просмотрите рекомендации по типу ресурса.
@@ -69,5 +69,5 @@ ms.locfileid: "75552871"
 Дополнительные сведения о рекомендациях, относящихся к другим типам ресурсов Azure, см. в следующих разделах:
 
 * [Полный список ссылок на рекомендации по безопасности центра безопасности Azure](recommendations-reference.md)
-* [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
+* [Защита приложений и виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
 * [Защита сети в центре безопасности Azure.](security-center-network-recommendations.md)

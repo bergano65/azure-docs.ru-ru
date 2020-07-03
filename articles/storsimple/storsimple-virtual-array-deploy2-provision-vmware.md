@@ -9,10 +9,10 @@ ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5f5ded3faec3a080022eea70de2cca5d27529c4d
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76272099"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-vmware"></a>Развертывание виртуального массива StorSimple — подготовка в VMware
@@ -101,7 +101,7 @@ ms.locfileid: "76272099"
 9. На панели слева в окне **Datastore Browser** (Браузер хранилища данных) появится новая папка.
 
    ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image9.png)
-10. Щелкните значок отправки ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image10.png) и выберите команду **Upload File** (Отправить файл).
+10. Щелкните значок ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image10.png) отправки и выберите **отправить файл**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image11.png)
 11. Найдите скачанные VMDK-файлы и укажите их. Вы увидите два файла. Выберите файл для передачи.
@@ -157,13 +157,13 @@ ms.locfileid: "76272099"
 28. На странице **Virtual Machines Properties** (Свойства виртуальной машины) на вкладке **Hardware** (Оборудование) найдите оборудование устройства. Выберите пункт **New Hard Disk**(Новый жесткий диск). Нажмите кнопку **Добавить**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image29.png)
-29. Откроется окно **Add Hardware** (Установка оборудования). На странице **Device Type** (Тип устройства) в разделе **Choose the type of device you wish to add** (Выберите тип устройства, которое нужно добавить) выберите **Hard Disk** (Жесткий диск) и нажмите кнопку **Next** (Далее).
+29. Откроется окно **Add Hardware** (Установка оборудования). На странице **тип устройства** в разделе **выберите тип устройства, который вы хотите добавить**, выберите **жесткий диск**и нажмите кнопку **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image30.png)
 30. На странице **Select a Disk** (Выбор диска) выберите параметр **Create a new virtual disk** (Создать новый виртуальный диск). Щелкните **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image31.png)
-31. На странице **Create a Disk** (Создание диска) измените значение параметра **Disk Size** (Размер диска) на 500 ГБ (или более). Минимальный размер диска — 500 ГБ, но можно подготовить диск большего размера. Обратите внимание, что после подготовки размер диска изменить нельзя. Дополнительные сведения о размере подготавливаемого диска см. в соответствующем разделе [документа с рекомендациями](storsimple-ova-best-practices.md). В разделе **Disk Provisioning** (Подготовка диска) выберите пункт **Thin Provision** (Тонкая подготовка). Щелкните **Далее**.
+31. На странице **Create a Disk** (Создание диска) измените значение параметра **Disk Size** (Размер диска) на 500 ГБ (или более). Минимальный размер диска — 500 ГБ, но можно подготовить диск большего размера. Обратите внимание, что после подготовки размер диска изменить нельзя. Дополнительные сведения о размере диска, подготове к работе, см. в разделе о размерах [документа рекомендации](storsimple-ova-best-practices.md). В разделе **Disk Provisioning** (Подготовка диска) выберите пункт **Thin Provision** (Тонкая подготовка). Щелкните **Далее**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image32.png)
 32. На странице **Advanced Options** (Дополнительные параметры) примите параметры по умолчанию.

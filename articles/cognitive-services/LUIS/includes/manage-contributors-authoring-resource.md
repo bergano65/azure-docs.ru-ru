@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: cognitive-services
 author: diberry
@@ -10,20 +10,20 @@ ms.date: 02/14/2020
 ms.subservice: language-understanding
 ms.topic: include
 ms.author: diberry
-ms.openlocfilehash: c63356ba81aefb2ac28bd5f077bd743488656cfc
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: 192d3d1a7bd792779b068a9c0c7ac34c7bee1c80
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77279602"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80117035"
 ---
 Если приложения должны быть созданы другими людьми, необходимо добавить соответствующие адреса электронной почты в ресурс создания портал Azure.
 
 Если вы являетесь **владельцем или администратором подписки Azure**, вы можете добавить участника к ресурсу.
 
-Если вы **не являетесь владельцем или администратором подписки Azure**, ваша учетная запись Azure должна иметь разрешения `Microsoft.Authorization/roleAssignments/write`.
+Если вы **не являетесь владельцем или администратором подписки Azure**, ваша учетная запись Azure должна иметь `Microsoft.Authorization/roleAssignments/write` разрешения.
 
 Если у вас возникли проблемы с этим назначением роли, ознакомьтесь с:
 
 * [Назначения ролей Azure](../../../role-based-access-control/role-assignments-portal.md)
- * [Устранение неполадок контроля доступа Azure](../../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments)
+* [Устранение неполадок контроля доступа Azure](../../../role-based-access-control/troubleshooting.md#problems-with-azure-role-assignments)

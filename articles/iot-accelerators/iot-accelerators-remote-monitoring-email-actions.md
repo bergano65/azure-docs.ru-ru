@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 11/12/2018
 ms.topic: conceptual
 ms.openlocfilehash: c192ba73da0cfaf1832b6a1e572bd71b250a976b
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74168370"
 ---
 # <a name="add-an-email-action"></a>Добавление действия электронной почты
@@ -81,7 +81,7 @@ ms.locfileid: "74168370"
 
 После этого правило с действием электронной почты будет включено. Каждый раз, когда запускается действие, получателям отправляется новое электронное сообщение.
 
-## Вход в Outlook <a name="outlook"></a>
+## <a name="sign-in-to-outlook"></a>Вход в Outlook <a name="outlook"></a>
 
 При первом включении действия электронной почты в акселераторе решений необходимо войти в Outlook. Это действие настраивает учетную запись электронной почты, с которой отправляются уведомления по электронной почте.
 
@@ -96,7 +96,7 @@ ms.locfileid: "74168370"
 
 Ниже показано, как настроить и проверить действия электронной почты вручную.
 
-1. Перейдите на [портал Azure](https://portal.azure.com).
+1. Перейдите к [портал Azure](https://portal.azure.com).
 
 1. Перейдите к группе ресурсов для акселератора решений.
 
@@ -138,7 +138,7 @@ ms.locfileid: "74168370"
 
    ![Вход в Outlook выполнен успешно](./media/iot-accelerators-remote-monitoring-email-actions/success-email.png)
 
-## Настройте HTML для электронной почты <a name="htmledit"></a>
+## <a name="customize-the-email-html"></a>Настройте HTML для электронной почты <a name="htmledit"></a>
 
 Готовый акселератор решения для удаленного мониторинга содержит базовый шаблон HTML для действий электронной почты. Шаблон электронной почты использует значения из параметров действия электронной почты. Ниже приведен пример.
 
@@ -170,7 +170,7 @@ ms.locfileid: "74168370"
 
 ![Расчет среднего значения](./media/iot-accelerators-remote-monitoring-email-actions/calculation-email.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве показано, как добавить действие электронной почты в новое или существующее правило в рамках решения для удаленного мониторинга. Руководство также показывает, как изменить код HTML, который определяет формат сообщения.
 

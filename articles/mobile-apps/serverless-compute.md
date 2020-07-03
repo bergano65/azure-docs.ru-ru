@@ -1,19 +1,18 @@
 ---
 title: Создание серверной части мобильного приложения с функциями Azure и другими службами
 description: Узнайте о службах вычислений, используемых для создания надежной серверной части мобильного приложения.
-author: elamalani
-manager: elamalani
+author: codemillmatt
 ms.service: vs-appcenter
 ms.assetid: 444f0959-aa7f-472c-a6c7-9eecea3a34b9
 ms.topic: conceptual
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: ec7091a32a1be8d875e16d8e0a9b20b5e80de387
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: d6a2bbc984a8808d2cd8a9b292e55d80f43f2e9c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291963"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80240147"
 ---
 # <a name="build-mobile-back-end-components-with-compute-services"></a>Создание мобильных серверных компонентов с помощью служб вычислений
 Для каждого мобильного приложения требуется серверная часть, отвечающая за хранение данных, бизнес-логику и безопасность. Управление инфраструктурой для размещения и выполнения кода серверной части требует размера, подготовности и масштабирования нескольких серверов. Кроме того, необходимо управлять обновлениями ОС, а также оборудованием и применять исправления для системы безопасности. Затем необходимо отслеживать все эти компоненты инфраструктуры на предмет производительности, доступности и отказоустойчивости. 
@@ -43,10 +42,10 @@ ms.locfileid: "76291963"
 - Разнообразные языки программирования и варианты размещения для разработки, такие как C#, Node. js, Java, JavaScript или Python.
 - Модель ценообразования по оплате за использование означает, что вы платите только за время, затраченное на выполнение кода.
 
-**Справочные материалы**
+**Ссылки**
 - [Портал Azure](https://portal.azure.com)
 - [Документация по Функциям Azure](/azure/azure-functions/)
-- [Руководством для разработчиков по функциям Azure](/azure/azure-functions/functions-reference)
+- [Руководство разработчиков Функций Azure](/azure/azure-functions/functions-reference)
 - [Краткие руководства](/azure/azure-functions/functions-create-first-function-vs-code)
 - [Примеры](/samples/browse/?products=azure-functions&languages=csharp)
 
@@ -54,15 +53,15 @@ ms.locfileid: "76291963"
 [Служба приложений Azure](https://azure.microsoft.com/services/app-service/)позволяет создавать и размещать веб-приложения и интерфейсы API RESTful на любом языке программирования без управления инфраструктурой. Он обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает как Windows, так и Linux, а также включает автоматические развертывания из GitHub, Azure DevOps или любого репозитория Git.
 
 **Основные возможности**
-- Поддержка нескольких языков и платформ для ASP.NET, ASP.NET Core, Java, Ruby, Node. js, PHP или Python. Вы также можете запускать PowerShell и другие сценарии или исполняемые файлы в качестве фоновых служб.
+- Поддержка нескольких языков и платформ для ASP.NET, ASP.NET Core, Java, Ruby, Node. js, PHP или Python. Кроме того, вы можете запускать PowerShell и другие скрипты или исполняемые файлы в качестве фоновых служб.
 - DevOps оптимизацию за счет непрерывной интеграции и развертывания с помощью Azure DevOps, GitHub, BitBucket, Docker HUB или реестра контейнеров Azure. Управляйте приложениями в Службе приложений Azure с помощью оболочки Azure PowerShell или кроссплатформенного интерфейса командной строки (CLI).
 - Глобальный масштаб с высоким уровнем доступности для увеличения или уменьшения масштаба вручную или автоматически.
 - Подключения к платформам SaaS и локальным данным для выбора из более чем 50 соединителей для корпоративных систем, таких как SAP, службы SaaS, такие как Salesforce, и Интернет-службы, такие как Facebook. Доступ к локальным данным с помощью гибридных подключений и виртуальных сетей Azure.
-- Служба приложений Azure соответствует стандарту ISO, SOC и PCI. Проверяйте подлинность пользователей с помощью Azure Active Directory или с помощью входа для социальных сетей, таких как Google, Facebook, Twitter и Майкрософт. Создание ограничений для IP-адресов и управление удостоверениями служб.
+- Служба приложений Azure соответствует стандарту ISO, SOC и PCI. Проверяйте подлинность пользователей с помощью Azure Active Directory или с помощью входа для социальных сетей, таких как Google, Facebook, Twitter и Майкрософт. Создавайте ограничения IP-адресов и управляйте удостоверениями службы.
 - Шаблоны приложений для выбора из обширного списка шаблонов приложений в Azure Marketplace, например WordPress, Joomla и Drupal.
 - Интеграция Visual Studio с выделенными инструментами в Visual Studio упрощает работу по созданию, развертыванию и отладке.
 
-**Справочные материалы**
+**Ссылки**
 - [Портал Azure](https://portal.azure.com/)
 - [Документация по службе приложений Azure](/azure/app-service/)
 - [Краткие руководства](/azure/app-service/app-service-web-get-started-dotnet)
@@ -80,13 +79,13 @@ ms.locfileid: "76291963"
 - Развертывайте устройства IoT и управляйте ими по запросу.
 - Обучение моделей машинного обучения с помощью таких средств, как TensorFlow и KubeFlow.
 
-**Справочные материалы**
+**Ссылки**
 - [Портал Azure](https://portal.azure.com/)
 - [Документация по службе Kubernetes Azure](/azure/aks/)
 - [Краткие руководства](/azure/aks/kubernetes-walkthrough-portal)
 - [Руководства](/azure/aks/tutorial-kubernetes-prepare-app)
 
-## <a name="azure-container-instances"></a>Служба "Экземпляры контейнеров Azure"
+## <a name="azure-container-instances"></a>Экземпляры контейнеров Azure
 Служба " [экземпляры контейнеров Azure](https://azure.microsoft.com/services/container-instances/) " — это отличное решение для любого сценария, который может использоваться в изолированных контейнерах, таких как простые приложения, Автоматизация задач и задания сборки. Разрабатывайте приложения быстро, не управляя виртуальными машинами.
 
 **Основные возможности**
@@ -97,9 +96,9 @@ ms.locfileid: "76291963"
 - Постоянное хранилище для извлечения и сохранения состояния. Экземпляры контейнеров обеспечивают прямое подключение к общим папкам службы файлов Azure.
 - Контейнеры Linux и Windows, запланированные с помощью одного API.
 
-**Справочные материалы**
+**Ссылки**
 - [Портал Azure](https://portal.azure.com/)
-- [Документация по службе "экземпляры контейнеров Azure"](/azure/container-instances/)
+- [Документация по службе "Экземпляры контейнеров Azure"](/azure/container-instances/)
 - [Краткие руководства](/azure/container-instances/container-instances-quickstart-portal)
 - [Примеры](https://azure.microsoft.com/resources/samples/?sort=0&term=aci)
 - [Руководства](/azure/container-instances/container-instances-tutorial-prepare-app)

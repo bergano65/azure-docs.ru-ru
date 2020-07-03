@@ -1,6 +1,6 @@
 ---
-title: Диагностика гибридной рабочей роли Runbook Windows в Azure Управление обновлениями
-description: Узнайте, как устранять неполадки и устранять проблемы с гибридной рабочей ролью Runbook службы автоматизации Azure в Windows, которая поддерживает Управление обновлениями.
+title: Устранение неполадок агента Центра обновления Windows в службе автоматизации Azure Управление обновлениями
+description: Узнайте, как устранять неполадки и устранять проблемы с агентом обновления Windows с помощью решения Управление обновлениями.
 services: automation
 author: mgoedtel
 ms.author: magoedte
@@ -9,64 +9,67 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: ec35d11eba59ea21947e2c3cd5286bababa4eabb
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: e9af9c6472f49ebccd36e8d73688636c98918ff1
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76153860"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996440"
 ---
-# <a name="understand-and-resolve-windows-hybrid-runbook-worker-health-in-update-management"></a>Изучение и разрешение работоспособности гибридной рабочей роли Runbook Windows в Управление обновлениями
+# <a name="troubleshoot-windows-update-agent-issues"></a>Устранение проблем с агентом обновления Windows
 
-Есть множество причин, по которым для компьютера не отображается состояние **Готово** в службе "Управление обновлениями". В Управление обновлениями можно проверить работоспособность агента гибридной рабочей роли Runbook, чтобы определить базовую проблему. В этой статье описывается, как запустить средство устранения неполадок для компьютеров Azure с портал Azure и с компьютеров, не относящихся к Azure, в [автономном сценарии](#troubleshoot-offline).
+Может быть несколько причин, по которым компьютер не отображается как готовый (работоспособный) в Управление обновлениями. Вы можете проверить работоспособность агента гибридной рабочей роли Runbook Windows, чтобы определить базовую проблему. Ниже приведены три состояния готовности для компьютера.
 
-В списке ниже приведены три состояния готовности, в которых может находиться компьютер:
-
-* **Готово** . Гибридная Рабочая роль Runbook развертывается и последний раз наблюдался менее 1 часа назад.
-* **Disconnected** — Гибридная Рабочая роль Runbook развертывается и последний раз наблюдался в течение 1 часа назад.
-* **Не настроено** — Гибридная Рабочая роль Runbook не найдена или не завершила подключение.
+* Готово. Гибридная Рабочая роль Runbook развертывается и последний раз наблюдался менее одного часа назад.
+* Отключено. Гибридная Рабочая роль Runbook развертывается и последний раз наблюдался за один час назад.
+* Не настроено: Гибридная Рабочая роль Runbook не найдена или не завершила подключение.
 
 > [!NOTE]
-> Между отображением портал Azure и текущим состоянием компьютера может возникнуть небольшая задержка.
+> Между отображением портал Azure и текущим состоянием компьютера может быть небольшая задержка.
+
+В этой статье описывается, как запустить средство устранения неполадок для виртуальных машин Azure из портал Azure и компьютеров, не относящихся к Azure, в [автономном сценарии](#troubleshoot-offline). 
+
+> [!NOTE]
+> Сценарий устранения неполадок теперь включает проверки для Windows Server Update Services (WSUS), а также для ключей автоскачивания и установки. 
 
 ## <a name="start-the-troubleshooter"></a>Запуск средства устранения неполадок
 
-Для компьютеров Azure: на портале щелкните ссылку **Устранение неполадок** в столбце **Update Agent Readiness** (Готовность агента обновления), после чего откроется страница **Troubleshoot Update Agent** (Устранение неполадок с агентом обновления). Для компьютеров, не относящихся к Azure, ссылка приводится к этой статье. См. [инструкции в автономном режиме](#troubleshoot-offline) для устранения неполадок на компьютере, отличном от Azure.
+Для компьютеров Azure можно запустить страницу Устранение неполадок агента обновления, щелкнув ссылку **Устранение неполадок** в столбце **готовность агента обновления** на портале. Для компьютеров, не относящихся к Azure, ссылка приводится к этой статье. См. [инструкции в автономном режиме](#troubleshoot-offline) для устранения неполадок на компьютере, отличном от Azure.
 
-![Список виртуальных машин в службе "Управление обновлениями"](../media/update-agent-issues/vm-list.png)
+![Снимок экрана Управление обновлениями списка виртуальных машин](../media/update-agent-issues/vm-list.png)
 
 > [!NOTE]
 > Чтобы проверить работоспособность гибридной рабочей роли Runbook, необходимо, чтобы виртуальная машина была запущена. Если виртуальная машина не запущена, появится кнопка **запуска виртуальной машины**.
 
-На странице **Troubleshoot Update Agent** (Устранение неполадок с агентом обновления) выберите **Run checks** (Выполнить проверки), чтобы запустить средство устранения неполадок. Средство устранения неполадок использует [команду Run](../../virtual-machines/windows/run-command.md) для выполнения сценария на компьютере для проверки зависимостей. После того как средство устранения неполадок завершило свою работу, оно возвращает результаты проверок.
+На странице Troubleshoot Update Agent (Устранение неполадок с агентом обновления) выберите **Run checks** (Выполнить проверки), чтобы запустить средство устранения неполадок. Средство устранения неполадок использует [команду Run](../../virtual-machines/windows/run-command.md) для выполнения сценария на компьютере, чтобы проверить зависимости. После того как средство устранения неполадок завершило свою работу, оно возвращает результаты проверок.
 
-![Страница устранения неполадок с агентом обновления](../media/update-agent-issues/troubleshoot-page.png)
+![Снимок экрана со страницей "Устранение неполадок агента обновления"](../media/update-agent-issues/troubleshoot-page.png)
 
 Результаты отобразятся на странице, когда будут готовы. В разделах о проверках отображается то, что входит в состав каждой проверки.
 
-![Проверки для устранения неполадок с агентом обновления](../media/update-agent-issues/update-agent-checks.png)
+![Снимок экрана: Проверка проверки агента обновления](../media/update-agent-issues/update-agent-checks.png)
 
-## <a name="prerequisite-checks"></a>Проверка предварительных требований
+## <a name="prerequisite-checks"></a>Проверки готовности
 
 ### <a name="operating-system"></a>Операционная система
 
-Проверка операционной системы проверяет, работает ли Гибридная Рабочая роль Runbook с одной из следующих операционных систем:
+Проверка операционной системы проверяет, работает ли Гибридная Рабочая роль Runbook с одной из операционных систем, показанных в следующей таблице.
 
 |Операционная система  |Примечания  |
 |---------|---------|
-|Windows Server 2012 и более поздние версии |Требуется .NET Framework 4,6 или более поздней версии. ([Скачать .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> Требуется Windows PowerShell 5,1.  ([Скачать Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |
+|Windows Server 2012 и более поздние версии |Требуется .NET Framework 4,6 или более поздней версии. ([Скачайте .NET Framework](/dotnet/framework/install/guide-for-developers).)<br/> Требуется Windows PowerShell 5,1.  ([Загрузите Windows Management Framework 5,1](https://www.microsoft.com/download/details.aspx?id=54616).)        |
 
 ### <a name="net-462"></a>.NET 4.6.2
 
-Проверка .NET Framework проверяет, установлен ли в системе минимум [.NET Framework 4.6.2](https://www.microsoft.com/en-us/download/details.aspx?id=53345) .
+Проверка .NET Framework проверяет, установлена ли в системе [.NET Framework 4.6.2](https://www.microsoft.com/en-us/download/details.aspx?id=53345) или более поздней версии.
 
 ### <a name="wmf-51"></a>WMF 5.1
 
-Проверка WMF проверяет, что в системе установлена требуемая версия Windows Management Framework (WMF) — [Windows Management framework 5,1](https://www.microsoft.com/download/details.aspx?id=54616).
+Проверка WMF проверяет, что в системе установлена требуемая версия Windows Management Framework (WMF), которая представляет собой [Windows Management framework 5,1](https://www.microsoft.com/download/details.aspx?id=54616).
 
 ### <a name="tls-12"></a>TLS 1.2
 
-Эта проверка определяет, используете ли вы протокол TLS 1.2 для шифрования связи. Протокол TLS 1.0 больше не поддерживается платформой. Мы рекомендуем, чтобы клиенты использовали протокол TLS 1.2 для обмена данными со службой "Управление обновлениями".
+Эта проверка определяет, используете ли вы протокол TLS 1.2 для шифрования связи. Протокол TLS 1.0 больше не поддерживается платформой. Используйте TLS 1,2 для взаимодействия с Управление обновлениями.
 
 ## <a name="connectivity-checks"></a>Проверка подключения
 
@@ -74,39 +77,40 @@ ms.locfileid: "76153860"
 
 Эта проверка определяет, может ли агент правильно взаимодействовать со службой агента.
 
-В конфигурации прокси-сервера и брандмауэра необходимо разрешить агенту гибридной рабочей роли Runbook взаимодействовать с конечной точкой регистрации. Список адресов и портов, которые необходимо открыть, см. в разделе [Настройка сети](../automation-hybrid-runbook-worker.md#network-planning).
+В конфигурации прокси-сервера и брандмауэра необходимо разрешить агенту гибридной рабочей роли Runbook взаимодействовать с конечной точкой регистрации. Список адресов и портов для открытия см. в разделе [сетевое планирование](../automation-hybrid-runbook-worker.md#network-planning).
 
 ### <a name="operations-endpoint"></a>Конечная точка операций
 
 Эта проверка определяет, может ли агент правильно взаимодействовать со службой Job Runtime Data.
 
-В конфигурации прокси-сервера и брандмауэра необходимо разрешить агенту гибридной рабочей роли Runbook взаимодействовать со службой Job Runtime Data. Список адресов и портов, которые необходимо открыть, см. в разделе [Настройка сети](../automation-hybrid-runbook-worker.md#network-planning).
+В конфигурации прокси-сервера и брандмауэра необходимо разрешить агенту гибридной рабочей роли Runbook взаимодействовать со службой Job Runtime Data. Список адресов и портов для открытия см. в разделе [сетевое планирование](../automation-hybrid-runbook-worker.md#network-planning).
 
 ## <a name="vm-service-health-checks"></a>Проверки работоспособности службы виртуальных машин
 
 ### <a name="monitoring-agent-service-status"></a>Отслеживание состояния службы агента
 
-Эта проверка определяет, выполняется ли на компьютере служба работоспособности (`HealthService`) для агента Microsoft Monitoring Agent.
+Эта проверка определяет, запущена ли на компьютере агент Log Analytics`healthservice`для Windows (). Дополнительные сведения об устранении неполадок службы см. [в статье агент log Analytics для Windows не работает](hybrid-runbook-worker.md#mma-not-running).
 
-Дополнительные сведения об устранении неполадок со службой см. в разделе [Сценарий: Microsoft Monitoring Agent не работает](hybrid-runbook-worker.md#mma-not-running).
-
-Чтобы переустановить Microsoft Monitoring Agent, ознакомьтесь с [этой статьей](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
+Сведения о переустановке агента Log Analytics для Windows см. в разделе [Установка агента для Windows](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
 
 ### <a name="monitoring-agent-service-events"></a>Мониторинг событий службы агента
 
-Эта проверка определяет, записывались ли какие-либо события `4502` в журнал Azure Operations Manager на компьютере за последние 24 часа.
+Эта проверка определяет, появляются ли какие либо события 4502 в журнале Operations Manager Azure на компьютере за последние 24 часа.
 
-Дополнительные сведения об этом событии см. в разделе [Событие 4502 в журнале Operations Manager](hybrid-runbook-worker.md#event-4502).
+Дополнительные сведения об этом событии см. в описании [события 4502 в журнале Operations Manager](hybrid-runbook-worker.md#event-4502) для этого события.
 
 ## <a name="access-permissions-checks"></a>Проверка разрешений доступа
 
-### <a name="machinekeys-folder-access"></a>Доступ к папке MachineKeys
+> [!NOTE]
+> В настоящее время средство устранения неполадок не направляет трафик через прокси-сервер, если он настроен.
 
-Проверка доступа к папке шифрования определяет, имеет ли учетная запись локальной системы доступ к папке C:\ProgramData\Microsoft\Crypto\RSA.
+### <a name="crypto-folder-access"></a>Шифрование доступа к папке
 
-## <a name="troubleshoot-offline"></a>Автономное устранение неполадок
+Проверка доступа к папке с шифрованием определяет, имеет ли локальная системная учетная запись доступ к К:\програмдата\микрософт\крипто\рса..
 
-Средство устранения неполадок можно использовать в гибридной рабочей роли в автономном режиме, запустив скрипт локально. Скрипт [Troubleshoot-WindowsUpdateAgentRegistration](https://www.powershellgallery.com/packages/Troubleshoot-WindowsUpdateAgentRegistration) можно найти в коллекции PowerShell. Для запуска скрипта необходимо установить WMF 4,0 или более поздней версии. Чтобы скачать последнюю версию PowerShell, см. статью [Установка различных версий PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell).
+## <a name="troubleshoot-offline"></a><a name="troubleshoot-offline"></a>Автономное устранение неполадок
+
+Вы можете использовать средство устранения неполадок в гибридной рабочей роли Runbook в автономном режиме, запустив сценарий локально. Получите следующий скрипт из коллекция PowerShell: [reвиндовсупдатеажентрегистратион](https://www.powershellgallery.com/packages/Troubleshoot-WindowsUpdateAgentRegistration). Чтобы запустить сценарий, необходимо установить WMF 4,0 или более поздней версии. Чтобы скачать последнюю версию PowerShell, см. статью [Установка различных версий PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell).
 
 Выходные данные этого скрипта выглядят так:
 
@@ -167,9 +171,9 @@ RuleName                    : Monitoring Agent service status
 RuleGroupName               : VM Service Health Checks
 RuleDescription             : HealthService must be running on the machine
 CheckResult                 : Failed
-CheckResultMessage          : Microsoft Monitoring Agent service (HealthService) is not running
+CheckResultMessage          : Log Analytics for Windows service (HealthService) is not running
 CheckResultMessageId        : MonitoringAgentServiceRunningCheck.Failed
-CheckResultMessageArguments : {Microsoft Monitoring Agent, HealthService}
+CheckResultMessageArguments : {Log Analytics agent for Windows, HealthService}
 
 RuleId                      : MonitoringAgentServiceEventsCheck
 RuleGroupId                 : servicehealth
@@ -177,9 +181,9 @@ RuleName                    : Monitoring Agent service events
 RuleGroupName               : VM Service Health Checks
 RuleDescription             : Event Log must not have event 4502 logged in the past 24 hours
 CheckResult                 : Failed
-CheckResultMessage          : Microsoft Monitoring Agent service Event Log (Operations Manager) does not exist on the machine
+CheckResultMessage          : Log Analytics agent for Windows service Event Log (Operations Manager) does not exist on the machine
 CheckResultMessageId        : MonitoringAgentServiceEventsCheck.Failed.NoLog
-CheckResultMessageArguments : {Microsoft Monitoring Agent, Operations Manager, 4502}
+CheckResultMessageArguments : {Log Analytics agent for Windows, Operations Manager, 4502}
 
 RuleId                      : CryptoRsaMachineKeysFolderAccessCheck
 RuleGroupId                 : permissions
@@ -204,4 +208,4 @@ CheckResultMessageArguments : {}
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы устранить другие неполадки, ознакомьтесь со статьей [Устранение неполадок с гибридными рабочими ролями Runbook](hybrid-runbook-worker.md).
+[Устранение неполадок с гибридными рабочими ролями Runbook](hybrid-runbook-worker.md)

@@ -3,12 +3,12 @@ title: Резервное копирование фермы SharePoint в Azure 
 description: Резервное копирование данных SharePoint с помощью Azure Backup Server. Эта статья содержит информацию о настройке фермы SharePoint для сохранения нужных данных в Azure. Защищенные данные SharePoint можно восстановить с диска или из Azure.
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: a48afd84f6c4e1ec80015696dc4b14beea8ebfa4
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 441a896f2faa67a1380007ebb9474d7c311a4842
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173210"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78673143"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-mabs"></a>Резервное копирование фермы SharePoint в Azure с помощью MABS
 
@@ -20,25 +20,25 @@ ms.locfileid: "74173210"
 
 | Рабочая нагрузка | Версия | Развертывание SharePoint | Защита и восстановление |
 | --- | --- | --- | --- |
-| SharePoint |SharePoint 2016, SharePoint 2013, SharePoint 2010, SharePoint 2007, SharePoint 3.0 |SharePoint разворачивается как физический сервер или виртуальная машина Hyper-V/VMware <br> -------------- <br> SQL AlwaysOn | Параметры восстановления фермы SharePoint: ферма, база данных, файл или элемент списка для восстановления из точек восстановления диска.  Восстановление фермы и базы данных из точек восстановления Azure. |
+| SharePoint |SharePoint 2016, SharePoint 2013, SharePoint 2010, SharePoint 2007, SharePoint 3.0 |SharePoint разворачивается как физический сервер или виртуальная машина Hyper-V/VMware  <br> -------------- <br>  SQL AlwaysOn | Параметры восстановления фермы SharePoint: ферма, база данных, файл или элемент списка для восстановления из точек восстановления диска.  Восстановление фермы и базы данных из точек восстановления Azure. |
 
 ## <a name="before-you-start"></a>Перед началом работы
 
 Перед архивацией фермы SharePoint в Azure необходимо выполнить некоторые действия.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем продолжить, [установили и подготовили Azure Backup Server](backup-azure-microsoft-azure-backup.md) для защиты рабочих нагрузок.
 
 ### <a name="protection-agent"></a>Агент защиты
 
-Агент Azure Backup необходимо установить на все серверы, где работает SharePoint или SQL Server, а также на все остальные серверы, входящие в ферму SharePoint. Дополнительные сведения о настройке агента защиты см. в статье [Настройка защиты для SharePoint](https://technet.microsoft.com/library/hh758034\(v=sc.12\).aspx).  Единственное исключение состоит в том, что агент устанавливается только на один интерфейсный веб-сервер. Для Azure Backup Server необходимо установить агент только на один сервер WFE, который будет служить точкой входа для защиты.
+Агент Azure Backup необходимо установить на все серверы, где работает SharePoint или SQL Server, а также на все остальные серверы, входящие в ферму SharePoint. Дополнительные сведения о настройке агента защиты см. в статье [Настройка защиты для SharePoint](https://docs.microsoft.com/system-center/dpm/deploy-dpm-protection-agent?view=sc-dpm-2019).  Единственное исключение состоит в том, что агент устанавливается только на один интерфейсный веб-сервер. Для Azure Backup Server необходимо установить агент только на один сервер WFE, который будет служить точкой входа для защиты.
 
 ### <a name="sharepoint-farm"></a>Ферма SharePoint
 
 На каждые 10 млн элементов, содержащихся в ферме, требуется не менее 2 ГБ памяти в томе, где находится папка MABS. Эта память нужна для создания каталога. Чтобы сервер MABS мог восстанавливать определенные элементы (семейства веб-сайтов, сайты, списки, библиотеки документов, папки, документов или элементы списков), операция создания каталога формирует список URL-адресов, сохраняемых в каждой базе данных контента. Этот список URL-адресов можно просмотреть в консоли администратора MABS, открыв панель восстанавливаемых элементов в области задач **Восстановление**.
 
-### <a name="sql-server"></a>SQL Server;
+### <a name="sql-server"></a>SQL Server
 
 Azure Backup Server работает под учетной записью LocalSystem. Чтобы сервер MABS мог создавать резервные копии баз данных SQL Server, эта учетная запись должна иметь права системного администратора для того сервера, на котором выполняется SQL Server. Установите для параметра NT AUTHORITY\SYSTEM значение *sysadmin* на сервере под управлением SQL Server, для которого нужно создать резервную копию.
 
@@ -63,12 +63,12 @@ Azure Backup Server работает под учетной записью LocalS
 
 1. На интерфейсном веб-сервере откройте командную строку и перейдите в папку [путь установки MABS]\bin\.
 2. Введите ConfigureSharePoint -EnableSharePointProtection.
-3. Введите учетные данные администратора фермы. Эта учетная запись должна быть членом локальной группы администраторов на интерфейсном веб-сервере. Если администратор фермы не является локальным администратором, предоставьте на интерфейсном веб-сервере следующие разрешения:
+3. Введите учетные данные администратора фермы. Эта учетная запись должна быть членом локальной группы администраторов на интерфейсном веб-сервере. Если администратор фермы не является локальным администратором, предоставьте учетной записи следующие разрешения на интерфейсном веб-сервере.
    * Предоставьте группе WSS_Admin_WPG полный доступ к папке DPM (%Program Files%\Microsoft Azure Backup\DPM).
    * Предоставьте группе WSS_Admin_WPG право чтения реестра DPM (HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Data Protection Manager).
 
 > [!NOTE]
-> После каждого изменения в учетных данных администратора фермы SharePoint файл ConfigureSharePoint.exe необходимо перезапускать.
+> При изменении учетных данных администратора фермы SharePoint потребуется повторно запустить ConfigureSharePoint. exe.
 >
 >
 
@@ -127,7 +127,7 @@ Azure Backup Server работает под учетной записью LocalS
     ![Online_backup_schedule](./media/backup-azure-backup-sharepoint/specify-online-backup-schedule.png)
 
     > [!NOTE]
-    > MABS поддерживает не более двух резервных копий в Azure за день на основе последней доступной точки резервного копирования диска. Служба архивации Azure также может контролировать объем пропускной способности глобальной сети, который может использоваться для архивации в пиковые и непиковые часы, с помощью [регулирования сети службы архивации Azure](https://azure.microsoft.com/documentation/articles/backup-configure-vault/#enable-network-throttling).
+    > MABS поддерживает не более двух резервных копий в Azure за день на основе последней доступной точки резервного копирования диска. Azure Backup также может управлять объемом пропускной способности глобальной сети, которую можно использовать для резервного копирования в пиковые и непиковые часы с помощью [Azure Backup регулирования сети](backup-windows-with-mars-agent.md#enable-network-throttling).
     >
     >
 11. В зависимости от выбранного расписания архивации на странице **Укажите политику хранения в сети** выберите политику хранения для ежедневных, еженедельных, ежемесячных и ежегодных точек архивации.
@@ -143,7 +143,7 @@ Azure Backup Server работает под учетной записью LocalS
     ![Online_replica](./media/backup-azure-backup-sharepoint/online-replication.png)
 13. Просмотрите выбранные параметры на странице **Сводка** и нажмите кнопку **Создать группу**. После создания группы защиты появится сообщение об успешном выполнении операции.
 
-    ![summary](./media/backup-azure-backup-sharepoint/summary.png)
+    ![Сводка](./media/backup-azure-backup-sharepoint/summary.png)
 
 ## <a name="restore-a-sharepoint-item-from-disk-by-using-mabs"></a>Восстановление элемента SharePoint с диска с помощью MABS
 
@@ -226,7 +226,7 @@ Azure Backup Server работает под учетной записью LocalS
 
     ![MABS SharePoint Protection11](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection13.png)
 
-    После завершения каталогизации состояние изменится на *Успешно*. Нажмите кнопку **Закрыть**
+    После завершения каталогизации состояние изменится на *Успешно*. Нажмите кнопку **Закрыть**.
 
     ![MABS SharePoint Protection12](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection14.png)
 4. Щелкните объект SharePoint на вкладке MABS **Восстановление**, чтобы получить структуру базы данных контента. Щелкните элемент правой кнопкой мыши и выберите **Восстановить**.
@@ -234,7 +234,7 @@ Azure Backup Server работает под учетной записью LocalS
     ![MABS SharePoint Protection13](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection15.png)
 5. Выполните процедуру восстановления, описанную ранее в этой статье, чтобы восстановить базу данных содержимого SharePoint с диска.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. статью [Резервное копирование сервера Exchange Server в службу Azure Backup с помощью Azure Backup Server](backup-azure-exchange-mabs.md).
 См. статью [Резервное копирование баз данных SQL Server в Azure с помощью Azure Backup Server](backup-azure-sql-mabs.md).

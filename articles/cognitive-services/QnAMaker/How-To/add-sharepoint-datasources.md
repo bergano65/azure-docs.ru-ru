@@ -1,40 +1,38 @@
 ---
 title: Файлы SharePoint — QnA Maker
-titleSuffix: Azure Cognitive Services
 description: Добавьте защищенные источники данных SharePoint в базу знаний, чтобы расширить базу знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 06/24/2019
-ms.author: diberry
-ms.openlocfilehash: e28f144c33cbdf253603cb38ca56a4d304afd474
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.date: 02/20/2020
+ms.openlocfilehash: 93f17e79834b412ce0babf220ba13649ae07718c
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843298"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83660313"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Добавление защищенного источника данных SharePoint в базу знаний
 
-Добавьте защищенные источники данных SharePoint в базу знаний, чтобы расширить базу знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory.
+Добавьте защищенные облачные источники данных SharePoint в базу знаний, чтобы расширить базу знаний с вопросами и ответами, которые могут быть защищены с помощью Active Directory.
 
 При добавлении защищенного документа SharePoint в базу знаний в качестве диспетчера QnA Maker необходимо запросить разрешение Active Directory для QnA Maker. После того как это разрешение предоставляется диспетчеру Active Directory для QnA Maker доступа к SharePoint, его не нужно предоставлять повторно. Каждое последующее добавление документа к базе знаний не требует авторизации, если оно находится в том же ресурсе SharePoint.
 
 Если QnA Maker диспетчер базы знаний не является диспетчером Active Directory, необходимо установить связь с диспетчером Active Directory, чтобы завершить этот процесс.
 
+## <a name="prerequisites"></a>Предварительные требования
+
+* В облачном SharePoint-QnA Maker для разрешений используется Microsoft Graph. Если SharePoint находится в локальной среде, вы не сможете извлечь из SharePoint, так как Microsoft Graph не сможет определить разрешения.
+* Формат URL-QnA Maker поддерживает только URL-адреса SharePoint, которые создаются для общего доступа и имеют формат`https://\*.sharepoint.com`
+
 ## <a name="add-supported-file-types-to-knowledge-base"></a>Добавить Поддерживаемые типы файлов в базу знаний
 
 В базу знаний можно добавить все [типы файлов](../Concepts/content-types.md) , поддерживаемые QnA Maker, с сайта SharePoint. Если файловый ресурс защищен, может потребоваться предоставить [разрешения](#permissions) .
 
-1. В библиотеке с сайтом SharePoint выберите меню с многоточием для файла `...`.
+1. В библиотеке с сайтом SharePoint выберите меню с многоточием для файла, `...` .
 1. Скопируйте URL-адрес файла.
 
    ![Получите URL-адрес файла SharePoint, выбрав меню с многоточием файла, а затем скопировав URL-адрес.](../media/add-sharepoint-datasources/get-sharepoint-file-url.png)
 
-1. На портале QnA Maker на странице **Параметры** [добавьте URL-адрес](edit-knowledge-base.md#add-datasource) базы знаний.
+1. На портале QnA Maker на странице **Параметры** добавьте URL-адрес базы знаний.
 
 ### <a name="images-with-sharepoint-files"></a>Изображения с файлами SharePoint
 
@@ -46,7 +44,7 @@ ms.locfileid: "76843298"
 ![Explanation or description of image](URL of public image)
 ```
 
-Текст в квадратных скобках, `[]`, объясняет изображение. URL-адрес в круглых скобках, `()`, является прямой ссылкой на изображение.
+Текст в квадратных скобках, `[]` посвященный изображению. URL-адрес в круглых скобках, `()` — это прямая ссылка на изображение.
 
 При проверке пары QnA на интерактивной панели тестирования на QnA Maker портале отображается изображение вместо текста Markdown. Это позволит получить общий доступ к образу из клиентского приложения.
 
@@ -71,7 +69,7 @@ ms.locfileid: "76843298"
 
 ### <a name="active-directory-manager-grant-file-read-access-to-qna-maker"></a>Диспетчер Active Directory: предоставление доступа к файлу для чтения QnA Maker
 
-Диспетчеру Active Directory (не диспетчеру QnA Maker) необходимо предоставить доступ к ресурсу SharePoint QnA Maker, выбрав [эту ссылку](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=id_token&scope=Files.Read%20Files.Read.All%20Sites.Read.All%20User.Read%20User.ReadBasic.All%20profile%20openid%20email&client_id=c2c11949-e9bb-4035-bda8-59542eb907a6&redirect_uri=https%3A%2F%2F www.qnamaker.ai%3A%2FCreate&state=68) , чтобы авторизовать приложение портала QnA Maker SharePoint Enterprise, чтобы иметь разрешения на чтение файлов.
+Диспетчеру Active Directory (не диспетчеру QnA Maker) необходимо предоставить доступ к ресурсу SharePoint QnA Maker, выбрав [эту ссылку](https://login.microsoftonline.com/common/oauth2/v2.0/authorize?response_type=id_token&scope=Files.Read%20Files.Read.All%20Sites.Read.All%20User.Read%20User.ReadBasic.All%20profile%20openid%20email&client_id=c2c11949-e9bb-4035-bda8-59542eb907a6&redirect_uri=https%3A%2F%2Fwww.qnamaker.ai%3A%2FCreate&state=68) , чтобы авторизовать приложение портала QnA Maker SharePoint Enterprise, чтобы иметь разрешения на чтение файлов.
 
 ![Диспетчер Azure Active Directory предоставляет разрешение в интерактивном режиме](../media/add-sharepoint-datasources/aad-manager-grants-permission-interactively.png)
 
@@ -113,15 +111,15 @@ The Active Directory manager will get a pop-up window requesting permissions to 
 -->
 ### <a name="grant-access-from-the-azure-active-directory-admin-center"></a>Предоставление доступа из центра администрирования Azure Active Directory
 
-1. Active Directory Manager входит в портал Azure и открывает **[корпоративные приложения](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps)** .
+1. Active Directory Manager входит в портал Azure и открывает **[корпоративные приложения](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps)**.
 
-1. Найдите `QnAMakerPortalSharePoint` выберите QnA Maker приложение.
+1. Найдите `QnAMakerPortalSharePoint` и выберите приложение QnA Maker.
 
-    [![поиска Кнамакерпорталшарепоинт в списке корпоративных приложений](../media/add-sharepoint-datasources/search-enterprise-apps-for-qna-maker.png)](../media/add-sharepoint-datasources/search-enterprise-apps-for-qna-maker.png#lightbox)
+    [![Поиск Кнамакерпорталшарепоинт в списке корпоративных приложений](../media/add-sharepoint-datasources/search-enterprise-apps-for-qna-maker.png)](../media/add-sharepoint-datasources/search-enterprise-apps-for-qna-maker.png#lightbox)
 
 1. В разделе **Безопасность**перейдите к разделу **разрешения**. Выберите **предоставить согласие администратора для Организации**.
 
-    [![выбрать пользователя, прошедшего проверку подлинности, для администратора Active Directory](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png)](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png#lightbox)
+    [![Выберите пользователя, прошедшего проверку подлинности, для Active Directory администратора](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png)](../media/add-sharepoint-datasources/grant-aad-permissions-to-enterprise-app.png#lightbox)
 
 1. Выберите учетную запись входа с разрешениями на предоставление разрешений для Active Directory.
 
@@ -185,7 +183,7 @@ Use the **@microsoft.graph.downloadUrl** from the previous section as the `fileu
 
 -->
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Совместная работа над базой знаний](collaborate-knowledge-base.md)
+> [Совместная работа с базой знаний](collaborate-knowledge-base.md)

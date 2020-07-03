@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Sequr | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с приложением Sequr | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Sequr.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2eed00aab4296cb5352e74d9e6bfc014f2340646
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67091084"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sequr"></a>Руководство по Интеграция Azure Active Directory с Sequr
+# <a name="tutorial-azure-active-directory-integration-with-sequr"></a>Руководство. Интеграция Azure Active Directory с Sequr
 
 В этом руководстве описано, как интегрировать Sequr с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Sequr обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "67091084"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Sequr, вам потребуются:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка с поддержкой единого входа Sequr.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -112,7 +112,7 @@ ms.locfileid: "67091084"
 
     ![image](common/both-advanced-urls.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login.sequr.io`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login.sequr.io`.
 
     b. В текстовом поле **Состояние ретранслятора** вы получите это значение, которое описано далее в руководстве.
 
@@ -124,7 +124,7 @@ ms.locfileid: "67091084"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -146,7 +146,7 @@ ms.locfileid: "67091084"
 
     ![Конфигурация Sequr](./media/sequr-tutorial/configure3.png)
 
-    a. В текстовое поле **URL-адрес единого входа для поставщика удостоверений** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    а. В текстовое поле **URL-адрес единого входа для поставщика удостоверений** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     b. Перетащите файл **сертификата**, который вы скачали с портала Azure, или вручную введите содержимое сертификата.
 
@@ -220,5 +220,5 @@ ms.locfileid: "67091084"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

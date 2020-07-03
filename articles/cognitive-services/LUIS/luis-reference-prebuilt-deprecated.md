@@ -8,22 +8,22 @@ ms.custom: seodec18
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 8c15ebacd0fd959fe789d7f3a9b33b16ee29a1b2
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 46da828b7553fdf9cdded817febd3bb95cd4cbb9
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68933624"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78270680"
 ---
 # <a name="deprecated-prebuilt-entities-in-a-luis-app"></a>Устаревшие предварительно созданные сущности
 Перечисленные ниже предварительно созданные сущности являются нерекомендуемыми, поэтому их нельзя добавлять в новые приложения LUIS.
 
 * **Datetime**. Если в существующих приложениях LUIS используется сущность **datetime**, ее следует заменить на **datetimeV2**, хотя сущность datetime продолжает функционировать в ранее созданных приложениях, которые ее используют.
-* **Geography**. Существующие приложения LUIS, в которых используется сущность **geography**, будут поддерживаться до декабря 2018 г.
-* **Encyclopedia**. Существующие приложения LUIS, в которых используется сущность **encyclopedia**, будут поддерживаться до декабря 2018 г.
+* **Geography**. Существующие приложения LUIS, в которых используется сущность **geography**, будут поддерживаться до декабря 2018 г.
+* **Encyclopedia**. Существующие приложения LUIS, в которых используется сущность **encyclopedia**, будут поддерживаться до декабря 2018 г.
 
 ## <a name="geography-culture"></a>Язык и региональные параметры для сущности geography
 Сущность **geography** доступна только в языковом стандарте `en-us`.
@@ -43,7 +43,7 @@ ms.locfileid: "68933624"
 Сущность **encyclopedia** доступна только в языковом стандарте `en-US`.
 
 #### <a name="encyclopedia-subtypes"></a>Подтипы сущности encyclopedia
-Встроенная сущность encyclopedia включает более 100 подтипов, показанных в таблице ниже. Кроме того, сущности encyclopedia часто сопоставляются с несколькими типами. Например, запрос Ronald Reagan возвращает следующие данные: 
+Встроенная сущность encyclopedia включает более 100 подтипов, показанных в таблице ниже. Кроме того, сущности encyclopedia часто сопоставляются с несколькими типами. Например, запрос Ronald Reagan возвращает следующие данные:
 
 ```json
 {
@@ -163,5 +163,5 @@ ms.locfileid: "68933624"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-Узнайте больше о сущностях [dimension](luis-reference-prebuilt-dimension.md), [email](luis-reference-prebuilt-email.md) и [number](luis-reference-prebuilt-number.md). 
+Узнайте больше о сущностях [dimension](luis-reference-prebuilt-dimension.md), [email](luis-reference-prebuilt-email.md) и [number](luis-reference-prebuilt-number.md).
 

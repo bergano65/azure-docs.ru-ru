@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 04/03/2018
 ms.author: srrengar
 ms.openlocfilehash: b9a448ff41c66fa3a38c124f7acde062bacbe9ba
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980208"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79282501"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Агрегирование и сбор событий с помощью Диагностики Azure для Windows
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "75980208"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 В этом руководстве используются инструменты, представленные ниже.
 
 * [Azure Resource Manager](../azure-resource-manager/management/overview.md)
@@ -35,7 +35,7 @@ ms.locfileid: "75980208"
 
 ## <a name="service-fabric-platform-events"></a>События платформы Service Fabric
 Service Fabric настраивает несколько [стандартных каналов ведения журнала](service-fabric-diagnostics-event-generation-infra.md), и для нескольких из них расширение предварительно настраивает отправку данных мониторинга и диагностики в таблицу хранилища или в другое расположение.
-  * [Рабочие события](service-fabric-diagnostics-event-generation-operational.md): операции высокого уровня, выполняемые платформой Service Fabric. Некоторые примеры: создание приложений и служб, изменение состояния узлов и сведения об обновлении. Они передаются в рамках журналов трассировки событий для Windows (ETW).
+  * [Операционные события](service-fabric-diagnostics-event-generation-operational.md). операции более высокого уровня, выполняемые платформой Service Fabric. Некоторые примеры: создание приложений и служб, изменение состояния узлов и сведения об обновлении. Они передаются в рамках журналов трассировки событий для Windows (ETW).
   * [События модели программирования на основе Reliable Actors](service-fabric-reliable-actors-diagnostics.md).
   * [События модели программирования на основе Reliable Services](service-fabric-reliable-services-diagnostics.md).
 
@@ -89,7 +89,7 @@ Service Fabric настраивает несколько [стандартных
 },
 ```
 
- Затем добавьте этот ресурс в раздел parameters сразу после определений учетной записи хранения между `supportLogStorageAccountName`. Замените текст заполнителя *storage account name goes here* именем учетной записи хранения, которую вы намерены использовать.
+ Затем добавьте этот ресурс в раздел parameters сразу после определений учетной записи хранения между `supportLogStorageAccountName`. Замените *имя учетной записи хранения* текста заполнителя именем учетной записи хранения, которую вы хотите.
 
 ```json
     "applicationDiagnosticsStorageAccountType": {
@@ -351,7 +351,7 @@ Service Fabric настраивает несколько [стандартных
 >[!NOTE]
 >Если вы укажете на портале или в шаблоне Resource Manager неправильный ключ Application Insights, придется вручную заменить его, а затем обновить или повторно развернуть кластер.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы правильно настроили диагностику Azure, данные из журнала трассировки событий Windows и журнала EventSource станут появляться в таблице хранилища. Если вы решили использовать Azure Monitor журналы, Kibana или любую другую платформу аналитики и визуализации данных, которая не настроена непосредственно в шаблоне диспетчер ресурсов, обязательно настройте платформу для чтения данных из этих таблиц хранилища. Сделать это для журналов Azure Monitor довольно тривиальное, и оно объясняется в [анализе событий и журнала](service-fabric-diagnostics-event-analysis-oms.md). В этом смысле Application Insights — это особый случай, так как это решение можно настроить при настройке расширения диагностики. Дополнительные сведения об Application Insights см. в [этой статье](service-fabric-diagnostics-event-analysis-appinsights.md).
 

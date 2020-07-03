@@ -1,5 +1,5 @@
 ---
-title: Файловый ресурс Azure — не удалось удалить файлы из файлового ресурса Azure
+title: Azure file share – failed to delete files from Azure file share (Общая папка Azure — сбой удаления файлов)
 description: Выявление и устранение неполадок при удалении файлов из файлового ресурса Azure.
 author: v-miegge
 ms.topic: troubleshooting
@@ -11,13 +11,13 @@ ms.subservice: common
 services: storage
 tags: ''
 ms.openlocfilehash: d3a3763a8964810626bcdc47da230a9ee406f1f8
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74196479"
 ---
-# <a name="azure-file-share--failed-to-delete-files-from-azure-file-share"></a>Файловый ресурс Azure — не удалось удалить файлы из файлового ресурса Azure
+# <a name="azure-file-share--failed-to-delete-files-from-azure-file-share"></a>Azure file share – failed to delete files from Azure file share (Общая папка Azure — сбой удаления файлов)
 
 Сбой удаления файлов из общей папки Azure может иметь несколько симптомов:
 
@@ -30,13 +30,13 @@ ms.locfileid: "74196479"
 
 **Симптом 2.**
 
-Недостаточно квот для обработки этой команды
+Недостаточно квот для обработки команды
 
 ## <a name="cause"></a>Причина:
 
 Ошибка 1816 возникает при достижении верхнего предела одновременных открытых дескрипторов, разрешенных для файла, на компьютере, на котором размонтируется общая папка. Дополнительные сведения см. в статье [Контрольный список производительности и масштабируемости службы хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-performance-checklist).
 
-## <a name="resolution"></a>Способы устранения:
+## <a name="resolution"></a>Разрешение
 
 Сократите число параллельно открытых дескрипторов, закрыв некоторые дескрипторы.
 
@@ -44,7 +44,7 @@ ms.locfileid: "74196479"
 
 ### <a name="install-the-latest-azure-powershell-module"></a>Установите последнюю версию модуля Azure PowerShell
 
-* [Страница для установки модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps)
+* [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps)
 
 ### <a name="connect-to-azure"></a>Подключение к Azure:
 
@@ -72,7 +72,7 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 
 ## <a name="example-result"></a>Пример результата:
 
-|хандлеид|Путь|ClientIp|клиентпорт|опентиме|ластреконнекттиме|ИД|ParentId|SessionId|
+|хандлеид|Path|ClientIp|клиентпорт|опентиме|ластреконнекттиме|FileId|ParentId|SessionId|
 |---|---|---|---|---|---|---|---|---|
 |259101229083|---|10.222.10.123|62758|2019-10-05|12:16:50Z|0|0|9507758546259807489|
 |259101229131|---|10.222.10.123|62758|2019-10-05|12:36:20Z|0|0|9507758546259807489|
@@ -88,7 +88,7 @@ $Context = New-AzStorageContext -StorageAccountName "StorageAccountName" -Storag
 # Close-AzStorageFileHandle -Context $Context -ShareName "FileShareName" -Path 'New folder/test.zip' -CloseAll
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок службы файлов Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md)
 * [Устранение неполадок службы файлов Azure в Linux](storage-troubleshoot-linux-file-connection-problems.md)

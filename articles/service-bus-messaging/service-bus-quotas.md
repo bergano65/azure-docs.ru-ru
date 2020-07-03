@@ -15,13 +15,13 @@ ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 7a6d8e56d7f70d637b2c963814b66e6e7cb3a907
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76759573"
 ---
-# <a name="service-bus-quotas"></a>Квоты служебной шины
+# <a name="service-bus-quotas"></a>Квоты на служебную шину
 В этом разделе перечислены основные квоты и пороговые значения регулирования при обмене сообщениями через служебную шину Azure.
 
 ## <a name="messaging-quotas"></a>Квоты обмена сообщениями

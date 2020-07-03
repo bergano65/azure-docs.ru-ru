@@ -32,7 +32,7 @@
           href: infrastructure-sql.md
         - name: Операции
           href: infrastructure-operations.md
-        - name: Мониторинг
+        - name: Наблюдение
           href: infrastructure-monitoring.md
         - name: Целостность
           href: infrastructure-integrity.md
@@ -50,8 +50,6 @@
       href: steps-secure-identity.md
     - name: Преимущества входа без пароля
       href: ad-passwordless.md
-    - name: Выбор аутентификации Azure AD
-      href: choose-ad-authn.md
 - name: Безопасность сети
   items:
     - name: Общие сведения о безопасности
@@ -87,9 +85,9 @@
     - name: Безопасность базы данных
       items:
         - name: Обзор
-          href: database-security-overview.md
+          href: ../../sql-database/sql-database-security-overview.md
         - name: Рекомендации
-          href: database-best-practices.md
+          href: ../../sql-database/sql-database-security-best-practice.md
         - name: Контрольный список по безопасности
           href: database-security-checklist.md
     - name: Руководство по обеспечению безопасности службы хранилища
@@ -117,6 +115,8 @@
       href: log-audit.md
     - name: Управление безопасностью и мониторинг
       href: management-monitoring-overview.md
+    - name: Улучшение удаленного управления
+      href: management.md
     - name: Операционная безопасность
       items:
         - name: Обзор

@@ -1,24 +1,21 @@
 ---
-title: Применение скидки на резервирование к Базе данных Azure для MySQL
-description: Применение скидки на резервирование к Базе данных Azure для MySQL
+title: Сведения о скидке на резервирование (База данных Azure для MySQL)
+description: Узнайте, как применяется скидка на резервирование к серверам Базы данных Azure для MySQL.
 author: kummanish
 ms.author: manishku
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/17/2019
-ms.openlocfilehash: 7be3a7913559947be1291db35ac3531f152dfae9
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.date: 02/13/2020
+ms.openlocfilehash: e47153b24234480ee52847f07e723c02fabb3113
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995550"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509437"
 ---
 # <a name="how-a-reservation-discount-is-applied-to-azure-database-for-mysql"></a>Применение скидки на резервирование к Базе данных Azure для MySQL
 
-После того как вы купили зарезервированную емкость Базы данных Azure для MySQL, скидка на резервирование автоматически применяется к серверам MySQL, атрибуты и количество которых совпадают с резервированием. Резервирование охватывает только затраты на вычисление для Базы данных Azure для MySQL. С вас взимается плата за хранение и сеть по обычным тарифам. 
+После того как вы купили зарезервированную емкость Базы данных Azure для MySQL, скидка на резервирование автоматически применяется к серверам MySQL, атрибуты и количество которых совпадают с резервированием. Резервирование охватывает только затраты на вычисление для Базы данных Azure для MySQL. С вас взимается плата за хранение и сеть по обычным тарифам.
 
 ## <a name="how-reservation-discount-is-applied"></a>Применение скидки на резервирование
 
@@ -44,5 +41,6 @@ ms.locfileid: "75995550"
 
 Чтобы больше узнать о применении резервирований Azure и просмотреть отчеты о начислении платы за использование, ознакомьтесь со статьей [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage-ea).
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="next-steps"></a>Дальнейшие действия
+
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

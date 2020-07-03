@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: expressroute
 author: jaredr80
 ms.service: expressroute
@@ -9,15 +9,15 @@ ms.date: 10/29/2019
 ms.author: jaredro
 ms.custom: include file
 ms.openlocfilehash: 1f6c65d6d8da275d6c52ac2802092dbb5e4e507d
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73182270"
 ---
 ### <a name="what-is-expressroute-direct"></a>Что такое ExpressRoute Direct?
 
-ExpressRoute Direct позволяет пользователям подключаться непосредственно к глобальной сети Майкрософт в стратегически распределенных по всему миру расположениях пиринга. ExpressRoute Direct предоставляет подключение с двумя 100 или 10 Гбит/с, которое поддерживает подключение "активный/активный" в масштабе. 
+ExpressRoute Direct дает пользователям возможность подключения непосредственно к глобальной сети корпорации Майкрософт в стратегически распределенных по всему миру расположениях пиринга. ExpressRoute Direct предоставляет подключение с двумя 100 или 10 Гбит/с, которое поддерживает подключение "активный/активный" в масштабе. 
 
 ### <a name="how-do-customers-connect-to-expressroute-direct"></a>Как клиенты подключаются к ExpressRoute Direct? 
 

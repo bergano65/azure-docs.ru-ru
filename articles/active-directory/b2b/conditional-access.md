@@ -12,10 +12,10 @@ manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c0b6ceba4c3c9202e2024b5c163c0e98bb6cbf55
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74272999"
 ---
 # <a name="conditional-access-for-b2b-collaboration-users"></a>Условный доступ для пользователей службы совместной работы B2B
@@ -23,7 +23,7 @@ ms.locfileid: "74272999"
 ## <a name="multi-factor-authentication-for-b2b-users"></a>Многофакторная идентификация для пользователей B2B
 Благодаря службе совместной работы Azure AD B2B организации могут применять политики многофакторной проверки подлинности (MFA) к пользователям B2B. Эти политики можно применять на уровне клиента, приложения или отдельных пользователей точно так же, как для штатных сотрудников и членов организации. Политики MFA применяются на уровне организации ресурсов.
 
-Пример:
+Пример.
 1. Администратор или информационный работник компании А приглашает пользователя из компании Б использовать приложение *Foo*, принадлежащее компании A.
 2. При доступе в приложение *Foo*, принадлежащее компании A, настроено обязательное прохождение MFA.
 3. Когда пользователь из компании Б пытается получить доступ к приложению *Foo*, размещенному в клиенте компании А, ему предлагается пройти многофакторную проверку подлинности.
@@ -57,13 +57,13 @@ ms.locfileid: "74272999"
    ```
    Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
    ```
-   Пример:
+   Например:
 
    ```
    Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
    ```
 
-3. Сброс метода многофакторной проверки подлинности для определенного пользователя, после которого пользователь службы совместной работы B2B должен заново задать методы проверки. Пример:
+3. Сброс метода многофакторной проверки подлинности для определенного пользователя, после которого пользователь службы совместной работы B2B должен заново задать методы проверки. Пример.
 
    ```
    Reset-MsolStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@ WoodGroveAzureAD.onmicrosoft.com
@@ -105,7 +105,7 @@ ms.locfileid: "74272999"
 
 Сейчас политики выполнения входа на основе рисков не применяются к пользователям B2B, так как оценка рисков выполняется в домашней организации этих пользователей.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие статьи о службе совместной работы Azure AD B2B перечислены ниже.
 

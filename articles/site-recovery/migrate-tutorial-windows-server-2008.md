@@ -9,15 +9,15 @@ ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
 ms.openlocfilehash: 20fe29a6588891c35520db01ac0403fb5b3a85d7
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73936138"
 ---
 # <a name="migrate-servers-running-windows-server-2008-to-azure"></a>Перенос серверов под управлением Windows Server 2008 в Azure
 
-В этом руководстве показано, как перенести локальные серверы под управлением Windows Server 2008 или 2008 R2 в портал Azure с использованием Azure Site Recovery. Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве показано, как перенести локальные серверы под управлением Windows Server 2008 или 2008 R2 в портал Azure с использованием Azure Site Recovery. В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Подготовка локальной среды к миграции
@@ -30,7 +30,7 @@ ms.locfileid: "73936138"
 В разделе "Ограничения и известные проблемы" перечислены некоторые ограничения и обходные пути для проблем, которые могут возникнуть во время переноса компьютеров Windows Server 2008 в Azure. 
 
 > [!NOTE]
-> Теперь вы можете выполнить миграцию из локальной среды в Azure с помощью службы "Миграция Azure". [Узнайте больше](../migrate/migrate-services-overview.md).
+> Теперь вы можете выполнить миграцию из локальной среды в Azure с помощью службы "Миграция Azure". [Подробнее](../migrate/migrate-services-overview.md).
 
 
 ## <a name="supported-operating-systems-and-environments"></a>Поддерживаемые операционные системы и среды
@@ -90,18 +90,18 @@ ms.locfileid: "73936138"
 2. Подготовка локальной среды [VMware](vmware-azure-tutorial-prepare-on-premises.md).
 
 
-## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
+## <a name="create-a-recovery-services-vault"></a>Создание хранилища Служб восстановления
 
 1. Войдите на [портал Azure](https://portal.azure.com) > **Службы восстановления**.
 2. Щелкните **Создать ресурс** > **Средства управления** > **Backup and Site Recovery**.
 3. В поле **Имя** укажите понятное имя **W2K8-migration**. Если у вас есть несколько подписок, выберите нужную.
 4. Создайте группу ресурсов **w2k8migrate**.
-5. Укажите регион Azure. Сведения о поддерживаемых регионах см. в разделе "Географическая доступность" на странице [цен на службу Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-6. Для быстрого доступа к хранилищу из панели мониторинга щелкните **Закрепить на панели мониторинга**, а затем — **Создать**.
+5. Укажите регион Azure. Сведения о поддерживаемых регионах см. в разделе о доступности по регионам на странице [Цены на Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
+6. Для быстрого доступа к хранилищу из панели мониторинга щелкните **Закрепить на панели мониторинга**, а затем — **Создать**.
 
    ![Новое хранилище](media/migrate-tutorial-windows-server-2008/migrate-windows-server-2008-vault.png)
 
-Новое хранилище появится в колонке **Панель мониторинга** в разделе **Все ресурсы** и на основной странице **Хранилища служб восстановления**.
+Новое хранилище появится в колонке **Панель мониторинга** в разделе **Все ресурсы** и на основной странице **Хранилища Служб восстановления**.
 
 
 ## <a name="prepare-your-on-premises-environment-for-migration"></a>Подготовка локальной среды к миграции

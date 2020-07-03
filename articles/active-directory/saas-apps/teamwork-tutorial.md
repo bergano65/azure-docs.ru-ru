@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Teamwork.com | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Teamwork.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Teamwork.com.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d0b407f29e4dda532ef12019f8d0a2a273832987
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67595242"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-teamworkcom"></a>Руководство по Интеграция Azure Active Directory с Teamwork.com
+# <a name="tutorial-azure-active-directory-integration-with-teamworkcom"></a>Руководство по интеграции Azure Active Directory с Teamwork.com
 
 В этом руководстве описано, как интегрировать Teamwork.com с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Teamwork.com обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "67595242"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Teamwork.com, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Teamwork.com с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "67595242"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Teamwork.com](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.teamwork.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.teamwork.com`.
 
     b. В текстовое поле **Идентификатор (сущности)** введите URL-адрес:
 
@@ -126,7 +126,7 @@ ms.locfileid: "67595242"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -202,4 +202,4 @@ ms.locfileid: "67595242"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

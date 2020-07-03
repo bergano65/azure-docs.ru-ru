@@ -6,34 +6,34 @@
       href: private-link-overview.md
 - name: Краткие руководства
   items:
-    - name: Создание частной конечной точки
-      items:
-        - name: Портал Azure
-          href: create-private-endpoint-portal.md
-        - name: Azure CLI
-          href: create-private-endpoint-cli.md
-        - name: Azure PowerShell
-          href: create-private-endpoint-powershell.md
-    - name: Создание службы "Приватный канал"
-      items:
-        - name: Портал Azure
-          href: create-private-link-service-portal.md
-        - name: Azure PowerShell
-          href: create-private-link-service-powershell.md
-        - name: Azure CLI
-          href: create-private-link-service-cli.md
+    - name: Создание частной конечной точки с помощью портала
+      href: create-private-endpoint-portal.md
+    - name: Создание частной конечной точки с помощью PowerShell
+      href: create-private-endpoint-powershell.md
+    - name: Создание частной конечной точки с помощью Azure CLI
+      href: create-private-endpoint-cli.md
+    - name: Создание службы "Приватный канал" с помощью портала
+      href: create-private-link-service-portal.md
+    - name: Создание службы "Приватный канал" с помощью PowerShell
+      href: create-private-link-service-powershell.md
+    - name: Создание службы "Приватный канал" с помощью Azure CLI
+      href: create-private-link-service-cli.md
 - name: Основные понятия
   items:
     - name: Частная конечная точка
       href: private-endpoint-overview.md
     - name: Служба "Приватный канал"
       href: private-link-service-overview.md
+    - name: Интеграция с частной конечной точкой DNS
+      href: private-endpoint-dns.md
 - name: Практическое руководство
   items:
     - name: Частное подключение к учетной записи хранения
       href: create-private-endpoint-storage-portal.md
     - name: "Частное подключение к учетной записи Cosmos\_DB"
       href: create-private-endpoint-cosmosdb-portal.md
+    - name: Частное подключение к веб-приложению
+      href: create-private-endpoint-webapp-portal.md
     - name: Отключение сетевых политик для частной конечной точки
       href: disable-private-endpoint-network-policy.md
     - name: Отключение сетевых политик для службы "Приватный канал"
@@ -53,7 +53,7 @@
     - name: Azure PowerShell
       href: /powershell/module/az.network
     - name: .NET
-      href: /api/overview/azure/virtual-network
+      href: /dotnet/api/overview/azure/virtual-network
     - name: Java
       href: /java/api/
     - name: Node.js
@@ -74,8 +74,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
     - name: Блог о сетях
       href: 'https://azure.microsoft.com/blog/topics/networking'
-    - name: Форум по сетям
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Страница с вопросами о службе "Сеть" (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
     - name: Отзыв о работе сети
       href: 'https://feedback.azure.com/forums/217313-networking?category_id=77469'
     - name: Цены

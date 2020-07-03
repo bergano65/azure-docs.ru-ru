@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
-ms.openlocfilehash: 17ed10d424d606091bd2b7d6f3e325955c48a5a2
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: c66b521b5cd75825fcafe07b24d5d527c45f5153
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74894204"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79135927"
 ---
 # <a name="manage-container-properties-and-metadata-with-net"></a>Управление свойствами контейнера и метаданными с помощью .NET
 
-Контейнеры больших двоичных объектов поддерживают системные свойства и определяемые пользователем метаданные в дополнение к содержащимся в них данным. В этой статье показано, как управлять свойствами системы и определяемыми пользователем метаданными с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage/client).
+Контейнеры больших двоичных объектов поддерживают системные свойства и определяемые пользователем метаданные в дополнение к содержащимся в них данным. В этой статье показано, как управлять свойствами системы и определяемыми пользователем метаданными с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
 
 ## <a name="about-properties-and-metadata"></a>Сведения о свойствах и метаданных
 
@@ -30,7 +30,7 @@ ms.locfileid: "74894204"
 > [!IMPORTANT]
 > Если обнаружится, что значения свойств или метаданных для ресурса хранилища не были заполнены, проверьте вызывает ли ваш код метод **FetchAttributes** или **FetchAttributesAsync**.
 
-Пары "имя-значение" метаданных являются допустимыми заголовками HTTP и должны соответствовать всем ограничениям, регулирующим заголовки HTTP. Имена метаданных должны быть допустимыми именами HTTP-заголовков и допустимыми C# идентификаторами, могут содержать только символы ASCII и должны обрабатываться без учета регистра. Значения метаданных, содержащие символы, отличные от ASCII, должны быть в кодировке Base64 или в кодировке URL.
+Пары "имя-значение" метаданных являются допустимыми заголовками HTTP и должны соответствовать всем ограничениям, регулирующим заголовки HTTP. Имена метаданных должны представлять собой допустимые имена HTTP-заголовков и допустимые идентификаторы C#, могут содержать только символы ASCII и должны обрабатываться без учета регистра. Значения метаданных, содержащие символы, отличные от ASCII, должны быть в кодировке Base64 или в кодировке URL.
 
 ## <a name="retrieve-container-properties"></a>Получение свойств контейнера
 
@@ -128,7 +128,7 @@ public static async Task ReadContainerMetadataAsync(CloudBlobContainer container
 
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Операция получения свойств контейнера](/rest/api/storageservices/get-container-properties)
 - [Операция задания метаданных контейнера](/rest/api/storageservices/set-container-metadata)

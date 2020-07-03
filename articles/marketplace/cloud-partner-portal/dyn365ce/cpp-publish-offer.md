@@ -1,19 +1,18 @@
 ---
 title: Публикация Dynamics 365 для предложения приложения "участие клиента" | Azure Marketplace
 description: Устаревшая статья CPP, связанная со статьей ПК; WAS "описывает процесс и шаги для публикации предложения приложения Dynamics 365 для взаимодействия с клиентами в AppSource Marketplace".
-services: Azure, AppSource, Marketplace, Cloud Partner Portal, Dynamics 365 for Customer Engagement
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/28/2018
-ms.author: v-chjen
-ms.openlocfilehash: cf2961f5def6933b46cdca099a176d952fb940b2
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: aa66d8c4d7d70cda5a2c4e8eebfe54e360844150
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824713"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278337"
 ---
 # <a name="publish-a-dynamics-365-for-customer-engagement-offer"></a>Публикация предложения Dynamics 365 for Customer Engagement
 

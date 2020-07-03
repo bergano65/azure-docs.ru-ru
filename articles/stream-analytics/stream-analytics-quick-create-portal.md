@@ -8,13 +8,13 @@ ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
 ms.openlocfilehash: 4abf5078a005f9d928397d9666e7f2bc55d65f19
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75431552"
 ---
-# <a name="quickstart-create-a-stream-analytics-job-by-using-the-azure-portal"></a>Краткое руководство. Создание задания Stream Analytics с помощью портала Azure
+# <a name="quickstart-create-a-stream-analytics-job-by-using-the-azure-portal"></a>Краткое руководство по созданию задания Stream Analytics с помощью портала Azure
 
 В этом кратком руководстве описано, как приступить к созданию заданий Stream Analytics. С его помощью вы определите задание Stream Analytics, в рамках которого считываются потоковые данные в реальном времени и фильтруются сообщения со значениями температуры выше 27. В рамках задания Stream Analytics будут считываться данные из Центра Интернета вещей, затем данные будут преобразовываться и записываться в контейнер в хранилище BLOB-объектов. Входные данные, используемые в этом кратком руководстве, создаются онлайн-симулятором Raspberry Pi. 
 
@@ -43,7 +43,7 @@ ms.locfileid: "75431552"
 
    ![Создание центра Интернета вещей](./media/stream-analytics-quick-create-portal/create-iot-hub.png)
 
-4. По завершении выберите **Next: Set size and scale** (Далее: задать размер и масштаб).
+4. Выберите **Next: Set size and scale** (Далее: задать размер и масштаб).
 
 5. Выберите **ценовую категорию и уровень масштабирования**. Для этого краткого руководства выберите уровень **F1 — "Бесплатный"** , если он доступен для вашей подписки. Дополнительные сведения см. на странице [цен на Центр Интернета вещей Azure](https://azure.microsoft.com/pricing/details/iot-hub/).
 

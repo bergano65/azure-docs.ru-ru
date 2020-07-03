@@ -8,13 +8,13 @@
       href: whats-new.md
     - name: Часто задаваемые вопросы
       items:
-        - name: Вопросы о Миграции Azure
+        - name: Общие сведения
           href: resources-faq.md
-        - name: Вопросы об устройстве Миграции Azure
+        - name: Устройство службы "Миграция Azure"
           href: common-questions-appliance.md
-        - name: 'Вопросы об обнаружении, оценке и визуализации зависимостей'
+        - name: Средство оценки сервера и анализ зависимостей
           href: common-questions-discovery-assessment.md
-        - name: Вопросы о переносе сервера
+        - name: Средство миграции сервера
           href: common-questions-server-migration.md
 - name: Учебники
   items:
@@ -74,39 +74,49 @@
           href: migrate-appliance.md
         - name: Требования к устройству репликации
           href: migrate-replication-appliance.md
+    - name: Архитектура устройства службы "Миграция Azure"
+      href: migrate-appliance-architecture.md
     - name: Архитектура миграции для Hyper-V
       href: hyper-v-migration-architecture.md
-    - name: Архитектура миграции на основе агента
+    - name: Архитектура миграции на основе агента VMware
       href: agent-based-migration-architecture.md
-    - name: Рекомендации по оценке
-      href: best-practices-assessment.md
     - name: Обзор оценок
       href: concepts-assessment-calculation.md
-    - name: Визуализация зависимостей
+    - name: Рекомендации по оценке
+      href: best-practices-assessment.md
+    - name: Общие сведения об анализе зависимостей
       href: concepts-dependency-visualization.md
 - name: Практические руководства
   items:
-    - name: Работа с предыдущей версией
-      href: migrate-v1.md
     - name: Создание и администрирование проектов Миграции Azure
       href: create-manage-projects.md
-    - name: Развертывание устройства VMware
-      href: how-to-set-up-appliance-vmware.md
-    - name: Развертывание устройства Hyper-V
-      href: how-to-set-up-appliance-hyper-v.md
-    - name: Развертывание устройства физического сервера
-      href: how-to-set-up-appliance-physical.md
-    - name: 'Обнаружение приложений, ролей и функций'
-      href: how-to-discover-applications.md
     - name: Добавление средства впервые
       href: how-to-add-tool-first-time.md
+    - name: Подготовка к работе с помощью средств независимых поставщиков программного обеспечения (Movere)
+      href: prepare-isv-movere.md
     - name: Добавление средств оценки
       href: how-to-assess.md
+    - name: Развертывание устройства службы "Миграция Azure"
+      items:
+        - name: Развертывание модуля с помощью шаблона (VMware)
+          href: how-to-set-up-appliance-vmware.md
+        - name: Развертывание модуля с помощью шаблона (Hyper-V)
+          href: how-to-set-up-appliance-hyper-v.md
+        - name: Развертывание модуля с помощью скрипта (VMware или Hyper-V)
+          href: deploy-appliance-script.md
+        - name: Развертывание устройства для физических серверов
+          href: how-to-set-up-appliance-physical.md
+        - name: Развертывание модуля в Azure для государственных организаций
+          href: deploy-appliance-script-government.md
+    - name: Ограничение области обнаружения для виртуальных машин VMware
+      href: set-discovery-scope.md
+    - name: 'Обнаружение приложений, ролей и функций'
+      href: how-to-discover-applications.md
     - name: Группирование компьютеров для оценки
       href: how-to-create-a-group.md
-    - name: Группирование компьютеров с помощью визуализации зависимостей
+    - name: Анализ зависимостей компьютера (с помощью агентов)
       href: how-to-create-group-machine-dependencies.md
-    - name: Группирование компьютеров с помощью визуализации зависимостей без агентов
+    - name: Анализ зависимостей компьютера (без агентов)
       href: how-to-create-group-machine-dependencies-agentless.md
     - name: Создание оценки
       href: how-to-create-assessment.md
@@ -116,10 +126,14 @@
       href: how-to-modify-assessment.md
     - name: Добавление средств миграции
       href: how-to-migrate.md
+    - name: 'Перенос виртуальных машин VMware на виртуальные машины Azure, зашифрованные с помощью SSE и CMK'
+      href: how-to-migrate-vmware-vms-with-cmk-disks.md
     - name: Подготовка компьютеров к миграции
       href: prepare-for-migration.md
     - name: Удаление проекта службы "Миграция Azure"
       href: how-to-delete-project.md
+    - name: Работа с предыдущей версией
+      href: migrate-v1.md
     - name: Масштабирование оценки и миграции
       items:
         - name: Оценка большого количества виртуальных машин VMware
@@ -154,8 +168,8 @@
       href: 'https://azure.microsoft.com/pricing/details/azure-migrate/'
     - name: UserVoice
       href: 'https://aka.ms/AzureMigrateUservoice'
-    - name: Форум
-      href: 'https://aka.ms/AzureMigrateForum'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-migrate.html'
     - name: Блог
       href: 'https://azure.microsoft.com/blog/tag/azure-migrate/'
     - name: Служба "Миграция Azure"

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 09/01/2019
 ms.author: juliako
 ms.openlocfilehash: f0dede42891069bb5d01ddc33f3797c20c5493d7
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72968742"
 ---
 # <a name="automatically-identify-and-transcribe-multi-language-content-preview"></a>Автоматическое обнаружение и транскрипция содержимого на нескольких языках (Предварительная версия)
@@ -39,7 +39,7 @@ ms.locfileid: "72968742"
 
 ## <a name="choosing-multilingual-identification-on-indexing-with-api"></a>Выбор многоязычной идентификации при индексировании с помощью API
 
-При индексировании видео или его повторном [индексировании](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-Index-Video?) с помощью API выберите параметр `multi-language detection` в параметре `sourceLanguage`.
+При индексировании видео или его повторном [индексировании](https://api-portal.videoindexer.ai/docs/services/operations/operations/Re-Index-Video?) с помощью API- `multi-language detection` интерфейса выберите параметр `sourceLanguage` в параметре.
 
 ### <a name="model-output"></a>Выходные данные модели
 
@@ -73,7 +73,7 @@ ms.locfileid: "72968742"
 },
 ```
 
-## <a name="guidelines-and-limitations"></a>Правила и ограничения
+## <a name="guidelines-and-limitations"></a>Рекомендации и ограничения
 
 * Набор поддерживаемых языков: Английский, французский, немецкий, испанский.
 * Поддержка многоязычного содержимого с поддержкой трех языков.

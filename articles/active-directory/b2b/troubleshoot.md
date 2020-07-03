@@ -5,26 +5,28 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: troubleshooting
-ms.date: 11/12/2019
+ms.date: 03/19/2020
 tags: active-directory
 ms.author: mimart
-author: v-miegge
-manager: dcscontentpm
+author: msmimart
 ms.reviewer: mal
 ms.custom:
 - it-pro
 - seo-update-azuread-jan"
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d970bbc5619bc25a1cf5d6abbdcf41fb4a0ae196
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 5f8bafb04d0a5d9c6d25a7ed7e155888d492e9fc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77195527"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80050782"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
 В этой статье описаны способы устранения распространенных проблем, возникающих в службе совместной работы Azure Active Directory (Azure AD) B2B.
+
+   > [!IMPORTANT]
+   > **Начиная с 31 марта 2021**г. Корпорация Майкрософт больше не будет поддерживать погашение приглашений, создавая неуправляемые учетные записи и клиенты Azure AD для сценариев совместной работы B2B. В ходе подготовки мы советуем клиентам использовать [однократную проверку подлинности с помощью секретного кода](one-time-passcode.md). Мы будем рады вашим отзывам о данной общедоступной предварительной версии и вам понравится создавать еще больше способов совместной работы.
 
 ## <a name="ive-added-an-external-user-but-do-not-see-them-in-my-global-address-book-or-in-the-people-picker"></a>После добавления внешнего пользователя он не отображается в глобальной адресной книге или в средстве выбора пользователей
 
@@ -38,7 +40,7 @@ ms.locfileid: "77195527"
 
 ## <a name="invitations-have-been-disabled-for-directory"></a>Приглашения отключены для каталога
 
-Если вы получили уведомления о том, что у вас нет разрешений на приглашение пользователей, убедитесь, что учетная запись пользователя имеет право приглашать внешних пользователей в разделе Azure Active Directory > Параметры пользователя > внешних пользователей > управления внешними параметрами совместной работы:
+Если вы получили уведомления о том, что у вас нет разрешений на приглашение пользователей, убедитесь, что учетная запись пользователя имеет право приглашать внешних пользователей в разделе Azure Active Directory > параметры пользователя > внешних пользователей > управления внешними параметрами совместной работы:
 
 ![Снимок экрана, показывающий параметры внешних пользователей](media/troubleshoot/external-user-settings.png)
 
@@ -103,7 +105,6 @@ ms.locfileid: "77195527"
 
 В облаке Azure для государственных организаций США служба совместной работы B2B поддерживается только между клиентами, которые находятся в облаке Azure для государственных организаций США и поддерживают службу совместной работы B2B. Если вы приглашаете пользователя в клиенте, который не входит в облако Azure для государственных организаций США или что еще не поддерживает службу совместной работы B2B, вы получите сообщение об ошибке. Дополнительные сведения и ограничения см. в разделе [варианты Azure Active Directory Premium P1 и P2](https://docs.microsoft.com/azure/azure-government/documentation-government-services-securityandidentity#azure-active-directory-premium-p1-and-p2).
 
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Получение поддержки для службы совместной работы B2B](get-support.md)

@@ -9,10 +9,10 @@ ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: b802cab7d52fd886770c326e97d0378a0da64762
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75752005"
 ---
 [!INCLUDE [P2S FAQ All](vpn-gateway-faq-p2s-all-include.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "75752005"
  
 ### <a name="is-there-a-change-in-the-number-of-sstp-connections-supported-with-radius-authentication-what-is-the-maximum-number-of-sstp-and-ikev2-connections-supported"></a>Изменилось ли количество поддерживаемых SSTP-подключений с аутентификацией RADIUS? Каково максимальное количество поддерживаемых SSTP- и IKEv2-подключений?
 
-Количество поддерживаемых шлюзом SSTP-подключений с аутентификацией RADIUS не менялось. По-прежнему доступно 128 подключений по протоколу SSTP, но их количество зависит от SKU шлюза для IKEv2. Дополнительные сведения о количестве поддерживаемых подключений см. в разделе [SKU шлюзов](../articles/vpn-gateway/vpn-gateway-about-vpngateways.md#gwsku).
+Количество поддерживаемых шлюзом SSTP-подключений с аутентификацией RADIUS не менялось. По-прежнему доступно 128 подключений по протоколу SSTP, но их количество зависит от SKU шлюза для IKEv2.Дополнительные сведения о количестве поддерживаемых подключений см. в разделе [SKU шлюзов](../articles/vpn-gateway/vpn-gateway-about-vpngateways.md#gwsku).
  
 ### <a name="what-is-the-difference-between-doing-certificate-authentication-using-a-radius-server-vs-using-azure-native-certificate-authentication-by-uploading-a-trustedcertificate-to-azure"></a>В чем разница между аутентификацией на основе сертификата с помощью сервера RADIUS и собственной аутентификацией Azure на основе сертификата (путем передачи доверенного сертификата в Azure)?
 

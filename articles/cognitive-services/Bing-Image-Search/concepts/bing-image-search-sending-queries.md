@@ -1,5 +1,5 @@
 ---
-title: Настройка и предложить запросов поиска образа — API поиска изображений Bing
+title: Настройка и предложение запросов поиска изображений — API Bing для поиска изображений
 titleSuffix: Azure Cognitive Services
 description: Дополнительные сведения о настройке запросов поиска, отправляемых в API Bing для поиска изображений.
 services: cognitive-services
@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: aahi
 ms.openlocfilehash: d833b017004365e9dad7241e360f42ff41a55883
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "67542740"
 ---
-# <a name="customize-and-suggest-image-search-queries"></a>Настройка и предлагаемые запросы поиска изображений
+# <a name="customize-and-suggest-image-search-queries"></a>Настройка и предложение запросов поиска изображений
 
-Воспользуйтесь этой статьей, чтобы узнать, как настроить запросы и предложить поисковый запрос для отправки API Bing для поиска изображений.
+Используйте эту статью, чтобы узнать, как настроить запросы и предложить условия поиска для отправки в API Bing для поиска изображений.
 
 ## <a name="suggest-search-terms"></a>Предложить условия поиска
 
@@ -30,7 +30,7 @@ ms.locfileid: "67542740"
 
 Если Bing может сегментировать исходный поисковый запрос, возвращаемый объект [Images](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) содержит поле `pivotSuggestions`. Сводка предложений может отображаться в виде необязательных поисковых запросов для пользователя. Например, если исходный запрос был *Microsoft Surface*, Bing может разделить запрос на *Microsoft* и *Surface* и предложить сведения для каждого из них. Эти предложения могут отображаться в виде необязательных поисковых запросов для пользователя.
 
-В следующем примере показаны сводные предложения для *Microsoft Surface*.  
+В следующем примере показаны предложения сведения для *Microsoft Surface*:  
 
 ```json
 {
@@ -160,6 +160,6 @@ The following shows an example Bing implementation that uses expanded queries. I
 
 [!INCLUDE [cognitive-services-bing-throttling-requests](../../../../includes/cognitive-services-bing-throttling-requests.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы еще ни разу не использовали API Bing для поиска изображений, ознакомьтесь со следующей [статьей](../quickstarts/csharp.md). Если вы ищете что-нибудь посложнее, ознакомьтесь с руководством по созданию [одностраничного веб-приложения](../tutorial-bing-image-search-single-page-app.md).

@@ -4,15 +4,15 @@ description: В этой статье представлен обзор бран
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 10/04/2019
+ms.date: 03/18/2020
 ms.author: victorh
 ms.topic: overview
-ms.openlocfilehash: 7b43a6bdac254493da8693b55158e15746e76dc3
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 49024c86d09f5cdd9e8b04d5a49f60021660b0c4
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73488290"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "79475793"
 ---
 # <a name="what-is-azure-web-application-firewall"></a>Что такое брандмауэр веб-приложения Azure?
 
@@ -24,9 +24,12 @@ ms.locfileid: "73488290"
 
 Решение WAF может быстрее реагировать на угрозы безопасности по сравнению с защитой каждого отдельного веб-приложения благодаря установке исправлений известных уязвимостей в центральном расположении.
 
-WAF можно развернуть с помощью Шлюза приложений Azure и Azure Front Door Service. В настоящее время WAF имеет возможности, настраиваемые для каждой конкретной службы. Дополнительные сведения о возможностях WAF для каждой службы см. в обзоре для каждой службы.
+## <a name="supported-service"></a>Поддерживаемые службы
 
-## <a name="next-steps"></a>Дополнительная информация
+WAF можно развернуть с помощью Шлюза приложений Azure, Azure Front Door и службы сети доставки содержимого (CDN) Azure от корпорации Майкрософт. WAF в Azure CDN сейчас предоставляется в общедоступной предварительной версии.  Возможности WAF можно настроить для каждой конкретной службы. Дополнительные сведения о возможностях WAF для каждой службы см. в обзоре для каждой службы.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о брандмауэре веб-приложения Azure в Шлюзе приложений Azure см. в [этой статье](./ag/ag-overview.md).
 - Дополнительные сведения о брандмауэре веб-приложения Azure в Azure Front Door Service см. в [этой статье](./afds/afds-overview.md).
+- Дополнительные сведения о брандмауэре веб-приложения Azure в службе Azure CDN см. в [этой статье](./cdn/cdn-overview.md).

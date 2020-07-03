@@ -1,26 +1,26 @@
 ---
-title: Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия)
+title: Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия) с помощью PowerShell
 description: Сведения о переносе конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия)
 author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: conceptual
-ms.date: 10/25/2019
+ms.date: 02/18/2020
 ms.author: victorh
-ms.openlocfilehash: f23c9c030b94fe6f563b4e850a78d2d11db7ec25
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 498863c98f308a9fd9b47f80328d572187475901
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73516335"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77443114"
 ---
-# <a name="how-to-migrate-azure-firewall-configurations-to-azure-firewall-policy-preview"></a>Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия)
+# <a name="migrate-azure-firewall-configurations-to-azure-firewall-policy-preview-using-powershell"></a>Перенос конфигураций брандмауэра Azure в политику брандмауэра Azure (Предварительная версия) с помощью PowerShell
 
 [!INCLUDE [Preview](../../includes/firewall-manager-preview-notice.md)]
 
 Вы можете использовать скрипт Azure PowerShell для переноса существующих конфигураций брандмауэра Azure в ресурс политики брандмауэра Azure. Затем можно развернуть политику с помощью диспетчера брандмауэра Azure.
 
-Скрипт `AZFWMigrationScript.ps1` создает Фиреваллполици с тремя объектами Рулеколлектионграуп для Аппликатионрулеколлектионс, Нетворкрулеколлектионс и NatRuleCollections соответственно. 
+`AZFWMigrationScript.ps1` Скрипт создает фиреваллполици с тремя объектами Рулеколлектионграуп для Аппликатионрулеколлектионс, Нетворкрулеколлектионс и NatRuleCollections соответственно. 
 
 Рулеколлектионграуп — это новая группировка верхнего уровня для коллекций правил для будущего расширения. Рекомендуется использовать указанные выше значения по умолчанию и автоматически выполнять на портале.
 
@@ -159,6 +159,6 @@ If ($azfw.NatRuleCollections.Count -gt 0) {
     Write-Host "Created NatRuleCollectionGroup "  $natRuleGroup.Name
 }
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о развертывании диспетчера брандмауэра Azure: [Обзор развертывания диспетчера брандмауэра Azure](deployment-overview.md).

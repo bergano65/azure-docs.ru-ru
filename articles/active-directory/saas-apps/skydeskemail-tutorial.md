@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory со SkyDesk Email | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory со SkyDesk Email | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SkyDesk Email.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: faaa5dcc435452d6ed9e0f2c5b481df1e352dfd2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67090429"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-skydesk-email"></a>Руководство по Интеграция Azure Active Directory со SkyDesk Email
+# <a name="tutorial-azure-active-directory-integration-with-skydesk-email"></a>Учебник. Интеграция Azure Active Directory со SkyDesk Email
 
 В этом руководстве описано, как интегрировать SkyDesk Email с Azure Active Directory (Azure AD).
 Интеграция SkyDesk Email с Azure AD дает приведенные ниже преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67090429"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD со SkyDesk Email, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка SkyDesk Email с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,7 +118,7 @@ ms.locfileid: "67090429"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -157,7 +157,7 @@ ms.locfileid: "67090429"
 
     ![Настройка единого входа](./media/skydeskemail-tutorial/tutorial_skydeskemail_57.png)
 
-    a. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
     b. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте **URL-адрес выхода**, скопированный с портала Azure.
 
@@ -165,9 +165,9 @@ ms.locfileid: "67090429"
 
     d. Щелкните **Get Key From File** (Получить ключ из файла), чтобы выбрать сертификат, скачанный с портала Azure, затем нажмите кнопку **Open** (Открыть), чтобы передать этот сертификат.
 
-    д. В поле **Алгоритм** задайте значение **RSA**.
+    д) В поле **Algorithm** (Алгоритм) задайте значение **RSA**.
 
-    Е. Нажмите кнопку **ОК** , чтобы сохранить изменения.
+    е) Нажмите кнопку **ОК** , чтобы сохранить изменения.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -243,5 +243,5 @@ ms.locfileid: "67090429"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -7,30 +7,30 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 11/07/2019
+ms.date: 04/02/2020
 ms.author: erhopf
-ms.openlocfilehash: eb1d8609a39dc1a18c25d3d01e182db067c01ff6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: efa5e6d576f7bd2965353ce3493fda2e06567180
+ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75469123"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80659191"
 ---
 **Выберите целевую среду**
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
 [!INCLUDE [dotnet](./dotnet.md)]
 
-# <a name="unitytabunity"></a>[Unity](#tab/unity)
+# <a name="unity"></a>[Unity](#tab/unity)
 
 [!INCLUDE [unity](./unity.md)]
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 [!INCLUDE [uwp](./uwp.md)]
 
-# <a name="xamarintabxaml"></a>[Xamarin](#tab/xaml)
+# <a name="xamarin"></a>[Xamarin](#tab/xaml)
 
 [!INCLUDE [xamarin](./xamarin.md)]
 

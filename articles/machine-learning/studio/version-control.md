@@ -9,14 +9,17 @@ ms.topic: conceptual
 author: likebupt
 ms.author: keli19
 ms.date: 10/27/2016
-ms.openlocfilehash: 1b76147ac48d0bfb7b7bb1302e33b21e5ababb77
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 3f22ce3b1fb750e33e35d35ee1fe5ad1893abcfd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169075"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79204142"
 ---
 # <a name="application-lifecycle-management-in-azure-machine-learning-studio-classic"></a>Управление жизненным циклом приложений в Машинное обучение Azure Studio (классическая модель)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
 Машинное обучение Azure Studio (классическая модель) — это инструмент для разработки экспериментов машинного обучения, которые поддерживаются в облачной платформе Azure. Это решение позволяет объединить в рамках одной платформы возможности Visual Studio IDE и масштабируемой облачной службы. Вы можете использовать стандартные методики управления жизненным циклом приложений (ALM) с управлением версиями различных ресурсов для автоматического выполнения и развертывания в Машинное обучение Azure Studio (классическая модель). В этой статье рассматриваются некоторые возможности и подходы.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -43,7 +46,7 @@ ms.locfileid: "77169075"
 Обратите внимание, что JSON-файл — это текстовое представление диаграммы эксперимента, которое может включать ссылку на такие ресурсы в рабочей области, как набор данных или обученные модели. Он не содержит сериализованную версию ресурса. Когда вы пытаетесь импортировать документ JSON обратно в рабочую область, ресурсы, на которые ссылается эксперимент, должны уже существовать, а их идентификаторы должны совпадать с идентификаторами ресурсов, ссылки на которые используются в эксперименте. Иначе вы не сможете получить доступ к импортированному эксперименту.
 
 ## <a name="versioning-trained-model"></a>Управление версиями обученной модели
-Обученная модель в Машинное обучение Azure Studio (классическая) сериализуется в формат, известный как iLearner-файл (`.iLearner`) и хранящийся в учетной записи хранилища BLOB-объектов Azure, связанной с рабочей областью. Получить копию iLearner можно с помощью API переобучения. В [этой статье](/azure/machine-learning/studio/retrain-machine-learning-model) объясняется, как работает API переобучения. Основные действия:
+Обученная модель в Машинное обучение Azure Studio (классическая) сериализуется в формат, известный как iLearner-файл (`.iLearner`), и хранится в учетной записи хранилища BLOB-объектов Azure, связанной с рабочей областью. Получить копию iLearner можно с помощью API переобучения. В [этой статье](/azure/machine-learning/studio/retrain-machine-learning-model) объясняется, как работает API переобучения. Основные действия:
 
 1. Настройте обучающий эксперимент.
 2. Добавьте выходной порт веб-службы в модуль "Обучение модели" или модуль, который создает обученную модель, например Настройка гиперпараметра модели" или "Создание модели R".
@@ -82,10 +85,10 @@ ms.locfileid: "77169075"
 ## <a name="automate-experiment-execution-and-deployment"></a>Автоматическое выполнение и развертывание эксперимента
 Важным аспектом управления жизненным циклом приложений является возможность автоматического выполнения и развертывания приложения. В Машинное обучение Azure Studio (классическая модель) это можно сделать с помощью [модуля PowerShell](https://aka.ms/amlps). Ниже приведен пример комплексных действий, которые относятся к стандартному автоматизированному процессу выполнения и развертывания ALM с помощью [модуля PowerShell машинное обучение Azure Studio (классическая модель)](https://aka.ms/amlps). Для выполнения каждого шага используется один или несколько командлетов PowerShell.
 
-1. [Отправьте набор данных](https://github.com/hning86/azuremlps#upload-amldataset).
+1. [Отправка набора данных](https://github.com/hning86/azuremlps#upload-amldataset).
 2. Скопируйте обучающий эксперимент в рабочую область из [рабочей области](https://github.com/hning86/azuremlps#copy-amlexperiment) или [коллекции](https://github.com/hning86/azuremlps#copy-amlexperimentfromgallery) или [импортируйте](https://github.com/hning86/azuremlps#import-amlexperimentgraph)[экспортированный](https://github.com/hning86/azuremlps#export-amlexperimentgraph) эксперимент с локального диска.
 3. [Обновите набор данных](https://github.com/hning86/azuremlps#update-amlexperimentuserasset) в обучающем эксперименте.
-4. [Выполните обучающий эксперимент](https://github.com/hning86/azuremlps#start-amlexperiment).
+4. [Запустите обучающий эксперимент](https://github.com/hning86/azuremlps#start-amlexperiment).
 5. [Повысьте уровень обученной модели](https://github.com/hning86/azuremlps#promote-amltrainedmodel).
 6. [Скопируйте прогнозный эксперимент](https://github.com/hning86/azuremlps#copy-amlexperiment) в рабочую область.
 7. [Обновите обученную модель](https://github.com/hning86/azuremlps#update-amlexperimentuserasset) в прогнозном эксперименте.
@@ -93,7 +96,7 @@ ms.locfileid: "77169075"
 9. [Разверните веб-службу](https://github.com/hning86/azuremlps#new-amlwebservice) из прогнозного эксперимента.
 10. Протестируйте конечную точку [RRS](https://github.com/hning86/azuremlps#invoke-amlwebservicerrsendpoint) или [BES](https://github.com/hning86/azuremlps#invoke-amlwebservicebesendpoint) веб-службы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Скачайте модуль [PowerShell для машинное обучение Azure Studio (классическая модель)](https://aka.ms/amlps) и начните АВТОМАТИЗИРОВАТЬ задачи ALM.
 * Узнайте, как [создавать большое число моделей машинного обучения и управлять ими, используя только один эксперимент](create-models-and-endpoints-with-powershell.md), с помощью PowerShell и API переобучения.
 * См. дополнительные сведения о [развертывании веб-служб машинного обучения Azure](deploy-a-machine-learning-web-service.md).

@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Перевод текста — Перевод текстов
+title: Краткое руководство. Перевод текста — Переводчик
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как перевести текст, используя API Перевода текстов.
+description: Из этого краткого руководства вы узнаете, как перевести текст, используя Переводчик.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -11,47 +11,37 @@ ms.topic: quickstart
 ms.date: 02/10/2020
 ms.author: erhopf
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 14407102f77c6cae7b8680485610293796807034
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: e8f0f3ff1b34701d45b0138a3c11795520c30a2f
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77118791"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83586665"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-translate-text"></a>Краткое руководство. применение API Перевода текстов для перевода текста;
+# <a name="quickstart-use-the-translator-to-translate-text"></a>Краткое руководство. Перевод текста с помощью Переводчика
 
-Из этого краткого руководства вы узнаете, как перевести текстовую строку с английского на немецкий, итальянский, японский и тайский с помощью REST API "Перевод текстов".
+Из этого краткого руководства вы узнаете, как перевести текстовую строку с английского на немецкий, итальянский, японский и тайский с помощью REST API Переводчика.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом API перевода текстов. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для работы с этим кратким руководством требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом Переводчика. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
 ::: zone pivot="programming-language-csharp"
-
 [!INCLUDE [C# quickstart](includes/translate-csharp.md)]
-
-::: zone-end
-
-::: zone pivot="programming-language-java"
-
-[!INCLUDE [Java quickstart](includes/translate-java.md)]
-
-::: zone-end
-
-::: zone pivot="programming-language-python"
-
-[!INCLUDE [Python quickstart](includes/translate-python.md)]
-
-::: zone-end
-
-::: zone pivot="programming-language-nodejs"
-
-[!INCLUDE [Node.js quickstart](includes/translate-nodejs.md)]
-
 ::: zone-end
 
 ::: zone pivot="programming-language-go"
-
 [!INCLUDE [Go quickstart](includes/translate-go.md)]
+::: zone-end
 
+::: zone pivot="programming-language-java"
+[!INCLUDE [Java quickstart](includes/translate-java.md)]
+::: zone-end
+
+::: zone pivot="programming-language-javascript"
+[!INCLUDE [Node.js quickstart](includes/translate-nodejs.md)]
+::: zone-end
+
+::: zone pivot="programming-language-python"
+[!INCLUDE [Python quickstart](includes/translate-python.md)]
 ::: zone-end
 
 ## <a name="see-also"></a>См. также раздел

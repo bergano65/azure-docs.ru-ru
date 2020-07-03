@@ -1,33 +1,30 @@
 ---
 title: Создание мобильного приложения, вызывающего веб-API | Службы
-titleSuffix: Microsoft identity platform
+titleSuffix: Microsoft identity platform | Azure
 description: Узнайте, как создать мобильное приложение, вызывающее веб-API (обзор)
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
-ms.reviwer: brandwe
+ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 6675d67299091325fcc3e12572a906716bf5b88d
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 1f90f7f23fbdf10b91d8dfc7cd00cca83cd32fbc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77132421"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80882579"
 ---
 # <a name="scenario-mobile-application-that-calls-web-apis"></a>Сценарий: мобильное приложение, вызывающее веб-API
 
 Узнайте, как создать мобильное приложение, вызывающее веб-API.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [Prerequisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
@@ -52,17 +49,18 @@ ms.locfileid: "77132421"
 
 - **Взаимодействие с пользователем — ключ**: разрешить пользователям видеть значение приложения перед запросом на вход. Запросите только необходимые разрешения.
 - **Поддержка всех конфигураций пользователей**. Многие мобильные бизнес-пользователи должны соблюдать политики условного доступа и политики соответствия устройств. Не забудьте обеспечить поддержку этих ключевых сценариев.
-- **Реализация единого входа (SSO)** . с помощью MSAL и платформы идентификации Майкрософт можно включить единый вход с помощью браузера или Microsoft Authenticator (и корпоративный портал Intune на устройстве Android).
+- **Реализация единого входа (SSO)**. с помощью MSAL и платформы идентификации Майкрософт можно включить единый вход с помощью браузера или Microsoft Authenticator (и корпоративный портал Intune на устройстве Android).
+- **Реализация режима общего устройства**. позволяет использовать приложение в сценариях с общими устройствами, например больницы, производство, розничная торговля и финансы. [Дополнительные сведения см. в статье поддержка общего режима устройства](msal-shared-devices.md).
 
 ## <a name="specifics"></a>Особенности
 
 Учитывайте следующие моменты при создании мобильного приложения на платформе Microsoft Identity.
 
 - В зависимости от платформы некоторые действия пользователя могут потребоваться при первом входе в систему. Например, для iOS требуется, чтобы приложения отображали взаимодействие с пользователем при первом использовании единого входа с помощью Microsoft Authenticator (и Корпоративный портал Intune на Android).
-- В iOS и Android MSAL может использовать внешний браузер для входа пользователей. Внешний браузер может отображаться поверх приложения. Вместо этого можно настроить конфигурацию для использования представлений в приложении.
+- В iOS и Android MSAL может использовать внешний браузер для входа пользователей. Внешний браузер может отображаться поверх приложения.
 - Никогда не используйте секрет в мобильном приложении. В этих приложениях секреты доступны для всех пользователей.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Интеграция приложений с Azure Active Directory](scenario-mobile-app-registration.md)
+> [Регистрация приложения](scenario-mobile-app-registration.md)

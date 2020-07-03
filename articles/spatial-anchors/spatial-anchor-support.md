@@ -9,10 +9,10 @@ ms.date: 02/24/2019
 ms.topic: troubleshooting
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 371cb9ade54da42af1ed75c3e9857b6d1a7a0f4f
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74276975"
 ---
 # <a name="azure-spatial-anchors-support-options"></a>Варианты поддержки пространственных привязок Azure
@@ -48,6 +48,6 @@ ms.locfileid: "74276975"
 
 Чтобы отправить отзыв, поделиться идеями или предложением для службы пространственных привязок Azure или проголосовать за идеи, которые были отправлены другими пользователями, посетите [Форум обратной связи по пространственной привязке Azure](https://feedback.azure.com/forums/919252-azure-spatial-anchors).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Часто задаваемые вопросы о пространственных привязках Azure см. на странице [часто задаваемых вопросов](spatial-anchor-faq.md) .

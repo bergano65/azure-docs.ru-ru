@@ -6,15 +6,15 @@ author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 02/21/2019
+ms.date: 05/26/2020
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 9432ac390b7677b3dea5aebc84cf23ef6e45db92
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 40a0429c4296426042e5baa58c9575ddb195cd7c
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595717"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996743"
 ---
 # <a name="search-edit-and-delete-projects"></a>Поиск, изменение и удаление проектов
 
@@ -34,7 +34,7 @@ Custom Translator предоставляет несколько способов
 
     ![Параметры фильтра для поиска проекта](media/how-to/how-to-search-project-filters.png)
 
-3.  Очистите фильтр, нажав кнопку "Очистить", чтобы просмотреть все проекты.
+3.  Очистите фильтр, чтобы просмотреть все проекты, нажав кнопку "очистить".
 
 
 ## <a name="edit-a-project"></a>Изменение проекта
@@ -63,6 +63,6 @@ Custom Translator предоставляет несколько способов
 
    ![Диалоговое окно подтверждения](media/how-to/how-to-delete-project-confirm.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Отправьте документы](how-to-upload-document.md), чтобы приступить к созданию пользовательской модели перевода.

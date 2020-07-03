@@ -1,19 +1,18 @@
 ---
 title: Вкладка "тестовый выпуск" в Dynamics 365 для приложения служб взаимодействия с клиентами | Azure Marketplace
 description: 'Устаревшая статья CPP, связанная со статьей ПК; WAS: "как настроить тестовый выпуск для предложения приложения Dynamics 365 для участия в AppSource Marketplace".'
-services: Azure, Marketplace, AppSource, Cloud Partner Portal, Dynamics 365 for Customer Engagement
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 0e201f6d54d46fab7120239b26a58e1d2b92020e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: ef464ad288127ad0440d4a80a2a3745887dea973
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824650"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80286614"
 ---
 # <a name="dynamics-365-for-customer-engagement-application-test-drive-tab"></a>Вкладка "Тестовый выпуск" в приложении Dynamics 365 for Customer Engagement
 

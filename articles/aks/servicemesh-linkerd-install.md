@@ -2,30 +2,29 @@
 title: Установка Linkerd в службе Kubernetes Azure (AKS)
 description: Узнайте, как установить и использовать Linkerd для создания сетки службы в кластере службы Kubernetes Azure (AKS).
 author: paulbouwer
-ms.service: container-service
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: f70052a62152a20f808c1e491a663d1406fbd407
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 419b61527b68299c82dec4f2f5da6b0220859cc1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73747709"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77593747"
 ---
 # <a name="install-linkerd-in-azure-kubernetes-service-aks"></a>Установка Linkerd в службе Kubernetes Azure (AKS)
 
 [Linkerd][linkerd-github] — это сервисная сеть с открытым исходным кодом и [проект инкубация кнкф][linkerd-cncf]. Linkerd — это ултралигхт служба, которая предоставляет функции, включающие управление трафиком, идентификацию службы, безопасность, надежность и наблюдаемость. Дополнительные сведения о Linkerd см. в официальной документации по [Linkerd и часто задаваемым][linkerd-faq] вопросам по [архитектуре Linkerd][linkerd-architecture] .
 
-В этой статье показано, как установить Linkerd. Двоичный файл клиента Linkerd `linkerd` устанавливается на клиентский компьютер, а компоненты Linkerd устанавливаются в кластер Kubernetes на AKS.
+В этой статье показано, как установить Linkerd. Двоичный `linkerd` файл клиента Linkerd устанавливается на клиентский компьютер, а компоненты Linkerd устанавливаются в кластер KUBERNETES на AKS.
 
 > [!NOTE]
-> Эти инструкции ссылаются на Linkerd версии `stable-2.6.0`.
+> Эти инструкции ссылаются на версию `stable-2.6.0`Linkerd.
 >
-> `stable-2.6.x` Linkerd можно запускать в `1.13+`версиях Kubernetes. Дополнительные стабильные и граничные версии Linkerd можно найти в [выпусках GitHub-Linkerd][linkerd-github-releases].
+> Linkerd `stable-2.6.x` можно использовать в версиях `1.13+`Kubernetes. Дополнительные стабильные и граничные версии Linkerd можно найти в [выпусках GitHub-Linkerd][linkerd-github-releases].
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Скачивание и установка двоичного файла клиента Linkerd Linkerd
@@ -34,9 +33,9 @@ ms.locfileid: "73747709"
 > * Доступ к панели мониторинга
 > * Удаление Linkerd из AKS
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
-В шагах, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным RBAC) и установили `kubectl` подключение к кластеру. Если вам нужна помощь по любому из этих элементов, см. [Краткое руководство по AKS][aks-quickstart].
+В действиях, описанных в этой статье, предполагается, что вы создали `1.13` кластер AKS (Kubernetes и выше, с включенным RBAC `kubectl` ) и установили подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
 
 Все Linkerd Pod должны быть запланированы для запуска на узлах Linux. Эта настройка используется по умолчанию в описанном ниже методе установки и не требует дополнительной настройки.
 
@@ -118,19 +117,19 @@ linkerd-version
 Status check results are √
 ```
 
-Теперь пора установить компоненты Linkerd. Используйте двоичные файлы `linkerd` и `kubectl` для установки компонентов Linkerd в кластере AKS. Пространство имен `linkerd` будет создано автоматически, и компоненты будут установлены в это пространство имен.
+Теперь пора установить компоненты Linkerd. Используйте `linkerd` двоичные `kubectl` файлы и для установки компонентов Linkerd в кластер AKS. `linkerd` Пространство имен будет создано автоматически, и компоненты будут установлены в это пространство имен.
 
 ```console
 linkerd install | kubectl apply -f -
 ```
 
-Linkerd развертывает несколько объектов. Вы увидите список из выходных данных команды `linkerd install` выше. Для завершения развертывания компонентов Linkerd в зависимости от среды кластера потребуется около одной минуты.
+Linkerd развертывает несколько объектов. Вы увидите список из выходных данных `linkerd install` команды выше. Для завершения развертывания компонентов Linkerd в зависимости от среды кластера потребуется около одной минуты.
 
 На этом этапе вы развернули Linkerd в кластере AKS. Чтобы убедиться в успешном развертывании Linkerd, перейдем к следующему разделу, чтобы [проверить установку Linkerd](#validate-the-linkerd-installation).
 
 ## <a name="validate-the-linkerd-installation"></a>Проверка установки Linkerd
 
-Убедитесь, что ресурсы были успешно созданы. Используйте команды [kubectl Get SVC][kubectl-get] и [kubectl Get Pod][kubectl-get] , чтобы запросить пространство имен `linkerd`, где компоненты Linkerd были установлены с помощью команды `linkerd install`:
+Убедитесь, что ресурсы были успешно созданы. Используйте команды [kubectl Get SVC][kubectl-get] и [kubectl Get Pod][kubectl-get] для запроса `linkerd` пространства имен, где компоненты Linkerd были установлены с помощью `linkerd install` команды:
 
 ```console
 kubectl get svc --namespace linkerd --output wide
@@ -164,7 +163,7 @@ linkerd-tap-5cd9fc566-ct988               2/2     Running   0          64s   10.
 linkerd-web-774c79b6d5-dhhwf              2/2     Running   0          65s   10.240.0.70   aks-linux-16165125-vmss000002   <none>           <none>
 ```
 
-Linkerd предоставляет команду через двоичный файл клиента `linkerd`, чтобы проверить успешность установки и настройки плоскости управления Linkerd.
+Linkerd предоставляет команду через `linkerd` клиентский двоичный файл, чтобы проверить успешность установки и настройки плоскости управления Linkerd.
 
 ```console
 linkerd check
@@ -227,7 +226,7 @@ Status check results are √
 
 ## <a name="access-the-dashboard"></a>Доступ к панели мониторинга
 
-Linkerd поставляется с панелью мониторинга, которая предоставляет представление о сети и рабочих нагрузках службы. Чтобы получить доступ к панели мониторинга, используйте команду `linkerd dashboard`. Эта команда использует [kubectl порт-Forward][kubectl-port-forward] для создания безопасного подключения между клиентским компьютером и соответствующими модулями Pod в кластере AKS. Затем панель мониторинга будет автоматически открыта в браузере по умолчанию.
+Linkerd поставляется с панелью мониторинга, которая предоставляет представление о сети и рабочих нагрузках службы. Чтобы получить доступ к панели мониторинга, `linkerd dashboard` используйте команду. Эта команда использует [kubectl порт-Forward][kubectl-port-forward] для создания безопасного подключения между клиентским компьютером и соответствующими модулями Pod в кластере AKS. Затем панель мониторинга будет автоматически открыта в браузере по умолчанию.
 
 ```console
 linkerd dashboard
@@ -256,7 +255,7 @@ Opening Linkerd dashboard in the default browser
 linkerd install --ignore-cluster | kubectl delete -f -
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об установке и параметрах конфигурации для Linkerd см. в следующих официальных руководствах по Linkerd:
 

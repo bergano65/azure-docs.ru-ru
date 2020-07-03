@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: tvoellm
 ms.reviewer: sngun
-ms.openlocfilehash: acdf268874b1dc1c24116ba36e2b4233a2702a5f
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 085280a8064e4d12ac63939ada7cdb296d47dc70
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064501"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80365785"
 ---
 # <a name="certificate-based-authentication-for-an-azure-ad-identity-to-access-keys-from-an-azure-cosmos-db-account"></a>Проверка подлинности на основе сертификата для удостоверения Azure AD для доступа к ключам из учетной записи Azure Cosmos DB
 
-Проверка подлинности на основе сертификатов позволяет выполнить проверку подлинности клиентского приложения с помощью Azure Active Directory (Azure AD) на основе сертификата клиента. Вы можете выполнить проверку подлинности на основе сертификатов на компьютере, где требуется идентификатор, например на локальном компьютере или виртуальной машине в Azure. После этого приложение сможет считывать ключи Azure Cosmos DB без ключей непосредственно в приложении. В этой статье описывается, как создать пример приложения Azure AD, настроить его для проверки подлинности на основе сертификата, войти в Azure с помощью нового удостоверения приложения, а затем получить ключи из учетной записи Azure Cosmos. В этой статье для настройки удостоверений используется Azure PowerShell и предоставляется C# пример приложения, которое проверяет подлинность ключей и обращается к ключам из учетной записи Azure Cosmos.  
+Проверка подлинности на основе сертификатов позволяет выполнить проверку подлинности клиентского приложения с помощью Azure Active Directory (Azure AD) на основе сертификата клиента. Вы можете выполнить проверку подлинности на основе сертификатов на компьютере, где требуется идентификатор, например на локальном компьютере или виртуальной машине в Azure. После этого приложение сможет считывать ключи Azure Cosmos DB без ключей непосредственно в приложении. В этой статье описывается, как создать пример приложения Azure AD, настроить его для проверки подлинности на основе сертификата, войти в Azure с помощью нового удостоверения приложения, а затем получить ключи из учетной записи Azure Cosmos. В этой статье используется Azure PowerShell для настройки удостоверений и предоставляется пример приложения на C#, которое проверяет подлинность ключей и обращается к ключам из учетной записи Azure Cosmos.  
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Установите [последнюю версию](/powershell/azure/install-az-ps) Azure PowerShell.
 
@@ -38,7 +38,7 @@ ms.locfileid: "77064501"
 
    * **Имя** — укажите имя приложения, оно может иметь любое имя, например "sampleApp".
    * **Поддерживаемые типы учетных записей** — выберите **учетные записи в этом каталоге организации (каталог по умолчанию)** , чтобы разрешить ресурсам в текущем каталоге доступ к этому приложению. 
-   * **URL-адрес перенаправления** — выберите приложение типа **Web** и укажите URL-адрес, по которому размещено ваше приложение. это может быть любой URL-адрес. В этом примере можно указать URL-адрес теста, например `https://sampleApp.com` он может быть, даже если приложение не существует.
+   * **URL-адрес перенаправления** — выберите приложение типа **Web** и укажите URL-адрес, по которому размещено ваше приложение. это может быть любой URL-адрес. В этом примере можно указать тестовый URL-адрес, например `https://sampleApp.com` , даже если приложение не существует.
 
    ![Регистрация примера веб-приложения](./media/certificate-based-authentication/register-sample-web-app.png)
 
@@ -142,17 +142,19 @@ New-AzureADApplicationKeyCredential -ObjectId $application.ObjectId -CustomKeyId
    ```powershell
    Login-AzAccount -ApplicationId <Your_Application_ID> -CertificateThumbprint $cert.Thumbprint -ServicePrincipal -Tenant <Tenant_ID_of_your_application>
 
-   Invoke-AzResourceAction -Action listKeys -ResourceType "Microsoft.DocumentDB/databaseAccounts" -ApiVersion "2015-04-08" -ResourceGroupName <Resource_Group_Name_of_your_Azure_Cosmos_account> -ResourceName <Your_Azure_Cosmos_Account_Name> 
+   Get-AzCosmosDBAccountKey `
+      -ResourceGroupName "<Resource_Group_Name_of_your_Azure_Cosmos_account>" `
+      -Name "<Your_Azure_Cosmos_Account_Name>" `
+      -Type "Keys"
    ```
 
-Предыдущая команда отобразит первичный и вторичный главные ключи учетной записи Azure Cosmos. Вы можете просмотреть журнал действий учетной записи Azure Cosmos, чтобы убедиться, что запрос на получение ключей выполнен, а событие инициировано приложением "sampleApp". 
- 
+Предыдущая команда отобразит первичный и вторичный главные ключи учетной записи Azure Cosmos. Вы можете просмотреть журнал действий учетной записи Azure Cosmos, чтобы убедиться, что запрос на получение ключей выполнен, а событие инициировано приложением "sampleApp".
+
 ![Проверка вызова Get Keys в Azure AD](./media/certificate-based-authentication/activity-log-validate-results.png)
 
+## <a name="access-the-keys-from-a-c-application"></a>Доступ к ключам из приложения C# 
 
-## <a name="access-the-keys-from-a-c-application"></a>Доступ к ключам из C# приложения 
-
-Этот сценарий также можно проверить путем доступа к ключам из C# приложения. Следующее C# консольное приложение, которое может получить доступ к ключам Azure Cosmos DB с помощью приложения, зарегистрированного в Active Directory. Перед запуском кода обязательно обновите ИД клиента, clientID, certName, имя группы ресурсов, идентификатор подписки, имя учетной записи Azure Cosmos. 
+Этот сценарий также можно проверить путем доступа к ключам из приложения C#. В следующем консольном приложении C#, которое может получить доступ к ключам Azure Cosmos DB с помощью приложения, зарегистрированного в Active Directory. Перед запуском кода обязательно обновите ИД клиента, clientID, certName, имя группы ресурсов, идентификатор подписки, имя учетной записи Azure Cosmos. 
 
 ```csharp
 using System;
@@ -241,8 +243,8 @@ namespace TodoListDaemonWithCert
 Как и в предыдущем разделе, журнал действий учетной записи Azure Cosmos можно просмотреть, чтобы убедиться, что событие запроса GET Keys инициировано приложением "sampleApp". 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Защита ключей Azure Cosmos с помощью Azure Key Vault](access-secrets-from-keyvault.md)
 
-* [Элементы управления безопасностью для Azure Cosmos DB](cosmos-db-security-controls.md)
+* [Базовый уровень безопасности для Azure Cosmos DB](security-baseline.md)

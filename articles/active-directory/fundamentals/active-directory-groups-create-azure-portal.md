@@ -14,10 +14,10 @@ ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c551a81788df8d68664abaa03f467a4521222d0
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73473431"
 ---
 # <a name="create-a-basic-group-and-add-members-using-azure-active-directory"></a>Создание простой группы и добавление в нее участников с помощью Azure Active Directory
@@ -75,7 +75,7 @@ ms.locfileid: "73473431"
 
 При создании любой группы Office 365 как с динамическим, так и со статическим членством, всем пользователям, добавляемым в группу, отправляется приветственное уведомление. Если изменяются любые атрибуты пользователя или устройства, все правила динамических групп в организации обрабатываются на предмет возможных изменений членства. После этого добавляемым пользователям также отправляются приветственные уведомления. Такое поведение можно отключить в [Exchange PowerShell](https://docs.microsoft.com/powershell/module/exchange/users-and-groups/Set-UnifiedGroup?view=exchange-ps). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы добавили группу и хотя бы одного пользователя, вы можете выполнить следующее:
 
 - [Просмотр групп и участников](active-directory-groups-view-azure-portal.md)

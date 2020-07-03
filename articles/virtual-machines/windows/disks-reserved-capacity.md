@@ -5,14 +5,14 @@ author: roygara
 ms.author: rogarana
 ms.date: 01/30/2020
 ms.topic: conceptual
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 5963e53e09f6fc5efa8b8d652a13b923c6467e61
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 18d10dfa1f45f9f2a669e35d13f94dfbeabd3cee
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906818"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82085523"
 ---
 # <a name="reduce-costs-with-azure-disks-reservation"></a>Сокращение расходов с помощью резервирования дисков Azure
 [!INCLUDE [disk-reserved-capacity-shared](../../../includes/disk-reserved-capacity-shared.md)]

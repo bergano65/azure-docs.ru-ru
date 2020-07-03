@@ -9,27 +9,27 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: 07f109b3d5539f7cd87a12fb42a36803573c2bdf
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75354570"
 ---
 # <a name="develop-stream-analytics-edge-jobs-using-visual-studio-tools"></a>Разработка заданий Edge Stream Analytics с помощью средств Visual Studio
 
 В этом руководстве описано, как использовать средства Stream Analytics для Visual Studio. Вы узнаете, как создавать, отлаживать и создавать задания Stream Analytics пограничных устройств. После создания и тестирования задания можно перейти на портал Azure, чтобы развернуть его на устройствах. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с данным руководством вам потребуется:
 
 * Установите [Visual studio 2019](https://visualstudio.microsoft.com/downloads/), [Visual studio 2015](https://www.visualstudio.com/vs/older-downloads/)или [Обновление 4 для Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=45326). Поддерживаются выпуски Enterprise (Ultimate/Premium), Professional и Community. Выпуск Express не поддерживается.  
 
-* Следуйте [инструкциям по установке](stream-analytics-tools-for-visual-studio-edge-jobs.md), чтобы установить средства Stream Analytics для Visual Studio.
+* Следуйте [инструкциям по установке](stream-analytics-tools-for-visual-studio-edge-jobs.md) , чтобы установить средства Stream Analytics для Visual Studio.
  
 ## <a name="create-a-stream-analytics-edge-project"></a>Создание проекта Stream Analytics Edge 
 
-В Visual Studio выберите **Файл** > **Создать** > **Проект**. Перейдите к списку **Шаблоны** слева, разверните **Azure Stream Analytics** > **Stream Analytics Edge** > **Azure Stream Analytics Edge Application** (Приложение Azure Stream Analytics Edge). Укажите имя, расположение и имя решения для вашего проекта, а затем нажмите кнопку **ОК**.
+В Visual Studio выберите **файл** > **создать** > **проект**. Перейдите к списку **Шаблоны** слева, разверните **Azure Stream Analytics** > **Stream Analytics Edge** > **Azure Stream Analytics Edge Application** (Приложение Azure Stream Analytics Edge). Укажите имя, расположение и имя решения для вашего проекта, а затем нажмите кнопку **ОК**.
 
 ![Новый проект Stream Analytics пограничных проектов в Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/new-stream-analytics-edge-project.png)
 

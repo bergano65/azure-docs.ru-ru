@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 96078be20e8048e481a994fefc169e48ab1d8459
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76511099"
 ---
 # <a name="prepare-your-development-and-test-environment-for-iot-edge"></a>Подготовка среды разработки и тестирования для IoT Edge
@@ -49,22 +49,22 @@ Visual Studio и Visual Studio Code включают дополнительн
 
 Помимо расширений IoT Edge, может оказаться полезной установка дополнительных расширений для разработки. Например, можно использовать [поддержку Docker для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker) для управления образами, контейнерами и реестрами. Кроме того, все основные поддерживаемые языки включают расширения для Visual Studio Code, которые могут помочь при разработке модулей.
 
-#### <a name="prerequisites"></a>Технические условия
+#### <a name="prerequisites"></a>Предварительные условия
 
 Шаблоны модулей для некоторых языков и служб включают предварительные требования, необходимые для создания папок проекта на компьютере разработки с Visual Studio Code.
 
-| Шаблон модуля | Необходимое условие |
+| Шаблон модуля | Предварительные требования |
 | --------------- | ------------ |
-| Функции Azure | [Пакет SDK для .NET Core 2.1](https://www.microsoft.com/net/download). |
-| C | [Git](https://git-scm.com/); |
-| C# | [Пакет SDK для .NET Core 2.1](https://www.microsoft.com/net/download). |
+| Функции Azure | [Пакет SDK для .NET Core 2,1](https://www.microsoft.com/net/download) |
+| В | [Git](https://git-scm.com/) |
+| C# | [Пакет SDK для .NET Core 2,1](https://www.microsoft.com/net/download) |
 | Java | <ul><li>[Пакет SDK для Java SE 10](https://aka.ms/azure-jdks) <li> [Настройка переменной среды JAVA_HOME](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) <li> [Maven](https://maven.apache.org/)</ul> |
 | Node.js | <ul><li>[Node.js](https://nodejs.org/) <li> [Yeoman](https://www.npmjs.com/package/yo) <li> [Генератор модулей Node.js Azure IoT Edge](https://www.npmjs.com/package/generator-azure-iot-edge-module)</ul> |
-| Python |<ul><li> [Python](https://www.python.org/downloads/) <li> [Pip](https://pip.pypa.io/en/stable/installing/#installation) <li> [Git](https://git-scm.com/); </ul> |
+| Python |<ul><li> [Python](https://www.python.org/downloads/) <li> [PIP](https://pip.pypa.io/en/stable/installing/#installation) <li> [Git](https://git-scm.com/) </ul> |
 
 ### <a name="visual-studio-20172019-extension"></a>Расширение Visual Studio 2017/2019
 
-Средства Azure IoT Edge для Visual Studio предоставляют шаблон IoT Edge Module, построенный на C# и C.
+Средства Azure IoT Edge для Visual Studio предоставляют шаблон IoT Edgeного модуля, основанный на C# и C.
 
 Дополнительные сведения и загрузка см. в разделе [Azure IOT Edge Tools for Visual studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) или [Azure IOT Edge Tools for Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
 
@@ -74,13 +74,13 @@ Visual Studio и Visual Studio Code включают дополнительн
 
 На [вики-странице средства разработки IoT Edge](https://github.com/Azure/iotedgedev/wiki) вы найдете дополнительные сведения и все необходимое для начала работы.
 
-## <a name="testing-tools"></a>Инструменты тестирования
+## <a name="testing-tools"></a>Средства тестирования
 
 Для более эффективной имитации устройств IoT Edge или отладки модулей предусмотрено несколько средств тестирования. В следующей таблице приводится общее сравнение средств, а затем каждое средство более подробно описывается в отдельных разделах.
 
 Для развертывания в рабочей среде поддерживаются только среда выполнения IoT Edge, однако следующие средства позволяют моделировать и легко создавать устройства IoT Edge для разработки и тестирования. Эти средства не являются взаимоисключающими и могут работать, формируя полноценную среду разработки.
 
-| Средство | Другое название | Поддерживаемые платформы | Оптимально для |
+| Инструмент | Другое название | Поддерживаемые платформы | Оптимально для |
 | ---- | ------------- | ------------------- | --------- |
 | Средство разработки IoT EdgeHub  | iotedgehubdev | Windows, Linux, macOS | Имитация устройства для отладки модулей. |
 | Контейнер разработки IoT Edge | microsoft/iotedgedev | Windows, Linux, macOS | Разработка без установки зависимостей. |

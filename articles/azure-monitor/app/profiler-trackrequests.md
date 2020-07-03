@@ -1,19 +1,17 @@
 ---
 title: Написание кода для отслеживания запросов с помощью Azure Application Insights | Документация Майкрософт
 description: Написание кода для отслеживания запросов с помощью Application Insights, что позволяет получить профили для ваших запросов.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 3f449c98ed44f13fb6b3849ef2457cd8fbd916de
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: c59cbe852a91a91c7b3adb4452328700ec718a82
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72900012"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77671602"
 ---
 # <a name="write-code-to-track-requests-with-application-insights"></a>Написание кода для отслеживания запросов с помощью Azure Application Insights
 
@@ -33,7 +31,7 @@ ms.locfileid: "72900012"
         ```
       Дополнительные сведения об этой глобальной конфигурации ключа инструментирования см. в статье [Using Service Fabric with Application Insights](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/blob/dev/appinsights/ApplicationInsights.md) (Использование Service Fabric с Application Insights).  
 
-  1. Для всех фрагментов кода, которые необходимо инструментировать, добавьте инструкцию **using** `StartOperation<RequestTelemetry>`, как показано в следующем примере.
+  1. Для всех фрагментов кода, которые необходимо инструментировать, добавьте инструкцию  **using**`StartOperation<RequestTelemetry>`, как показано в следующем примере.
 
         ```csharp
         using Microsoft.ApplicationInsights;
@@ -47,7 +45,7 @@ ms.locfileid: "72900012"
         }
         ```
 
-        Вызов `StartOperation<RequestTelemetry>` в другой области `StartOperation<RequestTelemetry>` не поддерживается. Вместо этого можно использовать `StartOperation<DependencyTelemetry>` во вложенной области. Пример.  
+        Вызов `StartOperation<RequestTelemetry>` в другой области `StartOperation<RequestTelemetry>` не поддерживается. Вместо этого можно использовать `StartOperation<DependencyTelemetry>` во вложенной области. Пример:  
         
         ```csharp
         using (var getDetailsOperation = client.StartOperation<RequestTelemetry>("GetProductDetails"))

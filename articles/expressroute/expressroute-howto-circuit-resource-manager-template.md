@@ -2,18 +2,17 @@
 title: Шаблон Azure ExpressRoute. Создание канала ExpressRoute
 description: Создание, инициализация, удаление и Реинициализация канала ExpressRoute.
 services: expressroute
-author: cherylmc
+author: charwen
 ms.service: expressroute
 ms.topic: article
 ms.date: 11/13/2019
-ms.author: cherylmc
-ms.reviewer: ganesr
-ms.openlocfilehash: 78da84a462566cca1a2800174849159ace8dd6dc
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.author: charwen
+ms.openlocfilehash: ac2fb2f884feb0fbe6fbb1731ebe7c8bdad5114b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981134"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80616501"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создание канала ExpressRoute с помощью шаблона Azure Resource Manager
 
@@ -28,13 +27,13 @@ ms.locfileid: "75981134"
 
 Узнайте, как создать канал ExpressRoute путем развертывания шаблона Azure Resource Manager с помощью Azure PowerShell. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/expressroutecircuits).
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 * Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
 * Убедитесь в том, что у вас есть разрешения на создание сетевых ресурсов. Если у вас нет нужных разрешений, обратитесь к администратору учетной записи.
 * Вы можете [просмотреть видео](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit), прежде чем начать, чтобы лучше понять выполняемые действия.
 
-## <a name="create"></a>Создание и подготовка канала ExpressRoute
+## <a name="create-and-provision-an-expressroute-circuit"></a><a name="create"></a>Создание и предоставление канала ExpressRoute
 
 [Шаблоны](https://azure.microsoft.com/resources/templates/) быстрого запуска Azure имеют хорошую коллекцию шаблонов диспетчер ресурсов. Для создания канала ExpressRoute используется один из [существующих шаблонов](https://azure.microsoft.com/resources/templates/101-expressroute-circuit-create/) .
 
@@ -64,8 +63,8 @@ ms.locfileid: "75981134"
     Write-Host "Press [ENTER] to continue ..."
     ```
 
-   * **Уровень SKU** определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, *Standard* или *Premium*.
-   * **Семейство SKU** определяет тип выставления счетов. Выберите *Metereddata* для тарифного плана с оплатой за трафик или *Unlimiteddata* для безлимитного тарифного плана. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальный* канал — только *Unlimiteddata* .
+   * **Уровень SKU** определяет, является ли канал ExpressRoute [локальным](expressroute-faqs.md#expressroute-local), стандартным или [Premium](expressroute-faqs.md#expressroute-premium). Можно указать *Local*, * Standard или *Premium*.
+   * **Семейство SKU** определяет тип выставления счетов. Вы можете указать *Metereddata* для тарифного тарифного плана и *Unlimiteddata* для неограниченного тарифного плана данных. Тип выставления счетов можно изменить с *Metereddata* на *Unlimiteddata* но не наоборот. *Unlimiteddata* для *Metereddata* *Локальный* канал — только *Unlimiteddata* .
    * **Расположение пиринга** — физическое расположение пиринга с корпорацией Майкрософт.
 
      > [!IMPORTANT]
@@ -84,13 +83,13 @@ Azure PowerShell используется для развертывания ша
 * С [помощью Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
 * С [помощью REST API](../azure-resource-manager/templates/deploy-rest.md).
 
-## <a name="delete"></a>Отзыв и удаление канала ExpressRoute
+## <a name="deprovisioning-and-deleting-an-expressroute-circuit"></a><a name="delete"></a>отзыве и удалении канала ExpressRoute
 
-Канал ExpressRoute можно удалить, щелкнув значок **Удалить** . Обратите внимание на следующие сведения:
+Вы можете удалить канал ExpressRoute, щелкнув значок **удаления** . Обратите внимание на следующие сведения:
 
 * Связь между ExpressRoute и всеми виртуальными сетями необходимо разорвать. Если операция завершится ошибкой, проверьте, не привязаны ли к каналу какие-либо виртуальные сети.
-* Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
-* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить такой канал. Это приостанавливает выставление счетов для канала.
+* Если состояние подготовки поставщика службы канала ExpressRoute — **Подготовка** или **Подготовка** , необходимо обратиться к поставщику услуг, чтобы отменить подготовку канала к своей стороне. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
+* Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг установлено в значение " **не подготовлено**"), можно удалить канал. Это приостанавливает выставление счетов для канала.
 
 Вы можете удалить канал ExpressRoute, выполнив следующую команду PowerShell:
 
@@ -101,7 +100,7 @@ $resourceGroupName = "${circuitName}rg"
 Remove-AzExpressRouteCircuit -ResourceGroupName $resourceGroupName -Name $circuitName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создав канал, выполните задачи, описанные в следующих статьях:
 

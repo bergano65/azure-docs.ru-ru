@@ -1,21 +1,19 @@
 ---
 title: Предоплата за виртуальные машины Azure для экономии денег
 description: Узнайте, как воспользоваться службой Azure Reserved Virtual Machine Instances для сокращения затрат на вычисления.
-services: virtual-machines-windows
 author: yashar
 manager: yashar
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.topic: conceptual
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 08/29/2019
+ms.date: 03/27/2020
 ms.author: banders
-ms.openlocfilehash: fa0a95e693719c80723ef10f61f2872473b0873c
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 8d9b883c5319108166951814fcedb18181e25145
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74012291"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82098668"
 ---
 # <a name="save-costs-with-azure-reserved-vm-instances"></a>Экономия расходов с помощью Azure Reserved VM Instances
 [!INCLUDE [virtual-machines-buy-compute-reservations](../../../includes/virtual-machines-common-prepay-reserved-vm-instances.md)]

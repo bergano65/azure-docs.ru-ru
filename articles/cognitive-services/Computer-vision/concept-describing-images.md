@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: dcf61c642a9f8ad7aa68d72736ce8fdb0e9a6e3c
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 7bf95a2b49608ef1f031a3b443db92b42cdae624
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945264"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80244721"
 ---
 # <a name="describe-images-with-human-readable-language"></a>Описание изображений на понятном для пользователя языке
 
@@ -56,6 +56,13 @@ API "Компьютерное зрение" позволяет анализир�
 }
 ```
 
+## <a name="use-the-api"></a>Использование API
+
+Функция описания образа является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Description` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"description"` раздела.
+
+* [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
+* [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)
+
 ## <a name="next-steps"></a>Следующие шаги
 
-Сведения о концепциях [добавления тегов к изображениям](concept-tagging-images.md) и [классификации изображений](concept-categorizing-images.md).
+Изучите связанные понятия [маркировки изображений](concept-tagging-images.md) и [категоризации изображений](concept-categorizing-images.md).

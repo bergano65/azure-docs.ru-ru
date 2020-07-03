@@ -1,24 +1,23 @@
 ---
-title: Создание клиента Azure Active Directory | Документация Майкрософт
+title: Создание клиента Azure Active Directory
 description: Узнайте, как создать клиент Azure Active Directory для регистрации и создания приложений.
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.assetid: 1f4b24eb-ab4d-4baa-a717-2a0e5b8d27cd
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 02/05/2019
+ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 74747e1bc5247e2a95a180b7361eafe8ca795bc2
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 0e2247e94b20846f19c2ed26c96a5dc53972e770
+ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77160712"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80883819"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -72,6 +71,6 @@ ms.locfileid: "77160712"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Изучите краткое руководство по кодированию и начните выполнять проверку подлинности пользователей. 
-* Чтобы просмотреть более подробные примеры кода, ознакомьтесь с разделом документации **Руководства**.
-* Хотите развернуть приложение в облаке? Ознакомьтесь с [развертыванием контейнеров в Azure](https://docs.microsoft.com/azure/index#pivot=products&panel=containers). 
+* [Зарегистрируйте приложение](quickstart-register-app.md) и выполните интеграцию с платформой идентификации Майкрософт. 
+* Ознакомьтесь с [основами аутентификации](authentication-scenarios.md).
+* См. сведения о том, как [подписки Azure связаны с арендатором Azure AD](../fundamentals/active-directory-how-subscriptions-associated-directory.md).

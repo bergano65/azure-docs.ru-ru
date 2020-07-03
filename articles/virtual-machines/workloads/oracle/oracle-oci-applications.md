@@ -3,7 +3,7 @@ title: Архитектуры для развертывания приложен
 description: Архитектуры приложений для развертывания приложений Oracle, включая E-Business Suite, JD Edwards EnterpriseOne и PeopleSoft на Microsoft Azure виртуальных машинах с базами данных в Azure или в облачной инфраструктуре Oracle (OCI).
 services: virtual-machines-linux
 documentationcenter: ''
-author: romitgirdhar
+author: BorisB2015
 manager: gwallace
 tags: ''
 ms.service: virtual-machines
@@ -11,14 +11,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/18/2019
-ms.author: rogirdh
+ms.author: borisb
 ms.custom: ''
-ms.openlocfilehash: b183a4d4922c89f60ccb19b3e3e978216f33cc9a
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: f36dfe0092e3447053871ee0e5b4d659bb443779
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100090"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81687488"
 ---
 # <a name="architectures-to-deploy-oracle-applications-on-azure"></a>Архитектуры для развертывания приложений Oracle в Azure
 
@@ -50,7 +50,7 @@ Oracle E-Business Suite (EBS) — это набор приложений, вкл
 
 ![Архитектура в разных облаках E-Business Suite](media/oracle-oci-applications/ebs-arch-cross-cloud.png)
 
-*Рис. 1. Архитектура в разных облаках E-Business Suite* 
+*Рис. 1. Архитектура межоблачного обслуживания E-Business Suite* 
 
 В этой архитектуре виртуальная сеть в Azure подключается к виртуальной облачной сети в OCI с помощью межоблачного межплатформенного соединения. Уровень приложения настраивается в Azure, в то время как база данных настроена в OCI. Рекомендуется развертывать каждый компонент в своей подсети с группами безопасности сети, чтобы разрешить трафик только из конкретных подсетей на конкретных портах.
 
@@ -58,7 +58,7 @@ Oracle E-Business Suite (EBS) — это набор приложений, вкл
 
 ![Архитектура "E-Business Suite только Azure"](media/oracle-oci-applications/ebs-arch-azure.png)
 
-*Рис. 2. Архитектура "E-Business Suite только Azure"*
+*Рис. 2. Архитектура E-Business Suite только Azure*
 
 В следующих разделах описаны различные компоненты на высоком уровне.
 
@@ -68,7 +68,7 @@ Oracle E-Business Suite (EBS) — это набор приложений, вкл
 
 Уровень приложения изолирован в собственной подсети. Существует несколько виртуальных машин, настроенных для отказоустойчивости и упрощения управления исправлениями. Эти виртуальные машины могут поддерживаться общим хранилищем, которое предлагается Azure NetApp Files и Ultra SSDs. Такая конфигурация позволяет упростить развертывание исправлений без простоев. Компьютеры на уровне приложений должны иметь общедоступную подсистему балансировки нагрузки, чтобы запросы к уровню приложения EBS обрабатывались, даже если один из компьютеров уровня находится в режиме «вне сети» из-за сбоя.
 
-### <a name="load-balancer"></a>Балансировщик нагрузки
+### <a name="load-balancer"></a>Подсистема балансировки нагрузки
 
 Балансировщик нагрузки Azure позволяет распределять трафик между несколькими экземплярами рабочей нагрузки для обеспечения высокой доступности. В этом случае настраивается общедоступная подсистема балансировки нагрузки, так как пользователям разрешен доступ к приложению EBS через Интернет. Балансировщик нагрузки распределяет нагрузку на оба компьютера среднего уровня. Для повышения безопасности разрешите трафик только от пользователей, обращающихся к системе из корпоративной сети, с помощью VPN-подключения типа "сеть — сеть" или ExpressRoute, а также групп безопасности сети.
 
@@ -99,7 +99,7 @@ JD Edwards EnterpriseOne Oracle — это интегрированный наб
 
 ![Архитектура JD Edwards EnterpriseOne в разных облаках](media/oracle-oci-applications/jdedwards-arch-cross-cloud.png)
 
-*Рис. 3. Архитектура JD Edwards EnterpriseOne в разных облаках*
+*Рис. 3. JD Edwards EnterpriseOne архитектура между облаками*
 
 В этой архитектуре виртуальная сеть в Azure подключается к виртуальной облачной сети в OCI с помощью межоблачного межплатформенного соединения. Уровень приложения настраивается в Azure, в то время как база данных настроена в OCI. Рекомендуется развертывать каждый компонент в своей подсети с группами безопасности сети, чтобы разрешить трафик только из конкретных подсетей на конкретных портах.
 
@@ -107,7 +107,7 @@ JD Edwards EnterpriseOne Oracle — это интегрированный наб
 
 ![JD Edwards EnterpriseOne архитектура только Azure](media/oracle-oci-applications/jdedwards-arch-azure.png)
 
-*Рис. 4. JD Edwards EnterpriseOne архитектура только Azure*
+*Рис. 4. JD Edwards EnterpriseOne архитектура только Azure*
 
 В следующих разделах описаны различные компоненты на высоком уровне.
 
@@ -169,7 +169,7 @@ JD Edwards EnterpriseOne Oracle — это интегрированный наб
 
 ![Архитектура только для Azure PeopleSoft](media/oracle-oci-applications/peoplesoft-arch-azure.png)
 
-*Рис. 6. Архитектура только для Azure PeopleSoft*
+*Рис. 6. PeopleSoft архитектуру только для Azure*
 
 В следующих разделах описаны различные компоненты на высоком уровне.
 
@@ -189,7 +189,7 @@ JD Edwards EnterpriseOne Oracle — это интегрированный наб
 
 [!INCLUDE [virtual-machines-oracle-applications-identity](../../../../includes/virtual-machines-oracle-applications-identity.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте [сценарии terraform](https://github.com/microsoft/azure-oracle) , чтобы настроить приложения Oracle в Azure и установить подключение между облаками с OCI.
 

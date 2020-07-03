@@ -1,16 +1,16 @@
 ---
-title: Масштабируемость служб Service Fabric
+title: Масштабируемость служб структуры служб
 description: Сведения о масштабировании в Azure Service Fabric и различных методах масштабирования приложений.
 author: masnider
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: masnider
 ms.openlocfilehash: 17827342b67d37d9fbeb56654824e004367823ef
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610018"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79282566"
 ---
 # <a name="scaling-in-service-fabric"></a>Масштабирование в Service Fabric
 Azure Service Fabric упрощает создание масштабируемых приложений, обеспечивая управление службами, секциями и репликами на узлах кластера. Выполнение множества рабочих нагрузок на одном и том же оборудовании обеспечивает не только максимальное использование ресурсов, но и гибкость в выборе способа масштабирования рабочих нагрузок. В этом видео Channel 9 объясняется, как создавать масштабируемые приложения для микрослужб:
@@ -37,7 +37,7 @@ updateDescription.InstanceCount = 50;
 await fabricClient.ServiceManager.UpdateServiceAsync(new Uri("fabric:/app/service"), updateDescription);
 ```
 
-В PowerShell:
+PowerShell:
 
 ```posh
 Update-ServiceFabricService -Stateless -ServiceName $serviceName -InstanceCount 50
@@ -54,7 +54,7 @@ serviceDescription.InstanceCount = -1;
 await fc.ServiceManager.CreateServiceAsync(serviceDescription);
 ```
 
-В PowerShell:
+PowerShell:
 
 ```posh
 New-ServiceFabricService -ApplicationName $applicationName -ServiceName $serviceName -ServiceTypeName $serviceTypeName -Stateless -PartitionSchemeSingleton -InstanceCount "-1"
@@ -63,7 +63,7 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 ## <a name="scaling-by-creating-or-removing-new-named-services"></a>масштабирование путем создания или удаления новых именованных служб;
 Именованный экземпляр службы представляет собой экземпляр определенного типа службы (см. статью [Жизненный цикл приложения Service Fabric](service-fabric-application-lifecycle.md)) в каком-либо именованном экземпляре приложения в кластере. 
 
-Новые именованные экземпляры службы могут создаваться (или удаляться) при повышении (или снижении) нагрузки службы. Это позволяет распределять запросы между несколькими экземплярами службы, что, как правило, дает возможность снизить нагрузку существующих служб. При создании служб диспетчер кластерных ресурсов Service Fabric распределяет их по кластеру. Точные решения о размещении определяются [метриками](service-fabric-cluster-resource-manager-metrics.md) в кластере и другими правилами размещения. Службы могут быть созданы несколькими способами, однако чаще всего они создаются с помощью административных действий, таких как вызов [`New-ServiceFabricService`](https://docs.microsoft.com/powershell/module/servicefabric/new-servicefabricservice?view=azureservicefabricps), или кода, вызывающего [`CreateServiceAsync`](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.servicemanagementclient.createserviceasync?view=azure-dotnet). `CreateServiceAsync` можно даже вызвать из других служб, выполняющихся в кластере.
+Новые именованные экземпляры службы могут создаваться (или удаляться) при повышении (или снижении) нагрузки службы. Это позволяет распределять запросы между несколькими экземплярами службы, что, как правило, дает возможность снизить нагрузку существующих служб. При создании служб диспетчер кластерных ресурсов Service Fabric распределяет их по кластеру. Точные решения о размещении определяются [метриками](service-fabric-cluster-resource-manager-metrics.md) в кластере и другими правилами размещения. Службы могут создаваться несколькими способами, но наиболее распространенными являются действия администрирования, такие как вызов [`New-ServiceFabricService`](https://docs.microsoft.com/powershell/module/servicefabric/new-servicefabricservice?view=azureservicefabricps)или вызов [`CreateServiceAsync`](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.servicemanagementclient.createserviceasync?view=azure-dotnet)кода. `CreateServiceAsync` можно даже вызвать из других служб, выполняющихся в кластере.
 
 Динамическое создание служб можно использовать во всех видах сценариев, это общепринятая практика. Например, рассмотрим службу с отслеживанием состояния, которая представляет определенный рабочий процесс. К этой службе будут поступать вызовы, представляющие работу, и она будет выполнять действия рабочего процесса и записывать ход выполнения. 
 
@@ -94,14 +94,14 @@ Service Fabric поддерживает секционирование. Секц
 
 <center>
 
-![макет секции с тремя узлами](./media/service-fabric-concepts-scalability/layout-three-nodes.png)
+![Макет раздела с тремя узлами](./media/service-fabric-concepts-scalability/layout-three-nodes.png)
 </center>
 
 Если вы увеличите число узлов, Service Fabric переместит на них несколько существующих реплик. Например, предположим, что количество узлов увеличивается до четырех и реплики перераспределяются. Теперь у службы три реплики, которые выполняются на каждом узле и относятся к разным секциям. Это обеспечивает более эффективное использование ресурсов, так как новый узел также нагружен. Как правило, это также повышает производительность, так как каждой службе доступно больше ресурсов.
 
 <center>
 
-![макет секции с четырьмя узлами](./media/service-fabric-concepts-scalability/layout-four-nodes.png)
+![Макет раздела с четырьмя узлами](./media/service-fabric-concepts-scalability/layout-four-nodes.png)
 </center>
 
 ## <a name="scaling-by-using-the-service-fabric-cluster-resource-manager-and-metrics"></a>Масштабирование с помощью диспетчера кластерных ресурсов Service Fabric и метрик
@@ -140,7 +140,7 @@ Service Fabric поддерживает секционирование. Секц
   - Вам не нужно поддерживать множество экземпляров или реплик службы, пока не появились клиенты.
   - Если клиент откажется от ваших услуг, то для удаления его информации из вашей службы достаточно, чтобы служба диспетчера удалила созданную для этого клиента службу или приложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о понятиях Service Fabric см. в следующих статьях:
 
 * [Доступность служб структуры служб](service-fabric-availability-services.md)

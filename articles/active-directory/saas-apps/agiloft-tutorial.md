@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Agiloft | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Agiloft | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Agiloft.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3283695c42c5bccf00ca43274d120409646c380f
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73153962"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство по Интеграция Azure Active Directory с Agiloft
+# <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство по интеграции Azure Active Directory с Agiloft
 
 В этом руководстве описано, как интегрировать Agiloft с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Agiloft обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73153962"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Agiloft, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Agiloft с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "73153962"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Agiloft](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
     | |
     |-|-|
@@ -146,11 +146,11 @@ ms.locfileid: "73153962"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-agiloft-single-sign-on"></a>Настройка единого входа в Agiloft
 
@@ -168,7 +168,7 @@ ms.locfileid: "73153962"
 
     ![Настройка Agiloft](./media/agiloft-tutorial/setup4.png)
 
-    a. В текстовое поле **IdP Entity Id / Issuer** (Идентификатор сущности поставщика удостоверений или издателя) вставьте значение **Идентификатора Azure AD**, скопированное на портале Azure.
+    а. В текстовое поле **IdP Entity Id / Issuer** (Идентификатор сущности поставщика удостоверений или издателя) вставьте значение **Идентификатора Azure AD**, скопированное на портале Azure.
 
     b. В текстовое поле **IdP Login URL** (URL-адрес для входа с помощью поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -176,7 +176,7 @@ ms.locfileid: "73153962"
 
     d. Откройте в блокноте **сертификат в кодировке Base-64**, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **IdP Provided X.509 certificate contents** (Содержимое предоставленного поставщиком удостоверений сертификата X.509).
 
-    д. Нажмите кнопку **Готово**
+    д) Нажмите кнопку **Готово**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

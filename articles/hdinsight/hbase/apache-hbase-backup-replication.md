@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/19/2019
 ms.openlocfilehash: c6d33158b581bf4394a0d1bac2b277830328e110
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75495937"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в HDInsight
@@ -44,7 +44,7 @@ HBase в HDInsight использует хранилище по умолчани
     wasbs://<containername>@<accountname>.blob.core.windows.net/hbase
     ```
 
-* В Azure Data Lake Storage папка `hbase` находится под корневым путем, указанным при подготовке кластера. Обычно этот путь к корневому каталогу имеет папку `clusters` с вложенной папкой, имя которой совпадает с кластером HDInsight:
+* В Azure Data Lake Storage `hbase` папка находится под корневым путем, указанным при подготовке кластера. Обычно этот путь к корневому каталогу имеет папку `clusters` с вложенной папкой, имя которой совпадает с кластером HDInsight:
 
     ```
     /clusters/<clusterName>/hbase
@@ -62,13 +62,13 @@ HBase в HDInsight использует хранилище по умолчани
 
 В исходном кластере HDInsight используйте [программу экспорта](https://hbase.apache.org/book.html#export) (входит в состав HBase) для экспорта данных из исходной таблицы в подключенное по умолчанию хранилище. Затем экспортированную папку можно скопировать в целевое место хранения и запустить [программу импорта](https://hbase.apache.org/book.html#import) в целевом кластере HDInsight.
 
-Чтобы экспортировать данные таблицы, сначала подключитесь к головному узлу исходного кластера HDInsight, а затем выполните следующую команду `hbase`:
+Чтобы экспортировать данные таблицы, сначала подключитесь по протоколу SSH к головному узлу исходного кластера HDInsight, а `hbase` затем выполните следующую команду:
 
     hbase org.apache.hadoop.hbase.mapreduce.Export "<tableName>" "/<path>/<to>/<export>"
 
 Каталог экспорта уже не должен существовать. В имени таблицы учитывается регистр.
 
-Чтобы импортировать табличные данные, подключитесь к головному узлу целевого кластера HDInsight по протоколу SSH и выполните следующую команду `hbase`:
+Чтобы импортировать табличные данные, подключитесь к головному узлу целевого кластера HDInsight по протоколу SSH и `hbase` выполните следующую команду:
 
     hbase org.apache.hadoop.hbase.mapreduce.Import "<tableName>" "/<path>/<to>/<export>"
 

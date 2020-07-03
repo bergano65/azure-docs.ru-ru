@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: erhopf
-ms.openlocfilehash: e41653e4644b09cc357510223e5ee86c3806ae2c
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
+ms.openlocfilehash: 9d48f09fe5d5c736f65b6a76211dd3fec85479ea
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806119"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81402182"
 ---
 # <a name="deploy-a-custom-model"></a>Развертывание пользовательской модели
 
@@ -40,9 +40,9 @@ ms.locfileid: "74806119"
 
 Данные журнала доступны для загрузки в разделе **сведения о > конечной точки**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Использование пользовательской конечной точки с [пакетом SDK для распознавания речи](speech-sdk.md)
+* Узнайте, как использовать настраиваемую модель [.](how-to-specify-source-language.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

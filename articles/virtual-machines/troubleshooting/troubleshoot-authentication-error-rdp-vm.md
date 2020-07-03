@@ -1,6 +1,6 @@
 ---
 title: Устранение ошибок аутентификации при подключении к виртуальной машине Azure по протоколу RDP | Документация Майкрософт
-description: ''
+description: Узнайте, как устранять ошибки проверки подлинности, возникающие при использовании протокол удаленного рабочего стола (RDP) для подключения к виртуальной машине Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
@@ -14,34 +14,34 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
-ms.openlocfilehash: b7a561907e3f1968eb9adead3606822d7a1321c8
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.openlocfilehash: 03356c0b4a93f4befdbc529523e58642137a8887
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71155613"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80420816"
 ---
 # <a name="troubleshoot-authentication-errors-when-you-use-rdp-to-connect-to-azure-vm"></a>Устранение ошибок аутентификации при подключении к виртуальной машине Azure по протоколу RDP
 
 Эта статья поможет устранить ошибки аутентификации, возникающие при использовании подключения по протоколу удаленного рабочего стола (RDP) к виртуальной машине Azure.
 
-## <a name="symptoms"></a>Проблемы
+## <a name="symptoms"></a>Симптомы
 
 Вы создали снимок экрана виртуальной машины Azure, на котором виден экран приветствия и все указывает на то, что операционная система запущена. Тем не менее при попытке подключиться к удаленному рабочему столу виртуальной машины появляется одно из следующих сообщений об ошибке.
 
 ### <a name="error-message-1"></a>Сообщение об ошибке 1
 
-**Произошла ошибка проверки подлинности. The Local Security Authority cannot be contacted** (Произошла ошибка аутентификации. Не удается связаться с локальным администратором безопасности).
+**Произошла ошибка проверки подлинности. Не удается связаться с локальным администратором безопасности.**
 
 ### <a name="error-message-2"></a>Сообщение об ошибке 2
 
-**The remote computer that you are trying to connect to requires Network Level Authentication (NLA), but your Windows domain controller cannot be contacted to perform NLA. If you are an administrator on the remote computer, you can disable NLA by using the options on the Remote tab of the System Properties dialog box** (Для подключения к удаленному компьютеру требуется проверка подлинности на уровне сети, однако не удалось подключиться к контроллеру домена Windows для ее выполнения. Если вы являетесь администратором удаленного компьютера, то можете отключить проверку подлинности на уровне сети, воспользовавшись параметрами на вкладке "Удаленные" диалогового окна "Свойства системы").
+**Для удаленного компьютера, к которому вы пытаетесь подключиться, требуется проверка подлинности на уровне сети (NLA), но не удается связаться с контроллером домена Windows для выполнения NLA. Если вы являетесь администратором на удаленном компьютере, вы можете отключить NLA с помощью параметров на вкладке Удаленное меню диалогового окна Свойства системы.**
 
 ### <a name="error-message-3-generic-connection-error"></a>Сообщение об ошибке 3 (универсальная ошибка подключения)
 
-**This computer can't connect to the remote computer. Try connecting again, if the problem continues, contact the owner of the remote computer or your network administrator** (Не удается подключиться к удаленному компьютеру. Попробуйте подключиться снова. Если проблема не исчезнет, ​​обратитесь к владельцу удаленного компьютера или к администратору сети).
+**Этот компьютер не может подключиться к удаленному компьютеру. Попробуйте подключиться снова. Если проблема не будет устранена, обратитесь к владельцу удаленного компьютера или к администратору сети.**
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Существует несколько причин, по которым проверка подлинности на уровне сети (NLA) может блокировать доступ по протоколу RDP к виртуальной машине.
 
@@ -101,7 +101,7 @@ gpupdate /force
 
 Если изменение отменено, это означает, что проблема вызвана политикой Active Directory. 
 
-### <a name="workaround"></a>Возможное решение
+### <a name="workaround"></a>Обходной путь
 
 Чтобы обойти эту проблему, выполните следующие команды в командном окне, чтобы отключить NLA.
 
@@ -202,15 +202,15 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP
 
 Исходя из значения реестра, выполните следующие действия.
 
-* 4 (FIPS). Перейдите к разделу [Проверка подключений, использующих FIPS-совместимые алгоритмы](#fips-compliant).
+* 4 (FIPS): перейдите к разделу [Проверка подключений, использующих FIPS-совместимые алгоритмы](#fips-compliant).
 
-* 3 (128-разрядное шифрование). Задайте уровень серьезности **2**, выполнив приведенную ниже команду.
+* 3 (128-разрядное шифрование): задайте уровень серьезности **2**, выполнив приведенную ниже команду.
 
     ```cmd
     reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v MinEncryptionLevel /t REG_DWORD /d 2 /f
     ```
 
-* 2 (Максимально возможный уровень шифрования в соответствии с клиентом). Можно попытаться установить минимальный уровень шифрования **1**, выполнив приведенную ниже команду.
+* 2 (максимально возможный уровень шифрования в соответствии с клиентом): можно попытаться установить минимальный уровень шифрования **1**, выполнив приведенную ниже команду.
 
     ```cmd
     reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v MinEncryptionLevel /t REG_DWORD /d 1 /f
@@ -246,7 +246,7 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Prot
 > [!Note]
 > Версию x.x протоколов SSH и TLS можно получить из журналов гостевой ОС для ошибок SCHANNEL.
 
-#### <a name="fips-compliant"></a> Проверка подключений, использующих FIPS-совместимые алгоритмы
+#### <a name="check-fips-compliant-algorithms-connections"></a><a name="fips-compliant"></a> Проверка подключений, использующих FIPS-совместимые алгоритмы
 
 Удаленный рабочий стол можно настроить для использования только подключений, использующих FIPS-совместимые алгоритмы. Это можно сделать, задав соответствующий раздел реестра. Для этого откройте окно командной строки с повышенными привилегиями и запросите следующие разделы.
 
@@ -274,7 +274,7 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP
 
 Чтобы изменения реестра вступили в силу, перезапустите виртуальную машину.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Метод SetEncryptionLevel класса Win32_TSGeneralSetting](https://docs.microsoft.com/windows/desktop/TermServ/win32-tsgeneralsetting-setencryptionlevel)
 

@@ -1,24 +1,17 @@
 ---
-title: Руководство. Проверка речевых фрагментов конечной точки — LUIS
-titleSuffix: Azure Cognitive Services
+title: Руководство по Проверка речевых фрагментов конечной точки — LUIS
 description: Из этого руководства вы узнаете, как повысить точность прогнозирования в приложении, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP службы распознавания речи. Некоторые высказывания могут быть проверены на наличие намерений, а другие — на наличие сущностей.
 services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/17/2019
-ms.author: diberry
-ms.openlocfilehash: 06f51ca83449b39861e7565cc9accc29efbece3f
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.date: 04/01/2020
+ms.openlocfilehash: 32d43b36910c8fbfd60463f4062b6a00b9272fdb
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843979"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592582"
 ---
-# <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство. Исправление неточных прогнозов с помощью проверки высказываний конечной точки
+# <a name="tutorial-fix-unsure-predictions-by-reviewing-endpoint-utterances"></a>Руководство по Исправление неточных прогнозов с помощью проверки высказываний конечной точки
 Из этого учебника вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя речевые фрагменты, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Речевые фрагменты конечных точек необходимо проверять в рамках планового обслуживания LUIS.
 
 Этот процесс проверки позволяет обучить LUIS для использования вашего домена приложений. В LUIS выбираются те речевые фрагменты, которые отображаются в списке проверки. Этот список:
@@ -40,21 +33,17 @@ ms.locfileid: "76843979"
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
-## <a name="import-example-app"></a>Импортировать пример приложения
+## <a name="download-json-file-for-app"></a>Скачивание JSON-файла для приложения
 
-Чтобы импортировать приложение, сделайте следующее:
+Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-sentiment-HumanResources.json?raw=true).
 
-1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-sentiment-HumanResources.json?raw=true).
+## <a name="import-json-file-for-app"></a>Импорт JSON-файла для приложения
 
-1. В [предварительной версии портала LUIS](https://preview.luis.ai) импортируйте JSON-файл в новое приложение.
+[!INCLUDE [Import app steps](includes/import-app-steps.md)]
 
-1. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `review`.
+## <a name="train-the-app-to-apply-the-entity-changes-to-the-app"></a>Обучение приложения для внесения изменений сущности в приложение
 
-    > [!TIP]
-    > Мы рекомендуем клонировать версию перед изменением приложения. Завершив работу с новой версией, экспортируйте ее (в файл с расширением JSON или LU) и зарегистрируйте файл в системе управления версиями.
-
-
-1. Чтобы обучить приложение, щелкните **Обучение**.
+[!INCLUDE [LUIS How to Train steps](includes/howto-train.md)]
 
 ## <a name="publish-the-app-to-access-it-from-the-http-endpoint"></a>Публикация приложения для доступа к нему через конечную точку HTTP
 
@@ -66,7 +55,7 @@ ms.locfileid: "76843979"
 
 1. [!INCLUDE [LUIS How to get endpoint first step](includes/howto-get-endpoint.md)]
 
-1. Используйте конечную точку, чтобы добавить следующие фрагменты речи.
+1. Перейдите в конец URL-адреса в адресной строке и замените _YOUR_QUERY_HERE_ на речевые фрагменты из приведенной ниже таблицы. Для каждого речевого фрагмента отправьте такой фрагмент и получите результат. Затем замените речевой фрагмент в конце строки на следующий речевой фрагмент.
 
     |Речевой фрагмент конечной точки|Сопоставленное намерение|
     |--|--|
@@ -110,9 +99,9 @@ ms.locfileid: "76843979"
 
 Чтобы проверить, что правильно сопоставленные примеры речевых фрагментов улучшили прогнозирование в приложении, попробуйте использовать фрагмент речи, близкий к исправленному.
 
-1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
+1. [!INCLUDE [LUIS How to get endpoint first step](includes/howto-get-endpoint.md)]
 
-1. Перейдите в конец URL-адреса и введите `Are there any natural language processing jobs in my department right now?`. Последний параметр строки запроса — `q`. Это **запрос** фразы.
+1. Перейдите в конец URL-адреса в адресной строке и замените _YOUR_QUERY_HERE_ на `Are there any natural language processing jobs in my department right now?`.
 
    ```json
     {

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 8a2c3dcd3c8ca6dc9d751e50a7862fe98e6de510
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: d50b08ab85c7e299c465c3eb6f34e867d6634006
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351028"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78303908"
 ---
 # <a name="getcurrentdatetime-azure-cosmos-db"></a>Жеткуррентдатетиме (Azure Cosmos DB)
  Возвращает текущее значение даты и времени (в формате UTC) в виде строки ISO 8601.
@@ -23,29 +23,31 @@ ms.locfileid: "71351028"
 GetCurrentDateTime ()
 ```
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
-  Возвращает текущее строковое значение даты и времени в формате UTC 8601 в формате `YYYY-MM-DDThh:mm:ss.sssZ`, где:
+  Возвращает строковое значение даты и времени в формате UTC 8601 в формате `YYYY-MM-DDThh:mm:ss.fffffffZ` , где:
   
   |||
   |-|-|
   |YYYY|год из четырех цифр|
   |ММ|месяц (2 цифры) (01 = Январь и т. д.)|
   |DD|четырехзначный день месяца (от 01 до 31)|
-  |н|обозначает начало элементов времени|
-  |hh|час в две цифры (от 00 до 23)|
-  |ММ|минуты в две цифры (от 00 до 59)|
-  |НН|две цифры в секундах (от 00 до 59)|
-  |. SSS|три цифры десятичных дробей секунды|
+  |T|обозначает начало элементов времени|
+  |hh|час с двумя цифрами (от 00 до 23)|
+  |ММ|двузначное число минут (от 00 до 59)|
+  |сс|двузначное число секунд (от 00 до 59)|
+  |. fffffff|семь цифр в долях секунды|
   |Z|Обозначение времени в формате UTC (Универсальное координированное время)||
   
   Дополнительные сведения о формате ISO 8601 см. в разделе [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
 
   Жеткуррентдатетиме () является недетерминированной функцией. 
   
   Возвращаемый результат — UTC.
+
+  Точность составляет 7 цифр с точностью 100 наносекунд.
 
 ## <a name="examples"></a>Примеры
   
@@ -59,12 +61,12 @@ SELECT GetCurrentDateTime() AS currentUtcDateTime
   
 ```json
 [{
-  "currentUtcDateTime": "2019-05-03T20:36:17.784Z"
+  "currentUtcDateTime": "2019-05-03T20:36:17.1234567Z"
 }]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

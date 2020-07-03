@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 0f444838c87e14fa88f2785030c29915df637cf8
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 45977f52226fac0a3e23455ce9457a721947a8cc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552208"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77425890"
 ---
 # <a name="use-mirrormaker-to-replicate-apache-kafka-topics-with-kafka-on-hdinsight"></a>Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker
 
@@ -92,7 +92,7 @@ ms.locfileid: "75552208"
 
 1. Перейдите на панель мониторинга Ambari для основного кластера: `https://PRIMARYCLUSTERNAME.azurehdinsight.net`.
 1. Выберите **службы** > **Kafka**. Клиселекткк на вкладке **конфигурации** .
-1. Добавьте следующие строки конфигурации в нижнюю часть **шаблона Kafka-env** . Щелкните **Сохранить**.
+1. Добавьте следующие строки конфигурации в нижнюю часть **шаблона Kafka-env** . Нажмите кнопку **Сохранить**.
 
     ```
     # Configure Kafka to advertise IP addresses instead of FQDN
@@ -105,14 +105,14 @@ ms.locfileid: "75552208"
 1. Введите примечание на экране **сохранения конфигурации** и нажмите кнопку **сохранить**.
 1. Если появится предупреждение о настройке, нажмите кнопку **продолжить**.
 1. Нажмите кнопку **ОК** в области **сохранить изменения конфигурации**.
-1. Выберите **перезапустить > ** **перезапустить все, затронутые** в уведомлении **требуется перезагрузка** . Щелкните **Confirm Restart All** (Подтвердить перезапуск всех).
+1.  > Выберите **перезапустить****все, затронутое** в уведомлении **требуется перезагрузка** . Выберите пункт **подтвердить перезагрузку все**.
 
     ![Apache Ambari перезапускает все затронутые](./media/apache-kafka-mirroring/ambari-restart-notification.png)
 
 ### <a name="configure-kafka-to-listen-on-all-network-interfaces"></a>Настройте Kafka для прослушивания всех сетевых интерфейсов.
     
-1. Оставайтесь на вкладке **конфигурации** в разделе **службы** > **Kafka**. В разделе **Kafka Broker** задайте для свойства **listeners** значение `PLAINTEXT://0.0.0.0:9092`.
-1. Щелкните **Сохранить**.
+1. Оставайтесь на вкладке **конфигурации** в разделе **службы** > **Kafka**. В разделе **брокера Kafka** задайте для `PLAINTEXT://0.0.0.0:9092`свойства **Listeners** значение.
+1. Нажмите кнопку **Сохранить**.
 1. Выберите **перезапустить**и **Подтвердите перезапустить все**.
 
 ### <a name="record-broker-ip-addresses-and-zookeeper-addresses-for-primary-cluster"></a>IP-адреса брокера записи и адреса Zookeeper для основного кластера.
@@ -136,7 +136,7 @@ ms.locfileid: "75552208"
 
     См. дополнительные сведения об [использовании SSH в HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-1. Используйте следующую команду, чтобы создать переменную с узлами Apache Zookeeper для основного кластера. Строки, такие как `ZOOKEEPER_IP_ADDRESS1`, должны быть заменены фактическими IP-адресами, записанными ранее, например `10.23.0.11` и `10.23.0.7`. Если вы используете разрешение полного доменного имени для настраиваемого DNS-сервера, выполните следующие [действия](apache-kafka-get-started.md#getkafkainfo) , чтобы получить имена брокера и Zookeeper.:
+1. Используйте следующую команду, чтобы создать переменную с узлами Apache Zookeeper для основного кластера. Строки, такие `ZOOKEEPER_IP_ADDRESS1` как, должны быть заменены ФАКТИЧЕСКИМИ IP-адресами, `10.23.0.11` записанными ранее, например и `10.23.0.7`. Если вы используете разрешение полного доменного имени для настраиваемого DNS-сервера, выполните следующие [действия](apache-kafka-get-started.md#getkafkainfo) , чтобы получить имена брокера и Zookeeper.:
 
     ```bash
     # get the zookeeper hosts for the primary cluster
@@ -181,7 +181,7 @@ ms.locfileid: "75552208"
 
     См. дополнительные сведения об [использовании SSH в HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-1. Файл `consumer.properties` используется для настройки связи с **основным** кластером. Чтобы создать файл, используйте следующую команду:
+1. `consumer.properties` Файл используется для настройки связи с **основным** кластером. Чтобы создать файл, используйте следующую команду:
 
     ```bash
     nano consumer.properties
@@ -206,11 +206,11 @@ ms.locfileid: "75552208"
     export SECONDARY_BROKERHOSTS='BROKER_IP_ADDRESS1:9092,BROKER_IP_ADDRESS2:9092,BROKER_IP_ADDRESS2:9092'
     ```
 
-    Команда `echo $SECONDARY_BROKERHOSTS` должна возвращать информацию следующего вида:
+    Команда `echo $SECONDARY_BROKERHOSTS` должна вернуть информацию, подобную приведенной ниже:
 
     `10.23.0.14:9092,10.23.0.4:9092,10.23.0.12:9092`
 
-1. Файл `producer.properties` используется для связи с **дополнительным** кластером. Чтобы создать файл, используйте следующую команду:
+1. `producer.properties` Файл используется для связи с **дополнительным** кластером. Чтобы создать файл, используйте следующую команду:
 
     ```bash
     nano producer.properties
@@ -252,9 +252,9 @@ ms.locfileid: "75552208"
 
         1. Перейдите на панель мониторинга Ambari для дополнительного кластера: `https://SECONDARYCLUSTERNAME.azurehdinsight.net`.
         1. Щелкните **службы** > **Kafka**. Выберите вкладку **Configs** (Конфигурации).
-        1. В поле __Фильтр__ введите значение параметра `auto.create`. Будет отфильтрован список свойств и отобразится параметр `auto.create.topics.enable`.
-        1. Измените значение параметра `auto.create.topics.enable` на true и выберите __Сохранить__. Добавьте заметку и выберите __Сохранить__ еще раз.
-        1. Выберите службу __Kafka__ и щелкните __Перезапустить__, а затем выберите __Restart all affected__ (Перезапустить все затронутые). Когда появится запрос, выберите __Conform Restart All__ (Подтвердить перезапуск всех).
+        1. В поле __фильтра__ введите значение `auto.create`. Будет отфильтрован список свойств и отобразится параметр `auto.create.topics.enable`.
+        1. Измените значение параметра `auto.create.topics.enable` на true и выберите __Сохранить__. Добавьте заметку, а затем нажмите кнопку __сохранить__ еще раз.
+        1. Выберите службу __Kafka__ , нажмите кнопку __перезапустить__, а затем выберите __перезапустить все затронутые__. При появлении запроса выберите __Подтверждение перезапустить все__.
 
         ![разделы включения автоматического создания Kafka](./media/apache-kafka-mirroring/kafka-enable-auto-create-topics.png)
 
@@ -268,7 +268,7 @@ ms.locfileid: "75552208"
 
     В этом примере используются следующие параметры.
 
-    |Параметр |Description |
+    |Параметр |Описание |
     |---|---|
     |--Consumer. config|указывает файл, который содержит свойства получателя. Эти свойства используются для создания объекта-получателя, считывающего данные из *основного* кластера Kafka.|
     |--Producer. config|указывает файл, который содержит свойства производителя. Эти свойства используются для создания производителя, записывающего данные в *дополнительный* кластер Kafka.|
@@ -292,7 +292,7 @@ ms.locfileid: "75552208"
     /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server $SECONDARY_ZKHOSTS --topic testtopic --from-beginning
     ```
 
-    Список разделов теперь включает `testtopic`, который создается, когда Миррормастер дублирует раздел из основного кластера на сервер-получатель. Сообщения, полученные из раздела, совпадают с теми, которые были введены в основном кластере.
+    Список разделов теперь включает `testtopic`, который создается, когда миррормастер дублирует раздел из основного кластера на сервер-получатель. Сообщения, полученные из раздела, совпадают с теми, которые были введены в основном кластере.
 
 ## <a name="delete-the-cluster"></a>Удаление кластера
 
@@ -300,12 +300,12 @@ ms.locfileid: "75552208"
 
 Действия, описанные в этом документе, создали кластеры в разных группах ресурсов Azure. Чтобы удалить все созданные ресурсы, можно удалить две созданные группы ресурсов: **Kafka-PRIMARY-RG** и **Kafka-secondary_rg**. При удалении групп ресурсов удаляются все ресурсы, созданные в следующем документе, включая кластеры, виртуальные сети и учетные записи хранения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этого документа вы узнали, как создать реплику кластера [Apache Kafka](https://kafka.apache.org/) с помощью [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330). Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 
 * [Документация по Apache Kafka MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) на сайте cwiki.apache.org.
+* [Рекомендации для Kafka Mirror Maker](https://community.cloudera.com/t5/Community-Articles/Kafka-Mirror-Maker-Best-Practices/ta-p/249269)
 * [Get started with Apache Kafka on HDInsight (preview)](apache-kafka-get-started.md) (Приступая к работе с Apache Kafka в HDInsight (предварительная версия))
 * [Использование Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
-* [Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)
 * [Подключение к Apache Kafka с помощью виртуальной сети Azure](apache-kafka-connect-vpn-gateway.md)

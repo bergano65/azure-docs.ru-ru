@@ -4,10 +4,10 @@ description: Узнайте, как использовать веб-перехв
 ms.topic: article
 ms.date: 05/24/2019
 ms.openlocfilehash: 5e6fd2d9f4c7727365a8e2fe3893aafebfeb7bd4
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74454378"
 ---
 # <a name="using-azure-container-registry-webhooks"></a>Использование веб-перехватчиков реестра контейнеров Azure
@@ -16,23 +16,23 @@ ms.locfileid: "74454378"
 
 Дополнительные сведения о запросах веб-перехватчика см. в [справочнике по схеме веб-перехватчика реестра контейнеров Azure](container-registry-webhook-reference.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Реестр контейнеров Azure. Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md). [Номера SKU реестра контейнеров Azure](container-registry-skus.md) имеют разные квоты веб-перехватчиков.
-* Интерфейс командной строки Docker (Docker CLI). Установите [подсистему Docker](https://docs.docker.com/engine/installation/), чтобы настроить локальный компьютер в качестве узла Docker и получить доступ к командам Docker CLI.
+* DOCKER CLI. Чтобы настроить локальный компьютер в качестве узла DOCKER и получить доступ к командам DOCKER CLI, установите [подсистему DOCKER](https://docs.docker.com/engine/installation/).
 
 ## <a name="create-webhook---azure-portal"></a>Создание веб-перехватчика — портал Azure
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите в реестр контейнеров, в котором нужно создать веб-перехватчик.
 1. В разделе **службы**выберите **веб-перехватчики**.
 1. Щелкните **Добавить** на панели инструментов веб-перехватчика.
-1. Заполните форму *Создать веб-перехватчик* следующими данными:
+1. Заполните форму *Создание веб-перехватчика* , указав следующие сведения:
 
-| Значение | ОПИСАНИЕ |
+| Значение | Описание |
 |---|---|
 | Имя веб-перехватчика | Имя, назначаемое веб-перехватчику. Оно может содержать только буквы и цифры и должно иметь длину 5-50 символов. |
-| Место проведения | Для [геореплицированного](container-registry-geo-replication.md) реестра укажите регион Azure для реплики реестра. 
+| Расположение | Для [геореплицированного](container-registry-geo-replication.md) реестра укажите регион Azure для реплики реестра. 
 | URI службы | Универсальный код ресурса (URI) для отправки веб-перехватчиком уведомлений POST. |
 | Настраиваемые заголовки | Заголовки, которые требуется передавать вместе с запросом POST. Они должны быть в формате "ключ: значение". |
 | "Trigger actions" (Активирующие действия) | Действия, которые активируют веб-перехватчик. К таким действиям относятся отправка изображений, удаление изображений, Helmная отправка диаграммы, удаление диаграммы Helm и помещение в карантин изображений. Для активации веб-перехватчика можно выбрать одно или несколько действий. |
@@ -53,7 +53,7 @@ az acr webhook create --registry mycontainerregistry --name myacrwebhook01 --act
 
 ## <a name="test-webhook"></a>Проверка веб-перехватчика
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Перед использованием веб-перехватчика его можно проверить с помощью кнопки **ping** . После нажатия этой кнопки к указанной конечной точке отправляется общий запрос POST и ответ записывается в журнал. Используя функцию проверки связи, мы сможем проверить, правильно ли настроен веб-перехватчик.
 
@@ -63,7 +63,7 @@ az acr webhook create --registry mycontainerregistry --name myacrwebhook01 --act
 
 ![Пользовательский интерфейс создания веб-перехватчика ACR на портале Azure](./media/container-registry-webhook/webhook-02.png)
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы протестировать веб-перехватчик ACR с помощью Azure CLI, используйте команду [az acr webhook ping](/cli/azure/acr/webhook#az-acr-webhook-ping).
 
@@ -79,23 +79,23 @@ az acr webhook list-events --registry mycontainerregistry08 --name myacrwebhook0
 
 ## <a name="delete-webhook"></a>Удаление веб-перехватчика
 
-### <a name="azure-portal"></a>портале Azure
+### <a name="azure-portal"></a>Портал Azure
 
 Любой веб-перехватчик можно удалить, выбрав его и нажав кнопку **Удалить** на портале Azure.
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 az acr webhook delete --registry mycontainerregistry --name myacrwebhook01
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="webhook-schema-reference"></a>Справочник по схеме веб-перехватчика
 
 Дополнительные сведения о формате и свойствах полезных данных событий JSON, генерируемых Реестром контейнеров Azure, см. в справочнике по схеме веб-перехватчика:
 
-[Azure Container Registry webhook schema reference](container-registry-webhook-reference.md) (Справочник по схеме реестра контейнеров Azure)
+[Справочник по схеме веб-перехватчика реестра контейнеров Azure](container-registry-webhook-reference.md)
 
 ### <a name="event-grid-events"></a>События Сетки событий
 

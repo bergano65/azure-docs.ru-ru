@@ -1,18 +1,18 @@
 ---
 title: Тестирование мобильных приложений на тысячах реальных устройств с помощью центра приложений Visual Studio
 description: Узнайте о центре приложений Visual Studio как службе для постоянного тестирования мобильных приложений на тысячах реальных устройств.
-author: elamalani
+author: codemillmatt
 ms.assetid: 12a8a079-9b3c-4faf-0000-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: 18331de5d362aa7dfedcf5bb6cff893a2893f604
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: 05fa29e4b79cdbec7d925b2a35bd3fdf0bb03213
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453087"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80240092"
 ---
 # <a name="perform-automated-testing-on-thousands-of-mobile-devices-simultaneously"></a>Выполнение автоматического тестирования на тысячах мобильных устройств одновременно
 Тестирование может быть сложным и все более сложным из-за фрагментации устройства, сложности приложения, быстрого цикла выпуска, коротких сеансов и высокой ожидания пользователей. Необходимо регулярно проверять, что вы доставляете тщательно протестированные приложения, обеспечивающие превосходную работу пользователей. Тестирование не является простой задачей и не является хорошим использованием времени разработчика для ручного тестирования каждого выпуска.
@@ -26,7 +26,7 @@ ms.locfileid: "75453087"
 - Протестируйте непрерывно, анализируйте производительность приложений, найдите и устраните проблемы, прежде чем пользователи смогут использовать их и быстро выпустить.
 - Создавайте высококачественные приложения, гарантируя, что клиенты на широком спектре устройств получат лучшие впечатления от работы.
 
-## <a name="visual-studio-app-center"></a>Центр приложений Visual Studio.
+## <a name="visual-studio-app-center"></a>Центр приложений Visual Studio
 [Тест App Center](/appcenter/test-cloud/) — это облачная служба, которую можно использовать для выполнения автоматических тестов пользовательского интерфейса на тысячах реальных устройств в облаке в Android и iOS для собственных и гибридных мобильных приложений. Используя более 2 000 устройств, можно написать тестовые скрипты, которые могут быть выполнены автоматически для упрощения тестирования.
 
 **Основные возможности**
@@ -37,6 +37,6 @@ ms.locfileid: "75453087"
    - Популярная поддержка платформы тестирования, например Appium (Java с JUnit) для Android и iOS, эспрессо (Java) для Android, Calabash для Android и iOS, Xamarin. UITest для Android и iOS, а также XCUITest для iOS.
    - Поддержка платформ для iOS, Android Xamarin и реагирование на машинный код.
 
-**Справочные материалы**
+**Ссылки**
    - [Регистрация в центре приложений Visual Studio](https://appcenter.ms/signup?utm_source=Mobile%20Development%20Docs&utm_medium=Azure&utm_campaign=New%20azure%20docs) 
    - [Начало работы с тестом App Center](/appcenter/test-cloud/)

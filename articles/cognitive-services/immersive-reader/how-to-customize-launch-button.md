@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: metan
 ms.openlocfilehash: 6461cc60a237cf834226b07db5e1ea6fbbea7a92
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75946213"
 ---
 # <a name="how-to-customize-the-immersive-reader-button"></a>Настройка кнопки «иммерсивное средство чтения»
@@ -23,7 +23,7 @@ ms.locfileid: "75946213"
 
 ## <a name="add-the-immersive-reader-button"></a>Добавление кнопки "иммерсивное средство чтения"
 
-Пакет SDK для иммерсивное средство чтения предоставляет стиль по умолчанию для кнопки, запускающей иммерсивное средство чтения. Используйте атрибут класса `immersive-reader-button`, чтобы включить этот стиль.
+Пакет SDK для иммерсивное средство чтения предоставляет стиль по умолчанию для кнопки, запускающей иммерсивное средство чтения. Для включения `immersive-reader-button` этого стиля используйте атрибут класса.
 
 ```html
 <div class='immersive-reader-button'></div>
@@ -31,7 +31,7 @@ ms.locfileid: "75946213"
 
 ## <a name="customize-the-button-style"></a>Настройка стиля кнопки
 
-Используйте атрибут `data-button-style`, чтобы задать стиль кнопки. Допустимые значения: `icon`, `text`и `iconAndText`. Значение по умолчанию — `icon`.
+Используйте `data-button-style` атрибут, чтобы задать стиль кнопки. Допустимые значения: `icon`, `text`и `iconAndText`. Значение по умолчанию — `icon`.
 
 ### <a name="icon-button"></a>Кнопка "значок"
 
@@ -65,7 +65,7 @@ ms.locfileid: "75946213"
 
 ## <a name="customize-the-button-text"></a>Настройка текста кнопки
 
-Настройте язык и замещающий текст для кнопки с помощью атрибута `data-locale`. По умолчанию используется английский язык.
+Настройте язык и замещающий текст для кнопки с помощью `data-locale` атрибута. По умолчанию используется английский язык.
 
 ```html
 <div class='immersive-reader-button' data-locale='fr-FR'></div>
@@ -73,12 +73,12 @@ ms.locfileid: "75946213"
 
 ## <a name="customize-the-size-of-the-icon"></a>Настройка размера значка
 
-Размер значка иммерсивного чтения можно настроить с помощью атрибута `data-icon-px-size`. Задает размер значка в пикселях. Размер по умолчанию — 20px.
+Размер значка иммерсивного чтения можно настроить с помощью `data-icon-px-size` атрибута. Задает размер значка в пикселях. Размер по умолчанию — 20px.
 
 ```html
 <div class='immersive-reader-button' data-icon-px-size='50'></div>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Изучите [Справочник по пакету SDK для иммерсивное средство чтения](./reference.md)
+* Ознакомьтесь со справочной документацией по [пакету SDK для иммерсивного средства чтения](./reference.md).

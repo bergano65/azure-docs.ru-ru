@@ -1,5 +1,5 @@
 ---
-title: Ускорение операций записи Azure HDInsight для Apache HBase
+title: Azure HDInsight Accelerated Writes for Apache HBase (Ускорение операций записи Azure HDInsight для Apache HBase)
 description: В этой статье представлен обзор функции ускорения операций записи в Azure HDInsight, в которой используются управляемые диски уровня "Премиум" для повышения производительности журнала упреждающего ввода в Apache HBase.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,13 +8,13 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 01/24/2020
 ms.openlocfilehash: 7165bab96d037f6782bc9aa6767cadd9b35f058c
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76764587"
 ---
-# <a name="azure-hdinsight-accelerated-writes-for-apache-hbase"></a>Ускорение операций записи Azure HDInsight для Apache HBase
+# <a name="azure-hdinsight-accelerated-writes-for-apache-hbase"></a>Azure HDInsight Accelerated Writes for Apache HBase (Ускорение операций записи Azure HDInsight для Apache HBase)
 
 Эта статья содержит сведения о функции **ускоренной записи** для Apache HBase в Azure HDInsight и о том, как ее можно эффективно использовать для повышения производительности операций записи. **Ускоренная запись** использует [управляемые диски Azure](../../virtual-machines/linux/disks-types.md#premium-ssd) уровня "Премиум", чтобы повысить производительность журнала "Предварительная запись Apache HBase" (WAL). Дополнительные сведения о Apache HBase см. [в статье что такое Apache HBase в HDInsight](apache-hbase-overview.md).
 
@@ -60,7 +60,7 @@ disable 'mytable'
 
 Если namenode перейдет в безопасный режим после уменьшения масштаба, используйте команды HDFS для повторной репликации реплицируемых блоков и получения HDFS из безопасного режима. Эта повторная репликация позволит успешно перезапустить HBase.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Официальная документация по Apache HBase по [журналу "упреждающее создание](https://hbase.apache.org/book.html#wal) "
 * Сведения об обновлении кластера HDInsight Apache HBase для ускорения записи см. в статье [Перенос кластера Apache HBase в новую версию](apache-hbase-migrate-new-version.md).

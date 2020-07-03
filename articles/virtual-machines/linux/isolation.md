@@ -1,24 +1,18 @@
 ---
-title: Изоляция для виртуальных машин Linux в Azure
+title: Изоляция для виртуальных машин в Azure
 description: Узнайте, как работает изоляция виртуальных машин в Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: ayshakeen
-manager: gwallace
-editor: ''
-ms.service: virtual-machines-linux
-ms.devlang: na
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/18/2019
 ms.author: ayshak
-ms.openlocfilehash: 908cc0f876514ad68c88f73f5d7fa4888a27d325
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 716cbe346d8d6e070e9e4618f5b48307877710ad
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74173919"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78944843"
 ---
 # <a name="virtual-machine-isolation-in-azure"></a>Изоляция виртуальных машин в Azure
 

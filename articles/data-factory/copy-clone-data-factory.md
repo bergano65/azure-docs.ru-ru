@@ -11,14 +11,16 @@ manager: jroth
 ms.reviewer: maghan
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.openlocfilehash: bafe70655f05b5dda32f51393591f82b4b5625f1
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 5e44bda8648fbf26487b04cf36a8fd0ec085c411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73678125"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81414112"
 ---
 # <a name="copy-or-clone-a-data-factory-in-azure-data-factory"></a>Копирование или клонирование фабрики данных в службе "Фабрика данных Azure"
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается, как выполнять копирование или клонирование фабрики данных в службе "Фабрика данных Azure".
 
@@ -46,6 +48,6 @@ ms.locfileid: "73678125"
 
 1. По соображениям безопасности созданный шаблон Resource Manager не содержит каких-либо секретных сведений, например паролей связанных служб. Таким образом, вы должны предоставить эти пароли в качестве параметров развертывания. Если параметры нежелательны, необходимо получить строки подключения и пароли связанных служб из Azure Key Vault.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с руководством по созданию фабрики данных на портале Azure в статье [Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"](quickstart-create-data-factory-portal.md).

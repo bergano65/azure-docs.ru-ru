@@ -14,6 +14,19 @@
       items:
         - name: Брандмауэр веб-приложения в Azure Front Door
           href: ./afds/afds-overview.md
+    - name: Сеть доставки содержимого
+      items:
+        - name: Брандмауэр веб-приложения в Azure CDN
+          href: ./cdn/cdn-overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Шлюз приложений
+      expanded: true
+      items:
+        - name: "Развертывание WAF версии\_2 с помощью шаблона ARM"
+          displayName: Resource Manager
+          href: ./ag/quick-create-template.md
 - name: Учебники
   items:
     - name: Шлюз приложений
@@ -24,6 +37,10 @@
       items:
         - name: "Настройка политики WAF\_— портал"
           href: ./afds/waf-front-door-create-portal.md
+    - name: Сеть доставки содержимого
+      items:
+        - name: "Настройка политики WAF\_— портал"
+          href: ./cdn/waf-cdn-create-portal.md
 - name: Примеры
   items:
     - name: Azure PowerShell
@@ -46,10 +63,14 @@
           href: ./ag/policy-overview.md
         - name: Общие сведения о защите от ботов
           href: ./ag/bot-protection-overview.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: ./ag/application-gateway-waf-faq.md
     - name: Front Door
       items:
         - name: Настраиваемые правила
           href: ./afds/waf-front-door-custom-rules.md
+        - name: Списки исключений
+          href: ./afds/waf-front-door-exclusion.md
         - name: Параметры политики
           href: ./afds/waf-front-door-policy-settings.md
         - name: Геофильтрация
@@ -68,6 +89,8 @@
               href: ./ag/tutorial-restrict-web-traffic-powershell.md
             - name: Azure CLI
               href: ./ag/tutorial-restrict-web-traffic-cli.md
+        - name: Политики для каждого сайта
+          href: ./ag/per-site-policies.md
         - name: Перенос политики WAF
           href: ./ag/migrate-policy.md
         - name: Настройка правил WAF
@@ -86,7 +109,7 @@
           href: ./ag/bot-protection.md
         - name: Связывание политики с существующим Шлюзом приложений
           href: ./ag/associate-waf-policy-existing-gateway.md
-        - name: Журналы диагностики
+        - name: Журналы ресурсов
           href: ./ag/web-application-firewall-logs.md
         - name: Устранение неполадок с WAF
           href: ./ag/web-application-firewall-troubleshoot.md
@@ -106,14 +129,14 @@
           href: ./afds/waf-front-door-tutorial-geo-filtering.md
         - name: Мониторинг и ведение журналов
           href: ./afds/waf-front-door-monitor.md
-- name: Диагностика
-  items:
-    - name: Шлюз приложений
+    - name: Диагностика
       items:
-        - name: Устранение неполадок с WAF
-          href: ./ag/web-application-firewall-troubleshoot.md
-        - name: Служба Log Analytics
-          href: ./ag/log-analytics.md
+        - name: Шлюз приложений
+          items:
+            - name: Устранение неполадок с WAF
+              href: ./ag/web-application-firewall-troubleshoot.md
+            - name: Служба Log Analytics
+              href: ./ag/log-analytics.md
 - name: Справочник
   items:
     - name: Правила CRS
@@ -124,12 +147,16 @@
           href: 'https://docs.microsoft.com/cli/azure/ext/front-door/network?view=azure-cli-latest'
         - name: Шлюз приложений
           href: 'https://docs.microsoft.com/cli/azure/network/application-gateway?view=azure-cli-latest'
+        - name: CDN
+          href: 'https://docs.microsoft.com/cli/azure/cdn/waf?view=azure-cli-latest'
     - name: Azure PowerShell
       items:
         - name: Front Door
           href: 'https://docs.microsoft.com/powershell/module/az.frontdoor/?view=azps-3.3.0'
         - name: Шлюз приложений
           href: 'https://docs.microsoft.com/powershell/module/az.network/?view=azps-3.3.0#application_gateway'
+        - name: CDN
+          href: 'https://www.powershellgallery.com/packages/Az.Cdn/1.5.0-preview'
     - name: REST API
       items:
         - name: Front Door

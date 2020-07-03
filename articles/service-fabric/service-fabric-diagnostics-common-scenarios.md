@@ -4,10 +4,10 @@ description: Сведения об устранении распростране
 ms.topic: article
 ms.date: 02/25/2019
 ms.openlocfilehash: 3c7f027bad71d48db5fba002f778f23db8225fa5
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76906954"
 ---
 # <a name="diagnose-common-scenarios-with-service-fabric"></a>Диагностика распространенных сценариев с помощью Service Fabric
@@ -45,7 +45,7 @@ ms.locfileid: "76906954"
 1. В том же ресурсе Application Insights вы можете фильтровать запросы вместо исключений и просматривать все сделанные запросы.
 2. Если вы используете пакет SDK для Service Fabric Application Insights, вы можете увидеть визуальное представление ваших служб, связанных друг с другом, а также количество успешных и неудачных запросов. В левой части экрана нажмите вкладку "Схема приложений"
 
-    ![колонка "схема приложений искусственного интеллекта"](media/service-fabric-diagnostics-common-scenarios/app-map-blade.png) ![схема приложения AI](media/service-fabric-diagnostics-common-scenarios/app-map-new.png)
+    ![Схема приложений искусственного](media/service-fabric-diagnostics-common-scenarios/app-map-blade.png) ![интеллекта стратегической схемы приложений](media/service-fabric-diagnostics-common-scenarios/app-map-new.png)
 
     Дополнительные сведения о схеме приложения см. в документации [по схеме приложения](../azure-monitor/app/app-map.md).
 
@@ -130,7 +130,7 @@ ms.locfileid: "76906954"
 
 Проверьте полный список счетчиков производительности по этим ссылкам [Reliable Services](service-fabric-reliable-serviceremoting-diagnostics.md) и [Субъекты](service-fabric-reliable-actors-diagnostics.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Поиск распространенных ошибок активации пакетов кода](./service-fabric-diagnostics-code-package-errors.md)
 * [Настройте оповещения в Application Insights](../azure-monitor/app/alerts.md), чтобы узнавать об изменениях в производительности или характере использования.

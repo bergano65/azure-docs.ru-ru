@@ -3,7 +3,7 @@ title: Использование поиска облаку в Azure Sentinel д
 description: В этой статье описывается использование поиска облаку в Azure Sentinel для хранения данных.
 services: sentinel
 documentationcenter: na
-author: cabailey
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -14,13 +14,13 @@ ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/06/2019
-ms.author: cabailey
-ms.openlocfilehash: 5b347848c9c6a58a70ab1093a6f9c70b62f3f769
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.author: yelevin
+ms.openlocfilehash: b392644e504fa8187e637278bef8718c9c2caa3f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74900458"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77582132"
 ---
 # <a name="use-hunting-livestream-in-azure-sentinel-to-detect-threats"></a>Использование поиска облаку в Azure Sentinel для обнаружения угроз
 
@@ -48,15 +48,15 @@ ms.locfileid: "74900458"
 
 Вы можете создать сеанс облаку на основе существующего запроса поиска или создать сеанс с нуля.
 
-1. В портал Azure перейдите к пункту **Sentinel** > **управление угрозами** > **поиске**.
+1. В портал Azure перейдите к элементу Поиск по **Sentinel** > **Threat Management** > **.**
 
 2. Создание сеанса облаку из запроса поиска:
     
     1. На вкладке **запросы** выберите запрос поиска для использования.
-    2. Щелкните запрос правой кнопкой мыши и выберите **Добавить в облаку**. Пример.
+    2. Щелкните запрос правой кнопкой мыши и выберите **Добавить в облаку**. Пример:
     
     > [!div class="mx-imgBorder"]
-    > ![создать сеанс облаку из запроса поиска Sentinel Azure](./media/livestream/livestream-from-query.png)
+    > ![Создание сеанса облаку из запроса поиска маркеров Azure](./media/livestream/livestream-from-query.png)
 
 3. Создание сеанса облаку с нуля: 
     
@@ -73,7 +73,7 @@ ms.locfileid: "74900458"
     В строке состояния на панели команд указывается, работает ли сеанс облаку или приостановлен. В следующем примере выполняется сеанс:
     
     > [!div class="mx-imgBorder"]
-    > ![создать сеанс облаку из службы Поиск меток Azure](./media/livestream/livestream-session.png)
+    > ![Создание сеанса облаку из службы "Поиск маркеров Azure"](./media/livestream/livestream-session.png)
 
 6. Выберите **сохранить** на панели команд.
     
@@ -81,18 +81,18 @@ ms.locfileid: "74900458"
 
 ## <a name="view-your-livestream-sessions"></a>Просмотр сеансов облаку
 
-1. В портал Azure перейдите к пункту **Sentinel** > **управление угрозами** ** > Поиск** > **облаку** .
+1. В**Hunting** > портал Azure откройте вкладку**Управление** > угрозами Поиск по **Sentinel** > **облаку** .
 
-2. Выберите сеанс облаку, который нужно просмотреть или изменить. Пример.
+2. Выберите сеанс облаку, который нужно просмотреть или изменить. Пример:
     
     > [!div class="mx-imgBorder"]
-    > ![создать сеанс облаку из запроса поиска Sentinel Azure](./media/livestream/livestream-tab.png)
+    > ![Создание сеанса облаку из запроса поиска маркеров Azure](./media/livestream/livestream-tab.png)
     
     Откроется выбранный сеанс облаку для воспроизведения, приостановки, редактирования и т. д.
 
 ## <a name="receive-notifications-when-new-events-occur"></a>Получать уведомления при возникновении новых событий
 
-Поскольку уведомления облаку для новых событий используют Уведомления портал Azure, эти уведомления отображаются при каждом использовании портал Azure. Пример.
+Поскольку уведомления облаку для новых событий используют Уведомления портал Azure, эти уведомления отображаются при каждом использовании портал Azure. Пример:
 
 ![Уведомление портал Azure для облаку](./media/livestream/notification.png)
 
@@ -103,11 +103,11 @@ ms.locfileid: "74900458"
 Вы можете повысить уровень сеанса облаку до нового оповещения, выбрав **повысить уровень для оповещения** на панели команд в соответствующем сеансе облаку:
 
 > [!div class="mx-imgBorder"]
-> ![повысить облаку сеанса до оповещения](./media/livestream/elevate-to-alert.png)
+> ![Повышение уровня сеанса облаку до предупреждения](./media/livestream/elevate-to-alert.png)
 
 Это действие открывает мастер создания правил, который предварительно заполняется запросом, связанным с сеансом облаку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как использовать поиск облаку в Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 

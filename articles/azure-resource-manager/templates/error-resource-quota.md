@@ -3,12 +3,12 @@ title: Ошибки квоты
 description: Описывает, как устранять ошибки квот ресурсов при развертывании ресурсов с помощью Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 03/09/2018
-ms.openlocfilehash: d36f7d12f432839760b68c85e1c5761e0caf8d85
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 410b086b39d63d03491d390364f4aec6300fc7c1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75659361"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79273791"
 ---
 # <a name="resolve-errors-for-resource-quotas"></a>Устранение ошибок квот ресурсов
 
@@ -40,9 +40,9 @@ please delete some resources of this type before creating a new one.
 Квоты применяются к группам ресурсов, подпискам, учетным записям и другим областям. Например, для подписки может быть настроено ограничение числа ядер для региона. При попытке развертывания виртуальной машины с большим количеством ядер, чем разрешено, вы получите сообщение о том, что квота превышена.
 Дополнительные сведения о квотах Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md).
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы узнать квоты виртуальной машины, выполните команду `az vm list-usage` в Azure CLI.
 
@@ -52,7 +52,7 @@ az vm list-usage --location "South Central US"
 
 Возвращаемые данные:
 
-```azurecli
+```output
 [
   {
     "currentValue": 0,
@@ -76,7 +76,7 @@ Get-AzVMUsage -Location "South Central US"
 
 Возвращаемые данные:
 
-```powershell
+```output
 Name                             Current Value Limit  Unit
 ----                             ------------- -----  ----
 Availability Sets                            0  2000 Count
@@ -93,19 +93,19 @@ Virtual Machines                             0 10000 Count
 >
 >
 
-1. Выберите **Подписки**.
+1. Выберите **подписки**.
 
-   ![Подписки](./media/error-resource-quota/subscriptions.png)
+   ![Subscriptions](./media/error-resource-quota/subscriptions.png)
 
 2. Выберите подписку, которая требует увеличенную квоту.
 
    ![Выбор подписки](./media/error-resource-quota/select-subscription.png)
 
-3. Выберите **Использование и квоты**.
+3. Выбор **использования + квоты**
 
    ![Использование и квоты](./media/error-resource-quota/select-usage-quotas.png)
 
-4. В правом верхнем углу выберите **Запросить увеличение**.
+4. В правом верхнем углу выберите **запросить увеличение**.
 
    ![Запросить увеличение](./media/error-resource-quota/request-increase.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Insight4GRC | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Insight4GRC | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Insight4GRC.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: d7b5856e76e426d282c5cb0a2e5c90a9983383f2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67100052"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insight4grc"></a>Руководство по Интеграция Azure Active Directory с Insight4GRC
+# <a name="tutorial-azure-active-directory-integration-with-insight4grc"></a>Руководство по интеграции Azure Active Directory с Insight4GRC
 
 В этом руководстве описано, как интегрировать Insight4GRC с Azure Active Directory (Azure AD).
 Интеграция Insight4GRC с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67100052"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Insight4GRC, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Insight4GRC с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,9 +106,9 @@ ms.locfileid: "67100052"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Insight4GRC](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.Insight4GRC.com/SAML`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.Insight4GRC.com/SAML`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.Insight4GRC.com/Public/SAML/ACS.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.Insight4GRC.com/Public/SAML/ACS.aspx`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -197,5 +197,5 @@ ms.locfileid: "67100052"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

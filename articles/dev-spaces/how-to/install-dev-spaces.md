@@ -1,39 +1,37 @@
 ---
-title: Установка Azure Dev Spaces в AKS & средств на стороне клиента
+title: Включение Azure Dev Spaces в AKS & Установка клиентских средств
 services: azure-dev-spaces
 ms.date: 07/24/2019
 ms.topic: conceptual
-description: Узнайте, как установить Azure Dev Spaces в кластере AKS и установить клиентские средства.
+description: Узнайте, как включить Azure Dev Spaces в кластере AKS и установить клиентские средства.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 0fd4cce9d25922bea50963c4e87e110759673bbc
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: a6b3be5ceba5e60b99b2f75e060f3321cd3151f2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75770634"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78898951"
 ---
-# <a name="install-azure-dev-spaces-on-aks-and-the-client-side-tooling"></a>Установка Azure Dev Spaces в AKS и клиентские средства на стороне клиента
+# <a name="enable-azure-dev-spaces-on-an-aks-cluster-and-install-the-client-side-tools"></a>Включение Azure Dev Spaces в кластере AKS и установка клиентских средств
 
-В этой статье показано несколько способов установки Azure Dev Spaces в кластере AKS, а также установка клиентских средств на стороне клиента.
+В этой статье показано несколько способов включения Azure Dev Spaces в кластере AKS, а также установки клиентских средств.
 
-## <a name="install-azure-dev-spaces-using-the-cli"></a>Установка Azure Dev Spaces с помощью интерфейса командной строки
+## <a name="enable-or-remove-azure-dev-spaces-using-the-cli"></a>Включение и удаление Azure Dev Spaces с помощью интерфейса командной строки
 
-Прежде чем можно будет установить модули разработки с помощью интерфейса командной строки, вам потребуется:
+Прежде чем можно будет включить модули разработки с помощью интерфейса командной строки, вам потребуется:
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись][az-portal-create-account].
 * [Azure CLI установлен][install-cli].
 * [Кластер AKS][create-aks-cli] в [поддерживаемом регионе][supported-regions].
 
 С помощью команды `use-dev-spaces` включите Dev Spaces в кластере AKS и следуйте инструкциям на экране.
 
-```cmd
+```azurecli
 az aks use-dev-spaces -g myResourceGroup -n myAKSCluster
 ```
 
 Приведенная выше команда включает пространства разработки в кластере *myAKSCluster* в группе *myResourceGroup* и создает пространство разработки *по умолчанию* .
 
-```cmd
-$ az aks use-dev-spaces -g myResourceGroup -n myAKSCluster
-
+```console
 'An Azure Dev Spaces Controller' will be created that targets resource 'myAKSCluster' in resource group 'myResourceGroup'. Continue? (y/N): y
 
 Creating and selecting Azure Dev Spaces Controller 'myAKSCluster' in resource group 'myResourceGroup' that targets resource 'myAKSCluster' in resource group 'myResourceGroup'...2m 24s
@@ -49,27 +47,40 @@ Configuring and selecting dev space 'default'...3s
 Managed Kubernetes cluster 'myAKSCluster' in resource group 'myResourceGroup' is ready for development in dev space 'default'. Type `azds prep` to prepare a source directory for use with Azure Dev Spaces and `azds up` to run.
 ```
 
-Команда `use-dev-spaces` также устанавливает интерфейс командной строки Azure Dev Spaces.
+`use-dev-spaces` Команда также устанавливает интерфейс командной строки Azure dev Spaces.
 
-## <a name="install-azure-dev-spaces-using-the-azure-portal"></a>Установка Azure Dev Spaces с помощью портал Azure
+Чтобы удалить Azure Dev Spaces из кластера AKS, используйте `azds remove` команду. Пример:
 
-Прежде чем можно будет установить модули разработки с помощью портал Azure, вам потребуется:
+```azurecli
+$ azds remove -g MyResourceGroup -n MyAKS
+Azure Dev Spaces Controller 'MyAKS' in resource group 'MyResourceGroup' that targets resource 'MyAKS' in resource group 'MyResourceGroup' will be deleted. This will remove Azure Dev Spaces instrumentation from the target resource for new workloads. Continue? (y/N): y
+
+Deleting Azure Dev Spaces Controller 'MyAKS' in resource group 'MyResourceGroup' that targets resource 'MyAks' in resource group 'MyResourceGroup' (takes a few minutes)...
+```
+
+Приведенная выше команда удаляет Azure Dev Spaces из кластера *мякс* в *MyResourceGroup*. Все пространства имен, созданные с помощью Azure Dev Spaces, будут сохраняться вместе с рабочими нагрузками, но новые рабочие нагрузки в этих пространствах имен не будут инструментированы с помощью Azure Dev Spaces. Кроме того, при перезапуске всех существующих модулей Pod, оснащенных Azure Dev Spaces, могут возникнуть ошибки. Эти модули необходимо повторно развернуть без Azure Dev Spaces инструментов. Чтобы полностью удалить Azure Dev Spaces из кластера, удалите все модули Pod во всех пространствах имен, где включено Azure Dev Spaces.
+
+## <a name="enable-or-remove-azure-dev-spaces-using-the-azure-portal"></a>Включение и удаление Azure Dev Spaces с помощью портал Azure
+
+Прежде чем можно будет включить модули разработки с помощью портал Azure, вам потребуется:
 * Подписка Azure. Если у вас нет подписки Azure, создайте [бесплатную учетную запись][az-portal-create-account].
 * [Кластер AKS][create-aks-portal] в [поддерживаемом регионе][supported-regions].
 
-Чтобы установить Azure Dev Spaces с помощью портал Azure, выполните следующие действия.
+Чтобы включить Azure Dev Spaces с помощью портал Azure:
 1. Войдите на [портал Azure][az-portal].
 1. Перейдите к кластеру AKS.
-1. Щелкните *пространства разработки*.
+1. Выберите пункт меню *пространства разработки* .
 1. Под надписью *Enable Dev Spaces* (Включить Dev Spaces) нажмите *Да* и щелкните *Сохранить*.
 
 ![Включение Dev Spaces на портале Azure](../media/how-to-setup-dev-spaces/enable-dev-spaces-portal.png)
 
-При установке Azure Dev Spaces с помощью **портал Azure не** устанавливаются средства на стороне клиента для Azure dev Spaces.
+Включение Azure Dev Spaces с **помощью портал Azure не** устанавливает клиентские средства для Azure dev Spaces.
 
-## <a name="install-the-client-side-tooling"></a>Установка клиентских средств
+Чтобы удалить Azure Dev Spaces из кластера AKS, измените *параметр включить пространства разработки* в значение *нет* и нажмите кнопку *сохранить*. Все пространства имен, созданные с помощью Azure Dev Spaces, будут сохраняться вместе с рабочими нагрузками, но новые рабочие нагрузки в этих пространствах имен не будут инструментированы с помощью Azure Dev Spaces. Кроме того, при перезапуске всех существующих модулей Pod, оснащенных Azure Dev Spaces, могут возникнуть ошибки. Эти модули необходимо повторно развернуть без Azure Dev Spaces инструментов. Чтобы полностью удалить Azure Dev Spaces из кластера, удалите все модули Pod во всех пространствах имен, где включено Azure Dev Spaces.
 
-Для взаимодействия с пространствами разработки в кластере AKS с локального компьютера можно использовать средства клиентской части Azure Dev Spaces. Существует несколько способов установки клиентских средств.
+## <a name="install-the-client-side-tools"></a>Установка клиентских средств
+
+Для взаимодействия с пространствами разработки в кластере AKS с локального компьютера можно использовать клиентские средства Azure Dev Spaces. Существует несколько способов установки клиентских средств:
 
 * В [Visual Studio Code][vscode]установите [расширение Azure dev Spaces][vscode-extension].
 * В [Visual Studio 2019][visual-studio]установите рабочую нагрузку разработка для Azure.

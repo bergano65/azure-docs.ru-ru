@@ -15,10 +15,10 @@ ms.date: 12/21/2018
 ms.author: willzhan
 ms.custom: seodec18
 ms.openlocfilehash: fbc6d6fa8f9a3b424eaec1f04a61b5ca24fe14fc
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77161789"
 ---
 # <a name="design-of-a-multi-drm-content-protection-system-with-access-control"></a>Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом 
@@ -48,7 +48,7 @@ ms.locfileid: "77161789"
 | **Платформа клиента** | **Собственная подсистема DRM** | **EME** |
 | --- | --- | --- |
 | **Смарт-ТВ, STB** | PlayReady, Widevine и др. | Встроенный браузер и EME для PlayReady и/или Widevine|
-| **Windows 10** | PlayReady | Microsoft Edge и IE 11 для PlayReady|
+| **Windows 10** | PlayReady | Microsoft Edge и IE 11 для PlayReady|
 | **Устройства Android (телефоны, планшеты, телевизоры)** |Widevine |Chrome для Widevine |
 | **iOS** | FairPlay | Safari для FairPlay (начиная с iOS версии 11.2) |
 | **macOS** | FairPlay | Safari для FairPlay (начиная с Safari 9+ на Mac OS X 10.11+ El Capitan)|
@@ -133,9 +133,9 @@ ms.locfileid: "77161789"
 
 | **Стандартный блок** | **Технология** |
 | --- | --- |
-| **Проигрыватель** |[Проигрыватель мультимедиа Azure](https://azure.microsoft.com/services/media-services/media-player/) |
+| **Многопользовательские** |[Проигрыватель мультимедиа Azure](https://azure.microsoft.com/services/media-services/media-player/) |
 | **Поставщик удостоверений (IDP)** |Azure Active Directory (Azure AD) |
-| **Служба маркеров безопасности (STS)** |Azure AD |
+| **Служба маркеров безопасности (STS)** |Azure AD |
 | **Рабочий процесс защиты DRM** |Динамическая защита служб мультимедиа Azure |
 | **Доставка лицензий DRM** |* Доставка лицензий Служб мультимедиа (PlayReady, Widevine, FairPlay) <br/>* Сервер лицензирования Axinom <br/>* Пользовательский сервер лицензирования PlayReady |
 | **Исходный домен** |Конечная точка потоковой передачи Служб мультимедиа Azure |
@@ -176,7 +176,7 @@ ms.locfileid: "77161789"
 ### <a name="implementation-procedures"></a>Процедуры реализации
 Реализация включает в себя следующие шаги:
 
-1. Подготовка тестовых ресурсов. Кодирование или упаковка тестового видео в формат MP4 с разными скоростями в службах мультимедиа. Этот ресурс *НЕ* защищен DRM. Защита DRM будет реализована позже с помощью динамической защиты.
+1. Подготовка тестовых ресурсов. Кодирование или упаковка тестового видео в формат MP4 с разными скоростями в службах мультимедиа. Этот ресурс *не* защищен DRM. Защита DRM будет реализована позже с помощью динамической защиты.
 
 2. Создание идентификатора ключа и ключа содержимого (при необходимости из начального значения). В этом случае система управления ключами не требуется, так как мы имеем дело только с одним набором идентификатора ключа и ключа содержимого для нескольких тестовых ресурсов.
 
@@ -209,7 +209,7 @@ ms.locfileid: "77161789"
 
 Дополнительные сведения о настройке Azure AD для приложения проигрывателя ASP.NET MVC см. в статье [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC Служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT).
 
-Дополнительные сведения см. в статье [JWT token Authentication in Azure Media Services and Dynamic Encryption](http://gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) (Проверка подлинности маркера JWT в службах мультимедиа Azure и динамическое шифрование).  
+Дополнительные сведения см. в статьях [Проверка подлинности маркеров JWT в службах мультимедиа Azure и динамическое шифрование](http://gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/).  
 
 Сведения об Azure AD:
 
@@ -276,7 +276,7 @@ ms.locfileid: "77161789"
 
 Так как Azure AD доверяет домену учетных записей Майкрософт, можно добавить любые учетные записи из любого из следующих доменов в пользовательский клиент Azure AD и использовать учетную запись для входа:
 
-| **Имя домена** | **Домен** |
+| **Доменное имя** | **Домен** |
 | --- | --- |
 | **Домен пользовательского клиента Azure AD** |somename.onmicrosoft.com |
 | **Домен организации** |microsoft.com |
@@ -350,8 +350,8 @@ Widevine не запрещает делать снимок экрана защи
 
 В обоих указанных случаях проверка подлинности пользователя остается неизменной. Она происходит через Azure AD. Единственное различие состоит в том, что маркеры JWT выдаются пользовательской STS вместо Azure AD. При настройке динамической защиты CENC ограничение службы доставки лицензий указывает тип маркера JWT — симметричный или асимметричный ключи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Часто задаваемые вопросы](frequently-asked-questions.md)
+* [Вопросы и ответы](frequently-asked-questions.md)
 * [Обзор системы защиты содержимого](content-protection-overview.md)
 * [Использование динамического шифрования DRM и службы доставки лицензий](protect-with-drm.md)

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 6/15/2019
 ms.author: rohink
 ms.openlocfilehash: 76b19cfb3c00a26d81eab81f67d8e156a520f377
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77121720"
 ---
 # <a name="azure-dns-faq"></a>Вопросы и ответы об Azure DNS
@@ -195,12 +195,12 @@ Azure DNS поддерживает только размещение "стати
 
 Чтобы настроить имена IDN в Azure DNS, преобразуйте имя зоны или набора записей в punycode. Azure DNS в настоящее время не поддерживает встроенное преобразование в punycode.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Что такое Azure DNS?](dns-overview.md)
+- Дополнительные [сведения о Azure DNS](dns-overview.md).
 
 - [Использование Azure DNS для частных доменов](private-dns-overview.md).
 
-- [Обзор зон и записей DNS](dns-zones-records.md).
+- [Дополнительные сведения о зонах и записях DNS](dns-zones-records.md).
 
 - [Краткое руководство. Настройка Azure DNS для разрешения имен с помощью портала Azure](dns-getstarted-portal.md).

@@ -13,10 +13,10 @@ ms.author: baselden
 ms.reviewer: jeeds
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3b3edbbe037c3874d639476e516b3732b7573d9b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75443373"
 ---
 # <a name="choose-the-right-federation-protocol-for-your-multi-tenant-application"></a>Выбор правильного протокола Федерации для приложения с несколькими клиентами
@@ -30,17 +30,17 @@ ms.locfileid: "75443373"
 * Security Assertion Markup Language (SAML)
 * Web Services Federation (WSFed)
 
-| Возможность| OAuth/OIDC| SAML/WSFed |
+| Функция| OAuth/OIDC| SAML/WSFed |
 | - |-|-|
 | Единый вход на основе веб-сайта| √| √ |
 | Единый выход через Интернет| √| √ |
-| Единый вход на основе мобильных устройств| √| √ |
-| Единый выход на основе мобильных устройств| √| √ |
+| Единый вход на основе мобильных устройств| √| √* |
+| Единый выход на основе мобильных устройств| √| √* |
 | Политики условного доступа для мобильных приложений| √| X |
 | Простой интерфейс MFA для мобильных приложений| √| X |
 | Microsoft Graph доступа| √| X |
 
-\* Возможно, но корпорация Майкрософт не предоставляет примеры или рекомендации.
+* Возможно, но корпорация Майкрософт не предоставляет примеры или рекомендации.
 
 ## <a name="oauth-20-and-open-id-connect"></a>OAuth 2,0 и Open ID Connect
 
@@ -94,8 +94,8 @@ Microsoft Graph — это структура данных для всех Micro
 
 Если для проверки подлинности используется открытая ИДЕНТИФИКАЦИя Connect, то процесс разработки будет непростым, так как вы будете использовать OAuth2, фундамент открытого идентификатора Connect, чтобы получить маркеры, которые можно использовать для вызова Microsoft Graph API. Если приложение использует SAML или WSFed, необходимо добавить дополнительный код в приложение, чтобы получить эти OAuth2 для получения маркеров, необходимых для вызова Microsoft Graph API. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Включение единого входа для приложения с несколькими клиентами](isv-sso-content.md)
+[Включение единого входа для мультитенантного приложения](isv-sso-content.md)
 
 [Создание документации для приложения с несколькими клиентами](isv-create-sso-documentation.md)

@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/12/2019
-ms.openlocfilehash: 05d4ecd58f6febff75212f1ad88b60be4f23c2a7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 3/18/2020
+ms.openlocfilehash: 197b3100190711a51cfe125fe1214a59c18e1491
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454338"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79536978"
 ---
 # <a name="supported-azure-database-for-mysql-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MySQL
 
@@ -47,6 +47,6 @@ MySQL использует схему именования X.Y.Z. X являет
 
 Сейчас обновления основного и дополнительного номера версии не поддерживаются. Например, обновление с версии MySQL 5.6 до MySQL 5.7 не поддерживается. Чтобы выполнить обновление с версии 5.6 до 5.7, создайте дамп и восстановите его на сервере, который был создан с новой версией ядра. Для дополнительных сведений см. [эту статью](./concepts-migrate-dump-restore.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Уровни служб в базе данных Azure для MySQL](./concepts-pricing-tiers.md).
+Сведения о квотах и ограничениях для конкретных ресурсов, основанных на **уровне служб**, см. в разделе [уровни служб](./concepts-pricing-tiers.md) .

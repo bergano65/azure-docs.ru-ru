@@ -1,15 +1,14 @@
 ---
 author: paulbouwer
-ms.service: container-service
 ms.topic: include
 ms.date: 11/15/2019
 ms.author: pabouwer
-ms.openlocfilehash: 33c9ce25873b38a01701e6a36219083642666e84
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: 4bd2af67ed0e570e8d171da678b69d0908627374
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74170878"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77594034"
 ---
 Чтобы удалить секреты, выполните следующую команду:
 

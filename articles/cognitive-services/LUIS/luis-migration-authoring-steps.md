@@ -9,20 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 12/30/2019
+ms.date: 05/17/2020
 ms.author: diberry
-ms.openlocfilehash: 9c92a3ad2fc6a372b58aa651228a7bbccdf8ba0a
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 2c28e6c1edf4188cf3ea80c14565785dcf1dcbba
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552034"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83653823"
 ---
 # <a name="steps-to-migrate-to-the-azure-authoring-resource"></a>Шаги для перехода на ресурс разработки Azure
 
 На портале Language Understanding (LUIS) перенесите все приложения, которыми вы владеете, для использования ресурса по разработке Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **При необходимости**создайте резервную копию приложений из списка приложений Luis Portal, экспортировав каждое приложение или используя [API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40)экспорта.
 * **При необходимости**сохраните список коллаборатор'с для каждого приложения. Все участники совместной работы могут отправлять сообщение электронной почты в рамках процесса миграции.
@@ -32,7 +32,10 @@ ms.locfileid: "75552034"
 
 ## <a name="access-the-migration-process"></a>Доступ к процессу миграции
 
-Еженедельно будет предложено перенести приложения. Вы можете отменить это окно без миграции. Если вы хотите выполнить миграцию до следующего запланированного периода, можно начать процесс миграции со значка **замка** на верхней панели инструментов на портале Luis.
+Еженедельно будет предложено перенести приложения. Вы можете отменить это окно без миграции. Если вы хотите выполнить миграцию до следующего запланированного периода, можно начать процесс миграции со значка **Azure** на верхней панели инструментов портала Luis.
+
+> [!div class="mx-imgBorder"]
+> ![Значок миграции](./media/migrate-authoring-key/migration-button.png)
 
 ## <a name="app-owner-begins-the-migration-process"></a>Владелец приложения начинает процесс миграции
 
@@ -65,7 +68,7 @@ ms.locfileid: "75552034"
 1. Выберите Создание ресурса для создания LUIS, выбрав использование существующего ресурса создания или создания нового ресурса для разработки.
 
     > [!div class="mx-imgBorder"]
-    > ![создать](./media/migrate-authoring-key/choose-existing-authoring-resource.png) ресурсов для разработки
+    > ![Создание ресурса для разработки](./media/migrate-authoring-key/choose-existing-authoring-resource.png)
 
 1. В следующем окне введите сведения о ключе ресурса. После ввода сведений выберите **создать ресурс**. У вас может быть 10 бесплатных ресурсов для разработки для каждого региона на подписку.
 
@@ -94,12 +97,12 @@ ms.locfileid: "75552034"
 
 1. Перед доступом к приложениям выберите ресурс подписки и LUIS, чтобы просмотреть приложения, которые вы можете создать.
 
-    ![Выберите элемент подписка и ресурс для разработки LUIS, чтобы просмотреть приложения, которые вы можете создать.](./media/migrate-authoring-key/app-list-by-subscription-and-resource.png)
-
+    > [!div class="mx-imgBorder"]
+    > ![Выберите элемент подписка и ресурс для разработки LUIS, чтобы просмотреть приложения, которые вы можете создать.](./media/create-app-in-portal-select-subscription-luis-resource.png)
 
 ## <a name="app-contributor-begins-the-migration-process"></a>Участник приложения начинает процесс миграции
 
-Выполните те же действия, что и у владельца приложения для миграции. Этот процесс создает новый ресурс для создания ресурсов типа `LUIS.Authoring`.
+Выполните те же действия, что и у владельца приложения для миграции. Этот процесс создает новый ресурс для создания нового типа `LUIS.Authoring` .
 
 Необходимо перенести учетную запись, чтобы добавить ее в качестве участника в перенесенные приложения, принадлежащие другим пользователям.
 
@@ -111,9 +114,9 @@ ms.locfileid: "75552034"
 
 ## <a name="troubleshooting-errors-with-the-migration-process"></a>Устранение ошибок в процессе миграции
 
-Если на портале LUIS `MissingSubscriptionRegistration` появляется сообщение об ошибке с красной панелью уведомлений в процессе миграции, создайте ресурс службы для перекрестного обслуживания в [портал Azure](luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal) или [Azure CLI](luis-how-to-azure-subscription.md#create-resources-in-azure-cli). Узнайте больше о [причинах этой ошибки](../../azure-resource-manager/templates/error-register-resource-provider.md#cause).
+Если на `MissingSubscriptionRegistration` портале Luis появляется сообщение об ошибке с красной панелью уведомлений во время процесса миграции, создайте ресурс «неработающая служба» в [портал Azure](luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal) или [Azure CLI](luis-how-to-azure-subscription.md#create-resources-in-azure-cli). Узнайте больше о [причинах этой ошибки](../../azure-resource-manager/templates/error-register-resource-provider.md#cause).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 
 * Ознакомьтесь с [основными понятиями](luis-concept-keys.md) о создании ключей и ключах среды выполнения

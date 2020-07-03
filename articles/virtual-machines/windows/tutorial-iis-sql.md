@@ -1,25 +1,19 @@
 ---
 title: Учебник. Создание виртуальных машин с выполняемым стеком SQL, IIS и .NET в Azure
 description: В этом руководстве описано, как установить стек SQL, IIS и .NET Azure на виртуальной машине Windows в Azure.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 286d00ce718a34dea15a075984cc3b2a5e4cfec3
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 3e44236f74a5448c540c58ba730d65b412d48bd0
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74064658"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82101711"
 ---
 # <a name="tutorial-install-the-sql-iis-net-stack-in-a-windows-vm-with-azure-powershell"></a>Руководство по Установка стека SQL, IIS и .NET на виртуальной машине Windows с помощью Azure PowerShell
 
@@ -127,9 +121,9 @@ Set-AzVMSqlServerExtension `
    -Location "EastUS"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы установили стек для SQL, IIS и .NET с помощью Azure PowerShell. Вы научились выполнять следующие задачи:
+В этом руководстве вы установили стек для SQL, IIS и .NET с помощью Azure PowerShell. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины 
@@ -137,8 +131,8 @@ Set-AzVMSqlServerExtension `
 > * создание виртуальной машины с SQL Server;
 > * установка расширения SQL Server.
 
-Перейдите к следующему руководству, чтобы узнать, как защитить веб-сервер IIS с помощью SSL-сертификатов.
+Перейдите к следующему руководству, чтобы узнать, как защитить веб-сервер IIS с помощью TLS/SSL-сертификатов.
 
 > [!div class="nextstepaction"]
-> [Защита веб-сервера IIS с помощью SSL-сертификатов](tutorial-secure-web-server.md)
+> [Защита веб-сервера IIS с помощью TLS/SSL-сертификатов](tutorial-secure-web-server.md)
 

@@ -10,10 +10,10 @@ services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc
 ms.openlocfilehash: 9d5b1511ffb48f587d4ee5c5a7d2b0ee9216018f
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74976780"
 ---
 # <a name="tutorial-enroll-the-device-to-an-iot-hub-using-the-azure-iot-hub-provisioning-service-client-net"></a>Руководство по Регистрация устройства в Центре Интернета вещей с помощью клиента службы подготовки для Центра Интернета вещей Azure (.NET)
@@ -227,7 +227,7 @@ ms.locfileid: "74976780"
 Запустите устройство, чтобы разрешить клиентскому приложению начать регистрацию в службе подготовки устройств.  
 
 
-## <a name="verify-the-device-is-registered"></a>Проверка регистрации устройства
+## <a name="verify-the-device-is-registered"></a>проверка регистрации устройства.
 
 После загрузки устройства необходимо выполнить следующие действия. Дополнительные сведения см. в репозитории с [примером клиента для подготовки устройств](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device). 
 
@@ -239,8 +239,8 @@ ms.locfileid: "74976780"
 
     ![Успешное подключение к центру на портале](./media/tutorial-net-provision-device-to-hub/hub-connect-success.png)
 
-## <a name="next-steps"></a>Дополнительная информация
-Из этого руководства вы узнали, как выполнить следующие задачи:
+## <a name="next-steps"></a>Дальнейшие действия
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Регистрация устройства

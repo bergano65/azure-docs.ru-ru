@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: a184e76faa89199d3e13ece3e17f94f73d995a12
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 7c2efc9c736097873201505f280af5d47bed4847
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760272"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80294173"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Распределенная трассировка и корреляция путем обмена сообщениями через служебную шину
 
@@ -30,12 +30,12 @@ ms.locfileid: "76760272"
 Служебная шина Microsoft Azure для обмена сообщениями имеет определенные свойства полезных данных, которые производитель и потребитель должны использовать для передачи этого контекста трассировки.
 Протокол основан на [протоколе HTTP для корреляции](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md).
 
-| Имя свойства        | Description                                                 |
+| Имя свойства        | Описание                                                 |
 |----------------------|-------------------------------------------------------------|
 |  Diagnostic-Id       | Уникальный идентификатор внешнего вызова от производителя к очереди. Обоснование, рекомендации и сведения о формате см. в разделе [Request-Id](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#request-id) протокола HTTP. |
 |  Correlation-Context | Контекст операции, который распространяется на все службы, участвующие в обработке операции. Дополнительные сведения см. в разделе [Correlation-Context](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#correlation-context) протокола HTTP. |
 
-## <a name="service-bus-net-client-auto-tracing"></a>Автоматическая трассировка клиента .NET служебной шины
+## <a name="service-bus-net-client-autotracing"></a>Автотрассировка клиента .NET служебной шины
 
 Начиная с версии 3.0.0, [клиент служебной шины Microsoft Azure для .NET](/dotnet/api/microsoft.azure.servicebus.queueclient) предоставляет точки инструментария трассировки, которые можно обработать с помощью систем трассировки или фрагмента кода клиента.
 Инструментирование позволяет отслеживать все вызовы в службу обмена сообщениями служебной шины со стороны клиента. Если обработка сообщений выполняется с помощью [шаблона обработчика сообщений](/dotnet/api/microsoft.azure.servicebus.queueclient.registermessagehandler), она также будет инструментирована.
@@ -84,6 +84,12 @@ async Task ProcessAsync(Message message)
 Вложенные трассировки и исключения, обнаруженные во время обработки сообщения, также имеют свойства корреляции, представляя их в качестве дочерних элементов `RequestTelemetry`.
 
 Если вы отправили вызовы к поддерживаемым внешним компонентам во время обработки сообщения, они также будут автоматически отслеживаться и коррелироваться. Дополнительные сведения о выполнении отслеживания и корреляции вручную см. в статье [Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET](../azure-monitor/app/custom-operations-tracking.md).
+
+Если вы используете внешний код в дополнение к пакету SDK для Application Insights, то при просмотре Application Insights журналов необходимо больше **времени** . 
+
+![Более длительная продолжительность в журнале Application Insights](./media/service-bus-end-to-end-tracing/longer-duration.png)
+
+Это не значит, что во время получения сообщения произошла задержка. В этом сценарии сообщение уже было получено с момента передачи сообщения в качестве параметра в код пакета SDK. Кроме того, тег **Name** в журналах App Insights (**процесс**) указывает на то, что сообщение теперь обрабатывается кодом обработки внешнего события. Эта проблема не связана с Azure. Вместо этого эти метрики обращаются к эффективности внешнего кода, учитывая, что сообщение уже получено от служебной шины. См. [этот файл в GitHub](https://github.com/Azure/azure-sdk-for-net/blob/4bab05144ce647cc9e704d46d3763de5f9681ee0/sdk/servicebus/Microsoft.Azure.ServiceBus/src/ServiceBusDiagnosticsSource.cs) , чтобы узнать, где создан тег **Process** и назначен после получения сообщения от служебной шины. 
 
 ### <a name="tracking-without-tracing-system"></a>Отслеживание без системы трассировки
 Если ваша система трассировки не поддерживает автоматическое отслеживание вызовов служебной шины, вы можете рассмотреть возможность добавить эту поддержку в систему трассировки или приложение. В этом разделе описываются события диагностики, отправленные клиентом .NET служебной шины.  
@@ -139,9 +145,9 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 В этом примере прослушиватель записывает длительность, результат, уникальный идентификатор и время начала для каждой операции служебной шины.
 
-#### <a name="events"></a>Мероприятия
+#### <a name="events"></a>События
 
-Для каждой операции отправляются два события: Start и Stop. Скорее всего, вас интересуют только события Stop. Они отображают результат операции, а также время начала и длительность в качестве свойств действия.
+Для каждой операции отправляются два события: Start и Stop. Скорее всего, вас интересуют только события Stop. Они предоставляют результат операции, а также время начала и длительность в качестве свойств действия.
 
 Полезные данные события предоставляют событию контекст операции, они реплицируют входящие параметры API и возвращаемое значение. Полезные данные события Stop имеют все свойства полезных данных события Start. Таким образом, вы можете полностью игнорировать событие Start.
 
@@ -225,7 +231,7 @@ serviceBusLogger.LogInformation($"{currentActivity.OperationName} is finished, D
 
 При наличии нескольких прослушивателей `DiagnosticSource` для одного источника будет достаточно, чтобы событие принял один из них, поэтому `IsEnabled` вызывать необязательно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Корреляция данных телеметрии в Application Insights](../azure-monitor/app/correlation.md)
 * [Настройка Application Insights: отслеживание зависимостей](../azure-monitor/app/asp-net-dependencies.md), чтобы выяснить, что стало причиной медленной работы: REST, SQL или другие внешние ресурсы.

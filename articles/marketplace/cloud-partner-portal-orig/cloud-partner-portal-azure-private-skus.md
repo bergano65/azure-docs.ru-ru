@@ -1,19 +1,18 @@
 ---
 title: Частные SKU и планы | Azure Marketplace
 description: Как использовать частные номера SKU для управления доступностью предложений.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/15/2019
-ms.author: pabutler
-ms.openlocfilehash: eb6eac5eafaeea239bfaf9cf2aface3db659dd57
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: ee3ab7be4d15b13a3c0bb014a3ca4d4096299b4c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818835"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80280394"
 ---
 <a name="private-skus-and-plans"></a>Частные номера SKU и планы
 ============
@@ -99,7 +98,7 @@ ms.locfileid: "73818835"
 
 ###  <a name="managing-subscriptions-with-the-api"></a>Управление подписками с помощью API
 
-Вы можете использовать API для отправки CSV-файла или непосредственного управления аудиторией (без использования CSV-файла). Как правило, вам нужно просто получить предложение, обновить объект `restrictedAudience`, а затем отправить эти изменения обратно в предложение, чтобы добавить или удалить участников аудитории.
+Вы можете использовать API для отправки CSV-файла или непосредственного управления аудиторией (без использования CSV-файла). Как правило, вам нужно просто получить предложение, обновить `restrictedAudience` объект, а затем отправить эти изменения обратно в ваше предложение, чтобы добавить или удалить участников аудитории.
 
 Вот как программным способом обновить список аудиторий:
 
@@ -127,7 +126,7 @@ ms.locfileid: "73818835"
 
     Для каждого объекта аудитории с ограниченным доступом:
 
-    а. Скачайте содержимое `restrictedAudience.uploadedCsvUri`. Содержимое — это просто CSV-файл с заголовками. Например:
+    a. Скачайте содержимое `restrictedAudience.uploadedCsvUri`. Содержимое — это просто CSV-файл с заголовками. Пример:
 
         type,id,description
         subscriptionId,541a269f-3df2-486e-8fe3-c8f9dcf28205,sub1
@@ -137,7 +136,7 @@ ms.locfileid: "73818835"
 
     c. Отправьте обновленный CSV-файл в расположение, например [хранилище BLOB-объектов Azure](../../storage/blobs/storage-blobs-overview.md) или [OneDrive](https://onedrive.live.com), и создайте ссылку только для чтения на файл. Это будет новый *SasUrl*.
 
-    г) Обновите ключ `restrictedAudience.uploadedCsvUri` новым *SasUrl*.
+    d. Обновите `restrictedAudience.uploadedCsvUri` ключ с помощью нового *SasUrl*.
 
     **Если вы вручную указали исходный список подписок для частного предложения из Портал Cloud Partner:**
 
@@ -157,7 +156,7 @@ ms.locfileid: "73818835"
         ]}
     ```
 
-    а. Для каждого объекта аудитории с ограниченным доступом добавьте или удалите записи в списке `restrictedAudience.manualEntries` по мере необходимости.
+    a. При необходимости добавьте или удалите записи в `restrictedAudience.manualEntries` списке для каждого объекта аудитории с ограниченным доступом.
 
 4. После завершения обновления всех объектов *рестриктедаудиенце* для каждого SKU частного предложения [Обновите предложение](cloud-partner-portal-api-creating-offer.md):
 

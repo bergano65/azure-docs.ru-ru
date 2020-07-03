@@ -1,15 +1,15 @@
 ---
 author: mgottein
-ms.service: search
+ms.service: cognitive-search
 ms.topic: include
 ms.date: 05/02/2019
 ms.author: magottei
-ms.openlocfilehash: c67c424d9481afadfb486a5bf354940d632dba9e
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: eb90e5befe7d7f37a5ca6e4f13200708fa509ae0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76159426"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80272798"
 ---
 * PDF
 * Форматы Microsoft Office: DOCX/DOC/DOCM, XLSX/XLS/XLSM, PPTX/PPT/PPTM, MSG (сообщения электронной почты Outlook), XML (как 2003, так и 2006 WORD XML)

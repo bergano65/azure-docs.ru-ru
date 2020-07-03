@@ -1,16 +1,16 @@
 ---
-title: Поиск и устранение неисправностей в обновлениях приложений
+title: Устранение неполадок при обновлении приложений
 description: В этой статье рассматриваются некоторые общие проблемы, связанные с обновлением приложений структуры служб, и способы их устранения.
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: d462f2c2482e0fbb4d252967754a9675ed362674
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75377928"
 ---
-# <a name="troubleshoot-application-upgrades"></a>Устранение неполадок при обновлении приложения
+# <a name="troubleshoot-application-upgrades"></a>Устранение неполадок при обновлениях приложений
 
 В этой статье рассматриваются некоторые общие проблемы, связанные с обновлением приложений Azure Service Fabric, и способы их устранения.
 
@@ -26,7 +26,7 @@ ms.locfileid: "75377928"
 
 ### <a name="identify-the-failure-type"></a>Определение типа ошибки
 
-В выходных данных **Get-ServiceFabricApplicationUpgrade** **FailureTimestampUtc** определяет временную метку (по всеобщему скоординированному времени), при которой сбой обновления был обнаружен Service Fabric и было запущено действие **FailureAction**. **FailureReason** указывает на одну из трех потенциальных высокоуровневых причин сбоя:
+В выходных данных **Get-ServiceFabricApplicationUpgrade****FailureTimestampUtc** определяет временную метку (по всеобщему скоординированному времени), при которой сбой обновления был обнаружен Service Fabric и было запущено действие **FailureAction**. **FailureReason** указывает на одну из трех потенциальных высокоуровневых причин сбоя:
 
 1. UpgradeDomainTimeout указывает, что для определенного домена обновление занимает слишком много времени, что привело к истечению срока **UpgradeDomainTimeout** .
 2. OverallUpgradeTimeout указывает, что обновление в целом заняло слишком много времени, что привело к истечению срока **UpgradeTimeout** .
@@ -212,9 +212,9 @@ Service Fabric преобразовывает все процентные зна
 
 Напомним о том, как значения времени ожидания сказываются на времени применения обновлений.
 
-Обновления для домена обновления не могут завершиться быстрее, чем сумма значений параметров *HealthCheckWaitDuration* + *HealthCheckStableDuration*.
+Обновление домена обновления не может выполняться быстрее, чем *хеалсчеккваитдуратион* + *HealthCheckStableDuration*.
 
-Сбой обновления не может произойти быстрее, чем сумма значений *HealthCheckWaitDuration* + *HealthCheckRetryTimeout*.
+Сбой обновления не может происходить быстрее, чем *хеалсчеккваитдуратион* + *HealthCheckRetryTimeout*.
 
 Время обновления для домена обновления ограничено значением *UpgradeDomainTimeout*.  Если значения *HealthCheckRetryTimeout* и *HealthCheckStableDuration* оба не равны нулю, а работоспособность приложения постоянно меняется, то время ожидания обновления обязательно завершится при достижении значения *UpgradeDomainTimeout*. *UpgradeDomainTimeout* начинает обратный отсчет с момента начала текущего домена обновления.
 
@@ -226,6 +226,6 @@ Service Fabric преобразовывает все процентные зна
 
 Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).
 
-Узнайте, как использовать [сериализацию данных](service-fabric-application-upgrade-data-serialization.md), чтобы обеспечить совместимость обновлений приложения.
+Изучите, как использовать [сериализацию данных](service-fabric-application-upgrade-data-serialization.md), чтобы обеспечить совместимость обновлений приложений.
 
-[Дополнительные разделы](service-fabric-application-upgrade-advanced.md)содержат сведения о работе с расширенными функциями при обновлении приложения.
+Узнайте, как использовать расширенные функциональные возможности при обновлении приложения, обратившись к [дополнительным разделам](service-fabric-application-upgrade-advanced.md).

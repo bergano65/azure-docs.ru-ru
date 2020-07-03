@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
 ms.openlocfilehash: 27d43af2d5860d287d8b5914379747ae528db34b
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980149"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79250677"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины зависимостей Azure Monitor для Windows
 
@@ -74,17 +74,17 @@ ms.locfileid: "75980149"
 | Имя | Значение/пример |
 | ---- | ---- |
 | версия_API | 2015-01-01 |
-| publisher | Microsoft.Azure.Monitoring.DependencyAgent |
-| type | DependencyAgentWindows |
+| publisher | Microsoft. Azure. Monitoring. Депенденциажент |
+| type | депенденциажентвиндовс |
 | typeHandlerVersion | 9,5 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
 Расширения виртуальных машин Azure можно развернуть с помощью шаблонов Azure Resource Manager. Вы можете использовать схему JSON, описанную в предыдущем разделе в шаблоне Azure Resource Manager, чтобы запустить расширение агента зависимостей виртуальной машины Azure во время развертывания шаблона Azure Resource Manager.
 
-JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины. Вы также можете поместить его на корневом или верхнем уровне шаблона диспетчер ресурсов JSON. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/templates/child-resource-name-type.md).
+JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины. Вы также можете поместить его на корневом или верхнем уровне шаблона диспетчер ресурсов JSON. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Задание имени и типа для дочерних ресурсов](../../azure-resource-manager/templates/child-resource-name-type.md).
 
-В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
+В следующем примере предполагается, что расширение агента зависимостей вложено в ресурс виртуальной машины. При вложении ресурса расширения JSON помещается в `"resources": []` объект виртуальной машины.
 
 
 ```json
@@ -127,7 +127,7 @@ JSON для расширения виртуальной машины можно 
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
 
-Вы можете использовать команду `Set-AzVMExtension`, чтобы развернуть расширение виртуальной машины агента зависимостей на существующей виртуальной машине. Перед выполнением команды необходимо сохранить общедоступные и частные конфигурации в хэш-таблице PowerShell.
+С помощью `Set-AzVMExtension` команды можно развернуть расширение виртуальной машины агента зависимостей на существующей виртуальной машине. Перед выполнением команды необходимо сохранить общедоступные и частные конфигурации в хэш-таблице PowerShell.
 
 ```powershell
 
@@ -142,7 +142,7 @@ Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Данные о состоянии развертываний расширений можно получить из портал Azure и с помощью модуля Azure PowerShell. Чтобы просмотреть состояние развертывания расширений для данной виртуальной машины, выполните следующую команду с помощью модуля Azure PowerShell:
 
@@ -158,4 +158,4 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Monitoring.DependencyAgent\
 
 ### <a name="support"></a>Поддержка
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Вы также можете зафайлировать инцидент службы поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Сведения об использовании поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Вы также можете зафайлировать инцидент службы поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**. Сведения об использовании поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

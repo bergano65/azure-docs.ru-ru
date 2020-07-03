@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Mercell | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Mercell | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Mercell.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/20/2019
 ms.author: jeedes
 ms.openlocfilehash: af51d76b3a500d7cc5edb0c21b893473e581acd6
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160698"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mercell"></a>Руководство по Интеграция Azure Active Directory с Mercell
+# <a name="tutorial-azure-active-directory-integration-with-mercell"></a>Руководство. Интеграция Azure Active Directory с Mercell
 
 В этом руководстве описано, как интегрировать Mercell с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Mercell обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73160698"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Mercell, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Mercell с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -115,7 +115,7 @@ ms.locfileid: "73160698"
 
 ### <a name="configure-mercell-single-sign-on"></a>Настройка единого входа в Mercell
 
-Для настройки единого входа на стороне **Mercell** необходимо отправить **URL-адрес метаданных федерации приложений** [группе поддержки Mercell](mailto:webmaster@mercell.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Для настройки единого входа на стороне **Mercell** необходимо отправить **URL-адрес метаданных федерации приложений**[группе поддержки Mercell](mailto:webmaster@mercell.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

@@ -1,19 +1,18 @@
 ---
 title: Управление безопасностью Azure — восстановление данных
-description: Восстановление данных управления безопасностью
+description: Восстановление данных управления безопасностью в Azure
 author: msmbaldwin
-manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 12/30/2019
+ms.date: 04/14/2020
 ms.author: mbaldwin
-ms.custom: security-recommendations
-ms.openlocfilehash: c585ebd903d4070f6247456e06efffbc6ec45270
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.custom: security-benchmark
+ms.openlocfilehash: 4f3e8540902809f951a441aa2fe8d00026c44d82
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934491"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81408589"
 ---
 # <a name="security-control-data-recovery"></a>Управление безопасностью: восстановление данных
 
@@ -21,60 +20,55 @@ ms.locfileid: "75934491"
 
 ## <a name="91-ensure-regular-automated-back-ups"></a>9,1: Обеспечьте регулярную автоматическую архивацию
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 9.1 | 10.1 | Customer |
 
 Включите Azure Backup и настройте источник резервного копирования (виртуальные машины Azure, SQL Server или файловые ресурсы), а также нужную частоту и срок хранения.
 
-Как включить Azure Backup:
-
-https://docs.microsoft.com/azure/backup/
+- [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
 
 ## <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: выполните полное резервное копирование системы и резервное копирование ключей, управляемых клиентом.
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 9.2 | 10.2 | Customer |
 
 Включите Azure Backup и целевые виртуальные машины, а также желаемую частоту и сроки хранения. Резервное копирование управляемых пользователем ключей в Azure Key Vault.
 
-Как включить Azure Backup:
+- [Включение Azure Backup](https://docs.microsoft.com/azure/backup/)
 
-https://docs.microsoft.com/azure/backup/
-
-Как создать резервную копию ключей хранилища ключей в Azure:
-
-https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0
+- [Резервное копирование ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
 ## <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: Проверьте все резервные копии, включая управляемые клиентом ключи.
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 9.3 | 10.3 | Customer |
 
-Обеспечение возможности периодически выполнять восстановление данных в Azure Backup. При необходимости протестируйте восстановление в изолированную виртуальную ЛС. Проверка восстановления резервных копий ключей, управляемых клиентом.
+Обеспечение возможности периодически выполнять восстановление данных в Azure Backup. Проверка восстановления резервных копий ключей, управляемых клиентом.
 
-Как восстановить файлы из резервной копии виртуальной машины Azure:
+- [Как восстановить файлы из резервной копии виртуальной машины Azure](https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm)
 
-https://docs.microsoft.com/azure/backup/backup-azure-restore-files-from-vm
-
-Как восстановить ключи хранилища ключей в Azure:
-
-https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0
+- [Восстановление ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
 
 ## <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и управляемых клиентом ключей
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 9.4 | 10,4 | Customer |
 
-Для резервных копий локальных данных шифрование выполняется с использованием парольной фразы, которую вы указываете при настройке резервного копирования в Azure. Для виртуальных машин Azure шифрование выполняется с помощью функции "Шифрование службы хранилища" (SSE). Обратимое удаление можно включить в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.
+Для резервных копий локальных данных шифрование выполняется с использованием парольной фразы, которую вы указываете при настройке резервного копирования в Azure. Для виртуальных машин Azure шифрование выполняется с помощью функции "Шифрование службы хранилища" (SSE). Используйте управление доступом на основе ролей для защиты резервных копий и управляемых клиентом ключей.  
 
-Включение обратимого удаления в Key Vault:
+Включите обратимое удаление и очистку защиты в Key Vault, чтобы защитить ключи от случайного или вредоносного удаления.  Если хранилище Azure используется для хранения резервных копий, включите обратимое удаление, чтобы сохранять и восстанавливать данные при удалении больших двоичных объектов или моментальных снимков больших двоичных объектов. 
 
-https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal
+- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-## <a name="next-steps"></a>Дальнейшие действия
+- [Включение обратимого удаления и очистки защиты в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
 
-См. следующий контроль безопасности: [реагирование на инциденты](security-control-incident-response.md)
+- [Soft delete for Azure Storage blobs](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
+
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+- См. следующий контроль безопасности: [реагирование на инциденты](security-control-incident-response.md)

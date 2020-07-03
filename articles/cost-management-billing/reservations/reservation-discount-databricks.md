@@ -1,19 +1,18 @@
 ---
 title: Как применяется скидка на предварительную покупку Azure Databricks
 description: Узнайте, как применяется скидка на предварительную покупку Azure Databricks к вашему потреблению.
-services: billing
 author: yashesvi
-manager: yashar
+ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 10/01/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: c148351a4475bfdbee474a5e0951cc3b5717404e
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 69f83fc1d390fcbea77468045b89ee6024e7fe9a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995732"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77200322"
 ---
 # <a name="how-azure-databricks-pre-purchase-discount-is-applied"></a>Как применяется скидка на предварительную покупку Azure Databricks
 

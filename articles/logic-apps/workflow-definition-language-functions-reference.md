@@ -3,24 +3,24 @@ title: Справочное руководство по функциям в вы
 description: Справочное руководство по функциям в выражениях для Azure Logic Apps и автоматизации Powering
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, logicappspm
+ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
-ms.date: 02/03/2020
-ms.openlocfilehash: 87798c93bbc1098daea2f7258a3af3e26bb4bb93
-ms.sourcegitcommit: 85d52b799621d35d7df32c2cb1e339071c619bb3
+ms.date: 05/12/2020
+ms.openlocfilehash: 56bf1898eb00d74fe92934ca8cd7d9d2848c2f1f
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76966101"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005900"
 ---
 # <a name="reference-guide-to-using-functions-in-expressions-for-azure-logic-apps-and-power-automate"></a>Справочное руководство по использованию функций в выражениях для Azure Logic Apps и автоматизации Powering
 
-Для определений рабочих процессов в [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [автоматизации управления питанием](https://docs.microsoft.com/flow/getting-started)некоторые [выражения](../logic-apps/logic-apps-workflow-definition-language.md#expressions) получают значения из действий среды выполнения, которые могут еще не существовать при запуске рабочего процесса. Для ссылки на эти значения или обработки значений в этих выражениях можно использовать *функции* , предоставляемые [языком определения рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md). 
+Для определений рабочих процессов в [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [автоматизации управления питанием](https://docs.microsoft.com/flow/getting-started)некоторые [выражения](../logic-apps/logic-apps-workflow-definition-language.md#expressions) получают значения из действий среды выполнения, которые могут еще не существовать при запуске рабочего процесса. Для ссылки на эти значения или обработки значений в этих выражениях можно использовать *функции* , предоставляемые [языком определения рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md).
 
 > [!NOTE]
 > Эта справочная страница применима как к Azure Logic Apps, так и к автоматизации Powering, но отображается в документации по Azure Logic Apps. Хотя эта страница относится только к логическим приложениям, эти функции работают как с потоками, так и с приложениями логики. Дополнительные сведения о функциях и выражениях в Power автоматизиру см. в разделе [Использование выражений в условиях](https://docs.microsoft.com/flow/use-expressions-in-conditions).
 
-Например, можно вычислить значения с помощью математических функций, таких как [функция Add ()](../logic-apps/workflow-definition-language-functions-reference.md#add), если требуется получить сумму от целых чисел или числа с плавающей запятой. Ниже приведены другие примеры задач, которые можно выполнять с помощью функций.
+Например, можно вычислить значения с помощью математических функций, таких как функция [Add ()](../logic-apps/workflow-definition-language-functions-reference.md#add) , если требуется получить сумму от целых чисел или числа с плавающей запятой. Ниже приведены другие примеры задач, которые можно выполнять с помощью функций.
 
 | Задача | Синтаксис функции | Результат |
 | ---- | --------------- | ------ |
@@ -29,10 +29,6 @@ ms.locfileid: "76966101"
 ||||
 
 Чтобы найти функции [на основе их общего назначения](#ordered-by-purpose), ознакомьтесь со следующими таблицами. Или, подробные сведения о каждой функции см. в [алфавитном списке](#alphabetical-list).
-
-> [!NOTE]
-> В синтаксисе для определения параметров знак вопроса (?), который расположен после параметра, означает, что параметр является необязательным.
-> Примеры см. в разделе о [getFutureTime()](#getFutureTime).
 
 ## <a name="functions-in-expressions"></a>Функции в выражениях
 
@@ -47,13 +43,12 @@ ms.locfileid: "76966101"
 | Задача | Синтаксис функции в выражении |
 | ---- | -------------------------------- |
 | Выполнить операцию с элементом, передав этот элемент функции. | "\@<*имя_функции*>(<*элемент*>)" |
-| 1. получение значения *ParameterName*с помощью вложенной функции `parameters()`. </br>2. Выполните работу с результатом, передав это значение в *FunctionName*. | "\@<*имя_функции*>(parameters('<*имя_параметра*>'))" |
+| 1. получение значения параметра *ParameterName*с помощью вложенной `parameters()` функции. </br>2. Выполните работу с результатом, передав это значение в *FunctionName*. | "\@<*имя_функции*>(parameters('<*имя_параметра*>'))" |
 | 1. получите результат из вложенной внутренней функции *FunctionName*. </br>2. Передайте результат во внешнюю функцию *functionName2*. | "\@<*имя_функции2*>(<*имя_функции*>(<*элемент*>))" |
 | 1. получите результат из *FunctionName*. </br>2. Учитывая, что результатом является объект со свойством *PropertyName*, возвращает значение этого свойства. | "\@<*имя_функции*>(<*элемент*>).<*имя_свойства*>" |
 |||
 
-Например, функция `concat()` может принимать два или более строковых значения в качестве параметров. Эта функция объединяет эти строки в одну.
-Вы можете передать строковые литералы, например "Sophia" и "Owen", чтобы получить комбинированную строку "SophiaOwen":
+Например, функция `concat()` может принимать два или более строковых значения в качестве параметров. Эта функция объединяет эти строки в одну. Вы можете передать строковые литералы, например "Sophia" и "Owen", чтобы получить комбинированную строку "SophiaOwen":
 
 ```json
 "customerName": "@concat('Sophia', 'Owen')"
@@ -67,15 +62,20 @@ ms.locfileid: "76966101"
 
 В любом случае в обоих примерах присвойте результат свойству `customerName`.
 
-Ниже приведены доступные функции, упорядоченные по общему назначению, или вы можете просмотреть функции в [алфавитном порядке](#alphabetical-list).
+Ниже приведены некоторые другие замечания о функциях в выражениях.
+
+* Параметры функции вычисляются слева направо.
+
+* В синтаксисе для определения параметров знак вопроса (?), который расположен после параметра, означает, что параметр является необязательным. Примеры см. в разделе о [getFutureTime()](#getFutureTime).
+
+В следующих разделах описываются функции, основанные на их общей цели, или эти функции можно просматривать в [алфавитном порядке](#alphabetical-list).
 
 <a name="ordered-by-purpose"></a>
 <a name="string-functions"></a>
 
 ## <a name="string-functions"></a>Строковые функции
 
-Для работы со строками вы можете использовать эти строковые функции, а также некоторые [функции для коллекций](#collection-functions).
-Строковые функции работают только со строками.
+Для работы со строками вы можете использовать эти строковые функции, а также некоторые [функции для коллекций](#collection-functions). Строковые функции работают только со строками.
 
 | Строковая функция | Задача |
 | --------------- | ---- |
@@ -86,12 +86,12 @@ ms.locfileid: "76966101"
 | [indexOf](../logic-apps/workflow-definition-language-functions-reference.md#indexof) | Возвращает начальную позицию подстроки. |
 | [lastIndexOf](../logic-apps/workflow-definition-language-functions-reference.md#lastindexof) | Возвращает начальную позицию последнего вхождения подстроки. |
 | [replace](../logic-apps/workflow-definition-language-functions-reference.md#replace) | Заменяет подстроку указанной строкой и возвращает обновленную строку. |
-| [split](../logic-apps/workflow-definition-language-functions-reference.md#split) | Возвращает массив, содержащий подстроки, разделенные запятыми, из большей строки, основываясь на указанном символе разделителя в исходной строке. |
+| [биваем](../logic-apps/workflow-definition-language-functions-reference.md#split) | Возвращает массив, содержащий подстроки, разделенные запятыми, из большей строки, основываясь на указанном символе разделителя в исходной строке. |
 | [startsWith](../logic-apps/workflow-definition-language-functions-reference.md#startswith) | Проверяет, начинается ли строка с определенной подстроки. |
-| [substring](../logic-apps/workflow-definition-language-functions-reference.md#substring) | Возвращает символы из строки, начиная с указанной позиции. |
+| [подстроки](../logic-apps/workflow-definition-language-functions-reference.md#substring) | Возвращает символы из строки, начиная с указанной позиции. |
 | [toLower](../logic-apps/workflow-definition-language-functions-reference.md#toLower) | Возвращает строку символов в нижнем регистре. |
 | [toUpper](../logic-apps/workflow-definition-language-functions-reference.md#toUpper) | Возвращает строку символов в верхнем регистре. |
-| [trim](../logic-apps/workflow-definition-language-functions-reference.md#trim) | Удаляет все начальные и конечные пробелы и возвращает обновленную строку. |
+| [возмож](../logic-apps/workflow-definition-language-functions-reference.md#trim) | Удаляет все начальные и конечные пробелы и возвращает обновленную строку. |
 |||
 
 <a name="collection-functions"></a>
@@ -102,16 +102,16 @@ ms.locfileid: "76966101"
 
 | Функция для коллекций | Задача |
 | ------------------- | ---- |
-| [contains](../logic-apps/workflow-definition-language-functions-reference.md#contains) | Проверяет наличие определенного элемента в коллекции. |
-| [empty](../logic-apps/workflow-definition-language-functions-reference.md#empty) | Проверяет, является ли коллекция пустой. |
-| [first](../logic-apps/workflow-definition-language-functions-reference.md#first) | Возвращает первый элемент из коллекции. |
-| [intersection](../logic-apps/workflow-definition-language-functions-reference.md#intersection) | Возвращает коллекцию, которая содержит *только* общие элементы в указанных коллекциях. |
-| [Item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. |
+| [содержащих](../logic-apps/workflow-definition-language-functions-reference.md#contains) | Проверяет наличие определенного элемента в коллекции. |
+| [указано](../logic-apps/workflow-definition-language-functions-reference.md#empty) | Проверяет, является ли коллекция пустой. |
+| [началь](../logic-apps/workflow-definition-language-functions-reference.md#first) | Возвращает первый элемент из коллекции. |
+| [крайне](../logic-apps/workflow-definition-language-functions-reference.md#intersection) | Возвращает коллекцию, которая содержит *только* общие элементы в указанных коллекциях. |
+| [item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. |
 | [join](../logic-apps/workflow-definition-language-functions-reference.md#join) | Возвращает строку, содержащую *все* элементы из массива, в которой каждый символ отделен разделителем. |
-| [last](../logic-apps/workflow-definition-language-functions-reference.md#last) | Возвращает последний элемент из коллекции. |
+| [Последняя](../logic-apps/workflow-definition-language-functions-reference.md#last) | Возвращает последний элемент из коллекции. |
 | [length](../logic-apps/workflow-definition-language-functions-reference.md#length) | Возвращает число элементов в строке или массиве. |
-| [skip](../logic-apps/workflow-definition-language-functions-reference.md#skip) | Удаляет элементы из начала коллекции и возвращает *все другие элементы*. |
-| [take](../logic-apps/workflow-definition-language-functions-reference.md#take) | Возвращает элементы, расположенные в начале коллекции. |
+| [сразу](../logic-apps/workflow-definition-language-functions-reference.md#skip) | Удаляет элементы из начала коллекции и возвращает *все другие элементы*. |
+| [нимают](../logic-apps/workflow-definition-language-functions-reference.md#take) | Возвращает элементы, расположенные в начале коллекции. |
 | [union](../logic-apps/workflow-definition-language-functions-reference.md#union) | Возвращает коллекцию, которая содержит *все* элементы из указанных коллекций. |
 |||
 
@@ -119,39 +119,38 @@ ms.locfileid: "76966101"
 
 ## <a name="logical-comparison-functions"></a>Функции логического сравнения
 
-Чтобы работать с условиями, сравнивать значения и результаты выражений или оценивать различные типы логики, можно использовать следующие функции логического сравнения.
-Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+Чтобы работать с условиями, сравнивать значения и результаты выражений или оценивать различные типы логики, можно использовать следующие функции логического сравнения. Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
 
 | Функция логического сравнения | Задача |
 | --------------------------- | ---- |
-| [and](../logic-apps/workflow-definition-language-functions-reference.md#and) (и); | Проверяет, истинны ли все выражения. |
+| [перетаскивани](../logic-apps/workflow-definition-language-functions-reference.md#and) | Проверяет, истинны ли все выражения. |
 | [equals](../logic-apps/workflow-definition-language-functions-reference.md#equals) | Проверяет, эквивалентны ли оба значения. |
 | [greater](../logic-apps/workflow-definition-language-functions-reference.md#greater) | Проверяет, является ли первое значение большим, чем второе. |
 | [greaterOrEquals](../logic-apps/workflow-definition-language-functions-reference.md#greaterOrEquals) | Проверяет, является ли первое значение большим, чем второе, или равным ему. |
-| [if](../logic-apps/workflow-definition-language-functions-reference.md#if) (если); | Проверьте, какое значение имеет выражение: true или false. Возвращает указанное значение на основе результата. |
-| [less](../logic-apps/workflow-definition-language-functions-reference.md#less) | Проверяет, является ли первое значение меньшим, чем второе. |
+| [if](../logic-apps/workflow-definition-language-functions-reference.md#if) | Проверьте, какое значение имеет выражение: true или false. Возвращает указанное значение на основе результата. |
+| [столь](../logic-apps/workflow-definition-language-functions-reference.md#less) | Проверяет, является ли первое значение меньшим, чем второе. |
 | [lessOrEquals](../logic-apps/workflow-definition-language-functions-reference.md#lessOrEquals) | Проверяет, является ли первое значение меньшим, чем второе, или равным ему. |
-| [not](../logic-apps/workflow-definition-language-functions-reference.md#not) (не); | Проверяет, имеет ли выражение значение false. |
-| [или диспетчер конфигурации служб](../logic-apps/workflow-definition-language-functions-reference.md#or) | Проверяет, является ли хотя бы одно выражение истинным. |
+| [недостаточно](../logic-apps/workflow-definition-language-functions-reference.md#not) | Проверяет, имеет ли выражение значение false. |
+| [ни](../logic-apps/workflow-definition-language-functions-reference.md#or) | Проверяет, является ли хотя бы одно выражение истинным. |
 |||
 
 <a name="conversion-functions"></a>
 
 ## <a name="conversion-functions"></a>Функции преобразования
 
-Чтобы изменить тип или формат значения, можно использовать приведенные ниже функции преобразования.
-Например, вы можете изменить значение с логического на целочисленное.
-Дополнительные сведения о том, как Logic Apps обрабатывает типы содержимого во время преобразования, см. в разделе [Обработка типов содержимого](../logic-apps/logic-apps-content-type.md).
-Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+Чтобы изменить тип или формат значения, можно использовать приведенные ниже функции преобразования. Например, вы можете изменить значение с логического на целочисленное. Дополнительные сведения о том, как Logic Apps обрабатывает типы содержимого во время преобразования, см. в разделе [Обработка типов содержимого](../logic-apps/logic-apps-content-type.md). Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
+
+> [!NOTE]
+> Azure Logic Apps автоматически преобразует значения между некоторыми типами данных, что означает отсутствие необходимости выполнять эти преобразования вручную. Однако при этом могут возникать непредвиденные поведения отображения, которые не влияют на фактические преобразования, и только то, как они отображаются. Дополнительные сведения см. в разделе [неявные преобразования типов данных](#implicit-data-conversions).
 
 | Функция преобразования | Задача |
 | ------------------- | ---- |
-| [array](../logic-apps/workflow-definition-language-functions-reference.md#array). | Возвращает массив из одного экземпляра указанных входных данных. Для использования нескольких входных данных см. раздел [createArray](../logic-apps/workflow-definition-language-functions-reference.md#createArray). |
-| [base64](../logic-apps/workflow-definition-language-functions-reference.md#base64) | Возвращает версию строки с кодировкой base64 для заданной строки. |
+| [inArray](../logic-apps/workflow-definition-language-functions-reference.md#array) | Возвращает массив из одного экземпляра указанных входных данных. Сведения о нескольких входах см. в разделе [функцию CreateArray](../logic-apps/workflow-definition-language-functions-reference.md#createArray). |
+| [формате](../logic-apps/workflow-definition-language-functions-reference.md#base64) | Возвращает версию строки с кодировкой base64 для заданной строки. |
 | [base64ToBinary](../logic-apps/workflow-definition-language-functions-reference.md#base64ToBinary) | Возвращает двоичную версию строки с кодировкой base64. |
 | [base64ToString](../logic-apps/workflow-definition-language-functions-reference.md#base64ToString) | Возвращает строковую версию строки с кодировкой base64. |
 | [binary](../logic-apps/workflow-definition-language-functions-reference.md#binary) | Возвращает двоичную версию входного значения. |
-| [bool](../logic-apps/workflow-definition-language-functions-reference.md#bool); | Возвращает логическую версию входного значения. |
+| [bool](../logic-apps/workflow-definition-language-functions-reference.md#bool) | Возвращает логическую версию входного значения. |
 | [createArray](../logic-apps/workflow-definition-language-functions-reference.md#createArray) | Возвращает массив из нескольких экземпляров входных данных. |
 | [dataUri](../logic-apps/workflow-definition-language-functions-reference.md#dataUri) | Возвращает URI данных входного значения. |
 | [dataUriToBinary](../logic-apps/workflow-definition-language-functions-reference.md#dataUriToBinary) | Возвращает двоичную версию строки URI данных. |
@@ -162,13 +161,42 @@ ms.locfileid: "76966101"
 | [encodeUriComponent](../logic-apps/workflow-definition-language-functions-reference.md#encodeUriComponent) | Возвращает строку, которая заменяет символы, опасные для URL-адреса, escape-символами. |
 | [float](../logic-apps/workflow-definition-language-functions-reference.md#float) | Возвращает значение с плавающей запятой в качестве входного значения. |
 | [int](../logic-apps/workflow-definition-language-functions-reference.md#int) | Возвращает целочисленную версию строки. |
-| [json](../logic-apps/workflow-definition-language-functions-reference.md#json) | Возвращает значение типа JSON либо объект для строки или XML. |
-| [строка](../logic-apps/workflow-definition-language-functions-reference.md#string) | Возвращает строковую версию входного значения. |
+| [формат](../logic-apps/workflow-definition-language-functions-reference.md#json) | Возвращает значение типа JSON либо объект для строки или XML. |
+| [string](../logic-apps/workflow-definition-language-functions-reference.md#string) | Возвращает строковую версию входного значения. |
 | [uriComponent](../logic-apps/workflow-definition-language-functions-reference.md#uriComponent) | Возвращает кодированную версию URI для входного значения, заменив символы, опасные для URL-адреса, на escape-символы. |
 | [uriComponentToBinary](../logic-apps/workflow-definition-language-functions-reference.md#uriComponentToBinary) | Возвращает двоичную версию строки с закодированным URI. |
 | [uriComponentToString](../logic-apps/workflow-definition-language-functions-reference.md#uriComponentToString) | Возвращает строковую версию строки с закодированным URI. |
 | [xml](../logic-apps/workflow-definition-language-functions-reference.md#xml) | Возвращает XML-версию строки. |
 |||
+
+<a name="implicit-data-conversions"></a>
+
+## <a name="implicit-data-type-conversions"></a>Неявные преобразования типов данных
+
+Azure Logic Apps автоматически или неявно преобразовывает типы данных, поэтому не нужно вручную преобразовывать эти типы. Например, если используются нестроковые значения, где строки ожидаются в качестве входных данных, Logic Apps автоматически преобразует нестроковые значения в строки.
+
+Например, предположим, что триггер возвращает числовое значение в качестве выходных данных:
+
+`triggerBody()?['123']`
+
+Если вы используете этот числовой выход, где ожидается ввод строк, например URL-адрес, Logic Apps автоматически преобразует значение в строку с помощью нотации фигурных скобок (`{}`):
+
+`@{triggerBody()?['123']}`
+
+### <a name="base64-encoding-and-decoding"></a>Кодирование и декодирование Base64
+
+Logic Apps автоматически или неявно выполняет кодирование или декодирование Base64, поэтому вам не нужно вручную выполнять эти операции с помощью соответствующих выражений:
+
+* `base64(<value>)`
+* `base64ToBinary(<value>)`
+* `base64ToString(<value>)`
+* `base64(decodeDataUri(<value>))`
+* `concat('data:;base64,',<value>)`
+* `concat('data:,',encodeUriComponent(<value>))`
+* `decodeDataUri(<value>)`
+
+> [!NOTE]
+> Если вы вручную добавите эти выражения в приложение логики, например с помощью редактора выражений, перейдите из конструктора приложений логики и вернитесь в конструктор. в конструкторе отобразятся только значения параметров. Выражения сохраняются в представлении кода только в том случае, если не изменить значения параметров. В противном случае Logic Apps удаляет выражения из представления кода, в результате чего удаляются только значения параметров. Такое поведение не влияет на кодирование или декодирование, только на отображение выражений.
 
 <a name="math-functions"></a>
 
@@ -179,15 +207,15 @@ ms.locfileid: "76966101"
 
 | Математическая функция | Задача |
 | ------------- | ---- |
-| [добавление](../logic-apps/workflow-definition-language-functions-reference.md#add) | Возвращает результат сложения двух чисел. |
+| [add](../logic-apps/workflow-definition-language-functions-reference.md#add) | Возвращает результат сложения двух чисел. |
 | [div](../logic-apps/workflow-definition-language-functions-reference.md#div) | Возвращает результат деления двух чисел. |
 | [max](../logic-apps/workflow-definition-language-functions-reference.md#max) | Возвращает наибольшее значение из набора чисел или массива. |
-| [min](../logic-apps/workflow-definition-language-functions-reference.md#min) | Возвращает наименьшее значение из набора чисел или массива. |
-| [mod (модуль)](../logic-apps/workflow-definition-language-functions-reference.md#mod) | Возвращает остаток результата деления двух чисел. |
+| [минимум](../logic-apps/workflow-definition-language-functions-reference.md#min) | Возвращает наименьшее значение из набора чисел или массива. |
+| [взят](../logic-apps/workflow-definition-language-functions-reference.md#mod) | Возвращает остаток результата деления двух чисел. |
 | [mul](../logic-apps/workflow-definition-language-functions-reference.md#mul) | Возвращает результат умножения двух чисел. |
-| [rand](../logic-apps/workflow-definition-language-functions-reference.md#rand) | Возвращает случайное целое число из указанного диапазона. |
-| [range](../logic-apps/workflow-definition-language-functions-reference.md#range) | Возвращает массив целых чисел, который начинается с заданного целого числа. |
-| [sub](../logic-apps/workflow-definition-language-functions-reference.md#sub) | Вычитает второе число из первого числа и возвращает результат. |
+| [Функция](../logic-apps/workflow-definition-language-functions-reference.md#rand) | Возвращает случайное целое число из указанного диапазона. |
+| [разнообраз](../logic-apps/workflow-definition-language-functions-reference.md#range) | Возвращает массив целых чисел, который начинается с заданного целого числа. |
+| [Директор](../logic-apps/workflow-definition-language-functions-reference.md#sub) | Вычитает второе число из первого числа и возвращает результат. |
 |||
 
 <a name="date-time-functions"></a>
@@ -200,10 +228,10 @@ ms.locfileid: "76966101"
 | Функция даты и времени | Задача |
 | --------------------- | ---- |
 | [addDays](../logic-apps/workflow-definition-language-functions-reference.md#addDays) | Добавляет количество дней к метке времени. |
-| [addHours](../logic-apps/workflow-definition-language-functions-reference.md#addHours) | Добавляет количество часов к метке времени. |
-| [addMinutes](../logic-apps/workflow-definition-language-functions-reference.md#addMinutes) | Добавляет количество минут к метке времени. |
-| [addSeconds](../logic-apps/workflow-definition-language-functions-reference.md#addSeconds) | Добавляет количество секунд к метке времени. |
-| [addToTime](../logic-apps/workflow-definition-language-functions-reference.md#addToTime) | Добавляет количество единиц времени к метке времени. См. раздел [getFutureTime](../logic-apps/workflow-definition-language-functions-reference.md#getFutureTime). |
+| [addhours](../logic-apps/workflow-definition-language-functions-reference.md#addHours) | Добавляет количество часов к метке времени. |
+| [addminutes](../logic-apps/workflow-definition-language-functions-reference.md#addMinutes) | Добавляет количество минут к метке времени. |
+| [addseconds](../logic-apps/workflow-definition-language-functions-reference.md#addSeconds) | Добавляет количество секунд к метке времени. |
+| [addToTime](../logic-apps/workflow-definition-language-functions-reference.md#addToTime) | Добавляет количество единиц времени к метке времени. См. также [жетфутуретиме](../logic-apps/workflow-definition-language-functions-reference.md#getFutureTime). |
 | [convertFromUtc](../logic-apps/workflow-definition-language-functions-reference.md#convertFromUtc) | Преобразовывает метку времени формата UTC в целевой часовой пояс. |
 | [convertTimeZone](../logic-apps/workflow-definition-language-functions-reference.md#convertTimeZone) | Преобразовывает метку времени из исходного часового пояса в целевой. |
 | [convertToUtc](../logic-apps/workflow-definition-language-functions-reference.md#convertToUtc) | Преобразует метку времени с исходным часовым поясом в формат UTC. |
@@ -213,12 +241,12 @@ ms.locfileid: "76966101"
 | [formatDateTime](../logic-apps/workflow-definition-language-functions-reference.md#formatDateTime) | Возвращает дату из метки времени. |
 | [getFutureTime](../logic-apps/workflow-definition-language-functions-reference.md#getFutureTime) | Возвращает текущую метку времени, а также указанные единицы времени. См. раздел [addToTime](../logic-apps/workflow-definition-language-functions-reference.md#addToTime). |
 | [getPastTime](../logic-apps/workflow-definition-language-functions-reference.md#getPastTime) | Возвращает текущую метку времени, вычитая указанные единицы времени. См. раздел [subtractFromTime](../logic-apps/workflow-definition-language-functions-reference.md#subtractFromTime). |
-| [startOfDay](../logic-apps/workflow-definition-language-functions-reference.md#startOfDay) | Возвращает начало дня для метки времени. |
+| [стартофдай](../logic-apps/workflow-definition-language-functions-reference.md#startOfDay) | Возвращает начало дня для метки времени. |
 | [startOfHour](../logic-apps/workflow-definition-language-functions-reference.md#startOfHour) | Возвращает начало часа для метки времени. |
 | [startOfMonth](../logic-apps/workflow-definition-language-functions-reference.md#startOfMonth) | Возвращает начало месяца для метки времени. |
 | [subtractFromTime](../logic-apps/workflow-definition-language-functions-reference.md#subtractFromTime) | Вычитает количество единиц времени из метки времени. См. раздел [getPastTime](../logic-apps/workflow-definition-language-functions-reference.md#getPastTime). |
 | [ticks](../logic-apps/workflow-definition-language-functions-reference.md#ticks) | Возвращает значение свойства `ticks` для указанной метки времени. |
-| [utcNow](../logic-apps/workflow-definition-language-functions-reference.md#utcNow) | Возвращает текущую метку времени в виде строки. |
+| [utcnow](../logic-apps/workflow-definition-language-functions-reference.md#utcNow) | Возвращает текущую метку времени в виде строки. |
 |||
 
 <a name="workflow-functions"></a>
@@ -236,29 +264,29 @@ ms.locfileid: "76966101"
 
 | Функция рабочего процесса | Задача |
 | ----------------- | ---- |
-| [action](../logic-apps/workflow-definition-language-functions-reference.md#action) | Возвращает выходные данные текущего действия во время выполнения или значения из других пар "имя — значение" JSON. См. раздел об [actions](../logic-apps/workflow-definition-language-functions-reference.md#actions). |
+| [action](../logic-apps/workflow-definition-language-functions-reference.md#action) | Возвращает выходные данные текущего действия во время выполнения или значения из других пар "имя — значение" JSON. См. также [действия](../logic-apps/workflow-definition-language-functions-reference.md#actions). |
 | [actionBody](../logic-apps/workflow-definition-language-functions-reference.md#actionBody) | Возвращает результат действия `body` во время выполнения. См. раздел [body](../logic-apps/workflow-definition-language-functions-reference.md#body). |
 | [actionOutputs](../logic-apps/workflow-definition-language-functions-reference.md#actionOutputs) | Возвращает результат действия во время выполнения. См. раздел [выходные данные](../logic-apps/workflow-definition-language-functions-reference.md#outputs) и [действия](../logic-apps/workflow-definition-language-functions-reference.md#actions). |
 | [actions](../logic-apps/workflow-definition-language-functions-reference.md#actions) | Возвращает выходные данные действия во время выполнения или значения из других пар "имя — значение" JSON. См. раздел [action](../logic-apps/workflow-definition-language-functions-reference.md#action).  |
 | [body](#body) | Возвращает результат действия `body` во время выполнения. См. раздел [actionBody](../logic-apps/workflow-definition-language-functions-reference.md#actionBody). |
-| [formDataMultiValues](../logic-apps/workflow-definition-language-functions-reference.md#formDataMultiValues) | Создает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* действия. |
-| [formDataValue](../logic-apps/workflow-definition-language-functions-reference.md#formDataValue) | Возвращает значение, которое соответствует имени ключа в выходных данных *form-data* или *form-encoded* действия. |
-| [Item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. |
+| [формдатамултивалуес](../logic-apps/workflow-definition-language-functions-reference.md#formDataMultiValues) | Создает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* действия. |
+| [формдатавалуе](../logic-apps/workflow-definition-language-functions-reference.md#formDataValue) | Возвращает одно значение, совпадающее с именем ключа в выходных данных действия *формы* или в формате, *закодированном формой*. |
+| [item](../logic-apps/workflow-definition-language-functions-reference.md#item) | При использовании внутри повторяющегося действия в массиве возвращает текущий элемент массива во время текущей итерации действия. |
 | [items](../logic-apps/workflow-definition-language-functions-reference.md#items) | Если внутри цикла foreach или Until возвращается текущий элемент из указанного цикла.|
 | [итератиониндексес](../logic-apps/workflow-definition-language-functions-reference.md#iterationIndexes) | В цикле Until возвращает значение индекса для текущей итерации. Эту функцию можно использовать внутри вложенных циклов Until. |
 | [listCallbackUrl](../logic-apps/workflow-definition-language-functions-reference.md#listCallbackUrl) | Возвращает URL-адрес обратного вызова, который вызывает триггер или действие. |
 | [multipartBody](../logic-apps/workflow-definition-language-functions-reference.md#multipartBody) | Возвращает текст указанной части выходных данных действия, которые состоят из нескольких частей. |
-| [outputs](../logic-apps/workflow-definition-language-functions-reference.md#outputs) | Возвращает результат действия во время выполнения. |
-| [parameters](../logic-apps/workflow-definition-language-functions-reference.md#parameters) | Возвращает значение для параметра, описанного в определении рабочего процесса. |
-| [результат](../logic-apps/workflow-definition-language-functions-reference.md#result) | Возврат входных и выходных данных из всех действий в заданном действии с областью действия, таких как `For_each`, `Until`и `Scope`. |
-| [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger) | Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. См. разделы [triggerOutputs](#triggerOutputs) и [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody). |
-| [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody) | Возвращает выходные данные `body` триггера во время выполнения. См. раздел [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger). |
-| [triggerFormDataValue](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataValue) | Возвращает одно значение, соответствующее имени ключа, из выходных данных *form-data* или *form-encoded* триггера. |
+| [выходные](../logic-apps/workflow-definition-language-functions-reference.md#outputs) | Возвращает результат действия во время выполнения. |
+| [Вход](../logic-apps/workflow-definition-language-functions-reference.md#parameters) | Возвращает значение для параметра, описанного в определении рабочего процесса. |
+| [результат](../logic-apps/workflow-definition-language-functions-reference.md#result) | Возврат входных и выходных данных из всех действий в заданном действии с областью действия, `For_each`таких `Until`как, `Scope`и. |
+| [необходимость](../logic-apps/workflow-definition-language-functions-reference.md#trigger) | Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. См. разделы [triggerOutputs](#triggerOutputs) и [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody). |
+| [triggerBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerBody) | Возвращает выходные данные `body` триггера во время выполнения. См. раздел [триггер](../logic-apps/workflow-definition-language-functions-reference.md#trigger). |
+| [тригжерформдатавалуе](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataValue) | Возвращает одно значение, соответствующее имени ключа, из выходных данных *form-data* или *form-encoded* триггера. |
 | [triggerMultipartBody](../logic-apps/workflow-definition-language-functions-reference.md#triggerMultipartBody) | Возвращает текст указанной части выходных данных триггера, которые состоят из нескольких частей. |
-| [triggerFormDataMultiValues](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataMultiValues) | Создает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* триггера. |
-| [triggerOutputs](../logic-apps/workflow-definition-language-functions-reference.md#triggerOutputs) | Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. См. раздел [trigger](../logic-apps/workflow-definition-language-functions-reference.md#trigger). |
-| [variables](../logic-apps/workflow-definition-language-functions-reference.md#variables) | Возвращает значение для указанной переменной. |
-| [workflow](../logic-apps/workflow-definition-language-functions-reference.md#workflow) | Возвращает все сведения о самом рабочем процессе во время выполнения. |
+| [тригжерформдатамултивалуес](../logic-apps/workflow-definition-language-functions-reference.md#triggerFormDataMultiValues) | Создает массив значений, которые соответствуют имени ключа в выходных данных *form-data* или *form-encoded* триггера. |
+| [triggerOutputs](../logic-apps/workflow-definition-language-functions-reference.md#triggerOutputs) | Возвращает выходные данные триггера во время выполнения или значения из других пар "имя — значение" JSON. См. раздел [триггер](../logic-apps/workflow-definition-language-functions-reference.md#trigger). |
+| [среды](../logic-apps/workflow-definition-language-functions-reference.md#variables) | Возвращает значение для указанной переменной. |
+| [процессов](../logic-apps/workflow-definition-language-functions-reference.md#workflow) | Возвращает все сведения о самом рабочем процессе во время выполнения. |
 |||
 
 <a name="uri-parsing-functions"></a>
@@ -288,10 +316,10 @@ ms.locfileid: "76966101"
 | Функция обработки | Задача |
 | --------------------- | ---- |
 | [addProperty](../logic-apps/workflow-definition-language-functions-reference.md#addProperty) | Добавляет свойство и его значения или пару "имя — значение" в объект JSON и возвращает обновленный объект. |
-| [coalesce](../logic-apps/workflow-definition-language-functions-reference.md#coalesce) | Возвращает первое ненулевое значение из одного или нескольких параметров. |
+| [объединение](../logic-apps/workflow-definition-language-functions-reference.md#coalesce) | Возвращает первое ненулевое значение из одного или нескольких параметров. |
 | [removeProperty](../logic-apps/workflow-definition-language-functions-reference.md#removeProperty) | Удаляет свойство из объекта JSON и возвращает обновленный объект. |
 | [setProperty](../logic-apps/workflow-definition-language-functions-reference.md#setProperty) | Задает значение свойства объекта JSON и возвращает обновленный объект. |
-| [xpath](../logic-apps/workflow-definition-language-functions-reference.md#xpath) | Проверяет XML на наличие узлов или значений, которые соответствуют выражению XPath, и возвращает соответствующие узлы или значения. |
+| [формате](../logic-apps/workflow-definition-language-functions-reference.md#xpath) | Проверяет XML на наличие узлов или значений, которые соответствуют выражению XPath, и возвращает соответствующие узлы или значения. |
 |||
 
 <a name="alphabetical-list"></a>
@@ -319,14 +347,14 @@ action()
 action().outputs.body.<property>
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*property*> | Нет | String | Имя свойства объекта действия, значение которого требуется: **name**, **startTime**, **endTime**, **inputs**, **outputs**, **status**, **code**, **trackingId** и **clientTrackingId**. На портале Azure вы можете найти эти свойства, просмотрев подробности в конкретном журнале выполнения. Дополнительные сведения см. в статье с [действиями запуска рабочего процесса в REST API](https://docs.microsoft.com/rest/api/logic/workflowrunactions/get). |
+| <*свойства*> | нет | Строка | Имя свойства объекта действия, значение которого требуется: **name**, **startTime**, **endTime**, **inputs**, **outputs**, **status**, **code**, **trackingId** и **clientTrackingId**. На портале Azure вы можете найти эти свойства, просмотрев подробности в конкретном журнале выполнения. Дополнительные сведения см. в статье с [действиями запуска рабочего процесса в REST API](https://docs.microsoft.com/rest/api/logic/workflowrunactions/get). |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
-| <*выходные_данные_действия*> | String | Выходные данные текущего действия или свойства |
+| <*действие — выходные данные*> | Строка | Выходные данные текущего действия или свойства |
 ||||
 
 <a name="actionBody"></a>
@@ -341,14 +369,14 @@ action().outputs.body.<property>
 actionBody('<actionName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*actionName*> | Да | String | Имя действия для требуемого результата `body` |
+| <*actionName*> | Да | Строка | Имя действия для требуемого результата `body` |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
-| <*выходные_данные_body_действия*> | String | Выходные данные `body` указанного действия |
+| <*действие — тело-вывод*> | Строка | Выходные данные `body` указанного действия |
 ||||
 
 *Пример*
@@ -380,20 +408,20 @@ actionBody('Get_user')
 
 ### <a name="actionoutputs"></a>actionOutputs
 
-Возвращает результат действия во время выполнения.  и является сокращением для `actions('<actionName>').outputs`. См. раздел об [actions()](#actions). Функция `actionOutputs()` разрешается в `outputs()` в конструкторе приложений логики, поэтому рекомендуется использовать [выходные данные ()](#outputs), а не `actionOutputs()`. Хотя обе функции работают одинаково, `outputs()` является предпочтительной.
+Возвращает результат действия во время выполнения.  и является сокращением `actions('<actionName>').outputs`для. См. раздел об [actions()](#actions). `actionOutputs()` Функция разрешается `outputs()` в конструкторе приложений логики, поэтому рекомендуется использовать [выходные данные ()](#outputs), а не `actionOutputs()`. Хотя обе функции работают одинаково, `outputs()` является предпочтительной.
 
 ```
 actionOutputs('<actionName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*actionName*> | Да | String | Имя действия для требуемого результата. |
+| <*actionName*> | Да | Строка | Имя действия для требуемого результата. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
-| <*выходные данные*> | String | Выходные данные указанного действия |
+| <*проверки*> | Строка | Выходные данные указанного действия |
 ||||
 
 *Пример*
@@ -456,15 +484,15 @@ actions('<actionName>')
 actions('<actionName>').outputs.body.<property>
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*actionName*> | Да | String | Имя объекта действия, выходные данные которого требуется получить.  |
-| <*property*> | Нет | String | Имя свойства объекта действия, значение которого требуется: **name**, **startTime**, **endTime**, **inputs**, **outputs**, **status**, **code**, **trackingId** и **clientTrackingId**. На портале Azure вы можете найти эти свойства, просмотрев подробности в конкретном журнале выполнения. Дополнительные сведения см. в статье с [действиями запуска рабочего процесса в REST API](https://docs.microsoft.com/rest/api/logic/workflowrunactions/get). |
+| <*actionName*> | Да | Строка | Имя объекта действия, выходные данные которого требуется получить.  |
+| <*свойства*> | нет | Строка | Имя свойства объекта действия, значение которого требуется: **name**, **startTime**, **endTime**, **inputs**, **outputs**, **status**, **code**, **trackingId** и **clientTrackingId**. На портале Azure вы можете найти эти свойства, просмотрев подробности в конкретном журнале выполнения. Дополнительные сведения см. в статье с [действиями запуска рабочего процесса в REST API](https://docs.microsoft.com/rest/api/logic/workflowrunactions/get). |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
-| <*выходные_данные_действия*> | String | Выходные данные указанного действия или свойства. |
+| <*действие — выходные данные*> | Строка | Выходные данные указанного действия или свойства. |
 ||||
 
 *Пример*
@@ -487,14 +515,14 @@ actions('Get_user').outputs.body.status
 add(<summand_1>, <summand_2>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*summand_1*>, <*summand_2*> | Да | Целое число, число с плавающей запятой или смешанного типа | Числа для добавления |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
-| <*итоговая_сумма*> | Целое число и число с плавающей запятой | Возвращает результат сложения указанных чисел |
+| <*результат-Sum*> | Целое число и число с плавающей запятой | Возвращает результат сложения указанных чисел |
 ||||
 
 *Пример*
@@ -517,19 +545,19 @@ add(1, 1.5)
 addDays('<timestamp>', <days>, '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*days*> | Да | Целое число | Положительное или отрицательное число дней для добавления |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*недели*> | Да | Целое число | Положительное или отрицательное число дней для добавления |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Метка времени и указанное число дней  |
+| <*Обновлено — метка времени*> | Строка | Метка времени и указанное число дней  |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляются 10 дней:
 
@@ -539,7 +567,7 @@ addDays('2018-03-15T13:00:00Z', 10)
 
 Возвращается такой результат: `"2018-03-25T00:00:0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере от указанной метки времени отнимается пять дней:
 
@@ -559,19 +587,19 @@ addDays('2018-03-15T00:00:00Z', -5)
 addHours('<timestamp>', <hours>, '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*hours*> | Да | Целое число | Положительное или отрицательное число часов для добавления |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*суток*> | Да | Целое число | Положительное или отрицательное число часов для добавления |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Метка времени и указанное число часов  |
+| <*Обновлено — метка времени*> | Строка | Метка времени и указанное число часов  |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляется 10 часов:
 
@@ -581,7 +609,7 @@ addHours('2018-03-15T00:00:00Z', 10)
 
 Возвращается такой результат: `"2018-03-15T10:00:0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере от указанной метки времени отнимается пять часов:
 
@@ -601,19 +629,19 @@ addHours('2018-03-15T15:00:00Z', -5)
 addMinutes('<timestamp>', <minutes>, '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*minutes*> | Да | Целое число | Положительное или отрицательное число минут для добавления |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*тезис*> | Да | Целое число | Положительное или отрицательное число минут для добавления |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Метка времени и указанное число минут |
+| <*Обновлено — метка времени*> | Строка | Метка времени и указанное число минут |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляется 10 минут:
 
@@ -623,7 +651,7 @@ addMinutes('2018-03-15T00:10:00Z', 10)
 
 Возвращается такой результат: `"2018-03-15T00:20:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере от указанной метки времени отнимается пять минут:
 
@@ -643,16 +671,16 @@ addMinutes('2018-03-15T00:20:00Z', -5)
 addProperty(<object>, '<property>', <value>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*object*> | Да | Объекты | Объект JSON, в который вы хотите добавить свойство |
-| <*property*> | Да | String | Имя добавляемого свойства |
-| <*value*> | Да | Любой | Значение для свойства |
+| <*объектами*> | Да | Объект | Объект JSON, в который вы хотите добавить свойство |
+| <*свойства*> | Да | Строка | Имя добавляемого свойства |
+| <*значений*> | Да | Любой | Значение для свойства |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленный_объект*> | Объекты | Обновленный объект JSON с указанным свойством |
+| <*updated — Object*> | Объект | Обновленный объект JSON с указанным свойством |
 ||||
 
 Чтобы добавить дочернее свойство в существующее свойство, используйте следующий синтаксис:
@@ -661,22 +689,22 @@ addProperty(<object>, '<property>', <value>)
 addProperty(<object>['<parent-property>'], '<child-property>', <value>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*object*> | Да | Объекты | Объект JSON, в который вы хотите добавить свойство |
-| <> *родительского свойства* | Да | String | Имя родительского свойства, в которое необходимо добавить дочернее свойство |
-| <> *дочернего свойства* | Да | String | Имя добавляемого дочернего свойства |
-| <*value*> | Да | Любой | Значение, задаваемое для указанного свойства |
+| <*объектами*> | Да | Объект | Объект JSON, в который вы хотите добавить свойство |
+| <*Свойство Parent*> | Да | Строка | Имя родительского свойства, в которое необходимо добавить дочернее свойство |
+| <*дочернее свойство*> | Да | Строка | Имя добавляемого дочернего свойства |
+| <*значений*> | Да | Любой | Значение, задаваемое для указанного свойства |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленный_объект*> | Объекты | Обновленный объект JSON, свойство которого задается |
+| <*updated — Object*> | Объект | Обновленный объект JSON, свойство которого задается |
 ||||
 
-*Пример 1*
+*Пример 1*
 
-В этом примере свойство `middleName` добавляется в объект JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Объект уже содержит свойства `firstName` и `surName`. Функция присваивает указанное значение новому свойству и возвращает обновленный объект:
+В этом примере `middleName` свойство добавляется в объект JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Объект уже содержит свойства `firstName` и. `surName` Функция присваивает указанное значение новому свойству и возвращает обновленный объект:
 
 ```
 addProperty(json('{ "firstName": "Sophia", "lastName": "Owen" }'), 'middleName', 'Anne')
@@ -701,9 +729,9 @@ addProperty(json('{ "firstName": "Sophia", "lastName": "Owen" }'), 'middleName',
 }
 ```
 
-*Пример 2*
+*Пример 2*
 
-В этом примере добавляется дочернее свойство `middleName` к существующему свойству `customerName` в объекте JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение новому свойству и возвращает обновленный объект:
+В этом примере `middleName` дочернее свойство добавляется `customerName` к существующему свойству в объекте JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение новому свойству и возвращает обновленный объект:
 
 ```
 addProperty(json('{ "customerName": { "firstName": "Sophia", "surName": "Owen" } }')['customerName'], 'middleName', 'Anne')
@@ -742,19 +770,19 @@ addProperty(json('{ "customerName": { "firstName": "Sophia", "surName": "Owen" }
 addSeconds('<timestamp>', <seconds>, '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*seconds*> | Да | Целое число | Положительное или отрицательное число секунд для добавления |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*несколько*> | Да | Целое число | Положительное или отрицательное число секунд для добавления |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Метка времени и указанное число секунд  |
+| <*Обновлено — метка времени*> | Строка | Метка времени и указанное число секунд  |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляется 10 секунд:
 
@@ -764,7 +792,7 @@ addSeconds('2018-03-15T00:00:00Z', 10)
 
 Возвращается такой результат: `"2018-03-15T00:00:10.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере от указанной метки времени отнимается пять секунд:
 
@@ -785,20 +813,20 @@ addSeconds('2018-03-15T00:00:30Z', -5)
 addToTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*interval*> | Да | Целое число | Число единиц времени для добавления |
-| <*timeUnit*> | Да | String | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*пределах*> | Да | Целое число | Число единиц времени для добавления |
+| <*тимеунит*> | Да | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Метка времени и указанное число единиц времени  |
+| <*Обновлено — метка времени*> | Строка | Метка времени и указанное число единиц времени  |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере к указанной метке времени добавляется 1 день:
 
@@ -808,7 +836,7 @@ addToTime('2018-01-01T00:00:00Z', 1, 'Day')
 
 Возвращается такой результат: `"2018-01-02T00:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере к указанной метке времени добавляется 1 день:
 
@@ -820,7 +848,7 @@ addToTime('2018-01-01T00:00:00Z', 1, 'Day', 'D')
 
 <a name="and"></a>
 
-### <a name="and"></a>Azure и
+### <a name="and"></a>and
 
 Проверяет, истинны ли все выражения.
 Возвращает значение true, если все выражения имеют значения, и false, если хотя бы одно выражение имеет значение false.
@@ -829,17 +857,17 @@ addToTime('2018-01-01T00:00:00Z', 1, 'Day', 'D')
 and(<expression1>, <expression2>, ...)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*expression1*>, <*expression2*>, ... | Да | Логическое | Выражения, которые следует проверить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
 | true или false | Логическое | Возвращает значение true, если все выражения имеют значение true. Возвращает значение false, если хотя бы одно выражение имеет значение false. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этих примерах проверяется, все ли указанные логические значения верны:
 
@@ -855,7 +883,7 @@ and(false, false)
 * Во втором примере одно из выражений имеет значение false, поэтому возвращается `false`.
 * В третьем примере оба выражения имеют значения false, поэтому возвращается `false`.
 
-*Пример 2*
+*Пример 2*
 
 В этих примерах проверяется, все ли указанные выражения верны:
 
@@ -882,12 +910,12 @@ and(equals(1, 2), equals(1, 3))
 array('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Строка для создания массива |
+| <*значений*> | Да | Строка | Строка для создания массива |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | [<*значение*>] | Array | Массив, содержащий один экземпляр указанных входных данных |
 ||||
@@ -908,18 +936,21 @@ array('hello')
 
 Возвращает версию строки с кодировкой base64 для заданной строки.
 
+> [!NOTE]
+> Azure Logic Apps автоматически выполняет кодирование и декодирование Base64. Это означает, что вам не придется вручную выполнять эти преобразования. Однако при этом могут возникать непредвиденные поведения отображения, которые не влияют на фактические преобразования, и только то, как они отображаются. Дополнительные сведения см. в разделе [неявные преобразования типов данных](#implicit-data-conversions).
+
 ```
 base64('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Строка входных данных |
+| <*значений*> | Да | Строка | Строка входных данных |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*строка_base64*> | String | Версия строки входных данных с кодировкой base64 |
+| <*Base64-строка*> | Строка | Версия строки входных данных с кодировкой base64 |
 ||||
 
 *Пример*
@@ -938,18 +969,21 @@ base64('hello')
 
 Возвращает двоичную версию строки с кодировкой base64.
 
+> [!NOTE]
+> Azure Logic Apps автоматически выполняет кодирование и декодирование Base64. Это означает, что вам не придется вручную выполнять эти преобразования. Однако при этом могут возникать непредвиденные поведения отображения, которые не влияют на фактические преобразования, и только то, как они отображаются. Дополнительные сведения см. в разделе [неявные преобразования типов данных](#implicit-data-conversions).
+
 ```
 base64ToBinary('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Преобразуемая строка с кодировкой base64 |
+| <*значений*> | Да | Строка | Преобразуемая строка с кодировкой base64 |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*двоичная версия для строки base64*> | String | Двоичная версия строки с кодировкой base64 |
+| <*двоичный — для base64-строки*> | Строка | Двоичная версия строки с кодировкой base64 |
 ||||
 
 *Пример*
@@ -968,22 +1002,23 @@ base64ToBinary('aGVsbG8=')
 
 ### <a name="base64tostring"></a>base64ToString
 
-Возвращает декодированную версию строки с кодировкой base64.
-Используйте эту функцию вместо [decodeBase64()](#decodeBase64).
-Хотя обе функции работают одинаково, `base64ToString()` является предпочтительной.
+Возвращает декодированную версию строки с кодировкой base64. Используйте эту функцию вместо [decodeBase64 ()](#decodeBase64), которая является устаревшей.
+
+> [!NOTE]
+> Azure Logic Apps автоматически выполняет кодирование и декодирование Base64. Это означает, что вам не придется вручную выполнять эти преобразования. Однако при этом могут возникать непредвиденные поведения отображения, которые не влияют на фактические преобразования, и только то, как они отображаются. Дополнительные сведения см. в разделе [неявные преобразования типов данных](#implicit-data-conversions).
 
 ```
 base64ToString('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Декодируемая строка с кодировкой base64. |
+| <*значений*> | Да | Строка | Декодируемая строка с кодировкой base64. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*декодированная строка base64*> | String | Строковая версия строки с кодировкой base64 |
+| <*декодированный — Base64-строка*> | Строка | Строковая версия строки с кодировкой base64 |
 ||||
 
 *Пример*
@@ -1006,14 +1041,14 @@ base64ToString('aGVsbG8=')
 binary('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Преобразуемая строка |
+| <*значений*> | Да | Строка | Преобразуемая строка |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*двоичная форма входного значения*> | String | Двоичная версия указанной строки |
+| <*двоичный — для входного значения*> | Строка | Двоичная версия указанной строки |
 ||||
 
 *Пример*
@@ -1040,14 +1075,14 @@ binary('hello')
 body('<actionName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*actionName*> | Да | String | Имя действия для требуемого результата `body` |
+| <*actionName*> | Да | Строка | Имя действия для требуемого результата `body` |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
-| <*выходные_данные_body_действия*> | String | Выходные данные `body` указанного действия |
+| <*действие — тело-вывод*> | Строка | Выходные данные `body` указанного действия |
 ||||
 
 *Пример*
@@ -1085,12 +1120,12 @@ body('Get_user')
 bool(<value>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | Любой | Значение, которое необходимо преобразовать |
+| <*значений*> | Да | Любой | Значение, которое необходимо преобразовать |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Логическая версия указанного значения |
 ||||
@@ -1120,14 +1155,14 @@ bool(0)
 coalesce(<object_1>, <object_2>, ...)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*object_1*>, <*object_2*>, ... | Да | Любой, могут быть разные типы | Один или несколько элементов для проверки на наличие значения NULL |
+| <*object_1*>, <*object_2*>,... | Да | Любой, могут быть разные типы | Один или несколько элементов для проверки на наличие значения NULL |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*первый не нулевой элемент*> | Любой | Первый элемент или значение, которое не равно NULL. Если все параметры равны NULL, эта функция возвращает значение NULL. |
+| <*Первый — не равный null элемент*> | Любой | Первый элемент или значение, которое не равно NULL. Если все параметры равны NULL, эта функция возвращает значение NULL. |
 ||||
 
 *Пример*
@@ -1156,14 +1191,14 @@ coalesce(null, null, null)
 concat('<text1>', '<text2>', ...)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text1*>, <*text2*>, ... | Да | String | По крайней мере две строки для объединения |
+| <*text1*>, <*text2*>, ... | Да | Строка | По крайней мере две строки для объединения |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*текст1текст2...* > | String | Строка, созданная из объединенных входных строк |
+| <*text1text2...*> | Строка | Строка, созданная из объединенных входных строк |
 ||||
 
 *Пример*
@@ -1195,18 +1230,18 @@ contains([<collection>], '<value>')
 * *массив*, чтобы найти *значение*;
 * *словарь*, чтобы найти *ключ*.
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Да | Строка, массив или словарь | Коллекция для проверки |
-| <*value*> | Да | Строка, массив или словарь соответственно | Искомый элемент |
+| <*набор*> | Да | Строка, массив или словарь | Коллекция для проверки |
+| <*значений*> | Да | Строка, массив или словарь соответственно | Искомый элемент |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Возвращает true, если элемент найден. В противном случае возвращает значение false. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере строка "hello world" проверяется на наличие подстроки "world" и возвращается значение true:
 
@@ -1214,7 +1249,7 @@ contains([<collection>], '<value>')
 contains('hello world', 'world')
 ```
 
-*Пример 2*
+*Пример 2*
 
 В этом примере строка "hello world" проверяется на наличие подстроки "universe" и возвращается значение false:
 
@@ -1232,19 +1267,19 @@ contains('hello world', 'universe')
 convertFromUtc('<timestamp>', '<destinationTimeZone>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*destinationTimeZone*> | Да | String | Имя целевого часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*дестинатионтимезоне*> | Да | Строка | Имя целевого часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*преобразованная метка времени*> | String | Метка времени, преобразованная в целевой часовой пояс |
+| <*преобразовано — метка времени*> | Строка | Метка времени, преобразованная в целевой часовой пояс |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере метка времени преобразуется в указанный часовой пояс:
 
@@ -1254,7 +1289,7 @@ convertFromUtc('2018-01-01T08:00:00.0000000Z', 'Pacific Standard Time')
 
 Возвращается такой результат: `"2018-01-01T00:00:00.0000000"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере метка времени преобразуется в указанный часовой пояс и формат:
 
@@ -1274,20 +1309,20 @@ convertFromUtc('2018-01-01T08:00:00.0000000Z', 'Pacific Standard Time', 'D')
 convertTimeZone('<timestamp>', '<sourceTimeZone>', '<destinationTimeZone>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*sourceTimeZone*> | Да | String | Имя исходного часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
-| <*destinationTimeZone*> | Да | String | Имя целевого часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*саурцетимезоне*> | Да | Строка | Имя исходного часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
+| <*дестинатионтимезоне*> | Да | Строка | Имя целевого часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*преобразованная метка времени*> | String | Метка времени, преобразованная в целевой часовой пояс |
+| <*преобразовано — метка времени*> | Строка | Метка времени, преобразованная в целевой часовой пояс |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере исходный часовой пояс преобразуется в целевой:
 
@@ -1297,7 +1332,7 @@ convertTimeZone('2018-01-01T08:00:00.0000000Z', 'UTC', 'Pacific Standard Time')
 
 Возвращается такой результат: `"2018-01-01T00:00:00.0000000"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере часовой пояс преобразуется в указанный часовой пояс и формат:
 
@@ -1317,19 +1352,19 @@ convertTimeZone('2018-01-01T80:00:00.0000000Z', 'UTC', 'Pacific Standard Time', 
 convertToUtc('<timestamp>', '<sourceTimeZone>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*sourceTimeZone*> | Да | String | Имя исходного часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*саурцетимезоне*> | Да | Строка | Имя исходного часового пояса. Имена часовых поясов см. в разделе [значения индекса часовых поясов Майкрософт](https://support.microsoft.com/en-us/help/973627/microsoft-time-zone-index-values), но может потребоваться удалить все знаки препинания из имени часового пояса. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*преобразованная метка времени*> | String | Метка времени, которая преобразуются в формат UTC |
+| <*преобразовано — метка времени*> | Строка | Метка времени, которая преобразуются в формат UTC |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере метка времени преобразуется в формат UTC:
 
@@ -1339,7 +1374,7 @@ convertToUtc('01/01/2018 00:00:00', 'Pacific Standard Time')
 
 Возвращается такой результат: `"2018-01-01T08:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере метка времени преобразуется в формат UTC:
 
@@ -1360,14 +1395,14 @@ convertToUtc('01/01/2018 00:00:00', 'Pacific Standard Time', 'D')
 createArray('<object1>', '<object2>', ...)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*object1*>, <*object2*>, ... | Да | Любой, но не смешанный | По крайней мере два элемента для создания массива |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| [<*объект1*>, <*объект2*>, ...] | Array | Массив, созданный из всех входных элементов |
+| [<*object1*>, <*Object2*>,...] | Array | Массив, созданный из всех входных элементов |
 ||||
 
 *Пример*
@@ -1390,14 +1425,14 @@ createArray('h', 'e', 'l', 'l', 'o')
 dataUri('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Преобразуемая строка |
+| <*значений*> | Да | Строка | Преобразуемая строка |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*URI данных*> | String | URI данных для входной строки |
+| <*URI данных*> | Строка | URI данных для входной строки |
 ||||
 
 *Пример*
@@ -1422,14 +1457,14 @@ dataUri('hello')
 dataUriToBinary('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | URI данных для преобразования |
+| <*значений*> | Да | Строка | URI данных для преобразования |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*двоичная версия URI данных*> | String | Двоичная версия URI данных |
+| <*двоичный-for-Data-URI*> | Строка | Двоичная версия URI данных |
 ||||
 
 *Пример*
@@ -1457,14 +1492,14 @@ dataUriToBinary('data:text/plain;charset=utf-8;base64,aGVsbG8=')
 dataUriToString('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | URI данных для преобразования |
+| <*значений*> | Да | Строка | URI данных для преобразования |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*строка URI данных*> | String | Строковая версия URI данных |
+| <*Строка-for-Data-URI*> | Строка | Строковая версия URI данных |
 ||||
 
 *Пример*
@@ -1487,12 +1522,12 @@ dataUriToString('data:text/plain;charset=utf-8;base64,aGVsbG8=')
 dayOfMonth('<timestamp>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | <*день месяца*> | Целое число | День месяца из указанной метки времени |
 ||||
@@ -1517,12 +1552,12 @@ dayOfMonth('2018-03-15T13:27:36Z')
 dayOfWeek('<timestamp>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | <*день недели*> | Целое число | День недели из указанной метки времени, где воскресенье имеет значение 0, понедельник — 1 и т. д. |
 ||||
@@ -1535,7 +1570,7 @@ dayOfWeek('<timestamp>')
 dayOfWeek('2018-03-15T13:27:36Z')
 ```
 
-Возвращается такой результат: `3`
+Возвращается такой результат: `4`
 
 <a name="dayOfYear"></a>
 
@@ -1547,12 +1582,12 @@ dayOfWeek('2018-03-15T13:27:36Z')
 dayOfYear('<timestamp>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | <*день года*> | Целое число | День года из указанной метки времени |
 ||||
@@ -1569,56 +1604,31 @@ dayOfYear('2018-03-15T13:27:36Z')
 
 <a name="decodeBase64"></a>
 
-### <a name="decodebase64"></a>decodeBase64
+### <a name="decodebase64-deprecated"></a>decodeBase64 (не рекомендуется)
 
-Возвращает декодированную версию строки с кодировкой base64.
-Используйте [base64ToString()](#base64ToString) вместо `decodeBase64()`.
-Хотя обе функции работают одинаково, `base64ToString()` является предпочтительной.
-
-```
-decodeBase64('<value>')
-```
-
-| Параметр | Обязательно для заполнения | Тип | Description |
-| --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Декодируемая строка с кодировкой base64. |
-|||||
-
-| Возвращаемое значение | Тип | Description |
-| ------------ | ---- | ----------- |
-| <*декодированная строка base64*> | String | Строковая версия строки с кодировкой base64 |
-||||
-
-*Пример*
-
-В этом примере создается строка для строки с кодировкой base64:
-
-```
-decodeBase64('aGVsbG8=')
-```
-
-Возвращается такой результат: `"hello"`
+Эта функция является устаревшей, поэтому вместо нее следует использовать [base64tostring используется ()](#base64ToString) .
 
 <a name="decodeDataUri"></a>
 
 ### <a name="decodedatauri"></a>decodeDataUri
 
-Возвращает двоичную версию URI данных.
-Используйте [dataUriToBinary()](#dataUriToBinary) вместо `decodeDataUri()`.
-Хотя обе функции работают одинаково, `dataUriToBinary()` является предпочтительной.
+Возвращает двоичную версию URI данных. Используйте [dataUriToBinary()](#dataUriToBinary) вместо `decodeDataUri()`. Хотя обе функции работают одинаково, `dataUriToBinary()` является предпочтительной.
+
+> [!NOTE]
+> Azure Logic Apps автоматически выполняет кодирование и декодирование Base64. Это означает, что вам не придется вручную выполнять эти преобразования. Однако при этом могут возникать непредвиденные поведения отображения, которые не влияют на фактические преобразования, и только то, как они отображаются. Дополнительные сведения см. в разделе [неявные преобразования типов данных](#implicit-data-conversions).
 
 ```
 decodeDataUri('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Декодируемая строка URI данных |
+| <*значений*> | Да | Строка | Декодируемая строка URI данных |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*двоичная версия URI данных*> | String | Двоичная версия строки URI данных |
+| <*двоичный-for-Data-URI*> | Строка | Двоичная версия строки URI данных |
 ||||
 
 *Пример*
@@ -1646,14 +1656,14 @@ decodeDataUri('data:text/plain;charset=utf-8;base64,aGVsbG8=')
 decodeUriComponent('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Строка с декодируемыми escape-символами |
+| <*значений*> | Да | Строка | Строка с декодируемыми escape-символами |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*декодированный URI*> | String | Обновленная строка с декодированными escape-символами |
+| <*декодированный URI*> | Строка | Обновленная строка с декодированными escape-символами |
 ||||
 
 *Пример*
@@ -1677,15 +1687,15 @@ decodeUriComponent('http%3A%2F%2Fcontoso.com')
 div(<dividend>, <divisor>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*dividend*> | Да | Целое число и число с плавающей запятой | Число, которое нужно поделить на *делитель* |
-| <*divisor*> | Да | Целое число и число с плавающей запятой | Число, на которое делится *делимое* (не может быть равно 0). |
+| <*дивиденд*> | Да | Целое число и число с плавающей запятой | Число, которое нужно поделить на *делитель* |
+| <*равн*> | Да | Целое число и число с плавающей запятой | Число, которое делит *делимое*, но не может быть равно 0 |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*результат деления*> | Целое число | Целое число в результате деления первого числа на второе |
+| <*Частное — результат*> | Целое число | Целое число в результате деления первого числа на второе |
 ||||
 
 *Пример*
@@ -1703,22 +1713,23 @@ div(11, 5)
 
 ### <a name="encodeuricomponent"></a>encodeUriComponent
 
-Возвращает кодированную версию URI для строки, заменив символы, опасные для URL-адреса, на escape-символы.
-Используйте [uriComponent()](#uriComponent) вместо `encodeUriComponent()`.
-Хотя обе функции работают одинаково, `uriComponent()` является предпочтительной.
+Возвращает кодированную версию URI для строки, заменив символы, опасные для URL-адреса, на escape-символы. Используйте [uriComponent()](#uriComponent) вместо `encodeUriComponent()`. Хотя обе функции работают одинаково, `uriComponent()` является предпочтительной.
+
+> [!NOTE]
+> Azure Logic Apps автоматически выполняет кодирование и декодирование Base64. Это означает, что вам не придется вручную выполнять эти преобразования. Однако при этом могут возникать непредвиденные поведения отображения, которые не влияют на фактические преобразования, и только то, как они отображаются. Дополнительные сведения см. в разделе [неявные преобразования типов данных](#implicit-data-conversions).
 
 ```
 encodeUriComponent('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Строка для преобразования в формат закодированного URI |
+| <*значений*> | Да | Строка | Строка для преобразования в формат закодированного URI |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*закодированный URI*> | String | Строка с закодированным URI, содержащая escape-символы |
+| <*Encoded-URI*> | Строка | Строка с закодированным URI, содержащая escape-символы |
 ||||
 
 *Пример*
@@ -1733,7 +1744,7 @@ encodeUriComponent('https://contoso.com')
 
 <a name="empty"></a>
 
-### <a name="empty"></a>empty
+### <a name="empty"></a>пустых
 
 Проверяет, является ли коллекция пустой.
 Возвращает значение true, если коллекция пуста, или false, если нет.
@@ -1743,12 +1754,12 @@ empty('<collection>')
 empty([<collection>])
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Да | Строка, массив или объект | Коллекция для проверки |
+| <*набор*> | Да | Строка, массив или объект | Коллекция для проверки |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Возвращает значение true, если коллекция пуста. В противном случае возвращает значение false. |
 ||||
@@ -1779,18 +1790,18 @@ empty('abc')
 endsWith('<text>', '<searchText>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Проверяемая строка |
-| <*searchText*> | Да | String | Конечная подстрока для поиска |
+| <*полнотекстовым*> | Да | Строка | Проверяемая строка |
+| <*Текстпоиска*> | Да | Строка | Конечная подстрока для поиска |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false  | Логическое | Возвращает значение true, если конечная подстрока обнаружена. В противном случае возвращает значение false. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере проверяется, заканчивается ли строка "hello world" строкой "world":
 
@@ -1800,7 +1811,7 @@ endsWith('hello world', 'world')
 
 Возвращается такой результат: `true`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере проверяется, заканчивается ли строка "hello world" строкой "universe":
 
@@ -1821,12 +1832,12 @@ endsWith('hello world', 'universe')
 equals('<object1>', '<object2>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*object1*>, <*object2*> | Да | Различные | Значения, выражения или объекты для сравнения |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Возвращает значение true, если оба значения эквивалентны. В противном случае возвращает значение false. |
 ||||
@@ -1856,14 +1867,14 @@ first('<collection>')
 first([<collection>])
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Да | Строка или массив | Коллекция, где нужно найти первый элемент. |
+| <*набор*> | Да | Строка или массив | Коллекция, где нужно найти первый элемент. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*первый элемент коллекции*> | Любой | Первый элемент в коллекции |
+| <*Первый элемент сбора*> | Любой | Первый элемент в коллекции |
 ||||
 
 *Пример*
@@ -1882,7 +1893,7 @@ first(createArray(0, 1, 2))
 
 <a name="float"></a>
 
-### <a name="float"></a>FLOAT
+### <a name="float"></a>плавающее
 
 Преобразует строковую версию числа с плавающей запятой в фактическое число с плавающей запятой.
 Эту функцию можно использовать только при передаче пользовательских параметров в приложение, например в приложение логики или поток.
@@ -1891,14 +1902,14 @@ first(createArray(0, 1, 2))
 float('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Строка с допустимым числом с плавающей запятой, которую нужно преобразовать |
+| <*значений*> | Да | Строка | Строка с допустимым числом с плавающей запятой, которую нужно преобразовать |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение с плавающей запятой*> | Float | Число с плавающей запятой для указанной строки |
+| <*float — значение*> | Float | Число с плавающей запятой для указанной строки |
 ||||
 
 *Пример*
@@ -1921,15 +1932,15 @@ float('10.333')
 formatDateTime('<timestamp>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*метка времени в другом формате*> | String | Обновленная метка времени в указанном формате |
+| <*переформатировано — метка времени*> | Строка | Обновленная метка времени в указанном формате |
 ||||
 
 *Пример*
@@ -1952,13 +1963,13 @@ formatDateTime('03/15/2018 12:00:00', 'yyyy-MM-ddTHH:mm:ss')
 formDataMultiValues('<actionName>', '<key>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*actionName*> | Да | String | Действие, выходные данные которого содержат требуемое значение ключа |
-| <*key*> | Да | String | Имя ключа, значение которого нужно получить |
+| <*actionName*> | Да | Строка | Действие, выходные данные которого содержат требуемое значение ключа |
+| <*раздел*> | Да | Строка | Имя ключа, значение которого нужно получить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | [<*массив со значениями ключа*>] | Array | Массив со всеми значениями, которые соответствуют заданному ключу |
 ||||
@@ -1984,15 +1995,15 @@ formDataMultiValues('Send_an_email', 'Subject')
 formDataValue('<actionName>', '<key>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*actionName*> | Да | String | Действие, выходные данные которого содержат требуемое значение ключа |
-| <*key*> | Да | String | Имя ключа, значение которого нужно получить |
+| <*actionName*> | Да | Строка | Действие, выходные данные которого содержат требуемое значение ключа |
+| <*раздел*> | Да | Строка | Имя ключа, значение которого нужно получить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение ключа*> | String | Значение в указанном ключе  |
+| <*ключ — значение*> | Строка | Значение в указанном ключе  |
 ||||
 
 *Пример*
@@ -2015,19 +2026,19 @@ formDataValue('Send_an_email', 'Subject')
 formatNumber(<number>, <format>, <locale>?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| *число* <> | Да | Integer или Double | Значение, которое необходимо отформатировать. |
-| <*format*> | Да | String | Строка составного формата, указывающая формат, который необходимо использовать. Сведения о поддерживаемых строках числового формата см. в разделе [строки стандартных числовых форматов](https://docs.microsoft.com/dotnet/standard/base-types/standard-numeric-format-strings), поддерживаемые `number.ToString(<format>, <locale>)`. |
-| <*языковой стандарт*> | Нет | String | Языковой стандарт, поддерживаемый `number.ToString(<format>, <locale>)`. Если не задано, по умолчанию используется значение `en-us`. |
+| <*Нумерация*> | Да | Integer или Double | Значение, которое необходимо отформатировать. |
+| <*формат*> | Да | Строка | Строка составного формата, указывающая формат, который необходимо использовать. Сведения о поддерживаемых строках числового формата см `number.ToString(<format>, <locale>)`. в разделе [строки стандартных числовых форматов](https://docs.microsoft.com/dotnet/standard/base-types/standard-numeric-format-strings), поддерживаемые. |
+| <*языкового стандарта*> | нет | Строка | Языковой стандарт, поддерживаемый `number.ToString(<format>, <locale>)`. Если не задано, по умолчанию используется значение `en-us`. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*форматированного числа*> | String | Указанное число в виде строки в указанном формате. Это возвращаемое значение можно привести к `int` или `float`. |
+| <*форматированный номер*> | Строка | Указанное число в виде строки в указанном формате. Это возвращаемое значение можно привести к типу `int` или `float`. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 Предположим, что нужно отформатировать число `1234567890`. В этом примере этот номер форматируется как строка "1 234 567 890,00".
 
@@ -2035,7 +2046,7 @@ formatNumber(<number>, <format>, <locale>?)
 formatNumber(1234567890, '{0:0,0.00}', 'en-us')
 ```
 
-\* Пример 2 "
+* Пример 2 "
 
 Предположим, что нужно отформатировать число `1234567890`. В этом примере число форматируется как строка "1.234.567.890, 00".
 
@@ -2069,19 +2080,19 @@ formatNumber(17.36, 'C2', 'is-is')
 getFutureTime(<interval>, <timeUnit>, <format>?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*interval*> | Да | Целое число | Число единиц времени для добавления |
-| <*timeUnit*> | Да | String | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*пределах*> | Да | Целое число | Число единиц времени для добавления |
+| <*тимеунит*> | Да | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Текущая метка времени и указанное число единиц времени |
+| <*Обновлено — метка времени*> | Строка | Текущая метка времени и указанное число единиц времени |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 Допустим, текущая метка времени такая: "2018-03-01T00:00:00.0000000Z".
 В этом примере к этой метке времени добавляется пять дней:
@@ -2092,7 +2103,7 @@ getFutureTime(5, 'Day')
 
 Возвращается такой результат: `"2018-03-06T00:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 Допустим, текущая метка времени такая: "2018-03-01T00:00:00.0000000Z".
 В этом примере добавляется пять дней и результат преобразуется в формат "D":
@@ -2113,19 +2124,19 @@ getFutureTime(5, 'Day', 'D')
 getPastTime(<interval>, <timeUnit>, <format>?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*interval*> | Да | Целое число | Число единиц времени для вычитания |
-| <*timeUnit*> | Да | String | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*пределах*> | Да | Целое число | Число единиц времени для вычитания |
+| <*тимеунит*> | Да | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Текущая метка времени за вычетом указанного числа единиц времени |
+| <*Обновлено — метка времени*> | Строка | Текущая метка времени за вычетом указанного числа единиц времени |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 Допустим, текущая метка времени такая: "2018-02-01T00:00:00.0000000Z".
 В этом примере от указанной метки времени отнимается пять дней.
@@ -2136,7 +2147,7 @@ getPastTime(5, 'Day')
 
 Возвращается такой результат: `"2018-01-27T00:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 Допустим, текущая метка времени такая: "2018-02-01T00:00:00.0000000Z".
 В этом примере отнимается пять дней и результат преобразуется в формат "D":
@@ -2159,13 +2170,13 @@ greater(<value>, <compareTo>)
 greater('<value>', '<compareTo>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | Целое число, число с плавающей запятой или строка | Проверяет, является ли первое значение большим, чем второе |
+| <*значений*> | Да | Целое число, число с плавающей запятой или строка | Проверяет, является ли первое значение большим, чем второе |
 | <*compareTo*> | Да | Целое число, число с плавающей запятой или строка соответственно | Значение сравнения |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Возвращает значение true, если первое значение большим, чем второе. Возвращает значение false, если первое значение меньше или равно второму. |
 ||||
@@ -2196,13 +2207,13 @@ greaterOrEquals(<value>, <compareTo>)
 greaterOrEquals('<value>', '<compareTo>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | Целое число, число с плавающей запятой или строка | Проверяет, является ли первое значение большим, чем второе, или равным ему |
+| <*значений*> | Да | Целое число, число с плавающей запятой или строка | Проверяет, является ли первое значение большим, чем второе, или равным ему |
 | <*compareTo*> | Да | Целое число, число с плавающей запятой или строка соответственно | Значение сравнения |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Возвращает значение true, если первое значение больше или равно второму. Возвращает значение false, если первое значение меньше, чем второе. |
 ||||
@@ -2237,14 +2248,14 @@ guid()
 guid('<format>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*format*> | Нет | String | Один [указатель формата](https://msdn.microsoft.com/library/97af8hh4) для возвращенного идентификатора GUID. По умолчанию имеет формат "D", но можно использовать "N", "D", "B", "P" или "X". |
+| <*формат*> | нет | Строка | Один [указатель формата](https://msdn.microsoft.com/library/97af8hh4) для возвращенного идентификатора GUID. По умолчанию имеет формат "D", но можно использовать "N", "D", "B", "P" или "X". |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение GUID*> | String | Случайно сгенерированный GUID |
+| <*GUID — значение*> | Строка | Случайно сгенерированный GUID |
 ||||
 
 *Пример*
@@ -2261,23 +2272,22 @@ guid('P')
 
 ### <a name="if"></a>if
 
-Проверьте, какое значение имеет выражение: true или false.
-Возвращает указанное значение на основе результата.
+Проверьте, какое значение имеет выражение: true или false. Возвращает указанное значение на основе результата. Параметры вычисляются слева направо.
 
 ```
 if(<expression>, <valueIfTrue>, <valueIfFalse>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*expression*> | Да | Логическое | Выражение для вычисления |
-| <*valueIfTrue*> | Да | Любой | Возвращаемое значение, если выражение истинно |
-| <*valueIfFalse*> | Да | Любой | Возвращаемое значение, если выражение ложно |
+| <*выражение*> | Да | Логическое | Выражение для вычисления |
+| <*True*> | Да | Любой | Возвращаемое значение, если выражение истинно |
+| <*Значение для false*> | Да | Любой | Возвращаемое значение, если выражение ложно |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*указанное возвращаемое значение*> | Любой | Возвращает указанное значение в зависимости от результата выражения: true или false. |
+| <*заданное возвращаемое значение*> | Любой | Возвращает указанное значение в зависимости от результата выражения: true или false. |
 ||||
 
 *Пример*
@@ -2300,13 +2310,13 @@ if(equals(1, 1), 'yes', 'no')
 indexOf('<text>', '<searchText>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Строки, которая содержит подстроку для поиска |
-| <*searchText*> | Да | String | Подстрока для поиска |
+| <*полнотекстовым*> | Да | Строка | Строки, которая содержит подстроку для поиска |
+| <*Текстпоиска*> | Да | Строка | Подстрока для поиска |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | <*значение индекса*>| Целое число | Начальное положение или значение индекса указанной подстроки. <p>Если строка не найдена, возвращается -1. |
 ||||
@@ -2323,7 +2333,7 @@ indexOf('hello world', 'world')
 
 <a name="int"></a>
 
-### <a name="int"></a>int
+### <a name="int"></a>INT
 
 Возвращает целочисленную версию строки.
 
@@ -2331,14 +2341,14 @@ indexOf('hello world', 'world')
 int('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Преобразуемая строка |
+| <*значений*> | Да | Строка | Преобразуемая строка |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*целочисленный результат*> | Целое число | Целочисленная версия указанной строки |
+| <*Integer — результат*> | Целое число | Целочисленная версия указанной строки |
 ||||
 
 *Пример*
@@ -2362,9 +2372,9 @@ int('10')
 item()
 ```
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*текущий элемент массива*> | Любой | Текущий элемент в массиве для текущей итерации действия |
+| <*Current — элемент массива*> | Любой | Текущий элемент в массиве для текущей итерации действия |
 ||||
 
 *Пример*
@@ -2386,14 +2396,14 @@ item().body
 items('<loopName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*loopName*> | Да | String | Имя каждого цикла for-each |
+| <*loopName*> | Да | Строка | Имя каждого цикла for-each |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*item*> | Любой | Элемент из текущего цикла в указанном цикле for-each |
+| <*детализирован*> | Любой | Элемент из текущего цикла в указанном цикле for-each |
 ||||
 
 *Пример*
@@ -2414,21 +2424,23 @@ items('myForEachLoopName')
 iterationIndexes('<loopName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description | 
+| Параметр | Обязательно | Тип | Описание | 
 | --------- | -------- | ---- | ----------- | 
-| <*loopName*> | Да | String | Имя цикла Until | 
+| <*loopName*> | Да | Строка | Имя цикла Until | 
 ||||| 
 
-| Возвращаемое значение | Тип | Description | 
+| Возвращаемое значение | Type | Описание | 
 | ------------ | ---- | ----------- | 
-| <*index*> | Целое число | Значение индекса для текущей итерации в указанном цикле Until | 
+| <*номер*> | Целое число | Значение индекса для текущей итерации в указанном цикле Until | 
 |||| 
 
 *Пример* 
 
-В этом примере создается переменная счетчика, которая увеличивает переменную на одну во время каждой итерации в цикле Until, пока значение счетчика не достигнет пяти. В примере также создается переменная, которая отслеживает текущий индекс для каждой итерации. В цикле Until во время каждой итерации в примере увеличивается счетчик, а затем значение счетчика присваивается текущему значению индекса, а затем увеличивается счетчик. В любое время можно определить номер текущей итерации, извлекая текущее значение индекса.
+В этом примере создается переменная счетчика, которая увеличивает переменную на одну во время каждой итерации в цикле Until, пока значение счетчика не достигнет пяти. В примере также создается переменная, которая отслеживает текущий индекс для каждой итерации. В цикле Until во время каждой итерации в примере увеличивается счетчик, а затем значение счетчика присваивается текущему значению индекса, а затем увеличивается счетчик. В цикле этот пример ссылается на текущий индекс итерации с помощью `iterationIndexes` функции:
 
-```
+`iterationIndexes('Until_Max_Increment')`
+
+```json
 {
    "actions": {
       "Create_counter_variable": {
@@ -2459,7 +2471,7 @@ iterationIndexes('<loopName>')
             "Create_counter_variable": [ "Succeeded" ]
          }
       },
-      "Until": {
+      "Until_Max_Increment": {
          "type": "Until",
          "actions": {
             "Assign_current_index_to_counter": {
@@ -2472,6 +2484,15 @@ iterationIndexes('<loopName>')
                   "Increment_variable": [ "Succeeded" ]
                }
             },
+            "Compose": {
+               "inputs": "'Current index: ' @{iterationIndexes('Until_Max_Increment')}",
+               "runAfter": {
+                  "Assign_current_index_to_counter": [
+                     "Succeeded"
+                    ]
+                },
+                "type": "Compose"
+            },           
             "Increment_variable": {
                "type": "IncrementVariable",
                "inputs": {
@@ -2481,7 +2502,7 @@ iterationIndexes('<loopName>')
                "runAfter": {}
             }
          },
-         "expression": "@equals(variables('myCounter'), 5),
+         "expression": "@equals(variables('myCounter'), 5)",
          "limit": {
             "count": 60,
             "timeout": "PT1H"
@@ -2504,17 +2525,17 @@ iterationIndexes('<loopName>')
 json('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | Строка или XML | Строка или XML для преобразования |
+| <*значений*> | Да | Строка или XML | Строка или XML для преобразования |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*результат JSON*> | Собственный тип или объект JSON | Значение собственного типа или объекта JSON для заданной строки или XML. Если строка имеет значение NULL, функция возвращает пустой объект. |
+| <*JSON — результат*> | Собственный тип или объект JSON | Значение собственного типа или объекта JSON для заданной строки или XML. Если строка имеет значение NULL, функция возвращает пустой объект. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере эта строка преобразуется в значение JSON:
 
@@ -2524,7 +2545,7 @@ json('[1, 2, 3]')
 
 Возвращается такой результат: `[1, 2, 3]`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере эта строка преобразуется в JSON:
 
@@ -2576,14 +2597,14 @@ intersection([<collection1>], [<collection2>], ...)
 intersection('<collection1>', '<collection2>', ...)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*collection1*>, <*collection2*>, ... | Да | Массив или объект, но не оба типа | Коллекции, из которых нужно получить *только* общие элементы |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*общий элементы*> | Массив или объект соответственно | Коллекция, которая содержит только общие элементы в указанных коллекциях |
+| <*Общие элементы*> | Массив или объект соответственно | Коллекция, которая содержит только общие элементы в указанных коллекциях |
 ||||
 
 *Пример*
@@ -2606,15 +2627,15 @@ intersection(createArray(1, 2, 3), createArray(101, 2, 1, 10), createArray(6, 8,
 join([<collection>], '<delimiter>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Да | Array | Массив, который содержит элементы для объединения |
-| <*delimiter*> | Да | String | Разделитель, содержащийся между каждым символом в результирующей строке |
+| <*набор*> | Да | Array | Массив, который содержит элементы для объединения |
+| <*разделитель*> | Да | Строка | Разделитель, содержащийся между каждым символом в результирующей строке |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*симв.1*><*разделитель*><*симв.2*><*разделитель*>... | String | Полученная строка, созданная из всех элементов в указанном массиве |
+| <*char1*><*delimiter*><*delimiter* char1 разделитель char2>...*char2*>< | Строка | Полученная строка, созданная из всех элементов в указанном массиве |
 ||||
 
 *Пример*
@@ -2638,14 +2659,14 @@ last('<collection>')
 last([<collection>])
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Да | Строка или массив | Коллекция, в которой нужно найти последний элемент |
+| <*набор*> | Да | Строка или массив | Коллекция, в которой нужно найти последний элемент |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*последний элемент коллекции*> | Строка или массив соответственно | Последний элемент в коллекции |
+| <*Последняя — элемент сбора*> | Строка или массив соответственно | Последний элемент в коллекции |
 ||||
 
 *Пример*
@@ -2673,15 +2694,15 @@ last(createArray(0, 1, 2, 3))
 lastIndexOf('<text>', '<searchText>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Строки, которая содержит подстроку для поиска |
-| <*searchText*> | Да | String | Подстрока для поиска |
+| <*полнотекстовым*> | Да | Строка | Строки, которая содержит подстроку для поиска |
+| <*Текстпоиска*> | Да | Строка | Подстрока для поиска |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*конечное значение индекса*> | Целое число | Начальная позиция или значение индекса последнего вхождения указанной подстроки. <p>Если строка не найдена, возвращается -1. |
+| <*Конечный-индекс-значение*> | Целое число | Начальная позиция или значение индекса последнего вхождения указанной подстроки. <p>Если строка не найдена, возвращается -1. |
 ||||
 
 *Пример*
@@ -2705,14 +2726,14 @@ length('<collection>')
 length([<collection>])
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Да | Строка или массив | Коллекция с элементами для подсчета |
+| <*набор*> | Да | Строка или массив | Коллекция с элементами для подсчета |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*длина или число*> | Целое число | Число элементов в данной коллекции |
+| <*Длина или число*> | Целое число | Число элементов в данной коллекции |
 ||||
 
 *Пример*
@@ -2738,13 +2759,13 @@ less(<value>, <compareTo>)
 less('<value>', '<compareTo>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | Целое число, число с плавающей запятой или строка | Первое значение, для которого выполняется проверка того, является ли оно меньшим, чем второе. |
+| <*значений*> | Да | Целое число, число с плавающей запятой или строка | Первое значение, для которого выполняется проверка того, является ли оно меньшим, чем второе. |
 | <*compareTo*> | Да | Целое число, число с плавающей запятой или строка соответственно | Элемент для сравнения |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Возвращает значение true, если первое значение меньше, чем второе. Возвращает значение false, если первое значение больше или равно второму. |
 ||||
@@ -2775,13 +2796,13 @@ lessOrEquals(<value>, <compareTo>)
 lessOrEquals('<value>', '<compareTo>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | Целое число, число с плавающей запятой или строка | Проверяет, является ли первое значение меньшим, чем второе, или равным ему |
+| <*значений*> | Да | Целое число, число с плавающей запятой или строка | Проверяет, является ли первое значение меньшим, чем второе, или равным ему |
 | <*compareTo*> | Да | Целое число, число с плавающей запятой или строка соответственно | Элемент для сравнения |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false  | Логическое | Возвращает значение true, если первое значение меньше или равно второму. Возвращает значение false, если первое значение больше, чем второе. |
 ||||
@@ -2811,9 +2832,9 @@ lessOrEquals('apply', 'apple')
 listCallbackUrl()
 ```
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*URL обратного вызова*> | String | URL-адрес обратного вызова для действия или триггера |
+| <*URL-адрес обратного вызова*> | Строка | URL-адрес обратного вызова для действия или триггера |
 ||||
 
 *Пример*
@@ -2833,15 +2854,15 @@ max(<number1>, <number2>, ...)
 max([<number1>, <number2>, ...])
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*number1*>, <*number2*>, ... | Да | Целое число, число с плавающей запятой или оба типа | Набор чисел, из которого требуется получить наибольшее значение |
-| [<*number1*>, <*number2*>, ...] | Да | Массив — целое число, число с плавающей запятой или оба типа | Массив чисел, из которого требуется получить наибольшее значение |
+| [<*число1*>, <> *число2* ,...] | Да | Массив — целое число, число с плавающей запятой или оба типа | Массив чисел, из которого требуется получить наибольшее значение |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*макс. значение*> | Целое число и число с плавающей запятой | Максимальное значение в указанном массиве или набор чисел |
+| <*Max-value*> | Целое число и число с плавающей запятой | Максимальное значение в указанном массиве или набор чисел |
 ||||
 
 *Пример*
@@ -2857,7 +2878,7 @@ max(createArray(1, 2, 3))
 
 <a name="min"></a>
 
-### <a name="min"></a>мин
+### <a name="min"></a>Min
 
 Возвращает наименьшее значение из набора чисел или массива.
 
@@ -2866,15 +2887,15 @@ min(<number1>, <number2>, ...)
 min([<number1>, <number2>, ...])
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*number1*>, <*number2*>, ... | Да | Целое число, число с плавающей запятой или оба типа | Набор чисел, из которого требуется получить наименьшее значение |
-| [<*number1*>, <*number2*>, ...] | Да | Массив — целое число, число с плавающей запятой или оба типа | Массив чисел, из которого требуется получить наименьшее значение |
+| [<*число1*>, <> *число2* ,...] | Да | Массив — целое число, число с плавающей запятой или оба типа | Массив чисел, из которого требуется получить наименьшее значение |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*мин. значение*> | Целое число и число с плавающей запятой | Наименьшее значение в указанном наборе чисел или массиве |
+| <*Минимальное значение*> | Целое число и число с плавающей запятой | Наименьшее значение в указанном наборе чисел или массиве |
 ||||
 
 *Пример*
@@ -2899,15 +2920,15 @@ min(createArray(1, 2, 3))
 mod(<dividend>, <divisor>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*dividend*> | Да | Целое число и число с плавающей запятой | Число, которое нужно поделить на *делитель* |
-| <*divisor*> | Да | Целое число и число с плавающей запятой | Число, на которое делится *делимое* (не может быть равно 0). |
+| <*дивиденд*> | Да | Целое число и число с плавающей запятой | Число, которое нужно поделить на *делитель* |
+| <*равн*> | Да | Целое число и число с плавающей запятой | Число, на которое делится *делимое* (не может быть равно 0). |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*остаток*> | Целое число и число с плавающей запятой | Остаток результата деления первого числа на второе |
+| <*остаток от деления*> | Целое число и число с плавающей запятой | Остаток результата деления первого числа на второе |
 ||||
 
 *Пример*
@@ -2930,15 +2951,15 @@ mod(3, 2)
 mul(<multiplicand1>, <multiplicand2>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*multiplicand1*> | Да | Целое число и число с плавающей запятой | Число для умножения на *multiplicand2* |
 | <*multiplicand2*> | Да | Целое число и число с плавающей запятой | Число, на которое умножается *multiplicand1* |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*результат*> | Целое число и число с плавающей запятой | Произведение от умножения первого числа на второе |
+| <*продукт-результат*> | Целое число и число с плавающей запятой | Произведение от умножения первого числа на второе |
 ||||
 
 *Пример*
@@ -2965,15 +2986,15 @@ mul(1.5, 2)
 multipartBody('<actionName>', <index>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*actionName*> | Да | String | Имя действия, которое содержит выходные данные, состоящие из нескольких частей |
-| <*index*> | Да | Целое число | Значение индекса необходимой части |
+| <*actionName*> | Да | Строка | Имя действия, которое содержит выходные данные, состоящие из нескольких частей |
+| <*номер*> | Да | Целое число | Значение индекса необходимой части |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*текст*> | String | Текст указанной части |
+| <*организм*> | Строка | Текст указанной части |
 ||||
 
 <a name="not"></a>
@@ -2987,17 +3008,17 @@ multipartBody('<actionName>', <index>)
 not(<expression>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*expression*> | Да | Логическое | Выражение для вычисления |
+| <*выражение*> | Да | Логическое | Выражение для вычисления |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Возвращает значение true, если выражение ложно. Возвращает значение false, если выражение истинно. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этих примерах проверяется, все ли указанные выражения ложны:
 
@@ -3011,7 +3032,7 @@ not(true)
 * В первом примере выражение имеет значение false, поэтому функция возвращает `true`.
 * Во втором примере выражение имеет значение true, поэтому функция возвращает `false`.
 
-*Пример 2*
+*Пример 2*
 
 В этих примерах проверяется, все ли указанные выражения ложны:
 
@@ -3027,7 +3048,7 @@ not(equals(1, 1))
 
 <a name="or"></a>
 
-### <a name="or"></a>или
+### <a name="or"></a>or
 
 Проверяет, является ли хотя бы одно выражение истинным.
 Возвращает значение true, если хотя бы одно выражение истинно, или значение false, когда все являются ложными.
@@ -3036,17 +3057,17 @@ not(equals(1, 1))
 or(<expression1>, <expression2>, ...)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*expression1*>, <*expression2*>, ... | Да | Логическое | Выражения, которые следует проверить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false | Логическое | Возвращает значение true, если хотя бы одно выражение истинно. Возвращает значение false, если все выражения ложны. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этих примерах проверяется, является ли хотя бы одно выражение истинным:
 
@@ -3060,7 +3081,7 @@ or(false, false)
 * В первом примере по крайней мере одно выражение имеет значение true, поэтому функция возвращает `true`.
 * Во втором примере оба выражения имеют значения false, поэтому функция возвращает `false`.
 
-*Пример 2*
+*Пример 2*
 
 В этих примерах проверяется, является ли хотя бы одно выражение истинным:
 
@@ -3078,20 +3099,20 @@ or(equals(1, 2), equals(1, 3))
 
 ### <a name="outputs"></a>outputs
 
-Возвращает выходные данные действия во время выполнения. Используйте эту функцию вместо `actionOutputs()`, которая разрешается в `outputs()` в конструкторе приложений логики. Хотя обе функции работают одинаково, `outputs()` является предпочтительной.
+Возвращает выходные данные действия во время выполнения. Используйте эту функцию, а не `actionOutputs()`, которая разрешается `outputs()` в конструкторе приложений логики. Хотя обе функции работают одинаково, `outputs()` является предпочтительной.
 
 ```
 outputs('<actionName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*actionName*> | Да | String | Имя действия для требуемого результата. |
+| <*actionName*> | Да | Строка | Имя действия для требуемого результата. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | -----| ----------- |
-| <*выходные данные*> | String | Выходные данные указанного действия |
+| <*проверки*> | Строка | Выходные данные указанного действия |
 ||||
 
 *Пример*
@@ -3147,14 +3168,14 @@ outputs('Get_user')
 parameters('<parameterName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*parameterName*> | Да | String | Имя параметра, значение которого требуются получить |
+| <*parameterName*> | Да | Строка | Имя параметра, значение которого требуются получить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение параметра*> | Любой | Значение указанного параметра |
+| <*параметр-значение*> | Любой | Значение указанного параметра |
 ||||
 
 *Пример*
@@ -3185,13 +3206,13 @@ parameters('fullName')
 rand(<minValue>, <maxValue>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*minValue*> | Да | Целое число | Наименьшее целое число в диапазоне |
 | <*maxValue*> | Да | Целое число | Целое число, следующее за наибольшим целым числом в диапазоне, которое функция может вернуть |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | <*случайный результат*> | Целое число | Случайное целое число, возвращаемое из указанного диапазона |
 ||||
@@ -3216,13 +3237,13 @@ rand(1, 5)
 range(<startIndex>, <count>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*startIndex*> | Да | Целое число | Целочисленное значение, которое запускает массив в качестве первого элемента |
-| <*count*> | Да | Целое число | Количество целых чисел в массиве |
+| <*расчета*> | Да | Целое число | Количество целых чисел в массиве |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | [<*результат диапазона*>] | Array | Массив с целыми числами, который начинается с указанного индекса |
 ||||
@@ -3247,16 +3268,16 @@ range(1, 4)
 replace('<text>', '<oldText>', '<newText>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Строка, которая содержит заменяемую подстроку |
-| <*oldText*> | Да | String | Заменяемая подстрока |
-| <*newText*> | Да | String | Строка для замены |
+| <*полнотекстовым*> | Да | Строка | Строка, которая содержит заменяемую подстроку |
+| <*олдтекст*> | Да | Строка | Заменяемая подстрока |
+| <*newText*> | Да | Строка | Строка для замены |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленный текст*> | String | Обновленная строка после замены подстроки <p>Если подстрока не найдена, возвращает исходную строку. |
+| <*обновленный текст*> | Строка | Обновленная строка после замены подстроки <p>Если подстрока не найдена, возвращает исходную строку. |
 ||||
 
 *Пример*
@@ -3279,15 +3300,15 @@ replace('the old string', 'old', 'new')
 removeProperty(<object>, '<property>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*object*> | Да | Объекты | Объект JSON, из которого вы хотите удалить свойство |
-| <*property*> | Да | String | Имя удаляемого свойства |
+| <*объектами*> | Да | Объект | Объект JSON, из которого вы хотите удалить свойство |
+| <*свойства*> | Да | Строка | Имя удаляемого свойства |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленный_объект*> | Объекты | Обновленный объект JSON без указанного свойства |
+| <*updated — Object*> | Объект | Обновленный объект JSON без указанного свойства |
 ||||
 
 Чтобы удалить дочернее свойство из существующего свойства, используйте следующий синтаксис:
@@ -3296,21 +3317,21 @@ removeProperty(<object>, '<property>')
 removeProperty(<object>['<parent-property>'], '<child-property>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*object*> | Да | Объекты | Объект JSON, свойство которого необходимо удалить. |
-| <> *родительского свойства* | Да | String | Имя родительского свойства с дочерним свойством, которое необходимо удалить |
-| <> *дочернего свойства* | Да | String | Имя удаляемого дочернего свойства |
+| <*объектами*> | Да | Объект | Объект JSON, свойство которого необходимо удалить. |
+| <*Свойство Parent*> | Да | Строка | Имя родительского свойства с дочерним свойством, которое необходимо удалить |
+| <*дочернее свойство*> | Да | Строка | Имя удаляемого дочернего свойства |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленный_объект*> | Объекты | Обновленный объект JSON, чье дочернее свойство было удалено. |
+| <*updated — Object*> | Объект | Обновленный объект JSON, чье дочернее свойство было удалено. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
-В этом примере удаляется свойство `middleName` из объекта JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) и возвращает обновленный объект:
+В `middleName` этом примере удаляется свойство из объекта JSON, которое преобразуется из строки в JSON с помощью функции [JSON ()](#json) и возвращает обновленный объект:
 
 ```
 removeProperty(json('{ "firstName": "Sophia", "middleName": "Anne", "surName": "Owen" }'), 'middleName')
@@ -3335,9 +3356,9 @@ removeProperty(json('{ "firstName": "Sophia", "middleName": "Anne", "surName": "
 }
 ```
 
-*Пример 2*
+*Пример 2*
 
-В этом примере удаляется свойство дочернего элемента `middleName` из родительского свойства `customerName` в объекте JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) и возвращает обновленный объект:
+В этом примере удаляется `middleName` дочернее `customerName` свойство из родительского свойства в объекте JSON, которое преобразуется из строки в JSON с помощью функции [JSON ()](#json) и возвращает обновленный объект:
 
 ```
 removeProperty(json('{ "customerName": { "firstName": "Sophia", "middleName": "Anne", "surName": "Owen" } }')['customerName'], 'middleName')
@@ -3368,27 +3389,27 @@ removeProperty(json('{ "customerName": { "firstName": "Sophia", "middleName": "A
 
 <a name="result"></a>
 
-### <a name="result"></a>набор по
+### <a name="result"></a>result
 
-Возврат входных и выходных данных из всех действий, которые находятся внутри указанного действия области, например `For_each`, `Until`или действия `Scope`. Эта функция полезна, возвращая результаты невыполненного действия, чтобы можно было диагностировать и обменять исключения. Дополнительные сведения см. в разделе [Получение контекста и результатов для сбоев](../logic-apps/logic-apps-exception-handling.md#get-results-from-failures).
+Возврат входных и выходных данных из всех действий, которые находятся внутри указанного действия области, например действия `For_each`, `Until`или. `Scope` Эта функция полезна, возвращая результаты невыполненного действия, чтобы можно было диагностировать и обменять исключения. Дополнительные сведения см. в разделе [Получение контекста и результатов для сбоев](../logic-apps/logic-apps-exception-handling.md#get-results-from-failures).
 
 ```
 result('<scopedActionName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*скопедактионнаме*> | Да | String | Имя действия с областью действия, из которого возвращаются входные и выходные данные всех внутренних действий |
+| <*скопедактионнаме*> | Да | Строка | Имя действия с областью действия, из которого возвращаются входные и выходные данные всех внутренних действий |
 ||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| массив <> *объектов* | Array, объект | Массив, содержащий массивы входов и выходов из каждого действия, которое отображается в указанном действии с областью действия. |
+| <*Array-объект*> | Array - объект | Массив, содержащий массивы входов и выходов из каждого действия, которое отображается в указанном действии с областью действия. |
 ||||
 
 *Пример*
 
-В этом примере возвращаются входные и выходные данные каждой итерации действия HTTP внутри цикла `For_each` с помощью функции `result()` в действии `Compose`.
+В этом примере возвращаются входные и выходные данные каждой итерации действия HTTP внутри `For_each` цикла с помощью `result()` функции в `Compose` действии:
 
 ```json
 {
@@ -3421,7 +3442,7 @@ result('<scopedActionName>')
 }
 ```
 
-Вот как пример возвращаемого массива может выглядеть, где внешний `outputs` объект содержит входные и выходные данные каждой итерации действий в `For_each` действиях.
+Вот как пример возвращаемого массива может выглядеть, где внешний `outputs` объект содержит входные данные и выходные данные каждой итерации действий внутри `For_each` действия.
 
 ```json
 [
@@ -3497,35 +3518,35 @@ result('<scopedActionName>')
 setProperty(<object>, '<property>', <value>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*object*> | Да | Объекты | Объект JSON, свойство которого вы хотите установить. |
-| <*property*> | Да | String | Имя существующего или нового задаваемого свойства |
-| <*value*> | Да | Любой | Значение, задаваемое для указанного свойства |
+| <*объектами*> | Да | Объект | Объект JSON, свойство которого вы хотите установить. |
+| <*свойства*> | Да | Строка | Имя существующего или нового задаваемого свойства |
+| <*значений*> | Да | Любой | Значение, задаваемое для указанного свойства |
 |||||
 
-Чтобы задать дочернее свойство в дочернем объекте, используйте вместо него вложенный вызов `setProperty()`. В противном случае функция возвращает только дочерний объект в качестве выходных данных.
+Чтобы задать дочернее свойство в дочернем объекте, используйте `setProperty()` вместо него вложенный вызов. В противном случае функция возвращает только дочерний объект в качестве выходных данных.
 
 ```
 setProperty(<object>['<parent-property>'], '<parent-property>', setProperty(<object>['parentProperty'], '<child-property>', <value>))
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*object*> | Да | Объекты | Объект JSON, свойство которого вы хотите установить. |
-| <> *родительского свойства* | Да | String | Имя родительского свойства с дочерним свойством, которое необходимо задать |
-| <> *дочернего свойства* | Да | String | Имя устанавливаемого дочернего свойства |
-| <*value*> | Да | Любой | Значение, задаваемое для указанного свойства |
+| <*объектами*> | Да | Объект | Объект JSON, свойство которого вы хотите установить. |
+| <*Свойство Parent*> | Да | Строка | Имя родительского свойства с дочерним свойством, которое необходимо задать |
+| <*дочернее свойство*> | Да | Строка | Имя устанавливаемого дочернего свойства |
+| <*значений*> | Да | Любой | Значение, задаваемое для указанного свойства |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленный_объект*> | Объекты | Обновленный объект JSON, свойство которого задается |
+| <*updated — Object*> | Объект | Обновленный объект JSON, свойство которого задается |
 ||||
 
-*Пример 1*
+*Пример 1*
 
-В этом примере задается свойство `surName` в объекте JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение свойству и возвращает обновленный объект:
+В этом примере задается `surName` свойство в объекте JSON, которое преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение свойству и возвращает обновленный объект:
 
 ```
 setProperty(json('{ "firstName": "Sophia", "surName": "Owen" }'), 'surName', 'Hartnett')
@@ -3549,9 +3570,9 @@ setProperty(json('{ "firstName": "Sophia", "surName": "Owen" }'), 'surName', 'Ha
 }
 ```
 
-*Пример 2*
+*Пример 2*
 
-В этом примере задается свойство дочернего элемента `surName` для свойства `customerName` Parent в объекте JSON, который преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение свойству и возвращает обновленный объект:
+В этом примере задается `surName` дочернее свойство `customerName` родительского свойства в объекте JSON, которое преобразуется из строки в JSON с помощью функции [JSON ()](#json) . Функция присваивает указанное значение свойству и возвращает обновленный объект:
 
 ```
 setProperty(json('{ "customerName": { "firstName": "Sophia", "surName": "Owen" } }'), 'customerName', setProperty(json('{ "customerName": { "firstName": "Sophia", "surName": "Owen" } }')['customerName'], 'surName', 'Hartnett'))
@@ -3589,13 +3610,13 @@ setProperty(json('{ "customerName": { "firstName": "Sophia", "surName": "Owen" }
 skip([<collection>], <count>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Да | Array | Коллекция, элементы которой требуется удалить |
-| <*count*> | Да | Целое число | Положительное целое число для количества элементов в начале коллекции, которые требуется удалить |
+| <*набор*> | Да | Array | Коллекция, элементы которой требуется удалить |
+| <*расчета*> | Да | Целое число | Положительное целое число для количества элементов в начале коллекции, которые требуется удалить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | [<*обновленная коллекция*>] | Array | Обновленная коллекция после удаления указанных элементов. |
 ||||
@@ -3620,13 +3641,13 @@ skip(createArray(0, 1, 2, 3), 1)
 split('<text>', '<delimiter>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Строка для разделения на подстроки в зависимости от указанного разделителя в исходной строке |
-| <*delimiter*> | Да | String | Символ в исходной строке для использования в качестве разделителя |
+| <*полнотекстовым*> | Да | Строка | Строка для разделения на подстроки в зависимости от указанного разделителя в исходной строке |
+| <*разделитель*> | Да | Строка | Символ в исходной строке для использования в качестве разделителя |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | [<*substring1*>,<*substring2*>,...] | Array | Массив, содержащий подстроки из исходной строки, разделенные запятыми |
 ||||
@@ -3651,15 +3672,15 @@ split('a_b_c', '_')
 startOfDay('<timestamp>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Указанная метка времени, которая начинается с нулевого часа дня |
+| <*Обновлено — метка времени*> | Строка | Указанная метка времени, которая начинается с нулевого часа дня |
 ||||
 
 *Пример*
@@ -3682,15 +3703,15 @@ startOfDay('2018-03-15T13:30:30Z')
 startOfHour('<timestamp>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Указанная метка времени, которая начинается с нулевой минуты часа |
+| <*Обновлено — метка времени*> | Строка | Указанная метка времени, которая начинается с нулевой минуты часа |
 ||||
 
 *Пример*
@@ -3713,15 +3734,15 @@ startOfHour('2018-03-15T13:30:30Z')
 startOfMonth('<timestamp>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Указанная метка времени, которая начинается с нулевого часа первого дня месяца |
+| <*Обновлено — метка времени*> | Строка | Указанная метка времени, которая начинается с нулевого часа первого дня месяца |
 ||||
 
 *Пример*
@@ -3746,18 +3767,18 @@ startOfMonth('2018-03-15T13:30:30Z')
 startsWith('<text>', '<searchText>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Проверяемая строка |
-| <*searchText*> | Да | String | Начальная строка для поиска |
+| <*полнотекстовым*> | Да | Строка | Проверяемая строка |
+| <*Текстпоиска*> | Да | Строка | Начальная строка для поиска |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | true или false  | Логическое | Возвращает значение true при обнаружении начальной подстроки. В противном случае возвращает значение false. |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере проверяется, начинается ли строка "hello world" подстрокой "hello":
 
@@ -3767,7 +3788,7 @@ startsWith('hello world', 'hello')
 
 Возвращается такой результат: `true`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере проверяется, начинается ли строка "hello world" подстрокой "greetings":
 
@@ -3779,7 +3800,7 @@ startsWith('hello world', 'greetings')
 
 <a name="string"></a>
 
-### <a name="string"></a>string
+### <a name="string"></a>строка
 
 Возвращает строковую версию значения.
 
@@ -3787,17 +3808,17 @@ startsWith('hello world', 'greetings')
 string(<value>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | Любой | Значение, которое необходимо преобразовать |
+| <*значений*> | Да | Любой | Значение, которое необходимо преобразовать |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*строковое значение*> | String | Строковая версия указанного значения |
+| <*Строковое значение*> | Строка | Строковая версия указанного значения |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере создается строковая версия для этого числа:
 
@@ -3807,7 +3828,7 @@ string(10)
 
 Возвращается такой результат: `"10"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере создается строка для указанного объекта JSON и используется символ обратной косой черты (\\) в качестве escape-символа для двойных кавычек (").
 
@@ -3827,13 +3848,13 @@ string( { "name": "Sophie Owen" } )
 sub(<minuend>, <subtrahend>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*minuend*> | Да | Целое число и число с плавающей запятой | Число, из которого вычитается *вычитаемое* |
 | <*subtrahend*> | Да | Целое число и число с плавающей запятой | Число, которое вычитается из *уменьшаемого* |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | <*результат*> | Целое число и число с плавающей запятой | Вычитается второе число из первого числа и возвращается результат |
 ||||
@@ -3859,16 +3880,16 @@ sub(10.3, .3)
 substring('<text>', <startIndex>, <length>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Строка, символы которой требуется получить |
+| <*полнотекстовым*> | Да | Строка | Строка, символы которой требуется получить |
 | <*startIndex*> | Да | Целое число | Положительное число, равное или больше 0, которое требуется использовать в качестве начальной позиции или значения индекса |
-| <*length*> | Да | Целое число | Положительное число символов для подстроки |
+| <*недопустим*> | Да | Целое число | Положительное число символов для подстроки |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*результат подстроки*> | String | Подстрока с указанным количеством символов, начиная с указанной позиции индекса в исходной строке |
+| <*substring — результат*> | Строка | Подстрока с указанным количеством символов, начиная с указанной позиции индекса в исходной строке |
 ||||
 
 *Пример*
@@ -3892,20 +3913,20 @@ substring('hello world', 6, 5)
 subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка, содержащая метку времени |
-| <*interval*> | Да | Целое число | Число единиц времени для вычитания |
-| <*timeUnit*> | Да | String | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*timestamp*> | Да | Строка | Строка, содержащая метку времени |
+| <*пределах*> | Да | Целое число | Число единиц времени для вычитания |
+| <*тимеунит*> | Да | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная_метка_времени*> | String | Метка времени, от которой отнято указанное число единиц времени |
+| <*Обновлено — метка времени*> | Строка | Метка времени, от которой отнято указанное число единиц времени |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере из этой метки времени вычитается один день:
 
@@ -3915,7 +3936,7 @@ subtractFromTime('2018-01-02T00:00:00Z', 1, 'Day')
 
 Возвращается такой результат: `"2018-01-01T00:00:00:0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 В этом примере из этой метки времени вычитается один день:
 
@@ -3936,13 +3957,13 @@ take('<collection>', <count>)
 take([<collection>], <count>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*collection*> | Да | Строка или массив | Коллекция, элементы которой требуется получить |
-| <*count*> | Да | Целое число | Положительное целое число для количества элементов в начале коллекции, которые требуется получить |
+| <*набор*> | Да | Строка или массив | Коллекция, элементы которой требуется получить |
+| <*расчета*> | Да | Целое число | Положительное целое число для количества элементов в начале коллекции, которые требуется получить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | <*подмножество*> или [<*подмножество*>] | Строка или массив соответственно | Строка или массив, который содержит заданное число элементов, взятых из первой части исходной коллекции |
 ||||
@@ -3972,14 +3993,14 @@ take(createArray(0, 1, 2, 3, 4), 3)
 ticks('<timestamp>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*timestamp*> | Да | String | Строка для метки времени |
+| <*timestamp*> | Да | Строка | Строка для метки времени |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*число тактов*> | Целое число | Число тактов с момента в указанной метке времени |
+| <*такты — число*> | Целое число | Число тактов с момента в указанной метке времени |
 ||||
 
 <a name="toLower"></a>
@@ -3992,14 +4013,14 @@ ticks('<timestamp>')
 toLower('<text>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Строка, возвращаемая в нижнем регистре |
+| <*полнотекстовым*> | Да | Строка | Строка, возвращаемая в нижнем регистре |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*текст в нижнем регистре*> | String | Исходная строка в нижнем регистре |
+| <*строчные — текст*> | Строка | Исходная строка в нижнем регистре |
 ||||
 
 *Пример*
@@ -4022,14 +4043,14 @@ toLower('Hello World')
 toUpper('<text>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Строка, возвращаемая в верхнем регистре |
+| <*полнотекстовым*> | Да | Строка | Строка, возвращаемая в верхнем регистре |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*текст в верхнем регистре*> | String | Исходная строка в верхнем регистре |
+| <*текст в верхнем регистре*> | Строка | Исходная строка в верхнем регистре |
 ||||
 
 *Пример*
@@ -4059,9 +4080,9 @@ toUpper('Hello World')
 trigger()
 ```
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*выходные данные триггера*> | String | Выходные данные из триггера во время выполнения |
+| <*триггер-вывод*> | Строка | Выходные данные из триггера во время выполнения |
 ||||
 
 <a name="triggerBody"></a>
@@ -4076,9 +4097,9 @@ trigger()
 triggerBody()
 ```
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*выходные данные body триггера*> | String | Выходные данные `body` из триггера |
+| <*триггер-текст-вывод*> | Строка | Выходные данные `body` из триггера |
 ||||
 
 <a name="triggerFormDataMultiValues"></a>
@@ -4091,12 +4112,12 @@ triggerBody()
 triggerFormDataMultiValues('<key>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*key*> | Да | String | Имя ключа, значение которого нужно получить |
+| <*раздел*> | Да | Строка | Имя ключа, значение которого нужно получить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | [<*массив со значениями ключа*>] | Array | Массив со всеми значениями, которые соответствуют заданному ключу |
 ||||
@@ -4122,14 +4143,14 @@ triggerFormDataMultiValues('feedUrl')
 triggerFormDataValue('<key>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*key*> | Да | String | Имя ключа, значение которого нужно получить |
+| <*раздел*> | Да | Строка | Имя ключа, значение которого нужно получить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение ключа*> | String | Значение в указанном ключе |
+| <*ключ — значение*> | Строка | Значение в указанном ключе |
 ||||
 
 *Пример*
@@ -4152,14 +4173,14 @@ triggerFormDataValue('feedUrl')
 triggerMultipartBody(<index>)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*index*> | Да | Целое число | Значение индекса необходимой части |
+| <*номер*> | Да | Целое число | Значение индекса необходимой части |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*текст*> | String | Текст указанной части выходных данных триггера, которые состоят из нескольких частей |
+| <*организм*> | Строка | Текст указанной части выходных данных триггера, которые состоят из нескольких частей |
 ||||
 
 <a name="triggerOutputs"></a>
@@ -4174,9 +4195,9 @@ triggerMultipartBody(<index>)
 triggerOutputs()
 ```
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*выходные данные триггера*> | String | Выходные данные из триггера во время выполнения  |
+| <*триггер-вывод*> | Строка | Выходные данные из триггера во время выполнения  |
 ||||
 
 <a name="trim"></a>
@@ -4189,14 +4210,14 @@ triggerOutputs()
 trim('<text>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*text*> | Да | String | Строка, которая содержит начальные и конечные пробелы для удаления |
+| <*полнотекстовым*> | Да | Строка | Строка, которая содержит начальные и конечные пробелы для удаления |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленный текст*> | String | Обновленная версия исходной строки без начальных и конечных пробелов |
+| <*упдатедтекст*> | Строка | Обновленная версия исходной строки без начальных и конечных пробелов |
 ||||
 
 *Пример*
@@ -4221,14 +4242,14 @@ union('<collection1>', '<collection2>', ...)
 union([<collection1>], [<collection2>], ...)
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
 | <*collection1*>, <*collection2*>, ...  | Да | Массив или объект, но не оба типа | Коллекции, из которых вы хотите получить *все* элементы |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*обновленная коллекция*> | Массив или объект соответственно | Коллекция, которая содержит все элементы из указанных коллекций, без повторений |
+| <*упдатедколлектион*> | Массив или объект соответственно | Коллекция, которая содержит все элементы из указанных коллекций, без повторений |
 ||||
 
 *Пример*
@@ -4253,14 +4274,14 @@ union(createArray(1, 2, 3), createArray(1, 2, 10, 101))
 uriComponent('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Строка для преобразования в формат закодированного URI |
+| <*значений*> | Да | Строка | Строка для преобразования в формат закодированного URI |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*закодированный URI*> | String | Строка с закодированным URI, содержащая escape-символы |
+| <*Encoded-URI*> | Строка | Строка с закодированным URI, содержащая escape-символы |
 ||||
 
 *Пример*
@@ -4283,14 +4304,14 @@ uriComponent('https://contoso.com')
 uriComponentToBinary('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Преобразуемая строка с закодированным URI |
+| <*значений*> | Да | Строка | Преобразуемая строка с закодированным URI |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*двоичная версия закодированного URI*> | String | Двоичная версия строки с закодированным URI. Двоичное содержимое в формате Base64, представленное с помощью `$content`. |
+| <*двоичный-для кодирования-URI*> | Строка | Двоичная версия строки с закодированным URI. Двоичное содержимое в формате Base64, представленное с помощью `$content`. |
 ||||
 
 *Пример*
@@ -4318,14 +4339,14 @@ uriComponentToBinary('http%3A%2F%2Fcontoso.com')
 uriComponentToString('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Декодируемая строка с закодированным URI |
+| <*значений*> | Да | Строка | Декодируемая строка с закодированным URI |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*декодированный URI*> | String | Декодированная версия строки с закодированным URI |
+| <*декодированный URI*> | Строка | Декодированная версия строки с закодированным URI |
 ||||
 
 *Пример*
@@ -4348,14 +4369,14 @@ uriComponentToString('http%3A%2F%2Fcontoso.com')
 uriHost('<uri>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*uri*> | Да | String | URI, значение `host` которого требуется |
+| <*URI*> | Да | Строка | URI, значение `host` которого требуется |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение узла*> | String | Значение `host` для указанного URI. |
+| <*значение узла*> | Строка | Значение `host` для указанного URI. |
 ||||
 
 *Пример*
@@ -4378,14 +4399,14 @@ uriHost('https://www.localhost.com:8080')
 uriPath('<uri>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*uri*> | Да | String | URI, значение `path` которого требуется |
+| <*URI*> | Да | Строка | URI, значение `path` которого требуется |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение пути*> | String | Значение `path` для указанного URI. Если `path` не имеет значения, вернется символ "/". |
+| <*путь — значение*> | Строка | Значение `path` для указанного URI. Если `path` не имеет значения, вернется символ "/". |
 ||||
 
 *Пример*
@@ -4408,14 +4429,14 @@ uriPath('http://www.contoso.com/catalog/shownew.htm?date=today')
 uriPathAndQuery('<uri>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*uri*> | Да | String | URI, значения `path` и `query` которого требуется извлечь |
+| <*URI*> | Да | Строка | URI, значения `path` и `query` которого требуется извлечь |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение запроса пути*> | String | Значения `path` и `query` для указанного URI. Если `path` не указывает значение, вернется символ "/". |
+| <*путь-значение запроса*> | Строка | Значения `path` и `query` для указанного URI. Если `path` не указывает значение, вернется символ "/". |
 ||||
 
 *Пример*
@@ -4438,12 +4459,12 @@ uriPathAndQuery('http://www.contoso.com/catalog/shownew.htm?date=today')
 uriPort('<uri>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*uri*> | Да | String | URI, значение `port` которого требуется |
+| <*URI*> | Да | Строка | URI, значение `port` которого требуется |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
 | <*значение порта*> | Целое число | Значение `port` для указанного URI. Если `port` не указывает значение, возвращается порт по умолчанию для протокола. |
 ||||
@@ -4468,14 +4489,14 @@ uriPort('http://www.localhost:8080')
 uriQuery('<uri>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*uri*> | Да | String | URI, значение `query` которого требуется |
+| <*URI*> | Да | Строка | URI, значение `query` которого требуется |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение запроса*> | String | Значение `query` для указанного URI. |
+| <*значение запроса*> | Строка | Значение `query` для указанного URI. |
 ||||
 
 *Пример*
@@ -4498,14 +4519,14 @@ uriQuery('http://www.contoso.com/catalog/shownew.htm?date=today')
 uriScheme('<uri>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*uri*> | Да | String | URI, значение `scheme` которого требуется |
+| <*URI*> | Да | Строка | URI, значение `scheme` которого требуется |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение схемы*> | String | Значение `scheme` для указанного URI. |
+| <*Схема-значение*> | Строка | Значение `scheme` для указанного URI. |
 ||||
 
 *Пример*
@@ -4531,17 +4552,17 @@ utcNow('<format>')
 Кроме того, можно указать другой формат с помощью параметра <*format*>.
 
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*format*> | Нет | String | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
+| <*формат*> | нет | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*текущая метка времени*> | String | Текущая дата и время |
+| <*Current — метка времени*> | Строка | Текущая дата и время |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 Предположим, сейчас 13:00:00 15 апреля 2018 года.
 В этом примере возвращается текущая метка времени:
@@ -4552,7 +4573,7 @@ utcNow()
 
 Возвращается такой результат: `"2018-04-15T13:00:00.0000000Z"`
 
-*Пример 2*
+*Пример 2*
 
 Предположим, сейчас 13:00:00 15 апреля 2018 года.
 В этом примере возвращается текущая метка времени с использованием необязательного формата "D":
@@ -4573,14 +4594,14 @@ utcNow('D')
 variables('<variableName>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*variableName*> | Да | String | Имя переменной, значение которой нужно получить |
+| <*variableName*> | Да | Строка | Имя переменной, значение которой нужно получить |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*значение переменной*> | Любой | Значение указанной переменной |
+| <*переменная-значение*> | Любой | Значение указанной переменной |
 ||||
 
 *Пример*
@@ -4604,9 +4625,9 @@ variables('numItems')
 workflow().<property>
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*property*> | Нет | String | Имя свойства рабочего процесса, значение которого требуется <p>Объект рабочего процесса имеет такие свойства: **name**, **type**, **id**, **location** и **run**. Значение свойства **run** также является объектом, имеющим следующие свойства: **name**, **type** и **id**. |
+| <*свойства*> | нет | Строка | Имя свойства рабочего процесса, значение которого требуется <p>Объект рабочего процесса имеет такие свойства: **name**, **type**, **id**, **location** и **run**. Значение свойства **run** также является объектом, имеющим следующие свойства: **name**, **type** и **id**. |
 |||||
 
 *Пример*
@@ -4627,17 +4648,17 @@ workflow().run.name
 xml('<value>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*value*> | Да | String | Строка с объектом JSON для преобразования <p>Объект JSON должен содержать только одно корневое свойство, которое не может быть массивом. <br>Используйте обратную косую черту (\\) как escape-символ для двойных кавычек ("). |
+| <*значений*> | Да | Строка | Строка с объектом JSON для преобразования <p>Объект JSON должен содержать только одно корневое свойство, которое не может быть массивом. <br>Используйте обратную косую черту (\\) как escape-символ для двойных кавычек ("). |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*версия XML*> | Объекты | Закодированный XML для заданной строки или объекта JSON |
+| <*Версия XML*> | Объект | Закодированный XML для заданной строки или объекта JSON |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере создается версия XML для этой строки, которая содержит объект JSON:
 
@@ -4649,7 +4670,7 @@ xml('<value>')
 <name>Sophia Owen</name>
 ```
 
-*Пример 2*
+*Пример 2*
 
 Предположим, что у вас есть этот объект JSON:
 
@@ -4685,20 +4706,20 @@ xml('<value>')
 xpath('<xml>', '<xpath>')
 ```
 
-| Параметр | Обязательно для заполнения | Тип | Description |
+| Параметр | Обязательно | Тип | Описание |
 | --------- | -------- | ---- | ----------- |
-| <*xml*> | Да | Любой | Строка XML для поиска узлов и значений, которые соответствуют значению выражения XPath |
-| <*xpath*> | Да | Любой | Выражение XPath, используемое для поиска соответствующих узлов или значений XML |
+| <*код*> | Да | Любой | Строка XML для поиска узлов и значений, которые соответствуют значению выражения XPath |
+| <*формате*> | Да | Любой | Выражение XPath, используемое для поиска соответствующих узлов или значений XML |
 |||||
 
-| Возвращаемое значение | Тип | Description |
+| Возвращаемое значение | Type | Описание |
 | ------------ | ---- | ----------- |
-| <*узел XML*> | XML | Узел XML, где только один узел соответствует указанному выражению XPath |
-| <*value*> | Любой | Значение из узла XML, где только одно значение соответствует указанному выражению XPath |
+| <*XML-node*> | XML | Узел XML, где только один узел соответствует указанному выражению XPath |
+| <*значений*> | Любой | Значение из узла XML, где только одно значение соответствует указанному выражению XPath |
 | [<*узел XML1*>, <*узел XML2*>, ...] </br>-или- </br>[<*значение1*>, <*значение2*>, ...] | Array | Массив с узлами XML или значениями, которые соответствуют указанному выражению XPath |
 ||||
 
-*Пример 1*
+*Пример 1*
 
 В этом примере выполняется поиск узлов, которые соответствуют узлу `<name></name>` ​​в указанных аргументах, и возвращается массив с этими значениями узлов:
 
@@ -4720,7 +4741,7 @@ xpath('<xml>', '<xpath>')
 
 `[ <name>Gala</name>, <name>Honeycrisp</name> ]`
 
-*Пример 2*
+*Пример 2*
 
 Следуя примеру 1, этот пример находит узлы, которые соответствуют узлу `<count></count>`, и добавляет эти значения с помощью функции `sum()`:
 
@@ -4734,13 +4755,13 @@ xpath('<xml>', '<xpath>')
 
 > [!NOTE]
 >
-> Если вы работаете в представлении кода, заключите двойные кавычки ("), используя символ обратной косой черты (\\). 
+> Если вы работаете в представлении кода, заключите двойные кавычки ("), используя символ обратной косой\\черты (). 
 > Например, при сериализации выражения в виде строки JSON необходимо использовать escape-символы. 
 > Однако если вы работаете в конструкторе приложений логики или в редакторе выражений, вам не нужно заключать двойные кавычки, так как в базовое определение автоматически добавляется символ обратной косой черты, например:
 > 
-> * Представление кода: `xpath(xml(body('Http')), '/*[name()=\"file\"]/*[name()=\"location\"]')`
+> * Представление кода:`xpath(xml(body('Http')), '/*[name()=\"file\"]/*[name()=\"location\"]')`
 >
-> * Редактор выражений: `xpath(xml(body('Http')), '/*[name()="file"]/*[name()="location"]')`
+> * Редактор выражений:`xpath(xml(body('Http')), '/*[name()="file"]/*[name()="location"]')`
 > 
 > Следующие примеры применяются к выражениям, вводимым в редакторе выражений.
 

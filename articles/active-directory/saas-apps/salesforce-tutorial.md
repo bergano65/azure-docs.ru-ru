@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Salesforce | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Salesforce | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Salesforce.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/16/2020
+ms.date: 02/17/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d0793c863f4f682c967c7a5ae61c5a0b78cdb4d
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: a875cee7e6796a2c865bde4a62f2f0463eb12130
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76292541"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78967736"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство. Интеграция единого входа Azure Active Directory с Salesforce
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce"></a>Руководство по Интеграция единого входа Azure Active Directory с Salesforce
 
 В этом руководстве описано, как интегрировать Salesforce с Azure Active Directory (Azure AD). Интеграция Salesforce с Azure AD обеспечивает следующие возможности.
 
@@ -50,7 +50,7 @@ ms.locfileid: "76292541"
 * Salesforce поддерживает подготовку пользователей **JIT**
 
 * Теперь для мобильного приложения "Salesforce" можно настроить Azure AD для обеспечения единого входа. В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
-* После настройки Salesforce можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Salesforce можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-salesforce-from-the-gallery"></a>Добавление Salesforce из коллекции
 
@@ -180,7 +180,7 @@ ms.locfileid: "76292541"
 
     ![Настройка единого входа](./media/salesforce-tutorial/xmlchoose.png)
 
-1. На странице **SAML Single Sign-On Settings** (Параметры единого входа SAML) поля заполняются автоматически. Щелкните "Сохранить".
+1. На странице **SAML Single Sign-On Settings** (Параметры единого входа SAML) поля заполняются автоматически. Установите флажок **User Provisioning Enabled** (Подготовка пользователей включена) и нажмите кнопку **Save** (Сохранить).
 
     ![Настройка единого входа](./media/salesforce-tutorial/salesforcexml.png)
 
@@ -243,6 +243,6 @@ ms.locfileid: "76292541"
 
 - [Пробное использование Salesforce с Azure AD](https://aad.portal.azure.com)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/protect-salesforce)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
-- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/protect-salesforce)

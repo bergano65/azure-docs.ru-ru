@@ -5,10 +5,10 @@ ms.date: 10/14/2019
 ms.topic: tutorial
 ms.reviewer: brendal
 ms.openlocfilehash: 5761bf1294691c2d50e0e389fe69ec286df4a06c
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74324041"
 ---
 # <a name="tutorial-using-applications-in-azure-blockchain-workbench"></a>Руководство по Использование приложений в Azure Blockchain Workbench
@@ -44,7 +44,7 @@ Blockchain Workbench позволяет создавать контракты и
 
     ![Кнопка создания контракта](./media/use/contract-list.png)
 
-3. Отобразится панель **создания контракта**. Введите исходные значения для параметров. Нажмите кнопку **Создать**.
+3. Отобразится панель **создания контракта**. Введите исходные значения для параметров. Нажмите кнопку **создания**.
 
     ![Панель добавления нового контракта](./media/use/new-contract.png)
 
@@ -61,9 +61,9 @@ Blockchain Workbench позволяет создавать контракты и
 
     ![Сведения о контракте](./media/use/contract-details.png)
 
-    | Section  | ОПИСАНИЕ  |
+    | Section  | Описание  |
     |---------|---------|
-    | Status | Отображение текущего состояния по стадиям контракта |
+    | Состояние | Отображение текущего состояния по стадиям контракта |
     | Сведения | Текущие значения контракта |
     | Действие | Сведения о последнем действии |
     | Действие | Журнал транзакций для контракта |
@@ -81,7 +81,7 @@ Blockchain Workbench позволяет создавать контракты и
 
 7. Чтобы выполнить действие, выберите **Выполнить действие**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Управление версиями приложения Azure Blockchain Workbench](version-app.md)

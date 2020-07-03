@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -9,18 +9,18 @@ ms.date: 10/04/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 9648f4c16e8d266bbdd504d4a7599b67a5c846b4
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73523688"
 ---
 1. В меню [портал Azure](https://portal.azure.com) выберите **создать ресурс**. 
 
-   ![Создание ресурса в портал Azure](./media/vpn-gateway-add-local-network-gateway-portal-include/azure-portal-create-resource.png)
+   ![Создание ресурса на портале Azure](./media/vpn-gateway-add-local-network-gateway-portal-include/azure-portal-create-resource.png)
 2. В поле **Искать в Marketplace** введите **шлюз локальной сети**, а затем нажмите клавишу **Ввод** для поиска. Будет возвращен список результатов. Щелкните **Шлюз локальной сети**, а затем — **Создать**, чтобы открыть страницу **Создание шлюза локальной сети**.
 
-   ![Создание локального сетевого шлюза](./media/vpn-gateway-add-local-network-gateway-portal-include/create-local-network-gateway.png "Создание шлюза локальной сети")
+   ![Создание шлюза локальной сети](./media/vpn-gateway-add-local-network-gateway-portal-include/create-local-network-gateway.png "Создание шлюза локальной сети")
 
 3. На странице **Создание шлюза локальной сети** укажите значения для своего шлюза.
 

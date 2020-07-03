@@ -8,10 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 07/10/2018
 ms.openlocfilehash: 34c8555356d5c0142d7b677c8119fe66806ab064
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76834915"
 ---
 # <a name="test-stream-analytics-queries-locally-with-visual-studio"></a>Локальное тестирование запросов Stream Analytics с помощью Visual Studio
@@ -58,7 +58,7 @@ Azure Stream Analytics инструменты для Visual Studio можно и
    
 
 ### <a name="sample-input"></a>Пример ввода
-Вы также можете применить выборку примеров входных данных из источников к локальному файлу. Щелкните правой кнопкой мыши файл конфигурации входных данных и выберите **Образцы данных**. 
+Вы также можете применить выборку примеров входных данных из источников к локальному файлу. Щелкните правой кнопкой мыши входной файл конфигурации и выберите пункт **образец данных**. 
 
 ![Образец данных](./media/stream-analytics-vs-tools-local-run/stream-analytics-tools-for-vs-sample-data-01.png)
 
@@ -70,7 +70,7 @@ Azure Stream Analytics инструменты для Visual Studio можно и
 
 ![Выходные данные для примера данных](./media/stream-analytics-vs-tools-local-run/stream-analytics-tools-for-vs-sample-data-03.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
 * [Просмотр заданий Azure Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools.md)

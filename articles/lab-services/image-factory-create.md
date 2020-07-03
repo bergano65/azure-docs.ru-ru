@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: 2c5a44a9505d4a312be521cdc3219c5e4ce95a42
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76759454"
 ---
 # <a name="create-a-custom-image-factory-in-azure-devtest-labs"></a>Создание настраиваемой фабрики изображений в Azure DevTest Labs
@@ -57,5 +57,5 @@ ms.locfileid: "76759454"
 - DevTest Labs, получающие пользовательские образы, могут не входить в одну подписку Azure (практические занятия, охватывающие подписки).
 - Скрипты PowerShell необходимо использовать повторно, чтобы при необходимости можно было выполнить дополнительные фабрики.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Перейдите к следующей статье в этом разделе: [Запуск фабрики образов из Azure DevOps](image-factory-set-up-devops-lab.md)

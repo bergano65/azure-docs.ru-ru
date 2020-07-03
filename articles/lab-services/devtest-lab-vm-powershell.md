@@ -14,16 +14,16 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: spelluru
 ms.openlocfilehash: 13014c39641203bddadf858c34cff67462b3a4b3
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76167106"
 ---
 # <a name="create-a-virtual-machine-with-devtest-labs-using-azure-powershell"></a>Создание виртуальной машины с DevTest Labs с помощью Azure PowerShell
 В этой статье показано, как создать виртуальную машину в Azure DevTest Labs с помощью Azure PowerShell. Сценарии PowerShell можно использовать для автоматизации создания виртуальных машин в лаборатории в Azure DevTest Labs. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы
 
 - [Создайте лабораторию](devtest-lab-create-lab.md) , если вы не хотите использовать существующую лабораторию для тестирования сценария или команд в этой статье. 
@@ -129,7 +129,7 @@ finally {
 ### <a name="use-azure-portal"></a>Использование портала Azure
 При создании виртуальной машины в портал Azure можно создать шаблон Azure Resource Manager. Вам не нужно завершать процесс создания виртуальной машины. Выполняйте эти действия только после того, как будет отображен шаблон. Это лучший способ получить необходимое описание JSON, если виртуальная машина лаборатории еще не создана. 
 
-1. Перейдите на [портал Azure](https://portal.azure.com).
+1. Перейдите к [портал Azure](https://portal.azure.com).
 2. В меню навигации слева выберите **все службы** .
 3. Найдите и выберите **DevTest Labs** из списка служб. 
 4. На странице **DevTest Labs** (лабораторные занятия) выберите свою лабораторию в списке лабораторий.

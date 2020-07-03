@@ -2,21 +2,21 @@
 title: Определение нескольких экземпляров свойства
 description: Используйте операцию копирования в шаблоне Azure Resource Manager для многократного выполнения итерации при создании свойства ресурса.
 ms.topic: conceptual
-ms.date: 02/13/2020
-ms.openlocfilehash: b1e31f981f361b4cfbe7e7930f2c70bfce8b8656
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.date: 04/14/2020
+ms.openlocfilehash: 9fde2ecf14bc5b29bb31ffa78e067b780438578a
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210870"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583409"
 ---
-# <a name="property-iteration-in-azure-resource-manager-templates"></a>Итерация свойств в шаблонах Azure Resource Manager
+# <a name="property-iteration-in-arm-templates"></a>Итерация свойства в шаблонах ARM
 
-В этой статье показано, как создать более одного экземпляра свойства в шаблоне Azure Resource Manager. Добавив элемент **Copy** в раздел свойств ресурса в шаблоне, можно динамически задать количество элементов для свойства во время развертывания. Кроме того, не нужно повторять синтаксис шаблона.
+В этой статье показано, как создать более одного экземпляра свойства в шаблоне Azure Resource Manager (ARM). Добавив элемент **Copy** в раздел свойств ресурса в шаблоне, можно динамически задать количество элементов для свойства во время развертывания. Кроме того, не нужно повторять синтаксис шаблона.
 
-Можно также использовать Copy с [ресурсами](copy-resources.md) и [переменными](copy-variables.md).
+Можно также использовать Copy с [ресурсами](copy-resources.md), [переменными](copy-variables.md)и [выходными данными](copy-outputs.md).
 
-## <a name="property-iteration"></a>Итерация свойства
+## <a name="syntax"></a>Синтаксис
 
 Элемент Copy имеет следующий общий формат:
 
@@ -30,9 +30,26 @@ ms.locfileid: "77210870"
 ]
 ```
 
-В **поле имя**укажите имя свойства ресурса, которое необходимо создать. Свойство **Count** указывает количество итераций, которое требуется для свойства.
+В **поле имя**укажите имя свойства ресурса, которое необходимо создать.
+
+Свойство **Count** указывает количество итераций, которое требуется для свойства.
 
 Свойство **input** указывает свойства, которые необходимо повторить. Создается массив элементов, созданных на основе значения **входного** свойства.
+
+## <a name="copy-limits"></a>Ограничения копирования
+
+Число не может превышать 800.
+
+Число не может быть отрицательным числом. Если вы развертываете шаблон с помощью последней версии Azure CLI, PowerShell или REST API, он может быть равен нулю. В частности, необходимо использовать:
+
+* Azure PowerShell **2,6** или более поздней версии
+* Azure CLI **2.0.74** или более поздней версии
+* REST API версии **2019-05-10** или более поздней
+* [Связанные развертывания](linked-templates.md) должны использовать API версии **2019-05-10** или более поздней для типа ресурса развертывания.
+
+Более ранние версии PowerShell, CLI и REST API не поддерживают нулевое значение для счетчика.
+
+## <a name="property-iteration"></a>Итерация свойства
 
 В следующем примере показано, как применить массив `copy` к свойству dataDisks на виртуальной машине:
 
@@ -78,11 +95,7 @@ ms.locfileid: "77210870"
 }
 ```
 
-Обратите внимание, что при использовании `copyIndex` в итерации свойства, необходимо указать имя итерации.
-
-> [!NOTE]
-> Итерация свойства также поддерживает аргумент offset. Смещение должно располагаться после имени итерации, например copyIndex (' "диски", 1).
->
+Обратите внимание, что при использовании `copyIndex` в итерации свойства, необходимо указать имя итерации. Итерация свойства также поддерживает аргумент offset. Смещение должно располагаться после имени итерации, например copyIndex (' "диски", 1).
 
 Диспетчер ресурсов разворачивает массив `copy` во время развертывания. Имя массива становится именем свойства. Входные значения становятся свойствами объекта. Развернутый шаблон выглядит так:
 
@@ -113,13 +126,73 @@ ms.locfileid: "77210870"
       ...
 ```
 
+Операция копирования удобна при работе с массивами, так как позволяет выполнить итерацию по каждому элементу в массиве. Используйте функцию `length` в массиве, чтобы указать число итераций, а также функцию `copyIndex` для получения текущего индекса в массиве.
+
+В следующем примере шаблона создается группа отработки отказа для баз данных, передаваемых в качестве массива.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "primaryServerName": {
+            "type": "string"
+        },
+        "secondaryServerName": {
+            "type": "string"
+        },
+        "databaseNames": {
+            "type": "array",
+            "defaultValue": [
+                "mydb1",
+                "mydb2",
+                "mydb3"
+            ]
+        }
+    },
+    "variables": {
+        "failoverName": "[concat(parameters('primaryServerName'),'/', parameters('primaryServerName'),'failovergroups')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Sql/servers/failoverGroups",
+            "apiVersion": "2015-05-01-preview",
+            "name": "[variables('failoverName')]",
+            "properties": {
+                "readWriteEndpoint": {
+                    "failoverPolicy": "Automatic",
+                    "failoverWithDataLossGracePeriodMinutes": 60
+                },
+                "readOnlyEndpoint": {
+                    "failoverPolicy": "Disabled"
+                },
+                "partnerServers": [
+                    {
+                        "id": "[resourceId('Microsoft.Sql/servers', parameters('secondaryServerName'))]"
+                    }
+                ],
+                "copy": [
+                    {
+                        "name": "databases",
+                        "count": "[length(parameters('databaseNames'))]",
+                        "input": "[resourceId('Microsoft.Sql/servers/databases', parameters('primaryServerName'), parameters('databaseNames')[copyIndex('databases')])]"
+                    }
+                ]
+            }
+        }
+    ],
+    "outputs": {
+    }
+}
+```
+
 Элемент копирования представляет собой массив, поэтому вы можете указать несколько свойств для ресурса.
 
 ```json
 {
   "type": "Microsoft.Network/loadBalancers",
   "apiVersion": "2017-10-01",
-  "name": "examleLB",
+  "name": "exampleLB",
   "properties": {
     "copy": [
       {
@@ -175,12 +248,6 @@ ms.locfileid: "77210870"
 }
 ```
 
-## <a name="copy-limits"></a>Ограничения копирования
-
-Число не может превышать 800.
-
-Число не может быть отрицательным числом. Если вы развертываете шаблон с Azure PowerShell 2,6 или более поздней версии, Azure CLI 2.0.74 или более поздней версии или REST API версию **2019-05-10** или более поздней, можно установить значение счетчика равным нулю. Более ранние версии PowerShell, CLI и REST API не поддерживают нулевое значение для счетчика.
-
 ## <a name="example-templates"></a>Образцы шаблонов
 
 В следующем примере показан типичный сценарий для создания более одного значения для свойства.
@@ -189,10 +256,13 @@ ms.locfileid: "77210870"
 |---------|---------|
 |[Развертывание виртуальной машины с переменным количеством дисков данных](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-windows-copy-datadisks) |Развертывает несколько дисков данных с виртуальной машиной. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* См. статью [Руководство: создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](template-tutorial-create-multiple-instances.md).
-* Другие способы использования элемента copy см. в разделе [Итерация ресурсов в шаблонах Azure Resource Manager](copy-resources.md) и [переменная Iteration в Azure Resource Manager Templates](copy-variables.md).
-* Сведения о разделах шаблона см. в статье, посвященной [созданию шаблонов Azure Resource Manager](template-syntax.md).
-* Инструкции по развертыванию шаблонов см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
+* Чтобы пройти обучение, см. раздел [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов ARM](template-tutorial-create-multiple-instances.md).
+* Другие способы использования элемента copy см. в следующих статьях:
+  * [Итерация ресурсов в шаблонах ARM](copy-resources.md)
+  * [Итерация переменных в шаблонах ARM](copy-variables.md)
+  * [Выходная итерация в шаблонах ARM](copy-outputs.md)
+* Если вы хотите узнать о разделах шаблона, см. раздел [Создание шаблонов ARM](template-syntax.md).
+* Сведения о развертывании шаблона см. в статье [развертывание приложения с помощью шаблона ARM](deploy-powershell.md).
 

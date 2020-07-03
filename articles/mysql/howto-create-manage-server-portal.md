@@ -5,19 +5,19 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 3fed615a767fee2fff1700f996b2103f411db825
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.date: 3/18/2020
+ms.openlocfilehash: c0bee0b628a49746a19545d14b8b8761d0e880d2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74973481"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80062404"
 ---
 # <a name="manage-an-azure-database-for-mysql-server-using-the-azure-portal"></a>Управление базой данных Azure для сервера MySQL с помощью портал Azure
 В этой статье показано, как управлять базой данных Azure для серверов MySQL. Задачи управления включают в себя вычисление и масштабирование хранилища, сброс пароля администратора и Просмотр сведений о сервере.
 
 ## <a name="sign-in"></a>Вход
-Войдите на [портале Azure](https://portal.azure.com).
+Войдите на [портал Azure](https://portal.azure.com).
 
 ## <a name="create-a-server"></a>Создание сервера
 Ознакомьтесь с [кратким](quickstart-create-mysql-server-database-using-azure-portal.md) руководством, чтобы узнать, как создать и приступить к работе с сервером базы данных Azure для MySQL.
@@ -75,7 +75,7 @@ ms.locfileid: "74973481"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Сброс пароля**.
 
-   ![Обзор](./media/howto-create-manage-server-portal/overview-reset-password.png)
+   ![общие сведения](./media/howto-create-manage-server-portal/overview-reset-password.png)
 
 2. Введите новый пароль и подтвердите его. В текстовом поле будет предложено ввести требования к сложности пароля.
 
@@ -90,7 +90,7 @@ ms.locfileid: "74973481"
 
 1. Выберите сервер в портал Azure. В окне **обзора** выберите **Удалить**.
 
-    ![удалить](./media/howto-create-manage-server-portal/overview-delete.png)
+    !["Удалить"](./media/howto-create-manage-server-portal/overview-delete.png)
 
 2. Введите имя сервера в поле ввода, чтобы убедиться, что это сервер, который требуется удалить.
 
@@ -99,9 +99,9 @@ ms.locfileid: "74973481"
     > [!NOTE]
     > Удаление сервера необратимо.
 
-3. Нажмите кнопку **Удалить**.
+3. Выберите команду **Удалить**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Сведения о [резервном копировании и восстановлении сервера](howto-restore-server-portal.md)
 - Сведения о [параметрах настройки и мониторинга в службе "база данных Azure для MySQL](concepts-monitoring.md) "

@@ -14,17 +14,17 @@ ms.topic: troubleshooting
 ms.date: 08/20/2019
 ms.author: delhan
 ms.openlocfilehash: 83751538efe4f3d3af5928caa04b265b6c867442
-ms.sourcegitcommit: 116bc6a75e501b7bba85e750b336f2af4ad29f5a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71153573"
 ---
 # <a name="how-to-reset-local-linux-password-on-azure-vms"></a>Как сбросить локальный пароль Linux на виртуальных машинах Azure
 
 В этой статье описано несколько способов сброса локальных паролей на виртуальных машинах Linux. Если истек срок действия учетной записи пользователя или требуется создать новую учетную запись, можно использовать приведенные ниже способы, чтобы создать новую учетную запись локального администратора и повторно получить доступ к виртуальной машине.
 
-## <a name="symptoms"></a>Проблемы
+## <a name="symptoms"></a>Симптомы
 
 Невозможно подключиться к виртуальной машине, и появляется сообщение о том, что указан неправильный пароль. Кроме того, с помощью VMAgent невозможно сбросить пароль на портале Azure.
 
@@ -62,7 +62,7 @@ ms.locfileid: "71153573"
     mkdir /tempmount
     ```
 
-6.  Подключите диск ОС к точке подключения. Обычно требуется подключить *sdc1* или *sdc2*. Это зависит от раздела размещения в каталоге */etc* диска неисправного компьютера.
+6.  Подключите диск ОС к точке подключения. Обычно требуется подключить *sdc1* или *sdc2*. Это будет зависеть от раздела размещения в каталоге */etc* на диске поврежденного компьютера.
 
     ```bash
     mount /dev/sdc1 /tempmount
@@ -105,8 +105,8 @@ ms.locfileid: "71153573"
 
 12. [Измените диск операционной системы для затронутой виртуальной машины](troubleshoot-recovery-disks-portal-linux.md#swap-the-os-disk-for-the-vm).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Troubleshoot Azure VM by attaching OS disk to another Azure VM](https://social.technet.microsoft.com/wiki/contents/articles/18710.troubleshoot-azure-vm-by-attaching-os-disk-to-another-azure-vm.aspx) (Устранение неполадок виртуальной машины Azure путем присоединения диска ОС к другой виртуальной машине Azure)
 
-* [Azure CLI: Удаление и повторное развертывание виртуальной машины из виртуального жесткого диска](https://blogs.msdn.microsoft.com/linuxonazure/2016/07/21/azure-cli-how-to-delete-and-re-deploy-a-vm-from-vhd/)
+* [Azure CLI: How to delete and re-deploy a VM from VHD](https://blogs.msdn.microsoft.com/linuxonazure/2016/07/21/azure-cli-how-to-delete-and-re-deploy-a-vm-from-vhd/) (Azure CLI. Как удалить виртуальную машину и повторно развернуть ее с виртуального жесткого диска)

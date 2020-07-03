@@ -1,5 +1,5 @@
 ---
-title: Руководство. созданию записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика
+title: Руководство по созданию записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика
 titleSuffix: Azure DNS
 description: В этом руководстве показано, как настроить запись псевдонима Azure DNS для поддержки использования вершинного имени домена с помощью диспетчера трафика.
 services: dns
@@ -9,13 +9,13 @@ ms.topic: tutorial
 ms.date: 9/25/2018
 ms.author: rohink
 ms.openlocfilehash: 4bdfc950cc1277809811dc2c548a57cc2138a8e4
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77149955"
 ---
-# <a name="tutorial-configure-an-alias-record-to-support-apex-domain-names-with-traffic-manager"></a>Руководство. Настройка записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика 
+# <a name="tutorial-configure-an-alias-record-to-support-apex-domain-names-with-traffic-manager"></a>Руководство по Настройка записи псевдонима для поддержки вершинных доменных имен с помощью диспетчера трафика 
 
 Вы можете создать запись псевдонима для вашего вершинного доменного имени для ссылки на профиль диспетчера трафика Microsoft Azure. Например, contoso.com. Вместо использования службы перенаправления можно настроить Azure DNS для ссылки на профиль диспетчера трафика непосредственно из вашей зоны. 
 

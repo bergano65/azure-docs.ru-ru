@@ -12,20 +12,20 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: d8e5b531684e175e5b9423bbc302bbe0b3d36058
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 416be7de4b3cef4fb6e1bcfd09d934937f8c96d8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75745285"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80297728"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-database-managed-instance-offline-using-dms"></a>Руководство. Миграция SQL Server в управляемый экземпляр базы данных SQL Azure в автономном режиме с помощью DMS
 
-Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр Базы данных SQL Azure](../sql-database/sql-database-managed-instance.md). Сведения о дополнительных методах, которые могут потребовать некоторых действий вручную, см. в статье [Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
+Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр Базы данных SQL Azure](../sql-database/sql-database-managed-instance.md). Дополнительные методы, которые могут потребовать определенных действий вручную, см. в статье [SQL Server миграция экземпляра в управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
 
 В этом руководстве выполняется миграция базы данных **Adventureworks2012** из локального экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью Azure Database Migration Service.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 >
 > - создание экземпляра Azure Database Migration Service;
@@ -41,7 +41,7 @@ Azure Database Migration Service можно использовать для пе
 
 В этой статье описывается перенос данных из SQL Server в управляемый экземпляр Базы данных SQL Azure вне сети. Чтобы получить сведения о миграции в подключенном режиме, ознакомьтесь с [руководством по переносу баз данных из SQL Server в Управляемый экземпляр Базы данных SQL Azure по сети с помощью службы DMS](tutorial-sql-server-managed-instance-online.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -60,7 +60,7 @@ Azure Database Migration Service можно использовать для пе
 - Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу SQL Server. По умолчанию это TCP-порт 1433.
 - Если вы запустили несколько именованных экземпляров SQL Server, использующих динамические порты, вы можете включить службу обозревателя SQL и разрешить доступ к UDP-порту 1434 через брандмауэры. Это позволит службе Azure Database Migration Service подключиться к именованному экземпляру на исходном сервере.
 - Если перед исходными базами данных используется брандмауэр, его правила должны разрешать службе Azure Database Migration Service доступ к исходным базам данных для миграции и файлам SMB через порт 445.
-- Создайте управляемый экземпляр Базы данных SQL Azure на портале Azure, следуя инструкциям из [этой статьи](https://aka.ms/sqldbmi).
+- Создайте управляемый экземпляр базы данных SQL Azure, следуя сведениям в статье [Создание управляемого экземпляра базы данных SQL Azure на портал Azure](https://aka.ms/sqldbmi).
 - Убедитесь, что для подключения к исходному серверу SQL Server и целевому управляемому экземпляру используются имена, входящие в серверную роль sysadmin.
 
     >[!NOTE]
@@ -86,13 +86,13 @@ Azure Database Migration Service можно использовать для пе
 
     ![Отображение поставщиков ресурсов](media/tutorial-sql-server-to-managed-instance/portal-select-resource-provider.png)
 
-3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-sql-server-to-managed-instance/portal-register-resource-provider.png)
 
 ## <a name="create-an-azure-database-migration-service-instance"></a>Создание экземпляра Azure Database Migration Service
 
-1. На портале Azure выберите + **Создать ресурс**, введите в поле поиска **Azure Database Migration Service**, а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
+1. В портал Azure выберите + **создать ресурс**, найдите **Azure Database Migration Service**, а затем выберите **Azure Database Migration Service** из раскрывающегося списка.
 
     ![Azure Marketplace](media/tutorial-sql-server-to-managed-instance/portal-marketplace.png)
 
@@ -114,7 +114,7 @@ Azure Database Migration Service можно использовать для пе
 
 6. Выберите ценовую категорию.
 
-    Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
+    Дополнительные сведения о затратах и ценовых категориях см. на [странице с ценами](https://aka.ms/dms-pricing).
 
     ![Создание службы DMS](media/tutorial-sql-server-to-managed-instance/dms-create-service2.png)
 
@@ -128,7 +128,7 @@ Azure Database Migration Service можно использовать для пе
 
     ![Поиск всех экземпляров Azure Database Migration Service](media/tutorial-sql-server-to-managed-instance/dms-search.png)
 
-2. На экране **Служба миграции баз данных Azure** найдите имя созданного экземпляра и выберите его.
+2. На экране **Azure Database Migration Service** найдите имя созданного экземпляра, а затем выберите экземпляр.
 
 3. Выберите **+ Новый проект миграции**.
 
@@ -147,11 +147,11 @@ Azure Database Migration Service можно использовать для пе
     Если доверенный сертификат не установлен, SQL Server создаст самозаверяющий сертификат при запуске экземпляра. Этот сертификат используется с целью шифрования учетных данных для клиентских подключений.
 
     > [!CAUTION]
-    > SSL-соединения, шифруемые с помощью самозаверяющего сертификата, не обеспечивают надежной защиты. Они уязвимы для атак "злоумышленник в середине". В рабочей среде или на серверах, подключенных к Интернету, не следует применять самозаверяющие сертификаты для SSL.
+    > TLS-подключения, зашифрованные с помощью самозаверяющего сертификата, не обеспечивают надежную защиту. Они уязвимы для атак "злоумышленник в середине". Не следует полагаться на TLS, используя самозаверяющие сертификаты в рабочей среде или на серверах, подключенных к Интернету.
 
    ![Сведения об источнике](media/tutorial-sql-server-to-managed-instance/dms-source-details1.png)
 
-3. Щелкните **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 
 4. На экране **Выбор баз данных-источников** выберите базу данных **Adventureworks2012** для миграции.
 
@@ -160,7 +160,7 @@ Azure Database Migration Service можно использовать для пе
     > [!IMPORTANT]
     > При использовании MSSQL Integration Services (SSIS), DMS не поддерживает перенос базы данных каталога для проектов или пакетов служб SSIS (SSISDB) из SQL Server в управляемый экземпляр Базы данных SQL Azure. Но можно подготовить SSIS в Фабрике данных Azure (ADF) и повторно развернуть проекты или пакеты служб SQL Server Integration Services в целевой базе данных SQL Server Integration Services, размещенной в управляемом экземпляре Базы данных SQL Azure. Дополнительные сведения о миграции пакетов SSIS см. в статье [Перенос пакетов SQL Server Integration Services в Azure](https://docs.microsoft.com/azure/dms/how-to-migrate-ssis-packages).
 
-5. Щелкните **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 
@@ -170,7 +170,7 @@ Azure Database Migration Service можно использовать для пе
 
     ![Выбор цели](media/tutorial-sql-server-to-managed-instance/dms-target-details2.png)
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 ## <a name="select-source-databases"></a>Выбор баз данных-источников
 
@@ -178,7 +178,7 @@ Azure Database Migration Service можно использовать для пе
 
     ![Выбор баз данных-источников](media/tutorial-sql-server-to-managed-instance/select-source-databases.png)
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 ## <a name="select-logins"></a>Выберите имена для входа
 
@@ -189,7 +189,7 @@ Azure Database Migration Service можно использовать для пе
 
     ![Выберите имена для входа](media/tutorial-sql-server-to-managed-instance/select-logins.png)
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 ## <a name="configure-migration-settings"></a>Настройка параметров миграции
 
@@ -197,16 +197,16 @@ Azure Database Migration Service можно использовать для пе
 
     | | |
     |--------|---------|
-    |**Выбор исходного архива** | Выберите вариант **I will provide latest backup files** (Я предоставлю файлы последних резервных копий), если у вас есть файлы полных резервных копий, которые DMS может использовать для переноса базы данных. Выберите вариант **I will let Azure Database Migration Service create backup files** (Я разрешу Azure Database Migration Service создавать файлы резервных копий), если нужно, чтобы служба DMS сначала создала полную резервную копию базы данных-источника и использовала ее для миграции. |
-    |**Общая сетевая папка** | Локальная сетевая папка SMB, в которую Azure Database Migration Service может поместить резервные копии базы данных-источника. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder".|
+    |**Выбор исходных резервных копий** | Выберите вариант **I will provide latest backup files** (Я предоставлю файлы последних резервных копий), если у вас есть файлы полных резервных копий, которые DMS может использовать для переноса базы данных. Выберите вариант **I will let Azure Database Migration Service create backup files** (Я разрешу Azure Database Migration Service создавать файлы резервных копий), если нужно, чтобы служба DMS сначала создала полную резервную копию базы данных-источника и использовала ее для миграции. |
+    |**Локальная общая сетевая папка** | Локальная сетевая папка SMB, в которую Azure Database Migration Service может поместить резервные копии базы данных-источника. Учетная запись службы, в которой выполняется исходный экземпляр SQL Server, должна иметь права записи для этой сетевой папки. Укажите полное доменное имя или IP-адрес сервера и сетевую папку, например "\\\servername.domainname.com\backupfolder" или "\\\IP address\backupfolder".|
     |**User name** | Убедитесь, что пользователь Windows имеет полное право доступа к указанной ранее сетевой папке. Azure Database Migration Service выполнит олицетворение учетных данных пользователя, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления. В случае выбора для миграции баз данных с поддержкой TDE указанный ранее пользователь Windows должен иметь встроенную учетную запись администратора, а режим [Контроль учетных записей](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/user-account-control-overview) должен быть отключен для Azure Database Migration Service, чтобы отправлять и удалять файлы сертификатов. |
     |**Пароль** | Пароль для пользователя |
-    |**Параметры учетной записи хранения** | URI SAS, который предоставляет Azure Database Migration Service с доступом к контейнеру учетной записи хранения, в который служба загружает файлы резервных копий и используется для переноса баз данных в управляемый экземпляр базы данных SQL Azure. [Получение SAS для контейнера больших двоичных объектов](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs#get-the-sas-for-a-blob-container).|
+    |**Параметры учетной записи хранения** | URI SAS, который предоставляет Azure Database Migration Service с доступом к контейнеру учетной записи хранения, в который служба загружает файлы резервных копий и используется для переноса баз данных в управляемый экземпляр базы данных SQL Azure. [Узнайте, как получить URI SAS для контейнера больших двоичных объектов](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs#get-the-sas-for-a-blob-container).|
     |**Параметры TDE** | Чтобы перенести базы данных-источники с активированным прозрачным шифрованием данных (TDE), необходимо иметь права на запись в целевой управляемый экземпляр Базы данных SQL Azure.  В раскрывающемся меню выберите подписку, в которой подготовлен управляемый экземпляр Базы данных SQL Azure.  В раскрывающемся меню выберите целевой **Управляемый экземпляр Базы данных SQL Azure**. |
 
     ![Настройка параметров миграции](media/tutorial-sql-server-to-managed-instance/dms-configure-migration-settings3.png)
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 ## <a name="review-the-migration-summary"></a>Просмотр сводки по миграции
 
@@ -218,7 +218,7 @@ Azure Database Migration Service можно использовать для пе
 
     ![Сводка по проекту миграции](media/tutorial-sql-server-to-managed-instance/dms-project-summary2.png)
 
-4. Щелкните **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 ## <a name="run-the-migration"></a>Выполнение миграции
 
@@ -240,8 +240,8 @@ Azure Database Migration Service можно использовать для пе
 
 3. Проверьте конечную базу данных в конечной среде управляемого экземпляра Базы данных SQL Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о переносе базы данных в управляемый экземпляр с помощью команды T-SQL RESTORE см. в [этой статье](../sql-database/sql-database-managed-instance-restore-from-backup-tutorial.md).
-- Сведения об управляемом экземпляре см. в статье [Использование расширенной защиты данных Базы данных SQL с виртуальными сетями и почти полной совместимостью](../sql-database/sql-database-managed-instance.md).
-- Сведения о подключении приложений к управляемому экземпляру см. в статье [Подключение приложения к Управляемому экземпляру Базы данных SQL](../sql-database/sql-database-managed-instance-connect-app.md).
+- Руководство по переносу базы данных на управляемый экземпляр с помощью команды T-SQL RESTORE см. в разделе [Восстановление резервной копии в управляемый экземпляр с помощью команды Restore](../sql-database/sql-database-managed-instance-restore-from-backup-tutorial.md).
+- Дополнительные сведения об управляемом экземпляре см. [в разделе что такое управляемый экземпляр](../sql-database/sql-database-managed-instance.md).
+- Сведения о подключении приложений к управляемому экземпляру см. в разделе [Connect](../sql-database/sql-database-managed-instance-connect-app.md)Apps.

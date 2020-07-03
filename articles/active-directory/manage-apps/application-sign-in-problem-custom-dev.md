@@ -1,6 +1,6 @@
 ---
 title: Проблемы при входе в специально разработанное приложение | Документы Майкрософт
-description: Распространенные ошибки, которые могут препятствовать не могли войти в приложение, вы разработали с Azure AD
+description: Распространенные ошибки, которые могут привести к невозможности входа в приложение, разработанное с помощью Azure AD.
 services: active-directory
 documentationcenter: ''
 author: msmimart
@@ -16,14 +16,14 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8ad2499aea8bf4e41ca00d6c78d76e112f0493e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 01a424129abf88c18500c96bd1889fc6dcce2ec6
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65825240"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82890701"
 ---
-# <a name="problems-signing-in-to-a-custom-developed-application"></a>Проблемы при входе специально разработанного приложения
+# <a name="problems-signing-in-to-a-custom-developed-application"></a>Проблемы при входе в специально разработанное приложение
 
 Существует несколько ошибок, которые могут препятствовать входу в приложение. Основной причиной является неправильная настройка приложений.
 
@@ -41,6 +41,6 @@ ms.locfileid: "65825240"
 
 [Согласие и интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications)<br>
 
-[Согласие и разрешения для конвергированных приложений в Azure AD версии 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)<br>
+[Разрешения и согласие для конечной точки платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-scopes)<br>
 
 [StackOverflow в Azure AD](https://stackoverflow.com/questions/tagged/azure-active-directory>)

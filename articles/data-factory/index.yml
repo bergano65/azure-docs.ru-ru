@@ -11,13 +11,12 @@ metadata:
   author: markingmyname
   ms.author: maghan
   ms.date: 10/02/2019
-  monikerRange: ''
-  ms.openlocfilehash: fc85ae8cc6dcb2d5d04a6cbd7f79eb03470a58fb
-  ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+  ms.openlocfilehash: 5e7c778eb3d5de197044cb51e35875399908d205
+  ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/22/2019
-  ms.locfileid: "74321753"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83657233"
 landingContent:
 - title: Сведения о Фабрике данных Azure
   linkLists:

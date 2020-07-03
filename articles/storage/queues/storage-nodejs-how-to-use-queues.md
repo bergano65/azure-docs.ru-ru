@@ -2,19 +2,19 @@
 title: Использование хранилища очередей Azure из Node. js в службе хранилища Azure
 description: Вы узнаете, как использовать службы очередей Azure для создания и удаления очередей, вставки, получения и удаления сообщений. Примеры кода написаны на Node.js.
 author: mhopkins-msft
-ms.service: storage
 ms.author: mhopkins
 ms.date: 12/08/2016
+ms.service: storage
 ms.subservice: queues
 ms.topic: conceptual
 ms.reviewer: cbrooks
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 9eee7f6b321a5ba660e1a0a5a48771c599746bcb
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.openlocfilehash: 7abcad03678131668700f5d2c64b9c971081cb89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
-ms.locfileid: "71673076"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80060936"
 ---
 # <a name="use-azure-queue-service-to-create-and-delete-queues-from-nodejs"></a>Использование службы очередей Azure для создания и удаления очередей из Node. js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -51,7 +51,7 @@ ms.locfileid: "71673076"
     +-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
     ```
 
-3. Выполнив команду **ls** вручную, можно убедиться, что папка **node\_modules** создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
+3. Можно вручную выполнить команду **Ls** , чтобы убедиться, что папка **Node\_modules** создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
 
 ### <a name="import-the-package"></a>Импорт пакета
 Используйте Блокнот или другой текстовый редактор, чтобы добавить следующий код в начало файла **server.js** приложения, где планируется использовать хранилище.
@@ -63,7 +63,7 @@ var azure = require('azure-storage');
 ## <a name="setup-an-azure-storage-connection"></a>Настройка подключения к службе хранилища Azure
 Модуль Azure считывает переменные среды AZURE\_STORAGE\_ACCOUNT и AZURE\_STORAGE\_ACCESS\_KEY или AZURE\_STORAGE\_CONNECTION\_STRING, чтобы получить информацию, необходимую для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, при вызове **createQueueService**необходимо указать сведения об учетной записи.
 
-## <a name="how-to-create-a-queue"></a>Как Создать очередь
+## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
 Следующий пример кода создает объект **QueueService** , который позволяет работать с очередями.
 
 ```javascript
@@ -83,7 +83,7 @@ queueSvc.createQueueIfNotExists('myqueue', function(error, results, response){
 Если очередь создана, значение `result.created` будет истинно. Если очередь уже существует, значение `result.created` будет ложно.
 
 ### <a name="filters"></a>Фильтры
-Дополнительные операции фильтрации можно применить к выполняемым операциям, используя **QueueService**. К операциям фильтрации могут относиться ведение журнала, автоматический повтор и т. д. Фильтры являются объектами, реализующими метод со следующей сигнатурой:
+Дополнительные операции фильтрации можно применить к выполняемым операциям, используя **QueueService**. Операции фильтрации могут включать ведение журнала, автоматическую повторную попытку и т. д. Фильтры — это объекты, реализующие метод с сигнатурой:
 
 ```javascript
 function handle (requestOptions, next)
@@ -104,8 +104,8 @@ var retryOperations = new azure.ExponentialRetryPolicyFilter();
 var queueSvc = azure.createQueueService().withFilter(retryOperations);
 ```
 
-## <a name="how-to-insert-a-message-into-a-queue"></a>Как Вставка сообщения в очередь
-Чтобы создать сообщение и вставить его в очередь, используйте метод **createMessage** .
+## <a name="how-to-insert-a-message-into-a-queue"></a>Практическое руководство. Вставка сообщения в очередь
+Чтобы вставить сообщение в очередь, используйте метод **createMessage** , чтобы создать новое сообщение и добавить его в очередь.
 
 ```javascript
 queueSvc.createMessage('myqueue', "Hello world!", function(error, results, response){
@@ -115,8 +115,8 @@ queueSvc.createMessage('myqueue', "Hello world!", function(error, results, respo
 });
 ```
 
-## <a name="how-to-peek-at-the-next-message"></a>Как Просмотр следующего сообщения
-Вы можете просмотреть сообщение в начале очереди, не удаляя его из нее, вызвав метод **peekMessages** . По умолчанию **peekMessages** просматривает одно сообщение.
+## <a name="how-to-peek-at-the-next-message"></a>Практическое руководство. Просмотр следующего сообщения
+Можно посмотреть сообщение в начале очереди, не удаляя его из очереди, вызвав метод **peekMessages** . По умолчанию **peekMessages** просматривает одно сообщение.
 
 ```javascript
 queueSvc.peekMessages('myqueue', function(error, results, response){
@@ -133,7 +133,7 @@ queueSvc.peekMessages('myqueue', function(error, results, response){
 > 
 > 
 
-## <a name="how-to-dequeue-the-next-message"></a>Как Удаление следующего сообщения из очереди
+## <a name="how-to-dequeue-the-next-message"></a>Практическое руководство. Удаление следующего сообщения из очереди
 Обработка сообщения выполняется двухэтапным процессом:
 
 1. удаление сообщения из очереди.
@@ -163,7 +163,7 @@ queueSvc.getMessages('myqueue', function(error, results, response){
 > 
 > 
 
-## <a name="how-to-change-the-contents-of-a-queued-message"></a>Как Изменение содержимого сообщения в очереди
+## <a name="how-to-change-the-contents-of-a-queued-message"></a>Практическое руководство. Изменение содержимого сообщения в очереди
 Вы можете изменить содержимое сообщения непосредственно в очереди с помощью **updateMessage**. Следующий пример обновляет текст сообщения:
 
 ```javascript
@@ -180,7 +180,7 @@ queueSvc.getMessages('myqueue', function(error, getResults, getResponse){
 });
 ```
 
-## <a name="how-to-additional-options-for-dequeuing-messages"></a>Как Дополнительные варианты удаления сообщений из очереди
+## <a name="how-to-additional-options-for-dequeuing-messages"></a>Практическое руководство. Использование дополнительных параметров для удаления сообщений из очереди
 Существует два способа настройки извлечения сообщения из очереди:
 
 * `options.numOfMessages` — извлекает пакет сообщений (до 32).
@@ -205,7 +205,7 @@ queueSvc.getMessages('myqueue', {numOfMessages: 15, visibilityTimeout: 5 * 60}, 
 });
 ```
 
-## <a name="how-to-get-the-queue-length"></a>Как Получение длины очереди
+## <a name="how-to-get-the-queue-length"></a>Практическое руководство. Получение длины очереди
 Метод **getQueueMetadata** возвращает метаданные очереди, в том числе приблизительное количество сообщений, ожидающих в очереди.
 
 ```javascript
@@ -216,7 +216,7 @@ queueSvc.getQueueMetadata('myqueue', function(error, results, response){
 });
 ```
 
-## <a name="how-to-list-queues"></a>Как Перечисление очередей
+## <a name="how-to-list-queues"></a>Практическое руководство. Получение списка очередей
 Чтобы извлечь список очередей, используйте **listQueuesSegmented**. Чтобы извлечь список, отфильтрованный по определенному префиксу, используйте **listQueuesSegmentedWithPrefix**.
 
 ```javascript
@@ -229,8 +229,8 @@ queueSvc.listQueuesSegmented(null, function(error, results, response){
 
 Если не удается вернуть все очереди, атрибут `result.continuationToken` можно использовать в качестве первого параметра метода **listQueuesSegmented** или второго параметра метода **listQueuesSegmentedWithPrefix** для получения дополнительных результатов.
 
-## <a name="how-to-delete-a-queue"></a>Как Удаление очереди
-Чтобы удалить очередь и все сообщения в ней, вызовите метод **deleteQueue** для объекта очереди.
+## <a name="how-to-delete-a-queue"></a>Практическое руководство. Удаление очереди
+Чтобы удалить очередь и все сообщения, содержащиеся в ней, вызовите метод **deleteQueue** для объекта Queue.
 
 ```javascript
 queueSvc.deleteQueue(queueName, function(error, response){
@@ -324,11 +324,11 @@ queueSvc.getQueueAcl('myqueue', function(error, result, response) {
 queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Вы изучили основные сведения о хранилище очередей. Дополнительные сведения о более сложных задачах по использованию хранилища можно найти по следующим ссылкам.
 
-* Посетите [Блог рабочей группы службы хранилища Azure][Azure Storage Team Blog].
-* Посетите репозиторий [Пакет SDK хранилища Azure для Node][Azure Storage SDK for Node] на веб-сайте GitHub.
+* Посетите [блог команды разработчиков службы хранилища Azure][Azure Storage Team Blog].
+* Посетите репозиторий [пакета SDK службы хранилища Azure для Node][Azure Storage SDK for Node] на веб-сайте GitHub.
 
 
 

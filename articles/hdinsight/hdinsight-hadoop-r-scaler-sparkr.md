@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/26/2019
 ms.openlocfilehash: 5989692aeb59c7394299b4cb2474b244818895b2
-ms.sourcegitcommit: 801e9118fae92f8eef8d846da009dddbd217a187
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75500081"
 ---
 # <a name="combine-scaler-and-sparkr-in-hdinsight"></a>Совместное использование ScaleR и SparkR в HDInsight
@@ -112,7 +112,7 @@ sqlContext <- sparkRSQL.init(sc)
 - "WindSpeed"
 - "Altimeter"
 
-Затем добавьте код аэропорта, связанного с метеостанцией, и преобразуйте значения местного времени в формат UTC.
+Затем добавьте код аэропорта, связанного с метеостанцией, и преобразуйте значения местного времени в формат UTC. 
 
 Начните с создания файла для сопоставления сведений о метеостанции (WBAN) с кодом аэропорта. Следующий код считывает каждый час необработанных файлов данных погоды, подмножества в нужных столбцах, объединяет файл сопоставления станции погоды, корректирует дату и время измерения до времени в формате UTC, а затем записывает новую версию файла:
 
@@ -535,12 +535,12 @@ logmsg(paste('Elapsed time=',sprintf('%6.2f',elapsed),'(sec)\n\n'))
 
 ## <a name="next-steps-and-more-information"></a>Дальнейшие действия и дополнительные сведения
 
-- Дополнительные сведения об использовании ML Server в Apache Spark см. в [руководстве по началу работы](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started).
+- Дополнительные сведения об использовании ML Server в Apache Spark см. в разделе [руководство по началу работы](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started).
 
 - Сведения о службах ML в HDInsight см. в статье [Обзор служб ML в hdinsight](r-server/r-server-overview.md).
 
 Дополнительные сведения об использовании SparkR см. в следующих статьях:
 
-- [Документ Apache SparkR](https://spark.apache.org/docs/2.1.0/sparkr.html).
+- [Документ Apache Spark](https://spark.apache.org/docs/2.1.0/sparkr.html).
 
-- [Общие сведения о SparkR](https://docs.databricks.com/spark/latest/sparkr/overview.html) на сайте Databricks.
+- [Общие сведения об Spark](https://docs.databricks.com/spark/latest/sparkr/overview.html) из блоков.

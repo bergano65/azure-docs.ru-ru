@@ -8,16 +8,16 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 05/08/2019
 ms.author: alkohli
-ms.openlocfilehash: e8932097bcdef782b1a551d386c2872e02d8abfd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: aadaedfd2c9ecf544d142e42a0fbeb410324b7d8
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65442381"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82562446"
 ---
-# <a name="azure-data-box-gateway-system-requirements"></a>Требования к системе Azure шлюз поле данных
+# <a name="azure-data-box-gateway-system-requirements"></a>Шлюз Azure Data Box требования к системе
 
-В этой статье описаны важные требования к системе и рекомендации для решения на основе шлюза Microsoft Azure Data Box и для клиентов, подключающихся к нему. Прежде чем развертывать шлюз Data Box, внимательно ознакомьтесь с приведенной ниже информацией и по мере необходимости возвращайтесь к ней во время развертывания и последующих действий.
+В этой статье описаны важные требования к системе и рекомендации для решения на основе шлюза Microsoft Azure Data Box и для клиентов, подключающихся к нему. Прежде чем развертывать шлюз Data Box, внимательно ознакомьтесь с приведенной ниже информацией и по мере необходимости возвращайтесь к ней во время развертывания и последующих действий. 
 
 Системные требования для виртуального устройства шлюза Data Box включают.
 
@@ -29,12 +29,12 @@ ms.locfileid: "65442381"
 
 Чтобы подготовить виртуальное устройство Data Box, базовая главная система Шлюза Azure Data Box должна быть в состоянии выделить указанный ниже объем ресурсов.
 
-| спецификации;                                          | Описание              |
+| Спецификации                                          | Описание              |
 |---------------------------------------------------------|--------------------------|
 | Виртуальные процессоры (ядра)   | Минимум 4 |
 | Память  | Минимум 8 ГБ|
 | Доступность|Один узел|
-| диски;| Диск ОС: 250 ГБ <br> Диск данных: минимум 2 ТБ, с тонкой подготовкой, с использованием дисков SSD|
+| Диски| Диск ОС — 250 ГБ <br> Диск данных — минимум 2 ТБ, с тонкой подготовкой, с использованием дисков SSD|
 | Сетевые интерфейсы|Один или несколько виртуальных сетевых интерфейсов|
 
 
@@ -50,7 +50,7 @@ ms.locfileid: "65442381"
 
 | **Операционная система и (или) платформа**  |**Версии**   |**Примечания**  |
 |---------|---------|---------|
-|Hyper-V.  |  2012 R2 <br> 2016 <br> 2019 г. |         |
+|Hyper-V  |  2012 R2 <br> 2016 <br> 2019 |         |
 |VMware ESXi     | 6.0 <br> 6,5 <br> 6.7       |Средства VMware не поддерживаются.         |
 
 
@@ -59,7 +59,7 @@ ms.locfileid: "65442381"
 [!INCLUDE [Supported storage accounts](../../includes/data-box-edge-gateway-supported-storage-accounts.md)]
 
 
-## <a name="supported-storage-types"></a>Поддерживаемые типы хранилищ
+## <a name="supported-storage-types"></a>Поддерживаемые типы хранилища
 
 [!INCLUDE [Supported storage types](../../includes/data-box-edge-gateway-supported-storage-types.md)]
 
@@ -93,7 +93,7 @@ ms.locfileid: "65442381"
 
 [!INCLUDE [Internet bandwidth](../../includes/data-box-edge-gateway-internet-bandwidth.md)]
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 * [Tutorial: Prepare to deploy Azure Data Box Gateway (Preview)](data-box-gateway-deploy-prep.md) (Руководство. Подготовка к развертыванию шлюза Azure Data Box)
 

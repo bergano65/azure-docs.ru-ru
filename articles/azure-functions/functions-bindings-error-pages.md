@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.author: cshoe
-ms.openlocfilehash: 920b887382ca55d84c66fabb8f1464fd05041094
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: befdb4a8cceaef18961c1e9297e23ed5d405ff50
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198465"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77586195"
 ---
 # <a name="azure-functions-error-handling"></a>Обработка ошибок службы "Функции Azure"
 
@@ -30,12 +30,14 @@ ms.locfileid: "77198465"
 
 + [Хранилище BLOB-объектов](functions-bindings-storage-blob-output.md#exceptions-and-return-codes)
 
-+ [Центры событий](functions-bindings-event-hubs.md#exceptions-and-return-codes)
++ [Центры событий](functions-bindings-event-hubs-output.md#exceptions-and-return-codes)
+
++ [Центры Интернета вещей](functions-bindings-event-iot-output.md#exceptions-and-return-codes)
 
 + [Центры уведомлений](functions-bindings-notification-hubs.md#exceptions-and-return-codes)
 
-+ [Хранилище очередей](functions-bindings-storage-queue.md#exceptions-and-return-codes)
++ [Хранилище очередей](functions-bindings-storage-queue-output.md#exceptions-and-return-codes)
 
-+ [Служебная шина](functions-bindings-service-bus.md#exceptions-and-return-codes)
++ [Служебная шина](functions-bindings-service-bus-output.md#exceptions-and-return-codes)
 
 + [Хранилище таблиц](functions-bindings-storage-table.md#exceptions-and-return-codes)

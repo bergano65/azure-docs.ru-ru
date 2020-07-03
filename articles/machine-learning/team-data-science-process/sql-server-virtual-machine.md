@@ -12,13 +12,13 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: d3eb4d2faf58d1861fda9d04437f9f9530c77672
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76718486"
 ---
-# <a name="heading"></a>Обработка данных в виртуальной машине SQL Server на платформе Azure
+# <a name="process-data-in-sql-server-virtual-machine-on-azure"></a><a name="heading"></a>Обработка данных в виртуальной машине SQL Server на платформе Azure
 В этом документе описывается изучение данных и создание характеристик для данных, хранящихся в виртуальной машине SQL Server в Azure. Эта цель может быть выполнена структурирование данных с помощью SQL или с помощью языка программирования, такого как Python.
 
 > [!NOTE]
@@ -26,13 +26,13 @@ ms.locfileid: "76718486"
 > 
 > 
 
-## <a name="SQL"></a>Использование SQL
+## <a name="using-sql"></a><a name="SQL"></a>Использование SQL
 В данном разделе с помощью SQL описываются следующие задачи по структурированию данных:
 
-1. [Просмотр данных](#sql-dataexploration)
-2. [Создание характеристик](#sql-featuregen)
+1. [Исследование данных](#sql-dataexploration)
+2. [Создание компонентов](#sql-featuregen)
 
-### <a name="sql-dataexploration"></a>Просмотр данных
+### <a name="data-exploration"></a><a name="sql-dataexploration"></a>Исследование данных
 Вот несколько примеров сценариев SQL, которые можно использовать для изучения хранилищ данных в SQL Server.
 
 > [!NOTE]
@@ -43,7 +43,7 @@ ms.locfileid: "76718486"
 1. Получение количества наблюдений за день
    
     `SELECT CONVERT(date, <date_columnname>) as date, count(*) as c from <tablename> group by CONVERT(date, <date_columnname>)` 
-2. Получение уровней в столбце категорий
+2. Получение уровней в столбце категорий 
    
     `select  distinct <column_name> from <databasename>`
 3. Получение числа уровней в сочетании двух столбцов категорий 
@@ -53,10 +53,10 @@ ms.locfileid: "76718486"
    
     `select <column_name>, count(*) from <tablename> group by <column_name>`
 
-### <a name="sql-featuregen"></a>Создание функций
+### <a name="feature-generation"></a><a name="sql-featuregen"></a>Создание компонентов
 В этом разделе мы опишем способы создания характеристик с помощью SQL:  
 
-1. [Создание характеристик на основе количества](#sql-countfeature)
+1. [Создание компонентов на основе количества](#sql-countfeature)
 2. [Создание характеристик путем группирования данных](#sql-binningfeature)
 3. [Развертывание характеристик из одного столбца](#sql-featurerollout)
 
@@ -65,7 +65,7 @@ ms.locfileid: "76718486"
 > 
 > 
 
-### <a name="sql-countfeature"></a>Создание характеристик на основе количества
+### <a name="count-based-feature-generation"></a><a name="sql-countfeature"></a>Создание компонентов на основе количества
 В следующих примерах показаны два способа создания количественных характеристик. В первом способе используется условная сумма, а во втором — предложение where. Затем эти результаты можно объединить с исходной таблицей (с использованием столбцов первичного ключа), чтобы они были подсчета вместе с исходными данными.
 
     select <column_name1>,<column_name2>,<column_name3>, COUNT(*) as Count_Features from <tablename> group by <column_name1>,<column_name2>,<column_name3> 
@@ -73,13 +73,13 @@ ms.locfileid: "76718486"
     select <column_name1>,<column_name2> , sum(1) as Count_Features from <tablename> 
     where <column_name3> = '<some_value>' group by <column_name1>,<column_name2> 
 
-### <a name="sql-binningfeature"></a>Создание характеристик путем группирования данных
+### <a name="binning-feature-generation"></a><a name="sql-binningfeature"></a>Создание характеристик путем группирования данных
 В следующем примере показано, как создать группированные характеристики, сгруппировав (с использованием пяти ячеек) числовой столбец, который взамен можно использовать как характеристику:
 
     `SELECT <column_name>, NTILE(5) OVER (ORDER BY <column_name>) AS BinNumber from <tablename>`
 
 
-### <a name="sql-featurerollout"></a>Развертывание характеристик из одного столбца
+### <a name="rolling-out-the-features-from-a-single-column"></a><a name="sql-featurerollout"></a>Развертывание характеристик из одного столбца
 В этом разделе мы покажем, как развернуть одиночный столбец в таблице для создания дополнительных характеристик. В примере предполагается, что в таблице, из которой вы намерены создать характеристики, содержится столбец широты или долготы.
 
 Вот краткое руководство по данным широты/долготы расположения (на основе ресурса stackoverflow): [Как измерить точность широты и долготы](https://gis.stackexchange.com/questions/8650/how-to-measure-the-accuracy-of-latitude-and-longitude). Это руководство полезно для понимания, прежде чем включать расположение как одну или несколько функций:
@@ -115,12 +115,12 @@ ms.locfileid: "76718486"
 > 
 > 
 
-### <a name="sql-aml"></a>Подключение к службе машинного обучения Azure
-Новую созданную характеристику можно добавить в виде столбца в существующую таблицу или сохранить в новой таблице и объединить с существующей таблицей для машинного обучения. Можно создать или получить доступ к функциям, если они уже созданы, используя модуль [Импорт данных][import-data] в машинное обучение Azure, как показано ниже.
+### <a name="connecting-to-azure-machine-learning"></a><a name="sql-aml"></a>Подключение к службе машинного обучения Azure
+Новую созданную характеристику можно добавить в виде столбца в существующую таблицу или сохранить в новой таблице и объединить с существующей таблицей для машинного обучения. Вы можете создать характеристики и открыть доступ к ним, если они уже созданы, с помощью модуля [Импорт данных][import-data] в Машинном обучении Azure, как показано ниже.
 
 ![считыватели azureml][1] 
 
-## <a name="python"></a>Использование языка программирования, например Python
+## <a name="using-a-programming-language-like-python"></a><a name="python"></a>Использование языка программирования, например Python
 Использование языка Python для просмотра данных и создания характеристик, когда данные находятся в SQL Server, подобно обработке данных в большом двоичном объекте Azure с использованием Python, как описано в статье [Обработка больших двоичных данных Azure с применением методов расширенного анализа](data-blob.md). Загрузите данные из базы данных в кадр данных Pandas для дополнительной обработки. В этом разделе документирован процесс подключения к базе данных и загрузки данных во фрейм данных.
 
 Для подключения к базе данных SQL Server из языка Python с использованием pyodbc можно применить следующий формат строки подключения (замените servername, dbname, username и password соответствующими значениями имени сервера, имени БД, имени пользователя и пароля):
@@ -129,7 +129,7 @@ ms.locfileid: "76718486"
     import pyodbc    
     conn = pyodbc.connect('DRIVER={SQL Server};SERVER=<servername>;DATABASE=<dbname>;UID=<username>;PWD=<password>')
 
-[Библиотека Pandas](https://pandas.pydata.org/) в языке Python предлагает большой выбор структур данных и средств анализа данных для манипуляций со значениями с помощью языке Python. Приведенный ниже код считывает результаты, возвращенные из базы данных SQL Server, во фрейм данных Pandas:
+[Библиотека Pandas](https://pandas.pydata.org/) в Python предоставляет обширный набор структур данных и средств анализа данных для манипулирования данными при программировании на Python. Приведенный ниже код считывает результаты, возвращенные из базы данных SQL Server, во фрейм данных Pandas:
 
     # Query database and load the returned results in pandas data frame
     data_frame = pd.read_sql('''select <columnname1>, <columnname2>... from <tablename>''', conn)

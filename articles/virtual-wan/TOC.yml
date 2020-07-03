@@ -10,6 +10,10 @@
           href: migrate-from-hub-spoke-topology.md
         - name: Архитектура глобальной транзитной сети
           href: virtual-wan-global-transit-network-architecture.md
+        - name: Архитектура подключения SD-WAN
+          href: sd-wan-connectivity-architecture.md
+        - name: Межсоединение с Китаем
+          href: interconnect-china.md
 - name: Учебники
   items:
     - name: Создание подключения "сеть — сеть"
@@ -20,6 +24,12 @@
       href: virtual-wan-expressroute-portal.md
 - name: Основные понятия
   items:
+    - name: Дистанционная работа
+      items:
+        - name: Поддержка дистанционной работы
+          href: ../networking/working-remotely-support.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
+        - name: Использование Виртуальной глобальной сети
+          href: work-remotely-support.md
     - name: Расположения и партнеры
       items:
         - name: Расположения концентраторов и партнеры
@@ -34,25 +44,51 @@
       href: connect-virtual-network-gateway-vwan.md
     - name: Настройка глобального пиринга виртуальных сетей
       href: global-peering-vnet.md
-    - name: Создание VPN-подключения с помощью ExpressRoute
-      href: vpn-over-expressroute.md
     - name: Обновление номера SKU Виртуальной глобальной сети
       href: upgrade-virtual-wan.md
     - name: Настройка пользовательской политики IPsec
       href: virtual-wan-custom-ipsec-portal.md
-    - name: "Настройка сертификатов для пользовательского VPN-подключения (точка\_— сеть)"
-      href: certificates-point-to-site.md
-    - name: "Настройка клиента Azure\_AD для VPN пользователя"
-      href: openvpn-azure-ad-tenant.md
-    - name: Включение многофакторной идентификации для VPN пользователя
-      href: openvpn-azure-ad-mfa.md
-    - name: "Настройка аутентификации Azure\_AD для VPN пользователя"
-      href: virtual-wan-point-to-site-azure-ad.md
-    - name: "Настройка аутентификации Azure\_AD для VPN пользователя в нескольких приложениях"
-      href: openvpn-azure-ad-tenant-multi-app.md
-    - name: Скачивание глобальных профилей VPN и профилей VPN на основе концентраторов
-      href: global-hub-profile.md
-    - name: Настройка маршрутизации
+    - name: Установка Брандмауэра Azure в концентраторе
+      href: howto-firewall.md
+    - name: ExpressRoute
+      items:
+        - name: Создание подключения ExpressRoute
+          href: virtual-wan-expressroute-portal.md
+        - name: Настройка шифрования ExpressRoute
+          href: vpn-over-expressroute.md
+    - name: "Подключение типа сайт\_— сайт"
+      items:
+        - name: Создание подключения "сеть — сеть"
+          href: virtual-wan-site-to-site-portal.md
+    - name: "Пользовательские VPN-подключения (точка\_— сеть)"
+      items:
+        - name: Создание пользовательского VPN-подключения
+          href: virtual-wan-point-to-site-portal.md
+        - name: Создайте сертификаты.
+          href: certificates-point-to-site.md
+        - name: Настройка клиента Azure AD
+          href: openvpn-azure-ad-tenant.md
+        - name: Клиентский профиль
+          href: about-vpn-profile-download.md
+        - name: Глобальный профиль и профиль на основе концентратора
+          href: global-hub-profile.md
+        - name: Настройка клиентов OpenVPN
+          href: howto-openvpn-clients.md?
+        - name: Настройка VPN-туннеля Always On для пользователя
+          href: howto-always-on-user-tunnel.md
+        - name: Настройка VPN-туннеля Always On для устройства
+          href: howto-always-on-device-tunnel.md
+        - name: Включение многофакторной проверки подлинности (MFA)
+          href: openvpn-azure-ad-mfa.md
+        - name: "Настройка проверки подлинности Azure\_AD"
+          href: virtual-wan-point-to-site-azure-ad.md
+        - name: "Настройка VPN-клиента Azure для Windows\_10"
+          href: openvpn-azure-ad-client.md
+        - name: "Настройка проверка подлинности Azure\_AD в нескольких приложениях"
+          href: openvpn-azure-ad-tenant-multi-app.md
+        - name: Установка Брандмауэра Azure в концентраторе
+          href: howto-firewall.md
+    - name: Маршрутизация
       items:
         - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль
           items:
@@ -62,6 +98,10 @@
               href: virtual-wan-route-table.md
         - name: Просмотр фактических маршрутов виртуального концентратора
           href: effective-routes-virtual-hub.md
+    - name: Безопасность
+      items:
+        - name: Установка Брандмауэра Azure в концентраторе
+          href: howto-firewall.md
 - name: Справочник
   items:
     - name: Azure PowerShell
@@ -70,6 +110,8 @@
       href: /rest/api/azure
     - name: Azure CLI
       href: /cli/azure/ext/virtual-wan
+    - name: Пакет SDK для Python
+      href: 'https://azuresdkdocs.blob.core.windows.net/$web/python/azure-mgmt-network/10.0.0/azure.mgmt.network.v2019_02_01.operations.html#azure.mgmt.network.v2019_02_01.operations.VirtualWansOperations'
 - name: Ресурсы
   items:
     - name: ВОПРОСЫ И ОТВЕТЫ
@@ -79,7 +121,7 @@
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/networking'
     - name: Ограничения подписки и службы
-      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
+      href: ../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-wan%2ftoc.json
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/virtual-wan'
     - name: Калькулятор цен

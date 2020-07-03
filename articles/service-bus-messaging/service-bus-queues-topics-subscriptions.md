@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: aschhab
 ms.openlocfilehash: 3dc78a22e0e596d812d90fec63475a0b21e9164f
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759590"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79259517"
 ---
 # <a name="service-bus-queues-topics-and-subscriptions"></a>Очереди, разделы и подписки служебной шины
 
@@ -69,7 +69,7 @@ ms.locfileid: "76759590"
 
 Дополнительные сведения о возможных значениях фильтров см. в документации по классам [SqlFilter](/dotnet/api/microsoft.azure.servicebus.sqlfilter) и [SqlRuleAction](/dotnet/api/microsoft.azure.servicebus.sqlruleaction).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения и примеры использования обмена сообщениями в служебной шине Microsoft Azure см. в следующих дополнительных статьях:
 

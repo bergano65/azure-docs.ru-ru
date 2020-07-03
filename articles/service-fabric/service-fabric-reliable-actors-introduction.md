@@ -1,18 +1,18 @@
 ---
-title: Обзор субъектов Service Fabric Reliable Actors
+title: Обзор Reliable Actors Service Fabric
 description: Введение в модель программирования Reliable Actors Service Fabric, основанную на шаблоне виртуального субъекта.
 author: vturecek
 ms.topic: conceptual
 ms.date: 11/01/2017
 ms.author: vturecek
 ms.openlocfilehash: 6aafa2a3372c431f8afa7fad41051c26c3fe5fcd
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645571"
 ---
-# <a name="introduction-to-service-fabric-reliable-actors"></a>Введение в Service Fabric Reliable Actors
+# <a name="introduction-to-service-fabric-reliable-actors"></a>Общие сведения о надежных субъектах Service Fabric
 Субъекты Reliable Actors — это платформа приложений Service Fabric, основанная на шаблоне [виртуальных субъектов](https://research.microsoft.com/en-us/projects/orleans/). API субъектов Reliable Actors предоставляет однопоточную модель программирования, основанную на той надежности и масштабируемости, которые гарантирует Service Fabric.
 
 ## <a name="what-are-actors"></a>Что представляют собой субъекты?

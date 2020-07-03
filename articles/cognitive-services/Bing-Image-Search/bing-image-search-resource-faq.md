@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
 ms.openlocfilehash: 6841e573446103466e2719797da9e4161b70b5a6
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68881699"
 ---
 # <a name="frequently-asked-questions-faq-about-the-bing-image-search-api"></a>Часто задаваемые вопросы об API Bing для поиска изображений
@@ -35,9 +35,9 @@ ms.locfileid: "68881699"
 
 Тем не менее, при вызове API Bing для поиска изображений из JavaScript встроенные средства обеспечения безопасности браузера (CORS) могут блокировать доступ к значениям этих заголовков.
 
-Чтобы получить доступ к заголовкам, можно выполнить запрос API Bing для поиска изображений через прокси-сервер CORS. Ответ с такого прокси-сервера содержит заголовок `Access-Control-Expose-Headers`, который вносит заголовки ответов в список разрешений и делает их доступными для JavaScript.
+Чтобы получить доступ к заголовкам, можно выполнить запрос API Bing для поиска изображений через прокси-сервер CORS. Ответ от прокси-сервера содержит заголовок `Access-Control-Expose-Headers`, который вносит заголовки ответов в список разрешений и делает их доступными для JavaScript.
 
-Установить прокси-сервер CORS довольно просто. Это позволит нашему [учебному приложению](tutorial-bing-image-search-single-page-app.md) иметь доступ к необязательным заголовкам клиента. Для начала, если у вас не установлен компонент Node.js, [установите его](https://nodejs.org/en/download/). В командной строке введите следующую команду:
+Установить прокси-сервер CORS довольно просто. Это позволит нашему [учебному приложению](tutorial-bing-image-search-single-page-app.md) иметь доступ к необязательным заголовкам клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. В командной строке введите следующую команду:
 
     npm install -g cors-proxy-server
 

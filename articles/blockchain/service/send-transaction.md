@@ -1,15 +1,15 @@
 ---
 title: Учебник по созданию, сборке и развертыванию смарт-контрактов в службе "Блокчейн Azure"
 description: Руководство по использованию комплекта SDK Блокчейн Azure для расширения Ethereum в Visual Studio Code для создания, сборки и развертывания смарт-контракта в службе Azure Блокчейн.
-ms.date: 12/06/2019
+ms.date: 04/22/2020
 ms.topic: tutorial
-ms.reviewer: chrisseg
-ms.openlocfilehash: 5b901ab904425a22d2fe9643ffa75a4e978efa88
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.reviewer: caleteet
+ms.openlocfilehash: dc23c680dfb2ed33cae2a251af16e1b1f25c6ac7
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74972882"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82086663"
 ---
 # <a name="tutorial-create-buildanddeploysmartcontracts-on-azure-blockchain-service"></a>Руководство по Создание, сборка и развертывание смарт-контрактов в службе "Блокчейн Azure"
 
@@ -19,7 +19,7 @@ ms.locfileid: "74972882"
 
 > [!div class="checklist"]
 > * Создание смарт-контракта
-> * развертывание смарт-контракта;
+> * Развертывание смарт-контракта
 > * выполнение функции смарт-контракта путем транзакции;
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "74972882"
 * Если установлен Visual Studio 2019, задайте путь к средствам сборки MS для NPM. Например `npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"`.
 * В противном случае установите автономные средства сборки VS, используя `npm install --global windows-build-tools` в командной оболочке с повышенными правами *от имени администратора*.
 
-Дополнительные сведения о node-gyp см. в репозитории [node-gyp на сайте GitHub](https://github.com/node-gyp).
+Дополнительные сведения о node-gyp см. в репозитории [node-gyp на сайте GitHub](https://github.com/nodejs/node-gyp).
 
 ## <a name="create-a-smart-contract"></a>Создание смарт-контракта
 
@@ -113,7 +113,7 @@ Truffle использует скрипты миграции для развер
 1. На портале Azure перейдите к **группам ресурсов** в области навигации слева и выберите группу ресурсов, которую необходимо удалить.
 1. Выберите **Удалить группу ресурсов**. Подтвердите удаление, введя имя группы ресурсов и выбрав **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создать проект Solidity с помощью комплекта SDK службы "Блокчейн Azure". Вы создали и развернули смарт-контракт, а также вызывали функцию через транзакцию в сети блокчейн-консорциума, размещенной в службе "Блокчейн Azure".
 

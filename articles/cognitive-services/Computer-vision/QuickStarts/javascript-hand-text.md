@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Извлечение печатного и рукописного текста — REST, JavaScript
+title: Краткое руководство. Извлечение печатного и рукописного текста через REST, JavaScript с помощью Компьютерного зрения версии 2.0 и 2.1
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как использовать API компьютерного зрения для извлечения печатного и рукописного текста из изображения с помощью JavaScript.
 services: cognitive-services
@@ -8,39 +8,59 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: ac869ddd34dd4c021ae7541658e27197eb5e0de4
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 907b3ead8e39268bc73604599bd2c37b18ddfa21
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74974773"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83676110"
 ---
 # <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-javascript"></a>Краткое руководство. Извлечение печатного и рукописного текста с помощью REST API "Компьютерное зрение" и JavaScript
 
 Из этого краткого руководства вы узнаете, как извлечь печатный и рукописный текст из изображения с помощью REST API Компьютерного зрения. С помощью методов [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) и [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) вы можете обнаружить текст на изображении и извлечь распознанные символы в поток машиночитаемых символов. API определит, какую модель распознавания следует использовать для каждой строки текста, так как он поддерживает изображения с печатным и рукописным текстом.
 
-> [!IMPORTANT]
-> В отличие от метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) метод [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Content`. Затем можно вызвать этот URI, который представляет метод [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
+Эта функциональная возможность доступна как в API версии 2.1, так и в API-интерфейсе общедоступной предварительной версии 3.0. По сравнению с версией 2.1, в версии 3.0 произошли следующие изменения:
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
+* Повышенная точность
+* появилась оценка достоверности для машинных слов;
+* реализована поддержка испанского и английского языков с дополнительным параметром `language`;
+* выходные данные представлены в другом формате.
+
+Ниже вы можете выбрать вкладку для своей версии.
+
+#### <a name="version-2"></a>[Версия 2](#tab/version-2)
+
+> [!IMPORTANT]
+> Метод [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, который представляет API [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
+
+#### <a name="version-3-public-preview"></a>[Версия 3 (общедоступная предварительная версия)](#tab/version-3)
+
+> [!IMPORTANT]
+> Метод [Batch Read](https://westus2.dev.cognitive.microsoft.com/docs/services/5d98695995feb7853f67d6a6/operations/5d986960601faab4bf452005) выполняется асинхронно. Этот метод не возвращает никаких данных в текст успешного ответа. Вместо этого метод Batch Read возвращает URI в значение поля заголовка ответа `Operation-Location`. Затем можно вызвать этот URI, который представляет API [Read Operation Result](https://westus2.dev.cognitive.microsoft.com/docs/services/5d98695995feb7853f67d6a6/operations/5d9869604be85dee480c8750), чтобы проверить состояние и вернуть результаты вызова метода Batch Read.
+
+---
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
+
+У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Сохраните ключ подписки и URL-адрес конечной точки во временном расположении.
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
+#### <a name="version-2"></a>[Версия 2](#tab/version-2)
+
 Чтобы создать и запустить пример, сделайте следующее.
 
-1. Скопируйте приведенный ниже код в текстовый редактор.
+1. Создайте файл с именем _get-text.html_, откройте его в текстовом редакторе и скопируйте в него приведенный ниже код.
 1. При необходимости замените значение атрибута `value` для элемента управления `inputImage` URL-адресом другого изображения, из которого вы хотите извлечь текст.
-1. Сохраните код как файл с расширением `.html`. Например, `get-text.html`.
 1. Откройте окно браузера.
 1. В браузере перетащите файл в окно браузера.
-1. При отображении веб-страницы в браузере нажмите кнопку **Read image** (Распознать изображение).
+1. Когда веб-страница отобразится в браузере, вставьте ключ подписки и URL-адрес конечной точки в соответствующие поля ввода.
+1. Нажмите кнопку **Read image** (Считать файл изображения).
 
 ```html
 <!DOCTYPE html>
@@ -53,13 +73,9 @@ ms.locfileid: "74974773"
 
 <script type="text/javascript">
     function processImage() {
-        // **********************************************
-        // *** Update or verify the following values. ***
-        // **********************************************
-
-        let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
-        let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
-        if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+        // Fetch your Computer Vision key and endpoint for this sample.
+        var subscriptionKey = document.getElementById("subscriptionKey").value;
+        var endpoint = document.getElementById("endpointUrl").value;
         
         var uriBase = endpoint + "vision/v2.1/read/core/asyncBatchAnalyze";
 
@@ -153,6 +169,13 @@ ms.locfileid: "74974773"
 Enter the URL to an image of text, then click
 the <strong>Read image</strong> button.
 <br><br>
+Subscription key: 
+<input type="text" name="subscriptionKey" id="subscriptionKey"
+    value="" /> 
+Endpoint URL:
+<input type="text" name="endpointUrl" id="endpointUrl"
+    value="" />
+<br><br>
 Image to read:
 <input type="text" name="inputImage" id="inputImage"
     value="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Cursive_Writing_on_Notebook_paper.jpg/800px-Cursive_Writing_on_Notebook_paper.jpg" />
@@ -175,9 +198,175 @@ Image to read:
 </html>
 ```
 
+#### <a name="version-3-public-preview"></a>[Версия 3 (общедоступная предварительная версия)](#tab/version-3)
+
+Чтобы создать и запустить пример, сделайте следующее.
+
+1. Скопируйте приведенный ниже код в текстовый редактор.
+1. При необходимости замените значение атрибута `value` для элемента управления `inputImage` URL-адресом другого изображения, из которого вы хотите извлечь текст.
+1. Сохраните код как файл с расширением `.html`. Например, `get-text.html`.
+1. Откройте окно браузера.
+1. При отображении веб-страницы в браузере, заполните необходимые параметры и нажмите кнопку **Read image** (Распознать изображение).
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Recognition Sample</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function processImage() {
+        // **********************************************
+        // *** Update or verify the following values. ***
+        // **********************************************
+
+        let subscriptionKey = document.getElementById("key").value;
+        let endpoint = document.getElementById("endpoint").value;
+        if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+        let language = document.getElementById("language").value;
+        
+        var uriBase = endpoint + "/vision/v3.0-preview/read/analyze";
+
+        // Display the image.
+        var sourceImageUrl = document.getElementById("inputImage").value;
+        document.querySelector("#sourceImage").src = sourceImageUrl;
+
+        const params = {
+            language: language,
+        };
+
+        const searchParams = new URLSearchParams(params);
+
+        // This operation requires two REST API calls. One to submit the image
+        // for processing, the other to retrieve the text found in the image.
+        //
+        // Make the first REST API call to submit the image for processing.
+        $.ajax({
+            url: uriBase + "?" + searchParams.toString(),
+
+            // Request headers.
+            beforeSend: function(jqXHR){
+                jqXHR.setRequestHeader("Content-Type","application/json");
+                jqXHR.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+            },
+
+            type: "POST",
+
+            // Request body.
+            data: JSON.stringify({url: sourceImageUrl}),
+        })
+
+        .done(function(data, textStatus, jqXHR) {
+            // Show progress.
+            $("#responseTextArea").val("Text submitted. " +
+                "Waiting 10 seconds to retrieve the recognized text.");
+
+            // Note: The response may not be immediately available. Text
+            // recognition is an asynchronous operation that can take a variable
+            // amount of time depending on the length of the text you want to
+            // recognize. You may need to wait or retry the GET operation.
+            //
+            // Wait ten seconds before making the second REST API call.
+            setTimeout(function () {
+                // "Operation-Location" in the response contains the URI
+                // to retrieve the recognized text.
+                var operationLocation = jqXHR.getResponseHeader("Operation-Location");
+
+                // Make the second REST API call and get the response.
+                $.ajax({
+                    url: operationLocation,
+
+                    // Request headers.
+                    beforeSend: function(jqXHR){
+                        jqXHR.setRequestHeader("Content-Type","application/json");
+                        jqXHR.setRequestHeader(
+                            "Ocp-Apim-Subscription-Key", subscriptionKey);
+                    },
+
+                    type: "GET",
+                })
+
+                .done(function(data) {
+                    // Show formatted JSON on webpage.
+                    $("#responseTextArea").val(JSON.stringify(data, null, 2));
+                })
+
+                .fail(function(jqXHR, textStatus, errorThrown) {
+                    // Display error message.
+                    var errorString = (errorThrown === "") ? "Error. " :
+                        errorThrown + " (" + jqXHR.status + "): ";
+                    errorString += (jqXHR.responseText === "") ? "" :
+                        (jQuery.parseJSON(jqXHR.responseText).message) ?
+                            jQuery.parseJSON(jqXHR.responseText).message :
+                            jQuery.parseJSON(jqXHR.responseText).error.message;
+                    alert(errorString);
+                });
+            }, 10000);
+        })
+
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            // Put the JSON description into the text area.
+            $("#responseTextArea").val(JSON.stringify(jqXHR, null, 2));
+
+            // Display error message.
+            var errorString = (errorThrown === "") ? "Error. " :
+                errorThrown + " (" + jqXHR.status + "): ";
+            errorString += (jqXHR.responseText === "") ? "" :
+                (jQuery.parseJSON(jqXHR.responseText).message) ?
+                    jQuery.parseJSON(jqXHR.responseText).message :
+                    jQuery.parseJSON(jqXHR.responseText).error.message;
+            alert(errorString);
+        });
+    };
+</script>
+<h1>Read text from image:</h1>
+Enter the URL to an image of text, then click
+the <strong>Read image</strong> button.
+<br><br>
+Endpoint: 
+<input type="text" name="endpoint" id="endpoint" value="" style="width: 300px;"/>
+<div style="margin: 20px;">Example: https://westus2.api.cognitive.microsoft.com</div>
+Subscription Key:    
+<input type="text" name="key" id="key" value="" style="width: 300px;"/>
+<br><br>
+Language: 
+<input type="text" name="language" id="language"
+    value="en" />
+<div style="margin: 20px;">Accepted values are &quot;en&quot; and &quot;es&quot;</div>
+
+<br><br>
+Image to read:
+<input type="text" name="inputImage" id="inputImage"
+    value="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Cursive_Writing_on_Notebook_paper.jpg/800px-Cursive_Writing_on_Notebook_paper.jpg" />
+<button onclick="processImage()">Read image</button>
+<br><br>
+<div id="wrapper" style="width:1020px; display:table;">
+    <div id="jsonOutput" style="width:600px; display:table-cell;">
+        Response:
+        <br><br>
+        <textarea id="responseTextArea" class="UIInput"
+                  style="width:580px; height:400px;"></textarea>
+    </div>
+    <div id="imageDiv" style="width:420px; display:table-cell;">
+        Source image:
+        <br><br>
+        <img id="sourceImage" width="400" />
+    </div>
+</div>
+</body>
+</html>
+```
+
+---
+
 ## <a name="examine-the-response"></a>Изучите ответ.
 
 Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера веб-страницы и в окне браузера отобразится успешный ответ, аналогичный следующему:
+
+#### <a name="version-2"></a>[Версия 2](#tab/version-2)
 
 ```json
 {
@@ -279,9 +468,324 @@ Image to read:
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+#### <a name="version-3-public-preview"></a>[Версия 3 (общедоступная предварительная версия)](#tab/version-3)
 
-Ознакомьтесь с приложением JavaScript, которое использует API компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).
+```json
+{
+  "status": "succeeded",
+  "createdDateTime": "2020-02-11T20:56:33Z",
+  "lastUpdatedDateTime": "2020-02-11T20:56:34Z",
+  "analyzeResult": {
+    "version": "3.0.0",
+    "readResults": [
+      {
+        "page": 1,
+        "language": "en",
+        "angle": 0.8206,
+        "width": 800,
+        "height": 154,
+        "unit": "pixel",
+        "lines": [
+          {
+            "language": "en",
+            "boundingBox": [
+              6,
+              4,
+              774,
+              14,
+              773,
+              61,
+              5,
+              49
+            ],
+            "text": "The quick brown fox jumps over the lazy",
+            "words": [
+              {
+                "boundingBox": [
+                  14,
+                  5,
+                  76,
+                  6,
+                  74,
+                  49,
+                  12,
+                  48
+                ],
+                "text": "The",
+                "confidence": 0.83
+              },
+              {
+                "boundingBox": [
+                  84,
+                  6,
+                  182,
+                  7,
+                  180,
+                  51,
+                  82,
+                  49
+                ],
+                "text": "quick",
+                "confidence": 0.762
+              },
+              {
+                "boundingBox": [
+                  191,
+                  7,
+                  312,
+                  9,
+                  309,
+                  54,
+                  189,
+                  51
+                ],
+                "text": "brown",
+                "confidence": 0.67
+              },
+              {
+                "boundingBox": [
+                  320,
+                  9,
+                  382,
+                  10,
+                  379,
+                  55,
+                  317,
+                  54
+                ],
+                "text": "fox",
+                "confidence": 0.849
+              },
+              {
+                "boundingBox": [
+                  390,
+                  10,
+                  497,
+                  11,
+                  493,
+                  57,
+                  387,
+                  55
+                ],
+                "text": "jumps",
+                "confidence": 0.703
+              },
+              {
+                "boundingBox": [
+                  506,
+                  11,
+                  596,
+                  12,
+                  591,
+                  59,
+                  502,
+                  57
+                ],
+                "text": "over",
+                "confidence": 0.799
+              },
+              {
+                "boundingBox": [
+                  604,
+                  12,
+                  666,
+                  13,
+                  661,
+                  60,
+                  600,
+                  59
+                ],
+                "text": "the",
+                "confidence": 0.923
+              },
+              {
+                "boundingBox": [
+                  674,
+                  13,
+                  773,
+                  14,
+                  768,
+                  62,
+                  670,
+                  60
+                ],
+                "text": "lazy",
+                "confidence": 0.863
+              }
+            ]
+          },
+          {
+            "language": "en",
+            "boundingBox": [
+              5,
+              53,
+              79,
+              56,
+              77,
+              95,
+              4,
+              92
+            ],
+            "text": "dog",
+            "words": [
+              {
+                "boundingBox": [
+                  6,
+                  53,
+                  74,
+                  56,
+                  72,
+                  95,
+                  5,
+                  92
+                ],
+                "text": "dog",
+                "confidence": 0.418
+              }
+            ]
+          },
+          {
+            "language": "en",
+            "boundingBox": [
+              0,
+              90,
+              787,
+              95,
+              787,
+              145,
+              0,
+              136
+            ],
+            "text": "Pack my box with five dozen liquor jugs",
+            "words": [
+              {
+                "boundingBox": [
+                  1,
+                  96,
+                  79,
+                  93,
+                  79,
+                  135,
+                  0,
+                  136
+                ],
+                "text": "Pack",
+                "confidence": 0.835
+              },
+              {
+                "boundingBox": [
+                  87,
+                  93,
+                  151,
+                  92,
+                  151,
+                  135,
+                  87,
+                  135
+                ],
+                "text": "my",
+                "confidence": 0.88
+              },
+              {
+                "boundingBox": [
+                  162,
+                  92,
+                  226,
+                  91,
+                  225,
+                  135,
+                  161,
+                  135
+                ],
+                "text": "box",
+                "confidence": 0.301
+              },
+              {
+                "boundingBox": [
+                  234,
+                  91,
+                  335,
+                  90,
+                  335,
+                  135,
+                  233,
+                  135
+                ],
+                "text": "with",
+                "confidence": 0.959
+              },
+              {
+                "boundingBox": [
+                  346,
+                  91,
+                  418,
+                  91,
+                  417,
+                  136,
+                  345,
+                  135
+                ],
+                "text": "five",
+                "confidence": 0.489
+              },
+              {
+                "boundingBox": [
+                  426,
+                  91,
+                  527,
+                  93,
+                  527,
+                  138,
+                  425,
+                  136
+                ],
+                "text": "dozen",
+                "confidence": 0.727
+              },
+              {
+                "boundingBox": [
+                  554,
+                  94,
+                  687,
+                  98,
+                  687,
+                  143,
+                  553,
+                  139
+                ],
+                "text": "liquor",
+                "confidence": 0.377
+              },
+              {
+                "boundingBox": [
+                  701,
+                  99,
+                  787,
+                  103,
+                  787,
+                  146,
+                  700,
+                  143
+                ],
+                "text": "jugs",
+                "confidence": 0.693
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+---
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Ознакомьтесь с приложением JavaScript, которое использует API Компьютерного зрения для оптического распознавания символов (OCR) и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения. 
 
 > [!div class="nextstepaction"]
 > [Руководство по использованию API компьютерного зрения для JavaScript](../Tutorials/javascript-tutorial.md)
+
+* Для быстрых экспериментов с API компьютерного зрения можно использовать [открытую консоль тестирования API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa/console).

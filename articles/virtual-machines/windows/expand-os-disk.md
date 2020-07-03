@@ -1,26 +1,20 @@
 ---
 title: Расширение диска операционной системы виртуальной машины Windows в Azure
 description: Увеличение размера диска ОС виртуальной машины с использованием Azure PowerShell в модели развертывания с помощью Resource Manager.
-services: virtual-machines-windows
-documentationcenter: ''
-author: kirpasingh
-manager: roshar
-editor: ''
-tags: azure-resource-manager
-ms.assetid: d9edfd9f-482f-4c0b-956c-0d2c2c30026c
+author: mimckitt
+manager: vashan
 ms.service: virtual-machines-windows
-ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 07/05/2018
-ms.author: kirpas
+ms.author: mimckitt
 ms.subservice: disks
-ms.openlocfilehash: c76f57d15cd4cbdad5ded3b7545aab4d57272a50
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: e69b041a2e4c8a0715adb6ab126a3aede42f7dde
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033497"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81869685"
 ---
 # <a name="how-to-expand-the-os-drive-of-a-virtual-machine"></a>Расширение диска ОС виртуальной машины
 
@@ -168,7 +162,7 @@ Start-AzVM -ResourceGroupName $rgName -Name $vmName
 
 В этой статье основное внимание уделено расширению диска ОС виртуальной машины. Но разработанный сценарий также можно использовать для увеличения дисков данных, подключенных к виртуальной машине. Например, чтобы увеличить первый диск с данными, подключенный к виртуальной машине, замените объект `OSDisk` в `StorageProfile` на массив `DataDisks` и используйте числовой индекс для получения ссылки на первый подключенный диск с данными, как показано ниже:
 
-**Управляемый диск**
+**управляемые диски;**
 
 ```powershell
 $disk= Get-AzDisk -ResourceGroupName $rgName -DiskName $vm.StorageProfile.DataDisks[0].Name
@@ -187,7 +181,7 @@ $vm.StorageProfile.DataDisks[0].DiskSizeGB = 1023
 Аналогичным образом можно ссылаться на другие диски с данными, подключенные к виртуальной машине, либо с помощью индекса, как показано выше, либо с помощью свойства **Имя** диска:
 
 
-**Управляемый диск**
+**управляемые диски;**
 
 ```powershell
 (Get-AzDisk -ResourceGroupName $rgName -DiskName ($vm.StorageProfile.DataDisks | Where ({$_.Name -eq 'my-second-data-disk'})).Name).DiskSizeGB = 1023
@@ -214,6 +208,6 @@ $vm.StorageProfile.DataDisks[0].DiskSizeGB = 1023
 4.  В командной строке **DISKPART** введите `extend [size=<size>]`. Эта команда расширяет выбранный том на указанный *размер* в МБ.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Диски также можно подключить на [портале Azure](attach-managed-disk-portal.md).

@@ -6,17 +6,17 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 01/23/2017
 ms.author: yegu
-ms.openlocfilehash: e2b1ed693ea57e3414d465a57a5ba2b1203f67c5
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: f71476d7d41ae45d2f1014ed1b257870622487e6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74121886"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81010840"
 ---
 # <a name="how-to-create-and-manage-azure-cache-for-redis-using-the-azure-classic-cli"></a>Создание кэша Azure для Redis и управление им с помощью классического Azure CLI
 > [!div class="op_single_selector"]
 > * [PowerShell](cache-how-to-manage-redis-cache-powershell.md)
-> * [Классический Azure CLI](cache-manage-cli.md)
+> * [Классический интерфейс командной строки Azure](cache-manage-cli.md)
 >
 
 Классический Azure CLI позволяет управлять инфраструктурой Azure с любой платформы. В этой статье показано, как создавать экземпляры кэша Azure для Redis и управлять ими с помощью классического Azure CLI.
@@ -25,34 +25,34 @@ ms.locfileid: "74121886"
 > [!NOTE]
 > Последние примеры сценариев Azure CLI для кэша Azure для Redis см. в [этой статье](cli-samples.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные условия
 Для создания экземпляров кэша Azure для Redis и управления ими с помощью классического Azure CLI необходимо выполнить следующие действия.
 
 * Необходимо иметь учетную запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за пару минут.
-* [Установите классический Azure CLI](../cli-install-nodejs.md).
+* [Установите классический интерфейс командной строки Azure](../cli-install-nodejs.md).
 * Подключите установленный Azure CLI к личной либо рабочей или учебной учетной записи Azure, а затем выполните вход из классического Azure CLI с помощью команды `azure login`.
 * Перед выполнением любой из указанных ниже команд переключите классический Azure CLI в режим диспетчера ресурсов, выполнив команду `azure config mode arm`. Дополнительные сведения см. в разделе [Управление ресурсами и группами ресурсов Azure с помощью классического Azure CLI](../xplat-cli-azure-resource-manager.md).
 
 ## <a name="azure-cache-for-redis-properties"></a>Свойства кэша Azure для Redis
 При создании и обновлении экземпляров кэша Azure для Redis используются следующие свойства.
 
-| Свойство | Switch | ОПИСАНИЕ |
+| Свойство | Параметр | Описание |
 | --- | --- | --- |
-| Имя |-n, --name |Имя кэша Azure для Redis. |
+| name |-n, --name |Имя кэша Azure для Redis. |
 | resource group |-g, --resource-group |Имя группы ресурсов. |
 | location |-l, --location |Расположение для создания кэша. |
-| size |-z, --size |Размер кэша Azure для Redis. Допустимые значения: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
+| размер; |-z, --size |Размер кэша Azure для Redis. Допустимые значения: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
 | sku |-x, --sku |Номер SKU Redis. Должен иметь одно из этих значений: [Basic, Standard, Premium] |
-| EnableNonSslPort |-e, --enable-non-ssl-port |Свойство EnableNonSslPort кэша Azure для Redis. Добавьте этот флаг, если хотите включить для кэша порт без SSL. |
+| EnableNonSslPort |-e, --enable-non-ssl-port |Свойство EnableNonSslPort кэша Azure для Redis. Добавьте этот флаг, если вы хотите включить для кэша порт, не поддерживающий протокол TLS/SSL. |
 | Конфигурация Redis |-c, --redis-configuration |Конфигурация Redis. Введите строку ключей и значений конфигурации в формате JSON. Формат:"{"":"","":""}" |
 | Конфигурация Redis |-f, --redis-configuration-file |Конфигурация Redis. Введите путь к файлу, содержащему ключи и значения. Формат записи в файле: {"":"","":""} |
 | Число сегментов |-r, --shard-count |Число сегментов, которые будут созданы при создании кэша уровня "Премиум" с включенной кластеризацией. |
 | Виртуальная сеть |-v, --virtual-network |При размещении кэша в виртуальной сети определяет точный идентификатор ресурса ARM виртуальной сети, в которой будет развернут кэш Azure для Redis. Пример формата: /subscriptions/{идентификатор_подписки}/resourceGroups/{имя_группы_ресурсов}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 |
 | key type |-t, --key-type |Тип обновляемого ключа. Допустимые значения: [Primary, Secondary]. |
-| StaticIP |-p,--Static-IP \<\> статических IP-адресов |При размещении кэша в виртуальной сети определяет уникальный IP-адрес подсети для кэша. Если IP-адрес не указан, он автоматически выбирается из подсети. |
-| Подсеть |t,--подсеть \<подсеть\> |При размещении кэша в виртуальной сети определяет имя подсети, в которой будет развернут кэш. |
-| Виртуальная сеть |-v,--виртуальная сеть \<виртуальная сеть\> |При размещении кэша в виртуальной сети определяет точный идентификатор ресурса ARM виртуальной сети, в которой будет развернут кэш Azure для Redis. Пример формата: /subscriptions/{идентификатор_подписки}/resourceGroups/{имя_группы_ресурсов}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 |
-| подписку |-s, --subscription |Идентификатор подписки. |
+| StaticIP |-p,--Static-IP \<Static-IP\> |При размещении кэша в виртуальной сети определяет уникальный IP-адрес подсети для кэша. Если IP-адрес не указан, он автоматически выбирается из подсети. |
+| Подсеть |t,--подсеть подсети \<\> |При размещении кэша в виртуальной сети определяет имя подсети, в которой будет развернут кэш. |
+| Виртуальная сеть |-v,--виртуальная сеть \<, виртуальная сеть\> |При размещении кэша в виртуальной сети определяет точный идентификатор ресурса ARM виртуальной сети, в которой будет развернут кэш Azure для Redis. Пример формата: /subscriptions/{идентификатор_подписки}/resourceGroups/{имя_группы_ресурсов}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 |
+| Подписка |-s, --subscription |Идентификатор подписки. |
 
 ## <a name="see-all-azure-cache-for-redis-commands"></a>Просмотр всех команд кэша Azure для Redis
 Для просмотра всех команд кэша Azure для Redis и их параметров используйте команду `azure rediscache -h`.
@@ -86,12 +86,12 @@ ms.locfileid: "74121886"
     help:
     help:    Current Mode: arm (Azure Resource Management)
 
-## <a name="create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Redis для Azure
+## <a name="create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Azure для Redis
 Чтобы создать кэш Azure для Redis, используйте следующую команду:
 
     azure rediscache create [--name <name> --resource-group <resource-group> --location <location> [options]]
 
-Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache create -h` .
+Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache create -h`.
 
     C:\>azure rediscache create -h
     help:    Create an Azure Cache for Redis
@@ -108,7 +108,7 @@ ms.locfileid: "74121886"
     help:      -l, --location <location>                                Location to create cache.
     help:      -z, --size <size>                                        Size of the Azure Cache for Redis. Valid values: [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4]
     help:      -x, --sku <sku>                                          Redis SKU. Should be one of : [Basic, Standard, Premium]
-    help:      -e, --enable-non-ssl-port                                EnableNonSslPort property of the Azure Cache for Redis. Add this flag if you want to enable the Non SSL Port for your cache
+    help:      -e, --enable-non-ssl-port                                EnableNonSslPort property of the Azure Cache for Redis. Add this flag if you want to enable the non-TLS/SSL Port for your cache
     help:      -c, --redis-configuration <redis-configuration>          Redis Configuration. Enter a JSON formatted string of configuration keys and values here. Format:"{"<key1>":"<value1>","<key2>":"<value2>"}"
     help:      -f, --redis-configuration-file <redisConfigurationFile>  Redis Configuration. Enter the path of a file containing configuration keys and values here. Format for the file entry: {"<key1>":"<value1>","<key2>":"<value2>"}
     help:      -r, --shard-count <shard-count>                          Number of Shards to create on a Premium Cluster Cache
@@ -124,7 +124,7 @@ ms.locfileid: "74121886"
 
     azure rediscache delete [--name <name> --resource-group <resource-group> ]
 
-Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache delete -h` .
+Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache delete -h`.
 
     C:\>azure rediscache delete -h
     help:    Delete an existing Azure Cache for Redis
@@ -147,7 +147,7 @@ ms.locfileid: "74121886"
 
     azure rediscache list [options]
 
-Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache list -h` .
+Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache list -h`.
 
     C:\>azure rediscache list -h
     help:    List all Azure Cache for Redis within your Subscription or Resource Group
@@ -169,7 +169,7 @@ ms.locfileid: "74121886"
 
     azure rediscache show [--name <name> --resource-group <resource-group>]
 
-Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache show -h` .
+Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache show -h`.
 
     C:\>azure rediscache show -h
     help:    Show properties of an existing Azure Cache for Redis
@@ -194,7 +194,7 @@ ms.locfileid: "74121886"
 
     azure rediscache set [--name <name> --resource-group <resource-group> --redis-configuration <redis-configuration>/--redis-configuration-file <redisConfigurationFile>]
 
-Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache set -h` .
+Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache set -h`.
 
     C:\>azure rediscache set -h
     help:    Change settings of an existing Azure Cache for Redis
@@ -221,7 +221,7 @@ ms.locfileid: "74121886"
 
 Укажите `Primary` или `Secondary` для `key-type`.
 
-Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache renew-key -h` .
+Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache renew-key -h`.
 
     C:\>azure rediscache renew-key -h
     help:    Renew the authentication key for an existing Azure Cache for Redis
@@ -245,7 +245,7 @@ ms.locfileid: "74121886"
 
     azure rediscache list-keys [--name <name> --resource-group <resource-group>]
 
-Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache list-keys -h` .
+Чтобы получить дополнительные сведения об этой команде, выполните команду `azure rediscache list-keys -h`.
 
     C:\>azure rediscache list-keys -h
     help:    Lists Primary and Secondary key of an existing Azure Cache for Redis

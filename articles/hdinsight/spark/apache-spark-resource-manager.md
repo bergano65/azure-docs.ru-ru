@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
 ms.openlocfilehash: 3aab89f86dcd48328771cd0fda03d1c9de4bc2c2
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75932106"
 ---
 # <a name="manage-resources-for-apache-spark-cluster-on-azure-hdinsight"></a>Управление ресурсами для кластера Apache Spark в Azure HDInsight
@@ -34,7 +34,7 @@ ms.locfileid: "75932106"
     ![Запуск пользовательского интерфейса YARN](./media/apache-spark-resource-manager/azure-portal-dashboard-yarn.png)
 
    > [!TIP]  
-   > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. В пользовательском интерфейсе Ambari перейдите к **YARN** > **быстрые ссылки** > **Active** > **Диспетчер ресурсов UI**.
+   > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. В пользовательском интерфейсе Ambari перейдите к **YARN** > **быстрые ссылки** > **Active** > **Диспетчер ресурсов Пользовательский интерфейс**.
 
 ## <a name="optimize-clusters-for-spark-applications"></a>Оптимизация кластеров для приложений Spark
 
@@ -44,13 +44,13 @@ ms.locfileid: "75932106"
 
 ### <a name="change-the-parameters-using-ambari-ui"></a>Изменение параметров с помощью пользовательского интерфейса Ambari
 
-1. В пользовательском интерфейсе Ambari перейдите к **Spark2** > **конфигурации** > **Custom Spark2 (значения по умолчанию)** .
+1. В пользовательском интерфейсе Ambari перейдите к **Spark2** > **configs** > **Custom Spark2 (значения по умолчанию)**.
 
     ![Задание параметров с помощью Ambari Custom](./media/apache-spark-resource-manager/ambari-ui-spark2-configs.png "Задание параметров с помощью Ambari Custom")
 
 1. Значения по умолчанию позволяют запустить в кластере одновременно четыре приложения Spark. Вы можете изменять эти значения из пользовательского интерфейса, как показано на следующем снимке экрана:
 
-    ![Задание параметров с помощью Ambari](./media/apache-spark-resource-manager/ambari-ui-spark2-defaults.png "Изменение параметров с помощью Ambari")
+    ![Изменение параметров с помощью Ambari](./media/apache-spark-resource-manager/ambari-ui-spark2-defaults.png "Изменение параметров с помощью Ambari")
 
 1. Нажмите кнопку **сохранить** , чтобы сохранить изменения конфигурации. В верхней части страницы будет предложено перезапустить все затронутые службы. Нажмите кнопку **Перезапустить**.
 
@@ -83,13 +83,13 @@ ms.locfileid: "75932106"
 
 Сервер Thrift Spark предоставляет доступ JDBC и ODBC к кластеру Spark. Такие средства, как Power BI, Tableau и т. д., используют протокол ODBC для взаимодействия с сервером Spark Thrift для выполнения запросов Spark SQL в качестве приложения Spark. Когда вы создаете кластер Spark, запускаются два экземпляра сервера Thrift Spark, по одному на каждый головной узел. Каждый сервер Thrift Spark отображается в пользовательском интерфейсе YARN как приложение Spark.
 
-Сервер Spark Thrift использует динамическое выделение исполнителя Spark, поэтому `spark.executor.instances` не используется. Вместо этого сервер Thrift Spark использует `spark.dynamicAllocation.maxExecutors` и `spark.dynamicAllocation.minExecutors`, чтобы указать число исполнителей. Параметры конфигурации `spark.executor.cores`и `spark.executor.memory` используются для изменения размера исполнителя. Эти параметры можно изменить, как описано ниже.
+Сервер Spark Thrift использует динамическое выделение исполнителя Spark и, `spark.executor.instances` следовательно, не используется. Вместо этого сервер Thrift Spark использует `spark.dynamicAllocation.maxExecutors` и `spark.dynamicAllocation.minExecutors`, чтобы указать число исполнителей. Параметры `spark.executor.cores`конфигурации и `spark.executor.memory` используются для изменения размера исполнителя. Эти параметры можно изменить, как описано ниже.
 
-* Разверните категорию **Advanced spark2-Thrift-sparkconf** , чтобы обновить параметры `spark.dynamicAllocation.maxExecutors`и `spark.dynamicAllocation.minExecutors`.
+* Разверните категорию **Advanced spark2-Thrift-sparkconf** , чтобы обновить параметры `spark.dynamicAllocation.maxExecutors`, и. `spark.dynamicAllocation.minExecutors`
 
     ![Настройка сервера Thrift Spark](./media/apache-spark-resource-manager/ambari-ui-advanced-thrift-sparkconf.png "Настройка сервера Thrift Spark")
 
-* Разверните **настраиваемую категорию spark2-Thrift-sparkconf** , чтобы обновить параметры `spark.executor.cores`и `spark.executor.memory`.
+* Разверните **пользовательскую категорию spark2-Thrift-sparkconf** , чтобы обновить параметры `spark.executor.cores`, и `spark.executor.memory`.
 
     ![Настройка параметра сервера Spark Thrift](./media/apache-spark-resource-manager/ambari-ui-custom-thrift-sparkconf.png "Настройка параметра сервера Spark Thrift")
 
@@ -97,7 +97,7 @@ ms.locfileid: "75932106"
 
 Память драйверов сервера Thrift Spark настроена так, что она использует 25 % от размера ОЗУ головного узла, при условии, что общий объем ОЗУ головного узла превышает 14 ГБ. Конфигурацию памяти драйверов можно изменить с помощью пользовательского интерфейса Ambari, как показано на снимке экрана ниже.
 
-В пользовательском интерфейсе Ambari перейдите к **Spark2** > **конфигурации** > **Advanced Spark2-env**. Затем укажите значение для **spark_thrift_cmd_opts**.
+В пользовательском интерфейсе Ambari перейдите к **Spark2** > **configs** > **Advanced Spark2-env**. Затем укажите значение для **spark_thrift_cmd_opts**.
 
 ## <a name="reclaim-spark-cluster-resources"></a>Освобождение кластерных ресурсов Spark
 
@@ -122,7 +122,7 @@ ms.locfileid: "75932106"
 
 Откройте пользовательский веб-интерфейс Ambari, как показано в начале статьи. В левой области навигации выберите **Jupyter**, выберите **действия службы**, а затем выберите **перезапустить все**. Служба Jupyter запустится на всех головных узлах.
 
-![Перезапустить Jupyter](./media/apache-spark-resource-manager/apache-ambari-restart-jupyter.png "Перезапуск Jupyter")
+![Перезапуск Jupyter](./media/apache-spark-resource-manager/apache-ambari-restart-jupyter.png "Перезапуск Jupyter")
 
 ## <a name="monitor-resources"></a>Мониторинг ресурсов
 
@@ -140,7 +140,7 @@ ms.locfileid: "75932106"
 
     ![Завершить работу](./media/apache-spark-resource-manager/apache-ambari-kill-app2.png "Завершить работу")
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Отслеживание и отладка заданий в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-job-debugging.md)
 

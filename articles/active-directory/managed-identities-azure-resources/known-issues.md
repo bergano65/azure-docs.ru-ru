@@ -16,12 +16,13 @@ ms.workload: identity
 ms.date: 12/12/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0f0c678f2426d9de58d2ab337c56243394b4d0f
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.custom: has-adal-ref
+ms.openlocfilehash: 84b68e5aecca11fb72f8cacc7e16701eebd0ae1a
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74183891"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83197330"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе
 
@@ -74,18 +75,18 @@ ms.locfileid: "74183891"
 
 ### <a name="will-managed-identities-be-recreated-automatically-if-i-move-a-subscription-to-another-directory"></a>Воссоздаются ли управляемые удостоверения автоматически, если подписка перемещена в другой каталог?
 
-Нет Если вы переместили подписку в другой каталог, нужно вручную воссоздать эти удостоверения и снова назначить роли Azure RBAC.
+Нет. Если вы переместили подписку в другой каталог, нужно вручную воссоздать эти удостоверения и снова назначить роли Azure RBAC.
 - Управляемые удостоверения, назначаемые системой, нужно отключить и снова включить. 
 - Управляемые удостоверения, назначаемые пользователем, нужно удалить, повторно создать и присоединить к необходимым ресурсам (например, виртуальным машинам).
 
 ### <a name="can-i-use-a-managed-identity-to-access-a-resource-in-a-different-directorytenant"></a>Можно использовать управляемое удостоверение для доступа к ресурсу в другом каталоге или клиенте?
 
-Нет Сейчас управляемые удостоверения не поддерживаются в сценариях работы с разными каталогами. 
+Нет. Сейчас управляемые удостоверения не поддерживаются в сценариях работы с разными каталогами. 
 
 ### <a name="what-azure-rbac-permissions-are-required-to-managed-identity-on-a-resource"></a>Какие разрешения Azure RBAC требуются для управляемого удостоверения в ресурсе? 
 
-- Управляемое удостоверение, назначенное системой: вам потребуются разрешения на запись для ресурса. Например, для виртуальных машин требуется Microsoft. COMPUTE/virtualMachines/Write. Это действие включено в встроенные роли, связанные с ресурсами, например [участник виртуальных машин](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).
-- Управляемое удостоверение, назначаемое пользователем. вам потребуются разрешения на запись для ресурса. Например, для виртуальных машин требуется Microsoft. COMPUTE/virtualMachines/Write. В дополнение к назначениям ролей [оператора управляемого удостоверения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator) для управляемого удостоверения.
+- Управляемое удостоверение, назначенное системой: вам потребуются разрешения на запись для ресурса. Например, для виртуальных машин необходимо разрешение Microsoft.Compute/virtualMachines/write. Это действие включено в встроенные роли, связанные с ресурсами, например [участник виртуальных машин](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).
+- Управляемое удостоверение, назначаемое пользователем. вам потребуются разрешения на запись для ресурса. Например, для виртуальных машин необходимо разрешение Microsoft.Compute/virtualMachines/write. В дополнение к назначениям ролей [оператора управляемого удостоверения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator) для управляемого удостоверения.
 
 ### <a name="how-do-you-restart-the-managed-identities-for-azure-resources-extension"></a>Как перезапустить расширение управляемых удостоверений для ресурсов Azure?
 При завершении работы расширения в Windows и некоторых версиях Linux вы можете перезапустить его вручную с помощью следующего командлета:
@@ -94,7 +95,7 @@ ms.locfileid: "74183891"
 Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <location> -Publisher Microsoft.ManagedIdentity -VMName <vm name> -ResourceGroupName <resource group name> -ForceRerun <Any string different from any last value used>
 ```
 
-Описание 
+Где: 
 - Для Windows используется имя расширения и тип ManagedIdentityExtensionForWindows.
 - Для Linux используется имя расширения и тип ManagedIdentityExtensionForLinux.
 
@@ -114,7 +115,7 @@ Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <loc
 
 Если перемещается запущенная виртуальная машина, то она продолжает работать во время перемещения. Однако если после перемещения виртуальная машина останавливается и перезапускается, то ее запуск завершается сбоем. Эта проблема возникает из-за того, что виртуальная машина не обновляет ссылку на идентификатор управляемых удостоверений для ресурсов Azure и продолжает указывать на него в старой группе ресурсов.
 
-**Возможное решение** 
+**Обходное решение** 
  
 Активируйте обновление на виртуальной машине, чтобы она могла получить правильные значения управляемых удостоверений для ресурсов Azure. Можно изменить свойства виртуальной машины, чтобы обновить ссылку на ресурс управляемых удостоверений для ресурсов Azure. Например, можно задать новое значение тега виртуальной машины с помощью следующей команды.
 

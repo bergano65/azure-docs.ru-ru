@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 02/11/2020
-ms.openlocfilehash: 3141795ed9ccfdabc9fd462a1cd09a74690f9c5b
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: 0a9728e05aee27e74054a77e2c9be7dc08968207
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77137916"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79455865"
 ---
 # <a name="train-model-module"></a>Модуль "Обучение модели"
 
@@ -62,9 +62,9 @@ ms.locfileid: "77137916"
     > [!TIP] 
     > Если при использовании селектора столбцов возникают проблемы, см. советы [в статье Выбор столбцов в наборе данных](./select-columns-in-dataset.md) . В нем описываются некоторые распространенные сценарии и советы по использованию параметров **with Rules** и **Name** .
   
-5.  Запустили конвейер. Если у вас много данных, это может занять некоторое время.
+5.  Отправьте конвейер. Если у вас много данных, это может занять некоторое время.
 
-## <a name="bkmk_results"></a> Результаты
+## <a name="results"></a><a name="bkmk_results"></a>Результаты
 
 После обучения модели:
 
@@ -74,6 +74,6 @@ ms.locfileid: "77137916"
 + Чтобы использовать модель в прогнозе новых значений, подключите ее к модулю « [Оценка модели](./score-model.md) » вместе с новыми входными данными.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

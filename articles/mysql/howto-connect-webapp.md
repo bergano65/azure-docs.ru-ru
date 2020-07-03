@@ -5,19 +5,19 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 63ef9ac55fcfaebfd58ae1ccdb34107d41900be5
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: ba75daa47ca1f77cd5828d13877238a64deeeb41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770549"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80062463"
 ---
 # <a name="connect-an-existing-azure-app-service-to-azure-database-for-mysql-server"></a>Подключение существующей службы приложений Azure к базе данных Azure для сервера MySQL
 В этом разделе объясняется, как подключить имеющуюся службу приложений Azure к базе данных Azure для сервера MySQL.
 
-## <a name="before-you-begin"></a>Перед началом работы
-Войдите на [портале Azure](https://portal.azure.com). Создайте базу данных Azure для сервера MySQL. Дополнительные сведения см. в статье [Создание базы данных Azure для сервера MySQL с помощью портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Создание сервера базы данных Azure для MySQL с помощью Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
+## <a name="before-you-begin"></a>Подготовка к работе
+Войдите на [портал Azure](https://portal.azure.com). Создайте базу данных Azure для сервера MySQL. Дополнительные сведения см. в статье [Создание базы данных Azure для сервера MySQL с помощью портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Создание сервера базы данных Azure для MySQL с помощью Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
 
 В настоящее время существует два решения предоставления доступа из службы приложений Azure к базе данных Azure для MySQL. Оба решения включают настройку правил брандмауэра уровня сервера.
 
@@ -66,5 +66,5 @@ DATABASES = {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о строках подключения см. в [соответствующей статье](howto-connection-string.md).

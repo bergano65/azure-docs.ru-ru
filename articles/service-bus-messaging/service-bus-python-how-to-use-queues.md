@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.date: 01/27/2020
 ms.author: aschhab
 ms.custom: seo-python-october2019
-ms.openlocfilehash: aa9ffc48d9b1374fa510f450bab2c66641421446
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: acb0b0e84804ecf6025e05590133dee9b0d54c48
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773492"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80478639"
 ---
 # <a name="quickstart-use-azure-service-bus-queues-with-python"></a>Краткое руководство. Использование очередей Служебной шины Azure с Python
 
@@ -32,7 +32,7 @@ ms.locfileid: "76773492"
 ## <a name="prerequisites"></a>Предварительные требования
 - Подписка Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Пространство имен Служебной шины Azure, созданное с помощью инструкций в [руководстве по созданию раздела и подписок Служебной шины с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Скопируйте основную строку подключения из экрана **Политики общего доступа**. Она понадобится далее в этой статье. 
-- Python 3.4x или более поздней версии с установленным пакетом [Служебной шины Azure для Python][Python Azure Service Bus package]. Дополнительные сведения см. в [руководстве по установке Python](/azure/python/python-sdk-azure-install). 
+- Python 3.4x или более поздней версии с установленным пакетом [Служебной шины Azure для Python][Python Azure Service Bus package]. Дополнительные сведения см. в [руководстве по установке Python](/azure/developer/python/azure-sdk-install). 
 
 ## <a name="create-a-queue"></a>Создание очереди
 

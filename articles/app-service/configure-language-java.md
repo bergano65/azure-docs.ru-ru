@@ -9,12 +9,12 @@ ms.date: 04/12/2019
 ms.author: jafreebe
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 9ee989a079366a470d086a8b931685a6c1dbc757
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 1e42096e7ab950e5d8046ec6140c01b24643cb87
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75889356"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891464"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка приложения Windows Java для службы приложений Azure
 
@@ -24,17 +24,36 @@ ms.locfileid: "75889356"
 
 ## <a name="deploying-your-app"></a>Развертывание приложения
 
-Для развертывания WAR-файлов можно использовать [подключаемый модуль Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) . Развертывание с популярными IDE также поддерживается с [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij) или [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse).
+Вы можете использовать [подключаемый модуль веб-приложения Azure для Maven](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) для развертывания файлов WAR. Развертывание с популярными IDE также поддерживается с [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/) или [Azure Toolkit for Eclipse](/azure/developer/java/toolkit-for-eclipse).
 
 В противном случае ваш метод развертывания будет зависеть от типа архива:
 
 - Чтобы развернуть файлы WAR в Tomcat, используйте конечную точку `/api/wardeploy/` для публикации файла архива. Дополнительные сведения об этом API см. в [этой документации](https://docs.microsoft.com/azure/app-service/deploy-zip#deploy-war-file).
+- Чтобы развернуть JAR-файлы в Java SE, используйте `/api/zipdeploy/` конечную точку сайта KUDU. Дополнительные сведения об этом API см. в [этой документации](https://docs.microsoft.com/azure/app-service/deploy-zip#rest).
 
 Не развертывайте WAR-файл с помощью FTP. Средство FTP предназначено для передачи сценариев запуска, зависимостей или других файлов среды выполнения. Оно не является оптимальным решением для развертывания веб-приложений.
 
 ## <a name="logging-and-debugging-apps"></a>Ведение журнала и отладка приложений
 
 Отчеты о производительности, визуализация трафика и проверка работоспособности доступны на портале Azure для каждого приложения. Дополнительные сведения см. в статье [Обзор диагностики службы приложений Azure](overview-diagnostics.md).
+
+### <a name="use-flight-recorder"></a>Использование "черного ящика"
+
+Все среды выполнения Java в службе приложений с использованием Azul виртуальных машин Java поставляются с Zuluным средством записи черного ящика. С его помощью можно записывать события уровня ВИРТУАЛЬНОЙ машины Java, System и Java для отслеживания поведения и устранения неполадок в приложениях Java.
+
+Для получения времени записи потребуется идентификатор процесса (ID) приложения Java. Чтобы найти PID, откройте браузер на сайте SCM веб-приложения по адресу https://<имя вашего сайта>. scm.azurewebsites.net/ProcessExplorer/. На этой странице отображаются запущенные процессы в веб-приложении. Найдите процесс с именем "Java" в таблице и скопируйте соответствующий PID (идентификатор процесса).
+
+Затем откройте **консоль отладки** на верхней панели инструментов сайта SCM и выполните следующую команду. Замените `<pid>` идентификатором процесса, который вы скопировали ранее. Эта команда запускает на 30-секундную запись профилировщика приложения Java и создает файл с именем `timed_recording_example.jfr` в `D:\home` каталоге.
+
+```
+jcmd <pid> JFR.start name=TimedRecording settings=profile duration=30s filename="D:\home\timed_recording_example.JFR"
+```
+
+Дополнительные сведения см. в [справочнике по командам жкмд](https://docs.oracle.com/javacomponents/jmc-5-5/jfr-runtime-guide/comline.htm#JFRRT190).
+
+#### <a name="analyze-jfr-files"></a>Анализ `.jfr` файлов
+
+Используйте [FTPS](deploy-ftp.md) для загрузки файла ЖФР на локальный компьютер. Чтобы проанализировать файл ЖФР, скачайте и установите [элемент управления Zulu миссии](https://www.azul.com/products/zulu-mission-control/). Инструкции по управлению Zulu миссии см. в [документации по Azul](https://docs.azul.com/zmc/) и [инструкциям по установке](https://docs.microsoft.com/java/azure/jdk/java-jdk-flight-recorder-and-mission-control).
 
 ### <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
 
@@ -55,7 +74,7 @@ ms.locfileid: "75889356"
 
 - [Настройка параметров приложения](configure-common.md#configure-app-settings)
 - [Настройка личного домена](app-service-web-tutorial-custom-domain.md)
-- [Настройка SSL-привязок](configure-ssl-bindings.md)
+- [Настройка привязок TLS](configure-ssl-bindings.md)
 - [Добавление CDN](../cdn/cdn-add-to-web-app.md)
 - [Настройка сайта KUDU](https://github.com/projectkudu/kudu/wiki/Configurable-settings)
 
@@ -78,9 +97,9 @@ ms.locfileid: "75889356"
 
 Разработчики, запускающие отдельное приложение в одном слоте развертывания в плане службы приложений, могут использовать следующие параметры.
 
-- Экземпляры B1 и S1: `-Xms1024m -Xmx1024m`
-- Экземпляры B2 и S2: `-Xms3072m -Xmx3072m`
-- Экземпляры B3 и S3: `-Xms6144m -Xmx6144m`
+- Экземпляры B1 и S1:`-Xms1024m -Xmx1024m`
+- Экземпляры B2 и S2:`-Xms3072m -Xmx3072m`
+- Экземпляры B3 и S3:`-Xms6144m -Xmx6144m`
 
 При настройке параметров кучи приложения просмотрите сведения о плане службы приложений и примите во внимание, что наличие нескольких приложений и одного слота развертывания требует оптимального выделения памяти.
 
@@ -128,15 +147,15 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 Настройте проверку подлинности приложения в портал Azure с помощью параметра **Проверка подлинности и авторизация** . Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации. Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](configure-authentication-provider-aad.md) и связанных статьях о других поставщиках удостоверений. Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](app-service-authentication-how-to.md).
 
-#### <a name="tomcat-and-wildfly"></a>Tomcat и Вилдфли
+#### <a name="tomcat"></a>Tomcat
 
-Приложение Tomcat или Вилдфли может получить доступ к утверждениям пользователя непосредственно из сервлета путем приведения объекта Principal к объекту Map. Объект Map будет сопоставлять каждый тип утверждения с коллекцией утверждений для этого типа. В приведенном ниже коде `request` является экземпляром `HttpServletRequest`.
+Приложение Tomcat может получить доступ к утверждениям пользователя непосредственно из сервлета, приведя объект Principal к объекту Map. Объект Map будет сопоставлять каждый тип утверждения с коллекцией утверждений для этого типа. В приведенном ниже коде `request` является экземпляром `HttpServletRequest`.
 
 ```java
 Map<String, Collection<String>> map = (Map<String, Collection<String>>) request.getUserPrincipal();
 ```
 
-Теперь можно проверить объект `Map` для любого конкретного утверждения. Например, следующий фрагмент кода выполняет перебор всех типов заявок и выводит содержимое каждой коллекции.
+Теперь можно проверить `Map` объект на наличие конкретного утверждения. Например, следующий фрагмент кода выполняет перебор всех типов заявок и выводит содержимое каждой коллекции.
 
 ```java
 for (Object key : map.keySet()) {
@@ -160,15 +179,15 @@ public String getScheme()
 public int getServerPort()
 ```
 
-Чтобы отключить эту функцию, создайте параметр приложения с именем `WEBSITE_AUTH_SKIP_PRINCIPAL` со значением `1`. Чтобы отключить все фильтры сервлета, добавленные службой приложений, создайте параметр с именем `WEBSITE_SKIP_FILTERS` со значением `1`.
+Чтобы отключить эту функцию, создайте параметр приложения с именем `WEBSITE_AUTH_SKIP_PRINCIPAL` и значением `1`. Чтобы отключить все фильтры сервлета, добавленные службой приложений, создайте параметр с `WEBSITE_SKIP_FILTERS` именем со значением `1`.
 
 ### <a name="configure-tlsssl"></a>Настройка TLS/SSL
 
-Следуйте инструкциям в разделе [Защита настраиваемого DNS-имени с помощью привязки SSL в службе приложений Azure](configure-ssl-bindings.md) для отправки существующего SSL-сертификата и привязки его к доменному имени приложения. По умолчанию приложение по-прежнему будет разрешать HTTP-подключения. Выполните соответствующие инструкции в этом руководстве, чтобы принудительно включить SSL и TLS.
+Следуйте инструкциям в разделе [безопасное настраиваемое DNS-имя с помощью привязки TLS в службе приложений Azure](configure-ssl-bindings.md) , чтобы передать существующий сертификат TLS/SSL и привязать его к доменному имени приложения. По умолчанию приложение по-прежнему будет разрешать HTTP-подключения. Выполните соответствующие инструкции в этом руководстве, чтобы принудительно включить SSL и TLS.
 
 ### <a name="use-keyvault-references"></a>Использование ссылок KeyVault
 
-[Azure KeyVault](../key-vault/key-vault-overview.md) обеспечивает централизованное управление секретами с помощью политик доступа и журнала аудита. Вы можете хранить секреты (например, пароли или строки подключения) в KeyVault и обращаться к этим секретам в приложении с помощью переменных среды.
+[Azure KeyVault](../key-vault/general/overview.md) обеспечивает централизованное управление секретами с помощью политик доступа и журнала аудита. Вы можете хранить секреты (например, пароли или строки подключения) в KeyVault и обращаться к этим секретам в приложении с помощью переменных среды.
 
 Сначала следуйте инструкциям, [чтобы предоставить приложению доступ к Key Vault](app-service-key-vault-references.md#granting-your-app-access-to-key-vault) и [сделать ссылку KeyVault на секрет в параметре приложения](app-service-key-vault-references.md#reference-syntax). Можно проверить, что ссылка разрешается в секрет, выполнив печать переменной среды во время удаленного доступа к терминалу службы приложений.
 
@@ -213,9 +232,9 @@ public int getServerPort()
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#download)                                                           |
 
-Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
+Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную `CATALINA_OPTS` среды, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
 ```xml
 <appSettings>
@@ -226,7 +245,7 @@ public int getServerPort()
 </appSettings>
 ```
 
-Или задайте переменные среды на странице Параметры **конфигурации** > **приложения** в портал Azure.
+Или задайте переменные среды на странице**Параметры приложения** **конфигурации** > в портал Azure.
 
 Затем определите, должен ли источник данных быть доступным для одного приложения или для всех приложений, работающих в сервлете Tomcat.
 
@@ -234,7 +253,7 @@ public int getServerPort()
 
 1. Создайте файл *context. XML* в каталоге *META-INF или* проекте. Создайте *файл META-INF или* каталог, если он не существует.
 
-2. В *context. XML*добавьте элемент `Context`, чтобы связать источник данных с адресом JNDI. Замените заполнитель `driverClassName` именем класса драйвера из приведенной выше таблицы.
+2. В *context. XML*добавьте `Context` элемент, чтобы связать источник данных с адресом JNDI. Замените заполнитель `driverClassName` именем класса драйвера из приведенной выше таблицы.
 
     ```xml
     <Context>
@@ -280,12 +299,16 @@ public int getServerPort()
 
 ## <a name="configuring-tomcat"></a>Настройка Tomcat
 
-Чтобы изменить `server.xml` или другие файлы конфигурации Tomcat, сначала запишите основную версию Tomcat на портале.
+Чтобы изменить Tomcat `server.xml` или другие файлы конфигурации, сначала запишите основную версию Tomcat на портале.
 
-1. Найдите корневой каталог Tomcat для своей версии, выполнив команду `env`. Найдите переменную среды, которая начинается с `AZURE_TOMCAT`и соответствует основной версии. Например, `AZURE_TOMCAT85_HOME` указывает на каталог Tomcat для Tomcat 8,5.
-1. Определив корневой каталог Tomcat для своей версии, скопируйте каталог конфигурации в `D:\home`. Например, если `AZURE_TOMCAT85_HOME` имело значение `D:\Program Files (x86)\apache-tomcat-8.5.37`, новый путь к копируемому каталогу будет `D:\home\apache-tomcat-8.5.37`.
+1. Найдите корневой каталог Tomcat для своей версии, выполнив `env` команду. Найдите переменную среды, которая начинается с `AZURE_TOMCAT`и соответствует основной версии. Например, `AZURE_TOMCAT85_HOME` указывает на каталог Tomcat для Tomcat 8,5.
+1. Определив корневой каталог Tomcat для своей версии, скопируйте каталог конфигурации в `D:\home`папку. Например, если `AZURE_TOMCAT85_HOME` имело значение `D:\Program Files (x86)\apache-tomcat-8.5.37`, новый путь к копируемому каталогу будет иметь `D:\home\apache-tomcat-8.5.37`вид.
 
-Наконец, перезапустите службу приложений. Развертывания должны переходить на `D:\home\site\wwwroot\webapps`, как и раньше.
+Наконец, перезапустите службу приложений. Развертывания должны быть так же `D:\home\site\wwwroot\webapps` , как и раньше.
+
+## <a name="configure-java-se"></a>Настройка Java SE
+
+При запуске. JAR `server.port` -приложение на Java SE в Windows передается как параметр командной строки при запуске приложения. Можно вручную разрешить HTTP-порт из переменной среды, `HTTP_PLATFORM_PORT`. Значение этой переменной среды будет HTTP-портом, который приложение должно прослушивать. 
 
 ## <a name="java-runtime-statement-of-support"></a>Заявление о поддержке среды выполнения Java
 
@@ -295,11 +318,13 @@ Azure поддерживает пакет Java Development Kit (JDK) [Zulu](http
 
 Обновления основной версии будут предоставляться с помощью новых параметров среды выполнения в службе приложений Azure для Windows. Пользователи, устанавливающие более новые версии Java посредством настройки развернутой службы приложений, несут ответственность за тестирование выбранных обновлений для основного номера версии и их соответствие своим потребностям.
 
-Каждый квартал в поддерживаемые пакеты JDK автоматически вносятся исправления. Это происходит в январе, апреле, июле и октябре. Дополнительные сведения об Java в Azure см. в [этом документе поддержки](https://docs.microsoft.com/azure/java/jdk/).
+Каждый квартал в поддерживаемые пакеты JDK автоматически вносятся исправления. Это происходит в январе, апреле, июле и октябре. Дополнительные сведения об Java в Azure см. в [этом документе поддержки](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-long-term-support).
 
 ### <a name="security-updates"></a>Обновления для системы безопасности
 
 Исправления для устранения серьезных уязвимостей в системе безопасности будут выпускаться по мере выпуска компанией Azul Systems. "Серьезными" считаются уязвимости с базовым индексом не меньше 9.0 в [NIST Common Vulnerability Scoring System версии 2](https://nvd.nist.gov/cvss.cfm).
+
+Tomcat 8,0 достигла [окончания срока жизни (конца строки) с 30 сентября 2018 г](https://tomcat.apache.org/tomcat-80-eol.html). Хотя среда выполнения по-прежнему авиалабле в службе приложений Azure, Azure не будет применять обновления безопасности к Tomcat 8,0. По возможности перенесите приложения на Tomcat 8,5 или 9,0. В службе приложений Azure доступны как Tomcat 8,5, так и 9,0. Дополнительные сведения см. на [официальном веб-сайте Tomcat](https://tomcat.apache.org/whichversion.html) . 
 
 ### <a name="deprecation-and-retirement"></a>Нерекомендуемые версии и прекращение использования
 

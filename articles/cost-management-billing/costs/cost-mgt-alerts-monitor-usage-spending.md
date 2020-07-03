@@ -1,21 +1,18 @@
 ---
-title: Мониторинг потребления и расходов с оповещениями о затратах | Документация Майкрософт
+title: Мониторинг потребления и расходов с оповещениями о затратах
 description: В этой статье описывается, как оповещения о затратах помогают отслеживать потребление и расходы в Управлении затратами Azure.
-services: cost-management
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/21/2019
+ms.date: 02/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
-manager: alavital
-ms.custom: ''
-ms.openlocfilehash: 4be484cdff2014f11c872da9a246ef8406447712
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.reviewer: adwise
+ms.openlocfilehash: e3816c167aea80f32c35c7196de166de57dc9622
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75988504"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79203072"
 ---
 # <a name="use-cost-alerts-to-monitor-usage-and-spending"></a>Использование оповещений о затратах для мониторинга потребления и расходов
 

@@ -34,7 +34,7 @@
       items:
         - name: Подключение между службами
           items:
-            - name: AWS
+            - name: AWS CloudTrail
               href: connect-aws.md
             - name: Azure AD
               href: connect-azure-active-directory.md
@@ -54,6 +54,8 @@
               href: connect-azure-atp.md
             - name: Центр безопасности Azure
               href: connect-azure-security-center.md
+            - name: Центр безопасности Azure для Интернета вещей
+              href: connect-asc-iot.md
             - name: Сервер доменных имен
               href: connect-dns.md
             - name: Брандмауэр веб-приложения (Майкрософт)
@@ -64,34 +66,42 @@
               href: connect-windows-security-events.md
         - name: Подключение внешних решений
           items:
-            - name: Barracuda
+            - name: Barracuda WAF
               href: connect-barracuda.md
-            - name: "F5\_BIG-IP"
-              href: connect-f5-big-ip.md
-            - name: Системный журнал
-              href: connect-syslog.md
-            - name: Symantec ICDx
-              href: connect-symantec.md
             - name: Barracuda CloudGen Firewall
               href: connect-barracuda-cloudgen-firewall.md
             - name: Citrix Analytics (модуль безопасности)
               href: connect-citrix-analytics.md
+            - name: "F5\_BIG-IP"
+              href: connect-f5-big-ip.md
+            - name: Forcepoint DLP
+              href: connect-forcepoint-dlp.md
+            - name: Squadra Technologies secRMM
+              href: connect-squadra-secrmm.md
+            - name: Symantec ICDx
+              href: connect-symantec.md
+            - name: Системный журнал
+              href: connect-syslog.md
+            - name: Zimperium Mobile Threat Defense
+              href: connect-zimperium-mtd.md
             - name: Решения на основе CEF
               href: connect-common-event-format.md
               items:
-                - name: Шаг 1. Развертывание агента
+                - name: "Шаг\_1. Развертывание сервера пересылки журналов"
                   href: connect-cef-agent.md
                 - name: Шаг 2. Настройка решения для обеспечения безопасности
                   href: connect-cef-solution-config.md
                   items:
                     - name: Check Point
                       href: connect-checkpoint.md
-                    - name: Cisco
+                    - name: Cisco ASA
                       href: connect-cisco.md
                     - name: ExtraHop Reveal(x)
                       href: connect-extrahop.md
-                    - name: F5
+                    - name: F5 ASM
                       href: connect-f5.md
+                    - name: 'Forcepoint CASB, NGFW'
+                      href: connect-forcepoint-casb-ngfw.md
                     - name: Fortinet
                       href: connect-fortinet.md
                     - name: One Identity Safeguard
@@ -110,6 +120,8 @@
           href: connect-azure-stack.md
     - name: Использование нескольких клиентов (MSSP)
       href: multiple-tenants-service-providers.md
+    - name: Работа с инцидентами в нескольких рабочих областях
+      href: multiple-workspace-view.md
     - name: Настройка управляемых клиентом ключей (CMK)
       href: customer-managed-keys.md
     - name: Создание инцидентов на основе оповещений
@@ -135,3 +147,5 @@
       href: 'https://blogs.msdn.com/b/azuresecurity/'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/'

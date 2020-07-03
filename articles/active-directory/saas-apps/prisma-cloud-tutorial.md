@@ -1,6 +1,6 @@
 ---
-title: Руководство по Интеграции единого входа Azure Active Directory с Prisma Cloud | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и Prisma Cloud.
+title: Руководство по Интеграция единого входа Azure Active Directory с Prisma Cloud SSO | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и Prisma Cloud SSO.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -11,91 +11,92 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/13/2019
+ms.date: 02/07/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd2e74b51e690c13bbc7d3b00603405ed80dd953
-ms.sourcegitcommit: 1c9858eef5557a864a769c0a386d3c36ffc93ce4
+ms.openlocfilehash: e40a5f02a62d1e01e58c1d8a5ca03f0c80a75c84
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71106829"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77086566"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-prisma-cloud"></a>Руководство по Интеграции единого входа Azure Active Directory с Prisma Cloud
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-prisma-cloud-sso"></a>Руководство по Интеграция единого входа Azure Active Directory с Prisma Cloud SSO
 
-В этом руководстве описано, как интегрировать Prisma Cloud с Azure Active Directory (Azure AD). Интеграция Prisma Cloud с Azure AD обеспечивает приведенные ниже возможности.
+В этом руководстве описано, как интегрировать Prisma Cloud SSO с Azure Active Directory (Azure AD). Интеграция Prisma Cloud SSO с Azure AD обеспечивает приведенные ниже возможности.
 
-* С помощью Azure AD вы можете контролировать доступ к Prisma Cloud.
-* Включение автоматического входа пользователей в Prisma Cloud с помощью учетных записей Azure AD.
+* Контроль доступа к Prisma Cloud SSO с помощью Azure AD.
+* Включение автоматического входа пользователей в Prisma Cloud SSO с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Подписка Prisma Cloud с поддержкой единого входа.
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Prisma Cloud SSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-* Prisma Cloud поддерживает единый вход, инициированный **IDP**
+* Prisma Cloud SSO поддерживает единый вход, инициированный **IDP**
 
-* Prisma Cloud поддерживает **JIT**-подготовку пользователей
+* Prisma Cloud SSO поддерживает **JIT**-подготовку пользователей
 
-## <a name="adding-prisma-cloud-from-the-gallery"></a>Добавление Prisma Cloud из коллекции
+* После настройки Prisma Cloud SSO можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
-Чтобы настроить интеграцию Prisma Cloud с Azure AD, необходимо добавить Prisma Cloud из коллекции в список управляемых приложений SaaS.
+## <a name="adding-prisma-cloud-sso-from-the-gallery"></a>Добавление Prisma Cloud SSO из коллекции
+
+Чтобы настроить интеграцию Prisma Cloud SSO с Azure AD, необходимо добавить Prisma Cloud SSO из коллекции в список управляемых приложений SaaS.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
-1. В разделе **Добавление из коллекции** в поле поиска введите **Prisma Cloud**.
-1. Выберите **Prisma Cloud** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Prisma Cloud SSO**.
+1. Выберите **Prisma Cloud SSO** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-prisma-cloud"></a>Настройка и проверка единого входа Azure AD для Prisma Cloud
+## <a name="configure-and-test-azure-ad-single-sign-on-for-prisma-cloud-sso"></a>Настройка и проверка единого входа Azure AD для Prisma Cloud SSO
 
-Настройте и проверьте единый вход Azure AD в Prisma Cloud с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Prisma Cloud.
+Настройте и проверьте единый вход Azure AD в Prisma Cloud SSO с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Prisma Cloud SSO.
 
-Чтобы настроить и проверить единый вход Azure AD в Prisma Cloud, выполните действия в следующих стандартных блоках:
+Чтобы настроить и проверить единый вход Azure AD в Prisma Cloud SSO, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Prisma Cloud](#configure-prisma-cloud-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя Prisma Cloud](#create-prisma-cloud-test-user)** требуется для того, чтобы в Prisma Cloud существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+    1. **[Создание тестового пользователя Prisma Cloud SSO](#create-prisma-cloud-sso-test-user)** требуется для того, чтобы в Prisma Cloud SSO существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Prisma Cloud** найдите раздел **Управление** и выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Prisma Cloud SSO** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Настройка единого входа с помощью SAML** введите значения для следующих полей:
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app2.prismacloud.io/customer/<CUSTOMERID>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app2.prismacloud.io/customer/<CUSTOMERID>`.
 
     b. Значения **URL-адрес ответа** на портале Azure являются фиксированными и предварительно заполненными. Вам необходимо выбрать соответствующий URL-адрес согласно требованиям.
 
     > [!NOTE]
-    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, [обратитесь в службу поддержки клиентов Prisma Cloud](mailto:support@paloaltonetworks.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, [обратитесь в службу поддержки клиентов Prisma Cloud SSO](mailto:support@paloaltonetworks.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-1. Скопируйте требуемый URL-адрес из раздела **Настройка Prisma Cloud**.
+1. Скопируйте требуемый URL-адрес из раздела **Настройка Prisma Cloud SSO**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -113,10 +114,10 @@ ms.locfileid: "71106829"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Prisma Cloud.
+В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Prisma Cloud SSO.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
-1. Из списка приложений выберите **Prisma Cloud**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
+1. Из списка приложений выберите **Prisma Cloud SSO**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
@@ -131,25 +132,26 @@ ms.locfileid: "71106829"
 
 ## <a name="configure-prisma-cloud-sso"></a>Настройка единого входа Prisma Cloud
 
-Чтобы настроить единый вход на стороне **Prisma Cloud**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure в [группу поддержки Prisma Cloud](mailto:support@paloaltonetworks.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Prisma Cloud SSO**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure в [группу поддержки Prisma Cloud SSO](mailto:support@paloaltonetworks.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-### <a name="create-prisma-cloud-test-user"></a>Создание тестового пользователя Prisma Cloud
+### <a name="create-prisma-cloud-sso-test-user"></a>Создание тестового пользователя Prisma Cloud SSO
 
-В этом разделе описано, как в приложении Prisma Cloud создать пользователя B.Simon. Приложение Prisma Cloud поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Prisma Cloud, он создается при попытке доступа к приложению Prisma Cloud.
+В этом разделе описано, как в приложении Prisma Cloud SSO создать пользователя B.Simon. Приложение Prisma Cloud SSO поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Prisma Cloud SSO, он создается при попытке доступа к приложению Prisma Cloud SSO.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув на плитку Prisma Cloud на панели доступа, вы автоматически войдете в приложение Prisma Cloud, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув на плитку Prisma Cloud SSO на панели доступа, вы автоматически войдете в приложение Prisma Cloud SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Пробное использование Prisma Cloud с Azure AD](https://aad.portal.azure.com/)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
+- [Пробное использование Prisma Cloud SSO с Azure AD](https://aad.portal.azure.com/)

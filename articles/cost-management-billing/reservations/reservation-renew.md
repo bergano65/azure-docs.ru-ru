@@ -1,19 +1,18 @@
 ---
 title: Автоматическое продление резервирования Azure
 description: Узнайте, как можно автоматически продлить резервирование Azure, чтобы продолжить получать скидки на резервирование.
-services: billing
 author: bandersmsft
-manager: yashar
+ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 10/01/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: dfff02c554c94daf1dd7fd844cea461fd76589d8
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: fc82fe0f63b244adb74d2242d25270528669380a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995719"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199404"
 ---
 # <a name="automatically-renew-reservations"></a>Автоматическое продление резервирования
 

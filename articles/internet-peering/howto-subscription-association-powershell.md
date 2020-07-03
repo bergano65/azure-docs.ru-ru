@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 77cc4732e017d95cbae19578cf26b1111b08fdde
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75908984"
 ---
 # <a name="associate-peer-asn-to-azure-subscription-using-powershell"></a>Связывание однорангового ASN с подпиской Azure с помощью PowerShell
@@ -105,7 +105,7 @@ Set-PeerAsn -Name Contoso_1234 -Email "newemail@test.com" -Phone "1800-000-0000"
 * [Создание или изменение прямого пиринга](howto-direct-powershell.md)
 * [Преобразование устаревшего прямого пиринга в ресурс Azure](howto-legacy-direct-powershell.md)
 * [Создание или изменение пиринга Exchange](howto-exchange-powershell.md)
-* [Преобразование устаревшего пиринга Exchange в ресурс Azure](howto-legacy-exchange-powershell.md)
+* [Преобразование устаревшего пиринга через точку обмена в ресурс Azure](howto-legacy-exchange-powershell.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

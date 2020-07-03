@@ -1,26 +1,27 @@
 ---
-title: Префикс общедоступных IP-адресов Azure | Документация Майкрософт
+title: Префикс общедоступного IP-адреса Azure
 description: Узнайте о том, какой префикс используется для общедоступных IP-адресов Azure и как с его помощью назначать ресурсам прогнозируемые общедоступные IP-адреса.
 services: virtual-network
 documentationcenter: na
-author: anavinahar
-manager: narayan
+author: asudbring
+manager: KumudD
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-network
+ms.subservice: ip-services
 ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/24/2018
-ms.author: anavin
-ms.openlocfilehash: 12fb7e03062600745cd8511d37b439ce44f2ef78
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.date: 04/08/2020
+ms.author: allensu
+ms.openlocfilehash: 0f71f845ef3209146ead79cafae2f3aa5c8c6d7d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75640726"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82144507"
 ---
 # <a name="public-ip-address-prefix"></a>Префикс общедоступного IP-адреса
 
@@ -46,7 +47,7 @@ ms.locfileid: "75640726"
 ## <a name="scenarios"></a>Сценарии
 Ниже приведены ресурсы, которые можно связать со статическим общедоступным IP-адресом, определяемым префиксом.
 
-|Ресурс|Сценарий|Действия|
+|Ресурс|Сценарий|Шаги|
 |---|---|---|
 |Виртуальные машины| Связывание общедоступных IP-адресов, определяемых префиксом, с виртуальными машинами в Azure сокращает расходы на управление IP-адресами в списке разрешений брандмауэра. Вы можете просто добавить префикс в список разрешений с помощью одного правила брандмауэра. При масштабировании виртуальных машин в Azure вы можете связывать IP-адреса с одинаковым префиксом, уменьшая необходимые для этого расходы, время и операции управления.| Чтобы связать IP-адреса, определяемые префиксом, с виртуальной машиной, сделайте следующее. 1. [Создайте префикс.](manage-public-ip-address-prefix.md) 2. [Создайте IP-адрес, определяемый префиксом.](manage-public-ip-address-prefix.md) 3. [Свяжите IP-адрес с сетевым интерфейсом виртуальной машины.](virtual-network-network-interface-addresses.md#add-ip-addresses) Вы также можете [связать IP-адреса с масштабируемым набором виртуальных машин](https://azure.microsoft.com/resources/templates/101-vmms-with-public-ip-prefix/).
 | Стандартные подсистемы балансировки нагрузки | Связывание общедоступных IP-адресов, определяемых префиксом, с интерфейсной IP-конфигурацией или правилом для исходящего трафика подсистемы балансировки нагрузки упрощает диапазон общедоступных IP-адресов Azure. Можно упростить свой сценарий, очистив исходящие подключения, устанавливаемые из диапазона смежных IP-адресов, определенных префиксом общедоступного IP-адреса. | Чтобы связать IP-адреса, определяемые префиксом, с подсистемой балансировки нагрузки, сделайте следующее. 1. [Создайте префикс.](manage-public-ip-address-prefix.md) 2. [Создайте IP-адрес, определяемый префиксом.](manage-public-ip-address-prefix.md) 3. При создании подсистемы балансировки нагрузки выберите или введите IP-адрес, созданный на шаге 2 выше, в качестве интерфейсного IP-адреса подсистемы балансировки нагрузки. |
@@ -56,7 +57,7 @@ ms.locfileid: "75640726"
 ## <a name="constraints"></a>Ограничения
 
 - Невозможно указать IP-адреса для префикса. Azure выделяет IP-адреса для префикса в зависимости от указанного вами размера.
-- Можно создать префикс длиной до 16 IP-адресов или/28. Дополнительные сведения см. в разделе об [ограничениях Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
+- По умолчанию можно создать префикс длиной до 16 IP-адресов или/28. Чтобы получить дополнительные сведения, ознакомьтесь [с](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) [ограничениями сети](https://docs.microsoft.com/azure/azure-portal/supportability/networking-quota-requests) .
 - После создания префикса изменить диапазон невозможно.
 - Только статические общедоступные IP-адреса, созданные с помощью номера SKU "Стандартный", можно назначить из диапазона префикса. Дополнительные сведения о номерах SKU общедоступных IP-адресов см. в разделе [Общедоступные IP-адреса](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
 - Адреса из диапазона могут назначаться только ресурсам Azure Resource Manager. Ресурсам, созданным с помощью классической модели развертывания, назначить адреса невозможно.
@@ -64,6 +65,6 @@ ms.locfileid: "75640726"
 - Префикс невозможно удалить, если какие-либо его адреса используются в качестве общедоступных IP-адресов, связанных с ресурсом. Сначала следует отменить связь всех ресурсов общедоступных IP-адресов, назначенных из этого префикса.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Создайте](manage-public-ip-address-prefix.md) префикс общедоступного IP-адреса.
+- [Создание](manage-public-ip-address-prefix.md) префикса общедоступного IP-адреса

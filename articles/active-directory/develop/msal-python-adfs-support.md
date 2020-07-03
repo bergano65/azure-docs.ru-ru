@@ -14,10 +14,10 @@ ms.author: abpati
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ms.openlocfilehash: 01d4cb626aabc83117e864b75b49eec63a6c0af0
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76699552"
 ---
 # <a name="active-directory-federation-services-support-in-msal-for-python"></a>Поддержка службы федерации Active Directory (AD FS) в MSAL для Python
@@ -49,16 +49,16 @@ ms.locfileid: "76699552"
 
 Приведенные ниже зависимости применяются непосредственно к службы федерации Active Directory (AD FS) (AD FS) или через Active Directory.
 
-Когда вы получаете маркер с помощью `acquire_token_by_username_password`, MSAL Python Получает поставщик удостоверений для связи на основе имени пользователя. MSAL Python получает [токен SAML 1,1](reference-saml-tokens.md) от поставщика удостоверений, который затем предоставляет Azure AD, который возвращает JSON Web Token (JWT).
+При получении маркера с помощью `acquire_token_by_username_password`MSAL Python Получает поставщик удостоверений для связи на основе имени пользователя. MSAL Python получает [токен SAML 1,1](reference-saml-tokens.md) от поставщика удостоверений, который затем предоставляет Azure AD, который возвращает JSON Web Token (JWT).
 
 ## <a name="connecting-directly-to-ad-fs"></a>Прямое подключение к AD FS
 
-При подключении каталога к AD FS центр, который вы хотите использовать для создания приложения, будет выглядеть примерно так `https://somesite.contoso.com/adfs/`
+При подключении каталога к AD FS центр, который вы хотите использовать для создания приложения, будет выглядеть примерно так:`https://somesite.contoso.com/adfs/`
 
 MSAL Python поддерживает ADFS 2019.
 
 Он не поддерживает прямое подключение к ADFS 2016 или ADFS v2. Если вам требуется поддержка сценариев, требующих прямого подключения к ADFS 2016, используйте последнюю версию ADAL Python. После обновления локальной системы до ADFS 2019 можно использовать MSAL Python.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Сведения об объединенном варианте см. в статье [Настройка поведения при входе Azure Active Directory для приложения с помощью политики обнаружения домашней области](../manage-apps/configure-authentication-for-federated-users-portal.md) .

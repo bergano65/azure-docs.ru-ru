@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 07/19/2019
 ms.author: tehnoonr
 ms.openlocfilehash: a09c15466a4a9f62b2696b087cb7ab23cc767379
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75430577"
 ---
 # <a name="failed-to-update-api-management-service-hostnames"></a>Не удалось обновить имена узлов службы управления API
@@ -28,9 +28,9 @@ ms.locfileid: "75430577"
 
 При попытке добавить личный домен для службы управления API с помощью сертификата из Azure Key Vault появляется следующее сообщение об ошибке:
 
-- Не удалось обновить имена узлов службы управления API. Сбой запроса ресурса "https://vaultname.vault.azure.net/secrets/secretname/?api-version=7.0" с StatusCode: запрещено для RequestId:. Сообщение об исключении: операция вернула недопустимый код состояния "запрещено".
+- Не удалось обновить имена узлов службы управления API. Сбой запроса к ресурсу "https://vaultname.vault.azure.net/secrets/secretname/?api-version=7.0" с StatusCode: запрещено для RequestId:. Сообщение об исключении: операция вернула недопустимый код состояния "запрещено".
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Служба управления API не имеет разрешения на доступ к хранилищу ключей, которое вы пытаетесь использовать для личного домена.
 
@@ -39,7 +39,7 @@ ms.locfileid: "75430577"
 Проблему можно устранить следующим способом.
 
 1. Перейдите к [портал Azure](Https://portal.azure.com), выберите экземпляр управления API, а затем щелкните **управляемые удостоверения**. Убедитесь, что для параметра **Регистрация с Azure Active Directory** выбрано значение **Да**. 
-    ![регистрации в Azure Active Directory](./media/api-management-troubleshoot-cannot-add-custom-domain/register-with-aad.png)
+    ![Регистрация в Azure Active Directory](./media/api-management-troubleshoot-cannot-add-custom-domain/register-with-aad.png)
 1. В портал Azure откройте службу **хранилища ключей** и выберите хранилище ключей, которое вы пытаетесь использовать для личного домена.
 1. Выберите **политики доступа**и проверьте наличие субъекта-службы, соответствующего имени экземпляра службы управления API. Если это так, выберите субъект-службу и убедитесь, что у него есть разрешение **Get** , указанное в разделе **разрешения секрета**.  
     ![Добавление политики доступа для субъекта-службы](./media/api-management-troubleshoot-cannot-add-custom-domain/access-policy.png)
@@ -60,5 +60,5 @@ ms.locfileid: "75430577"
 - См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.
 * Другие способы защиты внутренней серверной службы см. в разделе [Взаимная проверка подлинности на основе сертификата](api-management-howto-mutual-certificates.md).
 
-* [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
+* [Создайте экземпляр службы управления API](get-started-create-service-instance.md).
 * [Импорт и публикация первого API](import-and-publish.md)

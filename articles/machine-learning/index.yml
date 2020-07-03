@@ -1,9 +1,9 @@
 ### YamlMime:Landing
 title: Документация по Машинному обучению Azure
-summary: Машинное обучение Azure предоставляет веб-интерфейсы и пакеты SDK, чтобы вы могли быстро обучать и развертывать модели машинного обучения и конвейеры в нужном масштабе. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn.
+summary: Узнайте, как обучать, развертывать и администрировать модели машинного обучения, использовать эксперименты автоматизированного машинного обучения (AutoML) и конвейеры в большом масштабе с помощью Машинного обучения Azure. Изучите руководства, примеры кода, справочники по API и другие ресурсы.
 metadata:
   title: Документация по Машинному обучению Azure
-  description: Машинное обучение Azure предоставляет веб-интерфейсы и пакеты SDK для быстрого обучения и развертывания моделей машинного обучения и конвейеров в нужном масштабе. Использовать эти возможности можно с помощью платформ Python с открытым кодом, например PyTorch, TensorFlow и scikit-learn.
+  description: Узнайте, как обучать, развертывать и администрировать модели машинного обучения, использовать эксперименты автоматизированного машинного обучения (AutoML) и конвейеры в большом масштабе с помощью Машинного обучения Azure. Изучите руководства, примеры кода, справочники по API и другие ресурсы.
   services: machine-learning
   ms.service: machine-learning
   ms.subservice: core
@@ -11,39 +11,47 @@ metadata:
   ms.collection: collection
   author: j-martens
   ms.author: jmartens
-  ms.date: 01/16/2020
-  ms.openlocfilehash: 340805afe7d21488c6ccd93a2f262d0ed94db88e
-  ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+  ms.date: 04/30/2020
+  ms.openlocfilehash: 57a16ca35699f11c55e12c494a4cbb93bac8a334
+  ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/16/2020
-  ms.locfileid: "76156800"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83593007"
 landingContent:
-- title: Начало работы с Azure ML
+- title: Начало работы с машинным обучением
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Эксперименты в записных книжках Python
+    - text: Записные книжки Python
       url: tutorial-1st-experiment-sdk-setup.md
-    - text: Эксперимент в RStudio
-      url: tutorial-1st-r-experiment.md
-    - text: Эксперименты с использованием конструктора перетаскивания
+    - text: Конструктор (с поддержкой перетаскивания)
       url: tutorial-designer-automobile-price-train-score.md
-    - text: Эксперимент с использованием автоматизированного машинного обучения
+    - text: Автоматизированное машинное обучение (без написания кода или с минимальным написанием кода)
       url: tutorial-first-experiment-automated-ml.md
+    - text: RStudio
+      url: tutorial-1st-r-experiment.md
+- title: Использование веб-интерфейса Studio
+  linkLists:
   - linkListType: overview
     links:
-    - text: Что собой представляет Azure ML?
-      url: overview-what-is-azure-ml.md
-    - text: архитектура и основные понятия
-      url: concept-azure-machine-learning-architecture.md
-  - linkListType: how-to-guide
+    - text: Что такое конструктор (с поддержкой перетаскивания)?
+      url: concept-designer.md
+    - text: Что такое автоматическое машинное обучение?
+      url: concept-automated-ml.md
+    - text: Как выбрать алгоритм
+      url: how-to-select-algorithms.md
+  - linkListType: tutorial
     links:
-    - text: Настройка среды
-      url: how-to-configure-environment.md
-    - text: Настройка целевых объектов вычислений для обучения
-      url: how-to-set-up-training-targets.md
-- title: Эксперимент. Пакет SDK для Python
+    - text: 'AutoML: создание модели классификации'
+      url: tutorial-first-experiment-automated-ml.md
+    - text: 'AutoML: обучение и развертывание моделей машинного обучения'
+      url: how-to-use-automated-ml-for-ml-models.md
+    - text: 'Конструктор: прогнозирование цен на автомобили'
+      url: tutorial-designer-automobile-price-train-score.md
+    - text: Создание проекта маркировки изображений
+      url: tutorial-labeling.md
+- title: Использование пакета SDK для Python
   linkLists:
   - linkListType: tutorial
     links:
@@ -51,10 +59,18 @@ landingContent:
       url: tutorial-1st-experiment-sdk-setup.md
     - text: Классификация изображений
       url: tutorial-train-models-with-aml.md
-    - text: Прогнозирование платы за такси с использованием автоматизированного решения ML
+    - text: Прогнозирование платы за такси с использованием AutoML
       url: tutorial-auto-train-models.md
+    - text: Создание конвейеров Машинного обучения Azure
+      url: tutorial-pipeline-batch-scoring-classification.md
   - linkListType: how-to-guide
     links:
+    - text: Настройка среды
+      url: how-to-configure-environment.md
+    - text: Анализ и описание моделей
+      url: how-to-machine-learning-interpretability.md
+    - text: Глубокое обучение и машинное обучение
+      url: concept-deep-learning-vs-machine-learning.md
     - text: Обучение с помощью Scikit-learn
       url: how-to-train-scikit-learn.md
     - text: Обучение с помощью TensorFlow
@@ -63,29 +79,11 @@ landingContent:
       url: how-to-train-pytorch.md
     - text: Обучение с помощью Keras
       url: how-to-train-keras.md
-- title: Использование конвейеров ML
-  linkLists:
-  - linkListType: overview
-    links:
+    - text: Обучение с подкреплением
+      url: how-to-use-reinforcement-learning.md
     - text: Что такое конвейеры ML?
       url: concept-ml-pipelines.md
-    - text: Конструктор перетаскивания
-      url: concept-designer.md
-  - linkListType: tutorial
-    links:
-    - text: Линейная регрессия для прогнозирования цен (конструктор)
-      url: tutorial-designer-automobile-price-train-score.md
-    - text: Создание конвейеров ML (пакет SDK для Python)
-      url: tutorial-pipeline-batch-scoring-classification.md
-  - linkListType: how-to-guide
-    links:
-    - text: Планирование конвейеров ML (пакет SDK для Python)
-      url: how-to-schedule-pipelines.md
-    - text: Прогнозирование задержек (конструктор)
-      url: how-to-designer-sample-classification-flight-delay.md
-    - text: Прогнозирование оттока клиентов (конструктор)
-      url: how-to-designer-sample-classification-churn.md
-- title: Развертывание моделей и управление ими
+- title: Развертывание моделей и управление ими (MLOps)
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -93,27 +91,25 @@ landingContent:
       url: concept-model-management-and-deployment.md
     - text: Способ и расположение развертывания
       url: how-to-deploy-and-where.md
-    - text: Аутентификация
-      url: how-to-setup-authentication.md
     - text: Прогнозирование в режиме реального времени
       url: how-to-consume-web-service.md
     - text: Прогнозирование в пакетном режиме
       url: how-to-use-parallel-run-step.md
-    - text: Полные примеры (GitHub)
-      url: https://github.com/microsoft/MLOps
 - title: Перейти к справочным документам
   linkLists:
   - linkListType: reference
     links:
     - text: Пакет SDK для Python
-      url: https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py
-    - text: Пакет SDK для R
-      url: https://azure.github.io/azureml-sdk-for-r/reference/index.html
-    - text: Интерфейс командной строки для Машинного обучения
-      url: https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest
+      url: https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py
     - text: Алгоритмы конструктора и модули
       url: algorithm-module-reference/module-reference.md
+    - text: Репозиторий с примерами MLOps
+      url: https://github.com/microsoft/MLOps
     - text: REST API
       url: https://docs.microsoft.com/rest/api/azureml/
+    - text: Интерфейс командной строки для Машинного обучения
+      url: https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest
     - text: Эталонные архитектуры для ИИ (GitHub)
       url: https://github.com/Microsoft/AI
+    - text: Пакет SDK для R
+      url: https://azure.github.io/azureml-sdk-for-r/reference/index.html

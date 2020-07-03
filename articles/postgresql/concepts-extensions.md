@@ -7,17 +7,17 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.openlocfilehash: a12738f5de783c8a34718b8d9cb4bbf54f230589
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77201277"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL — один сервер
 PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения объединяют несколько связанных объектов SQL в один пакет, который можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных функции расширений, такие как встроенные функции.
 
 ## <a name="how-to-use-postgresql-extensions"></a>Как использовать расширения PostgreSQL
-Чтобы использовать расширения PostgreSQL, их необходимо сначала установить в базу данных. Чтобы установить определенное расширение, выполните команду  [CREATE EXTENSION](https://www.postgresql.org/docs/current/sql-createextension.html),  используя инструмент psql. При этом упакованные объекты будут загружены в базу данных.
+Чтобы использовать расширения PostgreSQL, их необходимо сначала установить в базу данных. Чтобы установить определенное расширение, выполните команду " [создать расширение](https://www.postgresql.org/docs/current/sql-createextension.html) " из средства PSQL, чтобы загрузить упакованные объекты в базу данных.
 
 База данных Azure для PostgreSQL поддерживает подмножество расширений ключей, как указано ниже. Эти сведения также можно получить, выполнив `SELECT * FROM pg_available_extensions;`. Расширения, выходящие за рамки перечисленных, не поддерживаются. Вы не можете создать собственное расширение в базе данных Azure для PostgreSQL.
 
@@ -26,14 +26,14 @@ PostgreSQL предоставляет возможность расширить 
 В базе данных Azure для серверов PostgreSQL доступны следующие расширения с Postgres версии 11. 
 
 > [!div class="mx-tableFixed"]
-> | **Расширение**| **Версия расширения** | **Описание** |
+> | **Расширение**| **версия расширения;** | **Описание** |
 > |---|---|---|
 > |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.5.1           | Используются для анализа адреса в составных элементы. |
 > |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.5.1           | Пример набора данных для стандартизации адресов США|
-> |[btree_gin](https://www.postgresql.org/docs/11/btree-gin.html)                    | 1,3             | Поддержка индексирования общих типов в Ло|
+> |[btree_gin](https://www.postgresql.org/docs/11/btree-gin.html)                    | 1.3             | Поддержка индексирования общих типов в Ло|
 > |[btree_gist](https://www.postgresql.org/docs/11/btree-gist.html)                   | 1.5             | Поддержка индексирования общих типов в реестрах|
 > |[citext](https://www.postgresql.org/docs/11/citext.html)                       | 1.5             | тип данных для символьных строк без учета регистра|
-> |[cube](https://www.postgresql.org/docs/11/cube.html)                         | 1.4             | тип данных для многомерных кубов|
+> |[Куба](https://www.postgresql.org/docs/11/cube.html)                         | 1.4             | тип данных для многомерных кубов|
 > |[dblink](https://www.postgresql.org/docs/11/dblink.html)                       | 1.2             | подключение к другим базам данных PostgreSQL из базы данных|
 > |[dict_int](https://www.postgresql.org/docs/11/dict-int.html)                     | 1.0             | шаблон словаря поиска текста для целых чисел|
 > |[earthdistance](https://www.postgresql.org/docs/11/earthdistance.html)                | 1.1             | Вычислите большие расстояния на поверхности земли|
@@ -45,11 +45,11 @@ PostgreSQL предоставляет возможность расширить 
 > |[ltree](https://www.postgresql.org/docs/11/ltree.html)                        | 1.1             | тип данных для иерархических структур, схожих с деревом|
 > |[орафце](https://github.com/orafce/orafce)                       | 3,7             | Функции и операторы, имитирующие подмножество функций и пакетов из коммерческой RDBMS|
 > |[пгаудит](https://www.pgaudit.org/)                     | 1.3.1             | предоставляет функции аудита|
-> |[pgcrypto](https://www.postgresql.org/docs/11/pgcrypto.html)                     | 1,3             | криптографические функции|
+> |[pgcrypto](https://www.postgresql.org/docs/11/pgcrypto.html)                     | 1.3             | криптографические функции|
 > |[pgrouting](https://pgrouting.org/)                    | 2.6.2           | Расширение Пграутинг|
 > |[pgrowlocks](https://www.postgresql.org/docs/11/pgrowlocks.html)                   | 1.2             | показывать сведения о блокировке на уровне строк|
 > |[pgstattuple](https://www.postgresql.org/docs/11/pgstattuple.html)                  | 1.5             | Отображение статистики на уровне кортежей|
-> |[pg_buffercache](https://www.postgresql.org/docs/11/pgbuffercache.html)               | 1,3             | Проверка общего кэша буфера|
+> |[pg_buffercache](https://www.postgresql.org/docs/11/pgbuffercache.html)               | 1.3             | Проверка общего кэша буфера|
 > |[pg_partman](https://github.com/pgpartman/pg_partman)                   | 4.0.0           | Расширение для управления секционированными таблицами по времени или ИДЕНТИФИКАТОРу|
 > |[pg_prewarm](https://www.postgresql.org/docs/11/pgprewarm.html)                   | 1.2             | предтеплое отношение данных|
 > |[pg_stat_statements](https://www.postgresql.org/docs/11/pgstatstatements.html)           | 1.6             | Трассировка статистики выполнения всех выполненных инструкций SQL|
@@ -71,15 +71,15 @@ PostgreSQL предоставляет возможность расширить 
 В базе данных Azure для серверов PostgreSQL доступны следующие расширения с Postgres версии 10.
 
 > [!div class="mx-tableFixed"]
-> | **Расширение**| **Версия расширения** | **Описание** |
+> | **Расширение**| **версия расширения;** | **Описание** |
 > |---|---|---|
 > |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.5.1           | Используются для анализа адреса в составных элементы. |
 > |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.5.1           | Пример набора данных для стандартизации адресов США|
-> |[btree_gin](https://www.postgresql.org/docs/10/btree-gin.html)                    | 1,3             | Поддержка индексирования общих типов в Ло|
+> |[btree_gin](https://www.postgresql.org/docs/10/btree-gin.html)                    | 1.3             | Поддержка индексирования общих типов в Ло|
 > |[btree_gist](https://www.postgresql.org/docs/10/btree-gist.html)                   | 1.5             | Поддержка индексирования общих типов в реестрах|
 > |[chkpass](https://www.postgresql.org/docs/10/chkpass.html)                       | 1.0             | тип данных для автоматического шифрования паролей|
 > |[citext](https://www.postgresql.org/docs/10/citext.html)                       | 1.4             | тип данных для символьных строк без учета регистра|
-> |[cube](https://www.postgresql.org/docs/10/cube.html)                         | 1.2             | тип данных для многомерных кубов|
+> |[Куба](https://www.postgresql.org/docs/10/cube.html)                         | 1.2             | тип данных для многомерных кубов|
 > |[dblink](https://www.postgresql.org/docs/10/dblink.html)                       | 1.2             | подключение к другим базам данных PostgreSQL из базы данных|
 > |[dict_int](https://www.postgresql.org/docs/10/dict-int.html)                     | 1.0             | шаблон словаря поиска текста для целых чисел|
 > |[earthdistance](https://www.postgresql.org/docs/10/earthdistance.html)                | 1.1             | Вычислите большие расстояния на поверхности земли|
@@ -91,15 +91,15 @@ PostgreSQL предоставляет возможность расширить 
 > |[ltree](https://www.postgresql.org/docs/10/ltree.html)                        | 1.1             | тип данных для иерархических структур, схожих с деревом|
 > |[орафце](https://github.com/orafce/orafce)                       | 3,7             | Функции и операторы, имитирующие подмножество функций и пакетов из коммерческой RDBMS|
 > |[пгаудит](https://www.pgaudit.org/)                     | 1.2             | предоставляет функции аудита|
-> |[pgcrypto](https://www.postgresql.org/docs/10/pgcrypto.html)                     | 1,3             | криптографические функции|
+> |[pgcrypto](https://www.postgresql.org/docs/10/pgcrypto.html)                     | 1.3             | криптографические функции|
 > |[pgrouting](https://pgrouting.org/)                    | 2.5.2           | Расширение Пграутинг|
 > |[pgrowlocks](https://www.postgresql.org/docs/10/pgrowlocks.html)                   | 1.2             | показывать сведения о блокировке на уровне строк|
 > |[pgstattuple](https://www.postgresql.org/docs/10/pgstattuple.html)                  | 1.5             | Отображение статистики на уровне кортежей|
-> |[pg_buffercache](https://www.postgresql.org/docs/10/pgbuffercache.html)               | 1,3             | Проверка общего кэша буфера|
+> |[pg_buffercache](https://www.postgresql.org/docs/10/pgbuffercache.html)               | 1.3             | Проверка общего кэша буфера|
 > |[pg_partman](https://github.com/pgpartman/pg_partman)                   | 2.6.3           | Расширение для управления секционированными таблицами по времени или ИДЕНТИФИКАТОРу|
 > |[pg_prewarm](https://www.postgresql.org/docs/10/pgprewarm.html)                   | 1.1             | предтеплое отношение данных|
 > |[pg_stat_statements](https://www.postgresql.org/docs/10/pgstatstatements.html)           | 1.6             | Трассировка статистики выполнения всех выполненных инструкций SQL|
-> |[pg_trgm](https://www.postgresql.org/docs/10/pgtrgm.html)                      | 1,3             | измерение подобия текста и поиск по индексу на основе триграммов|
+> |[pg_trgm](https://www.postgresql.org/docs/10/pgtrgm.html)                      | 1.3             | измерение подобия текста и поиск по индексу на основе триграммов|
 > |[plpgsql](https://www.postgresql.org/docs/10/plpgsql.html)                      | 1.0             | Процедурный язык PL/pgSQL|
 > |[plv8](https://plv8.github.io/)                         | 2.1.0          | Доверенный процедурный язык PL/JavaScript (V8)|
 > |[PostGIS](https://www.postgis.net/)                      | 2.4.3           | PostGISие геометрических, географических и растровых пространственных типов и функций|
@@ -117,15 +117,15 @@ PostgreSQL предоставляет возможность расширить 
 В базе данных Azure для серверов PostgreSQL доступны следующие расширения с Postgres версии 9,6.
 
 > [!div class="mx-tableFixed"]
-> | **Расширение**| **Версия расширения** | **Описание** |
+> | **Расширение**| **версия расширения;** | **Описание** |
 > |---|---|---|
 > |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.3.2           | Используются для анализа адреса в составных элементы. |
 > |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.3.2           | Пример набора данных для стандартизации адресов США|
 > |[btree_gin](https://www.postgresql.org/docs/9.6/btree-gin.html)                    | 1.0             | Поддержка индексирования общих типов в Ло|
 > |[btree_gist](https://www.postgresql.org/docs/9.6/btree-gist.html)                   | 1.2             | Поддержка индексирования общих типов в реестрах|
 > |[chkpass](https://www.postgresql.org/docs/9.6/chkpass.html)                       | 1.0             | тип данных для автоматического шифрования паролей|
-> |[citext](https://www.postgresql.org/docs/9.6/citext.html)                       | 1,3             | тип данных для символьных строк без учета регистра|
-> |[cube](https://www.postgresql.org/docs/9.6/cube.html)                         | 1.2             | тип данных для многомерных кубов|
+> |[citext](https://www.postgresql.org/docs/9.6/citext.html)                       | 1.3             | тип данных для символьных строк без учета регистра|
+> |[Куба](https://www.postgresql.org/docs/9.6/cube.html)                         | 1.2             | тип данных для многомерных кубов|
 > |[dblink](https://www.postgresql.org/docs/9.6/dblink.html)                       | 1.2             | подключение к другим базам данных PostgreSQL из базы данных|
 > |[dict_int](https://www.postgresql.org/docs/9.6/dict-int.html)                     | 1.0             | шаблон словаря поиска текста для целых чисел|
 > |[earthdistance](https://www.postgresql.org/docs/9.6/earthdistance.html)                | 1.1             | Вычислите большие расстояния на поверхности земли|
@@ -137,7 +137,7 @@ PostgreSQL предоставляет возможность расширить 
 > |[ltree](https://www.postgresql.org/docs/9.6/ltree.html)                        | 1.1             | тип данных для иерархических структур, схожих с деревом|
 > |[орафце](https://github.com/orafce/orafce)                       | 3,7             | Функции и операторы, имитирующие подмножество функций и пакетов из коммерческой RDBMS|
 > |[пгаудит](https://www.pgaudit.org/)                     | 1.1.2             | предоставляет функции аудита|
-> |[pgcrypto](https://www.postgresql.org/docs/9.6/pgcrypto.html)                     | 1,3             | криптографические функции|
+> |[pgcrypto](https://www.postgresql.org/docs/9.6/pgcrypto.html)                     | 1.3             | криптографические функции|
 > |[pgrouting](https://pgrouting.org/)                    | 2.3.2           | Расширение Пграутинг|
 > |[pgrowlocks](https://www.postgresql.org/docs/9.6/pgrowlocks.html)                   | 1.2             | показывать сведения о блокировке на уровне строк|
 > |[pgstattuple](https://www.postgresql.org/docs/9.6/pgstattuple.html)                  | 1.4             | Отображение статистики на уровне кортежей|
@@ -145,7 +145,7 @@ PostgreSQL предоставляет возможность расширить 
 > |[pg_partman](https://github.com/pgpartman/pg_partman)                   | 2.6.3           | Расширение для управления секционированными таблицами по времени или ИДЕНТИФИКАТОРу|
 > |[pg_prewarm](https://www.postgresql.org/docs/9.6/pgprewarm.html)                   | 1.1             | предтеплое отношение данных|
 > |[pg_stat_statements](https://www.postgresql.org/docs/9.6/pgstatstatements.html)           | 1.4             | Трассировка статистики выполнения всех выполненных инструкций SQL|
-> |[pg_trgm](https://www.postgresql.org/docs/9.6/pgtrgm.html)                      | 1,3             | измерение подобия текста и поиск по индексу на основе триграммов|
+> |[pg_trgm](https://www.postgresql.org/docs/9.6/pgtrgm.html)                      | 1.3             | измерение подобия текста и поиск по индексу на основе триграммов|
 > |[plpgsql](https://www.postgresql.org/docs/9.6/plpgsql.html)                      | 1.0             | Процедурный язык PL/pgSQL|
 > |[plv8](https://plv8.github.io/)                         | 2.1.0          | Доверенный процедурный язык PL/JavaScript (V8)|
 > |[PostGIS](https://www.postgis.net/)                      | 2.3.2           | PostGISие геометрических, географических и растровых пространственных типов и функций|
@@ -163,7 +163,7 @@ PostgreSQL предоставляет возможность расширить 
 В базе данных Azure для серверов PostgreSQL доступны следующие расширения с Postgres версии 9,5.
 
 > [!div class="mx-tableFixed"]
-> | **Расширение**| **Версия расширения** | **Описание** |
+> | **Расширение**| **версия расширения;** | **Описание** |
 > |---|---|---|
 > |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.3.0           | Используются для анализа адреса в составных элементы. |
 > |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.3.0           | Пример набора данных для стандартизации адресов США|
@@ -171,12 +171,12 @@ PostgreSQL предоставляет возможность расширить 
 > |[btree_gist](https://www.postgresql.org/docs/9.5/btree-gist.html)                   | 1.1             | Поддержка индексирования общих типов в реестрах|
 > |[chkpass](https://www.postgresql.org/docs/9.5/chkpass.html)                       | 1.0             | тип данных для автоматического шифрования паролей|
 > |[citext](https://www.postgresql.org/docs/9.5/citext.html)                       | 1.1             | тип данных для символьных строк без учета регистра|
-> |[cube](https://www.postgresql.org/docs/9.5/cube.html)                         | 1.0             | тип данных для многомерных кубов|
+> |[Куба](https://www.postgresql.org/docs/9.5/cube.html)                         | 1.0             | тип данных для многомерных кубов|
 > |[dblink](https://www.postgresql.org/docs/9.5/dblink.html)                       | 1.1             | подключение к другим базам данных PostgreSQL из базы данных|
 > |[dict_int](https://www.postgresql.org/docs/9.5/dict-int.html)                     | 1.0             | шаблон словаря поиска текста для целых чисел|
 > |[earthdistance](https://www.postgresql.org/docs/9.5/earthdistance.html)                | 1.0             | Вычислите большие расстояния на поверхности земли|
 > |[fuzzystrmatch](https://www.postgresql.org/docs/9.5/fuzzystrmatch.html)                | 1.0             | определение сходства и расстояния между строками|
-> |[hstore](https://www.postgresql.org/docs/9.5/hstore.html)                       | 1,3             | тип данных для хранения наборов пар (ключ, значение)|
+> |[hstore](https://www.postgresql.org/docs/9.5/hstore.html)                       | 1.3             | тип данных для хранения наборов пар (ключ, значение)|
 > |[hypopg](https://hypopg.readthedocs.io/en/latest/)                       | 1.1.1           | Гипотетические индексы для PostgreSQL|
 > |[intarray](https://www.postgresql.org/docs/9.5/intarray.html)                     | 1.0             | функции, операторы и поддержка индексов для 1-D массивов целых чисел|
 > |[isn](https://www.postgresql.org/docs/9.5/isn.html)                          | 1.0             | типы данных для международных стандартов нумерации продуктов|
@@ -186,11 +186,11 @@ PostgreSQL предоставляет возможность расширить 
 > |[pgcrypto](https://www.postgresql.org/docs/9.5/pgcrypto.html)                     | 1.2             | криптографические функции|
 > |[pgrouting](https://pgrouting.org/)                    | 2.3.0           | Расширение Пграутинг|
 > |[pgrowlocks](https://www.postgresql.org/docs/9.5/pgrowlocks.html)                   | 1.1             | показывать сведения о блокировке на уровне строк|
-> |[pgstattuple](https://www.postgresql.org/docs/9.5/pgstattuple.html)                  | 1,3             | Отображение статистики на уровне кортежей|
+> |[pgstattuple](https://www.postgresql.org/docs/9.5/pgstattuple.html)                  | 1.3             | Отображение статистики на уровне кортежей|
 > |[pg_buffercache](https://www.postgresql.org/docs/9.5/pgbuffercache.html)               | 1.1             | Проверка общего кэша буфера|
 > |[pg_partman](https://github.com/pgpartman/pg_partman)                   | 2.6.3           | Расширение для управления секционированными таблицами по времени или ИДЕНТИФИКАТОРу|
 > |[pg_prewarm](https://www.postgresql.org/docs/9.5/pgprewarm.html)                   | 1.0             | предтеплое отношение данных|
-> |[pg_stat_statements](https://www.postgresql.org/docs/9.5/pgstatstatements.html)           | 1,3             | Трассировка статистики выполнения всех выполненных инструкций SQL|
+> |[pg_stat_statements](https://www.postgresql.org/docs/9.5/pgstatstatements.html)           | 1.3             | Трассировка статистики выполнения всех выполненных инструкций SQL|
 > |[pg_trgm](https://www.postgresql.org/docs/9.5/pgtrgm.html)                      | 1.1             | измерение подобия текста и поиск по индексу на основе триграммов|
 > |[plpgsql](https://www.postgresql.org/docs/9.5/plpgsql.html)                      | 1.0             | Процедурный язык PL/pgSQL|
 > |[PostGIS](https://www.postgis.net/)                      | 2.3.0           | PostGISие геометрических, географических и растровых пространственных типов и функций|
@@ -215,7 +215,7 @@ PostgreSQL предоставляет возможность расширить 
 В настоящее время исходящие подключения из базы данных Azure для PostgreSQL не поддерживаются, за исключением подключений к другим серверам базы данных Azure для PostgreSQL.
 
 ## <a name="uuid"></a>uuid
-Если вы планируете использовать `uuid_generate_v4()` из [расширения UUID-ОССП](https://www.postgresql.org/docs/current/uuid-ossp.html), рассмотрите возможность сравнения с `gen_random_uuid()` из [расширения пгкрипто](https://www.postgresql.org/docs/current/pgcrypto.html) для повышения производительности.
+Если вы планируете `uuid_generate_v4()` использовать из [расширения UUID-ОССП](https://www.postgresql.org/docs/current/uuid-ossp.html), рассмотрите возможность сравнения с `gen_random_uuid()` из [расширения пгкрипто](https://www.postgresql.org/docs/current/pgcrypto.html) для повышения производительности.
 
 ## <a name="pgaudit"></a>пгаудит
 [Расширение пгаудит](https://github.com/pgaudit/pgaudit/blob/master/README.md) обеспечивает ведение журнала аудита сеансов и объектов. Сведения об использовании этого расширения в базе данных Azure для PostgreSQL см. в [статье основные понятия аудита](concepts-audit.md). 
@@ -223,7 +223,7 @@ PostgreSQL предоставляет возможность расширить 
 ## <a name="pg_prewarm"></a>pg_prewarm
 Расширение pg_prewarm загружает реляционные данные в кэш. Предварительная подготовка кэшей означает, что запросы имеют лучшее время ответа при первом запуске после перезагрузки. В postgres 10 и ниже предгорячий предназначение выполняется вручную с помощью [предгорячей функции](https://www.postgresql.org/docs/10/pgprewarm.html).
 
-В postgres 11 и более поздних версиях можно настроить предварительную предзагрузку в [автоматическом](https://www.postgresql.org/docs/current/pgprewarm.html)состоянии. Необходимо включить pg_prewarm в список параметров `shared_preload_libraries` и перезапустить сервер, чтобы применить изменения. Параметры можно задать в шаблоне [портал Azure](howto-configure-server-parameters-using-portal.md), [CLI](howto-configure-server-parameters-using-cli.md), REST API или ARM. 
+В postgres 11 и более поздних версиях можно настроить предварительную предзагрузку в [автоматическом](https://www.postgresql.org/docs/current/pgprewarm.html)состоянии. Необходимо включить pg_prewarm в список `shared_preload_libraries` параметров и перезапустить сервер, чтобы применить изменения. Параметры можно задать в шаблоне [портал Azure](howto-configure-server-parameters-using-portal.md), [CLI](howto-configure-server-parameters-using-cli.md), REST API или ARM. 
 
 ## <a name="timescaledb"></a>тимескаледб
 Тимескаледб — это база данных временных рядов, которая упакована как расширение для PostgreSQL. Тимескаледб обеспечивает ориентированные на время аналитические функции, оптимизации и масштабирование postgres для рабочих нагрузок временных рядов.
@@ -231,7 +231,7 @@ PostgreSQL предоставляет возможность расширить 
 [Узнайте больше о тимескаледб](https://docs.timescale.com/latest), охраняемом товарном знаке [шкалы времени, Inc.](https://www.timescale.com/) База данных Azure для PostgreSQL предоставляет версию шкалы времени с открытым исходным кодом. Сведения о том, какие функции шкалы времени доступны в этой версии, см. [в статье сравнение продукта на временной шкале](https://www.timescale.com/products/).
 
 ### <a name="installing-timescaledb"></a>Установка Тимескаледб
-Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу изменения параметра `shared_preload_libraries` postgres требуется **Перезагрузка сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
+Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу `shared_preload_libraries` изменения параметра postgres требуется **Перезагрузка сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
 Использование [портал Azure](https://portal.azure.com/):
 
@@ -258,7 +258,7 @@ CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 Теперь можно создать таблицу Тимескаледб [с нуля](https://docs.timescale.com/getting-started/creating-hypertables) или перенести [существующие данные временных рядов в PostgreSQL](https://docs.timescale.com/getting-started/migrating-data).
 
 ### <a name="restoring-a-timescale-database"></a>Восстановление базы данных шкалы времени
-Чтобы восстановить базу данных шкалы времени с помощью pg_dump и pg_restore, необходимо выполнить две вспомогательные процедуры в целевой базе данных: `timescaledb_pre_restore()` и `timescaledb_post restore()`.
+Чтобы восстановить базу данных шкалы времени с помощью pg_dump и pg_restore, необходимо выполнить две вспомогательные процедуры в целевой базе данных `timescaledb_pre_restore()` : `timescaledb_post restore()`и.
 
 Сначала подготовьте целевую базу данных:
 
@@ -278,5 +278,5 @@ SELECT timescaledb_post_restore();
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Если вы не видите расширение, которое вы хотите использовать, сообщите нам. Проголосуйте за существующие запросы или создавайте новые запросы на отзыв на [форуме отзывов](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).

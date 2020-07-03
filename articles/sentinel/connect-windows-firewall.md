@@ -3,7 +3,7 @@ title: Подключение данных брандмауэра Windows к Azu
 description: Узнайте, как подключить данные брандмауэра Windows к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.assetid: 0e41f896-8521-49b8-a244-71c78d469bc3
@@ -14,13 +14,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
-ms.author: rkarlin
-ms.openlocfilehash: feb7fa0b3f820c3f918fc8a5c817e7fe5fb15fc9
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.author: yelevin
+ms.openlocfilehash: 5d2f68261143c3fc5bbcda0b739af17251eeee63
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75610409"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77588065"
 ---
 # <a name="connect-windows-firewall"></a>Подключение брандмауэра Windows
 
@@ -44,7 +44,7 @@ ms.locfileid: "75610409"
 
 2. Если компьютер Windows не является виртуальной машиной Azure, выполните следующие действия.
     1. Щелкните **установить агент на компьютерах, не**относящихся к Azure.
-    1. В окне **Direct Agent (прямое агент** ) выберите **скачать агент Windows (64 bit)** или **скачать агент Windows (32 бит)** .
+    1. В окне **Direct Agent (прямое агент** ) выберите **скачать агент Windows (64 bit)** или **скачать агент Windows (32 бит)**.
     1. Установите агент на компьютере Windows. Скопируйте **идентификатор рабочей области**, **первичный ключ**и **вторичный ключ** и используйте их при появлении запроса во время установки.
 
 4. Выберите типы данных, которые необходимо передать в поток.
@@ -57,7 +57,7 @@ ms.locfileid: "75610409"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить брандмауэр Windows к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

@@ -10,10 +10,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/14/2020
 ms.openlocfilehash: 7c2857de0613be400f83544e1dabe079b7497bbd
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77212391"
 ---
 # <a name="scale-for-performance-on-azure-cognitive-search"></a>Масштабирование для производительности Когнитивный поиск Azure
@@ -119,7 +119,7 @@ Azure Когнитивный поиск в настоящее время не п
 
    ![Перекрестные запросы к службам по региону с использованием диспетчера трафика][3]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о ценовых категориях и службах для каждого из них см. в разделе [ограничения служб](search-limits-quotas-capacity.md). Дополнительные сведения о комбинациях секций и реплик см. в разделе [планирование емкости](search-capacity-planning.md) .
 

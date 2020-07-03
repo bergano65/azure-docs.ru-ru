@@ -1,31 +1,25 @@
 ---
 title: Краткое руководство. Создание виртуальной машины Windows с помощью портала Azure
 description: Из этого краткого руководства вы узнаете, как с помощью портала Azure создать виртуальную машину Windows.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.topic: quickstart
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/05/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 002d374f5be606688121ef4a3952383567c43e85
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 5cf23a9c66c76f778dbd5d2b126b28a5a577c978
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73685245"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82098005"
 ---
 # <a name="quickstart-create-a-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины Windows на портале Azure
 
 Виртуальные машины Azure можно создать на портале Azure. В этом случае для создания виртуальных машин и всех связанных ресурсов используется пользовательский интерфейс в браузере. В этом кратком руководстве показано, как с помощью портала Azure развернуть в Azure виртуальную машину Windows под управлением Windows Server 2019. Чтобы проверить работу виртуальной машины, вы подключитесь к ней по протоколу удаленного рабочего стола (RDP) и установите веб-сервер IIS.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -59,7 +53,7 @@ ms.locfileid: "73685245"
 
 ## <a name="connect-to-virtual-machine"></a>Подключение к виртуальной машине
 
-Создайте удаленное подключение к рабочему столу виртуальной машины. Ниже представлены инструкции для подключения к виртуальной машине с компьютера Windows. На компьютере Mac вам понадобится клиент RDP, например [Remote Desktop Client](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12) из Mac App Store.
+Создайте подключение удаленного рабочего стола к виртуальной машине. Ниже представлены инструкции для подключения к виртуальной машине с компьютера Windows. На компьютере Mac вам понадобится клиент RDP, например [Remote Desktop Client](https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) из Mac App Store.
 
 1. Нажмите кнопку **Подключиться** на странице обзора виртуальной машины. 
 
@@ -96,7 +90,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 
 Выберите группу ресурсов для виртуальной машины и щелкните **Удалить**. Подтвердите имя группы ресурсов, чтобы завершить удаление ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этим кратким руководством вы развернули простую виртуальную машину, открыли сетевой порт для веб-трафика и установили базовый веб-сервер. Дополнительные сведения о виртуальных машинах Azure см. в руководстве по работе с виртуальными машинами Windows.
 

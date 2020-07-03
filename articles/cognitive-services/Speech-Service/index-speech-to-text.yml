@@ -1,0 +1,76 @@
+### YamlMime:Landing
+title: Документация по преобразованию речи в текст
+summary: Преобразование речи в текст из речевой службы, известной также как распознавание речи, позволяет в режиме реального времени и пакетной транскрипции проголосовать текстовые потоки в текст. С помощью дополнительного ввода справочных данных он также обеспечивает оценку произношения в режиме реального времени и дает отзывы о точности и владение речевого звука.
+metadata:
+  title: Документация по голосовым функциям в тексте. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: trevorbye
+  manager: nitinme
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 03/19/2020
+  ms.author: trbye
+  ms.openlocfilehash: c1f4b6b43f661251f764e65e5d5378952ab99d10
+  ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/22/2020
+  ms.locfileid: "83800861"
+landingContent:
+- title: О распознавании речи в текст
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое преобразование речи в текст в реальном времени?
+      url: speech-to-text.md
+    - text: Что такое пакетное преобразование речи в текст?
+      url: batch-transcription.md
+    - text: Основы распознавания речи
+      url: speech-to-text-basics.md
+    - text: Использование речевого интерфейса командной строки для преобразования речи в текст без кода
+      url: spx-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Распознавание речи при вводе с микрофона
+      url: quickstarts/speech-to-text-from-microphone.md
+    - text: Распознавание речи из звукового файла
+      url: quickstarts/speech-to-text-from-file.md
+    - text: Распознавание речи из файлов, находящихся в хранилище BLOB-объектов
+      url: quickstarts/from-blob.md
+    - text: Оценка произношения с использованием эталонных входных данных
+      url: rest-speech-to-text.md#pronunciation-assessment-parameters
+- title: Разработка с помощью преобразования речи в текст
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Выбор режима распознавания речи
+      url: how-to-choose-recognition-mode.md
+    - text: Изменение исходного языка при распознавании речи
+      url: how-to-specify-source-language.md
+    - text: Повышение точности с помощью пользовательского распознавания речи
+      url: how-to-custom-speech.md
+    - text: Использование форматов сжатых входных звуковых данных
+      url: how-to-use-codec-compressed-audio-input-streams.md
+  - linkListType: tutorial
+    links:
+    - text: Повышение точности с помощью моделей клиентов
+      url: tutorial-tenant-model.md
+  - linkListType: concept
+    links:
+    - text: Подготовка данных для службы пользовательского распознавания речи
+      url: how-to-custom-speech-test-and-train.md
+    - text: Обучение модели для службы пользовательского распознавания речи
+      url: how-to-custom-speech-train-model.md
+    - text: Создание транскрипций с подписями человека
+      url: how-to-custom-speech-human-labeled-transcriptions.md
+- title: Ссылки
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Поддержка языков
+      url: language-support.md#speech-to-text
+    - text: Вопросы и ответы. Преобразование речи в текст
+      url: faq-stt.md
+    - text: Цены на преобразование речи в текст
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services

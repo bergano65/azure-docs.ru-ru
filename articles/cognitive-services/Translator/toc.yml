@@ -1,10 +1,10 @@
-- name: Документация по API Перевода текстов
+- name: Документация по службе "Переводчик"
   href: index.yml
-- name: API Перевода текстов
+- name: API перевода
   items:
     - name: Обзор
       items:
-        - name: Что собой представляет API Перевода текстов
+        - name: Что такое Переводчик?
           href: translator-info-overview.md
     - name: Краткие руководства
       items:
@@ -22,7 +22,7 @@
           href: quickstart-sentences.md
     - name: Учебники
       items:
-        - name: 'Создание приложения WPF для API "Перевод текстов" на C#'
+        - name: 'Создание приложения WPF для службы "Переводчик" (C#)'
           href: tutorial-wpf-translation-csharp.md
         - name: Создание приложения Flask для перевода на Python
           href: tutorial-build-flask-app-translation-synthesis.md
@@ -32,9 +32,9 @@
           href: customization.md
         - name: Как в API подсчитывается количество знаков
           href: character-counts.md
-    - name: Инструкции
+    - name: Практические руководства
       items:
-        - name: Регистрация для использования API Перевода текстов
+        - name: Регистрация для использования службы "Переводчик"
           href: translator-text-how-to-signup.md
         - name: "Миграция в API Перевода текстов версии\_3"
           href: migrate-to-v3.md
@@ -46,12 +46,6 @@
           href: prevent-translation.md
         - name: Использование функции динамического словаря
           href: dynamic-dictionary.md
-        - name: Использование контейнеров
-          items:
-            - name: Установка и запуск контейнеров
-              href: how-to-install-containers.md
-            - name: Настройка контейнеров
-              href: translator-text-container-config.md
         - name: Перевод за брандмауэрами
           href: firewalls.md
     - name: Примеры
@@ -70,9 +64,9 @@
           href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-PHP'
         - name: Ruby
           href: 'https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Ruby'
-    - name: Справочные материалы
+    - name: Справочник
       items:
-        - name: "Справочник по API Перевода текстов версии\_3"
+        - name: "Справочник по службе \"Переводчик\" версии\_3"
           href: reference/v3-0-reference.md
           items:
             - name: Языки
@@ -89,7 +83,7 @@
               href: reference/v3-0-dictionary-lookup.md
             - name: Примеры словарей
               href: reference/v3-0-dictionary-examples.md
-        - name: "Справочник по API Перевода текстов версии\_2 (нерекомендуемая версия)"
+        - name: "Справочник по службе \"Переводчик\" версии\_2 (нерекомендуемая версия)"
           href: reference/v2-0-reference.md
           items:
             - name: Преобразование текста
@@ -102,15 +96,15 @@
       items:
         - name: Примеры кода в GitHub
           href: 'https://aka.ms/TranslatorGitHub'
-        - name: Часто задаваемые вопросы
+        - name: ВОПРОСЫ И ОТВЕТЫ
           href: 'https://www.microsoft.com/translator/faq.aspx'
-        - name: Поддержка языков и региональных параметров
+        - name: Поддержка языков
           href: language-support.md
         - name: Цены
           href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/'
         - name: Доступность по регионам
           href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
-        - name: Соответствие требованиям
+        - name: Соответствие нормативным требованиям
           href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
         - name: Ограничения запроса
           href: request-limits.md
@@ -144,7 +138,7 @@
           href: custom-translator/training-and-model.md
         - name: Оценка BLEU
           href: custom-translator/what-is-bleu-score.md
-    - name: Инструкции
+    - name: Практические руководства
       items:
         - name: Создание проекта
           href: custom-translator/how-to-create-project.md
@@ -172,11 +166,13 @@
           href: 'https://docs.microsoft.com/azure/cognitive-services/translator/language-support#customization'
         - name: Глоссарий
           href: custom-translator/glossary.md
-        - name: Вопросы и ответы
+        - name: ВОПРОСЫ И ОТВЕТЫ
           href: custom-translator/faq.md
         - name: Цены
           href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/'
-        - name: Соответствие требованиям
+        - name: Соответствие нормативным требованиям
           href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+        - name: Шифрование
+          href: translator-encryption-of-data-at-rest.md
         - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/microsoft-translator'

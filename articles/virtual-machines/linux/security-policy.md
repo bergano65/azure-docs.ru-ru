@@ -1,25 +1,19 @@
 ---
-title: Защита и использование политик на виртуальных машинах Linux в Azure
-description: Сведения о безопасности и политиках виртуальных машин Linux в Azure.
-services: virtual-machines-linux
-documentationcenter: ''
+title: Политики безопасности и использования
+description: Сведения о безопасности и политиках виртуальных машин в Azure.
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: security
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.date: 11/27/2018
 ms.author: cynthn
 ms.topic: conceptual
-ms.openlocfilehash: 9cd31d39d2881aebf83d5b40aa826433de5d0993
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 131b552e6f330cdbce87a35ae45a3e8f38f3fda1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035061"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758539"
 ---
 # <a name="secure-and-use-policies-on-virtual-machines-in-azure"></a>Обеспечение безопасности и использование политик на виртуальных машинах в Azure
 

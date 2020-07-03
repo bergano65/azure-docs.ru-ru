@@ -1,0 +1,20 @@
+- name: Документация по Удаленной отрисовке Azure
+  href: index.yml
+- name: Обзор
+  expanded: true
+  href: overview/toc.yml
+- name: Краткие руководства
+  expanded: true
+  href: quickstarts/toc.yml
+- name: Учебники
+  href: tutorials/toc.yml
+- name: Примеры
+  href: samples/toc.yml
+- name: Основные понятия
+  href: concepts/toc.yml
+- name: Практические руководства
+  href: how-tos/toc.yml
+- name: Справочник
+  href: reference/toc.yml
+- name: Ресурсы
+  href: resources/toc.yml

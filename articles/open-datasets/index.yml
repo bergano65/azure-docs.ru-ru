@@ -4,20 +4,18 @@ summary: Открытые наборы данных Azure — это курир
 metadata:
   title: Документация по платформе "Открытые наборы данных" в Azure. Руководства и справочник по API
   description: Открытые наборы данных Azure — это курируемые и очищаемые данные. В наборы включены сведения о погоде, данные переписи и информация о выходных, что позволяет усовершенствовать модели ML с минимальной подготовкой.
-  services: machine-learning
-  ms.service: machine-learning
-  ms.subservice: data-science-vm
+  ms.service: open-datasets
   ms.topic: landing-page
   ms.collection: collection
   author: cjgronlund
   ms.author: cgronlun
   ms.date: 11/04/2019
-  ms.openlocfilehash: 76baa1362eb1eaa4c062fccd4eea84815cb08c50
-  ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+  ms.openlocfilehash: 0453213dd1433989869899d1e886bd87d02340b6
+  ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/05/2019
-  ms.locfileid: "73603641"
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82930341"
 landingContent:
 - title: Сведения об Открытых наборах данных
   linkLists:
@@ -32,9 +30,9 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: Создание регрессионной модели с помощью автоматического машинного обучения
-      url: /azure/machine-learning/service/tutorial-auto-train-models?context=azure/open-datasets/context/open-datasets-context
+      url: /azure/machine-learning/tutorial-auto-train-models?context=azure/open-datasets/context/open-datasets-context
     - text: Улучшение модели классификации изображений в Машинном обучении Azure
-      url: /azure/machine-learning/service/tutorial-train-models-with-aml?context=azure/open-datasets/context/open-datasets-context
+      url: /azure/machine-learning/tutorial-train-models-with-aml?context=azure/open-datasets/context/open-datasets-context
 - title: См. справочные материалы
   linkLists:
   - linkListType: reference

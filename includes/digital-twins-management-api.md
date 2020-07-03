@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 01/06/2020
 ms.custom: include file
 ms.openlocfilehash: bacb665eeffc6bb5351d11ec74139a272c95a9fb
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75692580"
 ---
 В приведенных ниже примерах `YOUR_MANAGEMENT_API_URL` относится к универсальному коду ресурса API Digital Twins:

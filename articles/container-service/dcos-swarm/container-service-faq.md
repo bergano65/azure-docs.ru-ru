@@ -10,10 +10,10 @@ ms.date: 03/28/2017
 ms.author: mlearned
 ms.custom: H1Hack27Feb201
 ms.openlocfilehash: 317862b694b93de44422ac3c28575c732ffc5be5
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75887926"
 ---
 # <a name="deprecated-container-service-frequently-asked-questions"></a>Часто задаваемые вопросы о службе контейнеров (не рекомендуется)
@@ -24,7 +24,7 @@ ms.locfileid: "75887926"
 
 ### <a name="which-container-orchestrators-do-you-support-on-azure-container-service"></a>Какие оркестраторы контейнеров поддерживает Служба контейнеров Azure? 
 
-Служба контейнеров Azure поддерживает компоненты DC/OS, Docker Swarm и Kubernetes с открытым кодом. Дополнительные сведения см. в статье [Общие сведения о Службе контейнеров Azure](../kubernetes/container-service-intro-kubernetes.md).
+Служба контейнеров Azure поддерживает компоненты DC/OS, Docker Swarm и Kubernetes с открытым кодом. Дополнительные сведения см. в [обзоре](../kubernetes/container-service-intro-kubernetes.md).
  
 ### <a name="do-you-support-docker-swarm-mode"></a>Поддерживается ли режим Docker Swarm? 
 
@@ -52,7 +52,7 @@ ms.locfileid: "75887926"
 
 Чтобы создать для кластера пару ключей SSH RSA (открытый и закрытый), используемых для проверки подлинности виртуальных машин, можно воспользоваться стандартными средствами операционной системы. Пошаговые инструкции см. в руководстве для [OS X, Linux](../../virtual-machines/linux/mac-create-ssh-keys.md) или [Windows](../../virtual-machines/linux/ssh-from-windows.md). 
 
-Если для развертывания кластера службы контейнеров используются Azure CLI команды, для кластера могут быть автоматически созданы ключи SSH.
+Если для развертывания кластера службы контейнеров используются команды Azure CLI, то ключи SSH создаются автоматически.
 
 ### <a name="how-do-i-create-a-service-principal-for-my-kubernetes-cluster"></a>Как создать субъект-службу для кластера Kubernetes?
 
@@ -104,7 +104,7 @@ DNSnamePrefix.AzureRegion.cloudapp.azure.net
 
 4. На странице **Сводка** в разделе **Выходные данные** доступно несколько ссылок на кластеры. **SSHMaster0** предоставляет строку SSH-подключения к первому главному узлу в кластере службы контейнеров. 
 
-Как уже отмечалось, для поиска полного доменного имени главного узла можно также использовать средства Azure. Установите SSH-подключение к главному узлу, используя его полное доменное имя и имя пользователя, указанное при создании кластера. Пример.
+Как уже отмечалось, для поиска полного доменного имени главного узла можно также использовать средства Azure. Установите SSH-подключение к главному узлу, используя его полное доменное имя и имя пользователя, указанное при создании кластера. Пример:
 
 ```bash
 ssh userName@masterFQDN –A –p 22 
@@ -112,7 +112,7 @@ ssh userName@masterFQDN –A –p 22 
 
 Дополнительные сведения см. в статье [Подключение к кластеру службы контейнеров Azure](../../container-service/kubernetes/container-service-connect.md).
 
-### <a name="my-dns-name-resolution-isnt-working-on-windows-what-should-i-do"></a>В Windows не работает разрешение имени DNS. Что мне делать?
+### <a name="my-dns-name-resolution-isnt-working-on-windows-what-should-i-do"></a>В Windows не работает разрешение имени DNS.   Что следует делать?
 
 В Windows есть некоторые известные проблемы с DNS, исправления которых по-прежнему находятся в активном состоянии. Убедитесь, что вы используете наиболее обновленную версию ядра ACS и Windows (с установленными [KB4074588](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4074588) и [KB4089848](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4089848) ), чтобы среда могла использовать преимущества. В противном случае см. инструкции по устранению проблем в следующей таблице:
 

@@ -4,7 +4,6 @@ description: Пример скрипта Azure PowerShell. Управление 
 services: application-gateway
 documentationcenter: networking
 author: vhorne
-editor: tysonn
 tags: azure-resource-manager
 ms.service: application-gateway
 ms.topic: sample
@@ -13,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 01/29/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 89915cdd4ae88f1092c45e1d428679a99f1ac906
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 5dc840c553e85499f23d553e189a20e1812241b4
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76273405"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81457796"
 ---
 # <a name="manage-web-traffic-with-azure-powershell"></a>Управление веб-трафиком с помощью Azure PowerShell
 

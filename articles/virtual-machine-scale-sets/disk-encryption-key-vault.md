@@ -1,5 +1,5 @@
 ---
-title: Создание и Настройка хранилища ключей для шифрования дисков Azure
+title: Создание и настройка хранилища ключей для шифрования дисков Azure
 description: В этой статье описаны действия по созданию и настройке хранилища ключей для использования с шифрованием дисков Azure.
 ms.service: virtual-machine-scale-sets
 ms.topic: conceptual
@@ -7,16 +7,16 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 10/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: eec5b42da709ab5e79da42f11600f6ffc81d247e
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 30fa6b910c0241621c2b2cdae9bb9a164f27cedb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76279014"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81454549"
 ---
-# <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и Настройка хранилища ключей для шифрования дисков Azure
+# <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для шифрования дисков Azure
 
-Шифрование дисков Azure использует Azure Key Vault для управления ключами и секретами шифрования дисков, а так и управления ими.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../key-vault/key-vault-secure-your-key-vault.md).
+Шифрование дисков Azure использует Azure Key Vault для управления ключами и секретами шифрования дисков, а так и управления ими.  Дополнительные сведения о хранилищах ключей см. в статье [Приступая к работе с Azure Key Vault](../key-vault/key-vault-get-started.md) и [Защита хранилища ключей](../key-vault/general/secure-your-key-vault.md).
 
 Создание и Настройка хранилища ключей для использования с шифрованием дисков Azure состоит из трех этапов:
 
@@ -46,7 +46,7 @@ Connect-AzAccount
 
 [!INCLUDE [disk-encryption-key-vault](../../includes/disk-encryption-key-vault.md)]
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
 - [Encrypt OS and attached data disks in a virtual machine scale set with the Azure CLI](disk-encryption-cli.md) (Шифрование ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI)

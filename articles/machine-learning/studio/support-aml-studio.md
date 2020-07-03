@@ -7,16 +7,18 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: peterclu
-ms.author: amlstudiodocs
+ms.author: peterlu
 ms.date: 01/18/2019
-ms.openlocfilehash: ee4ef451888638c0ba33d7938c88b836b28f3fe5
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: cd48e97f642402d1c7ff2ff71e7cee67be17f91d
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894628"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209440"
 ---
 # <a name="get-support-and-training-for-azure-machine-learning-studio-classic"></a>Техническая поддержка и обучение для Машинное обучение Azure Studio (классическая модель)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 В этой статье содержатся сведения о том, как узнать больше о Машинное обучение Azure Studio (классическая модель) и получить поддержку по вопросам и вопросам.
 
@@ -25,7 +27,6 @@ ms.locfileid: "75894628"
 Ниже приведены ресурсы для обучения.
 + [Учебники и статьи с инструкциями](../studio/index.yml) 
 + [Задайте вопрос, на который можно ответить с помощью данных](../studio/data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) 
-+ [Памятка по алгоритмам машинного обучения для студии машинного обучения Azure](../studio/algorithm-cheat-sheet.md) 
 
 ## <a name="submit-doc-feedback"></a>Отправка отзыва о документации
 

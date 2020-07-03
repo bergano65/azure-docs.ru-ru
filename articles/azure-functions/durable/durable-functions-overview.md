@@ -7,17 +7,17 @@ ms.date: 08/07/2019
 ms.author: cgillum
 ms.reviewer: azfuncdf
 ms.openlocfilehash: 5d454aefaba89bef9dc9009ff442fa5543dae2ef
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76756149"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79290092"
 ---
 # <a name="what-are-durable-functions"></a>Что такое Устойчивые функции?
 
 *Устойчивые функции* — это расширение [Функций Azure](../functions-overview.md), которое позволяет писать функции с отслеживанием состояния в беcсерверной вычислительной среде. Расширение позволяет определять рабочие процессы с отслеживанием состояния, создавая [*функции оркестратора*](durable-functions-orchestrations.md), и сущности с отслеживанием состояния, создавая [*функции сущностей*](durable-functions-entities.md) с помощью модели программирования Функций Azure. В фоновом режиме расширение автоматически управляет состоянием, создает контрольные точки и перезагружается, позволяя вам сосредоточиться на бизнес-логике.
 
-## <a name="language-support"></a>Поддерживаемые языки
+## <a name="supported-languages"></a><a name="language-support"></a>Поддерживаемые языки
 
 Устойчивые функции в настоящее время поддерживают следующие языки.
 
@@ -40,7 +40,7 @@ ms.locfileid: "76756149"
 * [Участие пользователя](#human)
 * [Агрегатор (сущности с отслеживанием состояния)](#aggregator)
 
-### <a name="chaining"></a>Шаблон 1. Цепочка функций
+### <a name="pattern-1-function-chaining"></a><a name="chaining"></a>Шаблон 1. Цепочка функций
 
 В шаблоне цепочки функций последовательность функций выполняется в определенном порядке. В этом шаблоне выходные данные одной функции применяются к входным данным другой.
 
@@ -50,7 +50,7 @@ ms.locfileid: "76756149"
 
 В этом примере значения `F1`, `F2`, `F3` и `F4` являются именами других функций в том же приложении-функции. Поток управления можно реализовать с помощью обычных принудительных конструкций программирования. Код выполняется сверху вниз. Код может включать в себя имеющуюся семантику языка потока управления, такую ​​как условные обозначения и циклы. Вы можете включить логику обработки ошибок в блоках `try`/`catch`/`finally`.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("Chaining")]
@@ -73,7 +73,7 @@ public static async Task<object> Run(
 
 Вы можете использовать параметр `context` для вызова других функций по имени, передачи параметров и возврата выходных данных функции. Каждый раз, когда код вызывает `await`, платформа Устойчивых функций создает контрольные точки выполнения текущего экземпляра функции. Если процесс или виртуальная машина перезапускается во время выполнения, экземпляр функции возобновляется из предыдущего вызова `await`. Этот процесс описан в следующем разделе Шаблон 2: развертывание и объединение.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -97,7 +97,7 @@ module.exports = df.orchestrator(function*(context) {
 
 ---
 
-### <a name="fan-in-out"></a>Шаблон 2. Развертывание и объединение
+### <a name="pattern-2-fan-outfan-in"></a><a name="fan-in-out"></a>Шаблон 2. Развертывание и объединение
 
 В шаблоне развертывания и объединения вы выполняете параллельно несколько функций, а затем ожидаете их завершения. Часто некоторые агрегирования завершаются по результатам, возвращаемым функциями.
 
@@ -107,7 +107,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Расширение "Устойчивые функции" обрабатывает этот шаблон с помощью относительно простого кода:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("FanOutFanIn")]
@@ -136,7 +136,7 @@ public static async Task Run(
 
 Автоматическое создание контрольных точек, которое происходит при вызове `await` к `Task.WhenAll`, гарантирует, что возможный сбой или перезагрузка во время выполнения не потребуют перезапуска уже завершенной задачи.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -167,7 +167,7 @@ module.exports = df.orchestrator(function*(context) {
 > [!NOTE]
 > В редких случаях может произойти сбой в окне после завершения функции действия, но до того, как ее выполнение будет сохранено в журнале оркестрации. В этом случае функция действия будет повторно выполнена с начала после восстановления процесса.
 
-### <a name="async-http"></a>Шаблон 3. Асинхронные API-интерфейсы HTTP
+### <a name="pattern-3-async-http-apis"></a><a name="async-http"></a>Шаблон 3. Асинхронные API-интерфейсы HTTP
 
 Шаблон асинхронного API HTTP решает проблему координации состояния длительных операций с внешними клиентами. Распространенный способ реализации этого шаблона — наличие триггера конечной точки HTTP для выполнения длительного действия. Затем перенаправьте клиент на конечную точку состояния, которую клиент опрашивает для получения сведений о завершении операции.
 
@@ -206,7 +206,7 @@ Content-Type: application/json
 
 Дополнительные сведения см. в статье о [функциях HTTP](durable-functions-http-features.md), в которой объясняется, как можно предоставлять асинхронные длительные процессы по протоколу HTTP с помощью расширения "Устойчивые функции".
 
-### <a name="monitoring"></a>Шаблон 4. Монитор
+### <a name="pattern-4-monitor"></a><a name="monitoring"></a>Шаблон 4. Монитор
 
 Шаблон мониторинга представляет собой гибкий, повторяющийся процесс в рабочем процессе. Например, повторение опроса, пока не будут выполнены определенные условия. Вы можете использовать регулярный [триггер таймера](../functions-bindings-timer.md) для активации основного сценария, например задание периодической очистки. Но интервал является статическим, что усложняет управление временем существования экземпляра. Вы можете использовать Устойчивые функции, чтобы создать гибкие интервалы повторения, управлять временем существования задачи и создавать несколько процессов мониторинга в рамках одной оркестрации.
 
@@ -218,7 +218,7 @@ Content-Type: application/json
 
 В следующем коде реализуется простой мониторинг:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("MonitorJobStatus")]
@@ -248,7 +248,7 @@ public static async Task Run(
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -280,7 +280,7 @@ module.exports = df.orchestrator(function*(context) {
 
 При получении запроса создается экземпляр оркестрации для указанного идентификатора события. Экземпляр выполняет опрос состояния, пока не выполнится условие или не произойдет выход из цикла. Для управления интервалом опроса используется устойчивый таймер. После этого можно перейти к другим задачам или завершить оркестрацию. Когда `nextCheck` превышает `expiryTime`, монитор останавливается.
 
-### <a name="human"></a>Шаблон 5. Участие пользователя
+### <a name="pattern-5-human-interaction"></a><a name="human"></a>Шаблон 5. Участие пользователя
 
 Многие автоматизированные процессы требуют некоторого участия пользователя. Трудность вовлечения людей в автоматизированный процесс заключается в том, что пользователи не так доступны и не так быстро реагируют, как облачные службы. Автоматизированный процесс должен учитывать это. Для этого используется время ожидания и логика компенсации.
 
@@ -292,7 +292,7 @@ module.exports = df.orchestrator(function*(context) {
 
 В этих примерах создается процесс утверждения для демонстрации шаблона участия пользователя:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("ApprovalWorkflow")]
@@ -321,7 +321,7 @@ public static async Task Run(
 
 Для создания устойчивого таймера вызовите `context.CreateTimer`. Уведомление получает `context.WaitForExternalEvent`. Затем `Task.WhenAny` вызывается для того, чтобы решить, следует ли ускорить процесс (сначала истечет время ожидания) или утвердить процесс (утверждение получено до истечения времени ожидания).
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -355,7 +355,7 @@ curl -d "true" http://localhost:7071/runtime/webhooks/durabletask/instances/{ins
 
 Событие также можно вызвать с помощью клиента оркестрации устойчивых функций из другой функции в том же приложении-функции:
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("RaiseEventToOrchestration")]
@@ -368,7 +368,7 @@ public static async Task Run(
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -382,7 +382,7 @@ module.exports = async function (context) {
 
 ---
 
-### <a name="aggregator"></a>Шаблон 6. Агрегатор (сущности с отслеживанием состояния)
+### <a name="pattern-6-aggregator-stateful-entities"></a><a name="aggregator"></a>Шаблон 6. Агрегатор (сущности с отслеживанием состояния)
 
 Шестой шаблон заключается в статистической обработке данных событий за определенный период времени в одну доступную для адресации *сущность*. В этом шаблоне данные, для которых выполняется агрегирование, могут поступать из нескольких источников, могут быть доставлены пакетами или разбросаны по длительным временным периодам. Агрегатору может потребоваться выполнить действия над данными событий по мере их поступления, а внешним клиентам может потребоваться запросить агрегированные данные.
 
@@ -392,7 +392,7 @@ module.exports = async function (context) {
 
 [Устойчивые сущности](durable-functions-entities.md) можно использовать, чтобы легко реализовать этот шаблон как отдельную функцию.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("Counter")]
@@ -435,7 +435,7 @@ public class Counter
 }
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");
@@ -461,7 +461,7 @@ module.exports = df.entity(function(context) {
 
 Клиенты могут поставить в очередь *операции* (называемые также "сигнализацией") для функции сущности, использующей [привязку клиента сущности](durable-functions-bindings.md#entity-client).
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 [FunctionName("EventHubTriggerCSharp")]
@@ -481,7 +481,7 @@ public static async Task Run(
 > [!NOTE]
 > Динамически создаваемые прокси-серверы также доступны в .NET для сигнализации сущностям типобезопасным способом. Кроме сигнализации, клиенты также могут запрашивать состояние функции сущности с помощью [типобезопасных методов](durable-functions-bindings.md#entity-client-usage) в привязке клиента оркестрации.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const df = require("durable-functions");

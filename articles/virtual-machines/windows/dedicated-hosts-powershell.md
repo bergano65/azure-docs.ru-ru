@@ -1,23 +1,19 @@
 ---
 title: Развертывание выделенных узлов Azure с помощью Azure PowerShell
 description: Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell.
-services: virtual-machines-windows
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/01/2019
 ms.author: cynthn
-ms.openlocfilehash: 5cd82635f3aec2cca251e122aadf96f70d377c8a
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.reviewer: zivr
+ms.openlocfilehash: b90189c6ba5e51a24d0c248b5aa08e9a5e4bbd9b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190517"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82082855"
 ---
 # <a name="deploy-vms-to-dedicated-hosts-using-the-azure-powershell"></a>Развертывание виртуальных машин на выделенных узлах с помощью Azure PowerShell
 
@@ -28,7 +24,7 @@ ms.locfileid: "77190517"
 ## <a name="limitations"></a>Ограничения
 
 - Масштабируемые наборы виртуальных машин в настоящее время не поддерживаются на выделенных узлах.
-- Поддерживаются следующие серии виртуальных машин: DSv3, ESv3 и серия fsv2. 
+- Размеры и типы оборудования, доступные для выделенных узлов, зависят от региона. Дополнительные сведения см. на [странице цен](https://aka.ms/ADHPricing) на узел.
 
 ## <a name="create-a-host-group"></a>Создание группы узлов
 
@@ -41,9 +37,9 @@ ms.locfileid: "77190517"
 Также можно выбрать использование зон доступности и доменов сбоя. В этом примере создается группа узлов в зоне 1 с 2 доменами сбоя. 
 
 
-```powershell
+```azurepowershell-interactive
 $rgName = "myDHResourceGroup"
-$location = "East US"
+$location = "EastUS"
 
 New-AzResourceGroup -Location $location -Name $rgName
 $hostGroup = New-AzHostGroup `
@@ -58,13 +54,12 @@ $hostGroup = New-AzHostGroup `
 
 Теперь создадим выделенный узел в группе узлов. Помимо имени узла, необходимо указать номер SKU для узла. Номер SKU узла фиксирует поддерживаемую серию виртуальных машин, а также создание оборудования для выделенного узла.
 
-
 Дополнительные сведения о номерах SKU узла и ценах см. на странице [цен на выделенный узел Azure](https://aka.ms/ADHPricing).
 
 Если для группы узлов задано число доменов сбоя, вам будет предложено указать домен сбоя для узла. В этом примере мы устанавливаем домен сбоя для узла в значение 1.
 
 
-```powershell
+```azurepowershell-interactive
 $dHost = New-AzHost `
    -HostGroupName $hostGroup.Name `
    -Location $location -Name myHost `
@@ -81,7 +76,7 @@ $dHost = New-AzHost `
 Если при создании группы узлов была указана зона доступности, то при создании виртуальной машины необходимо будет использовать ту же зону. В этом примере, так как наша группа узлов находится в зоне 1, нам нужно создать виртуальную машину в зоне 1.  
 
 
-```powershell
+```azurepowershell-interactive
 $cred = Get-Credential
 New-AzVM `
    -Credential $cred `
@@ -99,9 +94,9 @@ New-AzVM `
 
 ## <a name="check-the-status-of-the-host"></a>Проверка состояния узла
 
-Вы можете проверить состояние работоспособности узла и количество виртуальных машин, которые можно развернуть на узле с помощью [жетазост](/powershell/module/az.compute/get-azhost) с параметром `-InstanceView`.
+Вы можете проверить состояние работоспособности узла и количество виртуальных машин, которые вы по-прежнему можете развернуть на [GetAzHost](/powershell/module/az.compute/get-azhost) узле с помощью `-InstanceView` жетазост с параметром.
 
-```
+```azurepowershell-interactive
 Get-AzHost `
    -ResourceGroupName $rgName `
    -Name myHost `
@@ -170,25 +165,71 @@ Location               : eastus
 Tags                   : {}
 ```
 
+## <a name="add-an-existing-vm"></a>Добавление существующей виртуальной машины 
+
+Существующую виртуальную машину можно добавить на выделенный узел, но сначала необходимо Стоп\деаллокатед.. Перед перемещением виртуальной машины на выделенный узел убедитесь, что конфигурация виртуальной машины поддерживается:
+
+- Размер виртуальной машины должен быть в том же семействе размеров, что и выделенный узел. Например, если выделенный узел является DSv3, размер виртуальной машины может быть Standard_D4s_v3, но не Standard_A4_v2. 
+- Виртуальная машина должна находиться в том же регионе, что и выделенный узел.
+- Виртуальная машина не может входить в группу размещения с учетом расположения. Удалите виртуальную машину из группы размещения с учетом расположения, прежде чем перемещать ее на выделенный узел. Дополнительные сведения см. в разделе [перемещение виртуальной машины из группы размещения](https://docs.microsoft.com/azure/virtual-machines/windows/proximity-placement-groups#move-an-existing-vm-out-of-a-proximity-placement-group) с учетом расположения.
+- Виртуальная машина не может находиться в группе доступности.
+- Если виртуальная машина находится в зоне доступности, она должна быть той же зоной доступности, что и группа узлов. Параметры зоны доступности для виртуальной машины и группы узлов должны совпадать.
+
+Замените значения переменных собственными сведениями.
+
+```azurepowershell-interactive
+$vmRGName = "movetohost"
+$vmName = "myVMtoHost"
+$dhRGName = "myDHResourceGroup"
+$dhGroupName = "myHostGroup"
+$dhName = "myHost"
+
+$myDH = Get-AzHost `
+   -HostGroupName $dhGroupName `
+   -ResourceGroupName $dhRGName `
+   -Name $dhName
+   
+$myVM = Get-AzVM `
+   -ResourceGroupName $vmRGName `
+   -Name $vmName
+   
+$myVM.Host = New-Object Microsoft.Azure.Management.Compute.Models.SubResource
+
+$myVM.Host.Id = "$myDH.Id"
+
+Stop-AzVM `
+   -ResourceGroupName $vmRGName `
+   -Name $vmName -Force
+   
+Update-AzVM `
+   -ResourceGroupName $vmRGName `
+   -VM $myVM -Debug
+   
+Start-AzVM `
+   -ResourceGroupName $vmRGName `
+   -Name $vmName
+```
+
+
 ## <a name="clean-up"></a>Очистка
 
 Вы платите за выделенные узлы, даже если виртуальные машины не развернуты. Следует удалить все узлы, которые сейчас не используются для экономии затрат.  
 
 Узел можно удалить только в том случае, если он не использует больше виртуальных машин. Удалите виртуальные машины с помощью [Remove-AzVM](/powershell/module/az.compute/remove-azvm).
 
-```powershell
+```azurepowershell-interactive
 Remove-AzVM -ResourceGroupName $rgName -Name myVM
 ```
 
 После удаления виртуальных машин можно удалить узел с помощью команды [Remove-азост](/powershell/module/az.compute/remove-azhost).
 
-```powershell
+```azurepowershell-interactive
 Remove-AzHost -ResourceGroupName $rgName -Name myHost
 ```
 
 После удаления всех узлов группу узлов можно удалить с помощью команды [Remove-азостграуп](/powershell/module/az.compute/remove-azhostgroup). 
 
-```powershell
+```azurepowershell-interactive
 Remove-AzHost -ResourceGroupName $rgName -Name myHost
 ```
 
@@ -199,7 +240,7 @@ Remove-AzResourceGroup -Name $rgName
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Здесь](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-dedicated-hosts/README.md)приведен пример шаблона, который использует зоны и домены сбоя для максимальной устойчивости в регионе.
 

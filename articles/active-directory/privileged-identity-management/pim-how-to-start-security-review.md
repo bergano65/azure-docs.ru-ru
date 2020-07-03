@@ -14,12 +14,12 @@ ms.date: 10/22/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f7e9ef503a9a3469ecbc835be8d9229fbd0167f
-ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
+ms.openlocfilehash: 6b4c8c1a1f846d8d04d7758c8d7bdcd932ac3c90
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73847111"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82185730"
 ---
 # <a name="create-an-access-review-of-azure-ad-roles-in-privileged-identity-management"></a>Создание проверки доступа для ролей Azure AD в управление привилегированными пользователями
 
@@ -35,11 +35,11 @@ ms.locfileid: "73847111"
 
 1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который является членом роли администратора привилегированных ролей.
 
-1. Откройте страницу **Azure AD Privileged Identity Management**.
+1. Откройте **Azure AD privileged Identity Management**.
 
-1. В меню слева выберите **роли Azure AD** , а затем щелкните проверки **доступа**.
+1. Выберите **роли Azure AD**.
 
-1. В разделе Управление выберите **Проверка доступа**.
+1. В разделе Управление выберите проверки **доступа**и нажмите кнопку **создать**.
 
     ![Роли Azure AD — список проверок доступа, отображающий состояние всех проверок](./media/pim-how-to-start-security-review/access-reviews.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "73847111"
 
 В зависимости от сделанного выбора в **параметрах завершения**, автоматическое применение будет выполняться после даты окончания проверки или при ручной отмене проверки. Состояние проверки будет изменено с **завершено** на промежуточные состояния, такие как **применение** и, наконец, к **примененному**состоянию. Вы должны видеть запрещенных пользователей (если они есть), которые удаляются из ролей через несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Проверка доступа к ролям Azure AD](pim-how-to-perform-security-review.md)
 - [Выполнение проверки доступа для ролей Azure AD](pim-how-to-complete-review.md)

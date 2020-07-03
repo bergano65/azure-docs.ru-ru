@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с AwardSpring | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с AwardSpring | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и AwardSpring.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9d397d179a3f5bd50479e76c04e5eb709a3ef1f
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: e199b0d6cf2be7dc956267843f4dabe521d87428
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76260775"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83647626"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-awardspring"></a>Руководство. Интеграция единого входа Azure Active Directory с AwardSpring
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-awardspring"></a>Руководство по Интеграция единого входа Azure Active Directory с AwardSpring
 
 В этом учебнике описано, как интегрировать AwardSpring с Azure Active Directory (Azure AD). Интеграция AwardSpring с Azure AD обеспечивает следующие возможности:
 
@@ -104,7 +104,7 @@ ms.locfileid: "76260775"
     | Имя | user.givenname |
     | Фамилия | user.surname |
     | Email | user.mail |
-    | Имя пользователя | user.userprinicipalname |
+    | Имя пользователя | user.userprincipalname |
     | studentID | < ИД учащегося > |
 
     > [!NOTE]
@@ -157,7 +157,7 @@ ms.locfileid: "76260775"
 В этом разделе вы создадите в AwardSpring пользователя B. Simon. Приложение AwardSpring поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в AwardSpring, он создается после проверки подлинности.
 
 > [!Note]
-> Чтобы создать пользователя вручную, обратитесь в [службу поддержки AwardSpring](maito:support@awardspring.com).
+> Чтобы создать пользователя вручную, обратитесь в [службу поддержки AwardSpring](mailto:support@awardspring.com).
 
 ## <a name="test-sso"></a>Проверка единого входа
 

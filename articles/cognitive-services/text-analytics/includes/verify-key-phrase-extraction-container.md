@@ -3,18 +3,18 @@ title: Проверка экземпляра контейнера извлече
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как проверить экземпляр контейнера извлечение ключевых фраз.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/12/2019
-ms.author: dapine
-ms.openlocfilehash: 1e2001c1f4cb2da195a3dcd0ca8fe198de8dd264
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 5c177517ec18d7526b1cc09da74e35cb5434766d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968609"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80876460"
 ---
 ### <a name="verify-the-key-phrase-extraction-container-instance"></a>Проверка экземпляра контейнера извлечение ключевых фраз
 
@@ -64,7 +64,7 @@ ms.locfileid: "70968609"
     }
     ```
 
-1. Задайте для `true`шовстатс значение.
+1. Задайте **showStats** для `true`шовстатс значение.
 
 1. Выберите **выполнить** , чтобы определить тональности текста.
 
@@ -100,4 +100,4 @@ ms.locfileid: "70968609"
     }
     ```
 
-Теперь можно сопоставить документ `id` JSON полезных данных ответа с исходным документом `id`полезных данных запроса. Результирующий документ `keyPhrases` содержит массив, который содержит список ключевых фраз, извлеченных из соответствующего входного документа. Кроме того, для каждого результирующего документа `characterCount` существуют `transactionCount` различные статистические данные, такие как и.
+Теперь можно сопоставить документ `id` JSON полезных данных ответа с исходным документом `id`полезных данных запроса. Результирующий документ содержит `keyPhrases` массив, который содержит список ключевых фраз, извлеченных из соответствующего входного документа. Кроме того, для каждого результирующего документа `characterCount` существуют `transactionCount` различные статистические данные, такие как и.

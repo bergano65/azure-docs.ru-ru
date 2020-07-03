@@ -7,19 +7,19 @@ ms.topic: conceptual
 ms.date: 12/9/2019
 ms.author: tvoellm
 ms.openlocfilehash: 03cad9e4c3752b5f35be785a6280bf18aaa14860
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74980378"
 ---
-# <a name="restrict-user-access-to-data-operations-only"></a>Ограничение доступа пользователей только к операциям с данными
+# <a name="restrict-user-access-to-data-operations-only"></a>Ограничение доступа пользователей только операциями с данными
 
 В Azure Cosmos DB есть два способа проверки подлинности взаимодействия со службой базы данных:
 - Использование удостоверения Azure Active Directory при взаимодействии с портал Azure
 - использование [ключей](secure-access-to-data.md#master-keys) Azure Cosmos DB или [маркеров ресурсов](secure-access-to-data.md#resource-tokens) при выдаче вызовов из API и пакетов SDK.
 
-Каждый метод проверки подлинности предоставляет доступ к разным наборам операций с перекрытием: ![разделение операций на тип проверки подлинности](./media/how-to-restrict-user-data/operations.png)
+Каждый метод проверки подлинности предоставляет доступ к разным наборам операций с перекрытием: ![Разбиение операций на тип проверки подлинности](./media/how-to-restrict-user-data/operations.png)
 
 В некоторых сценариях может потребоваться ограничить количество пользователей организации для выполнения операций с данными (то есть запросов CRUD и запросов). Обычно это относится к разработчикам, которым не требуется создавать или удалять ресурсы, или изменять подготовленную пропускную способность контейнеров, над которыми они работают.
 
@@ -33,10 +33,10 @@ ms.locfileid: "74980378"
 > Чтобы выполнить команды в следующих разделах, необходимо установить Azure PowerShell Module 3.0.0 или более поздней версии, а также [роль владельца Azure](../role-based-access-control/built-in-roles.md#owner) в подписке, которую вы пытаетесь изменить.
 
 В сценариях PowerShell в следующих разделах Замените следующие заполнители значениями, характерными для вашей среды:
-- `$MySubscriptionId` — идентификатор подписки, содержащий учетную запись Azure Cosmos, в которой необходимо ограничить разрешения. Например, `e5c8766a-eeb0-40e8-af56-0eb142ebf78e`.
-- `$MyResourceGroupName` — группа ресурсов, содержащая учетную запись Azure Cosmos. Например, `myresourcegroup`.
-- `$MyAzureCosmosDBAccountName` — имя учетной записи Azure Cosmos. Например, `mycosmosdbsaccount`.
-- `$MyUserName` — имя входа (username@domain) пользователя, для которого требуется ограничить доступ. Например, `cosmosdbuser@contoso.com`.
+- `$MySubscriptionId`— Идентификатор подписки, содержащий учетную запись Azure Cosmos, в которой необходимо ограничить разрешения. Например: `e5c8766a-eeb0-40e8-af56-0eb142ebf78e`.
+- `$MyResourceGroupName`— Группа ресурсов, содержащая учетную запись Azure Cosmos. Например: `myresourcegroup`.
+- `$MyAzureCosmosDBAccountName`— Имя учетной записи Azure Cosmos. Например: `mycosmosdbsaccount`.
+- `$MyUserName`— Имя входа (username@domain) пользователя, для которого необходимо ограничить доступ. Например: `cosmosdbuser@contoso.com`.
 
 ## <a name="select-your-azure-subscription"></a>Выбор подписки Azure
 

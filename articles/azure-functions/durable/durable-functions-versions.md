@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 4a117e7f69647af3ad82f9013bfa40556ccc0dbd
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77152896"
 ---
 # <a name="durable-functions-versions-overview"></a>Обзор версий Устойчивые функции
@@ -54,9 +54,9 @@ ms.locfileid: "77152896"
 
 Устойчивые функции 2. x использует новую схему Host. JSON. Основные изменения из 1. x включают:
 
-* `"storageProvider"` (и подраздела `"azureStorage"`) для конфигурации, относящейся к хранилищу.
-* `"tracing"` для настройки трассировки и ведения журнала.
-* `"notifications"` (и подраздела `"eventGrid"`) для конфигурации уведомлений сетки событий.
+* `"storageProvider"`(и `"azureStorage"` подраздела) для конфигурации, относящейся к хранилищу.
+* `"tracing"`для настройки трассировки и ведения журнала.
+* `"notifications"`(и `"eventGrid"` подраздела) для конфигурации уведомлений сетки событий.
 
 Дополнительные сведения см. в [справочной документации по устойчивые функции Host. JSON](durable-functions-bindings.md#durable-functions-2-0-host-json) .
 
@@ -72,13 +72,13 @@ ms.locfileid: "77152896"
 
 | 1.x | 2.x |
 |----------|----------|
-| `DurableOrchestrationClientBase` | `IDurableOrchestrationClient` либо `IDurableClient` |
-| `DurableOrchestrationContext` либо `DurableOrchestrationContextBase` | `IDurableOrchestrationContext` |
-| `DurableActivityContext` либо `DurableActivityContextBase` | `IDurableActivityContext` |
+| `DurableOrchestrationClientBase` | `IDurableOrchestrationClient` или `IDurableClient` |
+| `DurableOrchestrationContext` или `DurableOrchestrationContextBase` | `IDurableOrchestrationContext` |
+| `DurableActivityContext` или `DurableActivityContextBase` | `IDurableActivityContext` |
 | `OrchestrationClientAttribute` | `DurableClientAttribute` |
 
 В случае, когда абстрактный базовый класс содержал виртуальные методы, эти виртуальные методы были заменены методами расширения, определенными в `DurableContextExtensions`.
 
-#### <a name="functionjson-changes-javascript-and-c-script"></a>изменения Function. JSON (JavaScript и C# скрипт)
+#### <a name="functionjson-changes-javascript-and-c-script"></a>изменения Function. JSON (скрипт JavaScript и C#)
 
-В Устойчивые функции 1. x привязка клиента оркестрации использует `type` `orchestrationClient`. В версии 2. x вместо нее используется `durableClient`.
+В Устойчивые функции 1. x привязка клиента оркестрации использует объект `type` из. `orchestrationClient` Вместо этого используется `durableClient` версия 2. x.

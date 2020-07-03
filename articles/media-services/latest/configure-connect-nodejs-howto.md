@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: juliako
 ms.openlocfilehash: 0381a2e2b8fd2a8b60e7cb702e0336a5678df057
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74896100"
 ---
 # <a name="connect-to-media-services-v3-api---nodejs"></a>Подключение к службам мультимедиа v3 API-Node. js
 
 В этой статье показано, как подключиться к пакету SDK для Node. js служб мультимедиа Azure с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Установите [Node.js](https://nodejs.org/en/download/).
+- Установите [node. js](https://nodejs.org/en/download/).
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
 
 > [!IMPORTANT]
@@ -54,7 +54,7 @@ ms.locfileid: "74896100"
 
 Должны быть указаны следующие пакеты:
 
-|Package|Описание|
+|Пакет|Описание|
 |---|---|
 |`azure-arm-mediaservices`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что используется последний пакет служб мультимедиа Azure, установите флажок [NPM Install Azure-ARM-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/).|
 |`azure-storage`|Пакет SDK для службы хранилища. Используется при отправке файлов в активы.|
@@ -116,14 +116,14 @@ msRestAzure.loginWithServicePrincipalSecret(aadClientId, aadSecret, aadTenantId,
 
 ## <a name="run-your-app"></a>Запуск приложения для Android
 
-Откройте окно командной строки. Перейдите к каталогу примера и выполните следующие команды:
+Откройте командную строку. Перейдите к каталогу примера и выполните следующие команды:
 
 ```
 npm install 
 node index.js
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [NPM install azure-arm-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/)

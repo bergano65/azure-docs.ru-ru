@@ -1,9 +1,9 @@
-- name: Документация по RBAC для ресурсов в Azure
+- name: Документация по Azure RBAC
   href: index.yml
   items: null
 - name: Обзор
   items:
-    - name: Общие сведения о RBAC
+    - name: Что такое Azure RBAC?
       href: overview.md
     - name: О разных ролях
       href: rbac-and-directory-admin-roles.md
@@ -11,25 +11,30 @@
   items:
     - name: Просмотр разрешений на доступ пользователя
       href: check-access.md
+    - name: Шаблон ARM
+      displayName: Resource Manager
+      href: quickstart-role-assignments-template.md
 - name: Учебники
   items:
     - name: "Предоставление доступа пользователю\_— портал"
       href: quickstart-assign-role-user-portal.md
     - name: "Предоставление доступа пользователю\_— PowerShell"
       href: tutorial-role-assignments-user-powershell.md
-    - name: "Предоставление доступа пользователю \_— шаблон Resource Manager"
-      displayName: 'ARM, resource manager template'
-      href: tutorial-role-assignments-user-template.md
     - name: "Предоставление доступа группе\_— PowerShell"
       href: tutorial-role-assignments-group-powershell.md
     - name: "Создание настраиваемой роли\_— PowerShell"
       href: tutorial-custom-role-powershell.md
     - name: "Создание настраиваемой роли\_— CLI"
       href: tutorial-custom-role-cli.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
-    - name: PIM для ресурсов Azure
-      href: pim-azure-resource.md
+    - name: Рекомендации
+      href: best-practices.md
     - name: Условный доступ для управления Azure
       href: conditional-access-azure-management.md
 - name: Практические руководства
@@ -62,7 +67,8 @@
           href: role-assignments-cli.md
         - name: REST API
           href: role-assignments-rest.md
-        - name: Шаблон
+        - name: Шаблон ARM
+          displayName: Resource Manager
           href: role-assignments-template.md
     - name: Отображение списка запрещенных назначений
       items:
@@ -74,10 +80,12 @@
           href: deny-assignments-powershell.md
         - name: REST API
           href: deny-assignments-rest.md
-    - name: Создание настраиваемых ролей
+    - name: Создание или обновление настраиваемых ролей
       items:
         - name: Обзор
           href: custom-roles.md
+        - name: Портал
+          href: custom-roles-portal.md
         - name: PowerShell
           href: custom-roles-powershell.md
         - name: Azure CLI
@@ -98,7 +106,7 @@
       href: built-in-roles.md
     - name: Операции с поставщиками ресурсов
       href: resource-provider-operations.md
-    - name: Ограничения доступа на основе ролей
+    - name: Ограничения Azure RBAC
       href: '../azure-resource-manager/management/azure-subscription-service-limits.md#role-based-access-control-limits'
     - name: Azure PowerShell
       href: /powershell/module/az.resources
@@ -106,8 +114,8 @@
       href: /cli/azure/role?view=azure-cli-latest
     - name: REST API
       href: /rest/api/authorization/
-    - name: Шаблоны Resource Manager
-      displayName: ARM
+    - name: Шаблоны ARM
+      displayName: Resource Manager
       items:
         - name: Назначения ролей
           href: /azure/templates/microsoft.authorization/roleassignments

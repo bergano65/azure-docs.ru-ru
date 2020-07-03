@@ -1,19 +1,18 @@
 ---
 title: Хранилище таблиц Azure | Azure Marketplace
 description: Настройка управления интересами в хранилище таблиц Azure.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.author: pabutler
-ms.openlocfilehash: 21105d72ccd288faf0fed58019e67afe2e1c9d01
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: e65f2041cdb2e25341bfd63783c70ec09c1216b5
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825270"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124709"
 ---
 # <a name="lead-management-instructions-for-table-storage"></a>Инструкции по управлению интересами для хранилища таблиц
 
@@ -26,7 +25,7 @@ ms.locfileid: "73825270"
 1. В портал Azure выполните следующие действия.  
     1. Выберите **+ создать ресурс** на панели слева. Откроется **Новая** панель.
     1. В области **создать** выберите **хранилище**. В правой части откроется список **популярных** .
-    1. Выберите **Учетная запись хранения**. Затем следуйте инструкциям в разделе [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
+    1. Выберите **учетная запись хранения**. Затем следуйте инструкциям в разделе [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal).
 
     ![Создание учетной записи хранения Azure](./media/cloud-partner-portal-lead-management-instructions-azure-table/azurestoragecreate.png)
 
@@ -99,7 +98,7 @@ ms.locfileid: "73825270"
 
    - **Фильтрация запроса**. при выборе этого поля в всплывающем окне отображается значок **получить время** работы. Выберите **время в прошлом** , чтобы использовать это значение в качестве метки времени для фильтрации запроса. Также можно вставить в поле следующую функцию:
    
-      `CreatedTime Timestamp gt datetime'@{body('Get_past_time')}'` 
+      `CreatedTime Timestamp gt '@{body('Get_past_time')}'` 
 
      ![Настройка функции фильтрации запросов](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-getentities-filterquery.png)
 
@@ -134,7 +133,7 @@ ms.locfileid: "73825270"
 
       - **Кому**: адрес электронной почты для всех, кто получит уведомление.
       - **Subject**: Тема сообщения электронной почты. Например: *новые интересы!*
-      - **Текст: текст**, который необходимо включить в каждый адрес электронной почты (необязательно). Также вставьте `body('Get_entities')?['value']` как функцию, чтобы вставить сведения о интересе.
+      - **Текст: текст**, который необходимо включить в каждый адрес электронной почты (необязательно). Также вставьте в `body('Get_entities')?['value']` качестве функции, чтобы вставить сведения о интересе.
 
         >[!NOTE] 
         >В текст сообщения электронной почты можно вставить дополнительные статические или динамические точки данных.
@@ -145,9 +144,9 @@ ms.locfileid: "73825270"
 
     На следующем рисунке показан пример того, как должен выглядеть окончательный поток.
 
-    [![конечной последовательности потока](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-end-to-end-thmb.png)](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-end-to-end.png)
+    [![Итоговая последовательность потока](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-end-to-end-thmb.png)](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-end-to-end.png)
 
-    (*Выберите изображение, чтобы увеличить его.* )
+    (*Выберите изображение, чтобы увеличить его.*)
 
 ### <a name="manage-your-flow"></a>Управление ходом выполнения
 
@@ -164,4 +163,4 @@ ms.locfileid: "73825270"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Настройка получения сведений о потенциальных клиентах](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads)
+[Настройка потенциальных клиентов](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads)

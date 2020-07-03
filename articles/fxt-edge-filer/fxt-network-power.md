@@ -1,5 +1,5 @@
 ---
-title: Руководство. Подключение кабелей к Azure FXT Edge Filer
+title: Руководство по Подключение кабелей к Azure FXT Edge Filer
 description: Сведения о подключении сетевых портов и присоединении питания для оборудования Azure FXT Edge Filer
 author: ekpgh
 ms.author: rohogue
@@ -7,13 +7,13 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 07/01/2019
 ms.openlocfilehash: 1e3c60fd955bd899955c46b7670acd3f088d0f86
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75550950"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79223951"
 ---
-# <a name="tutorial-make-network-connections-and-supply-power-to-the-azure-fxt-edge-filer-node"></a>Руководство. Установка сетевых подключений и источника питания для узлов Azure FXT Edge Filer
+# <a name="tutorial-make-network-connections-and-supply-power-to-the-azure-fxt-edge-filer-node"></a>Руководство по Установка сетевых подключений и источника питания для узлов Azure FXT Edge Filer
 
 В этом руководстве показано, как присоединять сетевые подключения для аппаратного узла Azure FXT Edge Filer.
 
@@ -25,7 +25,7 @@ ms.locfileid: "75550950"
 > * способ маршрутизации кабелей с помощью держателя кабеля (CMA);
 > * как подключить питание к устройству racked и включить его.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед работой с этим руководством, на стандартной стойке должен быть установлен Azure FXT Edge Filer. На узле файлового хранилища нужно установить CMA. 
 

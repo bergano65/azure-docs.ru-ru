@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 07/26/2019
 ms.openlocfilehash: 1fdee9a5d90fc065e198d880f9d0dea10804b881
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75972646"
 ---
 # <a name="create-azure-resource-manager-templates-to-automate-deployment-for-azure-logic-apps"></a>Создание шаблонов Azure Resource Manager для автоматизации развертывания Azure Logic Apps
@@ -76,7 +76,7 @@ Azure Logic Apps предоставляет [готовый шаблон при�
 
 Чтобы модуль Логикапптемплате работал с любым маркером доступа клиента и подписки Azure, установите [средство клиента Azure Resource Manager](https://github.com/projectkudu/ARMClient), которое является простым средством командной строки, которое вызывает API Azure Resource Manager.
 
-При выполнении команды `Get-LogicAppTemplate` с помощью этого средства команда сначала получает маркер доступа через средство ARMClient, передает маркер в сценарий PowerShell и создает его в виде JSON-файла. Дополнительные сведения о средстве см. в этой [статье о средстве клиента Azure Resource Manager](https://blog.davidebbo.com/2015/01/azure-resource-manager-client.html).
+При выполнении `Get-LogicAppTemplate` команды с помощью этого средства команда сначала получает маркер доступа через средство ARMClient, передает маркер в сценарий PowerShell и создает его в виде JSON-файла. Дополнительные сведения о средстве см. в этой [статье о средстве клиента Azure Resource Manager](https://blog.davidebbo.com/2015/01/azure-resource-manager-client.html).
 
 ### <a name="generate-template-with-powershell"></a>Создание шаблона с помощью PowerShell
 
@@ -86,7 +86,7 @@ Azure Logic Apps предоставляет [готовый шаблон при�
 PS> Get-LogicAppTemplate -Token (az account get-access-token | ConvertFrom-Json).accessToken -LogicApp <logic-app-name> -ResourceGroup <Azure-resource-group-name> -SubscriptionId $SubscriptionId -Verbose | Out-File C:\template.json
 ```
 
-Чтобы следовать рекомендациям по конвейеру в маркере из [средства клиента Azure Resource Manager](https://github.com/projectkudu/ARMClient), выполните следующую команду, где `$SubscriptionId` является идентификатором подписки Azure:
+Чтобы следовать рекомендациям по конвейеру в маркере из [средства клиента Azure Resource Manager](https://github.com/projectkudu/ARMClient), выполните следующую команду, где `$SubscriptionId` — это идентификатор подписки Azure:
 
 ```text
 PS> armclient token $SubscriptionId | Get-LogicAppTemplate -LogicApp <logic-app-name> -ResourceGroup <Azure-resource-group-name> -SubscriptionId $SubscriptionId -Verbose | Out-File C:\template.json
@@ -104,13 +104,13 @@ PS> Get-ParameterTemplate -TemplateFile $filename | Out-File '<parameters-file-n
 PS> Get-ParameterTemplate -TemplateFile $filename -KeyVault Static | Out-File $fileNameParameter
 ```
 
-| Параметры | Обязательно для заполнения | Description |
+| Параметры | Обязательный | Описание |
 |------------|----------|-------------|
 | TemplateFile | Да | Путь к файлу шаблона |
-| Key Vault | Нет | Перечисление, описывающее способ управления возможными значениями хранилища ключей. Значение по умолчанию — `None`. |
+| Хранилище ключей | Нет | Перечисление, описывающее способ управления возможными значениями хранилища ключей. Значение по умолчанию — `None`. |
 ||||
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Развертывание шаблонов приложений логики](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md)

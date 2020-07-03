@@ -11,28 +11,31 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/15/2020
+ms.date: 04/20/2020
 ms.author: spelluru
-ms.openlocfilehash: c8c6e2741eeeadf2afc0c027da8f9cf957c29c95
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: fd4b41cc2fe97ad0c2f075884e21f4f2ffc01561
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023248"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82159460"
 ---
-# <a name="send-events-to-or-receive-events-from-azure-event-hubs---net-core-azuremessagingeventhubs"></a>Отправка и получение событий с помощью .NET Core в Центрах событий Azure (Azure.Messaging.EventHubs) 
-Центры событий — это служба, которая обрабатывает большие объемы данных телеметрии о событиях, поступающих от подключенных устройств и приложений. Собираемые в Центрах событий данные можно сохранять в кластере хранилища или сразу обрабатывать. Например, можно преобразовать данные событий с помощью поставщика данных аналитики в режиме реального времени. Эта возможность сбора и обработки большого объема сведений о событиях — ключевой компонент в современных архитектурах приложений, включая "Интернет вещей". Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
-
-В этом руководстве демонстрируется, как отправлять и получать события через концентратор событий с применением пакета SDK Центров событий для .NET Core. 
+# <a name="send-events-to-and-receive-events-from-azure-event-hubs---net-core-azuremessagingeventhubs"></a>Отправка и получение событий с помощью .NET Core в Центрах событий Azure (Azure.Messaging.EventHubs) 
+В этом кратком руководстве показано, как отправлять события в концентратор событий и получать события из него с помощью библиотеки .NET Core **Azure.Messaging.EventHubs**. 
 
 > [!IMPORTANT]
-> В рамках этого краткого руководства применяется библиотека **Azure.Messaging.EventHubs**. Краткое руководство с примерами для старой библиотеки **Microsoft.Azure.EventHubs** вы найдете [здесь](event-hubs-dotnet-standard-getstarted-send.md). 
+> В рамках этого краткого руководства применяется библиотека **Azure.Messaging.EventHubs**. Краткое руководство, в рамках которого используется старая библиотека **Microsoft.Azure.EventHubs**, можно найти в статье об [отправке и получении событий с помощью библиотеки Microsoft.Azure.EventHubs](event-hubs-dotnet-standard-getstarted-send.md). 
+
+
 
 ## <a name="prerequisites"></a>Предварительные требования
+Если вы впервые используете Центры событий Azure, ознакомьтесь с общими сведениями в [этой статье](event-hubs-about.md), прежде чем приступить к работе с этим руководством. 
+
+Для работы с данным руководством необходимо следующее:
 
 - **Подписка Microsoft Azure.** Чтобы использовать службы Azure, в том числе Центры событий Azure, потребуется действующая подписка.  Если у вас еще нет учетной записи Azure, [зарегистрируйтесь для работы с бесплатной пробной версией](https://azure.microsoft.com/free/) или [активируйте преимущества для подписчиков MSDN при создании учетной записи](https://azure.microsoft.com).
-- **Microsoft Visual Studio 2019**. Клиентская библиотека для Центров событий Azure использует новые возможности, реализованные в C# версии 8.0.  Вы можете применять эту библиотеку и с более старыми версиями C#, но тогда некоторые функции будут недоступны.  Чтобы включить эти возможности, настройте [нацеливание на .NET Core 3.0](/dotnet/standard/frameworks#how-to-specify-target-frameworks) или [укажите требуемую версию языка](/dotnet/csharp/language-reference/configure-language-version#override-a-default) (не ниже 8.0). Если вы используете Visual Studio, учитывайте, что версии старше Visual Studio 2019 несовместимы со средствами, необходимыми для сборки проектов C# 8.0. Скачать Visual Studio 2019, в том числе выпуск Community, можно [здесь](https://visualstudio.microsoft.com/vs/).
-- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Получите **строку подключения для пространства имен Центров событий**, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
+- **Microsoft Visual Studio 2019**. Клиентская библиотека для Центров событий Azure использует новые возможности, реализованные в C# версии 8.0.  Вы можете применять эту библиотеку и с более старыми версиями C#, но тогда некоторые функции будут недоступны.  Чтобы включить эти возможности, настройте [нацеливание на .NET Core 3.0](/dotnet/standard/frameworks#how-to-specify-target-frameworks) или [укажите требуемую версию языка](/dotnet/csharp/language-reference/configure-language-version#override-a-default) (не ниже 8.0). Если вы используете Visual Studio, учитывайте, что версии до Visual Studio 2019 несовместимы со средствами, необходимыми для сборки проектов C# 8.0. Скачать Visual Studio 2019, в том числе выпуск Community, можно [здесь](https://visualstudio.microsoft.com/vs/).
+- **Создайте пространство имен Центров событий и концентратор событий**. Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md). Получите **строку подключения для пространства имен Центров событий**, следуя инструкциям из статьи [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже в рамках этого краткого руководства.
 
 ## <a name="send-events"></a>Отправка событий 
 В этом разделе показано, как создать консольное приложение .NET Core, которое отправляет события в концентратор событий. 
@@ -115,12 +118,15 @@ ms.locfileid: "77023248"
 В этом разделе показано, как создать консольное приложение .NET Core для получения сообщений из концентратора событий с помощью обработчика событий. Обработчик событий упрощает прием событий от концентраторов событий, позволяя управлять постоянными контрольными точками и принимать сообщения от этих концентраторов событий в параллельном режиме. Обработчик событий связывается с определенным концентратором событий и группой потребителей. Он получает события от нескольких платформ концентратора событий и передает их делегату обработчика для применения к ним предоставленного вами кода. 
 
 
+> [!NOTE]
+> При использовании Azure Stack Hub учтите, что эта платформа может поддерживать версию пакета SDK для хранилища BLOB-объектов, отличную от доступных в Azure. Например, если вы используете [Azure Stack Hub версии 2002](https://docs.microsoft.com/azure-stack/user/event-hubs-overview), последней доступной версией для службы хранилища будет 2017-11-09. В таком случае кроме действий, описанных в этом разделе, вам нужно добавить код для нацеливания на API службы хранилища версии 2017-11-09. Пример нацеливания на определенную версию API службы хранилища см. [на сайте GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples/Sample10_RunningWithDifferentStorageVersion.cs). Дополнительные сведения о версиях службы хранилища Azure, поддерживаемых в Azure Stack Hub, см. в статье [Хранилище Azure Stack Hub. Отличия и рекомендации](https://docs.microsoft.com/azure-stack/user/azure-stack-acs-differences).
+
 ### <a name="create-an-azure-storage-and-a-blob-container"></a>Создание службы хранилища Azure и контейнера больших двоичных объектов
 В рамках этого краткого руководства вы настроите Службу хранилища Azure в качестве хранилища контрольных точек. Выполните указанные ниже действия, чтобы создать учетную запись хранения Azure. 
 
 1. [Создайте учетную запись хранения Azure](/azure/storage/common/storage-account-create?tabs=azure-portal)
 2. [Создание контейнера больших двоичных объектов](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)
-3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md?#view-and-copy-a-connection-string).
+3. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md).
 
     Запишите имя контейнера и строку подключения. Их вы примените далее в коде получения данных. 
 
@@ -129,7 +135,7 @@ ms.locfileid: "77023248"
 
 1. В окне обозревателя решений щелкните правой кнопкой мыши решение **EventHubQuickStart**, выберите элемент **Добавить** и действие **Создать проект**. 
 1. Выберите **Консольное приложение (.NET Core)** , а затем щелкните **Далее**. 
-1. Введите строку **EventHubsReceiver** в качестве **имени проекта** и щелкните **Создать**. 
+1. Введите строку **EventHubsReceiver** в качестве **имени проекта** и нажмите кнопку **Создать**. 
 
 ### <a name="add-the-event-hubs-nuget-package"></a>Добавление пакета NuGet для Центров событий
 
@@ -196,11 +202,13 @@ ms.locfileid: "77023248"
 1. Теперь добавьте в этот класс указанные ниже методы обработки событий и ошибок. 
 
     ```csharp
-        static Task ProcessEventHandler(ProcessEventArgs eventArgs)
-        { 
+        static async Task ProcessEventHandler(ProcessEventArgs eventArgs)
+        {
             // Write the body of the event to the console window
-            Console.WriteLine("\tRecevied event: {0}", Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray())); 
-            return Task.CompletedTask; 
+            Console.WriteLine("\tRecevied event: {0}", Encoding.UTF8.GetString(eventArgs.Data.Body.ToArray()));
+
+            // Update checkpoint in the blob storage so that the app receives only new events the next time it's run
+            await eventArgs.UpdateCheckpointAsync(eventArgs.CancellationToken);
         }
 
         static Task ProcessErrorHandler(ProcessErrorEventArgs eventArgs)
@@ -228,3 +236,4 @@ ms.locfileid: "77023248"
 
 - [Azure Event Hubs samples](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs/samples) (Примеры Центров событий Azure)
 - [Примеры обработчика событий в GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor/samples)
+- [Пример управления доступом на основе ролей (RBAC)](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp)

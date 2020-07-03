@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание приложения Java на платформе Windows
-description: Быстрое развертывание первого приложения Hello World на Java в службе приложений Azure в Windows. Подключаемый модуль Maven для Службы приложений упрощает развертывание приложений Java.
+description: Быстрое развертывание первого приложения Hello World на Java в службе приложений Azure в Windows. Подключаемый модуль веб-приложения Azure для Maven упрощает развертывание приложений Java.
 keywords: azure, служба приложений, веб-приложение, windows, java, maven, краткое руководство
 author: msangapu-msft
 ms.assetid: 582bb3c2-164b-42f5-b081-95bfcb7a502a
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: jafreebe
 ms.custom: mvc, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c511ed3f432c8e54a820c01839269712271774bd
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 6681b2688c7e8884a197ebe27fb784b1a195f4b5
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672157"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81732165"
 ---
 # <a name="quickstart-create-a-java-app-on-azure-app-service-on-windows"></a>Краткое руководство. Создание приложения Java в Службе приложений Azure на платформе Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "74672157"
 > В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть Службу приложений в _Linux_, прочитайте статью [Краткое руководство. Создание приложения Java в Службе приложений на платформе Linux](./containers/quickstart-java.md).
 >
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  Узнайте, как использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) с [подключаемым модулем Maven для Службы приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), чтобы развернуть файл Java веб-архива (WAR).
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве показано, как использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) с [подключаемым модулем веб-приложения Azure для Maven](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), чтобы развернуть файл веб-архива (WAR) Java.
 
 > [!NOTE]
 > То же самое можно выполнить с помощью популярных интегрированных сред разработки, например IntelliJ и Eclipse. См. подробнее об [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij-create-hello-world-web-app) и [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse-create-hello-world-web-app).
@@ -59,7 +59,7 @@ code pom.xml
     <plugin>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.8.0</version>
+        <version>1.9.0</version>
         <configuration>
             <!-- Specify v2 schema -->
             <schemaVersion>v2</schemaVersion>
@@ -95,7 +95,7 @@ code pom.xml
 
 Укажите нужные значения вместо следующих заполнителей в конфигурации подключаемого модуля:
 
-| Placeholder | ОПИСАНИЕ |
+| Заполнитель | Описание |
 | ----------- | ----------- |
 | `SUBSCRIPTION_ID` | Уникальный идентификатор подписки, в которой вы хотите развернуть приложение. Идентификатор подписки по умолчанию можно получить в Cloud Shell или CLI с помощью команды `az account show`. Для всех доступных подписок используйте команду `az account list`.|
 | `RESOURCEGROUP_NAME` | Имя новой группы ресурсов, в которой создается приложение. Поместив все ресурсы для приложения в группу, вы можете управлять ими совместно. Например, при удалении группы ресурсов все ресурсы, связанные с приложением, также удаляются. Укажите вместо этого значения уникальное имя новой группы ресурсов, например *myResourceGroup*. Это имя группы ресурсов будет использоваться для удаления всех ресурсов Azure в следующем разделе. |
@@ -118,10 +118,21 @@ mvn package azure-webapp:deploy
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+> [!div class="nextstepaction"]
+> [Подключение к Базе данных SQL Azure на Java](/azure/sql-database/sql-database-connect-query-java?toc=%2Fazure%2Fjava%2Ftoc.json)
+
+> [!div class="nextstepaction"]
+> [Подключение к Базе данных Azure для MySQL на Java](/azure/mysql/connect-java)
+
+> [!div class="nextstepaction"]
+> [Подключение к Базе данных Azure для PostgreSQL на Java](/azure/postgresql/connect-java)
 
 > [!div class="nextstepaction"]
 > [Ресурсы Azure для разработчиков Java](/java/azure/)
 
 > [!div class="nextstepaction"]
 > [Сопоставление пользовательского домена](app-service-web-tutorial-custom-domain.md)
+
+> [!div class="nextstepaction"]
+> [Дополнительные сведения о подключаемых модулях Maven для Azure](https://github.com/microsoft/azure-maven-plugins)

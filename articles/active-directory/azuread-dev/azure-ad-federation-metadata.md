@@ -4,21 +4,21 @@ description: В этой статье описывается документ м
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.assetid: c2d5f80b-aa74-452c-955b-d8eb3ed62652
 ms.service: active-directory
 ms.subservice: azuread-dev
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/07/2017
 ms.author: ryanwi
-ms.reviewer: hirsin, dastrock
+ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: ff034da1f2f40ad0162e5b9fad477d066bc4c3e7
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ROBOTS: NOINDEX
+ms.openlocfilehash: bcc44f61ccb7b4a19e7df39ab979669c5aa37da1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77165102"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80154905"
 ---
 # <a name="federation-metadata"></a>Метаданные федерации
 
@@ -43,7 +43,7 @@ Azure AD публикует метаданные федерации по адр�
 
 Для **общих конечных точек**`TenantDomainName` является `common`. В этом документе перечислены только те элементы метаданных федерации, которые являются общими для всех клиентов Azure AD, размещенных на login.microsoftonline.com.
 
-Клиентская конечная точка может иметь такой адрес: `https://login.microsoftonline.com/contoso.onmicrosoft.com/FederationMetadata/2007-06/FederationMetadata.xml`. Независимая от клиента конечная точка: [https://login.microsoftonline.com/common/FederationMetadata/2007-06/FederationMetadata.xml](https://login.microsoftonline.com/common/FederationMetadata/2007-06/FederationMetadata.xml). Документ метаданных федерации можно просмотреть, введя этот URL-адрес в браузере.
+Клиентская конечная точка может иметь такой адрес: `https://login.microsoftonline.com/contoso.onmicrosoft.com/FederationMetadata/2007-06/FederationMetadata.xml`. Независимая от клиента конечная точка — [https://login.microsoftonline.com/common/FederationMetadata/2007-06/FederationMetadata.xml](https://login.microsoftonline.com/common/FederationMetadata/2007-06/FederationMetadata.xml). Документ метаданных федерации можно просмотреть, введя этот URL-адрес в браузере.
 
 ## <a name="contents-of-federation-metadata"></a>Содержимое метаданных федерации
 В следующем разделе приведены сведения, необходимые для служб, которые используют токены, выданные службой Azure AD.

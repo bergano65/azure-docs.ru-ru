@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 05/01/2019
 ms.author: b-juche
 ms.openlocfilehash: aea783b818550b8219e1a0498256280f61f678e1
-ms.sourcegitcommit: 1752581945226a748b3c7141bffeb1c0616ad720
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70995117"
 ---
 # <a name="cost-model-for-azure-netapp-files"></a>Модель затрат для Azure NetApp Files 
@@ -87,8 +87,8 @@ Azure NetApp Files оплачивается по подготовленной е
 
 Использование емкости моментальных снимков в Azure NetApp Files оценивается по квоте родительского тома.  В результате он использует ту же ставку выставления счетов, что и пул емкости, к которому принадлежит том.  Однако, в отличие от активного тома, использование моментального снимка измеряется в зависимости от используемой добавочной емкости.  Моментальные снимки Azure NetApp Files по сути являются разностными. В зависимости от частоты изменения данных моментальные снимки часто потребляют гораздо меньше ресурсов, чем логическая емкость активного тома. Например, предположим, что имеется моментальный снимок тома 500 гиб, который содержит только 10 гиб разностных данных. Емкость, выплаченная с квотой тома для этого моментального снимка, будет составлять 10 гиб, а не 500 гиб. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Страница цен Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
-* [Service levels for Azure NetApp Files](azure-netapp-files-service-levels.md) (Уровни обслуживания для для службы Azure NetApp Files)
+* [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)

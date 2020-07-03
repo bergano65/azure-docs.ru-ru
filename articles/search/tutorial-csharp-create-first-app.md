@@ -3,19 +3,19 @@ title: Учебник по созданию первого приложения 
 titleSuffix: Azure Cognitive Search
 description: Узнайте, как создать первое приложение поиска C# с помощью пошаговых инструкций. В нем описывается весь процесс создания приложения, а также приводится ссылка на готовое приложение в репозитории GitHub. Познакомьтесь с основными компонентами службы "Когнитивный поиск Azure".
 manager: nitinme
-author: tchristiani
-ms.author: terrychr
+author: HeidiSteen
+ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 02/10/2020
-ms.openlocfilehash: 2b4f67fc448d98239947fd764d4926f1d590c5e2
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: a105766b713ce44d800391e2e943f2ac864fa0df
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121585"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780629"
 ---
-# <a name="c-tutorial-create-your-first-app---azure-cognitive-search"></a>Руководство по C#. Создание приложения для службы "Когнитивный поиск Azure"
+# <a name="tutorial-create-your-first-search-app-using-the-net-sdk"></a>Руководство по Создание первого приложения поиска с помощью пакета SDK для .NET
 
 Узнайте, как создать веб-интерфейс для отправки запросов к индексу службы "Когнитивный поиск Azure" и отображения полученных результатов. В руководстве предполагается наличие у вас готового и размещенного индекса, что позволит сосредоточиться на создании страницы поиска. Индекс содержит вымышленные данные об отелях. Создав базовую страницу, вы сможете в дальнейшем разбить ее на страницы, добавить функции фасетного поиска, автозаполнения и отображения поисковых подсказок, выполнив инструкции из последующих руководств.
 

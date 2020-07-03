@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: 9d335bcf6daf0b38e7a68ca2d40894dd64c93e40
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: af17f9c2ef7eea5eb531327d4df13d5885a49b7e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442153"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80985598"
 ---
 # <a name="azure-cosmos-db-bulk-executor-library-overview"></a>Общие сведения о библиотеке массового исполнителя в Azure Cosmos DB
  
@@ -46,9 +46,9 @@ Azure Cosmos DB — это быстрая, гибкая и глобально р
 
 Библиотека операций с массовым исполнителем гарантирует максимальное использование пропускной способности, выделенной для коллекции. Она использует  [механизм управления перегрузкой в стиле AIMD](https://tools.ietf.org/html/rfc5681) для каждого диапазона ключей разделов Azure Cosmos DB, чтобы эффективно обрабатывать ограничения частоты запросов и время ожидания. 
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие шаги 
   
 * Дополнительные сведения см. в примерах приложений, использующих библиотеку небольшого выполнителя в [.NET](bulk-executor-dot-net.md) и [Java](bulk-executor-java.md).  
 * Ознакомьтесь со сведениями и заметками о выпуске пакета SDK для массового исполнителя в статьях для [.NET](sql-api-sdk-bulk-executor-dot-net.md) и для [Java](sql-api-sdk-bulk-executor-java.md).
 * Библиотека небольшого Исполнительного исполнителя интегрирована в соединитель Cosmos DB Spark. Дополнительные сведения см. в статье о [соединителе Azure Cosmos DB Spark](spark-connector.md) .  
-* Библиотека массового исполнителя также интегрирована в новую версию [соединителя Azure Cosmos DB](https://aka.ms/bulkexecutor-adf-v2) для фабрики данных Azure в целях копирования данных.
+* Библиотека массового исполнителя также интегрирована в новую версию [соединителя Azure Cosmos DB](../data-factory/connector-azure-cosmos-db.md) для фабрики данных Azure в целях копирования данных.

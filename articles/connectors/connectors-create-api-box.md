@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/07/2016
 tags: connectors
 ms.openlocfilehash: c7f97ff33742eb545cbfbd7521ba135584851e5e
-ms.sourcegitcommit: ff9688050000593146b509a5da18fbf64e24fbeb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75666777"
 ---
 # <a name="create-and-manage-files-in-box-by-using-azure-logic-apps"></a>Создание файлов и управление ими в Box с помощью Azure Logic Apps
@@ -27,7 +27,7 @@ ms.locfileid: "75666777"
   Когда эти действия получают ответ, они делают выходные данные доступными для использования другими действиями. 
   Например, при изменении файла в Box можно отправить измененный файл по электронной почте с помощью Office 365.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись [Box](https://www.box.com/home).
 

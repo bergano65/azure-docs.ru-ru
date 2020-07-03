@@ -11,15 +11,20 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 26dd7c4f33360030b13ddbfc1516396436724c40
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4bd667a2302136b5e12d2e4e548c9e8863715621
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75440436"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81415280"
 ---
 # <a name="execute-pipeline-activity-in-azure-data-factory"></a>Действие выполнения конвейера в фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 Действие выполнения конвейера позволяет конвейеру фабрики данных вызвать другой конвейер.
+
+
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -59,13 +64,13 @@ ms.locfileid: "75440436"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description | Допустимые значения | Обязательно для заполнения
+Свойство | Описание | Допустимые значения | Обязательный
 -------- | ----------- | -------------- | --------
-name | Имя действия выполнения конвейера. | String | Да
-type | Должно иметь значение **ExecutePipeline**. | String | Да
+name | Имя действия выполнения конвейера. | Строка | Да
+type | Должно иметь значение **ExecutePipeline**. | Строка | Да
 pipeline | Ссылка на зависимый конвейер, вызывающий этот конвейер. Объект ссылки конвейера имеет два свойства: **referenceName** и **type**. Свойство referenceName указывает имя конвейера в ссылке. Для свойства type необходимо задать значение PipelineReference. | PipelineReference | Да
 параметры | Параметры для передачи в вызванный конвейер | Объект JSON, сопоставляющий имена параметров со значениями аргументов | Нет
-waitOnCompletion | Определяет, будет ли при выполнении действия ожидаться завершение выполнения зависимого конвейера. Значение по умолчанию — false. | Логическое | Нет
+waitOnCompletion | Определяет, будет ли при выполнении действия ожидаться завершение выполнения зависимого конвейера. Значение по умолчанию — false. | Логическое значение | Нет
 
 ## <a name="sample"></a>Пример
 В этом сценарии есть два конвейера:
@@ -195,7 +200,7 @@ waitOnCompletion | Определяет, будет ли при выполнен
 }
 ```
 
-**Набор данных приемника**
+**Целевой набор данных**
 ```json
 {
     "name": "sinkBlobDataset",
@@ -251,10 +256,10 @@ waitOnCompletion | Определяет, будет ли при выполнен
 }
 
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
-- [Действие ForEach](control-flow-for-each-activity.md)
+- [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Веб-действие](control-flow-web-activity.md)

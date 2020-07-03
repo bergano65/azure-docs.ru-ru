@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
 ms.openlocfilehash: a61f7ff69e648262eb721eb61a98b09dbbee924c
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73961431"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-a-secondary-on-premises-site-after-failover"></a>Настройка назначения IP-адресов для подключения к локальному веб-сайту после отработки отказа
@@ -61,13 +61,13 @@ ms.locfileid: "73961431"
 На следующем рисунке показаны подсети до и после отработки отказа:
 
 
-**Перед выполнением отработки отказа**
+**Перед отработкой отказа**
 
-![Перед выполнением отработки отказа](./media/hyper-v-vmm-networking/network-design2.png)
+![До отработки отказа](./media/hyper-v-vmm-networking/network-design2.png)
 
-**После выполнения отработки отказа**
+**После отработки отказа**
 
-![После выполнения отработки отказа](./media/hyper-v-vmm-networking/network-design3.png)
+![После отработки отказа](./media/hyper-v-vmm-networking/network-design3.png)
 
 После отработки отказа Site Recovery выделяет IP-адреса для каждого сетевого интерфейса виртуальной машины. Адрес назначается из пула статических IP-адресов в соответствующей сети для каждого экземпляра виртуальной машины.
 
@@ -116,16 +116,16 @@ ms.locfileid: "73961431"
 - В этом сценарии не нужно выполнять отработку отказа всей подсети, а также вносить изменения для перенастройки VPN или сетевых маршрутов. Отработка отказа и некоторые обновления DNS обеспечивают доступность приложений.
 - Если DNS настроен для разрешения динамических обновлений, после запуска по завершении отработки отказа виртуальные машины зарегистрируются, используя новый IP-адрес.
 
-**Перед выполнением отработки отказа**
+**Перед отработкой отказа**
 
 ![Другой IP-адрес — до отработки отказа](./media/hyper-v-vmm-networking/network-design10.png)
 
-**После выполнения отработки отказа**
+**После отработки отказа**
 
 ![Другой IP-адрес — после отработки отказа](./media/hyper-v-vmm-networking/network-design11.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Запуск отработки отказа](hyper-v-vmm-failover-failback.md)
+[Выполнение отработки отказа](hyper-v-vmm-failover-failback.md)
 

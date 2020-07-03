@@ -9,19 +9,19 @@ ms.date: 11/13/2019
 ms.author: absha
 ms.custom: mvc
 ms.openlocfilehash: b90736b3ed1c1f69488fde4a386cf215d751c362
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74012857"
 ---
 # <a name="rewrite-http-request-and-response-headers-with-azure-application-gateway---azure-portal"></a>Перезапись заголовков HTTP-запроса и ответа с помощью шлюза приложений Azure — портал Azure
 
 В этой статье описывается, как использовать портал Azure для настройки экземпляра [SKU шлюза приложений версии 2](<https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant>) для перезаписи заголовков HTTP в запросах и ответах.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Для выполнения действий, описанных в этой статье, необходимо иметь экземпляр SKU шлюза приложений версии 2. Перезапись заголовков не поддерживается в номере SKU v1. Если у вас нет номера SKU v2, создайте экземпляр [шлюза приложений версии 2 (SKU](https://docs.microsoft.com/azure/application-gateway/tutorial-autoscale-ps) ) перед началом.
 
@@ -67,7 +67,7 @@ ms.locfileid: "74012857"
 
    - Введите имя набора перезаписи в поле **имя** .
    - Выберите одно или несколько правил, перечисленных в списке **связанные правила маршрутизации** . Можно выбрать только те правила, которые не связаны с другими наборами перезаписи. Правила, которые уже связаны с другими наборами перезаписи, недоступны.
-   - Нажмите кнопку **Далее**.
+   - Выберите **Далее**.
    
      ![Добавить имя и сопоставление](media/rewrite-http-headers-portal/name-and-association.png)
 
@@ -97,11 +97,11 @@ ms.locfileid: "74012857"
 
    - В разделе **с учетом регистра**выберите **нет**.
 
-   - В списке **оператор** выберите **равно (=)** .
+   - В списке **оператор** выберите **равно (=)**.
 
    - Введите шаблон регулярного выражения. В этом примере мы будем использовать шаблон `(https?):\/\/.*azurewebsites\.net(.*)$`.
 
-   - Нажмите кнопку **ОК**.
+   - Щелкните **ОК**.
 
      ![Настройка условия If](media/rewrite-http-headers-portal/condition.png)
 
@@ -115,9 +115,9 @@ ms.locfileid: "74012857"
 
    - В списке **общий заголовок** выберите **Расположение**.
 
-   - Введите значение заголовка. В этом примере в качестве значения заголовка будет использоваться `{http_resp_Location_1}://contoso.com{http_resp_Location_2}`. Это значение заменит *azurewebsites.NET* на *contoso.com* в заголовке Location.
+   - Введите значение заголовка. В этом примере мы будем использовать `{http_resp_Location_1}://contoso.com{http_resp_Location_2}` в качестве значения заголовка. Это значение заменит *azurewebsites.NET* на *contoso.com* в заголовке Location.
 
-   - Нажмите кнопку **ОК**.
+   - Щелкните **ОК**.
 
      ![Добавление действия](media/rewrite-http-headers-portal/action.png)
 
@@ -129,6 +129,6 @@ ms.locfileid: "74012857"
 
    ![Представление перезаписи набора](media/rewrite-http-headers-portal/rewrite-set-list.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как настроить некоторые распространенные варианты использования, см. в статье [Общие сценарии перезаписи заголовков](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers).

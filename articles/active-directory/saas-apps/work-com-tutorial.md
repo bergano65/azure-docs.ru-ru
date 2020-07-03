@@ -17,10 +17,10 @@ ms.date: 04/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e7a6dc16eef1bb36a5bd6cbf0502a83481230bc0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67087080"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workcom"></a>Руководство по Интеграция Azure Active Directory с Work.com
@@ -39,7 +39,7 @@ ms.locfileid: "67087080"
 
 Чтобы настроить интеграцию Azure AD с Work.com, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Work.com с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -103,7 +103,7 @@ ms.locfileid: "67087080"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -122,7 +122,7 @@ ms.locfileid: "67087080"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -134,7 +134,7 @@ ms.locfileid: "67087080"
 
 2. Перейдите в раздел **Настройка**.
    
-    ![Настройка](./media/work-com-tutorial/ic794108.png "Настройка")
+    ![Установка](./media/work-com-tutorial/ic794108.png "Настройка")
 
 3. В области навигации слева в разделе **Administer** (Администрирование) щелкните **Domain Management** (Управление доменами), чтобы развернуть соответствующий раздел, а затем щелкните **My Domain** (Мой домен), чтобы открыть страницу **My Domain** (Мой домен). 
    
@@ -142,13 +142,13 @@ ms.locfileid: "67087080"
 
 4. Чтобы проверить правильность настройки домена, убедитесь, что он находится на этапе **Step 4 Deployed to Users** (Шаг 4. Развернут для пользователей), и просмотрите раздел **My Domain Settings** (Параметры моего домена).
    
-    ![Домен, развернутый для пользователя](./media/work-com-tutorial/ic784377.png "Domain Deployed to User")
+    ![Домен развернут для пользователей](./media/work-com-tutorial/ic784377.png "Домен развернут для пользователей")
 
 5. Войдите в клиент Work.com.
 
 6. Перейдите в раздел **Настройка**.
     
-    ![Настройка](./media/work-com-tutorial/ic794108.png "Настройка")
+    ![Установка](./media/work-com-tutorial/ic794108.png "Настройка")
 
 7. Разверните меню **Управление безопасностью**, а затем щелкните **Параметры единого входа**.
     
@@ -156,9 +156,9 @@ ms.locfileid: "67087080"
 
 8. На странице диалогового окна **Параметры единого входа** сделайте следующее:
     
-    ![Включение SAML](./media/work-com-tutorial/ic781026.png "Включение SAML")
+    ![SAML включен](./media/work-com-tutorial/ic781026.png "SAML включен")
     
-    a. Установите флажок **SAML включен**.
+    а. Установите флажок **SAML включен**.
     
     b. Нажмите кнопку **Создать**.
 
@@ -166,7 +166,7 @@ ms.locfileid: "67087080"
     
     ![Параметры единого входа SAML](./media/work-com-tutorial/ic794114.png "Параметры единого входа SAML")
     
-    a. В текстовом поле **Имя** введите имя конфигурации.  
+    а. В текстовом поле **Имя** введите имя конфигурации.  
        
     > [!NOTE]
     > При вводе значения в поле **Имя** текстовое поле **Имя API** заполняется автоматически.
@@ -177,9 +177,9 @@ ms.locfileid: "67087080"
     
     d. В текстовое поле **Entity id** (Идентификатор сущности) введите `https://salesforce-work.com`.
     
-    д. В поле **SAML Identity Type** (Тип удостоверения SAML) выберите значение **Assertion contains the Federation ID from the User object** (Проверочное утверждение содержит идентификатор федерации из объекта User).
+    д) В поле **SAML Identity Type** (Тип удостоверения SAML) выберите значение **Assertion contains the Federation ID from the User object** (Проверочное утверждение содержит идентификатор федерации из объекта User).
     
-    Е. В поле **SAML Identity Location** (Расположение удостоверения SAML) выберите значение **Identity is in the NameIdentfier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
+    е) В поле **SAML Identity Location** (Расположение удостоверения SAML) выберите значение **Identity is in the NameIdentfier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
     
     ж. В текстовое поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -195,11 +195,11 @@ ms.locfileid: "67087080"
 
 11. На странице **My Domain** (Мой домен) в разделе **Login Page Branding** (Фирменная символика страницы входа) нажмите кнопку **Edit** (Изменить).
     
-    ![Фирменная символика страницы входа](./media/work-com-tutorial/ic767826.png "Фирменная символика страницы входа")
+    ![Фирменная символика на странице входа](./media/work-com-tutorial/ic767826.png "Фирменная символика страницы входа")
 
 12. На странице **Login Page Branding** (Фирменная символика страницы входа) в разделе **Authentication Service** (Служба аутентификации) отображается имя **SAML SSO Settings** (Параметры единого входа SAML). Выберите его, а затем нажмите кнопку **Сохранить**.
     
-    ![Фирменная символика страницы входа](./media/work-com-tutorial/ic784366.png "Фирменная символика страницы входа")
+    ![Фирменная символика на странице входа](./media/work-com-tutorial/ic784366.png "Фирменная символика страницы входа")
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -261,7 +261,7 @@ ms.locfileid: "67087080"
 
 2. Перейдите в раздел **Настройка**.
    
-    ![Настройка](./media/work-com-tutorial/IC794108.png "Настройка")
+    ![Установка](./media/work-com-tutorial/IC794108.png "Настройка")
 
 3. Выберите **Manage Users \> Users** (Управление пользователями > Пользователи).
    
@@ -273,9 +273,9 @@ ms.locfileid: "67087080"
 
 5. В разделе "User Edit" (Изменение пользователя) выполните следующие действия, разместив в текстовые поля атрибуты действующей учетной записи Azure AD, которую вы хотите подготовить.
    
-    ![Изменение пользователя](./media/work-com-tutorial/ic794118.png "Изменение пользователя")
+    ![Изменение пользователя](./media/work-com-tutorial/ic794118.png "Изменить пользователя")
    
-    a. В текстовое поле **First Name** (Имя) введите **имя пользователя** (**Britta**).
+    а. В текстовое поле **First Name** (Имя) введите **имя пользователя** (**Britta**).
     
     b. В текстовое поле **Last Name** (Фамилия) введите **фамилию** (**Simon**).
     
@@ -283,9 +283,9 @@ ms.locfileid: "67087080"
     
     d. В текстовом поле **Адрес электронной почты** введите **адрес электронной почты** пользователя Brittasimon@contoso.com.
     
-    д. В текстовом поле **User Name** (Имя пользователя) укажите имя пользователя, например Brittasimon@contoso.com.
+    д) В текстовом поле **User Name** (Имя пользователя) укажите имя пользователя, например Brittasimon@contoso.com.
     
-    Е. В текстовое поле **Nick Name** (Псевдоним) укажите **псевдоним** пользователя (**Simon**).
+    е) В текстовое поле **Nick Name** (Псевдоним) укажите **псевдоним** пользователя (**Simon**).
     
     ж. Выберите значения параметров **Role** (Роль), **User License** (Пользовательская лицензия) и **Profile** (Профиль).
     
@@ -307,5 +307,5 @@ ms.locfileid: "67087080"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

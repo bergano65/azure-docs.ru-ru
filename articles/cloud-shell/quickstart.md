@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: damaerte
-ms.openlocfilehash: 574841b3a89385a3b8bf048d5ed36f40fac99a83
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 58d795a5aee79e4149864a79a923ce34950b31d6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72757398"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79458075"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
 
@@ -25,7 +25,7 @@ ms.locfileid: "72757398"
 > Также вы можете ознакомиться с кратким руководством по использованию [PowerShell в Azure Cloud Shell](quickstart-powershell.md).
 
 ## <a name="start-cloud-shell"></a>Запуск Cloud Shell
-1. Запустите **Cloud Shell** на верхней панели навигации портала Azure. <br>
+1. Запустите **Cloud Shell** в верхней области навигации портал Azure. <br>
 ![](media/quickstart/shell-icon.png)
 
 2. Выберите подписку для создания учетной записи хранения и общей папки для службы файлов Microsoft Azure.
@@ -58,7 +58,7 @@ az account set --subscription 'my-subscription-name'
 az group create --location westus --name MyRG
 ```
 
-### <a name="create-a-linux-vm"></a>Создание ВМ Linux
+### <a name="create-a-linux-vm"></a>Создание виртуальной машины Linux
 Создайте виртуальную машину Ubuntu в новой группе ресурсов. Azure CLI создаст ключи SSH и настроит с их помощью виртуальную машину. <br>
 
 ```azurecli-interactive
@@ -85,7 +85,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
 
 ## <a name="cleaning-up"></a>Очистка. 
 1. Закройте сеанс SSH.
-   ```azurecli-interactive
+   ```
    exit
    ```
 
@@ -94,7 +94,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
    az group delete -n MyRG
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Дополнительные сведения о сохранении файлов для Bash в Cloud Shell.](persisting-shell-storage.md) <br>
 [Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Общие сведения о службе файлов Azure](../storage/files/storage-files-introduction.md) <br>

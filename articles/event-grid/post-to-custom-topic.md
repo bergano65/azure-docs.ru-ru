@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: spelluru
 ms.openlocfilehash: 0afad249f71a36bf7552da499e985b68d48ee7a9
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76721563"
 ---
 # <a name="post-to-custom-topic-for-azure-event-grid"></a>Публикация в пользовательском разделе для службы "Сетка событий Azure"
@@ -103,7 +103,7 @@ az eventgrid topic key list --name <topic-name> -g <topic-resource-group> --quer
 
 |Результат  |Ответ  |
 |---------|---------|
-|Успешно  | 200 ОК  |
+|Успех  | 200 ОК  |
 |Неправильный формат данных события | 400 — недопустимый запрос |
 |Недопустимый ключ доступа | 401 — недостаточно прав |
 |Неправильная конечная точка | 404 — не найдено |
@@ -124,7 +124,7 @@ az eventgrid topic key list --name <topic-name> -g <topic-resource-group> --quer
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь со сведениями о [мониторинге доставки сообщений в службе "Сетка событий"](monitor-event-delivery.md).
 * Дополнительные сведения о ключе аутентификации см. в статье [Сетка событий: безопасность и проверка подлинности](security-authentication.md).

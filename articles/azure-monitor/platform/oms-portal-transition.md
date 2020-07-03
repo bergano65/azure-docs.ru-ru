@@ -1,18 +1,17 @@
 ---
 title: Перемещение портала OMS в Azure | Документация Майкрософт
 description: Портал OMS прекращает свою работу и все его функции перемещаются на портал Azure. Эта статья содержит подробные сведения об этом переходе.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/22/2019
-ms.openlocfilehash: 170973d15b5f49021a0507bdd2fd6a2632777d48
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 680cd9b44cc447f9bdea38cb9d04fc661fba9c79
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932153"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77659260"
 ---
 # <a name="oms-portal-moving-to-azure"></a>Перемещение портала OMS в Azure
 
@@ -31,7 +30,7 @@ ms.locfileid: "72932153"
 - [Управление доступом пользователей](#user-access-and-role-migration) теперь выполняется на портале Azure с помощью управления доступом на основе ролей.
 - Соединитель [Application Insights больше не требуется](#application-insights-connector-and-solution), так как все его функциональные возможности реализованы через запросы между рабочими областями.
 - Поддержка [мобильного приложения OMS](#oms-mobile-app) прекращается. 
-- [Решение NSG заменяется](#azure-network-security-group-analytics) расширенными функциями в решении "Аналитика трафика".
+- [Решение NSG заменяется](#azure-network-security-group-analytics) расширенной функциональностью, доступной через аналитика трафика решение.
 - Чтобы настроить новые подключения из System Center Operations Manager к Log Analytics, требуются [обновленные пакеты управления](#system-center-operations-manager).
 - Дополнительные сведения об изменениях в [Управлении обновлениями](../../automation/automation-update-management.md) см. в статье [Перенос развертываний обновлений OMS в Azure](../../automation/migrate-oms-update-deployments.md).
 
@@ -60,8 +59,8 @@ ms.locfileid: "72932153"
 | Разрешение на портале OMS | Роль в Azure |
 |:---|:---|
 | ReadOnly | читатель Log Analytics; |
-| участник; | участник Log Analytics. |
-| Администратор | Владелец. | 
+| Участник | участник Log Analytics. |
+| Администратор | Владелец | 
  
 
 ## <a name="new-workspaces"></a>Новые рабочие области
@@ -105,5 +104,5 @@ ms.locfileid: "72932153"
 ## <a name="system-center-operations-manager"></a>System Center Operations Manager
 Если вы уже [подключили группу управления Operations Manager к Log Analytics](om-agents.md), работа этого решения не изменится. Чтобы настроить новые подключения, следуйте указаниям в записи блога о [настройке Operations Management Suite с помощью пакета управления Microsoft System Center Operations Manager](https://blogs.technet.microsoft.com/momteam/2018/07/25/microsoft-system-center-operations-manager-management-pack-to-configure-operations-management-suite/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Просмотрите [вопросы и ответы о переходе от портала OMS на портал Azure для пользователей Log Analytics](oms-portal-faq.md).

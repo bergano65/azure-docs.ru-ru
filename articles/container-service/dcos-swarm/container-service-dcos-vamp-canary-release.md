@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/17/2017
 ms.author: rasquill
 ms.custom: mvc
-ms.openlocfilehash: 2af20a1ddf4239b7eec6cceabf2ff9711959c128
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: dfdf6e1f8edfb4dafaf93e62090ed51878f9b2aa
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77189111"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734830"
 ---
 # <a name="deprecated-canary-release-microservices-with-vamp-on-an-azure-container-service-dcos-cluster"></a>(УСТАРЕЛО) Ранний выпуск микрослужб с помощью Vamp в кластере DC/OS Службы контейнеров Azure
 
@@ -129,7 +129,7 @@ Vamp требуется Elasticsearch для сбора метрик и агре
 
 Самая простая форма [схемы Vamp](https://docs.vamp.io/how-vamp-works/vamp-and-kubernetes#vamp-deployments) описывает конечные точки (шлюзы), кластеры и службы, которые необходимо развернуть. Vamp использует кластеры, чтобы сгруппировать различные варианты одной службы в логические группы для раннего выпуска или A/B-тестирования.  
 
-В этом сценарии используется пример монолитного приложения с именем [**sava**](https://github.com/magneticio/sava), которое имеет версию 1.0. Монолит упакован в контейнер Docker, который находится в Docker Hub в разделе magneticio/sava:1.0.0. Приложение обычно работает через порт 8080, но в нашем случае необходимо предоставить к нему доступ через порт 9050. Разверните приложение через Vamp, используя простую схему.
+В этом сценарии используется пример монолитного приложения с именем [**sava**](https://github.com/magneticio/sava-product), которое имеет версию 1.0. Монолит упакован в контейнер Docker, который находится в Docker Hub в разделе magneticio/sava:1.0.0. Приложение обычно работает через порт 8080, но в нашем случае необходимо предоставить к нему доступ через порт 9050. Разверните приложение через Vamp, используя простую схему.
 
 1. Перейдите в раздел **Deployments** (Развертывания).
 
@@ -151,7 +151,7 @@ Vamp требуется Elasticsearch для сбора метрик и агре
               webport: 8080/http # cluster endpoint, used for canary releasing
    ```
 
-4. Нажмите кнопку **Сохранить**. Vamp инициирует развертывание.
+4. Выберите команду **Сохранить**. Vamp инициирует развертывание.
 
 Развертывание отображается на странице **Deployments** (Развертывания). Щелкните развертывание, чтобы отследить его состояние.
 
@@ -211,7 +211,7 @@ Vamp развернула службу sava на узлах агента DC/OS, 
               webport: 8080/http # cluster endpoint to update
    ```
   
-3. Нажмите кнопку **Сохранить**. Схема сохраняется и отображается на странице **Blueprints** (Схемы).
+3. Выберите команду **Сохранить**. Схема сохраняется и отображается на странице **Blueprints** (Схемы).
 
 4. Откройте меню действий схемы sava:1.1 и выберите команду **Merge to** (Объединить с).
 

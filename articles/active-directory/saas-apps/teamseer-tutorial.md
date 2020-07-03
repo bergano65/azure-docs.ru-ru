@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с TeamSeer | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с TeamSeer | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TeamSeer.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 3e505e4823db8c9f42bbff216f30326081110dcf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67088979"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-teamseer"></a>Руководство. Интеграция Azure Active Directory с TeamSeer
+# <a name="tutorial-azure-active-directory-integration-with-teamseer"></a>Руководство по Интеграция Azure Active Directory с TeamSeer
 
 В этом руководстве описано, как интегрировать TeamSeer с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением TeamSeer обеспечивает следующие преимущества.
@@ -38,7 +38,7 @@ ms.locfileid: "67088979"
 
 Чтобы настроить интеграцию Azure AD с TeamSeer, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка TeamSeer с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,7 +99,7 @@ ms.locfileid: "67088979"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -118,7 +118,7 @@ ms.locfileid: "67088979"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -134,25 +134,25 @@ ms.locfileid: "67088979"
 
 1. Щелкните **Настройка**.
 
-    ![Настройка](./media/teamseer-tutorial/ic789635.png "Настройка")
+    ![Установка](./media/teamseer-tutorial/ic789635.png "Настройка")
 
 1. Щелкните **Задать данные о поставщике SAML**.
 
-    ![Параметры SAML](./media/teamseer-tutorial/ic789636.png "Параметры SAML")
+    ![Параметры SAML](./media/teamseer-tutorial/ic789636.png "Настройка SAML")
 
 1. В разделе сведений о поставщике SAML выполните следующие действия:
 
-    ![Параметры SAML](./media/teamseer-tutorial/ic789637.png "Параметры SAML")
+    ![Параметры SAML](./media/teamseer-tutorial/ic789637.png "Настройка SAML")
 
-    a. В текстовое поле **URL** (URL-адрес) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    а. В текстовое поле **URL** (URL-адрес) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     b. Откройте сертификат в кодировке Base-64 в блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Общий сертификат поставщика удостоверений**.
 
 1. Чтобы завершить настройку поставщика SAML, выполните следующие действия:
 
-    ![Параметры SAML](./media/teamseer-tutorial/ic789638.png "Параметры SAML")
+    ![Параметры SAML](./media/teamseer-tutorial/ic789638.png "Настройка SAML")
 
-    a. В разделе **Тестовые адреса электронной почты**введите адрес электронной почты для тестового пользователя.
+    а. В разделе **Тестовые адреса электронной почты**введите адрес электронной почты для тестового пользователя.
   
     b. В текстовом поле **Издатель** введите URL-адрес издателя поставщика услуг.
   
@@ -225,7 +225,7 @@ ms.locfileid: "67088979"
 
     ![Сведения о пользователе](./media/teamseer-tutorial/ic789641.png "Сведения о пользователе")
 
-    a. В соответствующие поля введите **имя**, **фамилию**, **имя пользователя (адрес электронной почты)** действующей учетной записи AAD, которую нужно подготовить.
+    а. В соответствующие поля введите **имя**, **фамилию**, **имя пользователя (адрес электронной почты)** действующей учетной записи AAD, которую нужно подготовить.
   
     b. Щелкните **Далее**.
 
@@ -246,4 +246,4 @@ ms.locfileid: "67088979"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

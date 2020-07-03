@@ -10,11 +10,11 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 10/18/2018
 ms.openlocfilehash: 72261989b7cee9d2251eb18b36431ec807b0e874
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72791599"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79273011"
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell
 
@@ -140,7 +140,7 @@ MyFileShare3  \\MyStorageAccountName.file.core.windows.net\MyFileShare3;AccountN
 net use <DesiredDriveLetter>: \\<MyStorageAccountName>.file.core.windows.net\<MyFileShareName> <AccountKey> /user:Azure\<MyStorageAccountName>
 ```
 
-Дополнительные сведения см. [в разделе Подключение общей папки службы файлов Azure и доступ к общей папке в Windows][azmount].
+Дополнительные сведения см. в статье [Подключение общей папки Azure и получение доступа к этой папке в Windows][azmount].
 
 Кроме того, можно перейти в каталоги в файловом ресурсе Azure, как показано ниже.
 
@@ -290,7 +290,7 @@ ssh azureuser@MyVM.Domain.Com
 
 ## <a name="install-custom-modules"></a>Установка пользовательских модулей
 
-Вы можете запустить `Install-Module`, чтобы установить модули из [коллекция PowerShell][gallery].
+Можно выполнить команду `Install-Module`, чтобы установить модули из [коллекции PowerShell][gallery].
 
 ## <a name="get-help"></a>Get-Help
 
@@ -328,7 +328,7 @@ Hello World!
 Можно настроить среду PowerShell, создав профили PowerShell `profile.ps1` (или `Microsoft.PowerShell_profile.ps1`).
 Сохраните профиль на диске `$profile.CurrentUserAllHosts` (или `$profile.CurrentUserAllHosts`), чтобы его можно было загрузить в каждый сеанс PowerShell в Cloud Shell.
 
-Сведения о создании профиля см. в разделе [о профилях][profile].
+О том, как создать профиль, можно узнать в разделе [About Profiles][profile] (О профилях).
 
 ## <a name="use-git"></a>Использование Git
 

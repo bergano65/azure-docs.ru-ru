@@ -2,21 +2,17 @@
 title: Общие сведения об API потребления ресурсов Azure
 description: Узнайте, как интерфейсы API потребления ресурсов Azure предоставляют программный доступ к сведениям о стоимости и потреблении ресурсов Azure.
 author: bandersmsft
-manager: dougeby
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: billing
-ms.date: 10/01/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: 5ac0918fcd8c5a1eb9242d603a7e3433d0f709ed
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f2d7398be1db6760ebe532d3d726373d8c78e0c7
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75988465"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79202953"
 ---
 # <a name="azure-consumption-api-overview"></a>Общие сведения об API потребления ресурсов Azure
 

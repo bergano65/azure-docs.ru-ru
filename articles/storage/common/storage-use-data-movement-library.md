@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: ce7f6320ffa4d3e8c258c9d05542f12079ee355d
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 5b8654500fd697685b38e4f51ba1069e0cf6ccfc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509008"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78942906"
 ---
 # <a name="transfer-data-with-the-data-movement-library"></a>Перенос данных с помощью библиотеки перемещения данных
 
@@ -32,24 +32,24 @@ ms.locfileid: "76509008"
 - Копирование файла по URL-адресу в хранилище BLOB-объектов.
 - Копирование из хранилища BLOB-объектов в хранилище BLOB-объектов.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- [Код Visual Studio](https://code.visualstudio.com/)
-- [учетная запись хранения Azure](storage-account-create.md)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Учетная запись хранения Azure](storage-account-create.md) ;
 
 ## <a name="setup"></a>Настройка
 
 1. Ознакомьтесь с [руководством по установке .NET Core](https://www.microsoft.com/net/core), чтобы установить .NET Core. При выборе среды щелкните параметр командной строки.
 2. В командной строке создайте каталог для проекта. Перейдите в этот каталог и введите `dotnet new console -o <sample-project-name>` для создания проекта консольного приложения C#.
 3. Откройте этот каталог в Visual Studio Code. Этот шаг можно быстро выполнить, введя в командной строке `code .` в Windows.
-4. Установите [расширение C# ](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) из Marketplace для Visual Studio Code. Перезапустите Visual Studio Code.
+4. Установите [расширение C# ](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) из Marketplace для Visual Studio Code. Перезапустите Visual Studio Code.
 5. На этом этапе должны отобразиться два запроса. Первый — для добавления необходимых ресурсов для сборки. Щелкните "Да". Второй запрос — для восстановления неразрешенных зависимостей. Щелкните "Восстановить".
 6. Измените `launch.json` в `.vscode`, чтобы использовать внешний терминал в качестве консоли. Этот параметр следует читать как `"console": "externalTerminal"`.
 7. Visual Studio Code позволяет отлаживать приложения .NET Core. Нажмите клавишу `F5`, чтобы запустить приложение и проверить настройки. Вы должны увидеть текст "Hello World!" в консоли.
 
 ## <a name="add-the-data-movement-library-to-your-project"></a>Добавление библиотеки перемещения данных в проект
 
-1. Добавьте последнюю версию библиотеки перемещения данных в раздел `dependencies` файла `<project-name>.csproj`. На момент написания статьи это версия `"Microsoft.Azure.Storage.DataMovement": "0.6.2"`.
+1. Добавьте последнюю версию библиотеки перемещения данных в `dependencies` раздел `<project-name>.csproj` файла. На момент написания статьи это версия `"Microsoft.Azure.Storage.DataMovement": "0.6.2"`.
 2. Должен появиться запрос на восстановление проекта. Нажмите кнопку "Восстановить". Можно также восстановить проект из командной строки, введя команду `dotnet restore` в корневом каталоге проекта.
 
 Измените `<project-name>.csproj`.
@@ -564,7 +564,7 @@ public static async Task TransferAzureBlobToAzureBlob(CloudStorageAccount accoun
 
 Теперь приложение перемещения данных завершено. [Полный пример кода можно найти на сайте GitHub](https://github.com/azure-samples/storage-dotnet-data-movement-library-app).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Справочная документация по библиотеке перемещения данных службы хранилища Azure](https://azure.github.io/azure-storage-net-data-movement).
 

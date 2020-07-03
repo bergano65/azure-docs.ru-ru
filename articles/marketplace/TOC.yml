@@ -1,11 +1,11 @@
-- name: Документация по Azure Marketplace и AppSource
-  href: index.md
+- name: Документация по коммерческой платформе
+  href: index.yml
   items:
-    - name: Стратегия развития Azure Marketplace и AppSource
+    - name: Обновления коммерческой платформы
       href: ./marketplace-roadmap.md
-    - name: Политики и условия Azure Marketplace
+    - name: Политики и условия коммерческой платформы
       href: ./policies-terms.md
-    - name: 'Общие сведения об Azure Marketplace и AppSource, а также преимуществах их использования'
+    - name: 'Коммерческая платформа: общие сведения и преимущества'
       href: ./marketplace-publishers-guide.md
       items:
         - name: Два онлайн-магазина на одной площадке Marketplace
@@ -15,7 +15,7 @@
           items:
             - name: Управление потенциальными клиентами
               href: ./lead-management-for-cloud-marketplace.md
-            - name: Транзакции в Azure Marketplace
+            - name: Транзакции на коммерческой платформе
               href: ./marketplace-commercial-transaction-capabilities-and-considerations.md
             - name: Частные предложения
               href: ./private-offers.md
@@ -28,9 +28,9 @@
           items:
             - name: Виртуальные машины
               href: ./marketplace-virtual-machines.md
-            - name: 'Приложения Azure: шаблоны решений'
+            - name: Шаблоны решений приложений Azure
               href: ./marketplace-solution-templates.md
-            - name: 'Приложения Azure: управляемые приложения'
+            - name: Управляемые приложения Azure
               href: ./marketplace-managed-apps.md
             - name: Приложения SaaS
               href: ./marketplace-saas-applications-technical-publishing-guide.md
@@ -38,11 +38,11 @@
               href: ./marketplace-containers.md
             - name: Модули IoT Edge
               href: ./iot-edge-module.md
-            - name: Консультационная услуга
+            - name: Консультационные услуги
               href: ./consulting-services.md
-            - name: "Руководство по публикации в Office\_365, Dynamics\_365 и Power\_BI"
+            - name: "Office\_365, Dynamics\_365 и Power BI"
               href: ./appsource-offer-publishing-guide.md
-            - name: Включение описания в AppSource и Marketplace с помощью Azure Active Directory
+            - name: Включение аутентификации предложения с помощью Azure AD
               href: ./enable-appsource-marketplace-using-azure-ad.md
             - name: Интегрированные решения
               href: ./integrated-solutions-for-publishers.md
@@ -51,10 +51,7 @@
           items:
             - name: Рекомендации по размещению предложений
               href: ./gtm-offer-listing-best-practices.md
-              items:
-                - name: Категории
-                  href: ./gtm-offer-listing-best-practices-categories.md
-            - name: Получение описания
+            - name: Получить подборку
               href: ./gtm-how-to-get-featured.md
             - name: Проверка содержимого Marketplace
               href: ./marketplace-criteria-content-validation.md
@@ -69,18 +66,16 @@
               href: ./preferred-solutions.md
             - name: Интегрированные решения
               href: ./integrated-solutions.md
-        - name: Поддержка Azure Marketplace и AppSource
+        - name: Поддержка коммерческой платформы
           href: ./support-azure-marketplace.md
           items:
-            - name: Вопросы и ответы о Marketplace
+            - name: Вопросы и ответы о коммерческой платформе
               href: ./marketplace-faq-publisher-guide.md
             - name: Географическая доступность и валюты
               href: ./marketplace-geo-availability-currencies.md
 - name: Портал Cloud Partner
   href: ./cloud-partner-portal-orig/cloud-partner-portal-getting-started-with-the-cloud-partner-portal.md
   items:
-    - name: Миграция Портала Cloud Partner в Центр партнеров
-      href: ./cloud-partner-portal-orig/cloud-partner-portal-migration-to-partner-center.md
     - name: Знакомство с порталом
       href: ./cloud-partner-portal/portal-tour/cpp-portal-tour.md
       items:
@@ -135,8 +130,6 @@
           items:
             - name: Приступая к работе
               href: ./cloud-partner-portal-orig/si-getting-started.md
-            - name: Новые возможности
-              href: ./cloud-partner-portal-orig/si-changes.md
             - name: Веб-аналитика
               href: ./cloud-partner-portal-orig/web-analytics.md
             - name: Определения
@@ -176,7 +169,7 @@
         - name: Предложение приложения Azure
           href: ./cloud-partner-portal/azure-applications/cpp-azure-app-offer.md
           items:
-            - name: предварительные требования
+            - name: Предварительные требования
               href: ./cloud-partner-portal/azure-applications/cpp-prerequisites.md
             - name: Создание предложения приложения Azure
               href: ./cloud-partner-portal/azure-applications/cpp-create-offer.md
@@ -200,41 +193,9 @@
             - name: Обновление существующего предложения
               href: ./cloud-partner-portal/azure-applications/cpp-update-existing-offer.md
         - name: Консультационные услуги
-          href: ./cloud-partner-portal/consulting-services/cloud-partner-portal-consulting-services-publishing-offer.md
-          items:
-            - name: предварительные требования
-              href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-prerequisites.md
-            - name: Создание предложения консультационных услуг
-              href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-define-offer-settings.md
-                - name: Вкладка "Сведения об онлайн-магазине"
-                  href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-storefront-details.md
-            - name: Публикация предложения консультационных услуг
-              href: ./cloud-partner-portal/consulting-services/cpp-consulting-service-publish-offer.md
+          href: ./cloud-partner-portal/consulting-services/consulting-services-offer.md
         - name: Предложение "Контейнеры"
           href: ./cloud-partner-portal/containers/cpp-containers-offer.md
-          items:
-            - name: предварительные требования
-              href: ./cloud-partner-portal/containers/cpp-prerequisites.md
-            - name: Создание предложения контейнера
-              href: ./cloud-partner-portal/containers/cpp-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/containers/cpp-offer-settings-tab.md
-                - name: Вкладка "Номера SKU"
-                  href: ./cloud-partner-portal/containers/cpp-skus-tab.md
-                - name: Вкладка "Marketplace"
-                  href: ./cloud-partner-portal/containers/cpp-marketplace-tab.md
-                - name: Вкладка "Поддержка"
-                  href: ./cloud-partner-portal/containers/cpp-support-tab.md
-            - name: Создание технических ресурсов для контейнера
-              href: ./cloud-partner-portal/containers/cpp-create-technical-assets.md
-            - name: Публикация предложения контейнера
-              href: ./cloud-partner-portal/containers/cpp-publish-offer.md
-            - name: Обновление существующего предложения
-              href: ./cloud-partner-portal/containers/cpp-update-existing-offer.md
         - name: "Предложение Dynamics\_365 for Business Central"
           href: ./cloud-partner-portal-orig/cpp-business-central-offer.md
           items:
@@ -253,7 +214,7 @@
         - name: Предложение Dynamics 365 for Customer Engagement
           href: ./cloud-partner-portal/dyn365ce/cpp-customer-engagement-offer.md
           items:
-            - name: предварительные требования
+            - name: Предварительные требования
               href: ./cloud-partner-portal/dyn365ce/cpp-prerequisites.md
             - name: Создание предложения в рамках плана Customer Engagement
               href: ./cloud-partner-portal/dyn365ce/cpp-create-offer.md
@@ -275,7 +236,7 @@
         - name: "Предложение Dynamics\_365 for Operations"
           href: ./cloud-partner-portal-orig/cpp-dynamics-365-operations-offer.md
           items:
-            - name: предварительные требования
+            - name: Предварительные требования
               href: ./cloud-partner-portal-orig/pre-requisites.md
             - name: Публикация предложения
               href: ./cloud-partner-portal-orig/manage-dynamics-365-for-operations.md
@@ -290,119 +251,18 @@
             - name: Вики-сайт справки
               href: ./cloud-partner-portal-orig/help-wiki.md
         - name: "Предложение модуля IoT\_Edge"
-          href: ./cloud-partner-portal/iot-edge-module/cpp-offer-process-parts.md
-          items:
-            - name: предварительные требования
-              href: ./cloud-partner-portal/iot-edge-module/cpp-prerequisites.md
-            - name: "Создание предложения модуля IoT\_Edge"
-              href: ./cloud-partner-portal/iot-edge-module/cpp-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/iot-edge-module/cpp-offer-settings-tab.md
-                - name: Вкладка "Номера SKU"
-                  href: ./cloud-partner-portal/iot-edge-module/cpp-skus-tab.md
-                - name: Вкладка "Marketplace"
-                  href: ./cloud-partner-portal/iot-edge-module/cpp-marketplace-tab.md
-                - name: Вкладка "Поддержка"
-                  href: ./cloud-partner-portal/iot-edge-module/cpp-support-tab.md
-            - name: Создание технических ресурсов для модуля IoT Edge
-              href: ./cloud-partner-portal/iot-edge-module/cpp-create-technical-assets.md
-            - name: Публикация предложения модуля IoT Edge
-              href: ./cloud-partner-portal/iot-edge-module/cpp-publish-offer.md
-            - name: Обновление существующего предложения
-              href: ./cloud-partner-portal/iot-edge-module/cpp-update-existing-offer.md
+          href: ./cloud-partner-portal/iot-edge-module/iot-edge-module-offer.md
         - name: "Предложение приложения Power\_BI"
           href: ./cloud-partner-portal/power-bi/cpp-power-bi-offer.md
-          items:
-            - name: предварительные требования
-              href: ./cloud-partner-portal/power-bi/cpp-prerequisites.md
-            - name: "Создание предложения приложения Power\_BI"
-              href: ./cloud-partner-portal/power-bi/cpp-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/power-bi/cpp-offer-settings-tab.md
-                - name: Вкладка "Технические сведения"
-                  href: ./cloud-partner-portal/power-bi/cpp-technical-info-tab.md
-                - name: Вкладка "Сведения об онлайн-магазине"
-                  href: ./cloud-partner-portal/power-bi/cpp-storefront-details-tab.md
-                - name: Вкладка "Контакты"
-                  href: ./cloud-partner-portal/power-bi/cpp-contacts-tab.md
-            - name: "Создание технических ресурсов приложения Power\_BI"
-              href: ./cloud-partner-portal/power-bi/cpp-create-technical-assets.md
-            - name: "Публикация предложения приложения Power\_BI"
-              href: ./cloud-partner-portal/power-bi/cpp-publish-offer.md
-            - name: Обновление существующего предложения
-              href: ./cloud-partner-portal/power-bi/cpp-update-existing-offer.md
         - name: Предложение приложения SaaS
           href: ./cloud-partner-portal/saas-app/cpp-saas-offer.md
         - name: Предложение виртуальной машины
           href: ./cloud-partner-portal/virtual-machine/cpp-virtual-machine-offer.md
-          items:
-            - name: предварительные требования
-              href: ./cloud-partner-portal/virtual-machine/cpp-prerequisites.md
-            - name: Создание предложения виртуальной машины
-              href: ./cloud-partner-portal/virtual-machine/cpp-create-offer.md
-              items:
-                - name: Вкладка "Параметры предложения"
-                  href: ./cloud-partner-portal/virtual-machine/cpp-offer-settings-tab.md
-                - name: Вкладка "Номера SKU"
-                  href: ./cloud-partner-portal/virtual-machine/cpp-skus-tab.md
-                - name: Вкладка "Тестовый выпуск"
-                  href: ./cloud-partner-portal/virtual-machine/cpp-test-drive-tab.md
-                - name: Вкладка "Marketplace"
-                  href: ./cloud-partner-portal/virtual-machine/cpp-marketplace-tab.md
-                - name: Вкладка "Поддержка"
-                  href: ./cloud-partner-portal/virtual-machine/cpp-support-tab.md
-            - name: Создание технических ресурсов виртуальной машины
-              href: ./cloud-partner-portal/virtual-machine/cpp-create-technical-assets.md
-              items:
-                - name: Создание VHD
-                  href: ./cloud-partner-portal/virtual-machine/cpp-create-vhd.md
-                - name: Распространенные проблемы с созданием VHD
-                  href: ./cloud-partner-portal/virtual-machine/cpp-common-vhd-creation-issues.md
-                - name: Подключение к виртуальной машине
-                  href: ./cloud-partner-portal/virtual-machine/cpp-connect-vm.md
-                - name: Настройка виртуальной машины
-                  href: ./cloud-partner-portal/virtual-machine/cpp-configure-vm.md
-                - name: Служба удаленного управления Windows
-                  href: ./cloud-partner-portal/virtual-machine/cpp-winrm-over-https.md
-                  items:
-                    - name: Настройка WinRM после создания виртуальной машины
-                      href: ./cloud-partner-portal/virtual-machine/cpp-configure-winrm-after-vm-creation.md
-                - name: Развертывание виртуальной машины
-                  href: ./cloud-partner-portal/virtual-machine/cpp-deploy-vm-vhd.md
-                  items:
-                    - name: Создание пользовательского образа виртуальной машины
-                      href: ./cloud-partner-portal/virtual-machine/cpp-create-user-image.md
-                    - name: Создание сертификата Key Vault
-                      href: ./cloud-partner-portal/virtual-machine/cpp-create-key-vault-cert.md
-                      items:
-                        - name: Шаблон развертывания Key Vault
-                          href: ./cloud-partner-portal/virtual-machine/cpp-key-vault-deploy-template.md
-                - name: Развертывание виртуальной машины из VHD пользователя
-                  href: ./cloud-partner-portal/virtual-machine/cpp-deploy-vm-user-image.md
-                  items:
-                    - name: Шаблон развертывания VHD
-                      href: ./cloud-partner-portal/virtual-machine/cpp-deploy-json-template.md
-                    - name: Развертывание виртуальной машины из Marketplace
-                      href: ./cloud-partner-portal/virtual-machine/cpp-deploy-vm-marketplace.md
-                - name: Сертификация образа виртуальной машины
-                  href: ./cloud-partner-portal/virtual-machine/cpp-certify-vm.md
-                - name: Клиент для самопроверки виртуальной машины
-                  href: ./cloud-partner-portal/virtual-machine/cpp-selftest-client.md
-                - name: Получение URI SAS
-                  href: ./cloud-partner-portal/virtual-machine/cpp-get-sas-uri.md
-                - name: Распространенные проблемы с URL-адресом SAS
-                  href: ./cloud-partner-portal/virtual-machine/cpp-common-sas-url-issues.md
-            - name: Публикация предложения виртуальной машины
-              href: ./cloud-partner-portal/virtual-machine/cpp-publish-offer.md
-            - name: Обновление существующего предложения
-              href: ./cloud-partner-portal/virtual-machine/cpp-update-existing-offer.md
     - name: Справочник по API
       items:
         - name: Обзор
           href: ./cloud-partner-portal-orig/cloud-partner-portal-api-overview.md
-        - name: предварительные требования
+        - name: Предварительные требования
           href: ./cloud-partner-portal-orig/cloud-partner-portal-api-prerequisites.md
         - name: Рекомендации
           href: ./cloud-partner-portal-orig/cloud-partner-portal-api-considerations.md
@@ -430,12 +290,12 @@
           href: ./cloud-partner-portal-orig/cloud-partner-portal-api-troubleshooting-authentication-errors.md
     - name: Получение поддержки
       href: ./cloud-partner-portal-orig/cloud-partner-portal-support-for-cloud-partner-portal.md
-- name: Портал Commercial Marketplace в Центре партнеров
+- name: Коммерческая платформа в Центре партнеров
   items:
-    - name: Обзор
-      items:
-        - name: Что такое Commercial Marketplace?
-          href: ./partner-center-portal/commercial-marketplace-overview.md
+    - name: Обзор коммерческой платформы
+      href: ./partner-center-portal/commercial-marketplace-overview.md
+    - name: Вопросы и ответы по миграции
+      href: ./cloud-partner-portal-migration-faq.md
     - name: Управление учетными записями
       items:
         - name: Создание учетной записи Центра партнеров
@@ -452,10 +312,42 @@
           items:
             - name: Создание предложения приложения Azure
               href: ./partner-center-portal/create-new-azure-apps-offer.md
+            - name: Выставление счетов по тарифу за приложение Azure
+              href: ./partner-center-portal/azure-app-metered-billing.md
             - name: Обработка отзывов по результатам проверки
               href: ./partner-center-portal/azure-apps-review-feedback.md
             - name: Использование API для подключения
               href: ./partner-center-portal/azure-app-apis.md
+        - name: Предложения по контейнерам Azure
+          items:
+            - name: Подготовка технических ресурсов
+              href: ./partner-center-portal/create-azure-container-technical-assets.md
+            - name: Создание предложения по контейнерам Azure
+              href: ./partner-center-portal/create-azure-container-offer.md
+        - name: Предложение виртуальной машины
+          items:
+            - name: Создание предложения виртуальной машины Azure
+              href: ./partner-center-portal/azure-vm-create-offer.md
+            - name: Создание технического ресурса виртуальной машины Azure
+              items:
+                - name: Создание технического ресурса виртуальной машины Azure
+                  href: ./partner-center-portal/create-azure-vm-technical-asset.md
+                - name: 'Технические ресурсы виртуальных машин Azure: вопросы и ответы'
+                  href: ./partner-center-portal/common-issues-during-vhd-creation.md
+                - name: Сертификация образа виртуальной машины Azure
+                  href: ./partner-center-portal/azure-vm-image-certification.md
+                - name: Универсальный код ресурса SAS
+                  items:
+                    - name: Получение URI SAS
+                      href: ./partner-center-portal/get-sas-uri.md
+                    - name: 'Универсальный код ресурса SAS: вопросы и ответы'
+                      href: ./partner-center-portal/common-sas-uri-issues.md
+        - name: Консультационные услуги
+          items:
+            - name: Предварительные требования
+              href: ./partner-center-portal/consulting-service-prerequisites.md
+            - name: Создание предложения консультационных услуг
+              href: ./partner-center-portal/create-consulting-service-offer.md
         - name: "Предложения для Dynamics\_365"
           items:
             - name: "Создание предложения Dynamics\_365 for Customer Engagement & PowerApps"
@@ -464,6 +356,22 @@
               href: ./partner-center-portal/create-new-operations-offer.md
             - name: Создание предложения Dynamics 365 Business Central
               href: ./partner-center-portal/create-new-business-central-offer.md
+        - name: Предложения модуля IoT Edge
+          items:
+            - name: Создание предложения модуля IoT Edge
+              href: ./partner-center-portal/azure-iot-edge-module-creation.md
+            - name: Подготовка технических ресурсов для модуля IoT Edge
+              href: ./partner-center-portal/create-iot-edge-module-asset.md
+        - name: Предложения управляемых служб
+          items:
+            - name: Создание предложения управляемой службы
+              href: ./partner-center-portal/create-new-managed-service-offer.md
+        - name: Предложения приложений Power BI
+          items:
+            - name: Общие сведения о публикации
+              href: ./partner-center-portal/create-power-bi-app-overview.md
+            - name: Создание предложения приложения Power BI
+              href: ./partner-center-portal/create-power-bi-app-offer.md
         - name: Предложения SaaS
           items:
             - name: Контрольный список для создания предложений SaaS
@@ -472,11 +380,6 @@
               href: ./partner-center-portal/create-new-saas-offer.md
             - name: Контроль потребления с помощью SaaS
               href: ./partner-center-portal/saas-metered-billing.md
-              items:
-                - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
-                  href: ./partner-center-portal/marketplace-metering-service-apis-faq.md
-                - name: API-интерфейсы службы из Marketplace для контроля потребления
-                  href: ./partner-center-portal/marketplace-metering-service-apis.md
             - name: API исполнения SaaS
               href: ./partner-center-portal/pc-saas-fulfillment-apis.md
               items:
@@ -503,6 +406,14 @@
               href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-marketo.md
             - name: Salesforce
               href: ./partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md
+        - name: Служба из Marketplace для контроля потребления
+          items:
+            - name: Стратегии аутентификации
+              href: ./partner-center-portal/marketplace-metering-service-authentication.md
+            - name: API-интерфейсы службы из Marketplace для контроля потребления
+              href: ./partner-center-portal/marketplace-metering-service-apis.md
+            - name: Вопросы и ответы об API-интерфейсах службы из Marketplace для контроля потребления
+              href: ./partner-center-portal/marketplace-metering-service-apis-faq.md
         - name: Тестирование вашего предложения
           href: ./partner-center-portal/test-drive.md
         - name: Возможность совместных продаж
@@ -516,6 +427,8 @@
       href: ./partner-center-portal/publishing-status.md
     - name: Обновление существующих предложений
       href: ./partner-center-portal/update-existing-offer.md
+    - name: Активация преимуществ
+      href: ./partner-center-portal/marketplace-rewards.md
     - name: Варианты поддержки
       href: ./partner-center-portal/support.md
     - name: Аналитика Центра партнеров
@@ -544,11 +457,13 @@
           href: ./partner-center-portal/get-paid.md
         - name: Настройка счета для выплат и налоговых форм
           href: ./partner-center-portal/set-up-your-payout-account-tax-forms.md
-        - name: Сведения о выставлении счетов
-          href: ./partner-center-portal/billing-details.md
-        - name: 'Пороги, методы и сроки оплаты'
+        - name: 'Пороговые значения, методы и сроки оплаты'
           href: ./partner-center-portal/payment-thresholds-methods-timeframes.md
-        - name: Сводка по выплатам
+        - name: Общие сведения о сводках по выплатам
+          href: ./partner-center-portal/payout-summary-overview.md
+        - name: Сводки по выплатам
           href: ./partner-center-portal/payout-summary.md
+        - name: Сведения о политике выплат
+          href: ./partner-center-portal/payout-policy-details.md
         - name: Сведения о налогах
           href: ./partner-center-portal/tax-details-paid-transactions.md

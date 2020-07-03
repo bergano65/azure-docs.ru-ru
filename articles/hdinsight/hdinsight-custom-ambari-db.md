@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: 8064fd5369e55ea223a697d30d7643ff5407cf76
-ms.sourcegitcommit: f7f70c9bd6c2253860e346245d6e2d8a85e8a91b
+ms.openlocfilehash: e7351e2f39c7e4eed84f4a47e3eeb2214a062a94
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73066007"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80240154"
 ---
 # <a name="set-up-hdinsight-clusters-with-a-custom-ambari-db"></a>Настройка кластеров HDInsight с помощью настраиваемой базы данных Ambari DB
 
@@ -53,17 +53,17 @@ Apache Ambari упрощает управление и мониторинг кл
 
 Чтобы создать кластер HDInsight, использующий собственную внешнюю базу данных Ambari, используйте [шаблон быстрого запуска AMBARI DB](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-custom-ambari-db).
 
-Измените параметры в `azuredeploy.parameters.json`, чтобы указать сведения о новом кластере и базе данных, которая будет содержать Ambari.
+Измените параметры в, `azuredeploy.parameters.json` чтобы указать сведения о новом кластере и базе данных, в которой будет храниться Ambari.
 
 Вы можете начать развертывание с помощью Azure CLI. Замените `<RESOURCEGROUPNAME>` группой ресурсов, в которой требуется развернуть кластер.
 
-```azure-cli
+```azurecli
 az group deployment create --name HDInsightAmbariDBDeployment \
     --resource-group <RESOURCEGROUPNAME> \
     --template-file azuredeploy.json \
     --parameters azuredeploy.parameters.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Использование внешних хранилищ метаданных в Azure HDInsight](hdinsight-use-external-metadata-stores.md)

@@ -8,12 +8,12 @@ author: spelluru
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: spelluru
-ms.openlocfilehash: 50d12a0aba9018b1ecb30c018249e8f94ebe6d95
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: f515d3ad832db7f78f98111ab67628a2874033ff
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903287"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81459140"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal"></a>Настройка управляемых клиентом ключей для шифрования неактивных данных концентраторов событий Azure с помощью портал Azure
 Концентраторы событий Azure обеспечивают шифрование неактивных данных с помощью Azure Шифрование службы хранилища (Azure SSE). Концентраторы событий используют хранилище Azure для хранения данных. по умолчанию все данные, хранящиеся в службе хранилища Azure, шифруются с помощью ключей, управляемых корпорацией Майкрософт. 
@@ -26,9 +26,9 @@ ms.locfileid: "75903287"
 > [!NOTE]
 > Возможность BYOK поддерживается [выделенными в концентраторами событий](event-hubs-dedicated-overview.md) кластерами с одним клиентом. Его нельзя включить для стандартных пространств имен концентраторов событий.
 
-Вы можете использовать Azure Key Vault для управления ключами и аудита использования ключа. Можно либо создать собственные ключи и сохранить их в хранилище ключей, либо использовать Azure Key Vault API для создания ключей. Дополнительные сведения о хранилище ключей Azure см. в статье [Что такое хранилище ключей Azure?](../key-vault/key-vault-overview.md)
+Вы можете использовать Azure Key Vault для управления ключами и аудита использования ключа. Можно либо создать собственные ключи и сохранить их в хранилище ключей, либо использовать Azure Key Vault API для создания ключей. Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault?](../key-vault/general/overview.md)
 
-В этой статье показано, как настроить хранилище ключей с ключами, управляемыми клиентом, с помощью портал Azure. Сведения о создании хранилища ключей с помощью портал Azure см. в разделе [Краткое руководство. Установка и извлечение секрета из Azure Key Vault с помощью портал Azure](../key-vault/quick-create-portal.md).
+В этой статье показано, как настроить хранилище ключей с ключами, управляемыми клиентом, с помощью портал Azure. Сведения о создании хранилища ключей с помощью портал Azure см. в разделе [Краткое руководство. Установка и извлечение секрета из Azure Key Vault с помощью портал Azure](../key-vault/secrets/quick-create-portal.md).
 
 > [!IMPORTANT]
 > Для использования ключей, управляемых клиентом, с концентраторами событий Azure необходимо, чтобы в хранилище ключей было настроено два обязательных свойства. Это: **обратимое удаление** и **не очищается**. Эти свойства включены по умолчанию при создании нового хранилища ключей в портал Azure. Однако если необходимо включить эти свойства в существующем хранилище ключей, необходимо использовать PowerShell или Azure CLI.
@@ -44,9 +44,9 @@ ms.locfileid: "75903287"
     ![Включить управляемый ключ клиента](./media/configure-customer-managed-key/enable-customer-managed-key.png)
 
 ## <a name="set-up-a-key-vault-with-keys"></a>Настройка хранилища ключей с ключами
-После включения ключей, управляемых клиентом, необходимо связать ключ, управляемый клиентом, с пространством имен концентраторов событий Azure. Концентраторы событий поддерживают только Azure Key Vault. Если включить **Шифрование с помощью ключа, управляемого клиентом** , в предыдущем разделе, необходимо импортировать ключ в Azure Key Vault. Кроме того, ключи должны иметь **обратимое удаление** и **не следует очищать** ключ. Эти параметры можно настроить с помощью [PowerShell](../key-vault/key-vault-soft-delete-powershell.md) или [CLI](../key-vault/key-vault-soft-delete-cli.md#enabling-purge-protection).
+После включения ключей, управляемых клиентом, необходимо связать ключ, управляемый клиентом, с пространством имен концентраторов событий Azure. Концентраторы событий поддерживают только Azure Key Vault. Если включить **Шифрование с помощью ключа, управляемого клиентом** , в предыдущем разделе, необходимо импортировать ключ в Azure Key Vault. Кроме того, ключи должны иметь **обратимое удаление** и **не следует очищать** ключ. Эти параметры можно настроить с помощью [PowerShell](../key-vault/general/soft-delete-powershell.md) или [CLI](../key-vault/general/soft-delete-cli.md#enabling-purge-protection).
 
-1. Чтобы создать новое хранилище ключей, следуйте инструкциям в [кратком руководстве](../key-vault/key-vault-overview.md)по Azure Key Vault. Дополнительные сведения об импорте существующих ключей см. в разделе [о ключах, секретах и сертификатах](../key-vault/about-keys-secrets-and-certificates.md).
+1. Чтобы создать новое хранилище ключей, следуйте инструкциям в [кратком руководстве](../key-vault/general/overview.md)по Azure Key Vault. Дополнительные сведения об импорте существующих ключей см. в разделе [о ключах, секретах и сертификатах](../key-vault/about-keys-secrets-and-certificates.md).
 1. Чтобы включить защиту с обратимым удалением и очисткой при создании хранилища, используйте команду [AZ keyvault Create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) .
 
     ```azurecli-interactive
@@ -71,10 +71,10 @@ ms.locfileid: "75903287"
 
 
 ## <a name="rotate-your-encryption-keys"></a>Смена ключей шифрования
-Вы можете повернуть ключ в хранилище ключей, используя механизм смены хранилища ключей Azure. Дополнительные сведения см. в разделе [Настройка смены ключей и аудита](../key-vault/key-vault-key-rotation-log-monitoring.md). Для автоматизации смены ключей можно также задать даты активации и истечения срока действия. Служба концентраторов событий обнаружит новые версии ключей и начнет использовать их автоматически.
+Вы можете повернуть ключ в хранилище ключей, используя механизм смены хранилища ключей Azure. Дополнительные сведения см. в разделе [Настройка смены ключей и аудита](../key-vault/secrets/key-rotation-log-monitoring.md). Для автоматизации смены ключей можно также задать даты активации и истечения срока действия. Служба концентраторов событий обнаружит новые версии ключей и начнет использовать их автоматически.
 
 ## <a name="revoke-access-to-keys"></a>Отозвать доступ к ключам
-Отмена доступа к ключам шифрования не приводит к очистке данных из концентраторов событий. Однако доступ к данным из пространства имен концентраторов событий невозможен. Вы можете отозвать ключ шифрования с помощью политики доступа или путем удаления ключа. Узнайте больше о политиках доступа и защите хранилища ключей от [безопасного доступа к хранилищу ключей](../key-vault/key-vault-secure-your-key-vault.md).
+Отмена доступа к ключам шифрования не приводит к очистке данных из концентраторов событий. Однако доступ к данным из пространства имен концентраторов событий невозможен. Вы можете отозвать ключ шифрования с помощью политики доступа или путем удаления ключа. Узнайте больше о политиках доступа и защите хранилища ключей от [безопасного доступа к хранилищу ключей](../key-vault/general/secure-your-key-vault.md).
 
 После отзыва ключа шифрования служба концентраторов событий в зашифрованном пространстве имен станет неработоспособной. Если доступ к ключу включен или восстановлен ключ удаления, служба концентраторов событий выберет ключ, чтобы получить доступ к данным из зашифрованного пространства имен концентраторов событий.
 
@@ -99,7 +99,7 @@ ms.locfileid: "75903287"
 ## <a name="log-schema"></a>Схема журнала 
 Все журналы хранятся в формате JSON (нотация объектов JavaScript). Каждая запись содержит строковые поля, в которых используется формат, описанный в следующей таблице. 
 
-| Имя | Description |
+| Имя | Описание |
 | ---- | ----------- | 
 | TaskName | Описание задачи, завершившейся сбоем. |
 | ActivityId | Внутренний идентификатор, используемый для отслеживания. |
@@ -107,10 +107,10 @@ ms.locfileid: "75903287"
 | resourceId | Идентификатор ресурса Azure Resource Manager |
 | keyVault | Полное имя хранилища ключей. |
 | ключ | Имя ключа, используемое для шифрования пространства имен концентраторов событий. |
-| version | Версия используемого ключа. |
+| Версия | Версия используемого ключа. |
 | операции | Операция, выполняемая над ключом в хранилище ключей. Например, отключение/включение ключа, перенос или распаковка |
-| код | Код, связанный с операцией. Пример: код ошибки, 404 означает, что ключ не найден. |
-| message | Любое сообщение об ошибке, связанное с операцией |
+| code | Код, связанный с операцией. Пример: код ошибки, 404 означает, что ключ не найден. |
+| сообщение | Любое сообщение об ошибке, связанное с операцией |
 
 Ниже приведен пример журнала для ключа, управляемого клиентом:
 
@@ -144,12 +144,268 @@ ms.locfileid: "75903287"
 }
 ```
 
+## <a name="use-resource-manager-template-to-enable-encryption"></a>Использование шаблона диспетчер ресурсов для включения шифрования
+В этом разделе показано, как выполнять следующие задачи с помощью **шаблонов Azure Resource Manager**. 
+
+1. Создайте **пространство имен концентраторов событий** с управляемым удостоверением службы.
+2. Создайте **хранилище ключей** и предоставьте удостоверению службы доступ к хранилищу ключей. 
+3. Обновите пространство имен концентраторов событий, указав сведения о хранилище ключей (ключ/значение). 
+
+
+### <a name="create-an-event-hubs-cluster-and-namespace-with-managed-service-identity"></a>Создание кластера концентраторов событий и пространства имен с управляемым удостоверением службы
+В этом разделе показано, как создать пространство имен концентраторов событий Azure с управляемым удостоверением службы с помощью шаблона Azure Resource Manager и PowerShell. 
+
+1. Создайте шаблон Azure Resource Manager, чтобы создать пространство имен концентраторов событий с управляемым удостоверением службы. Назовите файл: **креативенсубклустеранднамеспаце. JSON**: 
+
+    ```json
+    {
+       "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+       "contentVersion":"1.0.0.0",
+       "parameters":{
+          "clusterName":{
+             "type":"string",
+             "metadata":{
+                "description":"Name for the Event Hub cluster."
+             }
+          },
+          "namespaceName":{
+             "type":"string",
+             "metadata":{
+                "description":"Name for the Namespace to be created in cluster."
+             }
+          },
+          "location":{
+             "type":"string",
+             "defaultValue":"[resourceGroup().location]",
+             "metadata":{
+                "description":"Specifies the Azure location for all resources."
+             }
+          }
+       },
+       "resources":[
+          {
+             "type":"Microsoft.EventHub/clusters",
+             "apiVersion":"2018-01-01-preview",
+             "name":"[parameters('clusterName')]",
+             "location":"[parameters('location')]",
+             "sku":{
+                "name":"Dedicated",
+                "capacity":1
+             }
+          },
+          {
+             "type":"Microsoft.EventHub/namespaces",
+             "apiVersion":"2018-01-01-preview",
+             "name":"[parameters('namespaceName')]",
+             "location":"[parameters('location')]",
+             "identity":{
+                "type":"SystemAssigned"
+             },
+             "sku":{
+                "name":"Standard",
+                "tier":"Standard",
+                "capacity":1
+             },
+             "properties":{
+                "isAutoInflateEnabled":false,
+                "maximumThroughputUnits":0,
+                "clusterArmId":"[resourceId('Microsoft.EventHub/clusters', parameters('clusterName'))]"
+             },
+             "dependsOn":[
+                "[resourceId('Microsoft.EventHub/clusters', parameters('clusterName'))]"
+             ]
+          }
+       ],
+       "outputs":{
+          "EventHubNamespaceId":{
+             "type":"string",
+             "value":"[resourceId('Microsoft.EventHub/namespaces',parameters('namespaceName'))]"
+          }
+       }
+    }
+    ```
+2. Создайте файл параметров шаблона с именем: **креативенсубклустеранднамеспацепарамс. JSON**. 
+
+    > [!NOTE]
+    > Измените следующие значения: 
+    > - `<EventHubsClusterName>`— Имя кластера концентраторов событий;    
+    > - `<EventHubsNamespaceName>`— Имя пространства имен концентраторов событий.
+    > - `<Location>`— Расположение пространства имен концентраторов событий
+
+    ```json
+    {
+       "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+       "contentVersion":"1.0.0.0",
+       "parameters":{
+          "clusterName":{
+             "value":"<EventHubsClusterName>"
+          },
+          "namespaceName":{
+             "value":"<EventHubsNamespaceName>"
+          },
+          "location":{
+             "value":"<Location>"
+          }
+       }
+    }
+    
+    ```
+3. Выполните следующую команду PowerShell, чтобы развернуть шаблон для создания пространства имен концентраторов событий. Затем получите идентификатор пространства имен концентраторов событий, чтобы использовать его позже. Замените `{MyRG}` именем группы ресурсов перед выполнением команды.  
+
+    ```powershell
+    $outputs = New-AzResourceGroupDeployment -Name CreateEventHubClusterAndNamespace -ResourceGroupName {MyRG} -TemplateFile ./CreateEventHubClusterAndNamespace.json -TemplateParameterFile ./CreateEventHubClusterAndNamespaceParams.json
+
+    $EventHubNamespaceId = $outputs.Outputs["eventHubNamespaceId"].value
+    ```
+ 
+### <a name="grant-event-hubs-namespace-identity-access-to-key-vault"></a>Предоставление удостоверению пространства имен концентраторов событий доступа к хранилищу ключей
+
+1. Выполните следующую команду, чтобы создать хранилище ключей с включенной **защитой очистки** и **обратимого удаления** . 
+
+    ```powershell
+    New-AzureRmKeyVault -Name {keyVaultName} -ResourceGroupName {RGName}  -Location {location} -EnableSoftDelete -EnablePurgeProtection    
+    ```     
+    
+    (ИЛИ)    
+    
+    Выполните следующую команду, чтобы обновить **существующее хранилище ключей**. Перед выполнением команды укажите значения для имен группы ресурсов и хранилища ключей. 
+    
+    ```powershell
+    ($updatedKeyVault = Get-AzureRmResource -ResourceId (Get-AzureRmKeyVault -ResourceGroupName {RGName} -VaultName {keyVaultName}).ResourceId).Properties| Add-Member -MemberType "NoteProperty" -Name "enableSoftDelete" -Value "true"-Force | Add-Member -MemberType "NoteProperty" -Name "enablePurgeProtection" -Value "true" -Force
+    ``` 
+2. Задайте политику доступа к хранилищу ключей, чтобы управляемая идентификация пространства имен концентраторов событий могла получить доступ к значению ключа в хранилище ключей. Используйте идентификатор пространства имен концентраторов событий из предыдущего раздела. 
+
+    ```powershell
+    $identity = (Get-AzureRmResource -ResourceId $EventHubNamespaceId -ExpandProperties).Identity
+    
+    Set-AzureRmKeyVaultAccessPolicy -VaultName {keyVaultName} -ResourceGroupName {RGName} -ObjectId $identity.PrincipalId -PermissionsToKeys get,wrapKey,unwrapKey,list
+    ```
+
+### <a name="encrypt-data-in-event-hubs-namespace-with-customer-managed-key-from-key-vault"></a>Шифрование данных в пространстве имен концентраторов событий с помощью ключа, управляемого клиентом, из хранилища ключей
+На данный момент вы выполнили следующие действия: 
+
+1. Создано пространство имен Premium с управляемым удостоверением.
+2. Создание хранилища ключей и предоставление управляемому удостоверению доступа к хранилищу ключей. 
+
+На этом шаге вы обновите пространство имен концентраторов событий, используя сведения о хранилище ключей. 
+
+1. Создайте JSON-файл с именем **креативенсубклустеранднамеспаце. JSON** со следующим содержимым: 
+
+    ```json
+    {
+       "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+       "contentVersion":"1.0.0.0",
+       "parameters":{
+          "clusterName":{
+             "type":"string",
+             "metadata":{
+                "description":"Name for the Event Hub cluster."
+             }
+          },
+          "namespaceName":{
+             "type":"string",
+             "metadata":{
+                "description":"Name for the Namespace to be created in cluster."
+             }
+          },
+          "location":{
+             "type":"string",
+             "defaultValue":"[resourceGroup().location]",
+             "metadata":{
+                "description":"Specifies the Azure location for all resources."
+             }
+          },
+          "keyVaultUri":{
+             "type":"string",
+             "metadata":{
+                "description":"URI of the KeyVault."
+             }
+          },
+          "keyName":{
+             "type":"string",
+             "metadata":{
+                "description":"KeyName."
+             }
+          }
+       },
+       "resources":[
+          {
+             "type":"Microsoft.EventHub/namespaces",
+             "apiVersion":"2018-01-01-preview",
+             "name":"[parameters('namespaceName')]",
+             "location":"[parameters('location')]",
+             "identity":{
+                "type":"SystemAssigned"
+             },
+             "sku":{
+                "name":"Standard",
+                "tier":"Standard",
+                "capacity":1
+             },
+             "properties":{
+                "isAutoInflateEnabled":false,
+                "maximumThroughputUnits":0,
+                "clusterArmId":"[resourceId('Microsoft.EventHub/clusters', parameters('clusterName'))]",
+                "encryption":{
+                   "keySource":"Microsoft.KeyVault",
+                   "keyVaultProperties":[
+                      {
+                         "keyName":"[parameters('keyName')]",
+                         "keyVaultUri":"[parameters('keyVaultUri')]"
+                      }
+                   ]
+                }
+             }
+          }
+       ]
+    }
+    ``` 
+
+2. Создайте файл параметров шаблона: **упдативенсубклустеранднамеспацепарамс. JSON**. 
+
+    > [!NOTE]
+    > Измените следующие значения: 
+    > - `<EventHubsClusterName>`— Имя кластера концентраторов событий.        
+    > - `<EventHubsNamespaceName>`— Имя пространства имен концентраторов событий.
+    > - `<Location>`— Расположение пространства имен концентраторов событий
+    > - `<KeyVaultName>`— Имя хранилища ключей.
+    > - `<KeyName>`— Имя ключа в хранилище ключей.
+
+    ```json
+    {
+       "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+       "contentVersion":"1.0.0.0",
+       "parameters":{
+          "clusterName":{
+             "value":"<EventHubsClusterName>"
+          },
+          "namespaceName":{
+             "value":"<EventHubsNamespaceName>"
+          },
+          "location":{
+             "value":"<Location>"
+          },
+          "keyName":{
+             "value":"<KeyName>"
+          },
+          "keyVaultUri":{
+             "value":"https://<KeyVaultName>.vault.azure.net"
+          }
+       }
+    }
+    ```             
+3. Выполните следующую команду PowerShell, чтобы развернуть шаблон диспетчер ресурсов. Замените `{MyRG}` именем группы ресурсов перед выполнением команды. 
+
+    ```powershell
+    New-AzResourceGroupDeployment -Name UpdateEventHubNamespaceWithEncryption -ResourceGroupName {MyRG} -TemplateFile ./UpdateEventHubClusterAndNamespace.json -TemplateParameterFile ./UpdateEventHubClusterAndNamespaceParams.json 
+    ```
+
 ## <a name="troubleshoot"></a>Устранение неполадок
 Рекомендуется всегда включать журналы, как показано в предыдущем разделе. Он помогает отслеживать действия при включенном шифровании BYOK. Он также помогает в области видимости проблем.
 
 Ниже приведены распространенные коды ошибок для поиска при включенном шифровании BYOK.
 
-| Действия | Код ошибки | Итоговое состояние данных |
+| Действие | Код ошибки | Итоговое состояние данных |
 | ------ | ---------- | ----------------------- | 
 | Удаление разрешения на перенос и распаковки из хранилища ключей | 403 |    Нет доступа |
 | Удаление членства в роли AAD из субъекта AAD, которому предоставлено разрешение на отправку или перенос | 403 |  Нет доступа |
@@ -164,10 +420,10 @@ ms.locfileid: "75903287"
 > [!IMPORTANT]
 > Чтобы включить геоаварийное восстановление в пространстве имен, использующем шифрование BYOK, вторичное пространство имен для связывания должно быть в выделенном кластере и на нем должно быть включено управляемое удостоверение, назначенное системой. Дополнительные сведения см. в статье [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующие статьи:
 - [Общие сведения о Центрах событий](event-hubs-about.md)
-- [Обзор Key Vault](../key-vault/key-vault-overview.md)
+- [Общие сведения о Key Vault](../key-vault/general/overview.md)
 
 
 

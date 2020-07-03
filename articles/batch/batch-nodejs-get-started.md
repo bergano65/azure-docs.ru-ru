@@ -1,28 +1,21 @@
 ---
-title: Руководство. Использование клиентской библиотеки пакетной службы Azure для Node.js | Документация Майкрософт
+title: Руководство. Использование клиентской библиотеки пакетной службы Azure для Node. js
 description: Изучите основные принципы работы пакетной службы Azure и создайте простое решение с использованием Node.js.
-services: batch
-author: shwetams
-manager: evansma
 ms.assetid: ''
-ms.service: batch
-ms.devlang: nodejs
 ms.topic: conceptual
-ms.workload: big-compute
 ms.date: 05/22/2017
-ms.author: shg
-ms.openlocfilehash: c112fb0b2d0eb3b8a66731948f48c8038a2296f8
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: ccf0778938c873a5510f1408bf31d95c9d6ee873
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023656"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82116865"
 ---
 # <a name="get-started-with-batch-sdk-for-nodejs"></a>Приступая к работе с пакетом SDK для пакетной службы для Node.js
 
 Изучите основы создания клиента пакетной службы в Node.js с помощью [пакета SDK для пакетной службы Azure для Node.js](/javascript/api/overview/azure/batch). Мы определим ключевые аспекты приложения пакетной службы, а затем настроим его с помощью клиента Node.js.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 В этой статье предполагается, что вы уже работали с Node.js и знаете, как работать в Linux. Также предполагается, что у вас есть настроенная учетная запись Azure с правами доступа для создания пакетной службы и службы хранилища.
 
 Перед изучением шагов, описанных в этой статье, советуем ознакомиться со статьей [Выполнение реальных параллельных рабочих нагрузок с использованием пакетной службы](batch-technical-overview.md).
@@ -48,7 +41,7 @@ ms.locfileid: "77023656"
 >
 >
 
-## <a name="build-the-application"></a>создание приложения;
+## <a name="build-the-application"></a>Построение приложения
 
 Рассмотрим пошаговый процесс создания клиента Node.js.
 
@@ -67,7 +60,7 @@ ms.locfileid: "77023656"
 
 ### <a name="step-2-create-an-azure-batch-account"></a>Шаг 2. Создание учетной записи пакетной службы Azure
 
-Его можно создать из [портал Azure](batch-account-create-portal.md) или из командной строки ( [Azure CLI](/cli/azure)[PowerShell](batch-powershell-cmdlets-get-started.md) /).
+Его можно создать из [портал Azure](batch-account-create-portal.md) или из командной строки ([PowerShell](batch-powershell-cmdlets-get-started.md) /[Azure CLI](/cli/azure)).
 
 Ниже перечислены команды для создания учетной записи пакетной службы Azure с помощью Azure CLI.
 
@@ -351,7 +344,7 @@ var container_list = ["con1","con2","con3","con4"]
 
 Портал содержит подробные представления задач и состояния заданий. Можно также использовать список, чтобы получить функции в пакете SDK узла Azure. Подробные сведения приведены в документации по [ссылке](https://azure.github.io/azure-sdk-for-node/azure-batch/latest/Job.html).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Если вы недавно используете пакетную службу, рекомендуем прочитать статью [с обзором функций пакетной службы Azure](batch-api-basics.md) .
 - Сведения об API пакетной службы см. в статье [Microsoft Azure SDK for Node.js - Batch Service](/javascript/api/overview/azure/batch) (Пакет Microsoft Azure SDK для Node.js. Пакетная служба).

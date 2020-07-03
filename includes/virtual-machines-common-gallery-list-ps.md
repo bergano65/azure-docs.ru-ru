@@ -1,23 +1,21 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: virtual-machines
 author: cynthn
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 11/07/2018
+ms.date: 04/28/2020
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: a55653c0f23be594fe65e7a322c11edc37ee1ce6
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: fc60d1266f4aad4c337611f0fa32fe8293744559
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185249"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792281"
 ---
-## <a name="shared-image-management"></a>Управление общими образами 
-
-Ниже приведены некоторые примеры распространенных задач управления, а также способы их выполнения с помощью PowerShell.
+## <a name="list-information"></a>Просмотр сведений
 
 Перечислите все коллекции по имени.
 

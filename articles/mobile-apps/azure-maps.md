@@ -1,18 +1,18 @@
 ---
 title: Геопространственные API для добавления карт, пространственных аналитик и мобильных решений с Azure Maps
 description: Узнайте о простой и защищенной геопространственной службе для создания мобильных приложений с учетом расположения.
-author: elamalani
+author: codemillmatt
 ms.assetid: 34a8a070-0123-4678-8588-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: 6a3f249e73f204df61224f1d00f2aa0af33b3300
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: aa2931440b538346d9f1aa9d0ec967f1a812d56b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453221"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80241012"
 ---
 # <a name="geospatial-apis-to-add-maps-spatial-analytics-and-mobility-solutions-with-azure-maps"></a>Геопространственные API для добавления карт, пространственных аналитик и мобильных решений с Azure Maps
 
@@ -32,5 +32,5 @@ ms.locfileid: "75453221"
 ## <a name="references"></a>Ссылки
   - [Портал Azure](https://portal.azure.com) 
   - [Документация по Azure Maps](/azure/azure-maps/about-azure-maps)
-  - [Руководство для разработчиков](/azure/azure-maps/how-to-use-android-map-control-library)
-  - [Azure Maps пакет SDK для Android](/azure/azure-maps/how-to-use-android-map-control-library)
+  - [Руководство разработчика](/azure/azure-maps/how-to-use-android-map-control-library)
+  - [Пакет SDK для Android в Azure Maps](/azure/azure-maps/how-to-use-android-map-control-library)

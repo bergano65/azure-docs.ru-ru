@@ -32,6 +32,8 @@
       href: clean-missing-data.md
     - name: Правка метаданных
       href: edit-metadata.md
+    - name: Группирование данных в ячейки
+      href: group-data-into-bins.md
     - name: Объединение данных
       href: join-data.md
     - name: Нормализация данных
@@ -46,6 +48,8 @@
       href: select-columns-transform.md
     - name: Выбор столбцов в наборе данных
       href: select-columns-in-dataset.md
+    - name: Разделение данных
+      href: split-data.md
 - name: Выбор признаков
   items:
     - name: Выбор признаков с помощью фильтра
@@ -128,12 +132,16 @@
       href: execute-r-script.md
 - name: Текстовая аналитика
   items:
+    - name: Преобразование слов в векторы
+      href: convert-word-to-vector.md
     - name: Извлечение N-грамм из текста
       href: extract-n-gram-features-from-text.md
     - name: Хэширование признаков
       href: feature-hashing.md
     - name: Preprocess Text
       href: preprocess-text.md
+    - name: Латентное распределение Дирихле (LDA)
+      href: latent-dirichlet-allocation.md
 - name: Рекомендация
   items:
     - name: Оценка рекомендателя
@@ -142,5 +150,15 @@
       href: score-svd-recommender.md
     - name: Обучение рекомендателя SVD
       href: train-svd-recommender.md
+- name: Обнаружение аномалий
+  items:
+    - name: Обнаружение аномалий на основе анализа первичных компонентов
+      href: pca-based-anomaly-detection.md
+    - name: Обучение модели обнаружения аномалий
+      href: train-anomaly-detection-model.md
+- name: Веб-служба
+  items:
+    - name: Входные и выходные данные веб-службы
+      href: web-service-input-output.md
 - name: Ошибки модуля и устранение неполадок
   href: designer-error-codes.md

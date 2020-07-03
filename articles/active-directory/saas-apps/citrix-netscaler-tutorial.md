@@ -11,17 +11,16 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/13/2019
+ms.date: 03/27/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 785242a2cf51571a6d13b2b4691d33e46369bf94
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 6771060f05a03c82879738dc5e8caccb67e55abc
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977908"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478002"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-citrix-netscaler-kerberos-based-authentication"></a>Учебник. Интеграция единого входа Azure Active Directory с Citrix NetScaler (проверка подлинности Kerberos)
 
@@ -31,18 +30,18 @@ ms.locfileid: "75977908"
 * Автоматический вход пользователей на платформу Citrix NetScaler с учетными записями Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
 * Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Citrix NetScaler с поддержкой единого входа (SSO).
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого учебника вы настроите и проверите единый вход Azure AD в тестовой среде. Этот учебник включает в себя следующие сценарии:
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. Этот учебник включает в себя следующие сценарии:
 
 * Единый вход для Citrix NetScaler, **инициированный поставщиком услуг**.
 
@@ -51,6 +50,8 @@ ms.locfileid: "75977908"
 * [Проверка подлинности на основе Kerberos для Citrix NetScaler](#publish-the-web-server).
 
 * [Проверка подлинности на основе заголовка для Citrix NetScaler](header-citrix-netscaler-tutorial.md#publish-the-web-server).
+
+* После настройки Citrix NetScaler вы можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="add-citrix-netscaler-from-the-gallery"></a>Добавление Citrix NetScaler из коллекции
 
@@ -88,7 +89,7 @@ ms.locfileid: "75977908"
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-Чтобы включить единый вход Azure AD на портале Azure, выполните следующие действия:
+Чтобы включить единый вход Azure AD на портале Azure, выполните следующие действия.
 
 1. На [портале Azure](https://portal.azure.com/) в области интеграции с приложением **Citrix NetScaler** в разделе **Управление** выберите **Единый вход**.
 
@@ -98,11 +99,11 @@ ms.locfileid: "75977908"
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. Если вы хотите настроить приложение в режиме, **инициируемом поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
+1. Если вы хотите настроить приложение в режиме, **инициируемом поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     1. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<Your FQDN>`
 
-    1. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<Your FQDN>/CitrixAuthService/AuthService.asmx`
+    1. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `http(s)://<Your FQDN>.of.vserver/cgi/samlauth`
 
 1. Если вы хотите настроить приложение для работы в режиме, **инициируемом поставщиком услуг**, выберите **Задать дополнительные URL-адреса** и выполните следующие действия:
 
@@ -142,7 +143,7 @@ ms.locfileid: "75977908"
 
 В этом разделе описано, как разрешить пользователю B.Simon использовать единый вход Azure, предоставив этому пользователю доступ к Citrix NetScaler.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 
 1. В списке приложений выберите **Citrix NetScaler**.
 
@@ -187,7 +188,7 @@ ms.locfileid: "75977908"
 
 ### <a name="configure-the-load-balancer"></a>Настройка подсистемы балансировки нагрузки
 
-Чтобы настроить подсистему балансировки нагрузки, сделайте следующее:
+Чтобы настроить подсистему балансировки нагрузки, сделайте следующее.
 
 1. Выберите **Traffic Management** (Управление трафиком) > **Балансировка нагрузки** > **Виртуальные серверы**.
 
@@ -200,7 +201,7 @@ ms.locfileid: "75977908"
     * **IP-адрес**;
     * **порт**.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
     ![Настройка Citrix NetScaler — панель "Основные параметры"](./media/citrix-netscaler-tutorial/load01.png)
 
@@ -218,7 +219,7 @@ ms.locfileid: "75977908"
 
 ### <a name="bind-the-certificate"></a>Привязка сертификата
 
-Чтобы опубликовать эту службу как SSL, привяжите сертификат сервера, а затем протестируйте приложение:
+Чтобы опубликовать эту службу как службу TLS, привяжите сертификат сервера, а затем протестируйте приложение.
 
 1. В разделе **Certificate** (Сертификат) выберите **No Server Certificate** (Без сертификата сервера).
 
@@ -288,7 +289,7 @@ ms.locfileid: "75977908"
 
 ### <a name="configure-the-authentication-virtual-server-to-use-azure-ad"></a>Настройка виртуального сервера проверки подлинности для использования Azure AD
 
-Измените два раздела для виртуального сервера проверки подлинности:
+Измените два раздела для виртуального сервера проверки подлинности.
 
 1.  На панели **Advanced Authentication Policies** (Расширенные политики проверки подлинности) выберите **No Authentication Policy** (Без политики проверки подлинности).
 
@@ -441,7 +442,7 @@ ms.locfileid: "75977908"
 
 ### <a name="create-a-citrix-netscaler-test-user"></a>Создание тестового пользователя Citrix NetScaler
 
-В этом разделе описано, как создать в Citrix NetScaler пользователя с именем B.Simon. Приложение Citrix NetScaler поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Citrix NetScaler, он создается после проверки подлинности.
+В этом разделе описано, как создать в Citrix NetScaler пользователя с именем B.Simon. Приложение Citrix NetScaler поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Citrix NetScaler, он создается после аутентификации.
 
 > [!NOTE]
 > Если вам нужно создать пользователя вручную, обратитесь в [группу поддержки клиентов Citrix NetScaler](https://www.citrix.com/contact/technical-support.html).
@@ -450,16 +451,20 @@ ms.locfileid: "75977908"
 
 В этом разделе вы с помощью панели доступа выполните проверку конфигурации единого входа Azure AD.
 
-Щелкнув плитку Citrix NetScaler на панели доступа, вы автоматически войдете в приложение Citrix NetScaler, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Общие сведения о панели доступа).
+Щелкнув плитку Citrix NetScaler на панели доступа, вы автоматически войдете в приложение Citrix NetScaler, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Тестирование работы Citrix NetScaler с Azure AD](https://aad.portal.azure.com/)
 
 - [Настройка единого входа Citrix NetScaler для проверки подлинности на основе заголовка](header-citrix-netscaler-tutorial.md)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложения Citrix NetScaler с помощью функции управления настройками условного доступа](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

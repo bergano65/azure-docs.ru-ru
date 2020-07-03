@@ -2,20 +2,16 @@
 title: Роли выставления счетов для Клиентского соглашения Майкрософт в Azure
 description: Сведения о ролях выставления счетов для учетных записей выставления счетов в Azure для клиентских соглашений Майкрософт.
 author: amberbhargava
-manager: amberbhargava
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: eaec828abe83164d18796cfb2e795a363353fab4
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 1003e26fa670a804328d5e34def7c9d78eced9c0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75987945"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79238046"
 ---
 # <a name="understand-microsoft-customer-agreement-administrative-roles-in-azure"></a>Сведения об административных ролях клиентских соглашений Майкрософт в Azure
 
@@ -27,7 +23,7 @@ ms.locfileid: "75987945"
 
 В следующей таблице описаны роли выставления счетов, используемые для управления учетной записью выставления счетов, профилем выставления счетов и разделами счетов.
 
-|Роль|Описание|
+|Роль|Description|
 |---|---|
 |Владелец учетной записи выставления счетов|Управление всеми данными в учетной записи выставления счетов|
 |Участник учетной записи выставления счетов|Управление всеми данными кроме разрешений для учетной записи выставления счетов|

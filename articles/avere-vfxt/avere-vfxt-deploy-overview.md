@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: 78140fea74272dff6056bebfbd44ed9d55b0e1db
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76153689"
 ---
 <!-- filename is linked to in the marketplace template, make sure it gets a redirect if we rename it -->
@@ -21,7 +21,7 @@ ms.locfileid: "76153689"
 
 До и после создания кластера vFXT из Azure Marketplace необходимо выполнить несколько задач. Четкое понимание всего процесса поможет вам определить необходимые трудозатраты.
 
-## <a name="deployment-steps"></a>Шаги по развертыванию
+## <a name="deployment-steps"></a>Шаги развертывания
 
 [Спланировав систему](avere-vfxt-deploy-plan.md), вы можете приступить к созданию кластера Avere vFXT.
 

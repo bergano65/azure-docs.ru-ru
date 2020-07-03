@@ -15,7 +15,7 @@
     - name: Мониторинг виртуальных машин
       items:
         - name: Виртуальные машины Azure
-          href: learn/quick-collect-azurevm.md
+          href: learn/quick-monitor-azure-vm.md
         - name: Компьютер Linux
           href: learn/quick-collect-linux-computer.md
         - name: Компьютер Windows
@@ -60,14 +60,43 @@
           href: learn/tutorial-app-dashboards.md
 - name: Примеры
   items:
+    - name: Шаблоны Resource Manager
+      items:
+        - name: Обзор
+          href: samples/resource-manager-samples.md
+        - name: Агенты
+          href: samples/resource-manager-agent.md
+        - name: видны узлы
+          items:
+            - name: Правила генерации оповещений журнала
+              href: samples/resource-manager-alerts-log.md
+            - name: Правила генерации оповещений метрик
+              href: samples/resource-manager-alerts-metric.md
+            - name: Группы действий
+              href: samples/resource-manager-action-groups.md
+        - name: Параметры диагностики
+          href: samples/resource-manager-diagnostic-settings.md
+        - name: Рабочие области Log Analytics
+          href: samples/resource-manager-workspace.md
+        - name: Запросы журнала
+          href: samples/resource-manager-log-queries.md
+        - name: Workbooks
+          href: samples/resource-manager-workbooks.md
+        - name: Azure Monitor для контейнеров
+          href: samples/resource-manager-container-insights.md
+        - name: Azure Monitor для виртуальных машин
+          href: samples/resource-manager-vminsights.md
+    - name: Azure CLI
+      href: samples/cli-samples.md
     - name: Azure PowerShell
-      href: platform/powershell-samples.md
+      href: samples/powershell-samples.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: samples/policy-samples.md
 - name: Основные понятия
   items:
     - name: Что можно отслеживать?
       href: monitor-reference.md
-    - name: Управление Azure
-      href: azure-management.md
     - name: Непрерывный мониторинг
       href: continuous-monitoring.md
     - name: Источники данных
@@ -87,14 +116,16 @@
           href: platform/data-ingestion-time.md
     - name: Аналитика
       href: insights/insights-overview.md
-    - name: Решения для мониторинга
-      href: insights/solutions-inventory.md
     - name: Безопасность данных
       items:
         - name: Данные журнала
           href: platform/data-security.md
         - name: 'Ключи, управляемые клиентом'
           href: platform/customer-managed-keys.md
+        - name: Сетевое взаимодействие с Приватным каналом
+          href: platform/private-link-security.md
+        - name: Частное хранилище
+          href: platform/private-storage.md
         - name: Обработка персональных данных
           href: platform/personal-data-mgmt.md
         - name: Сбор и хранение данных приложений
@@ -109,41 +140,26 @@
           href: platform/alerts-unified-log.md
         - name: Оповещения журнала действий
           href: platform/activity-log-alerts.md
-        - name: Анализ изменений
-          href: app/change-analysis.md
     - name: Визуализируйте данные
       href: visualizations.md
     - name: Интеграция с партнерскими решениями
       href: platform/partners.md
 - name: Практические руководства
   items:
-    - name: Управление Azure Monitor
+    - name: Сценарии
       items:
-        - name: Проектирование развертывания рабочей области
-          href: platform/design-logs-deployment.md
+        - name: Мониторинг ресурса Azure
+          href: insights/monitor-azure-resource.md
+        - name: Мониторинг виртуальных машин Azure
+          href: insights/monitor-vm-azure.md
+          displayname: VM
+    - name: Администрирование и настройка
+      items:
         - name: 'Роли, разрешения и безопасность'
           href: platform/roles-permissions-security.md
         - name: IP-адреса
           href: app/ip-addresses.md
           displayname: 'firewall, firewall exceptions, whitelist'
-        - name: Рабочие области Log Analytics
-          items:
-            - name: Создание рабочей области
-              items:
-                - name: Использование портала Azure
-                  href: learn/quick-create-workspace.md
-                - name: Использование Azure CLI
-                  href: learn/quick-create-workspace-cli.md
-                - name: Использование Azure PowerShell
-                  href: learn/quick-create-workspace-posh.md
-            - name: Удаление и восстановление рабочей области
-              href: platform/delete-workspace.md
-            - name: Перемещение рабочей области
-              href: platform/move-workspace.md
-            - name: Архитектура для поставщиков служб
-              href: platform/service-providers.md
-            - name: Управление доступом
-              href: platform/manage-access.md
         - name: Использование и затраты
           items:
             - name: Использование и ожидаемые затраты
@@ -152,6 +168,392 @@
               href: app/pricing.md
             - name: Использование данных журнала и затраты на использование
               href: platform/manage-cost-storage.md
+        - name: Рабочие области Log Analytics
+          items:
+            - name: Проектирование развертывания рабочей области
+              href: platform/design-logs-deployment.md
+            - name: Создание рабочей области
+              items:
+                - name: Использование портала Azure
+                  href: learn/quick-create-workspace.md
+                - name: Использование Azure CLI
+                  href: learn/quick-create-workspace-cli.md
+                - name: Использование PowerShell
+                  href: platform/powershell-workspace-configuration.md
+                - name: Использование шаблона Resource Manager
+                  href: platform/template-workspace-configuration.md
+            - name: Удаление и восстановление рабочей области
+              href: platform/delete-workspace.md
+            - name: Перемещение рабочей области
+              href: platform/move-workspace.md
+            - name: Архитектура для поставщиков служб
+              href: platform/service-providers.md
+            - name: Управление доступом
+              href: platform/manage-access.md
+        - name: Агенты виртуальных машин
+          items:
+            - name: Обзор
+              href: platform/agents-overview.md
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: 'faq.md#agents'
+            - name: Расширение службы "Диагностика Azure"
+              items:
+                - name: Обзор
+                  href: platform/diagnostics-extension-overview.md
+                - name: Windows
+                  displayname: diagnostics extension
+                  items:
+                    - name: Установка и настройка.
+                      items:
+                        - name: Варианты установки
+                          href: platform/diagnostics-extension-windows-install.md
+                        - name: PowerShell
+                          href: ../virtual-machines/extensions/diagnostics-windows.md?toc=/azure/azure-monitor/toc.json
+                        - name: Шаблон Resource Manager
+                          href: ../virtual-machines/extensions/diagnostics-template.md?toc=/azure/azure-monitor/toc.json
+                    - name: Отправка данных в Azure Monitor в качестве метрик
+                      items:
+                        - name: Виртуальная машина
+                          href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
+                        - name: Масштабируемый набор виртуальных машин
+                          href: platform/collect-custom-metrics-guestos-resource-manager-vmss.md
+                        - name: Классическая виртуальная машина
+                          href: platform/collect-custom-metrics-guestos-vm-classic.md
+                        - name: облачная служба
+                          href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
+                    - name: Отправка в Центры событий
+                      href: platform/diagnostics-extension-stream-event-hubs.md
+                    - name: Отправка данных в журналы
+                      href: platform/diagnostics-extension-logs.md
+                    - name: Отправка в Application Insights
+                      href: platform/diagnostics-extension-to-application-insights.md
+                    - name: Журнал версий
+                      href: platform/diagnostics-extension-versions.md
+                    - name: Формат JSON Lines для журналов ресурсов
+                      href: platform/diagnostic-logs-append-blobs.md
+                    - name: Устранение неполадок
+                      href: platform/diagnostics-extension-troubleshooting.md
+                - name: Linux
+                  displayname: diagnostics extension
+                  items:
+                    - name: Обзор
+                      href: ../virtual-machines/extensions/diagnostics-linux.md?toc=/azure/azure-monitor/toc.json
+                    - name: Сбор метрик с помощью Telegraf
+                      href: platform/collect-custom-metrics-linux-telegraf.md
+            - name: Агент Log Analytics
+              items:
+                - name: Обзор
+                  href: platform/log-analytics-agent.md
+                - name: Агенты Windows
+                  href: platform/agent-windows.md
+                - name: Агенты Linux
+                  href: platform/agent-linux.md
+                - name: Расширение виртуальной машины для Windows
+                  href: ../virtual-machines/windows/extensions-oms.md?toc=/azure/azure-monitor/toc.json
+                - name: Расширение виртуальной машины для Linux
+                  href: ../virtual-machines/linux/extensions-oms.md?toc=/azure/azure-monitor/toc.json
+                - name: Шлюз службы анализа журналов
+                  href: platform/gateway.md
+                - name: Управление агентами
+                  href: platform/agent-manage.md
+                - name: Работоспособность агентов
+                  href: insights/solution-agenthealth.md
+                - name: Источники данных
+                  items:
+                    - name: Обзор
+                      href: platform/agent-data-sources.md
+                    - name: События Windows
+                      href: platform/data-sources-windows-events.md
+                    - name: Настраиваемые данные JSON
+                      href: platform/data-sources-json.md
+                    - name: Сбор данных о производительности из CollectD
+                      href: platform/data-sources-collectd.md
+                    - name: Системный журнал
+                      href: platform/data-sources-syslog.md
+                    - name: Счетчики производительности
+                      href: platform/data-sources-performance-counters.md
+                    - name: Производительность приложений Linux
+                      href: platform/data-sources-linux-applications.md
+                    - name: Журналы IIS
+                      href: platform/data-sources-iis-logs.md
+                    - name: Пользовательские журналы
+                      href: platform/data-sources-custom-logs.md
+                    - name: Пользовательские поля
+                      href: platform/custom-fields.md
+            - name: Диагностика
+              items:
+                - name: Расширение службы анализа журналов для виртуальной машины
+                  displayname: 'troubleshoot, troubleshooting'
+                  href: platform/vmext-troubleshoot.md
+                - name: Агент Log Analytics для Windows
+                  displayname: 'troubleshoot, troubleshooting'
+                  href: platform/agent-windows-troubleshoot.md
+                - name: Агент службы анализа журналов для Linux
+                  displayname: 'troubleshoot, troubleshooting'
+                  href: platform/agent-linux-troubleshoot.md
+    - name: Журналы платформы
+      items:
+        - name: Обзор
+          displayName: 'Platform logs, Resource logs, Activity log'
+          href: platform/platform-logs-overview.md
+        - name: Журнал действий
+          items:
+            - name: Просмотр на портале Azure
+              displayName: 'Platform logs, Activity log'
+              href: platform/activity-log-view.md
+            - name: Сбор и анализ
+              displayName: 'Platform logs, Activity log'
+              href: platform/activity-log-collect.md
+            - name: Экспорт (прежние версии)
+              displayname: Activity log
+              href: platform/activity-log-export.md
+        - name: Отправка в рабочую область Log Analytics
+          displayname: 'Resource logs, Activity log, Platform logs'
+          href: platform/resource-logs-collect-workspace.md
+        - name: Отправка в службу хранилища Azure
+          displayname: 'Resource logs, Activity log, Platform logs'
+          href: platform/resource-logs-collect-storage.md
+        - name: Отправка в Центры событий
+          displayname: 'Resource logs, Activity log, Platform logs'
+          href: platform/resource-logs-stream-event-hubs.md
+        - name: Создание параметра диагностики
+          displayName: 'Platform logs, Resource logs, Activity log'
+          href: platform/diagnostic-settings.md
+        - name: Создание параметра диагностики с помощью Resource Manager
+          displayName: 'diagnostic setting, Platform logs, Resource logs, Activity log'
+          href: platform/diagnostic-settings-template.md
+        - name: Изменение формата хранилища BLOB-объектов
+          displayname: Diagnostic settings
+          href: platform/resource-logs-blob-format.md
+        - name: Потоковая передача данных в Центры событий
+          href: platform/stream-monitoring-data-event-hubs.md
+    - name: Log Analytics
+      items:
+        - name: Обзор запросов к журналу
+          displayname: 'log query, log queries, query, queries'
+          href: log-query/log-query-overview.md
+        - name: Простой интерфейс журналов
+          href: log-query/simple-logs.md
+        - name: Учебники
+          items:
+            - name: Руководство по Log Analytics
+              href: log-query/get-started-portal.md
+            - name: Руководство по запросам к журналу
+              href: log-query/get-started-queries.md
+        - name: Данные журнала
+          items:
+            - name: Структура данных журнала
+              href: log-query/logs-structure.md
+            - name: Область запроса
+              href: log-query/scope.md
+            - name: Стандартные свойства
+              href: platform/log-standard-properties.md
+            - name: Группы компьютеров
+              href: platform/computer-groups.md
+        - name: Язык запросов
+          items:
+            - name: Документация по языкам запросов
+              href: log-query/query-language.md
+            - name: Различия между языками
+              href: log-query/data-explorer-difference.md
+            - name: Полезные операторы
+              href: log-query/useful-operators.md
+            - name: Функции
+              href: log-query/functions.md
+            - name: Переход с поиска по журналам
+              href: log-query/log-search-transition.md
+            - name: Занятия
+              items:
+                - name: Операции со строками
+                  href: log-query/string-operations.md
+                - name: Операции с датой и временем
+                  href: log-query/datetime-operations.md
+                - name: Агрегатные функции
+                  href: log-query/aggregations.md
+                - name: Расширенные агрегатные функции
+                  href: log-query/advanced-aggregations.md
+                - name: Соединения
+                  href: log-query/joins.md
+                - name: JSON и структуры данных
+                  href: log-query/json-data-structures.md
+                - name: Составление расширенных запросов
+                  href: log-query/advanced-query-writing.md
+                - name: Схемы и диаграммы
+                  href: log-query/charts.md
+                - name: Поисковые запросы
+                  href: log-query/search-queries.md
+            - name: Памятки
+              items:
+                - name: SQL
+                  href: log-query/sql-cheatsheet.md
+                - name: Splunk
+                  href: log-query/splunk-cheatsheet.md
+        - name: Охват нескольких ресурсов
+          items:
+            - name: Запросы к нескольким ресурсам
+              href: log-query/cross-workspace-query.md
+            - name: Выражение app
+              href: log-query/app-expression.md
+            - name: Выражение workspace
+              href: log-query/workspace-expression.md
+            - name: Выражение resource
+              href: log-query/resource-expression.md
+            - name: Централизация ресурсов данных приложения
+              href: log-query/unify-app-resource-data.md
+        - name: Примеры и руководства
+          items:
+            - name: Примеры запросов к журналу
+              href: log-query/examples.md
+            - name: Примеры смарт-аналитики
+              href: log-query/smart-analytics.md
+            - name: Оптимизация запросов
+              href: log-query/query-optimization.md
+            - name: Анализ текстовых данных
+              href: log-query/parse-text.md
+    - name: Обозреватель метрик
+      items:
+        - name: Начало работы с обозревателем метрик
+          href: platform/metrics-getting-started.md
+        - name: Расширенные возможности обозревателя метрик
+          href: platform/metrics-charts.md
+        - name: Примеры диаграмм метрик
+          href: platform/metric-chart-samples.md
+        - name: Устранение неполадок с диаграммами метрик
+          href: platform/metrics-troubleshoot.md
+    - name: Автомасштабирование
+      items:
+        - name: Обзор
+          href: platform/autoscale-overview.md
+        - name: Пошаговое руководство
+          href: platform/autoscale-get-started.md
+        - name: Параметры конфигурации
+          href: platform/autoscale-understanding-settings.md
+        - name: Рекомендации
+          href: platform/autoscale-best-practices.md
+        - name: Распространенные метрики
+          href: platform/autoscale-common-metrics.md
+        - name: Распространенные шаблоны
+          href: platform/autoscale-common-scale-patterns.md
+        - name: Масштабирование с использованием пользовательских метрик
+          href: platform/autoscale-custom-metric.md
+        - name: Масштабирование масштабируемых наборов виртуальных машин
+          href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md?toc=/azure/azure-monitor/toc.json
+        - name: Масштабирование масштабируемых наборов виртуальных машин с помощью шаблонов Resource Manager
+          href: platform/autoscale-virtual-machine-scale-sets.md
+        - name: Использование веб-перехватчиков и уведомлений по электронной почте
+          href: platform/autoscale-webhook-email.md
+        - name: Устранение неполадок
+          href: platform/autoscale-troubleshoot.md
+        - name: Схемы журналов ресурсов
+          href: platform/autoscale-resource-log-schema.md
+    - name: видны узлы
+      items:
+        - name: Правила генерации оповещений приложения
+          items:
+            - name: Доступность
+              href: app/monitor-web-app-availability.md
+            - name: Оповещения о метриках
+              href: app/alerts.md
+        - name: Правила генерации оповещений метрик
+          items:
+            - name: Управление оповещениями метрик
+              href: platform/alerts-metric.md
+            - name: Использование динамических порогов
+              href: platform/alerts-dynamic-thresholds.md
+            - name: Оповещения метрик для журналов
+              href: platform/alerts-metric-logs.md
+            - name: Шаблон Resource Manager
+              href: platform/alerts-metric-create-templates.md
+        - name: Правила генерации оповещений журнала
+          items:
+            - name: 'Создание, просмотр и администрирование оповещений журналов'
+              href: platform/alerts-log.md
+            - name: Запросы
+              href: platform/alerts-log-query.md
+            - name: Действия webhook
+              href: platform/alerts-log-webhook.md
+            - name: 'Устранение неполадок, связанных с оповещениями журналов'
+              href: platform/alert-log-troubleshoot.md
+        - name: Правила генерации оповещений журнала действий
+          items:
+            - name: Оповещение о событии журнала действий
+              href: platform/alerts-activity-log.md
+            - name: Перенос событий управления в оповещения журнала действий
+              href: platform/migrate-management-alerts.md
+            - name: Схема веб-перехватчика
+              href: platform/activity-log-alerts-webhook.md
+        - name: Оповещения о работоспособности служб
+          items:
+            - name: Просмотр уведомлений
+              href: platform/service-notifications.md
+            - name: Настройка оповещений о событиях уведомлений
+              href: platform/alerts-activity-log-service-notifications.md
+        - name: Уведомления и действия
+          items:
+            - name: Правила действий (предварительная версия)
+              href: platform/alerts-action-rules.md
+            - name: Создание группы действий
+              href: platform/action-groups.md
+            - name: Общая схема оповещений
+              href: platform/alerts-common-schema.md
+            - name: Определение общей схемы оповещений
+              href: platform/alerts-common-schema-definitions.md
+            - name: Интеграция общей схемы оповещений с Logic Apps
+              href: platform/alerts-common-schema-integrations.md
+            - name: Поведение оповещений SMS
+              href: platform/alerts-sms-behavior.md
+            - name: Ограничение частоты отправки уведомлений
+              href: platform/alerts-rate-limiting.md
+            - name: Создание групп действий с помощью Resource Manager
+              href: platform/action-groups-create-resource-manager-template.md
+            - name: Реализация действия для приложения логики
+              href: platform/action-groups-logic-app.md
+        - name: Пользовательский интерфейс оповещений
+          items:
+            - name: Сведения о смарт-группах
+              href: platform/alerts-smartgroups-overview.md
+            - name: Управление экземплярами оповещений
+              href: platform/alerts-managing-alert-instances.md
+            - name: Управление смарт-группами
+              href: platform/alerts-managing-smart-groups.md
+            - name: Управление состоянием оповещений и смарт-групп
+              href: platform/alerts-managing-alert-states.md
+            - name: Управление оповещениями из других служб мониторинга
+              href: platform/alerts-managing-nagios-zabbix-scom.md
+        - name: API оповещений
+          href: platform/api-alerts.md
+        - name: 'Устранение неполадок, связанных с оповещениями'
+          href: platform/alerts-troubleshoot.md
+        - name: Управление ИТ-услугами
+          items:
+            - name: Соединитель управления ИТ-услугами
+              href: platform/itsmc-overview.md
+            - name: Подключения управления ИТ-услугами
+              href: platform/itsmc-connections.md
+            - name: Создание веб-приложения Service Manager
+              href: platform/itsmc-service-manager-script.md
+            - name: Исправление проблем с синхронизацией ServiceNow ITSM
+              href: platform/itsmc-resync-servicenow.md
+        - name: Решение по управлению оповещениями
+          href: platform/alert-management-solution.md
+        - name: Перенос классических правил генерации оповещений
+          items:
+            - name: Сведения о классических оповещениях
+              href: platform/alerts-classic.overview.md
+            - name: Подготовка к переносу
+              href: platform/alerts-prepare-migration.md
+            - name: Основные сведения о средстве миграции
+              href: platform/alerts-understand-migration.md
+            - name: Использование средства миграции
+              href: platform/alerts-using-migration-tool.md
+            - name: Процесс автоматической миграции
+              href: platform/alerts-automatic-migration.md
+            - name: Управление классическими оповещениями метрик
+              href: platform/alerts-classic-portal.md
+            - name: Создание классического оповещения на основе метрик с помощью шаблона Resource Manager
+              href: platform/alerts-enable-template.md
+            - name: Классическое оповещение метрики с вызовом веб-перехватчика
+              href: platform/alerts-webhooks.md
     - name: Application Insights
       items:
         - name: Обзор Application Insights
@@ -161,8 +563,13 @@
         - name: Мониторинг на основе кода
           items:
             - name: ASP.NET Core
-              displayname: 'Core, .NET Core, services.add, dotnetcore, c#, csharp'
-              href: app/asp-net-core.md
+              items:
+                - name: Мониторинг приложений ASP.NET Core
+                  displayname: 'Core, .NET Core, services.add, dotnetcore, c#, csharp'
+                  href: app/asp-net-core.md
+                - name: ILogger
+                  displayname: 'ilogger, logging, log'
+                  href: app/ilogger.md
             - name: ASP.NET
               displayname: 'ASP.NET, c#, csharp, .NET, NET, dotnet'
               href: app/asp-net.md
@@ -172,9 +579,6 @@
             - name: Консоль .NET
               displayname: 'console, .NET, dotnet console, dotnet, c#, csharp, NET'
               href: app/console.md
-            - name: ILogger
-              displayname: 'ilogger, logging, log'
-              href: app/ilogger.md
             - name: Java
               items:
                 - name: Веб-приложения
@@ -212,12 +616,17 @@
             - name: Веб-страницы
               items:
                 - name: Клиентская часть JavaScript
+                  displayname: 'SPA, Single Page Applications, React, JS, Angular'
                   href: app/javascript.md
+                - name: Сопоставитель с исходным кодом для JavaScript
+                  href: app/source-map-support.md
             - name: Сводка по API Application Insights
               displayname: 'SDK, API, custom events, custom metrics, trackevent,trackmetric, getmetric, trackrequest, trackexception, tracktrace, trackdependency'
               href: app/api-custom-events-metrics.md
             - name: Устранение неполадок с ASP.NET
               href: app/asp-net-troubleshoot-no-data.md
+            - name: Удаление Application Insights
+              href: app/remove-application-insights.md
         - name: Мониторинг без написания кода
           items:
             - name: Виртуальные машины Azure и масштабируемые наборы
@@ -230,42 +639,43 @@
               href: app/cloudservices.md
             - name: Функции Azure
               displayname: 'functions, monitor functions, automation'
-              href: ../azure-functions/functions-monitoring.md
-            - name: Приложения Kubernetes
-              displayname: 'aks, microservice, istio, service mesh, application monitoring, monitor kubernetes, monitor aks'
-              href: app/kubernetes.md
-            - name: Монитор состояния (прежних версий)
-              displayname: 'IIS monitoring, on premises monitoring, on prem,'
-              href: app/monitor-performance-live-website-now.md
+              href: app/monitor-functions.md
+            - name: Служба Azure Kubernetes
+              href: app/kubernetes-codeless.md
+            - name: Автономные (любая среда)
+              items:
+                - name: Java (предварительная версия)
+                  items:
+                    - name: Обзор
+                      href: app/java-in-process-agent.md
+                    - name: Варианты настройки
+                      href: app/java-standalone-config.md
+                    - name: Настройка аргументов виртуальной машины Java
+                      href: app/java-standalone-arguments.md
             - name: Локальные серверы
               items:
-                - name: Обзор
-                  displayname: 'IIS monitoring, on premises monitoring, on prem,'
-                  href: app/status-monitor-v2-overview.md
-                - name: Начало работы
-                  href: app/status-monitor-v2-get-started.md
-                - name: Подробные инструкции
-                  href: app/status-monitor-v2-detailed-instructions.md
-                - name: Устранение неполадок и известные проблемы
-                  href: app/status-monitor-v2-troubleshoot.md
-                - name: API Disable-InstrumentationEngine
-                  href: app/status-monitor-v2-api-disable-instrumentation-engine.md
-                - name: API Disable-ApplicationInsightsMonitoring
-                  href: app/status-monitor-v2-api-disable-monitoring.md
-                - name: API Enable-InstrumentationEngine
-                  href: app/status-monitor-v2-api-enable-instrumentation-engine.md
-                - name: API Enable-ApplicationInsightsMonitoring
-                  href: app/status-monitor-v2-api-enable-monitoring.md
-                - name: API Get-ApplicationInsightsMonitoringConfig
-                  href: app/status-monitor-v2-api-get-config.md
-                - name: API Get-ApplicationInsightsMonitoringStatus
-                  href: app/status-monitor-v2-api-get-status.md
-                - name: API Set-ApplicationInsightsMonitoringConfig
-                  href: app/status-monitor-v2-api-set-config.md
-                - name: API Start-ApplicationInsightsMonitoringTrace
-                  href: app/status-monitor-v2-api-start-trace.md
-        - name: Создание ресурса
+                - name: ASP.NET
+                  items:
+                    - name: Обзор
+                      displayname: 'IIS monitoring, on premises monitoring, on prem'
+                      href: app/status-monitor-v2-overview.md
+                    - name: Начало работы
+                      href: app/status-monitor-v2-get-started.md
+                    - name: Подробные инструкции
+                      href: app/status-monitor-v2-detailed-instructions.md
+                    - name: Устранение неполадок
+                      href: app/status-monitor-v2-troubleshoot.md
+                    - name: Справочник по API
+                      href: app/status-monitor-v2-api-reference.md
+                    - name: Монитор состояния (прежних версий)
+                      displayname: 'IIS monitoring, on premises monitoring, on prem'
+                      href: app/monitor-performance-live-website-now.md
+                - name: Java
+                  href: app/java-on-premises.md
+        - name: Создание ресурса (классическая модель)
           href: app/create-new-resource.md
+        - name: Создание ресурса (на основе рабочей области)
+          href: app/create-workspace-resource.md
         - name: Панель мониторинга приложений
           displayname: 'dashboard, Application Insights dashboard'
           href: app/overview-dashboard.md
@@ -274,7 +684,7 @@
           href: app/app-map.md
         - name: Диагностика транзакции
           href: app/transaction-diagnostics.md
-          displayname: 'e2e, end-to-end, component, dependency, cross-compoent transaction, operation ID, dependencies'
+          displayname: 'e2e, end-to-end, component, dependency, cross-component transaction, operation ID, dependencies'
         - name: Доступность
           items:
             - name: Тесты URL-адресов
@@ -301,10 +711,6 @@
             - name: Корреляция данных телеметрии
               href: app/correlation.md
               displayname: 'correlation headers, w3c, distributed tracing, tracing'
-            - name: Локальный сервер переадресации
-              href: app/opencensus-local-forwarder.md
-            - name: Go
-              href: app/opencensus-go.md
         - name: Live Metrics Stream
           displayname: 'live, quickpulse, quick pulse, live metrics'
           href: app/live-stream.md
@@ -314,8 +720,6 @@
               href: app/pre-aggregated-metrics-log-metrics.md
             - name: Определения метрик на основе журнала
               href: platform/app-insights-metrics.md
-            - name: Классический обозреватель метрик
-              href: app/metrics-explorer.md
         - name: Поиск
           href: app/diagnostic-search.md
         - name: Profiler
@@ -441,6 +845,9 @@
               href: app/custom-data-correlation.md
             - name: Строки подключения
               href: app/sdk-connection-string.md
+            - name: GetMetric
+              displayname: 'get metric, custom metrics, metrics, TrackMetric'
+              href: app/get-metric.md
             - name: Специальные разделы
               items:
                 - name: Углубленная диагностика для веб-приложений и служб
@@ -451,6 +858,10 @@
                   href: app/separate-resources.md
                 - name: Как работать с Application Insights
                   href: app/how-do-i.md
+                - name: Управление Azure Application Insights
+                  href: app/powershell.md
+                - name: Управление облачными службами Azure
+                  href: app/powershell-azure-diagnostics.md
         - name: Экспорт
           items:
             - name: Непрерывный экспорт
@@ -475,464 +886,173 @@
               href: app/sharepoint.md
             - name: Классические приложения Windows
               href: app/windows-desktop.md
-    - name: Мониторинг ресурсов Azure
+    - name: Azure Monitor для виртуальных машин
       items:
-        - name: Мониторинг службы Azure
-          href: insights/monitor-azure-resource.md
-        - name: Мониторинг групп ресурсов
-          href: insights/resource-group-insights.md
-        - name: Журналы платформы
+        - name: Обзор
+          href: insights/vminsights-overview.md
+        - name: Часто задаваемые вопросы об общедоступной версии
+          href: insights/vminsights-ga-release-faq.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: 'faq.md#azure-monitor-for-vms'
+        - name: Включение мониторинга
           items:
-            - name: Обзор
-              displayName: 'Platform logs, Resource logs, Activity log'
-              href: platform/platform-logs-overview.md
-            - name: Просмотр журнала действий
-              displayName: Platform logs
-              href: platform/activity-log-view.md
-            - name: Отправка в места назначения
-              items:
-                - name: Рабочая область Log Analytics
-                  displayname: 'Resource logs, Activity log, Platform logs'
-                  href: platform/resource-logs-collect-workspace.md
-                - name: Хранилище Azure
-                  displayname: 'Resource logs, Activity log, Platform logs'
-                  href: platform/resource-logs-collect-storage.md
-                - name: Центры событий
-                  displayname: 'Resource logs, Activity log, Platform logs'
-                  href: platform/resource-logs-stream-event-hubs.md
-            - name: Сбор устаревших журналов действий
-              items:
-                - name: Обзор
-                  displayName: Resource logs
-                  href: platform/diagnostic-settings-legacy.md
-                - name: Сбор и анализ
-                  displayname: Activity log
-                  href: platform/activity-log-collect.md
-                - name: Сбор данных для всех клиентов
-                  displayname: Activity log
-                  href: platform/activity-log-collect-tenants.md
-                - name: Экспорт
-                  displayname: Activity log
-                  href: platform/activity-log-export.md
-        - name: Параметры диагностики
-          items:
-            - name: Создание параметра диагностики
-              displayName: 'Platform logs, Resource logs, Activity log'
-              href: platform/diagnostic-settings.md
-            - name: Создание с помощью Resource Manager
-              displayName: 'diagnostic setting, Platform logs, Resource logs, Activity log'
-              href: platform/diagnostic-settings-template.md
-            - name: Изменение формата хранилища BLOB-объектов
-              displayname: Diagnostic settings
-              href: platform/resource-logs-blob-format.md
-        - name: Потоковая передача данных в Центры событий
-          href: platform/stream-monitoring-data-event-hubs.md
-    - name: Мониторинг виртуальных машин и вычислительных ресурсов
+            - name: Общие сведения о включении мониторинга
+              href: insights/vminsights-enable-overview.md
+            - name: Включение для отдельной виртуальной машины Azure
+              href: insights/vminsights-enable-single-vm.md
+            - name: Включение при помощи Политики Azure
+              href: insights/vminsights-enable-at-scale-policy.md
+            - name: Включить при помощи Azure PowerShell
+              href: insights/vminsights-enable-at-scale-powershell.md
+            - name: Включение в гибридной среде
+              href: insights/vminsights-enable-hybrid-cloud.md
+        - name: Сопоставление зависимостей
+          href: insights/vminsights-maps.md
+        - name: Мониторинг производительности
+          href: insights/vminsights-performance.md
+        - name: Анализ данных с помощью запросов к журналу
+          href: insights/vminsights-log-search.md
+        - name: Визуализация данных с помощью книг
+          href: insights/vminsights-workbooks.md
+        - name: Создание правил генерации оповещений
+          href: insights/vminsights-alerts.md
+        - name: Обновление агента зависимостей
+          href: insights/vminsights-dependency-agent-maintenance.md
+        - name: Отключение мониторинга
+          href: insights/vminsights-optout.md
+    - name: Azure Monitor для контейнеров
       items:
-        - name: Агенты
+        - name: Обзор
+          href: insights/container-insights-overview.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: 'faq.md#azure-monitor-for-containers'
+        - name: Включение мониторинга
           items:
-            - name: Общие сведения об агентах
-              href: platform/agents-overview.md
-            - name: ВОПРОСЫ И ОТВЕТЫ
-              href: 'faq.md#agents'
-            - name: Расширение службы "Диагностика Azure"
-              items:
-                - name: Windows
-                  displayname: diagnostics extension
-                  items:
-                    - name: Обзор
-                      href: platform/diagnostics-extension-overview.md
-                    - name: Установка и настройка.
-                      items:
-                        - name: PowerShell
-                          href: ../virtual-machines/extensions/diagnostics-windows.md?toc=/azure/azure-monitor/toc.json
-                        - name: Шаблон Resource Manager
-                          href: ../virtual-machines/extensions/diagnostics-template.md?toc=/azure/azure-monitor/toc.json
-                    - name: Отправка данных в Azure Monitor в качестве метрик
-                      items:
-                        - name: Виртуальная машина
-                          href: platform/collect-custom-metrics-guestos-resource-manager-vm.md
-                        - name: Масштабируемый набор виртуальных машин
-                          href: platform/collect-custom-metrics-guestos-resource-manager-vmss.md
-                        - name: Классическая виртуальная машина
-                          href: platform/collect-custom-metrics-guestos-vm-classic.md
-                        - name: облачная служба
-                          href: platform/collect-custom-metrics-guestos-vm-cloud-service-classic.md
-                    - name: Отправка в Центры событий
-                      href: platform/diagnostics-extension-stream-event-hubs.md
-                    - name: Отправка данных в журналы
-                      href: platform/azure-storage-iis-table.md
-                    - name: Отправка в службу хранилища Azure
-                      href: platform/diagnostics-extension-to-storage.md
-                    - name: Отправка в Application Insights
-                      href: platform/diagnostics-extension-to-application-insights.md
-                    - name: Журнал версий
-                      href: platform/diagnostics-extension-schema.md
-                    - name: Формат JSON Lines для журналов ресурсов
-                      href: platform/diagnostic-logs-append-blobs.md
-                    - name: Устранение неполадок
-                      href: platform/diagnostics-extension-troubleshooting.md
-                - name: Linux
-                  displayname: diagnostics extension
-                  items:
-                    - name: Обзор
-                      href: ../virtual-machines/extensions/diagnostics-linux.md?toc=/azure/azure-monitor/toc.json
-                    - name: Сбор метрик с помощью Telegraf
-                      href: platform/collect-custom-metrics-linux-telegraf.md
-            - name: Агент Log Analytics
-              items:
-                - name: Обзор
-                  href: platform/log-analytics-agent.md
-                - name: Агенты Windows
-                  href: platform/agent-windows.md
-                - name: Агенты Linux
-                  href: platform/agent-linux.md
-                - name: Расширение виртуальной машины для Windows
-                  href: ../virtual-machines/windows/extensions-oms.md
-                - name: Расширение виртуальной машины для Linux
-                  href: ../virtual-machines/linux/extensions-oms.md
-                - name: Шлюз службы анализа журналов
-                  href: platform/gateway.md
-                - name: Управление агентами
-                  href: platform/agent-manage.md
-                - name: Работоспособность агентов
-                  href: insights/solution-agenthealth.md
-                - name: Источники данных
-                  items:
-                    - name: Обзор
-                      href: platform/agent-data-sources.md
-                    - name: События Windows
-                      href: platform/data-sources-windows-events.md
-                    - name: Настраиваемые данные JSON
-                      href: platform/data-sources-json.md
-                    - name: Сбор данных о производительности из CollectD
-                      href: platform/data-sources-collectd.md
-                    - name: Системный журнал
-                      href: platform/data-sources-syslog.md
-                    - name: Счетчики производительности
-                      href: platform/data-sources-performance-counters.md
-                    - name: Производительность приложений Linux
-                      href: platform/data-sources-linux-applications.md
-                    - name: Журналы IIS
-                      href: platform/data-sources-iis-logs.md
-                    - name: Пользовательские журналы
-                      href: platform/data-sources-custom-logs.md
-                    - name: Пользовательские поля
-                      href: platform/custom-fields.md
-            - name: Диагностика
-              items:
-                - name: Расширение службы анализа журналов для виртуальной машины
-                  displayname: 'troubleshoot, troubleshooting'
-                  href: platform/vmext-troubleshoot.md
-                - name: Агент Log Analytics для Windows
-                  displayname: 'troubleshoot, troubleshooting'
-                  href: platform/agent-windows-troubleshoot.md
-                - name: Агент службы анализа журналов для Linux
-                  displayname: 'troubleshoot, troubleshooting'
-                  href: platform/agent-linux-troubleshoot.md
-        - name: Azure Monitor для виртуальных машин
+            - name: Общие сведения о включении мониторинга
+              href: insights/container-insights-onboard.md
+            - name: Включение для нового кластера AKS
+              href: insights/container-insights-enable-new-cluster.md
+            - name: Включение для существующего кластера AKS
+              href: insights/container-insights-enable-existing-clusters.md
+            - name: Включение для гибридного кластера
+              href: insights/container-insights-hybrid-setup.md
+            - name: "Включение для Azure Red Hat OpenShift версии\_3"
+              href: insights/container-insights-azure-redhat-setup.md
+            - name: "Включение для Azure Red Hat OpenShift версии\_4"
+              href: insights/container-insights-azure-redhat4-setup.md
+            - name: Сопоставления регионов
+              href: insights/container-insights-region-mapping.md
+        - name: Мониторинг производительности
+          href: insights/container-insights-analyze.md
+        - name: Мониторинг работоспособности
+          href: insights/container-insights-health.md
+        - name: Мониторинг производительности GPU
+          href: insights/container-insights-gpu-monitoring.md
+        - name: Просмотр динамических данных
           items:
-            - name: Обзор
-              href: insights/vminsights-overview.md
-            - name: Известные проблемы
-              href: insights/vminsights-known-issues.md
-            - name: Часто задаваемые вопросы об общедоступной версии
-              href: insights/vminsights-ga-release-faq.md
-            - name: ВОПРОСЫ И ОТВЕТЫ
-              href: 'faq.md#azure-monitor-for-vms-preview'
-            - name: Включение мониторинга
-              items:
-                - name: Общие сведения о включении мониторинга
-                  href: insights/vminsights-enable-overview.md
-                - name: Включение для отдельной виртуальной машины Azure
-                  href: insights/vminsights-enable-single-vm.md
-                - name: Включение при помощи Политики Azure
-                  href: insights/vminsights-enable-at-scale-policy.md
-                - name: Включить при помощи Azure PowerShell
-                  href: insights/vminsights-enable-at-scale-powershell.md
-                - name: Включение в гибридной среде
-                  href: insights/vminsights-enable-hybrid-cloud.md
-                - name: Интеграция с Operations Manager
-                  href: insights/service-map-scom.md
-            - name: Мониторинг работоспособности
-              href: insights/vminsights-health.md
-            - name: Сопоставление зависимостей
-              href: insights/vminsights-maps.md
-            - name: Мониторинг производительности
-              href: insights/vminsights-performance.md
-            - name: Использование книг
-              href: insights/vminsights-workbooks.md
-            - name: Анализ данных с помощью запросов к журналу
-              href: insights/vminsights-log-search.md
-            - name: Обновление агента зависимостей
-              href: insights/vminsights-dependency-agent-maintenance.md
-            - name: Отключение мониторинга
-              href: insights/vminsights-optout.md
-        - name: Решения
+            - name: Общие сведения о динамических данных (предварительная версия)
+              href: insights/container-insights-livedata-overview.md
+            - name: Настройка
+              href: insights/container-insights-livedata-setup.md
+            - name: Просмотр метрик кластера
+              href: insights/container-insights-livedata-metrics.md
+            - name: Просмотр развертываний
+              href: insights/container-insights-livedata-deployments.md
+        - name: Анализ данных с помощью запросов к журналу
+          href: insights/container-insights-log-search.md
+        - name: Оповещение
+          href: insights/container-insights-alerts.md
+        - name: Управление агентами
+          href: insights/container-insights-manage-agent.md
+        - name: Настройка очистки метрик Prometheus
+          href: insights/container-insights-prometheus-integration.md
+        - name: Настройка параметров сбора агента
+          href: insights/container-insights-agent-config.md
+        - name: Обновление для включения метрик
+          href: insights/container-insights-update-metrics.md
+        - name: Настройка мониторинга работоспособности
+          href: insights/container-insights-health-monitors-config.md
+        - name: Отключение мониторинга
           items:
-            - name: Решение "Емкость и производительность"
-              href: insights/capacity-performance.md
-            - name: Решение "Аналитика в VMware"
-              href: insights/vmware.md
-            - name: Решение Wire Data
-              href: insights/wire-data.md
-            - name: Решение "Сопоставление служб"
-              href: insights/service-map.md
-        - name: Группы компьютеров
-          href: platform/computer-groups.md
-    - name: Мониторинг контейнеров
-      items:
-        - name: Azure Monitor для контейнеров
-          items:
-            - name: Обзор
-              href: insights/container-insights-overview.md
-            - name: ВОПРОСЫ И ОТВЕТЫ
-              href: 'faq.md#azure-monitor-for-containers'
-            - name: Включение мониторинга
-              items:
-                - name: Общие сведения о включении мониторинга
-                  href: insights/container-insights-onboard.md
-                - name: Включение для нового кластера AKS
-                  href: insights/container-insights-enable-new-cluster.md
-                - name: Включение для существующего кластера AKS
-                  href: insights/container-insights-enable-existing-clusters.md
-                - name: Включение для гибридного кластера
-                  href: insights/container-insights-hybrid-setup.md
-                - name: Включение для Azure Red Hat OpenShift
-                  href: insights/container-insights-azure-redhat-setup.md
-                - name: Сопоставления регионов
-                  href: insights/container-insights-region-mapping.md
-            - name: Мониторинг производительности
-              href: insights/container-insights-analyze.md
-            - name: Мониторинг работоспособности
-              href: insights/container-insights-health.md
-            - name: Просмотр динамических данных
-              items:
-                - name: Общие сведения о динамических данных (предварительная версия)
-                  href: insights/container-insights-livedata-overview.md
-                - name: Настройка
-                  href: insights/container-insights-livedata-setup.md
-                - name: Просмотр метрик кластера
-                  href: insights/container-insights-livedata-metrics.md
-                - name: Просмотр развертываний
-                  href: insights/container-insights-livedata-deployments.md
-            - name: Анализ данных с помощью запросов к журналу
-              href: insights/container-insights-log-search.md
-            - name: Оповещение
-              href: insights/container-insights-alerts.md
-            - name: Управление агентами
-              href: insights/container-insights-manage-agent.md
-            - name: Настройка очистки метрик Prometheus
-              href: insights/container-insights-prometheus-integration.md
-            - name: Настройка параметров сбора агента
-              href: insights/container-insights-agent-config.md
-            - name: Обновление для включения метрик
-              href: insights/container-insights-update-metrics.md
-            - name: Настройка мониторинга работоспособности
-              href: insights/container-insights-health-monitors-config.md
             - name: Отключение мониторинга AKS
               href: insights/container-insights-optout.md
-            - name: Отключение мониторинга Red Hat OpenShift
-              href: insights/container-insights-optout-openshift.md
-            - name: Устранение неполадок
-              href: insights/container-insights-troubleshoot.md
-        - name: Мониторинг контейнеров Docker и Windows
-          href: insights/containers.md
-    - name: Мониторинг других ресурсов
+            - name: "Отключение мониторинга Red Hat OpenShift версии\_3"
+              href: insights/container-insights-optout-openshift-v3.md
+            - name: "Отключение мониторинга Red Hat OpenShift версии\_4"
+              href: insights/container-insights-optout-openshift-v4.md
+            - name: Отключение мониторинга гибридного кластера
+              href: insights/container-insights-optout-hybrid.md
+        - name: Устранение неполадок
+          href: insights/container-insights-troubleshoot.md
+    - name: Другие полезные сведения
       items:
-        - name: Память
-          items:
-            - name: Использование Azure Monitor для службы хранилища
-              displayname: 'storage, monitor, insights, storage accounts, azure storage'
-              href: insights/storage-insights-overview.md
-        - name: Базы данных
-          items:
-            - name: Azure SQL
-              href: insights/azure-sql.md
-            - name: "SQL\_Server"
-              href: insights/sql-assessment.md
-            - name: Azure Cosmos DB
-              href: insights/cosmosdb-insights-overview.md
+        - name: Кэш Azure для Redis (предварительная версия)
+          href: insights/redis-cache-insights-overview.md
+        - name: Azure Cosmos DB
+          href: insights/cosmosdb-insights-overview.md
+        - name: Key Vault
+          href: insights/key-vault-insights-overview.md
         - name: Сети
+          href: insights/network-insights-overview.md
+        - name: Память
+          displayname: 'storage, monitor, insights, storage accounts, azure storage'
+          href: insights/storage-insights-overview.md
+        - name: Группы ресурсов
+          href: insights/resource-group-insights.md
+    - name: Решения
+      items:
+        - name: Обзор
+          href: insights/solutions.md
+        - name: Целевые решения
+          href: insights/solution-targeting.md
+        - name: Доступные решения
           items:
-            - name: Azure Monitor для сетей
-              href: insights/network-insights-overview.md
-            - name: Анализ сетевой активности
-              href: insights/azure-networking-analytics.md
-            - name: DNS
-              href: insights/dns-analytics.md
-            - name: Монитор производительности сети
-              items:
-                - name: Обзор решения
-                  href: insights/network-performance-monitor.md
-                - name: Системный монитор
-                  href: insights/network-performance-monitor-performance-monitor.md
-                - name: Монитор подключений службы
-                  href: insights/network-performance-monitor-service-connectivity.md
-                - name: ExpressRoute
-                  href: insights/network-performance-monitor-expressroute.md
-                - name: Цены
-                  href: insights/network-performance-monitor-pricing-faq.md
-                - name: ВОПРОСЫ И ОТВЕТЫ
-                  href: insights/network-performance-monitor-faq.md
-        - name: Решения для мониторинга
-          items:
-            - name: Обзор
-              href: insights/solutions.md
-            - name: Целевые решения
-              href: insights/solution-targeting.md
             - name: Оценка работоспособности AD
               href: insights/ad-assessment.md
             - name: Состояние репликации AD
               href: insights/ad-replication-status.md
+            - name: Решение "Емкость и производительность"
+              href: insights/capacity-performance.md
+            - name: Мониторинг контейнеров Docker и Windows
+              href: insights/containers.md
             - name: Аналитика Key Vault
               href: insights/azure-key-vault.md
+            - name: Сети
+              items:
+                - name: Анализ сетевой активности
+                  href: insights/azure-networking-analytics.md
+                - name: DNS
+                  href: insights/dns-analytics.md
+                - name: Монитор производительности сети
+                  items:
+                    - name: Обзор решения
+                      href: insights/network-performance-monitor.md
+                    - name: Системный монитор
+                      href: insights/network-performance-monitor-performance-monitor.md
+                    - name: Монитор подключений службы
+                      href: insights/network-performance-monitor-service-connectivity.md
+                    - name: ExpressRoute
+                      href: insights/network-performance-monitor-expressroute.md
+                    - name: Цены
+                      href: insights/network-performance-monitor-pricing-faq.md
+                    - name: ВОПРОСЫ И ОТВЕТЫ
+                      href: insights/network-performance-monitor-faq.md
             - name: Office 365
               href: insights/solution-office-365.md
+            - name: Решение "Сопоставление служб"
+              href: insights/service-map.md
+            - name: Сопоставление служб и Operations Manager
+              href: insights/service-map-scom.md
+            - name: Azure SQL
+              href: insights/azure-sql.md
+            - name: "SQL\_Server"
+              href: insights/sql-assessment.md
             - name: Surface Hub
               href: insights/surface-hubs.md
-    - name: Сбор пользовательских данных
-      items:
-        - name: Настраиваемые метрики
-          href: platform/metrics-custom-overview.md
-        - name: REST API для метрик
-          href: platform/metrics-store-custom-rest-api.md
-        - name: API сборщика данных для службы анализа журналов
-          href: platform/data-collector-api.md
-        - name: 'Пример конвейера, созданного с помощью API сборщика данных для службы анализа журналов'
-          href: platform/create-pipeline-datacollector-api.md
-    - name: Анализ данных
-      items:
-        - name: Метрики
-          items:
-            - name: Начало работы с обозревателем метрик
-              href: platform/metrics-getting-started.md
-            - name: Расширенные возможности обозревателя метрик
-              href: platform/metrics-charts.md
-            - name: Примеры диаграмм метрик
-              href: platform/metric-chart-samples.md
-            - name: Устранение неполадок с диаграммами метрик
-              href: platform/metrics-troubleshoot.md
-        - name: Журналы
-          items:
-            - name: Обзор запросов к журналу
-              displayname: 'log query, log queries, query, queries'
-              href: log-query/log-query-overview.md
-            - name: Простой интерфейс журналов
-              href: log-query/simple-logs.md
-            - name: Учебники
-              items:
-                - name: Руководство по Log Analytics
-                  href: log-query/get-started-portal.md
-                - name: Руководство по запросам к журналу
-                  href: log-query/get-started-queries.md
-            - name: Данные журнала
-              items:
-                - name: Структура данных журнала
-                  href: log-query/logs-structure.md
-                - name: Область запроса
-                  href: log-query/scope.md
-                - name: Стандартные свойства
-                  href: platform/log-standard-properties.md
-            - name: Язык запросов
-              items:
-                - name: Документация по языкам запросов
-                  href: log-query/query-language.md
-                - name: Различия между языками
-                  href: log-query/data-explorer-difference.md
-                - name: Полезные операторы
-                  href: log-query/useful-operators.md
-                - name: Функции
-                  href: log-query/functions.md
-                - name: Переход с поиска по журналам
-                  href: log-query/log-search-transition.md
-                - name: Занятия
-                  items:
-                    - name: Операции со строками
-                      href: log-query/string-operations.md
-                    - name: Операции с датой и временем
-                      href: log-query/datetime-operations.md
-                    - name: Агрегатные функции
-                      href: log-query/aggregations.md
-                    - name: Расширенные агрегатные функции
-                      href: log-query/advanced-aggregations.md
-                    - name: Соединения
-                      href: log-query/joins.md
-                    - name: JSON и структуры данных
-                      href: log-query/json-data-structures.md
-                    - name: Составление расширенных запросов
-                      href: log-query/advanced-query-writing.md
-                    - name: Схемы и диаграммы
-                      href: log-query/charts.md
-                    - name: Поисковые запросы
-                      href: log-query/search-queries.md
-                - name: Памятки
-                  items:
-                    - name: SQL
-                      href: log-query/sql-cheatsheet.md
-                    - name: Splunk
-                      href: log-query/splunk-cheatsheet.md
-            - name: Охват нескольких ресурсов
-              items:
-                - name: Запросы к нескольким ресурсам
-                  href: log-query/cross-workspace-query.md
-                - name: Выражение app
-                  href: log-query/app-expression.md
-                - name: Выражение workspace
-                  href: log-query/workspace-expression.md
-                - name: Выражение resource
-                  href: log-query/resource-expression.md
-                - name: Централизация ресурсов данных приложения
-                  href: log-query/unify-app-resource-data.md
-            - name: Примеры и руководства
-              items:
-                - name: Примеры запросов к журналу
-                  href: log-query/examples.md
-                - name: Примеры смарт-аналитики
-                  href: log-query/smart-analytics.md
-                - name: Создание эффективных запросов
-                  href: log-query/log-query-performance.md
-                - name: Анализ текстовых данных
-                  href: log-query/parse-text.md
-        - name: Flow / Logic Apps
-          items:
-            - name: Соединитель для Flow с журналами
-              href: platform/flow-tutorial.md
-            - name: Соединитель для Flow с приложениями
-              href: app/automate-with-flow.md
-            - name: Logic Apps с приложениями
-              href: app/automate-with-logic-apps.md
-        - name: REST API
-          displayname: 'metrics, analyze'
-          href: platform/rest-api-walkthrough.md
-    - name: Визуализируйте данные
-      items:
-        - name: Workbooks
-          items:
-            - name: Обзор
-              href: platform/workbooks-overview.md
-            - name: Визуализации
-              href: platform/workbooks-visualizations.md
-            - name: Источники данных
-              href: platform/workbooks-data-sources.md
-            - name: Развертывание с помощью Azure Resource Manager
-              href: platform/workbooks-automate.md
-            - name: Конфигурация
-              items:
-                - name: Управление доступом
-                  href: platform/workbooks-access-control.md
-                - name: Параметры
-                  items:
-                    - name: Сводка по параметрам
-                      href: platform/workbooks-parameters.md
-                    - name: Параметры раскрывающегося списка
-                      href: platform/workbooks-dropdowns.md
-                    - name: Интерактивные параметры
-                      href: platform/workbooks-interactive.md
-                    - name: Параметры времени
-                      href: platform/workbooks-time.md
-                    - name: Параметры текста
-                      href: platform/workbooks-text.md
+            - name: Решение "Аналитика в VMware"
+              href: insights/vmware.md
+            - name: Решение Wire Data
+              href: insights/wire-data.md
         - name: Представления
           items:
             - name: Преобразование представлений в книги
@@ -957,6 +1077,48 @@
               href: platform/view-designer-parts.md
             - name: Фильтры
               href: platform/view-designer-filters.md
+        - name: Пользовательские решения
+          items:
+            - name: Проектирование и сборка
+              href: insights/solutions-creating.md
+            - name: Файл решения
+              href: insights/solutions-solution-file.md
+            - name: Ресурсы службы автоматизации
+              href: insights/solutions-resources-automation.md
+            - name: Поиск по журналам и оповещения
+              href: insights/solutions-resources-searches-alerts.md
+            - name: Представления
+              href: insights/solutions-resources-views.md
+            - name: Рекомендации
+              href: insights/solutions-best-practices.md
+    - name: Workbooks
+      items:
+        - name: Обзор
+          href: platform/workbooks-overview.md
+        - name: Визуализации
+          href: platform/workbooks-visualizations.md
+        - name: Источники данных
+          href: platform/workbooks-data-sources.md
+        - name: Развертывание с помощью Azure Resource Manager
+          href: platform/workbooks-automate.md
+        - name: Конфигурация
+          items:
+            - name: Управление доступом
+              href: platform/workbooks-access-control.md
+            - name: Параметры
+              items:
+                - name: Сводка по параметрам
+                  href: platform/workbooks-parameters.md
+                - name: Параметры раскрывающегося списка
+                  href: platform/workbooks-dropdowns.md
+                - name: Интерактивные параметры
+                  href: platform/workbooks-interactive.md
+                - name: Параметры времени
+                  href: platform/workbooks-time.md
+                - name: Параметры текста
+                  href: platform/workbooks-text.md
+    - name: Другие визуализации
+      items:
         - name: Power BI
           items:
             - name: Экспорт данных журналов
@@ -971,172 +1133,29 @@
               href: learn/tutorial-app-dashboards.md
         - name: Отправка данных в Grafana
           href: platform/grafana-plugin.md
-    - name: Оповещение
+    - name: Сбор и анализ пользовательских данных
       items:
-        - name: Правила генерации оповещений приложения
+        - name: Настраиваемые метрики
           items:
-            - name: Доступность
-              href: app/monitor-web-app-availability.md
-            - name: Оповещения о метриках
-              href: app/alerts.md
-        - name: Правила генерации оповещений метрик
+            - name: Настраиваемые метрики
+              href: platform/metrics-custom-overview.md
+            - name: REST API для метрик
+              href: platform/metrics-store-custom-rest-api.md
+        - name: Пользовательские журналы
           items:
-            - name: Управление оповещениями метрик
-              href: platform/alerts-metric.md
-            - name: Использование динамических порогов
-              href: platform/alerts-dynamic-thresholds.md
-            - name: Оповещения метрик для журналов
-              href: platform/alerts-metric-logs.md
-            - name: Шаблон Resource Manager
-              href: platform/alerts-metric-create-templates.md
-        - name: Правила генерации оповещений журнала
+            - name: API сборщика данных для службы анализа журналов
+              href: platform/data-collector-api.md
+            - name: 'Пример конвейера, созданного с помощью API сборщика данных для службы анализа журналов'
+              href: platform/create-pipeline-datacollector-api.md
+        - name: Logic Apps
           items:
-            - name: 'Создание, просмотр и администрирование оповещений журналов'
-              href: platform/alerts-log.md
-            - name: Запросы
-              href: platform/alerts-log-query.md
-            - name: Действия webhook
-              href: platform/alerts-log-webhook.md
-            - name: Устранение неполадок
-              href: platform/alert-log-troubleshoot.md
-        - name: Правила генерации оповещений журнала действий
-          items:
-            - name: Оповещение о событии журнала действий
-              href: platform/alerts-activity-log.md
-            - name: Перенос событий управления в оповещения журнала действий
-              href: platform/migrate-management-alerts.md
-        - name: Оповещения о работоспособности службы в журнале действий
-          items:
-            - name: Просмотр уведомлений
-              href: platform/service-notifications.md
-            - name: Настройка оповещений о событиях уведомлений
-              href: platform/alerts-activity-log-service-notifications.md
-        - name: Уведомления и действия
-          items:
-            - name: Правила действий (предварительная версия)
-              href: platform/alerts-action-rules.md
-            - name: Создание группы действий
-              href: platform/action-groups.md
-            - name: Общая схема оповещений
-              href: platform/alerts-common-schema.md
-            - name: Определение общей схемы оповещений
-              href: platform/alerts-common-schema-definitions.md
-            - name: Интеграция общей схемы оповещений с Logic Apps
-              href: platform/alerts-common-schema-integrations.md
-            - name: Схема веб-перехватчика
-              href: platform/activity-log-alerts-webhook.md
-            - name: Поведение оповещений SMS
-              href: platform/alerts-sms-behavior.md
-            - name: Ограничение частоты отправки уведомлений
-              href: platform/alerts-rate-limiting.md
-            - name: Создание групп действий с помощью Resource Manager
-              href: platform/action-groups-create-resource-manager-template.md
-            - name: Реализация действия для приложения логики
-              href: platform/action-groups-logic-app.md
-        - name: Решение по управлению оповещениями
-          href: platform/alert-management-solution.md
-        - name: Пользовательский интерфейс оповещений
-          items:
-            - name: Сведения о смарт-группах
-              href: platform/alerts-smartgroups-overview.md
-            - name: Управление экземплярами оповещений
-              href: platform/alerts-managing-alert-instances.md
-            - name: Управление смарт-группами
-              href: platform/alerts-managing-smart-groups.md
-            - name: Управление состоянием оповещений и смарт-групп
-              href: platform/alerts-managing-alert-states.md
-            - name: Управление оповещениями из других служб мониторинга
-              href: platform/alerts-managing-nagios-zabbix-scom.md
-        - name: Перенос классических правил генерации оповещений
-          items:
-            - name: Сведения о классических оповещениях
-              href: platform/alerts-classic.overview.md
-            - name: Подготовка к переносу
-              href: platform/alerts-prepare-migration.md
-            - name: Основные сведения о средстве миграции
-              href: platform/alerts-understand-migration.md
-            - name: Использование средства миграции
-              href: platform/alerts-using-migration-tool.md
-            - name: Процесс автоматической миграции
-              href: platform/alerts-automatic-migration.md
-            - name: Управление классическими оповещениями метрик
-              href: platform/alerts-classic-portal.md
-            - name: Создание классического оповещения на основе метрик с помощью шаблона Resource Manager
-              href: platform/alerts-enable-template.md
-            - name: Классическое оповещение метрики с вызовом веб-перехватчика
-              href: platform/alerts-webhooks.md
-        - name: API оповещений
-          href: platform/api-alerts.md
-        - name: Управление ИТ-услугами
-          items:
-            - name: Соединитель управления ИТ-услугами
-              href: platform/itsmc-overview.md
-            - name: Подключения управления ИТ-услугами
-              href: platform/itsmc-connections.md
-            - name: Создание веб-приложения Service Manager
-              href: platform/itsmc-service-manager-script.md
-    - name: Автоматизация
-      items:
-        - name: Автомасштабирование
-          items:
-            - name: Обзор
-              href: platform/autoscale-overview.md
-            - name: Пошаговое руководство
-              href: platform/autoscale-get-started.md
-            - name: Параметры конфигурации
-              href: platform/autoscale-understanding-settings.md
-            - name: Рекомендации
-              href: platform/autoscale-best-practices.md
-            - name: Распространенные метрики
-              href: platform/autoscale-common-metrics.md
-            - name: Распространенные шаблоны
-              href: platform/autoscale-common-scale-patterns.md
-            - name: Масштабирование с использованием пользовательских метрик
-              href: platform/autoscale-custom-metric.md
-            - name: Масштабирование масштабируемых наборов виртуальных машин
-              href: ../virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md?toc=/azure/azure-monitor/toc.json
-            - name: Масштабирование масштабируемых наборов виртуальных машин с помощью шаблонов Resource Manager
-              href: platform/autoscale-virtual-machine-scale-sets.md
-            - name: Использование веб-перехватчиков и уведомлений по электронной почте
-              href: platform/autoscale-webhook-email.md
-            - name: Устранение неполадок
-              href: platform/autoscale-troubleshoot.md
-            - name: Схемы журналов ресурсов
-              href: platform/autoscale-resource-log-schema.md
-        - name: PowerShell
-          items:
-            - name: Управление с помощью PowerShell
-              href: platform/powershell-quickstart-samples.md
-            - name: Создание оповещений
-              href: app/powershell-alerts.md
-            - name: Управление Log Analytics
-              href: platform/powershell-workspace-configuration.md
-            - name: Application Insights
-              items:
-                - name: Управление Azure Application Insights
-                  href: app/powershell.md
-                - name: Управление облачными службами Azure
-                  href: app/powershell-azure-diagnostics.md
-        - name: "Примеры для Azure\_CLI"
-          href: platform/cli-samples.md
-        - name: Шаблоны Resource Manager
-          href: platform/template-workspace-configuration.md
-    - name: Расширение
-      items:
-        - name: Решения для мониторинга
-          items:
-            - name: Проектирование и сборка
-              href: insights/solutions-creating.md
-            - name: Файл решения
-              href: insights/solutions-solution-file.md
-            - name: Ресурсы службы автоматизации
-              href: insights/solutions-resources-automation.md
-            - name: Поиск по журналам и оповещения
-              href: insights/solutions-resources-searches-alerts.md
-            - name: Представления
-              href: insights/solutions-resources-views.md
-            - name: Рекомендации
-              href: insights/solutions-best-practices.md
+            - name: Соединитель для журналов Azure Monitor
+              href: platform/logicapp-flow-connector.md
+            - name: Соединитель Application Insights
+              href: app/automate-with-logic-apps.md
+        - name: REST API
+          displayname: 'metrics, analyze'
+          href: platform/rest-api-walkthrough.md
     - name: Интеграция System Center
       items:
         - name: Подключение Operations Manager
@@ -1149,12 +1168,28 @@
   items:
     - name: Ограничения службы
       href: service-limits.md
-    - name: Расширение системы диагностики
-      items:
-        - name: схема
-          href: platform/diagnostics-extension-schema-1dot3.md
     - name: Изменения в терминологии
       href: terminology.md
+    - name: Описание данных
+      href: 'https://docs.microsoft.com/azure/azure-monitor/reference/'
+    - name: Поддерживаемые метрики
+      items:
+        - name: Метрики платформы
+          href: platform/metrics-supported.md
+        - name: Метрики в параметрах диагностики
+          href: platform/metrics-supported-export-diagnostic-settings.md
+        - name: Метрики в оповещениях
+          href: platform/alerts-metric-near-real-time.md
+    - name: Журналы платформы
+      items:
+        - name: Схемы журналов ресурсов
+          href: platform/diagnostic-logs-schema.md
+        - name: Схема журнала действий
+          href: platform/activity-log-schema.md
+    - name: Схемы расширений для диагностики
+      items:
+        - name: Расширение для диагностики Windows
+          href: platform/diagnostics-extension-schema-windows.md
     - name: Application Insights
       items:
         - name: Автоматический сбор зависимостей
@@ -1167,6 +1202,8 @@
           href: app/platforms.md
         - name: Переопределение конечных точек
           href: app/custom-endpoints.md
+        - name: Функции Azure
+          href: app/azure-functions-supported-features.md
         - name: Модель данных
           items:
             - name: Обзор
@@ -1187,45 +1224,33 @@
               href: app/data-model-context.md
             - name: Интеграция с Функциями Azure
               href: app/azure-functions-supported-features.md
-    - name: Метрики
-      items:
-        - name: Поддерживаемые метрики
-          href: platform/metrics-supported.md
-        - name: Использование экспортируемых метрик с параметрами диагностики
-          href: platform/metrics-supported-export-diagnostic-settings.md
-        - name: Поддерживаемые метрики для новых оповещений
-          href: platform/alerts-metric-near-real-time.md
-    - name: Журналы платформы
-      items:
-        - name: 'Службы, категории и схемы для журналов ресурсов'
-          href: platform/diagnostic-logs-schema.md
-        - name: Схема журнала действий
-          href: platform/activity-log-schema.md
-    - name: Azure CLI
-      href: /cli/azure/monitor?view=azure-cli-latest
-    - name: Использование Azure CLI с Application Insights (предварительная версия)
-      href: 'https://docs.microsoft.com/cli/azure/ext/application-insights/monitor?view=azure-cli-latest'
-    - name: Функции Azure
-      href: app/azure-functions-supported-features.md
+            - name: Схема на основе рабочей области
+              href: app/apm-tables.md
     - name: Azure PowerShell
       items:
-        - name: 'Оповещения, метрики, журнал действий, автомасштабирование'
+        - name: Azure Monitor
           href: /powershell/module/az.monitor
+        - name: Журналы Azure Monitor
+          href: /powershell/module/az.operationalinsights
         - name: Application Insights
           href: /powershell/module/az.applicationinsights
-        - name: Log Analytics
-          href: /powershell/module/az.operationalinsights
+    - name: Azure CLI
+      items:
+        - name: Azure Monitor
+          href: /cli/azure/monitor?view=azure-cli-latest
+        - name: Application Insights
+          href: 'https://docs.microsoft.com/cli/azure/ext/application-insights/monitor?view=azure-cli-latest'
     - name: REST API
       items:
-        - name: Монитор
+        - name: Azure Monitor
           href: /rest/api/monitor/
-        - name: Журналы
+        - name: Журналы Azure Monitor
           href: /rest/api/loganalytics
-    - name: Шаблон Resource Manager
+    - name: Шаблоны Resource Manager
       items:
-        - name: Монитор
+        - name: Azure Monitor
           href: /azure/templates/microsoft.insights/allversions
-        - name: Журналы
+        - name: Журналы Azure Monitor
           href: /azure/templates/microsoft.operationalinsights/allversions
     - name: Прекращение поддержки функций и API
       items:
@@ -1235,16 +1260,18 @@
           href: platform/monitoring-classic-retirement.md
         - name: Переход на новый API оповещений журнала
           href: platform/alerts-log-api-switch.md
-        - name: Данные HockeyApp
-          href: app/hockeyapp-bridge-app.md
         - name: Решение для анализа веб-приложений Azure
           href: insights/azure-web-apps-analytics.md
         - name: Соединитель Application Insights
           href: platform/app-insights-connector.md
+        - name: Application Insights для мониторинга AKS без написания кода
+          href: app/kubernetes.md
         - name: Мониторинг приложений Docker
           href: app/docker.md
         - name: Прекращение поддержки портала OMS
           href: platform/oms-portal-transition.md
+        - name: Устаревшие метрики диска
+          href: platform/portal-disk-metrics-deprecation.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
@@ -1253,23 +1280,7 @@
       href: 'https://azure.microsoft.com/pricing/details/log-analytics/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Новости
-      items:
-        - name: Обновления Application Insights
-          href: 'https://azure.microsoft.com/updates/?product=application-insights'
-        - name: Обновления службы анализа журналов
-          href: 'https://azure.microsoft.com/updates/?product=log-analytics'
-        - name: Заметки о выпуске пакета SDK
-          href: app/release-notes.md
-    - name: Windows Analytics
-      href: 'https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics'
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/?products=monitor&regions=all'
-    - name: Видео
-      href: 'https://azure.microsoft.com/resources/videos/index/?services=monitor'
-    - name: Шаблоны быстрого запуска
-      href: 'https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Insights'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/search?q=monitoring'
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?service=monitor'
+    - name: Новости
+      href: 'https://azure.microsoft.com/updates/?product=monitor'

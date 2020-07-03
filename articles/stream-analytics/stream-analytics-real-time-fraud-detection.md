@@ -6,18 +6,18 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 03/24/2020
 ms.custom: seodec18
-ms.openlocfilehash: 0273a0a729d39de27b9e417c23624992d1d55b42
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: c0b2943e1f0d7f2386ec09da03d297a570eede7a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064410"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80276484"
 ---
 # <a name="get-started-using-azure-stream-analytics-real-time-fraud-detection"></a>Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени
 
-В этом руководстве содержится комплексное описание использования Azure Stream Analytics. Вы узнаете, как выполнять следующие задачи: 
+В этом руководстве содержится комплексное описание использования Azure Stream Analytics. Вы научитесь: 
 
 * Перенести события потоковой передачи в экземпляр Центров событий Azure. В рамках этого руководства вы будете использовать приложение, имитирующее поток записей метаданных от мобильного устройства.
 
@@ -31,7 +31,7 @@ ms.locfileid: "77064410"
 
 У поставщика телекоммуникационных услуг есть большой объем данных для входящих вызовов. Компания хочет определить мошеннические вызовы в режиме реального времени, чтобы уведомить клиентов или завершить обслуживание для определенного номера. Один тип мошенничества в отношении SIM-карт включает несколько вызовов из одного удостоверения приблизительно в одно время, но из различных географических расположений. Чтобы определить этот тип мошенничества, компании необходимо исследовать входящие телефонные записи и искать конкретные закономерности, в данном случае для вызовов, выполняемых в разных странах и регионах. Любые записи телефона, соответствующие этой категории, записываются в хранилище для последующего анализа.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В рамках этого руководства вы смоделируете данные вызовов с помощью клиентского приложения, которое создает пример метаданных вызова. Некоторые из записей, которые создает приложение, выглядят, как мошеннические вызовы. 
 
@@ -69,7 +69,7 @@ ms.locfileid: "77064410"
     
 5. Выберите подписку, создайте или выберите группу ресурсов, а затем щелкните **Создать**.
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-namespace-new-portal.png" alt="Create event hub namespace in Azure portal" width="300px"/>
+    <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-namespace-new-portal.png" alt="Create event hub namespace in Azure portal" width="300px"/>
 
 6. После завершения развертывания пространства имен найдите пространство имен концентратора событий в списке ресурсов Azure. 
 
@@ -79,7 +79,7 @@ ms.locfileid: "77064410"
  
 8. Назовите новый концентратор событий `asa-eh-frauddetection-demo`. Вы можете использовать другое имя. В таком случае запишите его, так как это имя понадобится вам позже. На этом этапе этих параметров концентратора событий достаточно.
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-new-portal.png" alt="Name event hub in Azure portal" width="400px"/>
+    <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-new-portal.png" alt="Name event hub in Azure portal" width="400px"/>
     
 9. Нажмите кнопку **Создать**.
 
@@ -87,32 +87,33 @@ ms.locfileid: "77064410"
 
 Для того чтобы процесс смог отправлять данные в концентратор событий, концентратор должен иметь политику, разрешающую соответствующий доступ. Политика доступа создает строку подключения, которая включает сведения об авторизации.
 
-1.  В области пространства имен событий щелкните **Центры событий**, а затем щелкните имя нового концентратора событий.
+1. В области пространства имен событий щелкните **Центры событий**, а затем щелкните имя нового концентратора событий.
 
-2.  В области концентратора событий щелкните **Политики общего доступа**, а затем выберите **+&nbsp;Добавить**.
+2. В области концентратора событий щелкните **политики общего доступа** и нажмите кнопку ** + &nbsp;добавить**.
 
-    >[!NOTE]
-    >Вы должны работать с концентратором событий, а не пространством имен концентратора.
+    > [!NOTE]
+    > Вы должны работать с концентратором событий, а не пространством имен концентратора.
 
-3.  Добавьте политику с именем `sa-policy-manage-demo`, а для параметра **Утверждение** выберите **Управление**.
+3. Добавьте политику с именем `asa-policy-manage-demo`, а для параметра **Утверждение** выберите **Управление**.
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-shared-access-policy-manage-new-portal.png" alt="Create shared access policy for Stream Analytics" width="300px"/>
+    <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-shared-access-policy-manage-new-portal.png" alt="Create shared access policy for Stream Analytics" width="300px"/>
  
-4.  Нажмите кнопку **Создать**.
+4. Нажмите кнопку **Создать**.
 
-5.  После развертывания политики щелкните ее в списке политик общего доступа.
+5. После развертывания политики щелкните ее в списке политик общего доступа.
 
-6.  Найдите текстовое поле с пометкой **Строка подключения — первичный ключ** и нажмите кнопку копирования рядом со строкой подключения. 
+6. Найдите текстовое поле с пометкой **Строка подключения — первичный ключ** и нажмите кнопку копирования рядом со строкой подключения. 
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-shared-access-policy-copy-connection-string-new-portal.png" alt="Stream Analytics shared access policy" width="300px"/>
+    <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-shared-access-policy-copy-connection-string-new-portal.png" alt="Stream Analytics shared access policy" width="300px"/>
  
-7.  Вставьте строку подключения в текстовый редактор. Эта строка подключения понадобится в следующем разделе после внесения в нее небольших изменений.
+7. Вставьте строку подключения в текстовый редактор. Эта строка подключения понадобится в следующем разделе после внесения в нее небольших изменений.
 
     Строка подключения выглядит следующим образом:
 
-        Endpoint=sb://YOURNAME-eh-ns-demo.servicebus.windows.net/;SharedAccessKeyName=asa-policy-manage-demo;SharedAccessKey=Gw2NFZwU1Di+rxA2T+6hJYAtFExKRXaC2oSQa0ZsPkI=;EntityPath=asa-eh-frauddetection-demo
+    `Endpoint=sb://YOURNAME-eh-ns-demo.servicebus.windows.net/;SharedAccessKeyName=asa-policy-manage-demo;SharedAccessKey=Gw2NFZwU1Di+rxA2T+6hJYAtFExKRXaC2oSQa0ZsPkI=;EntityPath=asa-eh-frauddetection-demo`
 
     Обратите внимание, что строка подключения содержит несколько пар "ключ — значение", которые разделены точкой с запятой: `Endpoint`, `SharedAccessKeyName`, `SharedAccessKey` и `EntityPath`.  
+
 
 ## <a name="configure-and-start-the-event-generator-application"></a>Настройка и запуск приложения генератора событий
 
@@ -129,20 +130,27 @@ ms.locfileid: "77064410"
    * Задайте для ключа `EventHubName` значение имени концентратора событий (то есть значение пути к сущности).
    * Задайте для ключа `Microsoft.ServiceBus.ConnectionString` значение строки подключения. 
 
-   Раздел `<appSettings>` будет выглядеть, как показано в примере ниже. (Для удобства при чтении мы добавили переносы строк и удалили некоторые символы из маркера авторизации.)
+   `<appSettings>` Раздел будет выглядеть, как в следующем примере:
 
-   ![Файл конфигурации TelcoGenerator, отображающий имя Центра событий и строку подключения](./media/stream-analytics-real-time-fraud-detection/stream-analytics-telcogenerator-config-file-app-settings.png)
+    ```xml
+    <appSettings>
+     <!-- Service Bus specific app setings for messaging connections -->
+     <add key="EventHubName" value="asa-eh-ns-demo"/>
+     <add key="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://asa-eh-ns-demo.servicebus.windows.net/;SharedAccessKeyName=asa-policy-manage-demo;SharedAccessKey=GEcnTKf2//1MRn6SN1A2u0O76MP9pj3v0Ccyf1su4Zo="/>
+   </appSettings>
+    ```
  
 4. Сохраните файл. 
 
 ### <a name="start-the-app"></a>Запуск приложения
-1.  Откройте окно командной строки и перейдите в папку, в которой было распаковано приложение TelcoGenerator.
 
-2.  Введите следующую команду:
+1. Откройте окно командной строки и перейдите в папку, в которой было распаковано приложение TelcoGenerator.
 
-   ```cmd
-   telcodatagen.exe 1000 0.2 2
-   ```
+2. Введите следующую команду:
+
+    ```console
+    telcodatagen.exe 1000 0.2 2
+    ```
 
    Используются следующие параметры: 
 
@@ -154,7 +162,7 @@ ms.locfileid: "77064410"
 
 Ниже определены некоторые ключевые поля, которые будут использоваться в этом приложении для выявления мошенничества в реальном времени:
 
-|**Запись**|**Определение**|
+|**Записать**|**Определение**|
 |----------|--------------|
 |`CallrecTime`|Метка времени начала вызова. |
 |`SwitchNum`|Телефонный переключатель, используемый для совершения вызова. В этом примере переключатели выражены строками, представляющими страну или регион происхождения (США, Китай, Соединенное Королевство, Германия или Австралия). |
@@ -170,13 +178,13 @@ ms.locfileid: "77064410"
 
 ### <a name="create-the-job"></a>Создание задания 
 
-1. На портале Azure щелкните **Создать ресурс** >  **"Интернет вещей"**  > **Задание Stream Analytics**.
+1. В портал Azure щелкните **создать ресурс** > **"Интернет вещей"** > **Stream Analytics задание**.
 
 2. Назовите задание `asa_frauddetection_job_demo` и укажите подписку, группу ресурсов и расположение.
 
     Мы рекомендуем поместить задание и концентратор событий в одном регионе, чтобы достичь оптимальной производительности и не оплачивать передачу данных между регионами.
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-job-new-portal.png" alt="Create Stream Analytics job in portal" width="300px"/>
+    <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-job-new-portal.png" alt="Create Stream Analytics job in portal" width="300px"/>
 
 3. Нажмите кнопку **Создать**.
 
@@ -193,8 +201,8 @@ ms.locfileid: "77064410"
 
    |**Параметр**  |**Рекомендуемое значение**  |**Описание**  |
    |---------|---------|---------|
-   |Псевдоним входных данных  |  CallStream   |  Введите имя для определения входных данных задания.   |
-   |Subscription   |  \<Ваша подписка\> |  Выберите подписку Azure, в которой размещен созданный концентратор событий.   |
+   |Псевдоним входных данных  |  CallStream   |  Введите имя для этого источника входных данных для задания.   |
+   |Подписка   |  \<Ваша подписка\> |  Выберите подписку Azure, в которой размещен созданный концентратор событий.   |
    |пространство имен концентратора событий;  |  asa-eh-ns-demo |  Введите имя пространства имен для концентратора событий.   |
    |имя концентратора событий;  | asa-eh-frauddetection-demo | Выберите имя концентратора событий.   |
    |Имя политики концентратора событий  | asa-policy-manage-demo | Выберите созданную ранее политику доступа.   |
@@ -269,11 +277,11 @@ ms.locfileid: "77064410"
 
 1. Измените запрос в редакторе кода, используя следующие значения:
 
-   ```SQL
-   SELECT CallRecTime, SwitchNum, CallingIMSI, CallingNum, CalledNum 
-   FROM 
-       CallStream
-   ```
+    ```SQL
+    SELECT CallRecTime, SwitchNum, CallingIMSI, CallingNum, CalledNum 
+    FROM 
+        CallStream
+    ```
 
 2. Снова щелкните **Проверка**. 
 
@@ -287,19 +295,19 @@ ms.locfileid: "77064410"
 
 1. Измените запрос в редакторе кода, используя следующие значения:
 
-        ```SQL
-        SELECT 
-            System.Timestamp as WindowEnd, SwitchNum, COUNT(*) as CallCount 
-        FROM
-            CallStream TIMESTAMP BY CallRecTime 
-        GROUP BY TUMBLINGWINDOW(s, 5), SwitchNum
-        ```
+    ```SQL
+    SELECT 
+        System.Timestamp as WindowEnd, SwitchNum, COUNT(*) as CallCount 
+    FROM
+        CallStream TIMESTAMP BY CallRecTime 
+    GROUP BY TUMBLINGWINDOW(s, 5), SwitchNum
+    ```
 
     Этот запрос использует ключевое слово `Timestamp By` в предложении `FROM`, чтобы указать, какое поле метки времени использовать во входном потоке для определения "переворачивающегося" окна. В этом случае окно делит данные на сегменты по полю `CallRecTime` в каждой записи. Если поле не указано, при выполнении операций с окнами будет использоваться время поступления каждого события в концентратор событий. Дополнительные сведения см. в разделе о времени поступления и времени приложения в [справочнике по языку запросов Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference). 
 
     Проектирование включает запрос `System.Timestamp`, возвращающий метку времени конца каждого окна. 
 
-    Чтобы указать, что вы хотите использовать окно "переворачивающегося", используйте функцию [TUMBLINGWINDOW](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics) в предложении `GROUP BY`. В функции укажите единицу времени (от микросекунд до 24 часов) и размер окна (количество единиц). В этом примере окно "переворачивающегося" состоит из 5-секундных интервалов, поэтому вы получите подсчеты по стране или региону для вызовов за каждые 5 секунд.
+    Чтобы указать, что вы хотите использовать окно "переворачивающегося", используйте функцию [TUMBLINGWINDOW](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics) в `GROUP BY` предложении. В функции укажите единицу времени (от микросекунд до 24 часов) и размер окна (количество единиц). В этом примере окно "переворачивающегося" состоит из 5-секундных интервалов, поэтому вы получите подсчеты по стране или региону для вызовов за каждые 5 секунд.
 
 2. Снова щелкните **Проверка**. В результатах обратите внимание на то, что метки времени в **WindowEnd** формируются с шагом приращения в 5 секунд.
 
@@ -309,25 +317,25 @@ ms.locfileid: "77064410"
 
 В этом примере мы рассмотрим мошеннические вызовы, выполненные одним пользователем из различных регионов с интервалом в 5 секунд. Например, один и тот же пользователь не может законным путем сделать звонок из США и Австралии одновременно. 
 
-Чтобы проверить такие случаи, вы можете использовать самосоединение потоковой передачи данных, чтобы выполнить самосоединение потока на основе значения `CallRecTime`. Затем можно искать записи вызовов, в которых значение `CallingIMSI` (исходящий номер) совпадает, но значение `SwitchNum` (страна или регион происхождения) не совпадает.
+Чтобы проверить такие случаи, вы можете использовать самосоединение потоковой передачи данных, чтобы выполнить самосоединение потока на основе значения `CallRecTime`. Затем можно найти записи вызовов, в которых `CallingIMSI` значение (исходный номер) совпадает, но `SwitchNum` значение (страна или регион происхождения) не совпадает.
 
-При использовании соединения с потоковой передачей данных соединение должно предоставить некоторые ограничения в отношении того, насколько совпадающие строки могут быть разделены по времени. (Как отмечалось ранее, данные потоковой передачи фактически являются бесконечными.) Временные границы для связи указываются в предложении `ON` JOIN с помощью функции `DATEDIFF`. В этом случае соединение основано на 5-секундном интервале данных вызова.
+При использовании соединения с потоковой передачей данных соединение должно предоставить некоторые ограничения в отношении того, насколько совпадающие строки могут быть разделены по времени. (Как отмечалось ранее, данные потоковой передачи фактически являются бесконечными.) Временные границы для связи указываются внутри `ON` предложения Join с помощью `DATEDIFF` функции. В этом случае соединение основано на 5-секундном интервале данных вызова.
 
 1. Измените запрос в редакторе кода, используя следующие значения: 
 
-        ```SQL
-        SELECT  System.Timestamp as Time, 
-            CS1.CallingIMSI, 
-            CS1.CallingNum as CallingNum1, 
-            CS2.CallingNum as CallingNum2, 
-            CS1.SwitchNum as Switch1, 
-            CS2.SwitchNum as Switch2 
-        FROM CallStream CS1 TIMESTAMP BY CallRecTime 
-            JOIN CallStream CS2 TIMESTAMP BY CallRecTime 
-            ON CS1.CallingIMSI = CS2.CallingIMSI 
-            AND DATEDIFF(ss, CS1, CS2) BETWEEN 1 AND 5 
-        WHERE CS1.SwitchNum != CS2.SwitchNum
-        ```
+    ```SQL
+    SELECT  System.Timestamp as Time, 
+        CS1.CallingIMSI, 
+        CS1.CallingNum as CallingNum1, 
+        CS2.CallingNum as CallingNum2, 
+        CS1.SwitchNum as Switch1, 
+        CS2.SwitchNum as Switch2 
+    FROM CallStream CS1 TIMESTAMP BY CallRecTime 
+        JOIN CallStream CS2 TIMESTAMP BY CallRecTime 
+        ON CS1.CallingIMSI = CS2.CallingIMSI 
+        AND DATEDIFF(ss, CS1, CS2) BETWEEN 1 AND 5 
+    WHERE CS1.SwitchNum != CS2.SwitchNum
+    ```
 
     Этот запрос напоминает любое другое соединение SQL за исключением функции в соединении `DATEDIFF`. Эта версия функции `DATEDIFF` предназначена для Stream Analytics и должна присутствовать в предложении `ON...BETWEEN`. Параметры представлены единицей времени (в этом примере — секундами) и псевдонимами двух источников для соединения. В этом она отличается от стандартной функции SQL `DATEDIFF`.
 
@@ -339,7 +347,7 @@ ms.locfileid: "77064410"
 
 3. Щелкните **Сохранить**, и запрос на самосоединение сохранится как часть задания Stream Analytics. (Образец данных не сохраняется.)
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-query-editor-save-button-new-portal.png" alt="Save Stream Analytics query in portal" width="300px"/>
+    <br/><img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-query-editor-save-button-new-portal.png" alt="Save Stream Analytics query in portal" width="300px"/>
 
 ## <a name="create-an-output-sink-to-store-transformed-data"></a>Создание приемника выходных данных для хранения преобразованных данных
 
@@ -363,15 +371,15 @@ ms.locfileid: "77064410"
 
    |**Параметр**  |**Рекомендуемое значение**  |**Описание**  |
    |---------|---------|---------|
-   |Псевдоним выходных данных  |  CallStream-FraudulentCalls   |  Введите имя для определения выходных данных задания.   |
-   |Subscription   |  \<Ваша подписка\> |  Выберите подписку Azure, в которой создана учетная запись хранения. Учетная запись хранения может находиться в той же или в другой подписке. В этом примере предполагается, что вы создали учетную запись хранения в одной и той же подписке. |
+   |Псевдоним выходных данных  |  CallStream-FraudulentCalls   |  Введите имя, которое будет обозначать выходные данные задания.   |
+   |Подписка   |  \<Ваша подписка\> |  Выберите подписку Azure, в которой создана учетная запись хранения. Учетная запись хранения может находиться в той же или в другой подписке. В этом примере предполагается, что вы создали учетную запись хранения в одной и той же подписке. |
    |Учетная запись хранения  |  asaehstorage |  Введите имя созданной учетной записи хранения. |
    |Контейнер  | asa-fraudulentcalls-demo | Выберите "Создать новый" и введите имя контейнера. |
 
     <br/>
     <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-output-blob-storage-new-console.png" alt="Create blob output for Stream Analytics job" width="300px"/>
     
-5. Выберите команду **Сохранить**. 
+5. Нажмите кнопку **Сохранить**. 
 
 
 ## <a name="start-the-streaming-analytics-job"></a>Запуск задания Streaming Analytics
@@ -412,9 +420,9 @@ ms.locfileid: "77064410"
 
 ## <a name="get-support"></a>Получение поддержки
 
-За дополнительной помощью обращайтесь на [форум Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
+За дополнительной помощью обратитесь к [форуму Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы можете ознакомиться со следующей статьей, связанной с этим руководством:
 

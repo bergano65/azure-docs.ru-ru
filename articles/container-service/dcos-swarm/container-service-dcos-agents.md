@@ -8,10 +8,10 @@ ms.date: 01/04/2017
 ms.author: iainfou
 ms.custom: mvc
 ms.openlocfilehash: bb9b33bf537ebd5a563f8e8a8afd45cd2e5b292d
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76278383"
 ---
 # <a name="deprecated-dcos-agent-pools-for-azure-container-service"></a>(УСТАРЕЛО) Пулы агентов DC/OS для службы контейнеров Azure
@@ -40,7 +40,7 @@ ms.locfileid: "76278383"
 ## <a name="use-agent-pools"></a>Использование пулов агента
 По умолчанию **Marathon** развертывает все новые приложения на *частных* узлах агентов. Приложение на *общедоступных* узлах необходимо явно развернуть во время создания приложения. Перейдите на вкладку **Необязательно** и присвойте параметру **Accepted Resource Roles** (Принятые роли ресурсов) значение **slave_public**. Этот процесс описан [здесь](container-service-mesos-marathon-ui.md#deploy-a-docker-formatted-container) и в документации по [DC/OS](https://docs.mesosphere.com/1.7/administration/installing/oss/custom/create-public-agent/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Узнайте больше об [управлении контейнерами DC/OS](container-service-mesos-marathon-ui.md).
 
 * Узнайте, как [открыть брандмауэр](container-service-enable-public-access.md), предоставляемый Azure, чтобы разрешить общий доступ к контейнеру DC/OS.

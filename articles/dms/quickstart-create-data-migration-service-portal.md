@@ -3,8 +3,8 @@ title: Краткое руководство. Создание экземпля�
 titleSuffix: Azure Database Migration Service
 description: Использование портала Azure для создания экземпляра Azure Database Migration Service.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
 ms.date: 01/08/2020
-ms.openlocfilehash: 42638af9f51770a9a5738cd92f91c28439af273a
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: efbf7d9db91b8c23151ca4337bd4d58f814a7096
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750100"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "78254979"
 ---
 # <a name="quickstart-create-an-instance-of-the-azure-database-migration-service-by-using-the-azure-portal"></a>Краткое руководство. Создание экземпляра службы Azure Database Migration Service с помощью портала Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "75750100"
 
         ![Создание службы миграции](media/quickstart-create-data-migration-service-portal/dms-create-service1.png)
 
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 
     Через несколько секунд экземпляр Azure Database Migration Service будет создан и готов к использованию. Экземпляр Azure Database Migration Service отобразится, как показано на рисунке ниже.
 

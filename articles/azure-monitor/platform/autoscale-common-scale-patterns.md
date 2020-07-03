@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 05/07/2017
 ms.subservice: autoscale
 ms.openlocfilehash: a77cf1704c20abb77d432eab16569071208f6da8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75396095"
 ---
 # <a name="overview-of-common-autoscale-patterns"></a>Обзор общих шаблонов автомасштабирования
@@ -18,7 +18,7 @@ ms.locfileid: "75396095"
 
 ## <a name="lets-get-started"></a>Начало работы
 
-В данной статье предполагается, что вы знакомы с автомасштабированием. Вы можете [начать работу здесь, чтобы масштабировать ресурс][1]. Далее приведены некоторые общие шаблоны масштабирования.
+В данной статье предполагается, что вы знакомы с автомасштабированием. Сведения по началу работы с автомасштабированием ресурсов см. [здесь][1]. Далее приведены некоторые общие шаблоны масштабирования.
 
 ## <a name="scale-based-on-cpu"></a>Масштабирование на основе использования ЦП
 

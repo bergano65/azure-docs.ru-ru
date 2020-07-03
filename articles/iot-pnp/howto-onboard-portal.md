@@ -5,15 +5,15 @@ author: Philmea
 manager: philmea
 ms.service: iot-pnp
 services: iot-pnp
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/26/2019
 ms.author: philmea
-ms.openlocfilehash: c73848af299f87edf60ab36713d09ad4421b18fd
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 4969c4f10787fa9b2d601d5b12edf823d1987301
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75531236"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80159138"
 ---
 # <a name="onboard-to-the-azure-certified-for-iot-portal"></a>Подключение к порталу Azure Certified for IoT
 
@@ -33,6 +33,6 @@ ms.locfileid: "75531236"
 
 Перед публикацией устройства в каталоге сертифицированных устройств IoT прочтите и примите соглашение об использовании программы. Соглашение можно найти на странице Параметры на портале сертификации Azure для IoT.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 На следующем шаге вы узнаете, как [Отправить устройство Plug and Play IOT для сертификации](tutorial-certification-test.md).

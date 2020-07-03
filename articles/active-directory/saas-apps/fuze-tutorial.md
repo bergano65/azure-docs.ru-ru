@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Fuze | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Fuze | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Fuze.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
 ms.openlocfilehash: 546e0d53630b1dba8447fe1004e92545f9c8f324
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73155402"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fuze"></a>Руководство по Интеграция Azure Active Directory с Fuze
+# <a name="tutorial-azure-active-directory-integration-with-fuze"></a>Руководство по интеграции Azure Active Directory с Fuze
 
 В этом руководстве описано, как интегрировать приложение Fuze с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Fuze обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "73155402"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Fuze, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Fuze с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -117,11 +117,11 @@ ms.locfileid: "73155402"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-fuze-single-sign-on"></a>Настройка единого входа в Fuze
 
@@ -143,7 +143,7 @@ ms.locfileid: "73155402"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.

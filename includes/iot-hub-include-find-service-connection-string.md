@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
@@ -9,10 +9,10 @@ ms.date: 07/16/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 55cdd864d73ce084d994c64233e79d5a58b17def
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "69558457"
 ---
 <!-- This tells how to get the connection string for the service shared access policy of your IoT hub -->

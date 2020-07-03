@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 09/01/2019
-ms.openlocfilehash: cae128505c61e7c640819041c6ffdae10a4947e7
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: efe09c1d516b37c23b024e07ae387772fa7e5992
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152284"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79477618"
 ---
 # <a name="extract-n-gram-features-from-text-module-reference"></a>Извлечение функций N-грамм из справочника по текстовым модулям
 
@@ -73,7 +73,7 @@ ms.locfileid: "77152284"
 
 1. Выберите параметр **нормализовать векторы компонентов n-грамм** для нормализации векторов компонентов. Если этот параметр включен, каждый вектор функций n-грамм делится на нормы L2.
 
-1. Запустили конвейер.
+1. Отправьте конвейер.
 
 ### <a name="use-an-existing-n-gram-dictionary"></a>Использовать существующий словарь n-грамм
 
@@ -92,7 +92,7 @@ ms.locfileid: "77152284"
 
 1.  Дополнительные сведения о других параметрах см. в описании свойств в [предыдущем разделе](#create-a-new-n-gram-dictionary).
 
-1.  Запустили конвейер.
+1.  Отправьте конвейер.
 
 ### <a name="score-or-publish-a-model-that-uses-n-grams"></a>Оценка или Публикация модели, использующей n-граммные
 
@@ -135,6 +135,6 @@ ms.locfileid: "77152284"
 > [!Note]
 > Не подключайте выходные данные непосредственно к модулю обучение модели. Прежде чем поступать в модель обучения, необходимо удалить столбцы с произвольным текстом. В противном случае столбцы с произвольным текстом будут рассматриваться как функции категории категорий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure.

@@ -5,7 +5,6 @@ description: Описание функций на портале регистр�
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.assetid: f0507c28-9464-4d3e-bd53-de9053fd5278
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
@@ -14,12 +13,12 @@ ms.date: 08/13/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa
 ms.custom: aaddev
-ms.openlocfilehash: 26ebee446523c138569b9d5379c9a5e1b9e93e7d
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 910aaf84d3563d4410826d3c0bdfde3d2dfc75e3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76698447"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885639"
 ---
 # <a name="app-registration-reference"></a>Справка по регистрации приложений
 
@@ -35,7 +34,7 @@ ms.locfileid: "76698447"
 
 ## <a name="live-sdk-applications"></a>Приложения Live SDK
 
-Список содержит все приложения, зарегистрированные для использования исключительно с учетной записью Майкрософт. Использовать их с Azure Active Directory невозможно. Сюда входят все приложения, которые ранее были зарегистрированы на портале разработчиков MSA по адресу `https://account.live.com/developers/applications`. Все функции, которые вы ранее выполняли в `https://account.live.com/developers/applications`, теперь можно выполнять в [Регистрация приложений](https://aka.ms/appregistrations).
+Список содержит все приложения, зарегистрированные для использования исключительно с учетной записью Майкрософт. Использовать их с Azure Active Directory невозможно. Сюда входят все приложения, которые ранее были зарегистрированы на портале разработчиков MSA по адресу `https://account.live.com/developers/applications`. Все функции, ранее выполненные в `https://account.live.com/developers/applications` , теперь можно выполнять в [Регистрация приложений](https://aka.ms/appregistrations).
 
 ## <a name="application-secrets"></a>Секреты приложений
 

@@ -1,40 +1,37 @@
 ---
-title: Выполнение пользовательских команд на клиенте с помощью пакета SDK для распознавания речи
+title: Как выполнять команды от клиента с помощью пакета SDK для распознавания речи
 titleSuffix: Azure Cognitive Services
 description: В этой статье объясняется, как управлять действиями настраиваемых команд на клиенте с помощью пакета SDK для распознавания речи.
 services: cognitive-services
-author: don-d-kim
-manager: yetian
+author: trevorbye
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 10/09/2019
-ms.author: donkim
-ms.openlocfilehash: b55bb1c8379cf0a80a95aa0ba1a29297154d5831
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.date: 05/04/2020
+ms.author: trbye
+ms.openlocfilehash: f11f5f3c2ad4c9f0241d34edeb664f739f88d15c
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76156511"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871738"
 ---
-# <a name="how-to-fulfill-commands-on-the-client-with-the-speech-sdk-preview"></a>Как выполнять команды на клиенте с помощью пакета SDK для распознавания речи (Предварительная версия)
+# <a name="fulfill-commands-from-a-client-with-the-speech-sdk-preview"></a>Выполнение команд из клиента с помощью пакета SDK для распознавания речи (Предварительная версия)
 
 Для выполнения задач с помощью пользовательского приложения команды можно отправить пользовательские полезные данные на подключенное клиентское устройство.
 
 В этой статье вы выполните следующие действия:
 
 - Определение и Отправка пользовательских полезных данных JSON из приложения пользовательских команд
-- Получение и визуализация содержимого настраиваемой полезной нагрузки JSON из C# клиентского приложения SDK для обработки речи UWP
+- Получение и визуализация содержимого настраиваемой полезной нагрузки JSON из клиентского приложения SDK для языка C# UWP
 
-## <a name="prerequisites"></a>Технические условия
-
-- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
-- Ключ подписки Azure для службы речи
-  - [Получите его бесплатно](get-started.md) или создайте его на [портал Azure](https://portal.azure.com)
-- Ранее созданное приложение пользовательских команд
-  - [Краткое руководство. Создание настраиваемой команды с параметрами (Предварительная версия)](./quickstart-custom-speech-commands-create-parameters.md)
-- Клиентское приложение с поддержкой Speech SDK
-  - [Краткое руководство. подключение к пользовательскому командному приложению с помощью речевого пакета SDK (Предварительная версия)](./quickstart-custom-speech-commands-speech-sdk.md)
+## <a name="prerequisites"></a>Предварительные требования
+> [!div class = "checklist"]
+> * [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
+> * Ключ подписки Azure для службы речи: [получите бесплатную](get-started.md) или создайте ее на [портал Azure](https://portal.azure.com)
+> * Ранее созданное приложение пользовательских команд: [Краткое руководство. Создание настраиваемой команды с параметрами (Предварительная версия)](./quickstart-custom-speech-commands-create-parameters.md)
+> * Клиентское приложение с поддержкой Speech SDK: [Краткое руководство. подключение к пользовательскому командному приложению с помощью пакета SDK для распознавания речи (Предварительная версия)](./quickstart-custom-speech-commands-speech-sdk.md)
 
 ## <a name="optional-get-started-fast"></a>Необязательно: быстрое начало работы
 
@@ -42,22 +39,20 @@ ms.locfileid: "76156511"
 
 ## <a name="fulfill-with-json-payload"></a>Условия выполнения с использованием полезных данных JSON
 
-1. Откройте созданное ранее приложение пользовательских команд из [речевого студии](https://speech.microsoft.com/) .
+1. Откройте созданное ранее приложение "пользовательские команды" из [руководства по созданию настраиваемой команды с параметрами.](./quickstart-custom-speech-commands-create-parameters.md)
 1. Проверьте раздел **правила завершения** , чтобы убедиться, что создано ранее созданное правило, отвечающее пользователю.
 1. Чтобы отправить полезные данные непосредственно клиенту, создайте новое правило с действием Отправить действие.
 
    > [!div class="mx-imgBorder"]
-   > ](media/custom-speech-commands/fulfill-sdk-completion-rule.png) правило завершения действия ![отправки
+   > ![Правило завершения отправки действия](media/custom-speech-commands/fulfill-sdk-completion-rule.png)
 
-   | Параметр | Рекомендуемое значение | Description |
+   | Параметр | Рекомендуемое значение | Описание |
    | ------- | --------------- | ----------- |
    | Имя правила | упдатедевицестате | Имя, описывающее назначение правила. |
-   | Условия | Обязательный параметр — `OnOff` и `SubjectDevice` | Условия, определяющие, когда может выполняться правило |
-   | Действия | `SendActivity` (см. ниже) | Действие, выполняемое, если условие правила имеет значение true |
+   | Условия | Обязательный параметр `OnOff` -и`SubjectDevice` | Условия, определяющие, когда может выполняться правило |
+   | Действия | `SendActivity`(см. ниже) | Действие, выполняемое, если условие правила имеет значение true |
 
-   > [!div class="mx-imgBorder"]
-   > ![](media/custom-speech-commands/fulfill-sdk-send-activity-action.png) полезных данных действия отправки
-
+1. Скопируйте приведенный ниже код JSON в **содержимое действия** .
    ```json
    {
      "type": "event",
@@ -66,12 +61,14 @@ ms.locfileid: "76156511"
      "device": "{SubjectDevice}"
    }
    ```
+   > [!div class="mx-imgBorder"]
+   > ![Отправка полезных данных действия](media/custom-speech-commands/fulfill-sdk-send-activity-action.png)
 
 ## <a name="create-visuals-for-device-on-or-off-state"></a>Создание визуальных элементов для состояния или отключения устройства
 
-В [кратком руководстве. подключение к пользовательскому командному приложению с помощью пакета SDK для распознавания речи (Предварительная версия)](./quickstart-custom-speech-commands-speech-sdk.md) вы создали клиентское приложение SDK для распознавания речи, которое обрабатывает такие команды, как `turn on the tv`, `turn off the fan`. Теперь добавьте несколько визуальных элементов, чтобы можно было увидеть результат этих команд.
+В [кратком руководстве. подключение к пользовательскому командному приложению с помощью пакета SDK](./quickstart-custom-speech-commands-speech-sdk.md)для распознавания речи вы создали клиентское приложение SDK для `turn on the tv`распознавания `turn off the fan`речи, которое обрабатывает такие команды, как,. После добавления некоторых визуальных элементов можно увидеть результат этих команд.
 
-Добавьте помеченные поля с текстом, **указывающим** или **отключив** использование следующего XML-кода, добавленного в `MainPage.xaml.cs`
+Добавьте помеченные поля с текстом, **указывающим** или **отключив** использование следующего XML-кода, добавленного в`MainPage.xaml`
 
 ```xml
 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
@@ -91,13 +88,23 @@ ms.locfileid: "76156511"
 ```
 
 ## <a name="handle-customizable-payload"></a>Обработку настраиваемых полезных данных
+### <a name="add-reference-libraries"></a>Добавление библиотек ссылок
 
-Теперь, когда вы создали полезные данные JSON, можно добавить ссылку на библиотеку [JSON.NET](https://www.newtonsoft.com/json) , чтобы обрабатывалась десериализация.
+Так как вы создали полезные данные JSON, необходимо добавить ссылку на библиотеку [JSON.NET](https://www.newtonsoft.com/json) для управления десериализацией.
+- Щелкните правой кнопкой мыши клиентское решение.
+- Выберите **Управление пакетами NuGet для решения**, нажмите кнопку **установить** . 
+- Выполните поиск **Newtonsoft. JSON** в списке обновлений, обновите **Microsoft. NETCore. UniversalWindowsPlatform** до последней версии.
 
 > [!div class="mx-imgBorder"]
-> ![](media/custom-speech-commands/fulfill-sdk-json-nuget.png) полезных данных действия отправки
+> ![Отправка полезных данных действия](media/custom-speech-commands/fulfill-sdk-json-nuget.png)
 
-В `InitializeDialogServiceConnector` добавьте следующий элемент в обработчик событий `ActivityReceived`. Дополнительный код извлекает полезные данные из действия и соответствующим образом изменяет визуальное состояние телевизора или вентилятора.
+В "MainPage. XAML. cs" добавьте
+- `using Newtonsoft.Json;` 
+- `using Windows.ApplicationModel.Core;`
+
+### <a name="handle-received-payload"></a>Обрабатывает полученные полезные данные
+
+В `InitializeDialogServiceConnector`Замените обработчик `ActivityReceived` событий следующим кодом. Измененный `ActivityReceived` обработчик событий извлечет полезные данные из действия и изменит визуальное состояние телевизора или вентилятора соответствующим образом.
 
 ```C#
 connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
@@ -105,22 +112,33 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
     NotifyUser($"Activity received, hasAudio={activityReceivedEventArgs.HasAudio} activity={activityReceivedEventArgs.Activity}");
 
     dynamic activity = JsonConvert.DeserializeObject(activityReceivedEventArgs.Activity);
+    var name = activity?.name != null ? activity.name.ToString() : string.Empty;
 
-    if(activity?.name == "SetDeviceState")
+    if (name.Equals("UpdateDeviceState"))
     {
-        var state = activity?.state;
-        var device = activity?.device;
-        switch(device)
+        Debug.WriteLine("Here");
+        var state = activity?.device != null ? activity.state.ToString() : string.Empty;
+        var device = activity?.device != null ? activity.device.ToString() : string.Empty;
+
+        if (state.Equals("on") || state.Equals("off"))
         {
-            case "tv":
-                State_TV.Text = state;
-                break;
-            case "fan":
-                State_Fan.Text = state;
-                break;
-            default:
-                NotifyUser($"Received request to set unsupported device {device} to {state}");
-                break;
+            switch (device)
+            {
+                case "tv":
+                    await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
+                        CoreDispatcherPriority.Normal, () => { State_TV.Text = state; });
+                    break;
+                case "fan":
+                    await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
+                        CoreDispatcherPriority.Normal, () => { State_Fan.Text = state; });
+                    break;
+                default:
+                    NotifyUser($"Received request to set unsupported device {device} to {state}");
+                    break;
+            }
+        }
+        else { 
+            NotifyUser($"Received request to set unsupported state {state}");
         }
     }
 
@@ -131,13 +149,15 @@ connector.ActivityReceived += async (sender, activityReceivedEventArgs) =>
 };
 ```
 
-## <a name="try-it-out"></a>Попробуйте в деле
+## <a name="try-it-out"></a>Попробуйте!
 
 1. Запуск приложения
 1. Выберите включить микрофон
 1. Нажмите кнопку "разговор"
-1. Скажем `turn on the tv`
+1. Пишут`turn on the tv`
 1. Визуальное состояние телевизора должно измениться на "вкл."
+   > [!div class="mx-imgBorder"]
+   > ![Отправка полезных данных действия](media/custom-speech-commands/fulfill-sdk-turn-on-tv.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

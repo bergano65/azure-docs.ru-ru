@@ -1,41 +1,21 @@
 ---
 title: Параметры предложения для приложения Azure | Azure Marketplace
 description: Настройка параметров предложения приложения Azure.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: dan-wesley
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.author: pabutler
-ms.openlocfilehash: c5e00f77ffeec61fb4fee4b4e8eb72b7c7ed1077
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 3150c3498cb3f0c87b74f86179f552c56d580c12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73827544"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81870145"
 ---
 # <a name="azure-application-offer-settings-tab"></a>Вкладка параметров предложения приложения Azure
 
-В этой статье описывается способ настройки параметров предложения для приложения Azure.
+[Портал Cloud Partner](https://cloudpartner.azure.com/) больше не поддерживает создание и Управление предложениями приложений Azure. Вместо этого эта функция была перемещена на [портал центра партнеров](https://partner.microsoft.com/)Майкрософт. Дополнительные сведения см. в разделе [Создание предложения приложения Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-azure-apps-offer).
 
-Откроется страница " **приложения Azure > новое предложение** " с фокусом на вкладке " **параметры предложения** ". Звездочка (*), добавленная к имени поля, указывает, что она является обязательной.
-
-![Форма идентификатора предложений](./media/azureapp-offer-settings-tab.png)
-
-## <a name="offer-identity-settings"></a>Параметры удостоверений предложения
-
-В разделе **Идентификатор предложений** необходимо предоставить сведения для полей, описанных в следующей таблице.  
-
-|    Поле         |       Description (Описание)                                                            |
-|  ---------       |     ---------------                                                          |
-| **Идентификатор предложения\***       | Уникальный идентификатор предложения (в профиле издателя). Он будет отображаться в URL-адресах продукта и отчетах о полезных сведениях. Его максимальная длина — 50 символов (можно использовать строчные буквы, цифры и дефисы (-)). (Идентификатор не может заканчиваться тире.) **Примечание.** Это поле нельзя изменить после того, как предложение пройдет в реальном времени. <br> Например, если Contoso опубликует предложение с идентификатором **sample-container**, этому предложению в Azure Marketplace будет назначен URL-адрес `https://azuremarketplace.microsoft.com/marketplace/apps/contoso.sample-container?tab=Overview`. |
-| **Идентификатор издателя\***     | Уникальный идентификатор организации в Azure Marketplace. Для всех предложений необходимо указывать свой идентификатор издателя. Это значение нельзя изменить после сохранения предложения. |
-| **Имя\***          | Отображаемое имя для предложения. Это имя будет отображаться в Azure Marketplace и на портале Cloud Partner. Его длина не должна превышать 50 символов. Рекомендовано использовать для своего продукта узнаваемое название торговой марки. Не включайте название организации, если это не так, как ваш продукт будет вырынке. Если вы продаете это предложение на других веб-сайтах и в ​​публикациях, убедитесь, что имя во всех публикациях одинаково. |
-|  |  |
-
-Нажмите кнопку **Сохранить**, чтобы сохранить параметры предложения.
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-Как настроить номера SKU для вашего предложения, см. [здесь](./cpp-skus-tab.md).
+Перед созданием нового предложения приложения Azure необходимо ознакомиться со статьей [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) , а затем открыть [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/directory) с выбранной страницей **обзора** . Следуйте инструкциям в разделе [Создание предложения приложения Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-azure-apps-offer) , чтобы создать предложение.

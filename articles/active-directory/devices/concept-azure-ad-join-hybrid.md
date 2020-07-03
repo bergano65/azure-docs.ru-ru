@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 15cdaba7d63d72aab25757e7ba6f5eadc48e026a
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76512255"
 ---
 # <a name="hybrid-azure-ad-joined-devices"></a>Гибридные устройства, присоединенные к Azure AD
@@ -34,10 +34,10 @@ ms.locfileid: "76512255"
 | **Определение** | Присоединение к локальной службе AD и Azure AD, для входа на устройство требуется учетная запись Организации |
 | **Основная аудитория** | Подходит для гибридных организаций с существующей локальной инфраструктурой AD |
 |   | Применимо ко всем пользователям в Организации |
-| **Владение устройством** | Организация |
+| **Владение устройствами** | План |
 | **Операционные системы** | Windows 10, 8,1 и 7 |
 |   | Windows Server 2008/R2, 2012/R2, 2016 и 2019 |
-| **Подготовка** | Windows 10, Windows Server 2016/2019 |
+| **Провизионирование** | Windows 10, Windows Server 2016/2019 |
 |   | Присоединение к домену и Автосоединение с помощью Azure AD Connect или конфигурации ADFS |
 |   | Присоединение к домену с помощью Windows "Автопилот" и "Автосоединение" с помощью Azure AD Connect или конфигурации ADFS |
 |   | Windows 8.1, Windows 7, Windows Server 2012 R2, Windows Server 2012 и Windows Server 2008 R2 — требуется MSI |
@@ -46,7 +46,7 @@ ms.locfileid: "76512255"
 |   | Windows Hello для бизнеса для Win10 |
 | **Управление устройствами** | Групповая политика |
 |   | Configuration Manager автономного или совместного управления с помощью Microsoft Intune |
-| **Основные возможности** | Единый вход для облачных и локальных ресурсов |
+| **Ключевые возможности** | Единый вход для облачных и локальных ресурсов |
 |   | Условный доступ через присоединение к домену или Intune в случае совместного управления |
 |   | Самостоятельный сброс пароля и сброс ПИН-кода Windows Hello на экране блокировки |
 |   | Enterprise State Roaming на разных устройствах |
@@ -62,8 +62,8 @@ ms.locfileid: "76512255"
 - Вы хотите продолжить использовать существующие решения для работы с образами для развертывания и настройки устройств.
 - В дополнение к Windows 10 необходимо поддерживать устройства Windows 7 и 8,1 нижнего уровня.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Планирование реализации гибридного присоединения к Azure Active Directory](hybrid-azuread-join-plan.md)
 - [Управление удостоверениями устройств с помощью портал Azure](device-management-azure-portal.md)
-- [Управление устаревшими устройствами в Azure AD](manage-stale-devices.md)
+- [Управление устаревшими устройствами в Azure AD](manage-stale-devices.md)

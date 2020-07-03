@@ -3,7 +3,7 @@ title: Настройка решения безопасности для под�
 description: Узнайте, как настроить решение безопасности для подключения данных CEF к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: rkarlin
-ms.openlocfilehash: 2513638be6f895598f93758d8d8dbdf04c9561e9
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: bdb76954b1db8135d8a36d6658bb7fff274ac126
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75615363"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77588456"
 ---
 # <a name="step-2-configure-your-security-solution-to-send-cef-messages"></a>Шаг 2. Настройка решения безопасности для отправки сообщений CEF
 
@@ -30,7 +30,7 @@ ms.locfileid: "75615363"
 Если в решении для обеспечения безопасности уже есть существующий соединитель, используйте инструкции, относящиеся к этому соединителю, как показано ниже.
 
 - [Check Point](connect-checkpoint.md)
-- [Функции](connect-cisco.md)
+- [Cisco](connect-cisco.md)
 - [ExtraHop Reveal(x)](connect-extrahop.md)
 - [Жмем](connect-f5.md)  
 - [Fortinet](connect-fortinet.md)
@@ -52,11 +52,11 @@ ms.locfileid: "75615363"
    > Это решение поддерживает syslog RFC 3164 или RFC 5424.
 
 
-1. Чтобы использовать соответствующую схему в Log Analytics для событий CEF, выполните поиск по запросу `CommonSecurityLog`.
+1. Чтобы использовать соответствующую схему в Log Analytics для событий CEF, выполните поиск по `CommonSecurityLog`запросу.
 
 1. Перейдите к ШАГУ 3. [Проверка подключения](connect-cef-verify.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

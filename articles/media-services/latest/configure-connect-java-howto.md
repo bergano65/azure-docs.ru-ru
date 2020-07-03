@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 09/18/2019
 ms.author: juliako
 ms.openlocfilehash: 6b0f21c3fa7a9c827f7201f4b899a33ea77eaf08
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74888501"
 ---
 # <a name="connect-to-media-services-v3-api---java"></a>Подключение к API служб мультимедиа v3 — Java
@@ -26,14 +26,14 @@ ms.locfileid: "74888501"
 
 В этой статье Visual Studio Code используется для разработки примера приложения.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Следуйте инструкциям по [написанию Java с Visual Studio Code](https://code.visualstudio.com/docs/java/java-tutorial) для установки:
 
    - JDK
    - Apache Maven
    - Пакет расширений Java
-- Убедитесь, что заданы переменные среды `JAVA_HOME` и `PATH`.
+- Убедитесь, что `JAVA_HOME` заданы `PATH` переменные среды и.
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
 - Выполните действия, описанные в разделе [API Access](access-api-cli-how-to.md) . Запишите идентификатор подписки, идентификатор приложения (идентификатор клиента), ключ проверки подлинности (секрет) и идентификатор клиента, которые понадобятся вам на более позднем этапе.
 
@@ -53,12 +53,12 @@ ms.locfileid: "74888501"
 mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
-При выполнении команды создаются `pom.xml`, `App.java`и другие файлы. 
+При выполнении команды создаются файлы `pom.xml`, `App.java`и другие. 
 
 ## <a name="add-dependencies"></a>Добавление зависимостей
 
 1. В Visual Studio Code откройте папку, в которой находится проект
-1. Найдите и откройте `pom.xml`
+1. Найдите и откройте`pom.xml`
 1. Добавление необходимых зависимостей
 
     ```xml
@@ -81,7 +81,7 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
 
 ## <a name="connect-to-the-java-client"></a>Подключение к клиенту Java
 
-1. Откройте файл `App.java` в разделе `src\main\java\com\azure\ams` и убедитесь, что пакет включен в начало:
+1. Откройте `App.java` файл в разделе `src\main\java\com\azure\ams` и убедитесь, что пакет включен в начало:
 
     ```java
     package com.azure.ams;
@@ -119,7 +119,7 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
    ```
 1. Запустите приложение.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [Пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)
@@ -128,6 +128,6 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь можно включить `import com.microsoft.azure.management.mediaservices.v2018_07_01.*;` и начать манипулировать сущностями.
+Теперь можно включать `import com.microsoft.azure.management.mediaservices.v2018_07_01.*;` и приступить к управлению сущностями.
 
 Дополнительные примеры кода см. в репозитории [примеров пакета SDK для Java](https://docs.microsoft.com/samples/azure-samples/media-services-v3-java/azure-media-services-v3-samples-using-java/) .

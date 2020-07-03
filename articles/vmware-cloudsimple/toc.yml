@@ -1,9 +1,9 @@
-- name: Решения VMware (AVS)
+- name: Решение VMware от CloudSimple
   href: /azure/vmware-cloudsimple
   items:
     - name: Обзор
       items:
-        - name: Что собой представляет служба решений VMware (AVS)
+        - name: Решение VMware от CloudSimple
           href: cloudsimple-vmware-solutions-overview.md
         - name: Основные понятия об администрировании
           href: key-concepts.md
@@ -14,9 +14,9 @@
           href: cloudsimple-network-checklist.md
         - name: Инициализация и подготовка емкости
           href: quickstart-create-cloudsimple-service.md
-        - name: Настройка среды частного облака AVS
+        - name: Настройка среды частного облака
           href: quickstart-create-private-cloud.md
-        - name: Создание виртуальной машины VMware в частном облаке AVS
+        - name: Создание виртуальной машины VMware в частном облаке
           href: quickstart-create-private-cloud-vmware-virtual-machine.md
         - name: Использование виртуальных машин VMware в Azure
           href: quickstart-create-vmware-virtual-machine.md
@@ -26,7 +26,7 @@
           href: cloudsimple-service.md
         - name: Узлы
           href: cloudsimple-node.md
-        - name: Частное облако AVS
+        - name: Частное облако
           href: cloudsimple-private-cloud.md
         - name: Виртуальные машины
           href: cloudsimple-virtual-machines.md
@@ -44,7 +44,7 @@
           href: cloudsimple-account.md
         - name: Управление действиями
           href: cloudsimple-activity.md
-        - name: VMware в частном облаке AVS
+        - name: Использование VMware в частном облаке
           href: vmware-components.md
         - name: Общие сведения о безопасности
           href: cloudsimple-security.md
@@ -56,9 +56,9 @@
           href: cloudsimple-faq.md
     - name: Учебники
       items:
-        - name: Создание службы AVS
+        - name: Создание службы CloudSimple
           href: create-cloudsimple-service.md
-        - name: Доступ к порталу AVS
+        - name: Доступ к порталу CloudSimple
           href: access-cloudsimple-portal.md
         - name: Локальная конфигурация брандмауэра
           href: on-premises-firewall-configuration.md
@@ -70,25 +70,25 @@
               href: create-nodes.md
             - name: Удаление узлов
               href: delete-nodes.md
-        - name: Управление ресурсами частного облака AVS
+        - name: Управление ресурсами частного облака
           items:
-            - name: Создание частного облака AVS
+            - name: Создание частного облака
               href: create-private-cloud.md
-            - name: Управление частными облаками AVS
+            - name: Управление частными облаками
               href: manage-private-cloud.md
-            - name: Расширение частного облака AVS
+            - name: Расширение частного облака
               href: expand-private-cloud.md
-            - name: Сжатие частного облака AVS
+            - name: Сжатие частного облака
               href: shrink-private-cloud.md
             - name: Сопоставление подписки Azure
               href: azure-subscription-mapping.md
             - name: Эскалация привилегий
               href: escalate-private-cloud-privileges.md
-            - name: Удаление частного облака AVS
+            - name: Удаление частного облака
               href: delete-private-cloud.md
-        - name: Мониторинг действий AVS
+        - name: Мониторинг действия CloudSimple
           href: monitor-activity.md
-        - name: Настройка сети для частного облака AVS
+        - name: Настройка сети для частного облака
           items:
             - name: Создание и администрирование виртуальных локальных сетей и подсетей
               href: create-vlan-subnet.md
@@ -98,35 +98,35 @@
               href: public-ips.md
             - name: Настройка VPN-подключений
               href: vpn-gateway.md
-            - name: Подключение виртуальной сети к AVS
+            - name: Подключение виртуальной сети к CloudSimple
               href: virtual-network-connection.md
-        - name: Управление учетными записями портала AVS
+        - name: Управление учетными записями портала CloudSimple
           items:
             - name: Просмотр сводки об учетной записи
               href: account.md
             - name: Просмотр списка пользователей
               href: users.md
-        - name: Настройка виртуальных машин AVS
+        - name: Настройка виртуальных машин CloudSimple
           items:
-            - name: Создание виртуальной машины AVS в Azure
+            - name: Создание виртуальной машины CloudSimple в Azure
               href: azure-create-vm.md
-            - name: Управление виртуальными машинами AVS в Azure
+            - name: Управление виртуальными машинами CloudSimple в Azure
               href: azure-manage-vm.md
     - name: Практические руководства
       items:
         - name: Защита среды
           href: private-cloud-secure.md
-        - name: Управление частным облаком AVS
+        - name: Управление частным облаком
           items:
-            - name: Эскалация привилегий в частном облаке AVS
+            - name: Эскалация привилегий в частном облаке
               href: escalate-privileges.md
             - name: Настройка DNS и DHCP рабочей нагрузки
               href: dns-dhcp-setup.md
             - name: "Перенос рабочих нагрузок с помощью растянутых сетей уровня\_2"
               href: migration-layer-2-vpn.md
-        - name: Сети для частного облака AVS
+        - name: Сети для частного облака
           items:
-            - name: VPN-подключение к частному облаку AVS
+            - name: VPN-подключение к частному облаку
               href: set-up-vpn.md
             - name: Локальное сетевое подключение с помощью ExpressRoute
               href: on-premises-connection.md
@@ -140,15 +140,15 @@
               href: private-cloud-dns-forwarding.md
         - name: Платформа VMware
           items:
-            - name: Обучение модели разрешений частного облака AVS
+            - name: Обучение модели разрешений частного облака
               href: learn-private-cloud-permissions.md
             - name: Источники удостоверений vCenter
               href: set-vcenter-identity.md
             - name: Использование Шлюза приложений Azure с виртуальными машинами VMware
               href: azure-application-gateway.md
-            - name: Настройка сервера vCenter для частного облака AVS в качестве конечной точки автоматизации vRealize
+            - name: Настройка сервера vCenter для частного облака в качестве конечной точки автоматизации vRealize
               href: configure-server-vrealize-automation-endpoint.md
-            - name: Перенос виртуальных машин рабочей нагрузки в частное облако AVS
+            - name: Перенос виртуальных машин рабочей нагрузки в частное облако
               href: migrate-workloads.md
             - name: Миграция с помощью Azure Data Box
               href: migration-using-azure-data-box.md
@@ -160,19 +160,19 @@
           items:
             - name: Резервное копирование виртуальных машин рабочей нагрузки
               href: backup-workloads-veeam.md
-            - name: Настройка частного облака AVS в качестве сайта аварийного восстановления с помощью Zerto
+            - name: Настройка частного облака в качестве сайта аварийного восстановления с помощью Zerto
               href: disaster-recovery-zerto.md
-            - name: Настройка частного облака AVS в качестве сайта аварийного восстановления с помощью VMware SRM
+            - name: Настройка частного облака в качестве сайта аварийного восстановления с помощью VMware Site Recovery Manager
               href: disaster-recovery-site-recovery-manager.md
             - name: Руководство по решению VMware Horizon
               href: horizon-guide.md
-            - name: Настройка шифрования vSAN для частного облака AVS
+            - name: Настройка шифрования vSAN для частного облака
               href: vsan-encryption.md
-            - name: Оптимизация частного облака AVS для Oracle RAC
+            - name: Оптимизация частного облака для Oracle RAC
               href: oracle-real-application-clusters.md
         - name: Интеграция основных компонентов Azure
           items:
-            - name: "Использование источника удостоверений Azure\_AD в vCenter частного облака AVS"
+            - name: "Использование источника удостоверений Azure\_AD в vCenter частного облака"
               href: azure-ad.md
             - name: Локальное сетевое подключение с помощью ExpressRoute
               href: on-premises-connection.md

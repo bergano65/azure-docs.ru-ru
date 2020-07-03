@@ -10,13 +10,13 @@ ms.custom: mvc
 ms.date: 03/08/2019
 ms.author: troyhop
 ms.openlocfilehash: 09a6920e0d3a50da1bdacbf2bc7a80396c885897
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58180710"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "61448558"
 ---
-# <a name="tutorial-create-and-run-an-iot-device-simulation"></a>Руководство. Создание и запуск имитации устройства Интернета вещей
+# <a name="tutorial-create-and-run-an-iot-device-simulation"></a>Руководство по созданию и запуску имитации устройства Интернета вещей
 
 В этом руководстве вы используете имитацию устройства для создания и запуска имитации Интернета вещей с помощью одного или нескольких имитированных устройств.
 
@@ -30,11 +30,11 @@ ms.locfileid: "58180710"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством необходим развернутый экземпляр Симулятора устройств в подписке Azure.
 
-Если Симулятор устройств еще не развернут, выполните инструкции в статье [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md).
+Если симулятор устройств еще не развернут, выполните инструкции в статье [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md).
 
 ## <a name="open-device-simulation"></a>Открытие симулятора устройств
 
@@ -72,7 +72,7 @@ ms.locfileid: "58180710"
 
 ![Остановка моделирования](media/iot-accelerators-device-simulation-create-simulation/simulationdetails.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как создать, запустить и остановить имитацию. Вы также узнали, как просмотреть сведения об имитации. Чтобы узнать больше о запуске имитаций, перейдите к следующему руководству:
 

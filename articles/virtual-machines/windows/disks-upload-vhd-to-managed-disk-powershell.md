@@ -1,36 +1,34 @@
 ---
-title: Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
+title: Отправка виртуального жесткого диска в Azure или копирование диска по регионам — Azure PowerShell
 description: Узнайте, как передать VHD на управляемый диск Azure и скопировать управляемый диск в регионах с помощью Azure PowerShell, используя прямую передачу.
 author: roygara
 ms.author: rogarana
-ms.date: 05/06/2019
+ms.date: 03/27/2020
 ms.topic: article
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 8a7e5243428eb88a2757b675c7d66dbfb3c66a30
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6242baf5a541231d367d456450388ef455312780
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459982"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82182520"
 ---
-# <a name="upload-a-vhd-to-azure-using-azure-powershell"></a>Отправка виртуального жесткого диска в Azure с помощью Azure PowerShell
+# <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-powershell"></a>Отправка VHD в Azure или копирование управляемого диска в другой регион — Azure PowerShell
 
-В этой статье объясняется, как передать VHD с локального компьютера на управляемый диск Azure. Ранее было необходимо было выполнить более сложный процесс, который включал в себя промежуточное хранение данных в учетной записи хранения и управление этой учетной записью хранения. Теперь вам больше не нужно управлять учетной записью хранения или промежуточными данными в ней для отправки виртуального жесткого диска. Вместо этого создайте пустой управляемый диск и отправьте в него виртуальный жесткий диск. Это упрощает передачу локальных виртуальных машин в Azure и позволяет передавать VHD вплоть до 32 Тиб непосредственно на большой управляемый диск.
+[!INCLUDE [disks-upload-vhd-to-disk-intro](../../../includes/disks-upload-vhd-to-disk-intro.md)]
 
-Если вы предоставляете решение для резервного копирования виртуальных машин IaaS в Azure, мы рекомендуем использовать прямую передачу для восстановления резервных копий клиентов на управляемые диски. Если вы отправляете виртуальный жесткий диск с компьютера, который является внешним по отношению к Azure, скорости с зависят от локальной пропускной способности. Если вы используете виртуальную машину Azure, пропускная способность будет такой же, как и для стандартных дисков.
-
-В настоящее время прямая отправка поддерживается для дисков уровня "Стандартный", "Стандартный SSD" и "Премиум", управляемых на SSD. Она пока не поддерживается для Ultra SSDs.
-
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установите модуль Azure PowerShell](/powershell/azure/install-Az-ps).
-- Если планируется передать виртуальный жесткий диск из локальной среды, VHD, который [был подготовлен для Azure](prepare-for-upload-vhd-image.md), хранится локально.
+- Если вы планируете передать виртуальный жесткий диск из локальной среды, выполните предварительную загрузку виртуального жесткого диска с фиксированным размером, который [был подготовлен для Azure](prepare-for-upload-vhd-image.md)и хранится локально.
 - Или управляемый диск в Azure, если планируется выполнить действие копирования.
 
-## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
+## <a name="getting-started"></a>Начало работы
+
+Если вы предпочитаете отправлять диски через графический интерфейс, это можно сделать с помощью Обозреватель службы хранилища Azure. Дополнительные сведения см. в статье [использование обозреватель службы хранилища Azure для управления управляемыми дисками Azure](disks-use-storage-explorer-managed-disks.md) .
 
 Чтобы отправить VHD в Azure, необходимо создать пустой управляемый диск, настроенный для этого процесса отправки. Прежде чем создать его, необходимо ознакомиться с дополнительными сведениями об этих дисках.
 
@@ -39,33 +37,38 @@ ms.locfileid: "75459982"
 - Реадтауплоад. Это означает, что диск готов к получению отправки, но [подпись безопасного доступа](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) (SAS) не была создана.
 - Активеуплоад. Это означает, что диск готов к получению отправки, и создан SAS.
 
-Хотя в одном из этих состояний плата за управляемый диск будет взиматься по [стандартному тарифу на HDD](https://azure.microsoft.com/pricing/details/managed-disks/), независимо от фактического типа диска. Например, P10 будет оплачиваться как S10. Это справедливо до тех пор, пока на управляемом диске не будет вызван `revoke-access`, что необходимо для подключения диска к виртуальной машине.
+> [!NOTE]
+> Хотя в одном из этих состояний плата за управляемый диск будет взиматься по [стандартному тарифу на HDD](https://azure.microsoft.com/pricing/details/managed-disks/), независимо от фактического типа диска. Например, P10 будет оплачиваться как S10. Это справедливо до тех пор `revoke-access` , пока на управляемом диске не будет вызван, что необходимо для подключения диска к виртуальной машине.
 
-Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла в байтах виртуального жесткого диска, который требуется передать. Пример кода получит это, но для самостоятельного использования можно использовать: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length`. Это значение используется при указании параметра **-уплоадсизеинбитес** .
+## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
 
-Теперь в локальной оболочке создайте пустой жесткий диск "Стандартный" для отправки, указав параметр **отправки** в параметре **-CreateOption** , а также параметр **-уплоадсизеинбитес** в командлете [New-аздискконфиг](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0) . Затем вызовите [New-аздиск](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk?view=azps-1.8.0) , чтобы создать диск:
+Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла виртуального жесткого диска, который требуется передать, в байтах. Пример кода получит это, но для самостоятельного использования можно использовать: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length`. Это значение используется при указании параметра **-уплоадсизеинбитес** .
+
+Теперь в локальной оболочке создайте пустой жесткий диск "Стандартный" для отправки, указав параметр **отправки** в параметре **-CreateOption** , а также параметр **-уплоадсизеинбитес** в командлете [New-аздискконфиг](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0) . Затем вызовите [New-аздиск](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk?view=azps-1.8.0) , чтобы создать диск.
+
+Замените `<yourdiskname>`, `<yourresourcegroupname>`и `<yourregion>` выполните следующие команды:
 
 ```powershell
 $vhdSizeBytes = (Get-Item "<fullFilePathHere>").length
 
-$diskconfig = New-AzDiskConfig -SkuName 'Standard_LRS' -OsType 'Windows' -UploadSizeInBytes $vhdSizeBytes -Location 'West US' -CreateOption 'Upload'
+$diskconfig = New-AzDiskConfig -SkuName 'Standard_LRS' -OsType 'Windows' -UploadSizeInBytes $vhdSizeBytes -Location '<yourregion>' -CreateOption 'Upload'
 
-New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName' -Disk $diskconfig
+New-AzDisk -ResourceGroupName '<yourresourcegroupname' -DiskName '<yourdiskname>' -Disk $diskconfig
 ```
 
-Если вы хотите передать либо твердотельный SSD класса Premium, либо стандартный SSD, замените **Standard_LRS** на **Premium_LRS** или **StandardSSD_LRS**. SSD (цен. категория "Ультра") еще не поддерживается.
+Если вы хотите передать либо твердотельный SSD класса Premium, либо стандартный SSD, замените **Standard_LRS** на **Premium_LRS** или **StandardSSD_LRS**. Ultra Disks пока не поддерживаются.
 
-Теперь вы создали пустой управляемый диск, настроенный для процесса отправки. Чтобы отправить VHD на диск, вам потребуется доступный для записи SAS, чтобы можно было ссылаться на него как на место назначения для отправки.
+Теперь, когда вы создали пустой управляемый диск, настроенный для процесса отправки, вы можете передать в него VHD. Чтобы отправить VHD на диск, вам потребуется доступный для записи SAS, чтобы можно было ссылаться на него как на место назначения для отправки.
 
-Чтобы создать SAS с возможностью записи для пустого управляемого диска, используйте следующую команду:
+Чтобы создать SAS с возможностью записи для пустого управляемого диска `<yourdiskname>`, `<yourresourcegroupname>`замените и, а затем используйте следующие команды:
 
 ```powershell
-$diskSas = Grant-AzDiskAccess -ResourceGroupName 'myResouceGroup' -DiskName 'myDiskName' -DurationInSecond 86400 -Access 'Write'
+$diskSas = Grant-AzDiskAccess -ResourceGroupName '<yourresourcegroupname>' -DiskName '<yourdiskname>' -DurationInSecond 86400 -Access 'Write'
 
-$disk = Get-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
+$disk = Get-AzDisk -ResourceGroupName '<yourresourcegroupname>' -DiskName '<yourdiskname>'
 ```
 
-## <a name="upload-vhd"></a>Отправить виртуальный жесткий диск
+## <a name="upload-a-vhd"></a>Отправка VHD
 
 Теперь, когда у вас есть SAS для пустого управляемого диска, его можно использовать для задания управляемого диска в качестве места назначения для команды отправки.
 
@@ -74,27 +77,27 @@ $disk = Get-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
 Эта передача имеет ту же пропускную способность, что и эквивалент [стандартного жесткого диска](disks-types.md#standard-hdd). Например, если размер равен S4, у вас будет пропускная способность до 60 MiB/с. Но если у вас есть размер, который соответствует S70, вы получите пропускную способность до 500 MiB/с.
 
 ```
-AzCopy.exe copy "c:\somewhere\mydisk.vhd" $diskSas.AccessSAS --blob-type PageBlob
+AzCopy.exe copy "c:\somewhere\mydisk.vhd" $diskSas.AccessSAS --blob-type PageBlob
 ```
-
-Если срок действия SAS истекает во время отправки и вы еще не вызывали `revoke-access`, можно получить новый SAS, чтобы продолжить передачу с помощью `grant-access`.
 
 После завершения передачи вам больше не нужно писать какие-либо данные на диск, отозвать SAS. Отзыв SAS изменит состояние управляемого диска и позволит подключить диск к виртуальной машине.
 
+Замените `<yourdiskname>`и `<yourresourcegroupname>`, затем выполните следующую команду:
+
 ```powershell
-Revoke-AzDiskAccess -ResourceGroupName 'myResourceGroup' -DiskName 'myDiskName'
+Revoke-AzDiskAccess -ResourceGroupName '<yourresourcegroupname>' -DiskName '<yourdiskname>'
 ```
 
 ## <a name="copy-a-managed-disk"></a>Копирование управляемого диска
 
-Прямая загрузка также упрощает процесс копирования управляемого диска. Можно скопировать в один и тот же регион или между регионами (в другой регион).
+Прямая загрузка также упрощает процесс копирования управляемого диска. Можно либо скопировать в один регион, либо скопировать управляемый диск в другой регион.
 
-Следующий сценарий сделает это для вас, процесс аналогичен описанному ранее действиям с некоторыми отличиями, которые возникают после работы с существующим диском.
+Следующий сценарий сделает это за вас, процесс аналогичен описанному ранее действиям с некоторыми отличиями, так как вы работаете с существующим диском.
 
 > [!IMPORTANT]
 > При предоставлении размера диска в байтах управляемого диска из Azure необходимо добавить смещение 512. Это обусловлено тем, что при возврате диска в Azure нижний колонтитул опускается. Если этого не сделать, копирование завершится ошибкой. Следующий сценарий уже выполняет это.
 
-Замените `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>`, `<yourOSTypeHere>` и `<yourTargetLocationHere>` (например, значение расположения uswest2) значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
+Замените `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>` `<yourOSTypeHere>` и `<yourTargetLocationHere>` (примером значения Location будет uswest2) со своими значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
 
 ```powershell
 

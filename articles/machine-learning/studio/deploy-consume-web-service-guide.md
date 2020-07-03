@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 04/19/2017
-ms.openlocfilehash: 127d1942becf3d7f1c0a30ccaeae8c65317e3e82
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 29852eb0920f7bb32464d91e0be65c7dcb03325c
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169347"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82627965"
 ---
 # <a name="azure-machine-learning-studio-classic-web-services-deployment-and-consumption"></a>Веб-службы Машинное обучение Azure Studio (классическая модель): развертывание и использование
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Вы можете использовать Машинное обучение Azure Studio (классическая модель) для развертывания рабочих процессов и моделей машинного обучения в качестве веб-служб. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме. Так как это веб-службы RESTful, их можно вызывать, используя различные языки программирования и платформы, например .NET и Java, а также приложения, например Microsoft Excel.
 
@@ -79,7 +81,6 @@ ms.locfileid: "77169347"
 Дополнительные сведения см. в следующих статьях и примерах кода:
 
 * Справочник по [командлетам машинное обучение Azure Studio (классическая модель)](https://docs.microsoft.com/powershell/module/az.machinelearning) на сайте MSDN
-* Пример [пошагового руководства](https://github.com/raymondlaghaeian/azureml-webservices-arm-powershell/blob/master/sample-commands.txt) на сайте GitHub.
 
 ## <a name="consume-the-web-services"></a>Использование веб-служб
 
@@ -96,7 +97,7 @@ ms.locfileid: "77169347"
 Вы можете скачать шаблон Excel, который использует веб-службу:
 
 * [Использование веб-службы Машинного обучения Azure в Excel](consuming-from-excel.md)
-* [Надстройка Excel для веб-служб машинного обучения Azure](excel-add-in-for-web-services.md)
+* [Надстройка Excel для веб-служб Машинное обучение Azure](excel-add-in-for-web-services.md)
 
 ### <a name="from-a-rest-based-client"></a>Из клиента на основе REST
 

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: zhshang
 ms.openlocfilehash: 5f6428231a3639738e8fb52e7dc3f2f2a3d2a26e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75392812"
 ---
 # <a name="messages-and-connections-in-azure-signalr-service"></a>Сообщения и подключения в службе Azure SignalR
@@ -58,5 +58,5 @@ ms.locfileid: "75392812"
 
 - [Метрики, поддерживаемые Azure Monitor](/azure/azure-monitor/platform/metrics-supported#microsoftsignalrservicesignalr )
 - [Конфигурация SignalR для ASP.NET Core](/aspnet/core/signalr/configuration)
-- [JSON](https://www.json.org/)
+- [ФОРМАТ](https://www.json.org/)
 - [MessagePack](/aspnet/core/signalr/messagepackhubprotocol)

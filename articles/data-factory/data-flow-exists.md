@@ -7,19 +7,23 @@ ms.reviewer: daperlov
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 10/16/2019
-ms.openlocfilehash: efcc45dcf3565b70305323701810c49c4a720394
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.date: 05/07/2020
+ms.openlocfilehash: 805b51bf4e6d8feab9539f660dfc72ca78b82d5c
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930412"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982638"
 ---
 # <a name="exists-transformation-in-mapping-data-flow"></a>Преобразование EXISTS в потоке данных сопоставления
 
-Преобразование «EXISTS» — это преобразование «Фильтрация строк», которое проверяет, существуют ли ваши данные в другом источнике или потоке. Выходной поток включает все строки в левом потоке, которые либо существуют, либо не существуют в правильном потоке. Преобразование EXISTS похоже на ```SQL WHERE EXISTS``` и ```SQL WHERE NOT EXISTS```.
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-## <a name="configuration"></a>Настройка
+Преобразование «EXISTS» — это преобразование «Фильтрация строк», которое проверяет, существуют ли ваши данные в другом источнике или потоке. Выходной поток включает все строки в левом потоке, которые либо существуют, либо не существуют в правильном потоке. Преобразование EXISTS аналогично ```SQL WHERE EXISTS``` и ```SQL WHERE NOT EXISTS```.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4vZKz]
+
+## <a name="configuration"></a>Конфигурация
 
 1. Выберите поток данных для проверки существования в правильном раскрывающемся списке **потока** .
 1. Укажите, нужно ли, чтобы данные были уже существуют или не существовали в параметре **типа EXISTS** .
@@ -40,6 +44,14 @@ ms.locfileid: "74930412"
 
 ![Пользовательские параметры существуют](media/data-flow/exists1.png "существует настраиваемый")
 
+## <a name="broadcast-optimization"></a>Оптимизация вещания
+
+![Широковещательное соединение](media/data-flow/broadcast.png "Широковещательное соединение")
+
+В случае преобразования «уточняющие запросы» и «EXISTS», если один или оба потока данных помещаются в память рабочего узла, можно оптимизировать производительность, включив **вещание**. По умолчанию механизм Spark автоматически решает, следует ли транслировать одну сторону. Чтобы вручную выбрать сторону для вещания, выберите **фиксированный**.
+
+Не рекомендуется отключать трансляцию с помощью параметра **Off** , если только не истечет ошибка времени ожидания при выполнении соединений.
+
 ## <a name="data-flow-script"></a>Скрипт потока данных
 
 ### <a name="syntax"></a>Синтаксис
@@ -49,13 +61,13 @@ ms.locfileid: "74930412"
     exists(
         <conditionalExpression>,
         negate: { true | false },
-        broadcast: {'none' | 'left' | 'right' | 'both'}
+        broadcast: { 'auto' | 'left' | 'right' | 'both' | 'off' }
     ) ~> <existsTransformationName>
 ```
 
 ### <a name="example"></a>Пример
 
-Ниже приведен пример преобразования Exists с именем `checkForChanges`, которое принимает левый поток `NameNorm2` и правый поток `TypeConversions`.  Условие EXISTS является выражением `NameNorm2@EmpID == TypeConversions@EmpID && NameNorm2@Region == DimEmployees@Region`, которое возвращает значение true, если в каждом потоке совпадают столбцы `EMPID` и `Region`. После проверки существования `negate` имеет значение false. На вкладке "оптимизация" не включается широковещательная рассылка, поэтому `broadcast` имеет значение `'none'`.
+Ниже приведен пример преобразования Exists с именем `checkForChanges` , принимающего левый `NameNorm2` поток и правый `TypeConversions`поток.  Условие EXISTS — это выражение `NameNorm2@EmpID == TypeConversions@EmpID && NameNorm2@Region == DimEmployees@Region` , возвращающее значение true `EMPID` , `Region` если оба столбца в каждом потоке совпадают. При проверке существования значение `negate` равно false. Мы не разрешив вещание на вкладке Оптимизация, чтобы `broadcast` иметь значение `'none'`.
 
 В интерфейсе фабрики данных это преобразование выглядит как на изображении ниже:
 
@@ -68,7 +80,7 @@ NameNorm2, TypeConversions
     exists(
         NameNorm2@EmpID == TypeConversions@EmpID && NameNorm2@Region == DimEmployees@Region,
         negate:false,
-        broadcast: 'none'
+        broadcast: 'auto'
     ) ~> checkForChanges
 ```
 

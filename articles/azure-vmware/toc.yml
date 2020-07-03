@@ -1,0 +1,44 @@
+- name: Решение Azure VMware (AVS)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: О решении Azure VMware (AVS)
+      href: introduction.md
+- name: Учебники
+  items:
+    - name: 1. Планирование сети
+      href: tutorial-network-checklist.md
+    - name: 2. Создание частного облака AVS
+      href: tutorial-create-private-cloud.md
+    - name: 3. Настройка сети
+      href: tutorial-configure-networking.md
+    - name: 4. Получение доступа к частному облаку
+      href: tutorial-access-private-cloud.md
+    - name: 5. Масштабирование частного облака
+      href: tutorial-scale-private-cloud.md
+- name: Основные понятия
+  items:
+    - name: Частные облака и кластеры
+      href: concepts-private-clouds-clusters.md
+    - name: Сети частного облака и взаимодействие
+      href: concepts-networking.md
+    - name: Хранилище в частных облаках
+      href: concepts-storage.md
+    - name: Получение доступа и использование удостоверений для частных облаков
+      href: concepts-identity.md
+    - name: Обновления частного облака
+      href: concepts-upgrades.md
+- name: Практические руководства
+  items:
+    - name: Настройка HCX
+      href: hybrid-cloud-extension-installation.md
+    - name: Управление DHCP
+      href: manage-dhcp.md
+    - name: Аварийное восстановление
+      href: disaster-recovery.md
+- name: Справочник
+  items: null
+- name: Ресурсы
+  items:
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: faq.md

@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/29/2019
 ms.openlocfilehash: 4659274110add96613ca88560edfb459b20a99cb
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75894348"
 ---
 # <a name="apache-spark-streaming-job-that-reads-apache-kafka-data-fails-with-noclassdeffounderror-in-hdinsight"></a>Задание потоковой передачи Apache Spark, считывающее Apache Kafka данные, завершается сбоем с Ноклассдеффаундеррор в HDInsight
@@ -30,7 +30,7 @@ Stack trace: ExitCodeException exitCode=50:
  at org.apache.hadoop.util.Shell.runCommand(Shell.java:944)
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Эта ошибка может быть вызвана указанием версии `spark-streaming-kafka` JAR-файла, который отличается от версии кластера Kafka, который вы используете.
 
@@ -46,7 +46,7 @@ spark-submit \
 
 ## <a name="resolution"></a>Разрешение
 
-Используйте команду Spark-Submit с параметром `–packages` и убедитесь, что версия файла JAR-Streaming-Kafka совпадает с версией работающего кластера Kafka.
+Используйте команду Spark-Submit с `–packages` параметром и убедитесь, что версия файла JAR-Streaming-Kafka совпадает с версией работающего кластера Kafka.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -54,6 +54,6 @@ spark-submit \
 
 * Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
 * Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

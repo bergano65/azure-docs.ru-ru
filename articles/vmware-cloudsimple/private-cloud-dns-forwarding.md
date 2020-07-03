@@ -9,10 +9,10 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: aa2af4302613aad23bfd78b4883bbb46c5e5ddbb
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76961131"
 ---
 # <a name="enable-cloudsimple-private-cloud-dns-servers-to-forward-dns-lookup-of-on-premises-resources-to-your-dns-servers"></a>Включение DNS-серверов частного облака Клаудсимпле для пересылки DNS-запросов локальных ресурсов на DNS-серверы
@@ -27,7 +27,7 @@ DNS-серверы частного облака могут пересылать
 * Использование локального Active Directory в качестве источника удостоверений для частного облака vSphere
 * Использование ХККС для миграции виртуальных машин из локальной среды в частное облако
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Сетевое подключение должно присутствовать в сети частного облака к локальной сети для работы пересылки DNS.  Можно настроить сетевое подключение с помощью:
 
@@ -51,7 +51,7 @@ DNS-серверы частного облака могут пересылать
 * Укажите доменное имя локального домена в области сведений.
 * Укажите список локальных DNS-серверов, на которые будет перенаправлен Поиск из частного облака в области сведений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Дополнительные сведения о конфигурации локального брандмауэра](on-premises-firewall-configuration.md)
 * [Конфигурация локального DNS-сервера](on-premises-dns-setup.md)

@@ -3,25 +3,21 @@ title: Настройка защищенных веб-API приложений |
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать защищенный веб-API и настроить код приложения.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 975117ad5c58bed77002a33f0dc5370d0f1c17e2
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 073eca94ad93c69811b02abe2c8649940a394e8e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76931468"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80882477"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
@@ -35,7 +31,7 @@ ms.locfileid: "76931468"
 
 Как и веб-приложения, веб-API ASP.NET и ASP.NET Core защищены, так как их действия контроллера начинаются с атрибута **[авторизовать]** . Действия контроллера могут вызываться только в том случае, если API вызывается с разрешенным удостоверением.
 
-Учитывайте следующие вопросы.
+Ответьте на следующие вопросы.
 
 - Только приложение может вызывать веб-API. Как API знает удостоверение приложения, которое его вызывает?
 - Если приложение вызывает API от имени пользователя, каково удостоверение пользователя?
@@ -44,7 +40,7 @@ ms.locfileid: "76931468"
 
 Токен носителя, заданный в заголовке при вызове приложения, содержит сведения об удостоверении приложения. Он также содержит сведения о пользователе, если веб-приложение не принимает вызовы между службами из управляющего приложения.
 
-Ниже приведен пример C# кода, в котором показан клиент, вызывающий API после получения маркера с помощью библиотеки проверки подлинности Майкрософт для .net (MSAL.NET):
+Ниже приведен пример кода C#, в котором показан клиент, вызывающий API после получения маркера с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET):
 
 ```csharp
 var scopes = new[] {$"api://.../access_as_user"};
@@ -108,7 +104,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 По промежуточного слоя добавляется в веб-API с помощью следующей инструкции:
 
 ```csharp
- services.AddAzureAdBearer(options => Configuration.Bind("AzureAd", options));
+ services.AddAuthentication(AzureADDefaults.JwtBearerAuthenticationScheme)
+         .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
 ```
 
  В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Но вы можете изменить шаблоны, чтобы использовать конечную точку платформы идентификации Майкрософт, добавив следующий код в Startup.cs:
@@ -137,7 +134,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 ## <a name="token-validation"></a>Проверка маркеров
 
-В предыдущем фрагменте по промежуточного слоя JwtBearer (например, по промежуточного слоя OpenID Connect Connect в веб-приложениях) проверяет маркер на основе значения `TokenValidationParameters`. Маркер расшифровывается по мере необходимости, извлекаются утверждения и проверяется подпись. По промежуточного слоя затем проверяет маркер, проверяя эти данные:
+В предыдущем фрагменте по промежуточного слоя JwtBearer (например, по промежуточного слоя OpenID Connect Connect в веб-приложениях) проверяет маркер на основе `TokenValidationParameters`значения. Маркер расшифровывается по мере необходимости, извлекаются утверждения и проверяется подпись. По промежуточного слоя затем проверяет маркер, проверяя эти данные:
 
 - Аудитория: маркер предназначен для веб-API.
 - IT: она была выдана для приложения, которому разрешено вызывать веб-API.
@@ -153,7 +150,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 В следующей таблице описаны проверяющие элементы управления.
 
-| Управления | Description |
+|  Validator | Описание |
 |---------|---------|
 | **валидатеаудиенце** | Гарантирует, что маркер предназначен для приложения, которое проверяет маркер. |
 | **ValidateIssuer** | Гарантирует, что маркер был выдан доверенной службой STS, то есть от доверенного лица. |

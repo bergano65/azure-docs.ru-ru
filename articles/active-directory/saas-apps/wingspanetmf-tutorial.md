@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграции Azure Active Directory с Wingspan eTMF | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Wingspan eTMF | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wingspan eTMF.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 8943ff45d432768649ace28147c7c14f20f4ad44
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67087123"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-wingspan-etmf"></a>Руководство по Интеграция Azure Active Directory с Wingspan eTMF
+# <a name="tutorial-azure-active-directory-integration-with-wingspan-etmf"></a>Руководство. Интеграция Azure Active Directory с Wingspan eTMF
 
 В этом руководстве описано, как интегрировать Wingspan eTMF с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Wingspan eTMF обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67087123"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Wingspan eTMF, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка на Wingspan eTMF с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67087123"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Wingspan eTMF](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer name>.<instance name>.mywingspan.com/saml`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer name>.<instance name>.mywingspan.com/saml`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `http://saml.<instance name>.wingspan.com/shibboleth`.
 
@@ -122,7 +122,7 @@ ms.locfileid: "67087123"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -198,5 +198,5 @@ ms.locfileid: "67087123"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

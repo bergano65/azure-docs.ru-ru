@@ -1,5 +1,5 @@
 ---
-title: Руководство. Запуск Иммерсивного средства чтения с помощью Node.js
+title: Руководство по Запуск Иммерсивного средства чтения с помощью Node.js
 titleSuffix: Azure Cognitive Services
 description: В этом учебнике описано, как создать приложение Node.js, которое запускает иммерсивное средство чтения.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.date: 01/14/2020
 ms.author: metan
 ms.openlocfilehash: 139dd2ebdabbc91a6de3b0a1eb921b110d47c3f3
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76842033"
 ---
-# <a name="tutorial-launch-the-immersive-reader-nodejs"></a>Руководство. Запуск Иммерсивного средства чтения (Node.js)
+# <a name="tutorial-launch-the-immersive-reader-nodejs"></a>Руководство по Запуск Иммерсивного средства чтения (Node.js)
 
 В [обзорной статье](./overview.md) вы узнали о том, что представляет собой иммерсивное средство чтения и каким образом в нем реализованы проверенные методы, улучшающие понимание прочитанного для начинающих, тех, кто изучает язык, и учащихся с особыми потребностями. В этом учебнике описано, как создать веб-приложение Node.js, которое запускает иммерсивное средство чтения. В этом руководстве описано следующее:
 

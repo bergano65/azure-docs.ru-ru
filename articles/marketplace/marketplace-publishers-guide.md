@@ -1,21 +1,20 @@
 ---
-title: Руководство по публикации в Azure Marketplace и AppSource
-description: Обзор Azure Marketplace и Microsoft AppSource для издателей приложений и служб.
-services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-author: ellacroi
+title: Руководству по публикации в коммерческом магазине
+description: Обзор коммерческого рынка для издателей приложений и служб.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 06/05/2018
-ms.author: ellacroi
-ms.openlocfilehash: fba9c481ad9b3da1eb0dd5d8a4ff2499240a8cfa
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.topic: conceptual
+ms.date: 04/12/2020
+ms.author: dsindona
+ms.openlocfilehash: c41a24ecb3e12618ac8cfcdfb756a33114f0f8a2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826484"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81261998"
 ---
-# <a name="azure-marketplace-and-appsource-publishing-guide"></a>Руководство по публикации в Azure Marketplace и AppSource
+# <a name="commercial-marketplace-publishing-guide"></a>Руководству по публикации в коммерческом магазине
 
 Руководство по публикации в Marketplace призвано помочь новым и существующим издателям узнать, как использовать онлайн-магазины в [Azure Marketplace](https://azuremarketplace.microsoft.com) и [Microsoft AppSource](https://appsource.microsoft.com) для развития бизнеса в партнерстве с корпорацией Майкрософт, публикуя приложения и службы.
 
@@ -31,7 +30,7 @@ ms.locfileid: "73826484"
 
 Это руководство содержит техническую и деловую информацию о шагах, которые необходимо предпринять перед публикацией приложений и служб. Используйте оглавление для перехода к различным разделам руководства и непосредственно к ключевым темам.
 
-Если у вас останутся вопросы об Azure Marketplace и AppSource, отправьте сообщение в разделе **Тип проблемы** > **Marketplace Onboarding** (подключение к Marketplace).  Группа адаптации издателя Marketplace будет помогать вам! 
+Чтобы получить ответы на вопросы о Azure Marketplace и AppSource, отправьте нам сообщение. в разделе **проблема введите** > в**Marketplace**. Наши сотрудники из группы подключения издателей к Marketplace будут рады вам помочь! 
 
 ## <a name="benefits-of-participating-in-the-marketplace"></a>Преимущества участия в Marketplace 
 
@@ -63,7 +62,7 @@ Marketplace — это стартовая площадка для маркети
 
 *   Совместные продажи. Marketplace — это отправная точка, с которой можно не только начать свой путь к продажам совместно с Майкрософт, но и ускорить этот процесс. Доступ к программам и поддержке позволит создать возможности для совместных продаж с Майкрософт.
 
-Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  Дополнительные сведения см. [в статье Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .
+Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации.  Дополнительные сведения см. [в статье Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .
 
 Узнайте больше о [преимуществах коммерческого рынка](https://docs.microsoft.com//azure/marketplace/gtm-your-marketplace-benefits).
 

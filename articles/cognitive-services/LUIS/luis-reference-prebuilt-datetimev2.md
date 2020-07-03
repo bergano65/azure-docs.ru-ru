@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
-ms.date: 01/07/2020
+ms.topic: reference
+ms.date: 04/13/2020
 ms.author: diberry
-ms.openlocfilehash: 8c29ebd675bb6af66203c13824dacbe9ea2421a2
-ms.sourcegitcommit: c32050b936e0ac9db136b05d4d696e92fefdf068
+ms.openlocfilehash: 33f8b787119e1c5d6d1a1bb28c94d9791a1c048e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75732801"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81272616"
 ---
 # <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность datetimeV2 для приложения LUIS
 
@@ -31,7 +31,7 @@ ms.locfileid: "75732801"
 
 `8am on may 2nd 2019`
 
-#### <a name="v3-responsetab1-1"></a>[V3 ответ](#tab/1-1)
+#### <a name="v3-response"></a>[V3 ответ](#tab/1-1)
 
 ```json
 "entities": {
@@ -53,7 +53,7 @@ ms.locfileid: "75732801"
 }
 ```
 
-#### <a name="v3-verbose-responsetab1-2"></a>[V3 подробный ответ](#tab/1-2)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/1-2)
 
 ```json
 
@@ -91,7 +91,7 @@ ms.locfileid: "75732801"
 }
 ```
 
-#### <a name="v2-responsetab1-3"></a>[Ответ v2](#tab/1-3)
+#### <a name="v2-response"></a>[Ответ v2](#tab/1-3)
 
 ```json
 "entities": [
@@ -113,13 +113,13 @@ ms.locfileid: "75732801"
 ]
  ```
 
-|Имя свойства |Тип и описание свойства|
+|Имя свойства. |Тип и описание свойства|
 |---|---|
-|Учреждение|**Строка.** Текст, извлеченный из фразы, с типом даты, времени, диапазоном дат или времени.|
+|Объект|**Строка.** Текст, извлеченный из фразы, с типом даты, времени, диапазоном дат или времени.|
 |type|**Строка.** Один из [подтипов сущности datetimeV2](#subtypes-of-datetimev2).
 |startIndex|**Целое число.** Индекс во фразе, в которой начинается сущность.|
 |endIndex|**Целое число.** Индекс во фразе, в которой заканчивается сущность.|
-|resolution|Имеет массив `values` с одним, двумя или четырьмя [значениями разрешения](#values-of-resolution).|
+|разрешение|Имеет массив `values` с одним, двумя или четырьмя [значениями разрешения](#values-of-resolution).|
 |end|Конечное значение времени или диапазона дат в том же формате, что и значение (`value`). Используется, только если свойство `type` имеет значение `daterange`, `timerange` или `datetimerange`|
 
 * * *
@@ -143,18 +143,18 @@ ms.locfileid: "75732801"
 
 Ниже приведены поля, которые может иметь каждый элемент массива `values`.
 
-|Имя свойства|Описание свойства|
+|Имя свойства.|Описание свойства|
 |--|--|
-|timex|Время, дата или диапазон дат, выраженные в формате TIMEX, который соответствует [стандарту ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), и в атрибутах TIMEX3 заметки с помощью языка TimeML. Эта заметка описана в [рекомендациях TIMEX](http://www.timeml.org/tempeval2/tempeval2-trial/guidelines/timex3guidelines-072009.pdf).|
-|mod|термин, используемый для описания использования значения, такого как `before`, `after`.|
-|type|Подтип может иметь один из следующих элементов: `datetime`, `date`, `time`, `daterange`, `timerange`, `datetimerange`, `duration`, `set`.|
-|value|**Необязательно.** Объект DateTime в формате гггг-мм-дд (дата), чч: мм: СС (Time) гггг-мм-дд чч: мм: СС (DateTime). Если свойство `type` имеет значение `duration`, в качестве значения указывается количество секунд (длительность). <br/> Используется, только если свойство `type` имеет значение `datetime` или `date`, `time` или `duration.|
+|timex|Время, дата или диапазон дат, выраженные в формате TIMEX, который соответствует [стандарту ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), и в атрибутах TIMEX3 заметки с помощью языка TimeML.|
+|mod|термин `before`, используемый для описания использования значения, например, `after`.|
+|type|Подтип может иметь `datetime`один из следующих элементов:, `date`, `time`, `daterange` `timerange`,, `datetimerange`, `duration`,. `set`|
+|значение|**Необязательный параметр.** Объект DateTime в формате гггг-мм-дд (дата), чч: мм: СС (Time) гггг-мм-дд чч: мм: СС (DateTime). Если свойство `type` имеет значение `duration`, в качестве значения указывается количество секунд (длительность). <br/> Используется, только если свойство `type` имеет значение `datetime` или `date`, `time` или `duration.|
 
 ## <a name="valid-date-values"></a>Допустимые значения даты
 
 Сущность **datetimeV2** поддерживает даты в следующих диапазонах:
 
-| Min | Максимальное количество |
+| Min | Макс. |
 |----------|-------------|
 | 1 января 1900 г.   | 31 декабря 2099 г. |
 
@@ -179,7 +179,7 @@ ms.locfileid: "75732801"
 
 `May 2nd`
 
-#### <a name="v3-responsetab2-1"></a>[V3 ответ](#tab/2-1)
+#### <a name="v3-response"></a>[V3 ответ](#tab/2-1)
 
 ```json
 "entities": {
@@ -204,7 +204,7 @@ ms.locfileid: "75732801"
 }
 ```
 
-#### <a name="v3-verbose-responsetab2-2"></a>[V3 подробный ответ](#tab/2-2)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/2-2)
 
 ```json
 "entities": {
@@ -244,7 +244,7 @@ ms.locfileid: "75732801"
 }
 ```
 
-#### <a name="v2-responsetab2-3"></a>[Ответ v2](#tab/2-3)
+#### <a name="v2-response"></a>[Ответ v2](#tab/2-3)
 
 ```json
   "entities": [
@@ -274,13 +274,13 @@ ms.locfileid: "75732801"
 
 ## <a name="date-range-resolution-examples-for-numeric-date"></a>Примеры разрешения диапазона числовых дат
 
-Сущность `datetimeV2` извлекает диапазоны дат и времени. Поля `start` и `end` определяют начало и конец диапазона. Для `May 2nd to May 5th`utterance LUIS предоставляет значения **daterange** как для текущего года, так и для следующего года. В поле `timex` значения `XXXX` указывают неоднозначность года. Значение `P3D` указывает на трехдневный период времени.
+Сущность `datetimeV2` извлекает диапазоны дат и времени. Поля `start` и `end` определяют начало и конец диапазона. Для utterance `May 2nd to May 5th`Luis предоставляет значения **daterange** как для текущего года, так и для следующего года. В поле `timex` значения `XXXX` указывают неоднозначность года. Значение `P3D` указывает на трехдневный период времени.
 
 Ниже показана следующая utterance и его частичный ответ JSON.
 
 `May 2nd to May 5th`
 
-#### <a name="v3-responsetab3-1"></a>[V3 ответ](#tab/3-1)
+#### <a name="v3-response"></a>[V3 ответ](#tab/3-1)
 
 ```json
 
@@ -309,7 +309,7 @@ ms.locfileid: "75732801"
 ```
 
 
-#### <a name="v3-verbose-responsetab3-2"></a>[V3 подробный ответ](#tab/3-2)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/3-2)
 
 ```json
 
@@ -352,7 +352,7 @@ ms.locfileid: "75732801"
 }
 ```
 
-#### <a name="v2-responsetab3-3"></a>[Ответ v2](#tab/3-3)
+#### <a name="v2-response"></a>[Ответ v2](#tab/3-3)
 
 ```json
 "entities": [
@@ -378,13 +378,13 @@ ms.locfileid: "75732801"
 
 ## <a name="date-range-resolution-examples-for-day-of-week"></a>Примеры разрешения диапазона дат для дня недели
 
-В следующем примере показано, как LUIS использует **datetimeV2** для разрешения `Tuesday to Thursday`utterance. В этом примере ниже текущей датой является 19 июня. LUIS включает значения **daterange** обоих диапазонов дат перед и после текущей даты.
+В следующем примере показано, как LUIS использует **datetimeV2** для разрешения utterance `Tuesday to Thursday`. В этом примере ниже текущей датой является 19 июня. LUIS включает значения **daterange** обоих диапазонов дат перед и после текущей даты.
 
 Ниже показана следующая utterance и его частичный ответ JSON.
 
 `Tuesday to Thursday`
 
-#### <a name="v3-responsetab4-1"></a>[V3 ответ](#tab/4-1)
+#### <a name="v3-response"></a>[V3 ответ](#tab/4-1)
 
 ```json
 "entities": {
@@ -411,7 +411,7 @@ ms.locfileid: "75732801"
 }
 ```
 
-#### <a name="v3-verbose-responsetab4-2"></a>[V3 подробный ответ](#tab/4-2)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/4-2)
 
 ```json
 "entities": {
@@ -453,7 +453,7 @@ ms.locfileid: "75732801"
 }
 ```
 
-#### <a name="v2-responsetab4-3"></a>[Ответ v2](#tab/4-3)
+#### <a name="v2-response"></a>[Ответ v2](#tab/4-3)
 
 ```json
   "entities": [
@@ -485,16 +485,16 @@ ms.locfileid: "75732801"
 В API V3 изменен ответ DatetimeV2 JSON. В следующем примере показано, как с помощью сущности **datetimeV2** LUIS обрабатывает фразу с диапазон времени.
 
 Изменения из API версии 2:
-* `datetimeV2.timex.type` свойство больше не возвращается, так как оно возвращается на родительском уровне, `datetimev2.type`.
-* Свойство `datetimeV2.value` было переименовано в `datetimeV2.timex`.
+* `datetimeV2.timex.type`свойство больше не возвращается, так как оно возвращается на родительском уровне, `datetimev2.type`.
+* `datetimeV2.value` Свойство было переименовано в `datetimeV2.timex`.
 
 Ниже показана следующая utterance и его частичный ответ JSON.
 
 `from 6pm to 7pm`
 
-#### <a name="v3-responsetab5-1"></a>[V3 ответ](#tab/5-1)
+#### <a name="v3-response"></a>[V3 ответ](#tab/5-1)
 
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
+Следующий код JSON имеет `verbose` параметр со значением: `false`
 
 ```JSON
 
@@ -517,9 +517,9 @@ ms.locfileid: "75732801"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetab5-2"></a>[V3 подробный ответ](#tab/5-2)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/5-2)
 
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
+Следующий код JSON имеет `verbose` параметр со значением: `true`
 
 ```json
 
@@ -557,7 +557,7 @@ ms.locfileid: "75732801"
     }
 }
 ```
-#### <a name="v2-responsetab5-3"></a>[Ответ v2](#tab/5-3)
+#### <a name="v2-response"></a>[Ответ v2](#tab/5-3)
 
 ```json
   "entities": [
@@ -588,7 +588,7 @@ ms.locfileid: "75732801"
 
 `8am`
 
-#### <a name="v3-responsetab6-1"></a>[V3 ответ](#tab/6-1)
+#### <a name="v3-response"></a>[V3 ответ](#tab/6-1)
 
 ```json
 "entities": {
@@ -609,7 +609,7 @@ ms.locfileid: "75732801"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetab6-2"></a>[V3 подробный ответ](#tab/6-2)
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/6-2)
 
 ```json
 "entities": {
@@ -645,7 +645,7 @@ ms.locfileid: "75732801"
     }
 }
 ```
-#### <a name="v2-responsetab6-3"></a>[Ответ v2](#tab/6-3)
+#### <a name="v2-response"></a>[Ответ v2](#tab/6-3)
 
 ```json
 "entities": [
@@ -680,7 +680,7 @@ ms.locfileid: "75732801"
 3. Щелкните **Add prebuilt entity** (Добавить предварительно созданную сущность).
 4. Выберите **datetimeV2** и нажмите кнопку **Сохранить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

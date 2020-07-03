@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.service: virtual-machines-windows
 ms.subservice: disks
 ms.openlocfilehash: 77e542e9bff399e58b433286385864478bcb5076
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75719551"
 ---
 # <a name="benchmarking-a-disk"></a>Тестирование производительности диска
@@ -24,7 +24,7 @@ ms.locfileid: "75719551"
 
 [!INCLUDE [virtual-machines-disks-benchmarking](../../../includes/virtual-machines-managed-disks-benchmarking.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Перейдите к нашей статье о [проектировании для обеспечения высокой производительности](premium-storage-performance.md).
 

@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d989a515a1a3c1dc12ca357a3ab2126e78800ffa
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: f04bd7788a9cc9657e14aedfb153182d6e53eb95
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74024422"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79259712"
 ---
 # <a name="view-custom-role-assignments-in-azure-active-directory"></a>Просмотр пользовательских назначений ролей в Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "74024422"
 
 Эта процедура описывает Просмотр назначений роли в масштабе всей Организации.
 
-1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
+1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
 1. Выберите **Azure Active Directory**, выберите **роли и администраторы**, а затем выберите роль, чтобы открыть ее и просмотреть ее свойства.
 1. Выберите **назначения** , чтобы просмотреть назначения для роли.
 
@@ -82,10 +82,10 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId | Get-AzureADUser
 
 HTTP-запрос на получение назначения роли для заданного определения роли.
 
-ПОЛУЧЕНИЕ
+GET
 
 ``` HTTP
-https://graph.windows.net/<tenantDomain-or-tenantId>/roleAssignments?api-version=1.61-internal&$filter=roleDefinitionId eq ‘<object-id-or-template-id-of-role-definition>’
+https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments&$filter=roleDefinitionId eq ‘<object-id-or-template-id-of-role-definition>’
 ```
 
 Ответ
@@ -104,7 +104,7 @@ HTTP/1.1 200 OK
 
 В этом разделе описывается Просмотр назначений роли с областью действия одного приложения. Эта функция сейчас доступна в виде общедоступной предварительной версии.
 
-1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
+1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
 1. Выберите **Регистрация приложений**, а затем выберите регистрацию приложения, чтобы просмотреть его свойства. Может потребоваться выбрать **все приложения** , чтобы просмотреть полный список регистраций приложений в вашей организации Azure AD.
 
     ![Создание или изменение регистраций приложений на странице Регистрация приложений](./media/roles-create-custom/appreg-all-apps.png)
@@ -117,7 +117,7 @@ HTTP/1.1 200 OK
 
     ![Просмотр назначений ролей регистрации приложений из свойств регистрации приложения](./media/roles-view-assignments/appreg-assignments-2.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 * Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

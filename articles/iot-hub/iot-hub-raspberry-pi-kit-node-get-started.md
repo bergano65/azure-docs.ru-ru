@@ -2,20 +2,20 @@
 title: Подключение Raspberry Pi к центру Интернета вещей Azure в облаке (Node. js)
 description: Узнайте, как настроить и подключить Raspberry Pi к центру Интернета вещей Azure для Raspberry Pi, чтобы отправить данные на облачную платформу Azure в этом руководстве.
 author: wesmc7777
-manager: philmea
+manager: eliotgra
 keywords: Raspberry Pi и Центр Интернета вещей Azure, Raspberry Pi и Центр Интернета вещей, отправка данных с Raspberry Pi в облако, подключение Raspberry Pi к облаку
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: conceptual
-ms.date: 07/17/2019
+ms.date: 03/13/2020
 ms.author: wesmc
-ms.openlocfilehash: 5780477be71988653e89379ae17e9009337bbc0f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3175956e35603cc4ad3a938f3d316c0af8f2d227
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457097"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81640533"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -51,7 +51,7 @@ ms.locfileid: "75457097"
 
 * Плата Raspberry Pi 2 или Raspberry Pi 3.
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 * Монитор, USB-клавиатура и мышь, подключенные к Pi.
 
@@ -94,13 +94,13 @@ ms.locfileid: "75457097"
 
 1. Скачайте ОС Raspbian.
 
-   а. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
+   a. [Raspbian бустер с рабочим столом](https://www.raspberrypi.org/downloads/raspbian/) (ZIP-файл).
 
    b. Извлеките образ ОС Raspbian в папку на компьютере.
 
 2. Установите ОС Raspbian на карту microSD.
 
-   а. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
+   a. [Скачайте и установите служебную программу для записи SD Card](https://etcher.io/).
 
    b. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
 
@@ -116,9 +116,9 @@ ms.locfileid: "75457097"
 
 1. Подключите Pi к монитору, клавиатуре и мыши.
 
-2. Запустите PI, а затем войдите в Raspbian, используя `pi` в качестве имени пользователя и `raspberry` в качестве пароля.
+2. Запустите PI, а затем войдите в Raspbian, `pi` используя в качестве имени пользователя `raspberry` и пароля.
 
-3. Щелкните значок Raspberry и выберите **Preferences** (Параметры) > **Raspberry Pi Configuration** (Конфигурация Raspberry Pi).
+3. Щелкните значок Raspberry > **настройки** > **Raspberry Pi**.
 
    ![Меню параметров Raspbian](./media/iot-hub-raspberry-pi-kit-node-get-started/1-raspbian-preferences-menu.png)
 
@@ -148,7 +148,7 @@ ms.locfileid: "75457097"
 | LED VDD (вывод 18F)        | GPIO 24 (вывод 18)       | Белый кабель   |
 | LED GND (вывод 17F)        | GND (вывод 20)           | Черный кабель   |
 
-Щелкните, чтобы просмотреть [схему соответствия выводов Raspberry Pi 2 и 3](/windows/iot-core/learn-about-hardware/pinmappings/pinmappingsrpi) для справки.
+Щелкните для просмотра [Raspberry Pi 2 & 3 сопоставления ПИН-кода](/windows/iot-core/learn-about-hardware/pinmappings/pinmappingsrpi) для вашей ссылки.
 
 После успешного подключения датчика BME280 к Raspberry Pi схема должна выглядеть так, как на изображении ниже.
 
@@ -156,7 +156,7 @@ ms.locfileid: "75457097"
 
 ### <a name="connect-pi-to-the-network"></a>Подключение устройства Pi к сети
 
-Включите устройство Pi, используя кабель Micro USB и источник питания. Подключите Pi к проводной сети с помощью кабеля Ethernet или выполните [инструкции](https://www.raspberrypi.org/learning/software-guide/wifi/) от Raspberry Pi Foundation для подключения устройства Pi к беспроводной сети. После успешного подключения Pi к сети необходимо запомнить [IP-адрес устройства Pi](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/finding-your-pis-ip-address).
+Включите устройство Pi, используя кабель Micro USB и источник питания. Подключите Pi к проводной сети с помощью кабеля Ethernet или выполните [инструкции](https://www.raspberrypi.org/documentation/configuration/wireless/) от Raspberry Pi Foundation для подключения устройства Pi к беспроводной сети. После успешного подключения Pi к сети необходимо запомнить [IP-адрес устройства Pi](https://www.raspberrypi.org/documentation/remote-access/ip-address.md).
 
 ![Подключение к проводной сети](./media/iot-hub-raspberry-pi-kit-node-get-started/5-power-on-pi.png)
 
@@ -171,7 +171,7 @@ ms.locfileid: "75457097"
 
    **Пользователи Windows**
 
-   а. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
+   a. Скачайте и установите [PuTTY](https://www.putty.org/) для Windows.
 
    b. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
 
@@ -202,13 +202,13 @@ ms.locfileid: "75457097"
 3. Клонируйте пример приложения.
 
    ```bash
-   git clone https://github.com/Azure-Samples/iot-hub-node-raspberrypi-client-app
+   git clone https://github.com/Azure-Samples/azure-iot-samples-node.git
    ```
 
 4. Установите все пакеты для примера, в том числе пакет SDK для устройств Azure IoT, библиотеку датчика BME280 и библиотеку Wiring Pi.
 
    ```bash
-   cd iot-hub-node-raspberrypi-client-app
+   cd azure-iot-samples-node/iot-hub/Tutorials/RaspberryPiApp
    npm install
    ```
 
@@ -229,7 +229,7 @@ ms.locfileid: "75457097"
 
    Если у вас **нет датчика**, задайте для параметра `simulatedData` значение `true`, чтобы пример приложения создал и использовал смоделированные данные датчика.
 
-   *Примечание. адрес I2C, используемый в этом руководстве, по умолчанию — 0x77. В зависимости от конфигурации это также может быть 0x76: Если возникла ошибка I2C, попробуйте изменить значение на 118 и убедитесь, что это работает лучше. Чтобы узнать, какой адрес используется датчиком, запустите `sudo i2cdetect -y 1` в оболочке на устройстве Raspberry Pi.*
+   *Примечание. адрес I2C, используемый в этом руководстве, по умолчанию — 0x77. В зависимости от конфигурации это также может быть 0x76: Если возникла ошибка I2C, попробуйте изменить значение на 118 и убедитесь, что это работает лучше. Чтобы узнать, какой адрес используется датчиком, выполните `sudo i2cdetect -y 1` команду в оболочке на устройстве Raspberry Pi.*
 
 2. Сохраните изменения и закройте окно, нажав клавиши CTRL+O > ВВОД > CTRL+X.
 
@@ -254,8 +254,8 @@ ms.locfileid: "75457097"
 
 Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей.
+Вы запустили пример приложения для регистрации данных датчика и их отправки в центр Интернета вещей.
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

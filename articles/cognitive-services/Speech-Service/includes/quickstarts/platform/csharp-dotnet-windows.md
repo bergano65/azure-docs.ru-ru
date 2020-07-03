@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 10/10/2019
 ms.author: erhopf
-ms.openlocfilehash: db00398efa638ac945bc188ad0c44f904059e689
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a09b969ee3e11aeb04f338cf035b21b5da9bd952
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75468036"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "78925723"
 ---
-а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для .NET Framework (Windows).
+а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для .NET Framework (Windows). Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `Install-Package Microsoft.CognitiveServices.Speech` в консоли NuGet.
 
 [!INCLUDE [License Notice](~/includes/cognitive-services-speech-service-license-notice.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
@@ -71,7 +71,21 @@ ms.locfileid: "75468036"
 
    После установки пакета на **Консоли диспетчера пакетов** появится подтверждение.
 
-Теперь можно перейти к разделу [Дополнительная информация](#next-steps) ниже.
+### <a name="choose-target-architecture"></a>Выбор целевой архитектуры
+
+Чтобы создать и запустить консольное приложение, создайте конфигурацию платформы, соответствующую архитектуре компьютера.
+
+1. В строке меню выберите **Сборка** > **Configuration Manager** (Диспетчер конфигураций). Откроется диалоговое окно**ConfigurationManager** (Диспетчер конфигураций).
+
+   ![Диалоговое окно Configuration Manager (Диспетчер конфигураций)](~/articles/cognitive-services/speech-service/media/sdk/vs-configuration-manager-dialog-box.png)
+
+1. В раскрывающемся списке **Активная платформа решения** выберите команду **Новый**. Откроется диалоговое окно **Создание платформы решения**.
+
+1. В раскрывающемся списке **Введите или выберите новую платформу**.
+   - Если вы используете 64-разрядную версию Windows, выберите **x64**.
+   - Если вы используете 32-разрядную версию Windows, выберите **x86**.
+
+1. Нажмите **ОК**, а затем **Закрыть**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: aahi
 ms.openlocfilehash: aca3b0bea65923cee1bae25020058666c973922c
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73837123"
 ---
 # <a name="frequently-asked-questions-faq-about-the-text-analytics-cognitive-service"></a>Часто задаваемые вопросы об API анализа текста (Cognitive Service)
@@ -47,7 +47,7 @@ ms.locfileid: "73837123"
 
 Усовершенствования моделей и алгоритмов могут объявляться, если они существенные, или незаметно интегрироваться в службу, если изменения считаются незначительными. Вполне вероятно, что через некоторое время для одного и того же текста будут возвращаться другая оценка тональности или другой список ключевых фраз. Это вполне нормальный и ожидаемый результат для облачных ресурсов управляемого машинного обучения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 У вас есть вопрос об отсутствующей функции или компоненте? Вы можете оставить запрос или участвовать в голосовании на [веб-сайте User Voice](https://cognitive.uservoice.com/forums/555922-text-analytics).
 

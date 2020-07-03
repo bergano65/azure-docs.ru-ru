@@ -6,12 +6,12 @@ ms.assetid: 4859d0d5-3e3c-40cc-96eb-f318b2c51a3d
 ms.topic: article
 ms.date: 10/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 68cabbd00dd0b738590109cc39d8df82f5b7362d
-ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
+ms.openlocfilehash: d40f5db65ce9ca90ae978bac4491bdebccc2a328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75681191"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80811710"
 ---
 # <a name="manage-an-app-service-plan-in-azure"></a>Управлением планом службы приложений в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "75681191"
 
    ![Создайте ресурс в портал Azure.][createResource] 
 
-1. Выберите **новый** > **веб-приложение** или другое приложение службы приложений.
+1. Выберите **новое** > **веб-приложение** или другое приложение службы приложений.
 
    ![Создание приложения на портале Azure.][createWebApp] 
 
@@ -61,7 +61,7 @@ ms.locfileid: "75681191"
 4. При создании плана можно выбрать ценовую категорию для нового плана. В поле **ценовая**Категория выберите существующий уровень, чтобы изменить его. 
    
    > [!IMPORTANT]
-   > Если вы перемещаете приложение из более высокого уровня в более низкий план, например из **D1** в **F1**, приложение может потерять некоторые возможности в целевом плане. Например, если приложение использует SSL-сертификаты, может появиться следующее сообщение об ошибке:
+   > Если вы перемещаете приложение из более высокого уровня в более низкий план, например из **D1** в **F1**, приложение может потерять некоторые возможности в целевом плане. Например, если приложение использует сертификаты TLS/SSL, может появиться следующее сообщение об ошибке:
    >
    > `Cannot update the site with hostname '<app_name>' because its current SSL configuration 'SNI based SSL enabled' is not allowed in the target compute mode. Allowed SSL configuration is 'Disabled'.`
 
@@ -93,7 +93,7 @@ ms.locfileid: "75681191"
 > [!IMPORTANT]
 > За планы службы приложений всегда взимается плата, даже если с ними не связано ни одно приложение, так как план всегда резервирует настроенные экземпляры виртуальных машин.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Увеличение масштаба приложения в Azure](manage-scale-up.md)

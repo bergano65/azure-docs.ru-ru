@@ -1,18 +1,14 @@
 ---
-title: Приложения для рендеринга — пакетная служба Azure
+title: Приложения для рендеринга
 description: Вы можете использовать в пакетной службе Azure любые приложения для рендеринга Но некоторые распространенные версии уже включены в образы виртуальных машин Azure Marketplace.
-services: batch
-ms.service: batch
-author: LauraBrenner
-ms.author: labrenne
 ms.date: 09/19/2019
 ms.topic: conceptual
-ms.openlocfilehash: 77672534b2aad993a44e9b637fbed58df8610e97
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: f04fff3df2deb714f0432e5ad77d921a2d7ac205
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022993"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82115794"
 ---
 # <a name="pre-installed-applications-on-rendering-vm-images"></a>Предварительно установленные приложения в образах виртуальных машин для рендеринга
 
@@ -64,7 +60,7 @@ ms.locfileid: "77022993"
 * AZ 10
 
 > [!IMPORTANT]
-> Чтобы запустить V-Ray с Maya за пределами [шаблонов расширений пакетной службы Azure](https://github.com/Azure/batch-extension-templates), запустите `vrayses.exe` перед выполнением подготовки к просмотру. Чтобы запустить врайсес. exe за пределами шаблонов, можно использовать следующую команду `%MAYA_2017%\vray\bin\vrayses.exe"`.
+> Чтобы запустить V-Ray с Maya за пределами [шаблонов расширений пакетной](https://github.com/Azure/batch-extension-templates)службы `vrayses.exe` Azure, запустите перед выполнением подготовки к просмотру. Чтобы запустить врайсес. exe за пределами шаблонов, можно использовать следующую команду `%MAYA_2017%\vray\bin\vrayses.exe"`.
 >
 > Пример см. в описании задачи запуска [шаблона Maya и V-Ray](https://github.com/Azure/batch-extension-templates/blob/master/templates/maya/render-vray-windows/pool.template.json) на сайте GitHub.
 
@@ -89,6 +85,6 @@ ms.locfileid: "77022993"
 > [!NOTE]
 > Chaos Group V-Ray для 3ds Max 2019 (версия 4.10.01) вводит критические изменения в V-Ray. Чтобы использовать предыдущую версию (Version 3.60.02), используйте узлы отрисовки Windows Server 2016, версия 1.3.2.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы использовать образы виртуальных машин для рендеринга, их необходимо указывать в конфигурации пула при создании пула. Подробнее см. статью о [возможностях рендеринга в пакетной службе](https://docs.microsoft.com/azure/batch/batch-rendering-functionality#batch-pools).

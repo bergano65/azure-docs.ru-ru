@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Yodeck | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Yodeck | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Yodeck.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: af0748f36e8d2299921f987c517f7a4923bd0d55
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086478"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>Руководство по Интеграция Azure Active Directory с Yodeck
+# <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>Учебник. Интеграция Azure Active Directory с Yodeck
 
 В этом руководстве описано, как интегрировать Yodeck с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Yodeck обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67086478"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Yodeck, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Yodeck с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -129,7 +129,7 @@ ms.locfileid: "67086478"
 
     ![Настройка Yodeck](./media/yodeck-tutorial/configure2.png)
 
-    a. Выберите **Import from URL** (Импорт из URL-адреса).
+    а. Выберите **Import from URL** (Импорт из URL-адреса).
 
     b. В текстовое поле **URL-адрес** вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure, а затем нажмите кнопку **Импорт**.
     
@@ -207,7 +207,7 @@ ms.locfileid: "67086478"
 
     ![Добавление сотрудника](./media/yodeck-tutorial/user3.png)
 
-    a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    а. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -215,7 +215,7 @@ ms.locfileid: "67086478"
 
     d. Выберите соответствующий параметр **Разрешения учетной записи** согласно требованиям вашей организации.
     
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -229,5 +229,5 @@ ms.locfileid: "67086478"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

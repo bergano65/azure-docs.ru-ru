@@ -1,19 +1,19 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 11/14/2019
+ms.date: 05/11/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: ff3409fad12e54be5ac00ead3ca44c1f24bb0af8
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 10b3a6bb9592c955d16b070ae412374b8a1f4444
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76268243"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196966"
 ---
 Высокопроизводительные диски Azure обеспечивают высокую пропускную способность, высокую скорость операций ввода-вывода и постоянную задержку на диске для виртуальных машин Azure IaaS. Это новое предложение обеспечивает первоклассную производительность с тем же уровнем доступности, что и имеющиеся предложения дисков. Одним из основных преимуществ использования Ultra Disks является возможность динамического изменения производительности SSD вместе с рабочими нагрузками без необходимости перезапуска виртуальных машин. Диски категории "Ультра" подходят для рабочих нагрузок, предполагающих интенсивную работу с данными, например SAP HANA, базы данных верхнего уровня и рабочие нагрузки с большим количеством транзакций.
 
@@ -23,11 +23,13 @@ ms.locfileid: "76268243"
 
 ## <a name="determine-vm-size-and-region-availability"></a>Определение размера виртуальной машины и доступности регионов
 
+### <a name="vms-using-availability-zones"></a>Виртуальные машины, использующие зоны доступности
+
 Чтобы использовать диски Ultra, необходимо определить, в какой зоне доступности вы используете. Не каждый регион поддерживает каждый размер виртуальной машины с Ultra Disks. Чтобы определить, поддерживает ли ваш регион, зону и размер виртуальной машины, выполните одну из следующих команд, обязательно замените значения **Region**, **vmSize**и **Subscription** .
 
-Интерфейс командной строки.
+#### <a name="cli"></a>CLI
 
-```bash
+```azurecli
 $subscription = "<yourSubID>"
 # example value is southeastasia
 $region = "<yourLocation>"
@@ -37,7 +39,7 @@ $vmSize = "<yourVMSize>"
 az vm list-skus --resource-type virtualMachines  --location $region --query "[?name=='$vmSize'].locationInfo[0].zoneDetails[0].Name" --subscription $subscription
 ```
 
-PowerShell.
+#### <a name="powershell"></a>PowerShell
 
 ```powershell
 $region = "southeastasia"
@@ -49,7 +51,7 @@ $vmSize = "Standard_E64s_v3"
 
 Сохраните значение **зон** , оно представляет вашу зону доступности и потребуется для развертывания Ultra Disk.
 
-|ResourceType  |Имя  |Расположение  |Зоны  |Ограничение  |Возможность  |Значение  |
+|ResourceType  |Имя  |Расположение  |Зоны  |Ограничение  |Функция  |Значение  |
 |---------|---------|---------|---------|---------|---------|---------|
 |disks     |UltraSSD_LRS         |eastus2         |X         |         |         |         |
 
@@ -58,13 +60,62 @@ $vmSize = "Standard_E64s_v3"
 
 Теперь, когда вы узнали, какая зона будет развертываться, выполните действия по развертыванию, описанные в этой статье, чтобы развернуть виртуальную машину с подключенным Ultra Disk или подключить к существующей виртуальной машине Ultra Disk.
 
+### <a name="vms-with-no-redundancy-options"></a>Виртуальные машины без параметров избыточности
+
+В настоящее же отсутствие параметров избыточности, развернутых в западной части США, должно быть развернуто. Однако в этом регионе может находиться не каждый размер диска, поддерживающий Ultra Disks. Чтобы определить, какие из них в западной части США поддерживают Ultra Disks, можно использовать любой из следующих фрагментов кода. Обязательно замените `vmSize` `subscription` значения и первыми:
+
+```azurecli
+$subscription = "<yourSubID>"
+$region = "westus"
+# example value is Standard_E64s_v3
+$vmSize = "<yourVMSize>"
+
+az vm list-skus --resource-type virtualMachines  --location $region --query "[?name=='$vmSize'].capabilities" --subscription $subscription
+```
+
+```azurepowershell
+$region = "westus"
+$vmSize = "Standard_E64s_v3"
+(Get-AzComputeResourceSku | where {$_.Locations.Contains($region) -and ($_.Name -eq $vmSize) })[0].Capabilities
+```
+
+Ответ будет похож на следующий вид: `UltraSSDAvailable   True` указывает, поддерживает ли размер виртуальной машины Ultra Disks в этом регионе.
+
+```
+Name                                         Value
+----                                         -----
+MaxResourceVolumeMB                          884736
+OSVhdSizeMB                                  1047552
+vCPUs                                        64
+HyperVGenerations                            V1,V2
+MemoryGB                                     432
+MaxDataDiskCount                             32
+LowPriorityCapable                           True
+PremiumIO                                    True
+VMDeploymentTypes                            IaaS
+vCPUsAvailable                               64
+ACUs                                         160
+vCPUsPerCore                                 2
+CombinedTempDiskAndCachedIOPS                128000
+CombinedTempDiskAndCachedReadBytesPerSecond  1073741824
+CombinedTempDiskAndCachedWriteBytesPerSecond 1073741824
+CachedDiskBytes                              1717986918400
+UncachedDiskIOPS                             80000
+UncachedDiskBytesPerSecond                   1258291200
+EphemeralOSDiskSupported                     True
+AcceleratedNetworkingEnabled                 True
+RdmaEnabled                                  False
+MaxNetworkInterfaces                         8
+UltraSSDAvailable                            True
+```
+
 ## <a name="deploy-an-ultra-disk-using-azure-resource-manager"></a>Развертывание Ultra Disk с помощью Azure Resource Manager
 
 Сначала определите размер виртуальной машины для развертывания. Список поддерживаемых размеров виртуальных машин см. в разделе общедоступная [область и ограничения](#ga-scope-and-limitations) .
 
 Если вы хотите создать виртуальную машину с несколькими Ultra-дисками, ознакомьтесь с примером [Создание виртуальной машины с несколькими Ultra дисками](https://aka.ms/ultradiskArmTemplate).
 
-Если вы планируете использовать собственный шаблон, убедитесь, что для параметра **apiVersion** для `Microsoft.Compute/virtualMachines` и `Microsoft.Compute/Disks` задано значение `2018-06-01` (или более поздней).
+Если вы планируете использовать собственный шаблон, убедитесь, что **apiVersion** для `Microsoft.Compute/virtualMachines` и `Microsoft.Compute/Disks` задан как `2018-06-01` (или более поздней версии).
 
 Задайте для номера SKU диска значение **UltraSSD_LRS**, а затем установите емкость диска, число операций ввода-вывода, зону доступности и пропускную способность в Мбит/с для создания диска Ultra.
 
@@ -90,7 +141,7 @@ $vmSize = "Standard_E64s_v3"
 
 - В колонке **Создание нового диска** введите имя, а затем выберите **изменить размер**.
 - Измените **тип учетной записи** на **Ultra Disk**.
-- Измените значения параметра **Пользовательский размер диска (гиб)** , **дисковые операции ввода-вывода**и **пропускную способность диска** на выбранные.
+- Измените значения параметра **Пользовательский размер диска (гиб)**, **дисковые операции ввода-вывода**и **пропускную способность диска** на выбранные.
 - Нажмите кнопку **ОК** в обоих колонках.
 - Продолжайте развертывание виртуальной машины, оно будет таким же, как и при развертывании любой другой виртуальной машины.
 
@@ -116,7 +167,7 @@ $vmSize = "Standard_E64s_v3"
 
 - Введите имя нового диска, а затем выберите **изменить размер**.
 - Измените **тип учетной записи** на **Ultra Disk**.
-- Измените значения параметра **Пользовательский размер диска (гиб)** , **дисковые операции ввода-вывода**и **пропускную способность диска** на выбранные.
+- Измените значения параметра **Пользовательский размер диска (гиб)**, **дисковые операции ввода-вывода**и **пропускную способность диска** на выбранные.
 - Нажмите кнопку **ОК** , а затем выберите **создать**.
 
 ![макинг-а-Нев-ултра-диск. png](media/virtual-machines-disks-getting-started-ultra-ssd/making-a-new-ultra-disk.png)
@@ -151,6 +202,18 @@ Ultra Disks предлагает уникальную возможность, п
 az vm create --subscription $subscription -n $vmname -g $rgname --image Win2016Datacenter --ultra-ssd-enabled true --zone $zone --authentication-type password --admin-password $password --admin-username $user --size Standard_D4s_v3 --location $location
 ```
 
+### <a name="enable-ultra-disk-compatibility-on-an-existing-vm"></a>Включение обеспечения совместимости с Ultra Disk на существующей виртуальной машине
+
+Если ваша виртуальная машина соответствует требованиям, изложенным в области общедоступного [уровня и ограничениях](#ga-scope-and-limitations) , и находится в [соответствующей зоне для вашей учетной записи](#determine-vm-size-and-region-availability), можно включить поддержку Ultra Disk на виртуальной машине.
+
+Чтобы включить совместимость с Ultra Disk, необходимо отключить виртуальную машину. После того как виртуальная машина будет приостановлена, вы можете включить совместимость, подключить к ней Ultra Disk, а затем перезапустить виртуальную машину:
+
+```azurecli
+az vm deallocate -n $vmName -g $rgName
+az vm update -n $vmName -g $rgName --ultra-ssd-enabled true
+az vm start -n $vmName -g $rgName
+```
+
 ### <a name="create-an-ultra-disk-using-cli"></a>Создание Ultra Disk с помощью интерфейса командной строки
 
 Теперь, когда у вас есть виртуальная машина, которая поддерживает подключение Ultra Disks, можно создать и подключить к ней Ultra Disk.
@@ -180,7 +243,7 @@ az disk create `
 
 Кроме того, если существующая виртуальная машина находится в зоне региона или доступности, которая поддерживает использование Ultra Disks, можно использовать Ultra Disks без необходимости создавать новую виртуальную машину.
 
-```bash
+```azurecli
 $rgName = "<yourResourceGroupName>"
 $vmName = "<yourVMName>"
 $diskName = "<yourDiskName>"
@@ -214,9 +277,22 @@ New-AzVm `
     -Name $vmName `
     -Location "eastus2" `
     -Image "Win2016Datacenter" `
-    -EnableUltraSSD `
+    -EnableUltraSSD $true `
     -size "Standard_D4s_v3" `
     -zone $zone
+```
+
+### <a name="enable-ultra-disk-compatibility-on-an-existing-vm"></a>Включение обеспечения совместимости с Ultra Disk на существующей виртуальной машине
+
+Если ваша виртуальная машина соответствует требованиям, изложенным в области общедоступного [уровня и ограничениях](#ga-scope-and-limitations) , и находится в [соответствующей зоне для вашей учетной записи](#determine-vm-size-and-region-availability), можно включить поддержку Ultra Disk на виртуальной машине.
+
+Чтобы включить совместимость с Ultra Disk, необходимо отключить виртуальную машину. После того как виртуальная машина будет приостановлена, вы можете включить совместимость, подключить к ней Ultra Disk, а затем перезапустить виртуальную машину:
+
+```azurepowershell
+#stop the VM
+$vm1 = Get-AzureRMVM -name $vmName -ResourceGroupName $rgName
+Update-AzureRmVM -ResourceGroupName $rgName -VM $vm1 -UltraSSDEnabled 1
+#start the VM
 ```
 
 ### <a name="create-an-ultra-disk-using-powershell"></a>Создание Ultra Disk с помощью PowerShell
@@ -265,7 +341,3 @@ Update-AzVM -VM $vm -ResourceGroupName $resourceGroup
 $diskupdateconfig = New-AzDiskUpdateConfig -DiskMBpsReadWrite 2000
 Update-AzDisk -ResourceGroupName $resourceGroup -DiskName $diskName -DiskUpdate $diskupdateconfig
 ```
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-Если вы хотите попробовать новый тип диска [запросить доступ с помощью этого опроса](https://aka.ms/UltraDiskSignup).

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: data-factory
 author: nabhishek
 ms.service: data-factory
@@ -8,10 +8,10 @@ ms.topic: include
 ms.date: 10/09/2019
 ms.author: abnarain
 ms.openlocfilehash: 6af6795fefb41f1d8f2b56e0aa1fb367fc18cee2
-ms.sourcegitcommit: b5d59c6710046cf105236a6bb88954033bd9111b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74559298"
 ---
 | Имена доменов                  | Исходящие порты | Описание                              |

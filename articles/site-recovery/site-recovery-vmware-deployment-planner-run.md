@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: mayg
 ms.openlocfilehash: 044e5c5df8e0af67e4717b864de1e31fc2520408
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73953282"
 ---
 # <a name="run-the-deployment-planner-for-vmware-disaster-recovery"></a>Запуск Планировщик развертывания аварийного восстановления VMware
@@ -21,9 +21,9 @@ ms.locfileid: "73953282"
 ## <a name="modes-of-running-deployment-planner"></a>Режимы запуска для планировщика развертывания
 Программу командной строки (ASRDeploymentPlanner.exe) можно запустить в любом из следующих трех режимов:
 
-1.  [Профилирование](#profile-vmware-vms).
+1.  [Профилирование](#profile-vmware-vms)
 2.  [Создание отчета](#generate-report).
-3.  [Получение данных пропускной способности](#get-throughput).
+3.  [Оценка пропускной способности.](#get-throughput)
 
 Сначала планировщик необходимо запустить в режиме профилирования, чтобы получить сведения об активности обработки данных и числе операций ввода-вывода в секунду на виртуальной машине. Затем запустите ее в режиме создания отчетов, чтобы узнать пропускную способность сети, требования к хранилищу, а также оценить затраты на аварийное восстановление.
 
@@ -65,7 +65,7 @@ ms.locfileid: "73953282"
 ASRDeploymentPlanner.exe -Operation StartProfiling /?
 ```
 
-| Имя параметра | ОПИСАНИЕ |
+| Имя параметра | Описание |
 |---|---|
 | -Operation | StartProfiling |
 | -Server | Полное доменное имя или IP-адрес сервера vCenter Server или узла vSphere ESXi, профилирование виртуальных машин которого необходимо выполнить.|
@@ -80,7 +80,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 |-Port|(Необязательно.) Номер порта для подключения к узлу vCenter или ESXi. По умолчанию используется порт 443.|
 |-Protocol| (Необязательно.) Указывает протокол (HTTP или HTTPS) для подключения к vCenter. По умолчанию используется протокол HTTPS.|
 | -StorageAccountName | (Необязательно.) Имя учетной записи хранения, используемой для определения объема пропускной способности, доступной для репликации данных из локальной среды в Azure. Программа отправляет тестовые данные в эту учетную запись хранения, чтобы рассчитать пропускную способность. Учетная запись хранения должна относиться к универсальному типу версии 1 (GPv1). |
-| -StorageAccountKey | (Необязательно.) Ключ, используемый для доступа к учетной записи хранения. Перейдите на портал Azure и выберите "Учетные записи хранения > <*имя_учетной записи_хранения* > > Параметры > Ключи доступа > Key1". |
+| -StorageAccountKey | (Необязательно.) Ключ, используемый для доступа к учетной записи хранения. Перейдите на портал Azure и выберите "Учетные записи хранения" > <*имя_учетной записи_хранения*> > "Параметры" > "Ключи доступа" > Key1. |
 | -Environment | (необязательно) Это целевая среда учетной записи хранения Azure. Этот параметр может иметь одно из трех значений: AzureCloud, AzureUSGovernment, AzureChinaCloud. Значение по умолчанию — AzureCloud. Используйте параметр, если целевой регион Azure — Azure для государственных организаций США или Azure Китая (21Vianet). |
 
 
@@ -145,7 +145,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 
 `ASRDeploymentPlanner.exe -Operation GenerateReport /?`
 
-|Имя параметра | ОПИСАНИЕ |
+|Имя параметра | Описание |
 |-|-|
 | -Operation | Создание отчета. |
 | -Server |  Полное доменное имя или IP-адрес сервера vCenter Server или сервера vSphere (имя или IP-адрес должны совпадать с используемыми во время профилирования), где расположены виртуальные машины, для которых необходимо создать отчет. Обратите внимание, если профилирование выполняется на сервере vCenter Server, вы не можете использовать для создания отчетов сервер vSphere (и наоборот).|
@@ -159,8 +159,8 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 |-Protocol|(Необязательно.) Указывает протокол (HTTP или HTTPS) для подключения к vCenter. По умолчанию используется протокол HTTPS.|
 | -DesiredRPO | (Необязательно.) Требуемая целевая точка восстановления в минутах. Значение по умолчанию — 15 минут.|
 | -Bandwidth | Пропускная способность в Мбит/с. Этот параметр используется для вычисления значения целевой точки восстановления, которого можно достигнуть для указанной пропускной способности. |
-| -StartDate | (Необязательно.) Дата и время начала в формате ММ-ДД-ГГГГ:ЧЧ:ММ (24-часовой цикл). Параметр *StartDate* необходимо указать с параметром *EndDate*. Если указать параметр StartDate, отчет будет создан на основе данных, собранных в период между датой начала и окончания. |
-| -EndDate | (Необязательно.) Дата и время окончания в формате ММ-ДД-ГГГГ:ЧЧ:ММ (24-часовой цикл). Параметр *EndDate* необходимо указать с параметром *StartDate*. Если указать параметр EndDate, отчет будет создан на основе данных, собранных в период между датой начала и окончания. |
+| -StartDate | (Необязательно.) Дата и время начала в формате ММ-ДД-ГГГГ:ЧЧ:ММ (24-часовой цикл). Параметр *StartDate* должен быть указан вместе с *EndDate*. Если указать параметр StartDate, отчет будет создан на основе данных, собранных в период между датой начала и окончания. |
+| -EndDate | (Необязательно.) Дата и время окончания в формате ММ-ДД-ГГГГ:ЧЧ:ММ (24-часовой цикл). *Дата окончания* должна быть указана вместе с *StartDate*. Если указать параметр EndDate, отчет будет создан на основе данных, собранных в период между датой начала и окончания. |
 | -GrowthFactor | (Необязательно.) Коэффициент роста в процентах. Значение по умолчанию — 30 процентов. |
 | -UseManagedDisks | (Необязательно) UseManagedDisks — "Да" или "Нет". Значение по умолчанию — "Да". Число виртуальных машин, которые можно разместить в одной учетной записи хранения, вычисляется с учетом того, где выполняется отработка отказа или тестовая отработка отказа виртуальных машин — на управляемом или на неуправляемом диске. |
 |-SubscriptionId |(Необязательно.) Идентификатор GUID подписки. Этот параметр требуется при создании отчета об оценке затрат с последними ценами на основе вашей подписки, предложения, связанного с подпиской, а также для указанного вами целевого региона Azure в **указанной валюте**.|
@@ -241,8 +241,8 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 Созданный отчет Microsoft Excel содержит следующие сведения:
 
 * [сводка по локальной инфраструктуре](site-recovery-vmware-deployment-planner-analyze-report.md#on-premises-summary);
-* [рекомендации](site-recovery-vmware-deployment-planner-analyze-report.md#recommendations);
-* [Размещение хранилища виртуальной машины](site-recovery-vmware-deployment-planner-analyze-report.md#vm-storage-placement)
+* [Рекомендации](site-recovery-vmware-deployment-planner-analyze-report.md#recommendations)
+* [< виртуальной машины >размещение хранилища](site-recovery-vmware-deployment-planner-analyze-report.md#vm-storage-placement)
 * [Совместимые виртуальные машины](site-recovery-vmware-deployment-planner-analyze-report.md#compatible-vms)
 * [Несовместимые виртуальные машины](site-recovery-vmware-deployment-planner-analyze-report.md#incompatible-vms)
 * [оценка затрат](site-recovery-vmware-deployment-planner-cost-estimation.md).
@@ -257,7 +257,7 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Dire
 
 `ASRDeploymentPlanner.exe -Operation GetThroughput /?`
 
-|Имя параметра | ОПИСАНИЕ |
+|Имя параметра | Описание |
 |-|-|
 | -Operation | Оценка пропускной способности. |
 |-Virtualization|Укажите тип виртуализации (VMware или Hyper-V).|
@@ -290,5 +290,5 @@ ASRDeploymentPlanner.exe -Operation GetThroughput -Directory  E:\vCenter1_Profil
 >
 >  4. Измените параметры Site Recovery на сервере обработки, чтобы [увеличить объем пропускной способности сети, необходимой для репликации](./site-recovery-plan-capacity-vmware.md#control-network-bandwidth).
 
-## <a name="next-steps"></a>Дополнительная информация
-* [Анализ созданного отчета](site-recovery-vmware-deployment-planner-analyze-report.md)
+## <a name="next-steps"></a>Дальнейшие действия
+* [Анализ созданного отчета](site-recovery-vmware-deployment-planner-analyze-report.md).

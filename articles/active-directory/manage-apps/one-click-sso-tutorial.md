@@ -17,10 +17,10 @@ ms.date: 06/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a83d27af4fd783b95c53ef3a9169cb72bfc29d34
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/15/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67872423"
 ---
 # <a name="one-click-app-configuration-of-single-sign-on"></a>Конфигурация приложения одним щелчком для единого входа
@@ -37,7 +37,7 @@ ms.locfileid: "67872423"
 - Более эффективная и точная конфигурация.
 - Для установки не требуется передача данных или поддержка партнером. Приложение предоставляет пользовательский интерфейс для конфигурации SAML.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Активная подписка приложения для настройки с помощью единого входа. Также нужны учетные данные администратора.
 - **Расширение защищенного входа на страницу "Мои приложения"** от корпорации Майкрософт, установленное в браузере. Дополнительные сведения см. в разделе [Доступ и использование приложений на портале "Мои приложения"](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access).

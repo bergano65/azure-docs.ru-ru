@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: areddish
 ms.openlocfilehash: c134f30b124113a23df0e73cd1bbc8209e335183
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73647497"
 ---
 # <a name="update-to-the-30-api"></a>Обновление до API 3,0
@@ -53,7 +53,7 @@ API-интерфейсы 2. x использовали один и тот же �
 
 После публикации итерации приложения могут использовать ее для прогнозирования, указав имя в его вызове прогнозирующего API. Чтобы сделать итерацию недоступной для прогнозирующих вызовов, используйте API **[унпублишитератион](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c771cdcbf6a2b18a0c3b81a)** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Справочная документация по API обучения (ОСТАВШАЯся)](https://go.microsoft.com/fwlink/?linkid=865446)
 * [Справочная документация по API прогнозирования (ОСТАВШАЯся)](https://go.microsoft.com/fwlink/?linkid=865445)

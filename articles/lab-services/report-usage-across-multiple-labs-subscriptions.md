@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: takamath
 ms.openlocfilehash: 912f510f6380c0ba1eb92b7c485091801123558e
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76169178"
 ---
 # <a name="report-azure-devtest-labs-usage-across-multiple-labs-and-subscriptions"></a>Использование отчетов Azure DevTest Labs в нескольких лабораториях и подписках
@@ -35,7 +35,7 @@ ms.locfileid: "76169178"
 Перед экспортом использования ресурсов DevTest Labs необходимо настроить учетную запись хранения Azure, чтобы разрешить сохранение различных файлов, содержащих данные об использовании. Существует два стандартных способа выполнения экспорта данных.
 
 * [DevTest Labs REST API](https://docs.microsoft.com/rest/api/dtl/labs/exportresourceusage) 
-* Командлет PowerShell AZ. Resource Module [вызывает-азресаурцеактион](https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction?view=azps-2.5.0&viewFallbackFrom=azps-2.3.2) с действием `exportResourceUsage`, идентификатором ресурса лаборатории и необходимыми параметрами. 
+* В PowerShell AZ. Resource Module [вызывается командлет-азресаурцеактион](https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction?view=azps-2.5.0&viewFallbackFrom=azps-2.3.2) с действием `exportResourceUsage`, идентификатором ресурса лаборатории и необходимыми параметрами. 
 
     Статья [Экспорт или удаление персональных данных](personal-data-delete-export.md) содержит пример скрипта PowerShell с подробными сведениями о экспортируемых данных. 
 
@@ -83,9 +83,9 @@ ms.locfileid: "76169178"
 
 [Фабрику данных Azure](https://azure.microsoft.com/services/data-factory/) можно использовать для создания, связывания и управления ресурсами в одном интерфейсе размещения. Если требуется больший контроль, отдельный ресурс можно создать в одной группе ресурсов и управлять им независимо от службы фабрики данных.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Когда система будет настроена и данные переходят в долгосрочное хранение, на следующем этапе следует указать вопросы, на которые должны ответить эти данные. Пример. 
+Когда система будет настроена и данные переходят в долгосрочное хранение, на следующем этапе следует указать вопросы, на которые должны ответить эти данные. Пример: 
 
 -   Каково использование размера виртуальной машины?
 

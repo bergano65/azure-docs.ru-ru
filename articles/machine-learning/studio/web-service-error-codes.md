@@ -1,25 +1,27 @@
 ---
-title: Коды ошибок REST API — Машинное обучение Azure Studio (классическая модель) | Документация Майкрософт
+title: Коды ошибок REST API
+titleSuffix: ML Studio (classic) - Azure
 description: Эти коды ошибок могут быть возвращены операцией с веб-службой машинного обучения Azure.
 keywords: ''
 services: machine-learning
-author: xiaoharper
-ms.custom: seodec18
-ms.author: amlstudiodocs
+author: likebupt
+ms.author: keli19
 editor: cgronlun
 ms.assetid: 0923074b-3728-439d-a1b8-8a7245e39be4
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: reference
 ms.date: 11/16/2016
-ms.openlocfilehash: 15e73740f5d932d0fa4cfb9a56c9fe7b155555cc
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: a47550771180411277d21f7acf47ad0a28b6fb9e
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73468159"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209525"
 ---
 # <a name="azure-machine-learning-studio-classic-rest-api-error-codes"></a>Коды ошибок Машинное обучение Azure Studio (классическая модель) REST API
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
  
 Следующие коды ошибок могут возвращаться операцией в веб-службе Машинное обучение Azure Studio (классической).
  
@@ -27,7 +29,7 @@ ms.locfileid: "73468159"
  
 Указан недопустимый аргумент.
  
-Ошибки этого класса означают, что указанный где-то аргумент является недопустимым. Это могут быть учетные данные или расположение службы хранилища Azure, передаваемое в веб-службу. Проверьте поле ошибки "Код" в разделе "Сведения", чтобы выяснить, какой из аргументов является недопустимым.
+Ошибки этого класса означают, что указанный где-то аргумент является недопустимым. Это могут быть учетные данные или расположение службы хранилища Azure, передаваемое в веб-службу. Ознакомьтесь с полем "Code" (код) ошибки в разделе "сведения", чтобы определить, какой из аргументов является недопустимым.
  
 | Код ошибки | Сообщение для пользователя |
 | ---------- |--------------|
@@ -69,7 +71,7 @@ ms.locfileid: "73468159"
 | RequestBodyInvalid | Не указан текст запроса, или при десериализации текста запроса произошла ошибка. |
 | RequestIsEmpty | Запрос не указан. Укажите допустимый запрос и повторите попытку. |
 | UnexpectedParameter | Указан непредвиденный параметр. Проверьте, что имена всех параметров указаны правильно и что передаются только ожидаемые параметры, после чего повторите попытку. |
-| UnknownError | Произошла неизвестная ошибка. |
+| UnknownError | Неизвестная ошибка. |
 | UserParameterInvalid | {0} |
 | WebServiceConcurrentRequestRequirementInvalid | Не удается изменить требуемое число одновременных запросов для веб-службы {0}. |
 | WebServiceIdInvalid | Указан недопустимый идентификатор веб-службы. Идентификатором веб-службы должен быть допустимый идентификатор GUID. |
@@ -209,7 +211,7 @@ ms.locfileid: "73468159"
  
 ## <a name="internalerrorsystemlowonmemory-http-status-code-500"></a>InternalErrorSystemLowOnMemory (код состояния HTTP: 500)
  
-При выполнении обнаружена внутренняя ошибка. В системе нехватка памяти. Повторите попытку позже.
+При выполнении обнаружена внутренняя ошибка. В системе нехватка памяти. Повторите попытку.
  
  
 ## <a name="modelpackageformaterror-http-status-code-500"></a>ModelPackageFormatError (код состояния HTTP: 500)

@@ -17,10 +17,10 @@ ms.date: 12/21/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0937fa513616a3774198d27aeb160de04aa8b83d
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157375"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cloud-service-picco"></a>Руководство по Интеграция Azure Active Directory с облачной службой PICCO
@@ -39,7 +39,7 @@ ms.locfileid: "73157375"
 
 Чтобы настроить интеграцию Azure AD с облачной службой PICCO, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на облачную службу PICCO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -83,7 +83,7 @@ ms.locfileid: "73157375"
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Создание тестового пользователя облачной службы PICCO](#create-cloud-service-picco-test-user)** нужно для того, чтобы в облачной службе PICCO также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -101,13 +101,13 @@ ms.locfileid: "73157375"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа облачной службы PICCO](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUB DOMAIN>.cloudservicepicco.com/app`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUB DOMAIN>.cloudservicepicco.com/app`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `<SUB DOMAIN>.cloudservicepicco.com`.
 

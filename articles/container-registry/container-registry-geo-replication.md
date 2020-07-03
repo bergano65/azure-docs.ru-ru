@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 08/16/2019
 ms.author: stevelas
 ms.openlocfilehash: d238de30e458261a11c941c03ac127c732ca8d3d
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74456443"
 ---
 # <a name="geo-replication-in-azure-container-registry"></a>Георепликация в реестре контейнеров Azure
@@ -122,9 +122,9 @@ ACR начинает синхронизацию образов между нас
 
 Чтобы для разрешения DNS-имен при передаче образов использовалась ближайшая реплика, настройте геореплицированный реестр в том же регионе Azure, где находится источник операций отправки, или в ближайшем регионе при работе вне Azure.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Просмотрите руководство, состоящее из трех частей, [Подготовка геореплицированного реестра контейнеров Azure](container-registry-tutorial-prepare-registry.md). Рассмотрите создание геореплицированного реестра, создание контейнера, а затем его развертывание в несколько региональных экземпляров веб-приложений для контейнеров, выполнив единую команду `docker push`.
 
 > [!div class="nextstepaction"]
-> [Подготовка геореплицированного реестра контейнеров Azure](container-registry-tutorial-prepare-registry.md)
+> [Георепликация в реестре контейнеров Azure](container-registry-tutorial-prepare-registry.md)

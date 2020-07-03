@@ -3,17 +3,16 @@ title: Получение метрик масштабируемого набор
 description: Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Resource Manager для масштабируемого набора виртуальных машин Windows
 author: anirudhcavale
 services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: ec9f7ecf218b635588065c14bd4d11283d027c11
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9a7aa512c636f700cf9c6d990814d9367007c942
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75364090"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125780"
 ---
 # <a name="send-guest-os-metrics-to-the-azure-monitor-metric-store-by-using-an-azure-resource-manager-template-for-a-windows-virtual-machine-scale-set"></a>Отправка метрик гостевой ОС в хранилище метрик Azure Monitor с помощью шаблона Azure Resource Manager для масштабируемого набора виртуальных машин Windows
 
@@ -25,21 +24,21 @@ ms.locfileid: "75364090"
 
 Если вы не знакомы с шаблонами Resource Manager, изучите сведения о [развертывании шаблонов](../../azure-resource-manager/management/overview.md), их структуре и синтаксисе.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Подписку необходимо зарегистрировать в [Microsoft.Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
+- Ваша подписка должна быть зарегистрирована в [Microsoft. Insights](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services). 
 
 - Требуется установить [Azure PowerShell](/powershell/azure) или использовать [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). 
 
 - Ресурс виртуальной машины должен находиться в [регионе, поддерживающем пользовательские метрики](metrics-custom-overview.md#supported-regions).
 
 ## <a name="set-up-azure-monitor-as-a-data-sink"></a>Настройка Azure Monitor в качестве приемника данных 
-Расширение системы диагностики Azure использует функцию **приемников данных** для маршрутизации метрик и журналов в различные расположения. Ниже показано, как с помощью шаблона Resource Manager и PowerShell развернуть виртуальную машину, используя новый приемник данных Azure Monitor. 
+Расширение система диагностики Azure использует функцию, называемую **приемниками данных** , для маршрутизации метрик и журналов в разные расположения. Ниже показано, как с помощью шаблона Resource Manager и PowerShell развернуть виртуальную машину, используя новый приемник данных Azure Monitor. 
 
 ## <a name="author-a-resource-manager-template"></a>Создание шаблона Resource Manager 
-В этом примере можно использовать общедоступный [пример шаблона](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-autoscale).  
+В этом примере можно использовать общедоступный [образец шаблона](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-autoscale):  
 
-- **Azuredeploy.json** — это предварительно настроенный шаблон Resource Manager для развертывания масштабируемого набора виртуальных машин.
+- **Azuredeploy. JSON** — это предварительно настроенный шаблон диспетчер ресурсов для развертывания масштабируемого набора виртуальных машин.
 
 - **Azuredeploy.Parameters.json** — это файл параметров, в котором хранятся сведения, такие как имя пользователя и пароль, которые вы хотите задать для виртуальной машины. Во время развертывания шаблона Resource Manager используются параметры, заданные в этом файле. 
 
@@ -66,7 +65,7 @@ ms.locfileid: "75364090"
 "storageAccountName": "[concat('storage', uniqueString(resourceGroup().id))]", 
 ```
  
-Найдите определение масштабируемого набора виртуальных машин в разделе ресурсов и добавьте в конфигурацию раздел **identity**. Это позволит назначить набору системное удостоверение в Azure. Это действие также гарантирует, что виртуальные машины в масштабируемом наборе могут отправлять гостевые метрики о себе в Azure Monitor.  
+Найдите определение масштабируемого набора виртуальных машин в разделе ресурсов и добавьте раздел **Identity** в конфигурацию. Это позволит назначить набору системное удостоверение в Azure. Это действие также гарантирует, что виртуальные машины в масштабируемом наборе могут отправлять гостевые метрики о себе в Azure Monitor.  
 
 ```json
     { 
@@ -198,7 +197,7 @@ ms.locfileid: "75364090"
 ```
 
 
-Добавьте **dependsOn** для учетной записи хранения, чтобы обеспечить ее создание в правильном порядке. 
+Добавьте **dependsOn** для учетной записи хранения, чтобы убедиться, что она создана в правильном порядке: 
 
 ```json
 "dependsOn": [ 
@@ -233,7 +232,7 @@ ms.locfileid: "75364090"
 ## <a name="deploy-the-resource-manager-template"></a>Развертывание шаблона Resource Manager 
 
 > [!NOTE]  
-> Необходимо запустить расширение системы диагностики Azure 1.5 или более поздней версии, **а также** задать для свойства **autoUpgradeMinorVersion** значение **true** в шаблоне Resource Manager. Затем Azure загрузит нужное расширение при запуске виртуальной машины. Если этих параметров нет в шаблоне, внесите их и повторно разверните шаблон. 
+> Необходимо запустить расширение система диагностики Azure версии 1,5 или более поздней **и** задать для свойства **autoUpgradeMinorVersion:** в шаблоне диспетчер ресурсов значение **true** . Затем Azure загрузит нужное расширение при запуске виртуальной машины. Если этих параметров нет в шаблоне, внесите их и повторно разверните шаблон. 
 
 
 Чтобы развернуть шаблон Resource Manager, используйте Azure PowerShell.  
@@ -253,7 +252,7 @@ ms.locfileid: "75364090"
    ```
 
    > [!NOTE]  
-   > Не забывайте использовать регион Azure, включенный для пользовательских метрик. Не забывайте использовать [регион Azure, включенный для пользовательских метрик](https://github.com/MicrosoftDocs/azure-docs-pr/pull/metrics-custom-overview.md#supported-regions).
+   > Не забывайте использовать регион Azure, включенный для пользовательских метрик. Не забывайте использовать [регион Azure, включенный для пользовательских метрик](./metrics-custom-overview.md#supported-regions).
  
 1. Выполните следующие команды, чтобы развернуть виртуальную машину.  
 
@@ -284,7 +283,7 @@ ms.locfileid: "75364090"
 
 1. В раскрывающемся меню ресурсов выберите масштабируемый набор виртуальных машин, который вы только что создали.  
 
-1. В раскрывающемся меню пространств имен выберите **azure.vm.windows.guest**. 
+1. В раскрывающемся меню пространства имен выберите **Azure. ВМ. Windows. Guest**. 
 
 1. В раскрывающемся меню метрик выберите **Memory\%Committed Bytes in Use** (Процент используемой выделенной памяти).  
 

@@ -1,19 +1,18 @@
 ---
-title: Скачивает панель мониторинга в средстве анализа коммерческих рынков в центре партнеров
+title: Скачивает панель мониторинга в Microsoft коммерческого рынка аналитика в центре партнеров
 description: Узнайте, как получить доступ к запросам на загрузку для предложений Marketplace.
-author: ChJenk
-manager: evansma
-ms.author: v-chjen
+author: dsindona
+ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 5d3142192f5fa9914218721dadb34870d613fbc9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 136a65e47327007d7a28c2777051be61f475323e
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75481169"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732724"
 ---
 # <a name="downloads-dashboard-in-commercial-marketplace-analytics"></a>Загрузка панели мониторинга в коммерческом Analytics Marketplace
 

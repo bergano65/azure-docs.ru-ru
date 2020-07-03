@@ -2,51 +2,50 @@
 title: Функции шаблона — строка
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы со строками.
 ms.topic: conceptual
-ms.date: 07/31/2019
-ms.openlocfilehash: f8d19179461693331a6091ec7a3562f536b959e4
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.date: 04/08/2020
+ms.openlocfilehash: c0517375b273384f263e8ba421995d4afb6c193b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207067"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80982420"
 ---
-# <a name="string-functions-for-azure-resource-manager-templates"></a>Строковые функции для шаблонов Azure Resource Manager
+# <a name="string-functions-for-arm-templates"></a>Строковые функции для шаблонов ARM
 
-Диспетчер ресурсов предоставляет следующие функции для работы со строками:
+Диспетчер ресурсов предоставляет следующие функции для работы со строками в шаблонах Azure Resource Manager (ARM):
 
-* [base64](#base64)
+* [формате](#base64)
 * [base64ToJson](#base64tojson)
 * [base64ToString](#base64tostring)
-* [concat](#concat)
-* [contains](#contains)
+* [сцеплен](#concat)
+* [содержащих](#contains)
 * [dataUri](#datauri)
 * [dataUriToString](#datauritostring)
-* [empty](#empty)
+* [пустых](#empty)
 * [endsWith](#endswith)
-* [first](#first)
+* [началь](#first)
 * [format](#format)
-* [guid](#guid)
+* [устройства](#guid)
 * [indexOf](#indexof)
-* [last](#last)
+* [Последняя](#last)
 * [lastIndexOf](#lastindexof)
 * [length](#length)
 * [newGuid](#newguid)
 * [padLeft](#padleft)
 * [replace](#replace)
-* [skip](#skip)
-* [split](#split)
+* [сразу](#skip)
+* [биваем](#split)
 * [startsWith](#startswith)
-* [строка](#string)
-* [substring](#substring)
-* [take](#take)
+* [string](#string)
+* [подстроки](#substring)
+* [нимают](#take)
 * [toLower](#tolower)
 * [toUpper](#toupper)
-* [trim](#trim)
+* [возмож](#trim)
 * [uniqueString](#uniquestring)
-* [uri](#uri)
+* [URI](#uri)
 * [uriComponent](#uricomponent)
 * [uriComponentToString](#uricomponenttostring)
-* [utcNow](#utcnow)
 
 ## <a name="base64"></a>base64
 
@@ -56,7 +55,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | inputString |Да |строка |Значение, которое нужно вернуть в кодировке base64. |
 
@@ -109,8 +108,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | String | b25lLCB0d28sIHRocmVl |
-| toStringOutput | String | one, two, three |
+| base64Output | Строка | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="base64tojson"></a>base64ToJson
@@ -121,7 +120,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | base64Value |Да |строка |Представление в кодировке base64, которое необходимо преобразовать в объект JSON. |
 
@@ -174,8 +173,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | String | b25lLCB0d28sIHRocmVl |
-| toStringOutput | String | one, two, three |
+| base64Output | Строка | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="base64tostring"></a>base64ToString
@@ -186,7 +185,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | base64Value |Да |строка |Представление в кодировке base64, которое необходимо преобразовать в строку. |
 
@@ -239,8 +238,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| base64Output | String | b25lLCB0d28sIHRocmVl |
-| toStringOutput | String | one, two, three |
+| base64Output | Строка | b25lLCB0d28sIHRocmVl |
+| toStringOutput | Строка | one, two, three |
 | toJsonOutput | Объект | {"one": "a", "two": "b"} |
 
 ## <a name="concat"></a>concat
@@ -251,10 +250,10 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |строка или массив |Первая строка или массив для объединения. |
-| дополнительные аргументы |нет |строка или массив |Дополнительные строки или массивы в последовательном порядке для объединения. |
+| дополнительные аргументы |Нет |строка или массив |Дополнительные строки или массивы в последовательном порядке для объединения. |
 
 Эта функция может принимать любое количество аргументов, а также строки или массивы параметров. Однако нельзя указать как массивы, так и строки для параметров. Строки объединяются только с другими строками.
 
@@ -290,7 +289,7 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| concatOutput | String | prefix-5yj4yjf5mbg72 |
+| concatOutput | Строка | prefix-5yj4yjf5mbg72 |
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/concat-array.json) показано, как объединить два массива.
 
@@ -331,7 +330,7 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| return | Array | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
+| return | Массив | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
 
 ## <a name="contains"></a>contains
 
@@ -341,7 +340,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | контейнер |Да |массив, объект или строка |Значение, содержащее значение, которое необходимо найти. |
 | itemToFind |Да |строка или целое число |Значение, которое необходимо найти. |
@@ -422,7 +421,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToConvert |Да |строка |Значение, которое необходимо преобразовать в URI данных. |
 
@@ -466,8 +465,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| dataUriOutput | String | data:text/plain;charset=utf8;base64,SGVsbG8= |
-| toStringOutput | String | Привет, мир! |
+| dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
+| toStringOutput | Строка | Привет, мир! |
 
 ## <a name="datauritostring"></a>dataUriToString
 
@@ -477,7 +476,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | dataUriToConvert |Да |строка |Значение URI данных, которое необходимо преобразовать. |
 
@@ -521,10 +520,10 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| dataUriOutput | String | data:text/plain;charset=utf8;base64,SGVsbG8= |
-| toStringOutput | String | Привет, мир! |
+| dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
+| toStringOutput | Строка | Привет, мир! |
 
-## <a name="empty"></a>empty
+## <a name="empty"></a>пустых
 
 `empty(itemToTest)`
 
@@ -532,7 +531,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | itemToTest |Да |массив, объект или строка |Значение, которое необходимо проверить, если оно пустое. |
 
@@ -597,7 +596,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -663,7 +662,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Значение, из которого необходимо извлечь первый элемент или знак. |
 
@@ -704,8 +703,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | String | one |
-| stringOutput | String | O |
+| arrayOutput | Строка | one |
+| stringOutput | Строка | O |
 
 ## <a name="format"></a>format
 
@@ -715,11 +714,11 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | formatString | Да | строка | Строка составного формата. |
 | arg1 | Да | Строка, целое число или логическое значение | Значение, включаемое в отформатированную строку. |
-| дополнительные аргументы | нет | Строка, целое число или логическое значение | Дополнительные значения для включения в отформатированную строку. |
+| дополнительные аргументы | Нет | Строка, целое число или логическое значение | Дополнительные значения для включения в отформатированную строку. |
 
 ### <a name="remarks"></a>Remarks
 
@@ -762,7 +761,7 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| форматтест | String | Привет, пользователь. Форматированное число: 8 175 133 |
+| форматтест | Строка | Привет, пользователь. Форматированное число: 8 175 133 |
 
 ## <a name="guid"></a>guid
 
@@ -772,10 +771,10 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | baseString |Да |строка |Значение, используемое в хэш-функции для создания GUID. |
-| Дополнительные параметры (если необходимы) |нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
+| Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
 
 ### <a name="remarks"></a>Remarks
 
@@ -843,7 +842,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -904,7 +903,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Значение, из которого необходимо извлечь последний элемент или знак. |
 
@@ -945,8 +944,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | String | three |
-| stringOutput | String | Д. |
+| arrayOutput | Строка | three |
+| stringOutput | Строка | Д. |
 
 ## <a name="lastindexof"></a>lastIndexOf
 
@@ -956,7 +955,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -1017,7 +1016,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив, строка или объект |Массив, используемый для получения числа элементов, строки, используемой для получения числа символов, или объекта, используемого для получения числа свойств корневого уровня. |
 
@@ -1096,6 +1095,8 @@ ms.locfileid: "77207067"
 Эту функцию можно использовать только в выражении для значения по умолчанию для параметра. Использование этой функции в любом месте шаблона возвращает ошибку. Функция не разрешена в других частях шаблона, поскольку она возвращает другое значение при каждом вызове. Развертывание одного и того же шаблона с теми же параметрами не будет уверенно давать одинаковые результаты.
 
 Функция newGuid отличается от функции [GUID](#guid) , так как она не принимает никаких параметров. При вызове идентификатора GUID с тем же параметром каждый раз возвращается один и тот же идентификатор. Используйте идентификатор GUID, если необходимо надежно создать тот же идентификатор GUID для конкретной среды. Используйте newGuid, если каждый раз требуется другой идентификатор, например развертывание ресурсов в тестовой среде.
+
+Функция newGuid использует [структуру GUID](/dotnet/api/system.guid) в .NET Framework для создания глобального уникального идентификатора.
 
 Если вы используете [параметр для повторного развертывания предыдущего успешного развертывания](rollback-on-error.md), а предыдущее развертывание включает параметр, использующий newGuid, параметр не вычисляется повторно. Вместо этого значение параметра из предыдущего развертывания автоматически используется повторно в развертывании отката.
 
@@ -1190,11 +1191,11 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
-| значение_для_заполнения |Да |строка или целое число |Значение, выравниваемое по правому краю. |
+| значение_для_заполнения  |Да |строка или целое число |Значение, выравниваемое по правому краю. |
 | общая_длина |Да |INT |Общее число символов в возвращаемой строке. |
-| символ_заполнения |нет |один знак |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
+| символ_заполнения |Нет |один знак |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
 
 Если длина исходной строки превышает число знаков для заполнения, то знаки не добавляются.
 
@@ -1230,7 +1231,7 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| stringOutput | String | 0000000123 |
+| stringOutput | Строка | 0000000123 |
 
 ## <a name="replace"></a>replace
 
@@ -1240,7 +1241,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | исходная_строка |Да |строка |Значение, в котором все экземпляры одной строки заменены другой строкой. |
 | oldString |Да |строка |Строка, которая удаляется из исходной строки. |
@@ -1282,8 +1283,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| firstOutput | String | 1231231234 |
-| secondOutput | String | 123-123-xxxx |
+| firstOutput | Строка | 1231231234 |
+| secondOutput | Строка | 123-123-xxxx |
 
 ## <a name="skip"></a>skip
 
@@ -1293,7 +1294,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | originalValue |Да |массив или строка |Массив или строка, используемые для пропуска. |
 | numberToSkip |Да |INT |Число элементов или знаков, которые необходимо пропустить. Если это значение меньше или равно 0, то возвращаются все элементы или знаки в значении. Если он превышает длину массива или строки, возвращается пустой массив или строка. |
@@ -1350,8 +1351,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Array | ["three"] |
-| stringOutput | String | two three |
+| arrayOutput | Массив | ["three"] |
+| stringOutput | Строка | two three |
 
 ## <a name="split"></a>split
 
@@ -1361,7 +1362,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | inputString |Да |строка |Строка для разделения. |
 | разделитель |Да |строка или массив строк |Разделитель для разбиения строки. |
@@ -1409,8 +1410,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| firstOutput | Array | ["one", "two", "three"] |
-| secondOutput | Array | ["one", "two", "three"] |
+| firstOutput | Массив | ["one", "two", "three"] |
+| secondOutput | Массив | ["one", "two", "three"] |
 
 ## <a name="startswith"></a>startsWith
 
@@ -1420,7 +1421,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -1486,7 +1487,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | valueToConvert |Да | Любой |Значение, которое необходимо преобразовать в строку. Можно преобразовать любой тип значения, включая объекты и массивы. |
 
@@ -1545,9 +1546,9 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| objectOutput | String | {"valueA":10,"valueB":"Example Text"} |
-| arrayOutput | String | ["a","b","c"] |
-| intOutput | String | 5 |
+| objectOutput | Строка | {"valueA":10,"valueB":"Example Text"} |
+| arrayOutput | Строка | ["a","b","c"] |
+| intOutput | Строка | 5 |
 
 ## <a name="substring"></a>substring
 
@@ -1557,11 +1558,11 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToParse |Да |строка |Исходная строка, из которой извлекается подстрока. |
-| startIndex |нет |INT |Отсчитываемая от нуля позиция первого знака для подстроки. |
-| length |нет |INT |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
+| startIndex |Нет |INT |Отсчитываемая от нуля позиция первого знака для подстроки. |
+| length |Нет |INT |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -1608,7 +1609,7 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| substringOutput | String | two |
+| substringOutput | Строка | two |
 
 ## <a name="take"></a>take
 
@@ -1618,7 +1619,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | originalValue |Да |массив или строка |Массив или строка, из которых берутся элементы. |
 | numberToTake |Да |INT |Число элементов или знаков, которые необходимо взять. Если это значение меньше или равно 0, то возвращается пустой массив или строка. Если он превышает длину заданного массива или строки, возвращаются все элементы массива или строки. |
@@ -1675,8 +1676,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| arrayOutput | Array | ["one", "two"] |
-| stringOutput | String | on |
+| arrayOutput | Массив | ["one", "two"] |
+| stringOutput | Строка | on |
 
 ## <a name="tolower"></a>toLower
 
@@ -1686,7 +1687,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | изменяемая_строка |Да |строка |Значение, преобразовываемое в нижний регистр. |
 
@@ -1726,8 +1727,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| toLowerOutput | String | one two three |
-| toUpperOutput | String | ONE TWO THREE |
+| toLowerOutput | Строка | one two three |
+| toUpperOutput | Строка | ONE TWO THREE |
 
 ## <a name="toupper"></a>toUpper
 
@@ -1737,7 +1738,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | изменяемая_строка |Да |строка |Значение, преобразовываемое в верхний регистр. |
 
@@ -1777,8 +1778,8 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| toLowerOutput | String | one two three |
-| toUpperOutput | String | ONE TWO THREE |
+| toLowerOutput | Строка | one two three |
+| toUpperOutput | Строка | ONE TWO THREE |
 
 ## <a name="trim"></a>trim
 
@@ -1788,7 +1789,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToTrim |Да |строка |Обрезаемое значение. |
 
@@ -1824,7 +1825,7 @@ ms.locfileid: "77207067"
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| return | String | one two three |
+| return | Строка | one two three |
 
 ## <a name="uniquestring"></a>uniqueString
 
@@ -1834,10 +1835,10 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | baseString |Да |строка |Значение, используемое в хэш-функции для создания уникальной строки. |
-| Дополнительные параметры (если необходимы) |нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
+| Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
 
 ### <a name="remarks"></a>Remarks
 
@@ -1876,7 +1877,7 @@ ms.locfileid: "77207067"
     ...
 ```
 
-Если необходимо создать новое уникальное имя каждый раз при развертывании шаблона и не обновлять ресурс, можно использовать функцию [UtcNow](#utcnow) с uniqueString. Этот подход можно использовать в тестовой среде. Пример см. в разделе [UtcNow](#utcnow).
+Если необходимо создать новое уникальное имя каждый раз при развертывании шаблона и не обновлять ресурс, можно использовать функцию [UtcNow](template-functions-date.md#utcnow) с uniqueString. Этот подход можно использовать в тестовой среде. Пример см. в разделе [UtcNow](template-functions-date.md#utcnow).
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -1912,7 +1913,7 @@ ms.locfileid: "77207067"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | baseUri |Да |строка |Строка базового универсального кода ресурса (URI). Следите за поведением обработки замыкающей косой черты ('/'), как описано ниже в этой таблице.  |
 | relativeUri |Да |строка |Строка относительного универсального кода ресурса (URI), добавляемая к строке базового универсального кода ресурса (URI). |
@@ -1980,9 +1981,9 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | String | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | String | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | String | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="uricomponent"></a>uriComponent
 
@@ -1992,7 +1993,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | stringToEncode |Да |строка |Значение для кодирования. |
 
@@ -2035,9 +2036,9 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | String | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | String | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | String | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 
 ## <a name="uricomponenttostring"></a>uriComponentToString
 
@@ -2047,7 +2048,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Тип | Description |
+| Параметр | Обязательно | Type | Описание |
 |:--- |:--- |:--- |:--- |
 | uriEncodedString |Да |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. |
 
@@ -2090,122 +2091,13 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 | Имя | Тип | Значение |
 | ---- | ---- | ----- |
-| uriOutput | String | `http://contoso.com/resources/nested/azuredeploy.json` |
-| componentOutput | String | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
-| toStringOutput | String | `http://contoso.com/resources/nested/azuredeploy.json` |
+| uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
+| componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
+| toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 
-## <a name="utcnow"></a>utcnow
-
-`utcNow(format)`
-
-Возвращает текущее значение (UTC) DateTime в указанном формате. Если формат не указан, используется формат ISO 8601 (Ииииммддсхммссз). **Эта функция может использоваться только в значении по умолчанию для параметра.**
-
-### <a name="parameters"></a>Параметры
-
-| Параметр | Обязательно | Тип | Description |
-|:--- |:--- |:--- |:--- |
-| format |нет |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. Используйте либо [стандартные строки формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) , либо [строки настраиваемого формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
-
-### <a name="remarks"></a>Remarks
-
-Эту функцию можно использовать только в выражении для значения по умолчанию для параметра. Использование этой функции в любом месте шаблона возвращает ошибку. Функция не разрешена в других частях шаблона, поскольку она возвращает другое значение при каждом вызове. Развертывание одного и того же шаблона с теми же параметрами не будет уверенно давать одинаковые результаты.
-
-Если вы используете [параметр для повторного развертывания предыдущего успешного развертывания](rollback-on-error.md), а предыдущее развертывание включает параметр, использующий UtcNow, параметр не вычисляется повторно. Вместо этого значение параметра из предыдущего развертывания автоматически используется повторно в развертывании отката.
-
-Будьте внимательны при повторном развертывании шаблона, который использует функцию utcNow для значения по умолчанию. При повторном развертывании без предоставления значения для параметра функция вычисляется повторно. Если вы хотите обновить существующий ресурс, а не создать новый, передайте значение параметра из предыдущего развертывания.
-
-### <a name="return-value"></a>Возвращаемое значение
-
-Текущее значение даты и времени в формате UTC.
-
-### <a name="examples"></a>Примеры
-
-В следующем примере шаблона показаны различные форматы для значения DateTime.
-
-```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "utcValue": {
-            "type": "string",
-            "defaultValue": "[utcNow()]"
-        },
-        "utcShortValue": {
-            "type": "string",
-            "defaultValue": "[utcNow('d')]"
-        },
-        "utcCustomValue": {
-            "type": "string",
-            "defaultValue": "[utcNow('M d')]"
-        }
-    },
-    "resources": [
-    ],
-    "outputs": {
-        "utcOutput": {
-            "type": "string",
-            "value": "[parameters('utcValue')]"
-        },
-        "utcShortOutput": {
-            "type": "string",
-            "value": "[parameters('utcShortValue')]"
-        },
-        "utcCustomOutput": {
-            "type": "string",
-            "value": "[parameters('utcCustomValue')]"
-        }
-    }
-}
-```
-
-Выходные данные предыдущего примера зависят от каждого развертывания, но будут выглядеть примерно так:
-
-| Имя | Тип | Значение |
-| ---- | ---- | ----- |
-| уткаутпут | строка | 20190305T175318Z |
-| уткшортаутпут | строка | 03/05/2019 |
-| утккустомаутпут | строка | 3 5 |
-
-В следующем примере показано, как использовать значение из функции при задании значения тега.
-
-```json
-{
-    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "utcShort": {
-            "type": "string",
-            "defaultValue": "[utcNow('d')]"
-        },
-        "rgName": {
-            "type": "string"
-        }
-    },
-    "resources": [
-        {
-            "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2018-05-01",
-            "name": "[parameters('rgName')]",
-            "location": "westeurope",
-            "tags":{
-                "createdDate": "[parameters('utcShort')]"
-            },
-            "properties":{}
-        }
-    ],
-    "outputs": {
-        "utcShort": {
-            "type": "string",
-            "value": "[parameters('utcShort')]"
-        }
-    }
-}
-```
-
-## <a name="next-steps"></a>Дальнейшие действия
-* Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
-* Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](linked-templates.md).
-* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+* Описание разделов в шаблоне Azure Resource Manager см. в разделе [authoring Azure Resource Manager Templates](template-syntax.md).
+* Сведения о слиянии нескольких шаблонов см. в разделе [Использование связанных шаблонов с Azure Resource Manager](linked-templates.md).
+* Чтобы выполнить итерацию указанного числа раз при создании типа ресурса, см. раздел [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
 * Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
 

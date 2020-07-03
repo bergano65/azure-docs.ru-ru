@@ -7,17 +7,17 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: 179d0ff8143b526e100b89cffbbac0bbc29ca3e1
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: f1c85c98b9ea0dcaa6498622a0667bffba080401
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76776668"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858389"
 ---
-# <a name="upgrade-azure-public-load-balancer-from-basic-sku-to-standard-sku"></a>Обновление общедоступного Load Balancer Azure с SKU "базовый" до SKU "Стандартный"
-[Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/concepts-limitations#skus).
+# <a name="upgrade-azure-public-load-balancer"></a>Обновление общедоступных Load Balancer Azure
+[Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus).
 
-Обновление выполняется в два этапа.
+Обновление состоит из трех этапов.
 
 1. Перенос конфигурации
 2. Добавление виртуальных машин в серверные пулы Load Balancer (цен. категория "Стандартный")
@@ -28,27 +28,28 @@ ms.locfileid: "76776668"
 
 Доступен сценарий Azure PowerShell, который выполняет следующие действия:
 
-* Создает стандартную общедоступную SKU Load Balancer в группе ресурсов и расположении, которое вы указали.
-* Без проблем копирует конфигурации базового SKU уровня "базовый" Load Balancer на новый общедоступный Load Balancer "Стандартный".
+* Создает Load Balancer SKU "Стандартный" в группе ресурсов и расположении, которое вы указали.
+* Без проблем копирует конфигурации базового номера SKU Load Balancer на новую Load Balancer (цен. категория "Стандартный") создания.
+* Создает правило исходящего трафика по умолчанию, которое разрешает исходящие подключения.
 
 ### <a name="caveatslimitations"></a>кавеатс\лимитатионс
 
-* Скрипт поддерживает только общедоступные Load Balancer обновления. Для внутреннего базового Load Balancer обновления создайте стандартный внутренний Load Balancer, если не требуется исходящее подключение, и создайте стандартную внутреннюю Load Balancer и общедоступную Load Balancer, если необходимо исходящее подключение.
+* Скрипт поддерживает только общедоступные Load Balancer обновления. Инструкции по внутреннему обновлению базового Load Balancer см. на [этой странице](https://docs.microsoft.com/azure/load-balancer/upgrade-basicinternal-standard) .
 * Load Balancer (цен. категория "Стандартный") имеет новый общедоступный адрес. Невозможно легко переместить IP-адреса, связанные с существующими базовыми Load Balancer, в Load Balancer (цен. категория "Стандартный"), так как они имеют разные номера SKU.
 * Если стандартный балансировщик нагрузки создан в другом регионе, вы не сможете связать существующие виртуальные машины в старом регионе с вновь созданной Load Balancer (цен. категория "Стандартный"). Чтобы обойти это ограничение, обязательно создайте новую виртуальную машину в новом регионе.
 * Если у Load Balancer нет внешней IP-конфигурации или серверного пула, то, скорее всего, будет обнаружена ошибка, которая вызвала бы выполнение скрипта. Убедитесь, что они не пусты.
 
 ## <a name="download-the-script"></a>Скачивание скрипта
 
-Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzurePublicLBUpgrade/1.0).
+Скачайте скрипт миграции из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzurePublicLBUpgrade/2.0).
 ## <a name="use-the-script"></a>Использование скрипта
 
 В зависимости от настроек и настроек локальной среды PowerShell существует два варианта.
 
-* Если вы не установили модули Azure az или не хотите удалять модули Azure AZ, лучшим вариантом будет использование параметра `Install-Script` для запуска скрипта.
+* Если вы не установили модули Azure az или не хотите удалять модули Azure AZ, лучшим вариантом будет использование `Install-Script` параметра для запуска сценария.
 * Если вам нужно разместить модули Azure AZ, лучше скачать сценарий и запустить его напрямую.
 
-Чтобы определить, установлены ли модули Azure AZ, запустите `Get-InstalledModule -Name az`. Если вы не видите ни одного установленного модуля AZ, то можете использовать метод `Install-Script`.
+Чтобы определить, установлены ли модули Azure AZ, запустите `Get-InstalledModule -Name az`. Если вы не видите ни одного установленного модуля AZ, то можете использовать `Install-Script` метод.
 
 ### <a name="install-using-the-install-script-method"></a>Установка с помощью метода Install-Script
 
@@ -68,20 +69,11 @@ ms.locfileid: "76776668"
 
 1. Используйте `Connect-AzAccount` для подключения к Azure.
 
-1. Для импорта модулей AZ используйте `Import-Module Az`.
+1. Используйте `Import-Module Az` для импорта модулей AZ.
 
-1. Запустите `Get-Help AzureLBUpgrade.ps1`, чтобы проверить необходимые параметры:
+1. Проверьте обязательные параметры:
 
-   ```
-   AzurePublicLBUpgrade.ps1
-    -oldRgName <name of the Resource Group where Basic Load Balancer exists>
-    -oldLBName <name of existing Basic Load Balancer>
-    -newrgName <Name of the Resource Group where the new Standard Load Balancer will be created>
-    -newlocation <Name of the location where the new Standard Load Balancer will be created>
-    -newLBName <Name of the Standard Load Balancer to be created>
-   ```
-   Параметры для скрипта:
-   * **олдргнаме: [строка]: обязательно** — это группа ресурсов для существующих базовых Load Balancer, которые требуется обновить. Чтобы найти это строковое значение, перейдите на портал Azure, выберите основной источник Load Balancer и щелкните **Обзор** подсистемы балансировки нагрузки. Группа ресурсов находится на этой странице.
+   * **олдргнаме: [строка]: обязательно** — это группа ресурсов для существующих базовых Load Balancer, которые требуется обновить. Чтобы найти это строковое значение, перейдите к портал Azure, выберите основной источник Load Balancer и щелкните **Обзор** подсистемы балансировки нагрузки. Группа ресурсов находится на этой странице.
    * **олдлбнаме: [строка]: обязательно** — это имя существующего балансировщика базовой подсистемы, которую требуется обновить. 
    * **невргнаме: [строка]: обязательно** — это группа ресурсов, в которой будет создана Load Balancer (цен. Категория "Стандартный"). Это может быть новая группа ресурсов или существующая. При выборе существующей группы ресурсов Обратите внимание, что имя Load Balancer должно быть уникальным в пределах группы ресурсов. 
    * **newlocation: [строка]: required** — расположение, в котором будет создана Load Balancer (цен. Категория "Стандартный"). Рекомендуется наследовать то же расположение выбранного базового Load Balancer Load Balancer (цен. категория "Стандартный") для лучшего сопоставления с другими существующими ресурсами.
@@ -91,7 +83,7 @@ ms.locfileid: "76776668"
     **Пример**
 
    ```azurepowershell
-   ./AzurePublicLBUpgrade.ps1 -oldRgName "test_publicUpgrade_rg" -oldLBName "LBForPublic" -newrgName "test_userInput3_rg" -newlocation "centralus" -newLbName "LBForUpgrade"
+   AzurePublicLBUpgrade.ps1 -oldRgName "test_publicUpgrade_rg" -oldLBName "LBForPublic" -newrgName "test_userInput3_rg" -newlocation "centralus" -newLbName "LBForUpgrade"
    ```
 
 ### <a name="add-vms-to-backend-pools-of-standard-load-balancer"></a>Добавление виртуальных машин в серверные пулы Load Balancer (цен. категория "Стандартный")
@@ -118,6 +110,12 @@ ms.locfileid: "76776668"
 * **Создание новых виртуальных машин для добавления в серверные пулы вновь созданного стандартного Общедоступного Load Balancer**.
     * Дополнительные инструкции о том, как создать виртуальную машину и связать ее с Load Balancer (цен. категория "Стандартный"), можно найти [здесь](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal#create-virtual-machines).
 
+### <a name="create-an-outbound-rule-for-outbound-connection"></a>Создание правила исходящего трафика для исходящего подключения
+
+Следуйте [инструкциям](https://docs.microsoft.com/azure/load-balancer/configure-load-balancer-outbound-portal#create-outbound-rule-configuration) , чтобы создать правило исходящего трафика, чтобы можно было
+* Определение исходящего NAT с нуля.
+* Масштабирование и Настройка поведения существующего исходящего NAT.
+
 ## <a name="common-questions"></a>Часто задаваемые вопросы
 
 ### <a name="are-there-any-limitations-with-the-azure-powershell-script-to-migrate-the-configuration-from-v1-to-v2"></a>Существуют ли какие либо ограничения в сценарии Azure PowerShell для переноса конфигурации с версии v1 на версию 2?
@@ -130,8 +128,8 @@ ms.locfileid: "76776668"
 
 ### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>При использовании этого сценария возникли проблемы. Как получить помощь?
   
-Вы можете отправить электронное письмо по адресу slbupgradesupport@microsoft.com, открыть обращение в службу поддержки Azure или выполнить оба действия.
+Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com, открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Обзор Azure Load Balancer уровня "Стандартный" (предварительная версия)](load-balancer-overview.md)
+[Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

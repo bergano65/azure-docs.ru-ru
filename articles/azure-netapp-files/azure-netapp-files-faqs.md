@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/05/2020
+ms.date: 04/27/2020
 ms.author: b-juche
-ms.openlocfilehash: aaa7e5e65ced2a9899bef5a811ee74be42a8548f
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: a8c299a6f0e6732d50b40fc29bde07179fc2c412
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048816"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82185648"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Часто задаваемые вопросы о Azure NetApp Files
 
@@ -46,6 +46,10 @@ ms.locfileid: "77048816"
 > [!NOTE] 
 > При необходимости Azure NetApp Files может развернуть дополнительные IP-адреса для службы.  Может потребоваться периодически обновлять записи DNS.
 
+### <a name="can-i-set-or-select-my-own-ip-address-for-an-azure-netapp-files-volume"></a>Можно ли задать или выбрать собственный IP-адрес для Azure NetApp Filesного тома?  
+
+Нет. Назначение IP-адресов для Azure NetApp Files томов является динамическим. Назначение статических IP-адресов не поддерживается. 
+ 
 ## <a name="security-faqs"></a>Часто задаваемые вопросы о безопасности
 
 ### <a name="can-the-network-traffic-between-the-azure-vm-and-the-storage-be-encrypted"></a>Может ли шифроваться сетевой трафик между виртуальной машиной Azure и хранилищем?
@@ -60,7 +64,7 @@ ms.locfileid: "77048816"
 
 Управление ключами для Azure NetApp Files обрабатывается службой. Для каждого тома создается уникальный ключ шифрования данных XTS-AES-256. Иерархия ключей шифрования используется для шифрования и защиты всех ключей томов. Эти ключи шифрования никогда не отображаются или не передаются в виде незашифрованного формата. Ключи шифрования немедленно удаляются при удалении тома.
 
-Сейчас управляемые пользователем ключи (с собственными ключами) не поддерживаются.
+Поддержка управляемых пользователем ключей (использование собственных ключей) с помощью выделенного HSM-модуля Azure доступна на управляемом уровне в Восточная часть США, США West2 и Юго-Центральный регион США.  Доступ можно запросить по адресу **anffeedback@microsoft.com**. При наличии доступной емкости запросы будут утверждены.
 
 ### <a name="can-i-configure-the-nfs-export-policy-rules-to-control-access-to-the-azure-netapp-files-service-mount-target"></a>Можно ли настроить правила политики экспорта NFS для контроля доступа к целевому объекту подключения службы Azure NetApp Files?
 
@@ -103,7 +107,7 @@ Azure NetApp Files предоставляет метрики производи�
 
 ### <a name="i-want-to-have-a-volume-mounted-automatically-when-an-azure-vm-is-started-or-rebooted--how-do-i-configure-my-host-for-persistent-nfs-volumes"></a>Я хочу автоматически подключить том при запуске или перезагрузке виртуальной машины Azure.  Разделы справки настроить узел для постоянных томов NFS?
 
-Чтобы том NFS автоматически подключаться при запуске или перезагрузке виртуальной машины, добавьте запись в файл `/etc/fstab` на узле. 
+Чтобы том NFS автоматически подключаться при запуске или перезагрузке виртуальной машины, добавьте запись в `/etc/fstab` файл на узле. 
 
 Дополнительные сведения см. [в статье подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md) .  
 
@@ -113,11 +117,7 @@ Azure NetApp Files предоставляет метрики производи�
 
 ### <a name="what-nfs-version-does-azure-netapp-files-support"></a>Какая версия NFS поддерживает Azure NetApp Files?
 
-Azure NetApp Files поддерживает NFSv3 и Нфсв 4.1. Вы можете создать том с помощью версии NFS. 
-
-> [!IMPORTANT] 
-> Для доступа к функции NFS версии 4.1 требуется внесение в список разрешений.  Чтобы запросить внесение в список разрешений, отправьте запрос по адресу <anffeedback@microsoft.com>. 
-
+Azure NetApp Files поддерживает NFSv3 и Нфсв 4.1. Вы можете [создать том](azure-netapp-files-create-volumes.md) с помощью версии NFS. 
 
 ### <a name="how-do-i-enable-root-squashing"></a>Разделы справки включить корневую использование параметра Squash?
 
@@ -139,7 +139,7 @@ Azure NetApp Files не поддерживает множественные по
 
 Поддерживаются [службы доменов Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/overview) и [домен Active Directory Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) . С Azure NetApp Files можно использовать существующие Active Directory контроллеры домена. Контроллеры домена могут размещаться в Azure как виртуальные машины или локально с помощью ExpressRoute или S2S VPN. В настоящее время Azure NetApp Files не поддерживает присоединение к AD для [Azure Active Directory](https://azure.microsoft.com/resources/videos/azure-active-directory-overview/) .
 
-При использовании Azure NetApp Files с доменными службами Azure Active Directory путь подразделения `OU=AADDC Computers` при настройке Active Directory для учетной записи NetApp.
+Если вы используете Azure NetApp Files с доменными службами Azure Active Directory, путь подразделения задается `OU=AADDC Computers` при настройке Active Directory для учетной записи NetApp.
 
 ### <a name="what-versions-of-windows-server-active-directory-are-supported"></a>Какие версии Windows Server Active Directory поддерживаются?
 
@@ -148,6 +148,18 @@ Azure NetApp Files поддерживает версии домен Active Direc
 ### <a name="why-does-the-available-space-on-my-smb-client-not-show-the-provisioned-size"></a>Почему доступное пространство на моем клиенте SMB не показывает подготовленный размер?
 
 Размер тома, сообщаемый SMB-клиентом, — это максимальный размер, который может увеличить Azure NetApp Files том. Размер тома Azure NetApp Files, как показано на SMB-клиенте, не отражен в размере квоты или размера тома. Вы можете получить Azure NetApp Files размер или квоту тома с помощью портал Azure или API.
+
+<!--
+### Does Azure NetApp Files support Kerberos encryption?
+
+Yes, by default, Azure NetApp Files supports both AES-128 and AES-256 encryption for traffic between the service and the targeted Active Directory domain controllers. See [Create an SMB volume for Azure NetApp Files](azure-netapp-files-create-volumes-smb.md) for requirements. 
+-->
+
+<!--
+### Does Azure NetApp Files support LDAP signing? 
+
+Yes, Azure NetApp Files supports LDAP signing by default. This functionality enables secure LDAP lookups between the Azure NetApp Files service and the user-specified [Active Directory Domain Services domain controllers](https://docs.microsoft.com/windows/win32/ad/active-directory-domain-services). For more information, see [ADV190023 | Microsoft Guidance for Enabling LDAP Channel Binding and LDAP Signing](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023).
+--> 
 
 ## <a name="capacity-management-faqs"></a>Вопросы и ответы по управлению емкостью
 
@@ -158,6 +170,26 @@ Azure NetApp Files предоставляет метрики емкости пу
 ### <a name="can-i-manage-azure-netapp-files-through-azure-storage-explorer"></a>Можно ли управлять Azure NetApp Files с помощью Обозреватель службы хранилища Azure?
 
 Нет. Azure NetApp Files не поддерживается Обозреватель службы хранилища Azure.
+
+### <a name="how-do-i-determine-if-a-directory-is-approaching-the-limit-size"></a>Разделы справки определить, приближается ли размер каталога к размеру?
+
+Можно использовать `stat` команду клиента, чтобы определить, приближается ли каталог к максимальному пределу (320 МБ).
+
+Для каталога 320 МБ количество блоков равно 655360, а размер каждого блока составляет 512 байт.  (Т. е. 320x1024x1024/512.)  
+
+Примеры
+
+    [makam@cycrh6rtp07 ~]$ stat bin
+    File: 'bin'
+    Size: 4096            Blocks: 8          IO Block: 65536  directory
+
+    [makam@cycrh6rtp07 ~]$ stat tmp
+    File: 'tmp'
+    Size: 12288           Blocks: 24         IO Block: 65536  directory
+ 
+    [makam@cycrh6rtp07 ~]$ stat tmp1
+    File: 'tmp1'
+    Size: 4096            Blocks: 8          IO Block: 65536  directory
 
 ## <a name="data-migration-and-protection-faqs"></a>Часто задаваемые вопросы по переносу и защите данных
 

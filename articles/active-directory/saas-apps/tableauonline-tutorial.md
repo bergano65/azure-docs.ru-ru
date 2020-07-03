@@ -1,5 +1,5 @@
 ---
-title: Руководство. по интеграции Azure Active Directory с Tableau Online | Документация Майкрософт
+title: Руководство по по интеграции Azure Active Directory с Tableau Online | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Tableau Online.
 services: active-directory
 documentationCenter: na
@@ -15,13 +15,13 @@ ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
 ms.openlocfilehash: 187600edb599f5a5775e1b847ed1cb3a49f3b827
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76985617"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-online"></a>Руководство. Интеграция единого входа Azure Active Directory с Tableau Online
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tableau-online"></a>Руководство по Интеграция единого входа Azure Active Directory с Tableau Online
 
 В этом руководстве вы узнаете, как интегрировать Tableau Online с Azure Active Directory (Azure AD). Интеграция Tableau Online с Azure AD обеспечивает приведенные ниже возможности.
 

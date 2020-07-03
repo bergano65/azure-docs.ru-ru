@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: mialdrid
 ms.openlocfilehash: 18d2db18e9880028c60b4b545c3628f4a9cb4703
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436955"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79264795"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit"></a>Создание и изменение пиринга для канала ExpressRoute
 
@@ -43,7 +43,7 @@ ms.locfileid: "75436955"
 > 
 > 
 
-## <a name="msft"></a>Пиринг Майкрософт
+## <a name="microsoft-peering"></a><a name="msft"></a>Пиринг Майкрософт
 
 Этот раздел поможет создать, получить, обновить и (или) удалить конфигурацию пиринга Майкрософт для канала ExpressRoute.
 
@@ -85,7 +85,7 @@ ms.locfileid: "75436955"
 > [!IMPORTANT]
 > Корпорация Майкрософт проверяет, назначены ли вам указанные "объявленные общедоступные префиксы" и "одноранговый ASN" (или "клиент ASN") в реестре Интернет-маршрутизации. Если вы получаете общедоступные префиксы из другой сущности и если назначение не записано в реестре маршрутизации, автоматическая проверка не будет завершена и потребуется проверка вручную. Если автоматическая проверка не удалась, вы увидите сообщение "требуется проверка". 
 >
-> Если отображается сообщение "требуется проверка", собирайте документы, которые отображают открытые префиксы, для вашей организации назначается сущность, указанная в качестве владельца префиксов в реестре маршрутизации, и отправка этих документов для проверки вручную открыв запрос в службу поддержки, как показано ниже. 
+> Если вы видите сообщение "требуется проверка", собирайте документы, которые отображают открытые префиксы, в вашу организацию, используя сущность, указанную в качестве владельца префиксов в реестре маршрутизации, и отправьте эти документы для проверки вручную, открыв запрос в службу поддержки, как показано ниже. 
 >
 
    Если канал получает состояние "требуется проверка", необходимо отправить запрос в службу поддержки, чтобы узнать о подтверждении принадлежности префиксов в нашей группе поддержки. Запрос в службу поддержки можно создать непосредственно на портале, как показано в следующем примере:
@@ -96,24 +96,24 @@ ms.locfileid: "75436955"
 
    ![Состояние пиринга: настроено](./media/expressroute-howto-routing-portal-resource-manager/configured-m.png "Состояние пиринга: настроено")]
 
-### <a name="getmsft"></a>Просмотр сведений о пиринге Майкрософт
+### <a name="to-view-microsoft-peering-details"></a><a name="getmsft"></a>Просмотр сведений о пиринге Майкрософт
 
 Чтобы просмотреть свойства пиринга Майкрософт, выберите строку для пиринга.
 
 [![Просмотр свойств пиринга Майкрософт](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m.png "Просмотреть свойства")](./media/expressroute-howto-routing-portal-resource-manager/view-peering-m-lightbox.png#lightbox)
-### <a name="updatemsft"></a>Обновление конфигурации пиринга Майкрософт
+### <a name="to-update-microsoft-peering-configuration"></a><a name="updatemsft"></a>Обновление конфигурации пиринга Майкрософт
 
 Можно выбрать строку для пиринга, которую требуется изменить, а затем изменить свойства пиринга и сохранить изменения.
 
 ![Выбор строки пиринга](./media/expressroute-howto-routing-portal-resource-manager/update-peering-m.png)
 
-### <a name="deletemsft"></a>Удаление пиринга Майкрософт
+### <a name="to-delete-microsoft-peering"></a><a name="deletemsft"></a>Удаление пиринга Майкрософт
 
 Чтобы удалить конфигурацию пиринга, щелкните значок Удалить, как показано на следующем рисунке:
 
 ![Удаление пиринга](./media/expressroute-howto-routing-portal-resource-manager/delete-peering-m.png)
 
-## <a name="private"></a>Частный пиринг Azure
+## <a name="azure-private-peering"></a><a name="private"></a>Частный пиринг Azure
 
 Этот раздел поможет вам создать, получить, обновить и (или) удалить конфигурацию частного пиринга Azure для канала ExpressRoute.
 
@@ -149,19 +149,19 @@ ms.locfileid: "75436955"
 
    ![частный пиринг сохранен](./media/expressroute-howto-routing-portal-resource-manager/save-p.png)
 
-### <a name="getprivate"></a>Просмотр сведений о частном пиринге Azure
+### <a name="to-view-azure-private-peering-details"></a><a name="getprivate"></a>Просмотр сведений о частном пиринге Azure
 
 Чтобы посмотреть свойства частного пиринга Azure, выберите нужный пиринг.
 
 [![Просмотр свойств частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/view-p.png "Просмотр свойств частного пиринга")](./media/expressroute-howto-routing-portal-resource-manager/view-p-lightbox.png#lightbox)
 
-### <a name="updateprivate"></a>Обновление конфигурации частного пиринга Azure
+### <a name="to-update-azure-private-peering-configuration"></a><a name="updateprivate"></a>Обновление конфигурации частного пиринга Azure
 
 Щелкнув строку пиринга, вы сможете изменить свойства пиринга. После обновления сохраните изменения.
 
 ![Обновление частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/update-peering-p.png)
 
-### <a name="deleteprivate"></a>Удаление частного пиринга Azure
+### <a name="to-delete-azure-private-peering"></a><a name="deleteprivate"></a>Удаление частного пиринга Azure
 
 Конфигурацию пиринга можно удалить, щелкнув значок "Удалить", как показано на следующем изображении:
 
@@ -173,9 +173,9 @@ ms.locfileid: "75436955"
 ![Удаление частного пиринга](./media/expressroute-howto-routing-portal-resource-manager/delete-p.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md).
+Следующий шаг: [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-portal-resource-manager.md)
 * Дополнительную информацию о рабочих процессах ExpressRoute см. в статье [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).
 * Дополнительную информацию о пиринге канала см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md).
 * Подробнее о работе с виртуальными сетями см. в статье [Обзор виртуальных сетей](../virtual-network/virtual-networks-overview.md).

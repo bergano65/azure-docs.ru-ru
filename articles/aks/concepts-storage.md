@@ -2,17 +2,14 @@
 title: Основные понятия хранения данных в Службе Azure Kubernetes (AKS)
 description: Узнайте о хранении данных в Службе Azure Kubernetes (AKS), включая тома, постоянные тома, классы хранилищ и утверждения.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/01/2019
-ms.author: mlearned
-ms.openlocfilehash: d6c14f78fd3cefa5ec41a686ca385639eb3fcb67
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 4bb19d7da971a82aef9c0e1fc092cc648ac49c4c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549280"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77596000"
 ---
 # <a name="storage-options-for-applications-in-azure-kubernetes-service-aks"></a>Возможности хранения данных в Службе Azure Kubernetes (AKS)
 
@@ -101,7 +98,7 @@ spec:
       storage: 5Gi
 ```
 
-При создании определения pod указывается утверждение постоянного тома для запроса требуемого хранилища. Затем указывается подключение *volumeMount* для приложений, предназначенное для чтения и записи данных. В приведенном ниже примере YAML-файла манифеста показано, как предыдущее утверждение постоянного тома может использоваться для подключения тома в *azure/mnt/* .
+При создании определения pod указывается утверждение постоянного тома для запроса требуемого хранилища. Затем указывается подключение *volumeMount* для приложений, предназначенное для чтения и записи данных. В приведенном ниже примере YAML-файла манифеста показано, как предыдущее утверждение постоянного тома может использоваться для подключения тома в *azure/mnt/*.
 
 ```yaml
 kind: Pod
@@ -121,24 +118,24 @@ spec:
         claimName: azure-managed-disk
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Соответствующие рекомендации см. в разделе рекомендации [по хранению и резервному копированию в AKS][operator-best-practices-storage].
 
 Чтобы узнать, как для создавать динамические и статические тома, использующие диски Azure или файлы Azure, ознакомьтесь со следующими практическими руководствами:
 
 - [Создание статического тома с помощью дисков Azure][aks-static-disks]
-- [Создание статического тома с помощью службы файлов Azure][aks-static-files]
+- [Создание статического тома с помощью файлов Azure][aks-static-files]
 - [Создание динамического тома с помощью дисков Azure][aks-dynamic-disks]
-- [Создание динамического тома с помощью службы файлов Azure][aks-dynamic-files]
+- [Создание динамического тома с помощью файлов Azure][aks-dynamic-files]
 
 Дополнительные сведения о ключевых концепциях Kubernetes и AKS вы получите в следующих статьях:
 
-- [Кластеры и рабочие нагрузки Kubernetes/AKS][aks-concepts-clusters-workloads]
-- [Удостоверение Kubernetes/AKS][aks-concepts-identity]
+- [Кластеры и рабочие нагрузки Kubernetes и AKS][aks-concepts-clusters-workloads]
+- [Идентификация в Kubernetes и AKS][aks-concepts-identity]
 - [Безопасность Kubernetes и AKS][aks-concepts-security]
-- [Виртуальные сети Kubernetes/AKS][aks-concepts-network]
-- [Масштабирование Kubernetes/AKS][aks-concepts-scale]
+- [Виртуальные сети Kubernetes и AKS][aks-concepts-network]
+- [Масштабирование Kubernetes и AKS][aks-concepts-scale]
 
 <!-- EXTERNAL LINKS -->
 

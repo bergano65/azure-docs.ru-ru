@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/22/2019
+ms.date: 02/27/2020
 ms.author: juliako
-ms.openlocfilehash: cfc9d944f7851f9b802e18c861fd16438171b8e7
-ms.sourcegitcommit: a460fdc19d6d7af6d2b5a4527e1b5c4e0c49942f
+ms.openlocfilehash: 94a70a1234d902787f248890f0cb538a4ba9c2f9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77069589"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77921085"
 ---
 # <a name="azure-media-services-legacy-components"></a>Устаревшие компоненты служб мультимедиа Azure
 
@@ -33,11 +33,16 @@ ms.locfileid: "77069589"
 
 Мы также сообщаем о прекращении использования следующих Аналитика мультимедиа обработчиков мультимедиа: 
  
-|Имя обработчика мультимедиа|Дата вывода|Дополнительные замечания|
+|Имя обработчика мультимедиа|Дата вывода|Дополнительные сведения|
 |---|---|
 |[Azure Media Indexer 2](media-services-process-content-with-indexer2.md)|1 января 2020 г.|Этот обработчик мультимедиа заменяется [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Дополнительные сведения см. в статье [Миграция из Azure Media indexer 2 в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md).|
-|[Azure Media Indexer](media-services-index-content.md)|1 марта 2023 г.|Этот обработчик мультимедиа заменяется [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Дополнительные сведения см. в статье [Миграция с Azure Media indexer в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md) .
+|[Azure Media Indexer](media-services-index-content.md)|1 марта 2023 г.|Этот обработчик мультимедиа заменяется [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Дополнительные сведения см. в статье [Миграция с Azure Media indexer в индексатор видео служб мультимедиа Azure](migrate-indexer-v1-v2.md) .|
+|[Обнаружение движения](media-services-motion-detection.md)|1 июня 2020 г.|В настоящее время нет планов замены.|
+|[Формирование сводных данных видео](media-services-video-summarization.md)|1 июня 2020 г.|В настоящее время нет планов замены.|
+|[Оптическое распознавание символов видео](media-services-video-optical-character-recognition.md)|1 июня 2020 г.|Этот обработчик мультимедиа заменяется [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Кроме того, рассмотрите возможность использования [API служб мультимедиа Azure v3](https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept). <br/>См. статью [Сравнение установок и индексатора видео служб мультимедиа Azure v3](https://docs.microsoft.com/azure/media-services/video-indexer/compare-video-indexer-with-media-services-presets) .|
+|[Обнаружение лиц](media-services-face-and-emotion-detection.md)|1 июня 2020 г.|Этот обработчик мультимедиа заменяется [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Кроме того, рассмотрите возможность использования [API служб мультимедиа Azure v3](https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept). <br/>См. статью [Сравнение установок и индексатора видео служб мультимедиа Azure v3](https://docs.microsoft.com/azure/media-services/video-indexer/compare-video-indexer-with-media-services-presets) .|
+|[Content Moderator](media-services-content-moderation.md)|1 июня 2020 г.|Этот обработчик мультимедиа заменяется [индексатором видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/). Кроме того, рассмотрите возможность использования [API служб мультимедиа Azure v3](https://docs.microsoft.com/azure/media-services/latest/analyzing-video-audio-files-concept). <br/>См. статью [Сравнение установок и индексатора видео служб мультимедиа Azure v3](https://docs.microsoft.com/azure/media-services/video-indexer/compare-video-indexer-with-media-services-presets) .|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](../latest/migrate-from-v2-to-v3.md)

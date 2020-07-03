@@ -1,41 +1,30 @@
 ---
 title: Параметры приложения — LUIS
-titleSuffix: Azure Cognitive Services
 description: Параметры приложений для языка Cognitive Services Azure "Общие сведения о приложениях" хранятся в приложении и на портале.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: language-understanding
-ms.topic: conceptual
-ms.date: 11/12/2019
-ms.author: diberry
-ms.openlocfilehash: bae4f09b539e26ca8c0d4ce97999776dc0911601
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.topic: reference
+ms.date: 05/04/2020
+ms.openlocfilehash: 7b545e0959a43520b7d643ef8c0658a1e1a3b295
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961788"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83590997"
 ---
-# <a name="application-settings"></a>Параметры приложения
+# <a name="app-and-version-settings"></a>Параметры приложения и версии
 
-Эти параметры приложения хранятся в [экспортированном](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) приложении и [обновляются](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) с помощью интерфейсов API. При изменении параметров версии приложения состояние обучения приложения сбрасывается на "не обучено".
+Эти параметры хранятся в [экспортированном](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) приложении и обновляются с помощью интерфейсов API или портала Luis.
 
-|Настройка|Значение по умолчанию|Примечания|
-|--|--|--|
-|нормализепунктуатион|True,|Удаляет знаки препинания.|
-|NormalizeDiacritics|True,|Удаляет диакритические знаки.|
+При изменении параметров версии приложения состояние обучения приложения сбрасывается на "не обучено".
 
-## <a name="diacritics-normalization"></a>Нормализация диакритических знаков 
+[!INCLUDE [App and version settings](includes/app-version-settings.md)]
 
-Включите нормализацию utterance для диакритических знаков в файле приложения LUIS JSON в параметре `settings`.
 
-```JSON
-"settings": [
-    {"name": "NormalizeDiacritics", "value": "true"}
-] 
-```
+Ниже приведены текстовые ссылки и примеры.
+
+* [Знаки препинания](#punctuation-normalization)
+* [Знак](#diacritics-normalization)
+
+## <a name="diacritics-normalization"></a>Нормализация диакритических знаков
 
 В следующем фразы продолжительностью показано, как нормализация диакритических знаков влияет на фразы продолжительностью:
 
@@ -46,7 +35,7 @@ ms.locfileid: "73961788"
 
 ### <a name="language-support-for-diacritics"></a>Языковая поддержка диакритических знаков
 
-#### <a name="brazilian-portuguese-pt-br-diacritics"></a>Португальский (Бразилия) `pt-br` диакритические знаки
+#### <a name="brazilian-portuguese-pt-br-diacritics"></a>Португальская бразильская `pt-br` диакритические знаки
 
 |Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |-|-|
@@ -61,10 +50,10 @@ ms.locfileid: "73961788"
 |`ó`|`o`|
 |`ô`|`o`|
 |`õ`|`o`|
-|`ú`|`u`| 
+|`ú`|`u`|
 |||
 
-#### <a name="dutch-nl-nl-diacritics"></a>Голландский `nl-nl` диакритические знаки
+#### <a name="dutch-nl-nl-diacritics"></a>Голландская `nl-nl` диакритические знаки
 
 |Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |-|-|
@@ -77,11 +66,11 @@ ms.locfileid: "73961788"
 |`í`|`i`|
 |`ó`|`o`|
 |`ö`|`o`|
-|`ú`|`u`| 
+|`ú`|`u`|
 |`ü`|`u`|
 |||
 
-#### <a name="french-fr--diacritics"></a>Французский `fr-` диакритические знаки
+#### <a name="french-fr--diacritics"></a>Канадские `fr-` диакритические знаки
 
 К ним относятся французские и канадские языки и региональные параметры.
 
@@ -91,24 +80,24 @@ ms.locfileid: "73961788"
 |`à`|`a`|
 |`è`|`e`|
 |`ù`|`u`|
-|`â`|`a`| 
-|`ê`|`e`| 
-|`î`|`i`| 
-|`ô`|`o`| 
-|`û`|`u`| 
-|`ç`|`c`| 
-|`ë`|`e`| 
-|`ï`|`i`| 
-|`ü`|`u`| 
-|`ÿ`|`y`| 
+|`â`|`a`|
+|`ê`|`e`|
+|`î`|`i`|
+|`ô`|`o`|
+|`û`|`u`|
+|`ç`|`c`|
+|`ë`|`e`|
+|`ï`|`i`|
+|`ü`|`u`|
+|`ÿ`|`y`|
 
-#### <a name="german-de-de-diacritics"></a>`de-de` знаков на немецком языке
+#### <a name="german-de-de-diacritics"></a>Знаки на немецком языке `de-de`
 
 |Диакритические знаки имеют значение false|Диакритические знаки имеют значение true|
 |--|--|
 |`ä`|`a`|
-|`ö`|`o`| 
-|`ü`|`u`| 
+|`ö`|`o`|
+|`ü`|`u`|
 
 #### <a name="italian-it-it-diacritics"></a>Итальянские `it-it` диакритические знаки
 
@@ -117,15 +106,15 @@ ms.locfileid: "73961788"
 |`à`|`a`|
 |`è`|`e`|
 |`é`|`e`|
-|`ì`|`i`| 
-|`í`|`i`| 
-|`î`|`i`| 
-|`ò`|`o`| 
-|`ó`|`o`| 
+|`ì`|`i`|
+|`í`|`i`|
+|`î`|`i`|
+|`ò`|`o`|
+|`ó`|`o`|
 |`ù`|`u`|
 |`ú`|`u`|
 
-#### <a name="spanish-es--diacritics"></a>Испанский `es-` диакритические знаки
+#### <a name="spanish-es--diacritics"></a>Испанские `es-` диакритические знаки
 
 Сюда входит испанский и канадский Мексики.
 
@@ -133,22 +122,13 @@ ms.locfileid: "73961788"
 |-|-|
 |`á`|`a`|
 |`é`|`e`|
-|`í`|`i`| 
-|`ó`|`o`| 
+|`í`|`i`|
+|`ó`|`o`|
 |`ú`|`u`|
 |`ü`|`u`|
 |`ñ`|`u`|
 
-
 ## <a name="punctuation-normalization"></a>Нормализация знаков препинания
-
-Включите нормализацию utterance для знаков препинания в файле приложения LUIS JSON в параметре `settings`.
-
-```JSON
-"settings": [
-    {"name": "NormalizePunctuation", "value": "true"}
-] 
-```
 
 В следующем фразы продолжительностью показано, как пунктуация влияет на фразы продолжительностью:
 
@@ -159,12 +139,12 @@ ms.locfileid: "73961788"
 
 ### <a name="punctuation-removed"></a>Пунктуация удалена
 
-Следующие знаки пунктуации удаляются с `NormalizePunctuation` имеет значение true.
+Следующие знаки пунктуации удаляются с параметром `NormalizePunctuation` , установленным в значение true.
 
 |Пунктуация|
 |--|
-|`-`| 
-|`.`| 
+|`-`|
+|`.`|
 |`'`|
 |`"`|
 |`\`|
@@ -183,3 +163,7 @@ ms.locfileid: "73961788"
 |`}`|
 |`+`|
 |`¡`|
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* Изучите [Основные понятия](luis-concept-utterance.md#utterance-normalization-for-diacritics-and-punctuation) диакритических знаков и знаков препинания.

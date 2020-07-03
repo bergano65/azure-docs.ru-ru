@@ -6,19 +6,21 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 02/01/2020
+ms.date: 03/27/2020
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: 4146191453e7c7a589dacc41345a36a29a540de5
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 1c3f58d42b6f311e4e238dcffe7da42afd8a5306
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964359"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81416726"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описаны действия по подготовке среды выполнения интеграции Azure-SQL Server Integration Services (SSIS) в фабрике данных Azure. Среда выполнения интеграции Azure-SSIS поддерживает следующие возможности:
 
@@ -37,13 +39,13 @@ ms.locfileid: "76964359"
 
 В этой статье показано, как подготавливать Azure-SSIS IR с помощью портал Azure, Azure PowerShell и шаблона Azure Resource Manager.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 - **Подписка Azure**. Если у вас еще нет подписки, вы можете создать [бесплатную пробную](https://azure.microsoft.com/pricing/free-trial/) учетную запись.
 
-- **Сервер базы данных SQL Azure или управляемый экземпляр (необязательно)** . Если у вас еще нет сервера базы данных, создайте его на портале Azure перед началом работы. Фабрика данных, в свою очередь, создаст экземпляр SSISDB на этом сервере базы данных. 
+- **Сервер базы данных SQL Azure или управляемый экземпляр (необязательно)**. Если у вас еще нет сервера базы данных, создайте его на портале Azure перед началом работы. Фабрика данных, в свою очередь, создаст экземпляр SSISDB на этом сервере базы данных. 
 
   Мы рекомендуем создать сервер базы данных в одном регионе Azure со средой интеграции. Эта конфигурация позволяет среде выполнения интеграции записывать журналы выполнения в SSISDB, не пересекая регионы Azure.
 
@@ -61,11 +63,11 @@ ms.locfileid: "76964359"
 
   - Убедитесь, что на сервере базы данных еще нет экземпляра SSISDB. При подготовке Azure-SSIS IR не поддерживается использование существующего экземпляра SSISDB.
 
-- **Виртуальная сеть Azure Resource Manager (необязательно)** . Виртуальная сеть Azure Resource Manager нужна, если выполняется хотя бы одно из следующих условий.
+- **Виртуальная сеть Azure Resource Manager (необязательно)**. Виртуальная сеть Azure Resource Manager нужна, если выполняется хотя бы одно из следующих условий.
   - Вы размещаете SSISDB на сервере базы данных SQL Azure с правилами брандмауэра IP-адресов, конечными точками службы виртуальной сети или управляемым экземпляром с частной конечной точкой.
   - Необходимо подключиться к локальным хранилищам данных из пакетов служб SSIS, выполняющихся на Azure-SSIS IR, без настройки автономного IR.
 
-- **Azure PowerShell (необязательно)** . Если вы хотите выполнить подготовку среды выполнения интеграции Azure-SSIS с помощью скрипта PowerShell, следуйте инструкциям в разделе [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
+- **Azure PowerShell (необязательно)**. Если вы хотите выполнить подготовку среды выполнения интеграции Azure-SSIS с помощью скрипта PowerShell, следуйте инструкциям в разделе [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 ### <a name="regional-support"></a>Региональная поддержка
 
@@ -75,7 +77,7 @@ ms.locfileid: "76964359"
 
 В следующей таблице сравниваются некоторые функции сервера базы данных SQL Azure и управляемого экземпляра, которые связаны с Azure-ССИР IR.
 
-| Функция | Одна база данных или эластичный пул| Управляемый экземпляр |
+| Компонент | Одна база данных или эластичный пул| управляемый экземпляр |
 |---------|--------------|------------------|
 | **Планирование** | Агент SQL Server недоступна.<br/><br/>См. раздел [Планирование выполнения пакета в конвейере фабрики данных](https://docs.microsoft.com/sql/integration-services/lift-shift/ssis-azure-schedule-packages?view=sql-server-2017#activity).| Доступен агент Управляемый экземпляр. |
 | **Аутентификация** | Экземпляр SSISDB можно создать с пользователем автономной базы данных, который представляет любую группу Azure AD с управляемым удостоверением фабрики данных в качестве члена роли **db_owner** .<br/><br/>См. раздел [Включение аутентификации Azure AD для создания экземпляра SSISDB на сервере базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database). | Экземпляр SSISDB можно создать с пользователь автономной базы данных, который представляет управляемое удостоверение фабрики данных. <br/><br/>См. раздел [Включение аутентификации Azure AD для создания экземпляра SSISDB в управляемом экземпляре базы данных SQL Azure](enable-aad-authentication-azure-ssis-ir.md#enable-azure-ad-on-azure-sql-database-managed-instance). |
@@ -116,7 +118,7 @@ ms.locfileid: "76964359"
 
    1. Для **выпуска/лицензии**выберите SQL Server выпуск для среды выполнения интеграции: Standard или Enterprise. Если в среде выполнения интеграции вы будете использовать расширенные функции, выберите SQL Server Enterprise.
 
-   1. Для параметра **сохранить деньги**выберите параметр преимущество гибридного использования Azure для среды выполнения интеграции: **Да** или **нет**. Если для экономии вы намерены использовать гибридный режим с собственной лицензией SQL Server по программе Software Assurance, выберите **Да**.
+   1. Для параметра **сохранить деньги**выберите параметр преимущество гибридного использования Azure для среды выполнения интеграции: **Да** или **нет**. Выберите **Да** , если хотите использовать собственную лицензию на SQL Server с Software Assurance, чтобы воспользоваться преимуществами экономичного использования.
 
    1. Выберите **Далее**.
 
@@ -148,7 +150,7 @@ ms.locfileid: "76964359"
 
       1. В поле **Каталог уровней служб базы данных** выберите уровень служб для сервера базы данных, на котором будет размещаться SSISDB. Это может быть уровень "Базовый", "Стандартный", "Премиум" или имя эластичного пула. 
 
-      1. Выберите **Проверить подключение**. Если проверка пройдет успешно, щелкните **Далее**. 
+      1. Выберите **проверить подключение**. Если проверка пройдет успешно, щелкните **Далее**. 
 
 1. В разделе **Дополнительные параметры** выполните следующие шаги.
 
@@ -208,7 +210,7 @@ ms.locfileid: "76964359"
 
       1. В поле **промежуточный путь**укажите контейнер больших двоичных объектов в выбранной учетной записи хранилища BLOB-объектов Azure или оставьте пустым, чтобы использовать по умолчанию для промежуточного хранения.
 
-   1. Выберите **Проверка виртуальной сети** > **продолжить**. 
+   1.  > Выберите **Проверка виртуальной сети****продолжить**. 
 
 1. В разделе **Сводка** проверьте все параметры подготовки, закладку рекомендуемых ссылок на документацию и щелкните **Готово**, чтобы создать среду выполнения интеграции.
 
@@ -278,7 +280,7 @@ $AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, whereas 
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info: Standard/express custom setups
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
-$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO or leave it empty]" # OPTIONAL to configure an express custom setup without script
+$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
 # Virtual network info: Classic or Azure Resource Manager
 $VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use an Azure SQL Database server with IP firewall rules/virtual network service endpoints or a managed instance with private endpoint to host SSISDB, or if you require access to on-premises data without configuring a self-hosted IR. We recommend an Azure Resource Manager virtual network, because classic virtual networks will be deprecated soon.
 $SubnetName = "[your subnet name or leave it empty]" # WARNING: Use the same subnet as the one used for your Azure SQL Database server with virtual network service endpoints, or a different subnet from the one used for your managed instance with a private endpoint
@@ -368,7 +370,7 @@ if(![string]::IsNullOrEmpty($VnetId) -and ![string]::IsNullOrEmpty($SubnetName))
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup) . Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
+Создайте [группу ресурсов Azure](../azure-resource-manager/management/overview.md) с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
 Если группа ресурсов уже существует, не копируйте этот код в скрипт. 
 
@@ -390,13 +392,13 @@ Set-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName `
 
 Выполните следующую команду для создания среды выполнения интеграции Azure SSIS, запускающей пакеты служб SSIS в Azure:
 
-Если вы не используете SSISDB, можно опустить параметры `CatalogServerEndpoint`, `CatalogPricingTier`и `CatalogAdminCredential`.
+Если вы не используете SSISDB, можно опустить параметры `CatalogServerEndpoint`, `CatalogPricingTier`и. `CatalogAdminCredential`
 
-Если вы не используете сервер базы данных SQL Azure с правилами брандмауэра IP-адресов, конечными точками службы виртуальной сети или управляемым экземпляром с частной конечной точкой для размещения SSISDB или требуется доступ к локальным данным, можно опустить параметры `VNetId` и `Subnet` или передать пустые значения для них. Их также можно опустить, если настроить локальное IR в качестве прокси-сервера для Azure-SSIS IR локального доступа к данным. В противном случае их нельзя опустить и передать допустимые значения из конфигурации виртуальной сети. Дополнительные сведения см. в статье [Присоединение Azure-SSIS IR к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network).
+Если вы не используете сервер базы данных SQL Azure с правилами брандмауэра IP-адресов, конечными точками службы виртуальной сети или управляемым экземпляром с частной конечной точкой для размещения SSISDB или требуется доступ к локальным данным, `VNetId` можно `Subnet` опустить параметры и или передать пустые значения для них. Их также можно опустить, если настроить локальное IR в качестве прокси-сервера для Azure-SSIS IR локального доступа к данным. В противном случае их нельзя опустить и передать допустимые значения из конфигурации виртуальной сети. Дополнительные сведения см. в статье [Присоединение Azure-SSIS IR к виртуальной сети](https://docs.microsoft.com/azure/data-factory/join-azure-ssis-integration-runtime-virtual-network).
 
-Если для размещения SSISDB используется управляемый экземпляр, можно опустить параметр `CatalogPricingTier` или передать для него пустое значение. В противном случае его нельзя опустить и передать допустимое значение из списка поддерживаемых ценовых категорий для базы данных SQL Azure. Дополнительные сведения см. в разделе [ограничения ресурсов базы данных SQL](../sql-database/sql-database-resource-limits.md).
+Если для размещения SSISDB используется управляемый экземпляр, можно опустить `CatalogPricingTier` параметр или передать для него пустое значение. В противном случае его нельзя опустить и передать допустимое значение из списка поддерживаемых ценовых категорий для базы данных SQL Azure. Дополнительные сведения см. в разделе [ограничения ресурсов базы данных SQL](../sql-database/sql-database-resource-limits.md).
 
-Если вы используете аутентификацию Azure AD с управляемым удостоверением для подключения фабрики данных к серверу базы данных, можно опустить параметр `CatalogAdminCredential`. Но вы должны добавить управляемое удостоверение для фабрики данных в группу Azure AD с разрешениями на доступ к серверу базы данных. Дополнительные сведения см. [в статье Включение проверки подлинности Azure AD для Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir). В противном случае его нельзя опустить и передать допустимый объект, сформированный на основе имени пользователя и пароля администратора сервера для проверки подлинности SQL.
+Если вы используете аутентификацию Azure AD с управляемым удостоверением для подключения фабрики данных к серверу базы данных, `CatalogAdminCredential` параметр можно опустить. Но вы должны добавить управляемое удостоверение для фабрики данных в группу Azure AD с разрешениями на доступ к серверу базы данных. Дополнительные сведения см. [в статье Включение проверки подлинности Azure AD для Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/enable-aad-authentication-azure-ssis-ir). В противном случае его нельзя опустить и передать допустимый объект, сформированный на основе имени пользователя и пароля администратора сервера для проверки подлинности SQL.
 
 ```powershell
 Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
@@ -470,6 +472,24 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
     if($ExpressCustomSetup -eq "oh22is.HEDDA.IO")
     {
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup)
+    }
+    if($ExpressCustomSetup -eq "KingswaySoft.IntegrationToolkit")
+    {
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }
+    if($ExpressCustomSetup -eq "KingswaySoft.ProductivityPack")
+    {
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }    
+    if($ExpressCustomSetup -eq "Theobald.XtractIS")
+    {
+        $jsonData = Get-Content -Raw -Path YourLicenseFile.json
+        $jsonData = $jsonData -replace '\s',''
+        $jsonData = $jsonData.replace('"','\"')
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString($jsonData)
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
     }
     # Create an array of one or more express custom setups
     $setups = New-Object System.Collections.ArrayList
@@ -563,7 +583,7 @@ $AzureSSISLicenseType = "LicenseIncluded" # LicenseIncluded by default, whereas 
 $AzureSSISMaxParallelExecutionsPerNode = 8
 # Custom setup info: Standard/express custom setups
 $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
-$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO or leave it empty]" # OPTIONAL to configure an express custom setup without script
+$ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
 # Virtual network info: Classic or Azure Resource Manager
 $VnetId = "[your virtual network resource ID or leave it empty]" # REQUIRED if you use an Azure SQL Database server with IP firewall rules/virtual network service endpoints or a managed instance with private endpoint to host SSISDB, or if you require access to on-premises data without configuring a self-hosted IR. We recommend an Azure Resource Manager virtual network, because classic virtual networks will be deprecated soon.
 $SubnetName = "[your subnet name or leave it empty]" # WARNING: Use the same subnet as the one used for your Azure SQL Database server with virtual network service endpoints, or a different subnet from the one used for your managed instance with a private endpoint
@@ -713,6 +733,24 @@ if(![string]::IsNullOrEmpty($ExpressCustomSetup))
     {
         $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup)
     }
+    if($ExpressCustomSetup -eq "KingswaySoft.IntegrationToolkit")
+    {
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }
+    if($ExpressCustomSetup -eq "KingswaySoft.ProductivityPack")
+    {
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }    
+    if($ExpressCustomSetup -eq "Theobald.XtractIS")
+    {
+        $jsonData = Get-Content -Raw -Path YourLicenseFile.json
+        $jsonData = $jsonData -replace '\s',''
+        $jsonData = $jsonData.replace('"','\"')
+        $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString($jsonData)
+        $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+    }
     # Create an array of one or more express custom setups
     $setups = New-Object System.Collections.ArrayList
     $setups.Add($setup)
@@ -812,7 +850,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
     }
     ```
 
-2. Чтобы развернуть шаблон Azure Resource Manager, выполните команду `New-AzResourceGroupDeployment`, как показано в следующем примере. В этом примере `ADFTutorialResourceGroup` — имя группы ресурсов. `ADFTutorialARM.json` — это файл, содержащий определение JSON для фабрики данных и Azure-SSIS IR.
+2. Чтобы развернуть шаблон Azure Resource Manager, выполните `New-AzResourceGroupDeployment` команду, как показано в следующем примере. В примере `ADFTutorialResourceGroup` — это имя группы ресурсов. `ADFTutorialARM.json`— Это файл, содержащий определение JSON для фабрики данных и Azure-SSIS IR.
 
     ```powershell
     New-AzResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile ADFTutorialARM.json
@@ -820,7 +858,7 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 
     Эта команда создает фабрику данных и Azure-SSIS IR в ней, но не запускает IR.
 
-3. Чтобы запустить Azure-SSIS IR, выполните команду `Start-AzDataFactoryV2IntegrationRuntime`.
+3. Чтобы запустить Azure-SSIS IR, выполните `Start-AzDataFactoryV2IntegrationRuntime` команду:
 
     ```powershell
     Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName "<Resource Group Name>" `
@@ -844,15 +882,18 @@ write-host("If any cmdlet is unsuccessful, please consider using -Debug option f
 - Для управляемого экземпляра с частной конечной точкой используется формат `<server name>.<dns prefix>.database.windows.net`.
 - Для управляемого экземпляра с общедоступной конечной точкой используется формат `<server name>.public.<dns prefix>.database.windows.net,3342`. 
 
-Если вы не используете SSISDB, вы можете развертывать пакеты в файловые системы, файловые ресурсы или файлы Azure и запускать их на Azure-SSIS IR с помощью `dtinstall`, `dtutil`и `dtexec` программ командной строки. Дополнительные сведения см. в разделе [Развертывание пакетов на сервере служб Integration Services](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages#deploy-packages-to-integration-services-server). 
+Если вы не используете SSISDB, вы можете развернуть пакеты в файловые системы, файловые ресурсы или файлы Azure и запустить их на Azure-SSIS IR с помощью программ командной `dtinstall`строки `dtutil`, и `dtexec` . Дополнительные сведения см. в разделе [Развертывание пакетов на сервере служб Integration Services](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages#deploy-packages-to-integration-services-server). 
 
 В обоих случаях вы также можете запустить развернутые пакеты в Azure-SSIS IR, используя действие "Выполнить пакеты служб SSIS" в конвейерах Фабрики данных Azure. См. сведения о [запуске выполнения пакета SSIS с использованием действия Фабрики данных](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. другие разделы Azure-SSIS IR в этой документации:
 
 - [Среда выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся сведения о средах выполнения интеграции в целом, включая Azure-SSIS IR.
 - [Мониторинг среды выполнения интеграции в фабрике данных Azure](monitor-integration-runtime.md#azure-ssis-integration-runtime). В этой статье показано, как получить и понять сведения о Azure-SSIS IR.
 - [Manage an Azure-SSIS integration runtime](manage-azure-ssis-integration-runtime.md) (Управление средой выполнения интеграции Azure SSIS). В этой статье показано, как приступить к работе, запускать или удалять Azure-SSIS IR. Здесь также показано, как масштабировать Azure-SSIS IR, добавляя дополнительные узлы.
-- [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) В этой статье содержатся сведения о присоединении Azure-SSIS IR к виртуальной сети.
+- [Руководство. Развертывание и выполнение пакета служб SQL Server Integration Services (SSI) в Azure](/sql/integration-services/lift-shift/ssis-azure-deploy-run-monitor-tutorial)   
+- [Подключение к каталогу SSIS (SSISDB) в Azure](/sql/integration-services/lift-shift/ssis-azure-connect-to-catalog-database)
+- [Connect to on-premises data sources with Windows Authentication](/sql/integration-services/lift-shift/ssis-azure-connect-with-windows-auth) (Подключение к локальным источникам данных с помощью аутентификации Windows) 
+- [Планирование выполнения пакетов служб SQL Server Integration Services (SSIS), развернутых в Azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages)

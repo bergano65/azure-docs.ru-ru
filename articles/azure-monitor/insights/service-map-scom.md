@@ -1,18 +1,17 @@
 ---
 title: Интеграция Azure Monitor для виртуальных машин Map с Operations Manager | Документация Майкрософт
 description: Azure Monitor для виртуальных машин автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. В этой статье рассматривается использование функции Map для автоматического создания схем распределенного приложения в Operations Manager.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/12/2019
-ms.openlocfilehash: a8d0e0980b0d3634626bc1332e8219bdca7fbe01
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a20884c33d5232661e858e0b3ec722f139825aea
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75402626"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82928012"
 ---
 # <a name="integrate-system-center-operations-manager-with-azure-monitor-for-vms-map-feature"></a>Интеграция System Center Operations Manager с функцией карт Azure Monitor для виртуальных машин
 
@@ -21,7 +20,7 @@ ms.locfileid: "75402626"
 >[!NOTE]
 >Если вы уже развернули Сопоставление служб, вы можете просматривать карты в Azure Monitor для виртуальных машин, включая дополнительные функции для мониторинга работоспособности и производительности виртуальных машин. Функция Map Azure Monitor для виртуальных машин предназначена для замены автономного Сопоставление службного решения. Дополнительные сведения см. в разделе [Общие сведения об Azure Monitor для виртуальных машин](vminsights-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Группа управления System Center Operations Manager (2012 R2 или более поздней версии).
 * Log Analytics рабочей области, настроенной для поддержки Azure Monitor для виртуальных машин.
@@ -109,8 +108,8 @@ ms.locfileid: "75402626"
 
 Вы можете изменить или удалить настроенную рабочую область с помощью области **Service Map Overview** (Обзор схемы услуги) (область **Администрирование** > **Operations Management Suite** > **Схема услуги**).
 
->[!NOTE]
->[Набор Operations Management Suite представлял собой коллекцию служб](https://github.com/MicrosoftDocs/azure-docs-pr/pull/azure-monitor/azure-monitor-rebrand.md#retirement-of-operations-management-suite-brand), среди которых была и служба Log Analytics. Теперь эта служба входит в состав [Azure Monitor](https://github.com/MicrosoftDocs/azure-docs-pr/pull/azure-monitor/overview.md).
+> [!NOTE]
+> [Набор Operations Management Suite представлял собой коллекцию служб](../terminology.md#april-2018---retirement-of-operations-management-suite-brand), среди которых была и служба Log Analytics. Теперь эта служба входит в состав [Azure Monitor](../overview.md).
 
 В текущем выпуске можно настроить только одну рабочую область Log Analytics.
 
@@ -143,5 +142,5 @@ ms.locfileid: "75402626"
 * [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal-cli)
 * [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal)
 
-### <a name="feedback"></a>Обратная связь
-У вас есть отзывы о интеграции с функцией Azure Monitor для виртуальных машин Map или этой документации? Посетите [страницу пользовательских мнений](https://feedback.azure.com/forums/267889-log-analytics/category/184492-service-map), где можно предложить функции или проголосовать за существующие предложения.
+### <a name="feedback"></a>Отзывы
+У вас есть отзывы о интеграции с функцией Azure Monitor для виртуальных машин Map или этой документации? Посетите [страницу пользователя Voice](https://feedback.azure.com/forums/267889-log-analytics/category/184492-service-map), где можно предложить возможности или проголосовать за существующие предложения.

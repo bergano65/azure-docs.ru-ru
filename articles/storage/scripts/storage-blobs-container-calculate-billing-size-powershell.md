@@ -2,25 +2,19 @@
 title: Пример сценария Azure PowerShell для вычисления общего указываемого в счете размера контейнера больших двоичных объектов | Документация Майкрософт
 description: Вычислите общий размер контейнера в хранилище BLOB-объектов Azure для выставления счетов.
 services: storage
-documentationcenter: na
 author: fhryo-msft
-manager: cbrooks
-editor: tysonn
-ms.assetid: ''
-ms.custom: mvc
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
+ms.subservice: blobs
 ms.devlang: powershell
 ms.topic: sample
 ms.date: 11/07/2017
 ms.author: fryu
-ms.openlocfilehash: 02b4cfcc6d88430701f653665269532a4eb7092f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 12b32256c91dfcf93ca55eeb348cc78613ba860e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799258"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80067107"
 ---
 # <a name="calculate-the-total-billing-size-of-a-blob-container"></a>Вычисление общего указываемого в счете размера контейнера больших двоичных объектов
 
@@ -120,7 +114,7 @@ For-Each Signed Identifier[512 bytes]
 
 [!code-powershell[main](../../../powershell_scripts/storage/calculate-container-size/calculate-container-size-ex.ps1 "Calculate container size")]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Простой сценарий оценки размера контейнеров см. в разделе [Вычисление размера контейнера больших двоичных объектов](../scripts/storage-blobs-container-calculate-size-powershell.md).
 

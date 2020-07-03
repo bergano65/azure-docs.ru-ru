@@ -16,10 +16,10 @@ ms.date: 09/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 68a393865038722f2fd7fa5e42334f8d5e760951
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70078855"
 ---
 # <a name="sap-hana-availability-across-azure-regions"></a>Доступность SAP HANA в разных регионах Azure
@@ -82,7 +82,7 @@ ms.locfileid: "70078855"
 > [!IMPORTANT]
 > Режимы работы на различных уровнях должны быть одинаковыми. **Нельзя** использовать режим работы logreply на уровнях 1 и 2 и delta_datashipping на уровне 3. Можно выбрать только один режим работы для всех уровней. Поскольку delta_datashipping не обеспечивает показатель RPO, равный 0, для многоуровневой конфигурации следует использовать только режим работы logreplay. Подробные сведения о режимах работы при репликации системы SAP HANA и некоторые ограничения см. в [этой статье](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/627bd11e86c84ec2b9fcdf585d24011c.html). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Пошаговое руководство по настройке этих конфигураций в Azure см. в следующих статьях:
 

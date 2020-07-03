@@ -1,40 +1,33 @@
 ---
 title: Руководство. Удаление кластера Azure Red Hat OpenShift
 description: В этом руководстве содержатся сведения об удалении кластера Azure Red Hat OpenShift с помощью Azure CLI.
-author: jimzim
-ms.author: jzim
+author: sakthi-vetrivel
+ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
-ms.date: 05/06/2019
-ms.openlocfilehash: c335236a2b0b05f03bef1ebef37f1129a5d0352b
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
-ms.translationtype: HT
+ms.date: 04/24/2020
+ms.openlocfilehash: 2de60b90eb6fb75ef013a2fd8785f1b8b616fba6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278777"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82232144"
 ---
-# <a name="tutorial-delete-an-azure-red-hat-openshift-cluster"></a>Руководство. удаление кластера Azure Red Hat OpenShift.
+# <a name="tutorial-delete-an-azure-red-hat-openshift-4-cluster"></a>Руководство. Удаление кластера Azure Red Hat OpenShift 4
 
-Это последняя часть руководства. После тестирования примера кластера удалите его и связанные с ним ресурсы, чтобы за них больше не взималась плата.
-
-В третьей части цикла вы узнаете, как выполнять такие задачи:
+В этом руководстве, часть 3 из трех, был удален кластер Azure Red Hat OpenShift с OpenShift 4. Вы научитесь:
 
 > [!div class="checklist"]
 > * удаление кластера Azure Red Hat OpenShift.
 
-Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
-> [!div class="checklist"]
-> * [Создание кластера Azure Red Hat OpenShift](tutorial-create-cluster.md)
-> * [Масштабирование кластера Azure Red Hat OpenShift](tutorial-scale-cluster.md)
-> * удаление кластера Azure Red Hat OpenShift.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="before-you-begin"></a>Подготовка к работе
 
-Перед началом работы с этим руководством выполните следующие действия:
+В предыдущих руководствах был создан кластер Azure Red Hat OpenShift и подключен с помощью веб-консоли OpenShift. Если вы не выполнили эти действия и хотите следовать инструкциям, начните с [учебника 1. Создание кластера Azure Red Hat Openshift 4.](tutorial-create-cluster.md)
 
-* Создайте кластер Azure Red Hat OpenShift, следуя инструкциям из [этого руководства](tutorial-create-cluster.md).
+Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.0.75 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-## <a name="step-1-sign-in-to-azure"></a>Шаг 1. Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Если интерфейс Azure CLI запущен локально, выполните командлет `az login`, чтобы войти в Azure.
 
@@ -44,36 +37,27 @@ az login
 
 Если у вас есть доступ к нескольким подпискам, выполните команду `az account set -s {subscription ID}`, заменив `{subscription ID}` необходимой подпиской.
 
-## <a name="step-2-delete-the-cluster"></a>Шаг 2. Удаление кластера
+## <a name="delete-the-cluster"></a>Удаление кластера
 
-Откройте терминал Bash и присвойте переменной CLUSTER_NAME имя своего кластера:
-
-```bash
-CLUSTER_NAME=yourclustername
-```
-
-Теперь удалите кластер.
+В предыдущих руководствах были заданы следующие переменные. 
 
 ```bash
-az openshift delete --resource-group $CLUSTER_NAME --name $CLUSTER_NAME
+CLUSTER=yourclustername
+RESOURCE_GROUP=yourresourcegroup
 ```
 
-Появится запрос на подтверждение удаления кластера. Подтвердите, введя `y`. Удаление кластера займет несколько минут. После завершения выполнения команды вся группа ресурсов и ресурсы внутри нее, включая кластер, будут удалены.
+Используя эти значения, удалите кластер:
 
-## <a name="deleting-a-cluster-using-the-azure-portal"></a>Удаление кластера с помощью портала Azure
+```bash
+az aro delete --resource-group $RESOURCEGROUP --name $CLUSTER
+```
 
-Вы также можете удалить связанную группу ресурсов вашего кластера на портале Azure. Имя группы ресурсов совпадает с именем вашего кластера.
-
-В настоящее время ресурс `Microsoft.ContainerService/openShiftManagedClusters`, созданный вместе с кластером, на портале Azure скрыт. В представлении `Resource group` установите флажок `Show hidden types`, чтобы просмотреть группу ресурсов.
-
-![Снимок экрана: флажок для отображения скрытых типов](./media/aro-portal-hidden-type.png)
-
-Удаление группы ресурсов приведет к удалению всех связанных ресурсов, созданных вместе с кластером Azure Red Hat OpenShift.
+После этого вам будет предложено подтвердить удаление кластера. Подтвердите, введя `y`. Удаление кластера займет несколько минут. По завершении выполнения команды вся группа ресурсов и все ресурсы внутри нее (включая кластер) будут удалены.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой части руководства вы узнали, как выполнить следующие действия:
 > [!div class="checklist"]
-> * удаление кластера Azure Red Hat OpenShift.
+> * Удаление кластера Azure Red Hat OpenShift 4
 
-Ознакомьтесь с дополнительными сведениями об использовании OpenShift в [документации по Red Hat OpenShift](https://docs.openshift.com/aro/welcome/index.html).
+Ознакомьтесь с дополнительными сведениями об использовании OpenShift в [документации по Red Hat OpenShift](https://www.openshift.com/try).

@@ -1,5 +1,6 @@
 ---
 title: Схема определения облачных служб Azure (файл cscfg) | Документация Майкрософт
+description: Файл конфигурации службы (. cscfg) указывает, сколько экземпляров роли следует развернуть для каждой роли, значений конфигурации и отпечатков сертификатов для роли.
 services: cloud-services
 ms.custom: ''
 ms.date: 12/07/2016
@@ -8,12 +9,12 @@ ms.topic: reference
 caps.latest.revision: 35
 author: tgore03
 ms.author: tagore
-ms.openlocfilehash: 71c0bb1b09d480a05a9e5a54b269d0da8fde5bc3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: cb77181e00c97b7f426429793f17af3cb5e84ebe
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75449101"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79534751"
 ---
 # <a name="azure-cloud-services-config-schema-cscfg-file"></a>Схема конфигурации облачных служб Azure (файл cscfg)
 Файл конфигурации службы определяет число экземпляров роли, которые развертываются для каждой роли в службе, значения всех параметров конфигурации и отпечатки всех сертификатов, связанных с ролью. Если служба является частью виртуальной сети, нужно указать сведения о конфигурации сети в файле конфигурации службы и в файле конфигурации виртуальной сети. По умолчанию для файла конфигурации службы используется расширение .cscfg.
@@ -50,12 +51,12 @@ ms.locfileid: "75449101"
 ## <a name="service-configuration-namespace"></a>Пространство имен для конфигурации службы
 Для файла конфигурации диагностики используется пространство имен XML `http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration`.
 
-##  <a name="ServiceConfiguration"></a> Элемент ServiceConfiguration
+##  <a name="serviceconfiguration-element"></a><a name="ServiceConfiguration"></a> Элемент ServiceConfiguration
 Элемент `ServiceConfiguration` занимает верхний уровень в файле конфигурации службы.
 
 В таблице ниже описаны атрибуты элемента `ServiceConfiguration`. Значения всех атрибутов имеют строковый тип.
 
-| attribute | Description |
+| Атрибут | Описание |
 | --------- | ----------- |
 |serviceName|Обязательный элемент. Имя облачной службы. Указанное здесь имя должно соответствовать имени, указанному в файле определения службы.|
 |osFamily|Необязательный параметр. Определяет гостевую ОС, которая будет запускаться на экземплярах ролей в облачной службе. Информацию о поддерживаемых выпусках гостевой ОС вы найдете в [таблице совместимости выпусков гостевых ОС Azure и пакетов SDK](cloud-services-guestos-update-matrix.md).<br /><br /> Если вы не включите значение `osFamily` и не укажете конкретную версию гостевой ОС через атрибут `osVersion`, по умолчанию используется значение 1.|

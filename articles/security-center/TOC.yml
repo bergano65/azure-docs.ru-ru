@@ -6,8 +6,18 @@
       href: security-center-intro.md
     - name: Поддерживаемые платформы
       href: security-center-os-coverage.md
-    - name: Поддерживаемые функции
-      href: security-center-services.md
+    - name: Функции Центра безопасности
+      items:
+        - name: Покрытие компонентов для виртуальных машин
+          href: security-center-services.md
+        - name: Покрытие компонентов для ресурсов Azure PaaS
+          href: features-paas.md
+    - name: Новые возможности в Центре безопасности
+      href: release-notes.md
+    - name: Рекомендации по обеспечению безопасности
+      href: recommendations-reference.md
+    - name: Оповещения системы безопасности и цепочка нарушения безопасности намерений
+      href: alerts-reference.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -21,17 +31,22 @@
       href: quick-onboard-azure-stack.md
 - name: Учебники
   items:
+    - name: Руководство по планированию и эксплуатации
+      href: security-center-planning-and-operations-guide.md
     - name: Защита ресурсов
       href: tutorial-protect-resources.md
     - name: Реагирование на инциденты
       href: tutorial-security-incident.md
     - name: Обеспечение соответствия нормативным требованиям на высоком уровне
       href: security-center-compliance-dashboard.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
-    - name: Оценка безопасности в Центре безопасности
-      href: security-center-secure-score.md
-    - name: Расширенная оценка безопасности
+    - name: Оценка безопасности
       href: secure-score-security-controls.md
     - name: Разрешения
       href: security-center-permissions.md
@@ -49,30 +64,26 @@
           href: azure-container-registry-integration.md
         - name: Интеграция со Службой Azure Kubernetes
           href: azure-kubernetes-service-integration.md
-    - name: Инциденты и оповещения об обнаружении угроз
+    - name: Защита от угроз и оповещения системы безопасности
       items:
+        - name: Защита от угроз с помощью Центра безопасности Azure
+          href: threat-protection.md
         - name: Общие сведения об оповещениях системы безопасности
           href: security-center-alerts-overview.md
         - name: Справочный список оповещений
           href: alerts-reference.md
+        - name: Схемы оповещений
+          href: alerts-schemas.md
         - name: Управление оповещениями системы безопасности
           href: security-center-managing-and-responding-alerts.md
+        - name: Правила подавления оповещений системы безопасности
+          href: alerts-suppression-rules.md
         - name: Управление инцидентами безопасности
           href: security-center-incident.md
-        - name: Обнаружение угроз для виртуальных машин и серверов
-          href: security-center-alerts-iaas.md
-        - name: Обнаружение угроз для облачных приложений и контейнеров
-          href: security-center-alerts-compute.md
-        - name: Обнаружение угроз для служб обработки данных
-          href: security-center-alerts-data-services.md
-        - name: Обнаружение угроз для уровней служб Azure
-          href: security-center-alerts-service-layer.md
-        - name: Оповещения об обнаружении угроз от Azure WAF и Защиты от атак DDoS Azure
-          href: security-center-alerts-integration.md
         - name: Корреляция интеллектуальных оповещений в облаке (инциденты)
           href: security-center-alerts-cloud-smart.md
-        - name: Карта оповещений системы безопасности и аналитика угроз
-          href: security-center-threat-intel.md
+        - name: Отчеты об угрозах
+          href: security-center-threat-report.md
         - name: Проверка оповещений (в тестовом файле EICAR)
           href: security-center-alert-validation.md
 - name: Практические руководства
@@ -87,6 +98,8 @@
           href: built-in-vulnerability-assessment.md
         - name: Использование внешних сканеров
           href: partner-vulnerability-assessment.md
+    - name: Мониторинг контейнеров
+      href: monitor-container-security.md
     - name: Защита серверов с помощью ATP в Microsoft Defender
       href: security-center-wdatp.md
     - name: Использование расширенной защиты данных для SQL на виртуальных машинах Azure
@@ -103,7 +116,7 @@
           href: custom-security-policies.md
         - name: "Управление политиками с помощью REST\_API Политики Azure"
           href: configure-security-policy-azure-policy.md
-    - name: Добавление динамических пакетов соответствия
+    - name: Выбор стандартов для панели мониторинга соответствия требованиям
       href: update-regulatory-compliance-packages.md
     - name: Настройка политики защиты информации
       href: security-center-info-protection-policy.md
@@ -147,6 +160,8 @@
           href: security-center-sql-service-recommendations.md
         - name: Защита идентификации и доступа
           href: security-center-identity-access.md
+        - name: Управление пользовательскими данными исследования
+          href: security-center-investigation-user-data.md
     - name: Применение средств защиты в облаке
       items:
         - name: Управление JIT-доступом
@@ -157,34 +172,34 @@
           href: security-center-file-integrity-monitoring.md
         - name: Адаптивная защита сети
           href: security-center-adaptive-network-hardening.md
-    - name: Архив
-      items:
-        - name: Применение шифрования дисков
-          href: security-center-apply-disk-encryption.md
-        - name: Применение обновлений системы
-          href: security-center-apply-system-updates.md
-        - name: Установка Endpoint Protection
-          href: security-center-install-endpoint-protection.md
-        - name: Отчеты об угрозах
-          href: security-center-threat-report.md
-        - name: Оценка надежности предупреждения
-          href: security-center-confidence-score.md
-        - name: Исследование
-          href: security-center-investigation.md
-        - name: Управление пользовательскими данными исследования
-          href: security-center-investigation-user-data.md
-        - name: Планирование и эксплуатация
-          href: security-center-planning-and-operations-guide.md
 - name: Справочник
   items:
     - name: Интерфейсы REST API
       href: 'https://docs.microsoft.com/rest/api/securitycenter/'
-    - name: Заметки о выпуске
+    - name: Вопросы и ответы о Центре безопасности Azure
+      items:
+        - name: Общие вопросы
+          href: faq-general.md
+        - name: Вопросы по выставлению счетов
+          href: faq-billing.md
+        - name: Вопросы о разрешениях
+          href: faq-permissions.md
+        - name: Вопросы о сборе и хранении данных
+          href: faq-data-collection-agents.md
+        - name: Вопросы о виртуальных машинах
+          href: faq-vms.md
+        - name: Существующие пользователи Azure Log Analytics
+          href: faq-azure-monitor-logs.md
+    - name: Архив новых возможностей Центра безопасности
+      href: release-notes-archive.md
+    - name: Блог о стратегии развития Azure
       href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: "Прекращение поддержки компонентов и API (июль 2019\_г.)"
       href: security-center-features-retirement-july2019.md
     - name: Оценка защиты конечной точки и рекомендации
       href: security-center-endpoint-protection.md
+    - name: Оценка безопасности (устаревшие версии)
+      href: security-center-secure-score.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn
@@ -193,8 +208,6 @@
       href: security-center-privacy.md
     - name: Документация по Центру безопасности Azure для Интернета вещей
       href: 'https://docs.microsoft.com/azure/asc-for-iot/'
-    - name: ВОПРОСЫ И ОТВЕТЫ
-      href: security-center-faq.md
     - name: Документация по системе безопасности Azure
       href: /azure/security/
     - name: Обновления Azure

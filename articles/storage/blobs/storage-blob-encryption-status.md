@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 5cef0e94a43b3ef16d45f7f43658f962e07b5345
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74707600"
 ---
 # <a name="check-the-encryption-status-of-a-blob"></a>Проверка состояния шифрования большого двоичного объекта
@@ -26,7 +26,7 @@ ms.locfileid: "74707600"
 
 Чтобы определить, зашифрован ли большой двоичный объект без кода, используйте портал Azure, PowerShell или Azure CLI.
 
-### <a name="azure-portaltabportal"></a>[Портал Azure](#tab/portal)
+### <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
 Чтобы использовать портал Azure для проверки того, зашифрован ли большой двоичный объект, выполните следующие действия.
 
@@ -37,7 +37,7 @@ ms.locfileid: "74707600"
 
     ![Снимок экрана, показывающий, как проверить свойство, зашифрованное сервером, в портал Azure](media/storage-blob-encryption-status/blob-encryption-property-portal.png)
 
-### <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+### <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Чтобы использовать PowerShell для проверки того, зашифрован ли большой двоичный объект, проверьте свойство **иссерверенкриптед** большого двоичного объекта. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
@@ -56,7 +56,7 @@ $blob.ICloudBlob.Properties.IsServerEncrypted
 $blob.ICloudBlob.Properties.IsServerEncrypted
 ```
 
-### <a name="azure-clitabcli"></a>[Azure CLI](#tab/cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/cli)
 
 Чтобы использовать Azure CLI для проверки того, зашифрован ли большой двоичный объект, проверьте свойство **иссерверенкриптед** большого двоичного объекта. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 

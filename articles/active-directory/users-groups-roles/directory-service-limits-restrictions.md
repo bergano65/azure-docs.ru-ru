@@ -16,10 +16,10 @@ ms.custom: aaddev;it-pro
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3b83f10cd021f54dc16e196cb7a9ccd7c46fd2ee
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75659650"
 ---
 # <a name="azure-ad-service-limits-and-restrictions"></a>Ограничения службы Azure AD
@@ -28,5 +28,5 @@ ms.locfileid: "75659650"
 [!INCLUDE [AAD-service-limits](../../../includes/active-directory-service-limits-include.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Регистрация организации в Azure](../fundamentals/sign-up-organization.md)
+* [Подпишитесь на Azure как организация](../fundamentals/sign-up-organization.md)
 * [Как подписки Azure связаны с Azure AD](../fundamentals/active-directory-how-subscriptions-associated-directory.md)

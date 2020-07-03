@@ -4,16 +4,16 @@ description: Создайте маркер подписанного URL-дост
 author: Philmea
 ms.author: philmea
 ms.date: 12/27/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 2530c5b3561ad90eac0556770a8a356cfaa6a52c
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: f008627317588467d731ccc03aec7738f58e46e0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75531293"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80159206"
 ---
 # <a name="generate-sas-token"></a>Создание маркера SAS
 
@@ -46,7 +46,7 @@ def calculate_sas_token(hostname, repo_id, key_name, key, expiry_in_second):
 
 ## <a name="c"></a>C\#
 
-В следующем фрагменте кода показано, как создать маркер SAS с помощью C\#:
+В следующем фрагменте кода показано, как создать маркер SAS с помощью\#C:
 
 ```csharp
 public static string generateSasToken(string hostName, string repoId, string key, string keyName, int expiryInSeconds = 3600)
@@ -74,7 +74,7 @@ public static string generateSasToken(string hostName, string repoId, string key
 
 ## <a name="use-the-sas-token"></a>Использование маркера SAS
 
-После создания маркера SAS его можно использовать для создания HTTP-запроса POST. Пример.
+После создания маркера SAS его можно использовать для создания HTTP-запроса POST. Пример:
 
 ```text
 POST https:///models/{modelId}?repositoryId={repositoryId}&api-version=2019-07-01-preview
@@ -82,6 +82,6 @@ POST https:///models/{modelId}?repositoryId={repositoryId}&api-version=2019-07-0
 
 Если вы выдаете клиенту маркер SAS, он не имеет первичного ключа ресурса и не может изменить хэш, чтобы получить его. Маркер SAS позволяет контролировать доступ клиента и срок его действия. При изменении первичного ключа в политике все созданные на его основе маркеры SAS становятся недействительными.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали о создании маркеров безопасности, которые будут использоваться для доступа к Plug and Play репозиториям модели предварительной версии Интернета вещей, предлагаемый следующий шаг — дополнительные сведения в разделе [центра Интернета вещей Plug and Play предварительной версии для разработчиков моделей](concepts-developer-guide.md).

@@ -17,14 +17,14 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 61490f75d12967f7f396d5f767f2d2e696474572
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76897207"
 ---
 # <a name="monitor-azure-ad-connect-sync-with-azure-ad-connect-health"></a>Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health
-Приведенная ниже документация относится к мониторингу синхронизации Azure AD Connect с помощью Azure AD Connect Health.  Сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в [этой статье](how-to-connect-health-adfs.md). Кроме того, сведения о мониторинге доменных служб Active Directory с помощью Azure AD Connect Health можно найти [здесь](how-to-connect-health-adds.md).
+Приведенная ниже документация относится к мониторингу синхронизации Azure AD Connect с помощью Azure AD Connect Health.  Сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в [этой статье](how-to-connect-health-adfs.md). Кроме того, сведения о мониторинге домен Active Directoryных служб с помощью Azure AD Connect Health см. в статье [использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md).
 
 ![Azure AD Connect Health для синхронизации](./media/how-to-connect-health-sync/syncsnapshot.png)
 
@@ -81,14 +81,14 @@ ms.locfileid: "76897207"
 ### <a name="categorization-of-errors"></a>Классификация ошибок
 Имеющиеся ошибки синхронизации группируются в отчете по следующим категориям.
 
-| Категория | Description |
+| Категория | Описание |
 | --- | --- |
 | Повторяющийся атрибут |Ошибки при попытках Azure AD Connect создать или обновить объекты с повторяющимися значениями одного или нескольких атрибутов в Azure AD, которые должны быть уникальными в клиенте, такие как proxyAddresses, UserPrincipalName. |
 | Несоответствие данных |Ошибки синхронизации, возникшие в результате сбоя мягкого сопоставления объектов. |
 | Сбой проверки данных |Ошибки, возникшие из-за недопустимых данных, таких как неподдерживаемые символы в важных атрибутах (например, UserPrincipalName), ошибки формата, не проходящие проверку перед записью в Azure AD. |
 | Смена федеративного домена | Ошибки, которые возникают, когда в учетных записях используются разные федеративные домены. |
 | Большой атрибут |Ошибки, возникающие, если размер, длина и количество атрибутов превышают установленный предел. |
-| Прочее |Все другие ошибки, не входящие в категории выше. На основе отзывов эти категории будут разделены на подкатегории. |
+| Другой |Все другие ошибки, не входящие в категории выше. На основе отзывов эти категории будут разделены на подкатегории. |
 
 ![Сводка по отчету об ошибках синхронизации](./media/how-to-connect-health-sync/errorreport01.png)
 ![Категории отчета об ошибках синхронизации](./media/how-to-connect-health-sync/SyncErrorByTypes.PNG)
@@ -114,7 +114,7 @@ ms.locfileid: "76897207"
 В определенных сценариях, связанных с обновлением пользовательской привязки к источнику, ошибки синхронизации повторяющихся атрибутов можно устранить непосредственно на портале. См. дополнительные сведения в статье [Диагностика и устранение ошибок синхронизации повторяющихся атрибутов](how-to-connect-health-diagnose-sync-errors.md)
 
 ## <a name="related-links"></a>Связанные ссылки
-* [Устранение ошибок синхронизации](tshoot-connect-sync-errors.md)
+* [Устранение ошибок во время синхронизации](tshoot-connect-sync-errors.md)
 * [Синхронизация удостоверений и устойчивость повторяющихся атрибутов](how-to-connect-syncservice-duplicate-attribute-resiliency.md)
 * [Azure AD Connect Health](whatis-hybrid-identity-health.md)
 * [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
@@ -122,4 +122,4 @@ ms.locfileid: "76897207"
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)
 * [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md)
 * [Часто задаваемые вопросы об Azure AD Connect Health](reference-connect-health-faq.md)
-* [Azure AD Connect Health: история версий](reference-connect-health-version-history.md)
+* [Журнал версий Azure AD Connect Health](reference-connect-health-version-history.md)

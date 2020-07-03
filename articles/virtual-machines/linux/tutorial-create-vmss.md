@@ -1,29 +1,22 @@
 ---
-title: Руководство. Создание масштабируемого набора виртуальных машин Linux
+title: Руководство по Создание масштабируемого набора виртуальных машин Linux
 description: Узнайте, как использовать Azure CLI, чтобы создать и развернуть высокодоступное приложение на виртуальных машинах Linux с помощью масштабируемого набора виртуальных машин
-services: virtual-machine-scale-sets
-documentationcenter: ''
-author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machine-scale-sets
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: na
-ms.devlang: azurecli
+author: ju-shim
+ms.author: jushiman
 ms.topic: tutorial
+ms.service: virtual-machine-scale-sets
+ms.subservice: linux
 ms.date: 06/01/2018
-ms.author: cynthn
-ms.custom: mvc
-ms.openlocfilehash: 7a256fc5268c10dd05a2cf58747107cb26c3ced9
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: e97611cdfdca28b2c2b22f21d3aedcc79c4ee6d0
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76716555"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83198106"
 ---
-# <a name="tutorial-create-a-virtual-machine-scale-set-and-deploy-a-highly-available-app-on-linux-with-the-azure-cli"></a>Руководство. Создание масштабируемого набора виртуальных машин и развертывание в Linux приложения высокого уровня доступности с помощью Azure CLI
+# <a name="tutorial-create-a-virtual-machine-scale-set-and-deploy-a-highly-available-app-on-linux-with-the-azure-cli"></a>Руководство по Создание масштабируемого набора виртуальных машин и развертывание в Linux приложения высокого уровня доступности с помощью Azure CLI
 
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. Вы можете вручную изменить число виртуальных машин в масштабируемом наборе или определить правила для автоматического масштабирования на основе использования ЦП, объема памяти или сетевого трафика. В рамках этого руководства вы развернете масштабируемый набор виртуальных машин в Azure. Вы узнаете, как выполнять следующие задачи:
 

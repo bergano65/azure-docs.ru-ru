@@ -1,16 +1,16 @@
 ---
-title: Руководство. приложению Ruby в Linux на основе Postgres
+title: Руководство по приложению Ruby в Linux на основе Postgres
 description: Узнайте, как создать приложение Ruby в Linux, работающее в Службе приложений Azure, с подключением к базе данных PostgreSQL в Azure. В этом руководстве используется Rails.
 ms.devlang: ruby
 ms.topic: tutorial
 ms.date: 03/27/2019
-ms.custom: seodec18
-ms.openlocfilehash: 3238de3f1d3416964af05db031b5ecec20e4f140
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.custom: mvc, cli-validate, seodec18
+ms.openlocfilehash: 2bc30786ccd0bccfba438fa6e553fdcbbf7fdde1
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75720197"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82085793"
 ---
 # <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux
 
@@ -18,7 +18,7 @@ ms.locfileid: "75720197"
 
 ![Приложение Ruby on Rails, работающее в службе приложений Azure](./media/tutorial-ruby-postgres-app/complete-checkbox-published.png)
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание базы данных PostgreSQL в Azure
@@ -30,9 +30,9 @@ ms.locfileid: "75720197"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 * [установите Git](https://git-scm.com/);
 * [установите Ruby 2.3](https://www.ruby-lang.org/en/documentation/installation/);
@@ -126,14 +126,14 @@ az postgres server create --location "West Europe" --resource-group myResourceGr
 
 После создания сервера базы данных Azure для PostgreSQL в Azure CLI отображаются следующие сведения.
 
-```json
+<pre>
 {
   "administratorLogin": "adminuser",
   "earliestRestoreDate": "2018-06-15T12:38:25.280000+00:00",
-  "fullyQualifiedDomainName": "<postgres-server-name>.postgres.database.azure.com",
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/<postgres-server-name>",
+  "fullyQualifiedDomainName": "&lt;postgres-server-name&gt;.postgres.database.azure.com",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/&lt;postgres-server-name&gt;",
   "location": "westeurope",
-  "name": "<postgres-server-name>",
+  "name": "&lt;postgres-server-name&gt;",
   "resourceGroup": "myResourceGroup",
   "sku": {
     "capacity": 2,
@@ -142,9 +142,9 @@ az postgres server create --location "West Europe" --resource-group myResourceGr
     "size": null,
     "tier": "GeneralPurpose"
   },
-  < Output has been truncated for readability >
+  &lt; Output has been truncated for readability &gt;
 }
-```
+</pre>
 
 ### <a name="configure-server-firewall"></a>Настройка брандмауэра сервера
 
@@ -335,7 +335,7 @@ git push azure master
 
 Во время развертывания служба приложений Azure будет взаимодействовать с Git.
 
-```bash
+<pre>
 Counting objects: 3, done.
 Delta compression using up to 8 threads.
 Compressing objects: 100% (3/3), done.
@@ -347,8 +347,8 @@ remote: Preparing deployment for commit id 'a5e076db9c'.
 remote: Running custom deployment command...
 remote: Running deployment command...
 ...
-< Output has been truncated for readability >
-```
+&lt; Output has been truncated for readability &gt;
+</pre>
 
 ### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 

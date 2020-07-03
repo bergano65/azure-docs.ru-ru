@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 09/22/2019
 ms.author: dech
 ms.openlocfilehash: dcec310db43baa513b2d574d03f3f35dee3f773b
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76768025"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Включение записных книжек для учетных записей Azure Cosmos DB (Предварительная версия)
@@ -22,7 +22,7 @@ ms.locfileid: "76768025"
 
 ## <a name="enable-notebooks-in-a-new-cosmos-account"></a>Включение записных книжек в новой учетной записи Cosmos
 1. Войдите на [портал Azure](https://portal.azure.com/).
-1. Последовательно выберите **Создать ресурс** > **Базы данных** > **Azure Cosmos DB**.
+1. Выберите **создать** > **Azure Cosmos DB****базы данных** > ресурсов.
 1. На странице **Создание учетной записи Azure Cosmos DB** выберите **записные книжки**. 
  
     ![Выберите пункт "записные книжки" в колонке Azure Cosmos DB создание](media/enable-notebooks/create-new-account-with-notebooks.png)
@@ -67,6 +67,6 @@ ms.locfileid: "76768025"
 
 ![Создание или передача новой записной книжки](media/enable-notebooks/create-or-upload-new-notebook.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте о преимуществах [записных книжек Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)

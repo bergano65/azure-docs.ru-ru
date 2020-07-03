@@ -1,19 +1,19 @@
 ---
-title: Руководство. Общий доступ за пределами организации в Azure Data Share
+title: Руководство по Общий доступ за пределами организации в Azure Data Share
 description: Руководство по совместному использованию данных клиентами и партнерами с помощью Azure Data Share
 author: joannapea
 ms.author: joanpo
 ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
-ms.openlocfilehash: 64c5d80b5a2660164b21e71f06e847d5b11e40da
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: a8265680f74b2d5679d1ebfbb2873dd096f498a3
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964433"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77083048"
 ---
-# <a name="tutorial-share-data-using-azure-data-share"></a>Руководство. Совместное использование данных с помощью Azure Data Share  
+# <a name="tutorial-share-data-using-azure-data-share"></a>Руководство по Совместное использование данных с помощью Azure Data Share  
 
 Из этого руководства вы узнаете, как настроить новый Azure Data Share и начать предоставлять свои данные клиентам и партнерам за пределами вашей организации Azure. 
 
@@ -29,6 +29,7 @@ ms.locfileid: "76964433"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Адрес электронной почты для входа получателей в Azure (псевдонимы электронной почты не поддерживаются).
+* Если исходное хранилище данных Azure находится в подписке Azure, отличной от той, которая будет использоваться для создания ресурса Data Share, зарегистрируйте [поставщик ресурсов Microsoft.DataShare](concepts-roles-permissions.md#resource-provider-registration) в подписке, в которой находится хранилище данных Azure. 
 
 ### <a name="share-from-a-storage-account"></a>Совместное использование из учетной записи хранения
 
@@ -57,7 +58,7 @@ ms.locfileid: "76964433"
 * Доступ к брандмауэру для IP-адреса клиента SQL Server. Это можно обеспечить следующим образом. 
     1. В SQL Server на портале Azure перейдите к разделу *Брандмауэры и виртуальные сети*
     1. Чтобы разрешить доступ к службам Azure, щелкните переключатель **Вкл.**
-    1. Щелкните **+Добавить IP-адрес клиента**, а затем **Сохранить**. IP-адрес клиента можно изменить. Вы можете также добавить диапазон IP-адресов. 
+    1. Щелкните **+Добавить IP-адрес клиента**, а затем **Сохранить**. IP-адрес клиента можно изменить. При следующем совместном использовании данных SQL из портала Azure может потребоваться повторение этого процесса. Вы можете также добавить диапазон IP-адресов. 
 
 ### <a name="share-from-azure-data-explorer"></a>Предоставление общего доступа к данным из Azure Data Explorer
 * Кластер Azure Data Explorer с базами данных, к которым вы хотите предоставить общий доступ.

@@ -1,0 +1,171 @@
+### YamlMime:Hub
+title: Документация по службам обмена сообщениями Azure
+summary: Узнайте, как использовать службу "Сетка событий Azure", Центры событий Azure, Служебную шину Azure и Azure Relay для доставки сообщений о событиях.
+brand: azure
+metadata:
+  title: Документация по службам обмена сообщениями Azure
+  description: Узнайте, как использовать службу "Сетка событий Azure", Центры событий Azure, Служебную шину Azure и Azure Relay для доставки сообщений о событиях.
+  services: multiple
+  ms.service: multiple
+  ms.topic: hub-page
+  author: spelluru
+  ms.author: spelluru
+  ms.date: 03/15/2020
+  ms.openlocfilehash: f70bdf831d5b65aab9d6d01f88122d1a0fdd9957
+  ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/12/2020
+  ms.locfileid: "83200403"
+highlightedContent:
+  items:
+  - title: Выбор между службами обмена сообщениями Azure
+    itemType: overview
+    url: ../event-grid/compare-messaging-services.md
+  - title: Что такое Сетка событий
+    itemType: overview
+    url: ../event-grid/overview.md
+  - title: Что такое Центры событий?
+    itemType: overview
+    url: ../event-hubs/event-hubs-about.md
+  - title: Что такое Служебная шина Azure?
+    itemType: overview
+    url: ../service-bus-messaging/service-bus-messaging-overview.md
+  - title: Что такое ретранслятор?
+    itemType: overview
+    url: ../azure-relay/relay-what-is-it.md
+conceptualContent:
+  items:
+  - title: Маршрутизация событий
+    links:
+    - url: ../event-grid/blob-event-quickstart-portal.md
+      itemType: quickstart
+      text: Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала Azure
+    - url: ../event-grid/custom-event-to-function.md
+      itemType: quickstart
+      text: Маршрутизация настраиваемых событий в Функции Azure с помощью Сетки событий
+    - url: ../event-grid/custom-event-quickstart-portal.md
+      itemType: quickstart
+      text: Перенаправление пользовательских событий в конечную веб-точку с помощью портала Azure и службы "Сетка событий"
+    footerLink:
+      url: ../event-grid/index.yml
+      text: Подробнее
+  - title: Создание концентратора событий
+    links:
+    - url: ../event-hubs/event-hubs-create.md
+      itemType: quickstart
+      text: Создание концентратора событий с помощью портала Azure
+    - url: ../event-hubs/event-hubs-quickstart-cli.md
+      itemType: quickstart
+      text: Создание концентратора событий с помощью Azure CLI
+    footerLink:
+      url: ../event-hubs/index.yml
+      text: Подробнее
+  - title: Интеграция с Apache Kafka
+    links:
+    - url: ../event-hubs/event-hubs-for-kafka-ecosystem-overview.md
+      itemType: overview
+      text: Что собой представляют Центры событий для Apache Kafka?
+    - url: ../event-hubs/event-hubs-quickstart-kafka-enabled-event-hubs.md
+      itemType: quickstart
+      text: Потоковая передача данных в Центры событий для Apache Kafka
+    footerLink:
+      url: ../event-hubs/index.yml
+      text: Подробнее
+  - title: Отправка и получение событий
+    links:
+    - url: ../event-hubs/get-started-dotnet-standard-send-v2.md
+      itemType: quickstart
+      text: Отправка и получение событий через Центры событий Azure с помощью .NET Core
+    - url: ../event-hubs/event-hubs-java-get-started-send.md
+      itemType: quickstart
+      text: Использование Java для отправки и получения событий в Центрах событий Azure
+    - url: ../event-hubs/get-started-python-send-v2.md
+      itemType: quickstart
+      text: Отправка и получение событий с помощью Python в Центрах событий
+    footerLink:
+      url: ../event-hubs/index.yml
+      text: Подробнее
+  - title: Сбор событий
+    links:
+    - url: ../event-hubs/event-hubs-dedicated-overview.md
+      itemType: overview
+      text: Сбор событий в хранилище BLOB-объектов Azure или Azure Data Lake Storage
+    - url: ../event-hubs/event-hubs-capture-enable-through-portal.md
+      itemType: quickstart
+      text: Включение сбора событий, передающихся потоком из Центров событий Azure
+    footerLink:
+      url: ../event-hubs/index.yml
+      text: Подробнее
+  - title: Обработка событий
+    links:
+    - url: ../event-hubs/event-hubs-tutorial-visualize-anomalies.md
+      itemType: tutorial
+      text: визуализации аномальных данных в событиях реального времени, отправляемых в Центры событий Azure
+    - url: ../event-hubs/event-hubs-kafka-stream-analytics.md
+      itemType: tutorial
+      text: Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics
+    footerLink:
+      url: ../event-hubs/index.yml
+      text: Подробнее
+  - title: Создание очереди
+    links:
+    - url: ../service-bus-messaging/service-bus-quickstart-portal.md
+      itemType: quickstart
+      text: Создание очереди служебной шины с помощью портала Azure
+    - url: ../service-bus-messaging/service-bus-quickstart-cli.md
+      itemType: quickstart
+      text: Создание очереди служебной шины с помощью Azure CLI
+    footerLink:
+      url: ../service-bus-messaging/index.yml
+      text: Подробнее
+  - title: Создание разделов и подписок
+    links:
+    - url: ../service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal.md
+      itemType: quickstart
+      text: Создание раздела служебной шины и подписок на него с помощью портала Azure
+    - url: ../service-bus-messaging/service-bus-resource-manager-namespace-topic.md
+      itemType: quickstart
+      text: Создание пространства имен служебной шины с разделом и подпиской с помощью шаблона
+    footerLink:
+      url: ../service-bus-messaging/index.yml
+      text: Подробнее
+  - title: Отправка и получение сообщений — очереди
+    links:
+    - url: ../service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted.md
+      itemType: concept
+      text: Сравнение очередей службы хранилища Azure и очередей Служебной шины
+    - url: ../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md
+      itemType: quickstart
+      text: Начало работы с очередями служебной шины
+    - url: ../service-bus-messaging/service-bus-java-how-to-use-queues.md
+      itemType: quickstart
+      text: Использование очередей Служебной шины Azure с Java для отправки и получения сообщений
+    footerLink:
+      url: ../service-bus-messaging/index.yml
+      text: Подробнее
+  - title: Шаблон "публикация/подписка" для обмена сообщениями
+    links:
+    - url: ../service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions.md
+      itemType: quickstart
+      text: Начало работы с разделами служебной шины
+    - url: ../service-bus-messaging/service-bus-java-how-to-use-topics-subscriptions.md
+      itemType: quickstart
+      text: Использование разделов и подписок Служебной шины с Java
+    - url: ../service-bus-messaging/service-bus-python-how-to-use-topics-subscriptions.md
+      itemType: quickstart
+      text: Использование разделов и подписок Служебной шины с Python
+    footerLink:
+      url: ../service-bus-messaging/index.yml
+      text: Подробнее
+  - title: Гибридные подключения
+    links:
+    - url: ../azure-relay/relay-hybrid-connections-dotnet-get-started.md
+      itemType: tutorial
+      text: Начало работы с гибридными подключениями Azure Relay с использованием WebSocket и .NET
+    - url: ../azure-relay/relay-hybrid-connections-http-requests-dotnet-get-started.md
+      itemType: tutorial
+      text: Начало работы с HTTP-запросами гибридных подключений Azure Relay в .NET
+    footerLink:
+      url: ../azure-relay/index.yml
+      text: Подробнее

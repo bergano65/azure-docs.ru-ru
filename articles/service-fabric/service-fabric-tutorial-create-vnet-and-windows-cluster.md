@@ -4,20 +4,20 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 086379e788966b300f988e06ec42c94b880b8281
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 2d170057a85a8e223fa9d1bc2bfc17e0c284afcd
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551732"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80756037"
 ---
-# <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство. развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
+# <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
 Это руководство представляет первую часть цикла. Вы узнаете, как развернуть в Azure кластер Service Fabric на платформе Windows в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) и [группе безопасности сети](../virtual-network/virtual-networks-nsg.md) с помощью шаблона и PowerShell. Выполнив инструкции из этого учебника, вы получите кластер в облаке, в котором можно разворачивать приложения. Создание кластера Linux с помощью Azure CLI описывается в статье о [создании защищенного кластера Linux в Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
 В этом руководстве описывается рабочий сценарий. Если вы хотите создать небольшой кластер для тестирования, ознакомьтесь с [этой статьей](./scripts/service-fabric-powershell-create-secure-cluster-cert.md).
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * создание виртуальной сети в Azure с помощью PowerShell;
@@ -42,7 +42,7 @@ ms.locfileid: "75551732"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -156,7 +156,7 @@ ms.locfileid: "75551732"
 ## <a name="set-up-azure-active-directory-client-authentication"></a>Настройка проверки подлинности клиента Azure Active Directory
 Для кластеров Service Fabric, развернутых в общедоступной сети, размещенной в Azure, для взаимной проверки подлинности между клиентом и узлом рекомендуется:
 * использование Azure Active Directory для удостоверения клиента;
-* сертификат для удостоверения сервера и SSL-шифрования HTTP-подключений.
+* использование сертификата для удостоверения сервера и TLS-шифрования HTTP-подключений.
 
 Настройку Azure Active Directory (AAD) для проверки подлинности клиентов для кластера Service Fabric нужно сделать перед [созданием кластера](#createvaultandcert). Azure AD позволяет организациям (известным как клиенты) управлять доступом пользователей к приложениям. 
 

@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: kumud
 ms.openlocfilehash: 6f767abdf8673e3adffc6c4e3748733054ba723d
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77201872"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Добавление или удаление делегирования подсети
@@ -33,14 +33,14 @@ ms.locfileid: "77201872"
 
 В этом разделе вы создадите виртуальную сеть и подсеть, которые позже будут делегироваться службе Azure.
 
-1. Вверху с левой стороны экрана последовательно выберите **Создать ресурс** > **Сети** > **Виртуальная сеть**.
+1. В верхней левой части экрана выберите **создать ресурс** > **сети** > **Виртуальная сеть**.
 1. В подменю **Создать виртуальную сеть** введите или выберите следующую информацию:
 
     | Параметр | Значение |
     | ------- | ----- |
-    | Имя | Введите *myVirtualNetwork*. |
+    | Имя | Введите *MyVirtualNetwork*. |
     | Пространство адресов | Введите *10.0.0.0/16*. |
-    | Subscription | Выберите свою подписку.|
+    | Подписка | Выберите свою подписку.|
     | Группа ресурсов | Выберите **Создать**, а затем введите *myResourceGroup* и нажмите кнопку **ОК**. |
     | Расположение | Выберите **EastUS**.|
     | Имя подсети | Введите *mySubnet*. |
@@ -90,7 +90,7 @@ ms.locfileid: "77201872"
 ```
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
-С помощью команды **az network vnet create** создайте виртуальную сеть с именем **myVnet**, содержащую подсеть **mySubnet**, в группе ресурсов [myResourceGroup](https://docs.microsoft.com/cli/azure/network/vnet).
+Создайте виртуальную сеть с именем **myVnet** с подсетью с именем **mySubnet** в **myResourceGroup** с помощью команды [AZ Network vnet Create](https://docs.microsoft.com/cli/azure/network/vnet).
 
 ```azurecli-interactive
   az network vnet create \
@@ -252,5 +252,5 @@ ms.locfileid: "77201872"
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - Узнайте, как [управлять подсетями в Azure](virtual-network-manage-subnet.md).

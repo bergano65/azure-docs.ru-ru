@@ -1,29 +1,22 @@
 ---
-title: Создание виртуальной машины Azure и управление ею с помощьюC#
+title: 'Создание виртуальной машины Azure и управление ею с помощью C #'
 description: Использование C# и Azure Resource Manager для развертывания виртуальной машины и всех ее вспомогательных ресурсов.
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: 87524373-5f52-4f4b-94af-50bf7b65c277
 ms.service: virtual-machines-windows
-ms.workload: na
-ms.tgt_pltfrm: vm-windows
+ms.workload: infrastructure
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: bb0962991701dc780e50fec60982083b20d4ab0e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 07c66b2955f3df1ffae1a0cb0c2b0888bdc790e9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75358383"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82082889"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-c"></a>Развертывание виртуальной машины Azure с помощью C# #
 
-[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины, с помощью C#. Вы узнаете, как выполнять следующие задачи:
+[Виртуальной машине Azure](overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) требуется несколько вспомогательных ресурсов Azure. В этой статье описывается создание, управление и удаление ресурсов виртуальной машины, с помощью C#. Вы научитесь:
 
 > [!div class="checklist"]
 > * Создание проекта Visual Studio
@@ -39,14 +32,14 @@ ms.locfileid: "75358383"
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
 1. Если вы этого еще не сделали, установите [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка классических приложений .NET** и нажмите кнопку **Установить**. В сводке вы увидите, что **средства разработки .NET Framework 4–4.6** выберутся автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку .NET с помощью средства запуска Visual Studio.
-2. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
-3. В разделе **Шаблоны** > **Visual C#** выберите пункт **Консольное приложение (.NET Framework)** , укажите имя *myDotnetProject* и расположение проекта, а затем нажмите кнопку **OK**.
+2. В Visual Studio щелкните **файл** > **создать** > **проект**.
+3. В меню **шаблоны** > **Visual C#** выберите **консольное приложение (.NET Framework)**, введите *мидотнетпрожект* в поле имя проекта, выберите расположение проекта и нажмите кнопку **ОК**.
 
 ## <a name="install-the-package"></a>Установка пакета
 
 Самый простой способ установить библиотеки, необходимые для выполнения этих инструкций, — это использовать пакеты NuGet. Чтобы получить эти библиотеки в Visual Studio, выполните следующие действия.
 
-1. Щелкните **Сервис** > **Диспетчер пакетов NuGet**, а затем — **Консоль диспетчера пакетов**.
+1. Щелкните **инструменты** > **Диспетчер пакетов NuGet**, а затем — **консоль диспетчера пакетов**.
 2. Введите следующую команду в консоли:
 
     ```
@@ -59,7 +52,7 @@ ms.locfileid: "75358383"
 
 ### <a name="create-the-authorization-file"></a>Создание файла авторизации
 
-1. В обозревателе решений щелкните правой кнопкой мыши *myDotnetProject* > **Добавить** > **Новый элемент** и в списке **Элементы Visual C#** выберите *Текстовый файл*. Назовите файл *azureauth.properties* и щелкните **Добавить**.
+1. В Обозреватель решений щелкните правой кнопкой мыши *мидотнетпрожект* > **добавить** > **новый элемент**, а затем выберите **текстовый файл** в *элементах Visual C#*. Назовите файл *azureauth.properties* и щелкните **Добавить**.
 2. Добавьте следующие свойства авторизации:
 
     ```
@@ -70,10 +63,10 @@ ms.locfileid: "75358383"
     managementURI=https://management.core.windows.net/
     baseURL=https://management.azure.com/
     authURL=https://login.windows.net/
-    graphURL=https://graph.windows.net/
+    graphURL=https://graph.microsoft.com/
     ```
 
-    Замените **&lt;subscription-id&gt;** своим идентификатором подписки, **&lt;application-id&gt;** — идентификатором приложения Active Directory, **&lt;authentication-key&gt;** — ключом приложения, а **&lt;tenant-id&gt;** — идентификатором клиента.
+    Замените ** &lt;Subscription-ID&gt; ** идентификатором подписки, ** &lt;Application-ID&gt; ** — идентификатором приложения Active Directory, ** &lt;ключом&gt; проверки подлинности** с ключом приложения, а ** &lt;идентификатором&gt; клиента** — идентификатором клиента.
 
 3. Сохраните файл azureauth.properties. 
 4. Задайте переменную среды в Windows с именем AZURE_AUTH_LOCATION с полным путем к файлу авторизации, созданному вами. Например, можно использовать следующую команду PowerShell:
@@ -393,6 +386,6 @@ azure.ResourceGroups.DeleteByName(groupName);
 
 2. Прежде чем нажать клавишу **ВВОД** и начать удаление ресурсов, потратьте несколько минут и проверьте на портале Azure, созданы ли эти ресурсы. Щелкните состояние развертывания, чтобы просмотреть сведения о развертывании.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Используйте преимущества шаблонов для создания виртуальной машины, ориентируясь на сведения в статье [Развертывание виртуальной машины Azure с помощью C# и шаблона Resource Manager](csharp-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * Дополнительные сведения об использовании [библиотек Azure для .NET](https://docs.microsoft.com/dotnet/azure/?view=azure-dotnet).

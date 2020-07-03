@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 11/19/2019
-ms.openlocfilehash: eff480d6763ae4bd277e6781663c559cc7c9169e
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 207172f10277589af2b22ae2f41b07234a0925b3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152454"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79477720"
 ---
 # <a name="module-assign-data-to-clusters"></a>Модуль: назначение данных кластерам
 
@@ -43,7 +43,7 @@ ms.locfileid: "77152454"
   
     Если снять этот флажок, возвращаются только результаты. Этот параметр может быть полезен при создании прогнозов как части веб-службы.
   
-5.  Запустили конвейер.  
+5.  Отправьте конвейер.  
   
 ### <a name="results"></a>Результаты
 

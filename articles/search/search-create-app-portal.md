@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 12/05/2019
-ms.openlocfilehash: 9ed62ea6fdfc0732128ed340cc0bc48481eb73ec
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.date: 03/25/2020
+ms.openlocfilehash: 248ef093601eda7a180a6465ccb97e6fc1c9fe41
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841086"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80369711"
 ---
 # <a name="quickstart-create-a-search-app-in-the-portal-azure-cognitive-search"></a>Краткое руководство. Создание приложения для поиска на портале (Когнитивный поиск Azure)
 
@@ -23,13 +23,13 @@ ms.locfileid: "76841086"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для этого краткого руководства вам потребуется перейти на [последнюю версию Microsoft Edge](https://www.microsoft.com/edge) или использовать браузер Chrome от Google.
+Выполните обновление Microsoft Edge до [последней версии](https://www.microsoft.com/edge) или используйте браузер Chrome от Google.
 
 [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
 [Создайте индекс](search-create-index-portal.md), который станет основой для этого приложения. 
 
-При работе с этим кратким руководством используется встроенный пример данных об объектах недвижимости, который включает эскизные изображения, и индекс для него. Чтобы создать индекс для этого упражнения, запустите мастер **импорта данных**, выбрав источник данных *realestate-us-sample*.
+При работе с этим кратким руководством используется встроенный пример данных об объектах недвижимости, который включает эскизные изображения, и индекс для него (мастер позволяет добавлять изображение на страницу результатов). Чтобы создать индекс для этого упражнения, запустите мастер **импорта данных**, выбрав источник данных *realestate-us-sample*.
 
 ![Страница источника данных для примера данных](media/search-create-app-portal/import-data-realestate.png)
 

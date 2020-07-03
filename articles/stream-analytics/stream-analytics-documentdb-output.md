@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 02/2/2020
 ms.custom: seodec18
 ms.openlocfilehash: e58e36b3caa5a5ecd137cb9cb61dad7ddb95ff3a
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986994"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79254447"
 ---
 # <a name="azure-stream-analytics-output-to-azure-cosmos-db"></a>Выходные данные Azure Stream Analytics в Azure Cosmos DB  
 Azure Stream Analytics могут ориентироваться [Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) для выходных данных JSON, что позволяет архивировать данные и запросы с низкой задержкой для неструктурированных данных JSON. В этом документе представлены некоторые рекомендации по реализации данной конфигурации.
@@ -64,7 +64,7 @@ Stream Analytics использует подход оптимистичного 
 Azure Cosmos DB автоматически масштабирует секции в зависимости от рабочей нагрузки. Поэтому мы рекомендуем использовать [неограниченные](../cosmos-db/partition-data.md) контейнеры в качестве подхода к секционированию данных. Когда Stream Analytics записывает данные в неограниченные контейнеры, он использует столько же параллельных модулей записи, сколько предыдущий шаг запроса или схема секционирования ввода.
 
 > [!NOTE]
-> Azure Stream Analytics поддерживает только неограниченные контейнеры с ключами секций на верхнем уровне. Например, `/region` поддерживается. Вложенные ключи разделов (например, `/region/name`) не поддерживаются. 
+> Azure Stream Analytics поддерживает только неограниченные контейнеры с ключами секций на верхнем уровне. Например, `/region` поддерживается. Вложенные ключи секционирования (например `/region/name`,) не поддерживаются. 
 
 В зависимости от выбранного ключа раздела может появиться следующее _предупреждение_:
 
@@ -105,14 +105,14 @@ Azure Cosmos DB автоматически масштабирует секции
 
 ![Поля сведений для потока вывода Azure Cosmos DB](media/stream-analytics-documentdb-output/stream-analytics-documentdb-output-1.png)
 
-|Поле           | Description|
+|Поле           | Описание|
 |-------------   | -------------|
 |Псевдоним выходных данных    | Псевдоним для ссылки на эти выходные данные в запросе Stream Analytics.|
 |Подписка    | Подписка Azure.|
 |Идентификатор учетной записи      | Имя или универсальный код ресурса (URI) конечной точки учетной записи Azure Cosmos DB.|
 |Ключ учетной записи     | Общедоступный ключ доступа к учетной записи Azure Cosmos DB.|
 |База данных        | Имя базы данных Azure Cosmos DB.|
-|Имя контейнера | Имя контейнера, например `MyContainer`. Должен существовать один контейнер с именем `MyContainer`.  |
+|Имя контейнера | Имя контейнера, например `MyContainer`. Один контейнер с `MyContainer` именем должен существовать.  |
 |Идентификатор документа     | Необязательный параметр. Имя столбца в выходных событиях используется как уникальный ключ, на котором должны основываться операции вставки или обновления. Если оставить его пустым, будут вставлены все события без параметров обновления.|
 
 После настройки выходных данных Azure Cosmos DB их можно использовать в запросе в качестве целевого объекта [инструкции into](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics). При использовании вывода Azure Cosmos DB таким образом, [ключ секции необходимо задать явным образом](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization#partitions-in-sources-and-sinks). 

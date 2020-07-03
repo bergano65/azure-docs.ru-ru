@@ -1,0 +1,52 @@
+### YamlMime:Landing
+title: Документация по использованию Cloud Foundry в Azure
+summary: Cloud Foundry — это платформа как услуга (PaaS) с открытым кодом, предназначенная для сборки, развертывания и эксплуатации 12-факторных приложений, разработанных с использованием разных языков и платформ.
+metadata:
+  title: Документация по использованию Cloud Foundry в Azure
+  description: Cloud Foundry — это платформа как услуга (PaaS) с открытым кодом, предназначенная для сборки, развертывания и эксплуатации 12-факторных приложений, разработанных с использованием разных языков и платформ.
+  services: multiple
+  ms.service: multiple
+  ms.devlang: devops
+  ms.topic: landing-page
+  author: georgewallace
+  ms.author: gwallace
+  ms.date: 03/08/2020
+  ms.openlocfilehash: 5c2ad3d9e471c339223ad21092b89e6aee64995d
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "78943159"
+landingContent:
+- title: Сведения об использовании Cloud Foundry в Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения об использовании Cloud Foundry в Azure
+      url: ../virtual-machines/linux/cloudfoundry-get-started.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Развертывание Cloud Foundry в Azure
+      url: https://azuremarketplace.microsoft.com/marketplace/apps/pivotal.pivotal-cloud-foundry
+  - linkListType: how-to-guide
+    links:
+    - text: Развертывание первого приложения
+      url: ../virtual-machines/linux/cloudfoundry-deploy-your-first-app.md
+- title: Ресурсы
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Pivotal Cloud Foundry в Azure
+      url: https://pivotal.io/partners/microsoft
+    - text: Интеграция Cloud Foundry и Azure
+      url: how-cloud-foundry-integrates-with-azure.md
+    - text: Установка Cloud Foundry в Azure
+      url: https://docs.pivotal.io/pivotalcf/1-11/customizing/pcf_azure.html
+    - text: Подключаемый модуль Azure DevOps для Cloud Foundry
+      url: https://github.com/Microsoft/vsts-cloudfoundry
+    - text: Microsoft Log Analytics Nozzle для Cloud Foundry
+      url: https://github.com/Azure/oms-log-analytics-firehose-nozzle
+    - text: Дополнительные сведения о Cloud Foundry
+      url: https://docs.cloudfoundry.org/

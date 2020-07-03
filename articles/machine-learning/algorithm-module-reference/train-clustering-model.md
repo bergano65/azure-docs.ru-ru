@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 11/19/2019
-ms.openlocfilehash: 7053fab28b4a231c92f31e344cf09ffef3a6b146
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: c29baf3cdda998a2ab78c84f3311b84d37086bcd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152114"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79477431"
 ---
 # <a name="train-clustering-model"></a>Обучение модели кластеризации
 
@@ -43,7 +43,7 @@ ms.locfileid: "77152114"
 
     Если отменить выбор этого параметра, будут выводиться только назначения кластера. 
 
-7. Запустите конвейер или щелкните модуль **обучение модели кластеризации** и выберите **Выполнить выбранное**.  
+7. Отправьте конвейер или щелкните модуль **обучение модели кластеризации** и выберите **Выполнить выбранное**.  
   
 ### <a name="results"></a>Результаты
 
@@ -53,6 +53,6 @@ ms.locfileid: "77152114"
 
 + Чтобы создать оценки на основе модели, используйте [назначение данных кластерам](assign-data-to-clusters.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

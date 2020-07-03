@@ -4,23 +4,23 @@ description: Это страница Многофакторной идентиф
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/11/2018
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ef90ce9e6d3849a4c778326b02040f0b1fc764a
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 23e2f7424464860b647883be2441e903900cb266
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848023"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80652884"
 ---
 # <a name="remote-desktop-gateway-and-azure-multi-factor-authentication-server-using-radius"></a>Шлюз удаленных рабочих столов и сервер Многофакторной идентификации, использующие проверку подлинности RADIUS
 
-Часто шлюз удаленных рабочих столов использует локальные [службы политик сети (NPS)](https://docs.microsoft.com/windows-server/networking/core-network-guide/core-network-guide#BKMK_optionalfeatures) для аутентификации пользователей. В этой статье объясняется, как перенаправлять RADIUS-запросы из шлюза удаленных рабочих столов (через локальную службу NPS) на сервер Многофакторной идентификации. Сочетание Azure MFA и шлюза удаленных рабочих столов означает, что пользователи могут подключаться к своим рабочим средам из любой точки мира, выполняя строгую аутентификацию.
+Как правило, шлюз удаленный рабочий стол (RD) использует локальные [службы политики сети (NPS)](https://docs.microsoft.com/windows-server/networking/core-network-guide/core-network-guide#BKMK_optionalfeatures) для проверки подлинности пользователей. В этой статье объясняется, как перенаправлять RADIUS-запросы из шлюза удаленных рабочих столов (через локальную службу NPS) на сервер Многофакторной идентификации. Сочетание Azure MFA и шлюза удаленных рабочих столов означает, что пользователи могут подключаться к своим рабочим средам из любой точки мира, выполняя строгую аутентификацию.
 
 Поскольку Server 2012 R2 не поддерживает аутентификацию Windows для служб терминалов, для интеграции с сервером многофакторной идентификации нужно использовать шлюз удаленных рабочих столов и RADIUS.
 
@@ -29,7 +29,7 @@ ms.locfileid: "74848023"
 > [!IMPORTANT]
 > По состоянию на 1 июля 2019 Корпорация Майкрософт больше не будет предлагать сервер MFA для новых развертываний. Новые клиенты, желающие требовать многофакторную проверку подлинности пользователей, должны использовать службу многофакторной идентификации Azure на основе облачных служб. Существующие клиенты, которые активировали сервер MFA до 1 июля, смогут скачать последнюю версию, будущие обновления и создать учетные данные активации обычным образом.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Присоединенный к домену сервер Azure MFA. Если у вас еще не установлен этот сервер, выполните действия, описанные в статье [Приступая к работе с сервером Многофакторной идентификации Azure](howto-mfaserver-deploy.md).
 - Существующий настроенный сервер NPS.

@@ -10,18 +10,18 @@ tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: overview
+ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 9/18/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 5146675b6eefd11fc1e6875ed9009ece92753ffb
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
-ms.translationtype: HT
+ms.openlocfilehash: 704f08bc4a41eb52789f8f28675332892d72a500
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72028092"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80475138"
 ---
 # <a name="deploy-the-azure-virtual-network-container-network-interface-plug-in"></a>Развертывание подключаемого модуля сетевого интерфейса контейнера виртуальной сети Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "72028092"
 
 Обработчик ACS развертывает кластер Kubernetes с помощью шаблона Azure Resource Manager. Конфигурация кластера указана в файле JSON, который передается в средство при создании шаблона. Полный список поддерживаемых параметров кластера и их описание см. в разделе [Обработчик службы контейнеров Azure Microsoft — определения кластера](https://github.com/Azure/acs-engine/blob/master/docs/clusterdefinition.md). Подключаемый модуль — это подключаемый модуль сети по умолчанию для кластеров, созданных с использованием обработчика ACS. Следующие параметры конфигурации сети важны при настройке подключаемого модуля:
 
-  | Параметр                              | ОПИСАНИЕ                                                                                                           |
+  | Параметр                              | Описание                                                                                                           |
   |--------------------------------------|------------------------------------------------------------------------------------------------------                 |
   | firstConsecutiveStaticIP             | IP-адрес, выделенный для главного узла. Это обязательный параметр.                                     |
   | clusterSubnet в kubernetesConfig | CIDR подсети виртуальной сети, где развернут кластер, из которого IP-адреса выделяются для pod   |

@@ -8,21 +8,21 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 1cc7469bf6b29ed864fac3955dc8770aa879f84d
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 4e2c8e27c6d4195252c6a5b423fa98b2a4247182
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499525"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78270472"
 ---
 # <a name="phone-number-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность номера телефона для приложения LUIS
-Сущность `phonenumber` извлекает различные номера телефонов, в том числе код страны. Так как эта сущность уже обучена, добавлять в приложение примеры фраз не нужно. Сущность `phonenumber` поддерживается только в языке `en-us`. 
+Сущность `phonenumber` извлекает различные номера телефонов, в том числе код страны. Так как эта сущность уже обучена, добавлять в приложение примеры фраз не нужно. Сущность `phonenumber` поддерживается только в языке `en-us`.
 
 ## <a name="types-of-a-phone-number"></a>Типы телефонных номеров
-Управление `Phonenumber` осуществляется из репозитория [распознавания текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/Base-PhoneNumbers.yaml) GitHub
+`Phonenumber`управляется из репозитория [распознаваемого текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/Base-PhoneNumbers.yaml) GitHub
 
 ## <a name="resolution-for-this-prebuilt-entity"></a>Разрешение для этой предварительно созданной сущности
 
@@ -30,9 +30,9 @@ ms.locfileid: "73499525"
 
 `my mobile is 1 (800) 642-7676`
 
-#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
+Следующий код JSON имеет `verbose` параметр со значением: `false`
 
 ```json
 "entities": {
@@ -41,8 +41,8 @@ ms.locfileid: "73499525"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
+Следующий код JSON имеет `verbose` параметр со значением: `true`
 
 ```json
 "entities": {
@@ -68,7 +68,7 @@ ms.locfileid: "73499525"
     }
 }
 ```
-#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение сущности **builtin.phonenumber**.
 
@@ -86,10 +86,10 @@ ms.locfileid: "73499525"
     }
 ]
 ```
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
-Дополнительные сведения о сущностях [percentage](luis-reference-prebuilt-percentage.md), [number](luis-reference-prebuilt-number.md) и [temperature](luis-reference-prebuilt-temperature.md). 
+Дополнительные сведения о сущностях [percentage](luis-reference-prebuilt-percentage.md), [number](luis-reference-prebuilt-number.md) и [temperature](luis-reference-prebuilt-temperature.md).

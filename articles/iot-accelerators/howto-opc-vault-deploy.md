@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: f577059e1ebf70e3a9dfe9e538a9d3d49d7c8e96
-ms.sourcegitcommit: 8a717170b04df64bd1ddd521e899ac7749627350
+ms.openlocfilehash: 7ee186684b702a42335c6e1a7832cc5c761a69d0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71199996"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81686942"
 ---
 # <a name="build-and-deploy-the-opc-vault-certificate-management-service"></a>Создание и развертывание службы управления сертификатами хранилища OPC
 
@@ -22,16 +22,16 @@ ms.locfileid: "71199996"
 > [!NOTE]
 > Дополнительные сведения см. в [репозитории хранилища GitHub OPC](https://github.com/Azure/azure-iiot-opc-vault-service).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 ### <a name="install-required-software"></a>Установка необходимого программного обеспечения
 
 В настоящее время операция сборки и развертывания ограничена Windows.
-Примеры написаны для C# .NET Standard, для которых необходимо создать службу и примеры для развертывания.
+Примеры написаны для .NET Standard C#, для которых необходимо создать службу и примеры для развертывания.
 Все средства, необходимые для .NET Standard, входят в состав средств .NET Core. См. статью Начало [работы с .NET Core](https://docs.microsoft.com/dotnet/articles/core/getting-started).
 
 1. [Установите .NET Core 2.1 +][dotnet-install].
-2. [Установка DOCKER][docker-url] (необязательно, только если требуется локальная сборка DOCKER).
+2. [Установите DOCKER][docker-url] (необязательно, только если требуется локальная сборка DOCKER).
 4. Установите [средства командной строки Azure для PowerShell][powershell-install].
 5. Подпишитесь на [подписку Azure][azure-free].
 
@@ -88,14 +88,14 @@ cd azure-iiot-opc-vault-service
 
 ## <a name="delete-the-services-from-the-subscription"></a>Удаление служб из подписки
 
-Этот процесс описывается далее.
+Это делается так.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к группе ресурсов, в которой была развернута служба.
 3. Выберите **Удалить группу ресурсов** и подтвердите выбор.
 4. Через некоторое время все развернутые компоненты службы будут удалены.
 5. Перейдите в **Azure Active Directory** > **Регистрация приложений**.
-6. Для каждой развернутой группы ресурсов должно быть указано три регистрации. Регистрации имеют следующие имена: `resourcegroup-client`, `resourcegroup-module`, `resourcegroup-service`. Удалите каждую регистрацию отдельно.
+6. Для каждой развернутой группы ресурсов должно быть указано три регистрации. Регистрации имеют следующие имена: `resourcegroup-client`, `resourcegroup-module`,. `resourcegroup-service` Удалите каждую регистрацию отдельно.
 
 Теперь все развернутые компоненты будут удалены.
 
@@ -107,12 +107,12 @@ cd azure-iiot-opc-vault-service
 
 ### <a name="website-name-already-in-use"></a>Имя веб-сайта уже используется
 
-Возможно, имя веб-сайта уже используется. Необходимо использовать другое имя группы ресурсов. В скрипте развертывания используются следующие имена узлов: https://resourcegroupname.azurewebsites.net и. https://resourgroupname-service.azurewebsites.net
+Возможно, имя веб-сайта уже используется. Необходимо использовать другое имя группы ресурсов. В скрипте развертывания используются имена узлов: https:\//resourcegroupname.azurewebsites.NET и HTTPS:\//resourgroupname-Service.azurewebsites.NET.
 Другие имена служб создаются с помощью сочетания хэшей коротких имен и вряд ли конфликтуют с другими службами.
 
 ### <a name="azure-ad-registration"></a>регистрация в Azure AD. 
 
-Сценарий развертывания пытается зарегистрировать три приложения Azure AD в Azure AD. В зависимости от ваших разрешений в выбранном клиенте Azure AD эта операция может завершиться ошибкой. Существуют два варианта:
+Сценарий развертывания пытается зарегистрировать три приложения Azure AD в Azure AD. В зависимости от ваших разрешений в выбранном клиенте Azure AD эта операция может завершиться ошибкой. Существует два варианта.
 
 - Если вы выбрали клиент Azure AD из списка клиентов, перезапустите сценарий и выберите другой из списка.
 - Кроме того, можно развернуть частный клиент Azure AD в другой подписке. Перезапустите сценарий и выберите его использование.
@@ -174,7 +174,7 @@ cd azure-iiot-opc-vault-service
 [docker-url]: https://www.docker.com/
 [dotnet-install]: https://www.microsoft.com/net/learn/get-started
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как развертывать хранилище OPC с нуля, вы можете:
 

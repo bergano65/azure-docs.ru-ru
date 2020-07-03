@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1b9d07099f8de996181948921330ef6744b302a8
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74848652"
 ---
 # <a name="enforce-azure-ad-password-protection-for-windows-server-active-directory"></a>применение защиты паролем Azure AD для Windows Server Active Directory
@@ -87,7 +87,7 @@ ms.locfileid: "74848652"
 
 Лес Active Directory и все развернутые прокси-службы в лесу должны быть зарегистрированы в одном и том же клиенте. Не поддерживается наличие Active Directory леса или любых прокси-служб в этом лесу, которые регистрируются в разных клиентах Azure AD. Симптомы такого неправильного развертывания включают невозможность загрузки политик паролей.
 
-## <a name="download"></a>Download (Скачать)
+## <a name="download"></a>Скачивание
 
 Два необходимых установщика агента для защиты паролей Azure AD доступны в [центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=57071).
 

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
 ms.openlocfilehash: e9bb516d498d989b97f1069af9a9f4cb673ea96d
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74892674"
 ---
 # <a name="view-and-edit-video-indexer-insights"></a>Просмотр и редактирование аналитических сведений Индексатора видео
@@ -27,7 +27,7 @@ ms.locfileid: "74892674"
 
     На странице отображаются сводные аналитические сведения о видео. 
 
-    ![Аналитические сведения](./media/video-indexer-view-edit/video-indexer-summarized-insights.png)
+    ![Подробные сведения](./media/video-indexer-view-edit/video-indexer-summarized-insights.png)
 
 4. Просмотрите сводные аналитические сведения о видео. 
 
@@ -39,7 +39,7 @@ ms.locfileid: "74892674"
 
 [Использование глубокой аналитики видео](use-editor-create-project.md)
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)
 

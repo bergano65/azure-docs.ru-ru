@@ -1,20 +1,20 @@
 ---
 title: Подключение данных центра безопасности Azure к Azure Sentinel
 description: Узнайте, как подключить данные центра безопасности Azure к Azure Sentinel.
-author: rkarlin
+author: yelevin
 manager: rkarlin
 ms.assetid: d28c2264-2dce-42e1-b096-b5a234ff858a
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.author: rkarlin
-ms.openlocfilehash: 4c75d1870ca3b966acdd658c91c0af8fd7465bfb
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.author: yelevin
+ms.openlocfilehash: e6e24a97a8b98bdd5447295880811914100563fe
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190877"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77588541"
 ---
 # <a name="connect-data-from-azure-security-center"></a>Подключение данных из центра безопасности Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "77190877"
 
 Azure Sentinel позволяет подключать оповещения из [центра безопасности Azure](../security-center/security-center-intro.md) и выполнять их потоковую передачу в Azure Sentinel. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Чтобы экспортировать оповещения из центра безопасности Azure, необходимо иметь роль "читатель безопасности" в подписке на журналы, которые вы выполняете в вашем потоке.
 
@@ -44,7 +44,7 @@ Azure Sentinel позволяет подключать оповещения из
 
 4. Чтобы использовать соответствующую схему в Log Analytics для оповещений центра безопасности Azure, выполните поиск по запросу **секуритялерт**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить центр безопасности Azure к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

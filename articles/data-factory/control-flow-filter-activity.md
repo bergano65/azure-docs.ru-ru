@@ -11,15 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/04/2018
-ms.openlocfilehash: 5794a2c754e2082fdf45ad689bdb89ea494541c2
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 2c8ada22b4492bef0239b6f811d5a7bd58e58510
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73679861"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81417210"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Действие Filter в фабрике данных Azure
 Вы можете использовать действие Filter в конвейере для применения выражения фильтра к входному массиву. 
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -36,12 +37,12 @@ ms.locfileid: "73679861"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description (Описание) | Допустимые значения | Обязательно
+Свойство | Описание | Допустимые значения | Обязательный
 -------- | ----------- | -------------- | --------
-name | Имя действия `Filter`. | string | Да
-type | Должно быть задано значение **filter**. | string | Да
-condition | Условие, которое можно использовать для фильтрации входных данных. | Expression | Да
-Items | Входной массив, к которому должен применяться фильтр. | Expression | Да
+name | Имя действия `Filter`. | Строка | Да
+type | Должно быть задано значение **filter**. | Строка | Да
+condition | Условие, которое можно использовать для фильтрации входных данных. | Выражение | Да
+items | Входной массив, к которому должен применяться фильтр. | Выражение | Да
 
 ## <a name="example"></a>Пример
 
@@ -111,12 +112,12 @@ Items | Входной массив, к которому должен приме
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
-- [действие условия If](control-flow-if-condition-activity.md);
+- [Действие условия If](control-flow-if-condition-activity.md)
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
-- [Действие ForEach](control-flow-for-each-activity.md)
+- [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Веб-действие](control-flow-web-activity.md)

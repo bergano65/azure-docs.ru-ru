@@ -5,14 +5,14 @@ services: web-application-firewall
 ms.topic: article
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 01/30/2020
+ms.date: 04/14/2020
 ms.author: victorh
-ms.openlocfilehash: 072c7bd5b5b292ca4f0e53c59fcb7e9771331a94
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: c0f802f5113e38e811c110ee913099e76fa7be0b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031737"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81383813"
 ---
 # <a name="custom-rules-for-web-application-firewall-v2-on-azure-application-gateway"></a>Настраиваемые правила для брандмауэра веб-приложения версии 2 в шлюзе приложений Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "77031737"
 
 Разрешить и заблокировать трафик просто с помощью настраиваемых правил. Например, можно заблокировать весь трафик, поступающий из диапазона IP-адресов. Можно сделать еще одно правило, разрешающее трафик, если запрос поступает из конкретного браузера.
 
-Чтобы разрешить что-либо, убедитесь, что параметр `-Action` имеет значение **allow**. Чтобы заблокировать что-либо, убедитесь, что параметр `-Action` имеет значение **Block**.
+Чтобы разрешить что-либо, убедитесь `-Action` , что параметр имеет значение **allow**. Чтобы заблокировать что-либо, убедитесь `-Action` , что параметр имеет значение **Block**.
 
 ```azurepowershell
 $AllowRule = New-AzApplicationGatewayFirewallCustomRule `
@@ -55,7 +55,7 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-Предыдущая `$BlockRule` сопоставляется со следующим настраиваемым правилом в Azure Resource Manager:
+Предыдущий `$BlockRule` параметр сопоставляется со следующим пользовательским правилом в Azure Resource Manager:
 
 ```json
 "customRules": [
@@ -125,15 +125,15 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 Должен быть одним из следующих операторов:
 
 - Ипматч используется только в том случае, если переменная match имеет *ремотеаддр*
-- Equals — входные данные совпадают с Матчвалуе
+- EQUAL — входные данные совпадают с Матчвалуе
 - Содержит
-- LessThan
+- LessThan;
 - GreaterThan
-- LessThanOrEqual
-- GreaterThanOrEqual
+- LessThanOrEqual;
+- GreaterThanOrEqual;
 - BeginsWith
 - EndsWith
-- Regex
+- Регулярное выражение
 - Геосоответствие (Предварительная версия)
 
 ### <a name="negate-condition-optional"></a>Условие отрицания [необязательно]
@@ -165,6 +165,6 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
 
 Настраиваемые правила позволяют создавать специализированные правила в соответствии с потребностями приложений и политик безопасности. Доступ к веб-приложениям можно ограничить по странам или регионам. Дополнительные сведения см. в разделе [геосоответствие настраиваемых правил (Предварительная версия)](geomatch-custom-rules.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После получения сведений о настраиваемых правилах [Создайте собственные настраиваемые правила](create-custom-waf-rules.md).

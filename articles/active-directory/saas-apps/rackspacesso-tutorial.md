@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: jeedes
-ms.openlocfilehash: 31826f5d4d88c977f859a009bface2fddf3a1c88
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 98a160b361e316c87e61855825c2cc36fdbb06d1
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67093196"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81870302"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rackspace-sso"></a>Руководство по Интеграция Azure Active Directory с Rackspace SSO
 
@@ -38,7 +38,7 @@ ms.locfileid: "67093196"
 
 Чтобы настроить интеграцию Azure AD с Rackspace SSO, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Rackspace SSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,17 +99,17 @@ ms.locfileid: "67093196"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** отправьте **файл метаданных поставщика службы**, который можно скачать по этому [URL-адресу](https://login.rackspace.com/federate/sp.xml), и выполните следующие действия:
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
-    ![изображение](common/upload-metadata.png)
+    ![Изображение](common/upload-metadata.png)
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-    ![изображение](common/browse-upload-metadata.png)
+    ![Изображение](common/browse-upload-metadata.png)
 
     c. После успешной передачи файла метаданных соответствующее значение URL-адреса будет добавлено автоматически.
 
@@ -187,7 +187,7 @@ ms.locfileid: "67093196"
 
 ### <a name="set-up-attribute-mapping-in-the-rackspace-control-panel"></a>Настройка сопоставления атрибутов на панели управления Rackspace
 
-Rackspace использует **политику сопоставления атрибутов** для назначения ролей и групп Rackspace пользователям единого входа. **Политика сопоставления атрибутов** преобразует утверждения SAML в Azure AD в поля конфигурации пользователя, требуемые в Rackspace. См. дополнительные сведения в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/attribmapping-basics/). Некоторые замечания:
+Rackspace использует **политику сопоставления атрибутов** для назначения ролей и групп Rackspace пользователям единого входа. **Политика сопоставления атрибутов** преобразует утверждения SAML в Azure AD в поля конфигурации пользователя, требуемые в Rackspace. См. дополнительные сведения в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/appendix/map/). Некоторые замечания:
 
 * Если вы хотите назначить разные уровни доступа Rackspace с использованием групп Azure AD, необходимо включить утверждение групп в параметрах единого входа Azure для **Rackspace SSO**. **Политика сопоставления атрибутов** будет использоваться для сопоставления этих групп с требуемыми ролями и группами Rackspace:
 
@@ -226,7 +226,7 @@ mapping:
 > [!TIP]
 > Убедитесь, что используется текстовый редактор, который проверяет синтаксис YAML при редактировании файла политики.
 
-См. дополнительные примеры в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/attribmapping-basics/).
+См. дополнительные примеры в [документации по основам сопоставления атрибутов в Rackspace](https://developer.rackspace.com/docs/rackspace-federation/appendix/map/).
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -244,5 +244,5 @@ mapping:
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

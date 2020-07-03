@@ -10,10 +10,10 @@ services: iot-dps
 ms.devlang: java
 ms.custom: mvc
 ms.openlocfilehash: d6cb3af134ff272d79cfc440047a3d90733ee9e8
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74976814"
 ---
 # <a name="tutorial-create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Руководство по Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
@@ -66,7 +66,7 @@ ms.locfileid: "74976814"
 
 ## <a name="create-a-device-enrollment-entry"></a>Создание записи о регистрации устройства
 
-1. Откройте окно командной строки. Клонируйте репозиторий GitHub для образцов кода пакета SDK для Java:
+1. Откройте командную строку. Клонируйте репозиторий GitHub для образцов кода пакета SDK для Java:
 
     ```cmd/sh
     git clone https://github.com/Azure/azure-iot-sdk-java.git --recursive
@@ -82,7 +82,7 @@ ms.locfileid: "74976814"
 
         1. Скопируйте **строку подключения первичного ключа**.
 
-            ![Получение с портала строки подключения для подготовки](./media/tutorial-group-enrollments/provisioning-string.png)  
+            ![Получение строки подключения к службе подготовки на портале](./media/tutorial-group-enrollments/provisioning-string.png)  
 
         1. В файле с примером кода **_ServiceEnrollmentGroupSample.java_** замените `[Provisioning Connection String]` значением **строки подключения первичного ключа**.
 
@@ -153,7 +153,7 @@ ms.locfileid: "74976814"
 
     ![Сведения о службе](./media/tutorial-group-enrollments/extract-dps-endpoints.png)
 
-1. Откройте окно командной строки. Перейдите к папке с примером проекта.
+1. Откройте командную строку. Перейдите к папке с примером проекта.
 
     ```cmd/sh
     cd azure-iot-sdk-java/provisioning/provisioning-samples/provisioning-X509-sample
@@ -255,7 +255,7 @@ ms.locfileid: "74976814"
 1. В меню слева на портале Azure нажмите кнопку **Все ресурсы** и выберите свой Центр Интернета вещей. Откройте колонку **Устройства Интернета вещей** для нужного концентратора, выберите *идентификатор устройства*, зарегистрированного в процессе работы с руководством, и нажмите кнопку **Удалить** вверху.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В ходе работы с этим руководством вы создали имитированное устройство X.509 на компьютере с ОС Windows и подготовили его для Центра Интернета вещей с помощью службы подготовки устройств Центра Интернета вещей и групп регистрации. Дополнительные сведения об устройстве X.509 см. в статье с основными понятиями. 
 

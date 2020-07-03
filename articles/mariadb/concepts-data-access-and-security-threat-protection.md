@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 164457444fc097c0b1322909110f705726df1083
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 8485907eba75f80c8f0ed4fd0cc7368c6147b9fd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74772851"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79532184"
 ---
 # <a name="azure-database-for-mariadb-advanced-threat-protection"></a>Расширенная защита от угроз для базы данных Azure для MariaDB
 
@@ -40,8 +40,8 @@ ms.locfileid: "74772851"
 - **Доступ из потенциально опасного приложения.** Это предупреждение активируется, когда доступ к базе данных получают потенциально опасные приложения. В некоторых случаях предупреждения обнаруживают выполнение теста на проникновение. В других случаях — атаку с помощью обычных средств.
 - **Принудительное использование базы данных Azure для MariaDB**. это оповещение активируется при ненормальном большом количестве неудачных попыток входа с разными учетными данными. В некоторых случаях предупреждения обнаруживают выполнение теста на проникновение. В других случаях — атаку методом подбора.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
+* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * Дополнительные сведения о ценах см. на [странице цен на базу данных Azure для MariaDB](https://azure.microsoft.com/pricing/details/mariadb/) . 
 * Настройка [базы данных Azure для MariaDB Advanced Threat protection](howto-database-threat-protection-portal.md) с помощью портал Azure  

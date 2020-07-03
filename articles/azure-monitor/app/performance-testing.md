@@ -1,19 +1,15 @@
 ---
 title: Производительность и нагрузочное тестирование с помощью Azure Application Insights | Документация Майкрософт
 description: Настройка производительности и нагрузочных тестов с помощью Azure Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 06/19/2019
 ms.reviewer: sdash
-ms.openlocfilehash: db23fae6bb15e851d22e54b323428c061f55b34f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 0bfb60b876add70be6cbcd3d726fb3317a8dfcf9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406553"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77669868"
 ---
 # <a name="performance-testing"></a>Тестирование производительности
 
@@ -55,7 +51,7 @@ Application Insights расширенные возможности тестир�
 
 ![Visual Studio ](./media/performance-testing/visual-studio-test.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Многошаговые веб-тесты](availability-multistep.md)
 * [Проверки связи URL-адреса](monitor-web-app-availability.md)

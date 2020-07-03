@@ -10,10 +10,10 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: 19f86b1d8233e05844201e1095c1f79324955cd7
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76841835"
 ---
 # <a name="rest-api"></a>REST API
@@ -24,8 +24,8 @@ ms.locfileid: "76841835"
 ### <a name="base-url"></a>Базовый URL-адрес
 Сетка событий на IoT Edge имеет следующие интерфейсы API, предоставляемые через HTTP (порт 5888) и HTTPS (порт 4438).
 
-* Базовый URL-адрес для HTTP: http://eventgridmodule:5888
-* Базовый URL-адрес для HTTPS: https://eventgridmodule:4438
+* Базовый URL-адрес для HTTP:http://eventgridmodule:5888
+* Базовый URL-адрес для HTTPS:https://eventgridmodule:4438
 
 ### <a name="request-query-string"></a>Запрос строки запроса
 Для всех запросов API требуется следующий параметр строки запроса:
@@ -74,7 +74,7 @@ ms.locfileid: "76841835"
 
 ### <a name="put-topic-create--update"></a>Добавить раздел (создать или обновить)
 
-**Запрос**: ``` PUT /topics/<topic_name>?api-version=2019-01-01-preview ```
+**Запрос**:``` PUT /topics/<topic_name>?api-version=2019-01-01-preview ```
 
 **Полезные данные**:
 
@@ -107,7 +107,7 @@ ms.locfileid: "76841835"
 
 ### <a name="get-topic"></a>Получить раздел
 
-**Запрос**: ``` GET /topics/<topic_name>?api-version=2019-01-01-preview ```
+**Запрос**:``` GET /topics/<topic_name>?api-version=2019-01-01-preview ```
 
 **Ответ**. HTTP 200
 
@@ -127,7 +127,7 @@ ms.locfileid: "76841835"
 
 ### <a name="get-all-topics"></a>Получить все разделы
 
-**Запрос**: ``` GET /topics?api-version=2019-01-01-preview ```
+**Запрос**:``` GET /topics?api-version=2019-01-01-preview ```
 
 **Ответ**. HTTP 200
 
@@ -159,16 +159,16 @@ ms.locfileid: "76841835"
 
 ### <a name="delete-topic"></a>Удалить раздел
 
-**Запрос**: ``` DELETE /topics/<topic_name>?api-version=2019-01-01-preview ```
+**Запрос**:``` DELETE /topics/<topic_name>?api-version=2019-01-01-preview ```
 
 **Ответ**: HTTP 200, пустые полезные данные
 
 ## <a name="manage-event-subscriptions"></a>Управление подписками на события
-В примерах в этом разделе используется `EndpointType=Webhook;`. Примеры JSON для `EndpointType=EdgeHub / EndpointType=EventGrid` приведены в следующем разделе. 
+В примерах этого раздела `EndpointType=Webhook;`используется. Примеры JSON для `EndpointType=EdgeHub / EndpointType=EventGrid` приведены в следующем разделе. 
 
 ### <a name="put-event-subscription-create--update"></a>Размещение подписки на события (создание или обновление)
 
-**Запрос**: ``` PUT /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
+**Запрос**:``` PUT /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
 
 **Полезные данные**:
 ```json
@@ -373,7 +373,7 @@ ms.locfileid: "76841835"
 
 ### <a name="get-event-subscription"></a>Получить подписку на событие
 
-**Запрос**: ``` GET /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
+**Запрос**:``` GET /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
 
 **Ответ**. HTTP 200
 
@@ -478,7 +478,7 @@ ms.locfileid: "76841835"
 
 ### <a name="get-event-subscriptions"></a>Получение подписок на события
 
-**Запрос**: ``` GET /topics/<topic_name>/eventSubscriptions?api-version=2019-01-01-preview ```
+**Запрос**:``` GET /topics/<topic_name>/eventSubscriptions?api-version=2019-01-01-preview ```
 
 **Ответ**. HTTP 200
 
@@ -496,7 +496,7 @@ ms.locfileid: "76841835"
 
 ### <a name="delete-event-subscription"></a>Удаление подписки на события
 
-**Запрос**: ``` DELETE /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
+**Запрос**:``` DELETE /topics/<topic_name>/eventSubscriptions/<subscription_name>?api-version=2019-01-01-preview ```
 
 **Ответ**: HTTP 200, без полезных данных
 
@@ -505,7 +505,7 @@ ms.locfileid: "76841835"
 
 ### <a name="send-batch-of-events-in-event-grid-schema"></a>Отправка пакета событий (в схеме сетки событий)
 
-**Запрос**: ``` POST /topics/<topic_name>/events?api-version=2019-01-01-preview ```
+**Запрос**:``` POST /topics/<topic_name>/events?api-version=2019-01-01-preview ```
 
 ```json
 [
@@ -527,18 +527,18 @@ ms.locfileid: "76841835"
 
 
 **Описания полей полезных данных**
-- ```Id``` является обязательным. Это может быть любое строковое значение, заполняемое вызывающим объектом. Сетка событий не выполняет никаких действий по обнаружению дубликатов и не обеспечивает никакой семантики этого поля.
-- ```Topic``` является необязательным, но если значение указано, оно должно соответствовать topic_name из URL-адреса запроса.
-- ```Subject``` является обязательным, может быть любым строковым значением
-- ```EventType``` является обязательным, может быть любым строковым значением
-- ```EventTime``` является обязательным, он не проверяется, но должен быть правильным значением DateTime.
+- ```Id```является обязательным. Это может быть любое строковое значение, заполняемое вызывающим объектом. Сетка событий не выполняет никаких действий по обнаружению дубликатов и не обеспечивает никакой семантики этого поля.
+- ```Topic```аргумент является необязательным, но если он должен соответствовать topic_name из URL-адреса запроса
+- ```Subject```является обязательным, может быть любым строковым значением
+- ```EventType```является обязательным, может быть любым строковым значением
+- ```EventTime```является обязательным, он не проверяется, но должен быть правильным значением DateTime.
 - ```DataVersion``` является обязательным параметром.
-- ```MetadataVersion``` является необязательным, если он указан, он должен быть строкой со значением ```"1"```
-- ```Data``` является необязательным и может быть любым токеном JSON (число, строка, логическое значение, массив, объект).
+- ```MetadataVersion```аргумент является необязательным, если он указан, он должен быть строкой со значением```"1"```
+- ```Data```аргумент является необязательным и может быть любым токеном JSON (число, строка, логическое значение, массив, объект)
 
 ### <a name="send-batch-of-events-in-custom-schema"></a>Отправка пакета событий (в пользовательской схеме)
 
-**Запрос**: ``` POST /topics/<topic_name>/events?api-version=2019-01-01-preview ```
+**Запрос**:``` POST /topics/<topic_name>/events?api-version=2019-01-01-preview ```
 
 ```json
 [
@@ -572,7 +572,7 @@ ms.locfileid: "76841835"
 ```
 
 ### <a name="set-up-topic-with-custom-schema"></a>Настройка раздела с помощью настраиваемой схемы
-Настройка раздела для запроса событий, публикуемых в `customschema`.
+Настраивает раздел, требующий публикации событий в `customschema`.
 
 ```json
     {
@@ -585,7 +585,7 @@ ms.locfileid: "76841835"
 ```
 
 ### <a name="set-up-topic-with-cloud-event-schema"></a>Настройка раздела с помощью схемы облачных событий
-Настройка раздела для запроса событий, публикуемых в `cloudeventschema`.
+Настраивает раздел, требующий публикации событий в `cloudeventschema`.
 
 ```json
     {
@@ -617,15 +617,15 @@ ms.locfileid: "76841835"
 }
 ```
 
-Ограничения на атрибут `endpointUrl`:
+Ограничения на `endpointUrl` атрибут:
 - Он должен иметь значение, отличное от NULL.
 - Он должен быть абсолютным URL-адресом.
 - Если для параметра outbound__webhook__httpsOnly задано значение true в параметрах Евентгридмодуле, он должен быть только протоколом HTTPS.
 - Если outbound__webhook__httpsOnly задано значение false, это может быть HTTP или HTTPS.
 
-Ограничения для свойства `eventDeliverySchema`:
+Ограничения на `eventDeliverySchema` свойство:
 - Он должен соответствовать входной схеме раздела подписки.
-- Может иметь значение null. По умолчанию используется Входная схема раздела.
+- Может принимать значение NULL. По умолчанию используется Входная схема раздела.
 
 ### <a name="set-up-iot-edge-as-destination"></a>Настройка IoT Edge в качестве назначения
 
@@ -673,7 +673,7 @@ EndpointUrl
 - Он должен иметь значение, отличное от NULL.
 - Он должен быть абсолютным URL-адресом.
 - Путь `/api/events` должен быть определен в пути URL-адреса запроса.
-- Он должен содержать `api-version=2018-01-01` в строке запроса.
+- Он должен иметь `api-version=2018-01-01` строку запроса.
 - Если для параметра outbound__eventgrid__httpsOnly задано значение true в параметрах Евентгридмодуле (по умолчанию true), то он должен быть только протоколом HTTPS.
 - Если outbound__eventgrid__httpsOnly имеет значение false, это может быть HTTP или HTTPS.
 - Если параметру outbound__eventgrid__allowInvalidHostnames присвоено значение false (по умолчанию false), то она должна ориентироваться на одну из следующих конечных точек:
@@ -690,7 +690,7 @@ EndpointUrl
 
 ## <a name="set-up-event-hubs-as-a-destination"></a>Настройка концентраторов событий в качестве назначения
 
-Чтобы опубликовать в концентраторе событий, задайте для `endpointType` значение `eventHub` и укажите:
+Чтобы опубликовать в концентраторе событий, задайте `endpointType` для `eventHub` значение и укажите:
 
 * connectionString: строка подключения для определенного концентратора событий, созданного с помощью политики общего доступа.
 
@@ -712,7 +712,7 @@ EndpointUrl
 
 ## <a name="set-up-service-bus-queues-as-a-destination"></a>Настройка очередей служебной шины в качестве места назначения
 
-Чтобы опубликовать в очереди служебной шины, задайте для `endpointType` значение `serviceBusQueue` и укажите следующие значения:
+Чтобы опубликовать в очереди служебной шины, задайте `endpointType` для `serviceBusQueue` значение и укажите:
 
 * connectionString: строка подключения для конкретной очереди служебной шины, созданной с помощью политики общего доступа.
 
@@ -734,7 +734,7 @@ EndpointUrl
 
 ## <a name="set-up-service-bus-topics-as-a-destination"></a>Настройка разделов служебной шины в качестве места назначения
 
-Чтобы опубликовать данные в разделе служебной шины, задайте для `endpointType` значение `serviceBusTopic` и укажите:
+Чтобы опубликовать данные `endpointType` в разделе служебной шины, задайте для `serviceBusTopic` значение и укажите:
 
 * connectionString: строка подключения для конкретного раздела служебной шины, созданного с помощью политики общего доступа.
 
@@ -756,7 +756,7 @@ EndpointUrl
 
 ## <a name="set-up-storage-queues-as-a-destination"></a>Настройка очередей хранилища в качестве места назначения
 
-Чтобы опубликовать в очереди хранилища, задайте для `endpointType` значение `storageQueue` и укажите следующие значения:
+Чтобы опубликовать в очереди хранилища, задайте `endpointType` для `storageQueue` значение и укажите:
 
 * queueName: имя очереди хранилища, в которую выполняется публикация.
 * connectionString: строка подключения для учетной записи хранения, в которой находится очередь хранилища.

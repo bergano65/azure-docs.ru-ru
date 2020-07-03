@@ -1,0 +1,68 @@
+### YamlMime:Landing
+title: Документация по Azure Key Vault
+summary: Узнайте, как использовать Key Vault для создания и обслуживания ключей, используемых для доступа к облачным ресурсам, приложениям и решениям, а также их шифрованию. Учебники, справочники по API и другие документы.
+metadata:
+  title: Документация по Azure Key Vault
+  description: Узнайте, как использовать Key Vault для создания и обслуживания ключей, используемых для доступа к облачным ресурсам, приложениям и решениям, а также их шифрованию. Учебники, справочники по API и другие документы.
+  services: key-vault
+  ms.service: key-vault
+  ms.topic: landing-page
+  author: msmbaldwin
+  ms.author: mbaldwin
+  manager: rkarlin
+  ms.date: 09/19/2019
+  ms.openlocfilehash: 5be853f9e1f9778eb767aa93497c546cb35fa0df
+  ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 04/16/2020
+  ms.locfileid: "81422410"
+landingContent:
+- title: Об Azure Key Vault
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое хранилище ключей Azure?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Основные понятия
+      url: basic-concepts.md
+    - text: Обратимое удаление
+      url: overview-soft-delete.md
+    - text: Регулирование
+      url: overview-throttling.md
+- title: Учебники
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Key Vault с веб-приложением
+      url: tutorial-net-create-vault-azure-web-app.md
+    - text: Key Vault с виртуальной машиной Azure Windows
+      url: tutorial-net-windows-virtual-machine.md
+    - text: Key Vault с Python в Windows
+      url: tutorial-python-windows-virtual-machine.md
+- title: Безопасность
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Защита Key Vault
+      url: secure-your-key-vault.md
+    - text: Рекомендации по обеспечению безопасности
+      url: security-recommendations.md
+    - text: Базовые средства безопасности
+      url: security-baseline.md
+  - linkListType: tutorial
+    links:
+    - text: Использование Приватного канала
+      url: private-link-service.md
+    - text: Использование управляемого удостоверения
+      url: managed-identity.md
+    - text: Использование политики доступа
+      url: group-permissions-for-apps.md
+- title: Microsoft Learn
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Управление секретами в серверных приложениях с помощью Azure Key Vault
+      url: /learn/modules/manage-secrets-with-azure-key-vault/

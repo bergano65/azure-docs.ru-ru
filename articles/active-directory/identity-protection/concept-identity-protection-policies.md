@@ -12,17 +12,17 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4a44e32efa3e38cf9c4df7dc00e3189c129db418
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "72887420"
 ---
-# <a name="identity-protection-policies"></a>Политики защиты идентификации
+# <a name="identity-protection-policies"></a>Политики Защиты идентификации
 
 Защита идентификации Azure Active Directory включает три политики по умолчанию, которые администраторы могут выбрать для включения. Эти политики включают ограниченную настройку, но применимы для большинства организаций. Все политики позволяют исключить пользователей, например [учетные записи администратора для аварийного доступа или прерывания](../users-groups-roles/directory-emergency-access.md).
 
-![Политики защиты идентификации](./media/concept-identity-protection-policies/identity-protection-policies.png)
+![Политики Защиты идентификации](./media/concept-identity-protection-policies/identity-protection-policies.png)
 
 ## <a name="azure-mfa-registration-policy"></a>Политика регистрации Azure MFA
 
@@ -58,7 +58,7 @@ ms.locfileid: "72887420"
 
 - [Включение самостоятельного сброса пароля в Azure AD](../authentication/howto-sspr-deployment.md)
 
-- [Включение многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)
+- [Включение Многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)
 
 - [Включение политики регистрации многофакторной идентификации Azure](howto-identity-protection-configure-mfa-policy.md)
 

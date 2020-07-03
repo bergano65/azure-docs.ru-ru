@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 08/22/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 35ef9d8731e169e890f5985ce01215fec5d6e3de
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433268"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79277886"
 ---
 # <a name="durable-functions-types-and-features"></a>Типы и функции Устойчивые функции
 
@@ -20,7 +20,7 @@ ms.locfileid: "75433268"
 
 ## <a name="orchestrator-functions"></a>Функции оркестратора
 
-Функции Orchestrator описывают выполнение действий и порядок выполнения действий. Функции Orchestrator описывают согласование в коде (C# или JavaScript), как показано в [устойчивые функции шаблонах приложений](durable-functions-overview.md#application-patterns). Оркестрации может иметь множество различных типов действий, включая [функции действий](#activity-functions), [подсистемы взаимодействия](durable-functions-orchestrations.md#sub-orchestrations), [ожидание внешних событий](durable-functions-orchestrations.md#external-events), [http](durable-functions-http-features.md)и [таймеров](durable-functions-orchestrations.md#durable-timers). Функции Orchestrator также могут взаимодействовать с [функциями сущностей](#entity-functions).
+Функции Orchestrator описывают выполнение действий и порядок выполнения действий. Функции Orchestrator описывают оркестрации в коде (C# или JavaScript), как показано в [устойчивые функции шаблонах приложений](durable-functions-overview.md#application-patterns). Оркестрации может иметь множество различных типов действий, включая [функции действий](#activity-functions), [подсистемы взаимодействия](durable-functions-orchestrations.md#sub-orchestrations), [ожидание внешних событий](durable-functions-orchestrations.md#external-events), [http](durable-functions-http-features.md)и [таймеров](durable-functions-orchestrations.md#durable-timers). Функции Orchestrator также могут взаимодействовать с [функциями сущностей](#entity-functions).
 
 > [!NOTE]
 > Функции Orchestrator пишутся с помощью обычного кода, но существуют и некоторые требования к написанию кода. В частности, код функции Orchestrator должен быть *детерминированным*. Несоблюдение этих требований к детерминированным данным может привести к сбою в работе функций Orchestrator. Подробные сведения об этих требованиях и способах их решения можно найти в разделе [ограничения кода](durable-functions-code-constraints.md) .
@@ -36,7 +36,7 @@ ms.locfileid: "75433268"
 > [!NOTE]
 > Поскольку функции действий гарантируют только *однократное* выполнение, мы рекомендуем сделать логику функции действия *идемпотентными* по возможности.
 
-Используйте [триггер действия](durable-functions-bindings.md#activity-trigger) для определения функции действия. Функции .NET получают `DurableActivityContext` в качестве параметра. Можно также привязать триггер к любому другому сериализуемым в JSON объекту для передачи входных данных функции. В JavaScript можно получить доступ к входным данным через свойство `<activity trigger binding name>` [объекта`context.bindings`](../functions-reference-node.md#bindings). Функциям действий может быть передано только одно значение. Для передачи нескольких значений необходимо использовать кортежи, массивы или сложные типы.
+Используйте [триггер действия](durable-functions-bindings.md#activity-trigger) для определения функции действия. Функции .NET получают в `DurableActivityContext` качестве параметра. Можно также привязать триггер к любому другому сериализуемым в JSON объекту для передачи входных данных функции. В JavaScript можно получить доступ к входным данным через `<activity trigger binding name>` свойство [ `context.bindings` объекта](../functions-reference-node.md#bindings). Функциям действий может быть передано только одно значение. Для передачи нескольких значений необходимо использовать кортежи, массивы или сложные типы.
 
 > [!NOTE]
 > Функцию действия можно активировать только из функции Orchestrator.
@@ -59,7 +59,7 @@ ms.locfileid: "75433268"
 
 Помимо активации функций Orchestrator или Entity, для взаимодействия с запущенными оркестрации и сущностями можно использовать *устойчивую клиентскую* привязку. Например, оркестрации могут запрашиваться, завершаться и получать события. Дополнительные сведения об управлении согласованиями и сущностями см. в статье [Управление экземплярами](durable-functions-instance-management.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к работе, создайте свою первую устойчивую функцию в [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md).
 

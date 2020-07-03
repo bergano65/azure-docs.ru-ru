@@ -13,10 +13,10 @@ ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: c71195b247af6d5046d88d3e6918a660eddf09b3
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77062390"
 ---
 # <a name="perform-an-access-review-from-the-my-apps-portal"></a>Выполнение проверки доступа на портале "Мои приложения"
@@ -28,7 +28,7 @@ ms.locfileid: "77062390"
 [!INCLUDE [preview-notice](../../../includes/active-directory-end-user-my-apps-portal.md)]
 
 >[!Important]
->Это содержимое предназначено для пользователей **моих приложений** . Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](https://docs.microsoft.com/azure/active-directory/manage-apps).
+>Эти материалы предназначены для пользователей портала **Мои приложения**. Администраторы могут найти дополнительные сведения о настройке облачных приложений и управлении ими в [документации по управлению приложениями](https://docs.microsoft.com/azure/active-directory/manage-apps).
 
 ## <a name="manage-access-reviews"></a>Управление проверками доступа
 
@@ -41,7 +41,7 @@ ms.locfileid: "77062390"
 
 1. Войдите в рабочую или учебную учетную запись.
 
-2. Откройте веб-браузер и перейдите в https://myapps.microsoft.comили воспользуйтесь ссылкой, предоставленной вашей организацией. Например, вы можете направить на настроенную страницу Организации, например https://myapps.microsoft.com/contoso.com.
+2. Откройте веб-браузер и перейдите по https://myapps.microsoft.comссылке или воспользуйтесь ссылкой, предоставленной вашей организацией. Например, вы можете направить на настроенную страницу для вашей организации, например https://myapps.microsoft.com/contoso.com.
 
     Откроется страница **приложения** , на которой показаны все облачные приложения, принадлежащие вашей организации и доступные для использования.
 
@@ -73,8 +73,8 @@ ms.locfileid: "77062390"
     >[!Note]
     >Вы можете изменить доступ в любое время, пока не завершится период проверки доступа. Если вы удалите доступ к приложению или группе, это не будет немедленно удалено. Удаление происходит, когда заканчивается период проверки доступа или когда администратор закрывает проверку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Доступ к приложениям и их использование на портале "Мои приложения"](my-apps-portal-end-user-access.md)
-- [Изменение сведений о профиле](my-apps-portal-end-user-update-profile.md)
+- [Изменение данных в профиле](my-apps-portal-end-user-update-profile.md)
 - [Просмотр и обновление информации, связанной с группами](my-apps-portal-end-user-groups.md)

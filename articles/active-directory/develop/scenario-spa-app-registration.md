@@ -2,24 +2,21 @@
 title: Регистрация одностраничных приложений — платформа Microsoft Identity | Службы
 description: Узнайте, как создать одностраничное приложение (регистрация приложения)
 services: active-directory
-documentationcenter: dev-center-name
 author: navyasric
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 5b18b10748e0587920c6965f1d235376da928469
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 6f690a8b3436a45d434ccad2bbaa7d2a1b0b76aa
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701898"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80882154"
 ---
 # <a name="single-page-application-app-registration"></a>Одностраничное приложение: регистрация приложения
 

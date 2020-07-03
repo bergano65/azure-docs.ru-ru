@@ -1,5 +1,5 @@
 ---
-title: Создание и изменение политик безопасности политики Azure с помощью REST API | Документация Майкрософт
+title: Создание и изменение политик безопасности политики Azure с помощью REST API
 description: Сведения об управлении политиками политики Azure с помощью REST API.
 services: security-center
 author: memildin
@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 56c5ca8c4e1d70e002a338c753f9ab1f0b1aa411
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.openlocfilehash: c218b5dc8ca3bfa0358a9b6a0d4867696762a8d4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73522025"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77430947"
 ---
 # <a name="configure-a-security-policy-in-azure-policy-using-the-rest-api"></a>Настройка политики безопасности в политике Azure с помощью REST API
 
@@ -115,7 +115,7 @@ ms.locfileid: "73522025"
     https://management.azure.com/{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}?api-version=2018-05-01 
  ```
 
-## Справочник по именам политик <a name="policy-names"></a>
+## <a name="policy-names-reference"></a>Справочник по именам политик <a name="policy-names"></a>
 
 |Имя политики в Центре безопасности Azure|Имя политики, отображаемое в службе "Политика Azure" |Имя параметра действия политики|
 |----|----|----|
@@ -134,7 +134,7 @@ ms.locfileid: "73522025"
 |Брандмауэр следующего поколения |Мониторинг незащищенных сетевых конечных точек в Центре безопасности Azure| |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Другие связанные материалы см. в следующих статьях: 
 

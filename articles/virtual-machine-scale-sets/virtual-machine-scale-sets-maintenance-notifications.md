@@ -1,19 +1,20 @@
 ---
 title: Уведомления об обслуживании для масштабируемых наборов виртуальных машин в Azure
 description: Сведения о просмотре уведомлений об обслуживании и запуске самообслуживания для масштабируемых наборов виртуальных машин в Azure.
-author: shants123
-tags: azure-service-management,azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.workload: infrastructure-services
+author: mimckitt
+ms.author: mimckitt
 ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
 ms.date: 08/20/2019
-ms.author: shants
-ms.openlocfilehash: 8d8c32c2a2f3e31c1b7f4645fe61abf2d5d0e014
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: c4b0cb8204891538ef9c4eef3fa0ff5fd9686536
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76275784"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200089"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Уведомления о плановом обслуживании для масштабируемых наборов виртуальных машин
 
@@ -80,7 +81,7 @@ Azure периодически внедряет обновления, чтобы
 
 Теперь столбец **Самообслуживание** появится в списке масштабируемых наборов виртуальных машин. Для каждого масштабируемого набора виртуальных машин в столбце "Самообслуживание" может быть одно из следующих значений.
 
-| Значение | Description |
+| Значение | Описание |
 |-------|-------------|
 | Да | По меньшей мере для одной из виртуальных машин в этом наборе действует период самообслуживания. В период самообслуживания обслуживание можно запустить в любое время. | 
 | Нет | В этом наборе нет ни одной виртуальной машины, для которой действует период самообслуживания. | 
@@ -121,7 +122,7 @@ Get-AzVmss -ResourceGroupName rgName -VMScaleSetName vmssName -InstanceId id -In
 
 В разделе **MaintenanceRedeployStatus** возвращаются следующие свойства: 
 
-| Значение | Description   |
+| Значение | Описание   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на этой виртуальной машине. |
 | PreMaintenanceWindowStartTime         | Начало периода самообслуживания, в течение которого можно инициировать обслуживание на виртуальной машине. |
@@ -146,13 +147,13 @@ Set-AzVmss -ResourceGroupName rgName -VMScaleSetName vmssName -InstanceId id -Pe
  
 Сведения об обслуживании возвращаются, только если обслуживание запланировано. Если запланированное обслуживание не затрагивает указанный экземпляр виртуальной машины, команда не возвращает информацию об обслуживании. 
 
-```azure-cli
+```azurecli
 az vmss list-instances -g rgName -n vmssName --expand instanceView
 ```
 
 Для каждого экземпляра виртуальной машины в разделе **MaintenanceRedeployStatus** возвращаются следующие свойства: 
 
-| Значение | Description   |
+| Значение | Описание   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на этой виртуальной машине. |
 | PreMaintenanceWindowStartTime         | Начало периода самообслуживания, в течение которого можно инициировать обслуживание на виртуальной машине. |
@@ -166,11 +167,11 @@ az vmss list-instances -g rgName -n vmssName --expand instanceView
 
 Если для параметра `IsCustomerInitiatedMaintenanceAllowed` задано значение **True**, при вызове следующей функции запускается обслуживание для экземпляра виртуальной машины:
 
-```azure-cli
+```azurecli
 az vmss perform-maintenance -g rgName -n vmssName --instance-ids id
 ```
 
-## <a name="faq"></a>Часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 **Вопрос. Зачем вам нужно перезагружать мою виртуальную машину?**
 

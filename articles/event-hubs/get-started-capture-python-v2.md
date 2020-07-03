@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 01/30/2020
 ms.author: spelluru
-ms.openlocfilehash: 788fcf15ebd68aae525c2895340f437594c9c58c
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 191a2246afdc60953d8c353f9ccdc2339130f910
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906412"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82159341"
 ---
 # <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub-version-5"></a>Запись данных Центров событий в Хранилище Azure и их чтение с помощью Python (azure-eventhub версии 5)
 
-Концентратор событий можно настроить таким образом, чтобы данные, отправляемые в концентратор событий, собирались в учетной записи хранения Azure или Azure Data Lake Storage. В этой статье показано, как написать код Python, чтобы отправить события в концентратор событий и считывать собранные данные с Хранилища BLOB-объектов Azure. Дополнительные сведения об этой функции см. [Capture events through Azure Event Hubs in Azure Blob Storage or Azure Data Lake Storage](event-hubs-capture-overview.md) (Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage).
+Концентратор событий можно настроить таким образом, чтобы данные, отправляемые в него, собирались в учетной записи хранения Azure либо в Azure Data Lake Storage 1-го поколения или 2-го поколения. В этой статье показано, как написать код Python, чтобы отправлять события в концентратор событий и считывать собранные данные из **хранилища BLOB-объектов Azure**. Дополнительные сведения об этой функции см. [Capture events through Azure Event Hubs in Azure Blob Storage or Azure Data Lake Storage](event-hubs-capture-overview.md) (Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage).
 
 В приведенном кратком руководстве для демонстрации функции сбор используется [пакет SDK для Azure Python](https://azure.microsoft.com/develop/python/). Приложение *sender.py* отправляет имитацию телеметрии среды в концентраторы событий в формате JSON. В настройках концентратора событий предусмотрено использование функции записи для пакетной записи этих данных в хранилище BLOB-объектов. Приложение *capturereader.py* считывает эти большие двоичные объекты и создает для каждого устройства дополнительный файл. Затем приложение записывает данные в CSV-файлы.
 
@@ -37,7 +37,7 @@ ms.locfileid: "76906412"
 > * Отправьте данные в концентратор событий с помощью скрипта Python.
 > * Прочитайте и обработайте файлы, полученные от функции "Сбор" службы "Центры событий", с помощью другого скрипта Python.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Python 2.7, и 3.5 или более поздней версии, с установленным и обновленным PIP.  
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.  
@@ -46,7 +46,7 @@ ms.locfileid: "76906412"
 - Учетная запись хранения Azure, контейнер больших двоичных объектов в учетной записи хранения и строка подключения к учетной записи хранения. Выполните действия в приведенных ниже ресурсах, если эти элементы отсутствуют.  
     1. [Create an Azure Storage account](../storage/common/storage-quickstart-create-account.md?tabs=azure-portal) (Создание учетной записи хранения Azure)  
     1. [Создание контейнера](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container)  
-    1. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md#view-and-copy-a-connection-string).
+    1. [Получение строки подключения к учетной записи хранения](../storage/common/storage-configure-connection-string.md).
 
     Обязательно запишите строку подключения и имя контейнера для последующего использования в кратком руководстве.  
 - Включите функцию "Сбор" для концентратора событий. Для этого следуйте инструкциям в разделе [Enable capturing of events streaming through Azure Event Hubs](event-hubs-capture-enable-through-portal.md) (Включение функции "Сбор" в Центрах событий с помощью портала Azure). Выберите учетную запись хранения и контейнер BLOB-объектов, созданные на предыдущем шаге. Эту функцию можно включить при создании концентратора событий.  

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
 ms.openlocfilehash: 21dd43b5179d0752699bb56b51a2c08976aa037b
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76900688"
 ---
 # <a name="get-started-with-the-azure-quickstart-center"></a>Начало работы с центром быстрого запуска Azure
@@ -36,14 +36,14 @@ ms.locfileid: "76900688"
 
 1. Выберите **все службы** в меню портал Azure.
 
-1. Выберите **общие** > **центре**быстрого запуска.
+1. Выберите **Общий** > **центр**быстрого запуска.
 
 Подробные сведения о том, что может сделать центр быстрого запуска Azure, см. в этом видео:
 > [!VIDEO https://www.youtube.com/embed/0bSA7RXrbAg]
 
 [Общие сведения о центре быстрого запуска Azure](https://www.youtube.com/watch?v=0bSA7RXrbAg)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о настройке и миграции Azure в [инфраструктуре внедрения Microsoft Cloud для Azure](/azure/architecture/cloud-adoption/).
 * Разблокируйте свои навыки работы с облаком, используя дополнительные курсы от [Microsoft Learn](/learn/azure/).

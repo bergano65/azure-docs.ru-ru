@@ -1,18 +1,17 @@
 ---
 title: Примеры запросов журнала Azure Monitor | Документация Майкрософт
 description: Примеры запросов журнала в Azure Monitor, выполненных с помощью языка запросов Kusto.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 10/01/2019
-ms.openlocfilehash: 8850aef8b5d45f236385551a1455e6fe7b540340
-ms.sourcegitcommit: b2fb32ae73b12cf2d180e6e4ffffa13a31aa4c6f
+ms.date: 03/16/2020
+ms.openlocfilehash: 18cd74ac9298b7dd058de2b224f677ec0d8f2d64
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73614441"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79480289"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
 Эта статья содержит несколько примеров [запросов](log-query-overview.md), составленных на основе [языка запросов Kusto](/azure/kusto/query/) для получения разных типов данных журнала из Azure Monitor. Для консолидации и анализа данных используются разные методы, и на основе этих примеров вы сможете определить, какие стратегии лучше всего подойдут под ваши конкретные требования.  
@@ -230,7 +229,7 @@ protection_data | join (heartbeat_data) on Computer, round_time
 ### <a name="count-security-events-by-activity-id"></a>Подсчет событий безопасности по идентификатору действия
 
 
-Этот пример основан на фиксированной структуре столбца **Activity**: \<идентификатор\>-\<имя\>.
+В этом примере используется фиксированная структура столбца **действия** \<: имя\>-\<\>идентификатора.
 Он анализирует значение **Activity** и разделяет его на два новых столбца, а затем подсчитывает число вхождений для каждого значения **activityID**.
 
 ```Kusto
@@ -271,7 +270,7 @@ SecurityEvent
 ```
 
 ### <a name="parse-activity-name-and-id"></a>Анализ имени и идентификатора действия
-Два следующих примера используют фиксированную структуру столбца **Activity**: \<идентификатор\>-\<имя\>. Первый пример с помощью оператора **parse** присваивает значения двум новым столбцам: **activityID** и **activityDesc**.
+Два приведенных ниже примера зависят от фиксированной структуры столбца **действия** : \<имя\>-\<\>идентификатора. Первый пример с помощью оператора **parse** присваивает значения двум новым столбцам: **activityID** и **activityDesc**.
 
 ```Kusto
 SecurityEvent
@@ -376,40 +375,47 @@ suspicious_users_that_later_logged_in
 
 ## <a name="usage"></a>Использование
 
-### <a name="calculate-the-average-size-of-perf-usage-reports-per-computer"></a>Вычисление среднего размер отчетов об использовании на один компьютер
+Тип `Usage` данных можно использовать для отслеживания принимаемого объема данных по решению или типу данных. Существуют и другие способы изучения полученных томов данных по [компьютерам](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#data-volume-by-computer) или [подпискам Azure, группам ресурсов или ресурсам](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#data-volume-by-azure-resource-resource-group-or-subscription).
 
-Этот пример вычисляет средний размер отчетов об использовании на каждом компьютере за последние 3 часа.
-Результаты отображаются в виде линейчатой диаграммы.
-```Kusto
+#### <a name="data-volume-by-solution"></a>объем данных для каждого решения;
+
+Запрос, используемый для просмотра объема оплачиваемых данных по решениям за последний месяц (за исключением последнего частичного дня):
+
+```kusto
 Usage 
-| where TimeGenerated > ago(3h)
-| where DataType == "Perf" 
-| where QuantityUnit == "MBytes" 
-| summarize avg(Quantity) by Computer
-| sort by avg_Quantity desc nulls last
-| render barchart
+| where TimeGenerated > ago(32d)
+| where StartTime >= startofday(ago(31d)) and EndTime < startofday(now())
+| where IsBillable == true
+| summarize BillableDataGB = sum(Quantity) / 1000. by bin(StartTime, 1d), Solution | render barchart
 ```
 
-### <a name="timechart-latency-percentiles-50-and-95"></a>Временная диаграмма по процентилям 50 и 95 для значений задержки
+Обратите внимание, `where IsBillable = true` что предложение фильтрует типы данных от определенных решений, для которых не взимается плата за прием.  Кроме того, предложение `TimeGenerated` с имеет значение только для того, чтобы убедиться в том, что запрос в портал Azure будет выглядеть после истечения 24 часов по умолчанию. При использовании типа данных Usage `StartTime` и `EndTime` представляют временные периоды, для которых отображаются результаты. 
 
-Этот пример вычисляет и отображает процентили 50 и 95 для зарегистрированной задержки **avgLatency** за каждый час в течение последних 24 часов.
+#### <a name="data-volume-by-type"></a>Объем данных по типу
 
-```Kusto
-Usage
-| where TimeGenerated > ago(24h)
-| summarize percentiles(AvgLatencyInSeconds, 50, 95) by bin(TimeGenerated, 1h) 
-| render timechart
+Дополнительные сведения можно просмотреть, чтобы увидеть тенденции данных для типа данных:
+
+```kusto
+Usage 
+| where TimeGenerated > ago(32d)
+| where StartTime >= startofday(ago(31d)) and EndTime < startofday(now())
+| where IsBillable == true
+| summarize BillableDataGB = sum(Quantity) / 1000. by bin(StartTime, 1d), DataType | render barchart
 ```
 
-### <a name="usage-of-specific-computers-today"></a>Использование определенных компьютеров за текущий день
-Этот пример извлекает данные **Usage** (использование) за последний день для компьютеров, имена которых содержат строку _ContosoFile_. Результаты сортируются по полю **TimeGenerated**.
+Чтобы просмотреть таблицу по решению и типу за прошлый месяц,
 
-```Kusto
-Usage
-| where TimeGenerated > ago(1d)
-| where  Computer contains "ContosoFile" 
-| sort by TimeGenerated desc nulls last
+```kusto
+Usage 
+| where TimeGenerated > ago(32d)
+| where StartTime >= startofday(ago(31d)) and EndTime < startofday(now())
+| where IsBillable == true
+| summarize BillableDataGB = sum(Quantity) / 1000. by Solution, DataType
+| sort by Solution asc, DataType asc
 ```
+
+> [!NOTE]
+> Некоторые поля с типом данных Usage (Потребление) уже устарели и данные в них не заполняются, хотя они пока сохраняются в схеме. Например, сюда относятся поля **Computer** и ряд данных о приеме данных (**TotalBatches**, **BatchesWithinSla**, **BatchesOutsideSla**, **BatchesCapped** и **AverageProcessingTimeMs**).
 
 ## <a name="updates"></a>Обновления
 
@@ -429,7 +435,7 @@ Update
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о языке можно получить в [справочнике по языку Kusto](/azure/kusto/query).
 - Ознакомьтесь со статьей [Начало работы с запросами журнала Azure Monitor](get-started-queries.md).

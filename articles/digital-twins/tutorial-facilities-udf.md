@@ -1,5 +1,5 @@
 ---
-title: Руководство. Мониторинг пространства устройств Интернета вещей с помощью Azure Digital Twins | Документация Майкрософт
+title: Руководство по Мониторинг пространства устройств Интернета вещей с помощью Azure Digital Twins | Документация Майкрософт
 description: Сведения о подготовке пространственных ресурсов и контроле условий работы с помощью Azure Digital Twins.
 services: digital-twins
 ms.author: alinast
@@ -10,17 +10,17 @@ ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 01/10/2020
 ms.openlocfilehash: 6cf6a8f7de181a81d60028e33ba2631815c8ca04
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75895360"
 ---
-# <a name="tutorial-provision-your-building-and-monitor-working-conditions-with-azure-digital-twins-preview"></a>Руководство. Подготовка примера здания и мониторинг условий работы с помощью Azure Digital Twins (предварительная версия)
+# <a name="tutorial-provision-your-building-and-monitor-working-conditions-with-azure-digital-twins-preview"></a>Руководство по Подготовка примера здания и мониторинг условий работы с помощью Azure Digital Twins (предварительная версия)
 
 В этом учебнике описано, как использовать Azure Digital Twins (предварительная версия) для отслеживания желаемых температурных условий и уровня комфорта в необходимых пространствах. [Настроив пример здания](tutorial-facilities-setup.md), вы можете подготовить его и запустить пользовательские функции на основе данных датчика, используя шаги в этом руководстве.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Определение условий для мониторинга.
@@ -28,7 +28,7 @@ ms.locfileid: "75895360"
 > * Моделирование данных датчика.
 > * Получение результатов выполнения определяемой пользователем функции.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом руководстве предполагается, что вы [настроили экземпляр Azure Digital Twins](tutorial-facilities-setup.md). Прежде чем продолжить, убедитесь, что у вас есть:
 

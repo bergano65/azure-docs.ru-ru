@@ -1,15 +1,16 @@
 ---
 title: Ограничения и квоты подписки Azure
 description: В этой статье приводится перечень наиболее распространенных ограничений, относящихся к подписке Azure и различным службам, квот и границ. Эта статья содержит сведения о том, как увеличить пределы и максимальное значение.
-tags: billing
 ms.topic: conceptual
-ms.date: 02/11/2020
-ms.openlocfilehash: 4b36fcf8d3630ffd9008ad9deee8d0945f901f9b
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+author: davidsmatlak
+ms.author: v-dasmat
+ms.date: 04/21/2020
+ms.openlocfilehash: 865c39ea9a48f9f5e0fbf04dea629b6886cf7ae4
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77153899"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82584065"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 
@@ -19,7 +20,14 @@ ms.locfileid: "77153899"
 
 ## <a name="managing-limits"></a>Управление ограничениями
 
-Если вы хотите увеличить лимит или квоту выше предельного значения по умолчанию, отправьте [запрос в службу поддержки клиентов через Интернет](../templates/error-resource-quota.md)бесплатно. Ограничения не могут быть вызваны над максимальным предельным значением, показанным в следующих таблицах. Если столбец максимального ограничения отсутствует, ресурс не имеет регулируемых ограничений.
+> [!NOTE]
+> Некоторые службы имеют регулируемые ограничения.
+>
+> Если служба не имеет регулируемых ограничений, в следующих таблицах используется **ограничение**заголовка. В таких случаях значения по умолчанию и максимальное ограничение одинаковы.
+>
+> Если ограничение может быть скорректировано, таблицы включают заголовки **ограничения по умолчанию** и **максимального предела** . Это ограничение может быть вызвано выше ограничения по умолчанию, но не выше максимального ограничения.
+>
+> Если вы хотите увеличить лимит или квоту выше предельного значения по умолчанию, отправьте [запрос в службу поддержки клиентов через Интернет](../templates/error-resource-quota.md)бесплатно.
 
 [Бесплатные пробные подписки](https://azure.microsoft.com/offers/ms-azr-0044p) не подходят для увеличения лимита или квоты. При наличии [бесплатной пробной версии подписки](https://azure.microsoft.com/offers/ms-azr-0044p) ее можно обновить до подписки [с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/). Дополнительные сведения см. в статье [Обновление бесплатной пробной подписки Azure до подписки с оплатой по мере использования](../../billing/billing-upgrade-azure-subscription.md) и [бесплатной пробной подписки](https://azure.microsoft.com/free/free-account-faq).
 
@@ -34,6 +42,12 @@ ms.locfileid: "77153899"
 Ограничения по именам ресурсов см. в статье [правила именования и ограничения для ресурсов Azure](resource-name-rules.md).
 
 Сведения об ограничениях на операции записи и чтения API Resource Manager см. в разделе [Регулирование запросов Resource Manager](request-limits-and-throttling.md).
+
+### <a name="management-group-limits"></a>Ограничения группы управления
+
+К [группам управления](../../governance/management-groups/overview.md)применяются следующие ограничения.
+
+[!INCLUDE [management-group-limits](../../../includes/management-group-limits.md)]
 
 ### <a name="subscription-limits"></a>Ограничения подписки
 
@@ -127,7 +141,7 @@ ms.locfileid: "77153899"
 
 ## <a name="azure-monitor-limits"></a>Ограничения Azure Monitor
 
-### <a name="alerts"></a>видны узлы
+### <a name="alerts"></a>Предупреждения
 
 [!INCLUDE [monitoring-limits](../../../includes/azure-monitor-limits-alerts.md)]
 
@@ -175,7 +189,7 @@ ms.locfileid: "77153899"
 
 ## <a name="container-registry-limits"></a>Ограничения реестра контейнера
 
-В следующей таблице приведены сведения о возможностях и ограничениях [уровней служб](../../container-registry/container-registry-skus.md) "Базовый", "Стандартный" и "Премиум".
+В следующей таблице описаны функции и ограничения [уровней служб](../../container-registry/container-registry-skus.md)"базовый", "Стандартный" и "Премиум".
 
 [!INCLUDE [container-registry-limits](../../../includes/container-registry-limits.md)]
 
@@ -232,7 +246,11 @@ ms.locfileid: "77153899"
 
 ## <a name="media-services-limits"></a>Ограничения служб мультимедиа
 
-[!INCLUDE [azure-mediaservices-limits](../../../includes/azure-mediaservices-limits.md)]
+[!INCLUDE [azure-mediaservices-limits](../../../includes/media-servieces-limits-quotas-constraints.md)]
+
+### <a name="media-services-v2-legacy"></a>Службы мультимедиа версии 2 (прежняя версия)
+
+Ограничения, характерные для служб мультимедиа версии 2 (устаревшие), см. в разделе [службы мультимедиа версии 2 (устаревшие)](https://docs.microsoft.com/azure/media-services/previous/media-services-quotas-and-limitations) .
 
 ## <a name="mobile-services-limits"></a>Ограничения мобильных служб
 
@@ -295,10 +313,6 @@ ms.locfileid: "77153899"
 
 [!INCLUDE [role-based-access-control-limits](../../../includes/role-based-access-control-limits.md)]
 
-## <a name="scheduler-limits"></a>Ограничения планировщика
-
-[!INCLUDE [scheduler-limits-table](../../../includes/scheduler-limits-table.md)]
-
 ## <a name="service-bus-limits"></a>Ограничения служебной шины
 
 [!INCLUDE [azure-servicebus-limits](../../../includes/service-bus-quotas-table.md)]
@@ -313,7 +327,7 @@ ms.locfileid: "77153899"
 
 ## <a name="sql-data-warehouse-limits"></a>Ограничения хранилища данных SQL
 
-Ограничения для хранилища данных SQL см. в статье [ограничения ресурсов хранилища данных](../../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)SQL.
+Ограничения для хранилища данных SQL см. в статье [ограничения ресурсов хранилища данных](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md)SQL.
 
 ## <a name="storage-limits"></a>Ограничения хранилища
 
@@ -402,4 +416,4 @@ ms.locfileid: "77153899"
 * [Общие сведения об ограничениях и росте Azure](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Размеры виртуальных машин и облачных служб для Azure](../../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Размеры для облачных служб Azure](../../cloud-services/cloud-services-sizes-specs.md)
-* [Правила именования и ограничения для ресурсов Azure](resource-name-rules.md)
+* [Правила и ограничения именования для ресурсов Azure](resource-name-rules.md)

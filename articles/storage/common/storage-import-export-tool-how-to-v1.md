@@ -9,10 +9,10 @@ ms.date: 1/15/2017
 ms.author: twooley
 ms.subservice: common
 ms.openlocfilehash: aaceee65ae91a22dc658d185a874e2040b1e0f04
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75975671"
 ---
 # <a name="using-the-azure-importexport-tool-classic-deployment-model"></a>Использование средства импорта и экспорта Azure (классическая модель развертывания)
@@ -30,6 +30,6 @@ ms.locfileid: "75975671"
 - Исправление задания экспорта.
 - Устранение неполадок средства импорта и экспорта Azure, возникающих при его использовании.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Using the Azure Import/Export Tool](../storage-import-export-tool-how-to.md) (Использование средства импорта и экспорта Azure)

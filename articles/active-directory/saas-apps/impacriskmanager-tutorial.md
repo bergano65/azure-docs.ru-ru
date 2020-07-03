@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с IMPAC Risk Manager | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с IMPAC Risk Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в IMPAC Risk Manager.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: c2c153d8e67ff952add177d8a98b7561c3165774
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67100382"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-impac-risk-manager"></a>Руководство по Интеграция Azure Active Directory с IMPAC Risk Manager
+# <a name="tutorial-azure-active-directory-integration-with-impac-risk-manager"></a>Руководство по интеграции Azure Active Directory с IMPAC Risk Manager
 
 В этом руководстве описано, как интегрировать IMPAC Risk Manager с Azure Active Directory (Azure AD).
 Интеграция Azure AD с IMPAC Risk Manager обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67100382"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением IMPAC Risk Manager, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка IMPAC Risk Manager с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67100382"
 
     ![Сведения о домене и URL-адресах единого входа для приложения IMPAC Risk Manager](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите значение, предоставленное IMPAC.
+    а. В текстовом поле **Идентификатор** введите значение, предоставленное IMPAC.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
 
@@ -144,7 +144,7 @@ ms.locfileid: "67100382"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -221,4 +221,4 @@ ms.locfileid: "67100382"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

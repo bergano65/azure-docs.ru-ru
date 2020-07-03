@@ -8,12 +8,13 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 01/24/2018
 ms.author: dobett
-ms.openlocfilehash: 98d947e8aabf20fbfdb192cb80c9bc881007d5da
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.custom: mqtt
+ms.openlocfilehash: 9335c45688752ea41801e988157740f4170cfcb4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889267"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81683946"
 ---
 # <a name="connect-your-raspberry-pi-device-to-the-remote-monitoring-solution-accelerator-nodejs"></a>Подключение устройства Raspberry Pi к акселератору решения для удаленного мониторинга с помощью Node.js
 
@@ -32,7 +33,7 @@ ms.locfileid: "73889267"
 - Raspberry Pi 3;
 - карта MicroSD (с NOOBS);
 - кабель MiniUSB;
-- кабель Ethernet.
+- кабель Ethernet;
 
 ### <a name="required-desktop-software"></a>Необходимое ПО для настольного компьютера
 

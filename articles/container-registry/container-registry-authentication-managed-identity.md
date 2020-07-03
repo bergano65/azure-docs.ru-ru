@@ -4,10 +4,10 @@ description: Предоставление доступа к образам в з
 ms.topic: article
 ms.date: 01/16/2019
 ms.openlocfilehash: 9b8bed78629d3a9739ec00772ad5c8216a04c122
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74456493"
 ---
 # <a name="use-an-azure-managed-identity-to-authenticate-to-an-azure-container-registry"></a>Аутентификация в реестре контейнеров Azure с помощью управляемого удостоверения Azure 
@@ -23,7 +23,7 @@ ms.locfileid: "74456493"
 
 Для создания ресурсов Azure с помощью инструкций из этой статьи требуется Azure CLI версии 2.0.55 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli].
 
-Чтобы настроить реестр контейнеров и отправить образ контейнера в него, необходимо также локально установить модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в системе под управлением [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
+Чтобы настроить реестр контейнеров и отправить образ контейнера в него, необходимо также локально установить модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе: [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 ## <a name="why-use-a-managed-identity"></a>Для чего нужны управляемые удостоверения?
 
@@ -55,7 +55,7 @@ ms.locfileid: "74456493"
 
 Создайте виртуальную машину Ubuntu с поддержкой Docker. Необходимо также установить [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) на виртуальной машине. Если у вас уже есть виртуальная машина Azure, пропустите этот шаг создания виртуальной машины.
 
-Разверните виртуальную машину Ubuntu Azure по умолчанию с помощью команды [AZ VM Create][az-vm-create]. В следующем примере создается виртуальная машина с именем *myDockerVM* в имеющейся группе ресурсов *myResourceGroup*.
+Разверните виртуальную машину Azure Ubuntu по умолчанию с помощью команды [az vm create][az-vm-create]. В следующем примере создается виртуальная машина с именем *myDockerVM* в имеющейся группе ресурсов *myResourceGroup*.
 
 ```azurecli
 az vm create \
@@ -112,7 +112,7 @@ This message shows that your installation appears to be working correctly.
 az identity create --resource-group myResourceGroup --name myACRId
 ```
 
-Чтобы настроить удостоверение в следующих шагах, используйте команду [AZ Identity][az-identity-show] -use, чтобы сохранить идентификатор ресурса удостоверения и идентификатор субъекта-службы в переменных.
+Чтобы настроить удостоверение на следующих шагах, выполните команду [az identity show][az-identity-show] для сохранения идентификатора ресурса и идентификатора субъекта-службы удостоверения в переменных.
 
 ```azurecli
 # Get resource ID of the user-assigned identity
@@ -136,7 +136,7 @@ echo $userID
 
 ### <a name="configure-the-vm-with-the-identity"></a>Настройка виртуальной машины с удостоверением
 
-Следующая команда [AZ VM Identity Assign][az-vm-identity-assign] НАстраивает виртуальную машину DOCKER с назначенным пользователем удостоверением:
+Следующая команда [az vm identity assign][az-vm-identity-assign] настраивает виртуальную машину Docker с назначаемым пользователем удостоверением:
 
 ```azurecli
 az vm identity assign --resource-group myResourceGroup --name myDockerVM --identities $userID
@@ -144,13 +144,13 @@ az vm identity assign --resource-group myResourceGroup --name myDockerVM --ident
 
 ### <a name="grant-identity-access-to-the-container-registry"></a>Предоставление удостоверению доступа к реестру контейнеров
 
-Теперь настройте для удостоверения доступ к реестру контейнеров. Сначала используйте команду [AZ запись контроля][az-acr-show] доступа, чтобы получить идентификатор ресурса реестра:
+Теперь настройте для удостоверения доступ к реестру контейнеров. Сначала получите идентификатор ресурса реестра, используя команду [az acr show][az-acr-show]:
 
 ```azurecli
 resourceID=$(az acr show --resource-group myResourceGroup --name myContainerRegistry --query id --output tsv)
 ```
 
-Чтобы назначить роль Акрпулл для реестра, используйте команду [AZ Role назначение Create][az-role-assignment-create] . Эта роль предоставляет реестру [разрешения на извлечение](container-registry-roles.md). Чтобы предоставить разрешения и на извлечение, и на отправку, назначьте роль ACRPush.
+Используйте команду [az role assignment create][az-role-assignment-create], чтобы назначить роль AcrPull реестру. Эта роль предоставляет реестру [разрешения на извлечение](container-registry-roles.md). Чтобы предоставить разрешения и на извлечение, и на отправку, назначьте роль ACRPush.
 
 ```azurecli
 az role assignment create --assignee $spID --scope $resourceID --role acrpull
@@ -172,7 +172,7 @@ az login --identity --username <userID>
 az acr login --name myContainerRegistry
 ```
 
-Отобразится сообщение `Login succeeded`. Затем вы можете выполнить команды `docker`, не предоставляя учетные данные. Например, запустите [DOCKER Pull][docker-pull] , чтобы извлечь образ `aci-helloworld:v1`, указав имя сервера входа в реестре. Имя сервера входа состоит из имени реестра контейнеров (в нижнем регистре), за которым следует `.azurecr.io`, например `mycontainerregistry.azurecr.io`.
+Отобразится сообщение `Login succeeded`. Затем вы можете выполнить команды `docker`, не предоставляя учетные данные. Например, запустите [docker pull][docker-pull], чтобы извлечь образ `aci-helloworld:v1`, указав имя сервера для входа в реестр. Имя сервера входа состоит из имени реестра контейнеров (в нижнем регистре), за которым следует `.azurecr.io`, например `mycontainerregistry.azurecr.io`.
 
 ```
 docker pull mycontainerregistry.azurecr.io/aci-helloworld:v1
@@ -182,13 +182,13 @@ docker pull mycontainerregistry.azurecr.io/aci-helloworld:v1
 
 ### <a name="configure-the-vm-with-a-system-managed-identity"></a>Настройка виртуальной машины с управляемым системой удостоверением
 
-Следующая команда [AZ VM Identity Assign][az-vm-identity-assign] НАстраивает виртуальную машину DOCKER с назначенным системой удостоверением:
+Следующая команда [az vm identity assign][az-vm-identity-assign] настраивает виртуальную машину Docker с назначаемым системой удостоверением:
 
 ```azurecli
 az vm identity assign --resource-group myResourceGroup --name myDockerVM 
 ```
 
-Используйте команду [AZ VM][az-vm-show] -Command, чтобы задать для переменной значение `principalId` (идентификатор субъекта-службы) удостоверения виртуальной машины, которое будет использоваться в последующих шагах.
+Выполните команду [az vm show][az-vm-show], чтобы присвоить переменной значение `principalId` (идентификатор субъекта-службы) для его использования на последующих шагах.
 
 ```azurecli-interactive
 spID=$(az vm show --resource-group myResourceGroup --name myDockerVM --query identity.principalId --out tsv)
@@ -196,13 +196,13 @@ spID=$(az vm show --resource-group myResourceGroup --name myDockerVM --query ide
 
 ### <a name="grant-identity-access-to-the-container-registry"></a>Предоставление удостоверению доступа к реестру контейнеров
 
-Теперь настройте для удостоверения доступ к реестру контейнеров. Сначала используйте команду [AZ запись контроля][az-acr-show] доступа, чтобы получить идентификатор ресурса реестра:
+Теперь настройте для удостоверения доступ к реестру контейнеров. Сначала получите идентификатор ресурса реестра, используя команду [az acr show][az-acr-show]:
 
 ```azurecli
 resourceID=$(az acr show --resource-group myResourceGroup --name myContainerRegistry --query id --output tsv)
 ```
 
-Чтобы назначить роль Акрпулл для удостоверения, используйте команду [AZ Role назначение Create][az-role-assignment-create] . Эта роль предоставляет реестру [разрешения на извлечение](container-registry-roles.md). Чтобы предоставить разрешения и на извлечение, и на отправку, назначьте роль ACRPush.
+Используйте команду [az role assignment create][az-role-assignment-create], чтобы назначить удостоверению роль AcrPull. Эта роль предоставляет реестру [разрешения на извлечение](container-registry-roles.md). Чтобы предоставить разрешения и на извлечение, и на отправку, назначьте роль ACRPush.
 
 ```azurecli
 az role assignment create --assignee $spID --scope $resourceID --role acrpull
@@ -224,13 +224,13 @@ az login --identity
 az acr login --name myContainerRegistry
 ```
 
-Отобразится сообщение `Login succeeded`. Затем вы можете выполнить команды `docker`, не предоставляя учетные данные. Например, запустите [DOCKER Pull][docker-pull] , чтобы извлечь образ `aci-helloworld:v1`, указав имя сервера входа в реестре. Имя сервера входа состоит из имени реестра контейнеров (в нижнем регистре), за которым следует `.azurecr.io`, например `mycontainerregistry.azurecr.io`.
+Отобразится сообщение `Login succeeded`. Затем вы можете выполнить команды `docker`, не предоставляя учетные данные. Например, запустите [docker pull][docker-pull], чтобы извлечь образ `aci-helloworld:v1`, указав имя сервера для входа в реестр. Имя сервера входа состоит из имени реестра контейнеров (в нижнем регистре), за которым следует `.azurecr.io`, например `mycontainerregistry.azurecr.io`.
 
 ```
 docker pull mycontainerregistry.azurecr.io/aci-helloworld:v1
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этой статьи вы узнали, как использовать управляемые удостоверения в службе "Реестр контейнеров Azure" и выполнять следующие действия:
 

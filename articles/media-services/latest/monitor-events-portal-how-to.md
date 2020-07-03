@@ -16,10 +16,10 @@ ms.workload: media
 ms.date: 01/21/2020
 ms.author: juliako
 ms.openlocfilehash: 18503e64dc6f38daab61599153cd0e0fb6fadb20
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76509229"
 ---
 # <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-portal"></a>Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и портала Azure
@@ -30,7 +30,7 @@ ms.locfileid: "76509229"
 
 По завершении можно увидеть, что данные событий отправлены в веб-приложение.
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные условия 
 
 * Активная подписка Azure.
 * Создайте учетную запись Служб мультимедиа Azure, как описано в [этом руководстве](create-account-cli-quickstart.md).
@@ -59,7 +59,7 @@ ms.locfileid: "76509229"
    ![Выбор веб-перехватчика](./media/monitor-events-portal/select-web-hook.png)
 
 1. Подписка на событие автоматически заполняется значениями для учетной записи служб мультимедиа. 
-1. Выберите веб-перехватчик в качестве типа **конечной точки**.
+1. Выберите "веб-перехватчик" для **типа конечной точки**.
 1. В этом разделе мы оставляем флажок **Подписка на все типы событий**. Тем не менее, можно его снять и отфильтровать определенные типы событий. 
 1. Щелкните ссылку **Выбор конечной точки**.
 
@@ -86,6 +86,6 @@ ms.locfileid: "76509229"
 
 ![Просмотр события подписки](./media/monitor-events-portal/view-subscription-event.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Отправка, кодирование и потоковая передача](stream-files-tutorial-with-api.md)

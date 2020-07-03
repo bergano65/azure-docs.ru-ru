@@ -1,24 +1,22 @@
 ---
 title: Общие сведения о рендеринге — пакетная служба Azure
 description: Общие сведения об использовании Azure для рендеринга и обзор возможностей рендеринга в пакетной службе Azure
-services: batch
-ms.service: batch
 author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: d4423b22c4c8afea5afa9c7040e081665b17ba87
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 515fc92aa14c0a86746d0a97d2bc601fab553aa3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60774035"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82115709"
 ---
 # <a name="rendering-using-azure"></a>Рендеринг с помощью Azure
 
 Процесс рендеринга принимает на вход трехмерные модели и преобразует их в двумерные изображения. Файлы трехмерных сцен разрабатываются в специализированных приложениях: Autodesk 3ds Max, Autodesk Maya и Blender.  На их основе приложения для рендеринга, например Autodesk Maya, Autodesk Arnold, Chaos Group V-Ray и Blender Cycles создают двумерные изображения.  Иногда из файлов сцены создаются отдельные изображения. Но чаще всего моделирование и рендеринг подразумевают создание целых серий изображений, которые затем объединяются в анимацию.
 
-Рабочая нагрузка рендеринга часто используется в индустрии мультимедиа и развлечения для создания специальных эффектов. Визуализации также используется во многих других отраслях, например рекламы, розничной торговли, Нефть и газ и производства.
+Рабочая нагрузка рендеринга часто используется в индустрии мультимедиа и развлечения для создания специальных эффектов. Рендеринг также находит применение во многих других отраслях: реклама, розничная торговля, нефть и газ, производство.
 
 Процесс рендеринга требует большого объема вычислений: часто создается очень много кадров (изображений), обработка каждого из которых занимает несколько часов.  Все это означает, что рабочая нагрузка рендеринга идеально подходит для пакетного выполнения. Платформа Azure и пакетная служба Azure могут параллельно выполнять много операций рендеринга.
 
@@ -91,7 +89,7 @@ ms.locfileid: "60774035"
   * Ниже перечислены доступные подключаемые модули:
     * [пакетная служба Azure для Maya](https://github.com/Azure/azure-batch-maya);
     * [3ds Max](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max);
-    * [Blender](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender).
+    * [Blender](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender)
 
 ## <a name="getting-started-with-azure-batch-rendering"></a>Начало работы с рендерингом в пакетной службе Azure
 
@@ -100,6 +98,6 @@ ms.locfileid: "60774035"
 * [Руководство. Преобразование для просмотра сцены Blender с помощью Batch Explorer](https://docs.microsoft.com/azure/batch/tutorial-rendering-batchexplorer-blender);
 * [Руководство по использованию CLI пакетной службы для рендеринга сцены, созданной в Autodesk 3ds Max](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Список приложений рендеринга и версий в образах виртуальных машин, включенных в Azure Marketplace, вы найдете в [этой статье](https://docs.microsoft.com/azure/batch/batch-rendering-applications).

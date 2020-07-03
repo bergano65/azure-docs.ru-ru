@@ -7,15 +7,15 @@ author: njray
 manager: edprice
 editor: edprice
 ms.author: larryme
-ms.date: 04/02/2019
+ms.date: 05/09/2020
 ms.topic: article
 ms.service: multiple
-ms.openlocfilehash: cf02ff7078fe5d33f220c0abc2d941d483e5c125
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 07234e5f456a5467adde4d899341a6124d128567
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293510"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83006123"
 ---
 # <a name="mainframe-workloads-supported-on-azure"></a>Рабочие нагрузки мэйнфрейма, поддерживаемые в Azure
 
@@ -25,20 +25,24 @@ ms.locfileid: "76293510"
 
 ## <a name="migrate-mainframe-closer-to-azure"></a>Перенос мэйнфреймов ближе к Azure
 
+- [ASNA Visual RPG для компилятора .NET](https://asna.com/us/products/visual-rpg) для .NET Framework с помощью подключаемого модуля Visual Studio.
+- Среда разработки [COBOL для АСИСКО AMT](https://www.asysco.com/cobol/) (Unisys, мэйнфреймов IBM и другие диалекты COBOL, например Micro Focus COBOL).
+- [АСИСКО AMT](https://www.asysco.com/amt-go/) — Облачная архитектура развертывания для высокопроизводительных рабочих нагрузок.
+- [Преобразование АСИСКО AMT](https://www.asysco.com/amt-transform/) для преобразования данных, кода, сценариев, безопасности, интерфейсов и других артефактов мэйнфреймов.
+- [Fujitsu неткобол](https://www.fujitsu.com/global/products/software/developer-tool/netcobol/) средства разработки и интеграции.
 - [Micro Focus](https://www.microfocus.com/products/visual-cobol/) средства разработки и интеграции Visual COBOL.
 - Устаревший компилятор [Micro Focus](https://www.microfocus.com/campaign/download/pli-modernization/) для платформы .NET, поддерживающий синтаксис PL/i в мэйнфрейме, типы данных и поведение.
 - Микрофокусировка платформы интеграции мэйнфреймов [Enterprise Server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) .
-- [Fujitsu неткобол](https://www.fujitsu.com/global/products/software/developer-tool/netcobol/) средства разработки и интеграции.
+- [Современные системы КТУ (COBOL-to-Universal)](https://modernsystems.com/automatic-cobol-to-java-conversion/) средства разработки и интеграции.
 - [NTT данных](https://us.nttdata.com/en/digital/application-development-and-modernization) — средства разработки и интеграции COBOL для корпоративных приложений.
 - [NTT Open PL/i](https://us.nttdata.com/en/digital/application-development-and-modernization) устаревший компилятор для платформы .NET, поддерживающий синтаксис PL/i в мэйнфрейме, типы данных и поведение.
 - Средства разработки и интеграции для [компилятора РАИНКОДЕ COBOL](https://www.raincode.com/products/cobol/) .
 - [Компилятор РАИНКОДЕ PL/i](https://www.raincode.com/products/pli/) для платформы .NET поддерживает синтаксис PL/i мэйнфрейма, типы данных и поведение.
 - [Компилятор РАИНКОДЕ ASM370](https://www.raincode.com/technical-landscape/asm370/) для синтаксиса 370 и Хласм для ассемблера мэйнфреймов.
-- [ASNA Visual RPG для компилятора .NET](https://asna.com/us/products/visual-rpg) для .NET Framework с помощью подключаемого модуля Visual Studio.
-- [Современные системы КТУ (COBOL-to-Universal)](https://modernsystems.com/automatic-cobol-to-java-conversion/) средства разработки и интеграции.
 
 ## <a name="deploy-an-emulation-environment-for-online-and-batch-processing"></a>Развертывание среды эмуляции для интерактивной и пакетной обработки
 
+- Архитектура развертывания [АСИСКО AMT Go](https://www.asysco.com/amt-go/) с поддержкой CICS, мгновенных сообщений, Tip, хвтип и других распространенных сред мэйнфреймов.
 - Микрофокусировка платформы интеграции мэйнфреймов [Enterprise Server](https://www.microfocus.com/products/enterprise-suite/enterprise-server/) .
 - [NTT данных в среде разработки](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) для повторного размещения собственной среды обработки транзакций.
 - [Среда пакетной обработки данных NTT](https://us.nttdata.com/en/-/media/assets/white-paper/apps-mainframe-re-hosting-development-environment-whitepaper.pdf) (BPE), включая возможности транзакций жкл.
@@ -47,10 +51,11 @@ ms.locfileid: "76293510"
 
 ## <a name="code-conversion"></a>Преобразование кода
 
-- Преобразование исходного кода [асиско](https://www.asysco.com/azure-cloud/) .
-- Программный контейнер программно управляемого [мэйнфрейма LzLabs](https://www.lzlabs.com/) для переноса приложений мэйнфреймов на компьютеры Linux или в частные, общедоступные и гибридные облачные среды.
+- Технология преобразования системы [асиско](https://www.asysco.com/azure-cloud/) , охватывающая исходный код, данные, пакет, планирование, мониторы TP, интерфейсы, безопасность, управление и многое другое.
+- [Асиско службы AMT](https://www.asysco.com/migration-services/) обеспечивают сквозные службы для миграции проектов, включая инвентаризацию и анализ, обучение в проектировании, а также переход на живой адрес и поддержку после миграции.
 - Инструменты [Blu Age](https://www.bluage.com/) для работы с устаревшими бизнес-приложениями и базами данных.
 - [Хеирлум вычислительные](https://www.heirloomcomputing.com/tag/convert-cobol-to-java/) службы для преобразования в Java COBOL, CICS и всам мэйнфреймов.
+- Программный контейнер программно управляемого [мэйнфрейма LzLabs](https://www.lzlabs.com/) для переноса приложений мэйнфреймов на компьютеры Linux или в частные, общедоступные и гибридные облачные среды.
 
 ## <a name="modernization-services"></a>Модернизации Services
 

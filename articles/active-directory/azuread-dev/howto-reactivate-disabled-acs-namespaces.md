@@ -12,12 +12,13 @@ ms.date: 01/21/2019
 ms.author: ryanwi
 ms.reviewer: jlu
 ms.custom: aaddev
-ms.openlocfilehash: 85696a5580c4ed6c03f257787e2693a61a6158de
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ROBOTS: NOINDEX
+ms.openlocfilehash: ff0ce05b13fea8409475e3415c5d810d7c79769a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77164621"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80154871"
 ---
 # <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство. Повторная активация отключенных пространств имен службы контроля доступа
 
@@ -25,7 +26,7 @@ ms.locfileid: "77164621"
 
 В ноябре 2017 года мы объявили, что служба контроля доступа Microsoft Azure (ACS), относящаяся к Azure Active Directory (Azure AD), прекратит функционирование 7 ноября 2018 года.
 
-С тех пор мы отправили письма на электронную почту администратора подписки ACS о прекращении использования ACS за 12 месяцев, 9 месяцев, 6 месяцев, 3 месяца, 1 месяц, 2 недели, 1 неделю и 1 день до даты прекращения поддержки — 7 ноября 2018 года.
+С этого момента мы отправили сообщения электронной почты администраторам подписки ACS о прекращении использования ACS 12 месяцев, 9 месяцах, 6 месяцах, 3 месяцах, 1 месяце, 2 недели, 1 неделю и 1 день до даты выхода 7 ноября 2018.
 
 3 октября 2018 года мы объявили (по электронной почте и в [записи блога](https://azure.microsoft.com/blog/one-month-retirement-notice-access-control-service/)) о предложении расширения для клиентов, которые не могут завершить миграцию до 7 ноября 2018 года. В объявлении также содержались указания по запросам расширения.
 
@@ -68,7 +69,7 @@ ms.locfileid: "77164621"
 1. Получите список пространств имен ACS с помощью командлета **Get-AcsNamespace**.
 1. Удостоверьтесь, что пространства имен отключены. Для этого убедитесь, что для `State` задано значение `Disabled`.
 
-    [![Подтверждение того, что пространства имен отключены](./media/howto-reactivate-disabled-acs-namespaces/confirm-disabled-namespace.png)](./media/howto-reactivate-disabled-acs-namespaces/confirm-disabled-namespace.png#lightbox)
+    [![Убедитесь, что пространства имен отключены.](./media/howto-reactivate-disabled-acs-namespaces/confirm-disabled-namespace.png)](./media/howto-reactivate-disabled-acs-namespaces/confirm-disabled-namespace.png#lightbox)
 
     Кроме того, можно использовать `nslookup {your-namespace}.accesscontrol.windows.net`, чтобы убедиться, что домен по-прежнему активен.
 
@@ -94,7 +95,7 @@ ms.locfileid: "77164621"
     | Поле запроса на поддержку | Значение |
     |-----------------------|--------------------|
     | **Тип проблемы** | `Technical` |
-    | **подписка** | Задается вашей подписке |
+    | **Подписка** | Задается вашей подписке |
     | **Служба** | `All services` |
     | **Ресурс** | `General question/Resource not available` |
     | **Тип проблемы** | `ACS to SAS Migration` |

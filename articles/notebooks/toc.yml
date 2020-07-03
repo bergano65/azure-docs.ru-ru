@@ -22,7 +22,7 @@
       href: tutorial-create-run-jupyter-notebook.md
 - name: Примеры
   items:
-    - name: Примеры записных книжек
+    - name: Записные книжки с примерами
       href: azure-notebooks-samples.md
 - name: Основные понятия
   items:
@@ -30,7 +30,7 @@
       href: azure-notebooks-user-account.md
     - name: Профили
       href: azure-notebooks-user-profile.md
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Создание и клонирование проектов
       href: create-clone-jupyter-notebooks.md
@@ -46,5 +46,3 @@
       href: access-data-resources-jupyter-notebooks.md
     - name: Использование Виртуальных машин для обработки и анализа данных
       href: use-data-science-virtual-machine.md
-    - name: Использование Машинного обучения Azure
-      href: use-machine-learning-services-jupyter-notebooks.md

@@ -9,10 +9,10 @@ ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
 ms.openlocfilehash: 6ce94590a1d0de6941c27d972bdd1c4194080e95
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77153083"
 ---
 # <a name="azure-data-lake-storage-gen2-hierarchical-namespace"></a>Иерархическое пространство имен Azure Data Lake Storage 2-го поколения
@@ -45,6 +45,6 @@ ms.locfileid: "77153083"
 
 Для анализа различий в ценах на хранение данных, ценах на транзакции и ценах на резервирование емкости хранилища между учетными записями с плоским иерархическим пространством имен и иерархическим пространством имен см. раздел [цены на Azure Data Lake Storage 2-го поколения](https://azure.microsoft.com/pricing/details/storage/data-lake/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание учетной записи хранения](./data-lake-storage-quickstart-create-account.md)

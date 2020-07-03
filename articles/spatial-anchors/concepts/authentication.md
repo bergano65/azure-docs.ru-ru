@@ -8,12 +8,13 @@ ms.author: pmorgan
 ms.date: 05/28/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3de84e2d814acfca67bc722243a90fa41f6536e1
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.custom: has-adal-ref
+ms.openlocfilehash: c2800dc361eb274eeef706556e09731da079ccab
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77161687"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82611761"
 ---
 # <a name="authentication-and-authorization-to-azure-spatial-anchors"></a>Проверка подлинности и авторизация для пространственных привязок Azure
 
@@ -31,7 +32,7 @@ ms.locfileid: "77161687"
 
 Маркеры проверки подлинности Azure AD можно получить двумя способами:
 
-- Если вы создаете корпоративное приложение и ваша компания использует Azure AD в качестве системы идентификации, вы можете использовать проверку подлинности Azure AD в приложении и предоставить доступ к учетным записям пространственных привязок с помощью существующих групп безопасности Azure AD или непосредственно пользователям в Организации.
+- Если вы создаете корпоративное приложение и ваша компания использует Azure AD в качестве системы идентификации, вы можете использовать проверку подлинности Azure AD в приложении и предоставить доступ к учетным записям пространственных привязок с помощью существующих групп безопасности Azure AD или непосредственно для пользователей в Организации.
 - В противном случае рекомендуется получить токены Azure AD из веб-службы, поддерживающей приложение. Использование поддерживающей веб-службы является рекомендуемым методом проверки подлинности для рабочих приложений, так как он позволяет избежать внедрения учетных данных для доступа к пространственным привязкам Azure в клиентском приложении.
 
 ## <a name="account-keys"></a>Ключи учетной записи
@@ -45,38 +46,38 @@ ms.locfileid: "77161687"
 
 Пакет SDK имеет встроенную поддержку проверки подлинности с помощью ключей учетной записи; необходимо просто задать свойство AccountKey для объекта Клаудсессион.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 this.cloudSession.Configuration.AccountKey = @"MyAccountKey";
 ```
 
-# <a name="objctabobjc"></a>[ObjC](#tab/objc)
+# <a name="objc"></a>[ObjC](#tab/objc)
 
 ```objc
 _cloudSession.configuration.accountKey = @"MyAccountKey";
 ```
 
-# <a name="swifttabswift"></a>[Swift](#tab/swift)
+# <a name="swift"></a>[Swift](#tab/swift)
 
 ```swift
 _cloudSession!.configuration.accountKey = "MyAccountKey"
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```java
 mCloudSession.getConfiguration().setAccountKey("MyAccountKey");
 ```
 
-# <a name="c-ndktabcpp"></a>[C++NDK](#tab/cpp)
+# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
 
 ```cpp
 auto configuration = cloudSession_->Configuration();
 configuration->AccountKey(R"(MyAccountKey)");
 ```
 
-# <a name="c-winrttabcppwinrt"></a>[C++WinRT](#tab/cppwinrt)
+# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
 
 ```cpp
 auto configuration = m_cloudSession.Configuration();
@@ -120,38 +121,38 @@ configuration.AccountKey(LR"(MyAccountKey)");
 
 В результате приложение должно иметь возможность получить из MSAL маркера Azure AD. Вы можете задать маркер Azure AD в качестве **authenticationToken** для объекта конфигурации сеанса облака.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 this.cloudSession.Configuration.AuthenticationToken = @"MyAuthenticationToken";
 ```
 
-# <a name="objctabobjc"></a>[ObjC](#tab/objc)
+# <a name="objc"></a>[ObjC](#tab/objc)
 
 ```objc
 _cloudSession.configuration.authenticationToken = @"MyAuthenticationToken";
 ```
 
-# <a name="swifttabswift"></a>[Swift](#tab/swift)
+# <a name="swift"></a>[Swift](#tab/swift)
 
 ```swift
 _cloudSession!.configuration.authenticationToken = "MyAuthenticationToken"
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```java
 mCloudSession.getConfiguration().setAuthenticationToken("MyAuthenticationToken");
 ```
 
-# <a name="c-ndktabcpp"></a>[C++NDK](#tab/cpp)
+# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
 
 ```cpp
 auto configuration = cloudSession_->Configuration();
 configuration->AuthenticationToken(R"(MyAuthenticationToken)");
 ```
 
-# <a name="c-winrttabcppwinrt"></a>[C++WinRT](#tab/cppwinrt)
+# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
 
 ```cpp
 auto configuration = m_cloudSession.Configuration();
@@ -186,7 +187,7 @@ configuration.AuthenticationToken(LR"(MyAuthenticationToken)");
 2.  В коде (Примечание. Вы можете использовать пример службы, включенный в GitHub):
     1.  Обязательно используйте идентификатор приложения, секрет приложения и URI перенаправления своего приложения Azure AD в качестве идентификатора клиента, секрета и параметров RedirectUri в ADAL.
     2.  Задайте для идентификатора клиента собственный идентификатор клиента Ааазуре в параметре Authority в ADAL.
-    3.  В запросе токена задайте для **ресурса** значение "https://sts.mixedreality.azure.com".
+    3.  В запросе маркера задайте **ресурсу** значение "https://sts.mixedreality.azure.com".
 
 При этом серверная служба может получить маркер Azure AD. Затем он может обмениваться данными с токеном MR, который будет возвращен клиенту. Использование маркера Azure AD для получения токена MR выполняется с помощью вызова RESTFUL. Вот пример вызова:
 
@@ -205,44 +206,44 @@ MS-CV: 05JLqWeKFkWpbdY944yl7A.0
 {"AccessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjI2MzYyMTk5ZTI2NjQxOGU4ZjE3MThlM2IyMThjZTIxIiwidHlwIjoiSldUIn0.eyJqdGkiOiJmMGFiNWIyMy0wMmUxLTQ1MTQtOWEzNC0xNzkzMTA1NTc4NzAiLCJjYWkiOiIzNWQ4MzBjYi1mMDYyLTQwNjItOTc5Mi1kNjMxNjAzOWRmNTYiLCJ0aWQiOiIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiLCJhaWQiOiIzNWQ4MzBjYi1mMDYyLTQwNjItOTc5Mi1kNjMxNjAzOWRmNTYiLCJhYW8iOi0xLCJhcHIiOiJlYXN0dXMyIiwicmlkIjoiL3N1YnNjcmlwdGlvbnMvNzIzOTdlN2EtNzA4NC00ODJhLTg3MzktNjM5Y2RmNTMxNTI0L3Jlc291cmNlR3JvdXBzL3NhbXBsZV9yZXNvdXJjZV9ncm91cC9wcm92aWRlcnMvTWljcm9zb2Z0Lk1peGVkUmVhbGl0eS9TcGF0aWFsQW5jaG9yc0FjY291bnRzL2RlbW9fYWNjb3VudCIsIm5iZiI6MTU0NDU0NzkwMywiZXhwIjoxNTQ0NjM0MzAzLCJpYXQiOjE1NDQ1NDc5MDMsImlzcyI6Imh0dHBzOi8vbXJjLWF1dGgtcHJvZC50cmFmZmljbWFuYWdlci5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9tcmMtYW5jaG9yLXByb2QudHJhZmZpY21hbmFnZXIubmV0LyJ9.BFdyCX9UJj0i4W3OudmNUiuaGgVrlPasNM-5VqXdNAExD8acFJnHdvSf6uLiVvPiQwY1atYyPbOnLYhEbIcxNX-YAfZ-xyxCKYb3g_dbxU2w8nX3zDz_X3XqLL8Uha-rkapKbnNgxq4GjM-EBMCill2Svluf9crDmO-SmJbxqIaWzLmlUufQMWg_r8JG7RLseK6ntUDRyDgkF4ex515l2RWqQx7cw874raKgUO4qlx0cpBAB8cRtGHC-3fA7rZPM7UQQpm-BC3suXqRgROTzrKqfn_g-qTW4jAKBIXYG7iDefV2rGMRgem06YH_bDnpkgUa1UgJRRTckkBuLkO2FvA"}
 ```
 
-В котором заголовок авторизации имеет следующий формат: `Bearer <accoundId>:<accountKey>`
+В котором заголовок авторизации имеет следующий формат:`Bearer <accoundId>:<accountKey>`
 
 И ответ содержит токен MR в виде обычного текста.
 
 Затем этот MR-токен возвращается клиенту. Клиентское приложение затем может задать его в качестве маркера доступа в конфигурации сеанса облака.
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 this.cloudSession.Configuration.AccessToken = @"MyAccessToken";
 ```
 
-# <a name="objctabobjc"></a>[ObjC](#tab/objc)
+# <a name="objc"></a>[ObjC](#tab/objc)
 
 ```objc
 _cloudSession.configuration.accessToken = @"MyAccessToken";
 ```
 
-# <a name="swifttabswift"></a>[Swift](#tab/swift)
+# <a name="swift"></a>[Swift](#tab/swift)
 
 ```swift
 _cloudSession!.configuration.accessToken = "MyAccessToken"
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```java
 mCloudSession.getConfiguration().setAccessToken("MyAccessToken");
 ```
 
-# <a name="c-ndktabcpp"></a>[C++NDK](#tab/cpp)
+# <a name="c-ndk"></a>[C++ NDK](#tab/cpp)
 
 ```cpp
 auto configuration = cloudSession_->Configuration();
 configuration->AccessToken(R"(MyAccessToken)");
 ```
 
-# <a name="c-winrttabcppwinrt"></a>[C++WinRT](#tab/cppwinrt)
+# <a name="c-winrt"></a>[C++ WinRT](#tab/cppwinrt)
 
 ```cpp
 auto configuration = m_cloudSession.Configuration();
@@ -259,12 +260,18 @@ configuration.AccessToken(LR"(MyAccessToken)");
 - **Участник учетной записи пространственных привязок**. приложения или пользователи с этой ролью могут создавать пространственные привязки, запрашивать их, но не могут удалять их.
 - **Средство чтения учетных записей пространственных привязок**. приложения или пользователи с этой ролью могут запрашивать только пространственные привязки, но не могут создавать новые, удалять существующие или обновлять метаданные на пространственных привязках. Обычно это используется для приложений, в которых некоторые пользователи изменяют среду, а другие могут отзывать только те привязки, которые были ранее помещены в эту среду.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Создайте свое первое приложение с пространственными привязками Azure.
 
 > [!div class="nextstepaction"]
-> [Unity](../unity-overview.yml)
+> [Unity (HoloLens)](../quickstarts/get-started-unity-hololens.md)
+
+> [!div class="nextstepaction"]
+> [Unity (iOS)](../quickstarts/get-started-unity-ios.md)
+
+> [!div class="nextstepaction"]
+> [Unity (Android)](../quickstarts/get-started-unity-android.md)
 
 > [!div class="nextstepaction"]
 > [iOS](../quickstarts/get-started-ios.md)
@@ -274,3 +281,9 @@ configuration.AccessToken(LR"(MyAccessToken)");
 
 > [!div class="nextstepaction"]
 > [HoloLens](../quickstarts/get-started-hololens.md)
+
+> [!div class="nextstepaction"]
+> [Xamarin (Android)](../quickstarts/get-started-xamarin-android.md)
+
+> [!div class="nextstepaction"]
+> [Xamarin (iOS)](../quickstarts/get-started-xamarin-ios.md)

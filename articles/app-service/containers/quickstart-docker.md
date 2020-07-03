@@ -5,24 +5,24 @@ author: msangapu-msft
 ms.author: msangapu
 ms.date: 08/28/2019
 ms.topic: quickstart
-ms.openlocfilehash: 62e6b007e89fc6be726d3d971ca838770db9cb6e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 51607f44f75cbd93c7ecf1c77bb52c73b27b5f3c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422152"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82159751"
 ---
 # <a name="deploy-a-custom-linux-container-to-azure-app-service"></a>Развертывание пользовательского контейнера Linux в Службе приложений Azure
 
 Служба приложений в Linux предоставляет предопределенные стеки приложений на платформе Linux с поддержкой определенных языков (например, .NET, PHP, Node.js и т. д.). Вы также можете использовать пользовательский образ Docker для запуска веб-приложения в стеке приложений, который еще не определен в Azure. В этом кратком руководстве показано, как развернуть образ из [Реестра контейнеров Azure](/azure/container-registry) (ACR) в Службе приложений.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [учетная запись Azure](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension);
 * [Docker](https://www.docker.com/community-edition)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Расширение Службы приложений Azure для VS Code](vscode:extension/ms-azuretools.vscode-azureappservice). Это расширение можно использовать для создания и развертывания веб-приложений Linux на платформе Azure в рамках модели "платформа как служба" (PaaS), а также для управления ими.
-* [Расширение Docker для VS Code](vscode:extension/ms-azuretools.vscode-docker). С помощью этого расширения можно упростить управление локальными образами и командами Docker, а также развернуть созданные образы приложений в Azure.
+* [Расширение Службы приложений Azure для VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice). Это расширение можно использовать для создания и развертывания веб-приложений Linux на платформе Azure в рамках модели "платформа как служба" (PaaS), а также для управления ими.
+* [Расширение Docker для VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker). С помощью этого расширения можно упростить управление локальными образами и командами Docker, а также развернуть созданные образы приложений в Azure.
 
 ## <a name="create-an-image"></a>Создание образа
 

@@ -15,10 +15,10 @@ ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 664686511df8f310295a9f6ed6bc689b3a999544
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75430732"
 ---
 # <a name="customize-the-style-of-the-developer-portal-pages"></a>Настройка стиля страниц для портала разработчика
@@ -40,8 +40,8 @@ ms.locfileid: "75430732"
 ## <a name="prerequisites"></a>предварительные требования
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
-+ Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
-+ Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
++ Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
 
 ## <a name="customize-the-developer-portal"></a>Настройка портала разработчика
 

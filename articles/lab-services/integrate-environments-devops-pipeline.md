@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: spelluru
 ms.openlocfilehash: 3d7e481879326ac30093bd116222bddc28640398
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76169422"
 ---
 # <a name="integrate-environments-into-your-azure-devops-cicd-pipelines"></a>Интеграция сред в конвейеры CI/CD DevOps в Azure
@@ -27,7 +27,7 @@ ms.locfileid: "76169422"
 - Создание среда
 - Удаление среды
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 Перед интеграцией конвейера CI/CD с Azure DevTest Labs установите расширение [задач Azure DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks) из Visual Studio Marketplace. 
 
 ## <a name="create-and-configure-the-lab-for-environments"></a>Создание и Настройка лаборатории для сред
@@ -35,7 +35,7 @@ ms.locfileid: "76169422"
 
 1. [Создайте лабораторию](devtest-lab-create-lab.md) , если у вас ее еще нет. 
 2. Настройте лабораторию и создайте шаблон среды, выполнив инструкции из этой статьи: [создание сред с несколькими виртуальными машинами и ресурсов PaaS с помощью шаблонов Azure Resource Manager](devtest-lab-create-environment-from-arm.md).
-3. В этом примере используйте существующий шаблон быстрого запуска Azure [https://azure.microsoft.com/resources/templates/201-web-app-redis-cache-sql-database/](https://azure.microsoft.com/resources/templates/201-web-app-redis-cache-sql-database/).
+3. В этом примере используйте существующий шаблон [https://azure.microsoft.com/resources/templates/201-web-app-redis-cache-sql-database/](https://azure.microsoft.com/resources/templates/201-web-app-redis-cache-sql-database/)быстрого запуска Azure.
 4. Скопируйте папку **201-Web-App-Redis-Cache-SQL-Database** в папку **армтемплате** репозитория, настроенного на шаге 2.
 
 ## <a name="create-a-release-definition"></a>Создание определения выпуска
@@ -62,8 +62,8 @@ ms.locfileid: "76169422"
 4. В поле **имя шаблона**выберите имя среды, сохраненной в репозитории исходного кода *. 
 5. Имя **лаборатории**, **Имя репозитория**и **имя шаблона** являются понятными представлениями идентификаторов ресурсов Azure. Если ввести понятное имя вручную, это приведет к сбоям, и для выбора сведений используйте раскрывающиеся списки.
 6. В поле **имя среды**введите имя для уникальной идентификации экземпляра среды в лаборатории.  Оно должно быть уникальным в пределах лаборатории.
-7. **Файл параметров** и **Параметры**позволяют передавать пользовательские параметры в среду. Для установки значений параметров можно использовать один или оба варианта. В этом примере будет использоваться раздел Parameters. Используйте имена переменных, определенных в среде, например: `-administratorLogin "$(administratorLogin)" -administratorLoginPassword "$(administratorLoginPassword)" -databaseName "$(databaseName)" -cacheSKUCapacity 1`
-8. Сведения в шаблоне среды можно передать в разделе Output шаблона. Установите флажок **создать выходные переменные на основе выходных данных шаблона среды** , чтобы другие задачи могли использовать эти данные. `$(Reference name.Output Name)` — это шаблон, который следует выполнить. Например, если имя ссылки было равно, а имя выхода в шаблоне было расположением, переменная будет `$(DTL.location)`.
+7. **Файл параметров** и **Параметры**позволяют передавать пользовательские параметры в среду. Для установки значений параметров можно использовать один или оба варианта. В этом примере будет использоваться раздел Parameters. Используйте имена переменных, определенных в среде, например:`-administratorLogin "$(administratorLogin)" -administratorLoginPassword "$(administratorLoginPassword)" -databaseName "$(databaseName)" -cacheSKUCapacity 1`
+8. Сведения в шаблоне среды можно передать в разделе Output шаблона. Установите флажок **создать выходные переменные на основе выходных данных шаблона среды** , чтобы другие задачи могли использовать эти данные. `$(Reference name.Output Name)`соответствует шаблону. Например, если имя ссылки было равно, а имя выхода в шаблоне было расположением переменной, это будет `$(DTL.location)`.
 
 ## <a name="delete-the-environment"></a>Удаление среды
 Последним этапом является удаление среды, развернутой в экземпляре Azure DevTest Labs. Обычно среда удаляется после выполнения задач разработки или выполнения тестов, необходимых для развернутых ресурсов.

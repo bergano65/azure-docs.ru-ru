@@ -10,12 +10,12 @@ ms.subservice: security-fundamentals
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 570cc8457e69b7056b2865af9c1feb5d62a395eb
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 9c3657a5b55303429d7825bd317c6f9eeb8c06c5
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981453"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583265"
 ---
 # <a name="index-of-built-in-security-controls-articles-for-azure-services"></a>Индекс статьи "встроенные элементы управления безопасностью" для служб Azure
 
@@ -24,19 +24,17 @@ ms.locfileid: "75981453"
 Встроенные статьи об управлении безопасностью доступны для следующих служб:
 
 - [Управление API](../../api-management/api-management-security-controls.md)
-- [Служба приложений Azure](../../app-service/app-service-security-controls.md)
+- [служба приложений Azure](../../app-service/app-service-security-controls.md);
 - [Azure Resource Manager](../../azure-resource-manager/management/azure-resource-manager-security-controls.md)
 - [Azure Backup](../../backup/backup-security-controls.md)
-- [Azure Cosmos DB](../../cosmos-db/cosmos-db-security-controls.md)
 - [Центры событий Azure](../../event-hubs/event-hubs-security-controls.md)
 - [Azure ExpressRoute](../../expressroute/expressroute-security-controls.md)
-- [Хранилище ключей Azure](../../key-vault/key-vault-security-controls.md)
-- [Подсистема балансировщика нагрузки Azure](../../load-balancer/load-balancer-security-controls.md)
+- [Azure Load Balancer](../../load-balancer/load-balancer-security-controls.md)
 - [Обмен сообщениями служебной шины Azure](../../service-bus-messaging/service-bus-messaging-security-controls.md)
-- [Ретранслятор служебной шины Azure](../../service-bus-relay/service-bus-relay-security-controls.md)
+- [Ретрансляция служебной шины Azure](../../service-bus-relay/service-bus-relay-security-controls.md)
 - [Azure Service Fabric](../../service-fabric/service-fabric-security-controls.md)
+- [Azure Spring Cloud](../../spring-cloud/spring-cloud-concept-security-controls.md)
 - [База данных SQL Azure](../../sql-database/sql-database-security-controls.md)
-- [Хранилище Azure](../../storage/common/storage-security-controls.md)
 - [Масштабируемые наборы виртуальных машин Azure](../../virtual-machine-scale-sets/virtual-machine-scale-sets-security-controls.md)
 - [Виртуальные машины Linux](../../virtual-machines/linux/virtual-machines-linux-security-controls.md)
 - [Виртуальные машины Windows](../../virtual-machines/windows/virtual-machines-windows-security-controls.md)

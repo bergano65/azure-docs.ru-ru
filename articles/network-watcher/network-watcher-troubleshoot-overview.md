@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: damendo
 ms.openlocfilehash: 199b4fc762919c2e3988f477c14d09fc23b0136b
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76840695"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Общие сведения об устранении неполадок ресурсов в Наблюдателе за сетями Azure
@@ -60,7 +60,7 @@ ms.locfileid: "76840695"
 | ConnectionsNotConnected | Подключения не установлены. Эта ошибка — всего лишь предупреждение.| Да|
 | GatewayCPUUsageExceeded | Текущий показатель использования ЦП для шлюза превышает 95 %. | Да |
 
-### <a name="connection"></a>Подключение
+### <a name="connection"></a>Соединение
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|
@@ -73,7 +73,7 @@ ms.locfileid: "76840695"
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное" |Нет|
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Да |
 | ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Да|
-| Проверка подлинности | Несоответствие предварительного ключа | Да|
+| Аутентификация | Несоответствие предварительного ключа | Да|
 | PeerReachability | Одноранговый шлюз недоступен. | Да|
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Да|
 | WfpParse Error | Ошибка при анализе журнала WFP. |Да|
@@ -85,7 +85,7 @@ ms.locfileid: "76840695"
 |  |  |
 |---------|---------|
 |**Типы шлюзов**   |         |
-|VPN      | Поддерживается        |
+|Виртуальная частная сеть      | Поддерживается        |
 |ExpressRoute | Не поддерживается |
 |**Типы VPN** | |
 |На основе маршрутов | Поддерживается|
@@ -96,7 +96,7 @@ ms.locfileid: "76840695"
 |ExpressRoute| Не поддерживается|
 |VPNClient| Не поддерживается|
 
-## <a name="log-files"></a>Файлы журналов
+## <a name="log-files"></a>Файлы журнала
 
 После того, как устранение неполадок ресурсов завершено, файлы журнала устранения неполадок ресурсов сохраняются в учетной записи хранения. На следующем рисунке приведен пример содержимого вызова, который завершается ошибкой.
 
@@ -105,7 +105,7 @@ ms.locfileid: "76840695"
 > [!NOTE]
 > В некоторых случаях только подмножество файлов журналов записывается в хранилище.
 
-Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения об обозревателе хранилищ см. на [этой странице](https://storageexplorer.com/).
+Инструкции по скачиванию файлов из учетных записей хранения Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md). Кроме того, можно использовать такое средство, как Storage Explorer. Дополнительные сведения о Обозреватель службы хранилища можно найти по следующей ссылке: [Обозреватель службы хранилища](https://storageexplorer.com/)
 
 ### <a name="connectionstatstxt"></a>ConnectionStats.txt
 

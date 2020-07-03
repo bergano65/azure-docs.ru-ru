@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -8,11 +8,11 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 0ed2137d1fd7a3c207db3ec49590a61f00b5fd99
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 2d3f866064790fb3936fb76c1deef15ee2a38773
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75774280"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81678677"
 ---
-В настоящее время отменить подготовку не поддерживается с помощью портала или PowerShell. обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com) , чтобы отменить подготовку.
+В настоящее время отменить инициализацию не поддерживается с помощью портал Azure или PowerShell. Чтобы отменить подготовку, обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).

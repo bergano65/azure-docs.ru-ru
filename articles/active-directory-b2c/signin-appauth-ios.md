@@ -3,20 +3,20 @@ title: Использование AppAuth в приложении iOS
 titleSuffix: Azure AD B2C
 description: Как создать приложение iOS, которое использует AppAuth с Azure Active Directory B2C для управления удостоверениями пользователей и проверки подлинности пользователей.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5433867b0676ffa644160251c9aacd81ba04dda7
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: c659280ebc8c91b53cbc3a176c84397edd942c23
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848360"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78186834"
 ---
 # <a name="azure-ad-b2c-sign-in-using-an-ios-application"></a>Azure AD B2C. Вход с помощью приложения iOS
 
@@ -38,7 +38,7 @@ ms.locfileid: "76848360"
 
 [!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
 
-Запишите значение параметра **Идентификатор приложения (клиент)** . Оно вам потребуется в дальнейшем.
+Запишите значение параметра **Идентификатор приложения (клиент)**. Оно вам потребуется в дальнейшем.
 
 Кроме того, запишите пользовательский URI перенаправления для использования на следующем шаге. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
@@ -62,7 +62,7 @@ ms.locfileid: "76848360"
 > AppAuth поддерживает iOS 7 и более поздние версии.  Однако для поддержки социальных имен входа в Google необходим SFSafariViewController, который поддерживает iOS 9 и более поздние версии.
 >
 
-### <a name="configuration"></a>Настройка
+### <a name="configuration"></a>Конфигурация
 
 Вы можете настроить взаимодействие с Azure AD B2C, указав URI конечной точки авторизации и конечной точки токена.  Для создания URI вам потребуются следующие сведения:
 * идентификатор клиента (например, contoso.onmicrosoft.com);

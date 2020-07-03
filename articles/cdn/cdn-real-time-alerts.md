@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 4b8cbc27757cf6c321ea4b3c27720a129aa27c1b
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67593484"
 ---
 # <a name="real-time-alerts-in-microsoft-azure-cdn"></a>Оповещения в режиме реального времени в сети CDN Microsoft Azure
@@ -30,7 +30,7 @@ ms.locfileid: "67593484"
 * Пропускная способность
 * Коды состояний
 * Состояния кэша
-* Подключения
+* Соединения
 
 ## <a name="creating-a-real-time-alert"></a>Создание оповещения в режиме реального времени
 1. На [портале Azure](https://portal.azure.com) перейдите к профилю CDN.
@@ -107,8 +107,8 @@ ms.locfileid: "67593484"
     > 
 13. Нажмите кнопку **Сохранить** , чтобы сохранить конфигурацию оповещений.  Если вы установили флажок **Alert Enabled** (Оповещение включено) на шаге 5, оповещение активно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь со статьей [Статистика в реальном времени в сети CDN Microsoft Azure](cdn-real-time-stats.md).
 * Дополнительные сведения о [расширенных HTTP-отчетах](cdn-advanced-http-reports.md).
-* [Анализ вариантов использования CDN Azure](cdn-analyze-usage-patterns.md).
+* Анализ [закономерностей использования](cdn-analyze-usage-patterns.md)
 

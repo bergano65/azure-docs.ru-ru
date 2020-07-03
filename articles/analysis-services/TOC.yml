@@ -10,6 +10,9 @@
       href: analysis-services-create-server.md
     - name: Создание сервера с помощью PowerShell
       href: analysis-services-create-powershell.md
+    - name: "Создание сервера\_— шаблон ARM"
+      displayName: Resource Manager
+      href: analysis-services-create-template.md
     - name: Настройка брандмауэра сервера с помощью портала
       href: analysis-services-qs-firewall.md
 - name: Учебники
@@ -36,9 +39,13 @@
       href: analysis-services-connect.md
     - name: Высокий уровень доступности
       href: analysis-services-bcdr.md
+    - name: Длительные операции
+      href: analysis-services-long-operations.md
     - name: Поддерживаемые источники данных
       href: analysis-services-datasource.md
-- name: Инструкции
+    - name: Часто задаваемые вопросы о сетевом подключении
+      href: analysis-services-network-faq.md
+- name: Практическое руководство
   items:
     - name: Сервер
       items:
@@ -90,7 +97,7 @@
           href: analysis-services-connect-pbi.md
         - name: Создание ODC-файла
           href: analysis-services-odc.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: PowerShell
       href: analysis-services-powershell.md
@@ -114,13 +121,13 @@
       href: analysis-services-samples.md
     - name: Блог команды разработчиков Analysis Services
       href: 'https://blogs.msdn.microsoft.com/analysisservices/'
-    - name: Форум по Azure Analysis Services
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureAnalysisServices'
+    - name: Страница с вопросами об Azure Analysis Services (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-analysis-services.html'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
     - name: Состояние Azure
       href: 'https://azure.microsoft.com/status/'
-    - name: Отзыв
+    - name: Отзывы
       href: 'https://feedback.azure.com/forums/556165-azure-analysis-services'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/analysis-services/'

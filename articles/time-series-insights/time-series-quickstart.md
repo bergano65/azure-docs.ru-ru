@@ -9,13 +9,13 @@ manager: cshankar
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 01/06/2020
-ms.openlocfilehash: a905054b1b2a04fa2b7865d2c1065ccee37cffc0
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.date: 04/13/2020
+ms.openlocfilehash: a566c55d2ac51efc5ff2650ad682f10dae2bdc31
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75860436"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81272004"
 ---
 # <a name="quickstart-explore-azure-time-series-insights"></a>Краткое руководство. Знакомство со службой "Аналитика временных рядов Azure"
 

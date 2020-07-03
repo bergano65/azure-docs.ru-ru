@@ -4,7 +4,7 @@ description: Из этого руководства вы узнаете, как 
 services: azure-app-configuration
 documentationcenter: ''
 author: mrm9084
-manager: zhenlwa
+manager: zhenlan
 editor: ''
 ms.assetid: ''
 ms.service: azure-app-configuration
@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 09/26/2019
 ms.author: mametcal
 ms.custom: mvc
-ms.openlocfilehash: 8c66e2995462701f7ddaefc3a2623c02fee883ef
-ms.sourcegitcommit: 6013bacd83a4ac8a464de34ab3d1c976077425c7
+ms.openlocfilehash: d924975d852320fcddd5ae988f1d52f10d366f81
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71687204"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790751"
 ---
 # <a name="tutorial-use-feature-flags-in-a-spring-boot-app"></a>Руководство по Использование флагов компонентов в приложении Spring Boot
 
@@ -29,7 +29,7 @@ ms.locfileid: "71687204"
 
 В [кратком руководстве по добавлению флагов функций в приложение Spring Boot](./quickstart-feature-flag-spring-boot.md) описано несколько использующихся при этом методов. В нашем руководстве такие методы рассматриваются более подробно.
 
-Из этого учебника вы узнаете следующее:
+В этом учебнике рассматривается следующее.
 
 > [!div class="checklist"]
 > * Добавить флаги функций в ключевых частях приложения для управления доступностью функций.
@@ -51,11 +51,23 @@ public HelloController(FeatureManager featureManager) {
 
 Самый простой способ подключить приложение Spring Boot к Конфигурации приложений — использовать поставщика конфигураций.
 
+### <a name="spring-cloud-11x"></a>Spring Cloud 1.1.x
+
 ```xml
 <dependency>
     <groupId>com.microsoft.azure</groupId>
-    <artifactId>spring-cloud-starter-azure-appconfiguration-config</artifactId>
-    <version>1.1.0.M4</version>
+    <artifactId>spring-cloud-azure-feature-management-web</artifactId>
+    <version>1.1.2</version>
+</dependency>
+```
+
+### <a name="spring-cloud-12x"></a>Spring Cloud 1.2.x
+
+```xml
+<dependency>
+    <groupId>com.microsoft.azure</groupId>
+    <artifactId>spring-cloud-azure-feature-management-web</artifactId>
+    <version>1.2.2</version>
 </dependency>
 ```
 
@@ -69,33 +81,31 @@ public HelloController(FeatureManager featureManager) {
 
 ```yml
 feature-management:
-  featureSet:
-    features:
-      FeatureA: true
-      FeatureB: false
-      FeatureC:
-        EnabledFor:
-          -
-            name: Percentage
-            parameters:
-              value: 50
+  feature-set:
+    feature-a: true
+    feature-b: false
+    feature-c:
+      enabled-for:
+        -
+          name: Percentage
+          parameters:
+            value: 50
 ```
 
 В соответствии с соглашением раздел `feature-management` этого YAML-документа используется для параметров флагов функций. Предыдущий пример показывает три флага функций с фильтрами, определенными в свойстве `EnabledFor`:
 
-* Флаг `FeatureA` *включен*.
-* Флаг `FeatureB` *отключен*.
-* `FeatureC` указывает фильтр с именем `Percentage` и свойством `Parameters`. `Percentage` — это настраиваемый фильтр. В этом примере `Percentage` задает 50-процентную вероятность того, что флаг `FeatureC` может быть *включен*.
+* Флаг `feature-a`*включен*.
+* Флаг `feature-b`*отключен*.
+* `feature-c` указывает фильтр с именем `Percentage` и свойством `parameters`. `Percentage` — это настраиваемый фильтр. В этом примере `Percentage` задает 50-процентную вероятность того, что флаг `feature-c` может быть *включен*.
 
 ## <a name="feature-flag-checks"></a>Проверка флага функции
 
-В базовой схеме управления функциями сначала проверяется, *включен* ли флаг функции. Если это так, диспетчер функций выполняет действия, содержащиеся в функции. Например:
+В базовой схеме управления функциями сначала проверяется, *включен* ли флаг функции. Если это так, диспетчер функций выполняет действия, содержащиеся в функции. Пример:
 
 ```java
 private FeatureManager featureManager;
 ...
-if (featureManager.isEnabled("FeatureA"))
-{
+if (featureManager.isEnabledAsync("feature-a").block()) {
     // Run the following code
 }
 ```
@@ -118,11 +128,11 @@ public class HomeController {
 
 ## <a name="controller-actions"></a>Действия контроллера
 
-В контроллерах MVC с помощью атрибута `@FeatureGate` можно управлять объектом включения: определенное действие. Для выполнения указанного ниже действия `Index` требуется, чтобы флаг `FeatureA` был *включен*.
+В контроллерах MVC с помощью атрибута `@FeatureGate` можно управлять объектом включения: определенное действие. Для выполнения указанного ниже действия `Index` требуется, чтобы флаг `feature-a` был *включен*.
 
 ```java
 @GetMapping("/")
-@FeatureGate(feature = "FeatureA")
+@FeatureGate(feature = "feature-a")
 public String index(Model model) {
     ...
 }
@@ -132,7 +142,7 @@ public String index(Model model) {
 
 ## <a name="mvc-filters"></a>Фильтры MVC
 
-Фильтры MVC можно настроить таким образом, чтобы они активировались в зависимости от состояния флага функции. С помощью приведенного ниже кода добавляется фильтр MVC с именем `FeatureFlagFilter`. Этот фильтр активируется в пределах конвейера MVC, только если флаг `FeatureA` включен.
+Фильтры MVC можно настроить таким образом, чтобы они активировались в зависимости от состояния флага функции. С помощью приведенного ниже кода добавляется фильтр MVC с именем `FeatureFlagFilter`. Этот фильтр активируется в пределах конвейера MVC, только если флаг `feature-a` включен.
 
 ```java
 @Component
@@ -144,7 +154,7 @@ public class FeatureFlagFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        if(!featureManager.isEnabled("FeatureA")) {
+        if(!featureManager.isEnabledAsync("feature-a").block()) {
             chain.doFilter(request, response);
             return;
         }
@@ -156,11 +166,11 @@ public class FeatureFlagFilter implements Filter {
 
 ## <a name="routes"></a>Маршруты
 
-Флаги функции можно использовать для перенаправления маршрутов. Следующий код перенаправит пользователя из `FeatureA`.
+Флаги функции можно использовать для перенаправления маршрутов. Следующий код перенаправит пользователя из `feature-a`.
 
 ```java
 @GetMapping("/redirect")
-@FeatureGate(feature = "FeatureA", fallback = "/getOldFeature")
+@FeatureGate(feature = "feature-a", fallback = "/getOldFeature")
 public String getNewFeature() {
     // Some New Code
 }
@@ -171,7 +181,7 @@ public String getOldFeature() {
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как с помощью библиотек `spring-cloud-azure-feature-management-web` реализовать флаги функций в приложении Spring Boot. Подробные сведения о поддержке управления функциями в службе "Конфигурация приложений" и Spring Boot см. по следующим ссылкам:
 

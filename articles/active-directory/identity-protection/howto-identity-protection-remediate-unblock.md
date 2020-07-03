@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 350e7b37d36be70cea345db52cdfb639b2f1c1a8
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74382099"
 ---
 # <a name="remediate-risks-and-unblock-users"></a>Устранение рисков и разблокирование пользователей
@@ -89,6 +89,6 @@ ms.locfileid: "74382099"
 1. **Исключите пользователя из политики** . Если вы думаете, что текущая конфигурация политики входа вызывает проблемы для конкретных пользователей, вы можете исключить пользователей из нее. Дополнительные сведения см. в разделе исключения в статье [как настроить и включить политики риска](howto-identity-protection-configure-risk-policies.md#exclusions).
 1. **Отключение политики**. Если вы считаете, что конфигурация политики является причиной проблем всех пользователей, то ее можно отключить. Дополнительные сведения см. в статье [Настройка и включение политик риска](howto-identity-protection-configure-risk-policies.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Общие сведения о службе "Защита идентификации Azure Active Directory" см. в [этом обзоре](overview-identity-protection.md).
+См. дополнительные сведения о [защите идентификации Azure AD](overview-identity-protection.md).

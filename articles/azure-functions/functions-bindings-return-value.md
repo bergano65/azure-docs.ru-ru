@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 01/14/2019
 ms.author: cshoe
 ms.openlocfilehash: 7ba104e288204dfbf3d24f5783bf69682a286553
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74480575"
 ---
 # <a name="using-the-azure-function-return-value"></a>Использование возвращаемого значения функции Azure
@@ -20,13 +20,13 @@ ms.locfileid: "74480575"
 
 * В библиотеке классов C# примените атрибут выходной привязки к возвращаемому значению метода.
 * В Java примените заметку выходной привязки к методу функции.
-* В других языках задайте для свойства `name` значение *в файле*function.json`$return`.
+* В других языках задайте для свойства `name` значение `$return` в файле *function.json*.
 
 При наличии нескольких выходных привязок используйте возвращаемое значение только для одной из них.
 
 В C# и скрипте C# есть альтернативные способы отправки данных в привязку для вывода — с помощью параметров `out` и [объектов сборщика](functions-reference-csharp.md#writing-multiple-output-values).
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 Это код C#, который использует возвращаемое значение для выходной привязки, за которым следует пример асинхронной функции:
 
@@ -52,7 +52,7 @@ public static Task<string> Run([QueueTrigger("inputqueue")]WorkItem input, ILogg
 }
 ```
 
-# <a name="c-scripttabcsharp-script"></a>[C#Индекса](#tab/csharp-script)
+# <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
 Выходная привязка в файле *function.json*:
 
@@ -85,7 +85,7 @@ public static Task<string> Run(WorkItem input, ILogger log)
 }
 ```
 
-# <a name="ftabfsharp"></a>[F#](#tab/fsharp)
+# <a name="f"></a>[Ж #](#tab/fsharp)
 
 Выходная привязка в файле *function.json*:
 
@@ -107,7 +107,7 @@ let Run(input: WorkItem, log: ILogger) =
     json
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Выходная привязка в файле *function.json*:
 
@@ -130,7 +130,7 @@ module.exports = function (context, input) {
 }
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Выходная привязка в файле *function.json*:
 
@@ -153,7 +153,7 @@ def main(input: azure.functions.InputStream) -> str:
     })
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 Вот код Java, который использует возвращаемое значение для выходной привязки.
 
@@ -173,7 +173,7 @@ public static String run(
 
 ---
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Обработчик ошибок привязки функций Azure](./functions-bindings-errors.md)

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: e8ae31122d59238ac104d7d873cf56f32977c9af
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086502"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Руководство по Интеграция Azure Active Directory с xMatters OnDemand
@@ -38,7 +38,7 @@ ms.locfileid: "67086502"
 
 Чтобы настроить интеграцию Azure AD с xMatters OnDemand, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка xMatters OnDemand с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,13 +99,13 @@ ms.locfileid: "67086502"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения xMatters OnDemand](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
     | |
     |--|
@@ -140,7 +140,7 @@ ms.locfileid: "67086502"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -152,13 +152,13 @@ ms.locfileid: "67086502"
 
 2. В верхней части панели инструментов щелкните **Admin** (Администратор) и выберите **Company Details** (Сведения о компании) на панели навигации слева.
 
-    ![Администратор](./media/xmatters-ondemand-tutorial/IC776795.png "Администратор")
+    ![Администратор](./media/xmatters-ondemand-tutorial/IC776795.png "Административный")
 
 3. На странице **Настройка SAML** сделайте следующее:
 
     ![Настройка SAML](./media/xmatters-ondemand-tutorial/IC776796.png "Настройка SAML")
 
-    a. Выберите **Включить SAML**.
+    а. Выберите **Включить SAML**.
 
     b. В текстовое поле **Идентификатор поставщика удостоверений** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -166,9 +166,9 @@ ms.locfileid: "67086502"
 
     d. В текстовое поле **Single Logout URL** (URL-адрес единого выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    д. В верхней части страницы «Информация о компании» нажмите кнопку **Сохранить изменения**.
+    д) В верхней части страницы «Информация о компании» нажмите кнопку **Сохранить изменения**.
 
-    ![Сведения о компании](./media/xmatters-ondemand-tutorial/IC776797.png "Сведения о компании")
+    ![Company details](./media/xmatters-ondemand-tutorial/IC776797.png "Сведения о компании")
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -234,9 +234,9 @@ ms.locfileid: "67086502"
 
 3. В разделе **Добавление пользователя** сделайте следующее:
 
-    ![Добавление пользователя](./media/xmatters-ondemand-tutorial/IC781049.png "Добавление пользователя")
+    ![Добавление пользователей](./media/xmatters-ondemand-tutorial/IC781049.png "Добавление пользователя")
 
-    a. Установите флажок **Активно**.
+    а. Установите флажок **Активно**.
 
     b. В текстовое поле **User ID** (Идентификатор пользователя) введите идентификатор пользователя, например Brittasimon@contoso.com.
 
@@ -244,9 +244,9 @@ ms.locfileid: "67086502"
 
     d. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
-    д. В текстовое поле **Site** (Сайт) введите действительный сайт учетной записи Azure AD, которую необходимо подготовить.
+    д) В текстовое поле **Site** (Сайт) введите действительный сайт учетной записи Azure AD, которую необходимо подготовить.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
@@ -260,5 +260,5 @@ ms.locfileid: "67086502"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

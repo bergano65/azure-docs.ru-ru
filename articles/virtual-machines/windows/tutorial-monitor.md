@@ -1,32 +1,27 @@
 ---
 title: Учебник. Мониторинг виртуальных машин Windows в Azure
 description: Из этого учебника вы узнаете, как отслеживать производительность и обнаруживать компоненты приложений, работающих на виртуальных машинах Windows.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: mgoedtel
 manager: carmonm
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
+ms.subservice: monitoring
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/27/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: 9e807927a10399b02c2c89359c2ffffaf87ba57b
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.openlocfilehash: a021675632a093d41e2565f63f8bb4e844213628
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74112486"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82101626"
 ---
 # <a name="tutorial-monitor-a-windows-virtual-machine-in-azure"></a>Руководство по Мониторинг виртуальной машины Windows в Azure
 
 Служба мониторинга Azure использует агенты для сбора данных о производительности и загрузке с виртуальных машин Azure, сохраняет эти данные в хранилище Azure и предоставляет к ним доступ через портал, модуль Azure PowerShell и Azure CLI. Расширенный мониторинг осуществляется с помощью решения "Azure Monitor для виртуальных машин" путем сбора метрик производительности, обнаружения компонентов приложений, установленных на виртуальных машинах, и включает в себя таблицы производительности и карту зависимостей.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Включение диагностики загрузки на виртуальной машине
@@ -72,14 +67,14 @@ New-AzVm `
 Get-AzVMBootDiagnosticsData -ResourceGroupName "myResourceGroupMonitor" -Name "myVM" -Windows -LocalPath "c:\"
 ```
 
-## <a name="view-host-metrics"></a>Просмотр метрик узла.
+## <a name="view-host-metrics"></a>Просмотр метрик узла
 
 Виртуальная машина Windows имеет выделенный узел виртуальной машины в Azure, с которым она взаимодействует. Метрики узла собираются автоматически, и их можно просмотреть на портале Azure.
 
 1. На портале Azure щелкните **Группы ресурсов**, выберите **myResourceGroupMonitor**, а затем в списке ресурсов выберите **myVM**.
 2. Чтобы просмотреть данные о производительности узла виртуальной машины, в колонке виртуальной машины щелкните **Метрики**, а затем выберите любую метрику узла в группе **Доступные метрики**.
 
-    ![Просмотр метрик узла.](./media/tutorial-monitoring/tutorial-monitor-host-metrics.png)
+    ![Просмотр метрик узла](./media/tutorial-monitoring/tutorial-monitor-host-metrics.png)
 
 ## <a name="enable-advanced-monitoring"></a>Включение расширенного мониторинга
 
@@ -132,17 +127,17 @@ Get-AzVMBootDiagnosticsData -ResourceGroupName "myResourceGroupMonitor" -Name "m
 
 5. При необходимости установите флажок возле параметра *Участники, читатели и владельцы электронной почты* для отправки уведомлений по электронной почте. Действие по умолчанию — предоставлять уведомления на портале.
 
-6. Нажмите кнопку **ОК**.
+6. Нажмите кнопку **ОК** .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике вы настроили и просмотрели метрики производительности виртуальной машины. Вы научились выполнять следующие задачи:
+В этом учебнике вы настроили и просмотрели метрики производительности виртуальной машины. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание группы ресурсов и виртуальной машины
-> * Включение диагностики загрузки на виртуальной машине
+> * Включение диагностики загрузки на виртуальной машине.
 > * Просмотр диагностики загрузки
-> * Просмотр метрик узла.
+> * Просмотр метрик узла
 > * Включение Azure Monitor для виртуальных машин
 > * Просмотр метрик виртуальной машины.
 > * Создание оповещения

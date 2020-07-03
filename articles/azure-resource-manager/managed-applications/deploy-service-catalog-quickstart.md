@@ -5,16 +5,16 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: tomfitz
-ms.openlocfilehash: 3fa9709e096e908907772c940fc5e2f2895b7eb3
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: ce58fc69496f54c078b0a0a55a8a3c7cad82a051
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75650790"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81391710"
 ---
-# <a name="deploy-service-catalog-app-through-azure-portal"></a>Развертывание приложения из каталога служб с помощью портала Azure
+# <a name="quickstart-deploy-service-catalog-app-through-azure-portal"></a>Краткое руководство. Развертывание приложения каталога услуг с помощью портал Azure
 
-В предыдущем руководстве [Публикация определения для управляемого приложения Azure](publish-managed-app-definition-quickstart.md) вы опубликовали определение для управляемого приложения. В этом кратком руководстве вы создадите приложение из каталога служб из этого определения.
+В предыдущем руководстве [Публикация определения для управляемого приложения Azure](publish-service-catalog-app.md) вы опубликовали определение для управляемого приложения. В этом кратком руководстве вы создадите приложение из каталога служб из этого определения.
 
 ## <a name="create-service-catalog-app"></a>Создание приложения из каталога служб
 
@@ -28,11 +28,11 @@ ms.locfileid: "75650790"
 
    ![Поиск приложения в каталоге служб](./media/deploy-service-catalog-quickstart/select-service-catalog.png)
 
-1. Вы видите описание службы управляемого приложения. Нажмите кнопку **Создать**.
+1. Вы видите описание службы управляемого приложения. Щелкните **Создать**.
 
    ![Выбор кнопки "Создать"](./media/deploy-service-catalog-quickstart/create-service-catalog.png)
 
-1. На портале показаны определения управляемого приложения, к которым у вас есть доступ. Из доступных определений выберите то, которое вы хотите развернуть. В этом кратком руководстве используйте определение **Управляемая учетная запись**, которое вы создали в предыдущем кратком руководстве. Нажмите кнопку **Создать**.
+1. На портале показаны определения управляемого приложения, к которым у вас есть доступ. Из доступных определений выберите то, которое вы хотите развернуть. В этом кратком руководстве используйте определение **Управляемая учетная запись**, которое вы создали в предыдущем кратком руководстве. Щелкните **Создать**.
 
    ![Выбор определения для развертывания](./media/deploy-service-catalog-quickstart/select-definition.png)
 
@@ -56,11 +56,11 @@ ms.locfileid: "75650790"
 
    ![Просмотр приложения](./media/deploy-service-catalog-quickstart/view-managed-application.png)
 
-1. Просмотрите группу ресурсов с именем **applicationGroup{hash-characters}** , чтобы увидеть ресурсы для приложения из каталога служб.
+1. Просмотрите группу ресурсов с именем **applicationGroup{hash-characters}**, чтобы увидеть ресурсы для приложения из каталога служб.
 
    ![Просмотр ресурсов](./media/deploy-service-catalog-quickstart/view-resources.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы узнать, как создать файлы определений для управляемого приложения, см. статью [Создание и публикация определения управляемого приложения](publish-service-catalog-app.md).
 * Для Azure CLI см. статью [Развертывание управляемого приложения для каталога службы с помощью Azure CLI](./scripts/managed-application-cli-sample-create-application.md).

@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Простой единый вход — как это работает | Документация Майкрософт'
+title: 'Azure AD Connect: простой единый вход — как это работает | Документы Майкрософт'
 description: В этой статье описывается принцип работы функции простого единого входа в Azure Active Directory.
 services: active-directory
 keywords: что такое Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
@@ -17,13 +17,13 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bd4743bc38c3b2b4b9495b33535b4b73f48d1372
-ms.sourcegitcommit: 83df2aed7cafb493b36d93b1699d24f36c1daa45
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71176674"
 ---
-# <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Простой единый вход Azure Active Directory: Подробное техническое руководство
+# <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Подробное техническое руководство по простому единому входу Azure Active Directory
 
 В этой статье приводятся технические сведения о работе функции простого единого входа Azure Active Directory.
 
@@ -93,9 +93,9 @@ ms.locfileid: "71176674"
 
 ![Простой единый вход: процедура для собственного приложения](./media/how-to-connect-sso-how-it-works/sso14.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [**Краткое руководство**](how-to-connect-sso-quick-start.md). Настройка и подготовка к работе простого единого входа Azure AD.
-- [**Часто задаваемые вопросы**](how-to-connect-sso-faq.md). Ответы на часто задаваемые вопросы.
-- [**Устранение неполадок**](tshoot-connect-sso.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.
+- [**Часто задаваемые вопросы**](how-to-connect-sso-faq.md) — ответы на часто задаваемые вопросы.
+- [**Устранение неполадок**](tshoot-connect-sso.md) . Узнайте, как устранить распространенные проблемы с этой функцией.
 - [**UserVoice**](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Отправка запросов новых функций.

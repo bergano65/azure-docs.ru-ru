@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.openlocfilehash: e5d32d1bc3bd704b03e58c62251a323ed3f4662c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "61229056"
 ---
 # <a name="generate-a-thumbnail-sprite"></a>Создание эскиза спрайта  
@@ -33,7 +33,7 @@ Media Encoder Standard можно использовать для создани
 
     1. Если для SpriteColumn установлено значение M >= 1, выходное изображение представляет собой прямоугольник со столбцами M. Если количество эскизов, сгенерированных с помощью # 2, не является точным кратным M, последняя строка будет неполной и останется с черными пикселями.  
 
-Вот пример:
+Например:
 
 ```json
 {
@@ -72,6 +72,6 @@ Media Encoder Standard можно использовать для создани
 2.  Фрагментирование изображений спрайтов в изображения JPEG со средним размером еще не поддерживается. Таким образом, следует принять меры для ограничения числа эскизов и их размеров, чтобы результирующий совмещенный эскиз спрайта имел около 8М пикселей или меньше.
 3.  Проигрыватель мультимедиа Azure поддерживает спрайты только в браузерах Microsoft Edge, Chrome и Firefox. Разбор VTT в IE11 не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Кодирование содержимого](media-services-encode-asset.md)
+[Кодирование контента](media-services-encode-asset.md)

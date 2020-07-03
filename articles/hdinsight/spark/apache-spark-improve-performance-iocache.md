@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/23/2019
 ms.openlocfilehash: 43875b87d26f144b85454077fd3c044c820132bf
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75494989"
 ---
 # <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight
@@ -34,7 +34,7 @@ IO Cache — это служба кэширования данных для Azur
 
 IO Cache для Azure HDInsight по умолчанию отключен в предварительной версии. Служба IO Cache доступна в кластерах Azure HDInsight 3.6 и более поздних версий с Apache Spark 2.3.  Чтобы активировать кэш ввода-вывода в HDInsight 4,0, выполните следующие действия.
 
-1. В веб-браузере перейдите к `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — имя кластера.
+1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
 1. Выберите службу **IO Cache** в левой части страницы.
 
@@ -47,7 +47,7 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 > [!NOTE]  
 > Несмотря на значение индикатора выполнения, фактически IO Cache активируется только после перезапуска всех затрагиваемых служб.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
   
 После включения IO Cache при выполнении заданий Spark могут возникать ошибки отсутствия места на диске. Эти ошибки связаны с тем, что Spark также использует место на локальном диске для хранения данных во время операций перетасовки. Может случиться так, что после включения IO Cache на твердотельном накопителе закончится свободное место для Spark. По умолчанию IO Cache использует половину от общего объема твердотельного накопителя. В Ambari можно настроить параметры использования места на диске для IO Cache. Если вы столкнетесь с ошибками отсутствия места на диске, сократите объем памяти на твердотельном накопителе, используемый для IO Cache, и перезапустите службу. Чтобы изменить настройки пространства для IO Cache, выполните следующие действия:
 
@@ -67,14 +67,14 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 1. Выберите **Сохранить** в правом верхнем углу.
 
-1. Выберите **Restart** (Перезапустить)  > **Restart All Affected** (Перезапустить все затрагиваемые).
+1. Выберите **перезапустить** > **все затронутые**.
 
     ![Apache Ambari перезапускает все затронутые](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Перезапустить все затронутые")
 
-1. Щелкните **Confirm Restart All** (Подтвердить перезапуск всех).
+1. Выберите пункт **подтвердить перезагрузку все**.
 
 Если это не сработает, отключите кэш ввода-вывода.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительная информация об IO Cache, в том числе о сравнительных тестах производительности, приведена в [этой записи блога](https://azure.microsoft.com/blog/apache-spark-speedup-with-hdinsight-io-cache/)

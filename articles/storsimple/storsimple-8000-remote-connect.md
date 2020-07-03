@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/02/2018
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 70d0246debc532260d287104bacea2f15c1b94d2
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 58d61df932da06e32bb4c8f21a3a296b185f02d9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277293"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80299008"
 ---
 # <a name="connect-remotely-to-your-storsimple-8000-series-device"></a>Удаленное подключение к устройству StorSimple серии 8000
 
@@ -67,7 +67,7 @@ ms.locfileid: "76277293"
 #### <a name="to-enable-remote-management-through-the-device-serial-console"></a>Включение удаленного управления с помощью последовательной консоли
 1. В меню последовательной консоли выберите вариант 1. Дополнительные сведения об использовании последовательной консоли устройства см. в статье [Подключение к Windows PowerShell для StorSimple через последовательную консоль устройства](storsimple-8000-windows-powershell-administration.md#connect-to-windows-powershell-for-storsimple-via-the-device-serial-console).
 2. В командной строке введите следующую команду: `Enable-HcsRemoteManagement –AllowHttp`
-3. Вы получите уведомление об уязвимостях системы безопасности при подключении к устройству с помощью HTTP. При появлении запроса подтверждения введите **Y**.
+3. Вы получите уведомление об уязвимостях системы безопасности при подключении к устройству с помощью HTTP. При появлении запроса подтвердите, введя **Y**.
 4. Убедитесь, что HTTP включен, набрав: `Get-HcsSystem`
 5. Убедитесь, что значение поля **RemoteManagementMode** равно **HttpsAndHttpEnabled**. На следующем рисунке показаны эти параметры в PuTTY.
    
@@ -132,7 +132,7 @@ ms.locfileid: "76277293"
 
 1. Откройте службу диспетчера устройств StorSimple. Выберите **Устройства**, а затем щелкните устройство, на котором нужно настроить удаленное управление. Последовательно выберите пункты **Параметры устройства > Безопасность**.
 2. В колонке **Параметры безопасности** щелкните **Удаленное управление**.
-3. Задайте для пункта **Включить удаленное управление** значение **Да**.
+3. Установите для параметра **Включить удаленное управление** значение **Да**.
 4. Теперь вы можете выбрать подключение по HTTPS. (По умолчанию используется подключение по протоколу HTTPS.) Убедитесь, что выбран протокол HTTPS.
 5. Щелкните многоточие (…), а затем выберите **Загрузить сертификат удаленного управления**. Укажите расположение для сохранения этого файла. Этот сертификат следует установить на компьютере клиента или узла, который будет использоваться для подключения к устройству.
 6. Нажмите кнопку **Сохранить**, а затем щелкните **Да**, когда появится запрос на подтверждение.
@@ -176,13 +176,13 @@ ms.locfileid: "76277293"
 
 Чтобы подготовить компьютер узла для удаленного подключения, которое использует сеанс HTTPS, выполните следующие процедуры.
 
-* [Импортируйте CER-файл в корневое хранилище клиента или удаленного узла](#to-import-the-certificate-on-the-remote-host).
+* [Импортируйте CER файл в корневое хранилище клиента или удаленного узла](#to-import-the-certificate-on-the-remote-host).
 * [Добавьте серийные номера устройств в файл hosts на удаленном узле](#to-add-device-serial-numbers-to-the-remote-host).
 
 Каждая из этих процедур описана ниже.
 
 #### <a name="to-import-the-certificate-on-the-remote-host"></a>Импорт сертификата на удаленном узле
-1. Щелкните правой кнопкой мыши на CER-файле и выберите **Установить сертификат**. Откроется мастер импорта сертификатов.
+1. Щелкните правой кнопкой мыши CER-файл и выберите команду **Установить сертификат**. Откроется мастер импорта сертификатов.
    
     ![Мастер импорта сертификатов 1](./media/storsimple-remote-connect/HCS_CertificateImportWizard1.png)
 2. В качестве **Расположения хранилища** выберите **Локальный компьютер**, а затем нажмите кнопку **Далее**.
@@ -196,18 +196,18 @@ ms.locfileid: "76277293"
 #### <a name="to-add-device-serial-numbers-to-the-remote-host"></a>Добавление серийных номеров устройства в удаленный узел
 1. Откройте "Блокнот" от имени администратора и откройте файл hosts, расположенный в папке \Windows\System32\Drivers\etc.
 2. Добавьте следующие три записи в файл hosts: **IP-адрес данных 0**, **Фиксированный IP-адрес контроллера 0** и **Фиксированный IP-адрес контроллера 1**.
-3. Введите серийный номер устройства, сохраненный ранее. Сопоставьте его с IP-адресом, как показано на следующем рисунке. Для контроллера 0 и контроллера 1 добавьте **Controller0** и **Controller1** в конце серийного номера (CN-имени).
+3. Введите серийный номер устройства, сохраненный ранее. Сопоставьте его с IP-адресом, как показано на следующем рисунке. Добавьте в конце серийного номера контроллера 0 и контроллера 1 значения **Controller0** и **Controller1** (CN-имя).
    
     ![Добавление имени CN в файл hosts](./media/storsimple-remote-connect/HCS_AddingCNNameToHostsFile.png)
 4. Сохраните файл hosts.
 
 ### <a name="connect-to-the-device-from-the-remote-host"></a>Подключение к устройству с удаленного узла
 
-С помощью Windows PowerShell и SSL создайте сеанс SSAdmin на устройстве с удаленного узла или клиента. Сеанс SSAdmin соответствует пункту 1 в меню [последовательной консоли](storsimple-8000-windows-powershell-administration.md#connect-to-windows-powershell-for-storsimple-via-the-device-serial-console) устройства.
+Используйте Windows PowerShell и TLS для ввода сеанса SSAdmin на устройстве с удаленного узла или клиента. Сеанс SSAdmin соответствует пункту 1 в меню [последовательной консоли](storsimple-8000-windows-powershell-administration.md#connect-to-windows-powershell-for-storsimple-via-the-device-serial-console) устройства.
 
 Выполните следующую процедуру на компьютере, с которого будет выполняться удаленное подключение Windows PowerShell.
 
-#### <a name="to-enter-an-ssadmin-session-on-the-device-by-using-windows-powershell-and-ssl"></a>Создание сеанса SSAdmin на устройстве с помощью Windows PowerShell и SSL
+#### <a name="to-enter-an-ssadmin-session-on-the-device-by-using-windows-powershell-and-tls"></a>Ввод сеанса SSAdmin на устройстве с помощью Windows PowerShell и TLS
 1. Запустите сеанс Windows PowerShell от имени администратора. Если вы используете клиент Windows 10, по умолчанию служба удаленного управления Windows работает в ручном режиме. Чтобы запустить службу, введите этот командлет:
 
     `Start-Service WinRM`
@@ -232,11 +232,11 @@ ms.locfileid: "76277293"
 5. Тип:
    
      `Enter-PSSession $session`
-6. Необходимо подождать несколько минут, после чего вы будете подключены к устройству через HTTPS по протоколу SSL. Вы увидите сообщение о том, что вы подключены к устройству.
+6. Вам потребуется подождать несколько минут, после чего вы будете подключены к устройству через протокол HTTPS через TLS. Вы увидите сообщение о том, что вы подключены к устройству.
    
-    ![Удаленное взаимодействие PowerShell через HTTPS и SSL](./media/storsimple-remote-connect/HCS_PSRemotingUsingHTTPSAndSSL.png)
+    ![Удаленное взаимодействие PowerShell с использованием HTTPS и TLS](./media/storsimple-remote-connect/HCS_PSRemotingUsingHTTPSAndSSL.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше об [использовании Windows PowerShell для администрирования устройства StorSimple](storsimple-8000-windows-powershell-administration.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

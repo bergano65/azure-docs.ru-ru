@@ -6,12 +6,12 @@ author: mamccrea
 ms.author: mamccrea
 ms.topic: conceptual
 ms.date: 01/29/2020
-ms.openlocfilehash: ac06521df38bdc91ca717d888c73cd541576014d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 73905483850a47a9d036bef1b9e1ee60d3484555
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905456"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77484593"
 ---
 # <a name="parse-json-and-avro-data-in-azure-stream-analytics"></a>Анализ данных JSON и AVRO в Azure Stream Analytics
 
@@ -63,13 +63,13 @@ FROM input
 
 Результат:
 
-|DeviceID|Lat|Длинные|Температура|Версия|
+|DeviceID|Lat|Long|температура;|Версия|
 |-|-|-|-|-|
 |12345|47|122|80|1.2.45|
 
 
 ### <a name="select-all-properties"></a>Выбрать все свойства
-Все свойства вложенной записи можно выбрать с помощью подстановочного знака "*". Рассмотрим следующий пример:
+Все свойства вложенной записи можно выбрать с помощью подстановочного знака "*". Рассмотрим следующий пример.
 
 ```SQL
 SELECT
@@ -80,7 +80,7 @@ FROM input
 
 Результат:
 
-|DeviceID|Lat|Длинные|
+|DeviceID|Lat|Long|
 |-|-|-|
 |12345|47|122|
 
@@ -146,7 +146,7 @@ CROSS APPLY GetRecordProperties(event.SensorReadings) AS sensorReading
 
 |DeviceID|сенсорнаме|AlertMessage|
 |-|-|-|
-|12345|Температура|80|
+|12345|температура;|80|
 |12345|влажность.|70|
 |12345|CustomSensor01|5|
 |12345|CustomSensor02|99|
@@ -169,11 +169,43 @@ SELECT DeviceID, PropertyValue AS Temperature INTO TemperatureOutput FROM Stage0
 SELECT DeviceID, PropertyValue AS Humidity INTO HumidityOutput FROM Stage0 WHERE PropertyName = 'Humidity'
 ```
 
+### <a name="parse-json-record-in-sql-reference-data"></a>Анализ записи JSON в ссылочных данных SQL
+При использовании базы данных SQL Azure в качестве ссылочных данных в задании может существовать столбец, содержащий данные в формате JSON. Ниже приведен пример такого файла.
+
+|DeviceID|Данные|
+|-|-|
+|12345|{"ключ": "значение1"}|
+|54321|{"ключ": "value2"}|
+
+Можно выполнить синтаксический анализ записи JSON в столбце *данных* , написав простую определяемую пользователем функцию JavaScript.
+
+```javascript
+function parseJson(string) {
+return JSON.parse(string);
+}
+```
+
+Затем можно создать шаг в Stream Analytics запросе, как показано ниже, чтобы получить доступ к полям записей JSON.
+
+ ```SQL
+ WITH parseJson as
+ (
+ SELECT DeviceID, udf.parseJson(sqlRefInput.Data) as metadata,
+ FROM sqlRefInput
+ )
+ 
+ SELECT metadata.key
+ INTO output
+ FROM streamInput
+ JOIN parseJson 
+ ON streamInput.DeviceID = parseJson.DeviceID
+```
+
 ## <a name="array-data-types"></a>Тип данных "массив"
 
 Тип данных "массив" представляет собой упорядоченную коллекцию значений. Ниже приведены типичные операции со значениями массивов. В этих примерах используются функции [GetArrayElement](https://docs.microsoft.com/stream-analytics-query/getarrayelement-azure-stream-analytics), [GetArrayElements](https://docs.microsoft.com/stream-analytics-query/getarrayelements-azure-stream-analytics), [GetArrayLength](https://docs.microsoft.com/stream-analytics-query/getarraylength-azure-stream-analytics) и оператор [APPLY](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics).
 
-Ниже приведен пример одного события. `CustomSensor03` и `SensorMetadata` имеют **массив**типов:
+Ниже приведен пример одного события. Оба `CustomSensor03` типа `SensorMetadata` и имеют **массив**типов:
 
 ```json
 {
@@ -245,7 +277,7 @@ CROSS APPLY GetArrayElements(SensorReadings.CustomSensor03) AS CustomSensor03Rec
 
 Результат:
 
-|deviceId|ArrayIndex|ArrayValue|
+|DeviceId|ArrayIndex|ArrayValue|
 |-|-|-|
 |12345|0|12|
 |12345|1|-5|
@@ -262,9 +294,9 @@ CROSS APPLY GetArrayElements(SensorMetadata) AS SensorMetadataRecords
  
 Результат:
 
-|deviceId|смкэй|смвалуе|
+|DeviceId|смкэй|смвалуе|
 |-|-|-|
-|12345|Производитель|ABC|
+|12345|Изготовитель|ABC|
 |12345|Версия|1.2.45|
 
 Если извлеченные поля должны появиться в столбцах, можно выполнить сведение набора данных с помощью синтаксиса [with](https://docs.microsoft.com/stream-analytics-query/with-azure-stream-analytics) в дополнение к операции [Join](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics) . Для этого объединения потребуется условие [временных границ](https://docs.microsoft.com/stream-analytics-query/join-azure-stream-analytics#BKMK_DateDiff) , которое предотвращает дублирование:
@@ -291,7 +323,7 @@ LEFT JOIN DynamicCTE M ON M.smKey = 'Manufacturer' and M.DeviceId = i.DeviceId A
 
 Результат:
 
-|deviceId|Lat|Длинные|смверсион|сммануфактурер|
+|DeviceId|Lat|Long|смверсион|сммануфактурер|
 |-|-|-|-|-|
 |12345|47|122|1.2.45|ABC|
 

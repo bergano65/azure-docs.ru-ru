@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/01/2018
 ms.openlocfilehash: 0f5f01c757bf651beddaa76fc3eb8046b21b31eb
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75979396"
 ---
 # <a name="create-edit-or-extend-json-for-logic-app-workflow-definitions-in-azure-logic-apps"></a>Создание, изменение или расширение JSON для определений рабочих процессов приложения логики в Azure Logic Apps
@@ -127,18 +127,18 @@ Logic Apps имеет различные функции для работы со
 "uri": "https://www.example.com/?id=@{replace(replace(base64(substring(parameters('order').companyName,5,sub(length(parameters('order').companyName), 5) )),'+','-') ,'/' ,'_' )}"
 ```
 
-1. Запросите [`length()`](../logic-apps/logic-apps-workflow-definition-language.md) для названия компании, и будет возвращено общее количество знаков.
+1. [`length()`](../logic-apps/logic-apps-workflow-definition-language.md) Получите имя компании, чтобы получить общее количество символов.
 
 2. Чтобы получить более короткую строку, вычтите `5`.
 
-3. Вы получите [`substring()`](../logic-apps/logic-apps-workflow-definition-language.md).
+3. Теперь получите [`substring()`](../logic-apps/logic-apps-workflow-definition-language.md).
 Начнем с индекса `5` и перейдем к оставшейся части строки.
 
-4. Преобразуйте эту подстроку в строку [`base64()`](../logic-apps/logic-apps-workflow-definition-language.md).
+4. Преобразовать эту подстроку в [`base64()`](../logic-apps/logic-apps-workflow-definition-language.md) строку.
 
-5. Теперь замените ([`replace()`](../logic-apps/logic-apps-workflow-definition-language.md)) все знаки `+` на `-`.
+5. Теперь [`replace()`](../logic-apps/logic-apps-workflow-definition-language.md) все `+` символы имеют `-` символы.
 
-6. Наконец замените ([`replace()`](../logic-apps/logic-apps-workflow-definition-language.md)) все знаки `/` на `_`.
+6. Наконец, [`replace()`](../logic-apps/logic-apps-workflow-definition-language.md) все `/` символы с `_` символами.
 
 ## <a name="map-list-items-to-property-values-then-use-maps-as-parameters"></a>Сопоставление элементов списка со значениями свойств с последующим использованием сопоставления в качестве параметра
 
@@ -147,7 +147,7 @@ Logic Apps имеет различные функции для работы со
 Например, этот рабочий процесс определяет некоторые категории как параметры и схему, которая сопоставляет категории с определенным URL-адресом.
 Сначала рабочий процесс получает список статей. Затем он использует схему для поиска соответствия URL-адреса и категории для каждой статьи.
 
-*   Функция [`intersection()`](../logic-apps/logic-apps-workflow-definition-language.md) проверяет, соответствует ли категория известной определенной категории.
+*   [`intersection()`](../logic-apps/logic-apps-workflow-definition-language.md) Функция проверяет, соответствует ли категория известной определенной категории.
 
 *   После получения соответствующей категории пример извлекает элемент из схемы, используя квадратные скобки: `parameters[...]`.
 

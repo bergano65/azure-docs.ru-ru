@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: mamccrea
 ms.openlocfilehash: efb0d3222bfd98b15502163979425d47fa459e07
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73605720"
 ---
 # <a name="use-databricks-cli-from-azure-cloud-shell"></a>Использование интерфейса командной строки Databricks через Azure Cloud Shell
@@ -28,11 +28,11 @@ ms.locfileid: "73605720"
 
 ## <a name="use-the-azure-cloud-shell"></a>Использование Azure Cloud Shell
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите в [портал Azure](https://portal.azure.com).
  
 2. В правом верхнем углу выберите значок **Cloud Shell**.
 
-   ![Запустить Cloud Shell](./media/databricks-cli-from-azure-cloud-shell/launch-azure-cloud-shell.png "Запуск Azure Cloud Shell")
+   ![Запуск Cloud Shell](./media/databricks-cli-from-azure-cloud-shell/launch-azure-cloud-shell.png "Запуск Azure Cloud Shell")
 
 3. Убедитесь, что для среды Cloud Shell выбран вариант **Bash**. Как показано на следующем снимке экрана, эту среду можно выбрать в раскрывающемся списке.
 

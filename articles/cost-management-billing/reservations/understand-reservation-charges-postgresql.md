@@ -1,24 +1,21 @@
 ---
-title: Как скидка на резервирование применяется к отдельному серверу Базы данных Azure для PostgreSQL
-description: Как скидка на резервирование применяется к отдельному серверу Базы данных Azure для PostgreSQL
+title: Сведения о скидке на резервирование для отдельного сервера Баз данных Azure для PostgreSQL
+description: Узнайте, как применяется скидка на резервирование к отдельным серверам Баз данных Azure для PostgreSQL.
 author: kummanish
 ms.author: manishku
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/17/2019
-ms.openlocfilehash: 2f1843690861a463c634f523e82facffc72b6743
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.date: 02/13/2020
+ms.openlocfilehash: e01b35bc540045bc272484159380f8a11e5a6c48
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995511"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509403"
 ---
 # <a name="how-a-reservation-discount-is-applied-to-azure-database-for-postgresql-single-server"></a>Как скидка на резервирование применяется к отдельному серверу Базы данных Azure для PostgreSQL
 
-После того как вы купили зарезервированную емкость отдельного сервера Базы данных Azure для PostgreSQL, скидка на резервирование автоматически применяется к базам данных отдельных серверов PostgreSQL, атрибуты и количество которых совпадают с резервированием. Резервирование охватывает только затраты на вычисление для отдельного сервера Базы данных Azure для PostgreSQL. С вас взимается плата за хранение и сеть по обычным тарифам. 
+После того как вы купили зарезервированную емкость отдельного сервера Базы данных Azure для PostgreSQL, скидка на резервирование автоматически применяется к базам данных отдельных серверов PostgreSQL, атрибуты и количество которых совпадают с резервированием. Резервирование охватывает только затраты на вычисление для отдельного сервера Базы данных Azure для PostgreSQL. С вас взимается плата за хранение и сеть по обычным тарифам.
 
 ## <a name="how-reservation-discount-is-applied"></a>Применение скидки на резервирование
 
@@ -44,5 +41,6 @@ ms.locfileid: "75995511"
 
 Чтобы больше узнать о применении резервирований Azure и просмотреть отчеты о начислении платы за использование, ознакомьтесь со статьей [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](https://docs.microsoft.com/azure/billing/billing-understand-reserved-instance-usage-ea).
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами
+## <a name="next-steps"></a>Дальнейшие действия
+
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

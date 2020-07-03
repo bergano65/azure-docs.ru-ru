@@ -14,10 +14,10 @@ ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, zachowd
 ms.custom: aaddev
 ms.openlocfilehash: 68040c8ee22454c300296493b6c840eabbca98aa
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76697138"
 ---
 # <a name="how-to-configure-an-applications-publisher-domain"></a>Как настроить домен издателя приложения
@@ -54,7 +54,7 @@ ms.locfileid: "76697138"
    1. Выберите свой профиль в меню в правом верхнем углу страницы, а затем **Переключение каталога**.
    1. Измените сеанс на арендатор Azure AD, в котором нужно создать приложение.
 
-1. Перейдите к [Azure Active Directory > Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) , чтобы найти и выбрать приложение, которое требуется настроить.
+1. Перейдите к [Azure Active Directory > регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) , чтобы найти и выбрать приложение, которое требуется настроить.
 
    Выбрав приложение, вы увидите страницу **обзора** приложения.
 
@@ -94,7 +94,7 @@ ms.locfileid: "76697138"
 - Если у клиента есть проверенные домены, выберите один из доменов в раскрывающемся списке **выберите проверенный домен** .
 
 >[!Note]
-> Ожидаемый заголовок Content-Type, который должен возвращаться, — это `application/json`. Вы можете получить сообщение об ошибке, как упоминалось ниже, если вы используете что-нибудь вроде `application/json; charset=utf-8` 
+> Ожидался ожидаемый заголовок Content-Type, который должен быть возвращен `application/json`. Вы можете получить сообщение об ошибке, как упоминалось ниже, если вы используете что-нибудь вроде`application/json; charset=utf-8` 
 > 
 >``` "Verification of publisher domain failed. Error getting JSON file from https:///.well-known/microsoft-identity-association. The server returned an unexpected content type header value. " ```
 >

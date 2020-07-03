@@ -3,12 +3,12 @@ title: Обновление версии Service Fabric Azure кластера
 description: Обновление кода и (или) конфигурации Service Fabric, под управлением которой работает кластер Service Fabric, в том числе изменение режима обновления кластера, обновление сертификатов, добавление портов приложений, применение исправлений для ОС и т. д. Чего можно ожидать при выполнении обновлений?
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.openlocfilehash: c3ffcbd4296385623ff5e2c1ee001c27598ff3fb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 802e7402f60370b7151c5e373c8a4921a5af7c80
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75451804"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82789606"
 ---
 # <a name="upgrade-the-service-fabric-version-of-a-cluster"></a>Изменение версии Service Fabric в кластере
 
@@ -19,7 +19,7 @@ ms.locfileid: "75451804"
 Для этого нужно настроить параметр upgradeMode в конфигурации кластера с помощью портала или Resource Manager. Это можно сделать как при создания кластера, так и во время его работы. 
 
 > [!NOTE]
-> Обязательно следите за тем, чтобы кластер работал под управлением поддерживаемой версии Service Fabric. Когда мы объявляем о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней. О доступности новых выпусков сообщается в [блоге группы разработчиков Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/), после чего вы можете использовать их. 
+> Обязательно следите за тем, чтобы кластер работал под управлением поддерживаемой версии Service Fabric. Когда мы объявляем о выпуске новой версии Service Fabric, для предыдущей версии определяется срок завершения жизненного цикла. Этот срок составляет по меньшей мере 60 дней. Новые выпуски объявляются [в блоге команды разработчиков Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/). после чего вы можете использовать их. 
 > 
 > 
 
@@ -54,7 +54,7 @@ ms.locfileid: "75451804"
 Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив те же действия.
 
 ## <a name="set-custom-health-polices-for-upgrades"></a>Настройка пользовательских политик работоспособности для обновлений
-Вы можете указать пользовательские политики работоспособности для обновления Service Fabric. Если для кластера выбран режим автоматического обновления, эти политики применяются на [первом этапе автоматического обновления Service Fabric](service-fabric-cluster-upgrade.md#fabric-upgrade-behavior-during-automatic-upgrades).
+Вы можете указать пользовательские политики работоспособности для обновления Service Fabric. Если вы настроили автоматическое обновление структуры кластера, то эти политики будут применены к [этапу 1 автоматических обновлений структуры](service-fabric-cluster-upgrade.md#fabric-upgrade-behavior-during-automatic-upgrades).
 Если для кластера указано обновление вручную, эти политики применяются при каждом выборе новой версии, когда запускается обновление Service Fabric в кластере. Если политики не переопределить, будут использоваться значения по умолчанию.
 
 Определить пользовательские политики работоспособности или просмотреть текущие параметры можно в колонке "Обновление Service Fabric", выбрав расширенные параметры обновления. Как это сделать, показано ниже. 
@@ -109,9 +109,9 @@ Output:
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте, как настроить некоторые [параметры Service Fabric для кластера](service-fabric-cluster-fabric-settings.md)
-* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md)
-* Узнайте об [обновлениях приложений](service-fabric-application-upgrade.md)
+* Узнайте, как настроить некоторые [Параметры структуры кластера Service Fabric](service-fabric-cluster-fabric-settings.md) .
+* Узнайте, как выполнять [масштабирование кластера](service-fabric-cluster-scale-in-out.md)
+* Дополнительные сведения об [обновлении приложений](service-fabric-application-upgrade.md)
 
 <!--Image references-->
 [CertificateUpgrade]: ./media/service-fabric-cluster-upgrade/CertificateUpgrade2.png

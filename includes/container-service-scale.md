@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
 ms.openlocfilehash: a4af53e035929a44f74a95b8e9897cb1dc0c6d8e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "66814814"
 ---
 [!INCLUDE [ACS deprecation](container-service-deprecation.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "66814814"
 
     ![Масштабирование кластера на портале](./media/container-service-scale/container-service-scale-portal.png)
 
-4. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**.
+4. Чтобы сохранить конфигурацию, нажмите кнопку **Save** (Сохранить).
 
 ## <a name="scale-with-the-azure-cli"></a>Масштабирование с помощью Azure CLI
 

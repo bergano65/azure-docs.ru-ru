@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.date: 11/04/2019
 ms.reviewer: sngun
 ms.openlocfilehash: 79771e082a4a6ffae15f33f636b0300e93bcdaba
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74896277"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77587572"
 ---
 # <a name="bulk-import-data-to-azure-cosmos-db-sql-api-account-by-using-the-net-sdk"></a>Массовый импорт данных в учетную запись API SQL Azure Cosmos DB с помощью пакета SDK для .NET
 
@@ -31,7 +31,7 @@ ms.locfileid: "74896277"
 
 Перед выполнением инструкций, приведенных в этой статье, подготовьте следующие ресурсы:
 
-* Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Активная учетная запись Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
   [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "74896277"
 
 Чтобы использовать пример приложения, нужно выполнить проверку подлинности доступа к вашей учетной записи хранения Azure Cosmos. Для проверки подлинности необходимо передать учетную запись Azure Cosmos в приложение. Чтобы просмотреть учетные данные учетной записи Azure Cosmos, сделайте следующее:
 
-1.  Войдите на [портале Azure](https://portal.azure.com/).
+1.  Войдите на [портал Azure](https://portal.azure.com/).
 1.  Перейдите к своей учетной записи Azure Cosmos.
 1.  Откройте панель **Ключи** и скопируйте **URI** и **первичный ключ** своей учетной записи.
 
@@ -181,7 +181,7 @@ ms.locfileid: "74896277"
    dotnet run
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы выполнили следующие действия:
 

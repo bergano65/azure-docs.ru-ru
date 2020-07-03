@@ -4,15 +4,15 @@ description: Сведения о том, как системная функци�
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: fd5baa3ffefb7039c40706253e633661a51150f2
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 733d6b009f03d61c37170cc506a3b2ec842d7c47
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873528"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78300967"
 ---
 # <a name="acos-azure-cosmos-db"></a>ACOS (Azure Cosmos DB)
  Возвращает угол в радианах, косинус которого равен указанному числовому выражению; также называется арккосинусом.  
@@ -28,13 +28,13 @@ ACOS(<numeric_expr>)
 *numeric_expr*  
    Числовое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере возвращается `ACOS`-1.  
+  В следующем примере возвращается значение `ACOS` , равное-1.  
   
 ```sql
 SELECT ACOS(-1) AS acos 
@@ -46,8 +46,12 @@ SELECT ACOS(-1) AS acos
 [{"acos": 3.1415926535897931}]  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

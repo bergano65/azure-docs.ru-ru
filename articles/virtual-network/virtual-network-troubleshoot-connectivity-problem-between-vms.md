@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
 ms.openlocfilehash: ab3ae45081ecc481cb90af8961174e23c86e84b5
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71056815"
 ---
 # <a name="troubleshooting-connectivity-problems-between-azure-vms"></a>Устранение проблем с подключением между виртуальными машинами Azure
@@ -47,7 +47,7 @@ ms.locfileid: "71056815"
 
 Чтобы устранить проблему, выполните действия ниже, а затем проверьте, помогло ли это. 
 
-### <a name="step-1-check-whether-nic-is-misconfigured"></a>Шаг 1. Проверьте, правильно ли настроен сетевой адаптер
+### <a name="step-1-check-whether-nic-is-misconfigured"></a>Шаг 1. Проверка настройки сетевого интерфейса
 
 Выполните действия, указанные в статье [Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows](../virtual-machines/windows/reset-network-interface.md). 
 
@@ -65,47 +65,47 @@ ms.locfileid: "71056815"
 - [Повторное развертывание виртуальной машины Windows](../virtual-machines/windows/redeploy-to-new-node.md)
 - [Повторное развертывание виртуальной машины Linux](../virtual-machines/linux/redeploy-to-new-node.md)
 
-### <a name="step-2-check-whether-network-traffic-is-blocked-by-nsg-or-udr"></a>Шаг 2. Проверьте, не блокируется ли трафик группой безопасности сети (NSG) или определяемым пользователем маршрутом (UDR)
+### <a name="step-2-check-whether-network-traffic-is-blocked-by-nsg-or-udr"></a>Шаг 2. Проверка блокировки трафика группой безопасности сети или определяемым пользователем маршрутом
 
 Возможности [проверки IP-потока с помощью Наблюдателя за сетями](../network-watcher/network-watcher-ip-flow-verify-overview.md) и [ведения журнала потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-overview.md) позволяют определить наличие группы безопасности сети или определяемого пользователем маршрута, которые влияют на поток трафика.
 
-### <a name="step-3-check-whether-network-traffic-is-blocked-by-vm-firewall"></a>Шаг 3. Проверьте, не блокируется ли трафик брандмауэром виртуальной машины
+### <a name="step-3-check-whether-network-traffic-is-blocked-by-vm-firewall"></a>Шаг 3. Проверка блокировки трафика брандмауэром виртуальной машины
 
 Отключите брандмауэр и проверьте результат. Если проблема устранена, проверьте настройки брандмауэра и повторно включите его.
 
-### <a name="step-4-check-whether-vm-app-or-service-is-listening-on-the-port"></a>Шаг 4. Проверьте, не ожидает ли передачи данных через порт приложение или служба виртуальной машины
+### <a name="step-4-check-whether-vm-app-or-service-is-listening-on-the-port"></a>Шаг 4. Проверка прослушивания порта приложением или службой виртуальной машины
 
 Ниже приведены методы, которые позволяют проверить, прослушивается ли порт приложением или службой виртуальной машины.
 
 - Чтобы проверить, прослушивается ли порт сервером, выполните команды ниже.
 
-**Виртуальные машины Windows**
+**Виртуальная машина Windows**
 
     netstat –ano
 
-**Виртуальные машины Linux**
+**Виртуальная машина Linux**
 
     netstat -l
 
 - Выполните команду **telnet** на виртуальной машине, чтобы протестировать порт. Если проверка завершается сбоем, конфигурация приложения или службы не поддерживает прослушивание порта.
 
-### <a name="step-5-check-whether-the-problem-is-caused-by-snat"></a>Шаг 5. Проверьте, не вызвана ли проблема SNAT
+### <a name="step-5-check-whether-the-problem-is-caused-by-snat"></a>Шаг 5. Проверка проблемы из-за SNAT
 
 В некоторых сценариях виртуальная машина расположена за решением балансировки нагрузки, которое зависит от ресурсов за пределами Azure. Проблемы с промежуточными соединениями в этих сценариях могут возникать из-за [нехватки портов SNAT](../load-balancer/load-balancer-outbound-connections.md). Чтобы устранить проблему, создайте виртуальный IP-адрес для каждой виртуальной машины (или ILPIP-адрес для классической виртуальной машины), расположенной за подсистемой балансировки нагрузки и защищенной NSG или ACL. 
 
-### <a name="step-6-check-whether-traffic-is-blocked-by-acls-for-the-classic-vm"></a>Шаг 6. Проверьте, блокируется ли трафик классической виртуальной машины списками управления доступом (ACL)
+### <a name="step-6-check-whether-traffic-is-blocked-by-acls-for-the-classic-vm"></a>Шаг 6. Проверка блокировки трафика классической виртуальной машины списками управления доступом
 
 Список управления доступом дает возможность выборочно разрешать или блокировать трафик для конечной точки виртуальной машины. Дополнительные сведения см. в разделе [Управление ACL для конечной точки](/previous-versions/azure/virtual-machines/windows/classic/setup-endpoints#manage-the-acl-on-an-endpoint).
 
-### <a name="step-7-check-whether-the-endpoint-is-created-for-the-classic-vm"></a>Шаг 7. Проверьте, создана ли конечная точка классической виртуальной машины
+### <a name="step-7-check-whether-the-endpoint-is-created-for-the-classic-vm"></a>Шаг 7. Проверка наличия конечной точки классической виртуальной машины
 
 Все виртуальные машины, созданные в Azure с помощью классической модели развертывания, могут автоматически взаимодействовать с другими виртуальными машинами в той же облачной службе или виртуальной сети, используя канал частной сети. Однако компьютерам в других виртуальных сетях требуются конечные точки, чтобы направить входящий трафик к виртуальной машине. Дополнительные сведения см. в статье [Настройка конечных точек в классической виртуальной машине Windows в Azure](../virtual-machines/windows/classic/setup-endpoints.md).
 
-### <a name="step-8-try-to-connect-to-a-vm-network-share"></a>Шаг 8. Попробуйте подключиться к сетевой папке виртуальной машины
+### <a name="step-8-try-to-connect-to-a-vm-network-share"></a>Шаг 8. Подключение к сетевой папке виртуальной машины
 
 Если вы не можете подключиться к сетевой папке виртуальной машины, проблема может быть вызвана недоступными сетевыми интерфейсами виртуальной машины. Сведения об удалении недоступных сетевых интерфейсов см. в [этом разделе](../virtual-machines/troubleshooting/reset-network-interface.md#delete-the-unavailable-nics).
 
-### <a name="step-9-check-inter-vnet-connectivity"></a>Шаг 9. Проверьте подключение между виртуальными сетями
+### <a name="step-9-check-inter-vnet-connectivity"></a>Шаг 9. Проверка подключения Inter-Vnet
 
 Возможности [проверки IP-потока с помощью Наблюдателя за сетями](../network-watcher/network-watcher-ip-flow-verify-overview.md) и [ведения журнала потоков NSG](../network-watcher/network-watcher-nsg-flow-logging-overview.md) позволяют определить наличие NSG или UDR, которые влияют на поток трафика. Вы также можете проверить подключение Inter-Vnet [здесь](https://support.microsoft.com/en-us/help/4032151/configuring-and-validating-vnet-or-vpn-connections).
 

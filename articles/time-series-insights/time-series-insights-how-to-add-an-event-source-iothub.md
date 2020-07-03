@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/30/2020
+ms.date: 04/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3ea73e2ca20faea30294bc5d5e1788415095c39f
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: a0a2f703d9224b8b9dd77c80b2b6a7faee70f5bb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905370"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81538109"
 ---
 # <a name="add-an-iot-hub-event-source-to-your-time-series-insights-environment"></a>Добавление в среду службы "Аналитика временных рядов Azure" источник событий центра Интернета вещей
 
@@ -25,9 +25,9 @@ ms.locfileid: "76905370"
 > [!NOTE]
 > Инструкции в этой статье применяются к средам "Аналитика временных рядов" общедоступной и предварительной версий.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
-* Создайте [среду службы "Аналитика временных рядов Azure"](time-series-insights-update-create-environment.md).
+* Создание среды службы " [аналитика временных рядов Azure](time-series-insights-update-create-environment.md)".
 * Создайте [центр Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-create-through-portal.md).
 * В центр Интернета вещей должны отправляться активные события сообщений.
 * Создайте в центре Интернета вещей выделенную группу объектов-получателей, из которой среда службы "Аналитика временных рядов" будет получать информацию. Каждый источник событий Аналитики временных рядов должен иметь собственную выделенную группу объектов-получателей, не используемую другими объектами-получателями. Если несколько модулей чтения используют события из одной группы потребителей, все читатели, скорее всего, будут работать с ошибками. Дополнительные сведения см. в статье [Azure IOT для разработчиков](../iot-hub/iot-hub-devguide.md).
@@ -42,11 +42,11 @@ ms.locfileid: "76905370"
 
 1. В разделе **Параметры**выберите **встроенные конечные точки**, а затем выберите конечную точку **события** .
 
-   [![на странице "сборка — в конечных точках" нажмите кнопку события.](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png#lightbox)
+   [![На странице встроенных конечных точек нажмите кнопку "События"](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-connect-iot-hub.png#lightbox)
 
 1. В разделе **Группы потребителей** введите уникальное имя для группы объектов-получателей. Укажите это же имя при создании нового источника событий в среде службы "Аналитика временных рядов".
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ## <a name="add-a-new-event-source"></a>Добавление нового источника событий
 
@@ -56,7 +56,7 @@ ms.locfileid: "76905370"
 
 1. В разделе **Параметры**выберите **источники событий**, а затем нажмите кнопку **добавить**.
 
-   [![выберите источники событий, а затем нажмите кнопку Добавить.](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-add-event-source.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-add-event-source.png#lightbox)
+   [![Выберите источники событий, а затем нажмите кнопку "Добавить"](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-add-event-source.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-add-event-source.png#lightbox)
 
 1. В области **Новый источник событий** в поле **Имя источника событий** введите имя, которое является уникальным для этой среды службы "Аналитика временных рядов". Например, введите **event-stream**.
 
@@ -66,13 +66,13 @@ ms.locfileid: "76905370"
 
    * Выберите **Использовать Центр Интернета вещей в доступных подписках**, если в одной из ваших подписок уже есть центр Интернета вещей. Этот вариант — самый простой подход.
    
-     [![выбрать параметры на панели «Создание источника событий»](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-select-an-import-option.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-select-an-import-option.png#lightbox)
+     [![Выберите параметры в области нового источника событий](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-select-an-import-option.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-select-an-import-option.png#lightbox)
 
     * В следующей таблице описаны обязательные свойства для варианта **Использовать Центр Интернета вещей в доступных подписках**:
 
-       [![новой области источника событий — свойства, которые задаются в параметре использовать центр Интернета вещей из доступных подписок](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-create-configure-confirm.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-create-configure-confirm.png#lightbox)
+       [![Область нового источника событий — свойства, которые нужно задать при выборе варианта "Использовать Центр Интернета вещей в доступных подписках".](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-create-configure-confirm.png)](media/time-series-insights-how-to-add-an-event-source-iothub/tsi-create-configure-confirm.png#lightbox)
 
-       | Свойство | Description |
+       | Свойство | Описание |
        | --- | --- |
        | Подписка | Подписка, к которой принадлежит нужный центр Интернета вещей. |
        | IoT hub name (Имя Центра Интернета вещей) | Имя выбранного центра Интернета вещей. |
@@ -83,7 +83,7 @@ ms.locfileid: "76905370"
 
       В следующей таблице описаны обязательные свойства при выборе варианта **Указать параметры Центра Интернета вещей вручную**:
 
-       | Свойство | Description |
+       | Свойство | Описание |
        | --- | --- |
        | Идентификатор подписки | Подписка, к которой принадлежит нужный центр Интернета вещей. |
        | Группа ресурсов | Имя группы ресурсов, в которой создан центр Интернета вещей. |
@@ -93,7 +93,7 @@ ms.locfileid: "76905370"
 
     * Оба параметра имеют следующие параметры конфигурации:
 
-       | Свойство | Description |
+       | Свойство | Описание |
        | --- | --- |
        | Группа потребителей Центра Интернета вещей | Группа объектов-получателей, которая считывает события из центра Интернета вещей. Мы настоятельно рекомендуем использовать выделенную группу объектов-получателей для источника событий. |
        | Формат сериализации событий | В настоящее время JSON — это единственный доступный формат сериализации. Сообщения событий должны быть в этом формате, иначе данные не удастся прочитать. |
@@ -102,14 +102,14 @@ ms.locfileid: "76905370"
 
 1. Добавьте имя отдельной группы объектов-получателей службы "Аналитика временных рядов", которое вы добавили в центр Интернета вещей.
 
-1. Нажмите кнопку **создания**.
+1. Щелкните **Создать**.
 
 1. После создания источника событий служба "Аналитика временных рядов" автоматически запустит потоковую передачу данных в среду.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Определите политики доступа к данным](time-series-insights-data-access.md), чтобы защитить ваши данные.
 
-* [Отправьте события](time-series-insights-send-events.md) в источник событий.
+* [Отправка событий](time-series-insights-send-events.md) в источник событий.
 
 * Получите доступ к своей среде в [обозревателе службы "Аналитика временных рядов"](https://insights.timeseries.azure.com).

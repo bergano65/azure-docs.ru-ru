@@ -8,10 +8,10 @@ ms.date: 10/28/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 28d7b2955c84833841760e441cd2919181e22bc7
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73572800"
 ---
 # <a name="manage-analysis-services"></a>Управление службами Analysis Services
@@ -42,7 +42,7 @@ ms.locfileid: "73572800"
 2. В среде SSMS выберите **Обозреватель объектов** и щелкните **Подключиться** > **Analysis Services**.
 3. В диалоговом окне **Подключение к серверу** вставьте имя сервера, а затем в раскрывающемся списке **Проверка подлинности** выберите один из следующих типов проверки подлинности.   
     > [!NOTE]
-    > Рекомендуем использовать тип аутентификации **Active Directory — универсальная с поддержкой MFA**.
+    > Рекомендуется использовать тип проверки подлинности **Active Directory-Universal с поддержкой MFA**.
 
     > [!NOTE]
     > Если вы входите в систему с учетной записью Майкрософт, Live ID, Yahoo, Gmail и т. д., оставьте поле пароля пустым. Пароль запрашивается после нажатия кнопки "Подключиться".

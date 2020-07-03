@@ -6,14 +6,15 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 03/31/2020
 ms.author: robinsh
-ms.openlocfilehash: f1c0c046c40ff8edbc33c5e93e4207d9fe2fc67a
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.custom: mqtt
+ms.openlocfilehash: 47fb7c615389e24322450ed1785aa7da9ec50db6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110749"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759695"
 ---
 # <a name="upload-files-from-your-device-to-the-cloud-with-iot-hub-python"></a>Передача файлов с устройства в облако с помощью центра Интернета вещей (Python)
 
@@ -27,23 +28,17 @@ ms.locfileid: "77110749"
 
 Краткое руководство [Отправка данных телеметрии с устройства в центр Интернета вещей](quickstart-send-telemetry-python.md) демонстрирует базовую функциональность обмена сообщениями между устройством и облаком в центре Интернета вещей. Тем не менее в некоторых случаях не просто сопоставить данные, отправляемые устройством, с относительно небольшими сообщениями, отправляемыми из устройства в облако, которые принимает Центр Интернета вещей. При передаче файлов с устройства вы можете рассчитывать на безопасность и надежность Центра Интернета вещей.
 
-> [!NOTE]
-> Пакет SDK для Центра Интернета вещей для Python в настоящее время поддерживает передачу только текстовых файлов, таких как **TXT**.
-
 По завершении работы с этим руководством вы запустите консольное приложение Python:
 
 * **FileUpload.py**, которое отправляет файл в хранилище с помощью пакета SDK для устройств для Python.
 
 [!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-> [!NOTE]
-> В этом руководством используется устаревший пакет SDK для Python v1, так как функция отправки файлов еще не реализована в новом пакете SDK v2.
+## <a name="prerequisites"></a>Предварительные условия
 
-## <a name="prerequisites"></a>предварительные требования
+[!INCLUDE [iot-hub-include-python-v2-async-installation-notes](../../includes/iot-hub-include-python-v2-async-installation-notes.md)]
 
-[!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
-
-* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. Этот порт может быть заблокирован в некоторых корпоративных и образовательных сетевых средах. Дополнительные сведения и способы решения этой проблемы см. [в статье подключение к центру Интернета вещей (MQTT)](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+* Убедитесь, что в брандмауэре открыт порт 8883. В примере для устройства в этой статье используется протокол MQTT, который обменивается данными через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 [!INCLUDE [iot-hub-associate-storage](../../includes/iot-hub-associate-storage.md)]
 
@@ -51,88 +46,140 @@ ms.locfileid: "77110749"
 
 В этом разделе вы создадите приложение для устройства, чтобы отправлять файлы в Центр Интернета вещей.
 
-1. Чтобы установить пакет **azure-iothub-device-client**, в командной строке выполните следующую команду.
+1. В командной строке выполните следующую команду, чтобы установить пакет **Azure-IOT-Device** . Этот пакет используется для координации передачи файлов в центр Интернета вещей.
 
     ```cmd/sh
-    pip install azure-iothub-device-client
+    pip install azure-iot-device
     ```
 
-2. С помощью текстового редактора создайте тестовый файл, который будет загружен в хранилище BLOB-объектов.
+1. В командной строке выполните следующую команду, чтобы установить пакет [**Azure. Storage. BLOB**](https://pypi.org/project/azure-storage-blob/) . Этот пакет используется для отправки файла.
 
-    > [!NOTE]
-    > Пакет SDK для Центра Интернета вещей для Python в настоящее время поддерживает передачу только текстовых файлов, таких как **TXT**.
+    ```cmd/sh
+    pip install azure.storage.blob
+    ```
 
-3. В текстовом редакторе создайте в рабочей папке файл **FileUpload.py**.
+1. Создайте тестовый файл, который будет отправлен в хранилище BLOB-объектов.
 
-4. Добавьте следующие инструкции `import` и переменные в начало файла **FileUpload.py**. 
+1. В текстовом редакторе создайте в рабочей папке файл **FileUpload.py**.
+
+1. Добавьте следующие инструкции `import` и переменные в начало файла **FileUpload.py**.
 
     ```python
-    import time
-    import sys
-    import iothub_client
     import os
-    from iothub_client import IoTHubClient, IoTHubClientError, IoTHubTransportProvider, IoTHubClientResult, IoTHubError
+    import asyncio
+    from azure.iot.device.aio import IoTHubDeviceClient
+    from azure.core.exceptions import AzureError
+    from azure.storage.blob import BlobClient
 
     CONNECTION_STRING = "[Device Connection String]"
-    PROTOCOL = IoTHubTransportProvider.HTTP
-
-    PATHTOFILE = "[Full path to file]"
-    FILENAME = "[File name for storage]"
+    PATH_TO_FILE = r"[Full path to local file]"
     ```
 
-5. В файле замените `[Device Connection String]` строкой подключения устройства Центра Интернета вещей. Замените `[Full path to file]` путем к созданному тестовому файлу или любому файлу на устройстве, который требуется передать. Замените `[File name for storage]` именем, которое вы хотите присвоить файлу после его передачи в хранилище BLOB-объектов. 
+1. В файле замените `[Device Connection String]` строкой подключения устройства Центра Интернета вещей. Замените `[Full path to local file]` на путь к созданному файлу теста или на любой файл на устройстве, который требуется передать.
 
-6. Создайте обратный вызов функции **upload_blob**:
+1. Создайте функцию для передачи файла в хранилище BLOB-объектов:
 
     ```python
-    def blob_upload_conf_callback(result, user_context):
-        if str(result) == 'OK':
-            print ( "...file uploaded successfully." )
-        else:
-            print ( "...file upload callback returned: " + str(result) )
+    async def store_blob(blob_info, file_name):
+        try:
+            sas_url = "https://{}/{}/{}{}".format(
+                blob_info["hostName"],
+                blob_info["containerName"],
+                blob_info["blobName"],
+                blob_info["sasToken"]
+            )
+
+            print("\nUploading file: {} to Azure Storage as blob: {} in container {}\n".format(file_name, blob_info["blobName"], blob_info["containerName"]))
+
+            # Upload the specified file
+            with BlobClient.from_blob_url(sas_url) as blob_client:
+                with open(file_name, "rb") as f:
+                    result = blob_client.upload_blob(f, overwrite=True)
+                    return (True, result)
+
+        except FileNotFoundError as ex:
+            # catch file not found and add an HTTP status code to return in notification to IoT Hub
+            ex.status_code = 404
+            return (False, ex)
+
+        except AzureError as ex:
+            # catch Azure errors that might result from the upload operation
+            return (False, ex)
     ```
 
-7. Добавьте следующий код для подключения клиента и отправки файла. Добавьте также подпрограмму `main`.
+    Эта функция анализирует структуру *blob_info* , переданную в нее, чтобы создать URL-адрес, используемый для инициализации объекта [Azure. Storage. BLOB. блобклиент](https://docs.microsoft.com/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python). Затем он отправляет файл в хранилище BLOB-объектов Azure с помощью этого клиента.
+
+1. Добавьте следующий код, чтобы подключить клиент и передать файл:
 
     ```python
-    def iothub_file_upload_sample_run():
+    async def main():
         try:
             print ( "IoT Hub file upload sample, press Ctrl-C to exit" )
 
-            client = IoTHubClient(CONNECTION_STRING, PROTOCOL)
+            conn_str = CONNECTION_STRING
+            file_name = PATH_TO_FILE
+            blob_name = os.path.basename(file_name)
 
-            f = open(PATHTOFILE, "r")
-            content = f.read()
+            device_client = IoTHubDeviceClient.create_from_connection_string(conn_str)
 
-            client.upload_blob_async(FILENAME, content, len(content), blob_upload_conf_callback, 0)
+            # Connect the client
+            await device_client.connect()
 
-            print ( "" )
-            print ( "File upload initiated..." )
+            # Get the storage info for the blob
+            storage_info = await device_client.get_storage_info_for_blob(blob_name)
 
-            while True:
-                time.sleep(30)
+            # Upload to blob
+            success, result = await store_blob(storage_info, file_name)
 
-        except IoTHubError as iothub_error:
-            print ( "Unexpected error %s from IoTHub" % iothub_error )
-            return
+            if success == True:
+                print("Upload succeeded. Result is: \n") 
+                print(result)
+                print()
+
+                await device_client.notify_blob_upload_status(
+                    storage_info["correlationId"], True, 200, "OK: {}".format(file_name)
+                )
+
+            else :
+                # If the upload was not successful, the result is the exception object
+                print("Upload failed. Exception is: \n") 
+                print(result)
+                print()
+
+                await device_client.notify_blob_upload_status(
+                    storage_info["correlationId"], False, result.status_code, str(result)
+                )
+
+        except Exception as ex:
+            print("\nException:")
+            print(ex)
+
         except KeyboardInterrupt:
-            print ( "IoTHubClient sample stopped" )
-        except:
-            print ( "generic error" )
+            print ( "\nIoTHubDeviceClient sample stopped" )
 
-    if __name__ == '__main__':
-        print ( "Simulating a file upload using the Azure IoT Hub Device SDK for Python" )
-        print ( "    Protocol %s" % PROTOCOL )
-        print ( "    Connection string=%s" % CONNECTION_STRING )
+        finally:
+            # Finally, disconnect the client
+            await device_client.disconnect()
 
-        iothub_file_upload_sample_run()
+
+    if __name__ == "__main__":
+        asyncio.run(main())
+        #loop = asyncio.get_event_loop()
+        #loop.run_until_complete(main())
+        #loop.close()
     ```
 
-8. Сохраните и закройте файл **UploadFile.py**.
+    Этот код создает асинхронный **иосубдевицеклиент** и использует следующие API для управления передачей файлов в центр Интернета вещей:
+
+    * **get_storage_info_for_blob** получает сведения из центра Интернета вещей о связанной учетной записи хранения, созданной ранее. Эти сведения включают имя узла и контейнера, имя большого двоичного объекта и маркер SAS. Сведения о хранилище передаются функции **store_blob** (созданной на предыдущем шаге), поэтому **блобклиент** в этой функции может пройти проверку подлинности в службе хранилища Azure. Метод **get_storage_info_for_blob** также возвращает correlation_id, который используется в методе **notify_blob_upload_status** . Correlation_id — это способ маркировки большого двоичного объекта, над которым вы работаете.
+
+    * **notify_blob_upload_status** уведомляет центр Интернета вещей о состоянии операции хранилища BLOB-объектов. Он передается correlation_id, полученным методом **get_storage_info_for_blob** . Он используется центром Интернета вещей для уведомления любой службы, которая может прослушивать уведомление о состоянии задачи передачи файлов.
+
+1. Сохраните и закройте файл **UploadFile.py**.
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-Теперь все готово к запуску приложения.
+Теперь все готово для запуска приложения.
 
 1. В командной строке в рабочей папке выполните следующую команду.
 
@@ -142,13 +189,13 @@ ms.locfileid: "77110749"
 
 2. На следующем снимке экрана показаны выходные данные приложения **FileUpload**.
 
-    ![Выходные данные приложения simulated-device](./media/iot-hub-python-python-file-upload/1.png)
+    ![Выходные данные приложения simulated-device](./media/iot-hub-python-python-file-upload/run-device-app.png)
 
 3. На портале можно просмотреть отправленный файл в контейнере хранилища, который вы настроили.
 
-    ![Отправленный файл](./media/iot-hub-python-python-file-upload/2.png)
+    ![Отправленный файл](./media/iot-hub-python-python-file-upload/view-blob.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководство показано, как использовать возможности передачи файлов Центра Интернета вещей, чтобы упростить передачу файлов из устройств. Изучение функций и сценариев Центра Интернета вещей можно продолжить в следующих руководствах:
 
@@ -157,3 +204,9 @@ ms.locfileid: "77110749"
 * [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
 
 * [Пакеты SDK для Центра Интернета вещей Azure](iot-hub-devguide-sdks.md)
+
+Дополнительные сведения о хранилище BLOB-объектов Azure см. по следующим ссылкам:
+
+* [Документация по хранилищу BLOB-объектов Azure](https://docs.microsoft.com/azure/storage/blobs/)
+
+* [Документация по службе хранилища BLOB-объектов Azure для API Python](https://docs.microsoft.com/python/api/overview/azure/storage-blob-readme?view=azure-python)

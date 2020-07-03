@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 570f28ce559ff1c1180ffaacb781b9120b1890a2
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73795493"
 ---
 # <a name="use-private-ip-for-internal-routing-for-an-ingress-endpoint"></a>Использовать частный IP-адрес для внутренней маршрутизации для конечной точки входящего трафика 
@@ -24,14 +24,14 @@ ms.locfileid: "73795493"
 Существует два способа настройки контроллера для использования частного IP-адреса для входящего трафика,
 
 ## <a name="assign-to-a-particular-ingress"></a>Назначить определенному входящему
-Чтобы предоставить определенный входящий трафик через частный IP-адрес, используйте аннотацию [`appgw.ingress.kubernetes.io/use-private-ip`](./ingress-controller-annotations.md#use-private-ip) в качестве входных данных.
+Чтобы предоставить определенный входящий трафик через частный IP-адрес, используйте [`appgw.ingress.kubernetes.io/use-private-ip`](./ingress-controller-annotations.md#use-private-ip) аннотацию в качестве входных данных.
 
 ### <a name="usage"></a>Использование
 ```yaml
 appgw.ingress.kubernetes.io/use-private-ip: "true"
 ```
 
-Для шлюзов приложений без частного IP-адреса передает, помеченные `appgw.ingress.kubernetes.io/use-private-ip: "true"`, будут игнорироваться. Это будет указано в журнале входящих событий и АГИК Pod.
+Для шлюзов приложений без частного IP-адреса передает с `appgw.ingress.kubernetes.io/use-private-ip: "true"` заметками будет игнорироваться. Это будет указано в журнале входящих событий и АГИК Pod.
 
 * Ошибка, как указано в событии входящего трафика
 
@@ -51,7 +51,7 @@ appgw.ingress.kubernetes.io/use-private-ip: "true"
 
 
 ## <a name="assign-globally"></a>Назначить глобально
-В этом случае необходимо ограничить доступ всех передает к частному IP-адресу, использовать `appgw.usePrivateIP: true` в `helm` config.
+В этом случае необходимо ограничить доступ всех передает к частному IP-адресу, используя `appgw.usePrivateIP: true` в `helm` конфигурации.
 
 ### <a name="usage"></a>Использование
 ```yaml
@@ -63,7 +63,7 @@ appgw:
 ```
 
 Это сделает контроллер входящего трафика фильтром IP-адресов для частного IP-адреса при настройке интерфейсных прослушивателей в шлюзе приложений.
-АГИК выдаст сбой, `usePrivateIP: true` если не назначен частный IP-адрес.
+АГИК выдаст сбой, если `usePrivateIP: true` не назначен частный IP-адрес.
 
 > [!NOTE]
-> Для SKU шлюза приложений версии 2 требуется общедоступный IP-адрес. Если требуется, чтобы шлюз приложений был частным, подключите [`Network Security Group`](https://docs.microsoft.com/azure/virtual-network/security-overview) к подсети шлюза приложений, чтобы ограничить трафик.
+> Для SKU шлюза приложений версии 2 требуется общедоступный IP-адрес. Если требуется, чтобы шлюз приложений был частным, подключите его [`Network Security Group`](https://docs.microsoft.com/azure/virtual-network/security-overview) к подсети шлюза приложений, чтобы ограничить трафик.

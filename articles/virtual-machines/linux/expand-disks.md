@@ -1,5 +1,5 @@
 ---
-title: Расширение виртуальных жестких дисков на виртуальной машине Linux в Azure
+title: Расширение виртуальных жестких дисков на виртуальной машине Linux
 description: Узнайте, как расширить виртуальные жесткие диски на виртуальной машине Linux с помощью Azure CLI.
 author: roygara
 ms.service: virtual-machines-linux
@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 3bd85048cf12760d5918544ed6aac803e9fe120a
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 1295c5276f0f342323acf8d86eaaf9f785af3e9f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036206"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78945182"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Расширение виртуальных жестких дисков на виртуальной машине Linux с помощью Azure CLI
 
@@ -82,7 +82,7 @@ ms.locfileid: "74036206"
     sudo umount /dev/sdc1
     ```
 
-    Б. Чтобы просмотреть сведения о диске и изменить размер раздела, используйте команду `parted`.
+    b. Чтобы просмотреть сведения о диске и изменить размер раздела, используйте команду `parted`.
 
     ```bash
     sudo parted /dev/sdc
@@ -133,13 +133,13 @@ ms.locfileid: "74036206"
     sudo mount /dev/sdc1 /datadrive
     ```
 
-1. Чтобы убедиться, что размер диска данных изменился, используйте `df -h`. В следующем примере выходных данных показано, что теперь размер основного раздела ( */dev/sdc1*) составляет 200 ГБ:
+1. Чтобы проверить, был ли изменен размер диска данных, используйте `df -h`. В следующем примере выходных данных показано, что теперь размер основного раздела (*/dev/sdc1*) составляет 200 ГБ:
 
     ```bash
     Filesystem      Size   Used  Avail Use% Mounted on
     /dev/sdc1        197G   60M   187G   1% /datadrive
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 * Если вам требуется дополнительное место для хранения, можно также [добавить диски данных в виртуальную машину Linux](add-disk.md). 
 * Дополнительные сведения о шифровании дисков см. в статье [Шифрование дисков Azure для виртуальных машин Linux](disk-encryption-overview.md).

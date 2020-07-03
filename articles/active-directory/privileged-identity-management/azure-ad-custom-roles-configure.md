@@ -16,23 +16,28 @@ ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6251c1576d38b191ca1cba48075cc869c48d004
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 3f087ffe824a198c578f076857cca7fdf0f0a60c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048112"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77498676"
 ---
 # <a name="configure-azure-ad-custom-roles-in-privileged-identity-management"></a>Настройка настраиваемой роли AAD через Privileged Identity Management
 
 Администратор привилегированных ролей может изменить параметры роли, применяемые к пользователю при активации назначения настраиваемой роли, и параметры для других администраторов приложений, которые назначают настраиваемые роли.
+
+> [!NOTE]
+> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей. Если вы видите следующий баннер, эти роли должны управляться [во встроенной функции ролей](pim-how-to-activate-role.md) , и эта статья не применяется.
+>
+> [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 ## <a name="open-role-settings"></a>Открытие параметров роли
 
 Чтобы открыть параметры роли AAD, выполните следующие шаги.
 
 1. Войдите в раздел [Privileged Identity Management](https://portal.azure.com/?Microsoft_AAD_IAM_enableCustomRoleManagement=true&Microsoft_AAD_IAM_enableCustomRoleAssignment=true&feature.rbacv2roles=true&feature.rbacv2=true&Microsoft_AAD_RegisteredApps=demo#blade/Microsoft_Azure_PIMCommon/CommonMenuBlade/quickStart) на портале Azure с учетной записью пользователя, которому назначена роль "Администратор привилегированных ролей".
-1. Щелкните **Настраиваемые роли Azure AD (предварительная версия)** .
+1. Щелкните **Настраиваемые роли Azure AD (предварительная версия)**.
 
     ![Выбор предварительной версии настраиваемых ролей Azure AD для просмотра доступных назначений ролей](./media/azure-ad-custom-roles-configure/settings-list.png)
 
@@ -93,9 +98,9 @@ ms.locfileid: "77048112"
 1. Выберите по крайней мере одного участника или группу и нажмите кнопку **Выбрать**. Нужно выбрать по меньшей мере одно утверждающее лицо. Утверждающих по умолчанию нет. Выбранные вами элементы отобразятся в списке выбранных утверждающих лиц.
 1. После указания всех параметров роли щелкните **Обновить**, чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
+- [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-activate.md)
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)
 - [Administrator role permissions in Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md) (Разрешения роли администратора в Azure Active Directory)

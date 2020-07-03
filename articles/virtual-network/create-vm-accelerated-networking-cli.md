@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: eb44163922e318d17d675143ca2d6a3a1fa4ed75
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 54c4a673e654a0244183a84ffa841d553ae6db51
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74793320"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82106259"
 ---
 # <a name="create-a-linux-virtual-machine-with-accelerated-networking-using-azure-cli"></a>Создание виртуальной машины Linux с ускоренной сетью с помощью Azure CLI
 
@@ -43,7 +43,7 @@ ms.locfileid: "74793320"
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 Без дополнительной настройки из коллекции Azure поддерживаются следующие дистрибутивы: 
 * **Ubuntu 14,04 с ядром Linux-Azure**
-* **Ubuntu 16,04 или более поздняя версия** 
+* **Ubuntu 16.04 или более поздней версии.** 
 * **SLES12 SP3 или более поздней версии** 
 * **RHEL 7,4 или более поздней версии**
 * **CentOS 7,4 или более поздней версии**
@@ -58,7 +58,7 @@ ms.locfileid: "74793320"
 ### <a name="supported-vm-instances"></a>Поддерживаемые экземпляры виртуальных машин
 Функция ускорения сети поддерживается для большинства размеров экземпляров, оптимизированных для вычислений, и экземпляров общего назначения с количеством виртуальных ЦП от 2.  Поддерживаемые серии: D/DSv2 и F/Fs
 
-На экземплярах, поддерживающих технологию Hyper-Threading, функция ускорения сети поддерживается в экземплярах виртуальных машин с количеством виртуальных ЦП от 4. Поддерживаются следующие серии: D/Dsv3, E/Esv3, серия fsv2, Lsv2, MS/MMS и MS/Mmsv2.
+На экземплярах, поддерживающих технологию Hyper-Threading, функция ускорения сети поддерживается в экземплярах виртуальных машин с количеством виртуальных ЦП от 4. Поддерживаются следующие серии: D/Dsv3, D/Dsv4, E/Esv3, EA/Easv4, серия fsv2, Lsv2, MS/MMS и MS/Mmsv2.
 
 Дополнительные сведения см. в статье [Размеры виртуальных машин Linux в Azure](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
@@ -177,7 +177,7 @@ az vm create \
 
 После создания виртуальной машины возвращается результат, аналогичный приведенному ниже. Запишите значение **publicIpAddress**. Этот адрес используется для доступа к виртуальной машине в последующих шагах.
 
-```azurecli
+```output
 {
   "fqdns": "",
   "id": "/subscriptions/<ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
@@ -208,7 +208,7 @@ ssh azureuser@<your-public-ip-address>
 
 Выполнив команду `lspci`, убедитесь, что устройство Mellanox VF находится на виртуальной машине. Выходные данные аналогичны приведенным ниже.
 
-```bash
+```output
 0000:00:00.0 Host bridge: Intel Corporation 440BX/ZX/DX - 82443BX/ZX/DX Host bridge (AGP disabled) (rev 03)
 0000:00:07.0 ISA bridge: Intel Corporation 82371AB/EB/MB PIIX4 ISA (rev 01)
 0000:00:07.1 IDE interface: Intel Corporation 82371AB/EB/MB PIIX4 IDE (rev 01)
@@ -219,7 +219,7 @@ ssh azureuser@<your-public-ip-address>
 
 Проверьте работоспособность виртуальной функции VF с помощью команды `ethtool -S eth0 | grep vf_`. Если будут выведены выходные данные, аналогичные следующим, это значит, что ускоренная сеть включена и работает.
 
-```bash
+```output
 vf_rx_packets: 992956
 vf_rx_bytes: 2749784180
 vf_tx_packets: 2656684

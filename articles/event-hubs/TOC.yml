@@ -21,12 +21,12 @@
           href: event-hubs-quickstart-cli.md
         - name: Azure PowerShell
           href: event-hubs-quickstart-powershell.md
-        - name: Шаблон Azure Resource Manager
-          displayName: ARM
+        - name: Шаблон ARM
+          displayName: Resource Manager
           href: event-hubs-resource-manager-namespace-event-hub.md
     - name: Отправка и получение событий
       items:
-        - name: .NET Core (Azure.Messaging.EventHubs)
+        - name: .NET (Azure.Messaging.EventHubs)
           href: get-started-dotnet-standard-send-v2.md
         - name: Java (azure-messaging-eventhubs)
           href: get-started-java-send-v2.md
@@ -42,7 +42,7 @@
           href: event-hubs-storm-getstarted-receive.md
     - name: События отправки и получения (старые версии и пакеты)
       items:
-        - name: .NET Core (Microsoft.Azure.EventHubs)
+        - name: .NET (Microsoft.Azure.EventHubs)
           href: event-hubs-dotnet-standard-getstarted-send.md
         - name: Java (azure-eventhubs)
           href: event-hubs-java-get-started-send.md
@@ -50,7 +50,7 @@
           href: event-hubs-python-get-started-send.md
         - name: "JavaScript (azure/event-hubs версии\_2)"
           href: event-hubs-node-get-started-send.md
-        - name: .NET Framework (Microsoft.Azure.EventHubs)
+        - name: .NET Framework (Microsoft.ServiceBus)
           href: event-hubs-dotnet-framework-getstarted-send.md
     - name: Сбор событий
       items:
@@ -78,7 +78,12 @@
       href: ../azure-databricks/databricks-stream-from-eventhubs.md
       maintainContext: true
 - name: Примеры
-  href: event-hubs-samples.md
+  items:
+    - name: Примеры кода
+      href: event-hubs-samples.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: 'Термины, касающиеся Концентраторов событий'
@@ -115,13 +120,25 @@
                   href: authenticate-application.md
             - name: Проверка подлинности с помощью подписанного URL-адреса
               href: authenticate-shared-access-signature.md
+        - name: Безопасность сети
+          href: network-security.md
         - name: Встроенные средства управления безопасностью
           href: event-hubs-security-controls.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: "Руководство по использованию протокола AMQP\_1.0"
       href: ../service-bus-messaging/service-bus-amqp-protocol-guide.md
       maintainContext: true
 - name: Практические руководства
   items:
+    - name: Перемещение между регионами
+      href: move-across-regions.md
+    - name: Динамическое добавление разделов
+      href: dynamically-add-partitions.md
+    - name: Использование хранилища BLOB-объектов в качестве хранилища контрольных точек в Azure Stack Hub
+      href: use-blob-storage-checkpoint-store-azure-stack-hub.md
+    - name: Миграция из API Azure Service Manager (классическая модель) в API Resource Manager
+      href: ../service-bus-messaging/deprecate-service-bus-management.md?toc=%2fazure%2fevent-hubs%2ftoc.json
     - name: Разработка
       items:
         - name: Получение строки подключения Центров событий
@@ -137,7 +154,7 @@
             - name: Python (azure-eventhub версии 5)
               href: 'https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/README.md'
             - name: JavaScript (azure/event-hubs версии 5)
-              href: 'https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/README.md'
+              href: 'https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/README.md'
             - name: .NET (Microsoft.Azure.EventHubs)
               href: event-hubs-programming-guide.md
     - name: Обработка данных
@@ -154,18 +171,24 @@
           maintainContext: true
     - name: Интеграция с Apache Kafka
       items:
-        - name: Создание концентраторов событий с поддержкой Apache Kafka
-          href: event-hubs-create-kafka-enabled.md
-        - name: Зеркальное отображение брокера Kafka в концентраторе событий с поддержкой Apache Kafka
+        - name: Руководство для разработчиков приложений Kafka для Центров событий
+          href: apache-kafka-developer-guide.md
+        - name: Руководство по переносу решений Kafka для Центров событий
+          href: apache-kafka-migration-guide.md
+        - name: Руководство по устранению неполадок с Kafka для Центров событий
+          href: apache-kafka-troubleshooting-guide.md
+        - name: Зеркальное отображение брокера Kafka в концентраторе событий
           href: event-hubs-kafka-mirror-maker-tutorial.md
-        - name: Подключение Apache Spark к концентратору событий с поддержкой Apache Kafka
+        - name: Подключение Apache Spark к концентратору событий
           href: event-hubs-kafka-spark-tutorial.md
-        - name: Подключение Apache Flink к концентраторам событий с поддержкой Apache Kafka
+        - name: Подключение Apache Flink к концентратору событий
           href: event-hubs-kafka-flink-tutorial.md
-        - name: 'Интеграция Apache Kafka Connect с концентратором событий, поддерживающим Kafka (предварительная версия)'
+        - name: Интеграция Apache Kafka Connect с концентратором (предварительная версия)
           href: event-hubs-kafka-connect-tutorial.md
-        - name: Подключение Akka Streams к концентраторам событий с поддержкой Apache Kafka
+        - name: Подключение Akka Streams к концентратору событий
           href: event-hubs-kafka-akka-streams-tutorial.md
+        - name: Вопросы о ответы. Центры событий для Kafka
+          href: apache-kafka-frequently-asked-questions.md
     - name: Управление и мониторинг
       items:
         - name: Мониторинг Центров событий с помощью Azure Monitor
@@ -180,17 +203,19 @@
           href: event-hubs-management-libraries.md
     - name: Безопасность
       items:
-        - name: Использование брандмауэров
+        - name: Настройка брандмауэра IP-адресов
           href: event-hubs-ip-filtering.md
-        - name: Использование конечных точек служб для виртуальной сети
+        - name: Настройка конечных точек служб для виртуальной сети
           href: event-hubs-service-endpoints.md
-        - name: Обеспечение интеграции виртуальных сетей и брандмауэров с пространством имен Центров событий
-          href: event-hubs-tutorial-virtual-networks-firewalls.md
-        - name: Настройка управляемых пользователем ключей для шифрования неактивных данных
+        - name: Настройка частных конечных точек
+          href: private-link-service.md
+        - name: 'Настройка ключей, управляемых клиентом'
           href: configure-customer-managed-key.md
     - name: Диагностика
       items:
         - name: Руководство по устранению неполадок
+          href: troubleshooting-guide.md
+        - name: Исключения .NET
           href: event-hubs-messaging-exceptions.md
         - name: Исключения Resource Manager
           href: resource-manager-exceptions.md
@@ -201,9 +226,9 @@
         - name: Клиентская библиотека
           items:
             - name: Миграция с Microsoft.Azure.Event Hubs в Azure.Messaging.EventHubs
-              href: 'https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MIGRATIONGUIDE.md'
+              href: 'https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md'
             - name: Azure.Messaging.EventHubs (последняя версия)
-              href: /dotnet/api/azure.messaging.eventhubs?view=azure-dotnet-preview
+              href: /dotnet/api/azure.messaging.eventhubs
             - name: Microsoft.Azure.EventHubs (устаревшая версия)
               href: /dotnet/api/microsoft.azure.eventhubs
             - name: Microsoft.ServiceBus.Messaging (устаревшая версия)
@@ -229,9 +254,9 @@
         - name: Клиентская библиотека
           items:
             - name: azure-eventhub версии 5
-              href: /python/api/azure-eventhub/?view=azure-python-preview
-            - name: azure-eventhub версии 1
               href: /python/api/azure-eventhub/?view=azure-python
+            - name: azure-eventhub версии 1
+              href: /python/api/azure-eventhub/?view=azure-python-previous
         - name: Библиотека управления
           href: /python/api/overview/azure/event-hub?view=azure-python
     - name: JavaScript
@@ -241,9 +266,9 @@
         - name: Клиентская библиотека
           items:
             - name: azure/eventhubs версии 5
-              href: /javascript/api/@azure/event-hubs/?view=azure-node-preview
-            - name: azure/eventhubs версии 2
               href: /javascript/api/@azure/event-hubs/?view=azure-node-latest
+            - name: azure/eventhubs версии 2
+              href: /javascript/api/@azure/event-hubs/?view=azure-node-legacy
         - name: Библиотека управления
           href: /javascript/api/@azure/arm-eventhub/?view=azure-node-latest
     - name: REST

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Humanity | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Humanity | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Humanity.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fd7cfe93aa39982836944230f860c603c7117ceb
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233437"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-humanity"></a>Руководство по Интеграция Azure Active Directory с Humanity
+# <a name="tutorial-azure-active-directory-integration-with-humanity"></a>Учебник. Интеграция Azure Active Directory с Humanity
 
 В этом учебнике описано, как интегрировать Humanity с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Humanity обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "74233437"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Humanity, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Humanity с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74233437"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Humanity](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://company.humanity.com/includes/saml/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://company.humanity.com/includes/saml/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://company.humanity.com/app/`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "74233437"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-humanity-single-sign-on"></a>Настройка единого входа в Humanity
 
@@ -133,7 +133,7 @@ ms.locfileid: "74233437"
 
 2. В верхнем меню щелкните **Администратор**.
 
-    ![Администратор](./media/shiftplanning-tutorial/iC786619.png "Администратор")
+    ![Администратор](./media/shiftplanning-tutorial/iC786619.png "Административный")
 3. В разделе **Integration** (Интеграция) щелкните **Single Sign-On** (Единый вход).
 
     ![Единый вход](./media/shiftplanning-tutorial/iC786620.png "Единый вход")
@@ -142,7 +142,7 @@ ms.locfileid: "74233437"
 
     ![Единый вход](./media/shiftplanning-tutorial/iC786905.png "Единый вход")
 
-    a. Установите флажок **SAML включен**.
+    а. Установите флажок **SAML включен**.
 
     b. Установите флажок **Allow Password Login** (Разрешить вход с паролем).
 
@@ -150,9 +150,9 @@ ms.locfileid: "74233437"
 
     d. В текстовое поле **Remote Logout URL** (URL-адрес удаленного выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    д. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат X.509** .
+    д) Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат X.509** .
 
-    Е. Нажмите кнопку **Сохранить параметры**.
+    е) Нажмите кнопку **Сохранить параметры**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -215,7 +215,7 @@ ms.locfileid: "74233437"
 
 2. Щелкните **Администратор**.
 
-    ![Администратор](./media/shiftplanning-tutorial/iC786619.png "Администратор")
+    ![Администратор](./media/shiftplanning-tutorial/iC786619.png "Административный")
 
 3. Щелкните **Персонал**.
 
@@ -229,7 +229,7 @@ ms.locfileid: "74233437"
 
     ![Сохранение сотрудников](./media/shiftplanning-tutorial/iC786625.png "Сохранить сотрудников")
 
-    a. Заполните текстовые поля **Имя**, **Фамилия** и **Адрес электронной почты** данными действующей учетной записи AAD, которую необходимо подготовить.
+    а. Заполните текстовые поля **Имя**, **Фамилия** и **Адрес электронной почты** данными действующей учетной записи AAD, которую необходимо подготовить.
 
     b. Щелкните **Сохранить сотрудников**.
 

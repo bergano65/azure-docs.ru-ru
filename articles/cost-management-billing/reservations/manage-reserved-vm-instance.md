@@ -3,19 +3,16 @@ title: Управление Azure Reserved Virtual Machine Instances
 description: Узнайте, как можно управлять Azure Reserved Virtual Machine Instances.
 ms.service: cost-management-billing
 author: bandersmsft
-manager: yashesvi
-ms.devlang: na
+ms.reviewer: yashesvi
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 08/06/2019
+ms.date: 02/18/2020
 ms.author: banders
-ms.openlocfilehash: cc24c176b5b61210d68d2dcb244d63f15402928b
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 2dadcac3c776feed5ee521284f6b244a050e83e9
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75994055"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79237944"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Управление резервированиями для ресурсов Azure
 
@@ -123,12 +120,14 @@ ms.locfileid: "75994055"
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Все службы** > **Резервирования**.
 3. Выберите резервирование.
-4. Выберите **Параметры** > **Конфигурация**.
-5. Измените параметр **Оптимизировать для**.
+4. Выберите **Параметры** > **Конфигурация**.  
+  ![Пример, в котором показан элемент конфигурации](./media/manage-reserved-vm-instance/add-product03.png)
+5. Измените параметр **Оптимизировать для**.  
+  ![Пример, в котором показан параметр "Оптимизировать для"](./media/manage-reserved-vm-instance/instance-size-flexibility-option.png)
 
 ## <a name="optimize-reservation-use"></a>Оптимизация использования резервирования
 
-Экономия при резервировании Azure гарантируется только при длительном использовании ресурсов. При покупке резервирования вы платите наперед за то, что ресурс по сути можно использовать на 100 % в течение одного или трех лет. Попробуйте максимально эффективно использовать резервирование, чтобы воспользоваться всеми преимуществами и сэкономить. В следующих разделах объясняется, как отслеживать резервирование и оптимизировать его использование.
+Экономия при резервировании Azure гарантируется только при длительном использовании ресурсов. При покупке резервирования вы платите за то, что ресурс по сути можно использовать на 100 % в течение одного или трех лет. Попробуйте максимально эффективно использовать резервирование, чтобы воспользоваться всеми преимуществами и сэкономить. В следующих разделах объясняется, как отслеживать резервирование и оптимизировать его использование.
 
 ### <a name="view-reservation-use-in-the-azure-portal"></a>Просмотр использования резервирования на портале Azure
 

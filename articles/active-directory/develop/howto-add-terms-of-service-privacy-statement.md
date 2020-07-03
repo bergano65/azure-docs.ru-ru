@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 05/22/2019
 ms.author: ryanwi
-ms.reviwer: lenalepa, sureshja
+ms.reviewer: lenalepa, sureshja
 ms.custom: aaddev
-ms.openlocfilehash: f28c33f20556825d84edda34752ac64714327526
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 40e7a05505bc501c1c622e627a6d97cc57db1cfa
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697342"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80884245"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Как настроить условия предоставления услуг и заявления о конфиденциальности для приложения
 
@@ -39,7 +39,7 @@ ms.locfileid: "76697342"
 
 Перед добавлением ссылок на документы с условиями обслуживания и заявлением о конфиденциальности убедитесь, что их URL-адреса соответствуют следующим рекомендациям.
 
-| Рекомендация     | Description                           |
+| Рекомендация     | Описание                           |
 |---------------|---------------------------------------|
 | Формат        | Допустимый URL-адрес                             |
 | Допустимые схемы | HTTP и HTTPS<br/>Рекомендуется использовать протокол HTTPS |
@@ -51,11 +51,11 @@ ms.locfileid: "76697342"
 
 Подготовив условия обслуживания и заявление о конфиденциальности, можно добавить ссылки на эти документы в приложение с помощью одного из следующих методов:
 
-* [с помощью портала Azure](#azure-portal);
+* [Через портал Azure](#azure-portal)
 * [с помощью JSON объекта приложения](#app-object-json);
-* [с помощью бета-версии REST API MSGraph](#msgraph-beta-rest-api).
+* [Использование API Microsoft Graph](#msgraph-rest-api)
 
-### <a name="azure-portal"></a>Использование портал Azure
+### <a name="using-the-azure-portal"></a><a name="azure-portal"></a>Использование портала Azure
 Выполните следующие действия в портал Azure.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
@@ -66,7 +66,7 @@ ms.locfileid: "76697342"
 
     ![Свойства приложения содержат условия предоставления услуг и URL-адресов заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
 
-### <a name="app-object-json"></a>Использование JSON объекта приложения
+### <a name="using-the-app-object-json"></a><a name="app-object-json"></a>с помощью JSON объекта приложения;
 
 Если вы предпочитаете непосредственно изменить объект JSON приложения, то можно использовать редактор манифестов на портале Azure или портале регистрации приложений, чтобы добавить ссылки на условия обслуживания и заявление о конфиденциальности для приложения.
 
@@ -77,12 +77,12 @@ ms.locfileid: "76697342"
     }
 ```
 
-### <a name="msgraph-beta-rest-api"></a>Использование бета-версии REST API MSGraph
+### <a name="using-the-microsoft-graph-api"></a><a name="msgraph-rest-api"></a>Использование API Microsoft Graph
 
-Чтобы программно обновить все приложения, можно воспользоваться бета-версией REST API MSGraph и добавить в них ссылки на условия обслуживания и заявление о конфиденциальности.
+Для программного обновления всех приложений можно использовать API Microsoft Graph, чтобы обновить все приложения, включив ссылки на условия предоставления услуг и документов заявления о конфиденциальности.
 
 ```
-PATCH https://graph.microsoft.com/beta/applications/{application id}
+PATCH https://graph.microsoft.com/v1.0/applications/{application id}
 { 
     "appId": "{your application id}", 
     "info": { 
@@ -97,4 +97,4 @@ PATCH https://graph.microsoft.com/beta/applications/{application id}
 
 > [!NOTE]
 > * Соблюдайте осторожность, чтобы не перезаписать значения, присвоенные какому-либо из этих полей: `supportUrl`, `marketingUrl`, и `logoUrl`.
-> * Бета-версия REST API MSGraph будет работать только в случае входа с учетной записью Azure AD. Личные учетные записи Майкрософт не поддерживаются.
+> * Microsoft Graph API работает только при входе с помощью учетной записи Azure AD. Личные учетные записи Майкрософт не поддерживаются.

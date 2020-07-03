@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: e41be4b76245f2567015eb0ede317830120ee61a
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75549491"
 ---
 # <a name="cloud-provisioning-troubleshooting"></a>Устранение неполадок подготовки облака
@@ -22,7 +22,7 @@ ms.locfileid: "75549491"
 
 ## <a name="common-troubleshooting-areas"></a>Распространенные области устранения неполадок
 
-|Имя|Description|
+|Имя|Описание|
 |-----|-----|
 |[Проблемы с агентом](#agent-problems)|Убедитесь, что агент установлен правильно и взаимодействует с Azure Active Directory (Azure AD).|
 |[Проблемы синхронизации объектов](#object-synchronization-problems)|Используйте журналы подготовки для устранения неполадок синхронизации объектов.|
@@ -44,7 +44,7 @@ ms.locfileid: "75549491"
 Чтобы убедиться, что агент отображается в Azure и является работоспособным, выполните следующие действия.
 
 1. Войдите на портал Azure.
-1. Слева выберите **Azure Active Directory** > **Azure AD Connect**. В центре выберите **Управление подготовка (Предварительная версия)** .
+1. Слева выберите **Azure Active Directory** > **Azure AD Connect**. В центре выберите **Управление подготовка (Предварительная версия)**.
 1. На экране **Подготовка Azure AD (Предварительная версия)** выберите **проверить все агенты**.
 
    ![Проверка всех агентов](media/how-to-install/install7.png)</br>
@@ -67,7 +67,7 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
 
 Чтобы проверить, работает ли агент, выполните следующие действия.
 
-1. На сервере с установленным агентом откройте оснастку " **службы** ", либо перейдите к нему или **запустите** > **запустите** > **Services. msc**.
+1. На сервере с установленным агентом откройте **службы** , перейдя к нему или**Run** > перейдя **к** > запуску**Services. msc**.
 1. В разделе " **службы**" убедитесь в том, что **Microsoft Azure AD Connect update Agent** and **Microsoft Azure AD Connect подготовка Agent** и их состояние *выполняется*.
 
    ![Экран служб](media/how-to-troubleshoot/troubleshoot1.png)
@@ -87,7 +87,7 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
 Чтобы устранить эту проблему, выполните следующие действия.
 
 1. Войдите на сервер с учетной записью администратора.
-1. Откройте **службы** , перейдя к ней или выбрав **Start** > **запустите** > **Services. msc**.
+1. Откройте **службы** , перейдя к ней или**Run** > перейдя **к** > запуску**Services. msc**.
 1. В разделе " **службы**" дважды щелкните **Microsoft Azure AD подключить агент подготовки**.
 1. На вкладке **Вход в** систему измените **эту учетную запись** на администратор домена. Затем перезапустите службу. 
 
@@ -101,8 +101,8 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
 
 Эта проблема обычно вызвана тем, что агент не может подключиться к гибридной службе удостоверений и требует настройки прокси-сервера HTTP. Чтобы устранить эту проблему, настройте исходящий прокси-сервер. 
 
-Агент подготовки поддерживает использование исходящего прокси-сервера. Его можно настроить, изменив файл конфигурации агента *C:\Program Files\Microsoft Azure AD Connect подготовки ажент\аадконнектпровисионингажент.ЕКСЕ.конфиг*. Добавьте в него следующие строки в конец файла непосредственно перед закрывающим тегом `</configuration>`.
-Замените переменные `[proxy-server]` и `[proxy-port]` именем прокси-сервера и значениями порта.
+Агент подготовки поддерживает использование исходящего прокси-сервера. Его можно настроить, изменив файл конфигурации агента *C:\Program Files\Microsoft Azure AD Connect подготовки ажент\аадконнектпровисионингажент.ЕКСЕ.конфиг*. Добавьте в него следующие строки в конец файла непосредственно перед закрывающим `</configuration>` тегом.
+Замените переменные `[proxy-server]` и `[proxy-port]` значениями имени прокси-сервера и порта.
 
 ```xml
     <system.net>
@@ -124,7 +124,7 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
 
 Чтобы устранить эту проблему, измените политики выполнения PowerShell на сервере. Необходимо, чтобы политики компьютера и пользователя были заданы как *неопределенные* или *RemoteSigned*. Если они заданы как *неограниченные*, вы увидите эту ошибку. Дополнительные сведения см. в разделе [политики выполнения PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6). 
 
-### <a name="log-files"></a>Файлы журналов
+### <a name="log-files"></a>Файлы журнала
 
 По умолчанию агент выдает минимальные сообщения об ошибках и сведения о трассировке стека. Эти журналы трассировки можно найти в папке *К:\ПРОГРАМДАТА\МИКРОСОФТ\АЗУРЕ AD Connect подготовка Agent\Trace*.
 
@@ -132,7 +132,7 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
 
 1. Закройте службу **Microsoft Azure AD подключить агент подготовки**.
 1. Создайте копию исходного файла конфигурации: *C:\Program Files\Microsoft Azure AD Connect подготовки ажент\аадконнектпровисионингажент.ЕКСЕ.конфиг*.
-1. Замените существующий раздел `<system.diagnostics>` следующим, и все сообщения трассировки будут отправлены в файл *проваженттраце. log*.
+1. Замените существующий `<system.diagnostics>` раздел следующим, и все сообщения трассировки будут отправлены в файл *проваженттраце. log*.
 
    ```xml
      <system.diagnostics>
@@ -209,7 +209,7 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
+- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)
 
 
 

@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 106f83e4c8fdf33ac8752e5942dbb22a2df78693
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 4ff6972e2f7ea219a1c8c8dbabbf9fe12a8fa59e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840508"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80369475"
 ---
 # <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
 
@@ -32,17 +32,17 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра     | Description |
+| Имя параметра     | Описание |
 |--------------------|-------------|
 | defaultLanguageCode   |  Строка, указывающая язык для возврата данных. Служба возвращает результаты распознавания на указанном языке. Если этот параметр не задан, используется значение по умолчанию "en". <br/><br/>Поддерживаемые языки: <br/>*en* — английский (по умолчанию) <br/> *ES* — Испанский <br/> *ja* — японский <br/> *PT* — Португальский <br/> *zh* — китайский (упрощенное письмо)|
-| visualFeatures |  Массив строк, указывающих возвращаемые типы визуальных компонентов. Допустимые типы визуальных компонентов:  <ul><li>*Взрослый* — определяет, является ли изображение порнографией (описывает Нагота или половое действие) или жуткие (описывает экстремальное насилие или кровь). Также обнаружено содержимое сексуального предполагающее определенную (носящих непристойный характер Content).</li><li>*торговые марки* — определяет различные торговые марки в изображении, включая приблизительное расположение. Визуальная функция " *торговые марки* " доступна только на английском языке.</li><li> *категории* — классификация содержимого изображения в соответствии с классификацией, определенной в документации по Cognitive Services [компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy). </li><li> *Цвет* — определяет цвет диакритических знаков, главный цвет и то, является ли изображение черным & белом.</li><li>*Описание* — описывает содержимое образа с предложением Complete на поддерживаемых языках.</li><li>*грани* — определяет наличие лиц. При наличии создает координаты, пол и Age.</li><li>  *imageType* — определяет, является ли изображение картинкой или графиком.</li><li>  *объекты* — обнаруживают различные объекты в изображении, включая приблизительное расположение. Визуальная функция " *объекты* " доступна только на английском языке.</li><li> *tags* — помечает изображение подробным списком слов, связанных с содержимым изображения.</li></ul> Имена визуальных компонентов зависят от регистра.|
+| visualFeatures |  Массив строк, указывающих возвращаемые типы визуальных компонентов. Допустимые типы визуальных компонентов:  <ul><li>*Взрослый* — определяет, является ли изображение порнографией (описывает Нагота или половое действие) или жуткие (описывает экстремальное насилие или кровь). Также обнаружено содержимое сексуального предполагающее определенную (носящих непристойный характер Content).</li><li>*торговые марки* — определяет различные торговые марки в изображении, включая приблизительное расположение. Визуальная функция " *торговые марки* " доступна только на английском языке.</li><li> *категории* — классификация содержимого изображения в соответствии с классификацией, определенной в документации по Cognitive Services [компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy). </li><li>*Описание* — описывает содержимое образа с предложением Complete на поддерживаемых языках.</li><li>*грани* — определяет наличие лиц. При наличии создает координаты, пол и Age.</li><li> *объекты* — обнаруживают различные объекты в изображении, включая приблизительное расположение. Визуальная функция " *объекты* " доступна только на английском языке.</li><li> *tags* — помечает изображение подробным списком слов, связанных с содержимым изображения.</li></ul> Имена визуальных компонентов зависят от регистра. Обратите внимание, что визуальные элементы *Color* и *imageType* являются устаревшими, но доступ к этой функции по-прежнему можно получить с помощью [пользовательского навыка](https://go.microsoft.com/fwlink/?linkid=2121117).|
 | подробности   | Массив строк, указывающих возвращаемые сведения о домене. Допустимые типы визуальных компонентов: <ul><li>*знаменитостей* — определяет знаменитостей, если он обнаружен в образе.</li><li>*ориентиры* — определяет ориентиры, если они обнаружены в изображении. </li></ul> |
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Ввод имени      | Description                                          |
+| Ввод имени      | Описание                                          |
 |---------------|------------------------------------------------------|
-| изображение         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
+| Изображение         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
 
 
 
@@ -55,10 +55,11 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
             "context": "/document/normalized_images/*",
             "defaultLanguageCode": "en",
             "visualFeatures": [
-                "Tags",
-                "Categories",
-                "Description",
-                "Faces"
+                "tags",
+                "categories",
+                "description",
+                "faces",
+                "brands"
             ],
             "inputs": [
                 {
@@ -78,6 +79,9 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
                 },
                 {
                     "name": "faces"
+                },
+                {
+                    "name": "brands"
                 }
             ]
         }
@@ -312,6 +316,10 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
         {
             "sourceFieldName": "/document/normalized_images/*/faces/*",
             "targetFieldName": "faces"
+        },
+        {
+            "sourceFieldName": "/document/normalized_images/*/brands/*/name",
+            "targetFieldName": "brands"
         }
 ```
 ### <a name="variation-on-output-field-mappings-nested-properties"></a>Изменение сопоставлений полей вывода (вложенные свойства)
@@ -470,20 +478,6 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
             ]
           }
         ],
-        "color": {
-          "dominantColorForeground": "Brown",
-          "dominantColorBackground": "Brown",
-          "dominantColors": [
-            "Brown",
-            "Black"
-          ],
-          "accentColor": "873B59",
-          "isBwImg": false
-        },
-        "imageType": {
-          "clipArtType": 0,
-          "lineDrawingType": 0
-        },
         "objects": [
           {
             "rectangle": {
@@ -499,6 +493,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
         "brands":[  
            {  
               "name":"Microsoft",
+              "confidence": 0.903,
               "rectangle":{  
                  "x":20,
                  "y":97,
@@ -517,7 +512,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 ## <a name="error-cases"></a>Варианты ошибок
 При указанных ниже ошибках никакие элементы не извлекаются.
 
-| Код ошибки | Description |
+| Код ошибки | Описание |
 |------------|-------------|
 | NotSupportedLanguage | Указанный язык не поддерживается. |
 | InvalidImageUrl | URL-адрес изображения имеет неправильный формат или недоступен.|
@@ -527,7 +522,7 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 | NotSupportedImage | Неподдерживаемое изображение, например детская порнография. |
 | InvalidDetails | Неподдерживаемая доменная модель. |
 
-Если возникает ошибка, аналогичная `"One or more skills are invalid. Details: Error in skill #<num>: Outputs are not supported by skill: Landmarks"`, проверьте путь. Знаменитостей и ориентиры являются свойствами в разделе `detail`.
+Если возникает ошибка `"One or more skills are invalid. Details: Error in skill #<num>: Outputs are not supported by skill: Landmarks"`, аналогичная, проверьте путь. Знаменитостей и ориентиры являются свойствами в `detail`.
 
 ```json
 "categories":[  
@@ -547,4 +542,4 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
-+ [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [Создание индексатора — REST](https://docs.microsoft.com/rest/api/searchservice/create-indexer)

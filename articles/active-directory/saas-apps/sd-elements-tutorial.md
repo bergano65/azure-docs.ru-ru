@@ -17,10 +17,10 @@ ms.date: 10/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1a387659e2375444fd32cf731ab4bccc210b669a
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74081681"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sd-elements"></a>Руководство по интеграции единого входа Azure Active Directory с SD Elements
@@ -35,9 +35,9 @@ ms.locfileid: "74081681"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка SD Elements с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -69,7 +69,7 @@ ms.locfileid: "74081681"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в SD Elements](#configure-sd-elements-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя SD Elements](#create-sd-elements-test-user)** требуется для того, чтобы в SD Elements существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -79,24 +79,24 @@ ms.locfileid: "74081681"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Настройка единого входа с помощью SAML** введите значения для следующих полей:
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantname>.sdelements.com/sso/saml2/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantname>.sdelements.com/sso/saml2/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantname>.sdelements.com/sso/saml2/acs/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantname>.sdelements.com/sso/saml2/acs/`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки SD Elements](mailto:support@sdelements.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение SD Elements ожидает проверочных утверждений SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/default-attributes.png)
+    ![Изображение](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение SD Elements ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ |  Исходный атрибут|
+    | Имя |  Исходный атрибут|
     | --- | --- |
     | email |user.mail |
     | firstname |user.givenname |
@@ -126,7 +126,7 @@ ms.locfileid: "74081681"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к SD Elements.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **SD Elements**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -154,7 +154,7 @@ ms.locfileid: "74081681"
 
     ![Настройка единого входа](./media/sd-elements-tutorial/tutorial_sd-elements_10.png)
 
-    a. Для параметра **SSO Type** (Тип SSO) выберите значение **SAML**.
+    а. Для параметра **SSO Type** (Тип SSO) выберите значение **SAML**.
 
     b. В текстовое поле **Identity Provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -182,7 +182,7 @@ ms.locfileid: "74081681"
 
     ![Создание тестового пользователя SD Elements](./media/sd-elements-tutorial/tutorial_sd-elements_13.png) 
 
-    a. В текстовое поле **E-mail** (Электронная почта) введите адрес электронной почты пользователя, например **b.simon@contoso.com** .
+    а. В текстовое поле **E-mail** (Электронная почта) введите адрес электронной почты пользователя, например **b.simon@contoso.com** .
 
     b. В текстовое поле **First name** (Имя) введите имя пользователя, например **B.** .
 
@@ -190,7 +190,7 @@ ms.locfileid: "74081681"
 
     d. Для параметра **Role** (Роль) выберите значение **User** (Пользователь).
 
-    д. Нажмите кнопку **Создать пользователя**.
+    д) Нажмите кнопку **Создать пользователя**.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -200,9 +200,9 @@ ms.locfileid: "74081681"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

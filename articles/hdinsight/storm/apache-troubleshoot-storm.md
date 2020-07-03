@@ -10,15 +10,15 @@ ms.topic: troubleshooting
 ms.date: 11/08/2019
 ms.custom: seodec18
 ms.openlocfilehash: b51b2c21fd9256c93f6947386a48336af2b75d88
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75896005"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79271932"
 ---
 # <a name="troubleshoot-apache-storm-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Storm с помощью Azure HDInsight
 
-Ознакомьтесь с основными проблемами, которые возникают при работе с полезными данными [Apache Storm](https://storm.apache.org/) в [Apache Ambari](https://ambari.apache.org/), и способами их решения.
+Узнайте о главных проблемах и их разрешениях для работы с полезными данными [Apache Storm](https://storm.apache.org/) в [Apache Ambari](https://ambari.apache.org/).
 
 ## <a name="how-do-i-access-the-storm-ui-on-a-cluster"></a>Как получить доступ к пользовательскому интерфейсу Storm в кластере?
 
@@ -40,7 +40,7 @@ ms.locfileid: "75896005"
 
 ## <a name="how-do-i-transfer-storm-event-hub-spout-checkpoint-information-from-one-topology-to-another"></a>Как передать сведения о контрольной точке spout концентратора событий Storm из одной топологии в другую?
 
-При разработке топологий, которые считывают данные из Центров событий Azure с помощью JAR-файла spout концентратора событий HDInsight Storm, необходимо развернуть топологию, которая имеет то же имя в новом кластере. Но нужно сохранить данные контрольных точек, которые были зафиксированы в [Apache ZooKeeper](https://zookeeper.apache.org/) на старом кластере.
+При разработке топологий, которые считывают данные из Центров событий Azure с помощью JAR-файла spout концентратора событий HDInsight Storm, необходимо развернуть топологию, которая имеет то же имя в новом кластере. Однако необходимо сохранить данные контрольной точки, которые были зафиксированы для [Apache ZooKeeper](https://zookeeper.apache.org/) в старом кластере.
 
 ### <a name="where-checkpoint-data-is-stored"></a>Где хранятся данные контрольных точек
 
@@ -65,7 +65,7 @@ ms.locfileid: "75896005"
 #### <a name="export-offset-metadata"></a>Экспорт метаданных смещения
 
 1. Используйте SSH для перехода в кластер ZooKeeper в кластере, из которого необходимо экспортировать смещение контрольной точки.
-2. Выполните следующую команду (после обновления строки версии HDP), чтобы экспортировать данные смещения ZooKeeper в путь к `/stormmetadta/zkdata` HDFS:
+2. Выполните следующую команду (после обновления строки версии HDP), чтобы экспортировать данные смещения ZooKeeper в путь `/stormmetadta/zkdata` HDFS:
 
     ```apache
     java -cp ./*:/etc/hadoop/conf/*:/usr/hdp/2.5.1.0-56/hadoop/*:/usr/hdp/2.5.1.0-56/hadoop/lib/*:/usr/hdp/2.5.1.0-56/hadoop-hdfs/*:/usr/hdp/2.5.1.0-56/hadoop-hdfs/lib/*:/etc/failover-controller/conf/*:/etc/hadoop/* com.microsoft.storm.zkdatatool.ZkdataImporter export /eventhubspout /stormmetadata/zkdata
@@ -74,7 +74,7 @@ ms.locfileid: "75896005"
 #### <a name="import-offset-metadata"></a>Импорт метаданных смещения
 
 1. Используйте SSH для перехода в кластер ZooKeeper в кластере, из которого необходимо импортировать смещение контрольной точки.
-2. Выполните следующую команду (после обновления строки версии HDP), чтобы импортировать данные смещения ZooKeeper из пути HDFS `/stormmetadata/zkdata` на сервер ZooKeeper в целевом кластере:
+2. Выполните следующую команду (после обновления строки версии HDP), чтобы импортировать данные смещения ZooKeeper из пути `/stormmetadata/zkdata` HDFS на сервер ZooKeeper в целевом кластере:
 
     ```apache
     java -cp ./*:/etc/hadoop/conf/*:/usr/hdp/2.5.1.0-56/hadoop/*:/usr/hdp/2.5.1.0-56/hadoop/lib/*:/usr/hdp/2.5.1.0-56/hadoop-hdfs/*:/usr/hdp/2.5.1.0-56/hadoop-hdfs/lib/*:/etc/failover-controller/conf/*:/etc/hadoop/* com.microsoft.storm.zkdatatool.ZkdataImporter import /eventhubspout /home/sshadmin/zkdata
@@ -91,9 +91,9 @@ ms.locfileid: "75896005"
 
 ## <a name="how-do-i-locate-storm-binaries-on-a-cluster"></a>Как найти двоичные файлы Storm в кластере?
 
-Двоичные файлы с накоплением для текущего стека HDP находятся в `/usr/hdp/current/storm-client`. Расположение одинаковое как для головных узлов, так и для рабочих узлов.
+Двоичные файлы с областями для текущего стека HDP находятся в `/usr/hdp/current/storm-client`. Расположение одинаковое как для головных узлов, так и для рабочих узлов.
 
-Для конкретных версий HDP в/usr/HDP может существовать несколько двоичных файлов (например, `/usr/hdp/2.5.0.1233/storm`). Папка `/usr/hdp/current/storm-client` симлинкед до последней версии, которая работает в кластере.
+Для конкретных версий HDP в/usr/HDP может существовать несколько двоичных файлов (например, `/usr/hdp/2.5.0.1233/storm`). `/usr/hdp/current/storm-client` Папка симлинкед до последней версии, работающей в кластере.
 
 Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix) и [Apache Storm](https://storm.apache.org/).
 
@@ -113,7 +113,7 @@ ms.locfileid: "75896005"
 ### <a name="head-nodes"></a>Головные узлы
 
 Головные узлы Storm запускают следующие службы:
-* Nimbus
+* Nimbus;
 * сервер Ambari;
 * сервер метрик Ambari;
 * сборщик метрик Ambari.
@@ -127,7 +127,7 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 ### <a name="worker-nodes"></a>Рабочие узлы
 
 Рабочие узлы Storm запускают следующие службы:
-* Контролер
+* Supervisor;
 * виртуальные машины Java (JVM) рабочей роли для выполнения топологий;
 * агент Ambari.
 
@@ -165,7 +165,7 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 
 Файл конфигурации Worker Log4J считывается из `/usr/hdp/\<HDP version>/storm/log4j2/worker.xml`.
 
-Примеры: `/usr/hdp/2.6.0.2-76/storm/log4j2/cluster.xml`
+Примеров`/usr/hdp/2.6.0.2-76/storm/log4j2/cluster.xml`
 `/usr/hdp/2.6.0.2-76/storm/log4j2/worker.xml`
 
 ---
@@ -174,16 +174,16 @@ HDInsight поставляется с кворумом Zookeeper, включаю
 
 При отправке топологии пользователь может получить сообщение об ошибке следующего вида: `Topology submission exception, cause not a leader, the current leader is NimbusInfo`.
 
-Чтобы устранить эту проблему, пользователю может потребоваться создать билет для перезапуска или перезагрузки узлов. Дополнительные сведения см. в [https://community.hortonworks.com/content/supportkb/150287/error-ignoring-exception-while-trying-to-get-leade.html](https://community.hortonworks.com/content/supportkb/150287/error-ignoring-exception-while-trying-to-get-leade.html).
+Чтобы устранить эту проблему, пользователю может потребоваться создать билет для перезапуска или перезагрузки узлов. Дополнительные сведения см. в [https://community.hortonworks.com/content/supportkb/150287/error-ignoring-exception-while-trying-to-get-leade.html](https://community.hortonworks.com/content/supportkb/150287/error-ignoring-exception-while-trying-to-get-leade.html)разделе.
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 - Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-- Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества взаимодействия с клиентами. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+- Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
 - Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

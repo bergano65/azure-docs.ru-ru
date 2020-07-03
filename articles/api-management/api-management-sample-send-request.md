@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 12/15/2016
 ms.author: apimpm
 ms.openlocfilehash: 1c86570850894a47f57a2d3587811411cc9a76eb
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77190017"
 ---
 # <a name="using-external-services-from-the-azure-api-management-service"></a>Использование внешних служб из службы управления API Azure
@@ -104,7 +104,7 @@ ms.locfileid: "77190017"
 
 Кроме того, если сервер авторизации не включает поле "Active", чтобы указать, является ли маркер допустимым, используйте такой инструмент, как POST, чтобы определить, какие свойства установлены в допустимом токене. Например, если допустимый ответ маркера содержит свойство с именем "expires_in", проверьте, существует ли это имя свойства в ответе сервера авторизации таким образом:
 
-< при условии = "@ ((Иреспонсе) context. Переменные ["токенстате"]). Body.As<JObject>(). Свойство ("expires_in") = = null) ">
+<при условии = "@ ((Иреспонсе) context. Переменные ["токенстате"]). Body.As<JObject>(). Свойство ("expires_in") = = null) ">
 
 ### <a name="reporting-failure"></a>Отчеты об ошибках
 Для обнаружения недопустимого маркера используется политика `<choose>`, и если маркер является недопустимым, возвращается ответ 401.

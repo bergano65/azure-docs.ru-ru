@@ -1,6 +1,6 @@
 ---
-title: Перечисление определений ролей в Azure RBAC с помощью портал Azure, Azure PowerShell или Azure CLI | Документация Майкрософт
-description: Узнайте, как составить список встроенных и пользовательских ролей в Azure RBAC с помощью портал Azure, Azure PowerShell или Azure CLI.
+title: Список определений ролей Azure в Azure RBAC
+description: Узнайте, как получить список встроенных и пользовательских ролей Azure с помощью портал Azure, Azure PowerShell, Azure CLI или REST API.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,23 +11,23 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/25/2019
+ms.date: 05/06/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 839393d7535de530a27752f77e311c87c75825d9
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: e691e37a85604132a6b1c4b2af3501f2c8636e18
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710351"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891272"
 ---
-# <a name="list-role-definitions-in-azure-rbac"></a>Вывод списка определений ролей в Azure RBAC
+# <a name="list-azure-role-definitions"></a>Вывод списка определений ролей Azure
 
-Определение роли — это набор разрешений, которые могут быть выполнены, например чтение, запись и удаление. Как правило, это просто называется ролью. [Управление доступом на основе ролей (RBAC) в Azure](overview.md) имеет более 120 [встроенных ролей](built-in-roles.md) или можно создавать собственные пользовательские роли. В этой статье описывается, как составить список встроенных и пользовательских ролей, которые можно использовать для предоставления доступа к ресурсам Azure.
+Определение роли — это набор разрешений, которые могут быть выполнены, например чтение, запись и удаление. Обычно это называется ролью. [Управление доступом на основе ролей Azure (Azure RBAC)](overview.md) имеет более 120 [встроенных ролей](built-in-roles.md) или можно создавать собственные пользовательские роли. В этой статье описывается, как составить список встроенных и пользовательских ролей, которые можно использовать для предоставления доступа к ресурсам Azure.
 
 Чтобы просмотреть список ролей администратора для Azure Active Directory, ознакомьтесь с [разрешениями роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>Портал Azure
 
 ### <a name="list-all-roles"></a>Вывод списка всех ролей
 
@@ -37,7 +37,7 @@ ms.locfileid: "74710351"
 
 1. Щелкните конкретный ресурс.
 
-1. Щелкните **Управление доступом (IAM)** .
+1. Щелкните **Управление доступом (IAM)**.
 
 1. Чтобы просмотреть список всех встроенных и пользовательских ролей, щелкните вкладку **Роли**.
 
@@ -162,7 +162,7 @@ Microsoft.Network/loadBalancers/backendAddressPools/join/action
 ...
 ```
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
 ### <a name="list-all-roles"></a>Вывод списка всех ролей
 
@@ -312,9 +312,154 @@ az role definition list --name "Virtual Machine Contributor" --output json | jq 
 ]
 ```
 
+## <a name="rest-api"></a>REST API
+
+### <a name="list-role-definitions"></a>Вывод списка определений роли
+
+Чтобы составить список определений ролей, используйте REST API [списка "определения ролей](/rest/api/authorization/roledefinitions/list) ". Чтобы уточнить результаты, укажите область и дополнительный фильтр.
+
+1. Можете начать со следующего запроса:
+
+    ```http
+    GET https://management.azure.com/{scope}/providers/Microsoft.Authorization/roleDefinitions?$filter={$filter}&api-version=2015-07-01
+    ```
+
+1. В URI замените *{Scope}* областью, для которой необходимо получить список определений ролей.
+
+    > [!div class="mx-tableFixed"]
+    > | Область | Type |
+    > | --- | --- |
+    > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
+    > | `subscriptions/{subscriptionId1}` | Подписка |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/Microsoft.Web/sites/mysite1` | Ресурс |
+
+    В предыдущем примере Microsoft. Web — это поставщик ресурсов, который ссылается на экземпляр службы приложений. Аналогичным образом можно использовать любые другие поставщики ресурсов и указать область. Дополнительные сведения см. в статьях [поставщики ресурсов Azure и типы](../azure-resource-manager/management/resource-providers-and-types.md) и поддерживаемые [операции Azure Resource Manager поставщика ресурсов](resource-provider-operations.md).  
+     
+1. Замените *{Filter}* условием, которое необходимо применить для фильтрации списка определений ролей.
+
+    > [!div class="mx-tableFixed"]
+    > | Filter | Описание |
+    > | --- | --- |
+    > | `$filter=atScopeAndBelow()` | Перечисляет определения ролей для указанной области и всех ее подобластей. |
+    > | `$filter=type+eq+'{type}'` | Перечисляет определения ролей указанного типа. Тип роли может быть `CustomRole` или. `BuiltInRole` |
+
+Следующий запрос перечисляет определения пользовательских ролей в области действия подписки:
+
+```http
+GET https://management.azure.com/subscriptions/{subscriptionId1}/providers/Microsoft.Authorization/roleDefinitions?api-version=2015-07-01&$filter=type+eq+'CustomRole'
+```
+
+Ниже приведен пример выходных данных:
+
+```json
+{
+    "value": [
+        {
+            "properties": {
+                "roleName": "Billing Reader Plus",
+                "type": "CustomRole",
+                "description": "Read billing data and download invoices",
+                "assignableScopes": [
+                    "/subscriptions/{subscriptionId1}"
+                ],
+                "permissions": [
+                    {
+                        "actions": [
+                            "Microsoft.Authorization/*/read",
+                            "Microsoft.Billing/*/read",
+                            "Microsoft.Commerce/*/read",
+                            "Microsoft.Consumption/*/read",
+                            "Microsoft.Management/managementGroups/read",
+                            "Microsoft.CostManagement/*/read",
+                            "Microsoft.Billing/invoices/download/action",
+                            "Microsoft.CostManagement/exports/*"
+                        ],
+                        "notActions": [
+                            "Microsoft.CostManagement/exports/delete"
+                        ]
+                    }
+                ],
+                "createdOn": "2020-02-21T04:49:13.7679452Z",
+                "updatedOn": "2020-02-21T04:49:13.7679452Z",
+                "createdBy": "{createdByObjectId1}",
+                "updatedBy": "{updatedByObjectId1}"
+            },
+            "id": "/subscriptions/{subscriptionId1}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId1}",
+            "type": "Microsoft.Authorization/roleDefinitions",
+            "name": "{roleDefinitionId1}"
+        }
+    ]
+}
+```
+
+### <a name="list-a-role-definition"></a>Вывод определения роли
+
+Чтобы получить список сведений о конкретной роли, используйте определения [ролей — Get](/rest/api/authorization/roledefinitions/get) или [определения ролей — Get по идентификатору](/rest/api/authorization/roledefinitions/getbyid) REST API.
+
+1. Можете начать со следующего запроса:
+
+    ```http
+    GET https://management.azure.com/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}?api-version=2015-07-01
+    ```
+
+    Для определения роли на уровне каталога можно использовать следующий запрос:
+
+    ```http
+    GET https://management.azure.com/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}?api-version=2015-07-01
+    ```
+
+1. В URI замените *{Scope}* областью, для которой требуется перечислить определение роли.
+
+    > [!div class="mx-tableFixed"]
+    > | Область | Type |
+    > | --- | --- |
+    > | `providers/Microsoft.Management/managementGroups/{groupId1}` | группа управления; |
+    > | `subscriptions/{subscriptionId1}` | Подписка |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1` | Группа ресурсов |
+    > | `subscriptions/{subscriptionId1}/resourceGroups/myresourcegroup1/providers/Microsoft.Web/sites/mysite1` | Ресурс |
+     
+1. Замените *{roleDefinitionId}* идентификатором определения роли.
+
+Следующий запрос перечисляет определение роли [читателя](built-in-roles.md#reader) :
+
+```http
+GET https://management.azure.com/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7?api-version=2015-07-01
+```
+
+Ниже приведен пример выходных данных:
+
+```json
+{
+    "properties": {
+        "roleName": "Reader",
+        "type": "BuiltInRole",
+        "description": "Lets you view everything, but not make any changes.",
+        "assignableScopes": [
+            "/"
+        ],
+        "permissions": [
+            {
+                "actions": [
+                    "*/read"
+                ],
+                "notActions": []
+            }
+        ],
+        "createdOn": "2015-02-02T21:55:09.8806423Z",
+        "updatedOn": "2019-02-05T21:24:35.7424745Z",
+        "createdBy": null,
+        "updatedBy": null
+    },
+    "id": "/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7",
+    "type": "Microsoft.Authorization/roleDefinitions",
+    "name": "acdd72a7-3385-48ef-bd42-f606fba81ae7"
+}
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Встроенные роли управления доступом на основе ролей в Azure](built-in-roles.md)
-- [Пользовательские роли для ресурсов Azure](custom-roles.md)
-- [Вывод списка назначений ролей с помощью Azure RBAC и портал Azure](role-assignments-list-portal.md)
-- [Добавление и удаление назначений ролей с помощью Azure RBAC и портал Azure](role-assignments-portal.md)
+- [Встроенные роли Azure](built-in-roles.md)
+- [Пользовательские роли Azure](custom-roles.md)
+- [Вывод списка назначений ролей Azure с помощью портал Azure](role-assignments-list-portal.md)
+- [Добавление или удаление назначений ролей Azure с помощью портал Azure](role-assignments-portal.md)

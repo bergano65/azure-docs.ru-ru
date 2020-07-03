@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с приложением SpaceIQ | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с приложением SpaceIQ | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SpaceIQ.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: b3358ad473ede9e8d78a835e8c68e690e5340638
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67090089"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-spaceiq"></a>Руководство по Интеграция Azure Active Directory со SpaceIQ
+# <a name="tutorial-azure-active-directory-integration-with-spaceiq"></a>Руководство по интеграции Azure Active Directory со SpaceIQ
 
 В этом руководстве описано, как интегрировать SpaceIQ с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением SpaceIQ обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67090089"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением SpaceIQ, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * Подписка с поддержкой единого входа SpaceIQ
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67090089"
 
     ![Сведения о домене и URL-адресах единого входа приложения SpaceIQ](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес `https://api.spaceiq.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес `https://api.spaceiq.com`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://api.spaceiq.com/saml/<instanceid>/callback`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "67090089"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -142,7 +142,7 @@ ms.locfileid: "67090089"
 
     ![Параметры проверки подлинности SAML](./media/spaceiq-tutorial/setting3.png)
 
-    a. В текстовом поле **SAML Issuer URL** (URL-адрес издателя SAML) вставьте значение **Идентификатор Azure AD** из окна настройки приложения Azure AD.
+    а. В текстовом поле **SAML Issuer URL** (URL-адрес издателя SAML) вставьте значение **Идентификатор Azure AD** из окна настройки приложения Azure AD.
 
     b. Скопируйте значение **SAML CallBack Endpoint URL (read-only)** (URL-адрес конечной точки обратного вызова SAML (только для чтения)) и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Базовая конфигурация SAML**.
 
@@ -150,7 +150,7 @@ ms.locfileid: "67090089"
 
     d. Откройте загруженный сертификат в блокноте, скопируйте его содержимое и вставьте его в текстовое поле **Сертификат X.509**.
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -219,5 +219,5 @@ ms.locfileid: "67090089"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

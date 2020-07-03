@@ -1,19 +1,19 @@
 ---
 title: Модуль средств рисования | Карты Microsoft Azure
 description: В этой статье вы узнаете, как задать данные параметров рисования с помощью веб-пакета SDK для карт Microsoft Azure.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 01/29/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: f3634149b744b9a03f0ed89aafbc20932701bdbc
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 711609f9382e2153cbc738d544933796dbbe2e99
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77208188"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80334313"
 ---
 # <a name="use-the-drawing-tools-module"></a>Использование модуля средств рисования
 
@@ -23,18 +23,18 @@ ms.locfileid: "77208188"
 
 1. Создайте новый HTML-файл и [реализуйте карту как обычно](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control).
 2. Загрузите модуль инструментов для рисования Azure Maps. Загрузить его можно одним из двух способов:
-    - Используйте глобально размещенную версию сети доставки содержимого Azure модуля Azure Maps Services. Добавьте ссылку на таблицу стилей JavaScript и CSS в элемент `<head>` файла:
+    - Используйте глобально размещенную версию сети доставки содержимого Azure модуля Azure Maps Services. Добавьте ссылку на таблицу стилей JavaScript и CSS в `<head>` элемент файла:
 
         ```html
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/drawing/0.1/atlas-drawing.min.css" type="text/css" />
-        <script src="https://atlas.microsoft.com/sdk/javascript/drawing/0.1/atlas-drawing.min.js"></script>
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.css" type="text/css" />
+        <script src="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.js"></script>
         ```
 
-    - Также можно загрузить модуль средств рисования для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-Drawing-Tools](https://www.npmjs.com/package/azure-maps-drawing-tools) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте следующую команду:
+    - Также можно загрузить модуль средств рисования для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-Drawing-Tools](https://www.npmjs.com/package/azure-maps-drawing-tools) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Выполните эту команду:
     
         > **NPM. Установка Azure-Maps-Drawing-Tools**
     
-        Затем добавьте ссылку на таблицу стилей JavaScript и CSS в элемент `<head>` файла:
+        Затем добавьте ссылку на таблицу стилей JavaScript и CSS в `<head>` элемент файла:
 
          ```html
         <link rel="stylesheet" href="node_modules/azure-maps-drawing-tools/dist/atlas-drawing.min.css" type="text/css" />
@@ -43,7 +43,7 @@ ms.locfileid: "77208188"
 
 ## <a name="use-the-drawing-manager-directly"></a>Использование диспетчера рисунков напрямую
 
-После загрузки модуля инструменты рисования в приложение можно включить возможности рисования и редактирования с помощью [диспетчера рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-). Можно указать параметры для диспетчера рисунков при его создании или использовать функцию `drawingManager.setOptions()`.
+После загрузки модуля инструменты рисования в приложение можно включить возможности рисования и редактирования с помощью [диспетчера рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest#setoptions-drawingmanageroptions-). Можно указать параметры для диспетчера рисунков при его создании или использовать `drawingManager.setOptions()` функцию.
 
 ### <a name="set-the-drawing-mode"></a>Установка режима рисования
 
@@ -69,11 +69,11 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 
 Диспетчер рисунков поддерживает три разных способа взаимодействия с картой для рисования фигур.
 
-* `click`-координаты добавляются при щелчке мышью или касанием.
-* `freehand `-координаты добавляются при перетаскивании указателя мыши или касания на карту. 
-* Координаты `hybrid` добавляются при нажатии или перетаскивании мыши или касания.
+* `click`— Координаты добавляются при щелчке мышью или касанием.
+* `freehand `— Координаты добавляются при перетаскивании указателя мыши или касания на карту. 
+* `hybrid`— Координаты добавляются при нажатии или перетаскивании мыши или касания.
 
-Следующий код включает режим рисования многоугольников и задает тип взаимодействия рисования, который должен придерживаться менеджером рисунков `freehand`. 
+Следующий код включает режим рисования многоугольника и задает тип взаимодействия рисования, которым должен соответствовать Диспетчер рисунков `freehand`. 
 
 ```Javascript
 //Create an instance of the drawing manager and set drawing mode.
@@ -88,32 +88,32 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Произвольная прорисовка" src="//codepen.io/azuremaps/embed/ZEzKoaj/?height=265&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. <a href='https://codepen.io/azuremaps/pen/ZEzKoaj/'>рисунок с изображением без</a> пера, Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+См. <a href='https://codepen.io/azuremaps/pen/ZEzKoaj/'>рисунок с изображением без</a> пера, Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
 ### <a name="customizing-drawing-options"></a>Настройка параметров рисования
 
-В предыдущих примерах было показано, как настроить параметры рисования при создании экземпляра диспетчера рисунков. Параметры диспетчера рисунков также можно задать с помощью функции `drawingManager.setOptions()`. Ниже приведен инструмент для проверки настройки всех параметров диспетчера рисунков с помощью функции Сетоптионс.
+В предыдущих примерах было показано, как настроить параметры рисования при создании экземпляра диспетчера рисунков. Параметры диспетчера рисунков также можно задать с помощью `drawingManager.setOptions()` функции. Ниже приведен инструмент для проверки настройки всех параметров диспетчера рисунков с помощью функции Сетоптионс.
 
 <br/>
 
-<iframe height="685" title="Настройка диспетчера рисунков" src="//codepen.io/azuremaps/embed/LYPyrxR/?height=600&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style='width: 100%;'>См. раздел <a href='https://codepen.io/azuremaps/pen/LYPyrxR/'>Получение данных фигуры</a> с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="685" title="Настройка диспетчера рисунков" src="//codepen.io/azuremaps/embed/LYPyrxR/?height=600&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" style='width: 100%;'>См. раздел <a href='https://codepen.io/azuremaps/pen/LYPyrxR/'>Получение данных формы</a> с помощью Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как использовать дополнительные функции модуля "инструменты рисования":
 
 > [!div class="nextstepaction"]
-> [Добавление панели инструментов рисования](map-add-drawing-toolbar.md)
+> [Добавление панели средств рисования](map-add-drawing-toolbar.md)
 
 > [!div class="nextstepaction"]
-> [Получение данных фигуры](map-get-shape-data.md)
+> [Получение данных о фигуре](map-get-shape-data.md)
 
 > [!div class="nextstepaction"]
-> [Реакция на события прорисовки](drawing-tools-events.md)
+> [Реакция на события рисования](drawing-tools-events.md)
 
 > [!div class="nextstepaction"]
 > [Типы взаимодействия и сочетания клавиш](drawing-tools-interactions-keyboard-shortcuts.md)
@@ -121,7 +121,7 @@ drawingManager = new atlas.drawing.DrawingManager(map,{
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Таблица](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [Диспетчер рисунков](https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/atlas.drawing.drawingmanager?view=azure-node-latest)

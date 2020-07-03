@@ -11,19 +11,16 @@ ms.topic: article
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/27/2018
+ms.date: 05/05/2020
 ms.author: allensu
-ms.openlocfilehash: 0a21af683d9fa7849d3e96c545983c9f40a8d4c6
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 7563eb4d22048021886925f6864e3616bed83a75
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76935320"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858762"
 ---
-# <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>Azure Monitor журналов для общедоступного базового Load Balancer
-
->[!IMPORTANT]
->Azure Load Balancer поддерживает два типа: категории "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Базовый". Дополнительные сведения о Load Balancer ценовой категории "Стандартный" см. в разделе [Обзор Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md), в котором предоставлены данные телеметрии с помощью многомерных метрик в Azure Monitor.
+# <a name="azure-monitor-logs-for-public-basic-load-balancer"></a>Журналы Azure Monitor для общедоступной службы Load Balancer (цен. категория "Базовый")
 
 В Azure можно использовать различные виды журналов для управления Load Balancer ценовой категории "Базовый" и устранения возникающих в них неполадок. Доступ к некоторым из этих журналов можно получить через портал. Журналы можно передавать в концентратор событий или в рабочую область Log Analytics. Все журналы можно извлечь из хранилища BLOB-объектов Azure и просматривать в различных средствах, таких как Excel и Power BI.  В списке ниже приведены дополнительные сведения о различных типах журналов.
 
@@ -41,7 +38,7 @@ ms.locfileid: "76935320"
 Войдите на [портал Azure](https://portal.azure.com). Если у вас еще нет балансировщика нагрузки, [создайте балансировщик нагрузки](https://docs.microsoft.com/azure/load-balancer/quickstart-create-basic-load-balancer-portal) перед продолжением.
 
 1. На портале щелкните **группы ресурсов**.
-2. Выберите **\<ресурс-группа-имя >** , в которой находится подсистема балансировки нагрузки.
+2. Выберите ** \<Resource-Group-Name>** , где находится подсистема балансировки нагрузки.
 3. Выберите подсистему балансировки нагрузки.
 4. Выберите **мониторинг** > **параметры диагностики**.
 5. В области **параметры диагностики** в разделе **параметры диагностики**выберите **+ Добавить параметр диагностики**.
@@ -49,7 +46,7 @@ ms.locfileid: "76935320"
 7. У вас есть три варианта **параметров диагностики**.  Вы можете выбрать один, два или все три и настроить каждый из них в соответствие с вашими требованиями:
    * **Архивация в учетную запись хранения**
    * **Поток в концентратор событий**
-   * **Отправить на Log Analytics**
+   * **Отправка в Log Analytics**
 
     ### <a name="archive-to-a-storage-account"></a>"Архивировать в учетной записи хранения";
     Для этого процесса потребуется учетная запись хранения, созданная ранее.  Сведения о создании учетной записи хранения см. в статье [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal) .
@@ -79,8 +76,8 @@ ms.locfileid: "76935320"
 
 
 8. Под разделом **Журнал** в области **параметры диагностики** установите флажки рядом с ними.
-   * **лоадбаланцералертевент**
-   * **лоадбаланцерпробехеалсстатус**
+   * **LoadBalancerAlertEvent**
+   * **LoadBalancerProbeHealthStatus**
 
 9.  Под разделом **Метрика** в области " **параметры диагностики** " установите флажок рядом с:
    * **аллметрикс**
@@ -176,6 +173,6 @@ ms.locfileid: "76935320"
 ## <a name="send-to-log-analytics"></a>Отправка в Log Analytics
 Ресурсы в Azure могут отправлять диагностические сведения непосредственно в Log Analytics рабочую область, где можно выполнять сложные запросы к информации для устранения неполадок и анализа.  Дополнительные сведения см. в статье [Получение журналов ресурсов Azure в log Analytics рабочей области в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-workspace)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Основные сведения о пробах подсистемы балансировки нагрузки](load-balancer-custom-probe-overview.md)

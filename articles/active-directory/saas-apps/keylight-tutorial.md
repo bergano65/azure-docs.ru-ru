@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LockPath Keylight | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с LockPath Keylight | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в LockPath Keylight.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 148c2c46a911088d01ab83fe2d16e8ca81d272ff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67098776"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-lockpath-keylight"></a>Руководство по Интеграция Azure Active Directory с LockPath Keylight
+# <a name="tutorial-azure-active-directory-integration-with-lockpath-keylight"></a>Руководство по интеграции Azure Active Directory с LockPath Keylight
 
 В этом руководстве описано, как интегрировать LockPath Keylight с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением LockPath Keylight обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67098776"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с LockPath Keylight, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка LockPath Keylight с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "67098776"
 
     ![Сведения о домене и URL-адресах единого входа для LockPath Keylight](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.keylightgrc.com/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.keylightgrc.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<company name>.keylightgrc.com`.
 
@@ -124,7 +124,7 @@ ms.locfileid: "67098776"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -134,7 +134,7 @@ ms.locfileid: "67098776"
 
 1. Чтобы включить единый вход в LockPath Keylight, выполните следующие действия.
 
-    a. Войдите в учетную запись LockPath Keylight в качестве администратора.
+    а. Войдите в учетную запись LockPath Keylight в качестве администратора.
 
     b. В меню вверху щелкните **Person** (Пользователь) и выберите **Keylight Setup** (Настройка Keylight).
 
@@ -152,7 +152,7 @@ ms.locfileid: "67098776"
 
     ![Настройка единого входа](./media/keylight-tutorial/405.png)
 
-    a. Задайте для параметра **SAML authentication** (Аутентификация SAML) значение **Active** (Активно).
+    а. Задайте для параметра **SAML authentication** (Аутентификация SAML) значение **Active** (Активно).
 
     b. В текстовое поле **Identity Provider Login URL** (URL-адрес входа поставщика удостоверений) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -160,9 +160,9 @@ ms.locfileid: "67098776"
 
     d. Щелкните **Choose File** (Выбрать файл), чтобы выбрать скачанный сертификат LockPath Keylight, а затем нажмите кнопку **Open** (Открыть), чтобы передать этот сертификат.
 
-    д. В поле **SAML User Id location** (Расположение идентификатора пользователя SAML) выберите значение **NameIdentifier element of the subject statement** (Элемент NameIdentifier оператора Subject).
+    д) В поле **SAML User Id location** (Расположение идентификатора пользователя SAML) выберите значение **NameIdentifier element of the subject statement** (Элемент NameIdentifier оператора Subject).
 
-    Е. Введите значение **Keylight Service Provider** (Поставщик услуг Keylight), используя следующий формат: `https://<CompanyName>.keylightgrc.com`.
+    е) Введите значение **Keylight Service Provider** (Поставщик услуг Keylight), используя следующий формат: `https://<CompanyName>.keylightgrc.com`.
 
     ж. Задайте для параметра **Auto-provision users** (Автоматическая подготовка пользователей) значение **Active** (Активно).
 
@@ -246,4 +246,4 @@ ms.locfileid: "67098776"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

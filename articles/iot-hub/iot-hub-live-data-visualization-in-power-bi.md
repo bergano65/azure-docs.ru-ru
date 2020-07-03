@@ -10,15 +10,15 @@ ms.tgt_pltfrm: arduino
 ms.date: 6/06/2019
 ms.author: robinsh
 ms.openlocfilehash: f0b909d10790511408e090546fd3359889ea5aca
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73954630"
 ---
 # <a name="visualize-real-time-sensor-data-from-azure-iot-hub-using-power-bi"></a>Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью Power BI
 
-![Сквозная схема](./media/iot-hub-live-data-visualization-in-power-bi/1_end-to-end-diagram.png)
+![Комплексная схема](./media/iot-hub-live-data-visualization-in-power-bi/1_end-to-end-diagram.png)
 
 [!INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
@@ -28,7 +28,7 @@ ms.locfileid: "73954630"
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
-* Добавить группу потребителей, чтобы обеспечить доступ к данным в Центре Интернета вещей.
+* добавим группу потребителей, чтобы обеспечить доступ к данным в Центре Интернета вещей;
 
 * Создать, настроить и запустить задание Stream Analytics, чтобы передавать данные из центра Интернета вещей в учетную запись Power BI.
 
@@ -42,7 +42,7 @@ ms.locfileid: "73954630"
   * Центр Интернета вещей Azure в подписке;
   * клиентское приложение, которое отправляет сообщения в Центр Интернета вещей Azure.
 
-* Учетная запись Power BI. Доступна [бесплатная пробная версия](https://powerbi.microsoft.com/).
+* Учетная запись Power BI. ([Попробуйте Power BI бесплатно](https://powerbi.microsoft.com/))
 
 [!INCLUDE [iot-hub-get-started-create-consumer-group](../../includes/iot-hub-get-started-create-consumer-group.md)]
 
@@ -56,15 +56,15 @@ ms.locfileid: "73954630"
 
 2. Введите представленные ниже сведения для задания.
 
-   **Имя задания**. Имя задания. Оно должно быть глобально уникальным.
+   **Имя задания**: имя задания. Оно должно быть глобально уникальным.
 
-   **Группа ресурсов**. Выберите ту же группу ресурсов, которую использует Центр Интернета вещей.
+   **Группа ресурсов**. Используйте ту же группу ресурсов, которую использует центр Интернета вещей.
 
    **Расположение**. Выберите то же расположение, которое использует группа ресурсов.
 
    ![Создание задания Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/create-stream-analytics-job-azure.png)
 
-3. Нажмите кнопку **Создать**.
+3. Нажмите кнопку **создания**.
 
 ### <a name="add-an-input-to-the-stream-analytics-job"></a>Добавление входных данных в задание Stream Analytics
 
@@ -132,7 +132,7 @@ ms.locfileid: "73954630"
 
 ### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics
 
-В Stream Analytics задание выберите **Обзор**, а затем выберите **запустить** > **сейчас** > **запустить**. После успешного запуска состояние задания **Остановлено** изменится на **Выполняется**.
+В Stream Analytics задание выберите **Обзор**, а затем выберите **начать** > **сейчас** > **.** После успешного запуска состояние задания **Остановлено** изменится на **Выполняется**.
 
 ![Выполнение задания Stream Analytics в Azure](./media/iot-hub-live-data-visualization-in-power-bi/run-stream-analytics-job-azure.png)
 
@@ -144,7 +144,7 @@ ms.locfileid: "73954630"
 
 3. Выберите используемую рабочую область " **Моя рабочая область**".
 
-4. Щелкните **Наборы данных**.
+4. Выберите **наборы данных**.
 
    Вы должны увидеть набор данных, указанный при создании выходных данных для задания Stream Analytics.
 
@@ -184,7 +184,7 @@ ms.locfileid: "73954630"
 
 Корпорация Майкрософт также предлагает [мобильные приложения Power BI](https://powerbi.microsoft.com/en-us/documentation/powerbi-power-bi-apps-for-mobile-devices/) для просмотра информационных панелей и отчетов Power BI, а также взаимодействия с ними.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы успешно использовали Power BI для визуализации данных, полученных от датчика в режиме реального времени, из Центра Интернета вещей Azure.
 

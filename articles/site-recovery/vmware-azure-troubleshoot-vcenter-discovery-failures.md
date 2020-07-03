@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/29/2019
 ms.author: mayg
 ms.openlocfilehash: f00c7b12accde9df9a5708a2b8b378d70428318d
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74091251"
 ---
 # <a name="troubleshoot-vcenter-server-discovery-failures"></a>Устранение ошибок обнаружения vCenter Server
@@ -20,7 +20,7 @@ ms.locfileid: "74091251"
 
 ## <a name="non-numeric-values-in-the-maxsnapshots-property"></a>Нечисловые значения в свойстве Максснапшотс
 
-В версиях до 9,20 vCenter отключается при извлечении нечислового значения свойства `snapshot.maxSnapShots` на виртуальной машине.
+В версиях до 9,20 vCenter отключается при извлечении нечислового значения свойства Property `snapshot.maxSnapShots` на виртуальной машине.
 
 Эта проблема определяется по ИДЕНТИФИКАТОРу ошибки 95126.
 
@@ -34,7 +34,7 @@ ms.locfileid: "74091251"
 
 - Укажите виртуальную машину и присвойте ей числовое значение (параметры изменения виртуальной машины в vCenter).
 
-Или
+либо
 
 - Обновите сервер конфигурации до версии 9,20 или более поздней.
 
@@ -46,8 +46,8 @@ ms.locfileid: "74091251"
 
 При возникновении этой проблемы возникают следующие ситуации.
 
-- Сервер vCenter \<vCenter > недоступен из-за ошибки: удаленный сервер вернул ошибку: (503) сервер недоступен.
-- Сервер vCenter \<vCenter > недоступен из-за ошибки: удаленный сервер вернул ошибку: не удалось подключиться к удаленному серверу.
+- > vCenter Server \<vCenter недоступен из-за ошибки: удаленный сервер вернул ошибку: (503) сервер недоступен.
+- > vCenter Server \<vCenter недоступен из-за ошибки: удаленный сервер вернул ошибку: не удалось подключиться к удаленному серверу.
 - Не удалось подключиться к серверу vCenter/ESXi.
 
 Чтобы устранить проблему:
@@ -60,7 +60,7 @@ ms.locfileid: "74091251"
 
 1. Откройте IE в контексте пользователя системы с помощью средства PsExec.
     
-    psexec -s -i "%programfiles%\Internet Explorer\iexplore.exe"
+    PsExec-s-i "%Програмфилес%\интернет Explorer\iexplore.exe"
 
 2. Измените параметры прокси в Internet Explorer, чтобы обойти IP-адрес vCenter.
 3. Перезапустите службу тманссвк.
@@ -77,6 +77,6 @@ ms.locfileid: "74091251"
 
 4. Перезапустите службу поставщика DRA.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Управление сервером конфигурации для аварийного восстановления виртуальной машины VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-manage-configuration-server#refresh-configuration-server) 
+[Управление сервером конфигурации для аварийного восстановления виртуальных машин VMware](https://docs.microsoft.com/azure/site-recovery/vmware-azure-manage-configuration-server#refresh-configuration-server) 

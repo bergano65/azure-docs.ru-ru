@@ -14,15 +14,15 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/13/2018
-ms.author: barclayn
-ms.openlocfilehash: 3a2addce83862ef109089f1474330f3821daaed7
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.author: terrylan
+ms.openlocfilehash: 413ec8b121838a4ffac4119421ec3266e141618b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726720"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80549249"
 ---
-# <a name="penetration-testing"></a>Тесты на проникновение
+# <a name="penetration-testing"></a>Выполнение тестов на проникновение
 Одно из преимуществ использования Azure для развертывания и тестирования приложений — возможность быстро создавать среды. Вам не нужно беспокоиться о подаче заявок, приобретении и настройке собственного локального оборудования.
 
 Это прекрасно, но вам по-прежнему нужно самостоятельно проводить стандартную экспертизу безопасности. Одно из вещей, которые, скорее всего, захочется сделать, — это проверить приложения, развертываемые в Azure.
@@ -44,6 +44,6 @@ ms.locfileid: "68726720"
 
 К тестам, которые запрещено выполнять, относятся атаки типа ["отказ в обслуживании" (DoS)](https://en.wikipedia.org/wiki/Denial-of-service_attack) . В эту категорию включены как запуск DoS-атаки, так и все сопутствующие тесты, которые могут определять, демонстрировать или имитировать DoS-атаку любого типа.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Если вы хотите формально документировать тестирование на проникновение приложений, размещенных в Microsoft Azure, перейдите к [правилам тестирования уязвимости](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=2) и заполните форму уведомления о тестировании.

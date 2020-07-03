@@ -15,10 +15,10 @@ ms.reviewer: addimitu
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 47a60ed44ddf057ef983f8f76f23fd784bc3efd5
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73961821"
 ---
 # <a name="delete-a-directory-in-azure-active-directory"></a>Удаление каталога в Azure Active Directory
@@ -67,7 +67,7 @@ ms.locfileid: "73961821"
 
 Вы можете добавить подписку в состояние "отозвано **", чтобы** удалить ее в течение трех дней с помощью центра администрирования Microsoft 365.
 
-1. Войдите в [центр администрирования Microsoft 365](https://admin.microsoft.com) с помощью учетной записи глобального администратора в вашей организации. Если вы пытаетесь удалить каталог contoso с начальным доменом по умолчанию contoso.onmicrosoft.com, выполните вход с помощью имени участника-пользователя, например admin@contoso.onmicrosoft.com.
+1. Войдите в [центр администрирования Microsoft 365](https://admin.microsoft.com) с помощью учетной записи глобального администратора в вашей организации. Если вы пытаетесь удалить каталог contoso с начальным доменом по умолчанию contoso.onmicrosoft.com, выполните вход с именем участника-пользователя, например admin@contoso.onmicrosoft.com.
 
 2. Выполните предварительный просмотр нового центра администрирования Microsoft 365, убедившись в том, что включен **новый переключатель центр администрирования** .
 
@@ -119,7 +119,7 @@ Deleted | Данные удалены | Пользователи не могут
 
 Вы можете добавить продукт самостоятельной регистрации, например Microsoft Power BI или Azure Rights Management Services, в состояние **удаления** , чтобы немедленно удалить его на портале Azure AD.
 
-1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с помощью учетной записи глобального администратора в Организации. Если вы пытаетесь удалить каталог contoso с начальным доменом по умолчанию contoso.onmicrosoft.com, выполните вход с помощью имени участника-пользователя, например admin@contoso.onmicrosoft.com.
+1. Войдите в [центр администрирования Azure AD](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) с помощью учетной записи глобального администратора в Организации. Если вы пытаетесь удалить каталог contoso с начальным доменом по умолчанию contoso.onmicrosoft.com, выполните вход с именем участника-пользователя, например admin@contoso.onmicrosoft.com.
 
 2. Выберите **лицензии**, а затем **самостоятельная регистрация продуктов**. Вы можете просматривать все продукты самостоятельной регистрации отдельно от подписок на основе места. Выберите продукт, который вы хотите удалить без возможности восстановления. Ниже приведен пример в Microsoft Power BI.
 
@@ -141,6 +141,6 @@ Deleted | Данные удалены | Пользователи не могут
 
     ![имя пользователя введено неправильно или не найдено](./media/directory-delete-howto/delete-organization.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Документация Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)
+[Документация по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/)

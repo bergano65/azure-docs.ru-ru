@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/09/2018
 ms.author: stewu
 ms.openlocfilehash: c975af1799d427651b76bb9fde5ff765afed3f86
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73904575"
 ---
 # <a name="performance-tuning-guidance-for-using-powershell-with-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения
@@ -21,12 +21,12 @@ ms.locfileid: "73904575"
 
 ## <a name="performance-related-properties"></a>Свойства, связанные с производительностью
 
-| Свойство            | значение по умолчанию | ОПИСАНИЕ |
+| Свойство            | По умолчанию | Описание |
 |---------------------|---------|-------------|
 | PerFileThreadCount  | 10      | Этот параметр позволяет выбрать количество параллельных потоков для отправки или скачивания каждого файла. Это количество представляет собой максимальное количество потоков, которые можно выделить для каждого файла. В зависимости от сценария количество потоков может быть меньше (например, при передаче файла размером 1 КБ вы получите один поток, даже если запросите 20 потоков).  |
 | ConcurrentFileCount | 10      | Этот параметр предназначен для отправки или скачивания папок. Он определяет количество одновременно отправляемых или скачиваемых файлов. Это количество представляет собой максимальное количество файлов, которые можно передать или скачать одновременно. В зависимости от сценария количество параллельно передаваемых или скачиваемых файлов может быть меньше (например, при передаче двух файлов одновременно будут передаваться два файла, даже если запрошено 15). |
 
-**Пример**
+**Пример.**
 
 Эта команда скачивает файлы из Data Lake Storage 1-го поколения на локальный диск пользователя, используя 20 потоков на один файл и 100 одновременно скачиваемых файлов.
 
@@ -48,7 +48,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
     `Total thread count = total physical cores * 6`
 
-    **Пример**
+    **Пример.**
 
     Предположим, что вы выполняете команды PowerShell на виртуальной машине D14 с 16 ядрами.
 
@@ -58,7 +58,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
     `PerFileThreadCount = 10 threads for the first 2.5 GB + 1 thread for each additional 256 MB increase in file size`
 
-    **Пример**
+    **Пример.**
 
     Предположим, что у вас есть 100 файлов размером от 1 до 10 ГБ. Мы используем файл размером 10 ГБ в качестве максимального размера файла в формуле следующего вида.
 
@@ -68,7 +68,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
     `Total thread count = PerFileThreadCount * ConcurrentFileCount`
 
-    **Пример**
+    **Пример.**
 
     На основе использованных примеров значений.
 
@@ -86,7 +86,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
 Вы можете продолжить изменять значения этих параметров, уменьшая и увеличивая значение **PerFileThreadCount** в зависимости от размера файлов.
 
-### <a name="limitation"></a>Ограничения
+### <a name="limitation"></a>Ограничение
 
 * **Число файлов меньше, чем значение ConcurrentFileCount.** Если количество отправляемых файлов меньше вычисленного значения **ConcurrentFileCount**, следует уменьшить значение **ConcurrentFileCount** в соответствии с числом файлов. Все остальные потоки можно использовать для увеличения значения **PerFileThreadCount**.
 
@@ -96,10 +96,10 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
 * **Ошибки регулирования.** При слишком высоком уровне параллелизма могут возникнуть ошибки регулирования. При этом необходимо уменьшить уровень параллелизма или обратиться к нам.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Использование Data Lake Storage Gen1 для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
+* [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
-* [Использование Azure Data Lake Analytics с Azure Data Lake Storage 1-го поколения](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
+* [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
 

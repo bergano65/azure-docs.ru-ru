@@ -11,13 +11,13 @@ metadata:
   author: mtillman
   ms.author: mtillman
   manager: daveba
-  ms.date: 07/27/2019
-  ms.openlocfilehash: e11e0edf214d3362784285cc24ee209855383119
-  ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+  ms.date: 05/19/2020
+  ms.openlocfilehash: 4e1b18e1037b37deba3e037f3e896bf1536f4fd7
+  ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/12/2020
-  ms.locfileid: "77166165"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83591919"
 highlightedContent:
   items:
   - title: Что такое Azure AD?
@@ -26,12 +26,12 @@ highlightedContent:
   - title: Новые возможности в Azure AD
     itemType: whats-new
     url: ./fundamentals/whats-new.md
+  - title: Обеспечение безопасности для удаленных сотрудников
+    itemType: get-started
+    url: https://docs.microsoft.com/enterprise-mobility-security/remote-work/
   - title: Назначение ролей пользователям
     itemType: how-to-guide
     url: ./fundamentals/active-directory-users-assign-role-azure-portal.md
-  - title: Создание группы и добавление участников
-    itemType: how-to-guide
-    url: ./fundamentals/add-users-azure-active-directory.md
   - title: Контрольный список для развертывания Azure AD
     itemType: concept
     url: ./fundamentals/active-directory-deployment-checklist-p2.md
@@ -82,34 +82,6 @@ conceptualContent:
     footerLink:
       url: ./authentication/index.yml
       text: Подробнее
-  - title: Категория "бизнес — бизнес" (B2B)
-    links:
-    - url: ./b2b/what-is-b2b.md
-      itemType: overview
-      text: Что собой представляет Azure AD B2B?
-    - url: ./b2b/add-users-administrator.md
-      itemType: how-to-guide
-      text: Добавление гостевых пользователей на портале
-    - url: ./b2b/o365-external-user.md
-      itemType: concept
-      text: Общий доступ в Office 365 и B2B
-    footerLink:
-      url: ./b2b/index.yml
-      text: Подробнее
-  - title: Категория "бизнес — потребитель" (B2C)
-    links:
-    - url: ../active-directory-b2c/active-directory-b2c-overview.md
-      itemType: overview
-      text: Что собой представляет Azure AD B2C?
-    - url: ../active-directory-b2c/tutorial-create-tenant.md
-      itemType: tutorial
-      text: Создание клиента Azure AD B2C
-    - url: ../active-directory-b2c/active-directory-b2c-get-started-custom.md
-      itemType: how-to-guide
-      text: Пользовательские политики в Azure AD B2C
-    footerLink:
-      url: ../active-directory-b2c/index.yml
-      text: Подробнее
   - title: Подготовка облака
     links:
     - url: ./cloud-provisioning/what-is-cloud-provisioning.md
@@ -140,7 +112,7 @@ conceptualContent:
       text: Подробнее
   - title: Разработчики
     links:
-    - url: ./develop/about-microsoft-identity-platform.md
+    - url: ./develop/v2-overview.md
       itemType: overview
       text: Общие сведения о платформе удостоверений Майкрософт
     - url: ./develop/v2-oauth2-auth-code-flow.md
@@ -194,6 +166,20 @@ conceptualContent:
     footerLink:
       url: ./users-groups-roles/index.yml
       text: Подробнее
+  - title: Внешние удостоверения
+    links:
+    - url: ./b2b/compare-with-b2c.md
+      itemType: overview
+      text: Сравнение решений для внешних пользователей
+    - url: ../active-directory-b2c/active-directory-b2c-overview.md
+      itemType: overview
+      text: Масштабирование приложений для потребителей (B2C)
+    - url: ./b2b/what-is-b2b.md
+      itemType: overview
+      text: Совместная работа с пользователями за пределами организации (B2B)
+    footerLink:
+      url: ./b2b/index.yml
+      text: Подробнее
   - title: Гибридное удостоверение
     links:
     - url: ./hybrid/whatis-hybrid-identity.md
@@ -210,15 +196,15 @@ conceptualContent:
       text: Подробнее
   - title: Identity Governance
     links:
+    - url: ./governance/entitlement-management-access-package-first.md
+      itemType: how-to-guide
+      text: Создание пакета для доступа
     - url: ./governance/create-access-review.md
       itemType: how-to-guide
-      text: Создание проверки доступа
-    - url: ./governance/perform-access-review.md
-      itemType: how-to-guide
-      text: Запуск проверки доступа
+      text: Создание проверки доступа для группы или приложения
     - url: ./conditional-access/terms-of-use.md
       itemType: how-to-guide
-      text: Обязательное применение условий использования
+      text: Требование от пользователей принятия условий использования
     footerLink:
       url: ./governance/index.yml
       text: Подробнее

@@ -5,10 +5,10 @@ ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
 ms.openlocfilehash: 4eb794fa35164e3f86a5e3d6f67d446321f91f0a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67132999"
 ---
 ## <a name="prepare-to-authenticate-azure-resource-manager-requests"></a>Подготовка к проверке подлинности запросов Azure Resource Manager
@@ -41,8 +41,8 @@ ms.locfileid: "67132999"
 3. Воспользуйтесь следующей командой для создания нового приложения Azure Active Directory, заменив в ней заполнители:
    
    * **{Display name}:** отображаемое имя вашего приложения, например **MySampleApp**.
-   * **{Home page URL}:** URL-адрес домашней страницы вашего приложения, такие как **http:\//mysampleapp/home**. Этот URL-адрес необязательно должен указывать на реальное приложение.
-   * **{Application identifier}:** Уникальный идентификатор, например **http:\//mysampleapp**. Этот URL-адрес необязательно должен указывать на реальное приложение.
+   * **{URL-адрес домашней страницы}:** URL-адрес домашней страницы приложения, например **http:\//мисамплеапп/Хоме**. Этот URL-адрес необязательно должен указывать на реальное приложение.
+   * **{Идентификатор приложения}:** Уникальный идентификатор, например **http:\//мисамплеапп**. Этот URL-адрес необязательно должен указывать на реальное приложение.
    * **{Password}:** пароль, который используется для проверки подлинности в вашем приложении.
      
      ```powershell

@@ -1,15 +1,14 @@
 ---
 title: Отправка оповещений о работоспособности службы Azure в OpsGenie с помощью веб-перехватчиков
 description: Передача в экземпляр OpsGenie персонализированных уведомлений о событиях работоспособности служб.
-ms.service: service-health
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: d1f0ddb506b915697335ec71eab341a7cdb73dd7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: def12d5e7b1b93b8370cd7be61538fca53531ae1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75465234"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77654143"
 ---
 # <a name="send-azure-service-health-alerts-with-opsgenie-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в OpsGenie с помощью веб-перехватчиков
 
@@ -42,7 +41,7 @@ ms.locfileid: "75465234"
 
 1. В списке **Действия** определите следующие сведения.
 
-    а. **Тип действия:** *веб-перехватчик*
+    a. **Тип действия: ** *Веб-перехватчик*.
 
     b. **Подробности**: **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
 
@@ -59,7 +58,7 @@ ms.locfileid: "75465234"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    а. **Тип действия:** *веб-перехватчик*
+    a. **Тип действия: ** *Веб-перехватчик*.
 
     b. **Подробности**: **URL-адрес интеграции** для OpsGenie, который вы сохранили ранее.
 
@@ -68,7 +67,7 @@ ms.locfileid: "75465234"
 1. Завершив изменение группы действий, нажмите кнопку **Сохранить**.
 
 ## <a name="testing-your-webhook-integration-via-an-http-post-request"></a>Проверка интеграции с веб-перехватчиком с помощью запроса HTTP POST
-1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных для веб-перехватчика службы работоспособности служб см. в статье [Веб-перехватчики для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md).
+1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных веб-перехватчика работоспособности службы см. в этой веб- [перехватчике для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md).
 
 1. Создайте запрос HTTP POST следующим образом:
 
@@ -83,8 +82,8 @@ ms.locfileid: "75465234"
 
 1. Откройте [OpsGenie](https://www.opsgenie.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
-- Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
-- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).
-- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+- Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
+- Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
+- Сведения об [уведомлениях о работоспособности служб](../azure-monitor/platform/service-notifications.md).
+- Дополнительные сведения о [группах действий](../azure-monitor/platform/action-groups.md).

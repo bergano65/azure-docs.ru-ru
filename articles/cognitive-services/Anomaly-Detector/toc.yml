@@ -10,12 +10,8 @@
   items:
     - name: Клиентская библиотека
       items:
-        - name: 'Использование C#'
-          href: quickstarts/detect-data-anomalies-csharp-sdk.md
-        - name: Использование Python
-          href: quickstarts/detect-data-anomalies-python-sdk.md
-        - name: Использование Node.js
-          href: quickstarts/detect-data-anomalies-nodejs-sdk.md
+        - name: Клиентские библиотеки Детектора аномалий
+          href: ./quickstarts/client-libraries.md
     - name: REST API
       items:
         - name: 'Использование C#'
@@ -24,7 +20,7 @@
           href: quickstarts/detect-data-anomalies-java.md
         - name: Использование Python
           href: quickstarts/detect-data-anomalies-python.md
-- name: Руководства
+- name: Учебники
   items:
     - name: "Визуализация аномалий в пакетном режиме с помощью Power\_BI"
       href: tutorials/batch-anomaly-detection-powerbi.md
@@ -48,7 +44,7 @@
   items:
     - name: Рекомендации по работе с API Детектора аномалий
       href: concepts/anomaly-detection-best-practices.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Справочник по REST API
       href: 'https://aka.ms/anomaly-detector-rest-api-ref'
@@ -78,6 +74,16 @@
       href: 'https://arxiv.org/abs/1906.03821'
 - name: Ресурсы
   items:
+    - name: Поддержка
+      items:
+        - name: Получение поддержки
+          href: 'https://aka.ms/adsupport'
+        - name: Stack Overflow
+          href: 'https://aka.ms/adso'
+        - name: MSDN
+          href: 'https://aka.ms/admsdn'
+        - name: UserVoice
+          href: 'https://aka.ms/aduservoice'
     - name: Цены
       href: 'https://aka.ms/adpricing'
     - name: Доступность по регионам
@@ -90,13 +96,3 @@
       href: 'https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/'
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
-- name: Поддержка
-  items:
-    - name: Получение поддержки
-      href: 'https://aka.ms/adsupport'
-    - name: Stack Overflow
-      href: 'https://aka.ms/adso'
-    - name: MSDN
-      href: 'https://aka.ms/admsdn'
-    - name: UserVoice
-      href: 'https://aka.ms/aduservoice'

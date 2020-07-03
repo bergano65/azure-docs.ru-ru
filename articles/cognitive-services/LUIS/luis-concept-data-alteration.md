@@ -2,13 +2,13 @@
 title: Изменение данных — LUIS
 description: Узнайте, как изменить данные перед прогнозированием в службе "Распознавание речи" (LUIS).
 ms.topic: conceptual
-ms.date: 02/11/2020
-ms.openlocfilehash: 5547724a6333d248a7ba4e9aeecaaa8f331feb7d
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.date: 05/06/2020
+ms.openlocfilehash: 3a88739caa9b35679f10b0cb63a804e9464c871c
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77148272"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872248"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Изменение данных высказываний до или во время прогнозирования
 LUIS предоставляет способы управления высказыванием до или во время прогнозирования. Сюда входит [исправление орфографических](luis-tutorial-bing-spellcheck.md)ошибок и устранение проблем с часовым поясом для предварительно созданной [datetimeV2](luis-reference-prebuilt-datetimev2.md).
@@ -30,12 +30,12 @@ LUIS предоставляет способы управления высказ
 
 |Параметр|Значение|
 |--|--|
-|`spellCheck`|Логическое|
+|`spellCheck`|boolean|
 |`bing-spell-check-subscription-key`|Ключ конечной точки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
 
 Когда [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/) обнаруживает ошибку, из конечной точки возвращаются исходное выражение, исправленное выражение и прогнозирование.
 
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
 
 ```JSON
 {
@@ -49,7 +49,7 @@ LUIS предоставляет способы управления высказ
 }
 ```
 
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
 ```JSON
 {
@@ -75,42 +75,27 @@ API проверки орфографии Bing, используемый в LUIS
 ## <a name="change-time-zone-of-prebuilt-datetimev2-entity"></a>Изменение часового пояса предварительно созданной сущности datetimeV2
 Когда приложение LUIS использует предварительно созданную сущность [datetimeV2](luis-reference-prebuilt-datetimev2.md) , в ответе прогноза может возвращаться значение DateTime. Часовой пояс запроса используется для определения правильного возвращаемого значения даты и времени. Если запрос поступает от бота или другого централизованного приложения до передачи в LUIS, исправьте часовой пояс, используемый LUIS.
 
-### <a name="endpoint-querystring-parameter"></a>Параметр QueryString конечной точки
-Часовой пояс исправляется путем добавления часового пояса пользователя к [конечной точке](https://go.microsoft.com/fwlink/?linkid=2092356) с помощью параметра `timezoneOffset`. Чтобы изменить время, значение `timezoneOffset` должно быть положительным или отрицательным числом в минутах.
+### <a name="v3-prediction-api-to-alter-timezone"></a>V3 прогнозирование API для изменения часового пояса
 
-|Параметр|Значение|
-|--|--|
-|`timezoneOffset`|положительное или отрицательное число в минутах|
+В версии 3 `datetimeReference` определяет смещение часового пояса. Дополнительные сведения о [прогнозах v3](luis-migration-api-v3.md#v3-post-body).
 
-### <a name="daylight-savings-example"></a>Пример перехода на летнее время
-Чтобы скорректировать возвращенную предварительно созданную сущность datetimeV2 для перехода на летнее время, следует использовать параметр QueryString `timezoneOffset` со значением +/– в минутах для запроса [конечной точки](https://go.microsoft.com/fwlink/?linkid=2092356).
+### <a name="v2-prediction-api-to-alter-timezone"></a>API прогнозирования версии 2 для изменения часового пояса
+Часовой пояс исправляется путем добавления часового пояса пользователя к конечной точке с `timezoneOffset` помощью параметра, основанного на версии API. Значение параметра должно быть положительным или отрицательным числом в минутах для изменения времени.
 
-#### <a name="v2-prediction-endpoint-requesttabv2"></a>[Запрос конечной точки прогнозирования V2](#tab/V2)
+#### <a name="v2-prediction-daylight-savings-example"></a>Пример прогнозирования летнего времени на версии 2
+Если вам нужен возвращенный datetimeV2, чтобы настроить переход на летнее время, используйте параметр QueryString со значением +/-в минутах для запроса к [конечной точке](https://go.microsoft.com/fwlink/?linkid=2092356) .
 
 Добавьте 60 минут:
 
-https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the lights on?**timezoneOffset=60**&verbose={boolean}&spellCheck={boolean}&staging={boolean}&bing-spell-check-subscription-key={string}&log={boolean}
+`https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the lights on?timezoneOffset=60&verbose={boolean}&spellCheck={boolean}&staging={boolean}&bing-spell-check-subscription-key={string}&log={boolean}`
 
 Удалите 60 минут:
 
-https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the lights on?**timezoneOffset=-60**&verbose={boolean}&spellCheck={boolean}&staging={boolean}&bing-spell-check-subscription-key={string}&log={boolean}
+`https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appId}?q=Turn the lights on?timezoneOffset=-60&verbose={boolean}&spellCheck={boolean}&staging={boolean}&bing-spell-check-subscription-key={string}&log={boolean}`
 
-#### <a name="v3-prediction-endpoint-requesttabv3"></a>[Запрос конечной точки прогнозирования V3](#tab/V3)
+#### <a name="v2-prediction-c-code-determines-correct-value-of-parameter"></a>Код C# прогнозирования версии 2 определяет правильное значение параметра
 
-Добавьте 60 минут:
-
-HTTPS://{регион}. API. turn. Microsoft. com/Luis/v 3.0-Предварительная версия/приложения/{appId}/слоты/рабочий/прогноз? запрос = включить индикаторы? **timezoneOffset = 60**& проверки орфографии = {boolean} & Bing-правописание-Check-Subscription-Key = {строка} & log = {Boolean}
-
-Удалите 60 минут:
-
-HTTPS://{регион}. API. turn. Microsoft. com/Luis/v 3.0-Предварительная версия/приложения/{appId}/слоты/рабочий/прогноз? запрос = включить индикаторы? **timezoneOffset =-60 & проверки**орфографии = {boolean} & Bing-орфографические проверки-подписка — ключ = {строка} & log = {Boolean}
-
-Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
-
-* * *
-
-## <a name="c-code-determines-correct-value-of-timezoneoffset"></a>Код на C# определяет правильное значение timezoneOffset
-В следующем коде на C# для определения правильного значения [ на основе системного времени используется метод ](https://docs.microsoft.com/dotnet/api/system.timezoneinfo)FindSystemTimeZoneById[ класса ](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples)TimeZoneInfo`timezoneOffset`:
+В следующем коде C# используется метод [FindSystemTimeZoneById](https://docs.microsoft.com/dotnet/api/system.timezoneinfo.findsystemtimezonebyid#examples) класса [TimeZoneInfo](https://docs.microsoft.com/dotnet/api/system.timezoneinfo) для определения правильного значения смещения на основе системного времени:
 
 ```csharp
 // Get CST zone id
@@ -122,8 +107,8 @@ DateTime utcDatetime = DateTime.UtcNow;
 // Get Central Standard Time value of Now
 DateTime cstDatetime = TimeZoneInfo.ConvertTimeFromUtc(utcDatetime, targetZone);
 
-// Find timezoneOffset
-int timezoneOffset = (int)((cstDatetime - utcDatetime).TotalMinutes);
+// Find timezoneOffset/datetimeReference
+int offset = (int)((cstDatetime - utcDatetime).TotalMinutes);
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: yluiu
 ms.openlocfilehash: 40ca1dbf981c5a9025cf5a0bac6b007709d69a77
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76934581"
 ---
 # <a name="specify-a-face-detection-model"></a>Указание модели определения лиц
@@ -27,7 +27,7 @@ ms.locfileid: "76934581"
 
 Если вы не уверены, следует ли использовать последнюю модель, перейдите к разделу [Вычисление различных моделей](#evaluate-different-models) , чтобы оценить новую модель и сравнить результаты с помощью текущего набора данных.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вы должны быть знакомы с концепцией обнаружения лиц в AI. Если вы не видите, ознакомьтесь с концептуальным руководством по обнаружению лиц или пошаговым руководством.
 
@@ -38,16 +38,16 @@ ms.locfileid: "76934581"
 
 Функция обнаружения лиц находит границы ограничивающих прямоугольников для людей и определяет их визуальные ориентиры. Он извлекает функции лица и сохраняет их для последующего использования в операциях [распознавания](../concepts/face-recognition.md) .
 
-При использовании API [Обнаружение лиц] можно назначить версию модели с помощью параметра `detectionModel`. Возможные значения:
+При использовании API [распознавания лиц] можно назначить версию модели с помощью `detectionModel` параметра. Возможные значения:
 
 * `detection_01`
 * `detection_02`
 
-URL-адрес запроса для REST API [Обнаружение лиц] будет выглядеть следующим образом:
+URL-адрес запроса для REST API [обнаружения лиц] будет выглядеть следующим образом:
 
 `https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel][&detectionModel]&subscription-key=<Subscription key>`
 
-Если вы используете клиентскую библиотеку, можно назначить значение для `detectionModel`, передав соответствующую строку. Если оставить его неназначенным, API будет использовать версию модели по умолчанию (`detection_01`). См. Следующий пример кода для клиентской библиотеки .NET.
+Если вы используете клиентскую библиотеку, можно присвоить значение `detectionModel` , передав соответствующую строку. Если оставить его неназначенным, API будет использовать версию модели по умолчанию (`detection_01`). См. Следующий пример кода для клиентской библиотеки .NET.
 
 ```csharp
 string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
@@ -56,7 +56,7 @@ var faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, false, false, rec
 
 ## <a name="add-face-to-person-with-specified-model"></a>Добавить лицо к лицу с указанной моделью
 
-Служба распознавания лиц может извлекать данные о лицах из изображения и связывать их с объектом **Person** через API [Персонграуп Person (Добавление лиц)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) . В этом вызове API можно указать модель обнаружения таким же образом, как и при [Обнаружение лиц].
+Служба распознавания лиц может извлекать данные о лицах из изображения и связывать их с объектом **Person** через API [Персонграуп Person (Добавление лиц)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) . В этом вызове API можно указать модель обнаружения таким же образом, как и при [обнаружении лиц].
 
 См. Следующий пример кода для клиентской библиотеки .NET.
 
@@ -71,10 +71,10 @@ string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
 await client.PersonGroupPerson.AddFaceFromUrlAsync(personGroupId, personId, imageUrl, detectionModel: "detection_02");
 ```
 
-Этот код создает объект **персонграуп** с идентификатором `mypersongroupid` и добавляет в него **пользователя** . Затем он добавляет к этому **пользователю** лицо, использующее модель `detection_02`. Если не указать параметр *детектионмодел* , API будет использовать модель по умолчанию `detection_01`.
+Этот код создает объект **персонграуп** с идентификатором `mypersongroupid` и добавляет в него **пользователя** . Затем он добавляет к этому **пользователю** лицо, использующее `detection_02` модель. Если не указать параметр *детектионмодел* , API будет использовать модель по умолчанию, `detection_01`.
 
 > [!NOTE]
-> Не нужно использовать одинаковую модель обнаружения для всех лиц в объекте **Person** , и вам не нужно использовать ту же модель обнаружения при обнаружении новых лиц для сравнения с объектом **Person** (например, в API-интерфейсе распознавания [Face — Identify] ).
+> Не нужно использовать одинаковую модель обнаружения для всех лиц в объекте **Person** , и вам не нужно использовать ту же модель обнаружения при обнаружении новых лиц для сравнения с объектом **Person** (например, в API-интерфейсе распознавания [лиц] ).
 
 ## <a name="add-face-to-facelist-with-specified-model"></a>Добавить лицо в Фацелист с указанной моделью
 
@@ -87,7 +87,7 @@ string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
 await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: "detection_02");
 ```
 
-Этот код создает **фацелист** с именем `My face collection` и добавляет к нему лицо с `detection_02`ной моделью. Если не указать параметр *детектионмодел* , API будет использовать модель по умолчанию `detection_01`.
+Этот код создает **фацелист** с именем `My face collection` и добавляет к нему лицо с `detection_02` моделью. Если не указать параметр *детектионмодел* , API будет использовать модель по умолчанию, `detection_01`.
 
 > [!NOTE]
 > Не нужно использовать одну и ту же модель обнаружения для всех лиц в объекте **фацелист** , и вам не нужно использовать ту же модель обнаружения при обнаружении новых Сторон для сравнения с объектом **фацелист** .
@@ -103,9 +103,9 @@ await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: 
 |Возвращает атрибуты лица (головной элемент, возраст, распознавания эмоций и т. д.), если они указаны в вызове метода Detect. |  Не возвращает атрибуты лица.     |
 |Возвращает ориентиры для лиц, если они указаны в вызове метода Detect.   | Не возвращает ориентиры для лиц.  |
 
-Лучший способ сравнить производительность моделей `detection_01` и `detection_02` — использовать их в образце набора данных. Мы рекомендуем вызывать API распознавания [Обнаружение лиц] на различных изображениях, особенно в изображениях многих лиц или лиц, которые трудно увидеть, используя каждую модель обнаружения. Обратите внимание на количество сторон, возвращаемых каждой моделью.
+Лучший способ сравнить производительность моделей `detection_01` и `detection_02` — использовать их в образце набора данных. Мы рекомендуем вызывать API распознавания [лиц] на различных изображениях, особенно в изображениях многих лиц или лиц, которые трудно увидеть, используя каждую модель обнаружения. Обратите внимание на количество сторон, возвращаемых каждой моделью.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как указать модель обнаружения для использования с различными API распознавания лиц. Затем следуйте инструкциям краткого руководства, чтобы приступить к работе с обнаружением лиц.
 
@@ -113,9 +113,9 @@ await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: 
 * [Пакет SDK для Python для лиц](../Quickstarts/python-sdk.md)
 * [Пакет SDK для лиц Go](../Quickstarts/go-sdk.md)
 
-[Обнаружение лиц]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d
+[Лицо — обнаружить;]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d
 [Face - Find Similar]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237
-[Face — Identify]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239
+[Лицо — идентифицировать;]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239
 [Face - Verify]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a
 [PersonGroup - Create]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244
 [PersonGroup - Get]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395246

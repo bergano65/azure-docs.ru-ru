@@ -7,19 +7,19 @@ ms.topic: article
 ms.date: 04/05/2019
 ms.author: rogarana
 ms.subservice: tables
-ms.openlocfilehash: f1846fae4cbf473df688a2b184c307d72ab2f8d0
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 746044aa835df52e61c234c8b5ca61164fffbbc5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721478"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80545956"
 ---
 # <a name="perform-azure-table-storage-operations-with-azure-powershell"></a>Выполнение операций в хранилище таблиц Azure с помощью Azure PowerShell 
 [!INCLUDE [storage-table-cosmos-db-tip-include](../../../includes/storage-table-cosmos-db-langsoon-tip-include.md)]
 
 Хранилище таблиц Azure — хранилище данных NoSQL, которое можно использовать для хранения и запросов огромных наборов структурированных нереляционных данных. Основными компонентами службы являются таблицы, сущности и свойства. Таблица представляет собой коллекцию сущностей. Сущность — это набор свойств. Каждая сущность может иметь до 252 свойств. Все они являются парами "имя — значение". В этой статье предполагается, что вы уже знакомы с понятиями хранилища таблиц Azure. Дополнительные сведения см. в статьях [Understanding the Table Service Data Model](/rest/api/storageservices/Understanding-the-Table-Service-Data-Model) (Общие сведения о модели данных службы таблиц) и [Приступая к работе с хранилищем таблиц Azure с помощью .NET](../../cosmos-db/table-storage-how-to-use-dotnet.md).
 
-В этом практическом руководстве рассматриваются распространенные операции в хранилище таблиц Azure. Вы узнаете, как выполнять следующие задачи: 
+В этом практическом руководстве рассматриваются распространенные операции в хранилище таблиц Azure. Вы научитесь: 
 
 > [!div class="checklist"]
 > * Создание таблицы
@@ -31,7 +31,7 @@ ms.locfileid: "76721478"
 
 В этом практическом руководстве показано, как создать учетную запись службы хранилища Azure в новой группе ресурсов, чтобы вы могли легко удалить ее при необходимости. Вы можете использовать существующую учетную запись хранения.
 
-В примерах требуется AZ PowerShell modules `Az.Storage (1.1.0 or greater)` и `Az.Resources (1.2.0 or greater)`. В окне PowerShell выполните `Get-Module -ListAvailable Az*`, чтобы найти версию. Если версия не отображается или нужно установить обновление, ознакомьтесь со статьей [Install and configure Azure PowerShell](/powershell/azure/install-az-ps) (Установка и настройка Azure PowerShell).
+В примерах требуется AZ PowerShell `Az.Storage (1.1.0 or greater)` modules и `Az.Resources (1.2.0 or greater)`. В окне PowerShell выполните `Get-Module -ListAvailable Az*`, чтобы найти версию. Если версия не отображается или нужно установить обновление, ознакомьтесь со статьей [Install and configure Azure PowerShell](/powershell/azure/install-az-ps) (Установка и настройка Azure PowerShell).
 
 > [!IMPORTANT]
 > Для использования этой функции Azure от PowerShell требуется установленный модуль `Az`. Текущая версия `AzTable` несовместима с предыдущим модулем AzureRM.
@@ -40,7 +40,7 @@ ms.locfileid: "76721478"
 После установки или обновления Azure PowerShell необходимо установить модуль **азтабле**, который содержит команды для управления сущностями. Чтобы установить этот модуль, запустите PowerShell от имени администратора и используйте команду **Install-Module**.
 
 > [!IMPORTANT]
-> В целях совместимости имен модулей мы по-прежнему публикуем тот же модуль под старым именем `AzureRmStorageTables` в коллекция PowerShell. Этот документ будет ссылаться только на новое имя.
+> Для совместимости имен модулей мы все еще публикуем тот же модуль под старым именем `AzureRmStorageTables` в коллекция PowerShell. Этот документ будет ссылаться только на новое имя.
 
 ```powershell
 Install-Module AzTable
@@ -117,7 +117,7 @@ $storageTable = Get-AzStorageTable –Name $tableName –Context $ctx
 ## <a name="reference-cloudtable-property-of-a-specific-table"></a>Ссылка на свойство CloudTable конкретной таблицы
 
 > [!IMPORTANT]
-> Использование CloudTable является обязательным при работе с модулем PowerShell **азтабле** . Чтобы получить ссылку на этот объект, вызовите команду **Get-азтаблетабле** . Эта команда также создает таблицу, если она еще не существует.
+> Использование CloudTable является обязательным при работе с модулем PowerShell **азтабле** . Чтобы получить ссылку на этот объект, вызовите команду **Get-азсторажетабле** . Эта команда также создает таблицу, если она еще не существует.
 
 Для выполнения операций с таблицей с помощью **азтабле**требуется ссылка на свойство CloudTable определенной таблицы.
 
@@ -146,7 +146,7 @@ Get-AzStorageTable –Context $Ctx | select Name
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом практическом руководстве описаны распространенные операции в хранилище таблиц Azure, выполняемые с помощью PowerShell, в частности: 
 

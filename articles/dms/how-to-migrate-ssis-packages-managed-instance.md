@@ -3,23 +3,23 @@ title: Миграция пакетов служб SSIS в управляемый
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как перенести пакеты и проекты SQL Server Integration Services (SSIS) в управляемый экземпляр базы данных SQL Azure с помощью Azure Database Migration Service или Помощник по миграции данных.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 01/08/2020
-ms.openlocfilehash: 22f3e6a0e4c041024e826a7ed724d788ce77da62
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 02/20/2020
+ms.openlocfilehash: 97a466ab033a42016c0d82465d1f98e2dcae8080
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75751219"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80297184"
 ---
-# <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-database-managed-instance"></a>Миграция пакетов SQL Server Integration Services в управляемый экземпляр базы данных SQL Azure
+# <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-database-managed-instance"></a>Перенос пакетов SQL Server Integration Services в Управляемый экземпляр Базы данных SQL Azure
 Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты служб SSIS из исходной базы данных SSISDB, размещенной SQL Server, в целевую SSISDB, размещенную в управляемом экземпляре SQL Azure, можно использовать Azure Database Migration Service.
 
 Если используемая версия служб SSIS более ранняя, чем 2012, или вы используете типы хранилищ пакетов, отличные от SSISDB, перед переносом проектов или пакетов служб SSIS их необходимо преобразовать с помощью мастера преобразования Integration Services проектов, который также можно запустить из SSMS. Дополнительные сведения см. в статье [Преобразование проектов в модель развертывания проекта](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-2017#convert).
@@ -33,7 +33,7 @@ ms.locfileid: "75751219"
 > * Оценка проектов и пакетов исходной SSIS.
 > * Перенос проектов и пакетов SSIS в Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для выполнения этих действий вам потребуется следующее:
 
@@ -61,13 +61,13 @@ ms.locfileid: "75751219"
 
     ![Отображение поставщиков ресурсов](media/how-to-migrate-ssis-packages-mi/portal-select-resource-provider.png)
 
-3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
 
     ![Регистрация поставщика ресурсов](media/how-to-migrate-ssis-packages-mi/portal-register-resource-provider.png)
 
 ## <a name="create-an-azure-database-migration-service-instance"></a>Создание экземпляра Azure Database Migration Service
 
-1. На портале Azure выберите + **Создать ресурс**, введите в поле поиска **Azure Database Migration Service**, а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
+1. В портал Azure выберите + **создать ресурс**, найдите **Azure Database Migration Service**, а затем выберите **Azure Database Migration Service** из раскрывающегося списка.
 
      ![Azure Marketplace](media/how-to-migrate-ssis-packages-mi/portal-marketplace.png)
 
@@ -89,7 +89,7 @@ ms.locfileid: "75751219"
 
 6. Выберите ценовую категорию.
 
-    Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
+    Дополнительные сведения о затратах и ценовых категориях см. на [странице с ценами](https://aka.ms/dms-pricing).
 
     ![Создание службы DMS](media/how-to-migrate-ssis-packages-mi/dms-create-service2.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "75751219"
 
     ![Поиск всех экземпляров Azure Database Migration Service](media/how-to-migrate-ssis-packages-mi/dms-search.png)
 
-2. На экране **Служба миграции баз данных Azure** найдите имя созданного экземпляра и выберите его.
+2. На экране **Azure Database Migration Service** найдите имя созданного экземпляра, а затем выберите экземпляр.
 
 3. Выберите **+ Новый проект миграции**.
 
@@ -122,11 +122,11 @@ ms.locfileid: "75751219"
     Если доверенный сертификат не установлен, SQL Server создаст самозаверяющий сертификат при запуске экземпляра. Этот сертификат используется с целью шифрования учетных данных для клиентских подключений.
 
     > [!CAUTION]
-    > SSL-соединения, шифруемые с помощью самозаверяющего сертификата, не обеспечивают надежной защиты. Они уязвимы для атак "злоумышленник в середине". В рабочей среде или на серверах, подключенных к Интернету, не следует применять самозаверяющие сертификаты для SSL.
+    > TLS-подключения, зашифрованные с помощью самозаверяющего сертификата, не обеспечивают надежную защиту. Они уязвимы для атак "злоумышленник в середине". Не следует полагаться на TLS, используя самозаверяющие сертификаты в рабочей среде или на серверах, подключенных к Интернету.
 
    ![Сведения об источнике](media/how-to-migrate-ssis-packages-mi/dms-source-details1.png)
 
-3. Щелкните **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 
@@ -134,7 +134,7 @@ ms.locfileid: "75751219"
 
      ![Сведения о целевом объекте](media/how-to-migrate-ssis-packages-mi/dms-target-details2.png)
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 ## <a name="review-the-migration-summary"></a>Просмотр сводки по миграции
 
@@ -150,6 +150,6 @@ ms.locfileid: "75751219"
 
 * Выберите **Запустить миграцию**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

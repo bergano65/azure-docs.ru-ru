@@ -1,18 +1,18 @@
 ---
 title: Различные этапы разработки мобильных приложений с помощью центра приложений Visual Studio и служб Azure
 description: Узнайте о различных стадиях разработки мобильных приложений, а также о том, как службы Майкрософт, такие как центр приложений Visual Studio, могут помочь вам создать высококлассное мобильное приложение.
-author: elamalani
+author: codemillmatt
 ms.assetid: 12bbb070-9b3c-1234-5678-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: 2693155281c6ceb9cb737960df6d3201c0983c50
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: 8d0fbc12f3048b6a9c81d53c9a9cd0a1998d4f88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454380"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80240055"
 ---
 # <a name="different-stages-in-mobile-application-development"></a>Различные этапы разработки мобильных приложений
 Создание мобильного приложения включает несколько этапов. Вы можете легко использовать преимущества служб, средств и технологий Майкрософт для создания высококлассных мобильных приложений.

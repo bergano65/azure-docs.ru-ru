@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: spelluru
 ms.openlocfilehash: fd643559a09d5c75aad9be5f35c653994c8488cf
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76169253"
 ---
 # <a name="use-command-line-tools-to-start-and-stop-azure-devtest-labs-virtual-machines"></a>Использование программ командной строки для запуска и завершения Azure DevTest Labs виртуальных машин
@@ -74,7 +74,7 @@ else {
 ```
 
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 [Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) — еще один способ автоматизации запуска и остановки виртуальных машин DevTest Labs. Azure CLI можно [установить](/cli/azure/install-azure-cli?view=azure-cli-latest) в разных операционных системах. Следующий скрипт предоставляет команды для запуска и остановки виртуальной машины в лаборатории. 
 
 ```azurecli

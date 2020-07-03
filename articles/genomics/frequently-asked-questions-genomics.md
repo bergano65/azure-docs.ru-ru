@@ -10,22 +10,22 @@ ms.service: genomics
 ms.topic: troubleshooting
 ms.date: 12/07/2017
 ms.openlocfilehash: e8806bc4f761214e6740a22093b7e18030fdf881
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76986042"
 ---
 # <a name="microsoft-genomics-common-questions"></a>Microsoft Genomics: часто задаваемые вопросы
 
-В этой статье перечислены самые популярные вопросы, связанные с Microsoft Genomics. Дополнительные сведения о службе Microsoft Genomics см. в [этой статье](overview-what-is-genomics.md). Дополнительные сведения об устранении неполадок см. в [этом руководстве](troubleshooting-guide-genomics.md). 
+В этой статье перечислены самые популярные вопросы, связанные с Microsoft Genomics. Дополнительные сведения о службе Microsoft Genomics см. в разделе [что такое Microsoft Genomics?](overview-what-is-genomics.md). Дополнительные сведения об устранении неполадок см. в [этом руководстве](troubleshooting-guide-genomics.md). 
 
 
 ## <a name="how-do-i-run-gatk4-workflows-on-microsoft-genomics"></a>Разделы справки запускать рабочие процессы GATK4 в Microsoft Genomics?
-В файле config. txt Microsoft Genomics службы укажите process_name для `gatk4`. Обратите внимание, что плата взимается по обычным тарифам.
+В файле config. txt Microsoft Genomics службы укажите process_name в `gatk4`. Обратите внимание, что плата взимается по обычным тарифам.
 
 ## <a name="how-do-i-enable-output-compression"></a>Разделы справки включить сжатие выходных данных?
-Вы можете сжать выходные данные vcf или гвкф с помощью необязательного аргумента для сжатия выходных данных. Это эквивалентно выполнению `-bgzip`, за которым следует `-tabix` в выходных данных vcf или гвкф для создания `.gz` (выходные данные бгзип) и `.tbi` (выходные файлы табикс). `bgzip` сжимает файл VCF или гвкф и `tabix` создает индекс для сжатого файла. Аргумент является логическим значением, которое по умолчанию имеет значение `false` для выходных данных vcf и `true` по умолчанию для выходных данных гквф. Чтобы использовать в командной строке, укажите `-bz` или `--bgzip-output` как `true` (Run бгзип and табикс) или `false`. Чтобы использовать этот аргумент в файле config. txt, добавьте `bgzip_output: true` или `bgzip_output: false` в файл.
+Вы можете сжать выходные данные vcf или гвкф с помощью необязательного аргумента для сжатия выходных данных. Это эквивалентно выполнению `-bgzip` , за `-tabix` которым следует выходные данные vcf или гвкф для создания `.gz` (вывода бгзип) и `.tbi` (табикс Output) файлов. `bgzip`сжимает файл VCF или гвкф и `tabix` создает индекс для сжатого файла. Аргумент является логическим значением, установленным `false` по умолчанию для выходных данных vcf и `true` по умолчанию для выходных данных гквф. Чтобы использовать в командной строке, `-bz` укажите или `--bgzip-output` как `true` (Run бгзип and табикс) или. `false` Чтобы использовать этот аргумент в файле config. txt, добавьте `bgzip_output: true` или `bgzip_output: false` в файл.
 
 ## <a name="what-is-the-sla-for-microsoft-genomics"></a>Что такое Соглашение об уровне обслуживания для Microsoft Genomics?
 Мы гарантируем, что по крайней мере 99,9 % времени служба Microsoft Genomics будет доступна для получения API-запросов рабочего процесса. См. дополнительные сведения о [Соглашении об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/genomics/v1_0/).
@@ -63,7 +63,7 @@ ms.locfileid: "76986042"
 
 Поддерживаются следующие референсные геномы:
 
- |Справочные материалы              | Значение параметра `-pa/--process-args` |
+ |Справочник              | Значение параметра `-pa/--process-args` |
  |:-------------         |:-------------                 |
  |b37                    | `R=b37m1`                     |
  |hg38                   | `R=hg38m1`                    |      
@@ -80,13 +80,13 @@ msgen распознает файлы конфигурации в следующ
 
   |Аргумент командной строки            | Строка в файле конфигурации |
   |:-------------                   |:-------------                 |
-  |`-u/--api-url-base https://url`  | *api_url_base: https://url*    |
+  |`-u/--api-url-base https://url`  | *api_url_base:https://url*    |
   |`-k/--access-key KEY`            | *access_key:KEY*              |      
   |`-pa/--process-args R=B37m1`     | *process_args:R-b37m1*        |  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте следующие ресурсы, чтобы приступить к работе с Microsoft Genomics:
 - Приступить к работе, запустив первый рабочий процесс с помощью службы Microsoft Genomics. [Запуск рабочего процесса в службе Microsoft Genomics](quickstart-run-genomics-workflow-portal.md)
-- Отправить свои данные для обработки в службу Microsoft Genomics. Дополнительные сведения см. в статьях [Отправка рабочего процесса с помощью входных FASTQ-файлов](quickstart-input-pair-FASTQ.md) | [Отправка рабочего процесса с помощью входного BAM-файла](quickstart-input-BAM.md) | [Отправка рабочего процесса с помощью нескольких входных данных из одного примера](quickstart-input-multiple.md) 
+- Отправка собственных данных для обработки службой Microsoft Genomics: [парная FASTQ-](quickstart-input-pair-FASTQ.md) | [BAM](quickstart-input-BAM.md) | [несколько FASTQ-или BAM](quickstart-input-multiple.md) 
 

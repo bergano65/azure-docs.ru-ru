@@ -3,20 +3,20 @@ title: Примеры преобразования логических утве
 titleSuffix: Azure AD B2C
 description: Примеры преобразования логических утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/03/2020
-ms.author: marsma
+ms.date: 04/01/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f0d6d74271cc4ff0be4a653b389cc70ad5c56ef9
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 007d613a1f170a0ee278a838c92ade2fce9c6dec
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983084"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80529204"
 ---
 # <a name="boolean-claims-transformations"></a>Преобразования логических утверждений
 
@@ -66,7 +66,7 @@ ms.locfileid: "76983084"
 | InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
 | InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
 
-Преобразование утверждений **AssertBooleanClaimIsEqualToValue** всегда выполняется с помощью [технического профиля проверки](validation-technical-profile.md), вызываемого через [самоподтвержденный технический профиль](self-asserted-technical-profile.md). Метаданные самоподтвержденного технического профиля **UserMessageIfClaimsTransformationBooleanValueIsNotEqual** управляют сообщением, поступающим пользователю из технического профиля.
+Преобразование утверждений **AssertBooleanClaimIsEqualToValue** всегда выполняется с помощью [технического профиля проверки](validation-technical-profile.md), вызываемого через [самоподтвержденный технический профиль](self-asserted-technical-profile.md). Метаданные самоподтвержденного технического профиля **UserMessageIfClaimsTransformationBooleanValueIsNotEqual** управляют сообщением, поступающим пользователю из технического профиля. Сообщения об ошибках можно [локализовать](localization-string-ids.md#claims-transformations-error-messages).
 
 ![Выполнение AssertStringClaimsAreEqual](./media/boolean-transformations/assert-execution.png)
 
@@ -116,16 +116,16 @@ ms.locfileid: "76983084"
 
 ## <a name="comparebooleanclaimtovalue"></a>компаребулеанклаимтовалуе
 
-Проверяет, что логическое значение утверждений равно `true` или `false`и возвращает результат сжатия. 
+Проверяет, что логическое значение утверждения равно `true` или `false`, и возвращает результат сжатия.
 
 | Элемент | TransformationClaimType  | Тип данных  | Примечания |
 | ---- | ------------------------ | ---------- | ----- |
 | InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
 | InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
-| outputClaim | InputClaim | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
+| outputClaim | компарересулт | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
 
 
-В следующем преобразовании утверждений показано, как проверить значение логического элемента ClaimType на основе значения `true`. Если значение параметра `IsAgeOver21Years`, равное `true`, преобразование утверждений возвращает `true`, в противном случае `false`.
+В следующем преобразовании утверждений показано, как проверить значение логического элемента ClaimType на основе значения `true`. Если `IsAgeOver21Years` значение параметра "число" равно `true`, преобразование "утверждения" возвращает `true`значение, в `false`противном случае —.
 
 ```XML
 <ClaimsTransformation Id="AssertAccountEnabled" TransformationMethod="CompareBooleanClaimToValue">
@@ -136,7 +136,7 @@ ms.locfileid: "76983084"
     <InputParameter Id="valueToCompareTo" DataType="boolean" Value="true" />
   </InputParameters>
   <OutputClaims>
-      <OutputClaim  ClaimTypeReferenceId="accountEnabled" TransformationClaimType="compareResult"/>
+    <OutputClaim  ClaimTypeReferenceId="accountEnabled" TransformationClaimType="compareResult"/>
   </OutputClaims>
 </ClaimsTransformation>
 ```
@@ -148,7 +148,7 @@ ms.locfileid: "76983084"
 - Входные параметры:
     - **valueToCompareTo**: true.
 - Исходящие утверждения:
-    - **компарересулт**: false 
+    - **компарересулт**: false
 
 
 
@@ -167,6 +167,7 @@ ms.locfileid: "76983084"
 <ClaimsTransformation Id="CheckWhetherEmailBePresented" TransformationMethod="NotClaims">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="userExists" TransformationClaimType="inputClaim" />
+  </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="userExists" TransformationClaimType="outputClaim" />
   </OutputClaims>
@@ -201,7 +202,6 @@ ms.locfileid: "76983084"
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="presentTOSSelfAsserted" TransformationClaimType="outputClaim" />
   </OutputClaims>
-</ClaimsTransformation>
 </ClaimsTransformation>
 ```
 

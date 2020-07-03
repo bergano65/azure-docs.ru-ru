@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 11/24/2019
 ms.author: vilibert
 ms.openlocfilehash: 20d710f717a9dff26f46ac7a201a9b694f3fbe84
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74684133"
 ---
 # <a name="troubleshooting-a-linux-vm-when-there-is-no-access-to-the-azure-serial-console-and-the-disk-layout-is-using-lvm-logical-volume-manager"></a>Устранение неполадок в виртуальной машине Linux при отсутствии доступа к последовательной консоли Azure и разметке диска с использованием LVM (Диспетчер логических томов)
@@ -42,7 +42,7 @@ ms.locfileid: "74684133"
 ## <a name="attach-the-disk"></a>Подключение диска
 Подключите диск **к виртуальной машине** , созданной ранее из моментального снимка.
 
-Портал Azure-> выберите диски **виртуальной машины** , > 
+Портал Azure-> выберите диски **виртуальной машины** , > **Disks** 
 
 ![Создание диска](./media/chroot-logical-volume-manager/create-disk-from-snap.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "74684133"
 
 ![Fdisk](./media/chroot-logical-volume-manager/fdisk-output-sdc.png)
 
-**\*** указывает загрузочный раздел, оба раздела будут подключены.
+**\*** Указывает загрузочный раздел, оба раздела должны быть подключены.
 
 Выполните команду **лсблк** , чтобы просмотреть лвмс затронутой виртуальной машины.
 
@@ -143,7 +143,7 @@ mount  /dev/mapper/rootvg-usrlv /rescue/usr
 Команды можно использовать для установки, удаления и обновления программного обеспечения. Устраните неполадки виртуальных машин, чтобы устранить ошибки.
 
 
-Выполните команду лсблк, и/Рескуе сейчас/и/Рескуе/Бут —/Boot ![Чрутед](./media/chroot-logical-volume-manager/chrooted.png)
+Выполните команду лсблк, а/Рескуе — Now/,/Рескуе/Бут —/Boot ![чрутед](./media/chroot-logical-volume-manager/chrooted.png)
 
 ## <a name="perform-fixes"></a>Выполнение исправлений
 
@@ -166,18 +166,18 @@ grub2-editenv list
 grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
-*walkthrough*
+*руководством*
 
 Команда **grep** перечисляет ядра, о которых имеет значение **GRUB. cfg** .
-![ядра](./media/chroot-logical-volume-manager/kernels.png)
+![Ядра](./media/chroot-logical-volume-manager/kernels.png)
 
-в **списке grub2-едитенв** указывается, какой ядро будет загружаться при следующей загрузке ![ядро по умолчанию](./media/chroot-logical-volume-manager/kernel-default.png)
+**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![ядра по умолчанию](./media/chroot-logical-volume-manager/kernel-default.png)
 
-**grub2-Set-Default** используется для переключения на другой набор grub2 ![ядра](./media/chroot-logical-volume-manager/grub2-set-default.png)
+**grub2-Set-Default** используется для изменения другого набора grub2 ядра ![.](./media/chroot-logical-volume-manager/grub2-set-default.png)
 
-в списке **grub2-едитенв** указывается, какой ядро будет загружаться при следующей загрузке ![нового ядра](./media/chroot-logical-volume-manager/kernel-new.png)
+**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![нового ядра.](./media/chroot-logical-volume-manager/kernel-new.png)
 
-**grub2-mkconfig** перестраивает GRUB. cfg с использованием версий, необходимых ![grub2 mkconfig](./media/chroot-logical-volume-manager/grub2-mkconfig.png)
+**grub2-mkconfig** перестраивает GRUB. cfg с использованием требуемых ![версий grub2 mkconfig](./media/chroot-logical-volume-manager/grub2-mkconfig.png)
 
 
 
@@ -190,7 +190,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Выйдите из среды **чрут** и подключите требуемую **LV**
 
-![Расширенная](./media/chroot-logical-volume-manager/advanced.png)
+![Дополнительно](./media/chroot-logical-volume-manager/advanced.png)
 
 Теперь снова получите доступ к среде **чрут** , выполнив
 
@@ -198,14 +198,14 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 Все LVs должны быть видимыми в виде подключенных секций.
 
-![Расширенная](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
+![Дополнительно](./media/chroot-logical-volume-manager/chroot-all-mounts.png)
 
 Запрос установленного **ядра**
 
-![Расширенная](./media/chroot-logical-volume-manager/rpm-kernel.png)
+![Дополнительно](./media/chroot-logical-volume-manager/rpm-kernel.png)
 
-При необходимости удалите или обновите **ядро**
-![Advanced](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)
+При необходимости удалите или обновите расширение **ядра**
+![.](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)
 
 
 ### <a name="example-3---enable-serial-console"></a>Пример 3. Включение последовательной консоли
@@ -253,14 +253,14 @@ umount /rescue
 Отключите диск от виртуальной машины и выполните переключение диска.
 
 Выберите виртуальную машину на **дисках** портала и выберите **отсоединить**
-![отсоединить диск](./media/chroot-logical-volume-manager/detach-disk.png) 
+![диск.](./media/chroot-logical-volume-manager/detach-disk.png) 
 
-Сохраните изменения ![сохранить отсоединение](./media/chroot-logical-volume-manager/save-detach.png) 
+Сохранить изменения ![сохранить отсоединение](./media/chroot-logical-volume-manager/save-detach.png) 
 
 Теперь диск станет доступным и будет заменен исходным диском ОС затронутой виртуальной машины.
 
-Перейдите в портал Azure к виртуальной машине, на которой выполняется сбой, и выберите **диски** -> **переключить диск ОС**
-![диск подкачки](./media/chroot-logical-volume-manager/swap-disk.png) 
+Перейдите в портал Azure к виртуальной машине, на которой выполняется сбой, и выберите **диски** -> **Переключить**
+![диск подкачки ОС.](./media/chroot-logical-volume-manager/swap-disk.png) 
 
 Заполните поля **выберите диск** — это диск моментальных снимков, который просто отсоединился на предыдущем шаге. Также требуется имя виртуальной машины затронутой виртуальной машины, а затем нажмите кнопку **ОК** .
 
@@ -270,7 +270,7 @@ umount /rescue
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-См. также
+Кроме того, вы можете узнать больше о:
 
  [Последовательная консоль Azure]( https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux)
 

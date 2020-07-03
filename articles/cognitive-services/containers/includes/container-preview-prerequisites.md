@@ -1,23 +1,23 @@
 ---
 title: Предварительные требования для общедоступного предварительного просмотра контейнера
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 description: Общий предварительный компонент для общедоступных контейнеров предварительной версии
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 7/5/2019
-ms.author: dapine
-ms.openlocfilehash: e5d40c9ffd32320ba685e2bdbd3095b4eeec3484
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 01df991e469c35f171d89b99ca9054ee620ebcca
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73523712"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80875142"
 ---
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][free-account], прежде чем начинать работу.
+* Используйте подписку Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][free-account], прежде чем начинать работу.
 * Установите [Azure CLI][azure-cli] (AZ).
 * [Модуль Docker][docker-engine], для которого нужно проверить работоспособность Docker CLI в окне консоли.
 

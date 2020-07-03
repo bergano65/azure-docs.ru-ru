@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/14/2019
-ms.author: barclayn
-ms.openlocfilehash: 7821fdc0dfda5db8d660a38a59efc774e30b9f4a
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.author: terrylan
+ms.openlocfilehash: 997bd480fd8b552d7cff61d7a4798e0a3d4db5bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727456"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80548647"
 ---
 # <a name="microsoft-services-in-cybersecurity"></a>Службы Майкрософт по обеспечению кибербезопасности
 

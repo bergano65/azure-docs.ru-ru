@@ -1,22 +1,22 @@
 ---
-title: Руководство. Поиск маршрута к местоположению | Microsoft Azure Maps
+title: Руководство по Поиск маршрута к местоположению | Microsoft Azure Maps
 description: В этом руководстве показано, как отобразить маршрут к местоположению (точку интереса) на карте с помощью службы построения маршрутов в Microsoft Azure Maps.
-author: walsehgal
-ms.author: v-musehg
+author: philmea
+ms.author: philmea
 ms.date: 01/14/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 3fedb045773cb975d37e2d866862e7863a6232e3
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 98c36176ecd2996e5f735c52017162a076ef4bde
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989643"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80333764"
 ---
-# <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>Руководство. Поиск маршрута к точке интереса с помощью службы "Карты Azure"
+# <a name="tutorial-route-to-a-point-of-interest-using-azure-maps"></a>Руководство по Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
 В этом руководстве показано, как использовать учетную запись службы "Карты Azure" и пакет SDK службы построения маршрутов, чтобы найти маршрут к объекту. В этом руководстве описано следующее:
 

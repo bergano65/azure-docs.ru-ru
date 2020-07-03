@@ -10,18 +10,18 @@ ms.custom:
 - mvc
 - seo-python-october2019
 ms.date: 11/05/2019
-ms.openlocfilehash: 7b05f12ad3fd3a0f56605d708bbbf06df7e341ed
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6ce3dd1cbb694988af3555765342a1c4ca3850b5
+ms.sourcegitcommit: ae3d707f1fe68ba5d7d206be1ca82958f12751e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433465"
+ms.lasthandoff: 04/10/2020
+ms.locfileid: "81010857"
 ---
 # <a name="quickstart-create-a-python-app-that-uses-azure-cache-for-redis"></a>Краткое руководство. Создание приложения Python, в котором используется кэш Azure для Redis
 
 Из этой статьи вы узнаете, как реализовать кэш Azure для Redis в приложении Python для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Python версии 2 или 3](https://www.python.org/downloads/)
@@ -54,7 +54,7 @@ b'bar'
 ```
 
 > [!IMPORTANT]
-> Для Кэш Azure для Redis версии 3.0 или более поздней версии проверка SSL-сертификата проводится принудительно. Параметр ssl_ca_certs следует явно задать при подключении к Кэшу Azure для Redis. В случае RedHat Linux ssl_ca_certs находится в модуле сертификата */etc/pki/tls/certs/ca-bundle.crt*.
+> Для Кэш Azure для Redis версии 3.0 или более поздней проверка TLS/SSL-сертификата проводится принудительно. Параметр ssl_ca_certs следует явно задать при подключении к Кэшу Azure для Redis. В случае RedHat Linux ssl_ca_certs находится в модуле сертификата */etc/pki/tls/certs/ca-bundle.crt*.
 
 ## <a name="create-a-python-sample-app"></a>Создание примера приложения Python
 

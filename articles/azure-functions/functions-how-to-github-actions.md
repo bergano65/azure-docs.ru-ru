@@ -1,16 +1,16 @@
 ---
 title: Использование действий GitHub для внесения обновлений в код в функциях Azure
 description: Узнайте, как использовать действия GitHub, чтобы определить рабочий процесс для создания и развертывания проектов функций Azure в GitHub.
-author: ahmedelnably
+author: craigshoemaker
 ms.topic: conceptual
-ms.date: 09/16/2019
-ms.author: aelnably
-ms.openlocfilehash: c34847577b7e83228fafad431f541497be9a21ae
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.date: 04/16/2020
+ms.author: cshoe
+ms.openlocfilehash: dedca6912fd9d9e7b6f5089d02de9e4020e4e0ef
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769155"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83122343"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Непрерывная поставка с помощью действия GitHub
 
@@ -18,13 +18,13 @@ ms.locfileid: "75769155"
 
 В действиях GitHub [Рабочий процесс](https://help.github.com/articles/about-github-actions#workflow) — это автоматизированный процесс, который определяется в репозитории GitHub. Этот процесс говорит GitHub о том, как создать и развернуть проект приложения функций на GitHub. 
 
-Рабочий процесс определяется файлом YAML (yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс. 
+Рабочий процесс определяется файлом YAML (. yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс. 
 
 Для рабочего процесса функций Azure файл содержит три раздела: 
 
-| Section | Задачи |
+| Section | Задания |
 | ------- | ----- |
-| **Аутентификация** | <ol><li>Определите субъект-службу.</li><li>Скачивание профиля публикации.</li><li>Создайте секрет GitHub.</li></ol>|
+| **Authentication** | <ol><li>Определите субъект-службу.</li><li>Скачивание профиля публикации.</li><li>Создайте секрет GitHub.</li></ol>|
 | **Сборка** | <ol><li>Настройте среду.</li><li>Создайте приложение-функцию.</li></ol> |
 | **Развертывание** | <ol><li>Разверните приложение функции.</li></ol>|
 
@@ -39,24 +39,26 @@ ms.locfileid: "75769155"
 az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Web/sites/<APP_NAME> --sdk-auth
 ```
 
-В этом примере Замените заполнители в ресурсе ИДЕНТИФИКАТОРом подписки, группой ресурсов и именем приложения функции. Выходные данные — это учетные данные назначения роли, которые обеспечивают доступ к приложению-функции. Скопируйте этот объект JSON, который можно использовать для проверки подлинности из GitHub.
+В этом примере Замените заполнители в ресурсе ИДЕНТИФИКАТОРом подписки, группой ресурсов и именем приложения функции. Выходные данные — это учетные данные назначения роли, которые предоставляют доступ к приложению-функции. Скопируйте этот объект JSON, который можно использовать для проверки подлинности из GitHub.
 
 > [!IMPORTANT]
 > Всегда рекомендуется предоставлять минимальный доступ. Именно поэтому область в предыдущем примере ограничена конкретным приложением-функцией, а не всей группой ресурсов.
 
 ## <a name="download-the-publishing-profile"></a>Скачивание профиля публикации
 
-Вы можете скачать профиль публикации приложения-функции, перейдя на страницу **обзора** приложения и выбрав **получить профиль публикации**.
+Чтобы скачать профиль публикации приложения функции, выполните следующие действия.
 
-   ![Загрузить профиль публикации](media/functions-how-to-github-actions/get-publish-profile.png)
+1. Выберите страницу **Обзор** приложения-функции и щелкните **получить профиль публикации**.
 
-Скопируйте содержимое файла.
+   :::image type="content" source="media/functions-how-to-github-actions/get-publish-profile.png" alt-text="Загрузить профиль публикации":::
+
+1. Сохраните и скопируйте содержимое файла параметров публикации.
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-1. В [GitHub](https://github.com)перейдите к репозиторию, выберите **параметры** > **секреты** > **Добавить новый секрет**.
+1. В [GitHub](https://github.com)перейдите к репозиторию, выберите **Параметры**  >  **секреты**  >  **Добавить новый секрет**.
 
-   ![Добавить секрет](media/functions-how-to-github-actions/add-secret.png)
+   :::image type="content" source="media/functions-how-to-github-actions/add-secret.png" alt-text="Добавить секрет":::
 
 1. Добавьте новый секрет.
 
@@ -69,13 +71,13 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 Настройка среды выполняется с помощью действия по настройке публикации для конкретного языка.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-node` для настройки среды.
+В следующем примере показана часть рабочего процесса, которая использует `actions/setup-node` действие для настройки среды.
 
 ```yaml
     - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Node 10.x
@@ -84,13 +86,13 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         node-version: '10.x'
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
-В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-python` для настройки среды.
+В следующем примере показана часть рабочего процесса, которая использует `actions/setup-python` действие для настройки среды.
 
 ```yaml
     - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Python 3.6
@@ -99,13 +101,13 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         python-version: 3.6
 ```
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
-В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-dotnet` для настройки среды.
+В следующем примере показана часть рабочего процесса, которая использует `actions/setup-dotnet` действие для настройки среды.
 
 ```yaml
     - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Dotnet 2.2.300
@@ -114,13 +116,13 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         dotnet-version: '2.2.300'
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-В следующем примере показана часть рабочего процесса, которая использует действие `actions/setup-java` для настройки среды.
+В следующем примере показана часть рабочего процесса, которая использует `actions/setup-java` действие для настройки среды.
 
 ```yaml
     - name: 'Login via Azure CLI'
-      uses: Azure/actions/login@master
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Setup Java 1.8.x
@@ -138,7 +140,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 В следующем примере показана часть рабочего процесса, который создает приложение-функцию, которое зависит от языка:
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```yaml
     - name: 'Run npm'
@@ -153,7 +155,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```yaml
     - name: 'Run pip'
@@ -167,7 +169,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```yaml
     - name: 'Run dotnet build'
@@ -180,7 +182,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
         popd
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```yaml
     - name: 'Run mvn'
@@ -197,7 +199,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ## <a name="deploy-the-function-app"></a>Развертывание приложения-функции
 
-Чтобы развернуть код в приложении-функции, необходимо использовать действие `Azure/functions-action`. Это действие имеет два параметра:
+Чтобы развернуть код в приложении-функции, необходимо будет использовать `Azure/functions-action` действие. Это действие имеет два параметра:
 
 |Параметр |Объяснение  |
 |---------|---------|
@@ -205,7 +207,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 |_**имя слота**_ | Используемых Имя [слота развертывания](functions-deployment-slots.md) , в который требуется выполнить развертывание. Слот уже должен быть определен в приложении функции. |
 
 
-В следующем примере используется версия 1 `functions-action`:
+В следующем примере используется версия 1 из `functions-action` :
 
 ```yaml
     - name: 'Run Azure Functions Action'
@@ -217,7 +219,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы просмотреть полный рабочий процесс. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://aka.ms/functions-actions-samples) , которые имеют `functionapp` в имени. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
+Чтобы просмотреть полный файл Workflow. YAML, ознакомьтесь с одним из файлов в [репозитории примеров рабочих процессов Azure GitHub](https://aka.ms/functions-actions-samples) , имеющих `functionapp` имя. Эти примеры можно использовать в качестве отправной точки для рабочего процесса.
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о действиях GitHub](https://help.github.com/en/articles/about-github-actions)

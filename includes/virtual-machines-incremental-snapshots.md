@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: storage
 author: roygara
 ms.service: storage
@@ -9,10 +9,10 @@ ms.date: 09/15/2018
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: f30518c3bfc9876cbddaf8295ff9e8b667a70200
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74014556"
 ---
 ## <a name="overview"></a>Обзор
@@ -108,7 +108,7 @@ ms.locfileid: "74014556"
 
 ![Восстановление диска из моментальных снимков](../articles/virtual-machines/windows/media/incremental-snapshots/storage-incremental-snapshots-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о создании моментальных снимков BLOB-объектов и планировании инфраструктуры резервного копирования виртуальных машин см. по следующим ссылкам:
 
 * [Создание моментального снимка большого двоичного объекта](https://docs.microsoft.com/rest/api/storageservices/Creating-a-Snapshot-of-a-Blob)

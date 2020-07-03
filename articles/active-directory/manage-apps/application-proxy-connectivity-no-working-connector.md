@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 96ab0d1b3bbab9c97c04da4f918f3aaa2f1d07e4
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74275620"
 ---
 # <a name="no-working-connector-group-found-for-an-application-proxy-application"></a>Не удается найти рабочую группу соединителей для приложения прокси приложения
@@ -68,7 +68,7 @@ ms.locfileid: "74275620"
 
 Дополнительные сведения о решении этой проблемы см. в документе "Решение проблем с портами".
 
-## <a name="next-steps"></a>Дополнительная информация
-[Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
+## <a name="next-steps"></a>Дальнейшие действия
+[Общие сведения о соединителях Azure AD Application Proxy](application-proxy-connectors.md)
 
 

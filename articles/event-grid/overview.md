@@ -6,15 +6,15 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: overview
-ms.date: 10/22/2019
+ms.date: 02/20/2020
 ms.author: babanisa
 ms.custom: seodec18
-ms.openlocfilehash: cfb9db7c78c57e74bfe44fe4ce1c3092e2bf3ca5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 75ee828c659aba895f65d0cf14070966428a1d19
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437309"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83682512"
 ---
 # <a name="what-is-azure-event-grid"></a>Что такое служба "Сетка событий Azure"?
 
@@ -32,32 +32,35 @@ ms.locfileid: "75437309"
 
 ## <a name="event-sources"></a>Источники событий
 
-Дополнительные сведения о возможностях каждого источника, а также статьи по этой теме см. в описании [источников событий](event-sources.md). В настоящее время отправку событий в службу "Сетка событий" поддерживают следующие службы Azure:
+В настоящее время отправку событий в службу "Сетка событий" поддерживают следующие службы Azure:
 
-* [Подписки Azure (операции управления)](event-sources.md#azure-subscriptions)
-* [Реестр контейнеров](event-sources.md#container-registry)
-* [Пользовательские разделы](event-sources.md#custom-topics)
-* [Центры событий](event-sources.md#event-hubs)
-* [Центр Интернета вещей](event-sources.md#iot-hub)
-* [Службы мультимедиа](event-sources.md#media-services)
-* [Группы ресурсов (операции управления)](event-sources.md#resource-groups)
-* [Служебная шина](event-sources.md#service-bus)
-* [Большой двоичный объект хранилища](event-sources.md#storage)
-* [Azure Maps](event-sources.md#maps)
+- [Конфигурация приложений Azure](event-schema-app-configuration.md)
+- [Хранилище BLOB-объектов Azure](event-schema-blob-storage.md)
+- [Реестр контейнеров Azure](event-schema-container-registry.md)
+- [Центры событий Azure](event-schema-event-hubs.md)
+- [Центр Интернета вещей Azure](event-schema-iot-hub.md)
+- [Хранилище ключей Azure](event-schema-key-vault.md)
+- [Машинное обучение Azure](event-schema-machine-learning.md)
+- [Azure Maps](event-schema-azure-maps.md)
+- [Службы мультимедиа Azure](event-schema-media-services.md)
+- [группы ресурсов Azure](event-schema-resource-groups.md).
+- [служебной шине Azure](event-schema-service-bus.md)
+- [Azure SignalR](event-schema-azure-signalr.md)
+- [Подписки Azure](event-schema-subscriptions.md)
 
 ## <a name="event-handlers"></a>Обработчики событий
 
 Дополнительные сведения о возможностях каждого обработчика, а также статьи по этой теме см. в описании [обработчиков событий](event-handlers.md). В настоящее время обработку событий из службы "Сетка событий" поддерживают следующие службы Azure: 
 
-* [Служба автоматизации Azure](event-handlers.md#azure-automation)
-* [Функции Azure](event-handlers.md#azure-functions)
-* [Центры событий](event-handlers.md#event-hubs)
-* [Гибридные подключения](event-handlers.md#hybrid-connections)
-* [Logic Apps](event-handlers.md#logic-apps)
+* [Служба автоматизации Azure](handler-webhooks.md#azure-automation)
+* [Функции Azure](handler-functions.md)
+* [Центры событий](handler-event-hubs.md)
+* [Гибридные подключения Relay](handler-relay-hybrid-connections.md)
+* [Logic Apps](handler-webhooks.md#logic-apps)
 * [Power Automate (ранее — Microsoft Flow)](https://preview.flow.microsoft.com/connectors/shared_azureeventgrid/azure-event-grid/)
-* [Хранилище очередей](event-handlers.md#queue-storage)
-* [Служебная шина](event-handlers.md#service-bus)
-* [Веб-перехватчики](event-handlers.md#webhooks)
+* [Служебная шина](handler-service-bus.md)
+* [Хранилище очередей](handler-storage-queues.md)
+* [Веб-перехватчики](handler-webhooks.md)
 
 ## <a name="concepts"></a>Основные понятия
 

@@ -4,10 +4,10 @@ description: 'Сопоставление элементов управления
 ms.date: 01/13/2020
 ms.topic: sample
 ms.openlocfilehash: 6c03da7d5d4caada9ef47a828163a79a003bea93
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75922522"
 ---
 # <a name="control-mapping-of-the-iso-27001-shared-services-blueprint-sample"></a>Сопоставление элементов управления образца схемы "ISO 27001: общие службы"

@@ -1,6 +1,6 @@
 ---
 title: Самостоятельная регистрация для пользователей, проверенных по электронной почте, в Azure AD | Документация Майкрософт
-description: Использование самостоятельной регистрации в клиенте Azure Active Directory (Azure AD)
+description: Использование самостоятельной регистрации в Организации Azure Active Directory (Azure AD)
 services: active-directory
 documentationcenter: ''
 author: curtand
@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 11/08/2019
+ms.date: 04/29/2020
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 953837e22cdd3ba8a54d702eac61461739db82d2
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: fedb9375ec7ac7e7c7ac7a3ebf91166f70b6a05b
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74027633"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583003"
 ---
 # <a name="what-is-self-service-sign-up-for-azure-active-directory"></a>Что такое самостоятельная регистрация для Azure Active Directory?
 
@@ -52,7 +52,7 @@ ms.locfileid: "74027633"
 AllowEmailVerifiedUsers и AllowAdHocSubscriptions — это параметры уровня каталога, которые можно применить к управляемому или неуправляемому каталогу. Ниже приведен пример.
 
 * Вы администрируете каталог с проверенным домен, например contoso.com.
-* Используйте службу совместной работы B2B из другого каталога, чтобы пригласить пользователя, который еще не существует (userdoesnotexist@contoso.com) в корневом каталоге contoso.com
+* Используйте службу совместной работы B2B из другого каталога, чтобы пригласить пользователя, который еще не существуетuserdoesnotexist@contoso.com() в корневом каталоге contoso.com
 * Для домашнего каталога включен параметр AllowEmailVerifiedUsers.
 
 Если эти условия выполнены, то в домашнем каталоге создается пользователь-участник, а в приглашающем каталоге создается гостевой пользователь B2B.
@@ -75,7 +75,7 @@ AllowEmailVerifiedUsers и AllowAdHocSubscriptions — это параметры
 
 Дополнительные сведения об этих параметрах и примеры их использования см. в статье [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)
 * [Как установить и настроить Azure PowerShell](/powershell/azure/overview)

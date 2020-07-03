@@ -5,16 +5,16 @@ services: azure-portal
 keywords: ''
 author: mgblythe
 ms.author: mblythe
-ms.date: 01/29/2020
+ms.date: 04/10/2020
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: c5bba7296a05cfbb72698a991ece1ef298689bd1
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 399c64c88e78079432fcf7c09dafd199da83358b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76900656"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81255055"
 ---
 # <a name="safelist-the-azure-portal-urls-on-your-firewall-or-proxy-server"></a>Допортал Azure URL-адреса в брандмауэре или прокси-сервере.
 
@@ -26,7 +26,7 @@ ms.locfileid: "76900656"
 
 Конечные точки URL-адреса для списка надежных отправителей портал Azure относятся к облаку Azure, в котором развернута ваша организация. Чтобы разрешить сетевой трафик к этим конечным точкам для обхода ограничений, выберите Облако. Затем добавьте список URL-адресов в брандмауэр.
 
-#### <a name="public-cloudtabpublic-cloud"></a>[Общедоступное облако](#tab/public-cloud)
+#### <a name="public-cloud"></a>[Общедоступное облако](#tab/public-cloud)
 
 ```
 *.aadcdn.microsoftonline-p.com
@@ -50,7 +50,7 @@ ms.locfileid: "76900656"
 *.windows-int.net
 ```
 
-#### <a name="us-government-cloudtabus-government-cloud"></a>[Облако для государственных организаций США](#tab/us-government-cloud)
+#### <a name="us-government-cloud"></a>[Облако для государственных организаций США](#tab/us-government-cloud)
 
 ```
 *.azure.us
@@ -63,7 +63,7 @@ ms.locfileid: "76900656"
 *.windowsazure.us
 ```
 
-#### <a name="china-government-cloudtabchina-government-cloud"></a>[Облако для государственных учреждений Китая](#tab/china-government-cloud)
+#### <a name="china-government-cloud"></a>[Облако для государственных учреждений Китая](#tab/china-government-cloud)
 
 ```
 *.azure.cn
@@ -80,13 +80,3 @@ ms.locfileid: "76900656"
 > Трафик к этим конечным точкам использует стандартные TCP-порты для HTTP (80) и HTTPS (443).
 >
 >
-## <a name="next-steps"></a>Дальнейшие действия
-
-Требуется адрес списка надежных отправителей IP-адресов? Скачайте список диапазонов IP-адресов центра обработки данных Microsoft Azure для вашего облака:
-
-* [По всему миру](https://www.microsoft.com/download/details.aspx?id=56519)
-* [Правительство США](https://www.microsoft.com/download/details.aspx?id=57063)
-* [Германия](https://www.microsoft.com/download/details.aspx?id=57064)
-* [Китай](https://www.microsoft.com/download/details.aspx?id=57062)
-
-Другие службы Майкрософт используют для подключения дополнительные URL-адреса. Сведения об оптимизации сетевого подключения для служб Microsoft 365 см. в разделе [Настройка сети для Office 365](/office365/enterprise/set-up-network-for-office-365).

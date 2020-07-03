@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Bonusly | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Bonusly | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Bonusly.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ea9c88f8eb8ac7b72f11ff286d2294df8cb70860
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74232062"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bonusly"></a>Руководство по Интеграция Azure Active Directory с Bonusly
+# <a name="tutorial-azure-active-directory-integration-with-bonusly"></a>Руководство. Интеграция Azure Active Directory с Bonusly
 
 В этом руководстве описано, как интегрировать Bonusly с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Bonusly обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "74232062"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Bonusly, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Bonusly с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -123,7 +123,7 @@ ms.locfileid: "74232062"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -142,7 +142,7 @@ ms.locfileid: "74232062"
 
     ![Диалоговое окно SAML в Bonusly](./media/bonus-tutorial/ic773687.png "Bonusly")
 
-    a. В текстовое поле **IdP SSO target URL** (Целевой URL-адрес единого входа IdP) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
+    а. В текстовое поле **IdP SSO target URL** (Целевой URL-адрес единого входа IdP) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
     b. В текстовое поле **IdP Login URL** (URL-адрес для входа IdP) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -150,7 +150,7 @@ ms.locfileid: "74232062"
     
     d. Вставьте значение **Отпечаток** с портала Azure в текстовое поле **Cert Fingerprint** (Отпечаток сертификата).
     
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -215,7 +215,7 @@ ms.locfileid: "74232062"
 
 1. Щелкните **Параметры**.
 
-    ![Параметры](./media/bonus-tutorial/ic781041.png "Параметры")
+    ![Параметры](./media/bonus-tutorial/ic781041.png "Настройки")
 
 1. Откройте вкладку **Users and bonuses** (Пользователи и бонусы).
 
@@ -233,7 +233,7 @@ ms.locfileid: "74232062"
 
     ![Добавление пользователя](./media/bonus-tutorial/ic781045.png "Добавить пользователя")  
 
-    a. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
+    а. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
     b. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
 

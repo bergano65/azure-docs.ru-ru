@@ -2,21 +2,18 @@
 title: Просмотр отдельного счета Azure
 description: Сведения о том, что означают сведения в счете и использование ресурсов, и как проверить расходы по отдельной подписке Azure.
 author: bandersmsft
-manager: dougeby
+ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 11/20/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 969fbc3fe0aa614d4284e1442f507f263d48b499
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 8ebda9716df2e9e45050760ee8d0434c12838370
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77117148"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199132"
 ---
 # <a name="tutorial-review-your-individual-azure-bill"></a>Учебник. Просмотр отдельного счета Azure
 
@@ -123,7 +120,7 @@ ms.locfileid: "77117148"
 
 ![Плата за потребление в счете](./media/review-individual-bill/invoice-usage-charges.png)
 
-## <a name="external"></a>Счета за внешние службы выставляются отдельно
+## <a name="external-services-billed-separately"></a><a name="external"></a>Счета за внешние службы выставляются отдельно
 
 Затраты на внешние службы (или Marketplace) включают те ресурсы, которые были созданы сторонними поставщиками программного обеспечения. Эти ресурсы доступны для использования через Azure Marketplace. Например, брандмауэр Barracuda является ресурсом Azure Marketplace и создан сторонним разработчиком. Все счета за этот брандмауэр и расходуемые им ресурсы будут отображаться в как затраты на внешние службы.
 
@@ -152,7 +149,7 @@ Azure не включает стоимость ресурсов в счета н
 
 В CSV-файле с данными об использовании вы видите те счетчики, которые использовались для составления счета.
 
-## <a name="payment"></a>Оплата счетов
+## <a name="pay-your-bill"></a><a name="payment"></a>Оплата счетов
 
 Если в качестве метода оплаты вы указали кредитную карту, то оплата производится автоматически в течение 10 дней после истечения периода выставления счетов. В строке из выписки по кредитной карте вы увидите элемент **MSFT Azure**.
 

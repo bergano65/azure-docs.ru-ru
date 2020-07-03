@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: b0b811a2b7ed432b7fc5015886b28337ca33424e
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76710327"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
@@ -89,7 +89,7 @@ ms.locfileid: "76710327"
 
 * числовые;
 * категориальные;
-* строк
+* Строки
 * Двоичные данные
 
 ### <a name="how-is-your-data-formatted"></a>В каком формате представлены данные?
@@ -141,12 +141,12 @@ ms.locfileid: "76710327"
 
 * R
 * Python
-* SQL
+* SQL-код
 
 ### <a name="what-tools-should-you-use-for-data-analysis"></a>Какие средства следует использовать для анализа данных?
 
-* [Microsoft Azure Powershell](/powershell/azure/overview) — язык сценариев, используемый для управления ресурсами Azure на языке сценариев.
-* [Студия машинного обучения Azure](../studio/what-is-ml-studio.md)
+* [Microsoft Azure PowerShell](/powershell/azure/overview) — язык сценариев, используемый для администрирования ресурсов Azure на языке сценариев
+* [Машинное обучение Azure Studio](../studio/what-is-ml-studio.md)
 * [Revolution Analytics](https://www.microsoft.com/sql-server/machinelearningserver)
 * [RStudio](https://www.rstudio.com)
 * [Инструменты Python для Visual Studio](https://aka.ms/ptvsdocs)
@@ -158,7 +158,7 @@ ms.locfileid: "76710327"
 
 Ответив на вопросы в предыдущем разделе, вы сможете определить сценарий, наиболее соответствующий вашей ситуации. Примеры сценариев приведены в статье [Сценарии для расширенной аналитики в Машинном обучении Azure](plan-sample-scenarios.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Что такое процесс обработки и анализа данных группы?](overview.md)
+> [Что такое процесс обработки и анализа данных группы (TDSP)?](overview.md)

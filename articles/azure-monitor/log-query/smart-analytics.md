@@ -1,18 +1,17 @@
 ---
 title: Примеры смарт-аналитики Log Analytics | Документация Майкрософт
 description: Примеры использования функций смарт-аналитики в Log Analytics для анализа активности пользователей.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/15/2019
-ms.openlocfilehash: 03a4b8df24a0ab1dbe3cfabd3ccf207005b0e186
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 51584ccf5f845be8a06b1e049cae11e636edef11
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75397619"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77659838"
 ---
 # <a name="log-analytics-smart-analytics-examples"></a>Примеры смарт-аналитики Log Analytics
 Эта статья содержит примеры использования функций смарт-аналитики в Log Analytics для анализа активности пользователей. Вы можете использовать эти примеры для анализа приложений, отслеживаемых Application Insights, или применять общие сведения из этих запросов для выполнения аналогичного анализа других данных. 

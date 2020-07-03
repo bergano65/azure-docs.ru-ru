@@ -1,0 +1,1284 @@
+### YamlMime:Hub
+title: Документация по Azure
+summary: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получите документацию, примеры кода, руководства и пр.
+brand: azure
+metadata:
+  title: Документация по Azure
+  description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Получите документацию, примеры кода, руководства и пр.
+  services: azure
+  ms.service: azure
+  ms.topic: hub-page
+  author: rolyon
+  ms.author: rolyon
+  ms.date: 02/27/2020
+  featureFlags:
+  - clicktale
+  ms.openlocfilehash: 9232082e845ef651d188adcc2ccd5cd3b96d90b4
+  ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/26/2020
+  ms.locfileid: "83849609"
+highlightedContent:
+  items:
+  - title: Руководство по началу работы для разработчиков Azure
+    itemType: get-started
+    url: guides/developer/azure-developer-guide.md
+  - title: Разработка приложения с помощью Центра архитектуры Azure
+    itemType: architecture
+    url: https://docs.microsoft.com/azure/architecture/
+  - title: Подготовка организации к использованию Cloud Adoption Framework
+    itemType: overview
+    url: https://docs.microsoft.com/azure/cloud-adoption-framework/
+  - title: Развитие навыков с помощью Microsoft Learn
+    itemType: learn
+    url: https://docs.microsoft.com/learn/browse/?products=azure&resource_type=learning+path
+productDirectory:
+  title: Обзор продуктов Azure
+  items:
+  - title: Детектор аномалий (предварительная версия)
+    summary: Простое добавление возможностей обнаружения аномалий в приложения
+    imageSrc: https://static.docs.com/ui/media/product/azure/anomaly-detector.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/anomaly-detector/index.yml
+  - title: Служба Azure Bot
+    summary: Интеллектуальная бессерверная служба ботов с масштабированием по требованию
+    imageSrc: https://static.docs.com/ui/media/product/azure/bot-service.svg
+    azureCategories:
+    - ai-machine-learning
+    url: https://docs.microsoft.com/azure/bot-service/
+  - title: Когнитивный поиск Azure
+    summary: Облачная служба поиска на основе ИИ для разработки мобильных и веб-приложений
+    imageSrc: https://static.docs.com/ui/media/product/azure/search.svg
+    azureCategories:
+    - ai-machine-learning
+    - web
+    url: search/index.yml
+  - title: Azure Databricks
+    summary: Быстрая и простая платформа аналитики на основе Apache Spark для совместной работы
+    imageSrc: https://static.docs.com/ui/media/product/azure/databricks.svg
+    azureCategories:
+    - ai-machine-learning
+    - analytics
+    url: azure-databricks/index.yml
+  - title: Машинное обучение Azure
+    summary: Доступность средств искусственного интеллекта для всех благодаря полнофункциональной масштабируемой надежной платформе с возможностью экспериментирования и функцией управления моделями
+    imageSrc: https://static.docs.com/ui/media/product/azure/machine-learning.svg
+    azureCategories:
+    - ai-machine-learning
+    - iot
+    url: machine-learning/index.yml
+  - title: Открытые наборы данных Azure
+    summary: Облачная платформа для размещения и совместного использования проверенных открытых наборов данных для ускорения разработки моделей машинного обучения
+    imageSrc: https://static.docs.com/ui/media/product/azure/open-datasets.svg
+    azureCategories:
+    - ai-machine-learning
+    url: open-datasets/index.yml
+  - title: ОСРВ Azure
+    summary: Простая разработка решений со встроенными возможностями Интернета вещей и подключение к ним
+    imageSrc: https://static.docs.com/ui/media/product/azure/rtos.svg
+    azureCategories:
+    - iot
+    url: https://docs.microsoft.com/azure/rtos/
+  - title: API Автозаполнения Bing
+    summary: Интеллектуальное автозаполнение приложения во время поиска
+    imageSrc: ./media/index/API_Bing_AutoSuggest.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-autosuggest/get-suggested-search-terms.md
+  - title: Пользовательский поиск Bing
+    summary: Простое, свободное от рекламы, профессиональное средство поиска, которое позволяет получать необходимые результаты
+    imageSrc: ./media/index/API_Bing_Custom_Search.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-custom-search/overview.md
+  - title: API Поиска сущностей Bing
+    summary: Расширяйте возможности, определяя и добавляя сведения о сущностях из Интернета
+    imageSrc: ./media/index/API_Bing_Entity_Search.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-entities-search/overview.md
+  - title: API Поиска изображений Bing
+    summary: Поиск изображений с широким охватом результатов
+    imageSrc: ./media/index/API_Bing_Image_Search.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-image-search/overview.md
+  - title: API Поиска новостей Bing
+    summary: Поиск новостей с широким охватом результатов
+    imageSrc: ./media/index/API_Bing_News_Search.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-news-search/search-the-web.md
+  - title: API Проверки орфографии Bing
+    summary: Обнаружение и исправление орфографических ошибок в приложении
+    imageSrc: ./media/index/API_Bing_Spell_Check.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-spell-check/overview.md
+  - title: API Поиска видео Bing
+    summary: Поиск видео с широким охватом результатов
+    imageSrc: ./media/index/API_Bing_Video_Search.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-video-search/overview.md
+  - title: Визуальный поиск Bing
+    summary: Получите подробные сведения для создания потрясающих образов приложения на выбранном устройстве
+    imageSrc: ./media/index/API_Bing_Visual_Search.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-visual-search/overview.md
+  - title: API Поиска в Интернете Bing
+    summary: Получение сведений из множества веб-документов с помощью расширенного поиска
+    imageSrc: ./media/index/API_Bing_Web_Search.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/bing-web-search/overview.md
+  - title: Cognitive Services
+    summary: Контекстуальное взаимодействие с помощью возможностей интеллектуального интерфейса API
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - featured
+    - ai-machine-learning
+    url: cognitive-services/index.yml
+  - title: API Компьютерного зрения
+    summary: Извлечение важнейшей информации из изображений
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/computer-vision/index.yml
+  - title: Content Moderator
+    summary: Автоматическая модерация изображений, текста и видео
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/content-moderator/index.yml
+  - title: Custom Vision
+    summary: Легко настраивайте собственные современные модели компьютерного зрения для уникальных сценариев использования
+    imageSrc: https://static.docs.com/ui/media/product/azure/custom-vision.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/Custom-Vision-Service/index.yml
+  - title: Виртуальная машина для обработки и анализа данных
+    summary: Расширенная предварительно настроенная среда для разработки с помощью ИИ
+    imageSrc: https://static.docs.com/ui/media/product/azure/virtual-machine.svg
+    azureCategories:
+    - ai-machine-learning
+    url: machine-learning/data-science-virtual-machine/index.yml
+  - title: Распознавание лиц
+    summary: Распознавание, опознание, анализ и группировка лиц, а также добавление к ним тегов на фотографиях
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/face/index.yml
+  - title: Распознаватель документов (предварительная версия)
+    summary: Служба извлечения документов на основе искусственного интеллекта, которая понимает ваши документы
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/form-recognizer/index.yml
+  - title: Иммерсивное средство чтения (предварительная версия)
+    summary: Предоставление пользователям всех возрастов и навыков возможность чтения и понимания текста
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/immersive-reader/index.yml
+  - title: Распознаватель рукописного текста (предварительная версия)
+    summary: Служба ИИ, которая распознает содержимое рукописных фрагментов, такое как рукописный текст и фигуры, а также структуру рукописного документа
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/ink-recognizer/index.yml
+  - title: Kinect DK
+    summary: Создание модели компьютерного зрения или речи с помощью набора разработчика с расширенными датчиками искусственного интеллекта
+    imageSrc: ./media/index/kinect-viewer.svg
+    azureCategories:
+    - ai-machine-learning
+    - iot
+    - mixed-reality
+    url: kinect-dk/index.yml
+  - title: Распознавание речи
+    summary: Обучение приложений пониманию пользовательских команд
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/luis/index.yml
+  - title: Microsoft Genomics
+    summary: Мощные средства секвенирования генома и аналитики для исследовательских работ
+    imageSrc: https://static.docs.com/ui/media/product/azure/genomics.svg
+    azureCategories:
+    - ai-machine-learning
+    url: genomics/index.yml
+  - title: Персонализатор
+    summary: Служба ИИ, которая обеспечивает персонализированное взаимодействие с пользователем
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/personalizer/index.yml
+  - title: QnA Maker
+    summary: Преобразование сведений в формат диалога с удобной навигацией
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/qnamaker/index.yml
+  - title: Распознавание говорящего (предварительная версия)
+    summary: Идентификация и проверка говорящих по их речи
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/speaker-recognition/home.md
+  - title: Преобразование речи в текст
+    summary: Преобразование воспроизведенной речи в текст для более естественного взаимодействия
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: https://docs.microsoft.com/azure/cognitive-services/speech-service/index#pivot=start&panel=speechtotext
+  - title: Перевод речи
+    summary: Простая интеграция перевода речи в режиме реального времени в приложение
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: https://docs.microsoft.com/azure/cognitive-services/speech-service/index#pivot=start&panel=speechtranslation
+  - title: Анализ текста
+    summary: Легко распознавайте тональность и темы, чтобы определять потребности пользователей
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/text-analytics/index.yml
+  - title: Преобразование текста в речь
+    summary: Преобразование текста в речь для создания более естественных, доступных интерфейсов
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: https://docs.microsoft.com/azure/cognitive-services/speech-service/index#pivot=start&panel=texttospeech
+  - title: Перевод текстов
+    summary: Легкое выполнение машинного перевода с помощью простого вызова REST API
+    imageSrc: https://static.docs.com/ui/media/product/azure/cognitive-services.svg
+    azureCategories:
+    - ai-machine-learning
+    url: cognitive-services/translator/index.yml
+  - title: Индексатор видео
+    summary: Используйте возможности аналитики видео
+    imageSrc: https://static.docs.com/ui/media/product/azure/media-services.svg
+    azureCategories:
+    - ai-machine-learning
+    - media
+    url: media-services/video-indexer/index.yml
+  - title: Службы Azure Analysis Services
+    summary: Аналитический модуль корпоративного класса как услуга
+    imageSrc: https://static.docs.com/ui/media/product/azure/analysis-services.svg
+    azureCategories:
+    - analytics
+    url: analysis-services/index.yml
+  - title: Azure Data Explorer
+    summary: Быстрая и высокомасштабируемая служба просмотра данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/data-explorer.svg
+    azureCategories:
+    - analytics
+    url: /azure/data-explorer
+  - title: Azure Data Lake Storage
+    summary: Надежная функция озера данных с высокой степенью масштабируемости, созданная на основе хранилища BLOB-объектов Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/storage-accounts.svg
+    azureCategories:
+    - analytics
+    - storage
+    url: storage/blobs/data-lake-storage-introduction.md
+  - title: Azure Data Share
+    summary: Простая и надежная служба для предоставления сторонним организациям доступа к большим данным
+    imageSrc: https://static.docs.com/ui/media/product/azure/data-shares.svg
+    azureCategories:
+    - analytics
+    - storage
+    url: data-share/index.yml
+  - title: Azure Stream Analytics
+    summary: Обработка потоковых данных от миллионов устройств Интернета вещей в режиме реального времени
+    imageSrc: https://static.docs.com/ui/media/product/azure/stream-analytics.svg
+    azureCategories:
+    - analytics
+    - iot
+    url: stream-analytics/index.yml
+  - title: Azure Synapse Analytics
+    summary: Служба аналитики без ограничений и с беспрецедентной скоростью получения полезных сведений (ранее — хранилище данных SQL)
+    imageSrc: https://static.docs.com/ui/media/product/azure/synapse.svg
+    azureCategories:
+    - analytics
+    url: synapse-analytics/sql-data-warehouse/index.yml
+  - title: Каталог данных
+    summary: Получение дополнительных возможностей на основе существующих корпоративных ресурсов данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/data-catalog.svg
+    azureCategories:
+    - analytics
+    url: data-catalog/index.yml
+  - title: Фабрика данных
+    summary: Простота интеграции гибридных данных в масштабах предприятия
+    imageSrc: https://static.docs.com/ui/media/product/azure/data-factory.svg
+    azureCategories:
+    - analytics
+    url: data-factory/index.yml
+  - title: Data Lake Analytics
+    summary: Распределенная служба аналитики, которая упрощает работу с большими данными
+    imageSrc: https://static.docs.com/ui/media/product/azure/data-lake-analytics.svg
+    azureCategories:
+    - analytics
+    url: data-lake-analytics/index.yml
+  - title: Центры событий
+    summary: Получение телеметрии от миллионов устройств
+    imageSrc: https://static.docs.com/ui/media/product/azure/event-hubs.svg
+    azureCategories:
+    - analytics
+    url: event-hubs/index.yml
+  - title: HDInsight
+    summary: Подготовка облачных кластеров Hadoop, Spark, R Server, HBase и Storm
+    imageSrc: https://static.docs.com/ui/media/product/azure/hdinsight.svg
+    azureCategories:
+    - analytics
+    url: hdinsight/index.yml
+  - title: Log Analytics
+    summary: Отслеживание всех показателей приложений, инфраструктуры и сети
+    imageSrc: https://static.docs.com/ui/media/product/azure/log-analytics.svg
+    azureCategories:
+    - analytics
+    - management-and-governance
+    url: azure-monitor/index.yml
+  - title: Power BI Embedded
+    summary: Внедрение полностью интерактивных качественных визуализаций в приложения
+    imageSrc: https://static.docs.com/ui/media/product/azure/power-bi.svg
+    azureCategories:
+    - analytics
+    url: https://docs.microsoft.com/power-bi/developer/azure-pbie-what-is-power-bi-embedded
+  - title: R Server для HDInsight
+    summary: Прогнозная аналитика, машинное обучение и статистическое моделирование для больших данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/hdinsight.svg
+    azureCategories:
+    - analytics
+    url: hdinsight/r-server/r-server-overview.md
+  - title: Служба "Блокчейн Azure" (предварительная версия)
+    summary: Создавайте, администрируйте и расширяйте блокчейн-сети консорциумов
+    imageSrc: https://static.docs.com/ui/media/product/azure/blockchain-service.svg
+    azureCategories:
+    - blockchain
+    url: blockchain/service/index.yml
+  - title: Служба блокчейн-токенов Azure (предварительная версия)
+    summary: Простое определение и создание токенов на основе реестра, а также управление ими
+    imageSrc: https://static.docs.com/ui/media/product/azure/blockchain-token.svg
+    azureCategories:
+    - blockchain
+    url: blockchain/tokens/index.yml
+  - title: Предварительная версия Azure Blockchain Workbench
+    summary: Простое прототипирование приложений блокчейна в облаке
+    imageSrc: https://static.docs.com/ui/media/product/azure/blockchain-workbench.svg
+    azureCategories:
+    - blockchain
+    url: blockchain/workbench/index.yml
+  - title: Azure Cosmos DB
+    summary: Глобально распределенная многомодельная база данных для использования в любом масштабе
+    imageSrc: https://static.docs.com/ui/media/product/azure/cosmos-db.svg
+    azureCategories:
+    - featured
+    - blockchain
+    - databases
+    - iot
+    url: cosmos-db/index.yml
+  - title: Logic Apps
+    summary: Автоматический доступ и использование данных в облаках без написания кода
+    imageSrc: https://static.docs.com/ui/media/product/azure/logic-apps.svg
+    azureCategories:
+    - blockchain
+    - integration
+    - iot
+    url: logic-apps/index.yml
+  - title: Приложения API
+    summary: Простое создание и использование облачных API
+    imageSrc: https://static.docs.com/ui/media/product/azure/api-apps.svg
+    azureCategories:
+    - compute
+    - containers
+    - mobile
+    - web
+    url: app-service/index.yml
+  - title: Служба приложений
+    summary: Ускоренное создание эффективных облачных приложений для веб-клиентов и мобильных клиентов
+    imageSrc: https://static.docs.com/ui/media/product/azure/app-service.svg
+    azureCategories:
+    - featured
+    - compute
+    - mobile
+    - web
+    url: app-service/index.yml
+  - title: Azure CycleCloud
+    summary: 'Кластеры HPC и большие вычислительные кластеры: создание, управление, использование, оптимизация'
+    imageSrc: ./media/index/logo_cyclecloud.svg
+    azureCategories:
+    - compute
+    url: https://docs.microsoft.com/azure/cyclecloud/index
+  - title: Выделенный узел Azure
+    summary: Выделенный физический сервер для размещения виртуальных машин Azure для Windows и Linux
+    imageSrc: https://static.docs.com/ui/media/product/azure/virtual-machine.svg
+    azureCategories:
+    - compute
+    url: virtual-machines/windows/dedicated-hosts.md
+  - title: Функции Azure
+    summary: Обработка событий без обращения к серверу
+    imageSrc: https://static.docs.com/ui/media/product/azure/functions.svg
+    azureCategories:
+    - featured
+    - compute
+    - containers
+    - iot
+    url: azure-functions/index.yml
+  - title: Служба Azure Kubernetes (AKS)
+    summary: Оптимизация развертывания, администрирования и использования Kubernetes
+    imageSrc: https://static.docs.com/ui/media/product/azure/kubernetes-services.svg
+    azureCategories:
+    - featured
+    - compute
+    - containers
+    url: aks/index.yml
+  - title: Azure Spring Cloud
+    summary: Полностью управляемая служба Spring Cloud, созданная и работающая с Pivotal
+    imageSrc: https://static.docs.com/ui/media/product/azure/spring-cloud.svg
+    azureCategories:
+    - compute
+    - web
+    url: spring-cloud/index.yml
+  - title: Решение Azure VMware
+    summary: Использование собственных рабочих нагрузок VMware в Azure
+    imageSrc: ./media/index/azure-vmware.svg
+    azureCategories:
+    - compute
+    url: azure-vmware/index.yml
+  - title: Пакетная служба Azure
+    summary: Планирование заданий и управление вычислениями через облако
+    imageSrc: https://static.docs.com/ui/media/product/azure/batch-accounts.svg
+    azureCategories:
+    - compute
+    url: batch/index.yml
+  - title: Облачные службы
+    summary: Создание облачных приложений и API с высокой доступностью и бесконечной масштабируемостью
+    imageSrc: https://static.docs.com/ui/media/product/azure/cloud-services.svg
+    azureCategories:
+    - compute
+    url: cloud-services/index.yml
+  - title: Экземпляры контейнеров
+    summary: Простое выполнение контейнеров в Azure без управления серверами
+    imageSrc: https://static.docs.com/ui/media/product/azure/container-instances.svg
+    azureCategories:
+    - compute
+    - containers
+    url: container-instances/index.yml
+  - title: Виртуальные машины Linux
+    summary: Подготовка виртуальных машин для Ubuntu, Red Hat и др.
+    imageSrc: https://static.docs.com/ui/media/product/azure/virtual-machine.svg
+    azureCategories:
+    - featured
+    - compute
+    url: virtual-machines/linux/index.yml
+  - title: SAP HANA на крупных экземплярах Azure
+    summary: Выполняйте самые крупные рабочие нагрузки SAP HANA любого поставщика гипермасштабируемых облачных решений
+    imageSrc: https://static.docs.com/ui/media/product/azure/sap.svg
+    azureCategories:
+    - compute
+    url: virtual-machines/workloads/sap/hana-overview-architecture.md
+  - title: Service Fabric
+    summary: Разработка микрослужб и оркестрация контейнеров в Windows или Linux
+    imageSrc: https://static.docs.com/ui/media/product/azure/service-fabric-clusters.svg
+    azureCategories:
+    - compute
+    - containers
+    url: service-fabric/index.yml
+  - title: SQL Server на виртуальных машинах
+    summary: Размещение корпоративных приложений SQL Server в облаке
+    imageSrc: https://static.docs.com/ui/media/product/azure/sql-server-vm.svg
+    azureCategories:
+    - compute
+    - databases
+    url: https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json
+  - title: Статические веб-приложения
+    summary: Создание и развертывание комплексных веб-приложений в Azure из репозитория GitHub
+    imageSrc: ./media/index/static-apps.svg
+    azureCategories:
+    - compute
+    - web
+    url: static-web-apps/index.yml
+  - title: Масштабируемые наборы виртуальных машин Microsoft Azure
+    summary: Увеличение масштаба до тысяч виртуальных машин Linux и Windows и управление ими
+    imageSrc: https://static.docs.com/ui/media/product/azure/vm-scale-sets.svg
+    azureCategories:
+    - compute
+    url: virtual-machine-scale-sets/index.yml
+  - title: Веб-приложения
+    summary: Быстрое создание и развертывание критически важных веб-приложений с возможностью масштабирования
+    imageSrc: https://static.docs.com/ui/media/product/azure/app-service.svg
+    azureCategories:
+    - compute
+    - containers
+    - mobile
+    - web
+    url: app-service/index.yml
+  - title: Виртуальный рабочий стол Windows
+    summary: Лучшие возможности виртуальных рабочих столов, предоставляемые в Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/windows-virtual-desktop.svg
+    azureCategories:
+    - featured
+    - compute
+    - windows-virtual-desktop
+    url: virtual-desktop/index.yml
+  - title: Виртуальные машины Windows
+    summary: Выполняйте подготовку виртуальных машин Windows за считанные секунды
+    imageSrc: https://static.docs.com/ui/media/product/azure/virtual-machine.svg
+    azureCategories:
+    - featured
+    - compute
+    url: virtual-machines/windows/index.yml
+  - title: Azure Dev Spaces
+    summary: Тестирование и итеративная разработка приложения микрослужб в Azure AKS
+    imageSrc: ./media/index/AzureDevSpaceController_50x.svg
+    azureCategories:
+    - containers
+    - developer-tools
+    url: dev-spaces/index.yml
+  - title: Azure Red Hat OpenShift
+    summary: Полностью управляемая служба OpenShift для совместной работы с Red Hat
+    imageSrc: https://static.docs.com/ui/media/product/azure/openshift.svg
+    azureCategories:
+    - containers
+    url: virtual-machines/linux/openshift-get-started.md
+  - title: Реестр контейнеров
+    summary: Хранение и администрирование образов контейнеров во всех типах развертываний Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/container-registry.svg
+    azureCategories:
+    - containers
+    url: container-registry/index.yml
+  - title: Веб-приложение для контейнеров
+    summary: Простое развертывание и запуск контейнерных веб-приложений, соответствующих масштабу вашей организации
+    imageSrc: https://static.docs.com/ui/media/product/azure/web-apps-containers.svg
+    azureCategories:
+    - containers
+    - mobile
+    - web
+    url: app-service/containers/index.yml
+  - title: Azure API для FHIR
+    summary: Простое создание и развертывание службы FHIR для решений в области данных о работоспособности и взаимодействии
+    imageSrc: https://static.docs.com/ui/media/product/azure/api-for-fhir.svg
+    azureCategories:
+    - databases
+    - integration
+    url: healthcare-apis/index.yml
+  - title: Кэш Redis для Azure
+    summary: Расширение возможностей приложений за счет доступа к данным с высокой пропускной способностью и малой задержкой
+    imageSrc: https://static.docs.com/ui/media/product/azure/cache-redis.svg
+    azureCategories:
+    - databases
+    url: azure-cache-for-redis/index.yml
+  - title: База данных Azure для MariaDB
+    summary: Управляемая служба баз данных MariaDB для разработчиков приложений
+    imageSrc: https://static.docs.com/ui/media/product/azure/database-mariadb-server.svg
+    azureCategories:
+    - databases
+    url: mariadb/index.yml
+  - title: База данных Azure для MySQL
+    summary: Управляемая служба базы данных MySQL для разработчиков приложений
+    imageSrc: https://static.docs.com/ui/media/product/azure/database-mysql-server.svg
+    azureCategories:
+    - databases
+    url: mysql/index.yml
+  - title: База данных Azure для PostgreSQL
+    summary: Управляемая служба базы данных PostgreSQL для разработчиков приложений
+    imageSrc: https://static.docs.com/ui/media/product/azure/database-postgresql-server.svg
+    azureCategories:
+    - databases
+    - hybrid
+    url: postgresql/index.yml
+  - title: Azure Database Migration Service
+    summary: Упрощение миграции локальной базы данных в облако
+    imageSrc: https://static.docs.com/ui/media/product/azure/database-migration-services.svg
+    azureCategories:
+    - databases
+    - migration
+    url: dms/index.yml
+  - title: База данных SQL Azure
+    summary: Управляемый, интеллектуальный SQL в облаке
+    imageSrc: https://static.docs.com/ui/media/product/azure/sql-database.svg
+    azureCategories:
+    - featured
+    - databases
+    - hybrid
+    url: sql-database/index.yml
+  - title: SQL Azure для пограничных вычислений (предварительная версия)
+    summary: Компактный механизм обработки данных с поддержкой пограничных устройств со встроенными средствами ИИ
+    imageSrc: https://static.docs.com/ui/media/product/azure/sql-database-edge.svg
+    azureCategories:
+    - databases
+    - iot
+    url: azure-sql-edge/index.yml
+  - title: Хранилище таблиц
+    summary: Хранилище NoSQL для пар "ключ-значение", в котором используются частично структурированные наборы данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/storage-accounts.svg
+    azureCategories:
+    - databases
+    url: cosmos-db/table-storage-overview.md
+  - title: Конфигурация приложений
+    summary: Быстродействующее масштабируемое хранилище параметров конфигурации приложений
+    imageSrc: https://static.docs.com/ui/media/product/azure/app-configuration.svg
+    azureCategories:
+    - developer-tools
+    url: azure-app-configuration/index.yml
+  - title: Azure DevOps
+    summary: Службы для рабочих групп, обеспечивающие совместное использование кода, отслеживание хода работ и доставку программного обеспечения
+    imageSrc: https://static.docs.com/ui/media/product/azure/devops.svg
+    azureCategories:
+    - developer-tools
+    - devops
+    - hybrid
+    url: https://docs.microsoft.com/azure/devops/
+  - title: Azure DevTest Labs
+    summary: Быстрое создание сред с помощью многократно используемых шаблонов и артефактов
+    imageSrc: https://static.docs.com/ui/media/product/azure/devtest-labs.svg
+    azureCategories:
+    - developer-tools
+    - devops
+    url: lab-services/index.yml
+  - title: Службы лабораторий Azure
+    summary: Настройка лабораторий для занятий, пробных испытаний, разработки и тестирования, других сценариев
+    imageSrc: https://static.docs.com/ui/media/product/azure/lab-services.svg
+    azureCategories:
+    - developer-tools
+    url: lab-services/index.yml
+  - title: Azure Pipelines
+    summary: Непрерывная сборка, тестирование и развертывание на любой платформе и в облаке
+    imageSrc: https://static.docs.com/ui/media/product/azure/pipelines.svg
+    azureCategories:
+    - developer-tools
+    - devops
+    url: https://docs.microsoft.com/azure/devops/pipelines/
+  - title: Visual Studio
+    summary: Мощная и гибкая среда для разработки приложений в облаке
+    imageSrc: https://docs.microsoft.com/media/logos/logo_visual-studio.svg
+    azureCategories:
+    - developer-tools
+    url: https://docs.microsoft.com/visualstudio/
+  - title: Visual Studio Code
+    summary: Мощный, простой редактор кода для разработки в облаке
+    imageSrc: https://docs.microsoft.com/media/logos/logo_vs-code.svg
+    azureCategories:
+    - developer-tools
+    url: https://code.visualstudio.com/docs
+  - title: Visual Studio Online (предварительная версия)
+    summary: Среды разработки в облаке, доступные из любого места
+    imageSrc: https://docs.microsoft.com/media/logos/logo_visual-studio.svg
+    azureCategories:
+    - developer-tools
+    url: https://docs.microsoft.com/visualstudio/online/overview/what-is-vsonline
+  - title: Application Insights
+    summary: Отслеживание всех показателей приложений, инфраструктуры и сети
+    imageSrc: https://static.docs.com/ui/media/product/azure/application-insights.svg
+    azureCategories:
+    - devops
+    - management-and-governance
+    url: azure-monitor/index.yml
+  - title: Azure Artifacts
+    summary: Создавайте, размещайте пакеты и делитесь ими с вашей командой
+    imageSrc: https://static.docs.com/ui/media/product/azure/artifacts.svg
+    azureCategories:
+    - devops
+    url: https://docs.microsoft.com/azure/devops/artifacts/
+  - title: Azure Boards
+    summary: Планирование, отслеживание и обсуждение работы в командах
+    imageSrc: https://static.docs.com/ui/media/product/azure/boards.svg
+    azureCategories:
+    - devops
+    url: https://docs.microsoft.com/azure/devops/boards/
+  - title: Azure Monitor
+    summary: Отслеживание всех показателей приложений, инфраструктуры и сети
+    imageSrc: https://static.docs.com/ui/media/product/azure/monitor.svg
+    azureCategories:
+    - devops
+    - management-and-governance
+    url: azure-monitor/index.yml
+  - title: Azure Repos
+    summary: Получите неограниченный, размещенный в облаке частный репозиторий Git для вашего проекта
+    imageSrc: https://static.docs.com/ui/media/product/azure/repos.svg
+    azureCategories:
+    - devops
+    url: https://docs.microsoft.com/azure/devops/repos/
+  - title: Планы тестирования Azure
+    summary: Уверенное тестирование и отправление с помощью набора средств для ручного и произвольного тестирования
+    imageSrc: https://static.docs.com/ui/media/product/azure/test-plans.svg
+    azureCategories:
+    - devops
+    url: https://docs.microsoft.com/azure/devops/test/
+  - title: Azure Active Directory (AD)
+    summary: Синхронизация локальных каталогов и поддержка единого входа
+    imageSrc: https://static.docs.com/ui/media/product/azure/active-directory.svg
+    azureCategories:
+    - hybrid
+    - identity
+    - security
+    url: active-directory/index.yml
+  - title: Azure Arc (предварительная версия)
+    summary: Перенесите службы и управление Azure в любую инфраструктуру
+    imageSrc: https://static.docs.com/ui/media/product/azure/arc.svg
+    azureCategories:
+    - hybrid
+    url: azure-arc/index.yml
+  - title: Azure ExpressRoute
+    summary: Выделенные оптоволоконные подключения частных сетей к Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/expressroute.svg
+    azureCategories:
+    - hybrid
+    - networking
+    url: expressroute/index.yml
+  - title: Azure Sentinel
+    summary: Используйте облачную SIEM и интеллектуальную аналитику безопасности для защиты вашего предприятия
+    imageSrc: https://static.docs.com/ui/media/product/azure/sentinel.svg
+    azureCategories:
+    - hybrid
+    - security
+    url: sentinel/index.yml
+  - title: Azure Stack
+    summary: Создавайте и запускайте инновационные гибридные приложения в пределах облака
+    imageSrc: https://static.docs.com/ui/media/product/azure/stack.svg
+    azureCategories:
+    - hybrid
+    url: https://docs.microsoft.com/azure-stack/
+  - title: Центр безопасности
+    summary: Унифицированное управление безопасностью и расширенная защита от угроз для гибридных облачных рабочих нагрузок
+    imageSrc: https://static.docs.com/ui/media/product/azure/security-center.svg
+    azureCategories:
+    - hybrid
+    - security
+    url: security-center/index.yml
+  - title: Azure IoT Edge
+    summary: Расширение возможностей облачного интеллекта и аналитики на пограничные устройства
+    imageSrc: https://static.docs.com/ui/media/product/azure/iot-edge.svg
+    azureCategories:
+    - hybrid
+    - iot
+    url: iot-edge/index.yml
+  - title: Azure Active Directory B2C
+    summary: Управление удостоверениями клиентов и доступом в облаке
+    imageSrc: https://static.docs.com/ui/media/product/azure/active-directory-b2c.svg
+    azureCategories:
+    - identity
+    url: active-directory-b2c/index.yml
+  - title: Доменные службы Azure Active Directory
+    summary: Присоединение виртуальных машин Azure к домену без контроллеров домена
+    imageSrc: https://static.docs.com/ui/media/product/azure/ad-domain-services.svg
+    azureCategories:
+    - identity
+    - security
+    url: active-directory-domain-services/index.yml
+  - title: Azure Information Protection
+    summary: Улучшенная защита конфиденциальной информации — в любое время и в любом месте
+    imageSrc: https://static.docs.com/ui/media/product/azure/information-protection.svg
+    azureCategories:
+    - identity
+    - security
+    url: https://docs.microsoft.com/azure/information-protection/
+  - title: Управление API
+    summary: Безопасная публикация API для разработчиков, партнеров и сотрудников с учетом масштаба
+    imageSrc: https://static.docs.com/ui/media/product/azure/api-management.svg
+    azureCategories:
+    - integration
+    - iot
+    - mobile
+    - web
+    url: api-management/index.yml
+  - title: Сетка событий Azure
+    summary: Надежная доставка событий в огромном масштабе
+    imageSrc: https://static.docs.com/ui/media/product/azure/event-grid-domains.svg
+    azureCategories:
+    - integration
+    - iot
+    url: event-grid/index.yml
+  - title: Служебная шина
+    summary: Связь между частными и общедоступными облачными средами
+    imageSrc: https://static.docs.com/ui/media/product/azure/service-bus.svg
+    azureCategories:
+    - integration
+    url: service-bus-messaging/index.yml
+  - title: Azure Digital Twins (предварительная версия)
+    summary: Создавайте решения пространственной аналитики нового поколения для Интернета вещей
+    imageSrc: https://static.docs.com/ui/media/product/azure/digital-twins.svg
+    azureCategories:
+    - iot
+    - mixed-reality
+    url: digital-twins/index.yml
+  - title: Azure IoT Central
+    summary: Ускорьте создание решений IoT
+    imageSrc: https://static.docs.com/ui/media/product/azure/iot-central.svg
+    azureCategories:
+    - iot
+    url: iot-central/index.yml
+  - title: Центр Интернета вещей Azure
+    summary: Подключение, отслеживание миллиардов ресурсов Интернета вещей, и управление ими
+    imageSrc: https://static.docs.com/ui/media/product/azure/iot-hub.svg
+    azureCategories:
+    - iot
+    url: iot-hub/index.yml
+  - title: Акселераторы решений Azure IoT
+    summary: Создание полностью настраиваемых решений с помощью шаблонов для распространенных сценариев Интернета вещей
+    imageSrc: ./media/index/iot-solution-accelerators.svg
+    azureCategories:
+    - iot
+    url: iot-accelerators/index.yml
+  - title: Azure Maps
+    summary: Простые и надежные API местоположения, обеспечивающие геопространственный контекст для данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/maps.svg
+    azureCategories:
+    - iot
+    - mobile
+    - web
+    url: azure-maps/index.yml
+  - title: Azure Sphere
+    summary: Безопасное подключение устройств под управлением микроконтроллеров из кремниевых ИС в облако
+    imageSrc: https://static.docs.com/ui/media/product/azure/sphere.svg
+    azureCategories:
+    - iot
+    url: https://docs.microsoft.com/azure-sphere/
+  - title: Azure Time Series Insights
+    summary: Просмотр и анализ данных временных рядов из устройств Интернета вещей
+    imageSrc: https://static.docs.com/ui/media/product/azure/time-series-insights-environments.svg
+    azureCategories:
+    - iot
+    url: time-series-insights/index.yml
+  - title: Центры уведомлений
+    summary: Отправка push-уведомлений из любой серверной части на любую платформу
+    imageSrc: https://static.docs.com/ui/media/product/azure/notification-hubs.svg
+    azureCategories:
+    - iot
+    - mobile
+    - web
+    url: notification-hubs/index.yml
+  - title: Основные службы Windows 10 IoT
+    summary: Долгосрочная поддержка ОС и служб для управления обновлениями устройств и оценкой работоспособности устройств
+    imageSrc: https://static.docs.com/ui/media/product/azure/iot-windows10-core-services.svg
+    azureCategories:
+    - iot
+    url: https://docs.microsoft.com/windows/iot-core/
+  - title: Центр безопасности для Интернета вещей
+    summary: Унификация управления безопасностью и защиты от угроз для решений Интернета вещей
+    imageSrc: https://static.docs.com/ui/media/product/azure/security-center.svg
+    azureCategories:
+    - iot
+    - security
+    url: asc-for-iot/index.yml
+  - title: Служба автоматизации
+    summary: Упрощенное управление облаком с помощью автоматизации процессов
+    imageSrc: https://static.docs.com/ui/media/product/azure/automation.svg
+    azureCategories:
+    - management-and-governance
+    url: automation/index.yml
+  - title: Помощник по Azure
+    summary: Персонализированная система рекомендаций Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/advisor.svg
+    azureCategories:
+    - management-and-governance
+    url: advisor/index.yml
+  - title: Azure Backup
+    summary: Упрощение защиты данных и защита от программ-шантажистов
+    imageSrc: https://static.docs.com/ui/media/product/azure/recovery-services-vaults.svg
+    azureCategories:
+    - management-and-governance
+    - storage
+    url: backup/index.yml
+  - title: Azure Blueprints (предварительная версия)
+    summary: Возможность быстрого и воспроизводимого создания управляемой среды
+    imageSrc: https://static.docs.com/ui/media/product/azure/blueprints.svg
+    azureCategories:
+    - management-and-governance
+    url: governance/blueprints/index.yml
+  - title: Azure Lighthouse
+    summary: Расширение возможностей поставщиков услуг по управлению клиентами в масштабе и с высокой точностью
+    imageSrc: https://static.docs.com/ui/media/product/azure/lighthouse.svg
+    azureCategories:
+    - management-and-governance
+    url: lighthouse/index.yml
+  - title: Управляемые приложения Azure
+    summary: Оптимизация управления облачными предложениями
+    imageSrc: https://static.docs.com/ui/media/product/azure/managed-applications.svg
+    azureCategories:
+    - management-and-governance
+    url: azure-resource-manager/managed-applications/index.yml
+  - title: Служба "Миграция Azure"
+    summary: Простое обнаружение, оценка, подбор размера и миграция локальных виртуальных машин в Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/migrate.svg
+    azureCategories:
+    - management-and-governance
+    - migration
+    url: migrate/index.yml
+  - title: Политика Azure
+    summary: Реализация корпоративного управления и стандартов в требуемом масштабе для ресурсов Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/policy.svg
+    azureCategories:
+    - management-and-governance
+    url: governance/policy/index.yml
+  - title: Azure Resource Manager
+    summary: Упрощение управления ресурсами вашего приложения
+    imageSrc: https://static.docs.com/ui/media/product/azure/resource-groups.svg
+    azureCategories:
+    - management-and-governance
+    url: azure-resource-manager/index.yml
+  - title: Шаблоны Azure Resource Manager
+    summary: Предоставление инфраструктуры как кода для всех ресурсов Azure с помощью Resource Manager
+    imageSrc: https://static.docs.com/ui/media/product/azure/resource-groups.svg
+    azureCategories:
+    - management-and-governance
+    url: azure-resource-manager/templates/index.yml
+  - title: Работоспособность служб Azure
+    summary: Персонализированные инструкции и поддержка при неполадках в работе служб Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/service-health.svg
+    azureCategories:
+    - management-and-governance
+    url: service-health/index.yml
+  - title: Azure Site Recovery
+    summary: Поддержите развитие вашего бизнеса с помощью встроенной службы аварийного восстановления данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/recovery-services-vaults.svg
+    azureCategories:
+    - management-and-governance
+    - migration
+    url: site-recovery/index.yml
+  - title: Azure Cloud Shell
+    summary: Упрощенное администрирование Azure с помощью оболочки на основе браузера
+    imageSrc: https://static.docs.com/ui/media/product/azure/cloud-shell.svg
+    azureCategories:
+    - management-and-governance
+    url: cloud-shell/overview.md
+  - title: Управление затратами и выставление счетов
+    summary: Оптимизация затрат в облаке и максимально эффективное использование его потенциала
+    imageSrc: https://static.docs.com/ui/media/product/azure/cost-management.svg
+    azureCategories:
+    - management-and-governance
+    - migration
+    url: cost-management-billing/index.yml
+  - title: Портал Microsoft Azure
+    summary: Создание, контроль и мониторинг всех продуктов Azure с помощью одной унифицированной консоли
+    imageSrc: https://static.docs.com/ui/media/product/azure/azure.svg
+    azureCategories:
+    - management-and-governance
+    url: azure-portal/index.yml
+  - title: Наблюдатель за сетями
+    summary: Решение для диагностики и мониторинга производительности сети
+    imageSrc: https://static.docs.com/ui/media/product/azure/network-watcher.svg
+    azureCategories:
+    - management-and-governance
+    - networking
+    url: network-watcher/index.yml
+  - title: Планировщик
+    summary: Запуск заданий по простому или сложному повторяющемуся расписанию
+    imageSrc: https://static.docs.com/ui/media/product/azure/scheduler.svg
+    azureCategories:
+    - management-and-governance
+    url: scheduler/index.yml
+  - title: Диспетчер трафика
+    summary: Маршрутизация входящего трафика для обеспечения высокой производительности и доступности
+    imageSrc: https://static.docs.com/ui/media/product/azure/traffic-manager.svg
+    azureCategories:
+    - management-and-governance
+    - networking
+    url: traffic-manager/index.yml
+  - title: Проигрыватель мультимедиа Azure
+    summary: Единый проигрыватель для всех необходимых возможностей воспроизведения
+    imageSrc: https://static.docs.com/ui/media/product/azure/media-services.svg
+    azureCategories:
+    - media
+    url: media-services/latest/use-azure-media-player.md
+  - title: Сеть доставки содержимого
+    summary: Безопасная и надежная доставка содержимого благодаря глобальному охвату аудитории
+    imageSrc: https://static.docs.com/ui/media/product/azure/cdn-profiles.svg
+    azureCategories:
+    - media
+    - networking
+    - web
+    url: cdn/index.yml
+  - title: Защита содержимого
+    summary: Безопасная доставка содержимого с помощью AES, PlayReady, Widevine и Fairplay
+    imageSrc: ./media/index/media-protection.svg
+    azureCategories:
+    - media
+    url: media-services/latest/content-protection-overview.md
+  - title: Кодирование
+    summary: Кодирование студийного уровня в масштабах облака
+    imageSrc: https://static.docs.com/ui/media/product/azure/media-services.svg
+    azureCategories:
+    - media
+    url: media-services/latest/encoding-concept.md
+  - title: Потоковая трансляция в прямом эфире и по запросу
+    summary: Передача содержимого на любые устройства с требуемой степенью масштабирования
+    imageSrc: https://static.docs.com/ui/media/product/azure/media-services.svg
+    azureCategories:
+    - media
+    url: media-services/latest/stream-live-tutorial-with-api.md
+  - title: Службы мультимедиа
+    summary: Кодировка, хранение и потоковая передача аудио и видео с учетом масштаба
+    imageSrc: https://static.docs.com/ui/media/product/azure/media-services.svg
+    azureCategories:
+    - media
+    url: media-services/latest/index.yml
+  - title: Data Box
+    summary: Устройства и решения для передачи данных в Azure и пограничных вычислений
+    imageSrc: https://static.docs.com/ui/media/product/azure/data-box.svg
+    azureCategories:
+    - migration
+    - storage
+    url: databox-family/index.md
+  - title: Пространственные привязки (предварительная версия)
+    summary: Создание многопользовательских решений смешанной реальности, учитывающих расположение в пространстве
+    imageSrc: https://static.docs.com/ui/media/product/azure/spatial-anchor-accounts.svg
+    azureCategories:
+    - mixed-reality
+    url: spatial-anchors/index.yml
+  - title: Удаленная отрисовка (предварительная версия)
+    summary: Преобразовывайте для просмотра высококачественное интерактивное трехмерное содержимое и выполняйте его потоковую передачу на устройства в реальном времени.
+    imageSrc: https://static.docs.com/ui/media/product/azure/remote-rendering.svg
+    azureCategories:
+    - mixed-reality
+    url: remote-rendering/index.yml
+  - title: Центр приложений Visual Studio
+    summary: Постоянные сборка, тестирование, выпуск и контроль ваших мобильных и настольных приложений
+    imageSrc: https://docs.microsoft.com/media/logos/logo_vs-mobile-center.svg
+    azureCategories:
+    - mobile
+    url: https://docs.microsoft.com/appcenter/
+  - title: Xamarin
+    summary: Быстрое создание мобильных приложений на облачной платформе
+    imageSrc: https://docs.microsoft.com/media/logos/logo_xamarin.svg
+    azureCategories:
+    - mobile
+    url: https://docs.microsoft.com/xamarin/
+  - title: Шлюз приложений
+    summary: Создание безопасных, масштабируемых и высокодоступных веб-интерфейсов в Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/application-gateways.svg
+    azureCategories:
+    - networking
+    - security
+    url: application-gateway/index.yml
+  - title: Бастион Azure
+    summary: Закрытый и полностью управляемый протокол RDP и доступ SSH к виртуальным машинам
+    imageSrc: ./media/index/web_connect.svg
+    azureCategories:
+    - networking
+    url: bastion/index.yml
+  - title: Защита от атак DDoS Azure
+    summary: Защита приложения от распределенных атак типа "отказ в обслуживании" (DDoS)
+    imageSrc: https://static.docs.com/ui/media/product/azure/ddos-protection.svg
+    azureCategories:
+    - networking
+    - security
+    url: virtual-network/ddos-protection-overview.md
+  - title: Azure DNS
+    summary: Разместите свой домен DNS в Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/dns.svg
+    azureCategories:
+    - networking
+    url: dns/index.yml
+  - title: Брандмауэр Azure
+    summary: Собственные возможности брандмауэра со встроенной высокой доступностью, неограниченной облачной масштабируемостью и отсутствием необходимости обслуживания
+    imageSrc: https://static.docs.com/ui/media/product/azure/firewall.svg
+    azureCategories:
+    - networking
+    url: firewall/index.yml
+  - title: Диспетчер брандмауэра Azure (предварительная версия)
+    summary: Политика безопасности центральной сети и управление маршрутами для глобально распределенных, программно определяемых периметров
+    imageSrc: https://static.docs.com/ui/media/product/azure/firewall-manager.svg
+    azureCategories:
+    - networking
+    url: firewall-manager/index.yml
+  - title: Azure Front Door
+    summary: Масштабируемая точка доставки с повышенным уровнем безопасности для глобальных веб-приложений на базе микрослужб
+    imageSrc: https://static.docs.com/ui/media/product/azure/front-door.svg
+    azureCategories:
+    - networking
+    url: frontdoor/index.yml
+  - title: Анализатор Интернета (предварительная версия)
+    summary: Узнайте, как изменения сетевой инфраструктуры повлияют на производительность клиентов
+    imageSrc: https://static.docs.com/ui/media/product/azure/internet-analyzer.svg
+    azureCategories:
+    - networking
+    url: internet-analyzer/index.yml
+  - title: Приватный канал Azure
+    summary: Частный доступ к службам, размещенным на платформе Azure, с сохранением данных в сети Майкрософт
+    imageSrc: https://static.docs.com/ui/media/product/azure/private-link.svg
+    azureCategories:
+    - networking
+    url: private-link/index.yml
+  - title: Load Balancer
+    summary: Обеспечение высокого уровня доступности и производительности ваших приложений в сети
+    imageSrc: https://static.docs.com/ui/media/product/azure/load-balancer.svg
+    azureCategories:
+    - networking
+    url: load-balancer/index.yml
+  - title: Виртуальная сеть
+    summary: Выполнение подготовки частных сетей с подключением к локальным центрам обработки данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/virtual-networks.svg
+    azureCategories:
+    - networking
+    url: virtual-network/index.yml
+  - title: Виртуальная глобальная сеть
+    summary: Оптимизация и автоматизация подключения между ветвями через Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/virtual-wans.svg
+    azureCategories:
+    - networking
+    url: virtual-wan/index.yml
+  - title: VPN-шлюз
+    summary: Установка надежного подключения между организациями
+    imageSrc: https://static.docs.com/ui/media/product/azure/virtual-network-gateways.svg
+    azureCategories:
+    - networking
+    - security
+    url: vpn-gateway/index.yml
+  - title: Брандмауэр веб-приложения
+    summary: Облачный брандмауэр веб-приложения (WAF), обеспечивающий мощную защиту веб-приложений
+    imageSrc: https://static.docs.com/ui/media/product/azure/frontdoor-waf-policies.svg
+    azureCategories:
+    - networking
+    url: web-application-firewall/index.yml
+  - title: Выделенное устройство HSM Azure
+    summary: Управление аппаратными модулями безопасности, которые вы используете в облаке
+    imageSrc: ./media/index/dedicated-hsm.svg
+    azureCategories:
+    - security
+    url: dedicated-hsm/index.yml
+  - title: Key Vault
+    summary: Защита и поддержка управления ключами и другими секретами
+    imageSrc: https://static.docs.com/ui/media/product/azure/key-vault.svg
+    azureCategories:
+    - security
+    url: key-vault/index.yml
+  - title: Архивное хранилище
+    summary: Ведущая в отрасли цена на хранение редко используемых данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/storage-explorer.svg
+    azureCategories:
+    - storage
+    url: storage/blobs/storage-blob-storage-tiers.md
+  - title: Avere vFXT для Azure
+    summary: Запуск высокопроизводительных файловых рабочих нагрузок в облаке
+    imageSrc: ./media/index/avere.svg
+    azureCategories:
+    - storage
+    url: avere-vfxt/index.yml
+  - title: Azure FXT Edge Filer
+    summary: Решение для оптимизации гибридного хранилища в средах HPC
+    imageSrc: https://static.docs.com/ui/media/product/azure/fxt-edge-filer.svg
+    azureCategories:
+    - storage
+    url: fxt-edge-filer/index.yml
+  - title: Azure HPC Cache
+    summary: Кэширование файлов для высокопроизводительных вычислений (HPC)
+    imageSrc: https://static.docs.com/ui/media/product/azure/hpc-cache.svg
+    azureCategories:
+    - storage
+    url: hpc-cache/index.yml
+  - title: Azure NetApp Files
+    summary: Общие папки файлов корпоративного класса Azure на базе NetApp
+    imageSrc: https://static.docs.com/ui/media/product/azure/netapp-files.svg
+    azureCategories:
+    - storage
+    url: azure-netapp-files/index.yml
+  - title: Хранилище BLOB-объектов
+    summary: Хранилище объектов на основе REST для неструктурированных данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/storage-accounts.svg
+    azureCategories:
+    - storage
+    url: storage/blobs/index.yml
+  - title: Хранилище дисков
+    summary: Постоянные защищенные хранилища дисков с поддержкой виртуальных машин
+    imageSrc: https://static.docs.com/ui/media/product/azure/disk-storage.svg
+    azureCategories:
+    - storage
+    url: virtual-machines/windows/managed-disks-overview.md
+  - title: Хранилище файлов
+    summary: Файловые ресурсы, использующие стандартный протокол SMB 3.0
+    imageSrc: https://static.docs.com/ui/media/product/azure/storage-accounts.svg
+    azureCategories:
+    - storage
+    url: storage/files/index.yml
+  - title: Управляемые диски
+    summary: Постоянное безопасное хранилище дисков для виртуальных машин Azure
+    imageSrc: https://static.docs.com/ui/media/product/azure/disk.svg
+    azureCategories:
+    - storage
+    url: virtual-machines/windows/managed-disks-overview.md
+  - title: Хранилище очередей
+    summary: Эффективное масштабирование приложений в зависимости от трафика
+    imageSrc: https://static.docs.com/ui/media/product/azure/storage-accounts.svg
+    azureCategories:
+    - storage
+    url: storage/queues/index.yml
+  - title: Память
+    summary: Получите надежное, масштабируемое облачное хранилище для своих данных, приложений и рабочих нагрузок
+    imageSrc: https://static.docs.com/ui/media/product/azure/storage-accounts.svg
+    azureCategories:
+    - storage
+    url: storage/index.yml
+  - title: Обозреватель службы хранилища
+    summary: Просмотр ресурсов службы хранилища Azure и взаимодействие с ними
+    imageSrc: https://static.docs.com/ui/media/product/azure/storage-explorer.svg
+    azureCategories:
+    - storage
+    url: vs-azure-tools-storage-manage-with-storage-explorer.md
+  - title: StorSimple
+    summary: Сокращение затрат за счет гибридного облачного решения корпоративного класса для хранения данных
+    imageSrc: https://static.docs.com/ui/media/product/azure/storsimple-device-managers.svg
+    azureCategories:
+    - storage
+    url: storsimple/index.yml
+  - title: Служба SignalR Azure
+    summary: Быстрая разработка веб-приложений, работающих в режиме реального времени
+    imageSrc: https://static.docs.com/ui/media/product/azure/signalr-service.svg
+    azureCategories:
+    - web
+    url: azure-signalr/index.yml
+tools:
+  title: Языки и инструменты
+  items:
+  - title: Python
+    imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
+    url: https://docs.microsoft.com/azure/developer/python/
+  - title: .NET
+    imageSrc: ./media/index/net-logo.svg
+    url: https://docs.microsoft.com/dotnet/azure/
+  - title: JavaScript
+    imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
+    url: https://docs.microsoft.com/azure/javascript/
+  - title: Java
+    imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
+    url: https://docs.microsoft.com/azure/developer/java/
+  - title: Go
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Go-lightblue.svg
+    url: https://docs.microsoft.com/azure/developer/go/
+  - title: REST API
+    imageSrc: https://docs.microsoft.com/media/logos/logo_REST.svg
+    url: https://docs.microsoft.com/rest/api/
+  - title: Azure PowerShell
+    imageSrc: https://docs.microsoft.com/media/logos/logo_powershell.svg
+    url: https://docs.microsoft.com/powershell/azure/
+  - title: Azure CLI
+    imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
+    url: https://docs.microsoft.com/cli/azure/
+  - title: Шаблоны ARM
+    imageSrc: https://static.docs.com/ui/media/product/azure/resource-groups.svg
+    url: azure-resource-manager/templates/index.yml
+  - title: Jenkins
+    imageSrc: https://docs.microsoft.com/media/logos/logo_jenkins.svg
+    url: /azure/developer/jenkins
+  - title: Terraform
+    imageSrc: https://docs.microsoft.com/media/logos/logo_terraform.svg
+    url: /azure/developer/terraform/
+  - title: Ansible
+    imageSrc: ./media/index/ansible.svg
+    url: /azure/developer/ansible
+additionalContent:
+  sections:
+  - title: Национальные облака
+    items:
+    - title: Azure для государственных организаций
+      summary: Выделенное облако для правительственных учреждений США и их партнеров.
+      url: azure-government/index.yml
+    - title: Azure для Германии
+      summary: Выделенное облако, которое соответствует правилам обработки данных в Германии.
+      url: germany/index.yml
+    - title: Azure China 21Vianet
+      summary: Выделенное облако, расположенное в Китае и управляемое 21Vianet.
+      url: https://docs.microsoft.com/azure/china/

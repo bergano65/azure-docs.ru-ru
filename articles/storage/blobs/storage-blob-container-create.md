@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 70f905d15c69876ced56c25ec92f858bb15b7d36
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c95ed6dde3c00c0688ccfd58565fd112427c8899
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75372216"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79135944"
 ---
 # <a name="create-or-delete-a-container-in-azure-storage-with-net"></a>Создание или удаление контейнера в службе хранилища Azure с помощью .NET
 
-Большие двоичные объекты в службе хранилища Azure организованы в контейнеры. Перед отправкой большого двоичного объекта необходимо сначала создать контейнер. В этой статье показано, как создавать и удалять контейнеры с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage/client).
+Большие двоичные объекты в службе хранилища Azure организованы в контейнеры. Перед отправкой большого двоичного объекта необходимо сначала создать контейнер. В этой статье показано, как создавать и удалять контейнеры с помощью [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage?view=azure-dotnet).
 
 ## <a name="name-a-container"></a>Имя контейнера
 
@@ -35,7 +35,7 @@ ms.locfileid: "75372216"
 
 Чтобы создать контейнер, вызовите один из следующих методов.
 
-- [Создание](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.create)
+- [Создать](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.create)
 - [CreateAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createasync)
 - [CreateIfNotExists](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexists)
 - [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexistsasync)
@@ -81,7 +81,7 @@ private static async Task<CloudBlobContainer> CreateSampleContainerAsync(CloudBl
 
 ## <a name="create-the-root-container"></a>Создание корневого контейнера
 
-Корневой контейнер является контейнером по умолчанию для вашей учетной записи хранилища. Каждая учетная запись хранения может иметь один корневой контейнер, который должен иметь имя *$root.* . Необходимо явно создать или удалить корневой контейнер.
+Корневой контейнер является контейнером по умолчанию для вашей учетной записи хранилища. Каждая учетная запись хранения может иметь один корневой контейнер, который должен иметь имя *$root.*. Необходимо явно создать или удалить корневой контейнер.
 
 Вы можете ссылаться на большой двоичный объект, хранящийся в корневом контейнере, без включения имени корневого контейнера. Корневой контейнер позволяет сослаться на большой двоичный объект на верхнем уровне иерархии учетной записи хранения. Например, теперь вы можете обратиться к BLOB-объекту, который находится в корневом контейнере, следующим образом.
 

@@ -8,10 +8,10 @@ ms.date: 12/08/2016
 ms.author: jucoriol
 ms.custom: mvc
 ms.openlocfilehash: 11a6debe735459b617f6f93c3f67a32350dd4623
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76549059"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-docker-swarm-using-azure-devops-services"></a>Полный конвейер средств непрерывной интеграции и доставки для развертывания многоконтейнерного приложения в Службе контейнеров Azure с Docker Swarm с использованием Azure DevOps Services (не рекомендуется)
@@ -38,19 +38,19 @@ ms.locfileid: "76549059"
 1. Docker Swarm в кластере извлекает последнюю версию образов. 
 1. Развертывается новая версия приложения с помощью Docker Compose. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством вам потребуется выполнить следующие задачи:
 
 - [Создайте кластер Swarm в службе контейнеров Azure.](container-service-deployment.md)
 - [Подключитесь к кластеру Swarm в службе контейнеров Azure.](../container-service-connect.md)
-- [Создать реестр контейнеров Azure](../../container-registry/container-registry-get-started-portal.md)
+- [Создание реестра контейнеров Azure.](../../container-registry/container-registry-get-started-portal.md)
 - [Создать организацию и проект Azure DevOps Services](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student).
 - [Скопировать репозиторий GitHub в свою учетную запись GitHub](https://github.com/jcorioland/MyShop/)
 
 [!INCLUDE [container-service-swarm-mode-note](../../../includes/container-service-swarm-mode-note.md)]
 
-Вам также понадобится компьютер Ubuntu (14.04 или 16.04) с установленным программным обеспечением Docker. Этот компьютер используется службами Azure DevOps Services во время процессов Azure Pipelines. Одним из способов создания этой машины является использование образа, доступного в Azure Marketplace. 
+Вам также понадобится компьютер Ubuntu (14.04 или 16.04) с установленным программным обеспечением Docker. Этот компьютер используется службами Azure DevOps Services во время процессов Azure Pipelines. Этот компьютер можно создать, используя образ, доступный в Azure Marketplace. 
 
 ## <a name="step-1-configure-your-azure-devops-services-organization"></a>Шаг 1. Настройка организации Azure DevOps Services 
 
@@ -80,7 +80,7 @@ ms.locfileid: "76549059"
 
     ![Azure DevOps Services — внешнее подключение](./media/container-service-docker-swarm-setup-ci-cd/vsts-services-menu.png)
 
-1. Слева выберите **Создать конечную точку службы** > **GitHub**.
+1. В левой части щелкните **создать конечную точку** > службы**GitHub**.
 
     ![Azure DevOps Services — GitHub](./media/container-service-docker-swarm-setup-ci-cd/vsts-github.png)
 
@@ -132,7 +132,7 @@ ms.locfileid: "76549059"
 Дальнейшие действия определяют рабочий процесс сборки. Для сборки приложения *MyShop* доступно пять образов контейнера. Каждый образ создается с помощью Dockerfile, расположенного в папках проекта:
 
 * ProductsApi;
-* Прокси-сервер
+* Прокси
 * RatingsApi;
 * RecommendationsApi;
 * ShopFront.
@@ -159,7 +159,7 @@ ms.locfileid: "76549059"
 
 1. Настроив действия сборки и принудительной отправки для каждого из пяти образов, добавьте еще два действия в рабочий процесс сборки.
 
-    а. Задача командной строки, использующая скрипт Bash для замены экземпляра *BuildNumber* в файле DOCKER-Compose. yml текущим идентификатором сборки. Дополнительные сведения см. на следующем экране.
+    a. Задача командной строки, использующая скрипт Bash для замены экземпляра *BuildNumber* в файле DOCKER-Compose. yml текущим идентификатором сборки. Дополнительные сведения см. на следующем экране.
 
     ![Azure DevOps Services — обновление файла Compose](./media/container-service-docker-swarm-setup-ci-cd/vsts-build-replace-build-number.png)
 
@@ -177,9 +177,9 @@ Azure DevOps Services позволяет [управлять выпусками 
 
 ### <a name="initial-release-setup"></a>Начальная настройка выпуска
 
-1. Чтобы создать конвейер выпуска, щелкните **Выпуски** >  **+ Release** (+ Выпуск).
+1. Чтобы создать конвейер выпуска, щелкните **выпуски** > **+ выпуск** .
 
-1. Чтобы настроить источник артефакта, выберите **Артефакты** > **Link an artifact source** (Связать источник артефакта). Свяжите этот новый конвейер выпуска со сборкой, указанной на предыдущем шаге. После этого файл docker-compose.yml появится в процессе выпуска.
+1. Чтобы настроить источник артефакта, щелкните **артефакты** > **связать источник артефакта**. Свяжите этот новый конвейер выпуска со сборкой, указанной на предыдущем шаге. После этого файл docker-compose.yml появится в процессе выпуска.
 
     ![Azure DevOps Services — артефакты выпуска](./media/container-service-docker-swarm-setup-ci-cd/vsts-release-artefacts.png) 
 
@@ -220,6 +220,6 @@ Azure DevOps Services позволяет [управлять выпусками 
 
 Теперь после выполнения настройки пришло время протестировать этот новый конвейер CI/CD. Самый простой способ сделать это — обновить исходный код и сохранить изменения в репозитории GitHub. Через несколько секунд после отправки кода в Azure DevOps Services появится новая сборка. После успешного выполнения новый выпуск будет активирован и развернет новую версию приложения в кластере Службы контейнеров Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о CI/CD с Azure DevOps Services см. в статье [Azure pipelines документация](/azure/devops/pipelines/?view=azure-devops) .

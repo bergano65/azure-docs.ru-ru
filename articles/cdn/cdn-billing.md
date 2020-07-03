@@ -3,7 +3,7 @@ title: Общие сведения о выставлении счетов в Azu
 description: Вопросы и ответы о выставлении счетов в Azure CDN.
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/13/2019
-ms.author: magattus
-ms.openlocfilehash: e2827a11f4ec2a5c0467c3699cd9990aaf7ae97a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.author: allensu
+ms.openlocfilehash: d3a2dfba98f83d34c3e83ec865e3b692f7dbacd2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73495480"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81254229"
 ---
 # <a name="understanding-azure-cdn-billing"></a>Общие сведения о выставлении счетов в Azure CDN
 
@@ -107,7 +107,7 @@ ms.locfileid: "73495480"
 - Служба приложений Azure.
 - Функции Azure
 - Фабрика данных Azure
-- Cлужба управления Azure API
+- Cлужба управления Azure API 
 - Пакетная служба Azure 
 - Azure Data Explorer
 - HDInsight
@@ -115,7 +115,7 @@ ms.locfileid: "73495480"
 - Хранилище озера данных Azure
 - Машинное обучение Azure 
 - База данных SQL Azure
-- Кэш Azure для Redis
+- Кэш Redis для Azure
 
 ## <a name="how-do-i-manage-my-costs-most-effectively"></a>Как эффективней управлять расходами?
 Установите самый длинный срок жизни для своего содержимого. 

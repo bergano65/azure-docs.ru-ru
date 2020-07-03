@@ -1,18 +1,17 @@
 ---
 title: Журналы IIS в Azure Monitor | Документация Майкрософт
 description: Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor.  В этой статье описано, как настроить сбор журналов IIS и сведения о записях, созданных ими в службе Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/28/2018
-ms.openlocfilehash: a865f43585ccbb31569e2ca0987aae62a89a9281
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 1b3ae6295a639c3d59643b106b920cb606572e0a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72932485"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77670582"
 ---
 # <a name="collect-iis-logs-in-azure-monitor"></a>Сбор журналов IIS в Azure Monitor
 Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor и сохраняемых как [данные журнала](data-platform.md).
@@ -61,14 +60,14 @@ Azure Monitor собирает записи журнала IIS из каждог
 ## <a name="log-queries-with-iis-logs"></a>Запросы для получения записей журналов IIS
 В следующей таблице представлены различные примеры запросов к журналу, извлекающих записи из журналов IIS.
 
-| Запрос | Описание |
+| query | Описание |
 |:--- |:--- |
 | W3CIISLog |Все записи в журнале IIS. |
 | W3CIISLog &#124; where scStatus==500 |Все записи журнала IIS с состоянием возврата 500. |
 | W3CIISLog &#124; summarize count() by cIP |Число записей в журнале IIS по IP-адресу клиента. |
-| W3CIISLog &#124; , где кшост = = "www\.contoso.com &#124; " сводки Count () by ксуристем |Число записей журнала IIS по URL-адресу узла www\.contoso.com. |
+| W3CIISLog &#124; где Кшост = = "www\.contoso.com" &#124; суммировать Count () по ксуристем |Число записей журнала IIS по URL-адресу узла www\.contoso.com. |
 | W3CIISLog &#124; summarize sum(csBytes) by Computer &#124; take 500000 |Общее количество байтов, полученных каждым компьютером IIS. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Настройте в службе Azure Monitor сбор других [источников данных](agent-data-sources.md) для анализа.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.

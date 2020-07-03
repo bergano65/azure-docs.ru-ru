@@ -1,15 +1,15 @@
 ---
 title: Подключение к службе "Блокчейн Azure" с помощью Visual Studio Code
 description: Подключение к сети консорциума службы "Блокчейн Azure" с помощью комплекта SDK службы "Azure Блокчейн" для Ethereum в Visual Studio Code
-ms.date: 12/05/2019
+ms.date: 04/22/2020
 ms.topic: quickstart
-ms.reviewer: chrisseg
-ms.openlocfilehash: 1bcdfdafa9253fc4dc20ccb7cc237cb794b0af53
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.reviewer: caleteet
+ms.openlocfilehash: 8b502966317c5d07e89de4ae70ff72b899e963e6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74977093"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82084844"
 ---
 # <a name="quickstart-use-visual-studio-code-to-connect-to-an-azure-blockchain-service-consortium-network"></a>Краткое руководство. Подключение к сети консорциума службы "Блокчейн Azure" с помощью Visual Studio Code
 
@@ -22,7 +22,7 @@ ms.locfileid: "74977093"
 * См. подробнее об [использовании созданию участника блокчейна на портале Azure](create-member.md) и [руководство по созданию участника блокчейна службы "Блокчейн Azure" с помощью Azure CLI](create-member-cli.md);
 * [Visual Studio Code](https://code.visualstudio.com/Download)
 * [расширение "Комплект SDK Блокчейна Azure для Ethereum"](https://marketplace.visualstudio.com/items?itemName=AzBlockchain.azure-blockchain);
-* [Node.js 10.15.x или более поздней версии](https://nodejs.org/download).
+* [Node.js 10.15.x или более поздней версии](https://nodejs.org).
 * [Git 2.10.x или более поздней версии](https://git-scm.com).
 * [Python 2.7.15](https://www.python.org/downloads/release/python-2715/). Добавьте в путь файл python.exe. Python версии 2.7.15 необходим для комплекта SDK службы "Блокчейн Azure".
 * [Truffle 5.0.0](https://www.trufflesuite.com/docs/truffle/getting-started/installation).
@@ -34,7 +34,7 @@ ms.locfileid: "74977093"
 * Если установлен Visual Studio 2019, задайте путь к средствам сборки MS для NPM. Например `npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"`.
 * В противном случае установите автономные средства сборки VS, используя `npm install --global windows-build-tools` в командной оболочке с повышенными правами *от имени администратора*.
 
-Дополнительные сведения о node-gyp см. в репозитории [node-gyp на сайте GitHub](https://github.com/node-gyp).
+Дополнительные сведения о node-gyp см. в репозитории [node-gyp на сайте GitHub](https://github.com/nodejs/node-gyp).
 
 ### <a name="verify-azure-blockchain-development-kit-environment"></a>Проверка среды комплекта SDK службы "Блокчейн Azure"
 
@@ -72,7 +72,7 @@ ms.locfileid: "74977093"
 
 ![Консорциум, отображаемый в проводнике](./media/connect-vscode/consortium-node.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы использовали комплект SDK службы "Блокчейн Azure" для Ethereum VS Code, чтобы присоединиться к консорциуму в службе "Блокчейн Azure". В следующем учебнике описано, как с помощью комплекта SDK службы "Блокчейн Azure" для Ethereum создать, собрать, развернуть и выполнить функцию смарт-контракта путем совершения транзакции.
 

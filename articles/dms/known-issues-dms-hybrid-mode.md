@@ -2,21 +2,21 @@
 title: Известные проблемы и ограничения миграции с использованием гибридного режима
 description: Узнайте об известных проблемах и ограничениях миграции с помощью Azure Database Migration Service в гибридном режиме.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 12/19/2019
-ms.openlocfilehash: 60d1fc46ada70dc67c161f048a0206e7081ba591
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/20/2020
+ms.openlocfilehash: aedc7ea3d778d52f6f348837430987568af188ef
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75483119"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77649608"
 ---
 # <a name="known-issuesmigration-limitations-with-using-hybrid-mode"></a>Известные проблемы и ограничения миграции с использованием гибридного режима
 
@@ -67,7 +67,7 @@ ms.locfileid: "75483119"
 
 3. В разделе certmgr для сертификатов локального компьютера предоставьте разрешения закрытого ключа для новой учетной записи для **ключа гибридного приложения DMS** и **пары ключей обработчика сценариев DMS** .
 
-    а. Откройте certmgr, чтобы просмотреть следующие разделы:
+    a. Откройте certmgr, чтобы просмотреть следующие разделы:
 
     - Ключ гибридного приложения DMS
     - Ключ установки гибридной рабочей роли DMS

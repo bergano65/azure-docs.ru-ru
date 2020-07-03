@@ -3,12 +3,12 @@ title: О репозиториях & изображений
 description: Введение в ключевые понятия реестра контейнеров Azure, репозиториев и образов контейнеров.
 ms.topic: article
 ms.date: 09/10/2019
-ms.openlocfilehash: 9de0c344b226a0b13e76c7f02977ba3c91ba2d2a
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: ea6e2577d3eee91626dd613617a0b79e4ff3d6a1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74455292"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79247063"
 ---
 # <a name="about-registries-repositories-and-images"></a>Сведения о реестрах, репозиториях и образах
 
@@ -24,9 +24,7 @@ ms.locfileid: "74455292"
 
 Адрес артефакта в реестре контейнеров Azure включает следующие элементы. 
 
-```
-[loginUrl]/[namespace]/[artifact:][tag]
-```
+`[loginUrl]/[namespace]/[artifact:][tag]`
 
 * **логинурл** — полное имя узла реестра. Узел реестра в реестре контейнеров Azure имеет формат *myregistry*. azurecr.IO (все строчные буквы). При использовании DOCKER или других клиентских средств для извлечения артефактов в реестр контейнеров Azure необходимо указать Логинурл. 
 * **пространство имен** — логическое группирование связанных изображений или артефактов, разделенных косой чертой, например для Рабочей группы или приложения
@@ -36,9 +34,7 @@ ms.locfileid: "74455292"
 
 Например, полное имя образа в реестре контейнеров Azure может выглядеть следующим образом:
 
-```
-myregistry.azurecr.io/marketing/campaign10-18/email-sender:v2
-```
+*myregistry.azurecr.io/marketing/campaign10-18/email-sender:v2*
 
 Дополнительные сведения об этих элементах см. в следующих разделах.
 
@@ -46,21 +42,18 @@ myregistry.azurecr.io/marketing/campaign10-18/email-sender:v2
 
 Реестры контейнеров управляют *репозиториями*, коллекциями образов контейнеров или другими артефактами с тем же именем, но разными тегами. Например, следующие три образа находятся в репозитории acr-helloworld.
 
-```
-acr-helloworld:latest
-acr-helloworld:v1
-acr-helloworld:v2
-```
+
+- *запись контроля доступа — HelloWorld: Последняя*
+- *запись контроля доступа — HelloWorld: v1*
+- *запись контроля доступа — HelloWorld: v2*
 
 Имена репозиториев также могут включать [пространство имен](container-registry-best-practices.md#repository-namespaces). Пространства имен позволяют группировать изображения с помощью имен репозитория, разделенных косой чертой, например:
 
-```
-marketing/campaign10-18/web:v2
-marketing/campaign10-18/api:v3
-marketing/campaign10-18/email-sender:v2
-product-returns/web-submission:20180604
-product-returns/legacy-integrator:20180715
-```
+- *Маркетинговый/campaign10-18/Web: v2*
+- *маркетинг или campaign10-18/API: V3*
+- *маркетинг или campaign10-18/Электронная почта — Отправитель: v2*
+- *Product-Returns/Web-Отправка: 20180604*
+- *Product-Returns/Legacy-Integrator: 20180715*
 
 ## <a name="image"></a>Образ —
 
@@ -74,7 +67,7 @@ product-returns/legacy-integrator:20180715
 
 Создание тегов для образов контейнеров осуществляется с помощью сценариев для разработки или развертывания. Например, стабильными тегами рекомендуется поддерживать базовые образы и уникальные теги для развертывания образов. Дополнительные сведения см. в разделе [рекомендации по отстановке тегов и управление версиями для образов контейнеров](container-registry-image-tag-version.md).
 
-### <a name="layer"></a>Слой
+### <a name="layer"></a>Уровень
 
 Образы контейнеров состоят из одного или нескольких *слоев*, каждый из которых соответствует строке в Dockerfile, определяющей изображение. Образы в реестре используют слои совместно, что позволяет увеличить эффективность хранилища. Например, несколько образов, которые находятся в разных репозиториях, могут совместно использовать базовый слой Alpine Linux, но только одна копия из этого слоя может хранится в реестре.
 
@@ -82,9 +75,9 @@ product-returns/legacy-integrator:20180715
 
 Чтобы обеспечить безопасную изоляцию и защиту от потенциальных манипуляций с слоями, уровни не являются общими для реестров.
 
-### <a name="manifest"></a>Manifest
+### <a name="manifest"></a>манифеста
 
-Каждый образ контейнера или артефакт, отправленный в реестр контейнеров, связан с *манифестом*. Манифест создается реестром во время отправки образа, уникально идентифицирует образ и указывает его слой. Вы можете составить список манифестов для репозитория с помощью команды Azure CLI [AZ контроля учетных записей, отображающей манифесты][az-acr-repository-show-manifests]:
+Каждый образ контейнера или артефакт, отправленный в реестр контейнеров, связан с *манифестом*. Манифест создается реестром во время отправки образа, уникально идентифицирует образ и указывает его слой. С помощью команды Azure CLI [az acr repository show-manifests][az-acr-repository-show-manifests] можно получить список манифестов репозитория.
 
 ```azurecli
 az acr repository show-manifests --name <acrName> --repository <repositoryName>
@@ -92,8 +85,11 @@ az acr repository show-manifests --name <acrName> --repository <repositoryName>
 
 Например, перечислите манифесты для репозитория "запись контроля доступа".
 
-```console
-$ az acr repository show-manifests --name myregistry --repository acr-helloworld
+```azurecli
+az acr repository show-manifests --name myregistry --repository acr-helloworld
+```
+
+```output
 [
   {
     "digest": "sha256:0a2e01852872580b2c2fea9380ff8d7b637d3928783c55beb3f21a6e58d5d108",
@@ -128,14 +124,12 @@ $ az acr repository show-manifests --name myregistry --repository acr-helloworld
 
 Например, можно извлечь изображение из репозитория "запись контроля доступа" с помощью дайджеста манифеста:
 
-```console
-$ docker pull myregistry.azurecr.io/acr-helloworld@sha256:0a2e01852872580b2c2fea9380ff8d7b637d3928783c55beb3f21a6e58d5d108
-```
+`docker pull myregistry.azurecr.io/acr-helloworld@sha256:0a2e01852872580b2c2fea9380ff8d7b637d3928783c55beb3f21a6e58d5d108`
 
 > [!IMPORTANT]
 > Если многократно отправлять измененные образы с идентичными тегами, можно создать потерянные образы, которые остались без тегов, но все еще потребляют пространство реестра. Образы без тегов не отображаются в Azure CLI или на портале Azure при просмотре списка или образов по тегу. Тем не менее их слои по-прежнему существуют и занимают место в реестре. Удаление изображения без тегов освобождает место в реестре, когда манифест является единственным или последним, указывая на определенный слой. Сведения об освобождении пространства, используемого изображениями без тегов, см. [в статье Удаление образов контейнеров в реестре контейнеров Azure](container-registry-delete.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о [хранении образов](container-registry-storage.md) и [поддерживаемых форматах содержимого](container-registry-image-formats.md) в реестре контейнеров Azure.
 

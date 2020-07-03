@@ -7,35 +7,35 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: b98ab8d3c4d03115ea689b4dfd3d8dee753f019d
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 1169ed0e9a2b970ee0e30d73ea20c87001b62786
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76715084"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80239451"
 ---
 # <a name="autoscale-your-aks-pods-using-application-gateway-metrics-beta"></a>Автоматическое масштабирование модулей AKS с помощью метрик шлюза приложений (бета-версия)
 
 При увеличении входящего трафика становится крайне важным, чтобы масштабировать приложения в зависимости от спроса.
 
-В следующем руководстве объясняется, как можно использовать метрику `AvgRequestCountPerHealthyHost` шлюза приложений для масштабирования приложения. `AvgRequestCountPerHealthyHost` измеряет среднее число запросов, отправленных в определенный серверный пул и сочетание параметров HTTP серверной части.
+В следующем руководстве объясняется, как можно использовать `AvgRequestCountPerHealthyHost` метрику шлюза приложений для масштабирования приложения. `AvgRequestCountPerHealthyHost`измеряет среднее число запросов, отправленных в определенный серверный пул и сочетание параметров HTTP серверной части.
 
 Мы будем использовать следующие два компонента:
 
-* [`Azure Kubernetes Metric Adapter`](https://github.com/Azure/azure-k8s-metrics-adapter) — мы будем использовать адаптер метрики для предоставления метрик шлюза приложений через сервер метрик. Адаптер метрик Azure Kubernetes — это проект с открытым исходным кодом в Azure, аналогичный контроллеру входящего трафика шлюза приложений. 
-* [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler) — мы будем использовать hPa для использования метрик шлюза приложений и нацелены на развертывание для масштабирования.
+* [`Azure Kubernetes Metric Adapter`](https://github.com/Azure/azure-k8s-metrics-adapter)— Мы будем использовать адаптер метрики для предоставления метрик шлюза приложений через сервер метрик. Адаптер метрик Azure Kubernetes — это проект с открытым исходным кодом в Azure, аналогичный контроллеру входящего трафика шлюза приложений. 
+* [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler)— Мы будем использовать HPA для использования метрик шлюза приложений и нацелены на развертывание для масштабирования.
 
 ## <a name="setting-up-azure-kubernetes-metric-adapter"></a>Настройка адаптера метрик Azure Kubernetes
 
-1. Сначала мы создадим субъект-службу Azure AAD и назначаем его `Monitoring Reader` доступа через группу ресурсов шлюза приложений. 
+1. Сначала необходимо создать субъект-службу Azure AAD и назначить ему `Monitoring Reader` доступ к группе ресурсов шлюза приложений. 
 
-    ```bash
+    ```azurecli
         applicationGatewayGroupName="<application-gateway-group-id>"
         applicationGatewayGroupId=$(az group show -g $applicationGatewayGroupName -o tsv --query "id")
         az ad sp create-for-rbac -n "azure-k8s-metric-adapter-sp" --role "Monitoring Reader" --scopes applicationGatewayGroupId
     ```
 
-1. Теперь мы развернем [`Azure Kubernetes Metric Adapter`](https://github.com/Azure/azure-k8s-metrics-adapter) с помощью созданного выше субъекта-службы AAD.
+1. Теперь мы развернемся [`Azure Kubernetes Metric Adapter`](https://github.com/Azure/azure-k8s-metrics-adapter) с помощью созданного выше субъекта-службы AAD.
 
     ```bash
     kubectl create namespace custom-metrics
@@ -47,7 +47,7 @@ ms.locfileid: "76715084"
     kubectl apply -f kubectl apply -f https://raw.githubusercontent.com/Azure/azure-k8s-metrics-adapter/master/deploy/adapter.yaml -n custom-metrics
     ```
 
-1. Будет создан ресурс `ExternalMetric` с именем `appgw-request-count-metric`. Этот ресурс предписывает адаптеру метрика предоставить метрику `AvgRequestCountPerHealthyHost` для ресурса `myApplicationGateway` в `myResourceGroup` группе ресурсов. Можно использовать поле `filter`, чтобы указать определенный внутренний пул и серверный параметр HTTP в шлюзе приложений.
+1. Мы создадим `ExternalMetric` ресурс с именем `appgw-request-count-metric`. Этот ресурс попросит адаптеру метрик предоставить `AvgRequestCountPerHealthyHost` метрику для `myApplicationGateway` ресурса в `myResourceGroup` группе ресурсов. Это `filter` поле можно использовать для назначения определенного внутреннего пула и параметра HTTP серверной части в шлюзе приложений.
 
     ```yaml
     apiVersion: azure.com/v1alpha2
@@ -92,7 +92,7 @@ kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1/namespaces/default/appg
 
 ## <a name="using-the-new-metric-to-scale-up-the-deployment"></a>Использование новой метрики для увеличения масштаба развертывания
 
-После того как мы сможем предоставить `appgw-request-count-metric` через сервер метрик, мы готовы использовать [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler) для масштабирования целевого развертывания.
+После того как мы сможем предоставить `appgw-request-count-metric` доступ через сервер метрик, мы готовы к использованию [`Horizontal Pod Autoscaler`](https://docs.microsoft.com/azure/aks/concepts-scale#horizontal-pod-autoscaler) для масштабирования целевого развертывания.
 
 В следующем примере мы будем ориентироваться на пример развертывания `aspnet`. Мы будем масштабировать модули Pod при `appgw-request-count-metric` > 200 на каждый модуль до максимального числа `10` модулей.
 
@@ -121,5 +121,5 @@ spec:
 ab -n10000 http://<applicaiton-gateway-ip-address>/
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [**Устранение неполадок с контроллером**](ingress-controller-troubleshoot.md)входящего трафика. Устраните неполадки с контроллером входящего трафика.

@@ -1,10 +1,9 @@
 ---
-title: Как в Azure AD используется протокол SAML | Документация Майкрософт
+title: Как в Azure AD используется протокол SAML
 description: В этой статье содержится обзор профилей SAML для единого входа и единого выхода в Azure Active Directory.
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.assetid: 88125cfc-45c1-448b-9903-a629d8f31b01
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
@@ -13,12 +12,12 @@ ms.date: 10/05/2018
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
-ms.openlocfilehash: dc7771f29fb5d00aedfe5162a98f5f0c14544a7b
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 44d06030d8015d2df9499ce903eb9cb06e1ef27a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77161177"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885656"
 ---
 # <a name="how-azure-ad-uses-the-saml-protocol"></a>Как в Azure AD используется протокол SAML
 
@@ -32,8 +31,8 @@ Azure AD использует **URI метаданных** облачной сл
 
 Azure Active Directory предоставляет клиентские и общие (единые для всех клиентов) конечные точки единого входа и единого выхода. Эти URL-адреса представляют собой адресуемые расположения, а не просто идентификаторы. Вы можете обратиться по ним к конечной точке для чтения метаданных.
 
-* Конечная точка конкретного клиента находится по адресу `https://login.microsoftonline.com/<TenantDomainName>/FederationMetadata/2007-06/FederationMetadata.xml`. Заполнитель *\<TenantDomainName >* представляет зарегистрированное доменное имя или идентификатор GUID TenantID клиента Azure AD. Например, метаданные федерации клиента contoso.com находится здесь: https://login.microsoftonline.com/contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
+* Конечная точка конкретного клиента находится по адресу `https://login.microsoftonline.com/<TenantDomainName>/FederationMetadata/2007-06/FederationMetadata.xml`. Заполнитель * \<>TenantDomainName* представляет зарегистрированное доменное имя или идентификатор GUID TenantID клиента Azure AD. Например, метаданные федерации клиента contoso.com находится здесь: https://login.microsoftonline.com/contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
 
 * Независимая от клиента конечная точка расположена по адресу `https://login.microsoftonline.com/common/FederationMetadata/2007-06/FederationMetadata.xml`. В этом адресе конечной точки вместо доменного имени или идентификатора клиента содержится ключевое слово **common**.
 
-Сведения о документах метаданных федерации, публикуемых в Azure AD, см. в статье [Метаданные федерации](../azuread-dev/azure-ad-federation-metadata.md).
+Сведения о документах метаданных федерации, публикуемых Azure AD, см. в разделе [метаданные федерации](../azuread-dev/azure-ad-federation-metadata.md).

@@ -3,7 +3,7 @@ title: Предварительная загрузка ресурсов на к�
 description: Узнайте, как предварительно загружать кэшированное содержимое в конечной точке Azure CDN.
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: 5ea3eba5-1335-413e-9af3-3918ce608a83
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2018
-ms.author: magattus
-ms.openlocfilehash: d91507ad2cb271b23b588ef7da88e6e6712915b1
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.author: allensu
+ms.openlocfilehash: c45d0a9195a719d830753a9614cfa7efb6f1c23d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593579"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81260281"
 ---
 # <a name="pre-load-assets-on-an-azure-cdn-endpoint"></a>Предварительная загрузка ресурсов на конечной точке CDN Azure
 [!INCLUDE [cdn-verizon-only](../../includes/cdn-verizon-only.md)]
@@ -67,7 +67,7 @@ ms.locfileid: "67593579"
 > 
 
 ## <a name="see-also"></a>См. также
-* [Очистка конечной точки сети CDN Azure](cdn-purge-endpoint.md)
-* [Справочник по CDN REST API Azure: Предварительная загрузка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/loadcontent)
-* [Справочник по CDN REST API Azure: Очистить содержимое из конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/purgecontent)
+* [Очистка Azure CDN конечной точки](cdn-purge-endpoint.md)
+* [Справочник по API REST CDN Azure. Предварительная загрузка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/loadcontent)
+* [Справочник по API REST CDN Azure. Очистка содержимого конечной точки](https://docs.microsoft.com/rest/api/cdn/endpoints/purgecontent)
 

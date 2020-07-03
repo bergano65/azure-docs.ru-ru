@@ -1,30 +1,175 @@
 ---
 title: Создание устойчивой функции в Azure с помощью C#
-description: Создание и публикация устойчивой функции Azure с помощью Visual Studio.
+description: Создание и публикация устойчивой функции Azure с помощью Visual Studio или Visual Studio Code.
 author: jeffhollan
 ms.topic: quickstart
-ms.date: 11/02/2019
+ms.date: 03/18/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 12e79df4af2dab097a41cf8482d5a344080890cf
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+zone_pivot_groups: code-editors-set-one
+ms.openlocfilehash: eda3afdf8deb3336cd0c5293c2422e694caa69c8
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769713"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80132754"
 ---
 # <a name="create-your-first-durable-function-in-c"></a>Создание устойчивой функции в C\#
 
 *Устойчивые функции* — это расширение [Функций Azure](../functions-overview.md), которое позволяет писать функции с отслеживанием состояния в беcсерверной среде. Расширение автоматически управляет состоянием, создает контрольные точки и перезагружается.
 
-[!INCLUDE [v1-note](../../../includes/functions-durable-v1-tutorial-note.md)]
+::: zone pivot="code-editor-vscode"
 
-Из этой статьи вы узнаете, как использовать Visual Studio 2019 для локального создания и тестирования устойчивой функции hello world.  Эта функция организовывает и объединяет в цепочку вызовы других функций. Затем вы опубликуете код функции в Azure. Эти инструменты доступны как часть рабочей нагрузки Azure для разработки в Visual Studio 2019.
+Из этой статьи вы узнаете, как с помощью Visual Studio Code создать и протестировать устойчивую функцию hello world в локальной среде.  Эта функция организовывает и объединяет в цепочку вызовы других функций. Затем вы опубликуете код функции в Azure. Эти инструменты доступны как часть [расширения Функций Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) в VS Code.
+
+![Выполнение устойчивых функций в Azure](./media/durable-functions-create-first-csharp/functions-vscode-complete.png)
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим руководством сделайте следующее:
+
+* Установите [Visual Studio Code](https://code.visualstudio.com/download).
+
+* Установите следующие расширения VS Code:
+    - [Функции Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
+    - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+
+* Убедитесь, что используется последняя версия [Azure Functions Core Tools](../functions-run-local.md).
+
+* Для работы Устойчивых функций требуется учетная запись хранения Azure. Вам понадобится подписка Azure.
+
+* Убедитесь, что установлен [пакет SDK для .NET Core](https://dotnet.microsoft.com/download) 3.1 или более поздней версии.
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="create-your-local-project"></a><a name="create-an-azure-functions-project"></a>Создание локального проекта 
+
+В этом разделе вы используете Visual Studio Code. чтобы создать локальный проект Функций Azure. 
+
+1. В Visual Studio Code нажмите клавишу F1 (или Ctrl/Cmd+Shift+P), чтобы открыть палитру команд. В палитре команд найдите и щелкните `Azure Functions: Create New Project...`.
+
+    ![Создание проекта функции](media/durable-functions-create-first-csharp/functions-vscode-create-project.png)
+
+1. Выберите расположение пустой папки для проекта и нажмите кнопку **Выбрать**.
+
+1. Следуя инструкциям, введите следующие сведения:
+
+    | prompt | Значение | Описание |
+    | ------ | ----- | ----------- |
+    | Select a language for your function app project (Выберите язык для проекта приложения-функции) | C# | Создание локального проекта "Функции C#". |
+    | Выбор версии | Функции Azure версии 3 | Этот параметр отображается, только если вы еще не установили Core Tools. В этом случае Core Tools устанавливается при первом запуске приложения. |
+    | Select a template for your project's first function (Выберите шаблон для первой функции вашего проекта) | Пропустить | |
+    | Select how you would like to open your project (Выберите, как вы хотели бы открыть свой проект) | Открыть в текущем окне | Повторно открывает VS Code в выбранной папке. |
+
+При необходимости Visual Studio Code устанавливает Azure Functions Core Tools. Кроме того, создается проект приложения-функции в папке. Проект будет содержать файлы конфигурации [host.json](../functions-host-json.md) и [local.settings.json](../functions-run-local.md#local-settings-file).
+
+## <a name="add-functions-to-the-app"></a>Добавление функций в приложение
+
+В следующих действиях используется шаблон для создания устойчивого кода функции в проекте.
+
+1. В палитре команд найдите и щелкните `Azure Functions: Create Function...`.
+
+1. Следуя инструкциям, введите следующие сведения:
+
+    | prompt | Значение | Описание |
+    | ------ | ----- | ----------- |
+    | Выбор шаблона для функции | DurableFunctionsOrchestration | Создание оркестрации устойчивых функций |
+    | Provide a function name (Укажите имя функции) | HelloOrchestration | Имя класса, в котором создаются функции |
+    | Provide a namespace (Укажите пространство имен) | Company.Function | Пространство имен для созданного класса |
+
+1. Когда VS Code предложит выбрать учетную запись хранения, щелкните **Выбрать учетную запись хранения**. Следуя инструкциям, укажите следующие сведения, чтобы создать новую учетную запись хранения в Azure.
+
+    | prompt | Значение | Описание |
+    | ------ | ----- | ----------- |
+    | Выбор подписки | *имя вашей подписки* | Выбор подписки Azure |
+    | Выбор учетной записи хранения | Создание новой учетной записи хранения |  |
+    | Ввод имени новой учетной записи хранения | *уникальное имя* | Имя учетной записи хранения для создания |
+    | Выбор группы ресурсов | *уникальное имя* | Имя создаваемой группы ресурсов |
+    | Выберите расположение | *region* | Выбор ближайшего региона |
+
+В проект добавляется класс, содержащий новые функции. VS Code также добавляет строку подключения учетной записи хранения в файл *local.settings.json* и ссылку на пакет NuGet [`Microsoft.Azure.WebJobs.Extensions.DurableTask`](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) в файл проекта *.csproj*.
+
+Откройте новый файл *HelloOrchestration.cs*, чтобы просмотреть содержимое. Эта устойчивая функция является простым примером цепочки функции со следующими методами.  
+
+| Метод | FunctionName | Описание |
+| -----  | ------------ | ----------- |
+| **`RunOrchestrator`** | `HelloOrchestration` | Управляет устойчивой оркестрацией. В этом случае оркестрация запускается, создает список и добавляет в него результат трех вызовов функций.  Список возвращается после завершения вызовов трех функций. |
+| **`SayHello`** | `HelloOrchestration_Hello` | Функция возвращает hello. Это функция, которая содержит управляемую бизнес-логику. |
+| **`HttpStart`** | `HelloOrchestration_HttpStart` | [Функция, активируемая HTTP-запросом](../functions-bindings-http-webhook.md), которая запускает пример оркестрации и возвращает ответ состояния проверки. |
+
+Созданный проект функции и устойчивую функцию можно протестировать на локальном компьютере.
+
+## <a name="test-the-function-locally"></a>Локальное тестирование функции
+
+Основные инструменты службы "Функции Azure" позволяют запускать проекты функций Azure на локальном компьютере разработчика. Вам будет предложено установить эти инструменты при первом запуске функции из Visual Studio Code.
+
+1. Чтобы протестировать созданную функцию, установите точку останова в коде функции действия `SayHello` и нажмите клавишу F5 для запуска проекта приложения-функции. Выходные данные основных инструментов отображаются на панели **Terminal** (Терминал).
+
+    > [!NOTE]
+    > См. сведения об отладке в руководстве по [диагностике Устойчивых функций](durable-functions-diagnostics.md#debugging).
+
+1. На панели **Terminal** (Терминал) скопируйте URL-адрес конечной точки функции, активируемой HTTP-запросом.
+
+    ![Локальные выходные данные в Azure](media/durable-functions-create-first-csharp/functions-vscode-f5.png)
+
+1. Отправьте запрос HTTP POST к конечной точке URL-адреса, используя средства наподобие [Postman](https://www.getpostman.com/) или [cURL](https://curl.haxx.se/).
+
+   Полученный ответ является начальным результатом функции HTTP, что сообщает об успешном начале работы устойчивой оркестрации. Он еще не конечный результат оркестрации. Ответ включает несколько полезных URL-адреса. Теперь запросите состояние оркестрации.
+
+1. Скопируйте значение URL-адреса для `statusQueryGetUri`, вставьте его в адресную строку панели браузера и выполните запрос. Кроме того, вы можете воспользоваться Postman для выдачи запроса GET.
+
+   Запрос будет запрашивать экземпляр оркестрации для состояния. Вам нужно получить итоговый ответ, который показывает, что экземпляр выполнен и содержит выходные данные или результаты устойчивой функции. Он выглядит следующим образом: 
+
+    ```json
+    {
+        "name": "HelloOrchestration",
+        "instanceId": "9a528a9e926f4b46b7d3deaa134b7e8a",
+        "runtimeStatus": "Completed",
+        "input": null,
+        "customStatus": null,
+        "output": [
+            "Hello Tokyo!",
+            "Hello Seattle!",
+            "Hello London!"
+        ],
+        "createdTime": "2020-03-18T21:54:49Z",
+        "lastUpdatedTime": "2020-03-18T21:54:54Z"
+    }
+    ```
+
+1. В VS Code нажмите клавиши **Shift + F5**, чтобы остановить отладку.
+
+Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
+
+[!INCLUDE [functions-create-function-app-vs-code](../../../includes/functions-sign-in-vs-code.md)]
+
+[!INCLUDE [functions-publish-project-vscode](../../../includes/functions-publish-project-vscode.md)]
+
+## <a name="test-your-function-in-azure"></a>Тестирование функции в Azure
+
+1. Скопируйте URL-адрес HTTP-триггера на панели **Output** (Выходные данные). URL-адрес для вызова функции, активируемой HTTP-запросом, должен быть указан в таком формате:
+
+        https://<functionappname>.azurewebsites.net/api/HelloOrchestration_HttpStart
+
+1. Вставьте этот URL-адрес HTTP-запроса в адресную строку браузера. При использовании опубликованного приложения ответ состояния должен быть таким же, как и ранее.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Вы создали и опубликовали устойчивое приложение-функцию C# с помощью Visual Studio Code.
+
+> [!div class="nextstepaction"]
+> [Дополнительные сведения о распространенных шаблонах устойчивых функций](durable-functions-overview.md#application-patterns)
+
+::: zone-end
+
+::: zone pivot="code-editor-visualstudio"
+
+Из этой статьи вы узнаете, как с помощью Visual Studio 2019 создать и протестировать устойчивую функцию hello world в локальной среде.  Эта функция организовывает и объединяет в цепочку вызовы других функций. Затем вы опубликуете код функции в Azure. Эти инструменты доступны как часть рабочей нагрузки Azure для разработки в Visual Studio 2019.
 
 ![Выполнение устойчивых функций в Azure](./media/durable-functions-create-first-csharp/functions-vs-complete.png)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 * Установите [Visual Studio 2019](https://visualstudio.microsoft.com/vs/). Убедитесь, что рабочая нагрузка **Разработка для Azure** также установлена. Visual Studio 2017 также поддерживает разработку Устойчивых функций, но пользовательский интерфейс и выполняемые шаги при этом отличаются.
 
@@ -38,7 +183,7 @@ ms.locfileid: "75769713"
 
 1. В Visual Studio в меню **Файл** выберите **Создать** > **Проект**.
 
-1. В диалоговом окне **Add a new project** (Добавление нового проекта) выполните поиск по строке `functions`, выберите шаблон **Azure Functions** (Функции Azure) и нажмите кнопку **Далее**. 
+1. В диалоговом окне **Создание проекта** выполните поиск `functions`, выберите шаблон **Функции Azure** и нажмите кнопку **Далее**. 
 
     ![Диалоговое окно нового проекта для создания функции в Visual Studio](./media/durable-functions-create-first-csharp/functions-vs-new-project.png)
 
@@ -48,9 +193,9 @@ ms.locfileid: "75769713"
 
     ![Диалоговое окно "Создание нового приложения Функций Azure" в Visual Studio](./media/durable-functions-create-first-csharp/functions-vs-new-function.png)
 
-    | Параметр      | Рекомендуемое значение  | Description                      |
+    | Параметр      | Рекомендуемое значение  | Описание                      |
     | ------------ |  ------- |----------------------------------------- |
-    | **Версия** | Функции Azure 2.0 <br />(.NET Core) | Создает проект функции, использующий среду выполнения Функций Azure версии 2.0, которая поддерживает .NET Core. Функции Azure 1.0 поддерживают платформу .NET Framework. Дополнительные сведения см. в статье [Выбор целевых версий среды выполнения Функций Azure](../functions-versions.md).   |
+    | **Версия** | Функции Azure 3.0 <br />(.NET Core) | Создание проекта функции, использующий среду выполнения Функций Azure версии 3.0, которая поддерживает .NET Core 3.1. Дополнительные сведения см. в статье [Выбор целевых версий среды выполнения Функций Azure](../functions-versions.md).   |
     | **Шаблон** | Empty | Создает пустое приложение-функцию. |
     | **Учетная запись хранения**  | Эмулятор хранения | Учетная запись хранения необходима для управления состоянием устойчивой функции. |
 
@@ -62,20 +207,17 @@ ms.locfileid: "75769713"
 
 1. Щелкните правой кнопкой мыши проект в Visual Studio и выберите **Добавить** > **Новая функция Azure**.
 
-    ![Добавление новой функции](./media/durable-functions-create-first-csharp/functions-vs-add-new-function.png)
+    ![Добавление новой функции](./media/durable-functions-create-first-csharp/functions-vs-add-function.png)
 
 1. Убедитесь, что в меню добавления выбрано **Функция Azure**, введите имя своего файла C# и нажмите кнопку **Добавить**.
 
 1. Выберите шаблон **Оркестрация Устойчивых функций** и нажмите кнопку **ОК**.
 
-    ![Выбор устойчивого шаблона](./media/durable-functions-create-first-csharp/functions-vs-select-template.png)  
-
-> [!NOTE]
-> В настоящее время этот шаблон создает устойчивую функцию, используя более раннюю версию 1.x расширения. Сведения о том, как обновить Устойчивые функции до версии 2.x, см. в статье [Версии расширения "Устойчивые функции"](durable-functions-versions.md).
+    ![Выбор устойчивого шаблона](./media/durable-functions-create-first-csharp/functions-vs-select-template.png)
 
 Новая устойчивая функция добавлена в приложение.  Откройте новый файл .cs, чтобы просмотреть содержимое. Эта устойчивая функция является простым примером цепочки функции со следующими методами.  
 
-| Метод | FunctionName | Description |
+| Метод | FunctionName | Описание |
 | -----  | ------------ | ----------- |
 | **`RunOrchestrator`** | `<file-name>` | Управляет устойчивой оркестрацией. В этом случае оркестрация запускается, создает список и добавляет в него результат трех вызовов функций.  Список возвращается после завершения вызовов трех функций. |
 | **`SayHello`** | `<file-name>_Hello` | Функция возвращает hello. Это функция, которая содержит управляемую бизнес-логику. |
@@ -135,7 +277,7 @@ ms.locfileid: "75769713"
 
     URL-адрес для вызова триггера HTTP устойчивой функции должен быть в следующем формате.
 
-        http://<APP_NAME>.azurewebsites.net/api/<FUNCTION_NAME>_HttpStart
+        https://<APP_NAME>.azurewebsites.net/api/<FUNCTION_NAME>_HttpStart
 
 2. Вставьте этот URL-адрес HTTP-запроса в адресную строку браузера. При использовании опубликованного приложения ответ состояния должен быть таким же, как и ранее.
 
@@ -145,3 +287,5 @@ Visual Studio использовалась для создания и публи
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о распространенных шаблонах устойчивых функций](durable-functions-overview.md#application-patterns)
+
+::: zone-end

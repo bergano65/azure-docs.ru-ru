@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 08/2/2019
 ms.author: mayg
-ms.openlocfilehash: 7237bb7e0538ba1a9b6333ccb6589efe657a247d
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: f91ee5654b4add37d3cce4f875be1f9c2b398ab9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74423961"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81259499"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
@@ -30,7 +30,7 @@ Site Recovery использует [сервер обработки](vmware-phys
 
 ## <a name="step-2-troubleshoot-connectivity-and-replication-issues"></a>Шаг 2. Устранение неполадок подключения и репликации
 
-Начальная и текущая ошибки репликации часто вызываются проблемами подключения между исходным сервером и сервером обработки либо между сервером обработки и Azure. 
+Начальная и текущая ошибки репликации часто вызываются проблемами подключения между исходным сервером и сервером обработки либо между сервером обработки и Azure.
 
 Чтобы устранить эти проблемы, [устраните неполадки подключения и репликации](vmware-physical-azure-troubleshoot-process-server.md#check-connectivity-and-replication).
 
@@ -96,7 +96,7 @@ Site Recovery использует [сервер обработки](vmware-phys
 4. На исходном компьютере проверьте журналы в расположении, чтобы получить сведения об ошибке:
 
        C:\Program Files (X86)\Microsoft Azure Site Recovery\agent\svagents*log
-    
+
 ### <a name="process-server-with-no-heartbeat-error-806"></a>Сервер обработки без пульса [Ошибка 806]
 Если нет пульса от сервера обработки (PS), проверьте следующее:
 1. Виртуальная машина PS запущена
@@ -116,7 +116,7 @@ Site Recovery использует [сервер обработки](vmware-phys
 2. Войдите на главную целевую виртуальную машину, используя учетную запись с правами администратора.
     - Убедитесь, что служба сважентс запущена. Если она запущена, перезапустите службу.
     - Проверьте журналы в расположении, чтобы получить сведения об ошибке:
-        
+
           C:\Program Files (X86)\Microsoft Azure Site Recovery\agent\svagents*log
 3. Чтобы зарегистрировать главный целевой сервер на сервере конфигурации, перейдите в папку **%ProgramData%\ASR\Agent**и выполните следующую команду в командной строке:
    ```
@@ -132,38 +132,38 @@ Site Recovery использует [сервер обработки](vmware-phys
 
 ## <a name="error-id-78144---no-app-consistent-recovery-point-available-for-the-vm-in-the-last-xxx-minutes"></a>Идентификатор ошибки 78144-нет доступной для виртуальной машины точки восстановления с постоянными приложениями за последние "XXX" мин.
 
-В версии агента Mobility Agent [9,23](vmware-physical-mobility-service-overview.md#from-923-version-onwards) & [9,27](site-recovery-whats-new.md#update-rollup-39) были внесены улучшения для обработки сбоев при установке VSS. Убедитесь, что вы используете последние версии для получения лучших рекомендаций по устранению ошибок VSS.
+В версии агента Mobility Agent [9,23](vmware-physical-mobility-service-overview.md#mobility-service-agent-version-923-and-higher) & [9,27](site-recovery-whats-new.md#update-rollup-39) были внесены усовершенствования для обработки поведения при сбое установки VSS. Убедитесь, что вы используете последние версии для получения лучших рекомендаций по устранению ошибок VSS.
 
 Ниже перечислены некоторые из наиболее распространенных проблем.
 
-#### <a name="cause-1-known-issue-in-sql-server-20082008-r2"></a>Причина 1. известная неполадка в SQL Server 2008/2008 R2 
+#### <a name="cause-1-known-issue-in-sql-server-20082008-r2"></a>Причина 1. известная неполадка в SQL Server 2008/2008 R2
 **Как исправить** : существует известная проблема с SQL Server 2008/2008 R2. Ознакомьтесь с этой статьей [в базе знаний Azure Site Recovery агент или другая некомпонентная резервная копия VSS для сервера, на котором размещена SQL Server 2008 R2](https://support.microsoft.com/help/4504103/non-component-vss-backup-fails-for-server-hosting-sql-server-2008-r2)
 
-#### <a name="cause-2-azure-site-recovery-jobs-fail-on-servers-hosting-any-version-of-sql-server-instances-with-auto_close-dbs"></a>Причина 2. сбой заданий Azure Site Recovery на серверах, где размещается любая версия SQL Server экземпляров с AUTO_CLOSE баз данных 
-**Как исправить** : см. [статью](https://support.microsoft.com/help/4504104/non-component-vss-backups-such-as-azure-site-recovery-jobs-fail-on-ser) в базе знаний 
+#### <a name="cause-2-azure-site-recovery-jobs-fail-on-servers-hosting-any-version-of-sql-server-instances-with-auto_close-dbs"></a>Причина 2. сбой заданий Azure Site Recovery на серверах, где размещается любая версия SQL Server экземпляров с AUTO_CLOSE баз данных
+**Как исправить** : см. [статью](https://support.microsoft.com/help/4504104/non-component-vss-backups-such-as-azure-site-recovery-jobs-fail-on-ser) в базе знаний
 
 
 #### <a name="cause-3-known-issue-in-sql-server-2016-and-2017"></a>Причина 3. известная неполадка в SQL Server 2016 и 2017
-**Как исправить** : см. [статью](https://support.microsoft.com/help/4493364/fix-error-occurs-when-you-back-up-a-virtual-machine-with-non-component) в базе знаний 
+**Как исправить** : см. [статью](https://support.microsoft.com/help/4493364/fix-error-occurs-when-you-back-up-a-virtual-machine-with-non-component) в базе знаний
 
 
 ### <a name="more-causes-due-to-vss-related-issues"></a>Другие причины из-за проблем, связанных с VSS:
 
 Для дальнейшего устранения неполадок проверьте файлы на исходном компьютере, чтобы получить точный код ошибки для ошибки:
-    
+
     C:\Program Files (x86)\Microsoft Azure Site Recovery\agent\Application Data\ApplicationPolicyLogs\vacp.log
 
 Как разместить ошибки в файле?
 Выполните поиск строки "Вакперрор", открыв файл vacp. log в редакторе.
-        
+
     Ex: vacpError:220#Following disks are in FilteringStopped state [\\.\PHYSICALDRIVE1=5, ]#220|^|224#FAILED: CheckWriterStatus().#2147754994|^|226#FAILED to revoke tags.FAILED: CheckWriterStatus().#2147754994|^|
 
 В приведенном выше примере **2147754994** — это код ошибки, который сообщает о сбое, как показано ниже.
 
-#### <a name="vss-writer-is-not-installed---error-2147221164"></a>Модуль записи VSS не установлен — ошибка 2147221164 
+#### <a name="vss-writer-is-not-installed---error-2147221164"></a>Модуль записи VSS не установлен — ошибка 2147221164
 
 *Как исправить*: для создания тега согласованности приложений Azure Site Recovery использует службу теневого копирования ТОМОВ (VSS) Майкрософт. Он устанавливает поставщик VSS для работы, чтобы получить моментальные снимки согласованности приложений. Этот поставщик VSS устанавливается как служба. Если служба поставщика VSS не установлена, создание моментального снимка согласованности приложений завершается ошибкой с идентификатором ошибки 0x80040154 "класс не зарегистрирован". </br>
-См. [статью об устранении неполадок при установке модуля записи VSS](https://docs.microsoft.com/azure/site-recovery/vmware-azure-troubleshoot-push-install#vss-installation-failures) 
+См. [статью об устранении неполадок при установке модуля записи VSS](https://docs.microsoft.com/azure/site-recovery/vmware-azure-troubleshoot-push-install#vss-installation-failures)
 
 #### <a name="vss-writer-is-disabled---error-2147943458"></a>Модуль записи VSS отключен — ошибка 2147943458
 
@@ -178,18 +178,19 @@ Site Recovery использует [сервер обработки](vmware-phys
 
 ####  <a name="vss-provider-not_registered---error-2147754756"></a>Поставщик VSS NOT_REGISTERED-ошибка 2147754756
 
-**Как исправить**: для создания тега согласованности приложений Azure Site Recovery использует службу теневого копирования ТОМОВ (VSS) Майкрософт. Проверьте, установлена ли служба поставщика Azure Site Recovery VSS. </br>
+**Как исправить**: для создания тега согласованности приложений Azure Site Recovery использует службу теневого копирования ТОМОВ (VSS) Майкрософт.
+Проверьте, установлена ли служба поставщика Azure Site Recovery VSS. </br>
 
 - Повторите установку поставщика с помощью следующих команд:
 - Удаление существующего поставщика: C:\Program Files (x86) \Microsoft Azure site Рековери\ажент\ InMageVSSProvider_Uninstall. cmd
 - REINSTALL: C:\Program Files (x86) \Microsoft Azure site Рековери\ажент\ InMageVSSProvider_Install. cmd
- 
+
 Убедитесь, что для параметра Тип запуска службы поставщика VSS задано значение **автоматически**.
     - Перезапустите следующие службы:
         - Служба VSS
         - поставщик VSS Azure Site Recovery.
         - Служба VDS
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вам нужна дополнительная помощь, задайте свой вопрос на [форуме Azure Site Recovery](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr). У нас активное сообщество, и один из наших инженеров сможет помочь вам.

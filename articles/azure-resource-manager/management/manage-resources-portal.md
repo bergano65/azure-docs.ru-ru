@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
 ms.openlocfilehash: 00d260a74807774d5bf226c3ec00a6b84f93b8d1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75478803"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79248350"
 ---
 # <a name="manage-azure-resources-by-using-the-azure-portal"></a>Управление ресурсами Azure с помощью портал Azure
 
@@ -90,7 +90,7 @@ ms.locfileid: "75478803"
     ![Блокировка ресурса Azure](./media/manage-resources-portal/manage-azure-resources-portal-lock-resource.png)
 3. Выберите **Добавить**, а затем укажите свойства блокировки.
 
-Дополнительные сведения см. в статье [Блокировка ресурсов с помощью диспетчера ресурсов Azure](lock-resources.md).
+Дополнительные сведения см. [в разделе Блокировка ресурсов с помощью Azure Resource Manager](lock-resources.md).
 
 ## <a name="tag-resources"></a>Добавление тегов к ресурсам
 

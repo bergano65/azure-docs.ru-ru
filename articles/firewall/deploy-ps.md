@@ -8,10 +8,10 @@ ms.date: 4/10/2019
 ms.author: victorh
 ms.topic: conceptual
 ms.openlocfilehash: 7f48012ca1f97c2e28380d95da37863c4bc17f63
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73831839"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-powershell"></a>Развертывание и настройка брандмауэра Azure с помощью Azure PowerShell
@@ -33,19 +33,19 @@ ms.locfileid: "73831839"
 
 ![Инфраструктура сети, используемая в руководстве](media/tutorial-firewall-rules-portal/Tutorial_network.png)
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * настройка тестовой сетевой среды;
 > * развертывание брандмауэра;
-> * Создание маршрута по умолчанию
-> * настройка правила приложения для предоставления доступа к www.google.com;
+> * создание маршрута по умолчанию;
+> * настройка правила приложения для предоставления доступа к [www.google.com]\(www.google.com);
 > * настройка сетевых правил для предоставления доступа к внешним DNS-серверам;
 > * тестирование брандмауэра.
 
 При желании эту процедуру можно выполнить с помощью [портал Azure](tutorial-firewall-deploy-portal.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -137,7 +137,7 @@ $AzfwPrivateIP
 
 Запишите частный IP-адрес. Вы будете использовать его позже при создании маршрута по умолчанию.
 
-## <a name="create-a-default-route"></a>Создание маршрута по умолчанию
+## <a name="create-a-default-route"></a>создание маршрута по умолчанию;
 
 Создание таблицы с отключенным распространением маршрута BGP
 
@@ -184,7 +184,7 @@ Set-AzFirewall -AzureFirewall $Azfw
 
 Брандмауэр Azure содержит встроенную коллекцию правил для целевых полных доменных имен инфраструктуры, которые разрешены по умолчанию. Эти доменные имена предназначены для платформы и не могут использоваться для других целей. См. дополнительные сведения об [FQDN инфраструктуры](infrastructure-fqdns.md).
 
-## <a name="configure-a-network-rule"></a>настройка правила сети;
+## <a name="configure-a-network-rule"></a>Настройка правила сети
 
 Правило сети разрешает исходящий доступ к двум IP-адресам через порт 53 (DNS).
 
@@ -241,7 +241,7 @@ $NIC | Set-AzNetworkInterface
    Invoke-WebRequest -Uri https://www.microsoft.com
    ```
 
-   Запросы на `www.google.com` должны выполняться успешно, и запросы `www.microsoft.com` должны завершаться сбоем. Это показывает, что правила брандмауэра работают должным образом.
+   `www.google.com` Запросы должны выполняться успешно, и `www.microsoft.com` запросы должны завершаться ошибкой. Это показывает, что правила брандмауэра работают должным образом.
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
@@ -258,4 +258,4 @@ Remove-AzResourceGroup -Name Test-FW-RG
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)
+* [Руководство. Журналы мониторинга брандмауэра Azure](./tutorial-diagnostics.md)

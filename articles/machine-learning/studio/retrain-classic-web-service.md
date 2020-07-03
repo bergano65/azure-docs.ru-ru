@@ -7,21 +7,23 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
 author: peterclu
-ms.author: amlstudiodocs
+ms.author: peterlu
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/14/2019
-ms.openlocfilehash: eac7674ae4a88621a803c70bd55a88e65b2cb7e9
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 0639a525384e751ac4441da5d2c03532618b801a
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838693"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209457"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-classic-web-service"></a>Повторное обучение и развертывание классической веб-службы (классическая модель)
 
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
 Повторное обучение моделей машинного обучения является одним из способов обеспечения точности и основывается на самых актуальных доступных данных. В этой статье показано, как переучить классическую веб-службу Studio (классической). Инструкции по переучению новой веб-службы Studio (классической) см [. в этой статье.](retrain-machine-learning-model.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этой статье предполагается, что у вас уже есть повторно обученный и прогнозный эксперимент. Эти шаги описаны в статье [Переобучение модели Студии машинного обучения Azure](/azure/machine-learning/studio/retrain-machine-learning-model). Однако вместо развертывания вашей модели машинного обучения в качестве новой классической веб-службы вы развернете свой прогнозный эксперимент.
      
@@ -45,26 +47,13 @@ ms.locfileid: "73838693"
 ### <a name="use-the-azure-web-services-portal-to-add-an-endpoint"></a>Добавление конечной точки с помощью портала веб-служб Azure
 
 1. В Машинное обучение Studio (классическая модель) в колонке навигации слева щелкните веб-службы.
-1. В нижней части панели мониторинга веб-служб щелкните **Manage endpoints preview**(Управление конечными точками (предварительная версия)).
+1. В нижней части панели мониторинга веб-службы щелкните **Управление конечными точками Предварительная версия**.
 1. Нажмите кнопку **Добавить**.
-1. Введите имя и описание новой конечной точки. Выберите уровень ведения журнала и укажите, включать ли образцы данных. Дополнительные сведения о ведении журнала см. в статье [Включение функции ведения журналов для веб-служб машинного обучения](web-services-logging.md).
+1. Введите имя и описание новой конечной точки. Выберите уровень ведения журнала и укажите, включать ли образцы данных. Дополнительные сведения о ведении журнала см. в статье [Включение ведения журнала для веб-служб машинное обучение](web-services-logging.md).
 
 ## <a name="update-the-added-endpoints-trained-model"></a>Обновление обученной модели добавленной конечной точки
 
 ### <a name="retrieve-patch-url"></a>Извлечение URL-адреса PATCH
-
-### <a name="option-1-programmatically"></a>Вариант 1. программный
-
-Чтобы получить правильный URL-адрес PATCH программным образом, выполните перечисленные ниже действия.
-
-1. Выполните пример кода [AddEndpoint](https://github.com/raymondlaghaeian/AML_EndpointMgmt/blob/master/Program.cs) .
-1. В выходных данных AddEndpoint найдите значение *HelpLocation* и скопируйте URL-адрес.
-
-   ![HelpLocation в выходных данных примера addEndpoint.](./media/retrain-classic/addEndpoint-output.png)
-1. Вставьте URL-адрес в браузер, чтобы перейти на страницу, содержащую ссылки на справочные статьи о веб-службе.
-1. Щелкните ссылку **Обновить ресурс**, чтобы открыть страницу справки с информацией об исправлении.
-
-### <a name="option-2-use-the-azure-machine-learning-web-services-portal"></a>Вариант 2. Использование портала веб-служб Машинное обучение Azure
 
 Выполните следующие действия, чтобы получить правильный URL-адрес PATCH с помощью веб-портала.
 
@@ -101,8 +90,8 @@ ms.locfileid: "73838693"
                     Location = new AzureBlobDataReference()
                     {
                         BaseLocation = "https://esintussouthsus.blob.core.windows.net/",
-                        RelativeLocation = "your endpoint relative location", //from the output, for example: “experimentoutput/8946abfd-79d6-4438-89a9-3e5d109183/8946abfd-79d6-4438-89a9-3e5d109183.ilearner”
-                        SasBlobToken = "your endpoint SAS blob token" //from the output, for example: “?sv=2013-08-15&sr=c&sig=37lTTfngRwxCcf94%3D&st=2015-01-30T22%3A53%3A06Z&se=2015-01-31T22%3A58%3A06Z&sp=rl”
+                        RelativeLocation = "your endpoint relative location", //from the output, for example: "experimentoutput/8946abfd-79d6-4438-89a9-3e5d109183/8946abfd-79d6-4438-89a9-3e5d109183.ilearner"
+                        SasBlobToken = "your endpoint SAS blob token" //from the output, for example: "?sv=2013-08-15&sr=c&sig=37lTTfngRwxCcf94%3D&st=2015-01-30T22%3A53%3A06Z&se=2015-01-31T22%3A58%3A06Z&sp=rl"
                     }
                 }
             }
@@ -129,12 +118,12 @@ ms.locfileid: "73838693"
 
 Параметры *apiKey* и *endpointUrl* для этого вызова можно получить на панели мониторинга конечной точки.
 
-Значение параметра *Имя* в *ресурсах* должно соответствовать имени ресурса сохраненной обученной модели в прогнозном эксперименте. Чтобы получить имя ресурса:
+Значение параметра *Name* в *Resources* должно совпадать с именем ресурса сохраненной обученной модели в прогнозном эксперименте. Чтобы получить имя ресурса:
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. В меню слева щелкните **Машинное обучение**.
+1. В меню слева щелкните **машинное обучение**.
 1. В поле "Имя" выберите рабочую область, а затем щелкните **Веб-службы**.
-1. В поле "Имя" щелкните **Модель ценза [predictive exp.]** .
+1. В поле Имя выберите пункт **модель переписи [прогнозная Exp.]**.
 1. Щелкните новую добавленную конечную точку.
 1. На панели мониторинга конечной точки щелкните **Обновить ресурс**.
 1. На странице документации по API обновления ресурсов для веб-службы можно найти **имя ресурса** в разделе **обновляемых ресурсов**.
@@ -143,7 +132,7 @@ ms.locfileid: "73838693"
 
 Если код выполнен успешно, новая конечная точка начнет использовать переобученную модель примерно через 30 секунд.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о том, как управлять веб-службами или отслеживать несколько экспериментов, см. в следующих статьях:
 

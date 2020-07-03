@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: sstein
 ms.openlocfilehash: f11fbaccd38e8d6fed956c5cf476ed5a3732a68d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67185364"
 ---
 ## <a name="additional-resources"></a>Дополнительные ресурсы

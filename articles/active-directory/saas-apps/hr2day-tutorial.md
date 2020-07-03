@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: e76ca7198bfded725d89f04fd162d470a85da904
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 5b9de6c2b8d9f7b11b686e820aab54fdd8e8a02f
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442838"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81866795"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hr2day-by-merces"></a>Руководство по Интеграция Azure Active Directory с HR2day by Merces
 
@@ -38,7 +38,7 @@ ms.locfileid: "67442838"
 
 Чтобы настроить интеграцию Azure AD с HR2day от Merces, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка HR2day by Merces с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,13 +99,13 @@ ms.locfileid: "67442838"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для HR2day by Merces](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.force.com/<instancename>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.force.com/<instancename>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://hr2day.force.com/<companyname>`.
 
@@ -114,23 +114,23 @@ ms.locfileid: "67442838"
 
 5. Приложение HR2day от Merces ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![image](common/edit-attribute.png)
+    ![Изображение](common/edit-attribute.png)
 
     > [!NOTE]
     > Перед настройкой утверждения SAML нужно обратиться в [службу технической поддержки клиентов HR2day от Merces](mailto:servicedesk@merces.nl) и запросить значение уникального идентификатора для вашего клиента. Он вам потребуется для выполнения действий, описанных в следующем разделе.
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-    | ИМЯ |  Исходный атрибут |
+    | Имя |  Исходный атрибут |
     | ---------- | ----------- |
     | ATTR_LOGINCLAIM | `join([mail],"102938475Z","@"` |
     | | |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![image](common/new-save-attribute.png)
+    ![Изображение](common/new-save-attribute.png)
 
-    ![image](common/new-attribute-details.png)
+    ![Изображение](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -138,9 +138,9 @@ ms.locfileid: "67442838"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -152,7 +152,7 @@ ms.locfileid: "67442838"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -163,7 +163,7 @@ ms.locfileid: "67442838"
 Чтобы настроить единый вход на стороне **HR2day by Merces**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки HR2day by Merces](mailto:servicedesk@merces.nl). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!NOTE]
-> Сообщите службе технической поддержки Merces, что в целях интеграции идентификатор сущности должен быть указан в формате **https://hr2day.force.com/INSTANCENAME** .
+> Сообщите службе технической поддержки Merces, что в целях интеграции идентификатор сущности должен быть указан в формате **https:\//hr2day.force.com/INSTANCENAME**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -235,4 +235,4 @@ ms.locfileid: "67442838"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

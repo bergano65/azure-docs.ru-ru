@@ -1,38 +1,32 @@
 ---
-title: Пакет SDK для Java. Операции файловой системы в Azure Data Lake Storage 1-го поколения | Документация Майкрософт
-description: Использование пакета Java SDK для Azure Data Lake Storage 1-го поколения для выполнения операций файловой системы в Data Lake Storage 1-го поколения, таких как создание папок и т. д.
-services: data-lake-store
-documentationcenter: ''
+title: Пакет SDK для Java — операции файловой системы в Data Lake Storage 1-го поколения — Azure
+description: Используйте пакет SDK для Java для Azure Data Lake Storage 1-го поколения выполнения операций файловой системы на Data Lake Storage 1-го поколения таких как создание папок, а также загрузка и скачивание файлов данных.
 author: twooley
-manager: mtillman
-editor: cgronlun
-ms.assetid: d10e09db-5232-4e84-bb50-52efc2c21887
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: bc6e0718cdc4ccb18480dc760279da9c177db4cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6f97443e4bcf6689f0bf49917774f662d5462566
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60877470"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691775"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-java-sdk"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием Java SDK
 > [!div class="op_single_selector"]
-> * [ПАКЕТ SDK .NET](data-lake-store-data-operations-net-sdk.md)
+> * [Пакет SDK для .NET](data-lake-store-data-operations-net-sdk.md)
 > * [Пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
 > * [REST API](data-lake-store-data-operations-rest-api.md)
 > * [Python](data-lake-store-data-operations-python.md)
 >
 > 
 
-Узнайте, как с помощью пакета Java SDK для Azure Data Lake Storage 1-го поколения выполнять базовые операции, такие как создание папок, отправка и скачивание файлов данных и т. д. Дополнительные сведения об Azure Data Lake Storage 1-го поколения см. в статье [Azure Data Lake Storage 1-го поколения](data-lake-store-overview.md).
+Узнайте, как использовать пакет SDK для Java Azure Data Lake Storage 1-го поколения для выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных и т. д. Дополнительные сведения о Data Lake Storage 1-го поколения см. в разделе [Azure Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
 Документацию по API пакета Java SDK для Data Lake Storage 1-го поколения можно найти [здесь](https://azure.github.io/azure-data-lake-store-java/javadoc/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 * Комплект разработчика Java (JDK 7 или более поздней версии с использованием Java версии 1.7 или более поздней).
 * Учетная запись Data Lake Storage 1-го поколения. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md).
 * [Maven](https://maven.apache.org/install.html). В этом руководстве это средство используется для создания зависимостей проекта. Хотя зависимости можно создать и без использования таких систем, как Maven или Gradle, они существенно упрощают управление ими.
@@ -43,7 +37,7 @@ ms.locfileid: "60877470"
 
 1. Создайте проект Maven с использованием [архетипа mvn](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) с помощью командной строки или интегрированной среды разработки (IDE). Инструкции по созданию проекта Java с использованием IntelliJ см. [здесь](https://www.jetbrains.com/help/idea/2016.1/creating-and-running-your-first-java-application.html). Инструкции по созданию проекта с использованием Eclipse см. [здесь](https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-3.htm). 
 
-2. Добавьте приведенные ниже зависимости в файл Maven **pom.xml**. Добавьте следующий фрагмент перед тегом **\</project >** :
+2. Добавьте приведенные ниже зависимости в файл Maven **pom.xml**. Перед тегом ** \<>/Project** добавьте следующий фрагмент:
    
         <dependencies>
           <dependency>
@@ -58,7 +52,7 @@ ms.locfileid: "60877470"
           </dependency>
         </dependencies>
    
-    Первая зависимость предназначена для использования пакета SDK для Data Lake Storage 1-го поколения (`azure-data-lake-store-sdk`) из репозитория Maven. Вторая зависимость нужна, чтобы указать, какие платформы ведения журналов (`slf4j-nop`) будут использоваться для этого приложения. Пакет SDK для Data Lake Storage 1-го поколения использует библиотеку [slf4j](https://www.slf4j.org/), которая позволяет выбрать любую из ряда популярных платформ ведения журналов, таких как Log4j, платформа для Java, Logback и др., или отключить ведение журнала. В этом примере мы отключим ведение журнала, так как используем привязку **slf4j-nop**. Сведения о других вариантах ведения журнала в приложении см. [здесь](https://www.slf4j.org/manual.html#projectDep).
+    Первая зависимость предназначена для использования пакета SDK для Data Lake Storage 1-го поколения (`azure-data-lake-store-sdk`) из репозитория Maven. Вторая зависимость нужна, чтобы указать, какие платформы ведения журналов (`slf4j-nop`) будут использоваться для этого приложения. Пакет SDK для Data Lake Storage 1-го поколения использует [SLF4J](https://www.slf4j.org/) Logging фасадной, который позволяет выбирать из ряда популярных платформ ведения журналов, таких как log4j, ведение журнала Java, Logback и т. д., а также без ведения журнала. В этом примере мы отключим ведение журнала, так как используем привязку **slf4j-nop**. Сведения о других вариантах ведения журнала в приложении см. [здесь](https://www.slf4j.org/manual.html#projectDep).
 
 3. Добавьте следующие инструкции импорта в приложение.
 
@@ -73,7 +67,7 @@ ms.locfileid: "60877470"
         import java.util.Arrays;
         import java.util.List;
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Аутентификация
 
 * Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [Проверка подлинности пользователей в Data Lake Storage 1-го поколения с использованием Java](data-lake-store-end-user-authenticate-java-sdk.md).
 * Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Проверка подлинности между службами в Data Lake Storage 1-го поколения с использованием Java](data-lake-store-service-to-service-authenticate-java.md).
@@ -86,7 +80,7 @@ ms.locfileid: "60877470"
 
 Фрагменты кода в следующих разделах содержат примеры некоторых распространенных операций с файловой системой. Другие операции можно найти в полной [документации по API пакета Java SDK для Data Lake Storage 1-го поколения](https://azure.github.io/azure-data-lake-store-java/javadoc/) в разделе об объекте **ADLStoreClient**.
 
-## <a name="create-a-directory"></a>создать каталог;
+## <a name="create-a-directory"></a>Создание каталога
 
 Следующий фрагмент создает структуру каталогов в корне указанной учетной записи Data Lake Storage 1-го поколения.
 

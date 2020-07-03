@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/04/2019
 ms.author: aahi
-ms.openlocfilehash: 5d3aba2f6010ba16656be96433c521d2adae4c58
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: 72b00d78d19ed0e963b4dad01b82033c659e1efd
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169162"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "79219613"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Создание Cognitive Services ресурса с помощью интерфейс командной строки Azure (CLI)
 
@@ -25,16 +25,16 @@ ms.locfileid: "76169162"
 
 [!INCLUDE [cognitive-services-subscription-types](../../includes/cognitive-services-subscription-types.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Допустимая подписка Azure — [создайте ее](https://azure.microsoft.com/free/) бесплатно.
 * [Интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 
 ## <a name="install-the-azure-cli-and-sign-in"></a>Установка Azure CLI и вход в систему 
 
-Установка [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы войти в локальную установку интерфейса командной строки, выполните команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index#az-login) :
+Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Чтобы войти в локальную установку интерфейса командной строки, выполните команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index#az-login) :
 
-```console
+```azurecli-interactive
 az login
 ```
 
@@ -60,7 +60,7 @@ az account list-locations \
 
 Создав расположение Azure, создайте новую группу ресурсов в Azure CLI с помощью команды [AZ Group Create](/cli/azure/group#az-group-create) .
 
-В приведенном ниже примере замените расположение Azure `westus2` одним из расположений Azure, доступных для вашей подписки.
+В приведенном ниже примере замените расположение `westus2` Azure на одно из расположений Azure, доступных для вашей подписки.
 
 ```azurecli-interactive
 az group create \
@@ -82,16 +82,16 @@ az group create \
 
 
 > [!NOTE]
-> Многие из Cognitive Services ниже имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать уровень "бесплатный", используйте `F0` в качестве номера SKU для ресурса.
+> Многие из Cognitive Services ниже имеют бесплатный уровень, который можно использовать для пробного использования службы. Чтобы использовать уровень "бесплатный", `F0` используйте в качестве номера SKU для ресурса.
 
-### <a name="vision"></a>Зрение
+### <a name="vision"></a>Концепция
 
 | Служба                    | Вид                      |
 |----------------------------|---------------------------|
-| Компьютерное зрение            | `ComputerVision`          |
+| API Компьютерного зрения            | `ComputerVision`          |
 | Прогнозирование Пользовательское визуальное распознавание | `CustomVision.Prediction` |
 | Пользовательское визуальное распознавание обучение   | `CustomVision.Training`   |
-| API распознавания лиц                       | `Face`                    |
+| Распознавание лиц                       | `Face`                    |
 | Распознаватель документов            | `FormRecognizer`          |
 | Распознаватель рукописного текста             | `InkRecognizer`           |
 
@@ -99,17 +99,17 @@ az group create \
 
 | Служба            | Вид                  |
 |--------------------|-----------------------|
-| API автозаполнения Bing   | `Bing.Autosuggest.v7` |
+| API Автозаполнения Bing   | `Bing.Autosuggest.v7` |
 | Пользовательский поиск Bing | `Bing.CustomSearch`   |
-| API Bing для поиска сущностей | `Bing.EntitySearch`   |
+| API Поиска сущностей Bing | `Bing.EntitySearch`   |
 | Поиск Bing        | `Bing.Search.v7`      |
-| API проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
+| API Проверки орфографии Bing   | `Bing.SpellCheck.v7`  |
 
 ### <a name="speech"></a>Речь
 
 | Служба            | Вид                 |
 |--------------------|----------------------|
-| Службы речи    | `SpeechServices`     |
+| Службы "Речь"    | `SpeechServices`     |
 | Распознавание речи | `SpeakerRecognition` |
 
 ### <a name="language"></a>Язык
@@ -140,7 +140,7 @@ az cognitiveservices account list-kinds
 
 Чтобы создать новый ресурс Cognitive Services и подписываться на него, используйте команду [AZ cognitiveservices Account Create](https://docs.microsoft.com/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-create) . Эта команда добавляет новый оплачиваемый ресурс в группу ресурсов, созданную ранее. При создании нового ресурса необходимо знать тип службы, которую вы хотите использовать, а также ценовую категорию (или SKU) и расположение Azure:
 
-Вы можете создать ресурс F0 (Free) для детектора аномалий с именем `anomaly-detector-resource` с помощью следующей команды.
+Вы можете создать ресурс F0 (Free) для детектора аномалий с именем `anomaly-detector-resource` , используя приведенную ниже команду.
 
 ```azurecli-interactive
 az cognitiveservices account create \
@@ -156,7 +156,7 @@ az cognitiveservices account create \
 
 Чтобы войти в локальную установку интерфейса командной строки (CLI), используйте команду [AZ login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login) .
 
-```console
+```azurecli-interactive
 az login
 ```
 
@@ -195,7 +195,7 @@ az cognitiveservices account list-usage \
 Чтобы удалить группу ресурсов и связанные с ней ресурсы, используйте команду AZ Group DELETE.
 
 ```azurecli-interactive
-az group delete --name storage-resource-group
+az group delete --name cognitive-services-resource-group
 ```
 
 ## <a name="see-also"></a>См. также

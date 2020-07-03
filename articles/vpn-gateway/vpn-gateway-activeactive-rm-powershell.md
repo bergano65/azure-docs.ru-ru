@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/24/2018
 ms.author: yushwang
 ms.reviewer: cherylmc
-ms.openlocfilehash: ec3697208434eb971e47136416f2c2cc541b5cea
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 436428c8f4a30706ab16ddace2d491287e620646
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152080"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82559839"
 ---
 # <a name="configure-active-active-s2s-vpn-connections-with-azure-vpn-gateways"></a>Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure
 
@@ -36,11 +36,9 @@ ms.locfileid: "77152080"
 Вы можете комбинировать эти блоки для создания более сложной, высокодоступной топологии сети в соответствии со своими задачами.
 
 > [!IMPORTANT]
-> Режим "активный — активный" использует только следующие номера SKU: 
->   * VpnGw1, VpnGw2, VpnGw3
->   * HighPerformance (для устаревших номеров SKU)
+> Режим "активный — активный" доступен для всех номеров SKU, кроме Basic.
 
-## <a name ="aagateway"></a>Часть 1. Создание и настройка VPN-шлюзов в режиме "активный — активный"
+## <a name="part-1---create-and-configure-active-active-vpn-gateways"></a><a name ="aagateway"></a>Часть 1. Создание и настройка VPN-шлюзов в режиме "активный — активный"
 Здесь приведены действия по настройке VPN-шлюза Azure в режиме "активный — активный". Между шлюзами в режиме "активный — активный" и "активный — резервный" существуют такие основные различия:
 
 * Необходимо создать две конфигурации IP-адресов шлюза с двумя общедоступными IP-адресами.
@@ -50,7 +48,7 @@ ms.locfileid: "77152080"
 Другие свойства такие же, как у шлюзов не в режиме "активный — активный". 
 
 ### <a name="before-you-begin"></a>Перед началом
-* Убедитесь в том, что у вас уже есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
+* Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки Azure, вы можете активировать преимущества для [подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 * Вам потребуется установить командлеты PowerShell диспетчера ресурсов Azure. Дополнительные сведения об установке командлетов PowerShell см. в разделе [Общие сведения об Azure PowerShell](/powershell/azure/overview).
 
 ### <a name="step-1---create-and-configure-vnet1"></a>Шаг 1. Создание и настройка VNet1
@@ -82,7 +80,7 @@ $Connection151 = "VNet1toSite5_1"
 $Connection152 = "VNet1toSite5_2"
 ```
 
-#### <a name="2-connect-to-your-subscription-and-create-a-new-resource-group"></a>2. Подключитесь к подписке и создайте новую группу ресурсов
+#### <a name="2-connect-to-your-subscription-and-create-a-new-resource-group"></a>2. Подключение к подписке Azure и создание группы ресурсов
 Для работы с командлетами диспетчера ресурсов необходимо перейти в режим PowerShell. Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](../powershell-azure-resource-manager.md).
 
 Откройте консоль PowerShell и подключитесь к своей учетной записи. Для подключения используйте следующий пример.
@@ -157,7 +155,7 @@ PS D:\> $vnet1gw.BgpSettingsText
 
 С помощью созданного шлюза можно установить подключение в режиме "активный — активный" между локальными или виртуальными сетями. В следующих разделах описано, как это сделать.
 
-## <a name ="aacrossprem"></a>Часть 2. Создание подключения между локальными сетями в режиме "активный — активный"
+## <a name="part-2---establish-an-active-active-cross-premises-connection"></a><a name ="aacrossprem"></a>Часть 2. Создание подключения между локальными сетями в режиме "активный — активный"
 Чтобы установить подключение между локальными сетями, нужно создать локальный сетевой шлюз, который будет представлять локальное VPN-устройство, а также подключение между VPN-шлюзом Azure и шлюзом локальной сети. В этом примере VPN-шлюз Azure находится в режиме "активный — активный". Таким образом, несмотря на то, что есть только одно локальное VPN-устройство (шлюз локальной сети) и один ресурс подключения, оба экземпляра VPN-шлюза Azure установят VPN-туннели типа "сеть — сеть" с локального устройства.
 
 Прежде чем продолжить, убедитесь, что вы выполнили инструкции из [первой части](#aagateway) этой статьи.
@@ -272,7 +270,7 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection152 -ResourceGroupName $R
 
 ![Подключение между локальными сетями с двойной избыточностью](./media/vpn-gateway-activeactive-rm-powershell/dual-redundancy.png)
 
-## <a name ="aav2v"></a>Часть 3. Создание подключения между виртуальными сетями в режиме "активный — активный"
+## <a name="part-3---establish-an-active-active-vnet-to-vnet-connection"></a><a name ="aav2v"></a>Часть 3. Создание подключения между виртуальными сетями в режиме "активный — активный"
 В этом разделе описано, как создать подключение между виртуальными сетями в режиме "активный — активный" с использованием BGP. 
 
 Приведенные ниже инструкции продолжают действия, описанные выше. Чтобы создать и настроить сеть TestVNet1 и VPN-шлюз с использованием BGP, сначала следует выполнить инструкции из [первой части](#aagateway) . 
@@ -368,7 +366,7 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection21 -ResourceGroupName $RG
 
 ![Подключение между виртуальными сетями в режиме "активный — активный"](./media/vpn-gateway-activeactive-rm-powershell/vnet-to-vnet.png)
 
-## <a name ="aaupdate"></a>Обновление существующего VPN-шлюза
+## <a name="update-an-existing-vpn-gateway"></a><a name ="aaupdate"></a>Обновление существующего VPN-шлюза
 
 В этом разделе описано, как перевести имеющийся VPN-шлюз Azure из режима "активный — резервный" в режим "активный — активный" и наоборот.
 

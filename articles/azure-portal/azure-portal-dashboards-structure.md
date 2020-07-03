@@ -5,7 +5,6 @@ services: azure-portal
 documentationcenter: ''
 author: adamabmsft
 manager: mtillman
-editor: tysonn
 ms.service: azure-portal
 ms.devlang: NA
 ms.topic: conceptual
@@ -13,12 +12,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 12/20/2019
 ms.author: mblythe
-ms.openlocfilehash: 18125e119e7ffdd2f8fa8ca3c5c1b12c8c9a94e0
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: ad0d3a1bf2c293039df3bba3aa18da7d6e7dd0a5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75640369"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81459225"
 ---
 # <a name="the-structure-of-azure-dashboards"></a>Структура панелей мониторинга Azure
 В этом документе описывается структура панели мониторинга Azure. В качестве примера используется следующая панель мониторинга Azure:

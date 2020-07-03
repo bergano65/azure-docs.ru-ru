@@ -1,5 +1,5 @@
 ---
-title: Развертывание приложения двойного стека IPv6 с базовыми Load Balancer в виртуальной сети Azure шаблон Resource Manager (Предварительная версия)
+title: Развертывание приложения двойного стека IPv6 с базовыми Load Balancer в виртуальной сети Azure шаблон диспетчера ресурсов
 titlesuffix: Azure Virtual Network
 description: В этой статье показано, как развернуть приложение с двумя стеками IPv6 в виртуальной сети Azure с помощью Azure Resource Manager шаблонов виртуальных машин.
 services: virtual-network
@@ -10,18 +10,18 @@ ms.service: virtual-network
 ms.devlang: NA
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 06/26/2019
+ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: b397c874045a89f5992aeadacfbbd4434a486977
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 7c2f66d92597801aa7c6b0b32f86f594d3effb05
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70012841"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80420601"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-with-basic-load-balancer-in-azure---template-preview"></a>Развертывание приложения с двойным стеком IPv6 с помощью базового Load Balancer в Azure — шаблон (Предварительная версия)
+# <a name="deploy-an-ipv6-dual-stack-application-with-basic-load-balancer-in-azure---template"></a>Развертывание приложения с двойным стеком IPv6 с помощью базового Load Balancer в Azure — шаблон
 
-В этой статье представлен список задач настройки IPv6 с частью шаблона Azure Resource Manager виртуальной машины, которая применяется к. Используйте шаблон, описанный в этой статье, чтобы развернуть приложение двойного стека (IPv4 + IPv6) с базовой Load Balancer, включающее в себя виртуальную сеть с двумя стеками с подсетями IPv4 и IPv6, базовую Load Balancer с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с Сетевые карты с двумя IP-конфигурациями, группой безопасности сети и общедоступными IP.
+В этой статье представлен список задач настройки IPv6 с частью шаблона Azure Resource Manager виртуальной машины, которая применяется к. Используйте шаблон, описанный в этой статье, чтобы развернуть приложение двойного стека (IPv4 + IPv6) с базовой Load Balancer, включающее в себя виртуальную сеть с двумя стеками с подсетями IPv4 и IPv6, базовую Load Balancer с двумя интерфейсными конфигурациями (IPv4 + IPv6), виртуальными машинами с сетевыми картами с двойной конфигурацией IP, сетевой группой безопасности и Общедоступ
 
 Сведения о развертывании приложения с двойным стеком (IPV4 + IPv6) с помощью Load Balancer (цен. категория "Стандартный") см. в разделе [развертывание приложения с двумя стеками IPv6 с Load Balancer (цен. Категория "Стандартный")-Template](ipv6-configure-standard-load-balancer-template-json.md).
 
@@ -109,7 +109,7 @@ ms.locfileid: "70012841"
             }
 ```
 
-## <a name="optional-configuration"></a>Необязательная конфигурация
+## <a name="optional-configuration"></a>Дополнительные настройки
 
 ### <a name="ipv6-internet-access-for-the-virtual-network"></a>Доступ к Интернету по протоколу IPv6 для виртуальной сети
 
@@ -180,6 +180,6 @@ ms.locfileid: "70012841"
 ## <a name="sample-vm-template-json"></a>Пример шаблона виртуальной машины JSON
 Чтобы развернуть приложение с двумя стеками IPv6 с базовыми Load Balancer в виртуальной сети Azure с помощью шаблона Azure Resource Manager, просмотрите пример шаблона [здесь](https://azure.microsoft.com/resources/templates/ipv6-in-vnet/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Вы можете узнать о ценах на общедоступные [IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/), пропускную [способность сети](https://azure.microsoft.com/pricing/details/bandwidth/)или [Load Balancer](https://azure.microsoft.com/pricing/details/load-balancer/).
+Вы можете узнать о ценах на [общедоступные IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/), [пропускную способность сети](https://azure.microsoft.com/pricing/details/bandwidth/)или [Load Balancer](https://azure.microsoft.com/pricing/details/load-balancer/).

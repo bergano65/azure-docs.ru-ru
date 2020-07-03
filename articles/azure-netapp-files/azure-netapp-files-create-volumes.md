@@ -15,21 +15,21 @@ ms.topic: conceptual
 ms.date: 12/01/2019
 ms.author: b-juche
 ms.openlocfilehash: 9e8817f802ca1d73ca0f6bfa2b32b1b14b37d7da
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74773557"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79274090"
 ---
 # <a name="create-an-nfs-volume-for-azure-netapp-files"></a>Создание тома NFS для Azure NetApp Files
 
-Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1) и SMBv3. При использовании емкости тома учитывается подготовленная емкость пула. В этой статье показано, как создать том NFS. Если вы хотите создать том SMB, см. раздел [Создание тома SMB для Azure NetApp Files](azure-netapp-files-create-volumes-smb.md). 
+Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1) и SMBv3. Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том NFS. Если вы хотите создать том SMB, см. раздел [Создание тома SMB для Azure NetApp Files](azure-netapp-files-create-volumes-smb.md). 
 
-## <a name="before-you-begin"></a>Перед началом работы 
+## <a name="before-you-begin"></a>Подготовка к работе 
 Перед началом необходимо настроить пул емкости.   
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
 Подсеть должна быть делегирована службе Azure NetApp Files.  
-[Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+[Делегирование подсети в Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
 
 ## <a name="considerations"></a>Рекомендации 
 
@@ -65,12 +65,12 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
 
         Имя тома должно быть уникальным в пределах каждого пула емкости. Длина имени должна быть не менее трех знаков. Можно использовать любой алфавитно-цифровой символ.   
 
-        В качестве имени тома нельзя использовать `default`.
+        Нельзя использовать `default` в качестве имени тома.
 
     * **Пул ресурсов**  
         Укажите пул ресурсов, в котором нужно создать том.
 
-    * **Квота**  
+    * **Предел**  
         Укажите объем логического хранилища, выделенный для тома.  
 
         В поле **Доступная квота** отображается объем неиспользуемого пространства выбранного пула емкости, которое можно использовать для создания нового тома. Размер нового тома не должен превышать доступную квоту.  
@@ -110,10 +110,10 @@ Azure NetApp Files поддерживает тома NFS (NFSv3 и Нфсв 4.1)
     От пула емкости том наследует атрибуты подписки, группы ресурсов и расположения. Состояние развертывания можно отслеживать на вкладке уведомлений.
 
 
-## <a name="next-steps"></a>Дальнейшие действия  
+## <a name="next-steps"></a>Дальнейшие шаги  
 
-* [Настройка домена Нфсв 4.1 по умолчанию для Azure NetApp Files](azure-netapp-files-configure-nfsv41-domain.md)
+* [Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files](azure-netapp-files-configure-nfsv41-domain.md)
 * [Подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
-* [Configure export policy for an NFS volume](azure-netapp-files-configure-export-policy.md) (Настройка политики экспорта для тома NFS)
+* [Настройка политики экспорта для тома NFS](azure-netapp-files-configure-export-policy.md)
 * [Ограничения ресурсов для службы Azure NetApp Files](azure-netapp-files-resource-limits.md)
-* [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)
+* [Сведения об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)

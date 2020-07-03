@@ -2,17 +2,17 @@
 title: Ошибки недоступности SKU
 description: В этой статье описывается, как устранить ошибку недоступности номера SKU при развертывании ресурсов с помощью Azure Resource Manager.
 ms.topic: troubleshooting
-ms.date: 10/19/2018
-ms.openlocfilehash: a79f55b4d3baf33126807fa099ed2d7b8b48aac5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/18/2020
+ms.openlocfilehash: 3dcc26f2d74799a6d282ee4bd733d36bec7b05e4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75477464"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78942726"
 ---
 # <a name="resolve-errors-for-sku-not-available"></a>Устранение ошибок, связанных с недоступностью номера SKU
 
-В этой статье объясняется, как устранить ошибку **SkuNotAvailable**. Если вам не удалось найти подходящий номер SKU в этом или любом другом регионе, который соответствует потребностям вашей компании, отправьте [запрос на получение SKU](https://aka.ms/skurestriction) в службу поддержки Azure.
+В этой статье объясняется, как устранить ошибку **SkuNotAvailable**. Если вы не можете найти подходящий SKU в этом регионе или зоне или в альтернативном регионе или зоне, который соответствует вашим потребностям вашего бизнеса, отправьте [запрос SKU](https://aka.ms/skurestriction) в службу поддержки Azure.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -22,7 +22,7 @@ ms.locfileid: "75477464"
 
 ```
 Code: SkuNotAvailable
-Message: The requested tier for resource '<resource>' is currently not available in location '<location>' 
+Message: The requested tier for resource '<resource>' is currently not available in location '<location>'
 for subscription '<subscriptionID>'. Please try another tier or deploy to a different location.
 ```
 
@@ -34,7 +34,7 @@ for subscription '<subscriptionID>'. Please try another tier or deploy to a diff
 
 ## <a name="solution-1---powershell"></a>Решение 1 — PowerShell
 
-Чтобы определить, какие номера SKU доступны в регионе, используйте команду [Get-AzComputeResourceSku](/powershell/module/az.compute/get-azcomputeresourcesku). Отфильтруйте результаты по расположению. Эта команда поддерживается только в Azure PowerShell последней версии.
+Чтобы определить, какие номера SKU доступны в регионе или зоне, используйте команду [Get-азкомпутересаурцеску](/powershell/module/az.compute/get-azcomputeresourcesku) . Отфильтруйте результаты по расположению. Эта команда поддерживается только в Azure PowerShell последней версии.
 
 ```azurepowershell-interactive
 Get-AzComputeResourceSku | where {$_.Locations -icontains "centralus"}
@@ -42,13 +42,23 @@ Get-AzComputeResourceSku | where {$_.Locations -icontains "centralus"}
 
 Результаты включают список номеров SKU для расположения и имеющиеся ограничения для этого номера SKU. Обратите внимание, что номер SKU может отображаться как `NotAvailableForSubscription`.
 
-```powershell
-ResourceType          Name        Locations   Restriction                      Capability           Value
-------------          ----        ---------   -----------                      ----------           -----
-virtualMachines       Standard_A0 centralus   NotAvailableForSubscription      MaxResourceVolumeMB   20480
-virtualMachines       Standard_A1 centralus   NotAvailableForSubscription      MaxResourceVolumeMB   71680
-virtualMachines       Standard_A2 centralus   NotAvailableForSubscription      MaxResourceVolumeMB  138240
+```output
+ResourceType          Name           Locations   Zone      Restriction                      Capability           Value
+------------          ----           ---------   ----      -----------                      ----------           -----
+virtualMachines       Standard_A0    centralus             NotAvailableForSubscription      MaxResourceVolumeMB   20480
+virtualMachines       Standard_A1    centralus             NotAvailableForSubscription      MaxResourceVolumeMB   71680
+virtualMachines       Standard_A2    centralus             NotAvailableForSubscription      MaxResourceVolumeMB  138240
+virtualMachines       Standard_D1_v2 centralus   {2, 1, 3}                                  MaxResourceVolumeMB
 ```
+
+Некоторые дополнительные примеры:
+
+```azurepowershell-interactive
+Get-AzComputeResourceSku | where {$_.Locations.Contains("centralus") -and $_.ResourceType.Contains("virtualMachines") -and $_.Name.Contains("Standard_DS14_v2")}
+Get-AzComputeResourceSku | where {$_.Locations.Contains("centralus") -and $_.ResourceType.Contains("virtualMachines") -and $_.Name.Contains("v3")} | fc
+```
+
+Добавление «FC» в конце Возвращает дополнительные сведения.
 
 ## <a name="solution-2---azure-cli"></a>Решение 2 — Azure CLI
 
@@ -60,7 +70,7 @@ az vm list-skus --location southcentralus --size Standard_F --output table
 
 Результаты выполнения команды выглядят так:
 
-```azurecli
+```output
 ResourceType     Locations       Name              Zones    Capabilities    Restrictions
 ---------------  --------------  ----------------  -------  --------------  --------------
 virtualMachines  southcentralus  Standard_F1                ...             None

@@ -5,15 +5,15 @@ author: Philmea
 manager: philmea
 ms.service: iot-pnp
 services: iot-pnp
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/26/2019
 ms.author: philmea
-ms.openlocfilehash: 7e71c940d0c083642954114cf4fa1617b93335b9
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 78406175090521af70381f61f4e33dfb6c35ac8c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75531266"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80159155"
 ---
 # <a name="manage-models-in-the-repository"></a>Управление моделями в репозитории
 
@@ -23,7 +23,7 @@ ms.locfileid: "75531266"
 
 - Портал сертификации Azure для IoT
 - Интерфейс командной строки Azure
-- Код Visual Studio
+- Visual Studio Code
 
 ## <a name="model-repositories"></a>Репозитории модели
 
@@ -39,11 +39,11 @@ ms.locfileid: "75531266"
 - [Завершите процесс сертификации для вашего устройства IOT](./tutorial-certification-test.md).
 - Найдите Plug and Playные модели возможностей устройств IoT. Эти модели можно использовать для [быстрого создания готовых устройств IOT и их интеграции с решениями](./quickstart-connect-pnp-device-solution-node.md).
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 
 Azure CLI предоставляет команды для управления моделями возможностей устройств и интерфейсами в центрах Интернета вещей Plug and Play Public и в репозиториях модели компании. Дополнительные сведения см. в разделе [Установка и использование расширения Интернета вещей Azure для Azure CLI](./howto-install-pnp-cli.md) .
 
-## <a name="visual-studio-code"></a>Код Visual Studio
+## <a name="visual-studio-code"></a>Visual Studio Code
 
 Чтобы открыть представление **репозитория модели** в Visual Studio Code.
 
@@ -60,6 +60,6 @@ Azure CLI предоставляет команды для управления 
 > [!NOTE]
 > В VS Code репозиторий общедоступной модели доступен только для чтения. Партнеры корпорации Майкрософт могут обновить общедоступный репозиторий на [портале сертификации Azure для IOT](https://preview.catalog.azureiotsolutions.com).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 На следующем шаге вы узнаете, как [Отправить устройство Plug and Play IOT для сертификации](tutorial-certification-test.md).

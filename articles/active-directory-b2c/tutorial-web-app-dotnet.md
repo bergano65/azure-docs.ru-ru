@@ -1,24 +1,24 @@
 ---
-title: Руководство. Включение проверки подлинности в веб-приложении
+title: Руководство по Включение проверки подлинности в веб-приложении
 titleSuffix: Azure AD B2C
 description: Руководство по предоставлению пользователю данных для входа в веб-приложение ASP.NET с помощью Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
-ms.author: marsma
+ms.author: mimart
 ms.date: 10/14/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 2f9a678ae8fea95f842f30234229c648e1966d40
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: e4b56f18bf8a2ed1c22b00b8a57efdbf06eb7fa2
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849934"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78183336"
 ---
-# <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство. Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
+# <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Руководство по Включение в веб-приложении аутентификации с помощью Azure Active Directory B2C
 
 В этом руководстве описано использование Azure Active Directory B2C (Azure AD B2C) для входа и регистрации пользователей в веб-приложении ASP.NET. Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
 
@@ -44,7 +44,7 @@ ms.locfileid: "76849934"
 
 Для обновления приложения можно использовать текущий интерфейс **Приложения** или новый объединенный интерфейс **Регистрация приложений (предварительная версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregintro).
 
-#### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
+#### <a name="applications"></a>[Приложения](#tab/applications/)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
@@ -54,7 +54,7 @@ ms.locfileid: "76849934"
 1. Щелкните **Сохранить**.
 1. На странице свойств запишите идентификатор приложения для использования в дальнейшем при настройке веб-приложения.
 
-#### <a name="app-registrations-previewtabapp-reg-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
+#### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий клиент Azure AD B2C.

@@ -4,18 +4,18 @@ description: Управляйте учетной записью, базой да
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 01/21/2020
+ms.date: 04/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: 325840f8961fac49e599f1aa567ad8d4137820b4
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 3f86468bcafe3d7ce78827aba761bb4e1bf920fa
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705808"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81273636"
 ---
 # <a name="manage-azure-cosmos-resources-using-azure-cli"></a>Управление ресурсами Azure Cosmos с помощью Azure CLI
 
-В следующем разделе описываются стандартные команды для автоматизации Azure Cosmos DB управления учетными записями, базами данных и контейнерами с помощью Azure CLI. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb). Вы также можете найти несколько примеров в [Экземплярах Azure CLI для Azure Cosmos DB](cli-samples.md), в том числе и сведения о том, как создавать и управлять учетными записями, базами данных и контейнерами Cosmos DB для MongoDB, Gremlin, Cassandra и Table API.
+В этом руководстве приведены команды Azure CLI, позволяющие автоматизировать управление учетными записями, базами данных и контейнерами Azure Cosmos DB. Справочные страницы для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb). Вы также можете найти несколько примеров в [Экземплярах Azure CLI для Azure Cosmos DB](cli-samples.md), в том числе и сведения о том, как создавать и управлять учетными записями, базами данных и контейнерами Cosmos DB для MongoDB, Gremlin, Cassandra и Table API.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -40,7 +40,7 @@ az cosmosdb create \
     --locations regionName='East US 2' failoverPriority=1 isZoneRedundant=False
 ```
 
-## <a name="add-or-remove-regions"></a>Добавление или удаление регионов
+## <a name="add-or-remove-regions"></a>Добавление и удаление регионов
 
 Создайте учетную запись Azure Cosmos с двумя регионами, добавьте регион и удалите регион.
 
@@ -50,24 +50,24 @@ az cosmosdb create \
 > Кроме того, эта команда позволяет добавлять или удалять регионы, но не изменять приоритеты при отработке отказа или активировать отработку отказа вручную. См. раздел [Установка приоритета](#set-failover-priority) отработки отказа и [триггера вручную](#trigger-manual-failover).
 
 ```azurecli-interactive
-resourceGroupName = 'myResourceGroup'
-accountName = 'mycosmosaccount' # must be lower case and <31 characters
+resourceGroupName='myResourceGroup'
+accountName='mycosmosaccount' # must be lower case and <31 characters
 
 # Create an account with 2 regions
 az cosmosdb create --name $accountName --resource-group $resourceGroupName \
-    --locations regionName= "West US 2" failoverPriority=0 isZoneRedundant=False \
-    --locations regionName= "East US 2" failoverPriority=1 isZoneRedundant=False
+    --locations regionName="West US 2" failoverPriority=0 isZoneRedundant=False \
+    --locations regionName="East US 2" failoverPriority=1 isZoneRedundant=False
 
 # Add a region
 az cosmosdb update --name $accountName --resource-group $resourceGroupName \
-    --locations regionName= "West US 2" failoverPriority=0 isZoneRedundant=False \
-    --locations regionName= "East US 2" failoverPriority=1 isZoneRedundant=False \
-    --locations regionName= "South Central US" failoverPriority=2 isZoneRedundant=False
+    --locations regionName="West US 2" failoverPriority=0 isZoneRedundant=False \
+    --locations regionName="East US 2" failoverPriority=1 isZoneRedundant=False \
+    --locations regionName="South Central US" failoverPriority=2 isZoneRedundant=False
 
 # Remove a region
 az cosmosdb update --name $accountName --resource-group $resourceGroupName \
-    --locations regionName= "West US 2" failoverPriority=0 isZoneRedundant=False \
-    --locations regionName= "East US 2" failoverPriority=1 isZoneRedundant=False
+    --locations regionName="West US 2" failoverPriority=0 isZoneRedundant=False \
+    --locations regionName="East US 2" failoverPriority=1 isZoneRedundant=False
 ```
 
 ## <a name="enable-multiple-write-regions"></a>Включить несколько регионов записи
@@ -76,8 +76,8 @@ az cosmosdb update --name $accountName --resource-group $resourceGroupName \
 
 ```azurecli-interactive
 # Update an Azure Cosmos account from single to multi-master
-resourceGroupName = 'myResourceGroup'
-accountName = 'mycosmosaccount'
+resourceGroupName='myResourceGroup'
+accountName='mycosmosaccount'
 
 # Get the account resource id for an existing account
 accountId=$(az cosmosdb show -g $resourceGroupName -n $accountName --query id -o tsv)
@@ -91,8 +91,8 @@ az cosmosdb update --ids $accountId --enable-multiple-write-locations true
 
 ```azurecli-interactive
 # Assume region order is initially 'West US 2'=0 'East US 2'=1 'South Central US'=2 for account
-resourceGroupName = 'myResourceGroup'
-accountName = 'mycosmosaccount'
+resourceGroupName='myResourceGroup'
+accountName='mycosmosaccount'
 
 # Get the account resource id for an existing account
 accountId=$(az cosmosdb show -g $resourceGroupName -n $accountName --query id -o tsv)
@@ -102,12 +102,12 @@ az cosmosdb failover-priority-change --ids $accountId \
     --failover-policies 'West US 2'=0 'South Central US'=1 'East US 2'=2
 ```
 
-## <a name="enable-automatic-failover"></a>Включить автоматический переход на другой ресурс
+## <a name="enable-automatic-failover"></a> Включение автоматического перехода на другой ресурс
 
 ```azurecli-interactive
 # Enable automatic failover on an existing account
-resourceGroupName = 'myResourceGroup'
-accountName = 'mycosmosaccount'
+resourceGroupName='myResourceGroup'
+accountName='mycosmosaccount'
 
 # Get the account resource id for an existing account
 accountId=$(az cosmosdb show -g $resourceGroupName -n $accountName --query id -o tsv)
@@ -122,8 +122,8 @@ az cosmosdb update --ids $accountId --enable-automatic-failover true
 
 ```azurecli-interactive
 # Assume region order is initially 'West US 2'=0 'East US 2'=1 'South Central US'=2 for account
-resourceGroupName = 'myResourceGroup'
-accountName = 'mycosmosaccount'
+resourceGroupName='myResourceGroup'
+accountName='mycosmosaccount'
 
 # Get the account resource id for an existing account
 accountId=$(az cosmosdb show -g $resourceGroupName -n $accountName --query id -o tsv)
@@ -133,7 +133,7 @@ az cosmosdb failover-priority-change --ids $accountId \
     --failover-policies 'East US 2'=0 'South Central US'=1 'West US 2'=2
 ```
 
-## <a id="list-account-keys"></a>Вывод всех ключей учетной записи
+## <a name="list-all-account-keys"></a><a id="list-account-keys"></a>Вывод всех ключей учетной записи
 
 Получение всех ключей для учетной записи Cosmos.
 
@@ -273,17 +273,17 @@ az cosmosdb sql container create \
 
 ```azurecli-interactive
 # Create an Azure Cosmos container with TTL of one day
-resourceGroupName = 'myResourceGroup'
-accountName = 'mycosmosaccount'
-databaseName = 'database1'
-containerName = 'container1'
+resourceGroupName='myResourceGroup'
+accountName='mycosmosaccount'
+databaseName='database1'
+containerName='container1'
 
 az cosmosdb sql container update \
     -g $resourceGroupName \
     -a $accountName \
     -d $databaseName \
     -n $containerName \
-    --ttl = 86400
+    --ttl=86400
 ```
 
 ## <a name="create-a-container-with-a-custom-index-policy"></a>Создание контейнера с настраиваемой политикой индексов
@@ -366,10 +366,10 @@ az cosmosdb sql container throughput update \
     --throughput $newRU
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об Azure CLI см.:
 
 - [Установка Azure CLI](/cli/azure/install-azure-cli)
-- [Справочник по интерфейсу командной строки Azure](https://docs.microsoft.com/cli/azure/cosmosdb)
+- [Справочник по Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb)
 - [Дополнительные примеры Azure CLI для Azure Cosmos DB](cli-samples.md)

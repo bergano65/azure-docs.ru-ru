@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 11/08/2019
+ms.date: 04/29/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 16b6e4f521568c89e415e6e9fa621175052cf34d
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 616910eda33b3ddc49fa6233ccb3989c5e4214e2
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74026899"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82582847"
 ---
 # <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Office 365 в Azure Active Directory
 
@@ -73,7 +73,7 @@ ms.locfileid: "74026899"
 
 ### <a name="to-remove-the-expiration-policy"></a>Удаление политики срока действия
 
-1. Убедитесь, что вы вошли на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора клиента.
+1. Убедитесь, что вы вошли на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора для организации Azure AD.
 2. Выберите **Azure Active Directory** > **Группы** > **Окончание срока действия**.
 3. Нажмите кнопку **Отсутствует** для функции **Включить срок действия для этих групп Office 365**.
 
@@ -82,7 +82,7 @@ ms.locfileid: "74026899"
 1. Выберите **Azure Active Directory** > **Группы** > **Общие**. 
 2. Нажмите кнопку **Нет** для параметра **Пользователи могут создавать группы Office 365 на порталах Azure**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. подробнее об окончании срока действия, включая инструкции для PowerShell и технические ограничения:
 

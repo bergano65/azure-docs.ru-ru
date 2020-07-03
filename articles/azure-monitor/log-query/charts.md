@@ -1,18 +1,17 @@
 ---
 title: Создание диаграмм и схем из запросов журнала Azure Monitor | Документация Майкрософт
 description: В статье описаны различные визуализации в Azure Monitor для разных способов отображения данных журнала.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
-ms.openlocfilehash: ca60ed68277486ca5ed7d7d90ad72506a4844936
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8a515f01bfa9f8ec579c51b806c997d79b629250
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75398085"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77670327"
 ---
 # <a name="creating-charts-and-diagrams-from-azure-monitor-log-queries"></a>Создание диаграмм и схем из запросов журнала Azure Monitor
 
@@ -34,7 +33,7 @@ Heartbeat
 
 По умолчанию результаты отображаются в виде таблицы:
 
-![Таблицы](media/charts/table-display.png)
+![Таблица](media/charts/table-display.png)
 
 Чтобы получить более полное представление, выберите **Диаграмма** и выберите параметр **Круговая**, чтобы отображать результаты:
 
@@ -51,7 +50,7 @@ Perf
 | summarize avg(CounterValue), percentiles(CounterValue, 50, 95)  by bin(TimeGenerated, 1h)
 ```
 
-Выберите вариант отображения диаграммы **Линейная**.
+Выберите параметр **Показать график:**
 
 ![График](media/charts/charts-and-diagrams-multiSeries.png)
 
@@ -86,13 +85,13 @@ SecurityEvent
 
 ![Гистограмма AccountType](media/charts/charts-and-diagrams-multiDimension2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
 
-- [Работа со строками](string-operations.md)
-- [Работа со значениями даты и времени](datetime-operations.md)
-- [Статистические функции в запросах Log Analytics](aggregations.md)
-- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
-- [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
+- [Операции со строками](string-operations.md)
+- [Операции с датой и временем](datetime-operations.md)
+- [Агрегатные функции](aggregations.md)
+- [Расширенные агрегатные функции](advanced-aggregations.md)
+- [JSON и структуры данных](json-data-structures.md)
 - [Составление расширенных запросов](advanced-query-writing.md)
-- [Joins](joins.md)
+- [Соединения](joins.md)

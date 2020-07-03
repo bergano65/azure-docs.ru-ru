@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: srrengar
 ms.openlocfilehash: 40dd930aa21e3056d5ecc908359215d6874ed8ae
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75464735"
 ---
 # <a name="event-analysis-and-visualization-with-azure-monitor-logs"></a>Анализ событий и визуализация с помощью журналов Azure Monitor
@@ -34,7 +34,7 @@ ms.locfileid: "75464735"
 
 На [портале Azure](https://portal.azure.com)перейдите к группе ресурсов, в которой вы создали аналитика Service Fabric решение.
 
-Выберите ресурс **ServiceFabric\<имя_рабочей_области_OMS\>** .
+Выберите ресурс **ServiceFabric\<имя_рабочей_области_OMS\>**.
 
 В `Summary` вы увидите плитки в форме графа для каждого включенного решения, включая одну для Service Fabric. Щелкните граф **Service Fabric**, чтобы продолжить решение службы Fabric Analytics.
 
@@ -46,7 +46,7 @@ ms.locfileid: "75464735"
 
  Если включить диагностику во время создания кластера, можно просмотреть такие события: 
 
-* [События кластера Service Fabric](service-fabric-diagnostics-event-generation-operational.md).
+* [события кластера Service Fabric;](service-fabric-diagnostics-event-generation-operational.md)
 * [События модели программирования на основе Reliable Actors](service-fabric-reliable-actors-diagnostics.md).
 * [События модели программирования на основе Reliable Services](service-fabric-reliable-services-diagnostics.md).
 
@@ -59,11 +59,11 @@ ms.locfileid: "75464735"
 
 ![Операционный канал решения Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events_selection.png)
 
-Щелкните **Список**, чтобы просмотреть список событий. Здесь вы увидите все собранные системные события. Эти данные взяты из таблицы **WADServiceFabricSystemEventsTable** в учетной записи хранения Azure, а события служб Reliable Services и субъектов Reliable Actors, которые показаны далее, также взяты из этих соответствующих таблиц.
+Щелкните **Список**, чтобы просмотреть список событий. Здесь вы увидите все собранные системные события. Для справки это из **вадсервицефабриксистемевентстабле** в учетной записи хранения Azure. Аналогично, события надежных служб и субъектов, которые вы видите ниже, находятся в соответствующих таблицах.
     
 ![Операционный канал запроса](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events.png)
 
-Кроме того, чтобы найти необходимые данные, можно щелкнуть значок лупы в левой части экрана и воспользоваться языком запросов Kusto. Например, чтобы найти все действия, выполняемые в узлах кластера, можно использовать приведенный ниже запрос. Идентификаторы событий, используемые ниже, можно найти в [справочнике по событиям операционного канала](service-fabric-diagnostics-event-generation-operational.md).
+Кроме того, чтобы найти необходимые данные, можно щелкнуть значок лупы в левой части экрана и воспользоваться языком запросов Kusto. Например, чтобы найти все действия, выполняемые в узлах кластера, можно использовать приведенный ниже запрос. Идентификаторы событий, используемые ниже, находятся в [справочнике по событиям рабочих каналов](service-fabric-diagnostics-event-generation-operational.md).
 
 ```kusto
 ServiceFabricOperationalEvent
@@ -82,7 +82,7 @@ ServiceFabricOperationalEvent
 
 ![Запрос к Reliable Services](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_service_events.png)
 
-Аналогичным образом можно просмотреть события субъектов Reliable Actors. Чтобы настроить более подробные события для субъектов Reliable Actors, необходимо изменить `scheduledTransferKeywordFilter` в конфигурации для расширения диагностики (см. ниже). Сведения об этих значениях можно найти в [справочнике по событиям субъектов Reliable Actors](service-fabric-reliable-actors-diagnostics.md#keywords).
+Аналогичным образом можно просмотреть события субъектов Reliable Actors. Чтобы настроить более подробные события для субъектов Reliable Actors, необходимо изменить `scheduledTransferKeywordFilter` в конфигурации для расширения диагностики (см. ниже). Подробные сведения о значениях этих параметров см. в [справочнике по событиям надежных субъектов](service-fabric-reliable-actors-diagnostics.md#keywords).
 
 ```json
 "EtwEventSourceProviderConfiguration": [

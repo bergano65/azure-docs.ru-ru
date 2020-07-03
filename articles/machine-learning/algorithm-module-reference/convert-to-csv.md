@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 10/22/2019
-ms.openlocfilehash: 8206a88695c89d04eabe89e79a5aff8469cc6862
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: fc2a043e8f1565cf5fe45ba0b072ad015076635e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152437"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79477686"
 ---
 # <a name="convert-to-csv-module"></a>Преобразовать в модуль CSV
 
@@ -41,7 +41,7 @@ ms.locfileid: "77152437"
 
 2. Подключите его к любому модулю, который выводит набор данных.   
   
-3.  Запустили конвейер.
+3.  Отправьте конвейер.
 
 ### <a name="results"></a>Результаты
   
@@ -52,6 +52,6 @@ ms.locfileid: "77152437"
 
  + **Просмотреть выходные данные**: щелкните значок глаза и следуйте инструкциям по просмотру папки **Results_dataset** и скачайте CSV-файл Data.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

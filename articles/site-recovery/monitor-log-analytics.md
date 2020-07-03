@@ -7,18 +7,18 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: f20d0d38a7fbd831d3e97a69373bac04b9b330aa
-ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+ms.openlocfilehash: 0b3f5963572368cb9c884984418140b4bbc0dea3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74133415"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82131192"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
 В этой статье описывается мониторинг компьютеров, реплицированных с помощью Azure [Site Recovery](site-recovery-overview.md), с помощью [журналов Azure Monitor](../azure-monitor/platform/data-platform-logs.md)и [log Analytics](../azure-monitor/log-query/log-query-overview.md).
 
-Журналы Azure Monitor предоставляют платформу данных журнала, которая собирает журналы действий и диагностики, а также другие данные мониторинга. В журналах Azure Monitor используется Log Analytics для написания и тестирования запросов журналов, а также для интерактивного анализа данных журнала. Вы можете визуализировать и запрашивать результаты журнала, а также настраивать оповещения для выполнения действий на основе наблюдаемых данных.
+Журналы Azure Monitor предоставляют платформу данных журнала, которая собирает журналы действий и ресурсов, а также другие данные мониторинга. В журналах Azure Monitor используется Log Analytics для написания и тестирования запросов журналов, а также для интерактивного анализа данных журнала. Вы можете визуализировать и запрашивать результаты журнала, а также настраивать оповещения для выполнения действий на основе наблюдаемых данных.
 
 Для Site Recovery можно Azure Monitor журналы, которые помогут выполнить следующие действия.
 
@@ -36,20 +36,20 @@ ms.locfileid: "74133415"
 
 - По крайней мере один компьютер, защищенный в хранилище служб восстановления.
 - Рабочая область Log Analytics для хранения журналов Site Recovery. [Сведения о](../azure-monitor/learn/quick-create-workspace.md) настройке рабочей области.
-- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Дополнительные сведения](../azure-monitor/log-query/get-started-portal.md)
+- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее](../azure-monitor/log-query/get-started-portal.md).
 
 Перед началом работы рекомендуется ознакомиться с [общими вопросами мониторинга](monitoring-common-questions.md) .
 
 ## <a name="configure-site-recovery-to-send-logs"></a>Настройка Site Recovery для отправки журналов
 
-1. В хранилище щелкните **параметры диагностики** > **Добавить параметр диагностики**.
+1. В хранилище щелкните **Параметры** > диагностики**Добавить параметр диагностики**.
 
-    ![Выбор журнала диагностики](./media/monitoring-log-analytics/add-diagnostic.png)
+    ![Выбор журнала ресурсов](./media/monitoring-log-analytics/add-diagnostic.png)
 
 2. В окне **параметры диагностики**укажите имя и установите флажок **отправить на log Analytics**.
 3. Выберите подписку на Azure Monitor журналы и рабочую область Log Analytics.
 4. Выберите **система диагностики Azure** в переключателе.
-5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. Нажмите кнопку **ОК**.
+5. В списке Журнал выберите все журналы с префиксом **азуреситерековери**. После этого щелкните **OK**.
 
     ![Выбор рабочей области](./media/monitoring-log-analytics/select-workspace.png)
 
@@ -359,6 +359,6 @@ AzureDiagnostics  
 
 Для предупреждения установите **пороговое значение** 1, а **период** — 1440 минут, чтобы проверить ошибки за последний день.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о](site-recovery-monitor-and-troubleshoot.md) встроенном мониторинге Site Recovery.

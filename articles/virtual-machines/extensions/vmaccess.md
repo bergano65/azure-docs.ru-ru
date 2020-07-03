@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 05/10/2018
 ms.author: akjosh
 ms.openlocfilehash: bd9dc05a84a4ee54fce40e6c88e87ac90bfee8a5
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073607"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79250365"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI
 ## <a name="overview"></a>Обзор
@@ -31,18 +31,18 @@ ms.locfileid: "74073607"
 > [!NOTE]
 > Если вы с помощью VMAccess сбрасываете пароль виртуальной машины после установки расширения входа в AAD, это расширение необходимо повторно запустить, чтобы повторно активировать его на виртуальной машине.
 
-## <a name="prerequisites"></a>предварительным требованиям
-### <a name="operating-system"></a>операционная система
+## <a name="prerequisites"></a>Предварительные условия
+### <a name="operating-system"></a>Операционная система
 
 Расширение VMAccess можно выполнять с использованием следующих дистрибутивов Linux.
 
-| Дистрибутив | Версия |
+| Distribution | Версия |
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS и 12.04 LTS |
 | Debian | Debian 7.9+, 8.2+ |
 | Red Hat | RHEL 6.7 или более поздней версии, 7.1 или более поздней версии |
 | Oracle Linux | 6.4+, 7.0+ |
-| SUSE | 11 и 12 |
+| Suse | 11 и 12 |
 | openSUSE | openSUSE LEAP 42.2+ |
 | CentOS | CentOS 6.3+, 7.0+ |
 | CoreOS | 494.4.0 + |
@@ -68,7 +68,7 @@ az vm user update \
 
 > **Примечание.** При использовании команды `az vm user update` в файл `~/.ssh/authorized_keys` на виртуальной машине добавляется новый текст открытого ключа для администратора. Существующие ключи SSH не заменяются и не удаляются. Предыдущий набор ключей не будет удален во время развертывания или последующих обновлений при помощи расширения VMAccess.
 
-## <a name="reset-password"></a>Сбросить пароль
+## <a name="reset-password"></a>Сброс пароля
 В следующем примере сбрасывается пароль для пользователя `azureuser` на виртуальной машине `myVM`.
 
 ```azurecli-interactive
@@ -257,4 +257,4 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 ### <a name="support"></a>Поддержка
 
-Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите получить поддержку. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

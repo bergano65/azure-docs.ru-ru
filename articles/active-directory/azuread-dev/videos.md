@@ -14,10 +14,10 @@ ms.custom: aaddev
 ms.reviewer: celested
 titleSuffix: Microsoft identity platform
 ms.openlocfilehash: e71f555f7a9cefef3aeada79031db3a07e3db49a
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77202064"
 ---
 # <a name="azure-active-directory-developer-platform-videos"></a>Видео о платформе Azure Active Directory разработчиков
@@ -71,6 +71,6 @@ ms.locfileid: "77202064"
     :::column-end:::
 :::row-end:::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о новой [платформе Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop)

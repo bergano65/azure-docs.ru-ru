@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Zoho | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Zoho | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Zoho.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3b5d0e52e927a44d5bce5314e724c1c753809ce0
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74231943"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zoho"></a>Руководство по Интеграция Azure Active Directory с Zoho
+# <a name="tutorial-azure-active-directory-integration-with-zoho"></a>Руководство по интеграции Azure Active Directory с Zoho
 
 В этом руководстве описано, как интегрировать Zoho с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Zoho обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "74231943"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zoho, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Zoho с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -119,11 +119,11 @@ ms.locfileid: "74231943"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-zoho-single-sign-on"></a>Настройка единого входа в Zoho
 
@@ -141,7 +141,7 @@ ms.locfileid: "74231943"
    
     ![Сведения о проверке подлинности SAML](./media/zoho-mail-tutorial/ic789609.png "Информация о проверке подлинности SAML")
    
-    a. В текстовое поле **URL-адрес для входа** вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **URL-адрес для входа** вставьте **URL-адрес входа**, скопированный на портале Azure.
    
     b. В текстовое поле **URL-адрес выхода** вставьте **URL-адрес выхода**, скопированный на портале Azure.
    
@@ -149,9 +149,9 @@ ms.locfileid: "74231943"
        
     d. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **PublicKey** (Открытый ключ).
    
-    д. В поле **Алгоритм** задайте значение **RSA**.
+    д) В поле **Algorithm** (Алгоритм) задайте значение **RSA**.
    
-    Е. Последовательно выберите **ОК**.
+    е) Нажмите кнопку **ОК**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -225,7 +225,7 @@ ms.locfileid: "74231943"
    
     ![Добавление пользователя](./media/zoho-mail-tutorial/ic789612.png "Добавить пользователя")
    
-    a. В текстовом поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    а. В текстовом поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -233,7 +233,7 @@ ms.locfileid: "74231943"
 
     d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
    
-    д. Последовательно выберите **ОК**.  
+    д) Нажмите кнопку **ОК**.  
       
     > [!NOTE]
     > Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией.

@@ -6,14 +6,14 @@ ms.topic: tutorial
 ms.date: 01/15/2020
 ms.author: antchu
 ms.custom: mvc
-ms.openlocfilehash: e98655dca7d682e5c42f3b0ae7f26c892bd12377
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 9d25e2e32f09cc681d85d5adffe53f1237d7200c
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76710723"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81255504"
 ---
-# <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство. Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
+# <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Руководство по Применение моделей машинного обучения в Функциях Azure с использованием Python и TensorFlow
 
 В этой статье вы узнаете, как классифицировать изображение на основе его содержимого с помощью модели машинного обучения, используя Python, TensorFlow и Функции Azure. Так как вся работа выполняется локально и никакие ресурсы Azure не создаются в облаке, вы не понесете никакие затраты на прохождение этого учебника.
 
@@ -59,7 +59,7 @@ ms.locfileid: "76710723"
 Перейдите к папке *start* и выполните следующие команды для создания и активации виртуальной среды с именем `.venv`. Обязательно используйте версию Python 3.7, которую поддерживают Функции Azure.
 
 
-# <a name="bashtabbash"></a>[bash](#tab/bash)
+# <a name="bash"></a>[bash](#tab/bash)
 
 ```bash
 cd start
@@ -79,7 +79,7 @@ source .venv/bin/activate
 sudo apt-get install python3-venv
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
 cd start
@@ -93,7 +93,7 @@ py -m venv .venv
 .venv\scripts\activate
 ```
 
-# <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+# <a name="cmd"></a>[Cmd](#tab/cmd)
 
 ```cmd
 cd start
@@ -133,7 +133,7 @@ py -m venv .venv
     func new --name classify --template "HTTP trigger"
     ```
 
-    Эта команда создает папку *classify*, которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py*, содержащий код функции, и *function.json*, который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в статье [Краткое руководство. Создание функции Python, активируемой HTTP, в Azure](functions-create-first-function-python.md#optional-examine-the-file-contents).
+    Эта команда создает папку *classify*, которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py*, содержащий код функции, и *function.json*, который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в разделе [об изучении содержимого файла](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python#optional-examine-the-file-contents) краткого руководства по программированию на Python.
 
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
@@ -153,24 +153,26 @@ py -m venv .venv
 
 Чтобы изменить функцию `classify` для классификации изображения на основе его содержимого, используйте предварительно созданную модель TensorFlow, которая была обучена и экспортирована из службы "Пользовательское визуальное распознавание Azure". Модель, которая содержится в папке *resources* в примере, клонированном ранее, классифицирует изображение, определяя, кто на нем: кошка или собака. Затем вы добавите в проект вспомогательный код и зависимости.
 
+Чтобы создать собственную модель с помощью службы "Пользовательское визуальное распознавание" уровня "Бесплатный", следуйте инструкциям из [репозитория примера проекта](https://github.com/Azure-Samples/functions-python-tensorflow-tutorial/blob/master/train-custom-vision-model.md).
+
 > [!TIP]
-> Если вы хотите создать собственную модель с помощью службы "Пользовательское визуальное распознавание" уровня "Бесплатный", следуйте инструкциям из [репозитория примера проекта](https://github.com/Azure-Samples/functions-python-tensorflow-tutorial/blob/master/train-custom-vision-model.md).
+> Если вы хотите разместить модель TensorFlow независимо от приложения-функции, вы можете подключить общую папку, содержащую модель, к приложению-функции Linux. Подробные сведения см. в статье [Подключение общей папки к приложению-функции Python с помощью Azure CLI](./scripts/functions-cli-mount-files-storage-linux.md).
 
 1. В папке *start* выполните следующую команду, чтобы скопировать файлы модели в папку *classify*. Не забудьте добавить `\*` в эту команду. 
 
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
     
     ```bash
     cp ../resources/model/* classify
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
     
     ```powershell
     copy ..\resources\model\* classify
     ```
     
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
     
     ```cmd
     copy ..\resources\model\* classify
@@ -182,19 +184,19 @@ py -m venv .venv
 
 1. В папке *start* выполните следующую команду, чтобы скопировать файл с вспомогательным кодом в папку *classify*:
 
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
     
     ```bash
     cp ../resources/predict.py classify
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
     
     ```powershell
     copy ..\resources\predict.py classify
     ```
     
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
     
     ```cmd
     copy ..\resources\predict.py classify
@@ -266,19 +268,19 @@ py -m venv .venv
 
 1. Запустите HTTP-сервер с Python.
 
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
+    # <a name="bash"></a>[bash](#tab/bash)
 
     ```bash 
     python -m http.server
     ```
     
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
     ```powershell
     py -m http.server
     ```
 
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[Cmd](#tab/cmd)
 
     ```cmd
     py -m http.server
@@ -315,3 +317,4 @@ py -m venv .venv
 
 - [Руководство. Создание и развертывание бессерверных функций Azure на языке Python с помощью Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-azure-functions).
 - [Azure Functions Python Developer Guide](./functions-reference-python.md) (Справочник по Функциям Azure для разработчика Python)
+- [Подключение общей папки к приложению-функции Python с помощью Azure CLI](./scripts/functions-cli-mount-files-storage-linux.md)

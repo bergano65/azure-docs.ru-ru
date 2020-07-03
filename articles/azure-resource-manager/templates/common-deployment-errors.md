@@ -1,15 +1,15 @@
 ---
-title: Поиск и устранение стандартных ошибок развертывания
+title: Устранение стандартных ошибок развертывания
 description: Описывается устранение распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager.
 tags: top-support-issue
 ms.topic: troubleshooting
 ms.date: 10/04/2019
-ms.openlocfilehash: 58519056bd59f449fe26aa2fee3620f3ed28cc31
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: bc1568c53cdb5518f694d77a2f28f3cf77296ee2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76154522"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79460387"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
@@ -21,17 +21,17 @@ ms.locfileid: "76154522"
 
 ## <a name="error-codes"></a>Коды ошибок
 
-| Код ошибки | Меры по снижению риска | Дополнительные сведения |
+| Код ошибки | Решение | Дополнительные сведения |
 | ---------- | ---------- | ---------------- |
 | AccountNameInvalid | Следуйте ограничениям для имен учетных записей хранения. | [Устранение ошибок, связанных с именами учетных записей хранения](error-storage-account-name.md) |
-| AccountPropertyCannotBeSet | Проверьте доступные свойства учетной записи хранения. | [Справочник по шаблонам Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
+| AccountPropertyCannotBeSet | Проверьте доступные свойства учетной записи хранения. | [storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
 | AllocationFailed | Кластер или регион не имеют доступных ресурсов или не поддерживают запрашиваемый размер виртуальной машины. Повторите запрос позже или укажите другой размер виртуальной машины. | Проблемы подготовки и распределения для [Linux](../../virtual-machines/linux/troubleshoot-deployment-new-vm.md) и [Windows](../../virtual-machines/windows/troubleshoot-deployment-new-vm.md), и [устранение ошибок выделения ресурсов](../../virtual-machines/troubleshooting/allocation-failure.md)|
 | AnotherOperationInProgress | Дождитесь завершения параллельной операции. | |
 | AuthorizationFailed | Учетная запись или субъект-служба не имеют необходимых прав доступа для выполнения развертывания. Проверьте роль, к которой принадлежит учетная запись, и ее права доступа к области развертывания.<br><br>Эта ошибка может возникать, если требуемый поставщик ресурсов не зарегистрирован. | [Управление доступом на основе ролей в Azure](../../role-based-access-control/role-assignments-portal.md)<br><br>[Устранение ошибок регистрации](error-register-resource-provider.md) |
 | BadRequest | Отправленные значения развертывания не соответствуют значениям, ожидаемым Resource Manager. Проверьте внутреннее сообщение о состоянии. Оно поможет вам в устранении неполадки. | [Справочник по шаблону](/azure/templates/) и [поддерживаемые расположения](resource-location.md) |
-| Конфликт | Запрашиваемая операция не разрешена в текущем состоянии ресурса. Например, изменение размера диска разрешено только при создании или освобождении виртуальной машины. | |
+| Conflict | Запрашиваемая операция не разрешена в текущем состоянии ресурса. Например, изменение размера диска разрешено только при создании или освобождении виртуальной машины. | |
 | деплойментактивеандунедитабле | Дождитесь завершения параллельного развертывания в эту группу ресурсов. | |
-| деплойментфаиледклеануп | При развертывании в полном режиме все ресурсы, не находящимся в шаблоне, удаляются. Эта ошибка возникает, если у вас нет необходимых разрешений для удаления всех ресурсов, не находящегося в шаблоне. Чтобы избежать этой ошибки, измените режим развертывания на добавочный. | [Режимы развертывания Azure Resource Manager](deployment-modes.md) |
+| деплойментфаиледклеануп | При развертывании в полном режиме все ресурсы, не находящимся в шаблоне, удаляются. Эта ошибка возникает, если у вас нет необходимых разрешений для удаления всех ресурсов, не находящегося в шаблоне. Чтобы избежать этой ошибки, измените режим развертывания на добавочный. | [Режимы развертывания в Azure Resource Manager](deployment-modes.md) |
 | деплойментнамеинвалидчарактерс | Имя развертывания может содержать только буквы, цифры, символы "-", "." и "_". | |
 | деплойментнамеленгслимитексцеедед | Длина имен развертывания ограничена 64 символами.  | |
 | DeploymentFailed | Ошибка DeploymentFailed является общей ошибкой, которая не содержит сведений, необходимых для ее устранения. Найдите в сведениях об ошибке ее код, с помощью которого можно получить дополнительные сведения. | [Поиск кода ошибки](#find-error-code) |
@@ -68,7 +68,7 @@ ms.locfileid: "76154522"
 | RequestDisallowedByPolicy | Ваша подписка включает в себя политику ресурсов, которая не позволяет выполнить действие, которое вы пытаетесь выполнять во время развертывания. Найдите политику, которая блокирует действие. Если это возможно, измените развертывание в соответствии с ограничениями политики. | [Устранение ошибок с политиками](error-policy-requestdisallowedbypolicy.md) |
 | ReservedResourceName | Укажите ресурс, имя которого не включает в себя зарезервированное имя. | [Зарезервированные имена ресурсов](error-reserved-resource-name.md) |
 | ResourceGroupBeingDeleted | Дождитесь завершения удаления. | |
-| ResourceGroupNotFound | Проверьте имя целевой группы ресурсов для развертывания. Целевая группа ресурсов уже должна существовать в вашей подписке. Проверьте контекст подписки. | [Azure CLI](/cli/azure/account?#az-account-set) [PowerShell](/powershell/module/Az.Accounts/Set-AzContext) |
+| ResourceGroupNotFound | Проверьте имя целевой группы ресурсов для развертывания. Целевая группа ресурсов уже должна существовать в вашей подписке. Проверьте контекст подписки. | [Azure CLI, ](/cli/azure/account?#az-account-set) [PowerShell](/powershell/module/Az.Accounts/Set-AzContext) |
 | ResourceNotFound | Развертывание ссылается на ресурс, который не может быть разрешен. Убедитесь, что для функции **reference** указаны параметры, необходимые для вашего сценария. | [Устранение ошибок с поиском ресурсов](error-not-found.md) |
 | ResourceQuotaExceeded | Развертывание пытается создать ресурсы, которые превышают квоту для подписки, группы ресурсов или региона. Если возможно, измените инфраструктуру, чтобы не превышать квоты. В противном случае запросите изменение квот. | [Устранение ошибок квот ресурсов](error-resource-quota.md) |
 | SkuNotAvailable | Выберите номер SKU (например, размер виртуальной машины), который доступен в выбранном расположении. | [Устранение ошибок, связанных с недоступностью номера SKU](error-sku-not-available.md) |
@@ -114,7 +114,7 @@ ms.locfileid: "76154522"
 Чтобы просмотреть коды и сообщения ошибок развертывания с помощью Azure CLI, используйте следующую команду:
 
 ```azurecli-interactive
-az group deployment operation list --name exampledeployment -g examplegroup --query "[*].properties.statusMessage"
+az deployment group operation list --name exampledeployment -g examplegroup --query "[*].properties.statusMessage"
 ```
 
 Выберите уведомление в портале.
@@ -165,14 +165,14 @@ New-AzResourceGroupDeployment `
 
 Эти сведения помогут определить, правильно ли задано то или иное значение в шаблоне.
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 В настоящее время Azure CLI не поддерживает ведение журнала отладки, но вы можете его получить.
 
 Для просмотра операций развертывания выполните следующую команду.
 
 ```azurecli
-az group deployment operation list \
+az deployment group operation list \
   --resource-group examplegroup \
   --name exampledeployment
 ```
@@ -180,7 +180,7 @@ az group deployment operation list \
 Проверьте содержимое запроса с помощью следующей команды:
 
 ```azurecli
-az group deployment operation list \
+az deployment group operation list \
   --name exampledeployment \
   -g examplegroup \
   --query [].properties.request
@@ -189,7 +189,7 @@ az group deployment operation list \
 Проверьте содержимое ответа с помощью следующей команды:
 
 ```azurecli
-az group deployment operation list \
+az deployment group operation list \
   --name exampledeployment \
   -g examplegroup \
   --query [].properties.response
@@ -246,7 +246,7 @@ az group deployment operation list \
 
 Или Предположим, что вы получаете ошибки развертывания, которые, по вашему мнению, связаны с неправильной настройкой зависимостей. Проверьте шаблон, разбив его на более простые шаблоны. Сначала создайте шаблон, который развертывает только один ресурс (например, SQL Server). Если вы уверены, что ресурс правильно определен, добавьте зависящий от него ресурс (например, базу данных SQL). Проверив правильность определения этих двух ресурсов, добавьте другие зависимые ресурсы (например, политики аудита). В перерывах между тестовыми развертываниями удаляйте группу ресурсов, чтобы гарантировать адекватную проверку зависимостей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Инструкции по устранению неполадок см. в разделе [учебник. Устранение неполадок при развертывании шаблонов диспетчер ресурсов](template-tutorial-troubleshoot.md)
 * Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../management/view-activity-logs.md).

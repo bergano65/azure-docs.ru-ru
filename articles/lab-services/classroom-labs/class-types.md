@@ -10,15 +10,15 @@ ms.service: lab-services
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: overview
+ms.topic: article
 ms.date: 09/30/2019
 ms.author: spelluru
-ms.openlocfilehash: e1c5504b30c2784e8657ccc0dc4ec18689fe2a68
-ms.sourcegitcommit: 5aefc96fd34c141275af31874700edbb829436bb
-ms.translationtype: HT
+ms.openlocfilehash: 45043718664eb1b3b6b865821b3f6b2a51199194
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74806819"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83115036"
 ---
 # <a name="class-types-overview---azure-lab-services"></a>Общие сведения о типах классов — Службы лабораторий Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "74806819"
 
 С помощью Службы лабораторий Azure вы можете создать лабораторию, ориентированную на глубокую обработку естественных языков (NLP). Обработка естественного языка (NLP) – это форма искусственного интеллекта (AI), которая предоставляет компьютерам возможности перевода, распознавания речи и понимания других языков. Студенты, принимающие класс NLP, получают виртуальную машину Linux, чтобы узнать, как применять алгоритмы нейронной сети для разработки моделей глубокого обучения, используемых для анализа письменного человеческого языка.
 
-Подробные сведения о том, как настроить этот тип лаборатории, см. в разделе [Set up a lab focused on deep learning in natural language processing using Azure Lab Services](class-type-deep-learning-natural-processing.md) (Создание лаборатории, специализирующейся на глубоком изучении естественных языков с помощью Службы лабораторий Azure).
+Подробные сведения о том, как настроить этот тип лаборатории, см. в статье [Set up a lab focused on deep learning in natural language processing using Azure Lab Services](class-type-deep-learning-natural-processing.md) (Создание лаборатории, специализирующейся на глубоком изучении естественных языков с помощью Службы лабораторий Azure).
 
 ## <a name="shell-scripting-on-linux"></a>Создание скриптов оболочки в Linux
 
@@ -36,7 +36,7 @@ ms.locfileid: "74806819"
 
 Студенты, посещающие эти занятия по написанию сценариев, получают виртуальную машину Linux для изучения основ Linux, а также знакомятся со скриптами оболочки bash. Виртуальная машина Linux поставляется с включенным доступом к удаленному рабочему столу и установленными текстовыми редакторами [gedit](https://help.gnome.org/users/gedit/stable/) и [ Visual Studio Code](https://code.visualstudio.com/).
 
-Подробные сведения о том, как настроить этот тип лаборатории, см. в разделе [Создание скриптов оболочки в Linux](class-type-shell-scripting-linux.md).
+Подробные сведения о том, как настроить этот тип лаборатории, см. в статье [Set up a lab to teach shell scripting on Linux](class-type-shell-scripting-linux.md) (Настройка лаборатории для создания сценариев оболочки в Linux).
 
 ## <a name="ethical-hacking"></a>Этичный взлом
 
@@ -44,11 +44,31 @@ ms.locfileid: "74806819"
 
 В классе этичного взлома учащиеся могут изучать современные методы защиты от уязвимостей. Каждый учащийся получает виртуальную машину Windows Server с двумя вложенными виртуальными машинами: одну виртуальную машину с образом [Metasploitable3](https://github.com/rapid7/metasploitable3) и одну виртуальную машину с образом [Kali Linux](https://www.kali.org/). Виртуальная машина Metasploitable применяется для злонамеренного использования.  Виртуальная машина Kali Linux предоставляет доступ к средствам, необходимым для выполнения задач ретроспективного анализа.
 
-Подробные сведения о том, как настроить такого рода лабораторию, см. в разделе [Настройка лаборатории для обучения с помощью этичного взлома](class-type-ethical-hacking.md).
+Подробные сведения о том, как настроить такого рода лабораторию, см. в статье [Set up a lab to teach ethical hacking class](class-type-ethical-hacking.md) (Настройка лаборатории для обучения с помощью этичного взлома).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="database-management"></a>Управление базами данных
+Концепция использования баз данных — один из вводных курсов, преподаваемых на большинстве факультетов информатики в колледжах. Вы можете настроить лабораторию для базового класса управления базами данных в Службе лабораторий Azure. Например, вы можете настроить шаблон виртуальной машины в лаборатории с помощью сервера базы данных [MySQL](https://www.mysql.com/) или сервера [SQL Server 2019](https://www.microsoft.com/sql-server/sql-server-2019).
 
-Ознакомьтесь со следующими статьями:
+Подробные сведения о том, как настроить такого рода лабораторию, см. в статье [Set up a lab to teach database management for relational databases](class-type-database-management.md) (Настройка лаборатории для обучения управлению базами данных для реляционных баз данных).
+
+## <a name="python-and-jupyter-notebooks"></a>Использование Python с записными книжками Jupyter
+Вы можете настроить компьютер-шаблон в Службах лаборатории Azure с помощью средств, необходимых для обучения учащихся использованию [Jupyter Notebook](http://jupyter-notebook.readthedocs.io). Jupyter Notebook — это проект с открытым кодом, который позволяет легко комбинировать форматированный текст и исполняемый исходный код [Python](https://www.python.org/) на одном холсте, именуемом блокнотом. При запуске записной книжки создается линейная запись входных и выходных данных.  Эти выходные данные могут включать текст, таблицы данных, точечные диаграммы и многое другое.
+
+Подробные сведения о том, как настроить такого рода лабораторию, см. в статье [Set up a lab to teach data science with Python and Jupyter Notebooks](class-type-jupyter-notebook.md) (Настройка лаборатории для обучения обработке и анализу данных с помощью Python и Jupyter Notebook).
+
+## <a name="mobile-app-development-with-android-studio"></a>Разработка мобильных приложений с помощью Android Studio
+Вы можете настроить лабораторию в Службах лабораторий Azure, чтобы изучить вводный класс разработки мобильных приложений. Этот класс посвящен мобильным приложениям Android, которые можно опубликовать в [Google Play Маркет](https://play.google.com/store/apps).  Учащиеся узнают, как использовать [Android Studio](https://developer.android.com/studio) для создания приложений.  [Эмулятор Visual Studio для Android](https://visualstudio.microsoft.com/vs/msft-android-emulator/) используется для локального тестирования приложения.
+
+Подробные сведения о том, как настроить такого рода лабораторию, см. в статье [Set up a lab to teach data mobile application development with Android Studio](class-type-mobile-dev-android-studio.md) (Настройка лаборатории для обучения разработке мобильных приложений с Android Studio).
+
+## <a name="big-data-analytics"></a>Аналитика больших данных
+Вы можете настроить лабораторию для изучения класса анализа больших данных. С классом этого типа учащиеся узнают, как работать с большими объемами данных и применять алгоритмы машинного и статистического обучения для получения аналитических данных. Ключевым показателем для учащихся является обучение использованию средств анализа данных, таких как программный пакет с открытым исходным кодом Apache Hadoop, который предоставляет средства для хранения больших данных, управления ими и их обработки. 
+
+Подробные сведения о настройке этого типа лабораторий см. в статье [Настройка лаборатории для анализа больших данных с помощью развертывания DOCKER платформы HortonWorks Data Platform](class-type-big-data-analytics.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+См. следующие статьи:
 
 - [Set up a lab focused on deep learning in natural language processing using Azure Lab Services](class-type-deep-learning-natural-processing.md) (Создание лаборатории, специализирующейся на глубоком изучении естественных языков с помощью Службы лабораторий Azure).
 - [Создание скриптов оболочки в Linux](class-type-shell-scripting-linux.md)

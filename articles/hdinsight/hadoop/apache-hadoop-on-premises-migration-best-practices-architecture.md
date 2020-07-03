@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
 ms.openlocfilehash: 2d0d5bb871612bc5e16a26eb49808c39661ffb50
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75934693"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
@@ -36,17 +36,17 @@ ms.locfileid: "75934693"
 
 В приведенной ниже таблице представлены различные способы создания кластера HDInsight.
 
-|Средство|На основе браузера|Командная строка|REST API|SDK|
+|Инструмент|На основе браузера|Командная строка|REST API|SDK|
 |---|---|---|---|---|
 |[Портал Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)|X||||
 |[Фабрика данных Azure](../hdinsight-hadoop-create-linux-clusters-adf.md).|X|X|X|X|
 |[Azure CLI (версия 1.0)](../hdinsight-hadoop-create-linux-clusters-azure-cli.md)||X|||
 |[Azure PowerShell](../hdinsight-hadoop-create-linux-clusters-azure-powershell.md)||X|||
-|[cURL](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)||X|X||
+|[Листывания](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)||X|X||
 |[Пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet)||||X|
 |[Пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python)||||X|
-|[пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable)||||X|
-|[Шаблоны диспетчера ресурсов Azure](../hdinsight-hadoop-create-linux-clusters-arm-templates.md)||X|||
+|[Пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable)||||X|
+|[Шаблоны Azure Resource Manager](../hdinsight-hadoop-create-linux-clusters-arm-templates.md)||X|||
 
 Дополнительные сведения см. в статье [Что такое Azure HDInsight и стек технологий Apache Hadoop](../hadoop/apache-hadoop-introduction.md).
 
@@ -103,11 +103,11 @@ HDInsight использует Базу данных SQL Azure для храни
 - Периодически архивируйте пользовательское хранилище метаданных.
 - Разместите хранилище метаданных и кластер HDInsight в одном регионе.
 - Отслеживайте производительность и доступность хранилище метаданных с помощью средств мониторинга базы данных SQL Azure, таких как портал Azure или журналов Azure Monitor.
-- Выполните команду `ANALYZE TABLE` в соответствии с требованиями для создания статистики по таблицам и столбцам. Например, `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
+- Выполните `ANALYZE TABLE` команду в соответствии с требованиями для создания статистики по таблицам и столбцам. Например, `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
 
 ## <a name="best-practices-for-different-workloads"></a>Рекомендации для различных рабочих нагрузок
 
-- Рассмотрите возможность использования кластера LLAP для интерактивных запросов Hive с улучшенным временем отклика. [LLAP](https://cwiki.apache.org/confluence/display/Hive/LLAP) — это новая функция в Hive 2.0, которая разрешает кэширование запросов в памяти. LLAP создает запросы Hive гораздо быстрее — в  [некоторых случаях в 26 раз быстрее, чем Hive версии 1.x](https://hortonworks.com/blog/announcing-apache-hive-2-1-25x-faster-queries-much/).
+- Рассмотрите возможность использования кластера LLAP для интерактивных запросов Hive с улучшенным временем отклика [LLAP](https://cwiki.apache.org/confluence/display/Hive/LLAP) — новая функция в Hive 2,0, позволяющая кэшировать запросы в памяти. LLAP создает запросы Hive гораздо быстрее — в  [некоторых случаях в 26 раз быстрее, чем Hive версии 1.x](https://hortonworks.com/blog/announcing-apache-hive-2-1-25x-faster-queries-much/).
 - Рассмотрите возможность использования заданий Spark вместо заданий Hive.
 - Рассмотрите возможность замены запросов на основе Impala на запросы LLAP.
 - Рассмотрите возможность замены заданий MapReduce на задания Spark.

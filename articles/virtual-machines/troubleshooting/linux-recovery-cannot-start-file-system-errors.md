@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 10/09/2019
 ms.author: v-six
 ms.openlocfilehash: 455cb1e0067217be6edcf665e8c07e8fcd684ab5
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76842407"
 ---
 # <a name="troubleshoot-linux-vm-starting-issues-due-to-file-system-errors"></a>Устранение неполадок, возникающих при запуске виртуальной машины Linux из-за ошибок файловой системы
@@ -73,7 +73,7 @@ Checking all file systems.
 
 В Linux доступно несколько проверок файловой системы. Наиболее распространенным для дистрибутивов в Azure являются: [FSCK](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/storage_administration_guide/fsck-fs-specific), [E2FSCK](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/fsck-fs-specific)и [Xfs_repair](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsrepair).
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 Чтобы устранить эту проблему, загрузите виртуальную машину в аварийный режим с помощью [последовательной консоли](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux) и используйте это средство для восстановления файловой системы. Если последовательная консоль не включена на виртуальной машине или не работает, см. раздел [Восстановление виртуальной машины в автономном режиме](#repair-the-vm-offline) этой статьи.
 
@@ -176,8 +176,8 @@ Checking all file systems.
 
 8. Проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI 2,0](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-troubleshoot-recovery-disks)
+* [Устранение неполадок виртуальной машины Linux путем подключения диска ОС к виртуальной машине восстановления с помощью Azure CLI 2.0](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-troubleshoot-recovery-disks)
 * [Подключение диска данных к виртуальной машине Linux с помощью портала](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal)
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: de60b4ea1b09998e84bab4d204e3c8c3bc8779a4
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: fe1260982edc877c049716bd74f1bb3e90d33b0f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77050451"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77370524"
 ---
 # <a name="tutorial-configure-azure-databricks-scim-connector-for-automatic-user-provisioning"></a>Руководство. Azure Databricks Настройка соединителя SCIM для автоматической подготовки пользователей
 
@@ -34,7 +34,7 @@ ms.locfileid: "77050451"
 > * Синхронизация атрибутов пользователей между Azure AD и Azure Databricks соединителем SCIM
 > * Подготавливайте группы и членство в группах в соединителе Azure Databricks SCIM
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -88,15 +88,15 @@ ms.locfileid: "77050451"
 
     ![Ссылка на Azure Databricks SCIM Connector в списке "приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите учетные данные администратора Azure Databricks scim Connector и имя пользователя. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к соединителю Azure Databricks scim. В случае сбоя подключения убедитесь, что у учетной записи соединителя Azure Databricks SCIM есть разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите значение КОНЕЧНОЙ точки scim в поле **URL-адрес клиента**. URL-адрес клиента должен быть в формате `https://<region>.azuredatabricks.net/api/2.0/preview/scim` , где **область** находится в URL-адресе домашней страницы Azure Databricks. Например, конечная точка SCIM для **westus** Region будет иметь `https://westus.azuredatabricks.net/api/2.0/preview/scim`значение. Введите значение токена, полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к соединителю Azure Databricks scim. В случае сбоя подключения убедитесь, что у учетной записи соединителя Azure Databricks SCIM есть разрешения администратора, и повторите попытку.
 
     ![Подготовка](./media/azure-databricks-scim-provisioning-connector-provisioning-tutorial/provisioning.png)
 
@@ -112,9 +112,9 @@ ms.locfileid: "77050451"
 
    |attribute|Тип|
    |---|---|
-   |userName|String|
-   |displayName|String|
-   |active|Логическое|
+   |userName|Строка|
+   |displayName|Строка|
+   |active|логический|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы для Azure Databricks соединителя scim**.
 
@@ -122,7 +122,7 @@ ms.locfileid: "77050451"
 
      |attribute|Тип|
      |---|---|
-     |displayName|String|
+     |displayName|Строка|
      |members|Справочник|
 
 11. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы для Azure Databricks соединителя scim**.
@@ -150,7 +150,7 @@ ms.locfileid: "77050451"
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 * Модуль данных всегда преобразует свои значения имени пользователя в нижний регистр при сохранении в своем каталоге независимо от регистра букв, отправляемых им через SCIM.
-* В настоящее время запросы GET к Azure Databricks API SCIM для пользователей чувствительны к регистру, поэтому при запросе USER@contoso.com он будет иметь 0 результатов, так как он сохраняется как user@contoso.com.
+* В настоящее время запросы GET к Azure Databricks API SCIM для пользователей чувствительны к регистру, поэтому если запрос USER@contoso.com будет выполнен с 0 результатами по мере их хранения user@contoso.com.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

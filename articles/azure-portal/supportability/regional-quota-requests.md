@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
 ms.openlocfilehash: 9236989f7bbb4695db24f86a2a049f5bb58f302a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76843690"
 ---
 # <a name="standard-quota-increase-limits-by-region"></a>Стандартная квота: увеличение лимитов по регионам
@@ -50,7 +50,7 @@ Azure Resource Manager поддерживает два типа квот вир�
 
     ![Новый запрос на техническую поддержку](./media/resource-manager-core-quotas-request/new-support-request.png)
 
-1. Для поля **Тип проблемы** выберите **Ограничения службы и подписки (квоты)** .
+1. Для поля **Тип проблемы** выберите **Ограничения службы и подписки (квоты)**.
 
    ![Выберите тип проблемы](./media/resource-manager-core-quotas-request/select-quota-issue-type.png)
 

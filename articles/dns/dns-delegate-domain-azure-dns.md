@@ -1,5 +1,5 @@
 ---
-title: Руководство. размещению домена и дочернего домена в Azure DNS
+title: Руководство по размещению домена и дочернего домена в Azure DNS
 description: В этой статье показано, как настроить Azure DNS для размещения зон DNS.
 services: dns
 author: rohinkoul
@@ -8,13 +8,13 @@ ms.topic: tutorial
 ms.date: 3/11/2019
 ms.author: rohink
 ms.openlocfilehash: 8f29a2bbe0eb392927dd111b13e2260111ddd18e
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76937319"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222791"
 ---
-# <a name="tutorial-host-your-domain-in-azure-dns"></a>Руководство. Размещение домена в Azure DNS
+# <a name="tutorial-host-your-domain-in-azure-dns"></a>Руководство по Размещение домена в Azure DNS
 
 Azure DNS позволяет размещать домен DNS и управлять записями DNS. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure.
 

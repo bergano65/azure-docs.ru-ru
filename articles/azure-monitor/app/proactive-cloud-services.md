@@ -1,19 +1,15 @@
 ---
 title: Оповещение о проблемах в облачных службах Azure с использованием интеграции системы диагностики Azure с помощью Azure Application Insights | Документация Майкрософт
 description: Мониторинг проблем, таких как сбои при запуске, аварийное завершение и циклы повторного использования роли, в облачных службах Azure с помощью Azure Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 06/07/2018
 ms.reviewer: harelbr
-ms.openlocfilehash: b4404f033f5bdf221590e155640e4c0442601e18
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: 997c5e063c4181a597520e60e2a7669401b9677d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72820636"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77669749"
 ---
 # <a name="alert-on-issues-in-azure-cloud-services-using-the-azure-diagnostics-integration-with-azure-application-insights"></a>Оповещение о проблемах в облачных службах Azure с использованием интеграции системы диагностики Azure с помощью Azure Application Insights
 
@@ -95,7 +91,7 @@ EventLogs
 В поле **Поисковый запрос** вставьте комбинированный запрос, который был подготовлен на предыдущем шаге.
 
 Затем перейдите к **Пороговому значению** и установите значение, равное 0. При необходимости можно изменить **Период** и периодичность **полей**.
-Нажмите кнопку **Done**(Готово).
+Нажмите кнопку **Готово**.
 
 ![Снимок экрана "Настройка логики сигналов запроса"](./media/proactive-cloud-services/003.png)
 
@@ -111,11 +107,11 @@ EventLogs
 
 После определения группы действий подтвердите свои изменения и нажмите **Создать правило генерации оповещений**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об автоматическом обнаружении.
 
-[Аномальные сбои](../../azure-monitor/app/proactive-failure-diagnostics.md)
-[Утечка памяти](../../azure-monitor/app/proactive-potential-memory-leak.md)
-[Аномалии производительности](../../azure-monitor/app/proactive-performance-diagnostics.md)
+[Аномалии](../../azure-monitor/app/proactive-failure-diagnostics.md)
+с ошибками[утечки](../../azure-monitor/app/proactive-potential-memory-leak.md)
+памяти —[аномалии производительности](../../azure-monitor/app/proactive-performance-diagnostics.md)
 

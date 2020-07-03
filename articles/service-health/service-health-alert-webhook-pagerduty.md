@@ -1,14 +1,14 @@
 ---
 title: Отправка оповещений о работоспособности службы Azure с помощью PagerDuty
 description: Передача в экземпляр PagerDuty персонализированных уведомлений о событиях работоспособности служб.
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: 746113622b746949a0fae3fd0d7f1f9c7d170707
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: bb449a5279f3cea55e6aec2f72edfd11fb26227a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551658"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77654075"
 ---
 # <a name="send-azure-service-health-alerts-with-pagerduty-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в PagerDuty с помощью веб-перехватчиков
 
@@ -25,9 +25,9 @@ ms.locfileid: "75551658"
 
 1.  В разделе **Integration Settings** (Параметры интеграции) выберите следующее:
 
-    а. **Integration Type** (Тип интеграции): Microsoft Azure.
+    a. **Integration Type** (Тип интеграции): Microsoft Azure.
 
-    b. **Integration Name** (Имя интеграции): \<имя\>.
+    b. **Имя интеграции**: \<имя\>
 
     ![Раздел параметров интеграции в PagerDuty](./media/webhook-alerts/pagerduty-integration-settings.png)
 
@@ -43,7 +43,7 @@ ms.locfileid: "75551658"
 
 1. В списке **Действия** определите следующие сведения.
 
-    а. **Тип действия:** *веб-перехватчик*
+    a. **Тип действия: ** *Веб-перехватчик*.
 
     b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
@@ -60,7 +60,7 @@ ms.locfileid: "75551658"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    а. **Тип действия:** *веб-перехватчик*
+    a. **Тип действия: ** *Веб-перехватчик*.
 
     b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
@@ -69,7 +69,7 @@ ms.locfileid: "75551658"
 1. Завершив изменение группы действий, нажмите кнопку **Сохранить**.
 
 ## <a name="testing-your-webhook-integration-via-an-http-post-request"></a>Проверка интеграции с веб-перехватчиком с помощью запроса HTTP POST
-1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных для веб-перехватчика службы работоспособности служб см. в статье [Веб-перехватчики для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md).
+1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных веб-перехватчика работоспособности службы см. в этой веб- [перехватчике для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md).
 
 1. Создайте запрос HTTP POST следующим образом:
 
@@ -84,8 +84,8 @@ ms.locfileid: "75551658"
 
 1. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
-- Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
-- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).
-- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+- Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
+- Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
+- Сведения об [уведомлениях о работоспособности служб](../azure-monitor/platform/service-notifications.md).
+- Дополнительные сведения о [группах действий](../azure-monitor/platform/action-groups.md).

@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -8,18 +8,18 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 0014b67443797f45de51ec1bc459f71bde55cdc9
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: f8e93cf34ac56344ff7e3d145ce8c7c3529767b7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75774436"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81678636"
 ---
 В следующем примере показано, как создать подключение к Exchange в Equinix Internet Exchange в Сиэтле. Если вы используете другой поставщик и другие параметры, подставьте в запрос соответствующие данные.
 
-Используйте командлет PowerShell **New-азпиринжексчанжеконнектионобжект** , чтобы создать объекты подключения PowerShell, которые будут использоваться для создания нового запроса пиринга:
+Используйте командлет PowerShell **New-азпиринжексчанжеконнектионобжект** , чтобы создать объекты подключения PowerShell, которые будут использоваться для создания нового запроса пиринга.
 
-Ниже приведен пример создания подключения к Exchange.
+В этом примере показано, как создать подключение к Exchange.
 
 ```powershell
 $connection1 = New-AzPeeringExchangeConnectionObject `
@@ -30,7 +30,7 @@ $connection1 = New-AzPeeringExchangeConnectionObject `
     -MaxPrefixesAdvertisedIPv6 2000 `
 ```
 
-Создайте другое подключение в случае, если требуется избыточность в указанном расположении пиринга:
+Создайте другое подключение на случай, если требуется избыточность в данном одноранговом расположении.
 
 ```powershell
 $connection2 = New-AzPeeringExchangeConnectionObject `
@@ -54,7 +54,7 @@ New-AzPeering `
 ```
 &nbsp;
 
-Ниже приведен пример ответа, когда запрос был выполнен с помощью одного соединения:
+Этот пример ответа показывает, когда запрос был выполнен с помощью одного соединения.
 
 ```powershell
 
@@ -73,10 +73,10 @@ Tags              : {}
 ```
 
 > [!IMPORTANT]
-> Корпорация Майкрософт начнет подготовку запрошенного пиринга, и `ConnectionState` будет отражать ход выполнения.
-> Инструкции по подготовке см. в документе [Пошаговое руководство по пирингу Exchange](../walkthrough-exchange-all.md) .
+> Корпорация Майкрософт начинает подготовку запрошенного пиринга и `ConnectionState` отражает ход выполнения.
+> Дополнительные сведения о подготовительных действиях см. в [руководстве по пирингу Exchange](../walkthrough-exchange-all.md).
 
-Вы можете проверить ConnectionState, как показано ниже:
+Вы можете проверить состояние подключения, как показано здесь.
 
 ```powershell
 

@@ -2,33 +2,30 @@
 title: Использование политик безопасности Pod в службе Kubernetes Azure (AKS)
 description: Узнайте, как управлять допуском Pod с помощью Подсекуритиполици в службе Kubernetes Azure (AKS).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
-ms.date: 04/17/2019
-ms.author: mlearned
-ms.openlocfilehash: 5aec645c19ee5f813fdefb57d728c14688da8712
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.date: 04/08/2020
+ms.openlocfilehash: 9e3a17e4775150247ef7924dffec68cc86a0bcac
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926410"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80998357"
 ---
 # <a name="preview---secure-your-cluster-using-pod-security-policies-in-azure-kubernetes-service-aks"></a>Предварительная версия — защита кластера с помощью политик безопасности Pod в службе Kubernetes Azure (AKS)
 
 Чтобы повысить безопасность кластера AKS, можно ограничить набор модулей, которые можно запланировать. Модули, которые запрашивают неразрешенные ресурсы, не могут выполняться в кластере AKS. Этот доступ определяется с помощью политик безопасности Pod. В этой статье показано, как использовать политики безопасности Pod для ограничения развертывания модулей AKS.
 
 > [!IMPORTANT]
-> Функции предварительной версии AKS — это самостоятельная служба. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично покрываются службой поддержки клиентов на основе лучших усилий. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения об отсутствии см. в следующих статьях поддержки:
+> Функции предварительной версии AKS — это самостоятельная служба. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично покрываются службой поддержки клиентов на основе лучших усилий. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения см. в следующих статьях поддержки:
 >
 > * [Политики поддержки AKS][aks-support-policies]
 > * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
+Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
 
@@ -53,13 +50,13 @@ az extension update --name aks-preview
 az feature register --name PodSecurityPolicyPreview --namespace Microsoft.ContainerService
 ```
 
-Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Проверить состояние регистрации можно с помощью команды [AZ Feature List][az-feature-list] .
+Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/PodSecurityPolicyPreview')].{Name:name,State:properties.state}"
 ```
 
-Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft. ContainerService* с помощью команды [AZ Provider Register][az-provider-register] :
+Когда все будет готово, обновите регистрацию поставщика ресурсов *Microsoft.ContainerService* с помощью команды [az provider register][az-provider-register].
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -106,17 +103,17 @@ NAME         PRIV    CAPS   SELINUX    RUNASUSER          FSGROUP     SUPGROUP  
 privileged   true    *      RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *     configMap,emptyDir,projected,secret,downwardAPI,persistentVolumeClaim
 ```
 
-Политика безопасности " *привилегированный* модуль" применяется к любому пользователю, прошедшему проверку подлинности в кластере AKS. Это назначение управляется Клустерролес и Клустерролебиндингс. Используйте команду [kubectl Get клустерролебиндингс][kubectl-get] и выполните поиск по *умолчанию: privileged:* Binding:
+Политика безопасности " *привилегированный* модуль" применяется к любому пользователю, прошедшему проверку подлинности в кластере AKS. Это назначение управляется Клустерролес и Клустерролебиндингс. Используйте команду [kubectl Get ролебиндингс][kubectl-get] и выполните поиск по *умолчанию: privileged:* Binding в пространстве имен *KUBE-System* :
 
 ```console
-kubectl get clusterrolebindings default:privileged -o yaml
+kubectl get rolebindings default:privileged -n kube-system -o yaml
 ```
 
 Как показано в следующем сжатом выводе, параметр *PSP: Restricted* клустерроле назначается любой *системе: прошедшим проверку подлинности* пользователям. Эта возможность обеспечивает базовый уровень ограничений без определения собственных политик.
 
 ```
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
   [...]
   name: default:privileged
@@ -128,14 +125,14 @@ roleRef:
 subjects:
 - apiGroup: rbac.authorization.k8s.io
   kind: Group
-  name: system:authenticated
+  name: system:masters
 ```
 
 Важно понимать, как эти политики по умолчанию взаимодействуют с запросами пользователей на планирование модулей Pod, прежде чем приступать к созданию собственных политик безопасности. В следующих разделах мы планируем несколько модулей, чтобы увидеть эти политики по умолчанию в действии.
 
 ## <a name="create-a-test-user-in-an-aks-cluster"></a>Создание тестового пользователя в кластере AKS
 
-По умолчанию при использовании команды [AZ AKS Get-Credential][az-aks-get-credentials] учетные данные *администратора* кластера AKS добавляются в конфигурацию `kubectl`. Пользователь с правами администратора обходит принудительное применение политик безопасности Pod. При использовании интеграции Azure Active Directory для кластеров AKS можно выполнить вход с использованием учетных данных пользователя без прав администратора, чтобы увидеть применение политик в действии. В этой статье мы создадим тестовую учетную запись пользователя в кластере AKS, который можно использовать.
+По умолчанию при использовании команды [AZ AKS Get-Credential][az-aks-get-credentials] учетные данные *администратора* кластера AKS добавляются в `kubectl` конфигурацию. Пользователь с правами администратора обходит принудительное применение политик безопасности Pod. При использовании интеграции Azure Active Directory для кластеров AKS можно выполнить вход с использованием учетных данных пользователя без прав администратора, чтобы увидеть применение политик в действии. В этой статье мы создадим тестовую учетную запись пользователя в кластере AKS, который можно использовать.
 
 Создайте пример пространства имен с именем *PSP-AKS* для тестовых ресурсов с помощью команды [kubectl Create Namespace][kubectl-create] . Затем создайте учетную запись службы с именем *"неадминистративный пользователь* " с помощью команды [kubectl Create учетная запись службы][kubectl-create] :
 
@@ -156,7 +153,7 @@ kubectl create rolebinding \
 
 ### <a name="create-alias-commands-for-admin-and-non-admin-user"></a>Создание псевдонимов для администратора и пользователя без прав администратора
 
-Чтобы выделить разницу между обычным пользователем администратора при использовании `kubectl` и пользователя, не являющегося администратором, созданного на предыдущих шагах, создайте два псевдонима командной строки:
+Чтобы выделить разницу между обычным пользователем администратора при использовании `kubectl` и пользователь, не являющийся администратором, созданный на предыдущих шагах, создайте два псевдонима командной строки:
 
 * Псевдоним **kubectl-Admin** предназначен для обычного пользователя администратора и ограничивается пространством имен *PSP-AKS* .
 * Псевдоним **kubectl-нонадминусер** предназначен для пользователя, который не является *администратором* , созданным на предыдущем шаге, и ограничивается пространством имен *PSP-AKS* .
@@ -170,7 +167,7 @@ alias kubectl-nonadminuser='kubectl --as=system:serviceaccount:psp-aks:nonadmin-
 
 ## <a name="test-the-creation-of-a-privileged-pod"></a>Тестирование создания привилегированного Pod
 
-Давайте сначала проверим, что происходит при планировании Pod с контекстом безопасности `privileged: true`. Этот контекст безопасности повышает привилегии Pod. В предыдущем разделе, в котором были показаны политики безопасности AKS Pod по умолчанию, политика *ограничения* должна отклонить этот запрос.
+Давайте сначала проверим, что происходит при планировании Pod с помощью контекста безопасности `privileged: true`. Этот контекст безопасности повышает привилегии Pod. В предыдущем разделе, в котором были показаны политики безопасности AKS Pod по умолчанию, политика *ограничения* должна отклонить этот запрос.
 
 Создайте файл с именем `nginx-privileged.yaml` и вставьте следующий манифест YAML:
 
@@ -198,7 +195,7 @@ kubectl-nonadminuser apply -f nginx-privileged.yaml
 ```console
 $ kubectl-nonadminuser apply -f nginx-privileged.yaml
 
-Error from server (Forbidden): error when creating "nginx-privileged.yaml": pods "nginx-privileged" is forbidden: unable to validate against any pod security policy: [spec.containers[0].securityContext.privileged: Invalid value: true: Privileged containers are not allowed]
+Error from server (Forbidden): error when creating "nginx-privileged.yaml": pods "nginx-privileged" is forbidden: unable to validate against any pod security policy: []
 ```
 
 Модуль не достигает этапа планирования, поэтому нет ресурсов для удаления перед тем, как вы перейдете.
@@ -226,44 +223,15 @@ spec:
 kubectl-nonadminuser apply -f nginx-unprivileged.yaml
 ```
 
-Планировщик Kubernetes принимает запрос Pod. Однако при просмотре состояния Pod с помощью `kubectl get pods`возникает ошибка:
+Не удалось запланировать модуль Pod, как показано в следующем примере выходных данных:
 
 ```console
-$ kubectl-nonadminuser get pods
+$ kubectl-nonadminuser apply -f nginx-unprivileged.yaml
 
-NAME                 READY   STATUS                       RESTARTS   AGE
-nginx-unprivileged   0/1     CreateContainerConfigError   0          26s
+Error from server (Forbidden): error when creating "nginx-unprivileged.yaml": pods "nginx-unprivileged" is forbidden: unable to validate against any pod security policy: []
 ```
 
-Используйте команду [kubectl для описания Pod][kubectl-describe] , чтобы просмотреть события для Pod. В следующем сокращенном примере показано, что контейнер и образ должны иметь разрешения root, даже если мы не запрашивали их:
-
-```console
-$ kubectl-nonadminuser describe pod nginx-unprivileged
-
-Name:               nginx-unprivileged
-Namespace:          psp-aks
-Priority:           0
-PriorityClassName:  <none>
-Node:               aks-agentpool-34777077-0/10.240.0.4
-Start Time:         Thu, 28 Mar 2019 22:05:04 +0000
-[...]
-Events:
-  Type     Reason     Age                     From                               Message
-  ----     ------     ----                    ----                               -------
-  Normal   Scheduled  7m14s                   default-scheduler                  Successfully assigned psp-aks/nginx-unprivileged to aks-agentpool-34777077-0
-  Warning  Failed     5m2s (x12 over 7m13s)   kubelet, aks-agentpool-34777077-0  Error: container has runAsNonRoot and image will run as root
-  Normal   Pulled     2m10s (x25 over 7m13s)  kubelet, aks-agentpool-34777077-0  Container image "nginx:1.14.2" already present on machine
-```
-
-Несмотря на то, что мы не запрашивали привилегированный доступ, образ контейнера для NGINX должен создать привязку для порта *80*. Для привязки портов *1024* и ниже требуется *корневой* пользователь. При попытке запуска Pod политика *безопасности Pod* запрещает этот запрос.
-
-В этом примере показано, что действуют политики безопасности Pod по умолчанию, созданные AKS, и ограничивает действия, которые может выполнять пользователь. Важно понимать поведение этих политик по умолчанию, так как вы, возможно, не планируете отклонять базовый модуль NGINX.
-
-Прежде чем перейти к следующему шагу, удалите этот тест Pod с помощью команды [kubectl Delete Pod][kubectl-delete] :
-
-```console
-kubectl-nonadminuser delete -f nginx-unprivileged.yaml
-```
+Модуль не достигает этапа планирования, поэтому нет ресурсов для удаления перед тем, как вы перейдете.
 
 ## <a name="test-creation-of-a-pod-with-a-specific-user-context"></a>Тестирование создания Pod с конкретным контекстом пользователя
 
@@ -290,61 +258,15 @@ spec:
 kubectl-nonadminuser apply -f nginx-unprivileged-nonroot.yaml
 ```
 
-Планировщик Kubernetes принимает запрос Pod. Однако если взглянуть на состояние Pod с помощью `kubectl get pods`, то возникает другая ошибка, чем в предыдущем примере:
+Не удалось запланировать модуль Pod, как показано в следующем примере выходных данных:
 
 ```console
-$ kubectl-nonadminuser get pods
+$ kubectl-nonadminuser apply -f nginx-unprivileged-nonroot.yaml
 
-NAME                         READY   STATUS              RESTARTS   AGE
-nginx-unprivileged-nonroot   0/1     CrashLoopBackOff    1          3s
+Error from server (Forbidden): error when creating "nginx-unprivileged-nonroot.yaml": pods "nginx-unprivileged-nonroot" is forbidden: unable to validate against any pod security policy: []
 ```
 
-Используйте команду [kubectl для описания Pod][kubectl-describe] , чтобы просмотреть события для Pod. В следующем сжатом примере показаны события Pod:
-
-```console
-$ kubectl-nonadminuser describe pods nginx-unprivileged
-
-Name:               nginx-unprivileged
-Namespace:          psp-aks
-Priority:           0
-PriorityClassName:  <none>
-Node:               aks-agentpool-34777077-0/10.240.0.4
-Start Time:         Thu, 28 Mar 2019 22:05:04 +0000
-[...]
-Events:
-  Type     Reason     Age                   From                               Message
-  ----     ------     ----                  ----                               -------
-  Normal   Scheduled  2m14s                 default-scheduler                  Successfully assigned psp-aks/nginx-unprivileged-nonroot to aks-agentpool-34777077-0
-  Normal   Pulled     118s (x3 over 2m13s)  kubelet, aks-agentpool-34777077-0  Container image "nginx:1.14.2" already present on machine
-  Normal   Created    118s (x3 over 2m13s)  kubelet, aks-agentpool-34777077-0  Created container
-  Normal   Started    118s (x3 over 2m12s)  kubelet, aks-agentpool-34777077-0  Started container
-  Warning  BackOff    105s (x5 over 2m11s)  kubelet, aks-agentpool-34777077-0  Back-off restarting failed container
-```
-
-События указывают на то, что контейнер был создан и запущен. Ничего очевидно от того, почему модуль Pod находится в неисправном состоянии. Рассмотрим журналы Pod с помощью команды [kubectl logs][kubectl-logs] :
-
-```console
-kubectl-nonadminuser logs nginx-unprivileged-nonroot --previous
-```
-
-Следующий пример выходных данных журнала дает указание о том, что в самой конфигурации NGINX есть ошибка разрешений при попытке запуска службы. Эта ошибка снова вызвана тем, что необходимо выполнить привязку к порту 80. Несмотря на то, что спецификация Pod определила обычную учетную запись пользователя, эта учетная запись пользователя недостаточно на уровне операционной системы для запуска службы NGINX и привязки к ограниченному порту.
-
-```console
-$ kubectl-nonadminuser logs nginx-unprivileged-nonroot --previous
-
-2019/03/28 22:38:29 [warn] 1#1: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2
-nginx: [warn] the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:2
-2019/03/28 22:38:29 [emerg] 1#1: mkdir() "/var/cache/nginx/client_temp" failed (13: Permission denied)
-nginx: [emerg] mkdir() "/var/cache/nginx/client_temp" failed (13: Permission denied)
-```
-
-Опять же, важно понимать поведение политик безопасности Pod по умолчанию. Эта ошибка немного сложнее проконтролировать, и, возможно, вы не ожидали, что базовый модуль NGINX не будет отклонен.
-
-Прежде чем перейти к следующему шагу, удалите этот тест Pod с помощью команды [kubectl Delete Pod][kubectl-delete] :
-
-```console
-kubectl-nonadminuser delete -f nginx-unprivileged-nonroot.yaml
-```
+Модуль не достигает этапа планирования, поэтому нет ресурсов для удаления перед тем, как вы перейдете.
 
 ## <a name="create-a-custom-pod-security-policy"></a>Создание пользовательской политики безопасности Pod
 
@@ -386,7 +308,7 @@ $ kubectl get psp
 
 NAME                  PRIV    CAPS   SELINUX    RUNASUSER          FSGROUP     SUPGROUP    READONLYROOTFS   VOLUMES
 privileged            true    *      RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *
-psp-deny-privileged   false          RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *          configMap,emptyDir,projected,secret,downwardAPI,persistentVolumeClaim
+psp-deny-privileged   false          RunAsAny   RunAsAny           RunAsAny    RunAsAny    false            *          
 ```
 
 ## <a name="allow-user-account-to-use-the-custom-pod-security-policy"></a>Разрешить учетной записи пользователя использовать пользовательскую политику безопасности Pod
@@ -445,7 +367,7 @@ kubectl apply -f psp-deny-privileged-clusterrolebinding.yaml
 
 ## <a name="test-the-creation-of-an-unprivileged-pod-again"></a>Повторное тестирование создания непривилегированного модуля Pod
 
-Применяя пользовательскую политику безопасности Pod и привязку учетной записи пользователя для использования политики, давайте попробуем снова создать непривилегированный модуль. Используйте тот же манифест `nginx-privileged.yaml` для создания Pod с помощью команды [kubectl Apply][kubectl-apply] :
+Применяя пользовательскую политику безопасности Pod и привязку учетной записи пользователя для использования политики, давайте попробуем снова создать непривилегированный модуль. Используйте тот же `nginx-privileged.yaml` манифест для создания Pod с помощью команды [kubectl Apply][kubectl-apply] :
 
 ```console
 kubectl-nonadminuser apply -f nginx-unprivileged.yaml
@@ -498,7 +420,7 @@ kubectl delete -f psp-deny-privileged.yaml
 kubectl delete namespace psp-aks
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье показано, как создать политику безопасности Pod, чтобы предотвратить использование привилегированного доступа. Существует множество функций, которые может применять политика, например тип тома или пользователя запуска от имени. Дополнительные сведения о доступных параметрах см. в [справочнике по политикам безопасности Kubernetes Pod][kubernetes-policy-reference].
 

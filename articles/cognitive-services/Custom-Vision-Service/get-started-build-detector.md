@@ -3,19 +3,19 @@ title: Краткое руководство по созданию средст�
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как создать модель классификации изображений на веб-сайте Пользовательского визуального распознавания.
 services: cognitive-services
-author: anrothMSFT
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 12/05/2019
-ms.author: anroth
-ms.openlocfilehash: 8aef46f0b9c3dc526f1fbed3d9bc59f97771b509
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.date: 04/14/2020
+ms.author: pafarley
+ms.openlocfilehash: ba121400368f37c4a562a9c34e209c59d15b173c
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76170002"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81404106"
 ---
 # <a name="quickstart-how-to-build-an-object-detector-with-custom-vision"></a>Краткое руководство. Построение средств обнаружения объектов с помощью Пользовательского визуального распознавания
 

@@ -1,18 +1,17 @@
 ---
-title: Использование шаблонов Azure Resource Manager для создания и настройки рабочей области Log Analytics | Документация Майкрософт
+title: Шаблон Azure Resource Manager для Log Analytics рабочей области
 description: Шаблоны Azure Resource Manager вы можете применить для создания и настройки рабочих областей Log Analytics.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/09/2020
-ms.openlocfilehash: 936008a074944c79b8b0bab3beaf3a5aaa5ecc12
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: dbeaa58da109c5afceb03a560e69e0c8bf63ad42
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77151825"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81768131"
 ---
 # <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Управление рабочей областью Log Analytics с помощью шаблонов Azure Resource Manager
 
@@ -41,7 +40,7 @@ ms.locfileid: "77151825"
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
 | Рабочая область   | workspaces    | 2017-03-15-preview |
-| Поиск      | savedSearches | 2015-03-20 |
+| Система поиска      | savedSearches | 2015-03-20 |
 | Источник данных | datasources   | 2015-11-01-preview |
 | Решение    | solutions     | 2015-11-01-preview |
 
@@ -49,13 +48,16 @@ ms.locfileid: "77151825"
 
 В следующем примере создается рабочая область с помощью шаблона на локальном компьютере. Шаблон JSON настроен так, что требуется только имя и расположение новой рабочей области. Он использует значения, заданные для других параметров рабочей области, таких как [режим управления доступом](design-logs-deployment.md#access-control-mode), ценовая категория, срок хранения и уровень резервирования емкости.
 
-Для резервирования емкости необходимо определить выбранное резервирование емкости для приема данных, указав номер SKU `CapacityReservation` и значение в ГБ для свойства `capacityReservationLevel`. В следующем списке приведены поддерживаемые значения и поведение при его настройке.
+> [!WARNING]
+> Следующий шаблон создает рабочую область Log Analytics и настраивает сбор данных. Это может привести к изменению параметров выставления счетов. Ознакомьтесь [со сведениями об управлении использованием и затратами Azure Monitor](manage-cost-storage.md) для получения сведений о выставлении счетов за данные, собранные в log Analytics рабочей области, перед их применением в среде Azure.
+
+Для резервирования емкости необходимо определить выбранное резервирование емкости для приема данных, указав номер SKU `CapacityReservation` и значение в ГБ для свойства. `capacityReservationLevel` В следующем списке приведены поддерживаемые значения и поведение при его настройке.
 
 - После установки лимита резервирования нельзя изменить номер SKU в течение 31 дня.
 
 - После установки значения резервирования его можно увеличить только в течение 31 дня.
 
-- Значение `capacityReservationLevel` можно задать только в кратных 100 с максимальным значением 50000.
+- Значение можно задать только `capacityReservationLevel` в кратных 100 с максимальным значением 50000.
 
 - При увеличении уровня резервирования таймер сбрасывается, и его нельзя изменить в течение еще 31 дня после этого обновления.  
 
@@ -76,53 +78,53 @@ ms.locfileid: "77151825"
               "description": "Specifies the name of the workspace."
             }
         },
-      "pricingTier": {
-      "type": "string",
-      "allowedValues": [
-        "pergb2018",
-        "Free",
-        "Standalone",
-        "PerNode",
-        "Standard",
-        "Premium"
-      ],
-      "defaultValue": "pergb2018",
-      "metadata": {
+      "sku": {
+        "type": "string",
+        "allowedValues": [
+          "pergb2018",
+          "Free",
+          "Standalone",
+          "PerNode",
+          "Standard",
+          "Premium"
+          ],
+        "defaultValue": "pergb2018",
+        "metadata": {
         "description": "Pricing tier: PerGB2018 or legacy tiers (Free, Standalone, PerNode, Standard or Premium) which are not available to all customers."
-           }
-       },
-        "location": {
-            "type": "String",
-            "allowedValues": [
-              "australiacentral", 
-              "australiaeast", 
-              "australiasoutheast", 
-              "brazilsouth",
-              "canadacentral", 
-              "centralindia", 
-              "centralus", 
-              "eastasia", 
-              "eastus", 
-              "eastus2", 
-              "francecentral", 
-              "japaneast", 
-              "koreacentral", 
-              "northcentralus", 
-              "northeurope", 
-              "southafricanorth", 
-              "southcentralus", 
-              "southeastasia", 
-              "uksouth", 
-              "ukwest", 
-              "westcentralus", 
-              "westeurope", 
-              "westus", 
-              "westus2" 
-            ],
-            "metadata": {
-              "description": "Specifies the location in which to create the workspace."
-            }
         }
+      },
+      "location": {
+        "type": "String",
+        "allowedValues": [
+        "australiacentral", 
+        "australiaeast", 
+        "australiasoutheast", 
+        "brazilsouth",
+        "canadacentral", 
+        "centralindia", 
+        "centralus", 
+        "eastasia", 
+        "eastus", 
+        "eastus2", 
+        "francecentral", 
+        "japaneast", 
+        "koreacentral", 
+        "northcentralus", 
+        "northeurope", 
+        "southafricanorth", 
+        "southcentralus", 
+        "southeastasia", 
+        "uksouth", 
+        "ukwest", 
+        "westcentralus", 
+        "westeurope", 
+        "westus", 
+        "westus2" 
+        ],
+      "metadata": {
+        "description": "Specifies the location in which to create the workspace."
+        }
+      }
     },
     "resources": [
         {
@@ -131,9 +133,8 @@ ms.locfileid: "77151825"
             "apiVersion": "2017-03-15-preview",
             "location": "[parameters('location')]",
             "properties": {
-                "sku": { 
-                    "name": "CapacityReservation",
-                    "capacityReservationLevel": 100
+                "sku": {
+                    "name": "[parameters('sku')]"
                 },
                 "retentionInDays": 120,
                 "features": {
@@ -147,8 +148,15 @@ ms.locfileid: "77151825"
     }
     ```
 
-2. Отредактируйте шаблон с учетом ваших требований. Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
+   >[!NOTE]
+   >Для параметров резервирования емкости используйте следующие свойства в разделе "SKU":
+   >* "Name": "КапаЦитиресерватион",
+   >* "КапаЦитиресерватионлевел": 100
+
+2. Отредактируйте шаблон с учетом ваших требований. Вместо передачи параметров в виде встроенных значений рекомендуется создать [файл параметров Диспетчер ресурсов](../../azure-resource-manager/templates/parameter-files.md) . Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/2015-11-01-preview/workspaces) с описанием поддерживаемых свойств и значений. 
+
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
+
 4. Теперь вы можете развернуть этот шаблон. Для создания рабочей области можно использовать PowerShell или командную строку, указав имя рабочей области и расположение в составе команды. Имя рабочей области должно быть глобально уникальным во всех подписках Azure.
 
    * Для PowerShell используйте следующие команды из папки с шаблоном.
@@ -171,15 +179,16 @@ ms.locfileid: "77151825"
 Этот пример шаблона иллюстрирует следующие задачи.
 
 1. Добавление решений в рабочую область
-2. Создание сохраненных поисковых запросов
-3. Создание группы компьютеров
-4. Включение сбора журналов IIS с компьютеров, на которых установлен агент Windows
-5. Сбор счетчиков производительности логического диска с компьютеров под управлением Linux ("Процент использования индексных дескрипторов"; "Свободно мегабайт"; "Процент используемого места"; "Количество обращений к диску (в секунду)"; "Количество обращений чтения или записи (в секунду))"
-6. Сбор событий из системного журнала с компьютеров Linux
-7. Сбор событий (ошибок и предупреждений) из журнала событий приложений с компьютеров Windows
-8. Сбор данных счетчика производительности "Доступный объем памяти" (в МБ) с компьютеров Windows
-9. Сбор журналов IIS и журналов событий Windows, которые система диагностики Azure записывает в учетную запись хранилища
-10. Получение пользовательских журналов с компьютера Windows
+2. Создание сохраненных поисков. Чтобы обеспечить случайное переопределение развертываний сохраненных поисков, необходимо добавить свойство eTag в ресурс "Саведсеарчес", чтобы переопределить и поддерживать идемпотентности сохраненных поисков.
+3. Создайте сохраненную функцию. Тег eTag должен быть добавлен к функции переопределения и поддерживать идемпотентности.
+4. Создание группы компьютеров
+5. Включение сбора журналов IIS с компьютеров, на которых установлен агент Windows
+6. Сбор счетчиков производительности логического диска с компьютеров под управлением Linux ("Процент использования индексных дескрипторов"; "Свободно мегабайт"; "Процент используемого места"; "Количество обращений к диску (в секунду)"; "Количество обращений чтения или записи (в секунду))"
+7. Сбор событий из системного журнала с компьютеров Linux
+8. Сбор событий (ошибок и предупреждений) из журнала событий приложений с компьютеров Windows
+9. Сбор данных счетчика производительности "Доступный объем памяти" (в МБ) с компьютеров Windows
+10. Сбор журналов IIS и журналов событий Windows, которые система диагностики Azure записывает в учетную запись хранилища
+11. Получение пользовательских журналов с компьютера Windows
 
 ```json
 {
@@ -192,7 +201,7 @@ ms.locfileid: "77151825"
         "description": "Workspace name"
       }
     },
-    "pricingTier": {
+    "sku": {
       "type": "string",
       "allowedValues": [
         "PerGB2018",
@@ -220,35 +229,35 @@ ms.locfileid: "77151825"
       "type": "bool",
       "defaultValue": "[bool('false')]",
       "metadata": {
-        "description": "If set to true when changing retention to 30 days, older data will be immediately deleted. Use this with extreme caution. This only applies when retention is being set to 30 days."
+        "description": "If set to true, changing retention to 30 days will immediately delete older data. Use this with extreme caution. This only applies when retention is being set to 30 days."
       }
     },
     "location": {
       "type": "string",
       "allowedValues": [
-        "australiacentral", 
-        "australiaeast", 
-        "australiasoutheast", 
+        "australiacentral",
+        "australiaeast",
+        "australiasoutheast",
         "brazilsouth",
-        "canadacentral", 
-        "centralindia", 
-        "centralus", 
-        "eastasia", 
-        "eastus", 
-        "eastus2", 
-        "francecentral", 
-        "japaneast", 
-        "koreacentral", 
-        "northcentralus", 
-        "northeurope", 
-        "southafricanorth", 
-        "southcentralus", 
-        "southeastasia", 
-        "uksouth", 
-        "ukwest", 
-        "westcentralus", 
-        "westeurope", 
-        "westus", 
+        "canadacentral",
+        "centralindia",
+        "centralus",
+        "eastasia",
+        "eastus",
+        "eastus2",
+        "francecentral",
+        "japaneast",
+        "koreacentral",
+        "northcentralus",
+        "northeurope",
+        "southafricanorth",
+        "southcentralus",
+        "southeastasia",
+        "uksouth",
+        "ukwest",
+        "westcentralus",
+        "westeurope",
+        "westus",
         "westus2"
       ],
       "metadata": {
@@ -256,38 +265,38 @@ ms.locfileid: "77151825"
       }
     },
     "applicationDiagnosticsStorageAccountName": {
-        "type": "string",
-        "metadata": {
-          "description": "Name of the storage account with Azure diagnostics output"
-        }
+      "type": "string",
+      "metadata": {
+        "description": "Name of the storage account with Azure diagnostics output"
+      }
     },
     "applicationDiagnosticsStorageAccountResourceGroup": {
-        "type": "string",
-        "metadata": {
-          "description": "The resource group name containing the storage account with Azure diagnostics output"
-        }
+      "type": "string",
+      "metadata": {
+        "description": "The resource group name containing the storage account with Azure diagnostics output"
+      }
     },
     "customLogName": {
-    "type": "string",
-    "metadata": {
-      "description": "The custom log name"
+      "type": "string",
+      "metadata": {
+        "description": "The custom log name"
       }
-     }
+    }
+  },
+  "variables": {
+    "Updates": {
+      "Name": "[Concat('Updates', '(', parameters('workspaceName'), ')')]",
+      "GalleryName": "Updates"
     },
-    "variables": {
-      "Updates": {
-        "Name": "[Concat('Updates', '(', parameters('workspaceName'), ')')]",
-        "GalleryName": "Updates"
-      },
-      "AntiMalware": {
-        "Name": "[concat('AntiMalware', '(', parameters('workspaceName'), ')')]",
-        "GalleryName": "AntiMalware"
-      },
-      "SQLAssessment": {
-        "Name": "[Concat('SQLAssessment', '(', parameters('workspaceName'), ')')]",
-        "GalleryName": "SQLAssessment"
-      },
-      "diagnosticsStorageAccount": "[resourceId(parameters('applicationDiagnosticsStorageAccountResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('applicationDiagnosticsStorageAccountName'))]"
+    "AntiMalware": {
+      "Name": "[concat('AntiMalware', '(', parameters('workspaceName'), ')')]",
+      "GalleryName": "AntiMalware"
+    },
+    "SQLAssessment": {
+      "Name": "[Concat('SQLAssessment', '(', parameters('workspaceName'), ')')]",
+      "GalleryName": "SQLAssessment"
+    },
+    "diagnosticsStorageAccount": "[resourceId(parameters('applicationDiagnosticsStorageAccountResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('applicationDiagnosticsStorageAccountName'))]"
   },
   "resources": [
     {
@@ -301,7 +310,7 @@ ms.locfileid: "77151825"
           "immediatePurgeDataOn30Days": "[parameters('immediatePurgeDataOn30Days')]"
         },
         "sku": {
-          "name": "[parameters('pricingTier')]"
+          "name": "[parameters('sku')]"
         }
       },
       "resources": [
@@ -313,11 +322,31 @@ ms.locfileid: "77151825"
             "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
           ],
           "properties": {
-            "Category": "VMSS",
-            "ETag": "*",
-            "DisplayName": "VMSS Instance Count",
-            "Query": "Event | where Source == \"ServiceFabricNodeBootstrapAgent\" | summarize AggregatedValue = count() by Computer",
-            "Version": 1
+            "eTag": "*",
+            "category": "VMSS",
+            "displayName": "VMSS Instance Count",
+            "query": "Event | where Source == \"ServiceFabricNodeBootstrapAgent\" | summarize AggregatedValue = count() by Computer",
+            "version": 1
+          }
+        },
+        {
+          "apiVersion": "2017-04-26-preview",
+          "name": "Cross workspace function",
+          "type": "savedSearches",
+            "dependsOn": [
+             "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
+            ],
+            "properties": {
+              "etag": "*",
+              "displayName": "failedLogOnEvents",
+              "category": "Security",
+              "FunctionAlias": "failedlogonsecurityevents",
+              "query": "
+                union withsource=SourceWorkspace
+                workspace('workspace1').SecurityEvent,
+                workspace('workspace2').SecurityEvent,
+                workspace('workspace3').SecurityEvent,
+                | where EventID == 4625"
           }
         },
         {
@@ -511,8 +540,8 @@ ms.locfileid: "77151825"
             "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
           ],
           "properties": {
-            "containers": [ 
-              "wad-iis-logfiles" 
+            "containers": [
+              "wad-iis-logfiles"
             ],
             "tables": [
               "WADWindowsEventLogsTable"
@@ -600,7 +629,7 @@ ms.locfileid: "77151825"
       "type": "string",
       "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').customerId]"
     },
-    "pricingTier": {
+    "sku": {
       "type": "string",
       "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').sku.name]"
     },
@@ -608,7 +637,7 @@ ms.locfileid: "77151825"
       "type": "int",
       "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').retentionInDays]"
     },
-    "immediatePurgeDataOn30Days": {  
+    "immediatePurgeDataOn30Days": {
       "type": "bool",
       "value": "[reference(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspaceName')), '2015-11-01-preview').features.immediatePurgeDataOn30Days]"
     },
@@ -651,7 +680,7 @@ azure group deployment create <my-resource-group> <my-deployment-name> --Templat
 * [Мониторинг веб-приложений Azure с использованием существующей рабочей области Log Analytics](https://azure.microsoft.com/documentation/templates/101-webappazure-oms-monitoring/)
 * [Добавление существующей учетной записи хранения в Log Analytics](https://azure.microsoft.com/resources/templates/oms-existing-storage-account/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание агента Windows на виртуальных машинах Azure с помощью шаблона Resource Manager](../../virtual-machines/extensions/oms-windows.md)
 

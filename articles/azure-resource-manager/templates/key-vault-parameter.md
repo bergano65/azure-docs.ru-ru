@@ -3,32 +3,32 @@ title: Key Vaultный секрет с помощью шаблона
 description: Демонстрирует передачу секретного кода из хранилища ключей в виде параметра при развертывании.
 ms.topic: conceptual
 ms.date: 01/06/2020
-ms.openlocfilehash: 56fa2def49f6d98abf1c939ed87456c4bf353eb9
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: d21a7d727091b427fee59e22db6a77a495a4eab7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76154029"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81458272"
 ---
 # <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания
 
-Вместо того, чтобы размещать безопасное значение (например, пароль) непосредственно в шаблоне или файле параметров, можно извлечь значение из [Azure Key Vault](../../key-vault/key-vault-overview.md) во время развертывания. Для получения значения нужно указать в параметре ссылку на хранилище ключей и секрет. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в хранилище ключей. Хранилище ключей может существовать в той же подписке, что и группа ресурсов, в которую выполняется развертывание.
+Вместо того, чтобы размещать безопасное значение (например, пароль) непосредственно в шаблоне или файле параметров, можно извлечь значение из [Azure Key Vault](../../key-vault/general/overview.md) во время развертывания. Для получения значения нужно указать в параметре ссылку на хранилище ключей и секрет. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в хранилище ключей. Хранилище ключей может существовать в той же подписке, что и группа ресурсов, в которую выполняется развертывание.
 
 В этой статье рассматривается ситуация передачи конфиденциального значения в качестве параметра шаблона. Не рассматривается ситуация, когда для свойства виртуальной машины задается URL-адрес сертификата в Key Vault. Шаблон быстрого запуска этого сценария см. в [статье Установка сертификата из Azure Key Vault на виртуальной машине](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows).
 
 ## <a name="deploy-key-vaults-and-secrets"></a>Развертывание хранилищ Key Vault и секретов
 
-Чтобы получить доступ к хранилищу ключей во время развертывания шаблона, задайте для `enabledForTemplateDeployment` хранилища ключей значение `true`.
+Чтобы получить доступ к хранилищу ключей во время развертывания `enabledForTemplateDeployment` шаблона, задайте для хранилища `true`ключей значение.
 
 Если у вас уже есть Key Vault, убедитесь, что он разрешает развертывание шаблонов.
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az keyvault update  --name ExampleVault --enabled-for-template-deployment true
 ```
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 Set-AzKeyVaultAccessPolicy -VaultName ExampleVault -EnabledForTemplateDeployment
@@ -38,7 +38,7 @@ Set-AzKeyVaultAccessPolicy -VaultName ExampleVault -EnabledForTemplateDeployment
 
 Чтобы создать новый Key Vault и добавить секрет, используйте:
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group create --name ExampleGroup --location centralus
@@ -50,7 +50,7 @@ az keyvault create \
 az keyvault secret set --vault-name ExampleVault --name "ExamplePassword" --value "hVFkk965BuUv"
 ```
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name ExampleGroup -Location centralus
@@ -67,7 +67,7 @@ $secret = Set-AzKeyVaultSecret -VaultName ExampleVault -Name 'ExamplePassword' -
 
 Как владелец хранилища ключей, вы автоматически имеете доступ к созданию секретов. Если пользователь, работающий с секретами, не является владельцем хранилища ключей, предоставьте доступ с помощью:
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az keyvault set-policy \
@@ -76,7 +76,7 @@ az keyvault set-policy \
   --secret-permissions set delete get list
 ```
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 $userPrincipalName = "<Email Address of the deployment operator>"
@@ -91,15 +91,15 @@ Set-AzKeyVaultAccessPolicy `
 
 Дополнительные сведения о создании хранилищ ключей и добавлении секретов см. в следующих статьях:
 
-- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](../../key-vault/quick-create-cli.md)
-- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью PowerShell](../../key-vault/quick-create-powershell.md)
-- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure](../../key-vault/quick-create-portal.md)
-- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET](../../key-vault/quick-create-net.md)
-- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node](../../key-vault/quick-create-node.md)
+- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI](../../key-vault/secrets/quick-create-cli.md)
+- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью PowerShell](../../key-vault/secrets/quick-create-powershell.md)
+- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure](../../key-vault/secrets/quick-create-portal.md)
+- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET](../../key-vault/secrets/quick-create-net.md)
+- [Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node](../../key-vault/secrets/quick-create-node.md)
 
 ## <a name="grant-access-to-the-secrets"></a>Предоставление доступа к секретам
 
-Пользователь, который развертывает шаблон, должен иметь разрешение `Microsoft.KeyVault/vaults/deploy/action` для области группы ресурсов и хранилища ключей. Оно имеется у ролей [Владелец](../../role-based-access-control/built-in-roles.md#owner) и [Участник](../../role-based-access-control/built-in-roles.md#contributor). Если вы создали хранилище ключей, вы являетесь владельцем и имеете разрешение.
+Пользователь, который развертывает шаблон, должен иметь `Microsoft.KeyVault/vaults/deploy/action` разрешение на доступ к области группы ресурсов и хранилища ключей. Оно имеется у ролей [Владелец](../../role-based-access-control/built-in-roles.md#owner) и [Участник](../../role-based-access-control/built-in-roles.md#contributor). Если вы создали хранилище ключей, вы являетесь владельцем и имеете разрешение.
 
 Ниже показано, как создать роль с минимальным разрешением и назначить пользователя
 
@@ -125,7 +125,7 @@ Set-AzKeyVaultAccessPolicy `
 
 2. Создание новой роли с помощью JSON-файла:
 
-    # <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
     ```azurecli-interactive
     az role definition create --role-definition "<path-to-role-file>"
@@ -135,7 +135,7 @@ Set-AzKeyVaultAccessPolicy `
       --resource-group ExampleGroup
     ```
 
-    # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
     ```azurepowershell-interactive
     New-AzRoleDefinition -InputFile "<path-to-role-file>"
@@ -197,7 +197,7 @@ Set-AzKeyVaultAccessPolicy `
 
 Теперь создайте файл параметров для предыдущего шаблона. В файле параметров укажите параметр, который совпадает с именем параметра в шаблоне. Для значения параметра используйте ссылку на секрет из хранилища ключей. Для ссылки на секретный код необходимо передать идентификатор ресурса хранилища ключей и имя секрета.
 
-В следующем файле параметров секрет хранилища ключей уже должен существовать, и вы предоставляете статическое значение для его идентификатора ресурса.
+В приведенном ниже файле параметров секрет хранилища ключей уже должен существовать. При этом для идентификатора ресурса используется статическое значение.
 
 ```json
 {
@@ -231,17 +231,17 @@ Set-AzKeyVaultAccessPolicy `
 
 Разверните шаблон и передайте файл параметров.
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group create --name SqlGroup --location westus2
-az group deployment create \
+az deployment group create \
   --resource-group SqlGroup \
   --template-uri <template-file-URI> \
   --parameters <parameter-file>
 ```
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name $resourceGroupName -Location $location
@@ -375,5 +375,5 @@ New-AzResourceGroupDeployment `
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о хранилищах ключей см. в статье [Что такое хранилище ключей Azure?](../../key-vault/key-vault-overview.md)
+- Дополнительные сведения о хранилищах ключей см. в статье [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
 - Полные примеры использования ссылок на секреты ключей приведены [здесь](https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples).

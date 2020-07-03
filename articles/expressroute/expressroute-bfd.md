@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 11/1/2018
 ms.author: rambala
-ms.openlocfilehash: 608b5e0011d4ed656ff61fec84a23f2fb22373b3
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 378b639e89ffd46f6b32d7004f934104dd4b5407
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74080799"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80064840"
 ---
 # <a name="configure-bfd-over-expressroute"></a>Настройка обнаружения двунаправленной передачи через ExpressRoute
 
@@ -38,24 +38,24 @@ BFD настроен по умолчанию во всех новых частн
 Ниже приведен пример конфигурации CE/PE (с использованием Cisco IOS XE). 
 
     interface TenGigabitEthernet2/0/0.150
-      description private peering to Azure
-      encapsulation dot1Q 15 second-dot1q 150
-      ip vrf forwarding 15
-      ip address 192.168.15.17 255.255.255.252
-      bfd interval 300 min_rx 300 multiplier 3
+       description private peering to Azure
+       encapsulation dot1Q 15 second-dot1q 150
+       ip vrf forwarding 15
+       ip address 192.168.15.17 255.255.255.252
+       bfd interval 300 min_rx 300 multiplier 3
 
 
     router bgp 65020
-      address-family ipv4 vrf 15
-        network 10.1.15.0 mask 255.255.255.128
-        neighbor 192.168.15.18 remote-as 12076
-        neighbor 192.168.15.18 fall-over bfd
-        neighbor 192.168.15.18 activate
-        neighbor 192.168.15.18 soft-reconfiguration inbound
-      exit-address-family
+       address-family ipv4 vrf 15
+          network 10.1.15.0 mask 255.255.255.128
+          neighbor 192.168.15.18 remote-as 12076
+          neighbor 192.168.15.18 fall-over bfd
+          neighbor 192.168.15.18 activate
+          neighbor 192.168.15.18 soft-reconfiguration inbound
+       exit-address-family
 
 >[!NOTE]
->Чтобы включить BFD в существующей частной пиринговой связи, необходимо выполнить сброс пиринга. См. раздел [Сброс пиринга ExpressRoute][ResetPeering] .
+>Чтобы включить BFD в существующей частной пиринговой связи, необходимо выполнить сброс пиринга. Дополнительные сведения о сбросе пиринга для канала ExpressRoute см. [здесь][ResetPeering].
 >
 
 ## <a name="bfd-timer-negotiation"></a>Согласование таймера BFD
@@ -66,7 +66,7 @@ BFD настроен по умолчанию во всех новых частн
 >Если вы настроили геоизбыточные каналы ExpressRoute или используете VPN-подключение типа "сеть — сеть" в качестве резервной копии; Включение БФД может ускорить отработку отказа после сбоя подключения ExpressRoute. 
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения доступны в следующих источниках:
 

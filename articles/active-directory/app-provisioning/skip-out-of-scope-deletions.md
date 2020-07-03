@@ -1,26 +1,22 @@
 ---
-title: Пропустить удаление пользователей вне области действия | Документация Майкрософт
+title: Пропустить удаление пользователей вне области
 description: Узнайте, как переопределить поведение по умолчанию для отмены подготовки для пользователей области.
 services: active-directory
 author: cmmdesai
-documentationcenter: na
-manager: daveba
-ms.assetid: 1a2c375a-1bb1-4a61-8115-5a69972c6ad6
+manager: CelesteDG
 ms.service: active-directory
-ms.subservice: saas-app-tutorial
-ms.devlang: na
+ms.subservice: app-provisioning
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/10/2019
 ms.author: chmutali
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b1261e641afe1be1b298b4b19198782bf57eaa1
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.reviewer: celested
+ms.openlocfilehash: 5f17886736efb87cf44bc54c82ccca794482a093
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066165"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593273"
 ---
 # <a name="skip-deletion-of-user-accounts-that-go-out-of-scope"></a>Пропуск удаления учетных записей пользователей, которые выходят за пределы области
 

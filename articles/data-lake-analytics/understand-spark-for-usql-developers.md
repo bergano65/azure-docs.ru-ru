@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.custom: understand-apache-spark-for-usql-developers
 ms.date: 10/15/2019
 ms.openlocfilehash: 594e1055c4c063e4e151fefa3e183e6e799c90b5
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73648432"
 ---
-# <a name="understand-apache-spark-for-u-sql-developers"></a>Общие сведения о Apache Spark для разработчиков U-SQL
+# <a name="understand-apache-spark-for-u-sql-developers"></a>Основные сведения об Apache Spark для разработчиков U-SQL
 
 Корпорация Майкрософт поддерживает несколько служб аналитики, таких как [Azure Databricks](../azure-databricks/what-is-azure-databricks.md) и [Azure HDInsight](../hdinsight/hdinsight-overview.md) , а также Azure Data Lake Analytics. Мы будем слышать разработчиков о том, что они имеют четкие настройки для решений с открытым исходным кодом, так как они создают конвейеры аналитики. Чтобы помочь разработчикам U-SQL понять, Apache Spark и как можно преобразовать скрипты U-SQL в Apache Spark, мы создали это руководство.
 
@@ -43,8 +43,8 @@ ms.locfileid: "73648432"
 
 - [Общие сведения о форматах данных Spark для разработчиков U-SQL](understand-spark-data-formats.md)
 - [Основные сведения о концепциях кода Spark для разработчиков U-SQL](understand-spark-code-concepts.md)
-- [Обновление решений аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-upgrade.md)
+- [Обновление решений для аналитики больших данных с Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-upgrade.md)
 - [.NET для Apache Spark](https://docs.microsoft.com/dotnet/spark/what-is-apache-spark-dotnet)
 - [Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure](../data-factory/transform-data-using-hadoop-hive.md)
 - [Преобразование данных с помощью действия Spark в фабрике данных Azure](../data-factory/transform-data-using-spark.md)
-- [Что такое Apache Spark в Azure HDInsight](../hdinsight/spark/apache-spark-overview.md)
+- [Apache Spark в Azure HDInsight](../hdinsight/spark/apache-spark-overview.md)

@@ -6,22 +6,22 @@ ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 6690c0862b83af70f3beda4190547d6fbb80a601
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 898b65f07140bca04bd97ff7314b01920b783914
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74764258"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79530637"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для MariaDB с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Обзор брандмауэров базы данных Azure для MariaDB см. в статье [правила брандмауэра сервера базы данных Azure для MariaDB](./concepts-firewall-rules.md).
 
 Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью Azure CLI](howto-manage-vnet-cli.md).
 
-## <a name="prerequisites"></a>Технические условия
-* [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
-* [Сервер Базы данных Azure для MariaDB и база данных](quickstart-create-mariadb-server-database-using-azure-cli.md).
+## <a name="prerequisites"></a>Предварительные условия
+* [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+* [Сервер базы данных Azure для MariaDB и база данных](quickstart-create-mariadb-server-database-using-azure-cli.md).
 
 ## <a name="firewall-rule-commands"></a>Команды для правил брандмауэра:
 Команда **az mariadb server firewall-rule** используется в Azure CLI для создания, удаления, вывода списка, отображения и обновления правил брандмауэра.
@@ -42,7 +42,7 @@ ms.locfileid: "74764258"
    ```
    Эта команда выведет код, который понадобится на следующем шаге.
 
-2. Откройте браузер, перейдите на страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin), а затем введите код.
+2. Откройте страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin)с помощью веб-браузера, а затем введите код.
 
 3. В командной строке выполните вход с использованием учетных данных Azure.
 
@@ -118,7 +118,7 @@ az mariadb server firewall-rule delete --resource-group myresourcegroup --server
 ```
 При успешном выполнении выходные данные отсутствуют. В случае сбоя отображается текст сообщения об ошибке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [правилах брандмауэра сервера Базы данных Azure для MariaDB](./concepts-firewall-rules.md).
-- [Создание правил брандмауэра MariaDB в Базе данных Azure для MariaDB и управление ими на портале Azure](./howto-manage-firewall-portal.md)
+- [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими с помощью портал Azure](./howto-manage-firewall-portal.md).
 - Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью Azure CLI](howto-manage-vnet-cli.md).

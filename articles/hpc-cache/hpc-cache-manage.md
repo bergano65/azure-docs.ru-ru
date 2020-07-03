@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 1/29/2020
 ms.author: rohogue
-ms.openlocfilehash: da260074fc69fac9e98d3698bb2d40fdf80d7118
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: 57d6a2024cd6fd979426ca5de5e261f110f6156f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77252048"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81537956"
 ---
 # <a name="manage-your-cache-from-the-azure-portal"></a>Управление кэшем из портал Azure
 
@@ -88,13 +88,6 @@ ms.locfileid: "77252048"
 > Кэш Azure HPC не будет автоматически записывать измененные данные из кэша в серверные системы хранения перед удалением кэша.
 >
 > Чтобы убедиться в том, что все данные в кэше записаны в долгосрочное хранение, [закройте кэш](#stop-the-cache) перед удалением. Убедитесь, что перед нажатием кнопки Удалить состояние **остановлено** .
-<!--... written to long-term storage, follow this procedure:
->
-> 1. [Remove](hpc-cache-edit-storage.md#remove-a-storage-target) each storage target from the Azure HPC Cache by using the delete button on the Storage targets page. The system automatically writes any changed data from the cache to the back-end storage system before removing the target.
-> 1. Wait for the storage target to be completely removed. The process can take an hour or longer if there is a lot of data to write from the cache. When it is done, a portal notification says that the delete operation was successful, and the storage target disappears from the list.
-> 1. After all affected storage targets have been deleted, it is safe to delete the cache.
->
-> Alternatively, you can use the [flush](#flush-cached-data) option to save cached data, but there is a small risk of losing work if a client writes a change to the cache after the flush completes but before the cache instance is destroyed.-->
 
 ## <a name="cache-metrics-and-monitoring"></a>Метрики кэша и мониторинг
 
@@ -104,8 +97,7 @@ ms.locfileid: "77252048"
 
 Эти диаграммы являются частью встроенных средств мониторинга и анализа Azure. Дополнительные средства и оповещения можно найти на страницах под заголовком **мониторинг** на боковой панели портала. Дополнительные сведения см. в разделе "портал" [документации по Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md#monitoring-in-the-azure-portal).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-<!-- * Learn more about metrics and statistics for hpc cache -->
 * Дополнительные сведения о [метриках и средствах статистики Azure](../azure-monitor/index.yml)
 * Получение [помощи по кэшу Azure HPC](hpc-cache-support-ticket.md)

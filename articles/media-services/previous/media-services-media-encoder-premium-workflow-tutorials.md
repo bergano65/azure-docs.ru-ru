@@ -16,18 +16,18 @@ ms.date: 03/18/2019
 ms.author: christoc
 ms.reviewer: xpouyat; juliako
 ms.openlocfilehash: 1ab70d56bd3def58d0e814035070cf027a88cd3d
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "69016718"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79251015"
 ---
 # <a name="advanced-media-encoder-premium-workflow-tutorials"></a>Руководства по расширенному рабочему процессу кодировщика мультимедиа
 ## <a name="overview"></a>Обзор
 Этот документ содержит пошаговые инструкции, описывающие способы настройки рабочих процессов с помощью **конструктора рабочих процессов**. Файлы фактического рабочего процесса можно найти [здесь](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows/PremiumEncoderWorkflowSamples).  
 
 ## <a name="toc"></a>ОГЛАВЛЕНИЕ
-В этой статье содержатся следующие разделы.
+Рассматриваются следующие темы.
 
 * [Кодирование MXF в файл MP4 с одной скоростью](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4)
   * [Запуск нового рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_start_new)
@@ -35,43 +35,43 @@ ms.locfileid: "69016718"
   * [Проверка потоков мультимедиа](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_streams)
   * [Добавление видеокодировщика для создания файла MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_file_generation)
   * [Кодирование аудиопотока](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio)
-  * [Мультиплексирование аудио- и видеопотоков в контейнер MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio_and_fideo)
+  * [Мультиплексирование потоков аудио и видео в контейнер MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_audio_and_fideo)
   * [Запись файла MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_writing_mp4)
   * [Создание ресурса-контейнера служб мультимедиа из выходного файла](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_asset_from_output)
   * [Локальное тестирование завершенного рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_test)
 * [Кодирование MXF в файлы MP4 с несколькими скоростями со включенной динамической упаковкой](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging)
   * [Добавление одного или нескольких дополнительных выходных файлов MP4](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_more_outputs)
-  * [Настройка имен для выходных файлов](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_conf_output_names)
+  * [Настройка имен выходных файлов](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_conf_output_names)
   * [Добавление отдельной звуковой дорожки](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_audio_tracks)
   * [Добавление ISM-файла SMIL](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging_ism_file)
 * [Расширенная схема кодирования файла MXF в файл MP4 с несколькими скоростями](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4)
   * Обзор улучшения рабочего процесса
   * [Соглашения об именовании файлов](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4_file_naming)
-  * [Публикация свойств компонентов в корне рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4_publishing)
+  * [Публикация свойств компонента в корне рабочего процесса](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4_publishing)
   * [Создание зависимости имен созданных выходных файлов от значений опубликованных свойств](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to__multibitrate_MP4_output_files)
-* [Добавление эскизов к выходным файлам MP4 с несколькими скоростями](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4)
+* [Добавление эскизов в формат выходных данных MP4 с несколькими скоростями](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4)
   * Обзор рабочего процесса с добавлением эскизов
   * [Добавление кодировки JPG](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4__with_jpg)
   * [Работа с преобразованием цветового пространства](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4_color_space)
   * [Создание эскизов](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4_writing_thumbnails)
   * [Обнаружение ошибок в рабочем процессе](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4_errors)
   * [Завершенный рабочий процесс](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4_finish)
-* [Обрезка выходных файлов MP4 с несколькими скоростями по времени](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim)
+* [Обрезка выходных данных MP4 с несколькими скоростями по времени](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim)
   * [Обзор рабочего процесса, в котором будет выполняться обрезка](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim_start)
-  * [Использование компонента обрезки потока](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim_use_stream_trimmer)
+  * [Использование средства обрезки потока](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim_use_stream_trimmer)
   * [Завершенный рабочий процесс](media-services-media-encoder-premium-workflow-tutorials.md#time_based_trim_finish)
-* [Добавление компонента сценариев](media-services-media-encoder-premium-workflow-tutorials.md#scripting)
-  * [Создание сценариев в рабочем процессе: hello world](media-services-media-encoder-premium-workflow-tutorials.md#scripting_hello_world)
+* [Знакомство с компонентом сценариев](media-services-media-encoder-premium-workflow-tutorials.md#scripting)
+  * [Создание сценариев в рабочем процессе: Hello World](media-services-media-encoder-premium-workflow-tutorials.md#scripting_hello_world)
 * [Обрезка выходных файлов MP4 с несколькими скоростями по кадрам](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim)
-  * [Обзор схемы, в которой будет выполняться обрезка](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_start)
+  * [Обзор схемы для начала добавления обрезки в](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_start)
   * [Использование XML-файла со списком клипов](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_clip_list)
-  * [Изменение списка клипов в компоненте сценариев](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_modify_clip_list)
+  * [Изменение списка клипов из компонента сценария](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_modify_clip_list)
   * [Добавление удобного свойства ClippingEnabled](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim_clippingenabled_prop)
 
-## <a id="MXF_to_MP4"></a>Кодирование MXF в файл MP4 с одной скоростью
+## <a name="encoding-mxf-into-a-single-bitrate-mp4"></a><a id="MXF_to_MP4"></a>Кодирование MXF в файл MP4 с одной скоростью
 В этом разделе показано, как из входного файла MXF создать аудиофайл MP4 с одной скоростью, используя кодирование AAC-HE.
 
-### <a id="MXF_to_MP4_start_new"></a>Запуск нового рабочего процесса
+### <a name="starting-a-new-workflow"></a><a id="MXF_to_MP4_start_new"></a>Запуск нового рабочего процесса
 Откройте конструктор рабочих процессов и последовательно щелкните "File" > "New Workspace" > "Transcode Blueprint" (Файл > Создать рабочую область > Схема перекодирования).
 
 В новом рабочем процессе отобразятся три элемента:
@@ -84,7 +84,7 @@ ms.locfileid: "69016718"
 
 *Новый рабочий процесс кодирования*
 
-### <a id="MXF_to_MP4_with_file_input"></a>Добавление входного файла мультимедиа
+### <a name="using-the-media-file-input"></a><a id="MXF_to_MP4_with_file_input"></a>Добавление входного файла мультимедиа
 Чтобы добавить входной файл мультимедиа, в соответствующую область нужно добавить необходимый компонент. Чтобы добавить компонент в рабочий процесс, найдите его в репозитории и перетащите нужную запись в соответствующую область конструктора. Перетащите запись в область входных файлов мультимедиа и соедините компонент основного исходного файла с входной точкой области "Media File Input" (Входные файлы мультимедиа).
 
 ![Соединение области "Входные файлы мультимедиа"](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-file-input.png)
@@ -103,7 +103,7 @@ ms.locfileid: "69016718"
 
 *Указанные свойства входных и выходных данных*
 
-### <a id="MXF_to_MP4_streams"></a>Проверка потоков мультимедиа
+### <a name="inspecting-media-streams"></a><a id="MXF_to_MP4_streams"></a>Проверка потоков мультимедиа
 Часто нам необходимо знать, как выглядит поток, выполняемый в рабочем процессе. Чтобы проверить поток в любой точке рабочего процесса, просто щелкните входную или выходную точку в любом компоненте. В этом случае в области "Media File Input" (Входные файлы мультимедиа) щелкните выходную точку компонента "Uncompressed Video" (Видео без сжатия). Откроется диалоговое окно, в котором можно просмотреть информацию о конечном видеофайле.
 
 ![Просмотр сведений о конечном видеофайле потока "Видео без сжатия"](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-inspecting-uncompressed-video-output.png)
@@ -112,7 +112,7 @@ ms.locfileid: "69016718"
 
 На рисунке выше показано, что входной видеофайл имеет разрешение 1920 x 1080, скорость 24 кадра в секунду, формат выборки 4:2:2 и продолжительность почти 2 минуты.
 
-### <a id="MXF_to_MP4_file_generation"></a>Добавление видеокодировщика для создания файла MP4
+### <a name="adding-a-video-encoder-for-mp4-file-generation"></a><a id="MXF_to_MP4_file_generation"></a>Добавление видеокодировщика для создания файла MP4
 Теперь в области входных файлов мультимедиа есть несколько точек выходных соединений: одна для компонента "Uncompressed Video" (Видео без сжатия) и по одной для каждого компонента "Uncompressed Audio" (Аудио без сжатия). Для кодирования входящего видеопотока нужно добавить компонент кодирования. В нашем примере этот компонент нужен для создания файлов MP4.
 
 Для кодирования видеопотока в стандарте H.264 добавьте в рабочую область конструктора компонент видеокодировщика AVC. Этот компонент преобразовывает видеопоток без сжатия в сжатый видеопоток AVC в соответствующей выходной точке.
@@ -138,14 +138,14 @@ ms.locfileid: "69016718"
 
 *Соединение основного кодировщика AVC*
 
-### <a id="MXF_to_MP4_audio"></a>Кодирование аудиопотока
+### <a name="encoding-the-audio-stream"></a><a id="MXF_to_MP4_audio"></a>Кодирование аудиопотока
 На этом этапе нам осталось сжать исходный аудиопоток. Для этого добавьте компонент кодировщика AAC (Dolby) в рабочий процесс.
 
 ![Несоединенный кодировщик AVC](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-unconnected-aac-encoder.png)
 
 *Несоединенный кодировщик AAC*
 
-Получается неувязка: в кодировщике AAC есть только одна входная точка несжатого аудиопотока, тогда как во входном файле мультимедиа, скорее всего, будет два несжатых аудиопотока (по одному для левого и правого аудиоканалов). Если речь идет об объемном звучании, каналов будет шесть. Таким образом, мы не можем напрямую соединить аудио из исходного файла мультимедиа с аудиокодировщиком AAC. Для компонента AAC требуется так называемый "чередующийся" аудиопоток, т. е. один поток, в котором чередуются левый и правый каналы. Когда мы узнаем позицию звуковых дорожек в исходном файле мультимедиа, мы сможем создать чередующийся аудиопоток, в котором будут правильно назначены правый и левый динамики.
+Получается неувязка: в кодировщике AAC есть только одна входная точка несжатого аудиопотока, тогда как во входном файле мультимедиа, скорее всего, будет два несжатых аудиопотока (по одному для левого и правого аудиоканалов). (Если вы работаете с окружающим звуком, это шесть каналов.) Поэтому невозможно напрямую подключить звук из входного источника файла мультимедиа в кодировщик AAC Audio. Для компонента AAC требуется так называемый "чередующийся" аудиопоток, т. е. один поток, в котором чередуются левый и правый каналы. Когда мы узнаем позицию звуковых дорожек в исходном файле мультимедиа, мы сможем создать чередующийся аудиопоток, в котором будут правильно назначены правый и левый динамики.
 
 Сначала нужно создать чередующийся поток из необходимых исходных аудиоканалов. Для этого можно использовать компонент чередования аудиопотоков. Добавьте его в рабочий процесс и соедините с ним аудиопотоки из входного файла мультимедиа.
 
@@ -163,14 +163,14 @@ ms.locfileid: "69016718"
 
 Соедините выходную точку в компоненте "Назначение положения динамика" со входной точкой в компоненте аудиокодировщика AAC. Затем укажите, что кодировщик AAC должен использовать предустановленную настройку каналов "2.0 (L, R)". Таким образом он будет обрабатывать стереозвук как входной поток.
 
-### <a id="MXF_to_MP4_audio_and_fideo"></a>Мультиплексирование аудио- и видеопотоков в контейнер MP4
+### <a name="multiplexing-audio-and-video-streams-into-an-mp4-container"></a><a id="MXF_to_MP4_audio_and_fideo"></a>Мультиплексирование аудио- и видеопотоков в контейнер MP4
 Видеопоток в кодировке AVC и аудиопоток в кодировке AAC можно объединить в контейнере MP4. Совмещение различных потоков в один называется мультиплексированием. В нашем случае мы чередуем аудио- и видеопотоки в одном согласованном пакете MP4. Компонент, который координирует этот процесс для контейнера MP4, называется мультиплексором ISO MPEG-4. Добавьте этот компонент в рабочую область конструктора и соедините кодировщики AVC и AAC с его входными точками.
 
 ![Соединение мультиплексора MPEG4](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-connected-mpeg4-multiplexer.png)
 
 *Соединение мультиплексора MPEG4*
 
-### <a id="MXF_to_MP4_writing_mp4"></a>Запись файла MP4
+### <a name="writing-the-mp4-file"></a><a id="MXF_to_MP4_writing_mp4"></a>Запись файла MP4
 Для записи выходного файла используется компонент "Вывод файла". Если соединить этот компонент с выходом мультиплексора ISO MPEG-4, конечный файл будет записан на диск. Чтобы сделать это, соедините выходную точку контейнера (MPEG-4) со входной точкой компонента "Вывод файла".
 
 ![Соединение компонента "Вывод файла"](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-connected-file-output.png)
@@ -204,7 +204,7 @@ ms.locfileid: "69016718"
 
 *Полученный из выражения конечный каталог*
 
-### <a id="MXF_to_MP4_asset_from_output"></a>Создание ресурса-контейнера служб мультимедиа из выходного файла
+### <a name="creating-a-media-services-asset-from-the-output-file"></a><a id="MXF_to_MP4_asset_from_output"></a>Создание ресурса-контейнера служб мультимедиа из выходного файла
 Мы уже записали выходной файл MP4, но нам еще нужно указать, что этот файл относится к конечному ресурсу-контейнеру, которые службы мультимедиа создадут в ходе этого рабочего процесса. Для этого в окне конструктора рабочих процессов используется узел "Выходной файл и ресурс-контейнер". Все входящие файлы в этом узле станут частью ресурса-контейнера Служб мультимедиа Azure.
 
 Подключите компонент "Вывод файла" к компоненту "Выходной файл и ресурс-контейнер", чтобы завершить рабочий процесс.
@@ -213,10 +213,10 @@ ms.locfileid: "69016718"
 
 *Завершенный рабочий процесс*
 
-### <a id="MXF_to_MP4_test"></a>Локальное тестирование завершенного рабочего процесса
+### <a name="test-the-finished-workflow-locally"></a><a id="MXF_to_MP4_test"></a>Локальное тестирование завершенного рабочего процесса
 Чтобы локально протестировать рабочий процесс, нажмите кнопку воспроизведения на панели инструментов вверху. Когда рабочий процесс завершится, проверьте полученный результат в заданной папке выходных данных. В ней будет находится готовый выходной файл MP4, созданный из исходного входного файла MXF.
 
-## <a id="MXF_to_MP4_with_dyn_packaging"></a>Кодирование файлов MXF в файлы MP4 с разными скоростями со включенной динамической упаковкой
+## <a name="encoding-mxf-into-mp4---multibitrate-dynamic-packaging-enabled"></a><a id="MXF_to_MP4_with_dyn_packaging"></a>Кодирование файлов MXF в файлы MP4 с разными скоростями со включенной динамической упаковкой
 В этом разделе мы создадим из одного входного файла MXF набор файлов MP4 с несколькими скоростями и аудиокодированием AAC.
 
 Если для конечного ресурса-контейнера с несколькими скоростями вы хотите использовать возможности динамической упаковки (функция службы мультимедиа Azure), вам нужно создать несколько файлов MP4 с одинаковыми группами GOP, но с разной скоростью и разрешением. В качестве отправной точки используйте пошаговую инструкцию по [кодированию файла MXF в файл MP4 с одной скоростью](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4).
@@ -225,7 +225,7 @@ ms.locfileid: "69016718"
 
 *Запуск рабочего процесса*
 
-### <a id="MXF_to_MP4_with_dyn_packaging_more_outputs"></a>Добавление одного или нескольких дополнительных выходных файлов MP4
+### <a name="adding-one-or-more-additional-mp4-outputs"></a><a id="MXF_to_MP4_with_dyn_packaging_more_outputs"></a>Добавление одного или нескольких дополнительных выходных файлов MP4
 Каждый файл MP4 в конечном ресурсе-контейнере Служб мультимедиа Azure поддерживает разные скорость и разрешение. Давайте добавим в рабочий процесс один или несколько выходных файлов MP4.
 
 Чтобы у всех видеокодировщиков были одинаковые параметры, лучше всего создать дубликат уже существующего видеокодировщика AVC и настроить другие разрешение и скорость. Давайте добавим кодировщик с такими параметрами: 960 x 540, 25 кадров/с и 2,5 Мбит/с. Чтобы создать дубликат существующего кодировщика, скопируйте и вставьте его в рабочую область конструктора.
@@ -260,7 +260,7 @@ ms.locfileid: "69016718"
 
 Примечание: эти действия необходимо повторить для всех файлов с различными комбинациями скорости и разрешения, которые будут добавлены в ресурс-контейнер.
 
-### <a id="MXF_to_MP4_with_dyn_packaging_conf_output_names"></a>Настройка имен для выходных файлов
+### <a name="configuring-the-file-output-names"></a><a id="MXF_to_MP4_with_dyn_packaging_conf_output_names"></a>Настройка имен для выходных файлов
 Мы добавили в конечный ресурс-контейнер несколько файлов. И теперь нам нужно, чтобы имя каждого выходного файла отличалось от имен других файлов. Возможно, нам даже стоит использовать соглашение об именовании, чтобы из имени файла было понятно, с чем мы имеем дело.
 
 Именованием выходных файлов можно управлять с помощью выражений в конструкторе. Откройте панель свойств для одного из компонентов "Вывод файла" и откройте редактор выражений для свойства "Файл". Первый выходной файл был настроен с помощью следующего выражения (см. инструкции по преобразованию [файла MXF в файл MP4 с одной скоростью](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4)):
@@ -278,7 +278,7 @@ ms.locfileid: "69016718"
 
 Выполните промежуточный тестовый запуск, чтобы убедиться, что оба выходных файла MP4 создаются должным образом.
 
-### <a id="MXF_to_MP4_with_dyn_packaging_audio_tracks"></a>Добавление отдельной звуковой дорожки
+### <a name="adding-a-separate-audio-track"></a><a id="MXF_to_MP4_with_dyn_packaging_audio_tracks"></a>Добавление отдельной звуковой дорожки
 Как будет показано дальше, при создании файла ISM для создаваемых выходных файлов MP4 также потребуется отдельный аудиофайл MP4. Он понадобится в качестве звуковой дорожки для адаптивной потоковой передачи. Чтобы создать этот файл, добавьте в рабочий процесс дополнительный мультиплексор (мультиплексор ISO-MPEG-4) и соедините выходную точку кодировщика AAC со входной точкой дорожки 1.
 
 ![Добавление мультиплексора звука](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-audio-muxer-added.png)
@@ -293,8 +293,8 @@ ms.locfileid: "69016718"
 
 *Мультиплексор звука создает выходной файл*
 
-### <a id="MXF_to_MP4_with_dyn_packaging_ism_file"></a>Добавление ISM-файла SMIL
-Чтобы обеспечить работу динамической упаковки в сочетании с обоими файлами MP4 (и отдельным аудиофайлом MP4) в ресурсе-контейнере Служб мультимедиа, нам также потребуется файл манифеста. Его еще называют файлом SMIL (Synchronized Multimedia Integration Language — язык интеграции синхронизированных мультимедийных данных). Этот файл указывает службам мультимедиа Azure, какие файлы MP4 доступны для динамической упаковки и какие из них необходимо использовать для потоковой передачи звука. Типичный файл манифеста для набора файлов MP4 с одним звуковым потоком выглядит так:
+### <a name="adding-the-ism-smil-file"></a><a id="MXF_to_MP4_with_dyn_packaging_ism_file"></a>Добавление. ISM SMIL File
+Чтобы обеспечить работу динамической упаковки в сочетании с обоими файлами MP4 (и отдельным аудиофайлом MP4) в ресурсе-контейнере служб мультимедиа, нам также потребуется файл манифеста. Его еще называют файлом SMIL (Synchronized Multimedia Integration Language — язык интеграции синхронизированных мультимедийных данных). Этот файл указывает службам мультимедиа Azure, какие файлы MP4 доступны для динамической упаковки и какие из них необходимо использовать для потоковой передачи звука. Типичный файл манифеста для набора файлов MP4 с одним звуковым потоком выглядит так:
 
 ```xml
     <?xml version="1.0" encoding="utf-8" standalone="yes"?>
@@ -327,17 +327,17 @@ ms.locfileid: "69016718"
 
 *Завершенный рабочий процесс кодирования файла MXF в файл MP4 с несколькими скоростями*
 
-## <a id="MXF_to__multibitrate_MP4"></a>Расширенная схема кодирования файла MXF в файл MP4 с несколькими скоростями
+## <a name="encoding-mxf-into-multibitrate-mp4---enhanced-blueprint"></a><a id="MXF_to__multibitrate_MP4"></a>Расширенная схема кодирования файла MXF в файл MP4 с несколькими скоростями
 [Ранее](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging) мы рассмотрели, как один входной ресурс-контейнер MXF можно преобразовать в выходной ресурс-контейнер с файлами MP4 с несколькими скоростями, один аудиофайл MP4 и файл манифеста для использования в сочетании с динамической упаковкой в Службах мультимедиа Azure.
 
 В этом разделе показано, как можно улучшить некоторые аспекты и сделать работу более удобной.
 
-### <a id="MXF_to_multibitrate_MP4_overview"></a>Обзор улучшаемого рабочего процесса
+### <a name="workflow-overview-to-enhance"></a><a id="MXF_to_multibitrate_MP4_overview"></a>Обзор улучшаемого рабочего процесса
 ![Улучшаемый рабочий процесс для файлов MP4 с несколькими скоростями](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-multibitrate-mp4-workflow-to-enhance.png)
 
 *Улучшаемый рабочий процесс для файлов MP4 с несколькими скоростями*
 
-### <a id="MXF_to__multibitrate_MP4_file_naming"></a>Соглашения об именовании файлов
+### <a name="file-naming-conventions"></a><a id="MXF_to__multibitrate_MP4_file_naming"></a>Соглашения об именовании файлов
 В предыдущем рабочем процессе в качестве основы для создания имен выходных файлов мы указали простое выражение. Но это влечет повторы — такое выражение используется во всех отдельных компонентах выходных файлов.
 
 Например, в компоненте вывода файла для первого видеофайла используется такое выражение:
@@ -352,7 +352,7 @@ ms.locfileid: "69016718"
 
 Предположим, что для создания имен файлов будут использоваться скорости отдельных файлов MP4. Эти скорости будут настраиваться в одном месте (в корне нашей диаграммы), откуда они будут считываться при настройке и создании имен файлов. Для этого мы сначала опубликуем свойство скорости из обоих кодировщиков AVC в корне нашего рабочего процесса. Таким образом это свойство будет доступно как из корня, так и из кодировщиков AVC. (Даже при отображении в двух разных местах существует только одно базовое значение.)
 
-### <a id="MXF_to__multibitrate_MP4_publishing"></a>Публикация свойств компонентов в корне рабочего процесса
+### <a name="publishing-component-properties-onto-the-workflow-root"></a><a id="MXF_to__multibitrate_MP4_publishing"></a>Публикация свойств компонентов в корне рабочего процесса
 Откройте первый кодировщик AVC, откройте свойство "Скорость (Кбит/с)" и в раскрывающемся списке выберите пункт "Опубликовать".
 
 ![Публикация свойства скорости](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-publishing-bitrate-property.png)
@@ -388,7 +388,7 @@ ms.locfileid: "69016718"
 
 При изменении любого из этих трех значений изменяются и значения в соответствующих компонентах, с которыми они связаны (и откуда выполняется публикация).
 
-### <a id="MXF_to__multibitrate_MP4_output_files"></a>Создание зависимости имен созданных выходных файлов от значений опубликованных свойств
+### <a name="have-generated-output-file-names-rely-on-published-property-values"></a><a id="MXF_to__multibitrate_MP4_output_files"></a>Создание зависимости имен созданных выходных файлов от значений опубликованных свойств
 Вместо того, чтобы прямо указывать в коде имена создаваемых файлов, теперь мы можем изменить выражение имени файла в каждом компоненте вывода файла так, чтобы оно зависело от свойств скорости, опубликованных в корне диаграммы. В первом компоненте вывода файла найдите свойство "Файл" и измените выражение следующим образом:
 
     ${ROOT_outputWriteDirectory}\${ROOT_sourceFileBaseName}_${ROOT_video1bitrate}kbps.MP4
@@ -409,15 +409,15 @@ ms.locfileid: "69016718"
 
 Если теперь изменить скорость для любого аудио- или видеофайла, соответствующий кодировщик будет перенастроен автоматически, а файлу будет присвоено имя, исходя из значения скорости.
 
-## <a id="thumbnails_to__multibitrate_MP4"></a>Добавление эскизов к выходным файлам MP4 с несколькими скоростями
+## <a name="adding-thumbnails-to-multibitrate-mp4-output"></a><a id="thumbnails_to__multibitrate_MP4"></a>Добавление эскизов к выходным файлам MP4 с несколькими скоростями
 Используя рабочий процесс, который создает [из входного файла MXF выходной файл MP4 с несколькими скоростями](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging), давайте рассмотрим, как в выходной файл можно добавить эскизы.
 
-### <a id="thumbnails_to__multibitrate_MP4_overview"></a>Обзор рабочего процесса, в котором добавляются эскизы
+### <a name="workflow-overview-to-add-thumbnails-to"></a><a id="thumbnails_to__multibitrate_MP4_overview"></a>Обзор рабочего процесса, в котором добавляются эскизы
 ![Рабочий процесс, в котором в файлы MP4 с несколькими скоростями добавляются эскизы](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-multibitrate-mp4-workflow-to-start-from.png)
 
 *Рабочий процесс, в котором в файлы MP4 с несколькими скоростями добавляются эскизы*
 
-### <a id="thumbnails_to__multibitrate_MP4__with_jpg"></a>Добавление кодировки JPG
+### <a name="adding-jpg-encoding"></a><a id="thumbnails_to__multibitrate_MP4__with_jpg"></a>Добавление кодировки JPG
 Центральным элементом создания эскиза будет кодировщик JPG, создающий файлы JPG.
 
 ![Кодировщик JPG](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-jpg-encoder.png)
@@ -438,7 +438,7 @@ ms.locfileid: "69016718"
 
 Давайте настроим создание эскизов каждую минуту, установив для параметра "Режим" значение "Время (секунды)", а для параметра "Интервал" — значение 60.
 
-### <a id="thumbnails_to__multibitrate_MP4_color_space"></a>Работа с преобразованием цветового пространства
+### <a name="dealing-with-color-space-conversion"></a><a id="thumbnails_to__multibitrate_MP4_color_space"></a>Работа с преобразованием цветового пространства
 На первый взгляд, мы можем соединить точки видео без сжатия из компонента "Шлюз видеокадров" и компонента "Входные файлы мультимедиа". Но если так сделать, отобразится предупреждение.
 
 ![Ошибка входного цветового пространства](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-input-color-space-error.png)
@@ -455,7 +455,7 @@ ms.locfileid: "69016718"
 
 В окне "Свойства" из списка предустановок выберите вариант BGR 24.
 
-### <a id="thumbnails_to__multibitrate_MP4_writing_thumbnails"></a>Создание эскизов
+### <a name="writing-the-thumbnails"></a><a id="thumbnails_to__multibitrate_MP4_writing_thumbnails"></a>Создание эскизов
 В отличие от видеофайлов MP4 кодировщик JPG будет создавать несколько файлов. В этом сценарии можно использовать компонент записи файлов JPG для поиска сцен, который записывает эскизы JPG, добавляя к каждому имени файла суффикс с номером. (Номер обычно обозначает число секунд или единиц в потоке, когда был изъят эскиз.)
 
 ![Добавление компонента записи файлов JPG для поиска сцен](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-scene-search-jpg-file-writer.png)
@@ -476,7 +476,7 @@ ms.locfileid: "69016718"
 
 Соедините компонент записи файлов JPG для поиска сцен с узлом "Выходной файл и ресурс-контейнер".
 
-### <a id="thumbnails_to__multibitrate_MP4_errors"></a>Обнаружение ошибок в рабочем процессе
+### <a name="detecting-errors-in-a-workflow"></a><a id="thumbnails_to__multibitrate_MP4_errors"></a>Обнаружение ошибок в рабочем процессе
 Соедините входную точку преобразователя пространства цветов с выходной точкой необработанного видео без сжатия. Теперь локально запустите рабочий процесс, чтобы протестировать его. Есть вероятность, что рабочий процесс неожиданно остановится из-за ошибки. Компонент, в котором произошла ошибка, будет отмечен красным контуром.
 
 ![Ошибка преобразователя цветового пространства](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-color-space-converter-error.png)
@@ -497,23 +497,23 @@ ms.locfileid: "69016718"
 
 *Обновление стандарта цветового пространства в компоненте обновления типа данных*
 
-### <a id="thumbnails_to__multibitrate_MP4_finish"></a>Завершенный рабочий процесс
+### <a name="finished-workflow"></a><a id="thumbnails_to__multibitrate_MP4_finish"></a>Завершенный рабочий процесс
 Теперь, когда рабочий процесс завершен, выполните еще один тестовый запуск, чтобы проверить, все ли в порядке.
 
 ![Завершенный рабочий процесс для вывода нескольких файлов MP4 с эскизами](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-finished-workflow-for-multi-mp4-thumbnails.png)
 
 *Завершенный рабочий процесс для вывода нескольких файлов MP4 с эскизами*
 
-## <a id="time_based_trim"></a>Обрезка выходных файлов MP4 с несколькими скоростями по времени
+## <a name="time-based-trimming-of-multibitrate-mp4-output"></a><a id="time_based_trim"></a>Обрезка выходных файлов MP4 с несколькими скоростями по времени
 Используя рабочий процесс, который создает [из файла MXF выходной файл MP4 с несколькими скоростями](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging), давайте рассмотрим обрезку исходного видео по меткам времени.
 
-### <a id="time_based_trim_start"></a>Обзор рабочего процесса, в котором будет выполняться обрезка
+### <a name="workflow-overview-to-start-adding-trimming-to"></a><a id="time_based_trim_start"></a>Обзор рабочего процесса, в котором будет выполняться обрезка
 ![Рабочий процесс, в котором будет выполняться обрезка](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-starting-workflow-to-add-trimming.png)
 
 *Рабочий процесс, в котором будет выполняться обрезка*
 
-### <a id="time_based_trim_use_stream_trimmer"></a>Использование компонента обрезки потока
-Компонент обрезки потока позволяет обрезать начало и конец входного потока, используя информацию о времени (секунды, минуты и т. д.). Компонент не поддерживает обрезку потока по кадрам.
+### <a name="using-the-stream-trimmer"></a><a id="time_based_trim_use_stream_trimmer"></a>Использование компонента обрезки потока
+Компонент "обрезка потока" позволяет обрезать начало и конец входного потока данных на основе сведений о времени (секунды, минуты,...). Обрезка не поддерживает обрезку на основе кадров.
 
 ![Компонент обрезки потока](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-stream-trimmer.png)
 
@@ -557,12 +557,12 @@ ms.locfileid: "69016718"
 
     ${ROOT_TrimmingEndTime}
 
-### <a id="time_based_trim_finish"></a>Завершенный рабочий процесс
+### <a name="finished-workflow"></a><a id="time_based_trim_finish"></a>Завершенный рабочий процесс
 ![Завершенный рабочий процесс](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-finished-workflow-time-base-trimming.png)
 
 *Завершенный рабочий процесс*
 
-## <a id="scripting"></a>Добавление компонента сценариев
+## <a name="introducing-the-scripted-component"></a><a id="scripting"></a>Добавление компонента сценариев
 Компоненты сценариев могут выполнять разные сценарии на этапах выполнения рабочего процесса. Есть четыре сценария, которые можно выполнять. Каждый из них имеет определенные характеристики и занимает определенное место в жизненном цикле рабочего процесса:
 
 * **commandScript**
@@ -572,7 +572,7 @@ ms.locfileid: "69016718"
 
 Дополнительные сведения о каждом из указанных выше сценариев можно найти в документации по компоненту сценариев. В [следующем разделе](media-services-media-encoder-premium-workflow-tutorials.md#frame_based_trim)компонент сценария **realizeScript** используется для оперативного создания XML-файла со списком клипов при запуске рабочего процесса. Этот сценарий вызывается во время настройки компонента, что происходит только раз за весь его жизненный цикл.
 
-### <a id="scripting_hello_world"></a>Создание сценариев в рабочем процессе: hello world
+### <a name="scripting-within-a-workflow-hello-world"></a><a id="scripting_hello_world"></a>Создание сценариев в рабочем процессе: hello world
 Перетащите компонент сценариев в рабочую область конструктора и переименуйте его (например, SetClipListXML).
 
 ![Добавление компонента сценариев](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-add-scripted-comp.png)
@@ -599,7 +599,7 @@ ms.locfileid: "69016718"
 
 *Запись "hello world" в журнале*
 
-Объект узла, для которого вызывается метод журнала, ссылается на текущий узел или компонент, в котором создается сценарий. Каждый компонент может выводить данные в журнал. Эти данные можно просмотреть на вкладке "Система". В нашем случае мы вывели в журнал строковый литерал "hello world". Важно понимать, что это может быть ценным средством отладки, которое предоставляет подробные сведения о том, какие действия фактически выполняет сценарий.
+Объект узла, для которого вызывается метод журнала, ссылается на текущий узел или компонент, в котором создается сценарий. Каждый компонент имеет возможность вывода данных журнала, доступных на вкладке «система». В этом случае мы выводим строковый литерал "Hello World". Важно понимать, что это может быть ценным средством отладки, которое предоставляет подробные сведения о том, какие действия фактически выполняет сценарий.
 
 Среда написания сценариев может получить также свойства других компонентов. Попробуйте выполнить следующий код:
 
@@ -625,15 +625,15 @@ ms.locfileid: "69016718"
 
 *Вывод журнала для доступа к путям узла*
 
-## <a id="frame_based_trim"></a>Обрезка выходных файлов MP4 с несколькими скоростями по кадрам
+## <a name="frame-based-trimming-of-multibitrate-mp4-output"></a><a id="frame_based_trim"></a>Обрезка выходных файлов MP4 с несколькими скоростями по кадрам
 Используя рабочий процесс, который создает [из файла MXF выходной файл MP4 с несколькими скоростями](media-services-media-encoder-premium-workflow-tutorials.md#MXF_to_MP4_with_dyn_packaging), давайте рассмотрим обрезку исходного видео по количеству кадров.
 
-### <a id="frame_based_trim_start"></a>Обзор схемы, в которой будет выполняться обрезка
+### <a name="blueprint-overview-to-start-adding-trimming-to"></a><a id="frame_based_trim_start"></a>Обзор схемы, в которой будет выполняться обрезка
 ![Рабочий процесс, в котором будет выполняться обрезка](./media/media-services-media-encoder-premium-workflow-tutorials/media-services-workflow-start-adding-trimming-to.png)
 
 *Рабочий процесс, в котором будет выполняться обрезка*
 
-### <a id="frame_based_trim_clip_list"></a>Использование XML-файла со списком клипов
+### <a name="using-the-clip-list-xml"></a><a id="frame_based_trim_clip_list"></a>Использование XML-файла со списком клипов
 Во всех предыдущих разделах мы использовали в качестве источника видео компонент "Входные файлы мультимедиа". Сейчас же мы будем использовать компонент "Источник списка клипов". Использовать источник списка клипов следует только тогда, когда для этого есть реальная причина (как в описанном ниже случае, когда используются возможности обрезки списка клипов).
 
 Чтобы заменить компонент "Входные файлы мультимедиа" компонентом "Источник списка клипов", перетащите последний в рабочую область конструктора и соедините выходную точку компонента "XML-файл списка клипов" со входной точкой "XML-файл списка клипов" в компоненте "Источник списка клипов". В результате в компоненте источника списка клипов появятся выходные точки, соответствующие входному видео. Теперь соедините точки "Uncompressed Video" (Видео без сжатия) и "Uncompressed Audio" (Аудио без сжатия) в компоненте источника списка клипов с соответствующими точками кодировщика AVC и компонента чередования аудиопотоков. Затем удалите компонент "Входные файлы мультимедиа".
@@ -678,7 +678,7 @@ ms.locfileid: "69016718"
 
 *Свойства компонента сценариев*
 
-### <a id="frame_based_trim_modify_clip_list"></a>Изменение списка клипов в компоненте сценариев
+### <a name="modifying-the-clip-list-from-a-scripted-component"></a><a id="frame_based_trim_modify_clip_list"></a>Изменение списка клипов в компоненте сценариев
 Прежде чем повторно создавать XML-файл со списком клипов, который создается при запуске рабочего процесса, необходимо получить доступ к свойству и содержимому XML-файла. Это можно сделать следующим образом.
 
 ```java
@@ -818,7 +818,7 @@ ms.locfileid: "69016718"
 
 Теперь мы можем запускать и изменять рабочий процесс сколько угодно — и каждый раз новые значения будут учитываться.    
 
-### <a id="frame_based_trim_clippingenabled_prop"></a>Добавление удобного свойства ClippingEnabled
+### <a name="adding-a-clippingenabled-convenience-property"></a><a id="frame_based_trim_clippingenabled_prop"></a>Добавление удобного свойства ClippingEnabled
 Поскольку нам не всегда нужно обрезать поток, давайте завершим работу с нашим рабочим процессом, добавив удобный логический флаг, который указывает, нужно ли включать обрезку.
 
 Как и раньше, опубликуйте в корень рабочего процесса новое свойство с именем ClippingEnabled типа BOOLEAN.
@@ -841,7 +841,7 @@ ms.locfileid: "69016718"
     }
 ```
 
-### <a id="code"></a>Полный код
+### <a name="complete-code"></a><a id="code"></a>Полный код
 
 ```java
     import javax.xml.parsers.*;
@@ -946,14 +946,14 @@ ms.locfileid: "69016718"
 
 [Обзор и сравнение кодировщиков мультимедиа Azure по запросу](media-services-encode-asset.md#media-encoder-premium-workflow)
 
-[Форматы и кодеки рабочего процесса Premium Media Encoder](media-services-premium-workflow-encoder-formats.md)
+[Форматы и кодеки Media Encoder Premium Workflow](media-services-premium-workflow-encoder-formats.md)
 
 [Примеры файлов рабочего процесса](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows)
 
-[Средство Explorer для служб мультимедиа Azure](https://aka.ms/amse)
+[Обозреватель Служб мультимедиа Azure](https://aka.ms/amse)
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

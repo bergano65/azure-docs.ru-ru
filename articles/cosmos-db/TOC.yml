@@ -12,8 +12,8 @@
       items:
         - name: Портал Azure
           href: create-cosmosdb-resources-portal.md
-        - name: Шаблон Azure Resource Manager
-          displayName: ARM
+        - name: Шаблон ARM
+          displayName: Resource Manager
           href: quick-create-template.md
         - name: "Приложение .NET\_— пакет SDK версии\_4"
           href: create-sql-api-dotnet-v4.md
@@ -49,6 +49,8 @@
               href: sql-api-java-application.md
             - name: Node.js
               href: sql-api-nodejs-application.md
+        - name: Создание мобильного приложения
+          items:
             - name: Xamarin
               href: mobile-apps-with-xamarin.md
     - name: "2.\_Перенос данных"
@@ -69,10 +71,8 @@
       href: sql-api-dotnet-samples.md
     - name: "Примеры для пакета SDK .NET версии\_3"
       href: sql-api-dotnet-v3sdk-samples.md
-    - name: Примеры для Java
-      href: sql-api-java-samples.md
-    - name: Примеры для Async Java
-      href: sql-api-async-java-samples.md
+    - name: "Примеры для пакета SDK Java версии\_4"
+      href: sql-api-java-sdk-samples.md
     - name: Примеры для Node.js
       href: sql-api-nodejs-samples.md
     - name: Примеры для Python
@@ -83,13 +83,16 @@
       href: cli-samples.md
     - name: Azure Resource Manager
       href: resource-manager-samples.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
-    - name: Реляционные базы данных и базы данных NoSQL
+    - name: Сравнение баз данных NoSQL с реляционными базами данных
       href: relational-nosql.md
     - name: Глобальное распределение
       items:
-        - name: Обзор
+        - name: Общие сведения о глобальном распределении
           displayName: 'replication, replicate, geo distribution'
           href: distribute-data-globally.md
         - name: Уровни согласованности
@@ -108,17 +111,15 @@
           displayName: 'request units, RUs, RU'
           href: scaling-throughput.md
         - name: Типы конфликтов и политики их разрешения
-          displayName: 'last write wins, custom'
+          displayName: 'last write wins, custom, multi master, multi-master'
           href: conflict-resolution-policies.md
         - name: Глобальное распределение (взгляд изнутри)
           href: global-dist-under-the-hood.md
         - name: Присутствие в регионах
           href: regional-presence.md
-        - name: Транзакционное и аналитическое хранилище
-          href: globally-distributed-transactional-analytical-storage.md
     - name: Секционирование
       items:
-        - name: Обзор
+        - name: Общие сведения о секционировании
           href: partitioning-overview.md
         - name: Секционирование и горизонтальное масштабирование
           href: partition-data.md
@@ -129,14 +130,16 @@
         - name: Единицы запросов
           displayName: 'RUs, RU'
           href: request-units.md
-        - name: Обеспечение необходимой пропускной способности для контейнеров и баз данных
+        - name: Введение в подготовленную пропускную способность
           displayName: 'request units, RUs, RU, limits, database throughput, shared throughput, container throughput'
           href: set-throughput.md
-        - name: "Подготовка к пропускной способности\_— режим \"Автопилот\""
-          href: provision-throughput-autopilot.md
-        - name: Часто задаваемые вопросы о модели "Автопилот"
-          href: autopilot-faq.md
-    - name: Справочник по SQL-запросам
+        - name: Подготовка автомасштабируемой пропускной способности
+          href: provision-throughput-autoscale.md
+        - name: Выбор между автомасштабируемой и стандартной (масштабируемой вручную) пропускной способностью
+          href: how-to-choose-offer.md
+        - name: Вопросы и ответы об автомасштабировании
+          href: autoscale-faq.md
+    - name: SQL-запрос
       items:
         - name: Начало работы
           displayName: 'sql query, query basics'
@@ -161,21 +164,24 @@
             - name: OFFSET LIMIT
               displayName: offset limit
               href: sql-query-offset-limit.md
+        - name: Работа с JSON
+          displayName: 'alias, JSON, projection'
+          href: sql-query-working-with-json.md
         - name: Вложенный запрос
           displayName: 'subquery, exists'
           href: sql-query-subquery.md
         - name: Соединения
           displayName: join
           href: sql-query-join.md
-        - name: Псевдонимы
-          displayName: 'alias, aliasing'
-          href: sql-query-aliasing.md
         - name: Массивы и объекты
           displayName: 'object and array creation, object and array'
           href: sql-query-object-array.md
         - name: Keywords
           displayName: 'keywords, distinct, between, in, top'
           href: sql-query-keywords.md
+        - name: Константы
+          displayName: 'object, number,array'
+          href: sql-query-constants.md
         - name: Операторы
           displayName: 'operators, operator, logical operators, equality, comparison'
           href: sql-query-operators.md
@@ -367,6 +373,9 @@
                     - name: STARTSWITH
                       displayName: 'STARTSWITH, starts with, built-in functions'
                       href: sql-query-startswith.md
+                    - name: STRINGEQUALS
+                      displayName: 'STRINGEQUALS, equals, case-insensitive'
+                      href: sql-query-stringequals.md
                     - name: StringToArray
                       displayName: 'StringToArray, string to array, built-in functions'
                       href: sql-query-stringtoarray.md
@@ -423,6 +432,20 @@
                     - name: IS_STRING
                       displayName: 'IS_STRING, IsString, is string, built-in functions'
                       href: sql-query-is-string.md
+        - name: Геопространственные данные
+          items:
+            - name: Общие сведения о геопространственных данных
+              displayName: 'geospatial, spatial'
+              href: sql-query-geospatial-intro.md
+            - name: Запрашивание геопространственных данных
+              displayName: 'geospatial, spatial, query'
+              href: sql-query-geospatial-query.md
+            - name: Индексирование геопространственных данных
+              displayName: 'geospatial, spatial, index'
+              href: sql-query-geospatial-index.md
+        - name: Дата и время
+          displayName: 'datetime, date, time'
+          href: working-with-dates.md
         - name: Параметризованный запрос
           displayName: 'parameterized query, parameterized, parameter, parameters'
           href: sql-query-parameterized-queries.md
@@ -444,18 +467,12 @@
           href: modeling-data.md
         - name: Индексация
           items:
-            - name: Обзор
+            - name: Общие сведения об индексировании
               displayName: 'range, spatial'
               href: index-overview.md
             - name: Политики индексирования
               displayName: 'consistent, none'
               href: index-policy.md
-        - name: Типы данных
-          items:
-            - name: Дата и время
-              href: working-with-dates.md
-            - name: Геопространственные данные
-              href: geospatial.md
         - name: Срок жизни
           displayName: 'delete, delete data, ttl'
           href: time-to-live.md
@@ -465,8 +482,10 @@
           href: database-transactions-optimistic-concurrency.md
     - name: Канал изменений
       items:
-        - name: Обзор
+        - name: Общие сведения о канале изменений
           href: change-feed.md
+        - name: Конструктивные шаблоны для каналов изменений
+          href: change-feed-design-patterns.md
         - name: Чтение канала изменений
           href: read-change-feed.md
         - name: Обработчик канала изменений
@@ -474,14 +493,20 @@
         - name: Активация Функций Azure
           displayName: change feed
           href: change-feed-functions.md
-    - name: Глобально распределенная аналитика и ИИ
+        - name: Модель извлечения данных канала изменений
+          href: change-feed-pull-model.md
+    - name: Аналитика с использованием Azure Synapse Link
       items:
-        - name: Варианты использования средств аналитики
-          href: analytics-usecases.md
-        - name: "Analytics\_— архитектуры решений"
-          href: analytics-solution-architectures.md
-        - name: Лямбда-архитектура
-          href: lambda-architecture.md
+        - name: "Azure Synapse Link для Cosmos\_DB"
+          href: synapse-link.md
+        - name: Общие сведения об аналитическом хранилище
+          href: analytical-store-introduction.md
+        - name: Поддерживаемые функции Synapse Link
+          href: ../synapse-analytics/synapse-link/concept-synapse-link-cosmos-db-support.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+        - name: Варианты использования Synapse Link
+          href: synapse-link-use-cases.md
+        - name: Часто задаваемые вопросы о Synapse Link
+          href: synapse-link-frequently-asked-questions.md
     - name: Встроенные записные книжки Jupyter
       items:
         - name: Общие сведения о записных книжках Jupyter
@@ -501,6 +526,7 @@
         - name: Совокупная стоимость владения
           href: total-cost-ownership.md
         - name: Интерпретация счета
+          displayName: free tier
           href: understand-your-bill.md
         - name: Оптимизация затрат на подготовленную пропускную способность
           displayName: 'request units, RUs, RU'
@@ -514,12 +540,13 @@
         - name: Оптимизация затрат на развертывание в нескольких регионах
           href: optimize-cost-regions.md
         - name: Оптимизация затрат на разработку и тестирование
+          displayName: free tier
           href: optimize-dev-test.md
         - name: Оптимизация затрат за счет резервной мощности
           href: cosmos-db-reserved-capacity.md
     - name: Безопасность
       items:
-        - name: Обзор
+        - name: Общие сведения о безопасности
           href: database-security.md
         - name: Шифрование данных
           href: database-encryption-at-rest.md
@@ -529,20 +556,25 @@
         - name: Брандмауэр IP-адресов
           href: firewall-support.md
         - name: Доступ из виртуальных сетей
+          displayName: service endpoint
           href: vnet-service-endpoint.md
+        - name: Теги служб
+          href: ../virtual-network/service-tags-overview.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Управление доступом на основе ролей
           displayName: rbac
           href: role-based-access-control.md
         - href: cosmos-db-advanced-threat-protection.md
           name: Дополнительная защита от угроз
-        - name: Встроенные средства управления безопасностью
-          href: cosmos-db-security-controls.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Готовность к работе в масштабах предприятия
       items:
         - name: Оперативное резервное копирование и восстановление по запросу
           href: online-backup-and-restore.md
         - name: Соответствие нормативным требованиям
           href: compliance.md
+        - name: Поддержка службы "Политика Azure"
+          href: policy.md
     - name: Квоты службы
       href: concepts-limits.md
 - name: 'Cassandra, MongoDB и другие API'
@@ -550,12 +582,12 @@
   items:
     - name: API Cassandra
       items:
-        - name: Введение
-          href: cassandra-introduction.md
-        - name: Поддержка коммуникационного протокола
-          href: cassandra-support.md
-        - name: Эластичное масштабирование
-          href: manage-scale-cassandra.md
+        - name: Обзор
+          items:
+            - name: Сведения об API Cassandra для Cosmos DB
+              href: cassandra-introduction.md
+            - name: Поддержка коммуникационного протокола
+              href: cassandra-support.md
         - name: Краткие руководства
           items:
             - name: .NET
@@ -577,13 +609,20 @@
             - name: 4. Перенос данных
               displayName: import
               href: cassandra-import-data.md
+        - name: Основные понятия
+          items:
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: cassandra-faq.md
+            - name: Эластичное масштабирование
+              href: manage-scale-cassandra.md
+            - name: Вторичные индексы
+              href: cassandra-secondary-index.md
         - name: Практические руководства
           items:
             - name: Канал изменений
               href: cassandra-change-feed.md
             - name: Хранение данных и управление ими с помощью Spring Data
-              href: /java/azure/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db
-              maintainContext: true
+              href: 'https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db?context=/azure/cosmos-db/context/context'
             - name: Cassandra и Spark
               items:
                 - name: Введение
@@ -608,18 +647,17 @@
                   href: cassandra-spark-table-copy-ops.md
             - name: Управление с помощью шаблонов Resource Manager
               href: manage-cassandra-with-resource-manager.md
+              displayName: ARM
             - name: Управление с помощью PowerShell
               href: powershell-samples-cassandra.md
             - name: Управление с помощью Azure CLI
               href: cli-samples-cassandra.md
     - name: API MongoDB
       items:
-        - name: Введение
-          href: mongodb-introduction.md
-        - name: Поддержка протокола коммутации (3.2)
-          href: mongodb-feature-support.md
-        - name: Поддержка протокола коммутации (3.6)
-          href: mongodb-feature-support-36.md
+        - name: Обзор
+          items:
+            - name: Сведения об API MongoDB для Cosmos DB
+              href: mongodb-introduction.md
         - name: Краткие руководства
           items:
             - name: .NET
@@ -633,7 +671,7 @@
             - name: Xamarin
               href: create-mongodb-xamarin.md
             - name: Golang
-              href: create-mongodb-golang.md
+              href: create-mongodb-go.md
         - name: Учебники
           items:
             - name: "1.\_Создание данных и управление ими"
@@ -658,12 +696,19 @@
                   href: tutorial-develop-mongodb-react.md
             - name: "2.\_Перенос данных"
               displayName: import
-              href: /azure/dms/tutorial-mongodb-cosmos-db
-              maintainContext: true
+              href: ../dms/tutorial-mongodb-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
             - name: "3.\_Запрос данных"
               href: tutorial-query-mongodb.md
             - name: "4.\_Глобальное распределение данных"
               href: tutorial-global-distribution-mongodb.md
+        - name: Основные понятия
+          items:
+            - name: Поддержка протокола коммутации (3.6)
+              href: mongodb-feature-support-36.md
+            - name: Поддержка протокола коммутации (3.2)
+              href: mongodb-feature-support.md
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: mongodb-api-faq.md
         - name: Практические руководства
           items:
             - name: Руководство по подготовке к миграции
@@ -690,13 +735,13 @@
             - name: Управление индексированием данных
               href: mongodb-indexing.md
             - name: Хранение данных и управление ими с помощью Spring Data
-              href: /java/azure/spring-framework/configure-spring-data-mongodb-with-cosmos-db
-              maintainContext: true
+              href: 'https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db?context=/azure/cosmos-db/context/context'
             - name: Команды расширения MongoDB
               href: mongodb-custom-commands.md
               displayName: custom commands
             - name: Управление с помощью шаблонов Resource Manager
               href: manage-mongodb-with-resource-manager.md
+              displayName: ARM
             - name: Управление с помощью PowerShell
               href: powershell-samples-mongodb.md
             - name: Управление с помощью Azure CLI
@@ -706,10 +751,12 @@
     - name: API Gremlin
       displayName: 'graph, graph database'
       items:
-        - name: Введение
-          href: graph-introduction.md
-        - name: Поддержка коммуникационного протокола
-          href: gremlin-support.md
+        - name: Обзор
+          items:
+            - name: Что такое API Gremlin в Cosmos DB?
+              href: graph-introduction.md
+            - name: Поддержка коммуникационного протокола
+              href: gremlin-support.md
         - name: Краткие руководства
           items:
             - name: Консоль Gremlin
@@ -728,14 +775,10 @@
           items:
             - name: "1.\_Запрашивание данных"
               href: tutorial-query-graph.md
-        - name: Справочник
+        - name: Основные понятия
           items:
-            - name: Заголовки откликов
-              href: gremlin-headers.md
-            - name: Ограничения
-              href: gremlin-limits.md
-            - name: Совместимость
-              href: gremlin-compatibility.md
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: gremlin-api-faq.md
         - name: Практические руководства
           items:
             - name: Моделирование данных графов
@@ -755,18 +798,28 @@
             - name: Визуализация данных графа
               href: graph-visualization.md
             - name: Хранение данных и управление ими с помощью Spring Data
-              href: /java/azure/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db
-              maintainContext: true
+              href: 'https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db?context=/azure/cosmos-db/context/context'
             - name: Управление с помощью шаблонов Resource Manager
               href: manage-gremlin-with-resource-manager.md
+              displayName: ARM
             - name: Управление с помощью PowerShell
               href: powershell-samples-gremlin.md
             - name: Управление с помощью Azure CLI
               href: cli-samples-gremlin.md
+        - name: Справочник
+          items:
+            - name: Заголовки откликов
+              href: gremlin-headers.md
+            - name: Ограничения
+              href: gremlin-limits.md
+            - name: Совместимость
+              href: gremlin-compatibility.md
     - name: API таблиц
       items:
-        - name: Введение
-          href: table-introduction.md
+        - name: Обзор
+          items:
+            - name: Сведения об API таблиц для Cosmos DB
+              href: table-introduction.md
         - name: Краткие руководства
           items:
             - name: .NET
@@ -807,6 +860,10 @@
             - name: 'F#'
               href: /dotnet/articles/fsharp/using-fsharp-on-azure/table-storage
               maintainContext: true
+        - name: Основные понятия
+          items:
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: table-api-faq.md
         - name: Практические руководства
           items:
             - name: Создание приложений с помощью API таблиц
@@ -815,6 +872,7 @@
               href: table-storage-design-guide.md
             - name: Управление с помощью шаблонов Resource Manager
               href: manage-table-with-resource-manager.md
+              displayName: ARM
             - name: Управление с помощью PowerShell
               href: powershell-samples-table.md
             - name: Управление с помощью Azure CLI
@@ -835,10 +893,14 @@
               href: /rest/api/storageservices/table-service-rest-api
     - name: API etcd
       items:
-        - name: Введение
-          href: etcd-api-introduction.md
-        - name: "Использование Azure Kubernetes с Azure Cosmos\_DB"
-          href: bootstrap-kubernetes-cluster.md
+        - name: Обзор
+          items:
+            - name: Сведения об API etcd для Cosmos DB
+              href: etcd-api-introduction.md
+        - name: Практические руководства
+          items:
+            - name: "Использование Azure Kubernetes с Azure Cosmos\_DB"
+              href: bootstrap-kubernetes-cluster.md
 - name: Практические руководства
   items:
     - name: Работа с учетной записью Azure Cosmos
@@ -851,6 +913,7 @@
           href: manage-with-cli.md
         - name: Использование шаблонов Resource Manager
           href: manage-sql-with-resource-manager.md
+          displayName: ARM
     - name: Глобальное распределение
       items:
         - name: Настройка нескольких источников
@@ -860,14 +923,19 @@
           href: how-to-manage-consistency.md
         - name: Настройка политик разрешения конфликтов
           href: how-to-manage-conflicts.md
+        - name: Преобразование формата токена сеанса
+          href: how-to-convert-session-token.md
     - name: Подготовленная пропускная способность
       items:
-        - name: Подготовка пропускной способности для контейнера
+        - name: Подготовка стандартной (масштабируемой вручную) пропускной способности в контейнере
           displayName: 'request units, RUs, RU, collection level'
           href: how-to-provision-container-throughput.md
-        - name: Подготовка пропускной способности для базы данных
+        - name: Подготовка стандартной (масштабируемой вручную) пропускной способности в базе данных
           displayName: 'request units, RUs, RU, shared throughput, database level'
           href: how-to-provision-database-throughput.md
+        - name: Подготовка автомасштабируемой пропускной способности в базе данных или контейнере
+          displayName: 'request units, RUs, RU, shared throughput, database level, collection level, autoscale'
+          href: how-to-provision-autoscale-throughput.md
         - name: Оценка единиц запросов в секунду с помощью планировщика ресурсов Cosmos
           displayName: 'request units, RUs, RU, capacity'
           href: estimate-ru-with-capacity-planner.md
@@ -914,10 +982,14 @@
               href: sql-api-query-metrics.md
             - name: Советы по повышению производительности при использовании пакета SDK для .NET
               href: performance-tips.md
-            - name: Советы по повышению производительности при использовании пакета SDK для Java
-              href: performance-tips-java.md
-            - name: Советы по повышению производительности при использовании пакета SDK для Async Java
-              href: performance-tips-async-java.md
+            - name: "Советы по повышению производительности при использовании пакета SDK для Java версии\_4"
+              href: performance-tips-java-sdk-v4-sql.md
+            - name: Советы по повышению производительности при использовании пакета SDK для Java более ранних версий
+              items:
+                - name: "Пакет SDK для Async Java версии\_2"
+                  href: performance-tips-async-java.md
+                - name: "Пакет SDK для Sync Java версии\_2"
+                  href: performance-tips-java.md
             - name: "Тест производительности\_— пример приложения"
               href: performance-testing.md
         - name: Экономичные операции чтения и записи
@@ -926,10 +998,18 @@
       items:
         - name: Решение проблем с производительностью запросов
           href: troubleshoot-query-performance.md
-        - name: Устранение неполадок с пакетом SDK для Java Async
-          href: troubleshoot-java-async-sdk.md
+        - name: "Устранение неполадок с пакетом SDK для Java версии\_4"
+          href: troubleshoot-java-sdk-v4-sql.md
+        - name: Устранение неполадок с пакетами SDK для Java более ранних версий
+          items:
+            - name: "Пакет SDK для Async Java версии\_2"
+              href: troubleshoot-java-async-sdk.md
         - name: Устранение неполадок с пакетом SDK для .NET
           href: troubleshoot-dot-net-sdk.md
+    - name: Перейти на новые пакеты SDK
+      items:
+        - name: "Переход на пакет SDK для Java версии\_4"
+          href: migrate-java-v4-sdk.md
     - name: Канал изменений
       items:
         - name: "Журналы триггеров Azure Cosmos\_DB"
@@ -946,19 +1026,32 @@
           href: how-to-use-change-feed-estimator.md
         - name: Миграция из библиотеки обработчика веб-канала изменений
           href: how-to-migrate-from-change-feed-library.md
+        - name: "Канал изменений\_— пример Async Java"
+          href: create-sql-api-java-changefeed.md
+    - name: Аналитика с использованием Azure Synapse Link
+      items:
+        - name: Настройка Azure Synapse Link
+          href: configure-synapse-link.md
+        - name: Подключение к Azure Synapse Link
+          href: ../synapse-analytics/synapse-link/how-to-connect-synapse-link-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+        - name: Отправка запросов с помощью Azure Synapse Spark
+          href: ../synapse-analytics/synapse-link/how-to-query-analytical-store-spark.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
     - name: Встроенная аналитика с помощью Apache Spark
       items:
         - name: Соединитель Spark для Azure Databricks
           href: spark-connector.md
         - name: "Потоковая передача с использованием Apache Kafka и Cosmos\_DB"
-          href: /azure/hdinsight/apache-kafka-spark-structured-streaming-cosmosdb
-          maintainContext: true
+          href: ../hdinsight/apache-kafka-spark-structured-streaming-cosmosdb.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
     - name: Встроенные записные книжки Jupyter
       items:
         - name: Включение записных книжек
           href: enable-notebooks.md
-        - name: Использование встроенных команд записной книжки
-          href: use-notebook-features-and-commands.md
+        - name: Импорт записных книжек из GitHub
+          href: import-github-notebooks.md
+        - name: Использование встроенных команд записной книжки на Python
+          href: use-python-notebook-features-and-commands.md
+        - name: 'Использование встроенных команд записной книжки на C#'
+          href: use-csharp-notebook-features-and-commands.md
     - name: Программирование на стороне сервера
       items:
         - name: 'Запись хранимых процедур, триггеров и определяемых пользователем функций'
@@ -972,18 +1065,21 @@
         - name: Настройка брандмауэра IP-адресов
           href: how-to-configure-firewall.md
         - name: Настройка доступа из виртуальных сетей
+          displayName: service endpoints
           href: how-to-configure-vnet-service-endpoint.md
         - name: Настройка доступа из частных конечных точек
           href: how-to-configure-private-endpoints.md
         - name: "Частное подключение к учетной записи Cosmos\_DB"
-          href: /azure/private-link/create-private-endpoint-cosmosdb-portal
-          maintainContext: true
+          href: ../private-link/create-private-endpoint-cosmosdb-portal.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Настройка предоставления общего доступа к ресурсам (CORS)
           href: how-to-configure-cross-origin-resource-sharing.md
-        - name: Защита ключей Azure Cosmos с помощью Key Vault
-          href: access-secrets-from-keyvault.md
-        - name: "Аутентификация на основе сертификатов в Azure\_AD"
+        - name: Использование управляемых удостоверений для получения доступа к данным
+          href: managed-identity-based-authentication.md
+          displayName: 'msi, managed service identity, aad, azure active directory, identity'
+        - name: Использование сертификатов для получения доступа к данным
           href: certificate-based-authentication.md
+        - name: Использование Azure Key Vault для получения доступа к данным
+          href: access-secrets-from-keyvault.md
         - name: Ограничение доступа пользователей только операциями с данными
           href: how-to-restrict-user-data.md
         - name: Настройка управляемых клиентом ключей
@@ -996,17 +1092,28 @@
       items:
         - name: "Мониторинг Cosmos\_DB"
           href: monitor-cosmos-db.md
-        - name: Мониторинг с помощью журналов диагностики
-          href: cosmosdb-monitor-resource-logs.md
-        - name: Azure Monitor для Cosmos (предварительная версия)
-          href: ../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json
+        - name: Использование метрик Azure Monitor
+          items:
+            - name: Azure Monitor для Cosmos (предварительная версия)
+              href: ../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+            - name: Мониторинг задержки на стороне сервера
+              href: monitor-server-side-latency.md
+            - name: Мониторинг использования единиц запросов
+              href: monitor-request-unit-usage.md
+            - name: Мониторинг использования нормализованных единиц запросов
+              href: monitor-normalized-request-units.md
+        - name: Использование журналов Azure Monitor
+          items:
+            - name: Мониторинг с помощью журналов диагностики
+              href: cosmosdb-monitor-resource-logs.md
+            - name: Журналы уровня управления аудитом
+              href: audit-control-plane-logs.md
         - name: "Просмотр метрик с использованием учетной записи Cosmos\_DB"
           href: use-metrics.md
-        - name: Вход в приложения с помощью Logic Apps
-          href: /azure/logic-apps/logic-apps-scenario-error-and-exception-handling
-          maintainContext: true
         - name: Справочник по данным мониторинга
           href: monitor-cosmos-db-reference.md
+        - name: Вход в приложения с помощью Logic Apps
+          href: ../logic-apps/logic-apps-scenario-error-and-exception-handling.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
     - name: Разработка в локальной среде
       items:
         - name: Использование эмулятора
@@ -1032,29 +1139,23 @@
         - name: Служба приложений Azure
           href: create-website.md
         - name: Индексатор службы "Когнитивный поиск Azure"
-          href: /azure/search/search-howto-index-cosmosdb
-          maintainContext: true
+          href: ../search/search-howto-index-cosmosdb.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Функции Azure
           items:
             - name: Бессерверные вычисления
               href: serverless-computing-database.md
             - name: Привязки Функций Azure
-              href: /azure/azure-functions/functions-bindings-cosmosdb
-              maintainContext: true
+              href: ../azure-functions/functions-bindings-cosmosdb.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Фабрика данных Azure
-          href: /azure/data-factory/connector-azure-cosmos-db
-          maintainContext: true
+          href: ../data-factory/connector-azure-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Azure Stream Analytics
-          href: '/azure/stream-analytics/stream-analytics-define-outputs#azure-cosmos-db'
-          maintainContext: true
+          href: ../stream-analytics/stream-analytics-documentdb-output.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Центры событий Azure и служба хранилища Azure
           href: 'https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md'
         - name: Использование начального приложения Spring Boot
-          href: /java/azure/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db
-          maintainContext: true
+          href: 'https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db?context=/azure/cosmos-db/context/context'
         - name: Руководство для разработчиков Spring Data
-          href: /java/azure/spring-framework/how-to-guides-spring-data-cosmosdb
-          maintainContext: true
+          href: 'https://docs.microsoft.com/azure/developer/java/spring-framework/how-to-guides-spring-data-cosmosdb?context=/azure/cosmos-db/context/context'
         - name: Драйвер ODBC
           href: odbc-driver.md
     - name: "Перенос данных в Cosmos\_DB"
@@ -1075,12 +1176,16 @@
           href: migrate-relational-to-cosmos-db-sql-api.md
         - name: Миграция из Couchbase в API SQL
           href: couchbase-cosmos-migration.md
+        - name: Миграция из DynamoDB в API SQL
+          href: dynamo-to-cosmos.md
     - name: Библиотека массового исполнителя
       items:
         - name: Общие сведения о библиотеке массового исполнителя
           href: bulk-executor-overview.md
         - name: "Массовый исполнитель\_— библиотека .NET"
           href: bulk-executor-dot-net.md
+        - name: Миграция из пакетного исполнителя в пакет SDK для .NET
+          href: how-to-migrate-from-bulk-executor-library.md
         - name: "Массовый исполнитель\_— библиотека Java"
           href: bulk-executor-java.md
 - name: Справочник
@@ -1095,12 +1200,16 @@
       href: sql-api-sdk-dotnet-changefeed.md
     - name: Библиотека массового исполнителя для .NET
       href: sql-api-sdk-bulk-executor-dot-net.md
-    - name: Java
-      href: sql-api-sdk-java.md
     - name: Библиотека массового исполнителя для Java
       href: sql-api-sdk-bulk-executor-java.md
-    - name: Async Java
-      href: sql-api-sdk-async-java.md
+    - name: "Пакет SDK Java версии\_4 для Core"
+      href: sql-api-sdk-java-v4.md
+    - name: Старые пакеты SDK Java для Core
+      items:
+        - name: "Пакет SDK для Async Java версии\_2"
+          href: sql-api-sdk-async-java.md
+        - name: "Пакет SDK для Sync Java версии\_2"
+          href: sql-api-sdk-java.md
     - name: Node.js
       href: sql-api-sdk-node.md
     - name: Python
@@ -1111,6 +1220,7 @@
       href: /rest/api/cosmos-db-resource-provider/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.documentdb/allversions
+      displayName: ARM
     - name: Заметки о выпуске эмулятора
       href: local-emulator-release-notes.md
 - name: Ресурсы
@@ -1120,7 +1230,7 @@
     - name: Краткий справочник запросов
       href: query-cheat-sheet.md
     - name: Тестовая площадка SQL
-      href: 'https://aka.ms/cosmos-db-playground'
+      href: 'https://www.documentdb.com/sql/demo'
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: faq.md
     - name: Технические документы
@@ -1135,8 +1245,8 @@
       href: 'https://azure.microsoft.com/try/cosmosdb/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cosmos-db/'
-    - name: Преимущества работы с несколькими источниками
-      href: multi-master-benefits.md
+    - name: Уровни производительности
+      href: performance-levels.md
     - name: Варианты использования
       items:
         - name: Распространенные варианты использования

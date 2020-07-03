@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3dfe0f8788275dd4403b6c9cad99a8eb09e479b
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: d23849df75d1ab239eb269b462abb21df196e7e5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74274720"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79138507"
 ---
 # <a name="change-the-name-or-logo-of-an-enterprise-application-in-azure-active-directory"></a>Изменение имени или логотипа корпоративного приложения в Azure Active Directory
 
@@ -42,12 +42,12 @@ ms.locfileid: "74274720"
 7. В средстве выбора файлов выберите нужный файл в качестве нового логотипа. Имя файла отображается в поле под текущим изображением логотипа.
 
    > [!NOTE]
-   > Для Azure требуется, чтобы изображение логотипа было PNG-файлом и применялись ограничения ширины, высоты и размера файла.
+   > Для Azure требуется, чтобы изображение логотипа было PNG-файлом и применялись ограничения ширины, высоты и размера файла. Размер пользовательских логотипов должен быть &times; ровно 215 215 пикселей в формате PNG. Мы рекомендуем использовать сплошной цвет фона без прозрачности в эмблеме приложения, чтобы они отображались лучше для пользователей.
 8. Щелкните **Сохранить**. Если вы выбрали новый логотип, изображение поля **логотипа** изменится в соответствии с новым файлом логотипа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Краткое руководство. Просмотр групп и участников Организации в Azure Active Directory](../fundamentals/active-directory-groups-view-azure-portal.md)
+* [Краткое руководство. Просмотр групп и членов вашей организации в Azure Active Directory](../fundamentals/active-directory-groups-view-azure-portal.md)
 * [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
 * [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
 * [Отключение входа пользователя в корпоративное приложение](disable-user-sign-in-portal.md)

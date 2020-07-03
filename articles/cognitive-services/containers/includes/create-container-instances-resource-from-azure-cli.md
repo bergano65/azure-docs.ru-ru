@@ -3,18 +3,18 @@ title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как создать ресурс экземпляра контейнера Azure из Azure CLI.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 01/06/2020
-ms.author: dapine
-ms.openlocfilehash: 700a04b58c13a9c7fd5301875226ca234cabeb96
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 9fd597c7e6e369cfea36c882dfd2cb12e748a843
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75689466"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83696496"
 ---
 ## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Создание ресурса экземпляра контейнера Azure из Azure CLI
 
@@ -24,11 +24,11 @@ YAML ниже определяет ресурс экземпляра конте�
 apiVersion: 2018-10-01
 location: # < Valid location >
 name: # < Container Group name >
-imageRegistryCredentials: # This is required when pulling a non-public image
+properties:
+  imageRegistryCredentials: # This is only required if you are pulling a non-public image that requires authentication to access.
   - server: containerpreview.azurecr.io
     username: # < The username for the preview container registry >
     password: # < The password for the preview container registry >
-properties:
   containers:
   - name: # < Container name >
     properties:
@@ -66,13 +66,13 @@ type: Microsoft.ContainerInstance/containerGroups
 > [!NOTE]
 > Не все расположения имеют одинаковую доступность ЦП и памяти. Список доступных ресурсов для контейнеров в расположении и ОС см. в таблице " [расположение и ресурсы][location-to-resource] ".
 
-Мы будем полагаться на файл YAML, созданный для команды [`az container create`][azure-container-create] . В Azure CLI выполните команду `az container create` замените `<resource-group>` своим собственным. Кроме того, для защиты значений в развертывании YAML ссылаются на [защищенные значения][secure-values].
+Мы будем полагаться на файл YAML, созданный для [`az container create`][azure-container-create] команды. В Azure CLI выполните `az container create` команду, заменив `<resource-group>` собственными. Кроме того, для защиты значений в развертывании YAML ссылаются на [защищенные значения][secure-values].
 
 ```azurecli
 az container create -g <resource-group> -f my-aci.yaml
 ```
 
-Выходные данные команды `Running...`, если это допустимо, после того, как выходные данные изменяются на строку JSON, представляющую созданный ресурс ACI. Образ контейнера, скорее всего, будет недоступен в течение определенного времени, но теперь ресурс развернут.
+Выходные данные команды являются `Running...` допустимыми, после того как выходные данные изменяются на строку JSON, представляющую созданный ресурс ACI. Образ контейнера, скорее всего, будет недоступен в течение определенного времени, но теперь ресурс развернут.
 
 > [!TIP]
 > Обратите особое внимание на местоположения общедоступной предварительной версии предложения службы "Поиск в Azure", так как YAML потребуется соответствующим образом скорректировать их в соответствии с расположением.

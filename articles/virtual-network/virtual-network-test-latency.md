@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: steveesp
 ms.openlocfilehash: 00efc2754948d53d4f80a6261dbd4041b358185b
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74896361"
 ---
 # <a name="test-vm-network-latency"></a>Проверка задержки сети виртуальной машины
@@ -29,7 +29,7 @@ ms.locfileid: "74896361"
 
 Для точного тестирования сетевой задержки протоколов, используемых большинством приложений, Соккперф (для Linux) и латте. exe (для Windows) дают наиболее релевантные результаты. В этой статье рассматриваются оба этих средства.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Используя две виртуальные машины: один как отправитель и один получатель, вы создадите двусторонний канал связи. При таком подходе вы можете отправлять и получать пакеты в обоих направлениях и измерять время приема-передачи (RTT).
 
@@ -111,7 +111,7 @@ netsh advfirewall firewall add rule program=<path>\latte.exe name="Latte" protoc
     latte -c -a <Receiver IP address>:<port> -i <iterations>
     ```
 
-    Полученная команда аналогична команде получателя, за исключением добавления&nbsp; *-c* для указания на то, что это *клиент*или *отправитель*:
+    Результирующая команда совпадает с получателем, за исключением добавления&nbsp;*-c* для указания на то, что это *клиент*или *отправитель*:
 
     `latte -c -a 10.0.0.4:5005 -i 65100`
 

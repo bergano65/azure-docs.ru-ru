@@ -4,10 +4,10 @@ description: Использование Visual Studio для создания п
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.openlocfilehash: 5127732ac0c33d4b27f70bd616fb23aaec5c871f
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76152737"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
@@ -20,7 +20,7 @@ ms.locfileid: "76152737"
 
 В этом разделе будет создан проект группы ресурсов Azure с помощью шаблона **Веб-приложение**.
 
-1. В Visual Studio выберите **Файл**>**Создать**>**Проект**.
+1. В Visual Studio выберите **файл**>**создать**>**проект**.
 1. Выберите шаблон проекта **группы ресурсов Azure** и нажмите кнопку **Далее**.
 
     ![Создание проекта](./media/create-visual-studio-deployment-project/create-project.png)
@@ -41,7 +41,7 @@ ms.locfileid: "76152737"
 
     Так как вы выбрали шаблон "Веб-приложение", отобразятся указанные ниже файлы.
 
-   | Имя файла | Description |
+   | Имя файла | Описание |
    | --- | --- |
    | Deploy-AzureResourceGroup.ps1 |Сценарий PowerShell, вызывающий команды PowerShell для развертывания в Azure Resource Manager. Visual Studio использует этот скрипт PowerShell для развертывания шаблона. |
    | WebSite.json |Шаблон Resource Manager, определяющий инфраструктуру, которую требуется развернуть в Azure, и параметры, которые можно указать во время развертывания. Кроме того, он определяет зависимости между ресурсами, благодаря чему Resource Manager развертывает их в правильном порядке. |
@@ -139,11 +139,11 @@ ms.locfileid: "76152737"
 
 Для скрипта модуля AzureRM используйте Visual Studio:
 
-1. В контекстном меню узла проекта развертывания последовательно выберите пункты **Развернуть** > **Новое**.
+1. В контекстном меню узла проекта развертывания выберите пункт **развернуть** > **Новый**.
 
     ![Пункт меню "Новое развертывание"](./media/create-visual-studio-deployment-project/deploy.png)
 
-1. Откроется диалоговое окно **Развертывание в группе ресурсов** . В раскрывающемся списке **Группа ресурсов** выберите существующую группу ресурсов или создайте новую. Выберите **Развернуть**.
+1. Появится диалоговое окно **Развертывание в группе ресурсов**. В раскрывающемся поле **Группа ресурсов** выберите существующую группу ресурсов или создайте новую. Выберите **Развернуть**.
 
     ![Диалоговое окно "Развертывание в группе ресурсов"](./media/create-visual-studio-deployment-project/show-deployment.png)
 
@@ -167,7 +167,7 @@ ms.locfileid: "76152737"
 
 На этом этапе инфраструктура для приложения уже развернута, а фактический код для проекта — еще нет.
 
-1. Добавьте проект в свое решение Visual Studio. Щелкните правой кнопкой мыши решение и выберите команду **Добавить** > **Новый проект**.
+1. Добавьте проект в свое решение Visual Studio. Щелкните решение правой кнопкой мыши и выберите команду **Добавить** > **Новый проект**.
 
     ![Добавление проекта](./media/create-visual-studio-deployment-project/add-project.png)
 
@@ -245,7 +245,7 @@ ms.locfileid: "76152737"
 "packageUri": "[concat(parameters('_artifactsLocation'), parameters('ExampleAppPackageFolder'), '/', parameters('ExampleAppPackageFileName'), parameters('_artifactsLocationSasToken'))]",
 ```
 
-Обратите внимание, что в предыдущем примере нет `'/',` между параметрами **parameters('_artifactsLocation')** и **parameters('ExampleAppPackageFolder')** .
+Обратите внимание, что в предыдущем примере нет `'/',` между параметрами **parameters('_artifactsLocation')** и **parameters('ExampleAppPackageFolder')**.
 
 Выполните повторную сборку проекта. Сборка проекта гарантирует, что файлы, которые нужно развернуть, будут добавлены в промежуточную папку.
 

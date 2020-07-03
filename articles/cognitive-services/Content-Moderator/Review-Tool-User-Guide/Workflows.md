@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: pafarley
 ms.openlocfilehash: 0be77dc1ac249c37f9b59078451d8fbe35f17458
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "72754255"
 ---
 # <a name="define-and-use-moderation-workflows"></a>Определение и использование рабочих процессов для контроля
@@ -81,6 +81,6 @@ ms.locfileid: "72754255"
 
 ![Проверка образов](images/image-workflow-review.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом руководство вы узнали, как настроить и использовать рабочие процессы для контроля использования в [средстве](https://contentmoderator.cognitive.microsoft.com)Content Moderatorной проверки. Далее ознакомьтесь с [руководством REST API](../try-review-api-workflow.md) , чтобы узнать, как создавать рабочие процессы программным способом.

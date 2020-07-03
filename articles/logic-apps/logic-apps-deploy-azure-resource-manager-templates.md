@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/01/2019
-ms.openlocfilehash: 662f8c2a4184e858d33dc40effed363ef3ec17e5
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 432e22879ce0eba89f04a1084e2d4a93a487dd45
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76904962"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82086442"
 ---
 # <a name="deploy-azure-resource-manager-templates-for-azure-logic-apps"></a>Развертывание шаблонов Azure Resource Manager для Azure Logic Apps
 
@@ -22,7 +22,7 @@ ms.locfileid: "76904962"
 * [Azure PowerShell](#powershell)
 * [Azure CLI](#cli)
 * [API REST диспетчера ресурсов Azure](../azure-resource-manager/templates/deploy-rest.md)
-* [Azure Pipelines Azure DevOps](#azure-pipelines)
+* [Azure DevOps](#azure-pipelines)
 
 <a name="portal"></a>
 
@@ -69,7 +69,7 @@ New-AzResourceGroupDeployment -ResourceGroupName <Azure-resource-group-name> -Te
 
 <a name="cli"></a>
 
-## <a name="deploy-with-azure-cli"></a>Развертывание с помощью Azure CLI
+## <a name="deploy-with-azure-cli"></a>Развертывание с помощью интерфейса командной строки Azure
 
 Чтобы выполнить развертывание в определенной *группе ресурсов Azure*, используйте следующую команду:
 
@@ -79,7 +79,7 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md) 
+* [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../azure-resource-manager/templates/deploy-cli.md)
 * [`az group deployment create`](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create)
 
 <a name="azure-pipelines"></a>
@@ -91,11 +91,12 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 Дополнительные сведения о непрерывной интеграции и непрерывном развертывании (CI/CD) для шаблонов Azure Resource Manager с Azure Pipelines см. в следующих разделах и образцах:
 
 * [Интеграция шаблонов диспетчер ресурсов с Azure Pipelines](../azure-resource-manager/templates/add-template-to-azure-pipelines.md)
-* [Учебник. Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines](../azure-resource-manager/templates/template-tutorial-use-azure-pipelines.md)
+* [Руководство по Непрерывная интеграция шаблонов Azure Resource Manager с Azure Pipelines](../azure-resource-manager/templates/deployment-tutorial-pipeline.md)
 * [Пример. подключение к очередям служебной шины Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример. подключение к учетным записям хранения Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример. Настройка действия приложения-функции для Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример. подключение к учетной записи интеграции из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-an-integration-account-from-azure-logic-apps-and-deploy-by-using-azure-devops-pipelines/)
+* [Пример. Координация Azure Pipelines с помощью Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-pipeline-orchestration/azure-devops-orchestration-with-logic-apps/)
 
 Ниже приведены общие высокоуровневые действия для использования Azure Pipelines.
 
@@ -125,7 +126,7 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 
 Если вместо авторизации подключений используется [субъект-служба](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory (Azure AD), Узнайте, как [указать параметры субъекта — службы в шаблоне приложения логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#authenticate-connections).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Мониторинг приложений логики](../logic-apps/monitor-logic-apps.md)

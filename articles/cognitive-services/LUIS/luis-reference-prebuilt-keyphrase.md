@@ -8,18 +8,18 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 09/27/2019
 ms.author: diberry
-ms.openlocfilehash: 51d1bd515651824545d486207ad4a74476aa7092
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 53be1b13f1e2744e143a4be0777e3a8e3135460e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73491272"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78270527"
 ---
 # <a name="keyphrase-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность keyPhrase для приложения LUIS
-Сущность Кэйфрасе извлекает из utterance различные ключевые фразы. Вам не нужно добавлять в приложение пример фразы продолжительностью, содержащий Кэйфрасе. Сущность Кэйфрасе поддерживается во [многих культурах](luis-language-support.md#languages-supported) как часть функций [анализа текста](../text-analytics/overview.md) . 
+Сущность Кэйфрасе извлекает из utterance различные ключевые фразы. Вам не нужно добавлять в приложение пример фразы продолжительностью, содержащий Кэйфрасе. Сущность Кэйфрасе поддерживается во [многих культурах](luis-language-support.md#languages-supported) как часть функций [анализа текста](../text-analytics/overview.md) .
 
 ## <a name="resolution-for-prebuilt-keyphrase-entity"></a>Разрешение для предварительно созданной сущности keyPhrase
 
@@ -27,9 +27,9 @@ ms.locfileid: "73491272"
 
 `where is the educational requirements form for the development and engineering group`
 
-#### <a name="v3-responsetabv3"></a>[V3 ответ](#tab/V3)
+#### <a name="v3-response"></a>[V3 ответ](#tab/V3)
 
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `false`:
+Следующий код JSON имеет `verbose` параметр со значением: `false`
 
 ```json
 "entities": {
@@ -39,8 +39,8 @@ ms.locfileid: "73491272"
     ]
 }
 ```
-#### <a name="v3-verbose-responsetabv3-verbose"></a>[V3 подробный ответ](#tab/V3-verbose)
-Следующий код JSON относится к параметру `verbose`, для которого задано значение `true`:
+#### <a name="v3-verbose-response"></a>[V3 подробный ответ](#tab/V3-verbose)
+Следующий код JSON имеет `verbose` параметр со значением: `true`
 
 ```json
 "entities": {
@@ -76,7 +76,7 @@ ms.locfileid: "73491272"
     }
 }
 ```
-#### <a name="v2-responsetabv2"></a>[Ответ v2](#tab/V2)
+#### <a name="v2-response"></a>[Ответ v2](#tab/V2)
 
 В следующем примере показано разрешение для сущности **builtin.keyPhrase**.
 
@@ -96,10 +96,10 @@ ms.locfileid: "73491272"
     }
 ]
 ```
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 
 Дополнительные сведения о сущностях [percentage](luis-reference-prebuilt-percentage.md), [number](luis-reference-prebuilt-number.md) и [age](luis-reference-prebuilt-age.md).

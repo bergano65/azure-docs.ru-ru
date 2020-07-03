@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: d6b2fbe28aae8e8233aaeb75bc9b43a35a9ab588
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: d07d1a706635a7f269a9a51769ae6f8bbf57df3d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905288"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80295404"
 ---
 # <a name="azcopy-login"></a>azcopy login
 
@@ -99,9 +99,9 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 
 ## <a name="options"></a>Параметры
 
-|Вариант|Description|
+|Параметр|Описание|
 |--|--|
-|--AAD-Endpoint|Используемая конечная точка Azure Active Directory. Значение по умолчанию (https://login.microsoftonline.com) верно для общедоступного облака Azure. Задайте этот параметр при проверке подлинности в национальном облаке. См. раздел [конечные точки проверки подлинности Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints).
+|--AAD-Endpoint|Используемая конечная точка Azure Active Directory. Значение по умолчанию (`https://login.microsoftonline.com`) верно для общедоступного облака Azure. Задайте этот параметр при проверке подлинности в национальном облаке. См. раздел [конечные точки проверки подлинности Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#azure-ad-authentication-endpoints).
 Этот флаг не требуется для Управляемое удостоверение службы.|
 |--Строка идентификатора приложения|Идентификатор приложения, которому назначено пользовательское удостоверение. Требуется для проверки подлинности субъекта-службы.|
 |--Строка сертификата-путь|Путь к сертификату для проверки подлинности имени участника-службы. Требуется для проверки подлинности субъекта-службы на основе сертификата.|
@@ -110,12 +110,12 @@ azcopy login --service-principal --certificate-path /path/to/my/cert
 |--Identity-Client-ID, строка|Идентификатор клиента, которому назначено пользовательское удостоверение.|
 |--Identity-Object-ID, строка|Идентификатор объекта, которому назначено пользовательское удостоверение.|
 |--Identity-Resource-ID, строка|Идентификатор ресурса назначенного пользователю удостоверения.|
-|--Service-Principal|Войдите через SPN (имя субъекта-службы) с помощью сертификата или секрета. Секрет клиента или пароль сертификата должны быть помещены в соответствующую переменную среды. Введите `AzCopy env`, чтобы просмотреть имена и описания переменных среды.|
+|--Service-Principal|Войдите через SPN (имя субъекта-службы) с помощью сертификата или секрета. Секрет клиента или пароль сертификата должны быть помещены в соответствующую переменную среды. Введите `AzCopy env` , чтобы просмотреть имена и описания переменных среды.|
 |--Строка идентификатора клиента| Идентификатор клиента Azure Active Directory, используемый для интерактивного входа в устройство OAuth.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Вариант|Description|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|

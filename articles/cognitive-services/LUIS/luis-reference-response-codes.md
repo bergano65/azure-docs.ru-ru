@@ -8,19 +8,19 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 03/04/2019
 ms.author: diberry
-ms.openlocfilehash: 43fbca732bbd281ad980ae86e4a89f446fdb69bc
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 405381a2d80ee6469b2b90bcb25923004fe55882
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945861"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78270245"
 ---
 # <a name="common-api-response-codes-and-their-meaning"></a>Стандартные коды ответа API и их значение
 
-API-интерфейсы [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) и [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356) возвращают коды ответов HTTP. В то время как ответные сообщения содержат сведения, относящиеся к запросу, код состояния ответа HTTP имеет общий характер. 
+API-интерфейсы [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) и [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356) возвращают коды ответов HTTP. В то время как ответные сообщения содержат сведения, относящиеся к запросу, код состояния ответа HTTP имеет общий характер.
 
 ## <a name="common-status-codes"></a>Распространенные коды состояний
 В следующей таблице перечислены некоторые наиболее распространенные коды состояний ответов HTTP для API-интерфейсов [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) и [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356).

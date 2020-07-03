@@ -5,18 +5,17 @@ services: azure-monitor
 documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
-ms.service: azure-monitor
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: 368da2baaea1be41331d77f4dae1bdd9567b8cc5
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: d57910ae31d4db9be17b3dc46b5920a925ab4fcf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872899"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79248584"
 ---
 # <a name="azure-monitor-workbooks-data-sources"></a>Источники данных Azure Monitor книг
 
@@ -43,7 +42,7 @@ ms.locfileid: "74872899"
 
 ![Снимок экрана: интерфейс метрик книги](./media/workbooks-overview/metrics.png)
 
-## <a name="azure-resource-graph"></a>График ресурсов Azure 
+## <a name="azure-resource-graph"></a>Azure Resource Graph 
 
 Книги поддерживают запросы к ресурсам и их метаданным с помощью графа ресурсов Azure (ARG). Эта функция в основном используется для создания пользовательских областей запросов для отчетов. Область действия ресурса выражается с помощью ККЛ-subset, поддерживаемого АРГУМЕНТом, который часто достаточно для распространенных вариантов использования.
 
@@ -82,7 +81,7 @@ Azure Monitor обладает функциональными возможнос
 
 ![Снимок экрана окна запроса Kusto](./media/workbooks-overview/data-explorer.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

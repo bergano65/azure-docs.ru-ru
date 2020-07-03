@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/14/2019
 ms.author: absha
-ms.openlocfilehash: 9f14521c15c3497bed4ffbeba44cb5d78ee4df7b
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: f5f5c16f3d6aa1d7115e99cbae0dbd6cd926b25a
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74047987"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82202542"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Устранение проблем с сходством сеансов шлюза приложений Azure
 
@@ -63,11 +63,11 @@ ms.locfileid: "74047987"
 
 ### <a name="the-application-cannot-handle-cookie-based-affinity"></a>Приложение не может управлять сходством на основе файлов cookie
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Шлюз приложений может выполнять сходство на основе сеанса только с помощью файла cookie.
 
-#### <a name="workaround"></a>Возможное решение
+#### <a name="workaround"></a>Обходной путь
 
 Если приложение не может управлять сходством на основе файлов cookie, необходимо использовать внешнюю или внутреннюю подсистему балансировки нагрузки Azure или другое стороннее решение.
 
@@ -75,7 +75,7 @@ ms.locfileid: "74047987"
 
 #### <a name="symptom"></a>Симптом
 
-Вы включили параметр сходства на основе файлов cookie. при доступе к шлюзу приложений с помощью URL-адреса короткого имени в Internet Explorer, например: [http://website](http://website/) , запрос по-прежнему перемещается между внутренними серверами.
+Если вы включили параметр сходства на основе файлов cookie, при доступе к шлюзу приложений с помощью URL-адреса короткого имени в Internet `http://website` Explorer, например:, запрос по-прежнему перемещается между внутренними серверами.
 
 Чтобы найти эту ошибку, следуйте инструкциям:
 
@@ -83,7 +83,7 @@ ms.locfileid: "74047987"
     **Совет** Если вы не умеете использовать Fiddler, установите флажок "**я хочу получать сетевой трафик и проанализировать его с помощью веб-отладчика**" внизу.
 
 2. Проверьте и Проанализируйте журналы сеансов, чтобы определить, имеют ли файлы cookie, предоставленные клиентом, сведения о Арраффинити. Если вы не нашли сведения о Арраффинити, например "**арраффинити =** *арраффинитивалуе*" в наборе файлов cookie, это означает, что клиент не отвечает на файл cookie Арра, который предоставляется шлюзом приложений.
-    Например,
+    Пример:
 
     ![Устранение неполадок с сходством сеансов и проблем-3](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-3.png)
 
@@ -91,13 +91,13 @@ ms.locfileid: "74047987"
 
 Приложение по-своему пытается задать файл cookie для каждого запроса, пока он не получит ответ.
 
-#### <a name="cause"></a>Причина:
+#### <a name="cause"></a>Причина
 
 Эта проблема возникает из-за того, что Internet Explorer и другие браузеры могут не хранить или использовать файл cookie с кратким именем.
 
-#### <a name="resolution"></a>Способы устранения:
+#### <a name="resolution"></a>Решение
 
-Чтобы устранить эту проблему, для доступа к Шлюзу приложений следует использовать полное доменное имя. Например, используйте [http://website.com](https://website.com/) или [http://appgw.website.com](http://appgw.website.com/) .
+Чтобы устранить эту проблему, для доступа к Шлюзу приложений следует использовать полное доменное имя. Например, используйте [http://website.com](https://website.com/) или [http://appgw.website.com](http://website.com/) .
 
 ## <a name="additional-logs-to-troubleshoot"></a>Дополнительные журналы для устранения неполадок
 
@@ -145,7 +145,7 @@ ms.locfileid: "74047987"
 - **Клиентпорт** — это исходный порт от клиента, подключающегося к запросу.
 - **Рекуесткуери** — указывает сервер назначения, которому был получен запрос.
 - **Сервер направлен**: экземпляр пула внутренних серверов, который получает запрос.
-- **X-AzureApplicationGateway-LOG-ID** — идентификатор корреляции, используемый для запроса. Он может использоваться для устранения неполадок с трафиком на внутренних серверах. Например: X-AzureApplicationGateway-CACHE-ПОПАДАНИе = 0 & SERVER-ROUTEd = 10.0.2.4.
+- **X-AzureApplicationGateway-LOG-ID** — идентификатор корреляции, используемый для запроса. Он может использоваться для устранения неполадок с трафиком на внутренних серверах. Например: X-AzureApplicationGateway-CACHE-ПОПАДАНИе = 0&SERVER-ROUTEd = 10.0.2.4.
 
   - **SERVER-STATUS** — код отклика HTTP, полученный шлюзом приложений из серверной части.
 
@@ -174,7 +174,7 @@ ms.locfileid: "74047987"
 
     ![Устранение неполадок с сходством сеансов-проблемы — 13](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-13.png)
 
-4. Скорее всего, вы захотите расшифровать трафик HTTPS, а также включить расшифровку HTTPS, выбрав **инструменты** > **Параметры Fiddler**и установив флажок " **расшифровать HTTPS трафик**".
+4. Скорее всего, вы захотите расшифровать трафик HTTPS, а также включить расшифровку HTTPS, выбрав **инструменты** > **Fiddler параметры**и установив флажок " **расшифровать HTTPS трафик**".
 
     ![Устранение неполадок — проблемы с сходством-сеансы — 14](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-14.png)
 
@@ -182,7 +182,7 @@ ms.locfileid: "74047987"
 
     ![Устранение неполадок — проблемы с сходством-сеансы — 15](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-15.png)
 
-6. Когда вы воссоздаете ошибку, сохраните файл для проверки, выбрав **файл** > **сохранить** > **все сеансы..** . 
+6. Когда вы воссоздаете ошибку, сохраните файл для проверки, выбрав **файл** > **сохранить** > **все сеансы..**. 
 
     ![Устранение неполадок-сеанс-сходств-проблемы — 16](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-16.png)
 
@@ -206,6 +206,6 @@ ms.locfileid: "74047987"
 
  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если описанные выше шаги не устранят проблему, отправьте [запрос в службу поддержки](https://azure.microsoft.com/support/options/).

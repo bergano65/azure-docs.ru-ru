@@ -3,18 +3,18 @@ title: Безопасность контейнера
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как защитить контейнер
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/30/2019
-ms.author: dapine
-ms.openlocfilehash: 35f5cffdc644370082e229c88d67db33e853c446
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: fd2a6cdad01302501e30ec60a4d3ccf6efd9c266
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73499188"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80876842"
 ---
 ## <a name="azure-cognitive-services-container-security"></a>Безопасность контейнера Cognitive Services Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "73499188"
 
 ![Безопасность контейнера](../media/container-security.svg)
 
-В качестве альтернативного и *безопасного* подхода потребители Cognitive Services контейнеры могут расширить контейнер с интерфейсным компонентом, сохранив конечную точку контейнера закрытой. Рассмотрим ситуацию, когда мы используем [Istio][istio] в качестве входящего шлюза. Istio поддерживает аутентификацию по протоколам HTTPS/SSL и Client-Certificate. В этом сценарии интерфейс Istio предоставляет доступ к контейнеру, представляя сертификат клиента, список разрешений заранее с Istio.
+В качестве альтернативного и *безопасного* подхода потребители Cognitive Services контейнеры могут расширить контейнер с интерфейсным компонентом, сохранив конечную точку контейнера закрытой. Рассмотрим ситуацию, когда мы используем [Istio][istio] в качестве входящего шлюза. Istio поддерживает HTTPS/TLS и проверку подлинности на основе сертификата клиента. В этом сценарии интерфейс Istio предоставляет доступ к контейнеру, представляя сертификат клиента, список разрешений заранее с Istio.
 
 [Nginx][nginx] — это еще один популярный вариант в той же категории. Как Istio, так и nginx выступают в качестве сетки службы и предлагают дополнительные функции, такие как балансировка нагрузки, маршрутизация и контроль скорости.
 

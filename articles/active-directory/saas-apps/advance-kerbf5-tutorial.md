@@ -17,10 +17,10 @@ ms.date: 11/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 984fd0c7946a50922315269c87e08b1c35b74348
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74074756"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство по Интеграция единого входа Azure Active Directory с F5
@@ -35,9 +35,9 @@ ms.locfileid: "74074756"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка F5 с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -49,7 +49,7 @@ ms.locfileid: "74074756"
 
 - [Настройка единого входа в F5 для расширенного приложения Kerberos](#configure-f5-single-sign-on-for-advanced-kerberos-application)
 
-- [Настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md)
+- [настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md);
 
 - [Настройка единого входа в F5 для приложения Kerberos](kerbf5-tutorial.md)
 
@@ -75,7 +75,7 @@ ms.locfileid: "74074756"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в F5-SSO](#configure-f5-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя приложения F5](#create-f5-test-user)** требуется для того, чтобы в F5 существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -85,13 +85,13 @@ ms.locfileid: "74074756"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -124,7 +124,7 @@ ms.locfileid: "74074756"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к F5.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **F5**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -140,7 +140,7 @@ ms.locfileid: "74074756"
 
 ## <a name="configure-f5-sso"></a>Настройка единого входа в F5
 
-- [Настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md)
+- [настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md);
 
 - [Настройка единого входа в F5 для приложения Kerberos](kerbf5-tutorial.md)
 
@@ -172,7 +172,7 @@ ms.locfileid: "74074756"
 
     ![Настройка F5 (расширенный Kerberos)](./media/advance-kerbf5-tutorial/configure08.png)
  
-1. Последовательно выберите **ОК**.
+1. Нажмите кнопку **ОК**.
 
 1. Выберите конфигурацию SP и щелкните **Bind/UnBind IdP Connectors** (Привязать/отменить привязку соединителей IDP).
 
@@ -188,7 +188,7 @@ ms.locfileid: "74074756"
     >[!Note]
     >Вам потребуется создать и указать учетную запись делегирования Kerberos. См. раздел KCD (см. приложение для ссылок на переменные).
 
-    •   Источник имени пользователя `session.saml.last.attr.name. http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
+    •   Источник имени пользователя `session.saml.last.attr.name.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
 
     •   Источник области пользователя `session.logon.last.domain`
 
@@ -246,7 +246,7 @@ ms.locfileid: "74074756"
 >[!Note]
 >Дополнительные сведения см. [здесь](https://www.f5.com/pdf/deployment-guides/kerberos-constrained-delegation-dg.pdf).
 
-* **Шаг 1. Создание учетной записи делегирования**
+* **Шаг 1. Создание учетной записи делегирования**
 
     * Пример
     ```
@@ -256,7 +256,7 @@ ms.locfileid: "74074756"
     New-ADUser -Name "APM Delegation Account" -UserPrincipalName host/big-ipuser.superdemo.live@superdemo.live -SamAccountName "big-ipuser" -PasswordNeverExpires $true -Enabled $true -AccountPassword (Read-Host -AsSecureString "Password!1234")
     ```
 
-* **Шаг 2. Задание имени участника-службы (для учетной записи делегирования APM)**
+* **Шаг 2. Задание имени участника-службы (для учетной записи делегирования APM)**
 
     *  Пример
     ```
@@ -307,7 +307,7 @@ ms.locfileid: "74074756"
 | eb46b6b6.session.saml.last.responseIssueInstant | `<ID>` |
 | eb46b6b6.session.saml.last.responseIssuer | `https://sts.windows.net/<TENANT ID>/` |
 | eb46b6b6.session.saml.last.result | 1 |
-| eb46b6b6.session.saml.last.samlVersion | 2,0 |
+| eb46b6b6.session.saml.last.samlVersion | 2.0 |
 | eb46b6b6.session.saml.last.sessionIndex | `<TENANT ID>` |
 | eb46b6b6.session.saml.last.statusValue | urn:oasis:names:tc:SAML:2.0:status:Success |
 | eb46b6b6.session.saml.last.subjectConfirmDataNotOnOrAfter | `<ID>` |
@@ -328,15 +328,15 @@ ms.locfileid: "74074756"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте использовать F5 с Azure AD](https://aad.portal.azure.com/)
 
-- [Настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md)
+- [настройка единого входа в F5 для приложения на основе заголовка](headerf5-tutorial.md);
 
 - [Настройка единого входа в F5 для приложения Kerberos](kerbf5-tutorial.md)
 

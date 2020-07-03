@@ -1,5 +1,5 @@
 ---
-title: Сценарий PowerShell. Создать новую учетную запись общего ресурса Azure | Документация Майкрософт
+title: 'Сценарий PowerShell: создание учетной записи общей папки Azure Data Share | Документация Майкрософт'
 description: Этот сценарий PowerShell создает новую учетную запись для общей папки данных.
 services: data-share
 author: joannapea
@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
 ms.openlocfilehash: c3852dd5f1d3d3df8a982716ce5dab9426782869
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70307275"
 ---
 # <a name="use-powershell-to-create-a-data-share-account-in-azure"></a>Создание учетной записи общей папки данных в Azure с помощью PowerShell
@@ -36,12 +36,12 @@ New-AzDataShareAccount -ResourceGroupName $resourceGroupName -Name $dataShareAcc
 
 Этот сценарий использует следующие команды: 
 
-| Command | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-Аздаташареаккаунт](/powershell/module/az.datashare/new-azdatashareaccount?view=azps-2.6.0) | Создает учетную запись общего ресурса данных. |
 |||
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

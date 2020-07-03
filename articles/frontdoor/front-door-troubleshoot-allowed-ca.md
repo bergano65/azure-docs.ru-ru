@@ -1,5 +1,5 @@
 ---
-title: Разрешенный ЦС для включения пользовательского HTTPS в службе "Передняя дверца Azure"
+title: Разрешенный ЦС для включения пользовательского HTTPS в передней дверце Azure
 description: Если вы используете свой собственный сертификат для включения HTTPS в личном домене, вам нужен разрешенный центр сертификации (CA) для его создания.
 services: frontdoor
 documentationcenter: ''
@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/23/2018
 ms.author: sharadag
-ms.openlocfilehash: 62420889d9a4cb1e9d1c570a0845c704fca56cb3
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 611f5730afed4c3a84b81d6acfd33b633c532bbc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74184578"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80874676"
 ---
-# <a name="allowed-certificate-authorities-for-enabling-custom-https-on-azure-front-door-service"></a>Разрешенные центры сертификации для включения настраиваемого протокола HTTPS в Azure Front Door Service
+# <a name="allowed-certificate-authorities-for-enabling-custom-https-on-azure-front-door"></a>Разрешенные центры сертификации для включения пользовательского HTTPS в передней дверце Azure
 
-Если [включена функция HTTPS с использованием своего сертификата](front-door-custom-domain-https.md?tabs=option-2-enable-https-with-your-own-certificate), то для личного домена Azure Front Door Service нужно создать SSL-сертификат с помощью разрешенного центра сертификации (ЦС). В противном случае при использовании недопустимого ЦС или самозаверяющего сертификата ваш запрос будет отклонен.
+Если вы [включили функцию HTTPS с помощью собственного сертификата](front-door-custom-domain-https.md?tabs=option-2-enable-https-with-your-own-certificate), то для пользовательского домена "Передняя дверца Azure" необходимо использовать разрешенный центр сертификации (ЦС) для создания сертификата TLS/SSL. В противном случае при использовании недопустимого ЦС или самозаверяющего сертификата ваш запрос будет отклонен.
 
 [!INCLUDE [cdn-front-door-allowed-ca](../../includes/cdn-front-door-allowed-ca.md)]

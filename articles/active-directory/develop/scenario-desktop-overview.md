@@ -2,39 +2,36 @@
 title: Создание классического приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как создать классическое приложение, вызывающее веб-API (обзор)
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 196102769c1f5f68df316918a63079b09baad32d
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 09cc43dec2eff48754f5a6e693badd6bb1907cce
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702153"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80883007"
 ---
 # <a name="scenario-desktop-app-that-calls-web-apis"></a>Сценарий: классическое приложение, вызывающее веб-API
 
 Изучите все, что нужно для создания классического приложения, вызывающего веб-API.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 
 Если вы еще этого не сделали, создайте свое первое приложение, следуя краткому руководству по рабочему столу .NET, краткому руководству по универсальная платформа Windows (UWP) или краткому руководству по macOS собственному приложению.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. получение маркера и вызов Microsoft Graph API из классического приложения Windows](./quickstart-v2-windows-desktop.md)
+> [Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows](./quickstart-v2-windows-desktop.md)
 
 
 > [!div class="nextstepaction"]

@@ -11,58 +11,45 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 08/12/2019
+ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 5c71f37741de06b8633e7eafaae2f29823214f74
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 17c92558ebef2eee0a4daead45d16a295cedd1bb
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442668"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82790485"
 ---
 # <a name="how-to-deploy-an-azure-api-management-service-instance-to-multiple-azure-regions"></a>Развертывание экземпляра службы управления Azure API в различных регионах Azure
 
 Служба управления API Azure поддерживает развертывание в нескольких регионах, что позволяет издателям API распространять единую службу управления API Azure через любое количество поддерживаемых регионов Azure. Функция с несколькими регионами позволяет сократить задержку запросов, воспринимаемую географически распространенными потребителями API, и повысить доступность службы, если один регион переходит в режим «вне сети».
 
-Новая служба управления API Azure изначально содержит только одну [единицу][unit] в одном регионе Azure, основном регионе. Дополнительные регионы можно добавить в первичный или дополнительный регион. Компонент шлюза управления API развертывается в каждом выбранном основном и дополнительном регионе. Входящие запросы API автоматически направляются в ближайший регион. Если регион переходит в режим «вне сети», запросы API будут автоматически направляться по неисправному региону на следующий ближайший шлюз.
+Новая служба управления API Azure изначально содержит только одну [единицу][unit] в одном регионе Azure, основном регионе. Дополнительные единицы можно добавить в первичный или дополнительный регион. Компонент шлюза управления API развертывается в каждом выбранном основном и дополнительном регионе. Входящие запросы API автоматически направляются в ближайший регион. Если регион переходит в режим «вне сети», запросы API будут автоматически направляться по неисправному региону на следующий ближайший шлюз.
 
 > [!NOTE]
 > Во все регионы развертываются только компоненты шлюза управления API. Компонент управления службами и портал разработчика размещаются только в основном регионе. Поэтому в случае сбоя основного региона доступ к порталу разработчика и возможность изменения конфигурации (например, добавление API-интерфейсов, применение политик) будут ограничены до тех пор, пока основной регион не вернется в режим "в сети". В то время как основной регион доступен в автономном режиме, вторичные регионы продолжат обслуживать трафик API, используя последнюю доступную конфигурацию.
 
 [!INCLUDE [premium.md](../../includes/api-management-availability-premium.md)]
 
-## <a name="add-region"> </a>Развертывание экземпляра службы управления API в новом регионе
+## <a name="deploy-api-management-service-to-a-new-region"></a><a name="add-region"> </a>Развертывание службы управления API в новом регионе
 
 > [!NOTE]
-> Если экземпляр службы управления API еще не создан, см. раздел [Создание экземпляра службы управления API][create an api management service instance].
+> Если экземпляр службы управления API еще не создан, выполните инструкции в статье [Создание экземпляра службы управления API Azure][create an api management service instance].
 
-На портале Azure перейдите на страницу **Scale and pricing** (Масштаб и цены) для своего экземпляра службы управления API.
+1. В портал Azure перейдите к службе управления API и щелкните запись **Locations (расположения** ) в меню.
+2. Щелкните **+ Добавить** на верхней панели.
+3. Выберите расположение из раскрывающегося списка и задайте число единиц с помощью ползунка.
+4. Нажмите кнопку **Добавить** , чтобы подтвердить.
+5. Повторите эту процедуру, пока не будут настроены все расположения.
+6. Нажмите кнопку **сохранить** на верхней панели, чтобы начать процесс развертывания.
 
-![Вкладка "Масштаб"][api-management-scale-service]
+## <a name="delete-an-api-management-service-location"></a><a name="remove-region"> </a>Удаление расположения службы управления API
 
-Чтобы развернуть службу в новом регионе, щелкните **+ Add region** (+ Добавить регион) на панели инструментов.
+1. В портал Azure перейдите к службе управления API и щелкните запись **Locations (расположения** ) в меню.
+2. Для расположения, которое нужно удалить, откройте контекстное меню с помощью кнопки **…** в правой части таблицы. Щелкните **Удалить**.
+3. Подтвердите удаление и нажмите кнопку **Сохранить**, чтобы применить изменения.
 
-![Добавление региона][api-management-add-region]
-
-Выберите расположение из раскрывающегося списка и задайте число единиц с помощью ползунка.
-
-![Указание единиц][api-management-select-location-units]
-
-Щелкните **Добавить**, чтобы разместить выбранные ресурсы в таблице "Расположения".
-
-Повторите этот процесс, пока не будут настроены все расположения, затем щелкните **Сохранить** на панели инструментов, чтобы начать процесс развертывания.
-
-## <a name="remove-region"> </a>Удаление экземпляра службы управления API из расположения
-
-На портале Azure перейдите на страницу **Scale and pricing** (Масштаб и цены) для своего экземпляра службы управления API.
-
-![Вкладка "Масштаб"][api-management-scale-service]
-
-Для расположения, которое нужно удалить, откройте контекстное меню с помощью кнопки **…** в правой части таблицы. Щелкните **Удалить**.
-
-Подтвердите удаление и нажмите кнопку **Сохранить**, чтобы применить изменения.
-
-## <a name="route-backend"> </a>Маршрутизация вызовов API к региональным внутренним службам
+## <a name="route-api-calls-to-regional-backend-services"></a><a name="route-backend"> </a>Маршрутизация вызовов API в региональных серверных службах
 
 Служба управления API Azure поддерживает только один URL-адрес внутренней службы. Несмотря на то что экземпляры службы управления API Azure существуют в разных регионах, шлюз API будет по-прежнему перенаправлять запросы к одной и той же внутренней службе, которая развертывается только в один регион. В этом случае выигрыш в производительности будет поступать только из ответов, кэшированных в службе управления API Azure в регионе, указанном для запроса, но обращение к серверной части по всему миру может по-прежнему вызывать большую задержку.
 
@@ -109,21 +96,16 @@ ms.locfileid: "75442668"
 > [!TIP]
 > Вы также можете переключить серверные службы с помощью [диспетчера трафика Azure](https://azure.microsoft.com/services/traffic-manager/), направить вызовы API в диспетчер трафика и разрешить маршрутизацию автоматически.
 
-## <a name="custom-routing"> </a>Использование настраиваемой маршрутизации для региональных ШЛЮЗОВ управления API
+## <a name="use-custom-routing-to-api-management-regional-gateways"></a><a name="custom-routing"> </a>Использование настраиваемой маршрутизации для региональных ШЛЮЗОВ управления API
 
 Управление API направляет запросы на региональный _шлюз_ в соответствии с [наименьшей задержкой](../traffic-manager/traffic-manager-routing-methods.md#performance). Хотя этот параметр нельзя переопределить в службе управления API, можно использовать собственный диспетчер трафика с пользовательскими правилами маршрутизации.
 
 1. Создайте собственный [диспетчер трафика Azure](https://azure.microsoft.com/services/traffic-manager/).
 1. Если вы используете личный домен, [используйте его с диспетчером трафика](../traffic-manager/traffic-manager-point-internet-domain.md) вместо службы управления API.
-1. [Настройте региональные конечные точки управления API в диспетчере трафика](../traffic-manager/traffic-manager-manage-endpoints.md). Региональные конечные точки соответствуют шаблону URL-адреса `https://<service-name>-<region>-01.regional.azure-api.net`, например `https://contoso-westus2-01.regional.azure-api.net`.
-1. [Настройка конечных точек регионального состояния управления API в диспетчере трафика](../traffic-manager/traffic-manager-monitoring.md). Конечные точки регионального состояния соответствуют шаблону URL-адреса `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef`, например `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef`.
+1. [Настройте региональные конечные точки управления API в диспетчере трафика](../traffic-manager/traffic-manager-manage-endpoints.md). Региональные конечные точки соответствуют шаблону URL `https://<service-name>-<region>-01.regional.azure-api.net`-адреса, `https://contoso-westus2-01.regional.azure-api.net`например.
+1. [Настройка конечных точек регионального состояния управления API в диспетчере трафика](../traffic-manager/traffic-manager-monitoring.md). Конечные точки регионального состояния следуют шаблону URL `https://<service-name>-<region>-01.regional.azure-api.net/status-0123456789abcdef`-адреса, `https://contoso-westus2-01.regional.azure-api.net/status-0123456789abcdef`например.
 1. Укажите [метод маршрутизации](../traffic-manager/traffic-manager-routing-methods.md) диспетчера трафика.
 
-[api-management-management-console]: ./media/api-management-howto-deploy-multi-region/api-management-management-console.png
-[api-management-scale-service]: ./media/api-management-howto-deploy-multi-region/api-management-scale-service.png
-[api-management-add-region]: ./media/api-management-howto-deploy-multi-region/api-management-add-region.png
-[api-management-select-location-units]: ./media/api-management-howto-deploy-multi-region/api-management-select-location-units.png
-[api-management-remove-region]: ./media/api-management-howto-deploy-multi-region/api-management-remove-region.png
 [create an api management service instance]: get-started-create-service-instance.md
 [get started with azure api management]: get-started-create-service-instance.md
 [deploy an api management service instance to a new region]: #add-region

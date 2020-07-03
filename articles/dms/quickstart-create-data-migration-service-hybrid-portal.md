@@ -3,21 +3,21 @@ title: Краткое руководство. Создание экземпля�
 titleSuffix: Azure Database Migration Service
 description: Использование портала Azure для создания экземпляра службы Azure Database Migration Service в гибридном режиме.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: quickstart
-ms.date: 01/21/2019
-ms.openlocfilehash: 81039aa4aa37f9587db887beadcdb6d263ec6a74
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.date: 03/13/2020
+ms.openlocfilehash: dd3e77610749eb5d146b0c0b7cf9d307fba0dd83
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76274809"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79370242"
 ---
 # <a name="quickstart-create-a-hybrid-mode-instance-with-azure-portal--azure-database-migration-service"></a>Краткое руководство. Создание экземпляра в гибридном режиме с помощью портала Azure и Azure Database Migration Service
 
@@ -146,7 +146,7 @@ ms.locfileid: "76274809"
 7. Установите гибридную рабочую роль Azure Database Migration Service на локальном сервере, выполнив следующую команду.
 
     ```
-    <drive>:\<folder>\Install>DMSWorkerBootstrap.exe -a Install -IAcceptDMSLicenseTerms
+    <drive>:\<folder>\Install>DMSWorkerBootstrap.exe -a Install -IAcceptDMSLicenseTerms -d
     ```
 
     > [!NOTE]

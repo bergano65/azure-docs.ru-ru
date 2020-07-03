@@ -15,12 +15,12 @@ ms.date: 04/08/2019
 ms.author: mimart
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 600cd3f3ad8826b52648b51beb8c66a382766b80
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 340cf77ae6b4c5677ed91f6a0626b73d259e5fd2
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367880"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690502"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Настройка поведения при входе в Azure Active Directory для приложения с помощью политики обнаружения домашней области
 
@@ -63,11 +63,11 @@ ms.locfileid: "77367880"
 
 Синтаксис указания домена может быть разным в зависимости от используемого протокола и обычно настраивается в приложении.
 
-**WS-Federation**:  whr=contoso.com в строке запроса.
+**WS-Federation**: емкость = contoso. com в строке запроса.
 
 **SAML**: либо запрос на аутентификацию SAML, содержащий указание домена, либо строка запроса whr=contoso.com.
 
-**Open ID Connect**: строка запроса domain_hint=contoso.com. 
+**Open ID Connect**: строка запроса domain_hint = contoso. com. 
 
 Если указание домена включено в запрос на аутентификацию из приложения, а клиент входит в федерацию с этим доменом, Azure AD предпринимает попытку перенаправить операцию входа на страницу поставщика удостоверений, настроенного для этого домена. 
 
@@ -150,7 +150,7 @@ ms.locfileid: "77367880"
 - получение списка приложений, для которых настроена политика.
 
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 В примерах ниже создаются, обновляются, связываются и удаляются политики для субъектов-служб приложения в Azure AD.
 
 1.  Чтобы начать, скачайте последнюю предварительную версию командлетов PowerShell для Azure AD. 
@@ -168,7 +168,7 @@ ms.locfileid: "77367880"
 
 Если результат не возвращается, в клиенте нет созданных политик.
 
-### <a name="example-set-hrd-policy-for-an-application"></a>Пример: настройка политики обнаружения домашней области для приложения 
+### <a name="example-set-an-hrd-policy-for-an-application"></a>Пример. Задание политики обнаружения домашней области для приложения 
 
 В этом примере показано, как создать политику, которая при назначении ее приложению выполняет одно из указанных ниже действий. 
 - Выполняет автоматическое ускорение входа пользователей и переводит их на экран входа AD FS (когда они выполняют вход в систему в приложении), если в клиенте имеется один домен. 
@@ -195,7 +195,7 @@ New-AzureADPolicy -Definition @("{`"HomeRealmDiscoveryPolicy`":{`"AllowCloudPass
 ```
 
 
-Чтобы просмотреть созданную политику и получить для нее идентификатор **ObjectID**, выполните следующую команду.
+Чтобы просмотреть новую политику и получить ее **ObjectID**, выполните следующую команду:
 
 ``` powershell
 Get-AzureADPolicy
@@ -251,14 +251,14 @@ Get-AzureADPolicy
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
 
-### <a name="example-remove-an-hrd-policy-for-an-application"></a>Пример: удаление политики обнаружения домашней области для приложения
+### <a name="example-remove-an-hrd-policy-from-an-application"></a>Пример. Удаление политики обнаружения домашней области из приложения
 #### <a name="step-1-get-the-objectid"></a>Шаг 1. Получение идентификатора ObjectID
 Используйте предыдущий пример, чтобы получить идентификатор **ObjectID** политики, а также идентификатор ObjectID субъекта-службы приложения, из которого нужно удалить эту политику. 
 
 #### <a name="step-2-remove-the-policy-assignment-from-the-application-service-principal"></a>Шаг 2. Удаление назначения политики из субъекта-службы приложения  
 
 ``` powershell
-Remove-AzureADApplicationPolicy -id <ObjectId of the Service Principal>  -PolicyId <ObjectId of the policy>
+Remove-AzureADServicePrincipalPolicy -id <ObjectId of the Service Principal>  -PolicyId <ObjectId of the policy>
 ```
 
 #### <a name="step-3-check-removal-by-listing-the-service-principals-to-which-the-policy-is-assigned"></a>Шаг 3. Проверка удаления путем получения списка субъектов-служб, которым назначена политика 
@@ -266,7 +266,7 @@ Remove-AzureADApplicationPolicy -id <ObjectId of the Service Principal>  -Policy
 ``` powershell
 Get-AzureADPolicyAppliedObject -id <ObjectId of the Policy>
 ```
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о принципах работы аутентификации в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
 - Дополнительные сведения о единый вход пользователей см. в статье [единый вход в приложения в Azure Active Directory](what-is-single-sign-on.md).
 - Обзор всего содержимого, связанного с разработчиками, см. на веб- [платформе Microsoft Identity](../develop/v2-overview.md) .

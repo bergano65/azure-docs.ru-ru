@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/17/2019
 ms.openlocfilehash: 845c4a62aee04a8acdc645ba4c41f1f5496537c3
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75552616"
 ---
 # <a name="bulk-load-data-into-apache-phoenix-using-psql"></a>Массовая загрузка данных в Apache Phoenix с помощью psql
@@ -27,13 +27,13 @@ ms.locfileid: "75552616"
 
 Массовая загрузка с помощью MapReduce применяется для данных существенно большего объема, в том числе в промышленных средах, поскольку в MapReduce используется многопоточная схема работы.
 
-Прежде чем загружать данные, убедитесь, что Phoenix включен и для запросов правильно настроены параметры времени ожидания.  Откройте панель мониторинга [Apache Ambari](https://ambari.apache.org/) для кластера HDInsight, выберите HBase и перейдите на вкладку Конфигурация.  Прокрутите вниз, чтобы убедиться, что Apache Phoenix имеет значение `enabled`, как показано ниже.
+Прежде чем загружать данные, убедитесь, что Phoenix включен и для запросов правильно настроены параметры времени ожидания.  Откройте панель мониторинга [Apache Ambari](https://ambari.apache.org/) для кластера HDInsight, выберите HBase и перейдите на вкладку Конфигурация.  Прокрутите вниз, чтобы убедиться, что Apache Phoenix `enabled` имеет значение, как показано ниже.
 
 ![Параметры кластера HDInsight для Apache Phoenix](./media/apache-hbase-phoenix-psql/apache-ambari-phoenix.png)
 
 ### <a name="use-psql-to-bulk-load-tables"></a>Использование `psql` для массовой загрузки таблиц
 
-1. Создайте файл с именем `createCustomersTable.sql`и скопируйте приведенный ниже код в файл. Затем сохраните и закройте файл.
+1. Создайте файл с именем `createCustomersTable.sql`и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
 
     ```sql
     CREATE TABLE Customers (
@@ -44,13 +44,13 @@ ms.locfileid: "75552616"
         Country varchar);
     ```
 
-1. Создайте файл с именем `listCustomers.sql`и скопируйте приведенный ниже код в файл. Затем сохраните и закройте файл.
+1. Создайте файл с именем `listCustomers.sql`и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
 
     ```sql
     SELECT * from Customers;
     ```
 
-1. Создайте файл с именем `customers.csv`и скопируйте приведенный ниже код в файл. Затем сохраните и закройте файл.
+1. Создайте файл с именем `customers.csv`и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
 
     ```txt
     1,Samantha,260000.0,18,US
@@ -58,7 +58,7 @@ ms.locfileid: "75552616"
     3,Anton,550150.0,42,Norway
     ```
 
-1. Создайте файл с именем `customers2.csv`и скопируйте приведенный ниже код в файл. Затем сохраните и закройте файл.
+1. Создайте файл с именем `customers2.csv`и скопируйте приведенный ниже код в файл. Сохраните и закройте файл.
 
     ```txt
     4,Nicolle,180000.0,22,US
@@ -90,7 +90,7 @@ ms.locfileid: "75552616"
     python psql.py /tmp/createCustomersTable.sql /tmp/customers.csv
     ```
 
-    После завершения операции `psql` вы увидите примерно следующее сообщение:
+    После завершения `psql` операции вы увидите примерно следующее сообщение:
 
     ```output
     csv columns from database.
@@ -126,7 +126,7 @@ ms.locfileid: "75552616"
     exit
     ```
 
-1. Скопируйте файл `customers.csv` из головного узла в службу хранилища Azure.
+1. Скопируйте `customers.csv` файл из головного узла в службу хранилища Azure.
 
     ```bash
     hdfs dfs -put /tmp/customers.csv wasbs:///tmp/customers.csv
@@ -185,5 +185,5 @@ ms.locfileid: "75552616"
 
 * [Массовая загрузка данных с помощью Apache Phoenix](https://phoenix.apache.org/bulk_dataload.html)
 * [Использование Apache Phoenix с кластерами Apache HBase под управлением Linux в HDInsight](../hbase/apache-hbase-query-with-phoenix.md)
-* [Salted Tables](https://phoenix.apache.org/salted.html) (Таблицы с солью)
-* [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html)
+* [Таблицы случайных данных](https://phoenix.apache.org/salted.html)
+* [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html)

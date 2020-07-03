@@ -1,24 +1,20 @@
 ---
-title: Изменение сведений в профиле для учетной записи Azure | Документация Майкрософт
+title: Изменение сведений в профиле для учетной записи Azure
 description: В этой статье описывается, как изменить профиль учетной записи администратора Azure и контактный адрес электронной почты.
 author: genlin
-manager: dcscontentpm
+ms.reviewer: dcscontentpm
 tags: billing
-ms.assetid: 9d4ef5d9-11fc-4684-ace6-467f4ce26ba8
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/29/2019
+ms.date: 02/12/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a1cbbbcb110e9943f9714d9f6463c01b408fc1d7
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 1a53dd6e6682d0237793c4afcdea25370f9cc17c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75993054"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79202987"
 ---
 # <a name="change-the-profile-information-for-your-azure-account"></a>Изменение сведений в профиле для учетной записи Azure
 

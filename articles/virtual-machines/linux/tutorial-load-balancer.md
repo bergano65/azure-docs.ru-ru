@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -16,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 11/13/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: daad74ae5f046edb1b4bf6eef547c963e52593f5
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 89ed39d1cd18fc97cec06dce4313271731b23b90
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034430"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460041"
 ---
 # <a name="tutorial-load-balance-linux-virtual-machines-in-azure-to-create-a-highly-available-application-with-the-azure-cli"></a>Руководство по Балансировка нагрузки виртуальных машин Linux в Azure для создания приложения высокого уровня доступности с помощью Azure CLI
 
@@ -55,14 +54,14 @@ Azure Load Balancer представляет собой балансировщи
 ## <a name="create-azure-load-balancer"></a>Создание Azure Load Balancer
 Этот раздел подробно описывает, как создать и настроить каждый из компонентов балансировщика нагрузки. Прежде чем создать балансировщик нагрузки, выполните команду [az group create](/cli/azure/group) для создания группы ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroupLoadBalancer* в расположении *eastus*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create --name myResourceGroupLoadBalancer --location eastus
 ```
 
 ### <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
 Для доступа к приложению через Интернет требуется общедоступный IP-адрес для балансировщика нагрузки. Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip). В следующем примере создается общедоступный IP-адрес *myPublicIP* в группе ресурсов *myResourceGroupLoadBalancer*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network public-ip create \
     --resource-group myResourceGroupLoadBalancer \
     --name myPublicIP
@@ -71,7 +70,7 @@ az network public-ip create \
 ### <a name="create-a-load-balancer"></a>Создание балансировщика нагрузки
 Создайте балансировщик нагрузки с помощью команды [az network lb create](/cli/azure/network/lb). В следующем примере создается подсистема балансировки нагрузки *myLoadBalancer*, а адрес *myPublicIP* назначается внешней IP-конфигурации.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network lb create \
     --resource-group myResourceGroupLoadBalancer \
     --name myLoadBalancer \
@@ -87,7 +86,7 @@ az network lb create \
 
 Чтобы создать пробу работоспособности TCP, используйте команду [az network lb probe create](/cli/azure/network/lb/probe). В следующем примере создается проба TCP *myHealthProbe*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network lb probe create \
     --resource-group myResourceGroupLoadBalancer \
     --lb-name myLoadBalancer \
@@ -101,7 +100,7 @@ az network lb probe create \
 
 Создайте правило балансировщика нагрузки с помощью команды [az network lb rule create](/cli/azure/network/lb/rule). В следующем примере создается правило *myLoadBalancerRule*, используется проба работоспособности *myHealthProbe* и трафик распределяется через порт *80*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network lb rule create \
     --resource-group myResourceGroupLoadBalancer \
     --lb-name myLoadBalancer \
@@ -121,7 +120,7 @@ az network lb rule create \
 ### <a name="create-network-resources"></a>Создание сетевых ресурсов
 Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В следующем примере создается виртуальная сеть *myVnet* с подсетью *mySubnet*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network vnet create \
     --resource-group myResourceGroupLoadBalancer \
     --name myVnet \
@@ -130,7 +129,7 @@ az network vnet create \
 
 Чтобы добавить группу безопасности сети, используйте команду [az network nsg create](/cli/azure/network/nsg). В следующем примере создается группа безопасности сети *myNetworkSecurityGroup*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network nsg create \
     --resource-group myResourceGroupLoadBalancer \
     --name myNetworkSecurityGroup
@@ -138,7 +137,7 @@ az network nsg create \
 
 Создайте правило группы безопасности сети с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule). В следующем примере создается правило группы безопасности сети *myNetworkSecurityGroupRule*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network nsg rule create \
     --resource-group myResourceGroupLoadBalancer \
     --nsg-name myNetworkSecurityGroup \
@@ -150,7 +149,7 @@ az network nsg rule create \
 
 Для создания виртуальных сетевых карт используется команда [az network nic create](/cli/azure/network/nic). В следующем примере создаются три виртуальных сетевых адаптера (по одной виртуальной сетевой карте для каждой виртуальной машины, используемой приложением). Вы можете в любое время создать дополнительные виртуальные сетевые карты и виртуальные машины и добавить их в балансировщик нагрузки:
 
-```bash
+```azurecli
 for i in `seq 1 3`; do
     az network nic create \
         --resource-group myResourceGroupLoadBalancer \
@@ -228,7 +227,7 @@ az vm availability-set create \
 
 Теперь вы можете создать виртуальные машины с помощью команды [az vm create](/cli/azure/vm). В следующем примере создаются три виртуальные машины и ключи SSH, если они не существуют.
 
-```bash
+```azurecli
 for i in `seq 1 3`; do
     az vm create \
         --resource-group myResourceGroupLoadBalancer \
@@ -249,7 +248,7 @@ done
 ## <a name="test-load-balancer"></a>Проверка балансировщика нагрузки
 Получите общедоступный IP-адрес балансировщика нагрузки с помощью команды [az network public-ip show](/cli/azure/network/public-ip). Следующий пример позволяет получить IP-адрес для созданного ранее *myPublicIP*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network public-ip show \
     --resource-group myResourceGroupLoadBalancer \
     --name myPublicIP \
@@ -270,7 +269,7 @@ az network public-ip show \
 ### <a name="remove-a-vm-from-the-load-balancer"></a>Удаление виртуальной машины из балансировщика нагрузки
 Вы можете удалить виртуальную машину из внутреннего пула адресов с помощью команды [az network nic ip-config address-pool remove](/cli/azure/network/nic/ip-config/address-pool). В следующем примере из *myLoadBalancer* удаляется виртуальная сетевая карта для **myVM2**.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network nic ip-config address-pool remove \
     --resource-group myResourceGroupLoadBalancer \
     --nic-name myNic2 \
@@ -294,7 +293,7 @@ az network lb address-pool show \
 
 Ниже показан пример выходных данных, из которого следует, что виртуальный сетевой адаптер для виртуальной машины 2 больше не является частью серверного пула адресов.
 
-```bash
+```output
 /subscriptions/<guid>/resourceGroups/myResourceGroupLoadBalancer/providers/Microsoft.Network/networkInterfaces/myNic1/ipConfigurations/ipconfig1
 /subscriptions/<guid>/resourceGroups/myResourceGroupLoadBalancer/providers/Microsoft.Network/networkInterfaces/myNic3/ipConfigurations/ipconfig1
 ```
@@ -302,7 +301,7 @@ az network lb address-pool show \
 ### <a name="add-a-vm-to-the-load-balancer"></a>Добавление виртуальной машины в балансировщик нагрузки
 После выполнения обслуживания виртуальной машины, или если необходимо расширить емкость, можно добавить виртуальную машину во внутренний пул адресов с помощью команды [az network nic ip-config address-pool add](/cli/azure/network/nic/ip-config/address-pool). В следующем примере в *myLoadBalancer* добавляется виртуальная сетевая карта для **myVM2**.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network nic ip-config address-pool add \
     --resource-group myResourceGroupLoadBalancer \
     --nic-name myNic2 \
@@ -314,8 +313,8 @@ az network nic ip-config address-pool add \
 Чтобы убедиться, что виртуальный сетевой адаптер подключен к серверному пулу адресов, еще раз выполните команду [az network lb address-pool show](/cli/azure/network/lb/address-pool).
 
 
-## <a name="next-steps"></a>Дополнительная информация
-В рамках этого руководства вы создали балансировщик нагрузки и присоединили к нему виртуальные машины. Вы научились выполнять следующие задачи:
+## <a name="next-steps"></a>Дальнейшие действия
+В рамках этого руководства вы создали балансировщик нагрузки и присоединили к нему виртуальные машины. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание Azure Load Balancer

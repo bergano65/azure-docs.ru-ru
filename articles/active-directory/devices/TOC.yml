@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Что собой представляет удостоверение устройства
+    - name: Что такое удостоверение устройства?
       href: overview.md
     - name: Служба Enterprise State Roaming
       href: enterprise-state-roaming-overview.md
@@ -32,7 +32,7 @@
       href: concept-primary-refresh-token.md
     - name: 'Рабочие станции, управляемые Azure'
       href: concept-azure-managed-workstation.md
-- name: Руководства
+- name: Практические руководства
   expanded: false
   items:
     - name: "Планирование реализации присоединения к Azure\_AD"
@@ -71,7 +71,7 @@
           href: faq.md
         - name: Вопросы и ответы об Enterprise State Roaming
           href: enterprise-state-roaming-faqs.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Параметры GPO для службы Enterprise State Roaming
       href: enterprise-state-roaming-group-policy-settings.md
@@ -81,8 +81,8 @@
   items:
     - name: Форум отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/active-directory/'
     - name: Обновления службы

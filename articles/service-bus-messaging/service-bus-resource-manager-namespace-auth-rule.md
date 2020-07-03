@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 12/20/2019
 ms.author: aschhab
-ms.openlocfilehash: c795c61ec4891205ad9c77e96914d9b374fa88af
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1bfb2d2d946a85c1d051315fb29a5a63f7a00871
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426911"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80384931"
 ---
 # <a name="create-a-service-bus-authorization-rule-for-namespace-and-queue-using-an-azure-resource-manager-template"></a>Создание правила авторизации служебной шины для пространства имен и очереди с помощью шаблона диспетчера ресурсов Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "75426911"
 
 Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager][Authoring Azure Resource Manager templates].
 
-Полный шаблон см. в разделе [шаблон правила авторизации служебной шины][Service Bus auth rule template] на сайте GitHub.
+Полный шаблон приведен в разделе [Service Bus authorization rule template][Service Bus auth rule template] (Шаблон правила аутентификации для служебной шины) на сайте GitHub.
 
 > [!NOTE]
 > Для скачивания и развертывания можно использовать указанные ниже шаблоны диспетчера ресурсов Azure.
@@ -37,7 +37,7 @@ ms.locfileid: "75426911"
 > * [Создание пространства имен служебной шины с разделом и подпиской](service-bus-resource-manager-namespace-topic.md)
 > * [Создание пространства имен служебной шины с разделом, подпиской и правилом с помощью шаблона Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)
 > 
-> Чтобы узнать о новых шаблонах, в коллекции [шаблонов быстрого запуска Azure][Azure Quickstart Templates] выполните поиск по фразе **служебная шина**.
+> Чтобы узнать о последних шаблонах, перейдите в коллекцию шаблонов быстрого запуска [Azure][Azure Quickstart Templates] и выполните поиск по запросу **Service Bus**.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -45,7 +45,7 @@ ms.locfileid: "75426911"
 
 С помощью этого шаблона вы развернете правило авторизации служебной шины для пространства имен и сущности обмена сообщениями (в нашем примере — очереди).
 
-Для проверки подлинности этот шаблон использует [подписанный URL-адрес (SAS)](service-bus-sas.md). Подписанный URL-адрес (SAS) позволяет проверять подлинность приложений в служебной шине с помощью ключа доступа, настроенного в пространстве имен или в сущности обмена сообщениями (очереди или разделе) с определенными правами. Этот ключ можно использовать для создания маркера SAS, который клиенты могут использовать при проверке подлинности в служебной шине.
+Этот шаблон использует [подписанный URL-адрес (SAS)](service-bus-sas.md) для проверки подлинности. Подписанный URL-адрес (SAS) позволяет проверять подлинность приложений в служебной шине с помощью ключа доступа, настроенного в пространстве имен или в сущности обмена сообщениями (очереди или разделе) с определенными правами. Этот ключ можно использовать для создания маркера SAS, который клиенты могут использовать при проверке подлинности в служебной шине.
 
 Чтобы выполнить развертывание автоматически, нажмите следующую кнопку.
 
@@ -58,6 +58,7 @@ ms.locfileid: "75426911"
 Ниже описаны параметры, которые определяет шаблон.
 
 ### <a name="servicebusnamespacename"></a>serviceBusNamespaceName
+
 Имя создаваемого пространства имен служебной шины.
 
 ```json
@@ -67,6 +68,7 @@ ms.locfileid: "75426911"
 ```
 
 ### <a name="namespaceauthorizationrulename"></a>namespaceAuthorizationRuleName
+
 Имя правила авторизации для пространства имен.
 
 ```json
@@ -76,6 +78,7 @@ ms.locfileid: "75426911"
 ```
 
 ### <a name="servicebusqueuename"></a>serviceBusQueueName
+
 Имя очереди в пространстве имен служебной шины.
 
 ```json
@@ -85,6 +88,7 @@ ms.locfileid: "75426911"
 ```
 
 ### <a name="servicebusapiversion"></a>serviceBusApiVersion
+
 Версия API служебной шины для шаблона.
 
 ```json
@@ -97,6 +101,7 @@ ms.locfileid: "75426911"
 ```
 
 ## <a name="resources-to-deploy"></a>Развертываемые ресурсы
+
 Создает стандартное пространство имен служебной шины типа **Messaging**и правило авторизации служебной шины для пространства имен и сущности.
 
 ```json
@@ -152,21 +157,25 @@ ms.locfileid: "75426911"
 Сведения о синтаксисе и свойствах JSON см. в разделах о [пространствах имен](/azure/templates/microsoft.servicebus/namespaces) и [очередях](/azure/templates/microsoft.servicebus/namespaces/queues) и [правилах авторизации](/azure/templates/microsoft.servicebus/namespaces/authorizationrules).
 
 ## <a name="commands-to-run-deployment"></a>Команды для выполнения развертывания
+
 [!INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### <a name="powershell"></a>PowerShell
-```powershell
+
+```powershell-interactive
 New-AzResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -TemplateFile <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/301-servicebus-create-authrule-namespace-and-queue/azuredeploy.json>
 ```
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
-```azurecli
+## <a name="azure-cli"></a>Azure CLI
+
+```azurecli-interactive
 azure config mode arm
 
 azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/301-servicebus-create-authrule-namespace-and-queue/azuredeploy.json>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
+
 Теперь, когда вы создали и развернули ресурсы с помощью диспетчера ресурсов Azure, узнайте, как управлять этими ресурсами, изучив следующие статьи:
 
 * [Управление служебной шиной с помощью PowerShell](service-bus-powershell-how-to-provision.md)

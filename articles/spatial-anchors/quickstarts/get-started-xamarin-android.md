@@ -9,10 +9,10 @@ ms.date: 07/22/2019
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 94906d645ec38a24d54536ee8aa93e7418c8dc35
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75465177"
 ---
 # <a name="quickstart-create-a-xamarin-android-app-with-azure-spatial-anchors"></a>Краткое руководство. Создание приложения Android в Xamarin с помощью Пространственных привязок Azure
@@ -28,7 +28,7 @@ ms.locfileid: "75465177"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В рамках этого краткого руководства вам потребуются:
 - Компьютер с ОС Windows или MacOS:
@@ -69,13 +69,13 @@ ms.locfileid: "75465177"
 
 Задайте для запускаемого проекта значение **SampleXamarin.Android**, измените **Конфигурацию решения** на **Запустить**и выберите устройство, на котором вы хотите выполнить развертывание из раскрывающегося списка селектора устройства.
 
-# <a name="windowstabdeploy-windows"></a>[Windows](#tab/deploy-windows)
+# <a name="windows"></a>[Windows](#tab/deploy-windows)
 
 ![Настройка Visual Studio](./media/get-started-xamarin-android/visual-studio-windows-configuration.png)
 
 Выберите **Отладка** > **Начать отладку**, чтобы развернуть и запустить приложение.
 
-# <a name="macostabdeploy-macos"></a>[macOS](#tab/deploy-macos)
+# <a name="macos"></a>[macOS](#tab/deploy-macos)
 
 ![Настройка Visual Studio](./media/get-started-xamarin-android/visual-studio-macos-configuration.jpg)
 

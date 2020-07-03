@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/01/2020
 ms.openlocfilehash: 6fc6ea9ca0ce3bf82f027b964db94df50f07f2bd
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75646529"
 ---
 # <a name="deep-dive---advanced-analytics"></a>Подробный обзор расширенной аналитики
@@ -114,7 +114,7 @@ HDInsight имеет несколько вариантов машинного о
 
 Следуйте указаниям [этого руководства](../spark/apache-spark-microsoft-cognitive-toolkit.md) , чтобы реализовать это решение в конце: Настройте кластер HDInsight Spark, установите Cognitive Toolkit и запустите Jupyter Notebook, оценивающий образы 10 000 CIFAR.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Apache Hive и служба "Машинное обучение Azure"
 

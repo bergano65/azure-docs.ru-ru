@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.custom: mvc
 ms.openlocfilehash: d2b4e20520cad28c5d62118f6c9d10fcc43ac89e
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74533625"
 ---
 # <a name="tutorial-deploy-a-multi-container-group-using-a-resource-manager-template"></a>Руководство. Развертывание группы с несколькими контейнерами с помощью шаблона диспетчер ресурсов
@@ -19,7 +19,7 @@ ms.locfileid: "74533625"
 
 Служба "Экземпляры контейнеров Azure" поддерживает развертывание нескольких контейнеров в одном узле с использованием [группы контейнеров](container-instances-container-groups.md). Группа контейнеров полезна при создании приложения расширения для ведения журнала, мониторинга или любой другой конфигурации, где службе требуется второй присоединенный процесс.
 
-В этом руководстве описано, как выполнить простую конфигурацию расширения с двумя контейнерами, развернув шаблон Azure Resource Manager с помощью Azure CLI. Вы узнаете, как выполнять такие задачи.
+В этом руководстве описано, как выполнить простую конфигурацию расширения с двумя контейнерами, развернув шаблон Azure Resource Manager с помощью Azure CLI. Вы научитесь:
 
 > [!div class="checklist"]
 > * Настройка шаблона группы с несколькими контейнерами
@@ -37,7 +37,7 @@ ms.locfileid: "74533625"
 
 ## <a name="configure-a-template"></a>Настройка шаблона
 
-Начните с копирования следующего JSON-файла в новый файл с именем `azuredeploy.json`. В Azure Cloud Shell можно использовать Visual Studio Code для создания файла в рабочем каталоге:
+Начните с копирования следующего JSON-файла в новый файл с `azuredeploy.json`именем. В Azure Cloud Shell можно использовать Visual Studio Code для создания файла в рабочем каталоге:
 
 ```
 code azuredeploy.json
@@ -131,7 +131,7 @@ code azuredeploy.json
 }
 ```
 
-Чтобы использовать частный реестр образов контейнеров, добавьте объект в документ JSON в следующем формате: Пример реализации этой конфигурации см. в [справочной документации по шаблонам диспетчер ресурсов ACI][template-reference] .
+Чтобы использовать частный реестр образов контейнеров, добавьте объект в документ JSON в следующем формате: Пример реализации этой конфигурации см. в [справочнике по шаблонам Resource Manager для экземпляров контейнеров Azure][template-reference].
 
 ```JSON
 "imageRegistryCredentials": [
@@ -161,7 +161,7 @@ az group deployment create --resource-group myResourceGroup --template-file azur
 
 ## <a name="view-deployment-state"></a>Просмотр состояния развертывания
 
-Чтобы просмотреть состояние развертывания, используйте следующую команду [AZ Container Показать][az-container-show] :
+Чтобы просмотреть состояние развертывания, используйте команду [az container show][az-container-show] ниже.
 
 ```azurecli-interactive
 az container show --resource-group myResourceGroup --name myContainerGroup --output table
@@ -177,7 +177,7 @@ myContainerGroup  danlep0318r      Running   mcr.microsoft.com/azuredocs/aci-tut
 
 ## <a name="view-container-logs"></a>Просмотр журналов контейнеров
 
-Просмотрите выходные данные журнала контейнера с помощью команды [AZ Container Logs][az-container-logs] . Аргумент `--container-name` определяет контейнер, из которого извлекаются журналы. В этом примере указан контейнер `aci-tutorial-app`.
+Просмотрите выходные данные журнала контейнера с помощью команды [az container logs][az-container-logs]. Аргумент `--container-name` определяет контейнер, из которого извлекаются журналы. В этом примере указан `aci-tutorial-app` контейнер.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-app
@@ -192,7 +192,7 @@ listening on port 80
 ::1 - - [21/Mar/2019:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
 ```
 
-Чтобы просмотреть журналы для контейнера расширения, выполните аналогичную команду, указав контейнер `aci-tutorial-sidecar`.
+Чтобы просмотреть журналы для контейнера расширения, выполните аналогичную команду, указав `aci-tutorial-sidecar` контейнер.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-sidecar
@@ -218,11 +218,11 @@ Date: Thu, 21 Mar 2019 20:36:41 GMT
 Connection: keep-alive
 ```
 
-Как видите, сопроводительное приложение периодически выполняет HTTP-запрос к основному веб-приложению через локальную сеть группы, чтобы убедиться, что оно работает. Этот пример расширения можно расширить, чтобы активировать оповещение, если получен код HTTP-ответа, отличный от `200 OK`.
+Как видите, сопроводительное приложение периодически выполняет HTTP-запрос к основному веб-приложению через локальную сеть группы, чтобы убедиться, что оно работает. Этот пример расширения можно расширить, чтобы активировать оповещение, если он получил код HTTP-ответа, `200 OK`отличный от.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы использовали шаблон Azure Resource Manager для развертывания группы с несколькими контейнерами в службе "экземпляры контейнеров Azure". Вы научились выполнять следующие задачи:
+В этом руководстве вы использовали шаблон Azure Resource Manager для развертывания группы с несколькими контейнерами в службе "экземпляры контейнеров Azure". Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Настройка шаблона группы с несколькими контейнерами

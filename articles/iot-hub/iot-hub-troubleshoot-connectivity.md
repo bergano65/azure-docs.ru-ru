@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: bed6736fda0c1815964f9017adb1e6fffa9335d9
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.custom: mqtt
+ms.openlocfilehash: 82139eef9708ff8d76e1087c71aa5445ba898385
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110673"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759607"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-disconnects-with-azure-iot-hub"></a>Мониторинг, диагностика и устранение неполадок при отсоединении с центром Интернета вещей Azure
 
@@ -51,9 +52,9 @@ ms.locfileid: "77110673"
 
 2. Перейдите в центр Интернета вещей.
 
-3. Выберите **Оповещения**.
+3. Выберите **оповещения**.
 
-4. Выберите **новое правило генерации оповещений**.
+4. Выберите **Новое правило генерации оповещений**.
 
 5. Щелкните **Добавить условие**, а затем выберите "подключенные устройства (Предварительная версия)".
 
@@ -73,7 +74,7 @@ ms.locfileid: "77110673"
 
 1. Перейдите в центр Интернета вещей.
 
-1. Выберите **Журналы**.
+1. Выберите **журналы**.
 
 1. Чтобы изолировать журналы ошибок подключения для Центра Интернета вещей, введите следующий запрос, а затем выберите **Запустить**:
 
@@ -88,11 +89,11 @@ ms.locfileid: "77110673"
 
 1. Для наиболее распространенных ошибок следуйте руководствам по устранению проблем.
 
-    - **[404104 Девицеконнектионклоседремотели](iot-hub-troubleshoot-error-404104-deviceconnectionclosedremotely.md)**
-    - **[401003 Иосубунаусоризед](iot-hub-troubleshoot-error-401003-iothubunauthorized.md)**
-    - **[409002 Линккреатионконфликт](iot-hub-troubleshoot-error-409002-linkcreationconflict.md)**
+    - **[404104 DeviceConnectionClosedRemotely](iot-hub-troubleshoot-error-404104-deviceconnectionclosedremotely.md)**
+    - **[401003 IoTHubUnauthorized](iot-hub-troubleshoot-error-401003-iothubunauthorized.md)**
+    - **[409002 LinkCreationConflict](iot-hub-troubleshoot-error-409002-linkcreationconflict.md)**
     - **[500001 ServerError](iot-hub-troubleshoot-error-500xxx-internal-errors.md)**
-    - **[500008 Женериктимеаут](iot-hub-troubleshoot-error-500xxx-internal-errors.md)**
+    - **[500008 GenericTimeout](iot-hub-troubleshoot-error-500xxx-internal-errors.md)**
 
 ## <a name="i-tried-the-steps-but-they-didnt-work"></a>Я выполнил шаги, но они не работали
 
@@ -108,7 +109,7 @@ ms.locfileid: "77110673"
 
 Чтобы помочь улучшить документацию, оставьте комментарий в разделе отзывов, если сведения в этом руководстве не были полезны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об устранении временных проблем см. в статье [Обработка временных сбоев](/azure/architecture/best-practices/transient-faults).
 

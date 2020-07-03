@@ -1,19 +1,20 @@
 ---
 title: Руководство. Создание и использование дисков для масштабируемых наборов с помощью Azure PowerShell
 description: Узнайте, как с помощью Azure PowerShell создавать и использовать Управляемые диски с масштабируемыми наборами виртуальных машин, в том числе добавлять, подготавливать, перечислять и отсоединять диски.
-author: cynthn
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
+author: ju-shim
+ms.author: jushiman
 ms.topic: tutorial
+ms.service: virtual-machine-scale-sets
+ms.subservice: disks
 ms.date: 03/27/2018
-ms.author: cynthn
-ms.custom: mvc
-ms.openlocfilehash: ba2d216b9827eeb499df40ceffca16780bdf5a02
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 5c82f087505c1634dd621252935c4017687340b2
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278254"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83198244"
 ---
 # <a name="tutorial-create-and-use-disks-with-virtual-machine-scale-set-with-azure-powershell"></a>Руководство. Создание и использование дисков с масштабируемым набором виртуальных машин с помощью Azure PowerShell
 
@@ -26,7 +27,7 @@ ms.locfileid: "76278254"
 > * производительностью дисков;
 > * подключение и подготовка дисков данных.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [updated-for-az.md](../../includes/updated-for-az.md)]
 

@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: устранение неполадок подключения SQL | Документация Майкрософт'
+title: 'Azure AD Connect: устранение неполадок подключения SQL | Документация Майкрософт'
 description: Поясняется, как устранять неполадки подключения SQL в Azure AD Connect.
 services: active-directory
 documentationcenter: ''
@@ -15,10 +15,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cde94dce13eeb7536f72fb0dcd937265960c7314
-ms.sourcegitcommit: adc1072b3858b84b2d6e4b639ee803b1dda5336a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70842692"
 ---
 # <a name="troubleshoot-sql-connectivity-issues-with-azure-ad-connect"></a>Устранение неполадок подключения SQL в Azure AD Connect
@@ -39,8 +39,8 @@ Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\A
 >Для использования Install-Module требуется обновление до [PowerShell 5.0 (WMF 5.0)](https://www.microsoft.com/download/details.aspx?id=50395) или более поздней версии.  
 Или установите [предварительную версию модулей PowerShell PackageManagement за март 2016 года для PowerShell 3.0 или 4.0](/powershell/module/PackageManagement). 
 
-- **Отобразите все команды**: `Get-Command -Module AdSyncTools`. 
-- **Выполните функции PowerShell**: `Connect-ADSyncDatabase` со следующими параметрами:
+- **Показывать все команды**:`Get-Command -Module AdSyncTools` 
+- **Выполните функцию PowerShell**: `Connect-ADSyncDatabase` со следующими параметрами
     - Сервер. Имя сервера SQL Server.
     - Экземпляр. (Необязательно.) Имя экземпляра SQL Server и, при необходимости, номер порта, которые вы хотите использовать. Не указывайте этот параметр, чтобы использовать экземпляр по умолчанию.
     - Имя пользователя. (Необязательно.) Учетная запись пользователя для подключения. Если оставить поле пустым, будет использоваться текущий пользователь, выполнивший вход. В случае подключения к удаленному серверу SQL Server это должна быть настраиваемая учетная запись службы, которую вы создали для подключения Azure AD Connect к SQL. Azure AD Connect использует учетную запись службы синхронизации Azure AD Connect для аутентификации на удаленном сервере SQL Server.
@@ -172,6 +172,6 @@ TcpStatus    : Blocked - the inbound firewall rule for port 58379 is missing or 
 PS C:\Program Files\Microsoft Azure Active Directory Connect\tools>  
 ```
 
-## <a name="next-steps"></a>Следующие шаги
-- [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
+## <a name="next-steps"></a>Дальнейшие действия
+- [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
 -  [Подключение к Azure AD с помощью Azure AD Connect](tshoot-connect-connectivity.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LaunchDarkly | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с LaunchDarkly | Документы Майкрософт
 description: Сведения о том, как настроить единый вход между Azure Active Directory и LaunchDarkly.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e32f8c3ea300960893163264e99bd6c51138c7c5
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159658"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-launchdarkly"></a>Руководство по Интеграция Azure Active Directory с LaunchDarkly
+# <a name="tutorial-azure-active-directory-integration-with-launchdarkly"></a>Руководство. Интеграция Azure Active Directory с LaunchDarkly
 
 В этом руководстве описано, как интегрировать LaunchDarkly с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением LaunchDarkly обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73159658"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением LaunchDarkly, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа LaunchDarkly.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "73159658"
 
     ![Сведения о домене и URL-адресах для единого входа в приложение LaunchDarkly](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `app.launchdarkly.com`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `app.launchdarkly.com`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`.
 
@@ -128,11 +128,11 @@ ms.locfileid: "73159658"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-launchdarkly-single-sign-on"></a>Настройка единого входа в LaunchDarkly
 
@@ -154,7 +154,7 @@ ms.locfileid: "73159658"
 
     ![Конфигурация LaunchDarkly](./media/launchdarkly-tutorial/configure4.png)
 
-    a. Скопируйте **SAML consumer service URL** (URL-адрес службы объекта-получателя SAML) для своего экземпляра и вставьте его в текстовое поле "URL-адрес ответа" в разделе **Домен и URL-адреса приложения LaunchDarkly** на портале Azure.
+    а. Скопируйте **SAML consumer service URL** (URL-адрес службы объекта-получателя SAML) для своего экземпляра и вставьте его в текстовое поле "URL-адрес ответа" в разделе **Домен и URL-адреса приложения LaunchDarkly** на портале Azure.
 
     b. В текстовое поле **URL-адрес для входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 

@@ -9,10 +9,10 @@ ms.service: time-series-insights
 ms.topic: conceptual
 ms.date: 01/06/2020
 ms.openlocfilehash: ce566080c6ddbc4784365ceda6011c3f6612732a
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76276865"
 ---
 # <a name="connect-time-series-insights-to-power-bi"></a>Подключение Time Series Insights к Power BI  
@@ -21,7 +21,7 @@ ms.locfileid: "76276865"
 
 Служба "аналитика временных рядов Azure" теперь тесно интегрируется с [Power BI](https://powerbi.microsoft.com/), обеспечивая более широкие возможности визуализации и мониторинга для потоковых данных и позволяет обмениваться ценными сведениями и результатами в Организации.
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 ### <a name="learn-more-about-integrating-azure-time-series-insights-with-power-bibr"></a>Дополнительные сведения об интеграции службы "аналитика временных рядов Azure" с Power BI.</br>
 
@@ -29,7 +29,7 @@ ms.locfileid: "76276865"
 
 ## <a name="summary"></a>Сводка
 
-   [![параметр экспорта в "аналитика временных рядов"](./media/concepts-connect-power-bi/tsi-power-bi-export-example.png)](./media/concepts-connect-power-bi/tsi-power-bi-export-example.png#lightbox)
+   [![Параметр экспорта в "аналитика временных рядов"](./media/concepts-connect-power-bi/tsi-power-bi-export-example.png)](./media/concepts-connect-power-bi/tsi-power-bi-export-example.png#lightbox)
 
 Подключив данные к Power BI, вы можете:
 
@@ -46,7 +46,7 @@ ms.locfileid: "76276865"
 
 После подключения данных доступны все средства визуализации и создания диаграмм Power BI, позволяющие расширить возможности совместного использования информации. 
 
-   [![Примеры диаграмм в Power BI](./media/concepts-connect-power-bi/power-bi-tsi-example.png)](./media/concepts-connect-power-bi/power-bi-tsi-example.png#lightbox)
+   [![Примеры построения диаграмм в Power BI](./media/concepts-connect-power-bi/power-bi-tsi-example.png)](./media/concepts-connect-power-bi/power-bi-tsi-example.png#lightbox)
 
 Сведения [о том, как подключиться к службе "аналитика временных рядов" для Power BI](./how-to-connect-power-bi.md) для пошаговых задач.
 

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/18/2016
 tags: connectors
 ms.openlocfilehash: edfbf090c3409d583cda6fd2c9957c37be5dfb7a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75378438"
 ---
 # <a name="access-and-manage-files-in-onedrive-connector-by-using-azure-logic-apps"></a>Доступ к файлам в соединители OneDrive и управление ими с помощью Azure Logic Apps
@@ -38,7 +38,7 @@ ms.locfileid: "75378438"
 
 Триггер — это событие, которое можно использовать для запуска рабочего процесса, определенного в приложении логики. Триггеры опрашивают службу с определенным интервалом и частотой. [Дополнительные сведения о триггерах](../logic-apps/logic-apps-overview.md#logic-app-concepts).
 
-1. В конструкторе приложений логики введите `onedrive`, чтобы получить список триггеров:  
+1. В конструкторе приложений логики введите `onedrive` , чтобы получить список триггеров:  
 
    ![](./media/connectors-create-api-onedrive/onedrive-1.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "75378438"
 
 ## <a name="use-an-action"></a>Использование действий
 
-Действие — это операция, выполняемая рабочим процессом, определенным в приложении логики. [Дополнительные сведения о действиях](../logic-apps/logic-apps-overview.md#logic-app-concepts).
+Действие — это операция, выполняемая рабочим процессом, определенным в приложении логики. Дополнительные [сведения о действиях](../logic-apps/logic-apps-overview.md#logic-app-concepts).
 
 1. Щелкните знак "плюс". Отобразятся следующие команды: **Добавить действие**, **Добавить условие** или **Еще**.
 
@@ -66,7 +66,7 @@ ms.locfileid: "75378438"
 
 2. Выберите **Добавить действие**.
 
-3. В поле поиска введите `onedrive`, чтобы получить список всех доступных действий.
+3. В поле поиска введите `onedrive` , чтобы получить список всех доступных действий.
 
    ![](./media/connectors-create-api-onedrive/onedrive-actions.png) 
 
@@ -86,6 +86,6 @@ ms.locfileid: "75378438"
 
 Информацию о существующих ограничениях, а также о триггерах и действиях, определенных в Swagger, см. в статье со [сведениями о соединителях](/connectors/onedriveconnector/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Список соединителей](apis-list.md)
+* [Соединители для Azure Logic Apps](apis-list.md)

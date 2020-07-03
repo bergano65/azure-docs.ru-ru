@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/30/2020
-ms.openlocfilehash: 2ae389be25cd8633a53a49cf000796c1510733a1
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: b1d941fbf86d453a56a5157ed988a32173c614fc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965168"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81461537"
 ---
 # <a name="scenario-azure-hdinsight-clusters-with-disk-encryption-lose-key-vault-access"></a>Сценарий. потеря доступа к кластерам Azure HDInsight с шифрованием диска Key Vault доступ
 
@@ -20,7 +20,7 @@ ms.locfileid: "76965168"
 
 ## <a name="issue"></a>Проблема
 
-Предупреждение Работоспособность ресурсов Center (RHC), `The HDInsight cluster is unable to access the key for BYOK encryption at rest`, отображается для кластеров создание собственных ключей (BYOK), в которых узлы кластера потеряют доступ к клиентам Key Vault (KV). Аналогичные предупреждения также можно увидеть в пользовательском интерфейсе Apache Ambari.
+Предупреждение Работоспособность ресурсов Center (RHC) отображается для `The HDInsight cluster is unable to access the key for BYOK encryption at rest`кластеров создание собственных ключей (BYOK), в которых узлы кластера потеряют доступ к клиентам Key Vault (KV). Аналогичные предупреждения также можно увидеть в пользовательском интерфейсе Apache Ambari.
 
 ## <a name="cause"></a>Причина
 
@@ -28,11 +28,11 @@ ms.locfileid: "76965168"
 
 Перейдите к пользовательскому интерфейсу Apache Ambari, чтобы получить дополнительные сведения о предупреждении, связанные с **шифрованием диска Key Vault состояние**. Это оповещение будет содержать подробные сведения о причине сбоя проверки.
 
-## <a name="resolution"></a>Разрешение
+## <a name="resolution"></a>Решение
 
 ### <a name="kvaad-outage"></a>Сбой KV/AAD
 
-Дополнительные сведения см. на странице " [доступность и избыточность Azure Key Vault](../../key-vault/key-vault-disaster-recovery-guidance.md) " и "состояние Azure". https://status.azure.com/
+Дополнительные сведения см. на странице [Azure Key Vault доступность и избыточность](../../key-vault/general/disaster-recovery-guidance.md) и состояние Azure.https://status.azure.com/
 
 ### <a name="kv-accidental-deletion"></a>Случайное удаление KV
 
@@ -80,12 +80,12 @@ ms.locfileid: "76965168"
 * Используйте ключ без указания срока действия.
 * Если необходимо задать срок действия, поворачивайте ключи до даты окончания срока действия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества взаимодействия с клиентами. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
 * Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

@@ -3,20 +3,20 @@ title: Настройка потока учетных данных для пар
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить поток РОПК в Azure AD B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/30/2018
-ms.author: marsma
+ms.date: 02/27/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 03ff564848298d31c8bf92169d9e5f66d024d711
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 70cd4f2ca3a4ac37bdf1d1e465d1f1a7d06ef9e1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74949190"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78189707"
 ---
 # <a name="configure-the-resource-owner-password-credentials-flow-in-azure-ad-b2c"></a>Настройка последовательности проверки учетных данных пароля владельца ресурса в Azure AD B2C
 
@@ -24,16 +24,7 @@ ms.locfileid: "74949190"
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-В Azure Active Directory B2C (Azure AD B2C) поддерживаются следующие параметры.
-
-- **Собственный клиент**. Взаимодействие с пользователем во время аутентификации происходит, когда код выполняется на устройстве на стороне пользователя. Устройство может быть мобильным приложением, которое работает в собственной операционной системе, например Android и iOS.
-- **Поток общедоступного клиента**. При вызове API отправляются только учетные данные, полученные приложением. Учетные данные приложения не отправляются.
-- **Добавление новых утверждений**. Содержимое токена идентификатора можно изменить для добавления новых утверждений.
-
-Следующие операции не поддерживаются:
-
-- **Сервер-сервер**. Системе защиты идентификации требуются надежные IP-адреса, полученные от вызывающего объекта (собственного клиента) в рамках взаимодействия. При вызове API на стороне сервера используется только IP-адрес сервера. При превышении динамического порога неудачных проверок подлинности система защиты идентификации может рассматривать повторяющийся IP-адрес как адрес злоумышленника.
-- **Поток конфиденциального клиента**. Проверка идентификатора клиента приложения выполняется, но секрет приложения не проверяется.
+[!INCLUDE [active-directory-b2c-ropc-notes](../../includes/active-directory-b2c-ropc-notes.md)]
 
 ##  <a name="create-a-resource-owner-user-flow"></a>Создание потока пользователя владельца ресурса
 
@@ -44,7 +35,7 @@ ms.locfileid: "74949190"
 5. Укажите имя потока пользователя, например *ROPC_Auth*.
 6. В разделе **Утверждения приложения** щелкните **Показать еще**.
 7. Выберите утверждения приложения, которые необходимы для вашего приложения, такие как "Отображаемое имя", "Адрес электронной почты" и "Поставщик удостоверений".
-8. Щелкните **ОК**, а затем выберите **Создать**.
+8. Нажмите кнопку **ОК**, а затем выберите **создать**.
 9. Щелкните **Выполнить поток пользователя**.
 
    После этого вы увидите конечную точку следующего вида:
@@ -59,15 +50,15 @@ ms.locfileid: "74949190"
 ## <a name="test-the-user-flow"></a>Тестирование потока пользователя
 
 С помощью предпочитаемого приложения по разработке API создайте вызов API и просмотрите ответ, чтобы выполнить отладку потока пользователя. Используя приведенные в таблице ниже сведения в качестве текста запроса POST, создайте вызов следующего вида:
-- Замените *\<yourtenant.onmicrosoft.com>* именем своего клиента B2C.
-- Замените *\<B2C_1A_ROPC_Auth>* полным именем политики учетных данных пароля владельца ресурса.
-- Замените *\<bef2222d56-552f-4a5b-b90a-1988a7d634c3>* идентификатором приложения из регистрации.
+- Замените * \<yourtenant.onmicrosoft.com>* именем своего клиента B2C.
+- Замените * \<B2C_1A_ROPC_Auth>* полным именем политики учетных данных для пароля владельца ресурса.
+- Замените * \<bef2222d56-552f-4a5b-b90a-1988a7d634c3>* идентификатором приложения из вашей регистрации.
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Ключ | Value |
+| Клавиши | Значение |
 | --- | ----- |
-| Имя пользователя | leadiocl@outlook.com |
+| username | leadiocl@outlook.com |
 | пароль | Passxword1 |
 | grant_type | пароль |
 | scope | openid \<bef2222d56-552f-4a5b-b90a-1988a7d634c3> offline_access |
@@ -105,7 +96,7 @@ username=leadiocl%40trashmail.ws&password=Passxword1&grant_type=password&scope=o
 
 `https://yourtenant.b2clogin.com/<yourtenant.onmicrosoft.com>/oauth2/v2.0/token?p=B2C_1_ROPC_Auth`
 
-| Ключ | Value |
+| Клавиши | Значение |
 | --- | ----- |
 | grant_type | refresh_token |
 | response_type | id_token |

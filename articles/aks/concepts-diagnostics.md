@@ -3,20 +3,21 @@ title: Обзор диагностики службы Azure Kubernetes (AKS)
 description: Узнайте, как самостоятельно диагностировать кластеры в службе Kubernetes Azure.
 services: container-service
 author: yunjchoi
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: yunjchoi
-ms.openlocfilehash: 2148c6c8c9d78355847b3240b54349f1e7789921
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 03bb7b786280dfcbb64190adac51b8d001d59c18
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291385"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79126612"
 ---
-# <a name="azure-kubernetes-service-aks-diagnostics-overview"></a>Обзор диагностики службы Azure Kubernetes (AKS)
+# <a name="azure-kubernetes-service-diagnostics-preview-overview"></a>Обзор диагностики службы Kubernetes Azure (Предварительная версия)
 
 Устранение неполадок кластера Azure Kubernetes Service (AKS) является важной частью обслуживания кластера, особенно если в кластере выполняются критически важные рабочие нагрузки. Диагностика AKS — это интеллектуальная самодиагностическая процедура, которая помогает выявление и устранение проблем в кластере. Диагностика AKS является машинным кодом в облаке, и ее можно использовать без дополнительной настройки или затрат на выставление счетов.
+
+Эта функция теперь доступна в общедоступной предварительной версии.
 
 ## <a name="open-aks-diagnostics"></a>Открыть диагностику AKS
 
@@ -78,7 +79,7 @@ ms.locfileid: "76291385"
 - ошибки 401
 - Ошибки 403
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Собирайте журналы, чтобы упростить устранение неполадок кластера с помощью [AKS Periscope](https://aka.ms/aksperiscope).
 

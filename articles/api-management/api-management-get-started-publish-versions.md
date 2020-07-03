@@ -14,17 +14,17 @@ ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: d0c837ac376f9d496baaf1ed67d0ec80c996804a
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73176831"
 ---
 # <a name="publish-multiple-versions-of-your-api"></a>Публикация нескольких версий API 
 
 Иногда нецелесообразно предоставлять всем вызывающим сторонам одну версию API. Если вызывающим сторонам требуется выполнить обновление до более поздней версии, они хотят, чтобы сделать это было просто. Для этого можно использовать функцию **версий** в службе управления API Azure. Дополнительные сведения см. в статье о [версиях и редакциях](https://blogs.msdn.microsoft.com/apimanagement/2017/09/14/versions-revisions/).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * добавление новой версии в существующий интерфейс API;
@@ -34,11 +34,11 @@ ms.locfileid: "73176831"
 
 ![Версия, отображаемая на портале разработчика](media/api-management-getstarted-publish-versions/azure_portal.PNG)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 + Ознакомьтесь с [терминологией службы управления API в Azure](api-management-terminology.md).
-+ Выполните инструкции из краткого руководства — [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
-+ Также выполните инструкции из руководства [Импорт и публикация первого API](import-and-publish.md).
++ Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
++ Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
 
 ## <a name="add-a-new-version"></a>Добавление новой версии
 
@@ -99,9 +99,9 @@ ms.locfileid: "73176831"
 4. Выберите **v1**.
 5. Обратите внимание на **URL-адрес запроса** первой операции в списке. В нем видно, что путь URL-адреса API содержит **v1**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее.
 
 > [!div class="checklist"]
 > * добавление новой версии в существующий интерфейс API;

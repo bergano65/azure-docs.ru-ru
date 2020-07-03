@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 10/25/2019
-  ms.openlocfilehash: ab2843a4076e4700b584a1e09c0c58271cf61328
-  ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+  ms.openlocfilehash: 0c433c2d09f101a9ab3fb9d1225e47741908b3bf
+  ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/05/2020
-  ms.locfileid: "77021259"
+  ms.lasthandoff: 04/29/2020
+  ms.locfileid: "82562191"
 highlightedContent:
   items:
   - title: Что такое IoT Central?
@@ -73,7 +73,7 @@ conceptualContent:
       text: Создание правила телеметрии
     - url: ./core/howto-export-data.md
       itemType: how-to-guide
-      text: Настройка экспорта непрерывных данных
+      text: Экспорт данных в целевое расположение в Azure
     footerLink:
       url: ./core/index.yml
       text: Подробнее
@@ -85,15 +85,15 @@ productDirectory:
     imageSrc: ./retail/media/index/iot-central-retail.svg
     links:
     - text: Создание решений для розничной торговли с помощью Azure IoT Central
-      url: ./retail/overview-iot-central-retail-pnp.md
+      url: ./retail/overview-iot-central-retail.md
     - text: Создание приложения аналитики магазина
-      url: ./retail/tutorial-in-store-analytics-create-app-pnp.md
+      url: ./retail/tutorial-in-store-analytics-create-app.md
     - text: Создание приложения для интеллектуального управления запасами
-      url: ./retail/tutorial-iot-central-smart-inventory-management-pnp.md
+      url: ./retail/tutorial-iot-central-smart-inventory-management.md
     - text: Создание приложения для интеллектуальной логистики
-      url: ./retail/tutorial-iot-central-connected-logistics-pnp.md
+      url: ./retail/tutorial-iot-central-connected-logistics.md
     - text: Создание приложения для цифрового центра дистрибуции
-      url: ./retail/tutorial-iot-central-digital-distribution-center-pnp.md
+      url: ./retail/tutorial-iot-central-digital-distribution-center.md
   - title: Создание решений для здравоохранения
     imageSrc: ./healthcare/media/index/iot-central-healthcare.svg
     links:
@@ -130,3 +130,6 @@ additionalContent:
     - title: IoT Central в Microsoft Learn
       summary: Ознакомьтесь с IoT Central в бесплатной песочнице.
       url: https://docs.microsoft.com/learn/browse/?products=azure-iot-central
+    - title: Последние обновления
+      summary: Узнайте о новых возможностях в IoT Central.
+      url: https://azure.microsoft.com/updates/?status=nowavailable&updateType=features&category=iot&query=azure%20iot%20central

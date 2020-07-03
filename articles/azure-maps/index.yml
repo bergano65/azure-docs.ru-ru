@@ -9,12 +9,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 1/15/2020
-  ms.openlocfilehash: f4ae414179f77413e5d5daa4fda635e0bf24c2aa
-  ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+  ms.openlocfilehash: 83a51c7dff6d616297c7f558b20e7d1934c668d6
+  ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/17/2020
-  ms.locfileid: "76264107"
+  ms.lasthandoff: 05/25/2020
+  ms.locfileid: "83829892"
 landingContent:
 - title: Использование службы "Карты Azure"
   linkLists:
@@ -56,6 +56,36 @@ landingContent:
       url: how-to-manage-pricing-tier.md
     - text: Просмотр метрик использования API Azure Maps
       url: how-to-view-api-usage.md
+- title: Разработка с использованием Creator
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Основные понятия о схемах помещений
+      url: creator-indoor-maps.md
+  - linkListType: tutorial
+    links:
+    - text: Использование Creator для создания данных схем помещений
+      url: tutorial-creator-indoor-maps.md
+  - linkListType: how-to-guide
+    links:
+    - text: Управление Creator
+      url: how-to-manage-creator.md
+    - text: Реализация динамического стиля для схем помещений
+      url: indoor-map-dynamic-styling.md
+    - text: Использование визуализатора ошибок рисования в Azure Maps
+      url: drawing-error-visualizer.md
+    - text: Использование модуля схем помещений
+      url: how-to-use-indoor-module.md
+  - linkListType: reference
+    links:
+    - text: Служба преобразования
+      url: https://docs.microsoft.com/rest/api/maps/conversion
+    - text: Служба набора данных
+      url: https://docs.microsoft.com/rest/api/maps/dataset
+    - text: Служба набора фрагментов
+      url: https://docs.microsoft.com/rest/api/maps/tileset
+    - text: Служба набора состояний функций
+      url: https://docs.microsoft.com/rest/api/maps/featurestate
 - title: Разработка с использованием веб-пакета SDK
   linkLists:
   - linkListType: concept
@@ -74,6 +104,18 @@ landingContent:
       url: tutorial-route-location.md
     - text: Создание указателя магазинов
       url: tutorial-create-store-locator.md
+  - linkListType: how-to-guide
+    links:
+    - text: Использование элемента управления картой в Azure Maps
+      url: how-to-use-map-control.md
+    - text: Использование модуля средств рисования
+      url: set-drawing-options.md
+    - text: Использование модуля служб
+      url: how-to-use-services-module.md
+    - text: Использование модуля пространственного ввода-вывода
+      url: how-to-use-spatial-io-module.md
+    - text: Браузеры, поддерживаемые в веб-пакетах SDK
+      url: supported-browsers.md
   - linkListType: reference
     links:
     - text: Элемент управления картой
@@ -82,6 +124,8 @@ landingContent:
       url: https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/?view=azure-maps-typescript-latest
     - text: Модуль службы
       url: https://docs.microsoft.com/javascript/api/azure-maps-rest/?view=azure-maps-typescript-latest
+    - text: Модуль пространственного ввода-вывода
+      url: https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/?view=azure-maps-typescript-latest
 - title: Разработка с использованием пакета SDK для Android
   linkLists:
   - linkListType: how-to-guide
@@ -94,6 +138,8 @@ landingContent:
       url: how-to-add-tile-layer-android-map.md
     - text: Добавление фигур на карту
       url: how-to-add-shapes-to-android-map.md
+    - text: Отображение данных о трафике
+      url: how-to-show-traffic-android.md
 - title: Разработка с использованием Location Based Services
   linkLists:
   - linkListType: concept
@@ -108,8 +154,10 @@ landingContent:
     links:
     - text: Поиск адреса (геокодирование)
       url: how-to-search-for-address.md
-    - text: Рекомендации по поиску
+    - text: Рекомендации по использованию службы "Поиск"
       url: how-to-use-best-practices-for-search.md
+    - text: Рекомендации по использованию службы "Построение маршрутов"
+      url: how-to-use-best-practices-for-routing.md
     - text: Отображение пользовательских данных на статической карте
       url: how-to-render-custom-data.md
   - linkListType: reference

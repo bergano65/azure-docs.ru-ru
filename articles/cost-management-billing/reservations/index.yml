@@ -9,13 +9,13 @@ metadata:
   ms.collection: collection
   author: bandersmsft
   ms.author: banders
-  ms.date: 02/13/2020
-  ms.openlocfilehash: 72c338133e59ef8b7f5bb78eafc45bd44dea9c14
-  ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+  ms.date: 04/30/2020
+  ms.openlocfilehash: 648ba197fd30771061f6629fb834bd3dd95cab40
+  ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/13/2020
-  ms.locfileid: "77199438"
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82628594"
 landingContent:
 - title: Приобретение резервирований
   linkLists:
@@ -31,7 +31,7 @@ landingContent:
     links:
     - text: Возобновление резервирований
       url: reservation-renew.md
-    - text: Хранилище данных SQL
+    - text: Azure Synapse Analytics
       url: prepay-sql-data-warehouse-charges.md
     - text: Виртуальная машина
       url: ../../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/cost-management-billing/reservations/toc.json
@@ -42,7 +42,7 @@ landingContent:
     - text: База данных SQL
       url: ../../sql-database/sql-database-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
     - text: Azure Data Explorer
-      url: ../../data-explorer/pricing-reserved-capacity.md?toc=/azure/cost-management-billing/toc.json
+      url: /azure/data-explorer/pricing-reserved-capacity?toc=/azure/cost-management-billing/toc.json
     - text: Azure Databricks
       url: prepay-databricks-reserved-capacity.md
     - text: Служба приложений
@@ -61,7 +61,7 @@ landingContent:
       url: understand-cosmosdb-reservation-charges.md
     - text: Резервная мощность Базы данных SQL
       url: understand-reservation-charges.md
-    - text: Хранилище данных SQL
+    - text: Azure Synapse Analytics
       url: reservation-discount-azure-sql-dw.md
     - text: Azure Data Explorer
       url: understand-azure-data-explorer-reservation-charges.md

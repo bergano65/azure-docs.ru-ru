@@ -4,20 +4,20 @@ description: Используйте управление доступом Azure 
 ms.topic: article
 ms.date: 12/02/2019
 ms.openlocfilehash: 3fb103ac4c4dac736b3c0fc99b2cf49f01e9e005
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74893490"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
 
 Служба реестра контейнеров Azure поддерживает набор [встроенных ролей Azure](../role-based-access-control/built-in-roles.md) , которые предоставляют различные уровни разрешений для реестра контейнеров Azure. Используйте [Управление доступом на основе ролей](../role-based-access-control/index.yml) Azure (RBAC), чтобы назначить определенные разрешения пользователям, субъектам-службам или другим удостоверениям, которые должны взаимодействовать с реестром. 
 
-| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных изображения](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
+| Роль или разрешение       | [Доступ к Resource Manager](#access-resource-manager) | [Создание и удаление реестра](#create-and-delete-registry) | [Отправка образа](#push-image) | [Получение образа](#pull-image) | [Удаление данных образа](#delete-image-data) | [Изменение политик](#change-policies) |   [Подписывание образов](#sign-images)  |
 | ---------| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| Владелец. | X | X | X | X | X | X |  |  
-| участник; | X | X | X |  X | X | X |  |  
+| Владелец | X | X | X | X | X | X |  |  
+| Участник | X | X | X |  X | X | X |  |  
 | Читатель | X |  |  | X |  |  |  |
 | AcrPush |  |  | X | X | |  |  |  
 | AcrPull |  |  |  | X |  |  |  |  
@@ -81,7 +81,7 @@ az provider operation show --namespace Microsoft.ContainerRegistry
 Чтобы определить пользовательскую роль, см. раздел [шаги по созданию настраиваемой роли](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role).
 
 > [!IMPORTANT]
-> В пользовательской роли реестр контейнеров Azure в настоящее время не поддерживает подстановочные знаки, такие как `Microsoft.ContainerRegistry/*` или `Microsoft.ContainerRegistry/registries/*`, которые предоставляют доступ ко всем соответствующим действиям. Укажите в роли все необходимые действия по отдельности.
+> В пользовательской роли реестр контейнеров Azure в настоящее время не поддерживает подстановочные знаки, `Microsoft.ContainerRegistry/*` такие `Microsoft.ContainerRegistry/registries/*` как или, которые предоставляют доступ ко всем соответствующим действиям. Укажите в роли все необходимые действия по отдельности.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 959d85f496a4a573a969bf736aba137d5b86154a
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73174735"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79261987"
 ---
 # <a name="change-lifecycle-settings-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение параметров жизненного цикла пакета Access в управлении назначениями Azure AD
 
@@ -33,7 +33,7 @@ ms.locfileid: "73174735"
 
 Чтобы изменить параметры жизненного цикла пакета доступа, необходимо открыть соответствующую политику. Выполните следующие действия, чтобы открыть параметры жизненного цикла пакета Access.
 
-**Предварительная роль:** Глобальный администратор, администратор пользователей, владелец каталога или диспетчер пакетов Access
+**Требуемая роль:** Глобальный администратор, Администратор пользователей, Владелец каталога или Диспетчер пакетов для доступа.
 
 1. На портале Azure щелкните **Azure Active Directory** и выберите **Управление удостоверениями**.
 

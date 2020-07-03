@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 6ff12122d541a9dbb160a424e0d11cf03fdcb9fe
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 0962afb360df0ec6a414f676a2c280b3837c687d
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74970233"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81403672"
 ---
 # <a name="tutorial-recognize-azure-service-logos-in-camera-pictures"></a>Руководство по Распознавание логотипов служб Azure на изображениях с камеры
 
@@ -28,7 +28,7 @@ ms.locfileid: "74970233"
 > - подключение приложения к службам Azure "Компьютерное зрение" и "Пользовательское визуальное распознавание";
 > - создание учетной записи субъекта-службы Azure для развертывания служб Azure из приложения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -107,7 +107,7 @@ ms.locfileid: "74970233"
 
 Вы можете создать субъект-службу с помощью Azure Cloud Shell или Azure CLI, как показано далее. Для начала выполните вход и выберите подписку, которую вы намерены использовать.
 
-```console
+```azurecli
 az login
 az account list
 az account set --subscription "<subscription name or subscription id>"
@@ -115,7 +115,7 @@ az account set --subscription "<subscription name or subscription id>"
 
 Затем создайте субъект-службу. (Этот процесс может занять некоторое время.)
 
-```console
+```azurecli
 az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongPassword>
 ```
 
@@ -135,7 +135,7 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
 
 [!code-csharp[Computer Vision fields](~/AIVisualProvision/Source/VisualProvision/AppSettings.cs?name=snippet_serviceprincipal)]
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
 На этом этапе вы предоставили приложению доступ к:
 
@@ -177,7 +177,7 @@ az ad sp create-for-rbac --name <servicePrincipalName> --password <yourSPStrongP
 
 Если вы планируете в будущем создать собственный проект обнаружения объектов с использованием Пользовательского визуального распознавания, лучше будет удалить проект обнаружения логотипов, созданный при работе с этим руководством. Бесплатная пробная версия Пользовательского визуального распознавания позволяет создать только два проекта. Чтобы удалить проект обнаружения логотипов, откройте раздел **Projects** (Проекты) на [веб-сайте Пользовательского визуального распознавания](https://customvision.ai) и выберите значок корзины в разделе **My New Project** (Мой новый проект).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучая это руководство, вы настроили и освоили полнофункциональное приложение Xamarin.Forms, в котором применяется Пользовательское визуальное распознавание для обнаружения логотипов на изображениях с камер мобильных устройств. Теперь изучите рекомендации по созданию модели Пользовательского визуального распознавания, чтобы научиться создавать эффективно функционирующие модели для собственных приложений.
 

@@ -1,17 +1,15 @@
 ---
 title: Географическое аварийное восстановление и высокая доступность функций Azure
 description: Как использовать географические регионы для обеспечения избыточности и отработки отказа в функциях Azure.
-author: wesmc7777
 ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.topic: conceptual
 ms.date: 08/29/2019
-ms.author: jehollan
-ms.openlocfilehash: bdeff0194bda620250481a215c145b1ec3b2207e
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 481a716bd6ced5c304da41c70fdcfc687b76661d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75920797"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79080229"
 ---
 # <a name="azure-functions-geo-disaster-recovery"></a>Географическое аварийное восстановление функций Azure
 
@@ -54,7 +52,7 @@ ms.locfileid: "75920797"
 
 Дополнительные сведения и рекомендации по отработке отказа с помощью [служебной шины](../service-bus-messaging/service-bus-geo-dr.md) и [концентраторов событий](../event-hubs/event-hubs-geo-dr.md)см. в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание передней дверцы Azure](../frontdoor/quickstart-create-front-door.md)
 * [Рекомендации по отработке отказа концентраторов событий](../event-hubs/event-hubs-geo-dr.md#considerations)

@@ -1,26 +1,25 @@
 ---
 title: Удаление предложений Marketplace | Azure Marketplace
 description: Удаление предложений в Azure Marketplace и AppSource с помощью Портала Cloud Partner
-services: Azure, AppSource, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.author: pabutler
-ms.openlocfilehash: 6a75fbb0c4b9c364342a406a8076128346943101
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: fa8ee834bd6d9261c47c540e9517c200c894b6c2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826764"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80286461"
 ---
 # <a name="delete-azure-marketplace-and-appsource-offers-or-skus"></a>Удаление предложений Azure Marketplace и AppSource или номеров SKU
 
 По разным причинам вы можете отозвать свое предложение с Microsoft marketplace. Сделать это можно двумя способами.
 
 - *Удаление предложения* гарантирует, что новые клиенты больше не смогут приобрести или развернуть ваше предложение (однако это никак не повлияет на имеющихся клиентов, предложения которых вы должны поддерживать согласно лицензированному соглашению и надлежащим законам). 
-- *Завершение предложения* — это процесс прекращения действия соглашения об обслуживании и лицензировании между вами и имеющимися клиентами. 
+- *Прекращение предложения* — это процесс завершения обслуживания и/или соглашения о лицензировании между вами и существующими клиентами. 
 
 Руководство и политики, связанные с удалением и завершением предложения, определяются [Microsoft Marketplace соглашением издателя](https://go.microsoft.com/fwlink/?LinkID=699560) и [политиками участия](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) ( [Приостановка и удаление](https://docs.microsoft.com/legal/marketplace/participation-policy#offering-suspension-and-removal)раздела). 
 
@@ -34,7 +33,7 @@ ms.locfileid: "73826764"
 
 Вы можете удалить опубликованный номер SKU из Azure Marketplace, сделав следующее.
 
-1.  Войдите на [облачный портал для партнеров](https://cloudpartner.azure.com/).
+1.  Войдите в [портал Cloud Partner](https://cloudpartner.azure.com/).
 2.  На странице **Все предложения** выберите свое предложение.  Предложение должно отображаться на вкладке **Редактор**.
 3.  На панели инструментов слева выберите вкладку **Номера SKU**. 
 4.  Выберите номер SKU, который необходимо удалить, и нажмите кнопку **Удалить**.
@@ -47,7 +46,7 @@ ms.locfileid: "73826764"
 
 Вы можете удалить текущую версию опубликованного номера SKU из Azure Marketplace, выполнив описанные здесь действия. По завершении этого процесса будет выполнен откат номера SKU до предыдущей версии.
 
-1. Войдите на [Портал Cloud Partner](https://cloudpartner.azure.com/).
+1. Войдите в [портал Cloud Partner](https://cloudpartner.azure.com/).
 2. На странице **Все предложения** выберите свое предложение.  Предложение должно отображаться на вкладке **Редактор**.
 3. На панели инструментов слева выберите вкладку **Номера SKU**. 
 4. Удалите последнюю версию связанного ресурса решения из списка версий диска.  В зависимости от типа предложения это поле может принимать значение **Disk Version** (Версия диска), **Package Versions** (Версии пакетов) или версию аналогичного средства. 
@@ -72,6 +71,6 @@ ms.locfileid: "73826764"
 > Удаление предложения (или номера SKU) не повлияет на текущий процесс покупки этого предложения (или номера SKU). Процесс покупки будет продолжать работать как и раньше. Однако удаленные предложения или номера SKU невозможно будет приобрести в будущем.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После того как вы ознакомились с базовыми операциями управления предложениями, вы готовы создать экземпляр [предложения в Microsoft Marketplace](../cpp-marketplace-offers.md).

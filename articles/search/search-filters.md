@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 03333e853a2ab7606ebe60cc3f68bcb5facfbdb4
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77191018"
 ---
 # <a name="filters-in-azure-cognitive-search"></a>Фильтры в Когнитивный поиск Azure 
@@ -109,7 +109,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
   search=walking distance theaters&$filter=Rooms/any(room: room/BaseRate ge 60 and room/BaseRate lt 300) and Address/City eq 'Seattle'&$count=true
    ```
 
-+ Составные запросы, разделенные с помощью логического оператора or, каждый со своими критериями фильтра (например, beagles в категории dog или siamese в категории cat). Выражения, Объединенные с `or`, оцениваются по отдельности с объединением документов, соответствующих каждому выражению, отправляемому обратно в ответе. Этот шаблон использования достигается с помощью функции `search.ismatchscoring`. Можно также использовать версию без оценки `search.ismatch`.
++ Составные запросы, разделенные с помощью логического оператора or, каждый со своими критериями фильтра (например, beagles в категории dog или siamese в категории cat). Выражения, Объединенные с `or` , оцениваются по отдельности с объединением документов, соответствующих каждому выражению, отправляемому обратно в ответе. Этот шаблон использования достигается с помощью `search.ismatchscoring` функции. Можно также использовать версию без оценки `search.ismatch`.
 
    ```
    # Match on hostels rated higher than 4 OR 5-star motels.
@@ -119,7 +119,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
    $filter=search.ismatchscoring('luxury | high-end', 'Description') or Category eq 'Luxury'&$count=true
    ```
 
-  Можно также объединить полнотекстовый поиск с помощью `search.ismatchscoring` с фильтрами `and` вместо `or`, но это функционально эквивалентно использованию параметров `search` и `$filter` в запросе поиска. Например, следующие два запроса дают одинаковый результат:
+  Можно также объединить `search.ismatchscoring` полнотекстовый поиск с фильтрами `and` `or`, используя вместо, но это функционально эквивалентно использованию параметров `search` и `$filter` в запросе поиска. Например, следующие два запроса дают одинаковый результат:
 
   ```
   $filter=search.ismatchscoring('pool') and Rating ge 4
@@ -137,7 +137,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 В REST API фильтрация по умолчанию включена *для* простых полей. Фильтруемые поля увеличивают размер индекса. Не забудьте установить `"filterable": false` для полей, которые вы не планируете фактически использовать в фильтре. Дополнительные сведения о параметрах для определения полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индекса (REST API службы "Поиск Azure")).
 
-В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для свойства с [фильтром](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) для соответствующего объекта [поля](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) значение `true`. Это также можно сделать декларативно с помощью атрибута с [фильтрацией](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается в свойстве `BaseRate` класса Model, который сопоставляется с определением индекса.
+В пакете SDK для .NET фильтруемые поля *отключены* по умолчанию. Можно сделать фильтр для поля, задав для `true`свойства- [фильтра](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.isfilterable?view=azure-dotnet) соответствующего объекта [поля](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field?view=azure-dotnet) значение. Это также можно сделать декларативно с помощью атрибута с [фильтрацией](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.isfilterableattribute). В приведенном ниже примере атрибут задается для `BaseRate` свойства класса Model, который сопоставляется с определением индекса.
 
 ```csharp
     [IsFilterable, IsSortable, IsFacetable]
@@ -152,11 +152,11 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 Текстовые фильтры соответствуют строковым полям строк литералов, которые вы задаюте в фильтре. В отличие от полнотекстового поиска, для текстовых фильтров не существует лексического анализа или разбиения слов, поэтому сравнения предназначены только для точных совпадений. Например, предположим, что поле *f* содержит "Sunny Day", `$filter=f eq 'Sunny'` не соответствует, но `$filter=f eq 'sunny day'` будет. 
 
-Текстовые строки учитывают регистр. Отсутствует нижний регистр слов в верхнем регистре: `$filter=f eq 'Sunny day'` не будет искать "Sunny Day".
+Текстовые строки учитывают регистр. Отсутствует нижний регистр слов с прописными буквами: `$filter=f eq 'Sunny day'` не находит "Sunny Day".
 
 ### <a name="approaches-for-filtering-on-text"></a>Подходы к фильтрации по тексту
 
-| Подход | Описание | Назначение |
+| Метод | Описание | Назначение |
 |----------|-------------|-------------|
 | [`search.in`](search-query-odata-search-in-function.md) | Функция, которая сопоставляет поле со списком строк с разделителями. | Рекомендуется для [фильтров безопасности](search-security-trimming-for-azure-search.md) и для любых фильтров, в которых несколько необработанных текстовых значений должны сопоставляться с строковым полем. Функция **Search.in** разработана для ускорения и намного быстрее, чем явно сравнивать поле с каждой строкой с помощью `eq` и `or`. | 
 | [`search.ismatch`](search-query-odata-full-text-search-functions.md) | Функция, которая позволяет совместно использовать операции полнотекстового поиска вместе с операциями строго логического фильтра в одном выражении фильтра. | Используйте **Поиск. Match** (или его эквивалент, **Search. исматчскоринг**), если требуется несколько сочетаний фильтра поиска в одном запросе. Вы также можете использовать ее для фильтра *contains* (для фильтрации в частичной строке в контексте большей строки). |
@@ -168,7 +168,7 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 Документы, содержащие числовые поля (цена, размер, SKU, идентификатор), предоставляют эти значения в результатах поиска, если поле отмечено `retrievable`. Суть в том, что полнотекстовый поиск не применим к числовым типам полей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сначала попробуйте использовать **обозреватель поиска** на портале, чтобы отправить запросы с параметрами **$filter**. [Пример индекса выборки недвижимости](search-get-started-portal.md) предоставляет полезные результаты для следующих отфильтрованных запросов при их вставке в строку поиска:
 
@@ -195,10 +195,10 @@ search=John Leclerc&$count=true&$select=source,city,postCode,baths,beds&$filter=
 
 Дополнительные примеры можно найти в разделе [Примеры OData](https://docs.microsoft.com/azure/search/search-query-odata-filter#examples).
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 + [How full text search works in Azure Cognitive Search](search-lucene-query-architecture.md) (Как выполняется полнотекстовый поиск в Когнитивном поиске Azure)
-+ [Search Documents (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/search-documents) (Поиск по документам (REST API службы поиска Azure))
-+ [Синтаксис простых запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
++ [Поиск документов REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents)
++ [Простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search)
 + [Синтаксис запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search)
-+ [Supported data types (Azure Search)](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) (Поддерживаемые типы данных (служба "Поиск Azure")).
++ [Поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/supported-data-types)

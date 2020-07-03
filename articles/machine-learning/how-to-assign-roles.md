@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: larryfr
 author: Blackmist
-ms.date: 11/06/2019
+ms.date: 03/06/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5257d9f94f6304c2a8dbea3f1648a71d0ba65e94
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 127a0a2b7f7573db91df9347169e90de3e14c4c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064756"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79270099"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области Машинное обучение Azure
 [!INCLUDE [aml-applies-to-basic-enterprise-sku](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -45,7 +45,7 @@ ms.locfileid: "77064756"
 - [PowerShell](/azure/role-based-access-control/role-assignments-powershell)
 - [Azure CLI](/azure/role-based-access-control/role-assignments-cli)
 - [REST API](/azure/role-based-access-control/role-assignments-rest)
-- [Шаблоны диспетчера ресурсов Azure](/azure/role-based-access-control/role-assignments-template)
+- [Шаблоны Azure Resource Manager](/azure/role-based-access-control/role-assignments-template)
 
 Если вы установили [машинное обучение Azure CLI](reference-azure-machine-learning-cli.md), можно также использовать команду CLI для назначения ролей пользователям.
 
@@ -53,7 +53,7 @@ ms.locfileid: "77064756"
 az ml workspace share -w <workspace_name> -g <resource_group_name> --role <role_name> --user <user_corp_email_address>
 ```
 
-Поле `user` — это адрес электронной почты существующего пользователя в экземпляре Azure Active Directory, где находится родительская подписка рабочей области. Ниже приведен пример использования этой команды.
+`user` Поле является адресом электронной почты существующего пользователя в экземпляре Azure Active Directory, где находится родительская подписка рабочей области. Ниже приведен пример использования этой команды.
 
 ```azurecli-interactive 
 az ml workspace share -w my_workspace -g my_resource_group --role Contributor --user jdoe@contoson.com
@@ -87,7 +87,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role Contributor --
 }
 ```
 
-Можно изменить `AssignableScopes` поле, чтобы задать область этой пользовательской роли на уровне подписки, на уровне группы ресурсов или на определенном уровне рабочей области.
+Вы можете изменить это `AssignableScopes` поле, чтобы задать область этой пользовательской роли на уровне подписки, на уровне группы ресурсов или на определенном уровне рабочей области.
 
 Эта пользовательская роль может выполнять все действия в рабочей области, за исключением следующих действий.
 
@@ -102,7 +102,7 @@ az ml workspace share -w my_workspace -g my_resource_group --role Contributor --
 az role definition create --role-definition data_scientist_role.json
 ```
 
-После развертывания эта роль станет доступной в указанной рабочей области. Теперь можно добавить и назначить эту роль в портал Azure. Вы также можете назначить эту роль пользователю с помощью команды CLI `az ml workspace share`:
+После развертывания эта роль станет доступной в указанной рабочей области. Теперь можно добавить и назначить эту роль в портал Azure. Вы также можете назначить эту роль пользователю с помощью команды `az ml workspace share` CLI:
 
 ```azurecli-interactive
 az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientist" --user jdoe@contoson.com
@@ -123,10 +123,10 @@ az ml workspace share -w my_workspace -g my_resource_group --role "Data Scientis
 | Действие | Область действия уровня подписки | Область действия уровня группы ресурсов | Область уровня рабочей области |
 |---|---|---|---|
 | Создать рабочую область | Не требуется | Владелец или участник | Н/д (владелец или наследует роль более высокого уровня после создания) |
-| Создать новый кластер вычислений | Не требуется | Не требуется | Владелец, участник или настраиваемая роль, допускающая: `workspaces/computes/write` |
+| Создать новый кластер вычислений | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`workspaces/computes/write` |
 | Создание виртуальной машины записной книжки | Не требуется | Владелец или участник | Невозможно |
-| Создание нового вычислительного экземпляра | Не требуется | Не требуется | Владелец, участник или настраиваемая роль, допускающая: `workspaces/computes/write` |
-| Действие плоскости данных, например Отправка выполнения, доступ к данным, развертывание модели или конвейер публикации | Не требуется | Не требуется | Владелец, участник или настраиваемая роль, допускающая: `workspaces/*/write` <br/> Обратите внимание, что также требуется хранилище данных, зарегистрированное в рабочей области, чтобы разрешить MSI доступ к данным в вашей учетной записи хранения. |
+| Создание нового вычислительного экземпляра | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`workspaces/computes/write` |
+| Действие плоскости данных, например Отправка выполнения, доступ к данным, развертывание модели или конвейер публикации | Не требуется | Не требуется | Владелец, участник или пользовательская роль, которая позволяет:`workspaces/*/write` <br/> Обратите внимание, что также требуется хранилище данных, зарегистрированное в рабочей области, чтобы разрешить MSI доступ к данным в вашей учетной записи хранения. |
 
 
 ### <a name="q-how-do-i-list-all-the-custom-roles-in-my-subscription"></a>У. Разделы справки перечислить все пользовательские роли в моей подписке?
@@ -139,7 +139,7 @@ az role definition list --subscription <sub-id> --custom-role-only true
 
 ### <a name="q-how-do-i-find-the-role-definition-for-a-role-in-my-subscription"></a>У. Разделы справки найти определение роли для роли в моей подписке?
 
-В Azure CLI выполните следующую команду. Обратите внимание, что `<role-name>` должны иметь тот же формат, что и команда выше.
+В Azure CLI выполните следующую команду. Обратите `<role-name>` внимание, что параметр должен иметь тот же формат, что и команда выше.
 
 ```azurecli-interactive
 az role definition list -n <role-name> --subscription <sub-id>
@@ -159,7 +159,7 @@ az role definition update --role-definition update_def.json --subscription <sub-
 > Обновление ролей может занять от 15 до часа, чтобы применить их во всех назначениях ролей в этой области.
 ### <a name="q-can-i-define-a-role-that-prevents-updating-the-workspace-edition"></a>У. Можно ли определить роль, запрещающую обновление выпуска рабочей области? 
 
-Да, можно определить роль, запрещающую обновлять выпуск рабочей области. Так как обновление рабочей области является вызовом исправления для объекта рабочей области, это можно сделать, поместив следующее действие в массив `"NotActions"` в определении JSON: 
+Да, можно определить роль, запрещающую обновлять выпуск рабочей области. Так как обновление рабочей области является вызовом исправления для объекта рабочей области, это делается путем размещения следующего действия в `"NotActions"` массиве в определении JSON: 
 
 `"Microsoft.MachineLearningServices/workspaces/write"`
 
@@ -168,9 +168,9 @@ az role definition update --role-definition update_def.json --subscription <sub-
 Для выполнения любой операции, связанной с квотой, в рабочей области требуются разрешения уровня подписки. Это означает, что Настройка квоты на уровне подписки или квоты на уровне рабочей области для управляемых ресурсов вычислений может произойти только при наличии разрешений на запись в области подписки. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Обзор корпоративной безопасности](concept-enterprise-security.md)
+- [Общие сведения об обеспечении безопасности на уровне предприятия](concept-enterprise-security.md)
 - [Безопасный запуск экспериментов и выведение/Оценка в виртуальной сети](how-to-enable-virtual-network.md)
 - [Руководство. Обучение моделей](tutorial-train-models-with-aml.md)
 - [Операции с поставщиками ресурсов](/azure/role-based-access-control/resource-provider-operations#microsoftmachinelearningservices)

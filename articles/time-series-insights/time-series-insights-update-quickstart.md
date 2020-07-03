@@ -9,13 +9,13 @@ manager: cshankar
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 02/07/2020
-ms.openlocfilehash: dc4a8da69b0398c6487008c106a9f5bcdb8a885e
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.date: 04/27/2020
+ms.openlocfilehash: c6cfec1d00fbd5b18e01afb0b51598e615cb0946
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110232"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82189204"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-preview-demo-environment"></a>Краткое руководство. Общие сведения о демонстрационной среде службы "Аналитика временных рядов Azure" (предварительная версия)
 

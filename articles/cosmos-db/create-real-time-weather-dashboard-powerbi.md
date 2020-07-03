@@ -8,10 +8,10 @@ ms.date: 09/04/2019
 ms.author: bharathb
 ms.reviewer: sngun
 ms.openlocfilehash: d225a14edddcad58c08094dbc758d67df8f834e6
-ms.sourcegitcommit: aebe5a10fa828733bbfb95296d400f4bc579533c
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70376597"
 ---
 # <a name="create-a-real-time-dashboard-using-azure-cosmos-db-and-power-bi"></a>Создание панели мониторинга в режиме реального времени с помощью Azure Cosmos DB и Power BI
@@ -23,11 +23,11 @@ ms.locfileid: "70376597"
 Существует несколько способов настройки панелей мониторинга отчетов для данных, хранящихся в Azure Cosmos DB. В зависимости от требований устаревания и размера данных в следующей таблице описывается настройка отчетов для каждого сценария.
 
 
-|Сценарий |Установка |
+|Сценарий |Настройка |
 |---------|---------|
 |1. Создание специальных отчетов (без обновления)    |  [Power BI Azure Cosmos DB соединителя с режимом импорта](powerbi-visualize.md)       |
 |2. Создание специальных отчетов с периодическим обновлением   |  [Power BI Azure Cosmos DB соединителя с режимом импорта (запланированное периодическое обновление)](powerbi-visualize.md)       |
-|3. Отчетность по большим наборам данных (< 10 ГБ)     |  Соединитель Azure Cosmos DB Power BI с добавочным обновлением       |
+|3. отчетность по большим наборам данных (< 10 ГБ)     |  Соединитель Azure Cosmos DB Power BI с добавочным обновлением       |
 |4. Создание отчетов в режиме реального времени в больших наборах данных    |  Соединитель Azure Analysis Services Power BI с прямым запросом + Azure Analysis Services (соединитель Azure Cosmos DB)       |
 |5. Создание отчетов о динамических данных с помощью статистических выражений     |  [Соединитель Spark Power BI с прямым запросом + Azure Databricks + Cosmos DB с помощью соединителя Spark.](https://github.com/Azure/azure-cosmosdb-spark/wiki/Connecting-Cosmos-DB-with-PowerBI-using-spark-and-databricks-premium)       |
 |6. Создание отчетов о динамических данных с помощью статистических выражений в больших наборах данных   |  Power BI Azure Analysis Services Connector с прямым запросом + Azure Analysis Services + Azure Databricks + Cosmos DB соединителя Spark.       |
@@ -70,9 +70,9 @@ Azure Analysis Services предоставляет полностью управ
    
    |Свойство  |Тип данных  |Filter  |
    |---------|---------|---------|
-   |_ts     |   Numeric      |  [_TS] > Duration. Тоталсекондс (RangeStart-#datetime (1970, 1, 1, 0, 0, 0)) и [_TS] < Duration. Тоталсекондс (RangeEnd-#datetime (1970, 1, 1, 0, 0, 0)))       |
-   |Дата (например,-2019-08-19).     |   Строковое      | [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд")        |
-   |Дата (например,-2019-08-11 12:00:00).   |  Строковое       |  [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд чч: мм: СС") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд чч: мм: СС")       |
+   |_ts     |   Числовой      |  [_ts] > Duration. Тоталсекондс (RangeStart-#datetime (1970, 1, 1, 0, 0, 0)) и [_ts] < Duration. Тоталсекондс (RangeEnd-#datetime (1970, 1, 1, 0, 0, 0)))       |
+   |Дата (например,-2019-08-19).     |   Строка      | [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд")        |
+   |Дата (например,-2019-08-11 12:00:00).   |  Строка       |  [Document. Date] > DateTime. Тотекст (RangeStart, "гггг-мм-дд чч: мм: СС") и [Document. Date] < DateTime. Тотекст (RangeEnd, "гггг-мм-дд чч: мм: СС")       |
 
 
 1. **Определение политики обновления** . Определите политику обновления, перейдя на вкладку **Добавочное обновление** **контекстного** меню для таблицы. Настройте политику обновления на **ежедневное** обновление и сохраните данные за прошлый месяц.
@@ -85,7 +85,7 @@ Azure Analysis Services предоставляет полностью управ
 
    ![Загрузка данных и создание отчета](./media/create-real-time-weather-dashboard-powerbi/load-data-generate-report.png)
 
-1. **Публикация отчета в Power BI "Премиум** ". Поскольку добавочное обновление является только расширенным, диалоговое окно публикации позволяет выбрать рабочую область только для емкости Premium. В первом обновлении может потребоваться больше времени для импорта исторических данных. Последующие обновления данных выполняются гораздо быстрее, так как они используют добавочное обновление.
+1. **Публикация отчета в Power BI "Премиум** ". Поскольку добавочное обновление является только расширенным, диалоговое окно публикации позволяет выбрать рабочую область только для емкости Premium. Первое обновление может занять много времени, так как данные импортируются за весь период. Последующие обновления данных выполняются гораздо быстрее, так как они используют добавочное обновление.
 
 
 ## <a name="power-bi-azure-analysis-connector--azure-analysis-services"></a>Power BI соединителя Azure Analysis Azure Analysis Services 
@@ -166,8 +166,8 @@ Azure Analysis Services предоставляет полностью управ
 
    ![Загрузка данных и создание отчетов](./media/create-real-time-weather-dashboard-powerbi/load-data-generate-report.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Power BI см. в статье [Приступая к работе с Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 
-* [Подключение Qlik Sense для Azure Cosmos DB и визуализации данных](visualize-qlik-sense.md)
+* [Подключение Qlik Sense к Azure Cosmos DB и визуализация данных](visualize-qlik-sense.md)

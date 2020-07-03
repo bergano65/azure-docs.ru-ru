@@ -1,5 +1,5 @@
 ---
-title: Федерация нескольких Azure AD с одним экземпляром AD FS - Azure
+title: Федерацию нескольких Azure AD с помощью одного AD FS Azure
 description: Из этого документа вы узнаете, как создать федерацию нескольких экземпляров Azure AD с одним экземпляром AD FS.
 keywords: федерация, ADFS, AD FS, несколько клиентов, один клиент AD FS, один экземпляр ADFS, федерация нескольких клиентов, федерация ADFS с несколькими лесами, AAD Сonnect, федерация, федерация между клиентами
 services: active-directory
@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9122e3a7af2230dc0f68e72b28891d488b01a80a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "65137830"
 ---
 # <a name="federate-multiple-instances-of-azure-ad-with-single-instance-of-ad-fs"></a>Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS
@@ -40,11 +40,11 @@ ms.locfileid: "65137830"
 
 Представьте, что домен contoso.com в Azure Active Directory (contoso.onmicrosoft.com) включен в федерацию локального экземпляра AD FS, установленного в локальной среде Active Directory contoso.com. Fabrikam.com является доменом в fabrikam.onmicrosoft.com Azure Active Directory.
 
-## <a name="step-1-establish-a-two-way-trust"></a>Шаг 1. Установка двустороннего доверия
+## <a name="step-1-establish-a-two-way-trust"></a>Шаг 1. Установка взаимного доверия
  
 Чтобы служба AD FS в contoso.com могла проверять подлинность пользователей в fabrikam.com, требуется взаимное доверие между contoso.com и fabrikam.com. Следуйте рекомендациям, приведенным в этой [статье](https://technet.microsoft.com/library/cc816590.aspx), чтобы создать отношения взаимного доверия.
  
-## <a name="step-2-modify-contosocom-federation-settings"></a>Шаг 2. Изменение параметров федерации contoso.com 
+## <a name="step-2-modify-contosocom-federation-settings"></a>Шаг 2. Изменение параметров федерации contoso.com 
  
 Издателем отдельного домена, включенного в федерацию AD FS, по умолчанию является http\://ADFSServiceFQDN/adfs/services/trust, например `http://fs.contoso.com/adfs/services/trust`. Служба Azure Active Directory требует отдельного издателя для каждого федеративного домена. Так как один и тот же экземпляр AD FS будет включать в федерацию два домена, значение издателя должно быть изменено, чтобы оно было уникальным для каждого домена AD FS, которое входит в федерацию с Azure Active Directory. 
  
@@ -54,9 +54,9 @@ ms.locfileid: "65137830"
  
 Издатель в параметре федерации домена будет изменен на http\://contoso.com/adfs/services/trust, и для проверяющей стороны Azure AD будет добавлено правило утверждения выдачи, чтобы она выдавала правильный идентификатор издателя на основе суффикса имени участника-пользователя.
  
-## <a name="step-3-federate-fabrikamcom-with-ad-fs"></a>Шаг 3. Федерация fabrikam.com с AD FS
+## <a name="step-3-federate-fabrikamcom-with-ad-fs"></a>Шаг 3. Федерация fabrikam.com с AD FS
  
-В сеансе Azure AD PowerShell выполните следующие действия. Подключитесь к службе Azure Active Directory, которая содержит домен fabrikam.com
+В сеансе Azure AD PowerShell подключитесь к службе Azure Active Directory, которая содержит домен fabrikam.com.
 
     Connect-MsolService
 Преобразуйте управляемый домен fabrikam.com в федеративный:

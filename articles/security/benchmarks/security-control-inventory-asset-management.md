@@ -1,27 +1,26 @@
 ---
 title: Управление безопасностью Azure — управление запасами и активами
-description: Управление инвентаризацией и контролем активов
+description: Управление безопасностью Azure инвентаризации и управления активами
 author: msmbaldwin
-manager: rkarlin
 ms.service: security
 ms.topic: conceptual
-ms.date: 12/30/2019
+ms.date: 04/14/2020
 ms.author: mbaldwin
-ms.custom: security-recommendations
-ms.openlocfilehash: 2f24012a69a7673426644a8ded6162cd1021938e
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.custom: security-benchmark
+ms.openlocfilehash: aece7278d134145e00b027c184f3817d5566e1e5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75930061"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81408358"
 ---
 # <a name="security-control-inventory-and-asset-management"></a>Управление безопасностью: Инвентаризация и управление активами
 
-Рекомендации по управлению запасами и активами позволяют сосредоточиться на проблемах, связанных с активностью управления (инвентаризацией, трассировкой и исправлением) всех ресурсов Azure, чтобы предоставить доступ только авторизованным ресурсам, а неавторизованные и неуправляемые ресурсы определено и удалено.
+Рекомендации по управлению запасами и активами касаются проблем, связанных с активностью управления (инвентаризацией, трассировкой и исправлением) всех ресурсов Azure, чтобы получить доступ только к авторизованным ресурсам, а несанкционированные и неуправляемые ресурсы идентифицируются и удаляются.
 
-## <a name="61-use-azure-asset-discovery"></a>6,1. Использование обнаружения ресурсов Azure
+## <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6.1 | 1,1, 1,2, 1,3, 1,4, 9,1, 12,1 | Customer |
 
@@ -29,190 +28,151 @@ ms.locfileid: "75930061"
 
 Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсы, идущие вперед.
 
-Как создавать запросы с помощью графа ресурсов Azure:
+- [Создание запросов с помощью графа ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
 
-https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+- [Просмотр подписок Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
-Как просмотреть подписки Azure:
-
-https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0
-
-Общие сведения об Azure RBAC:
-
-https://docs.microsoft.com/azure/role-based-access-control/overview
+- [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
 ## <a name="62-maintain-asset-metadata"></a>6,2: сохранение метаданных активов
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6.2 | 1.5 | Customer |
 
 Примените теги к ресурсам Azure, предоставив метаданные для логической организации их в таксономию.
 
-Создание и использование тегов:
-
-https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
+- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
 ## <a name="63-delete-unauthorized-azure-resources"></a>6,3: удалите неавторизованные ресурсы Azure
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6.3 | 1.6 | Customer |
 
 Используйте теги, группы управления и отдельные подписки, если это необходимо, для Организации и мониторинга ресурсов. Регулярно выверка инвентаризации и своевременное удаление неавторизованных ресурсов из подписки.
 
-Как создать дополнительные подписки Azure:
+- [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
 
-https://docs.microsoft.com/azure/billing/billing-create-subscription
+- [Создание Группы управления](https://docs.microsoft.com/azure/governance/management-groups/create)
 
-Создание Группы управления:
+- [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
-https://docs.microsoft.com/azure/governance/management-groups/create
+## <a name="64-define-and-maintain-an-inventory-of-approved-azure-resources"></a>6,4: определение и обслуживание инвентаризации утвержденных ресурсов Azure
 
-Создание и использование тегов:
-
-https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
-
-## <a name="64-maintain-an-inventory-of-approved-azure-resources-and-software-titles"></a>6,4: ведение инвентаризации утвержденных ресурсов Azure и наименований программного обеспечения
-
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6.4 | 2.1 | Customer |
 
-Определите утвержденные ресурсы Azure и утвержденное программное обеспечение для ресурсов вычислений.
+Создайте инвентаризацию утвержденных ресурсов Azure и утвержденного программного обеспечения для ресурсов вычислений в соответствии с потребностями Организации.
 
 ## <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: отслеживание неутвержденных ресурсов Azure
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6,5 | 2.3, 2.4 | Customer |
 
 Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в ваших подписках.
 
-Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в своих подписках. &nbsp;убедитесь, что все ресурсы Azure, представленные в окружении, утверждены.
+Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в своих подписках.  Убедитесь, что все ресурсы Azure, представленные в окружении, утверждены.
 
-Как настроить политику Azure и управлять ей:
+- [Настройка и управление политикой Azure](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
-
-Как создавать запросы с помощью Azure Graph:
-
-https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal
+- [Создание запросов с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
 
 ## <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6,6: отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 6.6 | 2.3/2.4 | Customer |
+| 6.6 | 2.3, 2.4 | Customer |
 
 Используйте инвентаризацию виртуальных машин Azure, чтобы автоматизировать сбор сведений обо всех программах на виртуальных машинах. Имя программного обеспечения, версия, издатель и время обновления доступны на портал Azure. Чтобы получить доступ к дате установки и другим сведениям, включите диагностику на уровне гостя и перенесите журналы событий Windows в рабочую область Log Analytics.
 
-Как включить инвентаризацию виртуальных машин Azure:
-
-https://docs.microsoft.com/azure/automation/automation-tutorial-installed-software
+- [Включение инвентаризации виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-installed-software)
 
 ## <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6,7: удаление неутвержденных ресурсов Azure и программных приложений
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6.7 | 2.5 | Customer |
 
 Используйте мониторинг целостности файлов (Отслеживание изменений) и инвентаризации виртуальных машин в центре безопасности Azure для обнаружения всех программ, установленных на виртуальных машинах. Вы можете реализовать собственный процесс удаления неавторизованного программного обеспечения. Кроме того, можно использовать стороннее решение для обнаружения неутвержденного программного обеспечения.
 
-Как использовать мониторинг целостности файлов:
+- [Использование мониторинга целостности файлов](https://docs.microsoft.com/azure/security-center/security-center-file-integrity-monitoring#using-file-integrity-monitoring)
 
-https://docs.microsoft.com/azure/security-center/security-center-file-integrity-monitoring#using-file-integrity-monitoring
+- [Общие сведения об Azure Отслеживание изменений](https://docs.microsoft.com/azure/automation/change-tracking)
 
-Общие сведения о Отслеживание изменений Azure:
-
-https://docs.microsoft.com/azure/automation/change-tracking
-
-Как включить инвентаризацию виртуальных машин Azure:
-
-https://docs.microsoft.com/azure/automation/automation-tutorial-installed-software
+- [Включение инвентаризации виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-installed-software)
 
 ## <a name="68-use-only-approved-applications"></a>6,8: Используйте только утвержденные приложения
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6,8 | 2.6 | Customer |
 
 Используйте адаптивные элементы управления приложениями в центре безопасности Azure, чтобы гарантировать выполнение только авторизованного программного обеспечения и блокирование выполнения всех несанкционированных программ на виртуальных машинах Azure.
 
-Как использовать адаптивные элементы управления приложениями в центре безопасности Azure:
-
-https://docs.microsoft.com/azure/security-center/security-center-adaptive-application
+- [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
 
 ## <a name="69-use-only-approved-azure-services"></a>6,9: Используйте только утвержденные службы Azure
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6.9 | 2.6 | Customer |
 
 Используйте политику Azure, чтобы ограничить службы, которые можно подготавливать в вашей среде.
 
-Как настроить политику Azure и управлять ей:
+- [Настройка и управление политикой Azure](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage
+- [Как отказаться от определенного типа ресурса с помощью политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
 
-Как отказаться от определенного типа ресурса с помощью политики Azure:
+## <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: ведение инвентаризации утвержденных наименований программного обеспечения
 
-https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types
-
-## <a name="610-implement-approved-application-list"></a>6,10: реализация списка утвержденных приложений
-
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 6.1 | 2.7 | Customer |
+| 6.10 | 2.7 | Customer |
 
 Используйте адаптивные элементы управления приложениями в центре безопасности Azure, чтобы указать, к каким типам файлов правилу может применяться правило.
 
 Реализуйте сторонние решения, если это не соответствует требованиям.
 
-Как использовать адаптивные элементы управления приложениями в центре безопасности Azure:
+- [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
 
-https://docs.microsoft.com/azure/security-center/security-center-adaptive-application
+## <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: ограничьте возможность пользователей работать с Azure Resource Manager
 
-## <a name="611-limit-users-ability-to-interact-with-azure-resource-manager-via-scripts"></a>6,11: ограничьте возможность пользователей взаимодействовать с Azure Resource Manager с помощью скриптов
-
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 6.11 | 2.8 | Customer |
+| 6.11 | 2,9 | Customer |
 
-Используйте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с Azure Resource Manager путем настройки&quot; &quot;ного доступа для приложения Microsoft Azure&quot; управления &quot;.
+Используйте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с диспетчером ресурсов Azure, настроив "блокировать доступ" для приложения "Microsoft Azure Management".
 
-Как настроить условный доступ для блокировки доступа к Azure Resource Manager:
-
-https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management
+- [Настройка условного доступа для блокировки доступа к диспетчеру ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
 
 ## <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6,12: ограничьте возможность пользователей выполнять сценарии в ресурсах вычислений
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 6,12 | 2.8 | Customer |
+| 6,12 | 2,9 | Customer |
 
-Используйте конфигурации операционной системы или сторонние ресурсы, чтобы ограничить возможность пользователей выполнять сценарии в ресурсах вычислений Azure.
+В зависимости от типа сценариев вы можете использовать конфигурации операционной системы или сторонние ресурсы, чтобы ограничить возможность пользователей выполнять сценарии в ресурсах вычислений Azure.  Можно также использовать адаптивные элементы управления приложениями центра безопасности Azure, чтобы гарантировать выполнение только авторизованного программного обеспечения и блокирование выполнения всех несанкционированных программ на виртуальных машинах Azure.
 
-Например, управление выполнением скриптов PowerShell в средах Windows:
+- [Управление выполнением скриптов PowerShell в средах Windows](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
 
-https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6
+- [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
 
 ## <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: физическое или логическое разделение приложений с высоким риском
 
-| Идентификатор Azure | Идентификаторы CIS | Ответственность |
+| Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6,13 | 2,9 | Customer |
 
 Программное обеспечение, необходимое для бизнес-операций, но которое может повысить риск для Организации, должно быть изолировано в собственной виртуальной машине и (или) виртуальной сети, а также быть достаточно защищено с помощью брандмауэра Azure или группы безопасности сети.
 
-Создание виртуальной сети.
+- [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
-https://docs.microsoft.com/azure/virtual-network/quick-create-portal
+- [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
 
-Создание NSG с конфигурацией безопасности:
 
-https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic
+## <a name="next-steps"></a>Дальнейшие шаги
 
-## <a name="next-steps"></a>Дальнейшие действия
-
-См. следующий контроль безопасности: [Безопасная конфигурация](security-control-secure-configuration.md)
+- См. следующий контроль безопасности: [Безопасная конфигурация](security-control-secure-configuration.md)

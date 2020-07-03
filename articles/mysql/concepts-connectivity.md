@@ -2,17 +2,17 @@
 title: Временные ошибки подключения — база данных Azure для MySQL
 description: Узнайте, как управлять временными ошибками подключения и эффективно подключаться к базе данных Azure для MySQL.
 keywords: подключение к MySQL, строка подключения, проблемы с подключением, временная ошибка, ошибка подключения, эффективная связь
-author: jan-eng
-ms.author: janeng
+author: ajlam
+ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: d91048c52794869b5db1467a3456ca58e703d1ad
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.date: 3/18/2020
+ms.openlocfilehash: cb5adb3787176e3bdbfb7897aa7d7deb9cc2dae7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719931"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82100147"
 ---
 # <a name="handle-transient-errors-and-connect-efficiently-to-azure-database-for-mysql"></a>Обрабатывайте временные ошибки и эффективно Подключайтесь к базе данных Azure для MySQL
 
@@ -110,6 +110,6 @@ public class SimpleTestOnBorrowExample {
   }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте, как устранить проблемы с подключением к Базе данных Azure для MySQL](howto-troubleshoot-common-connection-issues.md)

@@ -16,12 +16,12 @@ ms.date: 05/31/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e822906a072ec8244c7108e98289482adebb5a7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0775e717c0610e122bb31f752beecd2c97599053
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60245119"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82201046"
 ---
 # <a name="multiple-domain-support-for-federating-with-azure-ad"></a>Поддержка нескольких доменов для федерации с Azure AD
 В следующей документации представлено руководство по использованию нескольких доменов верхнего уровня и поддоменов в федерации с Office 365 или доменами Azure AD.
@@ -69,7 +69,7 @@ ms.locfileid: "60245119"
 
 Таким образом, при проверке подлинности в Azure AD или Office 365 для обнаружения домена в Azure AD используется элемент IssuerUri в маркере пользователя.  Если совпадение не найдено, аутентификация завершится ошибкой.
 
-Например, если UPN пользователя имеет значение bsimon@bmcontoso.com, элементу IssuerUri в маркере, который выпускается AD FS, будет присвоено значение <http://bmcontoso.com/adfs/services/trust>. Этот элемент будет соответствовать конфигурации Azure AD, и аутентификация пройдет успешно.
+Например, если UPN пользователя имеет значение bsimon@bmcontoso.com, элементу IssuerUri в маркере, который выпускается AD FS, будет присвоено значение `http://bmcontoso.com/adfs/services/trust`. Этот элемент будет соответствовать конфигурации Azure AD, и аутентификация пройдет успешно.
 
 Ниже приведено пользовательское правило утверждения, которое реализует эту логику.
 
@@ -82,7 +82,7 @@ ms.locfileid: "60245119"
 >
 
 ## <a name="how-to-update-the-trust-between-ad-fs-and-azure-ad"></a>Обновление отношения доверия между службами федерации Active Directory и Azure AD
-Если вы не настроили федеративное отношение доверия между AD FS и своим экземпляром Azure AD, может потребоваться создать это отношение доверия снова.  Причина этого в том, что при изначальной настройке без параметра `-SupportMultipleDomain` в IssuerUri записывается значение по умолчанию.  На снимке экрана ниже вы увидите, что для IssuerUri задано значение https://adfs.bmcontoso.com/adfs/services/trust.
+Если вы не настроили федеративное отношение доверия между AD FS и своим экземпляром Azure AD, может потребоваться создать это отношение доверия снова.  Причина этого в том, что при изначальной настройке без параметра `-SupportMultipleDomain` в IssuerUri записывается значение по умолчанию.  На снимке экрана ниже вы увидите, что для IssuerUri задано значение `https://adfs.bmcontoso.com/adfs/services/trust`.
 
 Если добавить новый домен на портале Azure AD, а затем попытаться преобразовать его с помощью `Convert-MsolDomaintoFederated -DomainName <your domain>`, то произойдет следующая ошибка.
 
@@ -126,18 +126,18 @@ ms.locfileid: "60245119"
 5. Нажмите "Установить".
 
 ### <a name="verify-the-new-top-level-domain"></a>Проверка нового домена верхнего уровня
-С помощью команды PowerShell `Get-MsolDomainFederationSettings -DomainName <your domain>`можно просмотреть обновленный IssuerUri.  На приведенном ниже снимке экрана показано, что настройки федерации для исходного домена http://bmcontoso.com/adfs/services/trust были обновлены.
+С помощью команды PowerShell `Get-MsolDomainFederationSettings -DomainName <your domain>`можно просмотреть обновленный IssuerUri.  На приведенном ниже снимке экрана показано, что настройки федерации для исходного домена `http://bmcontoso.com/adfs/services/trust` были обновлены.
 
 ![Get-MsolDomainFederationSettings](./media/how-to-connect-install-multiple-domains/MsolDomainFederationSettings.png)
 
-И для IssuerUri нового домена задано значение https://bmfabrikam.com/adfs/services/trust.
+И для IssuerUri нового домена задано значение `https://bmfabrikam.com/adfs/services/trust`.
 
 ![Get-MsolDomainFederationSettings](./media/how-to-connect-install-multiple-domains/settings2.png)
 
 ## <a name="support-for-subdomains"></a>Поддержка поддоменов
 При добавлении поддомена он унаследует параметры родительского домена из-за особенностей обработки доменов Azure AD.  Поэтому значение IssuerUri должно совпадать со значением этого параметра у родительских элементов.
 
-Давайте предположим, что у меня был домен bmcontoso.com, а затем я добавил поддомен corp.bmcontoso.com.  Значением IssuerUri для пользователя из corp.bmcontoso.com должно быть **http://bmcontoso.com/adfs/services/trust.**  Однако реализованное выше стандартное правило для Azure AD создает маркер с издателем **http://corp.bmcontoso.com/adfs/services/trust.** , который не будет соответствовать необходимому значению для домена, и аутентификация завершится неудачно.
+Давайте предположим, что у меня был домен bmcontoso.com, а затем я добавил поддомен corp.bmcontoso.com.  IssuerUri для пользователя из corp.bmcontoso.com должен быть **`http://bmcontoso.com/adfs/services/trust`**.  Однако стандартное правило, реализованное выше для Azure AD, создаст маркер с издателем как **`http://corp.bmcontoso.com/adfs/services/trust`**. , который не будет соответствовать необходимому значению для домена, и аутентификация завершится неудачно.
 
 ### <a name="how-to-enable-support-for-subdomains"></a>Как включить поддержку для поддоменов
 Чтобы обойти это поведение, необходимо обновить отношение доверия проверяющей стороны AD FS для Microsoft Online.  Для этого необходимо настроить пользовательское правило утверждения так, чтобы оно удаляло поддомены из суффикса UPN пользователя при создании настраиваемого значения элемента Issuer.
@@ -166,11 +166,11 @@ ms.locfileid: "60245119"
 
 5. Нажмите кнопку "ОК".  Нажмите кнопку "Применить".  Нажмите кнопку "ОК".  Откройте оснастку управления AD FS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
 
-Подробные сведения об этих функциях, включенных при установке, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health](how-to-connect-health-sync.md).
+Дополнительные сведения о функциях, которые были включены в процессе установки, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
 
 Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
 
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

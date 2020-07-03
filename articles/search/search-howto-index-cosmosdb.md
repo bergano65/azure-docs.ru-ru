@@ -9,14 +9,14 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/02/2020
-ms.openlocfilehash: ef136345c7c41c720efd3c79923b6ce646de41e2
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: d1723b6c5d56554fbff576f6a07e37455845bda4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75642171"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79283008"
 ---
-# <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Индексирование Cosmos DB данных с помощью индексатора в Azure Когнитивный поиск 
+# <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>How to index Cosmos DB data using an indexer in Azure Cognitive Search (Индексирование данных Cosmos DB с помощью индексатора в службе "Когнитивный поиск Azure") 
 
 > [!IMPORTANT] 
 > API SQL общедоступен.
@@ -29,13 +29,13 @@ ms.locfileid: "75642171"
 
 Так как терминология может быть запутанной, стоит отметить, что [Azure Cosmos DB индексирование](https://docs.microsoft.com/azure/cosmos-db/index-overview) и [индексирование Azure когнитивный Поиск](search-what-is-an-index.md) являются различными операциями, уникальными для каждой службы. Перед началом индексирования Azure Когнитивный поиск необходимо, чтобы база данных Azure Cosmos DB уже существовала и содержала данные.
 
-Индексатор Cosmos DB в Azure Когнитивный поиск может выполнять обход [Azure Cosmos DB элементов](https://docs.microsoft.com/azure/cosmos-db/databases-containers-items#azure-cosmos-items) , доступ к которым осуществляется через различные протоколы.
+Индексатор Cosmos DB в Azure Когнитивный поиск может выполнять обход [Azure Cosmos DB элементов](https://docs.microsoft.com/azure/cosmos-db/databases-containers-items#azure-cosmos-items) , доступ к которым осуществляется через различные протоколы. 
 
-+ Для [API SQL](https://docs.microsoft.com/azure/cosmos-db/sql-api-query-reference), который является общедоступным, можно использовать [портал](#cosmos-indexer-portal), [REST API](https://docs.microsoft.com/rest/api/searchservice/indexer-operations)или [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet).
++ Для [API SQL](https://docs.microsoft.com/azure/cosmos-db/sql-api-query-reference), который является общедоступным, можно использовать [портал](#cosmos-indexer-portal), [REST API](https://docs.microsoft.com/rest/api/searchservice/indexer-operations)или [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer?view=azure-dotnet) , чтобы создать источник данных и индексатор.
 
-+ Для [API MongoDB (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction) и [API Gremlin (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/graph-introduction)можно использовать либо [портал](#cosmos-indexer-portal) , либо [REST API версии 2019-05-06-Preview](search-api-preview.md) в вызове [CREATE индексатора (RESTful)](https://docs.microsoft.com/rest/api/searchservice/create-indexer) для создания индексатора.
++ Для [MONGODB API (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)можно создать источник данных и индексатор с помощью [портала](#cosmos-indexer-portal) или [REST API версии 2019-05-06-Preview](search-api-preview.md) .
 
-+ Для [API Cassandra (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction)можно использовать только [REST API версии 2019-05-06-Preview](search-api-preview.md) в вызове [CREATE индексатора (RESTful)](https://docs.microsoft.com/rest/api/searchservice/create-indexer) .
++ Для [API Cassandra (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction) и [API Gremlin (Предварительная версия)](https://docs.microsoft.com/azure/cosmos-db/graph-introduction)для создания источника данных и индексатора можно использовать только [REST API версии 2019-05-06-Preview](search-api-preview.md) .
 
 
 > [!Note]
@@ -53,25 +53,25 @@ ms.locfileid: "75642171"
 
 Мы рекомендуем использовать один и тот же регион или расположение для Когнитивный поиск Azure и Azure Cosmos DB для снижения задержки и избежания расходов на пропускную способность.
 
-### <a name="1---prepare-source-data"></a>1\. Подготовка исходных данных
+### <a name="1---prepare-source-data"></a>1. Подготовка исходных данных
 
 У вас должна быть учетная запись Cosmos DB, Azure Cosmos DBная база данных, сопоставленная с API SQL, API MongoDB (Предварительная версия) или API Gremlin (Предварительная версия) и содержимое в базе данных.
 
 Убедитесь, что база данных Cosmos DB содержит данные. [Мастер импорта данных](search-import-data-portal.md) считывает метаданные и выполняет выборку данных для определения схемы индекса, но также загружает данные из Cosmos DB. Если данные отсутствуют, работа мастера завершается с ошибкой "ошибка при обнаружении схемы индекса из источника данных: не удалось построить индекс прототипа, так как DataSource ' емптиколлектион ' не вернул данные".
 
-### <a name="2---start-import-data-wizard"></a>2\. Запуск мастера импорта данных
+### <a name="2---start-import-data-wizard"></a>2. Запуск мастера импорта данных
 
 Мастер можно [запустить](search-import-data-portal.md) на панели команд на странице службы когнитивный Поиск Azure или при подключении к Cosmos DB API SQL. Вы можете щелкнуть **Добавить когнитивный Поиск Azure** в разделе **Параметры** в левой области навигации учетной записи Cosmos DB.
 
    ![Команда "Импорт данных" на портале](./media/search-import-data-portal/import-data-cmd2.png "Запуск мастера импорта данных")
 
-### <a name="3---set-the-data-source"></a>3\. Настройка источника данных
+### <a name="3---set-the-data-source"></a>3. Настройка источника данных
 
 На странице **источник данных** должен быть **Cosmos DB**источник со следующими характеристиками:
 
 + **Name** — это имя объекта источника данных. После создания вы можете выбрать его для других рабочих нагрузок.
 
-+ **Cosmos DB учетная запись** должна быть основной или вторичной строкой подключения от Cosmos DB с `AccountEndpoint` и `AccountKey`. Для MongoDB Collections добавьте **типа API = MongoDB** в конец строки подключения и отделите его от строки подключения точкой с запятой. Для API Gremlin и API Cassandra используйте инструкции для [REST API](#cosmosdb-indexer-rest).
++ **Cosmos DB учетная запись** должна быть основной или вторичной строкой подключения от Cosmos DB `AccountEndpoint` с помощью `AccountKey`и. Для MongoDB Collections добавьте **типа API = MongoDB** в конец строки подключения и отделите его от строки подключения точкой с запятой. Для API Gremlin и API Cassandra используйте инструкции для [REST API](#cosmosdb-indexer-rest).
 
 + **База данных** — это существующая база данных из учетной записи. 
 
@@ -81,13 +81,13 @@ ms.locfileid: "75642171"
 
    ![Определение источника данных Cosmos DB](media/search-howto-index-cosmosdb/cosmosdb-datasource.png "Определение источника данных Cosmos DB")
 
-### <a name="4---skip-the-enrich-content-page-in-the-wizard"></a>4\. Пропустите страницу "обогащение содержимого" в мастере
+### <a name="4---skip-the-enrich-content-page-in-the-wizard"></a>4. Пропустите страницу "обогащение содержимого" в мастере
 
 Добавление неученых навыков (или обогащения) не является требованием импорта. Если нет необходимости [добавлять обогащение искусственного интеллекта](cognitive-search-concept-intro.md) в конвейер индексирования, этот шаг следует пропустить.
 
 Чтобы пропустить этот шаг, щелкните синюю кнопку в нижней части страницы для "Далее" и "пропустить".
 
-### <a name="5---set-index-attributes"></a>5\. Настройка атрибутов индекса
+### <a name="5---set-index-attributes"></a>5. Настройка атрибутов индекса
 
 На странице **Индекс** вы увидите список полей с типом данных и ряд флажков для настройки атрибутов индекса. Мастер может создать список полей на основе метаданных и выборки исходных данных. 
 
@@ -99,7 +99,7 @@ ms.locfileid: "75642171"
 
    ![Определение индекса Cosmos DB](media/search-howto-index-cosmosdb/cosmosdb-index-schema.png "Определение индекса Cosmos DB")
 
-### <a name="6---create-indexer"></a>6\. Создание индексатора
+### <a name="6---create-indexer"></a>6. Создание индексатора
 
 Полностью настроенный мастер создает три разных объекта в службе поиска. Объект источника данных и объект индекса сохраняются как именованные ресурсы в службе Когнитивный поиск Azure. На последнем шаге создает объект индексатора. Если присвоить индексатору имя, он будет существовать как отдельный ресурс, который можно запланировать и контролировать независимо от индекса и объекта источника данных, созданных в том же процессе мастера.
 
@@ -128,9 +128,9 @@ ms.locfileid: "75642171"
 Ранее в этой статье упоминалось, что [Azure Cosmos DB индексирование](https://docs.microsoft.com/azure/cosmos-db/index-overview) и индексирование когнитивный Поиск индексированием [Azure](search-what-is-an-index.md) являются разными операциями. Для Cosmos DB индексирования по умолчанию все документы автоматически индексируются, за исключением API Cassandra. При отключении автоматического индексирования доступ к документам можно получить только через свои собственные ссылки или запросы с помощью идентификатора документа. Для индексирования Когнитивный поиск Azure Cosmos DB автоматическое индексирование должно быть включено в коллекции, которая будет индексироваться Когнитивный поиск Azure. При регистрации в предварительной версии индексатора Cosmos DB API Cassandra вам будут предоставлены инструкции по настройке индексирования Cosmos DB.
 
 > [!WARNING]
-> Azure Cosmos DB — это база данных DocumentDB нового поколения. Ранее с API версии **2017-11-11** можно было использовать синтаксис `documentdb`. Это означало, что можно указать тип источника данных `cosmosdb` или `documentdb`. Начиная с API версии **2019-05-06** , API-интерфейсы и портал Azure когнитивный Поиск поддерживают только синтаксис `cosmosdb`, как описано в этой статье. Это означает, что тип источника данных должен `cosmosdb`, если вы хотите подключиться к конечной точке Cosmos DB.
+> Azure Cosmos DB — это база данных DocumentDB нового поколения. Ранее с API версии **2017-11-11** можно было использовать `documentdb` синтаксис. Это означало, что можно указать тип источника данных в `cosmosdb` виде `documentdb`или. Начиная с API версии **2019-05-06** , API-интерфейсы и портал Azure когнитивный Поиск поддерживают только `cosmosdb` синтаксис, описанный в этой статье. Это означает, что тип источника данных должен `cosmosdb` иметь значение, если вы хотите подключиться к конечной точке Cosmos DB.
 
-### <a name="1---assemble-inputs-for-the-request"></a>1\. формирование входных данных для запроса
+### <a name="1---assemble-inputs-for-the-request"></a>1. формирование входных данных для запроса
 
 Для каждого запроса необходимо указать имя службы и ключ администратора для Azure Когнитивный поиск (в заголовке POST), а также имя и ключ учетной записи хранения для хранилища BLOB-объектов. Вы можете использовать [POST](search-get-started-postman.md) для отправки HTTP-запросов в Azure когнитивный Поиск.
 
@@ -148,7 +148,7 @@ ms.locfileid: "75642171"
 
 3. Перейдите на страницы портала для учетной записи хранения Cosmos. В области навигации слева в разделе **Параметры**щелкните **ключи**. На этой странице представлен URI, два набора строк подключения и два набора ключей. Скопируйте одну из строк подключения в Блокнот.
 
-### <a name="2---create-a-data-source"></a>2\. Создание источника данных
+### <a name="2---create-a-data-source"></a>2. Создание источника данных
 
 **Источник данных** указывает данные для индексирования, учетные данные и политики для обнаружения изменений в данных (например, измененные или удаленные документы в коллекции). Источник данных определяется как независимый ресурс, который может использоваться несколькими индексаторами.
 
@@ -173,12 +173,12 @@ ms.locfileid: "75642171"
 
 Текст запроса содержит определение источника данных, который должен включать следующие поля.
 
-| Поле   | Description |
+| Поле   | Описание |
 |---------|-------------|
 | **name** | Обязательный элемент. Выберите любое имя, представляющее объект источника данных. |
 |**type**| Обязательный элемент. Этот параметр должен содержать значение `cosmosdb`. |
-|**credentials** | Обязательный элемент. Должна быть Cosmos DB строкой подключения.<br/>Для коллекций SQL строки подключения имеют следующий формат: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/><br/>Для MongoDB Collections добавьте **типа API = MongoDB** в строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/><br/>Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для графов Gremlin и таблиц Cassandra Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
-| **container** | В данной вкладке содержатся следующие элементы. <br/>**name**: обязательное поле. Укажите идентификатор коллекции баз данных для индексирования.<br/>**query**: необязательное поле. Можно указать запрос на сведение произвольного документа JSON в плоскую схему, которую Azure Когнитивный поиск может индексировать.<br/>Для API MongoDB, API Gremlin и API Cassandra запросы не поддерживаются. |
+|**информации** | Обязательный элемент. Должна быть Cosmos DB строкой подключения.<br/>Для коллекций SQL строки подключения имеют следующий формат:`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/><br/> Для коллекций MongoDB добавьте **ApiKind=MongoDb** в строку подключения: <br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/><br/>Чтобы получить доступ к предварительной версии и сведения о том, как отформатировать учетные данные, для графов Gremlin и таблиц Cassandra Зарегистрируйте [предварительную версию для создания условного индексатора](https://aka.ms/azure-cognitive-search/indexer-preview) .<br/><br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если указать номер порта, Когнитивный поиск Azure не сможет индексировать базу данных Azure Cosmos DB.|
+| **контейнера** | В данной вкладке содержатся следующие элементы. <br/>**имя**: обязательное. Укажите идентификатор коллекции баз данных для индексирования.<br/>**query**: необязательное поле. Можно указать запрос на сведение произвольного документа JSON в плоскую схему, которую Azure Когнитивный поиск может индексировать.<br/>Для API MongoDB, API Gremlin и API Cassandra запросы не поддерживаются. |
 | **датачанжедетектионполици** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
 |**датаделетиондетектионполици** | Необязательный параметр. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
 
@@ -186,7 +186,7 @@ ms.locfileid: "75642171"
 Вы можете указать SQL-запрос для преобразования вложенных свойств или массивов в плоскую структуру, проецирования свойств JSON, а также для фильтрации данных, подлежащих индексированию. 
 
 > [!WARNING]
-> Пользовательские запросы не поддерживаются для **API MongoDB**, **api Gremlin**и **API Cassandra**: параметру `container.query` должно быть присвоено значение null или опущено. Если вам нужно использовать пользовательский запрос, сообщите нам об этом через сайт [User Voice](https://feedback.azure.com/forums/263029-azure-search).
+> Пользовательские запросы не поддерживаются для **API MongoDB**, **API Gremlin**и **API Cassandra**: `container.query` параметр должен иметь значение null или быть пропущен. Если вам нужно использовать пользовательский запрос, сообщите нам об этом через сайт [User Voice](https://feedback.azure.com/forums/263029-azure-search).
 
 Пример документа:
 
@@ -219,7 +219,7 @@ ms.locfileid: "75642171"
     SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @HighWaterMark ORDER BY c._ts
 
 
-### <a name="3---create-a-target-search-index"></a>3\. Создание целевого индекса поиска 
+### <a name="3---create-a-target-search-index"></a>3. Создание целевого индекса поиска 
 
 [Создайте целевой индекс Azure когнитивный Поиск](/rest/api/searchservice/create-index) , если он еще не создан. В следующем примере создается индекс с полем ID и Description:
 
@@ -247,9 +247,9 @@ ms.locfileid: "75642171"
 Убедитесь, что схема целевого индекса совместима с исходными документами JSON или выходными данными настраиваемой проекции запроса.
 
 > [!NOTE]
-> Для секционированных коллекций ключ документа по умолчанию — это свойство `_rid` Azure Cosmos DB, которое Azure Когнитивный поиск автоматически переименовывается в `rid`, поскольку имена полей не могут начинаться с символа подчеркивания. Кроме того, Azure Cosmos DB `_rid` значения содержат символы, недопустимые в ключах Azure Когнитивный поиск. Поэтому значения `_rid` представлены в кодировке Base64.
+> Для секционированных коллекций ключ документа по умолчанию — это `_rid` свойство Azure Cosmos DB, которое Azure когнитивный Поиск автоматически переименовывает в `rid` , так как имена полей не могут начинаться с символа подчеркивания. Кроме того, `_rid` Azure Cosmos DB значения содержат символы, недопустимые в ключах когнитивный Поиск Azure. Поэтому значения `_rid` представлены в кодировке Base64.
 > 
-> Для коллекций MongoDB Azure Когнитивный поиск автоматически переименовывает свойство `_id` в `id`.  
+> Для коллекций MongoDB Azure Когнитивный поиск автоматически переименовывает `_id` свойство в. `id`  
 
 ### <a name="mapping-between-json-data-types-and-azure-cognitive-search-data-types"></a>Сопоставление типов данных JSON и типов данных Когнитивный поиск Azure
 | Тип данных JSON | Совместимые типы полей целевого индекса |
@@ -257,13 +257,13 @@ ms.locfileid: "75642171"
 | Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| String |Edm.String |
+| Строка |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
-| Другие объекты JSON |Н/Д |
+| Другие объекты JSON |Недоступно |
 
-### <a name="4---configure-and-run-the-indexer"></a>4\. Настройка и запуск индексатора
+### <a name="4---configure-and-run-the-indexer"></a>4. Настройка и запуск индексатора
 
 Когда индекс и источник данных уже созданы, можно создать индексатор:
 
@@ -297,7 +297,7 @@ ms.locfileid: "75642171"
 
 ## <a name="indexing-changed-documents"></a>Индексация измененных документов
 
-Политика обнаружения изменения данных предназначена для эффективного определения измененных элементов данных. В настоящее время единственной поддерживаемой политикой является [`HighWaterMarkChangeDetectionPolicy`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.highwatermarkchangedetectionpolicy) , использующая свойство `_ts` (timestamp), предоставляемое Azure Cosmos DB, которое указывается следующим образом:
+Политика обнаружения изменения данных предназначена для эффективного определения измененных элементов данных. В настоящее время единственной поддерживаемой политикой является [`HighWaterMarkChangeDetectionPolicy`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.highwatermarkchangedetectionpolicy) использование свойства `_ts` (timestamp), предоставленного Azure Cosmos DB, которое указывается следующим образом:
 
     {
         "@odata.type" : "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy",
@@ -316,7 +316,7 @@ ms.locfileid: "75642171"
 
 Чтобы обеспечить инкрементное индексирование при использовании пользовательского запроса, убедитесь, что запрос упорядочивает результаты по столбцу `_ts`. Это позволяет периодически проверять, что Когнитивный поиск Azure использует для обеспечения инкрементного хода выполнения в случае сбоев.   
 
-В некоторых случаях, даже если запрос содержит предложение `ORDER BY [collection alias]._ts`, Azure Когнитивный поиск может не определить, что запрос упорядочен по `_ts`. Вы можете сообщить Azure Когнитивный поиск, что результаты упорядочены с помощью свойства конфигурации `assumeOrderByHighWaterMarkColumn`. Чтобы сделать это, создайте или обновите индексатор, как показано в этом примере: 
+В некоторых случаях, даже если запрос содержит `ORDER BY [collection alias]._ts` предложение, когнитивный Поиск Azure не может определить, что запрос упорядочен по. `_ts` Вы можете сообщить Azure Когнитивный поиск, что результаты упорядочены с помощью `assumeOrderByHighWaterMarkColumn` свойства Configuration. Чтобы сделать это, создайте или обновите индексатор, как показано в этом примере: 
 
     {
      ... other indexer definition properties
@@ -362,7 +362,7 @@ ms.locfileid: "75642171"
         }
     }
 
-## <a name="NextSteps"></a>Следующие шаги
+## <a name="next-steps"></a><a name="NextSteps"></a>Следующие шаги
 
 Поздравляем! Вы узнали, как интегрировать Azure Cosmos DB с Azure Когнитивный поиск с помощью индексатора.
 

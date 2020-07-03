@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/12/2018
+ms.date: 04/22/2020
 ms.author: spelluru
-ms.openlocfilehash: 09b93cc1d1f05e185a1550fb8141423447e802b5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 44050ab9367572a8160f6e268781478ca3313419
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64730603"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82100861"
 ---
 # <a name="azure-powershell-samples-for-azure-lab-services"></a>Примеры Azure PowerShell для Служб лабораторий Azure
 
@@ -25,9 +25,9 @@ ms.locfileid: "64730603"
 
 | |  |
 |---|---|
-|[Добавление внешнего пользователя в лабораторию](scripts/add-external-user-to-lab.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот сценарий PowerShell добавляет внешнего пользователя в лабораторию в Azure DevTest Labs. |
-|[Добавление образов Marketplace в лабораторию](scripts/add-marketplace-images-to-lab.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот сценарий PowerShell добавляет образы marketplace в лабораторию в Azure DevTest Labs. |
-|[Создание пользовательского образа из виртуального жесткого диска](scripts/create-custom-image-from-vhd.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот сценарий PowerShell создает пользовательский образ в лаборатории в Azure DevTest Labs. |
-|[Создание пользовательской роли в лаборатории](scripts/create-custom-role-in-lab.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот сценарий PowerShell создает пользовательскую роль в лаборатории в службе "Службы лабораторий Azure". |
-|[Устанавливает допустимые размеры виртуальных машин в лаборатории](scripts/set-allowed-vm-sizes-in-lab.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот сценарий PowerShell задает допустимые размеры виртуальных машин в лаборатории. |
+|[Добавление внешнего пользователя в лабораторию](scripts/add-external-user-to-lab.md)| Этот сценарий PowerShell добавляет внешнего пользователя в лабораторию в Azure DevTest Labs. |
+|[Добавление образов Marketplace в лабораторию](scripts/add-marketplace-images-to-lab.md)| Этот сценарий PowerShell добавляет образы marketplace в лабораторию в Azure DevTest Labs. |
+|[Создание пользовательского образа из виртуального жесткого диска](scripts/create-custom-image-from-vhd.md)| Этот сценарий PowerShell создает пользовательский образ в лаборатории в Azure DevTest Labs. |
+|[Создание пользовательской роли в лаборатории](scripts/create-custom-role-in-lab.md)| Этот сценарий PowerShell создает пользовательскую роль в лаборатории в службе "Службы лабораторий Azure". |
+|[Устанавливает допустимые размеры виртуальных машин в лаборатории](scripts/set-allowed-vm-sizes-in-lab.md)| Этот сценарий PowerShell задает допустимые размеры виртуальных машин в лаборатории. |
 

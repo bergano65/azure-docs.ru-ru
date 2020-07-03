@@ -4,15 +4,15 @@ description: Узнайте, как функция арксинус (ASIN) SQL S
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/04/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 3e790eb5ae5eb780637b199a1a65dec2dd02d1bc
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 8b70738a439b6c64a84a63adf63c83995530e92e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74871744"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302701"
 ---
 # <a name="asin-azure-cosmos-db"></a>ASIN (Azure Cosmos DB)
  Возвращает угол в радианах, синус которого равен указанному числовому выражению. Также называется арксинусом.  
@@ -28,13 +28,13 @@ ASIN(<numeric_expr>)
 *numeric_expr*  
    Числовое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере возвращается `ASIN`-1.  
+  В следующем примере возвращается значение `ASIN` , равное-1.  
   
 ```sql
 SELECT ASIN(-1) AS asin  
@@ -46,8 +46,12 @@ SELECT ASIN(-1) AS asin
 [{"asin": -1.5707963267948966}]  
 ```  
 
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

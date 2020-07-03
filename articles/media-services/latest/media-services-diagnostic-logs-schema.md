@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
 ms.openlocfilehash: 37baed076ca074c1d558af36649e90959a0034c9
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75750872"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
@@ -38,13 +38,13 @@ ms.locfileid: "75750872"
 
 Эти свойства относятся к схеме журнала доставки ключей.
 
-|Имя|Description|
+|Имя|Описание|
 |---|---|
 |keyId|ИДЕНТИФИКАТОР запрошенного ключа.|
 |keyType|Может принимать одно из следующих значений: "Clear" (без шифрования), "FairPlay", "PlayReady" или "Widevine".|
 |policyName|Azure Resource Manager имя политики.|
 |tokenType|Тип токена.|
-|statusMessage|Сообщение о состоянии.|
+|statusMessage|Сообщение состояния.|
 
 ### <a name="examples"></a>Примеры
 
@@ -108,7 +108,7 @@ ms.locfileid: "75750872"
 } 
 ```
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 

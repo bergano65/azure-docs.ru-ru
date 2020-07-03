@@ -8,7 +8,7 @@
   expanded: true
   items:
     - name: Монитор подключений (предварительная версия)
-      href: connection-monitor-2-preview.md
+      href: connection-monitor-preview.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью портала
       href: diagnose-vm-network-traffic-filtering-problem.md
     - name: Диагностика проблем с фильтрацией трафика виртуальной машины с помощью PowerShell
@@ -118,6 +118,8 @@
                   href: traffic-analytics-faq.md
                 - name: Схема и агрегирование данных
                   href: traffic-analytics-schema.md
+                - name: "Обновление схемы (август 2019\_г.)"
+                  href: traffic-analytics-schema-update.md
             - name: С помощью Power BI
               href: network-watcher-visualize-nsg-flow-logs-power-bi.md
             - name: Использование Elastic Stack
@@ -171,7 +173,7 @@
     - name: .NET
       href: /dotnet/api/overview/azure/virtual-network
     - name: Node.js
-      href: /javascript/api/azure-arm-network
+      href: /javascript/api/@azure/arm-network
     - name: REST
       href: /rest/api/network-watcher/
 - name: Ресурсы
@@ -180,8 +182,8 @@
       href: frequently-asked-questions.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/network-watcher/'
     - name: Обновления службы

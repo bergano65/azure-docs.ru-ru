@@ -1,18 +1,16 @@
 ---
 title: Клонирование приложения с помощью PowerShell
 description: Узнайте, как клонировать приложение службы приложений в новое приложение с помощью PowerShell. Рассматривается множество сценариев клонирования, включая интеграцию диспетчера трафика.
-author: ahmedelnably
 ms.assetid: f9a5cfa1-fbb0-41e6-95d1-75d457347a35
 ms.topic: article
 ms.date: 01/14/2016
-ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: 332f7a562fc8c1d7b2bbebb0e596a068797c2ce3
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: e7ad45ea4cb1049ed7eeb454162e23e81ed35019
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75967211"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78255190"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>Клонирование приложений службы приложений Azure с помощью PowerShell
 
@@ -37,13 +35,13 @@ $srcapp = Get-AzWebApp -ResourceGroupName SourceAzureResourceGroup -Name source-
 New-AzAppServicePlan -Location "North Central US" -ResourceGroupName DestinationAzureResourceGroup -Name DestinationAppServicePlan -Tier Standard
 ```
 
-С помощью команды `New-AzWebApp` вы можете создать новое приложение в северо — центральном регионе США и связать его с существующим планом службы приложений. Более того, можно использовать в качестве исходного приложения ту же группу ресурсов или определить новую, как показано в следующей команде.
+С помощью `New-AzWebApp` команды можно создать новое приложение в северо — центральном регионе США и связать его с существующим планом службы приложений. Более того, можно использовать в качестве исходного приложения ту же группу ресурсов или определить новую, как показано в следующей команде.
 
 ```powershell
 $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-webapp -Location "North Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcapp
 ```
 
-Для клонирования существующего приложения, включая все соответствующие слоты развертывания, пользователю необходимо будет задать параметр `IncludeSourceWebAppSlots`.  Обратите внимание, что параметр `IncludeSourceWebAppSlots` поддерживается только для клонирования всего приложения, включая все его слоты. Следующая команда PowerShell показывает, как использовать этот параметр с командой `New-AzWebApp`:
+Для клонирования существующего приложения, включая все соответствующие слоты развертывания, пользователю необходимо будет задать параметр `IncludeSourceWebAppSlots`.  Обратите внимание `IncludeSourceWebAppSlots` , что параметр поддерживается только для клонирования всего приложения, включая все его слоты. Следующая команда PowerShell показывает, как использовать этот параметр с командой `New-AzWebApp`:
 
 ```powershell
 $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-webapp -Location "North Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcapp -IncludeSourceWebAppSlots

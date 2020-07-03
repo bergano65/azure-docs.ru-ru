@@ -3,20 +3,20 @@ title: Краткое руководство. Распознавание реч�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве показано, как с помощью REST API транскрибирования пакетов асинхронно распознавать речь из файлов, хранящихся в большом двоичном объекте SAS.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 02/10/2020
 ms.author: dapine
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: df06d41e72026295de4673fd272c07d510e639fd
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+zone_pivot_groups: programming-languages-set-two-with-js
+ms.openlocfilehash: 2f604a5094da88196d2149571b700ea6172ed5ac
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119381"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82980412"
 ---
 # <a name="quickstart-recognize-speech-stored-in-blob-storage"></a>Краткое руководство. Распознавание речи из файлов, находящихся в хранилище BLOB-объектов
 
@@ -42,6 +42,12 @@ ms.locfileid: "77119381"
 [!INCLUDE [Header](../includes/quickstarts/from-blob/header.md)]
 [!INCLUDE [Header](../includes/quickstarts/from-blob/python/header.md)]
 [!INCLUDE [python](../includes/quickstarts/from-blob/python/python.md)]
+::: zone-end
+
+::: zone pivot="programming-language-javascript"
+[!INCLUDE [Header](../includes/quickstarts/from-blob/header.md)]
+[!INCLUDE [Header](../includes/quickstarts/from-blob/javascript/header.md)]
+[!INCLUDE [python](../includes/quickstarts/from-blob/javascript/javascript.md)]
 ::: zone-end
 
 ::: zone pivot="programming-language-more"

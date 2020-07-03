@@ -10,10 +10,10 @@ services: azure-maps
 manager: ''
 ms.custom: codepen
 ms.openlocfilehash: 61d7a11df499e6b740adb45968721b6a9bb1af22
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76988606"
 ---
 # <a name="add-a-tile-layer-to-a-map"></a>Добавление слоя фрагментов на карту
@@ -36,11 +36,11 @@ URL-адрес плитки, переданный в мозаичный слой
 * `{z}` — уровень увеличения фрагмента. Также нужны `{x}` и `{y}`.
 * `{quadkey}` — идентификатор quadkey на основе соглашения об именовании системы фрагментов Bing Maps.
 * `{bbox-epsg-3857}` — строка ограничивающего прямоугольника в формате `{west},{south},{east},{north}` в системе пространственных ссылок 3857 EPSG.
-* `{subdomain}` — заполнитель для значений поддомена, если он указан, `subdomain` будет добавлен.
+* `{subdomain}`— Заполнитель для значений поддомена, если он указан `subdomain` , будет добавлен.
 
 ## <a name="add-a-tile-layer"></a>Добавление слоя фрагментов
 
- В этом примере показано, как создать мозаичный слой, указывающий на набор плиток. В этом образце используется система разбиения на окна масштабирования x, y. Источником этого слоя фрагментов является наложение радара погоды из [лаборатории окружающей среды Университета штата Айова](https://mesonet.agron.iastate.edu/ogc/). При просмотре лепестковых данных пользователи, в идеале, увидят метки городов при переходе по карте. Это поведение можно реализовать, вставив мозаичный слой под `labels`ным слоем.
+ В этом примере показано, как создать мозаичный слой, указывающий на набор плиток. В этом образце используется система разбиения на окна масштабирования x, y. Источником этого слоя фрагментов является наложение радара погоды из [лаборатории окружающей среды Университета штата Айова](https://mesonet.agron.iastate.edu/ogc/). При просмотре лепестковых данных пользователи, в идеале, увидят метки городов при переходе по карте. Это поведение можно реализовать, вставив мозаичный слой под `labels` слоем.
 
 ```javascript
 //Create a tile layer and add it to the map below the label layer.
@@ -68,7 +68,7 @@ map.layers.add(new atlas.layer.TileLayer({
 <iframe height='700' scrolling='no' title='Параметры слоя фрагментов' src='//codepen.io/azuremaps/embed/xQeRWX/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/xQeRWX/'>Параметры слоя фрагментов</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -81,4 +81,4 @@ map.layers.add(new atlas.layer.TileLayer({
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Добавление слоя изображения](./map-add-image-layer.md)
+> [Добавление слоя изображений](./map-add-image-layer.md)

@@ -1,23 +1,19 @@
 ---
-title: Отмена подписки Azure | Документация Майкрософт
+title: Отмена подписки Azure
 description: В этой статьей объясняется, как отменить подписку Azure, например бесплатную пробную версию подписки.
 author: bandersmsft
-manager: amberb
+ms.reviewer: amberb
 tags: billing
-ms.assetid: 3051d6b0-179f-4e3a-bda4-3fee7135eac5
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/01/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: e4ce97b69250d8af4c94e8eed8df9c9497e0bb46
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 4cc3c1bcfe5f153e76f3bd37fbefa79fca4d541a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75993080"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79237740"
 ---
 # <a name="cancel-your-azure-subscription"></a>Отмена подписки Azure
 

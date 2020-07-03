@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с ClickTime | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с ClickTime | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ClickTime.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 233ddde25645cbdd9073011eeec2a20e42c8e9a8
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157408"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-clicktime"></a>Руководство по Интеграция Azure Active Directory с ClickTime
+# <a name="tutorial-azure-active-directory-integration-with-clicktime"></a>Руководство. Интеграция Azure Active Directory с ClickTime
 
 В этом руководстве описано, как интегрировать ClickTime с Azure Active Directory (Azure AD).
 Интеграция ClickTime с Azure AD обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73157408"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ClickTime, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка ClickTime с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73157408"
 
     ![Сведения о домене и URL-адресах единого входа приложения ClickTime](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `https://app.clicktime.com/sp/`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `https://app.clicktime.com/sp/`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
     
@@ -123,11 +123,11 @@ ms.locfileid: "73157408"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-clicktime-single-sign-on"></a>Настройка единого входа ClickTime
 
@@ -139,7 +139,7 @@ ms.locfileid: "73157408"
    
     ![Параметры безопасности](./media/clicktime-tutorial/tic777280.png "Параметры безопасности")
    
-    a.  Выберите "**Allow** sign-in using Single Sign-On (SSO) with **Azure AD**" (Разрешить единый вход (SSO) с помощью Azure AD).
+    а.  Выберите "**Allow** sign-in using Single Sign-On (SSO) with **Azure AD**" (Разрешить единый вход (SSO) с помощью Azure AD).
    
     b. В текстовое поле **Identity Provider Endpoint** (Конечная точка входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
    
@@ -222,7 +222,7 @@ ms.locfileid: "73157408"
    
     ![Пользователи](./media/clicktime-tutorial/tic777284.png "Люди")
    
-    a.  В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**. 
+    а.  В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**. 
   
     b.  В текстовом поле **email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
        

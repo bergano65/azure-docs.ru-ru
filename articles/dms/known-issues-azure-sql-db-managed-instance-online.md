@@ -2,21 +2,21 @@
 title: Известные проблемы и ограничения при оперативной миграции на управляемый экземпляр базы данных SQL Azure
 description: Сведения об известных проблемах и ограничениях миграции, связанных с оперативной миграцией в управляемый экземпляр базы данных SQL Azure.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 12/18/2019
-ms.openlocfilehash: bc1cbfc1e86db758a4f4d0240f81f5363f817312
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/20/2020
+ms.openlocfilehash: 88e2b5894686ee93caecf33e04940803eb75f394
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75483145"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77648671"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-database-managed-instance"></a>Известные проблемы и ограничения миграции при оперативной миграции на управляемый экземпляр базы данных SQL Azure
 
@@ -31,12 +31,12 @@ ms.locfileid: "75483145"
 
     Azure Database Migration Service использует метод резервного копирования и восстановления для переноса локальных баз данных в управляемый экземпляр базы данных SQL. Azure Database Migration Service поддерживает только резервные копии, созданные с использованием контрольной суммы.
 
-    [Включение или отключение вычисления контрольных сумм резервных копий во время архивации или восстановления (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017)
+    [Включение или отключение вычисления контрольных сумм резервных копий во время резервного копирования или восстановления (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server?view=sql-server-2017)
 
     > [!NOTE]
     > Если вы передаете резервные копии базы данных с помощью сжатия, контрольная сумма является поведением по умолчанию, если явно не отключено.
 
-    При использовании автономных миграций, если выбрать параметр **я буду позволять Azure Database Migration Service...** , после чего Azure Database Migration Service будет использовать резервную копию базы данных с включенной контрольной суммой.
+    При использовании автономных миграций, если выбрать параметр **я буду позволять Azure Database Migration Service...**, после чего Azure Database Migration Service будет использовать резервную копию базы данных с включенной контрольной суммой.
 
 - **Носитель резервной копии**
 
@@ -60,7 +60,7 @@ ms.locfileid: "75483145"
 
 ## <a name="migration-resets"></a>Сбросы миграции
 
-- **Развертывания**
+- **Развернутые приложения**
 
     Управляемый экземпляр базы данных SQL — это служба PaaS с автоматической установкой исправлений и обновлениями версий. Во время миграции управляемого экземпляра базы данных SQL некритические обновления помогают получить до 36 часов. Затем (и для критических обновлений) в случае нарушения миграции процесс сбрасывается в состояние полного восстановления.
 

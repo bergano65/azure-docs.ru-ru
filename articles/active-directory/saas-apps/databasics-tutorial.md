@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с DATABASICS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с DATABASICS | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и DATABASICS.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6da895b0ab05fd4b82a2d427ecf035e1c3bb8c90
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159258"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-databasics"></a>Руководство по Интеграция Azure Active Directory с DATABASICS
+# <a name="tutorial-azure-active-directory-integration-with-databasics"></a>Руководство. Интеграция Azure Active Directory с DATABASICS
 
 В этом руководстве описано, как интегрировать DATABASICS с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением DATABASICS обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73159258"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с DATABASICS, вам потребуются следующие элементы:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка DATABASICS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73159258"
 
     ![Сведения о домене и URL-адресах единого входа для приложения DATABASICS](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sitenumber>.data-basics.net/<clientname>/saml_sso.jsp`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sitenumber>.data-basics.net/<clientname>/saml_sso.jsp`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите значение следующим образом: `DATA-BASICS_SP`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "73159258"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-databasics-single-sign-on"></a>Настройка единого входа в DATABASICS
 

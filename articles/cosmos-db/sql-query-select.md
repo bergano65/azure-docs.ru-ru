@@ -1,35 +1,34 @@
 ---
 title: Предложение SELECT в Azure Cosmos DB
 description: Дополнительные сведения о предложении SQL SELECT для Azure Cosmos DB. Используйте SQL в качестве языка запросов JSON Azure Cosmos DB.
-author: ginarobinson
+author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 06/10/2019
-ms.author: girobins
-ms.openlocfilehash: b90fc6f1f50ec2ea75619188cca36f78061f28df
-ms.sourcegitcommit: 1d0b37e2e32aad35cc012ba36200389e65b75c21
+ms.date: 05/08/2020
+ms.author: tisande
+ms.openlocfilehash: f33cf20b76655a893fe7eebd9e6e6569d35de98f
+ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72326792"
+ms.lasthandoff: 05/10/2020
+ms.locfileid: "83005956"
 ---
 # <a name="select-clause-in-azure-cosmos-db"></a>Предложение SELECT в Azure Cosmos DB
 
-Каждый запрос состоит из предложения SELECT и необязательных предложений [from](sql-query-from.md) и [WHERE](sql-query-where.md) для стандартов ANSI SQL. Как правило, источник в предложении FROM является перечислимым, а предложение WHERE применяет фильтр к источнику для получения подмножества элементов JSON. Затем предложение SELECT проецирует запрошенные значения JSON в списке выбора.
+Каждый запрос состоит из `SELECT` предложения и необязательных предложений [from](sql-query-from.md) и [WHERE](sql-query-where.md) для стандартов ANSI SQL. Как правило, источник в `FROM` предложении перечисляется, а `WHERE` предложение применяет фильтр к источнику для получения подмножества элементов JSON. Затем `SELECT` предложение проецирует запрошенные значения JSON в списке выбора.
 
 ## <a name="syntax"></a>Синтаксис
 
 ```sql
 SELECT <select_specification>  
 
-<select_specification> ::=   
-      '*'   
-      | [DISTINCT] <object_property_list>   
+<select_specification> ::=
+      '*'
+      | [DISTINCT] <object_property_list>
       | [DISTINCT] VALUE <scalar_expression> [[ AS ] value_alias]  
   
-<object_property_list> ::=   
+<object_property_list> ::=
 { <scalar_expression> [ [ AS ] property_alias ] } [ ,...n ]  
-  
 ```  
   
 ## <a name="arguments"></a>Аргументы
@@ -49,7 +48,7 @@ SELECT <select_specification>
 - `VALUE`  
 
   Указывает, что следует извлечь только значение JSON, а не весь объект JSON. Этот аргумент, в отличие от аргумента `<property_list>`, не выделяет прогнозируемое значение в объекте.  
- 
+
 - `DISTINCT`
   
   Указывает, что необходимо удалить дубликаты проецируемых свойств.  
@@ -58,7 +57,7 @@ SELECT <select_specification>
 
   Выражение, представляющее вычисляемое значение. Дополнительные сведения см. в разделе [Скалярные выражения](sql-query-scalar-expressions.md).  
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
 
 Если предложение FROM объявило один псевдоним, действителен только синтаксис `SELECT *`. Синтаксис `SELECT *` обеспечивает проекцию удостоверения, что может пригодиться, если проекция не требуется. Кроме того, это * единственный действительный синтаксис, если в предложении FROM указан один источник входных данных.  
   
@@ -78,7 +77,7 @@ SELECT <select_specification>
   
 ## <a name="examples"></a>Примеры
 
-Следующий пример запроса SELECT возвращает `address` из `Families`, чьи `id` соответствуют `AndersenFamily`:
+Следующий пример запроса SELECT `address` возвращает из `Families` , чьи `id` соответствия `AndersenFamily`:
 
 ```sql
     SELECT f.address
@@ -86,7 +85,7 @@ SELECT <select_specification>
     WHERE f.id = "AndersenFamily"
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [{
@@ -98,80 +97,8 @@ SELECT <select_specification>
     }]
 ```
 
-### <a name="quoted-property-accessor"></a>Метод доступа к свойству, заключенному в кавычки
-Доступ к свойствам можно получить с помощью оператора заключенного в кавычки свойства []. Например, выражение `SELECT c.grade` and `SELECT c["grade"]` являются эквивалентными. Этот синтаксис полезен для экранирования свойства, которое содержит пробелы, Специальные символы или имеет то же имя, что и ключевое слово SQL или зарезервированное слово.
-
-```sql
-    SELECT f["lastName"]
-    FROM Families f
-    WHERE f["id"] = "AndersenFamily"
-```
-
-### <a name="nested-properties"></a>Вложенные свойства
-
-В следующем примере проецируется два вложенных свойства: `f.address.state` и `f.address.city`.
-
-```sql
-    SELECT f.address.state, f.address.city
-    FROM Families f
-    WHERE f.id = "AndersenFamily"
-```
-
-Получаются такие результаты:
-
-```json
-    [{
-      "state": "WA",
-      "city": "Seattle"
-    }]
-```
-### <a name="json-expressions"></a>Выражения JSON
-
-Проекция также поддерживает выражения JSON, как показано в следующем примере:
-
-```sql
-    SELECT { "state": f.address.state, "city": f.address.city, "name": f.id }
-    FROM Families f
-    WHERE f.id = "AndersenFamily"
-```
-
-Получаются такие результаты:
-
-```json
-    [{
-      "$1": {
-        "state": "WA",
-        "city": "Seattle",
-        "name": "AndersenFamily"
-      }
-    }]
-```
-
-В предыдущем примере предложение SELECT должно создать объект JSON, а поскольку в примере нет ключа, предложение использует неявное имя переменной аргумента `$1`. Следующий запрос возвращает две неявные переменные аргумента: `$1` и `$2`.
-
-```sql
-    SELECT { "state": f.address.state, "city": f.address.city },
-           { "name": f.id }
-    FROM Families f
-    WHERE f.id = "AndersenFamily"
-```
-
-Получаются такие результаты:
-
-```json
-    [{
-      "$1": {
-        "state": "WA",
-        "city": "Seattle"
-      }, 
-      "$2": {
-        "name": "AndersenFamily"
-      }
-    }]
-```
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Начало работы](sql-query-getting-started.md)
+- [Приступая к работе](sql-query-getting-started.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Предложение WHERE](sql-query-where.md)

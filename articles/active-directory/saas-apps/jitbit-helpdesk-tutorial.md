@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 29addcd62afd193af83196b2d942e9778ff3f031
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67099412"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jitbit-helpdesk"></a>Руководство по Интеграция Azure Active Directory с Jitbit Helpdesk
@@ -38,7 +38,7 @@ ms.locfileid: "67099412"
 
 Чтобы настроить интеграцию Azure AD с Jitbit Helpdesk, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа Jitbit Helpdesk.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,13 +99,13 @@ ms.locfileid: "67099412"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Jitbit Helpdesk](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
     | |
     | ----------------------------------------|
     | `https://<hostname>/helpdesk/User/Login`|
@@ -125,7 +125,7 @@ ms.locfileid: "67099412"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -141,13 +141,13 @@ ms.locfileid: "67099412"
 
 1. Щелкните **Общие параметры**.
 
-    ![Пользователи, организации и разрешения](./media/jitbit-helpdesk-tutorial/ic777680.png "Пользователи, организации и разрешения")
+    ![Пользователи, компании и разрешения](./media/jitbit-helpdesk-tutorial/ic777680.png "Пользователи, компании и разрешения")
 
 1. В разделе конфигурации **Параметры проверки подлинности** сделайте следующее:
 
-    ![Параметры аутентификации](./media/jitbit-helpdesk-tutorial/ic777683.png "Параметры аутентификации")
+    ![Параметры проверки подлинности](./media/jitbit-helpdesk-tutorial/ic777683.png "Параметры проверки подлинности")
 
-    a. Установите флажок **Enable SAML 2.0 single sign on** (Включить единый вход SAML 2.0) для выполнения единого входа с помощью **OneLogin**.
+    а. Установите флажок **Enable SAML 2.0 single sign on** (Включить единый вход SAML 2.0) для выполнения единого входа с помощью **OneLogin**.
 
     b. В текстовое поле **URL-адрес конечной точки** вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -220,7 +220,7 @@ ms.locfileid: "67099412"
 
 1. Нажмите кнопку **Пользователи, компании и разрешения**.
 
-    ![Пользователи, организации и разрешения](./media/jitbit-helpdesk-tutorial/ic777682.png "Пользователи, организации и разрешения")
+    ![Пользователи, компании и разрешения](./media/jitbit-helpdesk-tutorial/ic777682.png "Пользователи, компании и разрешения")
 
 1. Нажмите кнопку **Добавить пользователя**.
 
@@ -230,15 +230,15 @@ ms.locfileid: "67099412"
 
     ![Создание](./media/jitbit-helpdesk-tutorial/ic777686.png "Создание")
 
-   a. В текстовом поле **Имя пользователя** введите имя, например **BrittaSimon**.
+   а. В текстовом поле **Имя пользователя** введите имя, например **BrittaSimon**.
 
    b. В текстовое поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com** .
 
-   c. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+   c. В текстовом поле **Имя** введите имя, например **Britta**.
 
-   d. В текстовое поле **Last Name** (Фамилия) введите фамилию, например, **Simon**.
+   d. В текстовом поле **Фамилия** введите фамилию, например **Simon**.
 
-   д. Нажмите кнопку **Создать**.
+   д) Нажмите кнопку **Создать**.
 
 > [!NOTE]
 > Вы можете использовать любые другие средства создания учетной записи пользователя Jitbit Helpdesk или API, предоставляемые Jitbit Helpdesk для подготовки учетных записей пользователя Azure AD.
@@ -255,4 +255,4 @@ ms.locfileid: "67099412"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

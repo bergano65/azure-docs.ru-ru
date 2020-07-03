@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: 1065abecb1f0ef57eb13b1ec3f194f07ae01eaee
-ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68976790"
 ---
 # <a name="set-up-the-business-glossary-for-governed-tagging"></a>Настройка бизнес-глоссария для регулируемого добавления тегов
@@ -80,6 +80,6 @@ ms.locfileid: "68976790"
 
 Используя бизнес-глоссарий в каталоге данных Azure и его функции по регулируемому добавлению тегов, вы можете согласованно идентифицировать, обнаруживать ресурсы данных и управлять ими. Бизнес-глоссарий позволяет стимулировать изучение бизнес-словаря сотрудниками организации. Кроме того, этот глоссарий поддерживает захват значимых метаданных, что упрощает обнаружение и изучение ресурсов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Документация по REST API для операций с бизнес-глоссарием](/rest/api/datacatalog/data-catalog-glossary)

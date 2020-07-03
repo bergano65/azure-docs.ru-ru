@@ -2,20 +2,20 @@
 title: Обзор технических возможностей и функций Azure Active Directory B2C
 description: Подробное описание функций и технологий, используемых в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
 ms.date: 09/19/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5801cc4fdfeb4bbdf7c22e2be2f686558611a7f6
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: d3d6b33211f6f247d9f30c0f162b388085faabe6
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840219"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80332534"
 ---
 # <a name="technical-and-feature-overview-of-azure-active-directory-b2c"></a>Обзор технических возможностей и функций Azure Active Directory B2C
 
@@ -195,7 +195,7 @@ Azure AD B2C поддерживает протоколы [OpenID Connect и OAut
 * после того, как Azure AD B2C создаст учетную запись в каталоге;
 * перед тем, как Azure AD B2C выдаст маркер доступа.
 
-Использование пользовательских политик для интеграции REST API в Azure AD B2C описано в статье [Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](rest-api-claims-exchange-dotnet.md).
+Использование пользовательских политик для интеграции REST API в Azure AD B2C описано в статье [Интеграция обмена утверждениями REST API в пользовательскую политики Azure AD B2C](custom-policy-rest-api-intro.md).
 
 ## <a name="protect-customer-identities"></a>Защита удостоверений пользователей
 

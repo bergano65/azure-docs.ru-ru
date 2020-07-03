@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 02/03/2020
+ms.date: 04/13/2020
 ms.author: juliako
-ms.openlocfilehash: 8b6d160f71bfe8b2e5c447296d511b54ce6542c8
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 82bdb177cf4d9c400d1b13ba7178658089950557
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989779"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81314337"
 ---
 # <a name="tutorial-use-the-video-indexer-api"></a>Руководство. Использование API Индексатора видео
 
@@ -34,7 +34,7 @@ ms.locfileid: "76989779"
    > [!Important]
    > * Укажите того же поставщика, который вы использовали при регистрации в Индексаторе видео.
    > * Личные учетные записи Google и Microsoft (Outlook/Live) можно использовать только для пробных учетных записей. Для учетных записей, подключенных к Azure, требуется Azure AD.
-   > * На одну электронную почту может быть только одна активная учетная запись. Если пользователь пытается войти с помощью user@gmail.com для LinkedIn и более поздних версий с user@gmail.com для Google, в последнем случае будет отображаться страница ошибки, говорящая, что пользователь уже существует.
+   > * На одну электронную почту может быть только одна активная учетная запись. Если пользователь пытается выполнить вход с помощью user@gmail.com для LinkedIn и более поздних user@gmail.com версий с для Google, в последнем будет отображаться страница ошибки, говорящая, что пользователь уже существует.
 
 2. Оформите подписку.
 
@@ -142,9 +142,9 @@ var videoUrl = "VIDEO_URL"; // replace with the video URL
 // as an alternative to specifying video URL, you can upload a file.
 // remove the videoUrl parameter from the query string below and add the following lines:
   //FileStream video =File.OpenRead(Globals.VIDEOFILE_PATH);
-  //byte[] buffer =newbyte[video.Length];
+  //byte[] buffer = new byte[video.Length];
   //video.Read(buffer, 0, buffer.Length);
-  //content.Add(newByteArrayContent(buffer));
+  //content.Add(new ByteArrayContent(buffer));
 
 var uploadRequestResult = client.PostAsync($"{apiUrl}/{location}/Accounts/{accountId}/Videos?accessToken={accountAccessToken}&name=some_name&description=some_description&privacy=private&partition=some_partition&videoUrl={videoUrl}", content).Result;
 var uploadResult = uploadRequestResult.Content.ReadAsStringAsync().Result;
@@ -212,8 +212,8 @@ Debug.WriteLine(playerWidgetLink);
 - [Общие сведения об Индексаторе видео](video-indexer-overview.md)
 - [Регионы](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Просмотр сведений о выходных данных JSON](video-indexer-output-json-v2.md)
-- Ознакомьтесь с [примером кода](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/API) , который демонстрирует важные аспекты отправки и индексирования видео. Следуя коду будет, вы получите хорошее представление об использовании нашего API для базовых функций. Обязательно ознакомьтесь со встроенными комментариями и обратите внимание на рекомендации.
+- Ознакомьтесь с [примером кода](https://github.com/Azure-Samples/media-services-video-indexer) , который демонстрирует важные аспекты отправки и индексирования видео. Следуя коду будет, вы получите хорошее представление об использовании нашего API для базовых функций. Обязательно ознакомьтесь со встроенными комментариями и обратите внимание на рекомендации.
 

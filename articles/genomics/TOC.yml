@@ -4,7 +4,7 @@
   items:
     - name: Что такое Microsoft Genomics?
       href: overview-what-is-genomics.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Запуск примера рабочего процесса Genomics
@@ -37,7 +37,7 @@
       href: 'https://azure.microsoft.com/roadmap/?category=cognitive-services'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/genomics/'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Варианты поддержки
       href: 'https://azure.microsoft.com/support/options/'

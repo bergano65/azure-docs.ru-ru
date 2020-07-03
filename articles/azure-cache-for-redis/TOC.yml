@@ -7,18 +7,26 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Приложение ASP.NET
-      href: cache-web-app-howto.md
-    - name: Приложение .NET Core
-      href: cache-dotnet-core-quickstart.md
-    - name: Приложение .NET
-      href: cache-dotnet-how-to-use-azure-redis-cache.md
-    - name: Приложение Java
-      href: cache-java-get-started.md
-    - name: Приложение Node.js
-      href: cache-nodejs-get-started.md
-    - name: Приложение Python
-      href: cache-python-get-started.md
+    - name: Создание кэша
+      items:
+        - name: 'Категории "Базовый", "Стандартный" и "Премиум"'
+          href: quickstart-create-redis.md
+        - name: Категории "Корпоративный"
+          href: quickstart-create-redis-enterprise.md
+    - name: Использование кэша
+      items:
+        - name: Приложение ASP.NET
+          href: cache-web-app-howto.md
+        - name: Приложение .NET Core
+          href: cache-dotnet-core-quickstart.md
+        - name: Приложение .NET
+          href: cache-dotnet-how-to-use-azure-redis-cache.md
+        - name: Приложение Java
+          href: cache-java-get-started.md
+        - name: Приложение Node.js
+          href: cache-nodejs-get-started.md
+        - name: Приложение Python
+          href: cache-python-get-started.md
 - name: Учебники
   items:
     - name: Использование кэширования со списками лидеров
@@ -27,12 +35,19 @@
   items:
     - name: Примеры использования кэша Redis для Azure
       href: cache-redis-samples.md
-    - name: Azure PowerShell
+    - name: Azure
       href: cache-how-to-manage-redis-cache-powershell.md
     - name: Azure CLI
       href: cli-samples.md
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Отработка отказа и установка исправлений
       href: cache-failover.md
     - name: Рекомендации
@@ -44,7 +59,7 @@
     - name: План
       items:
         - name: Выбор уровня кэша
-          href: 'cache-faq.md#what-redis-cache-offering-and-size-should-i-use'
+          href: 'cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use'
         - name: Распределение кэша с помощью кластеризации
           href: cache-how-to-premium-clustering.md
         - name: Сохранение кэша с помощью функции сохраняемости данных Redis
@@ -53,6 +68,8 @@
           href: cache-how-to-premium-vnet.md
         - name: Настройка георепликации
           href: cache-how-to-geo-replication.md
+        - name: Экономия средств за счет зарезервированной емкости
+          href: cache-reserved-pricing.md
         - name: Перенос из управляемой службы кэша
           href: cache-migrate-to-redis.md
     - name: Автоматизация
@@ -111,7 +128,7 @@
       items:
         - name: Обновление до другого размера и уровня
           href: cache-how-to-scale.md
-        - name: Использование кластера Redis для свертывания и развертывания
+        - name: Использование кластера Redis для горизонтального увеличения и уменьшения масштаба
           href: cache-how-to-premium-clustering.md
 - name: Справочник
   items:
@@ -124,7 +141,7 @@
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.redis
     - name: Java
-      href: /java/api/com.microsoft.azure.management.redis._redis_cache
+      href: /java/api/com.microsoft.azure.management.redis.rediscache
     - name: Клиенты Redis
       href: 'https://redis.io/clients'
     - name: Команды Redis
@@ -145,5 +162,5 @@
       href: cache-faq.md
     - name: Видео
       href: 'https://www.youtube.com/results?search_query=azure+redis+cache'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurecache&filter=alltypes&sort=lastpostdesc'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-cache-redis.html'

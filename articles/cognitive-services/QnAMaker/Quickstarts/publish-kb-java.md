@@ -1,24 +1,18 @@
 ---
-title: Краткое руководство. Публикация базы знаний QnA Maker с использованием REST и Java
-titleSuffix: Azure Cognitive Services
+title: Краткое руководство. Публикация базы знаний, остальное, Java-QnA Maker
 description: В этом кратком руководстве по началу работы с Java и REST описывается, как опубликовать базу знаний и создать конечную точку, которую можно вызвать в приложении или чат-боте.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.custom: seodec18
-ms.service: cognitive-services
-ms.subservice: qna-maker
-ms.topic: quickstart
 ms.date: 02/08/2020
-ms.author: diberry
-ms.openlocfilehash: 48da92374a29b5319f0ae5eaa830f2e03511b512
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.custom: RESTCURL2020FEB27
+ms.topic: conceptual
+ms.openlocfilehash: 149d7963f29bf041cda75fffaac533e0a62ee7a6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77109468"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78851688"
 ---
-# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Публикация базы знаний в QnA Maker с использованием Java
+# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Публикация базы знаний в QnA Maker с помощью Java
 
 В этом кратком руководстве по REST описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний передается в индекс выделенной службы "Когнитивный поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
 
@@ -38,10 +32,10 @@ ms.locfileid: "77109468"
 
     ![Идентификатор базы знаний QnA Maker](../media/qnamaker-quickstart-kb/qna-maker-id.png)
 
-    Если у вас еще нет базы знаний, ее можно создать для этого руководства. [Создать базу знаний](create-new-kb-csharp.md).
+    Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-csharp.md).
 
 > [!NOTE]
-> Полные файлы решения доступны в [репозитории GitHub **Azure-Samples/cognitive-services-qnamaker-java**](https://github.com/Azure-Samples/cognitive-services-qnamaker-java/tree/master/documentation-samples/quickstarts/publish-knowledge-base).
+> Полный файл решения доступен из [репозитория GitHub **Azure-Samples/qnamaker-Services--Java** ](https://github.com/Azure-Samples/cognitive-services-qnamaker-java/tree/master/documentation-samples/quickstarts/publish-knowledge-base).
 
 ## <a name="create-a-java-file"></a>Создание файла Java
 
@@ -68,7 +62,7 @@ public class PublishKB {
 
 ## <a name="add-required-constants"></a>Добавление необходимых констант
 
-В методе **Main** добавьте необходимые константы для обеспечения доступа к QnA Maker. Вместо примеров подставьте собственные значения.
+В методе **Main** добавьте необходимые константы для доступа к QnA Maker. Вместо примеров подставьте собственные значения.
 
 [!code-java[Add the required constants](~/samples-qnamaker-java/documentation-samples/quickstarts/publish-knowledge-base/PublishKB.java?range=27-30 "Add the required constants")]
 
@@ -100,7 +94,7 @@ public class PublishKB {
 
 [!INCLUDE [Clean up files and knowledge base](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Опубликовав базу знаний, вам нужно использовать [URL-адрес конечной точки для создания ответа](./get-answer-from-knowledge-base-java.md).
 

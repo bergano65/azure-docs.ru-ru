@@ -3,27 +3,27 @@ title: Перенос данных о лицах между подписками
 titleSuffix: Azure Cognitive Services
 description: В этом руководство показано, как перенести сохраненные данные о лицах из одной подписки в другую.
 services: cognitive-services
-author: lewlu
+author: nitinme
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 09/06/2019
-ms.author: lewlu
-ms.openlocfilehash: e5ca51da7322e4eab4ea364ec5da086a1068fa9a
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.author: nitinme
+ms.openlocfilehash: fd0e7079b3b70a6a6b8166cc7fc7518070e7153d
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76169809"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83120816"
 ---
 # <a name="migrate-your-face-data-to-a-different-face-subscription"></a>Перенос данных распознавания лиц в другую подписку API распознавания лиц
 
 В этом руководство показано, как переместить данные о лицах, например сохраненный объект Персонграуп с лицами, в другую подписку Azure Cognitive Services Face. Для перемещения данных используется функция моментального снимка. Это позволит избежать многократного создания и обучения объекта Персонграуп или Фацелист при перемещении или расширении операций. Например, вы создали объект Персонграуп с помощью бесплатной пробной подписки и теперь хотите перенести ее в платную подписку. Или может потребоваться синхронизация данных о лицах между подписками в разных регионах для крупных корпоративных операций.
 
-Такая же стратегия миграции также применяется к объектам Ларжеперсонграуп и LargeFaceList. Если вы не знакомы с понятиями, изложенными в этом пошаговом окне, см. их определения в разделе " [Основные понятия распознавания лиц](../concepts/face-recognition.md) ". В этом руководством используется клиентская библиотека .NET для C#лицевой стороны.
+Эта же стратегия переноса применяется к объектам LargePersonGroup и LargeFaceList. Если вы не знакомы с понятиями, изложенными в этом пошаговом окне, см. их определения в разделе " [Основные понятия распознавания лиц](../concepts/face-recognition.md) ". В этом руководство используется клиентская библиотека .NET для языка C#.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вам потребуются следующие элементы:
 
@@ -41,7 +41,7 @@ ms.locfileid: "76169809"
 
 ## <a name="create-face-clients"></a>Создание клиентов для распознавания лиц
 
-В методе **Main** в *Program.CS*создайте два экземпляра [фацеклиент](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) для исходной и целевой подписок. В этом примере используется подписка на лицо в регионе Восточная Азия в качестве источника и подписке "Западная часть США" в качестве цели. В этом примере показано, как перенести данные из одного региона Azure в другой. 
+В методе **Main** в файле *Program.cs* создайте два экземпляра [FaceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) для исходной и целевой подписок. В этом примере используется подписка на лицо в регионе Восточная Азия в качестве источника и подписке "Западная часть США" в качестве цели. В этом примере показано, как перенести данные из одного региона Azure в другой. 
 
 [!INCLUDE [subdomains-note](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
@@ -62,7 +62,7 @@ var FaceClientWestUS = new FaceClient(new ApiKeyServiceClientCredentials("<West 
 
 ## <a name="prepare-a-persongroup-for-migration"></a>Подготовка PersonGroup для переноса
 
-Вам нужен идентификатор Персонграуп в исходной подписке, чтобы перенести его в целевую подписку. Используйте метод [персонграупоператионсекстенсионс. ListAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperationsextensions.listasync?view=azure-dotnet) для получения списка объектов персонграуп. Затем получите свойство [персонграуп. персонграупид](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.persongroup.persongroupid?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_Face_Models_PersonGroup_PersonGroupId) . Этот процесс выглядит по-разному в зависимости от того, какие объекты Персонграуп у вас есть. В этом руководством идентификатор источника Персонграуп хранится в `personGroupId`.
+Вам потребуется идентификатор объекта PersonGroup в вашей исходной подписке, чтобы перенести его в целевую подписку. Используйте метод [персонграупоператионсекстенсионс. ListAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperationsextensions.listasync?view=azure-dotnet) для получения списка объектов персонграуп. Затем получите свойство [персонграуп. персонграупид](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.persongroup.persongroupid?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Vision_Face_Models_PersonGroup_PersonGroupId) . Этот процесс выглядит по-разному в зависимости от того, какие объекты Персонграуп у вас есть. В этом руководством идентификатор источника Персонграуп хранится в `personGroupId` .
 
 > [!NOTE]
 > [Пример кода](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) создает и обучает новый персонграуп для миграции. В большинстве случаев у вас уже должен быть Персонграуп для использования.
@@ -85,7 +85,7 @@ var takeSnapshotResult = await FaceClientEastAsia.Snapshot.TakeAsync(
 
 ## <a name="retrieve-the-snapshot-id"></a>Получение идентификатора моментального снимка
 
-Метод, используемый для создания моментальных снимков, является асинхронным, поэтому необходимо дождаться его завершения. Операции с моментальными снимками не могут быть отменены. В этом коде метод `WaitForOperation` отслеживает асинхронный вызов. Он проверяет состояние каждые 100 мс. После завершения операции получите идентификатор операции, анализируя поле `OperationLocation`. 
+Метод, используемый для создания моментальных снимков, является асинхронным, поэтому необходимо дождаться его завершения. Операции с моментальными снимками не могут быть отменены. В этом коде `WaitForOperation` метод отслеживает асинхронный вызов. Он проверяет состояние каждые 100 мс. После завершения операции получите идентификатор операции, анализируя `OperationLocation` поле. 
 
 ```csharp
 var takeOperationId = Guid.Parse(takeSnapshotResult.OperationLocation.Split('/')[2]);
@@ -127,7 +127,7 @@ private static async Task<OperationStatus> WaitForOperation(IFaceClient client, 
 }
 ```
 
-После того как состояние операции отобразится `Succeeded`, получите идентификатор моментального снимка, анализируя поле `ResourceLocation` возвращенного экземпляра значение operationstatus.
+После отображения состояния операции `Succeeded` Получите идентификатор моментального снимка, анализируя `ResourceLocation` поле возвращенного экземпляра значение operationstatus.
 
 ```csharp
 var snapshotId = Guid.Parse(operationStatus.ResourceLocation.Split('/')[2]);
@@ -152,13 +152,13 @@ var applySnapshotResult = await FaceClientWestUS.Snapshot.ApplyAsync(snapshotId,
 > [!NOTE]
 > Объект моментального снимка действителен только в 48 часа. Создавайте моментальные снимки только в том случае, если планируется использовать его для переноса данных вскоре после.
 
-Запрос на применение моментального снимка возвращает другой идентификатор операции. Чтобы получить этот идентификатор, проанализируйте поле `OperationLocation` возвращенного экземпляра Апплиснапшотресулт. 
+Запрос на применение моментального снимка возвращает другой идентификатор операции. Чтобы получить этот идентификатор, проанализируйте `OperationLocation` поле возвращенного экземпляра апплиснапшотресулт. 
 
 ```csharp
 var applyOperationId = Guid.Parse(applySnapshotResult.OperationLocation.Split('/')[2]);
 ```
 
-Процесс приложения моментального снимка также является асинхронным, поэтому снова используйте `WaitForOperation`, чтобы дождаться его завершения.
+Процесс приложения моментального снимка также является асинхронным, поэтому снова используйте `WaitForOperation` для ожидания его завершения.
 
 ```csharp
 operationStatus = await WaitForOperation(FaceClientWestUS, applyOperationId);

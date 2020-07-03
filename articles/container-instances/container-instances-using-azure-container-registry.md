@@ -1,27 +1,27 @@
 ---
 title: Развертывание образа контейнера из реестра контейнеров Azure
-description: Сведения о том, как развертывать контейнеры в службе "Экземпляры контейнеров Azure" с помощью образов контейнеров, хранящихся в реестре контейнеров Azure.
+description: Узнайте, как развертывать контейнеры в службе "экземпляры контейнеров Azure" путем извлечения образов контейнеров из реестра контейнеров Azure.
 services: container-instances
 ms.topic: article
-ms.date: 12/30/2019
+ms.date: 02/18/2020
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 0d39c83646357cf9426239d28e445c4791ddceb0
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 212624b857d65297830995018603c2627f83369b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981690"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81453529"
 ---
 # <a name="deploy-to-azure-container-instances-from-azure-container-registry"></a>Развертывание в службе "Экземпляры контейнеров Azure" из реестра контейнеров Azure
 
-[Реестр контейнеров Azure](../container-registry/container-registry-intro.md) — это управляемая служба реестра контейнеров на базе Azure, используемая для хранения частных образов контейнеров Docker. В этой статье описывается, как развертывать в службе "Экземпляры контейнеров Azure" образы контейнеров, хранящиеся в реестре контейнеров Azure.
+[Реестр контейнеров Azure](../container-registry/container-registry-intro.md) — это управляемая служба реестра контейнеров на базе Azure, используемая для хранения частных образов контейнеров Docker. В этой статье описывается, как извлечь образы контейнеров, хранящиеся в реестре контейнеров Azure, при развертывании в службе "экземпляры контейнеров Azure". Для настройки доступа к реестру рекомендуется создать субъект-службу Azure Active Directory и пароль, а также сохранить учетные данные входа в хранилище ключей Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 **Реестр контейнеров Azure**. для выполнения действий, описанных в этой статье, требуется реестр контейнеров Azure, а также по крайней мере один образ контейнера в реестре. Если вам нужен реестр, см. сведения о его создании в статье [Краткое руководство. Создание реестра контейнеров с использованием Azure CLI](../container-registry/container-registry-get-started-azure-cli.md).
 
-**Azure CLI**. Примеры командной строки в этой статье используют [Azure CLI](/cli/azure/) и отформатированы для оболочки Bash. Можно [установить Azure CLI](/cli/azure/install-azure-cli) локально или использовать [Azure Cloud Shell][cloud-shell-bash].
+**Azure CLI**. Примеры командной строки в этой статье используют [Azure CLI](/cli/azure/) и отформатированы для оболочки Bash. Вы можете [установить Azure CLI](/cli/azure/install-azure-cli) локально или использовать [Azure Cloud Shell][cloud-shell-bash].
 
 ## <a name="configure-registry-authentication"></a>Настройка проверки подлинности в реестре
 
@@ -29,11 +29,14 @@ ms.locfileid: "75981690"
 
 Реестр контейнеров Azure предоставляет дополнительные [Параметры проверки подлинности](../container-registry/container-registry-authentication.md).
 
+> [!NOTE]
+> Вы не можете пройти проверку подлинности в реестре контейнеров Azure, чтобы извлечь образы во время развертывания группы контейнеров с помощью [управляемого удостоверения](container-instances-managed-identity.md) , настроенного в той же группе контейнеров.
+
 В следующем разделе вы создадите субъект-службу и сохраните его учетные данные в хранилище ключей Azure, которое также создается в этом разделе. 
 
 ### <a name="create-key-vault"></a>Создание хранилища ключей
 
-Если у вас еще нет хранилища в [Azure Key Vault](../key-vault/key-vault-overview.md), создайте его с помощью Azure CLI, используя следующие команды.
+Если у вас еще нет хранилища в [Azure Key Vault](../key-vault/general/overview.md), создайте его с помощью Azure CLI, используя следующие команды.
 
 Обновите переменную `RES_GROUP` именем существующей группы ресурсов, в которой будет создано хранилище ключей, а `ACR_NAME` — именем вашего реестра контейнеров. Для краткости в командах в этой статье предполагается, что реестр, хранилище ключей и экземпляры контейнеров созданы в одной группе ресурсов.
 
@@ -51,7 +54,7 @@ az keyvault create -g $RES_GROUP -n $AKV_NAME
 
 Теперь создайте субъект-службу и сохраните его учетные данные в хранилище ключей.
 
-Следующая команда выдает команду [AZ AD SP Create-for-RBAC][az-ad-sp-create-for-rbac] для создания субъекта-службы и [AZ keyvault Secret Set][az-keyvault-secret-set] для хранения **пароля** субъекта-службы в хранилище.
+Следующая команда использует [az ad sp create-for-rbac][az-ad-sp-create-for-rbac] для создания субъекта-службы и [az keyvault secret set][az-keyvault-secret-set] для сохранения **пароля** субъекта-службы в хранилище.
 
 ```azurecli
 # Create service principal, store its password in vault (the registry *password*)
@@ -68,7 +71,7 @@ az keyvault secret set \
 
 Аргумент `--role` в предыдущей команде настраивает субъект-службу с ролью *acrpull*, которая предоставляет доступ только для извлечения к реестру. Чтобы предоставить доступ для отправки и извлечения данных, измените аргумент `--role` на *acrpush*.
 
-Затем сохраните в хранилище *appId* субъекта-службы, который является **именем пользователя**, переданным в реестр контейнеров Azure для проверки подлинности.
+Затем сохраните *AppID* субъекта-службы в хранилище, которое представляет собой **имя пользователя** , передаваемое в реестр контейнеров Azure для проверки подлинности.
 
 ```azurecli
 # Store service principal ID in vault (the registry *username*)
@@ -89,7 +92,7 @@ az keyvault secret set \
 
 Теперь, когда учетные данные субъекта-службы хранятся в секретах Аzure Key Vault, ваши приложения и службы могут использовать их для доступа к вашему частному реестру.
 
-Сначала получите имя сервера входа в реестр с помощью команды [AZ запись контроля][az-acr-show] доступа. Имя сервера для входа представлено в нижнем регистре и подобно `myregistry.azurecr.io`.
+Сначала получите имя сервера входа в реестр с помощью команды [az acr show][az-acr-show]. Имя сервера для входа представлено в нижнем регистре и подобно `myregistry.azurecr.io`.
 
 ```azurecli
 ACR_LOGIN_SERVER=$(az acr show --name $ACR_NAME --resource-group $RES_GROUP --query "loginServer" --output tsv)
@@ -111,8 +114,7 @@ az container create \
 
 Значение `--dns-name-label` должно быть уникальным в пределах Azure, поэтому предыдущая команда добавляет случайное число к метке DNS-имени контейнера. В выходных данных команды содержится полное доменное имя (FQDN) контейнера, например:
 
-```console
-$ az container create --name aci-demo --resource-group $RES_GROUP --image $ACR_LOGIN_SERVER/aci-helloworld:v1 --registry-login-server $ACR_LOGIN_SERVER --registry-username $(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-usr --query value -o tsv) --registry-password $(az keyvault secret show --vault-name $AKV_NAME -n $ACR_NAME-pull-pwd --query value -o tsv) --dns-name-label aci-demo-$RANDOM --query ipAddress.fqdn
+```output
 "aci-demo-25007.eastus.azurecontainer.io"
 ```
 
@@ -120,7 +122,7 @@ $ az container create --name aci-demo --resource-group $RES_GROUP --image $ACR_L
 
 ## <a name="deploy-with-azure-resource-manager-template"></a>Развертывание с помощью шаблона Azure Resource Manager
 
-Свойства реестра контейнеров Azure можно указать в шаблоне Azure Resource Manager, включив свойство `imageRegistryCredentials` в определение группы контейнеров. Например, можно напрямую указать учетные данные реестра:
+Свойства реестра контейнеров Azure можно указать в шаблоне Azure Resource Manager, включив `imageRegistryCredentials` свойство в определение группы контейнеров. Например, можно напрямую указать учетные данные реестра:
 
 ```JSON
 [...]
@@ -158,7 +160,7 @@ $ az container create --name aci-demo --resource-group $RES_GROUP --image $ACR_L
 
     ![Представление сведений для группы контейнеров службы "Экземпляры контейнеров Azure"][aci-detailsview]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Более подробные сведения об аутентификации в реестре контейнеров Azure см. в статье [Аутентификация с помощью частного реестра контейнеров Docker](../container-registry/container-registry-authentication.md).
 

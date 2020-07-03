@@ -9,15 +9,15 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.openlocfilehash: 5fc5ba447557aa89e8f0870c576d6d4c439f3353
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76122565"
 ---
 # <a name="azure-digital-twins-security-best-practices"></a>Рекомендации по обеспечению безопасности Azure Digital Twins
 
-Служба безопасности Azure Digital Twins предоставляет детализированное управление доступом к определенным ресурсам и действиям в графе Интернета вещей. Эти функции предоставляются с помощью детализированных возможностей управления ролями и доступом, которые называются [управление доступом на основе ролей](./security-role-based-access-control.md).
+Служба безопасности Azure Digital Twins предоставляет детализированное управление доступом к определенным ресурсам и действиям в графе Интернета вещей. Это осуществляется с помощью детализированного управления ролями и разрешениями, называемыми [контролем доступа на основе ролей](./security-role-based-access-control.md).
 
 Azure Digital Twins также использует другие функции безопасности Интернета вещей Azure, включая Azure Active Directory (Azure AD). Поэтому при настройке и обеспечении безопасности приложений, созданных с помощью Azure Digital Twins, необходимо использовать множество одинаковых [рекомендаций по обеспечению безопасности "Интернета вещей" (IoT)](../iot-fundamentals/iot-security-best-practices.md), применяемых сейчас.
 
@@ -29,7 +29,7 @@ Azure Digital Twins также использует другие функции 
 > [!TIP]
 > Использование [центра безопасности Azure для Интернета вещей](https://docs.microsoft.com/azure/asc-for-iot/) для обнаружения угроз и уязвимостей безопасности IOT.
 
-## <a name="iot-security-best-practices"></a>Рекомендации по обеспечению безопасности IoT
+## <a name="iot-security-best-practices"></a>Рекомендации по обеспечению безопасности Интернета вещей
 
 Далее представлены некоторые ключевые методы защиты устройств Интернета вещей.
 
@@ -75,7 +75,7 @@ Azure Digital двойников использует [Azure Active Directory](h
 
 [!INCLUDE [digital-twins-rbac-best-practices](../../includes/digital-twins-rbac-best-practices.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Рекомендации по Интернету вещей Azure см. в [этой статье](../iot-fundamentals/iot-security-best-practices.md).
 

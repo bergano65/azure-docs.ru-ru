@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.custom: seodec18
 ms.openlocfilehash: 95b9a9804fe1a9473d226912f178284f701a1547
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72753229"
 ---
 # <a name="regional-presence-with-azure-cosmos-db"></a>Географическое присутствие службы Azure Cosmos DB
 
 Azure Cosmos DB — это базовая служба в Azure. по умолчанию она всегда доступна во всех регионах, где доступна служба Azure. Сейчас Azure доступна в [54 регионах](https://azure.microsoft.com/global-infrastructure/regions/) по всему миру. 
 
-[![Регионы, в которых доступна служба Azure Cosmos DB](./media/regional-presence/regional-presence.png)](./media/regional-presence/regional-presence.png#lightbox)
+[![Регионы, в которых доступна Azure Cosmos DB](./media/regional-presence/regional-presence.png)](./media/regional-presence/regional-presence.png#lightbox)
 
 Cosmos DB доступна для клиентов в пяти различных облачных средах Azure:
 
-* **общедоступное облако Azure** — доступно по всему миру;
+* **Общедоступный пиринг Azure** — облако, которое доступно по всему миру.
 
 * Версия **Azure для Китая (21vianet** ) доступна с помощью уникальной связи между корпорацией Майкрософт и 21vianet, одним из крупнейших поставщиков услуг Интернета в Китае.
 

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: mialdrid
 ms.openlocfilehash: 58e75e4efecf390c4c1449b7ec59684554fa7516
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74894377"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79281422"
 ---
 # <a name="about-expressroute-virtual-network-gateways"></a>Сведения о шлюзах виртуальной сети ExpressRoute
 
@@ -28,12 +28,12 @@ ms.locfileid: "74894377"
 
 В виртуальной сети каждому типу шлюза может соответствовать только один шлюз виртуальной сети. Например, у вас может быть только один шлюз виртуальной сети типа VPN и только один типа ExpressRoute.
 
-## <a name="gwsku"></a>SKU шлюзов
+## <a name="gateway-skus"></a><a name="gwsku"></a>SKU шлюза
 [!INCLUDE [expressroute-gwsku-include](../../includes/expressroute-gwsku-include.md)]
 
 Если вы хотите обновить шлюз до более мощного SKU шлюза, в большинстве случаев можно использовать командлет PowerShell "Resize-Азвиртуалнетворкгатевай". Это подойдет для обновлений до SKU Standard и HighPerformance. Однако для обновления до SKU UltraPerformance шлюз необходимо создать заново. Повторное создание шлюза вызовет простой.
 
-### <a name="aggthroughput"></a>Приблизительная производительность в зависимости от номера SKU шлюза
+### <a name="estimated-performances-by-gateway-sku"></a><a name="aggthroughput"></a>Приблизительная производительность в зависимости от номера SKU шлюза
 В таблице ниже приведены типы шлюзов с приблизительной производительностью. Эта таблица относится к классической модели развертывания и модели диспетчера ресурсов.
 
 [!INCLUDE [expressroute-table-aggthroughput](../../includes/expressroute-table-aggtput-include.md)]
@@ -43,7 +43,7 @@ ms.locfileid: "74894377"
 >
 >
 
-## <a name="gwsub"></a>Подсеть шлюза
+## <a name="gateway-subnet"></a><a name="gwsub"></a>Подсеть шлюза
 
 Перед созданием шлюза ExpressRoute необходимо создать подсеть шлюза. Подсеть шлюза содержит IP-адреса, которые используют виртуальные машины и службы шлюза виртуальной сети. При создании шлюза виртуальной сети виртуальные машины шлюза развертываются в подсети шлюза и настраиваются с использованием требуемых параметров шлюза ExpressRoute. Никогда не развертывайте все остальное (например, дополнительные виртуальные машины) в подсети шлюза. Чтобы подсеть шлюза работала правильно, ее нужно назвать GatewaySubnet. Такое имя позволяет Azure определить, что это подсеть для развертывания виртуальных машин и служб шлюза виртуальной сети.
 
@@ -63,7 +63,7 @@ Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/2
 
 [!INCLUDE [vpn-gateway-no-nsg](../../includes/vpn-gateway-no-nsg-include.md)]
 
-### <a name="zrgw"></a>Номера SKU избыточного между зонами шлюза
+### <a name="zone-redundant-gateway-skus"></a><a name="zrgw"></a>Номера SKU избыточного между зонами шлюза
 
 Вы также можете развернуть шлюзы ExpressRoute в компоненте "Зоны доступности Azure". При этом происходит физическое и логическое разделение шлюзов в разные зоны доступности с защитой локального сетевого подключения к Azure от сбоев на уровне зоны.
 
@@ -77,21 +77,21 @@ Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/2
 
 Новые номера SKU шлюза также поддерживают другие варианты развертывания в соответствии с вашими потребностями. При создании шлюза виртуальной сети с использованием новых номеров SKU вы также можете развернуть шлюз в определенной зоне. Такой шлюз называется зональным. При развертывании зонального шлюза все его экземпляры развертываются в одной зоне доступности.
 
-## <a name="fastpath"></a>фастпас
+## <a name="fastpath"></a><a name="fastpath"></a>FastPath
 
 Шлюз виртуальной сети ExpressRoute предназначен для обмена сетевыми маршрутами и маршрутизации сетевого трафика. Фастпас предназначен для повышения производительности пути к данным между локальной сетью и виртуальной сетью. Если этот параметр включен, Фастпас отправляет сетевой трафик непосредственно на виртуальные машины в виртуальной сети, минуя шлюз.
 
 Дополнительные сведения о Фастпас, включая ограничения и требования, см. в разделе [About фастпас](about-fastpath.md).
 
-## <a name="resources"></a>Интерфейсы REST API и командлеты PowerShell
+## <a name="rest-apis-and-powershell-cmdlets"></a><a name="resources"></a>Интерфейсы REST API и командлеты PowerShell
 Дополнительные технические материалы и специальные требования к синтаксису, действующие при использовании интерфейсов REST API и командлетов PowerShell для настройки конфигураций шлюзов виртуальных сетей, доступны по приведенным ниже ссылкам.
 
-| **Классический** | **Resource Manager** |
+| **Классические** | **Resource Manager** |
 | --- | --- |
 | [PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/?view=azuresmps-4.0.0#azure) |[PowerShell](https://docs.microsoft.com/powershell/module/az.network#networking) |
-| [REST API](https://msdn.microsoft.com/library/jj154113.aspx) |[REST API](https://msdn.microsoft.com/library/mt163859.aspx) |
+| [REST API](https://msdn.microsoft.com/library/jj154113.aspx) |[REST API](https://msdn.microsoft.com/library/mt163859.aspx) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о доступных конфигурациях подключений см. в статье [Обзор ExpressRoute](expressroute-introduction.md).
 

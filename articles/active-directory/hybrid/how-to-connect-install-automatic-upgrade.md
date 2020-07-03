@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: автоматическое обновление | Документация Майкрософт'
+title: 'Azure AD Connect: автоматическое обновление | Документация Майкрософт'
 description: В этом разделе описывается встроенная функция автоматического обновления в Azure AD Connect.
 services: active-directory
 documentationcenter: ''
@@ -12,18 +12,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/26/2019
+ms.date: 05/07/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bfd61b78ca3027ade1f2f48dec33e0a8ed508d3d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ae0632fbc3208befe197c15ffdbf2d9a4e7b2d7a
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60349850"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82926482"
 ---
-# <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect выполняет следующие функции: Автоматическое обновление
+# <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](reference-connect-version-history.md#111050).  Эта функция была обновлена в [сборке 1.1.561](reference-connect-version-history.md#115610) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
 
 ## <a name="overview"></a>Обзор
@@ -39,11 +39,11 @@ ms.locfileid: "60349850"
 
 | Состояние | Комментарий |
 | --- | --- |
-| Включено |Автоматическое обновление включено. |
-| Приостановлено |Устанавливается только системой. Сейчас система **не имеет возможности** получать автоматические обновления. |
-| Отключено |Автоматическое обновление отключено. |
+| Активировано |Автоматическое обновление включено. |
+| Приостановлена |Устанавливается только системой. Сейчас система **не имеет возможности** получать автоматические обновления. |
+| Выключено |Автоматическое обновление отключено. |
 
-Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.  Перед 1.1.750.0 командлет Set-ADSyncAutoUpgrade заблокирует Autoupgrade, если состояние автоматическое обновление установлено на Suspended. Эта функция теперь был изменен, поэтому он не блокировал.
+Переключаться между состояниями **Включено** и **Отключено** позволяет командлет `Set-ADSyncAutoUpgrade`. Состояние **Приостановлено**может устанавливаться только системой.  До 1.1.750.0 командлет Set-ADSyncAutoUpgrade заблокировал автоматическое обновление, если состояние автоматического обновления было установлено в suspended. Теперь эта функция изменена, поэтому она не блокирует автообновление.
 
 В качестве инфраструктуры обновлений при автоматическом обновлении используется Azure AD Connect Health. Чтобы работало автоматическое обновление, откройте в прокси-сервере URL-адреса для **Azure AD Connect Health** , указанные в статье [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
 
@@ -67,9 +67,9 @@ ms.locfileid: "60349850"
 
 Итоговый код содержит префикс и общие сведения о состоянии.
 
-| Префикс итогового кода | Описание |
+| Префикс итогового кода | Описание: |
 | --- | --- |
-| Успешно |Установка успешно обновлена. |
+| Успех |Установка успешно обновлена. |
 | UpgradeAborted |Временное состояние привело к остановке обновления. Будет выполнена повторная попытка установки, и ожидается, что она будет успешной. |
 | UpgradeNotSupported |Конфигурация системы блокирует автоматическое обновление. Будет выполнена повторная попытка для проверки изменения состояния, однако ожидается, что систему потребуется обновить вручную. |
 
@@ -99,9 +99,8 @@ ms.locfileid: "60349850"
 | UpgradeNotSupportedNonLocalDbInstall |Вы не используете базу данных SQL Server Express LocalDB. |
 | UpgradeNotSupportedNonMsolAccount |[Учетная запись соединителя AD DS](reference-connect-accounts-permissions.md#ad-ds-connector-account) больше не является учетной записью MSOL_ по умолчанию. |
 | UpgradeNotSupportedNotConfiguredSignInMethod | При настройке AAD Connect в качестве метода входа вы выбрали параметр *Не настраивать*. |
-| UpgradeNotSupportedPtaSignInMethod | Вы выбрали сквозную проверку подлинности как метод входа. |
 | UpgradeNotSupportedStagingModeEnabled |Сервер настроен для работы в [промежуточном режиме](how-to-connect-sync-staging-server.md). |
 | UpgradeNotSupportedUserWritebackEnabled |Включена функция [обратной записи пользователей](how-to-connect-preview.md#user-writeback) . |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

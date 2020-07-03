@@ -8,13 +8,13 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 3903ccd1c15765d06cd1794a40567e2c70062538
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73795903"
 ---
-# <a name="how-to-upgrade-application-gateway-ingress-controller-using-helm"></a>Обновление входящего контроллера шлюза приложений с помощью Helm 
+# <a name="how-to-upgrade-application-gateway-ingress-controller-using-helm"></a>How to upgrade Application Gateway Ingress Controller using Helm (Обновление контроллера входящего трафика Шлюза приложений с помощью Helm) 
 
 Контроллер входящего трафика шлюза приложений Azure для Kubernetes (АГИК) можно обновить с помощью репозитория Helm, размещенного в службе хранилища Azure.
 
@@ -42,7 +42,7 @@ ms.locfileid: "73795903"
     helm repo update
     ```
 
-1. Просмотр доступных версий `application-gateway-kubernetes-ingress`ной диаграммы:
+1. Просмотр доступных версий `application-gateway-kubernetes-ingress` диаграммы:
 
     ``` bash
     helm search -l application-gateway-kubernetes-ingress
@@ -56,7 +56,7 @@ ms.locfileid: "73795903"
     application-gateway-kubernetes-ingress/ingress-azure    0.6.0           0.6.0           Use Azure Application Gateway as the ingress for an Azure...
     ```
 
-    Последняя доступная версия из приведенного выше списка: `0.7.0-rc1`
+    Последняя доступная версия из приведенного выше списка:`0.7.0-rc1`
 
 1. Просмотр установленных на данный момент диаграмм Helm:
 
@@ -71,7 +71,7 @@ ms.locfileid: "73795903"
     odd-billygoat   22              Fri Jun 21 15:56:06 2019        FAILED  ingress-azure-0.7.0-rc1 0.7.0-rc1       default
     ```
 
-    Установка диаграммы Helm из примера приведенного выше ответа называется `odd-billygoat`. Мы будем использовать это имя для остальных команд. Действительное имя развертывания, скорее всего, будет отличаться.
+    Установка диаграммы Helm из образца ответа выше имеет имя `odd-billygoat`. Мы будем использовать это имя для остальных команд. Действительное имя развертывания, скорее всего, будет отличаться.
 
 1. Обновите развертывание Helm до новой версии:
 
@@ -92,7 +92,7 @@ ms.locfileid: "73795903"
     helm history odd-billygoat
     ```
 
-    Пример выходных данных:
+    Образец вывода:
 
     ```bash
     REVISION        UPDATED                         STATUS          CHART                   DESCRIPTION
@@ -100,7 +100,7 @@ ms.locfileid: "73795903"
     2               Fri Jun 21 15:56:06 2019        FAILED          ingress-azure-xx        xxxx
     ```
 
-    В примере выходных данных команды `helm history` он выглядит так, как Последнее успешное развертывание нашей `odd-billygoat` имело значение Revision `1`
+    В примере выходных данных `helm history` команды он выглядит как Последнее успешное развертывание нашей `odd-billygoat` редакции.`1`
 
 1. Откат к последней успешной редакции:
 

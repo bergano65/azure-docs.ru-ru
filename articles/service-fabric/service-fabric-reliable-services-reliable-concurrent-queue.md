@@ -4,16 +4,16 @@ description: ReliableConcurrentQueue — это очередь с высокой
 ms.topic: conceptual
 ms.date: 5/1/2017
 ms.openlocfilehash: a7115db8259fde0e87e53557ecef730f8e82d2fd
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75462726"
 ---
 # <a name="introduction-to-reliableconcurrentqueue-in-azure-service-fabric"></a>Введение в надежные параллельные очереди в Azure Service Fabric
 Надежная параллельная очередь — это асинхронная, транзакционная и реплицируемая очередь, которая обладает высокой степенью параллелизма при операциях постановки в очередь и вывода из нее. Она предназначена для обеспечения высокой пропускной способности и низкой задержки. Она ослабляет строгое упорядочение FIFO, гарантируемое [надежной очередью](https://msdn.microsoft.com/library/azure/dn971527.aspx), и вместо этого обеспечивает упорядочение наилучшим возможным образом.
 
-## <a name="apis"></a>Интерфейсы API
+## <a name="apis"></a>Программные интерфейсы
 
 |Параллельная очередь                |Надежная параллельная очередь                                         |
 |--------------------------------|------------------------------------------------------------------|
@@ -21,7 +21,7 @@ ms.locfileid: "75462726"
 | bool TryDequeue(out T result)  | Task< ConditionalValue < T > > TryDequeueAsync(ITransaction tx)  |
 | int Count()                    | long Count()                                                     |
 
-## <a name="comparison-with-reliable-queuehttpsmsdnmicrosoftcomlibraryazuredn971527aspx"></a>Сравнение с [надежной очередью](https://msdn.microsoft.com/library/azure/dn971527.aspx)
+## <a name="comparison-with-reliable-queue"></a>Сравнение с [надежной очередью](https://msdn.microsoft.com/library/azure/dn971527.aspx)
 
 Надежная параллельная очередь предлагается в качестве альтернативы [надежной очереди](https://msdn.microsoft.com/library/azure/dn971527.aspx). Ее следует использовать в случаях, когда строгое упорядочение FIFO не требуется, так как модель FIFO требует уменьшения степени параллелизма.  [Надежная очередь](https://msdn.microsoft.com/library/azure/dn971527.aspx) использует блокировки для принудительного упорядочивания FIFO, разрешая ставить в очередь и выводить из нее одновременно максимум одну транзакцию за раз. Для сравнения надежная параллельная очередь снижает ограничения упорядочивания и позволяет чередовать операции постановки в очередь и вывода из нее любому количеству параллельных транзакций. Так обеспечивается упорядочивание наилучшим возможным образом, однако относительный порядок двух значений в надежной параллельной очереди не гарантируется.
 
@@ -29,7 +29,7 @@ ms.locfileid: "75462726"
 
 Пример использования надежной параллельной очереди — это сценарий с [очередью сообщений](https://en.wikipedia.org/wiki/Message_queue). В этом сценарии один или несколько отправителей создают и добавляют элементы в очередь и один или несколько получателей извлекают сообщения из очереди и обрабатывают их. Несколько отправителей и получателей могут работать независимо, используя параллельные транзакции для обработки очередей.
 
-## <a name="usage-guidelines"></a>Рекомендации по использованию
+## <a name="usage-guidelines"></a>Правила использования
 * Очередь предполагает, что элементы в ней имеют низкий период удержания. То есть элементы не будут оставаться в очереди в течение длительного времени.
 * Очередь не гарантирует строгий порядок FIFO.
 * Очередь не считывает свои собственные записи. Если элемент поставлен в очередь внутри транзакции, он не будет виден для средства вывода из очереди внутри той же транзакции.
@@ -334,10 +334,10 @@ using (var txn = this.StateManager.CreateTransaction())
 
 ## <a name="must-read"></a>Дополнительные сведения
 * [Get started with Reliable Services](service-fabric-reliable-services-quick-start.md) (Начало работы с Reliable Services)
-* [Работа с надежными коллекциями](service-fabric-work-with-reliable-collections.md)
+* [Работа с Reliable Collections](service-fabric-work-with-reliable-collections.md)
 * [Уведомления Reliable Services](service-fabric-reliable-services-notifications.md)
-* [Резервное копирование и восстановление служб Reliable Services и субъектов Reliable Actors](service-fabric-reliable-services-backup-restore.md)
-* [Настройка надежных служб с отслеживанием состояния](service-fabric-reliable-services-configuration.md)
-* [ASP.NET Core в Service Fabric Reliable Services](service-fabric-reliable-services-communication-webapi.md)
+* [Reliable Services резервного копирования и восстановления (аварийное восстановление)](service-fabric-reliable-services-backup-restore.md)
+* [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
+* [начало работы с Service Fabric служб веб-API](service-fabric-reliable-services-communication-webapi.md)
 * [Дополнительные возможности использования модели программирования надежных служб](service-fabric-reliable-services-advanced-usage.md)
 * [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)

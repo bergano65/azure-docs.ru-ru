@@ -9,22 +9,22 @@ ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: alkohli
 ms.openlocfilehash: 4361cee3d07408c3abb5031d2ab18c15c92c5e0a
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67595813"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222811"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-heavy-via-nfs"></a>Руководство по Копирование данных в Azure Data Box Heavy через NFS
 
 В этом руководстве объясняется, как подключиться и скопировать данные с главного компьютера на устройство Azure Data Box Heavy с помощью локального пользовательского веб-интерфейса.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Предварительные требования
 > * подключение к Azure Data Box Heavy;
-> * скопировать данные в Data Box Heavy.
+> * копирование данных в Data Box Heavy.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -67,7 +67,7 @@ ms.locfileid: "67595813"
 
     ![Настройка клиентского доступа NFS 1](media/data-box-deploy-copy-data/nfs-client-access.png)
 
-2. Укажите IP-адрес NFS-клиента и щелкните **Добавить**. Вы можете настроить доступ для нескольких NFS-клиентов, выполнив это действие для каждого клиента. Последовательно выберите **ОК**.
+2. Укажите IP-адрес NFS-клиента и щелкните **Добавить**. Вы можете настроить доступ для нескольких NFS-клиентов, выполнив это действие для каждого клиента. Нажмите кнопку **ОК**.
 
     ![Настройка клиентского доступа NFS 2](media/data-box-deploy-copy-data/nfs-client-access2.png)
 
@@ -151,7 +151,7 @@ ms.locfileid: "67595813"
    ![Проверка свободного и использованного места на панели мониторинга](media/data-box-deploy-copy-data/verify-used-space-dashboard.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали следующие сведения об Azure Data Box Heavy:
 

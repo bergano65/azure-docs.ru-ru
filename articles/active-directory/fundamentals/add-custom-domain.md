@@ -13,18 +13,18 @@ ms.author: ajburnle
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de91bd7e1e4c5f9909213f663dd3ede0f979d4de
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 69c96d123ebe97ba4a7a6df0395efe698924fef1
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073529"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734745"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
 
-Каждый новый клиент Azure AD поставляется с исходным доменным именем, *\<имя_домена >. onmicrosoft. com*. Нельзя изменить или удалить исходное доменное имя, но можно добавить имена Организации. Добавление пользовательских доменных имен поможет вам создать имена пользователей, знакомых с пользователями, например *(alain\@contoso.com*.
+Каждый новый клиент Azure AD поставляется с исходным именем домена, * \<имя_домена>. onmicrosoft.com*. Нельзя изменить или удалить исходное доменное имя, но можно добавить имена Организации. Добавление пользовательских доменных имен поможет вам создать имена пользователей, знакомых с пользователями, например *(alain\@contoso.com*.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Перед добавлением имени личного домена создайте доменное имя с помощью регистратора доменных имен. Аккредитованные регистраторы перечислены [на этой странице](https://www.icann.org/registrar-reports/accredited-list.html).
 
@@ -37,7 +37,7 @@ ms.locfileid: "74073529"
 >[!IMPORTANT]
 >Создатель клиента автоматически становится глобальным администратором для этого клиента. Глобальный администратор может добавить дополнительных администраторов для клиента.
 
-Дополнительные сведения о ролях подписки см. в статье [роли RBAC Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md#azure-rbac-roles).
+Дополнительные сведения о ролях подписки см. в статье [роли Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles).
 
 >[!TIP]
 > Если вы планируете объединить локальную службу Windows Server AD с Azure AD, необходимо выбрать параметр **я планирую настроить этот домен для единого входа с помощью локального Active Directory** при запуске средства Azure AD Connect для синхронизации каталогов.
@@ -108,7 +108,7 @@ ms.locfileid: "74073529"
 
 - **Убедитесь, что у вас нет неуправляемых клиентов Power BI.** Если пользователи активировали Power BI через функцию самостоятельной регистрации и создали неуправляемый клиент для организации, необходимо взять на себя управление в качестве внутреннего или внешнего администратора с помощью PowerShell. Дополнительные сведения см. в [Смена неуправляемого каталога от имени администратора в Azure Active Directory](../users-groups-roles/domains-admin-takeover.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Добавьте в каталог еще одного глобального администратора. Дополнительные сведения см. в статье [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](active-directory-users-assign-role-azure-portal.md).
 

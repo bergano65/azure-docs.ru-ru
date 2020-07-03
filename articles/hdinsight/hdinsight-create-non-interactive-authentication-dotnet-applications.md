@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/23/2019
-ms.openlocfilehash: 1fbb4ef2341148de4026f47fc06a54bbfa60fff6
-ms.sourcegitcommit: 801e9118fae92f8eef8d846da009dddbd217a187
+ms.openlocfilehash: 5e6a0586bc750f8972586920c15dbb297295aa20
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2019
-ms.locfileid: "75500132"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79371279"
 ---
 # <a name="create-a-non-interactive-authentication-net-hdinsight-application"></a>Создание приложения .NET HDInsight с неинтерактивной проверкой подлинности
 
@@ -22,12 +22,12 @@ ms.locfileid: "75500132"
 Из неинтерактивного приложения .NET, вам потребуется следующее:
 
 * Идентификатор клиента для подписки Azure (также называется *идентификатором каталога*). Дополнительные сведения см. в разделе [Получение идентификатора клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
-* Идентификатор клиента для приложения Azure Active Directory (Azure AD). Дополнительные сведения см. в разделах [Создание приложения Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) и [Получение идентификатора приложения и ключа проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
+* Идентификатор клиента для приложения Azure Active Directory (Azure AD). См. статью [создание Azure Active Directory приложения](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) и [Получение идентификатора приложения](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
 * Секретный ключ приложения Azure AD. Дополнительные сведения см. в разделе [Получение идентификатора приложения и ключа проверки подлинности](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
-Кластер HDInsight. Дополнительные сведения см. в [руководстве по началу работы](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster).
+Кластер HDInsight. Дополнительные сведения см. в [руководстве по началу работы](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
 ## <a name="assign-a-role-to-the-azure-ad-application"></a>Назначение роли приложению Azure AD
 
@@ -37,7 +37,7 @@ ms.locfileid: "75500132"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите к группе ресурсов с кластером HDInsight, в которой будет выполняться запрос Hive далее в этой статье. Если у вас много групп ресурсов, для поиска нужной можно использовать фильтр.
-1. В меню группы ресурсов щелкните **Управление доступом (IAM)** .
+1. В меню группы ресурсов щелкните **Управление доступом (IAM)**.
 1. Выберите вкладку **Назначения ролей**, чтобы просмотреть текущие назначения ролей.
 1. В верхней части страницы выберите **+ Добавить**.
 1. Выполните инструкции по добавлению роли владельца в приложение Azure AD. После успешного добавления роли приложение отобразится в списке роли владельца.
@@ -45,7 +45,7 @@ ms.locfileid: "75500132"
 ## <a name="develop-an-hdinsight-client-application"></a>Разработка клиентского приложения HDInsight
 
 1. Создайте приложение командной строки на языке C#.
-2. Добавьте следующие пакеты [NuGet](https://www.nuget.org/):
+2. Добавьте следующие пакеты [NuGet](https://www.nuget.org/) :
 
         Install-Package Microsoft.Azure.Common.Authentication -Pre
         Install-Package Microsoft.Azure.Management.HDInsight -Pre
@@ -119,7 +119,7 @@ ms.locfileid: "75500132"
     }
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание приложения Azure Active Directory и субъекта-службы на портале Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 * Узнайте, как [выполнять проверку подлинности субъекта-службы в Azure Resource Manager](../active-directory/develop/howto-authenticate-service-principal-powershell.md).

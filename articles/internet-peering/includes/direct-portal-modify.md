@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -8,38 +8,40 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: d9ff01cf0180dae7f75d9753ba889d0caddad937
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 3894bf046ed4ee3f068e43dbc5bc5b7f2a1002b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75775346"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81681076"
 ---
 В этом разделе описывается выполнение следующих операций изменения для прямого пиринга.
 
 ### <a name="add-direct-peering-connections"></a>Добавление соединений с прямыми пиринга
-1. Нажмите кнопку **+ добавить подключения** в верхней части экрана и настройте новое соединение пиринга.
+1. Нажмите кнопку **+ добавить подключения** и настройте новое соединение пиринга.
     > [!div class="mx-imgBorder"]
-    > ![представление ресурсов пиринга](../media/setup-direct-modify-addconnection.png)
-1. Заполните форму **подключения прямого пиринга** и нажмите кнопку **сохранить**. Чтобы получить справку по настройке подключения пиринга, ознакомьтесь с инструкциями в разделе "Создание и инициализация прямого пиринга" выше.
+    > ![Представление ресурсов пиринга](../media/setup-direct-modify-addconnection.png)
+
+1. Заполните форму **подключения прямого пиринга** и нажмите кнопку **сохранить**. Чтобы получить справку по настройке подключения пиринга, ознакомьтесь с инструкциями в разделе "Создание и инициализация прямого пиринга".
     > [!div class="mx-imgBorder"]
-    > ![представление ресурсов пиринга](../media/setup-direct-modify-savenewconnection.png)
+    > ![Форма подключения Direct пиринга](../media/setup-direct-modify-savenewconnection.png)
 
 ### <a name="remove-direct-peering-connections"></a>Удаление подключений прямого пиринга
 
-Удаление подключения в настоящее время не поддерживается на портале. Обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).
+Удаление подключения в настоящее время не поддерживается в портал Azure. Для получения дополнительных сведений обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).
 
 ### <a name="upgrade-or-downgrade-bandwidth-on-active-connections"></a>Обновление или понижение пропускной способности для активных соединений
-1. Щелкните подключение пиринга, которое необходимо изменить, а затем нажмите кнопку **...**  > **изменить подключение** .
+1. Выберите подключение пиринга, которое необходимо изменить, а затем выберите **...**  >  **Изменить соединение**.
     > [!div class="mx-imgBorder"]
-    > ![изменение подключения пиринга](../media/setup-direct-modify-editconnection.png)
-1. Измените пропускную способность, как показано ниже, и нажмите кнопку **сохранить**.
+    > ![Изменение подключения](../media/setup-direct-modify-editconnection.png)
+
+1. Измените пропускную способность, переместив ползунок, а затем нажмите кнопку **сохранить**.
     > [!div class="mx-imgBorder"]
-    > ![одноранговое подключение изменить пропускную способность](../media/setup-direct-modify-editconnectionsettings.png)
+    > ![Изменить пропускную способность](../media/setup-direct-modify-editconnectionsettings.png)
 
-### <a name="add-ipv4ipv6-session-on-active-connections"></a>Добавить сеанс IPv4/IPv6 в активных соединениях.
-1. Щелкните подключение пиринга, которое необходимо изменить, а затем нажмите кнопку **...**  > **изменить подключение** , как показано выше.
-1. Добавьте сведения о префиксе **IPv4** или префиксе **сеанса IPv6** и нажмите кнопку **сохранить**.
+### <a name="add-ipv4-or-ipv6-session-information-on-active-connections"></a>Добавление сведений о сеансе IPv4 или IPv6 в активных соединениях
+1. Выберите подключение пиринга, которое необходимо изменить, а затем выберите **...**  >  **Измените подключение** , как показано на шаге 1.
+1. Введите **префикс IPv4 для сеанса** или сведения о **префиксе сеанса IPv6** и нажмите кнопку **сохранить**.
 
-### <a name="remove-ipv4ipv6-session-on-active-connections"></a>Удаление сеанса IPv4 или IPv6 на активных подключениях.
-    Removing a **Session IPv4 prefix** or **Session IPv6 prefix** info is not currently supported on portal. Contact [Microsoft peering](mailto:peeringexperience@microsoft.com).
+### <a name="remove-ipv4-or-ipv6-session-information-on-active-connections"></a>Удаление сведений о сеансе IPv4 или IPv6 на активных подключениях
+Удаление **префикса IPv4** или префикса **сеанса IPv6** в настоящее время не поддерживается на портале. Для получения дополнительных сведений обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).

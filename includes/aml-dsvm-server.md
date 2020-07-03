@@ -8,19 +8,19 @@ ms.author: sgilley
 manager: cgronlund
 ms.custom: include file
 ms.topic: include
-ms.date: 01/25/2019
-ms.openlocfilehash: ac5656a8efe1dee932bfe753f8bdc06b787e20af
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.date: 03/05/2020
+ms.openlocfilehash: 2504245a14eee5308e046148f8073cf34ffa8143
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75529799"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79486009"
 ---
 1. [Создайте рабочую область Машинного обучения Azure](../articles/machine-learning/how-to-manage-workspace.md).
 
 1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
 
-    ```CLI
+    ```bash
     git clone https://github.com/Azure/MachineLearningNotebooks.git
     ```
 
@@ -34,6 +34,6 @@ ms.locfileid: "75529799"
 
 1. Запустите сервер записной книжки из клонированного каталога.
 
-    ```shell
+    ```bash
     jupyter notebook
     ```

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/12/2018
 ms.author: jaredro
-ms.openlocfilehash: eda0011ea4d259d0e60cb894c2b42325ddfc2eb7
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: a39cf4e09a70ca2b1225d699c84abf0e7f1d2eab
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74076632"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79476412"
 ---
 # <a name="configure-expressroute-global-reach-by-using-the-azure-cli"></a>Настройка Global Reach ExpressRoute с помощью Azure CLI
 
@@ -53,11 +53,11 @@ az account set --subscription <your subscription ID>
 
 При выполнении команды для настройки подключения следует учитывать следующие требования для значений параметров:
 
-* Параметр *peer-circuit* должен представлять полный идентификатор ресурса. Например,
+* Параметр *peer-circuit* должен представлять полный идентификатор ресурса. Пример:
 
   > /subscriptions/{идентификатор_вашей_подписки}/resourceGroups/{ваша_группа_ресурсов}/providers/Microsoft.Network/expressRouteCircuits/{имя_вашего_канала}
 
-* *address-prefix* должен быть подсетью "/29" IPv4 (например, 10.0.0.0/29). Мы используем IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Не следует использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
+* *префикс адреса* должен быть подсетью IPv4 "/29" (например, "10.0.0.0/29"). Мы используем IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Не следует использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
 
 Запустите следующую команду CLI для подключения двух каналов ExpressRoute.
 
@@ -67,7 +67,7 @@ az network express-route peering connection create -g <ResourceGroupName> --circ
 
 Выходные данные CLI выглядят следующим образом:
 
-```azurecli
+```output
 {
   "addressPrefix": "<__.__.__.__/29>",
   "authorizationKey": null,
@@ -103,7 +103,7 @@ az network express-route peering connection create -g <ResourceGroupName> --circ
 
    Выходные данные CLI выглядят следующим образом:
 
-   ```azurecli
+   ```output
    {
      "authorizationKey": "<authorizationKey>",
      "authorizationUseStatus": "Available",
@@ -148,8 +148,8 @@ az network express-route peering connection delete -g <ResourceGroupName> --circ
 
 После завершения этой операции вы потеряете подключение к локальным сетям через каналы ExpressRoute.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Получение дополнительных сведений об ExpressRoute Global Reach](expressroute-global-reach.md).
-* [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md).
+* [Проверка подключения ExpressRoute](expressroute-troubleshooting-expressroute-overview.md)
 * [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md)

@@ -16,12 +16,12 @@ ms.date: 10/28/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f40ed05391c36f820940d5351373ecd8f9492b17
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: d9d259c6e2a6ac9ced5f9a1c29d4aec08010f4dc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120141"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78190557"
 ---
 # <a name="common-scenarios-in-azure-ad-entitlement-management"></a>Распространенные сценарии в управлении назначениями Azure AD
 
@@ -52,7 +52,7 @@ ms.locfileid: "77120141"
 
 ### <a name="access-package-manager-allow-employees-in-your-organization-to-request-access-to-resources"></a>Доступ к диспетчеру пакетов: разрешить сотрудникам в вашей организации запрашивать доступ к ресурсам
 
-1. [Создать новый пакет Access](entitlement-management-access-package-create.md#start-new-access-package)
+1. [Создание пакета для доступа](entitlement-management-access-package-create.md#start-new-access-package)
 1. [Добавление групп, команд, приложений или сайтов SharePoint для доступа к пакету](entitlement-management-access-package-create.md#resource-roles)
 1. [Добавьте политику запросов, чтобы разрешить пользователям в вашем каталоге запрашивать доступ.](entitlement-management-access-package-create.md#for-users-in-your-directory)
 1. [Укажите параметры срока действия](entitlement-management-access-package-create.md#lifecycle)
@@ -83,7 +83,7 @@ ms.locfileid: "77120141"
 
 ### <a name="access-package-manager-collaborate-with-an-external-partner-organization"></a>Доступ к диспетчеру пакетов. Совместная работа с внешней организацией партнера
 
-1. [Создать новый пакет Access](entitlement-management-access-package-create.md#start-new-access-package)
+1. [Создание пакета для доступа](entitlement-management-access-package-create.md#start-new-access-package)
 1. [Добавление групп, команд, приложений или сайтов SharePoint для доступа к пакету](entitlement-management-access-package-resources.md#add-resource-roles)
 1. [Добавьте политику запросов, чтобы разрешить пользователям, которые не находятся в вашем каталоге, запрашивать доступ.](entitlement-management-access-package-request-policy.md#for-users-not-in-your-directory)
 1. [Укажите параметры срока действия](entitlement-management-access-package-create.md#lifecycle)
@@ -145,6 +145,7 @@ ms.locfileid: "77120141"
 
 1. Открытие пакета Access
 1. [Просмотр назначений](entitlement-management-access-package-assignments.md#view-who-has-an-assignment)
+1. [Архивация отчетов и журналов](entitlement-management-logs-and-reporting.md)
 
 ### <a name="administrator-view-resources-assigned-to-users"></a>Администратор: Просмотр ресурсов, назначенных пользователям
 
@@ -153,7 +154,7 @@ ms.locfileid: "77120141"
 
 ## <a name="programmatic-administration"></a>Программное администрирование
 
-Вы также можете управлять пакетами доступа, каталогами, политиками, запросами и назначениями с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать [API управления](https://docs.microsoft.com/graph/api/resources/entitlementmanagement-root?view=graph-rest-beta)назначением.
+Вы также можете управлять пакетами доступа, каталогами, политиками, запросами и назначениями с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать [API управления](https://docs.microsoft.com/graph/api/resources/entitlementmanagement-root?view=graph-rest-beta)назначением.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

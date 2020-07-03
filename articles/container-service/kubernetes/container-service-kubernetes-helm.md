@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/10/2017
 ms.author: saudas
 ms.custom: mvc
-ms.openlocfilehash: a32c9fab3877a693d2df26571b9fae4aa7b4380c
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 2a3423b908ac5e089faa30b19914d3b74ae9a547
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76271085"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735425"
 ---
 # <a name="deprecated-use-helm-to-deploy-containers-on-a-kubernetes-cluster"></a>(УСТАРЕЛО) Использование Helm для развертывания контейнеров в кластере Kubernetes
 
@@ -21,20 +21,20 @@ ms.locfileid: "76271085"
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
-[Helm](https://github.com/kubernetes/helm/) — это средство упаковки с открытым исходным кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как Apt-get и Yum, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes. В этой статье показано, как работать с Helm в кластере Kubernetes, развернутом в Службе контейнеров Azure.
+[Helm](https://github.com/kubernetes/helm/) — это средство упаковки с открытым кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как Apt-get и Yum, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes. В этой статье показано, как работать с Helm в кластере Kubernetes, развернутом в Службе контейнеров Azure.
 
 Helm состоит из двух компонентов: 
 * **Helm CLI** — клиент, который выполняется на компьютере локально или в облаке.  
 
 * **Tiller** — сервер, который выполняется в кластере Kubernetes и управляет жизненным циклом приложений Kubernetes. 
  
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Создание кластера Kubernetes](container-service-kubernetes-walkthrough.md) в Службе контейнеров Azure
+* [Создание кластера Kubernetes](container-service-kubernetes-walkthrough.md) в службе контейнеров Azure
 
 * [Установка и настройка`kubectl`](../container-service-connect.md) на локальном компьютере
 
-* [Установка Helm](https://github.com/kubernetes/helm/blob/master/docs/install.md) на локальном компьютере
+* [Установка Helm](https://helm.sh/docs/intro/quickstart/) на локальном компьютере
 
 ## <a name="helm-basics"></a>Основы использования Helm 
 
@@ -147,7 +147,7 @@ sudo mysql –h v1-mariadb
  
  
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Дополнительные сведения об управлении чартами Kubernetes см. в [документации по Helm](https://github.com/kubernetes/helm/blob/master/docs/index.md). 
+* Дополнительные сведения об управлении чартами Kubernetes см. в [документации по Helm](https://helm.sh/docs/). 
 

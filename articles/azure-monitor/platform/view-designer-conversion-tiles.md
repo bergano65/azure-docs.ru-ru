@@ -3,16 +3,15 @@ title: Azure Monitor конструктора представлений для 
 description: ''
 author: austonli
 ms.author: aul
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: 5bb02edce4a3aef30f8f9528a846c99d6d8d3b39
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: f07d15521c787dfd588c285bff57616059caa2f3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77170868"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77658632"
 ---
 # <a name="azure-monitor-view-designer-tile-conversions"></a>Преобразования плиток конструктора представлений Azure Monitor
 [Конструктор представлений](view-designer.md) — это функция Azure Monitor, которая позволяет создавать пользовательские представления, помогающие визуализировать данные в рабочей области log Analytics, с диаграммами, списками и временными шкалами. Они выводятся и заменяются книгами, которые предоставляют дополнительные функциональные возможности. В этой статье приводятся сведения о преобразовании различных плиток в книги.
@@ -24,7 +23,7 @@ ms.locfileid: "77170868"
 Повторное создание элемента кольца & списка в книгах включает две отдельные визуализации. Для части кольца существует два варианта.
 Для начала нажмите кнопку **Добавить запрос** и вставьте исходный запрос из конструктора представлений в ячейку.
 
-**Вариант 1.** Выберите пункт **круговая диаграмма** в раскрывающемся списке **визуализация** : ![меню визуализации круговой диаграммы](media/view-designer-conversion-tiles/pie-chart.png)
+**Вариант 1.** Выбор **круговой диаграммы** из **Visualization** раскрывающегося ![списка визуализации: меню визуализации круговой диаграммы](media/view-designer-conversion-tiles/pie-chart.png)
 
 **Вариант 2.** Выберите **задать по запросу** в раскрывающемся списке **визуализация** и добавьте `| render piechart` в запрос:
 
@@ -62,8 +61,9 @@ search *
 ```KQL
 search * 
 | summarize AggregatedValue = count() by Type
+```
 
-Updated query
+Обновленный запрос
 ```KQL
 search * 
 | make-series Count = count() default=0 on TimeGenerated from {TimeRange:start} to {TimeRange:end} step {TimeRange:grain} by Type
@@ -113,7 +113,7 @@ search *
 ```
 
 Измените раскрывающийся список визуализации на **плитки** , а затем выберите **Параметры плитки**.
- ](media/view-designer-conversion-tiles/tile-visualization.png) визуализации плитки ![
+ ![Визуализация плитки](media/view-designer-conversion-tiles/tile-visualization.png)
 
 Оставьте **заголовок** раздела пустым и выберите **слева**. Измените значение параметра **использовать столбец:** для параметра **число**, а для модуля **подготовки столбцов** — **большое число**:
 
@@ -159,6 +159,6 @@ search *
 
 ![Книги из списка временной шкалы](media/view-designer-conversion-tiles/time-workbooks.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обзор конструктора представлений для перехода к книгам](view-designer-conversion-overview.md)

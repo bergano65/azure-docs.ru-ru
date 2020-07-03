@@ -1,5 +1,5 @@
 ---
-title: Руководство. Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark | Документация Майкрософт
+title: Руководство по Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark | Документация Майкрософт
 description: В этом руководстве показано, как выполнять запросы Spark в кластере Azure Databricks для получения доступа к данным в учетной записи хранения Azure Data Lake Storage 2-го поколения.
 author: normesta
 ms.subservice: data-lake-storage-gen2
@@ -8,18 +8,18 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: e26ae4d384b1718b1cdb12abbda82aad22afde4d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5889afa033b30606f8981ddb826aa192f24efa10
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75462572"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81312914"
 ---
-# <a name="tutorial-azure-data-lake-storage-gen2-azure-databricks--spark"></a>Руководство. Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark
+# <a name="tutorial-azure-data-lake-storage-gen2-azure-databricks--spark"></a>Руководство по Azure Data Lake Storage 2-го поколения, Azure Databricks и Spark
 
 В этом руководстве показано, как подключить кластер Azure Databricks к данным, хранящимся в учетной записи хранения Azure с поддержкой Azure Data Lake Storage 2-го поколения. Благодаря этому подключению запросы и аналитику можно изначально выполнять из кластера в данных.
 
-Изучив данный учебник, вы научитесь:
+Выполняя данное руководство, вы сделаете следующее:
 
 > [!div class="checklist"]
 > * Создание кластера Databricks
@@ -28,7 +28,7 @@ ms.locfileid: "75462572"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Создайте учетную запись Azure Data Lake Storage 2-го поколения.
 
@@ -42,12 +42,12 @@ ms.locfileid: "75462572"
 
   Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
-  :heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
+  :heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
 
   > [!IMPORTANT]
   > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
 
-  :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, идентификатор приложения и значения паролей в текстовый файл. Они вам скоро понадобятся.
+  :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте значения идентификатора клиента, идентификатора приложения и секрета клиента в текстовый файл. Они вам скоро понадобятся.
 
 ### <a name="download-the-flight-data"></a>Скачивание данных о рейсах
 
@@ -71,12 +71,12 @@ ms.locfileid: "75462572"
 
 2. В разделе **Служба Azure Databricks** укажите следующие значения, чтобы создать службу Databricks.
 
-    |Свойство  |Description  |
+    |Свойство  |Описание  |
     |---------|---------|
     |**Имя рабочей области**     | Укажите имя рабочей области Databricks.  |
-    |**подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
-    |**группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../azure-resource-manager/management/overview.md). |
-    |**Местоположение**     | Выберите **Западная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).       |
+    |**Подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
+    |**Группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../../azure-resource-manager/management/overview.md). |
+    |**Расположение**     | Выберите **Западная часть США 2**. Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).       |
     |**Ценовая категория**     |  Выберите **Стандартная**.     |
 
     ![Создайте рабочую область Azure Databricks](./media/data-lake-storage-use-databricks-spark/create-databricks-workspace.png "Создание службы Azure Databricks.").
@@ -129,7 +129,7 @@ ms.locfileid: "75462572"
 
    * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
 
-   * Замените заполнитель `<container-name>` любым именем, которое хотите присвоить своему контейнеру.
+   * Замените заполнитель `<container-name>` именем контейнера в вашей учетной записи хранения.
 
 ## <a name="create-a-container-and-mount-it"></a>Создание и подключение контейнера
 
@@ -143,7 +143,7 @@ ms.locfileid: "75462572"
 
 3. В диалоговом окне **создания записной книжки** введите имя записной книжки. Выберите **Python** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 
 5. Скопируйте и вставьте следующий блок кода в первую ячейку, но не запускайте этот код.
 
@@ -151,7 +151,7 @@ ms.locfileid: "75462572"
     configs = {"fs.azure.account.auth.type": "OAuth",
            "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
            "fs.azure.account.oauth2.client.id": "<appId>",
-           "fs.azure.account.oauth2.client.secret": "<password>",
+           "fs.azure.account.oauth2.client.secret": "<clientSecret>",
            "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant>/oauth2/token",
            "fs.azure.createRemoteFileSystemDuringInitialization": "true"}
 
@@ -161,20 +161,7 @@ ms.locfileid: "75462572"
     extra_configs = configs)
     ```
 
-18. В этом блоке кода замените значения заполнителя `appId`, `password`, `tenant` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Замените значение заполнителя `container-name` именем, которое вы присвоили своему контейнеру на предыдущем этапе.
-
-Используйте эти значения, чтобы заменить упомянутые заполнители.
-
-   * `appId` и `password` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
-
-   * Значение `tenant-id` берется из подписки.
-
-   * `storage-account-name` — это имя учетной записи хранения Azure Data Lake Storage 2-го поколения.
-
-   * Замените заполнитель `container-name` любым именем, которое хотите присвоить своему контейнеру.
-
-   > [!NOTE]
-   > При настройке рабочей среды рассмотрите возможность сохранения пароля в Azure Databricks. Затем в блоке кода замените пароль ключом поиска. Выполнив инструкции из этого краткого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
+18. В этом блоке кода замените значения заполнителя `appId`, `clientSecret`, `tenant` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Замените значение заполнителя `container-name` именем контейнера.
 
 19. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 

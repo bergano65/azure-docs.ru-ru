@@ -9,10 +9,10 @@ ms.service: web-application-firewall
 ms.date: 11/14/2019
 ms.author: victorh
 ms.openlocfilehash: bfa6690c636e15fa933f50698cd81359600b5c05
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77368301"
 ---
 # <a name="create-and-use-web-application-firewall-v2-custom-rules-on-application-gateway"></a>Создание и использование настраиваемых правил брандмауэра веб-приложения V2 на шлюзе приложений
@@ -225,7 +225,7 @@ $rule = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-Соответствующее правило CR: `SecRule REMOTE_ADDR "@ipMatch 192.168.5.0/24" "id:7001,deny"`
+Соответствующее правило CR:`SecRule REMOTE_ADDR "@ipMatch 192.168.5.0/24" "id:7001,deny"`
 
 ## <a name="example-4"></a>Пример 4
 
@@ -386,7 +386,7 @@ $rule2 = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-## <a name="example-6"></a>Пример 6
+## <a name="example-6"></a>Пример 6
 
 Вы хотите заблокировать пользовательский скрытых. Так как используемая здесь логика имеет значение **или**, а все значения находятся в *RequestUri*, все *матчвалуес* могут находиться в списке с разделителями-запятыми.
 
@@ -543,8 +543,8 @@ $rule3 = New-AzApplicationGatewayFirewallCustomRule `
   }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-После создания настраиваемых правил можно узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Журналы диагностики](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
+После создания настраиваемых правил можно узнать, как просматривать журналы WAF. Дополнительные сведения см. в разделе [Диагностика шлюза приложений](../../application-gateway/application-gateway-diagnostics.md#diagnostic-logging).
 
 [fig1]: ../media/create-custom-waf-rules/1.png

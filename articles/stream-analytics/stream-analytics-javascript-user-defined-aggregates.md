@@ -1,18 +1,18 @@
 ---
 title: Определяемые пользователем вычисления JavaScript в Azure Stream Analytics
 description: В этой статье описывается, как выполнять расширенные запросы с помощью определяемых пользователем вычислений JavaScript в Azure Stream Analytics.
-author: rodrigoamicrosoft
+author: rodrigoaatmicrosoft
 ms.author: rodrigoa
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2017
-ms.openlocfilehash: d9b37810146f66806be9b8ce7a38f8dac31facb9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c509d174787a58abeee33e039eb7bbbcbcb43f38
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426094"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79531740"
 ---
 # <a name="azure-stream-analytics-javascript-user-defined-aggregates"></a>Azure Stream Analytics определяемые пользователем статистические функции JavaScript
  
@@ -119,7 +119,7 @@ function main() {
 
 Ниже рассматривается процесс создания пользовательского статистического выражения на портале. В примере, который здесь используется, вычисляются средневзвешенные по времени значения.
 
-Теперь давайте создадим пользовательское статистическое выражение JavaScript в существующем задании ASA, выполнив приведенные инструкции.
+Теперь создадим UDA JavaScript в существующем задании ASA, выполнив следующие действия.
 
 1. Выполните вход на портал Azure и найдите задание Stream Analytics.
 1. Щелкните ссылку "Функции" в разделе **Топология задания**.
@@ -173,7 +173,7 @@ function main() {
 
 ## <a name="calling-javascript-uda-in-asa-query"></a>Вызов пользовательского статистического выражения JavaScript в запросе ASA
 
-На портале Azure откройте задание, измените запрос и вызовите функцию TWA() с обязательным префиксом "uda". Пример.
+На портале Azure откройте задание, измените запрос и вызовите функцию TWA() с обязательным префиксом "uda". Пример:
 
 ```SQL
 WITH value AS
@@ -223,7 +223,7 @@ GROUP BY TumblingWindow(minute, 5)
 ]
 ```
 
-## <a name="get-help"></a>Справка
+## <a name="get-help"></a>Получить справку
 
 Дополнительную помощь и поддержку вы можете получить на нашем [форуме Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 
@@ -232,5 +232,5 @@ GROUP BY TumblingWindow(minute, 5)
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Приступая к работе с Azure Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Масштабирование заданий в службе Azure Stream Analytics](stream-analytics-scale-jobs.md)
-* [Azure Stream Analytics query language reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Azure Stream Analytics).
-* [Azure Stream Analytics management REST API reference](https://msdn.microsoft.com/library/azure/dn835031.aspx) (Справочник по API-интерфейсу REST для управления Stream Analytics).
+* [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
+* [Справочник REST API по управлению Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)

@@ -11,17 +11,19 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 09/04/2018
-ms.openlocfilehash: 4d729a0117c7c409d1a3e0c3fd440aed96153203
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: ce63da745fb84ebccd57b246fc934f595dd7cda1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75893319"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81418258"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-amazon-redshift-connector.md)
 > * [Текущая версия](connector-amazon-redshift.md)
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Amazon Redshift. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
@@ -40,7 +42,7 @@ ms.locfileid: "75893319"
 > [!TIP]
 > Чтобы обеспечить наилучшую производительность при копировании больших объемов данных из Redshift, рекомендуется использовать встроенный механизм Redshift UNLOAD через Amazon S3. Дополнительные сведения см. в разделе [Копирование данных из Amazon Redshift с помощью UNLOAD](#use-unload-to-copy-data-from-amazon-redshift).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * При копировании данных в локальное хранилище данных с помощью [локальной среды IR](create-self-hosted-integration-runtime.md) предоставьте среде выполнения интеграции доступ к кластеру Amazon Redshift (использовав IP-адрес компьютера). Инструкции см. в статье об [авторизации доступа к кластеру](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
 * Если вы копируете данные в хранилище данных Azure, вам нужно знать IP-адреса вычислительных ресурсов и диапазоны SQL, используемые центрами обработки данных Azure. Диапазоны IP-адресов центра обработки данных Azure приведены на [этой странице](https://www.microsoft.com/download/details.aspx?id=41653).
@@ -55,17 +57,17 @@ ms.locfileid: "75893319"
 
 Для связанной службы Amazon Redshift поддерживаются следующие свойства:
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
-| type | Для свойства типа необходимо задать значение **AmazonRedshift**. | Да |
+| type | Для свойства Type необходимо задать значение **AmazonRedshift** . | Да |
 | server |IP-адрес или имя узла сервера Amazon Redshift. |Да |
 | порт |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет, значение по умолчанию — 5439 |
-| база данных |Имя базы данных Amazon Redshift. |Да |
+| База данных |Имя базы данных Amazon Redshift. |Да |
 | username |Имя пользователя, имеющего доступ к базе данных. |Да |
-| password |Пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
+| пароль |Пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
-**Пример**.
+**Пример.**
 
 ```json
 {
@@ -93,11 +95,11 @@ ms.locfileid: "75893319"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных Amazon Redshift.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md) . Этот раздел содержит список свойств, поддерживаемых набором данных Amazon Redshift.
 
 Чтобы скопировать данные из Amazon RedShift, поддерживаются следующие свойства:
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
 | type | Свойство Type набора данных должно иметь значение **амазонредшифттабле** . | Да |
 | схема | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
@@ -122,7 +124,7 @@ ms.locfileid: "75893319"
 }
 ```
 
-Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается как есть, хотя вы предлагаете использовать новый.
+Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается "как есть", хотя вы можете использовать новый объект, который будет использоваться в дальнейшем.
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
@@ -130,9 +132,9 @@ ms.locfileid: "75893319"
 
 ### <a name="amazon-redshift-as-source"></a>Amazon Redshift в качестве источника
 
-Чтобы скопировать данные из Amazon Redshift, задайте тип источника **AmazonRedshiftSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные из Amazon Redshift, задайте тип источника **AmazonRedshiftSource** в действии копирования. В разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь значение **AmazonRedshiftSource**. | Да |
 | query |Используйте пользовательский запрос для чтения данных. Например, select * from MyTable. |Нет (если для набора данных задано свойство tableName) |
@@ -219,21 +221,21 @@ ms.locfileid: "75893319"
 | Тип данных Amazon Redshift | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | bigint |Int64 |
-| BOOLEAN |String |
-| CHAR |String |
-| DATE |Дата и время |
+| BOOLEAN |Строка |
+| CHAR |Строка |
+| DATE |DateTime |
 | DECIMAL |Decimal |
 | DOUBLE PRECISION |Double |
 | INTEGER |Int32 |
-| real |Отдельная |
+| real |Single |
 | SMALLINT |Int16 |
-| TEXT |String |
-| timestamp |Дата и время |
-| VARCHAR |String |
+| TEXT |Строка |
+| timestamp |DateTime |
+| VARCHAR |Строка |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

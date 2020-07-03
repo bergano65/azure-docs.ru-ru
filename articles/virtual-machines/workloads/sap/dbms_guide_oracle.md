@@ -16,10 +16,10 @@ ms.date: 12/14/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a23fb981e24f6152d99b76bd72115f8159f5d60f
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75645850"
 ---
 # <a name="azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на Виртуальных машинах Azure для рабочей нагрузки SAP
@@ -29,7 +29,7 @@ ms.locfileid: "75645850"
 [826037]:https://launchpad.support.sap.com/#/notes/826037
 [965908]:https://launchpad.support.sap.com/#/notes/965908
 [1031096]:https://launchpad.support.sap.com/#/notes/1031096
-[1114181]: https://launchpad.support.sap.com/#/notes/1114181
+[1114181]:https://launchpad.support.sap.com/#/notes/1114181
 [1139904]:https://launchpad.support.sap.com/#/notes/1139904
 [1173395]:https://launchpad.support.sap.com/#/notes/1173395
 [1245200]:https://launchpad.support.sap.com/#/notes/1245200
@@ -38,7 +38,7 @@ ms.locfileid: "75645850"
 [1585981]:https://launchpad.support.sap.com/#/notes/1585981
 [1588316]:https://launchpad.support.sap.com/#/notes/1588316
 [1590719]:https://launchpad.support.sap.com/#/notes/1590719
-[1597355]: https://launchpad.support.sap.com/#/notes/1597355
+[1597355]:https://launchpad.support.sap.com/#/notes/1597355
 [1605680]:https://launchpad.support.sap.com/#/notes/1605680
 [1619720]:https://launchpad.support.sap.com/#/notes/1619720
 [1619726]:https://launchpad.support.sap.com/#/notes/1619726
@@ -54,23 +54,23 @@ ms.locfileid: "75645850"
 [1882376]:https://launchpad.support.sap.com/#/notes/1882376
 [1909114]:https://launchpad.support.sap.com/#/notes/1909114
 [1922555]:https://launchpad.support.sap.com/#/notes/1922555
-[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1941500]:https://launchpad.support.sap.com/#/notes/1941500
 [1956005]:https://launchpad.support.sap.com/#/notes/1956005
 [1973241]:https://launchpad.support.sap.com/#/notes/1973241
 [1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[1999351]:https://launchpad.support.sap.com/#/notes/1999351
 [2002167]:https://launchpad.support.sap.com/#/notes/2002167
-[2015553]: https://launchpad.support.sap.com/#/notes/2015553
-[2039619]: https://launchpad.support.sap.com/#/notes/2039619
-[2069760]: https://launchpad.support.sap.com/#/notes/2069760
+[2015553]:https://launchpad.support.sap.com/#/notes/2015553
+[2039619]:https://launchpad.support.sap.com/#/notes/2039619
+[2069760]:https://launchpad.support.sap.com/#/notes/2069760
 [2121797]:https://launchpad.support.sap.com/#/notes/2121797
 [2134316]:https://launchpad.support.sap.com/#/notes/2134316
-[2171857]: https://launchpad.support.sap.com/#/notes/2171857
-[2178632]: https://launchpad.support.sap.com/#/notes/2178632
-[2191498]: https://launchpad.support.sap.com/#/notes/2191498
+[2171857]:https://launchpad.support.sap.com/#/notes/2171857
+[2178632]:https://launchpad.support.sap.com/#/notes/2178632
+[2191498]:https://launchpad.support.sap.com/#/notes/2191498
 [2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[2243692]: https://launchpad.support.sap.com/#/notes/2243692
+[2243692]:https://launchpad.support.sap.com/#/notes/2243692
 
 [azure-cli]:../../../cli-install-nodejs.md
 [azure-portal]:https://portal.azure.com
@@ -318,7 +318,7 @@ ms.locfileid: "75645850"
 
 Следующие примечания к SAP актуальны для развертывания SAP в Azure.
 
-| Номер примечания | Title |
+| Номер примечания | Заголовок |
 | --- | --- |
 | [1928533] |Приложения SAP в Azure: Поддерживаемые продукты и типы виртуальных машин Azure |
 | [2015553] |SAP на Microsoft Azure: поддержка предварительных требований |
@@ -357,7 +357,7 @@ Windows и Oracle Linux являются единственными операц
 
 Мы настоятельно рекомендуем использовать [Управляемые диски Azure](https://docs.microsoft.com/azure/storage/storage-managed-disks-overview), а для развертываний Oracle Database — [диски SSD ценовой категории "Премиум"](../../windows/disks-types.md).
 
-Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения см. здесь:
+Сетевые диски и удаленные общие ресурсы, включая файловые службы Azure, не поддерживаются для файлов Oracle Database. Дополнительные сведения можно найти в разделе
 
 - [Введение в службы файлов Microsoft Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 
@@ -366,18 +366,18 @@ Windows и Oracle Linux являются единственными операц
 
 Если вы используете диски на основе хранилища страничных BLOB-объектов Azure или Управляемых дисков, инструкции, изложенные в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md), также применяются к развертываниям Oracle Database.
 
-Существуют квоты на пропускную способность операций ввода-вывода в секунду для дисков Azure. Эта концепция объясняется в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). Квоты зависят от типа используемой виртуальной машины. Список типов ВИРТУАЛЬНЫХ машин с их квотами можно найти на странице [размеры для виртуальной машины Windows в Azure][virtual-machines-sizes-windows].
+Существуют квоты на пропускную способность операций ввода-вывода в секунду для дисков Azure. Эта концепция объясняется в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). Квоты зависят от типа используемой виртуальной машины. Список типов виртуальных машин с соответствующими квотами см. в статье [Размеры виртуальных машин Windows в Azure][virtual-machines-sizes-windows].
 
 Чтобы определить поддерживаемые типы виртуальных машин Azure, ознакомьтесь с примечанием к SAP [1928533].
 
 Минимальная конфигурация выглядит следующим образом. 
 
-| Компонент | Диски | Caching | Пул носителей |
+| Компонент | Диск | Caching | Пул носителей |
 | --- | ---| --- | --- |
-| \oracle\<SID>\origlogaA & mirrlogB | "Премиум" | Нет | Не требуется. |
-| \oracle\<SID>\origlogaB & mirrlogA | "Премиум" | Нет | Не требуется. |
-| \oracle\<SID>\sapdata1...n | "Премиум" | Только для чтения | Можно использовать |
-| \oracle\<SID>\oraarch | Стандартный | Нет | Не требуется. |
+| \oracle\<SID>\origlogaA & mirrlogB | Premium | None | Не требуется. |
+| \oracle\<SID>\origlogaB & mirrlogA | Premium | None | Не требуется. |
+| \oracle\<SID>\sapdata1...n | Premium | Только для чтения | Можно использовать |
+| \oracle\<SID>\oraarch | Standard | None | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | | Не требуется. |
 
 
@@ -385,15 +385,15 @@ Windows и Oracle Linux являются единственными операц
 
 Конфигурация производительности выглядит следующим образом.
 
-| Компонент | Диски | Caching | Пул носителей |
+| Компонент | Диск | Caching | Пул носителей |
 | --- | ---| --- | --- |
-| \oracle\<SID>\origlogaA | "Премиум" | Нет | Можно использовать  |
-| \oracle\<SID>\origlogaB | "Премиум" | Нет | Можно использовать |
-| \oracle\<SID>\mirrlogAB | "Премиум" | Нет | Можно использовать |
-| \oracle\<SID>\mirrlogBA | "Премиум" | Нет | Можно использовать |
-| \oracle\<SID>\sapdata1...n | "Премиум" | Только для чтения | Рекомендуется  |
-| \oracle\SID\sapdata(n+1)* | "Премиум" | Нет | Можно использовать |
-| \oracle\<SID>\oraarch* | "Премиум" | Нет | Не требуется. |
+| \oracle\<SID>\origlogaA | Premium | None | Можно использовать  |
+| \oracle\<SID>\origlogaB | Premium | None | Можно использовать |
+| \oracle\<SID>\mirrlogAB | Premium | None | Можно использовать |
+| \oracle\<SID>\mirrlogBA | Premium | None | Можно использовать |
+| \oracle\<SID>\sapdata1...n | Premium | Только для чтения | Рекомендуемая  |
+| \oracle\SID\sapdata(n+1)* | Premium | None | Можно использовать |
+| \oracle\<SID>\oraarch* | Premium | None | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | Не требуется. |
 
 * (n+1): размещение табличных пространств SYSTEM, TEMP и UNDO. Характеристики ввода-вывода для табличных пространств System и Undo существенно отличаются от характеристик других табличных пространств, в которых размещаются данные приложений. Для повышения производительности табличных пространств System и Undo лучше всего отключить кэширование.
@@ -420,7 +420,7 @@ Windows и Oracle Linux являются единственными операц
 
 ### <a name="accelerated-networking"></a>Ускорение работы в сети
 Для развертываний Oracle в Windows мы настоятельно рекомендуем использовать ускорение работы в сети, как описано в [этой статье](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/). Обратите также внимание на рекомендации, приведенные в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
-### <a name="other"></a>Прочее
+### <a name="other"></a>Другой
 Другие важные концепции, относящиеся к развертываниям виртуальных машин в Oracle Database, включая группы доступности Azure и мониторинг SAP, описываются в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
 
 ## <a name="specifics-for-oracle-database-on-oracle-linux"></a>Особенности Oracle Database в Oracle Linux
@@ -456,18 +456,18 @@ Windows и Oracle Linux являются единственными операц
 
 Если вы используете диски на основе хранилища страничных BLOB-объектов Azure или Управляемых дисков, инструкции, изложенные в документе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md), также применяются к развертываниям Oracle Database.
 
- Существуют квоты на пропускную способность операций ввода-вывода в секунду для дисков Azure. Эта концепция объясняется в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). Точные квоты зависят от типа используемой виртуальной машины. Список типов ВИРТУАЛЬНЫХ машин с их квотами см. в статье [размеры для виртуальной машины Linux в Azure][virtual-machines-sizes-linux].
+ Существуют квоты на пропускную способность операций ввода-вывода в секунду для дисков Azure. Эта концепция объясняется в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). Точные квоты зависят от типа используемой виртуальной машины. Список типов виртуальных машин с соответствующими квотами см. в статье [Размеры виртуальных машин Linux в Azure][virtual-machines-sizes-linux].
 
 Чтобы определить поддерживаемые типы виртуальных машин Azure, ознакомьтесь с примечанием к SAP [1928533].
 
 Минимальная конфигурация:
 
-| Компонент | Диски | Caching | Чередование* |
+| Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /Оракле/\<SID >/Ориглогаа & Миррлогб | "Премиум" | Нет | Не требуется. |
-| /Оракле/\<SID >/Ориглогаб & Миррлога | "Премиум" | Нет | Не требуется. |
-| /Оракле/\<SID >/sapdata1... \n | "Премиум" | Только для чтения | Можно использовать |
-| /Оракле/\<SID >/ораарч | Стандартный | Нет | Не требуется. |
+| /Оракле/\<SID>/Ориглогаа & миррлогб | Premium | None | Не требуется. |
+| /Оракле/\<SID>/Ориглогаб & миррлога | Premium | None | Не требуется. |
+| /Оракле/\<SID>/sapdata1... \n | Premium | Только для чтения | Можно использовать |
+| /Оракле/\<SID>/ораарч | Standard | None | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | | Не требуется. |
 
 *Чередование: LVM или MDADM на основе RAID0
@@ -476,20 +476,20 @@ Windows и Oracle Linux являются единственными операц
 
 Конфигурация производительности:
 
-| Компонент | Диски | Caching | Чередование* |
+| Компонент | Диск | Caching | Чередование* |
 | --- | ---| --- | --- |
-| /Оракле/\<SID >/Ориглогаа | "Премиум" | Нет | Можно использовать  |
-| /Оракле/\<SID >/Ориглогаб | "Премиум" | Нет | Можно использовать |
-| /Оракле/\<SID >/Миррлогаб | "Премиум" | Нет | Можно использовать |
-| /Оракле/\<SID >/Миррлогба | "Премиум" | Нет | Можно использовать |
-| /Оракле/\<SID >/sapdata1... \n | "Премиум" | Только для чтения | Рекомендуется  |
-| /Оракле/\<SID >/sapdata (n + 1) * | "Премиум" | Нет | Можно использовать |
-| /Оракле/\<SID >/ораарч * | "Премиум" | Нет | Не требуется. |
+| /Оракле/\<SID>/ориглогаа | Premium | None | Можно использовать  |
+| /Оракле/\<SID>/ориглогаб | Premium | None | Можно использовать |
+| /Оракле/\<SID>/миррлогаб | Premium | None | Можно использовать |
+| /Оракле/\<SID>/миррлогба | Premium | None | Можно использовать |
+| /Оракле/\<SID>/sapdata1... \n | Premium | Только для чтения | Рекомендуемая  |
+| /Оракле/\<SID>/sapdata (n + 1) * | Premium | None | Можно использовать |
+| /Оракле/\<SID>/ораарч * | Premium | None | Не требуется. |
 | Oracle Home, saptrace, ... | Диск ОС | Не требуется. |
 
 *Чередование: LVM или MDADM на основе RAID0
 
-\* (n + 1): размещение СИСТЕМНЫХ, временных и ОТМЕНЕНных табличных пространств: шаблон ввода-вывода систем и таблиц отмены отличается от других табличных пространств, в которых размещены данные приложений. Для повышения производительности табличных пространств System и Undo лучше всего отключить кэширование.
+* (n + 1): размещение СИСТЕМНЫХ, временных и ОТМЕНЕНных табличных пространств: шаблон ввода-вывода систем и таблиц отмены отличается от других табличных пространств, в которых размещены данные приложений. Для повышения производительности табличных пространств System и Undo лучше всего отключить кэширование.
 
 * oraarch: пул носителей не является обязательным с точки зрения производительности.
 
@@ -523,5 +523,5 @@ sudo curl -so /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules https://raw.gi
 </code></pre>
 
 
-### <a name="other"></a>Прочее
+### <a name="other"></a>Другой
 Другие важные концепции, относящиеся к развертываниям виртуальных машин в Oracle Database, включая группы доступности Azure и мониторинг SAP, описываются в статье [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).

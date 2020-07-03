@@ -12,13 +12,13 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2017
 ms.author: rohink
 ms.openlocfilehash: 3eb3f354d51833e55f405ed35679f1a5882c057a
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76938792"
 ---
-# <a name="tutorial-configure-the-geographic-traffic-routing-method-using-traffic-manager"></a>Руководство. Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика
+# <a name="tutorial-configure-the-geographic-traffic-routing-method-using-traffic-manager"></a>Руководство по Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика
 
 Метод маршрутизации трафика по географическому расположению позволяет направлять трафик на определенные конечные точки на основе географического расположения, из которого получен запрос. В этом руководстве показано, как создать профиль диспетчера трафика с использованием этого метода маршрутизации и настроить конечные точки для приема трафика из определенных географических регионов.
 

@@ -1,5 +1,5 @@
 ---
-title: Apache Oozie workflows & Enterprise Security - Azure HDInsight
+title: Рабочие процессы Apache Oozie & Корпоративная безопасность — Azure HDInsight
 description: Защита рабочих процессов Apache Oozie с помощью Корпоративного пакета безопасности для Azure HDInsight Узнайте, как определить рабочий процесс и отправить задание для Oozie.
 author: omidm1
 ms.author: omidm
@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seodec18
 ms.date: 12/09/2019
-ms.openlocfilehash: ecc4d5053ef6d9194f09b8a5aa6ba1528f9d94fa
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 9ef54707f7fac3dd1328e29f6d05f62c1dee2561
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75920717"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78194909"
 ---
 # <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
 
@@ -26,12 +26,12 @@ Apache Oozie — это система рабочих процессов и ко
 
 Вы также можете использовать Oozie для планирования системных заданий, например Java-программ и сценариев оболочки.
 
-## <a name="prerequisite"></a>Необходимое условие
+## <a name="prerequisite"></a>Предварительные требования
 
 Кластер Azure HDInsight Hadoop с Корпоративным пакетом безопасности (ESP). Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md).
 
 > [!NOTE]  
-> For detailed instructions on how to use Oozie on non-ESP clusters, see [Use Apache Oozie workflows in Linux-based Azure HDInsight](../hdinsight-use-oozie-linux-mac.md).
+> Подробные инструкции по использованию Oozie в кластерах, отличных от ESP, см. [в статье Использование рабочих процессов Apache Oozie в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 
 ## <a name="connect-to-an-esp-cluster"></a>Подключение к кластеру ESP
 
@@ -232,7 +232,7 @@ Apache Oozie — это система рабочих процессов и ко
 
    - Используйте URI `adl://home` для свойства `nameNode`, если в качестве основного хранилища кластера используется Azure Data Lake Storage 1-го поколения. Если вы используете хранилище BLOB-объектов Azure, измените его на `wasb://home`. Если вы используете Azure Data Lake Storage 2-го поколения, измените его на `abfs://home`.
    - Замените `domainuser` на свое имя пользователя для домена.  
-   - Замените `ClusterShortName` коротким именем кластера. Например, если имя кластера — sechadoopcontoso.azurehdisnight.net (https:// *[пример ссылки]* ), `clustershortname` представляет собой первые шесть букв имени кластера: **sechad**.  
+   - Замените `ClusterShortName` коротким именем кластера. Например, если имя кластера — sechadoopcontoso.azurehdisnight.net (https://*[пример ссылки]*), `clustershortname` представляет собой первые шесть букв имени кластера: **sechad**.  
    - Замените `jdbcurlvalue` на URL-адрес JDBC из файла конфигурации Hive. Например, jdbc:hive2://headnodehost:10001/;transportMode=http.
    - Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.
 
@@ -345,7 +345,7 @@ ID                      Status  Ext ID          ExtStatus   ErrCode
 
 2. Следовать инструкциям в [веб-интерфейсе Oozie](../hdinsight-use-oozie-linux-mac.md), чтобы включить туннелирование SSH для граничного узла и получить доступ к пользовательскому веб-интерфейсу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
-- [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
+- [Используйте Apache Oozie с Apache Hadoop, чтобы определить и запустить рабочий процесс в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
+- [Подключитесь к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md#authentication-domain-joined-hdinsight).

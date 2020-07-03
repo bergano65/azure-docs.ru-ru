@@ -1,18 +1,17 @@
 ---
 title: Перемещение рабочей области Log Analytics в Azure Monitor | Документация Майкрософт
 description: Узнайте, как переместить рабочую область Log Analytics в другую подписку или группу ресурсов.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/13/2019
-ms.openlocfilehash: 4baa65ca5dda6b266cd6c739225ebd01d011268c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: ca9bb3853698b831fe87f48de346183e4bcd0976
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75980082"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731718"
 ---
 # <a name="move-a-log-analytics-workspace-to-different-subscription-or-resource-group"></a>Перемещение рабочей области Log Analytics в другую подписку или группу ресурсов
 
@@ -30,16 +29,17 @@ ms.locfileid: "75980082"
 ```
 
 ## <a name="workspace-move-considerations"></a>Рекомендации по перемещению рабочей области
-Управляемые решения, установленные в рабочей области, будут перемещены с помощью Log Analytics операции перемещения рабочей области. Подключенные агенты останутся подключенными и не смогут отправить данные в рабочую область после перемещения. Так как операция перемещения требует, чтобы в рабочей области не было ссылок на учетную запись службы автоматизации, необходимо удалить решения, основанные на этой ссылке.
+Управляемые решения, установленные в рабочей области, будут перемещены с помощью Log Analytics операции перемещения рабочей области. Подключенные агенты останутся подключенными и не смогут отправить данные в рабочую область после перемещения. Так как операция перемещения требует, чтобы в рабочей области не было связанных служб, необходимо удалить решения, основанные на этой ссылке, чтобы разрешить перемещение рабочей области.
 
 Решения, которые необходимо удалить перед удалением связи с учетной записью службы автоматизации:
 
 - Управление обновлениями
 - Отслеживание изменений
 - Запуск и остановка виртуальных машин в нерабочее время
+- Центр безопасности Azure
 
 
-### <a name="delete-in-azure-portal"></a>Удаление на портале Azure
+### <a name="delete-solutions-in-azure-portal"></a>Удаление решений в портал Azure
 Используйте следующую процедуру, чтобы удалить решения с помощью портал Azure:
 
 1. Откройте меню для группы ресурсов, в которой установлены все решения.
@@ -58,8 +58,8 @@ Remove-AzResource -ResourceType 'Microsoft.OperationsManagement/solutions' -Reso
 Remove-AzResource -ResourceType 'Microsoft.OperationsManagement/solutions' -ResourceName "Start-Stop-VM(<workspace-name>)" -ResourceGroupName <resource-group-name>
 ```
 
-### <a name="remove-alert-rules"></a>Удаление правил генерации оповещений
-Для решения " **Запуск и завершение виртуальных машин** " необходимо также удалить правила генерации оповещений, созданные решением. Используйте следующую процедуру в портал Azure, чтобы удалить эти правила.
+### <a name="remove-alert-rules-for-startstop-vms-solution"></a>Удаление правил генерации оповещений для решения "Запуск и завершение ВМ"
+Чтобы удалить решение " **Запуск и завершение виртуальных машин** ", необходимо также удалить правила генерации оповещений, созданные решением. Используйте следующую процедуру в портал Azure, чтобы удалить эти правила.
 
 1. Откройте меню **мониторинг** и выберите пункт **оповещения**.
 2. Щелкните **Управление правилами оповещений**.
@@ -99,8 +99,6 @@ Remove-AzResource -ResourceType 'Microsoft.OperationsManagement/solutions' -Reso
 ``` PowerShell
 Move-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup01/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace" -DestinationSubscriptionId "00000000-0000-0000-0000-000000000000" -DestinationResourceGroupName "MyResourceGroup02"
 ```
-
-
 
 > [!IMPORTANT]
 > После операции перемещения удаленные решения и ссылки на учетную запись службы автоматизации необходимо перенастроить, чтобы восстановить предыдущее состояние рабочей области.

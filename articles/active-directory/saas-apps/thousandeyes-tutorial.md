@@ -17,10 +17,10 @@ ms.date: 10/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cd179049f88454c62244cf1819cee08ef78d0633
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72373250"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-thousandeyes"></a>Руководство по интеграции единого входа Azure Active Directory с ThousandEyes
@@ -35,9 +35,9 @@ ms.locfileid: "72373250"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка ThousandEyes с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -72,7 +72,7 @@ ms.locfileid: "72373250"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в ThousandEyes](#configure-thousandeyes-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя ThousandEyes](#create-thousandeyes-test-user)** требуется для того, чтобы в ThousandEyes существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -82,7 +82,7 @@ ms.locfileid: "72373250"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено и ему заданы требуемые URL-адреса. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
@@ -114,7 +114,7 @@ ms.locfileid: "72373250"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к ThousandEyes.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **ThousandEyes**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -134,7 +134,7 @@ ms.locfileid: "72373250"
 
 2. В верхнем меню нажмите пункт **Параметры**.
 
-    ![Параметры](./media/thousandeyes-tutorial/ic790066.png "Параметры")
+    ![Параметры](./media/thousandeyes-tutorial/ic790066.png "Настройки")
 
 3. В нижней части страницы нажмите кнопку **Учетная запись**
 
@@ -148,7 +148,7 @@ ms.locfileid: "72373250"
 
     ![Настройка единого входа](./media/thousandeyes-tutorial/ic790069.png "Настройка единого входа")
 
-    a. Выберите пункт **Включить единый вход**.
+    а. Выберите пункт **Включить единый вход**.
 
     b. В текстовое поле **Login Page URL** (URL-адрес страницы входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
@@ -156,9 +156,9 @@ ms.locfileid: "72373250"
 
     d. В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
-    д. В разделе **Verification Certificate** (Сертификат проверки) нажмите кнопку **Choose file** (Выбрать файл) и передайте сертификат, скачанный с портала Azure.
+    д) В разделе **Verification Certificate** (Сертификат проверки) нажмите кнопку **Choose file** (Выбрать файл) и передайте сертификат, скачанный с портала Azure.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 ### <a name="create-thousandeyes-test-user"></a>Создание тестового пользователя в ThousandEyes
 
@@ -170,7 +170,7 @@ ms.locfileid: "72373250"
 
 2. Щелкните **Параметры**.
 
-    ![Параметры](./media/thousandeyes-tutorial/IC790066.png "Параметры")
+    ![Параметры](./media/thousandeyes-tutorial/IC790066.png "Настройки")
 
 3. Выберите раздел **Учетная запись**.
 
@@ -184,7 +184,7 @@ ms.locfileid: "72373250"
 
     ![Добавление учетных записей пользователей](./media/thousandeyes-tutorial/IC790074.png "Добавление учетных записей пользователей")
 
-    a. В текстовом поле **Name** (Имя) введите полное имя пользователя, например **B. Simon**.
+    а. В текстовом поле **Name** (Имя) введите полное имя пользователя, например **B. Simon**.
 
     b. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например b.simon@contoso.com.
 
@@ -205,9 +205,9 @@ ms.locfileid: "72373250"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

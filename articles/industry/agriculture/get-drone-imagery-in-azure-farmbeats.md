@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.openlocfilehash: 3e452cd548738e5f211899d3a6a676f883d800ce
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77132053"
 ---
 # <a name="get-drone-imagery-from-drone-partners"></a>Получение образов помощью Дронов от партнеров помощью Дронов
@@ -22,7 +22,7 @@ ms.locfileid: "77132053"
 
 Интеграция помощью Дронов данных с помощью Azure Фармбеатс позволяет получать орсомосаик данные из помощью Дронов рейсов, которые вы проводите на ферме в датахуб. После того как данные доступны, их можно просмотреть в Фармбеатс Accelerator. Эти данные можно использовать для создания данных и искусственного интеллекта и сборки модели машинного обучения.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
   - Убедитесь, что вы установили Azure Фармбеатс. Сведения об установке Фармбеатс см. в [статье Установка Azure фармбеатс](install-azure-farmbeats.md).
   - Убедитесь, что у вас есть ферма, для которой необходимо определить образ помощью дронов в системе Фармбеатс.
@@ -31,14 +31,14 @@ ms.locfileid: "77132053"
 
 Предоставьте поставщику устройства следующие сведения для включения интеграции с Фармбеатс:
  - Конечная точка API
- - Tenant ID
  - Идентификатор клиента
+ - ИД клиента
  - Секрет клиента
 
 Выполните следующие действия.
 
 1. Скачайте этот [сценарий](https://aka.ms/farmbeatspartnerscript)и извлеките его на локальный диск. В ZIP-файле находятся два файла.
-2. Войдите в [портал Azure](https://portal.azure.com/) и откройте Azure Cloud Shell. Этот параметр доступен на панели инструментов в правом верхнем углу портала.
+2. Войдите на [портал Azure](https://portal.azure.com/) и откройте Azure Cloud Shell. Этот параметр доступен на панели инструментов в правом верхнем углу портала.
 
     ![Открытие Azure Cloud Shell на верхней правой панели портала](./media/get-drone-imagery-from-drone-partner/navigation-bar-1.png)
 
@@ -48,7 +48,7 @@ ms.locfileid: "77132053"
 
 4. Отправьте два файла, скачанные из шага 1 в экземпляре Cloud Shell.
 
-    ![Upload files](./media/get-drone-imagery-from-drone-partner/power-shell-two-1.png)
+    ![Отправка файлов](./media/get-drone-imagery-from-drone-partner/power-shell-two-1.png)
 
 5. Перейдите в каталог, в который были отправлены файлы. По умолчанию они передаются в корневой каталог по имени пользователя.
 6. Выполните следующий скрипт:
@@ -89,6 +89,6 @@ ms.locfileid: "77132053"
 
   ![Раздел Maps](./media/get-drone-imagery-from-drone-partner/view-drone-maps-1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как использовать [API](rest-api-in-azure-farmbeats.md) фармбеатс датахуб для получения образов помощью дронов.

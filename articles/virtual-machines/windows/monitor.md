@@ -1,25 +1,19 @@
 ---
-title: Мониторинг виртуальных машин Windows в Azure
-description: Сведения о параметрах мониторинга для виртуальных машин Windows в Azure.
-services: virtual-machines-windows
-documentationcenter: ''
+title: Мониторинг ввоза
+description: Узнайте о возможностях мониторинга виртуальных машин в Azure.
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.subservice: monitoring
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.date: 08/14/2017
 ms.author: cynthn
 ms.topic: conceptual
-ms.openlocfilehash: b08c63d544ce40b439ce179621f323e99fcb55e5
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 58546c84daa28a76de0429bf6c93bd421011b513
+ms.sourcegitcommit: af1cbaaa4f0faa53f91fbde4d6009ffb7662f7eb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033185"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81865610"
 ---
 # <a name="how-to-monitor-virtual-machines-in-azure"></a>Мониторинг виртуальных машин в Azure
 

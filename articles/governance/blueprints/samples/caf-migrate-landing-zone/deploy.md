@@ -1,14 +1,14 @@
 ---
 title: Развертывание примера схемы зоны размещения для миграции в соответствии с CAF
 description: Процедура развертывания для примера схемы зоны размещения для миграции в соответствии с CAF и сведения о параметрах артефактов схемы.
-ms.date: 08/20/2019
+ms.date: 05/06/2020
 ms.topic: sample
-ms.openlocfilehash: da17083e8e1b27739288a9d9ac087d071ff4861c
-ms.sourcegitcommit: a678f00c020f50efa9178392cd0f1ac34a86b767
+ms.openlocfilehash: 109c9a2c4c5670d6f5a676498ae1010a4ab0e418
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74545466"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871183"
 ---
 # <a name="deploy-the-microsoft-cloud-adoption-framework-for-azure-migrate-landing-zone-blueprint-sample"></a>Развертывание примера схемы зоны размещения для миграции Microsoft Cloud Adoption Framework для Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "74545466"
 > - установка метки копии образца **Опубликовано**;
 > - назначение копии схемы существующей подписке;
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
 
 ## <a name="create-blueprint-from-sample"></a>Создание схемы на основе примера
 
@@ -101,7 +101,7 @@ ms.locfileid: "74545466"
 
 Следующая таблица содержит полный список параметров артефактов схемы.
 
-|Имя артефакта|Тип артефакта|Имя параметра|ОПИСАНИЕ|
+|Имя артефакта|Тип артефакта|Имя параметра|Описание|
 |-|-|-|-|
 |Развертывание зоны размещения для виртуальной сети|Шаблон Resource Manager|IPAddress_Space|**Locked** — укажите пример первых двух октетов (10.0).|
 |Развертывание Key Vault|Шаблон Resource Manager|KV-AccessPolicy|**Locked** — идентификатор объекта пользователя или группы, которой нужно предоставить разрешения в Key Vault|
@@ -109,7 +109,7 @@ ms.locfileid: "74545466"
 |Развертывание Log Analytics|Шаблон Resource Manager|LogAnalytics_Location|**Locked** — регион, используемый при создании рабочей области|
 |Миграция службы "Миграция Azure"|Шаблон Resource Manager|Azure_Migrate_Location|**Locked** — выберите регион, в котором нужно развернуть службу "Миграция Azure"|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы ознакомились с процедурой развертывания примера схемы зоны размещения для миграции CAF, перейдите к следующей статье, чтобы узнать об архитектуре:
 

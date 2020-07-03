@@ -1,11 +1,11 @@
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
     - name: Key Vault
       tocHref: /azure/
       topicHref: /azure/key-vault/index
-- name: Таблицы Azure
+- name: Azure
   tocHref: /java/
   topicHref: /azure/index
   items:
@@ -16,7 +16,7 @@
         - name: Spring
           tocHref: /java/azure/spring-framework/
           topicHref: /java/azure/spring-framework/
-- name: Таблицы Azure
+- name: Azure
   tocHref: /powershell/
   topicHref: /azure/index
   items:
@@ -24,10 +24,10 @@
       tocHref: /powershell/module/
       topicHref: /azure/key-vault/
       items:
-        - name: Командлеты PowerShell для хранилища ключей
+        - name: Командлеты PowerShell для Key Vault
           tocHref: /powershell/module/az.keyvault/
           topicHref: /powershell/module/az.keyvault/
-- name: Таблицы Azure
+- name: Azure
   tocHref: /cli/
   topicHref: /azure/index
   items:
@@ -35,20 +35,20 @@
       tocHref: /cli/azure/
       topicHref: /azure/key-vault/
       items:
-        - name: Справочник по CLI для хранилища ключей
+        - name: Справочник по CLI для Key Vault
           tocHref: /cli/azure/keyvault/
           topicHref: /azure/key-vault/
           items:
             - name: Сертификаты
               tocHref: /cli/azure/keyvault/certificate
               topicHref: /azure/key-vault/
-            - name: ключей
+            - name: Ключи
               tocHref: /cli/azure/keyvault/key
               topicHref: /azure/key-vault/
             - name: Секреты
               tocHref: /cli/azure/keyvault/secret
               topicHref: /azure/key-vault/
-- name: Таблицы Azure
+- name: Azure
   tocHref: /sccm/
   topicHref: /azure/index
   items:

@@ -6,22 +6,22 @@
       tocHref: /azure/storage/
       topicHref: /azure/machine-learning/index
       items:
-        - name: Процесс обработки и анализа данных группы
+        - name: Командный процесс обработки и анализа данных
           tocHref: /azure/storage/
           topicHref: /azure/machine-learning/team-data-science-process/index
           items:
-            - name: Хранилище
+            - name: Память
               tocHref: /azure/storage/blobs/
               topicHref: /azure/storage/index
               items:
-                - name: Большие двоичные объекты
+                - name: BLOB-объекты
                   tocHref: /azure/storage/blobs/
                   topicHref: /azure/storage/blobs/index
-            - name: Хранилище
+            - name: Память
               tocHref: /azure/storage/common/
               topicHref: /azure/storage/index
               items:
-                - name: Большие двоичные объекты
+                - name: BLOB-объекты
                   tocHref: /azure/storage/common/
                   topicHref: /azure/storage/blobs/index
 - name: Azure
@@ -32,7 +32,7 @@
       tocHref: /azure/machine-learning/
       topicHref: /azure/machine-learning/index
       items:
-        - name: Процесс обработки и анализа данных группы
+        - name: Командный процесс обработки и анализа данных
           tocHref: /azure/machine-learning/
           topicHref: /azure/machine-learning/team-data-science-process/index
           items:
@@ -47,7 +47,7 @@
       tocHref: /azure/hdinsight/
       topicHref: /azure/machine-learning/index
       items:
-        - name: Процесс обработки и анализа данных группы
+        - name: Командный процесс обработки и анализа данных
           tocHref: /azure/hdinsight/spark/
           topicHref: /azure/machine-learning/team-data-science-process/index
           items:
@@ -66,7 +66,7 @@
       tocHref: /azure/hdinsight/
       topicHref: /azure/machine-learning/index
       items:
-        - name: Процесс обработки и анализа данных группы
+        - name: Командный процесс обработки и анализа данных
           tocHref: /azure/hdinsight/spark/
           topicHref: /azure/machine-learning/team-data-science-process/index
           items:

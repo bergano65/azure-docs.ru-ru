@@ -7,10 +7,10 @@ ms.date: 01/07/2020
 ms.author: dekapur
 ms.custom: sfrev
 ms.openlocfilehash: a3627effe10039ded5007f9dd060bf1865929040
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75751143"
 ---
 # <a name="comparing-azure-and-standalone-service-fabric-clusters-on-windows-server-and-linux"></a>Сравнение Azure и изолированных кластеров Service Fabric в Windows Server и Linux
@@ -43,4 +43,4 @@ Service Fabric позволяет создавать кластеры Service Fa
 
 * Общие сведения об кластерах Service Fabric в Azure см. [здесь](service-fabric-azure-clusters-overview.md)
 * Общие сведения об изолированных кластерах Service Fabric см. в [этой статье](service-fabric-standalone-clusters-overview.md)
-* [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)
+* Дополнительные сведения о [вариантах поддержки Service Fabric](service-fabric-support.md)

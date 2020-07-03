@@ -1,20 +1,18 @@
 ---
 title: Вики-сайт справки Dynamics 365 for Operations
 description: Эта статья устарела и связана со статьей ПК. WAS — "Dynamics 365 for Operations Help вики-страница информации"
-services: Azure, Marketplace, Cloud Partner Portal,
-author: ChJenk
-manager: Ricardo.Villalobos
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 27680824a4586a8bd3174eb28ce2ddb3604c014b
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 19043397cc31e089cc77e732485ade61ef4b4e30
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824225"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80275991"
 ---
 # <a name="dynamics-365-for-operations-help-wiki"></a>Вики-сайт справки Dynamics 365 for Operations
 

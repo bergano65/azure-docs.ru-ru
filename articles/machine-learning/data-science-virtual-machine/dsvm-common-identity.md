@@ -11,10 +11,10 @@ ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 05/08/2018
 ms.openlocfilehash: 44f1f7ae3b290e1dbf01877f3881e1d95a238446
-ms.sourcegitcommit: 5f67772dac6a402bbaa8eb261f653a34b8672c3a
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70208141"
 ---
 # <a name="set-up-a-common-identity-on-a-data-science-virtual-machine"></a>Настройка общего удостоверения для виртуальной машины для обработки и анализа данных
@@ -25,7 +25,7 @@ Active Directory является популярным поставщиком у
 
 Если у вас уже есть Active Directory, вы можете использовать его в качестве общего поставщика удостоверений. Если у вас нет Active Directory, вы можете запустить управляемый экземпляр Active Directory в Azure с помощью [доменных служб Azure Active Directory](https://docs.microsoft.com/azure/active-directory-domain-services/) (Azure AD DS).
 
-В документации по [Azure AD](https://docs.microsoft.com/azure/active-directory/) содержатся подробные [инструкции](https://docs.microsoft.com/azure/active-directory/choose-hybrid-identity-solution)по управлению, включая рекомендации по подключению Azure AD к локальному каталогу, если у вас его есть.
+В документации по [Azure AD](https://docs.microsoft.com/azure/active-directory/) содержатся подробные [инструкции по управлению](https://docs.microsoft.com/azure/active-directory/choose-hybrid-identity-solution), включая рекомендации по подключению Azure AD к локальному каталогу, если у вас его есть.
 
 В этой статье описывается, как настроить полностью управляемую службу Active Directory домена в Azure с помощью AD DS Azure. Затем вы можете присоединить Dsvm к управляемому домену Active Directory. Такой подход позволяет пользователям получать доступ к пулу Dsvm (и другим ресурсам Azure) через общую учетную запись пользователя и учетные данные.
 

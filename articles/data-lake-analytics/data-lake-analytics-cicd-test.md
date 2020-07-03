@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 08/30/2019
 ms.openlocfilehash: d568a267952a22d2e7a6b7acb6d54cf41f803367
-ms.sourcegitcommit: 083aa7cc8fc958fc75365462aed542f1b5409623
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70913963"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Тестирование кода Azure Data Lake Analytics
 
-Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-u-sql-get-started.md) . U-SQL сочетает декларативный SQL с C# императивным для обработки данных в любом масштабе. В этом документе вы узнаете, как создавать тестовые случаи для U-SQL и C# кода расширенного определяемого пользователем оператора (Udo).
+Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-u-sql-get-started.md) . U-SQL сочетает декларативный SQL с императивным C# для обработки данных в любом масштабе. В этом документе вы узнаете, как создавать тестовые случаи для U-SQL и расширенного кода пользовательского оператора C# (UDO).
 
 ## <a name="test-u-sql-scripts"></a>Тестирование скриптов U-SQL
 
@@ -61,7 +61,7 @@ Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-
 
 ### <a name="create-test-cases-for-c-udos"></a>Создание тестовых случаев для определяемых пользователем операторов C#
 
-Платформу C# модульного тестирования можно использовать для тестирования определяемых C# пользователем операторов (Udo). При тестировании UDO необходимо подготовить соответствующий объект **IRowset** в качестве входных данных.
+Платформу модульного тестирования C# можно использовать для тестирования определяемых пользователем операторов C# (Udo). При тестировании UDO необходимо подготовить соответствующий объект **IRowset** в качестве входных данных.
 
 Существует два способа создания объекта **IRowset** .
 
@@ -104,19 +104,19 @@ Azure Data Lake предоставляет язык [U-SQL](data-lake-analytics-
 
 ### <a name="verify-test-results"></a>Проверка результатов теста
 
-После вызова функций UDO результат можно проверить, используя схемы и проверку значения Rowset с помощью функций assert в C#. Вы можете добавить **проект модульного теста C# U-SQL Udo** в решение. Для этого выберите **файл > новый проект >** в Visual Studio.
+После вызова функций UDO результат можно проверить, используя схемы и проверку значения Rowset с помощью функций assert в C#. В решение можно добавить **проект модульного теста для Udo на языке C# U-SQL** . Для этого выберите **файл > новый проект >** в Visual Studio.
 
 ### <a name="run-test-cases-in-visual-studio"></a>Запуск тестовых случаев в Visual Studio
 
 После построения проекта выберите **тест** > **Windows** > **Test Explorer**. Тестовые случаи можно запускать из **обозревателя тестов**. Можно также щелкнуть правой кнопкой мыши CS-файл в модульном тесте и выбрать пункт **запустить тесты**.
 
-## Выполнение тестовых случаев в Azure Pipelines<a name="run-test-cases-in-azure-devops"></a>
+## <a name="run-test-cases-in-azure-pipelines"></a>Выполнение тестовых случаев в Azure Pipelines<a name="run-test-cases-in-azure-devops"></a>
 
-Оба проекта, **тестовые проекты сценария U-SQL** и **тестовые проекты UDO C#** , наследуют проекты модульного теста C#. Тестовая [задача Visual Studio](https://docs.microsoft.com/azure/devops/pipelines/test/getting-started-with-continuous-testing?view=vsts) в Azure pipelines может выполнять эти тестовые случаи.
+Оба проекта, **тестовые проекты сценария U-SQL** и **тестовые проекты UDO C#**, наследуют проекты модульного теста C#. Тестовая [задача Visual Studio](https://docs.microsoft.com/azure/devops/pipelines/test/getting-started-with-continuous-testing?view=vsts) в Azure pipelines может выполнять эти тестовые случаи.
 
 ### <a name="run-u-sql-test-cases-in-azure-pipelines"></a>Выполнение тестовых случаев U-SQL в Azure Pipelines
 
-Для теста U-SQL убедитесь, что вы загрузили `CPPSDK` на компьютер сборки, а затем `CPPSDK` передадите путь к `USqlScriptTestRunner(cppSdkFolderFullPath: @"")`.
+Для теста U-SQL убедитесь, что вы загрузили `CPPSDK` на компьютер сборки, а затем передадите `CPPSDK` путь к `USqlScriptTestRunner(cppSdkFolderFullPath: @"")`.
 
 #### <a name="what-is-cppsdk"></a>Что такое CPPSDK?
 
@@ -138,9 +138,9 @@ CPPSDK — это пакет, включающий Microsoft Visual C++ 14 и Wi
 
 1. Наведите указатель `USqlScriptTestRunner` на эту распакованную папку на компьютере сборки.
 
-### <a name="run-c-udo-test-cases-in-azure-pipelines"></a>Выполнение C# тестовых случаев UDO в Azure pipelines
+### <a name="run-c-udo-test-cases-in-azure-pipelines"></a>Выполнение тестовых случаев C# UDO в Azure Pipelines
 
-Для C# Udo теста обязательно сослаться на следующие сборки, которые необходимы для Udo.
+Для теста UDO C# обязательно сослаться на следующие сборки, которые необходимы для Udo.
 
 - Microsoft.Analytics.Interfaces
 - Microsoft.Analytics.Types
@@ -148,8 +148,8 @@ CPPSDK — это пакет, включающий Microsoft Visual C++ 14 и Wi
 
 Если вы ссылаетесь на них с помощью [Microsoft.Azure.DataLake.USQL.Interfaces пакета Nuget ](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.Interfaces/), добавьте задачу восстановления NuGet в конвейер сборки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
 - [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md)
-- [Использование проекта базы данных U-SQL для разработки базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md)
+- [Разработка базы данных U-SQL с помощью проекта базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md)

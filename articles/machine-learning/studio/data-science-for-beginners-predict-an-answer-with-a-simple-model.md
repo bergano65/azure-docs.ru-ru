@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: 6ad9c7912eee6c3f5ec55b9cd7ab340bc79c9db7
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: ac9f4262d614b1e413f4283d3c459e60fc6634e2
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837774"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930239"
 ---
 # <a name="predict-an-answer-with-a-simple-model"></a>Прогнозирование ответа с помощью простой модели
 ## <a name="video-4-data-science-for-beginners-series"></a>Видео 4. Обработка и анализ данных для начинающих
@@ -32,7 +32,7 @@ ms.locfileid: "73837774"
 *Обработка и анализ данных для начинающих* — это пять коротких видеороликов с основными сведениями об обработке и анализе данных.
 
 * Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
-* Видео 2. [Готовы ли ваши данные к обработке и анализу?](data-science-for-beginners-is-your-data-ready-for-data-science.md) *(4 мин 56 с)*
+* Видео 2. [готовы ли ваши данные](data-science-for-beginners-is-your-data-ready-for-data-science.md) к обработке и анализу данных? *(4 мин 56 с)*
 * Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
 * Видео 4. Прогнозирование ответа с помощью простой модели.
 * Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
@@ -87,7 +87,7 @@ ms.locfileid: "73837774"
 
 Тот факт, что линия не проходит через все точки, является нормальным. Специалисты по обработке данных объясняют это так: существует модель (в нашем случае — линия), и каждая точка в модели подвержена воздействию некоторого *шума* или *отклонения*, связанного с ней. Есть базовая функциональная связь, а есть переменчивый реальный мир, добавляющий шум и неопределенность.
 
-Так как мы пытаемся ответить на вопрос *Сколько?* , это называется *регрессией*. И поскольку мы используем прямую линию, это — *линейная регрессия*.
+Так как мы пытаемся ответить на вопрос *Сколько?*, это называется *регрессией*. И поскольку мы используем прямую линию, это — *линейная регрессия*.
 
 ## <a name="use-the-model-to-find-the-answer"></a>Использование модели для поиска ответа
 Теперь у нас есть модель и мы можем задать ей наш вопрос: "Сколько будет стоить бриллиант массой 1,35 карата?"
@@ -128,4 +128,4 @@ ms.locfileid: "73837774"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Studio (классическая модель)](create-experiment.md)
-* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)
+* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/overview-what-is-azure-ml)

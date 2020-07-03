@@ -5,10 +5,10 @@ ms.date: 11/15/2019
 ms.service: cognitive-services
 ms.topic: include
 ms.openlocfilehash: c414bfed40385c2bad6eaaff6b391f57c8d898cb
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74125588"
 ---
 ## <a name="blog-posts"></a>Записи блога
@@ -20,7 +20,7 @@ ms.locfileid: "74125588"
 
 Примеры для разработчиков доступны в нашем [репозитории GitHub](https://github.com/Azure-Samples/cognitive-services-containers-samples).
 
-## <a name="view-webinar"></a>Просмотреть веб-семинар
+## <a name="view-webinar"></a>Просмотреть вебинар
 
 Присоединяйтесь к [вебинару](https://info.microsoft.com/AP-AZUREPLAT-WBNR-FY19-03Mar-20-Seamlesslyintegrateapplicationsdataandprocesses-MCW0012283_02OnDemandRegistration-ForminBody.html), чтобы узнать:
 

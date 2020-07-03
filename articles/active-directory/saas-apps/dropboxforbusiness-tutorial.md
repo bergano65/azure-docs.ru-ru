@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Dropbox for Business | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Dropbox for Business | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Dropbox for Business.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/16/2020
+ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf5b3c79e39e9baef49ce2c14408a15c3686a6a8
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: df7fc366c5087e66c3022c212870397d77e6e34d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76293442"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77046761"
 ---
-# <a name="tutorial-integrate-dropbox-for-business-with-azure-active-directory"></a>Руководство. Интеграция Dropbox for Business с Azure Active Directory
+# <a name="tutorial-integrate-dropbox-for-business-with-azure-active-directory"></a>Руководство по Интеграция Dropbox for Business с Azure Active Directory
 
 В этом руководстве описано, как интегрировать Dropbox for Business с Azure Active Directory (Azure AD). Интеграция Dropbox for Business с Azure AD обеспечивает следующие возможности.
 
@@ -44,7 +44,7 @@ ms.locfileid: "76293442"
 * В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. Dropbox for Business поддерживает единый вход, инициированный **поставщиком услуг**.
 
 * Dropbox Business поддерживает [автоматическую подготовку пользователей и ее отмену](dropboxforbusiness-tutorial.md).
-* После настройки Dropbox можно применять элементы управления сеансами, которые защищают от кражи конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Dropbox можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-dropbox-for-business-from-the-gallery"></a>Добавление Dropbox for Business из коллекции
 
@@ -197,6 +197,6 @@ ms.locfileid: "76293442"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/cloud-app-security/protect-dropbox)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
-- [Как защитить Dropbox с помощью улучшенного визуального контроля и элементов управления](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Как защитить Dropbox с помощью улучшенного визуального контроля и элементов управления](https://docs.microsoft.com/cloud-app-security/protect-dropbox)

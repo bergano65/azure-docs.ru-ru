@@ -1,15 +1,15 @@
 ---
-title: RequestDisallowedByPolicy, ошибка
+title: Ошибка RequestDisallowedByPolicy.
 description: Описывает причину ошибки RequestDisallowedByPolicy при развертывании ресурсов с помощью Azure Resource Manager.
 author: genlin
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 41581ba48da2f2e717c5abf2a749f8fd2b86ac06
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75477672"
 ---
 # <a name="requestdisallowedbypolicy-error-with-azure-resource-policy"></a>Ошибка RequestDisallowedByPolicy с политикой ресурсов Azure
@@ -29,7 +29,7 @@ ms.locfileid: "75477672"
 }
 ```
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Чтобы получить информацию о том, какая политика блокирует развертывание, используйте один из следующих методов.
 
@@ -43,7 +43,7 @@ ms.locfileid: "75477672"
 (Get-AzPolicyDefinition -Id "/subscriptions/{guid}/providers/Microsoft.Authorization/policyDefinitions/regionPolicyDefinition").Properties.policyRule | ConvertTo-Json
 ```
 
-### <a name="azure-cli"></a>Интерфейс командной строки Azure
+### <a name="azure-cli"></a>Azure CLI
 
 В Azure CLI укажите имя определения политики.
 

@@ -4,10 +4,10 @@ description: Информация о модульном тестировании
 ms.topic: conceptual
 ms.date: 11/03/2019
 ms.openlocfilehash: 86733f8b5b80799bad3e52c643ed27465dfc7641
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74231226"
 ---
 # <a name="durable-functions-unit-testing"></a>Модульное тестирование устойчивых функций
@@ -17,7 +17,7 @@ ms.locfileid: "74231226"
 > [!NOTE]
 > В этой статье приводятся рекомендации по модульному тестированию для Устойчивые функции приложений, предназначенных для Устойчивые функции 1. x. Она еще не обновлена, чтобы учитывать изменения, появившиеся в Устойчивые функции 2. x. Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения примеров в этой статье нужно ознакомиться со следующими понятиями и платформами.
 
@@ -39,7 +39,7 @@ ms.locfileid: "74231226"
 
 * `DurableActivityContextBase`
 
-Эти классы являются базовыми классами для `DurableOrchestrationClient`, `DurableOrchestrationContext`и `DurableActivityContext`, определяющих клиент оркестрации, Orchestrator и методы действий. В процессе имитирования устанавливается ожидаемое поведение методов базового класса. Таким образом модульный тест может проверить бизнес-логику. При модульном тестировании бизнес-логики в клиенте оркестрации и оркестраторе выполняется двухэтапный рабочий процесс.
+Эти классы являются базовыми `DurableOrchestrationClient`классами `DurableOrchestrationContext`для, `DurableActivityContext` и, которые определяют методы клиента оркестрации, Orchestrator и действия. В процессе имитирования устанавливается ожидаемое поведение методов базового класса. Таким образом модульный тест может проверить бизнес-логику. При модульном тестировании бизнес-логики в клиенте оркестрации и оркестраторе выполняется двухэтапный рабочий процесс.
 
 1. Используйте базовые классы вместо конкретной реализации при определении сигнатур клиента оркестрации и функции Orchestrator.
 2. Настройте модульные тесты, выполняющие имитирование поведения базовых классов и проверку бизнес-логики.
@@ -52,9 +52,9 @@ ms.locfileid: "74231226"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs)]
 
-Модульному тесту необходимо проверить заголовок `Retry-After` в полезных данных ответа. Поэтому модульный тест будет подмакетирование некоторые из `DurableOrchestrationClientBase` методов, чтобы обеспечить предсказуемое поведение.
+Модульному тесту необходимо проверить заголовок `Retry-After` в полезных данных ответа. Поэтому модульный тест будет макетирование некоторые `DurableOrchestrationClientBase` методы, чтобы обеспечить предсказуемое поведение.
 
-Во-первых, требуется макет базового класса `DurableOrchestrationClientBase`. Макет может быть новым классом, реализующим `DurableOrchestrationClientBase`. Однако, использование платформы имитированной реализации наподобие [moq](https://github.com/moq/moq4) упрощает данный процесс.
+Во-первых, требуется макет базового класса, `DurableOrchestrationClientBase`. Макет может быть новым классом, реализующим `DurableOrchestrationClientBase`интерфейс. Однако, использование платформы имитированной реализации наподобие [moq](https://github.com/moq/moq4) упрощает данный процесс.
 
 ```csharp
     // Mock DurableOrchestrationClientBase
@@ -172,11 +172,11 @@ ms.locfileid: "74231226"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs)]
 
-Кроме того, модульный тест позволяет проверить формат выходных данных. Модульные тесты могут использовать типы параметров непосредственно или макетирование `DurableActivityContextBase` класса:
+Кроме того, модульный тест позволяет проверить формат выходных данных. Модульные тесты могут использовать типы параметров напрямую или макетирование `DurableActivityContextBase` класса:
 
 [!code-csharp[Main](~/samples-durable-functions/samples/VSSample.Tests/HelloSequenceActivityTests.cs)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о xUnit](https://xunit.github.io/docs/getting-started-dotnet-core)

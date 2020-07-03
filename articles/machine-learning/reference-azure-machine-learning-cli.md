@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: jordane
 author: jpe316
-ms.date: 11/05/2019
+ms.date: 03/05/2020
 ms.custom: seodec18
-ms.openlocfilehash: fe9cee44970da94c346caffc0d5fe76ffebf4a0b
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 16f9080487af95e7de5c5f8c91fd5c8d356b7bde
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845157"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81618062"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning"></a>Использование расширения CLI для Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -31,15 +31,34 @@ CLI для Машинного обучения Azure является расши
 
 Интерфейс командной строки не является заменой пакета SDK для Машинного обучения Azure. Это дополнительный инструмент, оптимизированный для обработки строго параметризованных задач, которые прекрасно подходят для автоматизации.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
-* Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+* Для использования интерфейса командной строки необходима подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+* Для использования команд интерфейса командной строки в этом документе из **локальной среды**требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+    Если вы используете [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/), интерфейс командной строки доступен через браузер и находится в облаке.
 
 ## <a name="full-reference-docs"></a>Полные справочные документы
 
 Найдите [полную справочную документацию по расширению Azure-CLI-ml Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/?view=azure-cli-latest).
+
+## <a name="connect-the-cli-to-your-azure-subscription"></a>Подключение интерфейса командной строки к своей подписке Azure
+
+> [!IMPORTANT]
+> Если вы используете Azure Cloud Shell, этот раздел можно пропустить. Cloud Shell автоматически выполняет проверку подлинности, используя учетную запись, которую вы входите в подписку Azure.
+
+Существует несколько способов проверки подлинности в подписке Azure с помощью интерфейса командной строки. Самый простой — выполнить интерактивную проверку подлинности с помощью браузера. Чтобы выполнить аутентификацию в интерактивном режиме, откройте командную строку или терминал и используйте следующую команду:
+
+```azurecli-interactive
+az login
+```
+
+Если CLI сможет запустить браузер по умолчанию, он откроет в браузере страницу входа. В противном случае необходимо открыть браузер и выполнить инструкции из командной строки. Инструкции подразумевают Просмотр [https://aka.ms/devicelogin](https://aka.ms/devicelogin) и ввод кода авторизации.
+
+[!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)]
+
+Другие методы проверки подлинности см. [в разделе Вход с помощью Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
 
 ## <a name="install-the-extension"></a>Установка расширения
 
@@ -94,7 +113,7 @@ az extension remove -n azure-cli-ml
     ```
 
     > [!TIP]
-    > Эта команда создает рабочую область Basic Edition. Чтобы создать корпоративную рабочую область, используйте параметр `--sku enterprise` с командой `az ml workspace create`. Дополнительные сведения о Машинное обучение Azure выпусках см. в разделе [что такое машинное обучение Azure](overview-what-is-azure-ml.md#sku).
+    > Эта команда создает рабочую область Basic Edition. Чтобы создать корпоративную рабочую область, используйте `--sku enterprise` параметр с `az ml workspace create` командой. Дополнительные сведения о Машинное обучение Azure выпусках см. в разделе [что такое машинное обучение Azure](overview-what-is-azure-ml.md#sku).
 
     Дополнительные сведения см. в разделе о [создании рабочей области AZ ML](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/workspace?view=azure-cli-latest#ext-azure-cli-ml-az-ml-workspace-create).
 
@@ -104,7 +123,7 @@ az extension remove -n azure-cli-ml
     az ml folder attach -w myworkspace -g myresourcegroup
     ```
 
-    Эта команда создает `.azureml` подкаталог, содержащий примеры файлов среды runconfig и conda. Он также содержит файл `config.json`, который используется для взаимодействия с рабочей областью Машинное обучение Azure.
+    Эта команда создает `.azureml` подкаталог, содержащий примеры файлов среды runconfig и conda. Он также содержит `config.json` файл, который используется для взаимодействия с рабочей областью машинное обучение Azure.
 
     Дополнительные сведения см. в разделе [AZ ML Folder Attach](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/folder?view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach).
 
@@ -140,20 +159,20 @@ az extension remove -n azure-cli-ml
 
     Дополнительные сведения см. в разделе [AZ ML computetarget Create амлкомпуте](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/computetarget/create?view=azure-cli-latest#ext-azure-cli-ml-az-ml-computetarget-create-amlcompute).
 
-## <a id="experiments"></a>Запуск экспериментов
+## <a name="run-experiments"></a><a id="experiments"></a>Запуск экспериментов
 
-* Запустите выполнение эксперимента. При использовании этой команды укажите имя файла runconfig (текст перед \*. runconfig, если вы ищете файловую систему) в параметре-c.
+* Запустите выполнение эксперимента. При использовании этой команды укажите имя файла runconfig (текст до \*. runconfig, если вы ищете файловую систему) в параметре-c.
 
     ```azurecli-interactive
     az ml run submit-script -c sklearn -e testexperiment train.py
     ```
 
     > [!TIP]
-    > Команда `az ml folder attach` создает подкаталог `.azureml`, который содержит два примера файлов runconfig. 
+    > `az ml folder attach` Команда создает `.azureml` подкаталог, который содержит два примера файлов runconfig. 
     >
     > При наличии скрипта Python, который создает объект конфигурации запуска программно, можно использовать [RunConfig. Save ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py#save-path-none--name-none--separate-environment-yaml-false-) , чтобы сохранить его как файл RunConfig.
     >
-    > Полную схему runconfig можно найти в этом [JSON файле](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json). Схема — это самостоятельная документация с помощью `description` ключа каждого объекта. Кроме того, существуют перечисления для возможных значений и фрагмент шаблона в конце.
+    > Полную схему runconfig можно найти в этом [JSON файле](https://github.com/microsoft/MLOps/blob/b4bdcf8c369d188e83f40be8b748b49821f71cf2/infra-as-code/runconfigschema.json). Схема — это самостоятельная документация по `description` ключу каждого объекта. Кроме того, существуют перечисления для возможных значений и фрагмент шаблона в конце.
 
     Дополнительные сведения см. в разделе [AZ ML Run Submit-Script](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script).
 
@@ -265,7 +284,7 @@ az extension remove -n azure-cli-ml
 
 ### <a name="environment-configuration-schema"></a>Схема конфигурации среды
 
-Если вы использовали команду `az ml environment scaffold`, она создает шаблон `azureml_environment.json` файл, который можно изменить и использовать для создания настраиваемых конфигураций среды с помощью интерфейса командной строки. Объект верхнего уровня слабо соответствует классу [`Environment`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py) в пакете SDK для Python. 
+При использовании `az ml environment scaffold` команды создается файл шаблона `azureml_environment.json` , который можно изменить и использовать для создания настраиваемых конфигураций среды с помощью интерфейса командной строки. Объект верхнего уровня слабо сопоставлен с [`Environment`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py) классом в пакете SDK для Python. 
 
 ```json
 {
@@ -309,9 +328,9 @@ az extension remove -n azure-cli-ml
 }
 ```
 
-В следующей таблице подробно описывается каждое поле верхнего уровня в JSON-файле, его тип и описание. Если тип объекта связан с классом из пакета SDK для Python, между каждым полем JSON и именем общедоступной переменной в классе Python имеется свободное 1:1 совпадений. В некоторых случаях поле может сопоставляться с аргументом конструктора, а не с переменной класса. Например, поле `environmentVariables` сопоставляется с переменной `environment_variables` в классе [`Environment`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py) .
+В следующей таблице подробно описывается каждое поле верхнего уровня в JSON-файле, его тип и описание. Если тип объекта связан с классом из пакета SDK для Python, между каждым полем JSON и именем общедоступной переменной в классе Python имеется свободное 1:1 совпадений. В некоторых случаях поле может сопоставляться с аргументом конструктора, а не с переменной класса. Например, `environmentVariables` поле сопоставляется с `environment_variables` переменной в [`Environment`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment(class)?view=azure-ml-py) классе.
 
-| Поле JSON | Тип | Description |
+| Поле JSON | Type | Описание |
 |---|---|---|
 | `name` | `string` | Имя среды. Не запускайте имя с помощью **Microsoft** или **AzureML**. |
 | `version` | `string` | Версия среды. |
@@ -408,7 +427,7 @@ az extension remove -n azure-cli-ml
 
 [!INCLUDE [deploymentconfig](../../includes/machine-learning-service-aks-deploy-config.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Справочник по командам для машинное обучение расширения CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest).
 

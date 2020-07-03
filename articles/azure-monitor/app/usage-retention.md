@@ -1,25 +1,23 @@
 ---
-title: Анализ удержания пользователей веб-приложений с помощью Azure Application Insights | Документы Майкрософт
+title: Анализ срока хранения пользователей веб-приложения с помощью Azure Application Insights
 description: Сколько пользователей вернулось к использованию вашего приложения?
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 05/03/2017
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5f5f6235354adc565815ac2eab0a1c774267102d
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: e6d9be6bc6d7f90153e2fb58aa404e281568dbdd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899418"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80892416"
 ---
 # <a name="user-retention-analysis-for-web-applications-with-application-insights"></a>Анализ удержания пользователей веб-приложений с помощью Application Insights
 
 Компонент "Удержание" в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) помогает анализировать, сколько пользователей вернулось в ваше приложение и как часто они выполняют определенные задачи или достигают цели. Например, если вы разместили игровой сайт, то можете сравнить число пользователей, которые вернулись на сайт после проигрыша, и число пользователей, которые вернулись после победы в игре. Эти сведения помогут улучшить взаимодействие с пользователем и свою бизнес-стратегию.
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 
 Если вы еще не видите данных в инструменте "Удержание" на портале Application Insights, [узнайте, как приступить к работе с инструментами для данных об использовании](usage-overview.md).
 
@@ -59,13 +57,13 @@ ms.locfileid: "72899418"
 [Узнайте больше о создании пользовательских событий](../../azure-monitor/app/api-custom-events-metrics.md#trackevent).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Чтобы обеспечить оптимальное использование, начните отправлять [пользовательские события](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackevent) или [сведения о просмотрах страниц](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#page-views).
 - Если вы уже сделали это, изучите инструменты использования, чтобы узнать, как пользователи используют службу.
     - [Пользователи, сеансы, события](usage-segmentation.md)
     - [Воронки](usage-funnels.md)
-    - [Средство "Маршруты пользователей"](usage-flows.md)
-    - [Книги](../../azure-monitor/app/usage-workbooks.md)
+    - [Маршруты пользователей](usage-flows.md)
+    - [Workbooks](../../azure-monitor/app/usage-workbooks.md)
     - [Добавление контекста пользователей](usage-send-user-context.md)
 
 

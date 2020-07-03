@@ -1,27 +1,20 @@
 ---
-title: Ошибка "Подписки не найдены" при попытке входа на портал Azure | Документация Майкрософт
+title: Ошибка "Подписки не найдены" при попытке входа на портал Azure
 description: Из этой статьи вы узнаете, как устранить ошибку "Подписки не найдены", которая возникает при входе на портал Azure или в Центр управления учетной записью Azure.
-services: ''
-documentationcenter: ''
 author: genlin
-manager: dcscontentpm
-editor: ''
+ms.reviewer: dcscontentpm
 tags: billing
-ms.assetid: d1545298-99db-4941-8e97-f24a06bb7cb6
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: troubleshooting
-ms.date: 05/11/2018
+ms.topic: conceptual
+ms.date: 02/12/2020
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 1573a5d5d9b537b208b2f6d6aea29b9738ddad3e
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 76f109645e4a27e712066cec7010f2ac7eb6b507
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75988114"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411646"
 ---
 # <a name="no-subscriptions-found-sign-in-error-for-azure-portal-or-azure-account-center"></a>Ошибка "Подписки не найдены" при попытке входа на портал Azure или в Центр управления учетной записью Azure
 
@@ -33,11 +26,11 @@ ms.locfileid: "75988114"
 
 ## <a name="cause"></a>Причина
 
-Эта проблема возникает, если вы выбрали неправильный каталог или учетная запись не предоставляет необходимых разрешений. 
+Эта проблема возникает, если вы выбрали неправильный каталог или учетная запись не предоставляет необходимых разрешений.
 
 ## <a name="solution"></a>Решение
 
-### <a name="scenario-1-error-message-is-received-in-the-azure-portalhttpsportalazurecom"></a>Сценарий 1. Сообщение об ошибке получено на [портале Azure](https://portal.azure.com)
+### <a name="scenario-1-error-message-is-received-in-the-azure-portal"></a>Сценарий 1. Сообщение об ошибке получено на [портале Azure](https://portal.azure.com)
 
 Чтобы устранить эту проблему:
 
@@ -46,7 +39,7 @@ ms.locfileid: "75988114"
   ![Выберите каталог в верхней правой части портала Azure](./media/no-subscriptions-found/directory-switch.png)
 * Если вы выбрали надлежащий каталог Azure, но по-прежнему получаете сообщение об ошибке, [назначьте учетной записи роль владельца](../../role-based-access-control/role-assignments-portal.md).
 
-### <a name="scenario-2-error-message-is-received-in-the-azure-account-centerhttpsaccountwindowsazurecomsubscriptions"></a>Сценарий 2. Сообщение об ошибке получено в [Центре управления учетной записью Azure](https://account.windowsazure.com/Subscriptions)
+### <a name="scenario-2-error-message-is-received-in-the-azure-account-center"></a>Сценарий 2. Сообщение об ошибке получено в [Центре управления учетной записью Azure](https://account.windowsazure.com/Subscriptions)
 
 Убедитесь, что используете учетную запись администратора учетной записи. Чтобы проверить, кто является администратором учетной записи, сделайте следующее:
 

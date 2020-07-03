@@ -1,26 +1,26 @@
 ---
-title: Настройка проверки подлинности Azure AD для подключения типа "точка — сеть" | Документация Майкрософт
-description: В этом руководстве описано, как настроить проверку подлинности Azure Active Directory для VPN пользователей.
+title: 'Настройка проверки подлинности Azure AD для VPN-подключения пользователя: Виртуальная глобальная сеть'
+description: Узнайте, как настроить проверку подлинности Azure Active Directory для VPN пользователей.
 services: virtual-wan
 author: anzaman
 ms.service: virtual-wan
-ms.topic: tutorial
-ms.date: 12/02/2019
+ms.topic: conceptual
+ms.date: 03/17/2020
 ms.author: alzam
-ms.openlocfilehash: 19aa029311584b5a9762691d24ed10c1666a032c
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
-ms.translationtype: HT
+ms.openlocfilehash: 703b832d58f2374eac131cfd380ba27f2c890618
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781731"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80059483"
 ---
-# <a name="tutorial-create-a-user-vpn-connection-by-using-azure-virtual-wan"></a>Руководство по созданию пользовательского соединения VPN с помощью Виртуальной глобальной сети Azure
+# <a name="configure-azure-active-directory-authentication-for-user-vpn"></a>Настройка проверки подлинности Azure Active Directory для VPN пользователя
 
-В этом руководстве показано, как настроить проверку подлинности Azure AD для VPN пользователей в Виртуальной глобальной сети для подключения к ресурсам в Azure через VPN-подключение OpenVPN. Проверка подлинности Azure Active Directory доступна только для шлюзов, использующих протокол OpenVPN и клиенты под управлением Windows.
+В этой статье показано, как настроить аутентификацию Azure AD для VPN пользователей в виртуальной глобальной сети для подключения к ресурсам в Azure через VPN-подключение Опенвпн. Проверка подлинности Azure Active Directory доступна только для шлюзов, использующих протокол OpenVPN и клиенты под управлением Windows.
 
-Этот тип подключения требует, чтобы клиент был настроен на клиентском компьютере. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
+Этот тип подключения требует, чтобы клиент был настроен на клиентском компьютере. Дополнительные сведения о виртуальной глобальной сети см. в [обзоре виртуальной глобальной сети](virtual-wan-about.md).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание глобальной сети.
@@ -31,15 +31,14 @@ ms.locfileid: "74781731"
 > * Подключение виртуальной сети к концентратору.
 > * Скачивание и применение конфигурации VPN-клиента
 > * Просмотр виртуальной глобальной сети
-> * Просмотр состояния работоспособности ресурса.
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-about/virtualwanp2s.png)
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
-* У вас есть виртуальная сеть, к которой необходимо подключиться. Ни одна из подсетей локальной сети не должна перекрывать виртуальные сети, к которым вы хотите подключиться. Сведения о создании виртуальной сети на портале Azure см. в [этой статье](../virtual-network/quick-create-portal.md).
+* У вас есть виртуальная сеть, к которой необходимо подключиться. Ни одна из подсетей локальной сети не должна перекрывать виртуальные сети, к которым вы хотите подключиться. Чтобы создать виртуальную сеть на портал Azure, см. [Краткое руководство](../virtual-network/quick-create-portal.md).
 
 * В вашей виртуальной сети не должны находиться виртуальные сетевые шлюзы. Если в виртуальной сети есть шлюз (VPN или ExpressRoute), необходимо удалить его. Эта конфигурация требует, чтобы виртуальные сети были подключены к шлюзу концентратора Виртуальной глобальной сети.
 
@@ -47,7 +46,7 @@ ms.locfileid: "74781731"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="wan"></a>Создание виртуальной глобальной сети
+## <a name="create-a-virtual-wan"></a><a name="wan"></a>Создание виртуальной глобальной сети
 
 В браузере откройте [портал Azure](https://portal.azure.com) и выполните вход с помощью учетной записи Azure.
 
@@ -65,9 +64,9 @@ ms.locfileid: "74781731"
 4. Заполнив поля, нажмите кнопку **Просмотр и создание**.
 5. После прохождения проверки нажмите кнопку **Create** (Создать), чтобы создать виртуальную глобальную сеть.
 
-## <a name="site"></a>Создание пустого виртуального концентратора
+## <a name="create-an-empty-virtual-hub"></a><a name="site"></a>Создание пустого виртуального концентратора
 
-1. В виртуальной глобальной сети выберите "Hubs" (Концентраторы) и щелкните **+New Hub** (Создать концентратор).
+1. В виртуальной глобальной сети выберите концентраторы и щелкните **+ Новый концентратор**.
 
    ![новый сайт](media/virtual-wan-point-to-site-azure-ad/hub1.jpg)
 2. На странице "Создание виртуального концентратора" заполните следующие поля.
@@ -80,29 +79,27 @@ ms.locfileid: "74781731"
 
    ![новый сайт](media/virtual-wan-point-to-site-azure-ad/hub2.jpg)  
 3. Щелкните **Review + create** (Просмотреть и создать).
-4. На странице **validation passed** (Проверка пройдена) нажмите кнопку **create** (Создать).
+4. На странице **Проверка пройдена** нажмите кнопку **создать**.
 
-## <a name="site"></a>Создание новой конфигурации подключения типа "точка — сеть"
+## <a name="create-a-new-p2s-configuration"></a><a name="site"></a>Создание новой конфигурации подключения типа "точка — сеть"
 
 Конфигурации подключения "точка — сеть" определяет параметры для подключения удаленных клиентов.
 
-1. Установите следующие переменные, заменив по мере необходимости значения в вашей среде.
+1. В своей виртуальной глобальной сети щелкните **Пользовательские конфигурации VPN**.
 
-   ```powershell
-   $aadAudience = "00000000-abcd-abcd-abcd-999999999999"
-   $aadIssuer = "https://sts.windows.net/00000000-abcd-abcd-abcd-999999999999/"
-   $aadTenant = "https://login.microsoftonline.com/00000000-abcd-abcd-abcd-999999999999"    
-   ```
+   ![новая конфигурация](media/virtual-wan-point-to-site-azure-ad/aadportal1.jpg)
 
-2. Чтобы создать конфигурацию, выполните следующие команды:
+2. Щелкните **+Создать пользовательскую конфигурацию VPN**.
 
-   ```powershell
-   $aadConfig = New-AzVpnServerConfiguration -ResourceGroupName <ResourceGroup> -Name newAADConfig -VpnProtocol OpenVPN -VpnAuthenticationType AAD -AadTenant $aadTenant -AadIssuer $aadIssuer -AadAudience $aadAudience -Location westcentralus
-   ```
+   ![новая конфигурация](media/virtual-wan-point-to-site-azure-ad/aadportal2.jpg)
 
-## <a name="hub"></a>Изменение назначения концентратора
+3. Введите данные и нажмите кнопку **Создать**.
 
-1. Перейдите в колонку **Hubs** (Концентраторы) в виртуальной глобальной сети.
+   ![новая конфигурация](media/virtual-wan-point-to-site-azure-ad/aadportal3.jpg)
+
+## <a name="edit-hub-assignment"></a><a name="hub"></a>Изменение назначения концентратора
+
+1. Перейдите в колонку **концентраторы** в виртуальной глобальной сети.
 2. Выберите концентратор, с которым вы хотите связать конфигурацию vpn-сервера, и нажмите кнопку с многоточием (...).
 
    ![новый сайт](media/virtual-wan-point-to-site-azure-ad/p2s4.jpg)
@@ -111,10 +108,10 @@ ms.locfileid: "74781731"
 
    ![новый сайт](media/virtual-wan-point-to-site-azure-ad/p2s2.jpg)
 5. Введите **пул адресов**, с которого VPN клиентам будут назначаться IP адреса.
-6. Щелкните **Confirm** (Подтвердить).
+6. Нажмите кнопку **подтвердить**.
 7. Выполнение операции может занять до 30 минут.
 
-## <a name="device"></a>Загрузка профиля VPN
+## <a name="download-vpn-profile"></a><a name="device"></a>Загрузка профиля VPN
 
 Используйте профиль VPN для настройки клиентов.
 
@@ -125,17 +122,17 @@ ms.locfileid: "74781731"
 
 ## <a name="configure-user-vpn-clients"></a>Настройка VPN-клиентов пользователя
 
-Для подключения необходимо скачать VPN-клиент Azure (Предварительная версия) и импортировать профиль VPN-клиента, скачанный на предыдущих шагах на каждый компьютер, который нужно подключить к виртуальной сети.
+Для подключения необходимо скачать VPN-клиент Azure и импортировать профиль VPN-клиента, скачанный на предыдущих шагах, на каждый компьютер, который нужно подключить к виртуальной сети.
 
 > [!NOTE]
-> Проверка подлинности Azure AD поддерживается только для подключений по протоколу OpenVPN®.
+> Аутентификация Azure AD поддерживается только для подключений&reg; по протоколу опенвпн.
 >
 
 #### <a name="to-download-the-azure-vpn-client"></a>Загрузка VPN-клиента Azure
 
-Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab), чтобы скачать VPN-клиент Azure (Предварительная версия).
+Используйте эту [ссылку](https://www.microsoft.com/p/azure-vpn-client-preview/9np355qt2sqb?rtc=1&activetab=pivot:overviewtab), чтобы скачать VPN-клиент Azure.
 
-#### <a name="import"></a>Импорт профиля клиента
+#### <a name="to-import-a-client-profile"></a><a name="import"></a>Импорт профиля клиента
 
 1. На странице выберите **Import** (Импорт).
 
@@ -157,47 +154,42 @@ ms.locfileid: "74781731"
 
     ![импорт](./media/virtual-wan-point-to-site-azure-ad/import/import5.jpg)
 
-#### <a name="delete"></a>Удаление профиля клиента
+#### <a name="to-delete-a-client-profile"></a><a name="delete"></a>Удаление профиля клиента
 
 1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
+    !["Удалить"](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
+    !["Удалить"](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
 
-#### <a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
+#### <a name="diagnose-connection-issues"></a><a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 
 1. Для диагностики проблем с подключением можно использовать средство **Diagnose** (Диагностика). Нажмите кнопку с многоточием (...) рядом с VPN-подключением, которое нужно диагностировать, чтобы открыть меню. Затем выберите **Diagnose** (Диагностика).
 
-    ![диагностика](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose1.jpg)
+    ![diagnose](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose1.jpg)
 
 2. На странице **Connection Properties** (Свойства подключения) выберите **Run Diagnosis** (Выполнить диагностику).
 
-    ![диагностика](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose2.jpg)
+    ![diagnose](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose2.jpg)
 
 3. Войдите с помощью своих учетных данных.
 
-    ![диагностика](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose3.jpg)
+    ![diagnose](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose3.jpg)
 
 4. Просмотр результатов диагностики.
 
-    ![диагностика](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose4.jpg)
+    ![diagnose](./media/virtual-wan-point-to-site-azure-ad/diagnose/diagnose4.jpg)
 
-## <a name="viewwan"></a>Просмотр виртуальной глобальной сети
+## <a name="view-your-virtual-wan"></a><a name="viewwan"></a>Просмотр виртуальной глобальной сети
 
 1. Перейдите к виртуальной глобальной сети.
-2. На странице обзора каждая точка на карте представляет собой концентратор. Наведите курсор на любую точку, чтобы просмотреть сводку о работоспособности концентратора.
+2. На странице обзора каждая точка на карте представляет собой концентратор.
 3. В разделе концентраторов и подключений можно просмотреть сведения о состоянии концентратора, сайте, регионе, состоянии VPN-подключения, приеме и передаче байтов.
 
-## <a name="viewhealth"></a>Просмотр состояния работоспособности ресурса
 
-1. Перейдите к своей глобальной сети.
-2. На странице глобальной сети в разделе **Поддержка и устранение неполадок** щелкните **Работоспособность** и просмотрите сведения о своем ресурсе.
-
-
-## <a name="cleanup"></a>Очистка ресурсов
+## <a name="clean-up-resources"></a><a name="cleanup"></a>Очистка ресурсов
 
 Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Замените myResourceGroup на имя вашей группы ресурсов и выполните следующую команду PowerShell:
 
@@ -205,6 +197,6 @@ ms.locfileid: "74781731"
 Remove-AzureRmResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).

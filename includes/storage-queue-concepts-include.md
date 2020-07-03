@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 59dd5d38b1cb89ce966a74284f0e392af52e9827
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 23b93f507ef6abe19a0202b28afa31d28490b2b3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457673"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80151113"
 ---
 ## <a name="what-is-queue-storage"></a>Что такое хранилище очередей?
 
@@ -22,13 +22,13 @@ ms.locfileid: "75457673"
 
 ![Компоненты служба очередей Azure](./media/storage-queue-concepts-include/azure-queue-service-components.png)
 
-* **Формат URL-адреса:** Для адресации очередей используется следующий формат URL-адреса: http://`<storage account>`. queue.core.windows.net/`<queue>`
+* **Формат URL-адреса:** Для адресации очередей используется следующий формат URL-адреса`<storage account>`: http://. Queue.Core.Windows.NET/`<queue>`
   
     Следующий URL-адрес позволяет обратиться к очереди на схеме:  
   
-    `http://myaccount.queue.core.windows.net/images-to-download`
+    `http://myaccount.queue.core.windows.net/incoming-orders`
 
-* **Учетная запись хранения**. Весь доступ к хранилищу Azure осуществляется с помощью учетной записи хранения. Дополнительные сведения об учетных записях хранения см. в разделе [Общие сведения о учетной записи хранения] [.. /артиклес/стораже/Коммон/стораже-аккаунт-овервиев.МД].
+* **Учетная запись хранения:** Весь доступ к службе хранилища Azure осуществляется через учетную запись хранения. См. сведения об [учетных записях хранения](../articles/storage/common/storage-account-overview.md).
 * **Очередь**. Очередь содержит набор сообщений. Все сообщения должны находиться в очереди. Обратите внимание: имя очереди должно содержать только строчные символы. Дополнительные сведения см. в статье о [присвоении имен очередям и метаданным](https://msdn.microsoft.com/library/azure/dd179349.aspx).
 * **Сообщение.** Сообщение в любом формате размером до 64 КБ. Сообщение может оставаться в очереди не более 7 дней. Начиная с версии 2017-07-29, максимальный срок жизни может быть задан любым положительным числом или значением -1, свидетельствующим о том, что срок жизни сообщения неограничен. Если этот параметр не указан, срок жизни по умолчанию составляет семь дней.
 

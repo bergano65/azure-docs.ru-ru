@@ -1,28 +1,25 @@
 ---
-title: Создание классического оповещения о метрике в Azure с помощью шаблона Resource Manager
+title: Шаблон диспетчер ресурсов — создание оповещения метрики
 description: Узнайте, как создать классическое оповещение на основе метрик, чтобы получать уведомления по электронной почте или с использованием веб-перехватчика, с помощью шаблона Resource Manager.
-author: johnkemnetz
-services: azure-monitor
-ms.service: azure-monitor
+author: rboucher
+ms.author: robb
 ms.topic: conceptual
-ms.date: 4/27/2018
-ms.author: johnkem
-ms.subservice: metrics
-ms.openlocfilehash: 7c1cdf912f9a1e4e8ae92baa4381e9705702136f
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.date: 03/09/2020
+ms.subservice: alerts
+ms.openlocfilehash: 5a868167f80aaa735e4fbeab32fd1d308dd6da1f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977591"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81114433"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
-В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для настройки оповещений метрик Azure. Это позволяет автоматически настраивать оповещения для ресурсов при их создании, чтобы обеспечить правильный мониторинг всех ресурсов.
-
-> [!NOTE]
+> [!WARNING]
 > 
-> В этой статье описывается создание **классических оповещений на основе метрик** с помощью шаблонов Resource Manager. Если вам нужно создать [новые оповещения на основе метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) с использованием шаблонов, [в этой статье](alerts-metric-create-templates.md) приведены подробности.
+> В этой статье описывается создание **классических оповещений на основе метрик** с помощью шаблонов Resource Manager. Классические предупреждения были прекращены в августе 2019 и полностью устарели в июне 2020. Нельзя создавать новые классические предупреждения общедоступные Azure. Некоторые региональные версии Azure по-прежнему могут иметь вариант, но мы рекомендуем создавать [новые оповещения о метриках](../../azure-monitor/platform/alerts-metric-near-real-time.md) с помощью шаблонов, если это возможно. [Эта статья](alerts-metric-create-templates.md) содержит подробные сведения.
 >
 
+В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) , чтобы настроить классические оповещения метрик Azure. Это позволяет автоматически настраивать оповещения для ресурсов при их создании, чтобы обеспечить правильный мониторинг всех ресурсов.
 
 Основными шагами являются следующие:
 
@@ -401,7 +398,7 @@ ms.locfileid: "75977591"
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Узнайте больше об оповещениях](alerts-overview.md)
 * [Добавьте параметры диагностики](../../azure-monitor/platform/diagnostic-settings-template.md) в шаблон Resource Manager.
 * Синтаксис и свойства JSON см. в справочнике по шаблонам [Microsoft.Insights/metricAlerts](/azure/templates/microsoft.insights/alertrules).

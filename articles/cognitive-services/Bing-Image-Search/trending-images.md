@@ -13,10 +13,10 @@ ms.date: 03/04/2019
 ms.author: scottwhi
 ms.custom: seodec2018
 ms.openlocfilehash: 2936b94d7ba791b1a4e5a9b95aca3ca3ecdb5904
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66383433"
 ---
 # <a name="get-trending-images-from-the-web"></a>Получение набирающих популярность изображений из Интернета
@@ -32,7 +32,7 @@ X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
 Host: api.cognitive.microsoft.com  
 ```  
 
-В настоящее время API для поиска изображений, набирающих популярность, поддерживается только для следующих рынков:  
+В настоящее время API поиска изображений, набирающих популярность, поддерживается только для следующих рынков:  
 
 - en-US (английский, США)  
 - en-CA (английский, Канада)  

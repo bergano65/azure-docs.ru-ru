@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 86d924860e97b15a0a4af46c5bc35b0e0050292b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422583"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79261844"
 ---
 # <a name="delegation-and-roles-in-azure-ad-entitlement-management"></a>Делегирование и роли в управлении назначениями Azure AD
 
@@ -65,18 +65,18 @@ ms.locfileid: "75422583"
 
 После делегирования отдел маркетинга может иметь роли, аналогичные приведенным в следующей таблице.
 
-| Пользователь | Должность | Роль Azure AD | Роль управления назначениями |
+| User (Пользователь) | Роль задания | Роль Azure AD | Роль управления назначениями |
 | --- | --- | --- | --- |
 | Hana | ИТ – администратор | глобальный администратор или администратор пользователей. |  |
-| мамта | Менеджер по маркетингу | Пользователь | Создатель каталога и владелец каталога |
-| Владимир | Ведущий маркетинг | Пользователь | Владелец каталога |
-| Джессика | Менеджер по маркетингу проекта | Пользователь | Доступ к диспетчеру пакетов |
+| мамта | Менеджер по маркетингу | User (Пользователь) | Создатель каталога и владелец каталога |
+| Владимир | Ведущий маркетинг | User (Пользователь) | Владелец каталога |
+| Джессика | Менеджер по маркетингу проекта | User (Пользователь) | Доступ к диспетчеру пакетов |
 
 ## <a name="entitlement-management-roles"></a>Роли управления назначениями
 
 Управление назначением имеет следующие роли, относящиеся к управлению назначением.
 
-| Роль управления назначениями | Description |
+| Роль управления назначениями | Описание |
 | --- | --- |
 | Создатель каталога | Создание каталогов и управление ими. Обычно это ИТ-администратор, не являющийся глобальным администратором, или владелец ресурса для коллекции ресурсов. Пользователь, который создает каталог, автоматически станет первым владельцем каталога каталога и может добавить дополнительных владельцев каталога. Создатель каталога не может управлять каталогами, которыми они не владеют, и не может добавлять ресурсы, не принадлежащие каталогу. Если создателю каталога необходимо управлять другим каталогом или добавить ресурсы, которыми они не владеют, они могут запросить совладельца этого каталога или ресурса. |
 | Владелец каталога | Изменение существующих каталогов и управление ими. Обычно это ИТ-администратор или владельцы ресурсов, или пользователь, которому назначен владелец каталога. |
@@ -84,17 +84,17 @@ ms.locfileid: "75422583"
 
 Кроме того, назначенный утверждающий и запрашивающий пакет Access также имеют права, хотя они не являются ролями.
 
-| Right | Description |
+| Right | Описание |
 | --- | --- |
 | Утверждающий | Авторизация политикой для утверждения или запрета запросов на доступ к пакетам, однако они не могут изменять определения пакетов доступа. |
-| Запрашивающая сторона | Авторизация с помощью политики пакета доступа для запроса этого пакета доступа. |
+| Requestor | Авторизация с помощью политики пакета доступа для запроса этого пакета доступа. |
 
 В следующей таблице перечислены задачи, которые могут выполнять роли управления обслуживанием.
 
 | Задача | Административный | Создатель каталога | Владелец каталога | Доступ к диспетчеру пакетов |
 | --- | :---: | :---: | :---: | :---: |
 | [Делегирование автору каталога](entitlement-management-delegate-catalog.md) | :heavy_check_mark: |  |  |  |
-| [Добавление подключенной Организации](entitlement-management-organization.md) | :heavy_check_mark: |  |  |  |
+| [Добавление подключенной организации](entitlement-management-organization.md) | :heavy_check_mark: |  |  |  |
 | [Создать новый каталог](entitlement-management-catalog-create.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [Добавление ресурса в каталог](entitlement-management-catalog-create.md#add-resources-to-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |
 | [Добавление владельца каталога](entitlement-management-catalog-create.md#add-additional-catalog-owners) | :heavy_check_mark: |  | :heavy_check_mark: |  |
@@ -122,15 +122,15 @@ ms.locfileid: "75422583"
 
 | Роль каталога Azure AD | Роль управления назначениями | Можно добавить группу безопасности | Можно добавить группу Office 365 | Можно добавить приложение | Можно добавить сайт SharePoint Online |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md). | Н/Д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | Н/Д |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Глобальный администратор](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Администратор пользователей](../users-groups-roles/directory-assign-admin-roles.md) | Недоступно |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Администратор Intune](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [Администратор Exchange](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор служб Team Services](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  |  |
 | [Администратор SharePoint](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  | :heavy_check_mark: |  | :heavy_check_mark: |
-| [администратор приложения](../users-groups-roles/directory-assign-admin-roles.md); | Владелец каталога |  |  | :heavy_check_mark: |  |
-| [администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md). | Владелец каталога |  |  | :heavy_check_mark: |  |
-| Пользователь | Владелец каталога | Только если владелец группы | Только если владелец группы | Только если владелец приложения |  |
+| [Администратор приложения](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
+| [Администратор облачных приложений](../users-groups-roles/directory-assign-admin-roles.md) | Владелец каталога |  |  | :heavy_check_mark: |  |
+| User (Пользователь) | Владелец каталога | Только если владелец группы | Только если владелец группы | Только если владелец приложения |  |
 
 Чтобы определить минимально привилегированную роль для задачи, можно также ссылаться на [роли администратора по задаче администрирования в Azure Active Directory](../users-groups-roles/roles-delegate-by-task.md#entitlement-management).
 

@@ -1,27 +1,26 @@
 ---
 title: Использование виртуальных машин точки Azure
 description: Узнайте, как использовать плашечные виртуальные машины для экономии затрат.
-services: virtual-machines-windows
 author: cynthn
-manager: gwallace
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.workload: infrastructure-services
-ms.topic: article
-ms.date: 11/20/2019
+ms.topic: conceptual
+ms.date: 03/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 4acbab324c63cf0184f5384e6af5e9418ca06677
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.reviewer: jagaveer
+ms.openlocfilehash: c453e8a70a6cd4b9d33a6d40bebd2ac0a804e5e6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74782103"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82100589"
 ---
-# <a name="preview-use-spot-vms-in-azure"></a>Предварительная версия: использование плашечных виртуальных машин в Azure
+# <a name="use-spot-vms-in-azure"></a>Использование плашечных виртуальных машин в Azure
 
 [!INCLUDE [common-spot-vms](../../../includes/virtual-machines-common-spot-vms.md)]  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Используйте [портал](spot-portal.md), [CLI](../linux/spot-cli.md) или [PowerShell](spot-powershell.md) для развертывания плашечных виртуальных машин.
 
 Также можно развернуть [масштабируемый набор с другими экземплярами виртуальных машин](../../virtual-machine-scale-sets/use-spot.md).

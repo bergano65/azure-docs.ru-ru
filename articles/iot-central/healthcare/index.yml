@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 10/25/2019
-  ms.openlocfilehash: 21c810195d7d9a7656aadfacc4dd8f1c73932b27
-  ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+  ms.openlocfilehash: a2eda11682ccd3329d1a9447aca3741ddd264da7
+  ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/05/2020
-  ms.locfileid: "77021514"
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82024869"
 landingContent:
 - title: Создание решений для здравоохранения
   linkLists:
@@ -33,6 +33,8 @@ landingContent:
     links:
     - text: Настройка шаблона устройства
       url: ../core/howto-set-up-template.md
+    - text: Подключение устройства
+      url: ../core/tutorial-connect-device-nodejs.md
     - text: Подключение устройства IoT Plug and Play (предварительная версия)
       url: ../core/tutorial-connect-pnp-device.md
   - linkListType: how-to-guide

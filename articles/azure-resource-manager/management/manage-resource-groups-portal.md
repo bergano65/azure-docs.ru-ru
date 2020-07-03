@@ -5,14 +5,14 @@ author: mumian
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: jgao
-ms.openlocfilehash: 8087baf7595bfd2497f97fbff4822b356cd1b146
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 622c0cb8d58dddcdb13c7dc9412ada3f2e2d93e4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75485641"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80632992"
 ---
-# <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Управление группами ресурсов Azure Resource Manager с помощью портал Azure
+# <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Управление группами ресурсов Azure Resource Manager с помощью портала Azure.
 
 Узнайте, как использовать [портал Azure](https://portal.azure.com) с [Azure Resource Manager](overview.md) для управления группами ресурсов Azure. Сведения об управлении ресурсами Azure см. [в статье Управление ресурсами Azure с помощью портал Azure](manage-resources-portal.md).
 
@@ -29,7 +29,6 @@ ms.locfileid: "75485641"
 
 В группе ресурсов хранятся метаданные о ресурсах. Исходя из этого, при указании расположения группы ресурсов вы определяете расположение метаданных. В целях обеспечения соответствия необходимо убедиться, что данные хранятся в определенном регионе.
 
-В группе ресурсов хранятся метаданные о ресурсах. Указывая расположение группы ресурсов, вы определяете расположение метаданных.
 
 ## <a name="create-resource-groups"></a>Создание группы ресурсов
 
@@ -41,12 +40,12 @@ ms.locfileid: "75485641"
 4. Введите следующие значения.
 
    - **Подписка**. Выберите подписку Azure. 
-   - **Группа ресурсов**. Введите имя новой группы ресурсов. 
+   - **Группа ресурсов.** Введите имя новой группы ресурсов. 
    - **Регион**: выберите расположение Azure, например **Central США**.
 
      ![Создать группу ресурсов](./media/manage-resource-groups-portal/manage-resource-groups-create-group.png)
 5. Выберите **Проверка и создать** .
-6. Нажмите кнопку **Создать**. Создание группы ресурсов займет несколько секунд.
+6. Щелкните **Создать**. Создание группы ресурсов займет несколько секунд.
 7. Выберите **Обновить** в верхнем меню, чтобы обновить список Группа ресурсов, а затем выберите только что созданную группу ресурсов, чтобы открыть ее. Или щелкните **уведомление**(значок колокольчика) вверху, а затем выберите **Перейти к группе ресурсов** , чтобы открыть только что созданную группу ресурсов.
 
     ![Переход к группе ресурсов](./media/manage-resource-groups-portal/manage-resource-groups-add-group-go-to-resource-group.png)
@@ -63,7 +62,7 @@ ms.locfileid: "75485641"
 ## <a name="open-resource-groups"></a>Открытие групп ресурсов
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **Группы ресурсов**.
+2. Выберите **группы ресурсов**.
 3. Выберите группу ресурсов, которую необходимо открыть.
 
 ## <a name="delete-resource-groups"></a>Удаление групп ресурсов

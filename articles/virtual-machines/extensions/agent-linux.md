@@ -16,10 +16,10 @@ ms.date: 10/17/2016
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 5f22fbd77069488e7aaf490f93f42cde747444a8
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74073854"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
@@ -42,7 +42,7 @@ ms.locfileid: "74073854"
   * Управление диском ресурсов
   * Форматирование и подключение диска ресурсов
   * Настройка пространства подкачки
-* **Сеть**
+* **Сетевое взаимодействие**
   
   * Управляет маршрутами для улучшения совместимости с DHCP-серверами платформы
   * Обеспечивает стабильность имени сетевого интерфейса
@@ -60,7 +60,7 @@ ms.locfileid: "74073854"
 * **Расширение виртуальной машины**
   
   * Вставка компонента, созданного корпорацией Майкрософт и ее партнерами, в виртуальную машину Linux (IaaS) для включения программного обеспечения и автоматизации настройки
-  * Эталонная реализация расширения виртуальной машины на сайте [https://github.com/Azure/azure-linux-extensions](https://github.com/Azure/azure-linux-extensions).
+  * Эталонная реализация расширения виртуальной машины в[https://github.com/Azure/azure-linux-extensions](https://github.com/Azure/azure-linux-extensions)
 
 ## <a name="communication"></a>Обмен данными
 Поток информации от платформы к агенту передается по двум каналам:
@@ -72,7 +72,7 @@ ms.locfileid: "74073854"
 Следующие системы протестированы и гарантированно поддерживают работу с агентом Linux для Azure:
 
 > [!NOTE]
-> Этот список может отличаться от официального списка систем, поддерживаемых платформой Microsoft Azure, который доступен на странице: [https://support.microsoft.com/kb/2805216](https://support.microsoft.com/kb/2805216).
+> Этот список может отличаться от официального списка поддерживаемых систем на Microsoft Azure платформе, как описано здесь:[https://support.microsoft.com/kb/2805216](https://support.microsoft.com/kb/2805216)
 > 
 > 
 
@@ -118,7 +118,7 @@ ms.locfileid: "74073854"
   * Настройка имени сервера в /etc/resolv.conf
   * Корневой пароль из /etc/shadow (если в файле конфигурации для Provisioning.DeleteRootPassword указано значение «y»)
   * Кэшированные аренды DHCP-клиентов
-  * Возвращает имя узла localhost.localdomain
+  * возвращается имя узла localhost.localdomain;
 
 > [!WARNING]
 > Отмена подготовки не гарантирует, что из образа будет удалена вся конфиденциальная информация и что он будет готов к повторному распространению.
@@ -131,7 +131,7 @@ ms.locfileid: "74073854"
 * daemon: запуск waagent в качестве управляющей программы для контроля взаимодействия с платформой. Этот аргумент указывается для waagent в сценарии инициализации waagent.
 * start: запуск waagent как фонового процесса
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 Файл конфигурации (/ etc/waagent.conf) определяет действия waagent. Ниже показан пример файла конфигурации.
 
     ```
@@ -243,14 +243,14 @@ Default: 10
 ```
 Длина случайной соли, используемой при создании хеша пароля.
 
-**ResourceDisk.Format:**  
+**ResourceDisk. формат:**  
 ```
 Type: Boolean  
 Default: y
 ```
 Если задан, диск ресурсов, предоставленный платформой, форматируется и монтируется с использованием waagent, если тип файловой системы, запрошенный пользователем в "ResourceDisk.Filesystem", отличается от "ntfs". На диске доступен один раздел типа Linux (83). Обратите внимание, что этот раздел не форматируется, если он может быть успешно подключен.
 
-**ResourceDisk.Filesystem:**  
+**ResourceDisk. FileSystem:**  
 ```
 Type: String  
 Default: ext4
@@ -278,7 +278,7 @@ Default: n
 ```
 Если задано, на диске ресурсов создается файл подкачки (/swapfile), который добавляется к пространству подкачки в системе.
 
-**ResourceDisk.SwapSizeMB:**  
+**ResourceDisk. SwapSizeMB:**  
 ```
 Type: Integer  
 Default: 0
@@ -337,12 +337,12 @@ Default: y
   
   * **ResourceDisk.Format;**
   * **ResourceDisk.Filesystem;**
-  * **ResourceDisk.MountPoint;**
-  * **ResourceDisk.EnableSwap;**
+  * **ResourceDisk. MountPoint**
+  * **ResourceDisk. Енаблесвап**
   * **ResourceDisk.SwapSizeMB.**
 
 * Если вам нужно настроить точку подключения диска ресурсов и пространство подкачки в образах облаков Ubuntu во время подготовки, см. следующие ресурсы.
   
   * [Вики-сайт по Ubuntu: настройка разделов подкачки](https://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
-  * [Включение пользовательских данных в виртуальную машину Azure](../windows/classic/inject-custom-data.md)
+  * [Внедрение пользовательских данных в виртуальную машину Azure](../windows/classic/inject-custom-data.md)
 

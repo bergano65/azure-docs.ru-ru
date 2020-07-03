@@ -8,20 +8,20 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ramamill
 ms.openlocfilehash: 685f04b27cd315b04ef5c45e155e825eebe2747b
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73953907"
 ---
 # <a name="prepare-target-vmware-to-azure"></a>Подготовка цели (репликация виртуальных машин VMware в Azure)
 
 В этой статье описывается, как подготовить среду Azure к запуску репликации 64-разрядных физических серверов Windows или Linux в Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается:
-- Вы создали хранилище служб восстановления для защиты физических серверов. Хранилище служб восстановления можно создать из [портал Azure](https://portal.azure.com "портале Azure").
+- Вы создали хранилище служб восстановления для защиты физических серверов. Хранилище служб восстановления можно создать из [портал Azure](https://portal.azure.com "Портал Azure").
 - Вы [настроили локальную среду](physical-azure-disaster-recovery.md) для репликации физических серверов в Azure.
 
 ## <a name="prepare-target"></a>Подготовка цели
@@ -39,5 +39,5 @@ ms.locfileid: "73953907"
 
 Если у вас нет совместимых учетных записей хранения диспетчера ресурсов или виртуальной сети, их можно создать, нажав кнопку **+ Storage Account** (+ Учетная запись хранения) или кнопку **+ Network** (+ Сеть) в верхней части страницы.
 
-## <a name="next-steps"></a>Дополнительная информация
-[Настройка параметров репликации](vmware-azure-set-up-replication.md).
+## <a name="next-steps"></a>Дальнейшие действия
+[Настройте параметры репликации](vmware-azure-set-up-replication.md).

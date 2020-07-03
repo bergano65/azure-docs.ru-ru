@@ -2,26 +2,21 @@
 title: Вход в одностраничное приложение & выхода — платформа Microsoft Identity | Службы
 description: Узнайте, как создать одностраничное приложение (вход)
 services: active-directory
-documentationcenter: dev-center-name
 author: navyasric
 manager: CelesteDG
-editor: ''
-ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/11/2020
 ms.author: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: eb75aa53051e7e3c424ffe131cda61324fe86b1a
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 7e809def048c95b6688a13ac99783615eb045d11
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77159970"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885195"
 ---
 # <a name="single-page-application-sign-in-and-sign-out"></a>Одностраничное приложение: вход и выход
 
@@ -29,8 +24,8 @@ ms.locfileid: "77159970"
 
 Прежде чем можно будет получить маркеры для доступа к API в приложении, необходим контекст пользователя, прошедшего проверку подлинности. Вход пользователей в приложение в MSAL. js можно выполнять двумя способами:
 
-* [Всплывающее окно](#sign-in-with-a-pop-up-window)с помощью метода `loginPopup`
-* [Перенаправление](#sign-in-with-redirect)с помощью метода `loginRedirect`
+* [Всплывающее окно](#sign-in-with-a-pop-up-window)с помощью `loginPopup` метода
+* [Перенаправление](#sign-in-with-redirect)с помощью `loginRedirect` метода
 
 При необходимости можно также передать области API, для которых требуется согласие пользователя во время входа в систему.
 
@@ -47,7 +42,7 @@ ms.locfileid: "77159970"
 
 ## <a name="sign-in-with-a-pop-up-window"></a>Вход с помощью всплывающего окна
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const loginRequest = {
@@ -63,37 +58,61 @@ userAgentApplication.loginPopup(loginRequest).then(function (loginResponse) {
 });
 ```
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
-Угловая оболочка MSAL позволяет защищать определенные маршруты в приложении путем добавления `MsalGuard` к определению маршрута. Это условие вызывает метод для входа при доступе к этому маршруту.
+Угловая оболочка MSAL позволяет защищать определенные маршруты в приложении, добавляя `MsalGuard` к определению маршрута. Это условие вызывает метод для входа при доступе к этому маршруту.
 
 ```javascript
-// In app.routes.ts
-{ path: 'product', component: ProductComponent, canActivate : [MsalGuard],
-    children: [
-      { path: 'detail/:id', component: ProductDetailComponent  }
+// In app-routing.module.ts
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
+import { MsalGuard } from '@azure/msal-angular';
+import { HomeComponent } from './home/home.component';
+
+const routes: Routes = [
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [
+      MsalGuard
     ]
-   },
-  { path: 'myProfile' ,component: MsGraphComponent, canActivate : [MsalGuard] },
+  },
+  {
+    path: '',
+    component: HomeComponent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
 ```
 
-Для интерфейса всплывающего окна включите параметр конфигурации `popUp`. Вы также можете передать области, требующие согласия, следующим образом:
+Для интерфейса всплывающего окна включите параметр `popUp` конфигурации. Вы также можете передать области, требующие согласия, следующим образом:
 
 ```javascript
-//In app.module.ts
+// In app.module.ts
 @NgModule({
-  imports: [ MsalModule.forRoot({
-                clientID: 'your_app_id',
-                popUp: true,
-                consentScopes: ["https://graph.microsoft.com/User.ReadWrite"]
-            })]
-         })
+    imports: [
+        MsalModule.forRoot({
+            auth: {
+                clientId: 'your_app_id',
+            }
+        }, {
+            popUp: true,
+            consentScopes: ["https://graph.microsoft.com/User.ReadWrite"]
+        })
+    ]
+})
 ```
 ---
 
 ## <a name="sign-in-with-redirect"></a>Вход с перенаправлением
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Методы перенаправления не возвращают обещание из-за перемещения из основного приложения. Чтобы обработать возвращенные токены и получить к ним доступ, необходимо зарегистрировать обратные вызовы в случае успеха и ошибки перед вызовом методов перенаправления.
 
@@ -111,7 +130,7 @@ const loginRequest = {
 userAgentApplication.loginRedirect(loginRequest);
 ```
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 Код описан выше, как описано выше в разделе Вход с помощью всплывающего окна. Поток по умолчанию — Redirect.
 
@@ -124,15 +143,14 @@ userAgentApplication.loginRedirect(loginRequest);
 
 Библиотека MSAL предоставляет `logout` метод, который очищает кэш в хранилище браузера и отправляет запрос на выход в Azure Active Directory (Azure AD). После выхода библиотека по умолчанию перенаправляется обратно на начальную страницу приложения.
 
-Вы можете настроить универсальный код ресурса (URI), на который будет осуществляться перенаправление после выхода, установив `postLogoutRedirectUri`. Этот URI также должен быть зарегистрирован в качестве URI выхода при регистрации приложения.
+Вы можете настроить универсальный код ресурса (URI), на который будет осуществляться перенаправление после выхода, задав параметр `postLogoutRedirectUri`. Этот URI также должен быть зарегистрирован в качестве URI выхода при регистрации приложения.
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 const config = {
-
     auth: {
-        clientID: 'your_app_id',
+        clientId: 'your_app_id',
         redirectUri: "your_app_redirect_uri", //defaults to application start page
         postLogoutRedirectUri: "your_app_logout_redirect_uri"
     }
@@ -143,16 +161,20 @@ userAgentApplication.logout();
 
 ```
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 ```javascript
 //In app.module.ts
 @NgModule({
-  imports: [ MsalModule.forRoot({
-                clientID: 'your_app_id',
+    imports: [
+        MsalModule.forRoot({
+            auth: {
+                clientId: 'your_app_id',
                 postLogoutRedirectUri: "your_app_logout_redirect_uri"
-            })]
-         })
+            }
+        })
+    ]
+})
 
 // In app.component.ts
 this.authService.logout();

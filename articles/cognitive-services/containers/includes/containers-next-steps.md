@@ -1,20 +1,20 @@
 ---
 title: Контейнеры следующие шаги
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 7/5/2019
-ms.author: dapine
-ms.openlocfilehash: a28dfc93fd007a5a0d83274af741a6a56fc747f5
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 3820d1d42449fe962c151655768c4aa063eb9529
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73523711"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80876101"
 ---
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Следующие шаги 
 
 Давайте продолжим работу с контейнерами Azure Cognitive Services.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Jive | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Jive | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Jive.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ccdab373be4bab876ef52ba478076b6a8b6e0845
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76291181"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jive"></a>Руководство. Интеграция единого входа Azure Active Directory с Jive
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jive"></a>Руководство по Интеграция единого входа Azure Active Directory с Jive
 
 В этом руководстве описано, как интегрировать Jive с Azure Active Directory (Azure AD). Интеграция Jive с Azure AD обеспечивает приведенные ниже возможности.
 

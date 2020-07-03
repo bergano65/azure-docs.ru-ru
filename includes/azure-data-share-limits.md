@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: azure data share
 author: jife
@@ -9,10 +9,10 @@ ms.date: 02/07/2020
 ms.author: jife
 ms.custom: include file
 ms.openlocfilehash: e1416b8b99c66daa4a27fa7f9bd7a20dfa9519e3
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77087415"
 ---
 Общая папка данных Azure позволяет организациям просто и безопасно обмениваться данными с клиентами и партнерами.

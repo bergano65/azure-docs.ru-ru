@@ -1,19 +1,18 @@
 ---
 title: Аналитические сведения о группе ресурсов в Azure Monitor | Документация Майкрософт
 description: Сведения о работоспособности и производительности распределенных приложений и служб на уровне группы ресурсов с использованием Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: NumberByColors
 ms.author: daviste
 ms.date: 09/19/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: fba94a5e723bfbc2719b3b4cf5cd130eda382276
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
-ms.translationtype: MT
+ms.openlocfilehash: 06bdedf1dac92a2010718ffd3eb5c6e43bb51e6c
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553990"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83798122"
 ---
 # <a name="monitor-resource-groups-with-azure-monitor-preview"></a>Мониторинг групп ресурсов с помощью Azure Monitor (предварительная версия)
 
@@ -106,7 +105,7 @@ ms.locfileid: "72553990"
 
  ![Снимок экрана, отображающий представление производительности на основе метрик Azure](./media/resource-group-insights/0012-performance-metrics.png)
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="enabling-access-to-alerts"></a>Предоставление доступа к оповещениям
 
@@ -118,6 +117,6 @@ Azure Monitor для групп ресурсов зависит от систе�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-usage-workbooks)
+- [Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights](https://docs.microsoft.com/azure/azure-monitor/platform/workbooks-overview)
 - [Работоспособность ресурсов Azure](https://docs.microsoft.com/azure/service-health/resource-health-overview)
 - [Функция "Унифицированные оповещения" в Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts)

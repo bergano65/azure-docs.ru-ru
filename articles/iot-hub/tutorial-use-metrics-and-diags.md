@@ -7,15 +7,17 @@ services: iot-hub
 ms.topic: tutorial
 ms.date: 3/13/2019
 ms.author: robinsh
-ms.custom: mvc
-ms.openlocfilehash: e0094add11755ecb0c303adf874abe5a4a8f5811
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.custom:
+- mvc
+- mqtt
+ms.openlocfilehash: 3eda4cd8dc10bd9128186b2ff4f8d6ac0254fe5d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75746206"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81770600"
 ---
-# <a name="tutorial-set-up-and-use-metrics-and-diagnostic-logs-with-an-iot-hub"></a>Руководство. Настройка и использование метрик и журналов диагностики с Центром Интернета вещей
+# <a name="tutorial-set-up-and-use-metrics-and-diagnostic-logs-with-an-iot-hub"></a>Руководство по Настройка и использование метрик и журналов диагностики с Центром Интернета вещей
 
 Если в рабочей среде запущено решение Центра Интернета вещей, необходимо настроить определенные метрики и включить журналы диагностики. Затем, если возникнет проблема, у вас будут данные, которые помогут быстрее диагностировать проблему и устранить ее. В этой статье вы узнаете, как включить журналы диагностики и как с их помощью выявлять наличие ошибок. Вы также настроите некоторые метрики для отслеживания и оповещения, которые срабатывают при достижении определенного порога. Например, вам может быть отправлено электронное письмо, когда количество отправленных сообщений телеметрии превышает определенную границу или когда количество сообщений приближается к ежедневной квоте сообщений, разрешенных для Центра Интернета вещей. 
 
@@ -34,13 +36,16 @@ ms.locfileid: "75746206"
 > * Запуск приложения до начала срабатывания оповещений. 
 > * Просмотр результатов метрик и проверка журналов диагностики. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 - Установить [Visual Studio](https://www.visualstudio.com/). 
 
 - Рабочая учетная запись электронной почты.
+
+- Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -69,7 +74,7 @@ ms.locfileid: "75746206"
 # This is the IOT Extension for Azure CLI.
 # You only need to install this the first time.
 # You need it to create the device identity. 
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 
 # Set the values for the resource names that don't have to be globally unique.
 # The resources that have to have unique names are named in the script below
@@ -120,7 +125,7 @@ az iot hub device-identity show --device-id $iotDeviceName \
 >Ниже приведена команда для обновления расширения. Выполните ее в экземпляре Cloud Shell.
 >
 >```cli
->az extension update --name azure-cli-iot-ext
+>az extension update --name azure-iot
 >```
 
 ## <a name="enable-the-diagnostic-logs"></a>Включение ведения журналов диагностики 
@@ -209,7 +214,7 @@ az iot hub device-identity show --device-id $iotDeviceName \
 
     Заполните следующие поля.
 
-    **Name**: Укажите имя для нового правила генерации оповещений, например *telemetry-messages*.
+    **Name** (Имя). Укажите имя для нового правила генерации оповещений, например *telemetry-messages*.
 
     **Описание**: Укажите описание оповещения, например *оповещение о том, что отправлено 1000 сообщений телеметрии*. 
 
@@ -239,7 +244,7 @@ az iot hub device-identity show --device-id $iotDeviceName \
 
    На экране **Просмотреть классические оповещения** щелкните **Добавить оповещение метрики (классическое)** , а затем заполните следующие поля на панели **Добавить правило**.
 
-   **Name**: Укажите имя для нового правила генерации оповещений, например *number-of-messages-used*.
+   **Name** (Имя). Укажите имя для нового правила генерации оповещений, например *number-of-messages-used*.
 
    **Описание**: Укажите описание оповещения, например *оповещение при приближении к квоте*.
 

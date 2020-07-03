@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 3f02690d7c54581ed80b521e8222d1bd5964c878
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76718554"
 ---
 # <a name="operationalize-spark-built-machine-learning-models"></a>Ввод моделей машинного обучения, созданных с помощью Spark, в эксплуатацию
@@ -32,7 +32,7 @@ ms.locfileid: "76718554"
 Чтобы изменить записную книжку Jupyter для Spark 1.6 для использования в кластере HDInsight Spark 2.0, замените файл кода Python [этим файлом](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/Python/Spark2.0_ConsumeRFCV_NYCReg.py). Этот код показывает, как использовать модели, созданные в Spark 2.0.
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 1. Для работы с этим пошаговым руководством требуется учетная запись Azure и кластер Spark 1.6 или Spark 2.0 HDInsight. См. статью [Общие сведения об обработке и анализе данных с помощью платформы Spark в Azure HDInsight](spark-overview.md) для получения инструкций по выполнению этих требований. В этой статье также содержится описание используемых здесь данных о поездках в такси по Нью-Йорку за 2013 г., и инструкции по выполнению кода из записной книжки Jupyter в кластере Spark. 
 2. Создайте модели машинного обучения, которые будут оцениваться здесь, выполнив анализ [данных и моделирование с помощью Spark](spark-data-exploration-modeling.md) для кластера Spark 1,6 или записных книжек Spark 2,0. 
@@ -43,7 +43,7 @@ ms.locfileid: "76718554"
 ## <a name="setup-storage-locations-libraries-and-the-preset-spark-context"></a>Настройка места хранения, библиотек и предустановленного контекста Spark
 Spark может использовать хранилище BLOB-объектов Azure (WASB) для считывания и записи данных. Таким образом, данные из хранилища можно обрабатывать с помощью Spark и сохранять полученные данные в этом же хранилище.
 
-Чтобы сохранить модели или файлы в хранилище BLOB-объектов, необходимо указать путь соответствующим образом. Контейнер по умолчанию, подключенный к кластеру Spark, можно указать с помощью пути, который начинается с *wasb:///* . В следующем примере кода задается расположение данных, которые необходимо считать, и путь для каталога хранилища модели, где сохраняются выходные данные модели: 
+Чтобы сохранить модели или файлы в хранилище BLOB-объектов, необходимо указать путь соответствующим образом. К контейнеру по умолчанию, присоединенному к кластеру Spark, можно обращаться по пути, который начинается с: *"wasb///"*. В следующем примере кода задается расположение данных, которые необходимо считать, и путь для каталога хранилища модели, где сохраняются выходные данные модели: 
 
 ### <a name="set-directory-paths-for-storage-locations-in-wasb"></a>Настройка путей каталога к месту хранения в хранилище BLOB-объектов
 Модели сохраняются в следующем расположении: wasb:///user/remoteuser/NYCTaxi/Models. Если этот путь задан неправильно, загрузить модели для оценки не удастся.
@@ -80,7 +80,7 @@ Spark может использовать хранилище BLOB-объекто
     import datetime
     datetime.datetime.now()
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
 
@@ -112,7 +112,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
 Ядро PySpark предоставляет несколько "волшебных команд". Это специальные команды, которые можно вызывать с %%. В этих примерах кода используются две подобные команды.
 
 * **%%local** Указывает, что код в последующих строках будет выполнен локально. В качестве кода должен быть указан корректный код Python.
-* **%% \<SQL-o имя переменной >** 
+* **%% имя переменной SQL \<-o>** 
 * Выполняет запрос Hive к sqlContext. Если передан параметр -o, результат запроса сохраняется в контексте %%local Python в качестве таблицы данных Pandas.
 
 Дополнительные сведения о ядрах для записных книжек Jupyter и предустановленных "волшебных командах", которые они предоставляют, см. в статье [Ядра, доступные для использования записными книжками Jupyter с кластерами Apache Spark в HDInsight на платформе Linux](../../hdinsight/spark/apache-spark-jupyter-notebook-kernels.md).
@@ -180,7 +180,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
     timedelta = round((timeend-timestart).total_seconds(), 2) 
     print "Time taken to execute above cell: " + str(timedelta) + " seconds"; 
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 Время на выполнение кода выше: 46,37 с.
 
@@ -252,7 +252,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
     timedelta = round((timeend-timestart).total_seconds(), 2) 
     print "Time taken to execute above cell: " + str(timedelta) + " seconds"; 
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 Время на выполнение кода выше: 5,37 с.
 
@@ -326,7 +326,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
     timedelta = round((timeend-timestart).total_seconds(), 2) 
     print "Time taken to execute above cell: " + str(timedelta) + " seconds"; 
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 Время на выполнение кода выше: 11,72 с.
 
@@ -357,7 +357,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
     timedelta = round((timeend-timestart).total_seconds(), 2) 
     print "Time taken to execute above cell: " + str(timedelta) + " seconds";
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 Время на выполнение кода выше: 19,22 с.
 
@@ -390,7 +390,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
     print "Time taken to execute above cell: " + str(timedelta) + " seconds"; 
 
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 Время на выполнение кода выше: 16,63 с.
 
@@ -436,7 +436,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
     timedelta = round((timeend-timestart).total_seconds(), 2) 
     print "Time taken to execute above cell: " + str(timedelta) + " seconds";
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 Время на выполнение кода выше: 31,07 с.
 
@@ -486,7 +486,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
     timedelta = round((timeend-timestart).total_seconds(), 2) 
     print "Time taken to execute above cell: " + str(timedelta) + " seconds"; 
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 Время на выполнение кода выше: 14,6 с.
 
@@ -509,7 +509,7 @@ datetime.datetime(2016, 4, 25, 23, 56, 19, 229403)
     print "BoostedTreeRegressionFileLoc: " + btregressionfilename;
 
 
-**ВЫХОДНЫЕ ДАННЫЕ:**
+**ПРОВЕРКИ**
 
 logisticRegFileLoc: LogisticRegressionWithLBFGS_2016-05-0317_22_38.953814.txt
 
@@ -524,10 +524,10 @@ BoostedTreeClassificationFileLoc: GradientBoostingTreeClassification_2016-05-031
 BoostedTreeRegressionFileLoc: GradientBoostingTreeRegression_2016-05-0317_23_56.860740.txt
 
 ## <a name="consume-spark-models-through-a-web-interface"></a>Использование моделей Spark через веб-интерфейс
-В кластере Spark реализован механизм, который позволяет отправлять пакетные задания или интерактивные запросы удаленно через интерфейс REST с помощью компонента Livy. Livy включен по умолчанию в кластере Spark в HDInsight. Дополнительные сведения о Livy см. в статье [Удаленная отправка заданий Spark в кластер Apache Spark в HDInsight с помощью Livy](../../hdinsight/spark/apache-spark-livy-rest-interface.md). 
+В кластере Spark реализован механизм, который позволяет отправлять пакетные задания или интерактивные запросы удаленно через интерфейс REST с помощью компонента Livy. Livy включен по умолчанию в кластере Spark в HDInsight. Дополнительные сведения о Livy см. в статье [Удаленная отправка заданий Spark с помощью Livy](../../hdinsight/spark/apache-spark-livy-rest-interface.md). 
 
-Вы можете использовать Livy, чтобы удаленно отправить запрос на выполнение пакетного задания оценки файла, сохраненного в большом двоичном объекте Azure, а затем записать результаты в другой большой двоичный объект. Чтобы сделать это, необходимо загрузить сценарий Python из  
-репозитория [GitHub](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/Spark/Python/ConsumeGBNYCReg.py) в большой двоичный объект кластера Spark. Используйте **Microsoft Azure Storage Explorer** или **AzCopy**, чтобы скопировать сценарий в большой двоичный объект кластера. В нашем случае мы загрузили скрипт в ***wasb:///example/python/ConsumeGBNYCReg.py***.   
+Вы можете использовать Livy, чтобы удаленно отправить запрос на выполнение пакетного задания оценки файла, сохраненного в большом двоичном объекте Azure, а затем записать результаты в другой большой двоичный объект. Чтобы сделать это, необходимо загрузить сценарий Python из   
+репозитория [GitHub](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/Spark/Python/ConsumeGBNYCReg.py) в большой двоичный объект кластера Spark. Используйте **Microsoft Azure Storage Explorer** или **AzCopy**, чтобы скопировать сценарий в большой двоичный объект кластера. В нашем случае мы отправили сценарий в ***wasb:///example/Python/ConsumeGBNYCReg.py***.   
 
 > [!NOTE]
 > Необходимые ключи доступа можно найти на портале для учетной записи хранения, связанной с кластером Spark. 
@@ -576,16 +576,16 @@ BoostedTreeRegressionFileLoc: GradientBoostingTreeRegression_2016-05-0317_23_56.
     conn.close()
 
 
-Чтобы отправить запрос на выполнение задания Spark для оценки большого двоичного объекта на основе событий (например, активации, создания или обновления большого двоичного объекта), можно добавить этот код Python в [Функции Azure](https://azure.microsoft.com/documentation/services/functions/). 
+Вы также можете добавить этот код Python в [функции Azure](https://azure.microsoft.com/documentation/services/functions/) , чтобы активировать отправку задания Spark, которая оценивает большой двоичный объект на основе различных событий, таких как таймер, создание или обновление большого двоичного объекта. 
 
 Если вы не хотите работать с кодом, используйте [приложения логики Azure](https://azure.microsoft.com/documentation/services/app-service/logic/), чтобы вызвать пакетную оценку Spark. Для этого определите действие HTTP в **конструкторе приложений логики** и настройте соответствующие параметры. 
 
-* На портале Azure создайте приложение логики, выбрав **+Создать** -> **Интернет+мобильные устройства** -> **Приложение логики**. 
+* В портал Azure создайте новое приложение логики, выбрав **+ создать** -> **Интернет и мобильные устройства** -> **приложение логики**. 
 * Введите имя приложения логики и план служб приложений, чтобы открыть **конструктор приложений логики**.
 * Выберите действие HTTP и введите параметры, показанные на рисунке ниже.
 
 ![Конструктор Logic Apps](./media/spark-model-consumption/spark-logica-app-client.png)
 
-## <a name="whats-next"></a>Дальнейшие действия
+## <a name="whats-next"></a>Что дальше?
 **Перекрестная проверка и перебор гиперпараметров**. Сведения об обучении моделей с помощью перекрестной проверки и перебора гиперпараметров см. в статье [Расширенное исследование и моделирование данных с помощью Spark](spark-advanced-data-exploration-modeling.md).
 

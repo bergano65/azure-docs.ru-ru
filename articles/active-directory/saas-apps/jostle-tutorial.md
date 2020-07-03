@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Jostle | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Jostle | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Jostle.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 612d25f10d051a3137f4c637af9abca1450e9399
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159805"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство по Интеграция Azure Active Directory с Jostle
+# <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство. Интеграция Azure Active Directory с Jostle
 
 В этом руководстве описано, как интегрировать Jostle с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Jostle обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73159805"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Jostle, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Jostle с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73159805"
 
     ![Сведения о домене и URL-адресах единого входа приложения Jostle](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login-prod.jostle.us`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login-prod.jostle.us`.
 
     b. В поле **Идентификатор** введите следующий URL-адрес: `https://jostle.us`.
 
@@ -120,11 +120,11 @@ ms.locfileid: "73159805"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-jostle-single-sign-on"></a>Настройка единого входа Jostle
 

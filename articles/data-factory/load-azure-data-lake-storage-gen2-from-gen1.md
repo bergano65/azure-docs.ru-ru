@@ -12,14 +12,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/13/2019
-ms.openlocfilehash: 5809307ff8e047ebc6120cb5ebf36590f2a2a51a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6655510a4cfdb88e98319c7fc26c7ae83255bb6f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75444009"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81415821"
 ---
 # <a name="copy-data-from-azure-data-lake-storage-gen1-to-gen2-with-azure-data-factory"></a>Копирование данных из Azure Data Lake Storage 1-го поколения в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Azure Data Lake Storage 2-го поколения — это набор возможностей, предназначенных для аналитики больших данных, встроенных в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md). Его можно использовать для взаимодействия с данными с помощью парадигмы файловой системы и хранилища объектов.
 
@@ -31,9 +33,9 @@ Azure Data Lake Storage 2-го поколения — это набор возм
 
 В этой статье показано, как использовать средство копирования данных фабрики данных для копирования данных из Azure Data Lake Storage 1-го поколения в Azure Data Lake Storage 2-го поколения. Чтобы копировать данные из других типов хранилищ, необходимо выполнить аналогичные шаги.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Учетная запись Azure Data Lake Storage 1-го поколения с сохраненными в ней данными.
 * Учетная запись хранения Azure с включенным Data Lake Storage 2-го поколения. Если у вас нет учетной записи хранения, [Создайте учетную запись](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM).
 
@@ -47,13 +49,13 @@ Azure Data Lake Storage 2-го поколения — это набор возм
       
    ![Страница "Создание фабрики данных"](./media/load-azure-data-lake-storage-gen2-from-gen1/new-azure-data-factory.png)
  
-    * **Имя.** Введите глобальное уникальное имя фабрики данных Azure. Если отобразится сообщение об ошибке "Имя \"LoadADLSDemo\" фабрики данных недоступно", введите другое имя. Например, **_ваше_имя_** **ADFTutorialDataFactory**. Создайте фабрику данных еще раз. Правила именования артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
+    * **Имя.** Введите глобальное уникальное имя фабрики данных Azure. Если отобразится сообщение об ошибке "Имя \"LoadADLSDemo\" фабрики данных недоступно", введите другое имя. Например,**_ваше_имя_****ADFTutorialDataFactory**. Создайте фабрику данных еще раз. Правила именования артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
     * **Подписка.** Выберите подписку Azure, в рамках которой нужно создать фабрику данных. 
     * **Группа ресурсов**. Выберите имеющуюся группу ресурсов из раскрывающегося списка. Можно также выбрать параметр **создать** и ввести имя группы ресурсов. Сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/management/overview.md). 
     * **Версия.** Выберите значение **V2**.
     * **Расположение.** Выберите расположение фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. Хранилища данных, используемые в фабрике данных, могут находиться в других расположениях и регионах. 
 
-3. Нажмите кнопку **Создать**.
+3. Щелкните **Создать**.
 4. После завершения создания перейдите к фабрике данных. Вы увидите домашнюю страницу **фабрики данных**, как показано на следующем изображении: 
    
    ![Домашняя страница фабрики данных](./media/load-azure-data-lake-storage-gen2-from-gen1/data-factory-home-page.png)
@@ -72,13 +74,13 @@ Azure Data Lake Storage 2-го поколения — это набор возм
 
     ![Страница исходного хранилища данных](./media/load-azure-data-lake-storage-gen2-from-gen1/source-data-store-page.png)
     
-4. В коллекции соединителя выберите **Azure Data Lake Storage 1-го поколения** и щелкните **Продолжить**.
+4. Выберите **Azure Data Lake Storage 1-го поколения** из коллекции соединителей и нажмите кнопку **продолжить**.
     
     ![Страница настройки Azure Data Lake Storage 1-го поколения в качестве исходного хранилища данных](./media/load-azure-data-lake-storage-gen2-from-gen1/source-data-store-page-adls-gen1.png)
     
 5. На странице **Указание подключения Azure Data Lake Storage 1-го поколения** выполните следующие действия.
 
-   а. Выберите имя учетной записи Data Lake Storage 1-го поколения и укажите или подтвердите имя **клиента**.
+   a. Выберите имя учетной записи Data Lake Storage 1-го поколения и укажите или подтвердите имя **клиента**.
   
    b. Выберите **проверить подключение** , чтобы проверить параметры. Выберите **Готово**.
   
@@ -103,9 +105,9 @@ Azure Data Lake Storage 2-го поколения — это набор возм
 
 9. На странице **Указание подключения Azure Data Lake Storage 2-го поколения** выполните следующие действия.
 
-   а. Выберите учетную запись с поддержкой Data Lake Storage 2-го поколения из раскрывающегося списка **имя учетной записи хранения** .
+   a. Выберите учетную запись с поддержкой Data Lake Storage 2-го поколения из раскрывающегося списка **имя учетной записи хранения** .
    
-   b. Выберите **Готово**, чтобы создать подключение. Выберите **Далее**.
+   b. Выберите **Готово**, чтобы создать подключение. Нажмите кнопку **Далее**.
    
    ![Выбор учетной записи Data Lake Storage 2-го поколения](./media/load-azure-data-lake-storage-gen2-from-gen1/specify-adls-gen2-account.png)
 
@@ -137,7 +139,7 @@ Azure Data Lake Storage 2-го поколения — это набор возм
 
 ## <a name="best-practices"></a>Рекомендации
 
-Чтобы оценить обновление Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения в целом, см. статью [Обновление решений аналитики больших данных с Azure Data Lake Storage 1-го поколения на Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-upgrade.md). В следующих разделах представлены рекомендации по использованию фабрики данных для обновления данных с Data Lake Storage 1-го поколения до Data Lake Storage 2-го поколения.
+Чтобы оценить обновление Azure Data Lake Storage 1-го поколения до Azure Data Lake Storage 2-го поколения в целом, см. статью [Обновление решений аналитики больших данных с Azure Data Lake Storage 1-го поколения на Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-migrate-gen1-to-gen2.md). В следующих разделах представлены рекомендации по использованию фабрики данных для обновления данных с Data Lake Storage 1-го поколения до Data Lake Storage 2-го поколения.
 
 ### <a name="data-partition-for-historical-data-copy"></a>Раздел данных для копирования исторических данных
 
@@ -146,7 +148,7 @@ Azure Data Lake Storage 2-го поколения — это набор возм
 
 Используйте эксперимент, чтобы проверить комплексное решение и протестировать пропускную способность копирования в вашей среде. Основные шаги для подтверждения концепции: 
 
-1. Создайте один конвейер фабрики данных с одним действием копирования, чтобы скопировать несколько TBs данных из Data Lake Storage 1-го поколения в Data Lake Storage 2-го поколения для получения базовых показателей производительности копирования. Начните с [единиц интеграции данных (диус)](copy-activity-performance.md#data-integration-units) как 128. 
+1. Создайте один конвейер фабрики данных с одним действием копирования, чтобы скопировать несколько TBs данных из Data Lake Storage 1-го поколения в Data Lake Storage 2-го поколения для получения базовых показателей производительности копирования. Начните с [единиц интеграции данных (диус)](copy-activity-performance-features.md#data-integration-units) как 128. 
 2. В зависимости от пропускной способности копирования, которую вы получаете на шаге 1, вычислите предполагаемое время, необходимое для всей миграции данных. 
 3. Используемых Создайте управляющую таблицу и определите фильтр файлов, чтобы секционировать переносимые файлы. Способ секционирования файлов: 
 
@@ -163,7 +165,7 @@ Azure Data Lake Storage 2-го поколения — это набор возм
 
 ### <a name="preserve-acls-from-data-lake-storage-gen1"></a>Сохранение списков управления доступом из Data Lake Storage 1-го поколения
 
-Если вы хотите реплицировать списки ACL вместе с файлами данных при обновлении с Data Lake Storage 1-го поколения до Data Lake Storage 2-го поколения, см. раздел [сохранение списков управления доступом из Data Lake Storage 1-го поколения](connector-azure-data-lake-storage.md#preserve-acls-from-data-lake-storage-gen1). 
+Если вы хотите реплицировать списки ACL вместе с файлами данных при обновлении с Data Lake Storage 1-го поколения до Data Lake Storage 2-го поколения, см. раздел [сохранение списков управления доступом из Data Lake Storage 1-го поколения](connector-azure-data-lake-storage.md#preserve-acls). 
 
 ### <a name="incremental-copy"></a>Добавочное копирование 
 
@@ -175,9 +177,9 @@ Azure Data Lake Storage 2-го поколения — это набор возм
 
 Правильная частота выполнения добавочной загрузки зависит от общего числа файлов в Azure Data Lake Storage 1-го поколения и объема новых или обновленных файлов, которые будут загружаться каждый раз. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
-> [Общие сведения о действии копирования](copy-activity-overview.md)
-> соединителя [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md)
-> [Azure Data Lake Storage 2-го поколения Connector](connector-azure-data-lake-storage.md)
+> [Общие сведения о](copy-activity-overview.md)
+> действии копирования[Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md)
+> [соединителя Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) Connector

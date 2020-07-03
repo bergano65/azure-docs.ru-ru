@@ -1,0 +1,229 @@
+### YamlMime:Hub
+title: Документация по службе "Речь"
+summary: Распознавание речи, синтез речи, получение переводов в реальном времени, транскрибирование бесед или интеграция речи в боты.
+brand: azure
+metadata:
+  title: Документация по службе "Речь". Руководства и справочник по API — Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  description: Распознавание речи, синтез речи, получение переводов в реальном времени, транскрибирование бесед или интеграция речи в боты.
+  author: trevorbye
+  manager: nitinme
+  ms.service: speech-service
+  ms.topic: hub-page
+  ms.date: 03/24/2020
+  ms.author: trbye
+  ms.openlocfilehash: 87190c5cab772e4b8dc04672066e575b10c14533
+  ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/22/2020
+  ms.locfileid: "83800783"
+highlightedContent:
+  items:
+  - title: Что собой представляет служба "Речь"
+    itemType: overview
+    url: overview.md
+  - title: Сведения о пакете SDK службы "Речь"
+    itemType: overview
+    url: speech-sdk.md
+  - title: Заметки о выпуске пакета SDK для службы "Речь"
+    itemType: whats-new
+    url: releasenotes.md
+  - title: Поддержка языков в службе "Речь"
+    itemType: reference
+    url: language-support.md
+conceptualContent:
+  items:
+  - title: Преобразование речи в текст
+    links:
+    - itemType: quickstart
+      text: Распознавание речи с микрофона
+      url: quickstarts/speech-to-text-from-microphone.md
+    - itemType: quickstart
+      text: Распознавание речи из звукового файла
+      url: quickstarts/speech-to-text-from-file.md
+    - itemType: how-to-guide
+      text: Основы распознавания речи
+      url: speech-to-text-basics.md
+    footerLink:
+      text: Подробнее
+      url: index-speech-to-text.yml
+  - title: Преобразование текста в речь
+    links:
+    - itemType: quickstart
+      text: Синтезирование речи в виде речи докладчика
+      url: quickstarts/text-to-speech.md
+    - itemType: quickstart
+      text: Синтезирование речи в звуковой файл
+      url: quickstarts/text-to-speech-audio-file.md
+    - itemType: how-to-guide
+      text: Основные сведения о синтезе речи
+      url: text-to-speech-basics.md
+    footerLink:
+      text: Подробнее
+      url: index-text-to-speech.yml
+  - title: Перевод речи
+    links:
+    - itemType: quickstart
+      text: Преобразование речи в текст
+      url: quickstarts/translate-speech-to-text.md
+    - itemType: quickstart
+      text: Перевод речи на несколько языков
+      url: quickstarts/translate-speech-to-text-multiple-languages.md
+    - itemType: how-to-guide
+      text: Основные сведения о переводе речи
+      url: speech-translation-basics.md
+    footerLink:
+      text: Подробнее
+      url: index-speech-translation.yml
+  - title: Распознавание намерений
+    links:
+    - itemType: quickstart
+      text: Распознавание речи, намерений и сущностей
+      url: quickstarts/intent-recognition.md
+    - itemType: how-to-guide
+      text: Распознавание намерений в речи с помощью LUIS и C#
+      url: how-to-recognize-intents-from-speech-csharp.md
+    - itemType: reference
+      text: Портал службы "Распознавание речи" (LUIS)
+      url: https://www.luis.ai
+    footerLink:
+      text: Подробнее
+      url: index-intent-recognition.yml
+  - title: Сценарии бесед
+    links:
+    - itemType: overview
+      text: Сведения о транскрибировании бесед (собрания)
+      url: conversation-transcription.md
+    - itemType: overview
+      text: Сведения о ведении беседы с использованием нескольких устройств (собрания)
+      url: multi-device-conversation.md
+    - itemType: how-to-guide
+      text: Транскрибирование звонков в колл-центр
+      url: call-center-transcription.md
+    footerLink:
+      text: Подробнее
+      url: index-conversation-scenarios.yml
+  - title: Голосовые помощники
+    links:
+    - itemType: overview
+      text: Сведения о голосовых помощниках
+      url: voice-assistants.md
+    - itemType: quickstart
+      text: Создание голосового помощника с помощью пользовательских команд
+      url: custom-commands.md
+    - itemType: get-started
+      text: Создание голосового помощника с помощью Bot Framework
+      url: direct-line-speech.md
+    footerLink:
+      text: Подробнее
+      url: index-voice-assistants.yml
+  - title: API Распознавания говорящего
+    links:
+    - itemType: how-to-guide
+      text: Сведения об API "Распознавание говорящего"
+      url: ../Speaker-recognition/Home.md
+    - itemType: how-to-guide
+      text: Справочник по API "Распознавание говорящего"
+      url: https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797
+  - title: Инструменты
+    links:
+    - itemType: overview
+      text: Об интерфейсе командной строки службы "Речь" (командная строка без использования кода)
+      url: spx-overview.md
+    - itemType: how-to-guide
+      text: Основные сведения об интерфейсе командной строки службы "Речь" (установка и примеры)
+      url: spx-basics.md
+    - itemType: overview
+      text: О Студии службы "Речь" (настройки)
+      url: https://speech.microsoft.com
+  - title: Hosting
+    links:
+    - itemType: how-to-guide
+      text: Контейнеры службы "Речь"
+      url: speech-container-howto.md
+    - itemType: how-to-guide
+      text: Контейнеры службы "Речь" в Kubernetes
+      url: speech-container-howto-on-premises.md
+    - itemType: how-to-guide
+      text: Контейнеры службы "Речь" в службе "Экземпляры контейнеров Azure"
+      url: deploy-speech-on-container-instances.md
+    footerLink:
+      text: Подробнее
+      url: index-hosting.yml
+  - title: Устройства
+    links:
+    - itemType: overview
+      text: Сведения о пакете SDK для устройств в службе "Речь"
+      url: speech-devices-sdk.md
+    - itemType: how-to-guide
+      text: Получение пакета SDK для устройств, подключаемых к службе "Речь"
+      url: get-speech-devices-sdk.md
+    - itemType: quickstart
+      text: Использование пакета SDK для устройств, подключаемых к службе "Речь"
+      url: speech-devices-sdk-quickstart.md
+    footerLink:
+      text: Подробнее
+      url: index-devices.yml
+  - title: Миграция
+    links:
+    - itemType: how-to-guide
+      text: Миграция из API "Распознавание речи Bing"
+      url: how-to-migrate-from-bing-speech.md
+    - itemType: how-to-guide
+      text: Миграция из API "Перевод речи"
+      url: how-to-migrate-from-translator-speech-api.md
+tools:
+  title: Пакеты средств разработки программного обеспечения (пакеты SDK)
+  summary: Начните работать с пакетом SDK для службы "Речь" на привычном языке программирования.
+  items:
+  - title: C#
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Csharp.svg
+    url: https://aka.ms/csspeech/csharpref
+  - title: C++
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Cplusplus.svg
+    url: https://aka.ms/csspeech/cppref
+  - title: Java
+    imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
+    url: https://aka.ms/csspeech/javaref
+  - title: JavaScript
+    imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
+    url: https://aka.ms/csspeech/javascriptref
+  - title: Objective-C и Swift
+    imageSrc: https://docs.microsoft.com/media/logos/logo_ios.svg
+    url: https://aka.ms/csspeech/objectivecref
+  - title: Python
+    imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
+    url: https://aka.ms/csspeech/pythonref
+additionalContent:
+  sections:
+  - items:
+    - title: Интерфейсы REST API
+      links:
+      - text: Преобразование речи в текст
+        url: rest-speech-to-text.md
+      - text: Пакетное транскрибирование
+        url: batch-transcription.md
+      - text: Преобразование текста в речь
+        url: rest-text-to-speech.md
+      - text: Транскрибирование бесед
+        url: https://signature.centralus.cts.speech.microsoft.com/UI/index.html
+    - title: Ресурсы
+      links:
+      - text: Цены
+        url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/
+      - text: Регионы
+        url: regions.md
+      - text: Обучение
+        url: https://docs.microsoft.com/learn/browse/?products=azure-cognitive-services&term=Speech
+    - title: Поддержка
+      links:
+      - text: Справка и поддержка
+        url: support.md
+      - text: Проблемы GitHub
+        url: https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues
+      - text: Stack Overflow
+        url: https://aka.ms/SOspeechquestions
+      - text: UserVoice
+        url: https://cognitive.uservoice.com/forums/912208-speech-service

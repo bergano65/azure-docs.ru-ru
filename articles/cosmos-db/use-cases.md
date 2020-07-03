@@ -7,10 +7,10 @@ ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.openlocfilehash: de2bc551547706fb820813e57996e77bf49148d1
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73888939"
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Распространенные примеры использования Azure Cosmos DB
@@ -97,7 +97,7 @@ JSON — это эффективный формат, поддерживаемы
 
 ![Эталонная архитектура веб-приложения на основе Azure Cosmos DB](./media/use-cases/personalization.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы приступить к работе с Azure Cosmos DB, ознакомьтесь с нашими [краткими руководствами](create-sql-api-dotnet.md) по созданию учетной записи и работе со службой Cosmos DB.
 

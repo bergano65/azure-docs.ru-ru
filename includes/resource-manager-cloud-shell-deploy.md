@@ -5,17 +5,17 @@ ms.topic: include
 ms.date: 01/30/2019
 ms.author: tomfitz
 ms.openlocfilehash: aac2f3ea2b52ac0319f96279deed13c1145749bd
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74451494"
 ---
 ## <a name="deploy-template-from-cloud-shell"></a>Развертывание шаблона из Cloud Shell
 
 Для развертывания шаблона можно использовать [Cloud Shell](../articles/cloud-shell/overview.md). Чтобы развернуть внешний шаблон, укажите URI шаблона точно так же, как и для любого внешнего развертывания. Чтобы развернуть локальный шаблон, сначала необходимо загрузить шаблон для Cloud Shell в учетную запись хранения. В этом разделе описывается, как загрузить шаблон в свою учетную запись облачной оболочки и развернуть его как локальный файл. Если вы еще не использовали Cloud Shell, ознакомьтесь со статьей [Обзор Azure Cloud Shell](../articles/cloud-shell/overview.md), чтобы узнать о настройке службы.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. Выберите свою группу ресурсов Cloud Shell. Шаблон имени — `cloud-shell-storage-<region>`.
 
@@ -25,7 +25,7 @@ ms.locfileid: "74451494"
 
    ![Выбор учетной записи хранения](./media/resource-manager-cloud-shell-deploy/select-storage.png)
 
-1. Выберите **Большие двоичные объекты**.
+1. Выберите **BLOB-объекты**.
 
    ![Выберите "Большие двоичные объекты"](./media/resource-manager-cloud-shell-deploy/select-blobs.png)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74451494"
 
    ![Добавление контейнера](./media/resource-manager-cloud-shell-deploy/add-container.png)
 
-1. Задайте контейнеру название и уровень доступа. Образец шаблона в данной статье не содержит конфиденциальных сведений и поэтому разрешает анонимный доступ для чтения. Нажмите кнопку **ОК**.
+1. Задайте контейнеру название и уровень доступа. Образец шаблона в данной статье не содержит конфиденциальных сведений и поэтому разрешает анонимный доступ для чтения. Нажмите кнопку **OK**.
 
    ![Указание значений для контейнера](./media/resource-manager-cloud-shell-deploy/provide-container-values.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "74451494"
 
    ![Выберите новый контейнер](./media/resource-manager-cloud-shell-deploy/select-container.png)
 
-1. Щелкните **Отправить**.
+1. Выберите команду **Отправить**.
 
    ![Отправка большого двоичного объекта](./media/resource-manager-cloud-shell-deploy/upload-blob.png)
 

@@ -9,9 +9,9 @@
 - name: Учебник
   items:
     - name: Регрессия с помощью автоматического машинного обучения
-      href: /azure/machine-learning/service/tutorial-auto-train-models?toc=/azure/open-datasets/toc.json&bc=/azure/open-datasets/breadcrumb/toc.json
+      href: /azure/machine-learning/tutorial-auto-train-models?toc=/azure/open-datasets/toc.json&bc=/azure/open-datasets/breadcrumb/toc.json
     - name: Улучшение модели классификации изображений
-      href: /azure/machine-learning/service/tutorial-train-models-with-aml?toc=/azure/open-datasets/toc.json&bc=/azure/open-datasets/breadcrumb/toc.json
+      href: /azure/machine-learning/tutorial-train-models-with-aml?toc=/azure/open-datasets/toc.json&bc=/azure/open-datasets/breadcrumb/toc.json
 - name: Практические руководства
   items:
     - name: Наборы данных в Машинном обучении Azure
@@ -38,7 +38,7 @@
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/open-datasets/'
     - name: Доступность по регионам
-      href: 'https://azure.microsoft.com/regions/services/'
+      href: 'https://azure.microsoft.com/en-us/global-infrastructure/services/?products=open-datasets&regions=non-regional'
     - name: Форум пользователей
       href: 'https://aka.ms/open-datasets-forum'
     - name: Stack Overflow

@@ -9,13 +9,13 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 8312c3267e826088f34b3bffe1520703eec00bdc
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76961118"
 ---
-# <a name="403002-iothubquotaexceeded"></a>403002 Иосубкуотаексцеедед
+# <a name="403002-iothubquotaexceeded"></a>403002 IoTHubQuotaExceeded
 
 В этой статье описываются причины и решения для ошибок **403002 иосубкуотаексцеедед** .
 
@@ -31,7 +31,7 @@ ms.locfileid: "76961118"
 
 [Обновите или увеличьте количество единиц в центре Интернета вещей](iot-hub-upgrade.md) или дождитесь следующего дня в формате UTC для ежедневного обновления квоты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы понять, как выполняется подсчет операций в отношении квоты, например двойника запросы и прямые методы, см. раздел [Общие сведения о ценах на центр Интернета вещей](iot-hub-devguide-pricing.md#charges-per-operation) .
 * Чтобы настроить мониторинг для ежедневного использования квот, настройте оповещение с *общим количеством используемых сообщений*метрики. Пошаговые инструкции см. в разделе [Настройка метрик и оповещений с помощью центра Интернета вещей](tutorial-use-metrics-and-diags.md#set-up-metrics) .

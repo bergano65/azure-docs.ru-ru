@@ -2,62 +2,59 @@
 title: Вход пользователей из веб-приложения — платформа Microsoft Identity | Службы
 description: Узнайте, как создать веб-приложение, которое входит в систему пользователей (обзор)
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 403f589702fd7142f0515a3b6f19ee1b9bbb6420
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 65d254cec5735c54e19f5adfde57fb6aed776a2c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701558"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80881491"
 ---
 # <a name="scenario-web-app-that-signs-in-users"></a>Сценарий: веб-приложение, которое входит в систему пользователей
 
 Узнайте все, что нужно для создания веб-приложения, использующего платформу Microsoft Identity для входа пользователей.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [Prerequisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
 ## <a name="getting-started"></a>Начало работы
 
-# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
 Если вы хотите создать первое переносимое веб-приложение (ASP.NET Core), которое входит в систему пользователей, следуйте указаниям в этом кратком руководстве:
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. ASP.NET Core веб-приложение, которое входит в систему пользователей](quickstart-v2-aspnet-core-webapp.md)
 
-# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
+# <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
 Если вы хотите разобраться, как добавить вход в существующее веб-приложение ASP.NET, воспользуйтесь приведенным ниже кратким руководством.
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. веб-приложение ASP.NET, которое входит в систему пользователей](quickstart-v2-aspnet-webapp.md)
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 Если вы являетесь разработчиком Java, воспользуйтесь приведенным ниже кратким руководством.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Добавление входа с помощью Microsoft в веб-приложение Java](quickstart-v2-java-webapp.md)
+> [Краткое руководство. Добавление возможности входа в веб-приложение Java с помощью учетной записи Майкрософт](quickstart-v2-java-webapp.md)
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Если вы разрабатываете с помощью Python, попробуйте выполнить следующие действия в этом кратком руководстве:
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Добавление входа с помощью Microsoft в веб-приложение Python](quickstart-v2-python-webapp.md)
+> [Краткое руководство. Добавление возможности входа в веб-приложение Python с помощью учетной записи Майкрософт](quickstart-v2-python-webapp.md)
 
 ---
 
@@ -82,24 +79,24 @@ ms.locfileid: "76701558"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
 > [!div class="nextstepaction"]
-> [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=aspnetcore)
+> [Регистрация приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=aspnetcore)
 
-# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
-
-> [!div class="nextstepaction"]
-> [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=aspnet)
-
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
 > [!div class="nextstepaction"]
-> [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=java)
+> [Регистрация приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=aspnet)
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="java"></a>[Java](#tab/java)
 
 > [!div class="nextstepaction"]
-> [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=python)
+> [Регистрация приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=java)
+
+# <a name="python"></a>[Python](#tab/python)
+
+> [!div class="nextstepaction"]
+> [Регистрация приложения](https://docs.microsoft.com/azure/active-directory/develop/scenario-web-app-sign-user-app-registration?tabs=python)
 
 ---

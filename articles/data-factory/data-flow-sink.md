@@ -9,14 +9,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/12/2019
-ms.openlocfilehash: 3b631c068d1a444691345e054219208c4c8b0b8c
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 4b10a4c98abd6bec4074bf35764a9cbb85d5b157
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77020052"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81605971"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Преобразование приемника в потоке данных сопоставления
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 После преобразования данных можно принять их в целевой набор данных. Для каждого потока данных требуется по крайней мере одно преобразование приемника, но при необходимости можно выполнить запись в любое количество приемников для завершения потока преобразования. Для записи в дополнительные приемники создайте новые потоки с помощью новых ветвей и условных разбиений.
 
@@ -29,7 +31,7 @@ ms.locfileid: "77020052"
 * [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
 * [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
 * [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
-* [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md#mapping-data-flow-properties)
+* [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md#mapping-data-flow-properties)
 * [База данных SQL Azure](connector-azure-sql-database.md#mapping-data-flow-properties)
 * [Azure CosmosDB](connector-azure-cosmos-db.md#mapping-data-flow-properties)
 
@@ -39,13 +41,15 @@ ms.locfileid: "77020052"
 
 ## <a name="sink-settings"></a>Параметры приемника
 
-После добавления приемника настройте его с помощью вкладки **приемник** . Здесь можно выбрать или создать набор данных, в который записывается приемник. 
+После добавления приемника настройте его с помощью вкладки **приемник** . Здесь можно выбрать или создать набор данных, в который будет записываться приемник. Ниже приведен видеоролик, объясняющий ряд различных параметров приемника для типов файлов с разделителями текста:
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4tf7T]
 
 ![Параметры приемника](media/data-flow/sink-settings.png "Параметры приемника")
 
 Отклонение **схемы.** [смещение схемы](concepts-data-flow-schema-drift.md) — это способность фабрики данных в собственном коде управлять гибкими схемами в потоках данных без необходимости явно определять изменения столбцов. Включите параметр **Разрешить смещение схемы** , чтобы записать дополнительные столбцы поверх того, что определено в схеме данных приемника.
 
-**Проверить схему:** Если выбран параметр проверить схему, поток данных завершится ошибкой, если какой-либо столбец в определенной схеме набора данных не будет найден.
+**Проверить схему:** Если выбран параметр проверить схему, поток данных завершится ошибкой, если какой-либо столбец входящей исходной схемы не найден в исходной проекции или если типы данных не совпадают. Используйте этот параметр, чтобы обеспечить соответствие исходных данных контракту определенной проекции. В сценариях источника базы данных очень удобно, чтобы сообщить, что имена или типы столбцов изменились.
 
 ## <a name="field-mapping"></a>Сопоставление полей
 
@@ -63,5 +67,5 @@ ms.locfileid: "77020052"
 
 При выборке предварительной версии данных в отладочном кластере данные в приемник не записываются. Будет возвращен моментальный снимок данных, которые выглядят, но в назначение ничего не будет записано. Чтобы проверить запись данных в приемник, запустите отладку конвейера из холста конвейера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы создали поток данных, добавьте [в конвейер действие потока данных](concepts-data-flow-overview.md).

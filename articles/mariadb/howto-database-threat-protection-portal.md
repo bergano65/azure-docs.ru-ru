@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 1d6eafd38d418066ddf5933139bd4caf6e69ddea
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: de056f61337311642589ba937c6d9842d8354d36
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74766979"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79530144"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mariadb"></a>Расширенная защита от угроз для базы данных Azure для MariaDB
 
@@ -26,8 +26,8 @@ ms.locfileid: "74766979"
 > Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах облака правительства и национального облака Azure: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
-1. Запустите портал Azure: [https://portal.azure.com](https://portal.azure.com).
-2. Перейдите на страницу конфигурации сервера базы данных Azure для MariaDB, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)** .
+1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+2. Перейдите на страницу конфигурации сервера базы данных Azure для MariaDB, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)**.
 3. На странице настройки **Расширенная защита от угроз (предварительная версия)** сделайте следующее:
 
    - Включите расширенную защиту от угроз на сервере.
@@ -60,7 +60,7 @@ ms.locfileid: "74766979"
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
+* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * Дополнительные сведения о ценах см. на [странице цен на базу данных Azure для MariaDB](https://azure.microsoft.com/pricing/details/mariadb/) .  

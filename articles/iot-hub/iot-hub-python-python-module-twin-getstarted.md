@@ -6,180 +6,267 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 07/30/2019
+ms.date: 04/03/2020
 ms.author: menchi
-ms.openlocfilehash: e18d448d9aee0137f1167d23a2bbf53486d0c764
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: f846af548913e0cb3e872560e4b8438da306a255
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73953845"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80756941"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-python"></a>Начало работы с удостоверениями модулей центра Интернета вещей и модулем двойника (Python)
 
 [!INCLUDE [iot-hub-selector-module-twin-getstarted](../../includes/iot-hub-selector-module-twin-getstarted.md)]
 
 > [!NOTE]
-> [Удостоверение и двойник модуля](iot-hub-devguide-module-twins.md) аналогичны удостоверению и двойнику устройства Центра Интернета вещей Azure, однако они предоставляют более высокую степень детализации. В то время как удостоверение и двойник устройства Центра Интернета вещей Azure позволяют серверному приложению настраивать устройство и отображать состояние устройства, удостоверение и двойник модуля предоставляют эти возможности для отдельных компонентов устройства. Благодаря этому можно изолировать конфигурацию и условия для каждого компонента на совместимых устройствах с несколькими компонентами, например устройствах на основе операционной системы или устройствах со встроенным ПО.
+> [Удостоверения модулей и двойников модуля](iot-hub-devguide-module-twins.md) похожи на удостоверения устройств центра Интернета вещей Azure и двойников устройств, но обеспечивают более детальную детализацию. Хотя удостоверения устройств и двойников устройств центра Интернета вещей Azure позволяют внутреннему приложению настраивать устройство и обеспечивать видимость условий устройства, идентификаторы модулей и модули двойников предоставляют эти возможности для отдельных компонентов устройства. На устройствах с поддержкой нескольких компонентов, таких как устройства на основе операционной системы или устройства встроенного по, они обеспечивают изолированную конфигурацию и условия для каждого компонента.
 >
 
-По завершении работы с этим руководством у вас будет два приложения Python.
+По завершении работы с этим руководством у вас будет три приложения Python:
 
-* **CreateIdentities** — создает удостоверение устройства и модуля, а также соответствующий ключ безопасности для подключения к клиентам устройства и модуля.
+* **Креатемодуле**, который создает удостоверение устройства, идентификатор модуля и связанные ключи безопасности для подключения клиентов устройства и модуля.
 
-* **UpdateModuleTwinReportedProperties** — отправляет обновленные сообщаемые свойства двойника модуля в Центр Интернета вещей.
+* **Упдатемодулетвиндесиредпропертиес**, который отправляет обновленные требуемые свойства модуля двойника в центр Интернета вещей.
+
+* **Рецеивемодулетвиндесиредпропертиеспатч**, который получает обновление требуемых свойств модуля двойника на устройстве.
 
 [!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные условия
 
-[!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
+[!INCLUDE [iot-hub-include-python-v2-installation-notes](../../includes/iot-hub-include-python-v2-installation-notes.md)]
 
-## <a name="create-an-iot-hub"></a>Создание центра IoT
+## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
 ## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
 
-[!INCLUDE [iot-hub-howto-module-twin-shared-access-policy-text](../../includes/iot-hub-howto-module-twin-shared-access-policy-text.md)]
+В этой статье вы создадите серверную службу, которая добавляет устройство в реестр удостоверений, а затем добавляет модуль на это устройство. Для этой службы требуется разрешение на **запись в реестр** (которое также включает **Чтение реестра**). Вы также создадите службу, которая добавляет требуемые свойства в модуль двойника для только что созданного модуля. Этой службе требуется разрешение на **Подключение к службе** . Хотя существуют политики общего доступа по умолчанию, предоставляющие эти разрешения по отдельности, в этом разделе создается пользовательская политика общего доступа, которая содержит оба этих разрешения.
 
-[!INCLUDE [iot-hub-include-find-registryrw-connection-string](../../includes/iot-hub-include-find-registryrw-connection-string.md)]
+[!INCLUDE [iot-hub-include-find-service-regrw-connection-string](../../includes/iot-hub-include-find-service-regrw-connection-string.md)]
 
 ## <a name="create-a-device-identity-and-a-module-identity-in-iot-hub"></a>Создание удостоверения устройства и удостоверения модуля в Центре Интернета вещей
 
-В этом разделе объясняется, как создать приложение Python, создающее удостоверение устройства и удостоверение модуля в реестре удостоверений Центра Интернета вещей. Устройства и модули не могут подключаться к Центру Интернета вещей, если в реестре удостоверений для них нет соответствующей записи. Дополнительные сведения см. в разделе "реестр удостоверений" раздела Azure для [разработчиков центра Интернета вещей](iot-hub-devguide-identity-registry.md). Запущенное консольное приложение создает уникальные идентификаторы и ключи одновременно для устройства и для модуля. Устройство и модуль применяют эти значения для идентификации при отправке сообщений с устройства в облако в Центр Интернета вещей. В идентификаторах учитывается регистр символов.
+В этом разделе вы создадите приложение службы Python, которое создает удостоверение устройства и удостоверение модуля в реестре удостоверений в центре Интернета вещей. Устройство или модуль не может подключиться к центру Интернета вещей, если в реестре удостоверений нет записи. Дополнительные сведения см. в статье сведения о [реестре удостоверений в центре Интернета вещей](iot-hub-devguide-identity-registry.md). Запущенное консольное приложение создает уникальные идентификаторы и ключи одновременно для устройства и для модуля. Устройство и модуль применяют эти значения для идентификации при отправке сообщений с устройства в облако в Центр Интернета вещей. В идентификаторах учитывается регистр символов.
 
-Добавьте в файл Python следующий код:
+1. В командной строке выполните следующую команду, чтобы установить пакет **Azure-IOT-Hub** :
 
-```python
-import sys
-import iothub_service_client
-from iothub_service_client import IoTHubRegistryManager, IoTHubRegistryManagerAuthMethod, IoTHubError
+    ```cmd/sh
+    pip install azure-iot-hub
+    ```
 
-CONNECTION_STRING = "YourConnString"
-DEVICE_ID = "myFirstDevice"
-MODULE_ID = "myFirstModule"
+1. В командной строке выполните следующую команду, чтобы установить пакет **мсрест** . Этот пакет необходим для перехвата исключений **хттпоператионеррор** .
 
-try:
-    # RegistryManager
-    iothub_registry_manager = IoTHubRegistryManager(CONNECTION_STRING)
+    ```cmd/sh
+    pip install msrest
+    ```
 
-    # CreateDevice
-    primary_key = ""
-    secondary_key = ""
-    auth_method = IoTHubRegistryManagerAuthMethod.SHARED_PRIVATE_KEY
-    new_device = iothub_registry_manager.create_device(
-        DEVICE_ID, primary_key, secondary_key, auth_method)
-    print("new_device <" + DEVICE_ID +
-          "> has primary key = " + new_device.primaryKey)
+1. С помощью текстового редактора создайте файл с именем **CreateModule.py** в рабочем каталоге.
 
-    # CreateModule
-    new_module = iothub_registry_manager.create_module(
-        DEVICE_ID, primary_key, secondary_key, MODULE_ID, auth_method)
-    print("device/new_module <" + DEVICE_ID + "/" + MODULE_ID +
-          "> has primary key = " + new_module.primaryKey)
-
-except IoTHubError as iothub_error:
-    print("Unexpected error {0}".format(iothub_error))
-except KeyboardInterrupt:
-    print("IoTHubRegistryManager sample stopped")
-```
-
-Это приложение создает удостоверение устройства с идентификатором **myFirstDevice** и удостоверение модуля с идентификатором **myFirstModule** на устройстве **myFirstDevice**. (Если этот идентификатор модуля уже существует в реестре удостоверений, код просто извлекает сведения о существующем модуле.) Затем приложение отобразит первичный ключ для этого удостоверения. Этот ключ будет использоваться в приложении виртуального модуля для подключения к Центру Интернета вещей.
-
-> [!NOTE]
-> В реестре удостоверений в Центре Интернета вещей хранятся только удостоверения устройств и модулей, необходимые для защиты доступа к Центру Интернета вещей. Реестр удостоверений хранит идентификаторы устройств и ключи, используемые в качестве учетных данных безопасности. Реестр удостоверений также хранит флаги включения и отключения для каждого устройства. Эти флаги можно использовать для отключения доступа для этого устройства. Если в приложении необходимо хранить другие метаданные для конкретного устройства, следует использовать хранилище конкретного приложения. У вас нет возможности включать и отключать удостоверения модулей. Дополнительные сведения см. в разделе [Руководство разработчика для Центра Интернета вещей](iot-hub-devguide-identity-registry.md).
->
-
-## <a name="update-the-module-twin-using-python-device-sdk"></a>Обновление двойника модуля с помощью пакета SDK для устройства Python
-
-В этом разделе объясняется, как создать приложение Python на имитированном устройстве, которое обновляет сообщаемые свойства двойника модуля.
-
-1. **Получение строки подключения модуля** — теперь, если вы входите в [портал Azure](https://portal.azure.com/). Перейдите к Центру Интернета вещей и щелкните "Устройства IoT". Найдите устройство myFirstDevice, откройте его и вы увидите, что модуль myFirstModule успешно создан. Скопируйте строку подключения модуля. Она понадобится на следующем шаге.
-
-   ![Сведения о модуле на портале Azure](./media/iot-hub-python-python-module-twin-getstarted/module-detail.png)
-
-2. **Создание приложения Упдатемодулетвинрепортедпропертиес**
-
-   Добавьте следующие инструкции `using` в начало файла **Program.cs** :
+1. Добавьте следующий код в файл Python. Замените *йоуриосубконнектионстринг* строкой подключения, скопированной в [поле получение строки подключения центра Интернета вещей](#get-the-iot-hub-connection-string).
 
     ```python
     import sys
-    import iothub_service_client
-    from iothub_service_client import IoTHubRegistryManager, IoTHubRegistryManagerAuthMethod, IoTHubDeviceTwin, IoTHubError
+    from msrest.exceptions import HttpOperationError
+    from azure.iot.hub import IoTHubRegistryManager
 
-    CONNECTION_STRING = "FILL IN CONNECTION STRING"
-    DEVICE_ID = "MyFirstDevice"
-    MODULE_ID = "MyFirstModule"
-
-    UPDATE_JSON = "{\"properties\":{\"desired\":{\"telemetryInterval\":122}}}"
+    CONNECTION_STRING = "YourIotHubConnectionString"
+    DEVICE_ID = "myFirstDevice"
+    MODULE_ID = "myFirstModule"
 
     try:
-        iothub_twin = IoTHubDeviceTwin(CONNECTION_STRING)
+        # RegistryManager
+        iothub_registry_manager = IoTHubRegistryManager(CONNECTION_STRING)
 
-        twin_info = iothub_twin.get_twin(DEVICE_ID, MODULE_ID)
+        try:
+            # CreateDevice - let IoT Hub assign keys
+            primary_key = ""
+            secondary_key = ""
+            device_state = "enabled"
+            new_device = iothub_registry_manager.create_device_with_sas(
+                DEVICE_ID, primary_key, secondary_key, device_state
+            )
+        except HttpOperationError as ex:
+            if ex.response.status_code == 409:
+                # 409 indicates a conflict. This happens because the device already exists.
+                new_device = iothub_registry_manager.get_device(DEVICE_ID)
+            else:
+                raise
+
+        print("device <" + DEVICE_ID +
+              "> has primary key = " + new_device.authentication.symmetric_key.primary_key)
+
+        try:
+            # CreateModule - let IoT Hub assign keys
+            primary_key = ""
+            secondary_key = ""
+            managed_by = ""
+            new_module = iothub_registry_manager.create_module_with_sas(
+                DEVICE_ID, MODULE_ID, managed_by, primary_key, secondary_key
+            )
+        except HttpOperationError as ex:
+            if ex.response.status_code == 409:
+                # 409 indicates a conflict. This happens because the module already exists.
+                new_module = iothub_registry_manager.get_module(DEVICE_ID, MODULE_ID)
+            else:
+                raise
+
+        print("device/module <" + DEVICE_ID + "/" + MODULE_ID +
+              "> has primary key = " + new_module.authentication.symmetric_key.primary_key)
+
+    except Exception as ex:
+        print("Unexpected error {0}".format(ex))
+    except KeyboardInterrupt:
+        print("IoTHubRegistryManager sample stopped")
+    ```
+
+1. В командной строке выполните следующую команду:
+
+    ```cmd/sh
+    python CreateModule.py
+    ```
+
+Это приложение создает удостоверение устройства с идентификатором **myFirstDevice** и удостоверение модуля с идентификатором **myFirstModule** на устройстве **myFirstDevice**. (Если идентификатор устройства или модуля уже существует в реестре удостоверений, код просто извлекает сведения о существующем устройстве или модуле.) Приложение отображает идентификатор и первичный ключ для каждого удостоверения.
+
+> [!NOTE]
+> В реестре удостоверений в Центре Интернета вещей хранятся только удостоверения устройств и модулей, необходимые для защиты доступа к Центру Интернета вещей. Реестр удостоверений хранит идентификаторы устройств и ключи, используемые в качестве учетных данных безопасности. Реестр удостоверений также хранит флаги включения и отключения для каждого устройства. Эти флаги можно использовать для отключения доступа для этого устройства. Если в приложении необходимо хранить другие метаданные для конкретного устройства, следует использовать хранилище конкретного приложения. У вас нет возможности включать и отключать удостоверения модулей. Дополнительные сведения см. в статье сведения о [реестре удостоверений в центре Интернета вещей](iot-hub-devguide-identity-registry.md).
+>
+
+## <a name="update-the-module-twin-using-python-service-sdk"></a>Обновление модуля двойника с помощью пакета SDK для службы Python
+
+В этом разделе вы создадите приложение службы Python, которое обновляет требуемые свойства модуля двойника.
+
+1. В командной строке выполните следующую команду, чтобы установить пакет **Azure-IOT-Hub** . Этот шаг можно пропустить, если вы установили пакет **Azure-IOT-Hub** в предыдущем разделе.
+
+    ```cmd/sh
+    pip install azure-iot-hub
+    ```
+
+1. С помощью текстового редактора создайте файл с именем **UpdateModuleTwinDesiredProperties.py** в рабочем каталоге.
+
+1. Добавьте следующий код в файл Python. Замените *йоуриосубконнектионстринг* строкой подключения, скопированной в [поле получение строки подключения центра Интернета вещей](#get-the-iot-hub-connection-string).
+
+    ```python
+    import sys
+    from azure.iot.hub import IoTHubRegistryManager
+    from azure.iot.hub.models import Twin, TwinProperties
+
+    CONNECTION_STRING = "YourIoTHubConnectionString"
+    DEVICE_ID = "myFirstDevice"
+    MODULE_ID = "myFirstModule"
+
+    try:
+        # RegistryManager
+        iothub_registry_manager = IoTHubRegistryManager(CONNECTION_STRING)
+
+        module_twin = iothub_registry_manager.get_module_twin(DEVICE_ID, MODULE_ID)
         print ( "" )
-        print ( "Twin before update    :" )
-        print ( "{0}".format(twin_info) )
+        print ( "Module twin properties before update    :" )
+        print ( "{0}".format(module_twin.properties) )
 
-        twin_info_updated = iothub_twin.update_twin(DEVICE_ID, MODULE_ID, UPDATE_JSON)
+        # Update twin
+        twin_patch = Twin()
+        twin_patch.properties = TwinProperties(desired={"telemetryInterval": 122})
+        updated_module_twin = iothub_registry_manager.update_module_twin(
+            DEVICE_ID, MODULE_ID, twin_patch, module_twin.etag
+        )
         print ( "" )
-        print ( "Twin after update     :" )
-        print ( "{0}".format(twin_info_updated) )
+        print ( "Module twin properties after update     :" )
+        print ( "{0}".format(updated_module_twin.properties) )
 
-    except IoTHubError as iothub_error:
-        print ( "Unexpected error {0}".format(iothub_error) )
+    except Exception as ex:
+        print ( "Unexpected error {0}".format(ex) )
     except KeyboardInterrupt:
         print ( "IoTHubRegistryManager sample stopped" )
     ```
 
-В этом примере кода показано, как извлечь двойник модуля и обновить сообщаемые свойства с помощью протокола AMQP.
-
 ## <a name="get-updates-on-the-device-side"></a>Получение обновлений на стороне устройства
 
-Помимо приведенного выше кода, вы можете добавить следующий блок кода, чтобы получать сообщения об обновлении двойника на устройстве.
+В этом разделе вы создадите приложение Python для получения двойникаого обновления требуемых свойств модуля на устройстве.
 
-```python
-import time
-import threading
-from azure.iot.device import IoTHubModuleClient
+1. Получите строку подключения модуля. В [портал Azure](https://portal.azure.com/)перейдите в центр Интернета вещей и выберите **устройства IOT** в левой области. Выберите **myFirstDevice** в списке устройств и откройте его. В разделе **удостоверения модулей**выберите **мифирстмодуле**. Скопируйте строку подключения модуля. Он понадобится на следующем шаге.
 
-CONNECTION_STRING = "{deviceConnectionString}"
+   ![Сведения о модуле на портале Azure](./media/iot-hub-python-python-module-twin-getstarted/module-detail.png)
+
+1. В командной строке выполните следующую команду, чтобы установить пакет **Azure-IOT-Device** :
+
+    ```cmd/sh
+    pip install azure-iot-device
+    ```
+
+1. С помощью текстового редактора создайте файл с именем **ReceiveModuleTwinDesiredPropertiesPatch.py** в рабочем каталоге.
+
+1. Добавьте следующий код в файл Python. Замените *йоурмодулеконнектионстринг* строкой подключения модуля, скопированным на шаге 1.
+
+    ```python
+    import time
+    import threading
+    from azure.iot.device import IoTHubModuleClient
+
+    CONNECTION_STRING = "YourModuleConnectionString"
 
 
-def twin_update_listener(client):
-    while True:
-        patch = client.receive_twin_desired_properties_patch()  # blocking call
-        print("")
-        print("Twin desired properties patch received:")
-        print(patch)
-
-def iothub_client_sample_run():
-    try:
-        module_client = IoTHubModuleClient.create_from_connection_string(CONNECTION_STRING)
-
-        twin_update_listener_thread = threading.Thread(target=twin_update_listener, args=(module_client,))
-        twin_update_listener_thread.daemon = True
-        twin_update_listener_thread.start()
-
+    def twin_update_listener(client):
         while True:
-            time.sleep(1000000)
+            patch = client.receive_twin_desired_properties_patch()  # blocking call
+            print("")
+            print("Twin desired properties patch received:")
+            print(patch)
 
-    except KeyboardInterrupt:
-        print("IoTHubModuleClient sample stopped")
+    def iothub_client_sample_run():
+        try:
+            module_client = IoTHubModuleClient.create_from_connection_string(CONNECTION_STRING)
+
+            twin_update_listener_thread = threading.Thread(target=twin_update_listener, args=(module_client,))
+            twin_update_listener_thread.daemon = True
+            twin_update_listener_thread.start()
+
+            while True:
+                time.sleep(1000000)
+
+        except KeyboardInterrupt:
+            print("IoTHubModuleClient sample stopped")
 
 
-if __name__ == '__main__':
-    print ( "Starting the IoT Hub Python sample..." )
-    print ( "IoTHubModuleClient waiting for commands, press Ctrl-C to exit" )
+    if __name__ == '__main__':
+        print ( "Starting the IoT Hub Python sample..." )
+        print ( "IoTHubModuleClient waiting for commands, press Ctrl-C to exit" )
 
-    iothub_client_sample_run()
-```
+        iothub_client_sample_run()
+    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="run-the-apps"></a>Запуск приложений
 
-Чтобы продолжить знакомство с центром IoT и изучить другие сценарии IoT, см. следующие ресурсы:
+В этом разделе вы запустите приложение устройства **рецеивемодулетвиндесиредпропертиеспатч** , а затем запустите приложение службы **упдатемодулетвиндесиредпропертиес** , чтобы обновить требуемые свойства модуля.
 
-* [Начало работы с управлением устройствами (Node)](iot-hub-node-node-device-management-get-started.md)
+1. Откройте командную строку и запустите приложение устройства:
+
+    ```cmd/sh
+    python ReceiveModuleTwinDesiredPropertiesPatch.py
+    ```
+
+   ![Начальные выходные данные приложения устройства](./media/iot-hub-python-python-module-twin-getstarted/device-1.png)
+
+1. Откройте отдельную командную строку и запустите приложение службы:
+
+    ```cmd/sh
+    python UpdateModuleTwinDesiredProperties.py
+    ```
+
+    Обратите внимание, что требуемое свойство **TelemetryInterval** отображается в обновленном модуле двойника в выходных данных приложения службы:
+
+   ![Выходные данные приложения службы](./media/iot-hub-python-python-module-twin-getstarted/service.png)
+
+    Одно и то же свойство отображается в исправлении требуемых свойств, полученном в выходных данных приложения устройства:
+
+   ![В выходных данных приложения устройства отображается исправление требуемых свойств](./media/iot-hub-python-python-module-twin-getstarted/device-2.png)
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+Чтобы продолжить знакомство с Центром Интернета вещей и изучить другие сценарии Интернета вещей, см. следующие ресурсы:
+
+* [How to get started with device management (Node)](iot-hub-node-node-device-management-get-started.md) (Начало работы с управлением устройствами (Node))
 
 * [Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux](../iot-edge/tutorial-simulate-device-linux.md)

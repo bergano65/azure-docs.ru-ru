@@ -3,14 +3,14 @@ title: Учебник по резервному копированию базы 
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup через интерфейс командной строки Azure.
 ms.topic: tutorial
 ms.date: 12/4/2019
-ms.openlocfilehash: 6d35b6ebfc6f47f5775c24407b645b97112387c9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: cdc8a8fb09a086a2b9212c21d071f267991fa275
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75470809"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78206628"
 ---
-# <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство. Резервное копирование баз данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
+# <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство по Резервное копирование баз данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этой документации содержатся сведения о резервном копировании базы данных SAP HANA и активации резервного копирования по запросу с помощью Azure CLI. Эти действия можно также выполнить с помощью [портала Azure](https://docs.microsoft.com/azure/backup/backup-azure-sap-hana-database).
 
@@ -68,7 +68,7 @@ westus2    saphanaVault     saphanaResourceGroup
 
 ## <a name="register-and-protect-the-sap-hana-instance"></a>Регистрация и защита экземпляра SAP HANA
 
-Чтобы службы Azure смогли обнаружить экземпляр SAP HANA (виртуальную машину с установленной на ней SAP HANA), необходимо запустить на компьютере с SAP HANA [скрипт предварительной регистрации](https://aka.ms/scriptforpermsonhana). Перед запуском этого скрипта убедитесь, что выполнены все [предварительные требования](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#prerequisites). Дополнительные сведения о задачах этого скрипта см. в разделе [о настройке разрешений](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#setting-up-permissions).
+Чтобы службы Azure смогли обнаружить экземпляр SAP HANA (виртуальную машину с установленной на ней SAP HANA), необходимо запустить на компьютере с SAP HANA [скрипт предварительной регистрации](https://aka.ms/scriptforpermsonhana). Перед запуском этого скрипта убедитесь, что выполнены все [предварительные требования](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#prerequisites). Дополнительные сведения о работе этого скрипта см. в разделе [Функции скрипта предварительной регистрации](tutorial-backup-sap-hana-db.md#what-the-pre-registration-script-does).
 
 После выполнения скрипта вы сможете зарегистрировать экземпляр SAP HANA в хранилище Служб восстановления, которое мы создали ранее. Чтобы зарегистрировать экземпляр, используйте командлет [az backup container register](https://docs.microsoft.com/cli/azure/backup/container?view=azure-cli-latest#az-backup-container-register). *VMResourceId* обозначает идентификатор ресурса для виртуальной машины, которую вы создали для установки SAP HANA.
 

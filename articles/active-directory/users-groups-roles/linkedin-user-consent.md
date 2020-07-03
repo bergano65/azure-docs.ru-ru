@@ -14,10 +14,10 @@ ms.reviewer: beengen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a21c986ccfe96bae5d341e0ba2ee6622d998d076
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74025393"
 ---
 # <a name="linkedin-account-connections-data-sharing-and-consent"></a>Подключение учетной записи LinkedIn общий доступ к данным и согласие
@@ -78,6 +78,6 @@ ms.locfileid: "74025393"
 
 Дополнительные сведения об использовании в LinkedIn персональных данных см. в [политике конфиденциальности LinkedIn](https://www.linkedin.com/legal/privacy-policy). Для служб LinkedIn, передачи данных и хранения данных данные могут передаваться из Европейского союза в США и обратно, а конфиденциальность защищена, как описано в статье [Передача данных Европейского союза](https://www.linkedin.com/help/linkedin/answer/62533).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [LinkedIn in Microsoft Applications with Your Work or School Account](https://www.linkedin.com/help/linkedin/answer/84077) (LinkedIn в приложениях Майкрософт с вашей рабочей или учебной учетной записью)

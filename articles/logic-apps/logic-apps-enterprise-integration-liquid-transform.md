@@ -7,25 +7,25 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: estfan, logicappspm
 ms.topic: article
-ms.date: 08/16/2018
-ms.openlocfilehash: fb9f9cfdba07ebe0bc5800def6d93950869e9727
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 04/01/2020
+ms.openlocfilehash: d2598dfe9d7972dcb764abf4a1239613a1e8417a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75456649"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80879179"
 ---
 # <a name="perform-advanced-json-transformations-with-liquid-templates-in-azure-logic-apps"></a>Выполнение сложных преобразований JSON с помощью шаблонов Liquid в Azure Logic Apps
 
-С помощью встроенных действий обработки данных, таких как **Создание** или **Синтаксический анализ JSON**, в приложениях логики можно выполнять основные преобразования JSON. С помощью [Liquid](https://shopify.github.io/liquid/), который является языком шаблонов с открытым исходным кодом, позволяющим создавать гибкие веб-приложения, можно создавать шаблоны или преобразования для выполнения расширенных преобразований JSON. Шаблон ликвидности определяет способ преобразования выходных данных JSON и поддерживает более сложные преобразования JSON, такие как итерации, потоки управления, переменные и т. д. 
+С помощью встроенных действий обработки данных, таких как **Создание** или **Синтаксический анализ JSON**, в приложениях логики можно выполнять основные преобразования JSON. С помощью [Liquid](https://shopify.github.io/liquid/), который является языком шаблонов с открытым исходным кодом, позволяющим создавать гибкие веб-приложения, можно создавать шаблоны или преобразования для выполнения расширенных преобразований JSON. Шаблон ликвидности определяет способ преобразования выходных данных JSON и поддерживает более сложные преобразования JSON, такие как итерации, потоки управления, переменные и т. д.
 
-Прежде чем можно будет выполнить преобразование «ликвидность» в приложении логики, сначала необходимо определить сопоставление JSON с шаблоном жидкости и сохранить его в учетной записи интеграции. Из этой статьи можно узнать, как создать и использовать шаблон или сопоставление Liquid. 
+Прежде чем можно будет выполнить преобразование «ликвидность» в приложении логики, сначала необходимо определить сопоставление JSON с шаблоном жидкости и сохранить его в учетной записи интеграции. Из этой статьи можно узнать, как создать и использовать шаблон или сопоставление Liquid.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную пробную версию учетной записи Azure](https://azure.microsoft.com/free/). Или [зарегистрируйтесь для получения подписки с оплатой по мере использования](https://azure.microsoft.com/pricing/purchase-options/).
+* Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
-* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 * Простая [учетная запись интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "75456649"
 
 ## <a name="create-liquid-template-or-map-for-your-integration-account"></a>Создание шаблона или сопоставления Liquid в учетной записи интеграции
 
-1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге. В шаблоне жидкости можно использовать [фильтры жидкостей](https://shopify.github.io/liquid/basics/introduction/#filters), использующие [DotLiquid](https://dotliquidmarkup.org/) и C# соглашения об именовании. 
+1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге. В шаблоне ликвидности можно использовать [фильтры жидкостей](https://shopify.github.io/liquid/basics/introduction/#filters), которые используют соглашения об именовании [DotLiquid](https://github.com/dotliquid/dotliquid) и C#.
 
    > [!NOTE]
    > Убедитесь, что имена фильтров используют *регистр предложений* в шаблоне. В противном случае фильтры не будут работать. Кроме того, карты имеют [ограничения на размер файлов](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits).
@@ -57,41 +57,40 @@ ms.locfileid: "75456649"
    }
    ```
 
-2. Войдите на [портал Azure](https://portal.azure.com). В главном меню Azure выберите **All resources** (Все ресурсы). Найдите с помощью поля поиска и выберите нужную учетную запись интеграции.
+1. В [портал Azure](https://portal.azure.com)в поле поиска Azure введите `integration accounts`и выберите **учетные записи интеграции**.
+
+   ![Найти "учетные записи интеграции"](./media/logic-apps-enterprise-integration-liquid-transform/find-integration-accounts.png)
+
+1. Найдите и выберите учетную запись интеграции.
 
    ![Выбор учетной записи интеграции](./media/logic-apps-enterprise-integration-liquid-transform/select-integration-account.png)
 
-3.  В разделе **Компоненты** выберите **Сопоставления**.
+1. В области **Обзор** в разделе **компоненты**выберите **Maps**.
 
-    ![Выбор элемента "Сопоставления"](./media/logic-apps-enterprise-integration-liquid-transform/add-maps.png)
+    ![Выберите плитку "карты"](./media/logic-apps-enterprise-integration-liquid-transform/select-maps-tile.png)
 
-4. Выберите **Добавить** и укажите следующие сведения для сопоставления:
+1. На панели " **карты** " выберите **Добавить** и укажите следующие сведения для карты:
 
-   | Свойство | Значение | Description | 
+   | Свойство | Значение | Описание | 
    |----------|-------|-------------|
-   | **Название** | JsonToJsonTemplate | Это имя сопоставления, в нашем примере это "JsontoJsonTemplate" | 
+   | **имя**; | `JsonToJsonTemplate` | Это имя сопоставления, в нашем примере это "JsontoJsonTemplate" | 
    | **Тип сопоставления** | **liquid** | Обозначает тип сопоставления. Для преобразования JSON в JSON следует выбрать **Liquid**. | 
-   | **Схема** | SimpleJsonToJsonTemplate.liquid | Это существующий файл шаблона или сопоставления Liquid, который будет использован для преобразования. В нашем примере это SimpleJsonToJsonTemplate.liquid. Чтобы найти этот файл, используйте средство выбора файлов. Ограничения размера карт см. в разделе [ограничения и конфигурация](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits). |
+   | **Таблица** | `SimpleJsonToJsonTemplate.liquid` | Это существующий файл шаблона или сопоставления Liquid, который будет использован для преобразования. В нашем примере это SimpleJsonToJsonTemplate.liquid. Чтобы найти этот файл, используйте средство выбора файлов. Ограничения размера карт см. в разделе [ограничения и конфигурация](../logic-apps/logic-apps-limits-and-config.md#artifact-capacity-limits). |
    ||| 
 
-   ![Добавление шаблона Liquid](./media/logic-apps-enterprise-integration-liquid-transform/add-liquid-template.png)
+   ![Добавить шаблон ликвидности](./media/logic-apps-enterprise-integration-liquid-transform/add-liquid-template.png)
     
 ## <a name="add-the-liquid-action-for-json-transformation"></a>Добавление действия Liquid для преобразования JSON
 
 1. Чтобы [создать пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md) на портале Azure, сделайте следующее:
 
-2. В конструкторе приложений логики добавьте [триггер запроса](../connectors/connectors-native-reqres.md#add-request) в приложение логики.
+1. В конструкторе приложений логики добавьте [триггер запроса](../connectors/connectors-native-reqres.md#add-request) в приложение логики.
 
-3. В разделе триггера выберите **Добавить шаг**. 
-   В качестве фильтра в поле поиска введите "liquid" и выберите действие **Transform JSON to JSON - Liquid** (Преобразование JSON в JSON с помощью сопоставления Liquid)
+1. В разделе триггера выберите **Добавить шаг**. В поле поиска введите `liquid` фильтр и выберите это действие: **преобразовать JSON в JSON-жидкость**
 
    ![Поиск и выбор действия Liquid](./media/logic-apps-enterprise-integration-liquid-transform/search-action-liquid.png)
 
-4. Щелкните внутри поля **Содержимое**, чтобы отобразился список динамического содержимого, и выберите токен **Текст**.
-  
-   ![Выбор текста](./media/logic-apps-enterprise-integration-liquid-transform/select-body.png)
- 
-5. Из списка **Сопоставление** выберите нужный шаблон Liquid, в нашем примере это JsonToJsonTemplate.
+1. Откройте список **карт** и выберите шаблон ликвидности, который в этом примере — «JsonToJsonTemplate».
 
    ![Выбор сопоставления](./media/logic-apps-enterprise-integration-liquid-transform/select-map.png)
 
@@ -100,9 +99,21 @@ ms.locfileid: "75456649"
 
    1. В меню приложения логики выберите **Параметры рабочего процесса**.
 
-   2. Из списка **Select an Integration account** (Выбор учетной записи интеграции) выберите нужную учетную запись интеграции и нажмите кнопку **Сохранить**.
+   1. В списке **выберите учетную запись интеграции** выберите учетную запись интеграции и нажмите кнопку **сохранить**.
 
       ![Привязка приложения логики к учетной записи интеграции](./media/logic-apps-enterprise-integration-liquid-transform/link-integration-account.png)
+
+1. Теперь добавьте свойство **Content** в это действие. Откройте список **Добавить новый параметр** и выберите **содержимое**.
+
+   ![Добавление свойства "Content" в действие](./media/logic-apps-enterprise-integration-liquid-transform/add-content-property-to-action.png)
+
+1. Чтобы задать значение свойства **содержимого** , щелкните внутри поля **содержимого** , чтобы появился список динамического содержимого. Выберите маркер **тела** , который представляет выходные данные основного содержимого триггера.
+
+   ![Выберите маркер "Body" для значения свойства "Content"](./media/logic-apps-enterprise-integration-liquid-transform/select-body.png)
+
+   В итоге действие должно выглядеть приблизительно так, как показано в примере ниже:
+
+   ![Действие "преобразование JSON в JSON" завершено](./media/logic-apps-enterprise-integration-liquid-transform/finished-transform-action.png)
 
 ## <a name="test-your-logic-app"></a>Тестирование приложения логики
 
@@ -149,7 +160,7 @@ Liquid не ограничивается преобразованием форм
 
    ![Пример выходных данных преобразования XML в текст](./media/logic-apps-enterprise-integration-liquid-transform/example-output-xmltotext.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise")  
 * [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md "Сведения о картах интеграции Enterprise")  

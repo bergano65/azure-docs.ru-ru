@@ -8,10 +8,10 @@ ms.topic: tutorial
 ms.date: 10/16/2019
 ms.author: mebeatty
 ms.openlocfilehash: 64bbed9b558d4c20889b28a5247e2113d20daa77
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73509838"
 ---
 # <a name="create-an-internet-analyzer-test-using-portal-preview"></a>Создание теста Анализатора Интернета с помощью портала (предварительная версия)
@@ -22,7 +22,7 @@ ms.locfileid: "73509838"
 > Эта общедоступная предварительная версия предоставляется без соглашения об уровне обслуживания и не должна использоваться для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться, иметь ограничения и быть доступными не во всех расположениях Azure. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 >
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Общедоступная предварительная версия доступна для использования по всему миру. Однако на этапе этой версии хранилище данных предоставляется только в регионе *Западная часть США 2*.
 
@@ -72,7 +72,7 @@ ms.locfileid: "73509838"
 
 Для запуска любого теста клиент JavaScript должен быть внедрен в веб-приложение. После настройки хотя бы одного теста щелкните **Просмотр и создание**, выберите **Параметры > Конфигурация** и скопируйте клиент JavaScript. Специальные инструкции можно найти на странице [Embed the Internet Analyzer client](internet-analyzer-embed-client.md) (Внедрение клиента Анализатора Интернета).  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вопросы и ответы об Анализаторе Интернета](internet-analyzer-faq.md)
 * Узнайте больше о внедрении [клиента Анализатора Интернета](internet-analyzer-embed-client.md) и создании [пользовательской конечной точки](internet-analyzer-custom-endpoint.md).

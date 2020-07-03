@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mbaldwin
 ms.openlocfilehash: 044930c9df7b54515b9b66426a6b05aa9517a3a1
-ms.sourcegitcommit: 7c5a2a3068e5330b77f3c6738d6de1e03d3c3b7d
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70881285"
 ---
 # <a name="azure-dedicated-hsm-networking"></a>Сеть для выделенного устройства HSM Azure
@@ -85,9 +85,9 @@ ms.locfileid: "70881285"
 
 ![global-vnet](media/networking/global-vnet.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Часто задаваемые вопросы](faq.md)
+- [Вопросы и ответы](faq.md)
 - [Возможности поддержки](supportability.md)
 - [Высокая доступность](high-availability.md)
 - [Физическая безопасность](physical-security.md)

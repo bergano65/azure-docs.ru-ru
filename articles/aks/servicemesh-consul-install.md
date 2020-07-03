@@ -2,17 +2,16 @@
 title: Установка Consul в службе Kubernetes Azure (AKS)
 description: Узнайте, как установить и использовать Consul для создания сетки службы в кластере службы Kubernetes Azure (AKS).
 author: dstrebel
-ms.service: container-service
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: dastrebe
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: d5d0a575c3fb662df034b66a48135ac33393f95c
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: 1601ab6d81b888fd2247e95f22c58e1fc91df698
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73885405"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78273739"
 ---
 # <a name="install-and-use-consul-in-azure-kubernetes-service-aks"></a>Установка и использование Consul в службе Kubernetes Azure (AKS)
 
@@ -21,20 +20,20 @@ ms.locfileid: "73885405"
 В этой статье показано, как установить Consul. Компоненты Consul устанавливаются в кластер Kubernetes на AKS.
 
 > [!NOTE]
-> Эти инструкции ссылаются на Consul версии `1.6.0`и используют по крайней мере Helm версии `2.14.2`.
+> Эти инструкции ссылаются на версию `1.6.0`Consul и используют по меньшей мере `2.14.2`Helm версию.
 >
-> Выпуски `1.6.x` Consul можно запускать для Kubernetes версий `1.13+`. Дополнительные версии Consul можно найти в [выпусках GitHub-Consul][consul-github-releases] , а сведения о каждой из выпусков см. в [заметках о выпуске Consul][consul-release-notes].
+> Выпуски Consul `1.6.x` могут выполняться для версий `1.13+`Kubernetes. Дополнительные версии Consul можно найти в [выпусках GitHub-Consul][consul-github-releases] , а сведения о каждой из выпусков см. в [заметках о выпуске Consul][consul-release-notes].
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Установка компонентов Consul на AKS
 > * Проверка установки Consul
 > * Удаление Consul из AKS
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
-В шагах, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным RBAC) и установили `kubectl` подключение к кластеру. Если вам нужна помощь по любому из этих элементов, см. [Краткое руководство по AKS][aks-quickstart]. Убедитесь, что кластер содержит по крайней мере 3 узла в пуле узлов Linux.
+В действиях, описанных в этой статье, предполагается, что вы создали `1.13` кластер AKS (Kubernetes и выше, с включенным RBAC `kubectl` ) и установили подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart]. Убедитесь, что кластер содержит по крайней мере 3 узла в пуле узлов Linux.
 
 Вам потребуется [Helm][helm] , чтобы выполнить эти инструкции и установить Consul. Рекомендуется правильно установить и настроить последнюю стабильную версию в кластере. Если вам нужна помощь с установкой Helm, см. [руководство по установке AKS Helm][helm-install]. Все Consul Pod также должны быть запланированы для запуска на узлах Linux.
 
@@ -42,7 +41,7 @@ ms.locfileid: "73885405"
 
 ### <a name="install-the-consul-components-on-aks"></a>Установка компонентов Consul на AKS
 
-Начнем с загрузки версии `v0.10.0` диаграммы Consul Helm. Эта версия диаграммы включает Consul версии `1.6.0`.
+Начнем с загрузки версии `v0.10.0` диаграммы Consul Helm. Эта версия диаграммы включает версию `1.6.0`Consul.
 
 ::: zone pivot="client-operating-system-linux"
 
@@ -52,7 +51,7 @@ ms.locfileid: "73885405"
 
 ::: zone pivot="client-operating-system-macos"
 
-[!INCLUDE [MacOS - download](includes/servicemesh/consul/download-bash.md)]
+[!INCLUDE [macOS - download](includes/servicemesh/consul/download-bash.md)]
 
 ::: zone-end
 
@@ -62,16 +61,16 @@ ms.locfileid: "73885405"
 
 ::: zone-end
 
-Используйте Helm и скачанную диаграмму `consul-helm`, чтобы установить компоненты Consul в пространство имен `consul` в кластере AKS. 
+Используйте Helm и скачанную `consul-helm` диаграмму для установки компонентов Consul в `consul` пространство имен в кластере AKS. 
 
 > [!NOTE]
-> **Параметры установки**
+> **Варианты установки**
 > 
 > В процессе установки мы используем следующие варианты:
-> - `connectInject.enabled=true` — разрешить внедрение прокси-серверов в модули Pod
-> - `client.enabled=true` — разрешить выполнение клиентов Consul на каждом узле
-> - `client.grpc=true` — включить прослушиватель gRPC для Коннектинжект
-> - `syncCatalog.enabled=true` синхронизации Kubernetes и Consul Services
+> - `connectInject.enabled=true`— разрешить внедрение прокси-серверов в модули Pod
+> - `client.enabled=true`— Разрешить клиентам Consul выполняться на каждом узле;
+> - `client.grpc=true`— включить прослушиватель gRPC для Коннектинжект
+> - `syncCatalog.enabled=true`-Sync Kubernetes and Consul Services
 >
 > **Селекторы узлов**
 >
@@ -95,13 +94,13 @@ ms.locfileid: "73885405"
 
 ::: zone-end
 
-`Consul` диаграмма Helm развертывает несколько объектов. Список можно просмотреть из выходных данных команды `helm install` выше. Для завершения развертывания компонентов Consul в зависимости от среды кластера может потребоваться около 3 минут.
+`Consul` Helm диаграмма развертывает несколько объектов. Список можно просмотреть на основе выходных данных `helm install` команды выше. Для завершения развертывания компонентов Consul в зависимости от среды кластера может потребоваться около 3 минут.
 
 На этом этапе вы развернули Consul в кластере AKS. Чтобы убедиться в успешном развертывании Consul, перейдем к следующему разделу, чтобы проверить установку Consul.
 
 ## <a name="validate-the-consul-installation"></a>Проверка установки Consul
 
-Убедитесь, что ресурсы были успешно созданы. Используйте команды [kubectl Get SVC][kubectl-get] и [kubectl Get Pod][kubectl-get] , чтобы запросить пространство имен `consul`, где компоненты Consul были установлены с помощью команды `helm install`:
+Убедитесь, что ресурсы были успешно созданы. Используйте команды [kubectl Get SVC][kubectl-get] и [kubectl Get Pod][kubectl-get] для запроса `consul` пространства имен, где компоненты Consul были установлены с помощью `helm install` команды:
 
 ```console
 kubectl get svc --namespace consul --output wide
@@ -110,7 +109,7 @@ kubectl get pod --namespace consul --output wide
 
 В следующем примере выходных данных показаны службы и модули Pod (запланированные на узлах Linux), которые теперь должны выполняться:
 
-```console
+```output
 NAME                                 TYPE           CLUSTER-IP    EXTERNAL-IP             PORT(S)                                                                   AGE     SELECTOR
 consul                               ExternalName   <none>        consul.service.consul   <none>                                                                    38s     <none>
 consul-consul-connect-injector-svc   ClusterIP      10.0.98.102   <none>                  443/TCP                                                                   3m26s   app=consul,component=connect-injector,release=consul
@@ -129,17 +128,17 @@ consul-consul-sync-catalog-d846b79c-8ssr8                         1/1     Runnin
 consul-consul-tz2t5                                               1/1     Running   0          3m9s   10.240.0.12   aks-linux-92468653-vmss000000   <none>           <none>
 ```
 
-Все модули Pod должны отображать состояние `Running`. Если группы pod имеют другое состояние, подождите пару минут, чтобы отобразилось нужное. Если какая либо из модулей Pod сообщает о возникшей ошибке, используйте команду [kubectl, описывающую][kubectl-describe] , чтобы проверить их выходные данные и состояние.
+Все модули Pod должны отображать состояние `Running`. Если группы pod имеют другое состояние, подождите пару минут, чтобы отобразилось нужное. Если для групп pod отображаются проблемы, выполните команду [describe pod][kubectl-describe], чтобы просмотреть выходные данные и состояние.
 
 ## <a name="accessing-the-consul-ui"></a>Доступ к пользовательскому интерфейсу Consul
 
 Пользовательский интерфейс Consul был установлен в нашей настройке выше и предоставляет конфигурацию на основе пользовательского интерфейса для Consul. Пользовательский интерфейс для Consul недоступен через внешний IP-адрес. Чтобы получить доступ к пользовательскому интерфейсу Consul, используйте команду [перенаправления порта kubectl][kubectl-port-forward] . Эта команда создает безопасное подключение между вашим клиентским компьютером и соответствующим Pod в кластере AKS.
 
-```azurecli
+```console
 kubectl port-forward -n consul svc/consul-consul-ui 8080:80
 ```
 
-Теперь можно открыть браузер и указать `http://localhost:8080/ui` открыть пользовательский интерфейс Consul. При открытии пользовательского интерфейса вы должны увидеть следующее:
+Теперь можно открыть браузер и указать `http://localhost:8080/ui` , чтобы открыть пользовательский интерфейс Consul. При открытии пользовательского интерфейса вы должны увидеть следующее:
 
 ![Пользовательский интерфейс Consul](./media/servicemesh/consul/consul-ui.png)
 
@@ -150,14 +149,14 @@ kubectl port-forward -n consul svc/consul-consul-ui 8080:80
 
 ### <a name="remove-consul-components-and-namespace"></a>Удалить компоненты и пространство имен Consul
 
-Чтобы удалить Consul из кластера AKS, используйте следующие команды. `helm delete` команды удаляют `consul`ную диаграмму, а команда `kubectl delete namespace` удалит пространство имен `consul`.
+Чтобы удалить Consul из кластера AKS, используйте следующие команды. `helm delete` Команда `consul` удалит диаграмму, и `kubectl delete namespace` команда удалит `consul` пространство имен.
 
-```azurecli
+```console
 helm delete --purge consul
 kubectl delete namespace consul
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об установке и параметрах конфигурации для Consul см. в следующих официальных статьях по Consul:
 

@@ -2,7 +2,7 @@
   items:
     - name: Приступая к работе с Azure
       href: azure-operations-guide.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Виртуальные машины
           items:
@@ -14,15 +14,15 @@
           items:
             - name: Создание виртуальной сети с помощью портала Azure
               href: ../../virtual-network/quick-create-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
-        - name: Безопасность
+        - name: безопасность
           items:
             - name: Использование назначений ролей для управления ресурсами
               href: ../../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
         - name: Azure Stack
           items:
             - name: Общие сведения о развертывании в Azure Stack
-              href: ../../azure-stack/azure-stack-deploy-overview.md
-        - name: Служба архивации Azure
+              href: /azure-stack/asdk/asdk-download
+        - name: Azure Backup
           items:
             - name: Резервное копирование виртуальной машины на портале Azure
               href: ../../backup/quick-backup-vm-portal.md
@@ -39,10 +39,10 @@
             - name: Создание и администрирование виртуальных машин Linux
               href: ../../virtual-machines/linux/tutorial-manage-vm.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
             - name: Конвейер Jenkins CI/CD
-              href: ../../virtual-machines/linux/tutorial-jenkins-github-docker-cicd.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
+              href: ../../jenkins/tutorial-jenkins-github-docker-cicd.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
             - name: Балансировка нагрузки виртуальных машин
               href: ../../virtual-machines/linux/tutorial-load-balancer.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
-            - name: Создание шаблонов диспетчера ресурсов Azure
+            - name: Создание шаблонов Azure Resource Manager
               href: ../../resource-group-authoring-templates.md?toc=%2fazure%2fguides%2foperations%2ftoc.json
             - name: Резервное копирование виртуальных машин в нужном масштабе
               href: ../../backup/tutorial-backup-vm-at-scale.md

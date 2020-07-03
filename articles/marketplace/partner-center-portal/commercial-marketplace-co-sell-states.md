@@ -1,42 +1,41 @@
 ---
-title: Коды состояния совместной продажи | Azure Marketplace
-description: Используйте эти коды штата/провинции при предоставлении контактной информации на странице предложения для совместной продажи.
-author: MaggiePucciEvans
-manager: evansma
-ms.author: evansma
+title: Коды штата и провинции для совместной продажи в Azure Marketplace
+description: Получите доступные коды штата и провинций при предоставлении контактных сведений на странице предложения совместной продажи в Azure Marketplace.
+author: dsindona
+ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 08/27/2019
-ms.openlocfilehash: c64fc161108560e893ef7b207782d79b6c3c01d4
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.date: 04/01/2020
+ms.openlocfilehash: a39cb5f49c9f038f567b7f3322b5962bc1dc9fc8
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934364"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82744699"
 ---
-# <a name="co-sell-state-codes"></a>Коды состояния совместной продажи
+# <a name="co-sell-state-and-province-codes-in-azure-marketplace"></a>Коды штата и провинции для совместной продажи в Azure Marketplace
 
-Если применимо, используйте эти коды, чтобы предоставить сведения о штате или крае при [предоставлении контактных сведений на странице предложения совместной продажи](commercial-marketplace-co-sell.md#contacts).
+В этой статье перечислены доступные коды штата и провинции при предоставлении контактных данных на странице совместной продажи вашего предложения. Если применимо, используйте эти коды, чтобы предоставить сведения о штате или крае при [предоставлении контактных сведений на странице предложения совместной продажи](commercial-marketplace-co-sell.md#contacts).
 
-## <a name="stateprovince-table"></a>Таблица штат/провинция
+## <a name="us-states-and-territories"></a>США и территории США
 
-|   Название области или Республики               |   Код    |
+|   Название региона и территории          |   Код    |
 |-------------------------------------|-----------|
 | Алабама                             | US-AL     |
-| Аляска                              | US-AK     |
+| Alaska                              | US-AK     |
 | Аризона                             | US-AZ     |
 | Арканзас                            | US-AR     |
 | Калифорния                          | US-CA     |
 | Колорадо                            | US-CO     |
 | Коннектикут                         | US-CT     |
-| Делавэр                            | US-DE     |
+| Delaware                            | US-DE     |
 | Флорида                             | US-FL     |
-| Грузия                             | US-GA     |
+| Джорджия                             | US-GA     |
 | Гавайи                              | US-HI     |
-| Айдахо                               | US-ID     |
+| Idaho                               | US-ID     |
 | Иллинойс                            | US-IL     |
-| Индиана                             | US-IN     |
+| Indiana                             | US-IN     |
 | Айова                                | US-IA     |
 | Канзас                              | US-KS     |
 | Кентукки                            | US-KY     |
@@ -49,28 +48,28 @@ ms.locfileid: "75934364"
 | Миссисипи                         | US-MS     |
 | Миссури                            | US-MO     |
 | Montana                             | US-MT     |
-| Небраска                            | US-NE     |
+| Nebraska                            | US-NE     |
 | Невада                              | US-NV     |
-| Нью-Хэмпшир                       | US-NH     |
+| Нью-Гемпшир                       | US-NH     |
 | Нью-Джерси                          | US-NJ     |
 | Нью-Мексико                          | US-NM     |
 | Нью-Йорк                            | US-МОСКВА     |
-| Северная Каролина                      | US-NC     |
-| Северная Дакота                        | US-ND     |
+| North Carolina                      | US-NC     |
+| North Dakota                        | US-ND     |
 | Огайо                                | US-АХ     |
 | Оклахома                            | US-ОК     |
 | Орегон                              | US ИЛИ     |
 | Пенсильвания                        | US-PA     |
 | Род-Айленд                        | US-RI     |
 | Южная Каролина                      | US-SC     |
-| Южная Дакота                        | US-SD     |
+| South Dakota                        | US-SD     |
 | Теннесси                           | US-ТН     |
 | Техас                               | US-TX     |
 | Юта                                | US-UT     |
-| Вермонт                             | US-VT     |
+| Vermont                             | US-VT     |
 | Виргиния                            | US-ВА     |
 | Вашингтон                          | US-WA     |
-| West Virginia                       | US-WV     |
+| Западная Вирджиния                       | US-WV     |
 | Висконсин                           | US-WI     |
 | Вайоминг                             | US-WY     |
 | Округ Колумбия                | US-DC     |
@@ -78,8 +77,41 @@ ms.locfileid: "75934364"
 | Гуам                                | US-GU     |
 | Северные Марианские острова            | US-MP     |
 | Пуэрто-Рико                         | US-PR     |
-| Внешние малые острова (США) | US-UM    |
-|Виргинские о-ва (США)                 | US-VI     |
+| Внешние малые острова США | US-UM    |
+| Виргинские острова, США                 | US-VI    |
+
+## <a name="canadian-provinces-and-territories"></a>Провинции и территории Канады
+
+|   Название района и территории       |   Код    |
+|-------------------------------------|-----------|
+| Alberta                             |  CA-AB    |
+| British Columbia                    |  CA-BC    |
+| Manitoba                            |  CA-MB    |
+| New Brunswick                       |  CA-NB    |
+| Newfoundland and Labrador           |  CA-NL    |
+| Nova Scotia                         |  CA-NS    |
+| Ontario                             |  CA-ON    |
+| Prince Edward Island                |  CA-PE    |
+| Quebec                              |  CA-QC    |
+| Saskatchewan                        |  CA-SK    |
+| Northwest Territories               |  CA-NT    |
+| Nunavut                             |  CA-NU    |
+| Yukon                               |  CA-YT    |
+
+
+## <a name="australian-states-and-territories"></a>Австралийские Штаты и территории
+
+|   Название региона и территории          |   Код    |
+|-------------------------------------|-----------|
+| Новый Южный Уэльс                     |  AU-NSW   |
+| Queensland                          |  AU-QLD   |
+| South Australia                     |  AU-SA    |
+| Tasmania                            |  AU-TAS   |
+| Виктория                            |  AU-VIC   |
+| Western Australia                   |  AU-WA    |
+| Australian Capital Territory        |  AU-ACT   |
+| Northern Territory                  |  AU-NT    |
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

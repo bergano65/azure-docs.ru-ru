@@ -11,14 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: b4786b612dedb065239f57e0286bafb688180dff
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 63873a4f8301d3cb20488b02b32200f476922276
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75440374"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81417952"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Действие Until в фабрике данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 Действие Until предоставляет те же функциональные возможности, что и циклическая структура do-until в языках программирования. Оно выполняет набор действий в цикле, пока условие, связанное с действием, не получит значение true. Можно указать значение времени ожидания для действия until в фабрике данных. 
 
 ## <a name="syntax"></a>Синтаксис
@@ -51,10 +53,10 @@ ms.locfileid: "75440374"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description | Допустимые значения | Обязательно для заполнения
+Свойство | Описание | Допустимые значения | Обязательный
 -------- | ----------- | -------------- | --------
-name | Имя действия `Until`. | String | Да
-type | Необходимо задать **Until**. | String | Да
+name | Имя действия `Until`. | Строка | Да
+type | Необходимо задать **Until**. | Строка | Да
 expression | Выражение, для которого возвращается значение true или false. | Выражение.  | Да
 timeout | Цикл do-until выполняется, пока не истечет указанное здесь время ожидания. | Строка. `d.hh:mm:ss` (или) `hh:mm:ss`. Значение по умолчанию — 7 дней. Максимальное значение — 90 дней. | Нет
 Действия | Набор действий, которые выполняются до тех пор, пока выражение не получит значение `true`. | Массив действий. |  Да
@@ -285,12 +287,12 @@ while ($True) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие условия If](control-flow-if-condition-activity.md)
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
-- [Действие ForEach](control-flow-for-each-activity.md)
+- [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Веб-действие](control-flow-web-activity.md)

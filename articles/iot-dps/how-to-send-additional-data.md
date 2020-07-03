@@ -7,12 +7,12 @@ ms.date: 02/11/2020
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 3eec39e975b1e782eafe16205623c625f462a865
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: de6bb3fe0879a69467283e93a04a355876a02cba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77209415"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80246693"
 ---
 # <a name="how-to-transfer-a-payload-between-device-and-dps"></a>Как передавать полезные данные между устройством и службой DPS
 Иногда служба DPS требует больше данных от устройств, чтобы правильно подготавливать их в нужный центр Интернета вещей, и эти данные должны предоставляться устройством. Наоборот, служба DPS может возвращать данные на устройство для упрощения логики на стороне клиента. 
@@ -30,7 +30,6 @@ ms.locfileid: "77209415"
            “endorsementKey”: “stuff”, 
            “storageRootKey”: “things” 
        }, 
-       “interfaces”: “TODO: get how interfaces are reported by devices from PnP folks.”, 
        “payload”: “your additional data goes here. It can be nested JSON.” 
     } 
    ```
@@ -55,7 +54,7 @@ ms.locfileid: "77209415"
    ```
 
 ## <a name="sdk-support"></a>Поддержка пакетов SDK
-Эта функция доступна в клиентских пакетах C# [SDK](https://docs.microsoft.com/azure/iot-dps/)для C,, Java и Node. js.  
+Эта функция доступна в клиентских пакетах [SDK](https://docs.microsoft.com/azure/iot-dps/)для C, C#, Java и Node. js.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * Разработка с использованием [пакета SDK для Azure IoT]( https://github.com/Azure/azure-iot-sdks) для Центра Интернета Azure и службы подготовки устройств к добавлению в Центр Интернета вещей

@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы об использовании баз данных MySQL ClearDB в службе приложений Azure
+title: Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 description: Ответы на распространенные вопросы об использовании баз данных ClearDB MySQL со службой приложений Azure.
 documentationcenter: php
 services: mysql
@@ -12,13 +12,13 @@ ms.date: 10/27/2016
 ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: ddbf1eb960a24cfaa8d09ab45b6febca07e6d504
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75979910"
 ---
-# <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Вопросы и ответы об использовании баз данных MySQL ClearDB в службе приложений Azure
+# <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 Ответы на часто задаваемые вопросы об использовании и покупке баз данных ClearDB MySql для службы веб-приложений Azure.
 
 > [!IMPORTANT]

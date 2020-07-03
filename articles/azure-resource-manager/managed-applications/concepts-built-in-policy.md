@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: hich
 ms.openlocfilehash: ec0fe8f66ef2ad2458b4ffad0e848591793e5b05
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75650946"
 ---
 # <a name="deploy-associations-for-a-managed-application-using-azure-policy"></a>Развертывание ассоциаций для управляемого приложения с помощью политики Azure
@@ -29,7 +29,7 @@ ms.locfileid: "75650946"
 
 ## <a name="how-to-use-the-deploy-associations-built-in-policy"></a>Использование встроенной политики «развертывание ассоциаций» 
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 Если управляемому приложению требуются разрешения для выполнения действия в подписке, то развертывание ресурса сопоставления политики не будет работать без предоставления разрешений.
 
 ### <a name="policy-assignment"></a>Назначение политики

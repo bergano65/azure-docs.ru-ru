@@ -5,15 +5,15 @@ services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: conceptual
-ms.date: 10/30/2019
+ms.date: 03/10/2020
 ms.author: victorh
 ms.reviewer: tyao
-ms.openlocfilehash: dd9c3f972a2b598c0c03db2cb80986c08900c609
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: abcef61d478eccb4e979b60eb845ac8d398a49f9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73517128"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79135876"
 ---
 # <a name="set-up-a-geo-filtering-waf-policy-for-your-front-door"></a>Настройка политики географической фильтрации WAF для передней дверцы
 
@@ -21,7 +21,7 @@ ms.locfileid: "73517128"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем начать настройку политики геофильтрации, настройте среду PowerShell и создайте профиль Front Door.
 ### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
@@ -110,7 +110,7 @@ Set-AzFrontDoor -InputObject $geoFrontDoorObjectExample[0]
 > [!NOTE] 
 > Достаточно установить свойство WebApplicationFirewallPolicyLink один раз, чтобы связать политику WAF с узлом внешнего интерфейса Front Door. Последующие обновления политики будут автоматически применяться к узлу внешнего интерфейса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о [Брандмауэр веб-приложения Azure](../overview.md).
 - Дополнительные сведения о [создании Front Door](../../frontdoor/quickstart-create-front-door.md).

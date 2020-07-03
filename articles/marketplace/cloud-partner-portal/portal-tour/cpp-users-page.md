@@ -1,19 +1,18 @@
 ---
 title: Страница "Пользователи" для Azure Marketplace
 description: Устаревшая статья CPP, указанная в статье о ПК; "Общие сведения о странице" Пользователи "в Портал Cloud Partner для Azure Marketplace".
-services: Azure, Marketplace, Cloud Partner Portal, Partner Center
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.author: v-chjen
-ms.openlocfilehash: 8a83b5a9781c59cd4eb7b566b6f37ba044d1e6a4
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.author: dsindona
+ms.openlocfilehash: 2c55c3bd718370a35f46f172d29d60afe632d7cf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74665718"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278286"
 ---
 # <a name="users-page"></a>Страница "Пользователи"
 

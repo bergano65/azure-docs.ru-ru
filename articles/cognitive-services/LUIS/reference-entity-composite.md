@@ -8,22 +8,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 09/29/2019
+ms.date: 04/14/2020
 ms.author: diberry
-ms.openlocfilehash: a5a1ad467074ee0aa55d14d50ae153ac68304e6f
-ms.sourcegitcommit: 8bae7afb0011a98e82cbd76c50bc9f08be9ebe06
+ms.openlocfilehash: 81299751affe5f59e1132950ccb80844fcc1fae3
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71695170"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83681395"
 ---
-# <a name="composite-entity"></a>Составная сущность 
+# <a name="composite-entity"></a>Составная сущность
 
-Составная сущность состоит из других сущностей, например готовых сущностей, простых, регулярных выражений и сущностей списка. Эти отдельные сущности формируют единую сущность. 
+Составная сущность состоит из других сущностей, например готовых сущностей, простых, регулярных выражений и сущностей списка. Эти отдельные сущности формируют единую сущность.
 
-**Эта сущность хорошо подходит, когда данные:**
+> [!CAUTION]
+> Эта сущность является **устаревшей**. Выполните миграцию в [сущность машинного обучения](reference-entity-machine-learned-entity.md).
 
-* данные связаны между собой; 
+**Эта сущность оптимальна для данных в таких случаях.**
+
+* данные связаны между собой;
 * Связаны между собой в контексте фразы.
 * для них используются различные типы сущностей;
 * должны быть сгруппированы и обработаны клиентским приложением в качестве единицы информации;
@@ -33,7 +36,7 @@ ms.locfileid: "71695170"
 
 ## <a name="example-json"></a>Пример JSON
 
-Рассмотрим составную сущность предварительно построенных `number` и `Location::ToLocation` со следующими utterance:
+Рассмотрим составную сущность предварительно построенного `number` и `Location::ToLocation` со следующими utterance:
 
 `book 2 tickets to cairo`
 
@@ -41,7 +44,7 @@ ms.locfileid: "71695170"
 
 ![Составная сущность](./media/luis-concept-data-extraction/composite-entity.png)
 
-#### <a name="v2-prediction-endpoint-responsetabv2"></a>[Ответ конечной точки прогнозирования v2](#tab/V2)
+#### <a name="v2-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V2](#tab/V2)
 
 Составные сущности возвращаются в массиве `compositeEntities`, а все сущности в рамках составной возвращаются в массиве `entities`:
 
@@ -87,11 +90,11 @@ ms.locfileid: "71695170"
       ]
     }
   ]
-```    
+```
 
-#### <a name="v3-prediction-endpoint-responsetabv3"></a>[V3 прогнозирование ответа конечной точки](#tab/V3)
+#### <a name="v3-prediction-endpoint-response"></a>[Отклик конечной точки прогнозирования V3](#tab/V3)
 
-Это JSON, если `verbose=false` задан в строке запроса:
+Это JSON, если `verbose=false` в строке запроса задано:
 
 ```json
 "entities": {
@@ -108,7 +111,7 @@ ms.locfileid: "71695170"
 }
 ```
 
-Это JSON, если `verbose=true` задан в строке запроса:
+Это JSON, если `verbose=true` в строке запроса задано:
 
 ```json
 "entities": {
@@ -169,7 +172,7 @@ ms.locfileid: "71695170"
 }
 ```
 
-* * * 
+* * *
 
 
 |Объект данных|Имя сущности|Значение|
@@ -179,4 +182,7 @@ ms.locfileid: "71695170"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-В этом [руководстве](luis-tutorial-composite-entity.md)добавляется **составная сущность** для объединения извлеченных данных различных типов в одну содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
+Дополнительные сведения о сущностях:
+
+* [Концепции](luis-concept-entity-types.md)
+* [Создание](luis-how-to-add-entities.md)

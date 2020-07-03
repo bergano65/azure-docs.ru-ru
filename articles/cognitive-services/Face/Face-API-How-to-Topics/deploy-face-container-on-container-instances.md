@@ -3,19 +3,19 @@ title: Запуск контейнера лиц в службе "экземпл�
 titleSuffix: Azure Cognitive Services
 description: Разверните контейнер Face в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 01/23/2020
-ms.author: dapine
-ms.openlocfilehash: 4f8a08697443ec6920b3fa73de19a950e54e7f40
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 4df5949e24e3fa59d37379c058a777c93dda2c44
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76716247"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80878376"
 ---
 # <a name="deploy-the-face-container-to-azure-container-instances"></a>Развертывание контейнера "лицо" в службе "экземпляры контейнеров Azure"
 

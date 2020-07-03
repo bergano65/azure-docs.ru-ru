@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: victorh
 ms.openlocfilehash: ec9fb3c9b27d21ac65888379f59d51ecc8042eb0
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74168691"
 ---
 # <a name="azure-firewall-service-tags"></a>Теги службы Брандмауэра Azure
@@ -24,6 +24,6 @@ ms.locfileid: "74168691"
 
 Список тегов служб, доступных для использования в правилах сети брандмауэра Azure, см. в разделе [группы безопасности](../virtual-network/security-overview.md#service-tags) .
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о правилах Брандмауэра Azure см. в статье [Логика обработки правил Брандмауэра Azure](rule-processing.md).

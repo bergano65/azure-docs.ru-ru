@@ -1,23 +1,20 @@
 ---
 title: Основная информация о расходах на внешние службы в Azure | Документация Майкрософт
 description: Узнайте больше о выставлении счетов за использование внешних служб, ранее известных как Marketplace, в Azure.
-author: jureid
-manager: jureid
+author: bandersmsft
+ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/01/2019
+ms.date: 02/24/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f94b79e03cf97275ec4dacf17e097e1678e81d10
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 7955e9bc75b2a27ac42d381df1e686ec8a0ed04b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989427"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77587817"
 ---
 # <a name="understand-your-azure-external-services-charges"></a>Основная информация о расходах на внешние службы в Azure
 Внешние службы публикуются сторонними поставщиками программного обеспечения в Azure Marketplace. Например, SendGrid — это внешняя служба, которую можно приобрести в Azure, но которая не опубликована корпорацией Майкрософт. Некоторые продукты Майкрософт также продаются через Azure Marketplace.
@@ -25,7 +22,7 @@ ms.locfileid: "75989427"
 ## <a name="how-external-services-are-billed"></a>Как выставляются счета за внешние службы
 
 - Если у вас есть Клиентское соглашение Майкрософт (MCA) или Соглашение с партнером Майкрософт (MPA), то ваши службы сторонних поставщиков будут оплачиваться вместе с остальными службами Azure. [Проверьте тип учетной записи выставления счетов](#check-billing-account-type), чтобы понять, есть ли у вас доступ к MCA или MPA.
-- Если у вас нет MCA или MPA, счета за внешние службы оплачиваются отдельно от служб Azure.
+- Если у вас нет MCA или MPA, счета за внешние службы оплачиваются отдельно от служб Azure. Вы получите два счета за каждый расчетный период: один счет для служб Azure, а второй — для покупок в Marketplace.
 - У каждой внешней службы своя модель выставления счетов. Некоторые службы оплачиваются по мере использования, в то время как для других установлена фиксированная ежемесячная оплата.
 - Для оплаты внешних служб невозможно использовать бесплатные кредитные средства. Если вы используете подписку Azure, которая включает в себя [бесплатные деньги на счете](https://azure.microsoft.com/pricing/spending-limits/), то ими невозможно оплачивать счета за внешние службы. При подготовке новой внешней службы или ресурса отображается предупреждение.
 
@@ -48,23 +45,62 @@ You can view a list of the external services that are on each subscription withi
 
     ![View external services billing history](./media/understand-azure-marketplace-charges/billing-overview-blade.png) -->
 
-## <a name="view-and-download-invoices-for-external-services"></a>Просмотр и скачивание счетов для внешних служб
-
-Если у вас есть Клиентское соглашение Майкрософт (MCA) или Соглашение с партнером Майкрософт (MPA), то ваши службы сторонних поставщиков будут оплачиваться вместе с остальными службами Azure. [Проверьте тип учетной записи выставления счетов](#check-billing-account-type), чтобы понять, есть ли у вас доступ к MCA или MPA. Ознакомьтесь, как [просмотреть и скачать счета на портале Azure](download-azure-invoice.md), чтобы узнать о ваших расходах на сторонних поставщиков.
-
-Если у вас нет MCA или MPA, вы получите отдельный счет на оплату услуг сторонних поставщиков. Вы можете просмотреть и скачать счета для Azure Marketplace из портала Azure, выполнив следующие действия:
-
-1. Войдите на [портал Azure](https://portal.azure.com).
-1. Выполните поиск по фразе **Управление затратами + выставление счетов**.
-1. В меню слева выберите **Счета**.
-1. Щёлкните вкладку **Azure Marketplace и резервирования**.  ![Изображение вкладки "Azure Marketplace и резервирования"](./media/understand-azure-marketplace-charges/invoice-tabs.png)
-1. В раскрывающемся списке подписки выберите подписку, содержащую внешние службы, для которых требуется просмотреть счета.
-
 ## <a name="external-spending-for-ea-customers"></a>Внешние расходы для клиентов с соглашением Enterprise
 
 Клиенты с соглашением Enterprise могут просматривать данные о расходах на внешние службы и скачивать отчеты на портале EA. Чтобы приступить к работе, см. статью [Azure Marketplace for EA Customers](https://ea.azure.com/helpdocs/azureMarketplace) (Azure Marketplace для клиентов с соглашением Enterprise).
 
-## <a name="manage-payment-for-external-services"></a>Управление платежами за внешние службы
+## <a name="view-and-download-invoices-for-external-services"></a>Просмотр и скачивание счетов для внешних служб
+
+Если у вас есть Клиентское соглашение Майкрософт (MCA) или Соглашение с партнером Майкрософт (MPA), то ваши службы сторонних поставщиков будут оплачиваться вместе с остальными службами Azure по одному счету. [Проверьте тип учетной записи выставления счетов](#check-billing-account-type), чтобы понять, есть ли у вас доступ к MCA или MPA. Ознакомьтесь, как [просмотреть и скачать счета на портале Azure](download-azure-invoice.md), чтобы узнать о ваших расходах на сторонних поставщиков.
+
+Если у вас нет MCA или MPA, вы получите отдельный счет на оплату услуг сторонних поставщиков. 
+
+Расходы на Azure Marketplace отображаются в местной валюте.
+
+Вы можете просмотреть и скачать счета для Azure Marketplace из портала Azure, выполнив следующие действия:
+
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Выполните поиск по фразе **Управление затратами + выставление счетов**.
+1. В меню слева выберите **Счета**.
+1. В раскрывающемся списке подписок выберите подписку, связанную с вашими службами Marketplace.
+1. Проверьте столбец **Тип** в списке счетов. Если счет предназначен для службы Marketplace, этот тип будет иметь значение **Azure Marketplace и резервирования**. 
+
+    ![Снимок экрана: тип Azure Marketplace в сетке счетов](./media/understand-azure-marketplace-charges/marketplace-type-twd.png)
+
+1. Чтобы выполнить фильтрацию по типу для поиска только счетов для Azure Marketplace и резервирований, выберите фильтр **Тип**. Затем выберите **Azure Marketplace и резервирования** в раскрывающемся списке.
+
+    ![Снимок экрана с выбранными фильтром "Тип" и элементом "Azure Marketplace и резервирование" в раскрывающемся списке](./media/understand-azure-marketplace-charges/type-filter.png)
+
+1. Щелкните значок скачивания справа от счета, который необходимо скачать.
+
+    ![Снимок экрана, на котором показан значок скачивания счета](./media/understand-azure-marketplace-charges/download-icon-marketplace.png)
+
+1. В разделе **Счет** выберите синюю кнопку **Скачать**.
+
+    ![Снимок экрана, на котором показана кнопка для скачивания счета в области контекста](./media/understand-azure-marketplace-charges/invoice-download-marketplace.png)
+
+## <a name="pay-for-external-services-in-the-azure-portal"></a>Оплата внешних служб на портале Azure
+
+Если у вас есть Клиентское соглашение Майкрософт (MCA) или Соглашение с партнером Майкрософт (MPA), то ваши службы сторонних поставщиков будут оплачиваться вместе с остальными службами Azure. [Проверьте тип учетной записи выставления счетов](#check-billing-account-type), чтобы понять, есть ли у вас доступ к MCA или MPA. Если вы сделаете это, вы можете заплатить за весь счет на портале Azure, выполнив действия, описанные в статье [Как оплатить счет за Microsoft Azure](pay-bill.md).
+
+Если у вас нет MCA или MPA, вы можете платить за счета Marketplace на портале Azure, выполнив следующие действия:
+
+1. Выполните действия, описанные в предыдущем разделе [Просмотр и скачивание счетов для внешних служб](#view-and-download-invoices-for-external-services), чтобы найти счета Marketplace.
+1. Щелкните синюю ссылку **Оплатить сейчас** на счет, который нужно оплатить.
+
+    ![Снимок экрана, на котором показана ссылка "Оплатить сейчас", выбранная в сетке счетов](./media/understand-azure-marketplace-charges/pay-now-twd.png)
+
+    >[!NOTE]
+    > Вы увидите ссылку **Оплатить сейчас** только в том случае, если тип счета — **Azure Marketplace и резервирования**, а состояние оплаты счета — "Срок проверки" или "Просрочено".
+
+1. На новой странице щелкните синюю ссылку **Выберите метод оплаты**.
+
+    ![Снимок экрана, на котором показана выбранная ссылка "Выберите метод оплаты"](./media/understand-azure-marketplace-charges/select-payment-method-pay-now-twd.png)
+
+1. Выбрав метод оплаты, нажмите синюю кнопку **Оплатить сейчас** в левом нижнем углу страницы.
+    ![Снимок экрана, на котором выбрана кнопка "Оплатить сейчас"](./media/understand-azure-marketplace-charges/pay-now-button-twd.png)
+
+## <a name="change-default-payment-for-external-services"></a>Изменение оплаты по умолчанию для внешних служб
 
 При покупке внешней службы вы выбираете для ресурса подписку Azure. Метод оплаты выбранной подписки Azure станет методом оплаты для внешней службы. Чтобы изменить метод оплаты для внешней службы, необходимо [изменить метод оплаты подписки Azure](../manage/change-credit-card.md), привязанный к этой внешней службе. Выполнив следующие действия можно определить, к какой подписке привязан порядок внешней службы:
 
@@ -76,25 +112,8 @@ You can view a list of the external services that are on each subscription withi
     ![снимок экрана: название подписки на ресурс](./media/understand-azure-marketplace-charges/sub-selected.png)
 1. Щелкните название подписки и [обновите активный метод оплаты](../manage/change-credit-card.md).
 
-<!-- Update your payment methods for external service orders from the [Account Center](https://account.windowsazure.com/).
-
-> [!NOTE]
-> If you purchased your subscription with a Work or School account, [contact support](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) to make changes to your payment method.
-
-1. Sign in to the [Account Center](https://account.windowsazure.com/) and [navigate to the **marketplace** tab](https://account.windowsazure.com/Store)
-
-    ![Select marketplace in the account center](./media/understand-azure-marketplace-charges/select-marketplace.png)
-2. Select the external service you want to manage
-
-    ![Select the external service you want to manage](./media/understand-azure-marketplace-charges/select-ext-service.png)
-3. Click **Change payment method** on the right side of the page. This link brings you to a different portal to manage your payment method.
-
-    ![Order summary](./media/understand-azure-marketplace-charges/change-payment.PNG)
-4. Click **Edit info** and follow instructions to update your payment information.
-
-    ![Select edit info](./media/understand-azure-marketplace-charges/edit-info.png) -->
-
 ## <a name="cancel-an-external-service-order"></a>Отмена заказа внешней службы
+
 Если вы хотите отменить заказ внешней службы, то удалите соответствующий ресурс на [портале Azure](https://portal.azure.com).
 
 1. Войдите на [портал Azure](https://portal.azure.com).

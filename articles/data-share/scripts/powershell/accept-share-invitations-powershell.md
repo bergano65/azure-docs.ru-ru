@@ -1,5 +1,5 @@
 ---
-title: Сценарий PowerShell. Принять приглашение из общей папки данных Azure | Документация Майкрософт
+title: 'Сценарий PowerShell: принятие приглашения из общей папки данных Azure | Документация Майкрософт'
 description: Этот сценарий PowerShell принимает приглашения от существующей общей папки данных.
 services: data-share
 author: joannapea
@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
 ms.openlocfilehash: 246e3550650dfd458b4aeecda3b5b7733e49f017
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70307336"
 ---
 # <a name="use-powershell-to-accept-a-data-share-invitation"></a>Использование PowerShell для принятия приглашения для общего доступа к данным
@@ -40,13 +40,13 @@ New-AzDataShareSubscription -ResourceGroupName $resourceGroupName -AccountName $
 
 Этот сценарий использует следующие команды: 
 
-| Command | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [Get-Аздаташареинвитатион](/powershell/module/az.datashare/get-azdatashareinvitation?view=azps-2.6.0) | Получение и перечисление отправленных приглашений на обмен данными. |
 | [New-Аздаташаресубскриптион](/powershell/module/az.datashare/get-azdatasharesubscription?view=azps-2.6.0) | Создайте подписку на общую папку данных. |
 |||
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

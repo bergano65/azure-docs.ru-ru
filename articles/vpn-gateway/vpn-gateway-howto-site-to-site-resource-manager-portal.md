@@ -6,14 +6,14 @@ titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 03/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 2e6aeda0e84b11221af110bda738d6d93f258978
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: 857b50a04466f43a25cf80d7930cfb4639dc9d65
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75894992"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79244437"
 ---
 # <a name="create-a-site-to-site-connection-in-the-azure-portal"></a>Создание подключения типа "сеть — сеть" на портале Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "75894992"
 
 ![Схема подключения типа "сеть — сеть" через VPN-шлюз](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/site-to-site-diagram.png)
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
@@ -39,9 +39,9 @@ ms.locfileid: "75894992"
 * Убедитесь, что у вас есть общедоступный IPv4–адрес для вашего VPN–устройства.
 * Если вы не знаете диапазоны IP-адресов в своей конфигурации локальной сети, найдите того, кто сможет предоставить вам нужную информацию. При создании этой конфигурации необходимо указать префиксы диапазона IP-адресов, которые Azure будет направлять к локальному расположению. Ни одна из подсетей локальной сети не может перекрывать виртуальные подсети, к которым вы хотите подключиться. 
 
-### <a name="values"></a>Примеры значений
+### <a name="example-values"></a><a name="values"></a>Примеры значений
 
-В примерах этой статьи мы используем следующие значения. Эти значения можно использовать для создания тестовой среды или для лучшего понимания примеров в этой статье. Общие сведения о параметрах VPN-шлюза см. в статье [Сведения о параметрах конфигурации VPN-шлюза](vpn-gateway-about-vpn-gateway-settings.md).
+В примерах этой статьи мы используем следующие значения. Эти значения можно использовать для создания тестовой среды или для лучшего понимания примеров в этой статье. Дополнительные сведения о параметрах VPN-шлюза см. в разделе [о параметрах VPN-шлюза](vpn-gateway-about-vpn-gateway-settings.md).
 
 * **Имя виртуальной сети:** VNet1
 * **Адресное пространство:** 10.1.0.0/16.
@@ -51,19 +51,19 @@ ms.locfileid: "75894992"
 * **Подсеть:** FrontEnd: 10.1.0.0/24, BackEnd: 10.1.1.0/24 (необязательно для этой задачи).
 * **Диапазон адресов подсети шлюза:** 10.1.255.0/27
 * **Имя шлюза виртуальной сети:** VNet1GW
-* **Имя общедоступного IP-адреса:** VNet1GWIP
-* **Тип VPN:** на основе маршрутов
+* **Имя общедоступного IP-адреса:** VNet1GWpip
+* **Тип VPN:** На основе маршрутов
 * **Тип подключения:** Сеть — сеть (IPsec)
-* **Тип шлюза:** VPN
+* **Тип шлюза:** ЧЕРЕЗ
 * **Имя шлюза локальной сети:** Сайту site1
 * **Имя подключения:** VNet1toSite1
 * **Общий ключ:** в этом примере мы используем abc123. Но можно использовать любой ключ, совместимый с оборудованием VPN. Важно, чтобы значения совпадали на обеих сторонах подключения.
 
-## <a name="CreatVNet"></a>1. Создание виртуальной сети
+## <a name="1-create-a-virtual-network"></a><a name="CreatVNet"></a>1. Создание виртуальной сети
 
-[!INCLUDE [Create a virtual network](../../includes/vpn-gateway-create-virtual-network-portal-include.md)]
+[!INCLUDE [Create a virtual network](../../includes/vpn-gateway-basic-vnet-rm-portal-include.md)]
 
-## <a name="VNetGateway"></a>2. Создание VPN-шлюза
+## <a name="2-create-the-vpn-gateway"></a><a name="VNetGateway"></a>2. Создание VPN-шлюза
 
 На этом шаге вы создадите шлюз для своей виртуальной сети. Создание шлюза часто занимает 45 минут и более, в зависимости от выбранного SKU шлюза.
 
@@ -77,14 +77,14 @@ ms.locfileid: "75894992"
 * **Сведения об экземпляре > тип шлюза:** ЧЕРЕЗ
 * **Сведения об экземпляре > тип VPN:** На основе маршрутов
 * **Диапазон адресов подсети шлюза виртуальной сети >:** 10.1.255.0/27
-* **Общедоступный IP-адрес > имя общедоступного IP-адреса:** VNet1GWIP
+* **Общедоступный IP-адрес > имя общедоступного IP-адреса:** VNet1GWpip
 
 [!INCLUDE [Create a vpn gateway](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
 [!INCLUDE [NSG warning](../../includes/vpn-gateway-no-nsg-include.md)]
 
 
-## <a name="LocalNetworkGateway"></a>3. Создание шлюза локальной сети
+## <a name="3-create-the-local-network-gateway"></a><a name="LocalNetworkGateway"></a>3. Создание шлюза локальной сети
 
 Обычно термин "шлюз локальной сети" означает локальное расположение. Присвойте сайту имя, по которому Azure может обращаться к этому сайту, а затем укажите IP-адрес локального VPN-устройства, к которому вы подключитесь. Вы можете также указать префиксы IP-адресов, которые будут направляться через VPN-шлюз к VPN-устройству. Указываемые префиксы адресов расположены в локальной сети. Если вы внесли изменения в локальной сети или вам нужно изменить общедоступный IP-адрес для VPN-устройства, значения можно легко обновить позже.
 
@@ -92,43 +92,43 @@ ms.locfileid: "75894992"
 
 * **Имя:** Сайту site1
 * **Группа ресурсов:** TestRG1
-* **Расположение:** восточная часть США.
+* **Расположение:** Восточная часть США
 
 
 [!INCLUDE [Add a local network gateway](../../includes/vpn-gateway-add-local-network-gateway-portal-include.md)]
 
-## <a name="VPNDevice"></a>4. Настройка VPN-устройства
+## <a name="4-configure-your-vpn-device"></a><a name="VPNDevice"></a>4. Настройка VPN-устройства
 
 Для подключения типа "сеть — сеть" к локальной сети требуется VPN-устройство. На этом этапе мы настроим VPN-устройство. Чтобы настроить локальное VPN-устройство, вам потребуется следующее:
 
 - Общий ключ. Это тот же общий ключ, который указывается при создании VPN-подключения "сеть — сеть". В наших примерах мы используем простые общие ключи. Для практического использования рекомендуется создавать более сложные ключи.
-- Общедоступный IP-адрес шлюза виртуальной сети. Общедоступный IP-адрес можно просмотреть с помощью портала Azure, PowerShell или CLI. Чтобы найти общедоступный IP-адрес VPN-шлюза с помощью портала Azure, перейдите к разделу **Шлюзы виртуальной сети** и щелкните имя шлюза.
+- Общедоступный IP-адрес шлюза виртуальной сети. Общедоступный IP-адрес можно просмотреть с помощью портала Azure, PowerShell или CLI. Чтобы найти общедоступный IP-адрес VPN-шлюза с помощью портал Azure, перейдите к разделу **шлюзы виртуальной сети**, а затем щелкните имя шлюза.
 
 [!INCLUDE [Configure a VPN device](../../includes/vpn-gateway-configure-vpn-device-include.md)]
 
-## <a name="CreateConnection"></a>5. Создание VPN-подключения
+## <a name="5-create-the-vpn-connection"></a><a name="CreateConnection"></a>5. Создание VPN-подключения
 
 Создайте VPN-подключение типа "сеть — сеть" между шлюзом виртуальной сети и локальным VPN-устройством.
 
 [!INCLUDE [Add a site-to-site connection](../../includes/vpn-gateway-add-site-to-site-connection-portal-include.md)]
 
-## <a name="VerifyConnection"></a>6. Проверка VPN-подключения
+## <a name="6-verify-the-vpn-connection"></a><a name="VerifyConnection"></a>6. Проверка VPN-подключения
 
 [!INCLUDE [Verify the connection](../../includes/vpn-gateway-verify-connection-portal-include.md)]
 
-## <a name="connectVM"></a>Подключение к виртуальной машине
+## <a name="to-connect-to-a-virtual-machine"></a><a name="connectVM"></a>Подключение к виртуальной машине
 
 [!INCLUDE [Connect to a VM](../../includes/vpn-gateway-connect-vm-s2s-include.md)]
 
-## <a name="reset"></a>Как сбросить VPN-шлюз
+## <a name="how-to-reset-a-vpn-gateway"></a><a name="reset"></a>Как сбросить VPN-шлюз
 
 Сброс настроек VPN-шлюза Azure полезен при потере распределенного VPN-подключения в одном или нескольких VPN-туннелях типа "сеть-сеть". В этой ситуации все локальные VPN-устройства работают правильно, но не могут взаимодействовать с VPN-шлюзами Azure через туннели IPsec. Пошаговые инструкции см. в статье [Сброс VPN-шлюза](vpn-gateway-resetgw-classic.md).
 
-## <a name="resize"></a>Как изменить SKU шлюз (изменить размер шлюза)
+## <a name="how-to-change-a-gateway-sku-resize-a-gateway"></a><a name="resize"></a>Как изменить SKU шлюза (изменение размера шлюза)
 
 Пошаговые инструкции для изменения SKU шлюза см. в статье [Работа со SKU шлюза виртуальной сети (старые версии SKU)](vpn-gateway-about-vpn-gateway-settings.md#gwsku).
 
-## <a name="addconnect"></a>Как добавить дополнительное подключение к VPN-шлюзу
+## <a name="how-to-add-an-additional-connection-to-a-vpn-gateway"></a><a name="addconnect"></a>Как добавить дополнительное подключение к VPN-шлюзу
 
 Вы можете добавлять дополнительные подключения при условии, что ни один из диапазонов адресов не перекрывается между подключениями.
 
@@ -137,7 +137,7 @@ ms.locfileid: "75894992"
 3. Если вы используете подключение "сеть — сеть", но еще не создали шлюз для локальной сети, к которой подключаетесь, создайте этот шлюз.
 4. Укажите необходимый общий ключ и нажмите кнопку **ОК**, чтобы создать подключение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).
 * Сведения о принудительном туннелировании см. в статье [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](vpn-gateway-forced-tunneling-rm.md).

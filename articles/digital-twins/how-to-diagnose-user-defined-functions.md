@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/21/2020
 ms.custom: seodec18
 ms.openlocfilehash: 518383488aa878dab75aec7ad5da664332b62ad0
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76511643"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
@@ -163,7 +163,7 @@ GET YOUR_MANAGEMENT_API_URL/sensors/YOUR_SENSOR_IDENTIFIER/matchers?includes=Use
 
 Если от активированной пользовательской функции не поступают уведомления, убедитесь, что параметр типа в вашей топологии совпадает с типом используемого идентификатора.
 
-**Неправильный** пример:
+**Неправильный** Например
 
 ```JavaScript
 var customNotification = {
@@ -175,7 +175,7 @@ sendNotification(telemetry.SensorId, "Space", JSON.stringify(customNotification)
 
 Такой сценарий возникает, если используемый идентификатор ссылается на датчик, а для объекта топологии указан тип `Space`.
 
-**Правильный** пример:
+**Исправить** Например
 
 ```JavaScript
 var customNotification = {
@@ -212,7 +212,7 @@ function process(telemetry, executionContext) {
 
 1. **Нет прав**. Если у пользовательской функции нет назначения роли или достаточных разрешений для доступа к некоторым метаданным топологии, такая операция завершится ошибкой.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о включении [журналов и мониторинга](./how-to-configure-monitoring.md) для Azure Digital Twins.
 

@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: f355da7cd9c035b4ed0845bbd374a93bfb4a7350
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73904535"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-java"></a>Проверка подлинности между службами в Azure Data Lake Storage 1-го поколения с использованием Java
 
 > [!div class="op_single_selector"]
-> * [С использованием Java](data-lake-store-service-to-service-authenticate-java.md)
+> * [Использование Java](data-lake-store-service-to-service-authenticate-java.md)
 > * [Использование пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md)
 > * [Использование Python](data-lake-store-service-to-service-authenticate-python.md)
 > * [Использование REST API](data-lake-store-service-to-service-authenticate-rest-api.md)
@@ -25,9 +25,9 @@ ms.locfileid: "73904535"
 
 В этой статье описывается, как использовать пакет Java SDK для проверки подлинности между службами с помощью Azure Data Lake Storage 1-го поколения. Проверка подлинности пользователей в Data Lake Storage 1-го поколения с помощью пакета Java SDK не поддерживается.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
+* **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 * **Создайте веб-приложение Azure Active Directory**. Вам нужно выполнить инструкции по [аутентификации между службами в Data Lake Storage 1-го поколения с помощью Azure Active Directory](data-lake-store-service-to-service-authenticate-using-active-directory.md).
 
@@ -35,11 +35,11 @@ ms.locfileid: "73904535"
 
 * Интегрированная среда разработки, например [IntelliJ IDEA](https://www.jetbrains.com/idea/download/), [Eclipse](https://www.eclipse.org/downloads/) или аналогичная (необязательно).
 
-## <a name="service-to-service-authentication"></a>Взаимодействие между службами
+## <a name="service-to-service-authentication"></a>Аутентификация между службами
 
 1. Создайте проект Maven с использованием [архетипа mvn](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html) с помощью командной строки или интегрированной среды разработки (IDE). Инструкции по созданию проекта Java с использованием IntelliJ см. [здесь](https://www.jetbrains.com/help/idea/2016.1/creating-and-running-your-first-java-application.html). Инструкции по созданию проекта с использованием Eclipse см. [здесь](https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2FgettingStarted%2Fqs-3.htm).
 
-2. Добавьте приведенные ниже зависимости в файл Maven **pom.xml**. Добавьте следующий фрагмент перед тегом **\</project >** :
+2. Добавьте приведенные ниже зависимости в файл Maven **pom.xml**. Перед тегом ** \<>/Project** добавьте следующий фрагмент:
 
         <dependencies>
           <dependency>
@@ -77,7 +77,7 @@ ms.locfileid: "73904535"
 
 Пакет SDK для Data Lake Storage 1-го поколения предоставляет удобные методы управления маркерами безопасности, которые нужны для подключения к учетной записи Data Lake Storage 1-го поколения. Тем не менее пакет SDK не требует использования только этих методов. Можно использовать любые другие средства получения маркера, например [пакет SDK для Azure Active Directory](https://github.com/AzureAD/azure-activedirectory-library-for-java) или пользовательский код.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как использовать проверку подлинности пользователей, чтобы реализовать проверку подлинности в Data Lake Storage 1-го поколения с помощью пакета Java SDK. Дополнительные сведения об использовании пакета Java SDK для работы с Data Lake Storage 1-го поколения см. в следующих статьях.
 

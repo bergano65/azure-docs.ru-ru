@@ -13,11 +13,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 7188cb5774699fc6e31fc3b8c78068bb33c6f552
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74929010"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79281149"
 ---
 # <a name="repeatable-copy-in-azure-data-factory"></a>Повторяющаяся операция копирования в фабрике данных Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "74929010"
 > [!NOTE]
 > Приведенные ниже примеры предназначены для SQL Azure, но подходят для любого хранилища данных, поддерживающего прямоугольные наборы данных. Для хранилища данных может потребоваться настроить параметр **type** источника и свойство **query** (например, query вместо sqlReaderQuery).   
 
-Обычно при чтении из реляционных хранилищ нужно считывать только данные, соответствующие этому срезу. Сделать это можно с помощью системных переменных WindowStart и WindowEnd, доступных в фабрике данных Azure. Сведения о переменных и функциях в фабрике данных Azure см. в статье [Фабрика данных Azure — функции и системные переменные](data-factory-functions-variables.md). Пример: 
+Обычно при чтении из реляционных хранилищ нужно считывать только данные, соответствующие этому срезу. Сделать это можно с помощью системных переменных WindowStart и WindowEnd, доступных в фабрике данных Azure. Сведения о переменных и функциях в фабрике данных Azure см. в статье [Фабрика данных Azure — функции и системные переменные](data-factory-functions-variables.md). Пример. 
 
 ```json
 "source": {
@@ -110,7 +110,7 @@ ID    Product        Quantity    ModifiedDate
 
 Фабрика данных Azure будет использовать этот столбец для достижения повторяемости, не изменяя при этом схему таблицы. Способ применения этого подхода:
 
-1. Определите в целевой таблице SQL столбец двоичного типа (**binary (32)** ). Для этого столбца не должно быть никаких ограничений. Для нашего примера давайте назовем столбец AdfSliceIdentifier.
+1. Определите столбец типа **binary (32)** в целевой таблице SQL. Для этого столбца не должно быть никаких ограничений. Для нашего примера давайте назовем столбец AdfSliceIdentifier.
 
 
     Исходная таблица:
@@ -150,6 +150,6 @@ ID    Product        Quantity    ModifiedDate
 ## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи о соединителях, где есть полные примеры JSON: 
 
-- [база данных SQL Azure;](data-factory-azure-sql-connector.md)
+- [База данных SQL Azure](data-factory-azure-sql-connector.md)
 - [Хранилище данных SQL Azure](data-factory-azure-sql-data-warehouse-connector.md)
 - [SQL Server](data-factory-sqlserver-connector.md)

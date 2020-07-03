@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/03/2019
+ms.date: 04/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 1731c630cb98ac542ebcdc7aedf07f7bb63eaec0
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: 6821e3de3bfec891d98e9291a479cbb7537364ca
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77137463"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82733671"
 ---
-# <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Повышение уровня доступа для управления всеми подписками Azure и группами управления
+# <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Повышение прав доступа для управления всеми подписками Azure и группами управления
 
 Даже если вы являетесь глобальным администратором в Azure Active Directory (Azure AD), у вас может не быть права доступа ко всем подпискам и группам управления в вашем каталоге. В этой статье описываются способы, с помощью которых вы можете повысить права доступа для всех подписок и групп управления.
 
@@ -30,7 +30,7 @@ ms.locfileid: "77137463"
 
 ## <a name="why-would-you-need-to-elevate-your-access"></a>Для чего нужно повышение прав доступа
 
-Если вы являетесь глобальным администратором, иногда могут возникать ситуации, требующие выполнения следующих задач:
+Если вы являетесь глобальным администратором, могут возникнуть ситуации, когда необходимо выполнить следующие действия.
 
 - восстановление доступа к подписке Azure или группе управления, если пользователь потерял доступ;
 - предоставление другому пользователю или себе доступа к подписке Azure или группе управления;
@@ -39,9 +39,9 @@ ms.locfileid: "77137463"
 
 ## <a name="how-does-elevated-access-work"></a>Как работает повышение прав доступа?
 
-Azure AD и ресурсы Azure защищены независимо друг от друга. То есть назначения ролей Azure AD не предоставляют доступ к ресурсам Azure, а назначения ролей Azure не предоставляют доступ к Azure AD. Однако [глобальный администратор](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator-permissions) в Azure AD может назначить себе права доступа для управления всеми подписками Azure и группами управления в вашем каталоге. Эту возможность следует использовать, если у вас нет доступа к ресурсам в подписке Azure, например к виртуальным машинам или учетным записям хранения, и вы хотите использовать свои привилегии глобального администратора для получения доступа к этим ресурсам.
+Azure AD и ресурсы Azure защищены независимо друг от друга. То есть назначения ролей Azure AD не предоставляют доступ к ресурсам Azure, а назначения ролей Azure не предоставляют доступ к Azure AD. Однако, если вы являетесь [глобальным администратором](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator-permissions) в Azure AD, вы можете назначить себе доступ ко всем подпискам Azure и группам управления в каталоге. Эту возможность следует использовать, если у вас нет доступа к ресурсам в подписке Azure, например к виртуальным машинам или учетным записям хранения, и вы хотите использовать свои привилегии глобального администратора для получения доступа к этим ресурсам.
 
-При повышении прав доступа вам будет назначена роль [администратора доступа пользователей](built-in-roles.md#user-access-administrator) в Azure, охватывающая корень каталога (`/`). Это позволяет просматривать все ресурсы и назначать доступ в любой подписке или группе управления в каталоге. Назначения ролей администратора доступа пользователей можно удалить с помощью Azure PowerShell, Azure CLI или REST API.
+При повышении прав доступа вам будет назначена роль [администратора доступа пользователей](built-in-roles.md#user-access-administrator) в Azure, охватывающая корень каталога (`/`).Это позволяет просматривать все ресурсы и назначать доступ в любой подписке или группе управления в каталоге. Назначения ролей администратора доступа пользователей можно удалить с помощью Azure PowerShell, Azure CLI или REST API.
 
 После внесения изменений, которые необходимо выполнить на уровне корня, следует удалить этот повышенный уровень доступа.
 
@@ -55,9 +55,7 @@ Azure AD и ресурсы Azure защищены независимо друг 
 
 1. Войдите на [портал Azure](https://portal.azure.com) или [центр администрирования Azure Active Directory](https://aad.portal.azure.com) как глобальный администратор.
 
-1. Найдите и выберите **Azure Active Directory**.
-
-   ![Выбор Azure Active Directory — снимок экрана](./media/elevate-access-global-admin/search-for-azure-active-directory.png)
+1. Откройте **Azure Active Directory**.
 
 1. В разделе **Управление**выберите **свойства**.
 
@@ -86,7 +84,7 @@ Azure AD и ресурсы Azure защищены независимо друг 
 
 1. Выполните изменения, для которых требуются повышенные права доступа.
 
-    Сведения о том, как назначить роли, см. в статье, посвященной [управлению доступом с помощью RBAC и портала Azure](role-assignments-portal.md). Если вы используете Azure AD Privileged Identity Management (PIM), ознакомьтесь со статьей [Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями](../active-directory/privileged-identity-management/pim-resource-roles-discover-resources.md) и [Назначение ролей ресурсам Azure в PIM](../active-directory/privileged-identity-management/pim-resource-roles-assign-roles.md).
+    Сведения о назначении ролей см. [в статье Добавление и удаление назначений ролей Azure с помощью портал Azure](role-assignments-portal.md). Если вы используете Azure AD Privileged Identity Management (PIM), ознакомьтесь со статьей [Обнаружение ресурсов Azure и управление ими с помощью управления привилегированными пользователями](../active-directory/privileged-identity-management/pim-resource-roles-discover-resources.md) и [Назначение ролей ресурсам Azure в PIM](../active-directory/privileged-identity-management/pim-resource-roles-assign-roles.md).
 
 ### <a name="remove-elevated-access"></a>Удаление повышенного права доступа
 
@@ -186,7 +184,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
 
 Чтобы повысить права доступа глобального администратора с помощью REST API, выполните приведенные ниже основные действия.
 
-1. Используя функцию "ОСТАВШАЯся", вызовите `elevateAccess`, которая предоставляет роль администратора доступа пользователей в корневой области (`/`).
+1. Используя функцию RESTFUL, `elevateAccess`вызовите метод, который предоставляет пользователю роль администратора доступа пользователей в корневой области (`/`).
 
    ```http
    POST https://management.azure.com/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01
@@ -213,7 +211,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
 
 ### <a name="list-role-assignments-at-root-scope-"></a>Вывод списка назначений ролей в корневой области (/)
 
-Вы можете вывести список всех назначений ролей для пользователя в корневой области (`/`).
+Вы можете получить список всех назначений ролей для пользователя в корневой области (`/`).
 
 - Вызовите [GET roleAssignments](/rest/api/authorization/roleassignments/listforscope), где `{objectIdOfUser}` — идентификатор объекта пользователя, чьи назначения роли вы хотите получить.
 
@@ -233,7 +231,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
 
 ### <a name="remove-elevated-access"></a>Удаление повышенного права доступа
 
-При вызове `elevateAccess`вы создаете назначение ролей для себя, чтобы отозвать эти привилегии, чтобы удалить назначение роли администратора доступа пользователей в корневой области (`/`).
+При вызове `elevateAccess`вы создаете назначение ролей для себя, поэтому для отзыва этих привилегий необходимо удалить назначение роли администратора доступа пользователей в корневой области (`/`).
 
 1. Вызовите [GET roleDefinitions](/rest/api/authorization/roledefinitions/get) (где `roleName` — это администратор доступа пользователей), чтобы определить GUID имени роли этого администратора.
 
@@ -313,7 +311,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
     }
     ```
     
-    Опять же, сохраните идентификатор из параметра `name`, в данном случае 11111111-1111-1111-1111-111111111111.
+    Опять же, сохраните идентификатор из `name` параметра, в данном случае 11111111-1111-1111-1111-111111111111.
 
 1. Наконец, используйте ИД назначения роли, чтобы удалить назначение, добавленное `elevateAccess`:
 
@@ -321,7 +319,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
     DELETE https://management.azure.com/providers/Microsoft.Authorization/roleAssignments/11111111-1111-1111-1111-111111111111?api-version=2015-07-01
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- [Сведения о различных ролях в Azure](rbac-and-directory-admin-roles.md)
-- [Управление доступом к ресурсам Azure с помощью RBAC и REST API](role-assignments-rest.md)
+- [О разных ролях](rbac-and-directory-admin-roles.md)
+- [Добавление или удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)

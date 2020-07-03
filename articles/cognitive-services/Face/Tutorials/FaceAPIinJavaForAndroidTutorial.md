@@ -1,5 +1,5 @@
 ---
-title: Руководство. Обнаружение и выделение лиц на изображении с помощью пакета SDK для Android
+title: Руководство по Обнаружение и выделение лиц на изображении с помощью пакета SDK для Android
 titleSuffix: Azure Cognitive Services
 description: С помощью этого руководства вы создадите простое приложение Android, которое использует службу "Распознавание лиц" для определения и выделения лиц на изображении.
 services: cognitive-services
@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: tutorial
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 8d5bef141f83eedaa996bb63c1fb814aeb6af197
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: dd986a7557f468b939aefe1da825c9834618047f
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76165967"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402921"
 ---
-# <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении
+# <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство по Создание приложения Android для обнаружения и выделения лиц на изображении
 
-С помощью этого руководства вы создадите приложение для Android, которое использует службу "Распознавание лиц" Azure, через пакет SDK для Java, для определения лиц на изображении. Приложение отображает выбранное изображение и рисует рамку вокруг каждого распознанного лица.
+С помощью инструкций из этого руководства вы создадите приложение для Android, которое использует службу "Распознавание лиц" Azure (через пакет SDK для Java) для определения лиц на изображении. Приложение отображает выбранное изображение и рисует рамку вокруг каждого распознанного лица.
 
 В этом учебнике описаны следующие процедуры.
 
@@ -39,7 +39,7 @@ ms.locfileid: "76165967"
 
 - Ключ подписки на службу "Распознавание лиц". Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на службу "Распознавание лиц" и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
 - Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
-- Интерфейс [Android Studio](https://developer.android.com/studio/) с уровнем API не ниже 22 (требуется для клиентской библиотеки службы распознавания лиц).
+- [Android Studio](https://developer.android.com/studio/) с уровнем API 22 или более поздней версии.
 
 ## <a name="create-the-android-studio-project"></a>Создание проекта Android Studio
 
@@ -123,7 +123,7 @@ ms.locfileid: "76165967"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью этого руководства вы изучили базовый процесс использования пакета SDK Java для Распознавания лиц и создали приложение, в котором лица на изображениях отображаются и выделяются рамкой. Ознакомьтесь с дополнительными сведениями об определении лиц.
+Из этого руководства вы узнали, как использовать пакет SDK Java для создания приложения, которое определяет лица на изображениях и выделяет их рамкой. Ознакомьтесь с дополнительными сведениями об определении лиц.
 
 > [!div class="nextstepaction"]
 > [Как обнаруживать лица на изображении](../Face-API-How-to-Topics/HowtoDetectFacesinImage.md)

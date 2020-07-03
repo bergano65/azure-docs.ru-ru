@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: Zhchia
 ms.openlocfilehash: 4091e4fd544dbc6450bc14bd0e0731c4d3024592
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76992161"
 ---
 # <a name="tutorial-configure-zapier-for-automatic-user-provisioning"></a>Учебник. Настройка Zapier для автоматической подготовки пользователей
@@ -35,7 +35,7 @@ ms.locfileid: "76992161"
 > * Подготавливайте группы и членство в группах в Zapier
 > * Единый вход в Zapier (рекомендуется)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -89,11 +89,11 @@ ms.locfileid: "76992161"
 
    ![Ссылка на Zapier в списке "приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
    ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
    ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
@@ -105,29 +105,29 @@ ms.locfileid: "76992161"
 
    ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zapier**.
 
 9. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в Zapier в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в Zapier для операций обновления. Если вы решили изменить [соответствующий целевой атрибут](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes), необходимо убедиться, что API Zapier поддерживает фильтрацию пользователей на основе этого атрибута. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-   |Переменная|Тип|
+   |Переменная|Type|
    |---|---|
-   |userName|String|
-   |active|Логическое|
-   |externalId|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |emails[type eq "work"].value|String|
+   |userName|Строка|
+   |active|Логическое значение|
+   |externalId|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |emails[type eq "work"].value|Строка|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Zapier**.
 
 11. Проверьте атрибуты группы, которые синхронизированы из Azure AD в Zapier в разделе " **сопоставление атрибутов** ". Атрибуты, выбранные как свойства **Matching** , используются для сопоставления групп в Zapier для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    |Переменная|Тип|
+    |Переменная|Type|
     |---|---|
-    |displayName|String|
-    |members|Справочные материалы|
+    |displayName|Строка|
+    |members|Справочник|
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -157,6 +157,6 @@ ms.locfileid: "76992161"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

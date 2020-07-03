@@ -9,14 +9,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/08/2019
-ms.openlocfilehash: fd0e6d526f0c47304e7bf53f91d08f42b924ff23
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4f839de6e276727fa910f91eccc34601cf34f85c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75440380"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81418020"
 ---
 # <a name="switch-activity-in-azure-data-factory"></a>Действие переключения в фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Действие Switch предоставляет те же функциональные возможности, что и оператор switch, предоставляемый в языках программирования. Он оценивает набор действий, соответствующих условию, соответствующему вычислению условия.
 
@@ -65,10 +67,10 @@ ms.locfileid: "75440380"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description | Допустимые значения | Обязательно для заполнения
+Свойство | Описание | Допустимые значения | Обязательный
 -------- | ----------- | -------------- | --------
-name | Имя действия переключения. | String | Да
-type | Необходимо задать *параметр** | String | Да
+name | Имя действия переключения. | Строка | Да
+type | Необходимо задать *параметр** | Строка | Да
 expression | Выражение, результатом вычисления которого должно быть строковое значение | Выражение с типом результата строка | Да
 cases | Набор вариантов, содержащих значение и набор действий, выполняемых, когда значение соответствует вычислению выражения. Необходимо указать хотя бы один вариант. Максимальное ограничение составляет 25 вариантов. | Массив объектов Case | Да
 дефаултактивитиес | Набор действий, выполняемых, если оценка выражения не удовлетворена. | Массив действий | Да
@@ -327,13 +329,13 @@ Write-Host "\nActivity 'Error' section:" -foregroundcolor "Yellow"
 $result.Error -join "`r`n"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие условия If](control-flow-if-condition-activity.md)
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
-- [Действие ForEach](control-flow-for-each-activity.md)
+- [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Веб-действие](control-flow-web-activity.md)

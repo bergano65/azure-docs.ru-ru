@@ -1,8 +1,9 @@
 ---
 title: доступу к большим двоичным объектам хранилища с помощью личного домена Azure CDN по протоколу HTTPS
+description: Узнайте, как добавить личный домен Azure CDN и включить в нем протокол HTTPS для пользовательской конечной точки хранилища BLOB-объектов.
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: ''
@@ -12,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 06/15/2018
-ms.author: magattus
+ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: e6415c9e8e0ab8743042891a2d0d422dffe37bdb
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 5b6fe2b2704f101a7775b7eb700375105b0a9eca
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74279114"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81259890"
 ---
 # <a name="tutorial-access-storage-blobs-using-an-azure-cdn-custom-domain-over-https"></a>Руководство по доступу к большим двоичным объектам хранилища с помощью личного домена Azure CDN по протоколу HTTPS
 
@@ -58,7 +59,7 @@ Azure CDN игнорирует ограничения, добавленные в
 
 Например, ваша учетная запись хранения размещена в США и доступ к ней осуществляется через Azure CDN. Если кто-то в Европе пытается получить доступ к одному из больших двоичных объектов в этой учетной записи хранения через Azure CDN, то для этого большого двоичного объекта Azure CDN сначала проверяет сервер POP, который является ближайшим к Европе. Если он найден, Azure CDN обратится к этой копии большого двоичного объекта и использует расценки CDN, так как доступ к нему осуществляется через Azure CDN. Если он не найден, Azure CDN скопирует большой двоичный объект на POP, что повлечет за собой начисление платы за транзакции и исходящий трафик (как указано в расценках хранилища BLOB-объектов), а затем обратится к файлу на сервере POP, за что будет начислена плата по расценкам Azure CDN.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 [Руководство. Настройка правил кэширования Azure CDN](cdn-caching-rules-tutorial.md)
 
 

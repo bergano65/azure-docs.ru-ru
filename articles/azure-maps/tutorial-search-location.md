@@ -1,22 +1,22 @@
 ---
-title: Руководство. Поиск ближайших объектов на карте | Microsoft Azure Maps
+title: Руководство по Поиск ближайших объектов на карте | Microsoft Azure Maps
 description: Из этого руководства вы узнаете, как найти точки интереса на карте с помощью Microsoft Azure Maps.
-author: walsehgal
-ms.author: v-musehg
+author: philmea
+ms.author: philmea
 ms.date: 1/15/2020
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 9b390806e678c7900b166a07316d7f8ac32a5153
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 0b0cb92cd6b4918e28e143178a5cdbbbb19ac9af
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76716186"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80333631"
 ---
-# <a name="tutorial-search-nearby-points-of-interest-using-azure-maps"></a>Руководство. Поиск ближайшей точки интереса с помощью службы "Карты Azure"
+# <a name="tutorial-search-nearby-points-of-interest-using-azure-maps"></a>Руководство по Поиск ближайшей точки интереса с помощью службы "Карты Azure"
 
 В этом руководстве показано, как настроить учетную запись службы "Карты Azure", а затем использовать API службы "Карты Azure" для поиска точки интереса. В этом руководстве описано следующее:
 

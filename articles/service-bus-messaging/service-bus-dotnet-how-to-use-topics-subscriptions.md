@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/27/2019
 ms.author: aschhab
 ms.openlocfilehash: 3fba1d62b9347303d630c80733c4fbfa279b5296
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74560097"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Начало работы с разделами служебной шины
@@ -30,7 +30,7 @@ ms.locfileid: "74560097"
 1. Написание консольного приложения .NET Core для отправки набора сообщений в раздел.
 2. Написание консольного приложения .NET Core для получения этих сообщений из подписки.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 2. Выполните действия, описанные в [кратком руководстве: использование портал Azure для создания раздела служебной шины и подписок на раздел](service-bus-quickstart-topics-subscriptions-portal.md) для выполнения следующих задач.
@@ -45,9 +45,9 @@ ms.locfileid: "74560097"
 
 Для отправки сообщений в раздел создайте консольное приложение C# с помощью Visual Studio.
 
-### <a name="create-a-console-application"></a>Создание консольного приложение
+### <a name="create-a-console-application"></a>Создание консольного приложения
 
-Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)** .
+Откройте Visual Studio и создайте проект **Консольное приложение (.NET Core)**.
 
 ### <a name="add-the-service-bus-nuget-package"></a>Получение пакета NuGet для служебной шины
 
@@ -75,7 +75,7 @@ ms.locfileid: "74560097"
     static ITopicClient topicClient;
     ``` 
 
-3. Замените метод `Main()` следующим **асинхронным** `Main` методом, который асинхронно отправляет сообщения с помощью метода сендмессажесасинк, который будет добавлен на следующем шаге. 
+3. Замените `Main()` метод следующим **асинхронным** `Main` методом, который асинхронно отправляет сообщения с помощью метода сендмессажесасинк, который будет добавлен на следующем шаге. 
 
     ```csharp
     public static async Task Main(string[] args)
@@ -210,7 +210,7 @@ ms.locfileid: "74560097"
     static ISubscriptionClient subscriptionClient;
     ```
 
-3. Замените метод `Main()` следующим **асинхронным** методом `Main`. Он вызывает метод `RegisterOnMessageHandlerAndReceiveMessages()`, который будет добавлен на следующем шаге. 
+3. Замените `Main()` метод следующим **асинхронным** `Main` методом. Он вызывает `RegisterOnMessageHandlerAndReceiveMessages()` метод, который будет добавлен на следующем шаге. 
 
     ```csharp
     public static async Task Main(string[] args)

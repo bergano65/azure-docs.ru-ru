@@ -7,28 +7,28 @@ ms.date: 10/09/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 66401678f03ee0043345208eb32560f589829226
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: c7598aafea85e91f28233645d3d71bf85bf45425
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76510317"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82130977"
 ---
-# <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-projects"></a>Создание конвейера CI/CD для IoT Edge с Azure DevOps Projects
+# <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-projects"></a>Создание конвейера CI/CD для IoT Edge с помощью Azure DevOps Projects
 
 Настройте непрерывную интеграцию (CI) и непрерывную доставку (CD) для приложения IoT Edge с помощью DevOps Projects. DevOps Projects упрощает начальную настройку конвейера сборки и выпуска в Azure Pipelines.
 
-Если у вас нет активной подписки Azure, перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
+Если у вас еще нет подписки Azure, перед началом работы [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 DevOps Projects создает конвейер CI/CD в Azure DevOps. Вы можете создать новую организацию Azure DevOps или использовать существующую. DevOps Projects также создает ресурсы Azure в требуемой подписке Azure.
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Войдите в [портал Microsoft Azure](https://portal.azure.com).
 
 1. Выберите **Создать ресурс** в области слева и выполните поиск по запросу **DevOps Projects**.  
 
-1. Нажмите кнопку **создания**.
+1. Щелкните **Создать**.
 
 ## <a name="create-a-new-application-pipeline"></a>Конвейер создания приложения
 
@@ -126,10 +126,10 @@ DevOps Projects создает репозиторий Git для проекта 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Ненужную Службу приложений Azure и связанные ресурсы можно удалить. Для этого воспользуйтесь функцией **Удалить** на панели мониторинга DevOps Projects.
+Ненужную Службу приложений Azure и связанные ресурсы можно удалить. Используйте функцию **удаления** на панели мониторинга DevOps Projects.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о задачах Azure IoT Edge в Azure DevOps см. в статье [Непрерывная интеграция и непрерывное развертывание в Azure IoT Edge](how-to-ci-cd.md).
 * Основные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale](module-deployment-monitoring.md) (Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе).
-* Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md), чтобы узнать, как создавать, обновлять или удалять развертывание.
+* Ознакомьтесь со статьей [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-at-scale.md), чтобы узнать, как создавать, обновлять или удалять развертывание.

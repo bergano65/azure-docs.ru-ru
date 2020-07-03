@@ -1,20 +1,20 @@
 ---
 title: Получить ответ по умолчанию — QnA Maker
 description: Ответ по умолчанию возвращается в случае отсутствия соответствующего вопроса. Может потребоваться изменить ответ по умолчанию из стандартного ответа по умолчанию.
-ms.topic: conceptual
-ms.date: 01/10/2020
-ms.openlocfilehash: fae5c38fd64435a3fae56862bad04e000916e88b
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.topic: how-to
+ms.date: 04/22/2020
+ms.openlocfilehash: db5a79ec612a73066ac37365a1815841fafb3862
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843281"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82097104"
 ---
-# <a name="set-default-answer-for-a-knowledge-base"></a>Задать ответ по умолчанию для базы знаний
+# <a name="change-default-answer-for-a-qna-maker-resource"></a>Изменить ответ по умолчанию для ресурса QnA Maker
 
 Ответ по умолчанию возвращается в случае отсутствия соответствующего вопроса. Может потребоваться изменить ответ по умолчанию из стандартного ответа по умолчанию.
 
-## <a name="change-default-answer"></a>Изменение ответа по умолчанию
+## <a name="change-default-answer-in-the-azure-portal"></a>Изменить ответ по умолчанию в портал Azure
 
 1. Перейдите на [портал Azure](https://portal.azure.com) и перейдите к группе ресурсов, которая представляет созданный вами сервис QnA Maker.
 
@@ -22,7 +22,7 @@ ms.locfileid: "76843281"
 
     ![Доступ к службе приложений для QnA Maker на портале Azure](../media/qnamaker-concepts-confidencescore/set-default-response.png)
 
-3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. Выберите команду **Сохранить**.
+3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. Нажмите кнопку **Сохранить**.
 
     ![Выбор элемента "Параметры приложения" и изменение значения в поле DefaultAnswer для QnA Maker](../media/qnamaker-concepts-confidencescore/change-response.png)
 
@@ -30,6 +30,6 @@ ms.locfileid: "76843281"
 
     ![Перезапуск службы приложений QnA Maker после изменения значения в поле DefaultAnswer](../media/qnamaker-faq/qnamaker-appservice-restart.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* [Создание программы-робота с QnA Maker и LUIS](../tutorials/integrate-qnamaker-luis.md)
+* [Создание базы знаний](../How-to/manage-knowledge-bases.md)

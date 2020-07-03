@@ -3,12 +3,12 @@ title: Определение причин несоответствия треб
 description: Если ресурс не соответствует требованиям, существует множество возможных причин. Узнайте, что привело к несоответствию.
 ms.date: 04/26/2019
 ms.topic: how-to
-ms.openlocfilehash: c931831ddf3cc727b9861e75969eac3bf00c9e45
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 395c70309ceca6e38f9f62522d80fb588821b886
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75972825"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82182588"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -16,7 +16,7 @@ ms.locfileid: "75972825"
 
 > [!div class="checklist"]
 > - [Сведения о соответствии](#compliance-details)
-> - [Журнал изменений (Предварительная версия)](#change-history)
+> - [Журнал изменений (предварительная версия)](#change-history)
 
 ## <a name="compliance-details"></a>Сведения о соответствии
 
@@ -37,11 +37,11 @@ ms.locfileid: "75972825"
 
 1. На вкладке **соответствие ресурсов** на странице **соответствие политике** щелкните правой кнопкой мыши или выберите многоточие ресурса в **состоянии соответствия** , которое не _соответствует требованиям_. Затем выберите **Просмотреть сведения о соответствии**.
 
-   ![Просмотр параметра сведений о соответствии](../media/determine-non-compliance/view-compliance-details.png)
+   :::image type="content" source="../media/determine-non-compliance/view-compliance-details.png" alt-text="Просмотр параметра сведений о соответствии" border="false":::
 
 1. В области **сведения о соответствии** отображаются сведения от последней оценки ресурса до текущего назначения политики. В этом примере для поля **Microsoft. SQL/Servers/Version** обнаружено значение _12,0_ , а для определения политики — значение _14,0_. Если ресурс не соответствует нескольким причинам, каждый из них отображается на этой панели.
 
-   ![Область сведений о соответствии и причины несоответствия](../media/determine-non-compliance/compliance-details-pane.png)
+   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane.png" alt-text="Область сведений о соответствии и причины несоответствия" border="false":::
 
    Для определения политики **помощью параметров auditifnotexists** или **deployIfNotExists** сведения включают свойство **Details. Type** и все необязательные свойства. Список см. в разделе [Свойства помощью параметров auditifnotexists](../concepts/effects.md#auditifnotexists-properties) и [Свойства deployIfNotExists](../concepts/effects.md#deployifnotexists-properties). **Последний оцененный ресурс** — это связанный ресурс из раздела **Details** определения.
 
@@ -70,7 +70,7 @@ ms.locfileid: "75972825"
    }
    ```
 
-   ![Область сведений о соответствии — * Ифнотексистс](../media/determine-non-compliance/compliance-details-pane-existence.png)
+   :::image type="content" source="../media/determine-non-compliance/compliance-details-pane-existence.png" alt-text="Область сведений о соответствии — * Ифнотексистс" border="false":::
 
 > [!NOTE]
 > Для защиты данных, если значение свойства является _секретом_ , текущее значение отображает звездочки.
@@ -117,11 +117,11 @@ ms.locfileid: "75972825"
 
 В области **сведения о соответствии** щелкните ссылку **последний оцененный ресурс**.
 
-   ![Просмотреть сведения об определении помощью параметров auditifnotexists](../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png)
+:::image type="content" source="../media/determine-non-compliance/guestconfig-auditifnotexists-compliance.png" alt-text="Просмотреть сведения об определении помощью параметров auditifnotexists" border="false":::
 
 На странице **назначения гостей** отображаются все доступные сведения о соответствии. Каждая строка в представлении представляет собой вычисление, выполненное внутри компьютера. В столбце **Причина** отображается фраза, описывающая, почему назначение гостя не _соответствует требованиям_ . Например, при аудите политик паролей в столбце **Причина** будет отображаться текст, включая текущее значение для каждого параметра.
 
-![Просмотр сведений о соответствии](../media/determine-non-compliance/guestconfig-compliance-details.png)
+:::image type="content" source="../media/determine-non-compliance/guestconfig-compliance-details.png" alt-text="Просмотр сведений о соответствии" border="false":::
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -188,7 +188,7 @@ Audit that an application is installed inside Windows VMs.                Compli
 Audit that an application is installed inside Windows VMs                 NonCompliant                       02/09/2019 09:00:20 AM 02/09/2019 09:00:23 AM VM01  ../15ze1...
 ```
 
-## <a name="a-namechange-historychange-history-preview"></a>Журнал изменений <a name="change-history"/>(Предварительная версия)
+## <a name="change-history-preview"></a><a name="change-history"/>Журнал изменений (предварительная версия)
 
 В рамках новой **общедоступной предварительной версии**История изменений за последние 14 дней доступна для всех ресурсов Azure, поддерживающих [полное удаление режима](../../../azure-resource-manager/templates/complete-mode-deletion.md). Журнал изменений содержит подробные сведения о том, когда было обнаружено изменение и _отличия между визуальными элементами_ для каждого изменения. Обнаружение изменений активируется при добавлении, удалении или изменении свойств диспетчер ресурсов.
 
@@ -198,13 +198,13 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 1. На вкладке **соответствие ресурсов** на странице **соответствие политике** выберите ресурс.
 
-1. На странице **Соответствие ресурсов** выберите вкладку **Журнал изменений (предварительная версия)** . После этого отобразится список обнаруженных изменений (при наличии).
+1. На странице **Соответствие ресурсов** выберите вкладку **Журнал изменений (предварительная версия)**. После этого отобразится список обнаруженных изменений (при наличии).
 
-   ![Вкладка "журнал изменений политики Azure" на странице "соответствие ресурсов"](../media/determine-non-compliance/change-history-tab.png)
+   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Вкладка "журнал изменений политики Azure" на странице "соответствие ресурсов"" border="false":::
 
 1. Выберите одно из обнаруженных изменений. _Визуальная разница_ для ресурса представлена на странице **Журнал изменений** .
 
-   ![Страница "журнал изменений" политики Azure — Визуальная разница на странице журнала изменений](../media/determine-non-compliance/change-history-visual-diff.png)
+   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Страница "журнал изменений" политики Azure — Визуальная разница на странице журнала изменений" border="false":::
 
 _Отличия между визуальными элементами_ позволяют обнаружить изменения ресурса. Обнаруженные изменения могут не быть связаны с текущим состоянием соответствия ресурса.
 
@@ -218,4 +218,4 @@ _Отличия между визуальными элементами_ позв
 - Узнайте, как [программно создавать политики](programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](get-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).
-- Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).
+- Узнайте, что такое группа управления, и [Организуйте ресурсы с помощью групп управления Azure](../../management-groups/overview.md).

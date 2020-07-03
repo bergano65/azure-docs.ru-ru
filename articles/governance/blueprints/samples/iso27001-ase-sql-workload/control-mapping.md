@@ -4,10 +4,10 @@ description: 'Сопоставление элементов управления
 ms.date: 01/13/2020
 ms.topic: sample
 ms.openlocfilehash: bc370170374654bf8bc9ae9ed3f1b545f4db8cba
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75920706"
 ---
 # <a name="control-mapping-of-the-iso-27001-asesql-workload-blueprint-sample"></a>Сопоставление элементов управления примера схемы "SQL ISO 27001: рабочая нагрузка Среды службы приложений или Базы данных SQL"

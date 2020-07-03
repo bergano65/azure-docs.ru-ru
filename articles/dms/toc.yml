@@ -26,15 +26,17 @@
       href: tutorial-mysql-azure-mysql-online.md
     - name: Миграция из MySQL RDS в Базу данных Azure для MySQL через Интернет
       href: tutorial-rds-mysql-server-azure-db-for-mysql-online.md
-    - name: Миграция из PostgreSQL в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
+    - name: Миграция из PostgreSQL в Базу данных Azure для PostgreSQL в режиме подключения к сети через портал
+      href: tutorial-postgresql-azure-postgresql-online-portal.md
+    - name: Миграция из PostgreSQL в Базу данных Azure для PostgreSQL в режиме подключения к сети
       href: tutorial-postgresql-azure-postgresql-online.md
-    - name: Миграция из RDS PostgreSQL в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
+    - name: Миграция из PostgreSQL RDS в Базу данных Azure для PostgreSQL через Интернет
       href: tutorial-rds-postgresql-server-azure-db-for-postgresql-online.md
     - name: Миграция с MongoDB в API Mongo для Azure Cosmos DB в автономном режиме
       href: tutorial-mongodb-cosmos-db.md
     - name: Миграция с MongoDB в API Mongo для Azure Cosmos DB через Интернет
       href: tutorial-mongodb-cosmos-db-online.md
-    - name: Миграция из Oracle в Базу данных Azure для PostgreSQL (отдельный сервер) по сети
+    - name: Миграция из Oracle в Базу данных Azure для PostgreSQL (отдельный сервер) в режиме подключения к сети
       href: tutorial-oracle-azure-postgresql-online.md
 - name: Практические руководства
   items:
@@ -44,7 +46,7 @@
       href: howto-sql-server-to-azure-sql-mi-powershell.md
     - name: Мониторинг действия миграции
       href: how-to-monitor-migration-activity.md
-    - name: Повторное развертывание пакетов SSIS в отдельной базе данных в службе "База данных SQL Azure"
+    - name: Повторное развертывание пакетов SSIS в отдельной базе данных Базы данных SQL Azure
       href: how-to-migrate-ssis-packages.md
     - name: Повторное развертывание пакетов SSIS в управляемом экземпляре Базы данных SQL Azure
       href: how-to-migrate-ssis-packages-managed-instance.md
@@ -71,10 +73,12 @@
           href: known-issues-azure-sql-db-managed-instance-online.md
         - name: Известные проблемы при миграции в Базу данных Azure для MySQL через Интернет
           href: known-issues-azure-mysql-online.md
-        - name: Известные проблемы с миграцией из PostgreSQL в Базу данных Azure для PostgreSQL (на отдельный сервер) по сети
+        - name: Известные проблемы с миграцией из PostgreSQL в Базу данных Azure для PostgreSQL по сети
           href: known-issues-azure-postgresql-online.md
         - name: Известные проблемы с миграцией из Oracle в Базу данных Azure для PostgreSQL (на отдельный сервер) по сети
           href: known-issues-oracle-azure-postgresql-online.md
+        - name: 'Известные проблемы: миграция из MongoDB в API для MongoDB Azure Cosmos DB'
+          href: known-issues-mongo-cosmos-db.md
         - name: Известные проблемы с использованием гибридного режима
           href: known-issues-dms-hybrid-mode.md
     - name: Видео
@@ -85,9 +89,9 @@
           href: 'https://azure.microsoft.com/resources/videos/overview-of-migration-and-recommended-tools-services/'
         - name: Выполнение предварительных требований и создание экземпляра DMS
           href: 'https://azure.microsoft.com/resources/videos/how-to-address-prerequisites-and-create-a-dms-instance/'
-        - name: "Миграция из SQL Server\_2008 в Управляемый экземпляр Базы данных SQL Azure"
+        - name: "Миграция из SQL Server\_2008 в управляемый экземпляр Базы данных SQL Azure"
           href: 'https://azure.microsoft.com/resources/videos/how-to-migrate-sql-server-2008-or-r2-to-azure-sqldbmi/'
-        - name: Миграция из PostgreSQL в Базу данных Azure для PostgreSQL
+        - name: Миграция из PostgreSQL в Б азу данных Azure для PostgreSQL
           href: 'https://azure.microsoft.com/resources/videos/how-to-migrate-postgresql-to-azure-postgresql-online-dms-and-cli/'
         - name: Мониторинг миграции через Интернет и выполнение прямой миграции
           href: 'https://azure.microsoft.com/resources/videos/how-to-monitor-online-migration-and-perform-cutover/'

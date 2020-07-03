@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/16/2020
 ms.author: spelluru
 ms.openlocfilehash: e83bc4e77a44f20d55fa3b56bc81aefd1d25bb03
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76168823"
 ---
 # <a name="deploy-nested-azure-resource-manager-templates-for-testing-environments"></a>Развертывание вложенных шаблонов Azure Resource Manager для тестовых сред
@@ -66,7 +66,7 @@ ms.locfileid: "76168823"
 "outputs": {}
 ```
 
-Папка в репозитории, содержащей этот шаблон, имеет вложенную папку `nestedtemplates` с файлами **нестоне. JSON** и **нестоне. parameters. JSON**. В файле **azuredeploy. JSON**URI для шаблона строится с помощью расположения артефактов, вложенной папки шаблона, имени файла вложенного шаблона. Аналогичным образом URI для параметров создается с помощью расположения артефактов, вложенной папки шаблонов и файла параметров для вложенного шаблона. 
+Папка в репозитории, содержащей этот шаблон, имеет вложенную `nestedtemplates` папку с файлами **нестоне. JSON** и **нестоне. parameters. JSON**. В файле **azuredeploy. JSON**URI для шаблона строится с помощью расположения артефактов, вложенной папки шаблона, имени файла вложенного шаблона. Аналогичным образом URI для параметров создается с помощью расположения артефактов, вложенной папки шаблонов и файла параметров для вложенного шаблона. 
 
 Ниже приведен образ той же структуры проекта в Visual Studio: 
 

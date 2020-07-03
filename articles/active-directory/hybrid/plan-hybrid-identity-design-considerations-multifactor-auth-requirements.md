@@ -1,6 +1,6 @@
 ---
 title: 'Проектирование гибридных удостоверений: требования к многофакторной проверке подлинности в Azure | Документация Майкрософт'
-description: Используя управление условным доступом Azure Active Directory проверяет определенные условия, которые вы можете выбрать при проверке подлинности пользователя и перед предоставлением ему доступа к приложению. Если эти условия выполняются, пользователь проходит проверку подлинности, и ему дается доступ к приложению.
+description: С помощью контроля условного доступа Azure Active Directory проверяет конкретные условия, которые вы выбираете при проверке подлинности пользователя и перед предоставлением доступа к приложению. Если эти условия выполняются, пользователь проходит проверку подлинности, и ему дается доступ к приложению.
 documentationcenter: ''
 services: active-directory
 author: billmath
@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4743195fc79d43571ec79a13b8518edc7e81379b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "67109294"
 ---
 # <a name="determine-multi-factor-authentication-requirements-for-your-hybrid-identity-solution"></a>Определение требований к многофакторной проверке подлинности для решения гибридной идентификации
@@ -55,7 +55,7 @@ ms.locfileid: "67109294"
 * Нужно ли вашей организации включить многофакторную проверку подлинности для всех допустимых пользователей этих приложений или только для администраторов?
 * Должна ли многофакторная проверка подлинности использоваться всегда или только при входе пользователей из-за пределов корпоративной сети?
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Определение стратегии внедрения гибридной идентификации](plan-hybrid-identity-design-considerations-identity-adoption-strategy.md)
 
 ## <a name="see-also"></a>См. также

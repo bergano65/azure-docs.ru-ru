@@ -10,10 +10,10 @@ ms.topic: include
 ms.date: 01/10/2020
 ms.custom: include file
 ms.openlocfilehash: ee105969282dd41b4b56abb50e06f9fa219388ae
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75901772"
 ---
 В этой статье предполагается, что вы уже знакомы с проверкой подлинности в API управления цифровыми двойников Azure.

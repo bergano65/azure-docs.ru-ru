@@ -3,7 +3,6 @@ title: Изменения, вносимые в проект MVC при подк�
 description: Описывает, что происходит с проектом MVC при подключении к приложению Azure AD с помощью подключенных служб Visual Studio
 author: ghogen
 manager: jillfra
-ms.assetid: 8b24adde-547e-4ffe-824a-2029ba210216
 ms.prod: visual-studio-windows
 ms.technology: vs-azure
 ms.workload: azure-vs
@@ -11,26 +10,26 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ghogen
 ms.custom: aaddev, vs-azure
-ms.openlocfilehash: 0f426e7a87204acd4be6529f7dd11a954f23491a
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: d42d905bf35c015213e76bc50c4bc339a5c4a062
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77159477"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80886115"
 ---
 # <a name="what-happened-to-my-mvc-project-visual-studio-azure-active-directory-connected-service"></a>Что произошло с моим проектом MVC в подключенной службе Visual Studio Azure Active Directory?
 
 > [!div class="op_single_selector"]
 > - [Начало работы](vs-active-directory-dotnet-getting-started.md)
-> - [Что произошло?](vs-active-directory-dotnet-what-happened.md)
+> - [Что случилось](vs-active-directory-dotnet-what-happened.md)
 
-В этой статье описаны конкретные изменения, которые вносятся в проекты ASP.NET MVC при добавлении [подключенной службы Azure Active Directory через Visual Studio](vs-active-directory-add-connected-service.md).
+В этой статье указаны точные изменения, внесенные в проект ASP.NET MVC при добавлении [подключенной службы Azure Active Directory с помощью Visual Studio](vs-active-directory-add-connected-service.md).
 
 Сведения о работе с подключенной службой см. в статье [Начало работы с Azure Active Directory и подключенными службами Visual Studio (проекты WebApi)](vs-active-directory-dotnet-getting-started.md).
 
 ## <a name="added-references"></a>Добавленные ссылки
 
-Это изменение влияет на файлы проекта (ссылки \*.NET) и `packages.config` (ссылки NuGet).
+Влияет на файл проекта (*. NET References) `packages.config` и (ссылки NuGet).
 
 | Тип | Справочник |
 | --- | --- |
@@ -159,9 +158,9 @@ ms.locfileid: "77159477"
 - Создано приложение Azure AD в домене, который вы выбрали при добавлении подключенной службы.
 - В приложение добавлены разрешения на **чтение данных каталога**, если вы выбрали соответствующий параметр.
 
-[Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
+Дополнительные [сведения о Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
+- [Сценарии проверки подлинности для Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

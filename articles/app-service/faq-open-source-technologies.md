@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 33590f9fc7e6c4d46123cbc7088086a3197d52ae
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 3a7a00e59db677e156037c007537ab1b54c1cfaf
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74672427"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82159972"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
 
@@ -26,11 +26,11 @@ ms.locfileid: "74672427"
 
 Чтобы включить ведение журнала PHP, сделайте следующее:
 
-1. Перейдите на [веб-сайт Kudu](https://*yourwebsitename*.scm.azurewebsites.net).
-2. В верхнем меню выберите **Консоль отладки** > **CMD**.
+1. Войдите на **веб-сайт KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net`).
+2. В верхнем меню выберите **консоль отладки** > **cmd**.
 3. Выберите папку **Site**.
 4. Выберите папку **wwwroot**.
-5. Щелкните значок **+** , а затем выберите **Создать файл**.
+5. Щелкните **+** значок, а затем выберите **создать файл**.
 6. Задайте файлу имя **.user.ini**.
 7. Щелкните значок карандаша рядом с файлом **.user.ini**.
 8. Добавьте в файл следующий код: `log_errors=on`.
@@ -56,7 +56,7 @@ ms.locfileid: "74672427"
   1. Откройте портал Azure и перейдите к своему веб-приложению.
   2. В колонке **Параметры** щелкните **Параметры приложения**.
   3. В разделе **Параметры приложения** добавьте WEBSITE_NODE_DEFAULT_VERSION в качестве ключа и укажите необходимую версию Node.js в качестве значения.
-  4. Откройте [консоль Kudu](https://*yourwebsitename*.scm.azurewebsites.net).
+  4. Перейдите в **консоль KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net`).
   5. Чтобы проверить версию Node.js, введите следующую команду:  
      ```
      node -v
@@ -91,7 +91,7 @@ ms.locfileid: "74672427"
 
 ## <a name="how-do-i-debug-a-nodejs-app-thats-hosted-in-app-service"></a>Как отлаживать приложение Node.js, размещенное в службе приложений?
 
-1.  Откройте [консоль Kudu](https://*yourwebsitename*.scm.azurewebsites.net/DebugConsole).
+1.  Перейдите в **консоль KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net/DebugConsole`).
 2.  Перейдите к папке журналов приложений (D:\home\LogFiles\Application).
 3.  Проверьте содержимое файла logging_errors.txt.
 
@@ -138,7 +138,7 @@ The web application[ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but
 
 1. Удалите файл sqljdbc*.jar из папки app/lib.
 2. При использовании пользовательского веб-сервера Tomcat или веб-сервера Tomcat из Microsoft Azure Marketplace скопируйте этот JAR-файл в папку lib.
-3. При включении Java на портале Azure (выберите **Java 1.8** > **Tomcat server** (Сервер Tomcat)) скопируйте файл sqljdbc.* jar в папку, связанную с приложением. Затем добавьте в файл web.config следующий параметр classpath:
+3. Если вы включаете Java из портал Azure (выберите **Java 1,8** > **Tomcat Server**), скопируйте JAR-файл sqljdbc. * в папку, которая находится параллельно с приложением. Затем добавьте в файл web.config следующий параметр classpath:
 
     ```xml
     <httpPlatform>
@@ -171,7 +171,7 @@ The process cannot access the file because it is being used by another process.
 
 Файл журнала для развертываний Microsoft Azure Marketplace и пользовательских развертываний расположен в папке D:\home\site\wwwroot\bin\jetty-distribution-9.1.2.v20140210\logs. Обратите внимание, что расположение папки зависит от используемой версии Jetty. Например, приведенный выше путь предназначен для Jetty версии 9.1.2. Найдите файл jetty_*ГГГГ_ММ_ДД*.stderrout.log.
 
-Файл журнала для развертываний из меню "Параметры приложения" портала находится в папке D:\home\LogFiles. Найдите файл jetty_*ГГГГ_ММ_ДД*.stderrout.log.
+Файл журнала для развертываний из меню "Параметры приложения" портала находится в папке D:\home\LogFiles. Найдите jetty_*YYYY_MM_DD*. stderr. log
 
 ## <a name="can-i-send-email-from-my-azure-web-app"></a>Можно ли отправлять электронные сообщения из веб-приложения Azure?
 

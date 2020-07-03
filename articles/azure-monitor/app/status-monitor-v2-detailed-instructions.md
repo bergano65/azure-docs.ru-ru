@@ -1,18 +1,16 @@
 ---
 title: Подробные инструкции по агенту Application Insights Azure | Документация Майкрософт
 description: Подробные инструкции по началу работы с агентом Application Insights. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 3b053b7876494a3b2e6f392850c0323b56b1c3ec
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 8f6134e8f8fdb9af3f578afaf0670c32a3896e01
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74230270"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81766861"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Агент Application Insights (прежнее название — монитор состояния v2): подробные инструкции
 
@@ -52,7 +50,7 @@ https:/go.microsoft.com/fwlink/?LinkID=135170.
 
 ## <a name="prerequisites-for-powershell"></a>Предварительные требования для PowerShell
 
-Произведите аудит экземпляра PowerShell, выполнив команду `$PSVersionTable`.
+Произведите аудит экземпляра PowerShell, выполнив `$PSVersionTable` команду.
 Эта команда создает следующие выходные данные:
 
 
@@ -85,7 +83,7 @@ SerializationVersion           1.1.0.1
     - Описание. Этот поставщик необходим для взаимодействия с репозиториями на основе NuGet, например коллекция PowerShell.
     - Ссылка: [Install-PackageProvider](https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-6).
     - Команда: `Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201`.
-    - Необязательные параметры:
+    - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-Force`. Обход запроса подтверждения.
     
@@ -114,13 +112,13 @@ SerializationVersion           1.1.0.1
         'PSGallery'?
         [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
-    Вы можете подтвердить это изменение и выполнить аудит всех Псрепоситориес, выполнив команду `Get-PSRepository`.
+    Вы можете подтвердить это изменение и выполнить аудит всех Псрепоситориес, выполнив `Get-PSRepository` команду.
 
 4. Установите последнюю версию PowerShellGet.
-    - Описание: Этот модуль содержит средства, используемые для получения других модулей из коллекция PowerShell. Версия 1.0.0.1 поставляется с Windows 10 и Windows Server. Требуется версия 1.6.0 или более поздняя. Чтобы определить, какая версия установлена, выполните команду `Get-Command -Module PowerShellGet`.
+    - Описание: Этот модуль содержит средства, используемые для получения других модулей из коллекция PowerShell. Версия 1.0.0.1 поставляется с Windows 10 и Windows Server. Требуется версия 1.6.0 или более поздняя. Чтобы определить, какая версия установлена, выполните `Get-Command -Module PowerShellGet` команду.
     - Ссылка: [Установка PowerShellGet](/powershell/scripting/gallery/installing-psget).
     - Команда: `Install-Module -Name PowerShellGet`.
-    - Необязательные параметры:
+    - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-Force`. Обходит предупреждение "уже установлено" и устанавливает последнюю версию.
 
@@ -144,7 +142,7 @@ SerializationVersion           1.1.0.1
 3. Установите модуль AZ. Аппликатионмонитор.
     - Ссылка: [Install-Module](https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-6).
     - Команда: `Install-Module -Name Az.ApplicationMonitor`.
-    - Необязательные параметры:
+    - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-AllowPrerelease`. Позволяет устанавливать пакеты Alpha и бета-версии.
         - `-AcceptLicense`. Обход приглашения "принять лицензию"
@@ -156,7 +154,7 @@ SerializationVersion           1.1.0.1
 
 ### <a name="manually-download-the-latest-nupkg-file"></a>Скачайте последнюю версию файла nupkg вручную
 
-1. Перейдите на сайт https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
+1. Перейдите в расположение https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
 2. Выберите последнюю версию файла в таблице **журнала версий** .
 3. В разделе **Параметры установки**выберите **Загрузка вручную**.
 
@@ -204,14 +202,14 @@ SerializationVersion           1.1.0.1
 1. Измените расширение на ZIP и извлеките содержимое пакета в нужный каталог установки.
 2. Найдите путь к файлу AZ. Аппликатионмонитор. PSD1.
 3. Запустите PowerShell от имени администратора с политикой выполнения с повышенными правами.
-4. Загрузите модуль с помощью команды `Import-Module Az.ApplicationMonitor.psd1`.
+4. Загрузите модуль с помощью `Import-Module Az.ApplicationMonitor.psd1` команды.
     
 
 ## <a name="route-traffic-through-a-proxy"></a>Маршрутизация трафика через прокси-сервер
 
 При мониторинге компьютера в частной интрасети необходимо маршрутизировать HTTP-трафик через прокси-сервер.
 
-Команды PowerShell для загрузки и установки AZ. Аппликатионмонитор из коллекция PowerShell поддерживают параметр `-Proxy`.
+Команды PowerShell для загрузки и установки AZ. Аппликатионмонитор из коллекция PowerShell поддерживают `-Proxy` параметр.
 При написании сценариев установки ознакомьтесь с приведенными выше инструкциями.
 
 Пакету SDK для Application Insights потребуется отправить данные телеметрии приложения в корпорацию Майкрософт. Рекомендуется настроить параметры прокси-сервера для приложения в файле Web. config. Дополнительные сведения см. в разделе [Application Insights FAQ: passthrough прокси](https://docs.microsoft.com/azure/azure-monitor/app/troubleshoot-faq#proxy-passthrough).
@@ -219,24 +217,24 @@ SerializationVersion           1.1.0.1
 
 ## <a name="enable-monitoring"></a>Включение мониторинга
 
-Для включения мониторинга используйте команду `Enable-ApplicationInsightsMonitoring`.
+Используйте `Enable-ApplicationInsightsMonitoring` команду, чтобы включить мониторинг.
 
-Подробное описание использования этого командлета см. в [справочнике по API](status-monitor-v2-api-enable-monitoring.md) .
+Подробное описание использования этого командлета см. в [справочнике по API](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#enable-applicationinsightsmonitoring) .
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
  Просмотр телеметрии:
 
-- [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
+- [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
 - [Используйте аналитику](../../azure-monitor/app/analytics.md) для более сложных запросов.
 - [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
 
  Добавление данных телеметрии:
 
-- [Создайте веб-тесты](monitor-web-app-availability.md) , чтобы убедиться, что ваш сайт остается активным.
+- [Создайте веб-тесты](monitor-web-app-availability.md), чтобы убедиться, что ваш сайт продолжает работать.
 - [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
 - [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
 

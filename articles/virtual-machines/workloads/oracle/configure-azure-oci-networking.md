@@ -2,7 +2,7 @@
 title: Подключение Azure ExpressRoute к облачной инфраструктуре Oracle | Документация Майкрософт
 description: Подключение Azure ExpressRoute с помощью Oracle Cloud Infrastructure (OCI) Фастконнект для включения решений для приложений Oracle в разных облаках
 documentationcenter: virtual-machines
-author: romitgirdhar
+author: BorisB2015
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -11,33 +11,36 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 08/02/2019
-ms.author: rogirdh
-ms.openlocfilehash: 63543c0ac34536b736bd4b8cdbd47fdd98e9f9be
-ms.sourcegitcommit: 4f3f502447ca8ea9b932b8b7402ce557f21ebe5a
+ms.date: 03/16/2020
+ms.author: borisb
+ms.openlocfilehash: 70556cbbfefd6ad22ef96ee16065209031ea456c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71802207"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81683754"
 ---
 # <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого взаимодействия между Azure и облачной инфраструктурой Oracle  
 
-Чтобы создать [интегрированную среду с несколькими облаками](oracle-oci-overview.md) (Предварительная версия), корпорация Майкрософт и Oracle предлагают прямое взаимодействие между Azure и облачной инфраструктурой Oracle (OCI) с помощью [ExpressRoute](../../../expressroute/expressroute-introduction.md) и [фастконнект](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm). Благодаря взаимосвязи ExpressRoute и Фастконнект клиенты могут столкнуться с низкой задержкой, высокой пропускной способностью и частным прямым подключением между двумя облаками.
+Чтобы создать [интегрированную среду с несколькими облаками](oracle-oci-overview.md), корпорация Майкрософт и Oracle предлагают прямое взаимодействие между Azure и облачной инфраструктурой Oracle (OCI) через [ExpressRoute](../../../expressroute/expressroute-introduction.md) и [фастконнект](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm). Благодаря взаимосвязи ExpressRoute и Фастконнект клиенты могут столкнуться с низкой задержкой, высокой пропускной способностью и частным прямым подключением между двумя облаками.
 
 > [!IMPORTANT]
-> Подключение между Microsoft Azure и OCI находится на этапе предварительной версии. Чтобы установить подключение с низкой задержкой между Azure и OCI, необходимо сначала включить подписку Azure для этой возможности. Вы должны зарегистрироваться в предварительной версии, заполнив эту краткую [форму опроса](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyzVVsi364tClw522rL9tkpUMVFGVVFWRlhMNUlRQTVWSTEzT0dXMlRUTyQlQCN0PWcu). После активации подписки на электронную почту будет отправлено письмо. Вы не сможете использовать функцию, пока не получите подтверждение по электронной почте. Вы также можете обратиться к своему специалисту Майкрософт, чтобы включить эту предварительную версию. Доступ к возможностям предварительной версии подлежит доступности и ограничен корпорацией Майкрософт по своему усмотрению. Завершение опроса не гарантирует доступ. Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не должна использоваться для рабочих нагрузок. Некоторые функции могут не поддерживаться, иметь ограничения и быть доступными не во всех расположениях Azure. Дополнительные сведения см. в [дополнительных условиях использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) Microsoft Azure предварительных версиях. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+> Oracle будет сертифицировать эти приложения для запуска в Azure при использовании решения Azure/Oracle Cloud Interconnect с 2020 мая.
+> * Набор E-Business
+> * JD Edwards EnterpriseOne
+> * PeopleSoft
+> * Розничные приложения Oracle
+> * Oracle Hyperion Financial Management
 
 На следующем рисунке показан общий обзор соединения:
 
 ![Сетевое подключение между облаками](media/configure-azure-oci-networking/azure-oci-connect.png)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные условия
 
 * Чтобы установить подключение между Azure и OCI, необходимо иметь активную подписку Azure и активную службу OCI.
 
-* Подключение возможно только в том случае, если расположение пиринга Azure ExpressRoute находится в том же расположении, что и Фастконнект OCI. См. раздел [ограничения предварительной версии](oracle-oci-overview.md#preview-limitations).
-
-* Для этой предварительной версии должна быть включена подписка Azure.
+* Подключение возможно только в том случае, если расположение пиринга Azure ExpressRoute находится в том же расположении, что и Фастконнект OCI. См. сведения о [доступности регионов](oracle-oci-overview.md#region-availability).
 
 ## <a name="configure-direct-connectivity-between-expressroute-and-fastconnect"></a>Настройка прямого подключения ExpressRoute и Фастконнект
 
@@ -63,7 +66,7 @@ ms.locfileid: "71802207"
     * В поле **ключ службы поставщика**вставьте ключ службы ExpressRoute.
     * Используйте пространство частных IP-адресов First/30, отрезать пространство на предыдущем шаге для **основного IP-адреса BGP** и второго/30-адресного пространства для **дополнительного IP-адреса BGP** .
         * Назначьте первый пригодный для использования адрес из двух диапазонов для IP-адреса Oracle BGP (первичного и вторичного) и второго адреса для IP-адреса клиента BGP (с точки зрения Фастконнект). Первый пригодный IP-адрес — это второй IP-адрес в адресном пространстве/30 (первый IP-адрес зарезервирован корпорацией Майкрософт).
-    * Щелкните **Создать**.
+    * Нажмите кнопку **Создать**.
 1. Завершите связывание Фастконнект с виртуальной облачной сетью в клиенте Oracle через шлюз динамической маршрутизации, используя таблицу маршрутов.
 1. Перейдите в Azure и убедитесь, что **состояние поставщика** для канала ExpressRoute изменилось на " **подготовлено** " и что пиринг типа "частный" **Azure** был подготовлен. Это предварительные требования для следующих шагов.
 
@@ -99,7 +102,7 @@ ms.locfileid: "71802207"
 
 На этом этапе процесс удаления и отмены инициализации завершен.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о межоблачном подключении между OCI и Azure см. в [документации Oracle](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm).
 * Используйте [сценарии terraform](https://aka.ms/azureociinterconnecttf) для развертывания инфраструктуры для целевых приложений Oracle в Azure и настройки сетевого соединения. 

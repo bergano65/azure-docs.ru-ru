@@ -1,5 +1,5 @@
 ---
-title: Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift | Документация Майкрософт
+title: Развертывание экземпляра Prometheus в кластере Azure Red Hat OpenShift
 description: Создайте экземпляр Prometheus в кластере Azure Red Hat OpenShift, чтобы отслеживать метрики приложения.
 author: makdaam
 ms.author: b-lejaku
@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 06/17/2019
 keywords: Prometheus, АТО, openshift, метрики, Red Hat
-ms.openlocfilehash: f81a993caa31578e689fb3a90108f3cf0ca81fc2
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 7f22df587f51af735e0ea663e53f6eef14d60692
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69875138"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80886894"
 ---
 # <a name="deploy-a-standalone-prometheus-instance-in-an-azure-red-hat-openshift-cluster"></a>Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift
 
@@ -30,7 +30,7 @@ ms.locfileid: "69875138"
 
 ## <a name="sign-in-to-the-cluster-by-using-the-oc-tool"></a>Вход в кластер с помощью средства OC
 
-1. Откройте веб-браузер и перейдите в веб-консоль кластера (https://openshift. *случайный идентификатор*. *Region*. azmosa.IO).
+1. Откройте веб-браузер и перейдите в веб-консоль кластера (https://openshift.* случайный идентификатор*. *Region*. azmosa.IO).
 2. Выполните вход с использованием учетных данных Azure.
 3. Выберите свое имя пользователя в правом верхнем углу и нажмите кнопку **Копировать имя входа**.
 4. Вставьте имя пользователя в терминал, который вы будете использовать.
@@ -49,7 +49,7 @@ oc new-project app-project2
 
 
 > [!NOTE]
-> Можно либо использовать `-n` параметр или `--namespace` , либо выбрать `oc project` активный проект, выполнив команду.
+> Можно либо использовать параметр `-n` или `--namespace` , либо выбрать активный проект, выполнив `oc project` команду.
 
 ## <a name="prepare-the-prometheus-configuration-file"></a>Подготовка файла конфигурации Prometheus
 Создайте файл Prometheus. yml, введя следующее содержимое:
@@ -113,12 +113,12 @@ oc create secret generic prom-alerts --from-file=alertmanager.yml -n prometheus-
 > Чтобы проверить два предыдущих шага, выполните `oc get secret -n prometheus-project` команду.
 
 ## <a name="start-prometheus-and-alertmanager"></a>Запуск Prometheus и Алертманажер
-Перейдите в [репозиторий openshift/Origin](https://github.com/openshift/origin/tree/release-3.11/examples/prometheus) и скачайте [шаблон Prometheus-standalone.](
-https://raw.githubusercontent.com/openshift/origin/release-3.11/examples/prometheus/prometheus-standalone.yaml) YAML. Примените шаблон к Prometheus-Project, введя следующую конфигурацию:
+Перейдите в [репозиторий openshift/Origin](https://github.com/openshift/origin/tree/release-3.11/examples/prometheus) и скачайте шаблон [Prometheus-standalone. YAML](
+https://raw.githubusercontent.com/openshift/origin/release-3.11/examples/prometheus/prometheus-standalone.yaml) . Примените шаблон к Prometheus-Project, введя следующую конфигурацию:
 ```
 oc process -f https://raw.githubusercontent.com/openshift/origin/release-3.11/examples/prometheus/prometheus-standalone.yaml | oc apply -f - -n prometheus-project
 ```
-Файл Prometheus-standalone. YAML является шаблоном OpenShift. Он создаст экземпляр Prometheus с OAuth-proxy перед ним и экземпляром Алертманажер, также защищенным с помощью OAuth-proxy. В этом шаблоне OAuth-proxy настроен на разрешение любому пользователю, который может «получить» пространство имен Prometheus-Project (см `-openshift-sar` . флаг).
+Файл Prometheus-standalone. YAML является шаблоном OpenShift. Он создаст экземпляр Prometheus с OAuth-proxy перед ним и экземпляром Алертманажер, также защищенным с помощью OAuth-proxy. В этом шаблоне OAuth-proxy настроен на разрешение любому пользователю, который может «получить» пространство имен Prometheus-Project (см. `-openshift-sar` флаг).
 
 > [!NOTE]
 > Чтобы проверить, равны ли Пром StatefulSet и текущие реплики числа, выполните `oc get statefulset -n prometheus-project` команду. Чтобы проверить все ресурсы в проекте, выполните `oc get all -n prometheus-project` команду.
@@ -178,11 +178,11 @@ oc process -f prometheus-sdrole.yml | oc apply -f - -n prometheus-project
 ```
 
 > [!NOTE]
-> Чтобы убедиться, что роль и ролебиндинг созданы правильно, выполните `oc get role` команды и. `oc get rolebinding`
+> Чтобы убедиться, что роль и Ролебиндинг созданы правильно, выполните команды `oc get role` и `oc get rolebinding` .
 
-## <a name="optional-deploy-example-application"></a>Дополнительно Развертывание примера приложения
+## <a name="optional-deploy-example-application"></a>Необязательно: пример приложения для развертывания
 
-Все работает, но источники метрик отсутствуют. Перейдите на URL-адрес для Prometheus (https://prom-prometheus-project.apps.*случайный идентификатор*.*регион*.azmosa.io/). Его можно найти с помощью следующей команды:
+Все работает, но источники метрик отсутствуют. Перейдите по URL-адресуhttps://prom-prometheus-project.appsPrometheus (.* случайный идентификатор*. *Region*. azmosa.IO/). Его можно найти с помощью следующей команды:
 
 ```
 oc get route prom -n prometheus-project
@@ -203,9 +203,9 @@ oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=examp
 Для получения дополнительных сведений выберите **состояние** > **целевые объекты**.
 
 > [!NOTE]
-> Для всех успешно бракованных целевых объектов Prometheus добавляет точку данных в метрику вверх. Выберите **Prometheus** в левом верхнем углу, введите в качестве выражения и нажмите кнопку **выполнить**.
+> Для всех успешно бракованных целевых объектов Prometheus добавляет точку данных в метрику вверх. Выберите **Prometheus** в левом верхнем углу **, введите в** качестве выражения и нажмите кнопку **выполнить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В приложения можно добавить настраиваемое инструментирование Prometheus. Клиентская библиотека Prometheus, которая упрощает подготовку метрик Prometheus, готова для разных языков программирования.
 

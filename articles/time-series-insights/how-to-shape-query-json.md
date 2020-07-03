@@ -7,20 +7,20 @@ ms.author: dpalled
 manager: cshankar
 ms.service: time-series-insights
 ms.topic: article
-ms.date: 02/03/2020
+ms.date: 04/17/2020
 ms.custom: seodec18
-ms.openlocfilehash: 8232fd4c2a1e17800c96854b4ba7298e57ed84b7
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 63a708f80ad18309269e37c354b047c304a260d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989898"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81641294"
 ---
-# <a name="shape-json-to-maximize-query-performance"></a>Формирование JSON для повышения производительности запросов 
+# <a name="shape-json-to-maximize-query-performance"></a>Формирование JSON для повышения производительности запросов
 
 В этой статье содержатся рекомендации по формированию JSON для повышения эффективности запросов службы "аналитика временных рядов Azure".
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 ### <a name="learn-best-practices-for-shaping-json-to-meet-your-storage-needsbr"></a>Ознакомьтесь с рекомендациями по формированию JSON в соответствии с потребностями хранилища.</br>
 
@@ -97,15 +97,15 @@ ms.locfileid: "76989898"
 
    | deviceId | messageId | deviceLocation |
    | --- | --- | --- |
-   | FXXX | LINE\_DATA | ЕС |
+   | FXXX | LINE\_DATA | EU |
    | FYYY | LINE\_DATA | США |
 
 * Таблица событий "аналитика временных рядов" после спрямления:
 
    | deviceId | messageId | deviceLocation | TIMESTAMP | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
    | --- | --- | --- | --- | --- | --- |
-   | FXXX | LINE\_DATA | ЕС | 2018-01-17T01:17:00Z | 1.0172575712203979 | 34.7 |
-   | FXXX | LINE\_DATA | ЕС | 2018-01-17T01:17:00Z | 2.445906400680542 | 49.2 |
+   | FXXX | LINE\_DATA | EU | 2018-01-17T01:17:00Z | 1.0172575712203979 | 34.7 |
+   | FXXX | LINE\_DATA | EU | 2018-01-17T01:17:00Z | 2.445906400680542 | 49.2 |
    | FYYY | LINE\_DATA | США | 2018-01-17T01:18:00Z | 0.58015072345733643 | 22.2 |
 
 > [!NOTE]
@@ -167,8 +167,8 @@ ms.locfileid: "76989898"
 
    | deviceId | series.tagId | messageId | deviceLocation | type | unit |
    | --- | --- | --- | --- | --- | --- |
-   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s |
-   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi |
+   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s |
+   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi |
    | FYYY | pumpRate | LINE\_DATA | США | Скорость потока | ft3/s |
    | FYYY | oilPressure | LINE\_DATA | США | Давление масла в двигателе | psi |
 
@@ -176,10 +176,10 @@ ms.locfileid: "76989898"
 
    | deviceId | series.tagId | messageId | deviceLocation | type | unit | TIMESTAMP | series.value |
    | --- | --- | --- | --- | --- | --- | --- | --- |
-   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 | 
-   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |
-   | FXXX | pumpRate | LINE\_DATA | ЕС | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 | 
-   | FXXX | oilPressure | LINE\_DATA | ЕС | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 49.2 |
+   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 | 
+   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |
+   | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 2.445906400680542 | 
+   | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 49.2 |
    | FYYY | pumpRate | LINE\_DATA | США | Скорость потока | ft3/s | 2018-01-17T01:18:00Z | 0.58015072345733643 |
    | FYYY | oilPressure | LINE\_DATA | США | Давление масла в двигателе | psi | 2018-01-17T01:18:00Z | 22.2 |
 
@@ -196,7 +196,7 @@ ms.locfileid: "76989898"
   - В первом примере несколько свойств имеют несколько значений, поэтому можно создать каждое отдельное свойство.
   - Во втором примере меры не указываются как отдельные свойства. Вместо этого они представляют собой массив значений или мер в общем свойстве ряда. Будет отправлен новый ключ **tagId** , создающий новый столбец **Series. tagId** в плоской таблице. Новый **тип** и **единица** свойств создаются с помощью ссылочных данных, поэтому ограничение свойства не достигается.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше об отправке [сообщений устройства центра Интернета вещей в облако](../iot-hub/iot-hub-devguide-messages-construct.md).
 

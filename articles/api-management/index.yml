@@ -1,56 +1,71 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по службе "Управление API"
+summary: Узнайте, как использовать Управление API для публикации API-интерфейсов для внешних, партнерских и корпоративных разработчиков безопасно и в нужном масштабе. В этой документации объясняется, как создать современные шлюзы API для существующих серверных служб, размещенных в любом месте, и управлять ими.
 metadata:
-  title: Документация по службе "Управление API". Руководства и справочник по API | Документация Майкрософт
-  description: 'Узнайте, как использовать Управление API для публикации API-интерфейсов для внешних, партнерских и корпоративных разработчиков безопасно и в нужном масштабе. Руководства, справочники по API и другая документация, из которой вы узнаете, как создавать и администрировать современные шлюзы API для существующих серверных служб независимо от их размещения.'
+  title: Документация по службе "Управление API"
+  description: Узнайте, как использовать Управление API для публикации API-интерфейсов для внешних, партнерских и корпоративных разработчиков безопасно и в нужном масштабе. В этой документации объясняется, как создать современные шлюзы API для существующих серверных служб, размещенных в любом месте, и управлять ими.
   services: api-management
-  author: georgewallace
-  manager: gwallace
   ms.service: api-management
   ms.topic: landing-page
-  ms.date: 11/15/2017
+  author: georgewallace
   ms.author: gwallace
-abstract:
-  description: 'Узнайте, как использовать Управление API для публикации API-интерфейсов для внешних, партнерских и корпоративных разработчиков безопасно и в нужном масштабе. Руководства, справочники по API и другая документация, из которой вы узнаете, как создавать и администрировать современные шлюзы API для существующих серверных служб независимо от их размещения.'
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: Создание экземпляра службы "Управление API"
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/sql-database/media/index/portal.svg'
-            text: Создание экземпляра (портал)
-            href: /azure/api-management/get-started-create-service-instance
-          - image:
-              src: 'https://docs.microsoft.com/azure/sql-database/media/index/logo_powershell.svg'
-            text: Создание экземпляра (PowerShell)
-            href: /azure/api-management/powershell-create-service-instance
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как управлять службой "Управление API".'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="/azure/api-management/import-and-publish">Импорт и публикация первого API</a>
-          - html: <a href="/azure/api-management/api-management-howto-add-products">Создание и публикация продукта</a>
-          - html: <a href="/azure/api-management/mock-api-responses">Макетирование ответов API</a>
-          - html: <a href="/azure/api-management/transform-api">Преобразование и защита API</a>
-          - html: <a href="/azure/api-management/api-management-howto-use-azure-monitor">Мониторинг опубликованных интерфейсов API</a>
-          - html: <a href="/azure/api-management/api-management-howto-api-inspector">Отладка интерфейсов API с помощью трассировки запросов</a>
-          - html: <a href="/azure/api-management/api-management-get-started-revise-api">Безопасное внесение некритических изменений с помощью редакций</a>
-          - html: <a href="/azure/api-management/api-management-get-started-publish-versions">Публикация нескольких версий API</a>
-          - html: <a href="/azure/api-management/api-management-customize-styles">Настройка стиля страниц для портала разработчика</a>
-  - title: Примеры
-    items:
-      - type: list
-        style: unordered
-        className: spaced noBullet
-        items:
-          - html: <a href="/azure/api-management/policy-samples">Политика</a>
-          - html: <a href="/azure/api-management/powershell-samples">Azure PowerShell</a>
-          - html: '<a href="https://docs.microsoft.com/azure/architecture/reference-architectures/enterprise-integration/basic-enterprise-integration">Эталонная архитектура</a>'
+  ms.date: 03/08/2020
+  ms.openlocfilehash: 2ed84dfdfcabafe7222b8cb64a853ed04e2335a2
+  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "78944169"
+landingContent:
+- title: Сведения об Управлении API
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое управление API
+      url: api-management-key-concepts.md
+    - text: Доступность функций
+      url: api-management-features.md
+- title: Создание экземпляра
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Портал Azure
+      url: get-started-create-service-instance.md
+    - text: Azure PowerShell
+      url: powershell-create-service-instance.md
+- title: Управление службой "Управление API"
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 1. Импорт и публикация первого API
+      url: import-and-publish.md
+    - text: 2. создавать и публиковать продукт;
+      url: api-management-howto-add-products.md
+    - text: 3. Макетирование ответов API
+      url: mock-api-responses.md
+    - text: 4. Преобразование и защита API
+      url: transform-api.md
+    - text: 5. Мониторинг опубликованных API-интерфейсов
+      url: api-management-howto-use-azure-monitor.md
+    - text: 6. Отладка API-интерфейсов с помощью трассировки запросов
+      url: api-management-howto-api-inspector.md
+    - text: 7. Безопасное внесение некритических изменений с помощью редакций
+      url: api-management-get-started-revise-api.md
+    - text: 8. Публикация нескольких версий API
+      url: api-management-get-started-publish-versions.md
+    - text: 9. Настройка стиля страниц для портала разработчика
+      url: api-management-customize-styles.md
+- title: Примеры
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: Политика
+      url: policy-samples.md
+    - text: Azure PowerShell
+      url: powershell-samples.md
+- title: Architecture
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Основные сценарии корпоративной интеграции
+      url: https://docs.microsoft.com/azure/architecture/reference-architectures/enterprise-integration/basic-enterprise-integration

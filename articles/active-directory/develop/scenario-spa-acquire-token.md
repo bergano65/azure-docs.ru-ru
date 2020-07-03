@@ -2,33 +2,30 @@
 title: Получение маркера для вызова веб-API (одностраничные приложения) — платформа Microsoft Identity | Службы
 description: Сведения о создании одностраничного приложения (получение маркера для вызова API)
 services: active-directory
-documentationcenter: dev-center-name
 author: negoe
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/20/2019
 ms.author: negoe
 ms.custom: aaddev
-ms.openlocfilehash: d5d48a2fc7aca184cf8b6e7761584a8800ca5151
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: eeba01a609a1a21ed564c0b9cb78a28a4ad5c95a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77160072"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80882324"
 ---
 # <a name="single-page-application-acquire-a-token-to-call-an-api"></a>Одностраничное приложение: получение маркера для вызова API
 
-Шаблон для получения маркеров для API-интерфейсов с помощью MSAL. js — сначала попытайтесь выполнить запрос маркера без уведомления с помощью метода `acquireTokenSilent`. При вызове этого метода библиотека сначала проверяет кэш в хранилище браузера, чтобы узнать, существует ли допустимый маркер, и возвращает его. Если в кэше нет допустимого маркера, он отправляет запрос на автоматическую лексему в Azure Active Directory (Azure AD) из скрытого IFRAME. Этот метод также позволяет библиотеке обновлять маркеры. Дополнительные сведения о сеансах единого входа и значениях времени существования маркеров в Azure AD см. в разделе [время существования маркеров](active-directory-configurable-token-lifetimes.md).
+Шаблон для получения маркеров для API-интерфейсов с помощью MSAL. js — сначала попытайтесь выполнить запрос маркера в `acquireTokenSilent` автоматическом режиме с помощью метода. При вызове этого метода библиотека сначала проверяет кэш в хранилище браузера, чтобы узнать, существует ли допустимый маркер, и возвращает его. Если в кэше нет допустимого маркера, он отправляет запрос на автоматическую лексему в Azure Active Directory (Azure AD) из скрытого IFRAME. Этот метод также позволяет библиотеке обновлять маркеры. Дополнительные сведения о сеансах единого входа и значениях времени существования маркеров в Azure AD см. в разделе [время существования маркеров](active-directory-configurable-token-lifetimes.md).
 
 Запросы токенов без уведомления к Azure AD могут завершиться сбоем по причинам, например просроченному сеансу Azure AD или изменению пароля. В этом случае можно вызвать один из интерактивных методов (который будет предлагать пользователю) получить маркеры:
 
-* [Всплывающее окно](#acquire-a-token-with-a-pop-up-window)с использованием `acquireTokenPopup`
-* [Перенаправление](#acquire-a-token-with-a-redirect)с помощью `acquireTokenRedirect`
+* [Всплывающее окно](#acquire-a-token-with-a-pop-up-window)с помощью`acquireTokenPopup`
+* [Перенаправление](#acquire-a-token-with-a-redirect)с помощью`acquireTokenRedirect`
 
 ## <a name="choose-between-a-pop-up-or-redirect-experience"></a>Выбор между всплывающим окном или перенаправлением
 
@@ -42,7 +39,7 @@ ms.locfileid: "77160072"
 
 ## <a name="acquire-a-token-with-a-pop-up-window"></a>Получение маркера с помощью всплывающего окна
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Следующий код сочетает ранее описанный шаблон с методами для всплывающего окна:
 
@@ -69,27 +66,47 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 });
 ```
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 MSAL угловая оболочка предоставляет перехватчик HTTP, который автоматически получает маркеры доступа и прикрепляет их к HTTP-запросам к API.
 
-Области для API-интерфейсов можно указать в параметре конфигурации `protectedResourceMap`. `MsalInterceptor` будет запрашивать эти области при автоматическом получении маркеров.
+Области для API-интерфейсов можно указать в параметре `protectedResourceMap` конфигурации. `MsalInterceptor`запрашивает эти области при автоматическом получении маркеров.
 
 ```javascript
-//In app.module.ts
+// app.module.ts
 @NgModule({
-  imports: [ MsalModule.forRoot({
-                clientID: 'your_app_id',
-                protectedResourceMap: {"https://graph.microsoft.com/v1.0/me", ["user.read", "mail.send"]}
-            })]
-         })
-
-providers: [ ProductService, {
-        provide: HTTP_INTERCEPTORS,
-        useClass: MsalInterceptor,
-        multi: true
+  declarations: [
+    // ...
+  ],
+  imports: [
+    // ...
+    MsalModule.forRoot({
+      auth: {
+        clientId: 'Enter_the_Application_Id_Here',
+      }
+    },
+    {
+      popUp: !isIE,
+      consentScopes: [
+        'user.read',
+        'openid',
+        'profile',
+      ],
+      protectedResourceMap: [
+        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
+      ]
+    })
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MsalInterceptor,
+      multi: true
     }
-   ],
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 ```
 
 В случае успеха и сбоя при получении автоматического получения маркера MSALный угловой предоставляет обратные вызовы, на которые можно подписываться. Также важно отменить подписывание.
@@ -103,7 +120,7 @@ providers: [ ProductService, {
 
 ngOnDestroy() {
    this.broadcastService.getMSALSubject().next(1);
-   if(this.subscription) {
+   if (this.subscription) {
      this.subscription.unsubscribe();
    }
  }
@@ -115,7 +132,7 @@ ngOnDestroy() {
 
 ## <a name="acquire-a-token-with-a-redirect"></a>Получение маркера с перенаправлением
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Следующий шаблон описан ранее, но показан с помощью метода Redirect для получения маркеров в интерактивном режиме. Вам потребуется зарегистрировать обратный вызов перенаправления, как упоминалось ранее.
 
@@ -149,16 +166,16 @@ userAgentApplication.acquireTokenSilent(accessTokenRequest).then(function(access
 
 - Включите дополнительные утверждения в токены для вашего приложения.
 - изменить поведение определенных утверждений в токенах, возвращаемых Azure AD;
-- добавлять пользовательские утверждения для приложения и обращаться к ним. 
+- добавлять пользовательские утверждения для приложения и обращаться к ним.
 
-Чтобы запросить необязательные утверждения в `IdToken`, можно отправить объект утверждений переведенные в поле `claimsRequest` класса `AuthenticationParameters.ts`.
+Чтобы запросить необязательные `IdToken`утверждения в, можно отправить объект утверждений переведенные в `claimsRequest` поле `AuthenticationParameters.ts` класса.
 
 ```javascript
-"optionalClaims":  
+"optionalClaims":
    {
       "idToken": [
             {
-                  "name": "auth_time", 
+                  "name": "auth_time",
                   "essential": true
              }
       ],
@@ -173,7 +190,7 @@ myMSALObj.acquireTokenPopup(request);
 
 Дополнительные сведения см. в разделе [необязательные утверждения](active-directory-optional-claims.md).
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 Этот код аналогичен описанному выше.
 

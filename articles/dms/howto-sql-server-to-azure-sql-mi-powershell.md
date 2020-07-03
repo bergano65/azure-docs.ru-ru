@@ -3,25 +3,25 @@ title: 'PowerShell: миграция SQL Server в управляемый экз
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию из локальной SQL Server в управляемый экземпляр базы данных SQL Azure с помощью Azure PowerShell и Azure Database Migration Service.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 01/08/2020
-ms.openlocfilehash: 3b434bc8a495f47f7fb2de8429069283821cf397
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.date: 02/20/2020
+ms.openlocfilehash: 9ea9f55681b93e79eec836f5808d2c6feaa6bb29
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75746631"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77650730"
 ---
 # <a name="migrate-sql-server-to-sql-database-managed-instance-with-powershell--azure-database-migration-service"></a>Миграция SQL Server в управляемый экземпляр базы данных SQL с помощью PowerShell & Azure Database Migration Service
 
-В этой статье вы перенесите базу данных **Adventureworks2016** , которая была восстановлена в локальный экземпляр SQL Server 2005 или более поздней версии, в управляемый экземпляр базы данных SQL Azure с помощью Microsoft Azure PowerShell. Вы можете перенести базы данных из локального экземпляра SQL Server в управляемый экземпляр базы данных SQL Azure с помощью модуля `Az.DataMigration` в Microsoft Azure PowerShell.
+В этой статье вы перенесите базу данных **Adventureworks2016** , которая была восстановлена в локальный экземпляр SQL Server 2005 или более поздней версии, в управляемый экземпляр базы данных SQL Azure с помощью Microsoft Azure PowerShell. Вы можете перенести базы данных из локального экземпляра SQL Server в управляемый экземпляр базы данных SQL Azure с помощью `Az.DataMigration` модуля в Microsoft Azure PowerShell.
 
 Вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -35,7 +35,7 @@ ms.locfileid: "75746631"
 
 Эта статья содержит подробные сведения о том, как выполнять оперативную и автономную миграцию.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для выполнения этих действий вам потребуется следующее:
 
@@ -43,12 +43,12 @@ ms.locfileid: "75746631"
 * Локальная копия базы данных **AdventureWorks2016** , доступная для скачивания [здесь](https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017).
 * При установке SQL Server Express включите протокол TCP/IP, который отключен по умолчанию. Для этого выполните инструкции в разделе [Использование диспетчера конфигурации SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol#SSMSProcedure) статьи "Включение или отключение сетевого протокола сервера".
 * [Настройте брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
-* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+* Подписка Azure. Если у вас ее нет, [Создайте бесплатную учетную запись](https://azure.microsoft.com/free/) , прежде чем начинать работу.
 * Управляемый экземпляр базы данных SQL Azure. Вы можете создать управляемый экземпляр базы данных SQL Azure, следуя подробным сведениям в статье [Создание управляемого экземпляра базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started).
 * Для загрузки и установки [Помощник по миграции данных](https://www.microsoft.com/download/details.aspx?id=53595) v 3.3 или более поздней версии.
 * Виртуальная сеть Microsoft Azure, созданная с помощью модели развертывания Azure Resource Manager, которая предоставляет Azure Database Migration Service подключения типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
 * Завершенная оценка локальной базы данных и миграции схем с помощью Помощник по миграции данных, как описано в статье [выполнение SQL Serverной оценки миграции](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem).
-* Чтобы скачать и установить модуль `Az.DataMigration` (версии 0.7.2 или более поздней) из коллекция PowerShell с помощью [командлета PowerShell Install-Module](https://docs.microsoft.com/powershell/module/powershellget/Install-Module?view=powershell-5.1).
+* Чтобы скачать и установить `Az.DataMigration` модуль (0.7.2 или более поздней версии) из коллекция PowerShell с помощью [командлета PowerShell Install-Module](https://docs.microsoft.com/powershell/module/powershellget/Install-Module?view=powershell-5.1).
 * Чтобы убедиться, что учетные данные, используемые для подключения к исходному SQL Server экземпляру, имеют разрешение [Control Server](https://docs.microsoft.com/sql/t-sql/statements/grant-server-permissions-transact-sql) .
 * Чтобы убедиться, что учетные данные, используемые для подключения к целевому управляемому экземпляру базы данных SQL Azure, имеют разрешение CONTROL DATABASE в целевых базах данных управляемых экземпляров базы данных SQL Azure.
 
@@ -63,7 +63,7 @@ ms.locfileid: "75746631"
 
 Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-Создайте группу ресурсов с помощью команды [`New-AzResourceGroup`](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) .
+Создайте группу ресурсов с помощью [`New-AzResourceGroup`](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) команды.
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе " *Восточная часть США* ".
 
@@ -76,11 +76,11 @@ New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 Вы можете создать экземпляр Azure Database Migration Service, выполнив командлет `New-AzDataMigrationService`.
 Для этого командлета нужно передать следующие обязательные параметры:
 
-* *ResourceGroupName.* Вы можете использовать команду [`New-AzResourceGroup`](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) , чтобы создать группу ресурсов Azure, как показано выше, и указать ее имя в качестве параметра.
-* *ServiceName.* Строка, соответствующая нужному уникальному имени службы для Azure Database Migration Service.
-* *Расположение.* Указывает расположение службы. Укажите расположение центра обработки данных Azure, например "Западная часть США" или "Юго-Восточная Азия".
-* *Sku.* Этот параметр соответствует имени SKU DMS. В настоящее время поддерживаются имена SKU *Basic_1vCore*, *Basic_2vCores*, *GeneralPurpose_4vCores*.
-* *VirtualSubnetId.* Для создания подсети можно использовать командлет [`New-AzVirtualNetworkSubnetConfig`](https://docs.microsoft.com//powershell/module/az.network/new-azvirtualnetworksubnetconfig) .
+* *Имя группы ресурсов Azure*. Вы можете использовать [`New-AzResourceGroup`](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) команду, чтобы создать группу ресурсов Azure, как показано выше, и указать ее имя в качестве параметра.
+* *Имя службы*. Строка, соответствующая нужному уникальному имени службы для Azure Database Migration Service.
+* *Расположение*. Указывает расположение службы. Укажите расположение центра обработки данных Azure, например "Западная часть США" или "Юго-Восточная Азия".
+* *Номер SKU*. Этот параметр соответствует имени SKU DMS. В настоящее время поддерживаются имена SKU *Basic_1vCore*, *Basic_2vCores*, *GeneralPurpose_4vCores*.
+* *VirtualSubnetId.* Для создания подсети можно [`New-AzVirtualNetworkSubnetConfig`](https://docs.microsoft.com//powershell/module/az.network/new-azvirtualnetworksubnetconfig) использовать командлет.
 
 В следующем примере создается служба с именем *mydms* в группе ресурсов *MyDMSResourceGroup* , расположенной в регионе *восточной части США* , с использованием виртуальной сети с именем *MyVNET* и подсети *MySubnet*.
 
@@ -105,11 +105,11 @@ $service = New-AzDms -ResourceGroupName myResourceGroup `
 
 ### <a name="create-a-database-connection-info-object-for-the-source-and-target-connections"></a>Создание объекта сведений о подключении к базе данных для исходных и целевых подключений
 
-Объект сведений о подключении к базе данных можно создать с помощью командлета `New-AzDmsConnInfo`, который предполагает наличие следующих параметров:
+Объект сведений о подключении к базе данных можно создать с помощью `New-AzDmsConnInfo` командлета, который предполагает наличие следующих параметров:
 
-* *ServerType.* Тип запрошенного подключения к базе данных, например SQL, Oracle или MySQL. Используйте SQL для SQL Server и SQL Azure.
-* *DataSource.* Имя или IP-адрес экземпляра SQL Server или экземпляра базы данных SQL Azure.
-* *AuthType.* Тип проверки подлинности для подключения. Это может быть SqlAuthentication или WindowsAuthentication.
+* *ServerType*. Тип запрошенного подключения к базе данных, например SQL, Oracle или MySQL. Используйте SQL для SQL Server и SQL Azure.
+* *Источник данных*. Имя или IP-адрес экземпляра SQL Server или экземпляра базы данных SQL Azure.
+* *AuthType*. Тип проверки подлинности для подключения. Это может быть SqlAuthentication или WindowsAuthentication.
 * *TrustServerCertificate*. Этот параметр задает значение, указывающее, шифруется ли канал при прохождении обхода цепочки сертификатов для проверки доверия. Значение может быть `$true` или `$false`.
 
 В следующем примере создается объект сведений о соединении для источника SQL Server с именем *мисаурцесклсервер* с использованием проверки подлинности SQL:
@@ -132,9 +132,9 @@ $targetConnInfo = New-AzDmsConnInfo -ServerType SQL `
 
 ### <a name="provide-databases-for-the-migration-project"></a>Указание баз данных для проекта миграции
 
-Создайте список объектов `AzDataMigrationDatabaseInfo`, указывающих базы данных в составе проекта Azure Database Migration Service, который можно указать в качестве параметра для создания проекта. Для создания `AzDataMigrationDatabaseInfo`можно использовать командлет `New-AzDataMigrationDatabaseInfo`.
+Создайте список `AzDataMigrationDatabaseInfo` объектов, указывающих базы данных в составе проекта Azure Database Migration Service, который можно указать в качестве параметра для создания проекта. Для создания `AzDataMigrationDatabaseInfo`можно использовать командлет `New-AzDataMigrationDatabaseInfo` .
 
-В следующем примере создается проект `AzDataMigrationDatabaseInfo` для базы данных **AdventureWorks2016** и добавляется в список, который предоставляется в качестве параметра для создания проекта.
+В следующем примере создается `AzDataMigrationDatabaseInfo` проект для базы данных **AdventureWorks2016** и добавляется в список, который предоставляется в качестве параметра для создания проекта.
 
 ```powershell
 $dbInfo1 = New-AzDataMigrationDatabaseInfo -SourceDatabaseName AdventureWorks
@@ -143,7 +143,7 @@ $dbList = @($dbInfo1)
 
 ### <a name="create-a-project-object"></a>Создание объекта проекта
 
-Наконец, можно создать Azure Database Migration Service проект с именем *мидмспрожект* , расположенный в *восточной части США* , с помощью `New-AzDataMigrationProject` и добавить ранее созданное исходное и целевое подключения и список баз данных для миграции.
+Наконец, можно создать Azure Database Migration Service проект с именем *мидмспрожект* , расположенный в *Восточной* части США `New-AzDataMigrationProject` , с помощью и добавить ранее созданное исходное и целевое подключения и список баз данных для миграции.
 
 ```powershell
 $project = New-AzDataMigrationProject -ResourceGroupName myResourceGroup `
@@ -176,7 +176,7 @@ $targetCred = New-Object System.Management.Automation.PSCredential ($targetUserN
 
 ### <a name="create-a-backup-fileshare-object"></a>Создание объекта общей папки для архивации
 
-Теперь создайте объект общего ресурса, представляющий локальную сетевую папку SMB, в которую Azure Database Migration Service может принимать резервные копии базы данных-источника с помощью командлета `New-AzDmsFileShare`.
+Теперь создайте объект общей папки, представляющий локальную сетевую папку SMB, в которую Azure Database Migration Service может принимать резервные копии `New-AzDmsFileShare` базы данных-источника с помощью командлета.
 
 ```powershell
 $backupPassword = ConvertTo-SecureString -String $password -AsPlainText -Force
@@ -188,7 +188,7 @@ $backupFileShare = New-AzDmsFileShare -Path $backupFileSharePath -Credential $ba
 
 ### <a name="create-selected-database-object"></a>Создание объекта выбранной базы данных
 
-Следующим шагом является выбор исходной и целевой баз данных с помощью командлета `New-AzDmsSelectedDB`.
+Следующим шагом является выбор исходной и целевой баз данных с помощью `New-AzDmsSelectedDB` командлета.
 
 Следующий пример предназначен для миграции одной базы данных из SQL Server в управляемый экземпляр базы данных SQL Azure:
 
@@ -280,13 +280,13 @@ $blobSasUri="https://mystorage.blob.core.windows.net/test?st=2018-07-13T18%3A10%
 
 ##### <a name="common-parameters"></a>Общие параметры
 
-Независимо от того, выполняется ли миграция вне сети или в режиме «в сети», командлет `New-AzDataMigrationTask` предпринимает следующие параметры:
+Независимо от того, выполняется ли миграция в автономный режим или в `New-AzDataMigrationTask` режиме «в сети», командлет принимает следующие параметры:
 
 * *TaskType.* Для создаваемой задачи миграции для типа миграции "из SQL Server в Управляемый экземпляр Базы данных SQL Azure" ожидается тип *MigrateSqlServerSqlDbMi*. 
-* *ResourceGroupName.* Имя группы ресурсов Azure, в которой будет создана задача.
-* *ServiceName.* Экземпляр Azure Database Migration Service, в котором будет создана задача.
-* *ProjectName.* Имя проекта Azure Database Migration Service, в котором будет создана задача. 
-* *TaskName.* Имя задачи, которая будет создана. 
+* *Имя группы ресурсов*. Имя группы ресурсов Azure, в которой будет создана задача.
+* *ServiceName*. Экземпляр Azure Database Migration Service, в котором будет создана задача.
+* *Имя_проекта*. Имя проекта Azure Database Migration Service, в котором будет создана задача. 
+* *Имя_задания*. Имя задачи, которая будет создана. 
 * *SourceConnection*. Объект Аздмсконнинфо, представляющий соединение с источником SQL Server.
 * *TargetConnection.* Объект Аздмсконнинфо, представляющий целевое Управляемый экземпляр Базы данных SQL Azure соединение.
 * *SourceCred.* Объект [PSCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential?redirectedfrom=MSDN&view=powershellsdk-1.1.0) для подключения к исходному серверу.
@@ -299,14 +299,14 @@ $blobSasUri="https://mystorage.blob.core.windows.net/test?st=2018-07-13T18%3A10%
 
 ##### <a name="additional-parameters"></a>Дополнительные параметры
 
-Командлет `New-AzDataMigrationTask` также предполагает, что параметры, уникальные для типа миграции, в автономном или оперативном режиме, выполняются.
+`New-AzDataMigrationTask` Командлет также предполагает, что параметры, уникальные для типа миграции, в автономном или оперативном режиме, выполняются.
 
-* **Автономные миграции**. Для автономных миграций командлет `New-AzDataMigrationTask` также ожидает следующие параметры:
+* **Автономные миграции**. Для автономных миграций `New-AzDataMigrationTask` командлет также ожидает следующие параметры:
 
   * *SelectedLogins.* Список выбранных для переноса имен для входа.
   * *SelectedAgentJobs.* Список выбранных заданий агента для переноса.
 
-* **Оперативная миграция**. Для оперативной миграции командлет `New-AzDataMigrationTask` также ожидает следующие параметры.
+* **Оперативная миграция**. Для оперативной миграции `New-AzDataMigrationTask` командлет также ожидает следующие параметры.
 
 * *Азуреактиведиректоряпп*. Active Directory приложение.
 * *Сторажересаурцеид*. Идентификатор ресурса учетной записи хранения.
@@ -371,9 +371,9 @@ $migTask = New-AzDataMigrationTask -TaskType MigrateSqlServerSqlDbMiSync `
     Write-Host ‘$CheckTask.ProjectTask.Properties.Output’
     ```
 
-2. Используйте переменную `$CheckTask`, чтобы получить текущее состояние задачи миграции.
+2. Используйте `$CheckTask` переменную для получения текущего состояния задачи миграции.
 
-    Чтобы использовать переменную `$CheckTask` для получения текущего состояния задачи миграции, можно отслеживать выполнение задачи миграции, запросив свойство State задачи, как показано в следующем примере:
+    Чтобы использовать `$CheckTask` переменную для получения текущего состояния задачи миграции, можно отслеживать выполнение задачи миграции, запросив свойство State задачи, как показано в следующем примере:
 
     ```powershell
     if (($CheckTask.ProjectTask.Properties.State -eq "Running") -or ($CheckTask.ProjectTask.Properties.State -eq "Queued"))
@@ -419,6 +419,6 @@ Remove-AzDms -ResourceGroupName myResourceGroup -ServiceName MyDMS
 
 Дополнительные сведения о дополнительных сценариях миграции (пары "источник — Целевая версия") см. в разделе [руководств по миграции баз данных](https://datamigration.microsoft.com/)Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о Azure Database Migration Service в статье [что такое Azure Database Migration Service?](https://docs.microsoft.com/azure/dms/dms-overview).

@@ -10,10 +10,10 @@ services: azure-maps
 manager: cpendle
 ms.custom: ''
 ms.openlocfilehash: 5782f07167f72be2ea7b148ad1b0a61d8cb710e2
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77048894"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps сообщество — проекты с открытым исходным кодом
@@ -22,12 +22,12 @@ ms.locfileid: "77048894"
 
 Ниже перечислены некоторые из наиболее популярных Azure Maps проектов с открытым исходным кодом и примеров.
 
-| Имя проекта | Description |
+| Имя проекта | Описание |
 |-|-|
 | [Примеры кода Azure Maps](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в веб-приложениях. |
 | [Azure Maps примеры кода gov Cloud](https://github.com/Azure-Samples/AzureMapsCodeSamples) | Коллекция примеров кода для использования Azure Maps в облаке Azure для государственных организаций. |
 | [Примеры Azure Active Directory & Azure Maps](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples) | Коллекция примеров, демонстрирующих использование Azure Active Directory с Azure Maps. | 
-| [Реализация пространственного анализа IoT с помощью Azure Maps](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing) | Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. |
+| [Реализация пространственной аналитики Интернета вещей с помощью Azure Maps](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing) | Отслеживание и сбор важных событий по определенному пространству и времени является типичным сценарием для Интернета вещей. |
 | [Примеры Jupyter Notebook Azure Maps](https://github.com/Azure-Samples/Azure-Maps-Jupyter-Notebook) | Коллекция примеров Python, использующих службы Azure Maps RESTFUL. |
 | [Платформа Bot — навык интереса](https://github.com/microsoft/botframework-solutions/tree/488093ac2fddf16096171f6a926315aa45e199e7/skills/csharp/pointofinterestskill) | Навык по интересам предоставляет виртуальному помощнику возможности, связанные с достопримечательности, с помощью Azure Maps со службой Azure Bot и Bot Framework. |
 
@@ -44,7 +44,7 @@ ms.locfileid: "77048894"
 - Azure Maps проекты с открытым исходным кодом и примеры не являются продуктом, поэтому они не поддерживаются поддержка Premier или другими официальными каналами поддержки.
 - Azure Maps проекты с открытым исходным кодом и примеры поддерживаются аналогично другим проектам с открытым исходным кодом, осуществляемым корпорацией Майкрософт вместе со службой поддержки сообщества.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Найдите другие проекты Azure Maps с открытым кодом.
 

@@ -11,11 +11,11 @@ ms.topic: article
 ms.date: 07/05/2019
 ms.author: juliako
 ms.openlocfilehash: a833fd808049cfce95b182910e50e38d3c39f4e5
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74976610"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79245945"
 ---
 # <a name="scenes-shots-and-keyframes"></a>Сцены, снимки и опорные кадры
 
@@ -46,7 +46,7 @@ ms.locfileid: "74976610"
 
 #### <a name="with-the-video-indexer-website"></a>С веб-сайтом индексатора видео
 
-Чтобы извлечь опорные кадры с помощью веб-сайта индексатора видео, отправьте и проиндексировать видео. После завершения задания индексации нажмите кнопку **скачать** и выберите **артефакты (ZIP)** . Будет загружена папка артефактов на компьютер. 
+Чтобы извлечь опорные кадры с помощью веб-сайта индексатора видео, отправьте и проиндексировать видео. После завершения задания индексации нажмите кнопку **скачать** и выберите **артефакты (ZIP)**. Будет загружена папка артефактов на компьютер. 
 
 ![Опорные кадры](./media/scenes-shots-keyframes/extracting-keyframes2.png)
  
@@ -127,6 +127,6 @@ ms.locfileid: "74976610"
 * Несколько граней: более двух лиц.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Изучите выходные данные индексатора видео, созданные API](video-indexer-output-json-v2.md#scenes)

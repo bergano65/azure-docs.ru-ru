@@ -17,10 +17,10 @@ ms.date: 09/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 21409eb056743d92db42e0787af24f8cec07db1b
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72026963"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-harness"></a>Руководство по Интеграция единого входа Azure Active Directory с Harness
@@ -35,9 +35,9 @@ ms.locfileid: "72026963"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Harness с поддержкой единого входа (SSO).
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "72026963"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Harness](#configure-harness-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Harness](#create-harness-test-user)** требуется для того, чтобы в Harness существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,7 +78,7 @@ ms.locfileid: "72026963"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
@@ -115,7 +115,7 @@ ms.locfileid: "72026963"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Harness.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Harness**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -153,7 +153,7 @@ ms.locfileid: "72026963"
 
     ![Настройка Harness](./media/harness-tutorial/configure02.png)
 
-    a. Скопируйте адрес из поля **In your SSO Provider, please enable SAML-based login, then enter the following URL** (В поставщике единого входа включите вход на основе SAML и введите следующий URL-адрес) и вставьте его в текстовое поле для URL-адреса ответа в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Скопируйте адрес из поля **In your SSO Provider, please enable SAML-based login, then enter the following URL** (В поставщике единого входа включите вход на основе SAML и введите следующий URL-адрес) и вставьте его в текстовое поле для URL-адреса ответа в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Введите данные в текстовое поле **Display Name** (Отображаемое имя).
 
@@ -181,11 +181,11 @@ ms.locfileid: "72026963"
 
     ![Настройка Harness](./media/harness-tutorial/configure06.png)
 
-    a. В текстовом поле **Email Address(es)** (Адреса электронной почты) введите адрес электронной почты пользователя, например `B.simon@contoso.com`.
+    а. В текстовом поле **Email Address(es)** (Адреса электронной почты) введите адрес электронной почты пользователя, например `B.simon@contoso.com`.
 
     b. Выберите свою группу в раскрывающемся меню **User Groups** (Группы пользователей).
 
-    c. Нажмите кнопку **Submit**(Отправить).
+    c. Щелкните **Отправить**.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -195,9 +195,9 @@ ms.locfileid: "72026963"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

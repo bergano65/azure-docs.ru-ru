@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 01/03/2020
-ms.openlocfilehash: 065165ddb629f0629e9b895dbad5ee33605f8bc1
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 292496c4d458621213fe62105149ac845d78891e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75658888"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79479592"
 ---
 # <a name="hdinsight-sdk-for-go-preview"></a>Пакет SDK для HDInsight для Go (Предварительная версия)
 
@@ -25,10 +25,10 @@ ms.locfileid: "75658888"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* [Средство`go get`](https://github.com/golang/go/wiki/GoGetTools).
-* [Перейти](https://golang.org/dl/).
+* [ `go get` Средство](https://github.com/golang/go/wiki/GoGetTools).
+* [Go](https://golang.org/dl/).
 
 ## <a name="sdk-installation"></a>Установка пакета SDK
 
@@ -36,7 +36,7 @@ ms.locfileid: "75658888"
 
 ## <a name="authentication"></a>Проверка подлинности
 
-Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого у вас будет экземпляр `ClustersClient`, содержащий множество функций (описанных в разделах ниже), которые можно использовать для выполнения операций управления.
+Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого у вас будет экземпляр `ClustersClient`, который содержит множество функций (описанных в разделах ниже), которые можно использовать для выполнения операций управления.
 
 > [!NOTE]  
 > Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Дополнительные сведения о функциях см. в статье [Методы аутентификации в пакете Azure SDK для Go](https://docs.microsoft.com/azure/go/azure-sdk-go-authorization)
@@ -94,7 +94,6 @@ az ad sp create-for-rbac --name <Service Principal Name> --sdk-auth
   "tenantId": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
   "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
   "resourceManagerEndpointUrl": "https://management.azure.com/",
-  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
   "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
   "galleryEndpointUrl": "https://gallery.azure.com/",
   "managementEndpointUrl": "https://management.core.windows.net/"
@@ -264,7 +263,7 @@ client.Get(context.Background(), "<Resource Group Name>", "<Cluster Name>")
 
 #### <a name="example"></a>Пример
 
-Чтобы убедиться, что кластер успешно создан, можно использовать `get`.
+Вы можете использовать `get` для подтверждения успешного создания кластера.
 
 ```golang
 cluster, err := client.Get(context.Background(), resourceGroupName, clusterName)
@@ -353,7 +352,7 @@ client.Resize(context.Background(), "<Resource Group Name>", "<Cluster Name>", h
 
 Пакет Azure Management SDK для HDInsight также позволяет управлять мониторингом кластеров с помощью Operations Management Suite (OMS).
 
-Создайте экземпляр `ExtensionClient`, используемый в операциях мониторинга, используя такую же процедуру, как и при создании экземпляра `ClusterClient`, применяемого в операциях управления. После завершения предыдущего раздела проверки подлинности можно создать `ExtensionClient` следующим образом:
+Создайте экземпляр `ExtensionClient`, используемый в операциях мониторинга, используя такую же процедуру, как и при создании экземпляра `ClusterClient`, применяемого в операциях управления. После выполнения описанного выше раздела проверки подлинности можно создать `ExtensionClient` примерно такой способ:
 
 ```golang
 extClient := hdi.NewExtensionsClient(SUBSCRIPTION_ID)
@@ -406,7 +405,7 @@ var scriptAction1 = hdi.RuntimeScriptAction{Name: to.StringPtr("<Script Name>"),
 client.ExecuteScriptActions(context.Background(), "<Resource Group Name>", "<Cluster Name>", hdi.ExecuteScriptActionParameters{PersistOnSuccess: to.BoolPtr(true), ScriptActions: &[]hdi.RuntimeScriptAction{scriptAction1}}) //add more RuntimeScriptActions to the list to execute multiple scripts
 ```
 
-Для операций "Удаление действий сценариев" и "Получение списка сохраненных действий сценариев" необходимо создать экземпляр `ScriptActionsClient` точно так же, как вы создавали экземпляр `ClusterClient`, применяемый в операциях управления. После завершения предыдущего раздела проверки подлинности можно создать `ScriptActionsClient` следующим образом:
+Для операций "Удаление действий сценариев" и "Получение списка сохраненных действий сценариев" необходимо создать экземпляр `ScriptActionsClient` точно так же, как вы создавали экземпляр `ClusterClient`, применяемый в операциях управления. После выполнения описанного выше раздела о проверке подлинности можно создать `ScriptActionsClient` примерно такой способ:
 
 ```golang
 scriptActionsClient := hdi.NewScriptActionsClient(SUBSCRIPTION_ID)
@@ -454,7 +453,7 @@ for (page.NotDone()) {
 
 ### <a name="list-all-scripts-execution-history"></a>Просмотр журнала выполнения всех сценариев
 
-Для этой операции необходимо создать экземпляр `ScriptExecutionHistoryClient`, используя ту же процедуру, с помощью которой вы создали экземпляр `ClusterClient`, применяемый в операциях управления. После завершения предыдущего раздела проверки подлинности можно создать `ScriptActionsClient` следующим образом:
+Для этой операции необходимо создать экземпляр `ScriptExecutionHistoryClient`, используя ту же процедуру, с помощью которой вы создали экземпляр `ClusterClient`, применяемый в операциях управления. После выполнения описанного выше раздела о проверке подлинности можно создать `ScriptActionsClient` примерно такой способ:
 
 ```golang
 scriptExecutionHistoryClient := hdi.NewScriptExecutionHistoryClient(SUBSCRIPTION_ID)
@@ -490,6 +489,6 @@ for (page.NotDone()) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Просмотрите [справочные материалы GoDoc](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight). GoDocs предоставляет справочную документацию по всем функциям в пакете SDK.

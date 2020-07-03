@@ -1,22 +1,17 @@
 ---
-title: Отрисовка сцены в облаке с помощью пакетной службы Azure
+title: Отрисовка сцены в облаке
 description: Руководство. Отрисовка сцены Autodesk 3ds Max с Arnold с помощью пакетной службы рендеринга и интерфейса командной строки Azure
-services: batch
-author: LauraBrenner
-manager: evansma
-ms.service: batch
 ms.topic: tutorial
-ms.date: 12/11/2018
-ms.author: labrenne
+ms.date: 03/05/2020
 ms.custom: mvc
-ms.openlocfilehash: 12205fd04b015ac3cfe32765779808b636f53946
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: e78580cc2f95f14be53c0432df4eb4bd38450832
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023078"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82117137"
 ---
-# <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство. Отрисовка сцены с помощью пакетной службы Azure 
+# <a name="tutorial-render-a-scene-with-azure-batch"></a>Руководство по Отрисовка сцены с помощью пакетной службы Azure 
 
 Пакетная служба Azure предоставляет возможности рендеринга в масштабах облака с оплатой по мере использования. Пакетная служба рендеринга поддерживает такие приложения для рендеринга, как Autodesk Maya, 3ds Max, Arnold и V-Ray. В этом руководстве показаны шаги по отрисовке небольшой сцены с помощью пакетной службы и интерфейса командной строки Azure. Вы узнаете, как выполнять следующие задачи:
 
@@ -33,7 +28,7 @@ ms.locfileid: "77023078"
 
 Вам потребуется подписка с оплатой по мере использования или другой вариант приобретения Azure для использования приложениями для рендеринга в пакетной службе Azure по принципу оплаты по мере использования. **Лицензирование с оплатой за использование не поддерживается, если использовать бесплатное предложение Azure, которое предоставляет денежной кредит.**
 
-Примеры сцены 3ds Max и скрипта Bash, а также файлы конфигурации JSON для этого руководства находятся на сайте [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/batch/render-scene). Сцена 3ds Max получена из [примера файлов Autodesk 3ds Max](https://download.autodesk.com/us/support/files/3dsmax_sample_files/2017/Autodesk_3ds_Max_2017_English_Win_Samples_Files.exe). (Примеры файлов Autodesk 3ds Max доступны в соответствии с лицензией Creative Commons Attribution-NonCommercial-Share Alike. Copyright © Autodesk, Inc.)
+Примеры сцены 3ds Max и скрипта Bash, а также файлы конфигурации JSON для этого руководства находятся на сайте [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/batch/render-scene). Сцена 3ds Max получена из [примера файлов Autodesk 3ds Max](https://download.autodesk.com/us/support/files/3dsmax_sample_files/2017/Autodesk_3ds_Max_2017_English_Win_Samples_Files.exe). (Примеры файлов Autodesk 3ds Max доступны в соответствии с лицензией Creative Commons Attribution-NonCommercial-Share Alike. Copyright &copy; Autodesk, Inc.)
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -124,7 +119,7 @@ az storage blob upload-batch \
       "publisher": "batch",
       "offer": "rendering-windows2016",
       "sku": "rendering",
-      "version": "1.3.2"
+      "version": "1.3.8"
     },
     "nodeAgentSKUId": "batch.node.windows amd64"
   },

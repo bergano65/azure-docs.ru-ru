@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/25/2019
 tags: connectors
 ms.openlocfilehash: 5348ade1ba6eec6cbd360849411b4520cb3c2b19
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74787342"
 ---
 # <a name="delay-running-the-next-action-in-azure-logic-apps"></a>Задержка выполнения следующего действия в Azure Logic Apps
@@ -28,7 +28,7 @@ ms.locfileid: "74787342"
 
 * Отложите рабочий процесс до тех пор, пока вызов HTTP не завершится, прежде чем возобновить и получить данные.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет подписки, вы можете [зарегистрироваться для бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -50,10 +50,10 @@ ms.locfileid: "74787342"
 
    ![Задать время задержки](./media/connectors-native-delay/delay-time-intervals.png)
 
-   | Свойство | Имя JSON | Обязательно для заполнения | Тип | Описание |
+   | Свойство | Имя JSON | Обязательно | Тип | Описание |
    |----------|-----------|----------|------|-------------|
-   | Количество | count | ДА | Целое число | Число единиц времени для задержки |
-   | Единица | unit | ДА | Строка | Единица времени, например: `Second`, `Minute`, `Hour`, `Day`, `Week`или `Month` |
+   | Count | count | Да | Целое число | Число единиц времени для задержки |
+   | Единицы | unit | Да | Строка | Единица времени, `Second`например:, `Minute`, `Hour`, `Day` `Week`, или`Month` |
    ||||||
 
 1. Добавьте любые другие действия, которые необходимо выполнить в рабочем процессе.
@@ -76,9 +76,9 @@ ms.locfileid: "74787342"
 
    ![Укажите отметку времени окончания задержки](./media/connectors-native-delay/delay-until-timestamp.png)
 
-   | Свойство | Имя JSON | Обязательно для заполнения | Тип | Описание |
+   | Свойство | Имя JSON | Обязательно | Тип | Описание |
    |----------|-----------|----------|------|-------------|
-   | Timestamp | Timestamp | ДА | Строка | Конечная дата и время возобновления рабочего процесса с использованием этого формата: <p>ГГГГ-мм-DDThh: мм: ссZ <p>Например, если вы хотите 18 сентября 2017 в 2:00 PM, укажите "2017-09-18T14:00:00Z". <p>**Примечание.** Этот формат времени должен соответствовать [спецификации даты и времени ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) в [формате даты и времени](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)в формате UTC, но без [смещения в формате UTC](https://en.wikipedia.org/wiki/UTC_offset). Без часового пояса необходимо добавить букву "Z" в конце без пробелов. Эта буква Z ссылается на соответствующее [судовое время](https://en.wikipedia.org/wiki/Nautical_time). |
+   | Отметка времени | TIMESTAMP | Да | Строка | Конечная дата и время возобновления рабочего процесса с использованием этого формата: <p>ГГГГ-мм-DDThh: мм: ссZ <p>Например, если вы хотите 18 сентября 2017 в 2:00 PM, укажите "2017-09-18T14:00:00Z". <p>**Примечание.** Этот формат времени должен соответствовать [спецификации даты и времени ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) в [формате даты и времени](https://en.wikipedia.org/wiki/Coordinated_Universal_Time)в формате UTC, но без [смещения в формате UTC](https://en.wikipedia.org/wiki/UTC_offset). Без часового пояса необходимо добавить букву "Z" в конце без пробелов. Эта буква Z ссылается на соответствующее [судовое время](https://en.wikipedia.org/wiki/Nautical_time). |
    ||||||
 
 1. Добавьте любые другие действия, которые необходимо выполнить в рабочем процессе.

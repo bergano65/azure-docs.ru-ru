@@ -1,22 +1,14 @@
 ---
 title: Тестирование базы знаний — QnA Maker
-titleSuffix: Azure Cognitive Services
 description: Тестирование базы знаний QnA Maker является важной частью итерационного процесса для повышения точности возвращаемых ответов. Вы можете протестировать базу знаний через расширенный интерфейс чата, который также позволяет вносить правки.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 11/14/2019
-ms.author: diberry
-ms.custom: seodec18
-ms.openlocfilehash: c139d3a740067e3cecaff90d3171d7b0cb3d52c7
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.date: 03/05/2020
+ms.openlocfilehash: da4988ced0b077952ce64e6227d16e58d40ae329
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74091752"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78927273"
 ---
 # <a name="test-your-knowledge-base-in-qna-maker"></a>Тестирование базы знаний в QnA Maker
 
@@ -61,11 +53,11 @@ ms.locfileid: "74091752"
 
 ### <a name="add-a-new-answer"></a>Добавление нового ответа
 
-Можно добавить новый ответ, если любой из существующих ответов, которые были сопоставлены, неверный или не существует ответа в базе знаний (в КБ нет хорошего совпадения). 
+Можно добавить новый ответ, если любой из существующих ответов, которые были сопоставлены, неверный или не существует ответа в базе знаний (в КБ нет хорошего совпадения).
 
-В нижней части списка ответов используйте текстовое поле, чтобы ввести новый ответ, и нажмите клавишу ВВОД, чтобы добавить его. 
+В нижней части списка ответов используйте текстовое поле, чтобы ввести новый ответ, и нажмите клавишу ВВОД, чтобы добавить его.
 
-Для сохранения этого ответа выберите **Сохранить и Обучать**. Новая пара вопросов и ответов теперь будет добавлена в базу знаний. 
+Для сохранения этого ответа выберите **Сохранить и Обучать**. Новая пара вопросов и ответов теперь будет добавлена в базу знаний.
 
 > [!NOTE]
 > Все изменения в базе знаний сохраняются только при нажатии кнопки **Сохранить и Обучать**.
@@ -83,14 +75,16 @@ ms.locfileid: "74091752"
 * определение верхнего ответа и оценки набора вопросов
 * Проверка ожидаемого ответа на набор вопросов
 
-Пакетное тестирование предоставляется с помощью средства пакетного тестирования. Это средство доступно как [сжатый исполняемый файл](https://aka.ms/qnamakerbatchtestingtool) для загрузки или как [ C# исходный код](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/tree/master/documentation-samples/batchtesting). 
+Пошаговые инструкции см. в [руководстве](../Quickstarts/batch-testing.md) по тестированию пакетной службы.
+
+Пакетное тестирование предоставляется с помощью средства пакетного тестирования. Это средство доступно как [сжатый исполняемый файл](https://aka.ms/qnamakerbatchtestingtool) для загрузки или как [Исходный код C#](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/tree/master/documentation-samples/batchtesting).
 
 [Справочная документация по этому средству](../reference-tsv-format-batch-testing.md) включает:
 
 * пример командной строки средства
-* Формат входных и файловых файлов TSV 
+* Формат входных и файловых файлов TSV
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Публикация базы знаний](./publish-knowledge-base.md)

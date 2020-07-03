@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2019
 ms.author: allensu
-ms.openlocfilehash: eac7dc3b7188131685ef630c0dc01d248e1d6a6a
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: d3d836ddea8d07a25ad09e6f19d9f17a680decd6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77134787"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80294408"
 ---
 # <a name="load-balancer-with-tcp-reset-on-idle"></a>Load Balancer с сбросом TCP в режиме простоя
 
@@ -64,7 +64,7 @@ ms.locfileid: "77134787"
       ]
 ```
 
-## <a name="regions"></a> Доступность по регионам
+## <a name="region-availability"></a><a name="regions"></a>Доступность по регионам
 
 Доступно во всех регионах.
 
@@ -72,7 +72,8 @@ ms.locfileid: "77134787"
 
 - TCP RST отправлен только во время TCP-соединения в УСТАНОВЛЕНном состоянии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Сведения о [Load Balancer ценовой категории "Стандартный"](load-balancer-standard-overview.md).
-- Сведения о [правилах для исходящих подключений](load-balancer-outbound-rules-overview.md).
+- Дополнительные сведения о [Load Balancer (цен. Категория "Стандартный")](load-balancer-standard-overview.md).
+- Узнайте о [правилах исходящих подключений](load-balancer-outbound-rules-overview.md).
+- [Настройка TCP RST при истечении времени ожидания простоя](load-balancer-tcp-idle-timeout.md)

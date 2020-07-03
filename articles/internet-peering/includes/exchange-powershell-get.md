@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -8,20 +8,20 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 33ae3c3f9a2a213bd8135af846b4e72901b3df0d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 34a23ce76ed0e9285a686073e1cbeb95347f7b7d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75774449"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81678675"
 ---
-Чтобы получить список пиринга, выполните команду `Get-AzPeering`:
+Чтобы получить список пиринга, выполните команду **Get-азпиринг** .
 
 ```powershell
 Get-AzPeering ResourceGroupName "PeeringResourceGroup" -Name "SeattleExchangePeering"
 ```
 
-Ниже приведен пример ответа после успешного завершения подготовки к завершению.
+В этом примере ответа показано, когда закончена успешная подготовка.
 
 ```powershell
     Name                     : SeattleExchangePeering

@@ -1,6 +1,6 @@
 ---
-title: Завершение SSL с помощью интерфейса командной строки — шлюз приложений Azure
-description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения SSL-запросов с помощью интерфейса командной строки Azure.
+title: Завершение работы TLS с помощью интерфейса командной строки — шлюз приложений Azure
+description: Узнайте, как создать шлюз приложений и добавить сертификат для завершения TLS с помощью Azure CLI.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
@@ -8,44 +8,44 @@ ms.topic: article
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 3f98aabb9459e4895243eec7f3d759d5a2ee88c6
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.openlocfilehash: 6cd8cca65762de3da6a0e69e93c8d79bbe498dde
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74047320"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81311973"
 ---
-# <a name="create-an-application-gateway-with-ssl-termination-using-the-azure-cli"></a>Создание шлюза приложений с завершением SSL-запросов с помощью Azure CLI
+# <a name="create-an-application-gateway-with-tls-termination-using-the-azure-cli"></a>Создание шлюза приложений с завершением TLS с помощью Azure CLI
 
-Вы можете использовать Azure CLI, чтобы создать [шлюз приложений](overview.md) с сертификатом для [завершения SSL](ssl-overview.md)-запросов. Для внутренних серверов можно использовать [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) . В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются во внутренний пул шлюза приложений, используемый по умолчанию.
+Вы можете использовать Azure CLI для создания [шлюза приложений](overview.md) с сертификатом для [завершения TLS](ssl-overview.md). Для внутренних серверов можно использовать [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) . В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * создать самозаверяющий сертификат;
+> * Создание самозаверяющего сертификата
 > * настройка сети;
 > * создание шлюза приложений с сертификатом;
-> * создание масштабируемого набора виртуальных машин с внутренним пулом по умолчанию.
+> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
 При необходимости эти инструкции можно выполнить с помощью [Azure PowerShell](tutorial-ssl-powershell.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-self-signed-certificate"></a>создать самозаверяющий сертификат;
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 
 Для использования в рабочей среде следует импортировать действительный сертификат, подписанный доверенным поставщиком. В этой статье для создания самозаверяющего сертификата и PFX-файла используется команда openssl.
 
-```azurecli-interactive
+```console
 openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out appgwcert.crt
 ```
 
 Введите значения, которые соответствуют вашему сертификату. Вы можете принять значения по умолчанию.
 
-```azurecli-interactive
+```console
 openssl pkcs12 -export -out appgwcert.pfx -inkey privateKey.key -in appgwcert.crt
 ```
 
@@ -122,7 +122,7 @@ az network application-gateway create \
 
 ## <a name="create-a-virtual-machine-scale-set"></a>создавать масштабируемый набор виртуальных машин;
 
-В этом примере создается масштабируемый набор виртуальных машин, чтобы предоставить серверы для внутреннего пула по умолчанию в шлюзе приложений. Виртуальные машины в масштабируемом наборе связаны с подсетью *myBackendSubnet* и пулом *appGatewayBackendPool*. Масштабируемый набор можно создать с помощью команды [az vmss create](/cli/azure/vmss#az-vmss-create).
+В этом примере создается масштабируемый набор виртуальных машин, чтобы предоставить серверы для внутреннего пула по умолчанию в шлюзе приложений. Виртуальные машины в масштабируемом наборе связаны с подсетью *myBackendSubnet* и пулом *appGatewayBackendPool*. Чтобы создать масштабируемый набор, выполните команду [az vmss create](/cli/azure/vmss#az-vmss-create).
 
 ```azurecli-interactive
 az vmss create \
@@ -165,7 +165,7 @@ az network public-ip show \
   --output tsv
 ```
 
-Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. В этом примере используется URL-адрес **https://52.170.203.149** .
+Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. В этом примере URL-адрес: **https://52.170.203.149**.
 
 ![Предупреждение системы безопасности](./media/tutorial-ssl-cli/application-gateway-secure.png)
 
@@ -175,12 +175,12 @@ az network public-ip show \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Можно удалить группу ресурсов, шлюз приложений и все связанные с ними ресурсы, если они больше не требуются.
+При необходимости вы можете удалить группу ресурсов, шлюз приложений и все связанные ресурсы.
 
 ```azurecli-interactive
 az group delete --name myResourceGroupAG --location eastus
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание шлюза приложений для размещения нескольких веб-сайтов](./tutorial-multiple-sites-cli.md)

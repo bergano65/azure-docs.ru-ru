@@ -2,18 +2,19 @@
 title: PySpark интерактивной среды с помощью средств Azure HDInsight
 description: Сведения о создании и отправке запросов и скриптов с помощью средств Azure HDInsight для Visual Studio Code.
 keywords: VScode,средства Azure HDInsight,Hive,Python,PySpark,Spark,HDInsight,Hadoop,LLAP,Interactive Hive,Interactive Query
-author: jejiang
-ms.author: jejiang
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 06/13/2019
-ms.openlocfilehash: db2336fb79207ada24b71e0e64f0aaaab543e4da
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.custom: seoapr2020
+ms.date: 04/23/2020
+ms.openlocfilehash: 47f774f7b848e34aa7dc219ee4b08fb083cbd813
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73241542"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82188214"
 ---
 # <a name="set-up-the-pyspark-interactive-environment-for-visual-studio-code"></a>Настройка интерактивной среды PySpark для Visual Studio Code
 
@@ -23,9 +24,9 @@ ms.locfileid: "73241542"
 
 1. Установите [Python](https://www.python.org/downloads/) и [PIP](https://pip.pypa.io/en/stable/installing/).
 
-   + Установите Python отсюда: [https://www.python.org/downloads/](https://www.python.org/downloads/).
-   + Установите PIP с [https://pip.pypa.io/en/stable/installing](https://pip.pypa.io/en/stable/installing/) (если он не установлен из установки Python).
-   + Убедитесь, что Python и PIP установлены успешно с помощью следующих команд. (необязательный параметр)
+   * Установите Python из [https://www.python.org/downloads/](https://www.python.org/downloads/).
+   * Установите PIP с [https://pip.pypa.io/en/stable/installing](https://pip.pypa.io/en/stable/installing/) (если он не установлен из установки Python).
+   * Убедитесь, что Python и PIP установлены успешно с помощью следующих команд. (необязательно)
 
         ![Проверка команды версии для Python PIP](./media/set-up-pyspark-interactive-environment/check-python-pip-version.png)
 
@@ -34,21 +35,21 @@ ms.locfileid: "73241542"
 
 2. Установите **virtualenv**, выполнив команду, приведенную ниже.
 
-   ```
+   ```bash
    pip install virtualenv
    ```
 
-## <a name="other-packages"></a>Другие пакеты
+## <a name="other-packages"></a>другие пакеты.
 
-При появлении сообщения об ошибке установите необходимые пакеты, выполнив следующие команды:
+Если вы поступаете через сообщение об ошибке, установите необходимые пакеты, выполнив следующие команды:
 
    ![Установка пакета libkrb5 для Python](./media/set-up-pyspark-interactive-environment/install-libkrb5-package.png)
 
-```
+```bash
 sudo apt-get install libkrb5-dev
 ```
 
-```
+```bash
 sudo apt-get install python-dev
 ```
 
@@ -57,17 +58,11 @@ sudo apt-get install python-dev
 ## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="demo"></a>Демонстрация
+
 * HDInsight для VS Code: [видео](https://go.microsoft.com/fwlink/?linkid=858706)
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
+
 * [Использование средств Azure HDInsight для Visual Studio Code](hdinsight-for-vscode.md)
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](spark/apache-spark-intellij-tool-plugin.md)
-* [Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ через SSH](spark/apache-spark-intellij-tool-debug-remotely-through-ssh.md)
-* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](spark/apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](spark/apache-spark-eclipse-tool-plugin.md)
-* [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](spark/apache-spark-zeppelin-notebook.md)
-* [Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight](spark/apache-spark-jupyter-notebook-kernels.md)
-* [Использование внешних пакетов с записными книжками Jupyter](spark/apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](spark/apache-spark-jupyter-notebook-install-locally.md)
-* [Визуализация данных Apache Hive с Microsoft Power BI с использованием ODBC в Azure HDInsight](hadoop/apache-hadoop-connect-hive-power-bi.md)
-* [Use Apache Zeppelin to run Apache Hive queries in Azure HDInsight](./interactive-query/hdinsight-connect-hive-zeppelin.md) (Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin)

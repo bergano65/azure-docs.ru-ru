@@ -1,6 +1,6 @@
 ---
-title: Учебник. Предоставление доступа пользователю с помощью RBAC и портала Azure
-description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и портала Azure.
+title: Руководство по Предоставление доступа пользователям к ресурсам Azure с помощью портала Azure — Azure RBAC
+description: Узнайте, как предоставить пользователям доступ к ресурсам Azure с помощью портала Azure и управления доступом на основе ролей Azure (Azure RBAC).
 services: role-based-access-control
 documentationCenter: ''
 author: rolyon
@@ -13,24 +13,24 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/22/2019
 ms.author: rolyon
-ms.openlocfilehash: f4dd3995df2a068824c4aa6bccca5606d250a165
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: e70a3a1eedbc56754ad46fd99dddc0c7a3a6cf2f
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74419662"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735850"
 ---
-# <a name="tutorial-grant-a-user-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Руководство по Предоставление доступа пользователю с помощью RBAC и портала Azure
+# <a name="tutorial-grant-a-user-access-to-azure-resources-using-the-azure-portal"></a>Руководство по Предоставление доступа пользователям к ресурсам Azure с помощью портала Azure
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве объясняется, как предоставить пользователю доступ к созданию и администрированию виртуальных машин в группе ресурсов.
+[Управление доступом на основе ролей Azure (Azure RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве объясняется, как предоставить пользователю доступ к созданию и администрированию виртуальных машин в группе ресурсов.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Предоставление доступа пользователю в области действия группы ресурсов
 > * Запрет доступа
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "74419662"
 
 ## <a name="grant-access"></a>Предоставление доступа
 
-При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей.
+При использовании Azure RBAC для предоставления доступа нужно создать назначение ролей.
 
 1. В списке **Группы ресурсов** щелкните новую группу ресурсов **rbac-resource-group**.
 
@@ -88,11 +88,11 @@ ms.locfileid: "74419662"
 
 ## <a name="remove-access"></a>Запрет доступа
 
-В RBAC, чтобы удалить доступ, нужно удалить назначение роли.
+При использовании Azure RBAC для удаления доступа нужно удалить назначение роли.
 
 1. В списке назначения ролей установите флажок рядом с пользователем с ролью "Участник виртуальной машины".
 
-1. Нажмите кнопку **Удалить**.
+1. Щелкните **Удалить**.
 
    ![Сообщение об удалении назначения роли](./media/quickstart-assign-role-user-portal/remove-role-assignment.png)
 
@@ -112,7 +112,7 @@ ms.locfileid: "74419662"
 
 1. Чтобы удалить группу ресурсов, щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md)
+> [Руководство. Предоставление доступа пользователям к ресурсам Azure с помощью Azure PowerShell](tutorial-role-assignments-user-powershell.md)

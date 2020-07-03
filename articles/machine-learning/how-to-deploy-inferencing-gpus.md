@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
-ms.date: 10/25/2019
-ms.openlocfilehash: 39fc57a6da20549447f782399e9571f7a0ffeea7
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.date: 03/05/2020
+ms.openlocfilehash: b0fd537d1930e7c9d5f7a33f56ec5d00b1556562
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122531"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78398332"
 ---
 # <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с помощью GPU
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "76122531"
 > [!NOTE]
 > Сведения в этой статье основаны на сведениях в статье [развертывание в службе Azure Kubernetes Service](how-to-deploy-azure-kubernetes-service.md) . Когда эта статья обычно охватывает развертывание в AKS, в этой статье рассматривается развертывание GPU.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -139,7 +139,7 @@ def run(raw_data):
 
 ## <a name="define-the-conda-environment"></a>Определение среды conda
 
-Файл среды conda определяет зависимости для службы. Он включает зависимости, необходимые как для модели, так и для скрипта записи. Обратите внимание, что необходимо указать значения azureml-Default с версии > = 1.0.45 в качестве зависимости PIP, так как она содержит функции, необходимые для размещения модели в качестве веб-службы. Следующая YAML определяет среду для модели Tensorflow. Он указывает `tensorflow-gpu`, который будет использовать GPU, используемый в этом развертывании:
+Файл среды conda определяет зависимости для службы. Он включает зависимости, необходимые как для модели, так и для скрипта записи. Обратите внимание, что необходимо указать значения azureml-Default с версии >= 1.0.45 в качестве зависимости PIP, так как она содержит функции, необходимые для размещения модели в качестве веб-службы. Следующая YAML определяет среду для модели Tensorflow. Он указывает `tensorflow-gpu`, что будет использовать GPU, используемый в этом развертывании:
 
 ```yaml
 name: project_environment
@@ -176,7 +176,7 @@ gpu_aks_config = AksWebservice.deploy_configuration(autoscale_enabled=False,
 
 ## <a name="define-the-inference-configuration"></a>Определение конфигурации вывода
 
-Конфигурация вывода указывает на скрипт записи и объект среды, который использует образ DOCKER с поддержкой GPU. Обратите внимание, что файл YAML, используемый для определения среды, должен содержать идентификаторы azureml-Defaults с Version > = 1.0.45 в качестве зависимости PIP, так как он содержит функции, необходимые для размещения модели в качестве веб-службы.
+Конфигурация вывода указывает на скрипт записи и объект среды, который использует образ DOCKER с поддержкой GPU. Обратите внимание, что файл YAML, используемый для определения среды, должен содержать идентификаторы azureml-Defaults с Version >= 1.0.45 в качестве зависимости PIP, так как он содержит функции, необходимые для размещения модели в качестве веб-службы.
 
 ```python
 from azureml.core.model import InferenceConfig
@@ -214,7 +214,7 @@ print(aks_service.state)
 ```
 
 > [!NOTE]
-> Если `InferenceConfig` объект имеет `enable_gpu=True`, то параметр `deployment_target` должен ссылаться на кластер, предоставляющий графический процессор. В противном случае развертывание завершится ошибкой.
+> Если объект `InferenceConfig` имеет `enable_gpu=True`значение, `deployment_target` параметр должен ССЫЛАТЬСЯ на кластер, который предоставляет GPU. В противном случае развертывание завершится ошибкой.
 
 Дополнительные сведения см. в справочной документации по [модели](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
 
@@ -287,7 +287,7 @@ aks_service.delete()
 aks_target.delete()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание модели на FPGA](how-to-deploy-fpga-web-service.md)
 * [Развертывание модели с помощью ONNX](concept-onnx.md#deploy-onnx-models-in-azure)

@@ -3,26 +3,25 @@ title: Создание, тестирование и развертывание 
 description: Узнайте, как использовать действия GitHub для развертывания контейнера в Kubernetes
 services: container-service
 author: azooinmyluggage
-ms.service: container-service
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: atulmal
-ms.openlocfilehash: 62fcdf01250728cf84726db7e9b39452a4d4e5ff
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 5ee8ee4d2c9e225d82e58daffeef9e5f09e43e6b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77046350"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77595371"
 ---
 # <a name="github-actions-for-deploying-to-kubernetes-service"></a>Действия GitHub для развертывания в службе Kubernetes
 
-[Действия GitHub](https://help.github.com/en/articles/about-github-actions) дают возможность создавать автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. Действие Kubernetes [azure/aks-set-context@v1](https://github.com/Azure/aks-set-context) упрощает развертывание кластеров службы Kubernetes Azure. Действие задает контекст целевого кластера AKS, который может использоваться другими действиями, такими как [Azure/K8S-Deploy](https://github.com/Azure/k8s-deploy/tree/master), [Azure/K8S-Create-Secret](https://github.com/Azure/k8s-create-secret/tree/master) и т. д., или выполнение любых команд kubectl.
+[Действия GitHub](https://help.github.com/en/articles/about-github-actions) дают возможность создавать автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. Действие [azure/aks-set-context@v1](https://github.com/Azure/aks-set-context) Kubernetes упрощает развертывание кластеров службы Kubernetes Azure. Действие задает контекст целевого кластера AKS, который может использоваться другими действиями, такими как [Azure/K8S-Deploy](https://github.com/Azure/k8s-deploy/tree/master), [Azure/K8S-Create-Secret](https://github.com/Azure/k8s-create-secret/tree/master) и т. д., или выполнение любых команд kubectl.
 
-Рабочий процесс определяется файлом YAML (yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
+Рабочий процесс определяется файлом YAML (. yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
 
 Для рабочего процесса, предназначенного для AKS, файл содержит три раздела:
 
-|Section  |Задания  |
+|Раздел  |Задачи  |
 |---------|---------|
 |**Аутентификация** | Вход в частный реестр контейнеров (запись контроля доступа) |
 |**Сборка** | Сборка & принудительная отправка образа контейнера  |
@@ -55,11 +54,11 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 Выполните действия по настройке секретов:
 
-1. В [GitHub](https://github.com/)перейдите к репозиторию, выберите **параметры > секреты > Добавить новый секрет**.
+1. В [GitHub](https://github.com/)перейдите к репозиторию, выберите **параметры > секреты > добавить новый секрет**.
 
     ![секретные коды](media/kubernetes-action/secrets.png)
 
-2. Вставьте содержимое указанной выше `az cli` команды в качестве значения переменной Secret. Например, `AZURE_CREDENTIALS`.
+2. Вставьте содержимое приведенной выше `az cli` команды в качестве значения переменной Secret. Например, `AZURE_CREDENTIALS`.
 
 3. Аналогичным образом определите следующие дополнительные секреты для учетных данных реестра контейнеров и настройте их в действии входа DOCKER. 
 
@@ -72,9 +71,9 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 ##  <a name="build-a-container-image-and-deploy-to-azure-kubernetes-service-cluster"></a>Создание образа контейнера и развертывание в кластере службы Kubernetes Azure
 
-Сборка и отправка образов контейнеров выполняются с помощью `Azure/docker-login@v1` действия. Чтобы развернуть образ контейнера в AKS, необходимо использовать действие `Azure/k8s-deploy@v1`. Это действие имеет пять параметров:
+Сборка и отправка образов контейнеров выполняются с помощью `Azure/docker-login@v1` действия. Чтобы развернуть образ контейнера в AKS, необходимо будет использовать `Azure/k8s-deploy@v1` действие. Это действие имеет пять параметров:
 
-| **Параметр**  | **Пояснение**  |
+| **Параметр**  | **Объяснение**  |
 |---------|---------|
 | **namespace** | Используемых Выберите целевое пространство имен Kubernetes. Если пространство имен не указано, команды будут выполняться в пространстве имен по умолчанию. | 
 | **манифесты** |  Необходимости Путь к файлам манифеста, который будет использоваться для развертывания |
@@ -130,7 +129,7 @@ jobs:
           demo-k8s-secret
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Наш набор действий можно найти в разных репозиториях на сайте GitHub, на каждом из которых содержится документация и примеры, которые помогут вам использовать GitHub для непрерывной интеграции и развертывания приложений в Azure.
 

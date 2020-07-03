@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с O.C. Tanner — AppreciateHub | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с O.C. Tanner — AppreciateHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и O.C. Tanner — AppreciateHub.
 services: active-directory
 documentationCenter: na
@@ -15,13 +15,13 @@ ms.topic: tutorial
 ms.date: 01/28/2020
 ms.author: jeedes
 ms.openlocfilehash: 768756e013a4301ea11f5f9478178bdad46f9d67
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76984053"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-oc-tanner---appreciatehub"></a>Руководство. Интеграция единого входа Azure Active Directory с O.C. Tanner — AppreciateHub
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-oc-tanner---appreciatehub"></a>Руководство по Интеграция единого входа Azure Active Directory с O.C. Tanner — AppreciateHub
 
 В этом руководстве вы узнаете, как интегрировать O.C. Tanner — AppreciateHub с Azure Active Directory (Azure AD). После интеграции O.C. Tanner — AppreciateHub с Azure AD, вы сможете:
 

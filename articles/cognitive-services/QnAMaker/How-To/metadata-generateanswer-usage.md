@@ -1,27 +1,27 @@
 ---
 title: Метаданные с использованием API GenerateAnswer — QnA Maker
 titleSuffix: Azure Cognitive Services
-description: QnA Maker позволяет добавлять метаданные в виде пар "ключ-значение" в наборы вопросов и ответов. Вы можете фильтровать результаты по запросам пользователей и хранить дополнительные сведения, которые можно использовать в дальнейших беседах.
+description: QnA Maker позволяет добавлять метаданные в виде пар "ключ-значение" в пары "вопрос — ответ". Вы можете фильтровать результаты по запросам пользователей и хранить дополнительные сведения, которые можно использовать в дальнейших беседах.
 services: cognitive-services
 author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 11/22/2019
+ms.date: 03/31/2020
 ms.author: diberry
-ms.openlocfilehash: e84a6c93ad8757b302670af202f9d4b407f3ef57
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 171efd0e5750555130588f783c4a858def11afec
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945320"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83993513"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
 
 Чтобы получить прогнозируемый ответ на вопрос пользователя, используйте API Женератеансвер. При публикации базы знаний можно просмотреть сведения об использовании этого API на странице **Публикация** . Вы также можете настроить API для фильтрации ответов на основе тегов метаданных и проверить базу знаний из конечной точки с помощью параметра строки тестового запроса.
 
-QnA Maker позволяет добавлять метаданные в виде пар "ключ — значение" в наборы вопросов и ответов. Затем эти сведения можно использовать для фильтрации результатов в пользовательских запросах, а также для хранения дополнительных сведений, которые можно использовать в дальнейших беседах. Дополнительные сведения см. в разделе [Knowledge base](../Concepts/knowledge-base.md) (База знаний).
+QnA Maker позволяет добавлять метаданные в виде пар "ключ — значение" в свои пары вопросов и ответов. Затем эти сведения можно использовать для фильтрации результатов в пользовательских запросах, а также для хранения дополнительных сведений, которые можно использовать в дальнейших беседах. Дополнительные сведения см. в разделе [Knowledge base](../Concepts/knowledge-base.md) (База знаний).
 
 <a name="qna-entity"></a>
 
@@ -37,7 +37,7 @@ QnA Maker позволяет добавлять метаданные в виде
 
 ## <a name="get-answer-predictions-with-the-generateanswer-api"></a>Получение прогнозов ответов с помощью API Женератеансвер
 
-Используйте [API женератеансвер](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer) в роботе или приложении для запроса базы знаний с пользовательским вопросом, чтобы получить наилучшее соответствие из набора вопросов и ответов.
+Используйте [API женератеансвер](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer) в роботе или приложении для запроса базы знаний с пользовательским вопросом, чтобы получить лучшее совпадение из пар вопросов и ответов.
 
 <a name="generateanswer-endpoint"></a>
 
@@ -46,9 +46,9 @@ QnA Maker позволяет добавлять метаданные в виде
 После публикации базы знаний либо с [портала QnA Maker](https://www.qnamaker.ai), либо с помощью [API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish)можно получить сведения о конечной точке женератеансвер.
 
 Вот как это можно сделать.
-1. Войдите на портал [https://www.qnamaker.ai](https://www.qnamaker.ai).
+1. Выполните вход на странице [https://www.qnamaker.ai](https://www.qnamaker.ai).
 1. В окне **Мои базы знаний**выберите **Просмотреть код** для своей базы знаний.
-    ![снимок экрана с базами знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
+    ![Снимок экрана с базами знаний](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
 1. Получите сведения о конечной точке GenerateAnswer.
 
     ![Снимок экрана сведений о конечной точке](../media/qnamaker-how-to-metadata-usage/view-code.png)
@@ -64,7 +64,7 @@ QnA Maker позволяет добавлять метаданные в виде
 Запрос POST использует:
 
 * Обязательные [Параметры URI](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#uri-parameters)
-* Требуемое [свойство заголовка](https://docs.microsoft.com/azure/cognitive-services/qnamaker/quickstarts/get-answer-from-knowledge-base-nodejs#add-a-post-request-to-send-question-and-get-an-answer), `Authorization`, для безопасности
+* Обязательное свойство заголовка, `Authorization` , для безопасности
 * Обязательные [Свойства текста](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/train#feedbackrecorddto).
 
 URL-адрес Женератеансвер имеет следующий формат:
@@ -73,7 +73,7 @@ URL-адрес Женератеансвер имеет следующий фор
 https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 ```
 
-Не забудьте задать свойство "заголовок HTTP" `Authorization` со значением строки, `EndpointKey` с конечным пробелом, после чего ключ конечной точки находится на странице **параметров** .
+Не забудьте задать в качестве значения свойства "заголовок HTTP" `Authorization` значение строки `EndpointKey` с конечным пробелом, а затем ключ конечной точки, найденный на странице **параметров** .
 
 Пример текста JSON выглядит следующим образом:
 
@@ -127,7 +127,7 @@ https://{QnA-Maker-endpoint}/knowledgebases/{knowledge-base-ID}/generateAnswer
 
 Предыдущий формат JSON ответил на ответ с показателем 38,5%.
 
-## <a name="use-qna-maker-with-a-bot-in-c"></a>Использование QnA Maker с Bot вC#
+## <a name="use-qna-maker-with-a-bot-in-c"></a>Использование QnA Maker с программой-роботом в C #
 
 Платформа Bot предоставляет доступ к свойствам QnA Maker с помощью API- [интерфейса «ответ](https://docs.microsoft.com/dotnet/api/microsoft.bot.builder.ai.qna.qnamaker.getanswersasync?view=botbuilder-dotnet-stable#Microsoft_Bot_Builder_AI_QnA_QnAMaker_GetAnswersAsync_Microsoft_Bot_Builder_ITurnContext_Microsoft_Bot_Builder_AI_QnA_QnAMakerOptions_System_Collections_Generic_Dictionary_System_String_System_String__System_Collections_Generic_Dictionary_System_String_System_Double__)»:
 
@@ -145,8 +145,6 @@ var response = await _services.QnAServices[QnAMakerKey].GetAnswersAsync(turnCont
 ```
 
 Предыдущий JSON запросил только ответы, которые имеют пороговую оценку 30% или выше.
-
-В коде программы-робота поддержки есть [Пример](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-support/csharp_dotnetcore/Service/SupportBotService.cs#L418) с этим кодом.
 
 ## <a name="use-qna-maker-with-a-bot-in-nodejs"></a>Использование QnA Maker с программой-роботом в Node. js
 
@@ -166,13 +164,11 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 Предыдущий JSON запросил только ответы, которые имеют пороговую оценку 30% или выше.
 
-В коде программы-робота поддержки есть [Пример](https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/qnamaker-activelearning/javascript_nodejs/Helpers/dialogHelper.js#L36) с этим кодом.
-
 <a name="metadata-example"></a>
 
 ## <a name="use-metadata-to-filter-answers-by-custom-metadata-tags"></a>Использование метаданных для фильтрации ответов по тегам пользовательских метаданных
 
-Добавление метаданных позволяет фильтровать ответы по этим тегам метаданных. Добавьте столбец метаданных из меню **Параметры представления** . Добавьте метаданные в базу знаний, щелкнув значок метаданных **+** , чтобы добавить пару метаданных. Эта пара состоит из одного ключа и одного значения.
+Добавление метаданных позволяет фильтровать ответы по этим тегам метаданных. Добавьте столбец метаданных из меню **Параметры представления** . Добавьте метаданные в базу знаний, щелкнув значок метаданных, **+** чтобы добавить пару метаданных. Эта пара состоит из одного ключа и одного значения.
 
 ![Снимок экрана: Добавление метаданных](../media/qnamaker-how-to-metadata-usage/add-metadata.png)
 
@@ -200,7 +196,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="use-question-and-answer-results-to-keep-conversation-context"></a>Использование результатов вопросов и ответов для сохранения контекста беседы
 
-Ответ на Женератеансвер содержит соответствующие метаданные соответствующего набора вопросов и ответов. Эти сведения можно использовать в клиентском приложении для хранения контекста предыдущего диалога, который будет использоваться в последующих диалогах.
+Ответ на Женератеансвер содержит сведения о метаданных соответствующей пары вопросов и ответов. Эти сведения можно использовать в клиентском приложении для хранения контекста предыдущего диалога, который будет использоваться в последующих диалогах.
 
 ```json
 {
@@ -230,9 +226,9 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="match-questions-only-by-text"></a>Сопоставлять только вопросы по тексту
 
-По умолчанию QnA Maker выполняет поиск по вопросам и ответам. Если вы хотите выполнять поиск только по вопросам, то для получения ответа используйте `RankerType=QuestionOnly` в тексте сообщения запроса Женератеансвер.
+По умолчанию QnA Maker выполняет поиск по вопросам и ответам. Если вы хотите выполнять поиск только по вопросам, используйте `RankerType=QuestionOnly` в тексте сообщения запроса женератеансвер.
 
-Вы можете выполнять поиск в опубликованной базе знаний, используя `isTest=false`или в тесте базы знаний с помощью `isTest=true`.
+Можно выполнять поиск в опубликованной базе знаний, с помощью `isTest=false` или в тесте базы знаний с помощью `isTest=true` .
 
 ```json
 {
@@ -247,7 +243,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 |Код|Объяснение|
 |:--|--|
-|"2xx"|Успешно|
+|"2xx"|Успех|
 |400|Параметры запроса указаны неправильно. Это означает, что требуемые параметры отсутствуют, имеют неправильный формат или слишком большой размер|
 |400|Текст запроса указан неправильно. Это означает, что JSON отсутствует, имеет неправильный формат или слишком большой размер|
 |401|Недопустимый ключ|
@@ -260,4 +256,4 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 На странице **Публикация** также содержатся сведения для [создания ответа](../Quickstarts/get-answer-from-knowledge-base-using-url-tool.md) с помощью POST-или перелистывания.
 
 > [!div class="nextstepaction"]
-> [Создание программы-робота в базе знаний](../tutorials/integrate-qnamaker-luis.md)
+> [Анализ базы знаний](../how-to/get-analytics-knowledge-base.md)

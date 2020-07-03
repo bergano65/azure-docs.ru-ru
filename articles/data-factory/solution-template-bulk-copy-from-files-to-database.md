@@ -1,5 +1,5 @@
 ---
-title: Выполнить групповое копирование из файлов в базу данных
+title: Массовое копирование из файлов в базу данных
 description: Узнайте, как использовать шаблон решения для копирования данных из Azure Data Lake Storage 2-го поколения в Azure синапсе Analytics или базу данных SQL Azure.
 services: data-factory
 author: linda33wj
@@ -8,14 +8,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: ae250c7d15801789ad22955845cfa535ed91f2c1
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 468bd838237e076aacb9dee0ccacfdcc1ea940af
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75921142"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629122"
 ---
-# <a name="bulk-copy-from-files-to-database"></a>Выполнить групповое копирование из файлов в базу данных
+# <a name="bulk-copy-from-files-to-database"></a>Массовое копирование из файлов в базу данных
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается шаблон решения, который можно использовать для копирования данных из Azure Data Lake Storage 2-го поколения в Azure синапсе Analytics или в базу данных SQL Azure.
 
@@ -68,4 +70,4 @@ ms.locfileid: "75921142"
        
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)
+- [Знакомство с Фабрикой данных Azure](introduction.md)

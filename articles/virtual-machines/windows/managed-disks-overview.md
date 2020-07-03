@@ -1,18 +1,18 @@
 ---
-title: Обзор Хранилища дисков Azure для виртуальных машин Windows
-description: Обзор управляемых дисков Azure, которые отвечают за управление учетными записями хранения, используемыми для виртуальных машин Azure на платформе Windows
+title: Обзор Хранилища дисков Azure
+description: Обзор управляемых дисков Azure, отвечающих за управление учетными записями хранения, которые используются для виртуальных машин Azure.
 author: roygara
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.topic: overview
-ms.date: 12/02/2019
+ms.date: 04/24/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 7b2c2c1289a40d63b2f396ee59000c3aedb14c3d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4b3a66ce00582a3ef05e77f65acdc46fbde8ce72
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460042"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82148081"
 ---
 # <a name="introduction-to-azure-managed-disks"></a>Общие сведения об управляемых дисках Azure
 

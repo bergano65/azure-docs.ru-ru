@@ -17,10 +17,10 @@ ms.date: 03/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6212e74ecbf8327d3939138de2e92868f29b0f1a
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77058450"
 ---
 # <a name="tutorial-configure-cornerstone-ondemand-for-automatic-user-provisioning"></a>Руководство по настройке Cornerstone OnDemand для автоматической подготовки пользователей
@@ -30,7 +30,7 @@ ms.locfileid: "77058450"
 > [!NOTE]
 > В этом руководстве описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. [в статье Автоматизация подготовки пользователей и ее отработки в приложения SaaS (программное обеспечение как услуга) с Azure Active Directory](../app-provisioning/user-provisioning.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом учебнике, предполагается, что у вас есть:
 
@@ -51,7 +51,7 @@ ms.locfileid: "77058450"
 
     ![Значок Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -73,7 +73,7 @@ Azure Active Directory использует концепцию, называем
 
 * Рекомендуется назначить одного пользователя Azure AD в ходе OnDemand, чтобы протестировать конфигурацию автоматической подготовки пользователей. Позднее можно назначить дополнительных пользователей или группы.
 
-* При назначении пользователя в ходе OnDemand выберите любую допустимую роль приложения, если она доступна, в диалоговом окне Назначение. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в ходе OnDemand выберите любую допустимую роль приложения, если она доступна, в диалоговом окне Назначение. Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
 
 ## <a name="configure-automatic-user-provisioning-to-cornerstone-ondemand"></a>Настройка автоматической подготовки пользователей в ходе OnDemand
 
@@ -81,7 +81,7 @@ Azure Active Directory использует концепцию, называем
 
 Чтобы настроить автоматическую подготовку пользователей в ходе выполнения OnDemand в Azure AD, выполните следующие действия.
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения** > **все приложения > программной** **необходимости**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения** > **все приложения** > , по которым следует**OnDemand**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -89,7 +89,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Ссылка для программного перехода на OnDemand в списке приложений](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Подготовка Cornerstone OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/ProvisioningTab.png)
 
@@ -103,7 +103,7 @@ Azure Active Directory использует концепцию, называем
 
     * В поле **пароль администратора** введите пароль, соответствующий имени администратора.
 
-    * В поле **Domain (домен** ) введите URL-адрес Web Service клиента по запросу OnDemand. Например, служба находится по адресу `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`, а для Contoso домен — `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`. Дополнительные сведения о том, как получить URL веб-службы, см. в [этом PDF-документе](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf).
+    * В поле **Domain (домен** ) введите URL-адрес Web Service клиента по запросу OnDemand. Например, служба находится в `https://ws-[corpname].csod.com/feed30/clientdataservice.asmx`папке, а для Contoso — `https://ws-contoso.csod.com/feed30/clientdataservice.asmx`домен. Дополнительные сведения о том, как получить URL веб-службы, см. в [этом PDF-документе](https://help.csod.com/help/csod_0/Content/Resources/Documents/WebServices/CSOD_Web_Services_-_User-OU_Technical_Specification_v20160222.pdf).
 
 6. После заполнения полей, показанных на шаге 5, выберите **проверить подключение** , чтобы убедиться, что Azure AD может подключаться к испытательной мере по запросу. В случае сбоя подключения убедитесь, что используемая учетная запись OnDemand имеет разрешения администратора, и повторите попытку.
 
@@ -113,7 +113,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Сообщение электронной почты об уведомлении OnDemand](./media/cornerstone-ondemand-provisioning-tutorial/EmailNotification.png)
 
-8. Щелкните **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 
 9. В разделе **сопоставления** выберите **Synchronize Azure Active Directory Users to Cornerstone OnDemand** (Синхронизировать пользователей Azure Active Directory с Cornerstone OnDemand).
 
@@ -145,7 +145,7 @@ Azure Active Directory использует концепцию, называем
 
 ## <a name="connector-limitations"></a>Ограничения соединителя
 
-Атрибут **Position** в Cornerstone OnDemand ожидает значение, соответствующее ролям на портале Cornerstone OnDemand. Чтобы получить список допустимых значений **позиций** , перейдите в раздел **изменение записи пользователя > Структура организации > расположение** на портале программы OnDemand.
+Атрибут **Position** в Cornerstone OnDemand ожидает значение, соответствующее ролям на портале Cornerstone OnDemand. Чтобы получить список допустимых значений **позиций** , перейдите в раздел **изменение записи пользователя > структура Организации > расположение** на портале программы OnDemand.
 
 ![Учетная запись изменения пользовательской подготовки по запросу](./media/cornerstone-ondemand-provisioning-tutorial/UserEdit.png)
 
@@ -155,10 +155,10 @@ Azure Active Directory использует концепцию, называем
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 

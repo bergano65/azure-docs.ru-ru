@@ -3,20 +3,20 @@ title: Примеры преобразования целочисленных т
 titleSuffix: Azure AD B2C
 description: Примеры преобразования целочисленных утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7295e03f0a0f94b3450b99acc4d10d6ff86c92e7
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: ece25e95bbbe9f1a1fa591c29ea9ffda0fefd369
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74948908"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78187684"
 ---
 # <a name="integer-claims-transformations"></a>Преобразования целочисленных утверждений
 
@@ -28,10 +28,10 @@ ms.locfileid: "74948908"
 
 Преобразует тип данных "длинное целое" в тип данных "строка".
 
-| Элемент | TransformationClaimType | Тип данных | Заметки |
+| Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| inputClaim | InputClaim | длинное целое число | ClaimType для преобразования в строку. |
-| outputClaim | outputClaim | string | ClaimType, который создается после вызова ClaimsTransformation. |
+| InputClaim | InputClaim | long | ClaimType для преобразования в строку. |
+| outputClaim | outputClaim | строка | ClaimType, который создается после вызова ClaimsTransformation. |
 
 В этом примере утверждение `numericUserId` с типом значения "длинное целое" преобразуется в утверждение `UserId` с типом значения "строка".
 

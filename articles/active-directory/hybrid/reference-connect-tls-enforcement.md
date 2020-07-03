@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Принудительное применение протокола TLS 1.2 для Azure Active Directory Connect | Документация Майкрософт'
+title: 'Azure AD Connect: принудительное применение протокола TLS 1.2 для Azure Active Directory Connect | Документация Майкрософт'
 description: В этой статье перечислены все выпуски Azure AD Connect и Azure AD Sync
 services: active-directory
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff4e170f8f5d8e30004b94bbcfdb0ca3e8c3e04d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9ff5c75785622b43e66b808009c4674d4b2f2b50
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60386267"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78300854"
 ---
 # <a name="tls-12-enforcement-for-azure-ad-connect"></a>Принудительное применение TLS 1.2 для Azure AD Connect
 
@@ -33,13 +33,21 @@ ms.locfileid: "60386267"
 >После обновления реестра необходимо перезапустить сервер Windows, чтобы изменения вступили в силу.
 
 
-### <a name="enable-tls-12"></a>Включение протокола TLS 1.2
-- [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001 "SchUseStrongCrypto"=dword:0000001
-- [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000001 "SchUseStrongCrypto"=dword:00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "Enabled"=dword:00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "Enabled"=dword:00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000
+### <a name="enable-tls-12"></a>Включите протокол TLS 1.2.
+- [HKEY_LOCAL_MACHINE \SOFTWARE\WOW6432Node\Microsoft\\. NETFramework\v4.0.30319
+  - "Системдефаулттлсверсионс" = DWORD: 00000001
+  - "SchUseStrongCrypto" = DWORD: 0000001
+- [HKEY_LOCAL_MACHINE \Софтваре\микрософт\\. NETFramework\v4.0.30319
+  - "Системдефаулттлсверсионс" = DWORD: 00000001
+  - "SchUseStrongCrypto"=dword:00000001
+- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер]
+  - "Enabled" = DWORD: 00000001
+- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер]
+  - "DisabledByDefault" = DWORD: 00000000 
+- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент]
+  - "Enabled" = DWORD: 00000001
+- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент]
+  - "DisabledByDefault" = DWORD: 00000000
 
 ### <a name="powershell-script-to-enable-tls-12"></a>Сценарий PowerShell для включения протокола TLS 1.2
 Чтобы включить протокол TLS 1.2 на сервере Azure AD Connect, можно использовать следующий сценарий PowerShell.
@@ -72,12 +80,20 @@ ms.locfileid: "60386267"
 ```
 
 ### <a name="disable-tls-12"></a>Отключение протокола TLS 1.2
-- [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000000 "SchUseStrongCrypto"=dword:0000000
-- [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319] "SystemDefaultTlsVersions"=dword:00000000 "SchUseStrongCrypto"=dword:00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "Enabled"=dword:00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000001
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "Enabled"=dword:00000000
-- [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000001 
+- [HKEY_LOCAL_MACHINE \SOFTWARE\WOW6432Node\Microsoft\\. NETFramework\v4.0.30319
+  - "Системдефаулттлсверсионс" = DWORD: 00000000
+  - "SchUseStrongCrypto" = DWORD: 0,0000 до 0,0000000
+- [HKEY_LOCAL_MACHINE \Софтваре\микрософт\\. NETFramework\v4.0.30319
+  - "Системдефаулттлсверсионс" = DWORD: 00000000
+  - "SchUseStrongCrypto" = DWORD: 00000000
+- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер]
+  - "Enabled" = DWORD: 00000000
+- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ сервер]
+  - "DisabledByDefault" = DWORD: 00000001
+- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент]
+  - "Enabled" = DWORD: 00000000
+- [HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\контрол\секуритипровидерс\счаннел\протоколс\тлс 1.2 \ клиент]
+  - "DisabledByDefault" = DWORD: 00000001 
 
 ### <a name="powershell-script-to-disable-tls-12"></a>Сценарий PowerShell для отключения протокола TLS 1.2
 Чтобы отключить протокол TLS 1.2 на сервере Azure AD Connect, можно использовать следующий сценарий PowerShell.
@@ -110,4 +126,4 @@ ms.locfileid: "60386267"
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)

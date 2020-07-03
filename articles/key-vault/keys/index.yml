@@ -1,0 +1,64 @@
+### YamlMime:Landing
+title: Документация по ключам
+summary: Azure Key Vault позволяет пользователям и приложениям Microsoft Azure хранить и использовать ключи. Поддерживается несколько типов ключей и алгоритмов с возможностью использовать аппаратные модули безопасности (HSM) для важных ключей.
+metadata:
+  title: Ключи
+  description: Azure Key Vault позволяет пользователям и приложениям Microsoft Azure хранить и использовать ключи. Поддерживается несколько типов ключей и алгоритмов с возможностью использовать аппаратные модули безопасности (HSM) для важных ключей.
+  services: key-vault
+  ms.service: key-vault
+  ms.subservice: keys
+  ms.topic: landing-page
+  author: msmbaldwin
+  ms.author: mbaldwin
+  ms.date: 04/07/2020
+  ms.openlocfilehash: d5394200164d4f254ceca7a18035df95cc401747
+  ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 04/16/2020
+  ms.locfileid: "81423366"
+landingContent:
+- title: Ключи
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о ключах Key Vault
+      url: about-keys.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure CLI
+      url: quick-create-cli.md
+    - text: Azure PowerShell
+      url: quick-create-powershell.md
+    - text: Портал
+      url: quick-create-portal.md
+    - text: Python
+      url: quick-create-python.md
+- title: Учебники
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Импорт защищенных модулем HSM ключей в Key Vault
+      url: hsm-protected-keys.md
+    - text: Импорт независимых от поставщика защищенных модулем HSM ключей
+      url: hsm-protected-keys-vendor-agnostic-byok.md
+- title: Дополнительные сведения о Key Vault
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Key Vault
+      url: ../general/overview.md
+    - text: Основные понятия
+      url: ../general/basic-concepts.md
+    - text: Общие сведения об обратимом удалении
+      url: ../general/overview-soft-delete.md
+    - text: Общие сведения о безопасности
+      url: ../general/overview-security.md
+- title: Microsoft Learn
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Управление секретами в серверных приложениях с помощью Azure Key Vault
+      url: /learn/modules/manage-secrets-with-azure-key-vault/

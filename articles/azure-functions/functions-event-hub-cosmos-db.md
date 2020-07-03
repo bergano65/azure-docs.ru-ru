@@ -5,12 +5,12 @@ author: KarlErickson
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: karler
-ms.openlocfilehash: cef1d09f3365350240cb2ed879e4d41edec74aef
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: b6d7b2c60e777266b1cab578b8970c1fa1c6bc50
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849842"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77425329"
 ---
 # <a name="tutorial-create-a-function-in-java-with-an-event-hub-trigger-and-an-azure-cosmos-db-output-binding"></a>Руководство по созданию функции на языке Java с триггером Центра событий и выходной привязкой Azure Cosmos DB
 
@@ -36,6 +36,8 @@ ms.locfileid: "74849842"
 
 > [!IMPORTANT]
 > В переменной среды `JAVA_HOME` следует сохранить расположение установки JDK, чтобы завершить работу с этим руководством.
+
+Если вы предпочитаете сразу получить код для этого руководства, см. репозиторий примера [java-functions-eventhub-cosmosdb](https://github.com/Azure-Samples/java-functions-eventhub-cosmosdb).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -441,7 +443,7 @@ mvn azure-functions:deploy
 az group delete --name $RESOURCE_GROUP
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создать функцию Azure, которая обрабатывает события Центра событий и обновляет Cosmos DB. Подробные сведения см. в [руководстве разработчика Java по Функциям Azure](/azure/azure-functions/functions-reference-java). Сведения об используемых аннотациях см. в справочнике по [com.microsoft.azure.functions.annotation](/java/api/com.microsoft.azure.functions.annotation).
 

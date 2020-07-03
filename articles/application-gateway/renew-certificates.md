@@ -7,16 +7,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 8/15/2018
 ms.author: victorh
-ms.openlocfilehash: c7c27f00b9f8b4fdcd8f735f842edb8f66803c6a
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 4c0c0ab84e60335f58ac075459b95cfabb9135ac
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277999"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81311964"
 ---
 # <a name="renew-application-gateway-certificates"></a>Обновление сертификатов шлюза приложений
 
-Если вы настроили в шлюзе приложений SSL-шифрование, рано или поздно вам придется обновить сертификаты.
+В какой-то момент вам потребуется продлить сертификаты, если вы настроили шлюз приложений для шифрования TLS/SSL.
 
 Сертификат, связанный с прослушивателем, можно обновить с помощью портала Azure, Azure PowerShell или Azure CLI:
 
@@ -24,7 +24,7 @@ ms.locfileid: "76277999"
 
 Чтобы обновить сертификат прослушивателя на портале, перейдите к прослушивателям шлюза приложений. Щелкните прослушиватель, сертификат которого необходимо обновить, и выберите **Продлить или изменить выбранный сертификат**.
 
-![Обновление сертификата](media/renew-certificate/ssl-cert.png)
+![Продление сертификата](media/renew-certificate/ssl-cert.png)
 
 Передайте новый сертификат в формате PFX, присвойте ему имя, введите пароль и нажмите кнопку **Сохранить**.
 
@@ -49,7 +49,7 @@ set-AzApplicationGatewaySSLCertificate -Name <oldcertname> `
 
 Set-AzApplicationGateway -ApplicationGateway $appgw
 ```
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
+## <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 az network application-gateway ssl-cert update \
@@ -60,6 +60,6 @@ az network application-gateway ssl-cert update \
   --cert-password "<password>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Сведения по настройке разгрузки SSL с использованием шлюза приложений Azure см. в статье [Настройка шлюза приложений для разгрузки SSL с помощью портала](application-gateway-ssl-portal.md)
+Сведения о настройке разгрузки TLS с помощью шлюза приложений Azure см. в статье [Настройка разгрузки TLS](application-gateway-ssl-portal.md) .

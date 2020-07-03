@@ -8,30 +8,30 @@ ms.subservice: core
 ms.topic: conceptual
 author: maxluk
 ms.author: maxluk
-ms.date: 11/08/2019
-ms.openlocfilehash: 9b6c21c31f3f4ec45307c245c373b9e1c1480cda
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.date: 02/27/2020
+ms.openlocfilehash: b6b7e47acdbc5bd059e17e512731bd09c8580798
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75537127"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78195385"
 ---
 # <a name="visualize-experiment-runs-and-metrics-with-tensorboard-and-azure-machine-learning"></a>Визуализируйте запуски и метрики экспериментов с помощью TensorBoard и Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как просматривать запуски и метрики экспериментов в TensorBoard с помощью [пакета `tensorboard`](https://docs.microsoft.com/python/api/azureml-tensorboard/?view=azure-ml-py) в основном машинное обучение Azure SDK. Проверив запуски экспериментов, вы сможете лучше настраивать и переучить модели машинного обучения.
+Из этой статьи вы узнаете, как просматривать запуски и метрики экспериментов в TensorBoard с помощью [ `tensorboard` пакета](https://docs.microsoft.com/python/api/azureml-tensorboard/?view=azure-ml-py) в основном пакете SDK машинное обучение Azure. Проверив запуски экспериментов, вы сможете лучше настраивать и переучить модели машинного обучения.
 
 [TensorBoard](https://www.tensorflow.org/tensorboard/r1/overview) — это набор веб-приложений для изучения и понимания структуры и производительности экспериментов.
 
 Способ запуска TensorBoard с Машинное обучение Azure экспериментами зависит от типа эксперимента.
 + Если ваш эксперимент самостоятельно выводит файлы журналов, которые могут использоваться TensorBoard, например PyTorch, Chain и TensorFlow, вы можете [запустить TensorBoard непосредственно](#direct) из журнала выполнения эксперимента. 
 
-+ Для экспериментов, которые не выводят нестандартно TensorBoard файлы, например Scikit-учиться или Машинное обучение Azure, используйте [метод `export_to_tensorboard()`](#export) для экспорта журналов выполнения в качестве TensorBoard и запуска TensorBoard из него. 
++ Для экспериментов, которые не выводят нестандартно TensorBoard файлы, например Scikit-учиться или Машинное обучение Azure, используйте [ `export_to_tensorboard()` метод](#export) для экспорта журналов выполнения в качестве TensorBoard и запуска TensorBoard из него. 
 
 > [!TIP]
 > Сведения в этом документе предназначены главным образом для специалистов по обработке и анализу данных и разработчиков, желающих отслеживать процесс обучения модели. Если вы являетесь администратором, который заинтересован в наблюдении за использованием ресурсов и событиями из машинного обучения Azure, таких как квоты, завершенные обучающие запуски или завершенные развертывания моделей, см. раздел [мониторинг машинное обучение Azure](monitor-azure-machine-learning.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Чтобы запустить TensorBoard и просмотреть журналы запуска экспериментов, в экспериментах необходимо включить ранее ведение журнала для контроля метрик и производительности.  
 
@@ -48,14 +48,14 @@ ms.locfileid: "75537127"
 
     * Ваш собственный сервер записных книжек Жуптер
        * [Установка пакета SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) с `tensorboard` дополнительными
-        * [Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md).  
+        * [Создайте рабочую область машинное обучение Azure](how-to-manage-workspace.md).  
         * [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
   
 <a name="direct"></a>
 
 ## <a name="option-1-directly-view-run-history-in-tensorboard"></a>Вариант 1. Просмотр журнала выполнения непосредственно в TensorBoard
 
-Этот параметр работает для экспериментов, которые изначально выводят файлы журналов, используемые TensorBoard, такие как PyTorch, формирователь и эксперименты TensorFlow. Если это не так в эксперименте, используйте вместо этого [метод `export_to_tensorboard()`](#export) .
+Этот параметр работает для экспериментов, которые изначально выводят файлы журналов, используемые TensorBoard, такие как PyTorch, формирователь и эксперименты TensorFlow. Если это не так в эксперименте, используйте вместо него [ `export_to_tensorboard()` метод](#export) .
 
 В следующем примере кода используется [демонстрационный эксперимент MNIST](https://raw.githubusercontent.com/tensorflow/tensorflow/r1.8/tensorflow/examples/tutorials/mnist/mnist_with_summaries.py) из репозитория TensorFlow в удаленном целевом объекте вычислений, машинное обучение Azure вычислений. Затем мы обучили модель с помощью настраиваемого средства [оценки TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)пакета SDK, а затем начнем TensorBoard с этого TensorFlow эксперимента, то есть эксперимента, который изначально выводит файлы событий TensorBoard.
 
@@ -87,7 +87,7 @@ tf_code = requests.get("https://raw.githubusercontent.com/tensorflow/tensorflow/
 with open(os.path.join(exp_dir, "mnist_with_summaries.py"), "w") as file:
     file.write(tf_code.text)
 ```
-В файле кода MNIST mnist_with_summaries. Корректировка Обратите внимание, что существуют строки, вызывающие `tf.summary.scalar()`, `tf.summary.histogram()``tf.summary.FileWriter()` и т. д. Эти методы группируют, заменяют и помечают ключевые метрики экспериментов в журнале выполнения. `tf.summary.FileWriter()` особенно важно, так как он сериализует данные из зарегистрированных вами метрик эксперимента, что позволяет TensorBoard создавать визуализации.
+В файле кода MNIST, mnist_with_summaries. корректировка, обратите внимание, что имеются строки `tf.summary.scalar()`, `tf.summary.histogram()`вызывающие, и `tf.summary.FileWriter()` т. д. Эти методы группируют, заменяют и помечают ключевые метрики экспериментов в журнале выполнения. `tf.summary.FileWriter()` Особенно важно, так как он сериализует данные из зарегистрированных вами метрик эксперимента, что позволяет TensorBoard создавать визуализации.
 
  ### <a name="configure-experiment"></a>Настройка эксперимента
 
@@ -150,7 +150,7 @@ compute_target.wait_for_completion(show_output=True, min_node_count=None)
 
 ### <a name="submit-run-with-tensorflow-estimator"></a>Отправка выполнения с помощью средства оценки TensorFlow
 
-Средство оценки TensorFlow предоставляет простой способ запуска задания обучения TensorFlow на целевом объекте вычислений. Он реализуется с помощью универсального класса [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) , который можно использовать для поддержки любой платформы. Дополнительные сведения о учебных моделях с помощью универсального средства оценки см. в статье [обучение моделей с машинное обучение Azure помощью средства оценки](how-to-train-ml-models.md) .
+Средство оценки TensorFlow предоставляет простой способ запуска задания обучения TensorFlow на целевом объекте вычислений. Он реализуется через универсальный [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) класс, который можно использовать для поддержки любой платформы. Дополнительные сведения о учебных моделях с помощью универсального средства оценки см. в статье [обучение моделей с машинное обучение Azure помощью средства оценки](how-to-train-ml-models.md) .
 
 ```Python
 from azureml.train.dnn import TensorFlow
@@ -166,7 +166,7 @@ run = exp.submit(tf_estimator)
 
 ### <a name="launch-tensorboard"></a>Запустить TensorBoard
 
-Вы можете запустить TensorBoard во время выполнения или после завершения. В следующем примере создается экземпляр объекта TensorBoard, `tb`, который принимает журнал запуска эксперимента, загруженный в `run`, а затем запускает TensorBoard с помощью метода `start()`. 
+Вы можете запустить TensorBoard во время выполнения или после завершения. В следующем примере создается экземпляр `tb`объекта TensorBoard, который принимает журнал запуска эксперимента `run`, загруженный в, а затем запускает TensorBoard с помощью `start()` метода. 
   
 [Конструктор TensorBoard](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?view=azure-ml-py) принимает массив запусков, поэтому убедитесь, что он передается в виде одноэлементного массива.
 
@@ -182,6 +182,10 @@ tb.start()
 tb.stop()
 ```
 
+>[!Note]
+ Хотя в этом примере используется TensorFlow, TensorBoard можно легко использовать с PyTorch или моделями цепочки. TensorFlow должен быть доступен на компьютере с TensorBoard, но не требуется на компьютере, выполняющем вычисления PyTorch или Chain. 
+
+
 <a name="export"></a>
 
 ## <a name="option-2-export-history-as-log-to-view-in-tensorboard"></a>Вариант 2. Экспорт журнала в качестве журнала для просмотра в TensorBoard
@@ -190,7 +194,7 @@ tb.stop()
 
 ### <a name="set-up-experiment"></a>Настройка эксперимента
 
-Следующий код настраивает новый эксперимент и называет каталог Run `root_run`. 
+Следующий код настраивает новый эксперимент и называет каталог `root_run`Run. 
 
 ```python
 from azureml.core import Workspace, Experiment
@@ -221,7 +225,7 @@ data = {
 
 ### <a name="run-experiment-and-log-metrics"></a>Запуск эксперимента и запись метрик журнала
 
-Для этого кода мы обучить модель линейной регрессии и метрики ключа журнала, альфа-коэффициент, `alpha`и среднее значение ошибки в квадрате, `mse`в журнале выполнения.
+Для этого кода мы обучить модель линейной регрессии и метрики ключа журнала, коэффициент альфа, `alpha`и среднее значение ошибки `mse`, в журнале выполнения.
 
 ```Python
 from tqdm import tqdm
@@ -247,7 +251,7 @@ for alpha in tqdm(alphas):
 
 С помощью метода [export_to_tensorboard ()](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.export?view=azure-ml-py) пакета SDK можно экспортировать журнал выполнения эксперимента машинного обучения Azure в журналы tensorboard, чтобы мы могли просматривать их через tensorboard.  
 
-В следующем коде мы создадим папку `logdir` в текущем рабочем каталоге. В этой папке мы экспортируем историю выполнения эксперимента и журналы из `root_run`, а затем помечайте выполнение как завершенное. 
+В следующем коде мы создадим папку `logdir` в текущем рабочем каталоге. В этой папке мы будем экспортировать историю выполнения экспериментов и журналы из `root_run` , а затем пометить выполнение как завершенное. 
 
 ```Python
 from azureml.tensorboard.export import export_to_tensorboard
@@ -268,7 +272,7 @@ root_run.complete()
 ```
 
 >[!Note]
- Вы также можете экспортировать определенный запуск в TensorBoard, указав имя запуска `export_to_tensorboard(run_name, logdir)`
+ Вы также можете экспортировать определенный запуск в TensorBoard, указав имя запуска.`export_to_tensorboard(run_name, logdir)`
 
 ### <a name="start-and-stop-tensorboard"></a>Запуск и завершение TensorBoard
 После экспорта журнала выполнения для этого эксперимента можно запустить TensorBoard с помощью метода [Start ()](https://docs.microsoft.com/python/api/azureml-tensorboard/azureml.tensorboard.tensorboard?view=azure-ml-py#start-start-browser-false-) . 
@@ -289,7 +293,7 @@ tb.start()
 tb.stop()
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом пошаговом окне вы создали два эксперимента и узнали, как запустить TensorBoard в своих журналах выполнения, чтобы найти области для возможной настройки и повторного обучения. 
 

@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 15af18177cea217612a4d5276d130abe02d339f4
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77160766"
 ---
 # <a name="active-directory-federation-services-support-in-msalnet"></a>Поддержка службы федерации Active Directory (AD FS) в MSAL.NET
@@ -35,7 +35,7 @@ MSAL.NET поддерживает подключение к Azure AD, котор
 В этом случае в качестве [центра](msal-client-application-configuration.md#authority) используется обычный центр (имя узла центра сертификации + клиент, общие или организации).
 
 ### <a name="acquiring-a-token-interactively"></a>Интерактивное получение маркера
-При вызове метода `AcquireTokenInteractive` взаимодействие с пользователем обычно выполняется следующим образом:
+При вызове `AcquireTokenInteractive` метода взаимодействие с пользователем обычно выполняется следующим образом:
 
 1. Пользователь вводит идентификатор своей учетной записи.
 2. В Azure AD отображается краткое сообщение "идет переход на страницу вашей организации".

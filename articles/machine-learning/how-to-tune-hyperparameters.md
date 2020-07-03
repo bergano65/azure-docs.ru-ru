@@ -9,14 +9,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 03/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4ca9cac00b9d00dcdbbd27f2fe769de2983c13ae
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: a58ea58ebf6fdc7d8521d204ac42fcbadeca39a4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75536646"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189306"
 ---
 # <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Настройка параметров для модели с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -50,7 +50,7 @@ ms.locfileid: "75536646"
 
 #### <a name="discrete-hyperparameters"></a>Дискретные гиперпараметры 
 
-Дискретные гиперпараметры определяются как `choice` в дискретных значениях. `choice` может принимать следующие значения:
+Дискретные гиперпараметры определяются как `choice` в дискретных значениях. Параметр `choice` может принимать следующие значения:
 
 * одно или несколько значений, разделенных запятыми;
 * объект `range`;
@@ -136,7 +136,7 @@ param_sampling = GridParameterSampling( {
 
 При использовании байесовской выборки количество одновременных запусков влияет на эффективность процесса настройки. Обычно меньшее число параллельных запусков улучшает конвергенцию выборки, так как низкая степень параллелизма увеличивает число запусков, оптимизированных по результатам прошлых запусков.
 
-Выборка Байеса поддерживает только распределения `choice`, `uniform`и `quniform` в области поиска.
+Выборка Байеса поддерживает `choice` `uniform`только `quniform` распределения по области поиска.
 
 ```Python
 from azureml.train.hyperdrive import BayesianParameterSampling
@@ -184,7 +184,7 @@ run_logger.log("accuracy", float(val_accuracy))
 
 <a name='specify-early-termination-policy'/>
 
-## <a name="specify-early-termination-policy"></a>Настройка политики досрочного завершения
+## <a name="specify-early-termination-policy"></a><a name="early-termination"></a>Укажите политику раннего завершения
 
 Политика досрочного завершения позволяет автоматически прекращать запуски с низкой эффективностью. Прекращение запусков позволяет снизить потери ресурсов и перераспределить их для изучения других конфигураций параметров.
 
@@ -313,7 +313,7 @@ experiment = Experiment(workspace, experiment_name)
 hyperdrive_run = experiment.submit(hyperdrive_run_config)
 ```
 
-`experiment_name` — это имя, назначаемое эксперименту настройки параметров, а `workspace` — Рабочая область, в которой вы хотите создать эксперимент (Дополнительные сведения о экспериментах см. в разделе [как работает машинное обучение Azure?](concept-azure-machine-learning-architecture.md))
+`experiment_name`— Это имя, которое назначается эксперименту настройки параметров и `workspace` является рабочей областью, в которой вы хотите создать эксперимент (Дополнительные сведения о экспериментах см. в разделе [как работает машинное обучение Azure?](concept-azure-machine-learning-architecture.md))
 
 ## <a name="warm-start-your-hyperparameter-tuning-experiment-optional"></a>Горячий запуск эксперимента по настройке параметров (необязательно)
 
@@ -329,7 +329,7 @@ warmstart_parent_2 = HyperDriveRun(experiment, "warmstart_parent_run_ID_2")
 warmstart_parents_to_resume_from = [warmstart_parent_1, warmstart_parent_2]
 ```
 
-Кроме того, могут возникнуть ситуации, когда отдельные обучающие циклы настройки параметров перезапускаются из-за ограничений бюджета или сбоев по другим причинам. Теперь можно возобновить такие отдельные учебные запуски из последней контрольной точки (при условии, что сценарий обучения обрабатывает контрольные точки). При возобновлении отдельного учебного запуска будет использоваться та же конфигурация параметров и для подключения к папке выходных данных, используемой для этого запуска. Сценарий обучения должен принять аргумент `resume-from`, который содержит файлы контрольной точки или модели, из которых будет возобновлена работа по обучению. Вы можете возобновить отдельные запуски обучения, используя следующий фрагмент кода:
+Кроме того, могут возникнуть ситуации, когда отдельные обучающие циклы настройки параметров перезапускаются из-за ограничений бюджета или сбоев по другим причинам. Теперь можно возобновить такие отдельные учебные запуски из последней контрольной точки (при условии, что сценарий обучения обрабатывает контрольные точки). При возобновлении отдельного учебного запуска будет использоваться та же конфигурация параметров и для подключения к папке выходных данных, используемой для этого запуска. Сценарий обучения должен принять `resume-from` аргумент, который содержит файлы контрольной точки или модели, из которых будет возобновлена работа по обучению. Вы можете возобновить отдельные запуски обучения, используя следующий фрагмент кода:
 
 ```Python
 from azureml.core.run import Run
@@ -339,7 +339,7 @@ resume_child_run_2 = Run(experiment, "resume_child_run_ID_2")
 child_runs_to_resume = [resume_child_run_1, resume_child_run_2]
 ```
 
-Вы можете настроить эксперимент по настройке параметров в качестве горячего запуска из предыдущего эксперимента или возобновить отдельные запуски обучения, используя необязательные параметры `resume_from` и `resume_child_runs` в конфигурации:
+Вы можете настроить эксперимент по настройке параметров в качестве горячего запуска из предыдущего эксперимента или возобновления отдельных запусков обучения с `resume_from` помощью `resume_child_runs` необязательных параметров и в конфигурации.
 
 ```Python
 from azureml.train.hyperdrive import HyperDriveConfig
@@ -374,7 +374,7 @@ RunDetails(hyperdrive_run).show()
 
 Кроме того, вы можете визуально оценить соотношение между эффективностью и значениями отдельных гиперпараметров, используя график параллельных координат. 
 
-[![координатах параллельной настройки параметров](./media/how-to-tune-hyperparameters/HyperparameterTuningParallelCoordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
+[![параллельные координаты для настройки гиперпараметров](./media/how-to-tune-hyperparameters/HyperparameterTuningParallelCoordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
 
 Вы также можете визуализировать все запуски для настройки гиперпараметров на веб-портале Azure. Дополнительную информацию о просмотре сведений об эксперименте на веб-портале см. в [этой статье](how-to-track-experiments.md#view-the-experiment-in-the-web-portal).
 

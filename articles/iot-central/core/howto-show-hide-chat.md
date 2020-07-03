@@ -4,16 +4,16 @@ description: В этой статье описывается, как показ�
 author: v-krghan
 ms.author: v-krghan
 ms.date: 08/23/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: bd1c3d27ebedfb8479b9f30ac08d8132b2a44a04
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: a8e93ea12f176a4b28f14f5878cc580873d3c7c4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023469"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80157710"
 ---
 # <a name="toggle-live-chat"></a>Переключение чата в реальном времени
 
@@ -22,11 +22,11 @@ ms.locfileid: "77023469"
 > [!NOTE]
 > Вариант разговора доступен только для приложений, созданных с помощью плана бесплатных цен.
 
-## <a name="chat-with-us"></a>Пообщайтесь с нами в чате
+## <a name="chat-with-us"></a>Общайтесь с нами
 
 Чтобы получить техническую поддержку, откройте приложение IoT Central и выберите **чат с нами**.
 
-![Пообщайтесь с нами в чате](media/howto-show-hide-chat/chat-with-us.png)
+![Общайтесь с нами](media/howto-show-hide-chat/chat-with-us.png)
 
 Вы можете ввести вопрос, как показано на следующем снимке экрана:
 

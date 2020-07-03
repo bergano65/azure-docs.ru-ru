@@ -1,31 +1,23 @@
 ---
-title: Создание и передача виртуального жесткого диска с операционной системой Linux в Azure
+title: Создание и загрузка Linux VHD
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD-файл) Azure, содержащий операционную систему Linux.
-services: virtual-machines-linux
-documentationcenter: ''
-author: MicahMcKittrick-MSFT
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager,azure-service-management
-ms.assetid: d351396c-95a0-4092-b7bf-c6aae0bbd112
+author: gbowerman
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 10/08/2018
-ms.author: mimckitt
-ms.openlocfilehash: ffa99c6ba0157eca133dc36ecbbb159b076b8bc0
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.author: guybo
+ms.openlocfilehash: f700dec6486bad9e7024d7c908a70dd0ff2b342c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76155559"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80066761"
 ---
 # <a name="information-for-non-endorsed-distributions"></a>Информация о нерекомендованных дистрибутивах
 
 Соглашение об уровне обслуживания для платформы Azure применяется для виртуальных машин с ОС Linux, только если используется один из [рекомендованных дистрибутивов](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Для рекомендованных дистрибутивов предоставляются предварительно настроенные образы Linux, представленные в коллекции в Azure Marketplace.
 
-* [Linux в Azure — рекомендованные дистрибутивы](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Linux в Azure — рекомендованные дистрибутивы](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Поддержка образов Linux в Microsoft Azure](https://support.microsoft.com/kb/2941892)
 
 К любым дистрибутивам, выполняющимся в Azure, предъявляются определенные требования. Поскольку каждый дистрибутив имеет свои особенности, привести исчерпывающую информацию в рамках одной статьи невозможно. Даже при соблюдении всех приведенных ниже условий для надлежащей работы может потребоваться масштабная настройка системы Linux.
@@ -36,13 +28,13 @@ ms.locfileid: "76155559"
 * **[Debian Linux](debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Oracle Linux](oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Red Hat Enterprise Linux](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
-* **[SLES и OpenSUSE](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
+* **[SLES & openSUSE](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Ubuntu](create-upload-ubuntu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 
 В этой статье приводятся общие рекомендации по работе с дистрибутивом Linux в Azure.
 
 ## <a name="general-linux-installation-notes"></a>Общие замечания по установке Linux
-* Azure не поддерживает формат виртуального жесткого диска Hyper-V (VHDX) и может работать только с *фиксированными виртуальными жесткими дисками*.  Можно преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета [Convert-VHD](https://docs.microsoft.com/powershell/module/hyper-v/convert-vhd). Если вы используете VirtualBox, при создании диска нужно выбрать **фиксированный размер** вместо динамически выделяемого, который используется по умолчанию.
+* Azure не поддерживает формат виртуального жесткого диска Hyper-V (VHDX) и может работать только с *фиксированными виртуальными жесткими дисками*.  Диск можно преобразовать в формат VHD с помощью диспетчера Hyper-V или командлета [Convert-VHD](https://docs.microsoft.com/powershell/module/hyper-v/convert-vhd) . Если вы используете VirtualBox, при создании диска нужно выбрать **фиксированный размер** вместо динамически выделяемого, который используется по умолчанию.
 * Azure поддерживает виртуальные машины Gen1 (Boot BIOS) & Gen2 (Загрузка UEFI).
 * Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ.
 * При установке системы Linux рекомендуется использовать стандартные разделы, а не диспетчер логических томов (LVM), который часто используется по умолчанию при установке. Это позволит избежать конфликта имен LVM c клонированными виртуальными машинами, особенно если диск с OC может быть подключен к другой идентичной виртуальной машине в целях устранения неполадок. Для дисков данных можно использовать [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -72,7 +64,7 @@ ms.locfileid: "76155559"
 ### <a name="resizing-vhds"></a>Изменение размера VHD
 Размер виртуальной памяти образов VHD в Azure должен быть округлен до 1 МБ.  Как правило, размер VHD, созданных с помощью Hyper-V, настроен правильно.  Если виртуальный жесткий диск (VHD) настроен неправильно, при попытке создать образ из VHD-файла может появиться следующее сообщение об ошибке.
 
-* Виртуальный жесткий диск http:\//\<mystorageaccount >. BLOB. Core. Windows. NET/VHD/Милинуксвм. VHD имеет неподдерживаемый размер 21475270656 байт. Размер должен задаваться целым числом (в МБ).
+* Виртуальный жесткий диск HTTP\//\<: mystorageaccount>. BLOB.Core.Windows.NET/VHDs/MyLinuxVM.VHD имеет неподдерживаемый размер 21475270656 байт. Размер должен задаваться целым числом (в МБ).
 
 В таком случае вы можете изменить размер виртуальной машины с помощью консоли диспетчера Hyper-V или командлета Powershell [Resize-VHD](https://technet.microsoft.com/library/hh848535.aspx).  Если вы работаете не в среде Windows, воспользуйтесь командой `qemu-img` для преобразования (если необходимо) и изменения размера VHD.
 
@@ -150,7 +142,7 @@ ms.locfileid: "76155559"
 * [scsi_sysfs: защита от двойного выполнения __scsi_remove_device.](https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/commit/drivers/scsi/scsi_sysfs.c?id=be821fd8e62765de43cc4f0e2db363d0e30a7e9b)
 
 ## <a name="the-azure-linux-agent"></a>Агент Linux для Azure
-[Агент Linux для azure](../extensions/agent-linux.md) `waagent` подготавливает виртуальную машину Linux в Azure. Можно получить его последнюю версию, узнать о проблемах с файлами или отправить запрос в [репозитории GitHub для агента Linux](https://github.com/Azure/WALinuxAgent).
+[Агент Linux для Azure](../extensions/agent-linux.md) `waagent` выполняет подготовку виртуальной машины Linux в Azure. Можно получить его последнюю версию, узнать о проблемах с файлами или отправить запрос в [репозитории GitHub для агента Linux](https://github.com/Azure/WALinuxAgent).
 
 * Агент Linux выпускается по лицензии Apache 2.0. Многие дистрибутивы уже содержат пакеты RPM или. deb для агента, и эти пакеты можно легко установить и обновить.
 * Для работы агента Linux для Azure требуется Python v2.6+.

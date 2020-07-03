@@ -1,18 +1,16 @@
 ---
 title: Application Insights Azure для веб-приложений JavaScript
 description: Получение количества просмотров страниц и сеансов, данных веб-клиента, одностраничных приложений (SPA) и отслеживании закономерностей использования. Выявляйте исключения и проблемы с производительностью на веб-страницах JavaScript.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: Dawgfan
 ms.author: mmcc
 ms.date: 09/20/2019
-ms.openlocfilehash: c98feda62b7e5de5551b02d6189a1142ca8c5f88
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 50ce0d57ec7395c69bf65e41b67f0cb005a43cb8
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76276780"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82854978"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -49,21 +47,21 @@ appInsights.trackPageView(); // Manually call trackPageView to establish the cur
 
 ### <a name="snippet-based-setup"></a>Настройка на основе фрагментов кода
 
-Если приложение не использует NPM, вы можете напрямую инструментировать веб-страницы с помощью Application Insights, вставляя этот фрагмент в верхней части каждой страницы. Желательно, чтобы он был первым сценарием в разделе `<head>`, чтобы он мог отслеживать возможные проблемы со всеми зависимостями. Если вы используете серверное приложение Блазор, добавьте фрагмент в начало файла `_Host.cshtml` в разделе `<head>`.
+Если приложение не использует NPM, вы можете напрямую инструментировать веб-страницы с помощью Application Insights, вставляя этот фрагмент в верхней части каждой страницы. Желательно, чтобы он был первым сценарием в `<head>` разделе, чтобы он мог отслеживать все возможные проблемы со всеми зависимостями. Если вы используете серверное приложение Блазор, добавьте фрагмент в начало файла `_Host.cshtml` в `<head>` разделе.
 
 ```html
 <script type="text/javascript">
-var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("addTelemetryInitializer"),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),t.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t}(
+var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(n){var o={config:n,initialize:!0},t=document,e=window,i="script";setTimeout(function(){var e=t.createElement(i);e.src=n.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",t.getElementsByTagName(i)[0].parentNode.appendChild(e)});try{o.cookie=t.cookie}catch(e){}function a(n){o[n]=function(){var e=arguments;o.queue.push(function(){o[n].apply(o,e)})}}o.queue=[],o.version=2;for(var s=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];s.length;)a("track"+s.pop());var r="Track",c=r+"Page";a("start"+c),a("stop"+c);var u=r+"Event";if(a("start"+u),a("stop"+u),a("addTelemetryInitializer"),a("setAuthenticatedUserContext"),a("clearAuthenticatedUserContext"),a("flush"),o.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===n.disableExceptionTracking||n.extensionConfig&&n.extensionConfig.ApplicationInsightsAnalytics&&!0===n.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){a("_"+(s="onerror"));var p=e[s];e[s]=function(e,n,t,i,a){var r=p&&p(e,n,t,i,a);return!0!==r&&o["_"+s]({message:e,url:n,lineNumber:t,columnNumber:i,error:a}),r},n.autoExceptionInstrumented=!0}return o}(
 {
   instrumentationKey:"INSTRUMENTATION_KEY"
 }
-);window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
+);(window[aiName]=aisdk).queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
 </script>
 ```
 
 ### <a name="sending-telemetry-to-the-azure-portal"></a>Отправка данных телеметрии в портал Azure
 
-По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. К ним относятся:
+По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. Сюда входит следующее.
 
 - **Неперехваченные исключения** в приложении, включая сведения о
     - Трассировка стека
@@ -78,13 +76,13 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
     - Идентификатор (если есть) пользователя, выполняющего запрос
     - Контекст корреляции (если есть), где выполняется запрос
 - **Сведения о пользователе** (например, расположение, сеть, IP-адрес)
-- **Сведения об устройстве** (например, браузер, ОС, версия, язык, разрешение, модель)
+- **Сведения об устройстве** (например, "браузер", "ОС", "версия", "язык", "модель")
 - **Сведения о сеансе**
 
 ### <a name="telemetry-initializers"></a>Инициализаторы телеметрии
 Инициализаторы телеметрии используются для изменения содержимого собранных данных телеметрии перед их отправкой из браузера пользователя. Они также могут использоваться для предотвращения отправки определенных данных телеметрии путем возврата `false`. К экземпляру Application Insights можно добавить несколько инициализаторов телеметрии и они выполняются в порядке их добавления.
 
-Входной аргумент для `addTelemetryInitializer` является обратным вызовом, который принимает [`ITelemetryItem`](https://github.com/microsoft/ApplicationInsights-JS/blob/master/API-reference.md#addTelemetryInitializer) в качестве аргумента и возвращает `boolean` или `void`. Если возвращается `false`, элемент телеметрии не отправляется, в противном случае переходит к следующему инициализатору телеметрии, если таковой имеется или отправляется в конечную точку коллекции телеметрии.
+Входной аргумент `addTelemetryInitializer` для является обратным вызовом, который [`ITelemetryItem`](https://github.com/microsoft/ApplicationInsights-JS/blob/master/API-reference.md#addTelemetryInitializer) принимает в качестве аргумента и `boolean` возвращает `void`или. При возврате `false`элемент телеметрии не отправляется, в противном случае переходит к следующему инициализатору телеметрии, если таковой имеется или отправляется в конечную точку коллекции телеметрии.
 
 Пример использования инициализаторов телеметрии:
 ```ts
@@ -97,12 +95,13 @@ appInsights.trackTrace({message: 'This message will use a telemetry initializer'
 appInsights.addTelemetryInitializer(() => false); // Nothing is sent after this is executed
 appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 ```
-## <a name="configuration"></a>Настройка
-Большинство полей конфигурации называются так, чтобы их можно было по умолчанию иметь значение false. Все поля являются необязательными, за исключением `instrumentationKey`.
 
-| Имя | По умолчанию | Description |
+## <a name="configuration"></a>Конфигурация
+Большинство полей конфигурации называются так, чтобы их можно было по умолчанию иметь значение false. Все поля являются необязательными `instrumentationKey`, за исключением.
+
+| Имя | По умолчанию | Описание |
 |------|---------|-------------|
-| instrumentationKey | null | **Обязательно**<br>Ключ инструментирования, полученный из портал Azure. |
+| instrumentationKey | null | **Обязательное**<br>Ключ инструментирования, полученный из портал Azure. |
 | accountId | null | Необязательный идентификатор учетной записи, если приложение группирует пользователей в учетные записи. Без пробелов, запятых, точек с запятой, знаков равенства или вертикальных линий |
 | сессионреневалмс | 1800000 | Сеанс регистрируется, если пользователь неактивен в течение этого периода времени в миллисекундах. Значение по умолчанию — 30 минут. |
 | сессионекспиратионмс | 86400000 | Сеанс заносится в журнал, если он продолжался в течение этого времени (в миллисекундах). По умолчанию — 24 часа |
@@ -137,7 +136,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 | appId | null | AppId используется для корреляции между зависимостями AJAX, происходящими на стороне клиента, с запросами на стороне сервера. Если API маяка включен, он не может использоваться автоматически, но может быть задан вручную в конфигурации. Значение по умолчанию равно null |
 | енаблекорскоррелатион | false | Если значение — true, пакет SDK добавит два заголовка ("Request-ID" и "Request-context") во все запросы CORS для корреляции исходящих зависимостей AJAX с соответствующими запросами на стороне сервера. Значение по умолчанию — false. |
 | namePrefix | неопределенный | Необязательное значение, которое будет использоваться в качестве постфикса имени для localStorage и имени файла cookie.
-| енаблеаутораутетраккинг | false | Автоматическая регистрация изменений маршрута в одностраничных приложениях (SPA). Если значение — true, каждое изменение маршрута будет отсылать новый pageview Application Insights. Изменения в хэш-маршрутах (`example.com/foo#bar`) также записываются в виде новых просмотров страниц.
+| енаблеаутораутетраккинг | false | Автоматическая регистрация изменений маршрута в одностраничных приложениях (SPA). Если значение — true, каждое изменение маршрута будет отсылать новый pageview Application Insights. Изменения хэш-маршрута`example.com/foo#bar`() также записываются в виде новых просмотров страниц.
 | енаблерекуессеадертраккинг | false | Если значение равно true, заголовки запроса AJAX & FETCH отписываются, по умолчанию — false.
 | енаблереспонсехеадертраккинг | false | Если значение равно true, то заголовки ответа на запрос AJAX & FETCH отписываются, по умолчанию — false.
 | дистрибутедтраЦингмоде | `DistributedTracingModes.AI` | Задает режим распределенной трассировки. Если задан режим AI_AND_W3C или W3C, заголовки контекста трассировки W3C (трацепарент/трацестате) будут формироваться и включаться во все исходящие запросы. AI_AND_W3C предоставляется для обеспечения обратной совместимости с любыми устаревшими службами, Application Insights инструментированные.
@@ -146,18 +145,25 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 По умолчанию этот пакет SDK **не** будет управлять изменением маршрута на основе состояния, которое происходит в одностраничных приложениях. Чтобы включить автоматическое отслеживание изменений маршрута для одностраничного приложения, можно добавить `enableAutoRouteTracking: true` в конфигурацию установки.
 
-В настоящее время мы предлагаем отдельный [подключаемый модуль реагирования](#react-extensions) , который можно инициализировать с помощью этого пакета SDK. Кроме того, будет осуществляться отслеживание изменений маршрута, а также собраны [другие данные телеметрии, связанные с реагированием](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md).
+В настоящее время мы предлагаем отдельный [подключаемый модуль реагирования](#react-extensions), который можно инициализировать с помощью этого пакета SDK. Кроме того, будет осуществляться отслеживание изменений маршрута, а также собраны [другие данные телеметрии, связанные с реагированием](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md).
+
+> [!NOTE]
+> Используйте `enableAutoRouteTracking: true` , только если **не** используется подключаемый модуль "реагирующий". Оба варианта могут отправлять новые PageViews при изменении маршрута. Если оба этих флажка включены, может быть отправлен дубликат PageViews.
+
+## <a name="configuration-autotrackpagevisittime"></a>Конфигурация: Аутотраккпажевиситтиме
+
+С помощью `autoTrackPageVisitTime: true`параметра время, затрачиваемое пользователем на каждую страницу, будет отслеживаниь. На каждом новом PageView время, которое пользователь тратил на *предыдущей* странице, отправляется как [Пользовательская метрика](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview) с `PageVisitTime`именем. Эта пользовательская метрика отображается в [Обозреватель метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-getting-started) как "Метрика на основе журнала".
 
 ## <a name="react-extensions"></a>Модули реагирования
 
-| Модули |
+| Расширения |
 |---------------|
 | [React](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md)|
 | [React Native](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-native/README.md)|
 
 ## <a name="explore-browserclient-side-data"></a>Изучение данных в браузере и на стороне клиента
 
-Для просмотра данных в браузере и на стороне клиента можно перейти к **метрикам** и добавить отдельные метрики, которые вас интересуют: 
+Для просмотра данных в браузере и на стороне клиента можно перейти к **метрикам** и добавить отдельные метрики, которые вас интересуют:
 
 ![](./media/javascript/page-view-load-time.png)
 
@@ -167,7 +173,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 ![](./media/javascript/browser.png)
 
-### <a name="performance"></a>Ориентированное на производительность 
+### <a name="performance"></a>Производительность
 
 ![](./media/javascript/performance-operations.png)
 
@@ -175,9 +181,9 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 ![](./media/javascript/performance-dependencies.png)
 
-### <a name="analytics"></a>Аналитика 
+### <a name="analytics"></a>Analytics
 
-Чтобы запросить данные телеметрии, собранные с помощью пакета SDK для JavaScript, нажмите кнопку **Просмотр в журналах (аналитика)** . Добавив `where`ную инструкцию `client_Type == "Browser"`, вы увидите только данные из пакета SDK для JavaScript, и все телеметрии на стороне сервера, собранные другими пакетами SDK, будут исключены.
+Чтобы запросить данные телеметрии, собранные с помощью пакета SDK для JavaScript, нажмите кнопку **Просмотр в журналах (аналитика)** . Добавив `where` оператор `client_Type == "Browser"`, вы увидите только данные из пакета SDK для JavaScript, и все телеметрии на стороне сервера, собранные другими пакетами SDK, будут исключены.
  
 ```kusto
 // average pageView duration by name
@@ -196,10 +202,17 @@ dataset
 
 ### <a name="source-map-support"></a>Поддержка исходной схемы
 
-Стек вызовов минифицированные для телеметрии исключений может быть унминифиед в портал Azure. Все существующие интеграции на панели сведений об исключении будут работать с вновь унминифиед стека вызовов. Перетаскивание исходной схемы унминифинг поддерживает все существующие и будущие пакеты SDK JS (+ Node. JS), поэтому вам не нужно обновлять версию пакета SDK. Чтобы просмотреть стек вызовов унминифиед,
+Стек вызовов минифицированные для телеметрии исключений может быть унминифиед в портал Azure. Все существующие интеграции на панели сведений об исключении будут работать с вновь унминифиед стека вызовов.
+
+#### <a name="link-to-blob-storage-account"></a>Ссылка на учетную запись хранения BLOB-объектов
+
+Вы можете связать ресурс Application Insights с контейнером хранилища BLOB-объектов Azure, чтобы автоматически деминификацию стеки вызовов. Чтобы приступить к работе, см. раздел [Автоматическая поддержка карт исходного кода](./source-map-support.md).
+
+### <a name="drag-and-drop"></a>Перетаскивание
+
 1. Выберите элемент телеметрии исключения в портал Azure, чтобы просмотреть сведения о сквозной транзакции.
-2. Определяет, какие исходные карты соответствуют этому стеку вызовов. Исходная таблица должна соответствовать исходному файлу кадра стека, но с суффиксом `.map`
-3. Перетащите исходные карты в стек вызовов в портал Azure ![](https://i.imgur.com/Efue9nU.gif)
+2. Определяет, какие исходные карты соответствуют этому стеку вызовов. Исходная таблица должна соответствовать исходному файлу кадра стека, но с суффиксом`.map`
+3. Перетащите карты источника в стек вызовов в портал Azure![](https://i.imgur.com/Efue9nU.gif)
 
 ### <a name="application-insights-web-basic"></a>Application Insights Web Basic
 
@@ -207,7 +220,7 @@ dataset
 ```
 npm i --save @microsoft/applicationinsights-web-basic
 ```
-Эта версия поставляется с минимальным числом функций и функциональных возможностей и зависит от того, как вы видите. Например, он не выполняет Автосбор (неперехваченные исключения, AJAX и т. д.). API-интерфейсы для отправки определенных типов телеметрии, таких как `trackTrace`, `trackException`и т. д., не включены в эту версию, поэтому необходимо предоставить собственную оболочку. Единственным доступным API является `track`. [Пример](https://github.com/Azure-Samples/applicationinsights-web-sample1/blob/master/testlightsku.html) находится здесь.
+Эта версия поставляется с минимальным числом функций и функциональных возможностей и зависит от того, как вы видите. Например, он не выполняет Автосбор (неперехваченные исключения, AJAX и т. д.). API-интерфейсы для отправки определенных типов телеметрии, `trackTrace`например `trackException`, и т. д., не включены в эту версию, поэтому необходимо предоставить собственную оболочку. Единственный доступный API — `track`. [Пример](https://github.com/Azure-Samples/applicationinsights-web-sample1/blob/master/testlightsku.html) находится здесь.
 
 ## <a name="examples"></a>Примеры
 
@@ -216,10 +229,12 @@ npm i --save @microsoft/applicationinsights-web-basic
 ## <a name="upgrading-from-the-old-version-of-application-insights"></a>Обновление старой версии Application Insights
 
 Критические изменения в версии пакета SDK v2:
-- Чтобы обеспечить лучшую сигнатуры API, некоторые вызовы API, такие как trackPageView, были обновлены. Работа в IE8 или более ранних версиях браузера не поддерживается.
+- Чтобы обеспечить лучшую сигнатуру API, некоторые вызовы API, такие как trackPageView и trackException, были обновлены. Запуск в Internet Explorer 8 и более ранних версиях браузера не поддерживается.
 - В связи с обновлением схемы данных в конверте телеметрии изменились имя и структура поля.
-- Перемещен `context.operation` в `context.telemetryTrace`. Некоторые поля были также изменены (`operation.id` --> `telemetryTrace.traceID`)
-  - Если вы хотите вручную обновить текущий идентификатор pageview (например, в приложениях SPA), это можно сделать с помощью `appInsights.properties.context.telemetryTrace.traceID = Util.newId()`
+- `context.operation` Перемещено `context.telemetryTrace`в. Некоторые поля были также изменены (`operation.id` --> `telemetryTrace.traceID`).
+  - Чтобы вручную обновить текущий идентификатор pageview (например, в приложениях SPA), используйте `appInsights.properties.context.telemetryTrace.traceID = Util.generateW3CId()`.
+    > [!NOTE]
+    > Чтобы идентификатор трассировки был уникальным, где ранее использовался `Util.newId()`, теперь используйте. `Util.generateW3CId()` Как и в конечном итоге, это идентификатор операции.
 
 Если вы используете текущий пакет SDK Application Insights (1.0.20) и хотите узнать, работает ли новый пакет SDK в среде выполнения, обновите URL-адрес в зависимости от текущего сценария загрузки пакета SDK.
 
@@ -228,7 +243,7 @@ npm i --save @microsoft/applicationinsights-web-basic
    "https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js"
    ```
 
-- сценарий NPM. вызовите `downloadAndSetup`, чтобы скачать полный скрипт ApplicationInsights из CDN и инициализировать его с помощью ключа инструментирования:
+- сценарий NPM. вызовите `downloadAndSetup` , чтобы скачать полный скрипт APPLICATIONINSIGHTS из CDN и инициализировать его с помощью ключа инструментирования:
 
    ```ts
    appInsights.downloadAndSetup({
@@ -252,7 +267,7 @@ npm i --save @microsoft/applicationinsights-web-basic
 
 ## <a name="browser-support"></a>Поддержка браузеров
 
-![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)
+![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![FireFox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)
 --- | --- | --- | --- | --- |
 Последняя ✔ Chrome |  Последние ✔ Firefox | Internet Explorer 9 + & пограничных ✔ | ✔ Opera последней версии | Самый последний ✔ Safari |
 
@@ -260,7 +275,7 @@ npm i --save @microsoft/applicationinsights-web-basic
 
 Application Insights SDK JavaScript является открытым кодом для просмотра исходного кода или для участия в проекте посетите [официальный репозиторий GitHub](https://github.com/Microsoft/ApplicationInsights-JS).
 
-## <a name="next"></a> Дальнейшие действия
+## <a name="next-steps"></a><a name="next"></a> Дальнейшие действия
 * [Отслеживание использования](usage-overview.md)
 * [Пользовательские события и метрики](api-custom-events-metrics.md)
 * [Сборка, измерение и обучение](usage-overview.md)

@@ -6,10 +6,10 @@ ms.topic: troubleshooting
 ms.date: 5/20/2019
 ms.author: pepogors
 ms.openlocfilehash: c30eedb6782e4172d677f16e27441f28c78cdd89
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75614355"
 ---
 # <a name="use-visual-studio-to-create-and-publish-net-core-applications-targeting-a-remote-linux-service-fabric-cluster"></a>Создание и публикация приложений .Net Core, предназначенных для удаленного кластера Service Fabric Linux, с помощью Visual Studio
@@ -21,16 +21,16 @@ ms.locfileid: "75614355"
 
 ## <a name="create-a-service-fabric-application-targeting-net-core"></a>Создание приложения Service Fabric, предназначенного для .Net Core
 1. Запустите Visual Studio от имени **администратора**.
-2. Создайте проект с **файлом-> проектом New->** .
+2. Создайте проект с **файлом->проектом New->**.
 3. В диалоговом окне **Новый проект** выберите **приложение Cloud-> Service Fabric**.
-] создания ![приложений
+![Создание приложения]
 4. Присвойте приложению имя и нажмите кнопку **ОК**.
 5. На странице **новая Service Fabric служба** выберите тип службы, которую вы хотите создать, в **разделе .NET Core**.
 ![Create-Service]
 
 ## <a name="deploy-to-a-remote-linux-cluster"></a>Развертывание в удаленном кластере Linux
 1. В обозревателе решений щелкните приложение правой кнопкой мыши и выберите пункт **Сборка**.
-] сборки ![приложения
+![Сборка — приложение]
 2. После завершения процесса сборки для приложения щелкните службу правой кнопкой мыши и выберите пункт изменить **файл CSPROJ**.
 ![Edit-CSPROJ]
 3. Измените свойство Упдатесервицефабрикманифестенаблед с true на **false** , если служба является **типом проекта субъекта**. Если у приложения нет службы субъектов, перейдите к шагу 4.
@@ -55,7 +55,7 @@ ms.locfileid: "75614355"
 ```
 6. В обозреватель решений щелкните приложение правой кнопкой мыши и выберите **опубликовать**. Откроется диалоговое окно **Publish** (Опубликовать).
 7. В поле **Конечная точка подключения**выберите конечную точку для удаленного кластера Service Fabric Linux, который вы хотите назначить.
-![Publish-] приложений
+![Публикация — приложение]
 
 <!--Image references-->
 [Создание приложения]:./media/service-fabric-how-to-vs-remote-linux-cluster/create-application-remote-linux.png

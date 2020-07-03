@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: allensu
 ms.openlocfilehash: 7230b0c2b80137b068bbeacf43ab2133491a69b0
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74225469"
 ---
 # <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-using-azure-cli"></a>Настройка правил балансировки нагрузки и правил для исходящего трафика в Load Balancer (цен. категория "Стандартный") с использованием Azure CLI
@@ -81,7 +81,7 @@ ms.locfileid: "74225469"
 
 ### <a name="create-load-balancer"></a>Создание балансировщика нагрузки
 
-Создайте Load Balancer с входящим IP-адресом, выполнив команду [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) именованной *балансировки нагрузки* , включающую внешнюю IP-конфигурацию входящего трафика и серверный пул *бепулинбаунд* , связанный с общедоступным IP-адресом *. мипублиЦипинбаунд* , созданный на предыдущем шаге.
+Создайте Load Balancer с входящим IP-адресом, выполнив команду [AZ Network фунтов Create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) именованной *балансировки нагрузки* , включающую внешнюю IP-конфигурацию входящего трафика и серверный пул *бепулинбаунд* , связанный с общедоступным IP-адресом *мипублиЦипинбаунд* , созданным на предыдущем шаге.
 
 ```azurecli-interactive
   az network lb create \
@@ -118,7 +118,7 @@ ms.locfileid: "74225469"
 
 ### <a name="create-health-probe"></a>Создание пробы работоспособности
 
-Проба работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
+Проба работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте пробу работоспособности с помощью команды [AZ Network фунтов зонда Create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest) , чтобы отслеживать работоспособность виртуальных машин. 
 
 ```azurecli-interactive
   az network lb probe create \
@@ -179,7 +179,7 @@ az network lb outbound-rule create \
   az group delete --name myresourcegroupoutbound
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Изучая эту статью, вы создали Load Balancer (цен. категория "Стандартный"), настроили правила балансировки нагрузки для входящего трафика, а также настроили проверку работоспособности для виртуальных машин в серверном пуле. Чтобы узнать больше об Azure Load Balancer, ознакомьтесь с другими руководствами по этой службе.
 
 > [!div class="nextstepaction"]

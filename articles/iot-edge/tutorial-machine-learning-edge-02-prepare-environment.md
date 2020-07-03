@@ -1,21 +1,21 @@
 ---
-title: Руководство. настройке среды в службе "Машинное обучение Azure" для Azure IoT Edge
-description: Руководство. Подготовка среды для разработки и развертывания модулей для машинного обучения на пограничных устройствах.
+title: Руководство по настройке среды в службе "Машинное обучение Azure" для Azure IoT Edge
+description: Руководство по Подготовка среды для разработки и развертывания модулей для машинного обучения на пограничных устройствах.
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 1/23/2020
+ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a36427616691b0a0d400dadb4e35c2f7fbf23b22
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 42c776d4d6c3973e7c222c9c9adf3e5105f6c84f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76722304"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79296814"
 ---
-# <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство. настройке среды для машинного обучения в IoT Edge
+# <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Руководство по настройке среды для машинного обучения в IoT Edge
 
 > [!NOTE]
 > Эта статья входит в серию учебников по использованию Машинного обучения Azure в IoT Edge. Если вы перешли к этой статье по прямой ссылке, для оптимальных результатов рекомендуем начать с изучения [первой статьи](tutorial-machine-learning-edge-01-intro.md) этой серии.
@@ -26,7 +26,7 @@ ms.locfileid: "76722304"
 
 Этот шаг обычно выполняет разработчик облачных решений. Некоторое программное обеспечение, возможно, будет полезным также для специалиста по обработке и анализу данных.
 
-Мы разработали скрипт PowerShell, который позволяет создать виртуальную машину Azure с несколькими уже настроенными предварительными инструментами. Виртуальная машина, которую мы создаем, должна иметь возможность обрабатывать [вложенную виртуализацию](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization). Поэтому мы выбрали виртуальную машину [Standard_D8s_v3](../virtual-machines/windows/sizes-general.md#dsv3-series-1).
+Мы разработали скрипт PowerShell, который позволяет создать виртуальную машину Azure с несколькими уже настроенными предварительными инструментами. Виртуальная машина, которую мы создаем, должна иметь возможность обрабатывать [вложенную виртуализацию](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization). Поэтому мы выбрали виртуальную машину [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md).
 
 На виртуальной машине для разработки будут настроены следующие инструменты:
 
@@ -35,14 +35,14 @@ ms.locfileid: "76722304"
 * [Docker Desktop для Windows](https://www.docker.com/products/docker-desktop);
 * [Git для Windows](https://gitforwindows.org/)
 * [диспетчер учетных данных Git для Windows](https://github.com/Microsoft/Git-Credential-Manager-for-Windows);
-* [пакет SDK для .NET Core](https://dotnet.microsoft.com/).
+* [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/)
 * [Python 3](https://www.python.org/);
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azps-1.1.0)
 * [расширения VS Code](https://marketplace.visualstudio.com/search?target=VSCode):
   * [Средства Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
   * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-  * [C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
+  * [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
   * [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
   * [PowerShell](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)
 
@@ -189,18 +189,19 @@ ms.locfileid: "76722304"
 
 1. Разверните раздел **Хранение**:
 
-   ![Проверка наличия элемента turbofandevicestorage в списке пользовательских конечных точек](media/tutorial-machine-learning-edge-02-prepare-environment/custom-endpoints.png)
+   ![Проверка наличия элемента turbofanDeviceStorage в списке пользовательских конечных точек](media/tutorial-machine-learning-edge-02-prepare-environment/custom-endpoints.png)
 
-   Элемент **turbofandevicestorage** отображается в списке пользовательских конечных точек. Обратите внимание на следующие характеристики этой конечной точки:
+   Элемент **turbofanDeviceStorage** отображается в списке пользовательских конечных точек. Обратите внимание на следующие характеристики этой конечной точки:
 
    * Она указывает на контейнер хранилища BLOB-объектов, созданный с помощью `devicedata`, как указано в столбце **Имя контейнера**.
    * В столбце **Формат имени файла** последний элемент имени — partition. Мы считаем этот формат более удобным для файловых операций, которые мы будем выполнять с Записными книжками Azure позже в рамках этого руководства.
+   * Состояние конечной точки должно иметь значение **Работоспособна**.
 
 1. Выберите вкладку **Маршруты**.
 
 1. Выберите маршрут с именем **turbofanDeviceDataToStorage**.
 
-1. Обратите внимание, что на странице **Routes details** (Сведения о маршрутах) конечной точкой маршрута является конечная точка **turbofanDeviceStorage**.
+1. Обратите внимание, что на странице **Сведения о маршрутизации** конечной точкой маршрута является **turbofanDeviceStorage**.
 
    ![Просмотр сведений о маршруте turbofanDeviceDataToStorage.](media/tutorial-machine-learning-edge-02-prepare-environment/route-details.png)
 

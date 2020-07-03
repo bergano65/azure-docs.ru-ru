@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Lynda.com | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Lynda.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Lynda.com.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7550ba7f375cb7d8b291c0adf7f0ebded16f0990
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227517"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-lyndacom"></a>Руководство по Интеграция Azure Active Directory с Lynda.com
+# <a name="tutorial-azure-active-directory-integration-with-lyndacom"></a>Руководство. Интеграция Azure Active Directory с Lynda.com
 
 В этом руководстве описано, как интегрировать Lynda.com с Azure Active Directory (Azure AD).
 Интеграция Lynda.com с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "74227517"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Lynda.com, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Lynda.com с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -120,11 +120,11 @@ ms.locfileid: "74227517"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-lyndacom-single-sign-on"></a>Настройка единого входа для приложения Lynda.com
 

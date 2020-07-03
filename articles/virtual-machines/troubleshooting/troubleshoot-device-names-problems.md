@@ -15,17 +15,17 @@ ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: genli
 ms.openlocfilehash: 7d8a7e7e88837214042fb8f1c109c0b93bfe771b
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71058203"
 ---
 # <a name="troubleshoot-linux-vm-device-name-changes"></a>Устранение неполадок при изменении имени устройства виртуальной машины Linux
 
 В этом руководстве описывается, почему изменяются имена устройств после перезапуска виртуальной машины Linux или после повторного подключения дисков данных. В статье также приводятся решения этой проблемы.
 
-## <a name="symptoms"></a>Проблемы
+## <a name="symptoms"></a>Симптомы
 При выполнении виртуальных машин Linux в Microsoft Azure могут возникнуть следующие проблемы.
 
 - После перезапуска виртуальная машина не загружается.
@@ -152,8 +152,8 @@ ms.locfileid: "71058203"
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Ubuntu Использование UUID](https://help.ubuntu.com/community/UsingUUID)
-- [Red Hat: Постоянное именование](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/persistent_naming.html)
-- [Linux Возможные UUID](https://www.linux.com/news/what-uuids-can-do-you)
-- [Udev Общие сведения об управлении устройствами в современной системе Linux](https://www.linux.com/news/udev-introduction-device-management-modern-linux-system)
+- [Для Ubuntu: UsingUUID](https://help.ubuntu.com/community/UsingUUID) (Использование UUID)
+- [Red Hat: постоянное именование](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/persistent_naming.html)
+- [Для Linux: What UUIDs can do for you](https://www.linux.com/news/what-uuids-can-do-you) (Чем полезны идентификаторы UUID)
+- [Udev: Introduction to Device Management In Modern Linux System](https://www.linux.com/news/udev-introduction-device-management-modern-linux-system) (Udev. Руководство по управлению устройствами в современной системе Linux)
 

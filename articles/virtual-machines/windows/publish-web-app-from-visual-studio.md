@@ -1,33 +1,30 @@
 ---
 title: Публикация веб-приложения на виртуальную машину Azure из Visual Studio
 description: Публикация веб-приложения ASP.NET на виртуальную машину Azure из Visual Studio
-services: virtual-machines-windows
 author: ghogen
 manager: jillfra
-tags: azure-service-management
-ms.assetid: 70267837-3629-41e0-bb58-2167ac4932b3
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/03/2017
 ms.author: ghogen
-ms.openlocfilehash: 6e5db9b4e46019aa386057d51d956ff11d90f498
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: d864230ff524f6c008f9f05c16505cd9d0e9f229
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71970867"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583352"
 ---
 # <a name="publish-an-aspnet-web-app-to-an-azure-vm-from-visual-studio"></a>Публикация веб-приложения ASP.NET на виртуальную машину Azure из Visual Studio
 
 В этом документе описывается публикация веб-приложения ASP.NET на виртуальной машине Azure с помощью функции публикации **виртуальные машины Microsoft Azure** в Visual Studio 2019.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Чтобы использовать Visual Studio для публикации проекта ASP.NET на виртуальную машину Azure, ее необходимо правильно настроить.
 
-- Настройте виртуальную машину для запуска веб-приложения ASP.NET, а также разверните WebDeploy.
+- Компьютер должен быть настроен для запуска веб-приложения ASP.NET и установки WebDeploy. Дополнительные сведения см. в статье [Создание виртуальной машины ASP.NET с помощью WebDeploy](https://github.com/aspnet/Tooling/blob/AspNetVMs/docs/create-asp-net-vm-with-webdeploy.md).
 
 - Настройте на виртуальной машине DNS-имя. Дополнительные сведения см. в статье [Создание полного доменного имени на портале Azure для виртуальной машины Windows](portal-create-fqdn.md).
 
@@ -72,7 +69,7 @@ ms.locfileid: "71970867"
 
 11. При успешной публикации запустится браузер и откроется URL-адрес нового опубликованного сайта.
 
-**Готово!**
+**Загрузоч!**
 
 Вы успешно опубликовали веб-приложение на виртуальную машину Azure.
 
@@ -90,7 +87,7 @@ ms.locfileid: "71970867"
 
 ### <a name="modify-publish-profile-settings"></a>Изменение параметров профиля публикации
 
-Чтобы просмотреть и изменить параметры профиля публикации, выберите **Параметры...** .  
+Чтобы просмотреть и изменить параметры профиля публикации, выберите **Параметры...**.  
 
 ![Страница публикации — кнопка "Параметры..."]
 
@@ -106,11 +103,11 @@ ms.locfileid: "71970867"
 
 - Если вы хотите убедиться, что веб-сервер имеет чистую копию веб-приложения после каждой отправки и что другие файлы не остались из предыдущего развертывания, установите флажок **удалить дополнительные файлы в месте назначения** на вкладке **Параметры** .
 
-- Предупреждение. При публикации с этим параметром удаляются все файлы, существующие на веб-сервере (каталог wwwroot). Проверьте состояние компьютера перед непосредственной публикацией с этим параметром. 
+- Предупреждение. При активации этого параметра во время публикации будут удалены все файлы, имеющиеся на веб-сервере (каталог wwwroot). Проверьте состояние компьютера перед непосредственной публикацией с этим параметром. 
 
 ![Параметры публикации — страница параметров]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 ### <a name="set-up-cicd-for-automated-deployment-to-azure-vm"></a>Настройка непрерывной интеграции и непрерывного развертывания для автоматизированного развертывания на виртуальную машину Azure
 
@@ -125,7 +122,7 @@ ms.locfileid: "71970867"
 [Средство выбора виртуальной машины Azure]: ../../../includes/media/publish-web-app-from-visual-studio/ChooseVM-SelectVM.png
 [Вход в WebDeploy]: ../../../includes/media/publish-web-app-from-visual-studio/WebDeployLogin.png
 [Ошибка сертификата]: ../../../includes/media/publish-web-app-from-visual-studio/CertificateError.png
-[Окно вывода]: ../../../includes/media/publish-web-app-from-visual-studio/OutputWindow.png
+[окно вывода]: ../../../includes/media/publish-web-app-from-visual-studio/OutputWindow.png
 [Страница публикации — кнопка "Опубликовать"]: ../../../includes/media/publish-web-app-from-visual-studio/PublishPagePublishButton.png
 [Страница публикации — кнопка "Параметры..."]: ../../../includes/media/publish-web-app-from-visual-studio/PublishPageSettingsButton.png
 [Параметры публикации — страница подключения]: ../../../includes/media/publish-web-app-from-visual-studio/PublishSettingsConnectionPage.png

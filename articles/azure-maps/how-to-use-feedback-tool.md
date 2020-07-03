@@ -1,20 +1,20 @@
 ---
 title: Предоставьте отзыв о данных для Azure Maps | Карты Microsoft Azure
 description: Предоставьте отзыв о данных с помощью средства обратной связи Microsoft Azure Maps.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 08/19/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 4c4eb8932dda32ae6773e76dc7102f5afc6bc655
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 92469370f1ea64f5ee1bc2a84e47cc8b294b5375
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77209840"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80335346"
 ---
 # <a name="provide-data-feedback-to-azure-maps"></a>Предоставьте отзыв о данных для Azure Maps
 
@@ -50,7 +50,7 @@ Azure Maps был доступен с 2018 мая. Azure Maps предостав
 
   ![переместить расположение ПИН-кода](./media/how-to-use-feedback-tool/move-pin.png)
 
-## <a name="add-a-comment"></a>Добавление комментария 
+## <a name="add-a-comment"></a>Добавить комментарий 
 
 В дополнение к поиску расположения, средство обратной связи также позволяет добавить комментарий с текстом свободной формы для получения сведений о расположении. Чтобы добавить комментарий, выполните поиск расположения или щелкните расположение. Щелкните "Добавить комментарий", напишите комментарий и нажмите кнопку "Отправить".
 
@@ -63,7 +63,7 @@ Azure Maps был доступен с 2018 мая. Azure Maps предостав
   ![состояние отзыва](./media/how-to-use-feedback-tool/feedback-status.png)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы публиковать технические вопросы, связанные с Azure Maps, посетите веб:
 

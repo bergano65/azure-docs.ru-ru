@@ -20,10 +20,10 @@ translation.priority.mt:
 - zh-cn
 - zh-tw
 ms.openlocfilehash: 64f15bf3d262249cdda2760c7ddf768be2590419
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74113100"
 ---
 # <a name="odata-select-syntax-in-azure-cognitive-search"></a>Синтаксис $select OData в Azure Когнитивный поиск
@@ -52,16 +52,16 @@ field_path ::= identifier('/'identifier)*
 
 Параметр **$SELECT** состоит из двух форм:
 
-1. Единичная звездочка (`*`), указывающая, что должны возвращаться все извлекаемые поля, или
+1. Одиночная звездочка`*`(), указывающая, что должны возвращаться все извлекаемые поля, или
 1. Разделенный запятыми список путей к полям, определяющий, какие поля должны быть возвращены.
 
 При использовании второй формы вы можете указать в списке только доступные для получения поля.
 
-Если вы передаете сложное поле, не указывая его вложенные поля явным образом, все доступные для извлечения поля будут включаться в результирующий набор запроса. Например, предположим, что в индексе `Address` поле с `Street`, `City`и `Country` подполя, которые доступны для получения. При указании `Address` в **$SELECT**результаты запроса будут содержать все три вложенные поля.
+Если вы передаете сложное поле, не указывая его вложенные поля явным образом, все доступные для извлечения поля будут включаться в результирующий набор запроса. Например, предположим, что в индексе `Address` есть поле `Street`с `City`полями, `Country` и, и все они доступны для извлечения. Если указать `Address` в **$SELECT**, результаты запроса будут содержать все три вложенные поля.
 
 ## <a name="examples"></a>Примеры
 
-Включите `HotelId`, `HotelName`и `Rating` поля верхнего уровня в результаты, а также вспомогательное поле `City` в `Address`:
+Включите поля `HotelId`, `HotelName`и `Rating` верхнего уровня в результаты, а также `City` вспомогательное поле: `Address`
 
     $select=HotelId, HotelName, Rating, Address/City
 
@@ -78,7 +78,7 @@ field_path ::= identifier('/'identifier)*
 }
 ```
 
-Включите `HotelName` поле верхнего уровня в результаты, а также все вложенные поля `Address`, а также вложенные поля `Type` и `BaseRate` для каждого объекта в коллекции `Rooms`:
+Включите поле `HotelName` верхнего уровня в результаты, а также все вложенные `Address`поля, и вложенные поля `Type` и `BaseRate` для каждого объекта в `Rooms` коллекции:
 
     $select=HotelName, Address, Rooms/Type, Rooms/BaseRate
 
@@ -108,9 +108,9 @@ field_path ::= identifier('/'identifier)*
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 - [Работа с результатами поиска в Azure Когнитивный поиск](search-pagination-page-layout.md)
 - [Общие сведения о языке выражений OData для Azure Когнитивный поиск](query-odata-filter-orderby-syntax.md)
 - [Справочник по синтаксису выражений OData для Azure Когнитивный поиск](search-query-odata-syntax-reference.md)
-- [Поиск документов &#40;Когнитивный поиск Azure REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)
+- [Поиск документов &#40;Azure Когнитивный поиск REST API&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)

@@ -17,11 +17,11 @@ ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5499c8808c3916842071df1f03a865efd98719f6
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77185761"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79262091"
 ---
 # <a name="what-are-azure-ad-access-reviews"></a>Что собой представляют проверки доступа Azure AD?
 
@@ -58,8 +58,8 @@ Azure AD предоставляет возможность совместной 
 | --- | --- | --- | --- |
 | Члены группы безопасности</br>Члены группы Office | Указанные рецензенты</br>Владельцы группы</br>Самостоятельное рассмотрение | Проверки доступа Azure AD</br>Группы Azure AD | Панель доступа |
 | Назначенные для подключенного приложения | Указанные рецензенты</br>Самостоятельное рассмотрение | Проверки доступа Azure AD</br>Корпоративные приложения Azure AD (в предварительной версии) | Панель доступа |
-| Роль Azure AD | Указанные рецензенты</br>Самостоятельное рассмотрение | [Служба PIM Azure AD](../privileged-identity-management/pim-how-to-start-security-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json) | Портал Azure |
-| Роль ресурса Azure | Указанные рецензенты</br>Самостоятельное рассмотрение | [Служба PIM Azure AD](../privileged-identity-management/pim-resource-roles-start-access-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json) | Портал Azure |
+| Роль Azure AD | Указанные рецензенты</br>Самостоятельное рассмотрение | [Azure AD PIM](../privileged-identity-management/pim-how-to-start-security-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json) | Портал Azure |
+| Роль ресурса Azure | Указанные рецензенты</br>Самостоятельное рассмотрение | [Azure AD PIM](../privileged-identity-management/pim-resource-roles-start-access-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json) | Портал Azure |
 
 
 ## <a name="create-access-reviews"></a>Создание проверок доступа
@@ -122,7 +122,7 @@ Azure AD предоставляет возможность совместной 
 | Администратор создает проверку доступа группы C с 50 членами пользователей и 25 гостевыми пользователями. Делает его самостоятельным обзором. | 50. лицензии для каждого пользователя как самостоятельных рецензентов.<br/>(гостевые пользователи попадают в требуемое соотношение 1:5). | 50 |
 | Администратор создает проверку доступа группы D с шестью пользователями участников и 108 гостевых пользователей. Делает его самостоятельным обзором. | 6 лицензий для каждого пользователя как самопроверяющих + 16 дополнительных лицензий для покрытия всех 108 гостевых пользователей в соответствии с требуемым соотношением 1:5. 6 лицензий, охватывающих 6\*5 = 30 гостевых пользователей. Для оставшихся (108-6\*5) = 78 гостевых пользователей, 78/5 = 16 дополнительных лицензий требуется. Таким общим, требуется 6 + 16 = 22 лицензии. | 22 |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание проверки доступа для групп или приложений](create-access-review.md)
 - [Создание проверки доступа для пользователей в роли администратора Azure AD](../privileged-identity-management/pim-how-to-start-security-review.md?toc=%2fazure%2factive-directory%2fgovernance%2ftoc.json)

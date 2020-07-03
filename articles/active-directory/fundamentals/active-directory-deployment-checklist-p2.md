@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: martinco
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f84226a631014b51338d47887fe3bafc969dc571
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77063651"
 ---
 # <a name="azure-active-directory-feature-deployment-guide"></a>Руководство по развертыванию компонентов Azure Active Directory
@@ -26,7 +26,7 @@ ms.locfileid: "77063651"
 
 Кроме того, клиент может проверить свою [оценку безопасности удостоверений](identity-secure-score.md), чтобы узнать, насколько она соответствует рекомендациям корпорации Майкрософт. Проверьте свою оценку безопасности удостоверений до и после применения этих рекомендаций, чтобы сравнить свои результаты с результатами других пользователей в вашей отрасли и других организаций таких же размеров, как ваша.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Многие рекомендации, описанные в этом разделе, можно реализовать с помощью Azure AD Free или вообще без лицензии. Если для выполнения задачи требуется лицензия, в рекомендациях указано, какого типа лицензии будет достаточно.
 
@@ -34,7 +34,7 @@ ms.locfileid: "77063651"
 
 * [Лицензирование Azure AD](https://azure.microsoft.com/pricing/details/active-directory/)
 * [Microsoft 365 корпоративный](https://www.microsoft.com/en-us/licensing/product-licensing/microsoft-365-enterprise).
-* [Enterprise Mobility + Security](https://www.microsoft.com/en-us/licensing/product-licensing/enterprise-mobility-security).
+* [Enterprise Mobility + Security](https://www.microsoft.com/en-us/licensing/product-licensing/enterprise-mobility-security)
 * [Руководство по лицензированию службы совместной работы Azure AD B2B](../b2b/licensing-guidance.md)
 
 ## <a name="phase-1-build-a-foundation-of-security"></a>Этап 1. Создание основы безопасности

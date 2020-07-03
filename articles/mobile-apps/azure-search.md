@@ -1,18 +1,18 @@
 ---
 title: Облачная служба поиска на основе искусственного интеллекта для разработки мобильных приложений с помощью Azure Когнитивный поиск
 description: Сведения о службе для использования облачной службы поиска на основе искусственного интеллекта для разработки мобильных приложений.
-author: elamalani
+author: codemillmatt
 ms.assetid: 34a8a070-0123-8982-8345-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: d7f7c232723493af6b39fe51502e8751641ce735
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: 48703001317533981f360baacb330b6878a3857e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454505"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80240999"
 ---
 # <a name="ai-powered-cloud-service-with-azure-cognitive-search"></a>Облачная служба на основе искусственного интеллекта с Azure Когнитивный поиск
 [Azure когнитивный Поиск](https://azure.microsoft.com/services/search/) — это облачное решение типа "Поиск как услуга", которое предоставляет разработчикам API-интерфейсы и средства для добавления расширенных возможностей поиска по закрытому, разнородному содержимому в веб-, мобильных и корпоративных приложениях. Пользовательский код вызывает прием данных (индексирование) для создания и загрузки индекса. С другой стороны, код приложения выдает запросы и обрабатывает ответы. Интерфейс поиска определяется в клиенте с помощью функций Azure Когнитивный поиск, с выполнением запросов по сохраненному индексу, который вы создаете, владеете и сохраняете в службе.
@@ -33,9 +33,9 @@ ms.locfileid: "75454505"
 
 ## <a name="references"></a>Ссылки
 - [Портал Azure](https://portal.azure.com) 
-- [Документация по Когнитивному поиску Azure](/azure/search/)
-- [Руководство для разработчиков](https://azure.microsoft.com/resources/iot-developers-guide/)
-- [Как использовать Azure Когнитивный поиск](/azure/search/search-what-is-azure-search#how-to-use-azure-cognitive-search)
+- [Документация по Когнитивный поиск Azure](/azure/search/)
+- [Руководство разработчика](https://azure.microsoft.com/resources/iot-developers-guide/)
+- [Как использовать Когнитивный поиск Azure](/azure/search/search-what-is-azure-search#how-to-use-azure-cognitive-search)
 - [Краткие руководства](/azure/search/search-create-service-portal)
 
  

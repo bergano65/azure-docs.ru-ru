@@ -6,18 +6,18 @@ ms.author: dekapur
 ms.date: 12/12/2018
 ms.topic: conceptual
 ms.openlocfilehash: a674047722d4deca02d8f4d38a0826e479065037
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75496360"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79259205"
 ---
 # <a name="set-up-your-windows-development-environment-to-build-service-fabric-mesh-apps"></a>Чтобы создавать приложения Сетки Service Fabric, настройте среду разработки Windows
 
 Чтобы создавать и запускать приложения Сетки Azure Service Fabric на компьютере для разработки Windows, вам потребуется:
 
 * Docker
-* Visual Studio 2017 или более поздней версии
+* Visual Studio 2017 или более поздней версии
 * Среда выполнения Сетки Service Fabric.
 * Пакет SDK и инструменты для Сетки Service Fabric.
 
@@ -33,10 +33,10 @@ ms.locfileid: "75496360"
 
 ## <a name="visual-studio"></a>Visual Studio
 
-Для развертывания Service Fabric приложений сетки требуется Visual Studio 2017 или более поздней версии. [Установите версию 15.6.0][download-visual-studio] или более позднюю и включите следующие рабочие нагрузки:
+Для развертывания Service Fabric приложений сетки требуется Visual Studio 2017 или более поздней версии. [Его версия должна быть не ниже 15.6.0][download-visual-studio] и включать следующие рабочие нагрузки.
 
 * ASP.NET и веб-разработка.
-* разработка Azure.
+* Разработка в Azure
 
 ## <a name="install-docker"></a>Установка Docker
 
@@ -44,7 +44,7 @@ ms.locfileid: "75496360"
 
 #### <a name="install-docker-on-windows-10"></a>Установка Docker для Windows 10
 
-Скачайте и установите последнюю версию [DOCKER Community Edition для Windows][download-docker] , которая поддерживает контейнерные Service Fabric приложения, используемые Service Fabricной сеткой.
+Скачайте и установите последнюю версию [Docker Community Edition для Windows][download-docker] для поддержки контейнерных приложений Service Fabric, используемого Сеткой Service Fabric.
 
 Во время процесса установки при появлении запроса выберите **Использовать контейнеры Windows вместо контейнеров Linux**.
 
@@ -52,7 +52,7 @@ ms.locfileid: "75496360"
 
 #### <a name="install-docker-on-windows-server-2016"></a>Установите Docker для Windows Server 2016
 
-Если у вас не включена роль Hyper-V, откройте PowerShell как администратор и выполните следующую команду, а затем перезагрузите компьютер. Дополнительные сведения см. в статье [DOCKER Enterprise Edition для Windows Server][download-docker-server].
+Если у вас не включена роль Hyper-V, откройте PowerShell как администратор и выполните следующую команду, а затем перезагрузите компьютер. Дополнительные сведения см. в статье [Install Docker Enterprise Edition for Windows Server][download-docker-server] (Установка Docker Enterprise Edition для Windows).
 
 ```powershell
 Install-WindowsFeature -Name Hyper-V -IncludeManagementTools
@@ -72,8 +72,8 @@ Install-WindowsFeature Containers
 
 Установите Сетку Service Fabric, среду выполнения, пакет SDK и средства в следующем порядке.
 
-1. Установите [пакет SDK для Service Fabricной сетки][download-sdkmesh] с помощью установщика веб-платформы. Это позволит установить пакет SDK, средства Microsoft Azure Service Fabric и среду выполнения.
-2. Установите [расширение средств сетки Visual Studio Service Fabric (Предварительная версия)][download-tools] из Visual Studio Marketplace.
+1. Установите [пакет SDK Сетки Service Fabric][download-sdkmesh] с помощью установщика веб-платформы. Это позволит установить пакет SDK, средства Microsoft Azure Service Fabric и среду выполнения.
+2. Установите [расширение средств службы "Сетка Service Fabric" в Visual Studio (предварительная версия)][download-tools] из Visual Studio Marketplace.
 
 ## <a name="build-a-cluster"></a>Создание кластера
 
@@ -109,7 +109,7 @@ Install-WindowsFeature Containers
 
 Теперь можно приступать к созданию приложений Сетки Service Fabric.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с руководством [Tutorial: Create, debug, and deploy a multi-service web application to Service Fabric Mesh](service-fabric-mesh-tutorial-create-dotnetcore.md) (Руководство. Создание, отладка и развертывание многосервисного веб-приложения в Сетке Service Fabric).
 

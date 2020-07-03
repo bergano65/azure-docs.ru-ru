@@ -11,10 +11,10 @@ ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: d064e940997d13e51be4fd38e9f678b778ce31f4
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74900046"
 ---
 # <a name="samples-on-azure-data-science-virtual-machines"></a>Примеры на виртуальных машинах Azure для обработки и анализа данных
@@ -23,7 +23,7 @@ ms.locfileid: "74900046"
 > [!NOTE]
 > Дополнительные сведения о том, как запускать записные книжки Jupyter на виртуальных машинах для обработки и анализа данных, см. в разделе [Access Jupyter](#access-jupyter) .
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этих примеров необходимо подготовить виртуальную машину для обработки и анализа данных. Ознакомьтесь с краткими руководствами для [Windows](./provision-vm.md) и [Ubuntu](./dsvm-ubuntu-intro.md).
 
@@ -35,7 +35,7 @@ ms.locfileid: "74900046"
 | Язык Julia  | Содержит подробное описание построения и глубокого обучения в Julia. Также объясняется, как вызывать C и Python из Julia. <br/> [Язык Julia](#julia-language) |<br/> Windows:<br/> `~notebooks/Julia_notebooks`<br/><br/> Linux:<br/> `~notebooks/julia`<br/><br/> |
 | Машинное обучение Azure  | Демонстрирует создание моделей машинного обучения и глубокого обучения с помощью Машинное обучение. Модели можно развертывать в любом расположении. Используйте автоматическое машинное обучение и интеллектуальную настройку гиперпараметров. Вы также можете использовать управление моделями и распределенное обучение. <br/> [Машинное обучение](#azure-machine-learning) | <br/>`~notebooks/AzureML`<br/> <br/>|
 | Записные книжки PyTorch  | Примеры глубокого обучения, в которых используются нейронные сети на основе PyTorch. Записные книжки есть как для базовых, так и для расширенных сценариев.  <br/> [Записные книжки PyTorch](#pytorch) | <br/>`~notebooks/Deep_learning_frameworks/pytorch`<br/> <br/>|
-| TensorFlow  |  Разнообразные примеры и методики нейронной сети, реализованные с помощью платформы TensorFlow. <br/> [TensorFlow](#tensorflow) | <br/>`~notebooks/Deep_learning_frameworks/tensorflow`<br/><br/> |
+| TensorFlow  |  Разнообразные примеры и методики нейронной сети, реализованные с помощью платформы TensorFlow. <br/> [TensorFlow](#tensorflow); | <br/>`~notebooks/Deep_learning_frameworks/tensorflow`<br/><br/> |
 | Microsoft Cognitive Toolkit <br/>   | Примеры глубокого обучения, опубликованные Группой Cognitive Toolkit в корпорации Майкрософт.  <br/> [Cognitive Toolkit](#cntk) | <br/> `~notebooks/DeepLearningTools/CNTK/Tutorials`<br/><br/> Linux:<br/> `~notebooks/CNTK`<br/> <br/>|
 | Caffe2 | Примеры глубокого обучения, в которых используются нейронные сети на основе Caffe2. Несколько записных книжек посвящены пользователям с Caffe2 и их эффективному использованию. Примеры включают предварительную обработку изображений и создание набора данных. Они также включают регрессию и использование предварительно обученных моделей. <br/> [Caffe2](#caffe2) | <br/>`~notebooks/Deep_learning_frameworks/caffe2`<br/><br/> |
 | H2O   | Примеры на основе Python, использующие H2O для реальных сценариев проблем. <br/> [H2O](#h2o) | <br/>`~notebooks/h2o`<br/><br/> |
@@ -46,7 +46,7 @@ ms.locfileid: "74900046"
 
 ## <a name="access-jupyter"></a>Доступ к Jupyter 
 
-Чтобы получить доступ к Jupyter, выберите значок **Jupyter** в меню Рабочий стол или приложение. Вы также можете получить доступ к Jupyter в выпуске Linux DSVM. Для удаленного доступа из веб-браузера перейдите в раздел `https://<Full Domain Name or IP Address of the DSVM>:8000` Ubuntu.
+Чтобы получить доступ к Jupyter, выберите значок **Jupyter** в меню Рабочий стол или приложение. Вы также можете получить доступ к Jupyter в выпуске Linux DSVM. Для удаленного доступа из веб-браузера перейдите `https://<Full Domain Name or IP Address of the DSVM>:8000` на Ubuntu.
 
 Чтобы добавить исключения и предоставить доступ к Jupyter через браузер, используйте следующие рекомендации.
 

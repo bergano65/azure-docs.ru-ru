@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: 3c7515be573a0b74a39a77a91fbc554862c7f7aa
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.custom: amqp
+ms.openlocfilehash: 20d39b1f5a11f20eb5d12f34337787b382c820f6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76960780"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758737"
 ---
 # <a name="409002-linkcreationconflict"></a>409002 LinkCreationConflict
 

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 08/07/2019
 ms.author: raynew
 ms.openlocfilehash: c0eaf28f9aeb4050fd35a6036a53e3e91d00f3eb
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847483"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79281838"
 ---
 # <a name="failback-of-vmware-vms-after-disaster-recovery-to-azure"></a>Восстановление размещения виртуальных машин VMware после аварийного восстановления в Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "68847483"
 > [!NOTE]
 > Если выполнена отработка отказа физического компьютера в Azure, то восстановить его размещение можно только в качестве виртуальной машины VMware. Это соответствует рабочему процессу восстановления в альтернативное расположение. Убедитесь, что у вас есть хотя бы один главный целевой сервер и необходимые узлы ESX (ESXi), на которых необходимо восстановить размещение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Восстановление размещения из Azure на локальный сайт](vmware-azure-failback.md).
 

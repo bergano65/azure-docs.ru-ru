@@ -12,14 +12,15 @@ ms.date: 03/25/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 03/25/2019
-ms.openlocfilehash: a7f7734d97cd67c133ff0cedc3ef2376967bcdf4
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: 73304e191242725c80204efb132c26aede9ce7e9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71212411"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80127308"
 ---
-# <a name="configure-windows-push-notification-service-wns-settings-for-a-notification-hub-in-the-azure-portal"></a>Настройка параметров службы push-уведомлений Windows (WNS) для центра уведомлений в портал Azure
+# <a name="configure-windows-push-notification-service-settings-in-the-azure-portal"></a>Настройка параметров службы push-уведомлений Windows в портал Azure
+
 В этой статье показано, как настроить параметры службы уведомлений Windows (WNS) для центра уведомлений Azure с помощью портал Azure.  
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -35,7 +36,7 @@ ms.locfileid: "71212411"
 
    ![Снимок экрана, на котором показаны поля "ИД безопасности пакета" и "Ключ безопасности"](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-configure-wns.png)
 
-## <a name="next-steps"></a>Следующие шаги
-Пошаговые инструкции по отправке уведомлений в универсальная платформа Windows приложения с помощью центров уведомлений Azure и службы push-уведомлений Windows (WNS) см. в статье [Отправка уведомлений в приложения UWP с помощью уведомлений Azure. Концентраторы](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Пошаговые инструкции по отправке уведомлений в универсальная платформа Windows приложения с помощью центров уведомлений Azure и службы push-уведомлений Windows (WNS) см. в статье [Отправка уведомлений в приложения UWP с помощью центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
 
 

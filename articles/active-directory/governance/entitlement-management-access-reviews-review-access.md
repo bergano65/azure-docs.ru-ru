@@ -16,12 +16,12 @@ ms.date: 11/01/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a78a69301ab2ae637531f8643d9d57a8b44b563f
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 99de022b7259b33baab3aa825673a8f85e932bff
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73608934"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78968746"
 ---
 # <a name="review-access-of-an-access-package-in-azure-ad-entitlement-management"></a>Проверка доступа к пакету Access в управлении назначениями Azure AD
 
@@ -30,11 +30,11 @@ ms.locfileid: "73608934"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы проверить назначения пакетов Active Access для пользователей, необходимо выполнить необходимые условия для проверки доступа:
-- Azure AD Premium P2
-- Глобальный администратор.
+- Azure AD Premium P2
+- Глобальный администратор
 - Назначенный администратор пользователей, владелец каталога или диспетчер пакетов Access
 
-Дополнительные сведения см. в разделе [требования к лицензии](entitlement-management-overview.md#license-requirements).
+Дополнительные сведения см. в статье [Лицензионные требования](entitlement-management-overview.md#license-requirements).
 
 
 ## <a name="open-the-access-review"></a>Открытие проверки доступа
@@ -47,7 +47,7 @@ ms.locfileid: "73608934"
 
 1. Щелкните ссылку **проверить доступ пользователя** , чтобы открыть проверку доступа. 
 
-1. Если у вас нет электронного письма, вы можете найти незавершенные проверки доступа, перейдя непосредственно к https://myaccess.microsoft.com.
+1. Если у вас нет электронного письма, вы можете найти незавершенные проверки доступа, перейдя https://myaccess.microsoft.comнепосредственно к.  (Для государственных организаций США используйте `https://myaccess.microsoft.us` вместо него.)
 
 1. Щелкните проверки **доступа** на левой панели навигации, чтобы просмотреть список незавершенных проверок доступа, назначенных вам.
     
@@ -101,6 +101,6 @@ ms.locfileid: "73608934"
 
 1.  Нажмите кнопку **Отправить** , чтобы принять рекомендации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Самостоятельный обзор пакетов доступа](entitlement-management-access-reviews-self-review.md)

@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 08/01/2019
 ms.reviewer: sngun
 ms.openlocfilehash: b24b69716e472082abfdb388e7d79e88a8e23e64
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72754791"
 ---
 # <a name="total-cost-of-ownership-tco-with-azure-cosmos-db"></a>Совокупная стоимость владения (TCO) с Azure Cosmos DB
 
-В Azure Cosmos DB обеспечена высокоточная настройка мультитенантности и функции управления ресурсами. Такой подход позволяет Azure Cosmos DB работать со значительно меньшими затратами и помогать пользователям экономить. Сейчас Azure Cosmos DB поддерживает более 280 пользовательских рабочих нагрузок на одном компьютере с постоянно повышающейся плотностью, а также тысячи клиентских рабочих нагрузок в пределах кластера. ИТ-нагрузка распределяет реплики рабочих нагрузок клиентов между различными компьютерами в кластере и несколькими кластерами в центре обработки данных. Дополнительные сведения см. в разделе [Azure Cosmos DB: принудительная отправка границы глобально распределенных баз данных](https://azure.microsoft.com/blog/azure-cosmos-db-pushing-the-frontier-of-globally-distributed-databases/). Благодаря управлению ресурсами, мультитенантности и встроенной интеграции с остальной инфраструктурой Azure, Azure Cosmos DB в среднем в 4–6 раз дешевле MongoDB, Cassandra и других NoSQL с открытым кодом, работающих в IaaS, а также почти в 10 раз дешевле ядер СУБД, работающих локально. См. документ [The total cost of (non) ownership of a NoSQL database cloud service](https://documentdbportalstorage.blob.core.windows.net/papers/11.15.2017/NoSQL%20TCO%20paper.pdf) (Совокупная стоимость (не)владения облачной службой баз данных NoSQL).
+В Azure Cosmos DB обеспечена высокоточная настройка мультитенантности и функции управления ресурсами. Такой подход позволяет Azure Cosmos DB работать со значительно меньшими затратами и помогать пользователям экономить. Сейчас Azure Cosmos DB поддерживает более 280 пользовательских рабочих нагрузок на одном компьютере с постоянно повышающейся плотностью, а также тысячи клиентских рабочих нагрузок в пределах кластера. Она распределяет нагрузку для реплик рабочих нагрузок клиентов по разным компьютерам в одном кластере и между несколькими кластерами в центре обработки данных. Дополнительные сведения см. в разделе [Azure Cosmos DB: принудительная отправка границы глобально распределенных баз данных](https://azure.microsoft.com/blog/azure-cosmos-db-pushing-the-frontier-of-globally-distributed-databases/). Благодаря управлению ресурсами, мультитенантности и встроенной интеграции с остальной инфраструктурой Azure, Azure Cosmos DB в среднем в 4–6 раз дешевле MongoDB, Cassandra и других NoSQL с открытым кодом, работающих в IaaS, а также почти в 10 раз дешевле ядер СУБД, работающих локально. См. документ [The total cost of (non) ownership of a NoSQL database cloud service](https://documentdbportalstorage.blob.core.windows.net/papers/11.15.2017/NoSQL%20TCO%20paper.pdf) (Совокупная стоимость (не)владения облачной службой баз данных NoSQL).
 
 Решения для баз данных NoSQL с открытым кодом, такие как Apache Cassandra, MongoDB, HBase, разработаны для работы в локальном режиме. Они предлагаются как управляемая служба и эквивалентны шаблону Resource Manager с базой данных арендатора для управления подготовленными кластерами и поддержки мониторинга. Использование архитектур NoSQL с открытым кодом сопряжено со значительными операционными расходами, а поиск опытных специалистов может быть трудоемким и дорогостоящим. Azure Cosmos DB — полностью управляемая облачная служба, которая позволяет разработчикам сосредоточиться на бизнес-инновациях, а не на управлении инфраструктурой базы данных и ее обслуживании. 
 
@@ -59,10 +59,10 @@ ms.locfileid: "72754791"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о том, [как модель ценообразования Azure Cosmos DB помогает клиентам экономить](total-cost-ownership.md).
-* [Оптимизация для разработки и тестирования в Azure Cosmos DB](optimize-dev-test.md)
-* [Optimizing throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация затрат на пропускную способность в Azure Cosmos DB)
-* Дополнительные сведения об [оптимизации затрат на хранилище](optimize-cost-storage.md).
+* Дополнительные сведения об [оптимизации для разработки и тестирования](optimize-dev-test.md)
+* Дополнительные сведения об [оптимизации расходов на пропускную способность](optimize-cost-throughput.md)
+* Дополнительные сведения об [оптимизации расходов на хранилище](optimize-cost-storage.md)
 * Дополнительные сведения об [оптимизации расходов на операции чтения и записи](optimize-cost-reads-writes.md)
 * Дополнительные сведения об [оптимизации затрат на запросы](optimize-cost-queries.md).
-* [Optimize the cost for multi-region deployments in Azure Cosmos DB](optimize-cost-regions.md) (Оптимизация затрат на развертывания с поддержкой нескольких регионов в Azure Cosmos DB)
+* Дополнительные сведения об [оптимизации расходов на учетные записи Cosmos с поддержкой нескольких регионов](optimize-cost-regions.md)
 * Документ [The Total Cost of (Non) Ownership of a NoSQL Database Cloud Service](https://documentdbportalstorage.blob.core.windows.net/papers/11.15.2017/NoSQL%20TCO%20paper.pdf) (Совокупная стоимость (не)владения облачной службой баз данных NoSQL).

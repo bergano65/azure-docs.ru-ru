@@ -5,15 +5,15 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 01/30/2020
+ms.date: 03/05/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: bc48daed4f20af7c275d651820cf9b17a8e24d41
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 5190804180612e885b226f9b00d82b8d2f528a8a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76938311"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "78668794"
 ---
 >[!NOTE]
 >Мы работаем над поддержкой дополнительных регионов. При добавлении региона он заносится в этот список.
@@ -54,3 +54,11 @@ ms.locfileid: "76938311"
 **Ближний Восток и Африка:**
 * Северная часть ЮАР;
 * Центральная часть ОАЭ.
+
+**Azure для государственных организаций**
+* центральный регион US DoD
+* восточный регион US DoD
+* US Gov (Аризона)
+* US Gov (Айова)
+* US Gov (Техас)
+* US Gov (Вирджиния)

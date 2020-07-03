@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 06/20/2018
+ms.date: 03/16/2020
 ms.author: masoucou
-ms.openlocfilehash: a21e3705fe367e478ec02b82ec83c4ad7cfb4151
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: db28455c47541b49b38ddbbc4d5e83ae20e2279d
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445445"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83659164"
 ---
 # <a name="quickstart-build-a-xamarinforms-app-with-net-sdk-and-azure-cosmos-dbs-api-for-mongodb"></a>Краткое руководство. Создание приложения Xamarin.Forms с помощью пакета SDK для .NET и API Azure Cosmos DB для MongoDB
 
@@ -23,7 +23,7 @@ ms.locfileid: "75445445"
 > * [Node.js](create-mongodb-nodejs.md)
 > * [Python](create-mongodb-flask.md)
 > * [Xamarin](create-mongodb-xamarin.md)
-> * [Golang](create-mongodb-golang.md)
+> * [Golang](create-mongodb-go.md)
 >  
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества возможностей глобального распределения и горизонтального масштабирования базы данных Azure Cosmos DB.
@@ -52,10 +52,18 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Сначала загрузите пример приложения из GitHub. В нем реализуется приложение со списком дел с моделью хранения документов MongoDB.
 
-1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
+
+
+# <a name="windows"></a>[Windows](#tab/windows)
+
+1. В Windows откройте командную строку (на компьютере Mac — терминал) и создайте новую папку с именем "Примеры git", а затем закройте окно.
+
+    ```batch
+    md "C:\git-samples"
+    ```
 
     ```bash
-    md "C:\git-samples"
+    mkdir '$home\git-samples\
     ```
 
 2. Откройте окно терминала git, например git bash, и выполните команду `cd`, чтобы перейти в новую папку для установки примера приложения.
@@ -86,6 +94,8 @@ Azure Cosmos DB — это глобально распределенная мн
 
     settings.SslSettings =
         new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
+
+    settings.RetryWrites = false;
 
     MongoClient mongoClient = new MongoClient(settings);
     ```
@@ -159,6 +169,11 @@ Azure Cosmos DB — это глобально распределенная мн
 2. Откройте файл **APIKeys.cs** в каталоге **Helpers** проекта **TaskList.Core**.
 
 3. Скопируйте **основную строку подключения** на портале (с помощью кнопки копирования) и используйте ее в качестве значения поля **ConnectionString** в файле **APIKeys.cs**.
+
+4. Удалите `&replicaSet=globaldb` из строки подключения. Вы получите ошибку во время выполнения, если не удалите это значение из строки запроса.
+
+> [!IMPORTANT]
+> Чтобы избежать ошибки среды выполнения, пару "ключ-значение" `&replicaSet=globaldb` необходимо удалить из строки запроса в строке подключения.
 
 Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено.
 

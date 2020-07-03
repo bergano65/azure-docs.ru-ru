@@ -4,12 +4,12 @@ description: Создание бессерверной функции PowerShell
 ms.topic: tutorial
 ms.date: 09/20/2019
 ms.custom: ''
-ms.openlocfilehash: 49eb0721972a92f33bda2532367bc78280b6e655
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 9dbb22a2449e4c41bff802ab827da4489fc7ffeb
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533374"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78331031"
 ---
 # <a name="tutorial-use-an-http-triggered-azure-function-to-create-a-container-group"></a>Руководство по применению функции Azure, активируемой HTTP-запросами, для создания группы контейнеров
 
@@ -30,7 +30,7 @@ ms.locfileid: "74533374"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Предварительные требования для установки Visual Studio Code и его использования с Функциями Azure см. в статье [Создание первой функции PowerShell в Azure](../azure-functions/functions-create-first-function-powershell.md#prerequisites).
+Предварительные требования для установки Visual Studio Code и его использования с Функциями Azure см. в статье [Краткое руководство. Создание проекта Функций Azure в Visual Studio Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-powershell#configure-your-environment).
 
 Некоторые инструкции из этого руководства предусматривают использование Azure CLI. Для их выполнения можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
@@ -42,7 +42,7 @@ ms.locfileid: "74533374"
 
 ## <a name="enable-an-azure-managed-identity-in-the-function-app"></a>Настройка в приложении-функции удостоверения, управляемого Azure
 
-Здесь вы настроите в приложении-функции [управляемое удостоверение](../app-service/overview-managed-identity.md?toc=/azure/azure-functions/toc.json#adding-a-system-assigned-identity), назначаемое системой. С его помощью выполняющий приложение узел PowerShell сможет автоматически выполнять проверку подлинности, позволяя функциям выполнять действия со службами Azure, к которым предоставляет доступ это удостоверение. Далее вы предоставите управляемому удостоверению права на создание ресурсов в группе ресурсов для приложения-функции. 
+Здесь вы настроите в приложении-функции [управляемое удостоверение](../app-service/overview-managed-identity.md?toc=/azure/azure-functions/toc.json#add-a-system-assigned-identity), назначаемое системой. С его помощью выполняющий приложение узел PowerShell сможет автоматически выполнять проверку подлинности, позволяя функциям выполнять действия со службами Azure, к которым предоставляет доступ это удостоверение. Далее вы предоставите управляемому удостоверению права на создание ресурсов в группе ресурсов для приложения-функции. 
 
 Прежде всего выполните команду [az group show][az-group-show], чтобы получить идентификатор группы ресурсов для приложения-функции и сохраните его в переменной среды. В этом примере предполагается, что команда выполняется в оболочке Bash.
 
@@ -177,7 +177,7 @@ Started container group mycontainergroup
 az container logs --resource-group myfunctionapp --name mycontainergroup
 ```
 
-Пример выходных данных:
+Образец вывода:
 
 ```console
 Hello from an Azure container instance triggered by an Azure function
@@ -191,9 +191,9 @@ Hello from an Azure container instance triggered by an Azure function
 az group delete --name myfunctionapp
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В результате работы с этим руководством вы создали функцию Azure, которая принимает HTTP-запрос и активирует развертывание группы контейнеров. Вы научились выполнять следующие задачи:
+В результате работы с этим руководством вы создали функцию Azure, которая принимает HTTP-запрос и активирует развертывание группы контейнеров. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Использование Visual Studio Code в сочетании с расширением Функций Azure для создания простой функции PowerShell, активируемой по HTTP-запросу.

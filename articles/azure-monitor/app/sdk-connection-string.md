@@ -1,19 +1,17 @@
 ---
 title: Строки подключения в Application Insights Azure | Документация Майкрософт
 description: Как использовать строки подключения.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: timothymothra
 ms.author: tilee
 ms.date: 01/17/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 8febe1fd749842a6db0cd1c9991f4002eb7cf2ad
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 92c4ccf7246c4e763cbf92aee3c48398d79e0ecc
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190091"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83125712"
 ---
 # <a name="connection-strings"></a>Строки подключения
 
@@ -49,7 +47,7 @@ ms.locfileid: "77190091"
 
 ![Строка подключения в колонке "Обзор"](media/overview-dashboard/overview-connection-string.png)
 
-### <a name="schema"></a>Схема
+### <a name="schema"></a>схема
 
 #### <a name="max-length"></a>Максимальная длина
 
@@ -57,19 +55,19 @@ ms.locfileid: "77190091"
 
 #### <a name="key-value-pairs"></a>Пары "ключ-значение"
 
-Строка подключения состоит из списка параметров, представленных парами "ключ-значение", разделенных точкой с запятой: `key1=value1;key2=value2;key3=value3`
+Строка подключения состоит из списка параметров, представленных парами "ключ-значение", разделенных точкой с запятой.`key1=value1;key2=value2;key3=value3`
 
 #### <a name="syntax"></a>Синтаксис
 
-- `InstrumentationKey` (например: 00000000-0000-0000-0000-000000000000) строка подключения является **обязательным** полем.
-- `Authorization` (например: iKey) (этот параметр является необязательным, так как сегодня поддерживается только авторизация iKey.)
-- `EndpointSuffix` (например: applicationinsights.azure.cn). при настройке суффикса конечной точки будет указывать пакет SDK, к которому подключается облако Azure. Пакет SDK будет собирать оставшуюся часть конечной точки для отдельных служб.
+- `InstrumentationKey`(пример: 00000000-0000-0000-0000-000000000000)  Строка подключения является **обязательным** полем.
+- `Authorization`(пример: iKey) (Этот параметр является необязательным, так как сегодня поддерживается только ikeyная авторизация.)
+- `EndpointSuffix`(пример: applicationinsights.azure.cn) При настройке суффикса конечной точки будет указано, к какому пакету SDK подключается облако Azure. Пакет SDK будет собирать оставшуюся часть конечной точки для отдельных служб.
 - Явные конечные точки.
   Любая служба может быть явно переопределена в строке подключения.
-   - `IngestionEndpoint` (например: https://dc.applicationinsights.azure.com)
-   - `LiveEndpoint` (например: https://live.applicationinsights.azure.com)
-   - `ProfilerEndpoint` (например: https://profiler.applicationinsights.azure.com)
-   - `SnapshotEndpoint` (например: https://snapshot.applicationinsights.azure.com)
+   - `IngestionEndpoint`(пример: `https://dc.applicationinsights.azure.com` )
+   - `LiveEndpoint`(пример: `https://live.applicationinsights.azure.com` )
+   - `ProfilerEndpoint`(пример: `https://profiler.applicationinsights.azure.com` )
+   - `SnapshotEndpoint`(пример: `https://snapshot.applicationinsights.azure.com` )
 
 #### <a name="endpoint-schema"></a>Схема конечной точки
 
@@ -89,10 +87,10 @@ ms.locfileid: "77190091"
 
 ##### <a name="valid-prefixes"></a>Допустимые префиксы
 
-- Прием [телеметрии](./app-insights-overview.md): `dc`
-- [Динамические метрики](./live-stream.md): `live`
-- [Профилировщик](./profiler-overview.md): `profiler`
-- [Моментальный снимок](./snapshot-debugger.md): `snapshot`
+- Прием [телеметрии](./app-insights-overview.md):`dc`
+- [Динамические метрики](./live-stream.md):`live`
+- [Профилировщик](./profiler-overview.md):`profiler`
+- [Моментальный снимок](./snapshot-debugger.md):`snapshot`
 
 
 
@@ -108,10 +106,10 @@ ms.locfileid: "77190091"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Коды URI региональных служб основаны на [стандартах SDK](https://github.com/microsoft/ApplicationInsights-dotnet/blob/e50d569cebf485e72e98f4a08a0bc0e30cdf42bc/BASE/src/Microsoft.ApplicationInsights/Extensibility/Implementation/Endpoints/Constants.cs#L6) и будут подключаться к общедоступному глобальному серверу Azure:
-   - Прием: https://dc.services.visualstudio.com/
-   - Динамические метрики: https://rt.services.visualstudio.com/
-   - Профилировщик: https://agent.azureserviceprofiler.net/
-   - Отладчик: https://agent.azureserviceprofiler.net/  
+   - Приема`https://dc.services.visualstudio.com/`
+   - Динамические метрики:`https://rt.services.visualstudio.com/`
+   - Profiler`https://agent.azureserviceprofiler.net/`
+   - Отладчик`https://agent.azureserviceprofiler.net/`
 
 
 
@@ -124,10 +122,10 @@ ms.locfileid: "77190091"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Коды URI региональных служб основаны на указанном суффиксе конечной точки: 
-   - Прием: https://dc.ai.contoso.com
-   - Динамические метрики: https://live.ai.contoso.com
-   - Профилировщик: https://profiler.ai.contoso.com 
-   - Отладчик: https://snapshot.ai.contoso.com   
+   - Приема`https://dc.ai.contoso.com`
+   - Динамические метрики:`https://live.ai.contoso.com`
+   - Profiler`https://profiler.ai.contoso.com`
+   - Отладчик`https://snapshot.ai.contoso.com`  
 
 
 
@@ -140,17 +138,17 @@ ms.locfileid: "77190091"
 - По умолчанию используется схема авторизации "iKey" 
 - Ключ инструментирования: 00000000-0000-0000-0000-000000000000
 - Региональные URI служб основаны на явных значениях переопределения: 
-   - Прием: https:\//custom.com:111/
-   - Динамические метрики: https:\//custom.com:222/
-   - Profiler: https:\//custom.com:333/ 
-   - Отладчик: https:\//custom.com:444/   
+   - Приема`https://custom.com:111/`
+   - Динамические метрики:`https://custom.com:222/`
+   - Profiler`https://custom.com:333/`
+   - Отладчик`https://custom.com:444/`  
 
 
 ## <a name="how-to-set-a-connection-string"></a>Как задать строку подключения
 
 Строки подключения поддерживаются в следующих версиях пакета SDK:
 - .NET и .NET Core v 2.12.0
-- Java v 2.5.1
+- Java v 2.5.1 и Java 3,0
 - JavaScript v 2.3.0
 - NodeJS v 1.5.0
 - Версия Python версии 1.0.0
@@ -163,9 +161,9 @@ ms.locfileid: "77190091"
 
 - Строка подключения: `APPLICATIONINSIGHTS_CONNECTION_STRING`
 
-### <a name="net-sdk-example"></a>Пример пакета SDK для .NET
+# <a name="netnetcore"></a>[.NET/. NetCore](#tab/net)
 
-Телеметриконфигуратион. ConnectionString: https://github.com/microsoft/ApplicationInsights-dotnet/blob/add45ceed35a817dc7202ec07d3df1672d1f610d/BASE/src/Microsoft.ApplicationInsights/Extensibility/TelemetryConfiguration.cs#L271-L274
+Телеметриконфигуратион. ConnectionString:https://github.com/microsoft/ApplicationInsights-dotnet/blob/add45ceed35a817dc7202ec07d3df1672d1f610d/BASE/src/Microsoft.ApplicationInsights/Extensibility/TelemetryConfiguration.cs#L271-L274
 
 .NET явным образом задается:
 ```csharp
@@ -196,10 +194,10 @@ NetCore config. JSON:
 ```
 
 
-### <a name="java-sdk-example"></a>Пример пакета SDK для Java
+# <a name="java"></a>[Java](#tab/java)
 
 
-Java явно задается:
+Java (версия 2.5. x) явно задано:
 ```java
 TelemetryConfiguration.getActive().setConnectionString("InstrumentationKey=00000000-0000-0000-0000-000000000000");
 ```
@@ -212,7 +210,7 @@ ApplicationInsights.xml
 </ApplicationInsights>
 ```
 
-### <a name="javascript-sdk-example"></a>Пример пакета SDK для JavaScript
+# <a name="javascript"></a>[JavaScript](#tab/js)
 
 Важно. JavaScript не поддерживает использование переменных среды.
 
@@ -241,7 +239,7 @@ appInsights.loadAppInsights();
 appInsights.trackPageView();
 ```
 
-### <a name="node-sdk-example"></a>Пример пакета SDK для Node
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
 ```javascript
 const appInsights = require("applicationinsights");
@@ -249,7 +247,7 @@ appInsights.setup("InstrumentationKey=00000000-0000-0000-0000-000000000000;");
 appInsights.start();
 ```
 
-### <a name="python-sdk-example"></a>Пример пакета SDK для Python
+# <a name="python"></a>[Python](#tab/python)
 
 Мы рекомендуем пользователям задать переменную среды.
 
@@ -264,7 +262,7 @@ tracer = Tracer(exporter=AzureExporter(connection_string='InstrumentationKey=000
 ```
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Приступите к работе во время выполнения с помощью:
 
@@ -278,4 +276,4 @@ tracer = Tracer(exporter=AzureExporter(connection_string='InstrumentationKey=000
 * [ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
 * [Java](../../azure-monitor/app/java-get-started.md)
 * [Node.js](../../azure-monitor/app/nodejs.md)
-* [Python (предварительная версия)](../../azure-monitor/app/opencensus-python.md)
+* [Python](../../azure-monitor/app/opencensus-python.md)

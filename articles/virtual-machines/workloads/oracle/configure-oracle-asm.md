@@ -3,7 +3,7 @@ title: Настройка Oracle ASM в виртуальной машине Linu
 description: Быстрая подготовка и запуск Oracle ASM в среде Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: romitgirdhar
+author: BorisB2015
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -13,17 +13,17 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: rogirdh
-ms.openlocfilehash: ace19f17f5d7a5e920808b76258459c0eba62890
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.author: borisb
+ms.openlocfilehash: aa65b789d02c60ef6042aa62e1c138c0e1bd7224
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750530"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81676897"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Настройка Oracle ASM в виртуальной машине Linux в Azure  
 
-Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве описано развертывание базовой виртуальной машины Azure, а также установка и настройка Oracle ASM.  Вы узнаете, как выполнять следующие задачи:
+Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве описано развертывание базовой виртуальной машины Azure, а также установка и настройка Oracle ASM.  Вы научитесь:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины базы данных Oracle и подключение к ней.
@@ -45,7 +45,7 @@ ms.locfileid: "75750530"
 az group create --name myResourceGroup --location eastus
 ```
 
-### <a name="create-a-vm"></a>Создание ВМ
+### <a name="create-a-vm"></a>Создание виртуальной машины
 
 Чтобы создать виртуальную машину на основе образа базы данных Oracle и настроить ее для использования Oracle ASM, выполните команду [az vm create](/cli/azure/vm). 
 
@@ -62,7 +62,7 @@ az group create --name myResourceGroup --location eastus
 
 После создания виртуальной машины в Azure CLI отображается информация следующего вида. Обратите внимание на значение `publicIpAddress`. Этот адрес используется для доступа к виртуальной машине.
 
-   ```azurecli
+   ```output
    {
      "fqdns": "",
      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
@@ -79,7 +79,7 @@ az group create --name myResourceGroup --location eastus
 
 Чтобы создать сеанс SSH с виртуальной машиной и настроить дополнительные параметры, используйте следующую команду. Замените IP-адрес общедоступным IP-адресом виртуальной машины (значение `publicIpAddress`).
 
-```bash 
+```bash
 ssh <publicIpAddress>
 ```
 
@@ -161,7 +161,7 @@ ssh <publicIpAddress>
 
    Выходные данные этой команды должны выглядеть следующим образом (указывать сведения в ответ на запросы больше не потребуется).
 
-    ```bash
+    ```output
    Configuring the Oracle ASM library driver.
 
    This will configure the on-boot properties of the Oracle ASM library
@@ -178,13 +178,14 @@ ssh <publicIpAddress>
    ```
 
 2. Просмотрите конфигурацию диска:
+
    ```bash
    cat /proc/partitions
    ```
 
    Результат этой команды должен выглядеть примерно как перечисление доступных дисков:
 
-   ```bash
+   ```output
    8       16   14680064 sdb
    8       17   14678976 sdb1
    8        0   52428800 sda
@@ -209,9 +210,9 @@ ssh <publicIpAddress>
    fdisk /dev/sdc
    ```
    
-   Используя указанные выше ответы, выходные данные команды `fdisk` должны выглядеть следующим образом:
+   Выполнив указанные выше ответы, выходные данные `fdisk` команды должны выглядеть следующим образом:
 
-   ```bash
+   ```output
    Device contains not a valid DOS partition table, or Sun, SGI or OSF disklabel
    Building a new DOS disklabel with disk identifier 0xf865c6ca.
    Changes will remain in memory only, until you decide to write them.
@@ -255,7 +256,7 @@ ssh <publicIpAddress>
 
    Выходные данные команды должны выглядеть следующим образом:
 
-   ```bash
+   ```output
    major minor  #blocks  name
 
      8       16   14680064 sdb
@@ -282,8 +283,8 @@ ssh <publicIpAddress>
    ```
 
    Выходные данные команды должны выглядеть следующим образом:
-   
-   ```bash
+
+   ```output
    Checking if ASM is loaded: no
    Checking if /dev/oracleasm is mounted: no
    Initializing the Oracle ASMLib driver:                     [  OK  ]
@@ -297,11 +298,11 @@ ssh <publicIpAddress>
    service oracleasm createdisk DATA /dev/sdd1 
    service oracleasm createdisk DATA1 /dev/sde1 
    service oracleasm createdisk FRA /dev/sdf1
-   ```    
+   ```
 
    Выходные данные команды должны выглядеть следующим образом:
 
-   ```bash
+   ```output
    Marking disk "ASMSP" as an ASM disk:                       [  OK  ]
    Marking disk "DATA" as an ASM disk:                        [  OK  ]
    Marking disk "DATA1" as an ASM disk:                       [  OK  ]
@@ -312,11 +313,11 @@ ssh <publicIpAddress>
 
    ```bash
    service oracleasm listdisks
-   ```   
+   ```
 
    Выходные данные команды должны содержать следующие диски Oracle ASM:
 
-   ```bash
+   ```output
     ASMSP
     DATA
     DATA1
@@ -371,7 +372,7 @@ ssh <publicIpAddress>
    ```
 
 4. Распакуйте файлы. (Установите инструмент Linux для распаковки, если он еще не установлен.)
-   
+
    ```bash
    sudo yum install unzip
    sudo unzip linuxamd64_12102_grid_1of2.zip
@@ -379,7 +380,7 @@ ssh <publicIpAddress>
    ```
 
 5. Измените разрешение:
-   
+
    ```bash
    sudo chown -R grid:oinstall /opt/grid
    ```
@@ -390,7 +391,7 @@ ssh <publicIpAddress>
    sudo chmod 777 /etc/waagent.conf  
    vi /etc/waagent.conf
    ```
-   
+
    Найдите параметр `ResourceDisk.SwapSizeMB` и измените его значение на **8192**. Необходимо будет нажать `insert`, чтобы перейти в режим вставки, ввести значение **8192** и нажать клавишу `esc` для возврата в режим команд. Чтобы записать изменения и закрыть файл, введите `:wq` и нажмите клавишу `enter`.
    
    > [!NOTE]
@@ -426,7 +427,7 @@ ssh <publicIpAddress>
    > Ключ должен содержать строку `ssh-rsa`. Кроме того, содержимое ключа должно быть одной строкой текста.
    >  
 
-6. В клиентской системе запустите PuTTY. В области **Категория** выберите **подключение** > **SSH** > **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
+6. В клиентской системе запустите PuTTY. В области **Категория** выберите **Подключение** > **SSH** > **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
 
    ![Снимок экрана параметров аутентификации SSH](./media/oracle-asm/setprivatekey.png)
 
@@ -550,6 +551,7 @@ ssh <publicIpAddress>
    cd /u01/app/oracle/product/12.1.0/dbhome_1/bin
    ./dbca
    ```
+
    Откроется Database Configuration Assistant.
 
 2. На странице **операций с базой данных** щелкните `Create Database`.
@@ -578,7 +580,7 @@ ssh <publicIpAddress>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
 

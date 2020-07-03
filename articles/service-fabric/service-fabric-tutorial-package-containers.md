@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 554590a065214c17de0acdea3207876f113b3caf
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: cc1d6e04b19d36f0ca8c7ed4b2bb3d62f5e8e15a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614032"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78252745"
 ---
 # <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application-using-yeoman"></a>Руководство. Упаковка и развертывание контейнеров в виде приложений Service Fabric с помощью Yeoman
 
@@ -114,7 +114,7 @@ ApplicationManifest.xml azurevotefrontPkg azurevotebackPkg
 
 Выполните вход в свой экземпляр Реестра контейнеров Azure. Используйте команду **az acr login**, чтобы выполнить операцию. Укажите уникальное имя реестра контейнеров, заданное при его создании.
 
-```bash
+```azurecli
 az acr login --name <acrName>
 ```
 
@@ -122,7 +122,7 @@ az acr login --name <acrName>
 
 Затем выполните следующую команду, чтобы получить пароль реестра контейнеров. Этот пароль используется Service Fabric, чтобы проходить аутентификацию в реестре контейнеров Azure для извлечения образов контейнеров.
 
-```bash
+```azurecli
 az acr credential show -n <acrName> --query passwords[0].value
 ```
 
@@ -199,7 +199,7 @@ az acr credential show -n <acrName> --query passwords[0].value
 
 Внешняя служба считывает переменную среды, чтобы узнать DNS-имя экземпляра Redis. Эта переменная среды уже определена в файле Dockerfile, использованном для создания образа Docker. Поэтому на текущем этапе никакие действия не требуются.
 
-```Dockerfile
+```dockerfile
 ENV REDIS redisbackend.testapp
 ```
 

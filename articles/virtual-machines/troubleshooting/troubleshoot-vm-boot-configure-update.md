@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
 ms.openlocfilehash: da45e24898bc3b5aead250077af69a61bdb33bab
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73749639"
 ---
 # <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure
@@ -45,7 +45,7 @@ ms.locfileid: "73749639"
 ### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
 1. Сделайте снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
-2. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
+2. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
 3. Подключитесь по протоколу удаленного рабочего стола к виртуальной машине восстановления. 
 4. Если диск ОС зашифрован, необходимо отключить шифрование перед переходом к следующему шагу. Дополнительные сведения см. в разделе [расшифровка зашифрованного диска ОС в виртуальной машине, которая не может быть загружена](troubleshoot-bitlocker-boot-error.md#solution).
 
@@ -100,7 +100,7 @@ ms.locfileid: "73749639"
 3. [Отсоедините диск ОС и снова подключите его к необходимой виртуальной машине](../windows/troubleshoot-recovery-disks-portal.md).
 4. Запустите виртуальную машину и получите доступ к последовательной консоли.
 5. Выберите параметр **Отправить немаскируемое прерывание (NMI)** , чтобы активировать дамп памяти.
-    ![образом отправить](./media/troubleshoot-vm-configure-update-boot/run-nmi.png) прерываний, не поддерживающих маскирование
+    ![изображение, куда следует отправить немаскируемое прерывание](./media/troubleshoot-vm-configure-update-boot/run-nmi.png)
 6. Снова подключите диск операционной системы к виртуальной машине восстановления и собирайте файл дампа.
 
 ## <a name="contact-microsoft-support"></a>Обратиться в службу поддержки Майкрософт

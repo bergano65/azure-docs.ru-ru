@@ -1,19 +1,18 @@
 ---
-title: Службы выхода на рынок — как разместить предложение в marketplace | Azure
+title: Услуги для перехода на рынок — как получить основные сведения о Marketplace | Azure Marketplace
 description: 'Службы выхода на рынок: в этом разделе описывается, как разместить предложение в списке в Microsoft Azure Marketplace'
-services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 12/21/2018
-ms.author: ellacroi
-ms.openlocfilehash: 12dcdff082ce1bac350d0e3a426df6acec6efe99
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.topic: conceptual
+ms.date: 04/16/2020
+ms.author: dsindona
+ms.openlocfilehash: fe18ca41942ff58b8d9eefef3122c90980029766
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819017"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81684607"
 ---
 # <a name="how-to-get-featured-in-appsource-and-azure-marketplace"></a>Как разместить предложение в AppSource и Microsoft Azure Marketplace
 
@@ -39,14 +38,14 @@ ms.locfileid: "73819017"
 Специальные предложения по рекомендуемым приложениям действуют отдельно от алгоритма поиска.
 
 >[!Note]
->Если решение не отображается правильно в результатах поиска, отправьте запрос в службу поддержки через меню "Справка" на [Портале Cloud Partner](https://cloudpartner.azure.com/).
+>Если решение неправильно отображается в результатах поиска, отправьте запрос в службу поддержки через меню "Справка" в [центре партнеров](https://partner.microsoft.com/).
 
 Служба поддержки GTM также содержит полную библиотеку шаблонов самостоятельного устранения неполадок, веб-содержимое, обучающие материалы и средства для дальнейшего продвижения ваших публикаций и бизнеса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о [преимуществах коммерческого рынка](https://docs.microsoft.com/azure/marketplace/gtm-your-marketplace-benefits).
 
-Войдите на [портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать и настроить предложение.
+Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать и настроить предложение.
 
 ---

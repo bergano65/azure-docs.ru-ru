@@ -83,7 +83,7 @@
       href: traffic-manager-load-balancing-azure.md
     - name: Измерение производительности диспетчера трафика
       href: traffic-manager-performance-considerations.md
-    - name: Включение журналов диагностики
+    - name: Включение журналов ресурсов
       href: traffic-manager-diagnostic-logs.md
     - name: Использование Azure PowerShell для управления диспетчером трафика
       href: traffic-manager-powershell-arm.md
@@ -114,27 +114,19 @@
     - name: Ruby
       href: 'https://www.rubydoc.info/gems/azure_mgmt_traffic_manager'
     - name: Python
-      href: 'http://azure-sdk-for-python.readthedocs.io/en/latest/sample_azure-mgmt-trafficmanager.html'
+      href: 'https://azure.github.io/azure-sdk-for-python/ref/Traffic-Manager.html'
     - name: REST
       href: 'https://msdn.microsoft.com/library/mt163667.aspx'
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.network/trafficmanagerprofiles
-- name: Сопутствующие материалы
-  items:
-    - name: Шлюз приложений
-      href: /azure/application-gateway/
-    - name: Load Balancer
-      href: /azure/load-balancer/
-    - name: Azure DNS
-      href: /azure/dns/
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/networking/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/traffic-manager/'
     - name: Калькулятор цен

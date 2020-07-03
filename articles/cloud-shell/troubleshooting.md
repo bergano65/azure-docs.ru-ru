@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2018
 ms.author: damaerte
-ms.openlocfilehash: 1d244d7b62fcfefeec6f628f473274ae982bf4d8
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: b06deadae15a8176a49bed88a53884df2b71e473
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120226"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189468"
 ---
 # <a name="troubleshooting--limitations-of-azure-cloud-shell"></a>Устранение неполадок и ограничения в Azure Cloud Shell
 
@@ -31,8 +31,8 @@ ms.locfileid: "77120226"
 
 ### <a name="error-running-azuread-cmdlets-in-powershell"></a>Ошибка при выполнении командлетов AzureAD в PowerShell
 
-- **Сведения**: при запуске командлетов AzureAD, таких как `Get-AzureADUser`, в Cloud Shell может появиться сообщение об ошибке: `You must call the Connect-AzureAD cmdlet before calling any other cmdlets`. 
-- **Решение**. выполните командлет `Connect-AzureAD`. Ранее Cloud Shell автоматически выполнял этот командлет во время запуска PowerShell. Чтобы ускорить время начала, командлет больше не будет выполняться автоматически. Вы можете восстановить предыдущее поведение, добавив `Connect-AzureAD` в файл $PROFILE в PowerShell.
+- **Сведения**: при запуске командлетов AzureAD, `Get-AzureADUser` например в Cloud Shell, может появиться сообщение об ошибке: `You must call the Connect-AzureAD cmdlet before calling any other cmdlets`. 
+- **Решение**. выполните `Connect-AzureAD` командлет. Ранее Cloud Shell автоматически выполнял этот командлет во время запуска PowerShell. Чтобы ускорить время начала, командлет больше не будет выполняться автоматически. Вы можете восстановить предыдущее поведение, добавив `Connect-AzureAD` в файл $Profile в PowerShell.
 
 ### <a name="early-timeouts-in-firefox"></a>Преждевременное истечение времени ожидания в FireFox
 
@@ -41,13 +41,13 @@ ms.locfileid: "77120226"
 
 ### <a name="disabling-cloud-shell-in-a-locked-down-network-environment"></a>Отключение Cloud Shell в заблокированной среде сети
 
-- **Сведения**. Администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к домену `ux.console.azure.com`, который можно запретить, заключив любой доступ к Cloud Shell EntryPoint, включая portal.azure.com, shell.azure.com, Visual Studio Code расширение учетной записи Azure и docs.microsoft.com. В облаке правительства США точка входа `ux.console.azure.us`а; нет соответствующего shell.azure.us.
-- **Решение**. Ограничьте доступ к `ux.console.azure.com` или `ux.console.azure.us` с помощью сетевых параметров в своей среде. Значок Cloud Shell по-прежнему будет существовать в портал Azure, но не будет успешно подключаться к службе.
+- **Сведения**. Администраторам может потребоваться отключить доступ к Cloud Shell для своих пользователей. Cloud Shell использует доступ к `ux.console.azure.com` домену, который может быть запрещен, и останавливает любой доступ к Cloud Shell EntryPoint, включая portal.azure.com, Shell.Azure.com, расширение учетной записи Azure Visual Studio Code и docs.Microsoft.com. В облаке для государственных организаций США точка входа `ux.console.azure.us`имеет значение; нет соответствующего shell.azure.us.
+- **Решение**. Ограничьте доступ к `ux.console.azure.com` среде `ux.console.azure.us` или через параметры сети. Значок Cloud Shell по-прежнему будет существовать в портал Azure, но не будет успешно подключаться к службе.
 
 ### <a name="storage-dialog---error-403-requestdisallowedbypolicy"></a>Диалоговое окно службы хранилища. Ошибка: 403 RequestDisallowedByPolicy
 
-- **Сведения**. при создании учетной записи хранения с помощью Cloud Shell она не будет выполнена из-за политики Azure, установленной администратором. Сообщение об ошибке будет содержать следующее: `The resource action 'Microsoft.Storage/storageAccounts/write' is disallowed by one or more policies.`
-- **Решение.** Обратитесь к администратору Azure с просьбой удалить или обновить политику Azure, которая отклоняет создание хранилища.
+- **Сведения**. при создании учетной записи хранения с помощью Cloud Shell она не будет выполнена из-за назначения политики Azure администратором. Сообщение об ошибке будет содержать следующее:`The resource action 'Microsoft.Storage/storageAccounts/write' is disallowed by one or more policies.`
+- **Решение**. обратитесь к администратору Azure, чтобы удалить или обновить назначение политики Azure, запрещающее создание хранилища.
 
 ### <a name="storage-dialog---error-400-disallowedoperation"></a>Диалоговое окно службы хранилища. Ошибка: 400 DisallowedOperation
 
@@ -212,3 +212,6 @@ PowerShell.
   ```
 ## <a name="azure-government-limitations"></a>Ограничения Azure для государственных организаций
 Azure Cloud Shell в Azure для государственных организаций доступны только в портал Azure.
+
+>[!Note]
+> Подключение к облакам с незначительным или государственным облаком для Exchange Online в настоящее время не поддерживается.

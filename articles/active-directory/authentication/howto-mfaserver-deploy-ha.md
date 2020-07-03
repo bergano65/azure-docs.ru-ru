@@ -4,19 +4,19 @@ description: Разверните несколько экземпляров се
 services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/21/2019
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7b2df4e87dddcfedd10682e4e3ab6c014ad7bbb
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 5e7b5f6bef5358acf0709f994b85215e505fa4db
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74848193"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80653384"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-for-high-availability"></a>Настройка сервера Многофакторной идентификации Azure для обеспечения высокой доступности
 
@@ -41,7 +41,7 @@ ms.locfileid: "74848193"
 
 Если главный сервер MFA отключится от сети, проверку подлинности по-прежнему можно будет обработать, но операции, при выполнении которых необходимо вносить изменения в базу данных MFA, не удастся обработать. (Примеры включают в себя: Добавление пользователей, изменение ПИН-кода самообслуживания, изменение сведений о пользователе или доступ к пользовательскому порталу).
 
-## <a name="deployment"></a>Развертывание.
+## <a name="deployment"></a>Развертывание
 
 Обратите внимание на следующие важные замечания по балансировке нагрузки сервера MFA Azure и связанных с ним компонентов.
 

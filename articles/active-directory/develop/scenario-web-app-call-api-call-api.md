@@ -2,34 +2,35 @@
 title: Вызов веб-API из веб-приложения — платформа Microsoft Identity | Службы
 description: Узнайте, как создать веб-приложение, вызывающее веб-API (вызов защищенного веб-API).
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 28b4be46dc686c6e1b55f1ab36e0607057ebdbbd
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 12802ab6dcfbbe5a1c5576ab672ead864dd0b4ae
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76758977"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82559879"
 ---
 # <a name="a-web-app-that-calls-web-apis-call-a-web-api"></a>Веб-приложение, вызывающее веб-API: вызов веб-API
 
 Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
 
-# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+## <a name="call-a-protected-web-api"></a>Вызов защищенного веб-API
 
-Ниже приведен упрощенный код для действия `HomeController`. Этот код возвращает маркер для вызова Microsoft Graph. Добавлен код, демонстрирующий вызов Microsoft Graph как REST API. URL-адрес для Microsoft Graph API предоставляется в файле appSettings. JSON и считывается в переменной с именем `webOptions`:
+Вызов защищенного веб-API зависит от выбранного языка и платформы.
 
-```JSon
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
+
+Ниже приведен упрощенный код для действия `HomeController`. Этот код возвращает маркер для вызова Microsoft Graph. Добавлен код, демонстрирующий вызов Microsoft Graph как REST API. URL-адрес для Microsoft Graph API предоставляется в файле appSettings. JSON и считывается в переменную с именем `webOptions`:
+
+```json
 {
   "AzureAd": {
     "Instance": "https://login.microsoftonline.com/",
@@ -43,41 +44,25 @@ ms.locfileid: "76758977"
 ```csharp
 public async Task<IActionResult> Profile()
 {
- var application = BuildConfidentialClientApplication(HttpContext, HttpContext.User);
- string accountIdentifier = claimsPrincipal.GetMsalAccountId();
- string loginHint = claimsPrincipal.GetLoginHint();
+ // Acquire the access token.
+ string[] scopes = new string[]{"user.read"};
+ string accessToken = await tokenAcquisition.GetAccessTokenForUserAsync(scopes);
 
- // Get the account.
- IAccount account = await application.GetAccountAsync(accountIdentifier);
+ // Use the access token to call a protected web API.
+ HttpClient client = new HttpClient();
+ client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+ 
+  var response = await httpClient.GetAsync($"{webOptions.GraphApiUrl}/beta/me");
 
- // Special case for guest users, because the guest ID / tenant ID are not surfaced.
- if (account == null)
- {
-  var accounts = await application.GetAccountsAsync();
-  account = accounts.FirstOrDefault(a => a.Username == loginHint);
- }
+  if (response.StatusCode == HttpStatusCode.OK)
+  {
+   var content = await response.Content.ReadAsStringAsync();
 
- AuthenticationResult result;
- result = await application.AcquireTokenSilent(new []{"user.read"}, account)
-                            .ExecuteAsync();
- var accessToken = result.AccessToken;
+   dynamic me = JsonConvert.DeserializeObject(content);
+   ViewData["Me"] = me;
+  }
 
- // Calls the web API (Microsoft Graph in this case).
- HttpClient httpClient = new HttpClient();
- httpClient.DefaultRequestHeaders.Authorization =
-     new AuthenticationHeaderValue(Constants.BearerAuthorizationScheme,accessToken);
- var response = await httpClient.GetAsync($"{webOptions.GraphApiUrl}/beta/me");
-
- if (response.StatusCode == HttpStatusCode.OK)
- {
-  var content = await response.Content.ReadAsStringAsync();
-
-  dynamic me = JsonConvert.DeserializeObject(content);
-  return me;
- }
-
- ViewData["Me"] = me;
- return View();
+  return View();
 }
 ```
 
@@ -86,7 +71,7 @@ public async Task<IActionResult> Profile()
 >
 > Большинство веб-API Azure предоставляют пакет SDK, упрощающий вызов API. Это также справедливо для Microsoft Graph. В следующей статье вы узнаете, где найти учебник, демонстрирующий использование API.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```Java
 private String getUserInfoFromGraph(String accessToken) throws Exception {
@@ -112,7 +97,7 @@ private String getUserInfoFromGraph(String accessToken) throws Exception {
 
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```Python
 @app.route("/graphcall")
@@ -132,4 +117,4 @@ def graphcall():
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Переместить в рабочую среду](scenario-web-app-call-api-production.md)
+> [Перенос в рабочую среду](scenario-web-app-call-api-production.md)

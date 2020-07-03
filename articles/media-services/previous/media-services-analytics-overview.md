@@ -16,10 +16,10 @@ ms.date: 11/13/2019
 ms.author: juliako
 ms.reviewer: milanga; johndeu
 ms.openlocfilehash: ab1eba3de474d9ff985e62f491c24fa63be0fa63
-ms.sourcegitcommit: a460fdc19d6d7af6d2b5a4527e1b5c4e0c49942f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77069631"
 ---
 # <a name="media-analytics-on-the-media-services-platform"></a>Медиа-аналитика на платформе служб мультимедиа 
@@ -49,10 +49,10 @@ ms.locfileid: "77069631"
 Индексатор мультимедийных данных Azure позволяет сделать содержимое доступным для поиска, а также создавать дорожки скрытых субтитров. Дополнительные сведения и примеры см. [в разделе индексирование файлов мультимедиа с помощью Azure Media indexer](media-services-index-content.md).
 
 ### <a name="motion-detector"></a>Детектор движения
-Motion Detector можно использовать для обнаружения движения на видео с неподвижным фоном. Это дает возможность проверять ложные срабатывания камер наблюдения с функцией обнаружения движения. Дополнительные сведения и примеры приведены в статье [Обнаружение движения с помощью медиа-аналитики Azure](media-services-motion-detection.md).
+Motion Detector можно использовать для обнаружения движения на видео с неподвижным фоном. Это дает возможность проверять ложные срабатывания камер наблюдения с функцией обнаружения движения. Подробные сведения и примеры см. в разделе [Определение движения для аналитика мультимедиа Azure](media-services-motion-detection.md).
 
 ### <a name="face-detector"></a>Обнаружение лиц
-Face Detector позволяет обнаруживать лица людей и определять их эмоции, включая радость, грусть и удивление. Эту службу целесообразно использовать в ряде описанных ниже областей, включая объединение и анализ реакции людей, принимающих участие в мероприятии. Дополнительные сведения и примеры приведены в статье [Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure](media-services-face-and-emotion-detection.md).
+Face Detector позволяет обнаруживать лица людей и определять их эмоции, включая радость, грусть и удивление. Эту службу целесообразно использовать в ряде описанных ниже областей, включая объединение и анализ реакции людей, принимающих участие в мероприятии. Подробные сведения и примеры см. в разделе [обнаружение лиц и распознавания эмоций для аналитика мультимедиа Azure](media-services-face-and-emotion-detection.md).
 
 ### <a name="video-summarization"></a>Сводные видео
 Формирование сводных данных видео помогает создавать краткие видеоролики длинных видеозаписей путем автоматического выбора интересных фрагментов из исходного видеоматериала. Используйте эту функцию, чтобы представить краткий обзор длинного видео. Дополнительные сведения и примеры приведены в статье [Использование Azure Media Video Thumbnail для формирования сводных данных видео](media-services-video-summarization.md).
@@ -135,17 +135,17 @@ Azure Content Moderator позволяет использовать машинн
 ## <a name="demos"></a>Демонстрационные материалы
 Просмотрите [ролики о медиа-аналитике Azure](https://azuremedialabs.azurewebsites.net/demos/Analytics.html).
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 Ознакомьтесь с разделом [Общие сведения об аналитике служб мультимедиа](https://azure.microsoft.com/blog/introducing-azure-media-analytics/).
 
 <!-- Images -->
 
 [overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

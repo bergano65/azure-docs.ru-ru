@@ -1,0 +1,342 @@
+### YamlMime:Hub
+title: Документация по Сети Azure
+summary: Узнайте о различных сетевых службах Azure, которые обеспечивают возможность подключения к ресурсам в Azure, доставку и защиту приложений, а также безопасность сети.
+brand: azure
+metadata:
+  title: Документация по Сети Azure
+  description: Сетевые службы Azure обеспечивают возможность подключения к ресурсам в Azure, доставку и защиту приложений, а также безопасность сети.
+  ms.service: virtual-network
+  ms.topic: hub-page
+  ms.collection: 
+  author: KumudD
+  ms.author: kumud
+  manager: mtillman
+  ms.date: 03/17/2020
+  ms.openlocfilehash: eba71e790c9da1978e0c9cac84b1913447972db2
+  ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/22/2020
+  ms.locfileid: "83800713"
+highlightedContent:
+  items:
+  - title: Что такое Сеть Azure?
+    itemType: overview
+    url: networking-overview.md
+  - title: Новые возможности Сети Azure
+    itemType: whats-new
+    url: https://azure.microsoft.com/updates/?category=networking
+  - title: Варианты балансировки нагрузки в Azure
+    itemType: architecture
+    url: https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview
+  - title: Звездообразная топологии сети в Azure
+    itemType: architecture
+    url: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke
+  - title: Что такое предпочтение маршрутизации?
+    itemType: concept
+    url: ../virtual-network/routing-preference-overview.md
+  - title: Дистанционная работа с использованием служб Azure
+    itemType: concept
+    url: working-remotely-support.md
+conceptualContent:
+  items:
+  - title: Виртуальная сеть
+    links:
+    - url: ../virtual-network/virtual-networks-overview.md
+      itemType: concept
+      text: Что такое виртуальная сеть Azure?
+    - url: ../virtual-network/tutorial-restrict-network-access-to-resources.md
+      itemType: tutorial
+      text: Ограничение сетевого доступа к ресурсам
+    - url: ../virtual-network/tutorial-connect-virtual-networks-portal.md
+      itemType: tutorial
+      text: Подключение к виртуальным сетям Azure
+    - url: ../virtual-network/diagnose-network-traffic-filter-problem.md
+      itemType: how-to-guide
+      text: Устранение неполадок с фильтрацией сетевого трафика
+    footerLink:
+      url: ../virtual-network/index.yml
+      text: Подробнее
+  - title: Шифрование подключения из локальной среды к Azure с помощью VPN
+    links:
+    - url: ../vpn-gateway/vpn-gateway-about-vpngateways.md
+      itemType: overview
+      text: Что такое VPN-шлюз Azure?
+    - url: ../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md
+      itemType: tutorial
+      text: Подключения "сеть — сеть"
+    - url: ../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md
+      itemType: how-to-guide
+      text: Подключения "точка — сеть"
+    - url: ../vpn-gateway/vpn-gateway-troubleshoot.md
+      itemType: how-to-guide
+      text: Устранение неполадок VPN-шлюзов
+    footerLink:
+      url: ../vpn-gateway/index.yml
+      text: Подробнее
+  - title: Расширение локальной среды в Azure — частное подключение
+    links:
+    - url: ../expressroute/expressroute-introduction.md
+      itemType: concept
+      text: Что такое Azure ExpressRoute?
+    - url: ../expressroute/expressroute-howto-circuit-portal-resource-manager.md
+      itemType: tutorial
+      text: Создание и изменение канала ExpressRoute
+    - url: ../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md
+      itemType: tutorial
+      text: Связывание виртуальной сети с каналом ExpressRoute
+    - url: ../expressroute/expressroute-troubleshooting-network-performance.md
+      itemType: how-to-guide
+      text: Устранение неполадок производительности сети
+    footerLink:
+      url: ../expressroute/index.yml
+      text: Подробнее
+  - title: DNS
+    links:
+    - url: ../dns/dns-overview.md
+      itemType: overview
+      text: Что такое Azure DNS?
+    - url: ../private-link/private-endpoint-overview.md
+      itemType: overview
+      text: Что собой представляет Частная зона DNS
+    - url: ../dns/dns-delegate-domain-azure-dns.md
+      itemType: tutorial
+      text: Размещение домена и поддомена
+    - url: ../dns/dns-getstarted-portal.md
+      itemType: tutorial
+      text: Устранение неполадок в Azure DNS
+    footerLink:
+      url: ../dns/index.yml
+      text: Подробнее
+  - title: Балансировщик сетевой нагрузки
+    links:
+    - url: ../load-balancer/load-balancer-overview.md
+      itemType: overview
+      text: Что такое Azure Load Balancer?
+    - url: ../load-balancer/quickstart-load-balancer-standard-public-portal.md
+      itemType: quickstart
+      text: Балансировка интернет-трафика на виртуальных машинах
+    - url: ../load-balancer/tutorial-load-balancer-port-forwarding-portal.md
+      itemType: tutorial
+      text: Настройка перенаправления портов
+    - url: ../load-balancer/load-balancer-troubleshoot.md
+      itemType: how-to-guide
+      text: Устранение неполадок Azure Load Balancer
+    footerLink:
+      url: ../load-balancer/index.yml
+      text: Подробнее
+  - title: Подсистема балансировки нагрузки на основе DNS
+    links:
+    - url: ../traffic-manager/traffic-manager-overview.md
+      itemType: overview
+      text: Что такое Диспетчер трафика Azure?
+    - url: ../traffic-manager/tutorial-traffic-manager-improve-website-response.md
+      itemType: tutorial
+      text: Перенаправление трафика для обеспечения минимальной задержки
+    - url: ../traffic-manager/traffic-manager-routing-methods.md
+      itemType: concept
+      text: Методы маршрутизации трафика
+    - url: ../traffic-manager/traffic-manager-troubleshooting-degraded.md
+      itemType: how-to-guide
+      text: Устранение неполадок, связанных с состоянием сниженной функциональности Диспетчера трафика
+    footerLink:
+      url: ../traffic-manager/index.yml
+      text: Подробнее
+  - title: Подсистема балансировки нагрузки веб-приложений
+    links:
+    - url: ../application-gateway/overview.md
+      itemType: overview
+      text: Что такое шлюз приложений Azure?
+    - url: ../application-gateway/quick-create-portal.md
+      itemType: quickstart
+      text: Направление веб-трафика с помощью портала
+    - url: ../application-gateway/application-gateway-faq.md
+      itemType: concept
+      text: Часто задаваемые вопросы
+    - url: ../application-gateway/application-gateway-troubleshooting-502.md
+      itemType: how-to-guide
+      text: Устранение ошибок "Недопустимый шлюз"
+    footerLink:
+      url: ../application-gateway/index.yml
+      text: Подробнее
+  - title: Глобальная подсистема балансировки нагрузки
+    links:
+    - url: ../frontdoor/front-door-overview.md
+      itemType: overview
+      text: Что такое Azure Front Door Service?
+    - url: ../frontdoor/front-door-custom-domain.md
+      itemType: how-to-guide
+      text: Добавление личного домена в Azure Front Door Service
+    - url: ../frontdoor/front-door-how-to-redirect-https.md
+      itemType: how-to-guide
+      text: Перенаправление трафика HTTP в HTTPS
+    - url: ../frontdoor/front-door-troubleshoot-routing.md
+      itemType: how-to-guide
+      text: Устранение проблем с маршрутизацией
+    footerLink:
+      url: ../frontdoor/index.yml
+      text: Подробнее
+  - title: Мониторинг работоспособности сети
+    links:
+    - url: ../network-watcher/network-watcher-monitoring-overview.md
+      itemType: overview
+      text: Наблюдатель за сетями Azure
+    - url: ../network-watcher/traffic-analytics.md
+      itemType: concept
+      text: Аналитика трафика в Azure
+    - url: ../network-watcher/network-watcher-nsg-flow-logging-portal.md
+      itemType: tutorial
+      text: Запись сетевого входящего и исходящего трафика виртуальной машины в журнал
+    footerLink:
+      url: ../network-watcher/index.yml
+      text: Подробнее
+  - title: Сетевой брандмауэр
+    links:
+    - url: ../firewall/overview.md
+      itemType: overview
+      text: Что такое Брандмауэр Azure?
+    - url: ../firewall/tutorial-firewall-deploy-portal.md
+      itemType: tutorial
+      text: Развертывание и настройка Брандмауэра Azure
+    - url: ../firewall/tutorial-firewall-dnat.md
+      itemType: tutorial
+      text: Фильтрация входящего Интернет-трафика с помощью Брандмауэра Azure
+    footerLink:
+      url: ../firewall/index.yml
+      text: Подробнее
+  - title: Безопасный доступ к виртуальным машинам Azure
+    links:
+    - url: ../bastion/bastion-overview.md
+      itemType: overview
+      text: Что такое Бастион Azure
+    - url: ../bastion/bastion-create-host-portal.md
+      itemType: how-to-guide
+      text: Создание узла-бастиона Azure
+    - url: ../bastion/troubleshoot.md
+      itemType: how-to-guide
+      text: Устранение неполадок в службе "Бастион Azure"
+    footerLink:
+      url: ../bastion/index.yml
+      text: Подробнее
+  - title: Управление безопасностью сети
+    links:
+    - url: ../firewall-manager/overview.md
+      itemType: overview
+      text: Что такое Диспетчер брандмауэра Azure?
+    - url: ../firewall-manager/secured-virtual-hub.md
+      itemType: concept
+      text: Что такое защищенный виртуальный концентратор?
+    - url: ../firewall-manager/secure-cloud-network.md
+      itemType: tutorial
+      text: Защита виртуальной глобальной сети с помощью Диспетчера брандмауэра Azure
+    footerLink:
+      url: ../firewall-manager/index.yml
+      text: Подробнее
+  - title: Брандмауэр веб-приложения
+    links:
+    - url: ../web-application-firewall/overview.md
+      itemType: overview
+      text: Что такое брандмауэр веб-приложения Azure?
+    - url: ../web-application-firewall/ag/ag-overview.md
+      itemType: concept
+      text: WAF в Шлюзе приложений
+    - url: ../web-application-firewall/afds/afds-overview.md
+      itemType: concept
+      text: WAF в Azure Front Door Service
+    - url: ../web-application-firewall/cdn/cdn-overview.md
+      itemType: concept
+      text: WAF в Azure CDN
+    - url: ../web-application-firewall/ag/web-application-firewall-troubleshoot.md
+      itemType: how-to-guide
+      text: Устранение неполадок с WAF для Шлюза приложений
+    footerLink:
+      url: ../web-application-firewall/index.yml
+      text: Подробнее
+  - title: Частный доступ к службе
+    links:
+    - url: ../private-link/private-link-overview.md
+      itemType: overview
+      text: Что собой представляет Приватный канал Azure?
+    - url: ../private-link/private-endpoint-overview.md
+      itemType: concept
+      text: Что такое частная конечная точка Azure?
+    - url: ../private-link/troubleshoot-private-link-connectivity.md
+      itemType: how-to-guide
+      text: Устранение неполадок с Приватным каналом Azure
+    footerLink:
+      url: ../private-link/index.yml
+      text: Подробнее
+  - title: Защита от атак DDoS
+    links:
+    - url: ../virtual-network/ddos-protection-overview.md
+      itemType: overview
+      text: Что такое Защита от атак DDoS Azure (цен. категория "Стандартный")?
+    - url: ../virtual-network/manage-ddos-protection.md
+      itemType: how-to-guide
+      text: Управление Защитой от атак DDoS
+    - url: ../virtual-network/ddos-protection-partner-onboarding.md
+      itemType: concept
+      text: Подключение партнеров
+    footerLink:
+      url: https://docs.microsoft.com/azure/security/fundamentals/ddos-best-practices
+      text: Подробнее
+  - title: Сеть доставки содержимого
+    links:
+    - url: ../cdn/cdn-overview.md
+      itemType: overview
+      text: Что такое сеть доставки содержимого Azure?
+    - url: ../cdn/cdn-create-new-endpoint.md
+      itemType: quickstart
+      text: Создание профиля CDN и конечной точки
+    - url: ../cdn/cdn-standard-rules-engine-reference.md
+      itemType: concept
+      text: Справочник по стандартному обработчику правил для Azure CDN
+    - url: ../cdn/cdn-troubleshoot-endpoint.md
+      itemType: how-to-guide
+      text: Устранение неполадок с конечными точками Azure CDN
+    footerLink:
+      url: ../cdn/index.yml
+      text: Подробнее
+  - title: Унифицированная сеть с звездообразной топологией
+    links:
+    - url: ../virtual-wan/virtual-wan-about.md
+      itemType: overview
+      text: Что такое Виртуальная глобальная сеть Azure?
+    - url: ../virtual-wan/virtual-wan-global-transit-network-architecture.md
+      itemType: concept
+      text: Архитектура глобальной транзитной сети — Виртуальная глобальная сеть Azure
+    - url: ../virtual-wan/virtual-wan-locations-partners.md
+      itemType: concept
+      text: Партнеры и расположения Виртуальной глобальной сети Azure
+    - url: ../virtual-wan/migrate-from-hub-spoke-topology.md
+      itemType: how-to-guide
+      text: Миграция из звездообразной топологии
+    footerLink:
+      url: ../virtual-wan/index.yml
+      text: Подробнее
+  - title: Службы пиринга
+    links:
+    - url: ../peering-service/about.md
+      itemType: overview
+      text: Что такое служба пиринга Azure?
+    - url: ../internet-peering/overview.md
+      itemType: overview
+      text: Что такое интернет-пиринг?
+    - url: ../internet-peering/overview-peering-service.md
+      itemType: concept
+      text: 'Сравнение: интернет-пиринг и Служба пиринга в Azure'
+    footerLink:
+      url: ../peering-service/index.yml
+      text: Подробнее
+additionalContent:
+  sections:
+  - items:
+    - title: Команды Azure PowerShell для Сети Azure
+      summary: Ознакомьтесь с командлетами для Сети Azure.
+      url: https://docs.microsoft.com/en-us/powershell/module/az.network/?view=azps-3.5.0#networking
+    - title: Команды Azure CLI для Сети Azure
+      summary: Команды для Сети Azure можно найти в справочнике по CLI.
+      url: https://docs.microsoft.com/en-us/cli/azure/network?view=azure-cli-latest
+    - title: Блоги по Сети Azure
+      summary: Просмотрите последние блоги, посвященные Сети Azure.
+      url: https://azure.microsoft.com/blog/topics/networking/

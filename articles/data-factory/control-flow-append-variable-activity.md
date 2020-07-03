@@ -11,28 +11,28 @@ ms.author: daperlov
 manager: jroth
 ms.reviewer: maghan
 ms.date: 10/09/2018
-ms.openlocfilehash: bcecd3411b6e6e751032f33862a671d8adbca046
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.openlocfilehash: 5d74cd0fcd524f00d79eb3fbab386c602a413766
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73679972"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81414214"
 ---
 # <a name="append-variable-activity-in-azure-data-factory"></a>Добавление действия переменной в фабрике данных Azure
-
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 Используйте добавление действия переменной, чтобы добавить значение существующему массиву переменной, определенной в конвейере Фабрики данных.
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description (Описание) | Обязательно
+Свойство | Описание | Обязательный
 -------- | ----------- | --------
 name | Имя действия в конвейере | Да
-description | Текст, описывающий действия | Нет
-type | Тип действия — AppendVariable | Да
-значение | Строковый литерал или значение объекта выражения, используемое для добавление указанной переменной | Да
-variableName | Имя переменной будет изменено действием, в то время как переменная должна иметь тип "Массив" | Да
+description | Текст, описывающий действия | нет
+type | Тип действия — AppendVariable | да
+значение | Строковый литерал или значение объекта выражения, используемое для добавление указанной переменной | да
+variableName | Имя переменной будет изменено действием, в то время как переменная должна иметь тип "Массив" | да
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о деятельности связанного потока управления, который поддерживается Фабрикой данных: 
 
-- [Установка действия переменной](control-flow-set-variable-activity.md)
+- [Действие задания переменной](control-flow-set-variable-activity.md)

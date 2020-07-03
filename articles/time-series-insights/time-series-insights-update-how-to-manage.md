@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/07/2020
 ms.custom: seodec18
 ms.openlocfilehash: 1ec0d9c7ecf16c60c32abdf08b358268f460edb0
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77087217"
 ---
 # <a name="provision-and-manage-azure-time-series-insights-preview"></a>Подготовка к работе службы "Аналитика временных рядов Azure" (предварительная версия) и управление ею
@@ -32,7 +32,7 @@ ms.locfileid: "77087217"
 * Дополнительное горячее хранение для более быстрых и неограниченных запросов
 
 > [!TIP]
-> * Дополнительные сведения о планировании среды см. [здесь](./time-series-insights-update-plan.md).
+> * Узнайте [, как спланировать среду](./time-series-insights-update-plan.md).
 > * Узнайте, как [Добавить источник концентратора событий](./time-series-insights-how-to-add-an-event-source-eventhub.md) или [Добавить источник центра Интернета вещей](./time-series-insights-how-to-add-an-event-source-iothub.md).
 
 Вы научитесь:
@@ -50,7 +50,7 @@ ms.locfileid: "77087217"
 
 1. Выберите **PAYG** в качестве **уровня**. Укажите имя среды и выберите группу подписок и группу ресурсов для использования. Затем выберите поддерживаемое расположение для размещения среды.
 
-   [![создать экземпляр службы "аналитика временных рядов Azure".](media/v2-update-manage/create-and-manage-configuration.png)](media/v2-update-manage/create-and-manage-configuration.png#lightbox)
+   [![Создайте экземпляр службы "Аналитика временных рядов Azure".](media/v2-update-manage/create-and-manage-configuration.png)](media/v2-update-manage/create-and-manage-configuration.png#lightbox)
 
 1. Введите идентификатор временного ряда.
 
@@ -61,11 +61,11 @@ ms.locfileid: "77087217"
 
 1. Создайте учетную запись хранения Azure, выбрав имя учетной записи хранения и указав вариант репликации. При этом будет автоматически создана учетная запись хранения Azure общего назначения версии 1. Учетная запись создается в том же регионе, что и ранее выбранная среда предварительной версии службы "аналитика временных рядов Azure".
 
-    [![конфигурация холодного хранилища](media/v2-update-manage/create-and-manage-cold-store.png)](media/v2-update-manage/create-and-manage-cold-store.png#lightbox)
+    [![Конфигурация холодного хранилища](media/v2-update-manage/create-and-manage-cold-store.png)](media/v2-update-manage/create-and-manage-cold-store.png#lightbox)
 
 1. **(Необязательно)** Включите горячее хранение для вашей среды, если вам нужны более быстрые и неограниченные запросы к последним данным в среде. Вы также можете создать или удалить горячее хранилище с помощью параметра **конфигурации хранилища** в левой области навигации после создания среды предварительной версии службы "аналитика временных рядов".
 
-    [![конфигурация "горячего" хранилища](media/v2-update-manage/create-and-manage-warm-storage.png)](media/v2-update-manage/create-and-manage-warm-storage.png#lightbox)
+    [![Конфигурация "горячего" хранилища](media/v2-update-manage/create-and-manage-warm-storage.png)](media/v2-update-manage/create-and-manage-warm-storage.png#lightbox)
 
 1. **(Необязательно)** Теперь можно добавить источник событий. Кроме того, можно подождать, пока экземпляр не будет подготовлен.
 
@@ -78,11 +78,11 @@ ms.locfileid: "77087217"
      > [!TIP]
      > Время в очереди сообщений может быть не лучшим параметром, настроенным для использования в сценариях пакетных событий или в сценариях передачи исторических данных. В таких случаях обязательно убедитесь, что ваше решение использует или не использует свойство timestamp.
 
-     [Вкладка "Конфигурация источника событий !["](media/v2-update-manage/create-and-manage-event-source.png)](media/v2-update-manage/create-and-manage-event-source.png#lightbox)
+     [![Вкладка «Настройка источника событий»](media/v2-update-manage/create-and-manage-event-source.png)](media/v2-update-manage/create-and-manage-event-source.png#lightbox)
 
 1. Убедитесь, что ваша среда подготовлена и настроена нужным образом.
 
-    [Вкладка ![проверка и создание](media/v2-update-manage/create-and-manage-review-and-confirm.png)](media/v2-update-manage/create-and-manage-review-and-confirm.png#lightbox)
+    [![Вкладка "Обзор и создание"](media/v2-update-manage/create-and-manage-review-and-confirm.png)](media/v2-update-manage/create-and-manage-review-and-confirm.png#lightbox)
 
 ## <a name="manage-the-environment"></a>Управление средой
 
@@ -100,9 +100,9 @@ ms.locfileid: "77087217"
 
 * Колонка **ссылочных данных** портал Azure удаляется в предварительной версии службы "аналитика временных рядов Azure", так как справочные данные не входят в PAYG среды.
 
-[![среды предварительной версии аналитики временных рядов в портал Azure](media/v2-update-manage/create-and-manage-overview-confirm.png)](media/v2-update-manage/create-and-manage-overview-confirm.png#lightbox)
+[![Среда "Аналитика временных рядов" (предварительная версия) на портале Azure](media/v2-update-manage/create-and-manage-overview-confirm.png)](media/v2-update-manage/create-and-manage-overview-confirm.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о доступности сред и предварительных версий для аналитики временных рядов см. в статье [Планирование среды](./time-series-insights-update-plan.md).
 

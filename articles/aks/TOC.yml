@@ -12,15 +12,18 @@
       items:
         - name: Использование Azure CLI
           href: kubernetes-walkthrough.md
+        - name: Использование Azure PowerShell
+          href: kubernetes-walkthrough-powershell.md
         - name: Использование портала Azure
           href: kubernetes-walkthrough-portal.md
-        - name: Использование шаблона Resource Manager
+        - name: Использование шаблона ARM
+          displayName: Resource Manager
           href: kubernetes-walkthrough-rm-template.md
     - name: Разработка приложений
       expanded: true
       items:
-        - name: С помощью Draft
-          href: kubernetes-draft.md
+        - name: Разработка с использованием Helm
+          href: quickstart-helm.md
         - name: Azure Dev Spaces
           expanded: true
           items:
@@ -58,6 +61,11 @@
       href: tutorial-kubernetes-app-update.md
     - name: "7.\_Обновление кластера"
       href: tutorial-kubernetes-upgrade-cluster.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Кластеры и рабочие нагрузки
@@ -73,6 +81,8 @@
       href: concepts-storage.md
     - name: Масштабирование
       href: concepts-scale.md
+    - name: Автоматическое восстановление узла
+      href: node-auto-repair.md
     - name: Рекомендации
       items:
         - name: Обзор
@@ -105,8 +115,8 @@
               href: developer-best-practices-pod-security.md
     - name: Квоты и региональные ограничения
       href: quotas-skus-regions.md
-    - name: Миграция из ACS в AKS
-      href: acs-aks-migration.md
+    - name: Миграция в AKS
+      href: aks-migration.md
     - name: Поддерживаемая версия Kubernetes
       href: supported-kubernetes-versions.md
     - name: Усиление защиты ОС узла
@@ -117,18 +127,16 @@
   items:
     - name: Операции с кластером
       items:
-        - name: Создание кластера AKS
-          href: '/cli/azure/aks#az-aks-create'
-          maintainContext: true
         - name: Масштабирование кластера AKS
           href: scale-cluster.md
         - name: Обновление кластера AKS
           href: upgrade-cluster.md
+        - name: Использование соглашения об уровне обслуживания с гарантией времени непрерывной работы
+          href: uptime-sla.md
         - name: Обновления ОС узла процесса
           href: node-updates-kured.md
-        - name: Удаление кластера AKS
-          href: '/cli/azure/aks#az-aks-delete'
-          maintainContext: true
+        - name: Настройка кластера AKS.
+          href: cluster-configuration.md
         - name: Интеграция ACR с кластером AKS
           href: cluster-container-registry-integration.md
         - name: Создание виртуальных узлов
@@ -141,8 +149,14 @@
           href: cluster-autoscaler.md
         - name: Использование Зон доступности
           href: availability-zones.md
-        - name: Использование нескольких пулов узлов
-          href: use-multiple-node-pools.md
+        - name: Использование пулов узлов
+          items:
+            - name: Использование нескольких пулов узлов
+              href: use-multiple-node-pools.md
+            - name: Использование пулов точечных узлов (предварительная версия)
+              href: spot-node-pool.md
+            - name: Использование пулов системных узлов
+              href: use-system-pools.md
         - name: Развертывание AKS с помощью Terraform
           href: ../terraform/terraform-create-k8s-cluster-with-tf-and-aks.md
           maintainContext: true
@@ -202,7 +216,7 @@
       items:
         - name: Создание субъекта-службы
           href: kubernetes-service-principal.md
-        - name: Использование управляемых удостоверений (предварительная версия)
+        - name: Использование управляемых удостоверений
           href: use-managed-identity.md
         - name: Ограничение доступа к файлу конфигурации кластера
           href: control-kubeconfig-access.md
@@ -213,13 +227,15 @@
         - name: Определение диапазонов разрешенных IP-адресов сервера API
           href: api-server-authorized-ip-ranges.md
         - name: Управление развертыванием с помощью Политики Azure (предварительная версия)
-          href: ../governance/policy/concepts/rego-for-aks.md?toc=/azure/aks/toc.json
-        - name: Обновление учетных данных субъекта-службы кластера
+          href: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/aks/toc.json
+        - name: Обновление учетных данных кластера
           href: update-credentials.md
         - name: Ограничение и администрирование исходящего трафика кластера
           href: limit-egress-traffic.md
         - name: Включение интеграции с Azure Active Directory
           items:
+            - name: "Интеграция Azure\_AD (предварительная версия)"
+              href: managed-aad.md
             - name: Использование Azure CLI
               href: azure-ad-integration-cli.md
             - name: Использование портала Azure
@@ -245,10 +261,12 @@
         - name: Просмотр данных контейнера в реальном времени
           href: ../azure-monitor/insights/container-insights-livedata-overview.md
           maintainContext: true
-    - name: Использование контейнеров Windows Server (предварительная версия)
+    - name: Использование контейнеров Windows Server
       items:
         - name: Создание кластера AKS
           href: windows-container-cli.md
+        - name: Создание кластера AKS с помощью PowerShell
+          href: windows-container-powershell.md
         - name: Удаленное подключение
           href: rdp.md
         - name: Известные ограничения
@@ -309,12 +327,8 @@
                 - name: "3.\_Командная разработка"
                   href: ../dev-spaces/team-development-nodejs.md
                   maintainContext: true
-        - name: Запуск приложений с помощью Helm
+        - name: Установка существующих приложений с помощью Helm
           href: kubernetes-helm.md
-        - name: С помощью открытого компонента Service Broker для Azure
-          href: integrate-azure.md
-        - name: "Использование API Cosmos\_DB для MongoDB с OSBA"
-          href: use-cosmosdb-osba-mongo-app.md
         - name: С помощью OpenFaaS
           href: openfaas.md
         - name: Запуск заданий Spark
@@ -373,6 +387,8 @@
           href: kube-advisor-tool.md
         - name: Доступ к узлам SSH
           href: ssh.md
+        - name: Средства оценки производительности Linux
+          href: troubleshoot-linux.md
 - name: Справочник
   items:
     - name: Azure CLI

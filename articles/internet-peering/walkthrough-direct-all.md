@@ -1,7 +1,7 @@
 ---
-title: Пошаговое руководство по прямым пиринга
+title: Пошаговое руководство по прямому пирингу
 titleSuffix: Azure
-description: Пошаговое руководство по прямым пиринга
+description: Пошаговое руководство по прямому пирингу
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
@@ -9,19 +9,19 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: d88fcfc4d3e073bf544f2ca0f4d01dbe305b45da
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75775515"
 ---
-# <a name="direct-peering-walkthrough"></a>Пошаговое руководство по прямым пиринга
+# <a name="direct-peering-walkthrough"></a>Пошаговое руководство по прямому пирингу
 
 В этом разделе описываются шаги, которые необходимо выполнить для настройки прямого пиринга и управления им.
 
 ## <a name="create-a-direct-peering"></a>Создание прямого пиринга
 > [!div class="mx-imgBorder"]
-> ![ный рабочий процесс пиринга и состояния подключения](./media/direct-peering.png)
+> ![Рабочий процесс прямого пиринга и состояния подключения](./media/direct-peering.png)
 
 Для инициализации прямого пиринга необходимо выполнить следующие действия.
 1. Ознакомьтесь с [политикой пиринга](https://peering.azurewebsites.net/peering) Майкрософт, чтобы понять требования для прямого пиринга.

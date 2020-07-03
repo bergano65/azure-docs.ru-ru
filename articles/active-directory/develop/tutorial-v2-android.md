@@ -2,27 +2,24 @@
 title: Вход, выход пользователей и вызов Microsoft Graph (Android) — платформа удостоверений Майкрософт | Azure
 description: Получение маркера доступа и вызов Microsoft Graph или API, которые требуют маркеры доступа от платформы удостоверений Майкрософт (Android)
 services: active-directory
-documentationcenter: dev-center-name
 author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/26/2019
 ms.author: hahamil
-ms.reviwer: brandwe
+ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 4366f95a9c6d5c0e6b851583ac6001b3b413c08a
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: b899e1d651f41c9c1e1e54af1b5ec19162dfc28d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77085393"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81380062"
 ---
-# <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-application"></a>Руководство. Вход пользователей и вызов Microsoft Graph из приложения Android 
+# <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-from-an-android-application"></a>Руководство по Вход пользователей и вызов Microsoft Graph из приложения Android 
 
 >[!NOTE]
 >В этом учебнике представлены упрощенные примеры работы с MSAL для Android. Для простоты здесь используется режим одной учетной записи. Вы также можете открыть репозиторий и клонировать [предварительно настроенный пример приложения](https://github.com/Azure-Samples/ms-identity-android-java/) для изучения более сложных сценариев. Дополнительные сведения о примере приложения, конфигурации и регистрации вы найдете в [этом кратком руководстве](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v2-android). 
@@ -94,7 +91,7 @@ ms.locfileid: "77085393"
 
 1. На панели проекта Android Studio перейдите к **app\src\main\res**.
 2. Щелкните правой кнопкой мыши **res** и выберите **New** (Создать)  > **Directory** (Каталог). Введите `raw` в качестве имени каталога и нажмите кнопку **ОК**.
-3. В расположении**app** > **src** > **main** > **res** > **raw** создайте файл JSON с именем `auth_configbn_single_account.json` и вставьте в него ранее сохраненную конфигурацию MSAL. 
+3. В расположении**app** > **src** > **main** > **res** > **raw** создайте файл JSON с именем `auth_config_single_account.json` и вставьте в него ранее сохраненную конфигурацию MSAL. 
 
     Поместите следующие данные под URI перенаправления: 
     ```json
@@ -155,7 +152,7 @@ ms.locfileid: "77085393"
         jcenter()
     }  
     dependencies{
-        implementation 'com.microsoft.identity.client:msal:1.2.+'
+        implementation 'com.microsoft.identity.client:msal:1.+'
         implementation 'com.microsoft.graph:microsoft-graph:1.5.+'
     }
     packagingOptions{
@@ -193,7 +190,7 @@ import com.microsoft.identity.client.exception.*;
 ## <a name="instantiate-publicclientapplication"></a>Создание экземпляра PublicClientApplication
 #### <a name="initialize-variables"></a>Инициализация переменных 
 ```java
-private final static String[] SCOPES = {"File.Read"};
+private final static String[] SCOPES = {"Files.Read"};
 /* Azure AD v2 Configs */
 final static String AUTHORITY = "https://login.microsoftonline.com/common";
 private ISingleAccountPublicClientApplication mSingleAccountApp;
@@ -586,8 +583,3 @@ private void performOperationOnSignOut() {
 ## <a name="get-help"></a>Получить справку
 
 Если у вас возникли вопросы касательно этого руководства или платформы удостоверений Майкрософт, см. статью, посвященную [справке и поддержке](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options).
-
-Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
-
-> [!div class="nextstepaction"]
-> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

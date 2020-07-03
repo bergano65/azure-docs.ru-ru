@@ -8,15 +8,15 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: victorh
 ms.openlocfilehash: c291dbe9c1eb37e68174a2353e296a376c7d0896
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74168675"
 ---
 # <a name="azure-firewall-threat-intelligence-based-filtering"></a>Фильтрация на основе интеллектуального анализа угроз в брандмауэре Azure
 
-Фильтрация на основе Microsoft Threat Intelligence может быть включена в брандмауэре с целю создания оповещений и запрета трафика, поступающего с известных вредоносных IP-адресов и доменов, а также передающегося на них. IP-адреса и домены также передаются из канала Microsoft Threat Intelligence. [Intelligent Security Graph](https://www.microsoft.com/en-us/security/operations/intelligence) поддерживает Microsoft Threat Intelligence и используется во множестве служб, включая Центр безопасности Azure.
+Фильтрация на основе Microsoft Threat Intelligence может быть включена в брандмауэре с целю создания оповещений и запрета трафика, поступающего с известных вредоносных IP-адресов и доменов, а также передающегося на них. IP-адреса и домены также передаются из канала Microsoft Threat Intelligence. [Intelligent Security Graph](https://www.microsoft.com/en-us/security/operations/intelligence) включает аналитику угроз Майкрософт и используется несколькими службами, включая центр безопасности Azure.
 
 ![Аналитика угроз брандмауэра](media/threat-intel/firewall-threat.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "74168675"
 
 - **Проверка входящего** трафика. Вы можете видеть предупреждения по входящему трафику, если в брандмауэре настроены правила ДНаТ. Это справедливо, даже если в правиле ДНаТ разрешены только определенные источники, и трафик в противном случае отклоняется. Брандмауэр Azure не предупреждает о всех известных сканерах портов. только для сканеров, которые также известны как вредоносные действия.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [примеры log Analytics брандмауэре Azure](log-analytics-samples.md)
 - Узнайте, как [развернуть и настроить брандмауэр Azure](tutorial-firewall-deploy-portal.md)

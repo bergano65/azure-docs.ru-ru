@@ -4,15 +4,15 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 11/03/2016
 ms.author: cephalin
-ms.openlocfilehash: d001d76bca5b9a0837349b6e05b3b0a271ea3a73
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 66d3397fae24ee2546dae4eb5d7c9d188f9ede99
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185101"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "78944117"
 ---
 > [!NOTE]
-> Службу Azure DNS можно использовать для настройки пользовательского DNS-имени для ваших веб-приложений Azure. Дополнительные сведения см. в статье [Использование Azure DNS для указания параметров личного домена для службы Azure](../articles/dns/dns-custom-domain.md#app-service-web-apps).
+> Службу Azure DNS можно использовать для настройки пользовательского DNS-имени для Службы приложений Azure. Дополнительные сведения см. в статье [Использование Azure DNS для указания параметров личного домена для службы Azure](../articles/dns/dns-custom-domain.md#app-service-web-apps).
 >
 >
 

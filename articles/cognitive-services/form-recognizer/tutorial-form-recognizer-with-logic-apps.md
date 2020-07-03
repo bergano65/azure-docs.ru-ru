@@ -1,5 +1,5 @@
 ---
-title: Руководство. использованию Распознавателя документов с Azure Logic Apps для анализа счетов — Распознаватель документов
+title: Руководство по использованию Распознавателя документов с Azure Logic Apps для анализа счетов — Распознаватель документов
 titleSuffix: Azure Cognitive Services
 description: В этом учебнике вы используете Распознаватель документов с Azure Logic Apps, чтобы создать рабочий процесс для автоматизации обучения модели и ее тестирования на основе примера данных.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.date: 01/27/2020
 ms.author: nitinme
 ms.openlocfilehash: d71d9c7e6570e562fe4c692ede1d07b70c923cb6
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "77118268"
 ---
-# <a name="tutorial-use-form-recognizer-with-azure-logic-apps-to-analyze-invoices"></a>Руководство. использованию Распознавателя документов с Azure Logic Apps для анализа счетов
+# <a name="tutorial-use-form-recognizer-with-azure-logic-apps-to-analyze-invoices"></a>Руководство по использованию Распознавателя документов с Azure Logic Apps для анализа счетов
 
 В этом учебнике вы создадите рабочий процесс в Azure Logic Apps, который использует Распознаватель документов, службу в составе пакета Azure Cognitive Services, чтобы извлекать данные из счетов. Сначала необходимо обучить модель Распознавателя документов с помощью образца набора данных, а затем проверить модель на другом наборе данных.
 

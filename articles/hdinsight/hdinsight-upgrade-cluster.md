@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/31/2020
 ms.openlocfilehash: f7198aeff5e9ef6d37e29c2336dc38e4eec0dda1
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77023979"
 ---
 # <a name="migrate-hdinsight-cluster-to-a-newer-version"></a>Перенос кластера HDInsight в более новую версию
@@ -26,7 +26,7 @@ ms.locfileid: "77023979"
 ## <a name="migration-tasks"></a>Задачи миграции
 
 Рабочий процесс для обновления кластера HDInsight выглядит так.
-](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png) схемы рабочего процесса обновления ![HDInsight
+![Схема рабочего процесса обновления HDInsight](./media/hdinsight-upgrade-cluster/upgrade-workflow-diagram.png)
 
 1. Ознакомьтесь со всеми разделами этого документа. Там описаны изменения, которые могут потребоваться при обновлении кластера HDInsight.
 2. Создайте кластер как среду тестирования и контроля качества. См. дополнительные сведения о [создании кластеров под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
@@ -53,7 +53,7 @@ ms.locfileid: "77023979"
 
 Дополнительные сведения о резервном копировании и восстановлении базы данных см. в статье [Восстановление базы данных SQL Azure с помощью автоматических резервных копий базы данных](../sql-database/sql-database-recovery-using-backups.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Узнайте, как создавать кластеры HDInsight под управлением Linux](hdinsight-hadoop-provision-linux-clusters.md)
 * [Подключитесь к HDInsight с помощью протокола SSH](hdinsight-hadoop-linux-use-ssh-unix.md).

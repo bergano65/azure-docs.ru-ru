@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 10a4078f49abbdf431f42c6cde7cf882112e5848
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "60384721"
 ---
 # <a name="azure-ad-connect-sync-service-shadow-attributes"></a>Теневые атрибуты службы синхронизации Azure AD Connect
@@ -58,7 +58,7 @@ ms.locfileid: "60384721"
 | proxyAddresses для локальной среды | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie.spencer@fabrikam.com</br>smtp:abbie@fabrikamonline.com |
 | proxyAddresses для Exchange Online | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie@fabrikamonline.com</br>SIP:abbie.spencer@fabrikamonline.com |
 
-В этом случае **smtp:abbie.spencer\@fabrikam.com** был удален, так как этот домен не проверен. Но Exchange также добавила **SIP:abbie.spencer\@fabrikamonline.com**. Fabrikam не использовал Lync или Skype локально, но Azure AD и Exchange Online готовы к этому.
+В этом случае **SMTP: аббие. spencer\@Fabrikam.com** был удален, так как этот домен не был проверен. Но Exchange также добавил **SIP: аббие. spencer\@fabrikamonline.com**. Fabrikam не использовал Lync или Skype локально, но Azure AD и Exchange Online готовы к этому.
 
 Эта логика proxyAddresses называется **ProxyCalc**. ProxyCalc вызывается при каждом изменении пользователя, когда:
 
@@ -75,5 +75,5 @@ ProxyCalc может потратить некоторое время на об�
 Теневые атрибуты также используются при наличии повторяющихся значений атрибутов. Дополнительные сведения см. в разделе [Синхронизация удостоверений и устойчивость повторяющихся атрибутов](how-to-connect-syncservice-duplicate-attribute-resiliency.md).
 
 ## <a name="see-also"></a>См. также
-* [Службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

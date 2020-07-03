@@ -12,11 +12,11 @@ author: prasanthpul
 ms.date: 08/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 98aebb4733c2aa2a6d0b0217f1f437bcea1992e9
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75541066"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79270177"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-accelerate-ml-models"></a>ONNX и Машинное обучение Azure: создание и ускорение моделей машинного обучения
 
@@ -26,11 +26,11 @@ ms.locfileid: "75541066"
 
 Корпорация Майкрософт и сообщество партнеров, созданных ONNX как открытый стандарт для представления моделей машинного обучения. Модели из [многих платформ](https://onnx.ai/supported-tools) , включая TensorFlow, PyTorch, SciKit-учиться, keras, Chain, MXNET и MATLAB, можно экспортировать или преобразовать в стандартный формат ONNX. После того как модели находятся в формате ONNX, их можно запускать на различных платформах и устройствах.
 
-[Среда выполнения ONNX](https://github.com/Microsoft/onnxruntime) — это высокопроизводительный механизм вывода для развертывания моделей ONNX в рабочей среде. Она оптимизирована как для облака, так и для пограничной работы в Linux, Windows и Mac. Написанный C++на, у него также есть C, Python C# и API. Среда выполнения ONNX обеспечивает поддержку всех спецификаций ONNX-ML, а также интегрируется с ускорителями на различных устройствах, например Тенсоррт на видеопроцессорах NVidia.
+[Среда выполнения ONNX](https://github.com/Microsoft/onnxruntime) — это высокопроизводительный механизм вывода для развертывания моделей ONNX в рабочей среде. Она оптимизирована как для облака, так и для пограничной работы в Linux, Windows и Mac. Написанный на C++, у него также есть API-интерфейсы C, Python и C#. Среда выполнения ONNX обеспечивает поддержку всех спецификаций ONNX-ML, а также интегрируется с ускорителями на различных устройствах, например Тенсоррт на видеопроцессорах NVidia.
 
 Среда выполнения ONNX используется в высокомасштабируемых службах Майкрософт, таких как Bing, Office и Cognitive Services. Выигрыш в производительности зависит от ряда факторов, но эти службы Майкрософт показали __среднее увеличение производительности ЦП на 2 раза__. Среда выполнения ONNX также используется как часть Windows ML на сотнях миллионов устройств. Среду выполнения можно использовать с Машинное обучение Azure. С помощью среды выполнения ONNX вы можете воспользоваться обширными оптимизациями рабочего уровня, тестированием и текущими улучшениями.
 
-[![ная схема ONNX, показывающая обучение, конвертеры и развертывание](./media/concept-onnx/onnx.png)](././media/concept-onnx/onnx.png#lightbox)
+[![Схема потока ONNX, показывающая обучение, конвертеры и развертывание](./media/concept-onnx/onnx.png)](././media/concept-onnx/onnx.png#lightbox)
 
 ## <a name="get-onnx-models"></a>Получение моделей ONNX
 
@@ -84,7 +84,7 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../includes/aml-clone-for-examples.md)]
 
-## <a name="more-info"></a>Подробнее
+## <a name="more-info"></a>Дополнительные сведения
 
 Узнайте больше об ONNX или поддержите проект:
 + [Веб-сайт проекта ONNX](https://onnx.ai)

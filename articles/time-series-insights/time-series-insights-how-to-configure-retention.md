@@ -8,14 +8,14 @@ ms.author: dpalled
 manager: cshankar
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/17/2020
+ms.date: 04/16/2020
 ms.custom: seodec18
-ms.openlocfilehash: 3fdc007caaa4cb79f6083599a5bc176bc022fb03
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 524e47e5be142b720687ad48ee9407da23284bd4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278643"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81605050"
 ---
 # <a name="configuring-retention-in-time-series-insights"></a>Настройка периода удержания в службе "Аналитика временных рядов"
 
@@ -40,7 +40,7 @@ ms.locfileid: "76278643"
 
 1. В разделе **Параметры** выберите **Конфигурация хранилища**.
 
-    [![в разделе Параметры выберите Конфигурация хранилища.](media/data-retention/configure-data-retention.png)](media/data-retention/configure-data-retention.png#lightbox)
+    [![В разделе Параметры выберите Конфигурация хранилища.](media/data-retention/configure-data-retention.png)](media/data-retention/configure-data-retention.png#lightbox)
 
 1. Выберите **время хранения данных (в днях)** для настройки периода удержания с помощью ползунка или введите число в текстовом поле.
 
@@ -48,11 +48,11 @@ ms.locfileid: "76278643"
 
 1. Перейдите к параметру **поведения при превышении размера хранилища**. Выберите поведение **очистки старых данных** или **остановки приема данных**.
 
-    [![приостановить входные данные — примите и сохраните.](media/data-retention/pause-ingress-accept-and-save.png)](media/data-retention/pause-ingress-accept-and-save.png#lightbox)
+    [![Приостановить входящие — принять и сохранить.](media/data-retention/pause-ingress-accept-and-save.png)](media/data-retention/pause-ingress-accept-and-save.png#lightbox)
 
 1. Изучите документацию, чтобы понять потенциальные риски потери данных. Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения см. в статье, посвященной [обзору периода удержания данных в службе "Аналитика временных рядов"](time-series-insights-concepts-retention.md).
 

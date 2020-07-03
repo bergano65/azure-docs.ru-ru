@@ -16,10 +16,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ae70b8386b1dc3ebd570d2651cded3eda75dfc53
-ms.sourcegitcommit: 16c5374d7bcb086e417802b72d9383f8e65b24a7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73847072"
 ---
 # <a name="create-an-access-review-of-azure-resource-roles-in-privileged-identity-management"></a>Создание проверки доступа для ролей ресурсов Azure в управление привилегированными пользователями
@@ -34,9 +34,9 @@ ms.locfileid: "73847072"
 
 ## <a name="open-access-reviews"></a>Открытие проверок доступа
 
-1. Войдите в [портал Azure](https://portal.azure.com/) с помощью пользователя, который является членом роли администратора привилегированных ролей.
+1. Войдите на [портал Azure](https://portal.azure.com/) с учетными данными пользователя, который является участником роли Администратор привилегированных ролей.
 
-1. Откройте страницу **Azure AD Privileged Identity Management**.
+1. Откройте **Azure AD privileged Identity Management**.
 
 1. В меню слева выберите **ресурсы Azure**.
 

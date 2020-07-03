@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.custom: seodec18
 ms.openlocfilehash: 232d85789c25e905873286eba6fda32c327a6e25
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76276941"
 ---
 # <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>Создание определяемых пользователем функций в Azure Digital Twins
@@ -142,7 +142,7 @@ function process(telemetry, executionContext) {
 }
 ```
 
-Параметр **telemetry** предоставляет атрибуты **SensorId** и **Message** для описания отправленного датчиком сообщения. Параметр **ExecutionContext** предоставляет следующие атрибуты.
+Параметр **телеметрии** предоставляет атрибуты **сенсорид** и **Message** , соответствующие сообщению, отправленному датчиком. Параметр **ExecutionContext** предоставляет следующие атрибуты.
 
 ```csharp
 var executionContext = new UdfExecutionContext
@@ -204,10 +204,10 @@ function process(telemetry, executionContext) {
     ```URL
     YOUR_MANAGEMENT_API_URL/system/roles
     ```
-   Сохраните идентификатор требуемой роли. Он будет передан в качестве атрибута текста JSON **roleId** (`YOUR_DESIRED_ROLE_IDENTIFIER`) ниже.
+   Сохраните идентификатор требуемой роли. Он будет передан как атрибут текста JSON **roleId** (`YOUR_DESIRED_ROLE_IDENTIFIER`) ниже.
 
-1. **objectId** (`YOUR_USER_DEFINED_FUNCTION_ID`) будет созданным ранее идентификатором определяемой пользователем функции.
-1. Найдите значение **path** (`YOUR_ACCESS_CONTROL_PATH`), запрашивая пространство с помощью `fullpath`.
+1. **ObjectID** (`YOUR_USER_DEFINED_FUNCTION_ID`) будет идентификатором определяемой пользователем функции, которая была создана ранее.
+1. Найдите значение **path** (`YOUR_ACCESS_CONTROL_PATH`), запросив пробелы с помощью `fullpath`.
 1. Скопируйте возвращенное значение `spacePaths`. Оно понадобится вам далее. Создайте аутентифицированный запрос HTTP GET.
 
     ```URL
@@ -252,7 +252,7 @@ function process(telemetry, executionContext) {
 1. В зависимости от того, что именно сопоставители успешно оценили, извлеките связанные определяемые пользователем функции.
 1. Выполните каждую определяемую пользователем функцию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте, как [создать конечные точки Azure Digital Twins](./how-to-egress-endpoints.md), чтобы отправлять в них события.
 

@@ -2,17 +2,17 @@
 title: Учебник. Добавление ресурса в шаблон
 description: Описание создания первого шаблона Azure Resource Manager Вы узнаете о синтаксисе файла шаблона и о том, как развернуть учетную запись хранения.
 author: mumian
-ms.date: 10/04/2019
+ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8686b15501e267ab23efe654d28a3e67369a8d03
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: dcdbbb325e6589669abe6cf3d25ac5191e29118b
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76765593"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411733"
 ---
-# <a name="tutorial-add-a-resource-to-your-resource-manager-template"></a>Руководство. добавлению ресурсов в шаблон Azure Resource Manager
+# <a name="tutorial-add-a-resource-to-your-arm-template"></a>Руководство по добавлению ресурса в шаблон ARM
 
 Из [предыдущего учебника](template-tutorial-create-first-template.md) вы узнали, как создавать пустой шаблон и развертывать его. Теперь все готово для развертывания ресурса. В этом учебнике вы узнаете, как добавить учетную запись хранения. Для работы с этим учебником потребуется около **9 минут**.
 
@@ -26,7 +26,10 @@ ms.locfileid: "76765593"
 
 Чтобы добавить определение учетной записи хранения в имеющийся шаблон, посмотрите на выделенный JSON в следующем примере. Вместо того, чтобы пытаться скопировать разделы шаблона, скопируйте весь файл и замените свой шаблон его содержимым.
 
-Замените **{provide-unique-name}** на уникальное имя учетной записи хранения. Имя учетной записи хранения должно быть уникальным в среде Azure. Имя должно содержать только строчные буквы или цифры. Оно должно содержать не больше 24 знаков. Вы можете попробовать использовать шаблон именования (например, **store1**) в качестве префикса, а затем добавить свои инициалы и сегодняшнюю дату. Например, имя, которое вы используете, может выглядеть таким образом: **store1abc09092019**.
+Замените **{provide-unique-name}** (включая фигурные скобки) уникальным именем учетной записи хранения.
+
+> [!IMPORTANT]
+> Имя учетной записи хранения должно быть уникальным в среде Azure. Имя должно содержать только строчные буквы или цифры. Оно должно содержать не больше 24 знаков. Вы можете попробовать использовать шаблон именования (например, **store1**) в качестве префикса, а затем добавить свои инициалы и сегодняшнюю дату. Например, имя, которое вы используете, может выглядеть таким образом: **store1abc09092019**.
 
 :::code language="json" source="~/resourcemanager-templates/get-started-with-templates/add-storage/azuredeploy.json" range="1-19" highlight="5-17":::
 
@@ -34,7 +37,7 @@ ms.locfileid: "76765593"
 
 ## <a name="resource-properties"></a>Свойства ресурса
 
-Вам может быть интересно, как найти свойства для использования для каждого типа ресурса. Вы можете использовать [ссылку на шаблон Resource Manager](/azure/templates/), чтобы найти типы ресурсов, которые вы хотите развернуть.
+Вам может быть интересно, как найти свойства для использования для каждого типа ресурса. Вы можете использовать [ссылку на шаблон ARM](/azure/templates/), чтобы найти типы ресурсов, которые вы хотите развернуть.
 
 Каждый развернутый ресурс имеет как минимум следующие три свойства:
 
@@ -58,7 +61,7 @@ ms.locfileid: "76765593"
 
 Если вы еще не создали группу ресурсов, см. [этот раздел](template-tutorial-create-first-template.md#create-resource-group). В этом примере предполагается, что для переменной **templateFile** указан путь к файлу шаблона, как показано в [первом учебнике](template-tutorial-create-first-template.md#deploy-template).
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
@@ -67,16 +70,21 @@ New-AzResourceGroupDeployment `
   -TemplateFile $templateFile
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы выполнить эту команду развертывания, необходимо иметь [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
 
 ```azurecli
-az group deployment create \
+az deployment group create \
   --name addstorage \
   --resource-group myResourceGroup \
   --template-file $templateFile
 ```
 
 ---
+
+> [!NOTE]
+> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
 
 Ниже приведены два возможных сбоя развертывания, с которыми вы можете столкнуться.
 

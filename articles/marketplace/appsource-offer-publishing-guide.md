@@ -1,58 +1,42 @@
 ---
-title: AppSource рекомендации по публикации предложения для Аппссаурце витрины | Azure Marketplace
-description: Пошаговое руководство и контрольные списки по публикации приложений Office 365, Dynamics 365, Power BI и Power Apps в онлайн-магазине AppSource
-services: Marketplace, Compute, Storage, Networking, Blockchain, Security, SaaS
-author: ellacroi
+title: Рекомендации по публикации предложения для Microsoft AppSource
+description: Пошаговое руководств и сведения о публикации контрольных списков для публикации приложений на Microsoft AppSource Office 365, Dynamics 365, Power Apps и Power BI.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 07/09/2018
-ms.author: ellacroi
-ms.openlocfilehash: 831da237c06657981e402fc1f8fd09ccd67f85fb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.topic: conceptual
+ms.date: 04/15/2020
+ms.author: dsindona
+ms.openlocfilehash: 60fb95e47831363353e553d8e55c56e812127bfd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427213"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82186192"
 ---
-# <a name="office-365-dynamics-365-power-apps-and-power-bi-offer-publishing-guide"></a>Руководство по публикации предложения, касающегося приложений Office 365, Dynamics 365, Power Apps и Power BI
+# <a name="offer-publishing-guide-for-office-365-dynamics-365-power-apps-and-power-bi"></a>Предлагаемое руководством по публикации для Office 365, Dynamics 365, Power Apps и Power BI
 
-В онлайн-магазине AppSource доступны предложения, которые созданы на основе или расширяют возможности Dynamics 365, Office 365, Power BI и Power Apps. Каждый из этих продуктов имеет соответствующую документацию, которая поможет вам в процессе публикации. Ниже приведены ссылки на дополнительные сведения по каждому типу предложения. 
+Microsoft AppSource включает предложения, которые создают или расширяют Office 365, Dynamics 365, Power Apps и Power BI. Каждый из этих продуктов содержит специальную документацию по процессу публикации. 
 
-У AppSource есть платные, списки и пробные предложения, а также вызов действия "получить его сейчас", "связаться со мной" и "попробовать сейчас". 
+У AppSource есть платные, списки и пробные предложения, а также обращения к действиям, *их получение сейчас*, *связь со мной*и *попробуйте сейчас*.
 
 ## <a name="product-specific-guides"></a>Руководства по конкретным продуктам
 
-### <a name="office-365"></a>Office 365
+Ссылки на процессы публикации и рекомендации для каждого типа предложения см. в следующей таблице:
 
-Ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store).
+| Продукт    | Руководство по публикации  |
+| :------------------- | :-------------------|
+| Office 365 | Ознакомьтесь с [процессом публикации и рекомендациями](/office/dev/store/submit-to-appsource-via-partner-center). |
+| Dynamics 365 Business Central | Сведения о публикации предложения в центре партнеров см. в статье [Создание нового предложения Dynamics 365 Business Central](./partner-center-portal/create-new-business-central-offer.md). |
+| Dynamics 365 for Finance and Operations. | При создании для выпуска Enterprise ознакомьтесь с [процессом публикации и рекомендациями](/dynamics365/fin-ops-core/dev-itpro/lcs-solutions/lcs-solutions-app-source)<br/>Сведения о публикации предложения в центре партнеров см. в статье [Создание нового Dynamics 365 для операций с предложениями](./partner-center-portal/create-new-operations-offer.md).  |
+| Dynamics 365 for Customer Engagement | Ознакомьтесь с [процессом публикации и рекомендациями](/dynamics365/customer-engagement/developer/publish-app-appsource).<br/>Сведения о публикации предложения в центре партнеров см. в статье [Создание нового Dynamics 365 для участия клиентов & Power Apps](./partner-center-portal/create-new-customer-engagement-offer.md).  |
+| Power Apps | Узнайте, как [Разрешить клиентам тестировать приложение на AppSource](https://powerapps.microsoft.com/blog/appsource-test-drive/). |
+| Power BI | Ознакомьтесь с [процессом публикации и рекомендациями](/power-bi/developer/office-store). |
 
-### <a name="power-apps"></a>Power Apps
-
-Узнайте, как клиенты могут [протестировать приложение в AppSource.](https://powerapps.microsoft.com/blog/appsource-test-drive/)
-
-### <a name="power-bi"></a>Power BI
-
-Ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/power-bi/developer/office-store).
-
-### <a name="dynamics-365"></a>Dynamics 365
-
-#### <a name="dynamics-365-for-finance-and-operations"></a>Dynamics 365 for Finance and Operations.
-При создании для выпуска Enterprise ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/lcs-solutions/lcs-solutions-app-source)
-
-Сведения о публикации предложения на портале Cloud Partner см. в статье [Предложение Dynamics 365 for Finance and Operations](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-dynamics-365-operations-offer).
-
-### <a name="dynamics-365-for-customer-engagement"></a>Dynamics 365 for Customer Engagement
-Ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource).
-
-Сведения о публикации предложения на портале Cloud Partner см. в статье [Предложение Dynamics 365 for Customer Engagements](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-customer-engagement-offer).
+---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если это еще не сделано, 
+Если вы еще не сделали этого, Узнайте, как [расширить свой облачный бизнес с помощью Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
 
-- [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.
-
-Если вы зарегистрированы и работаете на портале Cloud Partner, 
-
-- [войдите на Портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.
+Чтобы создать новое предложение или завершить существующее, перейдите в [Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership).

@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: clemensv
 ms.openlocfilehash: ceb2626a43ed44338bb0faad475ae2333af2de9e
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "67185519"
 ---
 Убедитесь, что [создано пространство имен ретранслятора][namespace-how-to].
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. В меню слева выберите **Все ресурсы**.
 3. Выберите пространство имен, в котором нужно создать гибридное подключение. В нашем примере это **mynewns**.  
 4. В разделе **Relay namespace** (Пространство имен ретранслятора) выберите **Гибридные подключения**.
@@ -26,6 +26,6 @@ ms.locfileid: "67185519"
 6. В разделе **Создание гибридного подключения** введите имя гибридного подключения. Не изменяйте остальные значения по умолчанию.
    
     ![Нажмите кнопку "Создать"](./media/relay-create-hybrid-connection-portal/create-hc-3.png)
-7. Нажмите кнопку **Создать**.
+7. Нажмите кнопку **создания**.
 
 [namespace-how-to]: ../articles/service-bus-relay/relay-create-namespace-portal.md 

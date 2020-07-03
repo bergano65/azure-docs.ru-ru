@@ -1,15 +1,14 @@
 ---
 author: paulbouwer
-ms.service: container-service
 ms.topic: include
 ms.date: 10/09/2019
 ms.author: pabouwer
-ms.openlocfilehash: a4090172e926f21db01a8e374d8c4bb1c80402c7
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.openlocfilehash: 876e05d7b18ac193edbc9cf842ea2c1bf0555d54
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74197375"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77593746"
 ---
 ## <a name="download-and-install-the-linkerd-linkerd-client-binary"></a>Скачивание и установка двоичного файла клиента Linkerd Linkerd
 
@@ -22,14 +21,14 @@ LINKERD_VERSION=stable-2.6.0
 curl -sLO "https://github.com/linkerd/linkerd2/releases/download/$LINKERD_VERSION/linkerd2-cli-$LINKERD_VERSION-darwin"
 ```
 
-`linkerd` клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Linkerd. Используйте следующие команды, чтобы установить двоичный файл клиента Linkerd `linkerd` в оболочке на основе Bash в MacOS. Эти команды копируют двоичный файл клиента `linkerd` в стандартное расположение программ для пользователя в `PATH`.
+`linkerd` Клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Linkerd. Используйте следующие команды для установки двоичного файла `linkerd` клиента Linkerd в оболочке на основе Bash в MacOS. Эти команды копируют двоичный файл клиента `linkerd` в стандартное расположение программ для пользователя в `PATH`.
 
 ```bash
 sudo cp ./linkerd2-cli-$LINKERD_VERSION-darwin /usr/local/bin/linkerd
 sudo chmod +x /usr/local/bin/linkerd
 ```
 
-Если вы хотите задать завершение командной строки для двоичного файла клиента Linkerd `linkerd`, настройте его следующим образом:
+Если вы хотите задать завершение командной строки для двоичного файла `linkerd` клиента Linkerd, настройте его следующим образом:
 
 ```bash
 # Generate the bash completion file and source it in your current shell

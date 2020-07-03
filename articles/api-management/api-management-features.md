@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/01/2019
 ms.author: apimpm
-ms.openlocfilehash: 72e186bf44b8dffb99c345566b084ccd1c0d6013
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: c0cabab6f867df918c4ac86d035918c483e12da9
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73472388"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82203174"
 ---
 # <a name="feature-based-comparison-of-the-azure-api-management-tiers"></a>Сравнение возможностей категорий управления API Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "73472388"
 > [!IMPORTANT]
 > Обратите внимание, что уровень разработчика предназначен для непроизводственных вариантов использования и оценок. Он не предлагает соглашение об уровне обслуживания.
 
-| Функция                                                                                      | Потребление | Developer | базовая; | Standard | Premium |
+| Компонент                                                                                      | Потребление | Разработка | Basic | Standard | Premium |
 | -------------------------------------------------------------------------------------------- | ----------- | --------- | ----- | -------- | ------- |
 | Интеграция Azure AD<sup>1</sup>                                                             | Нет          | Да       | Нет    | Да      | Да     |
 | Поддержка виртуальной сети                                                               | Нет          | Да       | Нет    | Нет       | Да     |
@@ -36,9 +36,9 @@ ms.locfileid: "73472388"
 | Встроенный кэш                                                                               | Нет          | Да       | Да   | Да      | Да     |
 | Встроенная аналитика                                                                           | Нет          | Да       | Да   | Да      | Да     |
 | Локально [размещенный шлюз](self-hosted-gateway-overview.md)<sup>3</sup>                           | Нет          | Да       | Нет    | Нет       | Да     |
-| [Параметры SSL](api-management-howto-manage-protocols-ciphers.md)                             | Да         | Да       | Да   | Да      | Да     |
+| [Параметры протокола TLS](api-management-howto-manage-protocols-ciphers.md)                             | Да         | Да       | Да   | Да      | Да     |
 | [Внешний кэш](https://aka.ms/apimbyoc)                                                    | Да         | Да       | Да   | Да      | Да     |
-| [Аутентификация на основе сертификата клиента](api-management-howto-mutual-certificates-for-clients.md) | Да         | Да       | Да   | Да      | Да     |
+| [Проверка подлинности сертификата клиента](api-management-howto-mutual-certificates-for-clients.md) | Да         | Да       | Да   | Да      | Да     |
 | [Резервное копирование и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет          | Да       | Да   | Да      | Да     |
 | [Управление через Git](api-management-configuration-repository-git.md)                        | Нет          | Да       | Да   | Да      | Да     |
 | API прямого управления                                                                        | Нет          | Да       | Да   | Да      | Да     |
@@ -47,4 +47,4 @@ ms.locfileid: "73472388"
 
 <sup>1</sup> позволяет использовать Azure AD (и Azure AD B2C) в качестве поставщика удостоверений для входа пользователей на портале разработчика.<br/>
 <sup>2</sup> Включая связанные функции, например пользователи, группы, проблемы, приложения и шаблоны сообщений электронной почты и уведомления.<br/>
-<sup>3</sup> ограничено одним узлом шлюза в одном собственном размещении.<br/>
+<sup>3</sup> в шлюзах с самостоятельным размещением уровня разработчика ограничивается одним узлом шлюза.<br/>

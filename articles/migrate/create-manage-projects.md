@@ -1,18 +1,18 @@
 ---
-title: Создание проектов службы "миграция Azure" и управление ими
+title: Создание и администрирование проектов Миграции Azure
 description: Поиск, создание, управление и удаление проектов в службе "миграция Azure".
 ms.topic: how-to
-ms.date: 01/01/2020
-ms.openlocfilehash: 548e51cbd215dd9b5e69c68b9bd8fc81625240a2
-ms.sourcegitcommit: 02160a2c64a5b8cb2fb661a087db5c2b4815ec04
+ms.date: 04/19/2020
+ms.openlocfilehash: f5079ed979d98f2c6f0c654c860c6f176f366497
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75725888"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81676397"
 ---
-# <a name="create-and-manage-azure-migrate-projects"></a>Создание проектов службы "миграция Azure" и управление ими
+# <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
-В этой статье описывается создание, Администрирование и удаление проектов службы " [Миграция Azure](migrate-services-overview.md) "
+В этой статье описывается создание, Администрирование и удаление проектов службы " [Миграция Azure](migrate-services-overview.md) ".
 
 
 ## <a name="create-a-project-for-the-first-time"></a>Создание проекта в первый раз
@@ -23,7 +23,7 @@ ms.locfileid: "75725888"
 
 Если у вас уже есть проект службы "миграция Azure" и вы хотите создать дополнительный проект, выполните следующие действия.  
 
-1. В [портал Azure](https://portal.azure.com)выполните поиск по запросу служба " **Миграция Azure**".
+1. На [общедоступном портале Azure](https://portal.azure.com) или в [Azure для государственных организаций](https://portal.azure.us)найдите службу " **Миграция Azure**".
 2. На панели мониторинга миграция Azure > **серверы**щелкните **изменить** в правом верхнем углу.
 
    ![Изменение проекта службы "миграция Azure"](./media/create-manage-projects/switch-project.png)
@@ -78,13 +78,13 @@ ms.locfileid: "75725888"
 
 1. Перейдите к рабочей области Log Analytics, связанной с проектом.
 
-    - Если вы еще не удалили проект службы "миграция Azure", можно найти ссылку на рабочую область в **Essentials** > **Server Оценка**.
-       ](./media/create-manage-projects/loganalytics-workspace.png)![LA Рабочая область.
+    - Если вы еще не удалили проект службы "миграция Azure", ссылку на рабочую область можно найти в подокне оценки **Essentials** > **Server**.
+       ![LA Рабочая](./media/create-manage-projects/loganalytics-workspace.png)область.
        
     - Если вы уже удалили проект "миграция Azure", выберите **группы ресурсов** в левой области портал Azure и найдите рабочую область.
        
 2. [Следуйте инструкциям](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace) , чтобы удалить рабочую область.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".

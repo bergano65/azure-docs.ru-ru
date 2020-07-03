@@ -1,14 +1,14 @@
 ---
 title: Обновление существующего назначения на портале
 description: Сведения о механизме обновления существующего назначения схемы на портале в проекте Azure.
-ms.date: 11/21/2019
+ms.date: 04/15/2020
 ms.topic: how-to
-ms.openlocfilehash: 2c1a24399d8fa1529665bfa60d1b889a84a29a60
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a00a8bcc10b37af576777e3816a794225a3832f7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436585"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81381795"
 ---
 # <a name="how-to-update-an-existing-blueprint-assignment"></a>Обновление существующего назначения схемы
 
@@ -26,18 +26,18 @@ ms.locfileid: "75436585"
 
 1. В списке схем щелкните левой кнопкой мыши назначение схемы. Затем нажмите кнопку " **обновить назначение** " или щелкните правой кнопкой мыши назначение схемы и выберите команду " **обновить назначение**".
 
-   ![Обновление существующего назначения схемы](../media/update-existing-assignments/update-assignment.png)
+   :::image type="content" source="../media/update-existing-assignments/update-assignment.png" alt-text="Обновление существующего назначения схемы" border="false":::
 
 1. Страница **назначение** схемы будет загружать предварительно заполненные все значения из исходного назначения.
    Вы можете изменить **версию определения схемы**, состояние **блокировки назначения** и любые динамические параметры в определении схемы. Внеся необходимые изменения, нажмите кнопку **Назначить**.
 
 1. Просмотрите новое состояние на странице сведений об обновленном назначении. В этом примере мы добавили в назначение **блокировку**.
 
-   ![Изменен режим блокировки для существующего назначения схемы](../media/update-existing-assignments/updated-assignment.png)
+   :::image type="content" source="../media/update-existing-assignments/updated-assignment.png" alt-text="Изменен режим блокировки для существующего назначения схемы" border="false":::
 
 1. Изучите сведения о других **операциях назначения** с помощью раскрывающегося списка. Таблица обновлений **управляемых ресурсов** по выбранной операции назначения.
 
-   ![Операции присваивания для назначения схемы](../media/update-existing-assignments/assignment-operations.png)
+   :::image type="content" source="../media/update-existing-assignments/assignment-operations.png" alt-text="Операции присваивания для назначения схемы" border="false":::
 
 ## <a name="rules-for-updating-assignments"></a>Правила обновления назначений
 

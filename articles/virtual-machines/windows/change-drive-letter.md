@@ -2,24 +2,19 @@
 title: 'Присвоить диску D: виртуальной машине диск данных '
 description: Описывает, как изменить буквы дисков для виртуальной машины Windows, чтобы диск D можно было использовать в качестве диска данных.
 services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: 0867a931-0055-4e31-8403-9b38a3eeb904
 ms.service: virtual-machines-windows
+ms.subservice: disks
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 01/02/2018
 ms.author: cynthn
-ms.openlocfilehash: 491e7b7be084017cc370fe431c3175ac5b2673f9
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 15df3178f2860fa066a82cb1429e0c1a6e5c2b08
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74033652"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82083428"
 ---
 # <a name="use-the-d-drive-as-a-data-drive-on-a-windows-vm"></a>Использование диска D в качестве диска данных на виртуальной машине Windows
 Если вашему приложению нужно использовать диск D для хранения данных, следуйте приведенным указаниям, чтобы использовать другой диск в качестве временного. Никогда не используйте временный диск для хранения данных, которые нужно сохранить.
@@ -52,7 +47,7 @@ ms.locfileid: "74033652"
 6. В поле буквы диска выберите диск **D** и нажмите кнопку **ОК**. 
 
 ## <a name="move-pagefilesys-back-to-the-temporary-storage-drive"></a>Перемещение файла pagefile.sys обратно на диск временного хранилища
-1. Щелкните правой кнопкой мыши меню **Пуск** и выберите пункт **Система**.
+1. Щелкните правой кнопкой мыши меню **Пуск** и выберите пункт **система** .
 2. В левом меню выберите **Дополнительные параметры системы**.
 3. В разделе **Производительность** выберите **Параметры**.
 4. Откройте вкладку **Дополнительно** .
@@ -62,6 +57,6 @@ ms.locfileid: "74033652"
 8. Нажмите кнопку **Применить**. Вы получите предупреждение о том, что для вступления изменений в силу необходимо перезагрузить компьютер.
 9. Перезапустите виртуальную машину.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 * Можно увеличить объем хранилища, доступного для виртуальной машины, [присоединив дополнительный диск данных](attach-managed-disk-portal.md).
 

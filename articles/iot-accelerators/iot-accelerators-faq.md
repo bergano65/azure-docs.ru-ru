@@ -9,15 +9,15 @@ ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
 ms.openlocfilehash: 7a2b167f90b4ec79f5fa515ded1c676ca7085e72
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75647719"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
-Дополнительные сведения см. также в ответах на часто задаваемые вопросы по [подключенной фабрике](iot-accelerators-faq-cf.md) и [удаленному мониторингу](iot-accelerators-faq-rm-v2.md).
+См. также вопросы и ответы по вопросам [удаленного мониторинга](iot-accelerators-faq-rm-v2.md) , связанные с [подключенной фабрикой](iot-accelerators-faq-cf.md) .
 
 ### <a name="where-can-i-find-the-source-code-for-the-solution-accelerators"></a>Где можно найти исходный код акселераторов решений?
 
@@ -28,7 +28,7 @@ ms.locfileid: "75647719"
 * [акселератор решений для прогнозного обслуживания](https://github.com/Azure/azure-iot-predictive-maintenance);
 * [акселератор решения "Подключенная фабрика"](https://github.com/Azure/azure-iot-connected-factory).
 
-### <a name="what-sdks-can-i-use-to-develop-device-clients-for-the-solution-accelerators"></a>Какие пакеты SDK можно использовать при разработке клиентов устройств для акселераторов решений?
+### <a name="what-sdks-can-i-use-to-develop-device-clients-for-the-solution-accelerators"></a>Какие пакеты SDK можно использовать для разработки клиентов устройств для акселераторов решений?
 
 Ссылки на пакеты SDK для устройств Интернета вещей для других языков (C, .NET, Java, Node.js, Python) можно найти в репозиториях GitHub для [пакетов SDK Microsoft Azure для Интернета вещей](https://github.com/Azure/azure-iot-sdks).
 
@@ -65,7 +65,7 @@ ms.locfileid: "75647719"
 
 ### <a name="where-can-i-find-information-about-the-previous-version-of-the-remote-monitoring-solution"></a>Где можно найти сведения о предыдущей версии решения для удаленного мониторинга?
 
-Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Можно найти в заархивированную документацию на сайте [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/).
+Предыдущая версия акселератора решения для удаленного мониторинга была известна как предварительно сконфигурированное решение удаленного мониторинга IoT Suite. Архивную документацию можно найти по адресу [https://docs.microsoft.com/previous-versions/azure/iot-suite/](https://docs.microsoft.com/previous-versions/azure/iot-suite/).
 
 ### <a name="is-the-new-solution-accelerator-available-in-the-same-geographic-region-as-the-existing-solution"></a>Доступен ли новый акселератор решений в том же географическом регионе, что и существующее решение?
 
@@ -107,7 +107,7 @@ ms.locfileid: "75647719"
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Обзор возможностей акселератора решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Изучите возможности акселератора решений для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 * [Обзор акселератора решений для прогнозного обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
-* [Комплексная защита в Интернете вещей](/azure/iot-fundamentals/iot-security-ground-up)
+* [Все аспекты безопасности Интернета вещей](/azure/iot-fundamentals/iot-security-ground-up)

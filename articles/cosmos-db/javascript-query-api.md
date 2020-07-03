@@ -1,18 +1,18 @@
 ---
 title: Работа с API интегрированных запросов JavaScript в Azure Cosmos DB хранимых процедурах и триггерах
 description: В этой статье рассматриваются понятия, связанные с API запросов на основе языка JavaScript и необходимые, чтобы создать хранимые процедуры и триггеры в Azure Cosmos DB.
-author: markjbrown
+author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 08/01/2019
-ms.author: mjbrown
+ms.date: 05/07/2020
+ms.author: tisande
 ms.reviewer: sngun
-ms.openlocfilehash: 7b7ad470b3330224e80a7160fc1a37bb5ee1cde8
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 785c430347bc62a00eee80c977f2d6ce440c08db
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76901839"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982281"
 ---
 # <a name="javascript-query-api-in-azure-cosmos-db"></a>API для выполнения запросов JavaScript в Azure Cosmos DB
 
@@ -20,7 +20,7 @@ ms.locfileid: "76901839"
 
 ## <a name="supported-javascript-functions"></a>Поддерживаемые функции JavaScript
 
-| **Компонент** | **Описание** |
+| **Функция** | **Описание** |
 |---------|---------|
 |`chain() ... .value([callback] [, options])`|Начинает вызов по цепочке, который должен завершаться value().|
 |`filter(predicateFunction [, options] [, callback])`|Фильтрует входные данные с помощью функции предиката, которая возвращает значение true или false для фильтрации входных документов в наборе результатов. Эта функция действует так же, как предложение WHERE в SQL.|
@@ -33,14 +33,14 @@ ms.locfileid: "76901839"
 
 Если конструкции JavaScript включены в предикатную функцию и/или селектор, они автоматически оптимизированы для непосредственного выполнения в индексах Azure Cosmos DB:
 
-- Простые операторы: `=` `+` `-` `*` `/` `%` `|` `^` `&` `==` `!=` `===` `!===` `<` `>` `<=` `>=` `||` `&&` `<<` `>>` `>>>!` `~`
+- Простые операторы `=` `+` `-` `*` : `/` `%` `|` `^` `&` `==` `!=` `===` `!===` `<` `>` `<=` `>=` `||` `&&` `<<` `>>` `>>>!``~`
 - литералы, включая литерал объекта: {};
 - var, return.
 
 Следующие конструкции JavaScript не оптимизированы для использования в индексах Azure Cosmos DB:
 
 - Поток управления (например if, for или while)
-- вызовы функций.
+- Вызовы функций
 
 Более подробные сведения см. в [документации по серверному пакету JavaScript для Cosmos DB](https://azure.github.io/azure-cosmosdb-js-server/).
 
@@ -65,7 +65,7 @@ ms.locfileid: "76901839"
 Дополнительные сведения о том, как записать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в статьях ниже:
 
 - [How to write stored procedures and triggers using Javascript Query API](how-to-write-javascript-query-api.md) (Как записывать хранимые процедуры и триггеры с помощью API запросов JavaScript)
-- [Working with Azure Cosmos DB stored procedures, triggers, and user-defined functions](stored-procedures-triggers-udfs.md) (Работа с хранимыми процедурами, триггерами и определяемыми пользователем функциями в Azure Cosmos DB)
+- [Работа с Azure Cosmos DB хранимыми процедурами, триггерами и определяемыми пользователем функциями](stored-procedures-triggers-udfs.md)
 - [Как зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-use-stored-procedures-triggers-udfs.md)
 - [Azure Cosmos DB JavaScript server-side API reference](https://azure.github.io/azure-cosmosdb-js-server) (Справочные материалы по API на стороне сервера для JavaScript Azure Cosmos DB)
 - [Статья о JavaScript ES6 (ECMA 2015)](https://www.ecma-international.org/ecma-262/6.0/)

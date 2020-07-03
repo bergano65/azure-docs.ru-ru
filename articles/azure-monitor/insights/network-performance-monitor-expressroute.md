@@ -1,18 +1,17 @@
 ---
 title: Монитор производительности сети в Azure Log Analytics | Документация Майкрософт
 description: Функция монитора ExpressRoute в Мониторе производительности сети позволяет отслеживать сквозное подключение и производительность передачи данных между вашими филиалами и Azure через Azure ExpressRoute.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: abshamsft
 ms.author: absha
 ms.date: 11/27/2018
-ms.openlocfilehash: 5383402816eddba4c631c240585723b7c7119cef
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 6ac610d7dcf9849b6b439741957684867b9d01aa
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72898896"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77660756"
 ---
 # <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 
@@ -24,8 +23,8 @@ ms.locfileid: "72898896"
 
 ![Мониторинг ExpressRoute](media/network-performance-monitor-expressroute/expressroute-intro.png)
 
-## <a name="configuration"></a>Настройка 
-Чтобы открыть конфигурацию Монитора производительности сети, откройте решение [Монитор производительности сети](network-performance-monitor.md) и нажмите кнопку **Настройка**.
+## <a name="configuration"></a>Конфигурация 
+Чтобы открыть конфигурацию для Монитор производительности сети, откройте [решение монитор производительности сети](network-performance-monitor.md) и выберите **Настройка**.
 
 ### <a name="configure-network-security-group-rules"></a>Настройка правил группы безопасности сети 
 Для серверов в Azure, используемых для мониторинга посредством Монитора производительности сети, необходимо настроить правила группы безопасности сети (NSG), чтобы разрешить передачу TCP-трафика через порт, используемый Монитором производительности сети для искусственных транзакций. Используемый порт по умолчанию — 8084. Эта конфигурация позволяет агенту Log Analytics, установленному на виртуальных машинах Azure, взаимодействовать с локальным агентом мониторинга. 
@@ -104,7 +103,7 @@ ms.locfileid: "72898896"
 
 ![Подключения виртуальных сетей ExpressRoute](media/network-performance-monitor-expressroute/expressroute-vnet.png)
  
-## <a name="diagnostics"></a>Диагностика: 
+## <a name="diagnostics"></a>Диагностика 
 
 Монитор производительности сети помогает диагностировать проблемы с подключением к нескольким каналам. Ниже перечислены некоторые из возможных проблем.
 
@@ -140,5 +139,5 @@ ms.locfileid: "72898896"
 
  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.

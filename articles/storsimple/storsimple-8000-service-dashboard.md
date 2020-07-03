@@ -1,5 +1,5 @@
 ---
-title: Использование сводки по устройствам StorSimple серии 8000 | Документация Майкрософт
+title: Использование колонки сводки по службе для устройства StorSimple 8000
 description: В статье описывается колонка сводки по службе StorSimple и способы ее использования для наблюдения за работоспособностью решения StorSimple.
 services: storsimple
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2017
 ms.author: alkohli
-ms.openlocfilehash: c174f6ce0fb3d40af953be205a7bfcca60fbfeec
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 14c37227a7e8598ee6f8f3adc62acd69dd274475
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60633150"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80396510"
 ---
 # <a name="use-the-service-summary-blade-for-storsimple-8000-series-device"></a>Использование колонки сводки по службе для устройства StorSimple серии 8000
 
@@ -85,7 +85,7 @@ ms.locfileid: "60633150"
 Чтобы просмотреть различные операции, выполняемые в диспетчере устройств StorSimple, щелкните ссылку **Журналы действий** в левой части колонки сводных данных о службе StorSimple. Отобразится колонка **Журналы действий**, в которой можно просмотреть сводку по последним выполненным операциям.
 
 ![Журналы действий](./media/storsimple-8000-service-dashboard/activity-logs1.png)
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

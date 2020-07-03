@@ -3,20 +3,20 @@ title: Типы приложений, поддерживаемые Azure AD B2C
 titleSuffix: Azure AD B2C
 description: Сведения о типах приложений, которые можно использовать с Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/24/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: f8c98149d9e9ff65b7b18762f0f17d19053f2f49
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: e8328db12bde531c2e27936c09247611ff1a3583
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846761"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78190149"
 ---
 # <a name="application-types-that-can-be-used-in-active-directory-b2c"></a>Типы приложений, которые можно использовать в Active Directory B2C
 
@@ -125,7 +125,7 @@ Accept: application/json
 
 #### <a name="web-api-chains-on-behalf-of-flow"></a>Цепочки веб-API (поток On-Behalf-Of)
 
-Многие архитектуры включают в себя интерфейс веб-API, которому требуется вызывать другой нисходящий веб-API. При этом Azure AD B2C защищает оба интерфейса. Этот сценарий распространен в собственных клиентах с серверной стороны веб-API и вызывает службу Microsoft Online Service, например Microsoft Graph API или Azure AD API Graph.
+Многие архитектуры включают в себя интерфейс веб-API, которому требуется вызывать другой нисходящий веб-API. При этом Azure AD B2C защищает оба интерфейса. Этот сценарий распространен в собственных клиентах, имеющих серверный веб-API, и вызывает службу Microsoft Online Service, например Microsoft Graph API.
 
 Этот сценарий веб-API с цепочками может поддерживаться путем предоставления учетных данных носителя JWT OAuth 2.0 или потока On-Behalf-Of.  Однако в Azure AD B2C поток On-Behalf-Of еще не реализован.
 

@@ -24,6 +24,8 @@
           href: cloud-governed-management-for-on-premises.md
         - name: Четыре действия по настройке строгой идентификации
           href: four-steps.md
+        - name: Выбор метода проверки подлинности на основе гибридных удостоверений
+          href: choose-ad-authn.md
     - name: Azure AD Connect с расширением Azure AD Connect Health
       items:
         - name: Что такое Azure AD Connect с расширением Azure AD Connect Health
@@ -90,7 +92,7 @@
           href: concept-azure-ad-connect-sync-user-and-contacts.md
         - name: Общие сведения о теневых атрибутах
           href: how-to-connect-syncservice-shadow-attributes.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Установка и обновление
       items:
@@ -148,6 +150,10 @@
               href: plan-migrate-adfs-password-hash-sync.md
             - name: Миграция из федерации в PTA
               href: plan-migrate-adfs-pass-through-authentication.md
+            - name: Перемещение групп из одного леса в другой
+              href: how-to-connect-migrate-groups.md
+            - name: Переход на облачную аутентификацию с использованием промежуточного развертывания
+              href: how-to-connect-staged-rollout.md
         - name: Рекомендации по разработке архитектуры гибридной идентификации
           items:
             - name: Обзор рекомендаций по разработке архитектуры гибридной идентификации
@@ -204,6 +210,8 @@
           href: how-to-connect-pta-quick-start.md
         - name: Часто задаваемые вопросы о сквозной аутентификации
           href: how-to-connect-pta-faq.md
+        - name: Отключение PTA со значением "Не настраивать" в Azure AD Connect
+          href: how-to-connect-pta-disable-do-not-configure.md
     - name: Управление службами федерации
       items:
         - name: "Управление федерацией с Azure\_AD Connect"
@@ -270,6 +278,8 @@
           href: how-to-connect-sync-feature-scheduler.md
         - name: Создание и настройка правила синхронизации
           href: how-to-connect-create-custom-sync-rule.md
+        - name: "API конечной точки версии\_2 для синхронизации Azure AD Connect"
+          href: how-to-connect-sync-endpoint-api-v2.md
         - name: "Диспетчер службы синхронизации Azure\_AD Connect"
           items:
             - name: Управление вкладкой операций в диспетчере служб
@@ -280,13 +290,13 @@
               href: how-to-connect-sync-service-manager-ui-mvdesigner.md
             - name: Поиск в метавселенной
               href: how-to-connect-sync-service-manager-ui-mvsearch.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: "Общие сведения об агенте администратора Azure\_AD Connect"
           href: whatis-aadc-admin-agent.md
         - name: Что собой представляет модуль PowerShell ADConnectivityTools
           href: how-to-connect-adconnectivitytools.md
-        - name: Возможность подключения
+        - name: Соединение
           href: tshoot-connect-connectivity.md
         - name: Ошибки при синхронизации
           href: tshoot-connect-sync-errors.md
@@ -312,7 +322,9 @@
           href: tshoot-connect-attribute-not-syncing.md
         - name: Проблемы с установкой
           href: tshoot-connect-install-issues.md
-- name: Справочные материалы
+        - name: Изменения имени субъекта-пользователя
+          href: howto-troubleshoot-upn-changes.md
+- name: Справочник
   items:
     - name: 'Порты и протоколы, необходимые для гибридной идентификации'
       href: reference-connect-ports.md
@@ -330,6 +342,8 @@
       href: reference-connect-faq.md
     - name: Часто задаваемые вопросы об Azure AD Connect Health
       href: reference-connect-health-faq.md
+    - name: Рекомендации по гибридной идентификации для Azure для государственных организаций
+      href: reference-connect-government-cloud.md
     - name: "Конфиденциальность пользователей в Azure\_AD Connect"
       href: reference-connect-user-privacy.md
     - name: "Конфиденциальность пользователей в Azure\_AD Connect Health"

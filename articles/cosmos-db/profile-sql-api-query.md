@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: girobins
 ms.openlocfilehash: 48b9a67de5c870a187ee008bd97265760ca6c341
-ms.sourcegitcommit: e97a0b4ffcb529691942fc75e7de919bc02b06ff
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70998364"
 ---
 # <a name="get-sql-query-execution-metrics-and-analyze-query-performance-using-net-sdk"></a>Получение метрик выполнения запросов SQL и анализ производительности запросов с помощью пакета SDK для .NET
@@ -22,7 +22,7 @@ ms.locfileid: "70998364"
 
 Все перегрузки для [DocumentClient. CreateDocumentQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentquery.aspx) принимают необязательный параметр [FeedOptions](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) . Этот параметр позволяет настроить и параметризованное выполнение запроса. 
 
-Для сбора метрик выполнения запросов SQL необходимо задать параметру [популатекуериметрикс](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.populatequerymetrics.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.PopulateQueryMetrics) в `true` [FeedOptions](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) значение. Если `PopulateQueryMetrics` задано значение true, то `FeedResponse` будет содержать соответствующий `QueryMetrics`объект. 
+Для сбора метрик выполнения запросов SQL необходимо задать параметру [популатекуериметрикс](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.populatequerymetrics.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.PopulateQueryMetrics) в [FeedOptions](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.aspx) значение `true`. Если `PopulateQueryMetrics` задано значение true, то `FeedResponse` будет содержать соответствующий `QueryMetrics`объект. 
 
 ## <a name="get-query-metrics-with-asdocumentquery"></a>Получение метрик запроса с помощью Асдокументкуери ()
 В следующем примере кода показано, как получить метрики при использовании метода [асдокументкуери ()](https://msdn.microsoft.com/library/microsoft.azure.documents.linq.documentqueryable.asdocumentquery.aspx) :
@@ -62,7 +62,7 @@ while (documentQuery.HasMoreResults)
 ```
 ## <a name="aggregating-querymetrics"></a>Статистическая обработка Куериметрикс
 
-В предыдущем разделе Обратите внимание, что существовало несколько вызовов метода [ексекутенекстасинк](https://msdn.microsoft.com/library/azure/dn850294.aspx) . Каждый вызов вернул `FeedResponse` объект с `QueryMetrics`словарем; по одному для каждого продолжения запроса. В следующем примере показано, как выполнить статистическую обработку `QueryMetrics` с помощью LINQ:
+В предыдущем разделе Обратите внимание, что существовало несколько вызовов метода [ексекутенекстасинк](https://msdn.microsoft.com/library/azure/dn850294.aspx) . Каждый вызов вернул `FeedResponse` объект с словарем `QueryMetrics`; по одному для каждого продолжения запроса. В следующем примере показано, как выполнить статистическую обработку `QueryMetrics` с помощью LINQ:
 
 ```csharp
 List<QueryMetrics> queryMetricsList = new List<QueryMetrics>();
@@ -115,7 +115,7 @@ foreach(IGrouping<string, KeyValuePair<string, QueryMetrics>> grouping in groupe
 
 ## <a name="linq-on-documentquery"></a>LINQ на Документкуери
 
-Можно также получить `FeedResponse` из запроса LINQ `AsDocumentQuery()` с помощью метода:
+Можно также получить `FeedResponse` из запроса LINQ с помощью `AsDocumentQuery()` метода:
 
 ```csharp
 IDocumentQuery<Document> linqQuery = client.CreateDocumentQuery(collection.SelfLink, feedOptions)
@@ -221,7 +221,7 @@ Total Query Execution Time               :        4,500.34 milliseconds
 
 Это означает, что выполнение запроса заняло 4,5 секунд (и это было только одно продолжение).
 
-Чтобы оптимизировать этот пример запроса, старайтесь не использовать верхний в фильтре. Вместо этого при создании или обновлении `c.description` документов необходимо вставлять значения во все символы верхнего регистра. Затем запрос выглядит следующим образом: 
+Чтобы оптимизировать этот пример запроса, старайтесь не использовать верхний в фильтре. Вместо этого при создании или обновлении документов необходимо вставлять `c.description` значения во все символы верхнего регистра. Затем запрос выглядит следующим образом: 
 
 ```sql
 SELECT VALUE c.description 
@@ -233,14 +233,14 @@ WHERE c.description = "BABYFOOD, DESSERT, FRUIT DESSERT, WITHOUT ASCORBIC ACID, 
 
 Дополнительные сведения о настройке производительности запросов см. в статье [Настройка производительности запросов](https://docs.microsoft.com/azure/cosmos-db/documentdb-sql-query-metrics) .
 
-## <a id="References"></a>Справочные материалы
+## <a name="references"></a><a id="References"></a>Ссылки
 
 - [DocumentDB SQL Syntax](https://go.microsoft.com/fwlink/p/?LinkID=510612) (Синтаксис SQL в DocumentDB)
 - [ANSI SQL 2011](https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
-- [JSON](https://json.org/)
+- [ФОРМАТ](https://json.org/)
 - [LINQ](/previous-versions/dotnet/articles/bb308959(v=msdn.10)) 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка производительности запросов](sql-api-query-metrics.md)
 - [Общие сведения об индексировании](index-overview.md)

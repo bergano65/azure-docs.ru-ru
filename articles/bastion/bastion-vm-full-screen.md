@@ -2,17 +2,17 @@
 title: 'Azure бастиона: Просмотр сеанса виртуальной машины: во весь экран'
 description: Из этой статьи вы узнаете, как изменить представление на полноэкранный.
 services: bastion
-author: cherylmc
+author: charwen
 ms.service: bastion
 ms.topic: conceptual
 ms.date: 02/03/2020
-ms.author: cherylmc
-ms.openlocfilehash: ff19fd056aa81ca8a1f53c387a208d35fb9a3265
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.author: charwen
+ms.openlocfilehash: 2e72eb9ffc3affa0bf09692ac0780f9310308521
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989439"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80619293"
 ---
 # <a name="change-to-full-screen-view-for-a-vm-session-azure-bastion"></a>Переход в полноэкранный режим для сеанса виртуальной машины: Azure бастиона
 
@@ -28,9 +28,9 @@ ms.locfileid: "76989439"
 
 Нажмите кнопку **полноэкранного** режима, чтобы перевести сеанс в полноэкранный режим. После переключения сеанс повторно инициализируется до полного экрана.
 
-![во весь экран](./media/bastion-vm-manage/full-screen.png)
+![полноэкранный режим](./media/bastion-vm-manage/full-screen.png)
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с [часто задаваемыми вопросами о бастиона](bastion-faq.md).
 Сведения о [копировании и вставке](bastion-vm-copy-paste.md) на виртуальную машину Azure и из нее.

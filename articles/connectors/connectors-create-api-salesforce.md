@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/24/2018
 tags: connectors
 ms.openlocfilehash: 000f4381ef2a7c0a2099a021b991087725ff2070
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74789296"
 ---
 # <a name="monitor-create-and-manage-salesforce-resources-by-using-azure-logic-apps"></a>Мониторинг и создание ресурсов Salesforce, а также управление ими с помощью Azure Logic Apps
@@ -21,15 +21,15 @@ ms.locfileid: "74789296"
 * мониторинг создания или изменения записей; 
 * создание, получение заданий и записей и управление ими, включая действия вставки, обновления и удаления.
 
-Вы можете использовать триггеры Salesforce, которые получают ответы из Salesforce и делают выходные данные доступными для других действий. Вы можете использовать действия в своих приложениях логики для выполнения задач с ресурсами Salesforce. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
+Вы можете использовать триггеры Salesforce, которые получают ответы из Salesforce и делают выходные данные доступными для других действий. Вы можете использовать действия в своих приложениях логики для выполнения задач с ресурсами Salesforce. Если вы не знакомы с приложениями логики, ознакомьтесь с [Azure Logic Apps?](../logic-apps/logic-apps-overview.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * [Учетная запись Salesforce](https://salesforce.com/).
 
-* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 * Приложение логики, из которого необходимо получить доступ к учетной записи Salesforce. Чтобы начать работу с триггером Salesforce, [создайте пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Чтобы использовать действие Salesforce, запустите приложение логики с другим триггером, например триггером **Периодичность**.
 

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: alkohli
 ms.openlocfilehash: 727bebe0c190ed4dff4408884c45fe166ad541a9
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76276975"
 ---
 # <a name="use-azure-automation-runbooks-to-manage-storsimple-devices"></a>Управление устройствами StorSimple с помощью Runbook службы автоматизации Azure
@@ -22,7 +22,7 @@ ms.locfileid: "76276975"
 
 В этом разделе приведен пример сценария Windows PowerShell для StorSimple и подробные сведения о различных шагах, необходимых для импорта сценария в Runbook, а также публикации и выполнения Runbook.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
@@ -171,13 +171,13 @@ ms.locfileid: "76276975"
 
 ### <a name="import-publish-and-run-automation-runbook"></a>Импорт, публикация и запуск модуля Runbook службы автоматизации
 
-1. Создайте учетную запись запуска от имени Azure на портале Azure. Для этого перейдите к **Azure Marketplace > Все** и выполните поиск **службы автоматизации**. Выберите элемент **Учетные записи автоматизации**.
+1. Создайте учетную запись запуска от имени Azure на портале Azure. Для этого перейдите к **Azure Marketplace > Все** и выполните поиск **службы автоматизации**. Выберите **учетные записи службы автоматизации**.
 
     ![search-automation](./media/storsimple-8000-automation-azurerm-runbook/automation1.png)
 
 2. В колонке **Добавление учетной записи службы автоматизации**:
 
-   1. Укажите **имя** учетной записи автоматизации.
+   1. Укажите **имя** учетной записи службы автоматизации.
    2. Выберите **подписку**, связанную со службой диспетчера устройств StorSimple.
    3. Создайте группу ресурсов или выберите имеющуюся.
    4. Выберите **Расположение** (если возможно, то же самое, что и для вашей службы).
@@ -198,7 +198,7 @@ ms.locfileid: "76276975"
 
     ![add-module](./media/storsimple-8000-automation-azurerm-runbook/add-module.png)
 
-6. Последовательно выберите пункты **"Автоматизация процессов > Модули Runbook" и щелкните + Add a runbook (+ Добавить модуль Runbook)** . В колонке **Добавить модуль Runbook** щелкните **Импорт существующего модуля Runbook**. Укажите файл сценария Windows PowerShell для **файла Runbook**. Тип модуля Runbook выбирается автоматически. Укажите имя и необязательное описание модуля Runbook. Нажмите кнопку **Создать**.
+6. Последовательно выберите пункты **"Автоматизация процессов > Модули Runbook" и щелкните + Add a runbook (+ Добавить модуль Runbook)**. В колонке **Добавить модуль Runbook** щелкните **Импорт существующего модуля Runbook**. Укажите файл сценария Windows PowerShell для **файла Runbook**. Тип модуля Runbook выбирается автоматически. Укажите имя и необязательное описание модуля Runbook. Нажмите кнопку **Создать**.
 
     ![add-module](./media/storsimple-8000-automation-azurerm-runbook/import-runbook.png)
 

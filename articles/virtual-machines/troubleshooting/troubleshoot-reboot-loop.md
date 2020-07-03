@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
 ms.openlocfilehash: 3fd0a8bf6bacfec5e2be6dfa52ca51e46c7025f7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75443585"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Цикл перезагрузки Windows на виртуальной машине Azure
@@ -28,7 +28,7 @@ ms.locfileid: "75443585"
 
 ![Начальный экран 1](./media/troubleshoot-reboot-loop/start-screen-1.png)
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Цикл перезагрузки возникает из-за перечисленных ниже причин.
 
@@ -62,7 +62,7 @@ ms.locfileid: "75443585"
 
 4. Откройте редактор реестра Windows (regedit) на виртуальной машине спасения.
 
-5. Выберите раздел **HKEY_LOCAL_MACHINE**, а затем в меню выберите **Файл** > **Загрузить куст**.
+5. Выберите ключ **HKEY_LOCAL_MACHINE** , а затем в меню выберите **файл** > **Загрузить куст** .
 
 6. Перейдите к файлу системы в папке **\Windows\System32\config**.
 

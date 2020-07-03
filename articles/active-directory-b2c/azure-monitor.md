@@ -3,20 +3,20 @@ title: Мониторинг Azure AD B2C с помощью Azure Monitor
 titleSuffix: Azure AD B2C
 description: Узнайте, как вести журнал Azure AD B2C событий с Azure Monitor с помощью управления делегированными ресурсами.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
 ms.date: 02/10/2020
-ms.openlocfilehash: 6f7f0252a6377397ccaccdc44c9c8561da7c9d29
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 99e04c95156e40eed8c2b9aa88a2bee6f39e90c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121382"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81392879"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Мониторинг Azure AD B2C с помощью Azure Monitor
 
@@ -30,7 +30,7 @@ ms.locfileid: "77121382"
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо развернуть шаблон Azure Resource Manager с помощью модуля Azure PowerShell.
 
@@ -84,10 +84,10 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 
 Скачайте шаблон Azure Resource Manager и файлы параметров:
 
-- [rgDelegatedResourceManagement.json](https://raw.githubusercontent.com/Azure/Azure-Lighthouse-samples/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)
-- [rgDelegatedResourceManagement.parameters.json](https://raw.githubusercontent.com/Azure/Azure-Lighthouse-samples/master/Azure-Delegated-Resource-Management/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)
+- [rgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)
+- [rgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)
 
-Затем обновите файл параметров, указав значения, записанные ранее. В следующем фрагменте кода JSON показан пример файла параметров шаблона Azure Resource Manager. Для `authorizations.value.roleDefinitionId`используйте [встроенное значение роли](../role-based-access-control/built-in-roles.md) для *роли участника*`b24988ac-6180-42a0-ab88-20f7382dd24c`.
+Затем обновите файл параметров, указав значения, записанные ранее. В следующем фрагменте кода JSON показан пример файла параметров шаблона Azure Resource Manager. Для `authorizations.value.roleDefinitionId`используйте [встроенное значение роли](../role-based-access-control/built-in-roles.md) для *роли участника* `b24988ac-6180-42a0-ab88-20f7382dd24c`.
 
 ```JSON
 {
@@ -123,7 +123,7 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 
 После обновления файла параметров разверните шаблон Azure Resource Manager в клиенте Azure в качестве развертывания на уровне подписки. Так как это развертывание уровня подписки, его невозможно инициировать на портале Azure. Развертывание можно выполнить с помощью модуля Azure PowerShell или Azure CLI. Ниже показан метод Azure PowerShell.
 
-Войдите в каталог, содержащий подписку, с помощью [Connect-азаккаунт](/powershell/azure/authenticate-azureps). Используйте флаг `-tenant` для принудительной проверки подлинности в правильном каталоге.
+Войдите в каталог, содержащий подписку, с помощью [Connect-азаккаунт](/powershell/azure/authenticate-azureps). Используйте `-tenant` флаг для принудительной проверки подлинности в правильном каталоге.
 
 ```PowerShell
 Connect-AzAccount -tenant contoso.onmicrosoft.com
@@ -141,7 +141,7 @@ Get-AzSubscription
 Select-AzSubscription <subscription ID>
 ```
 
-Наконец, разверните файл шаблона Azure Resource Manager и файлы параметров, которые вы скачали и обновили ранее. Соответственно замените значения `Location`, `TemplateFile`и `TemplateParameterFile`.
+Наконец, разверните файл шаблона Azure Resource Manager и файлы параметров, которые вы скачали и обновили ранее. Замените значения `Location`, `TemplateFile`и `TemplateParameterFile` соответствующим образом.
 
 ```PowerShell
 New-AzDeployment -Name "AzureADB2C" `
@@ -234,7 +234,7 @@ Parameters              :
 1. Присвойте параметру имя, если его еще нет.
 1. Установите флажок для каждого назначения, чтобы отправить журналы. Выберите **настроить** , чтобы указать их параметры, как описано в следующей таблице.
 
-    | Параметр | Description |
+    | Параметр | Описание |
     |:---|:---|
     | "Архивировать в учетной записи хранения"; | Имя учетной записи хранения. |
     | "Передать в концентратор событий"; | Пространство имен, в котором создается концентратор событий (если это первый журнал потоковой передачи) или потоковая передача (если уже есть ресурсы, которые используют потоковую передачу категории журнала в это пространство имен).

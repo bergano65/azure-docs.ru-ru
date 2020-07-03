@@ -9,10 +9,10 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.openlocfilehash: f56332fa7f53c729ffaa28ea375f043d1b4a3678
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60626253"
 ---
 # <a name="send-device-to-cloud-and-cloud-to-device-messages-with-iot-hub"></a>Отправка сообщений с устройства в облако и из облака на устройство с помощью Центра Интернета вещей
@@ -45,4 +45,4 @@ ms.locfileid: "60626253"
 
 * Дополнительные сведения о [маршрутизации сообщений](iot-hub-devguide-messages-d2c.md) в Центре Интернета вещей.
 
-* Дополнительные сведения о [передаче сообщений из облака на устройство](iot-hub-devguide-messages-c2d.md) в Центре Интернета вещей.
+* Дополнительные сведения о [сообщениях, передаваемых из облака на устройство](iot-hub-devguide-messages-c2d.md), Центра Интернета вещей.

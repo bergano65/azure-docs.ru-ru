@@ -6,13 +6,13 @@ ms.date: 12/04/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.openlocfilehash: ad79721b88f886426d658ed6ee89c4969e1f1baa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75470289"
 ---
-# <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Руководство. использованию диспетчера развертывания Azure с шаблонами Resource Manager (общедоступная предварительная версия)
+# <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Руководство по использованию диспетчера развертывания Azure с шаблонами Resource Manager (общедоступная предварительная версия)
 
 Узнайте, как использовать [диспетчер развертывания Azure](./deployment-manager-overview.md) для развертывания приложений в нескольких регионах. Если вы предпочитаете более быстрый подход, ознакомьтесь с [кратким руководством по использованию диспетчера развертывания Azure](https://github.com/Azure-Samples/adm-quickstart), в рамках которого вы сможете создать необходимые конфигурации в своей подписке и настроить артефакты для развертывания приложения в нескольких регионах. В этом кратком руководстве выполняются те же задачи, что и в этом.
 
@@ -47,7 +47,7 @@ ms.locfileid: "75470289"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этой статьей необходимо иметь следующее.
 

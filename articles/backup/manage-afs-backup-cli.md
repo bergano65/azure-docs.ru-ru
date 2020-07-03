@@ -3,22 +3,22 @@ title: Управление резервными копиями файловых
 description: Узнайте, как использовать Azure CLI для управления и мониторинга файловых ресурсов Azure, резервное копирование которых осуществляется Azure Backup.
 ms.topic: conceptual
 ms.date: 01/15/2020
-ms.openlocfilehash: 44a49913abd99b285397b8b78ad9d4c0f9df52ea
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 06e1f29874085c3943a5207f36eff313dc670e88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76934876"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82184118"
 ---
 # <a name="manage-azure-file-share-backups-with-the-azure-cli"></a>Управление резервными копиями файловых ресурсов Azure с помощью Azure CLI
 
-Azure CLI предоставляет возможности командной строки для управления ресурсами Azure. Это отличный инструмент для создания пользовательской автоматизации для использования ресурсов Azure. В этой статье объясняется, как выполнять задачи по управлению файловыми ресурсами Azure, которые архивируются с помощью [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview). Эти действия также можно выполнить с помощью [портал Azure](https://portal.azure.com/). 
+Azure CLI предоставляет возможности командной строки для управления ресурсами Azure. Это отличный инструмент для создания пользовательской автоматизации для использования ресурсов Azure. В этой статье объясняется, как выполнять задачи по управлению файловыми ресурсами Azure, которые архивируются с помощью [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview). Эти действия также можно выполнить с помощью [портал Azure](https://portal.azure.com/).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать интерфейс командной строки локально, необходимо запустить Azure CLI версии 2.0.18 или более поздней. Чтобы получить необходимую версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже есть резервная копия общего файлового ресурса Azure, [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview). Если у вас ее нет, см. раздел [резервное копирование файловых ресурсов Azure с помощью интерфейса командной строки](backup-afs-cli.md) для настройки резервного копирования общих файловых ресурсов. В этой статье вы используете следующие ресурсы:
 
@@ -238,6 +238,6 @@ az backup container unregister --vault-name azurefilesvault --resource-group azu
 az backup container unregister --vault-name azurefilesvault --resource-group azurefiles --container-name afsaccount --backup-management-type azurestorage --out table
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения см. в статье [Устранение неполадок резервного копирования файловых ресурсов Azure](troubleshoot-azure-files.md).

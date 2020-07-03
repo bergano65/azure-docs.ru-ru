@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: wesmc
 ms.openlocfilehash: e70ee8843e467af152eedefdf7e03a4ea869e4a6
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "69638235"
 ---
 # <a name="azure-iot-hub-get-started-with-physical-devices-tutorials"></a>Руководства по началу работы с Центром Интернета вещей и физическими устройствами

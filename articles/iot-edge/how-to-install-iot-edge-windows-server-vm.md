@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: philmea
 ms.openlocfilehash: 5f88a21efd04c9dd24fe31e925a3b911b5ec9df2
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77045894"
 ---
 # <a name="run-azure-iot-edge-on-windows-server-virtual-machines"></a>Запуск Azure IoT Edge на виртуальных машинах Windows Server
@@ -87,8 +87,8 @@ ms.locfileid: "77045894"
    az vm create -g IoTEdgeResources -n EdgeVM --image MicrosoftWindowsServer:WindowsServer:2019-Datacenter-Core-with-Containers:latest  --admin-username azureuser --generate-ssh-keys --size Standard_DS1_v2
    ```
 
-   * Эта команда предложит ввести пароль, но можно добавить параметр `--admin-password`, чтобы сделать его более простым в сценарии.
-   * Образ Windows Server Core поддерживает командную строку только с помощью удаленного рабочего стола, поэтому, если вы хотите использовать все возможности рабочего стола, укажите `MicrosoftWindowsServer:WindowsServer:2019-Datacenter-with-Containers:latest` в качестве образа.
+   * Эта команда выводит запрос на ввод пароля, но вы можете добавить параметр `--admin-password` , чтобы сделать его более простым в сценарии.
+   * Образ Windows Server Core поддерживает командную строку только с помощью удаленного рабочего стола, поэтому, если вы хотите работать с полным рабочим столом `MicrosoftWindowsServer:WindowsServer:2019-Datacenter-with-Containers:latest` , укажите в качестве образа.
 
 1. Задайте строку подключения устройства (если вы не знакомы с этим процессом, можно следовать процедуре [получения строки подключения с Azure CLIной](how-to-register-device.md#retrieve-the-connection-string-with-the-azure-cli) процедурой):
 
@@ -96,7 +96,7 @@ ms.locfileid: "77045894"
    az vm run-command invoke -g IoTEdgeResources -n EdgeVM --command-id RunPowerShellScript --script ". {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `Install-IoTEdge -Manual -DeviceConnectionString '<connection-string>'"
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

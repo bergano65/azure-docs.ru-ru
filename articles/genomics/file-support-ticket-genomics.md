@@ -11,39 +11,39 @@ ms.service: genomics
 ms.topic: conceptual
 ms.date: 05/23/2018
 ms.openlocfilehash: ddfe8b6010ddc241364ccf7b2d4f5f648bd3ce0e
-ms.sourcegitcommit: 961468fa0cfe650dc1bec87e032e648486f67651
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72248609"
 ---
 # <a name="how-to-contact-microsoft-genomics-for-support"></a>Как обращаться в службу поддержки Microsoft Genomics
-Здесь описываются общие сведения о регистрации запроса на поддержку для обращения в службу поддержки Microsoft Genomics. Вы можете обратиться за помощью, если не можете устранить проблему с помощью [руководства по устранению неполадок](troubleshooting-guide-genomics.md) или [часто задаваемых вопросов](frequently-asked-questions-genomics.md). 
+Здесь описываются общие сведения о регистрации запроса на поддержку для обращения в службу поддержки Microsoft Genomics. Это может быть полезно, если вы не можете устранить неполадки, используя [руководство по устранению неполадок](troubleshooting-guide-genomics.md) или [часто задаваемые вопросы](frequently-asked-questions-genomics.md). 
 
 
 ## <a name="file-a-support-ticket-through-the-azure-portal"></a>Регистрация запроса в службу поддержки через портал Azure
 Сначала войдите в учетную запись Azure на портале Azure. Нажмите кнопку с вопросительным знаком в правом верхнем углу и выберите `Help + support`.
 
-![Обращение в службу поддержки на портале Azure](./media/file-support-ticket/genomics-contact-support.png "Обращение в службу поддержки на портале Azure") 
+![Обратитесь в службу поддержки по адресу портал Azure](./media/file-support-ticket/genomics-contact-support.png "Обратитесь в службу поддержки по адресу портал Azure") 
 
 
 
 Затем выберите `New support request`. 
 
-![Новый запрос в службу поддержки](./media/file-support-ticket/new-support-request.png "Новый запрос в службу поддержки") 
+![Новый запрос в службу поддержки](./media/file-support-ticket/new-support-request.png "Новый запрос на техническую поддержку") 
 
 Заполните сведения в разделе `Basics`, в том числе поле `Issue type` и `Subscription`. Выберите значение `Issue type`, наиболее соответствующее проблеме. В качестве примера на изображении ниже выбран тип `Technical`. Не забудьте установить `Microsoft Genomics` в качестве соответствующей службы.  Служба `Microsoft Genomics` будет указана в категории `Intelligence and Analytics`.   Выбрав `Microsoft Genomics`, также необходимо указать тип плана поддержки для параметра `Support plan`.
 
-![Базовые сведения для запроса в службу поддержки](./media/file-support-ticket/support-request-basics.png "Базовые сведения для запроса в службу поддержки")
+![Основы Поддержка](./media/file-support-ticket/support-request-basics.png "Основы Поддержка")
 
 
 Затем добавьте сведения о проблеме. В средстве оформления запроса также содержится ссылка на имеющуюся документацию, которая может вам пригодиться. В этом примере проблема связана с `Genomics keys`, однако доступно и несколько других вариантов.
 
-![Проблема, являющаяся предметом запроса в службу поддержки](./media/file-support-ticket/support-request-problem.png "Проблема, являющаяся предметом запроса в службу поддержки")
+![Проблема Поддержка](./media/file-support-ticket/support-request-problem.png "Проблема Поддержка")
 
 Наконец, добавьте свои контактные данные и нажмите кнопку `Create` в нижней части экрана, чтобы отправить запрос на поддержку.
 
-![Контактные данные для запроса на поддержку](./media/file-support-ticket/support-request-contact.png "Контактные данные для запроса на поддержку")
+![Поддержка контакт](./media/file-support-ticket/support-request-contact.png "Поддержка контакт")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как отправить запрос на поддержку. Чтобы устранить распространенные проблемы, перейдите к статье с [часто задаваемыми вопросами](frequently-asked-questions-genomics.md) и нашему [руководству по устранению неполадок](troubleshooting-guide-genomics.md). 

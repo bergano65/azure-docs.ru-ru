@@ -1,18 +1,16 @@
 ---
-title: Общие определения схемы предупреждений для Azure Monitor
+title: Определения схемы предупреждений в Azure Monitor
 description: Основные сведения об общих определениях схемы предупреждений для Azure Monitor
-ms.service: azure-monitor
-ms.subservice: alerts
+author: ofirmanor
 ms.topic: conceptual
-author: anantr
-ms.author: robb
+ms.subservice: alerts
 ms.date: 03/14/2019
-ms.openlocfilehash: fb8c2c7e25f94c66c8cc8f7768071d508da8d3b5
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 62b2738324f4c728cd4b5959c04c93649c156afb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76765678"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81114447"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
 
@@ -71,13 +69,13 @@ ms.locfileid: "76765678"
 }
 ```
 
-## <a name="essentials"></a>Essentials
+## <a name="essentials"></a>Основные компоненты
 
-| Поле | Description|
+| Поле | Описание|
 |:---|:---|
 | alertId | Идентификатор GUID, однозначно определяющий экземпляр предупреждения. |
 | alertRule | Имя правила генерации оповещений, создавшего экземпляр предупреждения. |
-| Серьезность | Серьезность предупреждения. Возможные значения: Sev0, Sev1, Sev2, Sev3 или Sev4. |
+| Severity | Серьезность предупреждения. Возможные значения: Sev0, Sev1, Sev2, Sev3 или Sev4. |
 | сигналтипе | Определяет сигнал, на котором было определено правило генерации оповещений. Возможные значения: метрика, журнал или журнал действий. |
 | мониторкондитион | Когда выдается предупреждение, условие монитора предупреждения устанавливается в состояние " **запущено**". Когда основное условие, вызвавшее срабатывание предупреждения, очищается, условие монитора устанавливается в значение " **разрешено**".   |
 | мониторингсервице | Служба мониторинга или решение, создавшее оповещение. Поля для контекста предупреждения определяются службой мониторинга. |
@@ -87,7 +85,7 @@ ms.locfileid: "76765678"
 | ресолведдатетиме | Дата и время, когда состояние монитора для экземпляра предупреждения задано как **разрешенное** в формате UTC. В настоящее время применимо только для оповещений метрик.|
 | description | Описание, определенное в правиле генерации оповещений. |
 |ессентиалсверсион| Номер версии для раздела Essentials.|
-|алертконтекстверсион | Номер версии для раздела `alertContext`. |
+|алертконтекстверсион | Номер версии для `alertContext` раздела. |
 
 **Примеры значений**
 ```json
@@ -151,7 +149,7 @@ ms.locfileid: "76765678"
 ### <a name="log-alerts"></a>Оповещения журналов
 
 > [!NOTE]
-> Для оповещений журнала, которые имеют определенную тему электронной почты и (или) полезные данные JSON, при включении общей схемы будет возвращена тема сообщения электронной почты или схема полезных данных, описанная ниже. Оповещения с включенной общей схемой имеют ограничение верхнего размера 256 КБ на предупреждение. Результаты поиска не внедряются в полезные данные оповещений журнала, если они приводят к тому, что размер предупреждения пересекает это пороговое значение. Это можно определить, установив флаг `IncludedSearchResults`. Если результаты поиска не включаются, следует использовать поисковый запрос в сочетании с [API log Analytics](https://docs.microsoft.com/rest/api/loganalytics/query/get). 
+> Для оповещений журнала, которые имеют определенную тему электронной почты и (или) полезные данные JSON, при включении общей схемы будет возвращена тема сообщения электронной почты или схема полезных данных, описанная ниже. Оповещения с включенной общей схемой имеют ограничение верхнего размера 256 КБ на предупреждение. Результаты поиска не внедряются в полезные данные оповещений журнала, если они приводят к тому, что размер предупреждения пересекает это пороговое значение. Это можно определить, установив флаг `IncludeSearchResults`. Если результаты поиска не включаются, следует использовать поисковый запрос в сочетании с [API log Analytics](https://docs.microsoft.com/rest/api/loganalytics/query/get). 
 
 #### <a name="monitoringservice--log-analytics"></a>`monitoringService` = `Log Analytics`
 
@@ -162,7 +160,7 @@ ms.locfileid: "76765678"
     "SearchQuery": "search * \n| where Type == \"Heartbeat\" \n| where Category == \"Direct Agent\" \n| where TimeGenerated > ago(30m) ",
     "SearchIntervalStartTimeUtc": "3/22/2019 1:36:31 PM",
     "SearchIntervalEndtimeUtc": "3/22/2019 1:51:31 PM",
-    "ResultCount": 15,
+    "ResultCount": 2,
     "LinkToSearchResults": "https://portal.azure.com#@72f988bf-86f1-41af-91ab-2d7cd011db47/blade/Microsoft_OperationsManagementSuite_Workspace/AnalyticsBlade/initiator/AnalyticsShareLinkToQuery/isQueryEditorVisible/true/scope/%7B%22resources%22%3A%5B%7B%22resourceId%22%3A%22%2Fsubscriptions%<subscription ID>%2FresourceGroups%2Fpipelinealertrg%2Fproviders%2FMicrosoft.OperationalInsights%2Fworkspaces%2FINC-OmsAlertRunner%22%7D%5D%7D/query/search%20%2A%20%0A%7C%20where%20Type%20%3D%3D%20%22Heartbeat%22%20%0A%7C%20where%20Category%20%3D%3D%20%22Direct%20Agent%22%20%0A%7C%20where%20TimeGenerated%20%3E%20%28datetime%282019-03-22T13%3A51%3A31.0000000%29%20-%2030m%29%20%20/isQuerybase64Compressed/false/timespanInIsoFormat/2019-03-22T13%3a36%3a31.0000000Z%2f2019-03-22T13%3a51%3a31.0000000Z",
     "SeverityDescription": "Warning",
     "WorkspaceId": "2a1f50a7-ef97-420c-9d14-938e77c2a929",
@@ -173,7 +171,7 @@ ms.locfileid: "76765678"
     "SearchIntervalInMinutes": "15",
     "Threshold": 10000,
     "Operator": "Less Than",
-    "SearchResult": {
+    "SearchResults": {
       "tables": [
         {
           "name": "PrimaryResult",
@@ -214,7 +212,7 @@ ms.locfileid: "76765678"
         }
       ]
     },
-    "IncludedSearchResults": "True",
+    "IncludeSearchResults": "True",
     "AlertType": "Number of results"
   }
 }
@@ -229,14 +227,14 @@ ms.locfileid: "76765678"
     "SearchQuery": "search *",
     "SearchIntervalStartTimeUtc": "3/22/2019 1:36:33 PM",
     "SearchIntervalEndtimeUtc": "3/22/2019 1:51:33 PM",
-    "ResultCount": 0,
+    "ResultCount": 2,
     "LinkToSearchResults": "https://portal.azure.com#@72f988bf-86f1-41af-91ab-2d7cd011db47/blade/Microsoft_OperationsManagementSuite_Workspace/AnalyticsBlade/initiator/AnalyticsShareLinkToQuery/isQueryEditorVisible/true/scope/%7B%22resources%22%3A%5B%7B%22resourceId%22%3A%22%2Fsubscriptions%<subscription ID>%2FresourceGroups%2FPipeLineAlertRG%2Fproviders%2Fmicrosoft.insights%2Fcomponents%2FWEU-AIRunner%22%7D%5D%7D/query/search%20%2A/isQuerybase64Compressed/false/timespanInIsoFormat/2019-03-22T13%3a36%3a33.0000000Z%2f2019-03-22T13%3a51%3a33.0000000Z",
     "SearchIntervalDurationMin": "15",
     "SearchIntervalInMinutes": "15",
     "Threshold": 10000,
     "Operator": "Less Than",
     "ApplicationId": "8e20151d-75b2-4d66-b965-153fb69d65a6",
-    "SearchResult": {
+    "SearchResults": {
       "tables": [
         {
           "name": "PrimaryResult",
@@ -277,7 +275,7 @@ ms.locfileid: "76765678"
         }
       ]
     },
-    "IncludedSearchResults": "True",
+    "IncludeSearchResults": "True",
     "AlertType": "Number of results"
   }
 }
@@ -481,7 +479,7 @@ ms.locfileid: "76765678"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs).
 - Узнайте [, как создать приложение логики, которое использует общую схему оповещений для обработки всех ваших оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations). 

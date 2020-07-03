@@ -5,13 +5,13 @@ author: ecfan
 ms.author: estfan
 ms.date: 03/02/2018
 ms.openlocfilehash: 1aabc1b33722c571c6519b6620fb62211a44c2e8
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74789774"
 ---
-1. Создайте пустое приложение логики на [портале Azure](https://portal.azure.com). 
+1. В [портал Azure](https://portal.azure.com)создайте пустое приложение логики. 
 
 2. В конструкторе Logic Apps введите "github" в качестве фильтра. 
 

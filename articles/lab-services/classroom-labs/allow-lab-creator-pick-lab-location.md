@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/12/2020
+ms.date: 02/14/2020
 ms.author: spelluru
-ms.openlocfilehash: ea9df341fcc76a38364e590f8541e6a85d7ec466
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 52d5628698d1f945a7f672595ee7ce4739b6d13c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77211013"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77444372"
 ---
 # <a name="allow-lab-creator-to-pick-location-for-the-lab-in-azure-lab-services"></a>Разрешить создателю лаборатории выбрать расположение для лаборатории в службах лаборатории Azure
 В службах лаборатории Azure владелец учетной записи лаборатории может разрешить авторам лабораторий (преподавателям) выбрать расположение для создаваемой лабораторной среды. Это расположение может отличаться от расположения учетной записи лаборатории. Расположение — это группа регионов Azure. Например, США расположение — это группа регионов, например Восточная часть США, Западная часть США и т. д. 
@@ -70,9 +70,11 @@ ms.locfileid: "77211013"
 ## <a name="cost"></a>Стоимость
 Ранее цены были основаны на размере виртуальной машины, выбранной для лаборатории. Теперь стоимость зависит от сочетания операционной системы (ОС), размера и расположения. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующие статьи:
 
-- [Создание и администрирование учетных записей лаборатории (для владельцев лаборатории)](how-to-manage-classroom-labs.md)
-- [Настройка и публикация шаблонов (для владельцев лаборатории)](how-to-create-manage-template.md)
-- [Настройка, администрирование и контроль использования лаборатории (для владельцев лаборатории)](how-to-configure-student-usage.md)
+- [Подключение сети лаборатории к одноранговой виртуальной сети](how-to-connect-peer-virtual-network.md)
+- [Подключение коллекции общих образов к лаборатории](how-to-attach-detach-shared-image-gallery.md)
+- [Добавление пользователя в качестве владельца лаборатории](how-to-add-user-lab-owner.md)
+- [Просмотр параметров брандмауэра для лаборатории](how-to-configure-firewall-settings.md)
+- [Настройка других параметров лаборатории](how-to-configure-lab-accounts.md)

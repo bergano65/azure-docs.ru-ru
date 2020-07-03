@@ -5,14 +5,14 @@ author: btardif
 ms.author: byvinyal
 ms.date: 9/23/2019
 ms.topic: article
-ms.openlocfilehash: c7d778a0afca4b3552976526d58a2cb2efe12161
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 296c8e2dfe99e3b0aea66f364ac6f6d9b2f60a1a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75689617"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81272497"
 ---
-# <a name="restore-deleted-app-service-app-using-powershell"></a>Восстановление удаленного приложения службы приложений с помощью PowerShell
+# <a name="restore-deleted-app-service-app-using-powershell"></a>Restore deleted App Service app Using PowerShell (Восстановление удаленного приложения Службы приложений с помощью PowerShell)
 
 Если вы случайно удалили приложение в службе приложений Azure, его можно восстановить с помощью команд из [модуля AZ PowerShell](https://docs.microsoft.com/powershell/azure/?view=azps-2.6.0&viewFallbackFrom=azps-2.2.0).
 
@@ -27,7 +27,7 @@ ms.locfileid: "75689617"
  Register-AzResourceProvider -ProviderNamespace "Microsoft.Web"
 ```
 
-## <a name="list-deleted-apps"></a>Вывод списка удаленных приложений
+## <a name="list-deleted-apps"></a>Список удаленных приложений
 
 Чтобы получить коллекцию удаленных приложений, можно использовать `Get-AzDeletedWebApp`.
 
@@ -54,6 +54,9 @@ Get-AzDeletedWebApp -Name <your_deleted_app> -Location <your_deleted_app_locatio
 ```powershell
 Restore-AzDeletedWebApp -ResourceGroupName <my_rg> -Name <my_app> -TargetAppServicePlanName <my_asp>
 ```
+> [!NOTE]
+> Слоты развертывания не восстанавливаются в составе приложения. Если необходимо восстановить промежуточный слот, используйте `-Slot <slot-name>` флаг.
+>
 
 Входные данные для команды:
 
@@ -61,7 +64,7 @@ Restore-AzDeletedWebApp -ResourceGroupName <my_rg> -Name <my_app> -TargetAppServ
 - **Имя**: имя приложения должно быть глобально уникальным.
 - **Таржетаппсервицепланнаме**: план службы приложений, связанный с приложением
 
-По умолчанию `Restore-AzDeletedWebApp` восстановит как конфигурацию приложения, так и содержимое. Если вы хотите восстановить только содержимое, используйте флаг `-RestoreContentOnly` с этим командлет.
+По умолчанию `Restore-AzDeletedWebApp` восстановит как конфигурацию приложения, так и содержимое. Если вы хотите восстановить только содержимое, используйте `-RestoreContentOnly` флаг с этим командлет.
 
 > [!NOTE]
 > Если приложение было размещено в, а затем удалено из Среда службы приложений то его можно восстановить только в том случае, если соответствующий Среда службы приложений по-прежнему существует.

@@ -18,19 +18,19 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: ef5eedaa903480ae670f9bc48d0af89744a99d22
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "71213000"
 ---
-# <a name="how-to-send-scheduled-notifications"></a>Как Отправка запланированных уведомлений
+# <a name="how-to-send-scheduled-notifications"></a>Практическое руководство. Отправка запланированных уведомлений
 
 Предположим, возникла необходимость отправить уведомление в какой-либо момент в будущем, но у вас нет простого способа пробудить внутренней код для отправки уведомления. Центры уведомлений уровня "Стандартный" поддерживают функцию, которая позволяет запланировать уведомления на будущее до 7 дней.
 
 
 ## <a name="schedule-your-notifications"></a>Планирование уведомлений
-При отправке уведомления просто используйте класс [`ScheduledNotification`](https://msdn.microsoft.com/library/microsoft.azure.notificationhubs.schedulednotification.aspx) из пакета SDK Центров уведомлений, как показано в следующем примере.
+При отправке уведомления просто используйте [ `ScheduledNotification` класс](https://msdn.microsoft.com/library/microsoft.azure.notificationhubs.schedulednotification.aspx) в пакете SDK для центров уведомлений, как показано в следующем примере:
 
 ```csharp
 Notification notification = new AppleNotification("{\"aps\":{\"alert\":\"Happy birthday!\"}}");
@@ -46,12 +46,12 @@ await hub.CancelNotificationAsync(scheduled.ScheduledNotificationId);
 
 Количество запланированных уведомлений, которые можно отправлять, не ограничено.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующими руководствами:
 
  - [Руководство. Отправка уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md)
- - [Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md)
+ - [Отправка push-уведомлений на конкретные устройства](notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md)
  - [Отправка локализованных push-уведомлений](notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md)
  - [Отправка push-уведомлений определенным пользователям](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md) 
- - [Отправка push-уведомлений с определением геозон с помощью Центров уведомлений Azure и Bing Spatial Data](notification-hubs-push-bing-spatial-data-geofencing-notification.md)
+ - [Отправка push-уведомлений на основе расположения](notification-hubs-push-bing-spatial-data-geofencing-notification.md)

@@ -1,19 +1,15 @@
 ---
 title: Модель данных телеметрии Azure Application Insights — контекст телеметрии | Документы Майкрософт
 description: Модель данных контекста телеметрии Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 05/15/2017
 ms.reviewer: sergkanz
-ms.openlocfilehash: 893e1c3a58f4a62a1e0e9b734cc156b3d75d8779
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 8a2e3296643b13a54c4fceb11f044a2808cf2877
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933065"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77671869"
 ---
 # <a name="telemetry-context-application-insights-data-model"></a>Контекст телеметрии: модель данных Application Insights
 
@@ -117,7 +113,7 @@ IP-адрес клиентского устройства. Поддержива�
 
 ## <a name="internal-sdk-version"></a>Внутреннее: версия SDK
 
-Версия пакета SDK. Дополнительные сведения см. на странице по адресу https://github.com/Microsoft/ApplicationInsights-Home/blob/master/SDK-AUTHORING.md#sdk-version-specification.
+Версия пакета SDK. Дополнительные сведения см. в [этой статье](https://github.com/microsoft/ApplicationInsights-Home/blob/master/EndpointSpecs/SDK-VERSIONS.md) .
 
 Максимальная длина: 64
 
@@ -129,7 +125,7 @@ IP-адрес клиентского устройства. Поддержива�
 Максимальная длина: 256
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Вы можете узнать, как [расширять и фильтровать данные телеметрии](../../azure-monitor/app/api-filtering-sampling.md).
 - В [этой статье](data-model.md) представлены типы данных и модель данных для Application Insights.

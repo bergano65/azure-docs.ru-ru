@@ -7,12 +7,12 @@ author: winthrop28
 ms.service: web-application-firewall
 ms.date: 02/01/2020
 ms.author: victorh
-ms.openlocfilehash: d90c887c2e93b44a8dd13dab0b4f03665ea335c3
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: fff4fb5707c07098fd7fac261a36909224365cdf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76960962"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80060271"
 ---
 # <a name="azure-web-application-firewall-waf-policy-overview"></a>Обзор политики брандмауэра веб-приложения Azure (WAF)
 
@@ -57,9 +57,9 @@ ms.locfileid: "76960962"
 
 ## <a name="existing-waf-configurations"></a>Существующие конфигурации WAF
 
-Все новые параметры WAF брандмауэра веб-приложения (настраиваемые правила, конфигурации набора управляемых правил, исключения и т. д.) существуют в политике WAF. Если у вас уже есть WAF, эти параметры могут по-прежнему существовать в конфигурации WAF. Дополнительные сведения о переходе к новой политике WAF см. в разделе (ссылка: перенос конфигурации WAF в политику WAF). 
+Все новые параметры WAF брандмауэра веб-приложения (настраиваемые правила, конфигурации набора управляемых правил, исключения и т. д.) существуют в политике WAF. Если у вас уже есть WAF, эти параметры могут по-прежнему существовать в конфигурации WAF. Дополнительные сведения о переходе к новой политике WAF см. [в статье Миграция конфигурации WAF в политику WAF](https://docs.microsoft.com/azure/web-application-firewall/ag/migrate-policy). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создайте политики "на сайт" и "на универсальный код ресурса" с помощью Azure PowerShell.

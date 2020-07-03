@@ -8,12 +8,12 @@ ms.date: 12/13/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 1ca066729a81ff51d87c5d8063c94be86366811c
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 999204cf2fc8ce18b42f873b9d34af4e6c08052b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548770"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80411497"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Аутентификация подчиненного устройства в Центре Интернета вещей
 
@@ -29,7 +29,7 @@ ms.locfileid: "76548770"
 
 Действия, описанные в этой статье, показывают подготовку устройств вручную, а не автоматическую подготовку с помощью службы подготовки устройств для центра Интернета вещей Azure (DPS). Подготовка подчиненных устройств с помощью DPS не поддерживается.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Выполните действия, описанные в разделе [Настройка устройства IOT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md). Если вы используете проверку подлинности X. 509 для подчиненного устройства, необходимо использовать тот же сценарий создания сертификата, который вы настроили в статье о прозрачном шлюзе.
 
@@ -97,11 +97,11 @@ az iot hub device-identity create -n {iothub name} -d {new device ID} --pd {exis
 
 5. В зависимости от предпочитаемого языка ознакомьтесь с примерами того, как можно ссылаться на сертификаты X. 509 в приложениях IoT:
 
-   * C#: [Настройка безопасности X. 509 в центре Интернета вещей Azure](../iot-hub/iot-hub-security-x509-get-started.md#authenticate-your-x509-device-with-the-x509-certificates)
-   * C: [iotedge_downstream_device_sample](https://github.com/Azure/azure-iot-sdk-c/tree/x509_edge_bugbash/iothub_client/samples/iotedge_downstream_device_sample)
+   * C#. [Настройка безопасности X. 509 в центре Интернета вещей Azure](../iot-hub/iot-hub-security-x509-get-started.md#authenticate-your-x509-device-with-the-x509-certificates)
+   * C: [iotedge_downstream_device_sample. c](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iotedge_downstream_device_sample)
    * Node. js: [simple_sample_device_x509. js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device_x509.js)
-   * Java: [SendEventX509. Java](https://github.com/Azure/azure-iot-sdk-python/blob/master/device/samples/iothub_client_sample_x509.py)
-   * Python: [send_message_x509. Корректировка](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-device/samples/advanced-hub-scenarios/send_message_x509.py)
+   * Java: [SendEventX509. Java](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples/send-event-x509)
+   * Python: [send_message_x509. Корректировка](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-device/samples/async-hub-scenarios/send_message_x509.py)
 
 Вы можете использовать [расширение IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) для выполнения той же операции создания устройства. В следующем примере создается новое устройство Интернета вещей с собственной проверкой подлинности X. 509 и назначается родительское устройство.
 
@@ -123,7 +123,7 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 
 1. Следуйте инструкциям в разделе [Регистрация сертификатов ЦС X. 509 в центре Интернета вещей](../iot-hub/iot-hub-security-x509-get-started.md#register-x509-ca-certificates-to-your-iot-hub) статьи *Настройка безопасности x. 509 в центре Интернета вещей Azure*. В этом разделе вы выполните следующие действия:
 
-   1. Отправьте сертификат корневого ЦС. Если вы используете демонстрационные сертификаты, корневой ЦС **\<путь >/цертс/Азуре-ИОТ-тест-Онли.Рут.ка.церт.пем**.
+   1. Отправьте сертификат корневого ЦС. Если вы используете демонстрационные сертификаты, корневой ЦС является ** \<Path>/цертс/Азуре-ИОТ-тест-Онли.Рут.ка.церт.пем**.
 
    2. Убедитесь, что вы владеете сертификатом корневого ЦС.
 
@@ -140,11 +140,11 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 
 5. В зависимости от предпочитаемого языка ознакомьтесь с примерами того, как можно ссылаться на сертификаты X. 509 в приложениях IoT:
 
-   * C#: [Настройка безопасности X. 509 в центре Интернета вещей Azure](../iot-hub/iot-hub-security-x509-get-started.md#authenticate-your-x509-device-with-the-x509-certificates)
-   * C: [iotedge_downstream_device_sample](https://github.com/Azure/azure-iot-sdk-c/tree/x509_edge_bugbash/iothub_client/samples/iotedge_downstream_device_sample)
+   * C#. [Настройка безопасности X. 509 в центре Интернета вещей Azure](../iot-hub/iot-hub-security-x509-get-started.md#authenticate-your-x509-device-with-the-x509-certificates)
+   * C: [iotedge_downstream_device_sample. c](https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iotedge_downstream_device_sample)
    * Node. js: [simple_sample_device_x509. js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device_x509.js)
-   * Java: [SendEventX509. Java](https://github.com/Azure/azure-iot-sdk-python/blob/master/device/samples/iothub_client_sample_x509.py)
-   * Python: [send_message_x509. Корректировка](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-device/samples/advanced-hub-scenarios/send_message_x509.py)
+   * Java: [SendEventX509. Java](https://github.com/Azure/azure-iot-sdk-java/tree/master/device/iot-device-samples/send-event-x509)
+   * Python: [send_message_x509. Корректировка](https://github.com/Azure/azure-iot-sdk-python/blob/master/azure-iot-device/samples/async-hub-scenarios/send_message_x509.py)
 
 Вы можете использовать [расширение IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) для выполнения той же операции создания устройства. В следующем примере создается новое устройство IoT с подписанным центром сертификации X. 509 и назначается родительское устройство:
 
@@ -162,10 +162,10 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 
 Для строк подключения для подчиненных устройств требуются следующие компоненты:
 
-* Центр Интернета вещей, к которому подключается устройство: `Hostname={iothub name}.azure-devices.net`
-* ИДЕНТИФИКАТОР устройства, зарегистрированный в концентраторе: `DeviceID={device ID}`
-* Первичный или вторичный ключ: `SharedAccessKey={key}`
-* Устройство шлюза, к которому подключается устройство. Укажите значение **имени узла** из файла config. YAML IOT Edge устройства шлюза: `GatewayHostName={gateway hostname}`
+* Центр Интернета вещей, к которому подключается устройство:`Hostname={iothub name}.azure-devices.net`
+* ИДЕНТИФИКАТОР устройства, зарегистрированный в концентраторе:`DeviceID={device ID}`
+* Первичный или вторичный ключ:`SharedAccessKey={key}`
+* Устройство шлюза, к которому подключается устройство. Укажите значение **имени узла** из файла config. YAML IOT Edge устройства шлюза:`GatewayHostName={gateway hostname}`
 
 Все вместе, полная строка подключения выглядит следующим образом:
 
@@ -173,7 +173,7 @@ az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway 
 HostName=myiothub.azure-devices.net;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz;GatewayHostName=myGatewayDevice
 ```
 
-Если для этого подчиненного устройства установлена связь "родители-потомки", можно упростить строку подключения, вызвав шлюз непосредственно в качестве узла подключения. Отношения "родители-потомки" необходимы для проверки подлинности X. 509, но необязательно для проверки подлинности с симметричным Пример.
+Если для этого подчиненного устройства установлена связь "родители-потомки", можно упростить строку подключения, вызвав шлюз непосредственно в качестве узла подключения. Отношения "родители-потомки" необходимы для проверки подлинности X. 509, но необязательно для проверки подлинности с симметричным Пример:
 
 ```
 HostName=myGatewayDevice;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz
@@ -183,6 +183,6 @@ HostName=myGatewayDevice;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz
 
 Перейдите к следующей статье в серии шлюзов, [Подключите подчиненное устройство к шлюзу Azure IOT Edge](how-to-connect-downstream-device.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Выполнив эту статью, вы должны иметь устройство IoT Edge, работающее в качестве прозрачного шлюза и подчиненного устройства, зарегистрированного в центре Интернета вещей. Далее необходимо настроить подчиненные устройства, чтобы доверять устройству шлюза и безопасно подключаться к нему. Дополнительные сведения см. в статье [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge).

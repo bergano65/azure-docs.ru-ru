@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 10/02/2019
 ms.author: iainfou
-ms.openlocfilehash: aa03e388019bf696324ea7af6062ec98386df5fa
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: 0585ced3bc53f216ab203b4686b5800b5e14bbbd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71827054"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77612743"
 ---
 # <a name="troubleshoot-account-sign-in-problems-with-an-azure-ad-domain-services-managed-domain"></a>Устранение неполадок при входе в систему с помощью управляемого домена доменных служб Azure AD
 
@@ -59,7 +59,7 @@ Azure AD DS управляемые домены без локальной син
     * [Измените пароль для учетной записи][enable-user-accounts] , чтобы создать необходимые хэши паролей, а затем подождите 15 минут, прежде чем пытаться войти снова.
     * Если вы отключаете AD DS Azure, а затем включаете его повторно, каждая учетная запись должна следовать инструкциям, чтобы изменить пароль и создать необходимые хэши паролей.
 * **Да, пароль изменен.**
-    * Попробуйте выполнить вход с использованием формата *имени участника-пользователя* , например `driley@contoso.com`, вместо формата *SamAccountName* , такого как `CONTOSO\deeriley`.
+    * Попробуйте выполнить вход с использованием формата *имени участника-пользователя* , `driley@aaddscontoso.com`например, вместо формата *SamAccountName* , такого `AADDSCONTOSO\deeriley`как.
     * *SamAccountName* может автоматически создаваться для пользователей, чей префикс имени участника-пользователя слишком длинный или совпадает с другим пользователем в управляемом домене. Формат *имени участника-пользователя* гарантированно уникален в пределах клиента Azure AD.
 
 ## <a name="the-account-is-locked-out"></a>Учетная запись заблокирована
@@ -70,7 +70,7 @@ Azure AD DS управляемые домены без локальной син
 
 Дополнительные сведения и способы устранения проблем с блокировкой учетной записи см. [в статье Устранение неполадок блокировки учетных записей в Azure AD DS][troubleshoot-account-lockout].
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если у вас по-прежнему возникли проблемы при присоединении виртуальной машины к управляемому домену Azure AD DS, [найдите справку и откройте запрос в службу поддержки для Azure Active Directory][azure-ad-support].
 

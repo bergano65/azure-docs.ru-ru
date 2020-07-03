@@ -3,18 +3,18 @@ title: Проверка экземпляра контейнера распозн
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как проверить экземпляр контейнера распознавание языка.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/12/2019
-ms.author: dapine
-ms.openlocfilehash: f4e0770bc052044a408f2c4088f2bd5ead225aa3
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: dc52586550f89ddae147d79458584331ed984eea
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968608"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80876462"
 ---
 ### <a name="verify-the-language-detection-container-instance"></a>Проверка экземпляра контейнера распознавание языка
 
@@ -49,7 +49,7 @@ ms.locfileid: "70968608"
     }
     ```
 
-1. Задайте для `true`шовстатс значение.
+1. Задайте **showStats** для `true`шовстатс значение.
 
 1. Выберите **выполнить** , чтобы определить тональности текста.
 
@@ -127,4 +127,4 @@ ms.locfileid: "70968608"
     }
     ```
 
-Теперь можно сопоставить документы JSON полезных данных ответа с исходными документами полезных данных запроса по соответствующему `id`запросу. Каждый документ обрабатывается независимо с различными статистическими данными `characterCount` , `transactionCount`такими как и. Кроме того, каждый результирующий документ `detectedLanguages` содержит массив `name`с, `iso6391Name`и `score` для каждого обнаруженного языка. При обнаружении `score` нескольких языков используется для определения наиболее вероятного языка.
+Теперь можно сопоставить документы JSON полезных данных ответа с исходными документами полезных данных запроса по соответствующему `id`запросу. Каждый документ обрабатывается независимо с различными статистическими данными `characterCount` , `transactionCount`такими как и. Кроме того, каждый результирующий документ `detectedLanguages` содержит массив с `name`, `iso6391Name`и `score` для каждого обнаруженного языка. При обнаружении `score` нескольких языков используется для определения наиболее вероятного языка.

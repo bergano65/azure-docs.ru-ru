@@ -13,10 +13,10 @@ ms.date: 01/29/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0ca5817e744ff81efcd549bc328d7ce5eeedb2d2
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76908740"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Создание устойчивой стратегии управления доступом с помощью Azure Active Directory
@@ -118,7 +118,7 @@ ms.locfileid: "76908740"
 * Настройте набор резервных политик, если нарушение доступа к одному типу учетных данных или одному механизму контроля доступа влияет на доступ к вашим приложениям. Настройте политику в отключенном состоянии, которая требует присоединения к домену в качестве элемента управления, в качестве резервной копии для активной политики, для которой требуется сторонний поставщик MFA.
 * Снизьте риск того, что плохие субъекты будут угадывать пароли, когда не требуется MFA, следуя рекомендациям, изложенным в руководстве по паролями [здесь](https://aka.ms/passwordguidance).
 * Разверните [Самостоятельный сброс пароля (SSPR) в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr) и [Защита паролем Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-deploy), чтобы убедиться, что пользователи не используют простой пароль и условия, которые вы запретили.
-* Если не достигнут определенный уровень проверки подлинности, используйте политики, которые ограничивают доступ в рамках приложения, вместо простого возврата к полному доступу. Пример.
+* Если не достигнут определенный уровень проверки подлинности, используйте политики, которые ограничивают доступ в рамках приложения, вместо простого возврата к полному доступу. Пример:
   * Настройте политику резервного копирования, которая отправляет утверждение ограниченного сеанса в Exchange и SharePoint.
   * Если ваша организация использует Microsoft Cloud App Security, рассмотрите возможность использования политики MCAS, и тогда MCAS разрешит доступ только для чтения, но не для передачи.
 * Присвойте имена политикам, чтобы их легко было найти во время сбоя. Включите следующие элементы в название политики.
@@ -178,7 +178,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 5. Включить политику 4. Убедитесь, что все пользователи не могут получить Exchange Online из собственных почтовых приложений на мобильных устройствах.
 6. Отключите существующую политику MFA для SharePoint Online и Exchange Online.
 
-В этом следующем примере **пример Б — политики условного доступа на случай непредвиденных обстоятельств, которые разрешают мобильный доступ к Salesforce** , восстанавливается доступ бизнес-приложения. В этом сценарии клиент обычно требует, чтобы его сотрудники отдела продаж имели доступ к Salesforce (настроенный для единого входа в Azure AD) с мобильных устройств, чтобы он был разрешен только со совместимых устройств. В этом случае сбой заключается в существовании проблемы с оценкой соответствия устройств и происходит в трудное время, когда отдел по продажам должен иметь доступ к Salesforce, чтобы закрыть сделки. Эти политики на случай непредвиденных обстоятельств предоставят доступ к Salesforce с мобильного устройства критическим пользователям, чтобы те могли продолжать закрывать сделки и не нарушать работу. В этом примере **SalesforceContingency** содержит всех сотрудников отдела продаж, которым необходимо сохранить доступ, а **SalesAdmins** — необходимых администраторов Salesforce.
+В этом следующем примере **пример Б — политики условного доступа на случай непредвиденных обстоятельств, которые разрешают мобильный доступ к Salesforce **, восстанавливается доступ бизнес-приложения. В этом сценарии клиент обычно требует, чтобы его сотрудники отдела продаж имели доступ к Salesforce (настроенный для единого входа в Azure AD) с мобильных устройств, чтобы он был разрешен только со совместимых устройств. В этом случае сбой заключается в существовании проблемы с оценкой соответствия устройств и происходит в трудное время, когда отдел по продажам должен иметь доступ к Salesforce, чтобы закрыть сделки. Эти политики на случай непредвиденных обстоятельств предоставят доступ к Salesforce с мобильного устройства критическим пользователям, чтобы те могли продолжать закрывать сделки и не нарушать работу. В этом примере **SalesforceContingency** содержит всех сотрудников отдела продаж, которым необходимо сохранить доступ, а **SalesAdmins** — необходимых администраторов Salesforce.
 
 **Пример Б — политики условного доступа на случай непредвиденных обстоятельств:**
 
@@ -186,7 +186,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
   * Имя: EM001-ENABLE в ЭКСТРЕННой ситуации: нарушение соответствия устройства [1/2]-Salesforce-блокировать всех пользователей, кроме Салесфорцеконтинженци
   * Пользователи и группы: включить всех пользователей. исключает SalesAdmins и SalesforceContingency
   * Облачные приложения: Salesforce.
-  * Условия: нет
+  * Условия: нет.
   * Предоставление управления: блокировка
   * Состояние: отключено
 * Политика 2. Блокирование группы продаж с любой платформы, отличной от мобильной (для сокращения контактной зоны атак)
@@ -260,13 +260,13 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 >[!NOTE]
  > Настройка [доверенных IP-адресов](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-mfasettings) для MFA Azure доступна только с [лицензиями Azure AD Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-licensing).
 
-## <a name="learn-more"></a>Подробнее…
+## <a name="learn-more"></a>Дополнительные сведения
 
 * [Настройка сервера Многофакторной идентификации Azure для веб-приложений IIS](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-iis)
 * [Управление учетными записями администратора для аварийного доступа в Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-emergency-access)
-* [Быстрое начало. Настройка именованных расположений в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+* [Настройка именованных расположений в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
   * [Set-MsolDomainFederationSettings](https://docs.microsoft.com/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0)
-* [Как планировать гибридную реализацию присоединения к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)
+* [Настройка гибридных устройств, присоединенных к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)
 * [Руководство по развертыванию Windows Hello для бизнеса](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Password Guidance - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf) (Руководство о паролях — Microsoft Research)
 * [Что такое условия в Azure Active Directory условного доступа?](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions)

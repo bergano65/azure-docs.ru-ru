@@ -6,13 +6,13 @@ ms.author: routlaw
 ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/10/2018
-ms.custom: seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: a3e9c05fbe68bf1b03f45d045afd8754753fecd3
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.custom: mvc, seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 0b65e8f470b36ab1642e9144e081253a577dabc3
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74688830"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202508"
 ---
 # <a name="tutorial-build-a-java-spring-boot-web-app-with-azure-app-service-on-linux-and-azure-cosmos-db"></a>Руководство по созданию веб-приложения Java Spring Boot с помощью Службы приложений Azure в Linux и Azure Cosmos DB
 
@@ -20,21 +20,21 @@ ms.locfileid: "74688830"
 
 ![Приложение Spring Boot, данные которого хранятся в Azure Cosmos DB](./media/tutorial-java-spring-cosmosdb/spring-todo-app-running-locally.jpg)
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание базы данных Cosmos DB
 > * Подключение примера приложения к базе данных и его локальное тестирование
 > * Развертывание примера приложения в Azure
 > * Потоковая передача журналов диагностики из службы приложений
-> * Добавление дополнительных экземпляров для масштабирования примера приложения
+> * Добавление дополнительных экземпляров для горизонтального увеличения масштаба примера приложения
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * [Azure CLI](https://docs.microsoft.com/cli/azure/overview), установленный на компьютере. 
-* [Git](https://git-scm.com/)
+* [Git](https://git-scm.com/);
 * [Java JDK](https://aka.ms/azure-jdks)
 * [Maven](https://maven.apache.org)
 
@@ -165,7 +165,7 @@ bash-3.2$ mvn package spring-boot:run
 [INFO] TodoApplication - Started TodoApplication in 45.573 seconds (JVM running for 76.534)
 ```
 
-После запуска приложения со списком задач Spring к нему можно получить доступ локально с помощью этой ссылки: [http://localhost:8080/](http://localhost:8080/).
+После запуска приложения Spring со списком задач к нему можно получить доступ локально с помощью этой ссылки: `http://localhost:8080/`.
 
  ![Локальный доступ к приложению со списком задач Spring](./media/tutorial-java-spring-cosmosdb/spring-todo-app-running-locally.jpg)
 
@@ -173,7 +173,7 @@ bash-3.2$ mvn package spring-boot:run
 
 ## <a name="configure-azure-deployment"></a>Настройка развертывания в Azure
 
-Откройте файл `pom.xml` в каталоге `initial/spring-boot-todo` и добавьте конфигурацию [модуля Maven для Службы приложений Azure](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md).
+Откройте файл `pom.xml` в каталоге `initial/spring-boot-todo` и добавьте конфигурацию [подключаемого модуля веб-приложения Azure для Maven](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md).
 
 ```xml    
 <plugins> 
@@ -185,7 +185,7 @@ bash-3.2$ mvn package spring-boot:run
     <plugin>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.8.0</version>
+        <version>1.9.0</version>
         <configuration>
             <schemaVersion>v2</schemaVersion>
 
@@ -250,7 +250,7 @@ bash-3.2$ mvn azure-webapp:deploy
 [INFO] Building spring-todo-app 2.0-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
 [INFO] 
-[INFO] --- azure-webapp-maven-plugin:1.8.0:deploy (default-cli) @ spring-todo-app ---
+[INFO] --- azure-webapp-maven-plugin:1.9.0:deploy (default-cli) @ spring-todo-app ---
 [INFO] Target Web App doesn't exist. Creating a new one...
 [INFO] Creating App Service Plan 'ServicePlanb6ba8178-5bbb-49e7'...
 [INFO] Successfully created App Service Plan.
@@ -285,9 +285,9 @@ open https://spring-todo-app.azurewebsites.net
 [!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
 
 
-## <a name="scale-out-the-todo-app"></a>Масштабирование приложения со списком задач
+## <a name="scale-out-the-todo-app"></a>Горизонтальное увеличение масштаба приложения со списком задач
 
-Выполните масштабирование приложения, добавив другую рабочую роль:
+Выполните горизонтальное увеличение масштаба приложения, добавив другую рабочую роль:
 
 ```bash
 az appservice plan update --number-of-workers 2 \
@@ -305,7 +305,7 @@ az group delete --name <your-azure-group-name>
 
 <a name="next"></a>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Azure для разработчиков Java](/java/azure/)
 [Spring Boot](https://spring.io/projects/spring-boot), [Использование начального приложения Spring Boot с API SQL Azure Cosmos DB](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db?view=azure-java-stable), [Добро пожаловать в базу данных Azure Cosmos DB](/azure/cosmos-db/sql-api-introduction), [Вводные сведения о службе приложений Azure на платформе Linux](app-service-linux-intro.md).

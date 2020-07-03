@@ -10,10 +10,10 @@ ms.author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: artek
 ms.openlocfilehash: 1d5313f3f0fff128dd09f9c9857b7dd9921ea4f8
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "69992221"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
@@ -22,7 +22,7 @@ ms.locfileid: "69992221"
 
 HDInsight предоставляет доступ к распределенному контейнеру, который локально подключен к этим узлам. Доступ к этому контейнеру можно получить с помощью оболочки, которая напрямую взаимодействует с HDFS и другими файловыми системами, поддерживаемыми Hadoop.
 
-Дополнительные сведения об интерфейсе HDFS CLI см. в [официальной документации](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html) и руководстве по разрешениям [HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html) .
+Дополнительные сведения об интерфейсе HDFS CLI см. в [официальной документации](https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html) и [руководстве по разрешениям HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html) .
 
 >[!NOTE]
 >Если вы используете Azure Databricks вместо HDInsight и хотите взаимодействовать с данными с помощью интерфейса командной строки, можно использовать CLI модуля данных для взаимодействия с файловой системой модуля данных. См. раздел [CLI кирпичей](https://docs.azuredatabricks.net/user-guide/dev-tools/databricks-cli.html).
@@ -44,11 +44,11 @@ hdfs dfs -mkdir /samplefolder
 >[!IMPORTANT]
 >Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен. Сведения об удалении кластера см. в [статье на эту тему](../../hdinsight/hdinsight-delete-cluster.md). Данные, размещенные в учетной записи хранения с поддержкой Data Lake Storage 2-го поколения, сохраняются даже после удаления кластера HDInsight.
 
-## <a name="create-a-container"></a>Создать контейнер
+## <a name="create-a-container"></a>Создание контейнера
 
     hdfs dfs -D "fs.azure.createRemoteFileSystemDuringInitialization=true" -ls abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/
 
-* `<container-name>` Замените заполнитель именем, которое вы хотите присвоить контейнеру.
+* Замените заполнитель `<container-name>` именем, которое хотите присвоить своему контейнеру.
 
 * Замените заполнитель `<storage-account-name>` именем вашей учетной записи хранения.
 
@@ -56,15 +56,15 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -ls <path>
 
-`<path>` Замените заполнитель URI контейнера или папки контейнера.
+Замените `<path>` заполнитель URI контейнера или папки контейнера.
 
 Например: `hdfs dfs -ls abfs://my-file-system@mystorageaccount.dfs.core.windows.net/my-directory-name`
 
-## <a name="create-a-directory"></a>создать каталог;
+## <a name="create-a-directory"></a>Создание каталога
 
     hdfs dfs -mkdir [-p] <path>
 
-`<path>` Замените заполнитель именем корневого контейнера или папкой в контейнере.
+Замените `<path>` заполнитель именем корневого контейнера или папкой в контейнере.
 
 Например: `hdfs dfs -mkdir abfs://my-file-system@mystorageaccount.dfs.core.windows.net/`
 
@@ -80,7 +80,7 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -getfacl [-R] <path>
 
-Пример:
+Пример.
 
 `hdfs dfs -getfacl -R /dir`
 
@@ -90,7 +90,7 @@ hdfs dfs -mkdir /samplefolder
 
     hdfs dfs -setfacl [-R] [-b|-k -m|-x <acl_spec> <path>]|[--set <acl_spec> <path>]
 
-Пример:
+Пример.
 
 `hdfs dfs -setfacl -m user:hadoop:rw- /file`
 

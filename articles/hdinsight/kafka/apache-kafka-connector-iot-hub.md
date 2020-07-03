@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/26/2019
-ms.openlocfilehash: 884d10ce1bc5e6b710c849d0be1cb9165caac4c5
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 48a72b5ba3819712b9e1d2536ae2dd3a06eaf3f2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74706093"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80238816"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Использование Apache Kafka в HDInsight с Центром Интернета вещей
 
@@ -27,9 +27,9 @@ API Kafka Connect позволяет реализовать соединител
 
 ![Изображение, на котором показан поток данных из Центра Интернета вещей в Kafka через соединитель](./media/apache-kafka-connector-iot-hub/iot-hub-kafka-connector-hdinsight.png)
 
-Дополнительные сведения о API подключения см. по адресу: [https://kafka.apache.org/documentation/#connect](https://kafka.apache.org/documentation/#connect).
+Дополнительные сведения об API подключения см. в разделе [https://kafka.apache.org/documentation/#connect](https://kafka.apache.org/documentation/#connect).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Кластер Apache Kafka в HDInsight. Дополнительные сведения см. в документе [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md).
 
@@ -45,17 +45,17 @@ API Kafka Connect позволяет реализовать соединител
 
 1. Скачайте источник для соединителя из [https://github.com/Azure/toketi-kafka-connect-iothub/](https://github.com/Azure/toketi-kafka-connect-iothub/) в локальную среду.
 
-2. В командной строке перейдите в каталог `toketi-kafka-connect-iothub-master`. Затем выполните следующую команду, чтобы собрать и упаковать проект:
+2. В командной строке перейдите в `toketi-kafka-connect-iothub-master` каталог. Затем выполните следующую команду, чтобы собрать и упаковать проект:
 
     ```cmd
     sbt assembly
     ```
 
-    Выполнение сборки займет несколько минут. Команда создает файл с именем `kafka-connect-iothub-assembly_2.11-0.7.0.jar` в каталоге `toketi-kafka-connect-iothub-master\target\scala-2.11` для проекта.
+    Выполнение сборки займет несколько минут. Команда создает файл с именем `kafka-connect-iothub-assembly_2.11-0.7.0.jar` в `toketi-kafka-connect-iothub-master\target\scala-2.11` каталоге для проекта.
 
 ## <a name="install-the-connector"></a>Установка соединителя
 
-1. Отправьте JAR-файл в пограничной узел вашего Kafka в кластере HDInsight. Измените приведенную ниже команду, заменив `CLUSTERNAME` фактическим именем кластера. Значения по умолчанию для учетной записи пользователя SSH и имени [пограничного узла](../hdinsight-apps-use-edge-node.md#access-an-edge-node) используются ниже, при необходимости измените.
+1. Отправьте JAR-файл в пограничной узел вашего Kafka в кластере HDInsight. Измените приведенную ниже команду, `CLUSTERNAME` заменив фактическим именем кластера. Значения по умолчанию для учетной записи пользователя SSH и имени [пограничного узла](../hdinsight-apps-use-edge-node.md#access-an-edge-node) используются ниже, при необходимости измените.
 
     ```cmd
     scp kafka-connect-iothub-assembly*.jar sshuser@new-edgenode.CLUSTERNAME-ssh.azurehdinsight.net:
@@ -118,12 +118,12 @@ API Kafka Connect позволяет реализовать соединител
 
 1. Внесите следующие изменения:
 
-    |Текущее значение |Новое значение | Комментарий |
+    |Текущее значение |Новое значение | Добавление примечаний |
     |---|---|---|
-    |`bootstrap.servers=localhost:9092`|Замените значение `localhost:9092` на узлы брокера из предыдущего шага.|Настраивает изолированную конфигурацию для пограничных узлов, чтобы найти брокеры Kafka.|
-    |`key.converter=org.apache.kafka.connect.json.JsonConverter`|`key.converter=org.apache.kafka.connect.storage.StringConverter`|Это изменение можно проверить с помощью отправителя консоли, входящего в состав Kafka. Для различных отправителей и потребителей вам могут понадобиться различные преобразователи. Дополнительные сведения об использовании других значений преобразования см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).|
+    |`bootstrap.servers=localhost:9092`|Замените `localhost:9092` значение на узлы брокера из предыдущего шага.|Настраивает изолированную конфигурацию для пограничных узлов, чтобы найти брокеры Kafka.|
+    |`key.converter=org.apache.kafka.connect.json.JsonConverter`|`key.converter=org.apache.kafka.connect.storage.StringConverter`|Это изменение можно проверить с помощью отправителя консоли, входящего в состав Kafka. Для различных отправителей и потребителей вам могут понадобиться различные преобразователи. Сведения об использовании других значений преобразователей см. [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md)в разделе.|
     |`value.converter=org.apache.kafka.connect.json.JsonConverter`|`value.converter=org.apache.kafka.connect.storage.StringConverter`|То же, что и выше.|
-    |Н/Д|`consumer.max.poll.records=10`|Добавить в конец файла. Это изменение предназначено для предотвращения времени ожидания в соединителе приемника, ограничивая его 10 записями за раз. Дополнительные сведения см. в [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).|
+    |Недоступно|`consumer.max.poll.records=10`|Добавить в конец файла. Это изменение предназначено для предотвращения времени ожидания в соединителе приемника, ограничивая его 10 записями за раз. Дополнительные сведения см. в [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md)разделе.|
 
 1. Чтобы сохранить файл, нажмите клавиши __CTRL+X__, затем — __Y__ и __ВВОД__.
 
@@ -155,16 +155,16 @@ API Kafka Connect позволяет реализовать соединител
      2. В разделе __Встроенные конечные точки__ выберите __События__.
      3. В разделе __Свойства__ скопируйте значения следующих полей:
 
-         * __Имя, совместимое с центрами событий__
-         * __Конечная точка, совместимая с центрами событий__
-         * __Разделы__
+         * __Имя, совместимое с концентратором событий__
+         * __Конечная точка, совместимая с концентраторами событий__
+         * __Секции__
 
         > [!IMPORTANT]  
         > Значение конечной точки на портале может содержать лишний текст, который не требуется в этом примере. Извлеките текст, который соответствует этому шаблону: `sb://<randomnamespace>.servicebus.windows.net/`.
 
    * __В [интерфейсе командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)__ введите следующую команду:
 
-       ```azure-cli
+       ```azurecli
        az iot hub show --name myhubname --query "{EventHubCompatibleName:properties.eventHubEndpoints.events.path,EventHubCompatibleEndpoint:properties.eventHubEndpoints.events.endpoint,Partitions:properties.eventHubEndpoints.events.partitionCount}"
        ```
 
@@ -181,14 +181,14 @@ API Kafka Connect позволяет реализовать соединител
     * __На [портале Azure](https://portal.azure.com/)__ выполните указанные ниже действия.
 
         1. Выберите __Политика общего доступа__, а затем выберите __службу__.
-        2. Скопируйте значение __первичного ключа__.
+        2. Скопируйте значение __первичного ключа__ .
         3. Скопируйте значение поля __Строка подключения — первичный ключ__.
 
     * __В [интерфейсе командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)__ введите следующую команду:
 
         1. Чтобы получить значение первичного ключа, используйте следующую команду:
 
-            ```azure-cli
+            ```azurecli
             az iot hub policy show --hub-name myhubname --name service --query "primaryKey"
             ```
 
@@ -196,7 +196,7 @@ API Kafka Connect позволяет реализовать соединител
 
         2. Чтобы получить строку подключения для политики `service`, используйте следующую команду:
 
-            ```azure-cli
+            ```azurecli
             az iot hub show-connection-string --name myhubname --policy-name service --query "connectionString"
             ```
 
@@ -220,22 +220,22 @@ API Kafka Connect позволяет реализовать соединител
 
 1. В редакторе найдите и измените следующие записи:
 
-    |Текущее значение |Изменить|
+    |Текущее значение |Правка|
     |---|---|
     |`Kafka.Topic=PLACEHOLDER`|Замените `PLACEHOLDER` на `iotin`. Сообщения, полученные из Центра Интернета вещей, размещаются в разделе `iotin`.|
-    |`IotHub.EventHubCompatibleName=PLACEHOLDER`|Замените `PLACEHOLDER` именем, совместимым с концентратором событий.|
-    |`IotHub.EventHubCompatibleEndpoint=PLACEHOLDER`|Замените `PLACEHOLDER` конечной точкой, совместимой с концентратором событий.|
+    |`IotHub.EventHubCompatibleName=PLACEHOLDER`|замените `PLACEHOLDER` именем, совместимым с Центрами событий.|
+    |`IotHub.EventHubCompatibleEndpoint=PLACEHOLDER`|замените `PLACEHOLDER` конечной точкой, совместимой с Центрами событий.|
     |`IotHub.AccessKeyName=PLACEHOLDER`|Замените `PLACEHOLDER` на `service`.|
-    |`IotHub.AccessKeyValue=PLACEHOLDER`|Замените `PLACEHOLDER` первичным ключом политики `service`.|
-    |`IotHub.Partitions=PLACEHOLDER`|Замените `PLACEHOLDER` количеством разделов из предыдущих шагов.|
-    |`IotHub.StartTime=PLACEHOLDER`|Замените `PLACEHOLDER` на дату в формате UTC. Это время и дата, когда соединитель начинает проверку на наличие сообщений. Формат даты — `yyyy-mm-ddThh:mm:ssZ`.|
+    |`IotHub.AccessKeyValue=PLACEHOLDER`|замените `PLACEHOLDER` первичным ключом политики `service`.|
+    |`IotHub.Partitions=PLACEHOLDER`|замените `PLACEHOLDER` на количество секций из предыдущего шага.|
+    |`IotHub.StartTime=PLACEHOLDER`|замените `PLACEHOLDER` датой в формате UTC. Это время и дата, когда соединитель начинает проверку на наличие сообщений. Формат даты — `yyyy-mm-ddThh:mm:ssZ`.|
     |`BatchSize=100`|Замените `100` на `5`. В таком случае соединитель считывает сообщения в Kafka, когда в Центре Интернета вещей появилось пять новых сообщений.|
 
     Пример конфигурации см. в статье [Kafka Connect Source Connector для центра Интернета вещей Azure](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md).
 
 1. Чтобы сохранить изменения, нажмите клавиши __CTRL+X__, затем — __Y__ и __ВВОД__.
 
-Дополнительные сведения о настройке источника соединителя см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md).
+Дополнительные сведения о настройке источника соединителя см. в разделе [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Source.md).
 
 ## <a name="configure-the-sink-connection"></a>Настройка подключения приемника
 
@@ -255,16 +255,16 @@ API Kafka Connect позволяет реализовать соединител
 
 1. В редакторе найдите и измените следующие записи:
 
-    |Текущее значение |Изменить|
+    |Текущее значение |Правка|
     |---|---|
     |`topics=PLACEHOLDER`|Замените `PLACEHOLDER` на `iotout`. Сообщение, записанные в раздел `iotout`, переадресовываются в Центр Интернета вещей.|
-    |`IotHub.ConnectionString=PLACEHOLDER`|Замените `PLACEHOLDER` строкой подключения для политики `service`.|
+    |`IotHub.ConnectionString=PLACEHOLDER`|замените `PLACEHOLDER` строкой подключения политики `service`.|
 
     Пример конфигурации см. в статье [соединитель приемника Kafka Connect для центра Интернета вещей Azure](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
 
 1. Чтобы сохранить изменения, нажмите клавиши __CTRL+X__, затем — __Y__ и __ВВОД__.
 
-Дополнительные сведения о настройке приемника соединителя см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
+Дополнительные сведения о настройке приемника соединителя см. в [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md)разделе.
 
 ## <a name="start-the-source-connector"></a>Запуск соединителя источника
 
@@ -276,7 +276,7 @@ API Kafka Connect позволяет реализовать соединител
 
     После запуска соединителя отправьте сообщения в Центр Интернета вещей со своих устройств. Когда соединитель считывает сообщения из Центра Интернета вещей и сохраняет их в разделе Kafka, он регистрирует информацию на консоли:
 
-    ```text
+    ```output
     [2017-08-29 20:15:46,112] INFO Polling for data - Obtained 5 SourceRecords from IotHub (com.microsoft.azure.iot.kafka.connect.IotHubSourceTask:39)
     [2017-08-29 20:15:54,106] INFO Finished WorkerSourceTask{id=AzureIotHubConnector-0} commitOffsets successfully in 4 ms (org.apache.kafka.connect.runtime.WorkerSourceTask:356)
     ```
@@ -296,7 +296,7 @@ API Kafka Connect позволяет реализовать соединител
 
 После запуска соединителя отобразится похожая информация:
 
-```text
+```output
 [2017-08-30 17:49:16,150] INFO Started tasks to send 1 messages to devices. (com.microsoft.azure.iot.kafka.connect.sink.
 IotHubSinkTask:47)
 [2017-08-30 17:49:16,150] INFO WorkerSinkTask{id=AzureIotHubSinkConnector-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSinkTask:262)
@@ -342,19 +342,19 @@ IotHubSinkTask:47)
     {"messageId":"msg1","message":"Turn On","deviceId":"myDeviceId"}
     ```
 
-    Схема для этого документа JSON более подробно описана в репозитории [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
+    Схема для этого документа JSON подробно описана в разделе [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
 
     Если вы используете имитируемое устройство Raspberry Pi и оно работает, устройство регистрирует следующее сообщение:
 
-    ```text
+    ```output
     Receive message: Turn On
     ```
 
     Повторно отправьте документ JSON, но измените значение записи `"message"`. Новое значение записывается на устройстве.
 
-Дополнительные сведения об использовании соединителя приемника см. по адресу [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md).
+Дополнительные сведения об использовании соединителя приемника см. в [https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md](https://github.com/Azure/toketi-kafka-connect-iothub/blob/master/README_Sink.md)разделе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Из этого документа вы узнали, как использовать API Apache Kafka Connect для запуска соединителя IoT Kafka в HDInsight. Другие материалы, посвященные работе с Kafka, доступны по следующим ссылкам:
 

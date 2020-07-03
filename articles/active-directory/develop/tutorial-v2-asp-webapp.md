@@ -3,25 +3,21 @@ title: Добавление функции входа в веб-приложен
 titleSuffix: Microsoft identity platform
 description: Реализация входа в решение ASP.NET с использованием учетной записи Майкрософт, традиционного браузерного приложения и стандарта OpenID Connect
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 50eb88373b05d979d7f4b67b317e98c2a944459b
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 4b9dac92f0cff213622f0087b281814251f06ffd
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701336"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181619"
 ---
 # <a name="add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Реализация входа в веб-приложение ASP.NET с использованием учетной записи Майкрософт.
 
@@ -30,6 +26,9 @@ ms.locfileid: "76701336"
 Завершив работу, вы получите приложение, которое поддерживает вход с использованием личных учетных записей служб outlook.com, live.com и т. п. Для входа в это приложение можно также использовать рабочие и учебные учетные записи любой компании или организации, интегрированной с платформой удостоверений Майкрософт.
 
 > Для работы с этим руководством требуется Microsoft Visual Studio 2019.  У вас его нет?  [Скачайте бесплатно Visual Studio 2019](https://www.visualstudio.com/downloads/).
+
+>[!NOTE]
+> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать со статьи [Добавление функции входа платформы удостоверений Майкрософт в веб-приложение ASP.NET](quickstart-v2-aspnet-webapp.md).
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 
@@ -71,10 +70,8 @@ ms.locfileid: "76701336"
     Install-Package Microsoft.Owin.Host.SystemWeb
     ```
 
-<!--start-collapse-->
-> ### <a name="about-these-libraries"></a>О библиотеках
-> Эти библиотеки позволяют выполнять единый вход с использованием OpenID Connect и аутентификации на основе файлов cookie. После завершения проверки подлинности и отправки приложению маркера, представляющего пользователя, промежуточный слой OWIN создаст файл cookie сеанса. Затем браузер будет использовать этот файл cookie при последующих запросах, чтобы пользователю не нужно было повторно вводить пароль и проходить дополнительную проверку.
-<!--end-collapse-->
+### <a name="about-these-libraries"></a>О библиотеках
+Эти библиотеки позволяют выполнять единый вход с использованием OpenID Connect и аутентификации на основе файлов cookie. После завершения проверки подлинности и отправки приложению маркера, представляющего пользователя, промежуточный слой OWIN создаст файл cookie сеанса. Затем браузер будет использовать этот файл cookie при последующих запросах, чтобы пользователю не нужно было повторно вводить пароль и проходить дополнительную проверку.
 
 ## <a name="configure-the-authentication-pipeline"></a>Настройка конвейера для проверки подлинности
 
@@ -118,7 +115,7 @@ ms.locfileid: "76701336"
         string authority = String.Format(System.Globalization.CultureInfo.InvariantCulture, System.Configuration.ConfigurationManager.AppSettings["Authority"], tenant);
 
         /// <summary>
-        /// Configure OWIN to use OpenIdConnect 
+        /// Configure OWIN to use OpenIdConnect
         /// </summary>
         /// <param name="app"></param>
         public void Configuration(IAppBuilder app)
@@ -172,10 +169,9 @@ ms.locfileid: "76701336"
 > Параметр `ValidateIssuer = false` приводится в этом кратком руководстве для упрощения. В реальных приложениях нужно проверять издателя.
 > См. примеры кода, чтобы узнать, как это сделать.
 
-<!--start-collapse-->
-> ### <a name="more-information"></a>Дополнительные сведения
-> Параметры, указанные в *OpenIDConnectAuthenticationOptions*, будут служить координатами приложения для взаимодействия с платформой удостоверений Майкрософт. Так как ПО промежуточного слоя OpenID Connect использует файлы cookie в фоновом режиме, вам также нужно настроить аутентификацию с использованием этих файлов, как показано в коде выше. Значение *ValidateIssuer* сообщает OpenIdConnect, что доступ не ограничен одной конкретной организацией.
-<!--end-collapse-->
+### <a name="more-information"></a>Дополнительные сведения
+
+Параметры, указанные в *OpenIDConnectAuthenticationOptions*, будут служить координатами приложения для взаимодействия с платформой удостоверений Майкрософт. Так как ПО промежуточного слоя OpenID Connect использует файлы cookie в фоновом режиме, вам также нужно настроить аутентификацию с использованием этих файлов, как показано в коде выше. Значение *ValidateIssuer* сообщает OpenIdConnect, что доступ не ограничен одной конкретной организацией.
 
 ## <a name="add-a-controller-to-handle-sign-in-and-sign-out-requests"></a>Добавление контроллера для обработки запросов на вход и выход
 
@@ -209,7 +205,7 @@ ms.locfileid: "76701336"
                 OpenIdConnectAuthenticationDefaults.AuthenticationType);
         }
     }
-    
+
     /// <summary>
     /// Send an OpenID Connect sign-out request.
     /// </summary>
@@ -267,10 +263,8 @@ ms.locfileid: "76701336"
     </html>
     ```
 
-<!--start-collapse-->
-> ### <a name="more-information"></a>Дополнительные сведения
-> С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> См. расширенный список кнопок входа в [рекомендациях по использованию фирменной символики](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "Рекомендации по фирменной символике").
-<!--end-collapse-->
+### <a name="more-information"></a>Дополнительные сведения
+С помощью этой страницы можно добавить кнопку входа в формате SVG с черным фоном:<br/>![Войдите с помощью учетной записи Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-use/aspnetsigninbuttonsample.png)<br/> См. расширенный список кнопок входа в [рекомендациях по использованию фирменной символики](https://docs.microsoft.com/azure/active-directory/develop/active-directory-branding-guidelines "Рекомендации по фирменной символике").
 
 ## <a name="add-a-controller-to-display-users-claims"></a>Добавление контроллера для отображения утверждений пользователя
 Этот контроллер демонстрирует использование атрибута `[Authorize]` для защиты. Этот атрибут разрешает доступ к контроллеру только тем пользователям, которые прошли аутентификацию. В приведенном ниже коде этот атрибут используется для отображения утверждений пользователя, полученных при выполнении входа:
@@ -292,28 +286,26 @@ ms.locfileid: "76701336"
         public ActionResult Index()
         {
             var userClaims = User.Identity as System.Security.Claims.ClaimsIdentity;
-    
+
             //You get the user’s first and last name below:
             ViewBag.Name = userClaims?.FindFirst("name")?.Value;
-    
+
             // The 'preferred_username' claim can be used for showing the username
             ViewBag.Username = userClaims?.FindFirst("preferred_username")?.Value;
-    
+
             // The subject/ NameIdentifier claim can be used to uniquely identify the user across the web
             ViewBag.Subject = userClaims?.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-    
+
             // TenantId is the unique Tenant Id - which represents an organization in Azure AD
             ViewBag.TenantId = userClaims?.FindFirst("http://schemas.microsoft.com/identity/claims/tenantid")?.Value;
-    
+
             return View();
         }
     }
     ```
 
-<!--start-collapse-->
-> ### <a name="more-information"></a>Дополнительные сведения
-> Атрибут `[Authorize]` означает, что все методы контроллера можно выполнять, только если пользователь прошел аутентификацию. Если пользователь, не прошедший аутентификацию, пытается получить доступ к контроллеру, OWIN инициирует запрос на аутентификацию для такого пользователя. Приведенный выше код проверяет список утверждений на наличие определенных атрибутов пользователя, включенных в маркер идентификации пользователя. Эти атрибуты включают имя и фамилию пользователя, а также субъект глобального идентификатора пользователя. Этот субъект содержит *идентификатор клиента*, который представляет идентификатор организации пользователя. 
-<!--end-collapse-->
+### <a name="more-information"></a>Дополнительные сведения
+Атрибут `[Authorize]` означает, что все методы контроллера можно выполнять, только если пользователь прошел аутентификацию. Если пользователь, не прошедший аутентификацию, пытается получить доступ к контроллеру, OWIN инициирует запрос на аутентификацию для такого пользователя. Приведенный выше код проверяет список утверждений на наличие определенных атрибутов пользователя, включенных в маркер идентификации пользователя. Эти атрибуты включают имя и фамилию пользователя, а также субъект глобального идентификатора пользователя. Этот субъект содержит *идентификатор клиента*, который представляет идентификатор организации пользователя.
 
 ## <a name="create-a-view-to-display-the-users-claims"></a>Создание представления для отображения утверждений пользователя
 
@@ -404,16 +396,16 @@ ms.locfileid: "76701336"
 <br/><br/>
 ![Войдите в учетную запись Майкрософт](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin2.png)
 
-<!--start-collapse-->
-> ###  <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Разрешения и согласие для конечной точки платформы удостоверений Майкрософт
->  Приложения, которые интегрируются с платформой удостоверений Майкрософт, следуют модели авторизации, при которой пользователи и администраторы контролируют доступ к данным. Когда пользователь выполнит аутентификацию на платформе удостоверений Майкрософт для доступа к этому приложению, ему будет предложено подтвердить запрошенные приложением разрешения ("Просмотр базового профиля" и "Ведение доступа к данным, к которым вам был предоставлен доступ"). Подтвердив разрешения, пользователь может продолжать работу с результатами приложения. Но вместо этого пользователь может увидеть страницу **Требуется согласие администратора**, если выполняется любое из следующих условий:
->  > - Разработчик приложения добавил дополнительные разрешения, для которых требуется **согласие администратора**.
->  > - Клиент настроен (в разделе **Корпоративные приложения -> Параметры пользователя**) так, что пользователи не могут разрешать приложениям доступ к корпоративным данным от своего имени.
->
-> См. сведения о [разрешениях и согласии для конечной точки платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent).
-<!--end-collapse-->
+#### <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Разрешения и согласие для конечной точки платформы удостоверений Майкрософт
 
-#### <a name="view-application-results"></a>Просмотр результатов приложения
+Приложения, которые интегрируются с платформой удостоверений Майкрософт, следуют модели авторизации, при которой пользователи и администраторы контролируют доступ к данным. Когда пользователь выполнит аутентификацию на платформе удостоверений Майкрософт для доступа к этому приложению, ему будет предложено подтвердить запрошенные приложением разрешения ("Просмотр базового профиля" и "Ведение доступа к данным, к которым вам был предоставлен доступ"). Подтвердив разрешения, пользователь может продолжать работу с результатами приложения. Но вместо этого пользователь может увидеть страницу **Требуется согласие администратора**, если выполняется любое из следующих условий:
+
+- Разработчик приложения добавил дополнительные разрешения, для которых требуется **согласие администратора**.
+- Клиент настроен (в разделе **Корпоративные приложения -> Параметры пользователя**) так, что пользователи не могут разрешать приложениям доступ к корпоративным данным от своего имени.
+
+См. сведения о [разрешениях и согласии для конечной точки платформы удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent).
+
+### <a name="view-application-results"></a>Просмотр результатов приложения
 
 После входа пользователь перенаправляется на домашнюю страницу веб-сайта. Домашняя страница — это URL-адрес HTTPS, указанный в информации о регистрации приложения на портале регистрации приложений Майкрософт. Домашняя страница содержит приветственное сообщение *"Привет \<пользователь>",* ссылку для выхода из системы и ссылку для просмотра утверждений пользователя. При переходе по ссылке на утверждения пользователя отображается созданный ранее контроллер утверждений.
 
@@ -447,14 +439,13 @@ ms.locfileid: "76701336"
 
 ## <a name="advanced-options"></a>Расширенные параметры
 
-<!--start-collapse-->
 ### <a name="protect-your-entire-website"></a>Защита всего веб-сайта
+
 Для защиты всего веб-сайта в файле **Global.asax** добавьте атрибут `AuthorizeAttribute` к фильтру `GlobalFilters` в методе `Application_Start`.
 
 ```csharp
 GlobalFilters.Filters.Add(new AuthorizeAttribute());
 ```
-<!--end-collapse-->
 
 ### <a name="restrict-who-can-sign-in-to-your-application"></a>Ограничение доступа на вход в приложение
 
@@ -496,8 +487,3 @@ GlobalFilters.Filters.Add(new AuthorizeAttribute());
 > [Руководство по Microsoft Graph для ASP.NET](https://docs.microsoft.com/graph/tutorials/aspnet)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
-
-Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса:
-
-> [!div class="nextstepaction"]
-> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

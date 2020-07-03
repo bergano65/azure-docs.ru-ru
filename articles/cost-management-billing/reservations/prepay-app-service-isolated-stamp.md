@@ -1,19 +1,18 @@
 ---
 title: Снижение затрат на Службу приложений Azure благодаря зарезервированной емкости
 description: Узнайте, как сэкономить расходы на гербовый сбор Службы приложений Azure (цен. категория "Изолированный") с резервной мощностью.
-services: billing
 author: yashesvi
-manager: yashar
+ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 08/29/2019
+ms.date: 04/30/2020
 ms.author: banders
-ms.openlocfilehash: 8161b169e8801fae4a9aa81290cf29ec28abf858
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: d6d91b455501e2deec4f5ea36e48fafd17144b2c
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995888"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628152"
 ---
 # <a name="save-costs-for-azure-app-service-isolated-stamp-fee-with-reserved-capacity"></a>Экономия расходов на гербовый сбор Службы приложений Azure (цен. категория "Изолированный") с резервной мощностью
 
@@ -42,7 +41,7 @@ ms.locfileid: "75995888"
 Вы можете приобрести резервную мощность изолированной метки на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22AppService%22%7D). Платите за резервирование [наперед или ежемесячными платежами](monthly-payments-reservations.md). Чтобы приобрести резервную мощность, необходимо иметь роль "Владелец" по крайней мере для одной подписки Enterprise или отдельной подписки с оплатой по мере использования.
 
 - Для подписок с Соглашением Enterprise параметр **Добавить зарезервированные экземпляры** следует включить на [портале EA](https://ea.azure.com/). Или, если этот параметр отключен, необходимо быть администратором EA.
-- В рамках программы для поставщиков облачных решений (CSP) только агенты администрирования или агенты продаж могут приобрести резервную мощность Хранилища данных SQL.
+- В рамках программы для поставщиков облачных решений (CSP) только агенты администрирования или агенты продаж могут приобрести зарезервированную емкость Azure Synapse Analytics.
 
 **Для покупки:**
 

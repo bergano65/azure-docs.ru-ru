@@ -1,6 +1,6 @@
 ---
-title: Запрос данных из общедоступной среды C# с помощью кода — служба "аналитика временных рядов Azure" | Документация Майкрософт
-description: Узнайте, как запрашивать данные из среды службы "аналитика временных рядов Azure" с помощью пользовательского приложения C#, написанного на.
+title: Запрос данных из общедоступной среды с помощью кода C# — Azure Time Series Insights | Документация Майкрософт
+description: Узнайте, как запрашивать данные из среды службы "аналитика временных рядов Azure" с помощью пользовательского приложения, написанного на языке C#.
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -9,21 +9,21 @@ manager: cshankar
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 02/03/2020
+ms.date: 04/14/2020
 ms.custom: seodec18
-ms.openlocfilehash: 9f7819974e3548baf5e10f0bf9a2d656d9412beb
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 754d1b80236d138693987cccee7a218ccd96b16b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76987977"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81383883"
 ---
-# <a name="query-data-from-the-azure-time-series-insights-ga-environment-using-c"></a>Запрос данных из общедоступной среды службы "аналитика временных рядов Azure" с помощьюC#
+# <a name="query-data-from-the-azure-time-series-insights-ga-environment-using-c"></a>Запрос данных из общедоступной среды службы "аналитика временных рядов Azure" с помощью C #
 
-В C# этом примере показано, как использовать [API-интерфейсы](https://docs.microsoft.com/rest/api/time-series-insights/ga-query) общедоступных запросов для запроса данных из сред "аналитика временных рядов Azure".
+В этом примере C# показано, как использовать [API-интерфейсы](https://docs.microsoft.com/rest/api/time-series-insights/ga-query) общедоступных запросов для запроса данных из общедоступных сред службы "аналитика временных рядов Azure".
 
 > [!TIP]
-> Просмотрите общедоступные примеры C# кода на [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
+> Просмотрите общедоступные примеры кода [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample)C# по адресу.
 
 ## <a name="summary"></a>Сводка
 
@@ -31,7 +31,7 @@ ms.locfileid: "76987977"
 
 * Получение маркера доступа с помощью Azure Active Directory с помощью [Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).
 
-* Как передать полученный маркер доступа в заголовке `Authorization` последующих запросов API запросов. 
+* Как передать полученный маркер доступа в `Authorization` заголовке последующих запросов API запросов. 
 
 * В примере вызывается каждый из общедоступных интерфейсов API запроса, демонстрирующих, как выполняются HTTP-запросы к:
     * [Получение API сред](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api#get-environments-api) для возврата сред, к которым у пользователя есть доступ
@@ -66,7 +66,7 @@ ms.locfileid: "76987977"
 * Пакет [Microsoft. IdentityModel. Clients. ActiveDirectory](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/) -3.13.9.
 * [Newtonsoft. JSON](https://www.nuget.org/packages/Newtonsoft.Json) — пакет 9.0.1.
 
-Скачайте пакеты в Visual Studio 2019, выбрав параметр **build** > **Build Solution** .
+Скачайте пакеты в Visual Studio 2019, выбрав параметр **Build** > **Build Solution** .
 
 Кроме того, добавьте пакеты с помощью [NuGet 2.12 +](https://www.nuget.org/):
 
@@ -77,7 +77,7 @@ ms.locfileid: "76987977"
 
 [!code-csharp[csharpquery-example](~/samples-tsi/csharp-tsi-ga-sample/Program.cs)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о запросах см. в [справочнике по API запросов](https://docs.microsoft.com/rest/api/time-series-insights/ga-query-api).
 

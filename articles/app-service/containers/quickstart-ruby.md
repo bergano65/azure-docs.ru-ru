@@ -5,13 +5,13 @@ keywords: azure app service, linux, oss, ruby, rails
 ms.assetid: 6d00c73c-13cb-446f-8926-923db4101afa
 ms.topic: quickstart
 ms.date: 07/11/2019
-ms.custom: seodec18
-ms.openlocfilehash: 17c81ab71352f57731d9b36138c88c34421e374c
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.custom: mvc, cli-validate, seodec18
+ms.openlocfilehash: 33723e6dd8fbcd91d2d5863816786c0f08cdf923
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689030"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80045833"
 ---
 # <a name="create-a-ruby-on-rails-app-in-app-service-on-linux"></a>Создание приложения Ruby on Rails в Службе приложений на платформе Linux
 
@@ -121,7 +121,7 @@ http://<app-name>.azurewebsites.net
 
 [!INCLUDE [Clean-up section](../../../includes/cli-script-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Руководство. по Ruby on Rails с Postgres](tutorial-ruby-postgres-app.md)

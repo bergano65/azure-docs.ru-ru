@@ -1,19 +1,18 @@
 ---
 title: Вкладка "сведения" для магазина Dynamics 365 для служб взаимодействия с клиентами | Azure Marketplace
 description: 'Нерекомендуемая статья на CPP, связанная со статьей ПК. WAS: "Используйте вкладку" сведения о витрине ", чтобы указать сведения о продажах и маркетинге для предложения по работе с Dynamics 365 для участия клиентов".'
-services: Dynamics 365 for Customer Engagement, Azure, Marketplace, Cloud Partner Portal, AppSource
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 1121a021b580d23006e3aaff5da4c6a2a58dca73
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 4b5a927b227b2f4b39d9b964219eb3fd50b07406
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824700"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80279935"
 ---
 # <a name="dynamics-365-for-customer-engagement-storefront-details-tab"></a>Вкладка сведений об онлайн-магазине для предложения Dynamics 365 for Customer Engagement
 

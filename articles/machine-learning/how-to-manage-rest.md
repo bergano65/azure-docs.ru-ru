@@ -9,18 +9,18 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/31/2020
-ms.openlocfilehash: 6d6e7d564722d1c2ad4713dd1d39e7cba5ed0605
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 419dbd998abc5cbd2da64a990e13d46f3fb2efbe
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964960"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77580634"
 ---
 # <a name="create-run-and-delete-azure-ml-resources-using-rest"></a>Создание, запуск и удаление ресурсов машинного обучения Azure с помощью функции "ОСТАВШАЯся"
 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azureml-sdk/?view=azure-ml-py). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
+Существует несколько способов управления ресурсами машинного обучения Azure. Можно использовать [портал](https://portal.azure.com/), [интерфейс командной строки](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)или [пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). Также можно выбрать REST API. REST API использует глаголы HTTP для создания, извлечения, обновления и удаления ресурсов. REST API работает с любым языком или инструментом, который может выполнять HTTP-запросы. Простая структура RESTFUL часто делает ее хорошим выбором в средах создания сценариев и для автоматизации Млопс. 
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -32,7 +32,7 @@ ms.locfileid: "76964960"
 > * Использование запросов на удаление для очистки ресурсов 
 > * Использование авторизации на основе ключей для оценки развернутых моделей
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - **Подписка Azure** , для которой у вас есть права администратора. Если у вас нет такой подписки, попробуйте использовать [бесплатную или платную личную подписку](https://aka.ms/AMLFree) .
 - [Рабочая область машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace)
@@ -91,7 +91,7 @@ curl -h "Authentication: Bearer {your-access-token}" ...more args...
 curl https://management.azure.com/subscriptions/{your-subscription-id}/resourceGroups?api-version=2019-11-01 -H "Authorization:Bearer {your-access-token}"
 ```
 
-В Azure публикуются многие API-интерфейсы RESTFUL. Каждый поставщик услуг обновляет свой API с учетом их собственной ритмичности, но делает это без нарушения работы существующих программ. Для обеспечения совместимости поставщик услуг использует аргумент `api-version`. Аргумент `api-version` зависит от службы к службе. Например, для службы Машинное обучение Текущая версия API — `2019-11-01`. Для учетных записей хранения это `2019-06-01`. Для хранилищ ключей это `2019-09-01`. Все вызовы RESTFUL должны устанавливать для аргумента `api-version` ожидаемое значение. Вы можете полагаться на синтаксис и семантику указанной версии, даже если API продолжит развиваться. Если отправить запрос поставщику без аргумента `api-version`, ответ будет содержать доступный для человека список поддерживаемых значений. 
+В Azure публикуются многие API-интерфейсы RESTFUL. Каждый поставщик услуг обновляет свой API с учетом их собственной ритмичности, но делает это без нарушения работы существующих программ. Поставщик услуг использует `api-version` аргумент для обеспечения совместимости. `api-version` Аргумент отличается от службы к службе. Например, для службы Машинное обучение Текущая версия API — `2019-11-01`. Для учетных записей хранения это `2019-06-01`. Для хранилищ ключей это `2019-09-01`. Все вызовы RESTFUL должны задать для `api-version` аргумента ожидаемое значение. Вы можете полагаться на синтаксис и семантику указанной версии, даже если API продолжит развиваться. Если отправить запрос поставщику без `api-version` аргумента, ответ будет содержать доступный для человека список поддерживаемых значений. 
 
 Приведенный выше вызов приведет к сжатию ответа JSON в форме: 
 
@@ -123,7 +123,7 @@ curl https://management.azure.com/subscriptions/{your-subscription-id}/resourceG
 
 ## <a name="drill-down-into-workspaces-and-their-resources"></a>Детализация рабочих областей и их ресурсов
 
-Чтобы получить набор рабочих областей в группе ресурсов, выполните следующую команду, подставив `{your-subscription-id}`, `{your-resource-group}`и `{your-access-token}`: 
+Чтобы получить набор рабочих областей в группе ресурсов, выполните следующую команду, подставив `{your-subscription-id}`, `{your-resource-group}`и: `{your-access-token}` 
 
 ```
 curl https://management.azure.com/subscriptions/{your-subscription-id}/resourceGroups/{your-resource-group}/providers/Microsoft.MachineLearningServices/workspaces/?api-version=2019-11-01 \
@@ -166,7 +166,7 @@ curl https://management.azure.com/subscriptions/{your-subscription-id}/resourceG
 }
 ```
 
-Для работы с ресурсами в рабочей области необходимо переключиться с общего сервера **Management.Azure.com** на REST API сервер, относящийся к расположению рабочей области. Запишите значение ключа `discoveryUrl` в приведенном выше ответе JSON. Если вы получили этот URL-адрес, вы получите ответ примерно следующего вида:
+Для работы с ресурсами в рабочей области необходимо переключиться с общего сервера **Management.Azure.com** на REST API сервер, относящийся к расположению рабочей области. Запишите значение `discoveryUrl` ключа в приведенном выше ответе JSON. Если вы получили этот URL-адрес, вы получите ответ примерно следующего вида:
 
 ```json
 {
@@ -183,7 +183,7 @@ curl https://management.azure.com/subscriptions/{your-subscription-id}/resourceG
 }
 ```
 
-Значение ответа `api` — это URL-адрес сервера, который будет использоваться для дополнительных запросов. Например, чтобы перечислить эксперименты, отправьте следующую команду. Замените `regional-api-server` значением `api` ответа (например, `centralus.api.azureml.ms`). Также замените `your-subscription-id`, `your-resource-group`, `your-workspace-name`и `your-access-token` как обычно:
+Значение `api` ответа — это URL-адрес сервера, который будет использоваться для дополнительных запросов. Например, чтобы перечислить эксперименты, отправьте следующую команду. Замените `regional-api-server` на значение `api` ответа (например, `centralus.api.azureml.ms`). Также замените `your-subscription-id`, `your-resource-group` `your-workspace-name`, и `your-access-token` как обычно:
 
 ```bash
 curl https://{regional-api-server}/history/v1.0/subscriptions/{your-subscription-id}/resourceGroups/{your-resource-group}/\
@@ -199,13 +199,13 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/mod
 -H "Authorization:Bearer {your-access-token}"
 ```
 
-Обратите внимание, что для перечисления экспериментов путь начинается с `history/v1.0` при перечислении моделей путь начинается с `modelmanagement/v1.0`. REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. В справочных документах по API по ссылкам ниже перечислены операции, параметры и коды ответов для различных операций.
+Обратите внимание, что для перечисления экспериментов `history/v1.0` путь начинается с, когда для вывода списка моделей `modelmanagement/v1.0`путь начинается с. REST API разделена на несколько операционных групп, каждый из которых имеет отдельный путь. В справочных документах по API по ссылкам ниже перечислены операции, параметры и коды ответов для различных операций.
 
-|Область|путь|Справочные материалы|
+|Область|Path|Справочник|
 |-|-|-|
-|Artifacts|артефакт/версия 2.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/artifacts)|
+|Артефакты|артефакт/версия 2.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/artifacts)|
 |Хранилища данных|хранилище данных/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/datastores)|
-|Настройка параметров|устройство/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/hyperparametertuning)|
+|Настройка гиперпараметров|устройство/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/hyperparametertuning)|
 |Модели|моделманажемент/v 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/modelsanddeployments/mlmodels)|
 |Журнал выполнения|выполнение/v 1.0/и журнал/версия 1.0/|[Справочник по REST API](https://docs.microsoft.com/rest/api/azureml/runs)|
 
@@ -235,7 +235,7 @@ providers/Microsoft.MachineLearningServices/workspaces/{your-workspace-name}/com
 -H "Authorization:Bearer {your-access-token}"
 ```
 
-Для создания или перезаписи именованного ресурса используется запрос на размещение. В дополнение к уже знакомым подстановкам `your-subscription-id`, `your-resource-group`, `your-workspace-name`и `your-access-token`, заменяют `your-compute-name`и значения `location`, `vmSize`, `vmPriority`, `scaleSettings`, `adminUserName`и `adminUserPassword`. В соответствии с указаниями, указанными в справочнике по [ссылке вычислительная среда машинного обучения-CREATE или Update SDK](https://docs.microsoft.com/rest/api/azureml/workspacesandcomputes/machinelearningcompute/createorupdate), следующая команда создает выделенный Standard_D1 с одним узлом (Базовый вычислительный ресурс ЦП), который будет масштабироваться через 30 минут:
+Для создания или перезаписи именованного ресурса используется запрос на размещение. В следующем `your-subscription-id`примере в дополнение к знакомым подстановкам, `your-resource-group`, `your-workspace-name`и `your-access-token`, замените `your-compute-name`и значениями для `location`, `vmSize`, `vmPriority`, `scaleSettings` `adminUserName`, и. `adminUserPassword` В соответствии с указаниями, указанными в справочнике по [ссылке вычислительная среда машинного обучения-CREATE или Update SDK](https://docs.microsoft.com/rest/api/azureml/workspacesandcomputes/machinelearningcompute/createorupdate), следующая команда создает выделенный Standard_D1 с одним узлом (Базовый вычислительный ресурс ЦП), который будет масштабироваться через 30 минут:
 
 ```bash
 curl -X PUT \
@@ -264,7 +264,7 @@ curl -X PUT \
 ```
 
 > [!Note]
-> В терминалах Windows может потребоваться экранирование символов двойной кавычки при отправке данных JSON. Это значит, что текст, например `"location"`, становится `\"location\"`. 
+> В терминалах Windows может потребоваться экранирование символов двойной кавычки при отправке данных JSON. То есть текст, например, `"location"` становится `\"location\"`. 
 
 Успешный запрос получит `201 Created` ответ, но обратите внимание, что этот ответ просто означает, что процесс подготовки начался. Чтобы подтвердить успешность выполнения, необходимо опросить (или использовать портал).
 
@@ -331,7 +331,7 @@ curl https://{regional-api-server}/execution/v1.0/subscriptions/{your-subscripti
   -F runDefinitionFile=@runDefinition.json
 ```
 
-Успешный запрос POST приведет к формированию состояния `200 OK` с текстом ответа, содержащим идентификатор созданного запуска:
+Успешный запрос POST приведет к `200 OK` формированию состояния с текстом ответа, содержащим идентификатор созданного запуска:
 
 ```json
 {
@@ -372,7 +372,7 @@ curl 'https://{scoring-uri}' \
 
 Каждая Рабочая область машинного обучения Azure зависит от четырех других ресурсов Azure: реестра контейнеров с включенным администрированием, хранилищем ключей, ресурсом Application Insights и учетной записью хранения. Невозможно создать рабочую область, пока не будут созданы эти ресурсы. Сведения о создании каждого ресурса см. в справочнике по REST API.
 
-Чтобы создать рабочую область, поставьте вызов, аналогичный приведенному ниже, для `management.azure.com`. Хотя этот вызов требует установки большого количества переменных, он структурно идентичен другим вызовам, обсуждаемым в этой статье. 
+Чтобы создать рабочую область, установите вызов, аналогичный приведенному ниже `management.azure.com`, в. Хотя этот вызов требует установки большого количества переменных, он структурно идентичен другим вызовам, обсуждаемым в этой статье. 
 
 ```bash
 curl -X PUT \
@@ -400,9 +400,26 @@ providers/Microsoft.Storage/storageAccounts/{your-storage-account-name}"
 }'
 ```
 
-Вы должны получить ответ `202 Accepted` и в возвращенных заголовках `Location` URI. Этот универсальный код ресурса (URI) можно получить для получения сведений о развертывании, включая полезные сведения об отладке, если возникла проблема с одним из зависимых ресурсов (например, если вы забыли включить административный доступ в реестре контейнеров). 
+В возвращенных заголовках должен быть `202 Accepted` `Location` получен ответ и URI. Этот универсальный код ресурса (URI) можно получить для получения сведений о развертывании, включая полезные сведения об отладке, если возникла проблема с одним из зависимых ресурсов (например, если вы забыли включить административный доступ в реестре контейнеров). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="troubleshooting"></a>Устранение неполадок
+
+### <a name="resource-provider-errors"></a>Ошибки поставщика ресурсов
+
+[!INCLUDE [machine-learning-resource-provider](../../includes/machine-learning-resource-provider.md)]
+
+### <a name="moving-the-workspace"></a>Перемещение рабочей области
+
+> [!WARNING]
+> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
+
+### <a name="deleting-the-azure-container-registry"></a>Удаление реестра контейнеров Azure
+
+Для некоторых операций в рабочей области Машинное обучение Azure используется реестр контейнеров Azure (запись контроля доступа). Он автоматически создает экземпляр записи контроля доступа, когда ему требуется первый.
+
+[!INCLUDE [machine-learning-delete-acr](../../includes/machine-learning-delete-acr.md)]
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с полным [справочником по AzureML REST API](https://docs.microsoft.com/rest/api/azureml/).
 - Узнайте, как использовать конструктор & Studio для [прогнозирования стоимости автомобилей с помощью конструктора (Предварительная версия)](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-train-score).

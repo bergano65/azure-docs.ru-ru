@@ -8,17 +8,17 @@ ms.date: 12/02/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 6f41adbb726313ef095084d079dc7852736e0c06
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74870536"
 ---
 # <a name="system-functions-azure-cosmos-db"></a>Системные функции (Azure Cosmos DB)
 
  Cosmos DB предоставляет множество встроенных функций SQL. Ниже перечислены их категории.  
   
-|Группа функций|Описание|Operations|  
+|Группа функций|Описание|Операции|  
 |--------------|-----------------|-----------------| 
 |[Функции массивов](sql-query-array-functions.md)|Функции массивов выполняют операцию над входным массивом и возвращают числовое, логическое значение либо массив. | [ARRAY_CONCAT](sql-query-array-concat.md), [ARRAY_CONTAINS](sql-query-array-contains.md), [ARRAY_LENGTH](sql-query-array-length.md), [ARRAY_SLICE](sql-query-array-slice.md) |
 |[Функции даты и времени](sql-query-date-time-functions.md)|Функции даты и времени позволяют получить текущую дату и время в формате UTC в двух формах. числовая метка времени, значение которой является эпохой UNIX в миллисекундах или в виде строки, которая соответствует формату ISO 8601. | [Жеткуррентдатетиме](sql-query-getcurrentdatetime.md), [жеткурренттиместамп](sql-query-getcurrenttimestamp.md) |
@@ -37,12 +37,12 @@ ms.locfileid: "74870536"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)
 - [Функции массивов](sql-query-array-functions.md)
 - [Функции даты и времени](sql-query-date-time-functions.md)
 - [Математические функции](sql-query-mathematical-functions.md)
 - [Пространственные функции](sql-query-spatial-functions.md)
 - [Строковые функции](sql-query-string-functions.md)
 - [Функции проверки типа](sql-query-type-checking-functions.md)
-- [Определяемые пользователем функции](sql-query-udfs.md)
-- [Статистические функции](sql-query-aggregates.md)
+- [Определенные пользователем функции](sql-query-udfs.md)
+- [Статистические выражения](sql-query-aggregates.md)

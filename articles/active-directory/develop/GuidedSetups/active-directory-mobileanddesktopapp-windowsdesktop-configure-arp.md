@@ -1,27 +1,22 @@
 ---
-title: Приступая к работе с Azure AD версии 2 для классического приложения для Windows. Настройка | Документация Майкрософт
+title: Azure AD v2 Windows Desktop начало работы-config
 description: Здесь описывается, как классическое приложение для Windows .NET (XAML) может получить маркер доступа и вызвать API, защищенный конечной точкой Azure Active Directory версии 2.
 services: active-directory
-documentationcenter: dev-center-name
-author: andretms
+author: jmprieur
 manager: CelesteDG
-editor: ''
-ms.assetid: 820acdb7-d316-4c3b-8de9-79df48ba3b06
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/29/2020
 ms.author: ryanwi
 ms.custom: aaddev
-ms.openlocfilehash: 4c757b52e7378bffe4a4954022b131b772a337cf
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: d82f9beecb1b558fca094c31f8c6718c990debd1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76897685"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885775"
 ---
 # <a name="add-the-applications-registration-information-to-your-app"></a>Добавление в приложение сведений о его регистрации
 На этом шаге вам нужно добавить идентификатор приложения в свой проект.

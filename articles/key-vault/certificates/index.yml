@@ -1,0 +1,64 @@
+### YamlMime:Landing
+title: Сертификаты
+summary: Azure Key Vault позволяет приложениям и пользователям Microsoft Azure хранить сертификаты, которые создаются поверх ключей и секретов и поддерживают функцию автоматического обновления.
+metadata:
+  title: Документация по Azure Key Vault — сертификаты
+  description: Azure Key Vault позволяет приложениям и пользователям Microsoft Azure хранить сертификаты, которые создаются поверх ключей и секретов и поддерживают функцию автоматического обновления.
+  services: key-vault
+  ms.service: key-vault
+  ms.subservice: certificates
+  ms.topic: landing-page
+  author: msmbaldwin
+  ms.author: mbaldwin
+  ms.date: 04/07/2020
+  ms.openlocfilehash: 78963c02d35d93b4756c12f948c5ba214fb23e90
+  ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 04/16/2020
+  ms.locfileid: "81423536"
+landingContent:
+- title: Сертификаты
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Сведения о сертификатах Key Vault
+      url: about-certificates.md
+    - text: Начало работы с сертификатами Key Vault
+      url: certificate-scenarios.md
+    - text: Способы создания сертификатов
+      url: create-certificate.md
+    - text: Мониторинг и администрирование процесса создания сертификатов
+      url: create-certificate-scenarios.md
+- title: Начало работы
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure CLI
+      url: quick-create-cli.md
+    - text: Azure PowerShell
+      url: quick-create-powershell.md
+    - text: Портал
+      url: quick-create-portal.md
+    - text: Python
+      url: quick-create-python.md
+    - text: Импорт сертификата в Key Vault
+      url: tutorial-import-certificate.md
+- title: Дополнительные сведения о Key Vault
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения о Key Vault
+      url: ../general/overview.md
+    - text: Основные понятия
+      url: ../general/basic-concepts.md
+    - text: Общие сведения об обратимом удалении
+      url: ../general/overview-soft-delete.md
+    - text: Общие сведения о безопасности
+      url: ../general/overview-security.md
+- title: Microsoft Learn
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Управление секретами в серверных приложениях с помощью Azure Key Vault
+      url: /learn/modules/manage-secrets-with-azure-key-vault/

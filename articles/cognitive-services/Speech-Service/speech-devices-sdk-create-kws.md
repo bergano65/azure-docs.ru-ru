@@ -3,19 +3,19 @@ title: Создание пользовательских ключевых сло
 titleSuffix: Azure Cognitive Services
 description: Устройство всегда прослушивает ключевое слово (или фразу). Когда пользователь говорит о ключевом слове, устройство отправляет все последующие аудио в облако, пока пользователь не прекратит говорить. Настройка ключевого слова является эффективным способом различения устройства и усиления фирменной символики.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.author: dapine
-ms.openlocfilehash: 46e9f8e660c3fd62807d630481e6b3057d2351a5
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.author: trbye
+ms.openlocfilehash: 8e67d624c77eb838f7646731bbdedd8f97f81b96
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76717022"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81400063"
 ---
 # <a name="create-a-custom-keyword-using-speech-studio"></a>Создание пользовательского ключевого слова с помощью Speech Studio
 
@@ -55,6 +55,6 @@ ms.locfileid: "76717022"
 
 1. Сохраните ZIP-файл на компьютер. Этот файл потребуется для развертывания настраиваемого ключевого слова на устройстве.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Протестируйте настраиваемое ключевое слово с помощью [пакета SDK для речевых устройств](https://aka.ms/sdsdk-quickstart).

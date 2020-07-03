@@ -2,22 +2,19 @@
 title: Просмотр и скачивание сведений о ценах для вашей организации
 description: Узнайте, как просматривать и скачивать цены, а также оценивать затраты с учетом цен вашей организации.
 author: bandersmsft
-manager: amberb
+ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/10/2020
+ms.date: 02/14/2020
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 72ad7b13010e1369e3e0e4d31ade089012aaf8f3
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 1dd0dfad0c68e18ae272d5d94fedd67d24be9ae1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77132858"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77200784"
 ---
 # <a name="view-and-download-your-organizations-azure-pricing"></a>Просмотр и скачивание сведений о ценах для вашей организации
 

@@ -5,14 +5,14 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: 2ede7d474406b4b38b9496fbcfddb2a2e6085b58
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67185503"
 ---
 > [!div class="op_single_selector"]
-> * [портал Azure](../articles/storage/common/storage-e2e-troubleshooting.md)
+> * [Портал Azure](../articles/storage/common/storage-e2e-troubleshooting.md)
 > 
 > 
 

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: virtual-machines-windows, virtual-machines-linux
 author: cynthn
 ms.service: multiple
@@ -9,10 +9,10 @@ ms.date: 10/09/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 8e0e549f88caf4a541642bab77faf54b5e536b29
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71174986"
 ---
 ## <a name="deploy-an-image-with-marketplace-terms"></a>Развертывание образа на условиях Marketplace

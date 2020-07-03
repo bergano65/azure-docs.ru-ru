@@ -1,25 +1,26 @@
 ---
-title: Высокая доступность и надежность — планировщик Azure
+title: Высокий уровень доступности и надежности
 description: Сведения о функциях обеспечения высокой доступности и надежности в планировщике Azure
 services: scheduler
 ms.service: scheduler
 author: derek1ee
 ms.author: deli
-ms.reviewer: klam
-ms.assetid: 5ec78e60-a9b9-405a-91a8-f010f3872d50
+ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 08/16/2016
-ms.openlocfilehash: 6a729df7eb08f8dacff4b0d35d011854208510ff
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 20c2054e168a9b17d9b4ab159cfefbf607ab6d11
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979286"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78898564"
 ---
 # <a name="high-availability-and-reliability-for-azure-scheduler"></a>Высокая доступность и надежность для планировщика Azure
 
 > [!IMPORTANT]
 > [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
+>
+> Планировщик больше не доступен в портал Azure, но командлеты PowerShell для [REST API](/rest/api/scheduler) и [планировщика Azure](scheduler-powershell-reference.md) в настоящее время остаются доступными, чтобы можно было управлять заданиями и коллекциями заданий.
 
 Планировщик Azure обеспечивает [высокий уровень доступности](https://docs.microsoft.com/azure/architecture/framework/#resiliency) и надежности для заданий. Дополнительные сведения см. в статье [Соглашение об уровне обслуживания для планировщика](https://azure.microsoft.com/support/legal/sla/scheduler).
 
@@ -29,7 +30,7 @@ ms.locfileid: "75979286"
 
 ### <a name="geo-redundant-service-deployment"></a>Географически избыточное развертывание служб
 
-Планировщик Azure доступен на портале Azure практически для [всех географических регионов, поддерживаемых Azure на данный момент](https://azure.microsoft.com/global-infrastructure/regions/#services). Таким образом, если центр обработки данных Azure в регионе размещения становится недоступным, вы можете по-прежнему использовать планировщик Azure, так как возможности отработки отказа службы позволяют работать с планировщиком из другого центра обработки данных.
+Планировщик Azure доступен во [всех регионах, поддерживаемых Azure уже сегодня](https://azure.microsoft.com/global-infrastructure/regions/#services). Таким образом, если центр обработки данных Azure в регионе размещения становится недоступным, вы можете по-прежнему использовать планировщик Azure, так как возможности отработки отказа службы позволяют работать с планировщиком из другого центра обработки данных.
 
 ### <a name="geo-regional-job-replication"></a>Репликация заданий по географическим регионам
 
@@ -50,7 +51,7 @@ ms.locfileid: "75979286"
 
 <a name="retry-policies"></a>
 
-### <a name="retry-policies"></a>политики повтора;
+### <a name="retry-policies"></a>Политики повтора
 
 Планировщик Azure позволяет настроить политики повтора. При сбое задания планировщик по умолчанию выполняет еще четыре попытки запустить это задание с интервалом 30 секунд. Вы можете задать собственное значение интенсивности, например 10 раз с интервалом 30 секунд или два раза с интервалом в один день.
 
@@ -70,9 +71,9 @@ ms.locfileid: "75979286"
 
 Сведения о настройке альтернативной конечной точки см. в разделе [errorAction](scheduler-concepts-terms.md#error-action).
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Что такое планировщик Azure?](scheduler-intro.md)
 * [Основные понятия, терминология и иерархия сущностей](scheduler-concepts-terms.md)
-* [Создание сложных расписаний и расширенных схем повторения](scheduler-advanced-complexity.md)
+* [Справочник по API REST планировщика Azure](/rest/api/scheduler)
+* [Справочник по командлетам PowerShell планировщика Azure](scheduler-powershell-reference.md)
 * [Лимиты, квоты, значения по умолчанию и коды ошибок](scheduler-limits-defaults-errors.md)

@@ -1,19 +1,14 @@
 ---
-title: Использование коллекции общих образов для создания пользовательского пула (пакетная служба Azure) | Документация Майкрософт
+title: Создание пользовательского пула с помощью коллекции общих образов
 description: Создайте пул пакетной службы с помощью коллекции общих образов для подготовки пользовательских образов к вычисленным узлам, содержащим программное обеспечение и данные, необходимые для вашего приложения. Пользовательские образы представляют собой эффективный способ настройки вычислительных узлов для выполнения рабочих нагрузок пакетной службы.
-services: batch
-author: LauraBrenner
-manager: evansma
-ms.service: batch
 ms.topic: article
 ms.date: 08/28/2019
-ms.author: labrenne
-ms.openlocfilehash: 2cff6a0e48fc7bf58a642f509fcda6b114e002ef
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 1a26aaecc5da0ef348b720919b04d86f8fcfbc70
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022942"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82743575"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-pool"></a>Создание пользовательского пула с помощью коллекции общих образов
 
@@ -37,7 +32,10 @@ ms.locfileid: "77022942"
 * **Повышенная производительность, чем пользовательский образ.** Используя общие образы, время, необходимое пулу для достижения стабильного состояния, будет быстрее на 25%, а задержка простоя виртуальной машины составляет 30%.
 * **Управление версиями и группирование изображений для упрощения управления.** Определение группирования изображений содержит сведения о том, почему было создано изображение, какую операционную систему он использует, а также сведения об использовании образа. Группирование изображений позволяет упростить управление образами. Дополнительные сведения см. в разделе [определения изображений](../virtual-machines/windows/shared-image-galleries.md#image-definitions).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
+
+> [!NOTE]
+> Необходимо пройти проверку подлинности с помощью Azure AD. Если вы используете Shared-Key-AUTH, вы получите ошибку проверки подлинности.  
 
 * **Учетная запись пакетной службы Azure.** Чтобы создать учетную запись пакетной службы, ознакомьтесь с краткими руководствами по пакетной службе, используя [портал Azure](quick-create-portal.md) или [Azure CLI](quick-create-cli.md).
 
@@ -85,7 +83,10 @@ ms.locfileid: "77022942"
 
 ## <a name="create-a-pool-from-a-shared-image-using-the-azure-cli"></a>Создание пула из общего образа с помощью Azure CLI
 
-Чтобы создать пул из общего образа с помощью Azure CLI, используйте команду `az batch pool create`. Укажите идентификатор общего образа в поле `--image`. Убедитесь, что тип ОС и номер SKU соответствуют версиям, указанным в `--node-agent-sku-id`
+Чтобы создать пул из общего образа с помощью Azure CLI, используйте `az batch pool create` команду. Укажите идентификатор общего образа в `--image` поле. Убедитесь, что тип ОС и номер SKU соответствуют версиям, указанным в параметре`--node-agent-sku-id`
+
+> [!NOTE]
+> Необходимо пройти проверку подлинности с помощью Azure AD. Если вы используете Shared-Key-AUTH, вы получите ошибку проверки подлинности.  
 
 ```azurecli
 az batch pool create \
@@ -95,9 +96,9 @@ az batch pool create \
     --node-agent-sku-id "batch.node.ubuntu 16.04"
 ```
 
-## <a name="create-a-pool-from-a-shared-image-using-c"></a>Создание пула из общего образа с помощьюC#
+## <a name="create-a-pool-from-a-shared-image-using-c"></a>Создание пула из общего образа с помощью C #
 
-Кроме того, можно создать пул из общего образа с помощью C# пакета SDK.
+Кроме того, можно создать пул из общего образа с помощью пакета SDK для C#.
 
 ```csharp
 private static VirtualMachineConfiguration CreateVirtualMachineConfiguration(ImageReference imageReference)
@@ -129,6 +130,71 @@ private static void CreateBatchPool(BatchClient batchClient, VirtualMachineConfi
 }
 ```
 
+## <a name="create-a-pool-from-a-shared-image-using-python"></a>Создание пула из общего образа с помощью Python
+
+Вы также можете создать пул из общего образа с помощью пакета SDK для Python: 
+
+```python
+# Import the required modules from the
+# Azure Batch Client Library for Python
+import azure.batch as batch
+import azure.batch.models as batchmodels
+from azure.common.credentials import ServicePrincipalCredentials
+
+# Specify Batch account and service principal account credentials
+account = "{batch-account-name}"
+batch_url = "{batch-account-url}"
+ad_client_id = "{sp-client-id}"
+ad_tenant = "{tenant-id}"
+ad_secret = "{sp-secret}"
+
+# Pool settings
+pool_id = "LinuxNodesSamplePoolPython"
+vm_size = "STANDARD_D2_V3"
+node_count = 1
+
+# Initialize the Batch client with Azure AD authentication
+creds = ServicePrincipalCredentials(
+    client_id=ad_client_id,
+    secret=ad_secret,
+    tenant=ad_tenant,
+    resource="https://batch.core.windows.net/"
+)
+client = batch.BatchServiceClient(creds, batch_url)
+
+# Configure the start task for the pool
+start_task = batchmodels.StartTask(
+    command_line="printenv AZ_BATCH_NODE_STARTUP_DIR"
+)
+start_task.run_elevated = True
+
+# Create an ImageReference which specifies the image from
+# Shared Image Gallery to install on the nodes.
+ir = batchmodels.ImageReference(
+    virtual_machine_image_id="/subscriptions/{sub id}/resourceGroups/{resource group name}/providers/Microsoft.Compute/galleries/{gallery name}/images/{image definition name}/versions/{version id}"
+)
+
+# Create the VirtualMachineConfiguration, specifying
+# the VM image reference and the Batch node agent to
+# be installed on the node.
+vmc = batchmodels.VirtualMachineConfiguration(
+    image_reference=ir,
+    node_agent_sku_id="batch.node.ubuntu 18.04"
+)
+
+# Create the unbound pool
+new_pool = batchmodels.PoolAddParameter(
+    id=pool_id,
+    vm_size=vm_size,
+    target_dedicated_nodes=node_count,
+    virtual_machine_configuration=vmc,
+    start_task=start_task
+)
+
+# Create pool in the Batch service
+client.pool.add(new_pool)
+```
+
 ## <a name="create-a-pool-from-a-shared-image-using-the-azure-portal"></a>Создание пула из общего образа с помощью портал Azure
 
 Чтобы создать пул из общего образа в портал Azure, выполните следующие действия.
@@ -148,7 +214,7 @@ private static void CreateBatchPool(BatchClient batchClient, VirtualMachineConfi
 
 * **Номера реплик коллекции общих образов.**  Для каждого пула, имеющего до 600 экземпляров, рекомендуется разместить по крайней мере одну реплику. Например, при создании пула с 3000 виртуальными машинами необходимо иметь по крайней мере 5 реплик образа. Мы всегда рекомендуем хранить больше реплик, чем минимальные требования для повышения производительности.
 
-* **Время ожидания изменения размера.** Если в пуле содержится фиксированное число узлов (если он не выполняет Автомасштабирование), увеличьте свойство `resizeTimeout` пула в зависимости от размера пула. Для каждых 1000 виртуальных машин рекомендуемое время ожидания изменения размера составляет не менее 15 минут. Например, рекомендуемое время ожидания изменения размера для пула с 2000 виртуальными машинами составляет не менее 30 минут.
+* **Время ожидания изменения размера.** Если в пуле содержится фиксированное число узлов (если он не выполняет Автомасштабирование), увеличьте `resizeTimeout` свойство пула в зависимости от размера пула. Для каждых 1000 виртуальных машин рекомендуемое время ожидания изменения размера составляет не менее 15 минут. Например, рекомендуемое время ожидания изменения размера для пула с 2000 виртуальными машинами составляет не менее 30 минут.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

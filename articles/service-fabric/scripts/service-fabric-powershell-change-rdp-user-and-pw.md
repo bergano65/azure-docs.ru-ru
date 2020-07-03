@@ -14,12 +14,12 @@ ms.topic: sample
 ms.date: 03/19/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 0cf9f8362d3fa683084aef840cf35cd9a843608a
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: b7f229162ed745408121d898f5af516d22a0c039
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614814"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80984935"
 ---
 # <a name="update-the-admin-username-and-password-of-the-vms-in-a-cluster"></a>Обновление имени пользователя и пароля администратора виртуальных машин в кластере
 
@@ -42,6 +42,10 @@ ms.locfileid: "75614814"
 | [Get-AzVmss](/powershell/module/az.compute/get-azvmss) | Получает свойства типа узла кластера (масштабируемого набора виртуальных машин).   |
 | [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension)| Добавляет расширение в масштабируемый набор виртуальных машин.|
 | [Update-AzVmss](/powershell/module/az.compute/update-azvmss)|Обновляет состояние масштабируемого набора виртуальных машин до состояния локального объекта VMSS.|
+
+## <a name="duration"></a>Duration
+
+Например, для пяти узлов одного типа изменение имени пользователя или пароля занимает 45–60 минут. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

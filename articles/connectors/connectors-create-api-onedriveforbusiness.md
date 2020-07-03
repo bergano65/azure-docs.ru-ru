@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/18/2016
 tags: connectors
 ms.openlocfilehash: 48c819566db43e2f997309d1bea55a9436ec7085
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74789463"
 ---
 # <a name="get-started-with-the-onedrive-for-business-connector"></a>Начало работы с соединителем OneDrive для бизнеса
@@ -22,9 +22,9 @@ ms.locfileid: "74789463"
 ## <a name="create-a-connection-to-onedrive-for-business"></a>Создание подключения к OneDrive для бизнеса
 Для создания приложений логики с помощью OneDrive для бизнеса необходимо создать **подключение**, а затем указать данные для приведенных ниже свойств.
 
-| Свойство | Обязательно для заполнения | Описание |
+| Свойство | Обязательно | Описание |
 | --- | --- | --- |
-| по маркеру |ДА |Укажите учетные данные OneDrive для бизнеса |
+| Токен |Да |Укажите учетные данные OneDrive для бизнеса |
 
 Созданное подключение можно использовать для выполнения действий и прослушивания триггеров, описанных в этой статье.
 

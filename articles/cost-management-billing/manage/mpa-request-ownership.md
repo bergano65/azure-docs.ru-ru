@@ -2,22 +2,17 @@
 title: Получение права владения на выставление счетов в подписках Azure по Соглашению с партнером Майкрософт (MPA)
 description: Узнайте о запросе прав владения на выставление счетов в подписках Azure от других пользователей.
 author: amberbhargava
-manager: amberb
-editor: banders
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/13/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 65b56511a3b454b192b5adb2a98fb3bb3510bb7e
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: da16e0898f08e1cca602ca5927bce82ed32353fe
+ms.sourcegitcommit: ced98c83ed25ad2062cc95bab3a666b99b92db58
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75988205"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80437858"
 ---
 # <a name="get-billing-ownership-of-azure-subscriptions-to-your-mpa-account"></a>Получение права владения на выставление счетов в подписках Azure по учетной записи MPA
 
@@ -120,7 +115,7 @@ ms.locfileid: "75988205"
 - [Enterprise — разработка и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/)\*
 - [Соглашение Microsoft Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/)
 
-\* Подписка "Enterprise — разработка и тестирование" оплачивается после передачи по тарифам оплаты по мере использования. Любые скидки, предоставляемые в рамках предложения "Enterprise — разработка и тестирование" по клиентскому Соглашению Enterprise, будут недоступны для партнера CSP.
+\* Сначала необходимо преобразовать подписку на разработку и тестирование в предложение EA Enterprise, отправив запрос в службу поддержки. После преобразования подписка "Enterprise — разработка и тестирование" будет оплачиваться по мере использования. Скидки, предоставляемые в рамках предложения "Enterprise — разработка и тестирование" через соглашение EA клиента, будут недоступны партнеру CSP.
 
 ## <a name="additional-information"></a>Дополнительные сведения
 
@@ -144,7 +139,7 @@ ms.locfileid: "75988205"
 
 ### <a name="azure-reservations-transfer"></a>Перемещение Azure Reserved Virtual Machine Instances
 
-Azure Reserved Virtual Machine Instances не перемещаются с подписками автоматически. Чтобы переместить резервирования, [обратитесь в службу поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+Azure Reserved Virtual Machine Instances не перемещаются с подписками автоматически. Вы можете сохранить резервирование в EA для других подписок или [отменить резервирование](https://docs.microsoft.com/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations), после чего партнер сможет повторно приобрести его в рамках CSP. 
 
 ### <a name="access-to-azure-services"></a>Доступ к службам Azure
 

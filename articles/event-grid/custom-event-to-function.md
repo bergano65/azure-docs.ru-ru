@@ -8,12 +8,12 @@ ms.author: babanisa
 ms.date: 11/15/2019
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: a9281ba1e2bf68da2318c32ab7037515697f92a5
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.openlocfilehash: 5e38571cf84537fd722093b96cd277743e8ce80c
+ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708852"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80292152"
 ---
 # <a name="quickstart-route-custom-events-to-an-azure-function-with-event-grid"></a>Краткое руководство. Маршрутизация настраиваемых событий в Функции Azure с помощью Сетки событий
 
@@ -54,7 +54,7 @@ ms.locfileid: "75708852"
     5. В поле **Схема событий** оставьте значение по умолчанию **Схема сетки событий**. 
 
        ![Страница "Создать раздел"](./media/custom-event-to-function/create-custom-topic.png)
-    6. Нажмите кнопку **Создать**. 
+    6. Нажмите кнопку **создания**. 
 
 5. После создания пользовательского раздела появится уведомление об успехе. Выберите **Перейти к группе ресурсов**. 
 
@@ -124,7 +124,7 @@ ms.locfileid: "75708852"
 ### <a name="azure-powershell"></a>Azure PowerShell
 Во втором примере для выполнения аналогичных действий используется PowerShell.
 
-1. На портале Azure выберите **Cloud Shell** (или перейдите по адресу https://shell.azure.com/) ). Выберите **PowerShell** в левом верхнем углу окна Cloud Shell. Пример того, как выглядит окно **Cloud Shell**, приведен в разделе "Инфраструктура CLI Azure".
+1. На портале Azure выберите **Cloud Shell** (или перейдите по адресу `https://shell.azure.com/`). Выберите **PowerShell** в левом верхнем углу окна Cloud Shell. Пример того, как выглядит окно **Cloud Shell**, приведен в разделе "Инфраструктура CLI Azure".
 2. Задайте следующие переменные. После копирования и вставки команды перед ее выполнением измените соответствующим образом **имя раздела** и **имя группы ресурсов**.
 
     ```powershell

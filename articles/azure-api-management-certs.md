@@ -10,12 +10,12 @@ ms.service: api-management
 ms.topic: article
 ms.date: 08/01/2017
 ms.author: gwallace
-ms.openlocfilehash: 5ce96796cbfdcefbaf5568ff199cba6a87f65e05
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 4b49a9b391eeca2d2e249b171d99f231bda6fdff
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359880"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78329126"
 ---
 # <a name="upload-an-azure-service-management-certificate"></a>Передача сертификата управления службами Azure
 Сертификаты управления позволяют выполнять аутентификацию с помощью классической модели развертывания Azure. Многие программы и инструменты (например, Visual Studio или пакет SDK Azure) будут использовать эти сертификаты для автоматизации настройки и развертывания разных служб Azure. 
@@ -29,9 +29,9 @@ ms.locfileid: "68359880"
 
 Для автоматизации проверки подлинности клиентского кода можно также использовать службу [Azure Active Directory](https://azure.microsoft.com/services/active-directory/).
 
-**Примечание.** Для выполнения каких-либо операций с сертификатами управления необходимо быть соадминистратором подписки. [Узнайте](https://go.microsoft.com/fwlink/?linkid=849300), как добавить или удалить соадминистратора на новом портале Azure. 
+**Примечание.** Вы должны быть соадминистратором подписки для выполнения любых операций с сертификатами управления. [Узнайте](https://go.microsoft.com/fwlink/?linkid=849300), как добавить или удалить соадминистратора на новом портале Azure. 
 
-## <a name="upload-a-management-certificate"></a>Загрузить сертификат управления
+## <a name="upload-a-management-certificate"></a>Отправка сертификата управления
 Создав сертификат управления (CER-файл только с открытым ключом), передайте его на портал. Когда сертификат доступен на портале, любой пользователь с соответствующим сертификатом (закрытым ключом) сможет подключаться через API управления и работать с ресурсами связанной подписки.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
@@ -42,14 +42,14 @@ ms.locfileid: "68359880"
 3. Обязательно выберите именно ту подписку, с которой необходимо связать сертификат.     
 4. Выбрав правильную подписку, щелкните **Сертификаты управления** в группе _Параметры_.
 
-    ![Настройки](./media/azure-api-management-certs/mgmtcerts_menu.png)
+    !["Настройки"](./media/azure-api-management-certs/mgmtcerts_menu.png)
 
 5. Нажмите кнопку **Отправить** .
 
     ![Кнопка "Отправить" на странице сертификатов](./media/azure-api-management-certs/certificates_page.png)
 6. Укажите сведения в диалоговом окне и нажмите кнопку **Отправить**.
 
-    ![Настройки](./media/azure-api-management-certs/certificate_details.png)
+    !["Настройки"](./media/azure-api-management-certs/certificate_details.png)
 
-## <a name="next-steps"></a>Следующие шаги
-Связав сертификат управления с подпиской и установив соответствующий сертификат локально, вы можете программно подключаться к [REST API классической модели управления](/azure/#pivot=sdkstools) и автоматизировать различные ресурсы Azure, связанные с этой же подпиской.
+## <a name="next-steps"></a>Дальнейшие шаги
+Связав сертификат управления с подпиской и установив соответствующий сертификат локально, вы можете программно подключаться к [REST API классической модели управления](/azure/?pivot=sdkstools) и автоматизировать различные ресурсы Azure, связанные с этой же подпиской.

@@ -1,8 +1,8 @@
 ### YamlMime:Landing
-title: Узнайте об облачной платформе Служб мультимедиа Azure версии 3
+title: Документация по облачной платформе Служб мультимедиа Azure версии 3
 summary: Узнайте, как кодировать и упаковывать содержимое, а также выполнять потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3. В руководствах, справочниках по API и другой документации показано, как безопасно выполнять потоковую передачу видео- и аудиоматериалов по требованию и осуществлять прямую трансляцию с масштабированием для миллионов пользователей.
 metadata:
-  title: Документация по Службам мультимедиа Azure версии 3
+  title: Документация по облачной платформе Служб мультимедиа Azure версии 3
   description: Узнайте, как кодировать и упаковывать содержимое, а также выполнять потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3.
   services: media-services
   ms.service: media-services
@@ -11,13 +11,13 @@ metadata:
   ms.collection: collection
   author: Juliako
   ms.author: juliako
-  ms.date: 10/07/2019
-  ms.openlocfilehash: 5b46cb4faa1b18d9b1902e760b2905f59f42f19d
-  ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+  ms.date: 21/16/2020
+  ms.openlocfilehash: 1cd7e2a4cb4e86e6acfc0ec3d3909bc887a6f943
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/01/2020
-  ms.locfileid: "76938997"
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "79472124"
 landingContent:
 - title: Сведения о Службах мультимедиа
   linkLists:
@@ -62,7 +62,7 @@ landingContent:
     - text: Azure CLI
       url: https://aka.ms/ams-v3-cli-ref
     - text: REST
-      url: https://aka.ms/ams-v3-rest-ref
+      url: https://docs.microsoft.com/rest/api/media/
     - text: .NET
       url: https://aka.ms/ams-v3-dotnet-ref
     - text: Java

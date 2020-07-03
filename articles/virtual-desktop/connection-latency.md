@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: helohr
-ms.openlocfilehash: 7ef35bdf6c7470d425826d7a30755cc216e69158
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+manager: lizross
+ms.openlocfilehash: 8a60779fb045aa612a6ba0988c4635752f973f60
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73164722"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82607407"
 ---
 # <a name="determine-user-connection-latency-in-windows-virtual-desktop"></a>Определение задержки подключения пользователей в виртуальном рабочем столе Windows
 
@@ -20,7 +21,7 @@ ms.locfileid: "73164722"
  
 [Средство оценки возможностей виртуальных рабочих столов Windows](https://azure.microsoft.com/services/virtual-desktop/assessment/) помогает определить лучшее расположение для оптимизации задержки виртуальных машин. Мы рекомендуем использовать средство каждые два – три месяца, чтобы убедиться, что оптимальное расположение не изменилось, так как виртуальный рабочий стол Windows разворачивается в новые области. 
 
-## <a name="azure-traffic-manager"></a>Azure Traffic Manager
+## <a name="azure-traffic-manager"></a>Диспетчер трафика Azure
 
 Виртуальный рабочий стол Windows использует диспетчер трафика Azure, который проверяет расположение DNS-сервера пользователя, чтобы найти ближайший экземпляр службы виртуальных рабочих столов Windows. Перед выбором расположения для виртуальных машин мы рекомендуем администраторам проверить расположение DNS-сервера пользователя.
 
@@ -28,4 +29,4 @@ ms.locfileid: "73164722"
 
 - Чтобы проверить лучшее расположение для оптимальной задержки, см. раздел [средство оценки возможностей виртуального рабочего стола Windows](https://azure.microsoft.com/services/virtual-desktop/assessment/).
 - Ценовые планы см. на странице [цены на виртуальные рабочие столы Windows](https://azure.microsoft.com/pricing/details/virtual-desktop/).
-- Чтобы приступить к работе с развертыванием виртуальных рабочих столов Windows, ознакомьтесь с [нашим руководством](tenant-setup-azure-active-directory.md).
+- Чтобы приступить к работе с развертыванием виртуальных рабочих столов Windows, ознакомьтесь с [нашим руководством](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md).

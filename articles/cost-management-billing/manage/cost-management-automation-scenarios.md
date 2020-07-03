@@ -1,24 +1,19 @@
 ---
-title: Сценарии автоматизации для выставления счетов и управления затратами в Azure | Документация Майкрософт
+title: Сценарии автоматизации для выставления счетов и управления затратами в Azure
 description: Узнайте, как соотносятся распространенные сценарии выставления счетов и управления затратами с разными API.
-services: billing
-documentationcenter: ''
 author: bandersmsft
-manager: dougeby
+ms.reviewer: adwise
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
-ms.workload: billing
-ms.date: 10/01/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: c9de7d5f7661e4083d3a2f5b53368616d0e6655a
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 9dd41949548daf5d62b5cdd10206eb7ccdbc3962
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75992820"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79202936"
 ---
 # <a name="automation-scenarios-for-billing-and-cost-management"></a>Сценарии автоматизации для выставления счетов и управления затратами
 

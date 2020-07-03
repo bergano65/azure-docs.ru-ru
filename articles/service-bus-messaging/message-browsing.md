@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 7ad10ad2d4393c1d25a835d0ff8cd0b98ed25879
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 6156557d10210535b287aa516070c0b5da416512
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76756402"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77539371"
 ---
 # <a name="message-browsing"></a>Просмотр сообщений
 
@@ -34,7 +34,7 @@ ms.locfileid: "76756402"
 
 ## <a name="peek-apis"></a>Интерфейсы API просмотра
 
-Методы [Peek/PeekAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.peekasync#Microsoft_Azure_ServiceBus_Core_MessageReceiver_PeekAsync) и [PeekBatch/PeekBatchAsync](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatchasync#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatchAsync_System_Int64_System_Int32_) имеются во всех клиентских библиотеках .NET и Java и для всех объектов получателей: **MessageReceiver**, **MessageSession**, **QueueClient** и **SubscriptionClient**. Операция просмотра работает для всех очередей, подписок и их соответствующих очередей недоставленных сообщений.
+Методы [Peek/пикасинк](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.peekasync#Microsoft_Azure_ServiceBus_Core_MessageReceiver_PeekAsync) и [PeekBatch/пикбатчасинк](/dotnet/api/microsoft.servicebus.messaging.queueclient.peekbatchasync#Microsoft_ServiceBus_Messaging_QueueClient_PeekBatchAsync_System_Int64_System_Int32_) существуют во всех клиентских библиотеках .NET и Java, а также во всех объектах-получателях: **MessageReceiver**, **MessageSession**. Операция просмотра работает для всех очередей, подписок и их соответствующих очередей недоставленных сообщений.
 
 При повторяющихся вызовах метод Peek перечисляет все сообщения, которые существуют в журнале очереди или подписки, по возрастанию порядкового номера. Это порядок, в котором сообщения были поставлены в очередь, но не порядок, в котором сообщения со временем могут быть получены.
 
@@ -42,7 +42,7 @@ ms.locfileid: "76756402"
 
 Можно также заполнить перегрузку метода значением [SequenceNumber](/dotnet/api/microsoft.azure.servicebus.message.systempropertiescollection.sequencenumber#Microsoft_Azure_ServiceBus_Message_SystemPropertiesCollection_SequenceNumber), с которого следует начать, а затем вызвать перегрузку метода без параметров для продолжения перечисления. **PeekBatch** работает аналогично, но получает набор сообщений за раз.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

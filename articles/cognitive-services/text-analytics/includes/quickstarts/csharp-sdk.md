@@ -6,23 +6,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 01/15/2020
+ms.date: 03/17/2020
 ms.author: aahi
 ms.reviewer: assafi
-ms.openlocfilehash: a907fb5347e6559e066f678c53bb16c7727a74b5
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 2fa2e40ba2a7fe84b6df57bfb711d01332b8f523
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76987930"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81275328"
 ---
 <a name="HOLTop"></a>
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
 [Справочная документация версии 3](https://aka.ms/azsdk-net-textanalytics-ref-docs) | [Исходный код библиотеки версии 3](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics) | [Пакет для разработки (NuGet) версии 3](https://www.nuget.org/packages/Azure.AI.TextAnalytics) | [Образцы кода версии 3](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/textanalytics/Azure.AI.TextAnalytics/samples)
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 [Справочная документация версии 2](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/textanalytics?view=azure-dotnet-preview) | [Исходный код библиотеки версии 2](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Language.TextAnalytics) | [Пакет для разработки (NuGet) версии 2](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics/) | [Образцы кода версии 2](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples)
 
@@ -32,8 +32,9 @@ ms.locfileid: "76987930"
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Интегрированная среда разработки Visual Studio](https://visualstudio.microsoft.com/vs/).
-
-[!INCLUDE [text-analytics-resource-creation](resource-creation.md)]
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank">созданию ресурса Анализа текста<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку.  После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
 ## <a name="setting-up"></a>Настройка
 
@@ -41,14 +42,30 @@ ms.locfileid: "76987930"
 
 С помощью интегрированной среды разработки Visual Studio создайте консольное приложение .NET Core. Будет создан проект Hello World на языке C# с одним файлом исходного кода: *program.cs*.
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
-Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Щелкните результат, а затем — **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
+Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр**, установите флажок **Включить предварительные версии** и выполните поиск по запросу `Azure.AI.TextAnalytics`. Выберите версию `1.0.0-preview.4`, а затем **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
+
+> [!TIP]
+> Хотите просмотреть готовый файл с кодом для этого краткого руководства? Его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/dotnet/TextAnalytics/program.cs), где размещены примеры кода для этого краткого руководства. 
+
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
+
+Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр** и выполните поиск по запросу `Microsoft.Azure.CognitiveServices.Language.TextAnalytics`. Щелкните результат, а затем — **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
+
+> [!TIP]
+> Хотите просмотреть готовый файл с кодом для этого краткого руководства? Его можно найти [на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/blob/master/samples/TextAnalytics/synchronous/Program.cs), где размещены примеры кода для этого краткого руководства. 
+
+---
+
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
 Откройте файл *program.cs* и добавьте следующие директивы `using`:
 
 ```csharp
+using Azure;
 using System;
+using System.Globalization;
 using Azure.AI.TextAnalytics;
 ```
 
@@ -57,7 +74,7 @@ using Azure.AI.TextAnalytics;
 [!INCLUDE [text-analytics-find-resource-information](../find-azure-resource-info.md)]
 
 ```csharp
-private static readonly string key = "<replace-with-your-text-analytics-key-here>";
+private static readonly AzureKeyCredential credentials = new AzureKeyCredential("<replace-with-your-text-analytics-key-here>");
 private static readonly Uri endpoint = new Uri("<replace-with-your-text-analytics-endpoint-here>");
 ```
 
@@ -66,12 +83,11 @@ private static readonly Uri endpoint = new Uri("<replace-with-your-text-analytic
 ```csharp
 static void Main(string[] args)
 {
-    var client = new TextAnalyticsClient(endpoint, key);
+    var client = new TextAnalyticsClient(endpoint, credentials);
     // You will implement these methods later in the quickstart.
     SentimentAnalysisExample(client);
     LanguageDetectionExample(client);
     EntityRecognitionExample(client);
-    EntityPIIExample(client);
     EntityLinkingExample(client);
     KeyPhraseExtractionExample(client);
 
@@ -80,9 +96,7 @@ static void Main(string[] args)
 }
 ```
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
-
-Установите клиентскую библиотеку, щелкнув правой кнопкой мыши решение в **обозревателе решений** и выбрав **Управление пакетами NuGet**. В открывшемся диспетчере пакетов выберите **Просмотр** и выполните поиск по запросу `Microsoft.Azure.CognitiveServices.Language.TextAnalytics`. Щелкните результат, а затем — **Установить**. Вы также можете использовать [консоль диспетчера пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-powershell#find-and-install-a-package).
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 Откройте файл *program.cs* и добавьте следующие директивы `using`:
 
@@ -107,7 +121,7 @@ private static readonly string endpoint = "<replace-with-your-text-analytics-end
 
 Клиент Анализа текста является объектом `TextAnalyticsClient`, который выполняет проверку подлинности в Azure с помощью вашего ключа и предоставляет функции для приема текста в виде отдельных строк или пакета. Текст в API можно отправлять как синхронно, так и асинхронно. Объект в ответе будет содержать аналитическую информацию по каждому отправленному вами документу. 
 
-Если вы используете версию `3.0-preview`, можно использовать необязательный экземпляр `TextAnalyticsClientOptions` для инициализации клиента с различными параметрами по умолчанию (например, языком по умолчанию или указанием страны). Проверку подлинности можно также выполнить с помощью токена Azure Active Directory. 
+Если вы используете версию `3.0-preview` этой службы, можно использовать необязательный экземпляр `TextAnalyticsClientOptions` для инициализации клиента с различными параметрами по умолчанию (например, языком по умолчанию или указанием страны). Проверку подлинности можно также выполнить с помощью токена Azure Active Directory. 
 
 ## <a name="code-examples"></a>Примеры кода
 
@@ -119,15 +133,15 @@ private static readonly string endpoint = "<replace-with-your-text-analytics-end
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
-Убедитесь, что основной метод из более ранней версии создает новый объект клиента с конечной точкой и ключом. 
+Убедитесь, что основной метод из более ранней версии создает новый объект клиента с конечной точкой и учетными данными.
 
 ```csharp
-var client = new TextAnalyticsClient(endpoint, key);
+var client = new TextAnalyticsClient(endpoint, credentials);
 ```
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 Создайте новый `ApiKeyServiceClientCredentials` класс для хранения учетных данных и добавьте их в запросы клиента. В нем создайте переопределитель для `ProcessHttpRequestAsync()`, который добавляет ваш ключ в `Ocp-Apim-Subscription-Key` заголовок.
 
@@ -141,22 +155,26 @@ var client = new TextAnalyticsClient(endpoint, key);
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
-Создайте функцию с именем `SentimentAnalysisExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `AnalyzeSentiment()`. Возвращаемый объект `Response<AnalyzeSentimentResult>` будет содержать метку тональности и оценку всего входного документа, а также анализ тональности для каждого предложения, если выполнение успешное, и `Value.ErrorMessage` в противном случае.
+Создайте функцию с именем `SentimentAnalysisExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `AnalyzeSentiment()`. Возвращаемый объект `Response<DocumentSentiment>` будет содержать метку тональности и оценку всего входного документа, а также анализ тональности для каждого предложения, если выполнение успешное. При появлении ошибки возникает исключение `RequestFailedException`.
 
 ```csharp
 static void SentimentAnalysisExample(TextAnalyticsClient client)
 {
-    var response = client.AnalyzeSentiment("I had the best day of my life. I wish you were there with me.");
-    Console.WriteLine($"Document sentiment: {response.Value.DocumentSentiment.SentimentClass}\n");
-    foreach (var sentence in response.Value.SentenceSentiments)
+    string inputText = "I had the best day of my life. I wish you were there with me.";
+    DocumentSentiment documentSentiment = client.AnalyzeSentiment(inputText);
+    Console.WriteLine($"Document sentiment: {documentSentiment.Sentiment}\n");
+
+    var si = new StringInfo(inputText);
+    foreach (var sentence in documentSentiment.Sentences)
     {
-        Console.WriteLine($"\tSentence [offset {sentence.Offset}, length {sentence.Length}]");
-        Console.WriteLine($"\tSentence sentiment: {sentence.SentimentClass}");
-        Console.WriteLine($"\tPositive score: {sentence.PositiveScore:0.00}");
-        Console.WriteLine($"\tNegative score: {sentence.NegativeScore:0.00}");
-        Console.WriteLine($"\tNeutral score: {sentence.NeutralScore:0.00}\n");
+        Console.WriteLine($"\tSentence [length {sentence.GraphemeLength}]");
+        Console.WriteLine($"\tText: \"{si.SubstringByTextElements(sentence.GraphemeOffset, sentence.GraphemeLength)}\"");
+        Console.WriteLine($"\tSentence sentiment: {sentence.Sentiment}");
+        Console.WriteLine($"\tPositive score: {sentence.ConfidenceScores.Positive:0.00}");
+        Console.WriteLine($"\tNegative score: {sentence.ConfidenceScores.Negative:0.00}");
+        Console.WriteLine($"\tNeutral score: {sentence.ConfidenceScores.Neutral:0.00}\n");
     }
 }
 ```
@@ -166,20 +184,22 @@ static void SentimentAnalysisExample(TextAnalyticsClient client)
 ```console
 Document sentiment: Positive
 
-        Sentence [offset 0, length 30]
+        Sentence [length 30]
+        Text: "I had the best day of my life."
         Sentence sentiment: Positive
         Positive score: 1.00
         Negative score: 0.00
         Neutral score: 0.00
 
-        Sentence [offset 31, length 30]
+        Sentence [length 30]
+        Text: "I wish you were there with me."
         Sentence sentiment: Neutral
         Positive score: 0.21
         Negative score: 0.02
         Neutral score: 0.77
 ```
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 Создайте новую функцию с именем `SentimentAnalysisExample()`, которая принимает созданного ранее клиента и вызывает его функцию[Sentiment()](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.sentiment?view=azure-dotnet) (Тональность). Возвращаемый объект[SentimentResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.models.sentimentresult?view=azure-dotnet) будет содержать тональность `Score`, если выполнение успешное и значение `errorMessage`, если нет. 
 
@@ -195,10 +215,10 @@ Sentiment Score: 0.87
 
 ## <a name="language-detection"></a>Определение языка
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
 
-Создайте функцию с именем `LanguageDetectionExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `DetectLanguage()`. Возвращенный объект `Response<DetectLanguageResult>` будет содержать обнаруженный язык в `Value.PrimaryLanguage`, если выполнение успешное, и значение `Value.ErrorMessage` в противном случае.
+Создайте функцию с именем `LanguageDetectionExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `DetectLanguage()`. Возвращенный объект `Response<DetectedLanguage>` будет содержать обнаруженный язык вместе с его именем и кодом ISO-6391. При появлении ошибки возникает исключение `RequestFailedException`.
 
 > [!Tip]
 > В некоторых случаях неоднозначность языков на основе входных данных может быть трудно устранить. Используйте параметр `countryHint`, чтобы указать двухбуквенный код страны. По умолчанию API использует US в качестве значения countryHint. Чтобы отменить это поведение, вы можете сбросить этот параметр, установив для этого значения пустую строку `countryHint = ""`. Чтобы установить другое значение по умолчанию, задайте свойство `TextAnalyticsClientOptions.DefaultCountryHint` и передайте его во время инициализации клиента.
@@ -206,8 +226,7 @@ Sentiment Score: 0.87
 ```csharp
 static void LanguageDetectionExample(TextAnalyticsClient client)
 {
-    var response = client.DetectLanguage("Ce document est rédigé en Français.");
-    var detectedLanguage = response.Value.PrimaryLanguage;
+    DetectedLanguage detectedLanguage = client.DetectLanguage("Ce document est rédigé en Français.");
     Console.WriteLine("Language:");
     Console.WriteLine($"\t{detectedLanguage.Name},\tISO-6391: {detectedLanguage.Iso6391Name}\n");
 }
@@ -220,9 +239,9 @@ Language:
         French, ISO-6391: fr
 ```
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
-Создайте новую функцию с именем `languageDetectionExample()`, которая принимает созданного ранее клиента и вызывает функцию[DetectLanguage(](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.detectlanguage?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Language_TextAnalytics_TextAnalyticsClientExtensions_DetectLanguage_Microsoft_Azure_CognitiveServices_Language_TextAnalytics_ITextAnalyticsClient_System_String_System_String_System_Nullable_System_Boolean__System_Threading_CancellationToken_). Возвращенный объект[LanguageResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.models.languageresult?view=azure-dotnet) будет содержать список обнаруженных языков `DetectedLanguages` если выполнение успешное и значение `errorMessage`, если нет.  Выведите первый возвращенный язык.
+Создайте новую функцию с именем `languageDetectionExample()`, которая принимает созданного ранее клиента и вызывает функцию[DetectLanguage(](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.detectlanguage?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Language_TextAnalytics_TextAnalyticsClientExtensions_DetectLanguage_Microsoft_Azure_CognitiveServices_Language_TextAnalytics_ITextAnalyticsClient_System_String_System_String_System_Nullable_System_Boolean__System_Threading_CancellationToken_). Возвращенный объект[LanguageResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.models.languageresult?view=azure-dotnet) будет содержать список обнаруженных языков `DetectedLanguages` если выполнение успешное и значение `errorMessage`, если нет. Выведите первый возвращенный язык.
 
 > [!Tip]
 > В некоторых случаях неоднозначность языков на основе входных данных может быть трудно устранить. Используйте параметр `countryHint`, чтобы указать двухбуквенный код страны. По умолчанию API использует US в качестве значения countryHint по умолчанию.Чтобы отменить это поведение, вы можете сбросить этот параметр, установив для этого значения пустую строку `countryHint = ""`.
@@ -239,28 +258,25 @@ Language: English
 
 ## <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
 
 > [!NOTE]
-> В версии `3.0-preview`:
-> * NER содержит отдельные методы для обнаружения персональных данных. 
-> * Связывание сущностей — это отдельный запрос, отличный от NER.
-
-Приведенный ниже код позволяет обнаружить персональные данные с помощью функции NER версии 3, которая находится в общедоступной предварительной версии.
+> Новое в версии `3.0-preview`.
+> * Связывание сущностей теперь отделено от их распознавания.
 
 
-Создайте функцию с именем `EntityRecognitionExample()`, которая принимает созданный ранее клиент, вызовите вложенную в нее функцию `RecognizeEntities()` и просмотрите все результаты. Возвращенный объект `Response<RecognizeEntitiesResult>` будет содержать список обнаруженных сущностей в `Value.NamedEntities`, если выполнение успешное, и значение `Value.ErrorMessage` в противном случае. Для каждой обнаруженной сущности выведите ее тип и подтип, если он существует.
+Создайте функцию с именем `EntityRecognitionExample()`, которая принимает созданный ранее клиент, вызовите вложенную в нее функцию `RecognizeEntities()` и просмотрите все результаты. Возвращенный объект `Response<IReadOnlyCollection<CategorizedEntity>>` будет содержать список обнаруженных сущностей. При появлении ошибки возникает исключение `RequestFailedException`.
 
 ```csharp
 static void EntityRecognitionExample(TextAnalyticsClient client)
 {
     var response = client.RecognizeEntities("I had a wonderful trip to Seattle last week.");
     Console.WriteLine("Named Entities:");
-    foreach(var entity in response.Value.NamedEntities)
+    foreach (var entity in response.Value)
     {
-        Console.WriteLine($"\tText: {entity.Text},\tType: {entity.Type},\tSub-Type: {entity.SubType ?? "N/A"}");
-        Console.WriteLine($"\t\tOffset: {entity.Offset},\tLength: {entity.Length},\tScore: {entity.Score:F3}\n");
+        Console.WriteLine($"\tText: {entity.Text},\tCategory: {entity.Category},\tSub-Category: {entity.SubCategory}");
+        Console.WriteLine($"\t\tLength: {entity.GraphemeLength},\tScore: {entity.ConfidenceScore:F2}\n");
     }
 }
 ```
@@ -269,42 +285,16 @@ static void EntityRecognitionExample(TextAnalyticsClient client)
 
 ```console
 Named Entities:
-        Text: Seattle,  Type: Location, Sub-Type: N/A
-                Offset: 26,     Length: 7,      Score: 0.806
+        Text: Seattle,  Category: Location,     Sub-Category: GPE
+                Length: 7,      Score: 0.92
 
-        Text: last week,        Type: DateTime, Sub-Type: N/A
-                Offset: 34,     Length: 9,      Score: 0.800
+        Text: last week,        Category: DateTime,     Sub-Category: DateRange
+                Length: 9,      Score: 0.80
 ```
-
-## <a name="using-ner-to-detect-personal-information"></a>Использование NER для обнаружения персональных данных
-
-Создайте функцию с именем `EntityPIIExample()`, которая принимает созданный ранее клиент, вызовите вложенную в нее функцию `RecognizePiiEntities()` и просмотрите все результаты. Аналогично предыдущей функции, возвращенный объект `Response<RecognizeEntitiesResult>` будет содержать список обнаруженных сущностей в `Value.NamedEntities`, если выполнение успешное, и значение `Value.ErrorMessage` в противном случае.
-
-```csharp
-static void EntityPIIExample(TextAnalyticsClient client)
-{
-    var response = client.RecognizePiiEntities("Insurance policy for SSN on file 123-12-1234 is here by approved.");
-    Console.WriteLine("Personally Identifiable Information Entities:");
-    foreach(var entity in response.Value.NamedEntities)
-    {
-        Console.WriteLine($"\tText: {entity.Text},\tType: {entity.Type},\tSub-Type: {entity.SubType ?? "N/A"}");
-        Console.WriteLine($"\t\tOffset: {entity.Offset},\tLength: {entity.Length},\tScore: {entity.Score:F3}\n");
-    }
-}
-```
-
-### <a name="output"></a>Выходные данные
-
-```console
-Personally Identifiable Information Entities:
-        Text: 123-12-1234,      Type: U.S. Social Security Number (SSN),        Sub-Type: N/A
-                Offset: 33,     Length: 11,     Score: 0.850
-```
-
 
 ## <a name="entity-linking"></a>Связывание сущностей
 
-Создайте функцию с именем `EntityLinkingExample()`, которая принимает созданный ранее клиент, вызовите вложенную в нее функцию `RecognizeLinkedEntities()` и просмотрите все результаты. Возвращенный объект `Response<RecognizeLinkedEntitiesResult>` будет содержать список обнаруженных сущностей в `Value.LinkedEntities`, если выполнение успешное, и значение `Value.ErrorMessage` в противном случае. Так как связанные сущности уникально идентифицируются, вхождения одной и той же сущности группируются в объекте `LinkedEntity` как список объектов `LinkedEntityMatch`.
+Создайте функцию с именем `EntityLinkingExample()`, которая принимает созданный ранее клиент, вызовите вложенную в нее функцию `RecognizeLinkedEntities()` и просмотрите все результаты. Возвращаемый `Response<IReadOnlyCollection<LinkedEntity>>` представляет список обнаруженных сущностей. При появлении ошибки возникает исключение `RequestFailedException`. Так как связанные сущности уникально идентифицируются, вхождения одной и той же сущности группируются в объекте `LinkedEntity` как список объектов `LinkedEntityMatch`.
 
 ```csharp
 static void EntityLinkingExample(TextAnalyticsClient client)
@@ -316,14 +306,14 @@ static void EntityLinkingExample(TextAnalyticsClient client)
         "chief executive officer, president and chief software architect, " +
         "while also being the largest individual shareholder until May 2014.");
     Console.WriteLine("Linked Entities:");
-    foreach (var entity in response.Value.LinkedEntities)
+    foreach (var entity in response.Value)
     {
-        Console.WriteLine($"\tName: {entity.Name},\tID: {entity.Id},\tURL: {entity.Uri}\tData Source: {entity.DataSource}");
+        Console.WriteLine($"\tName: {entity.Name},\tID: {entity.DataSourceEntityId},\tURL: {entity.Url}\tData Source: {entity.DataSource}");
         Console.WriteLine("\tMatches:");
         foreach (var match in entity.Matches)
         {
             Console.WriteLine($"\t\tText: {match.Text}");
-            Console.WriteLine($"\t\tOffset: {match.Offset},\tLength: {match.Length},\tScore: {match.Score:F3}\n");
+            Console.WriteLine($"\t\tLength: {match.GraphemeLength},\tScore: {match.ConfidenceScore:F2}\n");
         }
     }
 }
@@ -336,41 +326,41 @@ Linked Entities:
         Name: Altair 8800,      ID: Altair 8800,        URL: https://en.wikipedia.org/wiki/Altair_8800  Data Source: Wikipedia
         Matches:
                 Text: Altair 8800
-                Offset: 116,    Length: 11,     Score: 0.777
+                Length: 11,     Score: 0.78
 
         Name: Bill Gates,       ID: Bill Gates, URL: https://en.wikipedia.org/wiki/Bill_Gates   Data Source: Wikipedia
         Matches:
                 Text: Bill Gates
-                Offset: 25,     Length: 10,     Score: 0.555
+                Length: 10,     Score: 0.55
 
                 Text: Gates
-                Offset: 161,    Length: 5,      Score: 0.555
+                Length: 5,      Score: 0.55
 
         Name: Paul Allen,       ID: Paul Allen, URL: https://en.wikipedia.org/wiki/Paul_Allen   Data Source: Wikipedia
         Matches:
                 Text: Paul Allen
-                Offset: 40,     Length: 10,     Score: 0.533
+                Length: 10,     Score: 0.53
 
         Name: Microsoft,        ID: Microsoft,  URL: https://en.wikipedia.org/wiki/Microsoft    Data Source: Wikipedia
         Matches:
                 Text: Microsoft
-                Offset: 0,      Length: 9,      Score: 0.469
+                Length: 9,      Score: 0.47
 
                 Text: Microsoft
-                Offset: 150,    Length: 9,      Score: 0.469
+                Length: 9,      Score: 0.47
 
         Name: April 4,  ID: April 4,    URL: https://en.wikipedia.org/wiki/April_4      Data Source: Wikipedia
         Matches:
                 Text: April 4
-                Offset: 54,     Length: 7,      Score: 0.248
+                Length: 7,      Score: 0.25
 
         Name: BASIC,    ID: BASIC,      URL: https://en.wikipedia.org/wiki/BASIC        Data Source: Wikipedia
         Matches:
                 Text: BASIC
-                Offset: 89,     Length: 5,      Score: 0.281
+                Length: 5,      Score: 0.28
 ```
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 > [!NOTE]
 > В версии 2.1 в ответе NER включено связывание сущностей.
@@ -384,9 +374,9 @@ Linked Entities:
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевой фразы
 
-#### <a name="version-30-previewtabversion-3"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
 
-Создайте функцию с именем `KeyPhraseExtractionExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `ExtractKeyPhrases()`. При успешном выполнении результат будет содержать список обнаруженных ключевых фраз в `Value.KeyPhrases`. В противном случае вернется `Value.ErrorMessage`. Затем выведите все обнаруженные ключевые фразы.
+Создайте функцию с именем `KeyPhraseExtractionExample()`, которая принимает созданный ранее клиент, и вызовите вложенную в нее функцию `ExtractKeyPhrases()`. Возвращенный объект `<Response<IReadOnlyCollection<string>>` будет содержать список обнаруженных ключевых фраз. При появлении ошибки возникает исключение `RequestFailedException`.
 
 ```csharp
 static void KeyPhraseExtractionExample(TextAnalyticsClient client)
@@ -396,7 +386,7 @@ static void KeyPhraseExtractionExample(TextAnalyticsClient client)
     // Printing key phrases
     Console.WriteLine("Key phrases:");
 
-    foreach (string keyphrase in response.Value.KeyPhrases)
+    foreach (string keyphrase in response.Value)
     {
         Console.WriteLine($"\t{keyphrase}");
     }
@@ -411,7 +401,7 @@ Key phrases:
     veterinarian
 ```
 
-#### <a name="version-21tabversion-2"></a>[Версия 2.1](#tab/version-2)
+#### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
 
 Создайте новую функцию с именем `KeyPhraseExtractionExample()`, которая принимает созданного ранее клиента и вызывает его функцию[KeyPhrases()](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.language.textanalytics.textanalyticsclientextensions.keyphrases?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Language_TextAnalytics_TextAnalyticsClientExtensions_KeyPhrases_Microsoft_Azure_CognitiveServices_Language_TextAnalytics_ITextAnalyticsClient_System_String_System_String_System_Nullable_System_Boolean__System_Threading_CancellationToken_). При успешном выполнении результат будет содержать список обнаруженных ключевых фраз в `KeyPhrases`. В противном случае вернется `errorMessage`. Затем выведите все обнаруженные ключевые фразы.
 

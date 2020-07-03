@@ -7,10 +7,12 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Создание участника\_— портал"
+    - name: Создание участника с помощью портала
       href: create-member.md
-    - name: "Создание участника\_— CLI"
+    - name: Создание участника с помощью CLI
       href: create-member-cli.md
+    - name: Создание участника с помощью шаблона
+      href: create-member-template.md
     - name: Подключение к узлу транзакций
       items:
         - name: Использование VS Code
@@ -19,8 +21,6 @@
           href: connect-metamask.md
         - name: Использование Geth
           href: connect-geth.md
-        - name: Использование Truffle
-          href: connect-truffle.md
 - name: Учебники
   items:
     - name: Создание смарт-контрактов
@@ -69,8 +69,8 @@
       href: 'https://github.com/Azure-Samples/blockchain'
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/blockchain/'
-    - name: Форум службы поддержки MSDN
-      href: 'https://aka.ms/workbenchforum'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-blockchain-service.html'
     - name: Поддержка сообщества
       href: 'https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain'
     - name: Поддержка Stack Overflow

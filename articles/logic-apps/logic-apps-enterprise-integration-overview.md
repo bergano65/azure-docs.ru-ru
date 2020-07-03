@@ -8,16 +8,16 @@ ms.author: divswa
 ms.reviewer: jonfan, logicappspm
 ms.topic: overview
 ms.date: 08/01/2019
-ms.openlocfilehash: 141f1a7fc8f966132cb3570fd9d9cfa911127eed
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 9356cecb22672ae15505d14b5ac73d5baeef09e0
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74792453"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "77191372"
 ---
 # <a name="b2b-enterprise-integration-solutions-with-azure-logic-apps-and-enterprise-integration-pack"></a>Решения для корпоративной интеграции B2B с Azure Logic Apps и пакетом интеграции Enterprise
 
-Для выполнения решений "бизнес-бизнес" (B2B) и беспрепятственного взаимодействия между организациями можно создавать автоматизированные масштабируемые рабочие процессы интеграции предприятия, используя пакет интеграции Enterprise (EIP) с [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Хотя организации используют разные протоколы и форматы, они могут обмениваться сообщениями в электронном формате. EIP преобразует различные форматы в формат, который могут обрабатывать системы вашей организации, и поддерживает стандартные отраслевые протоколы, включая [AS2](../logic-apps/logic-apps-enterprise-integration-as2.md), [X12](logic-apps-enterprise-integration-x12.md) и [EDIFACT](../logic-apps/logic-apps-enterprise-integration-edifact.md). Сообщения можно защитить с помощью шифрования и цифровой подписи. EIP поддерживает эти [соединители интеграции предприятия](../connectors/apis-list.md#integration-account-connectors) и следующие отраслевые стандарты:
+Для выполнения решений "бизнес-бизнес" (B2B) и беспрепятственного взаимодействия между организациями можно создавать автоматизированные масштабируемые рабочие процессы интеграции предприятия, используя пакет интеграции Enterprise (EIP) с [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Хотя организации используют разные протоколы и форматы, они могут обмениваться сообщениями в электронном формате. EIP преобразует различные форматы в формат, который могут обрабатывать системы вашей организации, и поддерживает стандартные отраслевые протоколы, включая [AS2](../logic-apps/logic-apps-enterprise-integration-as2.md), [X12](logic-apps-enterprise-integration-x12.md) и [EDIFACT](../logic-apps/logic-apps-enterprise-integration-edifact.md). Кроме того, вы можете повысить уровень безопасности для сообщений, используя и шифрование, и цифровые подписи. EIP поддерживает эти [соединители интеграции предприятия](../connectors/apis-list.md#integration-account-connectors) и следующие отраслевые стандарты:
 
 * электронный обмен данными (EDI);
 * интеграция корпоративных приложений (EAI).
@@ -52,7 +52,7 @@ ms.locfileid: "74792453"
 
 [Развертывание полнофункционального примера приложения логики, которое отправляет и получает сообщения AS2](https://github.com/Azure/azure-quickstart-templates/tree/master/201-logic-app-as2-send-receive)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание торговых партнеров](logic-apps-enterprise-integration-partners.md)
 * [Создание соглашений](../logic-apps/logic-apps-enterprise-integration-agreements.md)

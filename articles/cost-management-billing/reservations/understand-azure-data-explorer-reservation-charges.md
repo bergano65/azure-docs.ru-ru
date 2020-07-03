@@ -1,19 +1,18 @@
 ---
 title: Общие сведения о применении скидки на резервирование в Azure Data Explorer
 description: Узнайте, как применяются скидки на резервирование к единице измерения наценки в Azure Data Explorer.
-services: data-explorer
 author: avneraa
 ms.author: avnera
 ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 11/03/2019
-ms.openlocfilehash: 88ab9c475d417bc935cf5d2d67f1678794fb74d1
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.date: 02/12/2020
+ms.openlocfilehash: a418841d91ab6b8fe5457f3fd64d91306fe08dfe
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995628"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81383113"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-data-explorer"></a>Общие сведения о применении скидки на резервирование в Azure Data Explorer
 
@@ -36,23 +35,23 @@ ms.locfileid: "75995628"
 ## <a name="examples"></a>Примеры
 
 В следующих примерах показано применение скидки на зарезервированную емкость Azure Data Explorer в зависимости от количества приобретенных вами единиц наценки и времени их работы.
-Например, для кластера модуля, содержащего **2 виртуальные машины D11_v2**, общие затраты по запросу соответствуют расходам на четыре единицы наценки Azure Data Explorer в час. 
+Например, для кластера модуля, содержащего **2 виртуальные машины D11_v2**, общие затраты по запросу соответствуют расходам на четыре единицы наценки Azure Data Explorer в час.
 
-**Сценарий 1** 
+**Сценарий 1**
 
 Вы покупаете зарезервированную емкость Azure Data Explorer для 8 единиц наценки Azure Data Explorer. Вы запускаете кластер модуля, состоящий из двух виртуальных машин D13_v2 с общим количеством 16 ядер, за которые плата взымается как за 16 единиц наценки Azure Data Explorer в час, и соответствующий остальным атрибутам резервирования. Плата взимается с оплатой по мере использования для восьми ядер вычислительных ресурсов Azure Data Explorer, и вы получаете скидку на резервирование за один час использования восьми основных единиц наценки Azure Data Explorer.
 
 В остальных примерах предположим, что зарезервированная емкость Azure Data Explorer, которую вы приобрели, предназначена для кластера Azure Data Explorer с 16 ядрами, а остальные атрибуты резервирования соответствуют работающему кластеру Azure Data Explorer.
 
-**Сценарий 2** 
+**Сценарий 2**
 
 Вы запускаете два кластера модуля Azure Data Explorer с восемью ядрами, работающими в течение часа в двух разных регионах. Скидка на резервирование 16 ядер применяется как к кластеру, так и к 16 единицам наценки Azure Data Explorer, которые они используют.
 
-**Сценарий 3** 
+**Сценарий 3**
 
 Вы запускаете один 16-ядерный кластер модуля Azure Data Explorer с 13:00 до 13:30. Вы запускаете еще один 16-ядерный кластер модуля Azure Data Explorer с 13:30 до 14:00. Для обеих Баз данных будет применяться скидка на резервирование.
 
-**Сценарий 4** 
+**Сценарий 4**
 
 Вы запускаете один 16-ядерный кластер модуля Azure Data Explorer с 13:00 до 13:45. Вы запускаете еще один 16-ядерный кластер модуля Azure Data Explorer с 13:30 до 14:00. За превышение работы на 15 минут с вас взимается оплата по модели с оплатой по мере использования. Скидка на резервирование применяется к использованию наценки Azure Data Explorer за остальное время.
 
@@ -66,7 +65,7 @@ ms.locfileid: "75995628"
 
 Дополнительные сведения о резервировании в Azure см. в следующих статьях:
 
-* [Prepay for Azure Data Explorer markup units with Azure Data Explorer reserved capacity](../../data-explorer/pricing-reserved-capacity.md) (Предоплата за единицы наценки Azure Data Explorer при использовании зарезервированной емкости Azure Data Explorer)  
+* [Prepay for Azure Data Explorer markup units with Azure Data Explorer reserved capacity](/azure/data-explorer/pricing-reserved-capacity) (Предоплата за единицы наценки Azure Data Explorer при использовании зарезервированной емкости Azure Data Explorer)  
 * [Общие сведения об Azure Reserved VM Instances](save-compute-costs-reservations.md)  
 * [Управление зарезервированными экземплярами в Azure](manage-reserved-vm-instance.md)  
 * [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](understand-reserved-instance-usage.md)

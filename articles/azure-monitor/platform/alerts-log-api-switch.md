@@ -1,24 +1,25 @@
 ---
-title: Переключение с устаревших API оповещений Log Analytics на новые API оповещений Azure
+title: Переключиться на новый API оповещений Azure
 description: Общие сведения об API-интерфейсе предупреждений Log Analytics на основе savedSearch для переключения правил генерации оповещений в новый API Счедуледкуерирулес с подробными сведениями об устранении распространенных проблем клиента.
 author: yanivlavi
-services: azure-monitor
-ms.service: azure-monitor
+ms.author: yalavi
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: 5d6b8ce557cb794b3a56ecb3a938a2fe184156ab
-ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
+ms.openlocfilehash: 7950b3f584c36b68a4eff66b05e83ba94c1ec1dd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75680755"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81114362"
 ---
-# <a name="switch-api-preference-for-log-alerts"></a>Переход на новый API для оповещений журналов
+# <a name="switch-api-preference-for-log-alerts"></a>Переключение предпочтений API для оповещений журнала
 
 > [!NOTE]
 > Содержимое, указанное в подходящих для пользователей общедоступном облаке Azure, **не** предназначено для Azure для государственных организаций или Azure для Китая.  
+
+> [!NOTE]
+> После того как пользователь выбрал вариант переключения на новый [API счедуледкуерирулес](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) , невозможно вернуться к использованию устаревшего [api предупреждений log Analytics](api-alerts.md).
 
 До недавнего времени вы управляли правилами генерации оповещений на портале Microsoft Operations Management Suite. Новые возможности оповещений были интегрированы с различными службами в Microsoft Azure, включая Log Analytics, и мы попросили [расширить ваши правила оповещения с портала OMS в Azure](alerts-extend.md). Но чтобы свести нарушение работы клиентов к минимуму, процессу не удалось изменить программный интерфейс для его потребления в [API оповещений Log Analytics](api-alerts.md) на основе SavedSearch.
 
@@ -49,10 +50,7 @@ ms.locfileid: "75680755"
 Процесс перемещения правил генерации оповещений из [устаревших оповещений API Log Analytics](api-alerts.md) не затрагивает определение, запрос или конфигурацию оповещения каким-либо образом. Правила оповещений и мониторинг не затрагиваются, и предупреждения не будут остановлены или остановлены во время или после переключения. Доступны только следующие изменения:
 
 - Изменение предпочтений API и доступ к правилам через новый API.
-- Измененный URI ресурса правила генерации оповещений, содержащий идентификаторы, используемые в [устаревшем log Analytics API предупреждений](api-alerts.md) , а не имя правила генерации оповещений в этой структуре `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>`. Отображаемое имя правила генерации оповещений останется без изменений.
-
-> [!NOTE]
-> После того как пользователь выбрал вариант переключения на новый [API счедуледкуерирулес](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) , невозможно вернуться к использованию устаревшего [api предупреждений log Analytics](api-alerts.md).
+- Измененный URI ресурса правила генерации оповещений, содержащий идентификаторы, используемые в [устаревшем log Analytics API предупреждений](api-alerts.md) , а не имя `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>`правила генерации оповещений в этой структуре. Отображаемое имя правила генерации оповещений останется без изменений.
 
 Любой клиент, который хочет добровольно переключиться на новые [правила запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) и заблокировать использование из [устаревшего оповещения API Log Analytics](api-alerts.md), может сделать это, выполнив вызов PUT в указанном ниже API для переключения всех правил оповещения, связанных с определенной рабочей областью Log Analytics.
 
@@ -113,7 +111,7 @@ armclient GET /subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor](alerts-unified-log.md).
 - Узнайте о том, как создать [журнал оповещений в оповещениях Azure](alerts-log.md).

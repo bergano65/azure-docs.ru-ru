@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: mialdrid
 ms.openlocfilehash: b4a83013d2cbeb2871a3963ec0c95144c02f4d66
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77187014"
 ---
 # <a name="expressroute-crossconnnections-api-development-and-integration"></a>Разработка и интеграция API Кроссконннектионс ExpressRoute
@@ -72,7 +72,7 @@ API-интерфейс диспетчер ресурсов для партнер
 4. Выбор роли "участник сети"
 5. Назначение доступа пользователю Azure AD, группе или субъекту-службе
 6. Выберите клиентское приложение
-7. Сохранить изменения
+7. Сохранение изменений
 
 ### <a name="5-develop"></a>5. Разработка
 
@@ -82,6 +82,6 @@ API-интерфейс диспетчер ресурсов для партнер
 
 См. раздел [ExpressRoute кроссконнектионс REST API](https://docs.microsoft.com/rest/api/expressroute/expressroutecrossconnections) для REST APIной документации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о всех API-интерфейсах RESTFUL для ExpressRoute см. в разделе [API-интерфейсы RESTful для expressroute](https://docs.microsoft.com/rest/api/expressroute/).

@@ -13,12 +13,12 @@ ms.subservice: pim
 ms.date: 10/18/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f54382d652c3fc59b8ff462d41ec8c0fbdbe8498
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 474f2634e6f7ddc1840548c39ae86cb54c3bf08e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72596693"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78299692"
 ---
 # <a name="troubleshoot-a-problem-with-privileged-identity-management"></a>Устранение неполадок с управление привилегированными пользователями
 
@@ -28,18 +28,18 @@ ms.locfileid: "72596693"
 
 ### <a name="problem"></a>Проблема
 
-Как активный владелец или администратор доступа пользователей для ресурса Azure вы можете увидеть ресурс в управление привилегированными пользователями но не можете выполнять какие-либо действия, такие как создание подходящего назначения или Просмотр списка назначений ролей из ресурса. Обзорная страница. Любое из этих действий приводит к ошибке авторизации.
+Как активный владелец или администратор доступа пользователей для ресурса Azure вы можете увидеть ресурс в управление привилегированными пользователями но не можете выполнять какие-либо действия, такие как создание подходящего назначения или Просмотр списка назначений ролей на странице обзора ресурсов. Любое из этих действий приводит к ошибке авторизации.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема может возникать, когда роль администратора доступа пользователей для субъекта-службы PIM была случайно удалена из подписки. Для того чтобы служба управление привилегированными пользователями могла получить доступ к ресурсам Azure, субъекту-службе службы MS PIM всегда должна быть назначена [роль администратора доступа пользователей](../../role-based-access-control/built-in-roles.md#user-access-administrator) по подписке Azure.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
-Назначьте роль администратора доступа пользователей привилегированному имени участника-службы (MS – PIM) на уровне подписки. Это назначение должно предоставлять службе привилегированного управления удостоверениями доступ к ресурсам Azure. Роль может быть назначена на уровне группы управления или на уровне подписки в зависимости от требований. Дополнительные сведения о субъектах-службах см. в статье [Назначение приложения роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role).
+Назначьте роль администратора доступа пользователей привилегированному имени участника-службы (MS – PIM) на уровне подписки. Это назначение должно предоставлять службе привилегированного управления удостоверениями доступ к ресурсам Azure. Роль может быть назначена на уровне группы управления или на уровне подписки в зависимости от требований. Дополнительные сведения о субъектах-службах см. в статье [Назначение приложения роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Требования к лицензии для использования управление привилегированными пользователями](subscription-requirements.md)
+- [License requirements to use Privileged Identity Management](subscription-requirements.md) (Требования к лицензии для использования PIM)
 - [Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD](../users-groups-roles/directory-admin-roles-secure.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-- [Развертывание управление привилегированными пользователями](pim-deployment-plan.md)
+- [Deploy Azure AD Privileged Identity Management (PIM)](pim-deployment-plan.md) (Развертывание Azure AD Privileged Identity Management (PIM))

@@ -5,14 +5,14 @@ manager: cpoulain
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 01/15/2020
+ms.date: 04/04/2020
 ms.author: ralphe
-ms.openlocfilehash: 99c8b77328d9e42dd66428b202cbeb0644972ced
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 92fc7aeec87015a9ddbe4e52f870334582e28c14
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156493"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80671037"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -20,8 +20,7 @@ ms.locfileid: "77156493"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=dotnet)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=dotnet)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=dotnet&pivots=programming-language-csharp).
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -48,8 +47,7 @@ ms.locfileid: "77156493"
                 // Replace these values with the details of your Cognitive Speech subscription
                 string subscriptionKey = "YourSubscriptionKey";
 
-                // Replace below with your own service region (e.g., "westus", use the one of SpeechSDKParameters
-                // from here: https://aka.ms/speech/sdkregion).                   
+                // Replace below with your region identifier from here: https://aka.ms/speech/sdkregion
                 string region = "YourServiceRegion";
     
                 // Sets source and target languages.

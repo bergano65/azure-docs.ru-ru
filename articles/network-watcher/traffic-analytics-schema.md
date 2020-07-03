@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: vinigam
 ms.openlocfilehash: ccfbb92c27e4508595f19c2ea6900730cde609b9
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74666381"
 ---
 # <a name="schema-and-data-aggregation-in-traffic-analytics"></a>Схема и агрегирование данных в Аналитика трафика
@@ -116,8 +116,8 @@ https://{saName}@insights-logs-networksecuritygroupflowevent/resoureId=/SUBSCRIP
 | L7Protocol_s  | Имя протокола | Производный от целевого порта |
 | FlowDirection_s | * I = входящее<br> * O = исходящий трафик | Направление потока в NSG и из него в соответствии с журналом потока |
 | FlowStatus_s  | * A = разрешено правилом NSG <br> * D = отклонено правилом NSG  | Состояние потока Allowed/нблоккед by NSG в соответствии с журналом потоков |
-| NSGList_s | \<SUBSCRIPTIONID >\/< RESOURCEGROUP_NAME >\/< NSG_NAME > | Группа безопасности сети (NSG), связанная с потоком |
-| NSGRules_s | \<значение индекса 0) >\|\<NSG_RULENAME >\|\<направление потока >\|\<состояние потока >\|\<FlowCount Процесседбируле > |  Правило NSG, которое разрешает или запрещает этот поток |
+| NSGList_s | \<SUBSCRIPTIONID>\/<RESOURCEGROUP_NAME>\/<NSG_NAME> | Группа безопасности сети (NSG), связанная с потоком |
+| NSGRules_s | \<Значение индекса 0) >\| \<NSG_RULENAME>\| \<направление потока>\| \<состояние потока>\| \<FlowCount процесседбируле> |  Правило NSG, которое разрешает или запрещает этот поток |
 | NSGRule_s | NSG_RULENAME |  Правило NSG, которое разрешает или запрещает этот поток |
 | NSGRuleType_s | * Определено пользователем * по умолчанию |   Тип правила NSG, используемого потоком |
 | MACAddress_s | MAC-адрес | MAC-адрес сетевого адаптера, на котором была захвачена последовательность |
@@ -127,23 +127,23 @@ https://{saName}@insights-logs-networksecuritygroupflowevent/resoureId=/SUBSCRIP
 | Region_s | Регион Azure виртуальной сети, сетевого интерфейса или виртуальной машины, к которой принадлежит IP-адрес в потоке | Применимо только к типам потоков Фловтипе = S2S, P2S, Азурепублик, Екстерналпублик, МалиЦиаусфлов и Ункновнпривате (типы потоков, где только одна сторона — Azure) |
 | Region1_s | Регион Azure | Регион Azure виртуальной сети, сетевого интерфейса или виртуальной машины, к которой принадлежит исходный IP-адрес в потоке |
 | Region2_s | Регион Azure | Регион Azure виртуальной сети, к которой принадлежит целевой IP-адрес в потоке |
-| NIC_s | \<resourcegroup_Name >\/\<NetworkInterfaceName > |  Сетевая карта, связанная с виртуальной машиной при отправке или получении трафика |
-| NIC1_s | < resourcegroup_Name >/\<NetworkInterfaceName > | Сетевая карта, связанная с исходным IP-адресом в потоке |
-| NIC2_s | < resourcegroup_Name >/\<NetworkInterfaceName > | Сетевая карта, связанная с IP-адресом назначения в потоке |
-| VM_s | < resourcegroup_Name >\/\<NetworkInterfaceName > | Виртуальная машина, связанная с сетевым интерфейсом NIC_s |
-| VM1_s | < resourcegroup_Name >/\<VirtualMachineName > | Виртуальная машина, связанная с исходным IP-адресом в потоке |
-| VM2_s | < resourcegroup_Name >/\<VirtualMachineName > | Виртуальная машина, связанная с целевым IP-адресом в потоке |
-| Subnet_s | < ResourceGroup_Name >/< VNET_Name >/\<SubnetName > | Подсеть, связанная с NIC_s |
-| Subnet1_s | < ResourceGroup_Name >/< VNET_Name >/\<SubnetName > | Подсеть, связанная с исходным IP-адресом в потоке |
-| Subnet2_s | < ResourceGroup_Name >/< VNET_Name >/\<SubnetName >    | Подсеть, связанная с IP-адресом назначения в потоке |
-| ApplicationGateway1_s | \<SubscriptionID >/\<ResourceGroupName >/\<Аппликатионгатевайнаме > | Шлюз приложений, связанный с исходным IP-адресом в потоке |
-| ApplicationGateway2_s | \<SubscriptionID >/\<ResourceGroupName >/\<Аппликатионгатевайнаме > | Шлюз приложений, связанный с конечным IP-адресом в потоке |
-| LoadBalancer1_s | \<SubscriptionID >/\<ResourceGroupName >/\<LoadBalancerName > | Подсистема балансировки нагрузки, связанная с исходным IP-адресом в потоке |
-| LoadBalancer2_s | \<SubscriptionID >/\<ResourceGroupName >/\<LoadBalancerName > | Подсистема балансировки нагрузки, связанная с IP-адресом назначения в потоке |
-| LocalNetworkGateway1_s | \<SubscriptionID >/\<ResourceGroupName >/\<Локалнетворкгатевайнаме > | Шлюз локальной сети, связанный с исходным IP-адресом в потоке |
-| LocalNetworkGateway2_s | \<SubscriptionID >/\<ResourceGroupName >/\<Локалнетворкгатевайнаме > | Шлюз локальной сети, связанный с IP-адресом назначения в потоке |
-| ConnectionType_s | Возможные значения: VNetPeering, VpnGateway и ExpressRoute. |    Тип подключения |
-| ConnectionName_s | \<SubscriptionID >/\<ResourceGroupName >/\<ConnectionName > | Имя подключения. Для фловтипе P2S это будет отформатировано как <gateway name>_<VPN Client IP> |
+| NIC_s | \<resourcegroup_Name>\/ \<NetworkInterfaceName> |  Сетевая карта, связанная с виртуальной машиной при отправке или получении трафика |
+| NIC1_s | <resourcegroup_Name>/\<NetworkInterfaceName> | Сетевая карта, связанная с исходным IP-адресом в потоке |
+| NIC2_s | <resourcegroup_Name>/\<NetworkInterfaceName> | Сетевая карта, связанная с IP-адресом назначения в потоке |
+| VM_s | <resourcegroup_Name>\/ \<NetworkInterfaceName> | Виртуальная машина, связанная с сетевым интерфейсом NIC_s |
+| VM1_s | <resourcegroup_Name>/\<VirtualMachineName> | Виртуальная машина, связанная с исходным IP-адресом в потоке |
+| VM2_s | <resourcegroup_Name>/\<VirtualMachineName> | Виртуальная машина, связанная с целевым IP-адресом в потоке |
+| Subnet_s | <ResourceGroup_Name>/<VNET_Name>/\<SubnetName> | Подсеть, связанная с NIC_s |
+| Subnet1_s | <ResourceGroup_Name>/<VNET_Name>/\<SubnetName> | Подсеть, связанная с исходным IP-адресом в потоке |
+| Subnet2_s | <ResourceGroup_Name>/<VNET_Name>/\<SubnetName>    | Подсеть, связанная с IP-адресом назначения в потоке |
+| ApplicationGateway1_s | \<SubscriptionID>/\<ResourceGroupName>/\<аппликатионгатевайнаме> | Шлюз приложений, связанный с исходным IP-адресом в потоке |
+| ApplicationGateway2_s | \<SubscriptionID>/\<ResourceGroupName>/\<аппликатионгатевайнаме> | Шлюз приложений, связанный с конечным IP-адресом в потоке |
+| LoadBalancer1_s | \<SubscriptionID>/\<ResourceGroupName>/\<LoadBalancerName> | Подсистема балансировки нагрузки, связанная с исходным IP-адресом в потоке |
+| LoadBalancer2_s | \<SubscriptionID>/\<ResourceGroupName>/\<LoadBalancerName> | Подсистема балансировки нагрузки, связанная с IP-адресом назначения в потоке |
+| LocalNetworkGateway1_s | \<SubscriptionID>/\<ResourceGroupName>/\<локалнетворкгатевайнаме> | Шлюз локальной сети, связанный с исходным IP-адресом в потоке |
+| LocalNetworkGateway2_s | \<SubscriptionID>/\<ResourceGroupName>/\<локалнетворкгатевайнаме> | Шлюз локальной сети, связанный с IP-адресом назначения в потоке |
+| ConnectionType_s | Возможные значения: VNetPeering, VpnGateway и ExpressRoute. |    Тип соединения |
+| ConnectionName_s | \<SubscriptionID>/\<ResourceGroupName>/\<connectionName> | Имя подключения. Для фловтипе P2S это будет отформатировано как <gateway name>_<VPN Client IP> |
 | ConnectingVNets_s | Список имен виртуальных сетей, разделенных пробелами | В случае топологии с центральным и периферийным концентратором виртуальные сети будут заполнены. |
 | Country_s | Двухбуквенный код страны (ISO 3166-1 Alpha-2) | Заполнено для типа потока Екстерналпублик. Все IP-адреса в поле PublicIPs_s будут иметь одинаковый код страны |
 | AzureRegion_s | Расположения регионов Azure | Заполнено для типа потока Азурепублик. Все IP-адреса в поле PublicIPs_s будут предоставлять общий доступ к региону Azure |
@@ -157,11 +157,11 @@ https://{saName}@insights-logs-networksecuritygroupflowevent/resoureId=/SUBSCRIP
 | InboundBytes_d |  Байт получено как записанное на сетевом интерфейсе, где было применено правило NSG | Заполняется только для схемы журнала потока версии 2 (NSG) |
 | OutboundBytes_d | Байт отправлено как записанное на сетевом интерфейсе, где было применено правило NSG | Заполняется только для схемы журнала потока версии 2 (NSG) |
 | CompletedFlows_d  |  | Это значение заполняется ненулевым значением только для схемы журнала потоков NSG версии 2 |
-| PublicIPs_s | < PUBLIC_IP >\|\<FLOW_STARTED_COUNT >\|\<FLOW_ENDED_COUNT >\|\<OUTBOUND_PACKETS >\|\<INBOUND_PACKETS >\|\<OUTBOUND_BYTES >\|\<INBOUND_BYTES > | Записи, разделенные панелями |
-| SrcPublicIPs_s | < SOURCE_PUBLIC_IP >\|\<FLOW_STARTED_COUNT >\|\<FLOW_ENDED_COUNT >\|\<OUTBOUND_PACKETS >\|\<INBOUND_PACKETS >\|\<OUTBOUND_BYTES >\|\<INBOUND_BYTES > | Записи, разделенные панелями |
-| DestPublicIPs_s | < DESTINATION_PUBLIC_IP >\|\<FLOW_STARTED_COUNT >\|\<FLOW_ENDED_COUNT >\|\<OUTBOUND_PACKETS >\|\<INBOUND_PACKETS >\|\<OUTBOUND_BYTES >\|\<INBOUND_BYTES > | Записи, разделенные панелями |
+| PublicIPs_s | <PUBLIC_IP>\| \<FLOW_STARTED_COUNT>\| \<FLOW_ENDED_COUNT>\| \<OUTBOUND_PACKETS>\| \<INBOUND_PACKETS>\| \<OUTBOUND_BYTES>\| \<INBOUND_BYTES> | Записи, разделенные панелями |
+| SrcPublicIPs_s | <SOURCE_PUBLIC_IP>\| \<FLOW_STARTED_COUNT>\| \<FLOW_ENDED_COUNT>\| \<OUTBOUND_PACKETS>\| \<INBOUND_PACKETS>\| \<OUTBOUND_BYTES>\| \<INBOUND_BYTES> | Записи, разделенные панелями |
+| DestPublicIPs_s | <DESTINATION_PUBLIC_IP>\| \<FLOW_STARTED_COUNT>\| \<FLOW_ENDED_COUNT>\| \<OUTBOUND_PACKETS>\| \<INBOUND_PACKETS>\| \<OUTBOUND_BYTES>\| \<INBOUND_BYTES> | Записи, разделенные панелями |
 
-### <a name="notes"></a>Заметки
+### <a name="notes"></a>Примечания
 
 1. В случае потоков Азурепублик и Екстерналпублик клиентский IP-адрес виртуальной машины Azure заполняется в VMIP_s поле, а общедоступные IP-адреса заполняются в поле PublicIPs_s. Для этих двух типов потоков следует использовать VMIP_s и PublicIPs_s вместо полей SrcIP_s и DestIP_s. Для адресов Азурепублик и ЕкстерналпублиЦип мы рассмотрим дальнейшую статистическую обработку, чтобы количество записей, принимаемых в рабочую область log Analytics, было минимальным. (Это поле скоро станет нерекомендуемым, и мы будем использовать SrcIP_ и DestIP_s в зависимости от того, была ли виртуальная машина Azure источником или назначением в потоке).
 1. Сведения о типах потоков. в зависимости от IP-адресов, вовлеченных в последовательность, мы разбивают потоки на следующие типы потоков:
@@ -170,11 +170,11 @@ https://{saName}@insights-logs-networksecuritygroupflowevent/resoureId=/SUBSCRIP
 1. S2S — (сайт-сайт) один из IP-адресов принадлежит виртуальной сети Azure, а другой IP-адрес принадлежит к сети клиента (сайту), подключенной к виртуальной сети Azure через VPN-шлюз или Express Route.
 1. P2S — (наведите указатель на сайт) один из IP-адресов принадлежит виртуальной сети Azure, а другой IP-адрес принадлежит к сети клиента (сайту), подключенной к виртуальной сети Azure через VPN-шлюз.
 1. Азурепублик — один из IP-адресов принадлежит к виртуальной сети Azure, а другой — к внутренним общедоступным IP-адресам Azure, принадлежащим корпорации Майкрософт. Общедоступные IP-адреса, принадлежащие заказчику, не будут входить в этот тип потока. Например, любая виртуальная машина клиента, отправляющая трафик в службу Azure (конечная точка хранилища), будет классифицироваться по этому типу потока.
-1. Екстерналпублик — один из IP-адресов принадлежит виртуальной сети Azure, а другой — общедоступный IP-адрес, не входящий в состав Azure, не считается вредоносным в каналах ASC, которые Аналитика трафика используют для интервала обработки. FlowIntervalStartTime_t "и" FlowIntervalEndTime_t ".
-1. МалиЦиаусфлов — один из IP-адресов, входящих в виртуальную сеть Azure, а другой — общедоступный IP-адрес, не входящий в состав Azure, и сообщается как вредоносный в каналах ASC, которые Аналитика трафика используют для интервала обработки FlowIntervalStartTime_t "и" FlowIntervalEndTime_t ".
+1. Екстерналпублик — один из IP-адресов принадлежит виртуальной сети Azure, а другой — общедоступный IP-адрес, не входящий в Azure, не считается вредоносным в каналах ASC, которые Аналитика трафика используют для интервала обработки между "FlowIntervalStartTime_t" и "FlowIntervalEndTime_t".
+1. МалиЦиаусфлов — один из IP-адресов, относящихся к виртуальной сети Azure, а другой — общедоступный IP-адрес, не входящий в состав Azure, и сообщается как вредоносное в каналах ASC, которые Аналитика трафика используют для интервала обработки между "FlowIntervalStartTime_t" и "FlowIntervalEndTime_t".
 1. Ункновнпривате — один из IP-адресов принадлежит виртуальной сети Azure, а другой IP-адрес принадлежит к диапазону частных IP-адресов, как определено в RFC 1918 и не может быть сопоставлен Аналитика трафика с сайтом, принадлежащим клиенту, или виртуальной сетью Azure.
 1. Неизвестно. не удается соотнести ни один из IP-адресов в потоках с топологией клиента в Azure, а также локальным (сайтом).
-1. К именам полей добавляются \_s или \_d. Они не обозначают источник и назначение, но указывают типы данных String и Decimal соответственно.
+1. К \_именам полей добавляются s или \_d. Они не обозначают источник и назначение, но указывают типы данных String и Decimal соответственно.
 
-### <a name="next-steps"></a>Следующие шаги
-Чтобы получить ответы на часто задаваемые вопросы, см. раздел [вопросы и ответы по аналитике трафика](traffic-analytics-faq.md) , чтобы просмотреть сведения о [функциональных](traffic-analytics.md) возможностях.
+### <a name="next-steps"></a>Дальнейшие действия
+Чтобы получить ответы на часто задаваемые вопросы, см. раздел [вопросы и ответы по аналитике трафика](traffic-analytics-faq.md) , чтобы просмотреть сведения о функциональных возможностях. [Traffic analytics documentation](traffic-analytics.md)

@@ -4,13 +4,13 @@ description: Перемещайте ресурсы в новую группу р
 ms.topic: conceptual
 ms.date: 08/27/2019
 ms.openlocfilehash: 5a65f7daa0f5e3b1c8c6ddfdbecc0ff7d53e5afd
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75891274"
 ---
-# <a name="troubleshoot-moving-azure-resources-to-new-resource-group-or-subscription"></a>Устранение неполадок при перемещении ресурсов Azure в новую группу ресурсов или подписку
+# <a name="troubleshoot-moving-azure-resources-to-new-resource-group-or-subscription"></a>Устранение неполадок с перемещением ресурсов в новую группу ресурсов или подписку
 
 В этой статье содержатся рекомендации по устранению проблем при перемещении ресурсов.
 
@@ -28,9 +28,9 @@ ms.locfileid: "75891274"
 При перемещении ресурсов некоторые службы нуждаются в дополнительных вопросах. Если вы перемещаете следующие службы, убедитесь, что вы проверите рекомендации и ограничения.
 
 * [Службы приложений](./move-limitations/app-service-move-limitations.md)
-* [Azure DevOps Services](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json)
+* [Azure DevOps Services](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json)
 * [Классическая модель развертывания](./move-limitations/classic-model-move-limitations.md)
-* [Сеть](./move-limitations/networking-move-limitations.md)
+* [Сетевое взаимодействие](./move-limitations/networking-move-limitations.md)
 * [Службы восстановления](../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json)
 * [Виртуальные машины](./move-limitations/virtual-machines-move-limitations.md)
 
@@ -46,6 +46,6 @@ ms.locfileid: "75891274"
 
 При возникновении этой ошибки у вас есть два варианта. Либо переместите ресурсы в группу ресурсов без виртуальной сети, либо [обратитесь в службу поддержки](../../azure-portal/supportability/how-to-create-azure-support-request.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](move-resource-group-and-subscription.md).

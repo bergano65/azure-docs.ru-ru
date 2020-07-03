@@ -1,0 +1,14 @@
+- name: Сопоставление материалов для форматов модели
+  href: material-mapping.md
+- name: Регионы
+  href: regions.md
+- name: Требования к сети
+  href: network-requirements.md
+- name: Ограничения
+  href: limits.md
+- name: Репозиторий с примерами для Удаленной отрисовки (GitHub)
+  href: 'https://github.com/Azure/azure-remote-rendering'
+- name: REST API управления ресурсами Смешанной реальности Azure
+  href: 'https://docs.microsoft.com/rest/api/mixedreality/'
+- name: 'Документация по API C#'
+  href: 'https://docs.microsoft.com/dotnet/api/Microsoft.Azure.RemoteRendering'

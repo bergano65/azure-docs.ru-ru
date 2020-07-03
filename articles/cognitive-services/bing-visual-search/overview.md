@@ -11,10 +11,10 @@ ms.topic: overview
 ms.date: 12/19/2019
 ms.author: scottwhi
 ms.openlocfilehash: 52e3e65fb4f42530373decca547674a28a60f759
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75446656"
 ---
 # <a name="what-is-the-bing-visual-search-api"></a>Знакомство с API Визуального поиска Bing
@@ -57,7 +57,7 @@ API визуального поиска Bing является веб-служб�
 Опробуйте для начала [интерактивную демоверсию](https://azure.microsoft.com/services/cognitive-services/bing-visual-search/) API Визуального поиска Bing.
 Вы узнаете, как можно быстро настроить поисковый запрос и найти соответствующие изображения в Интернете.
 
-Сведения о том, как быстро создать первый запрос, см. в кратких руководствах по [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node.js](quickstarts/nodejs.md) | [Python](quickstarts/python.md).
+Сведения о том, как быстро создать первый запрос, см. в следующих кратких руководствах: [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [Node.js](quickstarts/nodejs.md) | [Python](quickstarts/python.md).
 
 ## <a name="see-also"></a>См. также раздел
 

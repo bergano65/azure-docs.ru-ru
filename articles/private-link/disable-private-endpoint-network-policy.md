@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 09/16/2019
 ms.author: allensu
 ms.openlocfilehash: b5ab62e7ab57d32a11a45713519633034deb6a5b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75453022"
 ---
 # <a name="disable-network-policies-for-private-endpoints"></a>Отключение сетевых политик для частных конечных точек
@@ -20,7 +20,7 @@ ms.locfileid: "75453022"
  
 При использовании портала для создания частной конечной точки этот параметр автоматически отключается в рамках процесса создания. Развертывание с использованием других клиентов требует дополнительного шага для изменения этого параметра. Вы можете отключить этот параметр с помощью Cloud Shell из портал Azure или локальной установки Azure PowerShell, Azure CLI или использовать шаблоны Azure Resource Manager.  
  
-В следующих примерах описано, как отключить `PrivateEndpointNetworkPolicies` для виртуальной сети с именем *myVirtualNetwork* и подсетью *по умолчанию* , размещенной в группе ресурсов с именем *myResourceGroup*.
+`PrivateEndpointNetworkPolicies` В следующих примерах описывается отключение для виртуальной сети с именем *myVirtualNetwork* и подсети *по умолчанию* , размещенной в группе ресурсов с именем *myResourceGroup*.
 
 ## <a name="using-azure-powershell"></a>Использование Azure PowerShell
 В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure PowerShell.

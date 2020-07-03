@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 27fa0567eefbb50907c0ed6952333230e874c21d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67099036"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-confluence"></a>Руководство по Интеграция Azure Active Directory с Kantega SSO for Confluence
@@ -38,7 +38,7 @@ ms.locfileid: "67099036"
 
 Чтобы настроить интеграцию Azure AD с Kantega SSO for Confluence, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Kantega SSO for Confluence с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,15 +99,15 @@ ms.locfileid: "67099036"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Kantega SSO for Confluence](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67099036"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -152,7 +152,7 @@ ms.locfileid: "67099036"
 
     ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon3.png)
 
-1. Установка завершится. Нажмите кнопку **Закрыть**
+1. Установка завершится. Щелкните **Закрыть**.
 
     ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon33.png)
 
@@ -180,7 +180,7 @@ ms.locfileid: "67099036"
 
     ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon6.png)
 
-    a. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Щелкните **Далее**.
 
@@ -188,7 +188,7 @@ ms.locfileid: "67099036"
 
     ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon7.png)
 
-    a. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
+    а. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
     b. Щелкните **Далее**.
 
@@ -196,7 +196,7 @@ ms.locfileid: "67099036"
 
     ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon8.png)
 
-    a. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
+    а. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
     b. Щелкните **Далее**.
 
@@ -208,11 +208,11 @@ ms.locfileid: "67099036"
 
     ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon10.png)
 
-    a. Щелкните переключатель **Create users in Confluence's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге Confluence) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
+    а. Щелкните переключатель **Create users in Confluence's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге Confluence) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
     b. Щелкните **Далее**.
 
-1. Нажмите кнопку **Готово**
+1. Нажмите кнопку **Готово**.
 
     ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon11.png)
 
@@ -220,7 +220,7 @@ ms.locfileid: "67099036"
 
     ![Настройка единого входа](./media/kantegassoforconfluence-tutorial/addon12.png)
 
-    a. Щелкните **Known domains** (Известные домены) на левой панели страницы.
+    а. Щелкните **Known domains** (Известные домены) на левой панели страницы.
 
     b. Введите имя домена в текстовое поле **Known domains** (Известные домены).
 
@@ -293,7 +293,7 @@ ms.locfileid: "67099036"
 
     ![Добавление сотрудника](./media/kantegassoforconfluence-tutorial/user2.png)
 
-    a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
+    а. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 
     b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
 
@@ -301,9 +301,9 @@ ms.locfileid: "67099036"
 
     d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
-    д. Щелкните **Confirm Password** (Подтвердить пароль) и повторно введите пароль.
+    д) Щелкните **Confirm Password** (Подтвердить пароль) и повторно введите пароль.
 
-    Е. Нажмите кнопку **Добавить**.
+    е) Нажмите кнопку **Добавить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -317,5 +317,5 @@ ms.locfileid: "67099036"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

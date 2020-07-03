@@ -1,19 +1,15 @@
 ---
 title: Диагностика с помощью Live Metrics Stream Azure Application Insights
 description: Мониторинг веб-приложения в реальном времени с помощью пользовательских метрик и диагностика проблем с помощью динамического веб-канала сбоев, трассировок и событий.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 04/22/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 00fae22b91b2ad68392a21a29df3c2aec6bf5c5e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ea0d786d0b8b96941d791bcc8e92fad9a869c5f3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406748"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77670106"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
@@ -29,11 +25,11 @@ ms.locfileid: "75406748"
 * Отслеживать любые счетчики производительности Windows в режиме реального времени.
 * Легко определить сервер, на котором возникают проблемы, и с помощью фильтра получить все КПЭ и динамические веб-каналы, относящиеся только к этому серверу.
 
-[![Видео, посвященное Live Metrics Stream](./media/live-stream/youtube.png)](https://www.youtube.com/watch?v=zqfHf1Oi5PY)
+[![Видео Live Metrics Stream](./media/live-stream/youtube.png)](https://www.youtube.com/watch?v=zqfHf1Oi5PY)
 
 В настоящее время динамические метрики поддерживаются для ASP.NET, ASP.NET Core, функций Azure, Java и приложений Node. js.
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 
 1. Если вы еще не [установили Application Insights в своем веб-приложении](../../azure-monitor/azure-monitor-app-hub.yml), сделайте это сейчас.
 2. В дополнение к стандартным пакетам Application Insights пакет [Microsoft.ApplicationInsights.PerfCounterCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.PerfCounterCollector/) также требуется, чтобы включить Live Metrics Stream.
@@ -45,7 +41,7 @@ ms.locfileid: "75406748"
 
 4. [Защитите канал управления](#secure-the-control-channel), если в фильтрах могут использоваться конфиденциальные данные, например имена клиентов.
 
-### <a name="no-data-check-your-server-firewall"></a>Нет данных? Проверьте брандмауэр сервера
+### <a name="no-data-check-your-server-firewall"></a>Данные отсутствуют? Проверьте брандмауэр сервера
 
 Убедитесь в том, что [исходящие порты для Live Metrics Stream](../../azure-monitor/app/ip-addresses.md#outgoing-ports) открыты в брандмауэре ваших серверов.
 
@@ -56,7 +52,7 @@ ms.locfileid: "75406748"
 |Задержка|Данные отображаются в течение одной секунды|Агрегирование выполняется в течение нескольких минут|
 |Нет сохранения|Данные сохраняются, только пока они отображаются на диаграмме, а затем удаляются.|[Данные сохраняются 90 дней](../../azure-monitor/app/data-retention-privacy.md#how-long-is-the-data-kept)|
 |По запросу|Данные передаются, пока открыта служба Live Metrics|Данные отправляются, когда пакет SDK установлен и включен|
-|Бесплатные|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
+|Free|Плата за данные Live Stream не взимается|Действуют [расценки](../../azure-monitor/app/pricing.md)
 |Выборка|Передаются все выбранные метрики и счетчики. Производится выборка сбоев и трассировок стека. TelemetryProcessors не применяются.|Может производиться [выборка](../../azure-monitor/app/api-filtering-sampling.md) событий.|
 |Канал управления|В пакет SDK отправляются управляющие сигналы фильтрации. Мы советуем защитить этот канал.|Обмен данными — это один из способов, на портале|
 
@@ -70,7 +66,7 @@ ms.locfileid: "75406748"
 
 Вы можете отслеживать не только количество. Параметры зависят от типа потока. Он может передавать любые данные телеметрии Application Insights: запросы, зависимости, исключения, трассировки, события или метрики. Поток может передавать и ваше [пользовательское измерение](../../azure-monitor/app/api-custom-events-metrics.md#properties).
 
-![Параметры значения](./media/live-stream/live-stream-valueoptions.png)
+![Параметры значений](./media/live-stream/live-stream-valueoptions.png)
 
 Помимо телеметрии Application Insights, можно также отслеживать любой счетчик производительности Windows, выбрав его в параметрах потока и указав имя счетчика производительности.
 
@@ -188,13 +184,13 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 | .NET                             | Поддерживается (V 2.7.2 +) | Поддерживается (V 2.7.2 +) | Поддерживается (V 2.7.2 +) | Поддерживается (V 2.7.2 +) | Поддерживается (V 2.7.2 +)  |
 | .NET Core (целевой объект =. NET Framework)| Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +)  |
 | .NET Core (целевой объект =. NET Core)     | Поддерживается (V 2.4.1 +) | Поддерживается*          | Поддерживается (V 2.4.1 +) | Поддерживается (V 2.4.1 +) | **Не поддерживается**    |
-| Функции Azure v2               | Поддерживается           | Поддерживается           | Поддерживается           | Поддерживается           | **Не поддерживается**    |
+| Функции Azure версии 2               | Поддерживается           | Поддерживается           | Поддерживается           | Поддерживается           | **Не поддерживается**    |
 | Java                             | Поддерживается (V 2.0.0 +) | Поддерживается (V 2.0.0 +) | **Не поддерживается**   | **Не поддерживается**   | **Не поддерживается**    |
 | Node.js                          | Поддерживается (V 1.3.0 +) | Поддерживается (V 1.3.0 +) | **Не поддерживается**   | Поддерживается (V 1.3.0 +) | **Не поддерживается**    |
 
 Основные метрики включают в себя запрос, зависимость и частоту исключений. Метрики производительности (счетчики производительности) включают в себя память и ЦП. Пример телеметрии показывает поток подробных сведений о неудачных запросах и зависимостях, исключениях, событиях и трассировках.
 
- \* поддержка PerfCounters незначительно различается в разных версиях .NET Core, которые не предназначены для .NET Framework.
+ \*Поддержка PerfCounters незначительно различается в разных версиях .NET Core, которые не предназначены для .NET Framework:
 
 - Метрики PerfCounters поддерживаются при работе в службе приложений Azure для Windows. (Пакет SDK для AspNetCore версии 2.4.1 или более поздней)
 - PerfCounters поддерживаются, когда приложение выполняется на любых компьютерах Windows (виртуальная машина или облачная служба или локальная и т. д.). (Пакет SDK для AspNetCore версии 2.7.1 или более поздней), но для приложений, предназначенных для .NET Core 2,0 или более поздних версий.
@@ -202,11 +198,11 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 
 По умолчанию динамические метрики отключены в пакете SDK для Node. js. Чтобы включить динамические метрики, добавьте `setSendLiveMetrics(true)` к [методам конфигурации](https://github.com/Microsoft/ApplicationInsights-node.js#configuration) при инициализации пакета SDK.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
-Нет данных? Если приложение находится в защищенной сети: Live Metrics Stream использует IP-адреса, отличные от других Application Insights телеметрии. Убедитесь, что [эти IP-адреса](../../azure-monitor/app/ip-addresses.md) открыты в брандмауэре.
+Данные отсутствуют? Если приложение находится в защищенной сети: Live Metrics Stream использует IP-адреса, отличные от других Application Insights телеметрии. Убедитесь, что [эти IP-адреса](../../azure-monitor/app/ip-addresses.md) открыты в брандмауэре.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Отслеживание использования Application Insights.](../../azure-monitor/app/usage-overview.md)
 * [Использование диагностического поиска](../../azure-monitor/app/diagnostic-search.md)
 * [Profiler](../../azure-monitor/app/profiler.md)

@@ -1,25 +1,24 @@
 ---
-title: API адаптации для приложений Azure в коммерческом магазине
-description: Необходимые компоненты API для приложений Azure на коммерческом рынке в центре партнеров Майкрософт.
-author: MaggiePucciEvans
-manager: evansma
-ms.author: evansma
+title: API отправки центра партнеров для подключения приложений Azure в коммерческом магазине Майкрософт
+description: Ознакомьтесь с предварительными требованиями для использования API отправки центра партнеров для приложений Azure в коммерческом магазине в центре партнеров Майкрософт.
+author: dsindona
+ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/10/2019
-ms.openlocfilehash: c14d8c6f27e4b0f4a4a75fa14b83455ff30ee35a
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 2c37e51ad0c6618e20d9445fab7472b1a3a72ab9
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75933667"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82744897"
 ---
-# <a name="api-for-onboarding-azure-apps-in-partner-center"></a>API для адаптации приложений Azure в центре партнеров
+# <a name="partner-center-submission-api-to-onboard-azure-apps-in-partner-center"></a>API отправки центра партнеров для подключения приложений Azure в центре партнеров
 
 Используйте *API отправки центра партнеров* для программного запроса, создания отправок и публикации предложений Azure.  Этот API полезен, если ваша учетная запись управляет множеством предложений и вы хотите автоматизировать и оптимизировать процесс отправки для этих предложений.
 
-## <a name="api-prerequisites"></a>Необходимые компоненты API
+## <a name="api-prerequisites"></a>Предварительные требования для API
 
 Для использования API центра партнеров для продуктов Azure требуется несколько программных ресурсов: 
 
@@ -50,7 +49,7 @@ ms.locfileid: "75933667"
 
 Перед вызовом любого из методов в API отправки центра партнеров необходимо сначала получить маркер доступа Azure AD, который передается в заголовок **authorization** для каждого метода в API. После получения маркера доступа у вас будет 60 минут, чтобы использовать его до окончания срока действия маркера. По истечении срока действия маркера можно обновить маркер, чтобы его можно было использовать в последующих вызовах API.
 
-Чтобы получить маркер доступа, следуйте инструкциям из статьи [вызовы службы, используя учетные данные клиента](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) для отправки `HTTP POST` конечной точке `https://login.microsoftonline.com/<tenant_id>/oauth2/token`. Ниже приведен пример запроса.
+Чтобы получить маркер доступа, следуйте инструкциям из статьи [вызовы службы, используя учетные данные клиента](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) для отправки `HTTP POST` в `https://login.microsoftonline.com/<tenant_id>/oauth2/token` конечную точку. Ниже приведен пример запроса.
 
 жсонкопи
 ```Json
@@ -64,10 +63,15 @@ grant_type=client_credentials
 &resource= https://api.partner.microsoft.com
 ```
 
-Для *tenant_id* значения в параметрах `POST URI` и *client_id* и *CLIENT_SECRET* укажите идентификатор клиента, идентификатор клиента и ключ для приложения, полученные из центра партнеров в предыдущем разделе. Для параметра *resource* укажите `https://api.partner.microsoft.com`.
+Для *tenant_id* значений в параметрах `POST URI` и *client_id* и *client_secret* укажите идентификатор клиента, идентификатор клиента и ключ для приложения, полученные из центра партнеров в предыдущем разделе. Для параметра *resource* укажите `https://api.partner.microsoft.com`.
 
 ### <a name="step-3-use-the-microsoft-store-submission-api"></a>Шаг 3. Использование API отправки в Microsoft Store
 
 После получения маркера доступа Azure AD вы можете вызвать методы в API отправки центра партнеров. Для создания или обновления отправок обычно вызывается несколько методов в API отправки центра партнеров в определенном порядке. Сведения о каждом сценарии и синтаксисе каждого метода см. в разделе Swagger API приема.
 
 https://apidocs.microsoft.com/services/partneringestion/
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* Узнайте, как создать [технический ресурс виртуальной машины Azure](create-azure-container-technical-assets.md) .
+* Узнайте, описывается создать [предложение контейнера Azure](create-azure-container-offer.md)

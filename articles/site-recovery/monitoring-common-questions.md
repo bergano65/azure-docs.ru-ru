@@ -8,18 +8,18 @@ services: site-recovery
 ms.date: 07/31/2019
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: c1d30a9cdd2cd6ca288edd609a2e2e7bee9174d7
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 66ce267581d4748ea51a3dcbd7caa61907115cc1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68718266"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82131157"
 ---
 # <a name="common-questions-about-site-recovery-monitoring"></a>Распространенные вопросы о мониторинге Site Recovery
 
 В этой статье содержатся ответы на распространенные вопросы о мониторинге [Site Recovery](site-recovery-overview.md)Azure, использовании встроенного мониторинга Site Recovery и Azure Monitor (log Analytics).
 
-## <a name="general"></a>Общее
+## <a name="general"></a>Общие
 
 ### <a name="how-is-the-rpo-value-logged-different-from-the-latest-available-recovery-point"></a>Как регистрируется значение RPO, отличающееся от последней доступной точки восстановления?
 
@@ -52,7 +52,7 @@ Site Recovery использует многоэтапный асинхронны
 ## <a name="azure-monitor-logging"></a>ведение журналов Azure Monitor;
 
 
-### <a name="how-often-does-site-recovery-send-diagnostic-logs-to-azure-monitor-log"></a>Как часто Site Recovery отправляет журналы диагностики в журнал Azure Monitor? 
+### <a name="how-often-does-site-recovery-send-resource-logs-to-azure-monitor-log"></a>Как часто Site Recovery отправляют журналы ресурсов в журнал Azure Monitor? 
 
 - Азуреситерековерирепликатионстатс и Азуреситерековерирековерипоинтс отправляются каждые 15 минут.  
 - Азуреситерековерирепликатиондатауплоадрате и Азуреситерековерипротектеддискдатачурн отправляются каждые пять минут. 
@@ -64,12 +64,12 @@ Site Recovery использует многоэтапный асинхронны
 
 По умолчанию срок хранения составляет 31 день. Вы можете увеличить период в разделе **использование и оценка затрат** в рабочей области log Analytics. Щелкните **срок хранения данных**и выберите диапазон.
 
-### <a name="whats-the-size-of-the-diagnostic-logs"></a>Каков размер журналов диагностики? 
+### <a name="whats-the-size-of-the-resource-logs"></a>Каков размер журналов ресурсов? 
 
 Обычно размер журнала составляет 15-20 КБ. 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о мониторинге с помощью [Site Recovery встроенного мониторинга](site-recovery-monitor-and-troubleshoot.md)или [Azure Monitor](monitor-log-analytics.md).
 

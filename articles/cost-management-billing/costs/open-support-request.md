@@ -1,21 +1,18 @@
 ---
-title: Создание запроса в группу поддержки для Cloudyn в Azure | Документы Майкрософт
+title: Создание запроса на поддержку для Cloudyn в Azure
 description: В этой статье описаны действия для создания запроса в группу поддержки для Cloudyn.
-services: cost-management
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
-ms.topic: troubleshooting
+ms.date: 02/12/2020
+ms.topic: conceptual
 ms.service: cost-management-billing
-manager: benshy
-ms.custom: ''
-ms.openlocfilehash: 4ebb2a1f617da75aad8cea805ba793910375c47a
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.reviewer: adwise
+ms.openlocfilehash: 38efc86d1bdc185f39d3ea502a64d0f3cf7edcc0
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989323"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80408249"
 ---
 # <a name="create-a-support-request-for-cloudyn"></a>Создание запроса в группу поддержки для Cloudyn
 

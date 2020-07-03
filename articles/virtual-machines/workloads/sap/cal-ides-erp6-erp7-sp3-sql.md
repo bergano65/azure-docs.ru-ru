@@ -4,7 +4,7 @@ description: Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в
 services: virtual-machines-windows
 documentationcenter: ''
 author: hermanndms
-manager: gwallace
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/16/2016
 ms.author: hermannd
-ms.openlocfilehash: 66921280403027d1723b27f104b42d2c83271213
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 3efd92226b7c69590f3960458ffec49b63b8364f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70100070"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77616701"
 ---
 # <a name="deploy-sap-ides-ehp7-sp3-for-sap-erp-60-on-azure"></a>Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure
 В этой статье описывается, как развернуть SAP IDES с SQL Server и Windows в Azure с помощью SAP Cloud Appliance Library (SAP CAL) 3.0. На снимках экрана наглядно показан пошаговый процесс. Для развертывания другого решения выполните те же действия.
@@ -39,24 +39,24 @@ ms.locfileid: "70100070"
 ### <a name="create-an-account-in-the-sap-cal"></a>Создание учетной записи в SAP CAL
 1. Для входа в SAP CAL впервые используйте пользователя S-User SAP или других пользователей, зарегистрированных в SAP. Затем определите учетную запись SAP CAL, которая используется SAP CAL для развертывания устройств в Azure. Вот что нужно сделать в определении учетной записи:
 
-    1\. Выберите модель развертывания в Azure (Resource Manager или классическая).
+    a. Выберите модель развертывания в Azure (Resource Manager или классическая).
 
     b. Введите подписку Azure. Учетную запись SAP CAL можно назначить только одной подписке. Если вам требуется несколько подписок, необходимо создать еще одну учетную запись SAP CAL.
     
-    В. Предоставьте SAP CAL разрешение на развертывание в вашей подписке Azure.
+    c. Предоставьте SAP CAL разрешение на развертывание в вашей подписке Azure.
 
    > [!NOTE]
-   >  Далее показано, как создать учетную запись SAP CAL для развертываний Resource Manager. При наличии учетной записи SAP CAL, связанной с классической моделью развертывания, *выполните* следующие действия, чтобы создать учетную запись SAP CAL. Новую учетную запись SAP CAL нужно развернуть в модели диспетчера ресурсов.
+   >  Далее показано, как создать учетную запись SAP CAL для развертываний Resource Manager. При наличии учетной записи SAP CAL, связанной с классической моделью развертывания, *выполните* следующие действия, чтобы создать учетную запись SAP CAL. Новую учетную запись SAP CAL нужно развернуть в модели Resource Manager.
 
 1. При создании учетной записи SAP CAL на странице **Учетные записи** отображаются два варианта для Azure: 
 
-    1\. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
+    a. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
 
-    2\. **Microsoft Azure** — это новая модель развертывания с помощью диспетчера ресурсов.
+    b. **Microsoft Azure** — это новая модель развертывания с помощью Resource Manager.
 
     ![Учетные записи CAL SAP](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic-2a.PNG)
 
-    Чтобы выполнить развертывание с использованием модели диспетчера ресурсов, выберите **Microsoft Azure**.
+    Чтобы выполнить развертывание с использованием модели Resource Manager, выберите **Microsoft Azure**.
 
     ![Учетные записи CAL SAP](./media/cal-ides-erp6-ehp7-sp3-sql/s4h-pic3c.PNG)
 
@@ -97,11 +97,11 @@ ms.locfileid: "70100070"
 
 1. На странице **Basic Mode: Create Instance** (Базовый режим: создание экземпляра) сделайте следующее:
 
-    1\. Введите **имя** экземпляра.
+    a. Введите **имя** экземпляра.
 
-    2\. Выберите **регион** Azure. Чтобы получить несколько регионов Azure на выбор, может потребоваться подписка SAP CAL.
+    b. Выберите **регион**Azure. Чтобы получить несколько регионов Azure на выбор, может потребоваться подписка SAP CAL.
 
-    В.  Введите основной **пароль** для доступа к решению, как показано ниже:
+    c.  Введите основной **пароль** для доступа к решению, как показано ниже:
 
     ![Базовый режим SAP CAL: создание экземпляра](./media/cal-ides-erp6-ehp7-sp3-sql/ides-pic10a.png)
 
@@ -123,5 +123,5 @@ ms.locfileid: "70100070"
 
 Работоспособная система SAP IDES развертывается в Azure в течение нескольких часов.
 
-Если вы приобрели подписку SAP CAL, SAP полностью поддерживает развертывания с помощью SAP CAL в Azure. Используется очередь поддержки BC-VCM-CAL.
+Если вы приобрели подписку SAP CAL, SAP полностью поддерживает развертывание с помощью SAP CAL в Azure. Используется очередь поддержки BC-VCM-CAL.
 

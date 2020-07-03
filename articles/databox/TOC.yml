@@ -12,7 +12,7 @@
           items:
             - name: Настройка (портал Azure)
               href: data-box-quickstart-portal.md
-        - name: Руководства
+        - name: Учебники
           items:
             - name: 1. Заказ
               href: data-box-deploy-ordered.md
@@ -48,19 +48,23 @@
               href: data-box-limits.md
             - name: Проверка состояния защиты
               href: data-box-security.md
-            - name: Вопросы и ответы
+            - name: ВОПРОСЫ И ОТВЕТЫ
               href: data-box-faq.md
         - name: Практическое руководство
           items:
-            - name: Управление с помощью портала Azure
+            - name: Управление через портал Azure
               href: data-box-portal-admin.md
             - name: Управление с помощью локального пользовательского веб-интерфейса
               href: data-box-local-web-ui-admin.md
+            - name: Использование самоуправляемой доставки
+              href: data-box-portal-customer-managed-shipping.md
+            - name: Включение управляемого клиентом ключа
+              href: data-box-customer-managed-encryption-key-portal.md
             - name: Перемещение данных на уровень больших двоичных объектов
               href: data-box-how-to-set-data-tier.md
             - name: Подключение кабелей к устройству
               href: data-box-cable-options.md
-            - name: Запрос в службу поддержки
+            - name: Обращение в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
             - name: Миграция
               items:
@@ -70,7 +74,9 @@
                   href: ../storage/files/storage-sync-offline-data-transfer.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
                 - name: Из хранилища HDFS
                   href: ../storage/blobs/data-lake-storage-migrate-on-premises-hdfs-cluster.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
-            - name: Устранение неполадок
+                - name: В Azure Backup
+                  href: ../backup/offline-backup-azure-data-box.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
+            - name: Диагностика
               items:
                 - name: Неполадки с Data Box
                   href: data-box-troubleshoot.md
@@ -87,7 +93,7 @@
           items:
             - name: Настройка (портал Azure)
               href: data-box-disk-quickstart-portal.md
-        - name: Руководства
+        - name: Учебники
           items:
             - name: 1. Заказ
               href: data-box-disk-deploy-ordered.md
@@ -107,13 +113,15 @@
               href: data-box-disk-limits.md
             - name: Проверка состояния защиты
               href: data-box-disk-security.md
-            - name: Вопросы и ответы
+            - name: ВОПРОСЫ И ОТВЕТЫ
               href: data-box-disk-faq.md
         - name: Практическое руководство
           items:
             - name: Управление через портал Azure
               href: data-box-portal-ui-admin.md
-            - name: Устранение неполадок
+            - name: Использование самоуправляемой доставки
+              href: data-box-disk-portal-customer-managed-shipping.md
+            - name: Диагностика
               items:
                 - name: Проблемы при разблокировке
                   href: data-box-disk-troubleshoot-unlock.md
@@ -135,7 +143,7 @@
           items:
             - name: Настройка (портал Azure)
               href: data-box-heavy-quickstart-portal.md
-        - name: Руководства
+        - name: Учебники
           items:
             - name: 1. Заказ
               href: data-box-heavy-deploy-ordered.md
@@ -167,10 +175,12 @@
               href: data-box-heavy-limits.md
         - name: Практическое руководство
           items:
-            - name: Управление с помощью портала Azure
+            - name: Управление через портал Azure
               href: data-box-portal-admin.md
             - name: Управление с помощью локального пользовательского веб-интерфейса
               href: data-box-local-web-ui-admin.md
+            - name: Включение управляемого клиентом ключа
+              href: data-box-customer-managed-encryption-key-portal.md
             - name: Устранение неполадок с устройствами
               href: data-box-troubleshoot.md
             - name: Перемещение данных на уровень больших двоичных объектов

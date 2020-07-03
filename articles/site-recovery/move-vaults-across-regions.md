@@ -9,10 +9,10 @@ ms.date: 07/31/2019
 ms.author: rajanaki
 ms.custom: MVC
 ms.openlocfilehash: 32dff9a165125ab1949560ce36438ae266cd3036
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74090296"
 ---
 # <a name="move-a-recovery-services-vault-and-azure-site-recovery-configuration-to-another-azure-region"></a>Перемещение хранилища Служб восстановления и конфигурации Azure Site Recovery в другой регион Azure
@@ -33,7 +33,7 @@ ms.locfileid: "74090296"
 > [!IMPORTANT]
 > В настоящее время не существует совершенного способа для перемещения хранилища Служб восстановления и конфигурации аварийного восстановления в другой регион. В этой статье описывается процесс отключения репликации и ее настройки в новом регионе.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - Удалите конфигурацию аварийного восстановления, прежде чем пытаться переместить виртуальные машины Azure в другой регион. 
 
@@ -65,7 +65,7 @@ ms.locfileid: "74090296"
 ## <a name="delete-the-resources"></a>Удаление ресурсов
 
 1. Перейдите к хранилищу Служб восстановления.
-2. Нажмите кнопку **Удалить**.
+2. Выберите команду **Удалить**.
 3. Удалите все другие ресурсы, [идентифицированные ранее](#identify-the-resources-that-were-used-by-azure-site-recovery).
  
 ## <a name="move-azure-vms-to-the-new-target-region"></a>Перенос виртуальных машин Azure в целевой регион

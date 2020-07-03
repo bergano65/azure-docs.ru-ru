@@ -1,16 +1,16 @@
 ---
-title: Руководство. Управление резервными копиями баз данных SAP HANA с помощью интерфейса командной строки
+title: Руководство по Управление резервными копиями баз данных SAP HANA с помощью интерфейса командной строки
 description: Из этого учебника вы узнаете, как управлять резервными копиями баз данных SAP HANA, запущенных на виртуальной машине Azure, через интерфейс командной строки Azure.
 ms.topic: tutorial
 ms.date: 12/4/2019
 ms.openlocfilehash: 2c088c27a678a4541cbba3c4c43c9cd830c60ff0
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75470799"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79222461"
 ---
-# <a name="tutorial-manage-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство. Управление базами данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
+# <a name="tutorial-manage-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство по Управление базами данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этой документации содержатся сведения об управлении сохраненной резервной копией базы данных SAP HANA на виртуальной машине Azure с помощью Azure CLI. Эти действия можно также выполнить с помощью [портала Azure](https://docs.microsoft.com/azure/backup/sap-hana-db-manage).
 

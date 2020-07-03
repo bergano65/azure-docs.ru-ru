@@ -3,20 +3,20 @@ title: Краткое руководство. Синтезирование ре�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве показано, как использовать пакет SDK службы речи для преобразования текста в синтезированную речь в звуковом файле.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 02/10/2020
-ms.author: dapine
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: d5df28728c2e911537d67b9276157dc94b080e23
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.author: trbye
+zone_pivot_groups: programming-languages-set-two-with-js-spx
+ms.openlocfilehash: dd8b22580a913bfeee851b089cbf2c09da530503
+ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119434"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83715188"
 ---
 # <a name="quickstart-synthesize-speech-into-an-audio-file"></a>Краткое руководство. Синтезирование речи в звуковой файл
 
@@ -42,6 +42,19 @@ ms.locfileid: "77119434"
 [!INCLUDE [Header](../includes/quickstarts/tts-audio-file/header.md)]
 [!INCLUDE [Header](../includes/quickstarts/tts-audio-file/python/header.md)]
 [!INCLUDE [python](../includes/quickstarts/tts-audio-file/python/python.md)]
+::: zone-end
+
+::: zone pivot="programming-language-javascript"
+[!INCLUDE [Header](../includes/quickstarts/tts-audio-file/header.md)]
+[!INCLUDE [Header](../includes/quickstarts/tts-audio-file/javascript/header.md)]
+[!INCLUDE [javascript](../includes/quickstarts/tts-audio-file/javascript/javascript.md)]
+::: zone-end
+
+::: zone pivot="programmer-tool-spx"
+[!INCLUDE [Header](../includes/quickstarts/tts-audio-file/spx/header.md)]
+[!INCLUDE [SPX Setup](../includes/spx-setup.md)]
+[!INCLUDE [Header](../includes/quickstarts/tts-audio-file/spx/spx.md)]
+[!INCLUDE [next steps to spx basics](../includes/quickstarts/spx-next-steps.md)]
 ::: zone-end
 
 ::: zone pivot="programming-language-more"

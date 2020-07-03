@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 3f80169808b1e6420f04b786d2bb06bde9c96231
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73479657"
 ---
 # <a name="text-split-cognitive-skill"></a>Когнитивный навык разделения текста
@@ -29,7 +29,7 @@ Microsoft.Skills.Text.SplitSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра     | Description (Описание) |
+| Имя параметра     | Описание |
 |--------------------|-------------|
 | textSplitMode      | Страницы или приложения | 
 | maximumPageLength | Если textSplitMode имеет значение "pages", это относится к максимальной длине страницы, определяемой `String.Length`. Минимальное значение — 100.  Если textSplitMode имеет значение pages, алгоритм предпримет попытку разделить текст на блоки, размер которых будет максимально соответствовать значению maximumPageLength. В этом случае алгоритм сделает все возможное, чтобы разделить предложение на его границе. В этом случае размер блока будет немного меньше, чем значение maximumPageLength. | 
@@ -38,14 +38,14 @@ Microsoft.Skills.Text.SplitSkill
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Имя параметра       | Description (Описание)      |
+| Имя параметра       | Описание      |
 |----------------------|------------------|
 | text  | Текст, который будет разбит на подстроки. |
 | languageCode  | (Необязательно.) Код языка документа. Если вы не знакомы с языком (т. е. необходимо разбить текст на входные данные в [лангуажедетектионскилл](cognitive-search-skill-language-detection.md)), это можно сделать ненадежным.  |
 
 ## <a name="skill-outputs"></a>Выходные данные навыка 
 
-| Имя параметра     | Description (Описание) |
+| Имя параметра     | Описание |
 |--------------------|-------------|
 | textItems | Массив извлеченных подстрок. |
 
@@ -130,7 +130,7 @@ Microsoft.Skills.Text.SplitSkill
 ## <a name="error-cases"></a>Варианты ошибок
 Если язык не поддерживается, создается предупреждение и текст разделяется на границах символов.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также раздел
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)

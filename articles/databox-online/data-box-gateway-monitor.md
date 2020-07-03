@@ -8,25 +8,25 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 61da2454d6a72d43a7b4600d7ea85e6a3f82958f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 886bff3f57f101229c04e91cfa4cf85051f8b1c6
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60755042"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82561141"
 ---
 # <a name="monitor-your-azure-data-box-gateway"></a>Мониторинг Шлюза Azure Data Box
 
-Узнайте, как выполнять мониторинг Шлюза Azure Data Box. Для мониторинга устройства можно использовать портал Azure или локальный веб-интерфейс. Используйте портал Azure для просмотра событий устройства и метрик, а также настройки метрик и управления ими.
+Узнайте, как выполнять мониторинг Шлюза Azure Data Box. Для мониторинга устройства можно использовать портал Azure или локальный пользовательский веб-интерфейс. Используйте портал Azure для просмотра событий устройства и метрик, а также настройки метрик и управления ими. 
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Просмотр событий устройства и соответствующих оповещений
-> * Просмотр метрик емкости и транзакций устройства
+> * Просмотр событий устройства и соответствующих оповещений.
+> * Просмотр метрик емкости и транзакций устройства.
 > * Настройка оповещений и управление ими.
 
-## <a name="view-device-events"></a>Просмотр событий устройства
+## <a name="view-device-events"></a>Просмотр событий устройства.
 
 [!INCLUDE [Supported OS for clients connected to device](../../includes/data-box-edge-gateway-view-device-events.md)]
 

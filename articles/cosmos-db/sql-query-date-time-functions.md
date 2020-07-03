@@ -8,28 +8,28 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 93b3e90deb5e3764cb5402938c5d0e14cadb7883
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74873392"
 ---
 # <a name="date-and-time-functions-azure-cosmos-db"></a>Функции даты и времени (Azure Cosmos DB)
 
 Функции даты и времени позволяют выполнять операции DateTime и timestamp в Azure Cosmos DB.
 
-## <a name="functions"></a>Функции Azure
+## <a name="functions"></a>Функции
 
 Следующие скалярные функции позволяют получить текущую дату и время в формате UTC в двух формах. числовая метка времени, значение которой является эпохой UNIX в миллисекундах или в виде строки, которая соответствует формату ISO 8601:
 
 |||
 |-|-|
-|[жеткуррентдатетиме](sql-query-getcurrentdatetime.md)|[жеткурренттиместамп](sql-query-getcurrenttimestamp.md)||
+|[GetCurrentDateTime](sql-query-getcurrentdatetime.md)|[GetCurrentTimestamp](sql-query-getcurrenttimestamp.md)||
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
-- [Определяемые пользователем функции](sql-query-udfs.md)
-- [Статистические функции](sql-query-aggregates.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Определенные пользователем функции](sql-query-udfs.md)
+- [Статистические выражения](sql-query-aggregates.md)

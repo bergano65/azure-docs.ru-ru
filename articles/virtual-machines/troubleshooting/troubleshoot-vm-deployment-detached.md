@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 10/31/2019
 ms.author: vaaga
 ms.openlocfilehash: e049a2b914cbf9c4f0ca0f3a1dd0281d58f881b2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75486824"
 ---
 # <a name="troubleshoot-virtual-machine-deployment-due-to-detached-disks"></a>Устранение неполадок развертывания виртуальной машины из-за отключенных дисков
@@ -30,7 +30,7 @@ Code=\"AttachDiskWhileBeingDetached\"
 Message=\"Cannot attach data disk '{disk ID}' to virtual machine '{vmName}' because the disk is currently being detached or the last detach  operation failed. Please wait until the disk is completely detached, and then try again or delete/detach the disk explicitly again\” 
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Эта ошибка возникает при попытке повторно подключить диск данных, операция последнего отсоединения завершилась ошибкой. Лучшим способом выхода из этого состояния является отключение диска, на котором происходит сбой.
 
@@ -83,9 +83,9 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ### <a name="step-2-set-the-flag-for-failing-disks-to-true"></a>Шаг 2. Установите флаг для неудачных дисков в значение "true".
 
-Установите флаг **тобедетачед** для параметра сбой диска в значение true в полезных данных, возвращенных на шаге 1. Примечание. версия API, указанная для вызовов Get и постановки, должна быть `2019-03-01` или выше.
+Установите флаг **тобедетачед** для параметра сбой диска в значение true в полезных данных, возвращенных на шаге 1. Примечание. версия API, указанная для вызовов Get и постановки, `2019-03-01` должна быть или выше.
 
-**Образец текста запроса**
+**Пример текста запроса**
 
 ```azurepowershell-interactive
 {
@@ -230,7 +230,7 @@ PATCH https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 При возникновении проблем с подключением к виртуальной машине ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md).
 

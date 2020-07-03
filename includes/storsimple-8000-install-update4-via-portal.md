@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: a3ccf76b2722c04a9353fcc7020ff1387bc454c6
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185490"
 ---
 #### <a name="to-install-an-update-from-the-azure-portal"></a>Установка обновления с портала Azure
@@ -17,7 +17,7 @@ ms.locfileid: "67185490"
 
     ![Выбор устройства](./media/storsimple-8000-install-update4-via-portal/update1.png)
 
-2. Выберите **Параметры устройства** > **Обновления устройства**.
+2. Выберите **Параметры** > устройства**обновления устройства**.
 
     ![Выбор параметра "Обновления устройства"](./media/storsimple-8000-install-update4-via-portal/update2.png)
 

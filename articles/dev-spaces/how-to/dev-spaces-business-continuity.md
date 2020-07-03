@@ -8,12 +8,12 @@ ms.topic: conceptual
 description: Узнайте, как использовать Azure Dev Spaces и службы Azure Kubernetes Services для обеспечения непрерывности бизнес-процессов и подготовки к аварийному восстановлению
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 manager: gwallace
-ms.openlocfilehash: 8a223e9610d2b243cd78bf8b674262d6438421a9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 37c0048bfa7e72b25eb56603fc027045eba25cea
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75438523"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78295833"
 ---
 # <a name="business-continuity-and-disaster-recovery-in-azure-dev-spaces"></a>Непрерывность бизнес-процессов и аварийное восстановление в Azure Dev Spaces
 
@@ -27,11 +27,9 @@ Azure Dev Spaces — это функция Службы Azure Kubernetes (AKS).
 
 Общие сведения о развертывании Службы Azure Kubernetes в нескольких регионах см. в разделе [Планирование развертывания в нескольких регионах](https://docs.microsoft.com/azure/aks/operator-best-practices-multi-region#plan-for-multiregion-deployment).
 
-Сведения о развертывании кластера AKS, совместимого с Azure Dev Spaces, см. в разделе [Создание кластера Kubernetes с помощью Azure Cloud Shell](https://docs.microsoft.com/azure/dev-spaces/how-to/create-cluster-cloud-shell).
-
 ### <a name="enable-dev-spaces-via-the-azure-portal"></a>Включение Dev Spaces с помощью портала Azure
 
-Щелкните элемент навигации **Dev Spaces** в разделе свойств нужного кластера на портале Azure. Затем включите Dev Spaces.
+Выберите пункт меню **пространства разработки** в параметрах каждого кластера в портал Azure. Затем выберите параметр, чтобы включить пространства разработки и сохранить.
 
 ![Включение Dev Spaces с помощью портала Azure](../media/common/enable-dev-spaces.jpg)
 
@@ -41,7 +39,7 @@ Azure Dev Spaces — это функция Службы Azure Kubernetes (AKS).
 
 Dev Spaces можно также включить из командной строки:
 
-```cmd
+```azurecli
 az aks use-dev-spaces -g <resource group name> -n <cluster name>
 ```
 
@@ -53,11 +51,11 @@ az aks use-dev-spaces -g <resource group name> -n <cluster name>
 
 ## <a name="select-the-correct-aks-cluster-to-use-for-dev-spaces"></a>Выбор кластера AKS для использования в Dev Spaces
 
-Настроив резервное копирование кластера резервного копирования с запущенным базовым планом вашей команды, вы сможете быстро выбрать кластер резервного копирования в любое время. Кроме того, можно повторно запускать отдельные службы, с которыми вы работаете в Dev Spaces.
+Настроив резервное копирование кластера резервного копирования с запущенным базовым планом вашей команды, вы сможете быстро выбрать кластер резервного копирования в любое время. Затем можно повторно запустить отдельные службы, над которыми вы работаете, в дочерних сферах разработки.
 
 Выберите другой кластер с помощью команды CLI:
 
-```cmd
+```azurecli
 az aks use-dev-spaces -g <new resource group name> -n <new cluster name>
 ```
 

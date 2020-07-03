@@ -1,6 +1,6 @@
 ---
-title: Решения Azure VMware (AVS)
-description: Портал документации по службе решений Azure VMware (AVS).
+title: Решение VMware в Azure от CloudSimple
+description: Портал документации по решению VMware в Azure от CloudSimple.
 author: sharaths-cs
 ms.author: b-mashar
 ms.date: 08/20/2019
@@ -8,23 +8,23 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: d81ea6778f3ba31d72c34334b1439994b076647c
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 936a9eb4d9b33b45800fab213fc72a306a04146e
+ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 03/25/2020
 ms.locfileid: "77025220"
 ---
-# <a name="azure-vmware-solution-by-avs"></a>Решение Azure VMware от AVS
+# <a name="azure-vmware-solution-by-cloudsimple"></a>Решение VMware в Azure от CloudSimple
 
-Вас приветствует объединенный портал поддержки по решению Azure VMware от AVS.
+Вас приветствует объединенный портал поддержки по решению VMware в Azure от CloudSimple.
 На этом сайте документации вы можете изучить следующие темы.
 
 ## <a name="overview"></a>Обзор
 
-Дополнительные сведения о службе решений Azure VMware (AVS)
+Дополнительные сведения о решении VMware в Azure от CloudSimple.
 
-* Дополнительные сведения о функциях, преимуществах и сценариях использования см. в статье [What is Azure VMware Solutions (AVS)](cloudsimple-vmware-solutions-overview.md) (Что собой представляет служба решений Azure VMware (AVS)).
+* Дополнительные сведения о функциях, преимуществах и сценариях использования см. в статье [What is Azure VMware Solution by CloudSimple](cloudsimple-vmware-solutions-overview.md) (Что такое решение VMware в Azure от CloudSimple).
 * Изучите [основные концепции администрирования](key-concepts.md).
 
 ## <a name="quickstart"></a>Краткое руководство
@@ -32,17 +32,17 @@ ms.locfileid: "77025220"
 Узнайте, как начать работу с этим решением.
 
 * Узнайте, как [инициализировать службу и приобрести емкость](quickstart-create-cloudsimple-service.md).
-* Узнайте, как создать среду VMware, изучив [краткое руководство по настройке частного облака AVS](quickstart-create-private-cloud.md).
+* Узнайте, как создать среду VMware, изучив статью [Configure a Private Cloud Environment](quickstart-create-private-cloud.md) (Настройка среды частного облака).
 * Узнайте, как унифицировать управление между VMware и Azure, изучив статью [Consume VMware VMs on Azure](quickstart-create-vmware-virtual-machine.md) (Использование виртуальных машин VMware в Azure).
 
 ## <a name="concepts"></a>Основные понятия
 
 Подробнее изучите перечисленные ниже концепции.
 
-* [Служба AVS](cloudsimple-service.md) (также называется службой решений Azure VMware (AVS)). Этот ресурс следует создавать отдельно для каждого региона.
-* Приобретите емкость для среды, создав один или несколько ресурсов [Узел AVS](cloudsimple-node.md). Эти ресурсы также называются узлами решения Azure VMware от AVS.
-* Инициализируйте и настройте среду VMware с помощью [частных облаков AVS](cloudsimple-private-cloud.md).
-* Унифицируйте управление с помощью [виртуальных машин AVS](cloudsimple-virtual-machines.md) (также называются виртуальными машинами службы решений Azure VMware (AVS)).
+* [Служба CloudSimple](cloudsimple-service.md), также известная как "Решение VMware в Azure от CloudSimple — служба". Этот ресурс следует создавать отдельно для каждого региона.
+* Приобретите емкость для среды, создав один или несколько ресурсов [Узел CloudSimple](cloudsimple-node.md). Эти ресурсы указываются как "Решение VMware в Azure от CloudSimple — узел".
+* Инициализируйте и настройте среду VMware с помощью [частных облаков.](cloudsimple-private-cloud.md)
+* Унифицируйте управление с помощью [виртуальных машин CloudSimple](cloudsimple-virtual-machines.md), которые указываются как "Решение VMware в Azure от CloudSimple — виртуальная машина".
 * Создайте базовую сеть на основе [виртуальных сетей и подсетей](cloudsimple-vlans-subnets.md).
 * Разделите и защитите базовую сеть с помощью ресурса [Таблица брандмауэра](cloudsimple-firewall-tables.md).
 * Получите безопасный доступ к средам VMware через глобальную сеть с помощью [VPN-шлюзов](cloudsimple-vpn-gateways.md).
@@ -56,10 +56,10 @@ ms.locfileid: "77025220"
 
 Узнайте, как выполнять стандартные задачи:
 
-* [Создайте службу AVS](create-cloudsimple-service.md) отдельно для каждого региона, в котором будете развертывать среды VMware.
-* Настройте базовые функции службы на [портале AVS](access-cloudsimple-portal.md).
-* Добавьте емкость и оптимизируйте расходы на инфраструктуру, [приобретая узлы AVS](create-nodes.md).
-* Управляйте конфигурациями среды VMware с помощью частных облаков AVS. Вы можете [создавать](create-private-cloud.md), [администрировать](manage-private-cloud.md), [расширять](expand-private-cloud.md) и [сжимать](shrink-private-cloud.md) частные облака AVS.
+* [Создайте службу CloudSimple](create-cloudsimple-service.md), по одной для каждого региона, в котором вы будете развертывать среды VMware.
+* Настройте базовые функции службы на [портале CloudSimple](access-cloudsimple-portal.md).
+* Добавьте емкость и оптимизируйте расходы на инфраструктуру, [приобретая узлы CloudSimple](create-nodes.md).
+* Управляйте конфигурациями среды VMware с помощью частных облаков. Вы можете [создавать](create-private-cloud.md), [администрировать](manage-private-cloud.md), [расширять](expand-private-cloud.md) и [сжимать](shrink-private-cloud.md) частные облака.
 * Организуйте унифицированное управление, настроив [сопоставление подписок Azure](azure-subscription-mapping.md).
 * Наблюдение за активностью пользователей и системы с помощью [страниц действий](monitor-activity.md).
 * Настройте сетевое окружение для сред, [создавая подсети и управляя ими](create-vlan-subnet.md).
@@ -68,7 +68,7 @@ ms.locfileid: "77025220"
 * Настройте подключение из внутренних сетей или с клиентских рабочих станций через [VPN-подключение](vpn-gateway.md).
 * Включите обмен данными между [локальными средами](on-premises-connection.md) и [виртуальными сетями Azure](virtual-network-connection.md).
 * Настройте целевые объекты оповещений и контролируйте общую приобретенную емкость через [сводку по учетной записи](account.md).
-* Просмотрите сведения о том, какие [пользователи](users.md) обращались к порталу AVS.
+* Проверьте, какие [пользователи](users.md) обращались к порталу CloudSimple.
 * Управляйте виртуальными машинами VMware на портале Azure.
     * [Создайте виртуальные машины](azure-create-vm.md) на портале Azure.
     * [Управляйте виртуальными машинами](azure-manage-vm.md), которые вы только что создали.

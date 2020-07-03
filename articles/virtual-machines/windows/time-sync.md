@@ -1,24 +1,18 @@
 ---
 title: Синхронизация времени для виртуальных машин Windows в Azure
 description: Синхронизация времени для виртуальных машин Windows
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
-ms.topic: article
-ms.tgt_pltfrm: vm-windows
+ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: dd2ae2159c43da6a049d67cae739f111eba682c9
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: cd9a196e5f957782de91cff69c01fbfa5716369a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74534456"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82100504"
 ---
 # <a name="time-sync-for-windows-vms-in-azure"></a>Синхронизация времени для виртуальных машин Windows в Azure
 
@@ -28,11 +22,11 @@ ms.locfileid: "74534456"
 
 
 >[!NOTE]
->Краткий обзор службы времени в Windows можно получить в [этом видео](https://aka.ms/WS2016TimeVideo).
+>Краткий обзор службы времени Windows см. в этом [видео](https://aka.ms/WS2016TimeVideo).
 >
 > Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time). 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Точность часов компьютера оценивается по тому, насколько близки их показания к стандартному времени в формате UTC. Время UTC устанавливается по точным атомным часам, отклонение которых не превышает одной секунды за 300 лет. Однако для считывания времени UTC напрямую требуется специальное оборудование. Вместо этого со временем UTC синхронизируются серверы времени, к которым затем обращаются другие компьютеры. Таким образом достигается масштабируемость и надежность. На каждом компьютере выполняется служба синхронизации времени, которая знает, какие серверы времени следует использовать, и регулярно проверяет необходимость коррекции часов компьютера, при необходимости корректируя время. 
 
@@ -50,7 +44,7 @@ ms.locfileid: "74534456"
 
 Наилучшие результаты для развертываний Windows достигаются при использовании Windows Server 2016 в качестве операционной системы на виртуальной машине, что позволяет пользоваться последними улучшениями в плане синхронизации времени.
 
-## <a name="configuration-options"></a>Варианты настройки
+## <a name="configuration-options"></a>Параметры конфигурации
 
 Есть три способа настроить синхронизацию времени для виртуальных машин Windows, размещенных в Azure:
 
@@ -174,13 +168,13 @@ w32tm /config /update
 w32tm /dumpreg /subkey:Parameters | findstr /i "ntpserver"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ниже приведены ссылки на дополнительные материалы по синхронизации времени:
 
-- [Средства и параметры службы времени Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/Windows-Time-Service-Tools-and-Settings)
-- [Улучшения Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/windows-server-2016-improvements)
+- [Инструменты и параметры службы времени Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/Windows-Time-Service-Tools-and-Settings)
+- [Улучшения Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/windows-server-2016-improvements)
 - [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time)
-- [Граница области поддержки для настройки службы времени Windows для сред высокой точности](https://docs.microsoft.com/windows-server/networking/windows-time-service/support-boundary)
+- [Граница области поддержки для настройки службы времени Windows в высокоточных средах](https://docs.microsoft.com/windows-server/networking/windows-time-service/support-boundary)
 
 

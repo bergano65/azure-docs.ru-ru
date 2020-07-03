@@ -4,10 +4,10 @@ description: Ресурс QnA Maker и все базы знаний в этом 
 ms.topic: conceptual
 ms.date: 01/27/2020
 ms.openlocfilehash: 5cb1dcd35649debbafd2e234606ad4c9d6906ea6
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76843426"
 ---
 # <a name="design-knowledge-base-for-content-language"></a>Проектирование базы знаний для языка содержимого
@@ -39,6 +39,6 @@ QnA Maker рекомендации по поддержке языков:
 * Добавлять только файлы и URL-адреса для этого языка
 * Используйте соглашение об именовании для ресурса, чтобы указать язык. Пример `qna-maker-fr` для всех баз знаний для французских документов
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Ознакомьтесь с [основными понятиями](query-knowledge-base.md) о том, как запросить ответ в базе знаний.

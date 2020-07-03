@@ -4,10 +4,10 @@ description: Узнайте, как выполнить команду быстр
 ms.topic: article
 ms.date: 07/02/2019
 ms.openlocfilehash: ea4432c9e92c4a0380517e39678814e2d1cb3bfc
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74456408"
 ---
 # <a name="check-the-health-of-an-azure-container-registry"></a>Проверка работоспособности реестра контейнеров Azure
@@ -18,7 +18,7 @@ ms.locfileid: "74456408"
 
 ## <a name="run-az-acr-check-health"></a>Выполните команду AZ контроля доступа (проверка работоспособности)
 
-В следующих примерах показаны различные способы выполнения команды `az acr check-health`.
+В следующих примерах показаны различные способы выполнения `az acr check-health` команды.
 
 > [!NOTE]
 > При выполнении команды в Azure Cloud Shell локальная среда не проверяется. Однако можно проверить доступ к целевому реестру.
@@ -33,7 +33,7 @@ az acr check-health
 
 ### <a name="check-the-environment-and-a-target-registry"></a>Проверка среды и целевого реестра
 
-Чтобы проверить доступ к реестру, а также выполнить проверку локальной среды, передайте имя целевого реестра. Например,
+Чтобы проверить доступ к реестру, а также выполнить проверку локальной среды, передайте имя целевого реестра. Пример:
 
 ```azurecli
 az acr check-health --name myregistry
@@ -43,7 +43,7 @@ az acr check-health --name myregistry
 
 Команда записывает данные в стандартный вывод. При обнаружении проблемы она предоставляет код и описание ошибки. Дополнительные сведения о кодах и возможных решениях см. в [справочнике по ошибкам](container-registry-health-error-reference.md).
 
-По умолчанию команда останавливается при обнаружении ошибки. Можно также выполнить команду, чтобы она выпускала выходные данные для всех проверок работоспособности, даже если обнаружены ошибки. Добавьте параметр `--ignore-errors`, как показано в следующих примерах:
+По умолчанию команда останавливается при обнаружении ошибки. Можно также выполнить команду, чтобы она выпускала выходные данные для всех проверок работоспособности, даже если обнаружены ошибки. Добавьте `--ignore-errors` параметр, как показано в следующих примерах:
 
 ```azurecli
 # Check environment only
@@ -53,7 +53,7 @@ az acr check-health --ignore-errors
 az acr check-health --name myregistry --ignore-errors
 ```      
 
-Пример выходных данных:
+Образец вывода:
 
 ```console
 $ az acr check-health --name myregistry --ignore-errors --yes
@@ -72,7 +72,7 @@ Fetch access token for registry 'myregistry.azurecr.io' : OK
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о кодах ошибок, возвращаемых командой [AZ контроля доступа проверки][az-acr-check-health] работоспособности, см [. в](container-registry-health-error-reference.md)этой статье.
 

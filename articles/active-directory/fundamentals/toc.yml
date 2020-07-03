@@ -5,8 +5,12 @@
   items:
     - name: Что такое Azure Active Directory
       href: active-directory-whatis.md
+    - name: "Сравнение Azure\_AD и ADDS"
+      href: active-directory-compare-azure-ad-to-ad.md
     - name: Новые возможности Azure Active Directory
       href: whats-new.md
+    - name: "Новые возможности Microsoft\_365 для государственных организаций"
+      href: whats-new-microsoft-365-government.md
 - name: Краткие руководства
   expanded: true
   items:
@@ -17,9 +21,7 @@
 - name: Основные понятия
   expanded: true
   items:
-    - name: Оценка безопасности удостоверений
-      href: identity-secure-score.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Включение MFA
           href: concept-fundamentals-mfa-get-started.md
@@ -27,22 +29,34 @@
           href: concept-fundamentals-security-defaults.md
         - name: Блокировка устаревших методов проверки подлинности
           href: concept-fundamentals-block-legacy-authentication.md
-    - name: Управление группами и доступом
-      href: active-directory-manage-groups.md
-    - name: Групповое лицензирование
-      href: active-directory-licensing-whatis-azure-portal.md
-    - name: Архитектура Azure AD
-      href: active-directory-architecture.md
-    - name: Стандартные разрешения пользователей
-      href: users-default-permissions.md
-    - name: 'Развертывание 30, 90 и выше'
-      href: active-directory-deployment-checklist-p2.md
-    - name: Хранилище данных удостоверений для ЕС
-      href: active-directory-data-storage-eu.md
-    - name: Хранилище данных удостоверений для Австралии
-      href: active-directory-data-storage-australia.md
-    - name: "Новые возможности Microsoft\_365 для государственных организаций"
-      href: whats-new-microsoft-365-government.md
+        - name: Оценка безопасности удостоверений
+          href: identity-secure-score.md
+        - name: Защита удаленных сотрудников
+          href: concept-secure-remote-workers.md
+        - name: Непрерывная оценка доступа
+          href: concept-fundamentals-continuous-access-evaluation.md
+    - name: Группы и пользователи
+      items:
+        - name: Управление группами и доступом
+          href: active-directory-manage-groups.md
+        - name: Групповое лицензирование
+          href: active-directory-licensing-whatis-azure-portal.md
+        - name: Стандартные разрешения пользователей
+          href: users-default-permissions.md
+    - name: Architecture
+      items:
+        - name: Архитектура Azure AD
+          href: active-directory-architecture.md
+    - name: Руководство по развертыванию
+      items:
+        - name: 'Развертывание 30, 90 и выше'
+          href: active-directory-deployment-checklist-p2.md
+    - name: Хранилище данных
+      items:
+        - name: Хранилище данных удостоверений для Европы
+          href: active-directory-data-storage-eu.md
+        - name: Хранилище данных удостоверений для Австралии и Новой Зеландии
+          href: active-directory-data-storage-australia-newzealand.md
     - name: Справочник по операциям Azure AD
       items:
         - name: Введение

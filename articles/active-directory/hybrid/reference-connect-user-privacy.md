@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6f5d3125b7b77e8ce7a943f640c44615049ab160
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60455790"
 ---
 # <a name="user-privacy-and-azure-ad-connect"></a>Конфиденциальность пользователей и Azure AD Connect 
@@ -68,10 +68,10 @@ If ($File.ToUpper() -ne "$env:programdata\aadconnect\PERSISTEDSTATE.XML".toupper
 Чтобы запланировать выполнение сценария каждые 48 часов, сделайте следующее.
 
 1.  Сохраните сценарий в файле с расширением **PS1**, а затем откройте панель управления и выберите команду **Systems and Security** (Системы и безопасность).
-    ![Система](./media/reference-connect-user-privacy/gdpr2.png)
+    ![Системные функции](./media/reference-connect-user-privacy/gdpr2.png)
 
 2.  В разделе "Администрирование" щелкните **Расписание выполнения задач**.
-    ![Task](./media/reference-connect-user-privacy/gdpr3.png)
+    ![Задача](./media/reference-connect-user-privacy/gdpr3.png)
 3.  В планировщике задач нажмите правой кнопкой мыши команду **Task Schedule Library** (Библиотека расписания задач) и щелкните **Create Basic task…** (Создать простую задачу...).
 4.  Введите имя для новой задачи и нажмите кнопку **Далее**.
 5.  Выберите триггер задачи **Ежедневно** и нажмите кнопку **Далее**.
@@ -82,6 +82,6 @@ If ($File.ToUpper() -ne "$env:programdata\aadconnect\PERSISTEDSTATE.XML".toupper
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * [Просмотр политики конфиденциальности корпорации Майкрософт в центре управления безопасностью](https://www.microsoft.com/trustcenter)
 * [Azure AD Connect Health и конфиденциальность пользователей](reference-connect-health-user-privacy.md)

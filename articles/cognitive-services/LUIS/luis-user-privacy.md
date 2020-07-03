@@ -8,19 +8,19 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 04/02/2019
 ms.author: diberry
-ms.openlocfilehash: 061f019fe36e4d5495a41fc81e56d9673ad595fc
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 4e3e0d04b0086905b80e26fb4f838c36b5b5545e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73953460"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78273361"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов в Интеллектуальной службе распознавания речи (LUIS) в Cognitive Services
 
-Удаление данных клиента для обеспечения конфиденциальности и соответствия требованиям. 
+Удаление данных клиента для обеспечения конфиденциальности и соответствия требованиям.
 
 ## <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 Интеллектуальная служба распознавания речи (LUIS) сохраняет клиентское содержимое для своей работы. При этом пользователи LUIS могут полностью управлять просмотром, экспортом и удалением своих данных. Это можно сделать с помощью веб- [портала](luis-reference-regions.md) Luis или [API Luis (также называемого программным интерфейсом)](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f).
@@ -37,18 +37,18 @@ ms.locfileid: "73953460"
 ## <a name="deleting-customer-data"></a>Удаление данных клиента
 Пользователи LUIS имеют полный доступ для удаления любого содержимого пользователя с помощью веб-портала LUIS или LUIS разработки (также называемого программным интерфейсом). В следующей таблице представлены ссылки, помогающие освоить оба способа:
 
-| | **Учетная запись пользователя** | **Приложения** | **Пример utterance (s)** | **Запросы конечных пользователей** |
+| | **Учетная запись пользователя** | **Приложение** | **Пример utterance (s)** | **Запросы конечных пользователей** |
 | --- | --- | --- | --- | --- |
 | **Портал** | [Ссылка](luis-concept-data-storage.md#delete-an-account) | [Ссылка](luis-how-to-start-new-app.md#delete-app) | [Ссылка](luis-concept-data-storage.md#utterances-in-an-intent) | [Active Learning фразы продолжительностью](luis-how-to-review-endpoint-utterances.md#disable-active-learning)<br>[Зарегистрированные фразы продолжительностью](luis-concept-data-storage.md#disable-logging-utterances) |
-| **Интерфейсы API** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c4c) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c39) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0b) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9) |
+| **Программные интерфейсы** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c4c) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c39) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0b) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9) |
 
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
 Пользователи LUIS имеют полный доступ для просмотра данных на портале, однако их необходимо экспортировать с помощью API-интерфейсов LUIS (также называемых программными средствами). В следующей таблице приведены ссылки, помогающие при экспорте данных с помощью API-интерфейсов LUIS Authoring (также известных как программные):
 
-| | **Учетная запись пользователя** | **Приложения** | **Фразы** | **Запросы конечных пользователей** |
+| | **Учетная запись пользователя** | **Приложение** | **Utterance** | **Запросы конечных пользователей** |
 | --- | --- | --- | --- | --- |
-| **Интерфейсы API** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c48) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0a) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36) |
+| **Программные интерфейсы** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c48) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c40) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0a) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36) |
 
 ## <a name="location-of-active-learning"></a>Расположение активного обучения
 
@@ -58,7 +58,7 @@ ms.locfileid: "73953460"
 * [Австралия](#australia)
 * [США](#united-states)
 
-За исключением активных обучающих данных (подробное описание приведено ниже), LUIS следует [рекомендациям по хранению данных для региональных служб](https://azuredatacentermap.azurewebsites.net/). 
+За исключением активных обучающих данных (подробное описание приведено ниже), LUIS следует [рекомендациям по хранению данных для региональных служб](https://azuredatacentermap.azurewebsites.net/).
 
 ### <a name="europe"></a>Европа
 
@@ -66,9 +66,9 @@ ms.locfileid: "73953460"
 
 * Европа
 * Франция
-* Великобритания
+* United Kingdom
 
-При развертывании в этих географических регионах Azure фразы продолжительностью, полученные конечной точкой от конечных пользователей вашего приложения, будут храниться в Европе Azure для активного обучения. Вы можете отключить активное обучение. см. раздел [Отключение активного обучения](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Сведения об управлении хранимыми фразы продолжительностью см. в разделе [Delete utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance). 
+При развертывании в этих географических регионах Azure фразы продолжительностью, полученные конечной точкой от конечных пользователей вашего приложения, будут храниться в Европе Azure для активного обучения. Вы можете отключить активное обучение. см. раздел [Отключение активного обучения](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Сведения об управлении хранимыми фразы продолжительностью см. в разделе [Delete utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance).
 
 ### <a name="australia"></a>Австралия
 
@@ -76,7 +76,7 @@ ms.locfileid: "73953460"
 
 * Австралия
 
-При развертывании в этих географических регионах Azure фразы продолжительностью, полученные конечной точкой от конечных пользователей вашего приложения, будут храниться в географическом регионе Azure в Австралии для активного обучения. Вы можете отключить активное обучение. см. раздел [Отключение активного обучения](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Сведения об управлении хранимыми фразы продолжительностью см. в разделе [Delete utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance). 
+При развертывании в этих географических регионах Azure фразы продолжительностью, полученные конечной точкой от конечных пользователей вашего приложения, будут храниться в географическом регионе Azure в Австралии для активного обучения. Вы можете отключить активное обучение. см. раздел [Отключение активного обучения](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Сведения об управлении хранимыми фразы продолжительностью см. в разделе [Delete utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance).
 
 ### <a name="united-states"></a>США
 
@@ -84,10 +84,10 @@ ms.locfileid: "73953460"
 
 * Географические диаграммы Azure не поддерживаются в регионах разработки в Европе или Австралии
 
-При развертывании в этих географических регионах Azure фразы продолжительностью, полученные конечной точкой от конечных пользователей вашего приложения, будут храниться в США географии Azure для активного обучения. Вы можете отключить активное обучение. см. раздел [Отключение активного обучения](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Сведения об управлении хранимыми фразы продолжительностью см. в разделе [Delete utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance). 
+При развертывании в этих географических регионах Azure фразы продолжительностью, полученные конечной точкой от конечных пользователей вашего приложения, будут храниться в США географии Azure для активного обучения. Вы можете отключить активное обучение. см. раздел [Отключение активного обучения](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Сведения об управлении хранимыми фразы продолжительностью см. в разделе [Delete utterance](luis-how-to-review-endpoint-utterances.md#delete-utterance).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Справочник по регионам LUIS](./luis-reference-regions.md)

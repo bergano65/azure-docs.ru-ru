@@ -1,19 +1,18 @@
 ---
 title: Предварительные требования для Dynamics 365 для участия клиентов | Azure Marketplace
 description: Нерекомендуемая статья CPP, связанная со статьей ПК. "Предварительные требования для публикации предложения приложения Azure в Azure Marketplace"
-services: Dynamics 365 for Customer Engagement offer, Azure, Marketplace, Cloud Partner Portal,
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 4ad28b11967f1bc791d02dba5d5e6a613fed2130
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 781506c7560e8c88cdaafe487bfb8a09e316206c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73808923"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278354"
 ---
 # <a name="dynamics-365-for-customer-engagement-prerequisites"></a>Предварительные требования для Dynamics 365 for Customer Engagement
 

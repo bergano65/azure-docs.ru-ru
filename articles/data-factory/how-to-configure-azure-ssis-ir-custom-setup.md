@@ -11,19 +11,21 @@ ms.author: sawinark
 manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
-ms.date: 02/14/2020
-ms.openlocfilehash: 9c084564fec3faf59317fe9e05f3e850a38454d6
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.date: 04/15/2020
+ms.openlocfilehash: ab2ba31d6b712bd3399bc8bf5b491337d462dac9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77251980"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81606206"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>Настройка настройки для Azure-SSIS Integration Runtime
 
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 Выборочная настройка Integration Runtime Azure-SQL Server Integration Services (Azure-SSIS IR) предоставляет интерфейс для добавления собственных шагов во время установки или перенастройки Azure-SSIS IR. 
 
-С помощью пользовательской установки можно изменить операционную конфигурацию по умолчанию или среду, например, запустить дополнительные службы Windows или сохранить учетные данные доступа для файловых ресурсов. Или можно установить дополнительные компоненты, такие как сборки, драйверы или расширения, на каждом узле Azure-SSIS IR.
+С помощью выборочной установки можно изменить операционную конфигурацию или среду по умолчанию, например, запустить дополнительные службы Windows, сохранить учетные данные для доступа к общим папкам или использовать стойкое шифрование или более безопасный сетевой протокол (TLS 1,2). Или можно установить дополнительные компоненты, такие как сборки, драйверы или расширения, на каждом узле Azure-SSIS IR.
 
 Вы можете выполнять пользовательские установки на Azure-SSIS IR одним из двух способов: 
 * **Быстрая Настраиваемая установка без сценария**: запуск некоторых распространенных системных конфигураций и команд Windows или установка некоторых популярных или рекомендуемых дополнительных компонентов без использования скриптов.
@@ -32,7 +34,7 @@ ms.locfileid: "77251980"
 Вы можете установить как бесплатные, так и нелицензированные компоненты, а также платные лицензированные компоненты с помощью Экспресс и стандартных настраиваемых настроек. Если вы являетесь независимым поставщиком программного обеспечения (ISV), см. статью [Разработка платных или лицензированных компонентов для Azure-SSIS IR](how-to-develop-azure-ssis-ir-licensed-components.md).
 
 > [!IMPORTANT]
-> Так как узлы серии v2 Azure-SSIS IR не подходят для настраиваемой установки, используйте вместо них узлы серии v3. Если вы уже используете узлы серии v2, переключитесь на узлы серии v3 как можно скорее.
+> Чтобы воспользоваться преимуществами будущих улучшений, мы рекомендуем использовать серию узлов версии 3 или более поздней для Azure-SSIS IR с помощью пользовательской установки.
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
@@ -40,23 +42,23 @@ ms.locfileid: "77251980"
 
 - Если вы хотите использовать *gacutil. exe* в скрипте для установки сборок в глобальный кэш сборок (GAC), необходимо предоставить *gacutil. exe* в рамках пользовательской установки. Кроме того, вы можете использовать копию, указанную в нашем *общедоступном контейнере предварительной версии* , как описано далее в разделе "инструкции".
 
-- Если вы хотите сослаться на вложенную папку в скрипте, программа *msiexec. exe* не поддерживает `.\` нотацию для ссылки на корневую папку. Используйте команду, например `msiexec /i "MySubfolder\MyInstallerx64.msi" ...`, а не `msiexec /i ".\MySubfolder\MyInstallerx64.msi" ...`.
+- Если вы хотите сослаться на вложенную папку в скрипте, программа *msiexec. exe* не поддерживает эту `.\` нотацию для ссылки на корневую папку. Используйте команду, например, `msiexec /i "MySubfolder\MyInstallerx64.msi" ...` вместо `msiexec /i ".\MySubfolder\MyInstallerx64.msi" ...`.
 
 - В этом Azure-SSIS IR в настоящее время не поддерживаются административные общие папки или скрытые сетевые ресурсы, которые автоматически создаются Windows.
 
 - Драйвер ODBC для IBM iSeries Access не поддерживается на Azure-SSIS IR. Вы можете столкнуться с ошибками установки во время пользовательской установки. Если вы сделаете это, обратитесь за помощью в службу поддержки IBM.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Чтобы настроить Azure-SSIS IR, вам потребуются следующие элементы:
 
-- [Подписка Azure](https://azure.microsoft.com/)
+- [Подписка Azure;](https://azure.microsoft.com/)
 
 - [Подготовка Azure SSIS IR.](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure)
 
-- [Учетная запись хранения Azure.](https://azure.microsoft.com/services/storage/) Не требуется для Экспресс пользовательских настроек. Для стандартных пользовательских настроек вы отправляете и сохраняете пользовательский скрипт установки и связанные с ним файлы в контейнере больших двоичных объектов. Процесс пользовательской установки отправляет свои журналы выполнения в тот же контейнер больших двоичных объектов.
+- [Учетная запись хранения Azure](https://azure.microsoft.com/services/storage/). Не требуется для Экспресс пользовательских настроек. Для стандартных пользовательских настроек вы отправляете и сохраняете пользовательский скрипт установки и связанные с ним файлы в контейнере больших двоичных объектов. Процесс пользовательской установки отправляет свои журналы выполнения в тот же контейнер больших двоичных объектов.
 
 ## <a name="instructions"></a>Instructions
 
@@ -66,23 +68,23 @@ ms.locfileid: "77251980"
 
    * Необходимо иметь файл скрипта с именем *Main. cmd*, который является точкой входа пользовательской установки.  
    * Чтобы убедиться в том, что скрипт может быть выполнен автоматически, рекомендуется сначала проверить его на локальном компьютере.  
-   * Если требуется, чтобы дополнительные журналы, созданные другими инструментами (например, *msiexec. exe*), передавались в контейнер, укажите предопределенную переменную среды `CUSTOM_SETUP_SCRIPT_LOG_DIR`в качестве папки журнала в скриптах (например, *msiexec/i XXX. msi/quiet/лв% CUSTOM_SETUP_SCRIPT_LOG_DIR% \ install. log*).
+   * Если требуется передать в контейнер дополнительные журналы, созданные другими инструментами (например, *msiexec. exe*), укажите стандартную переменную `CUSTOM_SETUP_SCRIPT_LOG_DIR`среды, в качестве папки журнала в скриптах (например, *msiexec/i XXX. msi/quiet/лв% CUSTOM_SETUP_SCRIPT_LOG_DIR% \ install. log*).
 
 1. Скачайте, установите и откройте [Обозреватель службы хранилища Azure](https://storageexplorer.com/). Для этого:
 
-   а. В разделе **(локальный и присоединенный)** щелкните правой кнопкой мыши элемент **учетные записи хранения**, а затем выберите **подключиться к службе хранилища Azure**.
+   a. В разделе **(локальный и присоединенный)** щелкните правой кнопкой мыши элемент **учетные записи хранения**, а затем выберите **подключиться к службе хранилища Azure**.
 
       ![Подключение к службе хранилища Azure](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image1.png)
 
-   б. Установите флажок **использовать имя и ключ учетной записи хранения**, а затем нажмите кнопку **Далее**.
+   b. Установите флажок **использовать имя и ключ учетной записи хранения**, а затем нажмите кнопку **Далее**.
 
       ![Использование имени и ключа учетной записи хранения](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image2.png)
 
-   в. Введите имя и ключ учетной записи хранения Azure, нажмите кнопку **Далее**, а затем выберите **подключить**.
+   c. Введите имя и ключ учетной записи хранения Azure, нажмите кнопку **Далее**, а затем выберите **подключить**.
 
       ![Укажите имя и ключ учетной записи хранения](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image3.png)
 
-   . В подключенной учетной записи хранения Azure щелкните правой кнопкой мыши **контейнеры больших двоичных объектов**, выберите **создать контейнер больших двоичных объектов**и назовите новый контейнер.
+   d. В подключенной учетной записи хранения Azure щелкните правой кнопкой мыши **контейнеры больших двоичных объектов**, выберите **создать контейнер больших двоичных объектов**и назовите новый контейнер.
 
       ![Создание контейнера BLOB-объектов](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image4.png)
 
@@ -127,11 +129,13 @@ ms.locfileid: "77251980"
 
      * При выборе компонента **пакета производительности SSIS кингсвайсофт** можно установить набор компонентов [пакета производительности SSIS](https://www.kingswaysoft.com/products/ssis-productivity-pack) из кингсвайсофт на Azure-SSIS IR, введя лицензионный ключ продукта, который вы приобрели в поле **лицензионный ключ** . Текущая интегрированная версия — **10,0**.
 
+     * Если вы выбрали **Сеобалд Software звлечь** (компонент), то можно установить [звлечь — это](https://theobald-software.com/en/xtract-is/) набор соединителей для системы SAP (ERP, s/4HANA, BW) из сеобалд программного обеспечения на Azure-SSIS IR, перетащив & удаления или отправки файла лицензии продукта, приобретенного из них в поле **файл лицензии** . Текущая интегрированная версия — **6.1.1.3**.
+
    Добавленные Экспресс пользовательские настройки будут отображаться в разделе **Дополнительные параметры** . Чтобы удалить их, установите соответствующие флажки и нажмите кнопку **Удалить**.
 
    ![Дополнительные параметры с пользовательскими установками](./media/tutorial-create-azure-ssis-runtime-portal/advanced-settings-custom.png)
 
-1. При настройке или повторной настройке Azure-SSIS IR с помощью PowerShell можно добавить или удалить пользовательские настройки, выполнив командлет `Set-AzDataFactoryV2IntegrationRuntime` перед началом Azure-SSIS IR.
+1. При настройке или повторной настройке Azure-SSIS IR с помощью PowerShell можно добавить или удалить пользовательские настройки, выполнив `Set-AzDataFactoryV2IntegrationRuntime` командлет перед запуском Azure-SSIS IR.
    
    ```powershell
    $ResourceGroupName = "[your Azure resource group name]"
@@ -139,7 +143,7 @@ ms.locfileid: "77251980"
    $AzureSSISName = "[your Azure-SSIS IR name]"
    # Custom setup info: Standard/express custom setups
    $SetupScriptContainerSasUri = "" # OPTIONAL to provide a SAS URI of blob container for standard custom setup where your script and its associated files are stored
-   $ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO or leave it empty]" # OPTIONAL to configure an express custom setup without script
+   $ExpressCustomSetup = "[RunCmdkey|SetEnvironmentVariable|SentryOne.TaskFactory|oh22is.SQLPhonetics.NET|oh22is.HEDDA.IO|KingswaySoft.IntegrationToolkit|KingswaySoft.ProductivityPack|Theobald.XtractIS or leave it empty]" # OPTIONAL to configure an express custom setup without script
 
    # Add custom setup parameters if you use standard/express custom setups
    if(![string]::IsNullOrEmpty($SetupScriptContainerSasUri))
@@ -178,6 +182,24 @@ ms.locfileid: "77251980"
        {
            $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup)
        }
+       if($ExpressCustomSetup -eq "KingswaySoft.IntegrationToolkit")
+       {
+           $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+       }
+       if($ExpressCustomSetup -eq "KingswaySoft.ProductivityPack")
+       {
+           $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString("YourLicenseKey")
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+       }    
+       if($ExpressCustomSetup -eq "Theobald.XtractIS")
+       {
+           $jsonData = Get-Content -Raw -Path YourLicenseFile.json
+           $jsonData = $jsonData -replace '\s',''
+           $jsonData = $jsonData.replace('"','\"')
+           $licenseKey = New-Object Microsoft.Azure.Management.DataFactory.Models.SecureString($jsonData)
+           $setup = New-Object Microsoft.Azure.Management.DataFactory.Models.ComponentSetup($ExpressCustomSetup, $licenseKey)
+       }
        # Create an array of one or more express custom setups
        $setups = New-Object System.Collections.ArrayList
        $setups.Add($setup)
@@ -197,19 +219,19 @@ ms.locfileid: "77251980"
 
 1. Чтобы просмотреть примеры стандартных пользовательских настроек, подключитесь к нашему общедоступному контейнеру предварительной версии с помощью Обозреватель службы хранилища Azure.
 
-   а. В узле **(Local and Attached)** (Локальные и присоединенные) щелкните правой кнопкой мыши **Учетные записи хранения**, выберите пункт **Connect to Azure storage** (Подключиться к службе хранилища Azure), а затем — **Use a storage account name and key** (Использовать имя и ключ учетной записи хранения) и нажмите кнопку **Далее**.
+   a. В узле **(Local and Attached)** (Локальные и присоединенные) щелкните правой кнопкой мыши **Учетные записи хранения**, выберите пункт **Connect to Azure storage** (Подключиться к службе хранилища Azure), а затем — **Use a storage account name and key** (Использовать имя и ключ учетной записи хранения) и нажмите кнопку **Далее**.
 
       ![Подключение к хранилищу Azure с помощью подписанного URL-адреса](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image9.png)
 
-   б. Выберите **использовать URI SAS** , а затем в поле **универсальный код** ресурса (URI) введите следующий URI SAS:
+   b. Выберите **использовать URI SAS** , а затем в поле **универсальный код** ресурса (URI) введите следующий URI SAS:
 
-      `https://ssisazurefileshare.blob.core.windows.net/publicpreview?sp=rl&st=2018-04-08T14%3A10%3A00Z&se=2020-04-10T14%3A10%3A00Z&sv=2017-04-17&sig=mFxBSnaYoIlMmWfxu9iMlgKIvydn85moOnOch6%2F%2BheE%3D&sr=c`
+      `https://ssisazurefileshare.blob.core.windows.net/publicpreview?sp=rl&st=2020-03-25T04:00:00Z&se=2025-03-25T04:00:00Z&sv=2019-02-02&sr=c&sig=WAD3DATezJjhBCO3ezrQ7TUZ8syEUxZZtGIhhP6Pt4I%3D`
 
       ![Предоставление подписанного URL-адреса для контейнера](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image10.png)
 
-   в. Нажмите кнопку **Далее**, а затем выберите **подключить**.
+   c. Нажмите кнопку **Далее**, а затем выберите **подключить**.
 
-   . В левой области выберите подключенный контейнер **публикпревиев** , а затем дважды щелкните папку *кустомсетупскрипт* . Внутри этой папки находятся следующие элементы:
+   d. В левой области выберите подключенный контейнер **публикпревиев** , а затем дважды щелкните папку *кустомсетупскрипт* . Внутри этой папки находятся следующие элементы:
 
       * *Пример* папки, которая содержит выборочную установку для установки базовой задачи на каждом узле Azure-SSIS IR. Задача не делает ничего, только несколько секунд находится в спящем режиме. Папка также содержит папку *gacutil* , все содержимое которой (*gacutil. exe*, *gacutil. exe. config*и *1033 \ гакутлрк. dll*) можно скопировать в контейнер.
 
@@ -219,11 +241,11 @@ ms.locfileid: "77251980"
 
    д) Дважды щелкните папку *усерсценариос* , чтобы найти следующие элементы:
 
-      * Папка *.NET FRAMEWORK 3,5* , которая содержит пользовательскую установку для установки более ранней версии .NET Framework, которая может потребоваться для пользовательских компонентов на каждом узле Azure-SSIS IR.
+      * Папка *.NET FRAMEWORK 3,5* , которая содержит пользовательский сценарий установки (*Main. cmd*) для установки более ранней версии .NET Framework, которая может потребоваться для пользовательских компонентов на каждом узле Azure-SSIS IR.
 
-      * Папка *bcp* , содержащая пользовательскую программу установки для установки SQL Server служебных программ командной строки (*мссклкмдлнутилс. msi*), включая программу копирования (*bcp*), на каждом узле Azure-SSIS IR.
+      * Папка *bcp* , которая содержит пользовательский сценарий установки (*Main. cmd*) для установки SQL Server служебных программ командной строки (*мссклкмдлнутилс. msi*), включая программу копирования (*bcp*), на каждом узле Azure-SSIS IR.
 
-      * Папка *Excel* , содержащая пользовательский сценарий установки (*Main. cmd*) для установки C# сборок и библиотек, которые можно использовать в задачах скриптов для динамического чтения и записи файлов Excel на каждом узле Azure-SSIS IR. 
+      * Папка *Excel* , содержащая пользовательский сценарий установки (*Main. cmd*) для установки сборок и библиотек C#, которые можно использовать в задачах скриптов для динамического чтения и записи файлов EXCEL на каждом узле Azure-SSIS IR. 
       
         Сначала скачайте [*ексцелдатареадер. dll*](https://www.nuget.org/packages/ExcelDataReader/) и [*DocumentFormat. OPENXML. dll*](https://www.nuget.org/packages/DocumentFormat.OpenXml/), а затем отправьте их вместе с помощью *Main. cmd* в контейнер. Кроме того, если вы хотите использовать только стандартный диспетчер соединений с Excel, источник Excel и назначение Excel, необходимый распространяемый компонент Access уже предварительно установлен на Azure-SSIS IR, поэтому пользовательская настройка не требуется.
       
@@ -257,13 +279,15 @@ ms.locfileid: "77251980"
       
         Сначала загрузите 64-или 32-разрядную версию *librfc32. dll* из папки установки SAP вместе с *Main. cmd* в контейнер. Затем сценарий копирует сборку SAP в папку *%WINDIR%\SysWow64* или *%WINDIR%\System32* во время установки.
 
-      * Папка *хранилища* , которая содержит выборочную установку Azure PowerShell на каждом узле Azure-SSIS IR. Эта программа установки позволяет развертывать и запускать пакеты служб SSIS, в которых выполняются [сценарии PowerShell, для управления учетной записью хранения Azure](https://docs.microsoft.com/azure/storage/blobs/storage-how-to-use-blobs-powershell). 
+      * Папка *хранилища* , которая содержит настраиваемый сценарий установки (*Main. cmd*) для установки Azure PowerShell на каждом узле Azure-SSIS IR. Эта программа установки позволяет развертывать и запускать пакеты служб SSIS, в которых выполняются [сценарии PowerShell, для управления учетной записью хранения Azure](https://docs.microsoft.com/azure/storage/blobs/storage-how-to-use-blobs-powershell). 
       
         Скопируйте файл *Main. cmd*, пример *азуреповершелл. msi* (или используйте последнюю версию), а файл *Storage. ps1* — в контейнер. Используйте *PowerShell. dtsx* в качестве шаблона для своих пакетов. Шаблон пакета сочетает [задачу скачивания больших двоичных объектов Azure](https://docs.microsoft.com/sql/integration-services/control-flow/azure-blob-download-task), которая скачивает файл *Storage. ps1* в качестве изменяемого скрипта PowerShell и [задачу «Выполнение процесса](https://blogs.msdn.microsoft.com/ssis/2017/01/26/run-powershell-scripts-in-ssis/)», которая выполняет скрипт на каждом узле.
 
       * Папка *Teradata* , содержащая пользовательский сценарий установки (*Main. cmd*), связанный файл (*install. cmd*) и пакеты установщика (*MSI*). Эти файлы устанавливают соединители Teradata, API параллельного транспорта Teradata (TPT) и драйвер ODBC для каждого узла Azure-SSIS IR Enterprise Edition. Эта программа установки позволяет использовать диспетчер соединений Teradata, источник и назначение для подключения к серверу Teradata. 
       
         Сначала [скачайте zip-файл средств Teradata и служебные программы 15. x](http://partnerintelligence.teradata.com) (например, *TeradataToolsAndUtilitiesBase__windows_indep. 15.10.22.00. zip*), а затем отправьте его вместе с ранее упомянутыми файлами *. cmd* и *. msi* в контейнер.
+
+      * Папка *TLS 1,2* , которая содержит пользовательский сценарий установки (*Main. cmd*) для использования надежного шифрования и более защищенного сетевого протокола (TLS 1,2) и отключения старых версий SSL/TLS на каждом узле Azure-SSIS IR.
 
       * Папка *Zulu OPENJDK* , которая содержит пользовательский сценарий установки (*Main. cmd*) и файл PowerShell (*install_openjdk. ps1*) для установки Zulu OPENJDK на каждом узле Azure-SSIS IR. Эта программа установки позволяет использовать Azure Data Lake Store и гибкие соединители файлов для обработки файлов ORC и Parquet. Дополнительные сведения см. в статье [пакет дополнительных компонентов Azure для Integration Services](https://docs.microsoft.com/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-ver15#dependency-on-java). 
       
@@ -275,9 +299,9 @@ ms.locfileid: "77251980"
    
       При настройке или повторной настройке Azure-SSIS IR с помощью пользовательского интерфейса фабрики данных установите флажок **настроить Azure-SSIS Integration Runtime с дополнительными конфигурациями системы или установками компонентов** в разделе **Дополнительные параметры** , а затем введите универсальный код ресурса (URI) SAS контейнера в поле **URI SAS контейнера пользовательской установки** .
    
-      При настройке или повторной настройке Azure-SSIS IR с помощью PowerShell выполните командлет `Set-AzDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения параметра `SetupScriptContainerSasUri`.
+      При настройке или повторной настройке Azure-SSIS IR с помощью PowerShell выполните `Set-AzDataFactoryV2IntegrationRuntime` КОМАНДЛЕТ с URI SAS контейнера в качестве значения `SetupScriptContainerSasUri` параметра.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка выпуска Enterprise Azure-SSIS Integration Runtime](how-to-configure-azure-ssis-ir-enterprise-edition.md)
 - [Разработка платных или лицензированных пользовательских компонентов для Azure-SSIS Integration Runtime](how-to-develop-azure-ssis-ir-licensed-components.md)

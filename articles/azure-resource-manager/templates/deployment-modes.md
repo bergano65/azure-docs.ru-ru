@@ -3,12 +3,12 @@ title: Режимы развертывания
 description: В этой статье описывается, как с помощью Azure Resource Manager задать полный или пошаговый режим развертывания.
 ms.topic: conceptual
 ms.date: 01/17/2020
-ms.openlocfilehash: 9cc0e8eb20a0375a98906524d4d598ccb473d2a8
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 1077d92f076797fb03c4fe750b353e2306f9b6de
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77207593"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79460251"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Режимы развертывания в Azure Resource Manager
 
@@ -95,7 +95,7 @@ New-AzResourceGroupDeployment `
 Чтобы установить режим развертывания при развертывании с помощью Azure CLI, используйте параметр `mode`.
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --name ExampleDeployment \
   --mode Complete \
   --resource-group ExampleGroup \
@@ -119,8 +119,8 @@ az group deployment create \
 ]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Сведения о создании шаблонов Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](template-syntax.md).
+* Дополнительные сведения о создании шаблонов диспетчер ресурсов см. в разделе [Создание шаблонов Azure Resource Manager](template-syntax.md).
 * Сведения о развертывании ресурсов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](deploy-powershell.md).
 * Чтобы просмотреть операции для поставщика ресурсов, ознакомьтесь с [Azure REST API](/rest/api/).

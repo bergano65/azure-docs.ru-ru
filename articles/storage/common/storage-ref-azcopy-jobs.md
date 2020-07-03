@@ -9,10 +9,10 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 27c06656d95c5165b33b6056a3cf3b554f0e5469
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74034116"
 ---
 # <a name="azcopy-jobs"></a>azcopy jobs
@@ -34,13 +34,13 @@ azcopy jobs show [jobID]
 
 ## <a name="options"></a>Параметры
 
-|Параметр|ОПИСАНИЕ|
+|Параметр|Описание|
 |--|--|
 |-h, --help|Отображение содержимого справки для команды задания.|
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Параметр|ОПИСАНИЕ|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|
@@ -48,6 +48,6 @@ azcopy jobs show [jobID]
 ## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)
-- [список заданий azcopy](storage-ref-azcopy-jobs-list.md)
-- [возобновление заданий azcopy](storage-ref-azcopy-jobs-resume.md)
-- [отображаются задания azcopy](storage-ref-azcopy-jobs-show.md)
+- [azcopy jobs list](storage-ref-azcopy-jobs-list.md)
+- [azcopy jobs resume](storage-ref-azcopy-jobs-resume.md)
+- [azcopy jobs show](storage-ref-azcopy-jobs-show.md)

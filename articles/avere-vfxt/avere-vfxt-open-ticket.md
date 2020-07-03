@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: b3c604003f78a150067875fb2064ab5eca0600db
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76153337"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79252562"
 ---
 # <a name="get-help-with-your-system"></a>Получение помощи по работе с системой
 
@@ -27,7 +27,7 @@ ms.locfileid: "76153337"
 
 Выполните следующие действия, чтобы в запросе в службу поддержки был указан нужный ресурс кластера. Прикрепление ресурса к запросу помогает нам перенаправить его подходящему сотруднику службы поддержки.
 
-1. На странице [https://portal.azure.com](https://portal.azure.com) выберите **Группы ресурсов**. Перейдите к группе ресурсов, содержащей кластер Вфкст, в котором возникла ошибка, и щелкните одну из виртуальных машин кластера Авере.
+1. В [https://portal.azure.com](https://portal.azure.com)выберите **группы ресурсов**. Перейдите к группе ресурсов, содержащей кластер Вфкст, в котором возникла ошибка, и щелкните одну из виртуальных машин кластера Авере.
 
     ![снимок экрана области обзора группы ресурсов на портале Azure с выделенной виртуальной машиной](media/avere-vfxt-ticket-vm.png)
 

@@ -8,7 +8,7 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "REST\_API"
+    - name: REST API
       items:
         - name: 'C#'
           href: quickstarts/csharp.md
@@ -32,7 +32,7 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2089906'
     - name: Мобильное приложение для Swift и iOS
       href: 'https://go.microsoft.com/fwlink/?linkid=2089805'
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Справочник по REST API
       href: 'https://go.microsoft.com/fwlink/?linkid=2089907'
@@ -52,5 +52,5 @@
       href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
     - name: Конфиденциальность и файлы cookie
       href: 'https://privacy.microsoft.com/privacystatement'
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

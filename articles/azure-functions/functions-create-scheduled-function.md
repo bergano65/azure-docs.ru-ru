@@ -2,72 +2,78 @@
 title: Создание в Azure функции, активируемой по таймеру
 description: Узнайте, как создать в Azure функцию, которая выполняется по определенному расписанию.
 ms.assetid: ba50ee47-58e0-4972-b67b-828f2dc48701
-ms.topic: quickstart
-ms.date: 03/28/2018
+ms.topic: how-to
+ms.date: 04/16/2020
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 808f0f81f937da688a8873e5f6ee959976e9d6aa
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
-ms.translationtype: HT
+ms.openlocfilehash: be539efdb66b0a9bda583960484f40fae1e18235
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769291"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83123501"
 ---
 # <a name="create-a-function-in-azure-that-is-triggered-by-a-timer"></a>Создание в Azure функции, активируемой по таймеру
 
 Узнайте, как создать [независимую от сервера](https://azure.microsoft.com/solutions/serverless/) функцию, которая выполняется на основе определенного расписания с помощью Функций Azure.
 
-![Создание приложения-функции на портале Azure](./media/functions-create-scheduled-function/function-app-in-portal-editor.png)
+## <a name="prerequisites"></a>Предварительные требования
 
-## <a name="prerequisites"></a>предварительные требования
+Для работы с этим руководством сделайте следующее:
 
-Для работы с этим руководством:
-
-+ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
++ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-an-azure-function-app"></a>Создание приложения-функции Azure
 
 [!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 
-![Приложение-функция успешно создана.](./media/functions-create-first-azure-function/function-app-create-success.png)
+Новое приложение-функция готова к использованию. Далее вы создадите функцию в новом приложении-функции.
 
-Затем создайте функцию в новом приложении-функции.
+:::image type="content" source="./media/functions-create-scheduled-function/function-app-create-success.png" alt-text="Приложение-функция успешно создана." border="true":::
 
 <a name="create-function"></a>
 
 ## <a name="create-a-timer-triggered-function"></a>Создание функции, активируемой по таймеру
 
-1. Разверните приложение-функцию и нажмите кнопку **+** рядом с элементом **Функции**. Если это первая функция в приложении-функции, последовательно выберите **На портале** и **Продолжить**. Если нет, перейдите к шагу 3.
+1. В приложении функции выберите **функции**, а затем выберите **+ Добавить** . 
 
-   ![Страница быстрого начала работы с функциями на портале Azure](./media/functions-create-scheduled-function/function-app-quickstart-choose-portal.png)
+   :::image type="content" source="./media/functions-create-scheduled-function/function-add-function.png" alt-text="Добавьте функцию в портал Azure." border="true":::
 
-2. Последовательно выберите **Дополнительные шаблоны** и **Finish and view templates** (Закончить и просмотреть шаблоны).
+1. Выберите шаблон **триггера таймера** . 
 
-    ![Быстрый запуск функций: просмотр дополнительных шаблонов](./media/functions-create-scheduled-function/add-first-function.png)
+    :::image type="content" source="./media/functions-create-scheduled-function/function-select-timer-trigger.png" alt-text="Выберите триггер таймера в портал Azure." border="true":::
 
-3. В поле поиска введите `timer` и настройте новый триггер с параметрами, как указано в таблице под изображением.
+1. Настройте новый триггер с параметрами, указанными в таблице под изображением, а затем выберите **создать функцию**.
 
-    ![Создайте функцию, активируемую по таймеру, на портале Azure.](./media/functions-create-scheduled-function/functions-create-timer-trigger-2.png)
-
-    | Параметр | Рекомендуемое значение | Description |
+    :::image type="content" source="./media/functions-create-scheduled-function/function-configure-timer-trigger.png" alt-text="Выберите триггер таймера в портал Azure." border="true":::
+    
+    | Параметр | Рекомендуемое значение | Описание |
     |---|---|---|
-    | **Название** | По умолчанию | Определяет имя функции, активируемой по таймеру. |
-    | **Расписание** | 0 \*/1 \* \* \* \* | [Выражение CRON](functions-bindings-timer.md#ncrontab-expressions) с шестью полями, в котором запланировано ежеминутное выполнение функции. |
+    | **имя**; | Значение по умолчанию | Определяет имя функции, активируемой по таймеру. |
+    | **Расписание** | 0 \* /1 \* \* \*\* | [Выражение CRON](functions-bindings-timer.md#ncrontab-expressions) с шестью полями, в котором запланировано ежеминутное выполнение функции. |
 
-4. Нажмите кнопку **Создать**. Будет создана функция на выбранном вами языке, которая будет выполняться ровно каждую минуту.
+## <a name="test-the-function"></a>Проверка функции
 
-5. Проверьте выполнение, просмотрев записанные в журналах сведения трассировки.
+1. В функции выберите **код + тест** и разверните журналы.
 
-    ![Средство просмотра журналов Функций на портале Azure.](./media/functions-create-scheduled-function/functions-timer-trigger-view-logs2.png)
+    :::image type="content" source="./media/functions-create-scheduled-function/function-test-timer-trigger.png" alt-text="Проверьте триггер таймера в портал Azure." border="true":::
+
+1. Проверьте выполнение, просмотрев сведения, записанные в журналы.
+
+    :::image type="content" source="./media/functions-create-scheduled-function/function-view-timer-logs.png" alt-text="Просмотрите триггер таймера в портал Azure." border="true":::
 
 Теперь потребуется изменить расписание функции, чтобы она выполнялась раз в час, а не раз в минуту.
 
 ## <a name="update-the-timer-schedule"></a>Обновление расписания таймера
 
-1. Разверните вашу функцию и щелкните **Интеграция**. Здесь вы определяете входные и выходные привязки для вашей функции, а также задаете расписание. 
+1. В функции выберите **Интеграция**. Здесь вы определяете входные и выходные привязки для функции, а также устанавливаете расписание. 
 
-2. Введите в поле **Расписание** новое часовое значение `0 0 */1 * * *`, а затем щелкните **Сохранить**.  
+1. Выберите **таймер (myTimer)**.
 
-![Обновление расписания таймера функций на портале Azure](./media/functions-create-scheduled-function/functions-timer-trigger-change-schedule.png)
+    :::image type="content" source="./media/functions-create-scheduled-function/function-update-timer-schedule.png" alt-text="Обновите расписание таймера в портал Azure." border="true":::
+
+1. Измените значение **расписания** на `0 0 */1 * * *` , а затем нажмите кнопку **сохранить**.  
+
+    :::image type="content" source="./media/functions-create-scheduled-function/function-edit-timer-schedule.png" alt-text="Обновление расписания таймера функций на портале Azure" border="true":::
 
 Теперь функция будет выполняться в начале каждого часа.
 
@@ -77,6 +83,6 @@ ms.locfileid: "75769291"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы создали функцию, которая выполняется на основе расписания. Дополнительные сведения о триггерах см.в статье [Триггеры таймера для службы "Функции Azure"](functions-bindings-timer.md).
+Вы создали функцию, которая выполняется по расписанию. Дополнительные сведения о триггерах см.в статье [Триггеры таймера для службы "Функции Azure"](functions-bindings-timer.md).
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-next-steps.md)]

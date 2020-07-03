@@ -14,18 +14,18 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: 3ad68438f5fc015b6a9150d67485b90a095f1a4a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75451270"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79250092"
 ---
 # <a name="use-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли для вызовов SysRq и NMI
 
 ## <a name="system-request-sysrq"></a>Системный запрос (SysRq)
 SysRq — это последовательность клавиш, понятная ядру операционной системы Linux, которая может инициировать набор предопределенных действий. Эти команды часто используются при устранении неполадок или восстановлении виртуальных машин с помощью традиционных средств администрирования (например, если виртуальная машина не отвечает). Использование функции SysRq в последовательной консоли Azure будет имитировать нажатие клавиши SysRq и ввод символов на физической клавиатуре.
 
-Как только последовательность SysRq будет запущена, конфигурация ядра будет контролировать реакцию системы. Сведения о включении и отключении Сисрк см. в [тексте](https://aka.ms/kernelorgsysreqdoc) *руководств администратора сисрк* | [Markdown](https://aka.ms/linuxsysrq).
+Как только последовательность SysRq будет запущена, конфигурация ядра будет контролировать реакцию системы. Сведения о включении и отключении SysRq см. в *руководстве администратора SysRq* [в разделах с текстом](https://aka.ms/kernelorgsysreqdoc) | [разметкой](https://aka.ms/linuxsysrq).
 
 Последовательную консоль Azure можно использовать для отправки SysRq на виртуальную машину Azure с использованием значка клавиатуры в показанной ниже командной строке.
 
@@ -51,7 +51,7 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="command-keys"></a>Клавиши команд
 Как указано в упомянутом выше руководстве администратора SysRq:
 
-|Get-Help| Компонент
+|Команда| Функция
 | ------| ----------- |
 |``b``  |   Немедленно инициирует перезагрузку системы без синхронизации или отключение дисков.
 |``c``  |   Выполняет сбой системы с помощью разыменования пустого указателя. Если настроено, будет создан аварийный дамп.
@@ -85,7 +85,7 @@ echo "1" >/proc/sys/kernel/sysrq
 Документация по SysRq для конкретного дистрибутива и шаги по настройке Linux для создания аварийного дампа при получении команды Crash SysRq доступны по ссылкам ниже.
 
 #### <a name="ubuntu"></a>Ubuntu ####
- - [Аварийный дамп памяти ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
+ - [Аварийный дамп ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
 
 #### <a name="red-hat"></a>Red Hat ####
 - [Что такое средство SysRq и как его использовать?](https://access.redhat.com/articles/231663)
@@ -114,7 +114,7 @@ echo "1" >/proc/sys/kernel/sysrq
 Дополнительные сведения о конфигурации ядра Linux, включая `unknown_nmi_panic`, `panic_on_io_nmi` и `panic_on_unrecovered_nmi`, см. в разделе [документации по /proc/sys/kernel/*](https://www.kernel.org/doc/Documentation/sysctl/kernel.txt). Документацию по немаскируемому прерыванию для конкретного дистрибутива и шаги по настройке Linux для создания аварийного дампа при получении немаскируемого прерывания см. по ссылкам ниже.
 
 ### <a name="ubuntu"></a>Ubuntu
- - [Аварийный дамп памяти ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
+ - [Аварийный дамп ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
 
 ### <a name="red-hat"></a>Red Hat
  - [Что такое немаскируемое прерывание и для чего его можно использовать?](https://access.redhat.com/solutions/4127)
@@ -127,7 +127,7 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="coreos"></a>CoreOS
 - [Сбор журналов сбоев](https://coreos.com/os/docs/latest/collecting-crash-logs.html)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * См. страницу документации по работе с [последовательной консолью Linux](serial-console-linux.md).
 * Используйте последовательную консоль для [перехода в режим GRUB и однопользовательский режим](serial-console-grub-single-user-mode.md).
 * Последовательная консоль также доступна для виртуальных машин [Windows](serial-console-windows.md).

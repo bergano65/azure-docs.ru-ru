@@ -1,30 +1,25 @@
 ---
 title: Поддержка Azure для виртуальных машин поколения 2
 description: Обзор поддержки Azure для виртуальных машин поколения 2
-services: virtual-machines-windows
-documentationcenter: ''
 author: ju-shim
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.subservice: sizes
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/11/2020
 ms.author: jushiman
-ms.openlocfilehash: 7daa2da76bf3097679a72bfdef069db20ae66087
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: bf690ad3ad38632834a92c4a743b1cb584beaf65
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77161738"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82838830"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Поддержка виртуальных машин поколения 2 в Azure
 
 Поддержка виртуальных машин версии 2 теперь доступна в Azure. Вы не сможете изменить поколение виртуальных машин после ее создания, поэтому перед тем как выбрать поколение, ознакомьтесь с вопросами на этой странице.
 
-Виртуальные машины поколения 2 поддерживают ключевые функции, которые не поддерживаются в виртуальных машинах поколения 1. Эти функции включают в себя увеличенную память, расширения Intel Software Guard (Intel SGX) и виртуализированную постоянную память (Впмем). Виртуальные машины поколения 2, работающие локально, имеют некоторые функции, которые еще не поддерживаются в Azure. Дополнительные сведения см. в разделе [функции и возможности](#features-and-capabilities) .
+Виртуальные машины поколения 2 поддерживают ключевые функции, которые не поддерживаются в виртуальных машинах поколения 1. Эти функции включают увеличенную память, Intel Software Guard Extensions и виртуализированную постоянную память (vPMEM). Виртуальные машины поколения 2, работающие локально, имеют некоторые функции, которые еще не поддерживаются в Azure. Дополнительные сведения см. в разделе [функции и возможности](#features-and-capabilities) .
 
 Виртуальные машины поколения 2 используют новую архитектуру загрузки на основе UEFI, а не архитектуру на основе BIOS, используемую виртуальными машинами поколения 1. По сравнению с виртуальными машинами поколения 1, виртуальные машины поколения 2 могут улучшить загрузку и время установки. Общие сведения о виртуальных машинах поколения 2 и некоторых различиях между поколением 1 и поколением 2 см. [в статье Создание виртуальной машины поколения 1 или 2 в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
 
@@ -33,42 +28,48 @@ ms.locfileid: "77161738"
 Виртуальные машины поколения 1 поддерживаются всеми размерами виртуальных машин в Azure (за исключением виртуальных машин серии Mv2). Теперь Azure предлагает поддержку поколения 2 для следующей выбранной серии виртуальных машин:
 
 * [Серия B](https://docs.microsoft.com/azure/virtual-machines/windows/b-series-burstable)
-* [Серия DC](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dc-series)
-* Серии [Dsv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dsv2-series) и [Dsv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-general#dsv3-series-1)
-* [Серия Esv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#esv3-series)
-* [Серия серия fsv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-compute#fsv2-series-1)
+* [Серия DCsv2](../dcv2-series.md)
+* Серии [DSv2](../dv2-dsv2-series.md) и [Dsv3](../dv3-dsv3-series.md)
+* [Серия Dasv4](https://docs.microsoft.com/azure/virtual-machines/dav4-dasv4-series)
+* [Серия Esv3](../ev3-esv3-series.md)
+* [Серия Easv4](https://docs.microsoft.com/azure/virtual-machines/eav4-easv4-series)
+* [Серия Fsv2](../fsv2-series.md)
 * [Серия GS](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-previous-gen#gs-series)
-* [Серия ХБ](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc#hb-series)
-* [Серия HC](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc#hc-series)
-* Серии [Ls](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-previous-gen#ls-series) и [Lsv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-storage#lsv2-series)
-* [Серия Mv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series)
-* Серии [NCv2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#ncv2-series) и [NCv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#ncv3-series)
-* [Серия ND](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#nd-series)
-* [Серия NVv3](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu#nvv3-series--1)
+* [Серия HB](../hb-series.md)
+* [Серия HC](../hc-series.md)
+* Серии [Ls](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-previous-gen#ls-series) и [Lsv2](../lsv2-series.md)
+* [Серия M](../m-series.md)
+* [Серия Mv2](../mv2-series.md)<sup>1</sup>
+* Серии [NCv2](../ncv2-series.md) и [NCv3](../ncv3-series.md)
+* [Серия ND](../nd-series.md)
+* [Серия NVv3](../nvv3-series.md)
 
-> [!NOTE]
-> Использование образов виртуальных машин поколения 2 для виртуальных машин серии Mv2 общедоступно, так как серия Mv2 работает исключительно с образами виртуальных машин поколения 2. Образы виртуальных машин поколения 1 не поддерживаются на виртуальных машинах серии Mv2. 
+<sup>1</sup> серия Mv2 не поддерживает образы виртуальных машин поколения 1 и поддерживает только подмножество образов поколения 2. Дополнительные сведения см. в [документации по серии Mv2](https://docs.microsoft.com/azure/virtual-machines/mv2-series) .
 
 ## <a name="generation-2-vm-images-in-azure-marketplace"></a>Образы виртуальных машин поколения 2 в Azure Marketplace
 
 Виртуальные машины поколения 2 поддерживают следующие образы Marketplace:
 
-* Windows Server 2019, 2016, 2012 R2, 2012
-* Windows 10
+* Windows Server 2019, 2016, 2012 R2, 2012
+* Windows 10 Pro, Windows 10 Корпоративная
 * SUSE Linux Enterprise Server 15 с пакетом обновления 1
 * SUSE Linux Enterprise Server 12 SP4
 * Ubuntu Server 16,04, 18,04, 19,04, 19,10 
-* RHEL 8,0, 7,6, 7,5, 7,4, 7,0
-* Цент ОС 8,0
+* RHEL 8,1, 8,0, 7,7, 7,6, 7,5, 7,4, 7,0
+* Цент ОС 8,1, 8,0, 7,7, 7,6, 7,5, 7,4
+* Oracle Linux 7,7, 7,7-CI
+
+> [!NOTE]
+> Конкретные размеры виртуальных машин, например Mv2 Series, могут поддерживать только подмножество этих образов. подробные сведения см. в соответствующей документации по размеру виртуальной машины.
 
 ## <a name="on-premises-vs-azure-generation-2-vms"></a>Локальная среда и виртуальные машины поколения 2 для Azure
 
 В настоящее время Azure не поддерживает некоторые функции, поддерживаемые локальными Hyper-V для виртуальных машин поколения 2.
 
-| Поколение 2, функция                | Локальная версия Hyper-V | Azure |
+| Поколение 2, функция                | Локальные серверы Hyper-V | Azure |
 |-------------------------------------|---------------------|-------|
 | Безопасная загрузка                         | :heavy_check_mark:  | :x:   |
-| Экранированная виртуальная машина                         | :heavy_check_mark:  | :x:   |
+| Экранированная виртуальная машина:                         | :heavy_check_mark:  | :x:   |
 | vTPM                                | :heavy_check_mark:  | :x:   |
 | Безопасность на основе виртуализации (VBS) | :heavy_check_mark:  | :x:   |
 | Формат VHDX                         | :heavy_check_mark:  | :x:   |
@@ -80,12 +81,12 @@ ms.locfileid: "77161738"
 | Компонент | Поколение 1 | Поколение 2 |
 |---------|--------------|--------------|
 | Загрузка             | пкат                      | UEFI                               |
-| Контроллеры дисков | ИНТЕРФЕЙС                       | ИНТЕРФЕЙСА                               |
+| Контроллеры дисков | IDE                       | SCSI                               |
 | Размеры виртуальной машины         | Все размеры виртуальных машин | Только виртуальные машины, поддерживающие хранилище класса Premium |
 
 ### <a name="generation-1-vs-generation-2-capabilities"></a>Возможности поколения 1 и поколения 2
 
-| Функция | Поколение 1 | Поколение 2 |
+| Возможности | Поколение 1 | Поколение 2 |
 |------------|--------------|--------------|
 | Диск ОС > 2 ТБ                    | :x:                | :heavy_check_mark: |
 | Пользовательский диск, образ или ОС замены         | :heavy_check_mark: | :heavy_check_mark: |
@@ -121,7 +122,7 @@ ms.locfileid: "77161738"
 
 Вы также можете создать виртуальную машину с помощью PowerShell, обратившись непосредственно к SKU поколения 1 или поколения 2.
 
-Например, используйте следующий командлет PowerShell, чтобы получить список номеров SKU в предложении `WindowsServer`.
+Например, используйте следующий командлет PowerShell, чтобы получить список номеров SKU в `WindowsServer` предложении.
 
 ```powershell
 Get-AzVMImageSku -Location westus2 -PublisherName MicrosoftWindowsServer -Offer WindowsServer

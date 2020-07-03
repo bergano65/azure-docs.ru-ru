@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: 1ad41b0b7391236a15b7c1be7d42ed81aaf5b51a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: f711d0dbc2df2a5ab102b520fb0d166a459383c1
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61483440"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83684454"
 ---
 # <a name="azure-storage-compliance-offerings"></a>Предложения для соответствия требованиям в службе хранилища Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "61483440"
 
 Ниже приводятся предложения для соответствия требованиям в службе хранилища Azure, чтобы гарантировать соответствие вашей службы при использовании службы хранилища Azure. Они используются в следующих предложениях службы хранилища Azure: большие двоичные объекты, файлы, очереди, таблицы, диски, холодное хранилище и хранилище класса Premium.
 
-## <a name="global"></a>Глобальные
+## <a name="global"></a>Global
 
 * [Аттестация CSA STAR](https://www.microsoft.com/trustcenter/compliance/csa-star-attestation)
 * [Сертификация CSA Star](https://www.microsoft.com/trustcenter/compliance/csa-star-certification)
@@ -34,7 +34,7 @@ ms.locfileid: "61483440"
 * [ISO 9001](https://www.microsoft.com/trustcenter/compliance/iso-9001)
 * [WCAG 2.0](https://www.microsoft.com/trustcenter/compliance/accessibility#WCAG-2-0)
 
-## <a name="us-government"></a>Правительство США
+## <a name="us-government"></a>US (США)
 
 * [DoD DISA L2, L4, L5](https://www.microsoft.com/trustcenter/compliance/disa)
 * [DoE 10 CFR Part 810](https://aka.ms/AzureCompliance)
@@ -64,7 +64,6 @@ ms.locfileid: "61483440"
 * [MAS + ABS (Сингапур)](https://aka.ms/AzureCompliance)
 * [MPAA](https://www.microsoft.com/trustcenter/compliance/mpaa)
 * [NEN-7510 (Нидерланды)](https://www.microsoft.com/trustcenter/compliance/nen-7510)
-* [NHS IG Toolkit (Великобритания)](https://www.microsoft.com/trustcenter/Compliance/NHS)
 * [PCI DSS](https://www.microsoft.com/trustcenter/compliance/pci)
 * [Общая сертификация](https://aka.ms/AzureCompliance)
 * [SOX](https://www.microsoft.com/trustcenter/compliance/SOX)

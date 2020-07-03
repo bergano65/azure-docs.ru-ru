@@ -10,13 +10,13 @@ ms.date: 03/08/2019
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: e4236952bd41c4955e337813ff6d706263b8ef47
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73890904"
 ---
-# <a name="tutorial-configure-devices-connected-to-your-monitoring-solution"></a>Руководство по Настройка устройств, подключенных к решению для мониторинга
+# <a name="tutorial-configure-devices-connected-to-your-monitoring-solution"></a>Руководство по настройке устройств, подключенных к решению для мониторинга
 
 В этом руководстве показано, как настраивать подключенные устройства Интернета вещей и управлять ими с помощью акселератора решения для удаленного мониторинга. Вы научитесь добавлять новое устройство в акселератор решений и настраивать это устройство.
 
@@ -121,7 +121,7 @@ ms.locfileid: "73890904"
 
 [!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве было показано, как настраивать устройства, подключенные к акселератору решения для удаленного мониторинга, и управлять ими. Чтобы узнать, как с помощью акселератора решений выполнять анализ первопричин непредвиденного оповещения, перейдите к следующему руководству.
 

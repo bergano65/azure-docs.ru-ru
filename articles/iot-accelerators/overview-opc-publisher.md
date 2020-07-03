@@ -8,12 +8,15 @@ ms.topic: overview
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 2310a81d3cfaeff203134af9968bc2d5caea3e9c
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: c77dff4a4f89a78dc0a0d723fbb45fe691246112
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824779"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81681922"
 ---
 # <a name="what-is-opc-publisher"></a>Что такое издатель OPC?
 
@@ -41,6 +44,6 @@ ms.locfileid: "73824779"
 
 Это приложение использует эталонный стек OPC Foundation OPC UA в качестве пакетов NuGet. Ознакомьтесь с условиями лицензирования по адресу [https://opcfoundation.org/license/redistributables/1.3/](https://opcfoundation.org/license/redistributables/1.3/).
 
-### <a name="next-steps"></a>Дополнительная информация
+### <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы узнали, что представляет собой издатель OPC. Мы предлагаем далее ознакомиться с информацией о [настройке издателя OPC](howto-opc-publisher-configure.md).

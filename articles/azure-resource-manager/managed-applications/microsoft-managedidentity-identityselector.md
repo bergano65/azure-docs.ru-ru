@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tomfitz
 ms.openlocfilehash: cb66a2684e0b83f4f0cc01a07cc724f6beab4d68
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77087548"
 ---
 # <a name="microsoftmanagedidentityidentityselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft. ManagedIdentity. Идентитиселектор
@@ -78,7 +78,7 @@ ms.locfileid: "77087548"
 - Если **параметр options. хидесистемассигнедидентити** имеет значение **true**, Пользовательский интерфейс для настройки назначенного системой удостоверения не отображается. Значение по умолчанию для этого параметра — **false**.
 - Если **параметр options. хидеусерассигнедидентити** имеет значение **true**, Пользовательский интерфейс для настройки назначенного пользователю удостоверения не отображается. Ресурсу не назначено удостоверение, назначенное пользователем. Значение по умолчанию для этого параметра — **false**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 - Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

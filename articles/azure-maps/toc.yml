@@ -23,6 +23,8 @@
           href: tutorial-create-store-locator.md
     - name: Руководства по REST API
       items:
+        - name: Создание схем помещений
+          href: tutorial-creator-indoor-maps.md
         - name: Настройка геозоны
           href: tutorial-geofence.md
         - name: Пространственная аналитика
@@ -49,6 +51,12 @@
       href: azure-maps-event-grid-integration.md
     - name: Выбор ценовой категории
       href: choose-pricing-tier.md
+    - name: Creator для схем помещений
+      items:
+        - name: Основные понятия о схемах помещений
+          href: creator-indoor-maps.md
+        - name: 'Ошибки и предупреждения, связанные с преобразованием рисунков'
+          href: drawing-conversion-error-codes.md
     - name: Покрытие
       items:
         - name: Наличие информации о геокодировании
@@ -83,14 +91,18 @@
           href: how-to-manage-authentication.md
         - name: Управление ценовой категорией
           href: how-to-manage-pricing-tier.md
+        - name: Управление Creator
+          href: how-to-manage-creator.md
         - name: Просмотр метрик использования
           href: how-to-view-api-usage.md
     - name: Получение данных карты из REST API
       items:
         - name: Поиск адреса
           href: how-to-search-for-address.md
-        - name: Рекомендации по поиску
+        - name: Рекомендации по использованию службы "Поиск"
           href: how-to-use-best-practices-for-search.md
+        - name: Рекомендации по использованию службы "Построение маршрутов"
+          href: how-to-use-best-practices-for-routing.md
         - name: Отображение пользовательских данных на статической карте
           href: how-to-render-custom-data.md
         - name: Запрос маршрутов общественного транспорта
@@ -101,7 +113,7 @@
       items:
         - name: Элемент управления картой
           items:
-            - name: Начало работы с элементами управления веб-картой
+            - name: Использование элемента управления картой в Azure Maps
               href: how-to-use-map-control.md
             - name: Создание карты
               href: map-create.md
@@ -165,6 +177,22 @@
               href: map-get-information-from-coordinate.md
             - name: Отображение направлений от точки А до точки Б
               href: map-route.md
+        - name: Модуль пространственного ввода-вывода
+          items:
+            - name: Использование модуля пространственного ввода-вывода
+              href: how-to-use-spatial-io-module.md
+            - name: Добавление простого уровня данных
+              href: spatial-io-add-simple-data-layer.md
+            - name: Чтение и запись пространственных данных
+              href: spatial-io-read-write-spatial-data.md
+            - name: Добавление слоя карты OGC
+              href: spatial-io-add-ogc-map-layer.md
+            - name: Подключение службе WFS
+              href: spatial-io-connect-wfs-service.md
+            - name: Использование основных операций
+              href: spatial-io-core-operations.md
+            - name: Сведения о поддерживаемых форматах данных
+              href: spatial-io-supported-data-format-details.md
         - name: 'Браузеры, поддерживаемые в веб-пакетах SDK'
           href: supported-browsers.md
     - name: Разработка с помощью пакета SDK для Android
@@ -181,12 +209,24 @@
           href: display-feature-information-android.md
         - name: Добавление слоя фрагментов
           href: how-to-add-tile-layer-android-map.md
+        - name: Отображение данных о трафике
+          href: how-to-show-traffic-android.md
+    - name: Разработка схем помещений с помощью Creator
+      items:
+        - name: Модуль схем помещений
+          href: how-to-use-indoor-module.md
+        - name: Динамический стиль для схем помещений
+          href: indoor-map-dynamic-styling.md
+        - name: Визуализатор ошибок рисования
+          href: drawing-error-visualizer.md
     - name: Предоставление отзывов о данных
       href: how-to-use-feedback-tool.md
 - name: Справочник
   items:
     - name: Расширения параметров и API
       items:
+        - name: Требования к пакету рисунков
+          href: drawing-requirements.md
         - name: Модель использования транспорта
           href: consumption-model.md
         - name: Расширение формата GeoJSON
@@ -219,6 +259,20 @@
           href: 'https://docs.microsoft.com/rest/api/maps/traffic'
         - name: Служба погоды
           href: 'https://docs.microsoft.com/rest/api/maps/weather'
+        - name: Служба Maps Creator
+          items:
+            - name: Служба псевдонимов
+              href: 'https://docs.microsoft.com/rest/api/maps/alias'
+            - name: Служба преобразования
+              href: 'https://docs.microsoft.com/rest/api/maps/conversion'
+            - name: Служба набора данных
+              href: 'https://docs.microsoft.com/rest/api/maps/dataset'
+            - name: Служба состояний функций
+              href: 'https://docs.microsoft.com/rest/api/maps/featurestate'
+            - name: Служба набора фрагментов
+              href: 'https://docs.microsoft.com/rest/api/maps/tileset'
+            - name: Служба WFS
+              href: 'https://docs.microsoft.com/rest/api/maps/wfs'
         - name: Управление учетными записями службы Maps
           href: 'https://docs.microsoft.com/rest/api/maps-management'
     - name: JavaScript
@@ -229,12 +283,40 @@
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/'
         - name: Модуль службы
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-rest/'
+        - name: Модуль пространственного ввода-вывода
+          href: 'https://docs.microsoft.com/javascript/api/azure-maps-spatial-io/'
+        - name: Модуль для помещений
+          href: 'https://aka.ms/am-indoor-module-websdk/'
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.maps/accounts
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
       href: /azure/iot-fundamentals/iot-support-help
+    - name: Службы Azure IoT
+      items:
+        - name: Центр Интернета вещей
+          href: /azure/iot-hub
+        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+          href: /azure/iot-dps
+        - name: IoT Central
+          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+        - name: IoT Edge
+          href: /azure/iot-edge
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-accelerators
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
+        - name: Azure Maps
+          href: /azure/azure-maps
+        - name: Аналитика временных рядов
+          href: /azure/time-series-insights
+    - name: Пакеты SDK для Центра Интернета вещей Azure
+      items:
+        - name: Пакеты SDK для служб IoT
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+        - name: Пакеты SDK для устройств Интернета вещей
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
     - name: Условия использования Azure Maps
       href: 'https://azure.microsoft.com/support/legal/'
     - name: Цены на Azure Maps
@@ -243,8 +325,8 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-maps'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelbs'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-maps.html'
     - name: Видео об Azure Maps
       href: 'https://aka.ms/AzureMapsVideos'
     - name: Проекты с открытым исходным кодом
@@ -263,31 +345,3 @@
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
     - name: Azure Maps в IoT School
       href: 'https://iotschool.microsoft.com/learning-paths/4ZktHn3KEUIiUw64C0Aieo'
-- name: Сопутствующие материалы
-  items:
-    - name: Решения
-      items:
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-suite
-        - name: IoT Central
-          href: /azure/iot-central/iot-support-help
-    - name: Службы платформы
-      items:
-        - name: Центр Интернета вещей
-          href: /azure/iot-hub
-        - name: IoT Plug and Play
-          href: /azure/iot-pnp
-        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
-        - name: Maps
-          href: /azure/azure-maps
-        - name: Пакеты SDK службы
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов
-          href: /azure/time-series-insights
-    - name: Решения с Edge
-      items:
-        - name: IoT Edge
-          href: /azure/iot-edge
-        - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

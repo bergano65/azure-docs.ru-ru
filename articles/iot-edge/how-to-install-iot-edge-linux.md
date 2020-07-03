@@ -7,16 +7,16 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 07/22/2019
+ms.date: 02/21/2020
 ms.author: kgremban
-ms.openlocfilehash: af53dea76670be500e7be20063487e3e4a2177b6
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 947f224426b3a70c39cbf94ee888c5c353b3993b
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548736"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857340"
 ---
-# <a name="install-the-azure-iot-edge-runtime-on-debian-based-linux-systems"></a>Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian
+# <a name="install-the-azure-iot-edge-runtime-on-debian-based-linux-systems"></a>Установка среды выполнения Azure IoT Edge в системах Linux на основе Debian
 
 Среда выполнения Azure IoT Edge превращает устройство в устройство IoT Edge. Среду выполнения можно развернуть на всех устройствах — от небольшого Raspberry Pi до технического сервера. Как только на устройстве будет настроена среда выполнения IoT Edge, вы можете начать развертывать в нее бизнес-логику из облака. Дополнительные сведения см. [в разделе Знакомство со средой выполнения Azure IOT EDGE и ее архитектурой](iot-edge-runtime.md).
 
@@ -179,25 +179,16 @@ sudo nano /etc/iotedge/config.yaml
 
 Найдите конфигурации подготовки файла и раскомментируйте раздел **Настройка подготовки вручную** . Замените значение **device_connection_string** строкой подключения для устройства IoT Edge. Убедитесь, что все остальные разделы подготовки включены в комментарий. Убедитесь, что **Подготовка:** строка не имеет предшествующих пробелов, а вложенные элементы имеют отступ в два пробела.
 
-   ```yaml
-   # Manual provisioning configuration
-   provisioning:
-     source: "manual"
-     device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
-  
-   # DPS TPM provisioning configuration
-   # provisioning:
-   #   source: "dps"
-   #   global_endpoint: "https://global.azure-devices-provisioning.net"
-   #   scope_id: "{scope_id}"
-   #   attestation:
-   #     method: "tpm"
-   #     registration_id: "{registration_id}"
-   ```
+```yml
+# Manual provisioning configuration
+provisioning:
+  source: "manual"
+  device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+```
 
-Чтобы вставить содержимое буфера обмена в `Shift+Right Click` Nano или нажмите клавишу `Shift+Insert`.
+Для вставки содержимого буфера обмена в `Shift+Right Click` Nano или `Shift+Insert`нажмите клавишу.
 
-Сохраните файл и закройте его.
+Сохраните и закройте файл.
 
    `CTRL + X`, `Y`, `Enter`
 
@@ -209,7 +200,13 @@ sudo systemctl restart iotedge
 
 ### <a name="option-2-automatic-provisioning"></a>Вариант 2. Автоматическая подготовка
 
-Для автоматической подготовки устройства [настройте службу подготовки устройств и получите идентификатор регистрации устройства](how-to-auto-provision-simulated-device-linux.md). Существует несколько механизмов аттестации, поддерживаемых IoT Edge при использовании автоматической подготовки, но требования к оборудованию также влияют на выбор. Например, по умолчанию устройства Raspberry Pi не поставляются с микросхемой доверенный платформенный модуль (TPM) (TPM).
+IoT Edge устройства можно автоматически подготовить с помощью [службы подготовки устройств для центра Интернета вещей Azure (DPS)](../iot-dps/index.yml). В настоящее время IoT Edge поддерживает два механизма аттестации при использовании автоматической подготовки, но требования к оборудованию могут повлиять на выбор. Например, по умолчанию устройства Raspberry Pi не поставляются с микросхемой доверенный платформенный модуль (TPM) (TPM). Дополнительные сведения см. в следующих статьях:
+
+* [Создание и предоставление устройства IoT Edge с помощью виртуального доверенного платформенного модуля на виртуальной машине Linux](how-to-auto-provision-simulated-device-linux.md)
+* [Создание и инициализация устройства IoT Edge с помощью сертификатов X. 509](how-to-auto-provision-x509-certs.md)
+* [Создание и инициализация устройства IoT Edge с помощью аттестации симметричных ключей](how-to-auto-provision-symmetric-keys.md)
+
+В этих статьях пошаговые инструкции по настройке регистраций в DPS и созданию правильных сертификатов или ключей для аттестации. Независимо от выбранного механизма аттестации сведения о подготовке добавляются в файл конфигурации IoT Edge на устройстве IoT Edge.
 
 Откройте файл конфигурации.
 
@@ -217,29 +214,53 @@ sudo systemctl restart iotedge
 sudo nano /etc/iotedge/config.yaml
 ```
 
-Найдите конфигурации подготовки файла и раскомментируйте раздел, соответствующий вашему механизму аттестации. Например, при использовании аттестации доверенного платформенного модуля обновите значения **scope_id** и **registration_id** значениями из службы подготовки устройств центра интернета вещей и устройства IOT Edge с доверенным платформенным модулем соответственно. Убедитесь, что **Подготовка:** строка не имеет предшествующих пробелов, а вложенные элементы имеют отступ в два пробела.
+Найдите конфигурации подготовки файла и раскомментируйте раздел, соответствующий вашему механизму аттестации. Убедитесь, что все остальные разделы подготовки включены в комментарий. **Подготовка:** строка не должна содержать предшествующих пробелов, а вложенные элементы должны иметь отступ в два пробела. Обновите значение **scope_id** значением из экземпляра службы подготовки устройств центра Интернета вещей и укажите соответствующие значения для полей аттестации.
 
-   ```yaml
-   # Manual provisioning configuration
-   # provisioning:
-   #   source: "manual"
-   #   device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
-  
-   # DPS TPM provisioning configuration
-   provisioning:
-     source: "dps"
-     global_endpoint: "https://global.azure-devices-provisioning.net"
-     scope_id: "{scope_id}"
-     attestation:
-       method: "tpm"
-       registration_id: "{registration_id}"
-   ```
+Аттестация TPM:
 
-Чтобы вставить содержимое буфера обмена в `Shift+Right Click` Nano или нажмите клавишу `Shift+Insert`.
+```yml
+# DPS TPM provisioning configuration
+provisioning:
+  source: "dps"
+  global_endpoint: "https://global.azure-devices-provisioning.net"
+  scope_id: "<SCOPE_ID>"
+  attestation:
+    method: "tpm"
+    registration_id: "<REGISTRATION_ID>"
+```
 
-Сохраните файл и закройте его.
+Аттестация X. 509:
 
-   `CTRL + X`, `Y`, `Enter`
+```yml
+# DPS X.509 provisioning configuration
+provisioning:
+  source: "dps"
+  global_endpoint: "https://global.azure-devices-provisioning.net"
+  scope_id: "<SCOPE_ID>"
+  attestation:
+    method: "x509"
+#   registration_id: "<OPTIONAL REGISTRATION ID. LEAVE COMMENTED OUT TO REGISTER WITH CN OF identity_cert>"
+    identity_cert: "<REQUIRED URI TO DEVICE IDENTITY CERTIFICATE>"
+    identity_pk: "<REQUIRED URI TO DEVICE IDENTITY PRIVATE KEY>"
+```
+
+Аттестация симметричных ключей:
+
+```yml
+# DPS symmetric key provisioning configuration
+provisioning:
+  source: "dps"
+  global_endpoint: "https://global.azure-devices-provisioning.net"
+  scope_id: "<SCOPE_ID>"
+  attestation:
+    method: "symmetric_key"
+    registration_id: "<REGISTRATION_ID>"
+    symmetric_key: "<SYMMETRIC_KEY>"
+```
+
+Для вставки содержимого буфера обмена в `Shift+Right Click` Nano или `Shift+Insert`нажмите клавишу.
+
+Сохраните и закройте файл. `CTRL + X`, `Y`, `Enter`
 
 Когда введете сведения о подготовке в файл конфигурации, перезапустите управляющую программу:
 
@@ -263,13 +284,13 @@ systemctl status iotedge
 journalctl -u iotedge --no-pager --no-full
 ```
 
-Выполните автоматическую проверку наиболее распространенных ошибок конфигурации и сети.
+Запустите [средство устранения неполадок](troubleshoot.md#run-the-check-command) , чтобы проверить наиболее распространенные ошибки конфигурации и сети.
 
 ```bash
 sudo iotedge check
 ```
 
-Пока вы не развернете первый модуль для IoT Edge на устройстве, модуль **$edgeHub** системы не будет развернут на устройстве. В результате автоматическая проверка вернет ошибку для проверки подключения `Edge Hub can bind to ports on host`. Эта ошибка может игнорироваться, если она не возникает после развертывания модуля на устройстве.
+Пока вы не развернете первый модуль для IoT Edge на устройстве, модуль **$edgeHub** системы не будет развернут на устройстве. В результате автоматическая проверка будет возвращать ошибку для проверки `Edge Hub can bind to ports on host` подключения. Эта ошибка может игнорироваться, если она не возникает после развертывания модуля на устройстве.
 
 Наконец, перечислите выполняемые модули:
 
@@ -297,7 +318,7 @@ sudo iotedge list
    ./check-config.sh
    ```
 
-Эта команда предоставляет подробные выходные данные, которые содержат сведения о состоянии функций ядра, используемых средой выполнения значок Кита. Необходимо убедиться, что все элементы в разделе `Generally Necessary` и `Network Drivers` включены, чтобы обеспечить полную совместимость ядра с средой выполнения значок Кита.  Если вы определили недостающие компоненты, включите их, перестроив ядро из источника и выбрав связанные модули для включения в соответствующий файл kernel. config.  Аналогично, если вы используете генератор конфигурации ядра, например дефконфиг или менуконфиг, найдите и включите соответствующие функции и перестройте ядро соответствующим образом.  После развертывания недавно измененного ядра запустите сценарий Check-config еще раз, чтобы убедиться, что все необходимые компоненты были успешно включены.
+Эта команда предоставляет подробные выходные данные, которые содержат сведения о состоянии функций ядра, используемых средой выполнения значок Кита. Необходимо убедиться, что все элементы в разделе `Generally Necessary` и `Network Drivers` включены, чтобы обеспечить полную совместимость ядра с средой выполнения значок Кита.  Если вы определили недостающие компоненты, включите их, перестроив ядро из источника и выбрав связанные модули для включения в соответствующий файл kernel. config.  Аналогичным образом, если вы используете генератор конфигурации ядра, `defconfig` например `menuconfig`или, найдите и включите соответствующие функции и перестройте ядро соответствующим образом.  После развертывания недавно измененного ядра запустите сценарий Check-config еще раз, чтобы убедиться, что все необходимые компоненты были успешно включены.
 
 ## <a name="uninstall-iot-edge"></a>Удаление IoT Edge
 
@@ -328,7 +349,7 @@ sudo apt-get remove --purge moby-cli
 sudo apt-get remove --purge moby-engine
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

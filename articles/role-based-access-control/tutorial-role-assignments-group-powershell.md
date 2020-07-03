@@ -1,6 +1,6 @@
 ---
-title: Учебник. Предоставление доступа группе к ресурсам Azure с помощью RBAC и Azure PowerShell
-description: Узнайте, как предоставить группе доступ к ресурсам Azure с помощью управления доступом на основе ролей (RBAC) и Azure PowerShell.
+title: Руководство по Предоставление доступа группам к ресурсам Azure с помощью Azure PowerShell — Azure RBAC
+description: Узнайте, как предоставить группам доступ к ресурсам Azure с помощью Azure PowerShell и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationCenter: ''
 author: rolyon
@@ -13,43 +13,43 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 02/02/2019
 ms.author: rolyon
-ms.openlocfilehash: fb26e603ebb867bda47a93162ffef9bf716d3db6
-ms.sourcegitcommit: 4c831e768bb43e232de9738b363063590faa0472
+ms.openlocfilehash: 0d72ea23b74137e7e57f892b831b0be1b4a89de5
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74418590"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735527"
 ---
-# <a name="tutorial-grant-a-group-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Руководство по Предоставление доступа для группы с помощью RBAC и Azure PowerShell
+# <a name="tutorial-grant-a-group-access-to-azure-resources-using-azure-powershell"></a>Руководство по Предоставление доступа группам к ресурсам Azure с помощью Azure PowerShell
 
-[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять групповой доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
+[Управление доступом на основе ролей Azure (Azure RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. В этом руководстве описано, как предоставлять групповой доступ для просмотра любого содержимого в рамках подписки и обеспечивать полное управление в группе ресурсов с помощью Azure PowerShell.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Предоставление доступа для группы в разных областях
 > * Вывод списка доступа
 > * Запрет доступа
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [az-powershell-update](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником требуется:
+Для выполнения этого руководства потребуется следующее:
 
 - разрешения на создание групп в Azure Active Directory (или наличие существующей группы);
 - [Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell);
 
 ## <a name="role-assignments"></a>Назначения ролей
 
-Чтобы в RBAC предоставить доступ, нужно создать назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Ниже приведены два варианта назначения роли, которые мы выполним в ходе работы с этим руководством.
+При использовании Azure RBAC для предоставления доступа нужно создать назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Ниже приведены два варианта назначения роли, которые мы выполним в ходе работы с этим руководством.
 
 | Субъект безопасности | Определение роли | Область |
 | --- | --- | --- |
-| Группа<br>(Группа из руководства по RBAC) | [Читатель](built-in-roles.md#reader) | Subscription |
-| Группа<br>(Группа из руководства по RBAC)| [Участник](built-in-roles.md#contributor) | группа ресурсов.<br>(группа-ресурсов-из-руководства-по-rbac) |
+| Группа<br>(Группа из руководства по RBAC) | [Читатель](built-in-roles.md#reader) | Подписка |
+| Группа<br>(Группа из руководства по RBAC)| [Участник](built-in-roles.md#contributor) | Группа ресурсов<br>(группа-ресурсов-из-руководства-по-rbac) |
 
    ![Назначения ролей для группы](./media/tutorial-role-assignments-group-powershell/rbac-role-assignments.png)
 
@@ -70,7 +70,7 @@ ms.locfileid: "74418590"
    11111111-1111-1111-1111-111111111111 RBAC Tutorial Group
    ```
 
-Если у вас нет разрешений на создание групп, ознакомьтесь со статьей [Руководство Предоставление доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md).
+Если у вас нет разрешений на создание групп, ознакомьтесь со статьей [Руководство Предоставление доступа пользователям к ресурсам Azure с помощью Azure PowerShell](tutorial-role-assignments-user-powershell.md).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -291,7 +291,7 @@ ms.locfileid: "74418590"
     
     Если при попытке удалить группу появится ошибка, можно также удалить группу на портале.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Управление доступом с помощью RBAC и Azure PowerShell](role-assignments-powershell.md)
+> [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](role-assignments-powershell.md)

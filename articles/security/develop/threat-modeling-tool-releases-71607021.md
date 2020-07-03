@@ -1,5 +1,6 @@
 ---
-title: Microsoft Threat Modeling Tool выпуск 7/2/2019 — Azure
+title: Microsoft Threat Modeling Tool выпуск 7/2/2019
+titleSuffix: Azure
 description: Документирование заметок о выпуске средства моделирования угроз
 author: jegeib
 ms.author: jegeib
@@ -7,12 +8,12 @@ ms.service: security
 ms.subservice: security-develop
 ms.topic: article
 ms.date: 07/02/2019
-ms.openlocfilehash: d26ff015156f5d050a74733ff82c811ff5f1700a
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: d4a97a10b8055af4401dbe163723b1fb38a5d12f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548768"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78269671"
 ---
 # <a name="threat-modeling-tool-update-release-71607021---722019"></a>Threat Modeling Tool обновления выпуска 7.1.60702.1 — 7/2/2019
 
@@ -30,12 +31,12 @@ ms.locfileid: "75548768"
 
 ![Параметр проверки модели](./media/threat-modeling-tool-releases-71607021/tmt-template-selection.png)
 
-## <a name="system-requirements"></a>Системные требования
+## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы
-  - [Юбилейное обновление Microsoft Windows 10](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или более поздней версии
+  - [Юбилейное обновление Microsoft Windows 10](https://blogs.windows.com/windowsexperience/2016/08/02/how-to-get-the-windows-10-anniversary-update/#HTkoK5Zdv0g2F2Zq.97) или более поздняя версия
 - Требуемая версия .NET
-  - [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262) или более поздней версии
+  - [.NET 4.7.1](https://go.microsoft.com/fwlink/?LinkId=863262) или более поздней версии
 - Дополнительные требования
   - Для получения обновлений средства и шаблонов требуется подключение к Интернету.
 
@@ -43,6 +44,6 @@ ms.locfileid: "75548768"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](threat-modeling-tool.md) и содержит информацию [об использовании средства](threat-modeling-tool-getting-started.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

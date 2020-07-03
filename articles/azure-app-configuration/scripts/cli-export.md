@@ -1,26 +1,20 @@
 ---
 title: Пример скрипта Azure CLI. Экспорт из хранилища конфигураций приложения в Azure
 titleSuffix: Azure App Configuration
-description: Информация и примеры скриптов для экспорта данных их хранилища конфигураций приложения Azure
+description: Экспорт конфигурации из Конфигурации приложений Azure с помощью скрипта Azure CLI
 services: azure-app-configuration
-documentationcenter: ''
 author: lisaguthrie
-manager: balans
-editor: ''
 ms.service: azure-app-configuration
 ms.devlang: azurecli
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: azure-app-configuration
-ms.date: 02/24/2019
+ms.date: 02/19/2020
 ms.author: lcozzens
-ms.custom: mvc
-ms.openlocfilehash: 0cdefaa60c9e7a1aab418042c037ef76b63e7804
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3e014504fc1e94c3b323a49b408fa992de00d14a
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76898671"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77523631"
 ---
 # <a name="export-from-an-azure-app-configuration-store"></a>Экспорт из хранилища конфигураций для приложения Azure
 
@@ -31,10 +25,6 @@ ms.locfileid: "76898671"
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
-
-Сначала необходимо установить расширение CLI для службы "Конфигурация приложений Azure", выполнив следующую команду:
-
-        az extension add -n appconfig
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -53,7 +43,7 @@ az appconfig kv export --name myTestAppConfigStore --file ~/Export.json
 
 | Get-Help | Примечания |
 |---|---|
-| [az appconfig kv export](/cli/azure/ext/appconfig/appconfig/kv#ext-appconfig-az-appconfig-kv-export) | Экспортирует данные из ресурса хранилища Конфигурации приложений. |
+| [az appconfig kv export](/cli/azure/appconfig/kv#az-appconfig-kv-export) | Экспортирует данные из ресурса хранилища Конфигурации приложений. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

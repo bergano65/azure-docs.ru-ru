@@ -3,12 +3,12 @@ title: Настройка Azure Monitor для динамических данн
 description: В этой статье описывается, как настроить представление журналов контейнеров (stdout/stderr) и событий в режиме реального времени без использования kubectl с Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 02/14/2019
-ms.openlocfilehash: 91f035b98a57fd9a37203cc48b3cc5d685967a13
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: f19071ca642cd229cbd7d49b4eab90c970672eee
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77251793"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79275377"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>Настройка функции "Интерактивные данные (Предварительная версия)"
 
@@ -18,7 +18,7 @@ ms.locfileid: "77251793"
 
 - AKS без включенной авторизации Kubernetes RBAC;
 - AKS со включенной авторизацией Kubernetes RBAC;
-    - AKS, настроенный с привязкой к роли кластера  **[клустермониторингусер](https://docs.microsoft.com/rest/api/aks/managedclusters/listclustermonitoringusercredentials?view=azurermps-5.2.0)**
+    - AKS, настроенный с привязкой к роли кластера ** [клустермониторингусер](https://docs.microsoft.com/rest/api/aks/managedclusters/listclustermonitoringusercredentials?view=azurermps-5.2.0)**
 - AKS с поддержкой единого входа Azure Active Directory (AD) на основе SAML
 
 Для этих инструкций требуется административный доступ к кластеру Kubernetes, а при настройке на использование Azure Active Directory (AD) для проверки подлинности пользователей — административный доступ к Azure AD.  
@@ -36,19 +36,19 @@ ms.locfileid: "77251793"
 
 ## <a name="authentication-model"></a>Модель проверки подлинности
 
-Функции интерактивных данных (Предварительная версия) используют API Kubernetes, идентичный средству командной строки `kubectl`. Конечные точки API Kubernetes используют самозаверяющий сертификат, который браузер не сможет проверить. Эта функция использует внутренний прокси-сервер для проверки сертификата со службой AKS, гарантируя, что трафик является доверенным.
+Функции интерактивных данных (Предварительная версия) используют API Kubernetes, идентичный средству `kubectl` командной строки. Конечные точки API Kubernetes используют самозаверяющий сертификат, который браузер не сможет проверить. Эта функция использует внутренний прокси-сервер для проверки сертификата со службой AKS, гарантируя, что трафик является доверенным.
 
-Портал Azure предложит проверить учетные данные входа для Azure Active Directory кластера и перенаправить вас на настройку регистрации клиента во время создания кластера (и повторно настроить в этой статье). Такое поведение аналогично процессу проверки подлинности, требуемому для `kubectl`. 
+Портал Azure предложит проверить учетные данные входа для Azure Active Directory кластера и перенаправить вас на настройку регистрации клиента во время создания кластера (и повторно настроить в этой статье). Такое поведение аналогично процессу проверки подлинности, `kubectl`требуемому. 
 
 >[!NOTE]
->Авторизация в кластере управляется Kubernetes и моделью безопасности, с помощью которой она настроена. Пользователям, обращающимся к этой функции, требуется разрешение на скачивание конфигурации Kubernetes (*kubeconfig*), аналогично выполнению `az aks get-credentials -n {your cluster name} -g {your resource group}`. Этот файл конфигурации содержит маркер авторизации и проверки подлинности для **роли пользователя кластера Azure Kubernetes Service**в случае кластеров с поддержкой RBAC и AKS без разрешения RBAC. Он содержит сведения об Azure AD и сведения о регистрации клиента, когда AKS включается с помощью единого входа на основе SAML Azure Active Directory (AD).
+>Авторизация в кластере управляется Kubernetes и моделью безопасности, с помощью которой она настроена. Пользователям, обращающимся к этой функции, требуется разрешение на загрузку конфигурации Kubernetes (*kubeconfig*), `az aks get-credentials -n {your cluster name} -g {your resource group}`аналогичное запуску. Этот файл конфигурации содержит маркер авторизации и проверки подлинности для **роли пользователя кластера Azure Kubernetes Service**в случае кластеров с поддержкой RBAC и AKS без разрешения RBAC. Он содержит сведения об Azure AD и сведения о регистрации клиента, когда AKS включается с помощью единого входа на основе SAML Azure Active Directory (AD).
 
 >[!IMPORTANT]
 >Пользователям этих функций требуется [роль пользователя кластера Azure Kubernetes](../../azure/role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-user-role permissions) в кластере, чтобы скачать `kubeconfig` и использовать эту функцию. Пользователям **не** требуется доступ участника к кластеру для использования этой функции. 
 
 ## <a name="using-clustermonitoringuser-with-rbac-enabled-clusters"></a>Использование Клустермониторингусер с кластерами с поддержкой RBAC
 
-Чтобы исключить необходимость применения дополнительных изменений конфигурации, чтобы разрешить привязку правила пользователя Kubernetes **клустерусер** доступ к функции интерактивных данных (Предварительная версия) после [включения авторизации RBAC](#configure-kubernetes-rbac-authorization) , AKS добавил новую привязку роли кластера Kubernetes под названием **клустермониторингусер**. Эта привязка роли кластера имеет все необходимые разрешения для доступа к API Kubernetes и конечные точки для использования функции интерактивных данных (Предварительная версия). 
+Чтобы исключить необходимость применения дополнительных изменений конфигурации, чтобы разрешить привязку роли пользователя Kubernetes **клустерусер** доступ к функции интерактивных данных (Предварительная версия) после [включения авторизации RBAC](#configure-kubernetes-rbac-authorization) , AKS добавил новую привязку роли кластера Kubernetes под названием **клустермониторингусер**. Эта привязка роли кластера имеет все необходимые разрешения для доступа к API Kubernetes и конечные точки для использования функции интерактивных данных (Предварительная версия).
 
 Чтобы использовать функцию "Интерактивные данные (Предварительная версия)" для этого нового пользователя, необходимо быть членом роли " [участник](../../role-based-access-control/built-in-roles.md#contributor) " в ресурсе кластера AKS. Azure Monitor для контейнеров, если они включены, по умолчанию настроена проверка подлинности с помощью этого пользователя. Если привязка роли Клустермониторингусер не существует в кластере, вместо нее используется **клустерусер** для проверки подлинности.
 
@@ -99,7 +99,7 @@ AKS выпустил эту новую привязку роли в январе
 2. Чтобы обновить конфигурацию, выполните следующую команду: `kubectl apply -f LogReaderRBAC.yaml`.
 
 >[!NOTE] 
-> Если вы применили предыдущую версию файла `LogReaderRBAC.yaml` к кластеру, обновите ее, скопировав и вставляя новый код, показанный на шаге 1 выше, а затем выполните команду, показанную на шаге 2, чтобы применить ее к кластеру.
+> Если вы применили предыдущую версию `LogReaderRBAC.yaml` файла к кластеру, обновите ее, скопировав и вставляя новый код, показанный на шаге 1 выше, а затем выполните команду, показанную на шаге 2, чтобы применить ее к кластеру.
 
 ## <a name="configure-ad-integrated-authentication"></a>Настройка встроенной проверки подлинности Active Directory 
 
@@ -114,14 +114,14 @@ AKS выпустил эту новую привязку роли в январе
 
 ### <a name="client-registration-reconfiguration"></a>Перенастройка регистрации клиента
 
-1. Выберите регистрацию клиента для кластера Kubernetes в Azure AD в разделе **Azure Active Directory > Регистрация приложений** в портал Azure.
+1. Выберите регистрацию клиента для кластера Kubernetes в Azure AD в разделе **Azure Active Directory > регистрация приложений** в портал Azure.
 
 2. На панели слева выберите **Проверка подлинности** . 
 
-3. Добавьте два URL-адреса перенаправления в этот список в качестве типов **веб-** приложений. Первое значение базового URL-адреса должно быть `https://afd.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`, а второе значение базового URL-адреса должно быть `https://monitoring.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`.
+3. Добавьте два URL-адреса перенаправления в этот список в качестве типов **веб-** приложений. Первый базовый URL-адрес должен иметь `https://afd.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` значение, а второй базовый URL-адрес `https://monitoring.hosting.portal.azure.net/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`должен иметь значение.
 
     >[!NOTE]
-    >Если вы используете эту функцию в Azure для Китая, то первым базовым URL-адресом должно быть `https://afd.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`, а второе значение базового URL-адреса должно быть `https://monitoring.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html`. 
+    >Если вы используете эту функцию в Azure для Китая, то первым базовым URL-адресом должно быть `https://afd.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` , а со вторым базовым URL-адресом должно быть. `https://monitoring.hosting.azureportal.chinaloudapi.cn/monitoring/Content/iframe/infrainsights.app/web/base-libs/auth/auth.html` 
     
 4. После регистрации URL-адресов перенаправления в разделе **неявное предоставление**выберите параметры **маркеры доступа** и **маркеры идентификации** , а затем сохраните изменения.
 
@@ -140,6 +140,6 @@ AKS выпустил эту новую привязку роли в январе
 
 Дополнительные сведения о настройке **клустерролебиндинг**кластера AKS см. в разделе [Создание привязки RBAC](../../aks/azure-ad-integration-cli.md#create-rbac-binding).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы настроили проверку подлинности, вы можете просматривать в кластере [метрики](container-insights-livedata-metrics.md), [развертывания](container-insights-livedata-deployments.md), [события и журналы](container-insights-livedata-overview.md) в реальном времени.

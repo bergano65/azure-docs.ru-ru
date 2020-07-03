@@ -1,0 +1,11 @@
+- name: Azure
+  tocHref: /azure
+  topicHref: /azure/index
+  items:
+    - name: Система управления
+      tocHref: /azure/governance
+      topicHref: /azure/governance
+      items:
+        - name: Blueprints
+          tocHref: /azure/azure-resource-manager
+          topicHref: /azure/governance/blueprints

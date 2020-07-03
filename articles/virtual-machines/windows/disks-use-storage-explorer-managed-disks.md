@@ -9,10 +9,10 @@ ms.service: virtual-machines-windows
 ms.tgt_pltfrm: windows
 ms.subservice: disks
 ms.openlocfilehash: 33f107bfbd4cc96a1103f0a310125b6c2f7013e8
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74014627"
 ---
 # <a name="use-azure-storage-explorer-to-manage-azure-managed-disks"></a>Использование Обозреватель службы хранилища Azure для управления управляемыми дисками Azure

@@ -1,5 +1,5 @@
 ---
-title: Защита ресурсов сети в центре безопасности Azure | Документы Майкрософт
+title: Защита сетевых ресурсов в центре безопасности Azure
 description: В этом документе рассматриваются рекомендации из центра безопасности Azure, которые помогают защитить ресурсы сети Azure и обеспечить соответствие политикам безопасности.
 services: security-center
 documentationcenter: na
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/05/2019
 ms.author: memildin
-ms.openlocfilehash: 98001ba01c5dd29375a9af3af43a06f760e4f55f
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 792b95b120f67afcd360730acbd783a3071388b2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75552922"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77431491"
 ---
 # <a name="protect-your-network-resources"></a>Защита сетевых ресурсов
 Центр безопасности Azure постоянно анализирует состояние безопасности ресурсов Azure, чтобы предоставлять рекомендации по обеспечению безопасности сети. Когда центр безопасности выявляет потенциальные уязвимости в системе безопасности, он создает рекомендации по настройке необходимых элементов управления, чтобы укрепить защиту ресурсов.
@@ -40,7 +40,7 @@ ms.locfileid: "75552922"
 - Рекомендации по обеспечению безопасности сети.
 - Столбец **Сеть** прежних версий (предыдущий столбец "Сеть") 
  
-[![области сети](./media/security-center-network-recommendations/networking-pane.png)](./media/security-center-network-recommendations/networking-pane.png#lightbox)
+[![Панель "Сеть"](./media/security-center-network-recommendations/networking-pane.png)](./media/security-center-network-recommendations/networking-pane.png#lightbox)
 
 ## <a name="network-map"></a>Карта сети
 Интерактивная карта сети предоставляет визуальную схему с областями безопасности, а также рекомендации и аналитические сведения для усиления безопасности сетевых ресурсов. На карте можно увидеть топологию сети для рабочих нагрузок Azure, соединения между виртуальными машинами и подсети, а также определенные ресурсы и рекомендации для этих ресурсов.
@@ -59,7 +59,7 @@ ms.locfileid: "75552922"
 - Ресурсы с выходом в Интернет
 - Карты оптимизирована для подписок, выбранных в Azure. Если вы выберете другие подписки, карта будет заново рассчитана и оптимизирована.  
 
-[![ная сетевая схема топологии](./media/security-center-network-recommendations/network-map-info.png)](./media/security-center-network-recommendations/network-map-info.png#lightbox)
+[![Карта топологии сети](./media/security-center-network-recommendations/network-map-info.png)](./media/security-center-network-recommendations/network-map-info.png#lightbox)
 
 ## <a name="understanding-the-network-map"></a>Основные сведения о карте сети
 
@@ -111,16 +111,16 @@ ms.locfileid: "75552922"
 
 **Эти данные основаны на анализе групп безопасности сети, а также на дополнительных алгоритмах машинного обучения, которые анализируют несколько правил, чтобы понять их взаимодействие.** 
 
-[![ная схема сетевого трафика](./media/security-center-network-recommendations/network-map-traffic.png)](./media/security-center-network-recommendations/network-map-traffic.png#lightbox)
+[![Карта трафика сети](./media/security-center-network-recommendations/network-map-traffic.png)](./media/security-center-network-recommendations/network-map-traffic.png#lightbox)
 
 
-## Устаревшие сети <a name ="legacy-networking"></a>
+## <a name="legacy-networking"></a>Устаревшие сети <a name ="legacy-networking"></a>
 
 Если у вас нет центра безопасности уровня "Стандартный", в этом разделе объясняется, как посмотреть бесплатные рекомендации по сетям.
 
 Для доступа к этой информации в колонке "Сеть" нажмите кнопку **Просмотреть устаревшие сети**. 
 
-[![устаревшие сети](./media/security-center-network-recommendations/legacy-networking.png)](./media/security-center-network-recommendations/legacy-networking.png#lightbox)
+[![Устаревшие сети](./media/security-center-network-recommendations/legacy-networking.png)](./media/security-center-network-recommendations/legacy-networking.png#lightbox)
 
 ### <a name="internet-facing-endpoints-section"></a>Раздел с подключенными к Интернету конечными точками
 В разделе **Конечные веб-точки** можно просмотреть виртуальные машины, для которых уже настроена подключенная к Интернету конечная точка, а также ее состояние.
@@ -136,9 +136,9 @@ ms.locfileid: "75552922"
 
 На третьем уровне находятся виртуальные машины, как описано ранее. Можно щелкнуть любой ресурс, чтобы узнать больше или применить необходимый элемент управления или конфигурацию безопасности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 
-* [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
+* [Защита приложений и виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
 * [Защита службы SQL Azure в центре безопасности Azure.](security-center-sql-service-recommendations.md)

@@ -1,18 +1,14 @@
 ---
 title: Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 description: Не отображаются данные в Azure Application Insights? Попробуйте здесь.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 07/23/2018
-ms.openlocfilehash: a1e299f195a148ebd1bdbda91e5a56e297f34d31
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 34fc51f8f656ec0f630bd984ac1b28fbaa5e4dae
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74889181"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80802592"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Устранение неполадок без Application Insights данных для .NET и .NET Core
 
@@ -42,7 +38,7 @@ ms.locfileid: "74889181"
 
 * См. раздел [Устранение неполадок](../../azure-monitor/app/monitor-performance-live-website-now.md#troubleshoot).
 
-## <a name="q01"></a>Параметр "Добавление Application Insights" в Visual Studio не отображается
+## <a name="no-add-application-insights-option-in-visual-studio"></a><a name="q01"></a>Параметр "Добавление Application Insights" в Visual Studio не отображается
 *Когда я щелкаю существующий проект в обозревателе решений правой кнопкой мыши, параметры Application Insights не отображаются.*
 
 * Средства Application Insights поддерживают не все типы проектов .NET. Проекты WCF и веб-проекты поддерживаются. В проекты других типов, например в приложения-службы и классические приложения, можно [вручную добавить пакет SDK службы Application Insights](../../azure-monitor/app/windows-desktop.md).
@@ -50,7 +46,7 @@ ms.locfileid: "74889181"
 * Выберите элементы **Сервис**, **Расширения и обновления** и убедитесь, что пакет **Аналитические средства для разработчиков** установлен и включен. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
 * Откройте диалоговое окно "Новый проект" и выберите "Веб-приложение ASP.NET". Если параметр Application Insights отображается, соответствующие средства установлены. В противном случае попробуйте удалить и повторно установить Developer Analytics Tools.
 
-## <a name="q02"></a>Сбой при добавлении Application Insights
+## <a name="adding-application-insights-failed"></a><a name="q02"></a>Сбой при добавлении Application Insights
 *При попытке добавить Application Insights в существующий проект я вижу сообщение об ошибке.*
 
 Вероятные причины:
@@ -65,12 +61,12 @@ ms.locfileid: "74889181"
 * В браузере убедитесь, что у вас есть доступ к [порталу Azure](https://portal.azure.com). Откройте параметры и проверьте, нет ли каких-либо ограничений.
 * [Добавьте Application Insights в существующий проект](../../azure-monitor/app/asp-net.md). В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт "Добавить Application Insights".
 
-## <a name="emptykey"></a>Появляется сообщение об ошибке «ключ инструментирования не может быть пустым»
+## <a name="i-get-an-error-instrumentation-key-cannot-be-empty"></a><a name="emptykey"></a>Появляется сообщение об ошибке «ключ инструментирования не может быть пустым»
 Вероятно, произошла ошибка при установке Application Insights или же адаптера ведения журнала.
 
 В обозревателе решений щелкните проект правой кнопкой мыши и выберите **Application Insights > Настроить Application Insights**. Появится диалоговое окно с предложением войти в Azure и создать новый ресурс Application Insights или повторно использовать уже существующий.
 
-## <a name="NuGetBuild"></a> На сервере сборки возникает ошибка NuGet package(s) are missing (Пакеты NuGet отсутствуют).
+## <a name="nuget-packages-are-missing-on-my-build-server"></a><a name="NuGetBuild"></a> На сервере сборки возникает ошибка NuGet package(s) are missing (Пакеты NuGet отсутствуют).
 *Когда я выполняю отладку на компьютере для разработки, сборка выполняется без ошибок, но на сервере сборки отображается ошибка NuGet.*
 
 См. сведения о [восстановлении пакетов NuGet](https://docs.nuget.org/Consume/Package-Restore) и [автоматическом восстановлении пакетов](https://docs.nuget.org/Consume/package-restore/migrating-to-automatic-package-restore).
@@ -87,7 +83,7 @@ ms.locfileid: "74889181"
 Исправление:
 
 * Обновите Visual Studio до версии 2013 с обновлением 3 или более поздней.
-* Выберите элементы **Сервис**, **Расширения и обновления** и убедитесь, что пакет **Аналитические средства для разработчиков** установлен и включен. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
+* Выберите **инструменты**, **расширения и обновления** и убедитесь, что **средства анализа для разработчиков** установлены и включены. Если это так, щелкните пункт **Обновления** , чтобы проверить, доступно ли обновление.
 * В обозревателе решений щелкните проект правой кнопкой мыши. Если вы видите команду **Application Insights > Настроить Application Insights**, используйте ее, чтобы подключить проект к ресурсу в службе Application Insights.
 
 В противном случае тип проекта не поддерживается напрямую средствами аналитики для разработчиков. Для просмотра данных телеметрии войдите на [портал Azure](https://portal.azure.com), выберите пункт Application Insights на панели навигации слева и выберите приложение.
@@ -124,7 +120,7 @@ ms.locfileid: "74889181"
   Вы увидите несколько сводных диаграмм. Щелкните любую из них, чтобы увидеть более подробные данные.
 * В Visual Studio во время отладки приложения нажмите кнопку Application Insights.
 
-## <a name="q03"></a> Не отображаются данные сервера (или вообще какие-либо данные)
+## <a name="no-server-data-or-no-data-at-all"></a><a name="q03"></a> Не отображаются данные сервера (или вообще какие-либо данные)
 *После запуска приложения и открытия службы Application Insights в Microsoft Azure на всех диаграммах отображаются сообщения "Сведения о сборе…" или "Не настроено".* Или отображаются *только представление страницы и пользовательские данные, но нет данных сервера.*
 
 * Запустите приложение в режиме отладки в Visual Studio (F5). Используйте приложение таким образом, чтобы создать данные телеметрии. Проверьте, можете ли вы просматривать события, зарегистрированные в окне вывода Visual Studio.  
@@ -140,7 +136,7 @@ ms.locfileid: "74889181"
 * Возможно, вы написали код для [серверного пакета SDK](../../azure-monitor/app/api-custom-events-metrics.md), который мог изменить ключ инструментирования в экземплярах `TelemetryClient` или в `TelemetryContext`. Или вы создали [конфигурацию фильтра или выборки](../../azure-monitor/app/api-filtering-sampling.md) , которая отфильтровывает слишком много данных.
 * Если вы вносили изменения в файл ApplicationInsights.config, внимательно проверьте конфигурацию [TelemetryInitializer и TelemetryProcessor](../../azure-monitor/app/api-filtering-sampling.md). Тип или параметр с неправильным именем может стать причиной неотправки данных пакетом SDK.
 
-## <a name="q04"></a>Нет данных об использовании, браузере и просмотрах страниц
+## <a name="no-data-on-page-views-browsers-usage"></a><a name="q04"></a>Нет данных об использовании, браузере и просмотрах страниц
 *Данные отображаются на диаграммах "Время ответа сервера" и "Запросы сервера", но отсутствуют в колонках "Время загрузки страницы", "Браузер" или "Использование".*
 
 Данные поступают из сценариев на веб-страницах. 
@@ -166,7 +162,7 @@ ms.locfileid: "74889181"
 * Вы достигли месячной квоты точек данных? Чтобы узнать, откройте параметры, квоту и цены. Если это так, вы можете обновить план или заплатить за дополнительную емкость. См. [таблицу цен](https://azure.microsoft.com/pricing/details/application-insights/).
 
 ## <a name="i-dont-see-all-the-data-im-expecting"></a>Не отображаются все данные, которые ожидалось увидеть
-Если ваше приложение отправляет большие объемы данных, а вы используете Application Insights SDK для ASP.NET версии 2.0.0-beta3 или более поздней, может сработать функция [адаптивной выборки](../../azure-monitor/app/sampling.md) и будет отправлена только часть данных телеметрии.
+Если приложение отправляет большой объем данных и вы используете Application Insights SDK для ASP.NET версии 2.0.0-beta3 или более поздней, функция [адаптивной выборки](../../azure-monitor/app/sampling.md) может выполнять работу и отправлять только процент данных телеметрии.
 
 Ее можно отключить, но это не рекомендуется. Выборка разработана таким образом, чтобы связанные данные телеметрии правильно передавались для диагностических целей.
 
@@ -232,7 +228,7 @@ ms.locfileid: "74889181"
 4. Когда вы закончите, отмените эти изменения.
 
 
-## <a name="PerfView"></a>Получение журналов с помощью PerfView
+## <a name="collect-logs-with-perfview"></a><a name="PerfView"></a>Получение журналов с помощью PerfView
 [PerfView](https://github.com/Microsoft/perfview) — это бесплатное средство диагностики и анализа производительности, которое помогает изолировать ресурсы ЦП, памяти и другие проблемы, собирая и визуализируя диагностические сведения из многих источников.
 
 Журнал Application Insights SDK регистрирует журналы самостоятельного устранения неполадок, которые можно записать с помощью PerfView.
@@ -251,6 +247,10 @@ PerfView.exe collect -MaxCollectSec:300 -NoGui /onlyProviders=*Microsoft-Applica
 Дополнительные сведения
 - [Запись трассировок производительности с помощью PerfView](https://github.com/dotnet/roslyn/wiki/Recording-performance-traces-with-PerfView).
 - [Источники событий Application Insights](https://github.com/microsoft/ApplicationInsights-Home/tree/master/Samples/ETW)
+
+## <a name="how-to-remove-application-insights"></a>Удаление Application Insights
+
+Узнайте, как удалить Application Insights в Visual Studio, выполнив действия, приведенные в [статье](../../azure-monitor/app/remove-application-insights.md)удаление.
 
 ## <a name="still-not-working"></a>По-прежнему не работает...
 * [Форум Application Insights](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=ApplicationInsights)

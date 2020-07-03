@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 10/02/2019
 ms.author: Zhchia
 ms.openlocfilehash: 3d472b300400cf230773ba01f3f4362988c34e81
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77063431"
 ---
 # <a name="tutorial-configure-officespace-software-for-automatic-user-provisioning"></a>Учебник. Настройка программного обеспечения Officespace Software для автоматической подготовки пользователей
@@ -31,7 +31,7 @@ ms.locfileid: "77063431"
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения об общих условиях использования продуктов в предварительной версии см. в документе [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -50,7 +50,7 @@ Azure Active Directory использует концепцию, называем
 
 * Рекомендуется назначить одного пользователя Azure AD в Officespace Software Software для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя Officespace Software Software необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя Officespace Software Software необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
 
 ## <a name="set-up-officespace-software-for-provisioning"></a>Настройка программного обеспечения Officespace Software для подготовки
 
@@ -76,7 +76,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -105,15 +105,15 @@ Azure Active Directory использует концепцию, называем
 
     ![Ссылка на OfficeSpace Software в списке "Приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите `https://<subdomain>.officespacesoftware.com/api/scim/v2/` формате URL-адреса в поле **URL-адрес клиента**. Например, `https://contoso.officespacesoftware.com/api/scim/v2/`. Введите значение **маркера проверки подлинности scim** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключаться к программному обеспечению officespace Software. В случае сбоя подключения убедитесь, что учетная запись программного обеспечения Officespace Software имеет разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите `https://<subdomain>.officespacesoftware.com/api/scim/v2/` формат URL-адреса в поле **URL-адрес клиента**. Например, `https://contoso.officespacesoftware.com/api/scim/v2/`. Введите значение **маркера проверки подлинности scim** , полученное ранее в **маркере секрета**. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключаться к программному обеспечению officespace Software. В случае сбоя подключения убедитесь, что учетная запись программного обеспечения Officespace Software имеет разрешения администратора, и повторите попытку.
 
     ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -121,7 +121,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Выберите команду **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с officespace Software Software**.
 
@@ -154,7 +154,7 @@ Azure Active Directory использует концепцию, называем
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 

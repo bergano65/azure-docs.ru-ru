@@ -1,32 +1,31 @@
 ---
 title: Запуск задания Apache Spark с помощью Службы Azure Kubernetes (AKS)
-description: Использование Службы Azure Kubernetes (AKS) для выполнения задания Apache Spark
+description: Используйте службу Azure Kubernetes Service (AKS) для создания и запуска задания Apache Spark для крупномасштабной обработки данных.
 author: lenadroid
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: alehall
 ms.custom: mvc
-ms.openlocfilehash: 72e87acf418d5085a76f18c595bf31d43b0d64ac
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 2e399c1a7b0f9bbc2aac375fe8af969a2b9e0e48
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76274651"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80877633"
 ---
 # <a name="running-apache-spark-jobs-on-aks"></a>Запуск заданий Apache Spark в AKS
 
-[Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с [выпуска Spark 2.3.0][spark-latest-release], Apache Spark поддерживает собственную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
+[Apache Spark][apache-spark] — это быстрый механизм для обработки больших данных. Начиная с версии [Spark 2.3.0][spark-latest-release], Apache Spark поддерживает встроенную интеграцию с кластерами Kubernetes. Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, выполняющаяся в Azure. В этом документе описывается подготовка и запуск заданий Apache Spark в кластере Службы Azure Kubernetes (AKS).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-* Основные сведения о Kubernetes и [Apache Spark][spark-quickstart].
-* Учетная запись [центра DOCKER][docker-hub] или [Реестр контейнеров Azure][acr-create].
-* Azure CLI, [установленные][azure-cli] в системе разработки.
-* [JDK 8][java-install] , установленный в системе.
-* SBT ([средство сборки Scala][sbt-install]), установленное в системе.
+* Базовое представление о Kubernetes и [Apache Spark][spark-quickstart].
+* Учетная запись [центра Docker][docker-hub] или [Реестра контейнеров Azure][acr-create].
+* [Установленный][azure-cli] компонент Azure CLI в системе разработки.
+* [JDK 8][java-install], установленный в вашей системе.
+* [Средство сборки Scala][sbt-install] (SBT), установленное в вашей системе.
 * Средства командной строки Git, установленные в системе.
 
 ## <a name="create-an-aks-cluster"></a>Создание кластера AKS
@@ -47,7 +46,7 @@ az group create --name mySparkCluster --location eastus
 az ad sp create-for-rbac --name SparkSP
 ```
 
-Создайте кластер AKS с узлами, имеющими размер `Standard_D3_v2`, и значения appId и Password, передаваемые в качестве параметров субъекта-службы и секрета клиента.
+Создайте кластер AKS с узлами, имеющими размер `Standard_D3_v2`, и значениями AppID и Password, передаваемыми в качестве параметров субъекта-службы и клиентского секрета.
 
 ```azurecli
 az aks create --resource-group mySparkCluster --name mySparkCluster --node-vm-size Standard_D3_v2 --generate-ssh-keys --service-principal <APPID> --client-secret <PASSWORD>
@@ -59,7 +58,7 @@ az aks create --resource-group mySparkCluster --name mySparkCluster --node-vm-si
 az aks get-credentials --resource-group mySparkCluster --name mySparkCluster
 ```
 
-Если вы используете Реестр контейнеров Azure (ACR) для хранения образов контейнеров, настройте аутентификацию между AKS и ACR. Инструкции см. в [документации по проверке подлинности записей контроля][acr-aks] доступа.
+Если вы используете Реестр контейнеров Azure (ACR) для хранения образов контейнеров, настройте аутентификацию между AKS и ACR. Эти шаги описаны в статье [Аутентификация с помощью реестра контейнеров Azure из Службы контейнеров Azure][acr-aks].
 
 ## <a name="build-the-spark-source"></a>Создание источника Spark
 
@@ -187,7 +186,7 @@ export AZURE_STORAGE_CONNECTION_STRING=`az storage account show-connection-strin
 
 Передайте JAR-файл в учетную запись Azure с помощью следующей команды.
 
-```bash
+```azurecli
 CONTAINER_NAME=jars
 BLOB_NAME=SparkPi-assembly-0.1.0-SNAPSHOT.jar
 FILE_TO_UPLOAD=target/scala-2.11/SparkPi-assembly-0.1.0-SNAPSHOT.jar
@@ -242,8 +241,10 @@ kubectl create clusterrolebinding spark-role --clusterrole=edit --serviceaccount
 Эта операция запускает задание Spark, которое передает состояние задания в сеанс оболочки. Пока выполняется задание, вы можете получить сведения о модуле драйвера Spark и модулях исполнителя, используя команду kubectl get pods. Для выполнения этих команд откройте второй сеанс терминала.
 
 ```console
-$ kubectl get pods
+kubectl get pods
+```
 
+```output
 NAME                                               READY     STATUS     RESTARTS   AGE
 spark-pi-2232778d0f663768ab27edc35cb73040-driver   1/1       Running    0          16s
 spark-pi-2232778d0f663768ab27edc35cb73040-exec-1   0/1       Init:0/1   0          4s
@@ -271,7 +272,7 @@ kubectl get pods --show-all
 
 Выходные данные:
 
-```bash
+```output
 NAME                                               READY     STATUS      RESTARTS   AGE
 spark-pi-2232778d0f663768ab27edc35cb73040-driver   0/1       Completed   0          1m
 ```
@@ -284,7 +285,7 @@ kubectl logs spark-pi-2232778d0f663768ab27edc35cb73040-driver
 
 Внутри этих журналов можно увидеть результат работы Spark, который является значением Pi.
 
-```bash
+```output
 Pi is roughly 3.152155760778804
 ```
 
@@ -292,7 +293,7 @@ Pi is roughly 3.152155760778804
 
 В приведенном выше примере JAR-файл Spark был загружен в хранилище Azure. Другой вариант — упаковать JAR-файл в пользовательские образы Docker.
 
-Для этого найдите `dockerfile` для образа Spark в каталоге `$sparkdir/resource-managers/kubernetes/docker/src/main/dockerfiles/spark/`. Добавьте оператор `ADD` для `jar` задания Spark где-то между объявлениями `WORKDIR` и `ENTRYPOINT`.
+Для этого найдите `dockerfile` для образа Spark в каталоге `$sparkdir/resource-managers/kubernetes/docker/src/main/dockerfiles/spark/`. Добавьте `ADD` оператор для задания `jar` Spark где-либо между `WORKDIR` объявлениями и. `ENTRYPOINT`
 
 Обновите путь к JAR-файлу, указав расположение файла `SparkPi-assembly-0.1.0-SNAPSHOT.jar` в вашей системе разработки. Также можно использовать собственный настраиваемый JAR-файл.
 
@@ -326,9 +327,9 @@ ENTRYPOINT [ "/opt/entrypoint.sh" ]
 ```
 
 > [!WARNING]
-> Из [документации по][spark-docs]Spark: "Планировщик Kubernetes в настоящее время экспериментальен. В будущих версиях возможны изменения в поведении конфигурации, образов контейнеров и точек входа".
+> Из [документации][spark-docs] Spark: "В настоящее время планировщик Kubernetes находится на стадии эксперимента. В будущих версиях возможны изменения в поведении конфигурации, образов контейнеров и точек входа".
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в документации по Spark.
 

@@ -1,52 +1,53 @@
 ---
 title: Azure Application Insights — поддерживаемые функции функций Azure
 description: Поддерживаемые функции Application Insights для службы "Функции Azure"
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: reference
 author: TimothyMothra
 ms.author: tilee
 ms.date: 4/23/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 5688bd92e63016e195726488bd9ff9ed039c5795
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: cf0c97fd65f9966bf42fa22e2c8f92263952cb7a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928405"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77655656"
 ---
 # <a name="application-insights-for-azure-functions-supported-features"></a>Application Insights для функций, поддерживаемых в службе "Функции Azure"
 
 Служба "Функции Azure" предлагает [встроенную интеграцию](../../azure-functions/functions-monitoring.md) с Application Insights, которая доступна через интерфейс ILogger. Ниже приведен список функций, поддерживаемых в настоящее время. Ознакомьтесь с руководством по службе "Функции Azure", чтобы [приступить к работе](../../azure-functions/functions-monitoring.md#enable-application-insights-integration).
 
+Дополнительные сведения о версиях среды выполнения функций см. [здесь](../../azure-functions/functions-versions.md).
+
+Дополнительные сведения о совместимых версиях Application Insights см. в разделе [зависимости](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/).
+
 ## <a name="supported-features"></a>Поддерживаемые функции
 
-| Функции Azure                       | V1                | Версия 2 (Ignite 2018)  | 
+| Функции Azure                       | V1                | V2 & V3   | 
 |-----------------------------------    |---------------    |------------------ |
-| **Пакет SDK Application Insights для .NET**   | **2.5.0**       | **2.9.1**         |
 | | | | 
 | **Автоматический сбор**        |                 |                   |               
-| &bull; Запросы                     | ДА             | ДА               | 
-| &bull; Исключения                   | ДА             | ДА               | 
-| &bull; Счетчики производительности         | ДА             | ДА               |
+| &bull; Запросы                     | Да             | Да               | 
+| &bull; Исключения                   | Да             | Да               | 
+| &bull; Счетчики производительности         | Да             | Да               |
 | &bull; Зависимости                   |                   |                   |               
-| &nbsp;&nbsp;&nbsp;&mdash; HTTP      |                 | ДА               | 
-| &nbsp;&nbsp;&nbsp;&mdash; Служебная шина|                 | ДА               | 
-| &nbsp;&nbsp;&nbsp;&mdash; EventHub  |                 | ДА               | 
-| &nbsp;&nbsp;&nbsp;&mdash; SQL       |                 | ДА               | 
+| &nbsp;&nbsp;&nbsp;&mdash; HTTP      |                 | Да               | 
+| &nbsp;&nbsp;&nbsp;&mdash; Служебная шина|                 | Да               | 
+| &nbsp;&nbsp;&nbsp;&mdash; EventHub  |                 | Да               | 
+| &nbsp;&nbsp;&nbsp;&mdash; SQL       |                 | Да               | 
 | | | | 
 | **Поддерживаемые функции**                |                   |                   |               
-| &bull; QuickPulse/LiveMetrics       | ДА             | ДА               | 
-| &nbsp;&nbsp;&nbsp;&mdash; Безопасный канал управления|                 | ДА               | 
-| &bull; Выборка                     | ДА             | ДА               | 
-| &bull; Пакет пульса                   |                 | ДА               | 
+| &bull; QuickPulse/LiveMetrics       | Да             | Да               | 
+| &nbsp;&nbsp;&nbsp;&mdash; Безопасный канал управления|                 | Да               | 
+| &bull; Выборка                     | Да             | Да               | 
+| &bull; Пакет пульса                   |                 | Да               | 
 | | | | 
-| **Корреляция**                       |                   |                   |               
-| &bull; Служебная шина                     |                   | ДА               | 
-| &bull; EventHub                       |                   | ДА               | 
+| **Correlation**                       |                   |                   |               
+| &bull; Служебная шина                     |                   | Да               | 
+| &bull; EventHub                       |                   | Да               | 
 | | | | 
-| **Можно настроить**                      |                   |                   |           
-| &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | ДА                   | 
+| **Настраивается**                      |                   |                   |           
+| &bull;Полностью настраивается.<br/>Инструкции см. в комментариях [в этой статье](https://github.com/Microsoft/ApplicationInsights-aspnetcore/issues/759#issuecomment-426687852).<br/>Сведения обо всех вариантах ASP.NET Core см. в статье [Custom Configuration](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Custom-Configuration) (Настраиваемая конфигурация).               |                   | Да                   | 
 
 
 ## <a name="performance-counters"></a>Счетчики производительности

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: tagore
 ms.openlocfilehash: 79a998930a384420b22add8825ee4b2269eb4539
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75360758"
 ---
 # <a name="build-and-deploy-a-nodejs-web-application-using-express-on-an-azure-cloud-services"></a>Создание и развертывание веб-приложения Node.js с использованием модуля Express в облачных службах Azure
@@ -94,7 +94,7 @@ Node.js включает минимальный набор функционал�
    
    ![Содержимое файла index.jade.](./media/cloud-services-nodejs-develop-deploy-express-app/getting-started-19.png)
    
-   Jade — это обработчик представлений по умолчанию, используемый приложениями Express. Дополнительные сведения о подсистеме просмотра Jade см. в разделе [http://jade-lang.com][http://jade-lang.com].
+   Jade — это обработчик представлений по умолчанию, используемый приложениями Express. Дополнительные сведения о подсистеме представлений Jade см. [http://jade-lang.com][http://jade-lang.com]в разделе.
 2. Измените последнюю строку текста, добавив слова **in Azure**.
    
    ![Файл index.jade, последняя строка содержит текст: p Welcome to \#{title} in Azure.](./media/cloud-services-nodejs-develop-deploy-express-app/node31.png)

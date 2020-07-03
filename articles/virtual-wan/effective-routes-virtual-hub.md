@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 10/18/2019
 ms.author: cherylmc
 ms.openlocfilehash: 1173da81736661048d1e4e12d9919bc2aadf73ee
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73515854"
 ---
 # <a name="view-effective-routes-of-a-virtual-hub"></a>Просмотр действующих маршрутов виртуального концентратора
 
 Все маршруты виртуального глобального концентратора глобальной сети можно просмотреть в портал Azure. Чтобы просмотреть маршруты, перейдите к виртуальному концентратору, а затем выберите **Маршрутизация — > просмотреть действующие маршруты**.
 
-## <a name="understand"></a>Основные сведения о маршрутах
+## <a name="understanding-routes"></a><a name="understand"></a>Основные сведения о маршрутах
 
 Следующий пример поможет лучше понять, как отображается маршрутизация виртуальной глобальной сети.
 
@@ -30,38 +30,38 @@ ms.locfileid: "73515854"
 
 ![Схема](./media/effective-routes-virtual-hub/diagram.png)
 
-## <a name="view"></a>Просмотр эффективных маршрутов
+## <a name="view-effective-routes"></a><a name="view"></a>Просмотр эффективных маршрутов
 
 При выборе команды "просмотреть действующие маршруты" на портале создаются выходные данные, показанные в [таблице маршрутов концентратора](#routetable) для центра восточной части США.
 
 Чтобы разместить это в перспективе, в первой строке предполагается, что центр восточной части США изучил маршрут 10.20.1.0/24 (ветвь 1) из-за подключения VPN *типа следующего прыжка* ("VPN-шлюз следующего прыжка" Instance0 IP 10.1.0.6, Instance1 IP 10.1.0.7). *Источник маршрута* указывает на идентификатор ресурса. *Путь AS* указывает путь в качестве пути для ветви 1.
 
-### <a name="routetable"></a>Таблица маршрутов концентратора
+### <a name="hub-route-table"></a><a name="routetable"></a>Таблица маршрутов концентратора
 
 Используйте полосу прокрутки в нижней части таблицы, чтобы просмотреть "как путь".
 
 | **Prefix** |  **Тип следующего прыжка** | **Следующий прыжок** |  **Источник маршрута** |**КАК путь** |
 | ---        | ---                | ---          | ---               | ---         |
-| 10.20.1.0/24|Виртуальная частная сеть |10.1.0.6, 10.1.0.7| /Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/vpnGateways/343a19aa6ac74e4d81f05ccccf1536cf-eastus-gw| 20 000|
-|10.21.1.0/24 |ExpressRoute|10.1.0.10, 10.1.0.11|/Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/expressRouteGateways/4444a6ac74e4d85555-eastus-gw|21000|
-|10.23.1.0/24| Виртуальная частная сеть |10.1.0.6, 10.1.0.7|/Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/vpnGateways/343a19aa6ac74e4d81f05ccccf1536cf-eastus-gw|23000|
+| 10.20.1.0/24|Виртуальная частная сеть |10.1.0.6, 10.1.0.7| /Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/vpnGateways/343a19aa6ac74e4d81f05ccccf1536cf-eastus-GW| 20 000|
+|10.21.1.0/24 |ExpressRoute|10.1.0.10, 10.1.0.11|/Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/expressRouteGateways/4444a6ac74e4d85555-eastus-GW|21000|
+|10.23.1.0/24| Виртуальная частная сеть |10.1.0.6, 10.1.0.7|/Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/vpnGateways/343a19aa6ac74e4d81f05ccccf1536cf-eastus-GW|23000|
 |10.4.0.0/16.|Подключение к виртуальной сети| По ссылке |  |  |
-|10.5.0.0/16| IP-адрес| 10.4.0.6|/Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/virtualHubs/easthub_1/routeTables/table_1| |
-|0.0.0.0/0| IP-адрес| `<Azure Firewall IP>` |/Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/virtualHubs/easthub_1/routeTables/table_1| |
-|10.22.1.0/16| Удаленный концентратор|10.8.0.6, 10.8.0.7|/Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/virtualHubs/westhub_| 4848-22000 |
-|10.9.0.0/16| Удаленный концентратор|  По ссылке |/Subscriptions/`<sub>`/resourceGroups/`<rg>`/providers/Microsoft.Network/virtualHubs/westhub_1| |
+|10.5.0.0/16| IP-адрес| 10.4.0.6|/Subscriptions/`<sub>`/resourceGroups/`<rg>`/провидерс/Микрософт.Нетворк/виртуалхубс/easthub_1/раутетаблес/table_1| |
+|0.0.0.0/0| IP-адрес| `<Azure Firewall IP>` |/Subscriptions/`<sub>`/resourceGroups/`<rg>`/провидерс/Микрософт.Нетворк/виртуалхубс/easthub_1/раутетаблес/table_1| |
+|10.22.1.0/16| Удаленный концентратор|10.8.0.6, 10.8.0.7|/Subscriptions/`<sub>`/resourceGroups/`<rg>`/провидерс/Микрософт.Нетворк/виртуалхубс/westhub_| 4848-22000 |
+|10.9.0.0/16| Удаленный концентратор|  По ссылке |/Subscriptions/`<sub>`/resourceGroups/`<rg>`/провидерс/Микрософт.Нетворк/виртуалхубс/westhub_1| |
 
 >[!NOTE]
 > Если центры восточной части США и Западной Европы не обмениваются данными друг с другом в примере топологии, то изученный маршрут (10.9.0.0/16) не будет существовать. Концентраторы объявляют только те сети, к которым напрямую подключены.
 >
 
-## <a name="additional"></a>Дополнительные сведения
+## <a name="additional-information"></a><a name="additional"></a>Дополнительные сведения
 
-### <a name="abouthubroute"></a>Сведения о таблице "центр маршрутов"
+### <a name="about-the-hub-route-table"></a><a name="abouthubroute"></a>Сведения о таблице "центр маршрутов"
 
 Вы можете создать маршрут виртуального концентратора и добавить его в таблицу маршрутов виртуального концентратора. В эту таблицу можно добавить несколько маршрутов. Это позволяет задать маршрут для целевой виртуальной сети через IP-адрес (обычно это сетевой виртуальный модуль (NVA) в периферийной виртуальной сети). Дополнительные сведения о NVA см. [в статье маршрутизация трафика из виртуального концентратора в NVA](virtual-wan-route-table-portal.md).
 
-### <a name="aboutdefaultroute"></a>О маршруте по умолчанию (0.0.0.0/0)
+### <a name="about-default-route-00000"></a><a name="aboutdefaultroute"></a>О маршруте по умолчанию (0.0.0.0/0)
 
 Виртуальный концентратор может распространять полученный маршрут по умолчанию в виртуальную сеть, VPN типа "сеть — сеть" и подключение ExpressRoute, если для соединения установлен флаг "включено". Этот флаг отображается при изменении подключения к виртуальной сети, VPN-подключения или подключения ExpressRoute. По умолчанию "Енаблеинтернетсекурити" всегда имеет значение false в концентраторе виртуальной сети, ExpressRoute и VPN-подключений.
 
@@ -69,4 +69,4 @@ ms.locfileid: "73515854"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
+Дополнительные сведения о виртуальной глобальной сети см. в [обзоре виртуальной глобальной сети](virtual-wan-about.md).

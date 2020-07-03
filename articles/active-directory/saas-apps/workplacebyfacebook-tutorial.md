@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с Workplace by Facebook | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Workplace by Facebook | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Workplace by Facebook.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 03/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c58ff181ec144dcd0b1089b0e53f868f241be73f
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: ec1818fe4fa0a7ea2f57732a4230fd3c2732ba91
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76985294"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83799257"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workplace-by-facebook"></a>Руководство. интеграции единого входа Azure Active Directory с Workplace by Facebook
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workplace-by-facebook"></a>Руководство по интеграции единого входа Azure Active Directory с Workplace by Facebook
 
 В этом руководстве описано, как интегрировать Workplace by Facebook с Azure Active Directory (Azure AD). Интеграция Workplace by Facebook с Azure AD позволяет:
 
@@ -30,7 +30,7 @@ ms.locfileid: "76985294"
 * Включить автоматический вход пользователей в Workplace by Facebook через учетную запись Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -157,6 +157,8 @@ ms.locfileid: "76985294"
     а. Установите флажок **Единый вход (SSO)** .
     
     b. Щелкните **+Add new SSO Provider** (+Добавить нового поставщика единого входа).
+    > [!NOTE]
+    > Кроме того, обязательно установите флажок "Пароль" для входа с паролем. Администраторам может потребоваться этот вариант входа в систему при смене сертификата, чтобы предотвратить блокирование.
 
 1. На вкладке **Authentication** (Аутентификация) выберите **Single-Sign On (SSO)** (Единый вход (SSO)) и выполните следующие действия:
 
@@ -204,7 +206,7 @@ ms.locfileid: "76985294"
 В этом разделе никакие действия с вашей стороны не требуются. Если пользователь не существует в Workplace by Facebook, он создается при попытке доступа к Workplace by Facebook.
 
 >[!Note]
->Если вам нужно создать пользователя вручную, обратитесь к [группе поддержки клиентов Workplace by Facebook](https://workplace.fb.com/faq/).
+>Если вам нужно создать пользователя вручную, обратитесь к [группе поддержки клиентов Workplace by Facebook](https://www.workplace.com/help/work/).
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -238,7 +240,7 @@ ms.locfileid: "76985294"
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](/azure/active-directory/manage-apps/what-is-single-sign-on)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
@@ -247,4 +249,3 @@ ms.locfileid: "76985294"
 - [Проверьте работу Workplace by Facebook с Azure Active Directory](https://aad.portal.azure.com)
 
 - [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
-

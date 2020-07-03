@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 11/04/2019
 ms.author: brendm
-ms.openlocfilehash: a8ccda88239a150a24c9abaf6ebb172f0fd01dba
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: f374e0611b887e2a2c787569d9fe58bc1a5c84e9
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278924"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594072"
 ---
 # <a name="quickstart-launch-an-azure-spring-cloud-app-using-the-maven-plug-in"></a>Краткое руководство. Запуск приложения Azure Spring Cloud с помощью подключаемого модуля Maven
 
@@ -63,7 +63,7 @@ ms.locfileid: "76278924"
 ## <a name="set-up-your-configuration-server"></a>Настройка сервера конфигурации
 
 1. На странице **Обзор** службы выберите **Config Server** (Сервер конфигурации).
-1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение **https://github.com/Azure-Samples/piggymetrics** , для параметра **Метки** значение **config** и щелкните **Применить**, чтобы сохранить изменения.
+1. В разделе **Репозиторий по умолчанию** задайте для параметра **URI** значение **https://github.com/Azure-Samples/piggymetrics-config** и щелкните **Применить**, чтобы сохранить изменения.
 
     > [!div class="mx-imgBorder"]
     > ![Определение и применение параметров конфигурации](media/maven-qs-apply-config.jpg)
@@ -77,13 +77,13 @@ ms.locfileid: "76278924"
 
 1. Клонируйте репозиторий Git, выполнив следующую команду:
 
-    ```azurecli
+    ```console
     git clone https://github.com/Azure-Samples/PiggyMetrics
     ```
   
 1. Перейдите в каталог и создайте проект, выполнив следующую команду:
 
-    ```azurecli
+    ```console
     cd piggymetrics
     mvn clean package -DskipTests
     ```
@@ -92,8 +92,8 @@ ms.locfileid: "76278924"
 
 1. Создайте конфигурации, выполнив приведенную ниже команду в корневой папке PiggyMetrics, содержащей родительский файл POM.
 
-    ```azurecli
-    mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:1.0.0:config
+    ```console
+    mvn com.microsoft.azure:azure-spring-cloud-maven-plugin:1.1.0:config
     ```
 
     а. Выберите модули `gateway`, `auth-service` и `account-service`.
@@ -106,7 +106,7 @@ ms.locfileid: "76278924"
 
 1. Теперь файл POM содержит зависимости и конфигурации подключаемого модуля. Разверните приложения с помощью следующей команды.
 
-   ```azurecli
+   ```console
    mvn azure-spring-cloud:deploy
    ```
 
@@ -121,6 +121,6 @@ ms.locfileid: "76278924"
 
 > [!div class="nextstepaction"]
 > [Подготовка приложения Azure Spring Cloud к развертыванию](spring-cloud-tutorial-prepare-app-deployment.md)
-> [Дополнительные сведения о подключаемых модулях Maven для Azure](https://github.com/microsoft/azure-maven-plugin)
+> [Дополнительные сведения о подключаемых модулях Maven для Azure](https://github.com/microsoft/azure-maven-plugins)
 
 Дополнительные примеры доступны на GitHub: [Примеры для Azure Spring Cloud](https://github.com/Azure-Samples/Azure-Spring-Cloud-Samples/tree/master/service-binding-cosmosdb-sql).

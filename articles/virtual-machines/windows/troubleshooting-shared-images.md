@@ -1,33 +1,26 @@
 ---
 title: Устранение неполадок с общими образами в Azure
 description: Подробные сведения об устранении неполадок c коллекциями общих образов.
-services: virtual-machine-windows
-documentationcenter: virtual-machine-scale-sets
 author: axayjo
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
-ms.topic: article
-ms.tgt_pltfrm: ''
+ms.topic: troubleshooting
 ms.workload: infrastructure
 ms.date: 04/25/2019
 ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
-ms.openlocfilehash: 945c5fb4c1641f425c842ac4f6048c7db75db5de
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: ef4cdb8c5cd8956f85dadba80d3dffec8d0e4730
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74068105"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82100521"
 ---
 # <a name="troubleshooting-shared-image-galleries"></a>Устранение неполадок c коллекциями общих образов
 
 
 [!INCLUDE [virtual-machines-common-shared-image-troubleshooting](../../../includes/virtual-machines-common-shared-image-troubleshooting.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения см. в статье [Обзор коллекций общих образов](shared-image-galleries.md).
+Дополнительные сведения см. в статье [Обзор коллекции общих образов](shared-image-galleries.md).

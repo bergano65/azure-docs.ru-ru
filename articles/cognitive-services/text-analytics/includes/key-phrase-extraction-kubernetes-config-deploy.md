@@ -3,18 +3,18 @@ title: извлечение ключевых фраз конфигурации K
 titleSuffix: Azure Cognitive Services
 description: извлечение ключевых фраз конфигурации Kubernetes и шаги развертывания
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/21/2019
-ms.author: dapine
-ms.openlocfilehash: 35e7b85d31e9696f04dce610b6f2cf942543dc68
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 6ef7efe3d48fd20c5141803430260a80395faa82
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74383460"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80877855"
 ---
 ### <a name="deploy-the-key-phrase-extraction-container-to-an-aks-cluster"></a>Развертывание контейнера извлечение ключевых фраз в кластере AKS
 
@@ -32,19 +32,19 @@ ms.locfileid: "74383460"
 
     После выполнения этой команды будет выводится сообщение следующего вида:
 
-    ```console
+    ```output
     Merged "your-cluster-name" as current context in /home/username/.kube/config
     ```
 
     > [!WARNING]
-    > Если в учетной записи Azure доступно несколько подписок, а команда `az aks get-credentials` возвращает ошибку, то распространенная проблема заключается в том, что вы используете неправильную подписку. Задайте контекст сеанса Azure CLI, чтобы использовать ту же подписку, в которой были созданы ресурсы, и повторите попытку.
+    > Если в учетной записи Azure доступно несколько подписок, а `az aks get-credentials` команда возвращает ошибку, то распространенной проблемой является то, что вы используете неправильную подписку. Задайте контекст сеанса Azure CLI, чтобы использовать ту же подписку, в которой были созданы ресурсы, и повторите попытку.
     > ```azurecli
     >  az account set -s subscription-id
     > ```
 
 1. Откройте текстовый редактор по желанию. В этом примере используется Visual Studio Code.
 
-    ```azurecli
+    ```console
     code .
     ```
 
@@ -103,7 +103,7 @@ ms.locfileid: "74383460"
 
     После того как команда успешно применит конфигурацию развертывания, появится сообщение следующего вида:
 
-    ```console
+    ```output
     deployment.apps "keyphrase" created
     service "keyphrase" created
     ```
@@ -115,7 +115,7 @@ ms.locfileid: "74383460"
 
     Выходные данные для состояния выполнения Pod:
 
-    ```console
+    ```output
     NAME                         READY     STATUS    RESTARTS   AGE
     keyphrase-5c9ccdf575-mf6k5   1/1       Running   0          1m
     ```
@@ -128,7 +128,7 @@ ms.locfileid: "74383460"
 
     Выходные данные для состояния выполнения службы *кэйфрасе* в Pod:
 
-    ```console
+    ```output
     NAME         TYPE           CLUSTER-IP    EXTERNAL-IP      PORT(S)          AGE
     kubernetes   ClusterIP      10.0.0.1      <none>           443/TCP          2m
     keyphrase    LoadBalancer   10.0.100.64   168.61.156.180   5000:31234/TCP   2m

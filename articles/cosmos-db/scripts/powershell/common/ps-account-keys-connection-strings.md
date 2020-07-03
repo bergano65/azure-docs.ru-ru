@@ -1,19 +1,19 @@
 ---
-title: Скрипт PowerShell для получения ключа учетной записи и строки подключения для учетной записи Azure Cosmos
-description: Пример скрипта Azure PowerShell — операции с ключом учетной записи и строкой подключения для учетной записи Azure Cosmos
+title: Скрипт PowerShell для получения ключа и строки подключения для учетной записи Azure Cosmos DB
+description: Пример скрипта Azure PowerShell. Операции с ключом учетной записи и строкой подключения для учетной записи Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 09/20/2019
+ms.date: 03/18/2020
 ms.author: mjbrown
-ms.openlocfilehash: 96be5f09cddf5eefec6b471d30cf87d0f687485d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f6dd9d1290ea9d18fc6a5f18196585926b2ab91a
+ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75441522"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80366092"
 ---
-# <a name="connection-string-and-account-key-operations-for-an-azure-cosmos-account-using-powershell"></a>Операции со строкой подключения и ключом учетной записи для учетной записи Azure Cosmos с помощью PowerShell
+# <a name="connection-string-and-account-key-operations-for-an-azure-cosmos-db-account-using-powershell"></a>Операции со строкой подключения и ключом для учетной записи Azure Cosmos с использованием PowerShell
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -22,7 +22,7 @@ ms.locfileid: "75441522"
 ## <a name="sample-script"></a>Пример скрипта
 
 > [!NOTE]
-> В этом примере демонстрируется использование учетной записи API SQL (Core). Чтобы использовать этот пример с другими API, соответствующие свойства необходимо скопировать в скрипт для такого API.
+> В этом примере демонстрируется использование учетной записи API SQL. Чтобы использовать этот пример с другими API, соответствующие свойства необходимо скопировать в скрипт для такого API.
 
 [!code-powershell[main](../../../../../powershell_scripts/cosmosdb/common/ps-account-keys-connection-strings.ps1 "Connection strings and account keys for Azure Cosmos account")]
 
@@ -40,8 +40,9 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 
 | Get-Help | Примечания |
 |---|---|
-|**Ресурсы Azure**| |
-| [Invoke-AzResourceAction](https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction) | Вызывает действие для ресурса. |
+|**Azure Cosmos DB**| |
+| [Get-AzCosmosDBAccountKey](https://docs.microsoft.com/powershell/module/az.cosmosdb/get-azcosmosdbaccountkey) | Возвращает строку подключения или ключ (только для чтения и записи или только для чтения) учетной записи Cosmos DB. |
+| [New-AzCosmosDBAccountKey](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccountkey) | Повторно создает определенный ключ для учетной записи Cosmos DB. |
 |**Группы ресурсов Azure**| |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||

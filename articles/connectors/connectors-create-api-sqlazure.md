@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/08/2019
 tags: connectors
 ms.openlocfilehash: 93b63d332f00c31a352c11e483fc3ce5cb45a922
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74789207"
 ---
 # <a name="automate-workflows-for-sql-server-or-azure-sql-database-by-using-azure-logic-apps"></a>Автоматизация рабочих процессов для SQL Server или базы данных SQL Azure с помощью Azure Logic Apps
@@ -22,7 +22,7 @@ ms.locfileid: "74789207"
 
 Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Технические сведения, ограничения и известные проблемы, связанные с соединителем, см. на [странице справочника по соединителю SQL Server](https://docs.microsoft.com/connectors/sql/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -86,7 +86,7 @@ ms.locfileid: "74789207"
 
    ![Добавление нового шага в приложение логики](./media/connectors-create-api-sqlazure/select-new-step-logic-app.png)
 
-   Чтобы добавить действие между существующими шагами, наведите указатель мыши на соединяющую стрелку. Выберите отображаемый знак «плюс» ( **+** ), а затем щелкните **Добавить действие**.
+   Чтобы добавить действие между существующими шагами, наведите указатель мыши на соединяющую стрелку. Выберите отображаемый знак плюса (**+**), а затем щелкните **Добавить действие**.
 
 1. В разделе **выберите действие**в поле поиска введите "SQL Server" в качестве фильтра. В списке действия выберите нужное действие SQL.
 
@@ -128,7 +128,7 @@ ms.locfileid: "74789207"
 
   * [Разбиение на страницы в SQL для массовой передачи данных с помощью Logic Apps](https://social.technet.microsoft.com/wiki/contents/articles/40060.sql-pagination-for-bulk-data-transfer-with-logic-apps.aspx)
 
-  * [Предложение SELECT - ORDER BY](https://docs.microsoft.com/sql/t-sql/queries/select-order-by-clause-transact-sql)
+  * [SELECT — предложение ORDER BY](https://docs.microsoft.com/sql/t-sql/queries/select-order-by-clause-transact-sql)
 
 ## <a name="connector-specific-details"></a>Сведения о соединителях
 

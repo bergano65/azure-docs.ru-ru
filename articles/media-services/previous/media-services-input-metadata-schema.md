@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: a81d6edfd887dc935a53742b7bc1492651c9bda5
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74887125"
 ---
 # <a name="input-metadata"></a>Входные метаданные 
@@ -33,29 +33,29 @@ ms.locfileid: "74887125"
 В конце этой статьи вы найдете [код схемы](media-services-input-metadata-schema.md#code) и [пример XML-файла](media-services-input-metadata-schema.md#xml).  
  
 
-## <a name="AssetFiles"></a> Элемент AssetFiles (корневой элемент)
+## <a name="assetfiles-element-root-element"></a><a name="AssetFiles"></a> Элемент AssetFiles (корневой элемент)
 Содержит коллекцию [элементов AssetFile](media-services-input-metadata-schema.md#AssetFile) для задания кодирования.  
 
 Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
-| Name | Описание |
+| Имя | Описание |
 | --- | --- |
 | **AssetFile**<br /><br /> minOccurs="1" maxOccurs="unbounded" |Один дочерний элемент. Дополнительные сведения см. в разделе [Элемент AssetFile](media-services-input-metadata-schema.md#AssetFile). |
 
-## <a name="AssetFile"></a> Элемент AssetFile
+## <a name="assetfile-element"></a><a name="AssetFile"></a> Элемент AssetFile
  Содержит атрибуты и элементы, описывающие файл ресурса-контейнера.  
 
  Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
-| **Имя**<br /><br /> Обязательно для заполнения |**xs:string** |Имя файла ресурса-контейнера. |
-| **Размер**<br /><br /> Обязательно для заполнения |**xs:long** |Размер файла ресурса-контейнера в байтах. |
-| **Duration**<br /><br /> Обязательно для заполнения |**xs:duration** |Длительность воспроизведения содержимого. Пример: Duration="PT25M37.757S". |
-| **NumberOfStreams**<br /><br /> Обязательно для заполнения |**xs:int** |Количество потоков в файле ресурса-контейнера. |
-| **FormatNames**<br /><br /> Обязательно для заполнения |**xs: string** |Имена форматов. |
-| **FormatVerboseNames**<br /><br /> Обязательно для заполнения |**xs: string** |Подробные имена форматов. |
+| **имя**;<br /><br /> Обязательный |**xs:string** |Имя файла ресурса-контейнера. |
+| **Размер**<br /><br /> Обязательный |**xs:long** |Размер файла ресурса-контейнера в байтах. |
+| **Duration**<br /><br /> Обязательный |**xs:duration** |Длительность воспроизведения содержимого. Пример: Duration="PT25M37.757S". |
+| **NumberOfStreams**<br /><br /> Обязательный |**xs:int** |Количество потоков в файле ресурса-контейнера. |
+| **FormatNames**<br /><br /> Обязательный |**xs: string** |Имена форматов. |
+| **FormatVerboseNames**<br /><br /> Обязательный |**xs: string** |Подробные имена форматов. |
 | **StartTime** |**xs:duration** |Время начала содержимого. Пример: StartTime="PT2.669S". |
 | **OverallBitRate** |**xs: int** |Средняя скорость файла ресурса-контейнера (Кбит/с). |
 
@@ -65,23 +65,23 @@ ms.locfileid: "74887125"
 > 
 
 ### <a name="child-elements"></a>Дочерние элементы
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
-| **Programs**<br /><br /> minOccurs="0" | |Коллекция всех [элементов Programs](media-services-input-metadata-schema.md#Programs), если файл ресурса-контейнера имеет формат MPEG-TS. |
+| **Программы**<br /><br /> minOccurs="0" | |Коллекция всех [элементов Programs](media-services-input-metadata-schema.md#Programs), если файл ресурса-контейнера имеет формат MPEG-TS. |
 | **VideoTracks**<br /><br /> minOccurs="0" | |Каждый физический файл ресурса может содержать ноль или более видеодорожек, чередуемых в соответствующем формате ресурса. Этот элемент содержит коллекцию всех [элементов VideoTracks](media-services-input-metadata-schema.md#VideoTracks), которые являются частью файла ресурса. |
 | **AudioTracks**<br /><br /> minOccurs="0" | |Каждый физический файл ресурса-контейнера может содержать ноль или более звуковых дорожек, чередуемых в соответствующем формате ресурса-контейнера. Этот элемент содержит коллекцию всех [элементов AudioTracks](media-services-input-metadata-schema.md#AudioTracks), которые являются частью файла ресурса. |
-| **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Метаданные файла ресурса-контейнера, представленные в виде строки "ключ —значение". Пример.<br /><br /> **&lt;Metadata key="language" value="eng" /&gt;** |
+| **Метаданные**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Метаданные файла ресурса-контейнера, представленные в виде строки "ключ —значение". Пример:<br /><br /> **&lt;Ключ метаданных = "язык" значение = "ENG"/&gt;** |
 
-## <a name="TrackType"></a> TrackType
+## <a name="tracktype"></a><a name="TrackType"></a>TrackType
 Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
-| **Id**<br /><br /> Обязательно для заполнения |**xs:int** |Отсчитываемый от нуля индекс аудио- или видеодорожки.<br /><br /> MP4-файл не обязательно должен содержать идентификатор дорожки. |
-| **Codec** |**xs:string** |Строка кодека видеодорожки. |
+| **Id**<br /><br /> Обязательный |**xs:int** |Отсчитываемый от нуля индекс аудио- или видеодорожки.<br /><br /> MP4-файл не обязательно должен содержать идентификатор дорожки. |
+| **Равн** |**xs:string** |Строка кодека видеодорожки. |
 | **CodecLongName** |**xs: string** |Полное имя кодека звуковой или видеодорожки. |
-| **TimeBase**<br /><br /> Обязательно для заполнения |**xs:string** |Базовый счетчик времени. Пример: TimeBase="1/48000" |
+| **TimeBase**<br /><br /> Обязательный |**xs:string** |Базовый счетчик времени. Пример: TimeBase="1/48000" |
 | **NumberOfFrames** |**xs:int** |Количество кадров (для видеодорожек). |
 | **StartTime** |**xs: duration** |Время начала дорожки. Пример: StartTime="PT2.669S" |
 | **Duration** |**xs:duration** |Продолжительность дорожки. Пример: Duration="PTSampleFormat M37.757S". |
@@ -92,12 +92,12 @@ ms.locfileid: "74887125"
 > 
 
 ### <a name="child-elements"></a>Дочерние элементы
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | **Disposition**<br /><br /> minOccurs="0" maxOccurs="1" |[StreamDispositionType](media-services-input-metadata-schema.md#StreamDispositionType) |Содержит сведения о презентации (например, указывает, предназначена ли конкретная звуковая дорожка для людей с нарушениями зрения). |
-| **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Общие строки "ключ —значение", которые можно использовать для хранения различных сведений. Например, key="language" и value="eng". |
+| **Метаданные**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Общие строки "ключ —значение", которые можно использовать для хранения различных сведений. Например, key="language" и value="eng". |
 
-## <a name="AudioTrackType"></a> AudioTrackType (наследуется из TrackType)
+## <a name="audiotracktype-inherits-from-tracktype"></a><a name="AudioTrackType"></a>AudioTrackType (наследует от TrackType)
  **AudioTrackType** — это глобальный сложный тип, который наследуется из [TrackType](media-services-input-metadata-schema.md#TrackType).  
 
  Этот тип представляет конкретную звуковую дорожку в файле ресурса-контейнера.  
@@ -105,16 +105,16 @@ ms.locfileid: "74887125"
  Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | **SampleFormat** |**xs:string** |Формат выборки. |
 | **ChannelLayout** |**xs: string** |Структура канала. |
-| **Channels**<br /><br /> Обязательно для заполнения |**xs:int** |Количество (0 или более) аудиоканалов. |
-| **SamplingRate**<br /><br /> Обязательно для заполнения |**xs:int** |Частота аудиовыборки: выборок/с или Гц. |
+| **Channels**<br /><br /> Обязательный |**xs:int** |Количество (0 или более) аудиоканалов. |
+| **SamplingRate**<br /><br /> Обязательный |**xs:int** |Частота аудиовыборки: выборок/с или Гц. |
 | **Bitrate** |**xs:int** |Средняя скорость аудиопотока в битах в секунду, вычисленная на основе файла ресурса-контейнера. Подсчитываются только полезные данные элементарного потока, издержки на упаковку не включаются. |
 | **BitsPerSample** |**xs:int** |Битов на выборку для формата wFormatTag. |
 
-## <a name="VideoTrackType"></a> VideoTrackType (наследуется из TrackType)
+## <a name="videotracktype-inherits-from-tracktype"></a><a name="VideoTrackType"></a>VideoTrackType (наследует от TrackType)
 **VideoTrackType** — это глобальный сложный тип, который наследуется из [TrackType](media-services-input-metadata-schema.md#TrackType).  
 
 Этот тип представляет конкретную видеодорожку в файле ресурса-контейнера.  
@@ -122,97 +122,97 @@ ms.locfileid: "74887125"
 Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
-| **FourCC**<br /><br /> Обязательно для заполнения |**xs:string** |Код FourCC видеокодека. |
+| **FourCC**<br /><br /> Обязательный |**xs:string** |Код FourCC видеокодека. |
 | **Профиль** |**xs: string** |Профиль видеодорожки. |
 | **Level** |**xs: string** |Уровень видеодорожки. |
 | **PixelFormat** |**xs: string** |Формат пикселей видеодорожки. |
-| **Width**<br /><br /> Обязательно для заполнения |**xs:int** |Ширина закодированного видео в пикселях. |
-| **Height**<br /><br /> Обязательно для заполнения |**xs:int** |Высота закодированного видео в пикселях. |
-| **DisplayAspectRatioNumerator**<br /><br /> Обязательно для заполнения |**xs: double** |Числитель пропорции отображения видео. |
-| **DisplayAspectRatioDenominator**<br /><br /> Обязательно для заполнения |**xs:double** |Знаменатель пропорции отображения видео. |
-| **DisplayAspectRatioDenominator**<br /><br /> Обязательно для заполнения |**xs: double** |Числитель пропорции выборки видео. |
+| **Ширина**<br /><br /> Обязательный |**xs:int** |Ширина закодированного видео в пикселях. |
+| **Равно**<br /><br /> Обязательный |**xs:int** |Высота закодированного видео в пикселях. |
+| **DisplayAspectRatioNumerator**<br /><br /> Обязательный |**xs: double** |Числитель пропорции отображения видео. |
+| **DisplayAspectRatioDenominator**<br /><br /> Обязательный |**xs:double** |Знаменатель пропорции отображения видео. |
+| **DisplayAspectRatioDenominator**<br /><br /> Обязательный |**xs: double** |Числитель пропорции выборки видео. |
 | **SampleAspectRatioNumerator** |**xs: double** |Числитель пропорции выборки видео. |
 | **SampleAspectRatioNumerator** |**xs:double** |Знаменатель пропорции выборки видео. |
-| **FrameRate**<br /><br /> Обязательно для заполнения |**xs:decimal** |Измеренная частота видеокадров в формате 3F. |
+| **Частота**<br /><br /> Обязательный |**xs:decimal** |Измеренная частота видеокадров в формате 3F. |
 | **Bitrate** |**xs:int** |Средняя скорость аудиопотока в килобитах в секунду, вычисленная на основе файла ресурса-контейнера. Подсчитываются только полезные данные элементарного потока, издержки на упаковку не включаются. |
 | **MaxGOPBitrate** |**xs: int** |Максимальная средняя скорость группы изображений (GOP) для данной видеодорожки в килобитах в секунду. |
 | **HasBFrames** |**xs:int** |Количество видеодорожек с кадрами B. |
 
-## <a name="MetadataType"></a> MetadataType
+## <a name="metadatatype"></a><a name="MetadataType"></a>метадататипе
 **MetadataType** — глобальный сложный тип, описывающий метаданные файла ресурса-контейнера в виде строк "ключ —значение". Например, key="language" и value="eng".  
 
 Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
-| **key**<br /><br /> Обязательно для заполнения |**xs:string** |Ключ в паре "ключ — значение". |
-| **значение**<br /><br /> Обязательно для заполнения |**xs:string** |Значение в паре "ключ — значение". |
+| **key**<br /><br /> Обязательный |**xs:string** |Ключ в паре "ключ — значение". |
+| **value**<br /><br /> Обязательный |**xs:string** |Значение в паре "ключ — значение". |
 
-## <a name="ProgramType"></a> ProgramType
+## <a name="programtype"></a><a name="ProgramType"></a>програмтипе
 **ProgramType** — глобальный сложный тип, описывающий программу.  
 
 ### <a name="attributes"></a>Атрибуты
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
-| **ProgramId**<br /><br /> Обязательно для заполнения |**xs:int** |Идентификатор программы |
-| **NumberOfPrograms**<br /><br /> Обязательно для заполнения |**xs:int** |Количество программ. |
-| **PmtPid**<br /><br /> Обязательно для заполнения |**xs:int** |Таблицы сопоставления программ (PMT) содержат сведения о программах.  Дополнительные сведения см. в разделе [PMT](https://en.wikipedia.org/wiki/MPEG_transport_stream#PMT). |
-| **PcrPid**<br /><br /> Обязательно для заполнения |**xs: int** |Используется декодером. Дополнительные сведения см. в разделе [PCR](https://en.wikipedia.org/wiki/MPEG_transport_stream#PCR). |
+| **ProgramId**<br /><br /> Обязательный |**xs:int** |Идентификатор программы |
+| **NumberOfPrograms**<br /><br /> Обязательный |**xs:int** |Количество программ. |
+| **PmtPid**<br /><br /> Обязательный |**xs:int** |Таблицы сопоставления программ (PMT) содержат сведения о программах.  Дополнительные сведения см. в разделе [PMT](https://en.wikipedia.org/wiki/MPEG_transport_stream#PMT). |
+| **PcrPid**<br /><br /> Обязательный |**xs: int** |Используется декодером. Дополнительные сведения см. в разделе [PCR](https://en.wikipedia.org/wiki/MPEG_transport_stream#PCR). |
 | **StartPTS** |**xs: long** |Метка времени начала презентации. |
 | **EndPTS** |**xs: long** |Метка времени окончания презентации. |
 
-## <a name="StreamDispositionType"></a> StreamDispositionType
+## <a name="streamdispositiontype"></a><a name="StreamDispositionType"></a>стреамдиспоситионтипе
 **StreamDispositionType** — глобальный сложный тип, описывающий поток.  
 
 Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="attributes"></a>Атрибуты
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
-| **По умолчанию**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что это презентация по умолчанию. |
-| **Dub**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это дубликат презентации. |
-| **Original**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что это оригинал презентации. |
-| **Comment**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка содержит дикторский текст. |
-| **Lyrics**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка содержит слова композиции. |
-| **Karaoke**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это караоке-дорожка (фонограмма без вокала). |
-| **Forced**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что это принудительная презентация. |
-| **HearingImpaired**<br /><br /> Обязательно для заполнения |**xs:int** |Присвойте этому атрибуту значение 1, чтобы указать, что эта запись предназначена для людей с нарушениями слуха. |
-| **VisualImpaired**<br /><br /> Обязательно для заполнения |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка предназначена для пользователей с нарушениями зрения. |
-| **CleanEffects**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что эта дорожка содержит чистые эффекты. |
-| **AttachedPic**<br /><br /> Обязательно для заполнения |**xs: int** |Установите значение 1, чтобы указать, что эта дорожка содержит изображения. |
+| **По умолчанию**<br /><br /> Обязательный |**xs: int** |Установите значение 1, чтобы указать, что это презентация по умолчанию. |
+| **Dub**<br /><br /> Обязательный |**xs:int** |Установите значение 1, чтобы указать, что это дубликат презентации. |
+| **До преобразования**<br /><br /> Обязательный |**xs: int** |Установите значение 1, чтобы указать, что это оригинал презентации. |
+| **Комментарий**<br /><br /> Обязательный |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка содержит дикторский текст. |
+| **Lyrics**<br /><br /> Обязательный |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка содержит слова композиции. |
+| **Karaoke**<br /><br /> Обязательный |**xs:int** |Установите значение 1, чтобы указать, что это караоке-дорожка (фонограмма без вокала). |
+| **Обязательна**<br /><br /> Обязательный |**xs:int** |Установите значение 1, чтобы указать, что это принудительная презентация. |
+| **HearingImpaired**<br /><br /> Обязательный |**xs:int** |Присвойте этому атрибуту значение 1, чтобы указать, что эта запись предназначена для людей с нарушениями слуха. |
+| **VisualImpaired**<br /><br /> Обязательный |**xs:int** |Установите значение 1, чтобы указать, что эта дорожка предназначена для пользователей с нарушениями зрения. |
+| **CleanEffects**<br /><br /> Обязательный |**xs: int** |Установите значение 1, чтобы указать, что эта дорожка содержит чистые эффекты. |
+| **AttachedPic**<br /><br /> Обязательный |**xs: int** |Установите значение 1, чтобы указать, что эта дорожка содержит изображения. |
 
-## <a name="Programs"></a> Элемент Programs
+## <a name="programs-element"></a><a name="Programs"></a> Элемент Programs
 Оболочечный элемент, содержащий несколько элементов **Program**.  
 
 ### <a name="child-elements"></a>Дочерние элементы
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
-| **Program**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[ProgramType](media-services-input-metadata-schema.md#ProgramType) |Содержит сведения о программах в файле ресурса-контейнера (в формате MPEG-TS). |
+| **Программа**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[ProgramType](media-services-input-metadata-schema.md#ProgramType) |Содержит сведения о программах в файле ресурса-контейнера (в формате MPEG-TS). |
 
-## <a name="VideoTracks"></a> Элемент VideoTracks
+## <a name="videotracks-element"></a><a name="VideoTracks"></a> Элемент VideoTracks
  Оболочечный элемент, содержащий несколько элементов **VideoTrack**.  
 
  Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="child-elements"></a>Дочерние элементы
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | **VideoTrack**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[VideoTrackType (наследуется из TrackType)](media-services-input-metadata-schema.md#VideoTrackType) |Содержит сведения о видеодорожках в файле ресурса-контейнера. |
 
-## <a name="AudioTracks"></a> Элемент AudioTracks
+## <a name="audiotracks-element"></a><a name="AudioTracks"></a> Элемент AudioTracks
  Оболочечный элемент, содержащий несколько элементов **AudioTrack**.  
 
  Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
 
 ### <a name="elements"></a>элементы
-| Name | Тип | Описание |
+| Имя | Тип | Описание |
 | --- | --- | --- |
 | **AudioTrack**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[AudioTrackType (наследуется из TrackType)](media-services-input-metadata-schema.md#AudioTrackType) |Содержит сведения о звуковых дорожках в файле ресурса-контейнера. |
 
-## <a name="code"></a> Код схемы
+## <a name="schema-code"></a><a name="code"></a>Код схемы
     <?xml version="1.0" encoding="utf-8"?>  
     <xs:schema xmlns:xs="https://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" version="1.0"  
                xmlns="http://schemas.microsoft.com/windowsazure/mediaservices/2014/07/mediaencoder/inputmetadata"  
@@ -611,7 +611,7 @@ ms.locfileid: "74887125"
     </xs:schema>  
 
 
-## <a name="xml"></a> Пример XML-файла
+## <a name="xml-example"></a><a name="xml"></a>Пример XML
 Ниже приведен пример файла входных метаданных.  
 
     <?xml version="1.0" encoding="utf-8"?>  
@@ -644,6 +644,6 @@ ms.locfileid: "74887125"
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

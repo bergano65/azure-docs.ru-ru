@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: machine-learning
 author: sdgilley
 ms.service: machine-learning
@@ -10,10 +10,10 @@ ms.custom: include file
 ms.topic: include
 ms.date: 10/04/2019
 ms.openlocfilehash: b44d624db419919823ec85bcb599007fb75c92b9
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73929624"
 ---
 1. Войдите на [портал Azure](https://portal.azure.com/) с помощью учетных данных вашей подписки Azure. 
@@ -30,7 +30,7 @@ ms.locfileid: "73929624"
 
 1. Укажите следующие сведения для настройки новой рабочей области:
 
-   Поле|ОПИСАНИЕ 
+   Поле|Description 
    ---|---
    имя рабочей области. |Введите уникальное имя для идентификации рабочей области. В этом примере мы используем **docs-ws**. Имена должны быть уникальными в группе ресурсов. Используйте имя, которое позволит легко запомнить рабочую область и отличить ее от областей, созданных другими пользователями. 
    Subscription |Выберите подписку Azure, которую нужно использовать.

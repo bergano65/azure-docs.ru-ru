@@ -3,7 +3,7 @@ title: Общие сведения о сценарии аварийного во
 description: Сценарий аварийного восстановления базы данных Oracle Database 12c в среде Azure
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: romitgirdhar
+author: BorisB2015
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: rogirdh
-ms.openlocfilehash: f6f678f91e74ea9b0b68127c1786fee745508b99
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.author: borisb
+ms.openlocfilehash: adf4c54d4f43f806ae985f7c1523303cf574b4c1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70101461"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81687462"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Аварийное восстановление базы данных Oracle Database 12c в среде Azure.
 
@@ -31,7 +31,7 @@ ms.locfileid: "70101461"
 ## <a name="goals"></a>Цели
 - Создать топологию и конфигурацию, которые соответствуют вашим требованиям к аварийному восстановлению.
 
-## <a name="scenario-1-primary-and-dr-sites-on-azure"></a>Сценарий 1. Основной сайт и сайты аварийного восстановления в Azure
+## <a name="scenario-1-primary-and-dr-sites-on-azure"></a>Сценарий 1. Основные сайты и сайты аварийного восстановления в Azure
 
 У клиента есть база данных Oracle на основном сайте. Сайт аварийного восстановления находится в другом регионе. Клиент использует Oracle Data Guard для быстрого восстановления между этими сайтами. На основном сайте также создана база данных-получатель для отчетности и других целей. 
 
@@ -51,13 +51,13 @@ ms.locfileid: "70101461"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_01.png)
 
-## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>Сценарий 2. Первичный сайт локальная сеть и сайт аварийного восстановления в Azure
+## <a name="scenario-2-primary-site-on-premises-and-dr-site-on-azure"></a>Сценарий 2. Основной локальный сайт и сайт аварийного восстановления в Azure
 
 Клиент имеет локальную базу данных Oracle (основной сайт). Сайт аварийного восстановления — в Azure. Oracle Data Guard используется для быстрого восстановления между этими сайтами. На основном сайте также создана база данных-получатель для отчетности и других целей. 
 
 Существует два подхода для такой конфигурации.
 
-### <a name="approach-1-direct-connections-between-on-premises-and-azure-requiring-open-tcp-ports-on-the-firewall"></a>Подход 1: Прямые подключения между локальной средой и Azure, в брандмауэре которого требуются открытые TCP-порты 
+### <a name="approach-1-direct-connections-between-on-premises-and-azure-requiring-open-tcp-ports-on-the-firewall"></a>Способ 1. Прямые соединения между локальной средой и Azure, для чего в брандмауэре необходимо открыть TCP-порты 
 
 Мы не рекомендуем использовать прямые соединения, так как они позволяют открыть внешний доступ к TCP-портам.
 
@@ -77,7 +77,7 @@ ms.locfileid: "70101461"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_02.png)
 
-### <a name="approach-2-site-to-site-vpn"></a>Подход 2: VPN "сайт — сайт"
+### <a name="approach-2-site-to-site-vpn"></a>Способ 2. VPN-подключение типа "сеть — сеть"
 Оптимальным способом является использование VPN-подключения типа "сеть — сеть". Дополнительные сведения о настройке VPN см. в статье [Создание виртуальной сети с VPN типа "сеть — сеть" с помощью интерфейса командной строки](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli).
 
 #### <a name="topology"></a>Топология
@@ -95,15 +95,15 @@ ms.locfileid: "70101461"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_03.png)
 
-## <a name="additional-reading"></a>Дополнительные материалы для чтения
+## <a name="additional-reading"></a>Дополнительные материалы
 
 - [Design and implement an Oracle database in Azure](oracle-design.md) (Разработка базы данных Oracle и ее реализация в Azure)
-- [Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
+- [Настройка Oracle Data Guard](configure-oracle-dataguard.md)
 - [Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](configure-oracle-golden-gate.md)
 - [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](oracle-backup-recovery.md)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Учебник. Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
+- Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

@@ -6,18 +6,18 @@ ms.author: barbkess
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 01/15/2019
-ms.openlocfilehash: 303f24ef6d934c0382bd8917833e3ec545f2a540
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 559c894a2212466761de820de7486ae203337802
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76776486"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77538470"
 ---
 # <a name="azure-spring-cloud-cicd-with-github-actions"></a>Azure весны CI/CD в облаке с действиями GitHub
 
 Действия GitHub поддерживают автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. С помощью действий GitHub для Azure "пружинное облако" вы можете создавать рабочие процессы в репозитории для создания, тестирования, упаковки, выпуска и развертывания в Azure. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 Для этого примера требуется [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="set-up-github-repository-and-authenticate"></a>Настройка репозитория GitHub и проверка подлинности
@@ -63,7 +63,7 @@ az spring-cloud config-server git set -n <service instance name> --uri https://g
 Рабочий процесс определяется с помощью следующих параметров.
 
 ### <a name="prepare-for-deployment-with-azure-cli"></a>Подготовка к развертыванию с помощью Azure CLI
-Команда `az spring-cloud app create` в настоящее время не идемпотентными.  Этот рабочий процесс рекомендуется для существующих облачных приложений и экземпляров Azure весны.
+В настоящее `az spring-cloud app create` время команда не идемпотентными.  Этот рабочий процесс рекомендуется для существующих облачных приложений и экземпляров Azure весны.
 
 Для подготовки используйте следующие Azure CLI команды:
 ```
@@ -75,10 +75,11 @@ az spring-cloud app create --name account-service
 ```
 
 ### <a name="deploy-with-azure-cli-directly"></a>Прямое развертывание с помощью Azure CLI
-Создайте файл `.github/workflow/main.yml` в репозитории:
+Создайте `.github/workflow/main.yml` файл в репозитории:
 
 ```
 name: AzureSpringCloud
+on: push
 
 env:
   GROUP: <resource group name>
@@ -117,14 +118,15 @@ jobs:
         az spring-cloud app deploy -n auth-service --jar-path ${{ github.workspace }}/auth-service/target/auth-service.jar
 ```
 ### <a name="deploy-with-azure-cli-action"></a>Развертывание с действием Azure CLI
-Команда AZ `run` будет использовать последнюю версию Azure CLI. При наличии критических изменений можно также использовать определенную версию Azure CLI с `action`Azure/CLI. 
+Команда AZ `run` будет использовать последнюю версию Azure CLI. При наличии критических изменений можно также использовать определенную версию Azure CLI с помощью Azure или CLI `action`. 
 
 > [!Note] 
-> Эта команда будет выполняться в новом контейнере, поэтому `env` не будет работать, и доступ к файлам для кросс-действий может иметь дополнительные ограничения.
+> Эта команда будет выполняться в новом контейнере, поэтому `env` не будет работать, а доступ к файлам для кросс-действий может иметь дополнительные ограничения.
 
 Создайте файл. GitHub/Workflow/Main. yml в репозитории:
 ```
 name: AzureSpringCloud
+on: push
 
 jobs:
   build-and-deploy:
@@ -165,6 +167,7 @@ jobs:
 
 ```
 name: AzureSpringCloud
+on: push
 
 jobs:
   build-and-deploy:
@@ -205,7 +208,7 @@ jobs:
 
  ![Повторить проверку](./media/github-actions/actions4.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Key Vault для действий в облаке GitHub](./spring-cloud-github-actions-key-vault.md)
 * [Субъекты-службы Azure Active Directory](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac)
 * [Действия GitHub для Azure](https://github.com/Azure/actions/)

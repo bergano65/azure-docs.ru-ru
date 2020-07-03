@@ -8,32 +8,33 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.custom: mvc, seo-javascript-september2019
+ms.custom:
+- mvc
+- seo-javascript-september2019
+- mqtt
 ms.date: 06/21/2019
-ms.openlocfilehash: e37ce216bf1928785ef9052115599bbd4ab2a603
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 5c34dcc606e87e11a3a018df1b2d6bbedb262d04
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690851"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82209117"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-nodejs"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Node.js)
 
 [!INCLUDE [iot-hub-quickstarts-1-selector](../../includes/iot-hub-quickstarts-1-selector.md)]
 
-Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы телеметрии с ваших устройств Центра Интернета вещей в облаке на хранение или обработку. В рамках этого краткого руководства вы отправите данные телеметрии из приложения имитированного устройства через Центр Интернета вещей во внутреннее приложение для обработки.
+ В рамках этого краткого руководства вы отправите данные телеметрии из приложения имитированного устройства через Центр Интернета вещей Azure во внутреннее приложение для обработки. Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы телеметрии с ваших устройств Центра Интернета вещей в облаке на хранение или обработку. В этом кратком руководстве используется два заранее разработанных приложения Node.js: одно для отправки данных телеметрии, а другое для чтения телеметрии из центра. Прежде чем запускать эти приложения, создайте Центр Интернета вещей и зарегистрируйте устройство в центре.
 
-В этом кратком руководстве используется два предварительно созданных приложения Node.js (одно для отправки данных телеметрии, а другое для чтения телеметрии из центра). Прежде чем запускать эти приложения, создайте Центр Интернета вещей и зарегистрируйте устройство в центре.
+## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+* Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* [Node.js версии 10 и выше](https://nodejs.org) Если вы используете Azure Cloud Shell, не обновляйте установленную версию Node.js. Azure Cloud Shell уже имеет последнюю версию Node.js.
 
-## <a name="prerequisites"></a>предварительные требования
+* [Пример проекта Node.js](https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip).
 
-Два примера приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 10 x.x или более поздней версии на компьютере для разработки. Если вы используете Azure Cloud Shell, не обновляйте установленную версию Node.js. Azure Cloud Shell уже имеет последнюю версию Node.js.
-
-Node.js, предназначенный для нескольких платформ, можно скачать здесь: [nodejs.org](https://nodejs.org).
+* Порт 8883, открытый в брандмауэре. Пример устройства в этом кратком руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 Текущую версию Node.js на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 
@@ -41,13 +42,17 @@ Node.js, предназначенный для нескольких платфо
 node --version
 ```
 
-Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+### <a name="add-azure-iot-extension"></a>Добавление расширения Azure IoT
+
+Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
 
 ```azurecli-interactive
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 ```
 
-Скачайте пример проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip и извлеките ZIP-архив.
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -81,19 +86,19 @@ az extension add --name azure-cli-iot-ext
 
     Это значение понадобится позже при работе с этим кратким руководством.
 
-1. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
+1. Вам также понадобится _конечная точка, совместимая с Центрами событий_, _путь, совместимый с Центрами событий_, и _первичный ключ службы_ из Центра Интернета вещей, чтобы подключить внутреннее приложение к Центру Интернета вещей и получить сообщения. Следующие команды позволяют получить эти значения для Центра Интернета вещей:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
-    az iot hub show-connection-string --name {YourIoTHubName} --policy-name service --output table
+    az iot hub show --query properties.eventHubEndpoints.events.endpoint --name {YourIoTHubName}
+
+    az iot hub show --query properties.eventHubEndpoints.events.path --name {YourIoTHubName}
+
+    az iot hub policy show --name service --query primaryKey --hub-name {YourIoTHubName}
     ```
 
-    Запишите строку подключения к службе, которая выглядит так:
-
-   `HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}`
-
-    Это значение понадобится позже при работе с этим кратким руководством. Строка подключения к службе отличается от строки подключения к устройству из предыдущего шага.
+    Запишите эти три значения, они понадобятся позже при работе с этим кратким руководством.
 
 ## <a name="send-simulated-telemetry"></a>Отправка имитированной телеметрии
 
@@ -122,9 +127,13 @@ az extension add --name azure-cli-iot-ext
 
 1. Откройте другое окно локального терминала и перейдите в корневую папку примера проекта Node.js. Затем перейдите в папку **iot-hub\Quickstarts\read-d2c-messages**.
 
-1. Откройте файл **ReadDeviceToCloudMessages.js** в любом текстовом редакторе.
+1. Откройте файл **ReadDeviceToCloudMessages.js** в любом текстовом редакторе. Обновите указанные ниже переменные и сохраните изменения в файле.
 
-    Замените значение переменной `connectionString` записанной ранее строкой подключения к службе. Сохраните изменения в файле **ReadDeviceToCloudMessages.js**.
+    | Переменная | Значение |
+    | -------- | ----------- |
+    | `eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с Центрами событий. |
+    | `eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с Центрами событий. |
+    | `iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом службы. |
 
 1. Установите необходимые библиотеки и запустите внутреннее приложение, выполнив в окне локального терминала следующие команды:
 

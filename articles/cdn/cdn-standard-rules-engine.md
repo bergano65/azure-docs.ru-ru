@@ -2,17 +2,17 @@
 title: Использование обработчика правил для принудительного применения протокола HTTPS в стандартном Azure CDN | Документация Майкрософт
 description: Используйте обработчик правил для сети доставки содержимого Microsoft Standard Azure (Azure CDN), чтобы настроить способ Azure CDN обработки HTTP-запросов, включая блокирование доставки определенных типов содержимого, определение политики кэширования и изменение заголовков HTTP. В этой статье вы узнаете, как создать правило для перенаправления пользователей по протоколу HTTPS.
 services: cdn
-author: mdgattuso
+author: asudbring
 ms.service: azure-cdn
 ms.topic: article
 ms.date: 11/01/2019
-ms.author: magattus
-ms.openlocfilehash: 724861305d7a25db409072200ac2bc3bd83f0682
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.author: allensu
+ms.openlocfilehash: 91a442573139bf4fdd09978290bf2380c8bcb97e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74171573"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81259937"
 ---
 # <a name="set-up-the-standard-rules-engine-for-azure-cdn"></a>Настройка обработчика стандартных правил для Azure CDN
 
@@ -35,7 +35,7 @@ ms.locfileid: "74171573"
    
     Откроется панель **обработчика правил** , в которой отобразится список доступных глобальных правил. 
    
-    [страница «![Azure CDN новых правил»](./media/cdn-standard-rules-engine/cdn-new-rule.png)](./media/cdn-standard-rules-engine/cdn-new-rule.png#lightbox)
+    [![Страница Azure CDN новых правил](./media/cdn-standard-rules-engine/cdn-new-rule.png)](./media/cdn-standard-rules-engine/cdn-new-rule.png#lightbox)
    
    > [!IMPORTANT]
    > Порядок, в котором перечислены несколько правил, влияет на порядок обработки правил. Действия, указанные в правиле, могут быть перезаписаны последующим правилом.
@@ -45,21 +45,21 @@ ms.locfileid: "74171573"
 
 1. Чтобы узнать тип запросов, к которым применяется правило, создайте условие соответствия:
     1. Выберите **Добавить условие**, а затем выберите условие соответствия **протокола запроса** .
-    1. В качестве **оператора**выберите **Equals**.
+    1. В поле **Оператор** выберите **Равно**.
     1. В качестве **значения**выберите **http**.
    
-   [условие соответствия ![правилу Azure CDN](./media/cdn-standard-rules-engine/cdn-match-condition.png)](./media/cdn-standard-rules-engine/cdn-match-condition.png#lightbox)
+   [![Условие соответствия Azure CDN правилу](./media/cdn-standard-rules-engine/cdn-match-condition.png)](./media/cdn-standard-rules-engine/cdn-match-condition.png#lightbox)
    
    > [!NOTE]
    > В раскрывающемся списке **Добавить условие** можно выбрать несколько условий соответствия. Подробный список условий соответствия см. в разделе [условия соответствия в обработчике стандартных правил](cdn-standard-rules-engine-match-conditions.md).
    
 1. Выберите действие для применения к запросам, которые удовлетворяют условию соответствия:
    1. Щелкните **Добавить действие**и выберите **перенаправление URL-адреса**.
-   1. В качестве **типа**выберите **найдено (302)** .
+   1. В качестве **типа**выберите **найдено (302)**.
    1. Для параметра **Protocol** (Протокол) выберите **HTTPS**.
    1. Оставьте все остальные поля пустыми, чтобы использовать входящие значения.
    
-   [действие правила Azure CDN ![](./media/cdn-standard-rules-engine/cdn-action.png)](./media/cdn-standard-rules-engine/cdn-action.png#lightbox)
+   [![Действие правила Azure CDN](./media/cdn-standard-rules-engine/cdn-action.png)](./media/cdn-standard-rules-engine/cdn-action.png#lightbox)
    
    > [!NOTE]
    > В раскрывающемся списке **Добавить действие** можно выбрать несколько действий. Подробный список действий см. в разделе [действия в обработчике стандартных правил](cdn-standard-rules-engine-actions.md).
@@ -71,9 +71,9 @@ ms.locfileid: "74171573"
    >
    
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о сети доставки содержимого Azure](cdn-overview.md)
-- [Справочник по обработчику стандартных правил](cdn-standard-rules-engine-reference.md)
+- [Справочник по стандартному обработчику правил](cdn-standard-rules-engine-reference.md)
 - [Условия соответствия в обработчике стандартных правил](cdn-standard-rules-engine-match-conditions.md)
 - [Действия в обработчике стандартных правил](cdn-standard-rules-engine-actions.md)

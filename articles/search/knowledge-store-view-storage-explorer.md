@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/30/2019
 ms.openlocfilehash: 167316eca1f85530a040d4543f98ae34a9fb93c6
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75754065"
 ---
 # <a name="view-a-knowledge-store-with-storage-explorer"></a>Просмотр хранилища знаний с помощью Обозревателя службы хранилища
@@ -22,7 +22,7 @@ ms.locfileid: "75754065"
 
 В этой статье вы узнаете, как подключиться к хранилищу знаний и исследовать его с помощью Обозреватель службы хранилища в портал Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 + Выполните действия, описанные в разделе [Создание хранилища знаний на портале Azure](knowledge-store-create-portal.md), чтобы создать образец хранилища знаний, используемый в этом пошаговом руководстве.
 

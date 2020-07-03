@@ -1,37 +1,41 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по процессу обработки и анализа данных команды
+summary: Узнайте, как использовать процесс обработки и анализа данных группы (TDSP), гибкую итеративную методику обработки и анализа данных, для решений прогнозной аналитики и интеллектуальных приложений.
 metadata:
   title: Документация по процессу обработки и анализа данных команды
-  description: "Узнайте, как использовать процесс обработки и анализа данных группы (TDSP), гибкую итеративную методику обработки и анализа данных, для эффективной доставки решений прогнозной аналитики и интеллектуальных приложений. TDSP позволяет улучшить обучение и совместную работу в группах. Он содержит избранные рекомендации и структуры от Майкрософт и других разработчиков в отрасли, которые обеспечивают успешную реализацию решений по обработке и анализу данных. Все это\_— чтобы помочь компаниям полностью использовать преимущества их программ аналитики."
-  services: machine-learning
-  author: marktab
+  description: Узнайте, как использовать процесс обработки и анализа данных группы (TDSP), гибкую итеративную методику обработки и анализа данных, для решений прогнозной аналитики и интеллектуальных приложений.
   ms.service: machine-learning
   ms.subservice: team-data-science-process
   ms.topic: landing-page
-  ms.date: 01/10/2020
+  author: marktab
   ms.author: marktab
-abstract:
-  description: "Процесс обработки и анализа данных группы (TDSP) является гибкой итеративной методикой обработки и анализа данных для эффективной доставки решений прогнозной аналитики и интеллектуальных приложений. TDSP позволяет улучшить обучение и совместную работу в группах. Он содержит избранные рекомендации и структуры от Майкрософт и других разработчиков в отрасли, которые обеспечивают успешную реализацию решений по обработке и анализу данных. Все это\_— чтобы помочь компаниям полностью использовать преимущества их программ аналитики."
-sections:
-  - title: Пятиминутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: 'Узнайте, что представляет собой процесс обработки и анализа данных группы:'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="overview">Обзор</a>
-          - html: <a href="lifecycle">Жизненный цикл</a>
-  - title: Пошаговые инструкции
-    items:
-      - type: paragraph
-        text: 'Узнайте, как использовать процесс обработки и анализа данных группы в различных сценариях:'
-      - type: list
-        style: ordered
-        items:
-          - html: <a href="walkthroughs-spark">Spark с PySpark и Scala</a>
-          - html: <a href="walkthroughs-hdinsight-hadoop">Hive с HDInsight Hadoop</a>
-          - html: <a href="walkthroughs-azure-data-lake">U-SQL с Azure Data Lake</a>
-          - html: '<a href="walkthroughs-sql-server">R, Python и T-SQL с SQL Server</a>'
-          - html: <a href="walkthroughs-sql-data-warehouse">T-SQL и Python с хранилищем данных SQL</a>
+  ms.date: 03/10/2020
+  ms.openlocfilehash: 5090cbcf6c177b99f4932eb77647520c3602a832
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "79087386"
+landingContent:
+- title: Подробнее о процессе
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое процесс обработки и анализа данных группы?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Жизненный цикл процесса
+      url: lifecycle.md
+    - text: Коммерческий аспект
+      url: lifecycle-business-understanding.md
+    - text: Сбор данных
+      url: lifecycle-data.md
+- title: Планирование и разработки проекта
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Планирование проекта
+      url: team-data-science-process-project-templates.md
+    - text: Гибкая разработка
+      url: agile-development.md

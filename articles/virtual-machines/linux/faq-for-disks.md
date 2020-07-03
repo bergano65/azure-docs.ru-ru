@@ -1,18 +1,18 @@
 ---
-title: Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS под управлением Linux
+title: Часто задаваемые вопросы о дисках
 description: Часто задаваемые вопросы о дисках виртуальных машин Linux в Azure IaaS и дисках класса "Премиум" (управляемых и неуправляемых).
 author: roygara
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 06/15/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: e862fee0dd9056bb0e4e7c263938f1af4d134f01
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d4f814647aeaaf3ab66e746360ce7656a22a4520
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75359973"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79267343"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS, а также об управляемых и неуправляемых дисках уровня "Премиум"
 [!INCLUDE [virtual-machines-faq-for-disks](../../../includes/virtual-machines-faq-for-disks.md)]

@@ -10,14 +10,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: 9aeaed6565e69409bc55a71985296b2393226ba4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8feca17f10bb891f0ca5577b2363f95901da4a46
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75427488"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79217871"
 ---
 # <a name="tutorial-2-train-credit-risk-models---azure-machine-learning-studio-classic"></a>Руководство 2. Обучение моделей кредитных рисков в Студии машинного обучения Azure (классическая версия)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 В этом руководстве подробно описывается процесс разработки решения прогнозной аналитики. Мы создадим в Студии машинного обучения (классической) простую модель,  а затем развернем ее в качестве веб-службы машинного обучения Azure.  Развернутая модель позволяет создавать прогнозы на основе новых данных. Это руководство представляет собой **вторую часть серии, состоящей из трех частей**.
 
@@ -38,11 +40,11 @@ ms.locfileid: "75427488"
 
 В [третьей части руководства](tutorial-part3-credit-risk-deploy.md) будет необходимо развернуть модель в качестве веб-службы.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Выполните действия, описанные в [первой части этого руководства](tutorial-part1-credit-risk.md).
 
-## <a name="train"></a>Обучение нескольких моделей
+## <a name="train-multiple-models"></a><a name="train"></a>Обучение нескольких моделей
 
 Одно из преимуществ использования Студии машинного обучения Azure (классической) для создания моделей машинного обучения заключается в том, что вы можете проверить несколько типов моделей и сравнить их результаты в рамках одного эксперимента. Этот тип экспериментов помогает найти наилучшее решение проблемы.
 

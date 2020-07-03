@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 10/28/2019
 ms.author: curtand
-ms.openlocfilehash: 06e5abe04ed1ec75dcbf1b216bfaab1a7458ce72
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 75564ea463198967c6ed170851058202b5ba3478
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064059"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82625958"
 ---
 # <a name="change-your-work-or-school-account-password-from-the-change-password-page"></a>Изменение пароля рабочей или учебной учетной записи на странице "изменение пароля"
 
@@ -27,7 +27,7 @@ ms.locfileid: "77064059"
 
 ## <a name="update-a-password-from-the-change-password-page"></a>Обновление пароля на странице "изменение пароля"
 
-1. Войдите в рабочую или учебную учетную запись, используя существующий пароль, а затем перейдите на страницу **Моя учетная запись** (https://myprofile.microsoft.com/).
+1. Войдите в рабочую или учебную учетную запись, используя существующий пароль, а затем перейдите на страницу **Моя учетная запись** (https://myaccount.microsoft.com/) страница).
 
 2. Выберите **пароль** в области навигации слева или щелкните ссылку **Смена пароля** в блоке **пароля** .
 

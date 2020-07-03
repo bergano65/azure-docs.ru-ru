@@ -17,17 +17,17 @@ ms.author: arvinh
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: abeac030db419f7fb7d561df5dcd407684f20ca2
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77058937"
 ---
 # <a name="tutorial-configure-asana-for-automatic-user-provisioning"></a>Руководство по настройке Asana для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как в Asana и Azure Active Directory (Azure AD) настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в Asana.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -87,7 +87,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. Щелкните **Сохранить**.
 
-1. В разделе **Сопоставления** выберите **Синхронизировать пользователей Azure Active Directory с Asana**.
+1. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с asana**.
 
 1. В разделе **Сопоставления атрибутов** просмотрите атрибуты пользователей, которые будут синхронизированы из Azure AD в Asana. Атрибуты, выбранные как свойства **сопоставления**, используются для сопоставления учетных записей пользователей в Asana для операций обновления. Чтобы зафиксировать изменения, щелкните **Сохранить**. Дополнительные сведения см. в статье [Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](../app-provisioning/customize-application-attributes.md).
 

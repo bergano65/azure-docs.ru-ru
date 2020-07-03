@@ -1,5 +1,5 @@
 ---
-title: Руководство. сборке и запуску пользовательского образа
+title: Руководство по сборке и запуску пользовательского образа
 description: Сведения о создании пользовательского образа Linux, который можно запустить в Службе приложений Azure, развернуть в Реестры контейнеров Azure и запустить в Службе приложений.
 keywords: служба приложений azure, веб-приложение, docker, контейнер
 author: msangapu-msft
@@ -7,15 +7,15 @@ ms.assetid: b97bd4e6-dff0-4976-ac20-d5c109a559a8
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: msangapu
-ms.custom: seodec18
-ms.openlocfilehash: 965897afc8e23c123575de0c497d4071ff4ca85a
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.custom: mvc, seodec18
+ms.openlocfilehash: 2609ff908b3c2f872cb63d3dcd7dcd481d316484
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76767097"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82085864"
 ---
-# <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство. созданию и запуску настраиваемого образа в Службе приложений из частного реестра
+# <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство по созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 
 [Служба приложений](app-service-linux-intro.md) предоставляет встроенные образы Docker на основе Linux с поддержкой определенных версий, включая PHP 7.3 и Node.js 10.14. Служба приложений использует технологию контейнеров Docker для размещения встроенных и настраиваемых образов в качестве платформы как услуги. В этом руководстве вы узнаете, как создать настраиваемый образ и запустить его в Службе приложений. Этот шаблон используется, если встроенные образы не содержат нужный язык или для приложения требуется определенная конфигурация, которую не предоставляют встроенные образы.
 
@@ -49,7 +49,7 @@ cd docker-django-webapp-linux
 
 ## <a name="build-the-image-from-the-docker-file"></a>Создание образа на основе файла Docker
 
-В репозитории Git просмотрите файл _Dockerfile_. Этот файл описывает среду Python, необходимую для запуска приложения. Образ также настраивает сервер [SSH](https://www.ssh.com/ssh/protocol/) для обеспечения безопасного взаимодействия между контейнером и узлом.
+В репозитории Git просмотрите файл _Dockerfile_. Этот файл описывает среду Python, необходимую для запуска приложения. Образ также настраивает сервер [SSH](https://www.ssh.com/ssh/protocol/) для обеспечения безопасного взаимодействия между контейнером и узлом. В последней строке файла _Dockerfile_ (`ENTRYPOINT ["init.sh"]`) вызывается `init.sh` для запуска службы SSH и сервера Python.
 
 ```Dockerfile
 FROM python:3.4
@@ -73,6 +73,8 @@ COPY init.sh /usr/local/bin/
     
 RUN chmod u+x /usr/local/bin/init.sh
 EXPOSE 8000 2222
+
+#service SSH start
 #CMD ["python", "/code/manage.py", "runserver", "0.0.0.0:8000"]
 ENTRYPOINT ["init.sh"]
 ```
@@ -121,7 +123,7 @@ az acr credential show --name <azure-container-registry-name>
 
 Выходные данные этой команды содержат два пароля и имя пользователя.
 
-```json
+<pre>
 {
   "passwords": [
     {
@@ -133,9 +135,9 @@ az acr credential show --name <azure-container-registry-name>
       "value": "{password}"
     }
   ],
-  "username": "<registry-username>"
+  "username": "&lt;registry-username&gt;"
 }
-```
+</pre>
 
 В окне терминала на локальном компьютере войдите в Реестр контейнеров Azure с помощью команды `docker login`, как показано в примере ниже. Замените *\<azure-container-registry-name>* и *\<registry-username>* значениями для своего реестра. При появлении запроса введите один из паролей из предыдущего шага.
 
@@ -166,11 +168,11 @@ az acr repository list -n <azure-container-registry-name>
 
 Вы должны увидеть следующий результат.
 
-```json
+<pre>
 [
   "mydockerimage"
 ]
-```
+</pre>
 
 ### <a name="create-app-service-plan"></a>Создание плана службы приложений
 
@@ -186,7 +188,7 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 
 Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
 
-```json
+<pre>
 {
   "availabilityState": "Normal",
   "clientAffinityEnabled": true,
@@ -194,12 +196,12 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
   "cloningInfo": null,
   "containerSize": 0,
   "dailyMemoryTimeQuota": 0,
-  "defaultHostName": "<app-name>.azurewebsites.net",
-  "deploymentLocalGitUrl": "https://<username>@<app-name>.scm.azurewebsites.net/<app-name>.git",
+  "defaultHostName": "&lt;app-name&gt;.azurewebsites.net",
+  "deploymentLocalGitUrl": "https://&lt;username&gt;@&lt;app-name&gt;.scm.azurewebsites.net/&lt;app-name&gt;.git",
   "enabled": true,
-  < JSON data removed for brevity. >
+  &lt; JSON data removed for brevity. &gt;
 }
-```
+</pre>
 
 ### <a name="configure-registry-credentials-in-web-app"></a>Настройка учетных данных реестра в веб-приложении
 

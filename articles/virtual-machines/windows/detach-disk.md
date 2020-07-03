@@ -1,21 +1,19 @@
 ---
 title: Отключение диска данных от виртуальной машины Windows в Azure
 description: Отключение диска данных от виртуальной машины в Azure c использованием модели развертывания Resource Manager.
-services: virtual-machines-windows
 author: cynthn
-manager: gwallace
 ms.service: virtual-machines-windows
+ms.subservice: disks
 ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 01/08/2020
 ms.author: cynthn
-ms.subservice: disks
-ms.openlocfilehash: 301f3abd26f702f3f29c8833c835ba7d0e41bcaf
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: c93bb5fd3e92c6a947fe997b58207b87b2717fd5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834602"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82082770"
 ---
 # <a name="how-to-detach-a-data-disk-from-a-windows-virtual-machine"></a>Отключение диска от виртуальной машины Windows
 
@@ -61,6 +59,6 @@ Update-AzVM `
 
 Диск остается в хранилище, но он уже не подключен к виртуальной машине.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы хотите повторно использовать диск данных, то можете просто [подключить его к другой виртуальной машине](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

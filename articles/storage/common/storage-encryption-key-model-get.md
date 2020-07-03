@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/03/2020
+ms.date: 03/13/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 3806fead9226978c277e87f3d97b14ee38d9552d
-ms.sourcegitcommit: 2c59a05cb3975bede8134bc23e27db5e1f4eaa45
+ms.openlocfilehash: 0df0ba4ce76d249bcb4738b41c94677e061f14ca
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2020
-ms.locfileid: "75665408"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79409867"
 ---
 # <a name="determine-which-azure-storage-encryption-key-model-is-in-use-for-the-storage-account"></a>Определение модели ключа шифрования службы хранилища Azure, используемой для учетной записи хранения
 
@@ -32,18 +32,22 @@ ms.locfileid: "75665408"
 
 Чтобы определить, использует ли учетная запись хранения ключи, управляемые корпорацией Майкрософт, или ключи, управляемые клиентом, для шифрования используйте один из следующих подходов.
 
-# <a name="azure-portaltabportal"></a>[Портал Azure](#tab/portal)
+# <a name="azure-portal"></a>[Портал Azure](#tab/portal)
 
 Чтобы проверить модель шифрования для учетной записи хранения с помощью портал Azure, выполните следующие действия.
 
 1. Войдите в свою учетную запись хранения на портале Azure.
 1. Выберите параметр **шифрования** и обратите внимание на параметр.
 
-На следующем рисунке показана учетная запись хранения, в которой ключи, управляемые клиентом, используются для шифрования:
+На следующем рисунке показана учетная запись хранения, зашифрованная с помощью ключей, управляемых корпорацией Майкрософт:
+
+![Просмотр учетной записи, зашифрованной с помощью ключей, управляемых корпорацией Майкрософт](media/storage-encryption-key-model-get/microsoft-managed-encryption-key-setting-portal.png)
+
+На следующем рисунке показана учетная запись хранения, зашифрованная с помощью управляемых клиентом ключей.
 
 ![Снимок экрана, показывающий параметр ключа шифрования в портал Azure](media/storage-encryption-key-model-get/customer-managed-encryption-key-setting-portal.png)
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Чтобы проверить модель шифрования для учетной записи хранения с помощью PowerShell, вызовите команду [Get-азсторажеаккаунт](/powershell/module/az.storage/get-azstorageaccount) , а затем проверьте свойство **KeySource** для учетной записи.
 
@@ -53,9 +57,9 @@ $account = Get-AzStorageAccount -ResourceGroupName <resource-group> `
 $account.Encryption.KeySource
 ```
 
-Если свойство **KeySource** имеет значение `Microsoft.Storage`, учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **KeySource** имеет значение `Microsoft.Keyvault`, учетная запись шифруется с помощью ключей, управляемых клиентом.
+Если свойство **KeySource** имеет `Microsoft.Storage`значение, то учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **KeySource** имеет `Microsoft.Keyvault`значение, то учетная запись шифруется с помощью ключей, управляемых клиентом.
 
-# <a name="azure-clitabcli"></a>[Azure CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/cli)
 
 Чтобы проверить модель шифрования для учетной записи хранения с помощью Azure CLI, вызовите команду [AZ Storage Account показывать](/cli/azure/storage/account#az-storage-account-show) , а затем проверьте свойство **keySource** для учетной записи.
 
@@ -67,10 +71,11 @@ key_source=$(az storage account show \
     --output tsv)
 ```
 
-Если свойство **keySource** имеет значение `Microsoft.Storage`, учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **keySource** имеет значение `Microsoft.Keyvault`, учетная запись шифруется с помощью ключей, управляемых клиентом.
+Если свойство **keySource** имеет `Microsoft.Storage`значение, то учетная запись шифруется с помощью ключей, управляемых корпорацией Майкрософт. Если свойство **keySource** имеет `Microsoft.Keyvault`значение, то учетная запись шифруется с помощью ключей, управляемых клиентом.
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md)
+- [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md)
+- [Использование управляемых клиентом ключей с Azure Key Vault для управления шифрованием службы хранилища Azure](encryption-customer-managed-keys.md)

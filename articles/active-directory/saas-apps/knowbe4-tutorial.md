@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с KnowBe4 Security Awareness Training | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с KnowBe4 Security Awareness Training | Документация Майкрософт
 description: Узнайте, как настраивать единый вход между Azure Active Directory и KnowBe4 Security Awareness Training.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f774357dc2fd1e37466c2c338e8e8616ae599d12
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159671"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-knowbe4-security-awareness-training"></a>Руководство по Интеграция Azure Active Directory с KnowBe4 Security Awareness Training
+# <a name="tutorial-azure-active-directory-integration-with-knowbe4-security-awareness-training"></a>Руководство по интеграции Azure Active Directory с KnowBe4 Security Awareness Training
 
 В этом руководстве вы узнаете, как интегрировать KnowBe4 Security Awareness Training с Azure Active Directory (Azure AD).
 Интеграция KnowBe4 Security Awareness Training с Azure AD предоставляет следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73159671"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с KnowBe4 Security Awareness Training, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка KnowBe4 Security Awareness Training с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -108,7 +108,7 @@ ms.locfileid: "73159671"
 
     ![Сведения о домене и URL-адресах единого входа для приложения KnowBe4 Security Awareness Training](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.KnowBe4.com/auth/saml/<instancename>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.KnowBe4.com/auth/saml/<instancename>`.
 
     > [!NOTE]
     > Значение URL-адреса входа приведено только для примера. Вместо него необходимо указать фактический URL-адрес для входа. Обратитесь в [службу поддержки клиентов KnowBe4 Security Awareness Training](mailto:support@KnowBe4.com), чтобы получить это значение. Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -126,11 +126,11 @@ ms.locfileid: "73159671"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-knowbe4-security-awareness-training-single-sign-on"></a>Настройка единого входа для приложения KnowBe4 Security Awareness Training
 

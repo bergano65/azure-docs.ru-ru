@@ -8,15 +8,17 @@ ms.service: iot-hub
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 06/28/2019
-ms.custom: mvc
-ms.openlocfilehash: 0665a20bfd8253b28936044abe515862b32f1b43
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.custom:
+- mvc
+- mqtt
+ms.openlocfilehash: 2eec96eee943d6fe291d054e1d73876e38f61d6d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73888742"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81769963"
 ---
-# <a name="tutorial-implement-a-device-firmware-update-process"></a>Руководство по Реализация обновления встроенного ПО устройства
+# <a name="tutorial-implement-a-device-firmware-update-process"></a>Руководство по реализации процесса обновления встроенного ПО устройства
 
 Вам может потребоваться обновление встроенного ПО устройств, подключенных к Центру Интернета вещей. Например, вы можете добавить новые функции во встроенное ПО или применить исправления безопасности. Во многих сценариях Интернета вещей нецелесообразно физически получать доступ, а затем вручную применять обновления встроенного ПО на устройствах. В этом руководстве показано, как можно удаленно запускать и контролировать процесс обновления встроенного ПО через внутреннее приложение, подключенное к центру.
 
@@ -34,9 +36,9 @@ ms.locfileid: "73888742"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Примеры приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 10 x.x или более поздней версии на компьютере для разработки.
 
@@ -50,6 +52,8 @@ node --version
 
 Скачайте пример проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/master.zip и извлеките ZIP-архив.
 
+Убедитесь, что в брандмауэре открыт порт 8883. Пример устройства в этом руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
+
 ## <a name="set-up-azure-resources"></a>Настройка ресурсов Azure
 
 Для выполнения задач из этого руководства в подписке Azure должен содержаться Центр Интернета вещей с устройством, добавленным в реестр удостоверений устройств. С помощью записи в реестре удостоверений устройств имитированное устройство, которое запускается в рамках этого руководства, подключается к центру.
@@ -61,7 +65,7 @@ hubname=tutorial-iot-hub
 location=centralus
 
 # Install the IoT extension if it's not already installed
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 
 # Create a resource group
 az group create --name tutorial-iot-hub-rg --location $location
@@ -96,7 +100,7 @@ az iot hub device-identity show-connection-string --device-id MyFirmwareUpdateDe
 
 ## <a name="start-the-firmware-update"></a>Запуск обновления встроенного ПО
 
-Чтобы начать процесс обновления встроенного ПО на всех устройствах chiller с меткой **devicetype**, создайте в серверном приложении конфигурацию [автоматического управления устройствами](iot-hub-automatic-device-management.md#create-a-configuration). Из этого раздела вы узнаете, как выполнять следующие действия:
+Чтобы начать процесс обновления встроенного ПО на всех устройствах chiller с меткой [devicetype](iot-hub-automatic-device-management.md#create-a-configuration), создайте в серверном приложении конфигурацию **автоматического управления устройствами**. Из этого раздела вы узнаете, как выполнять следующие действия:
 
 * Создание конфигурации из внутреннего приложения.
 * Мониторинг задания до его завершения.
@@ -200,7 +204,7 @@ node ServiceClient.js "{your service connection string}"
 az group delete --name tutorial-iot-hub-rg
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как реализовать процесс обновления встроенного ПО для подключенных устройств. Перейдите к следующему руководству, чтобы узнать, как применять инструменты на портале Центра Интернета вещей Azure и команды Azure CLI для проверки возможности подключения устройств.
 

@@ -8,12 +8,12 @@ ms.date: 10/16/2019
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: 1bff46c8584934ab8bcffce74763edc8363533d6
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: d855019be7f357a35a26d14e68ba3d427d984e17
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988249"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82086034"
 ---
 # <a name="azcopy-sync"></a>azcopy sync
 
@@ -42,7 +42,7 @@ ms.locfileid: "76988249"
 - [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 - [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)
 
-### <a name="advanced"></a>Расширенная
+### <a name="advanced"></a>Дополнительно
 
 Если не указать расширение файла, AzCopy автоматически определит тип содержимого файлов при отправке с локального диска на основе расширения или содержимого файла (если не указано расширение).
 
@@ -66,6 +66,9 @@ azcopy sync <source> <destination> [flags]
 azcopy sync "/path/to/file.txt" "https://[account].blob.core.windows.net/[container]/[path/to/blob]"
 ```
 
+> [!NOTE]
+> Целевой BLOB-объект *должен* существовать. Используйте `azcopy copy` для копирования одного файла, который еще не существует в месте назначения. В противном случае возникает следующая ошибка `Cannot perform sync due to error: sync must happen between source and destination of the same type, e.g. either file <-> file, or directory/container <-> directory/container`:.
+
 То же, что и выше, но на этот раз можно также вычислить хэш MD5 содержимого файла и сохранить его как свойство Content-MD5 объекта BLOB:
 
 ```azcopy
@@ -78,7 +81,7 @@ azcopy sync "/path/to/file.txt" "https://[account].blob.core.windows.net/[contai
 azcopy sync "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]"
 ```
 
-или
+или диспетчер конфигурации служб
 
 ```azcopy
 azcopy sync "/path/to/dir" "https://[account].blob.core.windows.net/[container]/[path/to/virtual/dir]" --put-md5
@@ -129,7 +132,7 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 > [!NOTE]
 > Если флаги включения и исключения используются вместе, будут рассматриваться только файлы, соответствующие шаблонам включения, но те, которые соответствуют шаблонам исключения, всегда будут игнорироваться.
 
-## <a name="options"></a>Параметры
+## <a name="options"></a>Элемент Options
 
 **--Block-Size-МБ** float используйте этот размер блока (указанный в MIB) при отправке в службу хранилища Azure или скачивании из службы хранилища Azure. Значение по умолчанию вычисляется автоматически на основе размера файла. Десятичные дроби разрешены (например: 0,25).
 
@@ -141,13 +144,13 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 
 **--Строка исключения-путь** исключает эти пути при копировании. Этот параметр не поддерживает подстановочные знаки (*). Проверяет префикс относительного пути (например: myFolder; myFolder/Субдирнаме/File. PDF). При использовании в сочетании с обходом учетной записи пути не включают имя контейнера.
 
-**--исключение-шаблон** строка исключает файлы, имя которых совпадает со списком шаблонов. Например: \*. jpg;\*. PDF; Ексактнаме
+**--исключение-шаблон** строка исключает файлы, имя которых совпадает со списком шаблонов. Например: \*. jpg; \*. PDF; ексактнаме
 
 **-h,--** Справка Справка по синхронизации
 
 **--include — строка атрибутов** (только для Windows) включает только те файлы, атрибуты которых соответствуют списку атрибутов. Например: A; #D0 Cерверный
 
-**--include — строка шаблона** включает только файлы, имена которых совпадают с списком шаблонов. Например: \*. jpg;\*. PDF; Ексактнаме
+**--include — строка шаблона** включает только файлы, имена которых совпадают с списком шаблонов. Например: \*. jpg; \*. PDF; ексактнаме
 
 **--строка на уровне журнала** определяет уровень детализации журнала для файла журнала, доступные уровни: сведения (все запросы и ответы), предупреждение (медленные ответы), ошибки (только неудачные запросы) и нет (нет выходных журналов). (сведения по умолчанию). (по умолчанию "INFO")
 
@@ -157,7 +160,7 @@ azcopy sync "https://[account].file.core.windows.net/[share]/[path/to/dir]?[SAS]
 
 ## <a name="options-inherited-from-parent-commands"></a>Параметры, унаследованные от родительских команд
 
-|Вариант|Description|
+|Параметр|Описание|
 |---|---|
 |--Cap-Мбит/с UInt32|Скорость передачи с прописными буквами в мегабит в секунду. Посекундная пропускная способность может немного отличаться от ограничения. Если этот параметр имеет значение 0 или пропущен, пропускная способность не ограничена.|
 |--строка выходного типа|Формат вывода команды. Среди вариантов: Text, JSON. Значение по умолчанию — "Text".|

@@ -2,33 +2,30 @@
 title: Вход через SSH в узлы кластера Службы Azure Kubernetes (AKS)
 description: Узнайте, как создать SSL-подключение к узлам кластера Службы Azure Kubernetes (AKS) для задач устранения неполадок и обслуживания.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
 ms.date: 07/31/2019
-ms.author: mlearned
-ms.openlocfilehash: 5ff79dc597571f4e6ef3d7c2c20bce61c0d061ad
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 70ebcb1f340ba28cf80ad3e24a464aad5584b3a4
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74926376"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82207162"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
 
-На протяжении жизненного цикла кластера Службы Azure Kubernetes (AKS) вам может потребоваться доступ к узлу AKS. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Доступ к узлам AKS можно получить с помощью SSH, включая узлы Windows Server (в настоящее время это предварительная версия в AKS). Вы также можете [подключаться к узлам Windows Server с помощью подключений по протоколу удаленного рабочего стола (RDP)][aks-windows-rdp]. В целях безопасности узлы AKS не доступны в Интернете. Чтобы подключиться к узлам AKS по протоколу SSH, используйте частный IP-адрес.
+На протяжении жизненного цикла кластера Службы Azure Kubernetes (AKS) вам может потребоваться доступ к узлу AKS. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Доступ к узлам AKS можно получить с помощью SSH, включая узлы Windows Server. Вы также можете [подключаться к узлам Windows Server с помощью подключений по протоколу удаленного рабочего стола (RDP)][aks-windows-rdp]. В целях безопасности узлы AKS не доступны в Интернете. Чтобы подключиться к узлам AKS по протоколу SSH, используйте частный IP-адрес.
 
 В этой статье показано, как создать SSH-подключение к узлу AKS с использованием его частного IP-адреса.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 По умолчанию ключи SSH получаются или создаются, а затем добавляются в узлы при создании кластера AKS. В этой статье показано, как указать разные ключи SSH, отличные от ключей SSH, используемых при создании кластера AKS. В этой статье также показано, как определить частный IP-адрес узла и подключиться к нему с помощью SSH. Если не нужно указывать другой ключ SSH, вы можете пропустить шаг добавления открытого ключа SSH к узлу.
 
 В этой статье также предполагается, что у вас есть ключ SSH. Ключ SSH можно создать с помощью [macOS или Linux][ssh-nix] или [Windows][ssh-windows]. Если для создания пары ключей используется выводимое значение Gen, сохраните пару ключей в формате OpenSSH, а не в формате закрытого ключа по умолчанию (PPK-файл).
 
-Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
+Также требуется Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="configure-virtual-machine-scale-set-based-aks-clusters-for-ssh-access"></a>Настройка кластеров AKS на основе масштабируемых наборов виртуальных машин для доступа по протоколу SSH
 
@@ -108,7 +105,7 @@ Name                      ResourceGroup                                  Locatio
 aks-nodepool1-79590246-0  MC_myResourceGroupAKS_myAKSClusterRBAC_eastus  eastus
 ```
 
-Чтобы добавить ключи SSH на узел, используйте команду [AZ VM User Update][az-vm-user-update] .
+Чтобы добавить ключи SSH к узлу, используйте команду [az vm user update][az-vm-user-update].
 
 ```azurecli-interactive
 az vm user update \
@@ -123,7 +120,7 @@ az vm user update \
 > [!NOTE]
 > По умолчанию имя пользователя для узлов AKS — *azureuser*.
 
-После добавления открытого ключа SSH к виртуальной машине узла можно выполнить подключение SSH к виртуальной машине по ее IP-адресу. Просмотрите частный IP-адрес узла кластера AKS с помощью команды [AZ VM List-IP-Addresses][az-vm-list-ip-addresses] .
+После добавления открытого ключа SSH к виртуальной машине узла можно выполнить подключение SSH к виртуальной машине по ее IP-адресу. Просмотреть частный IP-адрес узла кластера AKS можно с помощью команды [az vm list-ip-addresses][az-vm-list-ip-addresses].
 
 ```azurecli-interactive
 az vm list-ip-addresses --resource-group $CLUSTER_RESOURCE_GROUP -o table
@@ -148,11 +145,11 @@ aks-nodepool1-79590246-0  10.240.0.4
     ```
 
     > [!TIP]
-    > Если вы используете узлы Windows Server (в настоящее время в предварительной версии в AKS), добавьте селектор узла в команду, чтобы запланировать контейнер Debian на узле Linux:
+    > Если вы используете узлы Windows Server, добавьте селектор узла в команду, чтобы запланировать контейнер Debian на узле Linux:
     >
     > `kubectl run -it --rm aks-ssh --image=debian --overrides='{"apiVersion":"apps/v1","spec":{"template":{"spec":{"nodeSelector":{"beta.kubernetes.io/os":"linux"}}}}}'`
 
-1. После подключения терминального сеанса к контейнеру установите SSH-клиент с помощью `apt-get`.
+1. После подключения терминального сеанса к контейнеру установите SSH-клиент с помощью `apt-get`:
 
     ```console
     apt-get update && apt-get install openssh-client -y
@@ -166,7 +163,7 @@ aks-nodepool1-79590246-0  10.240.0.4
     kubectl cp ~/.ssh/id_rsa $(kubectl get pod -l run=aks-ssh -o jsonpath='{.items[0].metadata.name}'):/id_rsa
     ```
 
-1. Вернитесь в сеанс терминала к контейнеру, обновите разрешения для скопированного `id_rsa` закрытого ключа SSH, чтобы он был доступен только для чтения.
+1. Вернитесь в сеанс терминала к контейнеру, обновите разрешения для скопированного `id_rsa` закрытого ключа SSH так, чтобы он был доступен только для чтения.
 
     ```console
     chmod 0600 id_rsa
@@ -199,9 +196,9 @@ aks-nodepool1-79590246-0  10.240.0.4
 
 Закончив, `exit` из сеанса SSH, а затем `exit` из интерактивного сеанса контейнера. Когда сеанса с этим контейнером закроется, модуль pod, используемый для доступа по протоколу SSH, будет удален из кластера AKS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Если требуются дополнительные данные по устранению неполадок, можно [Просмотреть журналы kubelet][view-kubelet-logs] или [Просмотреть журналы главного узла Kubernetes][view-master-logs].
+Если вам нужны дополнительные сведения об устранении неполадок, вы можете [просмотреть журналы kubelet][view-kubelet-logs] или [журналы главного узла Kubernetes][view-master-logs].
 
 <!-- EXTERNAL LINKS -->
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get

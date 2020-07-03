@@ -9,10 +9,10 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 4fbb86f4fbda9b8e521f7465bb8bb3d18602ca13
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "60894192"
 ---
 # <a name="aggregate-operations-on-azure-cosmos-db-cassandra-api-tables-from-spark"></a>Статистические операции для таблиц API Cassandra для Azure Cosmos DB из Spark 
@@ -76,7 +76,7 @@ booksDF.write
 sc.cassandraTable("books_ks", "books").count
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 res48: Long = 5
 ```
@@ -87,17 +87,17 @@ res48: Long = 5
 
 Выберите [вариант хранения]( https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#which-storage-level-to-choose) из доступных вариантов, чтобы не столкнуться с проблемами нехватки памяти:
 
-* MEMORY_ONLY. Это вариант хранилища по умолчанию. Хранит RDD как десериализованные объекты Java на виртуальной машине Java. Если RDD не помещается в памяти, некоторые секции не будут кэшироваться, и они будут вычисляться повторно в режиме реального времени каждый раз, когда требуется.
+* MEMORY_ONLY: это вариант хранилища по умолчанию. Хранит RDD как десериализованные объекты Java на виртуальной машине Java. Если RDD не помещается в памяти, некоторые секции не будут кэшироваться, и они будут вычисляться повторно в режиме реального времени каждый раз, когда требуется.
 
-* MEMORY_AND_DISK. Хранит RDD как десериализованные объекты Java на виртуальной машине Java. Если RDD не помещается в памяти, секции, которые не помещаются в памяти, будут сохранены на диске, и когда они потребуются, они будут считаны из расположения, в котором хранятся.
+* MEMORY_AND_DISK: хранит RDD как десериализованные объекты Java на виртуальной машине Java. Если RDD не помещается в памяти, секции, которые не помещаются в памяти, будут сохранены на диске, и когда они потребуются, они будут считаны из расположения, в котором хранятся.
 
-* MEMORY_ONLY_SER (Java/Scala): хранит RDD как сериализованные объекты Java (в однобайтовом массиве для каждой секции). Этот вариант позволяет сэкономить пространство по сравнению с десериализованными объектами, особенно при использовании быстрого сериализатора, однако для чтения таких объектов более интенсивно используется ЦП.
+* MEMORY_ONLY_SER (Java/Scala): хранит RDD как сериализованные объекты Java — в однобайтовом массиве для каждой секции. Этот вариант позволяет сэкономить пространство по сравнению с десериализованными объектами, особенно при использовании быстрого сериализатора, однако для чтения таких объектов более интенсивно используется ЦП.
 
 * MEMORY_AND_DISK_SER (Java/Scala): этот вариант похож на MEMORY_ONLY_SER, единственное различие состоит в том, что секции, которые не помещаются на диске, сбрасываются, вместо того чтобы вычислять их повторно, когда они необходимы.
 
 * DISK_ONLY: хранит секции RDD только на диске.
 
-* MEMORY_ONLY_2 MEMORY_AND_DISK_2...: то же, что и для указанных уровней, однако каждая секция реплицируется на два узла кластера.
+* MEMORY_ONLY_2, MEMORY_AND_DISK_2…: то же, что и для уровней, указанных выше, однако каждая секция реплицируется на два узла кластера.
 
 * OFF_HEAP (экспериментальная функция): аналогично MEMORY_ONLY_SER, однако данные сохраняются в памяти вне кучи, и память вне кучи требуется предварительно включить. 
 
@@ -142,7 +142,7 @@ select count(*) from books_vw;
 sc.cassandraTable("books_ks", "books").select("book_price").as((c: Double) => c).mean
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 res24: Double = 16.016000175476073
 ```
@@ -159,7 +159,7 @@ spark
   .show
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 +------------------+
 |   avg(book_price)|
@@ -173,7 +173,7 @@ spark
 ```sql
 select avg(book_price) from books_vw;
 ```
-**Выходные данные:**
+**Проверки**
 ```
 16.016000175476073
 ```
@@ -186,7 +186,7 @@ select avg(book_price) from books_vw;
 sc.cassandraTable("books_ks", "books").select("book_price").as((c: Float) => c).min
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 res31: Float = 11.33
 ```
@@ -203,7 +203,7 @@ spark
   .show
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 +---------------+
 |min(book_price)|
@@ -218,7 +218,7 @@ spark
 select min(book_price) from books_vw;
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 11.33
 ```
@@ -243,7 +243,7 @@ spark
   .show
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 +---------------+
 |max(book_price)|
@@ -257,7 +257,7 @@ spark
 ```sql
 select max(book_price) from books_vw;
 ```
-**Выходные данные:**
+**Проверки**
 ```
 22.45
 ```
@@ -270,7 +270,7 @@ select max(book_price) from books_vw;
 sc.cassandraTable("books_ks", "books").select("book_price").as((c: Float) => c).sum
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 res46: Double = 80.08000087738037
 ```
@@ -286,7 +286,7 @@ spark
   .agg(sum("book_price"))
   .show
 ```
-**Выходные данные:**
+**Проверки**
 ```
 +-----------------+
 |  sum(book_price)|
@@ -301,7 +301,7 @@ spark
 select sum(book_price) from books_vw;
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 80.08000087738037
 ```
@@ -315,7 +315,7 @@ val readCalcTopRDD = sc.cassandraTable("books_ks", "books").select("book_name","
 readCalcTopRDD.zipWithIndex.filter(_._2 < 3).collect.foreach(println)
 //delivers the first top n items without collecting the rdd to the driver.
 ```
-**Выходные данные:**
+**Проверки**
 ```
 (CassandraRow{book_name: A sign of four, book_price: 22.45},0)
 (CassandraRow{book_name: The adventures of Sherlock Holmes, book_price: 19.83},1)
@@ -341,7 +341,7 @@ readBooksDF.explain
 readBooksDF.show
 ```
 
-**Выходные данные:**
+**Проверки**
 ```
 == Physical Plan ==
 TakeOrderedAndProject(limit=3, orderBy=[book_price#1840 DESC NULLS LAST], output=[book_name#1839,book_price#1840])

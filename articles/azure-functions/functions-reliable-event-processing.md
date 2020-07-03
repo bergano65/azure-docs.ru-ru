@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: cshoe
 ms.openlocfilehash: e4f35495d8a01146068cffb9159c29c46c3c0d29
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75561873"
 ---
 # <a name="azure-functions-reliable-event-processing"></a>Обработка надежных событий в функциях Azure
@@ -55,7 +55,7 @@ ms.locfileid: "75561873"
 
 ## <a name="handling-exceptions"></a>Обработка исключений
 
-Как правило, каждая функция должна включать [блок try/catch](./functions-bindings-error-pages.md) на самом верхнем уровне кода. В частности, все функции, использующие события концентраторов событий, должны иметь блок `catch`. Таким образом, при возникновении исключения блок Catch обрабатывает ошибку перед выполнением указателя.
+Как правило, каждая функция должна включать [блок try/catch](./functions-bindings-error-pages.md) на самом верхнем уровне кода. В `catch` частности, все функции, использующие события концентраторов событий, должны иметь блок. Таким образом, при возникновении исключения блок Catch обрабатывает ошибку перед выполнением указателя.
 
 ### <a name="retry-mechanisms-and-policies"></a>Механизмы и политики повтора
 
@@ -68,9 +68,9 @@ ms.locfileid: "75561873"
 - Поврежденные или необработанные сообщения обрабатываются позже.
 
 > [!NOTE]
-> [Polly](https://github.com/App-vNext/Polly) — это пример библиотеки устойчивости и обработки временных ошибок для C# приложений.
+> [Polly](https://github.com/App-vNext/Polly) — это пример библиотеки устойчивости и обработки временных ошибок для приложений C#.
 
-При работе с предварительно скомпилированными C# библиотеками классов [фильтры исключений](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/try-catch) позволяют запускать код всякий раз, когда возникает необработанное исключение.
+При работе с предварительно скомпилированными библиотеками классов C# [фильтры исключений](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/try-catch) позволяют запускать код всякий раз, когда возникает необработанное исключение.
 
 Примеры, демонстрирующие использование фильтров исключений, доступны в репозитории [пакета SDK веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/wiki) .
 
@@ -127,8 +127,8 @@ Azure Logic Apps поставляется с встроенными соедин
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для получения дополнительных сведений см. следующие ресурсы:
+Дополнительные сведения см. в следующих ресурсах:
 
 - [Обработка ошибок службы "Функции Azure"](./functions-bindings-error-pages.md)
-- [Автоматическое изменение размера переданных изображений с помощью Сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=dotnet)
+- [Автоматизация изменения размера передаваемых изображений с помощью сетки событий](../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2Fazure%2Fazure-functions%2Ftoc.json&tabs=dotnet)
 - [Создание функции, интегрируемой с Azure Logic Apps](./functions-twitter-email.md)

@@ -3,14 +3,14 @@ title: Руководство по получению доступа к данн
 description: Сведения об обеспечении безопасного подключения данных с использованием управляемого удостоверения, а также о применении этого к другим службам Azure.
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 11/18/2019
-ms.custom: mvc
-ms.openlocfilehash: 53dc6291d699ce08e08d3504bfcd63a525eb9196
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.date: 04/27/2020
+ms.custom: mvc, cli-validate
+ms.openlocfilehash: 142cd2611e0dcf3227474efadded7bac88a4390a
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671196"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82207642"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -24,8 +24,8 @@ ms.locfileid: "74671196"
 > [!NOTE]
 > Шаги, описанные в этом руководстве, поддерживаются в следующих версиях:
 > 
-> - .NET Framework 4.7.2.
-> - .NET Core 2.2
+> - .NET Framework 4.7.2 и выше;
+> - .NET Core 2.2 и выше.
 >
 
 Освещаются следующие темы:
@@ -104,7 +104,7 @@ az login --allow-no-subscriptions
 В Visual Studio откройте консоль диспетчера пакетов и добавьте пакет NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
 
 ```powershell
-Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.4.0
 ```
 
 Работая в верхней части файла в *Web.config*, внесите следующие изменения:
@@ -125,7 +125,10 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
     </SqlAuthenticationProviders>
     ```    
 
-- Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и  _\<db-name>_ на имя вашего сервера и имя базы данных.
+- Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и _\<db-name>_ на имя вашего сервера и имя базы данных.
+
+> [!NOTE]
+> Только что зарегистрированный класс SqlAuthenticationProvider основывается на библиотеке AppAuthentication, установленной ранее. По умолчанию он использует назначенное системой удостоверение. Чтобы использовать назначенное пользователем удостоверение, необходимо предоставить дополнительную конфигурацию. Сведения о библиотеке AppAuthentication см. в разделе [Поддержка строки подключения](../key-vault/general/service-to-service-authentication.md#connection-string-support).
 
 Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений.
 
@@ -136,7 +139,7 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
 В Visual Studio откройте консоль диспетчера пакетов и добавьте пакет NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
 
 ```powershell
-Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.4.0
 ```
 
 В [руководстве по созданию приложения ASP.NET Core и Базы данных SQL](app-service-web-tutorial-dotnetcore-sqldb.md) строка подключения `MyDbConnection` вообще не применяется, так как локальная среда разработки использует файл базы данных Sqlite, а производственная среда Azure — строку подключения из Службы приложений. При проверке подлинности Active Directory обе среды должны использовать одну и ту же строку подключения. В файле *appsettings.json* замените значение строки подключения `MyDbConnection` на следующий фрагмент кода:
@@ -145,33 +148,10 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.1
 "Server=tcp:<server-name>.database.windows.net,1433;Database=<database-name>;"
 ```
 
-В файле *Startup.cs* удалите фрагмент кода, который вы добавили ранее:
-
-```csharp
-// Use SQL Database if in Azure, otherwise, use SQLite
-if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
-    services.AddDbContext<MyDatabaseContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
-else
-    services.AddDbContext<MyDatabaseContext>(options =>
-            options.UseSqlite("Data Source=localdatabase.db"));
-
-// Automatically perform database migration
-services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
-```
-
-Замените его следующим кодом:
-
-```csharp
-services.AddDbContext<MyDatabaseContext>(options => {
-    options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection"));
-});
-```
-
 Затем предоставьте контекст базы данных Entity Framework с маркером доступа для Базы данных SQL. В файле *Data \ MyDatabaseContext.cs* добавьте следующий код в фигурные скобки пустого конструктора `MyDatabaseContext (DbContextOptions<MyDatabaseContext> options)`:
 
 ```csharp
-var conn = (System.Data.SqlClient.SqlConnection)Database.GetDbConnection();
+var conn = (Microsoft.Data.SqlClient.SqlConnection)Database.GetDbConnection();
 conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceTokenProvider()).GetAccessTokenAsync("https://database.windows.net/").Result;
 ```
 
@@ -189,6 +169,9 @@ conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceT
 
 Затем настройте приложение службы приложений для подключения к базе данных SQL с назначенным системой управляемым удостоверением.
 
+> [!NOTE]
+> Хотя инструкции в этом разделе касаются назначенного системой удостоверения, можно так же легко использовать удостоверение, назначенное пользователем. Для этого потребуется изменить `az webapp identity assign command`, чтобы назначить нужное удостоверение, назначенное пользователем. Затем при создании пользователя SQL вместо имени сайта следует использовать имя ресурса назначенного пользователем удостоверения.
+
 ### <a name="enable-managed-identity-on-app"></a>Включение управляемого удостоверения в приложении
 
 Чтобы включить управляемое удостоверение для приложения Azure, используйте команду [az webapp identity assign](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app-name>* .
@@ -199,14 +182,14 @@ az webapp identity assign --resource-group myResourceGroup --name <app-name>
 
 Ниже приведен пример выхода.
 
-```json
+<pre>
 {
   "additionalProperties": {},
   "principalId": "21dfa71c-9e6f-4d17-9e90-1d28801c9735",
   "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
   "type": "SystemAssigned"
 }
-```
+</pre>
 
 ### <a name="grant-permissions-to-managed-identity"></a>Предоставление разрешений управляемому удостоверению
 
@@ -227,7 +210,7 @@ az webapp identity assign --resource-group myResourceGroup --name <app-name>
 sqlcmd -S <server-name>.database.windows.net -d <db-name> -U <aad-user-name> -P "<aad-password>" -G -l 30
 ```
 
-В командной строке SQL нужной базы данных выполните следующие команды, чтобы добавить группу Azure AD и предоставить приложению требуемые разрешения. Например, 
+В командной строке SQL нужной базы данных выполните следующие команды, чтобы предоставить приложению требуемые разрешения. Например, 
 
 ```sql
 CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER;
@@ -237,9 +220,12 @@ ALTER ROLE db_ddladmin ADD MEMBER [<identity-name>];
 GO
 ```
 
-*\<Identity-name>*  — имя управляемого удостоверения в Azure AD. Так как оно назначено системой, оно всегда совпадает с именем приложения службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup*).
+*\<Identity-name>*  — имя управляемого удостоверения в Azure AD. Если удостоверение назначено системой, имя всегда совпадает с именем приложения Службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup*).
 
 Введите `EXIT`, чтобы вернуться в командную строку Cloud Shell.
+
+> [!NOTE]
+> Серверные службы управляемых удостоверений также [поддерживают кэш маркеров](overview-managed-identity.md#obtain-tokens-for-azure-resources), который обновляет маркер целевого ресурса только по истечении срока его действия. Если вы допустите ошибку при настройке разрешений Базы данных SQL и попытаетесь изменить разрешения *после* попытки получить маркер в приложении, вы получите новый маркер с обновленными разрешениями только после того, как истечет срок действия кэшированного маркера.
 
 ### <a name="modify-connection-string"></a>Изменение строки подключения
 
@@ -274,7 +260,7 @@ git push azure master
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы научились выполнять следующие задачи:
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/21/2020
-ms.openlocfilehash: 102ae56bb9dce2898c14bdc710420759a527a9e9
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: f8e694f658d6e9de04c92001214ecd5c32ff7753
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514703"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78206866"
 ---
 # <a name="configure-the-os-patching-schedule-for-linux-based-hdinsight-clusters"></a>Настройка расписания исправлений ОС для кластеров HDInsight под управлением Linux
 
@@ -22,8 +22,8 @@ ms.locfileid: "76514703"
 
 HDInsight предоставляет поддержку для выполнения общих задач в кластере, например для установки исправлений ОС, обновлений безопасности и перезагрузки узлов. Эти задачи выполняются с помощью следующих двух скриптов, которые могут выполняться как [действия сценария](hdinsight-hadoop-customize-cluster-linux.md)и настроены с параметрами.
 
-- `schedule-reboots.sh` — выполните немедленное перезагрузку или запланируйте перезапуск на узлах кластера.
-- `install-updates-schedule-reboots.sh` — установите все обновления, только обновления ядра, системы безопасности или только обновления ядра.
+- `schedule-reboots.sh`— Выполните немедленное перезагрузку или запланируйте перезапуск на узлах кластера.
+- `install-updates-schedule-reboots.sh`— Установите все обновления, только обновления ядра, системы безопасности или только обновления ядра.
 
 > [!NOTE]  
 > Действия скрипта не будут автоматически применять обновления для всех будущих циклов обновления. Запускайте скрипты каждый раз, когда необходимо применить новые обновления для установки обновлений, а затем перезапустите виртуальную машину.
@@ -45,7 +45,7 @@ Run 'do-release-upgrade' to upgrade it
   
 [Расписание — перезагрузка](https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/schedule-reboots.sh)— задает тип перезагрузки, который будет выполняться на компьютерах в кластере. При отправке действия скрипта настройте его для применения ко всем трем типам узлов: головной узел, Рабочий узел и Zookeeper. Если скрипт не применяется к типу узла, виртуальные машины для этого типа узла не будут обновлены или перезапущены.
 
-`schedule-reboots script` принимает один числовой параметр:
+`schedule-reboots script` Принимает один числовой параметр:
 
 | Параметр | Допустимые значения | Определение |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ Run 'do-release-upgrade' to upgrade it
 
 Сценарий [install-updates-Schedule-reboots.sh](https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/install-updates-schedule-reboots.sh) предоставляет параметры для установки различных типов обновлений и ПЕРЕЗАПУСКА виртуальной машины.
 
-Сценарий `install-updates-schedule-reboots` принимает два числовых параметра, как описано в следующей таблице.
+`install-updates-schedule-reboots` Сценарий принимает два числовых параметра, как описано в следующей таблице.
 
 | Параметр | Допустимые значения | Определение |
 | --- | --- | --- |
@@ -65,9 +65,9 @@ Run 'do-release-upgrade' to upgrade it
 > [!NOTE]
 > Сценарий необходимо пометить как сохраненный после применения к существующему кластеру. В противном случае все новые узлы, созданные операциями масштабирования, будут использовать расписание обновления путем частичной замены ОС по умолчанию. Если применить сценарий как часть процесса создания кластера, он будет сохранен автоматически.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Конкретные действия по использованию действий скрипта см. в следующих разделах: [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
 
-- [Использование действия скрипта при создании кластера](hdinsight-hadoop-customize-cluster-linux.md#use-a-script-action-during-cluster-creation)
-- [Применение действия скрипта в работающем кластере](hdinsight-hadoop-customize-cluster-linux.md#apply-a-script-action-to-a-running-cluster)
+- [Использование действия сценария во время создания кластера](hdinsight-hadoop-customize-cluster-linux.md#script-action-during-cluster-creation)
+- [Применение действия скрипта в работающем кластере](hdinsight-hadoop-customize-cluster-linux.md#script-action-to-a-running-cluster)

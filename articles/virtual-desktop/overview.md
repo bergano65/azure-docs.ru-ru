@@ -5,14 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: overview
-ms.date: 01/27/2020
+ms.date: 04/10/2020
 ms.author: helohr
-ms.openlocfilehash: 168a345427be47dc1c33f43be1af47daa8f638ef
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+manager: lizross
+ms.openlocfilehash: 927696d029bf1b8742dc0001e03799322f368191
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772784"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81261726"
 ---
 # <a name="what-is-windows-virtual-desktop"></a>Что такое Виртуальный рабочий стол Windows 
 
@@ -72,7 +73,7 @@ ms.locfileid: "76772784"
 
 Требования к инфраструктуре для включения поддержки Виртуального рабочего стола Windows следующие:
 
-* Наличие [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
+* Наличие [Azure Active Directory](/azure/active-directory/).
 * Windows Server Active Directory с синхронизацией с Azure Active Directory. Это можно реализовать с помощью следующих компонентов:
   * Azure AD Connect (для гибридных организаций);
   * доменные службы Azure AD (для гибридных или облачных организаций).
@@ -80,7 +81,7 @@ ms.locfileid: "76772784"
   
 Требования к виртуальным машинам Azure, созданным для Виртуального рабочего стола Windows, следующие:
 
-* [Стандартное присоединение к домену](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-comparison) или [гибридное присоединение к AD](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan). Виртуальные машины не могут быть присоединены к Azure AD.
+* [Стандартное присоединение к домену](../active-directory-domain-services/active-directory-ds-comparison.md) или [гибридное присоединение к AD](../active-directory/devices/hybrid-azuread-join-plan.md). Виртуальные машины не могут быть присоединены к Azure AD.
 * Использование одного из следующих [поддерживаемых образов ОС](#supported-virtual-machine-os-images).
 
 >[!NOTE]
@@ -88,21 +89,36 @@ ms.locfileid: "76772784"
 
 Виртуальные машины Azure, которые вы создаете для Виртуального рабочего стола Windows, должны иметь доступ к следующим URL-адресам:
 
-|Адрес|Исходящий порт|Назначение|
-|---|---|---|
-|*.wvd.microsoft.com|TCP-порт 443|Служба трафика|
-|*.blob.core.windows.net|TCP-порт 443|Агент, обновления распределения SXS, и Агент трафика|
-|*.core.windows.net|TCP-порт 443|Агент трафика|
-|*.servicebus.windows.net|TCP-порт 443|Агент трафика|
-|prod.warmpath.msftcloudes.com;|TCP-порт 443|Агент трафика|
-|catalogartifact.azureedge.net|TCP-порт 443|Azure Marketplace|
-|kms.core.windows.net|TCP порт 1688|Активация Windows 10|
+|Адрес|Исходящий TCP-порт|Назначение|Тег службы|
+|---|---|---|---|
+|*.wvd.microsoft.com|443|Служба трафика|WindowsVirtualDesktop|
+|mrsglobalsteus2prod.blob.core.windows.net|443|Обновления агента и стека SxS|AzureCloud;|
+|*.core.windows.net|443|Агент трафика|AzureCloud;|
+|*.servicebus.windows.net|443|Агент трафика|AzureCloud;|
+|prod.warmpath.msftcloudes.com;|443|Агент трафика|AzureCloud;|
+|catalogartifact.azureedge.net|443|Azure Marketplace|AzureCloud;|
+|kms.core.windows.net|1688|Активация Windows|Интернет|
 
 >[!IMPORTANT]
->Открытие этих URL-адресов является обязательным для надежного развертывания Виртуальных рабочих столов Windows. Блокировка доступа к этим URL-адресам не поддерживается и повлияет на функциональность службы. Эти URL-адреса соответствуют только сайтам и ресурсам Виртуальных рабочих столов Windows и не включают URL-адреса для других служб, таких как Azure AD.
+>Вместо URL-адресов мы рекомендуем использовать теги службы в большинстве случаев, чтобы избежать проблем со службами. Для успешного развертывания Виртуального рабочего стола Windows такие URL-адреса должны быть обязательно разблокированы. Блокировка доступа к этим URL-адресам не поддерживается и повлияет на функциональность службы. Эти URL-адреса соответствуют только сайтам и ресурсам Виртуальных рабочих столов Windows и не включают URL-адреса для других служб, таких как Azure AD.
+
+В следующей таблице перечислены дополнительные URL-адреса, к которым виртуальные машины Azure могут иметь доступ:
+
+|Адрес|Исходящий TCP-порт|Назначение|Тег службы|
+|---|---|---|---|
+|*.microsoftonline.com|443|Проверка подлинности в MS Online Services|None|
+|*.events.data.microsoft.com|443|Служба телеметрии|None|
+|www.msftconnecttest.com|443|Проверка, подключена ли ОС к Интернету.|None|
+|*.prod.do.dsp.mp.microsoft.com|443|Центр обновления Windows|None|
+|login.windows.net|443|Вход в MS Online Services (Office 365)|None|
+|*.sfx.ms|443|Обновления для клиентского программного обеспечения OneDrive|None|
+|*.digicert.com|443|Проверка отзыва сертификата|None|
+
 
 >[!NOTE]
 >Виртуальный рабочий стол Windows в настоящее время не имеет списка диапазонов IP-адресов, которые можно было бы включить в список разрешений сетевого трафика. На данный момент мы поддерживаем только списки разрешений конкретных URL-адресов.
+>
+>Список связанных с Office URL-адресов, включая необходимые Azure Active Directory URL-адреса, см. в статье [URL-адреса и диапазоны IP-адресов Office 365](/office365/enterprise/urls-and-ip-address-ranges).
 >
 >Для URL-адресов, включающих службу трафика, необходимо использовать подстановочный знак (*). Если вы предпочитаете не использовать "*" для трафика, связанного с агентом, URL-адреса без подстановочных знаков можно найти, выполнив приведенные ниже действия.
 >
@@ -122,11 +138,32 @@ ms.locfileid: "76772784"
 
 Виртуальный рабочий стол Windows поддерживают следующие клиенты удаленного рабочего стола:
 
-* [Windows](connect-windows-7-and-10.md)
+* [Классические приложения Windows](connect-windows-7-and-10.md)
 * [Web](connect-web.md)
-* [Mac](connect-macos.md)
+* [macOS](connect-macos.md)
 * [iOS](connect-ios.md)
 * [Android (предварительная версия)](connect-android.md)
+
+> [!IMPORTANT]
+> Виртуальный рабочий стол Windows не поддерживает клиент Подключения к удаленным рабочим столам и приложениям RemoteApp (RADC) или клиент Подключения к удаленному рабочему столу (MSTSC).
+
+> [!IMPORTANT]
+> Виртуальный рабочий стол Windows в настоящее время не поддерживает клиент Удаленного рабочего стола из Магазина Windows. Поддержка этого клиента будет добавлена в следующем выпуске.
+
+Клиенты Удаленного рабочего стола должны иметь доступ к следующим URL-адресам:
+
+|Адрес|Исходящий TCP-порт|Назначение|Клиент(ы)|
+|---|---|---|---|
+|*.wvd.microsoft.com|443|Служба трафика|All|
+|*.servicebus.windows.net|443|Данные диагностики|All|
+|сайт go.microsoft.com;|443|Microsoft FWLinks|All|
+|aka.ms|443|Средство сокращения URL-адресов Майкрософт|All|
+|docs.microsoft.com|443|Документация|All|
+|privacy.microsoft.com|443|Заявление о конфиденциальности|All|
+|query.prod.cms.rt.microsoft.com|443|Клиентские обновления|Классические приложения|
+
+>[!IMPORTANT]
+>Открытие этих URL-адресов является обязательным для надежной работы клиента. Блокировка доступа к этим URL-адресам не поддерживается и повлияет на функциональность службы. Эти URL-адреса соответствуют только сайтам и ресурсам и не включают URL-адреса для других служб, таких как Azure AD.
 
 ## <a name="supported-virtual-machine-os-images"></a>Поддерживаемые образы ОС виртуальной машины
 

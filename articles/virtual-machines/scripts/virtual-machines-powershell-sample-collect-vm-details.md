@@ -16,10 +16,10 @@ ms.date: 07/01/2019
 ms.author: v-miegge
 ms.custom: mvc
 ms.openlocfilehash: 237081380445f2b2e4168ee3afe9a3ed7544fc89
-ms.sourcegitcommit: 375b70d5f12fffbe7b6422512de445bad380fe1e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74900196"
 ---
 # <a name="collect-details-about-all-vms-in-a-subscription-with-powershell"></a>Получение сведений обо всех виртуальных машинах в подписке с помощью PowerShell
@@ -32,7 +32,7 @@ ms.locfileid: "74900196"
 
 Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
 
-Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/powershell](https://shell.azure.com/powershell). Нажмите кнопку **Копировать**, чтобы скопировать блок кода. Вставьте код в Cloud Shell и нажмите клавишу ВВОД, чтобы выполнить его.
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/powershell](https://shell.azure.com/powershell). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
 
 ## <a name="sample-script"></a>Пример скрипта
 
@@ -72,11 +72,11 @@ $report | Export-CSV "$home/$reportName"
 ## <a name="script-explanation"></a>Описание скрипта
 Этот сценарий использует следующие команды для создания экспорта CSV-файла сведений о виртуальных машинах в подписке. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-|Команда|Заметки|
+|Get-Help|Примечания|
 |-|-|
 |[SELECT-Азсубскриптион](https://docs.microsoft.com/powershell/module/Az.Accounts/Set-AzContext)|Задает клиент, подписку и среду для командлетов, используемых в текущем сеансе.|
 |[Get-AzVM](https://docs.microsoft.com/powershell/module/Az.Compute/Get-AzVM)|Возвращает свойства виртуальной машины.|
-|[Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/Az.Network/Get-AzPublicIpAddress)|Возвращает общедоступный IP-адрес.|
+|[Get-АзпублиЦипаддресс](https://docs.microsoft.com/powershell/module/Az.Network/Get-AzPublicIpAddress)|Возвращает общедоступный IP-адрес.|
 |[Get-Азнетворкинтерфаце](https://docs.microsoft.com/powershell/module/Az.Network/Get-AzNetworkInterface)|Возвращает сетевой интерфейс.|
 
 ## <a name="next-steps"></a>Дальнейшие действия

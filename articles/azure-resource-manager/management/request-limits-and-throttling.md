@@ -2,14 +2,14 @@
 title: Ограничения запросов и регулирование
 description: В данной статье описывается использование регулирования запросов Azure Resource Manager при достижении ограничений подписки.
 ms.topic: conceptual
-ms.date: 10/26/2019
+ms.date: 03/24/2020
 ms.custom: seodec18
-ms.openlocfilehash: 129ca3ba32d48345bde931c6bd2084c3da79be39
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 4d387749261747eb9ea1ea26629ade4fe8729856
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75659378"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80239360"
 ---
 # <a name="throttling-resource-manager-requests"></a>Регулирование запросов Resource Manager
 
@@ -25,12 +25,12 @@ ms.locfileid: "75659378"
 
 Ограничения по умолчанию для регулирования в час показаны в следующей таблице.
 
-| Область действия | Operations | Ограничение |
+| Область | Операции | Ограничение |
 | ----- | ---------- | ------- |
-| Subscription | операции чтения | 12000 |
-| Subscription | deletes | 15 000 |
-| Subscription | writes | 1200 |
-| Клиент | операции чтения | 12000 |
+| Подписка | reads | 12000 |
+| Подписка | deletes | 15 000 |
+| Подписка | writes | 1200 |
+| Клиент | reads | 12000 |
 | Клиент | writes | 1200 |
 
 Эти ограничения касаются субъекта безопасности (пользователь или приложение), выполняющего запросы, а также идентификатора подписки или идентификатора клиента. Если запросы поступают от нескольких субъектов безопасности, ваше ограничение для подписки или клиента превышает 12 000 и 1200 в час.
@@ -66,10 +66,6 @@ ms.locfileid: "75659378"
 
 [Граф ресурсов Azure](../../governance/resource-graph/overview.md) ограничивает количество запросов к его операциям. Действия, описанные в этой статье, позволяют определить оставшиеся запросы и ответы на них, если достигнуто предельное значение, которое также применяется к графу ресурсов. Тем не менее, граф ресурсов устанавливает собственные ограничения и скорость сброса. Дополнительные сведения см. в разделе [заголовков регулирования для графика ресурсов](../../governance/resource-graph/concepts/guidance-for-throttled-requests.md#understand-throttling-headers).
 
-## <a name="request-increase"></a>Запросить увеличение
-
-Иногда ограничения регулирования можно увеличить. Чтобы узнать, можно ли увеличить пределы регулирования для вашего сценария, создайте запрос в службу поддержки. Будут вычислены сведения о вызывающем коде.
-
 ## <a name="error-code"></a>Код ошибки
 
 По достижении ограничения отображается код состояния HTTP **429 — слишком много запросов**. Ответ включает значение **Retry-After** , которое указывает количество секунд ожидания (или спящего режима) приложения перед отправкой следующего запроса. Если отправить запрос до истечения значения Retry-After, этот запрос не будет обработан, и будет возвращено новое значение Retry-After.
@@ -84,7 +80,7 @@ ms.locfileid: "75659378"
 
 Количество оставшихся запросов можно определить, проверяя заголовки ответов. Запросы на чтение возвращают значение в заголовке для количества оставшихся запросов на чтение. Запросы на запись включают значение числа оставшихся запросов на запись. В приведенной ниже таблице описаны заголовки ответов, в которых можно проверить эти значения.
 
-| Заголовок ответа | Description |
+| Заголовок ответа | Описание |
 | --- | --- |
 | x-ms-ratelimit-remaining-subscription-reads |Оставшееся число запросов на чтение для подписки. Это значение возвращается при операциях чтения. |
 | x-ms-ratelimit-remaining-subscription-writes |Оставшееся число запросов на запись для подписки. Это значение возвращается при операциях записи. |
@@ -124,7 +120,7 @@ Get-AzResourceGroup -Debug
 
 Он возвращает массу значений, включая следующее значение ответа.
 
-```powershell
+```output
 DEBUG: ============================ HTTP RESPONSE ============================
 
 Status Code:
@@ -143,7 +139,7 @@ New-AzResourceGroup -Name myresourcegroup -Location westus -Debug
 
 Будет возвращено множество значений, включая следующие:
 
-```powershell
+```output
 DEBUG: ============================ HTTP RESPONSE ============================
 
 Status Code:
@@ -162,7 +158,7 @@ az group list --verbose --debug
 
 Будет возвращено множество значений, включая следующие:
 
-```azurecli
+```output
 msrest.http_logger : Response status: 200
 msrest.http_logger : Response headers:
 msrest.http_logger :     'Cache-Control': 'no-cache'
@@ -182,7 +178,7 @@ az group create -n myresourcegroup --location westus --verbose --debug
 
 Будет возвращено множество значений, включая следующие:
 
-```azurecli
+```output
 msrest.http_logger : Response status: 201
 msrest.http_logger : Response headers:
 msrest.http_logger :     'Cache-Control': 'no-cache'
@@ -193,7 +189,7 @@ msrest.http_logger :     'Expires': '-1'
 msrest.http_logger :     'x-ms-ratelimit-remaining-subscription-writes': '1199'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Полный пример для PowerShell см. в разделе [Проверьте ограничения Resource Manager для подписки](https://github.com/Microsoft/csa-misc-utils/tree/master/psh-GetArmLimitsViaAPI).
 * Дополнительные сведения об ограничениях и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md).

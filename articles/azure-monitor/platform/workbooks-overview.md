@@ -1,22 +1,21 @@
 ---
-title: Общие сведения о Azure Monitor книгах
+title: Общие сведения о книгах Azure Monitor
 description: Упростите создание сложных отчетов с помощью готовых настраиваемых параметризованных книг
 author: mrbullwinkle
 manager: carmonm
 services: azure-monitor
-ms.service: azure-monitor
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: cf11ce3a77fb47b7d8586ef56141a72cd0a10c2e
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 29e675f3ae35df9211f58d45ad8450566d67a588
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872865"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77658240"
 ---
-# <a name="azure-monitor-workbooks"></a>Azure Monitor книги
+# <a name="azure-monitor-workbooks"></a>Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights
 
 Книги предоставляют гибкий холст для анализа данных и создания полнофункциональных визуальных отчетов в портал Azure. Они позволяют переходить к нескольким источникам данных из Azure и объединять их в единый интерактивный интерфейс. 
 
@@ -30,8 +29,8 @@ ms.locfileid: "74872865"
 
 * [Журналы](workbooks-data-sources.md#logs)
 * [Метрики](workbooks-data-sources.md#metrics)
-* [Граф ресурсов Azure](workbooks-data-sources.md#azure-resource-graph)
-* [Оповещения (Предварительная версия)](workbooks-data-sources.md#alerts-preview)
+* [Azure Resource Graph](workbooks-data-sources.md#azure-resource-graph)
+* [Оповещения (предварительная версия)](workbooks-data-sources.md#alerts-preview)
 * [Работоспособность рабочей нагрузки (Предварительная версия)](workbooks-data-sources.md#workload-health-preview)
 * [Работоспособность ресурсов Azure (Предварительная версия)](workbooks-data-sources.md#azure-resource-health)
 * [Обозреватель данных Azure (Предварительная версия)](workbooks-data-sources.md#azure-data-explorer-preview)
@@ -40,11 +39,11 @@ ms.locfileid: "74872865"
 
 Книги предоставляют широкий набор возможностей для визуализации данных. Подробные примеры каждого типа визуализации см. в приведенных ниже ссылках на примеры.
 
-* [текст](workbooks-visualizations.md#text)
-* [Создание графиков](workbooks-visualizations.md#charts)
+* [Текст](workbooks-visualizations.md#text)
+* [Диаграммы](workbooks-visualizations.md#charts)
 * [Сетки](workbooks-visualizations.md#grids)
-* [Плитки](workbooks-visualizations.md#tiles)
-* [Дерева](workbooks-visualizations.md#trees)
+* [Плитка](workbooks-visualizations.md#tiles)
+* [Деревья](workbooks-visualizations.md#trees)
 * [Графы](workbooks-visualizations.md#graphs)
 
 ![Примеры визуализаций книги](./media/workbooks-overview/visualizations.png)
@@ -53,11 +52,11 @@ ms.locfileid: "74872865"
 
 Чтобы исследовать работу с книгами, сначала перейдите в службу Azure Monitor. Это можно сделать, введя **Monitor** в поле поиска в портал Azure.
 
-Затем выберите **книги (Предварительная версия)** .
+Затем выберите **книги (Предварительная версия)**.
 
 ![Снимок экрана: Кнопка предварительного просмотра книг, выделенная красным прямоугольником](./media/workbooks-overview/workbooks-preview.png)
 
-### <a name="gallery"></a>Коллекция
+### <a name="gallery"></a>Коллекции
 
 Откроется коллекция книг:
 

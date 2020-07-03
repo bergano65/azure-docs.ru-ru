@@ -4,16 +4,16 @@ description: Отслеживайте Azure Backup рабочие нагрузк
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 4ff51080d675c53e53397a070c1f6f1766aa9e85
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 54a98cebc2887f7508543a4dc752b2145c3bbda2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989592"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82183659"
 ---
 # <a name="monitor-at-scale-by-using-azure-monitor"></a>Мониторинг в масштабе с помощью Azure Monitor
 
-Azure Backup предоставляет [встроенные возможности мониторинга и оповещения](backup-azure-monitoring-built-in-monitor.md) в хранилище служб восстановления. Эти возможности доступны без какой бы то ни было дополнительной инфраструктуры управления. Но эта встроенная служба ограничена в следующих сценариях:
+Azure Backup предоставляет [встроенные возможности мониторинга и оповещения](backup-azure-monitoring-built-in-monitor.md) в хранилище Служб восстановления. Эти возможности доступны без какой бы то ни было дополнительной инфраструктуры управления. Но эта встроенная служба ограничена в следующих сценариях:
 
 - Мониторинг данных из нескольких хранилищ служб восстановления между подписками
 - Если предпочтительный канал уведомления *не* является адресом электронной почты
@@ -29,11 +29,11 @@ Azure Backup предоставляет [встроенные возможнос
 > [!IMPORTANT]
 > Сведения о затратах на создание этого запроса см. в разделе [цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 
-Выберите любой из диаграмм, чтобы открыть раздел **журналы** рабочей области log Analytics. В разделе **журналы** измените запросы и создайте оповещения для них.
+Откройте раздел **журналы** рабочей области log Analytics и создайте запрос для собственных журналов. При выборе **нового правила генерации оповещений**открывается страница Azure Monitor создание оповещений, как показано на следующем рисунке.
 
-![Создание оповещения в рабочей области Log Analytics](media/backup-azure-monitoring-laworkspace/la-azurebackup-customalerts.png)
+![Создание оповещения в рабочей области Log Analytics](media/backup-azure-monitoring-laworkspace/custom-alert.png)
 
-При выборе **нового правила генерации оповещений**открывается страница Azure Monitor создание оповещений, как показано на следующем рисунке. Ресурс уже помечен как Рабочая область Log Analytics, и предоставляется интеграция группы действий.
+Ресурс уже помечен как Рабочая область Log Analytics, и предоставляется интеграция группы действий.
 
 ![Страница создания оповещений Log Analytics](media/backup-azure-monitoring-laworkspace/inkedla-azurebackup-createalert.jpg)
 
@@ -63,64 +63,83 @@ Azure Backup предоставляет [встроенные возможнос
 
     ````Kusto
     AddonAzureBackupJobs
-| where JobOperation=="Backup"
-| where JobStatus=="Completed"
+    | where JobOperation=="Backup"
+    | where JobStatus=="Completed"
     ````
 
 - Все задания резервного копирования, завершившиеся сбоем
 
     ````Kusto
     AddonAzureBackupJobs
-| where JobOperation=="Backup"
-| where JobStatus=="Failed"
+    | where JobOperation=="Backup"
+    | where JobStatus=="Failed"
     ````
 
 - Все успешные задания резервного копирования виртуальных машин Azure
 
     ````Kusto
     AddonAzureBackupJobs
-| where JobOperation=="Backup"
-| where JobStatus=="Completed"
-| join kind=inner
-(
-    CoreAzureBackup
-    | where OperationName == "BackupItem"
-    | where BackupItemType=="VM" and BackupManagementType=="IaaSVM"
-    | distinct BackupItemUniqueId, BackupItemFriendlyName
-)
-on BackupItemUniqueId
+    | where JobOperation=="Backup"
+    | where JobStatus=="Completed"
+    | join kind=inner
+    (
+        CoreAzureBackup
+        | where OperationName == "BackupItem"
+        | where BackupItemType=="VM" and BackupManagementType=="IaaSVM"
+        | distinct BackupItemUniqueId, BackupItemFriendlyName
+    )
+    on BackupItemUniqueId
     ````
 
 - Все успешные задания резервного копирования журналов SQL
 
     ````Kusto
     AddonAzureBackupJobs
-| where JobOperation=="Backup" and JobOperationSubType=="Log"
-| where JobStatus=="Completed"
-| join kind=inner
-(
-    CoreAzureBackup
-    | where OperationName == "BackupItem"
-    | where BackupItemType=="SQLDataBase" and BackupManagementType=="AzureWorkload"
-    | distinct BackupItemUniqueId, BackupItemFriendlyName
-)
-on BackupItemUniqueId
+    | where JobOperation=="Backup" and JobOperationSubType=="Log"
+    | where JobStatus=="Completed"
+    | join kind=inner
+    (
+        CoreAzureBackup
+        | where OperationName == "BackupItem"
+        | where BackupItemType=="SQLDataBase" and BackupManagementType=="AzureWorkload"
+        | distinct BackupItemUniqueId, BackupItemFriendlyName
+    )
+    on BackupItemUniqueId
     ````
 
 - Все успешные задания агента Azure Backup
 
     ````Kusto
     AddonAzureBackupJobs
-| where JobOperation=="Backup"
-| where JobStatus=="Completed"
-| join kind=inner
-(
+    | where JobOperation=="Backup"
+    | where JobStatus=="Completed"
+    | join kind=inner
+    (
+        CoreAzureBackup
+        | where OperationName == "BackupItem"
+        | where BackupItemType=="FileFolder" and BackupManagementType=="MAB"
+        | distinct BackupItemUniqueId, BackupItemFriendlyName
+    )
+    on BackupItemUniqueId
+    ````
+
+- Используемое хранилище резервных копий для каждого элемента резервного копирования
+
+    ````Kusto
     CoreAzureBackup
+    //Get all Backup Items
     | where OperationName == "BackupItem"
-    | where BackupItemType=="FileFolder" and BackupManagementType=="MAB"
+    //Get distinct Backup Items
     | distinct BackupItemUniqueId, BackupItemFriendlyName
-)
-on BackupItemUniqueId
+    | join kind=leftouter
+    (AddonAzureBackupStorage
+    | where OperationName == "StorageAssociation"
+    //Get latest record for each Backup Item
+    | summarize arg_max(TimeGenerated, *) by BackupItemUniqueId
+    | project BackupItemUniqueId , StorageConsumedInMBs)
+    on BackupItemUniqueId
+    | project BackupItemUniqueId , BackupItemFriendlyName , StorageConsumedInMBs
+    | sort by StorageConsumedInMBs desc
     ````
 
 ### <a name="diagnostic-data-update-frequency"></a>Частота обновления диагностических данных
@@ -163,7 +182,7 @@ on BackupItemUniqueId
 
 Вы можете просматривать все оповещения, созданные на основе журналов действий и Log Analytics рабочих областей в Azure Monitor. Просто откройте панель **оповещения** слева.
 
-Хотя вы можете получать уведомления с помощью журналов действий, мы настоятельно рекомендуем использовать Log Analytics, а не журналы действий для мониторинга в масштабе. Вот почему:
+Хотя вы можете получать уведомления с помощью журналов действий, мы настоятельно рекомендуем использовать Log Analytics, а не журналы действий для мониторинга в масштабе. Далее описывается, почему это происходит:
 
 - **Ограниченные сценарии**: уведомления с помощью журналов действий применяются только к резервным КОПИЯМ виртуальных машин Azure. Уведомления должны быть настроены для каждого хранилища служб восстановления.
 - **Определение соответствия**: запланированное действие резервного копирования не соответствует последнему определению журналов действий. Вместо этого он выполняет согласование с [журналами ресурсов](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-collect-workspace#what-you-can-do-with-platform-logs-in-a-workspace). Такое выравнивание приводит к непредвиденным последствиям при изменении данных, передаваемых по каналу журнала действий.
@@ -171,6 +190,6 @@ on BackupItemUniqueId
 
 Используйте рабочую область Log Analytics для мониторинга и оповещения в масштабе для всех рабочих нагрузок, защищенных Azure Backup.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Сведения о создании настраиваемых запросов см. в разделе [log Analytics Data Model](backup-azure-log-analytics-data-model.md).
+Сведения о создании настраиваемых запросов см. в разделе [log Analytics Data Model](backup-azure-reports-data-model.md).

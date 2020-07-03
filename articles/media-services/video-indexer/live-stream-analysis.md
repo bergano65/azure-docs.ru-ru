@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 11/13/2019
 ms.author: juliako
 ms.openlocfilehash: 89d0254fc758834c437f347e6ecb7bcafc1fe467
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74185995"
 ---
 # <a name="live-stream-analysis-with-video-indexer"></a>Интерактивный анализ потоков с помощью индексатора видео
@@ -37,10 +37,10 @@ ms.locfileid: "74185995"
 
 *Рис. 2. два приложения логики, обрабатывающие динамический поток каждую минуту в облаке.*
 
-## <a name="step-by-step-guide"></a>Пошаговое руководство 
+## <a name="step-by-step-guide"></a>Пошаговое руководством 
 
 Полный код и пошаговое руководств по развертыванию результатов можно найти в [проекте GitHub для Live Media Analytics с помощью индексатора видео](https://aka.ms/livestreamanalysis). 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)

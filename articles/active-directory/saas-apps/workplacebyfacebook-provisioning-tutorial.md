@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/10/2019
+ms.date: 04/28/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7d8a7881c00427023e5f174461b3d8b24d83444
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 99103c9994b240e2f45b66acf269b320c90e5135
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121442"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82231736"
 ---
 # <a name="tutorial-configure-workplace-by-facebook-for-automatic-user-provisioning"></a>Руководство по настройке Workplace by Facebook для автоматической подготовки пользователей
 
@@ -33,25 +33,16 @@ ms.locfileid: "77121442"
 * Изменения на стороне Azure AD: метод авторизации для предоставления пользователям на рабочем месте, исторически длинный секретный токен. Вскоре вы увидите, что метод авторизации был изменен на предоставление авторизации OAuth. 
 * Изменения на стороне рабочего места. ранее приложение Azure AD было пользовательской интеграцией на рабочем месте в Facebook. Теперь вы увидите Azure AD в каталоге интеграции с рабочей областью как стороннее приложение. 
 
- 
-
 #### <a name="what-do-i-need-to-do-to-migrate-my-existing-custom-integration-to-the-new-application"></a>Что нужно сделать для переноса существующей пользовательской интеграции в новое приложение?
-Если у вас есть интеграция на рабочем месте с действительным маркером, **никаких действий не требуется**. Мы автоматически переносим каждую неделю клиентов на новое приложение. Это делается полностью в фоновом режиме. Если вы не можете подождать и хотите перейти к новому приложению вручную, можно добавить новый экземпляр рабочей области из коллекции и настроить подготовку еще раз. Все новые экземпляры рабочей области будут автоматически использовать новую версию приложения. 
-
+Если у вас есть интеграция на рабочем месте с действительным маркером, никаких действий не требуется. **На 04/28/2020 мы автоматически перенесли все приложения, которые не находятся в карантине, из-за недопустимых учетных данных.**
  
-Если интеграция с рабочей областью находится в карантине, вам потребуется снова предоставить действительный маркер, чтобы мы могли перенести вас. Раздел учетные данные администратора будет неактивен, но можно добавить следующий**код (? Microsoft_AAD_IAM_userProvisioningEnableCredentialsOverride = true**) URL-адрес для повторного сохранения учетных данных. 
-
-https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOverride=true
-
 #### <a name="how-can-i-tell-if-my-application-has-been-migrated"></a>Как узнать, перенесено ли приложение? 
-При переносе приложения баннер в разделе авторизации, посвященной отправкой изменений, будет удален, а поле Секретный токен будет заменено синей кнопкой авторизовать. 
+* На портале Azure: при переносе приложения баннер в разделе Авторизация, посвященная предстоящим изменениям, будет удалена, а поле Секретный токен будет заменено синей кнопкой авторизовать. 
+* На портале службы Facebook на рабочем месте: Проверьте приложение Azure AD, чтобы убедиться, что оно утверждено.  
 
 #### <a name="the-admin-credentials-section-is-greyed-out-on-my-application-and-i-cant-save-why"></a>Раздел учетные данные администратора неактивен в моем приложении и не может быть сохранен. Почему?
-Мы заблокировали раздел учетные данные администратора для существующих клиентов рабочей области. Когда клиент будет перенесен в новое приложение рабочей области, вы сможете снова обновить раздел учетных данных администратора. Если вы не можете подождать, можно использовать приведенный выше URL-адрес для изменения приложения. 
+Мы заблокировали раздел учетных данных администратора для клиентов рабочей области, которые не были перенесены. Используйте следующий URL-адрес, если раздел учетные данные администратора неактивен и вам нужно авторизовать доступ снова. **? Microsoft_AAD_IAM_userProvisioningEnableCredentialsOverride = true** (https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOverride=true)
 
- 
-#### <a name="when-will-these-changes-happen"></a>Когда будут происходить эти изменения?
-На всех новых экземплярах рабочей области уже будет использоваться новый метод интеграции или авторизации. Существующие интеграции будут постепенно перенесены в феврале. Миграция будет завершена для всех клиентов в конце месяца. 
 
 ## <a name="capabilities-supported"></a>Поддерживаемые возможности
 > [!div class="checklist"]
@@ -60,7 +51,7 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 > * Обеспечение синхронизации атрибутов пользователей между Azure AD и рабочей областью Facebook
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/workplacebyfacebook-tutorial) на рабочее место с помощью Facebook (рекомендуется)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -109,11 +100,11 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 
     ![Ссылка на Workplace by Facebook в списке "Приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
@@ -135,28 +126,28 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 
    |attribute|Тип|
    |---|---|
-   |userName|String|
-   |displayName|String|
-   |active|Логическое|
-   |title|Логическое|
-   |emails[type eq "work"].value|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |Name. форматируются|String|
-   |адреса [Type EQ "Рабочая"]. форматированный|String|
-   |addresses[type eq "work"].streetAddress|String|
-   |адреса [Введите EQ "Рабочий"]. локальность|String|
-   |адреса [Type EQ "Рабочий"]. регион|String|
-   |адреса [Type EQ "Рабочая"]. Country|String|
-   |addresses[type eq "work"].postalCode|String|
-   |адреса [Введите EQ "Other"]. форматированный|String|
-   |phoneNumbers[type eq "work"].value|String|
-   |phoneNumbers[type eq "mobile"].value|String|
-   |phoneNumbers[type eq "fax"].value|String|
-   |externalId|String|
-   |preferredLanguage|String|
-   |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер|String|
-   |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|String|
+   |userName|Строка|
+   |displayName|Строка|
+   |active|Логическое значение|
+   |title|Логическое значение|
+   |emails[type eq "work"].value|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |Name. форматируются|Строка|
+   |адреса [Type EQ "Рабочая"]. форматированный|Строка|
+   |addresses[type eq "work"].streetAddress|Строка|
+   |адреса [Введите EQ "Рабочий"]. локальность|Строка|
+   |адреса [Type EQ "Рабочий"]. регион|Строка|
+   |адреса [Type EQ "Рабочая"]. Country|Строка|
+   |addresses[type eq "work"].postalCode|Строка|
+   |адреса [Введите EQ "Other"]. форматированный|Строка|
+   |phoneNumbers[type eq "work"].value|Строка|
+   |phoneNumbers[type eq "mobile"].value|Строка|
+   |phoneNumbers[type eq "fax"].value|Строка|
+   |externalId|Строка|
+   |preferredLanguage|Строка|
+   |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер|Строка|
+   |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|Строка|
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -189,6 +180,6 @@ https://portal.azure.com/?Microsoft_AAD_IAM_userProvisioningEnableCredentialsOve
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

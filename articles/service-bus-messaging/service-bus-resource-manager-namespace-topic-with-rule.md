@@ -14,20 +14,20 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 11/27/2019
 ms.author: spelluru
-ms.openlocfilehash: d4c4f055114ccd0be4bbc588b7785eb0fb2f48c4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6cbaf447dfcf06ae11f2282d7d847978297af8b8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426895"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80384897"
 ---
 # <a name="create-a-service-bus-namespace-with-topic-subscription-and-rule-using-an-azure-resource-manager-template"></a>Создание пространства имен служебной шины с разделом, подпиской и правилом с помощью шаблона Azure Resource Manager
 
 В этой статье показывается, как использовать шаблон Azure Resource Manager, создающий пространство имен служебной шины с разделом, подпиской и правилом (фильтром). Здесь объясняется, как указать развертываемые ресурсы и определить параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или изменить его в соответствии с вашими требованиями.
 
-Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager][Authoring Azure Resource Manager templates].
+Дополнительные сведения о создании шаблонов см. в разделе [authoring Azure Resource Manager Templates][Authoring Azure Resource Manager templates].
 
-Дополнительные сведения о практике и шаблонах соглашений об именовании ресурсов Azure см. в разделе [Рекомендуемые соглашения об именовании для ресурсов Azure][Recommended naming conventions for Azure resources].
+Дополнительные сведения о практиках и шаблонах соглашений об именовании ресурсов Azure см. в разделе [Recommended naming conventions for Azure resources][Recommended naming conventions for Azure resources] (Рекомендуемые соглашения об именовании ресурсов Azure).
 
 Полный шаблон пространства имен служебной шины с разделом, подпиской и правилом приведен [здесь][Service Bus namespace with topic, subscription, and rule].
 
@@ -39,9 +39,7 @@ ms.locfileid: "75426895"
 > * [Создайте пространство имен служебной шины](service-bus-resource-manager-namespace.md)
 > * [Создание пространства имен служебной шины с разделом и подпиской](service-bus-resource-manager-namespace-topic.md)
 > 
-> Чтобы узнать о новых шаблонах, в коллекции [шаблонов быстрого запуска Azure][Azure Quickstart Templates] выполните поиск по запросу "служебная шина".
-> 
-> 
+> Чтобы узнать о новых шаблонах, в коллекции [шаблонов быстрого запуска Azure][Azure Quickstart Templates] выполните поиск "Service Bus".
 
 ## <a name="what-do-you-deploy"></a>Какой объект развертывается?
 
@@ -64,6 +62,7 @@ ms.locfileid: "75426895"
 Ниже описаны параметры, которые определяет шаблон.
 
 ### <a name="servicebusnamespacename"></a>serviceBusNamespaceName
+
 Имя создаваемого пространства имен служебной шины.
 
 ```json
@@ -73,6 +72,7 @@ ms.locfileid: "75426895"
 ```
 
 ### <a name="servicebustopicname"></a>serviceBusTopicName
+
 Имя раздела, создаваемого в пространстве имен служебной шины.
 
 ```json
@@ -82,6 +82,7 @@ ms.locfileid: "75426895"
 ```
 
 ### <a name="servicebussubscriptionname"></a>serviceBusSubscriptionName
+
 Имя подписки, создаваемой в пространстве имен служебной шины.
 
 ```json
@@ -89,7 +90,9 @@ ms.locfileid: "75426895"
 "type": "string"
 }
 ```
+
 ### <a name="servicebusrulename"></a>serviceBusRuleName
+
 Имя правила (фильтра), создаваемого в пространстве имен служебной шины.
 
 ```json
@@ -97,7 +100,9 @@ ms.locfileid: "75426895"
    "type": "string",
   }
 ```
+
 ### <a name="servicebusapiversion"></a>serviceBusApiVersion
+
 Версия API служебной шины для шаблона.
 
 ```json
@@ -108,7 +113,9 @@ ms.locfileid: "75426895"
            "description": "Service Bus ApiVersion used by the template" 
        }
 ```
+
 ## <a name="resources-to-deploy"></a>Развертываемые ресурсы
+
 Создает стандартное пространство имен служебной шины типа **Messaging** с разделом, подпиской и правилами.
 
 ```json
@@ -164,21 +171,25 @@ ms.locfileid: "75426895"
 Сведения о синтаксисе и свойствах JSON см. в статьях о [пространствах имен](/azure/templates/microsoft.servicebus/namespaces), [разделах](/azure/templates/microsoft.servicebus/namespaces/topics), [подписках](/azure/templates/microsoft.servicebus/namespaces/topics/subscriptions) и [правилах](/azure/templates/microsoft.servicebus/namespaces/topics/subscriptions/rules).
 
 ## <a name="commands-to-run-deployment"></a>Команды для выполнения развертывания
+
 [!INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ## <a name="powershell"></a>PowerShell
-```powershell
+
+```powershell-interactive
 New-AzureResourceGroupDeployment -Name \<deployment-name\> -ResourceGroupName \<resource-group-name\> -TemplateUri <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-topic-subscription-rule/azuredeploy.json>
 ```
 
-## <a name="azure-cli"></a>Интерфейс командной строки Azure
-```azurecli
+## <a name="azure-cli"></a>Azure CLI
+
+```azurecli-interactive
 azure config mode arm
 
 azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri <https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-topic-subscription-rule/azuredeploy.json>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
+
 Узнайте, как управлять этими ресурсами, просмотрев следующие статьи:
 
 * [Управление служебной шиной Azure](service-bus-management-libraries.md)
@@ -193,4 +204,3 @@ azure group deployment create \<my-resource-group\> \<my-deployment-name\> --tem
 [Recommended naming conventions for Azure resources]: /azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
 [Service Bus namespace with topic, subscription, and rule]: https://github.com/Azure/azure-quickstart-templates/blob/master/201-servicebus-create-topic-subscription-rule/
 [Service Bus queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-

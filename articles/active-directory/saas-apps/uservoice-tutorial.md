@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с UserVoice | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с UserVoice | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении UserVoice.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: 7a3302f1ca615fe5005be9ed1f09995ebf432eb7
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74232006"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-uservoice"></a>Руководство по Интеграция Azure Active Directory с UserVoice
+# <a name="tutorial-azure-active-directory-integration-with-uservoice"></a>Руководство по интеграции Azure Active Directory с UserVoice
 
 В этом руководстве описано, как интегрировать UserVoice с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением UserVoice обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "74232006"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением UserVoice, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка UserVoice с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "74232006"
 
     ![Сведения о домене и URL-адресах единого входа для приложения UserVoice](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.UserVoice.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.UserVoice.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenantname>.UserVoice.com`.
 
@@ -114,7 +114,7 @@ ms.locfileid: "74232006"
 
 5. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![Изменить сертификат подписи SAML](common/edit-certificate.png)
+    ![Изменение сертификата подписи SAML](common/edit-certificate.png)
 
 6. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток** и сохраните его на компьютере.
 
@@ -124,7 +124,7 @@ ms.locfileid: "74232006"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -136,7 +136,7 @@ ms.locfileid: "74232006"
 
 2. На панели инструментов в меню в верхней части экрана щелкните **Параметры**, а затем — **Веб-портал**.
    
-    ![Раздел Settings (Параметры) на стороне приложения](./media/uservoice-tutorial/ic777519.png "Параметры")
+    ![Раздел Settings (Параметры) на стороне приложения](./media/uservoice-tutorial/ic777519.png "Настройки")
 
 3. На вкладке **Web portal** (Веб-портал) в разделе **User authentication** (Аутентификация пользователя) щелкните **Edit** (Изменить), чтобы открыть диалоговую страницу **Edit User Authentication** (Изменение аутентификации пользователя).
    
@@ -146,7 +146,7 @@ ms.locfileid: "74232006"
    
     ![Изменение проверки подлинности пользователя](./media/uservoice-tutorial/ic777521.png "Изменение проверки подлинности пользователя")
    
-    a. Выберите **Единый вход (SSO)** .
+    а. Выберите **Единый вход (SSO)** .
  
     b. В текстовое поле **SSO Remote Sign-Out** (Удаленный единый выход) вставьте скопированное на портале Azure значение **URL-адреса входа**.
 
@@ -154,7 +154,7 @@ ms.locfileid: "74232006"
  
     d. В текстовое поле **Current certificate SHA1 fingerprint** (Отпечаток текущего сертификата SHA1) вставьте значение **отпечатка**, которое вы скопировали на портале Azure.
     
-    д. Нажмите кнопку **Сохранить параметры проверки подлинности**.
+    д) Нажмите кнопку **Сохранить параметры проверки подлинности**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -216,9 +216,9 @@ ms.locfileid: "74232006"
 
 2. Перейдите в меню **Параметры**.
    
-    ![Параметры](./media/uservoice-tutorial/ic777811.png "Параметры")
+    ![Параметры](./media/uservoice-tutorial/ic777811.png "Настройки")
 
-3. Выберите пункт **Общие**.
+3. Выберите **Общие**.
 
 4. Выберите пункт **Агенты и разрешения**.
    
@@ -232,7 +232,7 @@ ms.locfileid: "74232006"
    
     ![Пригласить администраторов](./media/uservoice-tutorial/ic777814.png "Пригласить администраторов")
    
-    a. В текстовом поле Emails ("Адреса электронной почты") введите адрес электронной почты учетной записи, которую вы хотите подготовить, а затем нажмите кнопку **Добавить**.
+    а. В текстовом поле Emails ("Адреса электронной почты") введите адрес электронной почты учетной записи, которую вы хотите подготовить, а затем нажмите кнопку **Добавить**.
    
     b. Нажмите кнопку **Пригласить**.
 

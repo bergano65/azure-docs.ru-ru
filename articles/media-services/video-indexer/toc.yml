@@ -15,6 +15,8 @@
   items:
     - name: Использование API Индексатора видео
       href: video-indexer-use-apis.md
+    - name: Соединитель для Logic Apps
+      href: logic-apps-connector-tutorial.md
 - name: Примеры
   items:
     - name: 'Индексатор видео: примеры'
@@ -111,3 +113,5 @@
       href: release-notes.md
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/598144-video-indexer'
+    - name: Блоги
+      href: 'https://azure.microsoft.com/blog/tag/video-indexer/'

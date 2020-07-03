@@ -1,37 +1,53 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Справочник по модулю PowerShell ADSyncTools | Документация Майкрософт'
+title: 'Azure AD Connect: справочник по модулю PowerShell ADSyncTools | Документация Майкрософт'
 description: Этот документ содержит справочные сведения о модуле PowerShell ADSyncTools.psm1.
 author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.date: 10/19/2018
+ms.date: 04/23/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9a1b8abf15233c06e8ff9e507b315cc8a3703970
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 11c9d66f891e8f5d53fc2a965e75f095417d20d4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60454665"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82184016"
 ---
-# <a name="azure-ad-connect--adsynctools-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADSyncTools
+# <a name="azure-ad-connect--adsynctools-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADSyncTools
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADSyncTools.psm1, который входит в состав Azure AD Connect.
+
+## <a name="install-the-adsynctools-powershell-module"></a>Установка модуля PowerShell Адсинктулс
+Чтобы установить модуль PowerShell Адсинктулс, выполните следующие действия.
+
+1.  Откройте Windows PowerShell с помощью прав администратора
+2.  Введите или скопируйте и вставьте следующий текст: 
+    ``` powershell
+    Import-module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools"
+    ```
+3.  Нажмите клавишу ВВОД.
+4.  Чтобы проверить, установлен ли модуль, введите или скопируйте и вставьте следующий текст:
+    ```powershell
+    Get-module AdSyncTools
+    ```
+5.  Теперь должны отобразиться сведения о модуле.
+
 
 ## <a name="clear-adsynctoolsconsistencyguid"></a>Clear-ADSyncToolsConsistencyGuid
 
 ### <a name="synopsis"></a>Краткий обзор
 Удаление пользователя AD из mS-Ds-ConsistencyGuid
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Clear-ADSyncToolsConsistencyGuid [-User] <Object> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Очистка значения в mS-Ds-ConsistencyGuid для целевого пользователя AD.
 
 ### <a name="examples"></a>Примеры
@@ -46,7 +62,7 @@ Example of how to use this cmdlet
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-user"></a>-User
 Целевой пользователь в AD, которого следует настроить.
@@ -72,13 +88,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 {{Введите краткий обзор}}
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Confirm-ADSyncToolsADModuleLoaded
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 {{Введите описание}}
 
 ### <a name="examples"></a>Примеры
@@ -95,14 +111,14 @@ PS C:\> {{ Add example code here }}
 ### <a name="synopsis"></a>Краткий обзор
 {{Введите краткий обзор}}
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Connect-AdSyncDatabase [-Server] <String> [[-Instance] <String>] [[-Database] <String>] [[-UserName] <String>]
  [[-Password] <String>] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 {{Введите описание}}
 
 ### <a name="examples"></a>Примеры
@@ -114,7 +130,7 @@ PS C:\> {{ Add example code here }}
 
 {{ Здесь добавьте пример описания }}
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-database"></a>-Database
 {{Введите описание базы данных}}
@@ -200,14 +216,14 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Экспорт отчета ConsistencyGuid.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Export-ADSyncToolsConsistencyGuidMigration [-AlternativeLoginId] [-UserPrincipalName] <String>
  [-ImmutableIdGUID] <String> [-Output] <String> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Создает отчет ConsistencyGuid на основе CSV-файла, импортированного с помощью Import-ADSyncToolsImmutableIdMigration.
 
 ### <a name="examples"></a>Примеры
@@ -222,7 +238,7 @@ Import-Csv .\AllSyncUsers.csv | Export-ADSyncToolsConsistencyGuidMigration -Outp
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-alternativeloginid"></a>-AlternativeLoginId
 Использование альтернативного идентификатора для входа (почты).
@@ -293,13 +309,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 {{Введите краткий обзор}}
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ADSyncSQLBrowserInstances [[-hostName] <String>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 {{Введите описание}}
 
 ### <a name="examples"></a>Примеры
@@ -311,7 +327,7 @@ PS C:\> {{ Add example code here }}
 
 {{ Здесь добавьте пример описания }}
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-hostname"></a>-hostName
 {{Введите описание имени узла}}
@@ -333,13 +349,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Получение пользователя из AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ADSyncToolsADuser [-User] <Object> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Возвращает объект AD TO DO. Поддерживается несколько лесов.
 
 ### <a name="examples"></a>Примеры
@@ -354,7 +370,7 @@ Example of how to use this cmdlet
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-user"></a>-User
 Целевой пользователь в AD для настройки ConsistencyGuid.
@@ -380,13 +396,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Получение mS-Ds-ConsistencyGuid пользователя AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ADSyncToolsConsistencyGuid [-User] <Object> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Возвращает значение атрибута mS-Ds-ConsistencyGuid целевого пользователя AD в формате GUID.
 
 ### <a name="examples"></a>Примеры
@@ -401,7 +417,7 @@ Example of how to use this cmdlet
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-user"></a>-User
 Целевой пользователь в AD, которого следует настроить.
@@ -427,13 +443,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Получение ObjectGuid пользователя AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ADSyncToolsObjectGuid [-User] <Object> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Возвращает значение атрибута ObjectGuid целевого пользователя AD в формате GUID.
 
 ### <a name="examples"></a>Примеры
@@ -448,7 +464,7 @@ Example of how to use this cmdlet
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-user"></a>-User
 Целевой пользователь в AD, которого следует настроить.
@@ -474,13 +490,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Получение журнала выполнения AAD Connect.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ADSyncToolsRunHistory [[-Days] <Int32>] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция, возвращающая журнал выполнения AAD Connect в формате XML.
 
 ### <a name="examples"></a>Примеры
@@ -495,7 +511,7 @@ Get-ADSyncToolsRunHistory
 Get-ADSyncToolsRunHistory -Days 1
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-days"></a>-Days
 {{Введите описание дней}}
@@ -521,14 +537,14 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Получение пользователей с ошибками изменения SourceAnchor.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ADSyncToolsSourceAnchorChanged [-sourcePath] <Object> [-outputPath] <Object> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
-Функция запрашивает журнал выполнения AAD Connect и экспортирует всех пользователей с сообщением об ошибке: SourceAnchor attribute has changed (Атрибут SourceAnchor изменен).
+### <a name="description"></a>DESCRIPTION
+Функция запрашивает журнал выполнения AAD Connect Run и экспортирует всех пользователей, которые сообщают об ошибке: "атрибут SourceAnchor изменился".
 
 ### <a name="examples"></a>Примеры
 
@@ -546,7 +562,7 @@ $sourcePath = Read-Host -Prompt "Enter your log file path with file name" #"\<So
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-sourcepath"></a>-sourcePath
 {{Введите описание пути к источнику}}
@@ -587,14 +603,14 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Импорт значения ImmutableID из AAD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Import-ADSyncToolsImmutableIdMigration [-Output] <String> [-IncludeSyncUsersFromRecycleBin]
  [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Создает файл со всеми синхронизированными пользователями Azure AD, содержащий значение ImmutableID в формате GUID. Требования: модуль PowerShell MSOnline.
 
 ### <a name="examples"></a>Примеры
@@ -609,7 +625,7 @@ Import-ADSyncToolsImmutableIdMigration -OutputFile '.\AllSyncUsers.csv'
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-output"></a>-Output
 Выходной CSV-файл.
@@ -651,13 +667,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 {{Введите краткий обзор}}
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Invoke-AdSyncDatabaseQuery [-SqlConnection] <SqlConnection> [[-Query] <String>] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 {{Введите описание}}
 
 ### <a name="examples"></a>Примеры
@@ -669,7 +685,7 @@ PS C:\> {{ Add example code here }}
 
 {{ Здесь добавьте пример описания }}
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-query"></a>-Query
 {{Введите описание запроса}}
@@ -710,14 +726,14 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Сценарий для удаления просроченных сертификатов из атрибута UserCertificate.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Remove-ADSyncToolsExpiredCertificates [-TargetOU] <String> [[-BackupOnly] <Boolean>] [-ObjectClass] <String>
  [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Этот сценарий принимает все объекты из целевого подразделения в домене Active Directory, отфильтрованные по классу объекта (пользователь или компьютер), и удаляет все просроченные сертификаты, присутствующие в атрибуте UserCertificate.
 По умолчанию (в режиме BackupOnly) он будет только создавать резервную копию просроченных сертификатов и записывать ее в файл, не внося каких-либо изменений в AD.
 Если используется параметр -BackupOnly $false, то любой просроченный сертификат в атрибуте UserCertificate для этих объектов будет удален из AD после копирования в файл.
@@ -739,7 +755,7 @@ Delete Expired Certs from all Computer objects in target OU - Expired Certificat
 
 Remove-ADSyncToolsExpiredCertificates -TargetOU "OU=Computers,OU=Corp,DC=Contoso,DC=com" -ObjectClass computer -BackupOnly $false
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-targetou"></a>-TargetOU
 Целевое подразделение для поиска объектов AD.
@@ -795,13 +811,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Краткое описание
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Repair-ADSyncToolsAutoUpgradeState
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Подробное описание
 
 ### <a name="examples"></a>Примеры
@@ -821,13 +837,13 @@ Another example of how to use this cmdlet
 ### <a name="synopsis"></a>Краткий обзор
 {{Введите краткий обзор}}
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Resolve-ADSyncHostAddress [[-hostName] <String>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 {{Введите описание}}
 
 ### <a name="examples"></a>Примеры
@@ -839,7 +855,7 @@ PS C:\> {{ Add example code here }}
 
 {{ Здесь добавьте пример описания }}
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-hostname"></a>-hostName
 {{Введите описание имени узла}}
@@ -859,15 +875,15 @@ Accept wildcard characters: False
 ## <a name="restore-adsynctoolsexpiredcertificates"></a>Restore-ADSyncToolsExpiredCertificates
 
 ### <a name="synopsis"></a>Краткий обзор
-(ЧТОБЫ СДЕЛАТЬ) Восстанавливает атрибут AD UserCertificate из файла сертификата
+(ДЛЯ ЭТОГО) Восстанавливает атрибут AD UserCertificate из файла сертификата
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Restore-ADSyncToolsExpiredCertificates
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Подробное описание
 
 ### <a name="examples"></a>Примеры
@@ -887,13 +903,13 @@ Another example of how to use this cmdlet
 ### <a name="synopsis"></a>Краткий обзор
 Задает mS-Ds-ConsistencyGuid для пользователя AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Set-ADSyncToolsConsistencyGuid [-User] <Object> [-Value] <Object> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Задание значения в атрибуте mS-Ds-ConsistencyGuid для целевого пользователя AD.
 
 ### <a name="examples"></a>Примеры
@@ -908,7 +924,7 @@ Example of how to use this cmdlet
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-user"></a>-User
 Целевой пользователь в AD для настройки ConsistencyGuid.
@@ -949,13 +965,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 {{Введите краткий обзор}}
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Test-ADSyncNetworkPort [[-hostName] <String>] [[-port] <String>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 {{Введите описание}}
 
 ### <a name="examples"></a>Примеры
@@ -967,7 +983,7 @@ PS C:\> {{ Add example code here }}
 
 {{ Здесь добавьте пример описания }}
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-hostname"></a>-hostName
 {{Введите описание имени узла}}
@@ -1004,14 +1020,14 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Создает файл трассировки и этап импорта AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Trace-ADSyncToolsADImport [[-ADConnectorXML] <String>] [[-dc] <String>] [[-rootDN] <String>]
  [[-filter] <String>] [-SkipCredentials] [[-ADwatermark] <String>] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Создает трассировки всех запросов LDAP, выполненных при запуске импорта AD для AAD Connect, с заданной контрольной точки с водяным знаком AD (файлом cookie секции). Создает файл трассировки .\ADimportTrace_yyyyMMddHHmmss.log в текущей папке.
 
 ### <a name="examples"></a>Примеры
@@ -1026,7 +1042,7 @@ Example of how to use this cmdlet
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectorxml"></a>-ADConnectorXML
 {{Введите описание ADConnectorXML}}
@@ -1128,14 +1144,14 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Краткое описание
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Trace-ADSyncToolsLdapQuery [-Context] <String> [-Server] <String> [-Port] <Int32> [-Filter] <String>
  [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Подробное описание
 
 ### <a name="examples"></a>Примеры
@@ -1150,7 +1166,7 @@ Example of how to use this cmdlet
 Another example of how to use this cmdlet
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-context"></a>-Context
 Описание param1.
@@ -1221,14 +1237,14 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Обновляет пользователей с помощью нового значения ConsistencyGuid (ImmutableId).
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Update-ADSyncToolsConsistencyGuidMigration [[-DistinguishedName] <String>] [-ImmutableIdGUID] <String>
  [-Action] <String> [-Output] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Обновляет пользователей с помощью нового значения ConsistencyGuid (ImmutableId), взятого из отчета ConsistencyGuid. Эта функция поддерживает параметр WhatIf. Примечание. Отчет ConsistencyGuid должен быть импортирован с разделителями-знаками табуляции.
 
 ### <a name="examples"></a>Примеры
@@ -1243,7 +1259,7 @@ Import-Csv .\AllSyncUsersTEST-Report.csv -Delimiter "`t"| Update-ADSyncToolsCons
 Import-Csv .\AllSyncUsersTEST-Report.csv -Delimiter "`t"| Update-ADSyncToolsConsistencyGuidMigration -Output .\AllSyncUsersTEST-Result2
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-distinguishedname"></a>-DistinguishedName
 Различающееся имя.

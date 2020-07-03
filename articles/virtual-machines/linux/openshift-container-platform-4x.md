@@ -1,25 +1,20 @@
 ---
 title: Развертывание OpenShift контейнера платформы 4. x в Azure
 description: Разверните OpenShift Container Platform 4. x в Azure.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: haroldwongms
 manager: mdotson
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
-ms.openlocfilehash: 213c02b76f822d134729ebc4c0e6bff40f62089f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 14af110b5cf50f167d0c4961e26454bc33c6ed7d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035434"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759489"
 ---
 # <a name="deploy-openshift-container-platform-4x-in-azure"></a>Развертывание OpenShift контейнера платформы 4. x в Azure
 
@@ -43,6 +38,6 @@ ms.locfileid: "74035434"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Overview](https://docs.openshift.com) (Обзор)

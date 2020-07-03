@@ -14,17 +14,17 @@ ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a1aa99e7e71ad78a62c1a9da303b2ecc8347ebeb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "65783848"
 ---
 # <a name="azure-active-directory-application-proxy-and-tableau"></a>Azure Active Directory Application Proxy и Tableau 
 
 Использование Azure Active Directory Application Proxy и Tableau упрощает использование прокси приложения для предоставления удаленного доступа к развертыванию Tableau. В этой статье описывается настройка сценария.  
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Сценарий в этой статье предполагает, что:
 
@@ -50,7 +50,7 @@ ms.locfileid: "65783848"
 **Чтобы опубликовать приложение, сделайте следующее**. 
 
 
-1. Войдите в [портала Azure](https://portal.azure.com) как администратор приложений. 
+1. Войдите в [портал Azure](https://portal.azure.com) в качестве администратора приложения. 
 
 2. Выберите **Azure Active Directory > Корпоративные приложения**. 
 
@@ -60,9 +60,9 @@ ms.locfileid: "65783848"
 
 5. Введите в обязательные поля сведения о новом приложении. Вам нужно настроить следующие параметры. 
 
-    - **Внутренний URL-адрес**. Это приложение должно использовать внутренний URL-адрес, которым является URL-адрес Tableau. Например, `https://adventure-works.tableau.com`. 
+    - **Внутренний URL-адрес**: это приложение должно использовать внутренний URL-адрес, которым является сам URL-адрес Tableau. Например, `https://adventure-works.tableau.com`. 
 
-    - **Метод предварительной аутентификации**. Azure Active Directory (рекомендуется, но не обязательно). 
+    - **Метод предварительной аутентификации**: Azure Active Directory (рекомендуется, но не обязательно). 
 
 6. Щелкните **Добавить** в верхней части колонки. Когда приложение будет добавлено, откроется меню быстрого запуска. 
 

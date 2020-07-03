@@ -5,15 +5,15 @@ services: iot-central
 author: dominicbetts
 ms.author: dobett
 ms.date: 12/06/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: iot-central
 manager: philmea
-ms.openlocfilehash: 7c60728ab501d03e9c40928e730225575e76efbc
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: b447f44d0c95693e560fd5bbfbff8c8daeec964e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023826"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80157693"
 ---
 # <a name="group-multiple-actions-to-run-from-one-or-more-rules"></a>Группирование нескольких действий для запуска из одного или нескольких правил
 
@@ -21,7 +21,7 @@ ms.locfileid: "77023826"
 
 В IoT Central Azure вы создаете правила для выполнения действий при выполнении условия. Правила основаны на телеметрии или событиях устройства. Например, можно уведомить оператора, когда температура устройства превышает пороговое значение. В этой статье описывается, как использовать *группы действий* [Azure Monitor](../../azure-monitor/overview.md) для присоединения нескольких действий к правилу IOT Central. Группу действий можно подключить к нескольким правилам. [Группа действий](../../azure-monitor/platform/action-groups.md) — это набор параметров уведомлений, определенных владельцем подписки Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Приложение, созданное с использованием стандартного тарифного плана
 - Учетная запись Azure и подписка для создания групп действий Azure Monitor и управления ими
@@ -59,9 +59,9 @@ ms.locfileid: "77023826"
 
 | Тип действия | Формат вывода |
 | ----------- | -------------- |
-| Эл. почта       | Шаблон электронной почты "Стандартный IoT Central" |
+| Электронная почта       | Шаблон электронной почты "Стандартный IoT Central" |
 | SMS         | Оповещение Azure IoT Central: $ {applicationName}-"$ {ruleName}" активировано на "$ {deviceName}" в $ {Тригжердате} $ {Тригжертиме} |
-| Голос       | Основное оповещение Azure I. O. T: правило "$ {ruleName}", запущенное на устройстве "$ {deviceName}" в $ {Тригжердате} $ {Тригжертиме}, в приложении $ {applicationName} |
+| Голосовая связь       | Основное оповещение Azure I. O. T: правило "$ {ruleName}", запущенное на устройстве "$ {deviceName}" в $ {Тригжердате} $ {Тригжертиме}, в приложении $ {applicationName} |
 | webhook     | {"Счемаид": "Азуреиотцентралрулевебхук", "Data": {[Обычная полезная нагрузка веб-перехватчика](howto-create-webhooks.md#payload)}} |
 
 Следующий текст представляет собой пример SMS-сообщения из группы действий:

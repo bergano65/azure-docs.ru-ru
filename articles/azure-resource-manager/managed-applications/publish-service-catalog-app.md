@@ -2,23 +2,21 @@
 title: Публикация управляемого приложения в каталоге услуг
 description: Показано, как создать управляемое приложение Azure, предназначенное для членов вашей организации.
 author: tfitzmac
-ms.topic: tutorial
-ms.date: 10/04/2018
+ms.topic: quickstart
+ms.date: 04/14/2020
 ms.author: tomfitz
-ms.openlocfilehash: e756617a700d258078e84a3fa11c8aceb6f4dd88
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.openlocfilehash: 47eda62810b1098fcaca5b734be4f74edc0db49a
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75903261"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82609363"
 ---
-# <a name="create-and-publish-a-managed-application-definition"></a>Создание и публикация определения управляемого приложения
+# <a name="quickstart-create-and-publish-a-managed-application-definition"></a>Краткое руководство. Создание и публикация определения управляемого приложения
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+Это краткое руководство содержит общие сведения о работе со [службой "Управляемые приложения Azure"](overview.md). Вы можете создать и опубликовать управляемое приложение, предназначенное для членов вашей организации.
 
-Вы можете создавать и публиковать [управляемые приложения Azure](overview.md), предназначенные для членов вашей организации. Например, отдел ИТ может публиковать управляемые приложения, которые соответствуют стандартам организации. Эти управляемые приложения доступны в каталоге служб, а не в Azure Marketplace.
-
-Чтобы опубликовать управляемое приложение в каталоге услуг Azure, необходимо выполнить следующее.
+Чтобы опубликовать управляемое приложение в каталоге услуг, сделайте следующее:
 
 * Создайте шаблон, который определяет ресурсы, развертываемые с управляемым приложением.
 * Определите элементы пользовательского интерфейса для портала при развертывании управляемого приложения.
@@ -26,13 +24,9 @@ ms.locfileid: "75903261"
 * Определите, каким пользователям, группам или приложениям нужен доступ к группе ресурсов в подписке пользователя.
 * Создайте определение управляемого приложения, которое указывает на ZIP-файл пакета и запрашивает доступ для получения удостоверения.
 
-Используемое в этой статье управляемое приложение имеет только учетную запись хранения. В этом руководстве мы покажем, как опубликовать управляемое приложение. Полные примеры приведены в статье [Примеры проектов для управляемых приложений Azure](sample-projects.md).
+## <a name="create-the-arm-template"></a>Создание шаблона ARM
 
-Для работы примеров PowerShell в этой статье требуется Azure PowerShell 6.2 или более поздняя версия. [Обновите свою версию](/powershell/azure/install-Az-ps), если необходимо.
-
-## <a name="create-the-resource-template"></a>Создание шаблона ресурсов
-
-В каждом определении управляемого приложения указан файл с именем **mainTemplate.json**. В нем определяются ресурсы Azure, которые необходимо развернуть. Этот шаблон ничем не отличается от обычного шаблона Resource Manager.
+В каждом определении управляемого приложения указан файл с именем **mainTemplate.json**. В нем определяются ресурсы Azure, которые необходимо развернуть. Этот шаблон ничем не отличается от обычного шаблона Azure Resource Manager (ARM).
 
 Создайте файл с именем **mainTemplate.json**. В нем учитывается регистр.
 
@@ -60,20 +54,20 @@ ms.locfileid: "75903261"
     "resources": [
         {
             "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-06-01",
             "name": "[variables('storageAccountName')]",
-            "apiVersion": "2016-01-01",
             "location": "[parameters('location')]",
             "sku": {
                 "name": "[parameters('storageAccountType')]"
             },
-            "kind": "Storage",
+            "kind": "StorageV2",
             "properties": {}
         }
     ],
     "outputs": {
         "storageEndpoint": {
             "type": "string",
-            "value": "[reference(resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2016-01-01').primaryEndpoints.blob]"
+            "value": "[reference(resourceId('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2019-06-01').primaryEndpoints.blob]"
         }
     }
 }
@@ -81,9 +75,9 @@ ms.locfileid: "75903261"
 
 Сохраните файл mainTemplate.json.
 
-## <a name="defining-your-create-experience-using-createuidefinitionjson"></a>Определение процесса создания с помощью файла CreateUiDefinition.json
+## <a name="define-your-create-experience"></a>Определение процедуры создания
 
-Как издатель вы определяете процесс создания с помощью файла **createUiDefinition.json**, который реализует интерфейс для пользователей, создающих управляемые приложения. Вы определяете, как пользователи вводят значения для каждого параметра, используя [элементы управления](create-uidefinition-elements.md), в том числе раскрывающиеся списки, текстовые поля и поля для пароля.
+Как издатель, вы определяете процедуру для создания управляемого приложения на портале. Для создания интерфейса портала используется файл **createUiDefinition.json**. Вы определяете, как пользователи вводят значения для каждого параметра, используя [элементы управления](create-uidefinition-elements.md), в том числе раскрывающиеся списки, текстовые поля и поля для пароля.
 
 Создайте файл с именем **createUiDefinition.json** (в этом имени учитывается регистр).
 
@@ -142,59 +136,123 @@ ms.locfileid: "75903261"
 
 ## <a name="package-the-files"></a>Упаковка файлов
 
-Добавьте два файла в ZIP-файл с именем app.zip. Приведенные выше два файла должны быть расположены на корневом уровне ZIP-файла. Если поместить их в папку, то при создании определения управляемого приложения появится сообщение об ошибке из-за отсутствия необходимых файлов. 
+Добавьте два файла в ZIP-файл с именем app.zip. Приведенные выше два файла должны быть расположены на корневом уровне ZIP-файла. Если поместить их в папку, то при создании определения управляемого приложения появится сообщение об ошибке из-за отсутствия необходимых файлов.
 
-Передайте пакет в доступное расположение, из которого его можно будет использовать. 
+Передайте пакет в доступное расположение, из которого его можно будет использовать. Вам потребуется указать уникальное имя учетной записи хранения.
 
-```powershell
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
 New-AzResourceGroup -Name storageGroup -Location eastus
-$storageAccount = New-AzStorageAccount -ResourceGroupName storageGroup `
+
+$storageAccount = New-AzStorageAccount `
+  -ResourceGroupName storageGroup `
   -Name "mystorageaccount" `
   -Location eastus `
   -SkuName Standard_LRS `
-  -Kind Storage
+  -Kind StorageV2
 
 $ctx = $storageAccount.Context
 
 New-AzStorageContainer -Name appcontainer -Context $ctx -Permission blob
 
-Set-AzStorageBlobContent -File "D:\myapplications\app.zip" `
+Set-AzStorageBlobContent `
+  -File "D:\myapplications\app.zip" `
   -Container appcontainer `
   -Blob "app.zip" `
   -Context $ctx 
 ```
 
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli-interactive
+az group create --name storageGroup --location eastus
+
+az storage account create \
+    --name mystorageaccount \
+    --resource-group storageGroup \
+    --location eastus \
+    --sku Standard_LRS \
+    --kind StorageV2
+
+az storage container create \
+    --account-name mystorageaccount \
+    --name appcontainer \
+    --public-access blob
+
+az storage blob upload \
+    --account-name mystorageaccount \
+    --container-name appcontainer \
+    --name "app.zip" \
+    --file "D:\myapplications\app.zip"
+
+```
+
+---
+
 ## <a name="create-the-managed-application-definition"></a>Создание определения управляемого приложения
 
 ### <a name="create-an-azure-active-directory-user-group-or-application"></a>Создание группы пользователей или приложения Azure Active Directory
 
-Следующий шаг — выбор группы пользователей или приложения для управления ресурсами от имени клиента. Этой группе ресурсов или приложению предоставляются разрешения в управляемой группе ресурсов в соответствии с назначенной ролью. Это может быть любая встроенная роль управления доступом на основе ролей (RBAC), например "Владелец" или "Участник". Можно также предоставить разрешение на управление ресурсами отдельному пользователю, но обычно это разрешение назначается группе пользователей. Чтобы создать группу пользователей Active Directory, ознакомьтесь с разделом [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
+Следующий шаг — выбор группы пользователей, пользователя или приложения для управления ресурсами для клиента. Этому удостоверению предоставляются разрешения в управляемой группе ресурсов в соответствии с назначенной ролью. Это может быть любая встроенная роль управления доступом на основе ролей (RBAC), например "Владелец" или "Участник". Чтобы создать группу пользователей Active Directory, ознакомьтесь с разделом [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
 Требуется идентификатор объекта группы пользователей для управления ресурсами. 
 
-```powershell
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
 $groupID=(Get-AzADGroup -DisplayName mygroup).Id
 ```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli-interactive
+groupid=$(az ad group show --group mygroup --query objectId --output tsv)
+```
+
+---
 
 ### <a name="get-the-role-definition-id"></a>Получение идентификатора определения роли
 
 Далее необходимо получить идентификатор определения встроенной роли RBAC, к которой вы хотите предоставить доступ пользователю, группе пользователей или приложению. Обычно это роль "Владелец", "Участник" или "Читатель". Следующая команда позволяет получить идентификатор определения роли "Владелец".
 
-```powershell
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
 $ownerID=(Get-AzRoleDefinition -Name Owner).Id
 ```
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli-interactive
+ownerid=$(az role definition list --name Owner --query [].name --output tsv)
+```
+
+---
 
 ### <a name="create-the-managed-application-definition"></a>Создание определения управляемого приложения
 
 Если у вас еще нет группы ресурсов для хранения определения управляемого приложения, создайте ее.
 
-```powershell
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
 New-AzResourceGroup -Name appDefinitionGroup -Location westcentralus
 ```
 
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli-interactive
+az group create --name appDefinitionGroup --location westcentralus
+```
+
+---
+
 Теперь создайте ресурс определения управляемого приложения.
 
-```powershell
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
 $blob = Get-AzStorageBlob -Container appcontainer -Blob app.zip -Context $ctx
 
 New-AzManagedApplicationDefinition `
@@ -208,25 +266,55 @@ New-AzManagedApplicationDefinition `
   -PackageFileUri $blob.ICloudBlob.StorageUri.PrimaryUri.AbsoluteUri
 ```
 
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+```azurecli-interactive
+blob=$(az storage blob url --account-name mystorageaccount --container-name appcontainer --name app.zip --output tsv)
+
+az managedapp definition create \
+  --name "ManagedStorage" \
+  --location "westcentralus" \
+  --resource-group appDefinitionGroup \
+  --lock-level ReadOnly \
+  --display-name "Managed Storage Account" \
+  --description "Managed Azure Storage Account" \
+  --authorizations "$groupid:$ownerid" \
+  --package-file-uri "$blob"
+```
+
+---
+
+После выполнения команды в вашей группе ресурсов будет определение управляемого приложения.
+
+Далее приведены некоторые параметры, которые использовались в предыдущем примере:
+
+* **Группа ресурсов**. Имя группы ресурсов, в которой создается определение управляемого приложения.
+* **Уровень блокировки**. Тип блокировки группы управляемых ресурсов. Этот параметр предотвращает выполнение нежелательных операций в группе ресурсов. Сейчас поддерживается только тип блокировки ReadOnly. Если указать этот тип, пользователь будет иметь только доступ на чтение к ресурсам в управляемой группе ресурсов. Удостоверения издателей, которым предоставлен доступ к группе управляемых ресурсов, исключаются из блокировки.
+* **authorizations**. Содержит идентификатор субъекта и идентификатор определения роли, используемые для предоставления разрешения группе управляемых ресурсов. Это свойство указывается в формате `<principalId>:<roleDefinitionId>`. Если требуется более одного значения, укажите их в формате `<principalId1>:<roleDefinitionId1>,<principalId2>:<roleDefinitionId2>`. Значения разделяются запятыми.
+* **URI файла пакета**. Расположение пакета ZIP, содержащего необходимые файлы.
+
 ## <a name="bring-your-own-storage-for-the-managed-application-definition"></a>Предоставление собственного хранилища для определения управляемого приложения
-Вы можете сохранить определение управляемого приложения в учетной записи хранения, предоставленной вами во время создания, чтобы полностью контролировать его расположение и доступ в соответствии с вашими нормативными потребностями.
+
+Вы можете сохранить определение управляемого приложения в учетной записи хранения, которую вы указали во время создания. Это позволит полностью контролировать расположение приложения и доступ к нему в соответствии с вашими нормативными требованиями.
 
 > [!NOTE]
 > Подключение к собственному хранилищу поддерживается только с шаблоном ARM или развертыванием REST API для определения управляемого приложения.
 
 ### <a name="select-your-storage-account"></a>Выбор учетной записи хранения
+
 Необходимо [создать учетную запись хранения](../../storage/common/storage-account-create.md), в которой будет содержаться определение управляемого приложения для использования с каталогом услуг.
 
 Скопируйте идентификатор ресурса учетной записи хранения. Он будет использоваться позже при развертывании определения.
 
 ### <a name="set-the-role-assignment-for-appliance-resource-provider-in-your-storage-account"></a>Задание назначения роли "Поставщик ресурсов устройства" в учетной записи хранения
+
 Перед развертыванием определения управляемого приложения в учетной записи хранения необходимо предоставить разрешения участника для роли **Поставщик ресурсов устройства**, чтобы предоставить разрешение на запись файлов определений в контейнер вашей учетной записи хранения.
 
 1. Войдите в свою учетную запись хранения на [портале Azure](https://portal.azure.com).
 1. Выберите **Управление доступом (IAM)** , чтобы отобразить параметры управления доступом для учетной записи хранения. Выберите вкладку **Назначения ролей**, чтобы просмотреть список назначений ролей.
 1. В окне **Добавить назначение ролей** выберите роль **Участник**. 
 1. Из поля **Назначение доступа к** выберите **пользователя, группу или субъект-службу Azure AD**.
-1. В разделе **Выбрать**, найдите **Поставщик ресурсов устройства** и выберите его.
+1. В разделе **Выбрать** найдите роль **Appliance Resource Provider** (Поставщик ресурсов устройств) и выберите ее.
 1. Сохраните назначение роли.
 
 ### <a name="deploy-the-managed-application-definition-with-an-arm-template"></a>Развертывание определения управляемого приложения с помощью шаблона ARM 
@@ -310,11 +398,13 @@ New-AzManagedApplicationDefinition `
 > [!NOTE]
 > Для повышения безопасности можно создать определение управляемых приложений, чтобы сохранить его в [большом двоичном объекте учетной записи хранения Azure, где включено шифрование](../../storage/common/storage-service-encryption.md). Содержимое определений шифруется с помощью параметров шифрования учетной записи хранения. Определение в каталоге услуг могут видеть только пользователи с правами доступа к файлу.
 
-### <a name="make-sure-users-can-see-your-definition"></a>Убедитесь, что пользователи могут видеть ваше определение.
+## <a name="make-sure-users-can-see-your-definition"></a>Убедитесь, что пользователи могут видеть ваше определение.
 
 У вас есть доступ к определению управляемого приложения, но вы хотите, чтобы другие пользователи в вашей организации могли получить к нему доступ. Предоставьте им роль читателя в определении. Они могут унаследовать этот уровень доступа из группы подписки или ресурса. Чтобы узнать, как проверить, кто имеет доступ к определению, и добавить пользователей или группы, см. статью [Использование управления доступом на основе ролей для доступа к ресурсам подписки Azure](../../role-based-access-control/role-assignments-portal.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о том, как опубликовать управляемое приложение в Azure Marketplace, см. в статье [Управляемые приложения Azure в Marketplace](publish-marketplace-app.md).
-* Сведения о том, как развернуть экземпляр управляемого приложения, см. в статье [Deploy service catalog app through Azure portal](deploy-service-catalog-quickstart.md) (Развертывание приложения из каталога служб с помощью портала Azure).
+Вы опубликовали определение управляемого приложения. Теперь можно приступать к развертыванию экземпляра этого определения.
+
+> [!div class="nextstepaction"]
+> [Краткое руководство. Развертывание приложения из каталога служб](deploy-service-catalog-quickstart.md)

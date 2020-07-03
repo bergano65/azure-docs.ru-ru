@@ -8,18 +8,17 @@ metadata:
   services: cognitive-services
   author: aahill
   manager: nitinme
-  layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: anomaly-detector
   ms.topic: landing-page
   ms.date: 09/10/2019
   ms.author: aahi
-  ms.openlocfilehash: 4f7eca51cd4ec6995618b68bd376fa5f4f6268e4
-  ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+  ms.openlocfilehash: 26632aebbd6cddd1463064b397a2f42071a5d518
+  ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/13/2019
-  ms.locfileid: "74013605"
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "81757299"
 landingContent:
 - title: Узнайте больше об API "Детектор аномалий"
   linkLists:
@@ -50,9 +49,11 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Использование C#
-      url: quickstarts/detect-data-anomalies-csharp-sdk.md
+      url: ../anomaly-detector/quickstarts/client-libraries.md?pivots=programming-language-csharp
+    - text: Использование JavaScript
+      url: ../anomaly-detector/quickstarts/client-libraries.md?pivots=programming-language-javascript
     - text: Использование Python
-      url: quickstarts/detect-data-anomalies-python-sdk.md
+      url: ../anomaly-detector/quickstarts/client-libraries.md?pivots=programming-language-python
   - linkListType: tutorial
     links:
     - text: визуализации аномалий c помощью пакетного обнаружения и Power BI
@@ -97,7 +98,7 @@ landingContent:
       url: https://aka.ms/adadvisorsjoin
     - text: Избранное создаваемое пользователями содержимое
       url: user-generated-content.md
-- title: Справочные материалы
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:
@@ -113,5 +114,5 @@ landingContent:
       url: https://go.microsoft.com/fwlink/?linkid=2090788
     - text: Azure PowerShell
       url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services
-    - text: Инфраструктура CLI Azure
+    - text: Azure CLI
       url: /cli/azure/cognitiveservices#az-cognitiveservices-list

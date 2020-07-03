@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/04/2018
 ms.author: liydu
 ms.openlocfilehash: deb1ea8c7b41ad48bddebfbed1b15c667ee0071a
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73483949"
 ---
 # <a name="mxchip-iot-devkit"></a>MXChip IoT DevKit
@@ -40,7 +40,7 @@ ms.locfileid: "73483949"
 
 ## <a name="provision-azure-services"></a>Подготовка служб Azure
 
-1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...**  - , **cloud-provision**.
+1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** - , **cloud-provision**.
 
 2. Ход выполнения воспроизводится на вкладке **Терминал** панели **Приветствие**.
 
@@ -59,7 +59,7 @@ ms.locfileid: "73483949"
 
 ## <a name="deploy-function-app"></a>Развертывание приложения-функции
 
-1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** ,  - cloud-deploy **.
+1. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** - **cloud-deploy**.
 
 2. Дождитесь, пока завершится передача кода приложения-функции (появится сообщение *function app deploys: Done* (Развертывание приложения-функции: выполнено)).
 
@@ -67,7 +67,7 @@ ms.locfileid: "73483949"
 
 1. Подключите MXChip IoT DevKit к компьютеру.
 
-2. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...**  - , **config-device-connection**.
+2. Щелкните раскрывающееся меню **Задачи** в Visual Studio Code и выберите **Запустить задачу...** - , **config-device-connection**.
 
 3. На MXChip IoT DevKit нажмите и удерживайте кнопку **A**, дополнительно нажмите кнопку **Сброс**, а затем отпустите кнопку **A**, чтобы DevKit вошел в режим настройки.
 
@@ -89,7 +89,7 @@ ms.locfileid: "73483949"
 
 3. Введите название приложения-функции, записанное ранее.
 
-4. Нажмите кнопку **Подключиться**.
+4. Нажмите кнопку **подключить** .
 
 5. Через несколько секунд страница обновится и на ней отобразится состояние подключения DevKit по Wi-Fi, а также состояние каждого из встроенных датчиков.
 
@@ -106,7 +106,7 @@ ms.locfileid: "73483949"
 ![Пример процедуры тестирования](media/iot-hub-arduino-iot-devkit-az3166-devkit-state/devkit-state.gif)
 
 > [!NOTE]
-> Вы можете просмотреть необработанные данные двойника устройства на портале Azure: "Центр Интернета вещей" —\> "Устройства Интернета вещей" —\> *\<ваше_устройство\>*  -\> "Двойник устройства".
+> Необработанные данные двойникаов устройств можно просмотреть в портал Azure: центр Интернета\> вещей — устройства\> * \<IOT —\> *  - \> устройство двойника устройства.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -117,4 +117,4 @@ ms.locfileid: "73483949"
 Ниже приведены предлагаемые дальнейшие действия:
 
 * [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
-* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
+* [Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central](/azure/iot-central/core/howto-connect-devkit)

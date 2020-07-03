@@ -1,19 +1,19 @@
 ---
 title: Создание индекса службы "Поиск Azure" на портале Azure
 titleSuffix: Azure Cognitive Search
-description: В этом кратком руководстве по порталу приводятся сведения об использовании мастера импорта данных для создания, загрузки и запроса первого индекса поиска службы "Когнитивный поиск Azure".
+description: В этом кратком руководстве по порталу Azure приводятся сведения об использовании мастера импорта данных для создания, загрузки и запроса первого индекса поиска службы "Когнитивный поиск Azure".
 author: tchristiani
 manager: nitinme
 ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
 ms.date: 02/10/2020
-ms.openlocfilehash: 6a3bbdae0d3fa898621c1c805388252beb891ecf
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 8324ca0184c508591fa4568175bad0f606f952a8
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121670"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80369454"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 > [!div class="op_single_selector"]
@@ -43,7 +43,7 @@ ms.locfileid: "77121670"
 
 ![Список индексов, индексаторов и источников данных](media/search-get-started-portal/tiles-indexers-datasources.png)
 
-## <a name="create-index"></a> Создание индекса и загрузка данных
+## <a name="create-an-index-and-load-data"></a><a name="create-index"></a> Создание индекса и загрузка данных
 
 Поисковые запросы выполняют итерацию по [*индексу*](search-what-is-an-index.md), содержащему доступные для поиска данные, метаданные и дополнительные конструкции, которые оптимизируют определенные способы поиска.
 
@@ -132,7 +132,7 @@ ms.locfileid: "77121670"
 
 Чтобы четко понять, что можно и нельзя изменить во время проектирования индекса, рекомендуем просмотреть параметры определения индекса. Если параметры закрашены серым, это означает, что их значения не можно изменить или удалить. 
 
-## <a name="query-index"></a> Создание запроса с помощью обозревателя поиска
+## <a name="query-using-search-explorer"></a><a name="query-index"></a> Создание запроса с помощью обозревателя поиска
 
 У вас уже должен быть индекс службы поиска, который можно запрашивать, используя встроенный в страницу запроса [**проводник поиска**](search-explorer.md). Это поле для поиска, с помощью которого можно проверить произвольные строки запроса.
 
@@ -176,7 +176,7 @@ ms.locfileid: "77121670"
 
 * Параметр **$top=10** возвращает 10 документов с самой высокой оценкой. По умолчанию служба "Когнитивный поиск Azure" возвращает первые 50 лучших соответствий. Увеличить или уменьшить это число можно с помощью параметра **$top**.
 
-### <a name="filter-query"></a> Фильтрация запроса
+### <a name="filter-the-query"></a><a name="filter-query"></a> Фильтрация запроса
 
 Фильтры включаются в запросы поиска при добавлении параметра **$filter**. 
 
@@ -186,7 +186,7 @@ ms.locfileid: "77121670"
 
 * Синтаксис фильтра — это конструкция OData. Дополнительные сведения см. в статье [OData Expression Syntax for Azure Search](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
 
-### <a name="facet-query"></a> Аспектирование запроса
+### <a name="facet-the-query"></a><a name="facet-query"></a> Аспектирование запроса
 
 Фильтры аспектов включаются в запросы поиска. Параметр аспекта можно использовать для возврата суммарного количества документов, которые соответствуют указанному значению аспекта.
 
@@ -206,7 +206,7 @@ ms.locfileid: "77121670"
 * В поле *Rating* отображаются числа с плавающей запятой двойной точности, а группирование выполняется по точному значению. Дополнительные сведения о группировании по интервалу (например, "3 звезды", "4 звезды" и т. д.) см. в статье о том, [как реализовать фасетную навигацию в службе "Когнитивный поиск Azure"](https://docs.microsoft.com/azure/search/search-faceted-navigation#filter-based-on-a-range).
 
 
-### <a name="highlight-query"></a> Выделение результатов поиска
+### <a name="highlight-search-results"></a><a name="highlight-query"></a> Выделение результатов поиска
 
 Выделение совпадений — это форматирование совпадений, найденных в конкретном поле, по ключевому слову. Если условие поиска глубоко скрыто в описании, выделение совпадений позволяет легче его найти.
 
@@ -220,7 +220,7 @@ ms.locfileid: "77121670"
 
 * Когнитивный поиск Azure поддерживает 56 анализаторов от Lucene и корпорации Майкрософт. По умолчанию служба "Когнитивный поиск Azure" использует стандартный анализатор Lucene.
 
-### <a name="fuzzy-search"></a> Поиск нечетких соответствий
+### <a name="try-fuzzy-search"></a><a name="fuzzy-search"></a> Поиск нечетких соответствий
 
 При обычном запросе поисковые запросы с ошибками, например *seatle* при поиске "Seattle" (Сиэтл), по умолчанию не обнаруживают соответствий. Следующий пример не дал результатов.
 
@@ -238,7 +238,7 @@ ms.locfileid: "77121670"
 
 Дополнительные сведения о сценариях запроса при использовании средства полного синтаксического анализа запросов см. в статье [Lucene query syntax in Azure Cognitive Search](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search) (Синтаксис запросов Lucene в службе "Когнитивный поиск Azure").
 
-### <a name="geo-search"></a> Пробное использование геопространственного поиска
+### <a name="try-geospatial-search"></a><a name="geo-search"></a> Пробное использование геопространственного поиска
 
 Для поддержки геопространственного поиска нужно задать [тип данных edm.GeographyPoint](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) для поля, содержащего координаты. Геопространственный поиск — это тип фильтра, описанный в статье [OData Expression Syntax for Azure Search](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) (Синтаксис выражений OData для службы поиска Azure).
 

@@ -3,7 +3,7 @@ title: Подключение данных Symantec Икдкс к Azure Sentinel
 description: Узнайте, как подключить данные Symantec Икдкс к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.assetid: d068223f-395e-46d6-bb94-7ca1afd3503c
@@ -14,13 +14,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: rkarlin
-ms.openlocfilehash: 111bc7cd0439eee2026a6a980e9e126b63ac58c6
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: cac63aee5f9ebf3859b138e6444e40b1e2dd30f7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610494"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77588099"
 ---
 # <a name="connect-your-symantec-icdx-appliance"></a>Подключение устройства Symantec Икдкс 
 
@@ -74,7 +74,7 @@ Symantec Икдкс может интегрировать и экспортир�
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить Symantec Икдкс к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

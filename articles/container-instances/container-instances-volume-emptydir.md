@@ -4,10 +4,10 @@ description: Узнайте, как подключить том emptyDir для 
 ms.topic: article
 ms.date: 01/31/2020
 ms.openlocfilehash: 64a3c83008f163167528a5e5987fe2316942d5bc
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77117737"
 ---
 # <a name="mount-an-emptydir-volume-in-azure-container-instances"></a>Подключение тома emptyDir в службе "Экземпляры контейнеров Azure"
@@ -35,7 +35,7 @@ ms.locfileid: "77117737"
 
 Чтобы подключить том emptyDir в экземпляре контейнера, можно выполнить развертывание с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups), [файла YAML](container-instances-reference-yaml.md)или других программных методов для развертывания группы контейнеров.
 
-Сначала заполните массив `volumes` в разделе `properties` группы контейнеров файла. Затем для каждого контейнера в группе контейнеров, в которой нужно подключить том *emptyDir*, заполните массив `volumeMounts` в разделе `properties` определения контейнера.
+Сначала заполните `volumes` массив в разделе файла группы `properties` контейнеров. Затем для каждого контейнера в группе контейнеров, в которой нужно подключить том *emptyDir*, заполните массив `volumeMounts` в разделе `properties` определения контейнера.
 
 Например, при помощи следующего шаблона Resource Manager создается группа из двух контейнеров, в каждом из которых подключается том *emptyDir*:
 
@@ -44,7 +44,7 @@ ms.locfileid: "77117737"
 
 Примеры развертывания группы контейнеров см. в статье [развертывание многоконтейнерной группы с помощью шаблона диспетчер ресурсов](container-instances-multi-container-group.md) и [развертывание многоконтейнерной группы с помощью файла YAML](container-instances-multi-container-yaml.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о подключении других типов томов в службе "Экземпляры контейнеров Azure" см. в следующих статьях:
 

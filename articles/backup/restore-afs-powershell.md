@@ -3,12 +3,12 @@ title: Восстановление файлов Azure с помощью PowerSh
 description: Из этой статьи вы узнаете, как восстановить файлы Azure с помощью службы Azure Backup и PowerShell.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 99aeaa6173bb5336e6e1719a9fc0df0c668374e2
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 63c318b66ec8f876a260b3c5b8db38bb088fb862
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77086825"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201954"
 ---
 # <a name="restore-azure-files-with-powershell"></a>Восстановление файлов Azure с помощью PowerShell
 
@@ -17,7 +17,10 @@ ms.locfileid: "77086825"
 Можно восстановить весь файловый ресурс или отдельные файлы в общей папке. Можно выполнить восстановление в исходное расположение или в другое расположение.
 
 > [!WARNING]
-> Убедитесь, что версия PS обновлена до минимальной версии для "az. RecoveryServices 2.6.0" для резервных копий AFS. Дополнительные сведения см. в [разделе](backup-azure-afs-automation.md#important-notice---backup-item-identification-for-afs-backups) , описывающем требования к этому изменению.
+> Убедитесь, что версия PS обновлена до минимальной версии для "az. RecoveryServices 2.6.0" для резервных копий AFS. Дополнительные сведения см. [в разделе](backup-azure-afs-automation.md#important-notice-backup-item-identification) Структурирование требований к этому изменению.
+
+>[!NOTE]
+>Azure Backup теперь поддерживает восстановление нескольких файлов или папок в исходное или альтернативное расположение с помощью PowerShell. Обратитесь к [этому разделу](#restore-multiple-files-or-folders-to-original-or-alternate-location) документа, чтобы узнать, как это делать.
 
 ## <a name="fetch-recovery-points"></a>Получение точек восстановления
 
@@ -28,13 +31,15 @@ ms.locfileid: "77086825"
 * Переменная **$RP** представляет собой массив точек восстановления для выбранного элемента резервного копирования за последние семь дней.
 * Массив сортируется по времени в обратном порядке, так что последняя точка восстановления получает индекс **0**.
 * Используйте стандартное индексирование массива PowerShell для выбора точки восстановления.
-* В примере **$rp[0]** выбирает последнюю точку восстановления.
+* В этом примере **$RP [0]** выбирает последнюю точку восстановления.
 
 ```powershell
+$vault = Get-AzRecoveryServicesVault -ResourceGroupName "azurefiles" -Name "azurefilesvault"
+$Container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureStorage -Status Registered -FriendlyName "afsaccount" -VaultId $vault.ID
+$BackupItem = Get-AzRecoveryServicesBackupItem -Container $Container -WorkloadType AzureFiles -VaultId $vault.ID -FriendlyName "azurefiles"
 $startDate = (Get-Date).AddDays(-7)
 $endDate = Get-Date
-$rp = Get-AzRecoveryServicesBackupRecoveryPoint -Item $afsBkpItem -StartDate $startdate.ToUniversalTime() -EndDate $enddate.ToUniversalTime()
-
+$rp = Get-AzRecoveryServicesBackupRecoveryPoint -Item $BackupItem -VaultId $vault.ID -StartDate $startdate.ToUniversalTime() -EndDate $enddate.ToUniversalTime()
 $rp[0] | fl
 ```
 
@@ -87,7 +92,7 @@ testAzureFS        Restore              InProgress           12/10/2018 9:56:38 
 * **Таржетфилешаренаме**. файловые ресурсы в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
 * **TargetFolder**: папка в общей папке, в которую восстанавливаются данные. Если содержимое резервной копии необходимо восстановить в корневую папку, укажите значения целевой папки в виде пустой строки.
 * **SourceFilePath**: абсолютный путь к файлу, восстанавливаемому в общей папке, в виде строки. Этот же путь используется в командлете PowerShell **Get-AzStorageFile**.
-* **Саурцефилетипе**: указывает, выбран ли каталог или файл. Принимает **папка** или **файл**.
+* **Саурцефилетипе**: указывает, выбран ли каталог или файл. Принимает **Каталог** или **файл**.
 * **ResolveConflict**: инструкция при конфликте с восстановленными данными. Принимает **перезаписать** или **пропустить**.
 
 Дополнительные параметры (SourceFilePath и Саурцефилетипе) относятся только к отдельному файлу, который требуется восстановить.
@@ -102,17 +107,67 @@ Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -TargetStorageAccount
 
 При восстановлении в исходное расположение не нужно указывать параметры, связанные с назначением и целевым объектом. Нужно только указать **ResolveConflict**.
 
-#### <a name="overwrite-an-azure-file-share"></a>Перезапись файлового ресурса Azure
+### <a name="overwrite-an-azure-file-share"></a>Перезапись файлового ресурса Azure
 
 ```powershell
 Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -ResolveConflict Overwrite
 ```
 
-#### <a name="overwrite-an-azure-file"></a>Перезапись файла Azure
+### <a name="overwrite-an-azure-file"></a>Перезапись файла Azure
 
 ```powershell
 Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -SourceFileType File -SourceFilePath "TestDir/TestDoc.docx" -ResolveConflict Overwrite
 ```
+
+## <a name="restore-multiple-files-or-folders-to-original-or-alternate-location"></a>Восстановление нескольких файлов или папок в исходном или альтернативном расположении
+
+Используйте команду [RESTORE-азрековерисервицесбаккупитем](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) , передав путь ко всем файлам или папкам, которые требуется восстановить, в качестве значения параметра **мултиплесаурцефилепас** .
+
+### <a name="restore-multiple-files"></a>Восстановление нескольких файлов
+
+В следующем сценарии мы пытаемся восстановить файлы *филешарепаже. png* и *MyTestFile. txt* .
+
+```powershell
+$vault = Get-AzRecoveryServicesVault -ResourceGroupName "azurefiles" -Name "azurefilesvault"
+
+$Container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureStorage -Status Registered -FriendlyName "afsaccount" -VaultId $vault.ID
+
+$BackupItem = Get-AzRecoveryServicesBackupItem -Container $Container -WorkloadType AzureFiles -VaultId $vault.ID -FriendlyName "azurefiles"
+
+$RP = Get-AzRecoveryServicesBackupRecoveryPoint -Item $BackupItem -VaultId $vault.ID
+
+$files = ("FileSharePage.png", "MyTestFile.txt")
+
+Restore-AzRecoveryServicesBackupItem -RecoveryPoint $RP[0] -MultipleSourceFilePath $files -SourceFileType File -ResolveConflict Overwrite -VaultId $vault.ID -VaultLocation $vault.Location
+```
+
+### <a name="restore-multiple-directories"></a>Восстановление нескольких каталогов
+
+В следующем сценарии мы пытаемся восстановить *zrs1_restore* и *восстановить* каталоги.
+
+```powershell
+$vault = Get-AzRecoveryServicesVault -ResourceGroupName "azurefiles" -Name "azurefilesvault"
+
+$Container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureStorage -Status Registered -FriendlyName "afsaccount" -VaultId $vault.ID
+
+$BackupItem = Get-AzRecoveryServicesBackupItem -Container $Container -WorkloadType AzureFiles -VaultId $vault.ID -FriendlyName "azurefiles"
+
+$RP = Get-AzRecoveryServicesBackupRecoveryPoint -Item $BackupItem -VaultId $vault.ID
+
+$files = ("Restore","zrs1_restore")
+
+Restore-AzRecoveryServicesBackupItem -RecoveryPoint $RP[0] -MultipleSourceFilePath $files -SourceFileType Directory -ResolveConflict Overwrite -VaultId $vault.ID -VaultLocation $vault.Location
+```
+
+Результат будет выглядеть примерно так:
+
+```output
+WorkloadName         Operation         Status          StartTime                EndTime       JobID
+------------         ---------         ------          ---------                -------       -----
+azurefiles           Restore           InProgress      4/5/2020 8:01:24 AM                    cd36abc3-0242-44b1-9964-0a9102b74d57
+```
+
+Если вы хотите восстановить несколько файлов или папок в альтернативное расположение, используйте приведенные выше сценарии, указав значения параметров, связанные с целевым расположением, как описано выше в примере [восстановления файла Azure в альтернативное расположение](#restore-an-azure-file-to-an-alternate-location).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

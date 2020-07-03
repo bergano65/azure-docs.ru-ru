@@ -1,33 +1,33 @@
 ---
-title: Настройка завершения SSL с помощью сертификатов Key Vault — PowerShell
+title: Настройка завершения TLS с помощью сертификатов Key Vault — PowerShell
 titleSuffix: Azure Application Gateway
 description: Узнайте, как интегрировать шлюз приложений Azure с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 11/14/2019
+ms.date: 02/27/2020
 ms.author: victorh
-ms.openlocfilehash: 50608365adcef47971a18589dce3a07abbeb7e8b
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: ffda4b41497a9fd84db5fcee36202eb1c1dca2c0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75640556"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81457847"
 ---
-# <a name="configure-ssl-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Настройка завершения SSL с использованием Key Vault сертификатов с помощью Azure PowerShell
+# <a name="configure-tls-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Настройка завершения TLS с использованием Key Vault сертификатов с помощью Azure PowerShell
 
-[Azure Key Vault](../key-vault/key-vault-overview.md) — это хранилище секретов, управляемое платформой, которое можно использовать для защиты секретов, ключей и SSL-сертификатов. Шлюз приложений Azure поддерживает интеграцию с Key Vault (в общедоступной предварительной версии) для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS. Эта поддержка ограничена номером SKU шлюза приложений версии 2.
+[Azure Key Vault](../key-vault/general/overview.md) — это хранилище секретов, управляемое платформой, которое можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Шлюз приложений Azure поддерживает интеграцию с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS. Эта поддержка ограничена SKU шлюза приложений версии 2.
 
-Дополнительные сведения см. [в разделе завершение SSL с помощью сертификатов Key Vault](key-vault-certs.md).
+Дополнительные сведения см. [в статье завершение TLS с использованием сертификатов Key Vault](key-vault-certs.md).
 
-В этой статье показано, как использовать скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложений для сертификатов завершения SSL.
+В этой статье показано, как использовать скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложений для сертификатов завершения TLS/SSL.
 
-Для работы с этой статьей требуется Azure PowerShell Module версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Чтобы выполнить команды в этой статье, необходимо также создать подключение к Azure, запустив `Connect-AzAccount`.
+Для работы с этой статьей требуется Azure PowerShell Module версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Чтобы выполнить команды в этой статье, необходимо также создать подключение к Azure, выполнив `Connect-AzAccount`команду.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом необходимо установить модуль Манажедсервицеидентити:
 
@@ -71,7 +71,7 @@ $certificate = Get-AzKeyVaultCertificate -VaultName $kv -Name "cert1"
 $secretId = $certificate.SecretId.Replace($certificate.Version, "")
 ```
 > [!NOTE]
-> Для правильной работы завершения SSL необходимо использовать флаг-Енаблесофтделете.
+> Для правильной работы функции завершения TLS необходимо использовать флаг-Енаблесофтделете. Если вы настраиваете [Key Vault обратимое удаление с помощью портала](../key-vault/general/overview-soft-delete.md#soft-delete-behavior), срок хранения должен храниться в 90 дней, то есть в значении по умолчанию. Шлюз приложений еще не поддерживает другой срок хранения. 
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
@@ -102,7 +102,7 @@ $fp01 = New-AzApplicationGatewayFrontendPort -Name "port1" -Port 443
 $fp02 = New-AzApplicationGatewayFrontendPort -Name "port2" -Port 80
 ```
 
-### <a name="point-the-ssl-certificate-to-your-key-vault"></a>Указание SSL-сертификата для хранилища ключей
+### <a name="point-the-tlsssl-certificate-to-your-key-vault"></a>Наведите сертификат TLS/SSL в хранилище ключей.
 
 ```azurepowershell
 $sslCert01 = New-AzApplicationGatewaySslCertificate -Name "SSLCert1" -KeyVaultSecretId $secretId
@@ -115,7 +115,7 @@ $listener01 = New-AzApplicationGatewayHttpListener -Name "listener1" -Protocol H
   -FrontendIPConfiguration $fipconfig01 -FrontendPort $fp01 -SslCertificate $sslCert01
 $listener02 = New-AzApplicationGatewayHttpListener -Name "listener2" -Protocol Http `
   -FrontendIPConfiguration $fipconfig01 -FrontendPort $fp02
-$poolSetting01 = New-AzApplicationGatewayBackendHttpSettings -Name "setting1" -Port 80 `
+$poolSetting01 = New-AzApplicationGatewayBackendHttpSetting -Name "setting1" -Port 80 `
   -Protocol Http -CookieBasedAffinity Disabled
 $rule01 = New-AzApplicationGatewayRequestRoutingRule -Name "rule1" -RuleType basic `
   -BackendHttpSettings $poolSetting01 -HttpListener $listener01 -BackendAddressPool $pool
@@ -142,6 +142,6 @@ $appgw = New-AzApplicationGateway -Name $appgwName -Identity $appgwIdentity -Res
   -SslCertificates $sslCert01 -AutoscaleConfiguration $autoscaleConfig
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Дополнительные сведения о завершении SSL](ssl-overview.md)
+[Дополнительные сведения об увольнении TLS](ssl-overview.md)

@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 08/30/2019
 ms.author: jgao
 ms.openlocfilehash: 585e2773ea5d6af184f85e65b63d39b60d632146
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75483600"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79273635"
 ---
 # <a name="use-visual-studio-code-to-create-azure-resource-manager-templates"></a>Использование Visual Studio Code для создания шаблонов Azure Resource Manager
 
@@ -69,7 +69,7 @@ Visual Studio Code поддерживает MacOS, Windows и Linux.  Его м�
 
 ### <a name="go-to-definition-for-variable-and-parameter-references"></a>Переход к определению для ссылок на переменные и параметры
 
-Вы можете перейти к определению с помощью **сочетания клавиш CTRL + щелчок**или в контекстном меню, как показано на снимке экрана: ![Visual Studio Code диспетчер ресурсов Tools Extensions Go to Definition](./media/use-vs-code-to-create-template/resource-manager-tools-extension-context-menu.png)
+Можно перейти к определению с помощью **сочетания клавиш CTRL + щелчок**или в контекстном меню, как показано на снимке ![экрана: Visual Studio Code расширения средств диспетчер ресурсов к определению](./media/use-vs-code-to-create-template/resource-manager-tools-extension-context-menu.png)
 
 Вы можете открыть определение рядом с помощью **клавиш Ctrl + Alt + щелчок**.
 
@@ -118,7 +118,7 @@ Visual Studio Code поддерживает MacOS, Windows и Linux.  Его м�
 - Неиспользуемые параметры
 - Неиспользуемые переменные
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о создании шаблонов Azure Resource Manager см. в разделе [учебник. Создание и развертывание первого шаблона Azure Resource Manager](template-tutorial-create-first-template.md).
 - Чтобы выполнить быстрый запуск с помощью Visual Studio Code, см [. раздел Краткое руководство. Создание шаблонов Azure Resource Manager с помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md)

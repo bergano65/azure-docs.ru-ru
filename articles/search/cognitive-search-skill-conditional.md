@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: b5f1fc7f877854dd06fbbe09ff82e47208fa12d0
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72792048"
 ---
 # <a name="conditional-cognitive-skill"></a>Условный навык для переприятия
@@ -32,7 +32,7 @@ else
 > Этот навык не привязан к Azure Cognitive Services API, и вы не платите за его использование. Однако вы по-прежнему должны [присоединить ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md) , чтобы переопределить параметр "Free" (бесплатный), ограничивающий небольшое количество дополнений в день.
 
 ## <a name="odatatype"></a>@odata.type  
-Microsoft. Skills. util. Кондитионалскилл
+Microsoft.Skills.Util.ConditionalSkill
 
 
 ## <a name="evaluated-fields"></a>Вычисляемые поля
@@ -43,14 +43,14 @@ Microsoft. Skills. util. Кондитионалскилл
 
 -   Пути к заметкам (пути в выражениях должны быть разделены символами "$ (" и ")")
  <br/>
-    Примеры.
+    Примеры
     ```
         "= $(/document)"
         "= $(/document/content)"
     ```
 
 -  Литералы (строки, числа, true, false, null) <br/>
-    Примеры.
+    Примеры
     ```
        "= 'this is a string'"   // string (note the single quotation marks)
        "= 34"                   // number
@@ -58,22 +58,22 @@ Microsoft. Skills. util. Кондитионалскилл
        "= null"                 // null value
     ```
 
--  Выражения, использующие операторы сравнения (= =,! =, > =, >, < =, <) <br/>
-    Примеры.
+-  Выражения, использующие операторы сравнения (= =,! =, >=, >, <=, <) <br/>
+    Примеры
     ```
         "= $(/document/language) == 'en'"
         "= $(/document/sentiment) >= 0.5"
     ```
 
--   Выражения, использующие логические операторы (& &, | |,!, ^) <br/>
-    Примеры.
+-   Выражения, использующие логические операторы (&&, | |,!, ^) <br/>
+    Примеры
     ```
         "= $(/document/language) == 'en' && $(/document/sentiment) > 0.5"
         "= !true"
     ```
 
--   Выражения, использующие числовые операторы (+,-, \*,/,%) <br/>
-    Примеры. 
+-   Выражения, использующие числовые операторы (+,- \*,,/,%) <br/>
+    Примеры 
     ```
         "= $(/document/sentiment) + 0.5"         // addition
         "= $(/document/totalValue) * 1.10"       // multiplication
@@ -87,7 +87,7 @@ Microsoft. Skills. util. Кондитионалскилл
 
 | Входные данные   | Описание |
 |-------------|-------------|
-| condition   | Это [вычисляемое поле](#evaluated-fields) , представляющее условие для оценки. Это условие должно возвращать логическое значение (*true* или *false*).   <br/>  Примеры. <br/> "= true" <br/> "= $ (/документ/лангуаже) = = ' fr '" <br/> "= $ (/документ/Пажес/\*/Language) = = $ (/документ/експектедлангуаже)" <br/> |
+| condition   | Это [вычисляемое поле](#evaluated-fields) , представляющее условие для оценки. Это условие должно возвращать логическое значение (*true* или *false*).   <br/>  Примеры <br/> "= true" <br/> "= $ (/документ/лангуаже) = = ' fr '" <br/> "= $ (/документ/Пажес/\*/Language) = = $ (/документ/експектедлангуаже)" <br/> |
 | вхентруе    | Это [вычисляемое поле](#evaluated-fields) , представляющее возвращаемое значение, если условие оценивается как *истинное*. Константные строки должны возвращаться в одинарных кавычках ("и"). <br/>Примеры значений: <br/> "=" контракт ""<br/>"= $ (/документ/контракттипе)" <br/> "= $ (/документ/ентитиес/\*)" <br/> |
 | вхенфалсе   | Это [вычисляемое поле](#evaluated-fields) , представляющее возвращаемое значение, если условие оценивается как *false*. <br/>Примеры значений: <br/> "=" контракт ""<br/>"= $ (/документ/контракттипе)" <br/> "= $ (/документ/ентитиес/\*)" <br/>
 
@@ -176,4 +176,4 @@ Microsoft. Skills. util. Кондитионалскилл
 ## <a name="next-steps"></a>Дальнейшие действия
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)

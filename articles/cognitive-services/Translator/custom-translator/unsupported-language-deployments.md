@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 04/24/2019
+ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: 3c5c74fc853b5a2425a58e1704aad43350cba212
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: ea2761712e4bbb7a3abd1483766f4eae47b7c350
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837454"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996369"
 ---
 # <a name="unsupported-language-deployments"></a>Развертывания неподдерживаемых языков
 
@@ -32,7 +32,7 @@ ms.locfileid: "73837454"
 * Модель должна находиться в развернутом состоянии, когда происходит миграция.  
 * Языковая пара модели должна быть неподдерживаемой языковой парой в пользовательском трансляторе.  Пары языков, в которых язык поддерживается или на английском языке, но сама пара не включает английский, являются кандидатами на неподдерживаемые языковые развертывания.  Например, модель концентратора для пары языков на французском и немецком языках считается неподдерживаемой парой языков, даже если для французского языка и английского на немецком языке поддерживается пара языков.
 
-## <a name="process"></a>Process
+## <a name="process"></a>Процесс
 После переноса моделей из концентратора, которые являются кандидатами для развертывания, их можно найти, перейдя на страницу **параметров** рабочей области и прокрутите страницу до конца страницы, где вы увидите **неподдерживаемый раздел обучения центра транслятора** .  Этот раздел появляется только в том случае, если у вас есть проекты, соответствующие предварительным требованиям, указанным выше.
 
 ![Перенос из центра](media/unsupported-language-deployments/unsupported-translator-hub-trainings.jpg)
@@ -45,7 +45,7 @@ ms.locfileid: "73837454"
 
 ![Перенос из центра](media/unsupported-language-deployments/request-unsupported-trainings.jpg) 
 
-## <a name="whats-next"></a>Что дальше?
+## <a name="whats-next"></a>Дальнейшие действия
 
 Модели, выбранные для развертывания, сохраняются после списания концентратора и развертывания всех моделей.  У вас есть до 24 мая для отправки запросов на развертывание неподдерживаемых моделей.  Мы будем развертывать эти модели 15 июня, после чего они будут доступны через API-интерфейс Translator v3.  Кроме того, они будут доступны через API v2 до 1 июля.  
 
@@ -56,5 +56,5 @@ ms.locfileid: "73837454"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Train a model](how-to-train-model.md) (Обучение модели).
-- Начните использовать развернутую пользовательскую модель перевода с помощью [API перевода текстов Microsoft версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).
+- [Обучение модели](how-to-train-model.md).
+- Приступите к работе с развернутой настраиваемой моделью преобразования через [Translator v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl).

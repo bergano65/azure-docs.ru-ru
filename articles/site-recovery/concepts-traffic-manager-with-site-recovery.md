@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: mayg
 ms.openlocfilehash: 6c77cd43231d4596535c11564313a0fe90633cdb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60947804"
 ---
 # <a name="azure-traffic-manager-with-azure-site-recovery"></a>Диспетчер трафика Microsoft Azure и Azure Site Recovery
@@ -115,7 +115,7 @@ ms.locfileid: "60947804"
 
 TTL, с которым сталкивается клиент, также не увеличивается, если число сопоставителей DNS между клиентом и полномочным DNS-сервером увеличивается. Сопоставители учитывают TTL и передают только те значения TTL, которые отражают прошедшее время с момента кэширования записи. Это гарантирует, что запись DNS будет обновлена в клиенте после истечения TTL, независимо от количества сопоставителей DNS в цепочке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 - См. сведения в статье [Методы маршрутизации диспетчера трафика](../traffic-manager/traffic-manager-routing-methods.md).
 - Узнайте больше о [вложенных профилях диспетчера трафика](../traffic-manager/traffic-manager-nested-profiles.md).
 - Узнайте больше о [мониторинге конечных точек](../traffic-manager/traffic-manager-monitoring.md).

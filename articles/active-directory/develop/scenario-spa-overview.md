@@ -2,30 +2,27 @@
 title: Сценарий приложения с одной страницей JavaScript — платформа Microsoft Identity | Службы
 description: Узнайте, как создать одностраничное приложение (обзор сценария) с помощью платформы Microsoft Identity.
 services: active-directory
-documentationcenter: dev-center-name
 author: navyasric
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b430778bed811656b5c8aadc75ba3cf35917f737
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 3ead0ea58c6860519f027eb6a7450df37396bd89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701881"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885180"
 ---
 # <a name="scenario-single-page-application"></a>Сценарий: одностраничное приложение
 
 Узнайте все, что нужно для создания одностраничного приложения (SPA).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [Prerequisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
@@ -57,4 +54,4 @@ ms.locfileid: "76701881"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Интеграция приложений с Azure Active Directory](scenario-spa-app-registration.md)
+> [Регистрация приложения](scenario-spa-app-registration.md)

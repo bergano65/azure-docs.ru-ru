@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 10/04/2018
 ms.author: tomfitz
 ms.openlocfilehash: afe78dd00ecebdc54b6d73c4c8324729e117d95b
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75651752"
 ---
 # <a name="monitor-a-deployed-instance-of-a-managed-application"></a>Мониторинг развернутого экземпляра управляемого приложения
@@ -32,7 +32,7 @@ ms.locfileid: "75651752"
 
 ## <a name="view-alerts"></a>Просмотр оповещений
 
-1. Выберите **Оповещения**.
+1. Выберите **оповещения**.
 
    ![Выбор оповещений](./media/monitor-managed-application-portal/select-alerts.png)
 

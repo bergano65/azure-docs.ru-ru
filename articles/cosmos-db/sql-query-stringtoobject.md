@@ -4,15 +4,15 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: f09c27458a630386664f3f6579cfeee0721d8be9
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: c3e61d1efe20910d84ef4ff583d74982b3ea9f3d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349212"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78296387"
 ---
 # <a name="stringtoobject-azure-cosmos-db"></a>Стрингтубжект (Azure Cosmos DB)
  Возвращает выражение, преобразованное в объект. Если выражение не может быть преобразовано, возвращает значение undefine.  
@@ -28,13 +28,13 @@ StringToObject(<str_expr>)
 *str_expr*  
    Строковое выражение, анализируемое как выражение объекта JSON. Обратите внимание, что вложенные строковые значения должны быть написаны с помощью двойных кавычек. Дополнительные сведения о формате JSON см. в разделе [JSON.org](https://json.org/)  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает выражение объекта или значение undefine.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как `StringToObject` ведет себя между различными типами. 
+  В следующем примере показано, `StringToObject` как ведет себя в разных типах. 
   
  Ниже приведены примеры с допустимыми входными данными.
 
@@ -56,7 +56,7 @@ SELECT
 ```
 
  Ниже приведены примеры с недопустимыми входными данными.
-Несмотря на то, что они являются допустимыми в запросе, они не будут анализироваться в допустимые объекты. Строки в строке объекта должны либо быть экранированы "{\\"\\":\\" str\\"}", либо окружающая кавычка должна быть единственной "{" a ":" str "}".
+Несмотря на то, что они являются допустимыми в запросе, они не будут анализироваться в допустимые объекты. Строки в\\строке объекта должны либо быть экранированы "{" a\\":\\" str\\"}", либо окружающая кавычка должна быть единственной "{" a ":" str "}".
 
 Одинарные кавычки, относящиеся к именам свойств, не являются допустимыми JSON.
 
@@ -104,8 +104,12 @@ SELECT
 [{}]
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: d23eabdacc57a3f5a10d9e3b132a6daac42fbd4d
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 8f41fe1005e96b428337bc73b9d468962a079596
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74772157"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79527832"
 ---
 # <a name="security-in-azure-database-for-mariadb"></a>Безопасность в Базе данных Azure для MariaDB
 
@@ -38,7 +38,7 @@ ms.locfileid: "74772157"
 Конечные точки службы виртуальной сети расширяют возможности подключения к виртуальной сети по магистрали Azure. С помощью правил виртуальной сети можно включить сервер базы данных Azure для MariaDB, чтобы разрешить подключения из выбранных подсетей в виртуальной сети. Дополнительные сведения см. в разделе [Общие сведения о конечной точке службы виртуальной сети](concepts-data-access-security-vnet.md).
 
 
-## <a name="access-management"></a>управление доступом
+## <a name="access-management"></a>Управление доступом
 
 При создании базы данных Azure для сервера MariaDB вы предоставляете учетные данные для пользователя с правами администратора. Этот администратор может использовать для создания дополнительных пользователей MariaDB.
 
@@ -50,5 +50,5 @@ ms.locfileid: "74772157"
 [Ведение журнала аудита](concepts-audit-logs.md) доступно для наблюдения за действиями в базах данных. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Включение правил брандмауэра для [IP-адресов](concepts-firewall-rules.md) или [виртуальных сетей](concepts-data-access-security-vnet.md)

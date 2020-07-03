@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 58882f7569e26ebcba237158db2eb23e76bcd015
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 20be34191355e6ade40e0f3b218818bfa5345a28
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74765092"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79533238"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
@@ -28,24 +28,24 @@ ms.locfileid: "74765092"
 ## <a name="limitations-and-considerations"></a>Ограничения и рекомендации
 
 ### <a name="data-not-replicated"></a>Нереплицируемые данные
-[*Системная база данных MySQL*](https://dev.mysql.com/doc/refman/5.7/en/system-database.html) на главном сервере не реплицируется. Изменения учетных записей и разрешений на главном сервере не реплицируются. Если вы создаете на главном сервере учетную запись, которой необходим доступ к серверу-реплике, вручную создайте ту же учетную запись на стороне сервера-реплики. Чтобы узнать, какие таблицы хранятся в системной базе данных, ознакомьтесь с [руководством по MySQL](https://dev.mysql.com/doc/refman/5.7/en/system-database.html).
+[*Системная база данных MySQL*](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html) на главном сервере не реплицируется. Изменения учетных записей и разрешений на главном сервере не реплицируются. Если вы создаете на главном сервере учетную запись, которой необходим доступ к серверу-реплике, вручную создайте ту же учетную запись на стороне сервера-реплики. Чтобы узнать, какие таблицы хранятся в системной базе данных, ознакомьтесь с [руководством по MySQL](https://dev.mysql.com/doc/refman/5.7/en/system-schema.html).
 
-### <a name="requirements"></a>Требования
+### <a name="requirements"></a>Requirements (Требования)
 - На главном сервере должна быть установлена система MySQL по крайней мере версии 5.6. 
 - Версии главного сервера и сервера реплики должны совпадать. Например, на обоих должна быть система MySQL версии 5.6 или 5.7.
 - Каждая таблица должна иметь первичный ключ.
 - Главный сервер должен использовать ядро MySQL InnoDB.
 - Пользователь должен иметь разрешения на настройку ведения двоичного журнала и создания новых пользователей на главном сервере.
-- Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mysql.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mysql/howto-data-in-replication#link-master-and-replica-servers-to-start-data-in-replication) и параметр `master_ssl_ca`.
+- Если на главном сервере включен протокол SSL, убедитесь, что сертификат ЦС SSL, предоставленный для домена, включен в `mysql.az_replication_change_master` хранимую процедуру. См. следующие [примеры](https://docs.microsoft.com/azure/mysql/howto-data-in-replication#link-master-and-replica-servers-to-start-data-in-replication) и `master_ssl_ca` параметр.
 - Убедитесь, что IP-адрес главного сервера был добавлен в правила брандмауэра на сервере-реплике Базы данных Azure для MySQL. Измените правила брандмауэра на [портале Azure](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-portal) или с помощью [Azure CLI](https://docs.microsoft.com/azure/mysql/howto-manage-firewall-using-cli).
 - Убедитесь, что компьютер, на котором размещен главный сервер, разрешает входящий и исходящий трафик в порте 3306.
 - Убедитесь, что главный сервер имеет общедоступный **IP-адрес**, DNS является общедоступным или имеет полное доменное имя (FQDN).
 
-### <a name="other"></a>Прочее
+### <a name="other"></a>Другой
 - Репликация данных поддерживается только в ценовых категориях общего назначения и с оптимизацией для операций в памяти.
 - Идентификаторы глобальных транзакций (GTID) не поддерживаются.
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте, как [настроить репликацию входных данных](howto-data-in-replication.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+- Узнайте, как [настроить репликацию данных](howto-data-in-replication.md)
 - Дополнительные сведения см. в статье [Реплики чтения в базе данных Azure для MySQL](concepts-read-replicas.md).
 - Сведения о [переносе данных с минимальным временем простоя с помощью DMS](howto-migrate-online.md)

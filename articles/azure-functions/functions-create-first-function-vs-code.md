@@ -3,20 +3,45 @@ title: Создание функции в Azure с помощью Visual Studio 
 description: Создание и публикация в Azure простой функции, активируемой по HTTP, с помощью расширения "Функции Azure" для Visual Studio Code.
 ms.topic: quickstart
 ms.date: 01/10/2020
-ms.custom: mvc, devcenter
+ms.custom: mvc, devcenter, seo
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 26313c68305f4d7e6411d31fa12366442ce4bd38
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 64c2e813743a772692efcb1d966c8ab7b52cc66d
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76964179"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628203"
 ---
-# <a name="quickstart-create-an-azure-functions-project-using-visual-studio-code"></a>Краткое руководство. Создание проекта Функций Azure в Visual Studio Code
+# <a name="quickstart-create-a-function-in-azure-using-visual-studio-code"></a>Краткое руководство. Создание функции в Azure с помощью Visual Studio Code
 
-В этой статье вы узнаете, как создать функцию, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. Выполнение этого краткого руководства предполагает небольшую дополнительную плату в несколько центов США в учетной записи Azure. 
+::: zone pivot="programming-language-csharp"  
+Из этой статьи вы узнаете, как создать функцию класса C# на основе библиотеки, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end  
+::: zone pivot="programming-language-javascript"
+Из этой статьи вы узнаете, как создать функцию JavaScript, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end
+::: zone pivot="programming-language-typescript"
+Из этой статьи вы узнаете, как создать функцию TypeScript, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end   
+::: zone pivot="programming-language-powershell"
+Из этой статьи вы узнаете, как создать функцию PowerShell, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end  
+::: zone pivot="programming-language-python" 
+Из этой статьи вы узнаете, как создать функцию Python, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end  
+::: zone pivot="programming-language-java" 
+Из этой статьи вы узнаете, как создать функцию Java, которая отвечает на HTTP-запросы, используя Visual Studio Code. После тестирования кода в локальной среде его необходимо развернуть в бессерверной среде Функций Azure. 
+::: zone-end
 
+Выполнение этого краткого руководства предполагает небольшую дополнительную плату в несколько центов США в учетной записи Azure. 
+
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python"
 Существует также версия этой статьи для [интерфейса командной строки](functions-create-first-azure-function-azure-cli.md).
+::: zone-end
+::: zone pivot="programming-language-java"  
+> [!NOTE]
+> Если вы не хотите использовать Visual Studio Code в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Maven](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-java), [Gradle](/azure/azure-functions/functions-create-first-java-gradle) и [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions).
+::: zone-end  
 
 ## <a name="configure-your-environment"></a>Настройка среды
 
@@ -25,34 +50,42 @@ ms.locfileid: "76964179"
 + Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 
 ::: zone pivot="programming-language-csharp,programming-language-powershell,programming-language-python"  
-+ [Node.js](https://nodejs.org/), необходимый Windows для npm. Только [Активная версия LTS и версия Maintenance LTS ](https://nodejs.org/about/releases/). Используйте команду `npm --version`, чтобы проверить установленную версию.
-    Не требуется для локальной разработки на MacOS и Linux.   
++ [Node.js](https://nodejs.org/), необходимый Windows для npm. Только [активная версия LTS и версия Maintenance LTS](https://nodejs.org/about/releases/). Используйте команду `node --version`, чтобы проверить установленную версию.
+    Не требуется для локальной разработки на macOS и Linux.   
 ::: zone-end  
 ::: zone pivot="programming-language-javascript,programming-language-typescript"  
-+ [Node.js](https://nodejs.org/), активная версия LTS и версия Maintenance LTS (рекомендуется 10.14.1). Используйте команду `npm --version`, чтобы проверить установленную версию.
++ [Node.js](https://nodejs.org/), активная версия LTS и версия Maintenance LTS (рекомендуется 10.14.1). Используйте команду `node --version`, чтобы проверить установленную версию.
 ::: zone-end 
 ::: zone pivot="programming-language-python"
-+ [Python 3.7](https://www.python.org/downloads/release/python-375/) или [Python 3.6](https://www.python.org/downloads/release/python-368/), поддерживаемый Функциями Azure. Python 3.8 пока не поддерживается. 
++ Функции Azure (x64) поддерживают версии [Python 3.8](https://www.python.org/downloads/release/python-381/), [Python 3.7](https://www.python.org/downloads/release/python-375/) и [Python 3.6](https://www.python.org/downloads/release/python-368/).
 ::: zone-end   
 ::: zone pivot="programming-language-powershell"
 + [PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows)
 
 + [Пакет SDK для .NET Core 2.2 и более поздних версий](https://www.microsoft.com/net/download).  
 ::: zone-end  
+::: zone pivot="programming-language-java"  
++ [Java Developer Kit](https://aka.ms/azure-jdks) версии 8.
+
++ [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
+::: zone-end  
 + [Visual Studio Code](https://code.visualstudio.com/) на одной из [поддерживаемых платформ](https://code.visualstudio.com/docs/supporting/requirements#_platforms).  
 ::: zone pivot="programming-language-csharp"  
-+ [Расширение C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) для Visual Studio Code.  
++ [Расширение C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) для Visual Studio Code.  
 ::: zone-end  
 ::: zone pivot="programming-language-python"
 + [Расширение Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) для Visual Studio Code.  
 ::: zone-end  
 ::: zone pivot="programming-language-powershell"
-+ [Расширение PowerShell для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).  
++ [Расширение PowerShell для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell). 
+::: zone-end  
+::: zone pivot="programming-language-java"  
++ [Пакет расширения Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 ::: zone-end  
 
 + [Расширение "Функции Azure"](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) для Visual Studio Code. 
 
-## <a name="create-an-azure-functions-project"></a>Создание локального проекта 
+## <a name="create-your-local-project"></a><a name="create-an-azure-functions-project"></a>Создание локального проекта 
 
 В этом разделе вы используете Visual Studio Code, чтобы создать локальный проект Функций Azure на выбранном языке. Далее в этой статье вы опубликуете код функции в Azure. 
 
@@ -85,21 +118,35 @@ ms.locfileid: "76964179"
     + **Выберите псевдоним Python для создания виртуальной среды**. Выберите расположение интерпретатора Python. Если расположение не отображается, введите полный путь к двоичному файлу Python.  
     ::: zone-end
 
+    ::: zone pivot="programming-language-java"  
+    + **Выберите язык для проекта приложения-функции**: Выберите `Java`.
+
+    + **Укажите идентификатор группы**: Выберите `com.function`.
+
+    + **Укажите идентификатор артефакта**: Выберите `myFunction`.
+
+    + **Укажите версию**: Выберите `1.0-SNAPSHOT`.
+
+    + **Укажите имя пакета**: Выберите `com.function`.
+
+    + **Укажите имя приложения**: Выберите `myFunction-12345`.
+    ::: zone-end  
+    ::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python"
     + **Выберите шаблон для первой функции вашего проекта**. Выберите `HTTP trigger`.
     
     + **Укажите имя функции**. Введите `HttpExample`.
-    
+    ::: zone-end  
     ::: zone pivot="programming-language-csharp"
     + **Укажите пространство имен**. Введите `My.Functions`. 
-    ::: zone-end
-
-    + **Уровень авторизации**: выберите `Anonymous`, что позволит любому пользователю вызывать конечную точку функции. Дополнительные сведения об уровне авторизации см. в разделе [Authorization keys](functions-bindings-http-webhook.md#authorization-keys) (Ключи авторизации).
-
+    ::: zone-end  
+    ::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python"
+    + **Уровень авторизации**: выберите `Anonymous`, что позволит любому пользователю вызывать конечную точку функции. Дополнительные сведения об уровне авторизации см. в разделе [Authorization keys](functions-bindings-http-webhook-trigger.md#authorization-keys) (Ключи авторизации).
+    ::: zone-end  
     + **Выберите, как вы хотели бы открыть свой проект**. Выберите `Add to workspace`.
 
 1. Используя эти сведения, Visual Studio Code создает проект функций Azure с триггером HTTP. Файлы локального проекта можно просмотреть в Explorer. Дополнительные сведения см. в разделе [Generated project files](functions-develop-vs-code.md#generated-project-files) (Созданные файлы проекта). 
 
-::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-python"
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-python,programming-language-java"
 
 [!INCLUDE [functions-run-function-test-local-vs-code](../../includes/functions-run-function-test-local-vs-code.md)]
 
@@ -119,7 +166,7 @@ ms.locfileid: "76964179"
 
 ## <a name="run-the-function-in-azure"></a>Запуск функции в Azure
 
-1. Вернитесь в область **Azure: Functions** (Azure: Функции) на панели слева и откройте новое приложение-функцию в своей подписке. Разверните **Функции**, щелкните правой кнопкой мыши (Windows) или щелкните при зажатой клавише Ctrl (MacOS) элемент **HttpExample**, а затем выберите команду **Copy function URL** (Копировать URL-адрес функции).
+1. Вернитесь в область **Azure: Functions** (Azure: Функции) на панели слева и откройте новое приложение-функцию в своей подписке. Разверните **Функции**, щелкните правой кнопкой мыши (Windows) или щелкните, зажав клавишу CTRL (macOS), элемент **HttpExample**, а затем выберите команду **Copy function URL** (Копировать URL-адрес функции).
 
     ![Скопируйте URL-адрес функции для создания нового HTTP-триггера](./media/functions-create-first-function-vs-code/function-copy-endpoint-url.png)
 

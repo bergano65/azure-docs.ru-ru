@@ -1,22 +1,22 @@
 ---
 title: Краткое руководство. Получение ответа из базы знаний в QnA Maker с помощью REST (C#)
 description: В этом кратком руководстве по C# для REST описывается, как программным способом получить ответ из базы знаний.
-ms.topic: quickstart
 ms.date: 02/08/2020
 ROBOTS: NOINDEX,NOFOLLOW
-ms.custom: RESTCHANGE-20200128
-ms.openlocfilehash: 9bdb331433fef9874a91de6044ac70eab2cd28f6
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
-ms.translationtype: HT
+ms.custom: RESTCURL2020FEB27
+ms.topic: conceptual
+ms.openlocfilehash: 16093ec5e837b098da3c9b038fe2a57cd76c7151
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77109919"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78851809"
 ---
-# <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-c"></a>Краткое руководство. Получение ответов на вопрос из базы знаний с помощью C#
+# <a name="quickstart-get-answers-to-a-question-from-a-knowledge-base-with-c"></a>Краткое руководство. получение ответов на вопрос из базы знаний с помощью C #
 
 В этом кратком руководстве объясняется, как получить ответ из базы знаний QnA Maker программными средствами. База знаний содержит вопросы и ответы из [источника данных](../Concepts/knowledge-base.md), например часто задаваемые вопросы. [Вопросы](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) отправляются в службу QnA Maker. Результат содержит прогнозируемый [ответ](../how-to/metadata-generateanswer-usage.md#generateanswer-response-properties).
 
-[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime) | [Пример](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/blob/master/documentation-samples/quickstarts/get-answer/QnAMakerAnswerQuestion/Program.cs)
+[Образец справочной документации](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime) | [Sample](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/blob/master/documentation-samples/quickstarts/get-answer/QnAMakerAnswerQuestion/Program.cs)
 
 ## <a name="prerequisites"></a>Предварительные требования
 

@@ -3,17 +3,17 @@ title: Создание веб-перехватчиков на правилах 
 description: Создание веб-перехватчиков в Azure IoT Central для автоматического уведомления других приложений о срабатывании правил.
 author: viv-liu
 ms.author: viviali
-ms.date: 12/02/2019
-ms.topic: conceptual
+ms.date: 04/03/2020
+ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: db4e48a7bff9127810b051a9ab63bbe9d78cf6da
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 7cb80b54c75d637842c5f50d9336629dedf758fa
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022432"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82100130"
 ---
 # <a name="create-webhook-actions-on-rules-in-azure-iot-central"></a>Создание действий веб-перехватчика на правилах Azure IoT Central
 
@@ -42,6 +42,78 @@ ms.locfileid: "77022432"
 ## <a name="payload"></a>Полезные данные
 
 При активации правила запрос HTTP POST выполняется в URL-адрес обратного вызова, содержащий полезные данные JSON с данными телеметрии, устройством, правилом и приложением. Полезная нагрузка может выглядеть следующим образом:
+
+```json
+{
+    "timestamp": "2020-04-06T00:20:15.06Z",
+    "action": {
+        "id": "<id>",
+        "type": "WebhookAction",
+        "rules": [
+            "<rule_id>"
+        ],
+        "displayName": "Webhook 1",
+        "url": "<callback_url>"
+    },
+    "application": {
+        "id": "<application_id>",
+        "displayName": "Contoso",
+        "subdomain": "contoso",
+        "host": "contoso.azureiotcentral.com"
+    },
+    "device": {
+        "id": "<device_id>",
+        "etag": "<etag>",
+        "displayName": "MXChip IoT DevKit - 1yl6vvhax6c",
+        "instanceOf": "<device_template_id>",
+        "simulated": true,
+        "provisioned": true,
+        "approved": true,
+        "cloudProperties": {
+            "City": {
+                "value": "Seattle"
+            }
+        },
+        "properties": {
+            "deviceinfo": {
+                "firmwareVersion": {
+                    "value": "1.0.0"
+                }
+            }
+        },
+        "telemetry": {
+            "<interface_instance_name>": {
+                "humidity": {
+                    "value": 47.33228889360127
+                }
+            }
+        }
+    },
+    "rule": {
+        "id": "<rule_id>",
+        "displayName": "Humidity monitor"
+    }
+}
+```
+Если правило отслеживает агрегированные данные телеметрии за определенный период времени, полезная нагрузка будет содержать другой раздел телеметрии.
+
+```json
+{
+    "telemetry": {
+        "<interface_instance_name>": {
+            "Humidity": {
+                "avg": 39.5
+            }
+        }
+    }
+}
+```
+
+## <a name="data-format-change-notice"></a>Уведомление об изменении формата данных
+
+Если вы создали и сохранили один или несколько веб-перехватчиков до **3 апреля 2020**, необходимо удалить веб-перехватчик и создать новый веб-перехватчик. Это связано с тем, что старые веб-перехватчики используют устаревший формат полезных данных, который будет считаться устаревшим в будущем.
+
+### <a name="webhook-payload-format-deprecated-as-of-3-april-2020"></a>Полезные данные веб-перехватчика (формат устарел до 3 апреля 2020)
 
 ```json
 {
@@ -84,6 +156,6 @@ ms.locfileid: "77022432"
 
 Если у вас есть идеи по улучшению этой функции, опубликуйте свои предложения на [форуме пользовательских голосов](https://feedback.azure.com/forums/911455-azure-iot-central).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как настраивать и использовать веб-перехватчики, предлагаем следующий шаг: изучение [настройки групп действий Azure Monitor](howto-use-action-groups.md).

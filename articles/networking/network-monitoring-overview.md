@@ -1,5 +1,5 @@
 ---
-title: Сетевой мониторинг в Azure Monitor регистрирует | Документация Майкрософт
+title: Сведения о мониторинге сети в журналах Azure Monitor | Документация Майкрософт
 description: Обзор решений сетевого мониторинга, включая NPM, для управления сетями в облачных, локальных и гибридных средах.
 services: monitoring-and-diagnostics
 documentationcenter: na
@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: agummadi
 ms.openlocfilehash: 2912488286745bf8d2e567d09e445b0a44dc7c39
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67672184"
 ---
 # <a name="network-monitoring-solutions"></a>Решения для мониторинга сетей 
@@ -51,7 +51,7 @@ Azure предлагает целый ряд решений для монито�
 
 Дополнительные сведения см. в следующих статьях:
 
-* [Настроить решение монитора производительности сети в журналах Azure Monitor](../azure-monitor/insights/network-performance-monitor.md) 
+* [Настройка решения Монитор производительности сети в журналах Azure Monitor](../azure-monitor/insights/network-performance-monitor.md) 
 * [Варианты использования](https://blogs.technet.microsoft.com/msoms/2016/08/30/monitor-on-premises-cloud-iaas-and-hybrid-networks-using-oms-network-performance-monitor/)
 * Обновления продукта:
   * [Февраль 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/02/27/oms-network-performance-monitor-is-now-generally-available/)
@@ -120,7 +120,7 @@ NPM для ExpressRoute предоставляет комплексные воз
 ![Панель мониторинга решения "Аналитика DNS"](./media/network-monitoring-overview/dns-analytics-overview.png) 
 
 Связанные ссылки
-* [Запись блога](https://blogs.technet.microsoft.com/msoms/2017/04/19/introducing-oms-dns-analytics/), [документация](https://docs.microsoft.com/azure/log-analytics/log-analytics-dns)
+* [запись блога](https://blogs.technet.microsoft.com/msoms/2017/04/19/introducing-oms-dns-analytics/), [документация](https://docs.microsoft.com/azure/log-analytics/log-analytics-dns)
 
 ## <a name="miscellaneous"></a>Прочее
 

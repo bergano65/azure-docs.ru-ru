@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 09558a8d1e4e2dc68cefd2c870f54e008d10b97b
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77083554"
 ---
 # <a name="create-an-account-that-supports-customer-managed-keys-for-tables-and-queues"></a>Создание учетной записи, поддерживающей управляемые клиентом ключи для таблиц и очередей
@@ -37,7 +37,7 @@ ms.locfileid: "77083554"
 
 Чтобы зарегистрироваться для использования ключа шифрования учетной записи с хранилищем очередей или таблиц, используйте PowerShell или Azure CLI.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Чтобы зарегистрироваться в PowerShell, вызовите команду [Get-азпровидерфеатуре](/powershell/module/az.resources/get-azproviderfeature) .
 
@@ -48,7 +48,7 @@ Register-AzProviderFeature -ProviderNamespace Microsoft.Storage `
     -FeatureName AllowAccountEncryptionKeyForTables
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы зарегистрироваться в Azure CLI, вызовите команду [AZ Feature Register](/cli/azure/feature#az-feature-register) .
 
@@ -59,7 +59,7 @@ az feature register --namespace Microsoft.Storage \
     --name AllowAccountEncryptionKeyForTables
 ```
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 Недоступно
 
@@ -69,7 +69,7 @@ az feature register --namespace Microsoft.Storage \
 
 Чтобы проверить состояние регистрации для хранилища очередей или таблиц, используйте PowerShell или Azure CLI.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Чтобы проверить состояние регистрации с помощью PowerShell, вызовите команду [Get-азпровидерфеатуре](/powershell/module/az.resources/get-azproviderfeature) .
 
@@ -80,7 +80,7 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage `
     -FeatureName AllowAccountEncryptionKeyForTables
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы проверить состояние регистрации с помощью Azure CLI, вызовите команду [AZ Feature](/cli/azure/feature#az-feature-show) .
 
@@ -91,7 +91,7 @@ az feature show --namespace Microsoft.Storage \
     --name AllowAccountEncryptionKeyForTables
 ```
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 Недоступно
 
@@ -101,7 +101,7 @@ az feature show --namespace Microsoft.Storage \
 
 После утверждения регистрации необходимо повторно зарегистрировать поставщик ресурсов службы хранилища Azure. Используйте PowerShell или Azure CLI для повторной регистрации поставщика ресурсов.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Чтобы повторно зарегистрировать поставщик ресурсов с помощью PowerShell, вызовите команду [Register-азресаурцепровидер](/powershell/module/az.resources/register-azresourceprovider) .
 
@@ -109,7 +109,7 @@ az feature show --namespace Microsoft.Storage \
 Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы повторно зарегистрировать поставщик ресурсов с Azure CLI, вызовите команду [AZ Provider Register](/cli/azure/provider#az-provider-register) .
 
@@ -117,7 +117,7 @@ Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
 az provider register --namespace 'Microsoft.Storage'
 ```
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 Недоступно
 
@@ -132,14 +132,14 @@ az provider register --namespace 'Microsoft.Storage'
 > [!NOTE]
 > При необходимости можно настроить шифрование данных с помощью ключа шифрования учетной записи при создании учетной записи хранения. Хранилище BLOB-объектов и служба файлов Azure всегда используют ключ шифрования учетной записи для шифрования данных.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Чтобы использовать PowerShell для создания учетной записи хранения, которая использует ключ шифрования учетной записи, убедитесь, что установлен модуль Azure PowerShell версии 3.4.0 или более поздней. Дополнительные сведения см. [в разделе Установка модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 Затем создайте учетную запись хранения общего назначения версии 2, вызвав команду [New-азсторажеаккаунт](/powershell/module/az.storage/new-azstorageaccount) с соответствующими параметрами:
 
-- Включите параметр `-EncryptionKeyTypeForQueue` и присвойте ему значение `Account`, чтобы использовать ключ шифрования учетной записи для шифрования данных в хранилище очередей.
-- Включите параметр `-EncryptionKeyTypeForTable` и задайте для его значения значение `Account`, чтобы использовать ключ шифрования учетной записи для шифрования данных в табличном хранилище.
+- Включите `-EncryptionKeyTypeForQueue` параметр и задайте для него значение `Account` , чтобы использовать ключ шифрования учетной записи для шифрования данных в хранилище очередей.
+- Включите `-EncryptionKeyTypeForTable` параметр и задайте для него значение `Account` , чтобы использовать ключ шифрования учетной записи для шифрования данных в табличном хранилище.
 
 В следующем примере показано, как создать учетную запись хранения общего назначения версии 2, настроенную для геоизбыточного хранилища с доступом на чтение (RA-GRS) и использующего ключ шифрования учетной записи для шифрования данных как в очереди, так и в хранилище таблиц. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
@@ -153,14 +153,14 @@ New-AzStorageAccount -ResourceGroupName <resource_group> `
     -EncryptionKeyTypeForQueue Account
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы использовать Azure CLI для создания учетной записи хранения, которая использует ключ шифрования учетной записи, убедитесь, что установлена версия Azure CLI 2.0.80 или более поздняя. Дополнительные сведения см. в статье [Установка Azure CLI](/cli/azure/install-azure-cli).
 
 Затем создайте учетную запись хранения общего назначения версии 2, вызвав команду [AZ Storage Account Create](/cli/azure/storage/account#az-storage-account-create) с соответствующими параметрами:
 
-- Включите параметр `--encryption-key-type-for-queue` и присвойте ему значение `Account`, чтобы использовать ключ шифрования учетной записи для шифрования данных в хранилище очередей.
-- Включите параметр `--encryption-key-type-for-table` и задайте для его значения значение `Account`, чтобы использовать ключ шифрования учетной записи для шифрования данных в табличном хранилище.
+- Включите `--encryption-key-type-for-queue` параметр и задайте для него значение `Account` , чтобы использовать ключ шифрования учетной записи для шифрования данных в хранилище очередей.
+- Включите `--encryption-key-type-for-table` параметр и задайте для него значение `Account` , чтобы использовать ключ шифрования учетной записи для шифрования данных в табличном хранилище.
 
 В следующем примере показано, как создать учетную запись хранения общего назначения версии 2, настроенную для геоизбыточного хранилища с доступом на чтение (RA-GRS) и использующего ключ шифрования учетной записи для шифрования данных как в очереди, так и в хранилище таблиц. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
@@ -175,7 +175,7 @@ az storage account create \
     --encryption-key-type-for-queue Account
 ```
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 В следующем примере JSON создается учетная запись хранения общего назначения версии 2, настроенная для геоизбыточного хранилища с доступом на чтение (RA-GRS), которая использует ключ шифрования учетной записи для шифрования данных как в очереди, так и в хранилище таблиц. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями:
 
@@ -222,11 +222,11 @@ az storage account create \
 
 ## <a name="verify-the-account-encryption-key"></a>Проверка ключа шифрования учетной записи
 
-Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду Azure CLI [AZ Storage Account](/cli/azure/storage/account#az-storage-account-show) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите поле `keyType` для каждой службы в свойстве encryption и убедитесь, что оно имеет значение `Account`.
+Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду Azure CLI [AZ Storage Account](/cli/azure/storage/account#az-storage-account-show) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите `keyType` поле для каждой службы в свойстве encryption и убедитесь, что оно имеет значение `Account`.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду [Get-азсторажеаккаунт](/powershell/module/az.storage/get-azstorageaccount) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите поле `KeyType` для каждой службы в свойстве `Encryption` и убедитесь, что оно имеет значение `Account`.
+Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду [Get-азсторажеаккаунт](/powershell/module/az.storage/get-azstorageaccount) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите `KeyType` поле для каждой службы в `Encryption` свойстве и убедитесь, что оно имеет значение. `Account`
 
 ```powershell
 $account = Get-AzStorageAccount -ResourceGroupName <resource-group> `
@@ -235,9 +235,9 @@ $account.Encryption.Services.Queue
 $account.Encryption.Services.Table
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
-Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду [AZ Storage Account](/cli/azure/storage/account#az-storage-account-show) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите поле `keyType` для каждой службы в свойстве encryption и убедитесь, что оно имеет значение `Account`.
+Чтобы убедиться, что служба в учетной записи хранения использует ключ шифрования учетной записи, вызовите команду [AZ Storage Account](/cli/azure/storage/account#az-storage-account-show) . Эта команда возвращает набор свойств учетной записи хранения и их значений. Найдите `keyType` поле для каждой службы в свойстве encryption и убедитесь, что оно имеет значение `Account`.
 
 ```azurecli
 az storage account show /
@@ -245,13 +245,13 @@ az storage account show /
     --resource-group <resource-group>
 ```
 
-# <a name="templatetabtemplate"></a>[Шаблон](#tab/template)
+# <a name="template"></a>[Шаблон](#tab/template)
 
 Недоступно
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md) 
 - [Что такое Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview)?

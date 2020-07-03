@@ -9,10 +9,10 @@ ms.date: 09/11/2019
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: 6911f769b95967aac933dd9762263e7506aef4b5
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "77193024"
 ---
 ## <a name="create-the-webapi-project"></a>Создание проекта веб-API
@@ -392,7 +392,7 @@ ms.locfileid: "77193024"
 
 3. В окне **Создание службы приложений** выберите свою учетную запись Azure. Выберите **Изменить тип** > **Веб-приложение**. Не изменяйте стандартное **имя веб-приложения**. Выберите **подписку**, **группу ресурсов** и **план службы приложений**.
 
-4. Нажмите кнопку **создания**.
+4. Нажмите кнопку **Создать**.
 
 5. Запишите свойство **URL-адрес сайта** в разделе **Сводка**. Это URL-адрес *конечной точки внутренней части*.
 

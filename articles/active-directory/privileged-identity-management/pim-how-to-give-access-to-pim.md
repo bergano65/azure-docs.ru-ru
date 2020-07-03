@@ -15,10 +15,10 @@ ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7424e92f8520d13137b6ac8787523095058a005f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74022113"
 ---
 # <a name="grant-access-to-other-administrators-to-manage-privileged-identity-management"></a>Предоставление другим администраторам доступа для управления управление привилегированными пользователями
@@ -72,7 +72,7 @@ ms.locfileid: "74022113"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. Откройте страницу **Azure AD Privileged Identity Management**.
+1. Откройте **Azure AD privileged Identity Management**.
 
 1. Выберите **роли Azure AD**.
 
@@ -86,6 +86,6 @@ ms.locfileid: "74022113"
 
 1. Когда появится запрос на подтверждение удаления члена роли, выберите **Да**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Начните использовать управление привилегированными пользователями](pim-getting-started.md)
+- [Начало работы с управлением привилегированными пользователями](pim-getting-started.md)

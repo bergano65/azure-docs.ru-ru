@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: spelluru
 ms.openlocfilehash: d49a06365f7759359a1faaeaf6b51e9b8d69c1a0
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185714"
 ---
 ## <a name="get-started-with-azure-devtest-labs"></a>Начало работы с Azure DevTest Labs
@@ -16,5 +16,5 @@ ms.locfileid: "67185714"
 
 Уже используете Azure? Начните работу со своей первой лабораторией в DevTest Labs.
 
-[![Быстрое начало работы с Azure DevTest Labs](./media/devtest-lab-try-it-out/get-started.png)](https://go.microsoft.com/fwlink/?LinkID=627034&clcid=0x409)
+[![Начало работы с Azure DevTest Labs за считаные минуты](./media/devtest-lab-try-it-out/get-started.png)](https://go.microsoft.com/fwlink/?LinkID=627034&clcid=0x409)
 

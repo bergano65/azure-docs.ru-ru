@@ -1,25 +1,25 @@
 ---
 title: Добавление слоя символов в карты Android | Карты Microsoft Azure
 description: В этой статье вы узнаете, как визуализировать данные точек на карте, добавив в нее слой символов с помощью Microsoft Azure карт пакет SDK для Android.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: e323d99c11df7f482e6caf81e8d38bf64d160859
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 0eca73b5acae715283c05125181e12729ed5a772
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77209993"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80335586"
 ---
 # <a name="add-a-symbol-layer-to-a-map-using-azure-maps-android-sdk"></a>Добавление слоя символов в карту с помощью Azure Maps пакет SDK для Android
 
 В этой статье показано, как преобразовать данные точек из источника данных в качестве слоя символов на карте с помощью Azure Maps пакет SDK для Android.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы полностью выполнить действия, описанные в этой статье, необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) , чтобы загрузить карту.
 
@@ -27,7 +27,7 @@ ms.locfileid: "77209993"
 
 Чтобы добавить маркер на карту с помощью слоя символов, выполните следующие действия:
 
-1. Измените **разметку** **res** >  > **activity_main. XML** , чтобы он выглядел как следующий XML:
+1. Измените **res** > **layout**макет > RES**activity_main. XML** , чтобы он выглядел как следующий XML:
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -50,7 +50,7 @@ ms.locfileid: "77209993"
     </FrameLayout>
     ```
 
-2. Скопируйте следующий фрагмент кода в метод **OnCreate ()** класса `MainActivity.java`.
+2. Скопируйте следующий фрагмент кода в метод **OnCreate ()** `MainActivity.java` класса.
 
     ```Java
     mapControl.onReady(map -> {
@@ -74,7 +74,7 @@ ms.locfileid: "77209993"
     
     Приведенный выше фрагмент кода сначала получает экземпляр элемента управления Map Azure Maps с помощью метода обратного вызова **Onreading ()** . Затем он создает объект источника данных с помощью класса **DataSource** и добавляет его к сопоставлению. Затем он добавляет в него **компонент** , содержащий геометрию точки. Затем изображение Красного маркера устанавливается в качестве значка для символа. **Слой символов** использует текст или значки для отрисовки данных на основе точек, инкапсулированных в источнике данных, в виде символа на карте. Затем создается слой символов, и источник данных передается ему для подготовки к просмотру, а затем добавляется к слоям на карте.
     
-    После добавления приведенного выше фрагмента кода `MainActivity.java` должен выглядеть следующим образом:
+    После добавления приведенного выше фрагмента кода `MainActivity.java` он должен выглядеть следующим образом:
     
     ```Java
     package com.example.myapplication;
@@ -170,10 +170,10 @@ ms.locfileid: "77209993"
 
 <center>
 
-![ПИН-код схемы Android](./media/how-to-add-symbol-to-android-map/android-map-pin.png)</center>
+![Метка на карте Android](./media/how-to-add-symbol-to-android-map/android-map-pin.png)</center>
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о добавлении дополнительных материалов на карту см. в следующих статьях:
 
@@ -181,4 +181,4 @@ ms.locfileid: "77209993"
 > [Добавление фигур на карту Android](https://docs.microsoft.com/azure/azure-maps/how-to-add-shapes-to-android-map)
 
 > [!div class="nextstepaction"]
-> [Отображение сведений о характеристиках](display-feature-information-android.md)
+> [Отображение сведений о компоненте](display-feature-information-android.md)

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
-ms.openlocfilehash: e3d6e730846388c4b74cfa0b6361629e836b0517
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: 57ca5b0880d4b027e33bc0d01fc6225eb886029b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74670196"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82084997"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Развертывание в службе приложений с помощью действий GitHub
 
@@ -21,13 +21,13 @@ ms.locfileid: "74670196"
 > Действия GitHub в настоящее время находятся в бета-версии. Сначала необходимо [зарегистрироваться, чтобы присоединиться к предварительной версии](https://github.com/features/actions) с помощью учетной записи GitHub.
 > 
 
-Рабочий процесс определяется файлом YAML (yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
+Рабочий процесс определяется файлом YAML (. yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
 
 Для рабочего процесса службы приложений Azure файл содержит три раздела:
 
-|Section  |Задачи  |
+|Раздел  |Задачи  |
 |---------|---------|
-|**Authentication** (Аутентификация) | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
+|**Аутентификация** | 1. Определение субъекта-службы <br /> 2. Создание секрета GitHub |
 |**Сборка** | 1. Настройка среды <br /> 2. Создание веб-приложения |
 |**Развертывание** | 1. Развертывание веб-приложения |
 
@@ -53,16 +53,16 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 1. Скачайте профиль публикации для приложения службы приложений с портала с помощью команды **получить профиль публикации** .
 
-2. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > Добавить новый секрет**
+2. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**
 
     ![секретные коды](media/app-service-github-actions/secrets.png)
 
 3. Вставьте содержимое скачанного файла профиля публикации в поле значение секрета.
 
-4. Теперь в файле рабочего процесса в ветви: `.github/workflows/workflow.yml` замените секрет для входных `publish-profile` действия "развертывание веб-приложения Azure".
+4. Теперь в файле рабочего процесса в ветви `.github/workflows/workflow.yml` замените секрет для входных данных `publish-profile` действия "развернуть веб-приложение Azure".
     
     ```yaml
-        - uses: azure/webapps-deploy@v1
+        - uses: azure/webapps-deploy@v2
           with:
             creds: ${{ secrets.azureWebAppPublishProfile }}
     ```
@@ -180,11 +180,11 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 ```
-## <a name="deploy-to-app-service"></a>Развертывание в службу приложений
+## <a name="deploy-to-app-service"></a>Развертывание в Службе приложений
 
-Чтобы развернуть код в приложении службы приложений, используйте действие `azure/webapps-deploy@v1 `. Это действие имеет четыре параметра:
+Чтобы развернуть код в приложении службы приложений, используйте `azure/webapps-deploy@v2` действие. Это действие имеет четыре параметра:
 
-| **Параметр**  | **Пояснение**  |
+| **Параметр**  | **Объяснение**  |
 |---------|---------|
 | **имя приложения** | Необходимости Имя приложения службы приложений | 
 | **Публикация-профиль** | Используемых Публикация содержимого файла профиля с веб-развертывание секретами |
@@ -205,7 +205,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - name: 'Checkout Github Action' 
+    - name: 'Checkout GitHub Action' 
       uses: actions/checkout@master
     
     - name: Setup Node 10.x
@@ -219,7 +219,7 @@ jobs:
         npm run test --if-present
        
     - name: 'Run Azure webapp deploy action using publish profile credentials'
-          uses: azure/webapps-deploy@v1
+          uses: azure/webapps-deploy@v2
           with: 
             app-name: node-rn
             publish-profile: ${{ secrets.azureWebAppPublishProfile }}
@@ -239,7 +239,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - name: 'Checkout Github Action' 
+    - name: 'Checkout GitHub Action' 
       uses: actions/checkout@master
    
     - uses: azure/login@v1
@@ -258,7 +258,7 @@ jobs:
         npm run test --if-present
                
     # deploy web app using Azure credentials
-    - uses: azure/webapps-deploy@v1
+    - uses: azure/webapps-deploy@v2
       with:
         app-name: 'node-rn'
 
@@ -268,7 +268,7 @@ jobs:
         az logout
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Наш набор действий, сгруппированных в различные репозитории в GitHub, можно найти в каждом из них, содержащих документацию и примеры, которые помогут вам использовать GitHub для непрерывной интеграции и развертывания приложений в Azure.
 

@@ -24,6 +24,8 @@
           href: hana-data-tiering-extension-nodes.md
         - name: Модель операций и обязанности
           href: hana-operations-model.md
+        - name: Совместимые операционные системы
+          href: os-compatibility-matrix-hana-large-instance.md
     - name: Architecture
       items:
         - name: Общая архитектура
@@ -74,6 +76,8 @@
           href: ha-setup-with-stonith.md
         - name: "Резервное копирование ОС для номеров SKU типа\_II"
           href: os-backup-type-ii-skus.md
+        - name: Включение Kdump для крупных экземпляров HANA
+          href: hana-large-instance-enable-kdump.md
         - name: Обновление ОС для HLI
           href: os-upgrade-hana-large-instance.md
         - name: Настройка сервера SMT для SUSE Linux
@@ -82,7 +86,7 @@
           href: hana-large-instance-virtual-machine-migration.md
 - name: SAP HANA на виртуальных машинах Azure
   items:
-    - name: Установка SAP HANA с одним экземпляром
+    - name: Установка SAP HANA на виртуальных машинах Azure
       href: hana-get-started.md
     - name: "Руководство по развертыванию S/4\_HANA или BW/4\_HANA SAP CAL"
       href: cal-s4h.md
@@ -112,14 +116,17 @@
       href: sap-hana-backup-guide.md
     - name: Резервное копирование SAP HANA на уровне файлов
       href: sap-hana-backup-file-level.md
-    - name: Резервные копии моментальных снимков хранилища SAP HANA
-      href: sap-hana-backup-storage-snapshots.md
 - name: Использование SAP NetWeaver и Business One на виртуальных машинах Azure
   items:
     - name: Контрольный список для планирования и развертывания рабочей нагрузки SAP
       href: sap-deployment-checklist.md
     - name: Планирование и реализация SAP NetWeaver в Azure
       href: planning-guide.md
+      items:
+        - name: Поддерживаемые сценарии использования рабочей нагрузки SAP в виртуальных машинах Azure
+          href: sap-planning-supported-configurations.md
+        - name: 'Программное обеспечение SAP, поддерживаемое для развертываний Azure'
+          href: sap-supported-product-on-azure.md
     - name: Руководство по развертыванию SAP NetWeaver
       href: deployment-guide.md
     - name: Руководства по развертыванию СУБД для рабочих нагрузок SAP
@@ -220,6 +227,8 @@
               href: sap-ascs-ha-multi-sid-wsfc-file-share.md
             - name: Использование SLES с несколькими ИД безопасности Pacemaker для экземпляра ASCS
               href: high-availability-guide-suse-multi-sid.md
+            - name: Использование RHEL с несколькими ИД безопасности Pacemaker для экземпляра ASCS
+              href: high-availability-guide-rhel-multi-sid.md
     - name: Использование Azure Site Recovery для аварийного восстановления SAP
       href: '../../../site-recovery/site-recovery-workload.md#protect-sap'
     - name: Группа размещения близкого взаимодействия Azure для оптимизации сетевой задержки с использованием приложений SAP

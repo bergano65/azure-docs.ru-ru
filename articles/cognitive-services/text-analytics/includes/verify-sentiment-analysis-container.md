@@ -3,18 +3,18 @@ title: Проверка экземпляра контейнера анализ �
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как проверить экземпляр контейнера анализ тональности.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/12/2019
-ms.author: dapine
-ms.openlocfilehash: 2e201b4ec0d1364ea99b376171efabad65af0a50
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: c9b5411c044bb45d284cac0d30705c2b3d40ccd0
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70968610"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80876459"
 ---
 ### <a name="verify-the-sentiment-analysis-container-instance"></a>Проверка экземпляра контейнера анализ тональности
 
@@ -63,7 +63,7 @@ ms.locfileid: "70968610"
     }
     ```
 
-1. Задайте для `true`шовстатс значение.
+1. Задайте **showStats** для `true`шовстатс значение.
 
 1. Выберите **выполнить** , чтобы определить тональности текста.
 

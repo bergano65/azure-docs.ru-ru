@@ -1,19 +1,17 @@
 ---
 title: Параметры правил интеллектуального обнаружения в Azure Application Insights
 description: Автоматизация настройки правил интеллектуального обнаружения Azure Application Insights и управления ими с помощью шаблонов Azure Resource Manager
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: harelbr
 ms.author: harelbr
 ms.date: 06/26/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: bc66a286bee193b377731a549129446bba431cb3
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 7ca4df620739b2ab55b8ba986031cc48fe87f1fa
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749041"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80294915"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager
 
@@ -30,8 +28,6 @@ ms.locfileid: "75749041"
 
 Чтобы разрешить настройку параметров правил с помощью Azure Resource Manager, конфигурация правила интеллектуального обнаружения теперь доступна в качестве внутреннего ресурса в ресурсе Application Insights и называется **ProactiveDetectionConfigs**.
 Чтобы достичь максимальной гибкости, для каждого правила интеллектуального обнаружения можно настроить уникальные параметры уведомлений.
-
-## 
 
 ## <a name="examples"></a>Примеры
 
@@ -133,6 +129,27 @@ ms.locfileid: "75749041"
 
 ```
 
+
+## <a name="smart-detection-rule-names"></a>Имена правил интеллектуального обнаружения
+
+Ниже приведена таблица с именами правил интеллектуального обнаружения так, как они отображаются на портале, вместе с их внутренними именами, которые должны использоваться в шаблоне Azure Resource Manager.
+
+> [!NOTE]
+> Правила интеллектуального обнаружения, помеченные как _Предварительный просмотр_ , не поддерживают уведомления по электронной почте. Таким образом, для этих правил можно задать только свойство _Enabled_ . 
+
+| Имя правила на портале Azure | Внутреннее имя
+|:---|:---|
+| Длительное время загрузки страниц | slowpageloadtime |
+| Низкое время отклика сервера | slowserverresponsetime |
+| Длительный срок зависимости | longdependencyduration |
+| Увеличение времени отклика сервера | degradationinserverresponsetime |
+| Ухудшение в длительности зависимости | degradationindependencyduration |
+| Ухудшение соотношения серьезности трассировок (предварительная версия) | extension_traceseveritydetector |
+| Чрезмерное увеличение числа исключений (предварительная версия) | extension_exceptionchangeextension |
+| Обнаружена возможная утечка памяти (предварительная версия) | extension_memoryleakextension |
+| Обнаружена возможная проблема с безопасностью (предварительная версия) | extension_securityextensionspackage |
+| Аномальный рост объема данных за день (Предварительная версия) | extension_billingdatavolumedailyspikeextension |
+
 ### <a name="failure-anomalies-alert-rule"></a>Правило генерации оповещений об аномалиях сбоев
 
 Этот шаблон Azure Resource Manager демонстрирует настройку правила генерации оповещений об ошибках с уровнем серьезности 2. Эта новая версия правила оповещения "аномалии ошибок" входит в состав новой платформы оповещений Azure и заменяет классическую версию, которая будет снята с учета в рамках процесса прекращения использования [классических предупреждений](https://azure.microsoft.com/updates/classic-alerting-monitoring-retirement/).
@@ -169,29 +186,9 @@ ms.locfileid: "75749041"
 ```
 
 > [!NOTE]
-> Этот шаблон Azure Resource Manager уникален для правила генерации оповещений об аномалиях сбоя и отличается от других правил интеллектуального обнаружения, описанных в этой статье.
+> Этот шаблон Azure Resource Manager уникален для правила генерации оповещений об аномалиях сбоя и отличается от других правил интеллектуального обнаружения, описанных в этой статье. Если вы хотите управлять аномалиями сбоев вручную, это выполняется в Azure Monitor предупреждений, в то время как все другие правила интеллектуального обнаружения управляются на панели интеллектуального обнаружения в пользовательском интерфейсе.
 
-## <a name="smart-detection-rule-names"></a>Имена правил интеллектуального обнаружения
-
-Ниже приведена таблица с именами правил интеллектуального обнаружения так, как они отображаются на портале, вместе с их внутренними именами, которые должны использоваться в шаблоне Azure Resource Manager.
-
-> [!NOTE]
-> Правила интеллектуального обнаружения, помеченные как _Предварительный просмотр_ , не поддерживают уведомления по электронной почте. Таким образом, для этих правил можно задать только свойство _Enabled_ . 
-
-| Имя правила на портале Azure | Внутреннее имя
-|:---|:---|
-| Длительное время загрузки страниц | slowpageloadtime |
-| Низкое время отклика сервера | slowserverresponsetime |
-| Длительный срок зависимости | longdependencyduration |
-| Увеличение времени отклика сервера | degradationinserverresponsetime |
-| Ухудшение в длительности зависимости | degradationindependencyduration |
-| Ухудшение соотношения серьезности трассировок (предварительная версия) | extension_traceseveritydetector |
-| Чрезмерное увеличение числа исключений (предварительная версия) | extension_exceptionchangeextension |
-| Обнаружена возможная утечка памяти (предварительная версия) | extension_memoryleakextension |
-| Обнаружена возможная проблема с безопасностью (предварительная версия) | extension_securityextensionspackage |
-| Аномальный рост объема данных за день (Предварительная версия) | extension_billingdatavolumedailyspikeextension |
-
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об автоматическом обнаружении.
 

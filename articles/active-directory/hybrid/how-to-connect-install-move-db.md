@@ -1,5 +1,5 @@
 ---
-title: Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server | Документы Майкрософт
+title: Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server | Документация Майкрософт
 description: В этом документе описано, как переместить базу данных Azure AD Connect с локального сервера SQL Server Express на удаленный сервер SQL Server.
 services: active-directory
 author: billmath
@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 742bc307c90ad58b83b7d4c92f9546b87c163c3b
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77019287"
 ---
 # <a name="move-azure-ad-connect-database-from-sql-server-express-to-sql-server"></a>Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server 
@@ -37,16 +37,16 @@ ms.locfileid: "77019287"
 5. На удаленном сервере SQL Server откройте SQL Server Management Studio.
 6. Правой кнопкой мыши щелкните элемент "Базы данных" и выберите пункт "Вложить".
 7. На экране **Присоединение баз данных** щелкните **Добавить** и перейдите к файлу ADSync.mdf.  Нажмите кнопку **ОК**.
-   ![присоединение базы данных](media/how-to-connect-install-move-db/move2.png)
+   ![Присоединение базы данных](media/how-to-connect-install-move-db/move2.png)
 
 8. После присоединения базы данных вернитесь на сервер Azure AD Connect и установите базу данных Azure AD Connect.
 9. По завершении установки MSI мастер Azure AD Connect запускается с настройкой режима Express. Закройте экран, щелкнув значок "Выход".
    ![Добро пожаловать!](./media/how-to-connect-install-move-db/db1.png)
-10. Запустите новую командную строку или сеанс PowerShell. Перейдите в папку \<диск > \Program files\Microsoft Azure AD Connect. Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
+10. Запустите новую командную строку или сеанс PowerShell. Перейдите в папку \<диск> \program files\Microsoft Azure AD Connect. Выполните команду \AzureADConnect.exe /useexistingdatabase, чтобы запустить мастер Azure AD Connect в режиме установки "Использовать существующую базу данных".
     ![PowerShell](./media/how-to-connect-install-move-db/db2.png)
 11. Появится экран приветствия Azure AD Connect. После принятия условий лицензии и заявления о конфиденциальности, щелкните **Продолжить**.
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db3.png)
-12. На экране **Установить требующиеся компоненты** включен параметр **Использовать существующий SQL Server**. Укажите имя сервера SQL, на котором размещена база данных ADSync. Если экземпляр ядра SQL, используемый для размещения базы данных, не является экземпляром по умолчанию сервера SQL, необходимо указать ядро SQL и имя экземпляра. Кроме того, если просмотр SQL не включен, также необходимо указать номер порта экземпляра ядра SQL. Пример.         
+12. На экране **Установить требующиеся компоненты** включен параметр **Использовать существующий SQL Server**. Укажите имя сервера SQL, на котором размещена база данных ADSync. Если экземпляр ядра SQL, используемый для размещения базы данных, не является экземпляром по умолчанию сервера SQL, необходимо указать ядро SQL и имя экземпляра. Кроме того, если просмотр SQL не включен, также необходимо указать номер порта экземпляра ядра SQL. Пример:         
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db4.png)           
 
 13. На экране **Подключение к Azure AD** необходимо предоставить учетные данные глобального администратора для каталога Azure AD. Рекомендуется использовать учетную запись в домене onmicrosoft.com по умолчанию. Эта учетная запись используется только для создания учетной записи службы в Azure AD и не используется после завершения работы мастера.
@@ -64,15 +64,15 @@ ms.locfileid: "77019287"
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db8.png)
  
  
-17. На экране **Все готово к настройке** щелкните **Установить**.
+17. На экране **все готово для настройки** нажмите кнопку **установить**.
     ![Добро пожаловать!](./media/how-to-connect-install-move-db/db9.png)
  
  
 18. По завершении установки сервер Azure AD Connect автоматически включается в промежуточном режиме. Перед отключением промежуточного режима рекомендуется проверить конфигурацию сервера и ожидающие операции экспорта на наличие неожиданных изменений. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+- Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 - [Установка Azure AD Connect с помощью имеющейся базы данных ADSync](how-to-connect-install-existing-database.md)
-- [Установка Azure AD Connect с помощью разрешений делегированного администратора SQL](how-to-connect-install-sql-delegation.md)
+- [Установка Azure AD Connect с использованием делегированных разрешений администратора SQL](how-to-connect-install-sql-delegation.md)
 

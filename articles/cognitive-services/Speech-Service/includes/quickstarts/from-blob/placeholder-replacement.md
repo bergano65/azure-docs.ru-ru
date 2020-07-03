@@ -2,19 +2,19 @@
 title: Краткое руководство. Распознавание речи из файлов, находящихся в хранилище BLOB-объектов, в службе "Речь"
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 01/13/2020
-ms.author: dapine
-ms.openlocfilehash: 95ff115cfc2cc70deabf66d984bb02991239c2a7
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: cb5b14bd5585c85947ef0dafeae1fb41cb8a4a5c
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75931959"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80887412"
 ---
 Необходимо заменить следующие значения:
 

@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 10/07/2019
 ms.author: Zhchia
 ms.openlocfilehash: 609d2726eaaaeb49210e19f000bcc2faef1de5d7
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77064161"
 ---
 # <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Руководство. Настройка частного доступа Zscaler (ZPA) для автоматической подготовки пользователей
@@ -31,7 +31,7 @@ ms.locfileid: "77064161"
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения об общих условиях использования продуктов в предварительной версии см. в документе [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -50,7 +50,7 @@ Azure Active Directory использует концепцию, называем
 
 * Рекомендуется назначить одного пользователя Azure AD в Zscaler Private Access (ZPA) для проверки конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя в Zscaler Private Access (ZPA) необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в Zscaler Private Access (ZPA) необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
 
 ## <a name="set-up-zscaler-private-access-zpa-for-provisioning"></a>Настройка частного доступа Zscaler (ZPA) для подготовки
 
@@ -82,7 +82,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Zscaler частный доступ (ZPA) создание токена](media/zscaler-private-access-provisioning-tutorial/token.png)
 
-8.  Чтобы найти **URL-адрес клиента** , перейдите в раздел **Администрирование > Конфигурация IDP**. Щелкните имя вновь добавленной конфигурации IdP, указанной на странице.
+8.  Чтобы найти **URL-адрес клиента** , перейдите в раздел **Администрирование > конфигурация IDP**. Щелкните имя вновь добавленной конфигурации IdP, указанной на странице.
 
     ![Имя IDP закрытого доступа Zscaler (ZPA)](media/zscaler-private-access-provisioning-tutorial/idpname.png)
 
@@ -101,7 +101,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -109,7 +109,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Zscaler частный доступ (ZPA)** , выберите **Zscaler частный доступ (ZPA)** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
+4. В поле поиска введите **Zscaler частный доступ (ZPA)**, выберите **Zscaler частный доступ (ZPA)** на панели результатов и нажмите кнопку **добавить** , чтобы добавить это приложение.
 
     ![Zscaler Private Access (ZPA) в списке результатов](common/search-new-app.png)
 
@@ -129,15 +129,15 @@ Azure Active Directory использует концепцию, называем
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. Из списка приложений выберите **Zscaler Private Access (ZPA)** .
+2. Из списка приложений выберите **Zscaler Private Access (ZPA)**.
 
     ![Ссылка на Zscaler Private Access (ZPA) в списке "Приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
@@ -149,9 +149,9 @@ Azure Active Directory использует концепцию, называем
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Выберите команду **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
-8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler закрытым доступом (ZPA)** .
+8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с Zscaler закрытым доступом (ZPA)**.
 
     ![Сопоставления пользователей Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/usermappings.png)
 
@@ -159,7 +159,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Атрибуты пользователя Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/userattributes.png)
 
-10. В разделе " **сопоставления** " выберите **синхронизировать Azure Active Directory группы к Zscaler закрытый доступ (ZPA)** .
+10. В разделе " **сопоставления** " выберите **синхронизировать Azure Active Directory группы к Zscaler закрытый доступ (ZPA)**.
 
     ![Сопоставления группы Zscaler Private Access (ZPA)](media/zscaler-private-access-provisioning-tutorial/groupmappings.png)
 
@@ -190,7 +190,7 @@ Azure Active Directory использует концепцию, называем
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 

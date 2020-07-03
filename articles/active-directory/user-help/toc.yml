@@ -24,6 +24,10 @@
       href: active-directory-passwords-reset-register.md
     - name: Сброс пароля
       href: active-directory-passwords-update-your-own-password.md
+- name: "Справка по порталу\_— Мой персонал"
+  items:
+    - name: "Управление пользователями\_— Мой персонал"
+      href: my-staff-team-manager.md
 - name: Справка по приложению Microsoft Authenticator
   items:
     - name: Что такое приложение Microsoft Authenticator?
@@ -42,6 +46,8 @@
           href: user-help-auth-app-add-account-manual.md
     - name: Вход с помощью приложения Microsoft Authenticator
       href: user-help-auth-app-sign-in.md
+    - name: Ограничения для Android в Китае
+      href: auth-app-android-china.md
     - name: Резервное копирование и восстановление учетных записей
       href: user-help-auth-app-backup-recovery.md
     - name: ВОПРОСЫ И ОТВЕТЫ
@@ -74,6 +80,8 @@
           href: security-info-setup-text-msg.md
         - name: Настройка телефонных звонков
           href: security-info-setup-phone-number.md
+        - name: Настройка входа с помощью SMS
+          href: sms-sign-in-explainer.md
         - name: Настройка ключа безопасности
           href: security-info-setup-security-key.md
         - name: Настройка адреса электронной почты

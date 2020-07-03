@@ -1,25 +1,18 @@
 ---
 title: Вход на виртуальную машину Linux с учетными данными Azure Active Directory
 description: Узнайте, как создать и настроить виртуальную машину Linux для входа с помощью Azure Active Directory проверки подлинности.
-services: virtual-machines-linux
-documentationcenter: ''
 author: iainfoulds
-manager: gwallace
-editor: ''
-ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: azurecli
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/29/2019
 ms.author: iainfou
-ms.openlocfilehash: 9980ad7af4a9e5db1d93ffb389ef7b04209b8c43
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 2731693667d2129a72da72455c6bbdd74c277697
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76544622"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80366488"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -35,7 +28,7 @@ ms.locfileid: "76544622"
 
 Есть много преимуществ аутентификации Azure AD при входе на виртуальные машины Linux в Azure, в том числе следующие:
 
-- **Повышение уровня безопасности.**
+- **Улучшенная безопасность:**
   - Для входа на виртуальные машины Linux в Azure можно использовать корпоративные учетные данные AD. Нет необходимости создавать учетные записи локального администратора и управлять временем существования учетных данных.
   - Так как учетные записи локального администратора не требуются, вам не придется беспокоиться о потере или краже учетных данных, недостаточной надежности учетных данных пользователей и т. д.
   - Политики сложности паролей и времени их существования, настроенные для вашего каталога Azure AD, также помогают защитить виртуальные машины Linux.
@@ -48,13 +41,13 @@ ms.locfileid: "76544622"
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие дистрибутивы Linux:
 
-| Дистрибуция | Версия |
+| Distribution | Версия |
 | --- | --- |
 | CentOS | CentOS 6, CentOS 7 |
-| Debian | Debian 9 |
+| Debian | Debian 9 |
 | openSUSE | openSUSE Leap 42.3 |
 | RedHat Enterprise Linux | RHEL 6, RHEL 7 | 
-| SUSE Linux Enterprise Server | SLES 12 |
+| SUSE Linux Enterprise Server | SLES 12 |
 | Сервер Ubuntu | Ubuntu 14.04 LTS, Ubuntu Server 16.04 и Ubuntu Server 18.04 |
 
 
@@ -64,6 +57,8 @@ ms.locfileid: "76544622"
 
 >[!IMPORTANT]
 > Чтобы использовать эту предварительную версию функции, развертывайте только поддерживаемые дистрибутивы Linux и в поддерживаемых регионах Azure. Функция не поддерживается в Azure для государственных организаций и в национальных облаках.
+>
+> Использование этого расширения в кластерах Azure Kubernetes Service (AKS) не поддерживается. Дополнительные сведения см. в разделе [политики поддержки для AKS](../../aks/support-policies.md).
 
 
 Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
@@ -73,10 +68,11 @@ ms.locfileid: "76544622"
 Чтобы включить аутентификацию Azure AD для виртуальных машин Linux в Azure, необходимо убедиться, что конфигурация сети виртуальных машин разрешает исходящий доступ к следующим конечным точкам через TCP-порт 443:
 
 * https:\//login.microsoftonline.com
-* HTTPS:\//device.login.microsoftonline.com
-* HTTPS:\//pas.windows.net
+* https:\//login.windows.net
+* HTTPS:\//Device.Login.microsoftonline.com
+* HTTPS:\//PAS.Windows.NET
 * https:\//management.azure.com
-* HTTPS:\//packages.microsoft.com
+* HTTPS:\//Packages.Microsoft.com
 
 > [!NOTE]
 > Сейчас нельзя настроить группы безопасности сети Azure для виртуальных машин, включенных с помощью аутентификации Azure AD.
@@ -113,7 +109,7 @@ az vm extension set \
     --vm-name myVM
 ```
 
-После успешной установки расширения на виртуальной машине отображается *ProvisioningState* *успешно* .
+После успешной установки расширения на виртуальной машине отображается *ProvisioningState* *успешно* . Для установки расширения виртуальной машине требуется работающий агент виртуальной машины. Дополнительные сведения см. в статье [Общие сведения о агенте ВМ](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows).
 
 ## <a name="configure-role-assignments-for-the-vm"></a>Настройка назначений ролей для виртуальной машины
 
@@ -154,15 +150,15 @@ az vm show --resource-group myResourceGroup --name myVM -d --query publicIps -o 
 
 Войдите на виртуальную машину Azure с Linux, используя учетные данные Azure AD. Параметр `-l` позволяет указать собственный адрес учетной записи Azure AD. Замените пример учетной записи своим собственным. Адреса учетных записей следует вводить в нижнем регистре. Замените IP-адрес в примере общедоступным IP-адресом виртуальной машины из предыдущей команды.
 
-```azurecli-interactive
+```console
 ssh -l azureuser@contoso.onmicrosoft.com 10.11.123.456
 ```
 
-Вам будет предложено войти в Azure AD с помощью кода однократного использования по адресу [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin). Скопируйте и вставьте однократное использование кода на страницу входа в устройство.
+Вам будет предложено войти в Azure AD с помощью однократного использования кода в [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin). Скопируйте и вставьте однократное использование кода на страницу входа в устройство.
 
 При появлении запроса введите учетные данные для входа в Azure AD на странице входа. 
 
-При успешной проверке подлинности в веб-браузере отображается следующее сообщение: `You have signed in to the Microsoft Azure Linux Virtual Machine Sign-In application on your device.`
+При успешной проверке подлинности в веб-браузере отображается следующее сообщение:`You have signed in to the Microsoft Azure Linux Virtual Machine Sign-In application on your device.`
 
 Закройте окно браузера, вернитесь к запросу SSH и нажмите клавишу **ВВОД**. 
 
@@ -175,6 +171,7 @@ ssh -l azureuser@contoso.onmicrosoft.com 10.11.123.456
 ```bash
 %aad_admins ALL=(ALL) ALL
 ```
+
 Вставьте вместо нее эту строку:
 
 ```bash
@@ -188,9 +185,9 @@ ssh -l azureuser@contoso.onmicrosoft.com 10.11.123.456
 
 ### <a name="access-denied-rbac-role-not-assigned"></a>Доступ запрещен: не назначена роль RBAC
 
-Если в запросе SSH отображается приведенное ниже сообщение об ошибке, проверьте наличие настроенных политик RBAC для виртуальной машины, которая предоставляет пользователю роль *Имя для входа администратора виртуальной машины* или *Имя для входа пользователя виртуальной машины*.
+Если в запросе SSH отображается приведенное ниже сообщение об ошибке, проверьте наличие настроенных политик RBAC для виртуальной машины, которая предоставляет пользователю роль *Имя для входа администратора виртуальной машины* или *Имя для входа пользователя виртуальной машины*:
 
-```bash
+```output
 login as: azureuser@contoso.onmicrosoft.com
 Using keyboard-interactive authentication.
 To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code FJX327AXD to authenticate. Press ENTER when ready.
@@ -215,6 +212,6 @@ Access denied
 
 Поделиться своими отзывами об этой предварительной версии функции или сообщите о проблемах на [форуме отзывов и предложений по Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об Azure Active Directory см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).

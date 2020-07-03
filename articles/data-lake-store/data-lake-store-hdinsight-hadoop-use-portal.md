@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 1d1368ef8ffb474c6bec1240f567f043961597fb
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838174"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79265575"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения, с помощью портала Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "73838174"
 
 Узнайте, как использовать портал Azure для создания кластера HDInsight с учетной записью Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию или дополнительного хранилища. Несмотря на то, что дополнительное хранилище является необязательным для кластера HDInsight, рекомендуется хранить бизнес-данные в дополнительных учетных записях хранения.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем начать, убедитесь, что выполнены следующие требования:
 
@@ -52,9 +52,9 @@ ms.locfileid: "73838174"
     ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.1.adls.storage.png "Добавление субъекта-службы в кластер HDInsight")
 
     * **Выбрать учетную запись Data Lake Store**: выберите существующую учетную запись Data Lake Storage 1-го поколения. Требуется существующая учетная запись Data Lake Storage 1-го поколения.  См. раздел [Предварительные требования](#prerequisites).
-    * **Корневой путь**: введите путь к каталогу, в котором будут храниться файлы, связанные с кластером. На снимке экрана это путь __/clusters/myhdiadlcluster/__ , в котором должна существовать папка __/clusters__ и в котором портал создает папку *myhdicluster*.  *myhdicluster* — это имя кластера.
+    * **Корневой путь**: введите путь к каталогу, в котором будут храниться файлы, связанные с кластером. На снимке экрана это путь __/clusters/myhdiadlcluster/__, в котором должна существовать папка __/clusters__ и в котором портал создает папку *myhdicluster*.  *myhdicluster* — это имя кластера.
     * **Доступ к Data Lake Store**: настройте доступ между учетной записью Data Lake Storage 1-го поколения и кластером HDInsight. Инструкции см. в разделе [Настройка доступа к Data Lake Storage 1-го поколения](#configure-data-lake-storage-gen1-access).
-    * **Дополнительные учетные записи хранения**: добавьте учетные записи хранения Azure в качестве дополнительных учетных записей хранения для кластера. Добавление дополнительных хранилищ Data Lake Storage 1-го поколения осуществляется путем предоставления разрешений на доступ к данным в кластере дополнительным учетным записям Data Lake Storage 1-го поколения. При этом учетная запись Data Lake Storage 1-го поколения настраивается в качестве основного типа хранилища. Инструкции см. в разделе [Настройка доступа к Data Lake Storage 1-го поколения](#configure-data-lake-storage-gen1-access).
+    * **Дополнительные учетные записи хранения**. Добавьте учетные записи хранения Azure в качестве дополнительных учетных записей хранения для кластера. Добавление дополнительных хранилищ Data Lake Storage 1-го поколения осуществляется путем предоставления разрешений на доступ к данным в кластере дополнительным учетным записям Data Lake Storage 1-го поколения. При этом учетная запись Data Lake Storage 1-го поколения настраивается в качестве основного типа хранилища. Инструкции см. в разделе [Настройка доступа к Data Lake Storage 1-го поколения](#configure-data-lake-storage-gen1-access).
 
 4. В колонке **Доступ к Data Lake Store** нажмите кнопку **Выбрать** и продолжайте создание кластера, как описано в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md).
 
@@ -74,7 +74,7 @@ ms.locfileid: "73838174"
 
     * **Контейнер по умолчанию** — используйте либо значение по умолчанию, либо укажите собственное имя.
     * **Дополнительные учетные записи хранения** — добавьте дополнительные учетные записи хранения Azure в качестве дополнительного хранилища.
-    * **Data Lake Store доступ** . Настройка доступа между учетной записью Data Lake Storage 1-го поколения и кластером HDInsight. Инструкции см. в разделе [Настройка доступа к Data Lake Storage 1-го поколения](#configure-data-lake-storage-gen1-access).
+    * **Data Lake Store доступ** . Настройка доступа между учетной записью Data Lake Storage 1-го поколения и кластером HDInsight. Инструкции см. в разделе [настройка Data Lake Storage 1-го поколенияного доступа](#configure-data-lake-storage-gen1-access).
 
 ## <a name="configure-data-lake-storage-gen1-access"></a>Настройка доступа к Data Lake Storage 1-го поколения
 
@@ -106,7 +106,7 @@ ms.locfileid: "73838174"
 
 1. Выберите **доступ** , чтобы настроить доступ к папке.  См. раздел [Настройка разрешений для файлов](#configure-file-permissions).
 
-### <a name="configure-file-permissions"></a>Настройка разрешений для файлов
+### <a name="configure-file-permissions"></a><a name="configure-file-permissions"></a>Настройка разрешений для файлов
 
 Конфигурация отличается в зависимости от того, используется ли учетная запись в качестве хранилища по умолчанию или дополнительной учетной записи хранения.
 
@@ -126,7 +126,7 @@ ms.locfileid: "73838174"
 
     ![Добавление субъекта-службы в кластер HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3.png "Добавление субъекта-службы в кластер HDInsight")
 
-   По умолчанию выбраны разрешения __Чтение__, __Запись__ и __Выполнение__.
+   По умолчанию выбраны значения __Чтение__, __запись__и __выполнение__ .
 
 1. В нижней части страницы щелкните **Выбрать**.
 1. Выберите **выполнить** , чтобы назначить разрешение.
@@ -146,7 +146,7 @@ ms.locfileid: "73838174"
 
 ![Назначение разрешений субъекта-службы кластеру HDInsight](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3-1.png "Назначение разрешений субъекта-службы кластеру HDInsight")
 
-## <a name="verify-cluster-set-up"></a>Проверка установки кластера
+## <a name="verify-cluster-setup"></a><a name="verify-cluster-set-up"></a>Проверка установки кластера
 
 После завершения настройки кластера проверьте результат в колонке кластера, выполнив одно или оба указанных ниже действия.
 
@@ -189,13 +189,13 @@ ms.locfileid: "73838174"
 
 ### <a name="use-data-lake-storage-gen1-with-a-spark-cluster"></a>Использование Data Lake Storage 1-го поколения с кластером Spark
 
-Кластер Spark можно использовать для выполнения заданий Spark с данными, хранящимися в Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения](../hdinsight/spark/apache-spark-use-with-data-lake-store.md).
+Кластер Spark можно использовать для выполнения заданий Spark с данными, хранящимися в Data Lake Storage 1-го поколения. Дополнительные сведения см. [в статье Использование кластера HDInsight Spark для анализа данных в Data Lake Storage 1-го поколения](../hdinsight/spark/apache-spark-use-with-data-lake-store.md).
 
 ### <a name="use-data-lake-storage-gen1-in-a-storm-topology"></a>Использование Data Lake Storage 1-го поколения в топологии Storm
 
 Data Lake Storage 1-го поколения можно использовать для записи данных из топологии Storm. Инструкции по реализации этого сценария см. в статье [Использование Azure Data Lake Storage 1-го поколения с Apache Storm в HDInsight](../hdinsight/storm/apache-storm-write-data-lake-store.md).
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
 * [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)

@@ -3,17 +3,17 @@ title: Подготовка имитированного устройства X.
 description: В этом кратком руководстве используется индивидуальная регистрация. В этом кратком руководстве показано, как создать и подготовить к работе имитированное устройство X.509 с помощью пакета SDK C для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure (DPS).
 author: wesmc7777
 ms.author: wesmc
-ms.date: 11/08/2019
+ms.date: 04/26/2020
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: f0c95e495e222cc72f0a6fc432404fcbaa47df65
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 882d62c088fa51153ca496231beccd4bfd5af0cb
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75434683"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82190369"
 ---
 # <a name="quickstart-provision-an-x509-simulated-device-using-the-azure-iot-c-sdk"></a>Краткое руководство. Подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C Интернета вещей Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "75434683"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Приведенные ниже предварительные требования касаются среды разработки Windows. При использовании Linux или macOS ознакомьтесь с соответствующим разделом в статье [Подготовка среды разработки](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) из документации к пакету SDK.
 
@@ -50,7 +50,7 @@ ms.locfileid: "75434683"
 
 2. Найдите имя тега для [последнего выпуска](https://github.com/Azure/azure-iot-sdk-c/releases/latest) пакета SDK.
 
-3. Откройте командную строку или оболочку Git Bash. Выполните приведенные ниже команды, чтобы клонировать репозиторий GitHub с последним выпуском [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c). Используйте найденный тег в качестве значения для параметра `-b`:
+3. Откройте командную строку или оболочку Git Bash. Выполните приведенные ниже команды, чтобы клонировать репозиторий GitHub с последним выпуском [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c). Используйте найденный тег в качестве значения для параметра `-b`:
 
     ```cmd/sh
     git clone -b <release-tag> https://github.com/Azure/azure-iot-sdk-c.git
@@ -172,7 +172,7 @@ ms.locfileid: "75434683"
 
 7. На портале перейдите в центр Интернета вещей, связанный со службой подготовки, и щелкните вкладку **Устройства Интернета вещей**. Когда имитированное устройство X.509 будет подготовлено для центра, в колонке **Устройства Интернета вещей** появится идентификатор этого устройства со значением *Включено* в столбце **Состояние**. Возможно, вам потребуется нажать кнопку **Обновить** в верхней области. 
 
-    ![Устройство зарегистрировано в Центре Интернета вещей](./media/quick-create-simulated-device/hub-registration.png) 
+    ![Устройство зарегистрировано в Центре Интернета вещей](./media/quick-create-simulated-device-x509/hub-registration.png) 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

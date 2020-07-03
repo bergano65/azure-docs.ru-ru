@@ -6,10 +6,10 @@ ms.author: jobreen
 author: jjbfour
 ms.date: 06/20/2019
 ms.openlocfilehash: 46b38686b39836f3d4bfb80686d514f932a79bf3
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75650465"
 ---
 # <a name="custom-resource-proxy-reference"></a>Справочник по прокси-службе настраиваемого ресурса
@@ -42,7 +42,7 @@ ms.locfileid: "75650465"
 
 ## <a name="building-proxy-resource-endpoint"></a>Создание конечной точки ресурса прокси-сервера
 
-**Конечная точка** , реализующая **конечную точку** ресурса "прокси", должна поддерживать запрос и ответ для нового API в Azure. В этом случае **ResourceType** создает новый API ресурсов Azure для `PUT`, `GET`и `DELETE` для выполнения CRUD в одном ресурсе, а также `GET` для получения всех существующих ресурсов.
+**Конечная точка** , реализующая **конечную точку** ресурса "прокси", должна поддерживать запрос и ответ для нового API в Azure. В этом случае **ResourceType** создает новый API ресурсов Azure `PUT`для `GET`, и `DELETE` для выполнения CRUD на одном ресурсе, а также `GET` для получения всех существующих ресурсов.
 
 > [!NOTE]
 > Поля `id`, `name`и `type` не требуются, но необходимы для интеграции настраиваемого ресурса с существующей экосистемой Azure.
@@ -65,7 +65,7 @@ ms.locfileid: "75650465"
 
 Ссылка на параметр:
 
-Свойство | Пример | Description
+Свойство | Пример | Описание
 ---|---|---
 name | {myCustomResourceName} | Название настраиваемого ресурса.
 type | Microsoft.CustomProviders/resourceProviders/{имя типа ресурса} | Пространство имен типа ресурса.
@@ -110,7 +110,7 @@ X-MS-CustomProviders-RequestPath: /subscriptions/{subscriptionId}/resourceGroups
 Аналогичным образом ответ от **конечной точки** затем перенаправляется обратно клиенту. Ответ от конечной точки должен вернуть:
 
 - Допустимый документ объекта JSON. Все массивы и строки должны быть вложены в верхний объект.
-- Заголовок `Content-Type` должен иметь значение Application/JSON; charset = UTF-8 ".
+- Для `Content-Type` заголовка необходимо задать значение Application/JSON; charset = UTF-8 ".
 
 **Конечная точка** Ответ
 
@@ -171,7 +171,7 @@ X-MS-CustomProviders-RequestPath: /subscriptions/{subscriptionId}/resourceGroups
 Аналогичным образом ответ **конечной точки** отправляется обратно клиенту. Ответ от конечной точки должен вернуть:
 
 - Допустимый документ объекта JSON. Все массивы и строки должны быть вложены в верхний объект.
-- Заголовок `Content-Type` должен иметь значение Application/JSON; charset = UTF-8 ".
+- Для `Content-Type` заголовка необходимо задать значение Application/JSON; charset = UTF-8 ".
 
 **Конечная точка** Ответ
 
@@ -208,7 +208,7 @@ X-MS-CustomProviders-RequestPath: /subscriptions/{subscriptionId}/resourceGroups
 Аналогичным образом ответ от **конечной точки** затем перенаправляется обратно клиенту. Ответ от конечной точки должен вернуть:
 
 - Допустимый документ объекта JSON. Все массивы и строки должны быть вложены в верхний объект.
-- Заголовок `Content-Type` должен иметь значение Application/JSON; charset = UTF-8 ".
+- Для `Content-Type` заголовка необходимо задать значение Application/JSON; charset = UTF-8 ".
 
 **Конечная точка** Ответ
 
@@ -269,8 +269,8 @@ X-MS-CustomProviders-RequestPath: /subscriptions/{subscriptionId}/resourceGroups
 Аналогичным образом ответ от **конечной точки** затем перенаправляется обратно клиенту. Ответ от конечной точки должен вернуть:
 
 - Допустимый документ объекта JSON. Все массивы и строки должны быть вложены в верхний объект.
-- Заголовок `Content-Type` должен иметь значение Application/JSON; charset = UTF-8 ".
-- Список ресурсов должен размещаться под свойством `value` верхнего уровня.
+- Для `Content-Type` заголовка необходимо задать значение Application/JSON; charset = UTF-8 ".
+- Список ресурсов должен размещаться в свойстве верхнего уровня `value` .
 
 **Конечная точка** Ответ
 

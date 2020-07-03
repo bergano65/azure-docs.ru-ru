@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9d02a9dbc5b89c4156b7ff8b6a49adb7f00fef83
-ms.sourcegitcommit: b1c94635078a53eb558d0eb276a5faca1020f835
+ms.openlocfilehash: 465b41aaf3c3b16dcba489d1ea9ba951a3108c8e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2019
-ms.locfileid: "72969746"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77046581"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-eab-navigate-impl"></a>Руководство по интеграции единого входа Azure Active Directory с EAB Navigate IMPL
 
@@ -35,9 +35,9 @@ ms.locfileid: "72969746"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка EAB Navigate IMPL с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -71,7 +71,7 @@ ms.locfileid: "72969746"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в EAB Navigate IMPL](#configure-eab-navigate-impl-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя приложения EAB Navigate IMPL](#create-eab-navigate-impl-test-user)** требуется для того, чтобы в EAB Navigate IMPL существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -81,14 +81,17 @@ ms.locfileid: "72969746"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
-
+1. На странице **Базовая конфигурация SAML** введите значения следующих полей.  В текстовое поле **Идентификатор (сущности)** введите именно это значение: `https://impl.bouncer.eab.com`
+    
+    В текстовое поле **URL-адрес ответа (URL-адрес службы обработчика утверждений)** введите оба следующих значения в виде отдельных строк: `https://impl.bouncer.eab.com/sso/saml2/acs`
+    `https://impl.bouncer.eab.com/sso/saml2/acs/`
+    
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.navigate.impl.eab.com/`.
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов EAB Navigate IMPL](mailto:jmahoney@eab.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов EAB Navigate IMPL](mailto:EABTechSupport@eab.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
@@ -110,7 +113,7 @@ ms.locfileid: "72969746"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к EAB Navigate IMPL.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **EAB Navigate IMPL**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -126,11 +129,11 @@ ms.locfileid: "72969746"
 
 ## <a name="configure-eab-navigate-impl-sso"></a>Настройка единого входа для EAB Navigate IMPL
 
-Чтобы настроить единый вход на стороне **EAB Navigate IMPL**, вам нужно отправить **URL-адрес метаданных федерации приложения** в [службу поддержки EAB Navigate IMPL](mailto:jmahoney@eab.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **EAB Navigate IMPL**, вам нужно отправить **URL-адрес метаданных федерации приложения** в [службу поддержки EAB Navigate IMPL](mailto:EABTechSupport@eab.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-eab-navigate-impl-test-user"></a>Создание тестового пользователя в EAB Navigate IMPL
 
-В этом разделе описано, как создать пользователя B.Simon в EAB Navigate IMPL. Обратитесь в  [службу поддержки EAB Navigate IMPL](mailto:jmahoney@eab.com), чтобы добавить пользователей на платформе EAB Navigate IMPL. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя B.Simon в EAB Navigate IMPL. Обратитесь в  [службу поддержки EAB Navigate IMPL](mailto:EABTechSupport@eab.com), чтобы добавить пользователей на платформе EAB Navigate IMPL. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа
 
@@ -140,9 +143,9 @@ ms.locfileid: "72969746"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -8,10 +8,10 @@
       href: cdn-features.md
 - name: Краткие руководства
   items:
-    - name: Создание профиля и конечной точки
-      href: cdn-create-new-endpoint.md
     - name: Интеграция учетной записи хранения
       href: cdn-create-a-storage-account-with-cdn.md
+    - name: Создание профиля и конечной точки
+      href: cdn-create-new-endpoint.md
     - name: Создание профиля с помощью шаблона Azure Resource Manager
       href: create-profile-resource-manager-template.md
 - name: Учебники
@@ -102,6 +102,8 @@
     - name: Анализ
       href: cdn-log-analysis.md
       items:
+        - name: Необработанные журналы HTTP
+          href: enable-raw-logs.md
         - name: Журналы диагностики Azure
           href: cdn-azure-diagnostic-logs.md
         - name: Средства аналитики для Azure CDN от Verizon
@@ -181,8 +183,8 @@
       href: cdn-billing.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=azurecdn'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-cdn.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cdn/'
     - name: Калькулятор цен

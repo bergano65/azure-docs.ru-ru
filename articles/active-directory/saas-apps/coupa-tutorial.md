@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Coupa | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Coupa | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Coupa.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 709f3a5b66db660ade482660cd9b3930ff0b7141
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227653"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-coupa"></a>Руководство по Интеграция Azure Active Directory с Coupa
+# <a name="tutorial-azure-active-directory-integration-with-coupa"></a>Руководство. Интеграция Azure Active Directory с Coupa
 
 В этом руководстве описано, как интегрировать Coupa с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Coupa обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "74227653"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Coupa, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа Coupa.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74227653"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Coupa](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.coupahost.com`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.coupahost.com`.
 
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов Coupa](https://success.coupa.com/Support/Contact_Us?).
@@ -135,11 +135,11 @@ ms.locfileid: "74227653"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-coupa-single-sign-on"></a>Настройка единого входа в Coupa
 
@@ -153,7 +153,7 @@ ms.locfileid: "74227653"
 
     ![Метаданные поставщика услуг Coupa](./media/coupa-tutorial/ic791901.png "Метаданные поставщика услуг Coupa")
 
-    a. Выберите **Вход с помощью SAML**.
+    а. Выберите **Вход с помощью SAML**.
 
     b. Нажмите кнопку **Обзор**, чтобы отправить метаданные, загруженные с портала Azure.
 
@@ -232,7 +232,7 @@ ms.locfileid: "74227653"
 
     ![Сведения о пользователе](./media/coupa-tutorial/ic791910.png "Сведения о пользователе")
 
-    a. В соответствующие текстовые поля введите атрибуты **Login** (Имя для входа), **First name** (Имя), **Last Name** (Фамилия), **Single Sign-On ID** (Идентификатор единого входа) и **Email** (Адрес электронной почты) действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
+    а. В соответствующие текстовые поля введите атрибуты **Login** (Имя для входа), **First name** (Имя), **Last Name** (Фамилия), **Single Sign-On ID** (Идентификатор единого входа) и **Email** (Адрес электронной почты) действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
 
     b. Нажмите кнопку **Создать**.
 

@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 864a9243a9f737506fd4d8cbc3940d7a86711f20
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67091665"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-screensteps"></a>Руководство по Интеграция Azure Active Directory со ScreenSteps
@@ -38,7 +38,7 @@ ms.locfileid: "67091665"
 
 Чтобы настроить интеграцию Azure AD с ScreenSteps, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка ScreenSteps с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,7 +99,7 @@ ms.locfileid: "67091665"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -118,7 +118,7 @@ ms.locfileid: "67091665"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -134,17 +134,17 @@ ms.locfileid: "67091665"
 
 1. Щелкните **Single Sign-on**(Единый вход).
 
-    ![Удаленная аутентификация](./media/screensteps-tutorial/ic778524.png "Удаленная аутентификация")
+    ![Удаленная проверка подлинности](./media/screensteps-tutorial/ic778524.png "Удаленная проверка подлинности")
 
 1. Щелкните **Create Single Sign-on Endpoint** (Создать конечную точку единого входа).
 
-    ![Удаленная аутентификация](./media/screensteps-tutorial/ic778525.png "Удаленная аутентификация")
+    ![Удаленная проверка подлинности](./media/screensteps-tutorial/ic778525.png "Удаленная проверка подлинности")
 
 1. В разделе **Create Single Sign-on Endpoint** (Создать конечную точку единого входа) сделайте следующее:
 
-    ![Создание конечной точки аутентификации](./media/screensteps-tutorial/ic778526.png "Создание конечной точки аутентификации")
+    ![Создание конечной точки проверки подлинности](./media/screensteps-tutorial/ic778526.png "Создание конечной точки проверки подлинности")
 
-    a. В текстовом поле **Название** введите название.
+    а. В текстовом поле **Название** введите название.
 
     b. Из списка **Mode** (Режим) выберите **SAML**.
 
@@ -152,13 +152,13 @@ ms.locfileid: "67091665"
 
 1. **Измените** новую конечную точку.
 
-    ![Изменение конечной точки](./media/screensteps-tutorial/ic778528.png "Edit endpoint")
+    ![Изменение конечной точки](./media/screensteps-tutorial/ic778528.png "Редактирование конечной точки")
 
 1. В разделе **Create Single Sign-on Endpoint** (Изменить конечную точку единого входа) сделайте следующее:
 
-    ![Конечная точка удаленной аутентификации](./media/screensteps-tutorial/ic778527.png "Конечная точка удаленной аутентификации")
+    ![Конечная точка удаленной проверки подлинности](./media/screensteps-tutorial/ic778527.png "Конечная точка удаленной проверки подлинности")
 
-    a. Щелкните **Upload new SAML Certificate file** (Отправить новый файл сертификата SAML), а затем отправьте сертификат, скачанный с портала Azure.
+    а. Щелкните **Upload new SAML Certificate file** (Отправить новый файл сертификата SAML), а затем отправьте сертификат, скачанный с портала Azure.
 
     b. В текстовое поле **URL-адрес входа** вставьте **URL-адрес удаленного входа**, скопированный с портала Azure.
 
@@ -166,9 +166,9 @@ ms.locfileid: "67091665"
 
     d. Выберите **группу** для назначения пользователей при их подготовке.
 
-    д. Нажмите кнопку **Обновить**.
+    д) Нажмите кнопку **Обновить**.
 
-    Е. Скопируйте **URL-адрес потребителя SAML** в буфер обмена и вставьте его в текстовое поле **URL-адрес входа** в разделе **Базовая конфигурация SAML** портала Azure.
+    е) Скопируйте **URL-адрес потребителя SAML** в буфер обмена и вставьте его в текстовое поле **URL-адрес входа** в разделе **Базовая конфигурация SAML** портала Azure.
 
     ж. Вернитесь в раздел **Edit Single Sign-on Endpoint** (Изменить конечную точку единого входа).
 
@@ -241,4 +241,4 @@ ms.locfileid: "67091665"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -8,14 +8,14 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 683c53c369f136ad4b917b93e9a92a71072d05e0
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71349633"
 ---
 # <a name="power-azure-cosmos-db"></a>МОЩНОСТЬ (Azure Cosmos DB)
- Возвращает результат возведения указанного числового выражения в заданную степень.  
+ возвращает значение указанного выражения, возведенное в заданную степень.  
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -29,15 +29,15 @@ POWER (<numeric_expr1>, <numeric_expr2>)
    Числовое выражение.  
   
 *numeric_expr2*  
-   — Это степень, в которую вызывается *numeric_expr1*.  
+   Степень, в которую следует возвести *numeric_expr1*.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано возведение числа в третью степень (куб числа).  
+  Следующий пример демонстрирует возведение числа в степень 3 (в куб).  
   
 ```sql
 SELECT POWER(2, 3) AS pow1, POWER(2.5, 3) AS pow2  
@@ -49,8 +49,8 @@ SELECT POWER(2, 3) AS pow1, POWER(2.5, 3) AS pow2
 [{pow1: 8, pow2: 15.625}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

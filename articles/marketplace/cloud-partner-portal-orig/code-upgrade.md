@@ -1,20 +1,18 @@
 ---
 title: Обновление кода до последней платформы | Azure Marketplace
 description: Нерекомендуемая статья на CPP, связанная со статьей ПК; WAS "в этом разделе объясняется, как обновить версию Microsoft Dynamics 365 for Operations Platform до последней версии платформы".
-services: Azure, Marketplace, Cloud Partner Portal,
-author: ChJenk
-manager: Ricardo.Villalobos
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 2647e59ddd08e0051afc97415c79c20c431b1e3e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: db5ec661e575d7a6d2f994040a9fb452bd87b507
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819073"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80276161"
 ---
 # <a name="upgrading-code-to-the-latest-platform"></a>Обновление кода до последней версии платформы
 

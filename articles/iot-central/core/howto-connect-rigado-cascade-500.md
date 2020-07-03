@@ -3,22 +3,23 @@ title: Подключение Ригадо Cascade 500 в Azure IoT Central | Д
 description: Узнайте, как подключить устройство шлюза Ригадо Cascade 500 к приложению IoT Central.
 services: iot-central
 ms.service: iot-central
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom:
 - iot-storeAnalytics-conditionMonitor
 - iot-p0-scenario
 ms.author: avneets
 author: avneet723
 ms.date: 11/27/2019
-ms.openlocfilehash: bd96d2b9f2220c4eecb653e0764c381235c62157
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 3e6026e683d46ca9062c5c139fcd7febd7df9bd1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77026930"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758248"
 ---
 # <a name="connect-a-rigado-cascade-500-gateway-device-to-your-azure-iot-central-application"></a>Подключение устройства шлюза Ригадо Cascade 500 к приложению IoT Central Azure
 
+*Эта статья предназначена для создателей решений и разработчиков устройств.*
 
 В этой статье описывается, как в построителе решений можно подключить устройство шлюза Ригадо Cascade 500 к приложению Microsoft Azure IoT Central. 
 
@@ -28,7 +29,7 @@ ms.locfileid: "77026930"
 
 Каскадная 500 предварительно сертифицирована для Plug and Play Интернета вещей Azure (Предварительная версия), позволяя нашим сборщикам решений легко подключить устройство к комплексным решениям. Шлюз Cascade позволяет беспроводно подключаться к различным датчикам мониторинга условий, которые находятся в самом близком к устройству шлюза. Эти датчики можно подключить к IoT Central через устройство шлюза.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 Для пошагового руководства необходимы следующие ресурсы:
 
 * Устройство Ригадо Cascade 500. Дополнительные сведения см. по адресу [ригадо](https://www.rigado.com/).
@@ -40,9 +41,9 @@ ms.locfileid: "77026930"
 
 Чтобы добавить шаблон каскадного устройства 500, выполните следующие действия. 
 
-1. Перейдите на вкладку ***шаблоны устройств*** в левой области, выберите **+ создать**: ![создать новый шаблон устройства](./media/howto-connect-rigado-cascade-500/device-template-new.png)
+1. Перейдите на вкладку ***шаблоны устройств*** в левой области, выберите **+ создать**: создать новый ![шаблон устройства.](./media/howto-connect-rigado-cascade-500/device-template-new.png)
 1. Страница позволяет ***создать пользовательский шаблон*** или ***использовать предварительно настроенный шаблон устройства*** .
-1. Выберите шаблон устройства C500 в списке предварительно настроенных шаблонов устройств, как показано ниже: ![выберите шаблон устройства C500](./media/howto-connect-rigado-cascade-500/device-template-preconfigured.png)
+1. Выберите шаблон устройства C500 в списке предварительно настроенных шаблонов устройств, как показано ниже: выберите ![шаблон устройства C500.](./media/howto-connect-rigado-cascade-500/device-template-preconfigured.png)
 1. Нажмите кнопку ***Далее: Настройка*** , чтобы перейти к следующему шагу. 
 1. На следующем экране выберите ***создать*** , чтобы подключить шаблон устройства C500 к приложению IOT Central.
 
@@ -52,9 +53,9 @@ ms.locfileid: "77026930"
 
 1. Перейдите в меню **Администрирование** на левой панели и щелкните **Подключение устройства**. 
 2. Запишите **идентификатор области** для приложения IOT Central.
-Идентификатор области приложения ![](./media/howto-connect-rigado-cascade-500/app-scope-id.png)
-3. Теперь щелкните **Просмотр ключей** и запишите **первичный ключ**
-![первичный ключ](./media/howto-connect-rigado-cascade-500/primary-key-sas.png)  
+![Идентификатор области приложения](./media/howto-connect-rigado-cascade-500/app-scope-id.png)
+3. Теперь щелкните **Просмотр ключей** и запишите
+![ **первичный первичный**ключ.](./media/howto-connect-rigado-cascade-500/primary-key-sas.png)  
 
 ## <a name="contact-rigado-to-connect-the-gateway"></a>Чтобы подключить шлюз, обратитесь в Ригадо 
 
@@ -68,6 +69,9 @@ ms.locfileid: "77026930"
 
 Теперь вы готовы использовать устройство C500 в приложении IoT Central!
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Теперь, когда вы узнали, как подключить Ригадо Cascade 500 к вашему приложению Azure IoT Central, предлагаем следующий шаг: Узнайте, как [создать приложение аналитики в магазине](../retail/tutorial-in-store-analytics-create-app-pnp.md) для создания комплексного решения. 
+Если вы являетесь разработчиком устройства, вот некоторые из предлагаемых дальнейших действий:
+
+- Дополнительные сведения о [подключении устройств в Azure IOT Central](./concepts-get-connected.md)
+- Узнайте, как [отслеживать подключение устройств с помощью Azure CLI](./howto-monitor-devices-azure-cli.md)

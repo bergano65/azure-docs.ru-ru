@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 11/27/2018
 ms.author: apimpm
 ms.openlocfilehash: 826187123529c97f09a44501add3e4c8f76d70e6
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "67185805"
 ---
 ## <a name="availability"></a>Доступность
 
 > [!IMPORTANT]
-> Эта функция доступна в ценовых категориях **Премиум** и **Разработка** управления API.
+> Эта функция доступна на уровнях **Premium** и **Developer** в службе управления API.

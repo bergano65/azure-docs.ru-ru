@@ -2,19 +2,19 @@
 title: Учебник. Добавление тегов к ресурсам в шаблоне
 description: Добавьте теги к ресурсам, развертываемым в шаблоне Azure Resource Manager. Теги позволяют логически упорядочивать ресурсы.
 author: mumian
-ms.date: 10/04/2019
+ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d7853d388b9159328a515818697ba9ddd5b95637
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 3e0deb53e57cd29cbfce4c37f2d6c6729f15bebd
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773181"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411705"
 ---
-# <a name="tutorial-add-tags-in-your-resource-manager-template"></a>Руководство. Добавление тегов в шаблон Resource Manager
+# <a name="tutorial-add-tags-in-your-arm-template"></a>Руководство по добавлению тегов в шаблон ARM
 
-В этом учебнике вы узнаете, как добавлять теги к ресурсам в шаблоне. [Теги](../management/tag-resources.md) помогают логически упорядочивать ресурсы. Значения тегов отображаются в отчетах о затратах. Для выполнения инструкций из этого учебника требуется **8 минут**.
+Из этого руководства вы узнаете, как добавлять теги к ресурсам в шаблон Azure Resource Manager (ARM). [Теги](../management/tag-resources.md) помогают логически упорядочивать ресурсы. Значения тегов отображаются в отчетах о затратах. Для выполнения инструкций из этого учебника требуется **8 минут**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -44,7 +44,7 @@ ms.locfileid: "76773181"
 
 Если вы еще не создали группу ресурсов, см. [этот раздел](template-tutorial-create-first-template.md#create-resource-group). В этом примере предполагается, что для переменной **templateFile** указан путь к файлу шаблона, как показано в [первом учебнике](template-tutorial-create-first-template.md#deploy-template).
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
@@ -56,10 +56,12 @@ New-AzResourceGroupDeployment `
   -webAppName demoapp
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы выполнить эту команду развертывания, необходимо иметь [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
 
 ```azurecli
-az group deployment create \
+az deployment group create \
   --name addtags \
   --resource-group myResourceGroup \
   --template-file $templateFile \
@@ -67,6 +69,9 @@ az group deployment create \
 ```
 
 ---
+
+> [!NOTE]
+> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
 
 ## <a name="verify-deployment"></a>Проверка развертывания
 

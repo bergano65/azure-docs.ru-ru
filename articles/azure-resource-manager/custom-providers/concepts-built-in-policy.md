@@ -5,12 +5,12 @@ author: msHich
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: hich
-ms.openlocfilehash: 536b95eb07619d0ce2d02ec01e1f51ed52c1b5e1
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 00cd1d39c0110aac9ea96f73127e83197976c95a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75650478"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82190135"
 ---
 # <a name="deploy-associations-for-a-custom-provider-using-azure-policy"></a>Развертывание ассоциаций для настраиваемого поставщика с помощью политики Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "75650478"
 
 ## <a name="how-to-use-the-deploy-associations-built-in-policy"></a>Использование встроенной политики «развертывание ассоциаций» 
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 Если пользовательскому поставщику требуются разрешения области действия политики, чтобы выполнить действие, развертывание политики ресурса связи не будет работать без предоставления разрешений.
 
 ### <a name="policy-assignment"></a>Назначение политики

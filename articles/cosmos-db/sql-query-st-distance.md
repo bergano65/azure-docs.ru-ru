@@ -1,21 +1,21 @@
 ---
-title: ST_DISTANCE на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System ST_DISTANCE в Azure Cosmos DB.
+title: ST_DISTANCE языка запросов Azure Cosmos DB
+description: Сведения о ST_DISTANCE системных функций SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/12/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 1c55bac14b3379f29d57bbad36026749089ec0fd
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 02844569137a46ea030b2189191b84a9db24ed22
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349393"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79537301"
 ---
 # <a name="st_distance-azure-cosmos-db"></a>ST_DISTANCE (Azure Cosmos DB)
- Возвращает расстояние между двумя выражениями точек GeoJSON, многоугольников или объектов LineString.  
+ Возвращает расстояние между двумя геоточечными выражениями, многоугольниками, несколькими многоугольниками и LineString. Дополнительные сведения см. в статье [сведения о геопространственном и географическом расположении данных расположения](sql-query-geospatial-intro.md) .
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -28,17 +28,17 @@ ST_DISTANCE (<spatial_expr>, <spatial_expr>)
 *spatial_expr*  
    Любое допустимое выражение объекта GeoJSON (точка, многоугольник или LineString).  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение, указывающее расстояние. При использовании эталонной системы по умолчанию это значение указывается в метрах.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как вернуть все документы семейства, которые находятся в пределах 30 км указанного расположения, с помощью встроенной функции `ST_DISTANCE`. .  
+  В следующем примере показано, как вернуть все документы семейства, которые находятся в пределах 30 км из указанного расположения, `ST_DISTANCE` используя встроенную функцию. .  
   
 ```sql
-SELECT f.id   
-FROM Families f   
+SELECT f.id
+FROM Families f
 WHERE ST_DISTANCE(f.location, {'type': 'Point', 'coordinates':[31.9, -4.8]}) < 30000  
 ```  
   
@@ -48,10 +48,14 @@ WHERE ST_DISTANCE(f.location, {'type': 'Point', 'coordinates':[31.9, -4.8]}) < 3
 [{  
   "id": "WakefieldFamily"  
 }]  
-```  
+```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция будет полезна из [геопространственных индексов](index-policy.md#spatial-indexes).
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Пространственные функции Azure Cosmos DB](sql-query-spatial-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

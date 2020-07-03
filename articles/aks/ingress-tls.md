@@ -1,54 +1,52 @@
 ---
-title: Создание контроллера входящего трафика HTTPS с помощью кластера Службы Azure Kubernetes (AKS)
+title: Создание входящего трафика с помощью автоматического TLS
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как установить и настроить контроллер входящего трафика NGINX, который использует шифрование для автоматического создания сертификатов TLS в кластере службы Kubernetes Azure (AKS).
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
-ms.date: 01/29/2020
-ms.author: mlearned
-ms.openlocfilehash: 661ed72265b81f47cbe8e9cf26595632360ec352
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.date: 04/27/2020
+ms.openlocfilehash: 59f1b63a5c72ed5583b88af9e42bf5337f358b47
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76898809"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82561902"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS в Службе Azure Kubernetes (AKS)
 
 Контроллер входящего трафика является программным компонентом, предоставляющим для служб Kubernetes обратный прокси-сервер, настраиваемую маршрутизацию трафика и обработку подключений TLS для последующей передачи. Ресурсы входящего трафика Kubernetes используются при настройке правил входящего трафика и маршрутов для отдельных служб Kubernetes. Применяя контроллер и правила входящего трафика, для маршрутизации трафика в несколько служб в кластере Kubernetes можно использовать один IP-адрес.
 
-В этой статье показано, как развернуть контроллер входящего трафика [nginx][nginx-ingress] в кластере службы Kubernetes Azure (AKS). Проект [диспетчера сертификатов][cert-manager] используется для автоматического создания и настройки [шифрования][lets-encrypt] сертификатов. Наконец, в кластере AKS запущено два приложения, каждое из которых доступно по одному IP-адресу.
+В этой статье описывается, как установить и настроить [контроллер входящего трафика NGINX][nginx-ingress] в кластере Службы Azure Kubernetes (AKS). Для автоматического создания и настройки сертификатов [Let's Encrypt][lets-encrypt] используется проект [cert-manager][cert-manager]. Наконец, в кластере AKS запущено два приложения, каждое из которых доступно по одному IP-адресу.
 
 Кроме того, вы можете сделать следующее:
 
-- [Создание базового контроллера входящего трафика с внешним сетевым подключением][aks-ingress-basic]
-- [Включение надстройки маршрутизации приложений HTTP][aks-http-app-routing]
-- [Создание контроллера входящего трафика, использующего внутреннюю, частную сеть и IP-адрес][aks-ingress-internal]
-- [Создание контроллера входящего трафика, использующего собственные сертификаты TLS][aks-ingress-own-tls]
-- [Создание контроллера входящего трафика, использующего шифрование для автоматического создания сертификатов TLS со статическим общедоступным IP-адресом][aks-ingress-static-tls]
+- [Создать базовый контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
+- [Включить надстройку маршрутизации приложений HTTP.][aks-http-app-routing]
+- [Создать контроллер входящего трафика, который использует внутреннюю, частную сети и IP-адрес.][aks-ingress-internal]
+- [Создать контроллер входящего трафика, который использует ваши собственные сертификаты TLS][aks-ingress-own-tls]
+- [Создать контроллер входящего трафика, который использует службу Let's Encrypt для автоматического создания сертификатов TLS со статическим общедоступным IP-адресом][aks-ingress-static-tls]
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 В этой статье также предполагается, что у вас есть [личный домен][custom-domain] с [зоной DNS][dns-zone] в той же группе ресурсов, что и кластер AKS.
 
-В этой статье для установки контроллера входящего трафика NGINX cert-manager и примера веб-приложения используется Helm. Убедитесь, что вы используете последний выпуск Helm. Инструкции по обновлению см. в документации по [установке Helm][helm-install]. Дополнительные сведения о настройке и использовании Helm см. [в статье Установка приложений с помощью Helm в службе Kubernetes Azure (AKS)][use-helm].
+В этой статье используется [Helm 3][helm] для установки контроллера входящих данных nginx и диспетчера сертификатов. Убедитесь, что вы используете последний выпуск Helm. Инструкции по обновлению см. в документации по [установке Helm][helm-install]. Дополнительные сведения о настройке и использовании Helm см. [в статье Установка приложений с помощью Helm в службе Kubernetes Azure (AKS)][use-helm].
 
 В этой статье также предполагается, что вы используете Azure CLI версии 2.0.64 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="create-an-ingress-controller"></a>Создание контроллера входящего трафика
 
-Чтобы создать входной контроллер, используйте команду `helm` для установки *nginx-* in. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
+Чтобы создать входной контроллер, используйте `helm` команду для установки *nginx-* in. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
 
-Контроллер входящего трафика также необходимо запланировать на узле Linux. Узлы Windows Server (в настоящее время в предварительной версии в AKS) не должны запускать входной контроллер. Селектор узла указывается с помощью параметра `--set nodeSelector`, чтобы сообщить планировщику Kubernetes о необходимости запуска контроллера входящих данных NGINX на узле под управлением Linux.
+Контроллер Ingress также необходимо запланировать на узле Linux. Узлы Windows Server не должны запускать контроллер Ingress. Селектор узла указывается с помощью параметра `--set nodeSelector`, чтобы сообщить планировщику Kubernetes о необходимости запуска контроллера NGINX Ingress на узле под управлением Linux.
 
 > [!TIP]
 > В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic*. При необходимости укажите пространство имен для своей среды.
 
 > [!TIP]
-> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` в команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача данных по протоколу SSL не будет работать.
+> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, `--set controller.service.externalTrafficPolicy=Local` добавьте команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
 
 ```console
 # Create a namespace for your ingress resources
@@ -65,7 +63,7 @@ helm install nginx stable/nginx-ingress \
     --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
 ```
 
-Во время установки для контроллера входящего трафика создается общедоступный IP-адрес Azure. Этот IP-адрес является статическим только на время жизненного цикла контроллера входящего трафика. При удалении контроллера входящего трафика этот общедоступный IP-адрес теряется. Если создать дополнительный контроллер входящего трафика, ему назначается новый общедоступный IP-адрес. Если вы хотите хранить использование общедоступного IP-адреса, можно [создать входной контроллер с статическим общедоступным IP-адресом][aks-ingress-static-tls].
+Во время установки для контроллера входящего трафика создается общедоступный IP-адрес Azure. Этот IP-адрес является статическим только на время жизненного цикла контроллера входящего трафика. При удалении контроллера входящего трафика этот общедоступный IP-адрес теряется. Если создать дополнительный контроллер входящего трафика, ему назначается новый общедоступный IP-адрес. Чтобы сохранить общедоступный IP-адрес, создайте вместо этого [контроллер со статическим общедоступным IP-адресом][aks-ingress-static-tls].
 
 Чтобы получить общедоступный IP-адрес, используйте команду `kubectl get service`. Назначение службе IP-адреса занимает несколько минут.
 
@@ -73,8 +71,8 @@ helm install nginx stable/nginx-ingress \
 $ kubectl get service -l app=nginx-ingress --namespace ingress-basic
 
 NAME                                             TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                      AGE
-billowing-kitten-nginx-ingress-controller        LoadBalancer   10.0.182.160   MY_EXTERNAL_IP  80:30920/TCP,443:30426/TCP   20m
-billowing-kitten-nginx-ingress-default-backend   ClusterIP      10.0.255.77    <none>          80/TCP                       20m
+nginx-ingress-controller                         LoadBalancer   10.0.182.160   MY_EXTERNAL_IP  80:30920/TCP,443:30426/TCP   20m
+nginx-ingress-default-backend                    ClusterIP      10.0.255.77    <none>          80/TCP                       20m
 ```
 
 Правила доступа еще не созданы. Если вы перейдете на общедоступный IP-адрес, для контроллера входящего трафика NGINX по умолчанию отобразится страница 404.
@@ -87,7 +85,7 @@ billowing-kitten-nginx-ingress-default-backend   ClusterIP      10.0.255.77    <
 az network dns record-set a add-record \
     --resource-group myResourceGroup \
     --zone-name MY_CUSTOM_DOMAIN \
-    --record-set-name * \
+    --record-set-name '*' \
     --ipv4-address MY_EXTERNAL_IP
 ```
 
@@ -113,16 +111,16 @@ az network dns record-set a add-record \
 
 ## <a name="install-cert-manager"></a>Установка cert-manager
 
-Контроллер входящего трафика NGINX поддерживает обработку подключений TLS для последующей передачи. Получить и настроить сертификаты для HTTPS можно несколькими способами. В этой статье демонстрируется использование [диспетчера сертификатов][cert-manager], который обеспечивает автоматическую возможность [шифрования][lets-encrypt] функций создания и управления сертификатами.
+Контроллер входящего трафика NGINX поддерживает обработку подключений TLS для последующей передачи. Получить и настроить сертификаты для HTTPS можно несколькими способами. В этой статье демонстрируется использование проекта [cert-manager][cert-manager], который обеспечивает автоматические функции создания сертификатов [Lets Encrypt][lets-encrypt] и управления ими.
 
 Чтобы установить контроллер диспетчера сертификатов, выполните следующие действия.
 
 ```console
 # Install the CustomResourceDefinition resources separately
-kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.12/deploy/manifests/00-crds.yaml --namespace ingress-basic
+kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.13/deploy/manifests/00-crds.yaml
 
 # Label the ingress-basic namespace to disable resource validation
-kubectl label namespace ingress-basic certmanager.k8s.io/disable-validation=true
+kubectl label namespace ingress-basic cert-manager.io/disable-validation=true
 
 # Add the Jetstack Helm repository
 helm repo add jetstack https://charts.jetstack.io
@@ -131,14 +129,18 @@ helm repo add jetstack https://charts.jetstack.io
 helm repo update
 
 # Install the cert-manager Helm chart
-helm install cert-manager --namespace ingress-basic --version v0.12.0 jetstack/cert-manager --set ingressShim.defaultIssuerName=letsencrypt --set ingressShim.defaultIssuerKind=ClusterIssuer
+helm install \
+  cert-manager \
+  --namespace ingress-basic \
+  --version v0.13.0 \
+  jetstack/cert-manager
 ```
 
-Дополнительные сведения о конфигурации диспетчера сертификатов см. в разделе [проект диспетчера сертификатов][cert-manager].
+Дополнительные сведения о конфигурации cert-manager см. в описании [проекта cert-manager][cert-manager].
 
 ## <a name="create-a-ca-cluster-issuer"></a>Создание издателя кластера ЦС
 
-Перед выпуском сертификатов диспетчеру сертификатов требуется [поставщик][cert-manager-issuer] или ресурс [клустериссуер][cert-manager-cluster-issuer] . Эти ресурсы Kubernetes имеют аналогичную функциональность, однако `Issuer` работает в отдельном пространстве имен, а `ClusterIssuer` — во всех. Дополнительные сведения см. в документации [поставщика CERT-Manager][cert-manager-issuer] .
+Для выдачи сертификатов средству cert-manager нужен ресурс [Issuer][cert-manager-issuer] или [ClusterIssuer][cert-manager-cluster-issuer]. Эти ресурсы Kubernetes имеют аналогичную функциональность, однако `Issuer` работает в отдельном пространстве имен, а `ClusterIssuer` — во всех. Дополнительные сведения см. в документации по [издателю cert-manager][cert-manager-issuer].
 
 Создайте издатель кластера, например `cluster-issuer.yaml`, используя приведенный ниже пример манифеста. Измените адрес электронной почты на действительный адрес вашей организации:
 
@@ -162,32 +164,96 @@ spec:
 Чтобы создать издатель, используйте команду `kubectl apply`.
 
 ```console
-kubectl apply -f cluster-issuer.yaml --namespace ingress-basic
+kubectl apply -f cluster-issuer.yaml
 ```
 
 ## <a name="run-demo-applications"></a>Запуск демонстрационных версий приложений
 
 Контроллер входящего трафика и решение по управлению сертификатами настроены. Теперь запустите две демонстрационные версии приложения в своем кластере AKS. В этом примере Helm используется для развертывания двух экземпляров простого приложения *Hello World* .
 
-Прежде чем можно будет установить образцы диаграмм Helm, добавьте репозиторий примеров Azure в среду Helm.
+Чтобы увидеть контроллер входящего трафика в действии, запустите два демонстрационных приложения в кластере AKS. В этом примере используется `kubectl apply` для развертывания двух экземпляров простого приложения *Hello World* .
 
-```console
-helm repo add azure-samples https://azure-samples.github.io/helm-charts/
+Создайте файл *AKS-HelloWorld-One. YAML* и скопируйте в следующем примере YAML:
+
+```yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aks-helloworld-one
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aks-helloworld-one
+  template:
+    metadata:
+      labels:
+        app: aks-helloworld-one
+    spec:
+      containers:
+      - name: aks-helloworld-one
+        image: neilpeterson/aks-helloworld:v1
+        ports:
+        - containerPort: 80
+        env:
+        - name: TITLE
+          value: "Welcome to Azure Kubernetes Service (AKS)"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aks-helloworld-one
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: aks-helloworld-one
 ```
 
-Создайте демонстрационное приложение с именем *AKS-HelloWorld* , используя диаграмму *Azure-Samples/AKS-HelloWorld* Helm.
+Создайте файл *AKS-HelloWorld-Two. YAML* и скопируйте в следующем примере YAML:
 
-```console
-helm install aks-helloworld azure-samples/aks-helloworld --namespace ingress-basic
+```yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aks-helloworld-two
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aks-helloworld-two
+  template:
+    metadata:
+      labels:
+        app: aks-helloworld-two
+    spec:
+      containers:
+      - name: aks-helloworld-two
+        image: neilpeterson/aks-helloworld:v1
+        ports:
+        - containerPort: 80
+        env:
+        - name: TITLE
+          value: "AKS Ingress Demo"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aks-helloworld-two
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: aks-helloworld-two
 ```
 
-Создайте второй экземпляр демонстрационного приложения с именем *AKS-HelloWorld-2*. Укажите новый заголовок и уникальное имя службы, чтобы два приложения были визуально разными, используя *параметр--SET*.
+Запустите два демонстрационных приложения с `kubectl apply`помощью:
 
 ```console
-helm install aks-helloworld-two azure-samples/aks-helloworld \
-    --namespace ingress-basic \
-    --set title="AKS Ingress Demo" \
-    --set serviceName="aks-helloworld-two"
+kubectl apply -f aks-helloworld-one.yaml --namespace ingress-basic
+kubectl apply -f aks-helloworld-two.yaml --namespace ingress-basic
 ```
 
 ## <a name="create-an-ingress-route"></a>Создание маршрута для входящего трафика
@@ -196,7 +262,10 @@ helm install aks-helloworld-two azure-samples/aks-helloworld \
 
 В следующем примере трафик к адресу *Hello-World-входящий. MY_CUSTOM_DOMAIN* направляется в службу *AKS-HelloWorld* . Трафик к адресу *Hello-World-входящий. MY_CUSTOM_DOMAIN/Хелло-Ворлд-тво* направляется в службу *AKS-HelloWorld-Two* . Трафик, входящий в *Hello-World. MY_CUSTOM_DOMAIN/Статик* направляется в службу с именем *AKS-HelloWorld* для статических ресурсов.
 
-Создайте файл с именем `hello-world-ingress.yaml`, используя приведенный ниже пример YAML. Обновите *узлы* и *узел*, указав DNS-имя, которое вы создали на предыдущем шаге.
+> [!NOTE]
+> Если вы настроили полное доменное имя для IP-адреса контроллера входящего трафика вместо личного домена, используйте полное доменное имя вместо *входных данных Hello-World. MY_CUSTOM_DOMAIN*. Например, если полное доменное имя — *Demo-AKS-Ingress.eastus.cloudapp.Azure.com*, замените *Hello-World-in. MY_CUSTOM_DOMAIN* с *Demo-AKS-Ingress.eastus.cloudapp.Azure.com* в `hello-world-ingress.yaml`.
+
+Создайте файл с именем `hello-world-ingress.yaml` , используя приведенный ниже пример YAML. Обновите *узлы* и *узел*, указав DNS-имя, которое вы создали на предыдущем шаге.
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -217,7 +286,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: aks-helloworld
+          serviceName: aks-helloworld-one
           servicePort: 80
         path: /(.*)
       - backend:
@@ -243,7 +312,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: aks-helloworld
+          serviceName: aks-helloworld-one
           servicePort: 80
         path: /static(/|$)(.*)
 ```
@@ -256,9 +325,9 @@ kubectl apply -f hello-world-ingress.yaml --namespace ingress-basic
 
 ## <a name="verify-a-certificate-object-has-been-created"></a>Проверка создания объекта сертификата
 
-Далее нужно создать ресурс сертификата. Этот ресурс сертификата определяет необходимый сертификат X.509. Дополнительные сведения см. в разделе [Сертификаты-менеджеры сертификатов][cert-manager-certificates]. Диспетчер сертификатов автоматически создал объект сертификата для вас с помощью входящих-оболочек, который автоматически развертывается с помощью диспетчера сертификатов, начиная с v 0.2.2. Дополнительные сведения см. в [документации по входящим и оболочкам][ingress-shim].
+Далее нужно создать ресурс сертификата. Этот ресурс сертификата определяет необходимый сертификат X.509. Дополнительные сведения см. в разделе [Сертификаты-менеджеры сертификатов][cert-manager-certificates]. Диспетчер сертификатов автоматически создал объект сертификата для вас с помощью входящих-оболочек, который автоматически развертывается с помощью диспетчера сертификатов, начиная с v 0.2.2. Дополнительные сведения см. в [документации по ingress-shim][ingress-shim].
 
-Чтобы убедиться, что сертификат успешно создан, используйте команду `kubectl get certificate --namespace ingress-basic` и убедитесь, что *значение* *Готово* , что может занять несколько минут.
+Чтобы убедиться, что сертификат успешно создан, используйте `kubectl get certificate --namespace ingress-basic` команду и убедитесь, что параметр *Ready* имеет *значение true*, что может занять несколько минут.
 
 ```
 $ kubectl get certificate --namespace ingress-basic
@@ -277,16 +346,10 @@ tls-secret   True    tls-secret   11m
 
 ### <a name="delete-the-sample-namespace-and-all-resources"></a>Удаление образца пространства имен и всех ресурсов
 
-Чтобы удалить весь пример пространства имен, используйте команду `kubectl delete` и укажите имя пространства имен. Все ресурсы в пространстве имен удаляются.
+Чтобы удалить весь пример пространства имен, используйте `kubectl delete` команду и укажите имя пространства имен. Все ресурсы в пространстве имен удаляются.
 
 ```console
 kubectl delete namespace ingress-basic
-```
-
-Затем удалите репозиторий Helm для приложения AKS Hello World:
-
-```console
-helm repo remove azure-samples
 ```
 
 ### <a name="delete-resources-individually"></a>Удаление ресурсов по отдельности
@@ -297,33 +360,30 @@ helm repo remove azure-samples
 kubectl delete -f cluster-issuer.yaml --namespace ingress-basic
 ```
 
-Выведите список выпусков Helm с помощью команды `helm list`. Найдите диаграммы *nginx-ingress* и *aks-helloworld*, как показано в следующем примере выходных данных.
+Выведите список выпусков `helm list` Helm с помощью команды. Найдите диаграммы с именами *nginx* и *CERT-Manager*, как показано в следующем примере выходных данных:
 
 ```
 $ helm list --namespace ingress-basic
 
 NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
-aks-helloworld          ingress-basic   1               2020-01-15 10:24:32.054871 -0600 CST    deployed        aks-helloworld-0.1.0               
-aks-helloworld-two      ingress-basic   1               2020-01-15 10:24:37.671667 -0600 CST    deployed        aks-helloworld-0.1.0               
-cert-manager            ingress-basic   1               2020-01-15 10:23:36.515514 -0600 CST    deployed        cert-manager-v0.12.0    v0.12.0    
+cert-manager            ingress-basic   1               2020-01-15 10:23:36.515514 -0600 CST    deployed        cert-manager-v0.13.0    v0.13.0    
 nginx                   ingress-basic   1               2020-01-15 10:09:45.982693 -0600 CST    deployed        nginx-ingress-1.29.1    0.27.0  
 ```
 
-Удалить выпуски командой `helm delete`. В следующем примере удаляются развертывание контроллера входящего трафика NGINX и два примера приложений hello world для AKS.
+Удалите выпуски с `helm uninstall` помощью команды. В следующем примере производится удаление развертываний NGINX и диспетчера сертификатов.
 
 ```
-$ helm delete aks-helloworld aks-helloworld-two cert-manager nginx --namespace ingress-basic
+$ helm uninstall cert-manager nginx --namespace ingress-basic
 
-release "aks-helloworld" uninstalled
-release "aks-helloworld-two" uninstalled
 release "cert-manager" uninstalled
 release "nginx" uninstalled
 ```
 
-Затем удалите репозиторий Helm, используемый для приложения hello world для AKS.
+Затем удалите два примера приложений:
 
 ```console
-helm repo remove azure-samples
+kubectl delete -f aks-helloworld-one.yaml --namespace ingress-basic
+kubectl delete -f aks-helloworld-two.yaml --namespace ingress-basic
 ```
 
 Удалите маршрут входящего трафика, направлявший трафик в пример приложения.
@@ -332,7 +392,7 @@ helm repo remove azure-samples
 kubectl delete -f hello-world-ingress.yaml --namespace ingress-basic
 ```
 
-Наконец, можно удалить само пространство имен. Используйте команду `kubectl delete` и укажите имя пространства имен:
+Наконец, можно удалить само пространство имен. Используйте `kubectl delete` команду и укажите имя пространства имен:
 
 ```console
 kubectl delete namespace ingress-basic
@@ -342,22 +402,23 @@ kubectl delete namespace ingress-basic
 
 В данной статье упоминаются некоторые внешние компоненты для AKS. Чтобы узнать больше об этих компонентах, см. следующие страницы проекта:
 
-- [Helm CLI][helm-cli]
+- [Интерфейс командной строки Helm][helm-cli]
 - [Контроллер входящего трафика NGINX][nginx-ingress]
-- [Диспетчер сертификатов][cert-manager]
+- [cert-manager][cert-manager]
 
 Кроме того, вы можете сделать следующее:
 
-- [Создание базового контроллера входящего трафика с внешним сетевым подключением][aks-ingress-basic]
-- [Включение надстройки маршрутизации приложений HTTP][aks-http-app-routing]
-- [Создание контроллера входящего трафика, использующего внутреннюю, частную сеть и IP-адрес][aks-ingress-internal]
-- [Создание контроллера входящего трафика, использующего собственные сертификаты TLS][aks-ingress-own-tls]
-- [Создание контроллера входящего трафика, использующего шифрование для автоматического создания сертификатов TLS со статическим общедоступным IP-адресом][aks-ingress-static-tls]
+- [Создать базовый контроллер входящего трафика с внешним сетевым подключением.][aks-ingress-basic]
+- [Включить надстройку маршрутизации приложений HTTP.][aks-http-app-routing]
+- [Создать контроллер входящего трафика, который использует внутреннюю, частную сети и IP-адрес.][aks-ingress-internal]
+- [Создать контроллер входящего трафика, который использует ваши собственные сертификаты TLS][aks-ingress-own-tls]
+- [Создать контроллер входящего трафика, который использует службу Let's Encrypt для автоматического создания сертификатов TLS со статическим общедоступным IP-адресом][aks-ingress-static-tls]
 
 <!-- LINKS - external -->
 [az-network-dns-record-set-a-add-record]: /cli/azure/network/dns/record-set/a?view=azure-cli-latest#az-network-dns-record-set-a-add-record
 [custom-domain]: ../app-service/manage-custom-dns-buy-domain.md#buy-the-domain
 [dns-zone]: ../dns/dns-getstarted-cli.md
+[helm]: https://helm.sh/
 [helm-cli]: https://docs.microsoft.com/azure/aks/kubernetes-helm
 [cert-manager]: https://github.com/jetstack/cert-manager
 [cert-manager-certificates]: https://cert-manager.readthedocs.io/en/latest/reference/certificates.html

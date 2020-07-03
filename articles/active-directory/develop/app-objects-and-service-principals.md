@@ -5,7 +5,6 @@ description: Узнайте о связи между объектами прил
 author: rwike77
 manager: CelesteDG
 services: active-directory
-ms.assetid: adfc0569-dc91-48fe-92c3-b5b4833703de
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
@@ -14,12 +13,12 @@ ms.date: 04/13/2019
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: 19085346fb5797245c9f71911f8178df0a1b742a
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: a636ff15da09bcf1891618d65270376f26fd3239
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76698430"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885605"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Объекты приложения и субъекта-службы в Azure Active Directory
 
@@ -41,7 +40,7 @@ ms.locfileid: "76698430"
 
 ## <a name="application-registration"></a>Регистрация приложения
 
-При регистрации приложения Azure AD в [портал Azure][AZURE-Portal]в клиенте Azure AD создаются два объекта:
+При регистрации приложения Azure AD на [портале Azure][AZURE-Portal] в клиенте Azure AD создаются два объекта:
 
 - объект приложения;
 - объект субъекта-службы.
@@ -75,15 +74,15 @@ ms.locfileid: "76698430"
 
 На следующей схеме показана связь между объектом приложения и соответствующими объектами субъекта-службы в контексте образца мультитенантного приложения под названием **Приложение по управлению персоналом**. В этом примере сценария используются три клиента Azure AD:
 
-- **Adatum** — клиент, который использует компания, разработавшая **приложение по управлению персоналом**;
-- **Contoso** — клиент, который использует компания Contoso, являющаяся объектом-получателем **приложения по управлению персоналом**;
+- **Adatum** — клиент, используемый компанией, разработавшей **приложение HR** .
+- **Contoso** — клиент, используемый организацией Contoso, которая является потребителем **приложения HR** .
 - **Fabrikam** — клиент, который использует компания Fabrikam, также потребляющая **приложение по управлению персоналом**.
 
 ![Отношение между объектом приложения и объектом субъекта-службы](./media/app-objects-and-service-principals/application-objects-relationship.svg)
 
 Условия в этом примере сценария.
 
-| Шаг | Description |
+| Шаг | Описание |
 |------|-------------|
 | 1    | Это процесс создания объектов приложения и субъекта-службы в главном клиенте приложения. |
 | 2    | При согласии администраторов компании Contoso и Fabrikam в клиенте Azure AD компании создается объект субъекта-службы, и ему назначаются разрешения, предоставленные администратором. Обратите внимание, что приложение по управлению персоналом можно создать или настроить для отдельных пользователей. |

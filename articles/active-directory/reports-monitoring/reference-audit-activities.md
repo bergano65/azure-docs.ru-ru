@@ -17,12 +17,12 @@ ms.date: 01/24/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 843f12d14120a7becdc1e8b15bfcc65948602c44
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 86a0e0b3c64554e00a5ba7734af28dc136df643f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74007751"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80891515"
 ---
 # <a name="azure-ad-audit-activity-reference"></a>Справочные материалы по действиям аудита в Azure Active Directory
 
@@ -30,11 +30,11 @@ ms.locfileid: "74007751"
 
 Архитектура создания отчетов в Azure AD состоит из следующих компонентов.
 
-- **Отчеты о действиях** 
+- **Отчеты об активности** 
     - [Входы](concept-sign-ins.md) — информация об использовании управляемых приложений и входах пользователей.
     - [Журналы аудита](concept-audit-logs.md) — возможность отслеживания с помощью журналов всех изменений, внесенных при использовании разных функций в Azure AD. 
     
-- **Отчеты системы безопасности** 
+- **Отчеты о безопасности** 
     - [Входы, представляющие риск](concept-risky-sign-ins.md). Вход, представляющий риск, означает, что в систему пытался войти пользователь, который не является законным владельцем учетной записи. 
     - [Пользователи, находящиеся в группе риска](concept-user-at-risk.md). Такая пометка означает, что конфиденциальность учетной записи пользователя, возможно, нарушена. 
 
@@ -91,7 +91,7 @@ ms.locfileid: "74007751"
 
 |Категория аудита|Действие|
 |---|---|
-|Управление приложениями|Добавление приложения|
+|Управление приложениями|Добавить приложение|
 |Управление приложениями|Add owner to application (Добавление владельца приложения)|
 |Управление приложениями|Add owner to service principal (Добавление владельца субъекта-службы)|
 |Управление приложениями|Add policy to service principal (Добавление политики субъекта-службы)|
@@ -103,9 +103,9 @@ ms.locfileid: "74007751"
 |Управление каталогом|Remove Oauth2Permissiongrant (Удаление записи Oauth2Permissiongrant)|
 |Управление каталогом|Remove app role assignment from service principal (Удаление назначения роли приложения из субъекта-службы)|
 |Управление каталогом|Remove owner from application (Удаление владельца приложения)|
-|Resource (Ресурс)|Remove owner from service principal (Удаление владельца субъекта-службы)|
-|Resource (Ресурс)|Remove policy from service principal (Удаление политики субъекта-службы)|
-|Resource (Ресурс)|Удаление субъекта-службы|
+|Ресурс|Remove owner from service principal (Удаление владельца субъекта-службы)|
+|Ресурс|Remove policy from service principal (Удаление политики субъекта-службы)|
+|Ресурс|Удаление субъекта-службы|
 
 
 ## <a name="automated-password-rollover"></a>Automated password rollover (Автоматическая смена пароля);
@@ -135,11 +135,11 @@ ms.locfileid: "74007751"
 |Управление приложениями|AdminPolicyDatas-SetResources|
 |Управление приложениями|AdminUserJourneys-GetResources|
 |Управление приложениями|AdminUserJourneys-RemoveResources|
-|Проверка подлинности|AdminUserJourneys-SetResources|
-|Проверка подлинности|Create IdentityProvider (Создание записи IdentityProvider)|
-|Проверка подлинности|Create V1 application (Создание приложения версии 1)|
-|Проверка подлинности|Create V2 application (Создание приложения версии 2)|
-|Проверка подлинности|Create a custom domains in the tenant (Создание личных доменов в клиенте)|
+|Аутентификация|AdminUserJourneys-SetResources|
+|Аутентификация|Create IdentityProvider (Создание записи IdentityProvider)|
+|Аутентификация|Create V1 application (Создание приложения версии 1)|
+|Аутентификация|Create V2 application (Создание приложения версии 2)|
+|Аутентификация|Create a custom domains in the tenant (Создание личных доменов в клиенте)|
 |Авторизация|Create a new AdminUserJourney (Создание записи AdminUserJourney)|
 |Авторизация|Create localized resource json (Создание JSON-файла локализованных ресурсов)|
 |Авторизация|Create new Custom IDP (Создание настраиваемого поставщика удостоверений)|
@@ -256,92 +256,92 @@ ms.locfileid: "74007751"
 |Управление каталогом|Get tenant Info (Получение сведений о клиенте)|
 |Управление каталогом|Get tenant allowed features (Получение допустимых функций клиента)|
 |Управление каталогом|Get tenantDomains (Получение доменов клиента)|
-|Ключ|Gets the type of tenant (Получение сведений о типе клиента)|
-|Ключ|Verify if B2C feature is enabled (Проверка того, включен ли компонент B2C)|
-|Ключ|Проверка того, включен ли компонент|
-|Ключ|Добавление партнера для компании|
-|Ключ|Add unverified domain (Добавление непроверенного домена)|
-|Ключ|Add verified domain (Добавление проверенного домена)|
-|Ключ|Create company (Создание организации)|
-|Ключ|Создание параметров организации.|
-|Ключ|Удаление параметров организации.|
-|Ключ|Demote partner (Изменение типа партнера)|
-|Ключ|Directory deleted (Каталог удален)|
-|Другие|Directory deleted permanently (Каталог удален без возможности восстановления)|
-|Другие|Directory scheduled for deletion (Запланировано удаление этого каталога)|
-|Resource (Ресурс)|Promote company to partner (Продвижение компании до партнера)|
-|Resource (Ресурс)|Purge rights management properties (Очистка свойств управления правами)|
-|Resource (Ресурс)|Remove partner from company (Удаление партнера из компании)|
-|Resource (Ресурс)|Remove unverified domain (Удаление непроверенного домена)|
-|Resource (Ресурс)|Remove verified domain (Удаление проверенного домена)|
-|Resource (Ресурс)|Установка информации о компании|
-|Resource (Ресурс)|Set DirSync feature (Установка компонента Dirsync)|
-|Resource (Ресурс)|Set Dirsyncenabled flag (Установка флага Dirsyncenabled)|
-|Resource (Ресурс)|Set Partnership (Настройка партнерства)|
-|Resource (Ресурс)|Set accidental deletion threshold (Указание порога случайного удаления)|
-|Resource (Ресурс)|Set company allowed data location (Указание расположения данных организации)|
-|Resource (Ресурс)|Set company multinational feature enabled (Включение функции многонациональности для организации)|
-|Resource (Ресурс)|Set directory feature on tenant (Установка поддержки каталога в клиенте)|
-|Resource (Ресурс)|Установка проверки подлинности домена|
-|Resource (Ресурс)|Установка параметров федерации для домена|
-|Resource (Ресурс)|Set password policy (Настройка политики паролей)|
-|Resource (Ресурс)|Set rights management properties (Установка свойств управления правами)|
-|Resource (Ресурс)|Update company (Обновление организации)|
-|Resource (Ресурс)|Update company settings (Обновление параметров организации)|
-|Resource (Ресурс)|Обновление домена|
-|Resource (Ресурс)|Проверка домена|
-|Resource (Ресурс)|Проверка домена с помощью электронной почты|
-|Resource (Ресурс)|Переход|
-|Resource (Ресурс)|Update alert settings (Изменение параметров оповещений)|
-|Resource (Ресурс)|Update weekly digest settings (Обновление параметров еженедельного дайджеста)|
-|Resource (Ресурс)|Disable password writeback for directory (Отключение обратной записи паролей для каталога)|
-|Resource (Ресурс)|Enable password writeback for directory (Включение обратной записи паролей для каталога)|
-|Resource (Ресурс)|Add app role assignment to group (Добавление назначения роли приложения для группы)|
-|Resource (Ресурс)|Добавление группы|
-|Resource (Ресурс)|Добавление участника группы|
-|Resource (Ресурс)|Add owner to group (Добавление владельца группы)|
-|Resource (Ресурс)|Create group settings (Создание параметров группы)|
-|Resource (Ресурс)|Удаление группы|
-|Resource (Ресурс)|Delete group settings (Удаление параметров группы)|
-|Resource (Ресурс)|Finish applying group based license to users (Прекращение назначения для пользователей лицензии, назначенной группе)|
-|Resource (Ресурс)|Hard Delete group (Необратимое удаление группы)|
-|Resource (Ресурс)|Remove app role assignment from group (Удаление назначения роли приложения из группы)|
-|Resource (Ресурс)|Удаление участника группы|
-|Resource (Ресурс)|Remove owner from group (Удаление владельца группы)|
-|Resource (Ресурс)|Restore Group (Восстановление группы)|
-|Resource (Ресурс)|Set group license (Настройка лицензии для группы)|
-|Resource (Ресурс)|Задание пользователя для управления группой.|
-|Resource (Ресурс)|Start applying group based license to users (Назначение пользователям лицензии, назначенной группе)|
-|Resource (Ресурс)|Trigger group license recalculation (Активация пересчета лицензий групп)|
-|Resource (Ресурс)|Обновление группы|
-|Resource (Ресурс)|Update group settings (Обновление параметров группы)|
-|Resource (Ресурс)|Добавить участника|
-|Resource (Ресурс)|Создание группы|
-|Resource (Ресурс)|Удалить группу|
-|Resource (Ресурс)|Remove Member (Удаление участника)|
-|Resource (Ресурс)|Обновление группы|
-|Resource (Ресурс)|Approve a pending request to join a group (Подтверждение ожидающего запроса на присоединение к группе)|
-|Resource (Ресурс)|Cancel a pending request to join a group (Отмена ожидающего запроса на присоединение к группе)|
-|Resource (Ресурс)|Create lifecycle management policy (Создание политики управления жизненным циклом)|
-|Resource (Ресурс)|Delete a pending request to join a group (Удаление ожидающего запроса на присоединение к группе)|
-|Resource (Ресурс)|Reject a pending request to join a group (Отклонение ожидающего запроса на присоединение к группе)|
-|Resource (Ресурс)|Renew group (Продление действия группы)|
-|Resource (Ресурс)|Request to join a group (Запрос на присоединение к группе)|
-|Resource (Ресурс)|Set dynamic group properties (Указание свойств динамической группы)|
-|Resource (Ресурс)|Update lifecycle management policy (Обновление политики управления жизненным циклом)|
-|Resource (Ресурс)|Add a key based on ASCII secret to a CPIM key container (Добавление ключа на основе секрета ASCII в контейнер ключей CPIM)|
-|Resource (Ресурс)|Add a key to a CPIM key container (Добавление ключа в контейнер ключей CPIM)|
-|Resource (Ресурс)|Delete a CPIM key container (Добавление контейнера ключей CPIM)|
-|Resource (Ресурс)|Delete key container (Удаление контейнера ключей)|
-|Resource (Ресурс)|Get key container active key metadata in JWK (Получение метаданных в формате JWK для активных ключей в контейнере ключей)|
-|Resource (Ресурс)|Get key container metadata (Получение метаданных контейнера ключей)|
-|Resource (Ресурс)|Gets a CPIM key container in jwk format (Получение данных контейнера ключей CPIM в формате JWK)|
-|Resource (Ресурс)|Gets list of key containers in the tenant (Получение списка контейнеров ключей в клиенте)|
-|Resource (Ресурс)|Restore a CPIM key container backup (Восстановление контейнера ключей CPIM из резервной копии)|
-|Resource (Ресурс)|Save key container (Сохранение контейнера ключей)|
-|Resource (Ресурс)|Upload a CPIM encrypted key (Отправка зашифрованного ключа CPIM)|
-|Resource (Ресурс)|Issue an authorization code to the application (Предоставление кода авторизации для приложения)|
-|Resource (Ресурс)|Issue an access token to the application (Предоставление id_token для приложения)|
+|Клавиши|Gets the type of tenant (Получение сведений о типе клиента)|
+|Клавиши|Verify if B2C feature is enabled (Проверка того, включен ли компонент B2C)|
+|Клавиши|Проверка того, включен ли компонент|
+|Клавиши|Добавление партнера для компании|
+|Клавиши|Add unverified domain (Добавление непроверенного домена)|
+|Клавиши|Add verified domain (Добавление проверенного домена)|
+|Клавиши|Create company (Создание организации)|
+|Клавиши|Создание параметров организации.|
+|Клавиши|Удаление параметров организации.|
+|Клавиши|Demote partner (Изменение типа партнера)|
+|Клавиши|Directory deleted (Каталог удален)|
+|Другой|Directory deleted permanently (Каталог удален без возможности восстановления)|
+|Другой|Directory scheduled for deletion (Запланировано удаление этого каталога)|
+|Ресурс|Promote company to partner (Продвижение компании до партнера)|
+|Ресурс|Purge rights management properties (Очистка свойств управления правами)|
+|Ресурс|Remove partner from company (Удаление партнера из компании)|
+|Ресурс|Remove unverified domain (Удаление непроверенного домена)|
+|Ресурс|Remove verified domain (Удаление проверенного домена)|
+|Ресурс|Установка информации о компании|
+|Ресурс|Set DirSync feature (Установка компонента Dirsync)|
+|Ресурс|Set Dirsyncenabled flag (Установка флага Dirsyncenabled)|
+|Ресурс|Set Partnership (Настройка партнерства)|
+|Ресурс|Set accidental deletion threshold (Указание порога случайного удаления)|
+|Ресурс|Set company allowed data location (Указание расположения данных организации)|
+|Ресурс|Set company multinational feature enabled (Включение функции многонациональности для организации)|
+|Ресурс|Set directory feature on tenant (Установка поддержки каталога в клиенте)|
+|Ресурс|Установка проверки подлинности домена|
+|Ресурс|Установка параметров федерации для домена|
+|Ресурс|Set password policy (Настройка политики паролей)|
+|Ресурс|Set rights management properties (Установка свойств управления правами)|
+|Ресурс|Update company (Обновление организации)|
+|Ресурс|Update company settings (Обновление параметров организации)|
+|Ресурс|Обновление домена|
+|Ресурс|Проверка домена|
+|Ресурс|Проверка домена с помощью электронной почты|
+|Ресурс|Переход|
+|Ресурс|Update alert settings (Изменение параметров оповещений)|
+|Ресурс|Update weekly digest settings (Обновление параметров еженедельного дайджеста)|
+|Ресурс|Disable password writeback for directory (Отключение обратной записи паролей для каталога)|
+|Ресурс|Enable password writeback for directory (Включение обратной записи паролей для каталога)|
+|Ресурс|Add app role assignment to group (Добавление назначения роли приложения для группы)|
+|Ресурс|Добавление группы|
+|Ресурс|Добавление участника группы|
+|Ресурс|Add owner to group (Добавление владельца группы)|
+|Ресурс|Create group settings (Создание параметров группы)|
+|Ресурс|Удаление группы|
+|Ресурс|Delete group settings (Удаление параметров группы)|
+|Ресурс|Finish applying group based license to users (Прекращение назначения для пользователей лицензии, назначенной группе)|
+|Ресурс|Hard Delete group (Необратимое удаление группы)|
+|Ресурс|Remove app role assignment from group (Удаление назначения роли приложения из группы)|
+|Ресурс|Удаление участника группы|
+|Ресурс|Remove owner from group (Удаление владельца группы)|
+|Ресурс|Restore Group (Восстановление группы)|
+|Ресурс|Set group license (Настройка лицензии для группы)|
+|Ресурс|Задание пользователя для управления группой.|
+|Ресурс|Start applying group based license to users (Назначение пользователям лицензии, назначенной группе)|
+|Ресурс|Trigger group license recalculation (Активация пересчета лицензий групп)|
+|Ресурс|Обновление группы|
+|Ресурс|Update group settings (Обновление параметров группы)|
+|Ресурс|Добавить участника|
+|Ресурс|Создание группы|
+|Ресурс|Удалить группу|
+|Ресурс|Remove Member (Удаление участника)|
+|Ресурс|Обновление группы|
+|Ресурс|Approve a pending request to join a group (Подтверждение ожидающего запроса на присоединение к группе)|
+|Ресурс|Cancel a pending request to join a group (Отмена ожидающего запроса на присоединение к группе)|
+|Ресурс|Create lifecycle management policy (Создание политики управления жизненным циклом)|
+|Ресурс|Delete a pending request to join a group (Удаление ожидающего запроса на присоединение к группе)|
+|Ресурс|Reject a pending request to join a group (Отклонение ожидающего запроса на присоединение к группе)|
+|Ресурс|Renew group (Продление действия группы)|
+|Ресурс|Request to join a group (Запрос на присоединение к группе)|
+|Ресурс|Set dynamic group properties (Указание свойств динамической группы)|
+|Ресурс|Update lifecycle management policy (Обновление политики управления жизненным циклом)|
+|Ресурс|Add a key based on ASCII secret to a CPIM key container (Добавление ключа на основе секрета ASCII в контейнер ключей CPIM)|
+|Ресурс|Add a key to a CPIM key container (Добавление ключа в контейнер ключей CPIM)|
+|Ресурс|Delete a CPIM key container (Добавление контейнера ключей CPIM)|
+|Ресурс|Delete key container (Удаление контейнера ключей)|
+|Ресурс|Get key container active key metadata in JWK (Получение метаданных в формате JWK для активных ключей в контейнере ключей)|
+|Ресурс|Get key container metadata (Получение метаданных контейнера ключей)|
+|Ресурс|Gets a CPIM key container in jwk format (Получение данных контейнера ключей CPIM в формате JWK)|
+|Ресурс|Gets list of key containers in the tenant (Получение списка контейнеров ключей в клиенте)|
+|Ресурс|Restore a CPIM key container backup (Восстановление контейнера ключей CPIM из резервной копии)|
+|Ресурс|Save key container (Сохранение контейнера ключей)|
+|Ресурс|Upload a CPIM encrypted key (Отправка зашифрованного ключа CPIM)|
+|Ресурс|Issue an authorization code to the application (Предоставление кода авторизации для приложения)|
+|Ресурс|Issue an access token to the application (Предоставление id_token для приложения)|
 
 
 ## <a name="core-directory"></a>Core directory (Основной каталог);
@@ -356,7 +356,7 @@ ms.locfileid: "74007751"
 |Управление приложениями|Batch invites processed (Обработка пакета приглашений)|
 |Управление приложениями|Batch invites uploaded (Отправка пакета приглашений)|
 |Управление приложениями|Add owner to policy (Добавление владельца политики)|
-|Управление приложениями|Добавить политику|
+|Управление приложениями|добавление политики;|
 |Управление приложениями|удаление политики;|
 |Управление приложениями|Remove policy credentials (Удаление учетных данных политики)|
 |Управление приложениями|изменение политики;|
@@ -370,8 +370,8 @@ ms.locfileid: "74007751"
 |Управление приложениями|Edit Terms Of Use (Изменение условий использования)|
 |Управление приложениями|Publish Terms Of Use (Публикация условий использования)|
 |Управление приложениями|Unpublish Terms Of Use (Отмена публикации условий использования)|
-|Управление приложениями|Add application SSL certificate (Добавление SSL-сертификата приложения)|
-|Управление приложениями|Delete SSL binding (Удаление привязки SSL)|
+|Управление приложениями|Добавить TLS-сертификат приложения или SSL|
+|Управление приложениями|Удаление привязки TLS|
 |Управление приложениями|Register connector (Регистрация соединителя)|
 |Управление приложениями|AdminPolicyDatas-RemoveResources|
 |Управление приложениями|AdminPolicyDatas-SetResources|
@@ -440,18 +440,18 @@ ms.locfileid: "74007751"
 |Управление политикой|GetIEFPolicies|
 |Управление политикой|GetIdentityProviders|
 |Управление политикой|GetTrustFrameworkPolicy|
-|Resource (Ресурс)|MigrateTenantMetadata|
-|Resource (Ресурс)|Перемещение ресурсов|
-|Resource (Ресурс)|Patch IdentityProvider (Исправление для поставщика удостоверений)|
-|Resource (Ресурс)|PutTrustFrameworkPolicy|
-|Resource (Ресурс)|PutTrustFrameworkpolicy|
-|Resource (Ресурс)|Remove a user journey (Удаление пути взаимодействия пользователя)|
-|Resource (Ресурс)|Update Custom IDP (Изменение настраиваемого поставщика удостоверений)|
-|Resource (Ресурс)|Update IDP (Изменение поставщика удостоверений)|
-|Resource (Ресурс)|Изменение локального поставщика удостоверений|
-|Resource (Ресурс)|Update a B2C directory resource (Обновление ресурса каталога B2C)|
-|Resource (Ресурс)|изменение политики;|
-|Resource (Ресурс)|Update subscription status (Обновления состояния подписки)|
+|Ресурс|MigrateTenantMetadata|
+|Ресурс|Перемещение ресурсов|
+|Ресурс|Patch IdentityProvider (Исправление для поставщика удостоверений)|
+|Ресурс|PutTrustFrameworkPolicy|
+|Ресурс|PutTrustFrameworkpolicy|
+|Ресурс|Remove a user journey (Удаление пути взаимодействия пользователя)|
+|Ресурс|Update Custom IDP (Изменение настраиваемого поставщика удостоверений)|
+|Ресурс|Update IDP (Изменение поставщика удостоверений)|
+|Ресурс|Изменение локального поставщика удостоверений|
+|Ресурс|Update a B2C directory resource (Обновление ресурса каталога B2C)|
+|Ресурс|изменение политики;|
+|Ресурс|Update subscription status (Обновления состояния подписки)|
 |Управление ролями|Update user attribute (Обновление пользовательского атрибута)|
 |Управление ролями|Validate move resources (Проверка перемещаемых ресурсов)|
 |Управление ролями|Add device (Добавление устройства)|
@@ -507,11 +507,11 @@ ms.locfileid: "74007751"
 |Управление каталогом|Повышение прав|
 |Управление каталогом|Удалено|
 |Управление каталогом|Изменения параметров ролей|
-|Другие|ScanAlertsNow|
-|Другие|Регистрация|
-|Другие|Заблокировать доступ к ресурсам|
-|Другие|UpdateAlertSettings|
-|Другие|UpdateCurrentState|
+|Другой|ScanAlertsNow|
+|Другой|Регистрация|
+|Другой|Заблокировать доступ к ресурсам|
+|Другой|UpdateAlertSettings|
+|Другой|UpdateCurrentState|
 |Управление политикой|Окончание проверки доступа|
 |Управление политикой|Добавление утверждающего в утверждение запроса|
 |Управление политикой|Добавление утверждающего в проверку доступа|
@@ -523,8 +523,8 @@ ms.locfileid: "74007751"
 
 |Категория аудита|Действие|
 |---|---|
-|Другие|Создание утверждения запроса|
-|Другие|Удаление проверки доступа|
+|Другой|Создание утверждения запроса|
+|Другой|Удаление проверки доступа|
 |Управление пользователями|Удаление утверждающего из проверки доступа|
 |Управление пользователями|Запрос результатов применения проверки доступа|
 |Управление пользователями|Запрос остановки проверки|
@@ -547,7 +547,7 @@ ms.locfileid: "74007751"
 
 
 
-## <a name="privileged-identity-management"></a>управление привилегированными пользователями;
+## <a name="privileged-identity-management"></a>Управление привилегированными пользователями (PIM)
 
 |Категория аудита|Действие|
 |---|---|
@@ -621,7 +621,7 @@ ms.locfileid: "74007751"
 |Условия использования|Unpublish Terms Of Use (Отмена публикации условий использования)|
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое отчеты в Azure Active Directory](overview-reports.md).
 - [Отчет о журналах аудита](concept-audit-logs.md). 

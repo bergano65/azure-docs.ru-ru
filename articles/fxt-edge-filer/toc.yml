@@ -20,10 +20,10 @@
       href: fxt-add-storage.md
     - name: 7. Настройка параметров сети кластера
       href: fxt-configure-network.md
-- name: Руководства
-  items:
-    - name: Подключение клиентов
+    - name: "8.\_Подключение клиентов"
       href: fxt-mount-clients.md
+- name: Практические руководства
+  items:
     - name: Мониторинг оборудования Azure FXT Edge Filer
       href: fxt-monitor.md
     - name: Безопасное отключение питания для узла оборудования

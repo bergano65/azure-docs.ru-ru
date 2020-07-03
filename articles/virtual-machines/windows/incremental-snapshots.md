@@ -1,25 +1,20 @@
 ---
 title: Использование добавочных моментальных снимков для резервного копирования и восстановления неуправляемых дисков виртуальной машины Windows Azure
 description: Создание пользовательского решения для архивации и восстановления дисков виртуальной машины Azure Windows с помощью добавочных моментальных снимков.
-services: virtual-machines-windows
-documentationcenter: na
 author: roygara
 manager: twooley
-editor: tysonn
-ms.assetid: 3524b987-bd65-4e35-83e7-fbc2136643e5
-ms.service: virtual-machines-windows
-ms.workload: storage
-ms.tgt_pltfrm: vm-windows
-ms.topic: article
+ms.service: virtual-machines
+ms.workload: infrastructure
+ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 052f268c43c5e64ad519c6d5f4841a5cb5fc9b13
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 5ace6017ce66bbaa8be71e23196823c1c1318902
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038604"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81869493"
 ---
 # <a name="back-up-azure-unmanaged-vm-disks-with-incremental-snapshots"></a>Архивация неуправляемых дисков виртуальной машины Azure с помощью добавочных моментальных снимков
 [!INCLUDE [virtual-machines-incremental-snapshots](../../../includes/virtual-machines-incremental-snapshots.md)]

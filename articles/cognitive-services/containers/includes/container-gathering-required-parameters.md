@@ -1,33 +1,33 @@
 ---
 title: Идет сбор обязательных параметров
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 description: Параметры для всех контейнеров Cognitive Services "
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 10/15/2019
-ms.author: dapine
-ms.openlocfilehash: bf4e8f06642a4a764794a75e2b49f15958796c61
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 85c67384c38376dc6f5701cf26e879d6e1b76c7f
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "73465949"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80875059"
 ---
 ## <a name="gathering-required-parameters"></a>Идет сбор обязательных параметров
 
-Есть три основных параметра для всех обязательных контейнеров Cognitive Services ". Лицензионное соглашение (EULA) должно присутствовать в значении `accept`. Кроме того, требуются URL-адрес конечной точки и ключ API.
+Есть три основных параметра для всех обязательных контейнеров Cognitive Services ". Лицензионное соглашение должно быть установлено со значением `accept`. Кроме того, требуются URL-адрес конечной точки и ключ API.
 
-### <a name="endpoint-uri-endpoint_uri"></a>URI конечной точки `{ENDPOINT_URI}`
+### <a name="endpoint-uri-endpoint_uri"></a>URI конечной точки`{ENDPOINT_URI}`
 
-Значение URI **конечной точки** доступно на странице *обзора* портал Azure соответствующего ресурса службы. Перейдите на страницу *обзора* , наведите указатель мыши на конечную точку, <span class="docon docon-edit-copy x-hidden-focus"></span> и появится значок `Copy to clipboard`. Копирование и использование при необходимости.
+Значение URI **конечной точки** доступно на странице *обзора* портал Azure соответствующего ресурса службы. Перейдите на страницу *обзора* , наведите указатель мыши на конечную точку `Copy to clipboard` <span class="docon docon-edit-copy x-hidden-focus"></span> , и появится значок. Копирование и использование при необходимости.
 
 ![Сбор URI конечной точки для последующего использования](../media/overview-endpoint-uri.png)
 
-### <a name="keys-api_key"></a>Ключи `{API_KEY}`
+### <a name="keys-api_key"></a>Ключ`{API_KEY}`
 
-Этот ключ используется для запуска контейнера и доступен на странице ключей портал Azure соответствующего ресурса службы. Перейдите на страницу *ключи* и щелкните значок `Copy to clipboard` <span class="docon docon-edit-copy x-hidden-focus"></span> .
+Этот ключ используется для запуска контейнера и доступен на странице ключей портал Azure соответствующего ресурса службы. Перейдите на страницу *ключи* и щелкните `Copy to clipboard` <span class="docon docon-edit-copy x-hidden-focus"></span> значок.
 
 ![Получите один из двух ключей для последующего использования](../media/keys-copy-api-key.png)
 

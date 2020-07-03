@@ -12,14 +12,16 @@ ms.workload: data-services
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: b4b13f8b21cfdedde93145a8e437bc2301bee460
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 71b1b57cb2a9fa442dc3cef3bf34077040cff58e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927110"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81410922"
 ---
 # <a name="azure-data-factory-whitepapers"></a>Технические документы по фабрике данных Azure 
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Технические документы позволяют более глубоко изучить фабрику данных Azure. В этой статье представлен список доступных технических документов по фабрике данных Azure.
 

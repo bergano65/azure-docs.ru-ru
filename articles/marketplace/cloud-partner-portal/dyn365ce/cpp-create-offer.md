@@ -1,19 +1,18 @@
 ---
 title: Создание предложения приложения Dynamics 365 для участия в приложении для взаимодействия с клиентами | Azure Marketplace
 description: Эта статья CPP устарела и указывает на статью о ПК; "как создать новое предложение приложения Dynamics 365 для участия в приложении взаимодействия с клиентами в AppSource Marketplace".
-services: Dynamics 365 for Customer Engagement Offer, Azure, Marketplace, Cloud Partner Portal, AppSource
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 6ff89830f59bfb114714bafb049d25224a16adfc
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 1e9c401104053ed37fa75ca5e3d4b1b2322277bb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818727"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278456"
 ---
 # <a name="create-a-dynamics-365-for-customer-engagement-application-offer"></a>Создание предложения приложения Dynamics 365 for Customer Engagement
 

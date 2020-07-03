@@ -1,19 +1,18 @@
 ---
 author: paulbouwer
-ms.service: container-service
 ms.topic: include
 ms.date: 10/09/2019
 ms.author: pabouwer
-ms.openlocfilehash: 3c49a47a1267d6fec9a7b86d1f3e2bd51a710c33
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: ee8beaf3368f0efc05f1a1d679398a733002bf17
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530333"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77594043"
 ---
 ### <a name="add-grafana-secret"></a>Добавить секрет Grafana
 
-Замените маркер `REPLACE_WITH_YOUR_SECURE_PASSWORD` паролем и выполните следующие команды:
+Замените `REPLACE_WITH_YOUR_SECURE_PASSWORD` маркер паролем и выполните следующие команды:
 
 ```powershell
 $GRAFANA_USERNAME=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("grafana"))
@@ -34,7 +33,7 @@ data:
 
 ### <a name="add-kiali-secret"></a>Добавить секрет Киали
 
-Замените маркер `REPLACE_WITH_YOUR_SECURE_PASSWORD` паролем и выполните следующие команды:
+Замените `REPLACE_WITH_YOUR_SECURE_PASSWORD` маркер паролем и выполните следующие команды:
 
 ```powershell
 $KIALI_USERNAME=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("kiali"))

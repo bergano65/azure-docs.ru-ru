@@ -5,20 +5,21 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 12/14/2019
+ms.date: 05/11/2020
 ms.author: helohr
-ms.openlocfilehash: f6a8e4b9129018686aa5833a2ac260075e5627f9
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: 94ec85ae658ca6012cd1f1594b431d12bb73013d
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367630"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121071"
 ---
 # <a name="set-up-msix-app-attach"></a>Настройка присоединения приложения MSIX
 
 > [!IMPORTANT]
 > Присоединение приложения MSIX в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этом разделе описано, как настроить подключение приложения MSIX в среде виртуальных рабочих столов Windows.
 
@@ -27,7 +28,7 @@ ms.locfileid: "77367630"
 Прежде чем приступить к работе, необходимо настроить присоединение приложения MSIX:
 
 - Доступ к порталу программы предварительной оценки Windows для получения версии Windows 10 с поддержкой API-интерфейсов подключения приложения MSIX.
-- Работающее развертывание виртуальных рабочих столов Windows. Дополнительные сведения см. [в статье Создание клиента в виртуальном рабочем столе Windows](tenant-setup-azure-active-directory.md).
+- Работающее развертывание виртуальных рабочих столов Windows. Дополнительные сведения см. [в статье Создание клиента в виртуальном рабочем столе Windows](./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md).
 - Средство упаковки MSIX
 - Сетевая папка в развертывании виртуальных рабочих столов Windows, где будет храниться пакет MSIX
 
@@ -40,7 +41,7 @@ ms.locfileid: "77367630"
      >[!NOTE]
      >Для доступа к порталу предварительной оценки Windows необходимо быть членом программы предварительной оценки Windows. Дополнительные сведения о программе предварительной оценки Windows см. в [документации по предварительной проверке Windows](/windows-insider/at-home/).
 
-2. Прокрутите вниз до раздела **Выбор выпуска** и выберите **Windows 10 Предварительная версия Microsoft Enterprise (быстрая) — сборка 19035** или более поздняя версия.
+2. Прокрутите вниз до раздела **Выбор выпуска** и выберите **Windows 10 Предварительная версия Microsoft Enterprise (быстрая) — сборка 19041** или более поздняя версия.
 
 3. Выберите **подтвердить**, затем выберите нужный язык и нажмите кнопку **подтвердить** еще раз.
     
@@ -72,6 +73,14 @@ rem Disable Windows Update:
 
 sc config wuauserv start=disabled
 ```
+
+После отключения автоматического обновления необходимо включить Hyper-V, так как вы будете использовать команду Маунд-VHD для промежуточного размещения и отключения виртуального жесткого диска для отмены размещения. 
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
+```
+>[!NOTE]
+>Для этого изменения потребуется перезапустить виртуальную машину.
 
 Затем подготовьте виртуальный жесткий диск виртуальной машины для Azure и отправьте полученный VHD-файл в Azure. Дополнительные сведения см. в статье [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).
 
@@ -210,7 +219,7 @@ sc config wuauserv start=disabled
 
 5.  Откройте командную строку и введите команду **mountvol**. Эта команда отобразит список томов и их идентификаторы GUID. Скопируйте идентификатор GUID тома, где буква диска совпадает с диском, к которому подключен виртуальный жесткий диск, на шаге 2.
 
-    Например, в этом примере выходных данных для команды mountvol при подключении виртуального жесткого диска к диску C необходимо скопировать значение, приведенное выше `C:\`.
+    Например, в этом примере выходных данных для команды mountvol при подключении виртуального жесткого диска к диску C необходимо скопировать приведенное выше значение `C:\` :
 
     ```cmd
     Possible values for VolumeName along with current mount points are:
@@ -256,7 +265,7 @@ sc config wuauserv start=disabled
 
     {
 
-    Mount-Diskimage -ImagePath $vhdSrc -NoDriveLetter -Access ReadOnly
+    Mount-VHD -Path $vhdSrc -NoDriveLetter -ReadOnly
 
     Write-Host ("Mounting of " + $vhdSrc + " was completed!") -BackgroundColor Green
 
@@ -407,10 +416,10 @@ rmdir $packageName -Force -Verbose
 
 Вот как можно настроить лицензии для автономного использования: 
 
-1. Скачайте пакет приложения, лицензии и необходимые платформы из Microsoft Store для бизнеса. Необходимы как закодированные, так и незакодированные файлы лицензий. Подробные инструкции по скачиванию можно найти [здесь](/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app/).
+1. Скачайте пакет приложения, лицензии и необходимые платформы из Microsoft Store для бизнеса. Необходимы как закодированные, так и незакодированные файлы лицензий. Подробные инструкции по скачиванию можно найти [здесь](/microsoft-store/distribute-offline-apps#download-an-offline-licensed-app).
 2. Обновите следующие переменные в скрипте для шага 3.
-      1. `$contentID` — это значение ContentID из файла незакодированной лицензии (. XML). Файл лицензии можно открыть в текстовом редакторе по своему усмотрению.
-      2. `$licenseBlob` — это вся строка для большого двоичного объекта лицензии в закодированном файле лицензии (. bin). Файл закодированной лицензии можно открыть в текстовом редакторе по своему усмотрению. 
+      1. `$contentID`значение ContentID из файла незакодированной лицензии (. XML). Файл лицензии можно открыть в текстовом редакторе по своему усмотрению.
+      2. `$licenseBlob`— Это вся строка для большого двоичного объекта лицензии в закодированном файле лицензии (. bin). Файл закодированной лицензии можно открыть в текстовом редакторе по своему усмотрению. 
 3. Запустите следующий скрипт из командной строки администратора PowerShell. Место для установки лицензий можно установить в конце [сценария промежуточного хранения](#stage-the-powershell-script) , который также необходимо запустить из командной строки администратора.
 
 ```powershell
@@ -420,7 +429,7 @@ $methodName = "AddLicenseMethod"
 $parentID = "./Vendor/MSFT/EnterpriseModernAppManagement/AppLicenses/StoreLicenses"
 
 #TODO - Update $contentID with the ContentID value from the unencoded license file (.xml)
-$contentID = "{‘ContentID’_in_unencoded_license_file}"
+$contentID = "{'ContentID'_in_unencoded_license_file}"
 
 #TODO - Update $licenseBlob with the entire String in the encoded license file (.bin)
 $licenseBlob = "{Entire_String_in_encoded_license_file}"
@@ -447,7 +456,7 @@ catch [Exception]
 }  
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В настоящее время эта функция не поддерживается, но вы можете задать вопросы в сообществе на странице [виртуальных рабочих столов Windows течкоммунити](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop).
 

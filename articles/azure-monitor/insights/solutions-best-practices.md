@@ -1,18 +1,17 @@
 ---
-title: Рекомендации по работе с решениями по управлению в Azure | Документация Майкрософт
-description: ''
-ms.service: azure-monitor
+title: Решение для управления в рекомендациях Azure
+description: В этой статье приведены советы по созданию файла решения для управления. Узнайте, как работать с источниками данных, модулями Runbook, представлениями и оповещениями.
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/27/2017
-ms.openlocfilehash: 28ae01fe28b1b2d6af95567e529c7c9ae17920e4
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 7cb300297336edcce4294b800520ad570b12bcde
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72553934"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80548161"
 ---
 # <a name="best-practices-for-creating-management-solutions-in-azure-preview"></a>Рекомендации по созданию решений по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -37,12 +36,12 @@ ms.locfileid: "72553934"
 - Добавьте также сообщение о [проверке потока данных](../../azure-monitor/platform/view-designer-tiles.md) во все представления своего решения, где требуется сообщить пользователю об источниках данных, которые должны быть настроены для сбора необходимых данных.
 - Настройте решение таким образом, чтобы оно [содержало](solutions-solution-file.md#solution-resource) представление. В этом случае оно будет удаляться при удалении решения.
 
-## <a name="alerts"></a>Оповещения
+## <a name="alerts"></a>Предупреждения
 - Определите список получателей как параметр в файле решения, что позволит пользователю указать значения при установке решения.
 - Настройте в решении [ссылку](solutions-solution-file.md#solution-resource) на правила оповещения, чтобы пользователи могли изменить свою конфигурацию.  Им может потребоваться внести изменения, например изменить список получателей или пороговое значение для оповещения, а также отключить правило оповещения. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Ознакомьтесь с базовым процессом [разработки и создания решения по управлению](solutions-creating.md).
 * Узнайте, как [создать файл решения](solutions-solution-file.md).
 * [Добавьте сохраненные поиски и оповещения](solutions-resources-searches-alerts.md) в решение для управления.

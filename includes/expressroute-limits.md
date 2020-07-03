@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: expressroute
 author: cherylmc
@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 07/25/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 1fc63dc53d61a8b2e26f97cc09a359b3f2c7665c
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: d1402bcc0c46003429e1809e8d09e9662218cd82
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901573"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80334760"
 ---
-| Ресурс | По умолчанию/максимальное ограничение |
+| Ресурс | Ограничение |
 | --- | --- |
 | Каналы ExpressRoute для каждой подписки |10 |
 | Цепи ExpressRoute на регион на подписку с Azure Resource Manager |10 |
@@ -28,7 +28,7 @@ ms.locfileid: "75901573"
 | Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сетью в разных расположениях пиринга |4 |
 | Количество связей виртуальных сетей на канал ExpressRoute |См. [число виртуальных сетей на таблицу канала ExpressRoute](#vnetpercircuit) .  |
 
-#### <a name="vnetpercircuit"></a>Число виртуальных сетей на канал ExpressRoute
+#### <a name="number-of-virtual-networks-per-expressroute-circuit"></a><a name="vnetpercircuit"></a>Число виртуальных сетей на канал ExpressRoute
 | **Размер цепи** | **Число связей виртуальных сетей для Standard** | **Число связей виртуальных сетей с надстройкой Premium** |
 | --- | --- | --- |
 | 50 Мбит/с |10 |20 |
@@ -42,7 +42,7 @@ ms.locfileid: "75901573"
 | 40 Гбит/с * |10 |100 |
 | 100 Гбит/с * |10 |100 |
 
-**100 Гбит/с ExpressRoute, только Direct*
+**100 Гбит/с ExpressRoute только Direct*
 
 > [!NOTE]
-> Число подключений Global Reach ограничивается предельным числом подключений виртуальной сети на канал ExpressRoute. Например, канал уровня "10 Гбит/с" допускает 5 Global Reach подключений и 95 подключений к шлюзам ExpressRoute или 95 Global Reach подключений и 5 подключений к шлюзам ExpressRoute или любое другое сочетание до ограничения в 100 подключений. для канала.
+> Число подключений Global Reach ограничивается предельным числом подключений виртуальной сети на канал ExpressRoute. Например, канал с 10 Гбит/с (Premium) допускает 5 Global Reach подключений и 95 подключений к шлюзам ExpressRoute или 95 Global Reach подключений и 5 подключений к шлюзам ExpressRoute, а также любое другое сочетание с ограничением в 100 подключений для канала.

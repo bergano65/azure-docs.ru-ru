@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: af9c157b4644156edc6dcdb1b53c141263576500
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "68727156"
 ---
 # <a name="azure-infrastructure-monitoring"></a>Мониторинг инфраструктуры Azure   
@@ -52,12 +52,12 @@ Azure ежегодно проверяет и обновляет параметр
 ## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения о действиях корпорации Майкрософт в сфере защиты инфраструктуры Azure приведены в следующих статьях:
 
-- [Объекты Azure, локальная среда и физическая безопасность](physical-security.md)
+- [Объекты, локальная среда и физическая безопасность в Azure](physical-security.md)
 - [Доступность инфраструктуры Azure](infrastructure-availability.md)
 - [Компоненты и границы информационной системы Azure](infrastructure-components.md)
 - [Сетевая архитектура Azure](infrastructure-network.md)
 - [Рабочая сеть Azure](production-network.md)
-- [Возможности безопасности Базы данных SQL Azure](infrastructure-sql.md)
+- [Функции безопасности базы данных SQL Azure](infrastructure-sql.md)
 - [Операции и управление в рабочей среде Azure](infrastructure-operations.md)
 - [Целостность инфраструктуры Azure](infrastructure-integrity.md)
 - [Защита данных клиентов в Azure](protection-customer-data.md)

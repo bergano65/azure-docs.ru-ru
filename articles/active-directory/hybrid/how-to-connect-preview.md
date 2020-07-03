@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: предварительные версии компонентов | Документация Майкрософт'
+title: 'Azure AD Connect: предварительные версии компонентов | Документация Майкрософт'
 description: В этой статье более подробно описаны функции Azure AD Connect, находящиеся на этапе предварительной версии.
 services: active-directory
 documentationcenter: ''
@@ -17,11 +17,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b7def733a80aea1be77825bb9069217f5f43e003
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60347810"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79261285"
 ---
 # <a name="more-details-about-features-in-preview"></a>Дополнительная информация о функциях в предварительной версии
 В этой статье описывается, как использовать функции, которые сейчас доступны в предварительной версии.
@@ -54,4 +54,4 @@ ms.locfileid: "60347810"
 ## <a name="next-steps"></a>Дальнейшие действия
 Продолжите [выборочную установку Azure AD Connect](how-to-connect-install-custom.md).
 
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

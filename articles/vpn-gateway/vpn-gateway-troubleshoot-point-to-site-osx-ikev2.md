@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/27/2018
 ms.author: alzam
-ms.openlocfilehash: f76fd7bce539ebcf79216aabb5bf868b2d18107a
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: f88053c93884e10e46a0f7d70106bda67b057562
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75780187"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77425733"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 
@@ -25,7 +25,7 @@ ms.locfileid: "75780187"
 * версия ОС (10.11 или более поздняя).
 
 
-## <a name="VPNClient"></a> Устранение неполадок с аутентификацией на основе сертификата
+## <a name="troubleshoot-certificate-based-authentication"></a><a name="VPNClient"></a> Устранение неполадок с аутентификацией на основе сертификата
 1. Проверьте параметры VPN-клиента. Откройте **Network Setting** (Настройки сети), нажав клавиши Command+Shift, а затем введите VPN, чтобы перейти к параметрам VPN-клиента. В открывшемся списке щелкните VPN-запись, которую нужно проверить.
 
    ![Аутентификация на основе сертификата IKEv2](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2cert1.jpg)
@@ -38,7 +38,7 @@ ms.locfileid: "75780187"
 6. Убедитесь, что в раскрывающемся списке выбран вариант **Сертификат**.
 7. Щелкните **Выбрать** и убедитесь, что выбран правильный сертификат. Щелкните **OK**, чтобы сохранить изменения.
 
-## <a name="ikev2"></a> Устранение неполадок с аутентификацией на основе имени пользователя и пароля
+## <a name="troubleshoot-username-and-password-authentication"></a><a name="ikev2"></a> Устранение неполадок с аутентификацией на основе имени пользователя и пароля
 
 1. Проверьте параметры VPN-клиента. Откройте **Network Setting** (Настройки сети), нажав клавиши Command+Shift, а затем введите VPN, чтобы перейти к параметрам VPN-клиента. В открывшемся списке щелкните VPN-запись, которую нужно проверить.
 
@@ -48,10 +48,10 @@ ms.locfileid: "75780187"
 4. Поле **локального идентификатора** можно оставить пустым.
 5. Нажмите кнопку **Authentication Setting** (Параметры проверки подлинности) и убедитесь, что в раскрывающемся списке выбран вариант Username (Имя пользователя).
 
-   ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.jpg)
+   ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.png)
 6. Убедитесь, что введены правильные учетные данные.
 
-## <a name="additional"></a>Дополнительные действия
+## <a name="additional-steps"></a><a name="additional"></a>Дополнительные действия
 
 Если при выполнении описанных выше шагов не возникли ошибки в конфигурации, скачайте средство [Wireshark](https://www.wireshark.org/#download) и выполните захват пакетов.
 
@@ -60,7 +60,7 @@ ms.locfileid: "75780187"
 
    ![Пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg) 
   
-3. Если нет ответа сервера для трассировок сети, убедитесь, что вы включили протокол IKEv2 на странице настройки шлюза Azure на сайте портала Azure.
+3. Если в трассировке сети нет ответа сервера, проверьте, включен ли протокол IKEv2 на странице конфигурации шлюза Azure на веб-сайте портал Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Если потребуется дополнительная поддержка, обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

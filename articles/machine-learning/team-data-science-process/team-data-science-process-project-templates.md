@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: c003145acd423fd96dd0ac6c054884024c2ce4a0
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75864236"
 ---
 # <a name="team-data-science-process-project-planning"></a>Планирование проекта командного процесса обработки и анализа данных
@@ -24,10 +24,10 @@ ms.locfileid: "75864236"
 
 Этот жизненный цикл представляет основные этапы, которые обычно выполняются проектами, часто итеративно:
 
-- Изучение потребностей бизнеса.
+- Коммерческий аспект.
 - Получение и анализ данных
-- Моделирование.
-- Развертывание.
+- Моделирование
+- Развертывание
 - Приемка клиентом
 
 Описание каждого этапа см. в статье [Жизненный цикл процесса обработки и анализа данных группы](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/lifecycle).

@@ -1,19 +1,19 @@
 ---
 title: Анализ данных устройства в приложении IoT Central Azure | Документация Майкрософт
 description: Анализ данных устройства в приложении IoT Central Azure.
-author: ankitgup
+author: ankitscribbles
 ms.author: ankitgup
 ms.date: 11/27/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: 7627421317458eb0ff9637b3497df11dacfddbff
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 40460b58ede0ca0da8fe25475906bdbe41bfffe0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023860"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80158288"
 ---
 # <a name="how-to-use-analytics-to-analyze-device-data"></a>Анализ данных устройства с помощью аналитики
 

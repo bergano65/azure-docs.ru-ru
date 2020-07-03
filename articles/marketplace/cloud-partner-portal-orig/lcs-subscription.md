@@ -1,20 +1,18 @@
 ---
 title: Подписка LCS
 description: Нерекомендуемая статья на CPP, связанная со статьей ПК; был «знакомство с руководством по созданию подписки».
-services: Azure, Marketplace, Cloud Partner Portal,
-author: ChJenk
-manager: Ricardo.Villalobos
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: a6c03ab07ba813922ca9a9d19201a84ac0c5692d
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: d33a4c2924696184076aaed37f73c9033d12f20e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824207"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80289045"
 ---
 # <a name="lcs-subscription"></a>Подписка LCS
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 4f311d2772a6a60798795b4f2e6237e8153b9547
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: b8215cd852d54283bfc6bd47e77d7d63ee4e2582
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76981227"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79475499"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
@@ -38,7 +38,7 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если вы еще не создали экземпляр службы управления API, ознакомьтесь со статьей [Создание экземпляра службы управления API][Create an API Management service instance] в [руководстве Приступая к работе с управлением API Azure][Get started with Azure API Management].
 
-1. В разделе **удостоверения**. В верхней части меню щелкните **+Добавить**.
+1. В разделе **удостоверения**. В верхней части щелкните **+ Добавить** .
 
    Справа отобразится область **Добавление поставщика удостоверений**. Выберите **Azure Active Directory B2C**.
     
@@ -62,7 +62,7 @@ Azure Active Directory B2C — это облачное решение, позв
 
 1. Если вы используете новый портал разработчика (не устаревший портал разработчика), включите в утверждения приложения **заданное имя**, **фамилию**и **идентификатор объекта пользователя** .
 
-    ![Утверждения приложений](./media/api-management-howto-aad-b2c/api-management-application-claims.png)
+    ![Утверждения приложения](./media/api-management-howto-aad-b2c/api-management-application-claims.png)
 
 1. Нажмите кнопку **Создать** . Когда приложение будет создано, оно появится в колонке **Приложения**. Щелкните имя приложения, чтобы просмотреть сведения о нем.
 
@@ -82,7 +82,7 @@ Azure Active Directory B2C — это облачное решение, позв
     
 1.  Укажите доменное имя клиента Azure Active Directory B2C в **клиенте SignIn**.
 
-1.  Поле " **центр** " позволяет управлять используемым URL-адресом входа Azure AD B2C. Задайте значение **< your_b2c_tenant_name >. b2clogin. com**.
+1.  Поле " **центр** " позволяет управлять используемым URL-адресом входа Azure AD B2C. Задайте значение **<your_b2c_tenant_name>. b2clogin.com**.
 
 1. Из политик клиента B2C укажите **политику регистрации** и **политику входа**. Дополнительно можно также указать **политику редактирования профиля** и **политику сброса пароля**.
 
@@ -118,13 +118,13 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если Azure Active Directory B2C является единственным активным параметром на вкладке **Удостоверения** на портале издателя, вы будете сразу перенаправлены к политике регистрации.
 
-   ![Портал разработчика][api-management-howto-aad-b2c-dev-portal-b2c-options]
+   ![Developer portal][api-management-howto-aad-b2c-dev-portal-b2c-options]
 
    После завершения регистрации вы будете перенаправлены обратно на портал разработчика. Теперь вы вошли на портал разработчика вашего экземпляра службы управления API.
 
     ![Регистрация завершена][api-management-registration-complete]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 *  [Azure Active Directory B2C: регистрация и вход пользователей в приложения]
 *  [Azure Active Directory B2C: расширяемая инфраструктура политик]
@@ -194,7 +194,6 @@ Azure Active Directory B2C — это облачное решение, позв
 
 [https://oauth.net/2/]: https://oauth.net/2/
 [WebApp-GraphAPI-DotNet]: https://github.com/AzureADSamples/WebApp-GraphAPI-DotNet
-[Accessing the Graph API]: https://msdn.microsoft.com/library/azure/dn132599.aspx#BKMK_Graph
 [Azure Active Directory B2C: регистрация и вход пользователей в приложения]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview
 [Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure]: https://docs.microsoft.com/azure/api-management/api-management-howto-aad
 [Azure Active Directory B2C: расширяемая инфраструктура политик]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies

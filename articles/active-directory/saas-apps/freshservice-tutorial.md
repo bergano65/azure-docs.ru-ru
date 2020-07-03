@@ -17,10 +17,10 @@ ms.date: 09/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0e08ef72dca09f873ad1cfcc91e132063b88406b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227532"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-freshservice"></a>Руководство по интеграции единого входа Azure Active Directory с приложением Freshservice
@@ -35,9 +35,9 @@ ms.locfileid: "74227532"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка FreshService с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "74227532"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа во Freshservice](#configure-freshservice-sso)** необходима чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Freshservice](#create-freshservice-test-user)** требуется для того, чтобы во Freshservice существовал пользователь B.Simon, связанный с представлением этого же пользователя в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,11 +78,11 @@ ms.locfileid: "74227532"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<democompany>.freshservice.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<democompany>.freshservice.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<democompany>.freshservice.com`.
 
@@ -127,7 +127,7 @@ ms.locfileid: "74227532"
 
 В этом разделе описано, как разрешить пользователю B.Simon использовать единый вход Azure, предоставив этому пользователю доступ к Freshservice.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Freshservice**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -155,7 +155,7 @@ ms.locfileid: "74227532"
 
 4. В верхнем меню щелкните **Администратор**.
 
-    ![Администратор](./media/freshservice-tutorial/ic790814.png "Администратор")
+    ![Администратор](./media/freshservice-tutorial/ic790814.png "Административный")
 
 5. В области **Customer Portal** (Клиентский портал) выберите **Security** (Безопасность).
 
@@ -165,7 +165,7 @@ ms.locfileid: "74227532"
 
     ![Единый вход](./media/freshservice-tutorial/ic790816.png "Единый вход")
 
-    a. Включите **единый вход**.
+    а. Включите **единый вход**.
 
     b. Выберите **Единый вход SAML**.
 
@@ -173,9 +173,9 @@ ms.locfileid: "74227532"
 
     d. В текстовое поле **URL-адрес выхода** вставьте **URL-адрес выхода**, скопированный с портала Azure.
 
-    д. В текстовом поле **сертификат безопасности отпечатка пальца** вставьте значение **отпечатка пальца**, созданного ранее.
+    д) В текстовом поле **сертификат безопасности отпечатка пальца** вставьте значение **отпечатка пальца**, созданного ранее.
 
-    Е. Нажмите кнопку **Сохранить**
+    е) Щелкните **Сохранить**.
 
 ### <a name="create-freshservice-test-user"></a>Создание тестового пользователя Freshservice
 
@@ -187,7 +187,7 @@ ms.locfileid: "74227532"
 
 2. В верхнем меню щелкните **Администратор**.
 
-    ![Администратор](./media/freshservice-tutorial/ic790814.png "Администратор")
+    ![Администратор](./media/freshservice-tutorial/ic790814.png "Административный")
 
 3. В разделе **User Management** (Управление пользователями) выберите **Requesters** (Инициаторы запроса).
 
@@ -201,7 +201,7 @@ ms.locfileid: "74227532"
 
     ![Новый инициатор запроса](./media/freshservice-tutorial/ic790820.png "Новый инициатор запроса")  
 
-    a. В соответствующие текстовые поля введите атрибуты **First name** (Имя) и **Email** (Адрес электронной почты) действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
+    а. В соответствующие текстовые поля введите атрибуты **First name** (Имя) и **Email** (Адрес электронной почты) действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
 
     b. Выберите команду **Сохранить**.
 
@@ -220,9 +220,9 @@ ms.locfileid: "74227532"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

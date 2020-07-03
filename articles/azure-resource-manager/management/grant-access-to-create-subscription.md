@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: jureid
 ms.openlocfilehash: b77efd7e5cf7ff016605e0ba2e74cff9ea8dab89
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75478881"
 ---
 # <a name="grant-access-to-create-azure-enterprise-subscriptions-preview"></a>Предоставление доступа к созданию подписок Azure Enterprise (предварительная версия)
@@ -27,7 +27,7 @@ ms.locfileid: "75478881"
 
     Чтобы предоставить другим пользователям роль "владелец RBAC" на учетной записи регистрации, необходимо быть владельцем учетной записи или владельцем учетной записи RBAC.
 
-    # <a name="resttabrest"></a>[REST](#tab/rest)
+    # <a name="rest"></a>[REST](#tab/rest)
 
     Запрос на получение списка всех учетных записей регистрации, к которым у вас есть доступ:
 
@@ -60,9 +60,9 @@ ms.locfileid: "75478881"
     }
     ```
 
-    Используйте свойство `principalName`, чтобы указать учетную запись, доступ к которой необходимо предоставить владельцу RBAC. Скопируйте `name` этой учетной записи. Например, если вы хотите предоставить владельцу RBAC доступ к учетной записи регистрации SignUpEngineering@contoso.com, скопируйте ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```. Это идентификатор объекта учетной записи регистрации. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге как `enrollmentAccountObjectId`.
+    Используйте `principalName` свойство, чтобы указать учетную запись, доступ к которой необходимо предоставить владельцу RBAC. Скопируйте эту `name` учетную запись. Например, если вы хотите предоставить владельцу RBAC доступ к учетной записи SignUpEngineering@contoso.com регистрации, скопируйте ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```его. Это идентификатор объекта учетной записи регистрации. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге `enrollmentAccountObjectId`как.
 
-    # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+    # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
     Используйте командлет [Get-AzEnrollmentAccount](/powershell/module/az.billing/get-azenrollmentaccount), чтобы вывести список всех учетных записей регистрации, к которым у вас есть доступ. Выберите **попробовать** , чтобы открыть [Azure Cloud Shell](https://shell.azure.com/). Чтобы вставить код, щелкните правой кнопкой мыши окна оболочки и выберите команду **Вставить**.
 
@@ -78,9 +78,9 @@ ms.locfileid: "75478881"
     4cd2fcf6-xxxx-xxxx-xxxx-xxxxxxxxxxxx   | BillingPlatformTeam@contoso.com
     ```
 
-    Используйте свойство `principalName`, чтобы указать учетную запись, доступ к которой необходимо предоставить владельцу RBAC. Скопируйте `ObjectId` этой учетной записи. Например, если вы хотите предоставить владельцу RBAC доступ к учетной записи регистрации SignUpEngineering@contoso.com, скопируйте ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```. Вставьте этот идентификатор объекта где-то, чтобы его можно было использовать на следующем шаге в качестве `enrollmentAccountObjectId`.
+    Используйте `principalName` свойство, чтобы указать учетную запись, доступ к которой необходимо предоставить владельцу RBAC. Скопируйте эту `ObjectId` учетную запись. Например, если вы хотите предоставить владельцу RBAC доступ к учетной записи SignUpEngineering@contoso.com регистрации, скопируйте ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```его. Вставьте этот идентификатор объекта где-то, чтобы его можно было использовать на следующем шаге в `enrollmentAccountObjectId`качестве.
 
-    # <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
     Используйте [команду Get-EnrollmentAccount](https://aka.ms/EASubCreationPublicPreviewCLI), чтобы вывести список всех учетных записей регистрации, к которым у вас есть доступ. Выберите **попробовать** , чтобы открыть [Azure Cloud Shell](https://shell.azure.com/). Чтобы вставить код, щелкните правой кнопкой мыши окна оболочки и выберите команду **Вставить**.
 
@@ -109,7 +109,7 @@ ms.locfileid: "75478881"
 
     ---
 
-    Используйте свойство `principalName`, чтобы указать учетную запись, доступ к которой необходимо предоставить владельцу RBAC. Скопируйте `name` этой учетной записи. Например, если вы хотите предоставить владельцу RBAC доступ к учетной записи регистрации SignUpEngineering@contoso.com, скопируйте ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```. Это идентификатор объекта учетной записи регистрации. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге как `enrollmentAccountObjectId`.
+    Используйте `principalName` свойство, чтобы указать учетную запись, доступ к которой необходимо предоставить владельцу RBAC. Скопируйте эту `name` учетную запись. Например, если вы хотите предоставить владельцу RBAC доступ к учетной записи SignUpEngineering@contoso.com регистрации, скопируйте ```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```его. Это идентификатор объекта учетной записи регистрации. Вставьте это значение в любое место, чтобы его можно было использовать на следующем шаге `enrollmentAccountObjectId`как.
 
 1. <a id="userObjectId"></a>Возвращает идентификатор объекта пользователя или группы, которым необходимо предоставить роль владельца RBAC.
 
@@ -122,9 +122,9 @@ ms.locfileid: "75478881"
 
     Используя значения, собранные в первых двух шагах, предоставьте пользователю или группе роль владельца RBAC в учетной записи регистрации.
 
-    # <a name="resttabrest-2"></a>[REST](#tab/rest-2)
+    # <a name="rest"></a>[REST](#tab/rest-2)
 
-    Выполните следующую команду, заменив ```<enrollmentAccountObjectId>``` на `name`, скопированный на первом шаге (```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Замените ```<userObjectId>``` ИДЕНТИФИКАТОРом объекта, скопированным на втором шаге.
+    Выполните следующую команду, заменив ```<enrollmentAccountObjectId>``` `name` на имя, скопированное на первом шаге (```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Замените ```<userObjectId>``` на идентификатор объекта, скопированный на втором шаге.
 
     ```json
     PUT  https://management.azure.com/providers/Microsoft.Billing/enrollmentAccounts/<enrollmentAccountObjectId>/providers/Microsoft.Authorization/roleAssignments/<roleAssignmentGuid>?api-version=2015-07-01
@@ -156,17 +156,17 @@ ms.locfileid: "75478881"
     }
     ```
 
-    # <a name="powershelltabazure-powershell-2"></a>[PowerShell](#tab/azure-powershell-2)
+    # <a name="powershell"></a>[PowerShell](#tab/azure-powershell-2)
 
-    Выполните следующую команду [New-азролеассигнмент](../../active-directory/role-based-access-control-manage-access-powershell.md) , заменив ```<enrollmentAccountObjectId>``` на `ObjectId`, собранные на первом шаге (```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Замените ```<userObjectId>``` ИДЕНТИФИКАТОРом объекта, собранным на втором шаге.
+    Выполните следующую команду [New-азролеассигнмент](../../active-directory/role-based-access-control-manage-access-powershell.md) , заменив ```<enrollmentAccountObjectId>``` данными, `ObjectId` собранными на первом шаге (```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Замените ```<userObjectId>``` на идентификатор объекта, собранного на втором шаге.
 
     ```azurepowershell-interactive
     New-AzRoleAssignment -RoleDefinitionName Owner -ObjectId <userObjectId> -Scope /providers/Microsoft.Billing/enrollmentAccounts/<enrollmentAccountObjectId>
     ```
 
-    # <a name="azure-clitabazure-cli-2"></a>[Azure CLI](#tab/azure-cli-2)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli-2)
 
-    Выполните следующую команду [AZ Role назначений Create](../../active-directory/role-based-access-control-manage-access-azure-cli.md) , заменив ```<enrollmentAccountObjectId>``` на `name`, скопированный на первом шаге (```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```). Замените ```<userObjectId>``` ИДЕНТИФИКАТОРом объекта, собранным на втором шаге.
+    Выполните следующую команду [AZ Role назначений Create](../../active-directory/role-based-access-control-manage-access-azure-cli.md) , заменив ```<enrollmentAccountObjectId>``` `name` на имя, скопированное на первом шаге```747ddfe5-xxxx-xxxx-xxxx-xxxxxxxxxxxx```(). Замените ```<userObjectId>``` на идентификатор объекта, собранного на втором шаге.
 
     ```azurecli-interactive
     az role assignment create --role Owner --assignee-object-id <userObjectId> --scope /providers/Microsoft.Billing/enrollmentAccounts/<enrollmentAccountObjectId>
@@ -181,7 +181,7 @@ ms.locfileid: "75478881"
 Для отслеживания подписок, создаваемых с помощью данного API, используйте [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs). В настоящее время для отслеживания создания подписки невозможно использовать PowerShell, интерфейс командной строки или портал Azure.
 
 1. В качестве администратора клиента Azure AD [повысьте права доступа](../../active-directory/role-based-access-control-tenant-admin-access.md), а затем назначьте роль читателя пользователю-аудитору для области `/providers/microsoft.insights/eventtypes/management`.
-1. В качестве пользователя-аудитора вызовите [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs) для просмотра действий создания подписок. Пример:
+1. В качестве пользователя-аудитора вызовите [API журнала действий клиента](/rest/api/monitor/tenantactivitylogs) для просмотра действий создания подписок. Пример.
 
     ```
     GET "/providers/Microsoft.Insights/eventtypes/management/values?api-version=2015-04-01&$filter=eventTimestamp ge '{greaterThanTimeStamp}' and eventTimestamp le '{lessThanTimestamp}' and eventChannels eq 'Operation' and resourceProvider eq 'Microsoft.Subscription'"

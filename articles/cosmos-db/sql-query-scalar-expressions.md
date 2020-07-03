@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: mjbrown
 ms.openlocfilehash: f8c98915ad3b682af00492acc7bc51672ec874a8
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74870740"
 ---
 # <a name="scalar-expressions-in-azure-cosmos-db-sql-queries"></a>Скалярные выражения в запросах SQL Azure Cosmos DB
@@ -50,7 +50,7 @@ ms.locfileid: "74870740"
   
 - `<constant>`  
   
-   Представляет значение константы. Дополнительные сведения см. в разделе [Константы](sql-query-constants.md).  
+   Представляет значение константы. Дополнительные сведения см. в подразделе [Константы](sql-query-constants.md).  
   
 - `input_alias`  
   
@@ -63,15 +63,15 @@ ms.locfileid: "74870740"
   
 - `<scalar_expression>'['"property_name"|array_index']'`  
   
-   Представляет значение свойства с именем `property_name` или элемент массива с индексом `array_index` массива. Если объект или массив не существует или ссылается на значение, которое не является объектом или массивом, выражение принимает значение undefined.  
+   Представляет значение свойства с именем `property_name` или элементом массива с индексом `array_index` массива. Если объект или массив не существует или ссылается на значение, которое не является объектом или массивом, выражение принимает значение undefined.  
   
 - `unary_operator <scalar_expression>`  
   
-   Представляет оператор, применяемый к одному значению. Дополнительные сведения см. в разделе [Операторы](sql-query-operators.md).  
+   Представляет оператор, применяемый к одному значению. Дополнительные сведения см. в подразделе [Операторы](sql-query-operators.md).  
   
 - `<scalar_expression> binary_operator <scalar_expression>`  
   
-   Представляет оператор, применяемый к двум значениям. Дополнительные сведения см. в разделе [Операторы](sql-query-operators.md).  
+   Представляет оператор, применяемый к двум значениям. Дополнительные сведения см. в подразделе [Операторы](sql-query-operators.md).  
   
 - `<scalar_function_expression>`  
   
@@ -97,7 +97,7 @@ ms.locfileid: "74870740"
   
    Представляет значение указанного имени параметра. Имена параметров должны начинаться с одного символа \@.  
   
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   
   При вызове встроенной или определяемой пользователем скалярной функции необходимо определить все аргументы. Если любой из аргументов не определен, функция не будет вызвана, и значение не будет определено.  
   
@@ -111,7 +111,7 @@ ms.locfileid: "74870740"
     SELECT ((2 + 11 % 7)-2)/3
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [{
@@ -126,7 +126,7 @@ ms.locfileid: "74870740"
     FROM Families f
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
     [
@@ -141,6 +141,6 @@ ms.locfileid: "74870740"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Вложенные запросы](sql-query-subquery.md)

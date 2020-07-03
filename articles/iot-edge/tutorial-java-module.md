@@ -8,15 +8,17 @@ ms.author: kgremban
 ms.date: 04/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
-ms.custom: mvc
-ms.openlocfilehash: 228e50160e5c13b2d24a504b02c4bb7e3a420a46
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.custom:
+- mvc
+- mqtt
+ms.openlocfilehash: d8ea58dca8235b6dfc49c14c519dd44dabdf0592
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772908"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81733085"
 ---
-# <a name="tutorial-develop-a-java-iot-edge-module-for-linux-devices"></a>Руководство. Разработка модуля IoT Edge на языке Java для устройств Linux
+# <a name="tutorial-develop-a-java-iot-edge-module-for-linux-devices"></a>Руководство по Разработка модуля IoT Edge на языке Java для устройств Linux
 
 Вы можете использовать модули Azure IoT Edge для развертывания кода, который реализует бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматриваются создание и развертывание модуля IoT Edge, который фильтрует данные датчика. Вы будете использовать имитированное устройство IoT Edge, созданное с помощью процедуры развертывания Azure IoT Edge на имитированном устройстве, описанной в кратком руководстве для [Linux](quickstart-linux.md). В этом руководстве описано следующее:
 

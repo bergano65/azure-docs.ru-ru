@@ -17,10 +17,10 @@ ms.date: 09/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fae7b80fd4d2fcec32bbef5e4cdf18e576412a86
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74231978"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sugar-crm"></a>Руководство по интеграции единого входа Azure Active Directory с Sugar CRM
@@ -35,9 +35,9 @@ ms.locfileid: "74231978"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Sugar CRM с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -71,7 +71,7 @@ ms.locfileid: "74231978"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Sugar CRM](#configure-sugar-crm-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Sugar CRM](#create-sugar-crm-test-user)** требуется для того, чтобы в Sugar CRM существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -81,11 +81,11 @@ ms.locfileid: "74231978"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
     | |
     |--|
@@ -127,7 +127,7 @@ ms.locfileid: "74231978"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Sugar CRM.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **SugarCRM**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -147,7 +147,7 @@ ms.locfileid: "74231978"
 
 1. Откройте страницу **Администратор**.
 
-    ![Администратор](./media/sugarcrm-tutorial/ic795888.png "Администратор")
+    ![Администратор](./media/sugarcrm-tutorial/ic795888.png "Административный")
 
 1. В разделе **Administration** (Администрирование) щелкните **Password Management** (Управление паролями).
 
@@ -161,7 +161,7 @@ ms.locfileid: "74231978"
 
     ![Проверка подлинности SAML](./media/sugarcrm-tutorial/ic795891.png "Проверка подлинности SAML")  
 
-    a. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    а. В текстовое поле **Login URL** (URL-адрес входа) вставьте **URL-адрес входа**, скопированный на портале Azure.
   
     b. В текстовое поле **SLO URL** (URL-адрес единого выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
   
@@ -179,7 +179,7 @@ ms.locfileid: "74231978"
 
 1. Откройте страницу **Администратор**.
 
-    ![Администратор](./media/sugarcrm-tutorial/ic795888.png "Администратор")
+    ![Администратор](./media/sugarcrm-tutorial/ic795888.png "Административный")
 
 1. В разделе **Administration** (Администрирование) щелкните **User Management** (Управление пользователями).
 
@@ -201,7 +201,7 @@ ms.locfileid: "74231978"
 
     ![Новый пользователь](./media/sugarcrm-tutorial/ic795896.png "Новый пользователь")
 
-    a. Введите пароль в соответствующее текстовое поле.
+    а. Введите пароль в соответствующее текстовое поле.
 
     b. Выберите команду **Сохранить**.
 
@@ -216,9 +216,9 @@ ms.locfileid: "74231978"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

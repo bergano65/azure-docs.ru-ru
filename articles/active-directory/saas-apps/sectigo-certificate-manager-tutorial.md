@@ -17,10 +17,10 @@ ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0447a8dd464363ae7e076dde2520565005d7c0a5
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67588234"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sectigo-certificate-manager"></a>Руководство по Интеграция Azure Active Directory со Sectigo Certificate Manager
@@ -39,7 +39,7 @@ ms.locfileid: "67588234"
 
 Чтобы настроить интеграцию Azure AD с приложением Sectigo Certificate Manager, вам потребуется следующее:
 
-* подписка Azure AD Если у вас еще нет подписки Azure AD, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* Подписка Azure AD. Если у вас еще нет подписки Azure AD, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Подписка Sectigo Certificate Manager с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -55,7 +55,7 @@ Sectigo Certificate Manager поддерживает следующие функ
 
 Чтобы интегрировать Sectigo Certificate Manager с Azure AD, нужно добавить Sectigo Certificate Manager в список управляемых приложений SaaS.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. В меню слева выберите **Azure Active Directory**.
 
@@ -79,7 +79,7 @@ Sectigo Certificate Manager поддерживает следующие функ
 
 Чтобы настроить и проверить единый вход Azure AD в Sectigo Certificate Manager, потребуется выполнить действия в следующих стандартных блоках:
 
-| Задача | ОПИСАНИЕ |
+| Задача | Описание |
 | --- | --- |
 | **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** | Предоставление пользователям возможности использовать эту функцию. |
 | **[Настройка единого входа для Sectigo Certificate Manager](#configure-sectigo-certificate-manager-single-sign-on)** | Настройка параметров единого входа в приложении. |
@@ -102,9 +102,9 @@ Sectigo Certificate Manager поддерживает следующие функ
 
 1. На панели **Настройка единого входа с помощью SAML** щелкните **Изменить** (значок карандаша), чтобы открыть панель **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
-1. Чтобы настроить *режим, инициируемый поставщиком удостоверений*, в области **Базовая конфигурация SAML** выполните приведенные ниже действия:
+1. Чтобы настроить *режим, инициируемый поставщиком удостоверений*, в области **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     1. В поле **Идентификатор** введите один из следующих URL-адресов:
        * https:\//cert-manager.com/shibboleth
@@ -130,9 +130,9 @@ Sectigo Certificate Manager поддерживает следующие функ
 
       ![Сведения о домене и URL-адресах единого входа для приложения Sectigo Certificate Manager](common/both-signonurl.png)
 
-1. В области **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, расположенную рядом с полем **Сертификат (Base64)** . Выберите вариант для скачивания в соответствии с вашими требованиями. Сохраните сертификат на своем компьютере.
+1. В области **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, расположенную рядом с элементом **Сертификат (Base64)** . Выберите вариант для скачивания в соответствии с вашими требованиями. Сохраните сертификат на своем компьютере.
 
-    ![Вариант для скачивания сертификата в кодировке Base64](common/certificatebase64.png)
+    ![Параметр для скачивания сертификата в кодировке Base64](common/certificatebase64.png)
 
 1. Скопируйте требуемые URL-адреса в разделе **Настройка Sectigo Certificate Manager**:
 
@@ -166,7 +166,7 @@ Sectigo Certificate Manager поддерживает следующие функ
 
     1. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
 
-    1. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **создания**.
 
     ![Панель "Пользователь"](common/user-properties.png)
 
@@ -206,12 +206,12 @@ Sectigo Certificate Manager поддерживает следующие функ
 
 После настройки единого входа вы сможете автоматически войти в приложение Sectigo Certificate Manager, выбрав элемент **Sectigo Certificate Manager** на портале "Мои приложения". Дополнительные сведения о портале "Мои приложения" см. в статье [Access and use apps on the My Apps portal](../user-help/my-apps-portal-end-user-access.md) (Доступ к приложениям и их использование на портале "Мои приложения").
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статьях ниже:
 
 - [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 

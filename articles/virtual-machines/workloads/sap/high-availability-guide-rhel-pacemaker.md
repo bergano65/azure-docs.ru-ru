@@ -1,10 +1,10 @@
 ---
-title: Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure | Документы Майкрософт
+title: Настройка Pacemaker в RHEL в Azure | Документация Майкрософт
 description: Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: mssedusch
-manager: timlt
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
-ms.author: sedusch
-ms.openlocfilehash: 9ccbd67348a8dae7391471ccd1dcc1ba9b135ea2
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.author: radeltch
+ms.openlocfilehash: 21c551721815847eea4cb1435298ea6f7bf37966
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941825"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79264483"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -27,14 +27,14 @@ ms.locfileid: "75941825"
 [deployment-guide]:deployment-guide.md
 [dbms-guide]:dbms-guide.md
 [sap-hana-ha]:sap-hana-high-availability.md
-[1928533]: https://launchpad.support.sap.com/#/notes/1928533
-[2015553]: https://launchpad.support.sap.com/#/notes/2015553
-[2002167]: https://launchpad.support.sap.com/#/notes/2002167
-[2009879]: https://launchpad.support.sap.com/#/notes/2009879
-[2178632]: https://launchpad.support.sap.com/#/notes/2178632
-[2191498]: https://launchpad.support.sap.com/#/notes/2191498
-[2243692]: https://launchpad.support.sap.com/#/notes/2243692
-[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[2015553]:https://launchpad.support.sap.com/#/notes/2015553
+[2002167]:https://launchpad.support.sap.com/#/notes/2002167
+[2009879]:https://launchpad.support.sap.com/#/notes/2009879
+[2178632]:https://launchpad.support.sap.com/#/notes/2178632
+[2191498]:https://launchpad.support.sap.com/#/notes/2191498
+[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[1999351]:https://launchpad.support.sap.com/#/notes/1999351
 
 [virtual-machines-linux-maintenance]:../../maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
 
@@ -54,9 +54,9 @@ ms.locfileid: "75941825"
 * примечание к SAP [2243692], содержащее сведения о лицензировании SAP в Linux в Azure;
 * примечание к SAP [1999351], содержащее дополнительные сведения об устранении неполадок, связанных с расширением для расширенного мониторинга Azure для SAP;
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes), содержащий все необходимые примечания к SAP для Linux;
-* [Планирование и реализация виртуальных машин Azure для SAP в Linux][planning-guide]
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP в Linux (Эта статья)][deployment-guide]
-* [Развертывание СУБД на виртуальных машинах Azure для SAP в Linux][dbms-guide]
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
 * [Репликация системы SAP HANA в кластере pacemaker](https://access.redhat.com/articles/3004101)
 * Общая документация по RHEL
   * [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
@@ -76,7 +76,7 @@ ms.locfileid: "75941825"
 > Red Hat не поддерживает устройство наблюдения с эмуляцией программного обеспечения. Red Hat не поддерживает SBD на облачных платформах. Дополнительные сведения см. в разделе [политики поддержки для кластеров высокой доступности RHEL — SBD и fence_sbd](https://access.redhat.com/articles/2800691).
 > Единственным поддерживаемым механизмом ограждения для кластеров Pacemaker Red Hat Enterprise Linux в Azure является агент ограждения Azure.  
 
-Ниже приведены элементы с префиксами: **[A]**  — применяется ко всем узлам, **[1**] — применяется только к узлу 1, **[2]**  — применяется только к узлу 2.
+Следующие элементы имеют префикс **[A]** — применимо ко всем узлам, **[1]** — применимо только к узлу 1 или **[2]** — применимо только к узлу 2.
 
 1. **[A]** Регистрация
 
@@ -138,7 +138,7 @@ ms.locfileid: "75941825"
    <b>10.0.0.7 prod-cl1-1</b>
    </code></pre>
 
-1. **[A]** Измените пароль hacluster на тот же пароль.
+1. **[A]** измените пароль hacluster на тот же пароль.
 
    <pre><code>sudo passwd hacluster
    </code></pre>
@@ -206,12 +206,12 @@ ms.locfileid: "75941825"
 1. Щелкните "Регистрация приложений".
 1. Нажмите кнопку "создать регистрацию"
 1. Введите имя, выберите "учетные записи только в каталоге организации" 
-2. Выберите тип приложения "Интернет", введите URL-адрес входа (например, http:\//ЛОКАЛХОСТ) и нажмите кнопку "Добавить".  
+2. Выберите тип приложения "Интернет", введите URL-адрес входа (например, http:/ЛОКАЛХОСТ\/) и нажмите кнопку "Добавить".  
    URL-адрес входа не используется и может быть любым допустимым URL-адресом.
 1. Выберите Сертификаты и секреты, а затем — новый секрет клиента.
 1. Введите описание нового ключа, выберите "никогда не истекает" и нажмите кнопку "Добавить".
-1. Запишите его значение. Он используется в качестве **пароля** субъекта-службы.
-1. Выберите Обзор. Запишите идентификатор приложения. Он используется в качестве имени пользователя (**идентификатора для входа** в следующих шагах) субъекта-службы.
+1. Запишите его значение. Он используется в качестве **пароля** для субъекта-службы.
+1. Щелкните Обзор. Запишите идентификатор приложения. Он используется как имя пользователя (**идентификатор входа** в следующих шагах) субъекта-службы.
 
 ### <a name="1-create-a-custom-role-for-the-fence-agent"></a>**[1]** Создайте пользовательскую роль для агента ограждения.
 
@@ -250,7 +250,7 @@ ms.locfileid: "75941825"
 1. Выберите "Добавить назначение ролей".
 1. Выберите роль Linux Fence Agent Role.
 1. Введите имя созданного ранее приложения.
-1. Нажмите кнопку "Сохранить".
+1. Щелкните Сохранить
 
 Повторите предыдущие шаги для второго узла кластера.
 
@@ -274,9 +274,9 @@ sudo pcs property set stonith-timeout=900
 <pre><code>sudo pcs property set stonith-enabled=true
 </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
-* [Развертывание виртуальных машин Azure для SAP][deployment-guide]
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
+* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
-* Сведения о том, как установить высокий уровень доступности и спланировать аварийное восстановление SAP HANA на виртуальных машинах Azure, см. в статье [высокий уровень доступности SAP HANA на виртуальные машины Azure][sap-hana-ha] .
+* Дополнительные сведения об установке высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure][sap-hana-ha].

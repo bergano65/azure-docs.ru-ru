@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 12/20/2019
+ms.date: 02/18/2020
 ms.custom: seodec18
-ms.openlocfilehash: 591233154ab79b9493d77030727462bae68ea7d5
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 39ebbf99ad31cce20eabc20fbdc056c889235713
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76152363"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77470757"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Моделирование данных в предварительной версии службы "Аналитика временных рядов"
 
@@ -35,11 +35,11 @@ ms.locfileid: "76152363"
 
 1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **экземпляры** . Будут отображены все экземпляры, связанные с выбранной средой "аналитика временных рядов".
 
-    [![создать один экземпляр, сначала выбрав экземпляры.](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png#lightbox)
+    [![Создайте отдельный экземпляр, выбрав экземпляры.](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-instances-panel.png#lightbox)
 
-1. Щелкните **+ Добавить**.
+1. Выберите **+ Добавить**.
 
-    [![добавить экземпляр, нажав кнопку + Добавить.](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png#lightbox)
+    [![Добавьте экземпляр, нажав кнопку + Добавить.](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-add-instance.png#lightbox)
 
 1. Введите сведения об экземпляре, выберите связь типа и иерархии, а затем щелкните **Создать**.
 
@@ -51,22 +51,22 @@ ms.locfileid: "76152363"
 1. Выберите **Отправка файла JSON**.
 1. Выберите файл, который содержит полезные данные экземпляра.
 
-    [![ная передача экземпляров с помощью JSON.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-instances.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-instances.png#lightbox)
+    [![Выполнить групповую отправку экземпляров через JSON.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-instances.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-instances.png#lightbox)
 
-1. Щелкните **Отправить**.
+1. Выберите команду **Отправить**.
 
 ### <a name="edit-a-single-instance"></a>Изменение одного экземпляра
 
 1. Выберите экземпляр и щелкните значок **редактирования** или **карандаша**. 
 1. Внесите необходимые изменения и выберите **Сохранить**.
 
-    [![изменить один экземпляр.](media/v2-update-how-to-tsm/how-to-tsm-edit-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-instance.png#lightbox)
+    [![Изменение одного экземпляра.](media/v2-update-how-to-tsm/how-to-tsm-edit-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-instance.png#lightbox)
 
 ### <a name="delete-an-instance"></a>Удаление экземпляра
 
 1. Выберите экземпляр и щелкните значок **Удалить** или **мусорную ячейку**.
 
-   [![удалить экземпляр, выбрав Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-instance.png#lightbox)
+   [![Удалите экземпляр, выбрав Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-instance.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-instance.png#lightbox)
 
 1. Подтвердите удаление, выбрав **Удалить**.
 
@@ -83,19 +83,19 @@ ms.locfileid: "76152363"
 
 1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **иерархии** . Будут отображены все иерархии, связанные с выбранной средой "аналитика временных рядов".
 
-    [![создать иерархию с помощью панели.](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png#lightbox)
+    [![Создайте иерархию с помощью панели.](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-hierarchy-panel.png#lightbox)
 
-1. Щелкните **+ Добавить**.
+1. Выберите **+ Добавить**.
 
-    [Кнопка "![иерархия + добавить".](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png#lightbox)
+    [![Кнопка "иерархия + добавить".](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-hierarchy.png#lightbox)
 
 1. Выберите **+ Добавить уровень** в правой области.
 
-    [![добавить уровень в иерархию.](media/v2-update-how-to-tsm/how-to-tsm-save-hierarchy-levels.png)](media/v2-update-how-to-tsm/how-to-tsm-save-hierarchy-levels.png#lightbox)
+    [![Добавьте уровень в иерархию.](media/v2-update-how-to-tsm/how-to-tsm-save-hierarchy-levels.png)](media/v2-update-how-to-tsm/how-to-tsm-save-hierarchy-levels.png#lightbox)
 
 1. Введите сведения об иерархии и нажмите кнопку **сохранить**.
 
-    [![указать сведения об иерархии.](media/v2-update-how-to-tsm/how-to-tsm-add-hierarchy-level.png)](media/v2-update-how-to-tsm/how-to-tsm-add-hierarchy-level.png#lightbox)
+    [![Укажите сведения об иерархии.](media/v2-update-how-to-tsm/how-to-tsm-add-hierarchy-level.png)](media/v2-update-how-to-tsm/how-to-tsm-add-hierarchy-level.png#lightbox)
 
 ### <a name="bulk-upload-one-or-more-hierarchies"></a>Массовая отправка одной или нескольких иерархий
 
@@ -104,22 +104,22 @@ ms.locfileid: "76152363"
 
 1. Выберите **Отправка файла JSON**.
 1. Выберите файл, который содержит полезные данные иерархии.
-1. Щелкните **Отправить**.
+1. Выберите команду **Отправить**.
 
-    [![выбор для выполнения групповой отправки иерархий.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-hierarchies.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-hierarchies.png#lightbox)
+    [![Выбор для выполнения групповой отправки иерархий.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-hierarchies.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-hierarchies.png#lightbox)
 
 ### <a name="edit-a-single-hierarchy"></a>Изменение одной иерархии
 
 1. Выберите иерархию и щелкните значок **редактирования** или **карандаша**.
 1. Внесите необходимые изменения и выберите **Сохранить**.
 
-    [![выбора для редактирования одной иерархии.](media/v2-update-how-to-tsm/how-to-tsm-edit-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-hierarchy.png#lightbox)
+    [![Варианты редактирования отдельной иерархии.](media/v2-update-how-to-tsm/how-to-tsm-edit-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-hierarchy.png#lightbox)
 
 ### <a name="delete-a-hierarchy"></a>Удаление иерархии
 
 1. Выберите иерархию и щелкните значок **Удалить** или **мусорную ячейку**. 
 
-    [![удалить иерархию, нажав кнопку Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png#lightbox)
+    [![Удалите иерархию, нажав кнопку Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-hierarchy.png#lightbox)
 
 1. Подтвердите удаление, выбрав **Удалить**.
 
@@ -133,12 +133,12 @@ ms.locfileid: "76152363"
 
 1. Перейдите на панель выбора моделей временных рядов и выберите в меню пункт **типы** . Будут отображены все типы, связанные с выбранной средой "аналитика временных рядов".
 
-    [![панели Типы моделей временных рядов.](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png#lightbox)
+    [![Панель типов моделей временных рядов.](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png)](media/v2-update-how-to-tsm/how-to-tsm-type-panel.png#lightbox)
 
 1. Выберите **+ Добавить** , чтобы отобразить всплывающее окно **Добавить новый тип** модальным.
 1. Введите свойства и переменные для типа. После входа нажмите кнопку **сохранить**. 
 
-    [![параметры конфигурации для добавления типа.](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png#lightbox)
+    [![Параметры конфигурации для добавления типа.](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png)](media/v2-update-how-to-tsm/how-to-tsm-add-new-type.png#lightbox)
 
 ### <a name="bulk-upload-one-or-more-types"></a>Массовая отправка одного или нескольких типов
 
@@ -147,26 +147,26 @@ ms.locfileid: "76152363"
 
 1. Выберите **Отправка файла JSON**.
 1. Выберите файл, который содержит полезные данные типа.
-1. Щелкните **Отправить**.
+1. Выберите команду **Отправить**.
 
-    [![параметров отправки типов с массовыми типами.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-types-json.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-types-json.png#lightbox)
+    [![Параметры отправки с массовыми типами.](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-types-json.png)](media/v2-update-how-to-tsm/how-to-tsm-bulk-upload-types-json.png#lightbox)
 
 ### <a name="edit-a-single-type"></a>Изменение одного типа
 
 1. Выберите тип и щелкните значок **редактирования** или **карандаша**.
 1. Внесите необходимые изменения и выберите **Сохранить**.
 
-    [![изменить тип на панели.](media/v2-update-how-to-tsm/how-to-tsm-edit-type.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-type.png#lightbox)
+    [![Изменение типа на панели.](media/v2-update-how-to-tsm/how-to-tsm-edit-type.png)](media/v2-update-how-to-tsm/how-to-tsm-edit-type.png#lightbox)
 
 ### <a name="delete-a-type"></a>Удаление типа
 
 1. Выберите тип и щелкните значок **Удалить** или **мусорную ячейку**. .
 
-   [![удалить тип, выбрав Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-type.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-type.png#lightbox)
+   [![Удалите тип, выбрав Удалить.](media/v2-update-how-to-tsm/how-to-tsm-delete-type.png)](media/v2-update-how-to-tsm/how-to-tsm-delete-type.png#lightbox)
 
 1. Подтвердите удаление, выбрав **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о модели временных рядов см. в статье [моделирование данных](./time-series-insights-update-tsm.md).
 

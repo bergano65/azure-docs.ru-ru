@@ -2,13 +2,13 @@
 title: Разделы, посвященные расширенному обновлению приложений
 description: В этой статье рассматриваются некоторые дополнительные темы, относящиеся к обновлению приложения Service Fabric.
 ms.topic: conceptual
-ms.date: 1/28/2020
-ms.openlocfilehash: 09f3fdf1f26a13c6722eb039e132256f33be38ff
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.date: 03/11/2020
+ms.openlocfilehash: a12d2ec55bda95c1c61d4a73c76f4a777f4237f2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76845428"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81414503"
 ---
 # <a name="service-fabric-application-upgrade-advanced-topics"></a>Обновление приложения Service Fabric: дополнительные разделы
 
@@ -18,11 +18,11 @@ ms.locfileid: "76845428"
 
 Точно так же типы служб могут быть удалены из приложения. Но в этом случае перед продолжением обновления все текущие экземпляры удаляемой службы должны быть удалены (см. статью о командлете [Remove-ServiceFabricService](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricservice?view=azureservicefabricps)).
 
-## <a name="avoid-connection-drops-during-stateless-service-planned-downtime-preview"></a>Предотвращение неразрывов подключений во время запланированного простоя службы без отслеживания состояния (Предварительная версия)
+## <a name="avoid-connection-drops-during-stateless-service-planned-downtime"></a>Предотвращение неразрывов подключений во время запланированного простоя службы без отслеживания состояния
 
-Для запланированных простоев экземпляров без отслеживания состояния, таких как обновление приложения или кластера или деактивация узла, подключения могут быть удалены из-за удаления видимой конечной точки после ее выхода.
+Для запланированных простоев экземпляров без отслеживания состояния, таких как обновление приложения или кластера или деактивация узла, подключения могут быть удалены из-за того, что предоставленная конечная точка удаляется после выхода экземпляра, что приводит к принудительному замыканию соединения.
 
-Чтобы избежать этого, настройте функцию *рекуестдраин* (Предварительная версия), добавив в конфигурацию службы *Длительность задержки закрытия экземпляра* реплики. Это гарантирует удаление конечной точки, объявленной экземпляром без отслеживания состояния, *перед* запуском таймера задержки для закрытия экземпляра. Эта задержка позволяет корректно завершать существующие запросы до того, как экземпляр будет действительно остановлен. Клиенты получают уведомления о смене конечных точек функцией обратного вызова, поэтому они могут повторно разрешить конечную точку и избежать отправки новых запросов экземпляру.
+Чтобы избежать этого, настройте функцию *рекуестдраин* (Предварительная версия), добавив в конфигурацию службы *Длительность задержки закрытия экземпляра* , чтобы разрешить сток при получении запросов от других служб в кластере и использовать обратный прокси-сервер или функцию разрешения API с моделью уведомления для обновления конечных точек. Это гарантирует, что конечная точка, объявленная экземпляром без отслеживания состояния, будет удалена *до* начала задержки перед закрытием экземпляра. Эта задержка позволяет корректно завершать существующие запросы до того, как экземпляр будет действительно остановлен. Клиенты получают уведомления об изменении конечной точки с помощью функции обратного вызова во время запуска задержки, чтобы они могли повторно разрешить конечную точку и избежать отправки новых запросов к экземпляру, который не работает.
 
 ### <a name="service-configuration"></a>Конфигурация службы
 
@@ -34,7 +34,7 @@ ms.locfileid: "76845428"
     New-ServiceFabricService -Stateless [-ServiceName] <Uri> -InstanceCloseDelayDuration <TimeSpan>`
     ```
 
- * **При определении службы в разделе по умолчанию манифеста приложения**назначьте свойство `InstanceCloseDelayDurationSeconds`:
+ * **При определении службы в разделе по умолчанию манифеста приложения**назначьте `InstanceCloseDelayDurationSeconds` свойство:
 
     ```xml
           <StatelessService ServiceTypeName="Web1Type" InstanceCount="[Web1_InstanceCount]" InstanceCloseDelayDurationSeconds="15">
@@ -50,28 +50,12 @@ ms.locfileid: "76845428"
 
 ### <a name="client-configuration"></a>Настройка клиента
 
-Чтобы получить уведомление об изменении конечной точки, клиенты могут зарегистрировать обратный вызов (`ServiceManager_ServiceNotificationFilterMatched`) следующим образом: 
-
-```csharp
-    var filterDescription = new ServiceNotificationFilterDescription
-    {
-        Name = new Uri(serviceName),
-        MatchNamePrefix = true
-    };
-    fbClient.ServiceManager.ServiceNotificationFilterMatched += ServiceManager_ServiceNotificationFilterMatched;
-    await fbClient.ServiceManager.RegisterServiceNotificationFilterAsync(filterDescription);
-
-private static void ServiceManager_ServiceNotificationFilterMatched(object sender, EventArgs e)
-{
-      // Resolve service to get a new endpoint list
-}
-```
-
+Чтобы получить уведомление об изменении конечной точки, клиенты должны зарегистрировать обратный вызов, см. [сервиценотификатионфилтердескриптион](https://docs.microsoft.com/dotnet/api/system.fabric.description.servicenotificationfilterdescription).
 Уведомление об изменении указывает на то, что конечные точки изменились, клиент должен повторно разрешить конечные точки, а не использовать конечные точки, которые больше не объявлены, так как они скоро выйдут.
 
 ### <a name="optional-upgrade-overrides"></a>Необязательные переопределения обновления
 
-Помимо задания длительности задержки по умолчанию для каждой службы, можно также переопределить задержку при обновлении приложения или кластера с помощью того же параметра (`InstanceCloseDelayDurationSec`):
+Помимо задания длительности задержки по умолчанию для каждой службы, можно также переопределить задержку при обновлении приложения или кластера с помощью того же`InstanceCloseDelayDurationSec`параметра ():
 
 ```powershell
 Start-ServiceFabricApplicationUpgrade [-ApplicationName] <Uri> [-ApplicationTypeVersion] <String> [-InstanceCloseDelayDurationSec <UInt32>]
@@ -79,7 +63,17 @@ Start-ServiceFabricApplicationUpgrade [-ApplicationName] <Uri> [-ApplicationType
 Start-ServiceFabricClusterUpgrade [-CodePackageVersion] <String> [-ClusterManifestVersion] <String> [-InstanceCloseDelayDurationSec <UInt32>]
 ```
 
-Длительность задержки применяется только к вызываемому экземпляру обновления и не изменяет индивидуальные конфигурации задержки службы. Например, это можно использовать для указания задержки `0`, чтобы пропустить все предварительно настроенные задержки обновления.
+Длительность задержки применяется только к вызываемому экземпляру обновления и не изменяет индивидуальные конфигурации задержки службы. Например, с его помощью можно задать задержку `0` для пропуска всех предварительно настроенных задержек обновления.
+
+> [!NOTE]
+> Параметр для очистки запросов не учитывается для запросов от балансировщика нагрузки Azure. Этот параметр не учитывается, если вызывающая служба использует жалобу на основе разрешения.
+>
+>
+
+> [!NOTE]
+> Эту функцию можно настроить в существующих службах с помощью командлета Update-ServiceFabricService, как упоминалось выше, если версия кода кластера — 7.1.XXX или выше.
+>
+>
 
 ## <a name="manual-upgrade-mode"></a>Ручной режим обновления
 
@@ -182,19 +176,19 @@ ApplicationParameters  : { "ImportantParameter" = "2"; "NewParameter" = "testAft
 
 ## <a name="roll-back-application-upgrades"></a>Откат обновлений приложения
 
-Хотя обновления можно выполнить в одном из трех режимов (*Monitored*, *UnmonitoredAuto* или *UnmonitoredManual*), откатить их можно только в режиме *UnmonitoredAuto* или *UnmonitoredManual*. Откат в режиме *UnmonitoredAuto* работает так же, как накат. Единственное исключение: другое значение по умолчанию *UpgradeReplicaSetCheckTimeout* (см. статью [Параметры обновления приложений](service-fabric-application-upgrade-parameters.md)). Откат в режиме *UnmonitoredManual* работает так же, как и накат. Он приостанавливается после завершения работы с каждым доменом обновления. Возобновить его можно с помощью командлета [ Resume-ServiceFabricApplicationUpgrade ](https://docs.microsoft.com/powershell/module/servicefabric/resume-servicefabricapplicationupgrade?view=azureservicefabricps).
+Хотя обновления можно выполнить в одном из трех режимов (*Monitored*, *UnmonitoredAuto* или *UnmonitoredManual*), откатить их можно только в режиме *UnmonitoredAuto* или *UnmonitoredManual*. Откат в режиме *UnmonitoredAuto* работает так же, как накат. Единственное исключение: другое значение по умолчанию *UpgradeReplicaSetCheckTimeout* (см. статью [Параметры обновления приложений](service-fabric-application-upgrade-parameters.md)). Откат в режиме * UnmonitoredManual * работает так же, как и накат. Он приостанавливается после завершения работы с каждым доменом обновления. Возобновить его можно с помощью командлета [ Resume-ServiceFabricApplicationUpgrade ](https://docs.microsoft.com/powershell/module/servicefabric/resume-servicefabricapplicationupgrade?view=azureservicefabricps).
 
-Откат может запускаться автоматически, если нарушены политики работоспособности обновления в режиме *Monitored* с указанным для *отката* атрибутом *FailureAction* , (см. статью [Параметры обновления приложения](service-fabric-application-upgrade-parameters.md)) или если используется командлет [Start-ServiceFabricApplicationRollback](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricapplicationrollback?view=azureservicefabricps).
+Откат может запускаться автоматически, если нарушены политики работоспособности обновления в режиме *Monitored* с указанным для *отката* атрибутом *FailureAction *, (см. статью [Параметры обновления приложения](service-fabric-application-upgrade-parameters.md)) или если используется командлет [Start-ServiceFabricApplicationRollback](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricapplicationrollback?view=azureservicefabricps).
 
 Во время отката все еще можно изменить значение *UpgradeReplicaSetCheckTimeout*. Режим также можно изменить в любое время с помощью командлета [Update-ServiceFabricApplicationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/update-servicefabricapplicationupgrade?view=azureservicefabricps).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Руководство по обновлению приложений Service Fabric с помощью Visual Studio](service-fabric-application-upgrade-tutorial.md) поможет вам выполнить поэтапное обновление приложения с помощью Visual Studio.
 
 [Обновление приложения с помощью PowerShell](service-fabric-application-upgrade-tutorial-powershell.md) поможет вам выполнить обновление приложения с помощью PowerShell.
 
 Управление обновлениями приложения осуществляется с помощью [параметров обновления](service-fabric-application-upgrade-parameters.md).
 
-Узнайте, как использовать [сериализацию данных](service-fabric-application-upgrade-data-serialization.md), чтобы обеспечить совместимость обновлений приложения.
+Изучите, как использовать [сериализацию данных](service-fabric-application-upgrade-data-serialization.md), чтобы обеспечить совместимость обновлений приложений.
 
-Сведения об устранении распространенных проблем при обновлении приложений см. в статье [Устранение неполадок при обновлениях приложений](service-fabric-application-upgrade-troubleshooting.md).
+Решения распространенных проблем при обновлении приложений см. в статье [Устранение неполадок при обновлении приложений](service-fabric-application-upgrade-troubleshooting.md).

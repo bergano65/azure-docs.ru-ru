@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 673a801e218d055bf482dc97972e36584cddd402
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: ae03a655347d7be7372bae93eb0c3aaf75a8ea29
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721342"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891684"
 ---
 # <a name="build-and-optimize-tables-for-fast-parallel-import-of-data-into-a-sql-server-on-an-azure-vm"></a>Создание и оптимизация таблиц для быстрого параллельного импорта данных в SQL Server на виртуальной машине Azure
 
@@ -99,7 +99,7 @@ ms.locfileid: "76721342"
 * [Измените базу данных](https://msdn.microsoft.com/library/bb522682.aspx), изменив схему ведения журнала транзакций на BULK_LOGGED, чтобы минимизовать нагрузку при ведении журнала, например:
   
         ALTER DATABASE <database_name> SET RECOVERY BULK_LOGGED
-* Чтобы ускорить загрузку данных, запустите параллельные операции массового импорта. Советы по ускорению выполнения операций с массовым импортом больших данных в SQL Server базы данных см. [в разделе Загрузка 1 ТБ менее 1 часа](https://blogs.msdn.com/b/sqlcat/archive/2006/05/19/602142.aspx).
+* Чтобы ускорить загрузку данных, запустите параллельные операции массового импорта. Советы по ускорению выполнения операций с массовым импортом больших данных в SQL Server базы данных см. [в разделе Загрузка 1 ТБ менее 1 часа](https://docs.microsoft.com/archive/blogs/sqlcat/load-1tb-in-less-than-1-hour).
 
 В следующем сценарии PowerShell приведен пример параллельной загрузки данных с использованием BCP.
 

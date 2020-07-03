@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: srrengar
 ms.openlocfilehash: cf0fab9942dcbb7ee09e554f2c9ba8738f208009
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75609933"
 ---
 # <a name="set-up-azure-monitor-logs-for-a-cluster"></a>Настройка журналов Azure Monitor для кластера
@@ -32,7 +32,7 @@ ms.locfileid: "75609933"
 
 2. Найдите **Аналитика Service Fabric**. Выберите появившийся ресурс.
 
-3. Нажмите кнопку **Создать**.
+3. Нажмите кнопку **создания**.
 
     ![Аналитика Service Fabric в Marketplace](media/service-fabric-diagnostics-event-analysis-oms/service-fabric-analytics.png)
 
@@ -53,7 +53,7 @@ ms.locfileid: "75609933"
 
 3. На странице **Журналы учетной записи хранения** выберите **Добавить** в верхней части, чтобы добавить в рабочую область журналы кластера.
 
-4. Выберите **Учетная запись хранения**, чтобы добавить учетную запись хранения, созданную в кластере. Если вы использовали имя по умолчанию, она называется **sfdg\<имя_группы_ресурсов\>** . Вы можете проверить, какое значение указано для параметра **applicationDiagnosticsStorageAccountName** в шаблоне Azure Resource Manager, на основе которого вы развертывали кластер. Если имя не отображается, прокрутите список вниз и выберите **Загрузить еще**. Выберите имя учетной записи хранения.
+4. Выберите **Учетная запись хранения**, чтобы добавить учетную запись хранения, созданную в кластере. Если вы использовали имя по умолчанию, она называется **sfdg\<имя_группы_ресурсов\>**. Вы можете проверить, какое значение указано для параметра **applicationDiagnosticsStorageAccountName** в шаблоне Azure Resource Manager, на основе которого вы развертывали кластер. Если имя не отображается, прокрутите список вниз и выберите **Загрузить еще**. Выберите имя учетной записи хранения.
 
 5. Укажите тип данных. Задайте для параметра типа данных значение **События Service Fabric**.
 
@@ -91,7 +91,7 @@ Azure Resource Manager определит, что эта команда — эт
 
 ## <a name="deploy-azure-monitor-logs-with-azure-powershell"></a>Развертывание журналов Azure Monitor с помощью Azure PowerShell
 
-Вы также можете развернуть ресурс log Analytics с помощью PowerShell, выполнив команду `New-AzOperationalInsightsWorkspace`. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-Az-ps). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
+Вы также можете развернуть ресурс log Analytics с помощью PowerShell, выполнив `New-AzOperationalInsightsWorkspace` команду. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-Az-ps). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
 
 ```powershell
 

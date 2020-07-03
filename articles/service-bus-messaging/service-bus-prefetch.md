@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 80717ab940d27e9bf108b3740309bcd7d71668fd
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76760663"
 ---
 # <a name="prefetch-azure-service-bus-messages"></a>Предварительная выборка сообщений служебной шины Azure
@@ -32,7 +32,7 @@ ms.locfileid: "76760663"
 
 Этот параметр можно легко добавить в параметры принимающей стороны примеров [QueuesGettingStarted](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/QueuesGettingStarted) или [ReceiveLoop](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/ReceiveLoop), чтобы увидеть результат в этих контекстах.
 
-Пока сообщения находятся в буфере предварительной выборки, любые последующие вызовы **Receive**/**ReceiveAsync** выполняются немедленно из буфера, и буфер пополняется в фоновом режиме, как только в нем освобождается место. Если нет доступных для доставки сообщений, операция получения очищает буфер, после чего ожидает сообщения или блокируется, в соответствии с заданной логикой.
+Хотя сообщения доступны в буфере предвыборки, все последующие вызовы **Receive**/**ReceiveAsync** немедленно выполняются из буфера, а буфер пополняется в фоновом режиме, как только пространство становится доступным. Если нет доступных для доставки сообщений, операция получения очищает буфер, после чего ожидает сообщения или блокируется, в соответствии с заданной логикой.
 
 Предварительная выборка точно так же работает с интерфейсами API [OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage) и [OnMessageAsync](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessageasync).
 
@@ -54,7 +54,7 @@ ms.locfileid: "76760663"
 
 Максимальное число сообщений и длительность блокировки при предварительной выборке, настроенные для очереди или подписки, необходимо сбалансировать таким образом, чтобы время ожидания блокировки по крайней мере превышало общее ожидаемое время обработки сообщений при максимальном заполнении буфера предварительной выборки плюс одно сообщение. Вместе с тем время ожидания блокировки сообщений вовсе не должно превышать их максимальное значение [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) в случае, если они случайно удаляются, так как иначе перед их повторной доставкой придется ожидать истечения срока их блокировки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

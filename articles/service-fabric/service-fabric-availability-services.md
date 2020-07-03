@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 5306439184561e8dec8303a7b149f51d6c2f6e08
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75551868"
 ---
 # <a name="availability-of-service-fabric-services"></a>Доступность служб структуры служб
@@ -37,5 +37,5 @@ ms.locfileid: "75551868"
 - [Масштабирование служб Service Fabric](service-fabric-concepts-scalability.md)
 - [Разделение служб Service Fabric](service-fabric-concepts-partitioning.md)
 - [Определение состояния и управление им](service-fabric-concepts-state.md)
-- [Reliable Services](service-fabric-reliable-services-introduction.md)
+- [Надежные службы](service-fabric-reliable-services-introduction.md)
 

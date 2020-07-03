@@ -1,25 +1,17 @@
 ---
 title: Развертывание IBM DB2 pureScale в Azure
 description: Узнайте, как развернуть пример архитектуры, который недавно использовался для переноса данных предприятия из среды IBM DB2 на z/OS в IBM DB2 pureScale в Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: njray
-manager: edprice
-editor: edprice
-tags: ''
-ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 11/09/2018
 ms.author: edprice
-ms.openlocfilehash: c4db27b938934aafa350866991ff174cbdbed0ac
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 98e912894a4d93a057a2f6a2153d0690deaed250
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76291555"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78968897"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
@@ -27,9 +19,9 @@ ms.locfileid: "76291555"
 
 Чтобы выполнить шаги, используемые для миграции, воспользуйтесь скриптами установки в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Эти скрипты основаны на архитектуре для обычной рабочей нагрузки OLTP среднего размера.
 
-## <a name="get-started"></a>Начать
+## <a name="get-started"></a>Начало работы
 
-Чтобы развернуть эту архитектуру, скачайте и запустите скрипт deploy.sh, доступный в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub.
+Чтобы развернуть эту архитектуру, скачайте и запустите сценарий deploy.sh, который находится в репозитории [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub.
 
 Репозиторий также содержит скрипты для настройки панели мониторинга Grafana. Вы можете использовать панель мониторинга для запроса Prometheus, системы мониторинга и оповещения с открытым кодом и DB2.
 
@@ -70,22 +62,22 @@ ms.locfileid: "76291555"
 
 4.  Установите общий уровень хранилища для интерфейса iSCSI.
 
-После создания устройства iSCSI с помощью скрипта остается установить DB2 pureScale. Когда устанавливается DB2 pureScale, [IBM Spectrum Scale](https://www.ibm.com/support/knowledgecenter/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0057167.html) (прежнее название — GPFS) компилируется и устанавливается в кластере GlusterFS. Эта кластерная файловая система позволяет DB2 pureScale обеспечить совместное использование данных на виртуальных машинах с подсистемой DB2 pureScale. Дополнительные сведения см. в документации по [IBM Spectrum Scale](https://www.ibm.com/support/knowledgecenter/en/STXKQY_4.2.0/ibmspectrumscale42_welcome.html) на сайте IBM.
+После создания устройства iSCSI с помощью скрипта остается установить DB2 pureScale. В рамках установки Пурескале DB2 [масштаб в IBM спектров](https://www.ibm.com/support/knowledgecenter/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0057167.html) (прежнее название — гпфс) компилируется и устанавливается в кластере глустерфс. Эта кластерная файловая система позволяет DB2 pureScale обеспечить совместное использование данных на виртуальных машинах с подсистемой DB2 pureScale. Дополнительные сведения см. в документации по [IBM Spectrum Scale](https://www.ibm.com/support/knowledgecenter/en/STXKQY_4.2.0/ibmspectrumscale42_welcome.html) на сайте IBM.
 
 ## <a name="db2-purescale-response-file"></a>Файл ответов DB2 pureScale
 
 Репозиторий GitHub включает DB2server.rsp, файл ответов, который позволяет создать автоматизированный скрипт для установки DB2 pureScale. В приведенной ниже таблице указаны параметры DB2 pureScale, которые файл ответов использует для установки. Вы можете настроить файл ответов для своей среды.
 
 > [!NOTE]
-> Пример файла ответов, Db2server.rsp, включен в репозиторий [Db2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Чтобы этот файл работал в вашей среде, его сначала необходимо отредактировать.
+> Пример файла ответов DB2server. rsp включен в репозиторий [DB2onAzure](https://aka.ms/db2onazure) на сайте GitHub. Чтобы этот файл работал в вашей среде, его сначала необходимо отредактировать.
 
 | Имя экрана               | Поле                                        | Значение                                                                                                 |
 |---------------------------|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| Добро пожаловать!                   |                                              | "New Install" (Новая установка)                                                                                           |
+| Экран приветствия                   |                                              | "New Install" (Новая установка)                                                                                           |
 | "Choose a Product" (Выбор продукта)          |                                              | "DB2 Version 11.1.3.3. Server Editions with Db2 pureScale" (Db2 версии 11.1.3.3, серверные выпуски с Db2 pureScale)                                              |
-| Настройка             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
+| Параметр Configuration             | Каталог                                    | /data1/opt/ibm/db2/V11.1                                                                              |
 |                           | "Select the installation type" (Выбор типа установки)                 | "Typical" (Стандартный)                                                                                               |
-|                           | "I agree to the IBM terms" (Я принимаю условия IBM)                     | Отмечено                                                                                               |
+|                           | "I agree to the IBM terms" (Я принимаю условия IBM)                     | Флажок установлен                                                                                               |
 | "Instance Owner" (Владелец экземпляра)            | "Existing User For Instance, User name" (Существующий пользователь экземпляра, имя пользователя)        | DB2sdin1                                                                                              |
 | "Fenced User" (Изолированный пользователь)               | "Existing User, User name" (Существующий пользователь, имя пользователя)                     | DB2sdfe1                                                                                              |
 | "Cluster File System" (Файловая система кластера)       | "Shared disk partition device path" (Путь к устройству с общим разделом диска)            | /dev/dm-2                                                                                             |
@@ -141,13 +133,13 @@ ms.locfileid: "76291555"
 
 Дополнительные сведения об этих и других известных проблемах см. в файле kb.md в репозитории [DB2onAzure](https://aka.ms/DB2onAzure).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
--   [Creating required users for a Db2 pureScale Feature installation](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0055374.html?pos=2) (Создание обязательных пользователей для установки Db2 pureScale Feature)
+-   [Создание необходимых пользователей для установки компонентов Пурескале DB2](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0055374.html?pos=2)
 
--   [db2icrt — Create instance command](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002057.html) (db2icrt: команда для создания экземпляра)
+-   [DB2icrt — команда создания экземпляра](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002057.html)
 
--   [DB2 pureScale Clustered Database Solution: Part 1](https://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1) (Кластеризованное решение базы данных DB2 pureScale: часть 1)
+-   [Решение данных кластеров DB2 Пурескале](https://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1)
 
 -   [IBM Data Studio](https://www.ibm.com/developerworks/downloads/im/data/index.html/)
 

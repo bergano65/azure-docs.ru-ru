@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: 53de4608616cb8f3b85bb88f1dbc5a4a79f4c02b
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 41efe4592c65ae3cdd85ce1b212554e50691905a
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77188849"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78330725"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>Создание иммерсивного ресурса чтения и Настройка проверки подлинности Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "77188849"
 
 ## <a name="set-up-powershell-environment"></a>Настройка среды PowerShell
 
-1. Для начала откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). Убедитесь, что для Cloud Shell задано значение PowerShell в левом верхнем углу раскрывающегося списка или введите `pwsh`.
+1. Для начала откройте [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). Убедитесь, что для Cloud Shell задано значение PowerShell в верхнем левом углу раскрывающегося списка или `pwsh`введите.
 
 1. Скопируйте и вставьте следующий фрагмент кода в оболочку.
 
@@ -47,6 +47,11 @@ ms.locfileid: "77188849"
         [Parameter(Mandatory=$true)] [String] $AADAppClientSecret
     )
     {
+        $unused = ''
+        if (-not [System.Uri]::TryCreate($AADAppIdentifierUri, [System.UriKind]::Absolute, [ref] $unused)) {
+            throw "Error: AADAppIdentifierUri must be a valid URI"
+        }
+
         Write-Host "Setting the active subscription to '$SubscriptionName'"
         $subscriptionExists = Get-AzSubscription -SubscriptionName $SubscriptionName
         if (-not $subscriptionExists) {
@@ -136,7 +141,7 @@ ms.locfileid: "77188849"
     }
     ```
 
-1. Запустите функцию `Create-ImmersiveReaderResource`, указав необходимые параметры.
+1. Выполните функцию `Create-ImmersiveReaderResource`, указав необходимые параметры.
 
     ```azurepowershell-interactive
     Create-ImmersiveReaderResource
@@ -152,15 +157,15 @@ ms.locfileid: "77188849"
       -AADAppClientSecret '<AAD_APP_CLIENT_SECRET>'
     ```
 
-    | Параметр | Comments |
+    | Параметр | Комментарии |
     | --- | --- |
-    | SubscriptionName |Имя подписки Azure, которая будет использоваться для вашего иммерсивного ресурса чтения. Чтобы создать ресурс, необходимо иметь подписку. |
+    | Параметр SubscriptionName |Имя подписки Azure, которая будет использоваться для вашего иммерсивного ресурса чтения. Чтобы создать ресурс, необходимо иметь подписку. |
     | ResourceName |  Должен быть буквенно-цифровым и может содержать символ "-", если "-" не является первым или последним знаком. Длина не может превышать 63 символов.|
     | ресаурцесубдомаин |Для иммерсивного ресурса чтения требуется пользовательский поддомен. Поддомен используется пакетом SDK при вызове иммерсивное службу чтения для запуска средства чтения. Поддомен должен быть глобально уникальным. Поддомен должен состоять из букв и цифр и может содержать символ "-", если "-" не является первым или последним знаком. Длина не может превышать 63 символов. Этот параметр является необязательным, если ресурс уже существует. |
     | ресаурцеску |Параметры: `S0`. Дополнительные сведения о каждом доступном номере SKU см. на [странице цен на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/immersive-reader/) . Этот параметр является необязательным, если ресурс уже существует. |
     | ResourceLocation |Параметры: `eastus`, `eastus2`, `southcentralus`, `westus`, `westus2`, `australiaeast`, `southeastasia`, `centralindia`, `japaneast`, `northeurope`, `uksouth`, `westeurope`. Этот параметр является необязательным, если ресурс уже существует. |
     | ResourceGroupName |Ресурсы создаются в группах ресурсов в рамках подписок. Укажите имя существующей группы ресурсов. Если группа ресурсов еще не существует, будет создана новая учетная часть с таким именем. |
-    | ResourceGroupLocation |Если группа ресурсов не существует, необходимо указать расположение, в котором будет создана группа. Чтобы найти список расположений, запустите `az account list-locations`. Используйте свойство *Name* (без пробелов) возвращаемого результата. Этот параметр является необязательным, если группа ресурсов уже существует. |
+    | ResourceGroupLocation |Если группа ресурсов не существует, необходимо указать расположение, в котором будет создана группа. Чтобы найти список расположений, выполните команду `az account list-locations`. Используйте свойство *Name* (без пробелов) возвращаемого результата. Этот параметр является необязательным, если группа ресурсов уже существует. |
     | аадаппдисплайнаме |Отображаемое имя Azure Active Directory приложения. Если существующее приложение Azure AD не найдено, будет создано новое имя с таким именем. Этот параметр является необязательным, если приложение Azure AD уже существует. |
     | аадаппидентифиерури |Универсальный код ресурса (URI) для приложения Azure AD. Если существующее приложение Azure AD не найдено, будет создан новый объект с этим URI. Например, `https://immersivereaderaad-mycompany`. |
     | аадаппклиентсекрет |Созданный пароль, который будет использоваться позже для проверки подлинности при получении маркера для запуска иммерсивное средство чтения. Длина пароля должна составлять не менее 16 символов, содержать по крайней мере один специальный символ и содержать по крайней мере один числовой символ. |

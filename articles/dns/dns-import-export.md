@@ -8,12 +8,12 @@ ms.service: dns
 ms.date: 4/3/2019
 ms.author: rohink
 ms.topic: conceptual
-ms.openlocfilehash: 9475870185e4aee1b6f2ffbe175435cd4f6d8bed
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: a5c2fdde564eba2d95e7f14f4d47e4d381739d5d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76936973"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79365174"
 ---
 # <a name="import-and-export-a-dns-zone-file-using-the-azure-cli"></a>Импорт и экспорт файла зоны DNS с помощью Azure CLI
 
@@ -173,11 +173,11 @@ az network dns zone export -g <resource group> -n <zone name> -f <zone file name
 
 Чтобы экспортировать имеющуюся зону Azure DNS **contoso.com** (в группе ресурсов **myresourcegroup**) в файл **contoso.com.txt** (в текущей папке), выполните команду `azure network dns zone export`. Эта команда вызывает службу Azure DNS для перечисления наборов записей в зоне и экспорта результатов в файл зоны, совместимый с форматом BIND.
 
-```
+```azurecli
 az network dns zone export -g myresourcegroup -n contoso.com -f contoso.com.txt
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [управлять наборами записей и записями](dns-getstarted-create-recordset-cli.md) в зоне DNS.
 

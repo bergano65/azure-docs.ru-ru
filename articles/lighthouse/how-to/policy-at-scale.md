@@ -3,12 +3,12 @@ title: Развертывание службы "Политика Azure" для �
 description: Узнайте, как с помощью системы делегированного управления ресурсами Azure развернуть определение и назначение политики в нескольких клиентах.
 ms.date: 11/8/2019
 ms.topic: conceptual
-ms.openlocfilehash: 9e061995b728e2864d1bd33a32d530634ab794d8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3fe7e48c56e9a5af93e9642ee16c50cfbce34f9e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75456841"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81481827"
 ---
 # <a name="deploy-azure-policy-to-delegated-subscriptions-at-scale"></a>Развертывание службы "Политика Azure" для делегированных подписок в масштабе
 
@@ -18,7 +18,7 @@ ms.locfileid: "75456841"
 
 ## <a name="use-azure-resource-graph-to-query-across-customer-tenants"></a>Отправка запросов между клиентами с помощью Azure Resource Graph
 
-[Azure Resource Graph](../../governance/resource-graph/index.yml) позволяет отправлять запросы между всеми подписками в клиентах, которыми вы управляете. Приведенный ниже пример выявляет учетные записи хранения в этих подписках, которые в настоящее время не требуют трафика HTTPS.  
+[Azure Resource Graph](../../governance/resource-graph/index.yml) позволяет отправлять запросы между всеми подписками в клиентах, которыми вы управляете. В этом примере мы обсудим учетные записи хранения в этих подписках, которые в настоящее время не требуют трафика HTTPS.  
 
 ```powershell
 $MspTenant = "insert your managing tenantId here"
@@ -32,7 +32,7 @@ Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Storage/storageAccou
 
 ## <a name="deploy-a-policy-across-multiple-customer-tenants"></a>Развертывание политики для нескольких клиентов
 
-В приведенном ниже примере показано, как с помощью [шаблона Azure Resource Manager](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/Azure-Delegated-Resource-Management/templates/policy-enforce-https-storage/enforceHttpsStorage.json) развернуть определение и назначения политики между делегированными подписками в нескольких клиентах. Для этого определения политики требуется, чтобы все учетные записи хранения использовали HTTPS-трафик. Это позволяет предотвратить создание учетных записей хранения, которые не соответствуют требованиям, и помечать имеющиеся учетные записи, которые соответствуют требованиям.
+В приведенном ниже примере показано, как с помощью [шаблона Azure Resource Manager](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/policy-enforce-https-storage/enforceHttpsStorage.json) развернуть определение и назначения политики между делегированными подписками в нескольких клиентах. Для этого определения политики требуется, чтобы все учетные записи хранения использовали HTTPS-трафик, предотвращая создание новых учетных записей хранения, которые не соответствуют требованиям и не помечают существующие учетные записи хранения, без параметра "не соответствует требованиям".
 
 ```powershell
 Write-Output "In total, there are $($ManagedSubscriptions.Count) delegated customer subscriptions to be managed"
@@ -41,16 +41,16 @@ foreach ($ManagedSub in $ManagedSubscriptions)
 {
     Select-AzSubscription -SubscriptionId $ManagedSub.subscriptionId
 
-    New-AzDeployment -Name mgmt `
+    New-AzSubscriptionDeployment -Name mgmt `
                      -Location eastus `
-                     -TemplateUri "https://raw.githubusercontent.com/Azure/Azure-Lighthouse-samples/master/Azure-Delegated-Resource-Management/templates/policy-enforce-https-storage/enforceHttpsStorage.json" `
+                     -TemplateUri "https://raw.githubusercontent.com/Azure/Azure-Lighthouse-samples/master/templates/policy-enforce-https-storage/enforceHttpsStorage.json" `
                      -AsJob
 }
 ```
 
 ## <a name="validate-the-policy-deployment"></a>Проверка развертывания политики
 
-После развертывания шаблона Azure Resource Manager вы можете проверить, применено ли определение политики. Для этого попытайтесь создать учетную запись хранения, задав для параметра **EnableHttpsTrafficOnly** в одной из делегированных подписок значение **false**. Из-за назначения политики вы не сможете создать эту учетную запись хранения.  
+После развертывания шаблона Azure Resource Manager можно убедиться, что определение политики было успешно применено, пытаясь создать учетную запись хранения с параметром **enablehttpstrafficonly.** , имеющим значение **false** в одной из делегированных подписок. Из-за назначения политики вы не сможете создать эту учетную запись хранения.  
 
 ```powershell
 New-AzStorageAccount -ResourceGroupName (New-AzResourceGroup -name policy-test -Location eastus -Force).ResourceGroupName `
@@ -63,14 +63,14 @@ New-AzStorageAccount -ResourceGroupName (New-AzResourceGroup -name policy-test -
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-По завершении удалите определение и назначение политики, созданные при развертывании.
+По завершении удалите определение политики и назначение, созданные при развертывании.
 
 ```powershell
 foreach ($ManagedSub in $ManagedSubscriptions)
 {
     select-azsubscription -subscriptionId $ManagedSub.subscriptionId
 
-    Remove-AzDeployment -Name mgmt -AsJob
+    Remove-AzSubscriptionDeployment -Name mgmt -AsJob
 
     $Assignment = Get-AzPolicyAssignment | where-object {$_.Name -like "enforce-https-storage-assignment"}
 
@@ -88,7 +88,7 @@ foreach ($ManagedSub in $ManagedSubscriptions)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о службе [Политика Azure](../../governance/policy/index.yml).
 - Узнайте больше об [интерфейсах управления для различных клиентов](../concepts/cross-tenant-management-experience.md).

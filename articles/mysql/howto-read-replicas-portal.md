@@ -5,19 +5,19 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 56dc2df243c7ebc8e6aedf655795173c478ef99b
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: b7226e5ae8c468339e02dbe87e279266e4609da8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74762612"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80063477"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-portal"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью портала Azure
 
 В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MySQL" с помощью портал Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-portal.md), который будет использоваться в качестве главного сервера.
 
@@ -73,7 +73,7 @@ ms.locfileid: "74762612"
 
    ![База данных Azure для MySQL — выбор сервера, для которого нужно остановить репликацию](./media/howto-read-replica-portal/stop-replication-select.png)
 
-4. Щелкните **Остановить репликацию**.
+4. Выберите пункт " **отменить репликацию**".
 
    ![База данных Azure для MySQL — остановка репликации](./media/howto-read-replica-portal/stop-replication.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "74762612"
 
    ![База данных Azure для MySQL — выбор удаляемого сервера-реплики](./media/howto-read-replica-portal/delete-replica-select.png)
 
-4. Щелкните **Удалить реплику**.
+4. Выбор **удаления реплики**
 
    ![База данных Azure для MySQL — удаление реплики](./media/howto-read-replica-portal/delete-replica.png)
 
@@ -136,6 +136,6 @@ ms.locfileid: "74762612"
 
    ![Выбор диапазона времени](./media/howto-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о [репликах чтения](concepts-read-replicas.md)

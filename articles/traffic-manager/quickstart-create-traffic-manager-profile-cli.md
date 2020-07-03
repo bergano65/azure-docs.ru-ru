@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/29/2019
 ms.author: rohink
-ms.openlocfilehash: 36ad1c47e115f06aea2017a049cefe36304504bf
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: e19850243498fc24c9a726f4603590df15f3a046
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76934840"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79531521"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-for-a-highly-available-web-application-using-azure-cli"></a>Краткое руководство. Создание профиля диспетчера трафика для высокодоступного веб-приложения с помощью Azure CLI
 
@@ -88,6 +88,7 @@ az appservice plan create \
     --sku S1
 
 ```
+
 ### <a name="create-a-web-app-in-the-app-service-plan"></a>Создание веб-приложения в плане службы приложений
 С помощью команды [az webapp create](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) создайте два экземпляра веб-приложения в планах службы приложений в таких регионах Azure, как *восточная часть США* и *Западная Европа*.
 
@@ -127,6 +128,7 @@ az webapp show \
     --query id
 
 ```
+
 Запишите идентификатор, отображаемый в выходных данных, и используйте его в следующей команде, чтобы добавить конечную точку.
 
 ```azurecli-interactive
@@ -151,6 +153,7 @@ az webapp show \
     --query id
 
 ```
+
 Запишите идентификатор, отображаемый в выходных данных, и используйте его в следующей команде, чтобы добавить конечную точку.
 
 ```azurecli-interactive
@@ -212,7 +215,7 @@ az network traffic-manager profile show \
 
 Закончив работу, удалите группы ресурсов, веб-приложения и все связанные ресурсы с помощью команды [az group delete](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-delete).
 
-```azurepowershell-interactive
+```azurecli-interactive
 
 az group delete \
     --resource-group myResourceGroup

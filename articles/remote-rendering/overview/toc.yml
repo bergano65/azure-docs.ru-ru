@@ -1,0 +1,6 @@
+- name: Сведения об Удаленной отрисовке Azure
+  href: about.md
+- name: Требования к системе
+  href: system-requirements.md
+- name: Компоненты
+  href: features/toc.yml

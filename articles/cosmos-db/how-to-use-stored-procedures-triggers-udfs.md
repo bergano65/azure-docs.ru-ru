@@ -1,23 +1,23 @@
 ---
 title: Регистрация и использование хранимых процедур, триггеров и определяемых пользователем функций в Azure Cosmos DB SDK
 description: Узнайте, как зарегистрировать и вызывать хранимые процедуры, триггеры и определяемые пользователем функции с помощью пакетов SDK для Azure Cosmos DB
-author: markjbrown
+author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/17/2019
-ms.author: mjbrown
-ms.openlocfilehash: f914d4f61a746aa3c87ee2c67f096c01b75e378e
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.date: 05/07/2020
+ms.author: tisande
+ms.openlocfilehash: 2e870e6cbc16fd98d8fccb5bbe3ac5d8be634cf2
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719710"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982315"
 ---
 # <a name="how-to-register-and-use-stored-procedures-triggers-and-user-defined-functions-in-azure-cosmos-db"></a>Как зарегистрировать и использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB
 
-API SQL в Azure Cosmos DB поддерживает регистрацию и вызов хранимых процедур, триггеров и определяемых пользователем функций (UDF), написанных на языке JavaScript. Вы можете использовать SQL API [.NET](sql-api-sdk-dotnet.md), [.NET Core](sql-api-sdk-dotnet-core.md), [Java](sql-api-sdk-java.md), [JavaScript](sql-api-sdk-node.md), [Node.js](sql-api-sdk-node.md) или пакеты SDK для [Python](sql-api-sdk-python.md), чтобы регистрировать и вызывать хранимые процедуры. После определения одной или более хранимых процедур, триггеров и определяемых пользователем функций вы сможете загружать и просматривать их на [портале Azure](https://portal.azure.com/) с помощью обозревателя данных.
+API SQL в Azure Cosmos DB поддерживает регистрацию и вызов хранимых процедур, триггеров и определяемых пользователем функций (UDF), написанных на языке JavaScript. Вы можете использовать SQL API [.NET](sql-api-sdk-dotnet.md), [.NET Core](sql-api-sdk-dotnet-core.md), [Java](sql-api-sdk-java.md), [JavaScript](sql-api-sdk-node.md), [Node.js](sql-api-sdk-node.md) или пакеты SDK для [Python](sql-api-sdk-python.md), чтобы регистрировать и вызывать хранимые процедуры. После определения одной или нескольких хранимых процедур, триггеров и определяемых пользователем функций их можно загрузить и просмотреть в [портал Azure](https://portal.azure.com/) с помощью обозреватель данных.
 
-## <a id="stored-procedures"></a>Выполнение хранимых процедур
+## <a name="how-to-run-stored-procedures"></a><a id="stored-procedures"></a>Выполнение хранимых процедур
 
 Хранимые процедуры написаны с использованием JavaScript. Они могут создавать, обновлять, читать, запрашивать и удалять элементы в контейнере Azure Cosmos. Дополнительные сведения о том, как написать хранимую процедуру в Azure Cosmos DB см. в статье [Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-write-stored-procedures-triggers-udfs.md#stored-procedures).
 
@@ -73,15 +73,17 @@ StoredProcedureResponse storedProcedureResponse = await client.GetContainer("dat
 В следующем коде показано, как вызвать хранимую процедуру с помощью пакета SDK версии 3 для .NET:
 
 ```csharp
-dynamic newItem = new
+dynamic[] newItems = new dynamic[]
 {
-    category = "Personal",
-    name = "Groceries",
-    description = "Pick up strawberries",
-    isComplete = false
+    new {
+        category = "Personal",
+        name = "Groceries",
+        description = "Pick up strawberries",
+        isComplete = false
+    }
 };
 
-var result = await client.GetContainer("database", "container").Scripts.ExecuteStoredProcedureAsync<string>("spCreateToDoItem", new PartitionKey("Personal"), newItem);
+var result = await client.GetContainer("database", "container").Scripts.ExecuteStoredProcedureAsync<string>("spCreateToDoItem", new PartitionKey("Personal"), newItems);
 ```
 
 ### <a name="stored-procedures---java-sdk"></a>Хранимые процедуры — пакет SDK для Java
@@ -193,7 +195,7 @@ new_item = [{
 client.ExecuteStoredProcedure(sproc_link, new_item, {'partitionKey': 'Personal'}
 ```
 
-## <a id="pre-triggers"></a>Как выполнять предварительные триггеры
+## <a name="how-to-run-pre-triggers"></a><a id="pre-triggers"></a>Как выполнять предварительные триггеры
 
 В следующих примерах показано, как регистрировать и вызывать предварительный триггер с помощью пакетов SDK для Azure Cosmos DB. Используйте раздел [Пример предварительного триггера](how-to-write-stored-procedures-triggers-udfs.md#pre-triggers) как источник для этого предварительного триггера, который сохраняется как `trgPreValidateToDoItemTimestamp.js`.
 
@@ -351,7 +353,7 @@ client.CreateItem(container_link, item, {
                   'preTriggerInclude': 'trgPreValidateToDoItemTimestamp'})
 ```
 
-## <a id="post-triggers"></a>Как выполнять триггеры после операции
+## <a name="how-to-run-post-triggers"></a><a id="post-triggers"></a>Как выполнять триггеры после операции
 
 В следующих примерах показано, как регистрировать триггер после операции с помощью пакетов SDK для Azure Cosmos DB. Используйте раздел [Пример триггера после операции](how-to-write-stored-procedures-triggers-udfs.md#post-triggers) как источник для этого триггера после операции, который сохраняется как `trgPostUpdateMetadata.js`.
 
@@ -498,7 +500,7 @@ client.CreateItem(container_link, item, {
                   'postTriggerInclude': 'trgPostUpdateMetadata'})
 ```
 
-## <a id="udfs"></a>Работа с определяемыми пользователем функциями
+## <a name="how-to-work-with-user-defined-functions"></a><a id="udfs"></a>Работа с определяемыми пользователем функциями
 
 В следующих примерах показано, как зарегистрировать определяемую пользователем функцию с помощью пакетов SDK для Azure Cosmos DB. Используйте раздел [Пример определяемой пользователем функции](how-to-write-stored-procedures-triggers-udfs.md#udfs) как источник для этого триггера после операции, который сохраняется как `udfTax.js`.
 
@@ -642,7 +644,7 @@ results = list(client.QueryItems(
 
 Дополнительные сведения о том, как записать или использовать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB, см. в статьях ниже:
 
-- [Working with Azure Cosmos DB stored procedures, triggers, and user-defined functions](stored-procedures-triggers-udfs.md) (Работа с хранимыми процедурами, триггерами и определяемыми пользователем функциями в Azure Cosmos DB)
-- [Working with JavaScript language-integrated query API with Azure Cosmos DB](javascript-query-api.md) (Работа с API запросов на основе языка JavaScript в Azure Cosmos DB)
+- [Working with Azure Cosmos DB stored procedures, triggers, and user-defined functions (Работа с хранимыми процедурами, триггерами и определяемыми пользователем функциями в Azure Cosmos DB)](stored-procedures-triggers-udfs.md)
+- [API для выполнения запросов JavaScript в Azure Cosmos DB](javascript-query-api.md)
 - [Как писать хранимые процедуры, триггеры и определяемые пользователем функции в Azure Cosmos DB](how-to-write-stored-procedures-triggers-udfs.md)
-- [How to write stored procedures and triggers in Azure Cosmos DB by using the JavaScript query API](how-to-write-javascript-query-api.md) (Как записывать хранимые процедуры и триггеры с помощью API запросов JavaScript в Azure Cosmos DB)
+- [Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript](how-to-write-javascript-query-api.md)

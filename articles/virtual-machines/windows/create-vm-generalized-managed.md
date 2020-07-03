@@ -1,24 +1,18 @@
 ---
 title: Создание виртуальной машины из управляемого образа в Azure
-description: Создание виртуальной машины Windows из универсального управляемого образа с использованием Azure PowerShell или портала Azure в модели развертывания с помощью Resource Manager.
-services: virtual-machines-windows
-documentationcenter: ''
+description: Создайте виртуальную машину Windows из обобщенного управляемого образа с помощью Azure PowerShell или портала.
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: de59edc2e2c702993efd6187a590264d9aac16a7
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: b0c6689b66037067a4c5174738945b7c6fabd5b5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74841937"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82086323"
 ---
 # <a name="create-a-vm-from-a-managed-image"></a>Создание виртуальной машины из управляемого образа
 
@@ -64,6 +58,6 @@ New-AzVm `
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-[Руководство. Создание и администрирование виртуальных машин Windows с помощью Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+## <a name="next-steps"></a>Дальнейшие шаги
+[Создание виртуальных машин Windows и управление ими с помощью модуля Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 

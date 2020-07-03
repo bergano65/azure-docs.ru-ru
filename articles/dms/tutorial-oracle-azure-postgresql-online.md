@@ -13,17 +13,17 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/24/2020
 ms.openlocfilehash: 956523e2b51795a4bc97c653dab8b408b06061f4
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759915"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78255567"
 ---
 # <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Руководство. Миграция Oracle в базу данных Azure для PostgreSQL через Интернет с помощью DMS (Предварительная версия)
 
 Службу Azure Database Migration Service можно использовать для переноса баз данных Oracle из локальной среды или виртуальных машин в [Базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/) с минимальным временем простоя. Другими словами, миграцию можно завершить с минимальным временем простоя для приложения. В этом руководстве выполняется перенос примера базы данных **отдела кадров** из экземпляра Oracle 11g, размещенного в локальной среде или на виртуальной машине, в Базу данных Azure для PostgreSQL с помощью операции сетевого переноса в Azure Database Migration Service.
 
-В этом учебнике описаны следующие действия.
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 >
 > * оценка мероприятий по миграции с помощью средства ora2pg;
@@ -43,7 +43,7 @@ ms.locfileid: "76759915"
 
 В этой статье описывается выполнение сетевого переноса из Oracle в Базу данных Azure для PostgreSQL.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -120,7 +120,7 @@ ms.locfileid: "76759915"
 
   * Включите дополнительное ведение журнала для репликации, выполнив любую из следующих процедур.
 
-    * **Вариант 1**.
+    * **Вариант 1**.
       Измените уровень дополнительного ведения журнала для базы данных, чтобы охватить все таблицы с первичными ключами и уникальными индексами. Запрос обнаружения будет возвращать ответ `'IMPLICIT'`.
 
       ```
@@ -133,7 +133,7 @@ ms.locfileid: "76759915"
       ALTER TABLE [TABLENAME] ADD SUPPLEMENTAL LOG DATA (ALL) COLUMNS;
       ```
 
-    * **Вариант 2**.
+    * **Вариант 2**.
       Измените уровень дополнительного ведения журнала для базы данных, чтобы охватить все таблицы, и запрос обнаружения возвратит ответ `'YES'`.
 
       ```
@@ -186,7 +186,7 @@ ms.locfileid: "76759915"
 psql -f [FILENAME] -h [AzurePostgreConnection] -p 5432 -U [AzurePostgreUser] -d database 
 ```
 
-Пример.
+Пример:
 
 ```
 psql -f %namespace%\schema\sequences\sequence.sql -h server1-server.postgres.database.azure.com -p 5432 -U username@server1-server -d database
@@ -221,7 +221,7 @@ Azure Database Migration Service также может создать схему
     ![Отображение подписок на портале](media/tutorial-oracle-azure-postgresql-online/dms-migration-settings.png)
 
 > [!NOTE]
-> Если необходимо сопоставлять имена исходных таблиц с таблицами с разными именами, напишите по адресу [dmsfeedback@microsoft.com](mailto:dmsfeedbac@microsoft.com) и мы можем предоставить скрипт для автоматизации процесса.
+> Если необходимо сопоставлять имена исходных таблиц с таблицами с разными именами, электронной почтой [dmsfeedback@microsoft.com](mailto:dmsfeedbac@microsoft.com) , и мы можем предоставить скрипт для автоматизации процесса.
 
 ### <a name="when-the-postgresql-table-schema-doesnt-exist"></a>Если схема таблицы PostgreSQL не существует
 
@@ -231,7 +231,7 @@ Azure Database Migration Service также может создать схему
 > [!IMPORTANT]
 > Azure Database Migration Service требует, чтобы все таблицы создавались одинаково, используя Azure Database Migration Service или такое средство, как ora2pg, но не оба.
 
-Чтобы приступить к работе, сделайте следующее:
+Чтобы начать работу:
 
 1. Создайте схему в целевой базе данных в соответствии с требованиями приложения. По умолчанию имена схемы и столбцов таблицы PostgreSQL написаны в нижнем регистре. С другой стороны, названия схемы и столбцов таблицы Oracle по умолчанию записаны в верхнем регистре.
 2. На шаге выбора схем укажите целевую базу данных и целевую схему.
@@ -239,17 +239,17 @@ Azure Database Migration Service также может создать схему
 
     Если имя схемы в источнике Oracle совпадает с именем в Базе данных Azure для PostgreSQL, то Azure Database Migration Service *создает схему таблицы, используя тот же регистр, что и в целевом объекте*.
 
-    Пример.
+    Пример:
 
     | Исходная схема Oracle | Целевая PostgreSQL Database.Schema | schema.table.column, созданная DMS |
     | ------------- | ------------- | ------------- |
-    | Управление персоналом | targetHR.public | public.countries.country_id |
-    | Управление персоналом | targetHR.trgthr | trgthr.countries.country_id |
-    | Управление персоналом | targetHR.TARGETHR | "TARGETHR"."COUNTRIES"."COUNTRY_ID" |
-    | Управление персоналом | targetHR.HR | "HR"."COUNTRIES"."COUNTRY_ID" |
-    | Управление персоналом | targetHR.Hr | *Невозможно сопоставить смешанные регистры |
+    | HR | targetHR.public | public.countries.country_id |
+    | HR | targetHR.trgthr | trgthr.countries.country_id |
+    | HR | targetHR.TARGETHR | "TARGETHR"."COUNTRIES"."COUNTRY_ID" |
+    | HR | targetHR.HR | "HR"."COUNTRIES"."COUNTRY_ID" |
+    | HR | targetHR.Hr | *Невозможно сопоставить смешанные регистры |
 
-    *Чтобы создать схему со смешанными регистрами и имена таблиц в целевом PostgreSQL, свяжитесь с нами по адресу [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com). Мы можем предоставить скрипт для настройки схемы таблицы со смешанными регистрами в целевой базе данных PostgreSQL.
+    * Чтобы создать смешанную схему Case и имена таблиц в целевом PostgreSQL [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com), обратитесь к. Мы можем предоставить скрипт для настройки схемы таблицы со смешанными регистрами в целевой базе данных PostgreSQL.
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 
@@ -261,7 +261,7 @@ Azure Database Migration Service также может создать схему
 
     ![Отображение поставщиков ресурсов](media/tutorial-oracle-azure-postgresql-online/portal-select-resource-provider.png)
 
-3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-oracle-azure-postgresql-online/portal-register-resource-provider.png)
 
@@ -285,7 +285,7 @@ Azure Database Migration Service также может создать схему
 
 5. Выберите ценовую категорию.
 
-    Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
+    Дополнительные сведения о затратах и ценовых категориях см. на [странице с ценами](https://aka.ms/dms-pricing).
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-oracle-azure-postgresql-online/dms-settings5.png)
 
@@ -305,7 +305,7 @@ Azure Database Migration Service также может создать схему
 
 3. Выберите **+ Новый проект миграции**.
 4. На экране **Новый проект миграции** задайте имя проекта, в текстовом поле **Тип исходного сервера** выберите **Oracle**, а в текстовом поле **Тип целевого сервера** — **База данных Azure для PostgreSQL**.
-5. В разделе **Выберите тип действия** выберите **Миграция данных по сети**.
+5. В разделе **Выбор типа действия** выберите **Перенос данных в сети**.
 
    ![Создание проекта Database Migration Service](media/tutorial-oracle-azure-postgresql-online/dms-create-project5.png)
 
@@ -359,7 +359,7 @@ Azure Database Migration Service также может создать схему
 
      ![Состояние действия "Выполняется"](media/tutorial-oracle-azure-postgresql-online/dms-activity-running.png)
 
-2. В столбце **Имя базы данных** выберите базу данных, чтобы получить состояние миграции для операций **полной загрузки данных** и **добавочной синхронизации данных**.
+2. В разделе **имя базы данных**выберите конкретную базу данных, чтобы перейти к состоянию миграции для **полной загрузки данных** и **добавочных операций синхронизации данных** .
 
     В разделе полной загрузки данных отображается состояние начальной загрузки, а в разделе добавочной синхронизации данных — состояние отслеживания измененных данных (CDC).
 
@@ -383,7 +383,7 @@ Azure Database Migration Service также может создать схему
  > [!NOTE]
  > Так как PostgreSQL по умолчанию хранит schema.table.column в нижнем регистре, преобразуйте имена из верхнего в нижний регистр с помощью скрипта из раздела **Настройка схемы в Базе данных Azure для PostgreSQL** выше в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об известных проблемах, ограничениях при выполнении сетевой миграции в Базу данных Azure для PostgreSQL см. в [этой](known-issues-azure-postgresql-online.md) статье.
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).

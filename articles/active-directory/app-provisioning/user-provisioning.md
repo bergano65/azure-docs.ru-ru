@@ -1,28 +1,24 @@
 ---
-title: Автоматическая подготовка пользователей для приложения SaaS в Azure AD | Документы Майкрософт
+title: Автоматическая подготовка пользователей приложения SaaS в Azure AD
 description: Общие сведения об использовании Azure AD для автоматической подготовки, отзыва и постоянного обновления учетных записей пользователей в нескольких приложениях SaaS сторонних разработчиков.
 services: active-directory
-documentationcenter: ''
 author: msmimart
 manager: CelesteDG
 ms.service: active-directory
-ms.subservice: app-mgmt
-ms.devlang: na
+ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/25/2019
 ms.author: mimart
-ms.reviewer: arvinh
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf2d061d830df9cef305982ff54e91a886d4406d
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.reviewer: arvinh, celested
+ms.openlocfilehash: 1e72d885858b543999090a4a0521845d556802fd
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066087"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593120"
 ---
-# <a name="automate-user-provisioning-and-deprovisioning-to-applications-with-azure-active-directory"></a>Автоматизируйте подготовку пользователей и отменяйте подготовку приложений с помощью Azure Active Directory
+# <a name="automate-user-provisioning-and-deprovisioning-to-applications-with-azure-ad"></a>Автоматизация подготовки пользователей и ее отмены в приложениях с помощью Azure AD
 
 В Azure Active Directory (Azure AD) термин " **Подготовка приложения** " означает автоматическое создание удостоверений пользователей и ролей в облачных приложениях ([SaaS](https://azure.microsoft.com/overview/what-is-saas/)), к которым пользователям требуется доступ. Кроме создания удостоверений пользователей, автоматическая подготовка включает в себя обслуживание и удаление удостоверений пользователей по мере изменения их статуса или ролей. Типичные сценарии включают подготовку пользователя Azure AD к таким приложениям, как [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md), [Salesforce](../saas-apps/salesforce-provisioning-tutorial.md), [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), и других.
 
@@ -59,7 +55,7 @@ ms.locfileid: "77066087"
 
 В Azure AD реализована предварительно интегрированная поддержка многих популярных приложений SaaS и систем отдела кадров, а также общая поддержка приложений, которые реализуют определенные части [стандарта SCIM 2,0](https://techcommunity.microsoft.com/t5/Identity-Standards-Blog/Provisioning-with-SCIM-getting-started/ba-p/880010).
 
-* **Предварительно интегрированные приложения (приложения SaaS в коллекции)** . Все приложения, для которых Azure AD поддерживает предварительно интегрированный соединитель подготовки, можно найти в [списке руководств по приложениям для подготовки пользователей](../saas-apps/tutorial-list.md). Предварительно интегрированные приложения, перечисленные в галерее, обычно используют API-интерфейсы управления пользователями на основе SCIM 2,0 для подготовки. 
+* **Предварительно интегрированные приложения (приложения SaaS в коллекции)**. Все приложения, для которых Azure AD поддерживает предварительно интегрированный соединитель подготовки, можно найти в [списке руководств по приложениям для подготовки пользователей](../saas-apps/tutorial-list.md). Предварительно интегрированные приложения, перечисленные в галерее, обычно используют API-интерфейсы управления пользователями на основе SCIM 2,0 для подготовки. 
 
    ![Логотип Salesforce](./media/user-provisioning/gallery-app-logos.png)
 
@@ -73,7 +69,7 @@ ms.locfileid: "77066087"
 
 Для решения этих проблем спецификация SCIM предоставляет общую схему пользователя, помогающую пользователям переходить к приложениям, выходить из них и вокруг них. SCIM становится стандартом де-факто для подготовки и, при использовании в сочетании с стандартами Федерации, такими как SAML или OpenID Connect Connect, предоставляет администраторам комплексное решение для управления доступом на основе стандартов.
 
-Подробное руководство по использованию SCIM для автоматизации подготовки и отмены инициализации пользователей и групп в приложении см. в разделе [Создание конечной точки scim и Настройка подготовки пользователей](use-scim-to-provision-users-and-groups.md).
+Подробное руководство по разработке конечной точки SCIM для автоматизации подготовки и деподготовки пользователей и групп для приложения см. в разделе [Создание конечной точки scim и Настройка подготовки пользователей](use-scim-to-provision-users-and-groups.md). Для предварительно интегрированных приложений в коллекции (временной резерв, Azure Databricks, снежинки и т. д.) вы можете пропустить документацию для разработчиков и использовать приведенные [здесь](../saas-apps/tutorial-list.md)учебники.
 
 ## <a name="manual-vs-automatic-provisioning"></a>Сравнение подготовки вручную и автоматической подготовки
 
@@ -98,9 +94,9 @@ ms.locfileid: "77066087"
 Для других приложений, поддерживающих SCIM 2,0, выполните действия, описанные в статье [Создание конечной точки scim и Настройка подготовки пользователей](use-scim-to-provision-users-and-groups.md).
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
-- [Список руководств по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md)
+- [Список руководств по интеграции приложений SaaS](../saas-apps/tutorial-list.md)
 - [Настройка сопоставлений атрибутов для подготовки пользователей](customize-application-attributes.md)
 - [Написание выражений для сопоставлений атрибутов](../app-provisioning/functions-for-customizing-application-data.md)
 - [Фильтры области для подготовки пользователей](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)

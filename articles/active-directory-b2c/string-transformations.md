@@ -3,20 +3,20 @@ title: Примеры преобразования строковых утвер
 titleSuffix: Azure AD B2C
 description: Примеры преобразования строковых утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/05/2020
-ms.author: marsma
+ms.date: 04/21/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 69091fbcc2b6789abc7825632a56197427d34e4c
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: f08107874598a68fb5ce2a1a8a98b6a81d7b94d4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77045347"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81756791"
 ---
 # <a name="string-claims-transformations"></a>Преобразования утверждений строк
 
@@ -34,7 +34,8 @@ ms.locfileid: "77045347"
 | InputClaim | inputClaim2 | строка | Тип второго утверждения, которое необходимо сравнить. |
 | InputParameter | stringComparison | строка | сравнение строк, одно из значений: Ordinal, OrdinalIgnoreCase. |
 
-Преобразование строк **AssertStringClaimsAreEqual** всегда выполняется из [технического профиля проверки](validation-technical-profile.md), вызываемого с помощью [самоподтвержденного технического профиля](self-asserted-technical-profile.md). Метаданные самоподтвержденного технического профиля **UserMessageIfClaimsTransformationStringsAreNotEqual** управляют сообщением об ошибке, представляемым пользователю.
+Преобразование « **ассертстрингклаимсарикуал** Claims» всегда выполняется из [технического профиля проверки](validation-technical-profile.md) , который вызывается [самостоятельно подтвержденным техническим профилем](self-asserted-technical-profile.md)или [дисплайконртол](display-controls.md). `UserMessageIfClaimsTransformationStringsAreNotEqual` Метаданные самостоятельно утвержденного технического профиля позволяют управлять сообщением об ошибке, отображаемым пользователю. Сообщения об ошибках можно [локализовать](localization-string-ids.md#claims-transformations-error-messages).
+
 
 ![Выполнение AssertStringClaimsAreEqual](./media/string-transformations/assert-execution.png)
 
@@ -79,8 +80,8 @@ ms.locfileid: "77045347"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputClaim1**: someone@contoso.com.
-  - **inputClaim2**: someone@outlook.com.
+  - **inputClaim1**:someone@contoso.com
+  - **inputClaim2**:someone@outlook.com
 - Входные параметры:
   - **stringComparison**: ordinalIgnoreCase.
 - Результат: возникла ошибка.
@@ -114,19 +115,19 @@ ms.locfileid: "77045347"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **email**: SomeOne@contoso.com.
+  - **Электронная почта**:SomeOne@contoso.com
 - Входные параметры:
     - **toCase**: LOWER.
 - Исходящие утверждения:
-  - **email**: someone@contoso.com.
+  - **Электронная почта**:someone@contoso.com
 
 ## <a name="createstringclaim"></a>CreateStringClaim
 
-Создает строковое утверждение на основе предоставленного входного параметра в политике.
+Создает строковое утверждение из предоставленного входного параметра в преобразовании.
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 |----- | ----------------------- | --------- | ----- |
-| InputParameter | value | строка | Строка, которую необходимо задать |
+| InputParameter | value | строка | Строка, которую необходимо задать. Этот входной параметр поддерживает [выражения преобразования строковых утверждений](string-transformations.md#string-claim-transformations-expressions). |
 | outputClaim | createdClaim | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением, указанным во входном параметре. |
 
 Это преобразование утверждения позволяет задать строковое значение параметра ClaimType.
@@ -182,11 +183,11 @@ ms.locfileid: "77045347"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputClaim1**: someone@contoso.com.
-  - **inputClaim2**: someone@outlook.com.
+  - **inputClaim1**:someone@contoso.com
+  - **inputClaim2**:someone@outlook.com
 - Входные параметры:
     - **operator**: NOT EQUAL.
-    - **ignoreCase**: true.
+    - **ignoreCase**: true
 - Исходящие утверждения:
     - **outputClaim**: true.
 
@@ -296,7 +297,7 @@ ms.locfileid: "77045347"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim |строка |Элемент ClaimType, который выступает в качестве параметра {0} формата строки. |
-| InputParameter | stringFormat | строка | Формат строки, включая параметр {0}. |
+| InputParameter | stringFormat | строка | Формат строки, включая параметр {0}. Этот входной параметр поддерживает [выражения преобразования строковых утверждений](string-transformations.md#string-claim-transformations-expressions).  |
 | outputClaim | outputClaim | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
 Используйте это преобразование утверждений для форматирования любой строки с одним параметром {0}. В следующем примере создается **userPrincipalName**. Технические профили всех поставщиков удостоверений в социальных сетях, такие как `Facebook-OAUTH`, вызывают **CreateUserPrincipalName** для создания **userPrincipalName**.
@@ -322,7 +323,7 @@ ms.locfileid: "77045347"
 - Входные параметры:
     - **stringFormat**: cpim_{0}@{ИД клиента проверяющей стороны}.
 - Исходящие утверждения:
-  - **outputClaim**: cpim_5164db16-3eee-4629-bfda-dcc3326790e9@b2cdemo.onmicrosoft.com.
+  - **outputClaim**:cpim_5164db16-3eee-4629-bfda-dcc3326790e9@b2cdemo.onmicrosoft.com
 
 ## <a name="formatstringmultipleclaims"></a>FormatStringMultipleClaims
 
@@ -332,7 +333,7 @@ ms.locfileid: "77045347"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim |строка | Элемент ClaimType, который выступает в качестве параметра {0} формата строки. |
 | InputClaim | InputClaim | строка | Элемент ClaimType, который выступает в качестве параметра {1} формата строки. |
-| InputParameter | stringFormat | строка | Формат строки, включая параметры {0} и {1}. |
+| InputParameter | stringFormat | строка | Формат строки, включая параметры {0} и {1}. Этот входной параметр поддерживает [выражения преобразования строковых утверждений](string-transformations.md#string-claim-transformations-expressions).   |
 | outputClaim | outputClaim | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
 Используйте это преобразование утверждений для форматирования любой строки с двумя параметрами: {0} и {1}. В следующем примере создается **displayName** с указанным форматом:
@@ -358,11 +359,11 @@ ms.locfileid: "77045347"
     - **inputClaim1**: Joe.
     - **inputClaim2**: Fernando.
 - Входные параметры:
-    - **StringFormat**: {0} {1}
+    - **StringFormat**: {0}{1}
 - Исходящие утверждения:
     - **outputClaim**: Joe Fernando.
 
-## <a name="getlocalizedstringstransformation"></a>жетлокализедстрингстрансформатион 
+## <a name="getlocalizedstringstransformation"></a>жетлокализедстрингстрансформатион
 
 Копирует локализованные строки в утверждения.
 
@@ -373,9 +374,9 @@ ms.locfileid: "77045347"
 Чтобы использовать преобразование Жетлокализедстрингстрансформатион Claims, выполните следующие действия.
 
 1. Определите [строку локализации](localization.md) и свяжите ее с [самостоятельно утвержденным-техническим профилем](self-asserted-technical-profile.md).
-1. `ElementType` элемента `LocalizedString` должен иметь значение `GetLocalizedStringsTransformationClaimType`.
-1. `StringId` — это уникальный идентификатор, который вы определяете и используете позже в преобразовании утверждений.
-1. В преобразовании «утверждения» укажите список заявок, которые должны быть заданы в локализованной строке. `ClaimTypeReferenceId` — это ссылка на множество, уже определенное в разделе ClaimsSchema политики. `TransformationClaimType` — это имя локализованной строки, как определено в `StringId` элемента `LocalizedString`.
+1. Элементу должно быть присвоено значение `GetLocalizedStringsTransformationClaimType` `ElementType` `LocalizedString`
+1. `StringId` — Это уникальный идентификатор, который вы определяете и используете позже в преобразовании утверждений.
+1. В преобразовании «утверждения» укажите список заявок, которые должны быть заданы в локализованной строке. `ClaimTypeReferenceId` — Это ссылка на множество, уже определенное в разделе ClaimsSchema политики. `TransformationClaimType` — Это имя локализованной строки, как определено в `StringId` `LocalizedString` элементе.
 1. В [самостоятельно подтвержденном техническом профиле](self-asserted-technical-profile.md)или преобразовании "входные или выходные утверждения" [элемента управления](display-controls.md) сделайте ссылку на преобразование утверждений.
 
 ![жетлокализедстрингстрансформатион](./media/string-transformations/get-localized-strings-transformation.png)
@@ -427,9 +428,9 @@ ms.locfileid: "77045347"
 
 - Исходящие утверждения:
   - **Тема**: код проверки электронной почты учетной записи contoso
-  - **сообщение**: Спасибо за проверку вашей учетной записи! 
-  - **кодеинтро**: ваш код 
-  - **подпись**: с уважением  
+  - **сообщение**: Спасибо за проверку вашей учетной записи!
+  - **кодеинтро**: ваш код
+  - **подпись**: с уважением
 
 
 ## <a name="getmappedvaluefromlocalizedcollection"></a>GetMappedValueFromLocalizedCollection
@@ -517,15 +518,51 @@ ms.locfileid: "77045347"
 - Исходящие утверждения:
     - **outputClaim**: c7026f88-4299-4cdb-965d-3f166464b8a9.
 
+Если `errorOnFailedLookup` параметру input присвоено значение `true`, преобразование утверждений **LookupValue** всегда выполняется из [технического профиля проверки](validation-technical-profile.md) , который вызывается [самостоятельно подтвержденным техническим профилем](self-asserted-technical-profile.md)или [дисплайконртол](display-controls.md). `LookupNotFound` Метаданные самостоятельно утвержденного технического профиля позволяют управлять сообщением об ошибке, отображаемым пользователю.
+
+![Выполнение AssertStringClaimsAreEqual](./media/string-transformations/assert-execution.png)
+
+В следующем примере выполняется поиск доменного имени в одной из коллекций inputParameters. Преобразование «утверждения» ищет доменное имя в идентификаторе и возвращает его значение (идентификатор приложения) или создает сообщение об ошибке.
+
+```XML
+ <ClaimsTransformation Id="DomainToClientId" TransformationMethod="LookupValue">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="domainName" TransformationClaimType="inputParameterId" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="contoso.com" DataType="string" Value="13c15f79-8fb1-4e29-a6c9-be0d36ff19f1" />
+    <InputParameter Id="microsoft.com" DataType="string" Value="0213308f-17cb-4398-b97e-01da7bd4804e" />
+    <InputParameter Id="test.com" DataType="string" Value="c7026f88-4299-4cdb-965d-3f166464b8a9" />
+    <InputParameter Id="errorOnFailedLookup" DataType="boolean" Value="true" />
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="domainAppId" TransformationClaimType="outputClaim" />
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+### <a name="example"></a>Пример
+
+- Входящие утверждения:
+    - **инпутпараметерид**: Live.com
+- Входные параметры:
+    - **contoso.com**: 13c15f79-8fb1-4e29-a6c9-be0d36ff19f1.
+    - **microsoft.com**: 0213308f-17cb-4398-b97e-01da7bd4804e.
+    - **test.com**: c7026f88-4299-4cdb-965d-3f166464b8a9.
+    - **ерроронфаиледлукуп**: true
+- Ошибка:
+    - Не найдено совпадений для значения входного утверждения в списке идентификаторов входных параметров, а Ерроронфаиледлукуп имеет значение true.
+
+
 ## <a name="nullclaim"></a>NullClaim
 
 Удаление значения данного утверждения.
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| outputClaim | claim_to_null | строка | Устанавливает для утверждения значение NULL. |
+| outputClaim | claim_to_null | строка | Для утверждения задано значение NULL. |
 
-Это преобразование утверждений используется для удаления ненужных данных из контейнера свойств утверждения. Таким образом файл cookie сеанса будет меньшего размера. В следующем примере удаляется значение типа утверждения `TermsOfService`.
+Используйте это преобразование утверждений, чтобы удалить ненужные данные из контейнера свойств утверждений, чтобы размер файла cookie сеанса был меньше. В следующем примере удаляется значение типа утверждения `TermsOfService`.
 
 ```XML
 <ClaimsTransformation Id="SetTOSToNull" TransformationMethod="NullClaim">
@@ -565,26 +602,30 @@ ms.locfileid: "77045347"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **EmailAddress**: joe@outlook.com.
+  - **EmailAddress**:joe@outlook.com
 - Исходящие утверждения:
     - **domain**: outlook.com.
 
 ## <a name="setclaimsifregexmatch"></a>сетклаимсифрежексматч
 
-Проверяет, равны ли строковые утверждения `claimToMatch` и `matchTo` входной параметр, и устанавливает выходные утверждения со значением, присутствующим в `outputClaimIfMatched` входном параметре, вместе с утверждением результата сравнения результатов, которое устанавливается как `true` или `false` в зависимости от результата сравнения.
+Проверяет, равны ли `claimToMatch` строковые `matchTo` утверждения и входные параметры, и устанавливает выходные утверждения со значением, присутствующим `outputClaimIfMatched` во входном параметре, а также с исходящий результат сравнения результатов, который `true` должен `false` быть установлен в качестве или в зависимости от результата сравнения.
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | claimToMatch | строка | Тип утверждения, которое необходимо сравнить. |
 | InputParameter | matchTo | строка | Регулярное выражение для сопоставления. |
 | InputParameter | outputClaimIfMatched | строка | Значение, которое необходимо задать, если строки равны. |
+| InputParameter | екстрактграупс | Логическое | Используемых Указывает, должно ли соответствие регулярного выражения извлекать значения групп. Возможные значения: `true`или `false` (по умолчанию). | 
 | outputClaim | outputClaim | строка | Если регулярное выражение совпадает, это выходное утверждение содержит значение `outputClaimIfMatched` входного параметра. Или null, если совпадений нет. |
-| outputClaim | режекскомпарересултклаим | Логическое | Тип исходящего утверждения результата сопоставления регулярных выражений, который должен быть установлен в качестве `true` или `false` в зависимости от результата сопоставления. |
+| outputClaim | режекскомпарересултклаим | Логическое | Тип исходящего утверждения результата сопоставления регулярных выражений, который должен быть установлен как `true` или `false` на основе результата сопоставления. |
+| outputClaim| Имя утверждения| строка | Если входной параметр Екстрактграупс имеет значение true, список типов утверждений, созданных после вызова этого преобразования утверждений. Имя набора данных должно соответствовать имени группы регулярного выражения. | 
 
-Например, проверяет, является ли указанный номер телефона допустимым, основываясь на шаблоне регулярного выражения номера телефона.  
+### <a name="example-1"></a>Пример 1
+
+Проверяет, является ли указанный номер телефона допустимым, на основе шаблона регулярного выражения номера телефона.
 
 ```XML
-<ClaimsTransformation Id="SetIsPhoneRegex" TransformationMethod="setClaimsIfRegexMatch">
+<ClaimsTransformation Id="SetIsPhoneRegex" TransformationMethod="SetClaimsIfRegexMatch">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="phone" TransformationClaimType="claimToMatch" />
   </InputClaims>
@@ -599,8 +640,6 @@ ms.locfileid: "77045347"
 </ClaimsTransformation>
 ```
 
-### <a name="example"></a>Пример
-
 - Входящие утверждения:
     - **клаимтоматч**: "64854114520"
 - Входные параметры:
@@ -610,6 +649,39 @@ ms.locfileid: "77045347"
     - **outputClaim**: "Телефон"
     - **режекскомпарересултклаим**: true
 
+### <a name="example-2"></a>Пример 2
+
+Проверяет, является ли указанный адрес электронной почты допустимым, и возвращает псевдоним электронной почты.
+
+```XML
+<ClaimsTransformation Id="GetAliasFromEmail" TransformationMethod="SetClaimsIfRegexMatch">
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="claimToMatch" />
+  </InputClaims>
+  <InputParameters>
+    <InputParameter Id="matchTo" DataType="string" Value="(?&lt;mailAlias&gt;.*)@(.*)$" />
+    <InputParameter Id="outputClaimIfMatched" DataType="string" Value="isEmail" />
+    <InputParameter Id="extractGroups" DataType="boolean" Value="true" />
+  </InputParameters>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="validationResult" TransformationClaimType="outputClaim" />
+    <OutputClaim ClaimTypeReferenceId="isEmailString" TransformationClaimType="regexCompareResultClaim" />
+    <OutputClaim ClaimTypeReferenceId="mailAlias" />
+  </OutputClaims>
+</ClaimsTransformation>
+```
+
+- Входящие утверждения:
+    - **клаимтоматч**: "emily@contoso.com"
+- Входные параметры:
+    - **матчто**:`(?&lt;mailAlias&gt;.*)@(.*)$`
+    - **аутпутклаимифматчед**: "по электронной почте"
+    - **екстрактграупс**: true
+- Исходящие утверждения:
+    - **outputClaim**: "по электронной почте"
+    - **режекскомпарересултклаим**: true
+    - **маилалиас**: Эмили
+    
 ## <a name="setclaimsifstringsareequal"></a>SetClaimsIfStringsAreEqual
 
 Проверяет, равны ли строка утверждения и входной параметр `matchTo`, и задает для исходящих утверждений значение, указанное во входных параметрах `stringMatchMsg` и `stringMatchMsgCode`, а также задает для исходящего утверждения результата сравнения значение `true` или `false` в зависимости от результата сравнения.
@@ -651,7 +723,7 @@ ms.locfileid: "77045347"
     - **inputClaim**: v1.
 - Входные параметры:
     - **matchTo**: V1.
-    - **stringComparison**: ordinalIgnoreCase.
+    - **stringComparison**: ordinalIgnoreCase
     - **stringMatchMsg**: B2C_V1_90005.
     - **stringMatchMsgCode**: "TOS обновлено до версии 2".
 - Исходящие утверждения:
@@ -697,7 +769,7 @@ ms.locfileid: "77045347"
     - **claimToMatch**: Minor.
 - Входные параметры:
     - **matchTo**: Minor.
-    - **stringComparison**: ordinalIgnoreCase.
+    - **stringComparison**: ordinalIgnoreCase
     - **outputClaimIfMatched**:  B2C_V1_90001.
 - Исходящие утверждения:
     - **isMinorResponseCode**: B2C_V1_90001.
@@ -706,7 +778,7 @@ ms.locfileid: "77045347"
 
 ## <a name="stringcontains"></a>StringContains;
 
-Определить, находится ли заданная подстрока во входном утверждении. Результатом является новый логический параметр ClaimType со значением `true` или `false`. `true`, если параметр value встречается в этой строке, в противном случае — `false`.
+Определить, находится ли заданная подстрока во входном утверждении. Результатом является новый логический параметр ClaimType со значением `true` или `false`. `true`значение, если параметр value встречается в этой строке, `false`в противном случае —.
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
@@ -715,10 +787,10 @@ ms.locfileid: "77045347"
 |InputParameter|ignoreCase|строка|Указывает, должно ли это сравнение учитывать регистр сравниваемой строки.|
 | outputClaim | outputClaim | строка | ClaimType, который создается после вызова ClaimsTransformation. Логический индикатор, если подстрока встречается во входном утверждении. |
 
-Используйте это преобразование утверждений, чтобы проверить, содержит ли строковый тип утверждения подстроку. В следующем примере проверяется, содержит ли тип `roles` строкового утверждения значение **Admin**.
+Используйте это преобразование утверждений, чтобы проверить, содержит ли строковый тип утверждения подстроку. В `roles` следующем примере проверяется, содержит ли строковый тип утверждения значение **Admin**.
 
 ```XML
-<ClaimsTransformation Id="CheckIsAdmin" TransformationMethod="StringContains"> 
+<ClaimsTransformation Id="CheckIsAdmin" TransformationMethod="StringContains">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="roles" TransformationClaimType="inputClaim"/>
   </InputClaims>
@@ -728,7 +800,7 @@ ms.locfileid: "77045347"
   </InputParameters>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="isAdmin" TransformationClaimType="outputClaim"/>
-  </OutputClaims>         
+  </OutputClaims>
 </ClaimsTransformation>
 ```
 
@@ -738,9 +810,9 @@ ms.locfileid: "77045347"
     - **inputClaim**: "Администратор, утверждающий, редактор"
 - Входные параметры:
     - **содержит**: "admin".
-    - **ignoreCase**: true.
+    - **ignoreCase**: true
 - Исходящие утверждения:
-    - **outputClaim**: true. 
+    - **outputClaim**: true.
 
 ## <a name="stringsubstring"></a>стрингсубстринг
 
@@ -749,11 +821,11 @@ ms.locfileid: "77045347"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | строка | Тип утверждения, который содержит строку. |
-| InputParameter | startIndex | INT | Отсчитываемый от нуля начальный символ подстроки в данном экземпляре. |
+| InputParameter | startIndex | INT | Отсчитываемая от нуля позиция первого знака подстроки в данном экземпляре. |
 | InputParameter | length | INT | Число символов в подстроке. |
 | outputClaim | outputClaim | Логическое | Строка, эквивалентная подстроке length, которая начинается с startIndex в данном экземпляре, или значение Empty, если startIndex равен длине данного экземпляра, а длина равна нулю. |
 
-Например, получите префикс страны для номера телефона.  
+Например, получите префикс страны для номера телефона.
 
 
 ```XML
@@ -788,10 +860,10 @@ ms.locfileid: "77045347"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | строка | Тип утверждения, который содержит строку. |
 | InputParameter | старое_значение | строка | Искомая строка. |
-| InputParameter | newValue | строка | Строка для замены всех вхождений `oldValue` |
+| InputParameter | newValue | строка | Строка для замены всех вхождений`oldValue` |
 | outputClaim | outputClaim | Логическое | Строка, эквивалентная текущей строке за исключением того, что все экземпляры oldValue заменяются на newValue. Если значение oldValue не найдено в текущем экземпляре, метод возвращает текущий экземпляр без изменений. |
 
-Например, нормализация номера телефона путем удаления `-` символов  
+Например, нормализация номера телефона путем удаления `-` символов
 
 
 ```XML
@@ -824,11 +896,11 @@ ms.locfileid: "77045347"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim | stringCollection | Коллекция, содержащая строки для сцепления. |
+| InputClaim | InputClaim | stringCollection | Коллекция, содержащая сцепляемые строки. |
 | InputParameter | разделитель | строка | Строка, используемая в качестве разделителя, например запятая `,`. |
-| outputClaim | outputClaim | строка | Строка, состоящая из элементов коллекции строк `inputClaim`, разделенных входным параметром `delimiter`. |
-  
-Следующий пример принимает коллекцию строк для ролей пользователей и преобразует ее в строку разделителя в виде запятой. Этот метод можно использовать для хранения коллекции строк в учетной записи пользователя Azure AD. Позже, при чтении учетной записи из каталога, используйте `StringSplit` для преобразования строки разделителя запятой обратно в коллекцию строк.
+| outputClaim | outputClaim | строка | Строка, состоящая из элементов коллекции `inputClaim` строк, разделенных `delimiter` входным параметром. |
+
+Следующий пример принимает коллекцию строк для ролей пользователей и преобразует ее в строку разделителя в виде запятой. Этот метод можно использовать для хранения коллекции строк в учетной записи пользователя Azure AD. Позже, при считывании учетной записи из каталога, используйте `StringSplit` для преобразования строки разделителя запятой обратно в коллекцию строк.
 
 ```XML
 <ClaimsTransformation Id="ConvertRolesStringCollectionToCommaDelimiterString" TransformationMethod="StringJoin">
@@ -862,8 +934,8 @@ ms.locfileid: "77045347"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | строка | Тип строкового утверждения, который содержит подстрочные строки для разбиения. |
 | InputParameter | разделитель | строка | Строка, используемая в качестве разделителя, например запятая `,`. |
-| outputClaim | outputClaim | stringCollection | Коллекция строк, элементы которой содержат подстроки в этой строке, разделенные входным параметром `delimiter`. |
-  
+| outputClaim | outputClaim | stringCollection | Коллекция строк, элементы которой содержат подстроки в этой строке, разделенные `delimiter` входным параметром. |
+
 В следующем примере принимается строка с разделителями-запятыми для ролей пользователей и преобразуется в коллекцию строк.
 
 ```XML
@@ -888,3 +960,12 @@ ms.locfileid: "77045347"
   - **Разделитель**: ","
 - Исходящие утверждения:
   - **outputClaim**: [«Admin», «Author», «Reader»]
+
+## <a name="string-claim-transformations-expressions"></a>Выражения преобразований строкового утверждения
+Выражения преобразования утверждений в Azure AD B2C пользовательские политики предоставляют контекстные сведения о ИДЕНТИФИКАТОРе клиента и ИДЕНТИФИКАТОРе технического профиля.
+
+  | Выражение | Описание | Пример |
+ | ----- | ----------- | --------|
+ | `{TechnicalProfileId}` | Имя технического profileId. | Facebook-OAUTH |
+ | `{RelyingPartyTenantId}` | Идентификатор клиента для политики проверяющей стороны. | your-tenant.onmicrosoft.com |
+ | `{TrustFrameworkTenantId}` | Идентификатор клиента инфраструктуры доверия. | your-tenant.onmicrosoft.com |

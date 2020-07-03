@@ -5,18 +5,21 @@ services: virtual-wan
 author: anzaman
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 1/31/2020
+ms.date: 4/20/2020
 ms.author: alzam
-ms.openlocfilehash: 3b7e765dbd024d46939e8989993f0c882b2a8f4b
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: b63bb861f4df087f852bb1bf599d32100d063f7e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965233"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81733181"
 ---
 # <a name="download-a-global-or-hub-based-profile-for-user-vpn-clients"></a>Скачивание глобального или центрального профиля для VPN-клиентов пользователей
 
-Виртуальная глобальная сеть Azure предлагает два типа подключения для удаленных пользователей: глобальная и на основе концентратора. Используйте следующие разделы для изучения и загрузки профиля.
+Виртуальная глобальная сеть Azure предлагает два типа подключения для удаленных пользователей: глобальная и на основе концентратора. Используйте следующие разделы для изучения и загрузки профиля. 
+
+> [!IMPORTANT]
+> Проверка подлинности RADIUS поддерживает только профиль на основе концентратора.
 
 ## <a name="global-profile"></a>Глобальный профиль
 
@@ -37,7 +40,7 @@ ms.locfileid: "76965233"
 2. Щелкните **центр** на странице Обзор.
 
     ![Профиль концентратора 1](./media/global-hub-profile/hub1.png)
-3. Щелкните **VPN пользователя (наведите указатель на сайт)** .
+3. Щелкните **VPN пользователя (наведите указатель на сайт)**.
 4. Щелкните **скачать профиль VPN пользователя виртуального концентратора**.
 
    ![Профиль концентратора 2](./media/global-hub-profile/hub2.png)

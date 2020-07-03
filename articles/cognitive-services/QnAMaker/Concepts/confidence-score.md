@@ -12,10 +12,10 @@ ms.date: 01/27/2020
 ms.author: diberry
 ms.custom: seodec18
 ms.openlocfilehash: d901a803311805825c22503af6098e805a67e8f6
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76843458"
 ---
 # <a name="the-confidence-score-of-an-answer"></a>Оценка достоверности ответа
@@ -61,7 +61,7 @@ ms.locfileid: "76843458"
 
 Установите пороговую оценку в качестве свойства [тела JSON API женератеансвер](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration). Это означает, что вы задаете его для каждого вызова Женератеансвер.
 
-В среде Bot установите оценку как часть объекта Options с [C#](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-c) или [node. js](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-nodejs).
+В среде Bot установите оценку как часть объекта Options с помощью [C#](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-c) или [node. js](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-nodejs).
 
 ## <a name="improve-confidence-scores"></a>Улучшение оценок достоверности
 Чтобы улучшить оценку достоверности конкретного ответа на запрос пользователя, можно добавить запрос пользователя в базу знаний в качестве альтернативного вопроса для этого ответа. Вы можете также использовать [исправление слов](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) без учета регистра, чтобы добавить синонимы к ключевым словам в базе знаний.
@@ -88,7 +88,7 @@ ms.locfileid: "76843458"
 ## <a name="no-match-found"></a>Совпадения не найдены
 Если ни одно из подходящих совпадений не найдено ранжировщиком, возвращается оценка достоверности 0.0 или "Нет", а ответ по умолчанию – "Нет хорошего соответствия в базе знаний". Этот [ответ по умолчанию](../How-To/metadata-generateanswer-usage.md) можно переопределить в коде программы-робота или приложения, вызывающего конечную точку. В качестве альтернативы вы также можете установить переопределение ответа в Azure, и это изменит значение по умолчанию для всех баз знаний, развернутых в определенной службе QnA Maker.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 > [!div class="nextstepaction"]
 > [Рекомендации](./best-practices.md)
 

@@ -1,30 +1,30 @@
 ---
-title: Защита настраиваемого DNS с помощью привязки SSL
+title: Защита пользовательского DNS-имени с помощью привязки TLS/SSL
 description: Обеспечьте защищенный доступ по протоколу HTTPS к пользовательскому домену, создав привязку TLS/SSL с сертификатом. Повышение безопасности веб-сайта за счет применения протокола HTTPS или TLS 1.2.
 tags: buy-ssl-certificates
 ms.topic: tutorial
-ms.date: 10/25/2019
+ms.date: 04/30/2020
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 60a4646b77f083590a6eb8a8648d6dea932f0bdd
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: c93938db4632f6509e386d440c9be75596ea254f
+ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74849757"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82597901"
 ---
-# <a name="secure-a-custom-dns-name-with-an-ssl-binding-in-azure-app-service"></a>Защита настраиваемого DNS-имени с помощью привязки SSL в Службе приложений Azure
+# <a name="secure-a-custom-dns-name-with-a-tlsssl-binding-in-azure-app-service"></a>Защита пользовательского DNS-имени с помощью привязки TLS/SSL в Службе приложений Azure
 
 В этой статье показано, как защитить [личный домен](app-service-web-tutorial-custom-domain.md) в [приложении Службы приложений](https://docs.microsoft.com/azure/app-service/) или [приложении-функции](https://docs.microsoft.com/azure/azure-functions/) путем создания привязки к сертификату. По завершении работы с этой статьей вы сможете получить доступ к приложению Службы приложений в конечной точке `https://` для настраиваемого DNS-имени (например, `https://www.contoso.com`). 
 
-![Веб-приложение с настраиваемым SSL-сертификатом](./media/configure-ssl-bindings/app-with-custom-ssl.png)
+![Веб-приложение с настраиваемым TLS/SSL-сертификатом](./media/configure-ssl-bindings/app-with-custom-ssl.png)
 
 Обеспечение защиты [личного домена](app-service-web-tutorial-custom-domain.md) с использованием сертификата состоит из двух этапов.
 
-- [Добавление в Службу приложений закрытого сертификата](configure-ssl-certificate.md), который отвечает всем [требованиям для привязок SSL](configure-ssl-certificate.md#private-certificate-requirements).
--  Создание привязки SSL к соответствующему личному домену. В этой статье рассматривается второй этап.
+- [Добавление в Службу приложений закрытого сертификата](configure-ssl-certificate.md), который отвечает всем [требованиям к закрытым сертификатам](configure-ssl-certificate.md#private-certificate-requirements).
+-  Создание привязки TLS к соответствующему личному домену. В этой статье рассматривается второй этап.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Выбор более высокой ценовой категории.
@@ -50,7 +50,7 @@ ms.locfileid: "74849757"
 
 ## <a name="secure-a-custom-domain"></a>Защита личного домена
 
-Сделайте следующее:
+Выполните следующие шаги:
 
 На <a href="https://portal.azure.com" target="_blank">портале Azure</a> в меню слева выберите **Службы приложений** >  **\<имя_приложения>** .
 
@@ -77,30 +77,32 @@ ms.locfileid: "74849757"
 
 ### <a name="create-binding"></a>Создание привязки
 
-Чтобы настроить привязку SSL в диалоговом окне **Привязка TLS/SSL**, воспользуйтесь сведениями из следующей таблицы и щелкните **Добавить привязку**.
+Чтобы настроить привязку TLS в диалоговом окне **Привязка TLS/SSL**, воспользуйтесь сведениями из следующей таблицы и щелкните **Добавить привязку**.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 |-|-|
-| Личный домен | Имя домена, для которого будет добавлена привязка SSL. |
+| Личный домен | Имя домена, для которого будет добавлена привязка TLS/SSL. |
 | Отпечаток закрытого сертификата | Привязка сертификата. |
-| Тип TLS/SSL | <ul><li>**[SSL на основе SNI](https://en.wikipedia.org/wiki/Server_Name_Indication)** позволяет добавить несколько привязок SSL на основе SNI. Этот параметр позволяет использовать несколько SSL-сертификатов для защиты нескольких доменов с одним IP-адресом. Большинство современных браузеров (включая Internet Explorer, Chrome, Firefox и Opera) поддерживает SNI (дополнительные сведения см. в статье [Server Name Indication](https://wikipedia.org/wiki/Server_Name_Indication)).</li><li>**SSL на основе IP** позволяет добавить только одну привязку SSL на основе IP. Этот параметр позволяет использовать только один SSL-сертификат для защиты выделенного общедоступного IP-адреса. После настройки привязки воспользуйтесь сведениями из раздела [Переназначение записи A для SSL на основе IP-адреса](#remap-a-record-for-ip-ssl).<br/>SSL на основе IP поддерживается только на производственном или изолированном уровнях. </li></ul> |
+| Тип TLS/SSL | <ul><li>**[SSL на основе SNI](https://en.wikipedia.org/wiki/Server_Name_Indication)** позволяет добавить несколько привязок SSL на основе SNI. Этот параметр позволяет указать несколько TLS/SSL-сертификатов для защиты нескольких доменов с одним IP-адресом. Большинство современных браузеров (включая Internet Explorer, Chrome, Firefox и Opera) поддерживает SNI (дополнительные сведения см. в статье [Server Name Indication](https://wikipedia.org/wiki/Server_Name_Indication)).</li><li>**SSL на основе IP** позволяет добавить только одну привязку SSL на основе IP. Этот параметр позволяет указать только один TLS/SSL-сертификат для защиты выделенного общедоступного IP-адреса. После настройки привязки воспользуйтесь сведениями из раздела [Переназначение записи для SSL на основе IP-адреса](#remap-records-for-ip-ssl).<br/>SSL на основе IP-адреса поддерживается только на уровне **"Стандартный"** или выше. </li></ul> |
 
-После завершения операции состояние SSL личного домена меняется на **Безопасный**.
+После завершения операции состояние TLS/SSL личного домена меняется на **Безопасный**.
 
-![Удачно выполненная привязка SSL](./media/configure-ssl-bindings/secure-domain-finished.png)
+![Удачно выполненная привязка TLS/SSL](./media/configure-ssl-bindings/secure-domain-finished.png)
 
 > [!NOTE]
 > Состояние **Защищено** **личного домена** означает, что он защищен с помощью сертификата, но Служба приложений не проверяет, например, является ли сертификат самозаверяющим или действительным, что также может привести к отображению ошибки или предупреждения в браузере.
 
-## <a name="remap-a-record-for-ip-ssl"></a>Переназначение записи A для SSL на основе IP-адреса
+## <a name="remap-records-for-ip-ssl"></a>Повторное сопоставление записей для SSL на основе IP-адресов
 
 Если вы не используете SSL на основе IP в приложении, перейдите к разделу [Тестирование HTTPS](#test-https).
 
-По умолчанию приложение использует общий общедоступный IP-адрес. После привязки сертификата с помощью SSL на основе IP Служба приложений создает выделенный IP-адрес для вашего приложения.
+Возможно, вам потребуется внести два изменения:
 
-Если с приложением сопоставлена запись A, обновите реестр домена, указав этот новый выделенный IP-адрес.
+- По умолчанию приложение использует общий общедоступный IP-адрес. После привязки сертификата с помощью SSL на основе IP Служба приложений создает выделенный IP-адрес для вашего приложения. Если с приложением сопоставлена запись A, обновите реестр домена, указав этот новый выделенный IP-адрес.
 
-Он появится на странице **Личный домен** вашего приложения. [Скопируйте этот IP-адрес](app-service-web-tutorial-custom-domain.md#info), затем [переназначьте его записи A](app-service-web-tutorial-custom-domain.md#map-an-a-record).
+    Он появится на странице **Личный домен** вашего приложения. [Скопируйте этот IP-адрес](app-service-web-tutorial-custom-domain.md#info), затем [переназначьте его записи A](app-service-web-tutorial-custom-domain.md#map-an-a-record).
+
+- При наличии привязки SSL на основе SNI к `<app-name>.azurewebsites.net` [повторно сопоставьте все сопоставления CNAME](app-service-web-tutorial-custom-domain.md#map-a-cname-record), чтобы они указывали на `sni.<app-name>.azurewebsites.net` (добавьте префикс `sni`).
 
 ## <a name="test-https"></a>Тестирование HTTPS
 
@@ -131,7 +133,7 @@ ms.locfileid: "74849757"
 
 ![Принудительное использование HTTPS](./media/configure-ssl-bindings/enforce-https.png)
 
-По завершении операции перейдите по любому из URL-адресов HTTP, которые указывают на ваше приложение. Например:
+По завершении операции перейдите по любому из URL-адресов HTTP, которые указывают на ваше приложение. Пример:
 
 - `http://<app_name>.azurewebsites.net`
 - `http://contoso.com`
@@ -147,17 +149,23 @@ ms.locfileid: "74849757"
 
 После этой операции приложение отклоняет все подключения с более ранними версиями TLS.
 
+## <a name="handle-tls-termination"></a>Обработка терминирования TLS/SSL
+
+В Службе приложений [терминирование TLS](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.
+
+Руководства по настройке для конкретного языка, например [руководство по настройке Node.js в Linux](containers/configure-language-nodejs.md#detect-https-session), описывают возможность обнаруживать сеанс HTTPS в коде приложения.
+
 ## <a name="automate-with-scripts"></a>Автоматизация с помощью сценариев
 
-### <a name="azure-cli"></a>Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Azure CLI
 
-[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom SSL certificate to a web app")] 
+[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom TLS/SSL certificate to a web app")] 
 
 ### <a name="powershell"></a>PowerShell
 
-[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom SSL certificate to a web app")]
+[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom TLS/SSL certificate to a web app")]
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-* [Использование SSL-сертификата в коде приложения Службы приложений Azure](configure-ssl-certificate-in-code.md)
-* [FAQ: SSL certificates for Web Apps and App Service Certificates](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/) (SSL-сертификаты для веб-приложений и сертификаты Службы приложений: вопросы и ответы)
+* [Использование TLS/SSL-сертификата в коде в Службе приложений Azure](configure-ssl-certificate-in-code.md)
+* [FAQ: Configuration and management FAQs for Web Apps in Azure](https://docs.microsoft.com/azure/app-service/faq-configuration-and-management/) (Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure)

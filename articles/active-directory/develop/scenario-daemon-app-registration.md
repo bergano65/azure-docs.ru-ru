@@ -2,25 +2,21 @@
 title: Регистрация приложений управляющей программы, вызывающих веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как создать управляющее приложение, вызывающее веб-API — регистрацию приложений
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/15/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 922a484d111746e5073c08a64d7c92e2b6b4a7c4
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 508101ad615dd96559b1c68a61be7c08772545db
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773393"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885486"
 ---
 # <a name="daemon-app-that-calls-web-apis---app-registration"></a>Приложение управляющей программы, вызывающее веб-API — регистрация приложений
 
@@ -44,9 +40,9 @@ ms.locfileid: "76773393"
 ![Разрешения приложения и согласие администратора](media/scenario-daemon-app/app-permissions-and-admin-consent.png)
 
 > [!NOTE]
-> Веб-API, который требуется вызвать, должен определять *разрешения приложения (роли приложения)* , а не делегированные разрешения. Дополнительные сведения о том, как предоставить такой API, см. в разделе [защищенный веб-API: регистрация приложения — при вызове веб-API с помощью управляющего приложения](scenario-protected-web-api-app-registration.md#if-your-web-api-is-called-by-a-daemon-app).
+> Веб-API, который требуется вызвать, должен определять *разрешения приложения (роли приложения)*, а не делегированные разрешения. Дополнительные сведения о том, как предоставить такой API, см. в разделе [защищенный веб-API: регистрация приложения — при вызове веб-API с помощью управляющего приложения](scenario-protected-web-api-app-registration.md#if-your-web-api-is-called-by-a-daemon-app).
 
-Для приложений управляющей программы требуется, чтобы администратор клиента предварительно предсогласия приложения, вызывающего веб-API. Администраторы клиента предоставляют согласие на ту же страницу **разрешений API** , выбрав пункт **предоставить согласие администратора для *нашей Организации***  .
+Для приложений управляющей программы требуется, чтобы администратор клиента предварительно предсогласия приложения, вызывающего веб-API. Администраторы клиента предоставляют согласие на ту же страницу **разрешений API** , выбрав пункт **предоставить согласие администратора для *нашей Организации* ** .
 
 Если вы являетесь независимым поставщиком программного обеспечения, создающим приложение с несколькими клиентами, то следует ознакомиться с разделом [Развертывание-вариант приложений управляющей программы для клиентов](scenario-daemon-production.md#deployment---multitenant-daemon-apps).
 

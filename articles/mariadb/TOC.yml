@@ -9,10 +9,17 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание базы данных с помощью портала
-      href: quickstart-create-mariadb-server-database-using-azure-portal.md
-    - name: Создание базы данных с помощью Azure CLI
-      href: quickstart-create-mariadb-server-database-using-azure-cli.md
+    - name: Создание базы данных
+      items:
+        - name: Создание базы данных с помощью портала
+          href: quickstart-create-mariadb-server-database-using-azure-portal.md
+        - name: Создание базы данных с помощью Azure CLI
+          href: quickstart-create-mariadb-server-database-using-azure-cli.md
+        - name: Создание базы данных с помощью Azure PowerShell
+          href: quickstart-create-mariadb-server-database-using-azure-powershell.md
+        - name: Создание базы данных с помощью шаблона ARM
+          href: quickstart-create-mariadb-server-database-arm-template.md
+          displayName: deploy azure resource manager template
     - name: Подключение и запросы
       items:
         - name: MySQL Workbench
@@ -25,10 +32,15 @@
           href: tutorial-design-database-using-portal.md
         - name: Azure CLI
           href: tutorial-design-database-cli.md
+        - name: Azure PowerShell
+          href: tutorial-design-database-using-powershell.md
 - name: Примеры
   items:
     - name: Azure CLI
       href: sample-scripts-azure-cli.md
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Серверы и базы данных
@@ -63,6 +75,8 @@
           href: concepts-data-access-security-private-link.md
         - name: Расширенная защита от угроз
           href: concepts-data-access-and-security-threat-protection.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Непрерывность бизнес-процессов
       items:
         - name: Общие сведения о непрерывности бизнес-процессов
@@ -114,6 +128,8 @@
           href: howto-restore-server-portal.md
         - name: Azure CLI
           href: howto-restore-server-cli.md
+        - name: Azure PowerShell
+          href: howto-restore-server-powershell.md
     - name: Перенос базы данных
       items:
         - name: Дамп и восстановление
@@ -132,12 +148,20 @@
           href: howto-server-parameters.md
         - name: Azure CLI
           href: howto-configure-server-parameters-cli.md
+        - name: Azure PowerShell
+          href: howto-configure-server-parameters-using-powershell.md
     - name: Автоматическое увеличение хранилища
       items:
         - name: Портал Azure
           href: howto-auto-grow-storage-portal.md
         - name: Azure CLI
           href: howto-auto-grow-storage-cli.md
+        - name: Azure PowerShell
+          href: howto-auto-grow-storage-powershell.md
+    - name: Запрет доступа к общедоступной сети
+      items:
+        - name: Портал Azure
+          href: howto-deny-public-network-access.md
     - name: Доступ к журналам сервера
       items:
         - name: Журналы медленных запросов
@@ -150,6 +174,8 @@
           items:
             - name: Портал Azure
               href: howto-configure-audit-logs-portal.md
+            - name: Azure CLI
+              href: howto-configure-audit-logs-cli.md
     - name: Монитор
       items:
         - name: Создание оповещений на основе метрик
@@ -162,6 +188,8 @@
           href: howto-read-replicas-portal.md
         - name: Создание реплик чтения с помощью Azure CLI и REST API
           href: howto-read-replicas-cli.md
+        - name: Создание реплик чтения с помощью Azure PowerShell
+          href: howto-read-replicas-powershell.md
     - name: Диагностика
       items:
         - name: Устранение ошибок подключения
@@ -190,6 +218,8 @@
           href: howto-restart-server-portal.md
         - name: Azure CLI
           href: howto-restart-server-cli.md
+        - name: Azure PowerShell
+          href: howto-restart-server-powershell.md
 - name: Справочник
   items:
     - name: Azure CLI
@@ -208,8 +238,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=databases'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/mariadb/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/forums/en-US/home?forum=AzureDatabaseforMariaDB'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-database-mariadb.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-database-mariadb'
     - name: Запрашивание функции

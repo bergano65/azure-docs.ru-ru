@@ -3,28 +3,28 @@ title: Сертификация SAP HANA в Azure (крупные экземпл
 description: Сертификация SAP HANA в Azure (крупные экземпляры).
 services: virtual-machines-linux
 documentationcenter: ''
-author: RicksterCDN
-manager: gwallace
+author: msjuergent
+manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/04/2018
-ms.author: saghorpa
+ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3c2c919d6e85a2b708dc247b1642e7e8987df81b
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 2a02f0e1b05b9de8105126d1c9e4e3f79057285f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70099882"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77617230"
 ---
 # <a name="certification"></a>Сертификация
 
 Помимо сертификации NetWeaver, требуется специальная сертификация для SAP HANA, обеспечивающая поддержку развертывания этого решения на определенных инфраструктурах, например Azure IaaS.
 
-Основная заметка SAP в NetWeaver и в степени SAP HANA сертификации — это [Примечание SAP #1928533 — приложения SAP в Azure. Поддерживаемые продукты и типы](https://launchpad.support.sap.com/#/notes/1928533)виртуальных машин Azure.
+Основная заметка SAP в NetWeaver и в степени SAP HANA сертификации — это [Примечание sap #1928533 — приложения SAP в Azure: Поддерживаемые продукты и типы виртуальных машин Azure](https://launchpad.support.sap.com/#/notes/1928533).
 
 Запись сертификации в SAP HANA в Azure (крупные экземпляры) можно проверить на сайте [платформ IaaS, сертифицированных в SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure). 
 

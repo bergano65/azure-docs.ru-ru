@@ -4,12 +4,12 @@ description: Узнайте, как обновить версию или кон�
 ms.topic: conceptual
 ms.date: 11/12/2018
 ms.custom: sfrev
-ms.openlocfilehash: 6897854820339fc78dd9083c82147dce95ab68b6
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: d92ac90e0e41d534231bafbe991a05764dbee07d
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76024870"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82789561"
 ---
 # <a name="upgrading-and-updating-an-azure-service-fabric-cluster"></a>Обновление кластера Azure Service Fabric
 
@@ -104,9 +104,9 @@ Service Fabric использует [сертификаты сервера X.509
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, как настроить некоторые [параметры Service Fabric для кластера](service-fabric-cluster-fabric-settings.md)
-* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md)
-* Узнайте об [обновлениях приложений](service-fabric-application-upgrade.md)
+* Узнайте, как настроить некоторые [Параметры структуры кластера Service Fabric](service-fabric-cluster-fabric-settings.md) .
+* Узнайте, как выполнять [масштабирование кластера](service-fabric-cluster-scale-in-out.md)
+* Дополнительные сведения об [обновлении приложений](service-fabric-application-upgrade.md)
 
 <!--Image references-->
 [CertificateUpgrade]: ./media/service-fabric-cluster-upgrade/CertificateUpgrade2.png

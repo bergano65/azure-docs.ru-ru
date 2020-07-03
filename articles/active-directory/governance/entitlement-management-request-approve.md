@@ -16,12 +16,12 @@ ms.date: 10/27/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 634e3532e13fcba5c9b802bd77c9530c0a831eb8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 20ec63efe16f1120ca6e7d07c8917d8ad2b3a0e0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75422522"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79261727"
 ---
 # <a name="approve-or-deny-access-requests-in-azure-ad-entitlement-management"></a>Утверждение или отклонение запросов на доступ в управлении назначениями Azure AD
 
@@ -43,7 +43,7 @@ ms.locfileid: "75422522"
 
 Если у вас нет электронного письма, вы можете найти запросы на доступ, ожидающие вашего утверждения, выполнив следующие действия.
 
-1. Войдите на портал My Access по адресу [https://myaccess.microsoft.com](https://myaccess.microsoft.com).
+1. Войдите на портал доступа по адресу [https://myaccess.microsoft.com](https://myaccess.microsoft.com).  (Для государственных организаций США в качестве домена на портале "мой доступ" `myaccess.microsoft.us`будет использоваться домен.)
 
 1. В меню слева щелкните **утверждения** , чтобы просмотреть список запросов на доступ, ожидающих утверждения.
 

@@ -1,26 +1,26 @@
 ---
-title: Частная ссылка для службы "база данных Azure для PostgreSQL — метод установки CLI для одного сервера (Предварительная версия)"
+title: Частная ссылка — Azure CLI — база данных Azure для PostgreSQL — один сервер
 description: Узнайте, как настроить частную ссылку для базы данных Azure для PostgreSQL-Single Server из Azure CLI
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/09/2020
-ms.openlocfilehash: 19dd0051985231a0274baf550755cc61782ce740
-ms.sourcegitcommit: d9ec6e731e7508d02850c9e05d98d26c4b6f13e6
+ms.openlocfilehash: a6baf8b4609382be4a5a31d12cac581da2c17de6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2020
-ms.locfileid: "76281314"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81011673"
 ---
-# <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-preview-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для PostgreSQL — один сервер (Предварительная версия) с помощью интерфейса командной строки
+# <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-cli"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — одиночный сервер с помощью интерфейса командной строки
 
 Частная конечная точка — ключевой компонент для построения частной ссылки в Azure. Это позволяет ресурсам Azure, таким как виртуальные машины (VM), обмениваться данными в частном порядке с ресурсами частной ссылки. В этой статье вы узнаете, как использовать Azure CLI для создания виртуальной машины в виртуальной сети Azure и базы данных Azure для PostgreSQL с помощью частной конечной точки Azure.
 
 > [!NOTE]
-> Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
+> Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL-Single Server поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
@@ -39,7 +39,7 @@ az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
 az network vnet create \
@@ -82,7 +82,7 @@ az postgres server create \
 --sku-name GP_Gen5_2
 ```
 
-Обратите внимание, что идентификатор сервера PostgreSQL похож на ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/servername.``` вы будете использовать идентификатор сервера PostgreSQL на следующем шаге. 
+Обратите внимание, что идентификатор сервера PostgreSQL ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/servername.``` аналогичен идентификатору сервера PostgreSQL на следующем шаге. 
 
 ## <a name="create-the-private-endpoint"></a>Создание частной конечной точки 
 Создайте частную конечную точку для сервера PostgreSQL в виртуальной сети. 
@@ -118,8 +118,11 @@ az resource show --ids $networkInterfaceId --api-version 2019-04-01 -o json
  
 #Create DNS records 
 az network private-dns record-set a create --name myserver --zone-name privatelink.postgres.database.azure.com --resource-group myResourceGroup  
-az network private-dns record-set a add-record --record-set-name myserver --zone-name privatelink.postgres.database.windows.net --resource-group myResourceGroup -a <Private IP Address>
+az network private-dns record-set a add-record --record-set-name myserver --zone-name privatelink.postgres.database.azure.com --resource-group myResourceGroup -a <Private IP Address>
 ```
+
+> [!NOTE] 
+> Полное доменное имя в параметре DNS клиента не разрешается в настроенный частный IP-адрес. Вам потребуется настроить зону DNS для настроенного FQDN, как показано [ниже](../dns/dns-operations-recordsets-portal.md).
 
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
@@ -131,7 +134,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 1. Щелкните **Скачать RDP-файл**. Azure создаст и скачает на ваш компьютер файл протокола удаленного рабочего стола (*RDP*).
 
-1. Откройте скачанный RDP-файл*.
+1. Откройте файл *downloaded.rdp*.
 
     1. При появлении запроса выберите **Подключиться**.
 
@@ -140,7 +143,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
         > [!NOTE]
         > Возможно, потребуется выбрать **More choices** > **Use a different account** (Дополнительные варианты > Использовать другую учетную запись), чтобы указать учетные данные, введенные при создании виртуальной машины.
 
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
 1. При входе в систему может появиться предупреждение о сертификате. В таком случае выберите **Да** или **Продолжить**.
 
@@ -159,34 +162,35 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
     Non-authoritative answer:
     Name:    mydemopostgresserver.privatelink.postgres.database.azure.com
     Address:  10.1.3.4
+    ```
 
-3. Test the private link connection for the PostgreSQL server using any available client. In the example below I have used [Azure Data studio](https://docs.microsoft.com/sql/azure-data-studio/download?view=sql-server-ver15) to do the operation.
+3. Проверьте подключение к частной ссылке для сервера PostgreSQL, используя любой доступный клиент. В приведенном ниже примере я использовал [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download?view=sql-server-ver15) для выполнения этой операции.
 
-4. In **New connection**, enter or select this information:
+4. В окне **новое подключение**введите или выберите следующие сведения:
 
-    | Setting | Value |
+    | Параметр | Значение |
     | ------- | ----- |
-    | Server type| Select **PostgreSQL**.|
-    | Server name| Select *mydemopostgresserver.privatelink.postgres.database.azure.com* |
-    | User name | Enter username as username@servername which is provided during the PostgreSQL server creation. |
-    |Password |Enter a password provided during the PostgreSQL server creation. |
-    |SSL|Select **Required**.|
+    | Тип сервера| Выберите **PostgreSQL**.|
+    | Имя сервера| Выбор *mydemopostgresserver.privatelink.postgres.Database.Azure.com* |
+    | Имя пользователя | Введите имя пользователя username@servername , которое предоставляется во время создания сервера PostgreSQL. |
+    |Пароль |Введите пароль, указанный при создании сервера PostgreSQL. |
+    |SSL|Выберите **обязательный**.|
     ||
 
-5. Select Connect.
+5. Выберите Подключиться.
 
-6. Browse databases from left menu.
+6. Просмотр баз данных из левого меню.
 
-7. (Optionally) Create or query information from the postgreSQL server.
+7. При необходимости Создание или запрос информации с сервера postgreSQL.
 
-8. Close the remote desktop connection to myVm.
+8. Закройте подключение к удаленному рабочему столу myVm.
 
-## Clean up resources 
-When no longer needed, you can use az group delete to remove the resource group and all the resources it has: 
+## <a name="clean-up-resources"></a>Очистка ресурсов 
+Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду "az group delete". 
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)

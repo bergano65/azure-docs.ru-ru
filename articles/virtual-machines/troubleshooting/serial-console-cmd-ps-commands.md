@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: 493340764f507c4fa364a5000f65cc232630b243
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77167030"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
@@ -320,7 +320,7 @@ SAC позволяет подключаться к вашей операцион
 `test-netconnection`
 
 > [!NOTE]
-> Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно запустить `$ProgressPreference = "SilentlyContinue"` в PowerShell.
+> Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно использовать `$ProgressPreference = "SilentlyContinue"` PowerShell в качестве меры по устранению рисков.
 
 или диспетчер конфигурации служб
 
@@ -477,7 +477,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="mac-address-instance-metadata"></a>MAC-адрес (метаданные экземпляра)
 `$im.network.interface.macAddress`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Страницу основной документации по работе с последовательной консолью Windows см. [здесь](serial-console-windows.md).
 * Последовательная консоль также доступна для виртуальных машин [Linux](serial-console-linux.md).
-* См. дополнительные сведения в статье [Устранение неполадок виртуальных машин Windows в Azure с использованием диагностики загрузки](boot-diagnostics.md).
+* Дополнительные сведения о [диагностике загрузки](boot-diagnostics.md).

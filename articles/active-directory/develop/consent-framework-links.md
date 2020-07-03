@@ -1,10 +1,9 @@
 ---
-title: Как действует согласие для приложения | Документация Майкрософт
+title: Как действует согласие для приложения
 description: Дополнительные сведения о действии инфраструктуры согласия Azure AD, а также о том, как вы можете использовать ее при разработке приложений в Azure AD
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.custom: aaddev
@@ -12,12 +11,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: ryanwi
-ms.openlocfilehash: 15206f394f63e9373a4a0016588bc1e2e2c65d44
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 86b592ecf5485654ab6860addbfde48cee4df077
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697716"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885554"
 ---
 # <a name="how-application-consent-works"></a>Как действует согласие для приложения
 

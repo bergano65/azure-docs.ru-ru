@@ -5,43 +5,55 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 10/24/2019
-ms.openlocfilehash: 2250e41bffc26bd9ae59dfc652a06d08016d227a
-ms.sourcegitcommit: 87efc325493b1cae546e4cc4b89d9a5e3df94d31
+ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
+ms.date: 04/20/2020
+ms.openlocfilehash: 87350bae282d9d0dccef9cb2121000f7a0473762
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73053807"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82195491"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight
 
 [!INCLUDE [ODBC-JDBC-selector](../../../includes/hdinsight-selector-odbc-jdbc.md)]
 
-Узнайте, как использовать драйвер JDBC из приложения Java для отправки запросов Apache Hive в Apache Hadoop в Azure HDInsight. Сведения в этом документе показывают, как подключаться программным способом и из клиента SQuirreL SQL.
+Узнайте, как использовать драйвер JDBC из приложения Java. Отправка запросов Apache Hive в Apache Hadoop в Azure HDInsight. Сведения в этом документе показывают, как подключаться программным способом и из клиента SQuirreL SQL.
 
 Дополнительные сведения об интерфейсе JDBC Hive см. в статье [HiveJDBCInterface](https://cwiki.apache.org/confluence/display/Hive/HiveJDBCInterface).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер HDInsight Hadoop. Дополнительные сведения о создании кластера см. в статье [Приступая к работе с Hadoop в HDInsight](apache-hadoop-linux-tutorial-get-started.md).
+* Кластер HDInsight Hadoop. Дополнительные сведения о создании кластера см. в статье [Приступая к работе с Hadoop в HDInsight](apache-hadoop-linux-tutorial-get-started.md). Убедитесь, что служба HiveServer2 запущена.
 * [Пакет Java Developer Kit (JDK) версии 11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html) или более поздней.
-* [SQuirreL SQL](http://squirrel-sql.sourceforge.net/). SQuirreL представляет собой клиентское приложение JDBC.
+* [SQUIRREL SQL](http://squirrel-sql.sourceforge.net/). SQuirreL представляет собой клиентское приложение JDBC.
 
 ## <a name="jdbc-connection-string"></a>Строка подключения JDBC
 
-Подключения JDBC к кластеру HDInsight в Azure осуществляются через порт 443, а трафик защищен с помощью SSL. Открытый шлюз, за которым находятся кластеры, перенаправляет трафик к порту, который фактически прослушивается HiveServer2. В следующей строке подключения показан формат для HDInsight:
+Подключения JDBC к кластеру HDInsight в Azure осуществляются через порт 443. Трафик защищен с помощью TLS/SSL. Открытый шлюз, за которым находятся кластеры, перенаправляет трафик к порту, который фактически прослушивается HiveServer2. В следующей строке подключения показан формат для HDInsight:
 
     jdbc:hive2://CLUSTERNAME.azurehdinsight.net:443/default;transportMode=http;ssl=true;httpPath=/hive2
 
 Замените `CLUSTERNAME` на имя вашего кластера HDInsight.
 
-## <a name="authentication"></a>Authentication
+Вы также можете получить подключение через **Пользовательский интерфейс Ambari > Hive > конфигурации > Advanced**.
 
-При установке подключения необходимо указать имя администратора кластера HDInsight и пароль для проверки подлинности в шлюзе кластера. При подключении клиентов JDBC, например SQuirreL SQL, необходимо ввести имя и пароль администратора в параметрах клиента.
+![Получение строки подключения JDBC через Ambari](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-get-connection-string-through-ambari.png)
 
-При подключении из приложения Java необходимо использовать имя пользователя и пароль. Например, приведенный ниже код Java открывает новое подключение с помощью строки подключения, имени администратора и пароля:
+### <a name="host-name-in-connection-string"></a>Имя узла в строке подключения
+
+Имя узла "CLUSTERNAME.azurehdinsight.net" в строке подключения совпадает с URL-адресом кластера. Его можно получить с помощью портал Azure.
+
+### <a name="port-in-connection-string"></a>Порт в строке подключения
+
+**Порт 443** можно использовать только для подключения к кластеру из некоторых мест за пределами виртуальной сети Azure. HDInsight — это управляемая служба, которая означает, что все подключения к кластеру управляются через безопасный шлюз. Вы не можете подключиться к HiveServer 2 напрямую через порты 10001 или 10000. Эти порты не видны снаружи.
+
+## <a name="authentication"></a>Аутентификация
+
+При установке подключения используйте имя администратора кластера HDInsight и пароль для проверки подлинности. Из клиентов JDBC, таких как SQuirreL SQL, введите имя администратора и пароль в параметрах клиента.
+
+При подключении из приложения Java необходимо использовать имя пользователя и пароль. Например, следующий код Java открывает новое соединение:
 
 ```java
 DriverManager.getConnection(connectionString,clusterAdmin,clusterPassword);
@@ -71,10 +83,10 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 5. В диалоговом окне Add Driver (Добавление драйвера) укажите следующие сведения.
 
-    |Свойство | Value |
+    |Свойство | Значение |
     |---|---|
-    |Name|Hive|
-    |Пример URL-адреса|JDBC: hive2://localhost: 443/Default; transportMode = HTTP; SSL = true; httpPath =/hive2|
+    |Имя|Hive|
+    |Пример URL-адреса|`jdbc:hive2://localhost:443/default;transportMode=http;ssl=true;httpPath=/hive2`|
     |Дополнительный путь к классу|Используйте кнопку **Добавить** , чтобы добавить все скачанные ранее JAR-файлы.|
     |Имя класса|org. Apache. Hive. JDBC. HiveDriver|
 
@@ -82,17 +94,17 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
    Нажмите кнопку **ОК** , чтобы сохранить эти параметры.
 
-6. В левой части окна SQuirreL SQL выберите **Псевдонимы**. Затем щелкните значок **+** , чтобы создать псевдоним подключения.
+6. В левой части окна SQuirreL SQL выберите **Псевдонимы**. Затем щелкните **+** значок, чтобы создать псевдоним подключения.
 
-    ![Диалоговое окно "Добавление нового псевдонима" SQuirreL SQL](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-new-aliases.png)
+    !["SQuirreL SQL добавить новый псевдоним"](./media/apache-hadoop-connect-hive-jdbc-driver/hdinsight-new-aliases.png)
 
 7. Используйте следующие значения в диалоговом окне **Добавление псевдонима** :
 
-    |Свойство |Value |
+    |Свойство |Значение |
     |---|---|
-    |Name|Hive в HDInsight|
+    |Имя|Hive в HDInsight|
     |Драйвер|Используйте раскрывающийся список, чтобы выбрать драйвер **Hive** .|
-    |URL-адрес|JDBC: hive2://CLUSTERNAME.azurehdinsight.net: 443/Default; transportMode = HTTP; SSL = true; httpPath =/hive2. Замените **CLUSTERNAME** именем кластера HDInsight.|
+    |URL-адрес|`jdbc:hive2://CLUSTERNAME.azurehdinsight.net:443/default;transportMode=http;ssl=true;httpPath=/hive2`. Замените **CLUSTERNAME** именем кластера HDInsight.|
     |Имя пользователя|Имя пользователя для учетной записи входа кластера HDInsight. Значение по умолчанию — **Admin**.|
     |Пароль|Пароль для учетной записи входа кластера.|
 
@@ -117,9 +129,9 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 ## <a name="connect-from-an-example-java-application"></a>Подключение из примера приложения Java
 
-Пример использования клиента Java для запросов Hive доступен в [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc). Следуйте инструкциям в репозитории, чтобы построить и запустить образец.
+Пример использования клиента Java для запроса Hive в HDInsight можно найти по адресу [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc). Следуйте инструкциям в репозитории, чтобы построить и запустить образец.
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="unexpected-error-occurred-attempting-to-open-an-sql-connection"></a>Непредвиденная ошибка при попытке открыть подключение к SQL
 
@@ -133,24 +145,28 @@ at java.util.concurrent.FutureTask.get(FutureTask.java:206)
 
 **Причина.** Эту ошибку вызывают прежние версии файла commons-codec.jar в составе SQuirreL.
 
-**Решение.** Чтобы устранить эту ошибку, выполните приведенные далее действия.
+**Решение**. чтобы устранить эту ошибку, выполните следующие действия.
 
-1. Выйдите из SQuirreL, а затем перейдите в каталог, где SQuirreL установлен в системе, возможно, `C:\Program Files\squirrel-sql-4.0.0\lib`. В каталоге SquirreL в каталоге `lib` замените существующий файл commons-codec.ja файлом, скачанным из кластера HDInsight.
+1. Выйдите из SQuirreL, а затем перейдите в каталог, где SQuirreL установлен в системе, возможно `C:\Program Files\squirrel-sql-4.0.0\lib`,. В каталоге SquirreL в каталоге `lib` замените существующий файл commons-codec.ja файлом, скачанным из кластера HDInsight.
 
 1. Перезапустите SQuirreL. При последующих подключениях к Hive в HDInsight ошибка больше не должна возникать.
+
+### <a name="connection-disconnected-by-hdinsight"></a>Подключение отключено с помощью HDInsight
+
+**Симптомы**. при попытке загрузить огромный объем данных (например, несколько ГБ) через JDBC/ODBC соединение неожиданно отключается из HDInsight при скачивании.
+
+**Причина**: Эта ошибка вызвана ограничением на узлы шлюза. При получении данных из JDBC/ODBC все данные должны проходить через узел шлюза. Однако шлюз не предназначен для загрузки огромного объема данных, поэтому шлюз может закрыть подключение, если он не может обработать трафик.
+
+**Решение**. Избегайте использования драйвера JDBC/ODBC для загрузки огромных объемов данных. Вместо этого следует копировать данные непосредственно из хранилища BLOB-объектов.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как использовать JDBC для работы с Hive, воспользуйтесь следующими ссылками для изучения других способов работы с Azure HDInsight.
 
-* [Визуализация данных Apache Hive с помощью Microsoft Power BI в Azure HDInsight](apache-hadoop-connect-hive-power-bi.md)
+* [Визуализируйте Apache Hive данные с помощью Microsoft Power BI в Azure HDInsight](apache-hadoop-connect-hive-power-bi.md).
 * [Visualize Interactive Query Hive data with Microsoft Power BI using DirectQuery in Azure HDInsight](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md) (Визуализация данных Hive из кластера Interactive Query с помощью Microsoft Power BI и DirectQuery в Azure HDInsight).
-* [Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](../interactive-query/hdinsight-connect-hive-zeppelin.md)
 * [Подключение Excel к Hadoop в Azure HDInsight с помощью Microsoft Hive ODBC Driver](apache-hadoop-connect-excel-hive-odbc-driver.md)
-* [Подключение Excel к Apache Hadoop с помощью Power Query](apache-hadoop-connect-excel-power-query.md)
-* [Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью Средств Data Lake для Visual Studio](apache-hadoop-visual-studio-tools-get-started.md)
-* [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
-* [Отправка данных в HDInsight](../hdinsight-upload-data.md)
+* [Подключите Excel к Apache Hadoop с помощью Power Query](apache-hadoop-connect-excel-power-query.md).
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hdinsight-use-hive.md)
-* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
+* [Использование Pig с Hadoop в HDInsight](../use-pig.md)
 * [Использование заданий MapReduce с HDInsight](hdinsight-use-mapreduce.md)

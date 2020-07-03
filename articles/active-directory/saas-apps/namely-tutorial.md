@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Namely | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Namely | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Namely.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: a9ec54ce27b4d058938e688ec671709e09391cce
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160366"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-namely"></a>Руководство по Интеграция Azure Active Directory с Namely
+# <a name="tutorial-azure-active-directory-integration-with-namely"></a>Руководство по интеграции Azure Active Directory с Namely
 
 В этом руководстве описано, как интегрировать Namely с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Namely обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73160366"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Namely, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Namely с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "73160366"
 
     ![Сведения о домене и URL-адресах для единого входа в приложение Namely](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.namely.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.namely.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.namely.com/saml/metadata`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "73160366"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -146,7 +146,7 @@ ms.locfileid: "73160366"
    
     ![Настройка единого входа](./media/namely-tutorial/tutorial_namely_09.png)
  
-    a. Выберите команду **Enable SAML**(Включить SAML). 
+    а. Выберите команду **Enable SAML**(Включить SAML). 
 
     b. В текстовое поле **Identity provider SSO url** (URL-адрес единого входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
     
@@ -227,7 +227,7 @@ ms.locfileid: "73160366"
 
 5. В диалоговом окне **Add New Person** (Добавление пользователя) выполните следующие действия.
 
-    a. В текстовое поле **Имя** введите **Britta**.
+    а. В текстовое поле **Имя** введите **Britta**.
 
     b. В текстовое поле **Фамилия** введите **Simon**.
 

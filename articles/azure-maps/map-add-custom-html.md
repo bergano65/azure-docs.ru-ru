@@ -1,20 +1,20 @@
 ---
 title: Добавление HTML-маркера к сопоставлению | Карты Microsoft Azure
 description: В этой статье вы узнаете, как добавить маркер HTML к карте с помощью веб-пакета SDK Microsoft Azure Maps.
-author: jingjing-z
-ms.author: jinzh
+author: Philmea
+ms.author: philmea
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 4cc3b1789ef2f7ef44e5421cbacb5a93c2a0a1ff
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: 30d9cf9848a8d99505bf9f9c97bef5aaa31065ee
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933610"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83119277"
 ---
 # <a name="add-html-markers-to-the-map"></a>Добавление маркеров HTML на карту
 
@@ -28,9 +28,9 @@ ms.locfileid: "76933610"
 
 ## <a name="add-an-html-marker"></a>Добавление маркера HTML
 
-Класс [хтмлмаркер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стилем по умолчанию для класса маркеров HTML является шаблон SVG, имеющий `{color}` и `{text}` заполнитель. Задайте свойства цвета и текста в параметрах маркера HTML для быстрой настройки. 
+Класс [хтмлмаркер](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.htmlmarker?view=azure-iot-typescript-latest) имеет стиль по умолчанию. Маркер можно настроить, задав параметры цвета и текста маркера. Стилем по умолчанию для класса маркеров HTML является шаблон SVG, который имеет `{color}` `{text}` заполнитель и. Задайте свойства цвета и текста в параметрах маркера HTML для быстрой настройки. 
 
-Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру прикрепляется всплывающее окно, а для переключения видимости всплывающего окна используется событие `click`.
+Следующий код создает HTML-маркер и присваивает свойству Color значение «Доджерблуе», а свойству Text — значение «10». К маркеру и событию применяется всплывающее окно, `click` которое позволяет переключать видимость всплывающего окна.
 
 ```javascript
 //Create an HTML marker and add it to the map.
@@ -82,7 +82,7 @@ map.events.add('click',marker, () => {
 
 ## <a name="draggable-html-markers"></a>Перетаскиваемые маркеры HTML
 
-В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают `drag`, `dragstart`и события `dragend`.
+В этом примере показано, как сделать перетаскиваемый маркер HTML. Маркеры HTML поддерживают `drag` `dragstart` события, и `dragend` .
 
 <br/>
 
@@ -114,10 +114,10 @@ map.events.add('click',marker, () => {
 Дополнительные примеры кода для добавления в карты см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Использование шаблонов изображений](how-to-use-image-templates-web-sdk.md)
+> [Использование шаблонов образов](how-to-use-image-templates-web-sdk.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя символов](./map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Добавление слоя пузырьков](./map-add-bubble-layer.md)
+> [Добавить пузырьковый слой](./map-add-bubble-layer.md)

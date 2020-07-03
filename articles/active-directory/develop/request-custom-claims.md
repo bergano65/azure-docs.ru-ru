@@ -3,32 +3,27 @@ title: Запрос настраиваемых утверждений (MSAL iOS/
 titleSuffix: Microsoft identity platform
 description: Узнайте, как запросить настраиваемые утверждения.
 services: active-directory
-documentationcenter: ''
 author: mmacy
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.author: marsma
-ms.reviewer: ''
 ms.custom: aaddev
-ms.openlocfilehash: 44158296faaf238fd72f2360149d3d93f68c5ba0
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 4974fe3b387683f662d7a7b4f3ccb4935153f07e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77085607"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80883102"
 ---
 # <a name="how-to-request-custom-claims-using-msal-for-ios-and-macos"></a>Как запросить настраиваемые утверждения с помощью MSAL для iOS и macOS
 
 OpenID Connect Connect позволяет при необходимости запросить возврат индивидуальных утверждений из конечной точки UserInfo и/или в маркере идентификации. Запрос утверждений представлен в виде объекта JSON, содержащего список запрошенных утверждений. Дополнительные сведения см. в разделе [OpenID Connect Connect Core 1,0](https://openid.net/specs/openid-connect-core-1_0-final.html#ClaimsParameter) .
 
-Библиотека проверки подлинности Microsoft (MSAL) для iOS и macOS позволяет запрашивать определенные утверждения как в интерактивном, так и в автоматическом режиме получения маркеров. Это делается с помощью параметра `claimsRequest`.
+Библиотека проверки подлинности Microsoft (MSAL) для iOS и macOS позволяет запрашивать определенные утверждения как в интерактивном, так и в автоматическом режиме получения маркеров. Это делается с помощью `claimsRequest` параметра.
 
 Существует несколько сценариев, в которых это необходимо. Пример:
 
@@ -36,9 +31,9 @@ OpenID Connect Connect позволяет при необходимости за
 - Запрос определенных сочетаний стандартных заявок, которые не могут быть указаны с помощью областей для приложения. Например, если маркер доступа отклоняется из-за отсутствия утверждений, приложение может запросить недостающие утверждения с помощью MSAL.
 
 > [!NOTE]
-> MSAL обходит кэш маркера доступа всякий раз, когда указан запрос на утверждение. Важно указывать параметр `claimsRequest` только в том случае, если требуются дополнительные утверждения (в отличие от того, что всегда предоставляет один и тот же параметр `claimsRequest` в каждом вызове API MSAL).
+> MSAL обходит кэш маркера доступа всякий раз, когда указан запрос на утверждение. Важно предоставлять `claimsRequest` параметр только в том случае, если требуются дополнительные утверждения (в отличие от того, что всегда `claimsRequest` предоставляет один и тот же параметр в каждом вызове API MSAL).
 
-`claimsRequest` можно указать в `MSALSilentTokenParameters` и `MSALInteractiveTokenParameters`:
+`claimsRequest`можно указать в `MSALSilentTokenParameters` и `MSALInteractiveTokenParameters`:
 
 ```objc
 /*!
@@ -54,7 +49,7 @@ OpenID Connect Connect позволяет при необходимости за
 
 @end
 ```
-`MSALClaimsRequest` можно сформировать из NSString представления запроса на утверждение JSON. 
+`MSALClaimsRequest`можно сформировать из NSString представления запроса на утверждение JSON. 
 
 Objective-C.
 
@@ -103,7 +98,7 @@ do {
 
 
 
-`MSALClaimsRequest` следует задать в параметрах токена и предоставить одному из API-интерфейсов получения маркеров MSAL:
+`MSALClaimsRequest`следует задать в параметрах токена и предоставить одному из API-интерфейсов получения маркера MSAL:
 
 Objective-C.
 

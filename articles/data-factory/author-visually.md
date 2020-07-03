@@ -10,14 +10,16 @@ ms.author: daperlov
 ms.reviewer: ''
 manager: anandsub
 ms.date: 12/19/2019
-ms.openlocfilehash: 09d4055ba98da2dd87efc9421402f2827a87ba16
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e7de92878dac72470c0b65d1cf18c1a2d526a0bb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75440936"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81418496"
 ---
 # <a name="visual-authoring-in-azure-data-factory"></a>Визуальная разработка в фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 С пользовательским интерфейсом фабрики данных Azure пользователи могут визуально разрабатывать и развертывать ресурсы в своей фабрике, не написав не единой строки кода. Вы можете перетаскивать действия на панель холста конвейера, выполнять тестовые запуски, выполнять последовательную отладку, а также развертывать и выполнять мониторинг запуска конвейера.
 
@@ -47,12 +49,12 @@ ms.locfileid: "75440936"
 
 Дополнительные сведения о языке выражений см. [в разделе выражения и функции в фабрике данных Azure](control-flow-expression-language-functions.md).
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 
 Выберите **Обратная связь**, чтобы оставить комментарии о возможностях или сообщить корпорации Майкрософт о проблемах со средством:
 
-![Обратная связь](media/author-visually/provide-feedback.png)
+![Отзывы](media/author-visually/provide-feedback.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о мониторинге и управлении конвейерами см. в статье [Отслеживание фабрики данных Azure с помощью программных средств](monitor-programmatically.md).

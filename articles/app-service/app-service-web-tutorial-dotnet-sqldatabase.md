@@ -5,21 +5,21 @@ ms.assetid: 03c584f1-a93c-4e3d-ac1b-c82b50c75d3e
 ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 06/25/2018
-ms.custom: seodec18
-ms.openlocfilehash: 2a0b3994af48372b8ed0a3c6eaecf4289d0980c1
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.custom: mvc, devcenter, vs-azure, seodec18
+ms.openlocfilehash: a9acb55f0a03a6ec1ba0bb6bb38c665b059b672b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671381"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80047027"
 ---
-# <a name="tutorial-build-an-aspnet-app-in-azure-with-sql-database"></a>Руководство. Создание приложения ASP.NET в Azure с подключением к базе данных SQL
+# <a name="tutorial-build-an-aspnet-app-in-azure-with-sql-database"></a>Руководство по Создание приложения ASP.NET в Azure с подключением к базе данных SQL
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как развернуть управляемое данными приложение ASP.NET в Службе приложений, а затем подключить его к [Базе данных SQL Azure](../sql-database/sql-database-technical-overview.md). Выполнив описанные здесь действия, вы получите приложение ASP.NET, запущенное в Azure и подключенное к Базе данных SQL.
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как развернуть управляемое данными приложение ASP.NET в Службе приложений, а затем подключить его к [Базе данных SQL Azure](../sql-database/sql-database-technical-overview.md). Выполнив описанные здесь действия, вы получите приложение ASP.NET, запущенное в Azure и подключенное к Базе данных SQL.
 
 ![Опубликованное приложение ASP.NET в Службе приложений Azure](./media/app-service-web-tutorial-dotnet-sqldatabase/azure-app-in-browser.png)
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Создание базы данных SQL в Azure.
@@ -33,7 +33,7 @@ ms.locfileid: "74671381"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством:
+Для работы с этим руководством сделайте следующее:
 
 Установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019</a> с рабочей нагрузкой **ASP.NET и веб-разработка**.
 
@@ -46,7 +46,7 @@ ms.locfileid: "74671381"
 
 Этот пример проекта содержит простое CRUD-приложение [ASP.NET MVC](https://www.asp.net/mvc), созданное на основе [Entity Framework Code First](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
-### <a name="run-the-app"></a>Запуск приложения
+### <a name="run-the-app"></a>Запустите приложение
 
 Откройте файл *dotnet-sqldb-tutorial-master/DotNetAppSqlDb.sln* в Visual Studio. 
 
@@ -110,7 +110,7 @@ ms.locfileid: "74671381"
 | Параметр  | Рекомендуемое значение | Дополнительные сведения |
 | ----------------- | ------------ | ----|
 |**План службы приложений**| myAppServicePlan | [Планы службы приложений](../app-service/overview-hosting-plans.md) |
-|**Местоположение.**| Западная Европа | [Регионы Azure](https://azure.microsoft.com/regions/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) |
+|**Расположение**| Западная Европа | [Регионы Azure](https://azure.microsoft.com/regions/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) |
 |**Размер**| Free | [Ценовые категории](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)|
 
 ### <a name="create-a-sql-server-instance"></a>Создание экземпляра SQL Server
@@ -134,7 +134,7 @@ ms.locfileid: "74671381"
 
 ![Создание экземпляра SQL Server](media/app-service-web-tutorial-dotnet-sqldatabase/configure-sql-database-server.png)
 
-Последовательно выберите **ОК**. Пока не закрывайте диалоговое окно **Настроить базу данных SQL**.
+Нажмите кнопку **ОК**. Пока не закрывайте диалоговое окно **Настроить базу данных SQL**.
 
 ### <a name="create-a-sql-database"></a>Создание базы данных SQL
 
@@ -142,7 +142,7 @@ ms.locfileid: "74671381"
 
 * В поле **Имя базы данных** не изменяйте созданное по умолчанию имя.
 * В поле **Имя строки подключения** введите *MyDbConnection*. Это имя должно совпадать с именем строки подключения, указанном в *Models\MyDatabaseContext.cs*.
-* Нажмите кнопку **ОК**.
+* Щелкните **ОК**.
 
 ![Настройка базы данных SQL](media/app-service-web-tutorial-dotnet-sqldatabase/configure-sql-database.png)
 
@@ -383,7 +383,7 @@ Application: 2017-04-06T23:30:54  PID[8132] Verbose     GET /Todos/Index
 
 ## <a name="manage-your-azure-app"></a>Управление приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com) для управления веб-приложением. Найдите и выберите **Службы приложений**. 
+Перейдите на [портал Azure](https://portal.azure.com) для управления веб-приложением. Найдите в поиске и выберите **Службы приложений**. 
 
 ![Поиск Служб приложений Azure](./media/app-service-web-tutorial-dotnet-sqldatabase/azure-portal-navigate-app-services.png)
 
@@ -399,9 +399,9 @@ Application: 2017-04-06T23:30:54  PID[8132] Verbose     GET /Todos/Index
 
 [!INCLUDE [Clean up section](../../includes/clean-up-section-portal-web-app.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных SQL в Azure.

@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 1/24/2020
 ms.author: raynew
 ms.openlocfilehash: a9d0ae4a6e60a72bbb1148aca1a75c44506b2e9e
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760357"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79257684"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Общие вопросы о Azure Site Recovery
 
@@ -56,7 +56,7 @@ ms.locfileid: "76760357"
 ### <a name="do-you-support-single-azure-pack-and-single-vmm-server-deployments"></a>Поддерживаются ли отдельные развертывания Azure Pack или односерверные развертывания VMM?
 Да, можно выполнять репликацию виртуальных машин Hyper-V в Azure или между сайтами поставщиков служб.  Обратите внимание, что при репликации между сайтами поставщика услуг интеграция Runbook Azure недоступна.
 
-## <a name="pricing"></a>Стоимость
+## <a name="pricing"></a>Цены
 
 ### <a name="where-can-i-find-pricing-information"></a>Где можно найти сведения о ценах?
 Ознакомьтесь [Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/) сведениями о ценах.
@@ -100,7 +100,7 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 Да. При создании хранилища Site Recovery в регионе мы обеспечиваем хранение всех метаданных, необходимых для управления репликацией и отработкой отказа, в пределах этого региона.
 
 ### <a name="does-site-recovery-encrypt-replication"></a>Выполняет ли служба Site Recovery шифрование репликации?
-При репликации виртуальных машин и физических серверов между локальными сайтами поддерживается шифрование в процессе передачи. При репликации виртуальных машин и физических серверов в Azure поддерживается как шифрование при передаче, так и [шифрование на месте (в Azure)](https://docs.microsoft.com/azure/storage/storage-service-encryption).
+При репликации виртуальных машин и физических серверов между локальными сайтами поддерживается шифрование в процессе передачи. Для виртуальных машин и физических серверов, реплицируемых в Azure, поддерживаются как шифрование, так и [шифрование по частям (в Azure)](https://docs.microsoft.com/azure/storage/storage-service-encryption) .
 
 ### <a name="how-can-i-enforce-tls-12-on-all-on-premises-azure-site-recovery-components"></a>Как применить TLS 1,2 ко всем локальным Azure Site Recoveryным компонентам?
 Агенты мобильности, установленные на реплицированных элементах, обмениваются данными с сервером обработки только в TLS 1,2. Однако обмен данными между сервером конфигурации и Azure и сервером обработки с Azure может осуществляться на TLS 1,1 или 1,0. Следуйте [указаниям](https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi) по применению TLS 1,2 на всех серверах конфигурации и серверах обработки, настроенных вами.
@@ -192,7 +192,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 
 
 
-## <a name="failover"></a>Переход на другой ресурс
+## <a name="failover"></a>Отработка отказа
 ### <a name="if-im-failing-over-to-azure-how-do-i-access-the-azure-vms-after-failover"></a>При отработке отказа в Azure как получить доступ к виртуальным машинам Azure после отработки отказа?
 
 Доступ к виртуальным машинам Azure можно получить через безопасное подключение к Интернету, подключение VPN типа "сеть — сеть" или с помощью Azure ExpressRoute. Для подключения необходимо подготовить ряд действий. [Подробнее](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover).
@@ -205,7 +205,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 Можно активировать незапланированную отработку отказа на дополнительном сайте. Для отработки отказа службе Site Recovery не требуется подключение на основном сайте.
 
 ### <a name="is-failover-automatic"></a>Отработка отказа выполняется автоматически?
-Отработка отказа не выполняется автоматически. Чтобы активировать ее, необходимо щелкнуть в соответствующем месте на портале или воспользоваться [Site Recovery PowerShell](/powershell/module/az.recoveryservices) . Восстановление размещения — простое действие, которое выполняется на портале Site Recovery.
+Отработка отказа не выполняется автоматически. Вы инициируете отработку отказа одним щелчком на портале или можете использовать [Site Recovery PowerShell](/powershell/module/az.recoveryservices) для активации отработки отказа. Восстановление размещения — простое действие, которое выполняется на портале Site Recovery.
 
 Чтобы автоматизировать выполнение этих процедур, можно использовать локальное решение Orchestrator или Operations Manager для обнаружения сбоя виртуальной машины, а затем активировать отработку отказа, используя пакет SDK.
 
@@ -219,7 +219,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 * [Для виртуальных машин VMware](concepts-types-of-failback.md#alternate-location-recovery-alr)
 * [Для виртуальных машин Hyper-V](hyper-v-azure-failback.md#fail-back-to-an-alternate-location)
 
-## <a name="automation"></a>Автоматизация
+## <a name="automation"></a>Служба автоматизации
 
 ### <a name="can-i-automate-site-recovery-scenarios-with-an-sdk"></a>Можно ли автоматизировать сценарии Site Recovery с помощью пакета SDK?
 Да. Рабочие процессы службы Site Recovery можно автоматизировать с помощью интерфейса REST API, PowerShell или пакета SDK для Azure. Ниже перечислены сценарии развертывания Site Recovery с помощью PowerShell, которые поддерживаются в настоящее время.
@@ -234,6 +234,6 @@ Azure Site Recovery реплицирует данные в учетную зап
 
 [Сведения о новых](site-recovery-whats-new.md) обновлениях и [получении сведений о свертке](service-updates-how-to.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Ознакомьтесь со статьей [Обзор Site Recovery](site-recovery-overview.md)
 

@@ -2,24 +2,21 @@
 title: Настройка классических приложений, вызывающих веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как настроить код для классического приложения, вызывающего веб-API
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b2a5a66f2801804b354dd8945ea7d8eb565e82cb
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: d07add7950da531330fe9f64629299cef9fad1ac
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702221"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82734592"
 ---
 # <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Классическое приложение, вызывающее веб-API: конфигурация кода
 
@@ -29,7 +26,7 @@ ms.locfileid: "76702221"
 
 Следующие библиотеки проверки подлинности Майкрософт (Мсалс) поддерживают классические приложения.
 
-  Библиотека проверки подлинности Майкрософт | Description
+  Библиотека проверки подлинности Майкрософт | Описание
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживает создание классических приложений на нескольких платформах, таких как Linux, Windows и macOS.
   ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Поддерживает создание классических приложений на нескольких платформах.
@@ -40,9 +37,9 @@ ms.locfileid: "76702221"
 
 С точки зрения кода, классические приложения являются общедоступными клиентскими приложениями. Конфигурация будет немного отличаться в зависимости от того, используется ли Интерактивная проверка подлинности.
 
-# <a name="nettabdotnet"></a>[.NET](#tab/dotnet)
+# <a name="net"></a>[.NET](#tab/dotnet)
 
-Вам потребуется создать MSAL.NET `IPublicClientApplication`и управлять ими.
+Вам потребуется создать MSAL.NET `IPublicClientApplication`и управлять им.
 
 ![ипубликклиентаппликатион](media/scenarios/public-client-application.png)
 
@@ -55,7 +52,7 @@ IPublicClientApplication app = PublicClientApplicationBuilder.Create(clientId)
     .Build();
 ```
 
-Если вы планируете использовать интерактивную проверку подлинности или поток кода устройства, как показано выше, используйте модификатор `.WithRedirectUri`.
+Если вы планируете использовать интерактивную проверку подлинности или поток кода устройства, как показано `.WithRedirectUri` выше, используйте модификатор.
 
 ```csharp
 IPublicClientApplication app;
@@ -106,18 +103,18 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .Build();
 ```
 
-### <a name="learn-more"></a>Подробнее…
+### <a name="learn-more"></a>Дополнительные сведения
 
 Дополнительные сведения о настройке классического приложения MSAL.NET:
 
-- Список всех модификаторов, доступных на `PublicClientApplicationBuilder`, см. в справочной документации [публикклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
+- Список всех модификаторов, доступных в `PublicClientApplicationBuilder`, см. в справочной документации [публикклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationbuilder#methods).
 - Описание всех параметров, предоставляемых в `PublicClientApplicationOptions`, см. в разделе [публикклиентаппликатионоптионс](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.publicclientapplicationoptions) в справочной документации.
 
 ### <a name="complete-example-with-configuration-options"></a>Полный пример с параметрами конфигурации
 
-Представьте себе консольное приложение .NET Core, которое имеет следующий `appsettings.json` файл конфигурации:
+Представьте себе консольное приложение .NET Core, которое имеет `appsettings.json` следующий файл конфигурации:
 
-```JSon
+```json
 {
   "Authentication": {
     "AzureCloudInstance": "AzurePublic",
@@ -183,19 +180,19 @@ var app = PublicClientApplicationBuilder.CreateWithApplicationOptions(config.Pub
            .Build();
 ```
 
-Перед вызовом метода `.Build()` можно переопределить конфигурацию с помощью вызовов методов `.WithXXX`, как показано выше.
+Перед вызовом `.Build()` метода можно переопределить конфигурацию с помощью вызовов `.WithXXX` методов, как показано выше.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
-Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/TestData.java).
+Ниже приведен класс, используемый в примерах разработки Java MSAL для настройки примеров: [TestData](https://github.com/AzureAD/microsoft-authentication-library-for-java/blob/dev/src/samples/public-client/).
 
 ```Java
-PublicClientApplication app = PublicClientApplication.builder(TestData.PUBLIC_CLIENT_ID)
-        .authority(TestData.AUTHORITY_COMMON)
+PublicClientApplication pca = PublicClientApplication.builder(CLIENT_ID)
+        .authority(AUTHORITY)
         .build();
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```Python
 config = json.load(open(sys.argv[1]))
@@ -208,7 +205,7 @@ app = msal.PublicClientApplication(
     )
 ```
 
-# <a name="macostabmacos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Следующий код создает открытое клиентское приложение и выполняет вход пользователей в Microsoft Azure общедоступное облако с рабочей или учебной учетной записью или личным учетная запись Майкрософт.
 
@@ -219,7 +216,7 @@ Objective-C.
 ```objc
 NSError *msalError = nil;
 
-MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"];    
+MSALPublicClientApplicationConfig *config = [[MSALPublicClientApplicationConfig alloc] initWithClientId:@"<your-client-id-here>"];
 MSALPublicClientApplication *application = [[MSALPublicClientApplication alloc] initWithConfiguration:config error:&msalError];
 ```
 

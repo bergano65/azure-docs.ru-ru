@@ -1,18 +1,17 @@
 ---
 title: Сбор данных о производительности приложений Linux в Azure Monitor | Документация Майкрософт
 description: В этой статье приведены подробные сведения о том, как в агенте Log Analytics для Linux настроить сбор данных о производительности MySQL и HTTP-сервера Apache.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/04/2017
-ms.openlocfilehash: 75fd0453534e3a656bb1d8e2940b716dadfdf869
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2fd148dbb85a4fd60fe63d4fb73128bf92dea1d8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75395838"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77670565"
 ---
 # <a name="collect-performance-counters-for-linux-applications-in-azure-monitor"></a>Сбор данных счетчиков производительности приложений Linux в Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -42,9 +41,9 @@ ms.locfileid: "75395838"
 
 Параметры файла проверки подлинности описаны в следующей таблице.
 
-| Свойство | Description |
+| Свойство | Описание |
 |:--|:--|
-| Port | Представляет текущий порт, который прослушивает экземпляр MySQL. Порт 0 означает, что для экземпляра по умолчанию используются следующие свойства. |
+| Порт | Представляет текущий порт, который прослушивает экземпляр MySQL. Порт 0 означает, что для экземпляра по умолчанию используются следующие свойства. |
 | адрес привязки;| Текущий адрес привязки MySQL. |
 | username| Пользователь MySQL, который используется мониторинга экземпляра сервера MySQL. |
 | пароль в кодировке Base64.| Пароль пользователя, который используется для мониторинга MySQL, в кодировке Base64. |
@@ -55,7 +54,7 @@ ms.locfileid: "75395838"
 
 В следующей таблице приведены примеры параметров экземпляра 
 
-| Description | Файлы |
+| Описание | Файл |
 |:--|:--|
 | Экземпляр по умолчанию и экземпляр с портом 3308. | `0=127.0.0.1, myuser, cnBwdA==`<br>`3308=, ,`<br>`AutoUpdate=true` |
 | Экземпляр по умолчанию и экземпляр с портом 3308 и другими именем пользователя и паролем. | `0=127.0.0.1, myuser, cnBwdA==`<br>`3308=127.0.1.1, myuser2,cGluaGVhZA==`<br>`AutoUpdate=true` |
@@ -71,12 +70,12 @@ ms.locfileid: "75395838"
 
 В следующей таблице приведены сведения о синтаксисе mycimprovauth.
 
-| Операция | Пример | Description
+| Операция | Пример | Описание
 |:--|:--|:--|
 | autoupdate *false or true* | mycimprovauth autoupdate false | Устанавливает, следует ли автоматически обновлять файл проверки подлинности при перезапуске или обновлении. |
 | default *bind-address username password* | mycimprovauth default 127.0.0.1 root pwd | Задает экземпляр по умолчанию в файле проверки подлинности OMI MySQL.<br>Пароль в поле пароля следует вводить в формате обычного текста, так как в файле проверки подлинности OMI MySQL он будет зашифрован в кодировке Base 64. |
 | delete *default or port_num* | mycimprovauth 3308 | Удаляет указанный экземпляр по умолчанию или удаляет экземпляр по номеру порта. |
-| help | mycimprov help | Выводит список используемых команд. |
+| справка | mycimprov help | Выводит список используемых команд. |
 | print | mycimprov print | Выводит содержимое файла проверки подлинности OMI MySQL в удобном формате. |
 | update port_num *bind-address username password* | mycimprov update 3307 127.0.0.1 root pwd | Обновляет указанный экземпляр или добавляет экземпляр, если его не существует. |
 
@@ -160,6 +159,6 @@ sudo /opt/microsoft/apache-cimprov/bin/apache_config.sh -u
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Сбор счетчиков производительности](data-sources-performance-counters.md) с агентов Linux.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

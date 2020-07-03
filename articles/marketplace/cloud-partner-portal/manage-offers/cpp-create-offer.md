@@ -1,19 +1,18 @@
 ---
 title: Создание предложений Marketplace | Azure Marketplace
 description: Создание предложений в AppSource и Azure Marketplace с помощью Портала Cloud Partner
-services: Azure, AppSource, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.author: pabutler
-ms.openlocfilehash: 4aa4e154c99f20963485a98d1a21af4ae2b7a1b1
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: d14940eff569a80759e9db0bfa2d6d1541a01377
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73828098"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80286478"
 ---
 # <a name="create-azure-marketplace-and-appsource-offers"></a>Создание предложений Azure Marketplace и AppSource
 
@@ -37,7 +36,7 @@ ms.locfileid: "73828098"
 | **Отменить** | Отменяет последние изменения ввода данных (с момента последнего сохранения).             |
 | **Сравнить** | Сравнивает состояние текущего предложения с опубликованным.  Доступна только после успешной публикации предложения.  |
 | **Опубликовать** | Начинает процесс публикации предложения.                       |
-| **Удалить**  | Удаляет созданное, но не опубликованное предложение. |
+| **Удаление**  | Удаляет созданное, но не опубликованное предложение. |
 |   |   |
 
 
@@ -57,6 +56,6 @@ ms.locfileid: "73828098"
 Содержимое вкладок с одним и тем же названием может отличаться в различных типах предложений.  Характерные для каждого предложения сведения предоставлены в разделе Create offer (Создать предложение).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После создания и сохранения предложения, а также до или после его публикации вы можете [просмотреть его состояние](./cpp-view-status-offer.md).

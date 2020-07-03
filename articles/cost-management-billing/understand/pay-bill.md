@@ -2,22 +2,19 @@
 title: Оплата счета за Microsoft Azure | Документация Майкрософт
 description: Сведения о порядке оплаты счета на портале Azure
 keywords: выставление счетов, дата истечения, баланс, оплата сейчас,
-author: jureid
-manager: jureid
+author: banders
+ms.reviewer: judupont
 tags: billing, past due, pay now, bill, invoice, pay
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/01/2019
+ms.date: 02/10/2020
 ms.author: banders
-ms.openlocfilehash: d486fe72a43465832ca13ac1a62a7f0a9aeaa65e
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 8db50a25d98f5e4dc2ae96c708a5da49709f9ed5
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989713"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77200152"
 ---
 # <a name="how-to-pay-your-bill-for-microsoft-azure"></a>Как оплатить счет за Microsoft Azure
 
@@ -35,21 +32,12 @@ ms.locfileid: "75989713"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выполните поиск по **Управление затратами + выставление счетов**.
-1. В колонке **Обзор** перейдите на вкладку *Сведения*.
-
-    ![снимок экрана, на котором отображается вкладка "Сведения"](./media/pay-bill/billing-account-overview.png)
-
-1. При наличии просроченного счета,вы увидите общую сумму оплаты.
-1. Нажмите синюю кнопку **Платить сейчас**.
-
-    ![снимок экрана, на котором отображается кнопка "Платить сейчас"](./media/pay-bill/paynow-button-overview.png)
-
-1. В новой колонке щелкните **Выбрать метод оплаты**, чтобы выбрать существующую кредитную карту или добавить новую.<!-- screenshot of select payment method link -->
+1. В меню слева в разделе "Выставление счетов" выберите **Счета**.
+1. Если какие-либо из ваших счетов подлежат оплате или просрочены, вы увидите для этого счета синюю ссылку **Платить сейчас**. Щелкните **Платить сейчас**.
+1. В новой колонке щелкните **Выбрать метод оплаты**, чтобы выбрать существующую кредитную карту или добавить новую.
 1. Выбрав метод оплаты, нажмите кнопку **Платить сейчас**.
 
 Состояние счета будет обновлено на "Оплачено" в колонке счета.
-
-<!-- pay now from invoice blade -->
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверка доступа к Клиентскому соглашению Майкрософт
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-mca.md)]

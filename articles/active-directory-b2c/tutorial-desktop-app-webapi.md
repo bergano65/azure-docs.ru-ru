@@ -1,23 +1,23 @@
 ---
-title: Руководство. Предоставление доступа к веб-API Node.js из классического приложения
+title: Руководство по Предоставление доступа к веб-API Node.js из классического приложения
 description: Руководство. Использование Active Directory B2C для защиты веб-API Node.js и его вызова из классического приложения NET.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
-ms.author: marsma
+ms.author: mimart
 ms.date: 10/12/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: a72c45f80d03cda7b176c421cc5498dd16c242ec
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 59670cda68f54e4c0b20b361f0688e6766acba61
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849874"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78183396"
 ---
-# <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API Node.js из классического приложения с помощью Azure Active Directory B2C
+# <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API Node.js из классического приложения с помощью Azure Active Directory B2C
 
 В этом учебнике показано, как вызывать веб-API Node.js, защищенный с помощью Azure Active Directory (Azure AD) B2C, из классического приложения Windows Presentation Foundation (WPF), также защищенного с помощью Azure AD B2C.
 
@@ -51,7 +51,7 @@ ms.locfileid: "76849874"
 
 Выполняя предварительные требования, вы зарегистрировали собственное клиентское приложение с именем *nativeapp1*. Ниже приведены шаги по настройке регистрации собственного приложения с областями API, предоставленными для *webapi1* в предыдущем разделе. Это позволит классическому приложению получить маркер доступа от Azure AD B2C, на основе которого веб-API будет выполнять проверку и предоставлять доступ к своим ресурсам в заданной области. Далее в этом учебнике вы настроите и запустите примеры кода классического приложения и веб-API.
 
-#### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
+#### <a name="applications"></a>[Приложения](#tab/applications/)
 
 1. Щелкните **Приложения**, а затем выберите *nativeapp1*.
 1. Щелкните **Доступ через API**, а затем выберите **Добавить**.
@@ -59,7 +59,7 @@ ms.locfileid: "76849874"
 1. В раскрывающемся списке **Выбрать области** выберите области, определенные ранее. Например, *demo.read* и *demo.write*.
 1. Щелкните **ОК**.
 
-#### <a name="app-registrations-previewtabapp-reg-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
+#### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
 
 1. Выберите **Регистрация приложений (предварительная версия)** , а затем — собственное клиентское приложение, которое должно иметь доступ к API. Например, *nativeapp1*.
 1. В разделе **Управление** выберите **Разрешения API**.

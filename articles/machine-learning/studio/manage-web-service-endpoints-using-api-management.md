@@ -10,21 +10,24 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 11/03/2017
-ms.openlocfilehash: d0e9fff56949125c5fa797e0e4ef7e1183448dd0
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 7064101c21c11b48d8616dbeaa2fd9075660fd3b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168570"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80473465"
 ---
 # <a name="manage-azure-machine-learning-studio-classic-web-services-using-api-management"></a>Управление веб-службами Машинное обучение Azure Studio (классической) с помощью службы управления API
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
+
 ## <a name="overview"></a>Обзор
 В этом руководство показано, как быстро приступить к использованию службы управления API для управления веб-службами Машинное обучение Azure Studio (классической).
 
 ## <a name="what-is-azure-api-management"></a>Что собой представляет управление Azure API
 Управление API Azure — это служба Azure, которая позволяет управлять конечными точками REST API, настраивая доступ пользователей, регулирование использования и мониторинг панели мониторинга. Дополнительные сведения см. на [сайте управления API Azure](https://azure.microsoft.com/services/api-management/) . Чтобы приступить к работе со службой управления API Azure, см. [руководство по импорту и публикации](/azure/api-management/import-and-publish). Это руководство, на котором основана данная статья, содержит больше разделов, включая информацию о конфигурациях оборудования, ценовых категориях, обработке ответов, проверке подлинности пользователей, создании продуктов, подписках разработчика и компактном отображении данных об использовании.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
 * Учетная запись Azure.
@@ -36,7 +39,7 @@ ms.locfileid: "77168570"
 Вы можете управлять веб-службой машинного обучения Azure с помощью экземпляра службы управления API.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите действие **Создать ресурс**.
+2. Выберите **+ создать ресурс**.
 3. В поле поиска введите "Управление API", а затем выберите ресурс "Служба управления API".
 4. Нажмите кнопку **Создать**.
 5. На основе значения **Имя** будет создан уникальный URL-адрес (в нашем примере это demoazureml).
@@ -66,7 +69,7 @@ ms.locfileid: "77168570"
 4. Введите значение для параметра \*\*"Суффикс URL-адреса веб-API". Это значение будет последней частью URL-адреса, по которому клиенты отправляют запросы к этому экземпляру службы (в нашем примере используется суффикс azureml-demo).
 5. В поле **Схема URL-адресов API** выберите значение **HTTPS**.
 6. В поле **Продукты** выберите значение **Starter** (Начальный комплект)
-7. Выберите команду **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 
 ## <a name="add-the-operations"></a>Добавление операций
@@ -86,7 +89,7 @@ ms.locfileid: "77168570"
 
    ![add-rrs-operation-signature](./media/manage-web-service-endpoints-using-api-management/add-rrs-operation-signature.png)
 
-4. Слева щелкните **Ответы** > **Добавить** и выберите значение **200 OK**.
+4. Щелкните **ответы** > **добавить** слева и выберите **200 ОК**.
 5. Чтобы сохранить эту операцию, нажмите кнопку **Сохранить** .
 
    ![add-rrs-operation-response](./media/manage-web-service-endpoints-using-api-management/add-rrs-operation-response.png)
@@ -102,17 +105,17 @@ ms.locfileid: "77168570"
 2. В поле **HTTP verb** (HTTP-команда) выберите значение **POST**.
 3. В поле **URL-адрес шаблона** введите `/workspaces/{workspace}/services/{service}/jobs?api-version={apiversion}`.
 4. Введите **Отображаемое имя** (BES Submit в нашем примере).
-5. Слева щелкните **Ответы** > **Добавить** и выберите значение **200 OK**.
-6. Выберите команду **Сохранить**.
+5. Щелкните **ответы** > **добавить** слева и выберите **200 ОК**.
+6. Нажмите кнопку **Сохранить**.
 
 ### <a name="start-a-batch-execution-job"></a>Запуск задачи выполнения пакетов
 
 1. Чтобы добавить к API операцию BES, щелкните **Добавить операцию**.
 2. В поле **HTTP verb** (HTTP-команда) выберите значение **POST**.
-3. Введите значение **в поле**HTTP verb`/workspaces/{workspace}/services/{service}/jobs/{jobid}/start?api-version={apiversion}` (HTTP-команда).
+3. Введите значение `/workspaces/{workspace}/services/{service}/jobs/{jobid}/start?api-version={apiversion}` в поле **HTTP verb** (HTTP-команда).
 4. Введите **Отображаемое имя** (BES Start в нашем примере).
-6. Слева щелкните **Ответы** > **Добавить** и выберите значение **200 OK**.
-7. Выберите команду **Сохранить**.
+6. Щелкните **ответы** > **добавить** слева и выберите **200 ОК**.
+7. Нажмите кнопку **Сохранить**.
 
 ### <a name="get-the-status-or-result-of-a-batch-execution-job"></a>Получение состояния или результата задания пакетного выполнения
 
@@ -120,8 +123,8 @@ ms.locfileid: "77168570"
 2. В поле **HTTP verb** (HTTP-команда) выберите значение **GET**.
 3. В поле **URL-адрес шаблона** введите `/workspaces/{workspace}/services/{service}/jobs/{jobid}?api-version={apiversion}`.
 4. Введите **Отображаемое имя** (BES Start в нашем примере).
-6. Слева щелкните **Ответы** > **Добавить** и выберите значение **200 OK**.
-7. Выберите команду **Сохранить**.
+6. Щелкните **ответы** > **добавить** слева и выберите **200 ОК**.
+7. Нажмите кнопку **Сохранить**.
 
 ### <a name="delete-a-batch-execution-job"></a>Удаление задачи выполнения пакетов
 
@@ -129,8 +132,8 @@ ms.locfileid: "77168570"
 2. В поле **HTTP verb** (HTTP-команда) выберите значение **DELETE**.
 3. В поле **URL-адрес шаблона** введите `/workspaces/{workspace}/services/{service}/jobs/{jobid}?api-version={apiversion}`.
 4. Введите **Отображаемое имя** (BES Delete в нашем примере).
-5. Слева щелкните **Ответы** > **Добавить** и выберите значение **200 OK**.
-6. Выберите команду **Сохранить**.
+5. Щелкните **ответы** > **добавить** слева и выберите **200 ОК**.
+6. Нажмите кнопку **Сохранить**.
 
 ## <a name="call-an-operation-from-the-developer-portal"></a>Вызов операции с портала разработчика
 
@@ -144,13 +147,13 @@ ms.locfileid: "77168570"
 
    ![demoazureml-api](./media/manage-web-service-endpoints-using-api-management/demoazureml-api.png)
 
-3. Выберите операцию **RRS Execute** . Щелкните **Попробовать**.
+3. Выберите операцию **RRS Execute** . Щелкните **попробовать**.
 
    ![try-it](./media/manage-web-service-endpoints-using-api-management/try-it.png)
 
 4. В разделе **Параметры запроса** введите значения в полях **workspace** (рабочая область) и **service** (служба). В поле **apiversion** (версия API) введите значение 2.0, а в поле **details** (сведения) — true. Название ваших **рабочей области** и **службы** отображается на панели мониторинга веб-службы AzureML (см. раздел **Тестирование веб-службы** в приложении A).
 
-   В поле **Заголовки запроса** щелкните действие **Добавить заголовок** и введите "Content-Type" и "application/json". Снова щелкните **Добавить заголовок** и введите значения "Authorization" и "Bearer *\<your service API-KEY\>* ". Название ключа API (API-KEY) отображается на панели мониторинга веб-службы AzureML (см. раздел **Test the web service** (Тестирование веб-службы) в приложении A).
+   В поле **Заголовки запроса** щелкните действие **Добавить заголовок** и введите "Content-Type" и "application/json". Снова щелкните **Добавить заголовок** и введите значения "Authorization" и "Bearer *\<your service API-KEY\>*". Название ключа API (API-KEY) отображается на панели мониторинга веб-службы AzureML (см. раздел **Test the web service** (Тестирование веб-службы) в приложении A).
 
    В поле **Текст запроса** введите `{"Inputs": {"input1": {"ColumnNames": ["Col2"], "Values": [["This is a good day"]]}}, "GlobalParameters": {}}`.
 
@@ -168,11 +171,11 @@ ms.locfileid: "77168570"
 ### <a name="creating-the-experiment"></a>Создание эксперимента
 Ниже описаны действия, которые нужно выполнить, чтобы создать простой эксперимент AzureML и развернуть его в качестве веб-службы. Веб-служба принимает столбец случайного текста и возвращает набор функций в виде целых чисел. Пример:
 
-| текст | Хэшированный текст |
+| Text | Хэшированный текст |
 | --- | --- |
 | This is a good day |1 1 2 2 0 0 2 1 |
 
-Сначала перейдите на веб-сайт [https://studio.azureml.net/](https://studio.azureml.net/) и, чтобы выполнить вход, введите свои учетные данные. Затем создайте пустой эксперимент.
+Во-первых, используя браузер по своему усмотрению, перейдите [https://studio.azureml.net/](https://studio.azureml.net/) по адресу и введите учетные данные для входа. Затем создайте пустой эксперимент.
 
 ![search-experiment-templates](./media/manage-web-service-endpoints-using-api-management/search-experiment-templates.png)
 
@@ -214,7 +217,7 @@ ms.locfileid: "77168570"
 ![yes-to-publish](./media/manage-web-service-endpoints-using-api-management/yes-to-publish.png)
 
 ### <a name="test-the-web-service"></a>Тестирование веб-службы
-Веб-служба AzureML состоит из конечных точек RSS (служба запросов и ответов) и BES (служба выполнения пакетов). Конечные точки RSS предназначены для синхронного выполнения задач. Конечные точки BES — для асинхронного. Чтобы протестировать веб-службу с помощью приведенного ниже примера кода на языке Python, вам может понадобиться скачать и установить пакет Azure SDK для Python (см. статью [Способы установки Python](/azure/python/python-sdk-azure-install)).
+Веб-служба AzureML состоит из конечных точек RSS (служба запросов и ответов) и BES (служба выполнения пакетов). Конечные точки RSS предназначены для синхронного выполнения задач. Конечные точки BES — для асинхронного. Чтобы протестировать веб-службу с помощью приведенного ниже примера кода на языке Python, вам может понадобиться скачать и установить пакет Azure SDK для Python (см. статью [Способы установки Python](/azure/developer/python/azure-sdk-install)).
 
 Для примера кода ниже потребуется указать также **рабочую область**, **службу** и **ключ API** вашего эксперимента. Вы можете узнать название рабочей области и службы, щелкнув **Запрос-ответ** или **Выполнение пакета** для своего эксперимента на панели мониторинга веб-службы.
 
@@ -245,9 +248,9 @@ ms.locfileid: "77168570"
 
     import urllib2
     import json
-    workspace = "<REPLACE WITH YOUR EXPERIMENT’S WEB SERVICE WORKSPACE ID>"
-    service = "<REPLACE WITH YOUR EXPERIMENT’S WEB SERVICE SERVICE ID>"
-    api_key = "<REPLACE WITH YOUR EXPERIMENT’S WEB SERVICE API KEY>"
+    workspace = "<REPLACE WITH YOUR EXPERIMENT'S WEB SERVICE WORKSPACE ID>"
+    service = "<REPLACE WITH YOUR EXPERIMENT'S WEB SERVICE SERVICE ID>"
+    api_key = "<REPLACE WITH YOUR EXPERIMENT'S WEB SERVICE API KEY>"
     data = {
     "Inputs": {
         "input1": {

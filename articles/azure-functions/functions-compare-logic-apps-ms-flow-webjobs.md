@@ -1,25 +1,21 @@
 ---
 title: Параметры платформы интеграции и автоматизации в Azure
-description: 'Сравнение облачных служб Майкрософт, которые оптимизированы для выполнения задач интеграции: Microsoft Flow, Logic Apps, Функции и Веб-задания.'
+description: 'Сравнение облачных служб Майкрософт, которые оптимизированы для выполнения задач интеграции: Power Automate, Logic Apps, Функции и Веб-задания.'
 ms.topic: overview
 ms.date: 04/09/2018
 ms.custom: mvc
-ms.openlocfilehash: bd9f3bfe1578b632707382cfe422f19514e7ce48
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 40293056a73fd88e9ad6b3922aebfe0ba71f07dd
+ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988113"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80878142"
 ---
-> [!NOTE]
-> Microsoft Flow меняет название на Power Automate. См. [дополнительные сведения](https://aka.ms/flow-now-pa).
-> 
-> В ближайшие дни это содержимое будет обновлено в соответствии с изменениями в фирменной символике.
 # <a name="choose-the-right-integration-and-automation-services-in-azure"></a>Выбор правильных служб интеграции и автоматизации в Azure
 
 В этой статье сравниваются следующие облачные службы Майкрософт:
 
-* [Microsoft Flow](https://flow.microsoft.com/)
+* [Microsoft Power Automate](https://flow.microsoft.com/) (прежнее название — Microsoft Flow)
 * [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/)
 * [Функции Azure](https://azure.microsoft.com/services/functions/)
 * [веб-задания службы приложений Azure](../app-service/webjobs-create.md)
@@ -28,23 +24,23 @@ ms.locfileid: "76988113"
 
 Если вы ищете более общее сравнение функций Azure с другими вариантами служб вычислений Azure, см. статью [Criteria for choosing an Azure compute service](/azure/architecture/guide/technology-choices/compute-comparison) (Критерии выбора службы вычислений Azure) и [Choosing an Azure compute option for microservices](/azure/architecture/microservices/design/compute-options) (Выбор варианта службы вычислений Azure для микрослужб).
 
-## <a name="compare-microsoft-flow-and-azure-logic-apps"></a>Сравнение Microsoft Flow и Azure Logic Apps
+## <a name="compare-microsoft-power-automate-and-azure-logic-apps"></a>Сравнение Microsoft Power Automate и Azure Logic Apps
 
-Microsoft Flow и Logic Apps спроектированы в рамках подхода *designer-first* как службы интеграции, с помощью которых можно создавать рабочие процессы. Обе службы интегрируются с разными корпоративными приложениями и приложениями SaaS. 
+Power Automate и Logic Apps спроектированы в рамках подхода *designer-first* как службы интеграции, с помощью которых можно создавать рабочие процессы. Обе службы интегрируются с разными корпоративными приложениями и приложениями SaaS. 
 
-Служба Microsoft Flow создана на основе Logic Apps. В этих двух службах используется один и тот же конструктор рабочих процессов и одни и те же [соединители](../connectors/apis-list.md). 
+Служба Power Automate создана на основе Logic Apps. В этих двух службах используется один и тот же конструктор рабочих процессов и одни и те же [соединители](../connectors/apis-list.md). 
 
-Служба Microsoft Flow помогает офисным сотрудникам самостоятельно выполнять простые операции интеграции (например, процесс утверждения для библиотеки документов SharePoint), не обращаясь к разработчикам или ИТ-специалистам. Logic Apps также обеспечивает расширенную интеграцию (например, в процессах B2B), когда нужно выполнять операции Azure DevOps и применять методы обеспечения безопасности корпоративного класса. Как правило, с течением времени бизнес-процессы становятся более сложными. Поэтому на первых этапах можно использовать поток, а затем при необходимости преобразовать его в приложение логики.
+Служба Power Automate помогает офисным сотрудникам самостоятельно выполнять простые операции интеграции (например, процесс утверждения на основе библиотеки документов SharePoint), не обращаясь к разработчикам или ИТ-специалистам. Logic Apps также обеспечивает расширенную интеграцию (например, в процессах B2B), когда нужно выполнять операции Azure DevOps и применять методы обеспечения безопасности корпоративного класса. Как правило, с течением времени бизнес-процессы становятся более сложными. Поэтому на первых этапах можно использовать поток, а затем при необходимости преобразовать его в приложение логики.
 
 Сведения в таблице ниже помогут определить, какую из этих двух служб лучше всего использовать для определенной интеграции.
 
-|  | Microsoft Flow | Logic Apps |
+|  | Power Automate | Logic Apps |
 | --- | --- | --- |
 | **Пользователи** |Офисные сотрудники, бизнес-пользователи, администраторы SharePoint |Профессиональные интеграторы и разработчики, ИТ-специалисты |
 | **Сценарии** |Самообслуживание |Расширенные интеграции |
 | **Средство разработки** |В браузере и мобильном приложении, только пользовательский интерфейс |В браузере и [Visual Studio](../logic-apps/logic-apps-deploy-from-vs.md) доступно [представление кода](../logic-apps/logic-apps-author-definitions.md). |
 | **Управление жизненным циклом приложений (ALM)** |Разработка и тестирование в непроизводственных средах, распространение в рабочей среде по готовности |Azure DevOps: система управления версиями, тестирование, поддержка, автоматизация и управление в [Azure Resource Manager](../logic-apps/logic-apps-create-deploy-azure-resource-manager-templates.md) |
-| **Возможности для администраторов** |Управление средами Microsoft Flow и политиками защиты от потери данных, отслеживание лицензирования: [Центр администрирования Microsoft Flow](https://admin.flow.microsoft.com) |Управление группами ресурсов, подключениями, доступом и ведением журнала: [Портал Azure](https://portal.azure.com) |
+| **Возможности для администраторов** |Управление средами Power Automate и политиками защиты от потери данных, отслеживание лицензирования: [Центр администрирования](https://admin.flow.microsoft.com). |Управление группами ресурсов, подключениями, доступом и ведением журнала: [Портал Azure](https://portal.azure.com) |
 | **Безопасность** |Журналы аудита безопасности и соответствия требованиям Office 365, защита от потери данных, [шифрование неактивных](https://wikipedia.org/wiki/Data_at_rest#Encryption) конфиденциальных данных |Обеспечение безопасности Azure: [система безопасности Azure](https://www.microsoft.com/en-us/trustcenter/Security/AzureSecurity), [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/), [журналы аудита](https://azure.microsoft.com/blog/azure-audit-logs-ux-refresh/) |
 
 ## <a name="compare-azure-functions-and-azure-logic-apps"></a>Сравнение служб "Функции Azure" и Azure Logic Apps
@@ -107,25 +103,25 @@ Microsoft Flow и Logic Apps спроектированы в рамках под
 
 <a name="together"></a>
 
-## <a name="microsoft-flow-logic-apps-functions-and-webjobs-together"></a>Совместное использование Microsoft Flow, Logic Apps, Функций и Веб-заданий
+## <a name="power-automate-logic-apps-functions-and-webjobs-together"></a>Совместное использование Power Automate, Logic Apps, Функций и Веб-заданий
 
 Вам не обязательно выбирать какую-то одну из этих служб. Их можно интегрировать друг с другом и с внешними службами.
 
 Поток может вызвать приложение логики. Приложение логики и функция могут вызывать друг друга. Пример см. в статье [Создание функции, интегрируемой с Azure Logic Apps](functions-twitter-email.md).
 
-Качество интеграции между Microsoft Flow, Logic Apps и Функциями постоянно улучшается. Вы можете создать что-нибудь в одной службе, а использовать в других.
+Качество интеграции между Power Automate, Logic Apps и Функциями постоянно улучшается. Вы можете создать что-нибудь в одной службе, а использовать в других.
 
 Дополнительные сведения о службах интеграции см. в следующих источниках:
 
 * [Leveraging Azure Functions & Azure App Service for integration scenarios by Christopher Anderson](https://www.biztalk360.com/integrate-2016-resources/leveraging-azure-functions-azure-app-service-integration-scenarios/) (Использование функций Azure и службы приложений Azure в сценариях интеграции. Автор: Кристофер Андерсон (Christopher Anderson))
 * [Integrations Made Simple by Charles Lamanna](https://www.biztalk360.com/integrate-2016-resources/integrations-made-simple/) (Упрощенные возможности интеграции. Автор: Чарльз Ламанна (Charles Lamanna))
 * [Запись веб-трансляции по Logic Apps](https://aka.ms/logicappslive)
-* [Часто задаваемые вопросы о Microsoft Flow](/power-automate/frequently-asked-questions)
+* [Часто задаваемые вопросы о Power Automate](/power-automate/frequently-asked-questions)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Начните работу с создания потока, приложения логики или приложения-функции. Выберите любую из следующих ссылок:
 
-* [Начало работы с Microsoft Flow](/power-automate/getting-started)
+* [Начало работы с Power Automate](/power-automate/getting-started)
 * [Создайте приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 * [Создание первой функции Azure](functions-create-first-azure-function.md)

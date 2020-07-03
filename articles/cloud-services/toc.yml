@@ -1,5 +1,5 @@
 - name: Документация по Облачным службам
-  href: index.md
+  href: index.yml
 - name: Обзор
   items:
     - name: Что такое Облачные службы
@@ -122,7 +122,7 @@
             - name: Visual Studio
               href: /visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?toc=/azure/cloud-services/toc.json
         - name: Хранение и просмотр диагностических данных в службе хранилища Azure
-          href: ../azure-monitor/platform/diagnostics-extension-to-storage.md?toc=%2fazure%2fcloud-services%2ftoc.json
+          href: diagnostics-extension-to-storage.md
         - name: Трассировка облачной службы с помощью системы диагностики
           href: cloud-services-dotnet-diagnostics-trace-flow.md
     - name: Диагностика
@@ -191,8 +191,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=compute'
     - name: Схема обучения
       href: 'https://azure.microsoft.com/documentation/learning-paths/cloud-services/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-us/home?forum=windowsazuredevelopment'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-cloud-services.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cloud-services/'
     - name: Калькулятор цен

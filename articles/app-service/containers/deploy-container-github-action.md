@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
-ms.openlocfilehash: 127dd8645596b605980bf3c6fbc87bf159f7c03e
-ms.sourcegitcommit: 265f1d6f3f4703daa8d0fc8a85cbd8acf0a17d30
+ms.openlocfilehash: d5f175d887cec1d5b5e567d3f716e6492f4516dd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74671807"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78246970"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание пользовательского контейнера в службе приложений с помощью действий GitHub
 
@@ -21,13 +21,13 @@ ms.locfileid: "74671807"
 > Действия GitHub в настоящее время находятся в бета-версии. Сначала необходимо [зарегистрироваться, чтобы присоединиться к предварительной версии](https://github.com/features/actions) с помощью учетной записи GitHub.
 > 
 
-Рабочий процесс определяется файлом YAML (yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
+Рабочий процесс определяется файлом YAML (. yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
 
 Для рабочего процесса контейнера службы приложений Azure файл содержит три раздела:
 
-|Section  |Задачи  |
+|Раздел  |Задачи  |
 |---------|---------|
-|**Authentication** (Аутентификация) | 1. Определите субъект-службу. <br /> 2. Создайте секрет GitHub. |
+|**Аутентификация** | 1. Определите субъект-службу. <br /> 2. Создайте секрет GitHub. |
 |**Сборка** | 1. Настройте среду. <br /> 2. Создайте образ контейнера. |
 |**Развертывание** | 1. Разверните образ контейнера. |
 
@@ -40,12 +40,12 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
                             --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} \
                             --sdk-auth
                             
-  # Replace {subscription-id}, {resource-group} with the subscription, resource group details of the WebApp
+# Replace {subscription-id}, {resource-group} with the subscription, resource group details of the WebApp
 ```
 
 Выходные данные — это объект JSON с учетными данными назначения роли, которые предоставляют доступ к приложению службы приложений, как показано ниже. Скопируйте этот объект JSON для проверки подлинности из GitHub.
 
- ```azurecli 
+ ```output 
   {
     "clientId": "<GUID>",
     "clientSecret": "<GUID>",
@@ -62,9 +62,9 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 
 В приведенном ниже примере используются учетные данные уровня пользователя, т. е. субъект-служба Azure для развертывания. Выполните действия по настройке секрета.
 
-1. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > Добавить новый секрет**
+1. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**
 
-2. Вставьте содержимое приведенной ниже `az cli` команды в качестве значения переменной Secret. Пример: `AZURE_CREDENTIALS`.
+2. Вставьте содержимое приведенной ниже `az cli` команды в качестве значения переменной Secret. Например, `AZURE_CREDENTIALS`.
 
     
     ```azurecli
@@ -75,7 +75,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
     # Replace {subscription-id}, {resource-group} with the subscription, resource group details
     ```
 
-3. Теперь в файле рабочего процесса в ветви: `.github/workflows/workflow.yml` замените секрет в действии Azure login своим секретом.
+3. Теперь в файле рабочего процесса в ветви `.github/workflows/workflow.yml` укажите секрет в действии Azure для входа.
 
 4. Аналогичным образом определите следующие дополнительные секреты для учетных данных реестра контейнеров и настройте их в действии входа DOCKER. 
 
@@ -100,7 +100,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - name: 'Checkout Github Action' 
+    - name: 'Checkout GitHub Action' 
       uses: actions/checkout@master
     
     - name: 'Login via Azure CLI'
@@ -121,9 +121,9 @@ jobs:
 
 ## <a name="deploy-to-an-app-service-container"></a>Развертывание в контейнер службы приложений
 
-Чтобы развернуть образ в пользовательском контейнере в службе приложений, используйте действие `azure/webapps-container-deploy@v1`. Это действие имеет пять параметров:
+Чтобы развернуть образ в пользовательском контейнере в службе приложений, используйте `azure/webapps-container-deploy@v1` действие. Это действие имеет пять параметров:
 
-| **Параметр**  | **Пояснение**  |
+| **Параметр**  | **Объяснение**  |
 |---------|---------|
 | **имя приложения** | Необходимости Имя приложения службы приложений | 
 | **имя слота** | Используемых Введите существующий слот, отличный от рабочего слота |
@@ -143,7 +143,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
-    - name: 'Checkout Github Action' 
+    - name: 'Checkout GitHub Action' 
       uses: actions/checkout@master
     
     - name: 'Login via Azure CLI'
@@ -171,7 +171,7 @@ jobs:
         az logout
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Наш набор действий, сгруппированных в различные репозитории в GitHub, можно найти в каждом из них, содержащих документацию и примеры, которые помогут вам использовать GitHub для непрерывной интеграции и развертывания приложений в Azure.
 

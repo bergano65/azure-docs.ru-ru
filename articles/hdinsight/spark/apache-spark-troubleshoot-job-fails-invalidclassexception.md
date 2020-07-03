@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 07/29/2019
 ms.openlocfilehash: be50f8716835b0842f854842e5340b0bb8594136
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75894368"
 ---
 # <a name="apache-spark-job-fails-with-invalidclassexception-class-version-mismatch-in-azure-hdinsight"></a>Сбой задания Apache Spark с Инвалидклассексцептион, несоответствие версий класса в Azure HDInsight
@@ -32,9 +32,9 @@ org.apache.commons.lang3.time.FastDateFormat; local class incompatible: stream c
         at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1573)
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
-Эта ошибка может быть вызвана добавлением дополнительного JAR-файла в `spark.yarn.jars` config, в частности затененного JAR, который включает другую версию пакета `commons-lang3` и представляет несоответствие класса. По умолчанию в Spark 2.1/2/3 используется `commons-lang3`версии 3,5.
+Эта ошибка может быть вызвана добавлением дополнительного JAR- `spark.yarn.jars` файла в конфигурацию, в частности, затененного JAR, включающего в себя `commons-lang3` другую версию пакета и представляющего несоответствие класса. По умолчанию в Spark 2.1/2/3 используется версия 3,5 `commons-lang3`.
 
 > [!TIP]
 > Чтобы затениить библиотеку, необходимо разместить ее содержимое в собственном JAR-файле, изменив его пакет. Это отличается от упаковки библиотеки, которая помещает библиотеку в собственный JAR-файл без переупаковки.
@@ -49,6 +49,6 @@ org.apache.commons.lang3.time.FastDateFormat; local class incompatible: stream c
 
 * Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
 * Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

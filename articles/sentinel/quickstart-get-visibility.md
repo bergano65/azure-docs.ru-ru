@@ -2,20 +2,20 @@
 title: Краткое руководство. Начало работы с Azure Sentinel
 description: Краткое руководство Azure Sentinel. Начало работы с предварительной версией Azure Sentinel
 services: sentinel
-author: rkarlin
+author: yelevin
 manager: rkarlin
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: quickstart
-ms.custom: mvc
+ms.custom: mvc, fasttrack-edit
 ms.date: 09/23/2019
-ms.author: rkarlin
-ms.openlocfilehash: 35ecb5c4e3987676d235fc6fd09f58c046301cda
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.author: yelevin
+ms.openlocfilehash: 4bd01b737c4a80ff286458c122f3b0ab9573a40b
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548039"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83798671"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Краткое руководство. Начало работы с Azure Sentinel
 
@@ -51,9 +51,9 @@ ms.locfileid: "76548039"
 
    ![Карта Azure Sentinel](./media/qs-get-visibility/anomolies.png)
 
-## Использование встроенных книг<a name="dashboards"></a>
+## <a name="use-built-in-workbooks"></a>Использование встроенных книг<a name="dashboards"></a>
 
-Встроенные книги предоставляют данные собранные из подключенных источников данных, что позволяет узнать больше о событиях, создаваемых в этих службах. Ко встроенным книгам относятся идентификатор Azure, события действий Azure и локальные данные, полученные из серверов событий Windows, из собственных оповещений, от сторонних производителей, включая журналы трафика брандмауэра, Office 365 и небезопасные протоколы, основанные на событиях Windows. Книги основаны на книгах Azure Monitor, чтобы предоставить расширенную настройку и гибкость при проектировании собственной книги. Дополнительные сведения см.в разделе [Книги](../azure-monitor/app/usage-workbooks.md).
+Встроенные книги предоставляют данные собранные из подключенных источников данных, что позволяет узнать больше о событиях, создаваемых в этих службах. Ко встроенным книгам относятся Azure AD, события действий Azure и локальные данные, полученные с серверов событий Windows, из собственных оповещений, от сторонних производителей, включая журналы трафика брандмауэра, Office 365 и небезопасные протоколы, основанные на событиях Windows. Книги основаны на книгах Azure Monitor, чтобы предоставить расширенную настройку и гибкость при проектировании собственной книги. Дополнительные сведения см.в разделе [Книги](../azure-monitor/platform/workbooks-overview.md).
 
 1. В разделе **Параметры** выберите **Книги**. В разделе **Установленные** можно увидеть все установленные книги. В разделе **Все** отображается вся коллекция встроенных книг, доступных для установки. 
 2. Найдите определенную книгу, чтобы увидеть полный список и описание того, что каждая из них предлагает. 

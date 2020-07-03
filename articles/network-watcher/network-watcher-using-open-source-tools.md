@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: f36db28b58cd57b6407019b378a82632aa6c6228
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 32d978ee766f6dbe95bd7158b8060a0302ef8206
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76840661"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82189068"
 ---
 # <a name="visualize-network-traffic-patterns-to-and-from-your-vms-using-open-source-tools"></a>Визуализация распределения входящего и исходящего трафика на виртуальных машинах с помощью средств с открытым кодом
 
@@ -31,7 +31,7 @@ ms.locfileid: "76840661"
 
 ![сценарий][1]
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 ### <a name="install-capanalysis"></a>Установка CapAnalysis
 
@@ -47,7 +47,7 @@ ms.locfileid: "76840661"
 
 Передавая ссылку в CapAnalysis, не забудьте добавить маркер SAS к URL-адресу BLOB-объекта хранилища.  Чтобы создать этот маркер, откройте в учетной записи хранения подписанный URL-адрес, назначьте необходимые разрешения и нажмите кнопку "Создать SAS". Полученный маркер SAS затем можно добавить к URL-адресу захвата пакетов в BLOB-объекте хранилища.
 
-Итоговый URL-адрес должен выглядеть следующим образом: http://storageaccount.blob.core.windows.net/container/location?addSASkeyhere
+Итоговый URL-адрес должен выглядеть следующим образом: `http:\//storageaccount.blob.core.windows.net/container/location?addSASkeyhere`
 
 
 ### <a name="analyzing-packet-captures"></a>Анализ захвата пакетов
@@ -84,7 +84,7 @@ CapAnalysis предлагает много возможностей для ви
 
     ![filters][11]
 
-    Посетите [https://www.capanalysis.net/ca/#about](https://www.capanalysis.net/ca/#about), чтобы узнать больше обо всех возможностях CapAnalysis.
+    Посетите [https://www.capanalysis.net/ca/#about](https://www.capanalysis.net/ca/#about) страницу, чтобы узнать больше о всех возможностях CapAnalysis.
 
 ## <a name="conclusion"></a>Заключение
 

@@ -11,18 +11,20 @@ ms.author: abnarain
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 01/16/2018
-ms.openlocfilehash: 4064d62a6dc826b23ff1f51e9f61e48d362ae695
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 73ce8c670940a31af6a88f98bfd5880ede259e01
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74912932"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81418904"
 ---
 # <a name="transform-data-using-hadoop-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop Pig в фабрике данных Azure
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-pig-activity.md)
 > * [Текущая версия](transform-data-using-hadoop-pig.md)
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Действие Pig HDInsight в [конвейере](concepts-pipelines-activities.md) фабрики данных выполняет запросы Pig к [вашему собственному](compute-linked-services.md#azure-hdinsight-linked-service) кластеру HDInsight или кластеру HDInsight [по запросу](compute-linked-services.md#azure-hdinsight-on-demand-linked-service). Данная статья основана на материалах статьи о [действиях преобразования данных](transform-data.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
 
@@ -57,16 +59,16 @@ ms.locfileid: "74912932"
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство            | Описание                              | Обязательно для заполнения |
+| Свойство            | Описание                              | Обязательный |
 | ------------------- | ---------------------------------------- | -------- |
-| name                | Имя действия.                     | ДА      |
-| Description (Описание)         | Текст, описывающий, для чего используется действие | Нет       |
-| Тип                | Для действия Hive используется тип действия HDinsightPig. | ДА      |
-| linkedServiceName   | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | ДА      |
+| name                | Имя действия.                     | Да      |
+| description         | Текст, описывающий, для чего используется действие | Нет       |
+| type                | Для действия Hive используется тип действия HDinsightPig. | Да      |
+| linkedServiceName   | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Да      |
 | scriptLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения скрипта Pig, который следует выполнить. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет       |
 | scriptPath          | Укажите путь к файлу скрипта, который хранится в службе хранилища Azure, на который ссылается scriptLinkedService. В имени файла учитывается регистр знаков. | Нет       |
 | getDebugInfo        | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную scriptLinkedService. Допустимые значения: None, Always или Failure. Значение по умолчанию: None. | Нет       |
-| arguments           | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет       |
+| аргументы           | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет       |
 | defines             | Параметры в виде пары "ключ — значение", ссылки на которые указываются в скрипте Pig. | Нет       |
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -78,5 +80,5 @@ ms.locfileid: "74912932"
 * [Действие потоковой передачи Hadoop](transform-data-using-hadoop-streaming.md)
 * [Действие Spark](transform-data-using-spark.md)
 * [Настраиваемое действие .NET](transform-data-using-dotnet-custom-activity.md)
-* [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](transform-data-using-machine-learning.md)
+* [Действие выполнения пакета Машинное обучение](transform-data-using-machine-learning.md)
 * [Действие хранимой процедуры](transform-data-using-stored-procedure.md)

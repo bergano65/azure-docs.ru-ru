@@ -14,18 +14,18 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 57ce6ab31421cd4016f7e204eeabce82f2f7e6a7
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77083988"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Инициализация клиентских приложений с помощью MSAL.NET
 В этой статье описывается инициализация общедоступного клиента и конфиденциальных клиентских приложений с помощью библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET).  Дополнительные сведения о типах клиентских приложений и параметрах конфигурации приложений см. в [обзоре](msal-client-applications.md).
 
-При использовании MSAL.NET 3. x рекомендуемым способом создания экземпляра приложения является использование построителей приложений: `PublicClientApplicationBuilder` и `ConfidentialClientApplicationBuilder`. Они предлагают мощный механизм настройки приложения либо из кода, либо из файла конфигурации, либо путем смешивания обоих подходов.
+При использовании MSAL.NET 3. x рекомендуемым способом создания экземпляра приложения является использование построителей приложений: `PublicClientApplicationBuilder` и. `ConfidentialClientApplicationBuilder` Они предлагают мощный механизм настройки приложения либо из кода, либо из файла конфигурации, либо путем смешивания обоих подходов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 Перед инициализацией приложения необходимо сначала [зарегистрировать его](quickstart-register-app.md) , чтобы приложение можно было интегрировать с платформой Microsoft Identity.  После регистрации может потребоваться следующая информация (которую можно найти в портал Azure):
 
 - Идентификатор клиента (строка, представляющая GUID)
@@ -79,7 +79,7 @@ IPublicClientApplication app = PublicClientApplicationBuilder.CreateWithApplicat
 
 ### <a name="initializing-a-confidential-client-application-from-configuration-options"></a>Инициализация конфиденциального клиентского приложения на основе параметров конфигурации
 
-Тот же тип шаблона применяется к конфиденциальным клиентским приложениям. Кроме того, можно добавить другие параметры с помощью модификаторов `.WithXXX` (здесь приводится сертификат).
+Тот же тип шаблона применяется к конфиденциальным клиентским приложениям. Кроме того, можно добавить другие параметры `.WithXXX` с помощью модификаторов (здесь есть сертификат).
 
 ```csharp
 ConfidentialClientApplicationOptions options = GetOptions(); // your own method
@@ -90,23 +90,23 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 ## <a name="builder-modifiers"></a>Модификаторы построителя
 
-В фрагментах кода, использующих построители приложений, в качестве модификаторов можно применять несколько `.With` методов (например, `.WithCertificate` и `.WithRedirectUri`). 
+В фрагментах кода, использующих построители приложений, можно `.With` применить несколько методов в качестве модификаторов (например, `.WithCertificate` и `.WithRedirectUri`). 
 
 ### <a name="modifiers-common-to-public-and-confidential-client-applications"></a>Модификаторы, общие для общедоступных и конфиденциальных клиентских приложений
 
 Модификаторы, которые можно задать в построителе общедоступных клиентов или конфиденциальных клиентских приложений:
 
-|Модификатор | Description|
+|Модификатор | Описание|
 |--------- | --------- |
-|переопределения `.WithAuthority()` 7 | Устанавливает центр по умолчанию для центра приложений Azure AD с возможностью выбора облака Azure, аудитории, клиента (идентификатора клиента или имени домена) или непосредственного URI центра.|
+|`.WithAuthority()`7 переопределений | Устанавливает центр по умолчанию для центра приложений Azure AD с возможностью выбора облака Azure, аудитории, клиента (идентификатора клиента или имени домена) или непосредственного URI центра.|
 |`.WithAdfsAuthority(string)` | Задает центр по умолчанию приложения в качестве центра ADFS.|
 |`.WithB2CAuthority(string)` | Задает центр по умолчанию приложения как центр Azure AD B2C.|
 |`.WithClientId(string)` | Переопределяет идентификатор клиента.|
 |`.WithComponent(string)` | Задает имя библиотеки с помощью MSAL.NET (по причинам телеметрии). |
-|`.WithDebugLoggingCallback()` | При вызове приложение вызывает `Debug.Write` просто включить трассировку отладки. Дополнительные сведения см. в разделе [ведение журнала](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging) .|
-|`.WithExtraQueryParameters(IDictionary<string,string> eqp)` | Задайте дополнительные параметры запроса уровня приложения, которые будут отправляться во все запросы проверки подлинности. Это может быть переопределяемым на каждом уровне метода получения маркера (с тем же `.WithExtraQueryParameters pattern`).|
+|`.WithDebugLoggingCallback()` | При вызове приложение будет вызывать `Debug.Write` просто включение трассировки отладки. Дополнительные сведения см. в статье, посвященной [ведению журналов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging).|
+|`.WithExtraQueryParameters(IDictionary<string,string> eqp)` | Задайте дополнительные параметры запроса уровня приложения, которые будут отправляться во все запросы проверки подлинности. Это может быть переопределяемым на каждом уровне метода получения маркера ( `.WithExtraQueryParameters pattern`с тем же).|
 |`.WithHttpClientFactory(IMsalHttpClientFactory httpClientFactory)` | Включает расширенные сценарии, такие как настройка для HTTP-прокси, или принудительное MSAL для использования определенного HttpClient (например, в ASP.NET Core веб-приложений и API).|
-|`.WithLogging()` | При вызове приложение вызывает обратный вызов с трассировкой отладки. Дополнительные сведения см. в разделе [ведение журнала](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging) .|
+|`.WithLogging()` | При вызове приложение вызывает обратный вызов с трассировкой отладки. Дополнительные сведения см. в статье, посвященной [ведению журналов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/logging).|
 |`.WithRedirectUri(string redirectUri)` | Переопределяет URI перенаправления по умолчанию. В случае общедоступных клиентских приложений это будет полезно для сценариев, использующих брокер.|
 |`.WithTelemetry(TelemetryCallback telemetryCallback)` | Задает делегат, используемый для отправки данных телеметрии.|
 |`.WithTenantId(string tenantId)` | Переопределяет идентификатор клиента или описание клиента.|
@@ -115,7 +115,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Модификаторы, которые можно задать в построителе общедоступных клиентских приложений для Xamarin. iOS:
 
-|Модификатор | Description|
+|Модификатор | Описание|
 |--------- | --------- |
 |`.WithIosKeychainSecurityGroup()` | **Только Xamarin. iOS**. задает группу безопасности цепочки ключей iOS (для сохраняемости кэша).|
 
@@ -123,7 +123,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Ниже перечислены модификаторы, которые можно задать в построителе конфиденциальных клиентских приложений.
 
-|Модификатор | Description|
+|Модификатор | Описание|
 |--------- | --------- |
 |`.WithCertificate(X509Certificate2 certificate)` | Задает сертификат, идентифицирующий приложение в Azure AD.|
 |`.WithClientSecret(string clientSecret)` | Задает секрет клиента (пароль приложения), определяющий приложение в Azure AD.|

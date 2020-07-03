@@ -4,10 +4,10 @@ description: В этой статье описывается, как Azure Resou
 ms.topic: conceptual
 ms.date: 10/11/2019
 ms.openlocfilehash: 7a13ba6f6cbfc10c52484c45e4011da7a0d8ee4c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75478829"
 ---
 # <a name="authenticate-requests-across-tenants"></a>Запросы на аутентификацию в разных клиентах
@@ -18,10 +18,10 @@ ms.locfileid: "75478829"
 
 Запрос содержит следующие значения заголовков аутентификации.
 
-| Имя заголовка | Description | Пример значения |
+| Имя заголовка | Описание | Пример значения |
 | ----------- | ----------- | ------------ |
 | Авторизация | Основной токен | Bearer &lt;основной_токен&gt; |
-| x-ms-authorization-auxiliary | Вспомогательные токены | Носитель &lt;вспомогательная токен1&gt;, Енкриптедбеарер &lt;вспомогательная токен2&gt;, Bearer &lt;вспомогательная token3&gt; |
+| x-ms-authorization-auxiliary | Вспомогательные токены | &lt;A Bearer on-токен1&gt;, енкриптедбеарер &lt;токен2&gt;, Bearer &lt;"вспомогательный-token3"&gt; |
 
 Дополнительный заголовок может содержать до трех вспомогательных токенов. 
 

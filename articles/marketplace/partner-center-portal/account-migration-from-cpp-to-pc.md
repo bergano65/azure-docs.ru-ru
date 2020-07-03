@@ -1,21 +1,20 @@
 ---
-title: Миграция учетных записей из Портал Cloud Partner в центр партнеров — коммерческий магазин для Azure
-description: Как перенести учетную запись из CPP в центр партнеров. — Коммерческое Marketplace для Azure
-author: MaggiePucciEvans
-manager: evansma
-ms.author: evansma
+title: Перенос учетных записей с Портал Cloud Partner на коммерческий рынок Майкрософт
+description: Узнайте, как перенести учетную запись из Портал Cloud Partner в центр партнеров в коммерческом магазине Майкрософт для Azure.
+author: dsindona
+ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 076250444989d4edb3ec86039ab25887ff1e206b
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 033b603630fc219fc378556a2ccbaef4eae524e4
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75931319"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82743530"
 ---
-# <a name="account-migration-from-cloud-partner-portal-to-partner-center"></a>Миграция учетных записей с Портал Cloud Partner в центр партнеров
+# <a name="how-to-migrate-your-account-from-cloud-partner-portal-to-partner-center"></a>Как перенести учетную запись из Портал Cloud Partner в центр партнеров
 
 Если у вас уже есть учетная запись Портал Cloud Partner (CPP), параметры учетной записи необходимо перенести в центр партнеров.
 
@@ -44,11 +43,21 @@ ms.locfileid: "75931319"
 
     Если у вашей учетной записи CPP нет идентификатора Microsoft Partner Network или она недействительна, необходимо зарегистрироваться в программе Microsoft Partner Network в рамках процесса активации.
 
+## <a name="publishers-moving-from-cpp"></a>Издатели, перемещающиеся из CPP
+
+Если ваша учетная запись была перенесена из [портал Cloud Partner (CPP)](https://cloudpartner.azure.com), вам не нужно создавать новую учетную запись центра партнеров. Вы должны получить настроенную ссылку на новую учетную запись центра партнеров в сообщении электронной почты и в уведомлении после входа в существующую учетную запись CPP.
+
+После того, как вы включили новую учетную запись центра партнеров, перейдя по настроенной ссылке, вы можете вернуться к своей учетной записи, посетив [панель мониторинга коммерческого рынка](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) в центре партнеров.
+
+Сведения о соглашении о публикации и профиле компании будут перенесены в новую учетную запись центра партнеров, а также все ранее настроенные данные профиля выплат учетной записи, учетные записи пользователей и разрешения, а также активные предложения, связанные с вашей учетной записью CPP.
+
+После перемещения сведений об учетной записи из CPP в центр партнеров вы больше не будете использовать CPP для обновления учетной записи, а также для управления пользователями, разрешениями и выставлением счетов. В течение ограниченного времени все обновления учетной записи, внесенные в центре партнеров, автоматически обновляются в учетной записи CPP только для чтения до тех пор, пока портал CPP не будет считаться устаревшим.
+
 ## <a name="sign-up-for-microsoft-partner-network-program"></a>Регистрация для Microsoft Partner Network программы
 
 Компании, которым требуется Партнерская Компания Майкрософт, должны присоединиться к Microsoft Partner Network (MPN) и получить идентификатор MPN. Если вы уже являетесь членом Microsoft Partner Network и у вас есть идентификатор MPN, не задерживайте информацию, так как она понадобится в процессе активации учетной записи.  
 
-Если вы не являетесь членом Microsoft Partner Network, вы можете [присоединиться сюда](https://signup.microsoft.com/signup?sku=StoreForBusinessIW&origin=partnerdashboard&culture=en-us&ru=https://partner.microsoft.com/dashboard/account/v3/xpu/onboard?ru=/en-us/dashboard/account/v3/enrollment/companyprofile/basicpartnernetwork/new) , чтобы получить идентификатор MPN. Запишите идентификатор MPN, так как его потребуется ввести в процессе активации учетной записи.
+Если вы не являетесь членом Microsoft Partner Network, вы можете [присоединиться сюда](https://signup.microsoft.com/signup?sku=StoreForBusinessIW&origin=partnerdashboard&culture=en-us&ru=https://partner.microsoft.com/dashboard/account/v3/xpu/onboard?ru=/dashboard/account/v3/enrollment/companyprofile/basicpartnernetwork/new) , чтобы получить идентификатор MPN. Запишите идентификатор MPN, так как его потребуется ввести в процессе активации учетной записи.
 
 Дополнительные сведения о Microsoft Partner Network см. в статье [Присоединение Microsoft Partner Network](https://partner.microsoft.com/en-US/membership) на веб-сайте партнера. Дополнительные сведения о преимуществах ISV в Microsoft Partner Network см. в разделе [Центр ресурсов ISV](https://partner.microsoft.com/isv-resource-hub).  
 
@@ -62,7 +71,7 @@ ms.locfileid: "75931319"
 > Это не относится к предложениям Dynamics 365 Business Central.  
 
 1. Если ваша учетная запись членства MPN была изначально создана в центре регистрации партнеров (PMC), войдите в [Центр партнеров](https://partner.microsoft.com/pcv/accountsettings/connectedpartnerprofile) , чтобы убедиться, что ваша учетная запись была перенесена. Если отображается экран профиля с ИДЕНТИФИКАТОРом MPN, вы можете продолжить. В противном случае необходимо запустить миграцию учетной записи, следуя инструкциям в [центре участия в партнерских группах](https://partners.microsoft.com/partnerprogram/Welcome.aspx). Если вам нужна помощь, обратитесь в [службу поддержки](https://partner.microsoft.com/support?issueid=100-0077).
-2. Перейдите на [страницу обзора коммерческого рынка в центре партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace/overview). Если в области навигации слева отображается "коммерческое Marketplace", вы регистрируетесь и переходите к следующему шагу. Если нет, [Зарегистрируйтесь в коммерческой Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) .
+2. Перейдите на [страницу обзора коммерческого рынка в центре партнеров](https://partner.microsoft.com/dashboard/commercial-marketplace/overview). Если в области навигации слева отображается "коммерческое Marketplace", вы регистрируетесь и переходите к следующему шагу. Если нет, [Зарегистрируйтесь в коммерческой Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) .
 3. Убедитесь, что ваши предложения находятся в AppSource, выполнив [Поиск своих предложений](https://appsource.microsoft.com/). Если ваши предложения уже находятся в AppSource, перейдите к следующему шагу. Для любого предложения не в AppSource создайте новое предложение по [dynamics 365](create-new-customer-engagement-offer.md) для взаимодействия с клиентом или [новое предложение Dynamics 365](create-new-operations-offer.md).
 4. На [странице соглашения](https://partner.microsoft.com/dashboard/account/agreements)центра партнеров убедитесь, что вы проверили и приняли **Business Applicationsное приложение ISV**.
 5. В [параметрах учетной записи](https://partner.microsoft.com/dashboard/account/v3/accountsettings/billingprofile)центра партнеров убедитесь, что сведения о выставлении счетов завершены.
@@ -74,10 +83,10 @@ ms.locfileid: "75931319"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-Присоединяйтесь к еженедельному [звонку по Dynamics ISV Community](https://aka.ms/DynamicsISV-CommunityCall) для поддержки и обновлений.
+Получите помощь от экспертов и коллег на форумах и знакомство с блогами, веб – семинарами, видео, событиями и многое другое в [Microsoft Dynamics CRM](https://community.dynamics.com/crm?wa=wsignin1.0).
 
-Если вам нужна помощь в публикации, сертификации или управлении предложениями Marketplace, [отправьте запрос в службу поддержки](https://aka.ms/MarketplacePublisherSupport).
+Если вам нужна помощь в публикации, сертификации или управлении предложениями Marketplace, [отправьте запрос в службу поддержки](https://partner.microsoft.com/support/v2/?stage=1).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 - [Управление учетной записью коммерческого магазина в центре партнеров](./manage-account.md)

@@ -3,20 +3,20 @@ title: Настройка сложности пароля с помощью на
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить требования к сложности паролей с помощью настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.author: marsma
+ms.date: 03/10/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d0caa029bd33da499db23f218b2392344c4585ec
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: b16790e288f6569f08ce14e5a7c751bbd8083faf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76849075"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79138440"
 ---
 # <a name="configure-password-complexity-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C
 
@@ -24,91 +24,114 @@ ms.locfileid: "76849075"
 
 В Azure Active Directory B2C (Azure AD B2C) можно настроить требования к сложности для паролей, предоставляемых пользователем при создании учетной записи. По умолчанию Azure AD B2C использует **надежные** пароли. В этой статье рассказывается о настройке сложности пароля в [настраиваемых политиках](custom-policy-overview.md). Вы также можете настроить сложность пароля в [пользовательских потоках](user-flow-password-complexity.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
+Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md). Для регистрации и входа с использованием локальных учетных записей необходимо иметь рабочую настраиваемую политику.
+
 
 ## <a name="add-the-elements"></a>Добавление элементов
 
-1. Скопируйте файл *SignUpOrSignIn.xml*, загруженный с начальным пакетом, и назовите его *SingUpOrSignInPasswordComplexity.xml*.
-2. Откройте файл *SingUpOrSignInPasswordComplexity.xml* и измените **PolicyId** и **PublicPolicyUri** на новое имя политики. Например, *B2C_1A_signup_signin_password_complexity*.
-3. Добавьте следующие элементы **ClaimType** с идентификаторами `newPassword` и `reenterPassword`.
+Чтобы настроить сложность пароля, переопределите `newPassword` `reenterPassword` [типы утверждений](claimsschema.md) и с помощью ссылки на [проверки предикатов](predicates.md#predicatevalidations). Элемент Предикатевалидатионс группирует набор предикатов для формирования пользовательской проверки ввода, которую можно применить к типу утверждения. Откройте файл расширений политики. Например, <em> `SocialAndLocalAccounts/` </em>.
+
+1. Найдите элемент [BuildingBlocks](buildingblocks.md). Если такой элемент не существует, добавьте его.
+1. Нахождение элемента [ClaimsSchema](claimsschema.md) . Если такой элемент не существует, добавьте его.
+1. Добавьте утверждения `newPassword` и `reenterPassword` в элемент **ClaimsSchema** .
 
     ```XML
-    <ClaimsSchema>
-      <ClaimType Id="newPassword">
-        <InputValidationReference Id="PasswordValidation" />
-      </ClaimType>
-      <ClaimType Id="reenterPassword">
-        <InputValidationReference Id="PasswordValidation" />
-      </ClaimType>
-    </ClaimsSchema>
+    <ClaimType Id="newPassword">
+      <PredicateValidationReference Id="CustomPassword" />
+    </ClaimType>
+    <ClaimType Id="reenterPassword">
+      <PredicateValidationReference Id="CustomPassword" />
+    </ClaimType>
     ```
 
-4. [Предикаты](predicates.md) имеют типы метода `IsLengthRange` или `MatchesRegex`. Тип `MatchesRegex` используется для сопоставления регулярного выражения. Тип `IsLengthRange` принимает минимальную и максимальную длину строки. Добавьте элемент **Predicates** в элемент **BuildingBlocks**, если в нем нет следующих элементов **Predicate**.
+1. [Предикаты](predicates.md) определяют базовую проверку для проверки значения типа утверждения и возвращают значение true или false. Проверка выполняется с помощью указанного элемента Method и набора параметров, относящихся к методу. Добавьте следующие предикаты в элемент **BuildingBlocks** сразу после закрывающего `</ClaimsSchema>` элемента:
 
     ```XML
     <Predicates>
-      <Predicate Id="PIN" Method="MatchesRegex" HelpText="The password must be a pin.">
+      <Predicate Id="LengthRange" Method="IsLengthRange">
+        <UserHelpText>The password must be between 6 and 64 characters.</UserHelpText>
         <Parameters>
-          <Parameter Id="RegularExpression">^[0-9]+$</Parameter>
+          <Parameter Id="Minimum">6</Parameter>
+          <Parameter Id="Maximum">64</Parameter>
         </Parameters>
       </Predicate>
-      <Predicate Id="Length" Method="IsLengthRange" HelpText="The password must be between 8 and 16 characters.">
+      <Predicate Id="Lowercase" Method="IncludesCharacters">
+        <UserHelpText>a lowercase letter</UserHelpText>
         <Parameters>
-          <Parameter Id="Minimum">8</Parameter>
-          <Parameter Id="Maximum">16</Parameter>
+          <Parameter Id="CharacterSet">a-z</Parameter>
+        </Parameters>
+      </Predicate>
+      <Predicate Id="Uppercase" Method="IncludesCharacters">
+        <UserHelpText>an uppercase letter</UserHelpText>
+        <Parameters>
+          <Parameter Id="CharacterSet">A-Z</Parameter>
+        </Parameters>
+      </Predicate>
+      <Predicate Id="Number" Method="IncludesCharacters">
+        <UserHelpText>a digit</UserHelpText>
+        <Parameters>
+          <Parameter Id="CharacterSet">0-9</Parameter>
+        </Parameters>
+      </Predicate>
+      <Predicate Id="Symbol" Method="IncludesCharacters">
+        <UserHelpText>a symbol</UserHelpText>
+        <Parameters>
+          <Parameter Id="CharacterSet">@#$%^&amp;*\-_+=[]{}|\\:',.?/`~"();!</Parameter>
         </Parameters>
       </Predicate>
     </Predicates>
     ```
 
-5. Каждый элемент **InputValidation** создается с использованием определенных элементов **Predicate**. Этот элемент дает возможность выполнять логическое агрегирование, схожее с `and` и `or`. Добавьте элемент **InputValidations** в элемент **BuildingBlocks**, если в нем нет следующих элементов **InputValidation**.
+1. Добавьте следующие проверки предиката в элемент **BuildingBlocks** сразу после закрывающего `</Predicates>` элемента:
 
     ```XML
-    <InputValidations>
-      <InputValidation Id="PasswordValidation">
-        <PredicateReferences Id="LengthGroup" MatchAtLeast="1">
-          <PredicateReference Id="Length" />
-        </PredicateReferences>
-        <PredicateReferences Id="3of4" MatchAtLeast="3" HelpText="You must have at least 3 of the following character classes:">
-          <PredicateReference Id="Lowercase" />
-          <PredicateReference Id="Uppercase" />
-          <PredicateReference Id="Number" />
-          <PredicateReference Id="Symbol" />
-        </PredicateReferences>
-      </InputValidation>
-    </InputValidations>
+    <PredicateValidations>
+      <PredicateValidation Id="CustomPassword">
+        <PredicateGroups>
+          <PredicateGroup Id="LengthGroup">
+            <PredicateReferences MatchAtLeast="1">
+              <PredicateReference Id="LengthRange" />
+            </PredicateReferences>
+          </PredicateGroup>
+          <PredicateGroup Id="CharacterClasses">
+            <UserHelpText>The password must have at least 3 of the following:</UserHelpText>
+            <PredicateReferences MatchAtLeast="3">
+              <PredicateReference Id="Lowercase" />
+              <PredicateReference Id="Uppercase" />
+              <PredicateReference Id="Number" />
+              <PredicateReference Id="Symbol" />
+            </PredicateReferences>
+          </PredicateGroup>
+        </PredicateGroups>
+      </PredicateValidation>
+    </PredicateValidations>
     ```
 
-6. Убедитесь, что технический профиль **PolicyProfile** содержит следующие элементы.
+1. Следующие технические профили являются [Active Directory техническими профилями](active-directory-technical-profile.md), которые считывают и записывают данные в Azure Active Directory. Переопределите эти технические профили в файле расширения. Используйте `PersistedClaims` , чтобы отключить политику надежных паролей. Найдите элемент **ClaimsProviders**.  Добавьте следующие поставщики утверждений, как показано ниже.
 
     ```XML
-    <RelyingParty>
-      <DefaultUserJourney ReferenceId="SignUpOrSignIn"/>
-      <TechnicalProfile Id="PolicyProfile">
-        <DisplayName>PolicyProfile</DisplayName>
-        <Protocol Name="OpenIdConnect"/>
-        <InputClaims>
-          <InputClaim ClaimTypeReferenceId="passwordPolicies" DefaultValue="DisablePasswordExpiration, DisableStrongPassword"/>
-        </InputClaims>
-        <OutputClaims>
-          <OutputClaim ClaimTypeReferenceId="displayName"/>
-          <OutputClaim ClaimTypeReferenceId="givenName"/>
-          <OutputClaim ClaimTypeReferenceId="surname"/>
-          <OutputClaim ClaimTypeReferenceId="email"/>
-          <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
-        </OutputClaims>
-        <SubjectNamingInfo ClaimType="sub"/>
-      </TechnicalProfile>
-    </RelyingParty>
+    <ClaimsProvider>
+      <DisplayName>Azure Active Directory</DisplayName>
+      <TechnicalProfiles>
+        <TechnicalProfile Id="AAD-UserWriteUsingLogonEmail">
+          <PersistedClaims>
+            <PersistedClaim ClaimTypeReferenceId="passwordPolicies" DefaultValue="DisablePasswordExpiration, DisableStrongPassword"/>
+          </PersistedClaims>
+        </TechnicalProfile>
+        <TechnicalProfile Id="AAD-UserWritePasswordUsingObjectId">
+          <PersistedClaims>
+            <PersistedClaim ClaimTypeReferenceId="passwordPolicies" DefaultValue="DisablePasswordExpiration, DisableStrongPassword"/>
+          </PersistedClaims>
+        </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
     ```
 
-7. Сохраните файл политики.
+1. Сохраните файл политики.
 
 ## <a name="test-your-policy"></a>Тестирование политики
-
-При тестировании приложений в Azure AD B2C может потребоваться вернуть маркер Azure AD B2C в `https://jwt.ms` для просмотра в нем утверждений.
 
 ### <a name="upload-the-files"></a>Передача файлов
 
@@ -117,12 +140,12 @@ ms.locfileid: "76849075"
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Выберите **Инфраструктура процедур идентификации**.
 5. На странице "Настраиваемые политики" щелкните **Отправить политику**.
-6. Выберите **Перезаписать политику, если она существует**, а затем найдите и выберите файл *SingUpOrSignInPasswordComplexity.xml*.
+6. Установите флажок **Перезаписать политику, если она существует**, а затем найдите и выберите файл *TrustFrameworkExtensions. XML* .
 7. Щелкните **Отправить**.
 
 ### <a name="run-the-policy"></a>Запуск политики
 
-1. Откройте измененную политику. Например, *B2C_1A_signup_signin_password_complexity*.
+1. Откройте политику регистрации или входа. Например, *B2C_1A_signup_signin*.
 2. В разделе **Приложение** выберите зарегистрированное ранее приложение. Чтобы маркер отображался, **URL-адрес ответа** должен быть следующим: `https://jwt.ms`.
 3. Щелкните **Запустить сейчас**.
 4. Выберите **Зарегистрироваться сейчас**, введите адрес электронной почты и новый пароль. Отображаются рекомендации по ограничению для пароля. Введите данные пользователя и нажмите **Создать**. Вы увидите содержимое возвращенного маркера.
@@ -130,5 +153,4 @@ ms.locfileid: "76849075"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [настроить сложность пароля в настраиваемых политиках в Azure Active Directory B2C](custom-policy-password-change.md).
-
-
+- Дополнительные сведения о [предикатах](predicates.md) и элементах [предикатевалидатионс](predicates.md#predicatevalidations) см. в справочнике по инфраструктура процедур идентификации.

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Trakstar | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Trakstar | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Trakstar.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/02/2019
 ms.author: jeedes
 ms.openlocfilehash: 06ab8a96e4f2c4bb90afd34952a8e6e78114e7e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67088321"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-trakstar"></a>Руководство по Интеграция Azure Active Directory с Trakstar
+# <a name="tutorial-azure-active-directory-integration-with-trakstar"></a>Учебник. Интеграция Azure Active Directory с Trakstar
 
 В этом руководстве описано, как интегрировать Trakstar с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Trakstar обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67088321"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Trakstar, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Trakstar с поддержкой единого входа.
 *  Единый вход — это платная функция в Trakstar. Чтобы включить ее для организации, обратитесь в [службу поддержки клиентов Trakstar](mailto:support@trakstar.com).
 
@@ -107,7 +107,7 @@ ms.locfileid: "67088321"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Trakstar](common/sp-identifier.png)
 
-    a. Вставьте в текстовое поле **URL-адрес входа** значение, скопированное в Trakstar в поле **URL-адреса службы обработчика утверждений** в настройках параметров, аутентификации и единого входа, в следующем формате: `https://app.trakstar.com/auth/saml/callback?namespace=<YOUR_NAMESPACE>`
+    а. Вставьте в текстовое поле **URL-адрес входа** значение, скопированное в Trakstar в поле **URL-адреса службы обработчика утверждений** в настройках параметров, аутентификации и единого входа, в следующем формате: `https://app.trakstar.com/auth/saml/callback?namespace=<YOUR_NAMESPACE>`
 
     b. В текстовом поле **Идентификатор (сущности)** оставьте значение по умолчанию `https://app.trakstar.com`.
 
@@ -123,7 +123,7 @@ ms.locfileid: "67088321"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -199,5 +199,5 @@ ms.locfileid: "67088321"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

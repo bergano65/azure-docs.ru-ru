@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 02/03/2020
 ms.custom: seodec18
 ms.openlocfilehash: dce7db9fc508c70d79be62a7e97b3bf52a316b22
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76983704"
 ---
 # <a name="track-models-metrics-with-mlflow-and-azure-machine-learning-preview"></a>Мониторинг метрик моделей с помощью Млфлов и Машинное обучение Azure (Предварительная версия)
@@ -44,7 +44,7 @@ ms.locfileid: "76983704"
  Отслеживание Млфлов предлагает функциональные возможности ведения журнала метрик и хранилища артефактов, которые доступны только в других случаях через [пакет SDK для машинное обучение Azure Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 
 
-| | Отслеживание&nbsp;Млфлов <!--& Deployment--> | Пакет SDK для Машинное обучение Azure Python |  Интерфейс командной строки службы "Машинное обучение Azure" | Студия машинного обучения Azure.|
+| | Отслеживание&nbsp;млфлов <!--& Deployment--> | Пакет SDK для Машинное обучение Azure Python |  Интерфейс командной строки службы "Машинное обучение Azure" | Студия машинного обучения Azure.|
 |---|---|---|---|---|
 | Управление рабочей областью |   | ✓ | ✓ | ✓ |
 | Использование хранилищ данных  |   | ✓ | ✓ | |
@@ -57,7 +57,7 @@ ms.locfileid: "76983704"
 |Monitor model performance||✓|  |   |
 | Detect data drift |   | ✓ |   | ✓ |
 -->
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * [Установите Млфлов.](https://mlflow.org/docs/latest/quickstart.html)
 * [Установка пакета sdk машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) на локальном компьютере. пакет SDK обеспечивает подключение для млфлов к рабочей области.
@@ -67,7 +67,7 @@ ms.locfileid: "76983704"
 
 Отслеживание Млфлов с помощью Машинное обучение Azure позволяет хранить зарегистрированные метрики и артефакты из локальных запусков в рабочей области Машинное обучение Azure.
 
-Установите пакет `azureml-mlflow`, чтобы использовать отслеживание Млфлов с Машинное обучение Azure в экспериментах, локально выполняемых в Jupyter Notebook или редакторе кода.
+Установите `azureml-mlflow` пакет, чтобы использовать отслеживание млфлов с машинное обучение Azure на экспериментах, локально выполняемых в Jupyter Notebook или редакторе кода.
 
 ```shell
 pip install azureml-mlflow
@@ -76,9 +76,9 @@ pip install azureml-mlflow
 >[!NOTE]
 >Пространство имен azureml. от участников сообщества часто меняется, так как мы работаем над улучшением службы. Поэтому все, что доступно в этом пространстве имен, считается предварительными версиями компонентов, поддержка которых корпорацией Майкрософт ограничена.
 
-Импортируйте классы `mlflow` и [`Workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py) , чтобы получить доступ к универсальному коду ресурса (URI) отслеживания млфлов и настроить рабочую область.
+Импортируйте `mlflow` классы [`Workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace(class)?view=azure-ml-py) и, чтобы получить доступ к универсальному коду ресурса (URI) отслеживания млфлов и настроить рабочую область.
 
-В следующем коде метод `get_mlflow_tracking_uri()` присваивает рабочему пространству уникальный адрес URI отслеживания, `ws`и `set_tracking_uri()` указывает универсальный код ресурса (URI) отслеживания Млфлов для этого адреса.
+В следующем коде `get_mlflow_tracking_uri()` метод присваивает рабочей области `ws`уникальный адрес URI отслеживания и `set_tracking_uri()` указывает универсальный код ресурса (URI) отслеживания млфлов для этого адреса.
 
 ```Python
 import mlflow
@@ -92,7 +92,7 @@ mlflow.set_tracking_uri(ws.get_mlflow_tracking_uri())
 >[!NOTE]
 >URI отслеживания действителен до часа или меньше. Если вы перезапустите сценарий после некоторого времени простоя, используйте API get_mlflow_tracking_uri, чтобы получить новый универсальный код ресурса (URI).
 
-Задайте имя эксперимента Млфлов с помощью `set_experiment()` и запустите обучающий запуск с `start_run()`. Затем используйте `log_metric()`, чтобы активировать API ведения журнала Млфлов и начать запись в журнал метрик выполнения обучения.
+Задайте имя эксперимента Млфлов с `set_experiment()` помощью и начните обучающий запуск `start_run()`с помощью. Затем используйте `log_metric()` для активации API ведения журнала млфлов и начните регистрировать метрики обучающих запусков.
 
 ```Python
 experiment_name = 'experiment_with_mlflow'
@@ -108,7 +108,7 @@ with mlflow.start_run():
 
 Удаленные запуски позволяют обучать модели с помощью более мощных вычислений, таких как виртуальные машины с поддержкой GPU или кластеры Вычислительная среда Машинного обучения. Дополнительные сведения о различных параметрах вычислений см. в разделе [Настройка целевых объектов вычислений для обучения модели](how-to-set-up-training-targets.md) .
 
-Настройте среду выполнения вычислений и обучения с помощью класса [`Environment`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) . Включите `mlflow` и `azureml-mlflow` пакеты PIP в раздел [`CondaDependencies`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py) окружения. Затем конструирует [`ScriptRunConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig?view=azure-ml-py) с удаленным вычислением в качестве целевого объекта вычислений.
+Настройте среду выполнения вычислений и обучения с помощью [`Environment`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py) класса. Пакеты `mlflow` include `azureml-mlflow` и PIP в [`CondaDependencies`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.conda_dependencies.condadependencies?view=azure-ml-py) разделе среды. Затем выполните [`ScriptRunConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.script_run_config.scriptrunconfig?view=azure-ml-py) конструкцию с удаленным вычислением в качестве целевого объекта вычислений.
 
 ```Python
 from azureml.core.environment import Environment
@@ -130,7 +130,7 @@ src.run_config.target = 'my-remote-compute-compute'
 src.run_config.environment = mlflow_env
 ```
 
-В скрипте обучения импортируйте `mlflow` для использования API-интерфейсов ведения журнала Млфлов и начните регистрировать метрики выполнения.
+В сценарии обучения выполните импорт `mlflow` для использования API-интерфейсов ведения журнала млфлов и начните регистрировать метрики выполнения.
 
 ```Python
 import mlflow
@@ -139,7 +139,7 @@ with mlflow.start_run():
     mlflow.log_metric('example', 1.23)
 ```
 
-С помощью этой конфигурации выполнения вычислений и обучения используйте метод `Experiment.submit('train.py')` для отправки выполнения. Этот метод автоматически задает универсальный код ресурса (URI) отслеживания Млфлов и направляет ведение журнала из Млфлов в рабочую область.
+С помощью этой конфигурации выполнения вычислений и обучения используйте `Experiment.submit('train.py')` метод для отправки выполнения. Этот метод автоматически задает универсальный код ресурса (URI) отслеживания Млфлов и направляет ведение журнала из Млфлов в рабочую область.
 
 ```Python
 run = exp.submit(src)
@@ -395,6 +395,6 @@ If you don't plan to use the logged metrics and artifacts in your workspace, the
 
 [Млфлов с записными книжками машинного обучения Azure](https://aka.ms/azureml-mlflow-examples) демонстрируют и расширяют концепции, представленные в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Управляйте моделями](concept-model-management-and-deployment.md).
 * Мониторинг производственных моделей для [смещения данных](how-to-monitor-data-drift.md).

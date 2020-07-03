@@ -1,5 +1,5 @@
 ---
-title: Настройка уведомлений и шаблонов электронной почты
+title: Настройка уведомлений и шаблонов сообщений электронной почты
 titleSuffix: Azure API Management
 description: Сведения о настройке уведомлений и шаблонов писем в службе управления API Azure
 services: api-management
@@ -14,25 +14,25 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: apimpm
 ms.openlocfilehash: 786a9e26003a7afb98307e0bd7fae94c42a2f00d
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75902482"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79244073"
 ---
 # <a name="how-to-configure-notifications-and-email-templates-in-azure-api-management"></a>Как настраивать уведомления и почтовые шаблоны в Azure API Management
 
 Служба управления API позволяет настраивать уведомления для определенных событий, а также почтовые шаблоны, которые используются для связи с администраторами и разработчиками экземпляра службы управления API. В этой статье показано, как настраивать уведомления и почтовые шаблоны для доступных событий.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Если у вас нет экземпляра службы управления API, выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="publisher-notifications"> </a>Настройка уведомлений
+## <a name="configure-notifications"></a><a name="publisher-notifications"> </a>Настройка уведомлений
 
-1.  Выберите экземпляр **службы управления API**.
+1.  Выберите экземпляр **управления API** .
 2.  Нажмите кнопку **Уведомления**, чтобы просмотреть доступные уведомления.
 
     ![Уведомления издателя][api-management-publisher-notifications]
@@ -58,7 +58,7 @@ ms.locfileid: "75902482"
 
 4.  Нажмите кнопку **Добавить**.
 
-## <a name="email-templates"> </a>Настройка шаблонов уведомлений
+## <a name="configure-notification-templates"></a><a name="email-templates"> </a>Настройка шаблонов уведомлений
 
 Служба управления API предоставляет шаблоны уведомлений для сообщений электронной почты, которые отправляются во время администрирования и использования службы. Существуют следующие почтовые шаблоны.
 
@@ -77,7 +77,7 @@ ms.locfileid: "75902482"
 
 Чтобы просмотреть и настроить шаблоны сообщений электронной почты для вашего экземпляра службы управления API, щелкните **Шаблоны уведомлений**.
 
-![Почтовые шаблоны][api-management-email-templates]
+![Шаблоны для электронной почты][api-management-email-templates]
 
 Каждый почтовый шаблон имеет тему в формате обычного текста и определение тела в формате HTML. При необходимости, можно настраивать каждый элемент.
 

@@ -23,6 +23,10 @@
       href: tutorial-restrict-network-access-to-resources.md
     - name: Подключение виртуальных сетей
       href: tutorial-connect-virtual-networks-portal.md
+    - name: Создание шлюза NAT
+      href: quickstart-create-nat-gateway-portal.md
+    - name: Создание и проверка шлюза NAT
+      href: tutorial-create-validate-nat-gateway-portal.md
 - name: Примеры
   items:
     - name: Azure CLI
@@ -31,14 +35,27 @@
       href: powershell-samples.md
     - name: Шаблоны Resource Manager
       href: template-samples.md
-    - name: Шаблоны для службы "Политика Azure"
-      href: policy-samples.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Непрерывность бизнес-процессов
       href: virtual-network-disaster-recovery-guidance.md
     - name: Соединение
       items:
+        - name: NAT
+          items:
+            - name: Обзор
+              href: nat-overview.md
+            - name: Ресурс
+              href: nat-gateway-resource.md
+            - name: Оповещения и метрики
+              href: nat-metrics.md
+            - name: Диагностика
+              href: troubleshoot-nat.md
+        - name: Маршрутизация
+          href: virtual-networks-udr-overview.md
         - name: Взаимодействие компонентов при подключении к серверной части
           items:
             - name: Вводная часть и сведения о настройке теста
@@ -55,7 +72,11 @@
           href: ../expressroute/cross-network-connectivity.md?toc=%2fazure%2fvirtual-network%2ftoc.json
         - name: Пиринг
           href: virtual-network-peering-overview.md
-        - name: Виртуальная сеть для служб Azure
+    - name: Интеграция со службами Azure
+      items:
+        - name: Конечные точки служб
+          href: virtual-network-service-endpoints-overview.md
+        - name: Развертывание выделенной службы
           href: virtual-network-for-azure-services.md
     - name: Службы IP
       items:
@@ -67,22 +88,22 @@
           href: ipv6-overview.md
         - name: Префикс общедоступного IP версии 6
           href: ipv6-public-ip-address-prefix.md
-    - name: безопасность
+        - name: Предпочтение маршрутизации
+          href: routing-preference-overview.md
+    - name: Безопасность
       items:
-        - name: Защита от атак DDoS
-          href: ddos-protection-overview.md
-        - name: Сетевые политики Kubernetes
-          href: kubernetes-network-policies.md
-        - name: Маршрутизация
-          href: virtual-networks-udr-overview.md
-        - name: Группы безопасности
+        - name: Группы безопасности сети
           href: security-overview.md
+        - name: Группы безопасности приложений
+          href: application-security-groups.md
         - name: Теги служб
           href: service-tags-overview.md
-        - name: Конечные точки служб
-          href: virtual-network-service-endpoints-overview.md
         - name: Политики конечной точки службы
           href: virtual-network-service-endpoint-policies-overview.md
+        - name: Сетевые политики Kubernetes
+          href: kubernetes-network-policies.md
+        - name: Защита от атак DDoS
+          href: ddos-protection-overview.md
         - name: TAP виртуальной сети
           href: virtual-network-tap-overview.md
     - name: Подсети
@@ -97,7 +118,7 @@
   items:
     - name: Планирование и настройка
       items:
-        - name: Виртуальные сети
+        - name: Планирование виртуальных сетей
           href: virtual-network-vnet-plan-design-arm.md
         - name: Разрешение имен для виртуальных машин и облачных служб
           href: virtual-networks-name-resolution-for-vms-and-role-instances.md
@@ -111,6 +132,18 @@
           href: virtual-network-nsg-manage-log.md
     - name: Соединение
       items:
+        - name: Маршрутизация сетевого трафика
+          items:
+            - name: Портал Azure
+              href: tutorial-create-route-table-portal.md
+            - name: Azure PowerShell
+              href: tutorial-create-route-table-powershell.md
+            - name: Azure CLI
+              href: tutorial-create-route-table-cli.md
+            - name: Ansible
+              href: /azure/ansible/ansible-create-configure-route-table
+            - name: Управление таблицами маршрутов
+              href: manage-route-table.md
         - name: Управление сетевыми картами
           href: virtual-network-network-interface.md
         - name: Управление виртуальной сетью
@@ -189,41 +222,68 @@
               href: virtual-network-public-ip-address.md
             - name: Управление префиксами общедоступных IP-адресов
               href: manage-public-ip-address-prefix.md
-            - name: Создание и удаление IP-адресов в сетевых картах
+            - name: Добавление и IP-адресов в сетевые карты и их удаление оттуда
               href: virtual-network-network-interface-addresses.md
-    - name: безопасность
+            - name: Предпочтение маршрутизации
+              items:
+                - name: Создание общедоступного IP-адреса
+                  items:
+                    - name: Портал Azure
+                      href: routing-preference-portal.md
+                    - name: Azure PowerShell
+                      href: routing-preference-powershell.md
+                    - name: Azure CLI
+                      href: routing-preference-cli.md
+                - name: Настройка виртуальной машины с выбором маршрутизации через Интернет в качестве предпочтительного варианта
+                  items:
+                    - name: Портал Azure
+                      href: tutorial-routing-preference-virtual-machine-portal.md
+                    - name: Azure PowerShell
+                      href: configure-routing-preference-virtual-machine-powershell.md
+                    - name: Azure CLI
+                      href: configure-routing-preference-virtual-machine-cli.md
+    - name: Безопасность
       items:
-        - name: Управление защитой от атак DDoS
-          href: manage-ddos-protection.md
-        - name: Управление группами безопасности сети
-          href: manage-network-security-group.md
-        - name: Подключение партнеров к стандарту Защиты от атак DDoS
-          href: ddos-protection-partner-onboarding.md
-        - name: Фильтрация сетевого трафика с помощью групп безопасности сети
+        - name: Фильтрация сетевого трафика
           items:
+            - name: Портал Azure
+              href: tutorial-filter-network-traffic.md
             - name: Azure PowerShell
               href: tutorial-filter-network-traffic-powershell.md
             - name: Azure CLI
               href: tutorial-filter-network-traffic-cli.md
-        - name: Маршрутизация трафика с помощью NVA
+        - name: Сетевая изоляция
           items:
-            - name: Azure PowerShell
-              href: tutorial-create-route-table-powershell.md
-            - name: Azure CLI
-              href: tutorial-create-route-table-cli.md
-            - name: Ansible
-              href: /azure/ansible/ansible-create-configure-route-table
-              maintainContext: true
-        - name: Управление таблицами маршрутов
-          href: manage-route-table.md
-        - name: Использование конечных точек служб
-          items:
-            - name: Azure PowerShell
-              href: tutorial-restrict-network-access-to-resources-powershell.md
-            - name: Azure CLI
-              href: tutorial-restrict-network-access-to-resources-cli.md
-        - name: Создание политик для конечных точек служб с помощью портала
-          href: virtual-network-service-endpoint-policies-portal.md
+            - name: Использование частных конечных точек
+              items:
+                - name: Портал Azure
+                  href: ../private-link/create-private-endpoint-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+                - name: Azure PowerShell
+                  href: ../private-link/create-private-endpoint-powershell.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+                - name: Azure CLI
+                  href: ../private-link/create-private-endpoint-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+            - name: Использование конечных точек службы
+              items:
+                - name: Портал Azure
+                  href: tutorial-restrict-network-access-to-resources.md
+                - name: Azure PowerShell
+                  href: tutorial-restrict-network-access-to-resources-powershell.md
+                - name: Azure CLI
+                  href: tutorial-restrict-network-access-to-resources-cli.md
+            - name: Использование политик конечной точки службы
+              items:
+                - name: Портал Azure
+                  href: virtual-network-service-endpoint-policies-portal.md
+                - name: Azure PowerShell
+                  href: virtual-network-service-endpoint-policies-powershell.md
+                - name: Azure CLI
+                  href: virtual-network-service-endpoint-policies-cli.md
+        - name: Управление защитой от атак DDoS
+          href: manage-ddos-protection.md
+        - name: Подключение партнеров к стандарту Защиты от атак DDoS
+          href: ddos-protection-partner-onboarding.md
+        - name: Управление группами безопасности сети
+          href: manage-network-security-group.md
         - name: Сценарии обеспечения безопасности
           items:
             - name: Защита сетей с использованием виртуальных устройств
@@ -252,6 +312,12 @@
               href: virtual-networks-static-private-ip-arm-ps.md
             - name: Azure CLI
               href: virtual-networks-static-private-ip-arm-cli.md
+        - name: Создание виртуальной машины с использованием статического частного IP-адреса (классическая модель)
+          items:
+            - name: Портал Azure
+              href: virtual-networks-static-private-ip-classic-pportal.md
+            - name: Azure PowerShell
+              href: virtual-networks-static-private-ip-classic-ps.md
         - name: Создание виртуальной машины (несколько IP-адресов)
           items:
             - name: Портал Azure
@@ -295,6 +361,47 @@
           href: move-across-regions-publicip-portal.md
         - name: "Общедоступные IP-адреса\_— PowerShell"
           href: move-across-regions-publicip-powershell.md
+    - name: NAT
+      items:
+        - name: "Создание шлюза NAT\_— PowerShell"
+          href: quickstart-create-nat-gateway-powershell.md
+        - name: "Создание шлюза NAT\_— CLI"
+          href: quickstart-create-nat-gateway-cli.md
+        - name: "Создание шлюза NAT\_— шаблон ARM"
+          displayname: Resource Manager
+          href: quickstart-create-nat-gateway-template.md
+        - name: "Создание и проверка шлюза NAT\_— PowerShell"
+          href: tutorial-create-validate-nat-gateway-powershell.md
+        - name: "Создание и проверка шлюза NAT\_— CLI"
+          href: tutorial-create-validate-nat-gateway-cli.md
+    - name: Диагностика
+      items:
+        - name: Устранение неполадок с пирингом виртуальной сети
+          href: virtual-network-troubleshoot-peering-issues.md
+        - name: Настройка и проверка VPN-подключений и подключений между виртуальными сетями
+          href: virtual-network-configure-vnet-connections.md
+        - name: Группы безопасности сети
+          href: diagnose-network-traffic-filter-problem.md
+        - name: Маршруты
+          href: diagnose-network-routing-problem.md
+        - name: Тестирование пропускной способности
+          href: virtual-network-bandwidth-testing.md
+        - name: Проверка задержки сети виртуальной машины
+          href: virtual-network-test-latency.md
+        - name: Не удается удалить виртуальные сети
+          href: virtual-network-troubleshoot-cannot-delete-vnet.md
+        - name: Проблемы с подключением между виртуальными машинами
+          href: virtual-network-troubleshoot-connectivity-problem-between-vms.md
+        - name: Настройка записи типа PTR для проверки заголовка SMTP
+          href: create-ptr-for-smtp-service.md
+        - name: Контрольный список по устранению неполадок с виртуальными модулями
+          href: virtual-network-troubleshoot-nva.md
+        - name: Устранение неполадок исходящих подключений по протоколу SMTP
+          href: troubleshoot-outbound-smtp-connectivity.md
+        - name: Сведения об IP-адресе 168.63.129.16
+          href: what-is-ip-address-168-63-129-16.md
+        - name: Устранение неполадок с подключением виртуальной машины Azure
+          href: troubleshoot-vm-connectivity.md
     - name: Классическое развертывание
       href: 'https://docs.microsoft.com/previous-versions/azure/virtual-network/create-virtual-network-classic'
 - name: Справочник
@@ -304,7 +411,7 @@
     - name: Azure PowerShell
       href: /powershell/module/az.network
     - name: .NET
-      href: /api/overview/azure/virtual-network
+      href: /dotnet/api/overview/azure/virtual-network
     - name: Java
       href: /java/api/
     - name: Node.js
@@ -325,8 +432,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
     - name: Блог о сетях
       href: 'https://azure.microsoft.com/blog/topics/networking'
-    - name: Форум по сетям
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork'
+    - name: Страница с вопросами о службе "Сеть" (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-virtual-network.html'
     - name: Отзыв о работе сети
       href: 'https://feedback.azure.com/forums/217313-networking?category_id=77469'
     - name: Цены

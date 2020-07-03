@@ -2,20 +2,17 @@
 title: Руководство по Kubernetes в Azure. Обновление приложения
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как обновить имеющееся развертывание приложения для AKS с помощью новой версии кода приложения.
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: b645fc9f67229d087a5d1655f733e2f3e50d4471
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: d5457d790cd3c95bb23ec0c517097b443a2389ed
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67614382"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77593382"
 ---
-# <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство по Обновление приложения в Службе Azure Kubernetes (AKS)
+# <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство. Обновление приложения в службе Azure Kubernetes
 
 После развертывания приложения в Kubernetes его можно обновить, указав новый образ контейнера или версию образа. Обновление выполняется поэтапно, поэтому одновременно обновляется только часть развертывания. Такое поэтапное обновление позволяет приложению продолжать работать во время обновления. Оно также обеспечивает механизм отката на случай, если произойдет сбой развертывания.
 
@@ -27,7 +24,7 @@ ms.locfileid: "67614382"
 > * Передача образа контейнера в Реестр контейнеров Azure.
 > * Развертывание обновленного образа контейнера.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 В предыдущих руководствах приложение было упаковано в образ контейнера. Этот образ был передан в Реестр контейнеров Azure, и вы создали кластер AKS. Затем приложение было развернуто в кластере AKS.
 
@@ -53,7 +50,7 @@ VOTE2VALUE = 'Purple'
 SHOWHOST = 'false'
 ```
 
-Сохраните и закройте файл. В `vi` используйте команду `:wq`.
+Сохраните файл и закройте его. В `vi` используйте команду `:wq`.
 
 ## <a name="update-the-container-image"></a>Обновление образа контейнера
 
@@ -150,9 +147,9 @@ kubectl get service azure-vote-front
 
 ![Схема кластера Kubernetes в Аzure](media/container-service-kubernetes-tutorials/vote-app-updated-external.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы обновили приложение и развернули это обновление в кластер AKS. Вы научились выполнять следующие задачи:
+В этом руководстве вы обновили приложение и развернули это обновление в кластер AKS. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Обновление кода внешнего приложения.

@@ -7,17 +7,17 @@ ms.author: sujie
 ms.date: 11/10/2019
 ms.topic: conceptual
 ms.openlocfilehash: c29d0d9ecd856ee9611df21d23b1b2b763e24652
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75486473"
 ---
-# <a name="test-stream-analytics-queries-locally-with-sample-data-using-visual-studio-code"></a>Тестирование Stream Analytics запросов локально с использованием примеров данных с помощью Visual Studio Code
+# <a name="test-stream-analytics-queries-locally-with-sample-data-using-visual-studio-code"></a>Локальное тестирование запросов Stream Analytics с использованием примера данных и Visual Studio Code
 
 Вы можете использовать средства Azure Stream Analytics для Visual Studio Code для локального тестирования заданий Stream Analytics с помощью примеров данных. Результаты запроса можно найти в файлах JSON в папке **локалрунаутпутс** проекта.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download) и перезапустите Visual Studio Code.
 
@@ -31,7 +31,7 @@ ms.locfileid: "75486473"
 
 2. После отображения данных нажмите кнопку **Сохранить как** , чтобы сохранить данные в локальный файл.
 
- ![Предварительный просмотр динамического ввода](./media/quick-create-vs-code/preview-live-input.png)
+ ![Просмотр динамических входных данных](./media/quick-create-vs-code/preview-live-input.png)
 
 ## <a name="define-a-local-input"></a>Определить локальный вход
 
@@ -67,7 +67,7 @@ ms.locfileid: "75486473"
 
     ![Предварительный просмотр локальных данных в необработанном формате](./media/vscode-local-run/local-file-preview-raw.png)
 
-## <a name="run-queries-locally"></a>Локальное выполнение запросов
+## <a name="run-queries-locally"></a>Локальное выполнение запросов.
 
 Вернитесь в редактор запросов и выберите **запустить локально**. Затем выберите **использовать локальный вход** из раскрывающегося списка.
 

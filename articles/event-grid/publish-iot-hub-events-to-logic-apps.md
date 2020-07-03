@@ -7,12 +7,12 @@ ms.service: iot-hub
 ms.topic: tutorial
 ms.date: 11/21/2019
 ms.author: robinsh
-ms.openlocfilehash: 334b7b2c59b328e8eff3c7c2b9c3ed46bffc3442
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 0b1870af6316713590eec59aee2af94ce34b7e1a
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74706437"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83722564"
 ---
 # <a name="tutorial-send-email-notifications-about-azure-iot-hub-events-using-event-grid-and-logic-apps"></a>Руководство по отправке уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Сетки событий и Logic Apps
 
@@ -22,9 +22,14 @@ ms.locfileid: "74706437"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Такая учетная запись используется для отправки уведомлений о событиях. Полный список поддерживаемых соединителей для приложения логики см. в статье [Соединители](https://docs.microsoft.com/connectors/).
-* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
-* Центр Интернета вещей в Azure. Если вы его еще не создали, ознакомьтесь с соответствующими инструкциями в статье [Подключение устройства к Центру Интернета вещей с помощью .NET](../iot-hub/iot-hub-csharp-csharp-getstarted.md). 
+* Активная подписка Azure. Если у вас нет подписки, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/).
+
+* Учетная запись электронной почты любого поставщика услуг электронной почты, поддерживаемого Azure Logic Apps, например Office 365 Outlook, Outlook.com или Gmail. Такая учетная запись используется для отправки уведомлений о событиях. Полный список поддерживаемых соединителей для приложения логики см. в статье [Соединители](https://docs.microsoft.com/connectors/).
+
+  > [!IMPORTANT]
+  > Перед использованием Gmail проверьте наличие учетной записи для бизнеса G-Suite (адрес электронной почты с личным доменом) или учетной записи потребителя Gmail (адрес электронной почты с @gmail.com или @googlemail.com). Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail с другими соединителями без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать соединитель Gmail только с определенными утвержденными Google службами. Вы также можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
+
+* Центр Интернета вещей в Azure. Если вы его еще не создали, ознакомьтесь с соответствующими инструкциями в статье [Подключение устройства к Центру Интернета вещей с помощью .NET](../iot-hub/iot-hub-csharp-csharp-getstarted.md).
 
 ## <a name="create-a-logic-app"></a>Создайте приложение логики
 
@@ -42,7 +47,7 @@ ms.locfileid: "74706437"
 
    ![Поля для создания приложения логики](./media/publish-iot-hub-events-to-logic-apps/create-logic-app-fields.png)
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 1. Создав ресурс, перейдите к приложению логики. Для этого выберите пункт **Группы ресурсов**, а затем созданную для этого учебника группу ресурсов. После этого найдите приложение логики в списке ресурсов и выберите его. 
 
@@ -235,7 +240,7 @@ ms.locfileid: "74706437"
 
 ## <a name="use-the-azure-cli"></a>Использование Azure CLI
 
-Вместо того чтобы использовать портал Azure, шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity) с использованием Azure CLI.
+Вместо того чтобы использовать портал Azure, шаги для работы с Центром Интернета вещей можно выполнить с помощью Azure CLI. С дополнительными сведениями можно ознакомиться в статьях, посвященных созданию [подписки на события](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription) и [устройств Интернета вещей](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub/device-identity) с использованием Azure CLI.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -267,9 +272,9 @@ ms.locfileid: "74706437"
 
 2. Выберите подписку на события, которую нужно удалить. 
 
-3. Нажмите кнопку **Удалить**. 
+3. Выберите команду **Удалить**. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше о [реагировании на события в Центре Интернета вещей, используя службу "Cетка событий" для запуска действий](../iot-hub/iot-hub-event-grid.md).
 * См. дополнительные сведения об [упорядочении событий подключения и отключения устройств](../iot-hub/iot-hub-how-to-order-connection-state-events.md).

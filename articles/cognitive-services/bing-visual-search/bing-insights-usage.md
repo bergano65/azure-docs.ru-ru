@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: scottwhi
 ms.openlocfilehash: df66dbeebb04209921ff91c4b99a14580f026718
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74111638"
 ---
 # <a name="examples-of-bing-insights-usage"></a>Примеры использования аналитических сведений Bing
@@ -73,9 +73,9 @@ ms.locfileid: "74111638"
 
 ![Ограничивающий прямоугольник и гиперобъект](./media/click-to-search.PNG)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-Чтобы начать работу с первым запросом, ознакомьтесь с краткими руководствами [C#](quickstarts/csharp.md) : | [Java](quickstarts/java.md) | [node. js](quickstarts/nodejs.md) | [Python](quickstarts/python.md)
+Чтобы начать работу с первым запросом, см. Краткие руководства: [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node. js](quickstarts/nodejs.md) | [Python](quickstarts/python.md)
 
 
 

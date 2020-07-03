@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 236527a9889879f872ef8c3867a7ec3c1b1ba0a3
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77057537"
 ---
 # <a name="tutorial-configure-keeper-password-manager--digital-vault-for-automatic-user-provisioning"></a>Учебник. Настройка диспетчера паролей для автоматической подготовки пользователей & Digital Vault
@@ -31,7 +31,7 @@ ms.locfileid: "77057537"
 >
 > Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения об общих условиях использования продуктов в предварительной версии см. в документе [Дополнительные условия использования Предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -49,7 +49,7 @@ ms.locfileid: "77057537"
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -73,7 +73,7 @@ Azure Active Directory использует концепцию, называем
 
 * Рекомендуется назначить одного пользователя Azure AD диспетчеру паролей & Digital Vault для проверки конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя диспетчеру паролей для & Digital Vault в диалоговом окне назначения необходимо выбрать допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя диспетчеру паролей для & Digital Vault в диалоговом окне назначения необходимо выбрать допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-keeper-password-manager--digital-vault"></a>Настройка автоматической подготовки пользователей в диспетчере паролей для синхронизации & цифрового хранилища 
 
@@ -92,11 +92,11 @@ Azure Active Directory использует концепцию, называем
 
     ![Keeper Password Manager & Digital Vault в списке приложений](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
@@ -106,7 +106,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Консоль администратора для сохранения](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-admin-console.png)
 
-    Выберите **scim (система для управления междоменными удостоверениями)** .
+    Выберите **scim (система для управления междоменными удостоверениями)**.
 
     ![Добавить SCIM](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-add-scim.png)
 

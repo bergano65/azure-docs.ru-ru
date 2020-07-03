@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 11/11/2019
 ms.author: cherylmc
-ms.openlocfilehash: 7a904857b8aa0ed2aa18fc2a1b81fe31541e6f9e
-ms.sourcegitcommit: 5cfe977783f02cd045023a1645ac42b8d82223bd
+ms.openlocfilehash: 3588755e2aab1c84d443e917eca8c7fca280b49a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2019
-ms.locfileid: "74151904"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80756894"
 ---
 # <a name="advertise-custom-routes-for-p2s-vpn-clients"></a>Объявление пользовательских маршрутов для VPN-клиентов P2S
 
@@ -24,7 +24,7 @@ ms.locfileid: "74151904"
 
 Чтобы объявить пользовательские маршруты, используйте `Set-AzVirtualNetworkGateway cmdlet`. В следующем примере показано, как объявить IP-адрес для [таблиц учетной записи хранения Contoso](https://contoso.table.core.windows.net).
 
-1. Проверьте связь с *contoso.Table.Core.Windows.NET* и запишите IP-адрес. Например,
+1. Проверьте связь с *contoso.Table.Core.Windows.NET* и запишите IP-адрес. Пример:
 
     ```cmd
     C:\>ping contoso.table.core.windows.net
@@ -38,7 +38,7 @@ ms.locfileid: "74151904"
     Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -CustomRoute 13.88.144.250/32
     ```
 
-3. Чтобы добавить несколько настраиваемых маршрутов, используйте запятыми и пробелы для разделения адресов. Например,
+3. Чтобы добавить несколько пользовательских маршрутов, используйте для разделения адресов запятую и пробелы. Пример:
 
     ```azurepowershell-interactive
     Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -CustomRoute x.x.x.x/xx , y.y.y.y/yy
@@ -59,6 +59,6 @@ ms.locfileid: "74151904"
   $gw = Get-AzVirtualNetworkGateway -Name <name of gateway> -ResourceGroupName <name of resource group>
   Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -CustomRoute @0
   ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о маршрутизации P2S см. в статье [о маршрутизации "точка — сеть](vpn-gateway-about-point-to-site-routing.md)".

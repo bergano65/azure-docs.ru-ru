@@ -1,23 +1,23 @@
 ---
 title: Руководство по операциям извлечения, преобразования и загрузки (ETL) с помощью Interactive Query в Azure HDInsight
-description: 'Учебник: сведения об извлечении данных из необработанного набора данных в формате CSV, их преобразовании с помощью интерактивного запроса в HDInsight и загрузке преобразованных данных в базу данных SQL Azure с помощью Apache Sqoop.'
+description: Из этого руководства вы узнаете, как извлекать данные из набора необработанных данных формата CSV, преобразовывать их с помощью Interactive Query в HDInsight и загружать преобразованные данные в базу данных SQL Azure с помощью Apache Sqoop.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
-ms.date: 07/02/2019
-ms.author: hrasheed
 ms.custom: hdinsightactive,mvc
-ms.openlocfilehash: d1136c153a529f58db1de277ec84ac332b9f78ae
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 07/02/2019
+ms.openlocfilehash: 7413a32fdddb579bad61c9cfe539be6aaeae9881
+ms.sourcegitcommit: 7e04a51363de29322de08d2c5024d97506937a60
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494150"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81313744"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-interactive-query-in-azure-hdinsight"></a>Руководство по извлечению, преобразованию и загрузке данных с помощью интерактивного запроса в Azure HDInsight
 
-В этом учебнике объясняется, как извлечь CSV-файл с общедоступными данными о рейсах, импортировать их в хранилище кластера HDInsight, а затем преобразовать эти данные с помощью интерактивного запроса в Azure HDInsight. После преобразования вы загрузите эти данные в базу данных SQL Azure с использованием [Apache Sqoop](https://sqoop.apache.org/).
+В этом руководстве показано, как скачать CSV-файл с общедоступными данными об авиарейсах, импортировать их в хранилище кластера HDInsight, а затем преобразовать эти данные с помощью Interactive Query в Azure HDInsight. После преобразования вы загрузите эти данные в базу данных SQL Azure с использованием [Apache Sqoop](https://sqoop.apache.org/).
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -42,11 +42,11 @@ ms.locfileid: "73494150"
 
 2. Очистите все поля на странице, а затем выберите следующие значения:
 
-   | ИМЯ | Значение |
+   | Имя | Значение |
    | --- | --- |
    | Фильтр года |2019 |
    | Период фильтра |Январь |
-   | Поля |Year, FlightDate, Reporting_Airline, DOT_ID_Reporting_Airline, Flight_Number_Reporting_Airline, OriginAirportID, Origin, OriginCityName, OriginState, DestAirportID, Dest, DestCityName, DestState, DepDelayMinutes, ArrDelay, ArrDelayMinutes, CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, LateAircraftDelay. |
+   | Поля |`Year, FlightDate, Reporting_Airline, DOT_ID_Reporting_Airline, Flight_Number_Reporting_Airline, OriginAirportID, Origin, OriginCityName, OriginState, DestAirportID, Dest, DestCityName, DestState, DepDelayMinutes, ArrDelay, ArrDelayMinutes, CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, LateAircraftDelay`. |
 
 3. Выберите **Скачать**. Вы получите ZIP-файл с выбранными полями данных.
 
@@ -60,7 +60,7 @@ ms.locfileid: "73494150"
     scp FILENAME.zip sshuser@CLUSTERNAME-ssh.azurehdinsight.net:FILENAME.zip
     ```
 
-    Если вам будет предложено указать вариант для продолжения, введите "Да" в командной строке и нажмите клавишу ВВОД. При вводе текст не отображается в окне.
+    При появлении запроса введите yes (да) или no (нет), чтобы продолжить. При вводе текст не отображается в окне.
 
 2. После завершения отправки можно подключиться к кластеру с помощью SSH. Измените команду ниже, заменив `CLUSTERNAME` именем кластера HDInsight. Затем введите следующую команду:
 
@@ -283,19 +283,19 @@ ms.locfileid: "73494150"
     GO
     ```
 
-    Вы увидите список данных в таблице. Таблица содержит название города и среднее время задержки рейса для этого города. 
+    Вы увидите список данных в таблице. Таблица содержит название города и среднее время задержки рейса для этого города.
 
     Введите `exit` для выхода из служебной программы tsql.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-После завершения работы с этим руководством кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры.
+После завершения работы с этим руководством кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Так как затраты на кластер во много раз превышают затраты на хранилище, экономически целесообразно удалять неиспользуемые кластеры.
 
 Инструкции по удалению кластера см. в статье [Delete an HDInsight cluster using your browser, PowerShell, or the Azure CLI](../hdinsight-delete-cluster.md) (Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого учебника вы извлекли CSV-файл с необработанными данными, импортировали их в хранилище кластера HDInsight, а затем преобразовали эти данные с помощью интерактивного запроса в Azure HDInsight.  Перейдите к следующему учебнику, чтобы ознакомиться со сведениями о соединителе хранилища Apache Hive.
 
 > [!div class="nextstepaction"]
->[Integrate Apache Spark and Apache Hive with the Hive Warehouse Connector](./apache-hive-warehouse-connector.md) (Интеграция Apache Spark и Apache Hive с помощью соединителя хранилища Hive)
+> [Integrate Apache Spark and Apache Hive with the Hive Warehouse Connector](./apache-hive-warehouse-connector.md) (Интеграция Apache Spark и Apache Hive с помощью соединителя хранилища Hive)

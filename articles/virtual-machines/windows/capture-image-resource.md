@@ -1,25 +1,19 @@
 ---
 title: Создание управляемого образа в Azure
 description: Создание управляемого образа универсальной виртуальной машины или виртуального жесткого диска в Azure. Образы можно использовать для создания нескольких виртуальных машин, использующих управляемые диски.
-services: virtual-machines-windows
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
+ms.subservice: imaging
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: cynthn
-ms.openlocfilehash: 01619027ddc79530dc9541584efa9a3e518f5136
-ms.sourcegitcommit: c38a1f55bed721aea4355a6d9289897a4ac769d2
+ms.openlocfilehash: 258bddec85e4ab182ff0b07c49cdc93f92264f95
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74842064"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82084470"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Создание управляемого образа универсальной виртуальной машины в Azure
 
@@ -50,7 +44,7 @@ Sysprep удаляет все сведения о вашей учетной за
    
 4. В разделе **Параметры завершения работы** выберите **Завершение работы**.
    
-5. Нажмите кнопку **ОК**.
+5. Нажмите кнопку **OK**.
    
     ![Запуск Sysprep](./media/upload-generalized-managed/sysprepgeneral.png)
 
@@ -59,18 +53,18 @@ Sysprep удаляет все сведения о вашей учетной за
 > [!TIP]
 > **Необязательно** Используйте [DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-optimize-image-command-line-options) для оптимизации образа и сокращения времени первой загрузки виртуальной машины.
 >
-> Чтобы оптимизировать образ, подключите виртуальный жесткий диск, дважды щелкнув его в проводнике Windows, а затем запустите DISM с параметром `/optimize-image`.
+> Чтобы оптимизировать образ, подключите виртуальный жесткий диск, дважды щелкнув его в проводнике Windows, а затем запустите DISM с `/optimize-image` параметром.
 >
 > ```cmd
 > DISM /image:D:\ /optimize-image /boot
 > ```
 > Где D — путь к подключенному виртуальному жесткому диску.
 >
-> Запуск `DISM /optimize-image` должен быть последним изменением, внесенным в виртуальный жесткий диск. Если перед развертыванием внести какие-либо изменения в виртуальный жесткий диск, необходимо будет снова запустить `DISM /optimize-image`.
+> Запуск `DISM /optimize-image` должен быть последним изменением, внесенным в виртуальный жесткий диск. Если вы вносите какие-либо изменения в виртуальный жесткий диск перед развертыванием, необходимо `DISM /optimize-image` запустить его снова.
 
 ## <a name="create-a-managed-image-in-the-portal"></a>Создание управляемого образа на портале 
 
-1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы управлять образом виртуальной машины. Найдите и выберите **виртуальные машины**.
+1. Перейдите в [портал Azure](https://portal.azure.com) , чтобы управлять образом виртуальной машины. Найдите и щелкните **Виртуальные машины**.
 
 2. Выберите виртуальную машину из списка.
 
@@ -218,7 +212,7 @@ Sysprep удаляет все сведения о вашей учетной за
 
 ## <a name="create-an-image-from-a-vm-that-uses-a-storage-account"></a>Создание образа из виртуальной машины, использующей учетную запись хранения
 
-Чтобы создать управляемый образ из виртуальной машины, которая не использует управляемые диски, вам потребуется универсальный код ресурса (URI) VHD операционной системы в учетной записи хранения в следующем формате: https://*mystorageaccount*. blob.core.windows.net/*вхдконтаинер*/*вхдфиленаме. VHD*. В этом примере VHD находится в *mystorageaccount* в контейнере с именем *vhdcontainer*, а имя файла VHD — *vhdfilename.vhd*.
+Чтобы создать управляемый образ из виртуальной машины, которая не использует управляемые диски, вам потребуется универсальный код ресурса (URI) VHD операционной системы в учетной записи хранения в следующем формате: https://*mystorageaccount*. BLOB.Core.Windows.NET/*вхдконтаинер*/*вхдфиленаме. VHD*. В этом примере VHD находится в *mystorageaccount* в контейнере с именем *vhdcontainer*, а имя файла VHD — *vhdfilename.vhd*.
 
 
 1.  Создайте несколько переменных.
@@ -250,6 +244,6 @@ Sysprep удаляет все сведения о вашей учетной за
     ```
 
     
-## <a name="next-steps"></a>Дальнейшие действия
-- [Создание виртуальной машины из управляемого образа](create-vm-generalized-managed.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)    
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Создайте виртуальную машину из управляемого образа](create-vm-generalized-managed.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).    
 

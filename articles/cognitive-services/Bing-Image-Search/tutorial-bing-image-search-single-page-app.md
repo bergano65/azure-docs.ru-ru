@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска изображений
+title: Руководство по созданию одностраничного веб-приложения с помощью API Bing для поиска изображений
 titleSuffix: Azure cognitive services
 description: API Bing для поиска изображений позволяет искать в Интернете соответствующие изображения высокого качества. Используйте это руководство для создания одностраничного веб-приложения, которое может отправлять поисковые запросы к API и отображать результаты на веб-странице.
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: tutorial
-ms.date: 12/18/2019
+ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: decfeb9c46c32c6388228de6597db0c840354c19
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9227417d28eb09a322dd4757033ee62fee97d91c
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75448585"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "78943894"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-image-search-api"></a>Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска изображений
 

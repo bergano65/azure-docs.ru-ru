@@ -1,19 +1,18 @@
 ---
 author: paulbouwer
-ms.service: container-service
 ms.topic: include
 ms.date: 11/15/2019
 ms.author: pabouwer
-ms.openlocfilehash: a1a608b4f4e1afe4a3cf99229561a91cc3f9fa96
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: e26a2c214a03243d6507296c1e981706be8c56db
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74170846"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81737016"
 ---
 ## <a name="download-and-install-the-istio-istioctl-client-binary"></a>Скачивание и установка двоичного файла клиента Istio истиоктл
 
-В оболочке на основе PowerShell в Windows используйте `Invoke-WebRequest` для загрузки выпуска Istio и последующего извлечения с `Expand-Archive` следующим образом:
+В оболочке на основе PowerShell в Windows используйте `Invoke-WebRequest` для загрузки выпуска Istio, а затем извлеките с `Expand-Archive` помощью следующим образом:
 
 ```powershell
 # Specify the Istio version that will be leveraged throughout these instructions
@@ -25,7 +24,7 @@ $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -URI "https://github
 Expand-Archive -Path "istio-$ISTIO_VERSION.zip" -DestinationPath .
 ```
 
-`istioctl` клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Istio. Используйте следующие команды для установки двоичного файла клиента Istio `istioctl` в оболочке на основе PowerShell в Windows. Эти команды копируют двоичный файл клиента `istioctl` в папку Istio, а затем делают его доступными как немедленно (в текущей оболочке), так и навсегда (при перезапуске оболочки) с помощью `PATH`. Для выполнения этих команд не требуются повышенные привилегии (администратора), и вам не нужно перезапускать оболочку.
+`istioctl` Клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Istio. Используйте следующие команды для установки двоичного файла `istioctl` клиента Istio в оболочке на основе PowerShell в Windows. Эти команды копируют `istioctl` клиентский двоичный файл в папку Istio, а затем делают его доступными как немедленно (в текущей оболочке), так и навсегда (при перезапуске оболочки) с помощью `PATH`. Для выполнения этих команд не требуются повышенные привилегии (администратора), и вам не нужно перезапускать оболочку.
 
 ```powershell
 # Copy istioctl.exe to C:\Istio
@@ -34,8 +33,9 @@ New-Item -ItemType Directory -Force -Path "C:\Istio"
 Copy-Item -Path .\bin\istioctl.exe -Destination "C:\Istio\"
 
 # Add C:\Istio to PATH. 
-# Make the new PATH permanently available for the current User, and also immediately available in the current shell.
-$PATH = [environment]::GetEnvironmentVariable("PATH", "User") + "; C:\Istio\"
-[environment]::SetEnvironmentVariable("PATH", $PATH, "User") 
-[environment]::SetEnvironmentVariable("PATH", $PATH)
+# Make the new PATH permanently available for the current User
+$USER_PATH = [environment]::GetEnvironmentVariable("PATH", "User") + ";C:\Istio\"
+[environment]::SetEnvironmentVariable("PATH", $USER_PATH, "User")
+# Make the new PATH immediately available in the current shell
+$env:PATH += ";C:\Istio\"
 ```

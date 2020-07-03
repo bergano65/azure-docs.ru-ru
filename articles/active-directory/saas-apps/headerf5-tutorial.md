@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5eb5cedf14af9a013a5b6a1eba5df40d665cbad5
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 352f52a2a6d84d352bb46e09f104efde303307f5
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74181561"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80478051"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Руководство по Интеграция единого входа Azure Active Directory с F5
 
@@ -31,13 +31,13 @@ ms.locfileid: "74181561"
 * Автоматический вход пользователей в F5 с помощью учетных записей Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
-Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Дополнительные сведения об интеграции приложений SaaS с единым входом в AAD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 
 * Подписка F5 с поддержкой единого входа.
 
@@ -96,7 +96,7 @@ ms.locfileid: "74181561"
 
 - [настройка единого входа в F5 для приложения на основе заголовка](#configure-f5-single-sign-on-for-header-based-application);
 
-- [настройка единого входа в F5 для приложения Kerberos](kerbf5-tutorial.md);
+- [Настройка единого входа в F5 для приложения Kerberos](kerbf5-tutorial.md)
 
 - [Настройка единого входа в F5 для расширенного приложения Kerberos](advance-kerbf5-tutorial.md)
 
@@ -136,7 +136,7 @@ ms.locfileid: "74181561"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в F5](#configure-f5-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя приложения F5](#create-f5-test-user)** требуется для того, чтобы в F5 существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -146,13 +146,13 @@ ms.locfileid: "74181561"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<YourCustomFQDN>.f5.com/`.
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -185,7 +185,7 @@ ms.locfileid: "74181561"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к F5.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **F5**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -279,9 +279,9 @@ ms.locfileid: "74181561"
 
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure11.png)
 
-## <a name="advanced-configuration"></a>Расширенная конфигурация
+## <a name="advanced-configuration"></a>Расширенная настройка
 
-Этот раздел следует использовать в том случае, если вы не можете применить интерактивную конфигурацию либо вам нужно добавить или изменить дополнительные параметры. Для имени узла приложения потребуется SSL-сертификат.
+Этот раздел следует использовать в том случае, если вы не можете применить интерактивную конфигурацию либо вам нужно добавить или изменить дополнительные параметры. Для имени узла приложения потребуется TLS/SSL-сертификат.
 
 1. Выберите **System > Certificate Management > Traffic Certificate Management > SSL Certificate List** (Система > Управление сертификатами > Управление сертификатами трафика > Список SSL-сертификатов). В правом верхнем углу нажмите кнопку **Import** (Импортировать). Выберите в качестве **типа импорта** **PKCS 12(IIS)** . Укажите **имя ключа** (понадобится позднее в конфигурации) и PFX-файл. Введите **пароль** для PFX-файла. Щелкните **Импорт**.
 
@@ -298,7 +298,7 @@ ms.locfileid: "74181561"
  
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure18.png)
 
-1. Мы опубликуем наш HeaderApp2 внешне (с использованием HTTPS в этом случае). Для параметра **how should the BIG-IP system handle SSL Traffic?** (Как система BIG-IP должна обрабатывать трафик SSL?) укажите **Terminate SSL from Client, Plaintext to servers (SSL Offload)** (Завершение SSL-трафика открытого текста от клиента к серверам (разгрузка SSL)). Укажите сертификат и ключ в разделах Which SSL certificate do you want to use? (Какой сертификат SSL следует использовать?) и **Which SSL private key do you want to use?** (Какой закрытый ключ SSL следует использовать?) соответственно. Укажите IP-адрес виртуального сервера в разделе **What IP Address do you want to use for the Virtual Server?** (Какой IP-адрес использовать для виртуального сервера?). 
+1. Мы опубликуем наш HeaderApp2 внешне (с использованием HTTPS в этом случае). Для параметра **how should the BIG-IP system handle SSL Traffic?** (Как система BIG-IP должна обрабатывать трафик SSL?) укажите **Terminate SSL from Client, Plaintext to servers (SSL Offload)** (Завершение SSL-трафика открытого текста от клиента к серверам (разгрузка SSL)). Укажите сертификат и ключ в разделах **Which SSL certificate do you want to use?** (Какой SSL-сертификат следует использовать?) и **Which SSL private key do you want to use?** (Какой закрытый ключ SSL следует использовать?) соответственно. Укажите IP-адрес виртуального сервера в разделе **What IP Address do you want to use for the Virtual Server?** (Какой IP-адрес использовать для виртуального сервера?). 
 
     * **Укажите другие сведения**:
 
@@ -346,7 +346,7 @@ ms.locfileid: "74181561"
  
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure29.png)
 
-    a. Перейдите к файлу metadata.xml, скачанному из Azure AD, и укажите **имя поставщика удостоверений**.
+    а. Перейдите к файлу metadata.xml, скачанному из Azure AD, и укажите **имя поставщика удостоверений**.
 
     b. Нажмите кнопку **ОК**.
 
@@ -356,15 +356,15 @@ ms.locfileid: "74181561"
 
     d. Настройте F5BIG-IP для отправки всех запросов в Azure AD.
 
-    д. Нажмите кнопку **Add New Row** (Добавить новую строку), выберите **AzureIDP** (созданный на предыдущих шагах) и укажите: 
+    д) Нажмите кнопку **Add New Row** (Добавить новую строку), выберите **AzureIDP** (созданный на предыдущих шагах) и укажите: 
 
-    Е. **Matching Source (Соответствующий источник) = %{session.server.landinguri}** . 
+    е) **Matching Source (Соответствующий источник) = %{session.server.landinguri}** . 
 
     ж. **Matching Value (Совпадающее значение) = /** *.
 
     h. Нажмите кнопку **Update**(Обновить).
 
-    i. Щелкните **ОК**
+    i. Нажмите кнопку **ОК**.
 
     j. **Установка поставщика удостоверений SAML завершена**.
     
@@ -374,7 +374,7 @@ ms.locfileid: "74181561"
 
 1. Чтобы настроить политику F5 для перенаправления пользователей к поставщику удостоверений SAML Azure, сделайте следующее:
 
-    a. Щелкните **Main > Access > Profile/Policies > Access Profiles** (Основные > Доступ > Профиль/политики > Профили доступа).
+    а. Щелкните **Main > Access > Profile/Policies > Access Profiles** (Основные > Доступ > Профиль/политики > Профили доступа).
 
     b. Нажмите кнопку **Создать**.
 
@@ -388,9 +388,9 @@ ms.locfileid: "74181561"
 
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure34.png) 
 
-    д. Нажмите кнопку **Finished** (Готово).
+    д) Нажмите кнопку **Finished** (Готово).
 
-    Е. После завершения создания политики щелкните политику и перейдите на вкладку **Access Policy** (Политика доступа).
+    е) После завершения создания политики щелкните политику и перейдите на вкладку **Access Policy** (Политика доступа).
 
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure35.png)
  
@@ -418,7 +418,7 @@ ms.locfileid: "74181561"
 
 1. Назначьте профиль доступа для виртуального сервера, чтобы с помощью F5 BIG-IP APM применить параметры профиля к входящему трафику и запустить ранее определенную политику доступа.
 
-    a. Щелкните **Main** > **Local Traffic** > **Virtual Servers** (Основные > Локальный трафик > Виртуальные серверы).
+    а. Щелкните **Main** > **Local Traffic** > **Virtual Servers** (Основные > Локальный трафик > Виртуальные серверы).
 
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure40.png)
  
@@ -432,7 +432,7 @@ ms.locfileid: "74181561"
 
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure42.png)
  
-    д. Вставьте приведенный ниже текст iRule F5 BIG-IP в окно определения.
+    д) Вставьте приведенный ниже текст iRule F5 BIG-IP в окно определения.
 
     ![Настройка F5 (приложение на основе заголовков)](./media/headerf5-tutorial/configure43.png)
  
@@ -460,9 +460,9 @@ ms.locfileid: "74181561"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

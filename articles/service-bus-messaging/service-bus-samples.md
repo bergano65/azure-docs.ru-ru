@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 01/27/2020
 ms.author: aschhab
 ms.openlocfilehash: ccaca451ac4fb7b4301aca429a42baea91e5ed10
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76773465"
 ---
 # <a name="service-bus-messaging-samples"></a>Примеры обмена сообщениями с помощью служебной шины
@@ -29,11 +29,11 @@ ms.locfileid: "76773465"
 | Node.js | https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples |
 | Python | https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus |
 
-## <a name="service-bus-explorer"></a>Обозреватель служебной шины
+## <a name="service-bus-explorer"></a>Service Bus Explorer
 
 Кроме того, можно использовать пример [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer), размещенный на сайте GitHub, который позволяет подключиться к пространству имен служебной шины и легко управлять сущностями обмена сообщениями. Это средство предоставляет такие дополнительные возможности, как импорт и экспорт, а также тестирование сущностей обмена сообщениями и служб ретрансляции. Полный исходный код и документацию для Service Bus Explorer можно найти на сайте [GitHub](https://github.com/paolosalvatori/ServiceBusExplorer).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Принципиальные сведения о служебной шине см. в следующих статьях:
 

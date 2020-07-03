@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/23/2019
 ms.author: spelluru
 ms.openlocfilehash: af119ef026b70fcb4a56b4f823d20c0e9eddddc8
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75903251"
 ---
 # <a name="security-controls-for-azure-service-bus-messaging"></a>Средства управления безопасностью для обмена сообщениями через служебную шину Azure
@@ -37,11 +37,11 @@ ms.locfileid: "75903251"
 | Ведение журнала и аудит в плоскости управления и управления| Да | Журналы операций доступны.  | [Журналы диагностики служебной шины](service-bus-diagnostic-logs.md) |
 | Ведение журнала и аудит в плоскости данных| Нет |  |
 
-## <a name="identity"></a>Удостоверение
+## <a name="identity"></a>Идентификация
 
 | Управление безопасностью | Да/нет | Примечания| Документация |
 |---|---|--|--|
-| Проверка подлинности| Да | Управляется с помощью [Azure Active Directory управляемое удостоверение службы](service-bus-managed-service-identity.md).| [Проверка подлинности и авторизация служебной шины](service-bus-authentication-and-authorization.md). |
+| Аутентификация| Да | Управляется с помощью [Azure Active Directory управляемое удостоверение службы](service-bus-managed-service-identity.md).| [Проверка подлинности и авторизация служебной шины](service-bus-authentication-and-authorization.md). |
 | Авторизация| Да | Поддерживает авторизацию через [RBAC](authenticate-application.md) и токен SAS. | [Проверка подлинности и авторизация служебной шины](service-bus-authentication-and-authorization.md). |
 
 ## <a name="data-protection"></a>Защита данных
@@ -50,7 +50,7 @@ ms.locfileid: "75903251"
 |---|---|--|--|
 | Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт |  Да для шифрования на стороне сервера по умолчанию — неактивных. |  |  |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да. | Ключ, управляемый клиентом в Azure KeyVault, можно использовать для шифрования неактивных данных в пространстве имен служебной шины. | [Настройка управляемых клиентом ключей для шифрования неактивных данных служебной шины Azure с помощью портал Azure](configure-customer-managed-key.md)  |
-| Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |   |
+| Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |   |
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Поддерживает стандартный механизм HTTPS/TLS. |   |
 | Вызовы API в зашифрованном виде| Да | Вызовы API выполняются с помощью [Azure Resource Manager](../azure-resource-manager/index.yml) и HTTPS. |   |
 

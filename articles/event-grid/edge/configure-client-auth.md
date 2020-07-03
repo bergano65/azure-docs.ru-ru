@@ -10,10 +10,10 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: 3363db4557dd19e8d72747ccd62bb535abb7b1e2
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76841797"
 ---
 # <a name="configure-client-authentication-of-incoming-calls"></a>Настройка проверки подлинности входящих вызовов клиента
@@ -21,7 +21,7 @@ ms.locfileid: "76841797"
 В этом разделе приведены примеры возможных конфигураций проверки подлинности клиента для модуля "Сетка событий". Модуль "Сетка событий" поддерживает два типа проверки подлинности клиента:
 
 * Подпись общего доступа (SAS) на основе ключей
-* на основе сертификата
+* На основе сертификатов
 
 Все возможные конфигурации см. в разделе руководств по [безопасности и проверке подлинности](security-authentication.md) .
 

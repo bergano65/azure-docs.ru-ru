@@ -2,20 +2,17 @@
 title: Начало работы с учетной записью выставления счетов Соглашения с партнером Майкрософт — Azure CSP
 description: Общие сведения об учетной записи выставления счетов Соглашения с партнером Майкрософт (CSP)
 author: bandersmsft
-manager: amberbhargava
+ms.reviewer: amberb
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/24/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 13ac51fc4cefa4d66cf9d8310dce80704454bd93
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 45dbf43966b71d7db7ada8be7704f6b3b37aab25
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76122157"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199183"
 ---
 # <a name="get-started-with-your-microsoft-partner-agreement-billing-account"></a>Начало работы с учетной записью выставления счетов Соглашения с партнером Майкрософт
 

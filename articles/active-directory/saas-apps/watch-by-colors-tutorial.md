@@ -17,10 +17,10 @@ ms.date: 09/09/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6d8fdc8ba2337a3be49a4645e48a45120fb0ccec
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72026092"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-watch-by-colors"></a>Руководство по Интеграция единого входа Azure Active Directory с Watch by Colors
@@ -35,9 +35,9 @@ ms.locfileid: "72026092"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка на Watch by Colors с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "72026092"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Watch by Colors](#configure-watch-by-colors-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя в Watch by Colors](#create-watch-by-colors-test-user)** требуется для создания пользователя B.Simon в Watch by Colors, связанного с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,7 +78,7 @@ ms.locfileid: "72026092"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено в режиме инициированном **IDP** и ему заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
@@ -106,7 +106,7 @@ ms.locfileid: "72026092"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Watch by Colors.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Watch by Colors**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -140,7 +140,7 @@ ms.locfileid: "72026092"
 
     ![Настройка Watch by Colors](./media/watch-by-colors-tutorial/config02.png)
 
-    a. Установите переключатель **Enable SAML** (Включить SAML) в положение **ON** (Включено).
+    а. Установите переключатель **Enable SAML** (Включить SAML) в положение **ON** (Включено).
 
     b. В текстовом поле **URL** (URL-адрес) вставьте **URL-адрес метаданных федерации**, скопированный на портале Azure.
 
@@ -164,7 +164,7 @@ ms.locfileid: "72026092"
 
     ![Настройка Watch by Colors](./media/watch-by-colors-tutorial/config04.png)
 
-    a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **B**.
+    а. В текстовое поле **First Name** (Имя) введите имя пользователя, например **B**.
 
     b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -172,9 +172,9 @@ ms.locfileid: "72026092"
 
     d. Введите пароль в поле **Password** (Пароль).
 
-    д. Выберите **Account Permissions** (Разрешения учетной записи) в соответствии с вашей организацией.
+    д) Выберите **Account Permissions** (Разрешения учетной записи) в соответствии с вашей организацией.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -184,9 +184,9 @@ ms.locfileid: "72026092"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

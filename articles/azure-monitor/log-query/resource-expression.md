@@ -1,22 +1,21 @@
 ---
 title: выражение Resource () в Azure Monitor запросе журнала | Документация Майкрософт
 description: Выражение ресурса используется в Azure Monitor запросе к журналу на основе ресурсов для получения данных из нескольких ресурсов.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/10/2018
-ms.openlocfilehash: 370b2547c9e726ab4f5ebc4dd732cc0bfa17f760
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.openlocfilehash: 2a729caefe698b13833098ba48df9d4bfbd97356
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933009"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77665705"
 ---
 # <a name="resource-expression-in-azure-monitor-log-query"></a>выражение Resource () в Azure Monitor запросе журнала
 
-`resource` выражение используется в Azure Monitorном запросе к [ресурсу](scope.md#query-scope) для получения данных из других ресурсов. 
+`resource` Выражение используется в Azure Monitor запросе, [ограниченном ресурсом](scope.md#query-scope) , для получения данных из других ресурсов. 
 
 
 ## <a name="syntax"></a>Синтаксис
@@ -33,7 +32,7 @@ ms.locfileid: "72933009"
 | Группа ресурсов или подписка | Включает данные для ресурса и всех содержащихся в нем ресурсов.  | ресурс ("/субскриптионс/кскскскскскскс-кскскскс-кскскскс-кскскскс-кскскскскскскскскскскскс/ресаурцесграупс/миресаурцеграуп") |
 
 
-## <a name="notes"></a>Заметки
+## <a name="notes"></a>Примечания
 
 * Необходимо иметь доступ на чтение к ресурсу.
 
@@ -48,7 +47,7 @@ union (Heartbeat),(resource("/subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Дополнительные сведения о области запроса см. [в разделе Область запроса журнала и временной диапазон в Azure Monitor log Analytics](scope.md) .
 - Ознакомьтесь с полной документацией по [языку запросов Kusto](/azure/kusto/query/).

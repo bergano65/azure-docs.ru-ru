@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: c664141a8c89ccbdf37bd3f9a19cfa659982a47d
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73795572"
 ---
 # <a name="expose-an-aks-service-over-http-or-https-using-application-gateway"></a>Предоставление службы AKS по протоколу HTTP или HTTPS с помощью шлюза приложений 
@@ -25,20 +25,20 @@ ms.locfileid: "73795572"
   - [**Развертывание серия статей Brownfield**](ingress-controller-install-existing.md). при наличии существующего кластера AKS и шлюза приложений ознакомьтесь с этими инструкциями, чтобы установить контроллер входящего трафика шлюза приложений в кластере AKS.
 - Если вы хотите использовать протокол HTTPS для этого приложения, вам потребуется сертификат x509 и его закрытый ключ.
 
-## <a name="deploy-guestbook-application"></a>Развертывание приложения `guestbook`
+## <a name="deploy-guestbook-application"></a>Развертывание `guestbook` приложения
 
-Приложение гостевой книги — это каноническое приложение Kubernetes, которое объединяет интерфейс веб-интерфейса, серверную часть и базу данных Redis. По умолчанию `guestbook` предоставляет свое приложение через службу с именем `frontend` `80`порта. Без Kubernetesного ресурса Служба недоступна из-за пределов кластера AKS. Для доступа к приложению по протоколам HTTP и HTTPS мы будем использовать входящие ресурсы приложения и программы установки.
+Приложение гостевой книги — это каноническое приложение Kubernetes, которое объединяет интерфейс веб-интерфейса, серверную часть и базу данных Redis. По умолчанию `guestbook` предоставляет свое приложение через службу с именем `frontend` по порту. `80` Без Kubernetesного ресурса Служба недоступна из-за пределов кластера AKS. Для доступа к приложению по протоколам HTTP и HTTPS мы будем использовать входящие ресурсы приложения и программы установки.
 
 Следуйте приведенным ниже инструкциям, чтобы развернуть приложение гостевой книги.
 
-1. Скачать `guestbook-all-in-one.yaml` [отсюда](https://raw.githubusercontent.com/kubernetes/examples/master/guestbook/all-in-one/guestbook-all-in-one.yaml)
-1. Разверните `guestbook-all-in-one.yaml` в кластере AKS, выполнив
+1. Загрузить `guestbook-all-in-one.yaml` отсюда [here](https://raw.githubusercontent.com/kubernetes/examples/master/guestbook/all-in-one/guestbook-all-in-one.yaml)
+1. Разверните `guestbook-all-in-one.yaml` в кластер AKS, выполнив
 
   ```bash
   kubectl apply -f guestbook-all-in-one.yaml
   ```
 
-Теперь приложение `guestbook` развернуто.
+Теперь `guestbook` приложение развернуто.
 
 ## <a name="expose-services-over-http"></a>Предоставление служб по протоколу HTTP
 
@@ -60,11 +60,11 @@ spec:
           servicePort: 80
 ```
 
-Этот входящий трафик будет предоставлять `frontend`ную службу развертывания `guestbook-all-in-one` в качестве серверной части шлюза приложений по умолчанию.
+Этот входящий трафик будет предоставлять `frontend` службу `guestbook-all-in-one` развертывания в качестве серверной части шлюза приложений по умолчанию.
 
-Сохраните указанный выше входящий ресурс как `ing-guestbook.yaml`.
+Сохраните указанный выше ресурс как `ing-guestbook.yaml`.
 
-1. Разверните `ing-guestbook.yaml`, выполнив команду.
+1. Выполните `ing-guestbook.yaml` развертывание, выполнив команду.
 
     ```bash
     kubectl apply -f ing-guestbook.yaml
@@ -72,7 +72,7 @@ spec:
 
 1. Проверьте состояние развертывания в журнале входящего контроллера.
 
-Теперь приложение `guestbook` должно быть доступно. Это можно проверить, посетив общедоступный адрес шлюза приложений.
+Теперь `guestbook` приложение должно быть доступно. Это можно проверить, посетив общедоступный адрес шлюза приложений.
 
 ## <a name="expose-services-over-https"></a>Предоставление служб по протоколу HTTPS
 
@@ -86,7 +86,7 @@ spec:
     kubectl create secret tls <guestbook-secret-name> --key <path-to-key> --cert <path-to-cert>
     ```
 
-1. Определите следующий входной параметр. В списке входящих данных укажите имя секрета в разделе `secretName`.
+1. Определите следующий входной параметр. В списке входящих данных укажите имя секрета в `secretName` разделе.
 
     ```yaml
     apiVersion: extensions/v1beta1
@@ -107,7 +107,7 @@ spec:
     ```
 
     > [!NOTE] 
-    > Замените `<guestbook-secret-name>` в указанном выше ресурсе на имя секрета. Сохраните указанный выше ресурс входящих данных в имени файла `ing-guestbook-tls.yaml`.
+    > Замените `<guestbook-secret-name>` в указанном выше ресурсе с именем секрета. Сохраните указанный выше ресурс входящих данных в имени `ing-guestbook-tls.yaml`файла.
 
 1. Выполните развертывание с помощью команды with-гостевой-TLS. YAML, выполнив
 
@@ -117,7 +117,7 @@ spec:
 
 1. Проверьте состояние развертывания в журнале входящего контроллера.
 
-Теперь приложение `guestbook` будет доступно как по протоколам HTTP, так и по протоколу HTTPS.
+Теперь `guestbook` приложение будет доступно как по протоколам HTTP, так и по протоколу HTTPS.
 
 ### <a name="with-specified-hostname"></a>С указанным именем узла
 
@@ -125,7 +125,7 @@ spec:
 Указав имя узла, служба гостевой службы будет доступна только на указанном узле.
 
 1. Определите следующий входной параметр.
-    В списке входящих данных укажите имя секрета в разделе `secretName` и соответственно замените имя узла в разделе `hosts`.
+    В списке входящих данных укажите имя секрета в `secretName` разделе, а затем замените имя узла в `hosts` разделе соответствующим образом.
 
     ```yaml
     apiVersion: extensions/v1beta1
@@ -148,7 +148,7 @@ spec:
               servicePort: 80
     ```
 
-1. Разверните `ing-guestbook-tls-sni.yaml`, выполнив
+1. Развертывание `ing-guestbook-tls-sni.yaml` с запуском
 
     ```bash
     kubectl apply -f ing-guestbook-tls-sni.yaml
@@ -156,7 +156,7 @@ spec:
 
 1. Проверьте состояние развертывания в журнале входящего контроллера.
 
-Теперь приложение `guestbook` будет доступно только на HTTP и HTTPS на указанном узле (`<guestbook.contoso.com>` в этом примере).
+Теперь `guestbook` приложение будет доступно только для HTTP и HTTPS на указанном узле (`<guestbook.contoso.com>` в этом примере).
 
 ## <a name="integrate-with-other-services"></a>Интеграция с другими службами
 

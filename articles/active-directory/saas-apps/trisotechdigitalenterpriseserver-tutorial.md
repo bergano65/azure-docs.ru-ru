@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Trisotech Digital Enterprise Server | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Trisotech Digital Enterprise Server | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в Trisotech Digital Enterprise Server.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 56399f99ede611c4a120603cce3a3eede2728c6d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67088267"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство по Интеграция Azure Active Directory с Trisotech Digital Enterprise Server
+# <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство по интеграции Azure Active Directory с Trisotech Digital Enterprise Server
 
 В этом руководстве описано, как интегрировать Trisotech Digital Enterprise Server с Azure Active Directory (Azure AD).
 Интеграция Trisotech Digital Enterprise Server с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67088267"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Trisotech Digital Enterprise Server, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Trisotech Digital Enterprise Server с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "67088267"
 
     ![Сведения о домене и URL-адресах приложения Trisotech Digital Enterprise Server](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.trisotech.com`.
 
@@ -134,7 +134,7 @@ ms.locfileid: "67088267"
 
     ![Настройка единого входа](./media/trisotechdigitalenterpriseserver-tutorial/user3.png)
 
-    a. В раскрывающемся списке в поле **Authentication Method** (Способ проверки подлинности) выберите **язык разметки заявлений системы безопасности 2 (SAML 2)** .
+    а. В раскрывающемся списке в поле **Authentication Method** (Способ проверки подлинности) выберите **язык разметки заявлений системы безопасности 2 (SAML 2)** .
 
     b. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
 
@@ -142,9 +142,9 @@ ms.locfileid: "67088267"
 
     d. Нажмите кнопку **Сохранить**
 
-    д. Введите доменное имя в текстовое поле **Allowed Domains (empty means everyone)** (Разрешенные домены (если оставить это поле пустым, будут использоваться все домены)). Пользователям, которые соответствуют разрешенным доменам, будут автоматически назначены лицензии.
+    д) Введите доменное имя в текстовое поле **Allowed Domains (empty means everyone)** (Разрешенные домены (если оставить это поле пустым, будут использоваться все домены)). Пользователям, которые соответствуют разрешенным доменам, будут автоматически назначены лицензии.
 
-    Е. Нажмите кнопку **Сохранить**
+    е) Нажмите кнопку **Сохранить**
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -215,5 +215,5 @@ ms.locfileid: "67088267"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

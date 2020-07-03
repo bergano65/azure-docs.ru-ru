@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 04/11/2019
 ms.openlocfilehash: 75d9660eb35b5d7ddc644d177c11ae489e2853dc
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74792110"
 ---
 # <a name="get-more-data-items-or-records-by-using-pagination-in-azure-logic-apps"></a>Получение дополнительных данных, элементов или записей с помощью разбиения на страницы в Azure Logic Apps
@@ -28,19 +28,19 @@ ms.locfileid: "74792110"
 Ниже приведен список, содержащий только некоторые соединители, в которых можно превысить размер страницы по умолчанию для определенных действий.
 
 * [Хранилище BLOB-объектов Azure](https://docs.microsoft.com/connectors/azureblob/)
-* [Dynamics 365](https://docs.microsoft.com/connectors/dynamicscrmonline/)
+* [Dynamics 365](https://docs.microsoft.com/connectors/dynamicscrmonline/)
 * [Excel](https://docs.microsoft.com/connectors/excel/)
 * [HTTP](https://docs.microsoft.com/azure/connectors/connectors-native-http)
 * [IBM DB2](https://docs.microsoft.com/connectors/db2/)
 * [Microsoft Teams](https://docs.microsoft.com/connectors/teams/)
-* [База данных Oracle](https://docs.microsoft.com/connectors/oracle/)
+* [Oracle Database](https://docs.microsoft.com/connectors/oracle/)
 * [Salesforce](https://docs.microsoft.com/connectors/salesforce/)
 * [SharePoint](https://docs.microsoft.com/connectors/sharepointonline/)
 * [SQL Server](https://docs.microsoft.com/connectors/sql/)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
+* Подписка Azure. Если у вас еще нет подписки Azure, [получите бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
 * Приложение логики и действие, в котором необходимо включить разбивку на страницы. Если у вас нет приложения логики, см. раздел [Краткое руководство. Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -48,7 +48,7 @@ ms.locfileid: "74792110"
 
 Чтобы определить, поддерживает ли действие разбиение на страницы в конструкторе приложений логики, проверьте параметры для параметра **разбивки на страницы** . В этом примере показано, как включить разбивку на страницы в действии SQL Server **Получение строк** .
 
-1. В правом верхнем углу действия нажмите кнопку с многоточием ( **...** ) и выберите **Параметры**.
+1. В правом верхнем углу действия нажмите кнопку с многоточием (**...**) и выберите **Параметры**.
 
    ![Открытие параметров действия](./media/logic-apps-exceed-default-page-size-with-pagination/sql-action-settings.png)
 
@@ -62,7 +62,7 @@ ms.locfileid: "74792110"
 
 ## <a name="workflow-definition---pagination"></a>Определение рабочего процесса — разбивка на страницы
 
-При включении разбивки на страницы для действия, которое поддерживает эту возможность, определение рабочего процесса приложения логики включает свойство `"paginationPolicy"` вместе со свойством `"minimumItemCount"` в свойстве `"runtimeConfiguration"` этого действия, например:
+При включении разбивки на страницы для действия, которое поддерживает эту возможность, определение рабочего процесса приложения логики `"paginationPolicy"` включает свойство вместе со `"minimumItemCount"` свойством в `"runtimeConfiguration"` свойстве этого действия, например:
 
 ```json
 "actions": {

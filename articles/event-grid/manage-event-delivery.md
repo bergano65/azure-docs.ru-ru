@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/22/2019
 ms.author: spelluru
 ms.openlocfilehash: caed3c077b4df5da5fd8541b2f7e85ef119604b0
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "72794038"
 ---
 # <a name="dead-letter-and-retry-policies"></a>Недоставленные сообщения и политики повтора
@@ -29,7 +29,7 @@ ms.locfileid: "72794038"
 > - Служба "Сетка событий" создает большие двоичные объекты в этом контейнере. Имена больших двоичных объектов будут иметь имя подписки на сетку событий со всеми буквами в верхнем регистре. Например, если имя подписки — My-BLOB-, то имена больших двоичных объектов недоставленных данных будут иметь мою подписку MY-BLOB (myblobcontainer/MY-BLOB-SUBSCRIPTION/2019/8/8/5/111111111-1111-1111-1111 -111111111111. JSON). Это поведение позволяет защититься от различий в обработке обращений между службами Azure.
 
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 containername=testcontainer
@@ -47,7 +47,7 @@ az eventgrid event-subscription create \
 Для отключения сохранения недоставленных сообщений выполните эту команду повторно, чтобы создать подписку на события, но не указывайте значение для `deadletter-endpoint`. Удалять подписку на события не нужно.
 
 > [!NOTE]
-> Если вы используете Azure CLI на локальном компьютере, используйте Azure CLI 2.0.56 или более поздней версии. Инструкции по установке последней версии Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
+> Если вы используете Azure CLI на локальном компьютере, используйте Azure CLI 2.0.56 или более поздней версии. Инструкции по установке последней версии Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
 
 ### <a name="powershell"></a>PowerShell
 
@@ -75,7 +75,7 @@ New-AzEventGridSubscription `
 
 Настроить [интервал повтора](delivery-and-retry.md#retry-schedule-and-duration) невозможно.
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Чтобы установить время жизни события на значение, отличное от 1440 минут, используйте следующий код.
 
@@ -133,5 +133,5 @@ New-AzEventGridSubscription `
 
 * Ознакомиться с примером приложения, использующего приложение-функцию Azure для обработки событий недоставленных сообщений, можно на странице [примеров недоставленных сообщений Сетки событий Azure для .NET](https://azure.microsoft.com/resources/samples/event-grid-dotnet-handle-deadlettered-events/).
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
-* Общие сведения о сетке событий см. в статье [Сведения о сетке событий](overview.md).
+* Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).
 * Сведения о том, как быстро приступить к использованию службы "Сетка событий", см. в разделе [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md).

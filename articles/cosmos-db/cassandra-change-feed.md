@@ -7,20 +7,22 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 11/25/2019
 ms.author: thvankra
-ms.openlocfilehash: c2c695608653130b97bf29cc9ce48e2fbb429209
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 43743f62b08bb00403f5dac88682d06daab757a4
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74694627"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872558"
 ---
 # <a name="change-feed-in-the-azure-cosmos-db-api-for-cassandra"></a>Веб-канал изменений в Azure Cosmos DB API для Cassandra
 
 Поддержка [веб-канала изменений](change-feed.md) в Azure Cosmos DB API для Cassandra доступна в предикатах запросов на языке запросов Cassandra (CQL). Используя эти условия предиката, можно запросить API веб-канала изменений. Приложения могут получать изменения, внесенные в таблицу с помощью первичного ключа (также известного как ключ секции), как это требуется в CQL. Затем можно выполнить дальнейшие действия на основе результатов. Изменения в строках таблицы фиксируются в порядке их изменения, а порядок сортировки гарантируется по ключу секции.
 
-В следующем примере показано, как получить канал изменений для всех строк в API Cassandra таблице пространства ключей с помощью .NET. Предикат COSMOS_CHANGEFEED_START_TIME () используется непосредственно в CQL для запроса элементов в веб-канале изменений с указанного времени начала (в данном случае это текущая дата и время). Полный пример можно скачать [здесь](https://docs.microsoft.com/samples/azure-samples/azure-cosmos-db-cassandra-change-feed/cassandra-change-feed/).
+В следующем примере показано, как получить канал изменений для всех строк в API Cassandra таблице пространства ключей с помощью .NET. Предикат COSMOS_CHANGEFEED_START_TIME () используется непосредственно в CQL для запроса элементов в веб-канале изменений с указанного времени начала (в данном случае это текущая дата и время). Полный пример [для C# можно скачать здесь,](https://docs.microsoft.com/samples/azure-samples/azure-cosmos-db-cassandra-change-feed/cassandra-change-feed/) а для Java — [здесь](https://github.com/Azure-Samples/cosmos-changefeed-cassandra-java).
 
-В каждой итерации запрос возобновляется в момент чтения последних изменений, с использованием разбиения на страницы. В таблице в пространства ключей можно увидеть непрерывный поток новых изменений. Будут видны изменения в строках, которые вставляются или обновляются. Наблюдение за операциями удаления с помощью веб-канала изменений в API Cassandra в настоящее время не поддерживается. 
+В каждой итерации запрос возобновляется в момент чтения последних изменений, с использованием разбиения на страницы. В таблице в пространства ключей можно увидеть непрерывный поток новых изменений. Будут видны изменения в строках, которые вставляются или обновляются. Наблюдение за операциями удаления с помощью веб-канала изменений в API Cassandra в настоящее время не поддерживается.
+
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```C#
     //set initial start time for pulling the change feed
@@ -71,7 +73,47 @@ ms.locfileid: "74694627"
 
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+```java
+        Session cassandraSession = utils.getSession();
+
+        try {
+              DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
+               LocalDateTime now = LocalDateTime.now().minusHours(6).minusMinutes(30);  
+               String query="SELECT * FROM uprofile.user where COSMOS_CHANGEFEED_START_TIME()='" 
+                    + dtf.format(now)+ "'";
+               
+             byte[] token=null; 
+             System.out.println(query); 
+             while(true)
+             {
+                 SimpleStatement st=new  SimpleStatement(query);
+                 st.setFetchSize(100);
+                 if(token!=null)
+                     st.setPagingStateUnsafe(token);
+                 
+                 ResultSet result=cassandraSession.execute(st) ;
+                 token=result.getExecutionInfo().getPagingState().toBytes();
+                 
+                 for(Row row:result)
+                 {
+                     System.out.println(row.getString("user_name"));
+                 }
+             }
+                    
+
+        } finally {
+            utils.close();
+            LOGGER.info("Please delete your table after verifying the presence of the data in portal or from CQL");
+        }
+
+```
+---
+
 Чтобы получить изменения в одной строке по первичному ключу, можно добавить в запрос первичный ключ. В следующем примере показано, как отслеживанию изменений в строке, где "user_id = 1"
+
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```C#
     //Return the latest change for all row in 'user' table where user_id = 1
@@ -80,6 +122,14 @@ ms.locfileid: "74694627"
 
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+```java
+    String query="SELECT * FROM uprofile.user where user_id=1 and COSMOS_CHANGEFEED_START_TIME()='" 
+                    + dtf.format(now)+ "'";
+    SimpleStatement st=new  SimpleStatement(query);
+```
+---
 ## <a name="current-limitations"></a>Текущие ограничения
 
 При использовании веб-канала изменений с API Cassandraми применяются следующие ограничения.

@@ -3,24 +3,21 @@ title: Перемещение защищенного веб-API в рабочу�
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать защищенный веб-API (переместить в рабочую среду).
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 229f49255fbc72f74f07b1e7098417d136f35c27
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 86e897547869c917313deeb8d71b361c9e16798b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76775177"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81537191"
 ---
 # <a name="protected-web-api---move-to-production"></a>Защищенный веб-API — переместить в рабочую среду
 
@@ -28,7 +25,7 @@ ms.locfileid: "76775177"
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как вызывать нисходящий API.
 

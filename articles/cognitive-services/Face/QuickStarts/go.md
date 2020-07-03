@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 12/05/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 246b9c81e3cb726236143b9749486ba362128756
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: b3e6f5746df6197938d3a91de5ff11b1a311d762
+ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76165839"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81402951"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-go"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Go
 
-В этом кратком руководстве описано, как обнаруживать лица на изображении с помощью REST API распознавания лиц Azure и Go.
+В этом кратком руководстве описано, как определить лица на изображении с помощью REST API Распознавания лиц Azure и Go.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

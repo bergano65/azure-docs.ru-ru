@@ -1,18 +1,14 @@
 ---
 title: Поиск в Azure Application Insights | Документация Майкрософт
 description: Поиск и фильтрация необработанных данных телеметрии, отправляемых веб-приложением.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 07/30/2019
-ms.openlocfilehash: 77cd0a8d0c1a93e7dc1db931e987a172d31978ef
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 8039a55784f63030f330d6c1e2061e99b8b63bbf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678081"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79275988"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
 
@@ -60,12 +56,12 @@ ms.locfileid: "72678081"
 
 Ниже приведены типы событий.
 
-* **Трассировка**  -  [журналы диагностики](../../azure-monitor/app/asp-net-trace-logs.md), в том числе TrackTrace, log4Net, NLog и вызовы System.Diagnostic.Trace.
+* **Отслеживайте** - [журналы диагностики](../../azure-monitor/app/asp-net-trace-logs.md) , в том числе вызовы TrackTrace, log4Net, NLog и System. Диагностика. Trace.
 * **Запрос** — HTTP-запросы, полученные серверным приложением, включая страницы, скрипты, изображения, файлы стилей и данные. Эти события используются для создания обзорных диаграмм запросов и ответов.
-* **Просмотр страницы**  -  [элемент телеметрии, отправляемый веб-клиентом](../../azure-monitor/app/javascript.md) и используемый для создания отчетов о просмотрах страниц.
+* **Page View** - [Данные телеметрии просмотра страниц, отправленные веб-клиентом](../../azure-monitor/app/javascript.md)и используемые для создания отчетов по просмотру страниц.
 * **Пользовательское событие** — при вставке в код вызовов TrackEvent() для [отслеживания использования](../../azure-monitor/app/api-custom-events-metrics.md) эти вызовы можно найти здесь.
-* **Исключение** — неперехваченные [исключения на сервере](../../azure-monitor/app/asp-net-exceptions.md) и те, которые зарегистрированы с помощью метода TrackException().
-* **Зависимость**  -  [вызовы из серверного приложения](../../azure-monitor/app/asp-net-dependencies.md) к другим службам, таким как интерфейсы REST API или базы данных, а также вызовы AJAX из [клиентского кода](../../azure-monitor/app/javascript.md).
+* **Исключение** — неперехваченные [исключения на сервере](../../azure-monitor/app/asp-net-exceptions.md)и те, которые вы зарегистрируете с помощью TrackException ().
+* **Взаимозависимости** - [от серверного приложения](../../azure-monitor/app/asp-net-dependencies.md) к другим службам, таким как интерфейсы API или базы данных, и вызовы AJAX из [клиентского кода](../../azure-monitor/app/javascript.md).
 * **Доступность** — результаты [тестов доступности](../../azure-monitor/app/monitor-web-app-availability.md).
 
 ## <a name="filter-on-property-values"></a>Фильтрация на основе значений свойств
@@ -85,7 +81,7 @@ ms.locfileid: "72678081"
 ## <a name="search-the-data"></a>Поиск данных
 
 > [!NOTE]
-> Чтобы написать более сложные запросы, откройте [**журналы (Analytics)** ](../../azure-monitor/log-query/get-started-portal.md) в верхней части колонки поиска.
+> Чтобы написать более сложные запросы, откройте [**журналы (Analytics)**](../../azure-monitor/log-query/get-started-portal.md) в верхней части колонки поиска.
 >
 
 В любом из значений свойств можно искать слова. Это полезно, если вы написали [пользовательские события](../../azure-monitor/app/api-custom-events-metrics.md) со значениями свойств.
@@ -103,7 +99,7 @@ ms.locfileid: "72678081"
 
 Вот доступные поисковые выражения:
 
-| Пример запроса | Результат |
+| Пример запроса | Действие |
 | --- | --- |
 | `apple` |Поиск всех событий в диапазоне времени, поля которых включают слово "apple". |
 | `apple AND banana` <br/>`apple banana` |Поиск событий, содержащих оба слова. Используйте "AND" заглавными буквами, а не "and". <br/>Короткая форма. |
@@ -137,9 +133,9 @@ ms.locfileid: "72678081"
 
 [Подробнее об отправке журналов и пользовательских данных телеметрии в Application Insights](../../azure-monitor/app/asp-net-trace-logs.md).
 
-## <a name="questions"></a>Вопросы и ответы
+## <a name="q--a"></a><a name="questions"></a>Вопросы и ответы
 
-### <a name="limits"></a>Какой объем данных сохраняется?
+### <a name="how-much-data-is-retained"></a><a name="limits"></a>Какой объем данных сохраняется?
 
 Ознакомьтесь со [сводной таблицей ограничений](../../azure-monitor/app/pricing.md#limits-summary).
 
@@ -147,7 +143,7 @@ ms.locfileid: "72678081"
 
 Мы не заносим в журнал данные POST автоматически, но вы можете использовать [вызовы TrackTrace или вызовы журнала](../../azure-monitor/app/asp-net-trace-logs.md). Поместите данные POST в параметр сообщения. Сообщения нельзя отфильтровать тем же способом, как это делается для свойств, но предельный размер больше.
 
-## <a name="add"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="add"></a>Следующие шаги
 
 * [Создание сложных запросов в Analytics](../../azure-monitor/log-query/get-started-portal.md)
 * [Журналы, исключения и пользовательские средства диагностики для ASP.NET в Application Insights](../../azure-monitor/app/asp-net-trace-logs.md)

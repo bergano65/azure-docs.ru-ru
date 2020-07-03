@@ -9,12 +9,12 @@ metadata:
   author: dcurwin
   ms.author: dacurwin
   ms.date: 12/01/2019
-  ms.openlocfilehash: 607603965b0935941fa5ad06c39110535aa33633
-  ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+  ms.openlocfilehash: 0060cc16378ca006e975f4f55da5099179778753
+  ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/21/2020
-  ms.locfileid: "76290790"
+  ms.lasthandoff: 05/25/2020
+  ms.locfileid: "83835682"
 landingContent:
 - title: См. дополнительные сведения о службе архивации Azure
   linkLists:
@@ -50,13 +50,13 @@ landingContent:
       url: tutorial-sql-backup.md
     - text: Резервное копирование файлов и папок Windows Server
       url: tutorial-backup-windows-server-to-azure.md
-    - text: Резервное копирование общих папок Файлов Azure
-      url: tutorial-backup-azure-files.md
+    - text: резервному копированию баз данных SAP HANA на виртуальной машине Azure
+      url: tutorial-backup-sap-hana-db.md
 - title: Узнайте о новых возможностях Azure Backup
   linkLists:
   - linkListType: whats-new
     links:
-    - text: Обратимое удаление данных резервного копирования виртуальных машин Azure
+    - text: Обратимое удаление для Azure Backup
       url: backup-azure-security-feature-cloud.md
     - text: Восстановление SQL Server на виртуальных машинах Azure в виде файлов
       url: restore-sql-database-azure-vm.md#restore-as-files
@@ -111,7 +111,7 @@ landingContent:
   - linkListType: concept
     links:
     - text: Резервное копирование компьютеров Windows с помощью агента MARS Azure Backup
-      url: backup-configure-vault.md
+      url: backup-windows-with-mars-agent.md
     - text: Управление резервными копиями агента MARS с помощью службы Azure Backup
       url: backup-azure-manage-mars.md
     - text: Таблица поддержки агента Служб восстановления Microsoft Azure
@@ -130,6 +130,16 @@ landingContent:
       url: backup-azure-dpm-azure-server-faq.md
     - text: Установка и обновление MABS
       url: backup-azure-microsoft-azure-backup.md
+- title: Управление в большом масштабе
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Управление в большом масштабе с помощью Политики Azure
+      url: backup-azure-auto-enable-backup.md
+    - text: Мониторинг и эксплуатация в большом масштабе с помощью обозревателя Backup
+      url: monitor-azure-backup-with-backup-explorer.md
+    - text: Анализ в большом масштабе с помощью отчетов Backup
+      url: configure-reports.md
 - title: Ресурсы по Azure Backup
   linkLists:
   - linkListType: concept
@@ -138,5 +148,5 @@ landingContent:
       url: https://azure.microsoft.com/pricing/details/backup/
     - text: Обновления Azure Backup
       url: https://azure.microsoft.com/updates/?product=backup
-    - text: Форум MSDN по Azure Backup
-      url: https://social.msdn.microsoft.com/Forums/home?forum=windowsazureonlinebackup
+    - text: Страница с вопросами об Azure Backup (раздел вопросов и ответов на сайте Майкрософт)
+      url: https://docs.microsoft.com/answers/topics/azure-backup.html

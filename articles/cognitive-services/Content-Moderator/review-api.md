@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: pafarley
 ms.openlocfilehash: 1aba86efb9ea76fbf060e80b47f9f2f6cdf8ee71
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73744422"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "79221153"
 ---
 # <a name="content-moderation-reviews-workflows-and-jobs"></a>Обзоры, рабочие процессы и задания для контроля содержимого
 
@@ -64,7 +64,7 @@ Content Moderator сочетает ролевую поддержку с возм
 }
 ```
 
-Чтобы приступить к созданию и использованию рабочих процессов, см. [Руководство](./review-tool-user-guide/workflows.md) по [REST API](./try-review-api-workflow.md) , чтобы узнать, как это сделать программным способом.
+[Чтобы](./review-tool-user-guide/workflows.md) приступить к созданию и использованию рабочих процессов, см. руководство по [REST API](./try-review-api-workflow.md) , чтобы узнать, как это сделать программным способом.
 
 ## <a name="jobs"></a>Задания
 
@@ -72,7 +72,7 @@ Content Moderator сочетает ролевую поддержку с возм
 
 Чтобы приступить к работе с заданиями, ознакомьтесь с [руководством по REST API](./try-review-api-job.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Проверьте в работе [консоль API заданий](try-review-api-job.md) и примеры кода для REST API. Также изучите [краткое руководство по работе с заданиями с помощью .NET](moderation-jobs-quickstart-dotnet.md), если вы уже знакомы с Visual Studio и C#. 
 * Чтобы использовать проверки, начните работу с [консолью API проверки](try-review-api-review.md) и воспользуйтесь примерами кода для REST API. Затем см. раздел "обзоры" в [кратком руководстве по .NET](dotnet-sdk-quickstart.md).

@@ -1,54 +1,59 @@
 ---
-title: Шаблоны Azure Resource Manager для Azure Cosmos DB
-description: Используйте шаблоны Azure Resource Manager для создания и настройки Azure Cosmos DB.
-author: TheovanKraay
+title: Шаблоны Azure Resource Manager для Azure Cosmos DB
+description: Использование шаблонов Azure Resource Manager для создания и настройки Azure Cosmos DB.
+author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/08/2019
-ms.author: thvankra
-ms.openlocfilehash: 7b08ca98f25b079d831033b9393effd4ee4b65e3
-ms.sourcegitcommit: 39da2d9675c3a2ac54ddc164da4568cf341ddecf
-ms.translationtype: MT
+ms.date: 05/08/2020
+ms.author: mjbrown
+ms.openlocfilehash: a98aee61c3a330344b5b7fa0a5f7f53a65e5ecdb
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73961852"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83586156"
 ---
-# <a name="azure-resource-manager-templates-for-azure-cosmos-db"></a>Шаблоны Azure Resource Manager для Azure Cosmos DB
+# <a name="azure-resource-manager-templates-for-azure-cosmos-db"></a>Шаблоны Azure Resource Manager для Azure Cosmos DB
 
-Следующие таблицы содержат ссылки на шаблоны Azure Resource Manager для Azure Cosmos DB.
+В следующей таблице представлены ссылки на шаблоны Azure Resource Manager для Azure Cosmos DB.
 
-## <a name="sql-core-api"></a>API SQL (Core)
+## <a name="core-sql-api"></a>API Core (SQL)
 
 |**Шаблон**|**Описание**|
 |---|---|
-|[Создание учетной записи Azure Cosmos, базы данных, контейнера](manage-sql-with-resource-manager.md#create-resource) | Этот шаблон создает учетную запись SQL (Core) API в двух регионах с двумя контейнерами с пропускной способностью общей базы данных и контейнером с выделенной пропускной способностью. Пропускную способность можно обновить, повторно отправив шаблон с обновленным значением свойства пропускной способности. |
-|[Создание учетной записи Azure Cosmos, базы данных и контейнера с помощью хранимой процедуры, триггера и определяемой пользователем функции](manage-sql-with-resource-manager.md#create-sproc) | Этот шаблон создает учетную запись SQL (Core) API в двух регионах с хранимой процедурой, триггером и определяемой пользователем функцией для контейнера. |
+|[Создание учетной записи, базы данных и контейнера Azure Cosmos DB c применением автомасштабирования пропускной способности](manage-sql-with-resource-manager.md#create-autoscale) | Этот шаблон используется для создания учетной записи в двух регионах, базы данных и контейнера API Core (SQL) с применением автомасштабирования пропускной способности. |
+|[Создание учетной записи, базы данных и контейнера Azure Cosmos DB c аналитическим хранилищем](manage-sql-with-resource-manager.md#create-analytical-store) | Этот шаблон используется для создания учетной записи API Core (SQL) в одном регионе с настроенным контейнером, для которого включена поддержка аналитического срока жизни и возможность использовать для пропускной способности настройку вручную или с помощью автомасштабирования. |
+|[Создание учетной записи, базы данных и контейнера Azure Cosmos DB c применением стандартной настройки пропускной способности (вручную)](manage-sql-with-resource-manager.md#create-manual) | Этот шаблон используется для создания учетной записи API Core (SQL) в двух регионах, базы данных и контейнера с применением стандартной настройки пропускной способности. |
+|[Создание учетной записи, базы данных и контейнера Azure Cosmos с хранимой процедурой, триггером и UDF](manage-sql-with-resource-manager.md#create-sproc) | Этот шаблон используется для создания учетной записи API Core (SQL) в двух регионах с хранимой процедурой, триггером и UDF для контейнера. |
+|[Создание частной конечной точки для имеющейся учетной записи Azure Cosmos](how-to-configure-private-endpoints.md#create-a-private-endpoint-by-using-a-resource-manager-template) |  Этот шаблон используется для создания частной конечной точки для имеющейся учетной записи API Azure Cosmos Core (SQL) в существующей виртуальной сети. |
+|[Создание учетной записи Azure Cosmos уровня "Бесплатный"](manage-sql-with-resource-manager.md#free-tier) |  Этот шаблон используется для создания учетной записи API Azure Cosmos DB Core (SQL) уровня "Бесплатный". |
 
 ## <a name="mongodb-api"></a>API MongoDB
 
 |**Шаблон**|**Описание**|
 |---| ---|
-|[Создание учетной записи Azure Cosmos, базы данных, коллекции](manage-mongodb-with-resource-manager.md#create-resource) | Этот шаблон создает учетную запись с помощью Azure Cosmos DB API для MongoDB в двух регионах с поддержкой нескольких хозяев. Учетная запись Azure Cosmos будет содержать два контейнера, которые совместно используют пропускную способность на уровне базы данных. |
+|[Создание учетной записи, базы данных и коллекции Azure Cosmos DB c применением автомасштабирования пропускной способности](manage-mongodb-with-resource-manager.md#create-autoscale) | Этот шаблон используется для создания учетной записи с помощью API Azure Cosmos DB для MongoDB в двух регионах с двумя контейнерами, которые делят между собой пропускную способность с автомасштабированием на уровне базы данных. |
+|[Создание учетной записи, базы данных и коллекции Azure Cosmos DB c применением стандартной настройки пропускной способности (вручную)](manage-mongodb-with-resource-manager.md#create-manual) | Этот шаблон используется для создания учетной записи с помощью API Azure Cosmos DB для MongoDB в двух регионах с двумя контейнерами, которые делят между собой пропускную способность со стандартной настройкой на уровне базы данных. |
 
 ## <a name="cassandra-api"></a>API Cassandra
 
 |**Шаблон**|**Описание**|
 |---| ---|
-|[Создание учетной записи Azure Cosmos, пространства ключей, Table](manage-cassandra-with-resource-manager.md#create-resource) | Этот шаблон создает учетную запись API Cassandra в двух регионах с включенной поддержкой нескольких хозяев. Учетная запись Azure Cosmos будет содержать две таблицы, которые совместно используют пропускную способность на уровне пространства ключей. |
+|[Создание учетной записи, пространства ключей и таблицы Azure Cosmos c применением автомасштабирования пропускной способности](manage-cassandra-with-resource-manager.md#create-autoscale) | Этот шаблон используется для создания учетной записи API Cassandra в двух регионах с пространством ключей и таблицей с применением автомасштабирования пропускной способности. |
+|[Создание учетной записи, пространства ключей и таблицы Azure Cosmos c применением стандартной настройки пропускной способности (вручную)](manage-cassandra-with-resource-manager.md#create-manual) | Этот шаблон используется для создания учетной записи API Cassandra в двух регионах с пространством ключей и таблицей с применением стандартной настройки пропускной способности. |
 
 ## <a name="gremlin-api"></a>API Gremlin
 
 |**Шаблон**|**Описание**|
 |---| ---|
-|[Создание учетной записи Azure Cosmos, базы данных, графа](manage-gremlin-with-resource-manager.md#create-resource) | Этот шаблон создает учетную запись API Gremlin в двух регионах с поддержкой нескольких хозяев. Учетная запись Azure Cosmos будет иметь два графика с общей пропускной способностью на уровне базы данных. |
+|[Создание учетной записи, базы данных и графа Azure Cosmos c применением автомасштабирования пропускной способности](manage-gremlin-with-resource-manager.md#create-autoscale) | Этот шаблон используется для создания учетной записи API Gremlin в двух регионах с базой данных и графом с применением автомасштабирования пропускной способности. |
+|[Создание учетной записи, базы данных и графа Azure Cosmos c применением стандартной настройки пропускной способности (вручную)](manage-gremlin-with-resource-manager.md#create-manual) | Этот шаблон используется для создания учетной записи API Gremlin в двух регионах с базой данных и графом с применением стандартной настройки пропускной способности. |
 
 ## <a name="table-api"></a>API таблиц
 
 |**Шаблон**|**Описание**|
 |---| ---|
-|[Создание учетной записи Azure Cosmos, таблицы](manage-table-with-resource-manager.md#create-resource) | Этот шаблон создает учетную запись API таблиц в двух регионах с включенной поддержкой нескольких хозяев. Учетная запись Azure Cosmos будет иметь одну таблицу. |
+|[Создание учетной записи и таблицы Azure Cosmos c применением автомасштабирования пропускной способности](manage-table-with-resource-manager.md#create-autoscale) | Этот шаблон используется для создания учетной записи API таблиц в двух регионах и одной таблицы с применением автомасштабирования пропускной способности. |
+|[Создание учетной записи и таблицы Azure Cosmos c применением стандартной настройки пропускной способности (вручную)](manage-table-with-resource-manager.md#create-manual) | Этот шаблон используется для создания учетной записи API таблиц в двух регионах и одной таблицы с применением стандартной настройки пропускной способности. |
 
-> [!TIP]
-> Чтобы включить общую пропускную способность при использовании API таблиц, включите пропускную способность на уровне учетной записи на портале Azure.
-
-Справочную документацию по Azure Cosmos DB странице см. в справочнике по [Azure Resource Manager](/azure/templates/microsoft.documentdb/allversions) .
+Справочную документацию см. на странице [справочника по Azure Resource Manager для Azure Cosmos DB](/azure/templates/microsoft.documentdb/allversions).

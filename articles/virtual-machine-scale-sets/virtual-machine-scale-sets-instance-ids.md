@@ -1,19 +1,20 @@
 ---
 title: Общие сведения об идентификаторах экземпляров для виртуальных машин масштабируемого набора Azure
 description: Общие сведения о идентификаторах экземпляров для масштабируемых наборов виртуальных машин Azure и различных способах их поверхности.
-author: mayanknayar
-tags: azure-resource-manager
-ms.assetid: e229664e-ee4e-4f12-9d2e-a4f456989e5d
-ms.service: virtual-machine-scale-sets
+author: mimckitt
+ms.author: mimckitt
 ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
 ms.date: 02/22/2018
-ms.author: manayar
-ms.openlocfilehash: aa2b0013818f897f01945d394266a57016ecb0bb
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: 6ffc92fe8d17970e1408262387140331189d6e51
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76275848"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200126"
 ---
 # <a name="understand-instance-ids-for-azure-vm-scale-set-vms"></a>Общие сведения об идентификаторах экземпляров для виртуальных машин масштабируемого набора Azure
 В этой статье описаны идентификаторы экземпляров для масштабируемых наборов и связанные с ними возможности.
@@ -26,7 +27,7 @@ REST API: `POST https://management.azure.com/subscriptions/{subscriptionId}/reso
 
 PowerShell: `Set-AzVmssVM -ResourceGroupName {resourceGroupName} -VMScaleSetName {vmScaleSetName} -InstanceId {instanceId} -Reimage` (дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/az.compute/set-azvmssvm)).
 
-CLI: `az vmss reimage -g {resourceGroupName} -n {vmScaleSetName} --instance-id {instanceId}` (дополнительные сведения см. в [документации по CLI](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest)).
+CLI: `az vmss reimage -g {resourceGroupName} -n {vmScaleSetName} --instance-id {instanceId}` (Дополнительные сведения см. в [документации по CLI](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest)).
 
 Список всех идентификаторов экземпляров можно получить, запросив список всех экземпляров в наборе масштабирования:
 
@@ -34,14 +35,17 @@ REST API: `GET https://management.azure.com/subscriptions/{subscriptionId}/resou
 
 PowerShell: `Get-AzVmssVM -ResourceGroupName {resourceGroupName} -VMScaleSetName {vmScaleSetName}` (дополнительные сведения см. в [документации по PowerShell](https://docs.microsoft.com/powershell/module/az.compute/get-azvmssvm)).
 
-CLI: `az vmss list-instances -g {resourceGroupName} -n {vmScaleSetName}` (дополнительные сведения см. в [документации по CLI](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest)).
+CLI: `az vmss list-instances -g {resourceGroupName} -n {vmScaleSetName}` (Дополнительные сведения см. в [документации по CLI](https://docs.microsoft.com/cli/azure/vmss?view=azure-cli-latest)).
 
 Для получения списка виртуальных машин масштабируемого набора также можно использовать сайт [resources.azure.com](https://resources.azure.com) или [пакеты SDK Azure](https://azure.microsoft.com/downloads/).
 
 Точное представление выходных данных зависит от параметров, которые вы предоставляете команде. Ниже приведены несколько примеров выходных данных CLI:
 
+```azurecli
+az vmss show -g {resourceGroupName} -n {vmScaleSetName}
 ```
-$ az vmss show -g {resourceGroupName} -n {vmScaleSetName}
+
+```output
 [
   {
     "instanceId": "85",
@@ -70,7 +74,7 @@ $ az vmss show -g {resourceGroupName} -n {vmScaleSetName}
 
 Если вы запрашиваете [метаданные экземпляра](../virtual-machines/windows/instance-metadata-service.md) из виртуальной машины масштабируемого набора, в выходных данных отображается свойство name:
 
-```
+```output
 {
   "compute": {
     "location": "westus",

@@ -1,25 +1,25 @@
 ---
 title: Модерация видео с помощью пользовательских проверок — Content Moderator
 titleSuffix: Azure Cognitive Services
-description: Использование машинной модерации видео и инструментов пользовательской проверки для модерации неуместного содержимого.
+description: Использование управляемого видеоролика и средства проверки на умеренное неприемлемое содержимое
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: a4e7b079367a4b4dec1d2b3d6c0afde1d8276766
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.openlocfilehash: 0c031a890efc7fad7e5d9caefce3b0e66c515d90
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72754169"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81404238"
 ---
 # <a name="video-moderation-with-human-review"></a>Модерация видео с помощью пользовательских проверок
 
-Используйте Content Moderator, контролируемое компьютером, [и](video-moderation-api.md) [средство проверки](Review-Tool-User-Guide/human-in-the-loop.md) пользователей на умеренные видео и записи для взрослых (явных) и носящих непристойный характер (предполагающее определенную) содержимого, чтобы получить лучшие результаты для вашего бизнеса.
+Для получения лучших результатов для вашего бизнеса Используйте средство контроля и [просмотра](Review-Tool-User-Guide/human-in-the-loop.md) [видео](video-moderation-api.md) Content Moderator с машинным сопровождением и проверки на умеренные видео и записи для взрослых (предполагающее определенную).
 
 ## <a name="video-trained-classifier-preview"></a>Классификатор, обученный с помощью видео, (предварительная версия)
 
@@ -100,7 +100,7 @@ ms.locfileid: "72754169"
 
 ![Представление расшифровки инструмента проверки видео](images/video-review-transcript-view.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Приступите к работе с помощью [краткого руководства по модерации видео](video-moderation-api.md).
 - Узнайте, как создать [проверки видео](video-reviews-quickstart-dotnet.md) на основе прошедших модерацию выходных данных для рецензентов-пользователей.

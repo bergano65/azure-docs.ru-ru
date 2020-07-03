@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 07/11/2019
 ms.author: alkohli
 ms.openlocfilehash: e232ad131b1c0930afcf5e7e78b386aba2c9490b
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839753"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79259959"
 ---
 # <a name="azure-data-box-system-requirements"></a>Требования к системе для Azure Data Box
 
@@ -41,7 +41,7 @@ ms.locfileid: "67839753"
 
 [!INCLUDE [data-box-supported-storage-accounts](../../includes/data-box-supported-storage-accounts.md)]
 
-### <a name="supported-storage-types"></a>Поддерживаемые типы хранилищ
+### <a name="supported-storage-types"></a>Поддерживаемые типы хранилища
 
 [!INCLUDE [data-box-supported-storage-types](../../includes/data-box-supported-storage-types.md)]
 
@@ -53,13 +53,13 @@ ms.locfileid: "67839753"
 
 Центр обработки данных должен иметь высокоскоростную сеть. Настоятельно рекомендуем использовать хотя бы одно соединение Ethernet со скоростью передачи данных 10 Гбит/с. Если подключение Ethernet 10 Гбит/с недоступно, для копирования можно использовать канал передачи данных со скоростью 1 Гбит/с, но это повлияет на скорость копирования.
 
-### <a name="port-requirements"></a>Требования к портам
+### <a name="port-requirements"></a>Требования к порту
 
-Ниже перечислены порты, которые должны быть открыты в брандмауэре, чтобы разрешить трафик SMB и NFS. В этой таблице значение *в* или *входящий* относится к направлению, из которого клиент запрашивает доступ к вашему устройству. *Out* или *исходящих* означает направление, в котором устройство Data Box отправляет данные во внешнюю среду за пределами развертывания: например, исходящие подключения к Интернету.
+В следующей таблице перечислены порты, которые необходимо открыть в брандмауэре, чтобы разрешить трафик SMB или NFS. В этой таблице значение *в* или *входящий* относится к направлению, из которого клиент запрашивает доступ к вашему устройству. *Out* или *Outbound* — это направление, в котором устройство Data Box отправляет данные извне, помимо развертывания: например, исходящий трафик в Интернете.
 
 [!INCLUDE [data-box-port-requirements](../../includes/data-box-port-requirements.md)]
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание Azure Data Box](data-box-deploy-ordered.md)

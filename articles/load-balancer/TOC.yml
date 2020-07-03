@@ -4,16 +4,20 @@
   items:
     - name: Что такое Azure Load Balancer?
       href: load-balancer-overview.md
+    - name: Часто задаваемые вопросы
+      href: load-balancer-faqs.md
 - name: Краткое руководство
   items:
-    - name: Портал
+    - name: "Создание подсистемы балансировки нагрузки\_— портал"
       href: quickstart-load-balancer-standard-public-portal.md
-    - name: Azure CLI
+    - name: "Создание подсистемы балансировки нагрузки\_— Azure\_CLI"
       href: quickstart-load-balancer-standard-public-cli.md
-    - name: Azure PowerShell
+    - name: "Создание подсистемы балансировки нагрузки\_— PowerShell"
       href: quickstart-create-standard-load-balancer-powershell.md
-    - name: Шаблон
+    - name: Создание подсистемы балансировки нагрузки (шаблон ARM)
+      displayName: Resource Manager
       href: quickstart-load-balancer-standard-public-template.md
+  expanded: true
 - name: Учебники
   items:
     - name: Балансировка интернет-трафика на виртуальных машинах
@@ -34,8 +38,12 @@
       href: powershell-samples.md
 - name: Основные понятия
   items:
-    - name: Компоненты и ограничения
-      href: concepts-limitations.md
+    - name: Components
+      href: components.md
+    - name: Основные понятия
+      href: concepts.md
+    - name: Номера SKU
+      href: skus.md
     - name: Мониторинг работоспособности
       items:
         - name: Пробы работоспособности
@@ -62,10 +70,26 @@
       href: load-balancer-security-controls.md
 - name: Практическое руководство
   items:
-    - name: Обновление общедоступной версии Load Balancer ценовой категории "Базовый" до общедоступной версии ценовой категории "Стандартный"
-      href: upgrade-basic-standard.md
+    - name: Масштабируемые наборы виртуальных машин
+      items:
+        - name: "Использование с существующим решением Azure Load Balancer\_— портал"
+          href: configure-vm-scale-set-portal.md
+        - name: "Использование с существующим решением Azure Load Balancer\_— PowerShell"
+          href: configure-vm-scale-set-powershell.md
+        - name: "Использование с существующим решением Azure Load Balancer\_— CLI"
+          href: configure-vm-scale-set-cli.md
+    - name: Обновление Load Balancer с ценовой категории "Базовый" до ценовой категории "Стандартный"
+      items:
+        - name: Обновление общедоступной версии Load Balancer ценовой категории "Базовый"
+          href: upgrade-basic-standard.md
+        - name: Обновление Load Balancer (внутренняя подсистема балансировки нагрузки) ценовой категории "Базовый" без исходящего подключения
+          href: upgrade-basicInternal-standard.md
+        - name: Обновление Load Balancer (внутренняя подсистема балансировки нагрузки) ценовой категории "Базовый" с исходящим подключением
+          href: upgrade-InternalBasic-To-PublicStandard.md
     - name: Настройка правил для исходящего трафика
       items:
+        - name: Портал Azure
+          href: configure-load-balancer-outbound-portal.md
         - name: Azure CLI
           href: configure-load-balancer-outbound-cli.md
         - name: Azure PowerShell
@@ -76,16 +100,18 @@
           href: 'https://docs.microsoft.com/azure/virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-cli'
         - name: Azure PowerShell
           href: 'https://docs.microsoft.com/azure/virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell'
-        - name: Шаблон
+        - name: Шаблон Azure Resource Manager
           href: 'https://docs.microsoft.com/azure/virtual-network/ipv6-configure-standard-load-balancer-template-json'
+          displayName: ARM
     - name: Настройка внутренней службы Azure Load Balancer
       items:
         - name: Azure CLI
           href: load-balancer-get-started-ilb-arm-cli.md
         - name: Azure PowerShell
           href: load-balancer-get-started-ilb-arm-ps.md
-        - name: Шаблон
+        - name: Шаблон Azure Resource Manager
           href: load-balancer-get-started-ilb-arm-template.md
+          displayName: ARM
     - name: Настройка времени ожидания простоя TCP для Load Balancer
       href: load-balancer-tcp-idle-timeout.md
     - name: Настройка режима распространения для Load Balancer
@@ -113,6 +139,8 @@
       items:
         - name: Устранение неполадок Azure Load Balancer
           href: load-balancer-troubleshoot.md
+        - name: Устранение стандартных ошибок развертывания
+          href: load-balancer-common-deployment-errors.md
 - name: Справочник
   items:
     - name: Примеры кода
@@ -128,15 +156,18 @@
     - name: Node.js
       href: 'http://azure.github.io/azure-sdk-for-node/azure-arm-network/latest/LoadBalancers.html'
     - name: Ruby
-      href: 'http://www.rubydoc.info/gems/azure_mgmt_network/Azure/ARM/Network/LoadBalancers'
+      href: 'https://www.rubydoc.info/gems/azure_mgmt_network/Azure/Network/Mgmt/V2020_03_01/LoadBalancers'
     - name: Python
       href: 'http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.network.operations.html#azure.mgmt.network.operations.LoadBalancersOperations'
     - name: REST
       href: 'https://msdn.microsoft.com/library/azure/mt163651.aspx'
+    - name: Шаблон Resource Manager
+      href: 'https://docs.microsoft.com/azure/templates/microsoft.network/loadbalancers'
+      displayName: ARM
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn
-      href: /learn/browse/?products=azure-virtual-machines
+      href: /learn/browse/?products=azure-load-balancer
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=networking'
     - name: Отзыв об Azure Load Balancer

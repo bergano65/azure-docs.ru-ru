@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 06/02/2017
 ms.author: rogardle
 ms.custom: mvc
-ms.openlocfilehash: d8dff1dc063cc3b940fbdf0698b8b328b90d60b6
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: a8f863f16888e6eca2dbc72c5dd612c38edbe46e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277837"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78273379"
 ---
 # <a name="deprecated-load-balance-containers-in-an-azure-container-service-dcos-cluster"></a>Балансировка нагрузки контейнеров в кластере DC/OS в Службе контейнеров Azure (не рекомендуется)
 
@@ -43,9 +43,11 @@ ms.locfileid: "76277837"
 
 Балансировщик нагрузки Marathon динамически перенастраивается на основе развернутых контейнеров. Она также устойчива к сбоям в работе контейнера или агента. В этой ситуации Apache Mesos просто перезапускает контейнер в другом расположении, и подсистема балансировки нагрузки marathon-lb перенастраивается.
 
+Перейдите по адресу [https://shell.azure.com](https://shell.azure.com), чтобы открыть Cloud Shell в браузере.
+
 Для установки подсистемы балансировки нагрузки в кластере открытого агента выполните следующую команду.
 
-```azurecli-interactive
+```console
 dcos package install marathon-lb
 ```
 
@@ -97,7 +99,7 @@ az acs list --resource-group myResourceGroup --query "[0].agentPoolProfiles[0].f
 
 Для запуска приложения используйте интерфейс командной строки DC/OS. По умолчанию Marathon развертывает приложение в частный кластер. Это означает, что указанное выше развертывание доступно только для подсистемы балансировки нагрузки (обычно такая схема является предпочтительной).
 
-```azurecli-interactive
+```console
 dcos marathon app add hello-web.json
 ```
 

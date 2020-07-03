@@ -10,13 +10,13 @@ ms.custom: mvc
 ms.date: 03/08/2019
 ms.author: troyhop
 ms.openlocfilehash: 68e0c3c89698bafbab65ca786231e0364900213a
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "65467829"
 ---
-# <a name="quickstart-deploy-and-run-an-iot-device-simulation-in-azure"></a>Краткое руководство. Развертывание и запуск имитации устройств Интернета вещей в Azure
+# <a name="quickstart-deploy-and-run-an-iot-device-simulation-in-azure"></a>Краткое руководство по развертыванию и запуску имитации устройств Интернета вещей в Azure
 
 В этом кратком руководстве показано, как развернуть имитацию устройств Интернета вещей Azure для тестирования решения Интернета вещей. После развертывания акселератора решений запустите пример имитации, чтобы приступить к работе.
 
@@ -52,7 +52,7 @@ ms.locfileid: "65467829"
 
 После завершения процесса подготовки вы можете войти в экземпляр имитации устройств, нажав кнопку **Запустить**.
 
-![Открытие имитации устройств](./media/quickstart-device-simulation-deploy/choosenew.png)
+![Открытие симулятора устройств](./media/quickstart-device-simulation-deploy/choosenew.png)
 
 Щелкните **Accept** (Принять), чтобы принять запрос на разрешения. В браузере отобразится панель мониторинга решения "Симулятор устройств".
 
@@ -90,7 +90,7 @@ ms.locfileid: "65467829"
 
 ![Удаление решения](media/quickstart-device-simulation-deploy/deletesolution.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы развернули симулятор устройств и запустили пример имитации устройства Интернета вещей.
 

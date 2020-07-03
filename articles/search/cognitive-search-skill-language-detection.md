@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 8439788c63ec1b9feaea148ab52aba498791dc12
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76045018"
 ---
 #   <a name="language-detection-cognitive-skill"></a>Когнитивный навык распознавания языка
@@ -24,7 +24,7 @@ ms.locfileid: "76045018"
 Определение языка использует библиотеки обработки естественного языка Bing, что превышает число [поддерживаемых языков и регионов](https://docs.microsoft.com/azure/cognitive-services/text-analytics/language-support) , перечисленных для анализ текста. Точный список языков не публикуется, но включает в себя все широко знакомые языки, а также варианты, диалекты и некоторые региональные и культурные языки. Если содержимое представлено на менее часто используемом языке, можно [попробовать распознавание языка API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7) , чтобы узнать, возвращает ли он код. Для языков, которые не удалась распознать, возвращается ответ `unknown`.
 
 > [!NOTE]
-> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
+> Когда вы расширяете область, увеличивая частоту обработки, добавляя дополнительные документы или добавляете дополнительные алгоритмы искусственного интеллекта, вам потребуется [подключить ресурс Cognitive Services для оплаты](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
 >
 > Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на службу "Когнитивный поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400).
 
@@ -33,19 +33,19 @@ ms.locfileid: "76045018"
 Microsoft.Skills.Text.LanguageDetectionSkill
 
 ## <a name="data-limits"></a>Ограничения данных
-Максимальный размер записи должен составлять 50 000 символов, измеряемый [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length). Если необходимо разбить данные перед отправкой в навык определения языка, вы можете использовать [навык разбиения текста](cognitive-search-skill-textsplit.md).
+Максимальный размер записи должен составлять 50 000 символов, [`String.Length`](https://docs.microsoft.com/dotnet/api/system.string.length)измеряемый. Если необходимо разбить данные перед отправкой в навык определения языка, вы можете использовать [навык разбиения текста](cognitive-search-skill-textsplit.md).
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
 Параметры зависят от регистра.
 
-| Входные данные     | Description |
+| Входные данные     | Описание |
 |--------------------|-------------|
 | text | Анализируемый текст.|
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 
-| Имя вывода    | Description |
+| Имя вывода    | Описание |
 |--------------------|-------------|
 | languageCode | Код языка ISO 6391 для распознанного языка. Например, en. |
 | LanguageName | Имя языка. Например, английский. |

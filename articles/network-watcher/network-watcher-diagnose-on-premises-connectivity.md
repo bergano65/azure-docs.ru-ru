@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
 ms.openlocfilehash: 835b3a69e779b536961110b674ae67f4e8c13ce0
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76845056"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Диагностика локальных подключений через VPN-шлюзы
@@ -93,7 +93,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | ConnectionsNotConnected | Ни одно из подключений не установлено. Это всего лишь предупреждение.| Да|
 | GatewayCPUUsageExceeded | Текущее использование ЦП шлюза превышает 95 %. | Да |
 
-### <a name="connection"></a>Подключение
+### <a name="connection"></a>Соединение
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|
@@ -111,7 +111,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Да|
 | WfpParse Error | Ошибка при анализе журнала WFP. |Да|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Научитесь проверять подключения VPN-шлюза с помощью PowerShell и службы автоматизации Azure, ознакомившись с разделом [Мониторинг VPN-шлюзов с помощью средства устранения неполадок наблюдателя за сетями Azure](network-watcher-monitor-with-azure-automation.md).
 

@@ -7,10 +7,10 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: storage
 ms.openlocfilehash: 86419811cdf2c11204caae0ca5bf6f65fba063d2
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76288920"
 ---
 # <a name="move-mainframe-storage-to-azure"></a>Перемещение хранилища мэйнфреймов в Azure
@@ -51,7 +51,7 @@ Azure предоставляет функции и емкость хранили
 
 <table>
 <thead>
-    <tr><th>Тип</th><th>Description</th><th>Используйте, когда хотите.</th></tr>
+    <tr><th>Тип</th><th>Описание</th><th>Используйте, если хотите:</th></tr>
 </thead>
 <tbody>
 <tr><td>Файлы Azure
@@ -94,10 +94,10 @@ Azure предоставляет функции и емкость хранили
 
 Службы SSDs обеспечивают наивысшую производительность хранилища в Azure. Доступны следующие параметры (на момент написания этого документа):
 
-| Тип         | Размер           | IOPS                  |
+| Тип         | Размер           | ОПЕРАЦИЙ ВВОДА-ВЫВОДА                  |
 |--------------|----------------|-----------------------|
-| Диск SSD категории "Ультра"    | от 4 ГБ до 64 ТБ  | 1 200 до 160 000 операций ввода-вывода |
-| Диск SSD категории "Премиум"  | 32 ГБ до 32 ТБ | от 12 до 15 000 операций ввода-вывода     |
+| SSD ценовой категории "Ультра"    | от 4 ГБ до 64 ТБ  | 1 200 до 160 000 операций ввода-вывода |
+| SSD (цен. категория "Премиум")  | 32 ГБ до 32 ТБ | от 12 до 15 000 операций ввода-вывода     |
 | SSD (цен. категория "Стандартный") | 32 ГБ до 32 ТБ | от 12 до 2 000 операций ввода-вывода      |
 
 Хранилище BLOB-объектов предоставляет самый большой объем хранилища в Azure. В дополнение к размеру хранилища Azure предлагает как управляемое, так и неуправляемое хранилище. С помощью управляемого хранилища Azure управляет базовыми учетными записями хранения. В неуправляемом хранилище пользователь несет ответственность за настройку учетных записей хранения Azure соответствующего размера в соответствии с требованиями к хранилищу.
@@ -107,7 +107,7 @@ Azure предоставляет функции и емкость хранили
 - [Миграция мэйнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/overview)
 - [Повторное размещение мэйнфреймов на виртуальных машинах Azure](/azure/virtual-machines/workloads/mainframe-rehosting/overview)
 - [Перемещение вычислений мэйнфреймов в Azure](mainframe-compute-Azure.md)
-- [Принятие решения об использовании больших двоичных объектов Azure, файлов Azure или дисков Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks)
+- [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks)
 - [SSD (цен. категория "Стандартный") управляемых дисков для рабочих нагрузок виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-standard-ssd)
 
 ### <a name="ibm-resources"></a>Ресурсы по IBM

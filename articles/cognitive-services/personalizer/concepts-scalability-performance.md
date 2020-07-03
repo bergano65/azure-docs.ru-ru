@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: diberry
 ms.openlocfilehash: 5ac9a870cb05328f040febd0f8161a97f0982e09
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73490779"
 ---
 # <a name="scalability-and-performance"></a>Масштабируемость и производительность
@@ -49,6 +49,6 @@ ms.locfileid: "73490779"
 
 Если вы достигните этих ограничений, обратитесь в службу поддержки для получения совета по архитектуре.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Personalizer settings](how-to-settings.md) (Параметры Персонализатора)

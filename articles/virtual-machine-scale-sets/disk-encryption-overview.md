@@ -1,18 +1,20 @@
 ---
 title: Включение шифрования дисков Azure для масштабируемых наборов виртуальных машин
 description: В этой статье приведены инструкции по включению шифрования дисков Microsoft Azure для масштабируемых наборов виртуальных машин.
-author: msmbaldwin
-ms.service: virtual-machine-scale-sets
+author: mimckitt
+ms.author: mimckitt
 ms.topic: conceptual
-ms.author: mbaldwin
+ms.service: virtual-machine-scale-sets
+ms.subservice: disks
 ms.date: 10/10/2019
-ms.custom: seodec18
-ms.openlocfilehash: 36eb83d99af299260ebbbd74fe56d69921ba389b
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: 6b9805d66149a18216a200bc89a79b3e06106c9d
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278967"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83195108"
 ---
 # <a name="azure-disk-encryption-for-virtual-machine-scale-sets"></a>Шифрование дисков Azure для масштабируемых наборов виртуальных машин
 

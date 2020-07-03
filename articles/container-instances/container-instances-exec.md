@@ -3,12 +3,12 @@ title: Выполнение команд в работающем экземпл�
 description: Узнайте, как выполнить команду в контейнере, который выполняется в данный момент в службе "Экземпляры контейнеров"
 ms.topic: article
 ms.date: 03/30/2018
-ms.openlocfilehash: 10d0ea0c2dfa60aad64d0ae11532aff24a7ce773
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: de48e6ac246e2b0751561b4c60bb63d88b599bdf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74481583"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79247206"
 ---
 # <a name="execute-a-command-in-a-running-azure-container-instance"></a>Выполнение команды в экземпляре контейнера Azure
 
@@ -16,7 +16,7 @@ ms.locfileid: "74481583"
 
 ## <a name="run-a-command-with-azure-cli"></a>Выполнение команды с помощью Azure CLI
 
-Выполните команду в работающем контейнере с помощью команды [AZ Container Exec][az-container-exec] в [Azure CLI][azure-cli]:
+Чтобы выполнить команду в запущенном контейнере, введите [az container exec][az-container-exec] в [Azure CLI][azure-cli]:
 
 ```azurecli
 az container exec --resource-group <group-name> --name <container-group-name> --exec-command "<command>"
@@ -30,8 +30,7 @@ az container exec --resource-group myResourceGroup --name mynginx --exec-command
 
 В приведенном ниже примере оболочка Bash запущена в запущенном контейнере Linux. Она предоставляет терминал, в котором выполняется `ls`:
 
-```console
-$ az container exec --resource-group myResourceGroup --name mynginx --exec-command "/bin/bash"
+```output
 root@caas-83e6c883014b427f9b277a2bba3b7b5f-708716530-2qv47:/# ls
 bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
 boot  etc  lib   media  opt  root  sbin  sys  usr
@@ -42,8 +41,11 @@ Bye.
 
 В этом примере интерфейс командной строки запущен в запущенном контейнере Nanoserver:
 
-```console
-$ az container exec --resource-group myResourceGroup --name myiis --exec-command "cmd.exe"
+```azurecli
+az container exec --resource-group myResourceGroup --name myiis --exec-command "cmd.exe"
+```
+
+```output
 Microsoft Windows [Version 10.0.14393]
 (c) 2016 Microsoft Corporation. All rights reserved.
 
@@ -80,9 +82,9 @@ az container exec --resource-group myResourceGroup --name mynginx --container-na
 
 ## <a name="restrictions"></a>Ограничения
 
-Сейчас служба "экземпляры контейнеров Azure" поддерживает запуск одного процесса с помощью команды [AZ Container Exec][az-container-exec], и вы не можете передавать аргументы команды. Например, нельзя добавить команды, как в случае с `sh -c "echo FOO && echo BAR"`, или выполнить `echo FOO`.
+Служба "Экземпляры контейнеров Azure" в настоящее время поддерживает запуск одного процесса с помощью команды [az container exec][az-container-exec]. При этом передать аргументы команды невозможно. Например, нельзя добавить команды, как в случае с `sh -c "echo FOO && echo BAR"`, или выполнить `echo FOO`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о других средствах устранения неполадок и часто встречающихся проблемах развертывания см. в статье [Устранение неполадок развертывания с помощью службы "Экземпляры контейнеров Azure"](container-instances-troubleshooting.md).
 

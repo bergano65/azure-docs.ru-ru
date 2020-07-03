@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 0625d8371b9ecaaadd05e302413054948fd4b27b
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.openlocfilehash: 3957e15a09bd7e7ecd814d169451af3241108b64
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70967041"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80131671"
 ---
 # <a name="detect-common-objects-in-images"></a>Обнаружение общих объектов в образах
 
@@ -99,5 +99,5 @@ API обнаружения применяет теги на основе объ�
 
 Функция обнаружения объектов является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa). Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Objects` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"objects"` раздела.
 
-* [Краткое руководство Компьютерное зрение пакет SDK для .NET)](./quickstarts-sdk/csharp-sdk.md)
-* [Краткое руководство Анализ изображений с помощью REST API](./quickstarts/csharp-analyze.md)
+* [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
+* [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

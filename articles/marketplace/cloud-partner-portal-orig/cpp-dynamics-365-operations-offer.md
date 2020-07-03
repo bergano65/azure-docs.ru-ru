@@ -1,19 +1,18 @@
 ---
 title: Dynamics 365 для финансового предложения и предложений по эксплуатации в Azure Marketplace
 description: Нерекомендуемая статья CPP и ссылка на ПК. WAS "объясняет, как создать Dynamics 365 для финансового предложения и предложений операций в Портал Cloud Partner".
-services: Azure Marketplace, Cloud Partner Portal,
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 2b6308a29a2feb112dbd67060c6fc7d31ce162e3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 64216c5f224ed3f9926523d316a725fa9cac1c61
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819234"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80276127"
 ---
 # <a name="dynamics-365-for-finance-and-operations-offer"></a>Предложение Dynamics 365 for Finance and Operations
 

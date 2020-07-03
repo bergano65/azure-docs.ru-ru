@@ -6,12 +6,12 @@ ms.author: jzim
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 5901be713f686f0c7213449a775c86b9e346fe12
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 92529c2d60b32e9c8b57b897008b5333adc2a4d4
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76275406"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594973"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Вопросы и ответы об Azure Red Hat OpenShift
 
@@ -23,11 +23,11 @@ ms.locfileid: "76275406"
 
 ## <a name="can-i-deploy-a-cluster-into-an-existing-virtual-network"></a>Можно ли развернуть кластер в существующей виртуальной сети?
 
-Нет. Но вы можете подключить кластер Azure Red Hat OpenShift к существующей виртуальной сети через пиринг. Дополнительные сведения см. в статье [подключение виртуальной сети кластера к существующей виртуальной сети](tutorial-create-cluster.md#optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network) .
+Нет. Но вы можете подключить кластер Azure Red Hat OpenShift к существующей виртуальной сети с помощью пиринга. Дополнительные сведения см. в статье [подключение виртуальной сети кластера к существующей виртуальной сети](tutorial-create-cluster.md#create-the-cluster) .
 
 ## <a name="what-cluster-operations-are-available"></a>Какие операции кластера доступны?
 
-Можно увеличить или уменьшить масштаб только числа узлов вычислений. Другие изменения не разрешены для `Microsoft.ContainerService/openShiftManagedClusters`ного ресурса после создания. Максимальное число узлов вычислений ограничено 20.
+Можно увеличить или уменьшить масштаб только числа узлов вычислений. Другие изменения не разрешены для `Microsoft.ContainerService/openShiftManagedClusters` ресурса после его создания. Максимальное число узлов вычислений ограничено 20.
 
 ## <a name="what-virtual-machine-sizes-can-i-use"></a>Какие размеры виртуальных машин можно использовать?
 
@@ -47,7 +47,7 @@ ms.locfileid: "76275406"
 
 ## <a name="is-the-docker-registry-available-externally-so-i-can-use-tools-such-as-jenkins"></a>Доступен ли реестр DOCKER извне, поэтому я могу использовать такие средства, как Jenkins?
 
-Реестр DOCKER доступен из `https://docker-registry.apps.<clustername>.<region>.azmosa.io/` однако гарантия надежности надежного хранилища не предоставляется. Вы также можете использовать [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/).
+Реестр DOCKER доступен, `https://docker-registry.apps.<clustername>.<region>.azmosa.io/` однако гарантия надежности хранилища не предоставляется. Вы также можете использовать [Реестр контейнеров Azure](https://azure.microsoft.com/services/container-registry/).
 
 ## <a name="is-cross-namespace-networking-supported"></a>Поддерживается ли поддержка сетей с несколькими пространствами имен?
 
@@ -61,6 +61,18 @@ ms.locfileid: "76275406"
 
 Да. Вы можете ограничить, какие пользователи Azure AD могут входить в кластер, настроив приложение Azure AD. Дополнительные сведения см. в разделе [как ограничить приложение набором пользователей.](https://docs.microsoft.com/azure/active-directory/develop/howto-restrict-your-app-to-a-set-of-users)
 
+## <a name="can-i-restrict-users-from-creating-projects"></a>Можно ли запретить пользователям создавать проекты?
+
+Да. Войдите в кластер в качестве администратора Azure Red Hat OpenShift и выполните следующую команду:
+
+```
+oc adm policy \
+    remove-cluster-role-from-group self-provisioner \
+    system:authenticated:oauth
+```
+
+Дополнительные сведения см. в документации OpenShift по [отключению самостоятельной подготовки](https://docs.openshift.com/container-platform/3.11/admin_guide/managing_projects.html#disabling-self-provisioning).
+
 ## <a name="can-a-cluster-have-compute-nodes-across-multiple-azure-regions"></a>Может ли кластер вычислять узлы в нескольких регионах Azure?
 
 Нет. Все узлы в кластере Azure Red Hat OpenShift должны исходить из одного региона Azure.
@@ -73,15 +85,15 @@ ms.locfileid: "76275406"
 
 Да. Вы можете использовать OSBA с Azure Red Hat OpenShift. Дополнительные сведения см. в статье [Open Service Broker for Azure](https://github.com/Azure/open-service-broker-azure#openshift-project-template) .
 
-## <a name="i-am-trying-to-peer-into-a-virtual-network-in-a-different-subscription-but-getting-failed-to-get-vnet-cidr-error"></a>Я пытаюсь выполнить одноранговую связь с виртуальной сетью в другой подписке, но получив `Failed to get vnet CIDR` ошибку.
+## <a name="i-am-trying-to-peer-into-a-virtual-network-in-a-different-subscription-but-getting-failed-to-get-vnet-cidr-error"></a>Я пытаюсь выполнить пиринг в виртуальной сети в другой подписке, но получить `Failed to get vnet CIDR` ошибку.
 
-В подписке с виртуальной сетью обязательно Зарегистрируйте `Microsoft.ContainerService` поставщика в `az provider register -n Microsoft.ContainerService --wait` 
+В подписке с виртуальной сетью обязательно Зарегистрируйте `Microsoft.ContainerService` поставщик с помощью`az provider register -n Microsoft.ContainerService --wait` 
 
 ## <a name="what-is-the-azure-red-hat-openshift-aro-maintenance-process"></a>Что такое процесс обслуживания Azure Red Hat OpenShift (АТО)?
 
 Существует три типа обслуживания для АТО: обновления, резервное копирование и восстановление данных etcd, а затем обслуживание, инициированное поставщиком облачных служб.
 
-+ Обновления включают обновления программного обеспечения и CVE. Исправление CVE происходит при запуске, запуская `yum update` и предоставляющая немедленное устранение рисков.  В параллельном режиме новая сборка образа будет создана для создания в будущем кластере.
++ Обновления включают обновления программного обеспечения и CVE. Обновление CVE происходит при запуске, запуская `yum update` и предоставляющая немедленное устранение проблем.  В параллельном режиме новая сборка образа будет создана для создания в будущем кластере.
 
 + Резервное копирование и управление данными etcd — это автоматизированный процесс, который может потребовать простоя кластера в зависимости от действия. Если база данных etcd восстанавливается из резервной копии, это приведет к простою. Мы создаем резервную копию etcd ежечасно и сохраняем последние 6 часов резервных копий.
 
@@ -117,13 +129,13 @@ ms.locfileid: "76275406"
 
 Системный журнал, журналы DOCKER, журнал и дмесг обрабатываются управляемой службой и не предоставляются клиентам.
 
-## <a name="how-can-a-customer-get-access-to-metrics-like-cpumemory-at-the-node-level-to-take-action-to-scale-debug-issues-etc-i-cannot-seem-to-run-kubectl-top-on-an-aro-cluster"></a>Как клиент может получить доступ к метрикам, таким как ЦП/память на уровне узла, чтобы выполнить действия по масштабированию, отладке проблем и т. д. Мне кажется, что я не могу запустить `kubectl top` в кластере АТО.
+## <a name="how-can-a-customer-get-access-to-metrics-like-cpumemory-at-the-node-level-to-take-action-to-scale-debug-issues-etc-i-cannot-seem-to-run-kubectl-top-on-an-aro-cluster"></a>Как клиент может получить доступ к метрикам, таким как ЦП/память на уровне узла, чтобы выполнить действия по масштабированию, отладке проблем и т. д. Мне кажется, что я `kubectl top` не могу работать в кластере АТО.
 
-Клиенты могут получить доступ к метрикам ЦП и памяти на уровне узла с помощью команды `oc adm top nodes` или `kubectl top nodes` с помощью клустерроле клиента.  Клиенты также могут получить доступ к метрикам ЦП и памяти `pods` с помощью команды `oc adm top pods` или `kubectl top pods`
+Клиенты могут получить доступ к метрикам ЦП и памяти на уровне узла с помощью команды `oc adm top nodes` или `kubectl top nodes` клустерроле клиента.  Клиенты также могут получить доступ к метрикам ЦП и памяти `pods` с помощью команды `oc adm top pods` или`kubectl top pods`
 
 ## <a name="what-is-the-default-pod-scheduler-configuration-for-aro"></a>Какова конфигурация планировщика Pod по умолчанию для АТО?
 
-АТО использует планировщик по умолчанию, который поставляется в OpenShift. Существует несколько дополнительных механизмов, которые не поддерживаются в АТО. Дополнительные сведения см. в документации [по по умолчанию](https://docs.openshift.com/container-platform/3.11/admin_guide/scheduling/scheduler.html#generic-scheduler) , документации по планировщику и [главному планировщику](https://github.com/openshift/openshift-azure/blob/master/pkg/startup/v6/data/master/etc/origin/master/scheduler.json) .
+АТО использует планировщик по умолчанию, который поставляется в OpenShift. Существует несколько дополнительных механизмов, которые не поддерживаются в АТО. Дополнительные сведения см. в документации [по по умолчанию](https://docs.openshift.com/container-platform/3.11/admin_guide/scheduling/scheduler.html#generic-scheduler) , документации по планировщику и [главному планировщику](https://github.com/openshift/openshift-azure/blob/master/pkg/startup/v16/data/master/etc/origin/master/scheduler.json) .
 
 Расширенное или настраиваемое планирование в настоящее время не поддерживается. Дополнительные сведения см. в [документации по планированию](https://docs.openshift.com/container-platform/3.11/admin_guide/scheduling/index.html) .
 
@@ -143,7 +155,7 @@ ms.locfileid: "76275406"
 
 - Если у клиента есть запрос на определенные метки или стратегию развертывания, это можно сделать, но в настоящее время потребуется выполнить проектирование и не поддерживаться сегодня.
 
-## <a name="what-is-the-maximum-number-of-pods-in-an-aro-cluster-what-is-the-maximum-number-of-pods-per-node-in-aro"></a>Каково максимальное число модулей Pod в кластере АТО?  Каково максимальное количество модулей Pod на узел в АТО?
+## <a name="what-is-the-maximum-number-of-pods-in-an-aro-cluster-what-is-the-maximum-number-of-pods-per-node-in-aro"></a>Каково максимальное число модулей Pod в кластере АТО?Каково максимальное количество модулей Pod на узел в АТО?
 
  Azure Red Hat OpenShift 3,11 имеет ограничение в 50-Pod на узел с [АТО, имеющим 20-расчетный предел узлов](https://docs.microsoft.com/azure/openshift/openshift-faq#what-cluster-operations-are-available), чтобы максимальное число модулей Pod, поддерживаемое в кластере АТО, было равно 50 * 20 = 1000.
 
@@ -185,7 +197,7 @@ SDN является openshift-OVS-нетворкполици и не может
 
 Узнайте [, что такое общий процесс обновления?](https://docs.microsoft.com/azure/openshift/openshift-faq#what-is-the-general-upgrade-process)
 
-## <a name="what-azure-load-balancer-is-used-by-aro-is-it-standard-or-basic-and-is-it-configurable"></a>Какую подсистему балансировки нагрузки Azure использует АТО?  Является ли он стандартным или базовым и является ли он настраиваемым?
+## <a name="what-azure-load-balancer-is-used-by-aro-is-it-standard-or-basic-and-is-it-configurable"></a>Какую подсистему балансировки нагрузки Azure использует АТО?Является ли он стандартным или базовым и является ли он настраиваемым?
 
 АТО использует стандартные Azure Load Balancer и не настраивается.
 

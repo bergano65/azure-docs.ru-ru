@@ -1,5 +1,5 @@
 ---
-title: Руководство. Извлечение сведений об изображении с помощью REST API Поиска изображений Bing и C#
+title: Руководство по Извлечение сведений об изображении с помощью REST API Поиска изображений Bing и C#
 titleSuffix: Azure Cognitive Services
 description: Следуйте инструкциям из этого руководства, чтобы создать приложение C#, извлекающее сведения об изображении с помощью API "Поиск изображений Bing".
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.date: 12/06/2019
 ms.author: aahi
 ms.openlocfilehash: 69c5fc9805bed8fdfde3dd208e7fb66254e82c3c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75383881"
 ---
-# <a name="tutorial-extract-image-details-using-the-bing-image-search-api-and-c"></a>Руководство. Извлечение сведений об изображении с помощью API Bing для поиска изображений и C#
+# <a name="tutorial-extract-image-details-using-the-bing-image-search-api-and-c"></a>Руководство по Извлечение сведений об изображении с помощью API Bing для поиска изображений и C#
 
 Существует несколько [конечных точек](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/image-search-endpoint), доступ к которым можно получить с помощью API Bing для поиска изображений. Конечная точка `/details` принимает запрос POST с изображением и может возвращать различные сведения об изображении. Это приложение C# отправляет изображение с помощью этого API и отображает сведения, возвращенные Bing, которые являются объектами JSON, например следующие:
 
@@ -34,7 +34,7 @@ ms.locfileid: "75383881"
 
 Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/Tutorials/BingGetSimilarImages.cs).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Любой выпуск [Visual Studio 2017 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
 

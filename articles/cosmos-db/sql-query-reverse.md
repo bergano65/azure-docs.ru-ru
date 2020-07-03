@@ -4,18 +4,18 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 8237918232bd8ba8edb2b8f71440ffd73a913334
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: a22e1c8a5f4350bd2f966ee48f96368c648a4a1e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349548"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302174"
 ---
 # <a name="reverse-azure-cosmos-db"></a>REVERSE (Azure Cosmos DB)
- Возвращает обратный порядок строкового значения.  
+ Возвращает строковое значение, где символы переставлены в обратном порядке справа налево.  
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -28,7 +28,7 @@ REVERSE(<str_expr>)
 *str_expr*  
    Является строковым выражением.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает строковое выражение.  
   
@@ -46,8 +46,12 @@ SELECT REVERSE("Abc") AS reverse
 [{"reverse": "cbA"}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: 709ac3a9f5e7cf0bd13a6e387f0b80caf2608fe0
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 5146878adf10e452f38fecb115ec40792ffa84f3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748465"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79140003"
 ---
-# <a name="alert-validation-eicar-test-file-in-azure-security-center"></a>Проверка предупреждений (файл теста EICAR) в центре безопасности Azure
+# <a name="alert-validation-eicar-test-file-in-azure-security-center"></a>Проверка предупреждений (тестовый файл EICAR) в Центре безопасности Azure
 Этот документ содержит информацию о том, как убедиться, что ваша система правильно настроена для оповещений центра безопасности Azure.
 
 ## <a name="what-are-security-alerts"></a>Что такое оповещения системы безопасности?
-Оповещения — это уведомления, которые центр безопасности создает при обнаружении угроз для ресурсов. Он определяет приоритеты и отображает оповещения вместе с информацией, необходимой для быстрого изучения проблемы. Центр безопасности также предоставляет рекомендации по устранению атак.
+Оповещения — это уведомления, которые Центр безопасности создает при обнаружении угроз для ресурсов. Он определяет приоритеты и отображает оповещения вместе с информацией, необходимой для быстрого изучения проблемы. Центр безопасности также предоставляет рекомендации по устранению атак.
 Дополнительные сведения см. в статьях [оповещения системы безопасности в центре безопасности](security-center-alerts-overview.md) и [Управление оповещениями системы безопасности и реагирование на них](security-center-managing-and-responding-alerts.md) .
 
 ## <a name="alert-validation"></a>Проверка оповещений
@@ -33,12 +33,12 @@ ms.locfileid: "73748465"
 * [Linux](#validate-linux)
 * [Kubernetes](#validate-kubernetes)
 
-## Проверка оповещений на виртуальных машинах Windows<a name="validate-windows"></a>
+## <a name="validate-alerts-on-windows-vms"></a>Проверка оповещений на виртуальных машинах Windows<a name="validate-windows"></a>
 
 После установки агента Центра безопасности на компьютере выполните следующие действия на компьютере, на котором вы хотите использовать для этого предупреждение:
 
 1. Скопируйте исполняемый файл (например **, Calc. exe**) на Рабочий стол компьютера или в другой каталог вашего удобства и переименуйте его как **ASC_AlertTest_662jfi039N. exe**.
-1. Откройте командную строку и выполните этот файл с аргументом (просто поддельным именем аргумента), например: ```ASC_AlertTest_662jfi039N.exe -foo```
+1. Откройте командную строку и выполните этот файл с аргументом (просто поддельным именем аргумента), например:```ASC_AlertTest_662jfi039N.exe -foo```
 1. Подождите 5–10 минут и откройте оповещения центра безопасности. Должно отобразиться предупреждение, аналогичное приведенному ниже [примеру](#alert-validate) .
 
 > [!NOTE]
@@ -46,7 +46,7 @@ ms.locfileid: "73748465"
 >
 >```reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system\Audit" /f /v "ProcessCreationIncludeCmdLine_Enabled"```
 
-## Проверка оповещений на виртуальных машинах Linux<a name="validate-linux"></a>
+## <a name="validate-alerts-on-linux-vms"></a>Проверка оповещений на виртуальных машинах Linux<a name="validate-linux"></a>
 
 После установки агента Центра безопасности на компьютере выполните следующие действия на компьютере, на котором вы хотите использовать для этого предупреждение:
 1. Скопируйте исполняемый файл в удобное место и переименуйте его в **./asc_alerttest_662jfi039n**, например:
@@ -59,12 +59,12 @@ ms.locfileid: "73748465"
 
 1. Подождите 5–10 минут и откройте оповещения центра безопасности. Должно отобразиться предупреждение, аналогичное приведенному ниже [примеру](#alert-validate) .
 
-### Пример предупреждения<a name="alert-validate"></a>
+### <a name="alert-example"></a>Пример предупреждения<a name="alert-validate"></a>
 
 ![Пример проверки оповещения](./media/security-center-alert-validation/security-center-alert-validation-fig2.png) 
 
 
-## Проверка оповещений в Kubernetes<a name="validate-kubernetes"></a>
+## <a name="validate-alerts-on-kubernetes"></a>Проверка оповещений в Kubernetes<a name="validate-kubernetes"></a>
 
 Если вы используете предварительную версию центра безопасности для интеграции службы Kubernetes Azure, выполните следующую команду kubectl, чтобы проверить работоспособность ваших оповещений:
 
@@ -72,12 +72,10 @@ ms.locfileid: "73748465"
 
 Дополнительные сведения об интеграции службы Azure Kubernetes и центра безопасности Azure см. в [этой статье](azure-kubernetes-service-integration.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье представлен процесс проверки оповещений. Теперь, когда вы знакомы с проверкой, ознакомьтесь с такими статьями:
 
+* [Проверка Azure Key Vault обнаружения угроз в центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336)
 * [Управление оповещениями безопасности в центре безопасности Azure и реагирование](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts) на них — Узнайте, как управлять оповещениями и реагировать на инциденты безопасности в центре безопасности.
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.
 * Сведения об [оповещениях системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type) — сведения о различных типах оповещений системы безопасности.
-* [Руководство по устранению неполадок в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide) . Узнайте, как устранять распространенные проблемы в центре безопасности.
-* [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md). Часто задаваемые вопросы об использовании этой службы.
-* [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/) . Найдите записи в блоге о безопасности и соответствии требованиям в Azure.

@@ -7,18 +7,18 @@ ms.date: 11/22/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a057eac8d2a0114cb58f738277e3e9a8fed90672
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 588926a90d9a40c00bca4914dc1d5ed08301ff75
+ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548668"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82780799"
 ---
 # <a name="understand-extended-offline-capabilities-for-iot-edge-devices-modules-and-child-devices"></a>Общие сведения о расширенных возможностях автономного режима для IoT Edge устройств, модулей и дочерних устройств
 
 Azure IoT Edge поддерживает расширенные автономные операции на устройствах IoT Edge, а также позволяет выполнять автономные операции на дочерних устройствах, отличных от IoT Edge. Пока устройство IoT Edge имеет одну возможность подключения к центру Интернета вещей, это устройство и все дочерние устройства могут продолжать работать с периодическим или без подключения к Интернету.
 
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 Когда устройство IoT Edge переходит в автономный режим, центр IoT Edge выполняет три роли. Во-первых, он хранит все сообщения, которые необходимо отправить, до тех пор, пока соединение с устройством не будет восстановлено. Во-вторых, он выступает от имени центра Интернета вещей и проверяет подлинность модулей и дочерних устройств, чтобы они продолжали работу. В-третьих, он обеспечивает связь между дочерними устройствами, которая обычно проходит через центр Интернета вещей.
 
@@ -66,11 +66,11 @@ IoT Edge устройства и назначенные им дочерние у
 
    ![Управление дочерними устройствами на странице сведений об устройстве IoT Edge](./media/offline-capabilities/manage-child-devices.png)
 
-#### <a name="option-2-use-the-az-command-line-tool"></a>Вариант 2. Использование программы командной строки `az`
+#### <a name="option-2-use-the-az-command-line-tool"></a>Вариант 2. Использование программы `az` командной строки
 
 Используя [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) с [расширением Интернета вещей](https://github.com/azure/azure-iot-cli-extension) (v 0.7.0 или более поздней версии), можно управлять связями родительского дочернего элемента с помощью подкоманд [удостоверения устройства](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest) . В примере ниже запрос используется для назначения всех устройств, не являющихся IoT Edge, в концентраторе дочерними устройствами устройства IoT Edge.
 
-```shell
+```azurecli
 # Set IoT Edge parent device
 egde_device="edge-device1"
 
@@ -95,7 +95,7 @@ az iot hub device-identity add-children \
 
 #### <a name="option-3-use-iot-hub-service-sdk"></a>Вариант 3. Использование пакета SDK службы центра Интернета вещей
 
-Наконец, можно управлять родительскими дочерними связями C#программно с помощью пакета SDK для службы центра Интернета вещей Java или Node. js. Ниже приведен [Пример назначения дочернего устройства](https://aka.ms/set-child-iot-device-c-sharp) с помощью C# пакета SDK.
+Наконец, можно управлять родительскими дочерними связями программно с помощью пакета SDK службы центра Интернета вещей C#, Java или Node. js. Ниже приведен [Пример назначения дочернего устройства](https://aka.ms/set-child-iot-device-c-sharp) с помощью пакета SDK для C#.
 
 ### <a name="set-up-the-parent-device-as-a-gateway"></a>Настройка родительского устройства в качестве шлюза
 
@@ -103,12 +103,12 @@ az iot hub device-identity add-children \
 
 Один из способов создания этого отношения доверия подробно описан в следующих статьях:
 
-* [Настройка устройства IoT Edge для использования в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
+* [Настройка устройства IoT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
 * [Подключение подчиненного (дочернего) устройства к шлюзу Azure IoT Edge](how-to-connect-downstream-device.md)
 
 ## <a name="specify-dns-servers"></a>Указание DNS-серверов
 
-Для повышения надежности настоятельно рекомендуется указать адреса DNS-серверов, используемые в вашей среде. Сведения о настройке DNS-сервера для IoT Edge см. в разделе разрешение [модуля агента ребра непрерывно сообщает о пустом файле конфигурации и не запускайте модули на устройстве](troubleshoot.md#edge-agent-module-continually-reports-empty-config-file-and-no-modules-start-on-the-device) в статье Устранение неполадок.
+Для повышения надежности настоятельно рекомендуется указать адреса DNS-серверов, используемые в вашей среде. Сведения о настройке DNS-сервера для IoT Edge см. в разделе разрешение [модуля агента ребра непрерывно сообщает о пустом файле конфигурации и не запускайте модули на устройстве](troubleshoot-common-errors.md#edge-agent-module-reports-empty-config-file-and-no-modules-start-on-the-device) в статье Устранение неполадок.
 
 ## <a name="optional-offline-settings"></a>Дополнительные параметры автономной работы
 
@@ -142,6 +142,6 @@ az iot hub device-identity add-children \
 
 Дополнительные сведения о настройке прозрачного шлюза для подключений между родительскими и дочерними устройствами:
 
-* [Настройка устройства IoT Edge для использования в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
+* [Настройка устройства IoT Edge для работы в качестве прозрачного шлюза](how-to-create-transparent-gateway.md)
 * [Аутентификация подчиненного устройства в Центре Интернета вещей](how-to-authenticate-downstream-device.md)
-* [Connect a downstream device to an Azure IoT Edge gateway](how-to-connect-downstream-device.md) (Подключение подчиненного устройства к шлюзу Azure IoT Edge)
+* [Подключение подчиненного устройства к шлюзу Azure IoT Edge](how-to-connect-downstream-device.md)

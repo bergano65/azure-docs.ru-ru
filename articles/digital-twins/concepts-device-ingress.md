@@ -9,10 +9,10 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/03/2020
 ms.openlocfilehash: 5c2c519ece9806b92c3e455d5f550bc2abfc9f3b
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75862481"
 ---
 # <a name="device-connectivity-and-telemetry-ingress"></a>Возможность подключения устройств и входящие данные телеметрии
@@ -28,7 +28,7 @@ ms.locfileid: "75862481"
 - Создание ресурса Центра Интернета вещей и назначение его пространству в графе.
 - Создание устройств и датчиков в графе и назначение их пространствам, созданным ранее.
 - Создание сопоставителя для фильтрации сообщений телеметрии на основе условий.
-- Создание [определяемой пользователем функции](concepts-user-defined-functions.md) и назначение ее пространству в графе для пользовательской обработки сообщений телеметрии.
+- Создайте [определяемую пользователем функцию](concepts-user-defined-functions.md)и назначьте ее пробелом в графе для пользовательской обработки сообщений телеметрии.
 - Назначение роли, позволяющей определяемой пользователем функции получить доступ к данным графа.
 - Получение строки подключения устройства Центра Интернета вещей из API управления Digital Twins.
 - Настройка строки подключения на устройстве с помощью пакета SDK для устройств Azure IoT.
@@ -65,9 +65,9 @@ YOUR_MANAGEMENT_API_URL/devices?HardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=Con
 
 ### <a name="telemetry-properties"></a>Свойства телеметрии
 
- Содержимое полезных данных **сообщения** может быть произвольными данными размером до 256 КБ. Существует ряд требований, ожидаемый для свойств типа [`Message.Properties`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.message.properties?view=azure-dotnet). В таблице показаны обязательные и необязательные свойства, поддерживаемые системой.
+ Содержимое полезных данных **сообщения** может быть произвольными данными размером до 256 КБ. Для свойств [`Message.Properties`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.message.properties?view=azure-dotnet) типа требуется несколько требований. В таблице показаны обязательные и необязательные свойства, поддерживаемые системой.
 
-| Имя свойства | Значение | Обязательно для заполнения | Description |
+| Имя свойства. | Значение | Обязательный | Описание |
 |---|---|---|---|
 | **DigitalTwins-Telemetry** | 1.0 | Да | Постоянное значение, которое идентифицирует сообщение в системе. |
 | **DigitalTwins-SensorHardwareId** | `string(72)` | Да | Уникальный идентификатор датчика, отправляющего **сообщение**. Это значение должно соответствовать свойству **HardwareId** объекта, чтобы система могла его обработать. Например, `00FF0643BE88-CO2`. |
@@ -78,6 +78,6 @@ YOUR_MANAGEMENT_API_URL/devices?HardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=Con
 
 Используйте вызов [SendEventAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.sendeventasync?view=azure-dotnet) или [SendEventBatchAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.sendeventbatchasync?view=azure-dotnet) свойства DeviceClient для отправки сообщения в Digital Twins.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Дополнительные сведения о возможностях обработки данных Azure Digital Twins и определяемых пользователем функциях см. в статье [Обработка данных и определяемые пользователем функции](concepts-user-defined-functions.md).
+- Дополнительные сведения об обработке данных в Azure Digital двойников и возможностях определяемых пользователем функций см. в статье [обработка данных в Azure Digital двойников и определяемые пользователем функции](concepts-user-defined-functions.md).

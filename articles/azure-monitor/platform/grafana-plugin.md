@@ -1,18 +1,15 @@
 ---
 title: Отслеживание служб и приложений Azure с помощью Grafana
 description: Маршрутизация данных Azure Monitor и Application Insights для просмотра в Grafana.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
 ms.date: 11/06/2017
-ms.openlocfilehash: f5464710d5c7908eeec5dd917bfeff4756ff4e80
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: 142e3e19c13710963d239a75bc237b63713c29cc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72552101"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77672214"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -99,7 +96,7 @@ ms.locfileid: "72552101"
      > [!NOTE]
      >
      > В запросе по умолчанию, который предоставляется с подключаемым модулем, используются два макроса: "$__timeFilter() и $__interval. 
-     > Эти макросы позволяют Grafana динамическим образом вычислять диапазон и интервал времени при увеличении части диаграммы. Можно удалить эти макросы и использовать стандартный фильтр времени, например *TimeGenerated > ago(1h)* , но это означает, что график не будет поддерживать функцию увеличения.
+     > Эти макросы позволяют Grafana динамическим образом вычислять диапазон и интервал времени при увеличении части диаграммы. Можно удалить эти макросы и использовать стандартный фильтр времени, например *TimeGenerated > ago(1h)*, но это означает, что график не будет поддерживать функцию увеличения.
     
      ![Настройка графика Grafana для Azure Log Analytics](./media/grafana-plugin/grafana-graph-config-for-azure-log-analytics-dark.png)
 
@@ -160,6 +157,6 @@ Usage
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите **Grafana**.
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **Grafana** и выберите **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Обзор метрик в Microsoft Azure](data-platform.md)
 

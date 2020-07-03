@@ -3,51 +3,52 @@ title: Установка речевых контейнеров — служба
 titleSuffix: Azure Cognitive Services
 description: Установите и запустите речевые контейнеры. Преобразование речи в текст позволяет расшифровывать аудиопотоки в режиме реального времени и сохранять их в текстовом формате, который ваши приложения, инструменты или устройства могут использовать или отображать. Преобразование текста в речь преобразует вводимый текст в синтезированную речь, похожую на человеческую.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 12/04/2019
-ms.author: dapine
-ms.openlocfilehash: 5d30693eb13104504d1cf27ffdbfb8d098d4ef9e
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.date: 05/05/2020
+ms.author: aahi
+ms.openlocfilehash: 1d4fde8dd21911b70d5a1c0f3b23304a3468a2a6
+ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367752"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83816239"
 ---
 # <a name="install-and-run-speech-service-containers-preview"></a>Установка и запуск контейнеров речевых служб (Предварительная версия)
 
 Контейнеры позволяют запускать некоторые API речевых служб в собственной среде. Контейнеры отлично подходят для конкретных требований к безопасности и управлению данными. В этой статье вы узнаете, как скачать, установить и запустить речевой контейнер.
 
-Речевые контейнеры позволяют клиентам создавать архитектуру приложений для распознавания речи, оптимизированных как для надежных облачных возможностей, так и для пограничных локализации. Доступно четыре разных контейнера. Два стандартных контейнера — преобразование **речи в текст** и преобразование **текста в речь**. Два пользовательских контейнера — это **пользовательское распознавание речи** и **Пользовательский текст в речь**.
+Речевые контейнеры позволяют клиентам создавать архитектуру приложений для распознавания речи, оптимизированных как для надежных облачных возможностей, так и для пограничных локализации. Доступно четыре разных контейнера. Два стандартных контейнера — преобразование **речи в текст** и преобразование **текста в речь**. Два пользовательских контейнера — это **пользовательское распознавание речи** и **Пользовательский текст в речь**. В речевых контейнерах действуют те же [цены](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/) , что и в облачных службах Azure для распознавания речи.
 
 > [!IMPORTANT]
 > Все контейнеры речи в настоящее время предоставляются как часть [общедоступного "условного" предварительного просмотра](../cognitive-services-container-support.md#public-gated-preview-container-registry-containerpreviewazurecrio). Объявление будет создано, когда речевые контейнеры переводятся в общедоступную версию.
 
 | Компонент | Компоненты | Последняя |
 |--|--|--|
-| Преобразование речи в текст | Расшифровывает непрерывных речевых или пакетных звуковых записей в режиме реального времени в текст с промежуточными результатами. | 2.0.0 |
-| Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.0.0 |
-| Преобразование текста в речь | Преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.3.0 |
-| Пользовательский текст в речь | С помощью настраиваемой модели [пользовательского голосового портала](https://aka.ms/custom-voice-portal)преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.3.0 |
+| Преобразование речи в текст | Анализирует тональности и расшифровывает непрерывную голосовую или пакетную звукозапись в реальном времени с промежуточными результатами.  | 2.2.0 |
+| Пользовательское распознавание речи к тексту | Используя настраиваемую модель на [портале пользовательское распознавание речи](https://speech.microsoft.com/customspeech), расшифровывает непрерывную голосовую или пакетную звукозапись в режиме реального времени в текст с промежуточными результатами. | 2.2.0 |
+| Преобразование текста в речь | Преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.4.0 |
+| Пользовательский текст в речь | С помощью настраиваемой модели [пользовательского голосового портала](https://aka.ms/custom-voice-portal)преобразует текст в голосовую речь с помощью обычного текстового ввода или языка разметки речи (SSML). | 1.4.0 |
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед использованием речевых контейнеров выполните следующие предварительные требования.
 
 | Обязательно | Назначение |
 |--|--|
-| Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
+| Модуль Docker | На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br> |
 | Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`. |
-| Речевой ресурс | Для использования контейнеров необходимо следующее:<br><br>Ресурс _речи_ Azure для получения связанного ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **речи** " и "ключи" портал Azure. Они необходимы для запуска контейнера.<br><br>**{API_KEY}** : один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}** : конечная точка, указанная на странице **обзора** |
+| Речевой ресурс | Для использования контейнеров необходимо следующее:<br><br>Ресурс _речи_ Azure для получения связанного ключа API и URI конечной точки. Оба значения доступны на страницах "Обзор **речи** " и "ключи" портал Azure. Они необходимы для запуска контейнера.<br><br>**{API_KEY}**: один из двух доступных ключей ресурсов на странице " **ключи** "<br><br>**{ENDPOINT_URI}**: конечная точка, указанная на странице **обзора** |
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
-Заполните и отправьте [форму запроса Cognitive Services речевых контейнеров](https://aka.ms/speechcontainerspreview/) , чтобы запросить доступ к контейнеру. 
+Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру. 
+
 
 [!INCLUDE [Request access to the container registry](../../../includes/cognitive-services-containers-request-access-only.md)]
 
@@ -73,27 +74,27 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице описаны минимальное и рекомендуемое выделение ресурсов для каждого контейнера речи.
 
-# <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
-| Контейнер | Минимальные | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуется |
 |-----------|---------|-------------|
 | Преобразование речи в текст | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
-# <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+# <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
-| Контейнер | Минимальные | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуется |
 |-----------|---------|-------------|
 | Пользовательское распознавание речи к тексту | 2 ядра, 2 ГБ памяти | 4 ядра, 4 ГБ памяти |
 
-# <a name="text-to-speechtabtts"></a>[Преобразование текста в речь](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
-| Контейнер | Минимальные | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуется |
 |-----------|---------|-------------|
 | Преобразование текста в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 
-# <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+# <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
-| Контейнер | Минимальные | Рекомендуемая |
+| Контейнер | Минимальные | Рекомендуется |
 |-----------|---------|-------------|
 | Пользовательский текст в речь | 1 ядро, 2 ГБ памяти | 2 ядра, 3 ГБ памяти |
 
@@ -110,25 +111,25 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 Образы контейнеров для речи доступны в следующем реестре контейнеров.
 
-# <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 | Контейнер | Хранилище |
 |-----------|------------|
 | Преобразование речи в текст | `containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest` |
 
-# <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+# <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
 | Контейнер | Хранилище |
 |-----------|------------|
 | Пользовательское распознавание речи к тексту | `containerpreview.azurecr.io/microsoft/cognitive-services-custom-speech-to-text:latest` |
 
-# <a name="text-to-speechtabtts"></a>[Преобразование текста в речь](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 | Контейнер | Хранилище |
 |-----------|------------|
 | Преобразование текста в речь | `containerpreview.azurecr.io/microsoft/cognitive-services-text-to-speech:latest` |
 
-# <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+# <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
 | Контейнер | Хранилище |
 |-----------|------------|
@@ -140,7 +141,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 ### <a name="docker-pull-for-the-speech-containers"></a>Извлечение DOCKER для контейнеров распознавания речи
 
-# <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
 #### <a name="docker-pull-for-the-speech-to-text-container"></a>Опрашивающий запрос DOCKER для контейнера преобразования речи в текст
 
@@ -151,11 +152,11 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 ```
 
 > [!IMPORTANT]
-> Тег `latest` извлекает языковой стандарт `en-US`. Дополнительные языковые стандарты см. [в разделе языки и речь](#speech-to-text-locales).
+> `latest`Тег извлекает `en-US` языковой стандарт. Дополнительные языковые стандарты см. [в разделе языки и речь](#speech-to-text-locales).
 
 #### <a name="speech-to-text-locales"></a>Языки перевода речи в текст
 
-Все теги, кроме `latest`, имеют следующий формат и чувствительны к регистру:
+Все теги, кроме, `latest` имеют следующий формат и учитывают регистр:
 
 ```
 <major>.<minor>.<patch>-<platform>-<locale>-<prerelease>
@@ -164,12 +165,12 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-t
 Следующий тег является примером формата:
 
 ```
-2.0.0-amd64-en-us-preview
+2.2.0-amd64-en-us-preview
 ```
 
 Сведения о всех поддерживаемых языковых стандартах контейнера **для преобразования речи** в текст см. в статье [теги изображений](../containers/container-image-tags.md#speech-to-text).
 
-# <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+# <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
 #### <a name="docker-pull-for-the-custom-speech-to-text-container"></a>Опрашивающий запрос DOCKER для контейнера Пользовательское распознавание речи в текст
 
@@ -180,9 +181,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-spee
 ```
 
 > [!NOTE]
-> `locale` и `voice` для пользовательских речевых контейнеров определяются настраиваемой моделью, принимаемой контейнером.
+> `locale` `voice` Пользовательские контейнеры и для пользовательских речевых контейнеров определяются настраиваемой моделью, принимаемой контейнером.
 
-# <a name="text-to-speechtabtts"></a>[Преобразование текста в речь](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
 #### <a name="docker-pull-for-the-text-to-speech-container"></a>Извлечение DOCKER для контейнера текста в речь
 
@@ -193,11 +194,11 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 ```
 
 > [!IMPORTANT]
-> Тег `latest` извлекает языковой стандарт `en-US` и `jessarus` голоса. Дополнительные языковые стандарты см. [в разделе Языки перевода текста в речь](#text-to-speech-locales).
+> `latest`Тег извлекает `en-US` языковой стандарт и `jessarus` голосовое значение. Дополнительные языковые стандарты см. [в разделе Языки перевода текста в речь](#text-to-speech-locales).
 
 #### <a name="text-to-speech-locales"></a>Языки перевода текста в речь
 
-Все теги, кроме `latest`, имеют следующий формат и чувствительны к регистру:
+Все теги, кроме, `latest` имеют следующий формат и учитывают регистр:
 
 ```
 <major>.<minor>.<patch>-<platform>-<locale>-<voice>-<prerelease>
@@ -212,9 +213,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 Все поддерживаемые языковые стандарты и соответствующие **голоса контейнера преобразования текста в речь см** . в разделе [теги изображений текста в речь](../containers/container-image-tags.md#text-to-speech).
 
 > [!IMPORTANT]
-> При создании стандартного HTTP-запроса POST *для преобразования текста в речь* для сообщения [SSML (язык разметки речи)](speech-synthesis-markup.md) требуется элемент `voice` с атрибутом `name`. Значение представляет собой соответствующий языковой стандарт контейнера и голоса, также называемый ["коротким именем"](language-support.md#standard-voices). Например, тег `latest` будет иметь имя голоса `en-US-JessaRUS`.
+> При создании стандартного HTTP-запроса POST *для преобразования текста в речь* в сообщении о [языке разметки речи (SSML)](speech-synthesis-markup.md) требуется `voice` элемент с `name` атрибутом. Значение представляет собой соответствующий языковой стандарт контейнера и голоса, также называемый ["коротким именем"](language-support.md#standard-voices). Например, `latest` тег будет иметь название Voice `en-US-JessaRUS` .
 
-# <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+# <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
 #### <a name="docker-pull-for-the-custom-text-to-speech-container"></a>Опрашивающий запрос DOCKER для пользовательского контейнера преобразования текста в речь
 
@@ -225,7 +226,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-text
 ```
 
 > [!NOTE]
-> `locale` и `voice` для пользовательских речевых контейнеров определяются настраиваемой моделью, принимаемой контейнером.
+> `locale` `voice` Пользовательские контейнеры и для пользовательских речевых контейнеров определяются настраиваемой моделью, принимаемой контейнером.
 
 ***
 
@@ -234,15 +235,15 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-custom-text
 После размещения контейнера на [главном компьютере](#the-host-computer) воспользуйтесь следующей процедурой для работы с ним.
 
 1. [Запустите контейнер](#run-the-container-with-docker-run) с необходимыми настройками выставления счетов. Доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`.
-1. [Запрос конечной точки прогнозирования контейнера](#query-the-containers-prediction-endpoint).
+1. [Запросите конечную точку прогнозирования контейнера](#query-the-containers-prediction-endpoint).
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
 
-Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Сведения о том, как получить значения `{Endpoint_URI}` и `{API_Key}`, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) . Также доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`.
+Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. Дополнительные сведения о том, как получить значения и, см. в разделе [сбор обязательных параметров](#gathering-required-parameters) `{Endpoint_URI}` `{API_Key}` . Также [examples](speech-container-configuration.md#example-docker-run-commands) доступны дополнительные примеры `docker run` команды.
 
-# <a name="speech-to-texttabstt"></a>[Преобразование речи в текст](#tab/stt)
+# <a name="speech-to-text"></a>[Преобразование речи в текст](#tab/stt)
 
-Чтобы запустить контейнер преобразования *речи в текст* , выполните следующую команду `docker run`.
+Чтобы запустить контейнер преобразования *речи в текст* , выполните следующую `docker run` команду.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 4 \
@@ -259,7 +260,34 @@ ApiKey={API_KEY}
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
-# <a name="custom-speech-to-texttabcstt"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
+
+#### <a name="analyze-sentiment-on-the-speech-to-text-output"></a>Анализ тональности на выходе из речи в текст 
+
+Начиная с версии v 2.2.0 контейнера для преобразования речи в текст можно вызвать [API тональности Analysis v3](../text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md) на выходе. Для вызова анализа тональности требуется конечная точка ресурса API анализа текста. Пример: 
+* `https://westus2.api.cognitive.microsoft.com/text/analytics/v3.0-preview.1/sentiment`
+* `https://localhost:5000/text/analytics/v3.0-preview.1/sentiment`
+
+Если вы обращаетесь к конечной точке текстовой аналитики в облаке, потребуется ключ. Если вы работаете Анализ текста локально, вам может не потребоваться его указывать.
+
+Ключ и конечная точка передаются в контейнер речи в качестве аргументов, как показано в следующем примере.
+
+```bash
+docker run -it --rm -p 5000:5000 \
+containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest \
+Eula=accept \
+Billing={ENDPOINT_URI} \
+ApiKey={API_KEY} \
+CloudAI:SentimentAnalysisSettings:TextAnalyticsHost={TEXT_ANALYTICS_HOST} \
+CloudAI:SentimentAnalysisSettings:SentimentAnalysisApiKey={SENTIMENT_APIKEY}
+```
+
+Эта команда:
+
+* Выполняет те же действия, что и приведенная выше команда.
+* Хранит API анализа текстаную конечную точку и ключ для отправки запросов анализа тональности. 
+
+
+# <a name="custom-speech-to-text"></a>[Пользовательское распознавание речи к тексту](#tab/cstt)
 
 Пользовательское распознавание речи контейнер полагается на пользовательскую модель речевого *ввода* . Пользовательская модель должна быть [обучена](how-to-custom-speech-train-model.md) с помощью [пользовательского портала речевого](https://speech.microsoft.com/customspeech)ввода.
 
@@ -268,28 +296,28 @@ ApiKey={API_KEY}
 > * **20181201 (унифицированная версия 3.3)**
 > * **20190520 (версия 4.14 Unified)**
 > * **20190701 (версия 4.17 Unified)**<br>
-> ![Пользовательское распознавание речи обучение модели контейнеров](media/custom-speech/custom-speech-train-model-container-scoped.png)
+> ![Пользовательское распознавание речи обучение модели контейнера](media/custom-speech/custom-speech-train-model-container-scoped.png)
 
 Для запуска контейнера требуется **идентификатор пользовательской модели** распознавания речи. Его можно найти на странице " **обучение** " пользовательского речевого портала. На настраиваемом портале речевого ввода перейдите на страницу **обучения** и выберите модель.
 <br>
 
 ![Страница обучения пользовательской речи](media/custom-speech/custom-speech-model-training.png)
 
-Получите **идентификатор модели** для использования в качестве аргумента параметра `ModelId` команды `docker run`.
+Получите **идентификатор модели** , который будет использоваться в качестве аргумента для `ModelId` параметра `docker run` команды.
 <br>
 
 ![Сведения о пользовательской модели речи](media/custom-speech/custom-speech-model-details.png)
 
-В следующей таблице представлены различные параметры `docker run` и их соответствующие описания.
+В следующей таблице представлены различные `docker run` Параметры и соответствующие им описания.
 
-| Параметр | Description |
+| Параметр | Описание |
 |---------|---------|
 | `{VOLUME_MOUNT}` | Узел [тома](https://docs.docker.com/storage/volumes/)главного компьютера, который DOCKER использует для сохранения настраиваемой модели. Например, *к:\кустомспич* , где *диск C* находится на хост-компьютере. |
 | `{MODEL_ID}` | **Идентификатор модели** пользовательское распознавание речи на странице **обучения** пользовательского речевого портала. |
 | `{ENDPOINT_URI}` | Для оценки и выставления счетов требуется конечная точка. Дополнительные сведения см. в разделе [сбор обязательных параметров](#gathering-required-parameters). |
 | `{API_KEY}` | Требуется ключ API. Дополнительные сведения см. в разделе [сбор обязательных параметров](#gathering-required-parameters). |
 
-Чтобы запустить контейнер *пользовательское распознавание речи в текст* , выполните следующую команду `docker run`:
+Чтобы запустить контейнер *пользовательское распознавание речи в текст* , выполните следующую `docker run` команду:
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 4 \
@@ -307,13 +335,13 @@ ApiKey={API_KEY}
 * Выделяет 4 ядра ЦП и 4 гигабайта (ГБ) памяти.
 * Загружает *пользовательское распознавание речиную* модель из подключения ввода тома, например *к:\кустомспич*.
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
-* Скачивает модель с учетом `ModelId` (если она не найдена на подключении тома).
-* Если ранее была загружена пользовательская модель, `ModelId` игнорируется.
+* Загружает модель, заданную `ModelId` (если она не найдена в подключении тома).
+* Если пользовательская модель была ранее скачана, параметр `ModelId` игнорируется.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
-# <a name="text-to-speechtabtts"></a>[Преобразование текста в речь](#tab/tts)
+# <a name="text-to-speech"></a>[Преобразование текста в речь](#tab/tts)
 
-Чтобы запустить контейнер преобразования *текста в речь* , выполните следующую команду `docker run`.
+Чтобы запустить контейнер преобразования *текста в речь* , выполните следующую `docker run` команду.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 2g --cpus 1 \
@@ -330,28 +358,28 @@ ApiKey={API_KEY}
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
-# <a name="custom-text-to-speechtabctts"></a>[Пользовательский текст в речь](#tab/ctts)
+# <a name="custom-text-to-speech"></a>[Пользовательский текст в речь](#tab/ctts)
 
 Пользовательский контейнер преобразования *текста в речь* использует пользовательскую голосовую модель. Пользовательская модель должна быть [обучена](how-to-custom-voice-create-voice.md) с помощью [пользовательского Voice](https://aka.ms/custom-voice-portal). Для запуска контейнера требуется идентификатор настраиваемой **модели** голоса. Его можно найти на странице **обучение** на настраиваемом голосовом портале. На портале настраиваемого голоса перейдите на страницу **обучения** и выберите модель.
 <br>
 
 ![Страница настраиваемого речевого обучения](media/custom-voice/custom-voice-model-training.png)
 
-Получите **идентификатор модели** для использования в качестве аргумента параметра `ModelId` команды DOCKER Run.
+Получите **идентификатор модели** , который будет использоваться в качестве аргумента `ModelId` параметра команды DOCKER Run.
 <br>
 
 ![Сведения о настраиваемой модели голоса](media/custom-voice/custom-voice-model-details.png)
 
-В следующей таблице представлены различные параметры `docker run` и их соответствующие описания.
+В следующей таблице представлены различные `docker run` Параметры и соответствующие им описания.
 
-| Параметр | Description |
+| Параметр | Описание |
 |---------|---------|
 | `{VOLUME_MOUNT}` | Узел [тома](https://docs.docker.com/storage/volumes/)главного компьютера, который DOCKER использует для сохранения настраиваемой модели. Например, *к:\кустомспич* , где *диск C* находится на хост-компьютере. |
 | `{MODEL_ID}` | **Идентификатор модели** пользовательское распознавание речи на странице " **обучение** " настраиваемого голоса Portal. |
 | `{ENDPOINT_URI}` | Для оценки и выставления счетов требуется конечная точка. Дополнительные сведения см. в разделе [сбор обязательных параметров](#gathering-required-parameters). |
 | `{API_KEY}` | Требуется ключ API. Дополнительные сведения см. в разделе [сбор обязательных параметров](#gathering-required-parameters). |
 
-Чтобы запустить пользовательский контейнер преобразования *текста в речь* , выполните следующую команду `docker run`:
+Чтобы запустить пользовательский контейнер преобразования *текста в речь* , выполните следующую `docker run` команду:
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 2g --cpus 1 \
@@ -369,8 +397,8 @@ ApiKey={API_KEY}
 * Выделяет 2 ядра ЦП и один гигабайт (ГБ) памяти.
 * Загружает *настраиваемую модель преобразования текста в речь* из подключения ввода тома, например *к:\кустомвоице*.
 * предоставляет TCP-порт 5000 и выделяет псевдотелетайп для контейнера;
-* Скачивает модель с учетом `ModelId` (если она не найдена на подключении тома).
-* Если ранее была загружена пользовательская модель, `ModelId` игнорируется.
+* Загружает модель, заданную `ModelId` (если она не найдена в подключении тома).
+* Если пользовательская модель была ранее скачана, параметр `ModelId` игнорируется.
 * автоматически удаляет контейнер после завершения его работы. Образ контейнера остается доступным на главном компьютере.
 
 ***
@@ -380,6 +408,9 @@ ApiKey={API_KEY}
 
 ## <a name="query-the-containers-prediction-endpoint"></a>Запрос конечной точки прогнозирования контейнера
 
+> [!NOTE]
+> Если вы используете несколько контейнеров, используйте уникальный номер порта.
+
 | Контейнеры | URL-адрес узла SDK | Протокол |
 |--|--|--|
 | Преобразование речи в текст и Пользовательское распознавание речи в текст | `ws://localhost:5000` | WS |
@@ -388,6 +419,121 @@ ApiKey={API_KEY}
 Дополнительные сведения об использовании протоколов WSS и HTTPS см. в разделе [Безопасность контейнера](../cognitive-services-container-support.md#azure-cognitive-services-container-security).
 
 [!INCLUDE [Query Speech-to-text container endpoint](includes/speech-to-text-container-query-endpoint.md)]
+
+#### <a name="analyze-sentiment"></a>Анализ тональности
+
+Если вы указали учетные данные API анализа текста в [контейнере](#analyze-sentiment-on-the-speech-to-text-output), вы можете использовать РЕЧЕВОЙ пакет SDK для отправки запросов распознавания речи с помощью анализа тональности. Можно настроить Ответы API для использования *простого* или *подробного* формата.
+
+# <a name="simple-format"></a>[Простой формат](#tab/simple-format)
+
+Чтобы настроить речевой клиент для использования простого формата, добавьте `"Sentiment"` в качестве значения `Simple.Extensions` . Если вы хотите выбрать конкретную версию модели Анализ текста, замените `'latest'` в `speechcontext-phraseDetection.sentimentAnalysis.modelversion` конфигурации свойства.
+
+```python
+speech_config.set_service_property(
+    name='speechcontext-PhraseOutput.Simple.Extensions',
+    value='["Sentiment"]',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+speech_config.set_service_property(
+    name='speechcontext-phraseDetection.sentimentAnalysis.modelversion',
+    value='latest',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+```
+
+`Simple.Extensions`вернет результат тональности в корневом слое ответа.
+
+```json
+{
+   "DisplayText":"What's the weather like?",
+   "Duration":13000000,
+   "Id":"6098574b79434bd4849fee7e0a50f22e",
+   "Offset":4700000,
+   "RecognitionStatus":"Success",
+   "Sentiment":{
+      "Negative":0.03,
+      "Neutral":0.79,
+      "Positive":0.18
+   }
+}
+```
+
+# <a name="detailed-format"></a>[Подробный формат](#tab/detailed-format)
+
+Чтобы настроить речевой клиент для использования подробного формата, добавьте `"Sentiment"` в качестве значения для параметров `Detailed.Extensions` , `Detailed.Options` или. Если вы хотите выбрать конкретную версию модели Анализ текста, замените `'latest'` в `speechcontext-phraseDetection.sentimentAnalysis.modelversion` конфигурации свойства.
+
+```python
+speech_config.set_service_property(
+    name='speechcontext-PhraseOutput.Detailed.Options',
+    value='["Sentiment"]',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+speech_config.set_service_property(
+    name='speechcontext-PhraseOutput.Detailed.Extensions',
+    value='["Sentiment"]',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+speech_config.set_service_property(
+    name='speechcontext-phraseDetection.sentimentAnalysis.modelversion',
+    value='latest',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+```
+
+`Detailed.Extensions`предоставляет тональности результат в корневом слое ответа. `Detailed.Options`предоставляет результат в `NBest` слое ответа. Их можно использовать отдельно или вместе.
+
+```json
+{
+   "DisplayText":"What's the weather like?",
+   "Duration":13000000,
+   "Id":"6a2aac009b9743d8a47794f3e81f7963",
+   "NBest":[
+      {
+         "Confidence":0.973695,
+         "Display":"What's the weather like?",
+         "ITN":"what's the weather like",
+         "Lexical":"what's the weather like",
+         "MaskedITN":"What's the weather like",
+         "Sentiment":{
+            "Negative":0.03,
+            "Neutral":0.79,
+            "Positive":0.18
+         }
+      },
+      {
+         "Confidence":0.9164971,
+         "Display":"What is the weather like?",
+         "ITN":"what is the weather like",
+         "Lexical":"what is the weather like",
+         "MaskedITN":"What is the weather like",
+         "Sentiment":{
+            "Negative":0.02,
+            "Neutral":0.88,
+            "Positive":0.1
+         }
+      }
+   ],
+   "Offset":4700000,
+   "RecognitionStatus":"Success",
+   "Sentiment":{
+      "Negative":0.03,
+      "Neutral":0.79,
+      "Positive":0.18
+   }
+}
+```
+
+---
+
+Если вы хотите полностью отключить анализ тональности, добавьте `false` значение в `sentimentanalysis.enabled` .
+
+```python
+speech_config.set_service_property(
+    name='speechcontext-phraseDetection.sentimentanalysis.enabled',
+    value='false',
+    channel=speechsdk.ServicePropertyChannel.UriQueryParameter
+)
+```
 
 ### <a name="text-to-speech-or-custom-text-to-speech"></a>Преобразование текста в речь или пользовательский текст в речь
 

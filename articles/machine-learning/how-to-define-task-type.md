@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
 ms.date: 11/04/2019
-ms.openlocfilehash: a58959904559cd3b2cec27762f2df93cfea72abd
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: fef3f0347d963b8a7d5fe2f1ca771293e9c3d2a9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75540533"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80475501"
 ---
 # <a name="how-to-define-a-machine-learning-task"></a>Определение задачи машинного обучения 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -23,11 +23,11 @@ ms.locfileid: "75540533"
 В этой статье вы узнаете о поддерживаемых задачах машинного обучения и о том, как определить их для автоматического запуска эксперимента машинного обучения.
 
 
-## <a name="What is a machine learning task?"></a>Что такое задача машинного обучения?
+## <a name="what-is-a-machine-learning-task"></a><a name="What is a machine learning task?"></a>Что такое задача машинного обучения?
 
 Задача машинного обучения представляет тип решаемой проблемы, создавая прогнозную модель. Автоматический ML поддерживает три различных типа задач, включая классификацию, регрессию и прогнозирование временных рядов.
 
-Тип задачи| Description| Пример
+Тип задачи| Описание| Пример
 ----|----|----
 Классификация | Задача для прогнозирования категории определенной строки в наборе данных. | Обнаружение мошенничества на кредитной карте. Целевой столбец будет выглядеть как **мошенничество** с категориями *true* или *false*. В этом случае мы будем классифицировать каждую строку данных как true или false.
 Регрессия | Задача для прогнозирования выходных данных непрерывного количества. | Стоимость автомобилей зависит от ее характеристик. целевой столбец будет иметь значение **Price**.
@@ -56,7 +56,7 @@ ms.locfileid: "75540533"
 ### <a name="set-the-task-type"></a>Задание типа задачи
 Вы можете задать тип задачи для автоматических экспериментов ML с помощью пакета SDK или Машинное обучение Azure Studio.
 
-Используйте параметр `task` в конструкторе `AutoMLConfig`, чтобы указать тип эксперимента.
+Используйте `task` параметр в `AutoMLConfig` конструкторе, чтобы указать тип эксперимента.
 
 ```python
 from azureml.train.automl import AutoMLConfig
@@ -72,10 +72,10 @@ automl_config = AutoMLConfig(task="classification")
 ![Выбор типа задачи](./media/how-to-define-task-type/task-type.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 + Дополнительные сведения об [автоматизированном ML](concept-automated-ml.md) в машинное обучение Azure.
 + Дополнительные сведения об [автоматическом обучении модели прогнозирования временных рядов](how-to-auto-train-forecast.md) в машинное обучение Azure
-+ Воспользуйтесь руководством по [автоматизированной классификации машинное обучение](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation) .
-+ Попробуйте пример автоматизированной записной книжки [машинное обучение регрессии](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/model-explanation) .
++ Воспользуйтесь руководством по [автоматизированной классификации машинное обучение](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-credit-card-fraud/auto-ml-classification-credit-card-fraud.ipynb) .
++ Попробуйте пример автоматизированной записной книжки [машинное обучение регрессии](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/regression-hardware-performance-explanation-and-featurization/auto-ml-regression-hardware-performance-explanation-and-featurization.ipynb) .
 

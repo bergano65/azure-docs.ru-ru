@@ -1,0 +1,8 @@
+- name: Установка пакета Удаленной отрисовки для Unity
+  href: install-remote-rendering-unity-package.md
+- name: Настройка Удаленной отрисовки для Unity
+  href: unity-setup.md
+- name: Взаимодействие с объектами и компонентами игр Unity
+  href: objects-components.md
+- name: Использование голографического удаленного взаимодействия и Удаленной отрисовки в Unity
+  href: holographic-remoting.md

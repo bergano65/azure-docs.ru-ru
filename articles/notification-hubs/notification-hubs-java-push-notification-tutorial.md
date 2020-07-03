@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: d48973cc7c5ed1fc7ae3f96128d488f3f1df3a05
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76263869"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
@@ -132,7 +132,7 @@ ms.locfileid: "76263869"
     hub.createRegistration(reg);
     ```
 
-**Создание регистраций с помощью создания идентификатора регистрации и шаблона upsert:**
+**Создайте регистрации с помощью инструкции CREATE Registration ID + Upsert:**
 
 Этот шаблон позволяет удалить повторы, образовавшиеся из-за потерянных ответов, если в устройстве хранятся идентификаторы регистраций.
 
@@ -372,7 +372,7 @@ API установки — это альтернативный механизм 
 
 После выполнения кода Java на целевом устройстве должно отобразиться уведомление.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="next-steps"></a>Дальнейшие действия
 
 В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". Здесь вы можете сделать следующее:
 
@@ -384,7 +384,7 @@ API установки — это альтернативный механизм 
   * [Отправка уведомлений проверенным пользователям]
   * [Отправка кроссплатформенных уведомлений проверенным пользователям]
 
-[пакет SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
+[Пакет SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
 [Get started tutorial]: notification-hubs-ios-apple-push-notification-apns-get-started.md
 [Приступая к работе с центрами уведомлений]: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
 [Отправка экстренных новостей]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md

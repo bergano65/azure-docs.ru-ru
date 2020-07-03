@@ -4,6 +4,11 @@
   items:
     - name: Что такое Resource Manager?
       href: overview.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Ограничения подписки и службы
@@ -52,23 +57,33 @@
           href: region-move-support.md
         - name: Службы
           items:
+            - name: Центр Интернета вещей Azure
+              href: ../../iot-hub/iot-hub-how-to-clone.md?toc=/azure/azure-resource-manager/toc.json
             - name: Виртуальные машины Azure
               href: ../../site-recovery/azure-to-azure-tutorial-migrate.md?toc=/azure/azure-resource-manager/toc.json
             - name: Хранилище Azure
               href: ../../storage/common/storage-account-move.md?toc=/azure/azure-resource-manager/toc.json
             - name: Azure SQL
               href: ../../sql-database/sql-database-move-resources-across-regions.md?toc=/azure/azure-resource-manager/toc.json
-            - name: Виртуальная сеть
-              href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
+            - name: приложениях логики.
+              href: ../../logic-apps/move-logic-app-resources.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Конфигурация управления обслуживанием
+              href: ../../virtual-machines/move-region-maintenance-configuration.md?toc=/azure/azure-resource-manager/toc.json
             - name: Группа безопасности сети (NSG)
               href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
             - name: Общедоступные IP-адреса
               href: ../../virtual-network/move-across-regions-publicip-portal.md?toc=/azure/azure-resource-manager/toc.json
+            - name: Виртуальная сеть
+              href: ../../virtual-network/move-across-regions-nsg-portal.md?toc=/azure/azure-resource-manager/toc.json
     - name: Теги
       items:
-        - name: Добавление тегов к ресурсам
+        - name: Рекомендации по принятию решений
+          href: /azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json
+        - name: Использование тегов
           href: tag-resources.md
-        - name: Поддержка тегов
+        - name: "Политики\_— соответствие требованиям"
+          href: tag-policies.md
+        - name: Поддерживаемые типы ресурсов
           href: tag-support.md
     - name: Управление группами ресурсов
       items:

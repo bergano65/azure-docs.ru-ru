@@ -16,15 +16,16 @@ ms.date: 11/12/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 138ca9bf3352c46b8ac495b58a2fd6d7bafeb658
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: 80438319a6337dd6f28f9bdca8a428829b6cb0b9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74889863"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77917919"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: расширения каталогов
-Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты могут быть использованы через [расширения каталогов API Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-directory-schema-extensions) или [Microsoft Graph](https://developer.microsoft.com/graph/). Просмотреть доступные атрибуты можно с помощью [проводника Azure AD Graph](https://graphexplorer.azurewebsites.net/) и [проводника Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer) соответственно. Эту функцию также можно использовать для создания динамических групп в Azure AD.
+Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты можно использовать с помощью [расширений](https://docs.microsoft.com/graph/extensibility-overview
+). Доступные атрибуты можно просмотреть с помощью [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer). Эту функцию также можно использовать для создания динамических групп в Azure AD.
 
 В настоящее время рабочие нагрузки Office 365 не используют эти атрибуты.
 
@@ -37,7 +38,7 @@ ms.locfileid: "74889863"
 
 ![Мастер расширения схемы](./media/how-to-connect-sync-feature-directory-extensions/extension2.png)  
 
-При установке отображаются следующие допустимые атрибуты:
+ При установке отображаются следующие допустимые атрибуты:
 
 * Типы объектов пользователей и групп
 * Однозначные атрибуты: строка, логическое значение, целое число, двоичное значение.
@@ -59,18 +60,14 @@ ms.locfileid: "74889863"
 
 Убедитесь, что выбраны **все приложения** для просмотра этого приложения.
 
-Атрибуты имеют префикс **расширения \_{applicationId}\_** . ApplicationId имеет одинаковое значение для всех атрибутов в клиенте Azure AD. Это значение потребуется для всех других сценариев в этом разделе.
+Атрибуты имеют префикс с **расширением \_{applicationId}\_**. ApplicationId имеет одинаковое значение для всех атрибутов в клиенте Azure AD. Это значение потребуется для всех других сценариев в этом разделе.
 
-## <a name="viewing-attributes-using-graph"></a>Просмотр атрибутов с помощью Graph
+## <a name="viewing-attributes-using-the-microsoft-graph-api"></a>Просмотр атрибутов с помощью API Microsoft Graph
 
-Теперь эти атрибуты доступны с помощью API Azure AD Graph. Их можно запросить через [обозреватель Azure AD Graph](https://graphexplorer.azurewebsites.net/).
-
-![Обозреватель Azure AD Graph](./media/how-to-connect-sync-feature-directory-extensions/extension4.png)
-
-Или же вы можете запросить атрибуты через API Microsoft Graph с помощью [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer#).
+Теперь эти атрибуты доступны через Microsoft Graph API с помощью [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer#).
 
 >[!NOTE]
-> В Microsoft Graph необходимо запросить возврат атрибутов. Явно выберите такие атрибуты: HTTPS\://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com? $select = extension_9d98ed114c4840d298fad781915f27e4_employeeID extension_9d98ed114c4840d298fad781915f27e4_division.
+> В Microsoft Graph API необходимо запросить возвращаемые атрибуты. Явно выберите атрибуты следующим образом: `https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division`.
 >
 > Дополнительные сведения см. в разделе [Параметр select](https://developer.microsoft.com/graph/docs/concepts/query_parameters#select-parameter).
 
@@ -90,7 +87,7 @@ ms.locfileid: "74889863"
 
    ![Снимок экрана с новыми атрибутами, отображаемыми в пользовательском интерфейсе](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup3.png)
 
-   Заполните выражение в соответствии с вашими требованиями. В нашем примере правило имеет значение **(User. extension_9d98ed114c4840d298fad781915f27e4_division-EQ «Sales and Marketing»)** .
+   Заполните выражение в соответствии с вашими требованиями. В нашем примере правило имеет значение **(User. extension_9d98ed114c4840d298fad781915f27e4_division-EQ «Sales and Marketing»)**.
 
 4. После создания группы предоставьте Azure AD некоторое время для заполнения участников, а затем просмотрите участников.
 
@@ -99,4 +96,4 @@ ms.locfileid: "74889863"
 ## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

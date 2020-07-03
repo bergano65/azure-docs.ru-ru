@@ -14,10 +14,10 @@ ms.author: curtand
 ms.reviewer: jairoc
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: e2e6585bac100a09f3f98037e90b24738e22816f
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77063872"
 ---
 # <a name="register-your-personal-device-on-your-organizations-network"></a>Регистрация персонального устройства в сети организации
@@ -66,7 +66,7 @@ ms.locfileid: "77063872"
 
     ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-register-device-on-network/register-device-setup-verify.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После регистрации персонального устройства в сети организации доступ к большинству ресурсов будет открыт.
 
 - Если организации требуется, чтобы вы подключили рабочее устройство, см. статью [Join your work device to your organization's network](user-help-join-device-on-network.md) (Подключение рабочего устройства к сети организации).

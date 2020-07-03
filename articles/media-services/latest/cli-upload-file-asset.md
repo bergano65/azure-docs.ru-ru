@@ -14,26 +14,27 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 05/01/2019
 ms.author: juliako
-ms.openlocfilehash: d6720200da341ee466339edde6dded02dd4fddc6
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 5d1dc90832a399aa9ee253b2c7962b8536c1926a
+ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74970114"
+ms.lasthandoff: 03/29/2020
+ms.locfileid: "80383010"
 ---
-# <a name="cli-example-upload-a-local-file-to-a-container"></a>Пример использования CLI. Отправка локального файла в контейнер 
+# <a name="azure-cli-example-upload-a-local-file-to-a-container"></a>Пример для Azure CLI: Отправка локального файла в контейнер
 
 В скрипте Azure CLI в этой статье показано, как отправить локальный файл в контейнер для хранения.
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные требования
 
-[Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+* [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+* Изучите, как [управлять активами](manage-asset-concept.md).
 
 [!INCLUDE [media-services-cli-instructions.md](../../../includes/media-services-cli-instructions.md)]
 
 ## <a name="example-script"></a>Пример сценария
 
-```Azure CLI 
+```azurecli-interactive
 #!/bin/bash
 # Update the following variables for your own settings:
 storageAccountName=build2018storage
@@ -60,6 +61,6 @@ echo "press  [ENTER]  to continue."
 read continue
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)

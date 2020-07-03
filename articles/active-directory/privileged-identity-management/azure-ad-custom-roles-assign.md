@@ -16,12 +16,12 @@ ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 410ee39a3984c4e6adde7dd2763808f776c71bd5
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 0303d37ef5bbbf266feb5456b0bc224ce272ee13
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77046939"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77499252"
 ---
 # <a name="assign-an-azure-ad-custom-role-in-privileged-identity-management"></a>Присвоение настраиваемой роли AAD через Privileged Identity Management (PIM)
 
@@ -32,14 +32,16 @@ ms.locfileid: "77046939"
 - Сведения о том, как предоставить другим администраторам доступ к управлению управление привилегированными пользователями, см. [в разделе Предоставление доступа другим администраторам для управления Управление привилегированными пользователями](pim-how-to-give-access-to-pim.md).
 
 > [!NOTE]
-> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей.
+> Настраиваемые роли AAD в период предварительной версии не интегрируются со встроенными ролями каталога. Как только эта возможность станет общедоступной, управление всеми ролями будет выполняться в интерфейсе для встроенных ролей. Если вы видите следующий баннер, эти роли должны управляться [во встроенной функции ролей](pim-how-to-activate-role.md) , и эта статья не применяется.
+>
+> [![](media/pim-how-to-add-role-to-user/pim-new-version.png "Select Azure AD > Privileged Identity Management")](media/pim-how-to-add-role-to-user/pim-new-version.png#lightbox)
 
 ## <a name="assign-a-role"></a>Назначение роли
 
 Управление привилегированными пользователями позволяет управлять настраиваемыми ролями, которые вы создаете в интерфейсе управления приложениями в Azure Active Directory (AAD).  Следующие шаги создают допустимое назначение для настраиваемой роли каталога.
 
 1. Войдите в раздел [Privileged Identity Management](https://portal.azure.com/?Microsoft_AAD_IAM_enableCustomRoleManagement=true&Microsoft_AAD_IAM_enableCustomRoleAssignment=true&feature.rbacv2roles=true&feature.rbacv2=true&Microsoft_AAD_RegisteredApps=demo#blade/Microsoft_Azure_PIMCommon/CommonMenuBlade/quickStart) на портале Azure с учетной записью пользователя, которому назначена роль "Администратор привилегированных ролей".
-1. Щелкните **Настраиваемые роли Azure AD (предварительная версия)** .
+1. Щелкните **Настраиваемые роли Azure AD (предварительная версия)**.
 
     ![Выбор предварительной версии настраиваемых ролей Azure AD для просмотра доступных назначений ролей](./media/azure-ad-custom-roles-assign/view-custom.png)
 
@@ -72,11 +74,11 @@ ms.locfileid: "77046939"
 1. Если флажок **Постоянный** доступен для просмотра и изменения (в зависимости от параметров роли), вы можете сделать назначение постоянным. Если назначение должно быть постоянно активным или постоянно допустимым, установите этот флажок. Снимите флажок, чтобы ограничить длительность назначения.
 1. Чтобы создать новое назначение роли, последовательно щелкните **Сохранить** и **Добавить**. Отображается уведомление о состоянии процесса назначения.
 
-Чтобы проверить назначение роли, последовательно выберите **Назначения** > **Назначение** в открытой роли и убедитесь, что назначение роли правильно указано как допустимое или активное.
+Чтобы проверить назначение ролей, в открытой роли выберите **назначения** > **назначение** и убедитесь, что назначение роли правильно определено как допустимое или активное.
 
  ![Проверка, отображается ли назначение роли как допустимое или активное](./media/azure-ad-custom-roles-assign/verify-assignments.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Активация настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)

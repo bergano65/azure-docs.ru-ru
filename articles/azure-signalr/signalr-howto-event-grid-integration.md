@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: chenyl
 ms.openlocfilehash: a76c9aaabf984723e2b60a7cd42425c9b29c916a
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76710831"
 ---
-# <a name="how-to-send-events-from-azure-signalr-service-to-event-grid"></a>Отправка событий из службы Azure SignalR в службу "Сетка событий"
+# <a name="how-to-send-events-from-azure-signalr-service-to-event-grid"></a>How to send events from Azure SignalR Service to Event Grid (Отправка событий из службы Azure SignalR в службу "Сетка событий")
 
 Сетка событий Azure — это полностью управляемая служба маршрутизации событий, которая обеспечивает унифицированное потребление событий с помощью модели Pub-подтипа. В этом пошаговом окне вы используете Azure CLI для создания службы Azure SignalR, подписки на события подключения, а затем развертывания примера веб-приложения для получения событий. Наконец, можно подключаться и отключаться и просматривать полезные данные события в примере приложения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure][azure-account], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][azure-account], прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -26,7 +26,7 @@ ms.locfileid: "76710831"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Следующая команда [AZ Group Create][az-group-create] создает группу ресурсов с именем *myResourceGroup* в регионе *eastus* . Если вы хотите использовать другое имя для своей группы ресурсов, установите другое значение для `RESOURCE_GROUP_NAME`.
+Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. В следующем примере с помощью команды [az group create][az-group-create] создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*. Если вы хотите использовать другое имя для своей группы ресурсов, установите другое значение для `RESOURCE_GROUP_NAME`.
 
 ```azurecli-interactive
 RESOURCE_GROUP_NAME=myResourceGroup
@@ -141,7 +141,7 @@ az eventgrid event-subscription create \
 
 ## <a name="trigger-registry-events"></a>Активация событий реестра
 
-Переключитесь в режим службы, чтобы `Serverless Mode` и настроить клиентское подключение к службе SignalR. В качестве образца можно использовать [бессерверный пример](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/Serverless) .
+Переключитесь в режим службы `Serverless Mode` и настройте клиентское подключение к службе SignalR. В качестве образца можно использовать [бессерверный пример](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/Serverless) .
 
 ```bash
 git clone git@github.com:aspnet/AzureSignalR-samples.git
@@ -162,7 +162,7 @@ dotnet run
 
 ## <a name="view-registry-events"></a>Просмотр событий реестра
 
-Теперь вы подключили клиента к службе SignalR. Перейдите к веб-приложению средства просмотра сетки событий, и вы увидите событие `ClientConnectionConnected`. Если вы завершите работу клиента, появится также событие `ClientConnectionDisconnected`.
+Теперь вы подключили клиента к службе SignalR. Перейдите к веб-приложению средства просмотра сетки событий, и вы увидите `ClientConnectionConnected` событие. Если вы завершите работу клиента, вы увидите также `ClientConnectionDisconnected` событие.
 
 <!-- LINKS - External -->
 [azure-account]: https://azure.microsoft.com/free/?WT.mc_id=A261C142F

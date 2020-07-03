@@ -7,10 +7,10 @@
     - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
-- name: Краткие руководства по REST API
+- name: Краткие руководства
   expanded: true
   items:
-    - name: "REST\_API"
+    - name: REST API
       items:
         - name: 'Использование C#'
           href: quickstarts/csharp.md
@@ -26,15 +26,9 @@
           href: quickstarts/ruby.md
     - name: SDK
       items:
-        - name: 'Использование C#'
-          href: quickstarts/entity-sdk-csharp-quickstart.md
-        - name: Использование Node.js
-          href: quickstarts/entity-sdk-node-quickstart.md
-        - name: Использование Python
-          href: quickstarts/entity-sdk-python-quickstart.md
-        - name: Использование Java
-          href: quickstarts/entity-sdk-java-quickstart.md
-- name: Руководства
+        - name: Клиентские библиотеки Поиска сущностей Bing
+          href: ./quickstarts/client-libraries.md
+- name: Учебники
   items:
     - name: Создание одностраничного веб-приложения
       href: tutorial-bing-entities-search-single-page-app.md
@@ -42,7 +36,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Entity+Search'
-- name: Инструкции
+- name: Практические руководства
   items:
     - name: Изменение размера и обрезка эскизов
       maintainContext: true
@@ -53,7 +47,7 @@
       href: concepts/search-for-entities.md
     - name: Отправка поисковых запросов
       href: concepts/sending-requests.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Требования к использованию и отображению API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/use-display-requirements.md
@@ -95,5 +89,5 @@
     - name: Аналитика для API Поиска сущностей Bing
       maintainContext: true
       href: ../bing-web-search/bing-web-stats.md
-    - name: Соответствие требованиям
+    - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

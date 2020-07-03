@@ -2,21 +2,18 @@
 title: Добавление или изменение администраторов подписки Azure
 description: В этой статье описывается, как добавлять или изменять администратора подписки Azure с помощью управления доступом на основе ролей (RBAC).
 author: genlin
-manager: dcscontentpm
+ms.reviewer: dcscontentpm
 tags: billing
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/24/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: a35d7d4ef24218c96e305abf623f746c92c8aa87
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3e4ad74a55504367de18a3dc9f0a7d33c462b329
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75993704"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199846"
 ---
 # <a name="add-or-change-azure-subscription-administrators"></a>Добавление или изменение администраторов подписки Azure
 

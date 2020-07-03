@@ -9,38 +9,45 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Создание задания\_— портал Azure"
-      href: stream-analytics-quick-create-portal.md
-    - name: "Создание задания\_— PowerShell"
-      href: stream-analytics-quick-create-powershell.md
-    - name: Создание задания — Visual Studio
-      href: stream-analytics-quick-create-vs.md
-    - name: "Создание задания\_— Visual Studio Code"
-      href: quick-create-vs-code.md
+    - name: Создание задания
+      items:
+        - name: Портал Azure
+          href: stream-analytics-quick-create-portal.md
+        - name: Шаблон ARM
+          href: quick-create-azure-resource-manager.md
+        - name: PowerShell
+          href: stream-analytics-quick-create-powershell.md
+        - name: Visual Studio
+          href: stream-analytics-quick-create-vs.md
+        - name: Visual Studio Code
+          href: quick-create-vs-code.md
 - name: Учебники
   items:
     - name: 1. Создание и администрирование задания
       href: stream-analytics-manage-job.md
     - name: 2. Запуск Функций Azure
       href: stream-analytics-with-azure-functions.md
-    - name: 3. Запуск определяемой пользователем функции JavaScript
-      href: stream-analytics-javascript-user-defined-functions.md
-    - name: "4.\_Развертывание с использованием CI/CD в Azure Pipelines"
+    - name: 3. Развертывание с использованием CI/CD в Azure Pipelines
       href: stream-analytics-tools-visual-studio-cicd-vsts.md
-    - name: '5. Выполнение определяемой пользователем функции C#'
+    - name: '4. Выполнение определяемой пользователем функции C#'
       href: stream-analytics-edge-csharp-udf.md
-    - name: 6. Создание пользовательского десериализатора .NET
+    - name: 5. Создание пользовательского десериализатора .NET
       href: custom-deserializer.md
 - name: Примеры
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=stream-analytics'
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Выбор технологии анализа потоковой передачи
       href: streaming-technologies.md
     - name: Выбор средства разработки для заданий
       href: feature-comparison.md
+    - name: Разработка в локальной среде
+      href: develop-locally.md
     - name: Типы входных данных для задания
       items:
         - name: Общие сведения о входных данных
@@ -55,12 +62,25 @@
       items:
         - name: Общие сведения о выходных данных
           href: stream-analytics-define-outputs.md
+          displayName: 'adls, sql, blob, event hubs, power bi, table, service bus, cosmos, functions'
         - name: Вывод в Cosmos DB
           href: stream-analytics-documentdb-output.md
         - name: "Вывод в базу данных SQL\_Azure"
           href: stream-analytics-sql-output-perf.md
         - name: Пользовательские шаблоны пути к BLOB-объекту
           href: stream-analytics-custom-path-patterns-blob-storage-output.md
+    - name: Расширение запросов функциями
+      items:
+        - name: Общие сведения о функциях
+          href: functions-overview.md
+        - name: Определяемая пользователем функция JavaScript
+          href: stream-analytics-javascript-user-defined-functions.md
+        - name: UDA JavaScript
+          href: stream-analytics-javascript-user-defined-aggregates.md
+        - name: 'Определяемая пользователем функция C#'
+          href: stream-analytics-edge-csharp-udf-methods.md
+        - name: Определяемая пользователем функция в машинном обучении
+          href: machine-learning-udf.md
     - name: Оптимизация задания Stream Analytics
       items:
         - name: Обзор и настройка единиц потоковой передачи
@@ -112,14 +132,24 @@
           href: copy-job.md
         - name: Связывание заданий для обеспечения надежности
           href: stream-analytics-job-reliability.md
-        - name: "Аутентификация на основе управляемых удостоверений\_— выходные данные ADLS 1-го поколения"
-          href: stream-analytics-managed-identities-adls.md
         - name: Использование эталонных данных SQL
           href: sql-reference-data.md
-        - name: "Аутентификация на основе управляемых удостоверений\_— выходные данные хранилища BLOB-объектов"
-          href: blob-output-managed-identity.md
-        - name: "Аутентификация на основе управляемых удостоверений в Power\_BI"
-          href: powerbi-output-managed-identity.md
+        - name: Аутентификация на основе управляемых удостоверений
+          items:
+            - name: "ADLS 1-го\_поколения"
+              href: stream-analytics-managed-identities-adls.md
+              displayName: 'managed identity, identities, authenticate'
+            - name: Хранилище BLOB-объектов
+              href: blob-output-managed-identity.md
+              displayName: 'managed identity, identities, authenticate'
+            - name: Power BI
+              href: powerbi-output-managed-identity.md
+              displayName: 'managed identity, identities, authenticate'
+            - name: БД SQL Azure
+              href: sql-database-output-managed-identity.md
+              displayName: 'managed identity, identities, authenticate'
+        - name: Шифрование данных
+          href: data-protection.md
     - name: Создание решений
       items:
         - name: Анализ тональности в Twitter
@@ -130,8 +160,6 @@
           href: stream-analytics-edge.md
         - name: 'Анализ данных датчиков, расположенных в пунктах сбора оплаты'
           href: stream-analytics-build-an-iot-solution-using-stream-analytics.md
-        - name: Выполнение пользовательского статистического выражения JavaScript
-          href: stream-analytics-javascript-user-defined-aggregates.md
         - name: Высокочастотный трейдинг
           href: stream-analytics-high-frequency-trading.md
         - name: Обработка потоковых данных Интернета вещей
@@ -167,6 +195,8 @@
           href: 'https://github.com/Azure/azure-stream-analytics/tree/master/Samples/ASAOneClick'
         - name: Использование API для заданий IoT Edge
           href: stream-analytics-cicd-api.md
+        - name: Экспортирование и развертывание с помощью Azure Resource Manager
+          href: resource-manager-export.md
     - name: Visual Studio
       items:
         - name: Средства установки
@@ -183,10 +213,10 @@
           href: stream-analytics-tools-for-visual-studio-edge-jobs.md
         - name: Настройка конвейера CI/CD
           href: stream-analytics-tools-for-visual-studio-cicd.md
-        - name: Создание определяемой пользователем функции .NET
-          href: stream-analytics-edge-csharp-udf-methods.md
     - name: Visual Studio Code
       items:
+        - name: Завершение кода с помощью IntelliSense
+          href: vs-code-intellisense.md
         - name: Локальное тестирование с использованием примеров данных
           href: visual-studio-code-local-run.md
         - name: Локальное тестирование с использованием фактических данных
@@ -195,6 +225,8 @@
           href: setup-cicd-vs-code.md
         - name: Обзор заданий
           href: visual-studio-code-explore-jobs.md
+        - name: Поля JobConfig.json
+          href: job-config-json.md
     - name: Диагностика
       items:
         - name: Входные данные
@@ -203,11 +235,23 @@
           href: stream-analytics-troubleshoot-output.md
         - name: Логика запросов
           href: stream-analytics-troubleshoot-query.md
-        - name: Журналы действий и диагностики
+        - name: Журналы действий и ресурсов
           href: stream-analytics-job-diagnostic-logs.md
         - name: Ошибки данных
           href: data-errors.md
-    - name: Интеграция с машинным обучением
+        - name: Коды ошибок
+          items:
+            - name: Ошибки конфигурации
+              href: configuration-error-codes.md
+            - name: Ошибки данных
+              href: data-error-codes.md
+            - name: Ошибки с внешним доступом
+              href: external-availability-error-codes.md
+            - name: Внешние ошибки
+              href: external-error-codes.md
+            - name: Внутренние ошибки
+              href: internal-error-codes.md
+    - name: Интеграция с решениями для машинного обучения
       items:
         - name: Анализ тональности с помощью моделей Машинного обучения
           href: stream-analytics-machine-learning-integration-tutorial.md
@@ -221,6 +265,9 @@
       href: stream-analytics-scale-with-machine-learning-functions.md
 - name: Язык запросов Stream Analytics
   items:
+    - name: Общие сведения о языке запросов Stream Analytics
+      href: /stream-analytics-query/stream-analytics-query-language-reference
+      maintainContext: true
     - name: Встроенные функции
       items:
         - name: Обзор встроенных функций
@@ -405,7 +452,7 @@
               href: /stream-analytics-query/power-azure-stream-analytics
               maintainContext: true
             - name: ROUND
-              href: /stream-analytics-query/round-azure-stream-analytics.md
+              href: /stream-analytics-query/round-azure-stream-analytics
               maintainContext: true
             - name: SIGN
               href: /stream-analytics-query/sign-azure-stream-analytics
@@ -451,7 +498,7 @@
               href: /stream-analytics-query/regexmatch-azure-stream-analytics
               maintainContext: true
             - name: REPLACE
-              href: /stream-analytics-query/replace-azure-stream-analytics.md
+              href: /stream-analytics-query/replace-azure-stream-analytics
               maintainContext: true
             - name: SUBSTRING
               href: /stream-analytics-query/substring-azure-stream-analytics
@@ -499,7 +546,7 @@
           href: /stream-analytics-query/case-azure-stream-analytics
           maintainContext: true
         - name: COALESCE
-          href: /stream-analytics-query/coalesce-azure-stream-analytics.md
+          href: /stream-analytics-query/coalesce-azure-stream-analytics
           maintainContext: true
         - name: CREATE TABLE
           href: /stream-analytics-query/create-table-stream-analytics
@@ -574,8 +621,8 @@
       href: 'https://azure.microsoft.com/blog/tag/azure-stream-analytics/'
     - name: Форум отзывов и предложений
       href: 'https://feedback.azure.com/forums/270577-azure-stream-analytics'
-    - name: Форум
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-stream-analytics.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/stream-analytics/'
     - name: Калькулятор цен

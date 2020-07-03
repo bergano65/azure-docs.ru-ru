@@ -10,6 +10,9 @@
     - name: Индекс
       displayName: 'template, sample'
       href: ./samples/index.md
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./samples/policy-samples.md
 - name: Основные понятия
   items:
     - name: Делегированное управление ресурсами Azure
@@ -33,6 +36,9 @@
     - name: Использование Azure Lighthouse в корпоративных сценариях
       displayName: 'corporation, IT, consolidate'
       href: ./concepts/enterprise.md
+    - name: Azure Lighthouse и управляемые приложения Azure
+      displayName: 'managed apps, ama'
+      href: ./concepts/managed-applications.md
 - name: Практические руководства
   items:
     - name: Подключение клиента к системе делегированного управления ресурсами Azure
@@ -44,9 +50,17 @@
     - name: Просмотр клиентов и управление ими
       displayName: my customers
       href: ./how-to/view-manage-customers.md
-    - name: Использование журналов Azure Monitor в большом масштабе
-      displayName: 'log, analytics, analyze, activity'
-      href: ./how-to/monitor-at-scale.md
+    - name: Удаление доступа к делегированию
+      displayName: 'delete, undelegate'
+      href: ./how-to/remove-delegation.md
+    - name: "Интеграция Azure\_Monitor"
+      items:
+        - name: Использование журналов Azure Monitor в большом масштабе
+          displayName: 'log, analytics, analyze, activity'
+          href: ./how-to/monitor-at-scale.md
+        - name: Отслеживание изменений делегирования
+          displayName: activity log
+          href: ./how-to/monitor-delegation-changes.md
     - name: Интеграция Политики Azure
       items:
         - name: Развертывание политики в любом масштабе
@@ -81,6 +95,8 @@
       href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managedservices/resource-manager/Microsoft.ManagedServices/preview/2018-06-01-preview'
 - name: Ресурсы
   items:
+    - name: Раздел вопросов и ответов об Azure Lighthouse на сайте Майкрософт
+      href: 'https://docs.microsoft.com/en-us/answers/topics/azure-lighthouse.html'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Калькулятор цен

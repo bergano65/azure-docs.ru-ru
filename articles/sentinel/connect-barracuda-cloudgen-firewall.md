@@ -3,7 +3,7 @@ title: Подключение брандмауэра Barracuda Клауджен 
 description: Узнайте, как подключить Barracuda Клауджен Firewall к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: cabailey
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: cabailey
-ms.openlocfilehash: f7d5531c8aba3e2e7abb56d82342bfda79dbc71b
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: aaedbfdd3b1bbbc653756d74ee86fc277b21caec
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610732"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77588507"
 ---
 # <a name="connect-barracuda-cloudgen-firewall"></a>Подключение Barracuda CloudGen Firewall
 
@@ -28,7 +28,7 @@ ms.locfileid: "75610732"
 
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Разрешения на чтение и запись в рабочей области "Sentinel" Azure.
 
@@ -36,14 +36,14 @@ ms.locfileid: "75610732"
 
 ## <a name="connect-azure-sentinel-to-barracuda-cloudgen-firewall"></a>Подключение Sentinel Azure к Barracuda Клауджен Firewall
 
-1. В портал Azure перейдите в раздел **Azure Sentinel** > **соединители данных** , а затем выберите соединитель **брандмауэра Barracuda клауджен** .
+1. В портал Azure перейдите к**соединителям данных** **Azure Sentinel** > , а затем выберите соединитель **брандмауэра Barracuda клауджен** .
 
 2. Выберите **открыть страницу соединителя**.
 
 3. Следуйте инструкциям на странице **брандмауэра Barracuda клауджен** .
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить Barracuda Клауджен Firewall к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

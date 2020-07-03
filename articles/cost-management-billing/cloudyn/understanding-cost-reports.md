@@ -1,24 +1,26 @@
 ---
-title: Сведения об отчетах по управлению затратами Cloudyn | Документация Майкрософт
+title: Сведения об отчетах по управлению затратами Cloudyn в Azure
 description: Эта статья поможет вам понять базовую структуру и функции отчетов по управлению затратами Cloudyn.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/24/2020
+ms.date: 03/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 89bcbf75396a1eda9de4a715739adb3a3696e137
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5d4f8e26aef5fbfb20c1721d1851a4940863121b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76773986"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79474549"
 ---
 # <a name="understanding-cloudyn-cost-management-reports"></a>Сведения об отчетах по управлению затратами Cloudyn.
 
 Эта статья поможет вам понять базовую структуру и функции отчетов по управлению затратами Cloudyn. Большинство отчетов Cloudyn интуитивно понятны и имеют однородный внешний вид. После прочтения этой статьи вы сможете использовать все отчеты управления затратами. Многие стандартные возможности доступны в различных отчетах,что позволяет легко их находить. Вы можете настраивать отчеты и выбирать способ вычисления и отображения результатов.
+
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
 ## <a name="report-fields-and-options"></a>Параметры и поля отчета
 

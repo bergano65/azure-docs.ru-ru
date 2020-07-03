@@ -1,20 +1,16 @@
 ---
 title: Выполнение заданий в Azure Application Insights | Документация Майкрософт
 description: Вопросы и ответы об Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 04/04/2017
-ms.openlocfilehash: 61bd5898c494018a2bacbd894d4dc2aac97f53b4
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.openlocfilehash: 8d4b1e79c48b14ed7dce756468e4c48d633c3f04
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73928423"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81536868"
 ---
-# <a name="how-do-i--in-application-insights"></a>Разделы справки по Application Insights
+# <a name="how-do-i--in-application-insights"></a>Как работать с Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
 ### <a name="email-if-my-site-goes-down"></a>Уведомлять меня по электронной почте, если сайт выходит из строя
 Настройте [веб-тест доступности](../../azure-monitor/app/monitor-web-app-availability.md).
@@ -49,7 +45,7 @@ ms.locfileid: "73928423"
 
     telemetry.TrackMetric("Alarm", 0.5);
 
-Создайте диаграмму в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) , чтобы увидеть оповещение:
+Создайте диаграмму в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) , чтобы увидеть оповещение:
 
 ![](./media/how-do-i/010-alarm.png)
 
@@ -79,14 +75,14 @@ ms.locfileid: "73928423"
 
 * Несколько ролей в приложении: используйте один ресурс Application Insights и выполните фильтрацию по [cloud_Rolename](../../azure-monitor/app/app-map.md).
 * Отдельные стадии разработки, тестирования и выпуска версий. Используйте различные ресурсы Application Insights. Выберите ключи инструментирования из файла Web. config. Дополнительные [сведения](../../azure-monitor/app/separate-resources.md)
-* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Подробнее](../../azure-monitor/app/separate-resources.md)
+* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Дополнительные сведения](../../azure-monitor/app/separate-resources.md)
 
 ## <a name="monitor-backend-servers-and-desktop-apps"></a>Мониторинг внутренних серверов и классических приложений
 [Используйте модуль пакета SDK для Windows Server](../../azure-monitor/app/windows-desktop.md).
 
 ## <a name="visualize-data"></a>Визуализируйте данные
 #### <a name="dashboard-with-metrics-from-multiple-apps"></a>Панель мониторинга с метрикой для нескольких приложений
-* В [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md)настройте диаграмму и сохраните ее в списке избранного. Закрепите ее на панели мониторинга Azure.
+* В [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md)настройте диаграмму и сохраните ее в списке избранного. Закрепите ее на панели мониторинга Azure.
 
 #### <a name="dashboard-with-data-from-other-sources-and-application-insights"></a>Панель мониторинга с данными из других источников и Application Insights
 * [Экспорт телеметрии в Power BI](../../azure-monitor/app/export-power-bi.md ).
@@ -100,7 +96,7 @@ ms.locfileid: "73928423"
 ### <a name="filter-out-anonymous-or-authenticated-users"></a>Отфильтровывание анонимных или прошедших проверку подлинности пользователей
 Если пользователи входят в систему, можно задать [идентификатор пользователя, прошедшего проверку подлинности](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users). (Это не происходит автоматически.)
 
-Затем можно:
+Можно выполнить следующее.
 
 * Поиск по указанным идентификаторам пользователей
 
@@ -142,9 +138,9 @@ ms.locfileid: "73928423"
 
 ### <a name="other-applications"></a>Другие приложения
 Не рекомендуется использовать `TelemetryConfiguration.Active` Singleton в консольных и ASP.NET Core приложениях.
-Если вы создали `TelemetryConfiguration` экземпляр самостоятельно, задайте для `DisableTelemetry` значение `true`.
+Если экземпляр создан `TelemetryConfiguration` самостоятельно, задайте для `DisableTelemetry` `true`значение.
 
-Для ASP.NET Core приложений вы можете получить доступ к экземпляру `TelemetryConfiguration`, используя [внедрение зависимостей ASP.NET Core](/aspnet/core/fundamentals/dependency-injection/). Дополнительные сведения см. в статье [ApplicationInsights for ASP.NET Core Applications](../../azure-monitor/app/asp-net-core.md) .
+Для ASP.NET Core приложений вы можете получить `TelemetryConfiguration` доступ к экземпляру с помощью [ASP.NET Core внедрения зависимостей](/aspnet/core/fundamentals/dependency-injection/). Дополнительные сведения см. в статье [ApplicationInsights for ASP.NET Core Applications](../../azure-monitor/app/asp-net-core.md) .
 
 ## <a name="disable-selected-standard-collectors"></a>Отключить выбранные стандартные собирающие
 Можно отключить стандартные собирающие (например, счетчики производительности, HTTP-запросы или зависимости).
@@ -160,8 +156,8 @@ ms.locfileid: "73928423"
 ### <a name="if-you-see-no-performance-counter-data"></a>Если данные счетчика производительности не отображаются
 * **Сервер IIS** на собственном компьютере или на виртуальной машине. [Установите монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md).
 * **Веб-сайт Azure** — мы еще не поддерживаем счетчики производительности. Существует несколько метрик, которые можно получить в составе стандартной панели управления веб-сайта Azure.
-* **Сервер Unix** - [установите collectd](../../azure-monitor/app/java-collectd.md)
+* **Unix server** - [Собранная установка](../../azure-monitor/app/java-collectd.md) сервера UNIX
 
 ### <a name="to-display-more-performance-counters"></a>Для отображения дополнительных счетчиков производительности
-* Сначала [добавьте новую диаграмму](../../azure-monitor/app/metrics-explorer.md) , чтобы посмотреть, находится ли счетчик в базовом наборе предложения.
+* Сначала [добавьте новую диаграмму](../../azure-monitor/platform/metrics-charts.md) , чтобы посмотреть, находится ли счетчик в базовом наборе предложения.
 * Если его нет, [добавьте счетчик к набору, собранному модулем счетчика производительности](../../azure-monitor/app/performance-counters.md).

@@ -4,10 +4,10 @@ description: Настройка учетной записи пользовате
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.openlocfilehash: 9401a9e483f3f8db5af827f53937cb0f01b27a28
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75646302"
 ---
 # <a name="your-user-account-for-azure-notebooks-preview"></a>Учетная запись пользователя для предварительной версии Azure Notebooks

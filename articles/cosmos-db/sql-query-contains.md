@@ -4,15 +4,15 @@ description: Сведения о том, как функция CONTAINS SQL Syst
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 59c0e2628bfde24200bd386adc858ba778790231
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: c0c25b63fb6a7bf42bd2ec5b9503cac2cce7583f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74871539"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302599"
 ---
 # <a name="contains-azure-cosmos-db"></a>CONTAINS (Azure Cosmos DB)
  Возвращает значение логического типа, указывающее, содержит ли первое строковое выражение второе.  
@@ -31,7 +31,7 @@ CONTAINS(<str_expr1>, <str_expr2>)
 *str_expr2*  
    Искомое строковое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает логическое выражение.  
   
@@ -49,8 +49,12 @@ SELECT CONTAINS("abc", "ab") AS c1, CONTAINS("abc", "d") AS c2
 [{"c1": true, "c2": false}]  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

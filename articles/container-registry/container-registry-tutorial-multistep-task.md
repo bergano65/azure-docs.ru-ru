@@ -4,12 +4,12 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 05/09/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: f5342e51af870b1e5f8651ea2d28894233ed8e62
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: ff32b3095638af6b2b246b99a5dc9219e0020782
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456074"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78402298"
 ---
 # <a name="tutorial-run-a-multi-step-container-workflow-in-the-cloud-when-you-commit-source-code"></a>Руководство по Запуск многошагового рабочего процесса в облаке при фиксации исходного кода
 
@@ -69,7 +69,9 @@ steps:
 
 Сначала заполните эти переменные среды оболочки значениями, подходящими для вашей среды. Этот шаг не является обязательным, но он упрощает выполнение многолинейных команд Azure CLI в этом руководстве. Если вы не заполните эти переменные среды, вам придется вручную заменять каждое значение в примерах команд.
 
-```azurecli-interactive
+[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+
+```console
 ACR_NAME=<registry-name>        # The name of your Azure container registry
 GIT_USER=<github-username>      # Your GitHub user account name
 GIT_PAT=<personal-access-token> # The PAT you generated in the previous section
@@ -90,7 +92,7 @@ az acr task create \
 
 Выходные данные успешно выполненной команды [az acr task create][az-acr-task-create] имеют следующий вид:
 
-```console
+```output
 {
   "agentConfiguration": {
     "cpu": 2
@@ -155,7 +157,7 @@ az acr task run --registry $ACR_NAME --name example1
 
 По умолчанию при выполнении команда `az acr task run` передает выходные данные журнала в консоль. В выходных данных отображается ход выполнения каждого шага задачи. Ниже представлен сокращенный пример выходных данных, только с основными шагами.
 
-```console
+```output
 Queued a run with ID: cf19
 Waiting for an agent...
 2019/05/03 03:03:31 Downloading source code...
@@ -217,13 +219,13 @@ Run ID: cf19 was successful after 18s
 
 Сначала перейдите в каталог, содержащий локальный клон вашего [репозитория][sample-repo]:
 
-```azurecli-interactive
+```console
 cd acr-build-helloworld-node
 ```
 
 Затем выполните следующие команды для создания, фиксации и передачи нового файла в вилку вашего репозитория GitHub:
 
-```azurecli-interactive
+```console
 echo "Hello World!" > hello.txt
 git add hello.txt
 git commit -m "Testing ACR Tasks"
@@ -232,8 +234,7 @@ git push origin master
 
 Может потребоваться предоставить ваши учетные данные GitHub при выполнении команды `git push`. Введите свое имя пользователя GitHub и укажите созданный ранее личный маркер доступа в качестве пароля.
 
-```console
-$ git push origin master
+```azurecli-interactive
 Username for 'https://github.com': <github-username>
 Password for 'https://githubuser@github.com': <personal-access-token>
 ```
@@ -246,8 +247,7 @@ az acr task logs --registry $ACR_NAME
 
 Выходные данные выглядят следующим образом. Они показывают выполняемую (или последнюю выполненную) задачу:
 
-```console
-$ az acr task logs --registry $ACR_NAME
+```output
 Showing logs of the last created run.
 Run ID: cf1d
 
@@ -266,9 +266,7 @@ az acr task list-runs --registry $ACR_NAME --output table
 
 Результат этой команды должен выглядеть примерно следующим образом: Отобразятся сборки, созданные решением "Задачи ACR", а также команда "Git Commit" в столбце TRIGGER для самой последней задачи:
 
-```console
-$ az acr task list-runs --registry $ACR_NAME --output table
-
+```output
 RUN ID    TASK       PLATFORM    STATUS     TRIGGER    STARTED               DURATION
 --------  ---------  ----------  ---------  ---------  --------------------  ----------
 cf1d      example1   linux       Succeeded  Commit     2019-05-03T04:16:44Z  00:00:37
@@ -360,7 +358,7 @@ az acr task run --registry $ACR_NAME --name example2
 
 Выходные данные:
 
-```console
+```output
 Queued a run with ID: cf1g
 Waiting for an agent...
 2019/05/03 04:33:39 Downloading source code...
@@ -454,7 +452,7 @@ The push refers to repository [mycontainerregistrydate.azurecr.io/hello-world]
 Run ID: cf1g was successful after 46s
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как создавать многошаговые задачи для нескольких контейнеров, которые автоматически запускаются при фиксации исходного кода в репозитории Git. Расширенные возможности многошаговых задач, включая параллельное и зависимое выполнение шагов, описаны в [справочнике по YAML для решения "Задачи ACR"](container-registry-tasks-reference-yaml.md). Перейдите к следующему руководству, чтобы узнать, как создавать задачи, которые активируют сборку при обновлении базового образа контейнера.
 

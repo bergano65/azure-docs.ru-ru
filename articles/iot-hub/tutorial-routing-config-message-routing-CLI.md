@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: robinsh
 ms.custom: mvc
-ms.openlocfilehash: 340ea35bc3ed0c889a1a851da47f7e955116e103
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 056dac7977115f97892d8dbfde0710e00237804e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74084468"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78674348"
 ---
 # <a name="tutorial-use-the-azure-cli-to-configure-iot-hub-message-routing"></a>Руководство по Маршрутизация сообщений Центра Интернета вещей с помощью Azure CLI
 
@@ -55,7 +55,7 @@ randomValue=$RANDOM
 # This command installs the IOT Extension for Azure CLI.
 # You only need to install this the first time.
 # You need it to create the device identity. 
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 
 # Set the values for the resource names that 
 #   don't have to be globally unique.
@@ -165,7 +165,7 @@ az iot hub device-identity show --device-id $iotDeviceName \
 
 **endpointType**. Здесь указывается тип конечной точки. Это значение должно быть `azurestoragecontainer`, `eventhub`, `servicebusqueue` или `servicebustopic`. В нашем примере используется значение `azurestoragecontainer`.
 
-**iotHubName**. Это поле представляет имя приложения логики.
+**iotHubName**: Это поле представляет имя приложения логики.
 
 **containerName**. В этом поле указывается имя контейнера в учетной записи хранения, куда будут записаны данные.
 
@@ -300,7 +300,7 @@ az iot hub route create --name $routeName \
 
 [!INCLUDE [iot-hub-include-view-routing-in-portal](../../includes/iot-hub-include-view-routing-in-portal.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы настроили ресурсы и маршрутизацию сообщений, переходите к следующему руководству, чтобы узнать, как отправлять сообщения в центр Интернета вещей, маршрутизируя их в разные места назначения. 
 

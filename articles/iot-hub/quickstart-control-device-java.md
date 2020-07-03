@@ -8,36 +8,36 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
-ms.custom: mvc, seo-java-august2019, seo-java-september2019
+ms.custom:
+- mvc
+- seo-java-august2019
+- seo-java-september2019
+- mqtt
 ms.date: 06/21/2019
-ms.openlocfilehash: 6ac102fa52977d3f9e07de1666dd98e8c2a31673
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: d73fab92535820186fcce997c2a5c72abf130c18
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73890551"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81771003"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-azure-iot-hub-with-java"></a>Краткое руководство. Управление подключенным к центру Интернета вещей устройством с использованием Java
 
 [!INCLUDE [iot-hub-quickstarts-2-selector](../../includes/iot-hub-quickstarts-2-selector.md)]
 
-Центр Интернета вещей — это служба Azure, которая позволяет управлять устройствами Интернета вещей из облака и принимать большие объемы телеметрии с устройств в облако для хранения или обработки. В этом кратком руководстве для управления имитированным устройством, подключенным к Центру Интернета вещей с помощью приложения Java, используется *прямой метод*. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства. 
-
-В этом кратком руководстве используется два предварительно созданных приложения Java:
-
-* Приложение имитированного устройства, реагирующее на прямые методы, вызванные из внутреннего приложения. Чтобы получать вызовы прямого метода, это приложение подключается к конечной точке конкретного устройства в Центре Интернета вещей.
-
-* Внутреннее приложение, вызывающее прямые методы в имитированном устройстве. Чтобы вызвать прямой метод в устройстве, это приложение подключается к конечной точке на стороне службы в Центре Интернета вещей.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+В этом кратком руководстве описано, как использовать прямой метод для управления имитированным устройством, подключенным к Центру Интернета вещей Azure с помощью приложения Java. Центр Интернета вещей — это служба Azure, которая позволяет управлять устройствами Интернета вещей из облака и принимать большие объемы данных телеметрии, передаваемых с устройств в облако, для хранения или обработки. Этот метод позволяет удаленно изменить поведение подключенного к Центру Интернета вещей устройства. При работе с этим кратким руководством используются два приложения Java: приложение имитированного устройства, которое реагирует на прямые методы, и внутреннее приложение, которое вызывает эти прямые методы на имитированном устройстве.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Java. Вам потребуется Java SE 8 на компьютере для разработки.
+* Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-Ссылки на скачивание пакета SDK для Java SE 8 для разных платформ доступны на [странице долгосрочной поддержки Java для Azure и Azure Stack](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable). Щелкните ссылку **Java 8** в разделе **Долгосрочная поддержка**, чтобы скачать все необходимое для работы с JDK 8.
+* Пакет SDK для Java SE 8. В статье [Долгосрочная поддержка Java для Azure и Azure Stack](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable) выберите пункт **Java 8** в разделе **Долгосрочная поддержка**.
+
+* [Apache Maven 3](https://maven.apache.org/download.cgi).
+
+* [Пример проекта Java](https://github.com/Azure-Samples/azure-iot-samples-java/archive/master.zip).
+
+* Порт 8883, открытый в брандмауэре. Пример устройства в этом кратком руководстве использует протокол MQTT, который передает данные через порт 8883. В некоторых корпоративных и академических сетях этот порт может быть заблокирован. Дополнительные сведения и способы устранения этой проблемы см. в разделе о [подключении к Центру Интернета вещей по протоколу MQTT](iot-hub-mqtt-support.md#connecting-to-iot-hub).
 
 Текущую версию Java на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 
@@ -45,21 +45,23 @@ ms.locfileid: "73890551"
 java -version
 ```
 
-Для создания примеров необходимо установить Maven версии 3. Maven, предназначенный для нескольких платформ, можно скачать в [Apache Maven](https://maven.apache.org/download.cgi).
-
 Текущую версию Maven на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 
 ```cmd/sh
 mvn --version
 ```
 
-Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+
+### <a name="add-azure-iot-extension"></a>Добавление расширения Azure IoT
+
+Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
 
 ```azurecli-interactive
-az extension add --name azure-cli-iot-ext
+az extension add --name azure-iot
 ```
 
-Если вы это еще не сделали, загрузите пример проекта Java по адресу https://github.com/Azure-Samples/azure-iot-samples-java/archive/master.zip и извлеките ZIP-архив.
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -86,7 +88,7 @@ az extension add --name azure-cli-iot-ext
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string \
@@ -177,7 +179,7 @@ az iot hub show-connection-string --policy-name service --name {YourIoTHubName} 
 
 [!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководства вы вызвали прямой метод на устройстве из внутреннего приложения, а также ответили на этот вызов в приложении имитированного устройства.
 

@@ -12,17 +12,19 @@ metadata:
   ms.author: markvi
   ms.date: 08/29/2019
   ms.collection: M365-identity-device-management
-  ms.openlocfilehash: 2b29aaf88f0a7659fd3ceb58ddf3b762ee7646d3
-  ms.sourcegitcommit: 19a821fc95da830437873d9d8e6626ffc5e0e9d6
+  ms.openlocfilehash: 28f65417053d136983611cfa07ebedb7de93e25a
+  ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/29/2019
-  ms.locfileid: "70162498"
+  ms.lasthandoff: 05/29/2020
+  ms.locfileid: "84168630"
 landingContent:
 - title: Сведения о создании отчетов и мониторинге в Azure Active Directory
   linkLists:
   - linkListType: overview
     links:
+    - text: Что такое отчеты в Azure Active Directory
+      url: overview-reports.md
     - text: Мониторинг в Azure Active Directory
       url: overview-monitoring.md
   - linkListType: concept
@@ -53,5 +55,5 @@ landingContent:
     links:
     - text: Анализ журналов действий в журналах Azure Monitor
       url: howto-analyze-activity-logs-log-analytics.md
-    - text: Установка и использование представлений службы анализа журналов для Azure AD
+    - text: Установка и использование представлений службы анализа журналов для Azure AD
       url: howto-install-use-log-analytics-views.md

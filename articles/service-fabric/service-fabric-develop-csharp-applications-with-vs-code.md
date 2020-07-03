@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: 1d7478e6b81ef2c53ca6194197336e91d3ff250b
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75614529"
 ---
 # <a name="develop-c-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Service Fabric на C# с помощью Visual Studio Code
@@ -18,7 +18,7 @@ ms.locfileid: "75614529"
 
 В этой статье показано, как создавать, развертывать и отлаживать приложение .NET Core Service Fabric с помощью Visual Studio Code.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что уже установлено VS Code, расширение Service Fabric Reliable Services для VS Code и все зависимости, необходимые для среды разработки. Дополнительные сведения см в разделе [Руководство](./service-fabric-get-started-vs-code.md#prerequisites).
 
@@ -48,16 +48,16 @@ sudo code . --user-data-dir='.'
 
 ![Приложение Counter Service в рабочей области](./media/service-fabric-develop-csharp-applications-with-vs-code/counter-service-application-in-workspace.png)
 
-## <a name="build-the-application"></a>создание приложения;
+## <a name="build-the-application"></a>Построение приложения
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть **палитру команд** в VS Code.
-2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)** . Выходные данные сборки передаются во встроенный терминал.
+2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)**. Выходные данные сборки передаются во встроенный терминал.
 
    ![Команда сборки приложения в VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-build-application.png)
 
 ## <a name="deploy-the-application-to-the-local-cluster"></a>Развертывание приложения в локальном кластере
 Созданное приложение можно развернуть в локальном кластере. 
 
-1. В **Палитре команд** выберите **Service Fabric: развертывания приложения (Localhost)** . Выходные данные процесса установки отправляются в интегрированный терминал.
+1. В **Палитре команд** выберите **Service Fabric: развертывания приложения (Localhost)**. Выходные данные процесса установки отправляются в интегрированный терминал.
 
    ![Команда развертывания приложения в VS Code](./media/service-fabric-develop-csharp-applications-with-vs-code/sf-deploy-application.png)
 
@@ -72,7 +72,7 @@ sudo code . --user-data-dir='.'
 ## <a name="publish-the-application-to-an-azure-service-fabric-cluster"></a>Публикация приложения в кластере Azure Service Fabric
 Вместе с развертыванием приложения в локальном кластере можно также опубликовать приложение в удаленном кластере Azure Service Fabric. 
 
-1. Убедитесь, что приложение создано с помощью приведенных выше инструкций. Обновите созданный файл конфигурации `Cloud.json` сведениями об удаленном кластере, в который вы хотите опубликовать.
+1. Убедитесь, что приложение создано с помощью приведенных выше инструкций. Обновите созданный файл `Cloud.json` конфигурации, указав сведения об удаленном кластере, в котором необходимо выполнить публикацию.
 
 2. В **палитре команд**выберите **команду Service Fabric: Публикация приложения**. Выходные данные процесса установки отправляются в интегрированный терминал.
 

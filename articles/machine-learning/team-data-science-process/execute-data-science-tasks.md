@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 984b03288b8dae644fc04a2cd78fb03a2e027f62
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: e69a03cd142fdbcc5864ee38a4843e1c2e44a124
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76722209"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79477159"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
@@ -26,7 +26,7 @@ ms.locfileid: "76722209"
 - [Microsoft Machine Learning Server](https://docs.microsoft.com/machine-learning-server/what-is-machine-learning-server)
 
 
-## 1. <a name='DataQualityReportUtility-1'></a> исследование 
+## <a name="1--exploration"></a>1. <a name='DataQualityReportUtility-1'></a> исследование 
 
 Специалист по обработке и анализу данных может выполнять изучение данных и создание отчетов различными способами: с помощью библиотек и пакетов, доступных для Python (например, matplotlib), или с помощью R (например, ggplot или lattice). Специалисты по обработке и анализу данных могут настроить такой код в соответствии с потребностями изучения данных для конкретных сценариев. Требования к работе со структурированными и неструктурированными данными (например, текстом и изображениями) отличаются. 
 
@@ -41,7 +41,7 @@ ms.locfileid: "76722209"
 В настоящее время средство работает только с блоками данных в памяти. Для настройки параметров изучаемого набора данных используется YAML-файл. Дополнительные сведения см. [на странице IDEAR](https://github.com/Azure/Azure-TDSP-Utilities/tree/master/DataScienceUtilities/DataReport-Utils) в разделе служебных программ TDSP для обработки и анализа данных.
 
 
-## 2. <a name='ModelingUtility-2'></a> моделирование
+## <a name="2--modeling"></a>2. <a name='ModelingUtility-2'></a> моделирование
 
 Существуют многочисленные наборы средств и пакеты для обучения моделей на разных языках. Специалисты по обработке и анализу данных могут свободно использовать их на свой выбор, пока соблюдаются рекомендации по производительности в отношении точности и задержки для соответствующих коммерческих вариантов использования и рабочих сценариев.
 
@@ -74,11 +74,11 @@ ms.locfileid: "76722209"
 После создания нескольких моделей обычно требуется система для регистрации моделей и управления ими. Обычно требуется сочетание сценариев или интерфейсов API и серверной базы данных или системы управления версиями. Ниже приведено несколько инструментов, которые можно рассмотреть для выполнения этих задач управления:
 
 1. [Служба "Машинное обучение Azure" — служба управления моделями](../index.yml)
-2. [ModelDB из MIT](https://mitdbg.github.io/modeldb/) 
+2. [ModelDB из MIT](http://modeldb.csail.mit.edu:3000/projects) 
 3. [SQL Server как система управления моделями](https://blogs.technet.microsoft.com/dataplatforminsider/2016/10/17/sql-server-as-a-machine-learning-model-management-system/)
 4. [Microsoft Machine Learning Server](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
 
-## 3. <a name='Deployment-3'></a> развертывание
+## <a name="3--deployment"></a>3. <a name='Deployment-3'></a> развертывание
 
 Развертывание в рабочей среде позволяет использовать модель как важный элемент в работе организации. Прогнозы, полученные от развернутой модели можно использовать для принятия бизнес-решений.
 
@@ -106,7 +106,7 @@ ms.locfileid: "76722209"
 Если в рабочей среде используется несколько моделей, удобно выполнять [A/B-тестирование](https://en.wikipedia.org/wiki/A/B_testing), чтобы сравнить их эффективность. 
 
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В разделе [Ход выполнения проектов обработки и анализа данных](track-progress.md) показано, как специалист по обработке и анализу данных может отслеживать ход выполнения проекта обработки и анализа данных.
 

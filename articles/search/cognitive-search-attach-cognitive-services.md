@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/17/2019
-ms.openlocfilehash: 7ec18cab74d683e4547843f965d22026e7ba22aa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 254c912114e3f1c7a495f389bc6a6416cbde7e11
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75461138"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77472457"
 ---
 # <a name="attach-a-cognitive-services-resource-to-a-skillset-in-azure-cognitive-search"></a>Подключение Cognitive Services ресурса к набору навыков в Azure Когнитивный поиск 
 
@@ -37,7 +37,7 @@ ms.locfileid: "75461138"
 
 ## <a name="same-region-requirement"></a>Требования к одному региону
 
-Для этого необходимо, чтобы Azure Когнитивный поиск и Azure Cognitive Services существовали в одном регионе. В противном случае это сообщение будет получено во время выполнения: `"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
+Для этого необходимо, чтобы Azure Когнитивный поиск и Azure Cognitive Services существовали в одном регионе. В противном случае это сообщение будет получено во время выполнения:`"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
 
 Перемещение службы между регионами невозможно. При возникновении этой ошибки необходимо создать новый ресурс Cognitive Services в том же регионе, что и Когнитивный поиск Azure.
 
@@ -48,15 +48,15 @@ ms.locfileid: "75461138"
 
 Для завершения учебника по созданию искусственного интеллекта и краткого руководства можно использовать ограниченный бесплатный режим обработки.
 
-Бесплатные (ограниченные) ресурсы ограничены 20 документами в день на подписку.
+Для бесплатных (ограниченных) ресурсов ограничено 20 документов в день на индексатор. Чтобы сбросить счетчик, можно удалить и повторно создать индексатор.
 
 1. Откройте мастер импорта данных.
 
    ![Открытие мастера импорта данных](media/search-get-started-portal/import-data-cmd.png "Открытие мастера импорта данных")
 
-1. Выберите источник данных и продолжайте **добавлять обогащение искусственного интеллекта (необязательно)** . Пошаговое руководство по этому мастеру см. [в разделе Создание индекса в портал Azure](search-get-started-portal.md).
+1. Выберите источник данных и продолжайте **добавлять обогащение искусственного интеллекта (необязательно)**. Пошаговое руководство по этому мастеру см. [в разделе Создание индекса в портал Azure](search-get-started-portal.md).
 
-1. Разверните узел **Attach Cognitive Services** и выберите **Free (ограниченные дополнения)** :
+1. Разверните узел **Attach Cognitive Services** и выберите **Free (ограниченные дополнения)**:
 
    ![Развернутый раздел Cognitive Services присоединения](./media/cognitive-search-attach-cognitive-services/attach1.png "Развернутый раздел Cognitive Services присоединения")
 
@@ -68,11 +68,11 @@ ms.locfileid: "75461138"
 
 Плата наследуется только за навыки, которые вызывают API-интерфейсы Cognitive Services. Вам не взимается плата за [пользовательские навыки](cognitive-search-create-custom-skill-example.md)или навыки, такие как [слияние текста](cognitive-search-skill-textmerger.md), [разделитель текста](cognitive-search-skill-textsplit.md)и [форма](cognitive-search-skill-shaper.md), не основанная на API.
 
-1. Откройте мастер импорта данных, выберите источник данных и продолжайте **добавлять обогащение искусственного интеллекта (необязательно)** .
+1. Откройте мастер импорта данных, выберите источник данных и продолжайте **добавлять обогащение искусственного интеллекта (необязательно)**.
 
 1. Разверните узел **присоединить Cognitive Services** , а затем выберите **создать новый Cognitive Services ресурс**. Откроется новая вкладка, в которой можно будет создать ресурс:
 
-   ![Создание Cognitive Services ресурса](./media/cognitive-search-attach-cognitive-services/cog-services-create.png "Создание ресурса Cognitive Services")
+   ![Создание ресурса Cognitive Services](./media/cognitive-search-attach-cognitive-services/cog-services-create.png "Создание ресурса Cognitive Services")
 
 1. В списке **Расположение** выберите регион, в котором находится служба когнитивный Поиск Azure. Обязательно используйте этот регион для повышения производительности. Использование этого региона также аннулирует исходящие расходы на пропускную способность в регионах.
 
@@ -110,7 +110,7 @@ ms.locfileid: "75461138"
 
 При определении набора навыков программным способом добавьте раздел `cognitiveServices` к набору навыков. В этом разделе включите ключ ресурса Cognitive Services, который необходимо связать с набором навыков. Помните, что ресурс должен находиться в том же регионе, что и ресурс Azure Когнитивный поиск. Также включите `@odata.type` и присвойте ему значение `#Microsoft.Azure.Search.CognitiveServicesByKey`.
 
-Этот шаблон приведен в примере ниже. Обратите внимание на раздел `cognitiveServices` в конце определения.
+Этот шаблон приведен в примере ниже. Обратите `cognitiveServices` внимание на раздел в конце определения.
 
 ```http
 PUT https://[servicename].search.windows.net/skillsets/[skillset name]?api-version=2019-05-06
@@ -167,7 +167,7 @@ Content-Type: application/json
 
 Поместив все вместе, вы платите примерно $57,00, чтобы принять 1 000 PDF-документов этого типа с описанным набором навыков.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 + [Страница цен на Когнитивный поиск Azure](https://azure.microsoft.com/pricing/details/search/)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Создание набора навыков (REST)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)

@@ -4,14 +4,14 @@ description: Дополнительные сведения о предложен
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 10/11/2019
+ms.date: 04/10/2020
 ms.author: tisande
-ms.openlocfilehash: e41e81457421bfe27e3c0313fc06e39e6df4cdce
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 8a3cbbafc066747b62f79934f2cd12301aa1ba17
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819104"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81261607"
 ---
 # <a name="group-by-clause-in-azure-cosmos-db"></a>Предложение GROUP BY в Azure Cosmos DB
 
@@ -41,7 +41,7 @@ ms.locfileid: "73819104"
   
    Допускается любое скалярное выражение, за исключением скалярных вложенных запросов и скалярных статистических выражений. Каждое скалярное выражение должно содержать по крайней мере одну ссылку на свойство. Количество отдельных выражений или количество элементов в каждом выражении не ограничено.
 
-## <a name="remarks"></a>Примечания
+## <a name="remarks"></a>Remarks
   
   Если в запросе используется предложение GROUP BY, предложение SELECT может содержать только подмножество свойств и системных функций, входящих в предложение GROUP BY. Единственным исключением являются [статистические системные функции](sql-query-aggregates.md), которые могут присутствовать в предложении SELECT без включения в предложение GROUP BY. В предложение SELECT можно также включить литеральные значения.
 
@@ -52,6 +52,12 @@ ms.locfileid: "73819104"
 - Присвоение псевдонимов свойствам и присвоение псевдонимам системных функций (псевдонимы по-прежнему разрешены в предложении SELECT)
 - Вложенные запросы
 - Агрегатные системные функции (разрешены только в предложении SELECT)
+
+Запросы с агрегатной системной функцией и вложенным запросом `GROUP BY` с не поддерживаются. Например, следующий запрос не поддерживается.
+
+```sql
+SELECT COUNT(UniqueLastNames) FROM (SELECT AVG(f.age) FROM f GROUP BY f.lastName) AS UniqueLastNames
+```
 
 ## <a name="examples"></a>Примеры
 
@@ -156,7 +162,7 @@ FROM Food f
 GROUP BY ARRAY_CONTAINS(f.tags, {name: 'orange'}), f.version BETWEEN 0 AND 2
 ```
 
-Получаются такие результаты:
+Результаты:
 
 ```json
 [{
@@ -171,8 +177,8 @@ GROUP BY ARRAY_CONTAINS(f.tags, {name: 'orange'}), f.version BETWEEN 0 AND 2
 }]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Приступая к работе](sql-query-getting-started.md)
+- [Начало работы](sql-query-getting-started.md)
 - [Предложение SELECT](sql-query-select.md)
 - [Агрегатные функции](sql-query-aggregates.md)

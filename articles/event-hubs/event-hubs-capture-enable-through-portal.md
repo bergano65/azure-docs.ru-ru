@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: spelluru
 ms.openlocfilehash: 8a6d9456b00e5520e6f4fbb9ccb77b0260731ddd
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77187424"
 ---
 # <a name="enable-capturing-of-events-streaming-through-azure-event-hubs"></a>Включение сбора событий, передающихся потоком из Центров событий Azure
@@ -27,7 +27,7 @@ ms.locfileid: "77187424"
 
 Запись можно настроить при создании концентратора событий с помощью [портала Azure](https://portal.azure.com). Можно либо записать данные в контейнер [хранилища BLOB-объектов](https://azure.microsoft.com/services/storage/blobs/) Azure, либо в учетную запись [Azure Data Lake Storage Gen 1 или Gen 2](https://azure.microsoft.com/services/data-lake-store/) .
 
-Дополнительные сведения см. в разделе [Общие сведения о записи концентраторов событий][capture-overview].
+Подробнее см. в статье [Общие сведения о функции "Сбор" в Центрах событий Azure][capture-overview].
 
 ## <a name="capture-data-to-azure-storage"></a>Запись данных в службу хранилища Azure
 
@@ -104,11 +104,11 @@ ms.locfileid: "77187424"
 [3]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture3.png
 [4]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture4.png
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о записи концентраторов событий см. в [обзоре записи концентраторов событий][capture-overview].
+- Дополнительные сведения о функции "Сбор" в Центрах событий см. в [этой статье][capture-overview].
 - Функцию "Сбор" в Центрах событий можно также настроить с помощью шаблонов Azure Resource Manager. См. дополнительные сведения [о включении записи с помощью шаблона Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub-enable-capture.md).
 - [Узнайте, как создать подписку на Сетку событий Azure с пространством имен Центров событий в качестве источника](store-captured-data-data-warehouse.md)
-- [Начало работы с Azure Data Lake Store с помощью портала Azure](../data-lake-store/data-lake-store-get-started-portal.md)
+- [Приступая к работе с Azure Data Lake Store с помощью портал Azure](../data-lake-store/data-lake-store-get-started-portal.md)
 
 [capture-overview]: event-hubs-capture-overview.md

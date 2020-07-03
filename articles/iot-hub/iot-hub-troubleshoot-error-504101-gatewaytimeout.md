@@ -8,14 +8,15 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: b74a93e15d533bf9b15797e6371a25230f7a08f7
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.custom: amqp
+ms.openlocfilehash: 373acc30ed652a7f540e840dfad5eeeda65ca179
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76960676"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759555"
 ---
-# <a name="504101-gatewaytimeout"></a>504101 Гатевайтимеаут
+# <a name="504101-gatewaytimeout"></a>504101 GatewayTimeout
 
 В этой статье описываются причины и решения для ошибок **504101 гатевайтимеаут** .
 
@@ -31,7 +32,7 @@ ms.locfileid: "76960676"
 
 ### <a name="cause-2"></a>Причина 2
 
-При использовании более ранней версии пакета SDK для C# Azure IoT (< 1.19.0) связь AMQP между устройством и центром Интернета вещей может быть удалена без вмешательства пользователя из-за ошибки.
+При использовании более ранней версии пакета SDK для C# для Azure IoT (<1.19.0) связь AMQP между устройством и центром Интернета вещей может быть удалена без вмешательства пользователя из-за ошибки.
 
 ## <a name="solution"></a>Решение
 
@@ -41,4 +42,4 @@ ms.locfileid: "76960676"
 
 ### <a name="solution-2"></a>Решение 2
 
-Обновите пакет SDK для Azure IOT C# до последней версии.
+Обновите пакет SDK для C# для Azure IOT до последней версии.

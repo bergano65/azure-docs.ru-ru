@@ -1,21 +1,19 @@
 ---
 title: Управление затратами и использованием AWS в службе "Управление затратами Azure"
 description: Эта статья поможет вам понять, как использовать анализ затрат и бюджеты в "Управлении затратами" для управления затратами и использованием AWS.
-services: cost-management
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/26/2019
+ms.date: 02/12/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
-manager: ormaoz
+ms.reviewer: matrive
 ms.custom: ''
-ms.openlocfilehash: a7520d7b3bd46aa9151c68598574f9cbec84d6fc
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: fd4d4a16642e764276d49dd732a785be48197d01
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75988621"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77200033"
 ---
 # <a name="manage-aws-costs-and-usage-in-azure"></a>Управление затратами и использованием AWS в Azure
 

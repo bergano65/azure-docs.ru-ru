@@ -8,15 +8,15 @@ ms.assetid: b9af1792-0b7f-4f3e-827a-9426cdb33ba6
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: article
-ms.date: 11/26/2019
+ms.topic: how-to
+ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 140edb3162d4f76c741a5692faa19325581a3ba7
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 8c6d59889e572893877f2178cade57e07aa91413
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74704490"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80654791"
 ---
 # <a name="configure-email-notifications-for-issues-in-azure-active-directory-domain-services"></a>Настройка уведомлений по электронной почте для проблем в Azure Active Directory доменных служб
 
@@ -33,7 +33,7 @@ ms.locfileid: "74704490"
 ![Пример уведомления по электронной почте](./media/active-directory-domain-services-alerts/email-alert.png)
 
 > [!WARNING]
-> Прежде чем щелкать ссылки в сообщении, обязательно убедитесь, что электронная почта получена от проверенного отправителя Майкрософт. Уведомления по электронной почте всегда берутся из адреса `azure-noreply@microsoft.com`.
+> Прежде чем щелкать ссылки в сообщении, обязательно убедитесь, что электронная почта получена от проверенного отправителя Майкрософт. Уведомления по электронной почте всегда берутся `azure-noreply@microsoft.com` из адреса.
 
 ### <a name="why-would-i-receive-email-notifications"></a>Зачем мне получать уведомления по электронной почте?
 
@@ -58,7 +58,7 @@ AD DS Azure не отправляет сообщения электронной 
 Чтобы проверить существующие получатели уведомлений по электронной почте или добавить дополнительных получателей, выполните следующие действия.
 
 1. В портал Azure найдите и выберите **доменные службы Azure AD**.
-1. Выберите управляемый домен Azure AD DS, например *aadds.contoso.com*.
+1. Выберите управляемый домен Azure AD DS, например *aaddscontoso.com*.
 1. В левой части окна ресурсов Azure AD DS выберите **Параметры уведомлений**. Будут показаны существующие получатели уведомлений по электронной почте.
 1. Чтобы добавить получателя электронной почты, введите адрес электронной почты в таблице дополнительные получатели.
 1. По завершении нажмите кнопку **сохранить** в верхней части окна навигации.
@@ -78,7 +78,7 @@ AD DS Azure не отправляет сообщения электронной 
 
 ### <a name="i-dont-seem-to-be-receiving-email-notifications-even-though-i-provided-my-email-address-why"></a>Я не получаю уведомления по электронной почте, хотя мой адрес электронной почты был указан. Почему?
 
-Проверьте нежелательную почту или папку нежелательной почты в электронной почте на наличие уведомления и убедитесь, что отправитель `azure-noreply@microsoft.com`.
+Проверьте нежелательную почту или папку нежелательной почты в электронной почте для уведомления и убедитесь, что разрешен `azure-noreply@microsoft.com`отправитель.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

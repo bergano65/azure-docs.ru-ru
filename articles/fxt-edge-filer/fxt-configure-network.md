@@ -1,19 +1,19 @@
 ---
-title: Руководство. Настройка сети в кластере Azure FXT Edge Filer
+title: Руководство по Настройка сети в кластере Azure FXT Edge Filer
 description: Настройка параметров сети после создания кластера Azure FXT Edge Filer
 author: ekpgh
 ms.author: rohogue
 ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
-ms.openlocfilehash: a40ff50dcb0934cbf1ea5222675bd75948ac1d03
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 9b0154889544e0054e309cc5f43851b73b4396b4
+ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551069"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80754693"
 ---
-# <a name="tutorial-configure-the-clusters-network-settings"></a>Руководство. настройке параметров сети кластера
+# <a name="tutorial-configure-the-clusters-network-settings"></a>Руководство по настройке параметров сети кластера
 
 Прежде чем использовать созданный кластер Azure FXT Edge Filer, необходимо проверить и настроить несколько параметров сети для рабочего процесса. 
 
@@ -76,7 +76,7 @@ ms.locfileid: "75551069"
 
 Если необходимо отправить сертификаты в кластер, используйте страницу параметров **Cluster** > **Certificates** (Кластер > Сертификаты). Дополнительные сведения см. на странице [Cluster > Certificates](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_certificates.html) (Кластер > Сертификаты) в руководстве по настройке кластера.
 
-Для шифрования данных об управлении кластером используйте страницу параметров **Cluster** > **General Setup** (Кластер >Общая настройка), чтобы выбрать, какой сертификат использовать для SSL администрирования.
+Для шифрования данных об управлении кластером используйте страницу параметров **Кластер** > **Общая настройка**, чтобы выбрать, какой сертификат использовать для TLS администрирования.
 
 > [!Note] 
 > Ключи доступа облачной службы хранятся с помощью страницы конфигурации **Cloud Credentials** (Учетные данные облака). В предыдущем разделе [Add a core filer](fxt-add-storage.md#add-a-core-filer) (Добавление основного файлового хранилища) приведен пример. Дополнительные сведения см. в разделе [Cloud Credentials](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_cloud_credentials.html) (Учетные данные облака) в руководстве по настройке кластера. 

@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
 ms.openlocfilehash: a05cf87e660cc6c388ea2055bb174c47b99da4a3
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77117115"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79248922"
 ---
 # <a name="best-practices-for-autoscale"></a>Рекомендации по автомасштабированию
 Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/), [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/) и [службами управления API](https://docs.microsoft.com/azure/api-management/api-management-key-concepts).
@@ -48,8 +48,8 @@ ms.locfileid: "77117115"
 
 Мы *не рекомендуем* параметры автомасштабирования, такие как приведенные ниже примеры, с одинаковыми или аналогичными пороговыми значениями для out и in.
 
-* Увеличить число экземпляров на 1, если число потоков > = 600
-* Уменьшить количество экземпляров на 1, если число потоков < = 600
+* Увеличить число экземпляров на 1, если число потоков >= 600
+* Уменьшить количество экземпляров на 1, если число потоков <= 600
 
 Рассмотрим пример того, что может привести к противоречивому поведению. Рассмотрим следующую последовательность.
 
@@ -148,7 +148,7 @@ ms.locfileid: "77117115"
 
 Помимо оповещений журнала действий, можно настроить уведомления по электронной почте или через веб-перехватчики, чтобы узнавать об успешных действиях масштабирования посредством вкладки уведомлений в настройках автомасштабирования.
 
-## <a name="next-steps"></a>Next Steps
-- [Создайте оповещение журнала действий, чтобы отслеживать все операции системы автомасштабирования в своей подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert).
+## <a name="next-steps"></a>Дальнейшие шаги
+- [Создайте оповещение журнала действий, чтобы отслеживать все операции модуля автомасштабирования в подписке.](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-alert)
 - [Создайте оповещение журнала действий, чтобы отслеживать все ошибки автомасштабирования в своей подписке](https://github.com/Azure/azure-quickstart-templates/tree/master/monitor-autoscale-failed-alert).
 

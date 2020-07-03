@@ -15,10 +15,10 @@ ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 51375f057543c86fe021822eb9722ffd1be16804
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74026859"
 ---
 # <a name="using-a-group-to-manage-access-to-saas-applications"></a>Использование группы для управления доступом к приложениям SaaS
@@ -30,7 +30,7 @@ ms.locfileid: "74026859"
 > Назначение на основе групп поддерживается только для групп безопасности.
 > Сейчас членство во вложенных группах не поддерживается в рамках назначения приложений на основе групп.
 
-## <a name="to-assign-access-for-a-user-or-group-to-a-saas-application"></a>Назначение доступа для пользователя или группы приложению SaaS
+## <a name="to-assign-access-for-a-user-or-group-to-a-saas-application"></a>Назначение пользователю или группе доступа к приложению SaaS
 
 1. В [центре администрирования Azure AD](https://aad.portal.azure.com) выберите **Корпоративные приложения**.
 2. Выберите приложение, которое добавили из коллекции приложений, чтобы открыть его.
@@ -39,11 +39,11 @@ ms.locfileid: "74026859"
 6. Выберите любое количество групп или пользователей, затем щелкните или коснитесь **Выбрать**, чтобы добавить их в список **Добавление назначения**. На этом этапе можно также назначить роль пользователю.
 7. Щелкните **Назначить**, чтобы назначить пользователей или группы для выбранного корпоративного приложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В следующих статьях содержатся дополнительные сведения об Azure Active Directory.
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
 * [Управление приложениями в Azure Active Directory](../manage-apps/what-is-application-management.md)
-* [Azure Active Directory cmdlets for configuring group settings](groups-settings-cmdlets.md)
-* [Что такое Microsoft Azure Active Directory](../fundamentals/active-directory-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)
+* [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md)
+* [Что такое Azure Active Directory](../fundamentals/active-directory-whatis.md)
+* [Интеграция локальных удостоверений с Azure Active Directory.](../hybrid/whatis-hybrid-identity.md)

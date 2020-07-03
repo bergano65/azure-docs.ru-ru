@@ -14,10 +14,10 @@ ms.author: sagonzal
 ms.reviewer: navyasri.canumalla
 ms.custom: aaddev
 ms.openlocfilehash: 2b138678b186cc41b76254658ad604c2da2d76c1
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76696203"
 ---
 # <a name="get-and-remove-accounts-from-the-token-cache-using-msal-for-java"></a>Получение и удаление учетных записей из кэша маркеров с помощью MSAL для Java
@@ -26,7 +26,7 @@ MSAL для Java предоставляет кэш маркеров в памя�
 
 ## <a name="see-which-accounts-are-in-the-cache"></a>Узнайте, какие учетные записи находятся в кэше
 
-Чтобы проверить, какие учетные записи находятся в кэше, вызовите `PublicClientApplication.getAccounts()`, как показано в следующем примере:
+Вы можете проверить, какие учетные записи находятся в кэше `PublicClientApplication.getAccounts()` , вызвав, как показано в следующем примере:
 
 ```java
 PublicClientApplication pca = new PublicClientApplication.Builder(
@@ -39,7 +39,7 @@ Set<IAccount> accounts = pca.getAccounts().join();
 
 ## <a name="remove-accounts-from-the-cache"></a>Удаление учетных записей из кэша
 
-Чтобы удалить учетную запись из кэша, найдите учетную запись, которую необходимо удалить, а затем вызовите `PublicClientApplicatoin.removeAccount()`, как показано в следующем примере:
+Чтобы удалить учетную запись из кэша, найдите учетную запись, которую необходимо удалить, а затем `PublicClientApplicatoin.removeAccount()` вызовите ее, как показано в следующем примере:
 
 ```java
 Set<IAccount> accounts = pca.getAccounts().join();
@@ -51,6 +51,6 @@ IAccount accountToBeRemoved = accounts.stream().filter(
 pca.removeAccount(accountToBeRemoved).join();
 ```
 
-## <a name="learn-more"></a>Подробнее…
+## <a name="learn-more"></a>Дополнительные сведения
 
 Если вы используете MSAL для Java, ознакомьтесь с [сериализацией кэша пользовательской лексемы в MSAL для Java](msal-java-token-cache-serialization.md).

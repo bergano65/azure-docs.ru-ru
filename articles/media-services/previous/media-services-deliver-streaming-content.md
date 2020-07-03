@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: b1d0c070a9196eaa9a2706a607baa9a2926e2db4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 615a6afb0f7a3e133603db10e7c79add3322070c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051747"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80476709"
 ---
 # <a name="publish-media-services-content-using-net"></a>Публикация содержимого Служб мультимедиа с помощью .NET  
 > [!div class="op_single_selector"]
@@ -108,7 +108,7 @@ ms.locfileid: "67051747"
 
 
 > [!NOTE]
-> Также по SSL-подключению можно выполнять потоковую передачу содержимого. Для этого убедитесь, что URL-адреса потоковой передачи начинаются с HTTPS. Сейчас AMS не поддерживает SSL для личных доменов.
+> Вы также можете выполнять потоковую передачу содержимого через TLS-подключение. Для этого убедитесь, что URL-адреса потоковой передачи начинаются с HTTPS. В настоящее время AMS не поддерживает TLS с пользовательскими доменами.
 > 
 > 
 
@@ -175,10 +175,10 @@ ms.locfileid: "67051747"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Скачивание файлов](media-services-deliver-asset-download.md)
-* [Настройка политики доставки для ресурса-контейнера](media-services-dotnet-configure-asset-delivery-policy.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Скачивание ресурсов](media-services-deliver-asset-download.md)
+* [Настройка политики доставки ресурсов](media-services-dotnet-configure-asset-delivery-policy.md)
 

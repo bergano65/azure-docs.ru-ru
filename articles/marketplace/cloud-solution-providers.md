@@ -1,19 +1,18 @@
 ---
 title: Поставщики облачных решений | Azure Marketplace
 description: Теперь издатели могут продавать свои предложения через канал партнера поставщика решений (CSP) Microsoft Cloud.
-services: Azure, Marketplace, Compute, Storage, Networking, Partner Center
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 11/12/2019
-ms.author: v-chjen
-ms.openlocfilehash: 546702af671cfe9506a4fc0448f40b7b8353960c
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.topic: conceptual
+ms.date: 04/16/2020
+ms.author: dsindona
+ms.openlocfilehash: b962610c585df288a9cb3297ed8e09c8abc5ac0a
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74038692"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82160653"
 ---
 # <a name="cloud-solution-providers"></a>Поставщики облачных решений
 
@@ -26,7 +25,7 @@ ms.locfileid: "74038692"
 Следующие предложения могут быть включены для продажи партнерами в программе CSP:
 
 - Предложения по языку "программное обеспечение как услуга" (SaaS)
-- Виртуальные машины (ВМ)
+- Виртуальные машины
 - Шаблоны решений
 - Управляемые приложения
 
@@ -106,7 +105,7 @@ ms.locfileid: "74038692"
 
 Если партнер в программе CSP не продавал ваш продукт клиентам и вы хотите удалить CSP после публикации предложения, выполните следующие действия.
 
-1. Перейдите на [страницу Поддержка](https://aka.ms/marketplacepublishersupport). Первые несколько раскрывающихся меню заполняются автоматически.
+1. Перейдите на [страницу Поддержка](https://partner.microsoft.com/support/v2/?stage=1). Первые несколько раскрывающихся меню заполняются автоматически.
 
    > [!NOTE]
    > Не изменяйте предварительно заполненные элементы раскрывающегося меню.
@@ -128,7 +127,7 @@ ms.locfileid: "74038692"
 
 Если ваше предложение сейчас имеет **значение 1: любой партнер в программе CSP** и вы хотите переходить к любому из двух других вариантов, выполните следующие инструкции, чтобы создать запрос:
 
-1. Перейдите на [страницу Поддержка](https://aka.ms/marketplacepublishersupport). Первые несколько раскрывающихся меню заполняются автоматически.
+1. Перейдите на [страницу Поддержка](https://partner.microsoft.com/support/v2/?stage=1). Первые несколько раскрывающихся меню заполняются автоматически.
 
    > [!NOTE]
    > Не изменяйте предварительно заполненные элементы раскрывающегося меню.
@@ -146,7 +145,7 @@ ms.locfileid: "74038692"
 
 Если в настоящее время выбран **вариант 2: конкретные партнеры в выбранной программе CSP** и вы хотите выбрать **вариант один: любой партнер в программе CSP**, выполните следующие инструкции, чтобы создать запрос:
 
-1. Перейдите на [страницу Поддержка](https://aka.ms/marketplacepublishersupport). Первые несколько раскрывающихся меню заполняются автоматически.
+1. Перейдите на [страницу Поддержка](https://partner.microsoft.com/support/v2/?stage=1). Первые несколько раскрывающихся меню заполняются автоматически.
 
    > [!NOTE]
    > Не изменяйте предварительно заполненные элементы раскрывающегося меню.
@@ -159,7 +158,7 @@ ms.locfileid: "74038692"
 
  Если в настоящее время выбран **вариант 2: отдельные партнеры в выбранной программе CSP** и вы хотите переходить к **варианту 3: нет партнеров в программе CSP**, вы сможете использовать этот вариант только в том случае, если партнеры в программе CSP, которые вы ранее разрешили, не перепродажу ваше предложение клиентам. Чтобы создать запрос, выполните следующие инструкции:
 
-1. Перейдите на [страницу Поддержка](https://aka.ms/marketplacepublishersupport). Первые несколько раскрывающихся меню заполняются автоматически.
+1. Перейдите на [страницу Поддержка](https://partner.microsoft.com/support/v2/?stage=1). Первые несколько раскрывающихся меню заполняются автоматически.
 
    > [!NOTE]
    > Не изменяйте предварительно заполненные элементы раскрывающегося меню.
@@ -190,10 +189,10 @@ ms.locfileid: "74038692"
 
 ![Информационные материалы по Портал Cloud Partner CSP](media/marketplace-publishers-guide/cpp-csp-information.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 Посетите страницу с [руководством по издателю Azure Marketplace и AppSource](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide).
 
 Дополнительные сведения о службах Marketplace GTM Services см. в разделе [услуги переходят на рынок](https://partner.microsoft.com/reach-customers/gtm).
 
-Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) или [портал Cloud Partner](https://cloudpartner.azure.com/) , чтобы создать и настроить предложение.
+Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать и настроить предложение.

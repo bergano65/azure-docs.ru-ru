@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/20/2018
 ms.author: normesta
 ms.reviewer: fryu
-ms.openlocfilehash: 3a2381302a378e7b2635b84c32a87e844e4605a7
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 8554a78112d197ef8174ac9d18147d301745165e
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68844878"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83652164"
 ---
 # <a name="monitor-and-troubleshoot-a-cloud-storage-application"></a>Мониторинг и устранение неполадок приложения облачного хранилища
 
@@ -22,7 +22,7 @@ ms.locfileid: "68844878"
 В четвертой части цикла вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * включение ведения журнала и метрик;
+> * Включение ведения журнала и метрик
 > * включение оповещений для ошибок авторизации;
 > * выполнение тестирования трафика с помощью неверных маркеров SAS;
 > * скачивание и анализ журналов.
@@ -87,7 +87,7 @@ curl https://<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/<CONTAINER_NAME>/<INCO
 
 ### <a name="download-microsoft-message-analyzer"></a>Скачивание Microsoft Message Analyzer
 
-Скачайте [Microsoft Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) и установите приложение.
+Скачайте [Microsoft Message Analyzer](https://docs.microsoft.com/message-analyzer/installing-and-upgrading-message-analyzer) и установите приложение.
 
 Запустите приложение и выберите **Файл** > **Открыть** > **From Other File Sources** (Из других источников файлов).
 
@@ -107,7 +107,7 @@ curl https://<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/<CONTAINER_NAME>/<INCO
 
 [Обозреватель службы хранилища](https://azure.microsoft.com/features/storage-explorer/) — это еще один инструмент, который можно использовать для взаимодействия с учетными записями хранения, в том числе с контейнером **$logs** и журналами, которые в нем содержатся.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В четвертой и последней части цикла вы узнали, как выполнять мониторинг и устранять неполадки учетной записи хранения, а также как выполнять следующие задачи:
 

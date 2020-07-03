@@ -4,18 +4,17 @@ summary: Пакетная служба Azure обеспечивает эффек
 metadata:
   title: Документация по пакетной службе
   description: Пакетная служба Azure обеспечивает эффективное выполнения крупномасштабных приложений в облаке. Спланируйте выполнение ресурсоемких задач и динамически настраивайте ресурсы для своего решения без управления инфраструктурой.
-  services: batch
   ms.service: batch
   ms.topic: landing-page
-  author: LauraBrenner
-  ms.author: labrenne
+  author: JnHs
+  ms.author: jenhayes
   ms.date: 09/23/2019
-  ms.openlocfilehash: d44ef419ec93e890ac1f8696d3ee45aadd3cd26f
-  ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+  ms.openlocfilehash: b07770c030c7265fb0dc95aa07e02cccaad41729
+  ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/05/2020
-  ms.locfileid: "77026070"
+  ms.lasthandoff: 05/22/2020
+  ms.locfileid: "83779011"
 landingContent:
 - title: Сведения о пакетной службе Azure
   linkLists:
@@ -41,8 +40,8 @@ landingContent:
       url: quick-run-python.md
   - linkListType: concept
     links:
-    - text: Возможности разработчика
-      url: batch-api-basics.md
+    - text: Общие сведения о рабочих процессах и функциях для разработчиков
+      url: batch-service-workflow-features.md
 - title: Пошаговые руководства
   linkLists:
   - linkListType: tutorial

@@ -5,7 +5,7 @@
       href: ../../media-services/video-indexer/video-indexer-overview.md
     - name: Основные понятия
       href: ../../media-services/video-indexer/video-indexer-concepts.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Начало работы
@@ -24,7 +24,7 @@
       href: ../../media-services/video-indexer/upload-index-videos.md
     - name: Анализ выходных данных Индексатора видео
       href: ../../media-services/video-indexer/video-indexer-output-json-v2.md
-    - name: Поиск конкретных кадров в видео
+    - name: Поиск конкретных кадров на видео
       href: ../../media-services/video-indexer/video-indexer-search.md
     - name: Просмотр и редактирование аналитических сведений Индексатора видео
       href: ../../media-services/video-indexer/video-indexer-view-edit.md
@@ -32,9 +32,9 @@
       href: ../../media-services/video-indexer/video-indexer-create-new.md
     - name: Внедрение мини-приложений в приложение
       href: ../../media-services/video-indexer/video-indexer-embed-widgets.md
-- name: Справочные материалы
+- name: Справочник
   items:
-    - name: API индексатора видео
+    - name: API Индексатора видео
       href: 'https://api-portal.videoindexer.ai/'
 - name: Ресурсы
   items:
@@ -42,7 +42,7 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/video-indexer/'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/598144-video-indexer'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'

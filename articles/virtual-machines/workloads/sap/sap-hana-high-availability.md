@@ -1,23 +1,23 @@
 ---
-title: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server | Документация Майкрософт
+title: Высокий уровень доступности SAP HANA на виртуальных машинах Azure в SLES | Документация Майкрософт
 description: Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 services: virtual-machines-linux
 documentationcenter: ''
-author: MSSedusch
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 11/06/2019
-ms.author: sedusch
-ms.openlocfilehash: ffa2f937a14aa14750480d1c45498fb4c49fcc30
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.date: 05/11/2020
+ms.author: radeltch
+ms.openlocfilehash: 501d49feef877addd2f3e5364a06caf1d273ca83
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73721500"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196871"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Обеспечение высокого уровня доступности SAP HANA на виртуальных машинах Azure в SUSE Linux Enterprise Server
 
@@ -25,17 +25,17 @@ ms.locfileid: "73721500"
 [deployment-guide]:deployment-guide.md
 [planning-guide]:planning-guide.md
 
-[2205917]: https://launchpad.support.sap.com/#/notes/2205917
-[1944799]: https://launchpad.support.sap.com/#/notes/1944799
-[1928533]: https://launchpad.support.sap.com/#/notes/1928533
-[2015553]: https://launchpad.support.sap.com/#/notes/2015553
-[2178632]: https://launchpad.support.sap.com/#/notes/2178632
-[2191498]: https://launchpad.support.sap.com/#/notes/2191498
-[2243692]: https://launchpad.support.sap.com/#/notes/2243692
-[1984787]: https://launchpad.support.sap.com/#/notes/1984787
-[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[2205917]:https://launchpad.support.sap.com/#/notes/2205917
+[1944799]:https://launchpad.support.sap.com/#/notes/1944799
+[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[2015553]:https://launchpad.support.sap.com/#/notes/2015553
+[2178632]:https://launchpad.support.sap.com/#/notes/2178632
+[2191498]:https://launchpad.support.sap.com/#/notes/2191498
+[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[1984787]:https://launchpad.support.sap.com/#/notes/1984787
+[1999351]:https://launchpad.support.sap.com/#/notes/1999351
 [2388694]:https://launchpad.support.sap.com/#/notes/2388694
-[401162]: https://launchpad.support.sap.com/#/notes/401162
+[401162]:https://launchpad.support.sap.com/#/notes/401162
 
 [hana-ha-guide-replication]:sap-hana-high-availability.md#14c19f65-b5aa-4856-9594-b81c7e4df73d
 [hana-ha-guide-shared-storage]:sap-hana-high-availability.md#498de331-fa04-490b-997c-b078de457c9d
@@ -60,8 +60,8 @@ ms.locfileid: "73721500"
   * сведения о поддерживаемом программном обеспечении SAP и сочетаниях операционных систем и баз данных;
   * сведения о требуемой версии ядра SAP для Windows и Linux в Microsoft Azure.
 * примечание к SAP № [2015553], в котором описываются предварительные требования к SAP при развертывании программного обеспечения SAP в Azure;
-* примечание к SAP № [2205917], которое содержит рекомендуемые параметры ОС для SUSE Linux Enterprise Server for SAP Applications;
-* примечание к SAP № [1944799], которое содержит рекомендации по SAP HANA для SUSE Linux Enterprise Server for SAP Applications;
+* В примечании SAP [2205917] Рекомендуемые параметры ос для SuSE Linux Enterprise Server для приложений SAP.
+* В примечании SAP [1944799] приводятся SAP HANA рекомендации по SUSE Linux Enterprise Server для приложений SAP.
 * примечание к SAP № [2178632], которое содержит подробные сведения обо всех доступных метриках мониторинга для SAP в Azure;
 * примечание к SAP [2191498], содержащее сведения о необходимой версии агента SAP Host Agent для Linux в Azure;
 * примечание к SAP [2243692], содержащее сведения о лицензировании SAP в Linux в Azure;
@@ -70,10 +70,10 @@ ms.locfileid: "73721500"
 * Примечание к SAP [401162] содержит сведения о том, как избежать ошибки "адрес уже используется" при настройке репликации системы HANA.
 * [вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes) со всеми необходимыми примечаниями к SAP для Linux;
 * [Платформы IaaS, сертифицированные для SAP HANA](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure)
-* Инструкции по [планированию и внедрению SAP в Linux на виртуальных машинах Azure][planning-guide] .
-* [Развертывание виртуальных машин Azure для SAP в Linux][deployment-guide] (Эта статья).
-* Инструкции по [развертыванию СУБД для SAP в Linux на виртуальных машинах Azure][dbms-guide] .
-* [Рекомендации по SUSE Linux Enterprise Server для приложений SAP 12 SP3][sles-for-sap-bp]
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide];
+* статья [Развертывание программного обеспечения SAP на виртуальных машинах Linux в Azure][deployment-guide];
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide];
+* [рекомендации по SUSE Linux Enterprise Server for SAP Applications версии 12 с пакетом обновления 3 (SP3)][sles-for-sap-bp]:
   * настройка инфраструктуры SAP HANA SR, оптимизированной для высокой производительности (SLES for SAP Applications версии 12 с пакетом обновления 1 (SP1)). Это руководство содержит все сведения, необходимые для настройки системной репликации SAP HANA в локальной среде для разработки. Используйте это руководство как основу.
   * настройка инфраструктуры SAP HANA SR, с оптимизированной стоимостью (SLES for SAP Applications версии 12 с пакетом обновления 1 (SP1)).
 
@@ -100,19 +100,19 @@ ms.locfileid: "73721500"
 Все необходимые ресурсы можно развернуть с помощью шаблонов быстрого запуска с сайта GitHub. Шаблон развертывает виртуальные машины, подсистему балансировки нагрузки, группу доступности и т. д.
 Чтобы развернуть шаблон, сделайте следующее.
 
-1. Откройте [шаблон базы данных][template-multisid-db] или [согласованный шаблон][template-converged] на портал Azure. 
-    Шаблон базы данных создает правила балансировки нагрузки только для базы данных. Конвергированный шаблон также создает правила балансировки нагрузки для ASCS/SCS и экземпляра ERS (только Linux). Если вы планируете установить систему на основе SAP NetWeaver и хотите установить экземпляр ASCS/SCS на тех же компьютерах, используйте [согласованный шаблон][template-converged].
+1. Откройте [шаблон базы данных][template-multisid-db] или [конвергированный шаблон][template-converged] на портале Azure. 
+    Шаблон базы данных создает правила балансировки нагрузки только для базы данных. Конвергированный шаблон также создает правила балансировки нагрузки для ASCS/SCS и экземпляра ERS (только Linux). Если вы планируете установить систему на основе SAP NetWeaver и экземпляр ASCS/SCS на одних и тех же компьютерах, используйте [конвергированный шаблон][template-converged].
 
 1. Задайте следующие параметры:
     - **Sap System Id** (Идентификатор системы SAP). Введите идентификатор системы SAP, которую требуется установить. Идентификатор будет использоваться в качестве префикса для развертываемых ресурсов.
     - **Тип стека**: (этот параметр применяется, только если используется Объединенный шаблон.) Выберите тип стека SAP NetWeaver.
-    - **Os Type** (Тип ОС). Выберите один из дистрибутивов Linux. В этом примере используется **SLES 12**.
+    - **Os Type** (Тип ОС). Выберите один из дистрибутивов Linux. В этом примере выберите **SLES 12**.
     - **Db Type** (Тип базы данных). Выберите **HANA**.
     - **Sap System Size** (Размер системы SAP). Введите число систем SAP, которое должна предоставлять новая система. Если вы не знаете, сколько систем SAP потребуется, обратитесь к партнеру по технологиям или системному интегратору SAP.
     - **System Availability** (Доступность системы). Выберите значение **HA**.
     - **Имя пользователя и пароль администратора**. создается новый пользователь, который может использоваться для входа на компьютер.
     - **New Or Existing Subnet** (Новая или существующая подсеть). Определяет, следует ли создать виртуальную сеть и подсеть или использовать имеющуюся подсеть. Если у вас уже есть виртуальная сеть, подключенная к локальной сети, выберите вариант **Existing** (Существующая).
-    - **Идентификатор подсети**.Чтобы развернуть виртуальную машину в имеющуюся виртуальную сеть с определенной подсетью, необходимо указать идентификатор этой определенной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>** .
+    - **Идентификатор подсети**. Если вы хотите развернуть виртуальную машину в существующей виртуальной сети с определенной подсетью, присвойте ей имя ID этой конкретной подсети. Идентификатор обычно имеет формат **/subscriptions/\<идентификатор_подписки>/resourceGroups/\<имя_группы_ресурсов>/providers/Microsoft.Network/virtualNetworks/\<имя_виртуальной_сети>/subnets/\<имя_подсети>**.
 
 ### <a name="manual-deployment"></a>Развертывание вручную
 
@@ -137,16 +137,16 @@ ms.locfileid: "73721500"
    1. Сначала создайте пула IP-адресов для интерфейсной части.
    
       1. Откройте подсистему балансировки нагрузки, выберите **пул интерфейсных IP-адресов** и щелкните **Добавить**.
-      1. Введите имя нового пула интерфейсных IP-адресов (например, **hana-frontend**).
-      1. Для параметра **Назначение** выберите значение **Статическое** и введите IP-адрес (например, **10.0.0.13**).
+      1. Введите имя нового пула IP-адресов внешнего интерфейса (например, **Hana-** Front).
+      1. Задайте для **назначения** значение **static** и введите IP-адрес (например, **10.0.0.13**).
       1. Нажмите кнопку **ОК**.
       1. Когда пул интерфейсных IP-адресов будет создан, запишите его IP-адрес.
    
    1. Теперь создайте серверный пул.
    
       1. Откройте подсистему балансировки нагрузки, выберите **серверные пулы** и щелкните **Добавить**.
-      1. Введите имя нового серверного пула (например, **hana-backend**).
-      1. Щелкните **Виртуальная сеть**.
+      1. Введите имя нового пула серверной части (например, **Hana-Серверная**часть).
+      1. Выберите **Виртуальная сеть**.
       1. Щелкните **Добавить виртуальную машину**.
       1. Выберите * * Виртуальная машина * *.
       1. Выберите виртуальные машины кластера SAP HANA и их IP-адреса.
@@ -155,7 +155,7 @@ ms.locfileid: "73721500"
    1. Создайте зонд работоспособности.
    
       1. Откройте подсистему балансировки нагрузки, выберите **Зонды работоспособности** и щелкните **Добавить**.
-      1. Введите имя нового зонда работоспособности (например, **hana-hp**).
+      1. Введите имя новой проверки работоспособности (например, **Hana-HP**).
       1. Выберите протокол **TCP** и порт 625**03**. Сохраните значение "5" для параметра **Интервал** и значение "2" для параметра **Порог состояния неработоспособности**.
       1. Нажмите кнопку **ОК**.
    
@@ -166,7 +166,7 @@ ms.locfileid: "73721500"
       1. Выберите интерфейсный IP-адрес, внутренний пул и пробы работоспособности, созданные ранее (например, **Hana-** Front, **Hana-сервер** и **Hana-HP**).
       1. Выберите **порты высокой доступности**.
       1. Увеличьте **время ожидания** до 30 минут.
-      1. Не забудьте **включить плавающий IP-адрес**.
+      1. Обязательно **включите плавающий IP-адрес**.
       1. Нажмите кнопку **ОК**.
 
    > [!Note]
@@ -176,15 +176,15 @@ ms.locfileid: "73721500"
    1. Сначала создайте пула IP-адресов для интерфейсной части.
    
       1. Откройте подсистему балансировки нагрузки, выберите **пул интерфейсных IP-адресов** и щелкните **Добавить**.
-      1. Введите имя нового пула интерфейсных IP-адресов (например, **hana-frontend**).
-      1. Для параметра **Назначение** выберите значение **Статическое** и введите IP-адрес (например, **10.0.0.13**).
+      1. Введите имя нового пула IP-адресов внешнего интерфейса (например, **Hana-** Front).
+      1. Задайте для **назначения** значение **static** и введите IP-адрес (например, **10.0.0.13**).
       1. Нажмите кнопку **ОК**.
       1. Когда пул интерфейсных IP-адресов будет создан, запишите его IP-адрес.
    
    1. Теперь создайте серверный пул.
    
       1. Откройте подсистему балансировки нагрузки, выберите **серверные пулы** и щелкните **Добавить**.
-      1. Введите имя нового серверного пула (например, **hana-backend**).
+      1. Введите имя нового пула серверной части (например, **Hana-Серверная**часть).
       1. Щелкните **Добавить виртуальную машину**.
       1. Выберите группу доступности, созданную на шаге 3.
       1. Выберите виртуальные машины кластера SAP HANA.
@@ -193,44 +193,44 @@ ms.locfileid: "73721500"
    1. Создайте зонд работоспособности.
    
       1. Откройте подсистему балансировки нагрузки, выберите **Зонды работоспособности** и щелкните **Добавить**.
-      1. Введите имя нового зонда работоспособности (например, **hana-hp**).
+      1. Введите имя новой проверки работоспособности (например, **Hana-HP**).
       1. Выберите протокол **TCP** и порт 625**03**. Сохраните значение "5" для параметра **Интервал** и значение "2" для параметра **Порог состояния неработоспособности**.
       1. Нажмите кнопку **ОК**.
    
    1. Если используется SAP HANA 1.0, создайте правила балансировки нагрузки.
    
       1. Откройте подсистему балансировки нагрузки, выберите **Правила балансировки нагрузки** щелкните **Добавить**.
-      1. Введите имя нового правила балансировки нагрузки (например, hana-lb-3**03**15).
+      1. Введите имя нового правила балансировщика нагрузки (например, Hana-фунтов-3**03**15).
       1. Выберите интерфейсный пул IP-адресов, серверный пул и зонд работоспособности, который вы создали ранее (например, **hana-frontend**).
       1. Для параметра **Протокол** сохраните значение **TCP** и введите порт 3**03**15.
       1. Увеличьте **время ожидания** до 30 минут.
-      1. Не забудьте **включить плавающий IP-адрес**.
+      1. Обязательно **включите плавающий IP-адрес**.
       1. Нажмите кнопку **ОК**.
       1. Повторите эти шаги для порта 3**03**17.
    
    1. Если используется SAP HANA 2.0, создайте правила балансировки нагрузки для системной базы данных.
    
       1. Откройте подсистему балансировки нагрузки, выберите **Правила балансировки нагрузки** щелкните **Добавить**.
-      1. Введите имя нового правила балансировки нагрузки (например, hana-lb-3**03**13).
+      1. Введите имя нового правила балансировщика нагрузки (например, Hana-фунтов-3**03**13).
       1. Выберите интерфейсный пул IP-адресов, серверный пул и зонд работоспособности, который вы создали ранее (например, **hana-frontend**).
       1. Для параметра **Протокол** сохраните значение **TCP** и введите порт 3**03**13.
       1. Увеличьте **время ожидания** до 30 минут.
-      1. Не забудьте **включить плавающий IP-адрес**.
+      1. Обязательно **включите плавающий IP-адрес**.
       1. Нажмите кнопку **ОК**.
       1. Повторите эти шаги для порта 3**03**14.
    
    1. Если используется SAP HANA 2.0, создайте правила балансировки нагрузки для базы данных клиента.
    
       1. Откройте подсистему балансировки нагрузки, выберите **Правила балансировки нагрузки** щелкните **Добавить**.
-      1. Введите имя нового правила балансировки нагрузки (например, hana-lb-3**03**40).
-      1. Выберите пул внешних IP-адресов, внутренний пул и зонд работоспособности, созданные ранее (например, **hana-frontend**).
+      1. Введите имя нового правила балансировщика нагрузки (например, Hana-фунтов-3**03**40).
+      1. Выберите внешний IP-адрес, внутренний пул и проба работоспособности, созданные ранее (например, **Hana-внешний интерфейс**).
       1. Для параметра **Протокол** сохраните значение **TCP** и введите порт 3**03**40.
       1. Увеличьте **время ожидания** до 30 минут.
-      1. Не забудьте **включить плавающий IP-адрес**.
+      1. Обязательно **включите плавающий IP-адрес**.
       1. Нажмите кнопку **ОК**.
       1. Повторите эти шаги для портов 3**03**41 и 3**03**42.
 
-   Дополнительные сведения о портах, требуемых для SAP HANA, см. в разделе [подключения к базам данных клиента](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) в руководству по [базам данных клиента SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) или в статье о [SAP 2388694][2388694].
+   Дополнительные сведения о портах для SAP HANA см. в главе о [подключениях к базам данных клиентов](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/7a9343c9f2a2436faa3cfdb5ca00c052.html) руководства по [базам данных клиентов SAP HANA](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6) или в [примечании к SAP № 2388694][2388694].
 
 > [!IMPORTANT]
 > Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение отметок времени TCP приведет к сбою пробы работоспособности. Установите параметр **net. IPv4. tcp_timestamps** в значение **0**. Дополнительные сведения см. в разделе [Load Balancer проверки работоспособности](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
@@ -277,16 +277,20 @@ ms.locfileid: "73721500"
    sudo vgcreate vg_hana_shared_<b>HN1</b> /dev/disk/azure/scsi1/lun3
    </code></pre>
 
-   Создайте логические тома. Линейный том создается при использовании `lvcreate` без параметра `-i`. Чтобы улучшить производительность операций ввода-вывода, создайте чередующийся том. Значение аргумента `-i` обозначает количество базовых физических томов. В этом документе для тома данных используется 2 физических тома, поэтому аргумент `-i` имеет значение **2**. Журнальный том использует один физический том, поэтому параметр `-i` не используется явно. Параметр `-i`, значение которого соответствует числу базовых физических томов, необходимо указывать для всех томов данных, журналов или общих томов, для которых используется более одного физического тома.
+   Создайте логические тома. Линейный том создается при использовании `lvcreate` без параметра `-i`. Мы рекомендуем создать чередующийся том для повышения производительности ввода-вывода и согласовать размеры stripe со значениями, задокументированными в [SAP HANA конфигурациях хранилища виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage). `-i`Аргумент должен быть числом базовых физических томов, а `-I` аргумент — размером чередования. В этом документе для тома данных используется 2 физических тома, поэтому аргумент `-i` имеет значение **2**. Размер чередования для тома данных — **256KiB**. Для тома журнала используется один физический том, поэтому `-i` `-I` для команд журнала не используются никакие переключатели или явно.  
 
-   <pre><code>sudo lvcreate <b>-i 2</b> -l 100%FREE -n hana_data vg_hana_data_<b>HN1</b>
+   > [!IMPORTANT]
+   > Параметр `-i`, значение которого соответствует числу базовых физических томов, необходимо указывать для всех томов данных, журналов или общих томов, для которых используется более одного физического тома. Используйте `-I` параметр, чтобы указать размер полосы чередования при создании чередующегося тома.  
+   > Рекомендуемые конфигурации хранилища, включая размеры и количество дисков с чередованием, см. в разделе [SAP HANA конфигурации хранилища виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) .  
+
+   <pre><code>sudo lvcreate <b>-i 2</b> <b>-I 256</b> -l 100%FREE -n hana_data vg_hana_data_<b>HN1</b>
    sudo lvcreate -l 100%FREE -n hana_log vg_hana_log_<b>HN1</b>
    sudo lvcreate -l 100%FREE -n hana_shared vg_hana_shared_<b>HN1</b>
    sudo mkfs.xfs /dev/vg_hana_data_<b>HN1</b>/hana_data
    sudo mkfs.xfs /dev/vg_hana_log_<b>HN1</b>/hana_log
    sudo mkfs.xfs /dev/vg_hana_shared_<b>HN1</b>/hana_shared
    </code></pre>
-
+  
    Создайте каталоги подключения и скопируйте идентификаторы UUID всех логических томов.
 
    <pre><code>sudo mkdir -p /hana/data/<b>HN1</b>
@@ -382,11 +386,11 @@ ms.locfileid: "73721500"
    * Enter Database User (SYSTEM) Password (Введите пароль пользователя базы данных (SYSTEM)): введите пароль пользователя базы данных.
    * Confirm Database User (SYSTEM) Password (Подтвердите пароль пользователя базы данных (SYSTEM)): повторно введите пароль пользователя базы данных.
    * "Restart system after machine reboot?" [n]: нажмите клавишу ВВОД.
-   * "Do you want to continue? (y/n)" (y/n): подтвердите введенные данные. Для продолжения введите **y**.
+   * "Do you want to continue? (y/n)" (y/n): подтвердите введенные данные. Чтобы продолжить, введите **y** .
 
-1. **[A]** . Обновите агент узла SAP.
+1. **[A]**. Обновите агент узла SAP.
 
-   Скачайте последнюю копию агента узла SAP из [центра программного обеспечения SAP][sap-swcenter] и выполните следующую команду, чтобы обновить агент. Замените путь к архиву, чтобы он указывал на скачанный файл.
+   Скачайте последний архив агента узла SAP с сайта [SAP Softwarecenter][sap-swcenter] и выполните следующую команду, чтобы обновить агент. Замените путь к архиву, чтобы он указывал на скачанный файл.
 
    <pre><code>sudo /usr/sap/hostctrl/exe/saphostexec -upgrade -archive &lt;path to SAP Host Agent SAR&gt;
    </code></pre>
@@ -401,16 +405,16 @@ ms.locfileid: "73721500"
 
 1. **[1]** Создайте базу данных клиента.
 
-   Если вы используете SAP HANA 2.0 или MDC, создайте базу данных клиента для системы SAP NetWeaver. Замените **NW1** идентификатором SID для системы SAP.
+   Если вы используете SAP HANA 2.0 или MDC, создайте базу данных клиента для системы SAP NetWeaver. Замените **NW1** на идентификатор безопасности системы SAP.
 
-   Выполните следующую команду в качестве < ханасид\>ADM:
+   Выполните следующую команду как <ханасид \> ADM:
 
    <pre><code>hdbsql -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> -d SYSTEMDB 'CREATE DATABASE <b>NW1</b> SYSTEM USER PASSWORD "<b>passwd</b>"'
    </code></pre>
 
-1. **[1]** Настройте репликацию системы на первом узле.
+1. **[1]** настройте репликацию системы на первом узле:
 
-   Создайте резервную копию баз данных < ханасид\>ADM:
+   Создайте резервную копию баз данных как <ханасид \> ADM:
 
    <pre><code>hdbsql -d SYSTEMDB -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> "BACKUP DATA USING FILE ('<b>initialbackupSYS</b>')"
    hdbsql -d <b>HN1</b> -u SYSTEM -p "<b>passwd</b>" -i <b>03</b> "BACKUP DATA USING FILE ('<b>initialbackupHN1</b>')"
@@ -430,7 +434,7 @@ ms.locfileid: "73721500"
 
 1. **[2]** Настройте системную репликацию на втором узле
     
-   Зарегистрируйте второй узел, чтобы запустить репликацию системы. Выполните следующую команду < ханасид\>ADM:
+   Зарегистрируйте второй узел, чтобы запустить репликацию системы. Выполните следующую команду, как <ханасид \> ADM:
 
    <pre><code>sapcontrol -nr <b>03</b> -function StopWait 600 10
    hdbnsutil -sr_register --remoteHost=<b>hn1-db-0</b> --remoteInstance=<b>03</b> --replicationMode=sync --name=<b>SITE2</b> 
@@ -444,9 +448,9 @@ ms.locfileid: "73721500"
 * **[1]** — шаг применяется только к узлу 1.
 * **[2]** — шаг применяется только к узлу 2 в кластере Pacemaker.
 
-1. **[1]** Создайте обязательных пользователей.
+1. **[1]** создайте необходимых пользователей.
 
-   Выполните следующую команду в качестве привилегированной. Обязательно замените строки, выделенные полужирным шрифтом (идентификатор системы HANA **HN1** и номер экземпляра **03**), значениями для своей системы SAP HANA.
+   Выполните следующую команду в качестве привилегированной. Не забудьте заменить выделенные жирным шрифтом строки (идентификатор системы HANA **HN1** и номер экземпляра **03**) значениями установки SAP Hana:
 
    <pre><code>PATH="$PATH:/usr/sap/<b>HN1</b>/HDB<b>03</b>/exe"
    hdbsql -u system -i <b>03</b> 'CREATE USER <b>hdb</b>hasync PASSWORD "<b>passwd</b>"'
@@ -477,7 +481,7 @@ ms.locfileid: "73721500"
 
 1. **[1]** Настройте репликацию системы на первом узле.
 
-   Создайте первичный сайт < ханасид\>ADM:
+   Создайте первичный сайт <ханасид \> ADM:
 
    <pre><code>su - <b>hdb</b>adm
    hdbnsutil -sr_enable –-name=<b>SITE1</b>
@@ -485,7 +489,7 @@ ms.locfileid: "73721500"
 
 1. **[2]** Настройте репликацию системы на вторичном узле
 
-   Зарегистрируйте вторичный сайт как < ханасид\>ADM:
+   Зарегистрируйте вторичный сайт как <ханасид \> ADM:
 
    <pre><code>sapcontrol -nr <b>03</b> -function StopWait 600 10
    hdbnsutil -sr_register --remoteHost=<b>hn1-db-0</b> --remoteInstance=<b>03</b> --replicationMode=sync --name=<b>SITE2</b> 
@@ -507,14 +511,19 @@ sudo crm configure primitive rsc_SAPHanaTopology_<b>HN1</b>_HDB<b>03</b> ocf:sus
   params SID="<b>HN1</b>" InstanceNumber="<b>03</b>"
 
 sudo crm configure clone cln_SAPHanaTopology_<b>HN1</b>_HDB<b>03</b> rsc_SAPHanaTopology_<b>HN1</b>_HDB<b>03</b> \
-  meta is-managed="true" clone-node-max="1" target-role="Started" interleave="true"
+  meta clone-node-max="1" target-role="Started" interleave="true"
 </code></pre>
 
 Теперь создайте ресурсы HANA.
 
 > [!IMPORTANT]
 > Последние случаи тестирования, в которых неткат перестает отвечать на запросы из-за невыполненной работы и ограничения на обработку только одного соединения. Ресурс неткат прекращает прослушивание запросов балансировщика нагрузки Azure, и плавающий IP-адрес становится недоступным.  
-> Для существующих кластеров Pacemaker рекомендуется заменить неткат на Сокат, следуя инструкциям в разделе [усиление подсистемы балансировки нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128). Обратите внимание, что изменение потребует краткого времени простоя.  
+> Для существующих кластеров Pacemaker рекомендуется в прошлом заменять неткат на Сокат. Сейчас мы рекомендуем использовать агент ресурсов Azure балансировки нагрузки, который входит в состав агентов Resource-Agent, со следующими требованиями к версии пакета:
+> - Для SLES 12 SP4/SP5 версия должна быть как минимум Resource-Agents-4.3.018. a7fb5035-3.30.1.  
+> - Для SLES 15/15 с пакетом обновления 1 (SP1) версия должна быть как минимум Resource-Agents-4.3.0184.6 ee15eb2-4.13.1.  
+>
+> Обратите внимание, что изменение потребует краткого времени простоя.  
+> Для существующих кластеров Pacemaker, если конфигурация уже была изменена для использования Сокат, как описано в статье [усиление безопасности при обнаружении балансировщика нагрузки Azure](https://www.suse.com/support/kb/doc/?id=7024128), нет необходимости немедленно переключаться на агент ресурсов Azure фунтов.
 
 <pre><code># Replace the bold string with your instance number, HANA system ID, and the front-end IP address of the Azure load balancer. 
 
@@ -529,18 +538,17 @@ sudo crm configure primitive rsc_SAPHana_<b>HN1</b>_HDB<b>03</b> ocf:suse:SAPHan
   DUPLICATE_PRIMARY_TIMEOUT="7200" AUTOMATED_REGISTER="false"
 
 sudo crm configure ms msl_SAPHana_<b>HN1</b>_HDB<b>03</b> rsc_SAPHana_<b>HN1</b>_HDB<b>03</b> \
-  meta is-managed="true" notify="true" clone-max="2" clone-node-max="1" \
+  meta notify="true" clone-max="2" clone-node-max="1" \
   target-role="Started" interleave="true"
 
 sudo crm configure primitive rsc_ip_<b>HN1</b>_HDB<b>03</b> ocf:heartbeat:IPaddr2 \
-  meta target-role="Started" is-managed="true" \
+  meta target-role="Started" \
   operations \$id="rsc_ip_<b>HN1</b>_HDB<b>03</b>-operations" \
   op monitor interval="10s" timeout="20s" \
   params ip="<b>10.0.0.13</b>"
 
-sudo crm configure primitive rsc_nc_<b>HN1</b>_HDB<b>03</b> anything \
-  params binfile="/usr/bin/socat" cmdline_options="-U TCP-LISTEN:625<b>03</b>,backlog=10,fork,reuseaddr /dev/null" \
-  op monitor timeout=20s interval=10 depth=0
+sudo crm configure primitive rsc_nc_<b>HN1</b>_HDB<b>03</b> azure-lb port=625<b>03</b> \
+  meta resource-stickiness=0
 
 sudo crm configure group g_ip_<b>HN1</b>_HDB<b>03</b> rsc_ip_<b>HN1</b>_HDB<b>03</b> rsc_nc_<b>HN1</b>_HDB<b>03</b>
 
@@ -575,14 +583,14 @@ sudo crm configure rsc_defaults migration-threshold=5000
 #     Slaves: [ hn1-db-1 ]
 # Resource Group: g_ip_HN1_HDB03
 #     rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-#     rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+#     rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
 </code></pre>
 
 ## <a name="test-the-cluster-setup"></a>Проверка настройки кластера
 
 В этом разделе описано, как проверить настроенную систему. Для каждого теста предполагается, что он выполняется от имени привилегированного пользователя, а главный узел SAP HANA выполняется на виртуальной машине **hn1-db-0**.
 
-### <a name="test-the-migration"></a>Тестирование миграции
+### <a name="test-the-migration"></a>Проверка миграции
 
 Перед началом теста убедитесь, что в Pacemaker не зарегистрировано действий, завершившихся ошибкой (с помощью команды crm_mon - r), нет непредвиденных ограничений на расположение (например, лишних элементов после теста миграции) и HANA находится в синхронизированном состоянии (например, с помощью SAPHanaSR-showAttr):
 
@@ -619,7 +627,7 @@ stonith-sbd     (stonith:external/sbd): Started hn1-db-1
      Stopped: [ hn1-db-0 ]
  Resource Group: g_ip_HN1_HDB03
      rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-     rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+     rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
 
 Failed Actions:
 * rsc_SAPHana_HN1_HDB03_start_0 on hn1-db-0 'not running' (7): call=84, status=complete, exitreason='none',
@@ -661,7 +669,7 @@ stonith-sbd     (stonith:external/sbd): Started hn1-db-1
      Slaves: [ hn1-db-0 ]
  Resource Group: g_ip_HN1_HDB03
      rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-     rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+     rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
 </code></pre>
 
 ### <a name="test-the-azure-fencing-agent-not-sbd"></a>Проверка агента ограждения Azure (не SBD)
@@ -731,7 +739,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
 > [!IMPORTANT]
 > Убедитесь, что выбранная операционная система сертифицирована для использования SAP HANA на определенных типах виртуальных машин. Список сертифицированных для SAP HANA типов виртуальных машин и выпусков ОС см. [здесь](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure). Чтобы просмотреть подробные сведения о поддерживаемых SAP HANA на определенных типах виртуальных машин выпусках ОС, щелкните необходимый тип виртуальной машины.
 
-Выполните все тестовые случаи, которые перечислены в руководствах по системной репликации SAP HANA, оптимизированной для высокой производительности или с оптимизированной стоимостью, в зависимости от параметров вашей среды. Руководства можно найти на [странице рекомендации по SLES для SAP][sles-for-sap-bp].
+Выполните все тестовые случаи, которые перечислены в руководствах по системной репликации SAP HANA, оптимизированной для высокой производительности или с оптимизированной стоимостью, в зависимости от параметров вашей среды. Эти руководства вы найдете на [странице рекомендаций SLES для SAP][sles-for-sap-bp].
 
 Описания следующих тестов взяты из руководства по системной репликации SAP HANA, оптимизированной для высокой производительности, на сервере SUSE Linux Enterprise Server for SAP Applications версии 12 с пакетом обновлений 1 (SP1). Чтобы получить самую свежую версию этих описаний, используйте оригинал руководства. Прежде чем начинать тест, обязательно проверьте состояние синхронизации HANA и конфигурацию Pacemaker.
 
@@ -749,10 +757,10 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
-   Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-0:
+   Выполните следующие команды, как <ханасид \> ADM на Node HN1-DB-0:
 
    <pre><code>hn1adm@hn1-db-0:/usr/sap/HN1/HDB03> HDB stop
    </code></pre>
@@ -776,7 +784,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
 1. Тест 2. Остановка основной базы данных на узле 2
@@ -790,10 +798,10 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
-   Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-1:
+   Выполните следующие команды, как <ханасид \> ADM на Node HN1-DB-1:
 
    <pre><code>hn1adm@hn1-db-1:/usr/sap/HN1/HDB03> HDB stop
    </code></pre>
@@ -817,7 +825,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 3. Сбой основной базы данных на узле 1
@@ -831,10 +839,10 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
-   Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-0:
+   Выполните следующие команды, как <ханасид \> ADM на Node HN1-DB-0:
 
    <pre><code>hn1adm@hn1-db-0:/usr/sap/HN1/HDB03> HDB kill-9
    </code></pre>
@@ -858,7 +866,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
 1. Тест 4. Сбой основной базы данных на узле 2
@@ -872,10 +880,10 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
-   Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-1:
+   Выполните следующие команды, как <ханасид \> ADM на Node HN1-DB-1:
 
    <pre><code>hn1adm@hn1-db-1:/usr/sap/HN1/HDB03> HDB kill-9
    </code></pre>
@@ -899,7 +907,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 5. Сбой первичного узла сайта (узел 1)
@@ -913,7 +921,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
    Выполните от имени привилегированного пользователя следующую команду на узле hn1-db-0:
@@ -950,7 +958,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
 1. Тест 6. Сбой вторичного узла сайта (узел 2)
@@ -964,7 +972,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-0 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-1
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-1
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-1
    </code></pre>
 
    Выполните от имени привилегированного пользователя следующую команду на узле hn1-db-1:
@@ -1001,7 +1009,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 7. Остановка базы данных-получателя на узле 2
@@ -1015,10 +1023,10 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
-   Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-1:
+   Выполните следующие команды, как <ханасид \> ADM на Node HN1-DB-1:
 
    <pre><code>hn1adm@hn1-db-1:/usr/sap/HN1/HDB03> HDB stop
    </code></pre>
@@ -1038,7 +1046,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 8. Сбой базы данных-получателя на узле 2
@@ -1052,10 +1060,10 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
-   Выполните следующие команды в качестве < ханасид\>ADM на узле HN1-DB-1:
+   Выполните следующие команды, как <ханасид \> ADM на Node HN1-DB-1:
 
    <pre><code>hn1adm@hn1-db-1:/usr/sap/HN1/HDB03> HDB kill-9
    </code></pre>
@@ -1075,7 +1083,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
 1. Тест 9. Сбой вторичного узла сайта (узел 2), на котором выполняется база данных-получатель HANA
@@ -1089,7 +1097,7 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
    Выполните от имени привилегированного пользователя следующую команду на узле hn1-db-1:
@@ -1122,12 +1130,12 @@ crm resource cleanup msl_SAPHana_<b>HN1</b>_HDB<b>03</b> <b>hn1-db-0</b>
       Slaves: [ hn1-db-1 ]
    Resource Group: g_ip_HN1_HDB03
       rsc_ip_HN1_HDB03   (ocf::heartbeat:IPaddr2):       Started hn1-db-0
-      rsc_nc_HN1_HDB03   (ocf::heartbeat:anything):      Started hn1-db-0
+      rsc_nc_HN1_HDB03   (ocf::heartbeat:azure-lb):      Started hn1-db-0
    </code></pre>
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
-* [Развертывание виртуальных машин Azure для SAP][deployment-guide]
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
+* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
-* Дополнительные сведения об обеспечении высокого уровня доступности и планировании аварийного восстановления SAP HANA в Azure (крупные экземпляры) см. в [этой статье](hana-overview-high-availability-disaster-recovery.md).
+

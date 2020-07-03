@@ -7,23 +7,23 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 3da48a9b6d3acb1f2811bc279de7963fa1d83918
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74763697"
 ---
 # <a name="configure-and-access-azure-database-for-postgresql---single-server-logs-from-the-azure-portal"></a>Настройка журналов базы данных Azure для PostgreSQL и доступ к ним из портал Azure
 
 Вы можете настроить, перечислить и скачать [журналы базы данных Azure для PostgreSQL](concepts-server-logs.md) из портал Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения действий, описанных в этой статье, требуется [сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-portal.md).
 
 ## <a name="configure-logging"></a>Настройка журнала
 Настройте доступ к журналам запросов и журналам ошибок. 
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 2. Выберите сервер базы данных Azure для PostgreSQL.
 
@@ -44,7 +44,7 @@ ms.locfileid: "74763697"
 ## <a name="view-list-and-download-logs"></a>Просмотр списка журналов и их скачивание
 После начала ведения журнала можно просмотреть список доступных журналов и загрузить отдельные файлы журналов. 
 
-1. Перейдите на портал Azure.
+1. Откройте портал Azure.
 
 2. Выберите сервер базы данных Azure для PostgreSQL.
 

@@ -1,29 +1,26 @@
 ---
-title: Обзор Azure Active Directory для разработчиков (версия 1.0)
+title: Общие сведения об Azure Active Directory (версии 1.0) для разработчиков
 description: В этой статье представлены общие сведения о входе в рабочие и учебные учетные записи Майкрософт с использованием платформы и конечной точки Azure Active Directory версии 1.0.
 services: active-directory
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: 5c872c89-ef04-4f4c-98de-bc0c7460c7c2
 ms.service: active-directory
 ms.subservice: azuread-dev
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/24/2018
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 638c265fda3c8b331415d54047180b3c0ee2174a
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ROBOTS: NOINDEX
+ms.openlocfilehash: ade350c91ebd2f3a68b52011e598f739a14c220f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77197550"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80154497"
 ---
-# <a name="azure-active-directory-for-developers-v10-overview"></a>Обзор Azure Active Directory для разработчиков (версия 1.0)
+# <a name="azure-active-directory-for-developers-v10-overview"></a>Общие сведения об Azure Active Directory (версии 1.0) для разработчиков
 
 [!INCLUDE [active-directory-azuread-dev](../../../includes/active-directory-azuread-dev.md)]
 
@@ -54,7 +51,7 @@ Azure Active Directory (Azure AD) — это облачная служба ид�
 | ----------------------------------------------------------------------------------| --- |
 | [Библиотеки проверки подлинности Azure Active Directory](active-directory-authentication-libraries.md)   | Общие сведения о библиотеках и пакетах SDK, предоставляемых Azure AD. |
 | [Примеры кода](sample-v1-code.md)                                  | Список всех примеров кода Azure AD. |
-| [Глоссарий](../develop/developer-glossary.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json)                                      | Термины и определения слов, используемых в этой документации. |
+| [Словарь терминов](../develop/developer-glossary.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json)                                      | Термины и определения слов, используемых в этой документации. |
 |  |  |
 
 ## <a name="videos"></a>Видео

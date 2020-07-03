@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: 299d5c8758a13edded63b99abb2f12ddf9fa14be
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76759522"
 ---
 # <a name="import-virtual-machines-from-another-lab-in-azure-devtest-labs"></a>Импорт виртуальных машин из другой лаборатории в Azure DevTest Labs
@@ -62,7 +62,7 @@ ms.locfileid: "76759522"
 ```
 
 ### <a name="use-powershell-to-import-all-vms-in-the-source-lab"></a>Импорт всех виртуальных машин в исходной лаборатории с помощью PowerShell
-Если исходная виртуальная машина не указана, скрипт автоматически импортирует все виртуальные машины в DevTest Labs.  Пример.
+Если исходная виртуальная машина не указана, скрипт автоматически импортирует все виртуальные машины в DevTest Labs.  Пример:
 
 ```powershell
 ./ImportVirtualMachines.ps1 -SourceSubscriptionId "<ID of the subscription that contains the source lab>" `
@@ -82,8 +82,8 @@ POST https://management.azure.com/subscriptions/<DestinationSubscriptionID>/reso
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующие статьи:
 
 - [Управление базовыми политиками лаборатории в Azure DevTest Labs](devtest-lab-get-started-with-lab-policies.md)
-- [Часто задаваемые вопросы](devtest-lab-faq.md)
+- [Вопросы и ответы](devtest-lab-faq.md)

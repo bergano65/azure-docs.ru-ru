@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/11/2018
 ms.author: spelluru
 ms.openlocfilehash: 9bc784ee57b9bde393408cbefa9a197aebc59b08
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76264464"
 ---
 # <a name="create-service-bus-resources-using-azure-resource-manager-templates"></a>Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager
@@ -28,7 +28,7 @@ ms.locfileid: "76264464"
 В шаблонах Azure Resource Manager определяются ресурсы для развертывания решения и указываются параметры и переменные, позволяющие вводить значения для различных сред. Шаблон создается в формате JSON и состоит из выражений, на основе которых можно получить значения для развертывания. Дополнительные сведения о создании шаблонов Azure Resource Manager и описание формата шаблонов см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md).
 
 > [!NOTE]
-> В примерах в этой статье показано, как использовать Azure Resource Manager для создания пространства имен и объекта обмена сообщениями (очереди) служебной шины. Другие примеры шаблонов см. в [коллекции шаблонов][Azure Quickstart Templates gallery] быстрого запуска Azure и выполните поиск по запросу **Service Bus**.
+> В примерах в этой статье показано, как использовать Azure Resource Manager для создания пространства имен и объекта обмена сообщениями (очереди) служебной шины. Чтобы узнать о новых шаблонах, в [коллекции шаблонов быстрого запуска Azure][Azure Quickstart Templates gallery] выполните поиск по запросу **служебная шина**.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -181,7 +181,7 @@ Set-AzContext -SubscriptionID <YourSubscriptionId>
 
 ### <a name="set-the-resource-group"></a>Задание группы ресурсов
 
-Если у вас нет группы ресурсов, создайте новую группу ресурсов с помощью команды **New-азресаурцеграуп** . Введите имя группы ресурсов и нужное расположение. Пример.
+Если у вас нет группы ресурсов, создайте новую группу ресурсов с помощью команды **New-азресаурцеграуп** . Введите имя группы ресурсов и нужное расположение. Пример:
 
 ```powershell
 New-AzResourceGroup -Name MyDemoRG -Location "West US"
@@ -207,7 +207,7 @@ Test-AzResourceGroupDeployment -ResourceGroupName MyDemoRG -TemplateFile <path t
 
 ### <a name="create-the-deployment"></a>Создание развертывания
 
-Чтобы создать развертывание, выполните командлет `New-AzResourceGroupDeployment` и укажите необходимые параметры при появлении запроса. Параметры включают в себя имя развертывания, имя группы ресурсов и путь к файлу шаблона или его URL-адрес. Если параметр **Режим** не указан, используется стандартное значение **Добавочный**. Дополнительные сведения см. в статье [Добавочные и полные развертывания](../azure-resource-manager/templates/deployment-modes.md).
+Чтобы создать развертывание, выполните командлет `New-AzResourceGroupDeployment` и укажите необходимые параметры при появлении запроса. Параметры включают в себя имя развертывания, имя группы ресурсов и путь к файлу шаблона или его URL-адрес. Если параметр **mode** не указан, используется значение **добавочного** по умолчанию. Дополнительные сведения см. в статье [Добавочные и полные развертывания](../azure-resource-manager/templates/deployment-modes.md).
 
 Следующая команда запрашивает три параметра в окне PowerShell:
 
@@ -255,7 +255,7 @@ Parameters        :
 ## <a name="next-steps"></a>Дальнейшие действия
 Мы рассмотрели базовую процедуру и команды для развертывания шаблона Azure Resource Manager. Для получения более подробных сведений перейдите по следующим ссылкам:
 
-* [Общие сведения об Azure Resource Manager][Azure Resource Manager overview]
+* [Обзор Azure Resource Manager][Azure Resource Manager overview]
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][Deploy resources with Azure Resource Manager templates]
 * [Создание шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
 * [Microsoft.ServiceBus versions](/azure/templates/microsoft.servicebus/allversions) (Версии типов ресурсов Microsoft.ServiceBus)

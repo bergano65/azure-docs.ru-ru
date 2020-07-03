@@ -1,19 +1,19 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 02/13/2020
+ms.date: 04/08/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 4487beffd0e6a0643f4d3d88f5bb342f23eb848f
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 0df74b82c847c9738d97d2001573666714c17672
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77202259"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81008364"
 ---
 ## <a name="limitations"></a>Ограничения
 
@@ -23,14 +23,16 @@ ms.locfileid: "77202259"
 
 [!INCLUDE [virtual-machines-disks-shared-sizes](virtual-machines-disks-shared-sizes.md)]
 
-## <a name="deploy-an-azure-shared-disk"></a>Развертывание общего диска Azure
+## <a name="deploy-shared-disks"></a>Развертывание общих дисков
 
-Чтобы развернуть управляемый диск с включенной функцией "общий диск", используйте новое свойство `maxShares` и определите значение `>1`. Это сделает диск общим для нескольких виртуальных машин.
+### <a name="deploy-a-premium-ssd-as-a-shared-disk"></a>Развертывание SSD уровня "Премиум" как общего диска
+
+Чтобы развернуть управляемый диск с включенной функцией "общий диск", используйте новое `maxShares` свойство и определите значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
 
 > [!IMPORTANT]
-> Значение `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для `maxShares`см. в разделе [размеры дисков](#disk-sizes) .
+> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для `maxShares`см. в разделе [размеры дисков](#disk-sizes) .
 
-Перед использованием следующего шаблона замените `[parameters('dataDiskName')]`, `[resourceGroup().location]`, `[parameters('dataDiskSizeGB')]`и `[parameters('maxShares')]` собственными значениями.
+Перед использованием следующего шаблона `[parameters('dataDiskName')]`замените, `[resourceGroup().location]` `[parameters('dataDiskSizeGB')]`, и `[parameters('maxShares')]` собственными значениями.
 
 ```json
 { 
@@ -71,9 +73,104 @@ ms.locfileid: "77202259"
 }
 ```
 
+### <a name="deploy-an-ultra-disk-as-a-shared-disk"></a>Развертывание Ultra Disk в качестве общего диска
+
+#### <a name="cli"></a>CLI
+
+Чтобы развернуть управляемый диск с включенным компонентом "общий диск" `maxShares` , измените параметр на значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
+
+> [!IMPORTANT]
+> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для `maxShares`см. в разделе [размеры дисков](#disk-sizes) .
+
+```azurecli
+#Creating an Ultra shared Disk 
+az disk create -g rg1 -n clidisk --size-gb 1024 -l westus --sku UltraSSD_LRS --max-shares 5 --disk-iops-read-write 2000 --disk-mbps-read-write 200 --disk-iops-read-only 100 --disk-mbps-read-only 1
+
+#Updating an Ultra shared Disk 
+az disk update -g rg1 -n clidisk --disk-iops-read-write 3000 --disk-mbps-read-write 300 --set diskIopsReadOnly=100 --set diskMbpsReadOnly=1
+
+#Show shared disk properties:
+az disk show -g rg1 -n clidisk
+```
+
+#### <a name="azure-resource-manager"></a>Azure Resource Manager
+
+Чтобы развернуть управляемый диск с включенной функцией "общий диск", используйте `maxShares` свойство и определите значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
+
+> [!IMPORTANT]
+> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для `maxShares`см. в разделе [размеры дисков](#disk-sizes) .
+
+Перед использованием следующего шаблона замените `[parameters('dataDiskName')]`, `[resourceGroup().location]`, `[parameters('dataDiskSizeGB')]`, `[parameters('maxShares')]`, `[parameters('diskIOPSReadWrite')]`, `[parameters('diskMBpsReadWrite')]`, `[parameters('diskIOPSReadOnly')]`и `[parameters('diskMBpsReadOnly')]` собственными значениями.
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "diskName": {
+      "type": "string",
+      "defaultValue": "uShared30"
+    },
+    "location": {
+        "type": "string",
+        "defaultValue": "westus",
+        "metadata": {
+                "description": "Location for all resources."
+        }
+    },
+    "dataDiskSizeGB": {
+      "type": "int",
+      "defaultValue": 1024
+    },
+    "maxShares": {
+      "type": "int",
+      "defaultValue": 2
+    },
+    "diskIOPSReadWrite": {
+      "type": "int",
+      "defaultValue": 2048
+    },
+    "diskMBpsReadWrite": {
+      "type": "int",
+      "defaultValue": 20
+    },    
+    "diskIOPSReadOnly": {
+      "type": "int",
+      "defaultValue": 100
+    },
+    "diskMBpsReadOnly": {
+      "type": "int",
+      "defaultValue": 1
+    }    
+  }, 
+  "resources": [
+    {
+        "type": "Microsoft.Compute/disks",
+        "name": "[parameters('diskName')]",
+        "location": "[parameters('location')]",
+        "apiVersion": "2019-07-01",
+        "sku": {
+            "name": "UltraSSD_LRS"
+        },
+        "properties": {
+            "creationData": {
+                "createOption": "Empty"
+            },
+            "diskSizeGB": "[parameters('dataDiskSizeGB')]",
+            "maxShares": "[parameters('maxShares')]",
+            "diskIOPSReadWrite": "[parameters('diskIOPSReadWrite')]",
+            "diskMBpsReadWrite": "[parameters('diskMBpsReadWrite')]",
+            "diskIOPSReadOnly": "[parameters('diskIOPSReadOnly')]",
+            "diskMBpsReadOnly": "[parameters('diskMBpsReadOnly')]"
+        }
+    }
+  ]
+}
+```
+
 ### <a name="using-azure-shared-disks-with-your-vms"></a>Использование общих дисков Azure с виртуальными машинами
 
-После развертывания общего диска с `maxShares>1`можно подключить диск к одной или нескольким виртуальным машинам.
+После развертывания общего диска с помощью `maxShares>1`его можно подключить к одной или нескольким виртуальным машинам.
 
 > [!IMPORTANT]
 > Все виртуальные машины, совместно использующие диск, должны быть развернуты в одной [группе размещения](../articles/virtual-machines/windows/proximity-placement-groups.md).
@@ -141,6 +238,6 @@ PR_EXCLUSIVE_ACCESS_ALL_REGISTRANTS
 Кроме того, при использовании PR_RESERVE, PR_REGISTER_AND_IGNORE, PR_REGISTER_KEY, PR_PREEMPT_RESERVATION, PR_CLEAR_RESERVATION или PR_RELEASE-RESERVATION необходимо указать постоянный ключ-резервирование.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Если вы заинтересованы в попытке использовать общие диски, [Зарегистрируйтесь для использования предварительной версии](https://aka.ms/shareddisksignup).
+Если вы заинтересованы в попытке использовать общие диски, [Зарегистрируйтесь для использования предварительной версии](https://aka.ms/AzureSharedDiskPreviewSignUp).

@@ -1,0 +1,68 @@
+### YamlMime:Landing
+title: Документация по преобразованию текста в речь
+summary: Преобразование текста в речь из службы распознавания речи позволяет вашим приложениям, средствам или устройствам преобразовывать текст в человеческий синтезатор.
+metadata:
+  title: Документация по тексту в речь. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: trevorbye
+  manager: nitinme
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 03/10/2020
+  ms.author: trbye
+  ms.openlocfilehash: 8a58079f44fb4d78c2d3f652a5f3b61dae9c8991
+  ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 05/22/2020
+  ms.locfileid: "83800817"
+landingContent:
+- title: О тексте в речь
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое преобразование текста в речь?
+      url: text-to-speech.md
+    - text: Основные сведения о синтезе речи
+      url: text-to-speech-basics.md
+    - text: Использование речевого интерфейса командной строки для преобразования текста в речь без кода
+      url: spx-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Синтезирование речи в виде речи докладчика
+      url: quickstarts/text-to-speech.md
+    - text: Синтезирование речи в звуковой файл
+      url: quickstarts/text-to-speech-audio-file.md
+    - text: Синтез речи с использованием длинных аудиоматериалов
+      url: quickstarts/text-to-speech/async-synthesis-long-form-audio.md
+- title: Разработка с помощью преобразования текста в речь
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Улучшение синтеза с помощью SSML
+      url: speech-synthesis-markup.md
+    - text: Получение списка голосовых моделей с помощью REST (Python)
+      url: quickstart-python-get-text-to-speech-voices.md
+    - text: Преобразование текста в речь с помощью REST (Python)
+      url: quickstart-python-text-to-speech.md
+  - linkListType: concept
+    links:
+    - text: Начало работы с настраиваемыми голосовыми моделями
+      url: how-to-custom-voice.md
+    - text: Создание и использование настраиваемых голосовых моделей
+      url: how-to-custom-voice-create-voice.md
+    - text: Фильтрация Пользовательского голоса
+      url: concepts-gating-overview.md
+- title: Справочник
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Поддержка стандартных голосов
+      url: language-support.md#standard-voices
+    - text: Поддержка нейронных голосов
+      url: language-support.md#neural-voices
+    - text: Фонетические наборы SSML
+      url: speech-ssml-phonetic-sets.md
+    - text: Цены преобразования текста в речь
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services

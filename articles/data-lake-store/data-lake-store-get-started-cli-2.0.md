@@ -1,46 +1,42 @@
 ---
-title: Начало работы с Azure Data Lake Storage 1-го поколения с помощью Azure CLI | Документация Майкрософт
-description: Использование Azure CLI для создания учетной записи хранения Azure Data Lake Storage 1-го поколения и выполнения базовых операций
-services: data-lake-store
-documentationcenter: ''
+title: Управление учетной записью Azure Data Lake Storage 1-го поколения — Azure CLI
+description: Используйте Azure CLI, чтобы создать учетную запись Data Lake Storage 1-го поколения и выполнить основные операции.
 author: twooley
-manager: mtillman
 ms.service: data-lake-store
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 9431cc7fa12b86371ce6b2325aca8e13d264442e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4e278981ce7647a53d2e80c5b835c8ed666db541
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60885352"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82688172"
 ---
-# <a name="get-started-with-azure-data-lake-store-using-azure-cli"></a>Начало работы с Azure Data Lake Store с помощью Azure CLI
+# <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-cli"></a>Приступая к работе с Azure Data Lake Storage 1-го поколения с помощью Azure CLI
 
 [!INCLUDE [data-lake-storage-gen1-rename-note.md](../../includes/data-lake-storage-gen1-rename-note.md)]
 
 > [!div class="op_single_selector"]
 > * [Портал](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
-> * [Интерфейс командной строки Azure](data-lake-store-get-started-cli-2.0.md)
+> * [Azure CLI](data-lake-store-get-started-cli-2.0.md)
 >
 > 
 
-Узнайте, как с помощью Azure CLI создать учетную запись Azure Data Lake Storage 1-го поколения и выполнять базовые операции, такие как создание папок, передача и загрузка файлов данных, удаление учетной записи и т. д. Дополнительные сведения об Azure Data Lake Storage 1-го поколения см. в статье [Общие сведения об Azure Data Lake Storage 1-го поколения](data-lake-store-overview.md).
+Узнайте, как использовать Azure CLI для создания учетной записи Azure Data Lake Storage 1-го поколения и выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных, удаление учетной записи и т. д. Дополнительные сведения о Data Lake Storage 1-го поколения см. в разделе [обзор Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
 Azure CLI — это интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Дополнительные сведения см. в статье [Инфраструктура Azure CLI](https://docs.microsoft.com/cli/azure). Полный список команд и синтаксис см. в [справочнике интерфейса командной строки Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/cli/azure/dls).
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 Перед началом работы с этой статьей необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 * **Azure CLI**. См. инструкции в статье об [установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Аутентификация
 
 В этой статье используется более простой подход к аутентификации в службе Data Lake Storage 1-го поколения, в которую выполняется вход от имени пользователя. Уровень доступа к учетной записи Data Lake Storage 1-го поколения и файловой системе зависит от уровня доступа пользователя, который вошел в систему. Существуют разные способы аутентификации в Data Lake Storage 1-го поколения, включая **аутентификацию пользователей** и **аутентификацию между службами**. Инструкции и дополнительные сведения об аутентификации см. в разделах [Аутентификация пользователей](data-lake-store-end-user-authenticate-using-active-directory.md) и [Аутентификация между службами](data-lake-store-authenticate-using-active-directory.md).
 
@@ -140,7 +136,7 @@ az dls fs list --account mydatalakestoragegen1 --path /mynewfolder
     az dls fs move --account mydatalakestoragegen1 --source-path /mynewfolder/vehicle1_09142014.csv --destination-path /mynewfolder/vehicle1_09142014_copy.csv
     ```
 
-* **Чтобы загрузить файл**, используйте следующую команду. Убедитесь, что указанный конечный путь уже существует.
+* **Чтобы скачать файл**, используйте следующую команду. Убедитесь, что указанный конечный путь уже существует.
   
     ```azurecli     
     az dls fs download --account mydatalakestoragegen1 --source-path /mynewfolder/vehicle1_09142014_copy.csv --destination-path "C:\mysampledata\vehicle1_09142014_copy.csv"
@@ -185,7 +181,7 @@ az dls fs list --account mydatalakestoragegen1 --path /mynewfolder
     az dls fs access show --account mydatalakestoragegen1 --path /mynewfolder/vehicle1_09142014.csv
     ```
 
-    Должен быть получен результат, аналогичный приведенному ниже:
+    Результат выполнения должен быть аналогичен следующему:
 
         {
             "entries": [

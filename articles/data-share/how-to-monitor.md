@@ -7,10 +7,10 @@ ms.service: data-share
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.openlocfilehash: 15089dd99de0471c244a6c0d93931438442599a7
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73490504"
 ---
 # <a name="monitor-azure-data-share"></a>Мониторинг в Azure Data Share  
@@ -23,7 +23,7 @@ ms.locfileid: "73490504"
 
 Просмотрите сведения о состоянии приглашений на обмен данными, перейдя по адресу отправленные акции-> приглашения. 
 
-![Состояние приглашения](./media/invitation-status.png "Статус приглашения") 
+![Статус приглашения](./media/invitation-status.png "Статус приглашения") 
 
 Приглашение может находиться в трех состояниях:
 
@@ -50,6 +50,6 @@ ms.locfileid: "73490504"
 
 ![Журнал моментальных снимков](./media/diagnostic-settings.png "Параметры диагностики") 
 
-## <a name="next-steps"></a>Следующие шаги 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 Дополнительные сведения о [терминологии общего ресурса данных Azure](terminology.md)

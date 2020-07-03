@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: 0c5fdac7df41fec3a6206dbd78af74b7f1b58c7f
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68736326"
 ---
 # <a name="register-data-sources-in-azure-data-catalog"></a>Регистрация источников данных в каталоге данных Azure
@@ -77,5 +77,5 @@ ms.locfileid: "68736326"
 ## <a name="summary"></a>Сводка
 Благодаря тому, что из источника в службу каталога копируются структурные и описательные метаданные, регистрация источников данных в каталоге данных позволяет быстрее обнаружить и оценить эти данные. После регистрации источника данных можно обнаруживать его, управлять им и добавлять для него заметки на портале каталога данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о регистрации источников данных см. в руководстве [Начало работы с каталогом данных Azure](data-catalog-get-started.md).

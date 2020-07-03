@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: vaidyas
 author: vaidyas
 ms.reviewer: larryfr
-ms.date: 11/22/2019
-ms.openlocfilehash: 321f985bd375e6fa4337e060bb15d318ea306ab4
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.date: 03/06/2020
+ms.openlocfilehash: 104e0892e2ad6bc6a0b3212722781f9498eee219
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77116734"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82744996"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,18 +27,18 @@ ms.locfileid: "77116734"
 
 С помощью Машинное обучение Azure можно создавать образы DOCKER из обученных моделей машинного обучения. Машинное обучение Azure теперь имеет функции предварительной версии для создания этих моделей машинного обучения в приложениях функций, которые можно [развернуть в функциях Azure](https://docs.microsoft.com/azure/azure-functions/functions-deployment-technologies#docker-container).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 * Обученная модель машинного обучения, зарегистрированная в вашей рабочей области. Если модель отсутствует, используйте [учебник по классификации образов: обучение модели](tutorial-train-models-with-aml.md) для обучения и регистрации.
 
     > [!IMPORTANT]
     > В фрагментах кода в этой статье предполагается, что вы установили следующие переменные:
     >
-    > * `ws` — ваша рабочая область Машинное обучение Azure.
-    > * `model` — Зарегистрированная модель, которая будет развернута.
-    > * `inference_config` — конфигурация вывода для модели.
+    > * `ws`— Рабочая область Машинное обучение Azure.
+    > * `model`— Зарегистрированная модель, которая будет развернута.
+    > * `inference_config`— Конфигурация вывода для модели.
     >
     > Дополнительные сведения об установке этих переменных см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
@@ -58,10 +58,10 @@ ms.locfileid: "77116734"
 
 * **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
 
-Эти сущности инкапсулированы в __конфигурацию вывода__. Конфигурация вывода ссылается на скрипт записи и другие зависимости.
+Эти сущности инкапсулированы в __конфигурацию вывода__. В конфигурации зависимостей указываются скрипт входа и другие зависимости.
 
 > [!IMPORTANT]
-> При создании конфигурации вывода для использования с функциями Azure необходимо использовать объект [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment%28class%29?view=azure-ml-py) . Обратите внимание, что при определении пользовательской среды необходимо добавить azureml-Defaults с версией > = 1.0.45 в качестве зависимости PIP. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы. В следующем примере демонстрируется создание объекта среды и его использование с конфигурацией вывода:
+> При создании конфигурации вывода для использования с функциями Azure необходимо использовать объект [среды](https://docs.microsoft.com/python/api/azureml-core/azureml.core.environment%28class%29?view=azure-ml-py) . Обратите внимание, что при определении пользовательской среды необходимо добавить azureml-Defaults с версией >= 1.0.45 в качестве зависимости PIP. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы. В следующем примере демонстрируется создание объекта среды и его использование с конфигурацией вывода:
 >
 > ```python
 > from azureml.core.environment import Environment
@@ -97,7 +97,7 @@ pip install azureml-contrib-functions
 Чтобы создать образ DOCKER, развернутый в функциях Azure, используйте [azureml. от участников сообщества. functions. Package](https://docs.microsoft.com/python/api/azureml-contrib-functions/azureml.contrib.functions?view=azure-ml-py) или конкретную функцию пакета для триггера, который вы хотите использовать. В следующем фрагменте кода показано, как создать новый пакет с триггером большого двоичного объекта из модели и конфигурации вывода:
 
 > [!NOTE]
-> В фрагменте кода предполагается, что `model` содержит зарегистрированную модель и `inference_config` содержит конфигурацию для среды вывода. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
+> В фрагменте кода предполагается, что `model` содержит зарегистрированную модель `inference_config` и содержит конфигурацию для среды вывода. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
 ```python
 from azureml.contrib.functions import package
@@ -108,17 +108,17 @@ blob.wait_for_creation(show_output=True)
 print(blob.location)
 ```
 
-При `show_output=True`отображаются выходные данные процесса сборки DOCKER. После завершения процесса образ будет создан в реестре контейнеров Azure для вашей рабочей области. После построения образа в реестре контейнеров Azure отобразится расположение. Возвращаемое расположение имеет формат `<acrinstance>.azurecr.io/package@sha256:<hash>`.
+Если `show_output=True`задано значение, выводятся выходные данные процесса сборки DOCKER. После завершения процесса образ будет создан в реестре контейнеров Azure для вашей рабочей области. После построения образа в реестре контейнеров Azure отобразится расположение. Возвращаемое расположение имеет формат `<acrinstance>.azurecr.io/package@sha256:<imagename>`.
 
 > [!NOTE]
-> Упаковка для функций в настоящее время поддерживает триггеры HTTP, триггеры больших двоичных объектов и триггеры служебной шины. Дополнительные сведения о триггерах см. в статье [привязки функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob?tabs=csharp#trigger---blob-name-patterns).
+> Упаковка для функций в настоящее время поддерживает триггеры HTTP, триггеры больших двоичных объектов и триггеры служебной шины. Дополнительные сведения о триггерах см. в статье [привязки функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob-trigger#blob-name-patterns).
 
 > [!IMPORTANT]
 > Сохраните сведения о расположении, так как они используются при развертывании образа.
 
 ## <a name="deploy-image-as-a-web-app"></a>Развертывание образа как веб-приложения
 
-1. Используйте следующую команду, чтобы получить учетные данные входа для реестра контейнеров Azure, содержащего образ. Замените `<myacr>` значением, которое было возвращено из `package.location`: 
+1. Используйте следующую команду, чтобы получить учетные данные входа для реестра контейнеров Azure, содержащего образ. Замените `<myacr>` на значение, возвращенное ранее `package.location`из: 
 
     ```azurecli-interactive
     az acr credential show --name <myacr>
@@ -148,24 +148,24 @@ print(blob.location)
 
     ```azurecli-interactive
     az group create --name myresourcegroup --location "West Europe"
-    az appservice plan create --name myplanname --resource-group myresourcegroup --sku EP1 --is-linux
+    az appservice plan create --name myplanname --resource-group myresourcegroup --sku B1 --is-linux
     ```
 
-    В этом примере используется ценовая категория _Linux Premium_ (`--sku EP1`).
+    В этом примере используется ценовая категория _Linux Basic_ (`--sku B1`).
 
     > [!IMPORTANT]
-    > Образы, созданные Машинное обучение Azure используют Linux, поэтому необходимо использовать параметр `--is-linux`.
+    > Образы, созданные Машинное обучение Azure используют Linux, поэтому необходимо использовать `--is-linux` параметр.
 
-1. Создайте учетную запись хранения, которая будет использоваться для хранения веб-заданий, и получите ее строку подключения. Замените `<webjobStorage>` именем, которое вы хотите использовать.
+1. Создайте учетную запись хранения, которая будет использоваться для хранения веб-заданий, и получите ее строку подключения. Замените `<webjobStorage>` на имя, которое вы хотите использовать.
 
     ```azurecli-interactive
-    az storage account create --name triggerStorage --location westeurope --resource-group myresourcegroup --sku Standard_LRS
+    az storage account create --name <webjobStorage> --location westeurope --resource-group myresourcegroup --sku Standard_LRS
     ```
     ```azurecli-interactive
     az storage account show-connection-string --resource-group myresourcegroup --name <webJobStorage> --query connectionString --output tsv
     ```
 
-1. Чтобы создать приложение функции, используйте следующую команду. Замените `<app-name>` именем, которое вы хотите использовать. Замените `<acrinstance>` и `<imagename>` значениями, полученными `package.location` ранее. Замените `<webjobStorage>` замените на имя учетной записи хранения из предыдущего шага:
+1. Чтобы создать приложение функции, используйте следующую команду. Замените `<app-name>` на имя, которое вы хотите использовать. Замените `<acrinstance>` и `<imagename>` значениями, полученными `package.location` ранее. Замените `<webjobStorage>` на имя учетной записи хранения из предыдущего шага:
 
     ```azurecli-interactive
     az functionapp create --resource-group myresourcegroup --plan myplanname --name <app-name> --deployment-container-image-name <acrinstance>.azurecr.io/package:<imagename> --storage-account <webjobStorage>
@@ -174,17 +174,17 @@ print(blob.location)
     > [!IMPORTANT]
     > На этом этапе приложение функции создано. Однако, так как вы не указали строку подключения для триггера большого двоичного объекта или учетных данных в реестре контейнеров Azure, который содержит образ, приложение-функция неактивно. На следующих шагах вы укажите строку подключения и сведения для проверки подлинности для реестра контейнеров. 
 
-1. Создайте учетную запись хранения, которая будет использоваться для хранилища триггеров BLOB-объектов, и получите ее строку подключения. Замените `<triggerStorage>` именем, которое вы хотите использовать.
+1. Создайте учетную запись хранения, которая будет использоваться для хранилища триггеров BLOB-объектов, и получите ее строку подключения. Замените `<triggerStorage>` на имя, которое вы хотите использовать.
 
     ```azurecli-interactive
     az storage account create --name <triggerStorage> --location westeurope --resource-group myresourcegroup --sku Standard_LRS
     ```
-    ```azurecli-interactive
+    ```azurecli-interactiv
     az storage account show-connection-string --resource-group myresourcegroup --name <triggerStorage> --query connectionString --output tsv
     ```
-    Запишите эту строку подключения, чтобы предоставить приложению функции. Он будет использоваться позже при запросе `<triggerConnectionString>`
+    Запишите эту строку подключения, чтобы предоставить приложению функции. Он будет использоваться позже при запросе`<triggerConnectionString>`
 
-1. Создайте контейнеры для входных и выходных данных в учетной записи хранения. Замените `<triggerConnectionString>` строкой подключения, возвращенной ранее:
+1. Создайте контейнеры для входных и выходных данных в учетной записи хранения. Замените `<triggerConnectionString>` на строку подключения, возвращенную ранее:
 
     ```azurecli-interactive
     az storage container create -n input --connection-string <triggerConnectionString>
@@ -193,19 +193,19 @@ print(blob.location)
     az storage container create -n output --connection-string <triggerConnectionString>
     ```
 
-1. Чтобы связать строку подключения триггера с приложением функции, используйте следующую команду. Замените `<app-name>` именем приложения функции. Замените `<triggerConnectionString>` строкой подключения, возвращенной ранее:
+1. Чтобы связать строку подключения триггера с приложением функции, используйте следующую команду. Замените `<app-name>` на имя приложения функции. Замените `<triggerConnectionString>` на строку подключения, возвращенную ранее:
 
     ```azurecli-interactive
     az functionapp config appsettings set --name <app-name> --resource-group myresourcegroup --settings "TriggerConnectionString=<triggerConnectionString>"
     ```
-1. Необходимо получить тег, связанный с созданным контейнером, с помощью следующей команды. Замените `<username>` именем пользователя, возвращенного ранее из реестра контейнеров:
+1. Необходимо получить тег, связанный с созданным контейнером, с помощью следующей команды. Замените `<username>` на имя пользователя, возвращенное ранее из реестра контейнеров:
 
     ```azurecli-interactive
     az acr repository show-tags --repository package --name <username> --output tsv
     ```
-    Сохраните возвращенное значение, оно будет использоваться в качестве `imagetag` на следующем шаге.
+    Сохраните возвращенное значение, оно будет использоваться как `imagetag` на следующем шаге.
 
-1. Чтобы предоставить приложению функции учетные данные, необходимые для доступа к реестру контейнеров, используйте следующую команду. Замените `<app-name>` именем, которое вы хотите использовать. Замените `<acrinstance>` и `<imagetag>` значениями из вызова AZ CLI на предыдущем шаге. Замените `<username>` и `<password>` полученными ранее сведениями об имени для входа записи контроля доступа:
+1. Чтобы предоставить приложению функции учетные данные, необходимые для доступа к реестру контейнеров, используйте следующую команду. Замените `<app-name>` на имя приложения функции. Замените `<acrinstance>` и `<imagetag>` ЗНАЧЕНИЯМИ из вызова AZ CLI на предыдущем шаге. Замените `<username>` и `<password>` на сведения об имени входа записи контроля доступа, полученные ранее:
 
     ```azurecli-interactive
     az functionapp config container set --name <app-name> --resource-group myresourcegroup --docker-custom-image-name <acrinstance>.azurecr.io/package:<imagetag> --docker-registry-server-url https://<acrinstance>.azurecr.io --docker-registry-server-user <username> --docker-registry-server-password <password>
@@ -247,10 +247,56 @@ print(blob.location)
 > [!IMPORTANT]
 > Загрузка образа может занять несколько минут. Ход выполнения можно отслеживать с помощью портала Azure.
 
+## <a name="test-the-deployment"></a>тестирование развертывания
+
+После загрузки образа и доступности приложения выполните следующие действия, чтобы запустить приложение.
+
+1. Создайте текстовый файл, содержащий данные, которые требуются для файла score.py. Следующий пример будет работать с score.py, который предполагает массив из 10 чисел:
+
+    ```json
+    {"data": [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]]}
+    ```
+
+    > [!IMPORTANT]
+    > Формат данных зависит от того, что предполагает score.py и модель.
+
+2. Используйте следующую команду, чтобы передать этот файл в контейнер ввода в созданном ранее BLOB-объекте хранилища триггеров. Замените `<file>` на имя файла, содержащего данные. Замените `<triggerConnectionString>` на строку подключения, возвращенную ранее. В этом примере `input` — это имя созданного ранее контейнера входных данных. Если вы использовали другое имя, замените это значение:
+
+    ```azurecli-interactive
+    az storage blob upload --container-name input --file <file> --name <file> --connection-string <triggerConnectionString>
+    ```
+
+    Выходные данные этой команды похожи на следующий код JSON:
+
+    ```json
+    {
+    "etag": "\"0x8D7C21528E08844\"",
+    "lastModified": "2020-03-06T21:27:23+00:00"
+    }
+    ```
+
+3. Чтобы просмотреть выходные данные, созданные функцией, используйте следующую команду, чтобы получить список выходных файлов. Замените `<triggerConnectionString>` на строку подключения, возвращенную ранее. В этом примере — `output` это имя выходного контейнера, созданного ранее. Если вы использовали другое имя, замените это значение::
+
+    ```azurecli-interactive
+    az storage blob list --container-name output --connection-string <triggerConnectionString> --query '[].name' --output tsv
+    ```
+
+    Выходные данные этой команды похожи на `sample_input_out.json`.
+
+4. Чтобы скачать файл и проверить его содержимое, используйте следующую команду. Замените `<file>` на имя файла, возвращенное предыдущей командой. Замените `<triggerConnectionString>` на строку подключения, возвращенную ранее: 
+
+    ```azurecli-interactive
+    az storage blob download --container-name output --file <file> --name <file> --connection-string <triggerConnectionString>
+    ```
+
+    После выполнения команды откройте файл. Он содержит данные, возвращенные моделью.
+
+Дополнительные сведения об использовании триггеров больших двоичных объектов см. в статье [Создание функции, активируемой с помощью хранилища BLOB-объектов Azure](/azure/azure-functions/functions-create-storage-blob-triggered-function) .
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Научитесь настраивать приложение функций в документации по [функциям](/azure/azure-functions/functions-create-function-linux-custom-image) .
 * Дополнительные сведения о службе хранилища BLOB-объектов см. в статье триггеры [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob).
 * [Разверните модель в службе приложений Azure](how-to-deploy-app-service.md).
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
-* [Справочник по API](https://docs.microsoft.com/python/api/azureml-contrib-functions/azureml.contrib.functions?view=azure-ml-py)
+* [Справочник по интерфейсам API](https://docs.microsoft.com/python/api/azureml-contrib-functions/azureml.contrib.functions?view=azure-ml-py)

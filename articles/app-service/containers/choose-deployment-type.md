@@ -8,10 +8,10 @@ ms.date: 05/04/2018
 ms.author: msangapu
 ms.custom: seodec18
 ms.openlocfilehash: 7c4025e393c196fb98455bac26e94e5f252840b9
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74687514"
 ---
 # <a name="custom-image-multi-container-or-built-in-platform-image"></a>Выбор между пользовательским, многоконтейнерным или встроенным образом платформы
@@ -38,10 +38,10 @@ ms.locfileid: "74687514"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Пользовательский контейнер:
-* [Запустить пользовательский контейнер](quickstart-docker-go.md)
+* [Запуск пользовательского контейнера](quickstart-docker-go.md)
 
 Несколько контейнеров:
-* [Создание приложения с несколькими контейнерами](quickstart-multi-container.md)
+* [Создание многоконтейнерного приложения](quickstart-multi-container.md)
 
 Следующие статьи помогут вам приступить к работе со службой приложений на платформе Linux со встроенным образом платформы:
 

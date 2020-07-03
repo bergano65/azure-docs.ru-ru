@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 02/26/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f4e8450593b8ff0f73c09f236f17eb4ef09334c
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: e4581ab89f74425682f569425f62714ead2c27c5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75549508"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79263352"
 ---
 # <a name="install-the-azure-ad-connect-cloud-provisioning-agent"></a>Установка агента подготовки облака Azure AD Connect
 В этом документе описывается процесс установки агента подготовки Azure Active Directory (Azure AD) Connect и его первоначальной настройки в портал Azure.
@@ -26,7 +26,7 @@ ms.locfileid: "75549508"
 
 Установка и настройка Azure AD Connect подготовка выполняется в следующих шагах:
     
-- [Установка агента](#install-the-agent)
+- [Установка агента.](#install-the-agent)
 - [Проверка установки агента](#verify-agent-installation)
 
 
@@ -35,7 +35,7 @@ ms.locfileid: "75549508"
 
 1. Войдите на сервер, который будет использоваться с разрешениями администратора предприятия.
 1. Перейдите на портал Azure. Слева выберите **Azure Active Directory**.
-1. Выберите **Управление подготовка (Предварительная версия)**  > **Просмотрите все агенты**.
+1. Выберите **Управление подготовка (Предварительная версия)** > **Просмотреть все агенты**.
 1. Скачайте Azure AD Connect агент подготовки из портал Azure.
 
    ![Скачать локальный агент](media/how-to-install/install9.png)</br>
@@ -65,7 +65,7 @@ ms.locfileid: "75549508"
 Чтобы проверить, что агент отображается в Azure, выполните следующие действия.
 
 1. Войдите на портал Azure.
-1. Слева выберите **Azure Active Directory** > **Azure AD Connect**. В центре выберите **Управление подготовка (Предварительная версия)** .
+1. Слева выберите **Azure Active Directory** > **Azure AD Connect**. В центре выберите **Управление подготовка (Предварительная версия)**.
 
    ![Портал Azure](media/how-to-install/install6.png)</br>
 
@@ -73,7 +73,7 @@ ms.locfileid: "75549508"
 
     ![Параметр "проверить все агенты"](media/how-to-install/install7.png)</br>
  
-1. На экране **локальные агенты подготовки** вы увидите установленные агенты. Убедитесь, что нужный агент присутствует в этом списке с пометкой *active* (Активный).
+1. На экране **локальные агенты подготовки** вы увидите установленные агенты. Убедитесь, что нужный агент присутствует в этом списке и помечен как *Активный*.
 
    ![Экран локальных агентов подготовки](media/how-to-install/verify1.png)</br>
 
@@ -90,18 +90,18 @@ https://aadap-portcheck.connectorporttest.msappproxy.net/
 Чтобы проверить, работает ли агент, выполните следующие действия.
 
 1.  Войдите на сервер с учетной записью администратора.
-1.  Откройте **службы** , перейдя к ней или выбрав **Start** > **запустите** > **Services. msc**.
+1.  Откройте **службы** , перейдя к ней или**Run** > перейдя **к** > запуску**Services. msc**.
 1.  В разделе " **службы**" убедитесь в том, что **Microsoft Azure AD Connect update Agent** and **Microsoft Azure AD Connect подготовка Agent** и их состояние *выполняется*.
 
     ![Экран служб](media/how-to-troubleshoot/troubleshoot1.png)
 
 >[!IMPORTANT]
->Агент был установлен, но его необходимо настроить и включить, прежде чем начнется синхронизация пользователей. Сведения о настройке нового агента см. в разделе [Azure AD Connect Cloud подготовка новой конфигурации агента](how-to-configure.md).
+>Агент был установлен, но его необходимо настроить и включить, прежде чем начнется синхронизация пользователей. Сведения о настройке нового агента см. в статье [Создание новой конфигурации для Azure AD Connect облачной подготовки](how-to-configure.md).
 
 
 
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
+- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)
  

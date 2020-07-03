@@ -1,5 +1,5 @@
 ---
-title: 'Синхронизация Azure AD Connect:  изменение пароля учетной записи AD DS | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: изменение пароля учетной записи AD DS | Документация Майкрософт'
 description: В этом разделе описывается, как обновить Azure AD Connect после изменения пароля учетной записи AD DS.
 services: active-directory
 keywords: учетная запись AD DS, учетная запись Active Directory, пароль
@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 35e04be046e20883f60c576745a29342add68a81
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "60241598"
 ---
 # <a name="changing-the-ad-ds-account-password"></a>Изменение пароля учетной записи AD DS
@@ -29,7 +29,7 @@ ms.locfileid: "60241598"
 
 * В Synchronization Service Manager любая операция импорта или экспорта с использованием локального каталога AD завершается ошибкой **no-start-credentials**.
 
-* В средстве просмотра событий Windows журнал событий приложения содержит ошибку с **идентификатором события 6000** и сообщением об ошибке **Не удалось выполнить управляющий агент "contoso.com", так как учетные данные были недопустимыми**.
+* В Просмотр событий Windows журнал событий приложения содержит ошибку с **идентификатором события 6000** и сообщением **"не удалось запустить агент управления" contoso.com ", так как учетные данные недопустимы**.
 
 
 ## <a name="how-to-update-the-synchronization-service-with-new-password-for-ad-ds-account"></a>Как обновить пароль в службе синхронизации в случае изменения пароля учетной записи AD DS
@@ -42,9 +42,9 @@ ms.locfileid: "60241598"
 
 3. Выберите **соединитель AD**, соответствующий учетной записи AD DS, для которой был изменен пароль.
 
-4. В разделе **Действия** выберите **Свойства**.
+4. В разделе **действия**выберите **свойства**.
 
-5. Во всплывающем диалоговом окне выберите **Connect to Active Directory Forest** (Подключиться к лесу Active Directory).
+5. Во всплывающем диалоговом окне выберите **Подключиться к лесу Active Directory**.
 
 6. В текстовом поле **Пароль** введите новый пароль учетной записи AD DS.
 
@@ -55,6 +55,6 @@ ms.locfileid: "60241598"
 ## <a name="next-steps"></a>Дальнейшие действия
 **Обзорные статьи**
 
-* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 
-* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)

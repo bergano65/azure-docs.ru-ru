@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 11/19/2019
 ms.author: allensu
 ms.openlocfilehash: 5c50186692438be5d0922cd329c28e665310e5c2
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77023537"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>Настройка режима распределения для Azure Load Balancer
@@ -26,14 +26,14 @@ ms.locfileid: "77023537"
 
 ## <a name="hash-based-distribution-mode"></a>Режим распространения на основе хэша
 
-Режим распределения по умолчанию для Azure Load Balancer — это хэш из пяти кортежей. 
+По умолчанию в качестве режима распределения в Azure Load Balancer используется хэш с пятью кортежами. 
 
 Кортеж состоит из следующих элементов:
 * **Исходный IP-адрес**
 * **Исходный порт**
 * **Конечный IP-адрес**
 * **Порт назначения**
-* **Тип протокола**
+* **"Protocol type" (Тип протокола).**
 
 Хэш используется для отображения трафика на доступные серверы. Алгоритм обеспечивает прикрепление только в рамках транспортного сеанса. Пакеты, находящиеся в одном сеансе, направляются в один и тот же IP-адрес центра обработки данных за конечную точку с балансировкой нагрузки. Когда клиент запускает новый сеанс из того же исходного IP-адреса, исходный порт изменяется и вызывает переход трафика в другую конечную точку центра обработки данных.
 
@@ -90,7 +90,7 @@ Set-AzLoadBalancer -LoadBalancer $lb
 Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution sourceIP | Update-AzureVM
 ```
 
-Установите значение элемента `LoadBalancerDistribution` в поле требуемый объем балансировки нагрузки. Укажите sourceIP для балансировки нагрузки двух кортежей (исходный IP-адрес и IP-адрес назначения). Укажите sourceIPProtocol для балансировки нагрузки трех кортежей (исходный IP-адрес, IP-адрес назначения и тип протокола). Укажите None в качестве поведения по умолчанию для балансировки нагрузки с пятью кортежами.
+Установите значение `LoadBalancerDistribution` элемента для требуемого объема балансировки нагрузки. Укажите sourceIP для балансировки нагрузки двух кортежей (исходный IP-адрес и IP-адрес назначения). Укажите sourceIPProtocol для балансировки нагрузки трех кортежей (исходный IP-адрес, IP-адрес назначения и тип протокола). Укажите None в качестве поведения по умолчанию для балансировки нагрузки с пятью кортежами.
 
 Получите конфигурацию режима распределения балансировщика нагрузки для конечной точки с помощью этих параметров:
 
@@ -114,7 +114,7 @@ Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Pro
     IdleTimeoutInMinutes : 15
     LoadBalancerDistribution : sourceIP
 
-Если элемент `LoadBalancerDistribution` отсутствует, Azure Load Balancer использует алгоритм с пятью кортежами по умолчанию.
+Если `LoadBalancerDistribution` элемент отсутствует, Azure Load Balancer использует алгоритм с пятью кортежами по умолчанию.
 
 ### <a name="configure-distribution-mode-on-load-balanced-endpoint-set"></a>Настройка режима распределения для набора балансировки нагрузки для конечных точек
 
@@ -179,7 +179,7 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
       </InputEndpoint>
     </LoadBalancedEndpointList>
 
-Как было описано выше, установите элемент `LoadBalancerDistribution` в sourceIP для сходства двух кортежей, sourceIPProtocol для сходства с тремя кортежами или None для отсутствия сходства (сходство с пятью кортежами).
+Как было описано выше, установите `LoadBalancerDistribution` для элемента значение sourceIP для сходства двух кортежей, sourceIPProtocol для сходства с тремя кортежями или None для отсутствия сходства (сходство с пятью кортежами).
 
 #### <a name="response"></a>Ответ
 
@@ -191,7 +191,7 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
     x-ms-request-id: 9c7bda3e67c621a6b57096323069f7af
     Date: Thu, 16 Oct 2014 22:49:21 GMT
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обзор внутренней подсистемы балансировки нагрузки](load-balancer-internal-overview.md)
 * [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](quickstart-create-standard-load-balancer-powershell.md)

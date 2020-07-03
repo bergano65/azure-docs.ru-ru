@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/16/2019
 ms.author: cherylmc
-ms.openlocfilehash: bae44f67a485546ba29148a114d88df198f7c3e6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 8c1afac834fb9abb2cbf82f16f046a1624b251f1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75483093"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79481139"
 ---
 # <a name="create-and-manage-expressroute-public-peering"></a>Создание общедоступного пиринга ExpressRoute и управление им
 
@@ -38,7 +38,7 @@ ms.locfileid: "75483093"
 * С помощью домена маршрутизации общедоступного пиринга можно частным образом подключаться к службам, размещенным на общедоступных IP-адресах, включая VIP облачных служб.
 * Вы можете подключить домен общедоступного пиринга к своей сети периметра и подключаться ко всем службам Azure по их общедоступным IP-адресам из своей глобальной сети без необходимости подключения через Интернет.
 
-## <a name="services"></a>Службы
+## <a name="services"></a><a name="services"></a>Службы
 
 В этом разделе показаны службы, доступные через общедоступный пиринг. Поскольку общедоступный пиринг является устаревшим, нет необходимости добавлять новые или дополнительные службы в общедоступный пиринг. Если вы используете общедоступный пиринг и служба, которую вы хотите использовать, поддерживается только через пиринг Майкрософт, необходимо переключиться на пиринг Майкрософт. Список поддерживаемых служб см. в разделе [пиринг Майкрософт](expressroute-faqs.md#microsoft-peering) .
 
@@ -48,14 +48,14 @@ ms.locfileid: "75483093"
 * Большинство служб Azure поддерживается. Проверьте непосредственно в службе, которую вы хотите использовать для проверки поддержки.
 
 **Не поддерживается:**
-  * Сеть кэширующих серверов (CDN)
+  * CDN
   * Azure Front Door
   * Сервер многофакторной идентификации (устаревший)
   * Диспетчер трафика
 
 Чтобы проверить доступность конкретной службы, можно проверить документацию по этой службе, чтобы узнать, опубликован ли зарезервированный диапазон для этой службы. Затем можно найти диапазоны IP-адресов целевой службы и сравнить их с диапазонами, перечисленными в поле [диапазоны IP-адресов Azure и теги службы — общедоступный облачный XML-файл](https://www.microsoft.com/download/details.aspx?id=56519). Кроме того, можно отправить запрос в службу поддержки для уточнения.
 
-## <a name="compare"></a>Сравнение пирингов
+## <a name="peering-comparison"></a><a name="compare"></a>Сравнение пирингов
 
 [!INCLUDE [peering comparison](../../includes/expressroute-peering-comparison.md)]
 
@@ -67,7 +67,7 @@ ms.locfileid: "75483093"
 
 Вы можете задавать в своей сети настраиваемые фильтры маршрутов, чтобы использовать только нужные маршруты. Подробные сведения о настройке маршрутизации см. на странице [Маршрутизация](expressroute-routing.md).
 
-## <a name="powershell"></a>Azure PowerShell действия
+## <a name="azure-powershell-steps"></a><a name="powershell"></a>Azure PowerShell действия
 
 
 [!INCLUDE [CloudShell](../../includes/expressroute-cloudshell-powershell-about.md)]
@@ -135,7 +135,7 @@ ms.locfileid: "75483093"
    > 
    >
 
-### <a name="getpublic"></a>Получение сведений об общедоступном пиринге Azure
+### <a name="to-get-azure-public-peering-details"></a><a name="getpublic"></a>Получение сведений об общедоступном пиринге Azure
 
 Для получения сведений о конфигурации можно использовать следующий командлет.
 
@@ -145,7 +145,7 @@ ms.locfileid: "75483093"
   Get-AzExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt
   ```
 
-### <a name="updatepublic"></a>Обновление конфигурации общедоступного пиринга Azure
+### <a name="to-update-azure-public-peering-configuration"></a><a name="updatepublic"></a>Обновление конфигурации общедоступного пиринга Azure
 
 С помощью следующего примера можно обновить любую часть конфигурации. В приведенном ниже примере значение идентификатора виртуальной локальной сети для канала изменяется с 200 на 600.
 
@@ -155,7 +155,7 @@ Set-AzExpressRouteCircuitPeeringConfig  -Name "AzurePublicPeering" -ExpressRoute
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ```
 
-### <a name="deletepublic"></a>Удаление общедоступного пиринга Azure
+### <a name="to-delete-azure-public-peering"></a><a name="deletepublic"></a>Удаление общедоступного пиринга Azure
 
 Для удаления конфигурации пиринга выполните следующий пример кода:
 
@@ -164,7 +164,7 @@ Remove-AzExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -ExpressRou
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ```
 
-## <a name="cli"></a>Azure CLI действия
+## <a name="azure-cli-steps"></a><a name="cli"></a>Azure CLI действия
 
 
 [!INCLUDE [CloudShell](../../includes/expressroute-cloudshell-powershell-about.md)]
@@ -177,7 +177,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 
    Ответ будет выглядеть примерно так:
 
-   ```azurecli
+   ```output
    "allowClassicOperations": false,
    "authorizations": [],
    "circuitProvisioningState": "Enabled",
@@ -229,7 +229,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    > [!IMPORTANT]
    > Номер AS должен быть указан в качестве ASN пиринга, а не ASN клиента.
 
-### <a name="getpublic"></a>Просмотр сведений об общедоступном пиринге Azure
+### <a name="to-view-azure-public-peering-details"></a><a name="getpublic"></a>Просмотр сведений об общедоступном пиринге Azure
 
 Для получения сведений о конфигурации можно использовать следующий пример:
 
@@ -239,7 +239,7 @@ az network express-route peering show -g ExpressRouteResourceGroup --circuit-nam
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
 
-```azurecli
+```output
 {
   "azureAsn": 12076,
   "etag": "W/\"2e97be83-a684-4f29-bf3c-96191e270666\"",
@@ -264,7 +264,7 @@ az network express-route peering show -g ExpressRouteResourceGroup --circuit-nam
 }
 ```
 
-### <a name="updatepublic"></a>Обновление конфигурации общедоступного пиринга Azure
+### <a name="to-update-azure-public-peering-configuration"></a><a name="updatepublic"></a>Обновление конфигурации общедоступного пиринга Azure
 
 С помощью следующего примера можно обновить любую часть конфигурации. В приведенном ниже примере значение идентификатора виртуальной локальной сети для канала изменяется с 200 на 600.
 
@@ -272,7 +272,7 @@ az network express-route peering show -g ExpressRouteResourceGroup --circuit-nam
 az network express-route peering update --vlan-id 600 -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePublicPeering
 ```
 
-### <a name="deletepublic"></a>Удаление общедоступного пиринга Azure
+### <a name="to-delete-azure-public-peering"></a><a name="deletepublic"></a>Удаление общедоступного пиринга Azure
 
 Для удаления конфигурации пиринга выполните следующий пример кода:
 
@@ -280,23 +280,23 @@ az network express-route peering update --vlan-id 600 -g ExpressRouteResourceGro
 az network express-route peering delete -g ExpressRouteResourceGroup --circuit-name MyCircuit --name AzurePublicPeering
 ```
 
-## <a name="portal"></a>портал Azure действия
+## <a name="azure-portal-steps"></a><a name="portal"></a>Инструкции для портала Azure
 
 Чтобы настроить пиринг, воспользуйтесь инструкциями PowerShell или CLI, которые содержатся в этой статье. Для управления пирингом можно использовать следующие разделы. В качестве справочных данных эти действия похожи на управление [пиринга Майкрософт на портале](expressroute-howto-routing-portal-resource-manager.md#msft).
 
-### <a name="get"></a>Просмотр сведений об общедоступном пиринге Azure
+### <a name="to-view-azure-public-peering-details"></a><a name="get"></a>Просмотр сведений об общедоступном пиринге Azure
 
 Просмотрите свойства общедоступного пиринга Azure, выбрав пиринг на портале.
 
-### <a name="update"></a>Обновление конфигурации общедоступного пиринга Azure
+### <a name="to-update-azure-public-peering-configuration"></a><a name="update"></a>Обновление конфигурации общедоступного пиринга Azure
 
 Выберите строку для пиринга, а затем измените свойства пиринга.
 
-### <a name="delete"></a>Удаление общедоступного пиринга Azure
+### <a name="to-delete-azure-public-peering"></a><a name="delete"></a>Удаление общедоступного пиринга Azure
 
 Удалите конфигурацию пиринга, щелкнув значок Удалить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md).
 

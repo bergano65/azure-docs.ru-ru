@@ -6,12 +6,12 @@ ms.assetid: 01d6ca9f-ca3f-44fa-b0b9-7ffee115acd4
 ms.topic: overview
 ms.date: 01/16/2020
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 1cd7b3db92de339b7614a4271f9e6793cdf8f2ad
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: f0948cb58ba9403a34fbfd61ec43c29bed3440bc
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76292915"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "77621009"
 ---
 # <a name="an-introduction-to-azure-functions"></a>Общие сведения о Функциях Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "76292915"
 
 - **Раздел служебной шины**. Подключение к другим службам или локальным службам Azure за счет [реагирования на сообщения разделов служебной шины](./functions-bindings-service-bus.md).
 
-## <a name="pricing"></a>Расценки на использование Функций
+## <a name="how-much-does-functions-cost"></a><a name="pricing"></a>Расценки на использование Функций
 
 В службе "Функции Azure" есть два вида тарифных планов. Выберите тот, который лучше всего соответствует вашим потребностям:
 

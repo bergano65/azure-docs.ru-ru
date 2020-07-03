@@ -2,22 +2,17 @@
 title: Устранение проблем, связанных с отклонением карты при регистрации в Azure
 description: Устраните отклоненную при регистрации Azure кредитную карту на портале Azure или в центре управления учетной записью.
 author: v-miegge
-manager: adpick
-editor: v-jesits
-tags: billing
+ms.reviewer: judupont
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 08/12/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 432a6f22f3c1b0c323b689103cd16cbea344cab1
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 0eeddc26ac1a1f286d8ed253f3fe097f0e7de91f
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989271"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80409387"
 ---
 # <a name="troubleshoot-a-declined-card-at-azure-sign-up"></a>Устранение проблем, связанных с отклонением карты при регистрации в Azure
 

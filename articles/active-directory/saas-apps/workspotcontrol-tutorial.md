@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 3/11/2019
 ms.author: jeedes
 ms.openlocfilehash: 086ec95531b01477be56d4b1a19d189f167a020f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67086679"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workspot-control"></a>Руководство по Интеграция Azure Active Directory с Workspot Control
@@ -36,7 +36,7 @@ ms.locfileid: "67086679"
 
 Чтобы настроить интеграцию Azure AD со Workspot Control, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 
 * подписка Workspot Control с поддержкой единого входа.
 
@@ -142,7 +142,7 @@ ms.locfileid: "67086679"
 
 2. На панели инструментов в верхней части страницы щелкните **Setup** (Настройка), затем — **SAML**.
 
-    ![Параметры настройки](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_setup.png)
+    ![Параметры установки](./media/workspotcontrol-tutorial/tutorial_workspotcontrol_setup.png)
 
 3. В окне **Security Assertion Markup Language Configuration** (Конфигурация SAML) выполните следующие действия.
  
@@ -180,7 +180,7 @@ ms.locfileid: "67086679"
 
     1. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
 
-    1. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -248,4 +248,4 @@ ms.locfileid: "67086679"
 
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

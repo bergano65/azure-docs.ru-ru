@@ -1,35 +1,29 @@
 ---
-title: Рекомендации по настройке производительности Hive в Azure Data Lake Storage 1-го поколения | Документы Майкрософт
-description: Рекомендации по настройке производительности Hive в Azure Data Lake Storage 1-го поколения
-services: data-lake-store
-documentationcenter: ''
+title: Настройка производительности — Hive на Azure Data Lake Storage 1-го поколения
+description: Рекомендации по настройке производительности для Hive в HdInsight и Azure Data Lake Storage 1-го поколения.
 author: stewu
-manager: amitkul
-editor: stewu
-ms.assetid: ebde7b9f-2e51-4d43-b7ab-566417221335
 ms.service: data-lake-store
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/19/2016
 ms.author: stewu
-ms.openlocfilehash: 433c6b7d70cea9406b67d65e23cc357939cb5aa0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2e44332ddab9387c05a45d15101ccd2bdec3ada4
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61437282"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690525"
 ---
 # <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage 1-го поколения
 
 По умолчанию устанавливаются параметры, которые должны обеспечить оптимальную производительность для самых разных сценариев использования.  Но для запросов, предполагающих интенсивное выполнение операций ввода-вывода, производительность Hive в Azure Data Lake Storage 1-го поколения можно повысить, изменив некоторые настройки.  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Data Lake Storage 1-го поколения**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
+* **Учетная запись Data Lake Storage 1-го поколения**. Инструкции по ее созданию см. в статье [Приступая к работе с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md)
 * **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 1-го поколения. Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md). Убедитесь, что вы включили удаленный рабочий стол для кластера.
 * **Запустите Hive в HDInsight**.  Дополнительные сведения о выполнении заданий Hive в HDInsight см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-hive).
-* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие вопросы производительности описаны в [рекомендациях по настройке производительности Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance).
+* **Рекомендации по настройке производительности для Data Lake Storage 1-го поколения**.  Общие понятия производительности см. в разделе [Data Lake Storage 1-го поколения рекомендации по настройке производительности](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-performance-tuning-guidance) .
 
 ## <a name="parameters"></a>Параметры
 
@@ -59,7 +53,7 @@ ms.locfileid: "61437282"
 
 Для интенсивных нагрузок ввода-вывода будет полезным увеличить параллелизм, снижая размер контейнера Tez. Это предоставит пользователю дополнительные контейнеры, то есть увеличит параллелизм.  Но некоторые запросы Hive требуют значительного объема памяти (например, MapJoin).  Если задача не получит достаточного объема памяти, во время выполнения возникнет соответствующее исключение.  Если вы заметите такие исключения, увеличьте объем памяти.   
 
-Число одновременно выполняемых задач для параллелизма ограничивается общим объемом памяти YARN.  Число контейнеров YARN определяет, сколько параллельных задач можно запустить.  Чтобы узнать, сколько памяти YARN доступно для каждого узла, зайдите в Ambari.  Перейдите к YARN и откройте вкладку конфигураций.  Объем памяти YARN отобразится в этом окне.  
+Число одновременно выполняемых задач для параллелизма ограничивается общим объемом памяти YARN.  Число контейнеров YARN определяет, сколько параллельных задач можно запустить.  Чтобы узнать, сколько памяти YARN доступно для каждого узла, зайдите в Ambari.  Перейдите по адресу YARN и просмотрите вкладку configs (конфигурации).  В этом окне отображается память YARN.  
 
         Total YARN memory = nodes * YARN memory per node
         # of YARN containers = Total YARN memory / Tez container size
@@ -81,7 +75,7 @@ ms.locfileid: "61437282"
 
 Чтобы проверить, применяется ли для вас регулирование, включите ведение журнала отладки на стороне клиента. Вот как это сделать.
 
-1. Поместите следующее свойство в окно свойств log4j в файле конфигурации Hive. Это можно сделать из представления Ambari: log4j.logger.com.microsoft.azure.datalake.store=DEBUG. Перезагрузите все узлы или службу, чтобы изменения конфигурации вступили в силу.
+1. Добавьте следующее свойство в свойства log4j в конфигурации Hive. Это можно сделать из представления Ambari: log4j. Logger. com. Microsoft. Azure. Data Lake. Store = DEBUG перезапустите все узлы и службы, чтобы конфигурация вступила в силу.
 
 2. Если регулирование выполняется, вы увидите код ошибки HTTP 429 в файле журнала Hive. Файл журнала находится в каталоге /tmp/&lt;имя_пользователя&gt;/hive.log
 

@@ -6,20 +6,20 @@ ms.date: 09/04/2018
 ms.author: glenga
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 819eed1eb4e32469bf0572a6548f5a2a44091ef0
-ms.sourcegitcommit: 0eb0673e7dd9ca21525001a1cab6ad1c54f2e929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77279718"
 ---
 В этой таблице показаны привязки, которые поддерживаются в основных версиях среды выполнения функций Azure:
 
 
-| Тип | 1.x | 2. x и выше<sup>1</sup> | Триггер | Входные данные | Выходные данные |
+| Type | 1.x | 2. x и выше<sup>1</sup> | Триггер | Входные данные | Выходные данные |
 | ---- | :-: | :-: | :------: | :---: | :----: |
 | [Хранилище BLOB-объектов](../articles/azure-functions/functions-bindings-storage-blob.md)          |✔|✔|✔|✔|✔|
 | [База данных Cosmos](../articles/azure-functions/functions-bindings-documentdb.md)               |✔|✔|✔|✔|✔|
-| [Сетка событий](../articles/azure-functions/functions-bindings-event-grid.md)              |✔|✔|✔| |✔|
+| [Сетка событий Azure](../articles/azure-functions/functions-bindings-event-grid.md)              |✔|✔|✔| |✔|
 | [Центры событий](../articles/azure-functions/functions-bindings-event-hubs.md)              |✔|✔|✔| |✔|
 | [Веб-перехватчики HTTP &](../articles/azure-functions/functions-bindings-http-webhook.md)             |✔|✔|✔| |✔|
 | [Центр Интернета вещей](../articles/azure-functions/functions-bindings-event-iot.md)             |✔|✔|✔| |✔|

@@ -1,18 +1,18 @@
 ---
-title: ST_INTERSECTS на языке запросов Azure Cosmos DB
-description: Дополнительные сведения о функции SQL System ST_INTERSECTS в Azure Cosmos DB.
+title: ST_INTERSECTS языка запросов Azure Cosmos DB
+description: Сведения о ST_INTERSECTS системных функций SQL в Azure Cosmos DB.
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 549c6b69e9112a491060478e859338c14e977612
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: f3c3878956b90ffb45556ed819046af9eb7618f1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349382"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78303143"
 ---
 # <a name="st_intersects-azure-cosmos-db"></a>ST_INTERSECTS (Azure Cosmos DB)
  Возвращает логическое выражение, указывающее, пересекается ли объект GeoJSON (точка, многоугольник или LineString), указанный в первом аргументе, со вторым объектом GeoJSON (точка, многоугольник или LineString).  
@@ -28,7 +28,7 @@ ST_INTERSECTS (<spatial_expr>, <spatial_expr>)
 *spatial_expr*  
    — Это выражение геообъектной точки, многоугольника или объекта LineString.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает логическое значение.  
   
@@ -51,8 +51,12 @@ WHERE ST_INTERSECTS(a.location, {
 [{ "id": "IntersectingPolygon" }]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция будет полезна из [геопространственных индексов](index-policy.md#spatial-indexes).
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Пространственные функции Azure Cosmos DB](sql-query-spatial-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

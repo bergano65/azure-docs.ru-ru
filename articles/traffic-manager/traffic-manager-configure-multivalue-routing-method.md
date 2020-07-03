@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: rohink
 ms.openlocfilehash: daf7d09916d276130e337f7acea738228ee23707
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76938782"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации MultiValue в диспетчере трафика
@@ -26,7 +26,7 @@ ms.locfileid: "76938782"
 >[!NOTE]
 > В настоящее время добавление конечных точек с помощью IPv4- или IPv6-адресов поддерживается только для **внешних** конечных точек, поэтому маршрутизация MultiValue также поддерживается только для таких конечных точек.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure 
+## <a name="sign-in-to-azure"></a>Вход в Azure 
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
@@ -38,7 +38,7 @@ ms.locfileid: "76938782"
 ## <a name="create-a-traffic-manager-profile"></a>Создание профиля диспетчера трафика
 Создайте профиль диспетчера трафика, который направляет трафик пользователя к конечной точке с минимальной задержкой.
 
-1. В верхней левой части экрана выберите **Создать ресурс** > **Сети** > **Профиль диспетчера трафика** > **Создать**.
+1. В верхней левой части экрана выберите **создать ресурс** > **Сетевые подключения** > **профиль** > диспетчера трафика**создать**.
 2. В разделе **Создание профиля диспетчера трафика** введите или выберите следующие сведения, примите значения по умолчанию для остальных параметров и нажмите кнопку **Создать**:
     
     | Параметр                 | Значение                                              |
@@ -72,11 +72,11 @@ ms.locfileid: "76938782"
 
    ![Добавление конечной точки диспетчера трафика](./media/traffic-manager-multivalue-routing-method/add-endpoint.png)
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте о [методе взвешенной маршрутизации трафика](traffic-manager-configure-weighted-routing-method.md).
 - Узнайте о [методе маршрутизации по приоритету](traffic-manager-configure-priority-routing-method.md).
-- Узнайте о [маршрутизации по производительности](traffic-manager-configure-performance-routing-method.md).
+- Дополнительные сведения о [методе маршрутизации производительности](traffic-manager-configure-performance-routing-method.md)
 - Узнайте о [методе географической маршрутизации](traffic-manager-configure-geographic-routing-method.md).
 
 

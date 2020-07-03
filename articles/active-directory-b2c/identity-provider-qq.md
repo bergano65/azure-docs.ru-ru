@@ -2,20 +2,20 @@
 title: Настройка регистрации и входа с учетной записью QQ через Azure Active Directory B2C
 description: Вы можете организовать в приложениях регистрацию и вход для клиентов с учетными записями QQ, используя Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/08/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2bda344c32d03425c7cfec4d253e18451eb1f5a1
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: b0f15124c64e5cca54112987d486ddadaca79452
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847411"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78187993"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-qq-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью QQ через Azure Active Directory B2C
 
@@ -23,19 +23,19 @@ ms.locfileid: "76847411"
 
 ## <a name="create-a-qq-application"></a>Создание приложения QQ
 
-Чтобы использовать учетную запись QQ в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи QQ, вы можете зарегистрироваться по адресу [https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033).
+Чтобы использовать учетную запись QQ в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать в своем клиенте приложение, которое его представляет. Если у вас еще нет учетной записи QQ, вы можете зарегистрироваться по [https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033)адресу.
 
 ### <a name="register-for-the-qq-developer-program"></a>Регистрация в программе разработчиков QQ
 
 1. Войдите на [портал разработчиков QQ](http://open.qq.com) с учетными данными от учетной записи QQ.
-1. После входа перейдите на страницу [https://open.qq.com/reg](https://open.qq.com/reg), чтобы зарегистрироваться в качестве разработчика.
+1. После входа перейдите на [https://open.qq.com/reg](https://open.qq.com/reg) страницу, чтобы зарегистрироваться в качестве разработчика.
 1. Выберите **个人**(Индивидуальный разработчик).
 1. Введите необходимые сведения и щелкните **下一步** (Следующий шаг).
 1. Выполните проверку по электронной почте. После регистрации в качестве разработчика вам придется подождать утверждения в течение нескольких дней.
 
 ### <a name="register-a-qq-application"></a>Регистрация приложения QQ
 
-1. Перейдите на сайт [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
+1. Перейдите на страницу [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
 1. Выберите **应用管理**(Управление приложениями).
 1. Выберите **创建应用**(Создать приложение) и введите необходимые сведения.
 1. Введите значение `https://your-tenant-name.b2clogin.com/your-tenant-name}.onmicrosoft.com/oauth2/authresp` в поле **授权回调域** (URL-адрес обратного вызова). Например, если `tenant_name` — contoso, задайте URL-адрес `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.
@@ -50,8 +50,8 @@ ms.locfileid: "76847411"
 1. Войдите на [портал Azure](https://portal.azure.com/).
 1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
 1. В портал Azure найдите и выберите **Azure AD B2C**.
-1. Выберите **поставщики удостоверений**, а затем выберите **QQ (Предварительная версия)** .
-1. Введите **Имя**. Например, *QQ*.
+1. Выберите **поставщики удостоверений**, а затем выберите **QQ (Предварительная версия)**.
+1. Введите **имя**. Например, *QQ*.
 1. В поле **идентификатор клиента**введите идентификатор приложения QQ, созданного ранее.
 1. В качестве **секрета клиента**введите ЗАПИСАННЫЙ ключ приложения.
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.

@@ -3,21 +3,23 @@ title: Подключение Руувитаг в Azure IoT Central | Докум
 description: Узнайте, как подключить датчик среды Руувитаг к приложению IoT Central.
 services: iot-central
 ms.service: iot-central
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom:
 - iot-storeAnalytics-conditionMonitor
 - iot-p0-scenario
 ms.author: avneets
 author: avneet723
 ms.date: 11/27/2019
-ms.openlocfilehash: 8ca6e15dc53754645bb228d183fd3d71ac6282ec
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 93e4d3d0bed9090573d2b6ee87a29b86ccd72e42
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77026917"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758938"
 ---
 # <a name="connect-a-ruuvitag-sensor-to-your-azure-iot-central-application"></a>Подключение датчика Руувитаг к приложению IoT Central Azure
+
+*Эта статья предназначена для создателей решений и разработчиков устройств.*
 
 В этой статье описывается, как в построителе решений можно подключить датчик Руувитаг к приложению Microsoft Azure IoT Central.
 
@@ -29,7 +31,7 @@ ms.locfileid: "77026917"
 
 Если вы хотите настроить устройство шлюза Ригадо Cascade 500, следуйте приведенным [здесь инструкциям](./howto-connect-rigado-cascade-500.md) .
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для подключения датчиков Руувитаг вам потребуются следующие ресурсы:
 
@@ -43,8 +45,8 @@ ms.locfileid: "77026917"
 
 Чтобы добавить шаблон устройства Руувитаг, выполните следующие действия.
 
-1. Перейдите на вкладку ***шаблоны устройств*** в левой области, выберите **+ создать**: ![создать новый шаблон устройства](./media/howto-connect-ruuvi/devicetemplate-new.png) страница позволяет ***создать пользовательский шаблон*** или ***использовать предварительно настроенный шаблон устройства*** .
-1. Выберите шаблон устройства Руувитаг в списке предварительно настроенных шаблонов устройств, как показано ниже: ![выберите шаблон устройства Руувитаг](./media/howto-connect-ruuvi/devicetemplate-preconfigured.png)
+1. Перейдите на вкладку ***шаблоны устройств*** в левой области, выберите **+ создать**: создание нового ![шаблона](./media/howto-connect-ruuvi/devicetemplate-new.png) устройства. страница предоставляет возможность ***создания пользовательского шаблона*** или ***использования шаблона предварительно настроенного устройства*** .
+1. Выберите шаблон устройства Руувитаг в списке предварительно настроенных шаблонов устройств, как показано ниже: выберите ![шаблон устройства руувитаг.](./media/howto-connect-ruuvi/devicetemplate-preconfigured.png)
 1. Нажмите кнопку ***Далее: Настройка*** , чтобы перейти к следующему шагу.
 1. На следующем экране выберите ***создать*** , чтобы подключить шаблон устройства C500 к приложению IOT Central.
 
@@ -72,6 +74,9 @@ ms.locfileid: "77026917"
 1. Включите параметр **имитация** .
 1. Щелкните **Создать**.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Теперь, когда вы узнали, как подключить Руувитаг к приложению Azure IoT Central, предлагаем следующий шаг: Узнайте, как [настроить приложение IOT Central](../retail/tutorial-in-store-analytics-customize-dashboard-pnp.md) для создания комплексного решения.
+Если вы являетесь разработчиком устройства, вот некоторые из предлагаемых дальнейших действий:
+
+- Дополнительные сведения о [подключении устройств в Azure IOT Central](./concepts-get-connected.md)
+- Узнайте, как [отслеживать подключение устройств с помощью Azure CLI](./howto-monitor-devices-azure-cli.md)

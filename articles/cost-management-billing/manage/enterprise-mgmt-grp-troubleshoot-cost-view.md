@@ -2,21 +2,18 @@
 title: Устранение неполадок с представлениями корпоративных затрат в Azure
 description: Узнайте, как устранить все проблемы, связанные с представлением организационных затрат в пределах портала Azure.
 author: bandersmsft
-manager: amberb
+ms.reviewer: amberb
 ms.service: cost-management-billing
-ms.devlang: na
-ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.topic: conceptual
+ms.date: 02/13/2019
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 3abfac5f915b5c1c6020701feaa356d7a043ef8d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 625774331003754c79e1f1d33c663f8928a71ecc
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75991832"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80411571"
 ---
 # <a name="troubleshoot-enterprise-cost-views"></a>Устранение неполадок в представлении затрат на условиях соглашения Enterprise
 

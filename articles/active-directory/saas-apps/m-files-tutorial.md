@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с M-Files | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с M-Files | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в M-Files.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 41877db250cd6c56d80dbdf98fa0d78562686bfd
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159445"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Руководство по Интеграция Azure Active Directory с M-Files
+# <a name="tutorial-azure-active-directory-integration-with-m-files"></a>Учебник. Интеграция Azure Active Directory с M-Files
 
 В этом учебнике описано, как интегрировать приложение M-Files с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением M-Files обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "73159445"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с M-Files, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка M-Files с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "73159445"
 
     ![Сведения о домене и URL-адресах единого входа для приложения M-Files](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.cloudvault.m-files.com/authentication/MFiles.AuthenticationProviders.Core/sso`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenantname>.cloudvault.m-files.com/authentication/MFiles.AuthenticationProviders.Core/sso`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<tenantname>.cloudvault.m-files.com`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "73159445"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -145,7 +145,7 @@ ms.locfileid: "73159445"
 
     В разделе Server (Сервер) введите следующие значения:  
 
-    a. В поле **Name** (Имя) введите `<tenant-name>.cloudvault.m-files.com`. 
+    а. В поле **Name** (Имя) введите `<tenant-name>.cloudvault.m-files.com`. 
  
     b. В поле **Port Number** (Номер порта) введите **4466**. 
 
@@ -153,9 +153,9 @@ ms.locfileid: "73159445"
 
     d. В поле **Authentication** (Аутентификация) выберите **Specific Windows user** (Определенный пользователь Windows). Затем отобразится страница подписи. Введите свои учетные данные Azure AD. 
 
-    д. Для параметра **Vault on Server** (Хранилище на сервере) выберите соответствующее хранилище на сервере.
+    д) Для параметра **Vault on Server** (Хранилище на сервере) выберите соответствующее хранилище на сервере.
  
-    Е. Последовательно выберите **ОК**.
+    е) Нажмите кнопку **ОК**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

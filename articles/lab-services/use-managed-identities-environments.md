@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 10/01/2019
 ms.author: spelluru
 ms.openlocfilehash: a4ba4206c01e492f2ae980c5806de1e72c7051c3
-ms.sourcegitcommit: a10074461cf112a00fec7e14ba700435173cd3ef
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73931154"
 ---
 # <a name="use-azure-managed-identities-to-deploy-environments-in-a-lab"></a>Использование управляемых удостоверений Azure для развертывания сред в лаборатории 
@@ -24,7 +24,7 @@ ms.locfileid: "73931154"
 > [!NOTE]
 > В настоящее время для лаборатории поддерживается только одно назначенное пользователем удостоверение. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 - [Создание, перечисление, удаление или назначение роли назначенному пользователем управляемому удостоверению с помощью портал Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md). 
 
 ## <a name="use-azure-portal"></a>Использование портала Azure
@@ -34,7 +34,7 @@ ms.locfileid: "73931154"
 1. В разделе **Параметры** выберите **удостоверение** .
 1. Чтобы добавить удостоверение, назначенное пользователем, нажмите кнопку **Добавить** на панели инструментов. 
 1. Выберите **удостоверение** из предварительно заполненного раскрывающегося списка.
-1. Нажмите кнопку **ОК**.
+1. Щелкните **ОК**.
 
     ![Добавление удостоверения, управляемого пользователем](./media/use-managed-identities-environments/add-user-managed-identity.png)
 2. В списке появится добавленное управляемое пользователем удостоверение. 
@@ -54,7 +54,7 @@ ms.locfileid: "73931154"
 1. После создания удостоверения запишите идентификатор ресурса этого удостоверения. Он должен выглядеть, как в следующем примере: 
 
     `/subscriptions/0000000000-0000-0000-0000-00000000000000/resourceGroups/<RESOURCE GROUP NAME> /providers/Microsoft.ManagedIdentity/userAssignedIdentities/<NAME of USER IDENTITY>`.
-1. Выполните метод размещения HTTPS, чтобы добавить новый ресурс `ServiceRunner` в лабораторию, как показано в следующем примере. Ресурс "средство запуска службы" — это прокси-ресурс для управления управляемыми удостоверениями и управления ими в DevTest Labs. Имя средства запуска службы может быть любым допустимым именем, но рекомендуется использовать имя управляемого ресурса удостоверений. 
+1. Выполните метод размещения HTTPS, чтобы добавить новый `ServiceRunner` ресурс в лабораторию, как показано в следующем примере. Ресурс "средство запуска службы" — это прокси-ресурс для управления управляемыми удостоверениями и управления ими в DevTest Labs. Имя средства запуска службы может быть любым допустимым именем, но рекомендуется использовать имя управляемого ресурса удостоверений. 
  
     ```json
     PUT https://management.azure.com/subscriptions/{subId}/resourceGroups/{rg}/providers/Microsoft.Devtestlab/labs/{yourlabname}/serviceRunners/{serviceRunnerName}

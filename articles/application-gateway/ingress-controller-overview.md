@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 838145f8573e11deff8566c932a9c73c6f59f03b
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.openlocfilehash: d6a63b6276c07b1fe6487b97f5c7fc255b6d3411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75561666"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80335800"
 ---
 # <a name="what-is-application-gateway-ingress-controller"></a>Что такое входной контроллер шлюза приложений?
 Контроллер входящего трафика шлюза приложений (АГИК) — это приложение Kubernetes, которое позволяет клиентам [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/) использовать собственный [шлюз](https://azure.microsoft.com/services/application-gateway/) нагрузки уровня 7 для Microsoft Azure, чтобы предоставить доступ к облачному программному обеспечению через Интернет. АГИК отслеживает кластер Kubernetes, на котором он размещен, и постоянно обновляет шлюз приложений, чтобы выбранные службы были доступны в Интернете.
@@ -31,14 +31,14 @@ ms.locfileid: "75561666"
 АГИК настраивается с помощью [ресурса](https://kubernetes.io/docs/user-guide/ingress/)входящих данных Kubernetes, а также службы, развертываний и модулей Pod. Он предоставляет ряд функций, использующих балансировщик нагрузки уровня "Стандартный" шлюза приложений Azure. Вот некоторые из них:
   - Маршрутизация URL-адресов
   - Сходство на основе файлов cookie,
-  - Завершение SSL-запросов
-  - Сквозное шифрование SSL
+  - Терминирование TLS
+  - Сквозной протокол TLS
   - Поддержка общедоступных, частных и гибридных веб-сайтов
   - Интегрированный брандмауэр веб-приложения
 
 АГИК может работать с несколькими пространствами имен и имеет Прохибитедтаржетс. Это означает, что АГИК можно настроить шлюз приложений специально для AKS кластеров, не затрагивая другие существующие серверные возможности. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [**Развертывание нуля**](ingress-controller-install-new.md). инструкции по установке АГИК, AKS и шлюза приложений в инфраструктуре пустого материала.
 - [**Развертывание серия статей Brownfield**](ingress-controller-install-existing.md): Установите агик на существующем AKS и шлюзе приложений.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/11/2018
 ms.author: ningk
-ms.openlocfilehash: 04ef72f7ec70b370305395ae8de8180f4594b43b
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: f3b84ba1c3571e3660d1d71a0167a7489c6ec4ff
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277346"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82145130"
 ---
 # <a name="integrate-cloud-foundry-with-azure"></a>Интеграция Cloud Foundry и Azure
 
@@ -38,15 +38,15 @@ Cloud Foundry — это платформа приложений, созданн
 > Зона доступности Azure пока предлагается не для всех регионов — см. последнее [объявление о списке поддерживаемых регионов](https://docs.microsoft.com/azure/availability-zones/az-overview). Также см. [руководство по зонам доступности Azure для Cloud Foundry с открытым исходным кодом](https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/tree/master/docs/advanced/availability-zone).
 
 ## <a name="2-network-routing"></a>2. сетевая маршрутизация
-По умолчанию базовая подсистема балансировки нагрузки Azure используется для входящих запросов к API и приложениям CF, перенаправляя их в Gorouters. Компоненты CF, например Diego Brain, MySQL, ERT, могут также с помощью подсистемы балансировки нагрузки балансировать трафик для обеспечения высокой доступности. Azure также предоставляет набор полностью управляемых решений балансировки нагрузки. Если вы ищете завершение TLS ("разгрузка SSL") или на обработку уровня приложения для запросов HTTP/HTTPS, рассмотрите возможность использования шлюза приложений. Для балансировки нагрузки с обеспечением высокой доступности и масштабируемости на четвертом уровне рекомендуется использовать стандартную подсистему балансировки нагрузки.
+По умолчанию базовая подсистема балансировки нагрузки Azure используется для входящих запросов к API и приложениям CF, перенаправляя их в Gorouters. Компоненты CF, например Diego Brain, MySQL, ERT, могут также с помощью подсистемы балансировки нагрузки балансировать трафик для обеспечения высокой доступности. Azure также предоставляет набор полностью управляемых решений балансировки нагрузки. Если вы ищете завершение TLS/SSL ("разгрузка SSL") или обработку уровня приложения для запросов HTTP/HTTPS, рассмотрите возможность использования шлюза приложений. Для балансировки нагрузки с обеспечением высокой доступности и масштабируемости на четвертом уровне рекомендуется использовать стандартную подсистему балансировки нагрузки.
 ### <a name="azure-application-gateway-"></a>Шлюз приложений Azure *
-[Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction) предлагает разные возможности балансировки нагрузки седьмого уровня, включая разгрузку SSL, сквозное подключение SSL, брандмауэр веб-приложений, сходство сеансов на основе файлов cookie и многое другое. Вы можете [настроить шлюз приложений в Cloud Foundry с открытым исходным кодом](https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/tree/master/docs/advanced/application-gateway). Дополнительные сведения см. в [примечаниях к выпуску PCF 2.1](https://docs.pivotal.io/pivotalcf/2-1/pcf-release-notes/opsmanager-rn.html#azure-application-gateway) для теста POC.
+[Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction) предлагает различные возможности балансировки нагрузки уровня 7, включая разгрузку SSL, СКВОЗНОЙ протокол TLS, брандмауэр веб-приложения, сходство сеансов на основе файлов cookie и многое другое. Вы можете [настроить шлюз приложений в Cloud Foundry с открытым исходным кодом](https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/tree/master/docs/advanced/application-gateway). Дополнительные сведения см. в [примечаниях к выпуску PCF 2.1](https://docs.pivotal.io/pivotalcf/2-1/pcf-release-notes/opsmanager-rn.html#azure-application-gateway) для теста POC.
 
 ### <a name="azure-standard-load-balancer-"></a>Azure Load Balancer уровня "Стандартный" *
-Azure Load Balancer — это подсистема балансировки нагрузки четвертого уровня. Он используется для распределения трафика между экземплярами служб в наборе с балансировкой нагрузки. Стандартная версия включает [дополнительные возможности](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) наряду с возможностями базовой версии, например: 1\. Максимальный размер внутреннего пула повышен с 100 до 1000 виртуальных машин.  2. Конечные точки теперь поддерживают несколько групп доступности вместо одной.  3. Дополнительные функции, такие как порты HA, Расширенные данные мониторинга и т. д. Если вы переходите в зону доступности Azure, требуется стандартная подсистема балансировки нагрузки. При работе с новым развертыванием рекомендуется начать с Azure Load Balancer уровня "Стандартный". 
+Azure Load Balancer — это подсистема балансировки нагрузки четвертого уровня. Он используется для распределения трафика между экземплярами служб в наборе с балансировкой нагрузки. Стандартная версия включает [дополнительные возможности](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) наряду с возможностями базовой версии, например: 1. Максимальный размер внутреннего пула повышен с 100 до 1000 виртуальных машин.  2. Конечные точки теперь поддерживают несколько групп доступности вместо одной.  3. Дополнительные функции, такие как порты HA, Расширенные данные мониторинга и т. д. Если вы переходите в зону доступности Azure, требуется стандартная подсистема балансировки нагрузки. При работе с новым развертыванием рекомендуется начать с Azure Load Balancer уровня "Стандартный". 
 
 ## <a name="3-authentication"></a>3. Проверка подлинности 
-[Cloud Foundry User Account and Authentication](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) (UAA) — это служба централизованного управления удостоверениями для платформы CF и ее компонентов. [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) — это мультитенантный облачный каталог и служба управления удостоверениями корпорации Майкрософт. По умолчанию для проверки подлинности в Cloud Foundry используется служба UAA. UAA также позволяет использовать Azure AD в качестве внешнего пользовательского хранилища. Пользователи Azure AD могут получить доступ к Cloud Foundry с помощью удостоверения LDAP без учетной записи Cloud Foundry. См. дополнительные сведения о [настройке Azure AD для UAA в PCF](https://docs.pivotal.io/p-identity/1-6/azure/index.html).
+[Cloud Foundry User Account and Authentication](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) (UAA) — это служба централизованного управления удостоверениями для платформы CF и ее компонентов. [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) — это облачный каталог и служба управления удостоверениями корпорации Майкрософт. По умолчанию для проверки подлинности в Cloud Foundry используется служба UAA. UAA также позволяет использовать Azure AD в качестве внешнего пользовательского хранилища. Пользователи Azure AD могут получить доступ к Cloud Foundry с помощью удостоверения LDAP без учетной записи Cloud Foundry. См. дополнительные сведения о [настройке Azure AD для UAA в PCF](https://docs.pivotal.io/p-identity/1-6/azure/index.html).
 
 ## <a name="4-data-storage-for-cloud-foundry-runtime-system"></a>4. хранилище данных для системы среды выполнения Cloud Foundry
 Благодаря своей расширяемости, Cloud Foundry позволяет использовать хранилища BLOB-объектов Azure или службы Azure MySQL или PostgreSQL в качестве хранилищ системы среды выполнения приложений.
@@ -89,7 +89,7 @@ Log Analytics сопла Azure — это Cloud Foundry компонент, ко
 
 Компанией Pivotal была запущена [среда Small Footprint ERT](https://docs.pivotal.io/pivotalcf/2-0/customizing/small-footprint.html) для клиентов PCF. Компоненты совместно располагаются всего в четырех виртуальных машинах, на которых выполняются до 2500 экземпляров приложений. Пробная версия сейчас доступна в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/pivotal.pivotal-cloud-foundry).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Функции интеграции Azure в первую очередь доступны в [Cloud Foundry с открытым исходным кодом](https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/tree/master/docs/advanced/), прежде чем они будут доступны в сводных Cloud Foundry. Компоненты, отмеченные звездочкой *, все еще недоступны в PCF. Интеграция Cloud Foundry с Azure Stack не рассматривается в этом документе.
 Для получения последних сведений о состоянии и помощи по PCF в компонентах, отмеченных звездочкой *, или по интеграции Cloud Foundry со стеком Azure Stack обратитесь к менеджеру по работе с клиентами Pivotal и Майкрософт. 
 

@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 08/22/2019
 ms.author: aschhab
 ms.openlocfilehash: 7234e33c04e742c77630f8d87481c7831fb00bf2
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70013250"
 ---
 # <a name="service-bus-authentication-and-authorization"></a>Аутентификация и авторизация в служебной шине
@@ -34,7 +34,7 @@ ms.locfileid: "70013250"
 
 Дополнительные сведения о проверке подлинности в Azure AD см. в следующих статьях:
 
-- [Проверка подлинности с помощью управляемых удостоверений](service-bus-managed-service-identity.md)
+- [Аутентификация на основе управляемых удостоверений](service-bus-managed-service-identity.md)
 - [Аутентификация из приложения](authenticate-application.md)
 
 > [!IMPORTANT]
@@ -59,7 +59,7 @@ ms.locfileid: "70013250"
 
 Поддержка проверки подлинности SAS для служебной шины включена в пакет Azure SDK для .NET 2.0 и более поздних версий. SAS включает в себя поддержку правила [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule). Все интерфейсы API, которые принимают строку подключения в качестве параметра, поддерживают строки подключения SAS.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о SAS см. в статье [Аутентификация служебной шины с помощью подписанных URL-адресов](service-bus-sas.md).
 - [Переход от службы контроля доступа Azure Active Directory к авторизации подписанного URL-адреса](service-bus-migrate-acs-sas.md).

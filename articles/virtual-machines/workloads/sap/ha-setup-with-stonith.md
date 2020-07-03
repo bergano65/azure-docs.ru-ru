@@ -4,7 +4,7 @@ description: Установка высокого уровня доступнос
 services: virtual-machines-linux
 documentationcenter: ''
 author: saghorpa
-manager: gwallace
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0f23fe2aa17934b967e7aecf41687cc555b9552c
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: 4060dbe936af8ff1f9dd8c958f64834cb06525de
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71212529"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77615087"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
 Этот документ содержит подробные пошаговые инструкции для настройки высокого уровня доступности в операционной системе SUSE с помощью устройства STONITH.
@@ -54,7 +54,7 @@ ms.locfileid: "71212529"
 
 Для настройки сквозной высокой доступности с помощью STONITH выполните такие действия:
 
-1.  Идентифицируйте устройство SBD.
+1.  Идентификация устройства SBD
 2.  Инициализация устройства SBD
 3.  Настройка кластера
 4.  Настройка службы наблюдения Softdog
@@ -77,7 +77,7 @@ iqn.1996-04.de.suse:01:<Tenant><Location><SID><NodeNumber>
 
 1.2. Измените */etc/iscsi/iscsid.conf*: задайте *node.session.timeo.replacement_timeout=5* и *node.startup = automatic*. Измените файл на **обоих** узлах.
 
-1.3. Выполните команду обнаружения. Отобразится четыре сеанса. Запустите его на обоих узлах.
+1.3. Выполните команду обнаружения. Отобразится четыре сеанса. Запустите ее на обоих узлах.
 
 ```
 iscsiadm -m discovery -t st -p <IP address provided by Service Management>:3260
@@ -85,21 +85,21 @@ iscsiadm -m discovery -t st -p <IP address provided by Service Management>:3260
 
 ![iSCSIadmDiscovery.png](media/HowToHLI/HASetupWithStonith/iSCSIadmDiscovery.png)
 
-1.4 Выполните команду для входа в устройство iSCSI. Отобразится четыре сеанса. Запустите ее на **обоих** узлах.
+1.4 Выполните команду для входа в устройство iSCSI. Отобразится четыре сеанса. Запустите его на **обоих** узлах.
 
 ```
 iscsiadm -m node -l
 ```
 ![iSCSIadmLogin.png](media/HowToHLI/HASetupWithStonith/iSCSIadmLogin.png)
 
-1,5. Выполните скрипт повторного сканирования: *Rescan-SCSI-Bus.sh*.  Этот сценарий показывает новые созданные диски.  Запустите его на обоих узлах. Отобразится номер LUN больше нуля (например, 1, 2 и т. д.).
+1,5. Выполните скрипт повторного сканирования: *Rescan-SCSI-Bus.sh*.  Этот сценарий показывает новые созданные диски.  Запустите ее на обоих узлах. Отобразится номер LUN больше нуля (например, 1, 2 и т. д.).
 
 ```
 rescan-scsi-bus.sh
 ```
 ![rescanscsibus.png](media/HowToHLI/HASetupWithStonith/rescanscsibus.png)
 
-1.6. Чтобы получить имя устройства, выполните команду *fdisk –l*. Запустите его на обоих узлах. Выберите устройство с размером **178 МиБ**.
+1.6. Чтобы получить имя устройства, выполните команду *fdisk –l*. Запустите ее на обоих узлах. Выберите устройство с размером **178 МиБ**.
 
 ```
   fdisk –l
@@ -143,10 +143,10 @@ zypper in SAPHanaSR SAPHanaSR-doc
 
 ![yast-hawk-continue.png](media/HowToHLI/HASetupWithStonith/yast-hawk-continue.png)
 
-Нажмите кнопку **Продолжить**.
+Нажмите кнопку **продолжить** .
 
-Ожидаемое значение — число развернутых узлов (в данном случае 2) ![yast-Cluster-Security.png](media/HowToHLI/HASetupWithStonith/yast-Cluster-Security.png) Нажмите кнопку **Далее**
-![yast-cluster-configure-csync2.png](media/HowToHLI/HASetupWithStonith/yast-cluster-configure-csync2.png) Добавьте имена узлов, а затем щелкните Add suggested files (Добавить предложенные файлы).
+Ожидаемое значение = число развернутых узлов (в данном случае ![2) яст-клустер-секурити](media/HowToHLI/HASetupWithStonith/yast-Cluster-Security.png) . **Next**
+![PNG нажмите кнопку Next](media/HowToHLI/HASetupWithStonith/yast-cluster-configure-csync2.png) YaST-Cluster-configure-csync2. png добавить имена узлов и нажмите кнопку "добавить предложенные файлы".
 
 Щелкните Turn csync2 ON (Включить csync2).
 
@@ -154,14 +154,14 @@ zypper in SAPHanaSR SAPHanaSR-doc
 
 ![yast-key-file.png](media/HowToHLI/HASetupWithStonith/yast-key-file.png)
 
-Нажмите кнопку **ОК**
+Нажмите кнопку **ОК**.
 
 Аутентификация выполняется с помощью IP-адреса и предопределенных ключей в Csync2. Файл ключа создается с помощью csync2 -k /etc/csync2/key_hagroup. Файл key_hagroup нужно скопировать во все элементы кластера вручную после его создания. **Убедитесь, что файл скопирован с узла 1 на узел 2**.
 
 ![yast-cluster-conntrackd.png](media/HowToHLI/HASetupWithStonith/yast-cluster-conntrackd.png)
 
-Нажмите кнопку **Далее**.
-![yast-cluster-service.png](media/HowToHLI/HASetupWithStonith/yast-cluster-service.png)
+Нажмите кнопку **Next**
+![яст-клустер-сервице. png.](media/HowToHLI/HASetupWithStonith/yast-cluster-service.png)
 
 В параметрах по умолчанию загрузка была отключена, поэтому измените значение на "ВКЛ.", чтобы Pacemaker запускался во время загрузки. Выбор можно сделать на основе требований к установке.
 Щелкните **Далее** и настройка кластера будет завершена.
@@ -257,7 +257,7 @@ systemctl start pacemaker
 ```
 crm_mon
 ```
-![КРМ-Мон. png](media/HowToHLI/HASetupWithStonith/crm-mon.png) можно также войти в Hawk, чтобы проверить состояние кластера *https://\<узла IP >: 7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
+![КРМ-Мон. png](media/HowToHLI/HASetupWithStonith/crm-mon.png) вы также можете войти в Hawk, чтобы проверить состояние кластера *https://\<узел IP>:7630*. Пользователь по умолчанию — hacluster, а пароль — linux. При необходимости можно изменить пароль с помощью команды *passwd*.
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. Настройка свойств и ресурсов кластера 
 В этом разделе описаны действия по настройке кластерных ресурсов.
@@ -322,7 +322,7 @@ crm configure load update crm-vip.txt
 При выполнении команды *crm_mon* отобразится два ресурса.
 ![crm_mon_command.png](media/HowToHLI/HASetupWithStonith/crm_mon_command.png)
 
-Кроме того, состояние можно увидеть на сайте *https://\<IP-адрес узла >: 7630/ЦИБ/Live/State.*
+Кроме того, состояние можно увидеть на *узле HTTPS://\<IP Address>:7630/ЦИБ/Live/State.*
 
 ![hawlk-status-page.png](media/HowToHLI/HASetupWithStonith/hawlk-status-page.png)
 
@@ -333,10 +333,10 @@ Service pacemaker stop
 ```
 Теперь остановите службу Pacemaker на узле **node2**. После этого произойдет отработка отказа ресурсов на узле **node1**.
 
-**Перед выполнением отработки отказа**  
+**Перед отработкой отказа**  
 ![Бефоре-фаиловер. png](media/HowToHLI/HASetupWithStonith/Before-failover.png)  
 
-**После выполнения отработки отказа**  
+**После отработки отказа**  
 ![Афтер-фаиловер. png](media/HowToHLI/HASetupWithStonith/after-failover.png)  
 ![КРМ-Мон-Афтер-фаиловер. png](media/HowToHLI/HASetupWithStonith/crm-mon-after-failover.png)  
 
@@ -375,7 +375,7 @@ Login to [iface: default, target: iqn.1992-08.com.netapp:hanadc11:1:t020, portal
 
 ![yast2-qt-gui-error.png](media/HowToHLI/HASetupWithStonith/yast2-qt-gui-error.png)
 
-**Ожидаемые выходные данные**
+**Ожидаемый результат**
 
 ![yast-control-center.png](media/HowToHLI/HASetupWithStonith/yast-control-center.png)
 
@@ -422,7 +422,7 @@ zypper -n install libyui-qt
 
 - Базовый сервер SAP HANA.
 - Компилятор и средства C/C++.
-- высокой доступности
+- Высокий уровень доступности
 - Базовый сервер приложений SAP.
 
 На следующем экране показаны шаги по установке шаблонов.
@@ -436,11 +436,11 @@ zypper -n install libyui-qt
 ![yast-pattern1.png](media/HowToHLI/HASetupWithStonith/yast-pattern1.png)
 ![yast-pattern2.png](media/HowToHLI/HASetupWithStonith/yast-pattern2.png)
 
-Нажмите кнопку **Принять**.
+Нажмите кнопку **принять** .
 
 ![yast-changed-packages.png](media/HowToHLI/HASetupWithStonith/yast-changed-packages.png)
 
-Нажмите кнопку **Продолжить**.
+Нажмите кнопку **продолжить** .
 
 ![yast2-performing-installation.png](media/HowToHLI/HASetupWithStonith/yast2-performing-installation.png)
 

@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/28/2020
 ms.openlocfilehash: deb6c2439cc84f196b7f42fd9f49d3ebfd057cbb
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76962227"
 ---
 # <a name="deploy-an-azure-stream-analytics-job-using-cicd-npm-package"></a>Развертывание задания Azure Stream Analytics с помощью пакета CI/CD NPM 
@@ -25,7 +25,7 @@ ms.locfileid: "76962227"
 
 Вы можете включить непрерывную интеграцию и развертывание для Azure Stream Analytics заданий с помощью пакета **ASA-streamanalytics-cicd** NPM. Пакет NPM предоставляет средства для создания шаблонов Azure Resource Manager [Stream Analytics Visual Studio Code проектов](quick-create-vs-code.md). Его можно использовать в Windows, macOS и Linux без установки Visual Studio Code.
 
-Вы можете [скачать пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его [глобально](https://docs.npmjs.com/downloading-and-installing-packages-globally) с помощью команды `npm install -g azure-streamanalytics-cicd`. Это рекомендуемый подход, который также можно использовать в задаче "Скрипт" PowerShell или Azure CLI конвейера сборки в **Azure pipelines**.
+Вы можете [скачать пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd) напрямую или установить его [глобально](https://docs.npmjs.com/downloading-and-installing-packages-globally) с `npm install -g azure-streamanalytics-cicd` помощью команды. Это рекомендуемый подход, который также можно использовать в задаче "Скрипт" PowerShell или Azure CLI конвейера сборки в **Azure pipelines**.
 
 После установки пакета используйте следующую команду для вывода шаблонов Azure Resource Manager. Аргумент **scriptPath** — это абсолютный путь к файлу **asaql** в проекте. Убедитесь, что файлы асапрож. JSON и Жобконфиг. JSON находятся в одной папке с файлом скрипта. Если **outputPath** не указан, шаблоны будут помещены в папку **deploy** в папке **bin** проекта.
 
@@ -58,7 +58,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
     },
 ```
 
-## <a name="deploy-with-azure-pipelines"></a>Развертывание с помощью Azure Pipelines
+## <a name="deploy-with-azure-pipelines"></a>Развертывание с использованием Azure Pipelines
 
 В этом разделе подробно описано, как создавать конвейеры [сборки](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav) и [выпуска](https://docs.microsoft.com/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) Azure pipelines с помощью NPM.
 
@@ -70,7 +70,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 
 2. Выберите **использовать классический редактор** для создания конвейера без YAML.
 
-3. Выберите тип источника, командный проект и репозиторий. Затем выберите **Continue** (Продолжить).
+3. Выберите тип источника, командный проект и репозиторий. Затем нажмите **Продолжить**.
 
    ![Выбор проекта Azure Stream Analytics](./media/setup-cicd-vs-code/select-repo.png)
 
@@ -110,7 +110,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |-|-|
    |Отображаемое имя|Копировать файлы в: $ (Build. artifactstagingdirectory)|
    |Исходная папка|`$(system.defaultworkingdirectory)`| 
-   |Контент| `**\Deploy\**` |
+   |Содержимое| `**\Deploy\**` |
    |Целевая папка| `$(build.artifactstagingdirectory)`|
 
    ![Введите конфигурации для задачи копирования](./media/setup-cicd-vs-code/copy-config.png)
@@ -121,7 +121,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 
 2. Не изменяйте конфигурации по умолчанию.
 
-### <a name="save-and-run"></a>Сохранить и выполнить
+### <a name="save-and-run"></a>Сохранение и запуск
 
 После завершения добавления задач NPM, Командная строка, копирование файлов и публикация артефактов сборки выберите **сохранить & очередь**. При появлении запроса введите комментарий и выберите **сохранить и выполнить**.
 
@@ -150,8 +150,8 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |Параметр|Значение|
    |-|-|
    |Отображаемое имя| *Развертывание Мясажоб*|
-   |Подписка на Azure| Выберите свою подписку.|
-   |Действия| *Создать или обновить группу ресурсов*|
+   |Подписка Azure| Выберите свою подписку.|
+   |Действие| *Создание или изменение группы ресурсов*|
    |Группа ресурсов| Выберите имя для тестовой группы ресурсов, которая будет содержать задание Stream Analytics.|
    |Расположение|Выберите расположение группы тестовых ресурсов.|
    |Расположение шаблона| *Связанный артефакт*|
@@ -167,8 +167,8 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
    |Параметр|Значение|
    |-|-|
    |Отображаемое имя| *Развертывание Мясажоб*|
-   |Подписка на Azure| Выберите свою подписку.|
-   |Действия| *Создать или обновить группу ресурсов*|
+   |Подписка Azure| Выберите свою подписку.|
+   |Действие| *Создание или изменение группы ресурсов*|
    |Группа ресурсов| Выберите имя рабочей группы ресурсов, которая будет содержать задание Stream Analytics.|
    |Расположение|Выберите расположение рабочей группы ресурсов.|
    |Расположение шаблона| *Связанный артефакт*|
@@ -188,7 +188,7 @@ azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/sc
 Чтобы в качестве приемника выходных данных использовать управляемое удостоверение для Azure Data Lake Storage 1-го поколения, предоставите доступ субъекту-службе с помощью PowerShell перед развертыванием в Azure. Дополнительные сведения см. в разделе о [развертывании ADLS 1-го поколения с управляемым удостоверением с помощью шаблона Resource Manager](stream-analytics-managed-identities-adls.md#resource-manager-template-deployment).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Краткое руководство. Создание Azure Stream Analytics облачного задания в Visual Studio Code (Предварительная версия)](quick-create-vs-code.md)
 * [Тестирование Stream Analytics запросов локально с Visual Studio Code (Предварительная версия)](visual-studio-code-local-run.md)

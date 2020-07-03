@@ -1,5 +1,5 @@
 ---
-title: Запуск конвейера машинного обучения из приложения логики
+title: Активировать конвейер машинного обучения для новых данных
 titleSuffix: Azure Machine Learning
 description: Узнайте, как активировать выполнение конвейера машинного обучения с помощью Azure Logic Apps.
 services: machine-learning
@@ -10,18 +10,19 @@ ms.subservice: core
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/07/2020
-ms.openlocfilehash: 6bb976b8b310fb3eb4d0247a8d745599f688d7b5
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.custom: contperfq4
+ms.openlocfilehash: 32b3e153a98ca7de91e0dd05258414780b39dec4
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77122861"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857959"
 ---
 # <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Запуск конвейера Машинное обучение из приложения логики
 
 Запуск конвейера Машинное обучение Azure при появлении новых данных. Например, может потребоваться активировать конвейер для обучения новой модели при появлении новых данных в учетной записи хранения BLOB-объектов. Настройте триггер с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -46,11 +47,11 @@ ms.locfileid: "77122861"
 
 1. Перейдите в представление конструктора приложений логики и выберите шаблон Пустое приложение логики. 
     > [!div class="mx-imgBorder"]
-    > ![пустой шаблон](media/how-to-trigger-published-pipeline/blank-template.png)
+    > ![пустой шаблон.](media/how-to-trigger-published-pipeline/blank-template.png)
 
 1. В конструкторе найдите BLOB- **объект**. Выберите **при добавлении или изменении большого двоичного объекта (только свойства)** и добавьте этот триггер в приложение логики.
     > [!div class="mx-imgBorder"]
-    > ![добавить триггер](media/how-to-trigger-published-pipeline/add-trigger.png)
+    > ![Добавление триггера](media/how-to-trigger-published-pipeline/add-trigger.png)
 
 1. Укажите сведения о подключении для учетной записи хранения BLOB-объектов, которую вы хотите отслеживать для добавления или изменения больших двоичных объектов. Выберите контейнер для отслеживания. 
  
@@ -62,7 +63,7 @@ ms.locfileid: "77122861"
 1. Добавьте действие HTTP, которое будет выполняться при обнаружении нового или измененного большого двоичного объекта. Выберите **+ новый шаг**, затем найдите и выберите действие HTTP.
 
   > [!div class="mx-imgBorder"]
-  > ![Поиск](media/how-to-trigger-published-pipeline/search-http.png) действий HTTP
+  > ![Поиск действия HTTP](media/how-to-trigger-published-pipeline/search-http.png)
 
   Для настройки действия используйте следующие параметры:
 
@@ -87,7 +88,7 @@ ms.locfileid: "77122861"
     },
     ```
 
-    Используйте `DataStoreName`, добавленные в рабочую область в качестве [необходимого компонента](#prerequisites).
+    `DataStoreName` Используйте добавленные в рабочую область в качестве [необходимого компонента](#prerequisites).
      
     > [!div class="mx-imgBorder"]
     > ![Параметры HTTP](media/how-to-trigger-published-pipeline/http-settings.png)

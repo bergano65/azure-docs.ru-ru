@@ -1,30 +1,33 @@
 ---
-title: Apache Kafka SSL-шифрование & аутентификация в Azure HDInsight
-description: Настройте SSL-шифрование для обмена данными между клиентами Kafka и брокерами Kafka, а также между брокерами Kafka. Настройте проверку подлинности клиентов по протоколу SSL.
+title: Apache Kafka шифрование TLS & аутентификация — Azure HDInsight
+description: Настройте шифрование TLS для обмена данными между клиентами Kafka и брокерами Kafka, а также между брокерами Kafka. Настройте проверку подлинности клиентов по протоколу SSL.
 author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
+ms.custom: hdinsightactive
 ms.date: 05/01/2019
-ms.author: hrasheed
-ms.openlocfilehash: 9b07d16ed97a93b5b5b9422673cfc38ada8e8116
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 02b64d77a4fb1af25e1022de3ac8e4775f916d9e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76764365"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81261777"
 ---
-# <a name="set-up-secure-sockets-layer-ssl-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>Настройка шифрования и проверки подлинности SSL (SSL) для Apache Kafka в Azure HDInsight
+# <a name="set-up-tls-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>Настройка шифрования и проверки подлинности TLS для Apache Kafka в Azure HDInsight
 
-В этой статье показано, как настроить SSL-шифрование между клиентами Apache Kafka и брокерами Apache Kafka. Здесь также показано, как настроить проверку подлинности клиентов (иногда это называется двусторонним протоколом SSL).
+В этой статье показано, как настроить шифрование TLS, ранее известное как шифрование SSL (SSL) между Apache Kafka клиентами и брокерами Apache Kafka. Здесь также показано, как настроить проверку подлинности клиентов (иногда это называется двусторонним протоколом TLS).
 
 > [!Important]
-> Для приложений Kafka можно использовать два клиента: клиент Java и клиент консоли. Только клиент Java `ProducerConsumer.java` может использовать SSL для создания и использования. Клиентский `console-producer.sh` производителя консоли не работает с SSL.
+> Для приложений Kafka можно использовать два клиента: клиент Java и клиент консоли. Только клиент `ProducerConsumer.java` Java может использовать TLS как для создания, так и для использования. Клиент `console-producer.sh` производителя консоли не работает с протоколом TLS.
+
+> [!Note]
+> Производитель консоли HDInsight Kafka с версией 1,1 не поддерживает SSL.
 
 ## <a name="apache-kafka-broker-setup"></a>Установка компонента Service Broker Apache Kafka
 
-Программа установки брокера SSL Kafka будет использовать четыре виртуальных машины кластера HDInsight следующим образом:
+Программа установки посредника Kafka TLS будет использовать четыре виртуальных машины кластера HDInsight следующим образом:
 
 * головного узла 0 — центр сертификации (ЦС)
 * Рабочий узел 0, 1 и 2 — брокеры
@@ -49,7 +52,7 @@ ms.locfileid: "76764365"
 Используйте следующие подробные инструкции для завершения установки компонента Service Broker.
 
 > [!Important]
-> В следующих фрагментах кода Внкс является сокращением для одного из трех рабочих узлов и должно быть заменено `wn0`, `wn1` или `wn2` соответствующим образом. `WorkerNode0_Name` и `HeadNode0_Name` должны быть заменены именами соответствующих компьютеров.
+> В следующих фрагментах кода внкс — это сокращение для одного из трех рабочих узлов `wn0`, `wn1` которое должно быть заменено или `wn2` соответствующим образом. `WorkerNode0_Name`и `HeadNode0_Name` должны быть заменены именами соответствующих компьютеров.
 
 1. Выполните начальную настройку на головном узле 0, который для HDInsight будет заполнять роль центра сертификации (ЦС).
 
@@ -117,7 +120,7 @@ ms.locfileid: "76764365"
 
     ```
 
-## <a name="update-kafka-configuration-to-use-ssl-and-restart-brokers"></a>Обновите конфигурацию Kafka для использования SSL и перезапуска брокеров
+## <a name="update-kafka-configuration-to-use-tls-and-restart-brokers"></a>Обновление конфигурации Kafka для использования TLS и перезапуска брокеров
 
 Теперь вы настроили каждый брокер Kafka с хранилищем ключей и trustStore и импортировали правильные сертификаты. Далее измените связанные свойства конфигурации Kafka с помощью Ambari, а затем перезапустите брокеры Kafka.
 
@@ -134,7 +137,7 @@ ms.locfileid: "76764365"
 
     ![Изменение свойств конфигурации SSL для Kafka в Ambari](./media/apache-kafka-ssl-encryption-authentication/editing-configuration-ambari2.png)
 
-1. Добавьте новые свойства конфигурации в файл Server. Properties.
+1. Для HDI версии 3,6 Перейдите в пользовательский интерфейс Ambari и добавьте следующие конфигурации в разделе **Advanced Kafka-env** и свойство **шаблона Kafka-env** .
 
     ```bash
     # Configure Kafka to advertise IP addresses instead of FQDN
@@ -149,20 +152,25 @@ ms.locfileid: "76764365"
     echo "ssl.truststore.password=MyServerPassword123" >> /usr/hdp/current/kafka-broker/conf/server.properties
     ```
 
-1. Перейдите к пользовательскому интерфейсу настройки Ambari и убедитесь, что новые свойства отображаются в разделе **Advanced Kafka-env** и свойство **шаблона Kafka-env** .
+1. Ниже приведен снимок экрана, на котором показан пользовательский интерфейс настройки Ambari с этими изменениями.
+
+    Для HDI версии 3,6:
 
     ![Изменение свойства шаблона Kafka-env в Ambari](./media/apache-kafka-ssl-encryption-authentication/editing-configuration-kafka-env.png)
 
+    Для HDI версии 4,0:
+
+     ![Изменение свойства шаблона Kafka-env в Ambari 4](./media/apache-kafka-ssl-encryption-authentication/editing-configuration-kafka-env-four.png)
+
 1. Перезапустите все брокеры Kafka.
-1. Запустите клиент администрирования с параметрами Producer и Consumer, чтобы убедиться, что оба производителя и потребитель работают с портом 9093.
 
 ## <a name="client-setup-without-authentication"></a>Установка клиента (без проверки подлинности)
 
-Если проверка подлинности не требуется, то сводка действий по настройке только шифрования SSL:
+Если проверка подлинности не требуется, то сводка действий по настройке только шифрования TLS:
 
 1. Войдите в центр сертификации (активный головной узел).
 1. Скопируйте сертификат ЦС на клиентский компьютер с компьютера ЦС (WN0).
-1. Войдите на клиентский компьютер (HN1) и перейдите в папку `~/ssl`.
+1. Войдите на клиентский компьютер (HN1) и перейдите в `~/ssl` папку.
 1. Импортируйте сертификат ЦС в trustStore.
 1. Импортируйте сертификат ЦС в хранилище ключей.
 
@@ -200,7 +208,7 @@ ms.locfileid: "76764365"
     keytool -keystore kafka.client.keystore.jks -alias CARoot -import -file ca-cert -storepass "MyClientPassword123" -keypass "MyClientPassword123" -noprompt
     ```
 
-1. Создайте файл `client-ssl-auth.properties`. В нем должны присутствовать следующие строки.
+1. Создайте файл `client-ssl-auth.properties` на клиентском компьютере (HN1). В нем должны присутствовать следующие строки.
 
     ```config
     security.protocol=SSL
@@ -208,17 +216,19 @@ ms.locfileid: "76764365"
     ssl.truststore.password=MyClientPassword123
     ```
 
+1. Запустите клиент администрирования с параметрами Producer и Consumer, чтобы убедиться, что оба производителя и потребитель работают с портом 9093. Шаги, необходимые для проверки установки с помощью Console Producer или Consumer, см. в разделе " [Проверка](apache-kafka-ssl-encryption-authentication.md#verification) " ниже.
+
 ## <a name="client-setup-with-authentication"></a>Установка клиента (с проверкой подлинности)
 
 > [!Note]
-> Следующие шаги требуются только в том случае, если вы настраиваете проверку подлинности **и** шифрование SSL. Если вы настраиваете шифрование только, то см. раздел [Настройка клиента без проверки подлинности](apache-kafka-ssl-encryption-authentication.md#client-setup-without-authentication).
+> Следующие шаги необходимы только при настройке шифрования **и** проверки подлинности TLS. Если вы настраиваете шифрование только, то см. раздел [Настройка клиента без проверки подлинности](apache-kafka-ssl-encryption-authentication.md#client-setup-without-authentication).
 
 Следующие четыре шага обобщаются задачи, необходимые для завершения установки клиента.
 
 1. Войдите на клиентский компьютер (резервный головной узел).
 1. Создайте хранилище ключей Java и получите подписанный сертификат для брокера. Затем скопируйте сертификат на виртуальную машину, где запущен центр сертификации.
 1. Чтобы подписать сертификат клиента, переключитесь на компьютер ЦС (активный головной узел).
-1. Перейдите на клиентский компьютер (резервный головной узел) и перейдите в папку `~/ssl`. Скопируйте подписанный сертификат на клиентский компьютер.
+1. Перейдите на клиентский компьютер (резервный головной узел) и перейдите `~/ssl` к папке. Скопируйте подписанный сертификат на клиентский компьютер.
 
 Подробные сведения о каждом шаге приведены ниже.
 
@@ -270,17 +280,24 @@ ms.locfileid: "76764365"
     scp ca-cert sshuser@HeadNode1_Name:~/ssl/ca-cert
     ```
 
-1. Создайте хранилище клиента с подписанным сертификатом и импортируйте сертификат ЦС в хранилище ключей и trustStore:
+    1. Войдите на клиентский компьютер (резервный головной узел) и перейдите к каталогу SSL.
 
     ```bash
-    keytool -keystore kafka.client.keystore.jks -import -file client-cert-signed -storepass MyClientPassword123 -keypass MyClientPassword123 -noprompt
-    
-    keytool -keystore kafka.client.keystore.jks -alias CARoot -import -file ca-cert -storepass MyClientPassword123 -keypass MyClientPassword123 -noprompt
-    
-    keytool -keystore kafka.client.truststore.jks -alias CARoot -import -file ca-cert -storepass MyClientPassword123 -keypass MyClientPassword123 -noprompt
+    ssh sshuser@HeadNode1_Name
+    cd ssl
     ```
 
-1. Создайте файл `client-ssl-auth.properties`. В нем должны присутствовать следующие строки.
+1. Создайте хранилище клиента с подписанным сертификатом и импортируйте сертификат ЦС в хранилище ключей и trustStore на клиентском компьютере (HN1):
+
+    ```bash
+    keytool -keystore kafka.client.truststore.jks -alias CARoot -import -file ca-cert -storepass "MyClientPassword123" -keypass "MyClientPassword123" -noprompt
+    
+    keytool -keystore kafka.client.keystore.jks -alias CARoot -import -file ca-cert -storepass "MyClientPassword123" -keypass "MyClientPassword123" -noprompt
+    
+    keytool -keystore kafka.client.keystore.jks -import -file client-cert-signed -storepass "MyClientPassword123" -keypass "MyClientPassword123" -noprompt
+    ```
+
+1. Создайте файл `client-ssl-auth.properties` на клиентском компьютере (HN1). В нем должны присутствовать следующие строки.
 
     ```bash
     security.protocol=SSL
@@ -293,8 +310,10 @@ ms.locfileid: "76764365"
 
 ## <a name="verification"></a>Проверка
 
+Выполните эти действия на клиентском компьютере.
+
 > [!Note]
-> Если установлены HDInsight 4,0 и Kafka 2,1, для проверки установки можно воспользоваться производителем или потребителями консоли. В противном случае запустите производитель Kafka на порте 9092 и отправьте сообщения в раздел, а затем используйте потребитель Kafka на порте 9093, который использует SSL.
+> Если установлены HDInsight 4,0 и Kafka 2,1, для проверки установки можно воспользоваться производителем или потребителями консоли. В противном случае запустите производитель Kafka на порте 9092 и отправьте сообщения в раздел, а затем используйте потребитель Kafka на порте 9093, который использует TLS.
 
 ### <a name="kafka-21-or-above"></a>Kafka 2,1 или более поздней версии
 
@@ -304,13 +323,13 @@ ms.locfileid: "76764365"
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper <ZOOKEEPER_NODE>:2181 --create --topic topic1 --partitions 2 --replication-factor 2
     ```
 
-1.  Запустите производитель консоли и укажите путь к `client-ssl-auth.properties` в качестве файла конфигурации для производителя.
+1. Запустите Producer Console и укажите путь в `client-ssl-auth.properties` качестве файла конфигурации для производителя.
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list <FQDN_WORKER_NODE>:9093 --topic topic1 --producer.config ~/ssl/client-ssl-auth.properties
     ```
 
-1.  Откройте другое SSH-подключение к клиентскому компьютеру и запустите консоль-потребитель и укажите путь к `client-ssl-auth.properties` в качестве файла конфигурации для потребителя.
+1. Откройте другое SSH-подключение к клиентскому компьютеру и запустите консоль-потребитель и укажите `client-ssl-auth.properties` путь к файлу конфигурации для потребителя.
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server <FQDN_WORKER_NODE>:9093 --topic topic1 --consumer.config ~/ssl/client-ssl-auth.properties --from-beginning
@@ -324,18 +343,18 @@ ms.locfileid: "76764365"
     /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --zookeeper <ZOOKEEPER_NODE_0>:2181 --create --topic topic1 --partitions 2 --replication-factor 2
     ```
 
-1.  Запустите Producer Console и укажите путь к свойствам Client-SSL-auth. Properties в качестве файла конфигурации для производителя.
+1. Запустите Producer Console и укажите путь к свойствам Client-SSL-auth. Properties в качестве файла конфигурации для производителя.
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list <FQDN_WORKER_NODE>:9092 --topic topic1 
     ```
 
-3.  Откройте другое SSH-подключение к клиентскому компьютеру и запустите консоль-потребитель и укажите путь к `client-ssl-auth.properties` в качестве файла конфигурации для потребителя.
+1. Откройте другое SSH-подключение к клиентскому компьютеру и запустите консоль-потребитель и укажите `client-ssl-auth.properties` путь к файлу конфигурации для потребителя.
 
     ```bash
     $ /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server <FQDN_WORKER_NODE>:9093 --topic topic1 --consumer.config ~/ssl/client-ssl-auth.properties --from-beginning
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Что такое Apache Kafka в HDInsight?](apache-kafka-introduction.md)

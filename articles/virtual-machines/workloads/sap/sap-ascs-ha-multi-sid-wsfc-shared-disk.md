@@ -1,10 +1,10 @@
 ---
-title: Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure | Документация Майкрософт
+title: Уровень доступности SAP ASCS/SCS с несколькими ИД безопасности с WSFC&общим диском в Azure | Документация Майкрософт
 description: Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
-author: goraco
-manager: gwallace
+author: rdeltcheva
+manager: juergent
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -14,15 +14,251 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/05/2017
-ms.author: rclaus
+ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1f7e9551e6a48350b8f23e9d6ce1d47a1a903c63
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: e8c235cd204b86573746be4bce615939f3b072fa
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75643259"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82977912"
 ---
+# <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-shared-disk-on-azure"></a>Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure
+
+> ![Windows][Logo_Windows] Windows
+>
+
+В сентябре 2016 Корпорация Майкрософт выпустила функцию, в которой можно управлять несколькими виртуальными IP-адресами с помощью [внутреннего балансировщика нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
+
+Если у вас есть развертывание SAP, чтобы создать конфигурацию кластера Windows для экземпляров SAP Central Services (ASCS/SCS), необходимо использовать внутреннюю подсистему балансировки нагрузки.
+
+В этой статье основное внимание уделяется переходу от отдельной установки ASCS/SCS к конфигурации SAP с несколькими идентификаторами безопасности с помощью установки дополнительных кластеризованных экземпляров SAP ASCS/SCS в существующем отказоустойчивом кластере Windows Server (WSFC) с общим диском. Выполнив эти действия, вы настроите кластер SAP с несколькими ИД безопасности.
+
+> [!NOTE]
+> Эта функция доступна только в модели развертывания с помощью Azure Resource Manager.
+>
+>Существует ограничение на число частных внешних IP-адресов для каждой внутренней подсистемы балансировки нагрузки Azure.
+>
+>Максимальное количество экземпляров SAP ASCS/SCS в одном кластере WSFC равно максимальному количеству частных внешних IP-адресов на одну внутреннюю подсистему балансировки нагрузки Azure.
+>
+
+Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в разделе [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
+
+[!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
+
+## <a name="prerequisites"></a>Предварительные условия
+
+Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, с помощью **файлового ресурса**, как показано на этой схеме.
+
+![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]
+
+> [!IMPORTANT]
+> Установка должна соответствовать двум таким условиям:
+> * Экземпляры SAP ASCS/SCS должны совместно использовать один кластер WSFC.
+> * Для каждого идентификатора безопасности системы управления базами данных (СУБД) должен быть выделен кластер WSFC.
+> * Серверы приложений SAP, связанные с одним ИД безопасности системы SAP, должны размещаться на выделенных виртуальных машинах.
+
+## <a name="sap-ascsscs-multi-sid-architecture-with-shared-disk"></a>Архитектура SAP ASCS/SCS с несколькими идентификаторами безопасности и общим диском
+
+Цель описанных здесь действий — установить несколько кластеризованных экземпляров SAP ABAP ASCS или SAP Java SCS в одном кластере WSFC, как показано на этой схеме:
+
+![Несколько кластеризованных экземпляров SAP ASCS/SCS в Azure][sap-ha-guide-figure-6002]
+
+Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в разделе [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
+
+Общая картина с двумя системами SAP высокого уровня доступности будет выглядеть следующим образом:
+
+![Установка SAP высокого уровня доступности с несколькими ИД безопасности и с двумя ИД безопасности системы SAP][sap-ha-guide-figure-6003]
+
+## <a name="prepare-the-infrastructure-for-an-sap-multi-sid-scenario"></a><a name="25e358f8-92e5-4e8d-a1e5-df7580a39cb0"></a> Подготовка инфраструктуры для сценария SAP с несколькими идентификаторами безопасности
+
+Для подготовки инфраструктуры можно установить дополнительный экземпляр SAP ASCS/SCS со следующими параметрами.
+
+| Имя параметра | Значение |
+| --- | --- |
+| ИД безопасности SAP ASCS/SCS |pr1-lb-ascs |
+| Внутренний балансировщик нагрузки экземпляра СУБД SAP | PR5 |
+| Имя виртуального узла SAP | pr5-sap-cl |
+| IP-адрес виртуального узла SAP ASCS/SCS (IP-адрес дополнительной подсистемы Azure Load Balancer) | 10.0.0.50 |
+| Количество экземпляров SAP ASCS/SCS | 50 |
+| Порт пробы внутренней подсистемы балансировки нагрузки для дополнительного экземпляра SAP ASCS/SCS | 62350 |
+
+> [!NOTE]
+> В случае с экземплярами кластера SAP ASCS/SCS каждому IP-адресу требуется уникальный порт пробы. Например, если один IP-адрес во внутренней подсистеме балансировки нагрузки Azure использует порт пробы 62300, другой IP-адрес не может использовать этот порт.
+>
+>Так как порт пробы 62300 уже зарезервирован, для наших целей мы используем порт пробы 62350.
+
+Установить дополнительные экземпляры SAP ASCS/SCS можно в существующем кластере WSFC с двумя узлами:
+
+| Роль виртуальной машины | Имя узла виртуальной машины | Статический IP-адрес |
+| --- | --- | --- |
+| 1-й узел кластера для экземпляра ASCS/SCS |pr1-ascs-0 |10.0.0.10 |
+| 2-й узел кластера для экземпляра ASCS/SCS |pr1-ascs-1 |10.0.0.9 |
+
+### <a name="create-a-virtual-host-name-for-the-clustered-sap-ascsscs-instance-on-the-dns-server"></a>Создание имени виртуального узла для кластеризованного экземпляра SAP ASCS/SCS на DNS-сервере
+
+Вы можете создать запись DNS для имени виртуального узла экземпляра ASCS/SCS с использованием следующих параметров.
+
+| Новое имя виртуального узла SAP ASCS/SCS | Связанный IP-адрес |
+| --- | --- |
+|pr5-sap-cl |10.0.0.50 |
+
+Новое имя узла и IP-адрес отображаются в диспетчере DNS, как показано на следующем снимке экрана:
+
+![Список диспетчера DNS с выделенной определенной записью DNS для нового виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS][sap-ha-guide-figure-6004]
+
+> [!NOTE]
+> Новый IP-адрес, назначаемый имени виртуального узла дополнительного экземпляра ASCS/SCS, должен совпадать с новым IP-адресом, который назначен подсистеме Azure Load Balancer для SAP.
+>
+>В нашем сценарии используется IP-адрес 10.0.0.50.
+
+### <a name="add-an-ip-address-to-an-existing-azure-internal-load-balancer-by-using-powershell"></a>Добавление IP-адреса в существующую внутреннюю подсистему балансировки нагрузки Azure с помощью PowerShell
+
+Чтобы создать несколько экземпляров SAP ASCS/SCS в одном кластере WSFC, добавьте дополнительный IP-адрес в существующую внутреннюю подсистему балансировки Azure с помощью PowerShell. Каждому IP-адресу требуются собственные правила балансировки нагрузки, порт пробы, пул внешних IP-адресов и внутренний пул.
+
+Следующий сценарий добавляет новый IP-адрес в имеющийся балансировщик нагрузки. Обновите переменные PowerShell для своей среды. Этот скрипт создает все необходимые правила балансировки нагрузки для всех портов SAP ASCS/SCS.
+
+```powershell
+
+# Select-AzSubscription -SubscriptionId <xxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx>
+Clear-Host
+$ResourceGroupName = "SAP-MULTI-SID-Landscape"      # Existing resource group name
+$VNetName = "pr2-vnet"                        # Existing virtual network name
+$SubnetName = "Subnet"                        # Existing subnet name
+$ILBName = "pr2-lb-ascs"                      # Existing ILB name                      
+$ILBIP = "10.0.0.50"                          # New IP address
+$VMNames = "pr2-ascs-0","pr2-ascs-1"          # Existing cluster virtual machine names
+$SAPInstanceNumber = 50                       # SAP ASCS/SCS instance number: must be a unique value for each cluster
+[int]$ProbePort = "623$SAPInstanceNumber"     # Probe port: must be a unique value for each IP and load balancer
+
+$ILB = Get-AzLoadBalancer -Name $ILBName -ResourceGroupName $ResourceGroupName
+
+$count = $ILB.FrontendIpConfigurations.Count + 1
+$FrontEndConfigurationName ="lbFrontendASCS$count"
+$LBProbeName = "lbProbeASCS$count"
+
+# Get the Azure virtual network and subnet
+$VNet = Get-AzVirtualNetwork -Name $VNetName -ResourceGroupName $ResourceGroupName
+$Subnet = Get-AzVirtualNetworkSubnetConfig -VirtualNetwork $VNet -Name $SubnetName
+
+# Add a second front-end and probe configuration
+Write-Host "Adding new front end IP Pool '$FrontEndConfigurationName' ..." -ForegroundColor Green
+$ILB | Add-AzLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -PrivateIpAddress $ILBIP -SubnetId $Subnet.Id
+$ILB | Add-AzLoadBalancerProbeConfig -Name $LBProbeName  -Protocol Tcp -Port $Probeport -ProbeCount 2 -IntervalInSeconds 10  | Set-AzLoadBalancer
+
+# Get a new updated configuration
+$ILB = Get-AzLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
+
+# Get an updated LP FrontendIpConfig
+$FEConfig = Get-AzLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -LoadBalancer $ILB
+$HealthProbe  = Get-AzLoadBalancerProbeConfig -Name $LBProbeName -LoadBalancer $ILB
+
+# Add a back-end configuration into an existing ILB
+$BackEndConfigurationName  = "backendPoolASCS$count"
+Write-Host "Adding new backend Pool '$BackEndConfigurationName' ..." -ForegroundColor Green
+$BEConfig = Add-AzLoadBalancerBackendAddressPoolConfig -Name $BackEndConfigurationName -LoadBalancer $ILB | Set-AzLoadBalancer
+
+# Get an updated config
+$ILB = Get-AzLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
+
+# Assign VM NICs to the back-end pool
+$BEPool = Get-AzLoadBalancerBackendAddressPoolConfig -Name $BackEndConfigurationName -LoadBalancer $ILB
+foreach($VMName in $VMNames){
+        $VM = Get-AzVM -ResourceGroupName $ResourceGroupName -Name $VMName
+        $NICName = ($VM.NetworkInterfaceIDs[0].Split('/') | select -last 1)        
+        $NIC = Get-AzNetworkInterface -name $NICName -ResourceGroupName $ResourceGroupName                
+        $NIC.IpConfigurations[0].LoadBalancerBackendAddressPools += $BEPool
+        Write-Host "Assigning network card '$NICName' of the '$VMName' VM to the backend pool '$BackEndConfigurationName' ..." -ForegroundColor Green
+        Set-AzNetworkInterface -NetworkInterface $NIC
+        #start-AzVM -ResourceGroupName $ResourceGroupName -Name $VM.Name
+}
+
+
+# Create load-balancing rules
+$Ports = "445","32$SAPInstanceNumber","33$SAPInstanceNumber","36$SAPInstanceNumber","39$SAPInstanceNumber","5985","81$SAPInstanceNumber","5$SAPInstanceNumber`13","5$SAPInstanceNumber`14","5$SAPInstanceNumber`16"
+$ILB = Get-AzLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
+$FEConfig = get-AzLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -LoadBalancer $ILB
+$BEConfig = Get-AzLoadBalancerBackendAddressPoolConfig -Name $BackEndConfigurationName -LoadBalancer $ILB
+$HealthProbe  = Get-AzLoadBalancerProbeConfig -Name $LBProbeName -LoadBalancer $ILB
+
+Write-Host "Creating load balancing rules for the ports: '$Ports' ... " -ForegroundColor Green
+
+foreach ($Port in $Ports) {
+
+        $LBConfigrulename = "lbrule$Port" + "_$count"
+        Write-Host "Creating load balancing rule '$LBConfigrulename' for the port '$Port' ..." -ForegroundColor Green
+
+        $ILB | Add-AzLoadBalancerRuleConfig -Name $LBConfigRuleName -FrontendIpConfiguration $FEConfig  -BackendAddressPool $BEConfig -Probe $HealthProbe -Protocol tcp -FrontendPort  $Port -BackendPort $Port -IdleTimeoutInMinutes 30 -LoadDistribution Default -EnableFloatingIP   
+}
+
+$ILB | Set-AzLoadBalancer
+
+Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$ILBName'!" -ForegroundColor Green
+
+```
+После выполнения скрипта результаты отобразятся на портале Azure, как показано на следующем снимке экрана:
+
+![Новый пул внешних IP-адресов на портале Azure][sap-ha-guide-figure-6005]
+
+### <a name="add-disks-to-cluster-machines-and-configure-the-sios-cluster-share-disk"></a>Добавление дисков на компьютеры кластера и настройка общего диска для кластера SIOS
+
+Для каждого дополнительного экземпляра SAP ASCS/SCS необходимо добавить новый общий диск кластера. Для общего диска кластера WSFC Windows Server 2012 R2 сейчас используется программное решение SIOS DataKeeper.
+
+Выполните следующие действия.
+1. Добавьте дополнительный диск (или несколько дисков одного размера, которые необходимо чередовать) к каждому узлу кластера и отформатируйте их.
+2. Настройте репликацию хранилища с помощью SIOS DataKeeper.
+
+Для выполнения этой процедуры необходимо установить SIOS DataKeeper на компьютерах кластера WSFC. Если это программное решение установлено, теперь нужно настроить репликацию между компьютерами. Этот процесс подробно описан в руководстве по [установке SIOS DataKeeper Cluster Edition для создания общего диска кластера SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk-install-sios].  
+
+![Синхронное зеркальное отображение DataKeeper для нового общего диска SAP ASCS/SCS][sap-ha-guide-figure-6006]
+
+### <a name="deploy-vms-for-sap-application-servers-and-the-dbms-cluster"></a>Развертывание виртуальных машин для серверов приложений SAP и кластера СУБД
+
+Чтобы завершить подготовку инфраструктуры для второй системы SAP, необходимо сделать следующее.
+
+1. Разверните выделенные виртуальные машины для серверов приложений SAP и поместите каждую из них в отдельную выделенную группу доступности.
+2. Разверните выделенные виртуальные машины для кластера СУБД и поместите каждую из них в отдельную выделенную группу доступности.
+
+## <a name="install-an-sap-netweaver-multi-sid-system"></a>Установка системы SAP NetWeaver с несколькими идентификаторами безопасности
+
+Полный процесс установки второй системы SAP SID2 см. в руководстве по [установке высокодоступной системы SAP NetWeaver с использованием отказоустойчивого кластера Windows и общего диска для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk].
+
+Основные действия:
+
+1. [Установите SAP с экземпляром ASCS/SCS высокого уровня доступности][sap-high-availability-installation-wsfc-shared-disk-install-ascs].  
+ На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 1 кластера WSFC.
+
+2. [Измените профиль SAP экземпляра ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk-modify-ascs-profile].
+
+3. [Настройка порта пробы][sap-high-availability-installation-wsfc-shared-disk-add-probe-port].  
+ На этом шаге настраивается порт пробы SAP-SID2-IP кластерного ресурса SAP с помощью PowerShell. Настройку следует выполнять на одном из узлов кластера SAP ASCS/SCS.
+
+4. Установите экземпляр базы данных.  
+ Чтобы установить второй кластер, выполните действия, описанные в руководстве по установке SAP.
+
+5. Установите второй узел кластера.  
+ На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 2 кластера WSFC. Чтобы установить второй кластер, выполните действия, описанные в руководстве по установке SAP.
+
+6. Откройте порты брандмауэра Windows для экземпляра SAP ASCS/SCS и порта пробы.  
+    На обоих узлах кластера, используемых для экземпляров SAP ASCS/SCS, откройте все порты брандмауэра Windows, используемые SAP ASCS/SCS. Эти порты экземпляров SAP ASCS/SCS перечислены в описании [портов SAP ASCS/SCS][sap-net-weaver-ports-ascs-scs-ports].
+
+    Список остальных портов TCP/IP для всех продуктов SAP см. [здесь][sap-net-weaver-ports].  
+
+    Кроме того, откройте порт пробы внутренней подсистемы балансировки нагрузки Azure. В нашем случае это порт 62350. Он описан в [этой статье][sap-high-availability-installation-wsfc-shared-disk-win-firewall-probe-port].
+
+7. [Измените тип запуска службы Windows для экземпляра SAP ERS][sap-high-availability-installation-wsfc-shared-disk-change-ers-service-startup-type].
+
+8. Установите основной сервер приложений SAP на новой выделенной виртуальной машине, как описано в руководстве по установке SAP.  
+
+9. Установите дополнительный сервер приложений SAP на новой выделенной виртуальной машине, как описано в руководстве по установке SAP.
+
+10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl].
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]
+- [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]
+
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
 [2015553]:https://launchpad.support.sap.com/#/notes/2015553
@@ -202,239 +438,3 @@ ms.locfileid: "75643259"
 [virtual-machines-azure-resource-manager-architecture-benefits-arm]:../../../azure-resource-manager/management/overview.md#the-benefits-of-using-resource-manager
 
 [virtual-machines-manage-availability]:../../virtual-machines-windows-manage-availability.md
-
-# <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-shared-disk-on-azure"></a>Обеспечение высокого уровня доступности с несколькими идентификаторами безопасности для экземпляра SAP ASCS/SCS с помощью отказоустойчивой кластеризации Windows Server и общего диска в Azure
-
-> ![Windows][Logo_Windows] Windows
->
-
-В сентябре 2016 Корпорация Майкрософт выпустила функцию, в которой можно управлять несколькими виртуальными IP-адресами с помощью [внутреннего балансировщика нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure. 
-
-Если у вас есть развертывание SAP, чтобы создать конфигурацию кластера Windows для экземпляров SAP Central Services (ASCS/SCS), необходимо использовать внутреннюю подсистему балансировки нагрузки.
-
-В этой статье основное внимание уделяется переходу от отдельной установки ASCS/SCS к конфигурации SAP с несколькими идентификаторами безопасности с помощью установки дополнительных кластеризованных экземпляров SAP ASCS/SCS в существующем отказоустойчивом кластере Windows Server (WSFC) с общим диском. Выполнив эти действия, вы настроите кластер SAP с несколькими ИД безопасности.
-
-> [!NOTE]
-> Эта функция доступна только в модели развертывания с помощью Azure Resource Manager.
->
->Существует ограничение на число частных внешних IP-адресов для каждой внутренней подсистемы балансировки нагрузки Azure.
->
->Максимальное количество экземпляров SAP ASCS/SCS в одном кластере WSFC равно максимальному количеству частных внешних IP-адресов на одну внутреннюю подсистему балансировки нагрузки Azure.
->
-
-Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в подразделе "частный интерфейсный IP-адрес на подсистему балансировки нагрузки" раздела [ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager].
-
-[!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
-
-## <a name="prerequisites"></a>Технические условия
-
-Вы уже настроили кластер WSFC, который используется для одного экземпляра SAP ASCS/SCS, с помощью **файлового ресурса**, как показано на этой схеме.
-
-![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]
-
-> [!IMPORTANT]
-> Установка должна соответствовать двум таким условиям:
-> * Экземпляры SAP ASCS/SCS должны совместно использовать один кластер WSFC.
-> * Для каждого идентификатора безопасности системы управления базами данных (СУБД) должен быть выделен кластер WSFC.
-> * Серверы приложений SAP, связанные с одним ИД безопасности системы SAP, должны размещаться на выделенных виртуальных машинах.
-
-## <a name="sap-ascsscs-multi-sid-architecture-with-shared-disk"></a>Архитектура SAP ASCS/SCS с несколькими идентификаторами безопасности и общим диском
-
-Цель описанных здесь действий — установить несколько кластеризованных экземпляров SAP ABAP ASCS или SAP Java SCS в одном кластере WSFC, как показано на этой схеме:
-
-![Несколько кластеризованных экземпляров SAP ASCS/SCS в Azure][sap-ha-guide-figure-6002]
-
-Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в подразделе "частный интерфейсный IP-адрес на подсистему балансировки нагрузки" раздела [ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager].
-
-Общая картина с двумя системами SAP высокого уровня доступности будет выглядеть следующим образом:
-
-![Установка SAP высокого уровня доступности с несколькими ИД безопасности и с двумя ИД безопасности системы SAP][sap-ha-guide-figure-6003]
-
-## <a name="25e358f8-92e5-4e8d-a1e5-df7580a39cb0"></a> Подготовка инфраструктуры для сценария SAP с несколькими идентификаторами безопасности
-
-Для подготовки инфраструктуры можно установить дополнительный экземпляр SAP ASCS/SCS со следующими параметрами.
-
-| Имя параметра | Значение |
-| --- | --- |
-| ИД безопасности SAP ASCS/SCS |pr1-lb-ascs |
-| Внутренний балансировщик нагрузки экземпляра СУБД SAP | PR5 |
-| Имя виртуального узла SAP | pr5-sap-cl |
-| IP-адрес виртуального узла SAP ASCS/SCS (IP-адрес дополнительной подсистемы Azure Load Balancer) | 10.0.0.50 |
-| Количество экземпляров SAP ASCS/SCS | 50 |
-| Порт пробы внутренней подсистемы балансировки нагрузки для дополнительного экземпляра SAP ASCS/SCS | 62350 |
-
-> [!NOTE]
-> В случае с экземплярами кластера SAP ASCS/SCS каждому IP-адресу требуется уникальный порт пробы. Например, если один IP-адрес во внутренней подсистеме балансировки нагрузки Azure использует порт пробы 62300, другой IP-адрес не может использовать этот порт.
->
->Так как порт пробы 62300 уже зарезервирован, для наших целей мы используем порт пробы 62350.
-
-Установить дополнительные экземпляры SAP ASCS/SCS можно в существующем кластере WSFC с двумя узлами:
-
-| Роль виртуальной машины | Имя узла виртуальной машины | Статический IP-адрес |
-| --- | --- | --- |
-| 1-й узел кластера для экземпляра ASCS/SCS |pr1-ascs-0 |10.0.0.10 |
-| 2-й узел кластера для экземпляра ASCS/SCS |pr1-ascs-1 |10.0.0.9 |
-
-### <a name="create-a-virtual-host-name-for-the-clustered-sap-ascsscs-instance-on-the-dns-server"></a>Создание имени виртуального узла для кластеризованного экземпляра SAP ASCS/SCS на DNS-сервере
-
-Вы можете создать запись DNS для имени виртуального узла экземпляра ASCS/SCS с использованием следующих параметров.
-
-| Новое имя виртуального узла SAP ASCS/SCS | Связанный IP-адрес |
-| --- | --- |
-|pr5-sap-cl |10.0.0.50 |
-
-Новое имя узла и IP-адрес отображаются в диспетчере DNS, как показано на следующем снимке экрана:
-
-![Список диспетчера DNS с выделенной определенной записью DNS для нового виртуального имени и TCP/IP-адреса кластера SAP ASCS/SCS][sap-ha-guide-figure-6004]
-
-> [!NOTE]
-> Новый IP-адрес, назначаемый имени виртуального узла дополнительного экземпляра ASCS/SCS, должен совпадать с новым IP-адресом, который назначен подсистеме Azure Load Balancer для SAP.
->
->В нашем сценарии используется IP-адрес 10.0.0.50.
-
-### <a name="add-an-ip-address-to-an-existing-azure-internal-load-balancer-by-using-powershell"></a>Добавление IP-адреса в существующую внутреннюю подсистему балансировки нагрузки Azure с помощью PowerShell
-
-Чтобы создать несколько экземпляров SAP ASCS/SCS в одном кластере WSFC, добавьте дополнительный IP-адрес в существующую внутреннюю подсистему балансировки Azure с помощью PowerShell. Каждому IP-адресу требуются собственные правила балансировки нагрузки, порт пробы, пул внешних IP-адресов и внутренний пул.
-
-Следующий сценарий добавляет новый IP-адрес в имеющийся балансировщик нагрузки. Обновите переменные PowerShell для своей среды. Этот скрипт создает все необходимые правила балансировки нагрузки для всех портов SAP ASCS/SCS.
-
-```powershell
-
-# Select-AzSubscription -SubscriptionId <xxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx>
-Clear-Host
-$ResourceGroupName = "SAP-MULTI-SID-Landscape"      # Existing resource group name
-$VNetName = "pr2-vnet"                        # Existing virtual network name
-$SubnetName = "Subnet"                        # Existing subnet name
-$ILBName = "pr2-lb-ascs"                      # Existing ILB name                      
-$ILBIP = "10.0.0.50"                          # New IP address
-$VMNames = "pr2-ascs-0","pr2-ascs-1"          # Existing cluster virtual machine names
-$SAPInstanceNumber = 50                       # SAP ASCS/SCS instance number: must be a unique value for each cluster
-[int]$ProbePort = "623$SAPInstanceNumber"     # Probe port: must be a unique value for each IP and load balancer
-
-$ILB = Get-AzLoadBalancer -Name $ILBName -ResourceGroupName $ResourceGroupName
-
-$count = $ILB.FrontendIpConfigurations.Count + 1
-$FrontEndConfigurationName ="lbFrontendASCS$count"
-$LBProbeName = "lbProbeASCS$count"
-
-# Get the Azure virtual network and subnet
-$VNet = Get-AzVirtualNetwork -Name $VNetName -ResourceGroupName $ResourceGroupName
-$Subnet = Get-AzVirtualNetworkSubnetConfig -VirtualNetwork $VNet -Name $SubnetName
-
-# Add a second front-end and probe configuration
-Write-Host "Adding new front end IP Pool '$FrontEndConfigurationName' ..." -ForegroundColor Green
-$ILB | Add-AzLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -PrivateIpAddress $ILBIP -SubnetId $Subnet.Id
-$ILB | Add-AzLoadBalancerProbeConfig -Name $LBProbeName  -Protocol Tcp -Port $Probeport -ProbeCount 2 -IntervalInSeconds 10  | Set-AzLoadBalancer
-
-# Get a new updated configuration
-$ILB = Get-AzLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
-
-# Get an updated LP FrontendIpConfig
-$FEConfig = Get-AzLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -LoadBalancer $ILB
-$HealthProbe  = Get-AzLoadBalancerProbeConfig -Name $LBProbeName -LoadBalancer $ILB
-
-# Add a back-end configuration into an existing ILB
-$BackEndConfigurationName  = "backendPoolASCS$count"
-Write-Host "Adding new backend Pool '$BackEndConfigurationName' ..." -ForegroundColor Green
-$BEConfig = Add-AzLoadBalancerBackendAddressPoolConfig -Name $BackEndConfigurationName -LoadBalancer $ILB | Set-AzLoadBalancer
-
-# Get an updated config
-$ILB = Get-AzLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
-
-# Assign VM NICs to the back-end pool
-$BEPool = Get-AzLoadBalancerBackendAddressPoolConfig -Name $BackEndConfigurationName -LoadBalancer $ILB
-foreach($VMName in $VMNames){
-        $VM = Get-AzVM -ResourceGroupName $ResourceGroupName -Name $VMName
-        $NICName = ($VM.NetworkInterfaceIDs[0].Split('/') | select -last 1)        
-        $NIC = Get-AzNetworkInterface -name $NICName -ResourceGroupName $ResourceGroupName                
-        $NIC.IpConfigurations[0].LoadBalancerBackendAddressPools += $BEPool
-        Write-Host "Assigning network card '$NICName' of the '$VMName' VM to the backend pool '$BackEndConfigurationName' ..." -ForegroundColor Green
-        Set-AzNetworkInterface -NetworkInterface $NIC
-        #start-AzVM -ResourceGroupName $ResourceGroupName -Name $VM.Name
-}
-
-
-# Create load-balancing rules
-$Ports = "445","32$SAPInstanceNumber","33$SAPInstanceNumber","36$SAPInstanceNumber","39$SAPInstanceNumber","5985","81$SAPInstanceNumber","5$SAPInstanceNumber`13","5$SAPInstanceNumber`14","5$SAPInstanceNumber`16"
-$ILB = Get-AzLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
-$FEConfig = get-AzLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -LoadBalancer $ILB
-$BEConfig = Get-AzLoadBalancerBackendAddressPoolConfig -Name $BackEndConfigurationName -LoadBalancer $ILB
-$HealthProbe  = Get-AzLoadBalancerProbeConfig -Name $LBProbeName -LoadBalancer $ILB
-
-Write-Host "Creating load balancing rules for the ports: '$Ports' ... " -ForegroundColor Green
-
-foreach ($Port in $Ports) {
-
-        $LBConfigrulename = "lbrule$Port" + "_$count"
-        Write-Host "Creating load balancing rule '$LBConfigrulename' for the port '$Port' ..." -ForegroundColor Green
-
-        $ILB | Add-AzLoadBalancerRuleConfig -Name $LBConfigRuleName -FrontendIpConfiguration $FEConfig  -BackendAddressPool $BEConfig -Probe $HealthProbe -Protocol tcp -FrontendPort  $Port -BackendPort $Port -IdleTimeoutInMinutes 30 -LoadDistribution Default -EnableFloatingIP   
-}
-
-$ILB | Set-AzLoadBalancer
-
-Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$ILBName'!" -ForegroundColor Green
-
-```
-После выполнения скрипта результаты отобразятся на портале Azure, как показано на следующем снимке экрана:
-
-![Новый пул внешних IP-адресов на портале Azure][sap-ha-guide-figure-6005]
-
-### <a name="add-disks-to-cluster-machines-and-configure-the-sios-cluster-share-disk"></a>Добавление дисков на компьютеры кластера и настройка общего диска для кластера SIOS
-
-Для каждого дополнительного экземпляра SAP ASCS/SCS необходимо добавить новый общий диск кластера. Для общего диска кластера WSFC Windows Server 2012 R2 сейчас используется программное решение SIOS DataKeeper.
-
-Выполните следующие действия.
-1. Добавьте дополнительный диск (или несколько дисков одного размера, которые необходимо чередовать) к каждому узлу кластера и отформатируйте их.
-2. Настройте репликацию хранилища с помощью SIOS DataKeeper.
-
-Для выполнения этой процедуры необходимо установить SIOS DataKeeper на компьютерах кластера WSFC. Если это программное решение установлено, теперь нужно настроить репликацию между компьютерами. Подробное описание процесса см. в [статье Install SIOS Me Cluster Edition для общего диска кластера SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk-install-sios].  
-
-![Синхронное зеркальное отображение DataKeeper для нового общего диска SAP ASCS/SCS][sap-ha-guide-figure-6006]
-
-### <a name="deploy-vms-for-sap-application-servers-and-the-dbms-cluster"></a>Развертывание виртуальных машин для серверов приложений SAP и кластера СУБД
-
-Чтобы завершить подготовку инфраструктуры для второй системы SAP, необходимо сделать следующее.
-
-1. Разверните выделенные виртуальные машины для серверов приложений SAP и поместите каждую из них в отдельную выделенную группу доступности.
-2. Разверните выделенные виртуальные машины для кластера СУБД и поместите каждую из них в отдельную выделенную группу доступности.
-
-## <a name="install-an-sap-netweaver-multi-sid-system"></a>Установка системы SAP NetWeaver с несколькими идентификаторами безопасности
-
-Описание полного процесса установки второй системы SAP SID2 см. [в статье Установка SAP Netweaver высокого уровня доступности в отказоустойчивом кластере Windows и на общем диске для экземпляра SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk].
-
-Основные действия:
-
-1. [Установите SAP с экземпляром ASCS/SCS высокого уровня доступности][sap-high-availability-installation-wsfc-shared-disk-install-ascs].  
- На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 1 кластера WSFC.
-
-2. [Измените профиль SAP экземпляра ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk-modify-ascs-profile].
-
-3. [Настройте порт пробы][sap-high-availability-installation-wsfc-shared-disk-add-probe-port].  
- На этом шаге настраивается порт пробы SAP-SID2-IP кластерного ресурса SAP с помощью PowerShell. Настройку следует выполнять на одном из узлов кластера SAP ASCS/SCS.
-
-4. Установите экземпляр базы данных.  
- Чтобы установить второй кластер, выполните действия, описанные в руководстве по установке SAP.
-
-5. Установите второй узел кластера.  
- На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 2 кластера WSFC. Чтобы установить второй кластер, выполните действия, описанные в руководстве по установке SAP.
-
-6. Откройте порты брандмауэра Windows для экземпляра SAP ASCS/SCS и порта пробы.  
-    На обоих узлах кластера, используемых для экземпляров SAP ASCS/SCS, откройте все порты брандмауэра Windows, используемые SAP ASCS/SCS. Эти порты экземпляров SAP ASCS/SCS перечислены в разделе [порты SAP ASCS/SCS][sap-net-weaver-ports-ascs-scs-ports].
-
-    Список всех других портов SAP см. в статье [порты TCP/IP для всех продуктов SAP][sap-net-weaver-ports].  
-
-    Кроме того, откройте порт пробы внутренней подсистемы балансировки нагрузки Azure. В нашем случае это порт 62350. Он описан [в этой статье][sap-high-availability-installation-wsfc-shared-disk-win-firewall-probe-port].
-
-7. [Изменение типа запуска экземпляра службы Windows "Оценка полученного отчета о приемке SAP" (ERS)][sap-high-availability-installation-wsfc-shared-disk-change-ers-service-startup-type].
-
-8. Установите основной сервер приложений SAP на новой выделенной виртуальной машине, как описано в руководстве по установке SAP.  
-
-9. Установите дополнительный сервер приложений SAP на новой выделенной виртуальной машине, как описано в руководстве по установке SAP.
-
-10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-high-availability-installation-wsfc-shared-disk-test-ascs-failover-and-sios-repl].
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-- [Ограничения сети: Azure Resource Manager][networking-limits-azure-resource-manager]
-- [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]

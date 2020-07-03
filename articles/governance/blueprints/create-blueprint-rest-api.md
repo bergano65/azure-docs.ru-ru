@@ -1,22 +1,23 @@
 ---
 title: Краткое руководство. Создание схемы с помощью REST API
 description: В рамках этого краткого руководства вы создадите, определите и развернете артефакты с помощью REST API.
-ms.date: 11/21/2019
+ms.date: 02/26/2020
 ms.topic: quickstart
-ms.openlocfilehash: 13a6cce25b17fdfbfa5f62dbf16cd2cfbbdc4fe2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: ec84e8396ad65aa01f73414b971f27bc95396e2f
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436595"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83745097"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-rest-api"></a>Краткое руководство. Определение и назначение схемы Azure с помощью REST API
 
 Зная, как создавать и присваивать схемы, вы сможете определять распространенные шаблоны для разработки многоразовых и быстро развертываемых конфигураций, основанных на шаблонах Resource Manager, политике, правилах безопасности и других элементах. В этом руководстве вы научитесь использовать службу Azure Blueprint для выполнения некоторых общих задач, связанных с созданием, публикацией и назначением схемы в вашей организации, таких как:
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free), прежде чем начинать работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free), прежде чем начинать работу.
+- Зарегистрируйте поставщик ресурсов `Microsoft.Blueprint`. См. инструкции в статье [Поставщики и типы ресурсов Azure](../../azure-resource-manager/management/resource-providers-and-types.md).
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -24,7 +25,7 @@ ms.locfileid: "75436595"
 
 Если у вас нет опыта работы с интерфейсом REST API, сначала ознакомьтесь со [справочником по REST API Azure](/rest/api/azure/), чтобы получить общее представление о нем, в частности об URI запроса и тексте запроса. В данной статье эти понятия используются в указаниях по работе со схемами Azure, поэтому предполагается, что у вас есть соответствующие практические навыки. Начинающим рекомендуется применять такие средства, как [ARMClient](https://github.com/projectkudu/ARMClient), обеспечивающие автоматическую авторизацию.
 
-Спецификации по схемам см. в статье о [REST API для схем Azure](/rest/api/blueprints/).
+Спецификации по Azure Blueprints см. в статье о [REST API для Azure Blueprints](/rest/api/blueprints/).
 
 ### <a name="rest-api-and-powershell"></a>REST API и PowerShell
 
@@ -43,7 +44,7 @@ $authHeader = @{
 }
 
 # Invoke the REST API
-$restUri = 'https://management.azure.com/subscriptions/{subscriptionId}?api-version=2016-06-01'
+$restUri = 'https://management.azure.com/subscriptions/{subscriptionId}?api-version=2020-01-01'
 $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
 ```
 
@@ -405,7 +406,7 @@ $response = Invoke-RestMethod -Uri $restUri -Method Get -Headers $authHeader
      **Управляемое удостоверение, назначаемое пользователем**, может быть в любой подписке и группе ресурсов, к которым у пользователя, назначающего схему, есть разрешения на доступ.
 
      > [!IMPORTANT]
-     > Схемы не управляют управляемым удостоверением, назначаемым пользователем. Назначение соответствующих ролей и разрешений выполняют пользователи. В противном случае назначение схемы завершится ошибкой.
+     > Azure Blueprints не администрирует управляемое удостоверение, назначаемое пользователем. Назначение соответствующих ролей и разрешений выполняют пользователи. В противном случае назначение схемы завершится ошибкой.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

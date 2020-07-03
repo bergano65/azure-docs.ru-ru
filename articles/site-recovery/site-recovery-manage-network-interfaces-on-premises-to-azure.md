@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
 ms.openlocfilehash: 2a4752b501e40f9e8a4f3bc82cb2533c11f9e526
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73954593"
 ---
 # <a name="manage-vm-network-interfaces-for-on-premises-disaster-recovery-to-azure"></a>Управление сетевыми интерфейсами виртуальной машины для локального аварийного восстановления в Azure
@@ -68,5 +68,5 @@ ms.locfileid: "73954593"
 
 6. Щелкните **Сохранить**, чтобы сохранить все изменения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
   [Узнайте больше](../virtual-network/virtual-network-network-interface-vm.md) о сетевых интерфейсах для виртуальных машин Azure.

@@ -14,17 +14,17 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 01/10/2020
 ms.author: shvija
-ms.openlocfilehash: 414179d62970315a7575be0411bf1cb152349fdc
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 485f51e45e342ca28d54d609fd975bef5b204f7e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77162299"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80372228"
 ---
 # <a name="event-processor-host"></a>Узел обработчика событий
 > [!NOTE]
 > Эта статья относится к старой версии пакета SDK для концентраторов событий Azure. Сведения о переносе кода в более новую версию пакета SDK см. в этих руководствах по миграции. 
-> - [.NET](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MIGRATIONGUIDE.md)
+> - [.NET](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md)
 > - [Java](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/eventhubs/azure-messaging-eventhubs/migration-guide.md)
 > - [Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/eventhub/azure-eventhub/migration_guide.md)
 > - [Сценарий Java](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/eventhub/event-hubs/migrationguide.md)
@@ -123,8 +123,8 @@ public class SimpleEventProcessor : IEventProcessor
 | $Default | 0 | Consumer\_VM3 | 2018-04-15T01:23:45 | 156 |
 | $Default | 1 | Consumer\_VM4 | 2018-04-15T01:22:13 | 734 |
 | $Default | 2 | Consumer\_VM0 | 2018-04-15T01:22:56 | 122 |
-| , перечислены ниже. |   |   |   |   |
-| , перечислены ниже. |   |   |   |   |
+| : |   |   |   |   |
+| : |   |   |   |   |
 | $Default | 15 | Consumer\_VM3 | 2018-04-15T01:22:56 | 976 |
 
 Здесь каждый узел приобретает право владения секцией в течении определенного периода времени (длительность аренды). Если узел выйдет из строя (виртуальная машина завершит работу), значит истекает срок действия аренды. Попробуйте другие узлы для получения права владения секцией и один из узлов получит это право. Этот процесс повторно назначает аренду секции с новым владельцем. Таким образом, только один читатель может считывать данные из любой заданной секции в группе потребителей.
@@ -178,7 +178,7 @@ public class SimpleEventProcessor : IEventProcessor
 Функция эпохи предоставляет пользователям возможность гарантировать, что в любой момент времени только один получатель в группе потребителей будет иметь следующие правила.
 
 - Если в группе потребителей нет получателя, пользователь может создать получателя с любым значением эпохи.
-- Если имеется получатель со значением эпохи E1 и создается новый получатель со значением эпохи E2, где E1 < = E2, получатель с E1 будет автоматически отключен, получатель с E2 успешно создан.
+- Если имеется получатель со значением эпохи E1 и создается новый получатель со значением эпохи E2, где E1 <= E2, получатель с E1 будет автоматически отключен, получатель с E2 успешно создан.
 - Если имеется приемник со значением эпохи E1 и создается новый получатель со значением эпохи E2, где E1 > E2, то создание E2 с ошибкой ": получатель с эпохой E1" уже существует.
 
 ### <a name="no-epoch"></a>Нет эпохи
@@ -198,7 +198,7 @@ public class SimpleEventProcessor : IEventProcessor
 > Мы рекомендуем использовать разные группы потребителей для приложений, использующих эпохи, и для тех, которые не используют эпохи во избежание ошибок. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы знакомы с узлом обработчика событий, см. следующие статьи, чтобы узнать больше о Центрах событий:
 
@@ -209,5 +209,5 @@ public class SimpleEventProcessor : IEventProcessor
     - [JavaScript](get-started-java-send-v2.md)
 * [Руководство по программированию Центров событий](event-hubs-programming-guide.md)
 * [Доступность и согласованность в Центрах событий](event-hubs-availability-and-consistency.md)
-* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
+* [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
 * [Azure Event Hubs samples](https://github.com/Azure/azure-event-hubs/tree/master/samples) (Примеры Центров событий Azure)

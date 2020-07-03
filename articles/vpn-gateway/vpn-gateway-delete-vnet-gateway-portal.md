@@ -8,10 +8,10 @@ ms.date: 10/23/2018
 ms.author: cherylmc
 ms.topic: conceptual
 ms.openlocfilehash: fba213be2de3b747d3ba962674a03c0bc7df3ed5
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75863671"
 ---
 # <a name="delete-a-virtual-network-gateway-using-the-portal"></a>Удаление шлюза виртуальной сети с помощью портала
@@ -55,7 +55,7 @@ ms.locfileid: "75863671"
 2. В колонке **Подсети** щелкните **GatewaySubnet**, затем щелкните **Удалить**. 
 3. Нажмите кнопку **Да**, чтобы подтвердить удаление подсети шлюза.
 
-## <a name="deleterg"></a>Удаление VPN-шлюза путем удаления группы ресурсов
+## <a name="delete-a-vpn-gateway-by-deleting-the-resource-group"></a><a name="deleterg"></a>Удаление VPN-шлюза путем удаления группы ресурсов
 
 Если не требуется сохранить какие-либо ресурсы из группы ресурсов и вы просто хотите начать все заново, то вы можете удалить всю группу ресурсов. Это быстрый способ удалить все сразу. Приведенные ниже инструкции относятся только к модели развертывания с помощью Resource Manager.
 

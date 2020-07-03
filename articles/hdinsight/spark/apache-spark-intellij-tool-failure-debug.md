@@ -9,24 +9,24 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 07/12/2019
-ms.openlocfilehash: 1a0a6cf5a26854539dc4bbb0ae0254bbf08dad1f
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 052b12817b788ff38f0fab72a5420896b062c732
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494602"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857421"
 ---
 # <a name="failure-spark-job-debugging-with-azure-toolkit-for-intellij-preview"></a>Сбой отладки задания Spark с Azure Toolkit for IntelliJ (Предварительная версия)
 
-В этой статье содержатся пошаговые инструкции по использованию средств HDInsight в [Azure Toolkit for IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij?view=azure-java-stable) для запуска приложений **отладки Spark с ошибкой** .
+В этой статье содержатся пошаговые инструкции по использованию средств HDInsight в [Azure Toolkit for IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij) для запуска приложений **отладки Spark с ошибкой** .
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Комплект разработчика Oracle Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). В этом руководстве используется Java версии 8.0.202.
   
-* IntelliJ IDEA. В этой статье используется [INTELLIJ идея Community ver. 2019.1.3](https://www.jetbrains.com/idea/download/#section=windows).
+* Среда IntelliJ IDEA. В этой статье используется [INTELLIJ идея Community ver. 2019.1.3](https://www.jetbrains.com/idea/download/#section=windows).
   
-* Azure Toolkit for IntelliJ. Дополнительные сведения см. в статье [Установка набора средств Azure для IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij-installation?view=azure-java-stable).
+* Azure Toolkit for IntelliJ. Дополнительные сведения см. в статье [Установка набора средств Azure для IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/installation).
 
 * Подключитесь к кластеру HDInsight. См. раздел [Подключение к кластеру HDInsight](apache-spark-intellij-tool-plugin.md).
 
@@ -38,27 +38,27 @@ ms.locfileid: "73494602"
 
 1. Откройте IntelliJ IDEA. Откройте окно **Новый проект** .
 
-   а. На левой панели щелкните **Azure Spark/HDInsight**.
+   a. На левой панели щелкните **Azure Spark/HDInsight**.
 
    b. В главном окне выберите **проект Spark с неудачной отладкой задачи (Предварительная версия) (Scala)** .
 
      ![IntelliJ создание проекта отладки](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-projectfor-failure-debug.png)
 
-   c. Щелкните **Далее**.
+   c. Выберите **Далее**.
 
-2. В окне **Новый проект** выполните следующие действия.
+2. В окне **New Project** (Новый проект) выполните указанные ниже действия.
 
    ![IntelliJ новый проект выберите версию Spark](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-project.png)
 
-   а. Введите имя и расположение проекта.
+   a. Введите имя и расположение проекта.
 
    b. В раскрывающемся списке **пакет SDK для проекта** выберите **Java 1,8** для кластера **Spark 2.3.2** .
 
-   c. В раскрывающемся списке **версия Spark** выберите **Spark 2.3.2 (Scala 2.11.8)** .
+   c. В раскрывающемся списке **версия Spark** выберите **Spark 2.3.2 (Scala 2.11.8)**.
 
-   г) Выберите **Готово**.
+   d. Нажмите кнопку **Готово**.
 
-3. Выберите **src** > **main** > **scala**, чтобы открыть код в проекте. В этом примере используется скрипт **AgeMean_Div ()** .
+3. Выберите **src** > **Main** > **Scala** , чтобы открыть код в проекте. В этом примере используется скрипт **AgeMean_Div ()** .
 
 ## <a name="run-a-spark-scalajava-application-on-an-hdinsight-cluster"></a>Запуск приложения Spark Scala/Java в кластере HDInsight
 
@@ -68,7 +68,7 @@ ms.locfileid: "73494602"
 
    ![HDI IntelliJ добавить конфигурацию](./media/apache-spark-intellij-tool-failure-debug/hdinsight-add-new-configuration.png)
 
-2. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" ( **+** ). Затем выберите параметр **Apache Spark в HDInsight** .
+2. В диалоговом окне **Run/Debug Configurations** (Конфигурации выполнения и отладки) щелкните знак "плюс" (**+**). Затем выберите параметр **Apache Spark в HDInsight** .
 
    ![IntelliJ добавить новую конфигурацию](./media/apache-spark-intellij-tool-failure-debug/hdinsight-create-new-configuraion-01.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "73494602"
 
 В случае сбоя отправки задания можно скачать профиль невыполненного задания на локальный компьютер для дальнейшей отладки.
 
-1. Откройте **Обозреватель службы хранилища Microsoft Azure**, выберите учетную запись HDInsight кластера для невыполненного задания, скачайте невыполненные ресурсы заданий из соответствующего расположения: **\hdp\spark2-Events\\. spark — сбои\\\<Идентификатор приложения >** в локальную папку. В окне **действия** отобразится ход загрузки.
+1. Откройте **Обозреватель службы хранилища Microsoft Azure**, выберите учетную запись HDInsight кластера для невыполненного задания, скачайте невыполненные ресурсы заданий из соответствующего расположения: **\hdp\spark2-Events\\. Spark-\\\<Fails Application ID>** в локальную папку. В окне **действия** отобразится ход загрузки.
 
    ![Сбой загрузки Обозреватель службы хранилища Azure](./media/apache-spark-intellij-tool-failure-debug/hdinsight-find-spark-file-001.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "73494602"
 
 1. После отладки, если проект успешно завершает работу, можно повторно отправить невыполненное задание в Spark в кластере HDInsight.
 
-## <a name="seealso"></a>Дальнейшие действия
+## <a name="next-steps"></a><a name="seealso"></a>Следующие шаги
 
 * [Обзор: Отладка Apache Spark приложений](apache-spark-intellij-tool-debug-remotely-through-ssh.md)
 
@@ -128,7 +128,7 @@ ms.locfileid: "73494602"
 * [Apache Spark с бизнес-аналитикой: Интерактивный анализ данных с помощью Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
 * [Apache Spark и Машинное обучение. Анализ температуры в здании на основе данных системы кондиционирования с помощью Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
 * [Apache Spark и Машинное обучение. Прогнозирование результатов проверки пищевых продуктов с помощью Spark в HDInsight](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журнала веб-сайта с использованием Apache Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 

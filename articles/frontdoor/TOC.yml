@@ -1,10 +1,13 @@
-- name: Документация по Front Door Service
+- name: Документация по Front Door
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Azure Front Door Service?
+    - name: Что такое Azure Front Door?
       href: front-door-overview.md
+    - name: Новые возможности в Azure Front Door
+      href: front-door-whats-new.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: Создание профиля Front Door
       href: quickstart-create-front-door.md
@@ -16,6 +19,10 @@
       href: front-door-custom-domain-https.md
     - name: Настройка политики геофильтрации для службы AFD
       href: front-door-tutorial-geo-filtering.md
+    - name: Настройка обработчика правил
+      href: front-door-tutorial-rules-engine.md
+    - name: Брандмауэр веб-приложения и Front Door
+      href: front-door-waf.md
 - name: Примеры
   items:
     - name: Шаблоны Resource Manager
@@ -26,6 +33,8 @@
       href: front-door-backend-pool.md
     - name: Кэширование с помощью Front Door
       href: front-door-caching.md
+    - name: Часто задаваемые вопросы о службе Front Door
+      href: front-door-faq.md
     - name: Геофильтрация
       href: front-door-geo-filtering.md
     - name: Пробы работоспособности
@@ -38,7 +47,7 @@
       href: front-door-http-headers-protocol.md
     - name: Балансировка нагрузки с помощью набора служб Azure для предоставления приложения
       href: front-door-lb-with-azure-app-delivery-suite.md
-    - name: Мониторинг
+    - name: Наблюдение
       href: front-door-diagnostics.md
     - name: Архитектура решений для маршрутизации
       href: front-door-routing-architecture.md
@@ -48,7 +57,15 @@
       href: front-door-url-rewrite.md
     - name: Перенаправление URL-адреса
       href: front-door-url-redirect.md
-- name: Руководства
+    - name: Домен с подстановочным знаком
+      href: front-door-wildcard-domain.md
+    - name: Обработчик правил
+      href: front-door-rules-engine.md
+    - name: Условия соответствия для обработчика правил
+      href: front-door-rules-engine-match-conditions.md
+    - name: Действия обработчика правил
+      href: front-door-rules-engine-actions.md
+- name: Практические руководства
   items:
     - name: Перенаправление трафика
       items:
@@ -58,17 +75,13 @@
       items:
         - name: Подключение корневого или вершинного домена
           href: front-door-how-to-onboard-apex-domain.md
-    - name: Устранение неполадок
+    - name: Диагностика
       items:
         - name: Устранение проблем с маршрутизацией
           href: front-door-troubleshoot-routing.md
         - name: Разрешенные центры сертификации
           href: front-door-troubleshoot-allowed-ca.md
-- name: Часто задаваемые вопросы
-  items:
-    - name: Часто задаваемые вопросы о службе Front Door
-      href: front-door-faq.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure CLI
       href: /cli/azure/ext/front-door/

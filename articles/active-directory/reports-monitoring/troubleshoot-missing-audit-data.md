@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c335a4d30846f7c1b4dbd6b6aedc4d100a9b43a
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74014288"
 ---
 # <a name="troubleshoot-missing-data-in-the-azure-active-directory-activity-logs"></a>Устранение неполадок, связанных с отсутствием данных в журналах действий Azure Active Directory 
@@ -38,12 +38,12 @@ ms.locfileid: "74014288"
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
-| Отчет | &nbsp; | Задержка (P95) | Задержка (P99) |
+| Report | &nbsp; | Задержка (P95) | Задержка (P99) |
 |--------|--------|---------------|---------------|
 | Аудит каталогов | &nbsp; | 2 мин | 5 мин |
 | Действия при входе | &nbsp; | 2 мин | 5 мин | 
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -59,12 +59,12 @@ ms.locfileid: "74014288"
 
 Действия отображаются в журналах действий спустя некоторое время. В таблице ниже приводятся наши показатели задержки для журналов действий. 
 
-| Отчет | &nbsp; | Задержка (P95) | Задержка (P99) |
+| Report | &nbsp; | Задержка (P95) | Задержка (P99) |
 |--------|--------|---------------|---------------|
 | Аудит каталогов | &nbsp; | 2 мин | 5 мин |
 | Действия при входе | &nbsp; | 2 мин | 5 мин | 
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 Подождите от 15 минут до двух часов и проверьте, появились ли действия в журнале. Если журналы не появились даже спустя два часа, [отправьте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) и мы рассмотрим вашу проблему.
 
@@ -80,20 +80,20 @@ ms.locfileid: "74014288"
 
 В зависимости от типа лицензии Azure Active Directory сохраняет отчеты о действиях за такие периоды времени:
 
-| Отчет           | &nbsp; |  Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
+| Report           | &nbsp; |  Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
 | ---              | ----   |  ---           | ---                 | ---                 |
 | Аудит каталога  | &nbsp; |   7 дней     | 30 дней             | 30 дней             |
-| Действия при входе | &nbsp; | Недоступен. Доступ к данным собственного входа в систему можно получить в течение 7 дней в колонке профиля пользователя | 30 дней | 30 дней             |
+| Действия при входе | &nbsp; | Недоступно. Доступ к данным собственного входа в систему можно получить в течение 7 дней в колонке профиля пользователя | 30 дней | 30 дней             |
 
 Дополнительные сведения см. в статье [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
 
-### <a name="resolution"></a>Способы устранения:
+### <a name="resolution"></a>Разрешение
 
 У вас есть два варианта сохранения данных дольше чем в течение 30 дней. Вы можете использовать [API отчетов Azure AD](concept-reporting-api.md), чтобы программным способом извлекать данные и хранить их в базе данных. Кроме того, вы можете интегрировать журналы аудита в стороннюю систему SIEM, такую как Splunk или SumoLogic.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).
-* [Задержки в отчетах Azure Active Directory](reference-reports-latencies.md).
-* [Часто задаваемые вопросы об отчетах Azure Active Directory](reports-faq.md).
+* [Azure Active Directory отчет о задержке](reference-reports-latencies.md).
+* [Azure Active Directory сообщение часто задаваемые вопросы](reports-faq.md).
 

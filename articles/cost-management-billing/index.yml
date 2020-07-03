@@ -8,12 +8,12 @@ metadata:
   author: bandersmsft
   ms.author: banders
   ms.date: 01/24/2019
-  ms.openlocfilehash: 3ece86e6c44f616553bdc5a73d6f56baae46961f
-  ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+  ms.openlocfilehash: c1fbce7ba94ad097f948a36f93b1f997225c7086
+  ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/28/2020
-  ms.locfileid: "76773901"
+  ms.lasthandoff: 05/25/2020
+  ms.locfileid: "83833608"
 highlightedContent:
   items:
   - title: Что собой представляет служба Управления затратами и выставления счетов?
@@ -21,7 +21,7 @@ highlightedContent:
     url: cost-management-billing-overview.md
   - title: Анализ затрат и создание бюджетов
     itemType: learn
-    url: https://docs.microsoft.com/learn/modules/analyze-costs-create-budgets-azure-cost-management/
+    url: https://docs.microsoft.com/learn/modules/analyze-costs-create-budgets-azure-cost-management/?WT.mc_id=costmanagementcontent_docsazurebilling_-inproduct-learn
   - title: Рекомендации по работе с Управлением затратами
     itemType: concept
     url: ./costs/cost-mgt-best-practices.md
@@ -147,6 +147,6 @@ conceptualContent:
     - url: https://techcommunity.microsoft.com/t5/forums/searchpage/tab/message?filter=location&q=%22billing%22&noSynonym=false&location=category:Azure&collapse_discussion=true
       itemType: how-to-guide
       text: Техническое сообщество службы выставления счетов Azure
-    - url: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureCostManagement&filter=alltypes&sort=relevancedesc&searchTerm=Azure%20Cost%20Management
+    - url: https://docs.microsoft.com/answers/topics/azure-cost-management.html
       itemType: how-to-guide
       text: Задайте вопрос на форуме службы Управления затратами и выставления счетов

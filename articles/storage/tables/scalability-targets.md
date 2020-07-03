@@ -1,22 +1,22 @@
 ---
-title: Целевые показатели масштабируемости и производительности для хранилища таблиц
+title: Целевые показатели масштабируемости и производительности для хранилища очередей
 titleSuffix: Azure Storage
 description: Сведения о целевых показателях масштабируемости и производительности для хранилища таблиц.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/18/2019
+ms.date: 03/09/2020
 ms.author: tamram
 ms.subservice: tables
-ms.openlocfilehash: 484596b4eb4908ca84d018267d605acc41a8ccea
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: b6455733e4955bd1fb5b27e3551e41e5f711df21
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75749480"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78943547"
 ---
-# <a name="scalability-and-performance-targets-for-table-storage"></a>Целевые показатели масштабируемости и производительности для хранилища таблиц
+# <a name="scalability-and-performance-targets-for-table-storage"></a>Целевые показатели масштабируемости и производительности для хранилища очередей
 
 [!INCLUDE [storage-scalability-intro-include](../../../includes/storage-scalability-intro-include.md)]
 
@@ -26,7 +26,7 @@ ms.locfileid: "75749480"
 
 ## <a name="see-also"></a>См. также
 
-- [Контрольный список производительности и масштабируемости для хранилища таблиц](storage-performance-checklist.md)
+- [Контрольный список для обеспечения масштабируемости и производительности для Хранилища таблиц](storage-performance-checklist.md)
 - [Целевые показатели масштабируемости для учетных записей хранения уровня "Стандартный"](../common/scalability-targets-standard-account.md)
 - [Целевые показатели масштабируемости для поставщика ресурсов службы хранилища Azure](../common/scalability-targets-resource-provider.md)
 - [Ограничения и квоты подписки Azure](../../azure-resource-manager/management/azure-subscription-service-limits.md)

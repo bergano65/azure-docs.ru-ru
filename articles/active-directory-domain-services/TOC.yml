@@ -91,6 +91,10 @@
           href: password-policy.md
         - name: Включение аудита событий безопасности
           href: security-audit-events.md
+        - name: Анализ событий аудита с помощью книг Azure Monitor
+          href: use-azure-monitor-workbooks.md
+        - name: Безопасный удаленный доступ к виртуальным машинам
+          href: secure-remote-vm-access.md
     - name: Присоединенные к домену виртуальные машины
       items:
         - name: Виртуальная машина Windows Server на основе шаблона
@@ -141,13 +145,9 @@
       href: faqs.md
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=active-directory-ds'
-    - name: Совместимое стороннее программное обеспечение
-      href: compatible-software.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/active-directory-ds/'
     - name: "Форум по Azure\_AD"
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-    - name: Свяжитесь с нами
-      href: contact-us.md
     - name: "Использование доменных служб Azure\_AD в подписках Azure\_CSP"
       href: csp.md

@@ -1,7 +1,7 @@
 ---
-title: Необходимые условия для настройки пиринга с корпорацией Майкрософт
+title: Предварительные требования для настройки пиринга с Майкрософт
 titleSuffix: Azure
-description: Необходимые условия для настройки пиринга с корпорацией Майкрософт
+description: Предварительные требования для настройки пиринга с Майкрософт
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: 3c820a7be561aeef9b7e50fd0ac0cf4dee721af8
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75775411"
 ---
-# <a name="prerequisites-to-set-up-peering-with-microsoft"></a>Необходимые условия для настройки пиринга с корпорацией Майкрософт
+# <a name="prerequisites-to-set-up-peering-with-microsoft"></a>Предварительные требования для настройки пиринга с Майкрософт
 
 Перед запросом нового пиринга или преобразования устаревшего пиринга в ресурс Azure убедитесь, что выполнены следующие условия.
 
@@ -35,4 +35,4 @@ ms.locfileid: "75775411"
 * [Создание или изменение прямого пиринга с помощью портала](howto-direct-portal.md).
 * [Преобразование устаревшего прямого пиринга в ресурс Azure с помощью портала](howto-legacy-direct-portal.md)
 * [Создание или изменение пиринга Exchange с помощью портала](howto-exchange-portal.md)
-* [Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью портала](howto-legacy-exchange-portal.md)
+* [Преобразование устаревшего пиринга через точку обмена в ресурс Azure с помощью портала](howto-legacy-exchange-portal.md)

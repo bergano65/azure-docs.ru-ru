@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: dekapur
 ms.openlocfilehash: 0f9b625dfbe9c39bea7771dcc5fd58805ce19811
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75458377"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
@@ -19,9 +19,9 @@ ms.locfileid: "75458377"
 
 * В примерах ClusterConfig.Unsecure.DevCluster.json и ClusterConfig.Unsecure.MultiMachine.json показано, как создать незащищенный тестовый или рабочий кластер соответственно.
 
-* В примерах ClusterConfig.Windows.DevCluster.json и ClusterConfig.Windows.MultiMachine.json показано, как создать тестовый или рабочий кластер, защищенный с помощью [системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
+* ClusterConfig. Windows. DevCluster. JSON и ClusterConfig. Windows. remachine. JSON демонстрируют создание тестовых или рабочих кластеров, защищенных с помощью [системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
 
-* В примерах ClusterConfig.X509.DevCluster.json и ClusterConfig.X509.MultiMachine.json показано, как создать тестовый или рабочий кластер, защищенный с помощью [системы безопасности на основе сертификатов X509](service-fabric-windows-cluster-x509-security.md).
+* ClusterConfig. X509. DevCluster. JSON и ClusterConfig. X509. remachine. JSON демонстрируют создание тестовых или рабочих кластеров, защищенных с помощью [безопасности на основе сертификата X509](service-fabric-windows-cluster-x509-security.md).
 
 Теперь рассмотрим различные разделы файла ClusterConfig.json.
 
@@ -62,7 +62,7 @@ ms.locfileid: "75458377"
 
 Кластер Service Fabric должен содержать по крайней мере три узла. Можно добавить дополнительные узлы в этот раздел в соответствии с вашей конфигурацией. В следующей таблице описаны параметры конфигурации для каждого узла:
 
-| **Параметр узла** | **Описание** |
+| **конфигурация узла;** | **Описание** |
 | --- | --- |
 | nodeName |Узлу можно присвоить любое понятное имя. |
 | iPAddress |Узнать IP-адрес узла можно, открыв командное окно и введя `ipconfig`. Запишите этот IPv4-адрес и назначьте его переменной iPAddress. |
@@ -76,7 +76,7 @@ ms.locfileid: "75458377"
 ### <a name="reliability"></a>Надежность
 Термин reliabilityLevel определяет количество реплик или экземпляров системных служб Service Fabric, которые могут выполняться на первичных узлах кластера. От этого зависит надежность этих служб и, следовательно, кластера. Значение вычисляется системой во время создания и обновления кластера.
 
-### <a name="diagnostics"></a>Диагностика:
+### <a name="diagnostics"></a>Диагностика
 В разделе diagnosticsStore вы можете настроить параметры, чтобы включить диагностику и устранение неполадок узлов и кластера, как показано в следующем фрагменте кода: 
 
 ```json
@@ -199,7 +199,7 @@ name — понятное имя этого конкретного типа уз
 Чтобы включить в изолированных кластерах поддержку контейнеров для контейнеров Windows Server и Hyper-V, необходимо включить компонент надстройки DnsService.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Завершив настройку файла *ClusterConfig.json* в соответствии с конфигурацией изолированного кластера, вы можете развернуть этот кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), 
+После создания полного файла *ClusterConfig. JSON* , настроенного в соответствии с настройками автономного кластера, можно развернуть кластер. Следуйте инструкциям в статье [Создание изолированного кластера под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md), 
 
 Если у вас развернут изолированный кластер, вы также можете [обновить его конфигурацию](service-fabric-cluster-config-upgrade-windows-server.md). 
 

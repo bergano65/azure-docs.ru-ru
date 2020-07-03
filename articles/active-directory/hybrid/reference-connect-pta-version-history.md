@@ -8,16 +8,16 @@ ms.assetid: ef2797d7-d440-4a9a-a648-db32ad137494
 ms.service: active-directory
 ms.topic: reference
 ms.workload: identity
-ms.date: 11/27/2019
+ms.date: 04/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9c5d0efe8e662544dc69356c6b17dd7eca6f3a50
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.openlocfilehash: 75b127f8429650d46af9f171ed7ff03692f1499e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74786458"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81379907"
 ---
 # <a name="azure-ad-pass-through-authentication-agent-version-release-history"></a>Агент сквозной аутентификации Azure AD: журнал выпусков версий 
  
@@ -27,6 +27,14 @@ ms.locfileid: "74786458"
 
 - [Вход пользователя с помощью сквозной проверки подлинности Azure AD](how-to-connect-pta.md) 
 - [Установка агента сквозной аутентификации Azure AD](how-to-connect-pta-quick-start.md) 
+
+## <a name="1517420"></a>1.5.1742.0
+### <a name="release-status"></a>Состояние выпуска: 
+04/09/2020: выпущено для скачивания
+
+### <a name="new-features-and-improvements"></a>Новые функции и внесенные улучшения
+
+- Добавлена поддержка целевых сред в облачных средах после установки. Пакет можно закрепить в заданной облачной среде.
 
 
 

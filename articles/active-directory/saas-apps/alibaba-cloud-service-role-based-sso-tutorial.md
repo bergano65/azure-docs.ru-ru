@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 09/13/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 99b9173c817cc3ecf4b9a34ec6906af0b4de70e6
-ms.sourcegitcommit: fad368d47a83dadc85523d86126941c1250b14e2
+ms.openlocfilehash: e22bec224d185d0306f2b0032aef929f627c910e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71120770"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77367935"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-alibaba-cloud-service-role-based-sso"></a>Руководство по Интеграция единого входа Azure Active Directory с Alibaba Cloud Service (единый вход на основе ролей)
 
@@ -35,9 +35,9 @@ ms.locfileid: "71120770"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка на Alibaba Cloud Service (единый вход на основе ролей) с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -83,14 +83,14 @@ ms.locfileid: "71120770"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
     >[!NOTE]
     >Метаданные поставщика службы можно получить по этому [URL-адресу](https://signin.alibabacloud.com/saml-role/sp-metadata.xml).
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
@@ -125,7 +125,7 @@ ms.locfileid: "71120770"
 
 В этом разделе описано, как разрешить пользователю B.Simon использовать единый вход Azure, предоставив этому пользователю доступ к Alibaba Cloud Service (единый вход на основе ролей).
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Выберите **Alibaba Cloud Service (единый вход на основе ролей)** из списка приложений.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -165,7 +165,7 @@ ms.locfileid: "71120770"
 
 7. Свяжите роль для управления доступом к ресурсам Alibaba Cloud (AADrole) с пользователем Azure AD (u2): Чтобы связать роль для управления доступом к ресурсам с пользователем Azure AD, создайте роль в Azure AD, выполнив такие шаги:
 
-    a. Войдите в [обозреватель Azure AD Graph](https://developer.microsoft.com/graph/graph-explorer?spm=a2c63.p38356.879954.9.7d904e167h6Yg9).
+    а. Войдите в [обозреватель Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer).
 
     b. Нажмите кнопку **Изменить разрешения**, чтобы получить необходимые разрешения для создания роли.
 
@@ -185,14 +185,14 @@ ms.locfileid: "71120770"
     >[!NOTE]
     >Если вы используете несколько каталогов, в поле запроса можно ввести `https://graph.microsoft.com/beta/contoso.com/servicePrincipals`.
 
-    д. В разделе **Предварительный просмотр ответа** извлеките свойство appRoles из субъекта-службы для последующего использования.
+    д) В разделе **Предварительный просмотр ответа** извлеките свойство appRoles из субъекта-службы для последующего использования.
 
     ![Конфигурация Graph](./media/alibaba-cloud-service-role-based-sso-tutorial/graph05.png)
 
     >[!NOTE]
     >Свойство appRoles можно найти, введя `https://graph.microsoft.com/beta/servicePrincipals/<objectID>` в поле запроса. Обратите внимание, что `objectID` является идентификатором объекта, который вы скопировали на странице **Свойства** Azure AD.
 
-    Е. Вернитесь в обозреватель Graph, измените метод с **GET** на **PATCH**, вставьте указанное ниже содержимое в раздел **Текст запроса** и щелкните **Выполнить запрос**:
+    е) Вернитесь в обозреватель Graph, измените метод с **GET** на **PATCH**, вставьте указанное ниже содержимое в раздел **Текст запроса** и щелкните **Выполнить запрос**:
     ```
     { 
     "appRoles": [
@@ -255,9 +255,9 @@ ms.locfileid: "71120770"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

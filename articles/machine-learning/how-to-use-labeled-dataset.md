@@ -8,10 +8,10 @@ ms.service: machine-learning
 ms.topic: how-to
 ms.date: 01/21/2020
 ms.openlocfilehash: 5138109de3f80d405ce95b605714b511480563f5
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76549493"
 ---
 # <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Создание и изучение набора данных Машинное обучение Azure с помощью меток
@@ -22,7 +22,7 @@ ms.locfileid: "76549493"
 
 Машинное обучение Azure наборы данных с метками [табулардатасетс](how-to-create-register-datasets.md#dataset-types) со свойством Label, мы будем ссылаться на них как на помеченные наборы данных. Эти конкретные типы Табулардатасетс создаются только в виде выходных данных Машинное обучение Azure проектов меток. Создайте проект меток данных, [выполнив следующие действия](how-to-create-labeling-projects.md). Машинное обучение поддерживает проекты меток данных для классификации изображений: с несколькими метками или с несколькими классами, а также с ограниченными полями.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLFree), прежде чем начинать работу.
 * [Машинное обучение Azure пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)или доступ к [машинное обучение Azure Studio](https://ml.azure.com/).
@@ -50,7 +50,7 @@ ms.locfileid: "76549493"
 
 ### <a name="pandas-dataframe"></a>Кадр данных Pandas
 
-Вы можете загрузить помеченные наборы данных в Pandas, используя метод [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) из класса `azureml-contrib-dataset`. Установите класс с помощью следующей команды оболочки: 
+Вы можете загрузить помеченные наборы данных в Pandas, используя [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) метод из `azureml-contrib-dataset` класса. Установите класс с помощью следующей команды оболочки: 
 
 ```shell
 pip install azureml-contrib-dataset
@@ -78,7 +78,7 @@ imgplot = plt.imshow(img)
 
 ### <a name="torchvision-datasets"></a>Наборы данных торчвисион
 
-Вы можете загрузить помеченные наборы данных в Торчвисион DataSet с помощью метода [to_torchvision ()](https://docs.microsoft.com/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset?view=azure-ml-py#to-torchvision--) также из класса `azureml-contrib-dataset`. Чтобы использовать этот метод, необходимо установить [PyTorch](https://pytorch.org/) . 
+Вы можете загрузить помеченные наборы данных в Торчвисион DataSet с помощью метода [to_torchvision ()](https://docs.microsoft.com/python/api/azureml-contrib-dataset/azureml.contrib.dataset.tabulardataset?view=azure-ml-py#to-torchvision--) также из `azureml-contrib-dataset` класса. Чтобы использовать этот метод, необходимо установить [PyTorch](https://pytorch.org/) . 
 
 ```python
 from torchvision.transforms import functional as F
@@ -95,6 +95,6 @@ gray_image = F.to_grayscale(pil_image, num_output_channels=3)
 imgplot = plt.imshow(gray_image)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Полный обучающий пример см. в статье [набор данных с метками Записная книжка](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/labeled-datasets/labeled-datasets.ipynb) .

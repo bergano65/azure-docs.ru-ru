@@ -13,18 +13,20 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/24/2019
 ms.author: jingwang
-ms.openlocfilehash: 71a256b0350742f0e7a7b95519fafff5bc32f58b
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 7f0f18e523368e85d9cea0206e98bb7b1a0e6165
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928790"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81419380"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-net-sdk"></a>Краткое руководство. Создание фабрики данных и конвейера с помощью пакета SDK .NET
 
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-dot-net.md)
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этом кратком руководстве описано создание фабрики данных Azure с помощью пакета SDK .NET. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью Фабрики данных Azure см. в статье [Преобразование данных с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-portal.md).
 
@@ -48,7 +50,7 @@ ms.locfileid: "74928790"
 1. В разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) создайте приложение, которое представляет приложение .NET, создаваемое в этом руководстве. В качестве URL-адреса входа можно указать фиктивный URL-адрес, как показано в статье (`https://contoso.org/exampleapp`).
 2. В разделе [Получение значений для входа](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in) получите **код приложения**, а также **идентификатор арендатора** и запишите эти значения. Они потребуются в дальнейшем при выполнении инструкций этого руководства. 
 3. В разделе [Сертификаты и секреты](../active-directory/develop/howto-create-service-principal-portal.md#certificates-and-secrets) получите **ключ аутентификации** и запишите это значение. Оно потребуется в дальнейшем при выполнении инструкций этого руководства.
-4. В разделе [Назначение приложению роли](../active-directory/develop/howto-create-service-principal-portal.md#assign-the-application-to-a-role) назначьте приложению роль **Участник** на уровне подписки, чтобы приложение могло создавать фабрики данных в подписке.
+4. В разделе [Назначение приложению роли](../active-directory/develop/howto-create-service-principal-portal.md#assign-a-role-to-the-application) назначьте приложению роль **Участник** на уровне подписки, чтобы приложение могло создавать фабрики данных в подписке.
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -443,6 +445,6 @@ Console.WriteLine("Deleting the data factory");
 client.Factories.Delete(resourceGroup, dataFactoryName);
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях. 

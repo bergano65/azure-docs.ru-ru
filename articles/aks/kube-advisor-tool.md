@@ -1,18 +1,18 @@
 ---
-title: Проверка развертываний Kubernetes в Azure для реализации рекомендаций
+title: Проверка развертываний на предмет рекомендаций
+titleSuffix: Azure Kubernetes Service
 description: Сведений о проверке применения рекомендаций в развертываниях в Службе Azure Kubernetes с помощью kube-advisor
 services: container-service
 author: seanmck
-ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 11/05/2018
 ms.author: seanmck
-ms.openlocfilehash: 03c5eb2e32a0a8ec51844511276d9efba5651068
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.openlocfilehash: 17e21c142dc354de7b72bc17396b19366027c5cd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "65073760"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80668402"
 ---
 # <a name="checking-for-kubernetes-best-practices-in-your-cluster"></a>Проверка применения рекомендаций Kubernetes в кластере
 
@@ -22,7 +22,7 @@ ms.locfileid: "65073760"
 
 [Средство kube-advisor][kube-advisor-github] представляет собой контейнер, предназначенный для выполнения в кластере. Он запрашивает с сервера API Kubernetes сведения о ваших развертываниях и возвращает набор предложений по оптимизации.
 
-Kube-помощник может отчетов на запросом ресурсов и ограничения, отсутствующие в PodSpecs для Windows-приложений, а также приложений Linux, а само средство kube помощника должно быть назначено на Linux pod. Вы можете запланировать pod для запуска в пуле узлов с определенной операционной системы с помощью [селектор узла] [ k8s-node-selector] в конфигурации pod.
+Средство KUBE-Advisor может сообщать о запросах ресурсов и ограничениях, отсутствующих в Подспекс для приложений Windows, а также в приложениях Linux, но само средство KUBE Advisor должно быть запланировано на Pod Linux. Вы можете запланировать запуск модуля Pod в пуле узлов с определенной ОС с помощью [селектора узла][k8s-node-selector] в конфигурации Pod.
 
 > [!NOTE]
 > Средство kube-advisor поддерживается корпорацией Майкрософт по мере возможности. Проблемы и предложения следует отправлять в GitHub.
@@ -67,7 +67,7 @@ kubectl delete -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa
 
 Если средство выполняется применительно к кластеру, для которого не включено управление RBAC, очистка не требуется.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Устранение неполадок со службой Azure Kubernetes](troubleshooting.md)
 

@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3d61f4b4bce9b8287dc13237f071684ea5d135fa
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74275470"
 ---
 # <a name="cant-access-this-corporate-application-error-when-using-an-application-proxy-application"></a>Ошибка "Can't Access this Corporate Application" (Не удается обратиться к этому корпоративному приложению) при использовании приложения прокси приложения
@@ -103,6 +103,6 @@ ms.locfileid: "74275470"
 
 Если вы можете связаться с приложением с этого компьютера, нужно искать проблемы или ошибки в самом соединителе. Некоторые распространенные ошибки приведены в [документе по устранению неполадок](application-proxy-troubleshoot.md#connector-errors). Для выявления ошибок можно просмотреть журналы соединителя. Многие из наших сообщений об ошибках содержат более конкретные рекомендации по устранению неполадок. Чтобы научиться просматривать журналы, см. [нашу документацию по соединителям](application-proxy-connectors.md#under-the-hood).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
+[Общие сведения о соединителях Azure AD Application Proxy](application-proxy-connectors.md)

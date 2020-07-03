@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/08/2016
 ms.author: saudas
 ms.custom: mvc
-ms.openlocfilehash: a22d48554573e2517b318f6172b759864bf46612
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 611d3e6d5ecaf986cc09c550c4aee760ed0a0d98
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76277731"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166158"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-cluster-with-sysdig"></a>(УСТАРЕЛО) Мониторинг кластера службы контейнеров Azure с помощью ELK
 
@@ -20,8 +20,8 @@ ms.locfileid: "76277731"
 
 В этой статье описывается развертывание агентов Sysdig на все узлы агента в кластере службы контейнеров Azure. Для работы с этой конфигурацией вам понадобится учетная запись с Sysdig. 
 
-## <a name="prerequisites"></a>Технические условия
-[Разверните](container-service-deployment.md) и [подключите](../container-service-connect.md) кластер, настроенный службой контейнеров Azure. Изучите [пользовательский интерфейс Marathon](container-service-mesos-marathon-ui.md). Перейдите по адресу [https://app.sysdigcloud.com](https://app.sysdigcloud.com), чтобы настроить облачную учетную запись Sysdig. 
+## <a name="prerequisites"></a>Предварительные требования
+[Разверните](container-service-deployment.md) и [подключите](../container-service-connect.md) кластер, настроенный службой контейнеров Azure. Изучите [пользовательский интерфейс Marathon](container-service-mesos-marathon-ui.md). Перейдите к [https://app.sysdigcloud.com](https://app.sysdigcloud.com) , чтобы настроить учетную запись Sysdig Cloud. 
 
 ## <a name="sysdig"></a>Sysdig
 Sysdig — это служба мониторинга, которая позволяет отслеживать контейнеры в пределах кластера. Sysdig используется для устранения неполадок, а также для отслеживания базовых метрик ЦП, сети, памяти и ввода-вывода. Sysdig позволяет легко определить, какие контейнеры потребляют больше всего ресурсов, включая память и ЦП. Это представление сейчас доступно в разделе "Обзор" в режиме бета-версии. 
@@ -31,7 +31,7 @@ Sysdig — это служба мониторинга, которая позво
 ## <a name="configure-a-sysdig-deployment-with-marathon"></a>Настройка развертывания Sysdig с помощью Marathon
 Ниже описано, как настраивать и развертывать в кластере приложения Sysdig с помощью Marathon. 
 
-Откройте пользовательский интерфейс DC/OS по адресу [http://localhost:80/](http://localhost:80/), затем щелкните Universe (Вселенная) в левом нижнем углу и выполните поиск по запросу Sysdig.
+Откройте пользовательский интерфейс DC/OS по адресу `http://localhost:80/`, затем щелкните Universe (Вселенная) в левом нижнем углу и выполните поиск по запросу Sysdig.
 
 ![Sysdig: раздел "Universe" (Вселенная) DC/OS](./media/container-service-monitoring-sysdig/sysdig1.png)
 

@@ -2,50 +2,50 @@
 title: Интеграция реестра контейнеров Azure с помощью службы Kubernetes Azure
 description: Узнайте, как интегрировать службу Kubernetes Azure (AKS) с реестром контейнеров Azure (запись контроля доступа).
 services: container-service
-author: mlearned
 manager: gwallace
-ms.service: container-service
 ms.topic: article
-ms.date: 09/17/2018
-ms.author: mlearned
-ms.openlocfilehash: ba52cac4ebe923b7217550ed90948d908d8daf7f
-ms.sourcegitcommit: bc193bc4df4b85d3f05538b5e7274df2138a4574
+ms.date: 02/25/2020
+ms.openlocfilehash: 514cc25e1959145c65fe60cd3054cec4ed28f44d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2019
-ms.locfileid: "73900667"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80617427"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
-При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. В этой статье приведены примеры настройки проверки подлинности между этими двумя службами Azure.
+При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. В этой статье приведены примеры настройки проверки подлинности между этими двумя службами Azure. 
 
-Вы можете настроить AKS для интеграции записей контроля доступа в нескольких простых командах с Azure CLI.
+Вы можете настроить AKS для интеграции записей контроля доступа в нескольких простых командах с Azure CLI. Эта интеграция назначает роль Акрпулл субъекту-службе, связанному с кластером AKS.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
-Для этих примеров требуется:
+Для этих примеров требуются:
 
 * Роль **владельца** или **администратора учетной записи Azure** в **подписке Azure**
 * Azure CLI версии 2.0.73 или более поздней
 
+Чтобы избежать необходимости в роли администратора или **владельца** **учетной записи Azure** , можно вручную настроить субъект-службу или использовать существующий субъект-службу для проверки ПОдлинности записей контроля доступа из AKS. Дополнительные сведения см. в статьях [Аутентификация в реестре контейнеров Azure с помощью субъектов-служб](../container-registry/container-registry-auth-service-principal.md) и [Проверка подлинности в Kubernetes с использованием секрета для извлечения](../container-registry/container-registry-auth-kubernetes.md).
+
 ## <a name="create-a-new-aks-cluster-with-acr-integration"></a>Создание нового кластера AKS с интеграцией записей контроля доступа
 
-Вы можете настроить интеграцию AKS и записей контроля доступа во время первоначального создания кластера AKS.  Чтобы разрешить кластеру AKS взаимодействовать с записью контроля доступа, используется **субъект-служба** Azure Active Directory. Следующая команда CLI позволяет авторизовать существующую запись контроля доступа в подписке и настроить соответствующую роль **акрпулл** для субъекта-службы. Укажите допустимые значения для параметров ниже. 
+Вы можете настроить интеграцию AKS и записей контроля доступа во время первоначального создания кластера AKS.  Чтобы разрешить кластеру AKS взаимодействовать с записью контроля доступа, используется **субъект-служба** Azure Active Directory. Следующая команда CLI позволяет авторизовать существующую запись контроля доступа в подписке и настроить соответствующую роль **акрпулл** для субъекта-службы. Укажите допустимые значения для параметров ниже.
+
 ```azurecli
 # set this to the name of your Azure Container Registry.  It must be globally unique
-MYACR=myContainerRegistry
+$MYACR=myContainerRegistry
 
 # Run the following line to create an Azure Container Registry if you do not already have one
 az acr create -n $MYACR -g myContainerRegistryResourceGroup --sku basic
 
 # Create an AKS cluster with ACR integration
 az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr $MYACR
-
 ```
-Кроме того, можно указать имя записи контроля доступа с помощью идентификатора ресурса записей контроля доступа, имеющего следующий формат:
 
-/Subscriptions/\<Subscription — ID\>/resourceGroups/\<Resource-Group-Name\>/Провидерс/Микрософт.контаинеррегистри/регистриес/\<Name\> 
- 
+Кроме того, можно указать имя записи контроля доступа с помощью идентификатора ресурса записей контроля доступа в следующем формате:
+
+`/subscriptions/\<subscription-id\>/resourceGroups/\<resource-group-name\>/providers/Microsoft.ContainerRegistry/registries/\<name\>` 
+
 ```azurecli
 az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-acr /subscriptions/<subscription-id>/resourceGroups/myContainerRegistryResourceGroup/providers/Microsoft.ContainerRegistry/registries/myContainerRegistry
 ```
@@ -59,17 +59,22 @@ az aks create -n myAKSCluster -g myResourceGroup --generate-ssh-keys --attach-ac
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acrName>
 ```
+
 или
-```
+
+```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-resource-id>
 ```
 
 Вы также можете удалить интеграцию между записью контроля доступа и кластером AKS, выполнив следующие
+
 ```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acrName>
 ```
-или
-```
+
+или диспетчер конфигурации служб
+
+```azurecli
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
 ```
 
@@ -94,7 +99,7 @@ az aks get-credentials -g myResourceGroup -n myAKSCluster
 
 Создайте файл с именем записи **контроля доступа nginx. YAML** , который содержит следующее:
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -119,16 +124,20 @@ spec:
 ```
 
 Затем запустите это развертывание в кластере AKS:
-```
+
+```console
 kubectl apply -f acr-nginx.yaml
 ```
 
 Вы можете отслеживать развертывание, выполнив:
-```
+
+```console
 kubectl get pods
 ```
+
 Необходимо иметь два работающих модуля.
-```
+
+```output
 NAME                                 READY   STATUS    RESTARTS   AGE
 nginx0-deployment-669dfc4d4b-x74kr   1/1     Running   0          20s
 nginx0-deployment-669dfc4d4b-xdpd6   1/1     Running   0          20s

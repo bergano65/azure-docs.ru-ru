@@ -14,15 +14,15 @@ ms.topic: article
 ms.date: 07/23/2018
 ms.author: takamath
 ms.openlocfilehash: ca843213760cee60799568a6f33059c2bd91c835
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75643293"
 ---
 # <a name="deliver-a-proof-of-concept"></a>Предоставление подтверждения концепции 
 
-Одним из ключевых сценариев для Azure DevTest Labs является включение сред разработки и тестирования в облаке. Примеры.
+Одним из ключевых сценариев для Azure DevTest Labs является включение сред разработки и тестирования в облаке. Примеры приведены ниже.
 
 * Создание настольных приложений для разработчиков в облаке.
 * Настройка сред для тестирования.
@@ -43,7 +43,7 @@ DevTest Labs также предоставляет средства управл
 * [Корпоративная документация по DevTest Labs](devtest-lab-guidance-prescriptive-adoption.md)
 * [Введение в сеть Azure](../virtual-network/virtual-networks-overview.md)
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Для успешного завершения пилотного или эксперимента с DevTest Labs необходимо выполнить несколько предварительных условий. 
 

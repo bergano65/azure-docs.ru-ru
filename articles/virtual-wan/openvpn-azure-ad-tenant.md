@@ -1,28 +1,29 @@
 ---
-title: 'VPN-шлюз: клиент Azure AD для VPN-подключений P2S: проверка подлинности Azure AD'
-description: VPN-подключение P2S можно использовать для подключения к виртуальной сети с помощью проверки подлинности Azure AD.
+title: 'Клиент Azure AD для VPN-подключений пользователей: проверка подлинности Azure AD'
+description: Для подключения к виртуальной сети с помощью проверки подлинности Azure AD можно использовать VPN-подключение пользователя виртуальной глобальной сети Azure ("точка-сеть").
+titleSuffix: Azure Virtual WAN
 services: virtual-wan
 author: anzaman
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 12/27/2019
+ms.date: 03/19/2020
 ms.author: alzam
-ms.openlocfilehash: 1f7cf97e38bf201679593819cce814249f9625b0
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 74347ce969b6a5ffd57f5ca8396517e78590f3f2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75930414"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80059460"
 ---
-# <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений по протоколу P2S Опенвпн
+# <a name="create-an-azure-active-directory-tenant-for-user-vpn-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений по протоколу VPN Опенвпн User
 
-При подключении к виртуальной сети можно использовать проверку подлинности на основе сертификатов или аутентификацию RADIUS. Однако при использовании открытого протокола VPN можно также использовать проверку подлинности Azure Active Directory. Эта статья поможет вам настроить клиент Azure AD для проверки подлинности P2S Open VPN.
+При подключении к виртуальной сети можно использовать проверку подлинности на основе сертификатов или аутентификацию RADIUS. Однако при использовании открытого протокола VPN можно также использовать проверку подлинности Azure Active Directory. Эта статья поможет вам настроить клиент Azure AD для VPN-подключения пользователя виртуальной глобальной сети (точка-сеть) с открытой проверкой подлинности VPN.
 
 > [!NOTE]
-> Проверка подлинности Azure AD поддерживается только для подключений по протоколу OpenVPN®.
+> Аутентификация Azure AD поддерживается только для подключений&reg; по протоколу опенвпн.
 >
 
-## <a name="tenant"></a>1. Создайте клиент Azure AD.
+## <a name="1-create-the-azure-ad-tenant"></a><a name="tenant"></a>1. Создайте клиент Azure AD.
 
 Создайте клиент Azure AD, выполнив действия, описанные в статье [Создание нового клиента](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) :
 
@@ -33,16 +34,16 @@ ms.locfileid: "75930414"
 
    ![Новый клиент Azure AD](./media/openvpn-create-azure-ad-tenant/newtenant.png)
 
-## <a name="users"></a>2. Создание пользователей клиента Azure AD
+## <a name="2-create-azure-ad-tenant-users"></a><a name="users"></a>2. Создание пользователей клиента Azure AD
 
 Затем создайте две учетные записи пользователей. Создайте одну учетную запись глобального администратора и одну учетную запись главного пользователя. Учетная запись главного пользователя используется как учетная запись главного внедрения (учетная запись службы). При создании учетной записи пользователя клиента Azure AD необходимо настроить роль каталога для типа пользователя, который требуется создать.
 
 Выполните действия, описанные в [этой статье](../active-directory/fundamentals/add-users-azure-active-directory.md) , чтобы создать по крайней мере двух пользователей для вашего клиента Azure AD. Не забудьте изменить **роль каталога** , чтобы создать типы учетных записей:
 
 * глобальный администратор.
-* Пользователь
+* User (Пользователь)
 
-## <a name="enable-authentication"></a>3. Включите проверку подлинности Azure AD на VPN-шлюзе.
+## <a name="3-enable-azure-ad-authentication-on-the-vpn-gateway"></a><a name="enable-authentication"></a>3. Включите проверку подлинности Azure AD на VPN-шлюзе.
 
 1. Укажите идентификатор каталога, который вы хотите использовать для проверки подлинности. Он указан в разделе Свойства страницы Active Directory.
 
@@ -54,7 +55,7 @@ ms.locfileid: "75930414"
 
 4. Затем предоставьте администратору согласие. Скопируйте и вставьте URL-адрес, относящийся к расположению развертывания, в адресной строке браузера:
 
-    Общедоступные
+    Открытый
 
     ```
     https://login.microsoftonline.com/common/oauth2/authorize?client_id=41b23e61-6c1e-4545-b367-cd054e0ed4b4&response_type=code&redirect_uri=https://portal.azure.com&nonce=1234&prompt=admin_consent
@@ -92,6 +93,6 @@ ms.locfileid: "75930414"
 
 8. Настройте аутентификацию Azure AD для VPN пользователя и назначьте ее виртуальному концентратору, выполнив действия, описанные в статье [Настройка проверки подлинности Azure AD для подключения типа "точка — сеть" к Azure](virtual-wan-point-to-site-azure-ad.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы подключиться к виртуальной сети, необходимо создать и настроить профиль VPN-клиента и связать его с виртуальным концентратором. См. статью [Настройка аутентификации Azure AD для подключения "точка — сеть" к Azure](virtual-wan-point-to-site-azure-ad.md).

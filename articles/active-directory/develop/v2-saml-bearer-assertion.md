@@ -2,27 +2,22 @@
 title: Поток утверждений носителя SAML для платформы Microsoft Identity & | Службы
 description: Узнайте, как извлечь данные из Microsoft Graph без запроса учетных данных пользователя с помощью потока утверждения носителя SAML.
 services: active-directory
-documentationcenter: ''
 author: umeshbarapatre
 manager: CelesteDG
-editor: ''
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 16f30473ded5f1de5dc94c1cff9da96165b1a01c
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 1cd79b1f9e4cd3afadee250da0c184c0c5b8ac07
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76700215"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80886183"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Поток утверждения для платформы Microsoft Identity и OAuth 2,0 SAML
 Поток утверждений носителя OAuth 2,0 SAML позволяет запросить маркер доступа OAuth с помощью утверждения SAML, когда клиенту необходимо использовать существующее отношение доверия. Подпись, применяемая к утверждению SAML, обеспечивает проверку подлинности полномочного приложения. Утверждение SAML — это маркер безопасности XML, выданный поставщиком удостоверений и используемый поставщиком услуг. Поставщик услуг использует его содержимое для идентификации субъекта утверждения в целях безопасности.
@@ -40,7 +35,7 @@ ms.locfileid: "76700215"
 ## <a name="call-graph-using-saml-bearer-assertion"></a>Граф вызовов, использующий утверждение носителя SAML
 Теперь давайте посмотрим, как можно реально получить утверждение SAML программным способом. Этот подход тестируется с помощью ADFS. Однако это работает с любым поставщиком удостоверений, который поддерживает возврат утверждения SAML программным путем. Базовый процесс: получение утверждения SAML, получение маркера доступа и доступ к Microsoft Graph.
 
-### <a name="prerequisites"></a>Технические условия
+### <a name="prerequisites"></a>Предварительные требования
 
 Установите отношение доверия между сервером авторизации/средой (Microsoft 365) и поставщиком удостоверений или издателем утверждения носителя SAML 2,0 (ADFS). Чтобы настроить ADFS для единого входа и как поставщика удостоверений, обратитесь к [этой статье](https://blogs.technet.microsoft.com/canitpro/2015/09/11/step-by-step-setting-up-ad-fs-and-enabling-single-sign-on-to-office-365/).
 

@@ -1,6 +1,6 @@
 ---
-title: Добавление назначений ролей с помощью шаблонов RBAC и Azure Resource Manager
-description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью управления доступом на основе ролей (RBAC) Azure и шаблонов Azure Resource Manager.
+title: Добавление назначений ролей Azure с помощью шаблонов Azure Resource Manager Azure RBAC
+description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью шаблонов Azure Resource Manager и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -13,16 +13,16 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9f817880f938f5d03024e3aacd9b84817a5ac721
-ms.sourcegitcommit: b95983c3735233d2163ef2a81d19a67376bfaf15
+ms.openlocfilehash: 777d11a129f02d1a2f5c796dea0af438ca81ba8c
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77138299"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735629"
 ---
-# <a name="add-role-assignments-using-azure-rbac-and-azure-resource-manager-templates"></a>Добавление назначений ролей с помощью Azure RBAC и шаблонов Azure Resource Manager
+# <a name="add-azure-role-assignments-using-azure-resource-manager-templates"></a>Добавление назначений ролей Azure с помощью шаблонов Azure Resource Manager
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)] в дополнение к использованию Azure PowerShell или Azure CLI можно назначать роли с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается назначение ролей с помощью шаблонов.
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control-definition-grant.md)]В дополнение к использованию Azure PowerShell или Azure CLI можно назначать роли с помощью [шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). Шаблоны могут быть полезны для согласованного и многократного развертывания ресурсов. В этой статье описывается назначение ролей с помощью шаблонов.
 
 ## <a name="get-object-ids"></a>Получение идентификаторов объектов
 
@@ -52,7 +52,7 @@ $objectid = (Get-AzADGroup -DisplayName "{name}").id
 objectid=$(az ad group show --group "{name}" --query objectId --output tsv)
 ```
 
-### <a name="application"></a>Приложение
+### <a name="application"></a>Развертывание
 
 Чтобы получить идентификатор субъекта-службы (удостоверения, используемого приложением), можно использовать команды [Get-азадсервицепринЦипал](/powershell/module/az.resources/get-azadserviceprincipal) или [AZ AD SP List](/cli/azure/ad/sp#az-ad-sp-list) . Для субъекта-службы используйте идентификатор объекта, а **не** идентификатор приложения.
 
@@ -66,7 +66,7 @@ objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output ts
 
 ## <a name="add-a-role-assignment"></a>Добавление назначения роли
 
-В RBAC для предоставления доступа необходимо добавить назначение роли.
+В Azure RBAC для предоставления доступа необходимо добавить назначение роли.
 
 ### <a name="resource-group-without-parameters"></a>Группа ресурсов (без параметров)
 
@@ -77,7 +77,7 @@ objectid=$(az ad sp list --display-name "{name}" --query [].objectId --output ts
 Чтобы использовать шаблон, необходимо выполнить следующие действия.
 
 - Создание нового JSON-файла и копирование шаблона
-- Замените `<your-principal-id>` ИДЕНТИФИКАТОРом пользователя, группы или приложения, которому назначается роль.
+- Замените `<your-principal-id>` идентификатором пользователя, группы или приложения, которому назначается роль.
 
 ```json
 {
@@ -173,7 +173,7 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 ```
 
 > [!NOTE]
-> Этот шаблон не идемпотентными, если в качестве параметра для каждого развертывания шаблона не указано одно и то же `roleNameGuid` значение. Если `roleNameGuid` не указано, по умолчанию создается новый идентификатор GUID для каждого развертывания, и последующие развертывания завершатся ошибкой `Conflict: RoleAssignmentExists`.
+> Этот шаблон не идемпотентными, если в качестве `roleNameGuid` параметра для каждого развертывания шаблона не указано одно и то же значение. Если значение `roleNameGuid` не указано, по умолчанию создается новый идентификатор GUID для каждого развертывания, и последующие развертывания будут завершаться `Conflict: RoleAssignmentExists` ошибкой.
 
 Область назначения роли определяется на основе уровня развертывания. Ниже приведены примеры команд [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment) и [AZ Group Deployment Create](/cli/azure/group/deployment#az-group-deployment-create) для запуска развертывания в области группы ресурсов.
 
@@ -293,12 +293,12 @@ az group deployment create --resource-group ExampleGroup --template-file rbac-te
 
 ### <a name="new-service-principal"></a>Новый субъект-служба
 
-Если создать новый субъект-службу и сразу же попытаться назначить роль этому субъекту-службе, в некоторых случаях такое назначение роли может завершиться ошибкой. Например, если создать новое управляемое удостоверение и затем попытаться назначить роль этому субъекту-службе в том же шаблоне Azure Resource Manager, то назначение роли может завершиться ошибкой. Причиной этого сбоя может быть задержка репликации. Субъект-служба создается в одном регионе; Однако назначение роли может происходить в другом регионе, который еще не реплицирует субъект-службу. Для решения этой ситуации следует задать для свойства `principalType` значение `ServicePrincipal` при создании назначения роли.
+Если создать новый субъект-службу и сразу же попытаться назначить роль этому субъекту-службе, в некоторых случаях такое назначение роли может завершиться ошибкой. Например, если создать новое управляемое удостоверение и затем попытаться назначить роль этому субъекту-службе в том же шаблоне Azure Resource Manager, то назначение роли может завершиться ошибкой. Причиной этого сбоя может быть задержка репликации. Субъект-служба создается в одном регионе; Однако назначение роли может происходить в другом регионе, который еще не реплицирует субъект-службу. Для решения этой ситуации `principalType` свойству следует присвоить значение `ServicePrincipal` при создании назначения роли.
 
 Приведенный ниже шаблон демонстрирует:
 
 - Создание нового субъекта-службы управляемого удостоверения
-- Как указать `principalType`
+- Как указать`principalType`
 - Назначение роли участника этому субъекту-службе в области группы ресурсов
 
 Чтобы использовать шаблон, необходимо указать следующие входные данные:
@@ -362,6 +362,6 @@ az group deployment create --resource-group ExampleGroup2 --template-file rbac-t
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md)
-- [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
+- [Общие сведения о структуре и синтаксисе шаблонов Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md)
 - [Создание групп ресурсов и ресурсов на уровне подписки](../azure-resource-manager/templates/deploy-to-subscription.md)
 - [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?term=rbac)

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: virtual-machines-linux
 author: cynthn
 ms.service: virtual-machines-linux
@@ -9,10 +9,10 @@ ms.date: 04/17/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: 2ea82f80396c5254ac4ad47bd2395413682a96bc
-ms.sourcegitcommit: f2771ec28b7d2d937eef81223980da8ea1a6a531
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71168612"
 ---
 ## <a name="supported-ssh-key-formats"></a>Поддерживаемые форматы ключей SSH

@@ -1,25 +1,18 @@
 ---
-title: Просмотр учетной записи выставления счетов на портале Azure | Документация Майкрософт
+title: Просмотр учетных записей выставления счетов на портале Azure
 description: Узнайте как просматривать свои учетные записи выставления счетов на портале Azure.
-services: ''
-documentationcenter: ''
 author: amberbhargava
-manager: amberb
-editor: ''
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/20/2020
 ms.author: banders
-ms.openlocfilehash: 2768d6e146a37e86bb36353f661179ebd7b5033d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 4dab11afb2ddd910a4d6619d088031279ebf3172
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75994133"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79238012"
 ---
 # <a name="billing-accounts-and-scopes-in-the-azure-portal"></a>Учетные записи и области выставления счетов на портале Azure
 

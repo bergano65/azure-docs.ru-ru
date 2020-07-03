@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: diberry
-ms.openlocfilehash: 96aa7517a3418ab30b0b6a1736eea950ecf4a731
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 913a2b26f67773d9fafbc0a8430d121fbabb97cd
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533805"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80053457"
 ---
 # <a name="add-contributors-to-your-app"></a>Добавление участников в приложение
 
@@ -41,7 +41,7 @@ ms.locfileid: "74533805"
 
     При обнаружении адреса электронной почты пользователя выберите учетную запись и нажмите кнопку **сохранить**. 
 
-    Если у вас возникли проблемы с этим назначением ролей, проверьте [назначения ролей Azure](../../role-based-access-control/role-assignments-portal.md) и [Устранение неполадок управления доступом Azure](../../role-based-access-control/troubleshooting.md#problems-with-rbac-role-assignments).
+    Если у вас возникли проблемы с этим назначением ролей, проверьте [назначения ролей Azure](../../role-based-access-control/role-assignments-portal.md) и [Устранение неполадок управления доступом Azure](../../role-based-access-control/troubleshooting.md#problems-with-azure-role-assignments).
 
 ## <a name="add-collaborator-to-luis-app"></a>Добавление участника совместной работы в приложение LUIS
 
@@ -92,9 +92,9 @@ ms.locfileid: "74533805"
 * Второе решение — использование [API удостоверений и управления доступом Azure AD в Microsoft Graph](https://docs.microsoft.com/graph/azuread-identity-access-management-concept-overview) для предоставления согласия каждому конкретному пользователю. 
 
 Узнайте больше о пользователях и согласии Azure Active Directory. 
-* [Ограничьте набор пользователей](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) приложения.
+* [Ограничить приложение](../../active-directory/develop/howto-restrict-your-app-to-a-set-of-users.md) набором пользователей
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте [, как использовать версии](luis-how-to-manage-versions.md) для управления жизненным циклом приложения.
 * Изучите основные понятия, в том числе [ресурсы для разработки](luis-concept-keys.md#authoring-key) и [участников](luis-concept-keys.md#contributions-from-other-authors) этого ресурса.

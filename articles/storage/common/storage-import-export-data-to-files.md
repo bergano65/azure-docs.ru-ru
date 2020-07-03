@@ -9,11 +9,11 @@ ms.date: 04/08/2019
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 201d0c0a545c5ba7ae1bb0b5e119f7acb1ae362f
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029956"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79268305"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -21,7 +21,7 @@ ms.locfileid: "76029956"
 
 Служба "Импорт и экспорт Azure" поддерживает только импорт файлов Azure в службу хранилища Azure. Экспорт файлов Azure не поддерживается.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед созданием задания импорта для передачи данных в службу "Файлы Azure" внимательно просмотрите и выполните описанные ниже предварительные требования. Необходимо сделать следующее:
 
@@ -30,7 +30,7 @@ ms.locfileid: "76029956"
 - Соответствующее количество дисков [поддерживаемых типов](storage-import-export-requirements.md#supported-disks).
 - Система с ОС Windows [поддерживаемой версии](storage-import-export-requirements.md#supported-operating-systems).
 - [Скачать WAImportExport версии 2](https://aka.ms/waiev2) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexport`. Например, `C:\WaImportExport`.
-- Учетная запись FedEx или DHL. Если вы хотите использовать перевозчик, отличный от FedEx/DHL, обратитесь в службу Azure Data Box Operations по адресу `adbops@microsoft.com`.  
+- Учетная запись FedEx или DHL. Если вы хотите использовать перевозчик, отличный от FedEx/DHL, обратитесь в службу поддержки Azure Data Box по `adbops@microsoft.com`адресу.  
     - Учетная запись должна быть действительной, иметь баланс и возможности возврата.
     - Создайте номер отслеживания для задания экспорта.
     - Каждое задание должно иметь отдельный номер отслеживания. Несколько заданий с одним и тем же номером отслеживания не поддерживаются.
@@ -120,7 +120,7 @@ ms.locfileid: "76029956"
 
     ![Перейдите к импорту и экспорту](./media/storage-import-export-data-to-blobs/import-to-blob1.png)
 
-3. Нажмите кнопку **Create Import/export Job** (Создать задание импорта или экспорта).
+3. Щелкните **создать задание импорта и экспорта**.
 
     ![Щелкните "Задание импорта и экспорта"](./media/storage-import-export-data-to-blobs/import-to-blob2.png)
 
@@ -145,7 +145,7 @@ ms.locfileid: "76029956"
 
 4. В разделе **Сведения о возврате** сделайте следующее:
 
-    - В раскрывающемся списке выберите перевозчика. Если вы хотите использовать перевозчика, отличный от FedEx/DHL, выберите существующий параметр из раскрывающегося списка. Обратитесь к группе Azure Data Box Operations в `adbops@microsoft.com` со сведениями о перевозчике, который планируется использовать.
+    - В раскрывающемся списке выберите перевозчика. Если вы хотите использовать перевозчика, отличный от FedEx/DHL, выберите существующий параметр из раскрывающегося списка. Свяжитесь `adbops@microsoft.com` с командой operations Azure Data Box с информацией о перевозчике, который планируется использовать.
     - Введите допустимый номер учетной записи, созданный в системе этого перевозчика. Корпорация Майкрософт использует эту учетную запись для отправки дисков обратно после завершения задания импорта.
     - Укажите полное и допустимое имя контактного лица, телефон, адрес электронной почты, адрес, город, почтовый индекс, страну (провинцию) и страну (регион).
 
@@ -205,7 +205,7 @@ ms.locfileid: "76029956"
     WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /DataSet:dataset-2.csv
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 * [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)

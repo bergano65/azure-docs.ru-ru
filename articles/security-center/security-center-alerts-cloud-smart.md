@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 07/02/2019
 ms.author: memildin
 ms.openlocfilehash: b26f0bab073ce248ca23bb8a815fa3e293ddba51
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73686495"
 ---
 # <a name="cloud-smart-alert-correlation-in-azure-security-center-incidents"></a>Корреляция облачных интеллектуальных оповещений в центре безопасности Azure (инциденты)

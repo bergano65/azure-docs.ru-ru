@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: jhakulin
 ms.openlocfilehash: d35c02386b7bcb18781dcbd8c209da43d590868c
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76169528"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
@@ -29,7 +29,7 @@ ms.locfileid: "76169528"
 > * Если возникла проблема с одним из примеров, опубликованных на сайте GitHub, создайте запрос на сайте *GitHub*.
 > * Поищите решение на форуме *UserVoice*.
 
-## <a name="stay-informed"></a>Будьте в курсе
+## <a name="stay-informed"></a>Следите за новостями
 
 Новости о Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/blog/topics/cognitive-services/). Последние сведения о службе распознавания речи см. в блоге по [голосовым службам](https://azure.microsoft.com/blog/tag/speech-service/).
 
@@ -101,12 +101,12 @@ ms.locfileid: "76169528"
 
 Stack Overflow — это идеальное место для вопросов, связанных с разработкой. Члены сообщества и команда Майкрософт постараются решить ваши проблемы.
 
-Если вы не можете найти ответ на проблему с помощью поиска, отправьте новый вопрос, чтобы Stack Overflow с помощью тегов [\[\]\[\]речи от Майкрософт ](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech).
+Если вы не можете найти ответ на проблему с помощью поиска, отправьте новый вопрос для Stack overflow с помощью тегов [ \[\]\[распознавания речи\]Майкрософт](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech).
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  
 > * [Как правильно задать вопрос?](https://stackoverflow.com/help/how-to-ask)
-> * [How to create a Minimal, Complete, and Verifiable example](https://stackoverflow.com/help/mcve) (Как создать минимальный, полный и доступный для проверки пример).
+> * [Создание минимального, полного и проверяемого примера](https://stackoverflow.com/help/mcve)
 
 ## <a name="uservoice-forum"></a>Форум UserVoice
 

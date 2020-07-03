@@ -13,10 +13,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 598a16d25ba375b984a966cba190181edbda3d15
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74703155"
 ---
 # <a name="invoke-mapreduce-programs-from-data-factory"></a>Вызов программы MapReduce из фабрики данных
@@ -24,10 +24,10 @@ ms.locfileid: "74703155"
 > * [Действие Hive](data-factory-hive-activity.md) 
 > * [Действие Pig](data-factory-pig-activity.md)
 > * [Действие MapReduce](data-factory-map-reduce.md)
-> * [Потоковая активность Hadoop](data-factory-hadoop-streaming-activity.md)
+> * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 > * [Действие Spark](data-factory-spark.md)
-> * [Действие выполнения пакета машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
-> * [Действие "Обновить ресурс" в службе машинного обучения](data-factory-azure-ml-update-resource-activity.md)
+> * [Действие выполнения пакета в службе Машинного обучения](data-factory-azure-ml-batch-execution-activity.md)
+> * [Действие обновления ресурса в службе Машинного обучения](data-factory-azure-ml-update-resource-activity.md)
 > * [Действие хранимой процедуры](data-factory-stored-proc-activity.md)
 > * [Действие U-SQL в Data Lake Analytics](data-factory-usql-activity.md)
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
@@ -36,12 +36,12 @@ ms.locfileid: "74703155"
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. руководство по [преобразованию данных с помощью действия MapReduce в службе "Фабрика данных"](../transform-data-using-hadoop-map-reduce.md).
 
 
-Действие MapReduce HDInsight в [конвейере](data-factory-create-pipelines.md) фабрики данных выполняет программы MapReduce для [вашего собственного](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) кластера HDInsight или кластера HDInsight [по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) под управлением Windows или Linux. Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
+Действие MapReduce в HDInsight в [конвейере](data-factory-create-pipelines.md) фабрики данных выполняет программы MapReduce в [собственном](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) кластере HDInsight или на основе Windows или Linux по [запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) . Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
 
 > [!NOTE] 
-> Если вы не знакомы с фабрикой данных Azure, ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и [Руководство. Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md) перед ознакомлением с этой статьей.  
+> Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md) и руководством [Создание первого конвейера для преобразования данных с помощью кластера Hadoop](data-factory-build-your-first-pipeline.md).  
 
-## <a name="introduction"></a>Общие сведения
+## <a name="introduction"></a>Введение
 Конвейер в фабрике данных Azure обрабатывает данные в связанной службе хранилища с помощью связанных вычислительных служб. В нем содержится последовательность действий, каждое из которых выполняет определенную операцию обработки. В этой статье описывается использование действия MapReduce в HDInsight.
 
 Дополнительную информацию о выполнении сценариев Pig и Hive в кластере HDInsight на основе Windows или Linux из конвейера с помощью действий Pig и Hive в HDInsight см. в статьях [Действие Pig](data-factory-pig-activity.md) и [Действие Hive](data-factory-hive-activity.md). 
@@ -50,10 +50,10 @@ ms.locfileid: "74703155"
 В определении JSON для действия HDInsight: 
 
 1. В поле **тип** для **действия** задайте значение **HDInsight**.
-2. Укажите имя класса для свойства **className** .
-3. Укажите путь к JAR-файлу, включив в него имя файла для свойства **jarFilePath** .
-4. Укажите связанную службу, которая обращается к хранилищу больших двоичных объектов Azure, содержащему JAR-файл для свойства **jarLinkedService** .   
-5. Укажите необходимые аргументы для программы MapReduce в разделе **аргументы**. Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д — параметры, за которыми сразу следуют их значения).
+2. Укажите имя класса для свойства **className**.
+3. Укажите путь к JAR-файлу, включающий имя файла для свойства **jarFilePath**.
+4. Укажите связанную службу, которая ссылается на хранилище BLOB-объектов Azure, содержащее JAR-файл для свойства **jarLinkedService**.   
+5. Задайте аргументы для программы MapReduce в разделе **аргументов**. Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д — параметры, за которыми сразу следуют их значения).
 
     ```JSON   
     {
@@ -135,7 +135,7 @@ ms.locfileid: "74703155"
 ```
 
 #### <a name="azure-hdinsight-linked-service"></a>Связанная служба Azure HDInsight
-Далее необходимо создать связанную службу для связи кластера Azure HDInsight с фабрикой данных Azure. При копировании и вставке следующего кода не забудьте заменить **имя кластера HDInsight** на имя вашего кластера HDInsight и изменить значения имени пользователя и пароля.   
+Далее необходимо создать связанную службу для связи кластера Azure HDInsight с фабрикой данных Azure. При копировании или вставке следующего кода замените **имя кластера hdinsight** именем кластера hdinsight и измените значения параметров имя пользователя и пароль.   
 
 ```JSON
 {
@@ -178,16 +178,16 @@ ms.locfileid: "74703155"
 }
 ```
 
-### <a name="pipeline"></a>Конвейер
+### <a name="pipeline"></a>Pipeline
 Конвейер в этом примере имеет только одно действие с типом HDInsightMapReduce. Ниже приведены некоторые важные свойства в JSON. 
 
-| Свойство | Заметки |
+| Свойство | Примечания |
 |:--- |:--- |
-| Тип |Должен быть задан тип **HDInsightMapReduce**. |
+| type |Должен быть задан тип **HDInsightMapReduce**. |
 | className |Имя класса: **wordcount** |
 | jarFilePath |Путь к JAR-файлу, содержащему этот класс. Если вы копируете и вставляете приведенный код, не забудьте изменить имя кластера. |
 | jarLinkedService |Служба, связанная со службой хранилища Azure, содержащая JAR-файл. Эта связанная служба ссылается на хранилище, связанное с кластером HDInsight. |
-| arguments |Программа подсчета слов принимает два аргумента, входной и выходной. Входной файл — davinci.txt. |
+| аргументы |Программа подсчета слов принимает два аргумента, входной и выходной. Входной файл — davinci.txt. |
 | frequency/interval |Значения этих свойств соответствуют результирующему набору данных. |
 | linkedServiceName |Указывает связанную службу HDInsight, созданную ранее. |
 
@@ -245,10 +245,10 @@ ms.locfileid: "74703155"
 [Developer Reference]: https://go.microsoft.com/fwlink/?LinkId=516908
 [Azure Portal]: https://portal.azure.com
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 * [Действие Hive](data-factory-hive-activity.md)
 * [Действие Pig](data-factory-pig-activity.md)
-* [Потоковая активность Hadoop](data-factory-hadoop-streaming-activity.md)
+* [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)
 * [Вызов программ Spark](data-factory-spark.md)
 * [Вызов сценариев R](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV1/RunRScriptUsingADFSample)
 

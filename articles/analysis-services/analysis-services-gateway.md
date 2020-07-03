@@ -8,10 +8,10 @@ ms.date: 01/21/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 648646b6f973762245c344cd2629a874a219b170
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76310158"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных
@@ -32,10 +32,10 @@ ms.locfileid: "76310158"
 
 
 
-## <a name="how-it-works"> </a>Принцип работы
+## <a name="how-it-works"></a><a name="how-it-works"> </a>Принцип работы
 Установленный на компьютере в вашей организации шлюз работает как служба Windows, **локальный шлюз данных**. Эта локальная служба зарегистрирована в облачной службе шлюза с помощью служебной шины Azure. Затем вы создадите локальный ресурс шлюза данных для подписки Azure. Затем ваши серверы Azure Analysis Services будут подключены к ресурсу шлюза Azure. Если моделям вашего сервера необходимо подключиться к локальным источникам данных для запросов или обработки, запрос и поток данных проходит через ресурс шлюза, служебную шину Azure, локальную службу локального шлюза данных и источники данных. 
 
-![Принципы работы](./media/analysis-services-gateway/aas-gateway-how-it-works.png)
+![Принцип работы](./media/analysis-services-gateway/aas-gateway-how-it-works.png)
 
 Запросы и поток данных
 
@@ -58,7 +58,7 @@ ms.locfileid: "76310158"
 
 Ниже приведены полные доменные имена, используемые шлюзом.
 
-| Имена доменов | Исходящие порты | Description |
+| Имена доменов | Исходящие порты | Описание |
 | --- | --- | --- |
 | *.powerbi.com |80 |HTTP для скачивания установщика. |
 | *.powerbi.com |443 |HTTPS |
@@ -73,7 +73,7 @@ ms.locfileid: "76310158"
 | *.microsoftonline-p.com |443 |Используется для проверки подлинности в зависимости от конфигурации. |
 | dc.services.visualstudio.com  |443 |Используется AppInsights для сбора данных телеметрии. |
 
-### <a name="force-https"></a>Принудительное взаимодействие протокола HTTPS со служебной шиной Azure
+### <a name="forcing-https-communication-with-azure-service-bus"></a><a name="force-https"></a>Принудительное использование протокола HTTPS для связи со служебной шиной Azure
 
 Можно настроить шлюз для принудительного использования протокола HTTPS для связи со служебной шиной Azure вместо прямого подключения TCP. Однако это может значительно снизить производительность. Для этого можно отредактировать файл *Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config*, изменив значение `AutoDetect` на `Https`. Обычно этот файл находится в расположении *C:\Program Files\On-premises data gateway*.
 
@@ -83,15 +83,15 @@ ms.locfileid: "76310158"
 </setting>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 Следующие статьи включены в общее содержимое локального шлюза данных, которое применяется ко всем службам, которые поддерживает шлюз:
 
 * [Вопросы и ответы о локальном шлюзе данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem-faq)   
-* [Использование локального приложения шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-app)   
+* [Использование приложения локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-app)   
 * [Администрирование на уровне клиента](https://docs.microsoft.com/data-integration/gateway/service-gateway-tenant-level-admin)
 * [Настройка параметров прокси-сервера](https://docs.microsoft.com/data-integration/gateway/service-gateway-proxy)   
 * [Настройка параметров связи](https://docs.microsoft.com/data-integration/gateway/service-gateway-communication)   
 * [Настройка файлов журналов](https://docs.microsoft.com/data-integration/gateway/service-gateway-log-files)   
 * [Устранение неполадок](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
-* [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
+* [Отслеживание и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)

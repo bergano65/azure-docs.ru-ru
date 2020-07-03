@@ -11,14 +11,16 @@ author: djpmsft
 manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 01/04/2019
-ms.openlocfilehash: f150234ecd3446858e8a6aa7d224eb3ad3d0efd3
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: b5e4512030431b6d2e5d0f849e82a281c882b177
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927344"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628952"
 ---
 # <a name="templates"></a>Шаблоны
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Шаблоны — это предварительно определенные конвейеры Фабрики данных Azure, которые позволяют быстро начать работу с этой службой. Шаблоны нужны в тех случаях, когда вы еще не знакомы с Фабрикой данных и хотите быстро начать работу с ней. Эти шаблоны позволяют сократить время разработки для создания проектов интеграции данных, тем самым улучшая производительность разработчика.
 
@@ -30,7 +32,7 @@ ms.locfileid: "74927344"
 
     ![Открытие коллекции шаблонов на странице Overview (Обзор)](media/solution-templates-introduction/templates-intro-image1.png)
 
-1.  На вкладке Author (Автор) в обозревателе ресурсов выберите **+** , затем **Pipeline from template** (Конвейер из шаблона), чтобы открыть коллекцию шаблонов.
+1.  На вкладке автор в обозреватель ресурсов выберите **+**, затем выберите **конвейер из шаблона** , чтобы открыть галерею шаблонов.
 
     ![Открытие коллекции шаблонов на вкладке Author (Автор)](media/solution-templates-introduction/templates-intro-image2.png)
 
@@ -44,7 +46,7 @@ ms.locfileid: "74927344"
 
 -   Шаблоны копирования:
 
-    -   [Массовое копирование из базы данных](solution-template-bulk-copy-with-control-table.md)
+    -   [Групповое копирование из базы данных](solution-template-bulk-copy-with-control-table.md)
     
     -   [Копирование новых файлов с использованием параметра LastModifiedDate](solution-template-copy-new-files-lastmodifieddate.md)
 
@@ -56,7 +58,7 @@ ms.locfileid: "74927344"
 
     -   Копирование из \<источника\> в \<назначение\>
 
-        -   [Из Amazon S3 в Azure Data Lake Store Gen 2](solution-template-migration-s3-azure.md)
+        -   [Из Amazon S3 в Azure Data Lake Store 2-го поколения](solution-template-migration-s3-azure.md)
 
         -   Из Google Big Query в Azure Data Lake Store 2-го поколения
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 3b973dd05d23d190c77986ca9bf6d39656739cd8
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.openlocfilehash: 2ebeb7f6fee77c43c9da97b922fc215d75196145
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72790095"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82117575"
 ---
 # <a name="how-to-model-relational-sql-data-for-import-and-indexing-in-azure-cognitive-search"></a>Моделирование реляционных данных SQL для импорта и индексирования в Azure Когнитивный поиск
 
@@ -84,7 +84,7 @@ ON Rooms$.HotelID = Hotels$.HotelID
     GO
     ```
 
-2. Создайте представление, состоящее из всех полей в родительской таблице (`SELECT * from dbo.Hotels$`), с добавлением нового поля *комнаты* , которое содержит выходные данные вложенного запроса. Предложение **for JSON Auto** в `SELECT * from dbo.Rooms$` структурует выходные данные как JSON. 
+2. Создайте представление, состоящее из всех полей в родительской таблице`SELECT * from dbo.Hotels$`(), с добавлением нового поля *комнаты* , которое содержит выходные данные вложенного запроса. Предложение **for JSON Auto** для `SELECT * from dbo.Rooms$` структур выходных данных в виде JSON. 
 
      ```sql
    CREATE VIEW [dbo].[HotelRooms]
@@ -100,14 +100,14 @@ ON Rooms$.HotelID = Hotels$.HotelID
 
    ![Хотелрумс, представление](media/index-sql-relational-data/hotelsrooms-view.png "Хотерумс, представление")
 
-1. Запустите `SELECT * FROM dbo.HotelRooms`, чтобы получить набор строк. Этот запрос возвращает 50 строк, по одному на гостиницу, со связанной информацией о комнате в виде коллекции JSON. 
+1. Выполните `SELECT * FROM dbo.HotelRooms` команду, чтобы получить набор строк. Этот запрос возвращает 50 строк, по одному на гостиницу, со связанной информацией о комнате в виде коллекции JSON. 
 
    ![Набор строк из представления Хотелрумс](media/index-sql-relational-data/hotelrooms-rowset.png "Набор строк из представления Хотелрумс")
 
 Теперь этот набор строк готов к импорту в Когнитивный поиск Azure.
 
 > [!NOTE]
-> При таком подходе предполагается, что размер внедренного JSON ограничен [максимальным размером столбца SQL Server](https://docs.microsoft.com/sql/sql-server/maximum-capacity-specifications-for-sql-server). Если данные не умещаются, можно попробовать программный подход, как показано в [примере: моделирование базы данных инвентаризации AdventureWorks для когнитивный Поиск Azure](search-example-adventureworks-modeling.md).
+> При таком подходе предполагается, что размер внедренного JSON ограничен [максимальным размером столбца SQL Server](https://docs.microsoft.com/sql/sql-server/maximum-capacity-specifications-for-sql-server). 
 
  ## <a name="use-a-complex-collection-for-the-many-side-of-a-one-to-many-relationship"></a>Использование комплексной коллекции для связи «многие» отношения «один ко многим»
 
@@ -150,7 +150,7 @@ ON Rooms$.HotelID = Hotels$.HotelID
 
 Учитывая предыдущий результирующий набор и схему индекса выше, у вас есть все необходимые компоненты для успешной операции индексирования. Преобразованный набор данных соответствует требованиям к индексированию, но не сохраняет подробные сведения. В индексе Azure Когнитивный поиск результаты поиска будут легко возвращаться в сущности на основе Гостиницы, сохраняя контекст отдельных комнат и их атрибуты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используя собственный набор данных, можно создать и загрузить индекс с помощью [мастера импорта данных](search-import-data-portal.md) . Мастер обнаруживает встроенную коллекцию JSON, например содержащуюся в *комнатах*, и выводит схему индекса, включающую коллекцию со сложным типом. 
 

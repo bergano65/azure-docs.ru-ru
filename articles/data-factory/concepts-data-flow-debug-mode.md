@@ -8,16 +8,18 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/06/2019
-ms.openlocfilehash: 18848695327a374f12fbe5a34d03366b050d8b65
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 4a763a3bb4d46ba03808423d4d1283381c1174a3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928365"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81605396"
 ---
 # <a name="mapping-data-flow-debug-mode"></a>Режим отладки потока данных сопоставления
 
-## <a name="overview"></a>Краткое описание
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
+## <a name="overview"></a>Обзор
 
 Режим отладки потока данных сопоставления фабрики данных Azure позволяет интерактивно наблюдать за преобразованием формы данных во время сборки и отладки потоков данных. Сеанс отладки можно использовать как в сеансах разработки потока данных, так и во время отладки конвейера потоков данных. Чтобы включить режим отладки, используйте кнопку "Отладка потока данных" в верхней части области конструктора.
 
@@ -85,7 +87,7 @@ ms.locfileid: "74928365"
 
 ![Статистика по столбцам](media/data-flow/stats.png "Статистика по столбцам")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * После завершения сборки и отладки потока данных [выполните его из конвейера.](control-flow-execute-data-flow-activity.md)
 * При тестировании конвейера с потоком данных используйте [параметр выполнения отладки](iterative-development-debugging.md) конвейера.

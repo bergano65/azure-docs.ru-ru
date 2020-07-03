@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: dech
-ms.openlocfilehash: 04cfdd1f96f83898710b6f292116f0afddc8df96
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 57ba647ade45928f03cd7fb2b037642d5e4d52cc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237238"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79096813"
 ---
 # <a name="work-with-data-using-azure-cosmos-explorer"></a>Работа с данными с помощью обозревателя Azure Cosmos 
 
@@ -25,7 +25,7 @@ ms.locfileid: "66237238"
 
 ## <a name="access-azure-cosmos-db-explorer"></a>Доступ к обозревателю Azure Cosmos DB
 
-1. Вход на [портал Azure](https://portal.azure.com/). 
+1. Войдите на [портал Azure](https://portal.azure.com/). 
 
 2. Из **Всех ресурсов** найдите и перейдите к своей учетной записи Azure Cosmos DB, выберите "Ключи" и скопируйте **Первичную строку подключения**.  
 
@@ -47,7 +47,9 @@ ms.locfileid: "66237238"
 
 В настоящее время функция **Открыть во весь экран**, которая позволяет использовать временный доступ для чтения и записи, еще не поддерживается для учетных записей Azure Cosmos DB Gremlin и API таблиц. Вы по-прежнему можете просматривать свои учетные записи Gremlin и API таблицы, передавая строку подключения обозревателю Azure Cosmos DB. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+В настоящее время просмотр документов, содержащих UUID, не поддерживается в обозреватель данных. Это не влияет на загрузку коллекций, просмотрев только отдельные документы или запросы, содержащие эти документы. Чтобы просматривать эти документы и управлять ими, пользователи должны продолжать использовать средство, которое использовалось для создания этих документов.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы узнали, как начать работу с обозревателем Azure Cosmos DB для управления данными, вы можете:
 
 * Начать определение [запросов](sql-api-query-reference.md) с помощью синтаксиса языка SQL и выполнить [программирование на стороне сервера](stored-procedures-triggers-udfs.md) с помощью хранимых процедур, UDF, триггеров. 

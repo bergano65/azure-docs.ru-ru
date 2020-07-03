@@ -8,10 +8,10 @@ ms.date: 12/14/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 139e3009722761172b7bbd57805a7f5b07e55fc0
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "68699393"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
@@ -42,14 +42,14 @@ pip install azure-storage-file
 ```
 
 > [!NOTE]
-> Если вы обновляете пакет SDK службы хранилища Azure для Python версии 0.36 или более ранней, удалите старый пакет SDK с помощью `pip uninstall azure-storage`, прежде чем устанавливать последнюю версию пакета.
+> Если вы обновляете пакет SDK службы хранилища Azure для Python версии 0.36 или более ранней, удалите старый пакет SDK с помощью `pip uninstall azure-storage`, прежде чем устанавливать последнюю версию пакета.
 
 Другие методы установки см. в статье [Microsoft Azure Storage SDK for Python](https://github.com/Azure/azure-storage-python/) (Пакет SDK службы хранилища Microsoft Azure для Python) на сайте GitHub.
 
 ## <a name="view-the-sample-application"></a>Просмотр примера приложения
-Для просмотра и запуска примера приложения, который показывает, как использовать Python с файлами Azure, см. раздел [Служба хранилища Azure: Начало работы с файлами Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started). 
+е. чтобы просмотреть и запустить пример приложения, в котором показано, как использовать Python с файлами Azure, см. статью Служба [хранилища Azure: Начало работы с файлами Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started). 
 
-Чтобы запустить пример приложения, убедитесь, что установили оба пакета `azure-storage-file` и `azure-storage-common`.
+Чтобы запустить пример приложения, убедитесь, что установили оба пакета: `azure-storage-file` и `azure-storage-common`.
 
 ## <a name="set-up-your-application-to-use-azure-files"></a>Настройка приложения для работы со службой файлов Azure
 Добавьте следующий код в начало любого исходного файла Python, из которого планируется получать доступ к хранилищу Azure программным способом:
@@ -72,8 +72,8 @@ file_service = FileService(account_name='myaccount', account_key='mykey')
 file_service.create_share('myshare')
 ```
 
-## <a name="create-a-directory"></a>создать каталог;
-Вы также можете организовать хранилище, помещая файлы в подкаталоги вместо их размещения в корневом каталоге. Служба файлов Azure позволяет создать такое количество каталогов, которое допускается в вашей учетной записи. В следующем примере кода в корневом каталоге создается вложенный каталог с именем **sampledir** .
+## <a name="create-a-directory"></a>Создание каталога
+Вы также можете организовать хранилище, помещая файлы в подкаталоги вместо их размещения в корневом каталоге. Служба файлов Azure позволяет создать такое количество каталогов, которое допускается в вашей учетной записи. Приведенный ниже код создаст вложенный каталог с именем **SampleDir** в корневом каталоге.
 
 ```python
 file_service.create_directory('myshare', 'sampledir')
@@ -88,7 +88,7 @@ for file_or_dir in generator:
     print(file_or_dir.name)
 ```
 
-## <a name="upload-a-file"></a>Отправить файл 
+## <a name="upload-a-file"></a>Отправка файла 
 Файловый ресурс Azure содержит как минимум корневой каталог, в котором могут храниться файлы. В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
 
 Для создания файла и передачи данных используйте методы `create_file_from_path`, `create_file_from_stream`, `create_file_from_bytes` или `create_file_from_text`. Это высокоуровневые методы, которые выполняют необходимое фрагментирование данных, если их размер превышает 64 МБ.
@@ -107,7 +107,7 @@ file_service.create_file_from_path(
     content_settings=ContentSettings(content_type='image/png'))
 ```
 
-## <a name="download-a-file"></a>Скачать файл
+## <a name="download-a-file"></a>скачать файл;
 Чтобы загрузить данные из файла, используйте методы `get_file_to_path`, `get_file_to_stream`, `get_file_to_bytes` или `get_file_to_text`. Это высокоуровневые методы, которые выполняют необходимое фрагментирование данных, если их размер превышает 64 МБ.
 
 В следующем примере показано использование метода `get_file_to_path` для загрузки содержимого файла **myfile** и его сохранения в файл **out-sunset.png**.
@@ -176,9 +176,9 @@ file_service.delete_share(share_name, snapshot=snapshot_id)
 file_service.delete_share(share_name, delete_snapshots=DeleteSnapshot.Include)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как работать с файлами Azure с помощью Python, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 
 * [Центр по разработке для Python](https://azure.microsoft.com/develop/python/)
-* [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
+* [REST API служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
 * [пакет SDK для службы хранилища Microsoft Azure для Python](https://github.com/Azure/azure-storage-python)

@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.openlocfilehash: 1508adda761fcba7ba70df3bb212d3eb4e32f242
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72754942"
 ---
 # <a name="optimize-storage-cost-in-azure-cosmos-db"></a>Оптимизация затрат на хранение в Azure Cosmos DB
@@ -54,10 +54,10 @@ Console.WriteLine("Item size quota: {0}, usage: {1}", collectionInfo.DocumentQuo
 
 Теперь вы можете перейти к изучению оптимизации затрат в Azure Cosmos DB в следующих статьях:
 
-* [Оптимизация для разработки и тестирования в Azure Cosmos DB](optimize-dev-test.md)
-* Дополнительные сведения о [расшифровке счета за использование Azure Cosmos DB](understand-your-bill.md).
-* [Optimizing throughput cost in Azure Cosmos DB](optimize-cost-throughput.md) (Оптимизация затрат на пропускную способность в Azure Cosmos DB)
+* Дополнительные сведения об [оптимизации для разработки и тестирования](optimize-dev-test.md)
+* Дополнительные сведения о [расшифровке счета Azure Cosmos DB](understand-your-bill.md)
+* Дополнительные сведения об [оптимизации расходов на пропускную способность](optimize-cost-throughput.md)
 * Дополнительные сведения об [оптимизации расходов на операции чтения и записи](optimize-cost-reads-writes.md)
 * Дополнительные сведения об [оптимизации затрат на запросы](optimize-cost-queries.md).
-* Дополнительные сведения об [оптимизации затрат на учетные записи Azure Cosmos с поддержкой нескольких регионов](optimize-cost-regions.md).
+* Дополнительные сведения об [оптимизации расходов на учетные записи Cosmos Azure с поддержкой нескольких регионов](optimize-cost-regions.md)
 

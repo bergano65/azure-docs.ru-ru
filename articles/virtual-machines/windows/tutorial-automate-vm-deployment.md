@@ -1,26 +1,19 @@
 ---
 title: Учебник. Установка приложений на виртуальной машине Windows в Azure
 description: В этом руководстве описано, как использовать расширение пользовательских скриптов для выполнения скриптов и развертывания приложений на виртуальных машинах Windows в Azure.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/29/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 610f8efad473b5f4bed1abc6b2c063ec0ead66ed
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: c576ac1f56a29fc73f92e2292b457262828c5046
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74065367"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82100470"
 ---
 # <a name="tutorial---deploy-applications-to-a-windows-virtual-machine-in-azure-with-the-custom-script-extension"></a>Руководство. Развертывание приложений на виртуальной машине Windows в Azure с помощью расширения пользовательских скриптов
 
@@ -99,9 +92,9 @@ Get-AzPublicIPAddress `
 ![Выполнение веб-сайта IIS](./media/tutorial-automate-vm-deployment/running-iis-website.png)
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике вы автоматизировали установку IIS на виртуальной машине. Вы научились выполнять следующие задачи:
+В этом учебнике вы автоматизировали установку IIS на виртуальной машине. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Использование расширения пользовательских скриптов на установки IIS
@@ -111,4 +104,4 @@ Get-AzPublicIPAddress `
 Перейдите к следующему руководству, чтобы научиться создавать пользовательские образы виртуальных машин.
 
 > [!div class="nextstepaction"]
-> [Создание образа настраиваемой виртуальной машины](./tutorial-custom-images.md)
+> [Создание пользовательских образов виртуальной машины](./tutorial-custom-images.md)

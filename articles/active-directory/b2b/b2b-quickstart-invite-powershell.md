@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50c283122fe707e922275b6c1a6c576009964855
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: b0faaf0394bddc2e443afc194bbd0ecef72625f9
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74273357"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79216012"
 ---
 # <a name="quickstart-add-a-guest-user-with-powershell"></a>Краткое руководство. Добавление гостевого пользователя с помощью PowerShell
 
@@ -80,7 +80,7 @@ Connect-AzureAD -TenantDomain "<Tenant_Domain_Name>"
 1. Чтобы отправить приглашение на тестовую учетную запись электронной почты, выполните приведенную ниже команду PowerShell (замените **Sanda** и **sanda\@fabrikam.com** именем и адресом электронной почты тестовой учетной записи). 
 
    ```powershell
-   New-AzureADMSInvitation -InvitedUserDisplayName "Sanda" -InvitedUserEmailAddress sanda@fabrikam.com -InviteRedirectURL https://myapps.azure.com -SendInvitationMessage $true
+   New-AzureADMSInvitation -InvitedUserDisplayName "Sanda" -InvitedUserEmailAddress sanda@fabrikam.com -InviteRedirectURL https://myapps.microsoft.com -SendInvitationMessage $true
    ```
 2. Команда отправляет приглашение на указанный адрес электронной почты. Проверьте результат. Он должен выглядеть примерно следующим образом.
 
@@ -107,7 +107,7 @@ Connect-AzureAD -TenantDomain "<Tenant_Domain_Name>"
 Например: `Remove-AzureADUser -ObjectId "sanda_fabrikam.com#EXT#@contoso.onmicrosoft.com"`
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этом кратком руководстве вы пригласили одного гостевого пользователя и добавили его в каталог с помощью PowerShell. Далее узнайте, как массово пригласить гостевых пользователей с помощью PowerShell.
 
 > [!div class="nextstepaction"]

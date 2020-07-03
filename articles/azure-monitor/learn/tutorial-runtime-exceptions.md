@@ -1,19 +1,18 @@
 ---
 title: Диагностика исключений во время выполнения с помощью Azure Application Insights | Документация Майкрософт
 description: Руководство по поиску и диагностике исключений во время выполнения в приложении с помощью Azure Application Insights.
-ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: tutorial
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 09/19/2017
 ms.custom: mvc
-ms.openlocfilehash: d56b81dbe8c78b9b48f122d79f4567d0b0f42e27
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 91a0e4b052571a509ec7122e4440a8eaf58839be
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75398533"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77670429"
 ---
 # <a name="find-and-diagnose-run-time-exceptions-with-azure-application-insights"></a>Поиск и диагностика исключений во время выполнения с помощью Azure Application Insights
 
@@ -28,17 +27,17 @@ Azure Application Insights собирает данные телеметрии и
 > * Создание рабочего элемента для исправления ошибочного кода.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для работы с этим руководством:
 
 - Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
     - ASP.NET и веб-разработка.
-    - Разработка Azure.
-- Загрузите и установите [Visual Studio Snapshot Debugger](https://aka.ms/snapshotdebugger).
-- Включите [Visual Studio Snapshot Debugger](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger).
+    - разработка Azure;
+- Загрузите и установите [отладчик моментальных снимков Visual Studio](https://aka.ms/snapshotdebugger).
+- Включите [отладчик моментальных снимков Visual Studio](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger).
 - Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md). 
-- Это руководство содержит сведения об отслеживании исключения в вашем приложении, поэтому измените свой код в среде разработки или тестирования, чтобы создать исключение. 
+- Это руководство содержит сведения об отслеживании идентификатора исключения в вашем приложении, поэтому измените свой код в среде разработки или тестирования, чтобы создать исключение. 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
@@ -68,15 +67,15 @@ Application Insights собирает сведения об ошибках в в
 
     ![Сведения о невыполненных запросах](media/tutorial-runtime-exceptions/failed-request-details.png)
 
-7. В сведениях об операциях также отображается исключение FormatException, которое, по-видимому, вызвало сбой.  Можно увидеть, что причиной является недопустимый почтовый индекс. Вы можете открыть отладочный моментальный снимок, чтобы просмотреть сведения отладки уровня кода в Visual Studio.
+7. В сведениях об операциях также отображаются исключения FormatException, которые, по-видимому, вызвали сбой.  Вы увидите, что причиной является недопустимый почтовый индекс. Вы можете открыть отладочный моментальный снимок, чтобы просмотреть сведения уровня отладки кода в Visual Studio.
 
     ![Сведения об исключении](media/tutorial-runtime-exceptions/failed-requests-exception.png)
 
 ## <a name="identify-failing-code"></a>Определение неисправного кода
 Отладчик моментальных снимков собирает моментальные снимки наиболее частых исключений в приложении, чтобы помочь вам определить их первопричину в рабочей среде.  Вы можете просмотреть отладочные моментальные снимки на портале, чтобы изучить стек вызовов и проверить значения переменных в каждом кадре стека вызовов. Затем вы можете выполнить отладку исходного кода, скачав моментальный снимок и открыв его в Visual Studio 2019 Enterprise.
 
-1. В свойствах исключения выберите **Открыть моментальный снимок отладки**.
-2. Откроется панель **Отладки моментального снимка** со стеком вызова для запроса.  Выберите любой из методов, чтобы просмотреть значения всех локальных переменных во время запроса.  Начиная с верхнего метода, в этом примере мы можем увидеть локальные переменные без значений.
+1. В свойствах исключения выберите **Open debug snapshot** (Открыть отладочный моментальный снимок).
+2. Откроется панель **отладки моментального снимка** со стеком вызова для запроса.  Выберите любой из методов, чтобы просмотреть значения локальных переменных во время запроса.  Начиная с верхнего метода, в этом примере мы можем увидеть локальные переменные без значений.
 
     ![Отладка моментального снимка](media/tutorial-runtime-exceptions/debug-snapshot-01.png)
 

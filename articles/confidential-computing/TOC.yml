@@ -1,0 +1,33 @@
+- name: Конфиденциальные вычисления Azure
+  href: overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: Создание с помощью портала Azure
+      href: quick-create-portal.md
+    - name: Создание с помощью Marketplace
+      href: quick-create-marketplace.md
+- name: Основные понятия
+  expanded: true
+  items:
+    - name: Решения в Виртуальных машинах
+      href: virtual-machine-solutions.md
+- name: Ресурсы
+  expanded: true
+  items:
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: faq.md
+    - name: Отзывы о конфиденциальных вычислениях
+      href: 'https://feedback.azure.com/forums/919792-azure-confidential-compute'
+    - name: StackOverflow
+      href: 'https://stackoverflow.com/questions/tagged/azure-confidential-computing'
+    - name: Открыть пакет SDK для Enclave
+      href: 'https://aka.ms/oesdkGitHubRepo'
+    - name: Консорциум конфиденциальных вычислений
+      href: 'https://confidentialcomputing.io/'
+    - name: Виртуальные машины в Azure
+      href: 'https://docs.microsoft.com/azure/virtual-machines/'
+    - name: Цены
+      href: 'https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#DC1s-C8s%20v2'
+    - name: Регионы
+      href: 'https://azure.microsoft.com/en-us/global-infrastructure/services/?products=virtual-machines'

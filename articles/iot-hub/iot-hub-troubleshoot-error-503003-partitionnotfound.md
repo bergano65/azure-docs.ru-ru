@@ -9,13 +9,13 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 438476171597c44dcc54d85bf1140f0a52bb2e58
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76960663"
 ---
-# <a name="503003-partitionnotfound"></a>503003 Партитионнотфаунд
+# <a name="503003-partitionnotfound"></a>503003 PartitionNotFound
 
 В этой статье описываются причины и решения для ошибок **503003 партитионнотфаунд** .
 

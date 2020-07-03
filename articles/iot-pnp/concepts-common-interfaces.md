@@ -1,18 +1,18 @@
 ---
 title: Общие интерфейсы — Предварительная версия Plug and Play IoT | Документация Майкрософт
 description: Описание распространенных интерфейсов для разработчиков IoT Plug and Play
-author: ChrisGMsft
-ms.author: chrisgre
+author: Philmea
+ms.author: philmea
 ms.date: 12/26/2019
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: f697a0d6aba4f137b75faa2a200424c72aa78c3b
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 5773ec2b3ea88fa9a507b7c1b0b84bb7ea305a94
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75531417"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81770492"
 ---
 # <a name="iot-plug-and-play-preview-common-interfaces"></a>Общие интерфейсы предварительной версии Plug and Play IoT
 
@@ -20,28 +20,28 @@ ms.locfileid: "75531417"
 
 ## <a name="summary-of-common-interfaces"></a>Сводка по общим интерфейсам
 
-| Имя | ID | Description | Реализовано с помощью пакета Azure IoT SDK | Должен быть объявлен в модели возможностей |
+| Имя | ID | Описание | Реализовано с помощью пакета Azure IoT SDK | Должен быть объявлен в модели возможностей |
 | -------- | -------- | -------- | -------- | -------- | -------- |
 | Сведения о модели | urn: azureiot: Моделдисковери: Моделинформатион: 1 | Для устройств, чтобы объявить идентификатор модели возможностей и интерфейсы. Требуется для всех устройств Plug and Play IoT. | Да | Нет |
 | Сведения о клиентском пакете SDK для Digital двойника | urn: azureiot: Клиент: Сдкинформатион: 1 | Клиентский пакет SDK для подключения устройства к Azure. Требуется для [сертификации](tutorial-build-device-certification.md) | Да | Нет |
 | Сведения об устройстве | urn: azureiot: Девицеманажемент: Девицеинформатион: 1 | Сведения об оборудовании и операционной системе для устройства. Требуется для [сертификации](tutorial-build-device-certification.md) | Нет | Да |
 | Определение модели | urn: azureiot: Моделдисковери: Моделдефинитион: 1 | Для устройств, чтобы объявить полное определение его модели возможностей и интерфейсов. Должен быть реализован, если определения моделей не размещены в репозитории модели. | Нет | Да |
-| Цифровой двойника | urn: azureiot: Моделдисковери: Дигиталтвин: 1 | Для разработчиков решений, чтобы получить идентификатор модели возможностей и идентификаторы интерфейса для цифрового двойника. Этот интерфейс не объявлен или не реализован с помощью устройства IoT Plug and Play. | Нет | Нет |
+| Digital Twins | urn: azureiot: Моделдисковери: Дигиталтвин: 1 | Для разработчиков решений, чтобы получить идентификатор модели возможностей и идентификаторы интерфейса для цифрового двойника. Этот интерфейс не объявлен или не реализован с помощью устройства IoT Plug and Play. | Нет | Нет |
 
 - Реализовано с помощью пакета SDK для Azure IoT. определяет, реализует ли пакет SDK Azure IoT возможности, объявленные в интерфейсах. Для устройств IoT Plug and Play, использующих пакет SDK для IoT Azure, не требуется реализовывать этот интерфейс.
-- Должен быть объявлен в модели возможностей. Если значение равно "Yes", этот интерфейс должен быть объявлен в разделе `"implements":` модели возможностей устройства для этого устройства IoT Plug and Play.
+- Должен быть объявлен в модели возможностей. Если значение равно "Yes", этот интерфейс должен быть объявлен `"implements":` в разделе модели возможностей устройства для этого устройства IOT Plug and Play.
 
 ## <a name="retrieve-interface-definitions-from-the-public-repository"></a>Получение определений интерфейса из общедоступного репозитория
 
-### <a name="cli"></a>Интерфейс командной строки
+### <a name="cli"></a>CLI
 
 Вы можете использовать расширение Интернета вещей Azure для Azure CLI, чтобы получить общие интерфейсы из репозитория общедоступной модели.
 
-```cmd/sh
+```azurecli
 az iot pnp interface show --interface {InterfaceID}
 ```
 
-```cmd/sh
+```azurecli
 az iot pnp capability-model show --model {ModelID}
 ```
 
@@ -55,10 +55,10 @@ az iot pnp capability-model show --model {ModelID}
 
 1. Чтобы создать локальную копию интерфейса, выберите ее в результатах поиска, а затем щелкните **скачать**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали об общих интерфейсах, ниже приведены некоторые дополнительные ресурсы.
 
 - [Язык определения цифровых двойника (ДТДЛ)](https://aka.ms/DTDL)
-- [Пакет SDK для устройства C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
+- [Пакет SDK для устройств для C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
 - [REST API IoT](https://docs.microsoft.com/rest/api/iothub/device)

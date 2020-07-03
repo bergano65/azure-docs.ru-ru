@@ -1,29 +1,19 @@
 ---
 title: Проверка подлинности служб пакетной службы Azure с помощью Azure Active Directory
 description: Пакетная служба поддерживает Azure AD для аутентификации из пакетной службы. Узнайте, как пройти проверку подлинности одним из двух способов.
-services: batch
-documentationcenter: .net
-author: LauraBrenner
-manager: evansma
-editor: ''
-tags: ''
-ms.assetid: ''
-ms.service: batch
 ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
 ms.date: 01/28/2020
-ms.author: labrenne
-ms.openlocfilehash: f56c05f64086ac2e98e69d6b21fae7a0a63b5006
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.custom: has-adal-ref
+ms.openlocfilehash: 3fa1aa2bb7389200fe5e5a80598686143344d636
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77019525"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82608478"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Аутентификация решений пакетной службы с помощью Active Directory
 
-Пакетная служба Azure поддерживает проверку подлинности с помощью [Azure Active Directory][aad_about] (Azure AD). Azure AD — многопользовательский облачный каталог и служба управления удостоверениями корпорации Майкрософт. Инфраструктура Azure использует Azure AD для аутентификации клиентов, администраторов служб и пользователей организации.
+Пакетная служба Azure поддерживает аутентификацию [Azure Active Directory][aad_about] (Azure AD). Azure AD — многопользовательский облачный каталог и служба управления удостоверениями корпорации Майкрософт. Инфраструктура Azure использует Azure AD для аутентификации клиентов, администраторов служб и пользователей организации.
 
 Процесс аутентификации Azure AD в пакетной службе Azure можно выполнить двумя способами:
 
@@ -46,14 +36,14 @@ ms.locfileid: "77019525"
 
 `https://login.microsoftonline.com/<tenant-id>`
 
-> [!NOTE] 
-> В процессе аутентификации с использованием субъекта-службы требуется конечная точка определенного клиента. 
-> 
+> [!NOTE]
+> В процессе аутентификации с использованием субъекта-службы требуется конечная точка определенного клиента.
+>
 > При аутентификации с помощью встроенной аутентификации эта конечная точка является не обязательной. Тем не менее мы советуем использовать ее. Но вы также можете использовать общую конечную точку Azure AD, которая предоставляет универсальный интерфейс для сбора общих учетных данных в случае отсутствия конкретного клиента. Общая конечная точка выглядит так: `https://login.microsoftonline.com/common`.
 >
 >
 
-Дополнительные сведения о конечных точках Azure AD см. в статье [сценарии проверки подлинности в Azure AD][aad_auth_scenarios].
+Дополнительные сведения о конечных точках Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory][aad_auth_scenarios].
 
 ### <a name="batch-resource-endpoint"></a>Конечная точка ресурса пакетной службы
 
@@ -67,7 +57,7 @@ ms.locfileid: "77019525"
 
 При регистрации приложения вы отправляете сведения о приложении в Azure AD. После этого служба Azure AD предоставит идентификатор приложения (*идентификатор клиента*), позволяющий связать с ней приложение во время выполнения. Дополнительные сведения об идентификаторе приложения см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md).
 
-Чтобы зарегистрировать приложение пакетной службы, выполните действия, описанные в разделе [Добавление приложения](../active-directory/develop/quickstart-register-app.md) статьи [интеграция приложений с Azure Active Directory][aad_integrate]. При регистрации приложения как собственного вы можете указать любой допустимый универсальный код ресурса (URI) в качестве **URI перенаправления**. Реальную конечную точку указывать необязательно.
+Чтобы зарегистрировать приложение пакетной службы, выполните инструкции, приведенные в разделе [Добавление приложения](../active-directory/develop/quickstart-register-app.md) статьи [Интеграция приложений с Azure Active Directory][aad_integrate]. При регистрации приложения как собственного вы можете указать любой допустимый универсальный код ресурса (URI) в качестве **URI перенаправления**. Реальную конечную точку указывать необязательно.
 
 После регистрации приложения отобразится его идентификатор:
 
@@ -134,10 +124,10 @@ ms.locfileid: "77019525"
 Для проверки подлинности с помощью субъекта-службы необходимо назначить для приложения RBAC. Выполните следующие действия.
 
 1. На портале Azure перейдите к учетной записи пакетной службы, используемой приложением.
-1. В разделе **Параметры** учетной записи пакетной службы выберите **Управление доступом (IAM)** .
+1. В разделе **Параметры** учетной записи пакетной службы выберите **Управление доступом (IAM)**.
 1. Выберите вкладку **Назначения ролей**.
-1. Выберите **Добавить назначение ролей**.
-1. В раскрывающемся списке **Роль** выберите роль приложения — *Участник* или *Читатель*. Дополнительные сведения об этих ролях см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).  
+1. Выберите **добавить назначение ролей**.
+1. В раскрывающемся списке **Роль** выберите роль приложения — *Участник* или *Читатель*. Дополнительные сведения об этих ролях см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
 1. В поле **Выбрать** введите имя приложения. Выберите приложение из списка, а затем нажмите кнопку **сохранить**.
 
 После этого приложение с назначенной ролью RBAC должно появиться в параметрах контроля доступа.
@@ -220,10 +210,10 @@ ms.locfileid: "77019525"
 В примерах кода в этом разделе показано, как выполнить аутентификацию в Azure AD, используя встроенную и субъект-службу. В большинстве примеров кода используется .NET, но общие концепции актуальны и для других языков.
 
 > [!NOTE]
-> Срок действия маркера проверки подлинности Azure AD истекает через час. При использовании долговременного объекта **BatchClient** мы советуем получать маркер из ADAL при каждом запросе, чтобы у вас всегда был допустимый маркер. 
+> Срок действия маркера проверки подлинности Azure AD истекает через час. При использовании долговременного объекта **BatchClient** мы советуем получать маркер из ADAL при каждом запросе, чтобы у вас всегда был допустимый маркер.
 >
 >
-> Чтобы достичь этого в .NET, напишите метод, который получает маркер из Azure AD, и передайте этот метод в качестве делегата в объект **BatchTokenCredentials**. Чтобы гарантировать предоставление допустимого маркера, при каждом запросе к пакетной службе вызывается метод делегата. По умолчанию ADAL кэширует маркеры, поэтому новый маркер извлекается из Azure AD только при необходимости. Дополнительные сведения об маркерах в Azure AD см. в статье [сценарии проверки подлинности][aad_auth_scenarios]в Azure AD.
+> Чтобы достичь этого в .NET, напишите метод, который получает маркер из Azure AD, и передайте этот метод в качестве делегата в объект **BatchTokenCredentials**. Чтобы гарантировать предоставление допустимого маркера, при каждом запросе к пакетной службе вызывается метод делегата. По умолчанию ADAL кэширует маркеры, поэтому новый маркер извлекается из Azure AD только при необходимости. Дополнительные сведения о маркерах в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory][aad_auth_scenarios].
 >
 >
 
@@ -277,9 +267,9 @@ public static async Task<string> GetAuthenticationTokenAsync()
     var authContext = new AuthenticationContext(AuthorityUri);
 
     // Acquire the authentication token from Azure AD.
-    var authResult = await authContext.AcquireTokenAsync(BatchResourceUri, 
-                                                        ClientId, 
-                                                        new Uri(RedirectUri), 
+    var authResult = await authContext.AcquireTokenAsync(BatchResourceUri,
+                                                        ClientId,
+                                                        new Uri(RedirectUri),
                                                         new PlatformParameters(PromptBehavior.Auto));
 
     return authResult.AccessToken;
@@ -318,7 +308,7 @@ using Microsoft.IdentityModel.Clients.ActiveDirectory;
 private const string AuthorityUri = "https://login.microsoftonline.com/<tenant-id>";
 ```
 
-Укажите ссылку на конечную точку ресурса пакетной службы:  
+Укажите ссылку на конечную точку ресурса пакетной службы:
 
 ```csharp
 private const string BatchResourceUri = "https://batch.core.windows.net/";
@@ -383,7 +373,7 @@ from azure.common.credentials import ServicePrincipalCredentials
 TENANT_ID = "<tenant-id>"
 ```
 
-Укажите ссылку на конечную точку ресурса пакетной службы:  
+Укажите ссылку на конечную точку ресурса пакетной службы:
 
 ```python
 RESOURCE = "https://batch.core.windows.net/"
@@ -437,8 +427,8 @@ credentials = ServicePrincipalCredentials(
 
 - Пример Python для создания клиента пакетной службы, подлинность которого проверяется с помощью маркера Azure AD, см. в примере [Deploying Azure Batch Custom Image with a Python Script](https://github.com/azurebigcompute/recipes/blob/master/Azure%20Batch/CustomImages/CustomImagePython.md) (Развертывание пользовательского образа пакетной службы Azure с помощью скрипта Python).
 
-[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Microsoft Azure Active Directory?"
+[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Azure Active Directory?"
 [aad_adal]: ../active-directory/active-directory-authentication-libraries.md
-[aad_auth_scenarios]: ../active-directory/active-directory-authentication-scenarios.md "Сценарии аутентификации в Azure Active Directory"
+[aad_auth_scenarios]: ../active-directory/active-directory-authentication-scenarios.md "Сценарии проверки подлинности в Azure AD"
 [aad_integrate]: ../active-directory/active-directory-integrating-applications.md "Интеграция приложений с Azure Active Directory"
 [azure_portal]: https://portal.azure.com

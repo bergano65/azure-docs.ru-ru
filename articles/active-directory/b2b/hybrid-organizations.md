@@ -12,10 +12,10 @@ manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 427f7ad4d6a1b9839b1197ef9f7ca15400ea0f59
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74272472"
 ---
 # <a name="azure-active-directory-b2b-collaboration-for-hybrid-organizations"></a>Служба совместной работы Azure Active Directory B2B для гибридных организаций
@@ -45,9 +45,9 @@ ms.locfileid: "74272472"
 
 Подробнее см. статью [Предоставление локально управляемым партнерским учетным записям доступа к облачным ресурсам через службу совместной работы AAD B2B](hybrid-on-premises-to-cloud.md).
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Предоставление пользователям B2B в Azure AD доступа к локальным приложениям](hybrid-cloud-to-on-premises.md)
-- [Предоставление локально управляемым партнерским учетным записям доступа к облачным ресурсам через службу совместной работы AAD B2B](hybrid-on-premises-to-cloud.md)
+- [Предоставление локально управляемым партнерским учетным записям доступа к облачным ресурсам с помощью службы совместной работы Azure AD B2B](hybrid-on-premises-to-cloud.md)
 
 

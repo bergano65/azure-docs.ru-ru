@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с LearnUpon | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с LearnUpon | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в LearnUpon.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ecdcd8c6024b3cacb422b556718bbbdbb5d601c2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67098241"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-learnupon"></a>Руководство по Интеграция Azure Active Directory с LearnUpon
+# <a name="tutorial-azure-active-directory-integration-with-learnupon"></a>Руководство. Интеграция Azure Active Directory с LearnUpon
 
 В этом руководстве описано, как интегрировать LearnUpon с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением LearnUpon обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67098241"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с LearnUpon, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка LearnUpon с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -123,7 +123,7 @@ ms.locfileid: "67098241"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -145,7 +145,7 @@ ms.locfileid: "67098241"
    
     ![Настройка единого входа](./media/learnupon-tutorial/tutorial_learnupon_08.png)  
   
-    a. Щелкните **Включено**.
+    а. Щелкните **Включено**.
 
     b. Для параметра **Версия** установите значение **2.0**.
 
@@ -153,9 +153,9 @@ ms.locfileid: "67098241"
 
     d. В текстовое поле **SAML Token Post param name** (Имя параметра POST для токена SAML) введите имя параметра POST, передаваемого в запросе на указанный выше URL-адрес клиента SAML (в нем содержится требующее проверки и аутентификации утверждение SAML, например **SAMLResponse**).
 
-    д. В текстовое поле **Name Identifier Format** (Формат идентификатора имени) введите значение, которое определяет позицию идентификатора пользователя (адрес электронной почты) в утверждении SAML (например, `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`).
+    д) В текстовое поле **Name Identifier Format** (Формат идентификатора имени) введите значение, которое определяет позицию идентификатора пользователя (адрес электронной почты) в утверждении SAML (например, `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`).
   
-    Е. В текстовом поле **Расположение поставщика удостоверений** введите значение, которое определяет адрес, на который перенаправляются пользователи при щелчке по значку отправки на экране входа портала Azure.
+    е) В текстовом поле **Расположение поставщика удостоверений** введите значение, которое определяет адрес, на который перенаправляются пользователи при щелчке по значку отправки на экране входа портала Azure.
   
     ж. В текстовое поле **Sign out URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -165,7 +165,7 @@ ms.locfileid: "67098241"
 
      ![Настройка единого входа](./media/learnupon-tutorial/tutorial_learnupon_11.png)  
 
-    a. В текстовое поле **First Name Identifier Format** (Формат идентификатора имени) введите значение, которое обозначает расположение имени пользователя в утверждении SAML, например: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    а. В текстовое поле **First Name Identifier Format** (Формат идентификатора имени) введите значение, которое обозначает расположение имени пользователя в утверждении SAML, например: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
   
     b. В текстовое поле **Last Name Identifier Format** (Формат идентификатора фамилии) введите значение, которое обозначает расположение фамилии пользователя в утверждении SAML, например: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
@@ -235,4 +235,4 @@ ms.locfileid: "67098241"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

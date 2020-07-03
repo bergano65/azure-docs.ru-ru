@@ -6,16 +6,16 @@ ms.topic: conceptual
 ms.date: 5/24/2019
 ms.author: hrushib
 ms.openlocfilehash: f56fcb7d1dde700d954c3b55bcf8cd7759893521
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75526334"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79259010"
 ---
 # <a name="periodic-backup-and-restore-in-an-azure-service-fabric-cluster"></a>Периодическое резервное копирование и восстановление в кластере Azure Service Fabric
 > [!div class="op_single_selector"]
 > * [Кластеры в Azure](service-fabric-backuprestoreservice-quickstart-azurecluster.md) 
-> * [Изолированные кластеры](service-fabric-backuprestoreservice-quickstart-standalonecluster.md)
+> * [Автономные кластеры](service-fabric-backuprestoreservice-quickstart-standalonecluster.md)
 > 
 
 Service Fabric — это платформа распределенных систем, которая упрощает разработку надежных распределенных облачных приложений на основе микрослужб и управление ими. Она позволяет запускать микрослужбы с отслеживанием и без отслеживания состояния. Службы с отслеживанием состояния могут поддерживать изменчивое, авторитетное состояние за пределами запроса и ответа или полной транзакции. Если служба с отслеживанием состояния отключена в течение длительного времени или теряет информацию вследствие аварии, может возникнуть необходимость восстановления до недавней резервной копии состояния для дальнейшего использования службы.
@@ -37,7 +37,7 @@ Service Fabric предоставляет встроенный API для вып
 Service Fabric предоставляет набор API для использования функций, связанных с возможностью периодического резервного копирования и восстановления.
 
 - Планирование периодического резервного копирования надежных служб с отслеживанием состояния и Reliable Actors с поддержкой передачи резервных копий во внешние места хранения. Поддерживаемые места хранения
-    - Служба хранилища Azure
+    - Хранилище Azure
     - Файловый ресурс (в локальной среде)
 - Перечисление резервных копий.
 - Активация нерегламентированного резервного копирования секции
@@ -45,7 +45,7 @@ Service Fabric предоставляет набор API для использо
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 * Service Fabric кластер с структурой версии 6,4 или более поздней. Инструкции по созданию кластера Service Fabric с помощью шаблона ресурсов Azure см. в [этой статье](service-fabric-cluster-creation-via-arm.md).
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Сведения о получении или создании сертификата X.509 см. в статье [Создание кластера Service Fabric в Azure с помощью Azure Resource Manager](service-fabric-cluster-creation-via-arm.md).
 * Надежное приложения Service Fabric с отслеживанием состояния, созданное с помощью пакета SDK Service Fabric версии 3.0 или выше. Для приложений, предназначенных для .NET Core 2,0, приложение должно быть создано с помощью Service Fabric пакета SDK версии 3,1 или более поздней.
@@ -56,7 +56,7 @@ Service Fabric предоставляет набор API для использо
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
 ```
 
-* Убедитесь, что кластер подключен с помощью команды `Connect-SFCluster` перед выполнением любого запроса конфигурации с помощью модуля Microsoft. ServiceFabric. PowerShell. http.
+* Убедитесь, что кластер подключен с помощью `Connect-SFCluster` команды перед выполнением любого запроса конфигурации с помощью модуля Microsoft. ServiceFabric. PowerShell. http.
 
 ```powershell
 
@@ -68,7 +68,7 @@ Service Fabric предоставляет набор API для использо
 
 ### <a name="using-azure-portal"></a>Использование портала Azure
 
-Включите флажок `Include backup restore service` в разделе `+ Show optional settings` на вкладке `Cluster Configuration`.
+Флажок `Include backup restore service` включить в разделе `+ Show optional settings` на `Cluster Configuration` вкладке.
 
 ![Включение службы восстановления резервных копий с помощью портала][1]
 
@@ -76,7 +76,7 @@ Service Fabric предоставляет набор API для использо
 ### <a name="using-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 Сначала необходимо включить _службу резервного копирования и восстановления_ в кластере. Получите шаблон для кластера, который требуется развернуть. Вы можете использовать [примеры шаблонов](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype) или создать шаблон Resource Manager. Включите _службу резервного копирования и восстановления_ следующим образом:
 
-1. Убедитесь, что версия `apiversion` ресурса `Microsoft.ServiceFabric/clusters` имеет значение **`2018-02-01`** . А если не имеет, то обновите ее, как показано во фрагменте ниже.
+1. Убедитесь, что `apiversion` **`2018-02-01`** для `Microsoft.ServiceFabric/clusters` ресурса задано значение, а в противном случае обновите его, как показано в следующем фрагменте кода:
 
     ```json
     {
@@ -88,7 +88,7 @@ Service Fabric предоставляет набор API для использо
     }
     ```
 
-2. Включите _службу резервного копирования и восстановления_ , добавив следующий раздел `addonFeatures` после раздела `properties`, как показано во фрагменте кода ниже: 
+2. Включите _службу резервного копирования и восстановления _, добавив следующий раздел `addonFeatures` после раздела `properties`, как показано во фрагменте кода ниже: 
 
     ```json
         "properties": {
@@ -302,7 +302,7 @@ FailureError            :
 - Командлеты PowerShell Service Fabric находятся в режиме предварительного просмотра.
 - Отсутствие поддержки кластеров Service Fabric в Linux.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 

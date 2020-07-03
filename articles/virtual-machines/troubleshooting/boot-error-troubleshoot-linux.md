@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 11/20/2019
 ms.author: vilibert
 ms.openlocfilehash: 37cb201751f72918838efe5837aa0e357d483f24
-ms.sourcegitcommit: dd0304e3a17ab36e02cf9148d5fe22deaac18118
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74408746"
 ---
 # <a name="troubleshoot-azure-linux-virtual-machines-boot-errors"></a>Устранение ошибок загрузки Azure Виртуальные машины Linux
@@ -27,7 +27,7 @@ ms.locfileid: "74408746"
 
 * [GRUB помощь](troubleshoot-vm-boot-error.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Последовательная консоль виртуальной машины](serial-console-linux.md)
 
@@ -39,8 +39,8 @@ ms.locfileid: "74408746"
 - [Сценарии восстановления PowerShell](https://github.com/Azure/azure-support-scripts/tree/master/VMRecovery/ResourceManager)
 - [Скрипты Bash Recovery](https://github.com/sribs/azure-support-scripts)
 
-- [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](troubleshoot-recovery-disks-linux.md)
-- [портал Azure](troubleshoot-recovery-disks-portal-linux.md)
+- [CLI](troubleshoot-recovery-disks-linux.md)
+- [Портал Azure](troubleshoot-recovery-disks-portal-linux.md)
 
 
 ## <a name="disk-swap-video"></a>Видео о переключении диска:

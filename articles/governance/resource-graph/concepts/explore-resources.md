@@ -4,10 +4,10 @@ description: Узнайте, как использовать язык запро
 ms.date: 10/18/2019
 ms.topic: conceptual
 ms.openlocfilehash: 0c191915b8c558d80ffef554ef758a35157e035c
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76156987"
 ---
 # <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью Resource Graph
@@ -208,7 +208,7 @@ Resources
 ```
 
 Прежде чем выполнять запрос, давайте ответим на вопрос, как мы узнали, что свойство **type** теперь должно иметь значение **Microsoft.Compute/disks**.
-Если посмотреть на полный идентификатор, то в его строке можно увидеть фрагмент **/providers/Microsoft.Compute/disks/** . Он подсказывает нам, какой тип нужно искать. В качестве альтернативы можно было бы снять ограничение по типу и выполнить поиск только по полю идентификатора. Так как идентификатор уникален, была бы возвращена только одна запись и определить тип можно было бы по свойству **type** в ней.
+Если посмотреть на полный идентификатор, то в его строке можно увидеть фрагмент **/providers/Microsoft.Compute/disks/**. Он подсказывает нам, какой тип нужно искать. В качестве альтернативы можно было бы снять ограничение по типу и выполнить поиск только по полю идентификатора. Так как идентификатор уникален, была бы возвращена только одна запись и определить тип можно было бы по свойству **type** в ней.
 
 > [!NOTE]
 > Чтобы этот пример можно было выполнить, необходимо заменить значение в поле идентификатора результатом из своей среды.
@@ -305,9 +305,9 @@ az graph query -q="Resources | where type =~ 'Microsoft.Network/publicIPAddresse
 Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$($ips.publicIp -join "','")') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip"
 ```
 
-Чтобы узнать, как выполнить эти действия в одном запросе с помощью оператора `join`, см. [список виртуальных машин с их сетевым интерфейсом и примером общедоступного IP-адреса](../samples/advanced.md#join-vmpip) .
+Чтобы узнать, как выполнить эти действия в одном запросе с помощью `join` оператора, ознакомьтесь со [списком виртуальных машин с их сетевым интерфейсом и примером ОБЩЕДОСТУПНОГО IP-адреса](../samples/advanced.md#join-vmpip) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше о [языке запросов](query-language.md).
 - См. язык, используемый в [начальных запросах](../samples/starter.md).

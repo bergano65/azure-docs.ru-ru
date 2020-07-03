@@ -1,6 +1,6 @@
 ---
-title: Субклип видео при кодировании с помощью служб мультимедиа Azure
-description: В этом разделе описывается субклипа видео при кодировании с помощью пакета SDK для .NET служб мультимедиа Azure
+title: Подрезать видео при кодировании со службами мультимедиа Azure
+description: В этом разделе описывается, как подрезать видео при кодировании со службами мультимедиа Azure с помощью пакета SDK для .NET
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -14,25 +14,25 @@ ms.topic: article
 ms.date: 06/09/2019
 ms.author: juliako
 ms.openlocfilehash: 3d584ee742aa93cdecf4b04d942afb2ed83a7357
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "67305039"
 ---
-# <a name="subclip-a-video-when-encoding-with-media-services---net"></a>Субклип видео при кодировании с помощью служб мультимедиа - .NET
+# <a name="subclip-a-video-when-encoding-with-media-services---net"></a>Подрезать видео при кодировании с помощью служб мультимедиа — .NET
 
-Можно обрезать или субклипа видео при кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любым [преобразования](https://docs.microsoft.com/rest/api/media/transforms) , построенный с помощью [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) предустановки, или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) предустановок.
+Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms) , построенным с помощью предустановок [буилтинстандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [стандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) .
 
-Следующие C# примере создается задание, удаляющего видео в ресурс-контейнер, так как он отправляет задание кодирования. 
+В следующем примере кода C# создается задание, которое обрезает видео в ресурсе при отправке задания кодирования. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
-- [Создайте учетную запись служб мультимедиа Azure](create-account-cli-how-to.md).
-- Создание, преобразование и входных данных и выходных ресурсов. Можно узнать, как создать преобразование, а также входные и выходные активы в [передачи, кодирование и потоковую передачу видео, с помощью .NET](stream-files-tutorial-with-api.md) руководства.
-- Просмотрите [концепция кодировка](encoding-concept.md) раздела.
+- [Создание учетной записи служб мультимедиа Azure](create-account-cli-how-to.md)
+- Создание преобразования и входных и выходных ресурсов. Вы можете узнать, как создать преобразование и входные и выходные ресурсы в учебнике [Отправка, кодирование и потоковая передача с помощью .NET](stream-files-tutorial-with-api.md) .
+- Ознакомьтесь с разделом [концепция кодирования](encoding-concept.md) .
 
 ## <a name="example"></a>Пример
 
@@ -89,6 +89,6 @@ private static async Task<Job> JobWithBuiltInStandardEncoderWithSingleClipAsync(
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-[Как кодировать с помощью пользовательского преобразования](customize-encoder-presets-how-to.md) 
+[Кодирование с помощью пользовательского преобразования](customize-encoder-presets-how-to.md) 

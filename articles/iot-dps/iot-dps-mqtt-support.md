@@ -7,18 +7,21 @@ services: iot-dps
 ms.topic: conceptual
 ms.date: 10/16/2019
 ms.author: ravokkar
-ms.openlocfilehash: ea6ece7e34ddb9c25f9f8349239ab3a1c3405abf
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 213fc3412a2dfad77946e52a355a30774d6860c7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74973379"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81680676"
 ---
 # <a name="communicate-with-your-dps-using-the-mqtt-protocol"></a>Обмен данными с DP с помощью протокола MQTT
 
 Служба DPS позволяет устройствам взаимодействовать с конечной точкой устройства DPS с помощью следующих средств:
 
-* [MQTT v 3.1.1](https://mqtt.org/) на порте 8883
+* протокола [MQTT версии 3.1.1](https://mqtt.org/) на порту 8883;
 * [MQTT v 3.1.1](http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718127) через WebSocket через порт 443.
 
 Служба DPS не является полнофункциональным компонентом MQTT Broker и не поддерживает все поведения, указанные в стандарте MQTT v 3.1.1. В этой статье описывается, как устройства могут использовать поддерживаемые поведения MQTT для взаимодействия с DPS.
@@ -41,11 +44,11 @@ ms.locfileid: "74973379"
 
 * В поле **ClientID** используйте **registrationId**.
 
-* В поле **username (имя пользователя** ) используйте `{idScope}/registrations/{registration_id}/api-version=2019-03-31`, где `{idScope}` является [idScopeой](https://docs.microsoft.com/azure/iot-dps/concepts-device#id-scope) DPS.
+* В поле **username (имя пользователя** ) `{idScope}/registrations/{registration_id}/api-version=2019-03-31`укажите `{idScope}` , где — [idScope](https://docs.microsoft.com/azure/iot-dps/concepts-device#id-scope) политики DPS.
 
 * В поле **Пароль** укажите маркер SAS. Формат маркера SAS аналогичен описанному для протоколов HTTPS и AMQP:
 
-  `SharedAccessSignature sr={URL-encoded-resourceURI}&sig={signature-string}&se={expiry}&skn=registration` resourceURI должен иметь формат `{idScope}/registrations/{registration_id}`. Имя политики должно быть `registration`.
+  `SharedAccessSignature sr={URL-encoded-resourceURI}&sig={signature-string}&se={expiry}&skn=registration`Значение resourceURI должно быть в формате `{idScope}/registrations/{registration_id}`. Имя политики должно иметь `registration`значение.
 
   > [!NOTE]
   > При использовании аутентификации с помощью сертификата X.509 пароли маркеров SAS не требуются.
@@ -65,19 +68,19 @@ ms.locfileid: "74973379"
 
 ## <a name="registering-a-device"></a>Регистрация устройства
 
-Чтобы зарегистрировать устройство с помощью DPS, устройство должно подписаться на `$dps/registrations/res/#` как **Фильтр разделов**. Многоуровневый подстановочный знак `#` в параметре Topic Filter (Фильтр разделов) используется только для того, чтобы разрешить устройству получать дополнительные свойства в имени раздела. Служба DPS не разрешает использование `#` или `?` подстановочных знаков для фильтрации подразделов. Так как DP не является посредником обмена сообщениями общего назначения, он поддерживает только документированные названия разделов и фильтры разделов.
+Чтобы зарегистрировать устройство через службу DPS, устройство должно подписаться `$dps/registrations/res/#` , используя в качестве **фильтра разделов**. Многоуровневый подстановочный знак `#` в параметре Topic Filter (Фильтр разделов) используется только для того, чтобы разрешить устройству получать дополнительные свойства в имени раздела. Служба DPS не разрешает использование подстановочных знаков `#` или `?` для фильтрации подразделов. Так как DP не является посредником обмена сообщениями общего назначения, он поддерживает только документированные названия разделов и фильтры разделов.
 
 Устройство должно публиковать сообщение Register в службу DPS, используя `$dps/registrations/PUT/iotdps-register/?$rid={request_id}` в качестве **имени раздела**. Полезная нагрузка должна содержать объект [регистрации устройства](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice#deviceregistration) в формате JSON.
-В случае успеха устройство получит ответ на `$dps/registrations/res/202/?$rid={request_id}&retry-after=x` имя раздела, где x — значение Retry-After в секундах. Полезные данные отклика будут содержать объект [регистратионоператионстатус](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice#registrationoperationstatus) в формате JSON.
+В случае успеха устройство получит ответ на имя `$dps/registrations/res/202/?$rid={request_id}&retry-after=x` раздела, где x — это значение Retry-After в секундах. Полезные данные отклика будут содержать объект [регистратионоператионстатус](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice#registrationoperationstatus) в формате JSON.
 
 ## <a name="polling-for-registration-operation-status"></a>Опрос состояния операции регистрации
 
-Устройство должно периодически опрашивать службу, чтобы получить результат операции регистрации устройства. Предполагая, что устройство уже подписано на `$dps/registrations/res/#` разделе, как указано выше, он может опубликовать сообщение Get значение operationstatus в `$dps/registrations/GET/iotdps-get-operationstatus/?$rid={request_id}&operationId={operationId}` имени раздела. ИДЕНТИФИКАТОР операции в этом сообщении должен быть значением, полученным в ответном сообщении Регистратионоператионстатус на предыдущем шаге. В случае успеха служба будет отвечать на `$dps/registrations/res/200/?$rid={request_id}` разделе. Полезные данные отклика будут содержать объект Регистратионоператионстатус. Устройство должно оставаться опросом службы, если код ответа равен 202 после задержки, равной периоду повтора. Операция регистрации устройства завершается успешно, если служба возвращает код состояния 200.
+Устройство должно периодически опрашивать службу, чтобы получить результат операции регистрации устройства. Предполагая, что устройство уже подписано на `$dps/registrations/res/#` раздел, как указано выше, он может опубликовать сообщение Get значение operationstatus в имени `$dps/registrations/GET/iotdps-get-operationstatus/?$rid={request_id}&operationId={operationId}` раздела. ИДЕНТИФИКАТОР операции в этом сообщении должен быть значением, полученным в ответном сообщении Регистратионоператионстатус на предыдущем шаге. В случае успеха служба будет отвечать на `$dps/registrations/res/200/?$rid={request_id}` раздел. Полезные данные отклика будут содержать объект Регистратионоператионстатус. Устройство должно оставаться опросом службы, если код ответа равен 202 после задержки, равной периоду повтора. Операция регистрации устройства завершается успешно, если служба возвращает код состояния 200.
 
 ## <a name="connecting-over-websocket"></a>Подключение через WebSocket
 При подключении через WebSocket укажите подпротокол как `mqtt`. Следуйте [RFC 6455](https://tools.ietf.org/html/rfc6455).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о протоколе MQTT см. в [документации по MQTT](https://mqtt.org/documentation).
 

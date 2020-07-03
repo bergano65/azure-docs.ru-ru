@@ -1,18 +1,18 @@
 ---
 title: Технологии и решения Интернета вещей Azure
 description: Узнайте о наборах технологий и службах, которые вы можете использовать для создания решения Azure IoT.
-author: robinsh
+author: dominicbetts
 ms.service: iot-fundamentals
 services: iot-fundamentals
 ms.topic: overview
-ms.date: 10/09/2018
-ms.author: robinsh
-ms.openlocfilehash: cf707a0ddc3d5b46c7be7944a911ee03f00fc064
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 01/15/2020
+ms.author: dobett
+ms.openlocfilehash: 0b04b5170c13f6f6c3fd74976461f03e4367060a
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457170"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "77046059"
 ---
 # <a name="azure-technologies-and-services-for-creating-iot-solutions"></a>Технологии и службы Azure для создания решений Интернета вещей
 
@@ -83,6 +83,8 @@ Azure IoT Central является полностью управляемой п
 ### <a name="data-and-analytics"></a>Данные и аналитика
 
 Как правило, устройства Интернета вещей создают большие объемы данных в формате временных рядов, таких как показания температуры. [Аналитика временных рядов Azure](../time-series-insights/time-series-insights-overview.md) может подключаться к центру Интернета вещей, считывать потоки данных телеметрии от устройств, а также сохранять их с возможностью получения и визуализации данных.
+
+[Azure Maps](/azure/azure-maps) — это коллекция геопространственных служб, которые используют новые сопоставления данных для обеспечения точного географического контекста для мобильных и веб-приложений. Для создания приложений можно использовать REST API, веб-интерфейс управления JavaScript или пакет SDK для Android.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

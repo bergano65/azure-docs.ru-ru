@@ -16,6 +16,11 @@
       href: data-lake-analytics-get-started-powershell.md
     - name: Azure CLI
       href: data-lake-analytics-get-started-cli.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Практическое руководство
   items:
     - name: Управление службой Data Lake Analytics
@@ -132,7 +137,7 @@
           href: runtime-troubleshoot.md
         - name: Устранение неполадок с обновлением .NET
           href: dotnet-upgrade-troubleshoot.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.datalakeanalytics
@@ -156,8 +161,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
     - name: Запрос изменений
       href: 'https://feedback.azure.com/forums/327234-data-lake'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataLake'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-data-lake-analytics.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/data-lake-analytics/'
     - name: Калькулятор цен

@@ -5,12 +5,12 @@ author: markfussell
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: mfussell
-ms.openlocfilehash: 755e3c1eb649bc6c8ecc084d18e9904cc90b1282
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 56df6e28940eb15597a3d6bccca3f85e5f690f89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551851"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80991660"
 ---
 # <a name="azure-service-fabric-application-design-best-practices"></a>Рекомендации по проектированию приложений Service Fabric Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "75551851"
 Используйте службу шлюза API, которая взаимодействует со службами серверной части, которые затем можно масштабировать. Ниже перечислены наиболее часто используемые службы шлюза API.
 
 - [Управление API Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-api-management-overview), [интегрированное с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-api-management).
-- [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторы событий Azure](https://docs.microsoft.com/azure/event-hubs/), использующие [Сервицефабрикпроцессор](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/ServiceFabricProcessor) для чтения из разделов концентратора событий.
+- [Центр Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторы событий Azure](https://docs.microsoft.com/azure/event-hubs/), использующие [Сервицефабрикпроцессор](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Microsoft.Azure.EventHubs.ServiceFabricProcessor) для чтения из разделов концентратора событий.
 - [Трæфик обратный прокси-сервер](https://blogs.msdn.microsoft.com/azureservicefabric/2018/04/05/intelligent-routing-on-service-fabric-with-traefik/)с помощью [поставщика Service Fabric Azure](https://docs.traefik.io/v1.6/configuration/backends/servicefabric/).
 - [Шлюз приложений Azure.](https://docs.microsoft.com/azure/application-gateway/)
 
@@ -57,9 +57,9 @@ ms.locfileid: "75551851"
 
 ## <a name="how-to-work-with-reliable-services"></a>Работа с Reliable Services
 Service Fabric Reliable Services позволяет легко создавать службы без отслеживания состояния и с отслеживанием состояния. Дополнительные сведения см. в статье [Введение в Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction).
-- Всегда соблюдайте [токен отмены](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-lifecycle#stateful-service-primary-swaps) в методе `RunAsync()` для служб без отслеживания состояния и с отслеживанием состояния, а также метода `ChangeRole()` для служб с отслеживанием состояния. В противном случае Service Fabric не знает, можно ли закрыть службу. Например, если вы не принимаете маркер отмены, может произойти значительно больше времени обновления приложения.
--   Открывайте и закрывайте [прослушиватели связи](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication) своевременно и соблюдайте токены отмены.
--   Никогда не смешивать код синхронизации с асинхронным кодом. Например, не используйте `.GetAwaiter().GetResult()` в асинхронных вызовах. Используйте в *стеке вызовов Async.*
+- Всегда соблюдайте [токен отмены](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-lifecycle#stateful-service-primary-swaps) в `RunAsync()` методе для служб без отслеживания состояния и с отслеживанием состояния, а также `ChangeRole()` метод для служб с отслеживанием состояния. В противном случае Service Fabric не знает, можно ли закрыть службу. Например, если вы не принимаете маркер отмены, может произойти значительно больше времени обновления приложения.
+-    Открывайте и закрывайте [прослушиватели связи](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication) своевременно и соблюдайте токены отмены.
+-    Никогда не смешивать код синхронизации с асинхронным кодом. Например, не используйте `.GetAwaiter().GetResult()` в асинхронных вызовах. Используйте в *стеке вызовов Async.*
 
 ## <a name="how-to-work-with-reliable-actors"></a>Работа с Reliable Actors
 Service Fabric Reliable Actors позволяет легко создавать виртуальные субъекты с отслеживанием состояния. Дополнительные сведения см. в статье [Введение в Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
@@ -70,14 +70,14 @@ Service Fabric Reliable Actors позволяет легко создавать 
 - Из-за [параллелизма, основанной на поочередности](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction#concurrency), субъекты лучше использовать как независимые объекты. Не создавайте графы синхронных вызовов методов с несколькими субъектами (каждый из которых, скорее всего, станет отдельным сетевым вызовом) или создайте запросы с циклическими субъектами. Это значительно повлияет на производительность и масштабируемость.
 - Не смешивать код синхронизации с асинхронным кодом. Используйте асинхронный режим для предотвращения проблем с производительностью.
 - Не делайте долго выполняющихся вызовов в субъектах. Длительные вызовы будут блокировать другие вызовы одного и того же субъекта из-за параллелизма, основанной на последующей блокировке.
-- Если вы обмениваетесь данными с другими службами с помощью [Service Fabric удаленного взаимодействия](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-remoting) и создаете `ServiceProxyFactory`, Создайте фабрику на уровне [службы субъекта](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-using) , а *не* на уровне субъекта.
+- Если вы обмениваетесь данными с другими службами с помощью [Service Fabric удаленного взаимодействия](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-communication-remoting) и `ServiceProxyFactory`создаете, Создайте фабрику на уровне [службы субъекта](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-using) , а *не* на уровне субъекта.
 
 
 ## <a name="application-diagnostics"></a>Диагностика приложения
 Будьте в полной мере добавим [ведение журнала приложений](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-event-generation-app) в вызовах служб. Она поможет в диагностике сценариев, в которых службы вызывают друг друга. Например, если вызов метода B вызывает C, то вызов может завершиться ошибкой в любом месте. Если ведение журнала не имеет достаточного количества, трудно диагностировать сбои. Если службы имеют слишком много записей из-за вызова томов, убедитесь, что по крайней мере ошибки в журнале и предупреждения.
 
 ## <a name="iot-and-messaging-applications"></a>Приложения IoT и Messaging
-При чтении сообщений из [центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторов событий Azure](https://docs.microsoft.com/azure/event-hubs/)используйте [сервицефабрикпроцессор](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/ServiceFabricProcessor). Сервицефабрикпроцессор интегрируется с Service Fabric Reliable Services для поддержания состояния чтения из разделов концентратора событий и отправки новых сообщений службам с помощью метода `IEventProcessor::ProcessEventsAsync()`.
+При чтении сообщений из [центра Интернета вещей Azure](https://docs.microsoft.com/azure/iot-hub/) или [концентраторов событий Azure](https://docs.microsoft.com/azure/event-hubs/)используйте [сервицефабрикпроцессор](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/ServiceFabricProcessor). Сервицефабрикпроцессор интегрируется с Service Fabric Reliable Services для поддержания состояния чтения из разделов концентратора событий и отправки новых сообщений службам с помощью `IEventProcessor::ProcessEventsAsync()` метода.
 
 
 ## <a name="design-guidance-on-azure"></a>Руководство по проектированию в Azure

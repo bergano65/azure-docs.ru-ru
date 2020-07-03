@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: anhoang
-ms.openlocfilehash: b0ecbc4dc030fa8e7fbe362c1304c3c97278bdf5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c2b9b4d51e89975d988ed94bf85695bd8a1cc770
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75456413"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82872467"
 ---
 # <a name="quickstart-use-custom-commands-with-custom-voice-preview"></a>Краткое руководство. Использование пользовательских команд с настраиваемым голосовым стандартом (Предварительная версия)
 
@@ -32,10 +32,11 @@ ms.locfileid: "75456413"
 1. Нажмите кнопку **Сохранить**.
 
 > [!div class="mx-imgBorder"]
-> ![примеры предложений с параметрами](media/custom-speech-commands/select-custom-voice.png)
+> ![Примеры предложений с параметрами](media/custom-speech-commands/select-custom-voice.png)
 
 > [!NOTE]
-> Пользовательские голоса можно создавать на странице настраиваемого голосового проекта. Выберите ссылку " **речь Studio** ", а затем " **Пользовательский Голос** ", чтобы начать работу.
+> - Для **общих голосов** **типы нейронов** доступны только для конкретных регионов. Сведения о проверке доступности см. в статье [Стандартные и нейронные голоса по регионам и конечным точкам](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#standard-and-neural-voices).
+> - Для **пользовательских голосов**их можно создать на странице настраиваемого голосового проекта. См. статью Начало [работы с пользовательским голосовым стандартом](./how-to-custom-voice.md).
 
 Теперь приложение будет отвечать на выбранный голоса вместо голоса по умолчанию.
 

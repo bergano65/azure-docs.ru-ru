@@ -5,15 +5,15 @@ services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: conceptual
-ms.date: 10/30/2019
+ms.date: 03/10/2020
 ms.author: victorh
 ms.reviewer: tyao
-ms.openlocfilehash: eb91dfd5d774e591d3c3c3964668dcc626086181
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: e287da94a71fccabddb90f3f5a3699f4c4cf22a5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73512578"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79472611"
 ---
 # <a name="what-is-geo-filtering-on-a-domain-for-azure-front-door"></a>Сведения о геофильтрации в домене для Azure Front Door
 
@@ -30,7 +30,7 @@ ms.locfileid: "73512578"
 | AD | Андорра |
 | AE | ОАЭ|
 | AF | Афганистан|
-| AG | Антигуа и Барбуда|
+| ГД | Антигуа и Барбуда|
 | AL | Албания|
 | AM | Армения|
 | АО | Ангола|
@@ -57,7 +57,7 @@ ms.locfileid: "73512578"
 | BW | Ботсвана|
 | BY | Беларусь|
 | BZ | Белиз|
-| CA | Канада|
+| CA | Canada|
 | CD | Демократическая Республика Конго|
 | CF | Центрально-Африканская Республика|
 | CH | Швейцария|
@@ -84,7 +84,7 @@ ms.locfileid: "73512578"
 | FJ | Фиджи|
 | FM | Микронезия, Федеративные Штаты|
 | СВ | Франция|
-| GB | Великобритания|
+| ГБ | United Kingdom|
 | GE | Джорджия|
 | GF | Французская Гвиана|
 | GH | Гана|
@@ -98,14 +98,14 @@ ms.locfileid: "73512578"
 | HR | Хорватия|
 | HT | Гаити|
 | HU | Венгрия|
-| ИД | Индонезия|
+| ID | Индонезия|
 | IE | Ирландия|
 | IL | Израиль|
 | IN | Индия|
 | IQ | Ирак|
 | IR | Иран, Исламская Республика|
 | IS | Исландия|
-| IT | Италия|
+| ИТ-отдел | Италия|
 | JM | Ямайка|
 | JO | Иордания|
 | JP | Япония|
@@ -140,17 +140,17 @@ ms.locfileid: "73512578"
 | Магический квадрант | Мартиника|
 | MR | Мавритания|
 | MT | Мальта|
-| MV | Мальдивские острова|
+| MV | Мальдивы|
 | MW | Малави|
 | MX | Мексика|
 | MY | Малайзия|
 | MZ | Мозамбик|
-| Нет данных | Намибия|
+| Н/Д | Намибия|
 | NE | Нигер|
 | NG | Нигерия|
 | NI | Никарагуа|
 | NL | Нидерланды|
-| НЕТ | Норвегия|
+| NO | Норвегия|
 | NP | Непал|
 | NR | Науру|
 | NZ | Новая Зеландия|
@@ -167,7 +167,7 @@ ms.locfileid: "73512578"
 | QA | Катар|
 | RE | Реюньон|
 | RO | Румыния|
-| RS | Сербия|
+| Сервер отчетов | Сербия|
 | RU | Российская Федерация|
 | RW | Руанда|
 | SA | Саудовская Аравия|
@@ -205,7 +205,7 @@ ms.locfileid: "73512578"
 | ZM | Замбия|
 | ZW | Зимбабве|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Защита на прикладном уровне с помощью Front Door](../../frontdoor/front-door-application-security.md).
 - Дополнительные сведения о [создании Front Door](../../frontdoor/quickstart-create-front-door.md).

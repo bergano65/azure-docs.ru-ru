@@ -10,22 +10,19 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 01/24/2020
+ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5454d2f80d1febccb0c57ecf2e80d930bb5cb761
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 2b4b94c05b39dddcef83644638a105d5b6c75118
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988810"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82184985"
 ---
-# <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>Руководство. Использование скриптов развертывания для создания самозаверяющего сертификата (предварительная версия)
+# <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate-preview"></a>Руководство по Использование скриптов развертывания для создания самозаверяющего сертификата (предварительная версия)
 
-Здесь описывается, как использовать скрипты развертывания в шаблонах Azure Resource Manager. Скрипты развертывания позволяют выполнять настраиваемые действия, которые не могут быть выполнены с помощью шаблонов Resource Manager. Например, создание самозаверяющего сертификата.  Работая с этим учебником, вы создадите шаблон для развертывания хранилища ключей Azure, а затем используете ресурс `Microsoft.Resources/deploymentScripts` в том же шаблоне для создания сертификата и добавите сертификат в хранилище ключей. Дополнительные сведения об использовании скриптов развертывания в шаблонах Azure Resource Manager см. в [этой статье](./deployment-script-template.md).
-
-> [!NOTE]
-> Сейчас скрипт развертывания находится на этапе предварительной версии. Чтобы использовать его, необходимо [зарегистрироваться для использования предварительной версии](https://aka.ms/armtemplatepreviews).
+Узнайте, как использовать скрипты развертывания в шаблонах Azure Resource Manager (ARM). Скрипты развертывания позволяют выполнять настраиваемые действия, которые не могут быть выполнены с помощью шаблонов ARM. Например, создание самозаверяющего сертификата.  Работая с этим учебником, вы создадите шаблон для развертывания хранилища ключей Azure, а затем используете ресурс `Microsoft.Resources/deploymentScripts` в том же шаблоне для создания сертификата и добавите сертификат в хранилище ключей. См. сведения об [использовании скриптов развертывания в шаблонах ARM](./deployment-script-template.md).
 
 > [!IMPORTANT]
 > Два ресурса скрипта развертывания, учетная запись хранения и экземпляр контейнера, создаются в одной группе ресурсов для выполнения сценариев и устранения неполадок. Эти ресурсы обычно удаляются службой скриптов, когда выполнение скрипта достигает конечного состояния. Плата взимается за ресурсы, пока они не будут удалены. Дополнительные сведения в разделе об [очистке ресурсов скриптов развертывания](./deployment-script-template.md#clean-up-deployment-script-resources).
@@ -43,7 +40,7 @@ ms.locfileid: "76988810"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* **[Visual Studio Code](https://code.visualstudio.com/) с расширением средств диспетчера ресурсов**. Дополнительные сведения см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](./use-vs-code-to-create-template.md) (Создание шаблонов Azure Resource Manager с помощью Visual Studio Code).
+* **[Visual Studio Code](https://code.visualstudio.com/) с расширением средств диспетчера ресурсов**. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](./use-vs-code-to-create-template.md).
 
 * **Назначаемое пользователем управляемое удостоверение с ролью участника на уровне подписки**. Это удостоверение используется для выполнения скриптов развертывания. Сведения о его создании см. в [этом разделе](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md#user-assigned-managed-identity). Идентификатор удостоверения необходим при развертывании шаблона. Требуемый формат удостоверения:
 
@@ -51,18 +48,17 @@ ms.locfileid: "76988810"
   /subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<IdentityID>
   ```
 
-  Чтобы получить идентификатор, выполните следующий скрипт PowerShell, указав в нем имя группы ресурсов и имя удостоверения.
+  Чтобы получить идентификатор, выполните следующий скрипт CLI, указав в нем имя группы ресурсов и имя удостоверения.
 
-  ```azurepowershell-interactive
-  $idGroup = Read-Host -Prompt "Enter the resource group name for the managed identity"
-  $idName = Read-Host -Prompt "Enter the name of the managed identity"
-
-  $id = (Get-AzUserAssignedIdentity -resourcegroupname $idGroup -Name idName).Id
+  ```azurecli-interactive
+  echo "Enter the Resource Group name:" &&
+  read resourceGroupName &&
+  az identity list -g $resourceGroupName
   ```
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure — это репозиторий для шаблонов Resource Manager.
+Чтобы не создавать шаблон с нуля, откройте его в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/). Шаблоны быстрого запуска Azure — это репозиторий для шаблонов ARM.
 
 В этом кратком руководстве используется шаблон [Create an Azure Key Vault and a secret](https://azure.microsoft.com/resources/templates/101-key-vault-create/) (Создание Azure Key Vault и секрета). Шаблон создает хранилище ключей, а затем добавляет секрет в это хранилище.
 
@@ -266,13 +262,13 @@ ms.locfileid: "76988810"
     * **timeout**. Укажите максимально допустимое время выполнения скрипта в [формате ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). Значение по умолчанию — **P1D**.
     * **arguments**. Укажите значения параметров. Значения разделяются пробелами.
     * **scriptContent**. Укажите содержимое скрипта. Чтобы запустить внешний скрипт, используйте вместо этого свойство **primaryScriptURI**. Дополнительные сведения об использовании внешнего скрипта см. [здесь](./deployment-script-template.md#use-external-scripts).
-        Объявление **$DeploymentScriptOutputs** требуется только при тестировании скрипта на локальном компьютере. Объявление переменной позволяет выполнять скрипт на локальном компьютере и в ресурсе deploymentScript без внесения изменений. Значение, присваиваемое $DeploymentScriptOutputs, доступно в виде выходных данных в развертываниях. Дополнительные сведения о работе с выходными данными из скриптов развертывания см. в [этом разделе](./deployment-script-template.md#work-with-outputs-from-deployment-scripts).
+        Объявление **$DeploymentScriptOutputs** требуется только при тестировании скрипта на локальном компьютере. Объявление переменной позволяет выполнять скрипт на локальном компьютере и в ресурсе deploymentScript без внесения изменений. Значение, присваиваемое $DeploymentScriptOutputs, доступно в виде выходных данных в развертываниях. Дополнительную информацию см. в разделах о работе с выходными данными скриптов развертывания [PowerShell](./deployment-script-template.md#work-with-outputs-from-powershell-script) или [CLI](./deployment-script-template.md#work-with-outputs-from-cli-script).
     * **cleanupPreference**. Укажите, в каком случае необходимо удалять ресурсы скрипта развертывания.  Значение по умолчанию — **Always**. Это означает, что ресурсы скрипта развертывания удаляются вне зависимости от конечного состояния (выполнено, сбой, отмена). В этом учебнике используется значение **OnSuccess**, чтобы вы могли просмотреть результаты выполнения скрипта.
     * **retentionInterval**. Укажите интервал, в течение которого служба будет хранить ресурсы скрипта после достижения конечного состояния. По истечении этого времени ресурсы будут удалены. Длительность основывается на шаблоне ISO 8601. В этом учебнике используется P1D, что означает один день.  Это свойство используется, если для параметра **cleanupPreference** установлено значение **OnExpiration**. Это свойство сейчас не включено.
 
     Скрипт развертывания принимает три параметра: имя хранилища ключей, имя сертификата и имя субъекта.  Он создает сертификат, а затем добавляет его в хранилище ключей.
 
-    Параметр **$DeploymentScriptOutputs** используется для хранения выходных значений.  Дополнительные сведения о работе с выходными данными из скриптов развертывания см. в [этом разделе](./deployment-script-template.md#work-with-outputs-from-deployment-scripts).
+    Параметр **$DeploymentScriptOutputs** используется для хранения выходных значений.  Дополнительные сведения см. в разделах о работе с выходными данными скриптов развертывания [PowerShell](./deployment-script-template.md#work-with-outputs-from-powershell-script) или [CLI](./deployment-script-template.md#work-with-outputs-from-cli-script).
 
     Готовый шаблон можно найти [здесь](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-keyvault.json).
 
@@ -288,35 +284,43 @@ ms.locfileid: "76988810"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Дополнительные сведения об открытии Cloud Shell и передаче файла шаблона в оболочку см. в разделе о [развертывании шаблона](./quickstart-create-templates-use-visual-studio-code.md?tabs=PowerShell#deploy-the-template) в кратком руководстве по Visual Studio Code. После этого выполните следующий скрипт PowerShell:
+1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
-```azurepowershell-interactive
-$projectName = Read-Host -Prompt "Enter a project name that is used to generate resource names"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
-$upn = Read-Host -Prompt "Enter your email address used to sign in to Azure"
-$identityId = Read-Host -Prompt "Enter the user-assigned managed identity ID"
+1. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash** (для CLI).  После переключения желательно перезагрузить оболочку.
 
-$adUserId = (Get-AzADUser -UserPrincipalName $upn).Id
-$resourceGroupName = "${projectName}rg"
-$keyVaultName = "${projectName}kv"
+    ![Файл отправки Cloud Shell на портале Azure](./media/template-tutorial-use-template-reference/azure-portal-cloud-shell-upload-file.png)
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
+1. Выберите **Отправка и скачивание файлов**, а затем **Отправить**. См. предыдущий снимок экрана.  Выберите файл, сохраненный ранее. После отправки вы можете использовать команды **ls** и **cat**, чтобы проверить отправку файла.
 
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile "$HOME/azuredeploy.json" -identityId $identityId -keyVaultName $keyVaultName -objectId $adUserId
+1. а затем выполните следующий сценарий PowerShell для его развертывания.
 
-Write-Host "Press [ENTER] to continue ..."
-```
+    ```azurepowershell-interactive
+    $projectName = Read-Host -Prompt "Enter a project name that is used to generate resource names"
+    $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+    $upn = Read-Host -Prompt "Enter your email address used to sign in to Azure"
+    $identityId = Read-Host -Prompt "Enter the user-assigned managed identity ID"
 
-Службе скрипта развертывания необходимо создать дополнительные ресурсы скрипта развертывания для его выполнения. В дополнение к фактическому времени выполнения сценария еще около одной минуты может занимать процесс подготовки и очистки.
+    $adUserId = (Get-AzADUser -UserPrincipalName $upn).Id
+    $resourceGroupName = "${projectName}rg"
+    $keyVaultName = "${projectName}kv"
 
-Сбой развертывания произошел из-за недопустимой команды: в скрипте используется **Write-Output1**. Вы получите следующее сообщение об ошибке:
+    New-AzResourceGroup -Name $resourceGroupName -Location $location
 
-```error
-The term 'Write-Output1' is not recognized as the name of a cmdlet, function, script file, or operable
-program.\nCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.\n
-```
+    New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile "$HOME/azuredeploy.json" -identityId $identityId -keyVaultName $keyVaultName -objectId $adUserId
 
-Результат выполнения скрипта развертывания сохраняется в ресурсах этого скрипта для устранения неполадок.
+    Write-Host "Press [ENTER] to continue ..."
+    ```
+
+    Службе скрипта развертывания необходимо создать дополнительные ресурсы скрипта развертывания для его выполнения. В дополнение к фактическому времени выполнения сценария еще около одной минуты может занимать процесс подготовки и очистки.
+
+    Сбой развертывания произошел из-за недопустимой команды: в скрипте используется **Write-Output1**. Вы получите следующее сообщение об ошибке:
+
+    ```error
+    The term 'Write-Output1' is not recognized as the name of a cmdlet, function, script file, or operable
+    program.\nCheck the spelling of the name, or if a path was included, verify that the path is correct and try again.\n
+    ```
+
+    Результат выполнения скрипта развертывания сохраняется в ресурсах этого скрипта для устранения неполадок.
 
 ## <a name="debug-the-failed-script"></a>Отладка невыполненного скрипта
 
@@ -348,7 +352,7 @@ program.\nCheck the spelling of the name, or if a path was included, verify that
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике вы узнали, как использовать скрипт развертывания в шаблонах Azure Resource Manager. Сведения о том, как развернуть ресурсы Azure на основе условий, см. по ссылке ниже.
+В этом руководстве описано, как использовать скрипт развертывания в шаблонах ARM. Сведения о том, как развернуть ресурсы Azure на основе условий, см. по ссылке ниже.
 
 > [!div class="nextstepaction"]
 > [Использование условий](./template-tutorial-use-conditions.md)

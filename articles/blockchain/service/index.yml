@@ -10,12 +10,12 @@ metadata:
   author: PatAltimore
   ms.author: patricka
   ms.date: 11/04/2019
-  ms.openlocfilehash: 5af8999a32682df18d1e4f1be192c2d4be628860
-  ms.sourcegitcommit: e50a39eb97a0b52ce35fd7b1cf16c7a9091d5a2a
+  ms.openlocfilehash: 216dbd52531807d471066b01151fba841df308b6
+  ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/21/2019
-  ms.locfileid: "74285074"
+  ms.lasthandoff: 04/23/2020
+  ms.locfileid: "82084980"
 landingContent:
 - title: Общие сведения о службе "Блокчейн Azure"
   linkLists:
@@ -39,6 +39,8 @@ landingContent:
       url: create-member.md
     - text: Создание участника блокчейн-сети — CLI
       url: create-member-cli.md
+    - text: Создание с помощью шаблона ARM
+      url: create-member-template.md
   - linkListType: quickstart
     links:
     - text: Подключение к сети консорциума с помощью Visual Studio Code
@@ -47,8 +49,6 @@ landingContent:
       url: connect-metamask.md
     - text: Использование Geth для подключения к узлу транзакций
       url: connect-geth.md
-    - text: Подключение к узлу транзакций с помощью Truffle
-      url: connect-truffle.md
   - linkListType: tutorial
     links:
     - text: Создание и развертывание смарт-контрактов с помощью Visual Studio Code

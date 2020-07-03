@@ -2,21 +2,20 @@
 author: erhopf
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 08/06/2019
+ms.date: 04/04/2020
 ms.author: erhopf
-ms.openlocfilehash: e1ea2a90d8eaf26d514457fbf7d4b08f9204dad3
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 096e0ec8af3d3802d662a9f7d43dbfbc04a130ad
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156674"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81275408"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=jre)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=jre)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=jre&pivots=programming-language-java).
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -47,8 +46,7 @@ ms.locfileid: "77156674"
                // Replace below with your own subscription key
                String speechSubscriptionKey = "YourSubscriptionKey";
 
-               // Replace below with your own service region (e.g., "westus", use the one of SpeechSDKParameters
-               // from here: https://aka.ms/speech/sdkregion).               
+               // Replace below with your own region identifier from here: https://aka.ms/speech/sdkregion
                String serviceRegion = "YourServiceRegion";
 
                // Replace below with your own filename.
@@ -123,7 +121,7 @@ ms.locfileid: "77156674"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](./footer.md)]
+[!INCLUDE [Speech synthesis basics](../../text-to-speech-next-steps.md)]
 
 ## <a name="see-also"></a>См. также раздел
 

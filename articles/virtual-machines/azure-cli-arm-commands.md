@@ -8,18 +8,18 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 04/18/2017
 ms.author: cynthn
-ms.openlocfilehash: 899f453ef67fd094578e946c1cdd9ca4d427bf79
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: ad213cc02f707609a837ea66b79e51c6f2a617f8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77122453"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79250885"
 ---
 # <a name="azure-classic-cli-commands"></a>Классические команды интерфейса командной строки Azure 
 
-> [!IMPORTANT]
-> В этом разделе описывается, как установить классический интерфейс командной строки Azure (Azure Classic CLI). Классический интерфейс командной строки считается нерекомендуемым, и его следует использовать только с классической моделью развертывания.
-> Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/).
+[!INCLUDE [classic-vm-deprecation](../../includes/classic-vm-deprecation.md)]
+
+В этом разделе описывается, как установить классический интерфейс командной строки Azure (Azure Classic CLI). Классический интерфейс командной строки считается нерекомендуемым, и его следует использовать только с классической моделью развертывания. Для всех остальных развертываний используйте [Azure CLI](https://docs.microsoft.com/cli/azure/).
 
 Эта статья содержит синтаксис и параметры для классических команд интерфейса командной строки Azure, которые обычно используются для создания ресурсов Azure и управления ими. Это не полный справочник, и ваша версия CLI может отображать немного иные команды или параметры. 
 
@@ -125,7 +125,7 @@ ms.locfileid: "77122453"
 
     config set <name> <value>
 
-**Задает для рабочего режима Azure CLI значение `arm` или `asm`** .
+**Задает для рабочего режима Azure CLI значение `arm` или `asm`**.
 
     config mode [options] <modename>
 
@@ -1557,7 +1557,7 @@ ms.locfileid: "77122453"
     role assignment delete [options] [objectId] [upn] [mail] [spn] [role] [scope] [resource-group] [resource-type] [resource-name]
 
 ## <a name="storage-objects"></a>Объекты хранилища
-**Команды для управления учетными записями хранилища**
+**Команды для управления учетными записями хранения**
 
     storage account list [options]
     storage account show [options] <name>

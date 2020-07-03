@@ -5,12 +5,12 @@ author: msangapu-msft
 ms.topic: article
 ms.date: 01/02/2020
 ms.author: msangapu
-ms.openlocfilehash: b2be84625035bb368784f3f423d63121c29255ad
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 9a5a38ea32d927f50fb9ddbebe3e1c3533e6fcc0
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121420"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82625329"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Обработка содержимого из службы хранилища Azure в Службе приложений на платформе Linux
 
@@ -20,12 +20,12 @@ ms.locfileid: "77121420"
 
 В этом руководство показано, как подключить службу хранилища Azure к службе приложений на платформе Linux. К преимуществам относятся защищенное содержимое, переносимость содержимого, постоянное хранилище, доступ к нескольким приложениям и несколько методов передачи.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - [Azure CLI](/cli/azure/install-azure-cli) (2.0.46 или более поздней версии).
 - Существующая [служба приложений в приложении Linux](https://docs.microsoft.com/azure/app-service/containers/).
 - [Учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account?tabs=azure-cli) ;
-- [Общая папка и каталог Azure](https://docs.microsoft.com/azure/storage/common/storage-azure-cli#create-and-manage-file-shares).
+- [Общая папка и каталог Azure](../../storage/files/storage-how-to-use-files-cli.md).
 
 
 ## <a name="limitations-of-azure-storage-with-app-service"></a>Ограничения службы хранилища Azure со службой приложений
@@ -45,7 +45,7 @@ ms.locfileid: "77121420"
 
 После создания [учетной записи хранения Azure, общей папки и каталога](#prerequisites)вы можете настроить приложение в службе хранилища Azure.
 
-Чтобы вставить учетную запись хранения в каталог, в приложении Служба приложений используйте команду [`az webapp config storage-account add`](https://docs.microsoft.com/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add). Тип хранилища может быть AzureBlob или AzureFiles. В этом примере используется AzureFiles.
+Чтобы подключить учетную запись хранения к каталогу в приложении службы приложений, используйте [`az webapp config storage-account add`](https://docs.microsoft.com/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-add) команду. Тип хранилища может быть AzureBlob или AzureFiles. В этом примере используется AzureFiles. Параметр пути подключения соответствует папке, которую вы хотите подключить из службы хранилища Azure. Если задать для него значение "/", будет подключена вся служба хранилища Azure.
 
 
 > [!CAUTION]
@@ -68,9 +68,9 @@ az webapp config storage-account list --resource-group <resource_group> --name <
 
 ## <a name="use-azure-storage-in-docker-compose"></a>Использование службы хранилища Azure в Docker Compose
 
-Службу хранилища Azure можно подключить с помощью многоконтейнерных приложений, используя пользовательский идентификатор. Чтобы просмотреть имя настраиваемого идентификатора, выполните [`az webapp config storage-account list --name <app_name> --resource-group <resource_group>`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
+Службу хранилища Azure можно подключить с помощью многоконтейнерных приложений, используя пользовательский идентификатор. Чтобы просмотреть имя настраиваемого идентификатора, выполните команду [`az webapp config storage-account list --name <app_name> --resource-group <resource_group>`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
 
-В файле *DOCKER-Compose. yml* сопоставьте параметр `volumes` для `custom-id`. Пример:
+В файле *DOCKER-Compose. yml* сопоставьте `volumes` параметр с `custom-id`. Пример:
 
 ```yaml
 wordpress:

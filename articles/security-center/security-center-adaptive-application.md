@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/23/2019
 ms.author: memildin
-ms.openlocfilehash: 862fb4f8a9dcd357148f73a729ffc7e92ba0083a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 1dc94c5ec08cc27fb1819ccc16fd766c62aad796
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75353442"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77604674"
 ---
 # <a name="adaptive-application-controls"></a>Адаптивные элементы управления приложениями
 В этом руководстве приведены сведения о настройке адаптивного элемента управления приложениями в центре безопасности Azure.
@@ -44,7 +44,7 @@ ms.locfileid: "75353442"
 
 1. На левой панели в разделе **Расширенная защита облака** выберите **Адаптивное управление приложениями**.
 
-    [Защита ![](./media/security-center-adaptive-application/security-center-adaptive-application-fig1-new.png)](./media/security-center-adaptive-application/security-center-adaptive-application-fig1-new.png#lightbox)
+    [![Защита](./media/security-center-adaptive-application/security-center-adaptive-application-fig1-new.png)](./media/security-center-adaptive-application/security-center-adaptive-application-fig1-new.png#lightbox)
 
 Откроется страница **Адаптивное управление приложениями**.
 
@@ -65,7 +65,7 @@ ms.locfileid: "75353442"
 
 1. Перейдите на вкладку **рекомендуемый** список групп с рекомендациями по управлению приложениями.
 
-   ![Рекомендуется](./media/security-center-adaptive-application/security-center-adaptive-application-fig3.png)
+   ![Рекомендуемая](./media/security-center-adaptive-application/security-center-adaptive-application-fig3.png)
 
    Этот список содержит следующие параметры:
 
@@ -76,7 +76,7 @@ ms.locfileid: "75353442"
 
 2. Выберите группу, чтобы открыть элемент **Создание правил управления приложениями**.
 
-   [![правила управления приложениями](./media/security-center-adaptive-application/security-center-adaptive-application-fig4.png)](./media/security-center-adaptive-application/security-center-adaptive-application-fig4.png#lightbox)
+   [![Правила управления приложениями](./media/security-center-adaptive-application/security-center-adaptive-application-fig4.png)](./media/security-center-adaptive-application/security-center-adaptive-application-fig4.png#lightbox)
 
 3. В разделе **Выбрать виртуальные машины** просмотрите список рекомендуемых виртуальных машин и снимите флажки рядом с теми, к которым не следует применять политику разрешения приложений. Вы увидите два списка:
 
@@ -173,12 +173,11 @@ ms.locfileid: "75353442"
  > [!NOTE]
 > Не забудьте нажать кнопку " **сохранить** " после нажатия кнопки " **переместить компьютер**". Если не нажать кнопку **сохранить**, компьютер не будет перемещен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как использовать адаптивное управление приложениями в центре безопасности Azure для список разрешений приложений, работающих в Azure и виртуальных машинах, не относящихся к Azure. Дополнительные сведения о Центре безопасности Azure см. в следующих статьях:
 
-* [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Узнайте, как управлять оповещениями и реагировать на угрозы безопасности в центре безопасности.
+* [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Узнайте, как управлять оповещениями и реагировать на угрозы безопасности в центре безопасности.
 * [Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure](security-center-monitoring.md). Узнайте, как отслеживать работоспособность ресурсов Azure.
-* [Основные сведения об оповещениях системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type). Дополнительные сведения о различных типах оповещений безопасности.
+* [Общие сведения об оповещениях системы безопасности в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-type). Дополнительные сведения о различных типах оповещений безопасности.
 * [Руководство по устранению неполадок в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-troubleshooting-guide). Узнайте, как устранять типичные неполадки в центре безопасности.
-* [Центр безопасности Azure: часто задаваемые вопросы](security-center-faq.md). Часто задаваемые вопросы об использовании этой службы.
 * [Блог по безопасности Azure](https://blogs.msdn.com/b/azuresecurity/). Записи блога, посвященные безопасности и соответствию требованиям в Azure.

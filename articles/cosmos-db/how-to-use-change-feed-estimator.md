@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 08/15/2019
 ms.author: maquaran
 ms.openlocfilehash: 0023f68400b36b9abd3b9d4a789895e79f67aa03
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70092951"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77585294"
 ---
 # <a name="use-the-change-feed-estimator"></a>Использование средства оценки канала изменений
 
@@ -58,9 +58,9 @@ ms.locfileid: "70092951"
 * [Примеры использования в GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
 * [Дополнительные примеры на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы можете продолжить знакомство с обработчиком канала изменений, перейдя к следующим статьям:
 
 * [Обработчик канала изменений в Azure Cosmos DB](change-feed-processor.md)
-* [Настройка времени запуска обработчика канала изменений](how-to-configure-change-feed-start-time.md)
+* [Время запуска обработчика канала изменений](how-to-configure-change-feed-start-time.md)

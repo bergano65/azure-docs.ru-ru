@@ -1,19 +1,18 @@
 ---
 title: Автоматическое управление устройствами в масштабе с помощью центра Интернета вещей Azure (CLI) | Документация Майкрософт
 description: Использование автоматической конфигурации центра Интернета вещей Azure для управления несколькими устройствами или модулями Интернета вещей
-author: ChrisGMsft
-manager: bruz
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 12/13/2019
-ms.author: chrisgre
-ms.openlocfilehash: 9a7e2d9874f049000dadcb3e46cccb2202b53698
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.author: robinsh
+ms.openlocfilehash: 60d0ef30a1c7d948a9e837a8bc37c76ace415545
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75429289"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82024971"
 ---
 # <a name="automatic-iot-device-and-module-management-using-the-azure-cli"></a>Автоматическое управление устройствами IoT и модулем с помощью Azure CLI
 
@@ -36,12 +35,16 @@ ms.locfileid: "75429289"
 ## <a name="cli-prerequisites"></a>Технические условия CLI
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure. 
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.24 или более поздней. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
-* [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
+
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. По крайней мере, Azure CLI версия должна быть 2.0.70 или выше. Для проверки используйте `az –-version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack. 
+
+* [Расширение IOT для Azure CLI](https://github.com/Azure/azure-cli).
+
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="implement-twins"></a>Реализация двойников
 
-Для автоматических конфигураций устройств требуется использовать двойники устройств, чтобы синхронизировать состояние между облаком и устройствами.  См. [общие сведения о двойниках устройств и их использовании в Центре Интернета вещей](iot-hub-devguide-device-twins.md).
+Для автоматических конфигураций устройств требуется использовать двойники устройств, чтобы синхронизировать состояние между облаком и устройствами.  Дополнительные сведения см. [в статье изучение и использование двойниковов устройств в центре Интернета вещей](iot-hub-devguide-device-twins.md).
 
 Для автоматической настройки модулей необходимо использовать модуль двойников для синхронизации состояния между облаком и модулями. Дополнительные сведения см. в статье сведения об [использовании модуля двойников в центре Интернета вещей](iot-hub-devguide-module-twins.md).
 
@@ -76,7 +79,7 @@ ms.locfileid: "75429289"
 }
 ```
 
-Автоматические конфигурации модулей ведут себя точно так же, но вместо `deviceContent`наследуется `moduleContent`.
+Автоматические конфигурации модулей ведут себя точно так же, но `moduleContent` вместо нее `deviceContent`нацеливание.
 
 ```json
 {
@@ -102,7 +105,7 @@ ms.locfileid: "75429289"
 }
 ```
 
-Запросы метрик для модулей также похожи на запросы для устройств, но вы можете выбрать `moduleId` из `devices.modules`. Пример. 
+Запросы метрик для модулей также похожи на запросы для устройств, но выбрано для `moduleId` из. `devices.modules` Пример: 
 
 ```json
 {
@@ -118,7 +121,7 @@ ms.locfileid: "75429289"
 
 Создайте конфигурацию с помощью следующей команды.
 
-```cli
+```azurecli
    az iot hub configuration create --config-id [configuration id] \
      --labels [labels] --content [file path] --hub-name [hub name] \
      --target-condition [target query] --priority [int] \
@@ -133,7 +136,7 @@ ms.locfileid: "75429289"
 
 * --**hub-name** — имя центра IoT, в котором будет создана конфигурация. Центр должен быть в текущей подписке. Переключитесь на нужную подписку с помощью команды `az account set -s [subscription name]`
 
-* --**Target — условие** — введите целевое условие, чтобы определить, какие устройства или модули будут нацелены на эту конфигурацию. Для автоматической настройки устройства условие основано на тегах двойникаа устройства или требуемых свойствах двойникаа устройства и должно соответствовать формату выражения. Например, `tags.environment='test'` или `properties.desired.devicemodel='4000x'`. Для автоматической настройки модуля это условие основано на тегах модуля двойника или требуемых свойствах модуля двойника. Например, `from devices.modules where tags.environment='test'` или `from devices.modules where properties.reported.chillerProperties.model='4000x'`.
+* --**Target — условие** — введите целевое условие, чтобы определить, какие устройства или модули будут нацелены на эту конфигурацию.Для автоматической настройки устройства условие основано на тегах двойникаа устройства или требуемых свойствах двойникаа устройства и должно соответствовать формату выражения.Например, `tags.environment='test'` или `properties.desired.devicemodel='4000x'`.Для автоматической настройки модуля это условие основано на тегах модуля двойника или требуемых свойствах модуля двойника. Например, `from devices.modules where tags.environment='test'` или `from devices.modules where properties.reported.chillerProperties.model='4000x'`.
 
 * --**priority** — положительные целые числа. В случае, если две или более конфигурации нацелены на одно устройство или модуль, будет применяться конфигурация с наибольшим числовым значением приоритета.
 
@@ -143,7 +146,7 @@ ms.locfileid: "75429289"
 
 Чтобы отобразить содержимое конфигурации, используйте следующую команду.
 
-```cli
+```azurecli
 az iot hub configuration show --config-id [configuration id] \
   --hub-name [hub name]
 ```
@@ -152,7 +155,7 @@ az iot hub configuration show --config-id [configuration id] \
 
 * --**hub-name** — имя центра IoT, в котором существует конфигурация. Центр должен быть в текущей подписке. Переключитесь на нужную подписку с помощью команды `az account set -s [subscription name]`
 
-Проверьте конфигурацию в командном окне. Свойство **метрики** содержит счетчик для каждой метрики, оцениваемой каждым концентратором.
+Проверьте конфигурацию в командном окне.Свойство **metrics** перечисляет количество каждой метрики, которое оценивается каждым центром.
 
 * **таржетедкаунт** — системная метрика, указывающая число двойниковов устройств или двойников модуля в центре Интернета вещей, которые соответствуют условию нацеливания.
 
@@ -162,7 +165,7 @@ az iot hub configuration show --config-id [configuration id] \
 
 Список идентификаторов устройств, идентификаторов модулей или объектов для каждой из метрик можно просмотреть с помощью следующей команды:
 
-```cli
+```azurecli
 az iot hub configuration show-metric --config-id [configuration id] \
    --metric-id [metric id] --hub-name [hub name] --metric-type [type] 
 ```
@@ -189,7 +192,7 @@ az iot hub configuration show-metric --config-id [configuration id] \
 
 Обновите конфигурацию с помощью следующей команды.
 
-```cli
+```azurecli
 az iot hub configuration update --config-id [configuration id] \
    --hub-name [hub name] --set [property1.property2='value']
 ```
@@ -212,20 +215,21 @@ az iot hub configuration update --config-id [configuration id] \
 
 Удалите конфигурацию с помощью следующей команды.
 
-```cli
+```azurecli
 az iot hub configuration delete --config-id [configuration id] \
    --hub-name [hub name] 
 ```
+
 * --**config-id** — имя существующей конфигурации в центре IoT.
 
 * --**hub-name** — имя центра IoT, в котором существует конфигурация. Центр должен быть в текущей подписке. Переключитесь на нужную подписку с помощью команды `az account set -s [subscription name]`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как настраивать и отслеживать устройства Интернета вещей в масштабе. Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
 * [Управление удостоверениями устройств Центра Интернета вещей в пакетном режиме](iot-hub-bulk-identity-mgmt.md)
-* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
+* [Метрики Центра Интернета вещей](iot-hub-metrics.md)
 * [Мониторинг операций](iot-hub-operations-monitoring.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
@@ -235,4 +239,4 @@ az iot hub configuration delete --config-id [configuration id] \
 
 Узнайте, как использовать службу подготовки устройств для Центра Интернета вещей, чтобы включить автоматическую подготовку JIT, из следующей статьи: 
 
-* [Служба подготовки устройств для Центра Интернета вещей Azure](/azure/iot-dps)
+* [Служба подготовки устройств к добавлению в Центр Интернета вещей Azure](/azure/iot-dps)

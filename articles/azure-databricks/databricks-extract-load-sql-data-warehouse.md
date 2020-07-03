@@ -1,6 +1,6 @@
 ---
 title: Учебник. Выполнение операций извлечения, преобразования и загрузки с помощью Azure Databricks
-description: В этом учебнике вы узнаете, как извлечь данные из Data Lake Storage 2-го поколения в Azure Databricks, преобразовать их, а затем загрузить в Хранилище данных SQL Azure.
+description: В этом учебнике вы узнаете, как извлечь данные из Data Lake Storage 2-го поколения в Azure Databricks, преобразовать их, а затем загрузить в Synapse Analytics.
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: jasonh
@@ -8,22 +8,22 @@ ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 01/29/2020
-ms.openlocfilehash: a505145eeba47eda9950c5a4c8221e4c9ae4b3a4
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: fa7750a6e7888b6ca13c1ec32cabee9bcf803e65
+ms.sourcegitcommit: ea006cd8e62888271b2601d5ed4ec78fb40e8427
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024081"
+ms.lasthandoff: 04/14/2020
+ms.locfileid: "81382735"
 ---
-# <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
+# <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
-В этом руководстве рассматривается выполнение операций извлечения, преобразования и загрузки данных с помощью Azure Databricks. Мы извлечем данные из Azure Data Lake Storage 2-го поколения в Azure Databricks, выполним преобразование данных в Azure Databricks, а затем загрузим преобразованные данные в Хранилище данных SQL Azure.
+В этом руководстве рассматривается выполнение операций извлечения, преобразования и загрузки данных с помощью Azure Databricks. Мы извлечем данные из Azure Data Lake Storage 2-го поколения в Azure Databricks, выполним преобразование данных в Azure Databricks, а затем загрузим преобразованные данные в Azure Synapse Analytics.
 
-Для действий, описанных в этом руководстве, используется соединитель хранилища данных SQL для Azure Databricks, позволяющий передавать данные в Azure Databricks. Этот соединитель, в свою очередь, использует хранилище BLOB-объектов Azure как временное хранилище для данных, передаваемых между кластером Azure Databricks и хранилищем данных SQL Azure.
+Для действий, описанных в этом руководстве, используется соединитель Azure Synapse для Azure Databricks, позволяющий передавать данные в Azure Databricks. Этот соединитель, в свою очередь, использует хранилище BLOB-объектов Azure как временное хранилище для данных, передаваемых между кластером Azure Databricks и Azure Synapse.
 
 На следующем рисунке показан поток в приложении.
 
-![Azure Databricks с Data Lake Store и хранилищем данных SQL](./media/databricks-extract-load-sql-data-warehouse/databricks-extract-transform-load-sql-datawarehouse.png "Azure Databricks с Data Lake Store и хранилищем данных SQL")
+![Azure Databricks с Data Lake Store и Azure Synapse](./media/databricks-extract-load-sql-data-warehouse/databricks-extract-transform-load-sql-datawarehouse.png "Azure Databricks с Data Lake Store и Azure Synapse")
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -35,9 +35,9 @@ ms.locfileid: "77024081"
 > * Создание субъекта-службы.
 > * Извлечение данных из учетной записи Azure Data Lake Storage 2-го поколения.
 > * преобразование данных в Azure Databricks;
-> * Загрузка данных в хранилище данных SQL Azure.
+> * Загрузка данных в Azure Synapse.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 > [!Note]
 > Инструкции из этого руководство нельзя выполнять с **бесплатной пробной версией подписки**.
@@ -47,9 +47,9 @@ ms.locfileid: "77024081"
 
 Прежде чем начать работу с этим руководством, выполните следующие задачи:
 
-* Создайте хранилище данных SQL Azure, создайте правило брандмауэра на уровне сервера и подключитесь к серверу с правами администратора. См. [Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](../sql-data-warehouse/create-data-warehouse-portal.md).
+* Создайте Azure Synapse, создайте правило брандмауэра на уровне сервера и подключитесь к серверу с правами администратора. См. [Краткое руководство. Создание пула SQL Synapse и отправка в него запросов, используя портал Azure](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md).
 
-* Создайте главный ключ для хранилища данных SQL Azure. Ознакомьтесь со статьей о [создании главного ключа базы данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-a-database-master-key).
+* Создайте главный ключ для Azure Synapse. Ознакомьтесь со статьей о [создании главного ключа базы данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/create-a-database-master-key).
 
 * Создайте учетную запись хранилища BLOB-объектов Azure, содержащую контейнер. Также получите ключ для доступа к учетной записи хранения. См. [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
 
@@ -59,11 +59,11 @@ ms.locfileid: "77024081"
 
    Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
-   * При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **Участник для данных BLOB-объектов хранилища** в области учетной записи ADLS 2-го поколения. Если вы назначите роль родительской группе ресурсов или подписке, вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
+   * При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-a-role-to-the-application) этой статьи, не забудьте назначить субъекту-службе роль **Участник для данных BLOB-объектов хранилища** в области учетной записи ADLS 2-го поколения. Если вы назначите роль родительской группе ресурсов или подписке, вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
 
       Если вы предпочитаете использовать список управления доступом (ACL), чтобы связать субъект-службу с определенным файлом или каталогом, ознакомьтесь со статьей [Access control in Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-access-control.md) (Управление доступом в Azure Data Lake Storage 2-го поколения).
 
-   * При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте значения идентификатора клиента, идентификатора приложения и секрета в текстовый файл. Они вам скоро понадобятся.
+   * При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте значения идентификатора клиента, идентификатора приложения и секрета в текстовый файл.
 
 * Войдите на [портал Azure](https://portal.azure.com/).
 
@@ -73,7 +73,7 @@ ms.locfileid: "77024081"
 
    Прежде чем начать, вам понадобится собрать такую информацию:
 
-   :heavy_check_mark:  Имя базы данных, имя сервера базы данных, имя пользователя и пароль Хранилища данных SQL Azure.
+   :heavy_check_mark:  Имя базы данных, имя сервера базы данных, имя пользователя и пароль Azure Synapse.
 
    :heavy_check_mark:  Ключ доступа к учетной записи хранения больших двоичных объектов.
 
@@ -155,13 +155,13 @@ ms.locfileid: "77024081"
 
    ```scala
    val appID = "<appID>"
-   val password = "<password>"
+   val secret = "<secret>"
    val tenantID = "<tenant-id>"
 
    spark.conf.set("fs.azure.account.auth.type", "OAuth")
    spark.conf.set("fs.azure.account.oauth.provider.type", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
    spark.conf.set("fs.azure.account.oauth2.client.id", "<appID>")
-   spark.conf.set("fs.azure.account.oauth2.client.secret", "<password>")
+   spark.conf.set("fs.azure.account.oauth2.client.secret", "<secret>")
    spark.conf.set("fs.azure.account.oauth2.client.endpoint", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
    ```
@@ -227,7 +227,7 @@ ms.locfileid: "77024081"
     ```
    Должен отобразиться результат, аналогичный приведенному ниже фрагменту кода.
 
-   ```bash
+   ```output
    +---------------------+---------+---------+------+-------------+----------+---------+-------+--------------------+------+--------+-------------+---------+--------------------+------+-------------+------+
    |               artist|     auth|firstName|gender|itemInSession|  lastName|   length|  level|            location|method|    page| registration|sessionId|                song|status|           ts|userId|
    +---------------------+---------+---------+------+-------------+----------+---------+-------+--------------------+------+--------+-------------+---------+--------------------+------+-------------+------+
@@ -253,7 +253,7 @@ ms.locfileid: "77024081"
 
    Выходные данные должны выглядеть так, как показано в следующем фрагменте кода:
 
-   ```bash
+   ```output
    +---------+----------+------+--------------------+-----+
    |firstname|  lastname|gender|            location|level|
    +---------+----------+------+--------------------+-----+
@@ -289,7 +289,7 @@ ms.locfileid: "77024081"
 
    Выходные данные должны выглядеть так, как показано в следующем фрагменте кода.
 
-   ```bash
+   ```output
    +---------+----------+------+--------------------+-----------------+
    |firstname|  lastname|gender|            location|subscription_type|
    +---------+----------+------+--------------------+-----------------+
@@ -316,11 +316,11 @@ ms.locfileid: "77024081"
    +---------+----------+------+--------------------+-----------------+
    ```
 
-## <a name="load-data-into-azure-sql-data-warehouse"></a>Загрузка данных в хранилище данных Azure SQL
+## <a name="load-data-into-azure-synapse"></a>Загрузка данных в Azure Synapse
 
-В этом разделе преобразованные данные отправляются в хранилище данных SQL Azure. С помощью соединителя Хранилища данных SQL Azure для Azure Databricks можно напрямую отправить кадр данных в виде таблицы в хранилище данных SQL.
+В этом разделе преобразованные данные отправляются в Azure Synapse. С помощью соединителя Azure Synapse для Azure Databricks кадр данных можно напрямую отправить в виде таблицы в пул Spark Synapse.
 
-Как упоминалось ранее, соединитель Хранилища данных SQL использует хранилище BLOB-объектов Azure в качестве временного хранилища для передачи данных между Azure Databricks и Хранилищем данных SQL Azure. Таким образом сначала нужно предоставить конфигурацию для подключения к учетной записи хранения. Вы уже должны были создать учетную запись, выполняя предварительные требования для этой статьи.
+Как упоминалось ранее, соединитель Azure Synapse использует хранилище BLOB-объектов Azure в качестве временного хранилища для передачи данных между Azure Databricks и Azure Synapse. Таким образом сначала нужно предоставить конфигурацию для подключения к учетной записи хранения. Вы уже должны были создать учетную запись, выполняя предварительные требования для этой статьи.
 
 1. Предоставьте конфигурацию для получения доступа к учетной записи хранения Azure из Azure Databricks.
 
@@ -330,7 +330,7 @@ ms.locfileid: "77024081"
    val blobAccessKey =  "<access-key>"
    ```
 
-2. Укажите временную папку, которая будет использоваться при перемещении данных между Azure Databricks и Хранилищем данных SQL Azure.
+2. Укажите временную папку, которая будет использоваться при перемещении данных между Azure Databricks и Azure Synapse.
 
    ```scala
    val tempDir = "wasbs://" + blobContainer + "@" + blobStorage +"/tempDirs"
@@ -343,10 +343,10 @@ ms.locfileid: "77024081"
    sc.hadoopConfiguration.set(acntInfo, blobAccessKey)
    ```
 
-4. Укажите значения для подключения к экземпляру хранилища данных SQL Azure. Вы должны были создать хранилище данных SQL, выполняя требования для этой статьи. Используйте полное имя сервера для **dwServer**. Например, `<servername>.database.windows.net`.
+4. Укажите значения для подключения к экземпляру Azure Synapse. В качестве необходимого компонента следует создать службу Azure Synapse Analytics. Используйте полное имя сервера для **dwServer**. Например, `<servername>.database.windows.net`.
 
    ```scala
-   //SQL Data Warehouse related settings
+   //Azure Synapse related settings
    val dwDatabase = "<database-name>"
    val dwServer = "<database-server-name>"
    val dwUser = "<user-name>"
@@ -357,7 +357,7 @@ ms.locfileid: "77024081"
    val sqlDwUrlSmall = "jdbc:sqlserver://" + dwServer + ":" + dwJdbcPort + ";database=" + dwDatabase + ";user=" + dwUser+";password=" + dwPass
    ```
 
-5. Запустите следующий фрагмент кода, чтобы загрузить преобразованный кадр данных **renamedColumnsDF** в качестве таблицы в хранилище данных SQL. Этот фрагмент кода создает таблицу с именем **SampleTable** в базе данных SQL.
+5. Выполните следующий фрагмент кода, чтобы загрузить преобразованный кадр данных **renamedColumnsDF** в качестве таблицы в Azure Synapse. Этот фрагмент кода создает таблицу с именем **SampleTable** в базе данных SQL.
 
    ```scala
    spark.conf.set(
@@ -368,9 +368,9 @@ ms.locfileid: "77024081"
    ```
 
    > [!NOTE]
-   > В этом примере используется флаг `forward_spark_azure_storage_credentials`, который вызывает Хранилище данных SQL для доступа к данным из хранилища BLOB-объектов с помощью ключа доступа. Это единственный поддерживаемый способ проверки подлинности.
+   > В этом примере используется флаг `forward_spark_azure_storage_credentials`, который вызывает Azure Synapse для доступа к данным из хранилища BLOB-объектов с помощью ключа доступа. Это единственный поддерживаемый способ проверки подлинности.
    >
-   > Если для хранилища BLOB-объектов Azure нельзя выбирать виртуальные сети, Хранилище данных SQL запросит [Управляемое удостоверение службы, а не ключи доступа](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). В таком случае вы получите ошибку с сообщением о том, что у вызывающей стороны нет прав на выполнение этой операции.
+   > Если для хранилища BLOB-объектов Azure нельзя выбирать виртуальные сети, Azure Synapse запросит [Управляемое удостоверение службы, а не ключи доступа](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). В таком случае вы получите ошибку с сообщением о том, что у вызывающей стороны нет прав на выполнение этой операции.
 
 6. Подключитесь к базе данных SQL и убедитесь, что вы видите базу данных **SampleTable**.
 
@@ -398,7 +398,7 @@ ms.locfileid: "77024081"
 > * Создание записной книжки в Azure Databricks.
 > * Извлечение данных из учетной записи Data Lake Storage 2-го поколения.
 > * Преобразование данных в Azure Databricks.
-> * Загрузка данных в хранилище данных Azure SQL
+> * Загрузка данных в Azure Synapse
 
 Перейдите к следующему руководству, чтобы узнать о потоковой передачи данных в реальном времени в Azure Databricks с помощью Центров событий Azure.
 

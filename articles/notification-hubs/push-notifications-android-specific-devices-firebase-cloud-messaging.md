@@ -1,5 +1,5 @@
 ---
-title: Отправка push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging | Документация Майкрософт
+title: Отправка push-уведомлений на конкретные устройства с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging | Документация Майкрософт
 description: Узнайте, как использовать Центры уведомлений Azure и Google Firebase Cloud Messaging (FCM) для отправки push-уведомлений на конкретные устройства Android.
 services: notification-hubs
 documentationcenter: android
@@ -17,14 +17,14 @@ ms.date: 04/30/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/30/2019
-ms.openlocfilehash: 1d0825fcfbcf10aaebc320a5c7cbbf2dd8c13856
-ms.sourcegitcommit: 7df70220062f1f09738f113f860fad7ab5736e88
+ms.openlocfilehash: b7ee3afc2e8b9958a868c8c117262d2017c9b600
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213340"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80126877"
 ---
-# <a name="tutorial-push-notifications-to-specific-android-devices-using-azure-notification-hubs-and-google-firebase-cloud-messaging-fcm"></a>Руководство по Отправка push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Firebase Cloud Messaging (FCM)
+# <a name="tutorial-send-notifications-to-specific-devices-using-notification-hubs-and-google-firebase-cloud-messaging"></a>Руководство по Отправка push-уведомлений на конкретные устройства с помощью Центров уведомлений и Google Firebase Cloud Messaging
 
 [!INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 
@@ -326,12 +326,12 @@ ms.locfileid: "71213340"
 
     ![Уведомления о технологических новостях](./media/notification-hubs-aspnet-backend-android-breaking-news/technolgy-news-notification.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как рассылать широковещательные уведомления на конкретные устройства Android, зарегистрированные для получения уведомлений по категориям. Сведения о том, как отправлять push-уведомления конкретным пользователям, вы найдете в следующем руководстве:
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений конкретным адресатам](push-notifications-android-specific-users-firebase-cloud-messaging.md).
+>[Отправка push-уведомлений определенным пользователям](push-notifications-android-specific-users-firebase-cloud-messaging.md)
 
 <!-- Images. -->
 [A1]: ./media/notification-hubs-aspnet-backend-android-breaking-news/android-breaking-news1.PNG

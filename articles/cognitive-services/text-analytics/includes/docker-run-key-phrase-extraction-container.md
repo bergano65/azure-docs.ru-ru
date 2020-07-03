@@ -3,18 +3,18 @@ title: Пример запуска контейнера команды запу�
 titleSuffix: Azure Cognitive Services
 description: Команда DOCKER Run для контейнера извлечение ключевых фраз
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/12/2019
-ms.author: dapine
-ms.openlocfilehash: b8c3bdfc05e855139b595cd0ba7bd723cdeaee45
-ms.sourcegitcommit: fbea2708aab06c19524583f7fbdf35e73274f657
+ms.date: 04/29/2020
+ms.author: aahi
+ms.openlocfilehash: 7c7344b7cc9253ef761061b769644a363492d4bd
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70966781"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83588420"
 ---
 Чтобы запустить контейнер *Извлечение ключевых фраз* , выполните следующую `docker run` команду.
 

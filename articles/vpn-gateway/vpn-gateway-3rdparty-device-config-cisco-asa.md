@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/19/2018
 ms.author: yushwang
 ms.openlocfilehash: 96e5c26ea7b5f1baa33fd8830491ee3aa1e60221
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75778088"
 ---
 # <a name="sample-configuration-cisco-asa-device-ikev2no-bgp"></a>Пример конфигурации. Устройство Cisco ASA (IKEv2/без BGP)
@@ -53,7 +53,7 @@ ms.locfileid: "75778088"
 ### <a name="virtual-network-and-vpn-gateway-information"></a>Сведения о виртуальной сети и VPN-шлюзе
 В этом разделе перечислены параметры для примера.
 
-| **Параметр**                | **Value**                    |
+| **Параметр**                | **Значение**                    |
 | ---                          | ---                          |
 | Префиксы адресов виртуальной сети        | 10.11.0.0/16;<br>10.12.0.0/16 |
 | IP-адрес VPN-шлюза Azure         | Azure_Gateway_Public_IP;      |
@@ -70,7 +70,7 @@ ms.locfileid: "75778088"
 ### <a name="ipsecike-policy-and-parameters"></a>Политика и параметры IPsec/IKE
 Следующая таблица содержит список алгоритмов и параметров IPsec/IKE, используемых в этом примере. По спецификации VPN-устройства проверьте алгоритмы, которые поддерживаются моделями VPN-устройства и версиями встроенного ПО.
 
-| **IPsec/IKEv2**  | **Value**                            |
+| **IPsec/IKEv2**  | **Значение**                            |
 | ---              | ---                                  |
 | Шифрование IKEv2 | AES256                               |
 | Проверка целостности IKEv2  | SHA384                               |
@@ -111,13 +111,13 @@ ms.locfileid: "75778088"
 * Обеспечьте уникальность всех имен и номеров политики устройства.
 * Убедитесь, что на устройстве поддерживаются алгоритмы шифрования.
 * Замените следующие **значения заполнителей** фактическими значениями для вашей конфигурации:
-  - имя внешнего интерфейса: **outside**;
-  - **Azure_Gateway_Public_IP**;
-  - **OnPrem_Device_Public_IP**;
-  - IKE: **Pre_Shared_Key**;
+  - Внешнее имя интерфейса: **вне**
+  - **Azure_Gateway_Public_IP**
+  - **OnPrem_Device_Public_IP;**
+  - IKE: **Pre_Shared_Key**
   - имена виртуальной сети и шлюза локальной сети: **VNetName** и **LNGName**;
   - **префиксы** адресов виртуальной сети и локальной сети;
-  - правильные **маски сети**.
+  - Правильный **маски сети**
 
 #### <a name="sample-script"></a>Пример скрипта
 
@@ -300,5 +300,5 @@ sysopt connection tcpmss 1350
     show run tunnel-group
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Инструкции по настройке распределенных подключений (локальных и между виртуальными сетями) с конфигурацией "активный — активный" см. в статье [Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure](vpn-gateway-activeactive-rm-powershell.md).

@@ -1,18 +1,18 @@
 ---
 title: Все о DevOps с помощью центра приложений Visual Studio и служб Azure
 description: Узнайте все о DevOps в разработке мобильных приложений.
-author: elamalani
+author: codemillmatt
 ms.assetid: 12a8a079-9b3c-4faf-2323-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: a501eb8426dd31f1ce63bece132c1065e277b54e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: 1c87dc01d6fda5032556c175218d9aea46bed495
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453169"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80240893"
 ---
 # <a name="what-is-devops"></a>Что такое DevOps?
 Слово «DevOps» поступает из комбинации «разработки» и «операций». DevOps подчеркивает важность взаимодействия и сотрудничества между разработчиками программного обеспечения и рабочими ИТ-специалистами, одновременно автоматизируя развертывание изменений программного обеспечения и инфраструктуры. DevOps фокусируется на внедрении гибких и экономичных методологий и автоматизации повторяющихся задач. Цель DevOps — своевременные и успешные выпуски приложений.

@@ -14,27 +14,27 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 02/12/2020
 ms.author: shvija
-ms.openlocfilehash: 51b69e8b7f6c980fd851cdf3e60ecfe0ade29e71
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 0b20c73ed0590f3afc19db43b4b55dd3ff6bde8e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77187349"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79453876"
 ---
 # <a name="create-a-namespace-with-event-hub-and-enable-capture-using-a-template"></a>Создание пространства имен с концентратором событий и включение записи с помощью шаблона
 
-Из этой статьи вы узнаете, как с помощью шаблона Azure Resource Manager создать пространство имен [Центров событий](event-hubs-what-is-event-hubs.md) с одним экземпляром концентратора событий и включить для него [функцию "Сбор"](event-hubs-capture-overview.md). Здесь вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
+В этой статье показано, как использовать шаблон Azure Resource Manager, который создает пространство имен [концентраторов событий](event-hubs-what-is-event-hubs.md) с одним экземпляром концентратора событий, а также включает [функцию записи](event-hubs-capture-overview.md) в концентраторе событий. Здесь вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
 
 В этой статье также показано, как настроить запись событий в хранилище BLOB-объектов Azure или Azure Data Lake Store в зависимости от выбранного назначения.
 
-Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager][Authoring Azure Resource Manager templates]. Синтаксис и свойства JSON, используемые в шаблоне, см. в статье о [типах ресурсов Microsoft.EventHub](/azure/templates/microsoft.eventhub/allversions).
+Дополнительные сведения о создании шаблонов см. в разделе [authoring Azure Resource Manager Templates][Authoring Azure Resource Manager templates]. Синтаксис и свойства JSON, используемые в шаблоне, см. в статье о [типах ресурсов Microsoft.EventHub](/azure/templates/microsoft.eventhub/allversions).
 
-Дополнительные сведения о шаблонах и методиках соглашения об именовании ресурсов Azure см. в статье [соглашения об именовании ресурсов Azure][Azure Resources naming conventions].
+Дополнительные сведения о шаблонах и рекомендациях по соглашениям об именовании ресурсов Azure см. в статье [Naming conventions][Azure Resources naming conventions] (Соглашения об именовании).
 
 Полные шаблоны доступны на сайте GitHub по следующим ссылкам:
 
-- [Использование концентратора событий и включение записи в шаблон хранилища][Event Hub and enable Capture to Storage template] 
-- [Использование концентратора событий и включение записи в шаблон Azure Data Lake Store][Event Hub and enable Capture to Azure Data Lake Store template]
+- [шаблон для развертывания концентратора событий и включения записи в службу хранилища][Event Hub and enable Capture to Storage template]; 
+- [шаблон для развертывания концентратора событий и включения записи в Azure Data Lake Store][Event Hub and enable Capture to Azure Data Lake Store template].
 
 > [!NOTE]
 > Чтобы узнать о новых шаблонах, посетите коллекцию [Шаблоны быстрого запуска Azure][Azure Quickstart Templates] и выполните поиск по запросу "Центры событий".
@@ -414,20 +414,16 @@ New-AzResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -Templa
 Хранилище BLOB-объектов Azure в качестве места назначения:
 
 ```azurecli
-azure config mode arm
-
-azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/azuredeploy.json][]
+az group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/azuredeploy.json][]
 ```
 
 Azure Data Lake Store в качестве места назначения:
 
 ```azurecli
-azure config mode arm
-
-azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture-for-adls/azuredeploy.json][]
+az group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture-for-adls/azuredeploy.json][]
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Функцию "Сбор" в Центрах событий можно включить с помощью [портала Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Включение функции "Сбор" в Центрах событий с помощью портала Azure](event-hubs-capture-enable-through-portal.md).
 
@@ -435,7 +431,7 @@ azure group deployment create \<my-resource-group\> \<my-deployment-name\> --tem
 
 * [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
-* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
+* [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
 
 [Authoring Azure Resource Manager templates]: ../azure-resource-manager/templates/template-syntax.md
 [Azure Quickstart Templates]:  https://azure.microsoft.com/documentation/templates/?term=event+hubs

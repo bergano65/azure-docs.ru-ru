@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с TimeLive | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с TimeLive | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TimeLive.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: a3f1e74b67d30fc5d0b994093f159de0cc833628
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67088588"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-timelive"></a>Руководство по Интеграция Azure Active Directory с TimeLive
+# <a name="tutorial-azure-active-directory-integration-with-timelive"></a>Руководство по интеграции Azure Active Directory с TimeLive
 
 В этом руководстве описано, как интегрировать TimeLive с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением TimeLive обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67088588"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TimeLive, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка TimeLive с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,7 +107,7 @@ ms.locfileid: "67088588"
 
     ![Сведения о домене и URL-адресах единого входа приложения TimeLive](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domainname>.livetecs.com/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domainname>.livetecs.com/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<domainname>.livetecs.com/`.
 
@@ -122,7 +122,7 @@ ms.locfileid: "67088588"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -140,7 +140,7 @@ ms.locfileid: "67088588"
     
     ![Конфигурация TimeLive](./media/timelive-tutorial/configure2.png)
 
-    a. Выберите вкладку **Security** (Безопасность).
+    а. Выберите вкладку **Security** (Безопасность).
 
     b. Установите флажок **Enable Single Sign On (SSO)** (Разрешить единый вход).
 
@@ -148,9 +148,9 @@ ms.locfileid: "67088588"
 
     d. В текстовое поле **SAML SSO URL** (URL-адрес единого входа SAML) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
-    д. В текстовое поле **Remote logout URL** (URL-адрес удаленного выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    д) В текстовое поле **Remote logout URL** (URL-адрес удаленного выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
-    Е. Откройте в Блокноте скачанный с портала Azure **сертификат в кодировке Base-64**, скопируйте его содержимое, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
+    е) Откройте в Блокноте скачанный с портала Azure **сертификат в кодировке Base-64**, скопируйте его содержимое, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
 
     ж. Нажмите кнопку **Обновить**.
 
@@ -220,5 +220,5 @@ ms.locfileid: "67088588"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

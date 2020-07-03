@@ -10,18 +10,18 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 01/07/2020
+ms.date: 04/20/2020
 ms.author: juliako
-ms.openlocfilehash: f1387273f9736fea70682177d5d48dc2f141bbad
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: d78390aac51ea6fa70e1285b15dcc7ade74434ee
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76933861"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124590"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Заметки о выпуске индексатора видео служб мультимедиа Azure
 
->Получите уведомления о том, когда следует повторно посетить эту страницу для получения обновлений путем копирования и вставления этого URL-адреса: `https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+Video+Indexer+release+notes%22&locale=en-us` в средство чтения канала RSS.
+>Получите уведомления о том, когда следует повторно посетить эту страницу для получения обновлений путем копирования и вставления этого URL-адреса `https://docs.microsoft.com/api/search/rss?search=%22Azure+Media+Services+Video+Indexer+release+notes%22&locale=en-us` в средство чтения канала RSS.
 
 Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены такие сведения:
 
@@ -30,11 +30,50 @@ ms.locfileid: "76933861"
 * Исправления ошибок
 * Нерекомендуемые функции.
 
+## <a name="april-2020"></a>Апрель 2020 г.
+
+### <a name="new-widget-parameters-capabilities"></a>Новые возможности параметров мини-приложения
+
+Мини-приложение **Insights** содержит новые параметры: `language` и `control` .
+
+В мини-приложении **проигрывателя** есть новый `locale` параметр. `locale`И параметры, и `language` управляют языком проигрывателя.
+
+Дополнительные сведения см. в разделе [типы мини](video-indexer-embed-widgets.md#widget-types) -приложений. 
+
+### <a name="new-player-skin"></a>Создать обложку игрока
+
+Новая обложка игрока, запущенная с обновленным дизайном.
+
+### <a name="prepare-for-upcoming-changes"></a>Подготовка к предстоящим изменениям
+
+* Сейчас следующие API возвращают объект Account:
+
+    * [Создание с оплатой учетной записью](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Create-Paid-Account)
+    * [Получение учетной записи](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Account)
+    * [Get-Accounts-Authorization](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Accounts-Authorization)
+    * [Get-Accounts-with-Token](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Accounts-With-Token)
+ 
+    Объект Account содержит поле, `Url` указывающее на расположение [веб-сайта индексатора видео](https://www.videoindexer.ai/).
+Для платных счетов `Url` поле в настоящий момент указывает на внутренний URL-адрес, а не на общедоступный веб-сайт.
+В ближайшие недели мы изменим его и возвращаем URL-адрес [веб-сайта индексатора видео](https://www.videoindexer.ai/) для всех учетных записей (пробная и платная).
+
+    Не используйте внутренние URL-адреса. Вы должны использовать [общедоступные API индексатора видео](https://api-portal.videoindexer.ai/).
+* Если вы внедряет в приложения URL-адреса индексатора видео, а URL-адреса не указывают на [веб-сайт индексатора видео](https://www.videoindexer.ai/) или конечную точку API индексатора видео ( `https://api.videoindexer.ai` ), а не в региональную конечную точку (например, `https://wus2.videoindexer.ai` ), создайте URL-адреса заново.
+
+   Это можно сделать одним из следующих:
+
+    * Замена URL-адреса URL-адресом, указывающим на API мини-приложения индексатора видео (например, Мини-приложение [Insights](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Video-Insights-Widget))
+    * Использование веб-сайта индексатора видео для создания нового внедренного URL-адреса:
+         
+         Нажмите кнопку " **Воспроизведение** ", чтобы перейти на страницу вашего видео — > щелкните " ** &lt; / &gt; внедрить** ", > скопировать URL-адрес в приложение:
+   
+    Региональные URL-адреса не поддерживаются и будут заблокированы в ближайшие недели.
+
 ## <a name="january-2020"></a>Январь 2020 г.
  
 ### <a name="custom-language-support-for-additional-languages"></a>Поддержка пользовательского языка для дополнительных языков
 
-Индексатор видео теперь поддерживает пользовательские языковые модели для `ar-SY`, `en-UK`и `en-AU` (только API).
+Индексатор видео теперь поддерживает пользовательские языковые модели для `ar-SY` , `en-UK` и `en-AU` (только для API).
  
 ### <a name="delete-account-timeframe-action-update"></a>Обновление действия временных рамок для удаления учетной записи
 
@@ -42,11 +81,11 @@ ms.locfileid: "76933861"
  
 ### <a name="new-video-indexer-github-repository"></a>Репозиторий нового индексатора видео GitHub
 
-Новый индексатор видео GitHub с различными проектами, руководства по началу работы и примеры кода теперь доступны: https://github.com/Azure-Samples/media-services-video-indexer
+Новый индексатор видео GitHub с различными проектами, руководства по началу работы и примеры кода теперь доступны:https://github.com/Azure-Samples/media-services-video-indexer
  
 ### <a name="swagger-update"></a>Обновление Swagger
 
-Унифицированная **Проверка подлинности** и **операции** индексатора видео в одной [OpenAPIной спецификации индексатора видео (Swagger)](https://api-portal.videoindexer.ai/docs/services/Operations/export?DocumentFormat=OpenApiJson). Девелперс может найти API на [портале разработчика индексатора видео](https://api-portal.videoindexer.ai/).
+Унифицированная **Проверка подлинности** и **операции** индексатора видео в одной [OpenAPIной спецификации индексатора видео (Swagger)](https://api-portal.videoindexer.ai/docs/services/Operations/export?DocumentFormat=OpenApiJson). Разработчики могут найти API на [портале разработчика индексатора видео](https://api-portal.videoindexer.ai/).
 
 ## <a name="december-2019"></a>Декабрь 2019 г.
 
@@ -82,13 +121,13 @@ ms.locfileid: "76933861"
 
 ### <a name="error-handling-improvement"></a>Улучшение обработки ошибок
 
-Код состояния 409 будет возвращен из статьи [повторный индексирование видео](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Re-Index-Video? https://api-portal.videoindexer.ai/docs/services/Operations/operations/Re-Index-Video?) и [обновление API индекса видео](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Video-Index?) в случае, если видео активно индексируется, чтобы предотвратить переопределение текущих изменений при повторном индексировании.
+Код состояния 409 будет возвращен из статьи [повторный индексирование видео](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Re-Index-Video?https://api-portal.videoindexer.ai/docs/services/Operations/operations/Re-Index-Video?) и [обновление API индекса видео](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Update-Video-Index?) в случае, если видео активно индексируется, чтобы предотвратить переопределение текущих изменений при повторном индексировании.
 
 ## <a name="november-2019"></a>Ноябрь 2019 г.
  
 * Поддержка пользовательских языковых моделей на корейском языке
 
-    Индексатор видео теперь поддерживает пользовательские языковые модели на корейском языке (`ko-KR`) как в API, так и на портале. 
+    Индексатор видео теперь поддерживает пользовательские языковые модели в корейском языке ( `ko-KR` ) как в API, так и на портале. 
 * Новые языки, поддерживаемые для преобразования речи в текст (САМОНАСТРАИВАЮЩИХСЯ ПОРОГОВЫХ значений)
 
     API-интерфейсы индексатора видео теперь поддерживают САМОНАСТРАИВАЮЩИХСЯ ПОРОГОВЫХ значений в арабском Левантине (AR-SY), английском Великобритании (EN-GB) и диалекте English Австралии (en-AU).

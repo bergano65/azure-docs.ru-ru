@@ -10,33 +10,33 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 10/25/2019
-  ms.openlocfilehash: 416d4a1eee6f3fe89fbe697bda896b30c8441756
-  ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+  ms.openlocfilehash: 31ef06104f57fd2ec1530c621bceab899921b8f8
+  ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/05/2020
-  ms.locfileid: "77020817"
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82024648"
 landingContent:
 - title: Создание решений для розничной торговли
   linkLists:
   - linkListType: get-started
     links:
     - text: Решения Azure IoT Central для розничной торговли
-      url: overview-iot-central-retail-pnp.md
+      url: overview-iot-central-retail.md
   - linkListType: tutorial
     links:
     - text: 1. Создание приложения для розничной торговли
-      url: tutorial-in-store-analytics-create-app-pnp.md
+      url: tutorial-in-store-analytics-create-app.md
     - text: 2. Настройка панели мониторинга оператора
-      url: tutorial-in-store-analytics-customize-dashboard-pnp.md
+      url: tutorial-in-store-analytics-customize-dashboard.md
     - text: 3. Экспорт данных и визуализация аналитических сведений
-      url: tutorial-in-store-analytics-export-data-visualize-insights-pnp.md
+      url: tutorial-in-store-analytics-export-data-visualize-insights.md
     - text: Создание приложения для интеллектуального управления запасами
-      url: tutorial-iot-central-smart-inventory-management-pnp.md
+      url: tutorial-iot-central-smart-inventory-management.md
     - text: Создание приложения для интеллектуальной логистики
-      url: tutorial-iot-central-connected-logistics-pnp.md
+      url: tutorial-iot-central-connected-logistics.md
     - text: Создание приложения для цифрового центра дистрибуции
-      url: tutorial-iot-central-digital-distribution-center-pnp.md
+      url: tutorial-iot-central-digital-distribution-center.md
   - linkListType: how-to-guide
     links:
     - text: Подключение Rigado Cascade 500
@@ -47,6 +47,8 @@ landingContent:
     links:
     - text: Настройка шаблона устройства
       url: ../core/howto-set-up-template.md
+    - text: Подключение устройства
+      url: ../core/tutorial-connect-device-nodejs.md
     - text: Подключение устройства IoT Plug and Play (предварительная версия)
       url: ../core/tutorial-connect-pnp-device.md
   - linkListType: how-to-guide

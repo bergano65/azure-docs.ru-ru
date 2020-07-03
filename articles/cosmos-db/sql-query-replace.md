@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 2cb7d82efd010fd7c3395a4f6a9217370d9e5779
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 758ac13530752df481d27e7e253f025f5c8d6430
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349581"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302208"
 ---
 # <a name="replace-azure-cosmos-db"></a>Replace (Azure Cosmos DB)
  Заменяет все вхождения указанного строкового значения другим строковым значением.  
@@ -26,7 +26,7 @@ REPLACE(<str_expr1>, <str_expr2>, <str_expr3>)
 ## <a name="arguments"></a>Аргументы
   
 *str_expr1*  
-   Строковое выражение для поиска.  
+   Строковое выражение, в котором выполняется поиск.  
   
 *str_expr2*  
    Строковое выражение, которое должно быть найдено.  
@@ -34,7 +34,7 @@ REPLACE(<str_expr1>, <str_expr2>, <str_expr3>)
 *str_expr3*  
    Строковое выражение для замены вхождений *str_expr2* в *str_expr1*.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает строковое выражение.  
   
@@ -43,7 +43,7 @@ REPLACE(<str_expr1>, <str_expr2>, <str_expr3>)
   В следующем примере показано, как использовать `REPLACE` в запросе.  
   
 ```sql
-SELECT REPLACE("This is a Test", "Test", "desk") AS replace 
+SELECT REPLACE("This is a Test", "Test", "desk") AS replace
 ```  
   
  Результирующий набор:  
@@ -52,8 +52,12 @@ SELECT REPLACE("This is a Test", "Test", "desk") AS replace
 [{"replace": "This is a desk"}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

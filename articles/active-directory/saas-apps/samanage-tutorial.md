@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Samanage | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Samanage | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Samanage.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 741efbae84e18c811beb6c0579c1949c5ddf619c
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160117"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-samanage"></a>Руководство по Интеграция Azure Active Directory с Samanage
+# <a name="tutorial-azure-active-directory-integration-with-samanage"></a>Руководство. Интеграция Azure Active Directory с Samanage
 
 В этом руководстве описано, как интегрировать Samanage с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Samanage обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73160117"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Samanage, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Samanage с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73160117"
 
     ![Сведения о домене и URL-адресах единого входа приложения Samanage](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<Company Name>.samanage.com/saml_login/<Company Name>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<Company Name>.samanage.com/saml_login/<Company Name>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<Company Name>.samanage.com`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "73160117"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-samanage-single-sign-on"></a>Настройка единого входа Samanage
 
@@ -133,7 +133,7 @@ ms.locfileid: "73160117"
 
 2. Щелкните **Панель мониторинга** и выберите **Настройка** в левой области навигации.
    
-    ![Панель мониторинга](./media/samanage-tutorial/tutorial_samanage_001.png "панель мониторинга")
+    ![Панель мониторинга](./media/samanage-tutorial/tutorial_samanage_001.png "Панель мониторинга")
 
 3. Щелкните **Единый вход**.
    
@@ -143,7 +143,7 @@ ms.locfileid: "73160117"
    
     ![Вход с помощью SAML](./media/samanage-tutorial/tutorial_samanage_003.png "Login using SAML")
  
-    a. Установите флажок **Enable Single Sign-On with SAML**(Включить единый вход с помощью SAML).  
+    а. Установите флажок **Enable Single Sign-On with SAML**(Включить единый вход с помощью SAML).  
  
     b. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **идентификатора Azure AD**, скопированное с портала Azure.    
  
@@ -151,9 +151,9 @@ ms.locfileid: "73160117"
  
     d. В текстовое поле **URL-адрес выхода** вставьте значение **URL-адрес выхода**, скопированное с портала Azure.
  
-    д. В текстовое поле **SAML Issuer** (Издатель SAML) введите универсальный код ресурса (URI) для идентификатора приложения, заданный для поставщика удостоверений.
+    д) В текстовое поле **SAML Issuer** (Издатель SAML) введите универсальный код ресурса (URI) для идентификатора приложения, заданный для поставщика удостоверений.
  
-    Е. Откройте в Блокноте сертификат в кодировке Base64, скачанный с портала Azure, скопируйте содержимое сертификата в буфер обмена, а затем вставьте его в текстовое поле **Paste your Identity Provider x.509 Certificate below** (Скопируйте сюда сертификат x.509 своего поставщика удостоверений).
+    е) Откройте в Блокноте сертификат в кодировке Base64, скачанный с портала Azure, скопируйте содержимое сертификата в буфер обмена, а затем вставьте его в текстовое поле **Paste your Identity Provider x.509 Certificate below** (Скопируйте сюда сертификат x.509 своего поставщика удостоверений).
  
     ж. Установите флажок **Create users if they do not exist in Samanage**(Создавать пользователей, если они не существуют в Samanage).
  
@@ -221,7 +221,7 @@ ms.locfileid: "73160117"
 
 2. Щелкните **Dashboard** (Панель мониторинга) и выберите **Setup** (Настройка) в левой области навигации.
    
-    ![Настройка](./media/samanage-tutorial/tutorial_samanage_001.png "Настройка")
+    ![Установка](./media/samanage-tutorial/tutorial_samanage_001.png "Настройка")
 
 3. Откройте вкладку **Пользователи** .
    

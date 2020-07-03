@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Kontiki | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Kontiki | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kontiki.
 services: active-directory
 documentationCenter: na
@@ -17,10 +17,10 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bfb154bce34b2ceda99b82c7ca3534b8a8ee0a1f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67098489"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kontiki"></a>Руководство. Интеграция Azure Active Directory с Kontiki
@@ -35,11 +35,11 @@ ms.locfileid: "67098489"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Kontiki, вам потребуется:
 
-* подписка Azure AD Если у вас еще нет подписки Azure AD, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* подписка Azure AD; Если у вас еще нет подписки Azure AD, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Подписка Kontiki с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -55,7 +55,7 @@ Kontiki поддерживает следующие функции:
 
 Чтобы интегрировать Kontiki с AAD, необходимо добавить Kontiki в список управляемых приложений SaaS.
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
 1. В меню слева выберите **Azure Active Directory**.
 
@@ -79,7 +79,7 @@ Kontiki поддерживает следующие функции:
 
 Чтобы настроить и проверить единый вход Azure AD в Kontiki, вам потребуется выполнить действия в следующих стандартных блоках.
 
-| Задача | ОПИСАНИЕ |
+| Задача | Description |
 | --- | --- |
 | **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** | Предоставление пользователям возможности использовать эту функцию. |
 | **[Настройка единого входа в Kontiki](#configure-kontiki-single-sign-on)** | Настройка параметров единого входа в приложении. |
@@ -111,7 +111,7 @@ Kontiki поддерживает следующие функции:
     > [!NOTE]
     > Чтобы получить правильное значение, обратитесь в [службу поддержки клиентов Kontiki](https://customersupport.kontiki.com/enterprise/contactsupport.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать** рядом с полем **XML метаданные федерации**. Выберите параметр для скачивания в соответствии с вашими требованиями. Сохраните сертификат на своем компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать** рядом с полем **XML метаданные федерации**. Выберите вариант для скачивания в соответствии с вашими требованиями. Сохраните сертификат на своем компьютере.
 
     ![Варианты для скачивания XML-файла метаданных федерации](common/metadataxml.png)
 
@@ -187,10 +187,10 @@ Kontiki поддерживает следующие функции:
 
 После настройки единого входа вы сможете автоматически войти в приложение Kontiki, выбрав элемент **Kontiki** на портале "Мои приложения". Дополнительные сведения о портале "Мои приложения" см. в статье [Access and use apps on the My Apps portal](../user-help/my-apps-portal-end-user-access.md) (Доступ к приложениям и их использование на портале "Мои приложения").
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статьях ниже:
 
 - [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

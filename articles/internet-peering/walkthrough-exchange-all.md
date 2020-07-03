@@ -1,7 +1,7 @@
 ---
-title: Пошаговое руководство по пирингу Exchange
+title: Пошаговое руководство по пирингу через точку обмена
 titleSuffix: Azure
-description: Пошаговое руководство по пирингу Exchange
+description: Пошаговое руководство по пирингу через точку обмена
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
@@ -9,19 +9,19 @@ ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
 ms.openlocfilehash: bb761afa6d8953b441b6c9541c43b73031719494
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75775177"
 ---
-# <a name="exchange-peering-walkthrough"></a>Пошаговое руководство по пирингу Exchange
+# <a name="exchange-peering-walkthrough"></a>Пошаговое руководство по пирингу через точку обмена
 
 В этом разделе описываются действия, которые необходимо выполнить для настройки пиринга Exchange и управления им.
 
 ## <a name="create-an-exchange-peering"></a>Создание пиринга Exchange
 > [!div class="mx-imgBorder"]
-> ![рабочего процесса пиринга Exchange и состояния подключения](./media/exchange-peering.png)
+> ![Рабочий процесс пиринга Exchange и состояния подключения](./media/exchange-peering.png)
 
 Для инициализации пиринга Exchange необходимо выполнить следующие действия.
 1. Проверьте [политику пиринга](https://peering.azurewebsites.net/peering) Майкрософт, чтобы понять требования для пиринга Exchange.
@@ -36,7 +36,7 @@ ms.locfileid: "75775177"
 
 Обратите внимание, что состояние подключения не следует путать со стандартными состояниями сеанса [BGP](https://en.wikipedia.org/wiki/Border_Gateway_Protocol) .
 
-## <a name="convert-a-legacy-exchange-peering-to-azure-resource"></a>Преобразование устаревшего пиринга Exchange в ресурс Azure
+## <a name="convert-a-legacy-exchange-peering-to-azure-resource"></a>Преобразование устаревшего пиринга через точку обмена в ресурс Azure
 Чтобы преобразовать устаревший пиринг Exchange в ресурс Azure, необходимо выполнить следующие действия.
 1. Следуйте инструкциям в статье [Преобразование устаревшего пиринга Exchange в ресурс Azure](howto-legacy-exchange-powershell.md) .
 1. После отправки запроса на преобразование Корпорация Майкрософт просматривает запрос и свяжется с вами при необходимости.

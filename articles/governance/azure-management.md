@@ -4,10 +4,10 @@ description: Общие сведения об областях управлен�
 ms.date: 12/06/2018
 ms.topic: overview
 ms.openlocfilehash: 644f4fc3a04f86426c2eb04b02c29882fa39fb88
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75980905"
 ---
 # <a name="overview-of-management-services-in-azure"></a>Общие сведения о службах управления в Azure

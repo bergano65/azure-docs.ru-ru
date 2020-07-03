@@ -1,19 +1,19 @@
 ---
 title: Основные понятия служб погоды | Карты Microsoft Azure
 description: В этой статье вы узнаете о концепциях, которые относятся к Microsoft Azureным службам погоды.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 11/20/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: af7ea5c6e9d09b05b2f9271d6954162c0fd429c6
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 03a16ac065b585c499efa268500e0a8c81c07738
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77208732"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80333820"
 ---
 # <a name="weather-services-in-azure-maps"></a>Службы погоды в Azure Maps
 
@@ -47,12 +47,12 @@ ms.locfileid: "77208732"
 |19      |Кельвина              |
 |20      |percent             |
 |21      |FLOAT               |
-|22      |integer             |
+|22      |Целое число             |
 
 
 ## <a name="weather-icons"></a>Значки погоды
 
-Некоторые API службы погоды возвращают `iconCode` в ответе. `iconCode` является числовым значением, используемым для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
+Некоторые API службы погоды возвращают `iconCode` в ответ. `iconCode` — Числовое значение, используемое для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
 
 | Номер значка |Значок| День | Ночной | Text |
 |-------------|:----:|-----|-------|------|
@@ -77,20 +77,20 @@ ms.locfileid: "77208732"
 | 21           |![](./media/weather-services-concepts/partly-sunny-flurries.png)       | Да |  Нет    | Частично Sunny с Флурриес|
 | 22           |![](./media/weather-services-concepts/snow-i.png)                      | Да |  Да   | Снег|
 | 23           |![](./media/weather-services-concepts/mostly-cloudy-snow.png)          | Да |  Нет    | В основном облачное с снег|
-| 24           |![](./media/weather-services-concepts/ice-i.png)                       | Да |  Да   | Ice |
+| 24           |![](./media/weather-services-concepts/ice-i.png)                       | Да |  Да   | Айс (Ice) |
 | 25           |![](./media/weather-services-concepts/sleet-i.png)                     | Да |  Да   | слит|
 | 26           |![](./media/weather-services-concepts/freezing-rain.png)              | Да |  Да   | Замораживание дождя|
 | 29           |![](./media/weather-services-concepts/rain-snow.png)                  | Да |  Да   | Дождя и снег|
-| 30           |![](./media/weather-services-concepts/hot-i.png)                       | Да |  Да   | Высокий|
-| 31           |![](./media/weather-services-concepts/cold-i.png)                      | Да |  Да   | Низкий|
+| 30           |![](./media/weather-services-concepts/hot-i.png)                       | Да |  Да   | Горячий|
+| 31           |![](./media/weather-services-concepts/cold-i.png)                      | Да |  Да   | Холодный|
 | 32           |![](./media/weather-services-concepts/windy-i.png)                     | Да |  Да   | Ветрено|
-| 33           |![](./media/weather-services-concepts/clear-night.png)                | Нет  |  Да   | Очистить|
+| 33           |![](./media/weather-services-concepts/clear-night.png)                | Нет  |  Да   | Clear|
 | 34           |![](./media/weather-services-concepts/mostly-clear-night.png)          | Нет  |  Да   | В основном ясно|
 | 35           |![](./media/weather-services-concepts/partly-cloudy-night.png)         | Нет  |  Да   | Частичное облако|
 | 36           |![](./media/weather-services-concepts/intermittent-clouds-Night.png)   | Нет  |  Да   | Временные облака|
 | 37           |![](./media/weather-services-concepts/hazymoon-light.png)             | Нет  |  Да   | Хазиное совместительство|
-| 38           |![](./media/weather-services-concepts/mostly-cloudy-night.png)         | Нет  |  Да   | В основном это облачная|
-| 39           |![](./media/weather-services-concepts/partly-cloudy-showers-night.png)  | Нет  |  Да   | Частичное облако с ливни|
+| 38           |![](./media/weather-services-concepts/mostly-cloudy-night.png)         | нет  |  Да   | В основном это облачная|
+| 39           |![](./media/weather-services-concepts/partly-cloudy-showers-night.png)  | нет  |  Да   | Частичное облако с ливни|
 | 40           |![](./media/weather-services-concepts/mostly-cloudy-showers-night.png)  | Нет  |  Да   | В основном облачное с ливни|
 | 41           |![](./media/weather-services-concepts/partly-cloudy-tstorms-night.png)  | Нет  |  Да   | Частичное облако с Сундерстормс|
 | 42           |![](./media/weather-services-concepts/mostly-cloudy-tstorms-night.png)  | Нет  |  Да   | В основном облачное с Сундерстормс|

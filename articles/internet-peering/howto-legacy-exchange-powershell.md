@@ -8,32 +8,32 @@ ms.service: internet-peering
 ms.topic: article
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: aa11f329cf0a0cb27d58b940b42731a2ec41c272
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: eedf87548d62e05d4940911ed3dcd821077acb27
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75775398"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81686789"
 ---
-# <a name="convert-a-legacy-exchange-peering-to-azure-resource-using-powershell"></a>Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью PowerShell
+# <a name="convert-a-legacy-exchange-peering-to-an-azure-resource-by-using-powershell"></a>Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью PowerShell
 
 В этой статье описывается, как преобразовать имеющийся устаревший пиринг Exchange в ресурс Azure с помощью командлетов PowerShell.
 
-При желании вы можете выполнить инструкции с помощью [портала](howto-legacy-exchange-portal.md).
+При желании вы можете выполнить это пошаговое руководством с помощью [портала](howto-legacy-exchange-portal.md)Azure.
 
-## <a name="before-you-begin"></a>Перед началом работы
-* Прежде чем приступить к настройке, ознакомьтесь с [предварительными требованиями](prerequisites.md) и [пошаговым руководством по Exchange пиринга](walkthrough-exchange-all.md) .
+## <a name="before-you-begin"></a>Подготовка к работе
+* Перед началом настройки ознакомьтесь с [предварительными требованиями](prerequisites.md) и [пошаговым руководством по пирингу Exchange](walkthrough-exchange-all.md) .
 
-### <a name="working-with-azure-powershell"></a>Работа с Azure PowerShell
+### <a name="work-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
 
-## <a name="convert-a-legacy-exchange-peering-to-azure-resource"></a>Преобразование устаревшего пиринга Exchange в ресурс Azure
+## <a name="convert-a-legacy-exchange-peering-to-an-azure-resource"></a>Преобразование устаревшего пиринга Exchange в ресурс Azure
 
 ### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Войдите в учетную запись Azure и выберите подписку.
 [!INCLUDE [Account](./includes/account-powershell.md)]
 
-### <a name= get></a>Получение устаревшего пиринга Exchange для преобразования
-Ниже приведен пример для получения устаревшего пиринга Exchange в расположении пиринга в Сиэтле:
+### <a name="get-legacy-exchange-peering-for-conversion"></a><a name= get></a>Получение устаревшего пиринга Exchange для преобразования
+В этом примере показано, как получить устаревший пиринг Exchange в расположении пиринга в Сиэтле:
 
 ```powershell
 $legacyPeering = Get-AzLegacyPeering -Kind Exchange -PeeringLocation "Seattle"
@@ -58,7 +58,7 @@ $legacyPeering
 ```
 
 ### <a name="convert-legacy-peering"></a>Преобразование устаревшего пиринга
-Приведенную ниже команду можно использовать для преобразования устаревшего пиринга Exchange в ресурс Azure.
+Эту команду можно использовать для преобразования устаревшего пиринга Exchange в ресурс Azure:
 
 ```powershell
 $legacyPeering[0] | New-AzPeering `
@@ -69,9 +69,10 @@ $legacyPeering[0] | New-AzPeering `
 
 &nbsp;
 > [!IMPORTANT] 
-> Обратите внимание, что при преобразовании устаревшего пиринга в ресурс Azure изменения не поддерживаются &nbsp;
+> При преобразовании устаревшего пиринга в ресурс Azure изменения не поддерживаются.
+&nbsp;
 
-Ниже приведен пример ответа после успешного завершения подготовки к завершению.
+В этом примере ответа показано, когда закончена успешная подготовка.
 
 ```powershell
     Name                     : SeattleExchangePeering
@@ -96,8 +97,8 @@ $legacyPeering[0] | New-AzPeering `
 ```powershell
 Get-Help Get-AzPeering -detailed
 ```
-Дополнительные сведения см. на странице [часто задаваемые вопросы об пиринга через Интернет](faqs.md)
+Дополнительные сведения см. в разделе [часто задаваемые вопросы об пиринга через Интернет](faqs.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание или изменение пиринга Exchange с помощью PowerShell](howto-exchange-powershell.md)

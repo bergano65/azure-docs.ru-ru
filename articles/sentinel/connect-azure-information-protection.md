@@ -2,20 +2,20 @@
 title: Подключение Azure Information Protection к Azure Sentinel
 description: Узнайте, как подключить данные Azure Information Protection в Azure Sentinel.
 services: sentinel
-author: cabailey
+author: yelevin
 manager: rkarlin
 ms.assetid: bfa2eca4-abdc-49ce-b11a-0ee229770cdd
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: cabailey
-ms.openlocfilehash: ef97ad601436faf44b0f49bd48d78c4c9420c7c8
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.author: yelevin
+ms.openlocfilehash: 396fd7c4289c9d02d451b26f5fb6299acd31e2a4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75563689"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77588558"
 ---
 # <a name="connect-data-from-azure-information-protection"></a>Подключение данных из Azure Information Protection
 
@@ -35,14 +35,14 @@ ms.locfileid: "75563689"
     
     При изменении рабочей области новые данные отчетов для Azure Information Protection будут храниться в рабочей области, используемой для Sentinel Azure, а исторические данные недоступны для Azure Sentinel. Кроме того, если предыдущая рабочая область настроена для пользовательских запросов, предупреждений или интерфейсов API, их необходимо перенастроить для рабочей области "Sentinel" Azure, если вы хотите использовать их для Azure Information Protection. Для клиентов и служб, использующих Azure Information Protection, перенастройка не требуется.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Одна из следующих ролей администратора Azure AD для клиента: 
     - Администратор Azure Information Protection
-    - администратор безопасности;
+    - Администратор безопасности.
     - администратор соответствия требованиям.
     - Администратор данных соответствия требованиям
-    - Глобальный администратор.
+    - Глобальный администратор
     
     > [!NOTE]
     > Нельзя использовать роль администратора Azure Information Protection, если клиент находится на [единой платформе меток](/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).
@@ -57,7 +57,7 @@ ms.locfileid: "75563689"
 
 Используйте следующие инструкции, если вы не настроили рабочую область Log Analytics для Azure Information Protection или вам нужно изменить рабочую область, в которой хранятся данные журнала Azure Information Protection.
 
-1. В Azure Sentinel выберите **соединители данных**, а затем **Azure Information Protection (Предварительная версия)** .
+1. В Azure Sentinel выберите **соединители данных**, а затем **Azure Information Protection (Предварительная версия)**.
 
 2. Выберите **открыть страницу соединителя**.
 
@@ -69,7 +69,7 @@ ms.locfileid: "75563689"
     
     Чтобы использовать соответствующую схему в Azure Monitor для этих данных отчетов, выполните поиск по запросу **информатионпротектионевентс**. Сведения об этих функциях событий см. в разделе [Справочник по понятным схемам функций событий](https://docs.microsoft.com/azure/information-protection/reports-aip#friendly-schema-reference-for-event-functions) статьи Azure Information Protection.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как подключить Azure Information Protection к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

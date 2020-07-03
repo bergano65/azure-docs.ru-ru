@@ -6,10 +6,10 @@ manager: rochakm
 ms.topic: troubleshooting
 ms.date: 11/27/2018
 ms.openlocfilehash: a780a42179a0bacf0e4a12ba1e75ae84943539b4
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77190723"
 ---
 # <a name="troubleshoot-azure-vm-extension-issues"></a>Устранение проблем с расширением виртуальной машины Azure
@@ -25,15 +25,15 @@ ms.locfileid: "77190723"
  Azure Site Recovery установить расширение на виртуальной машине как часть задания включения защиты. Любое из следующих условий может препятствовать активации защиты и привести к сбою задания. Выполните следующие шаги по устранению неполадок, а затем повторите операцию:
 
 - [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)
-- [Агент, установленный на виртуальной машине, устарел (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)
-- [Не удается обновить или загрузить расширение Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)
+- [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)
+- [Не удалось обновить или загрузить расширение Site Recovery](#the-site-recovery-extension-fails-to-update-or-load).
 
 Сообщение об ошибке: "Предыдущая операция расширения Site Recovery занимает больше времени, чем ожидалось".<br>
 Код ошибки: "150066"
 
 - [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)
-- [Агент, установленный на виртуальной машине, устарел (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)
-- [Неверное состояние расширения Site Recovery](#the-site-recovery-extension-fails-to-update-or-load)
+- [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)
+- [Неправильное состояние расширения Site Recovery](#the-site-recovery-extension-fails-to-update-or-load).
 
 ## <a name="protection-fails-because-the-vm-agent-is-unresponsive"></a>Защита завершается ошибкой, так как агент виртуальной машины не отвечает
 
@@ -42,10 +42,10 @@ ms.locfileid: "77190723"
 
 Эта ошибка может возникать, если Гостевой агент Azure в виртуальной машине не находится в состоянии "Готово".
 
-Состояние гостевого агента Azure можно проверить в [портал Azure](https://portal.azure.com/). Перейдите к виртуальной машине, которую вы пытаетесь защитить, и проверьте ее состояние в **параметрах** > **виртуальной машины** > **Свойства** > **состояние агента**. В большинстве случаев состояние агента Готово после перезагрузки виртуальной машины. Однако если вы не можете выполнить перезагрузку или вы по-прежнему столкнулись с проблемой, выполните следующие действия по устранению неполадок:
+Состояние гостевого агента Azure можно проверить в [портал Azure](https://portal.azure.com/). Перейдите к виртуальной машине, которую вы пытаетесь защитить, и проверьте состояние в**свойствах** > **параметров** >  **виртуальной машины** > **состояние агента**. В большинстве случаев состояние агента Готово после перезагрузки виртуальной машины. Однако если вы не можете выполнить перезагрузку или вы по-прежнему столкнулись с проблемой, выполните следующие действия по устранению неполадок:
 
 - [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)
-- [Агент, установленный на виртуальной машине, устарел (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)
+- [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)
 
 
 Сообщение об ошибке: "Task execution has timed out while tracking for extension operation to be started" (Истекло время ожидания выполнения задачи при отслеживании запуска операции расширения)<br>
@@ -53,11 +53,11 @@ ms.locfileid: "77190723"
 
 Эта ошибка возникает, когда версия агента на компьютере Linux устарела. Выполните следующие действия по устранению неполадок.
 
-- [Агент, установленный на виртуальной машине, устарел (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)  
+- [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)  
 
 ## <a name="causes-and-solutions"></a>Причины и решения
 
-### <a name="the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms"></a>Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)
+### <a name="the-agent-is-installed-in-the-vm-but-its-unresponsive-for-windows-vms"></a><a name="the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms"></a>Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)
 
 #### <a name="solution"></a>Решение
 Возможно, агент виртуальной машины может быть поврежден или служба остановлена. Повторная установка агента виртуальной машины поможет получить последнюю версию и возобновить обмен данными со службой.
@@ -102,8 +102,8 @@ ms.locfileid: "77190723"
 Чтобы удалить расширение, сделайте следующее:
 
 1. В [портал Azure](https://portal.azure.com/)перейдите на виртуальную машину, на которой возникла ошибка резервного копирования.
-1. Нажмите **Параметры**.
-1. Выберите **Расширения**.
+1. Выберите **Параметры**.
+1. Выберите **расширения**.
 1. Выберите **Расширение Site Recovery**.
 1. Выберите **Удалить**.
 

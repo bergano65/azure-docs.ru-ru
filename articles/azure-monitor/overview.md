@@ -1,18 +1,17 @@
 ---
 title: Общие сведения о службе Azure Monitor | Microsoft Docs
 description: Обзор функциональных возможностей и служб Майкрософт, которые являются частью стратегии мониторинга ваших служб и приложений в Azure.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2019
-ms.openlocfilehash: f5d98ecdac3acacda2b592f88e7db45dc181e8da
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.openlocfilehash: dbace6b93e07571693b221bb3d2a947010b1e476
+ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76934475"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83799998"
 ---
 # <a name="azure-monitor-overview"></a>Общие сведения о службе Azure Monitor
 
@@ -24,7 +23,10 @@ ms.locfileid: "76934475"
 - Сопоставлять проблемы инфраструктуры с [Azure Monitor для виртуальных машин](insights/vminsights-overview.md) и [Azure Monitor для контейнеров](insights/container-insights-overview.md).
 - Анализировать данные мониторинга с помощью [Log Analytics](log-query/log-query-overview.md) для устранения неполадок и выполнения глубокой диагностики.
 - Поддерживать работу при масштабировании с помощью [интеллектуальных оповещений](platform/alerts-smartgroups-overview.md) и [автоматизированных действий](platform/alerts-action-rules.md).
-- Создавать визуализации с помощью [информационных панелей](learn/tutorial-logs-dashboards.md) и [книг](app/usage-workbooks.md) Azure.
+- Создавать визуализации с помощью [информационных панелей](learn/tutorial-logs-dashboards.md) и [книг](platform/workbooks-overview.md) Azure.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4qXeL]
+
 
 [!INCLUDE [azure-lighthouse-supported-service](../../includes/azure-lighthouse-supported-service.md)]
 

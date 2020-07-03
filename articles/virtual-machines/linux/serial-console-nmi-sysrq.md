@@ -1,24 +1,18 @@
 ---
 title: Последовательная консоль Azure для вызовов Сисрк и NMI
 description: Использование последовательной консоли для вызовов SysRq и NMI на виртуальных машинах Azure.
-services: virtual-machines-linux
-documentationcenter: ''
 author: asinn826
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 5eba50e7cfc00c081622972ca09f305b34c19c47
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 5541dec748f31818a0e9485fc0c56b7926ccaae7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034992"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758486"
 ---
 # <a name="use-serial-console-for-sysrq-and-nmi-calls"></a>Использование последовательной консоли для вызовов SysRq и NMI
 
@@ -85,7 +79,7 @@ echo "1" >/proc/sys/kernel/sysrq
 Документация по SysRq для конкретного дистрибутива и шаги по настройке Linux для создания аварийного дампа при получении команды Crash SysRq доступны по ссылкам ниже.
 
 #### <a name="ubuntu"></a>Ubuntu ####
- - [Аварийный дамп памяти ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
+ - [Аварийный дамп ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
 
 #### <a name="red-hat"></a>Red Hat ####
 - [Что такое средство SysRq и как его использовать?](https://access.redhat.com/articles/231663)
@@ -113,7 +107,7 @@ echo "1" >/proc/sys/kernel/sysrq
 Дополнительные сведения о конфигурации ядра Linux, включая `unknown_nmi_panic`, `panic_on_io_nmi` и `panic_on_unrecovered_nmi`, см. в разделе [документации по /proc/sys/kernel/*](https://www.kernel.org/doc/Documentation/sysctl/kernel.txt). Документацию по немаскируемому прерыванию для конкретного дистрибутива и шаги по настройке Linux для создания аварийного дампа при получении немаскируемого прерывания см. по ссылкам ниже.
  
 ### <a name="ubuntu"></a>Ubuntu 
- - [Аварийный дамп памяти ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
+ - [Аварийный дамп ядра](https://help.ubuntu.com/lts/serverguide/kernel-crash-dump.html)
 
 ### <a name="red-hat"></a>Red Hat 
  - [Что такое немаскируемое прерывание и для чего его можно использовать?](https://access.redhat.com/solutions/4127)
@@ -126,7 +120,7 @@ echo "1" >/proc/sys/kernel/sysrq
 ### <a name="coreos"></a>CoreOS 
 - [Сбор журналов сбоев](https://coreos.com/os/docs/latest/collecting-crash-logs.html)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 * См. страницу документации по работе с [последовательной консолью Linux](serial-console.md).
 * Используйте последовательную консоль для [перехода в режим GRUB и однопользовательский режим](serial-console-grub-single-user-mode.md).
 * Последовательная консоль также доступна для виртуальных машин [Windows](../windows/serial-console.md).

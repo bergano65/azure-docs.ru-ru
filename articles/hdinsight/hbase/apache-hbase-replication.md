@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/06/2019
 ms.openlocfilehash: 1e6465584dd4e67f736b94d2939678c1a69163bf
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75435665"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
@@ -38,7 +38,7 @@ ms.locfileid: "75435665"
 
 Кластеры можно реплицировать с помощью скриптов [действий сценария](../hdinsight-hadoop-customize-cluster-linux.md), которые можно найти на [GitHub](https://github.com/Azure/hbase-utils/tree/master/replication).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступать к этой статье, необходимо иметь подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## <a name="set-up-the-environments"></a>Настройка сред
@@ -68,7 +68,7 @@ ms.locfileid: "75435665"
 
 | Свойство | Значение |
 |----------|-------|
-| Расположение | Западная часть США |
+| Расположение | западная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet1 |
 | Address space prefix | 10.1.0.0/16 |
 | Имя подсети | subnet 1 |
@@ -78,7 +78,7 @@ ms.locfileid: "75435665"
 | Имя шлюза. | vnet1gw |
 | Тип шлюза | Vpn |
 | Тип VPN шлюза. | RouteBased |
-| Gateway SKU | "Базовый" |
+| Gateway SKU | Basic |
 | Gateway IP | vnet1gwip |
 
 **VNet 2**
@@ -95,7 +95,7 @@ ms.locfileid: "75435665"
 | Имя шлюза. | vnet2gw |
 | Тип шлюза | Vpn |
 | Тип VPN шлюза. | RouteBased |
-| Gateway SKU | "Базовый" |
+| Gateway SKU | Basic |
 | Gateway IP | vnet1gwip |
 
 ## <a name="setup-dns"></a>Настройка службы доменных имен (DNS)
@@ -105,7 +105,7 @@ ms.locfileid: "75435665"
 Чтобы установить Bind, найдите общедоступные IP-адреса двух виртуальных машин DNS.
 
 1. Откройте [портал Azure](https://portal.azure.com).
-2. Откройте виртуальную машину DNS, выбрав **Группы ресурсов > [имя группы ресурсов] > [vnet1DNS]** .  Используйте имя группы ресурсов, созданной в последней процедуре. По умолчанию виртуальные машины DNS называются *vnet1DNS* и *vnet2NDS*.
+2. Откройте виртуальную машину DNS, выбрав **Группы ресурсов > [имя группы ресурсов] > [vnet1DNS]**.  Используйте имя группы ресурсов, созданной в последней процедуре. По умолчанию виртуальные машины DNS называются *vnet1DNS* и *vnet2NDS*.
 3. Выберите **Панель свойств**. Откроется страница свойств виртуальной сети.
 4. Запишите **общедоступный IP-адрес**, а также проверьте **частный IP-адрес**.  Для vnet1DNS должен быть указан IP-адрес **10.1.0.4**, а для vnet2DNS — **10.2.0.4**.  
 5. Настройте использование в обеих виртуальных сетях DNS-серверов по умолчанию (предоставленных Azure). Это позволит разрешить входящий и исходящий доступ к пакетам, используемым при установке Bind на следующих шагах.
@@ -123,7 +123,7 @@ ms.locfileid: "75435665"
     > [!NOTE]  
     > Есть несколько способов получить служебную программу `ssh`. В Linux, Unix и macOS она предоставляется как часть операционной системы. Если вы используете Windows, рассмотрите один из следующих вариантов:
     >
-    > * [Azure Cloud Shell](../../cloud-shell/quickstart.md);
+    > * [Azure Cloud Shell](../../cloud-shell/quickstart.md)
     > * [Bash на платформе Ubuntu в Windows 10](https://msdn.microsoft.com/commandline/wsl/about);
     > * [Git (https://git-scm.com/)](https://git-scm.com/);
     > * [OpenSSH (https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH).
@@ -260,7 +260,7 @@ sudo service bind9 status
 В каждой виртуальной сети создайте кластер [Apache HBase](https://hbase.apache.org/) со следующей конфигурацией:
 
 - **Имя группы ресурсов.** Используйте те же имена групп ресурсов, как при создании виртуальных сетей.
-- **Тип кластера.** HBase.
+- **Тип кластера**: HBase
 - **Версия.** HBase 1.1.2 (HDI 3.6).
 - **Расположение.** Используйте то же расположение, что и у виртуальной сети.  По умолчанию для виртуальной сети 1 указано расположение *западная часть США*, а для виртуальной сети 2 — *восточная часть США*.
 - **Хранилище.** Создайте учетную запись хранения для кластера.
@@ -292,7 +292,7 @@ sudo service bind9 status
 5. Выберите или введите следующие сведения.
 
    1. **Имя:** введите **Включение репликации**.
-   2. **URI bash-скрипта.** Введите **https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh** .
+   2. **URI bash-скрипта.** Введите **https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh**.
    3. **Головной узел**. Выберите этот тип узла. Отмените выбор других типов узлов.
    4. **Параметры**: Параметры в следующем примере позволяют включить репликацию для всех существующих таблиц, а затем копировать все данные из исходного кластера в целевой.
 
@@ -303,11 +303,11 @@ sudo service bind9 status
       >
       > В этом пошаговом руководстве предполагается, что HN1 является активным головного узла. Проверьте кластер, чтобы определить активный головной узел.
 
-6. Нажмите кнопку **Создать**. Выполнение скрипта может занять некоторое время, особенно при использовании аргумента **-copydata**.
+6. Нажмите кнопку **создания**. Выполнение скрипта может занять некоторое время, особенно при использовании аргумента **-copydata**.
 
 Ниже приведены обязательные аргументы.
 
-|Имя|Description|
+|Имя|Описание|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -316,7 +316,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|Имя|Description|
+|Имя|Описание|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |
@@ -342,7 +342,7 @@ sudo service bind9 status
 
         -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -t "table1;table2;table3"
 
-- **Включение репликации для отдельных таблиц и копирование существующих данных**. Чтобы включить репликацию для table1, table2 и table3, используйте следующие параметры:
+- **Включите репликацию для конкретных таблиц и скопируйте существующие данные**. Чтобы включить репликацию для table1, table2 и table3, используйте следующие параметры:
 
         -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -t "table1;table2;table3" -copydata
 
@@ -392,7 +392,7 @@ sudo service bind9 status
 - **Отключение репликации для всех таблиц:**
 
         -m hn1 -s <source hbase cluster name> -sp Mypassword\!789 -all
-  или
+  или диспетчер конфигурации служб
 
         --src-cluster=<source hbase cluster name> --dst-cluster=<destination hbase cluster name> --src-ambari-user=<source cluster Ambari user name> --src-ambari-password=<source cluster Ambari password>
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Fastly Edge Cloud | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Fastly Edge Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Fastly Edge Cloud.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/09/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 858124d3c3dff8c5c09b7a6b608ca326b7d5e5d3
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76266006"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-fastly-edge-cloud"></a>Руководство. Интеграция единого входа Azure Active Directory с Fastly Edge Cloud
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-fastly-edge-cloud"></a>Руководство по Интеграция единого входа Azure Active Directory с Fastly Edge Cloud
 
 В этом учебнике описано, как интегрировать Fastly Edge Cloud с Azure Active Directory (Azure AD). Интеграция Fastly Edge Cloud с Azure AD обеспечивает приведенные ниже возможности.
 

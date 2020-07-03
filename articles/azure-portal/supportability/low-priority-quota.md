@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: azure
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
 ms.openlocfilehash: 3e6dddfc458f390f5648e23a8a2af8d714de4bf2
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76842810"
 ---
 # <a name="spot-quota-increase-limits-for-all-vm-series"></a>Квота на место: увеличение ограничений для всех рядов виртуальных машин
@@ -48,7 +48,7 @@ Azure Resource Manager поддерживает два типа квот вир�
 
     ![Создать новый запрос в службу поддержки](./media/resource-manager-core-quotas-request/new-support-request.png)
 
-1. Для поля **Тип проблемы** выберите **Ограничения службы и подписки (квоты)** .
+1. Для поля **Тип проблемы** выберите **Ограничения службы и подписки (квоты)**.
 
    ![Выберите тип проблемы](./media/resource-manager-core-quotas-request/select-quota-issue-type.png)
 

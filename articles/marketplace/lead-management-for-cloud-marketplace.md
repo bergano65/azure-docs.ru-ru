@@ -1,118 +1,102 @@
 ---
-title: Управление интересами облачного Marketplace | Azure Marketplace и AppSource
+title: Управление интересами для коммерческого рынка | Azure Marketplace и AppSource
 description: Общие сведения о различных темах, относящихся к публикации предложений и техническим артефактам в Azure Marketplace и AppSource
-services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-author: yijenj
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 10/05/2018
-ms.author: pabutler
-ms.openlocfilehash: 047ffd983cecd9f9bd971ee3f97e15734d14ce66
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.topic: conceptual
+ms.date: 04/14/2020
+ms.author: dsindona
+ms.openlocfilehash: c41831f528ae425b35a04503180a956f67762b70
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73813274"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82789850"
 ---
-# <a name="lead-management-for-cloud-marketplace"></a>Управление интересами облачного Marketplace
+# <a name="lead-management-for-commercial-marketplace"></a>Управление интересами для коммерческого рынка
 
-
-Клиенты являются основой любого успешного бизнеса. При преобразовании современных приобретений продуктов необходимо сосредоточиться на прямом соединении с клиентами и создании связи. Именно по этой причине формирование списка потенциальных клиентов является важным инструментом цикла продаж. После того, как вы перечислите свои предложения в [портале Cloud Partner](https://cloudpartner.azure.com/), вам будут предоставлены инструменты, которые могут программно получать контактные сведения о клиентах непосредственно после того, как клиент развернул ваш продукт или проявил к нему интерес в Marketplace. 
-
-
+Клиенты являются основой любого успешного бизнеса. При преобразовании современных приобретений продуктов необходимо сосредоточиться на прямом соединении с клиентами и создании связи. Именно по этой причине формирование списка потенциальных клиентов является важным инструментом цикла продаж. После включения предложения в [Центр партнеров](https://partner.microsoft.com/)доступны средства для программного получения контактных данных клиента сразу после того, как клиент выражает интерес или развертывает продукт в Marketplace. 
 
 ## <a name="what-are-leads-in-the-marketplace"></a>Что такое интересы в Marketplace?
 
-Интересы поступают от пользователей, которые интересуются или развертывают ваши продукты из Marketplace. Независимо от того, где указан продукт (в Azure Marketplace или в AppSource), вы можете получать интересы от клиентов после его должной настройки из вашей системы CRM в листинг/листинги на портале Cloud Partner 
+Интересы поступают от пользователей, которые интересуются или развертывают ваши продукты из Marketplace. Если ваш продукт указан в Azure Marketplace или AppSource, вы сможете получать интересы от клиентов после того, как он будет правильно настроен из CRM в список ваших списков в центре партнеров. 
 
+## <a name="how-to-connect-your-crm-system-with-partner-center"></a>Как подключить систему CRM к партнерским центрам
 
-## <a name="how-to-connect-your-crm-system-with-the-cloud-partner-portal"></a>Как подключить систему CRM к облачному порталу для партнеров
-
-Чтобы начать получать интересы, соединитель управления интересами на портале Cloud Partner разработан таким образом, чтобы его можно было легко подключить с вашей информацией CRM к списку доступных систем CRM. Теперь можно легко использовать интересы, созданные с помощью Marketplace, благодаря простой интеграции с внешней системой.
+Чтобы начать получать интересы, соединитель управления интересами в центре партнеров разработан таким образом, чтобы его можно было легко подключить к информации о CRM в список доступных систем CRM. Теперь можно легко использовать интересы, созданные с помощью Marketplace, благодаря простой интеграции с внешней системой.
 
 Ниже приведены пошаговые инструкции по подключению всех возможных назначений интересов:
 
-**Dynamics CRM Online** - [Щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics), чтобы получить инструкции по настройке Dynamics CRM Online для получения интересов.
+**Dynamics CRM Online** . инструкции по настройке Dynamics CRM Online для получения интересов см. в статье [Настройка управления интересами для Dynamics 365 для служб поддержки клиентов](./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md) .
 
-**Marketo** - [Щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo), чтобы получить инструкции по настройке Marketo для получения интересов.
+**Marketo** . инструкции по настройке настройки интересов Marketo для получения интересов см. [в разделе Настройка управления интересами в Marketo](./partner-center-portal/commercial-marketplace-lead-management-instructions-marketo.md) .
 
-**SalesForce** - [Щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce), чтобы получить инструкции по настройке экземпляра Salesforce для получения интересов.
+**Salesforce** . инструкции по настройке экземпляра salesforce для получения интересов см. в статье [Настройка управления интересами для Salesforce](./partner-center-portal/commercial-marketplace-lead-management-instructions-salesforce.md) .
 
- - **таблиц Azure** [щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table) , чтобы получить инструкции по настройке учетной записи хранения Azure для получения интересов в таблице Azure.
+**Таблица Azure** . инструкции по настройке учетной записи хранения Azure для получения интересов в таблице Azure см. в статье [Настройка управления интересами с помощью таблицы Azure](./partner-center-portal/commercial-marketplace-lead-management-instructions-azure-table.md) .
 
-**Конечная точка https** - [щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https) , чтобы получить инструкции по настройке конечной точки HTTPS для получения интересов.
+**Конечная точка HTTPS** . инструкции по настройке конечной точки HTTPS для получения интересов см. в статье [Настройка управления интересами с помощью конечной точки HTTPS](./partner-center-portal/commercial-marketplace-lead-management-instructions-https.md) .
 
 После успешной настройки назначения интереса нажмите кнопку "Опубликовать" в вашем предложении, и мы проверим подключение и отправим вам тестовый интерес. Перед тем как использовать предложение в рабочей среде, вы можете проверить подключение интереса, попробовав получить предложение в предварительной среде. Очень важно следить за настройками параметров интересов, чтобы не упустить потенциальных клиентов. Поэтому регулярно обновляйте эти подключения при каждом изменении с вашей стороны.
 
-
 ### <a name="what-are-the-next-steps"></a>Каковы следующие шаги?
 
-После завершения технической настройки нужно включить эти интересы в текущую стратегию продаж и маркетинга, а также в рабочие процессы. Мы стараемся лучше понять общий процесс ваших продаж и за счет тесного сотрудничества с вами можем предоставлять точные сведения о потенциальных клиентах и достаточный объем данных, чтобы помочь вам достичь успеха. Мы приветствуем отзывы касательно оптимизации и улучшения интересов, которые отправляем вместе с дополнительными данными, чтобы помочь таким клиентам. Сообщите нам, если вы заинтересованы в предоставлении отзывов и предложений, которые помогут вашей группе отделов продаж более успешно работать с интересами Marketplace.
+После выполнения технической настройки необходимо включить эти интересы в текущую торговую стратегию продаж & маркетинга и рабочие процессы. Мы стараемся лучше понять общий процесс ваших продаж и за счет тесного сотрудничества с вами можем предоставлять точные сведения о потенциальных клиентах и достаточный объем данных, чтобы помочь вам достичь успеха. Мы приветствуем отзывы касательно оптимизации и улучшения интересов, которые отправляем вместе с дополнительными данными, чтобы помочь таким клиентам. Сообщите нам, если вы заинтересованы в предоставлении отзывов и предложений, которые помогут вашей группе отделов продаж более успешно работать с интересами Marketplace.
 
-
-
-## <a name="common-lead-configuration-errors-during-publishing-on-cloud-partner-portal"></a>Распространенные ошибки конфигурации интересов во время публикации на портале Cloud Partner 
+## <a name="common-lead-configuration-errors-during-publishing-in-partner-center"></a><a id="publishing-config-errors"></a>Распространенные ошибки конфигурации интересов во время публикации в центре партнеров
 
 **Не удалось сохранить интерес в Dynamics CRM. Проверьте параметры учетной записи Dynamics CRM. Ласткрмеррор: не удалось войти в Dynamics CRM, Ласткрмексцептион:** 
 
-> Если выбрано аутентификацию O365, проверьте допустимость учетной записи пользователя и пароля. Если выбрано AAD, проверьте, соответствуют ли идентификатор клиента, идентификатор приложения и секретный ключ приложения тем, что были настроены на AAD. Следуйте [этим](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) инструкциям. Если имя пользователя/пароль учетной записи является допустимым, убедитесь, что она имеет доступ к Dynamics 365, и ему присвоено лицензию (шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности). 
+> Если выбрано аутентификацию O365, проверьте допустимость учетной записи пользователя и пароля. Если выбрано AAD, проверьте, соответствуют ли идентификатор клиента, идентификатор приложения и секретный ключ приложения тем, что были настроены на AAD. Инструкции см. [здесь](./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md). Если имя пользователя и пароль учетной записи действительны, убедитесь, что у него есть доступ к Dynamics 365 и назначена лицензия (шаги 11-15, если используется Azure Active Directory или параметры безопасности, если используется пользователь Office). 
 
- 
 **Не удалось сохранить интерес в Dynamics CRM. Пользователь не имеет разрешений на создание для атрибута леадсаурцекоде в сущности интереса** 
 
-> В приложения/пользователя нет роли (ролей) безопасности для автора интересов Microsoft Marketplace. Выполните шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности, [здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics).
+> В приложения/пользователя нет роли (ролей) безопасности для автора интересов Microsoft Marketplace. Выполните шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности, [здесь](./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md).
 
 **Не удалось сохранить интерес в Dynamics CRM с помощью AAD. Исключение:: клиент не найден. Этот экземпляр может произойти, если для клиента нет активных подписок.**  
 
-> Идентификатор каталога, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 2 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) 
+> Идентификатор каталога, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога на основе инструкций [, приведенных](./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md)на шаге 2 (в разделе Azure Active Directory.
 
 **Не удалось сохранить интерес в Dynamics CRM. Ласткрмеррор: сбой Секлиб:: Ретриевепривилежефорусер — роли не назначены пользователю.**  
 
-> Решение: назначение роли безопасности для автора интересов Microsoft Marketplace. Следуйте [этим](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) инструкциям в параметрах безопасности 
+> Решение: назначение роли безопасности для автора интересов Microsoft Marketplace. Следуйте инструкциям [в разделе](./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md) параметры безопасности.
 
 **Не удалось сохранить интерес в Dynamics CRM с помощью AAD. Исключение:: приложение с идентификатором не найдено в каталоге** 
 
-> Идентификатор приложения, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 8 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)). 
+> Идентификатор приложения, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 8 (в Azure Active Directory, [отсюда](./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md)). 
 
 **Не удалось сохранить интерес в Dynamics CRM с помощью AAD. Исключение:: запрошенный идентификатор клиента недопустим и не является допустимым форматом внешнего домена** 
 
-> Идентификатор каталога, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 2 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)). 
+> Идентификатор каталога, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 2 (в Azure Active Directory, [отсюда](./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md)). 
 
 **Не удалось сохранить интерес в Dynamics CRM с помощью AAD. Исключение:: ошибка при проверке учетных данных.: предоставлен недопустимый секрет клиента.** 
 
-> Решение. Войдите на портал Azure и проверьте, соответствует ли ключ приложения тем, что есть в Портал Cloud Partner. Получите сгенерированный пароль в соответствии с инструкциями в шаге 10 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)). 
+> Решение. Войдите в портал Azure, проверьте, соответствует ли ключ приложения тому, что находится в центре партнеров. Получите сгенерированный пароль в соответствии с инструкциями в шаге 10 (в Azure Active Directory, [отсюда](./partner-center-portal/commercial-marketplace-lead-management-instructions-dynamics.md)). 
 
 **Не удалось сохранить интерес в Dynamics CRM. Ласткрмеррор: время ожидания для канала запроса истекло при ожидании ответа после 00:02:00. Увеличьте значение времени ожидания, передаваемое вызову для запроса, или увеличьте значение SendTimeout в привязке. Время, выделенное для выполнения этой операции, может быть составной частью более длительного времени ожидания.**  
 
-> Решение. Войдите в Портал Cloud Partner, проверьте сведения о витрине > > адрес получателя > > URL, проверьте, является ли он допустимым динамическим экземпляром CRM.
+> Решение. Войдите в центр партнеров, просмотрите сведения о витрине >> целевое >> URL-адрес, проверьте, является ли он допустимым динамическим экземпляром CRM.
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 **Что такое интересы и почему они важны для меня как издателя на Marketplace?** 
 
-Интересы — это пользователи, которые развертывают ваши продукты из Marketplace. Независимо от того, где содержится ваш продукт (в [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us) или в [AppSource](https://appsource.microsoft.com/)), вы будете иметь возможность получать сведения о потенциальных клиентах, заинтересованных в вашем продукте, если для вашего предложения настроено назначение интереса.  
-
+Интересы — это пользователи, которые развертывают ваши продукты из Marketplace. Независимо от того, где содержится ваш продукт (в [Azure Marketplace](https://azuremarketplace.microsoft.com) или в [AppSource](https://appsource.microsoft.com/)), вы будете иметь возможность получать сведения о потенциальных клиентах, заинтересованных в вашем продукте, если для вашего предложения настроено назначение интереса.  
 
 **Где можно получить помощь про поводу настройки назначения моего интереса?** 
 
-Документацию можно найти здесь: [получить сведения о клиентах](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads) или отправить запрос в службу поддержки через AKA.MS/marketplacepublishersupport выбор типа предложения и управления интересами. 
-
-
+Документацию можно найти на странице [получение клиентов](./partner-center-portal/commercial-marketplace-get-customer-leads.md) или отправить запрос в службу поддержки в [центре справки и поддержки](https://partner.microsoft.com/support/v2/?stage=1). Выберите тип предложения и управление интересами. 
 
 **Необходимо ли мне настроить назначение интереса, чтобы опубликовать предложение в Marketplace?**
 
 Да, если вы публикуете приложение SaaS для связи с вами или консультационные услуги.  
  
-
-
 **Как убедиться в том, что конфигурация интереса правильна?**
 
 После настройки вашего предложения и назначения интереса опубликуйте свое предложение. На этапе проверки интерес Marketplace отправляет тестовый интерес в назначение интереса, настроенное в вашем предложении. 
 
-
 **Как мне найти тестовый интерес?**
-
 
 Выполните поиск по запросу "MSFT_TEST" в целевом объекте "интерес", Вот пример данных о результатах теста: 
 
@@ -132,7 +116,7 @@ first_name = MSFT_TEST_636573304831318844
 
 last_name = MSFT_TEST_636573304831318844 
 
-lead_source = MSFT_TEST_636573304831318844-MSFT_TEST_636573304831318844 | Имя предложения\<> 
+lead_source = MSFT_TEST_636573304831318844-MSFT_TEST_636573304831318844 | \<Имя предложения> 
 
 oid = 00Do0000000ZHog 
 
@@ -140,32 +124,30 @@ phone = 1234567890
 
 title = MSFT_TEST_636573304831318844 
 
- 
-
 **У меня есть действующее предложение, но я не вижу никаких интересов?**
 
 Каждый интерес будет передавать данные в поля выбранного назначения интереса. Интересы будут поступать в следующем формате: **источник — действие|предложение** 
 
-  *Источники:*
+  *Исход*
 
     "AzureMarketplace", 
     "AzurePortal", 
     "TestDrive",  
     "SPZA" (acronym for AppSource) 
 
-  *Действия:*
+  *Действия*
 
     "INS" - Stands for Installation. This is on Azure Marketplace or AppSource whenever a customer hits the button to acquire your product. 
     "PLT" - Stands for Partner Led Trial. This is on AppSource whenever a customer hits the Contact me button. 
 
     "DNC" - Stands for Do Not Contact. This is on AppSource whenever a Partner who was cross listed on your app page gets requested to be contacted. We are sharing the heads up that this customer was cross listed on your app, but they do not need to be contacted. 
 
-    "Create" - This is inside Azure Portal only and is whenever a customer purchases your offer to their account. 
+    "Create" - This is inside Azure portal only and is whenever a customer purchases your offer to their account. 
 
     "StartTestDrive" - This is for Test Drives only and is whenever a customer starts their test drive. 
 
 
-  *Предложения:*
+  *Предполагает*
 
     "checkpoint.check-point-r77-10sg-byol", 
     "bitnami.openedxcypress", 
@@ -193,40 +175,31 @@ title = MSFT_TEST_636573304831318844
 
     } 
 
-Дополнительные сведения см. в [Lead Info](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads) (Информация по поводу интересов). 
-
+Дополнительные сведения см. в [Lead Info](./partner-center-portal/commercial-marketplace-get-customer-leads.md) (Информация по поводу интересов). 
 
 **В качестве назначений интересов у меня настроено BLOB-объект Azure. Почему интерес не отображается?** 
 
-Интерес записывается только в том случае, если в качестве назначения интереса вы выбрали BLOB-объект Azure. Перейдите в таблицу Azure для получения реального времени интереса 
-
+Интерес записывается только в том случае, если в качестве назначения интереса вы выбрали BLOB-объект Azure. Переключитесь на таблицу Azure для получения интереса в реальном времени.
 
 **Мне пришло электронное письмо от Marketplace. Почему мне не удается найти интерес в моей CRM?**  
 
-Вполне возможно, что домен электронной почты пользователя — из .edu. В целях конфиденциальности не передавайте персональные данные из домена .edu. Отправьте запрос в службу поддержки через aka.ms/marketplacepublishersupport 
+Вполне возможно, что домен электронной почты пользователя — из .edu. В целях обеспечения конфиденциальности мы не передаем личные данные из домена edu. Отправьте запрос в службу поддержки в [центре справки и поддержки](https://partner.microsoft.com/support/v2/?stage=1).
 
+**В качестве назначений интересов у меня настроено таблицу Azure/BLOB-объект Azure. Как я могу просмотреть интересы?** 
 
- **В качестве назначений интересов у меня настроено таблицу Azure/BLOB-объект Azure. Как я могу просмотреть интересы?** 
-
-Вы можете получить доступ к большому двоичному объекту или таблице на портале Azure. также можно скачать и установить [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) бесплатно, чтобы просмотреть таблицы и большие двоичные объекты учетной записи хранения Azure. 
-
+Вы можете получить доступ к большому двоичному объекту или таблице из портал Azure или скачать и установить [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) бесплатно для просмотра таблиц и больших двоичных объектов учетной записи хранения Azure. 
 
 **В качестве назначений интересов у меня настроено таблицу Azure. Буду ли я получать уведомления о том, что Marketplace отправил мне новый интерес?** 
 
-Да. Следуйте инструкциям, чтобы задать в [этой ](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table) документации таблицу Azure + функцию. 
-
-
+Да. Следуйте инструкциям, чтобы задать в [этой ](./partner-center-portal/commercial-marketplace-lead-management-instructions-azure-table.md) документации таблицу Azure + функцию. 
 
 **В качестве назначений интересов у меня настроено Salesforce. Почему я не могу найти интересы?** 
 
 Проверьте, является ли веб-форма интересов обязательным полем в поле выбора. Если это так, то перейдите через поле к необязательному текстовому полю.  
  
-
 **Возникла ошибка в назначении интереса, и некоторые интересы пропущены. Можно ли отправлять мне сообщения по электронной почте?** 
 
-Из-за политики персональных данных мы не можем делиться сведениями об интересах, используя незащищенные сообщения электронной почты. 
-
-
+Из-за политик конфиденциальности мы не можем обмениваться информацией о интересах через незащищенную почту. 
 
 **В качестве назначений интересов у меня настроено службу хранилища Azure (BLOB-объект/таблица). Сколько это будет стоить?** 
 

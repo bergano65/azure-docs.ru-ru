@@ -10,12 +10,12 @@ metadata:
   author: ekpgh
   ms.author: rohogue
   ms.date: 11/07/2019
-  ms.openlocfilehash: 07a161066cdea57d42050986bc9e16d98a9310a6
-  ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+  ms.openlocfilehash: 3cee41dd9cb4852eab884345404ba89eff8d9d91
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/19/2019
-  ms.locfileid: "74166511"
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "77651038"
 landingContent:
 - title: Сведения об Azure HPC Cache
   linkLists:
@@ -43,7 +43,7 @@ landingContent:
       url: hpc-cache-namespace.md
     - text: Перемещение данных в целевые расположения хранилищ (при необходимости)
       url: hpc-cache-ingest.md
-- title: Устранение неполадок
+- title: Диагностика
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -53,7 +53,11 @@ landingContent:
       url: hpc-cache-edit-storage.md
     - text: Обход параметров брандмауэра для создания целевых объектов хранилища BLOB-объектов
       url: hpc-cache-blob-firewall-fix.md
+    - text: Устранение неполадок с созданием целевого расположения хранилища NFS
+      url: troubleshoot-nas.md
   - linkListType: concept
     links:
     - text: Восстановление после регионального сбоя
       url: hpc-region-recovery.md
+    - text: Использование целевых расположений хранилища Azure NetApp Files
+      url: hpc-cache-netapp.md

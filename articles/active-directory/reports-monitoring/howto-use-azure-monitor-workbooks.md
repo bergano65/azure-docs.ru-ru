@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 10/30/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 2e94d9f56a865999f9169650f621a6af892c27ae
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.openlocfilehash: 094939ee62046c72f07ac46f0781e687034f731f
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74014361"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690615"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Использование книг Azure Monitor для Azure Active Directory отчетов
 
@@ -42,7 +42,7 @@ ms.locfileid: "74014361"
 
 - Получайте более подробные сведения о запросах журналов входа. книга сообщает о количестве пользователей, которым был предоставлен или запрещен доступ, а также о том, сколько пользователей пропускает политики условного доступа при доступе к ресурсам.
 
-- Чтобы помочь вам решить эти вопросы, Active Directory предоставляет книги для мониторинга. [Azure Monitor книгах](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks) объединяет текст, аналитические запросы, метрики и параметры в расширенные Интерактивные отчеты.
+- Чтобы помочь вам решить эти вопросы, Azure Active Directory предоставляет книги для мониторинга. [Azure Monitor книгах](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks) объединяет текст, аналитические запросы, метрики и параметры в расширенные Интерактивные отчеты.
 
 
 
@@ -54,25 +54,25 @@ ms.locfileid: "74014361"
  
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные условия
 
 Для использования рабочих книг монитора необходимо следующее:
 
-- Клиент Active Directory с лицензией Premium (P1 или P2). Узнайте, как [получить лицензию Premium](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-get-started-premium).
+- Клиент Azure Active Directory с лицензией Premium (P1 или P2). Узнайте, как [получить лицензию Premium](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-get-started-premium).
 
 - [Рабочая область log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace).
 
 - [Доступ](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-workspace-permissions) к рабочей области log Analytics
 - Следующие роли в Azure Active Directory (при доступе к Log Analytics через портал Azure Active Directory)
-    - Администратор безопасности
+    - Администратор безопасности.
     - Читатель сведений о безопасности
     - Средство чтения отчетов
-    - Глобальный администратор
+    - Глобальный администратор.
 
 ## <a name="roles"></a>Роли
 Вы должны быть в одной из следующих ролей, а также иметь [доступ к базовой](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions) рабочей области log Analytics для управления книгами:
--   Глобальный администратор
--   Администратор безопасности
+-   Глобальный администратор.
+-   Администратор безопасности.
 -   Читатель сведений о безопасности
 -   Средство чтения отчетов
 -   администратор приложений;
@@ -81,9 +81,9 @@ ms.locfileid: "74014361"
 
 Для доступа к книгам:
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 
-1. Перейдите к **Azure Active Directory** > **мониторинг** > **книги**. 
+1. Перейдите к разделу **Azure Active Directory** > **мониторинг** > **книги**. 
 
 1. Выберите отчет или шаблон или нажмите кнопку **Открыть**на панели инструментов. 
 
@@ -109,14 +109,14 @@ ms.locfileid: "74014361"
 
 - Приложения
 
-- Users
+- Пользователи
 
 ![Анализ входов](./media/howto-use-azure-monitor-workbooks/43.png)
 
 
 Для каждого тренда вы получаете декомпозицию по следующим категориям:
 
-- Место проведения
+- Расположение
 
     ![Входы в систему по расположению](./media/howto-use-azure-monitor-workbooks/45.png)
 
@@ -143,7 +143,7 @@ ms.locfileid: "74014361"
 
 - Приложения
 
-- Users
+- Пользователи
 
 - Протоколы
 
@@ -167,7 +167,7 @@ ms.locfileid: "74014361"
 
 - Приложения
 
-- Users
+- Пользователи
 
 ![Операции входа в систему с использованием условного доступа](./media/howto-use-azure-monitor-workbooks/49.png)
 
@@ -183,12 +183,12 @@ ms.locfileid: "74014361"
 
 Книги содержат запросы журналов входа, которые могут помочь ИТ-администраторам отслеживать влияние политик условного доступа в клиенте. У вас есть возможность сообщать о количестве пользователей, которым был предоставлен или запрещен доступ. Книга содержит ценные сведения о том, сколько пользователей будет пропускать политики условного доступа на основе атрибутов пользователей во время входа в систему. Он содержит подробные сведения по условию, чтобы влияние политики можно было зафильтровать по условию, включая платформу устройства, состояние устройства, клиентское приложение, риск для входа, расположение и приложение.
 
-### <a name="instructions"></a>Указания 
+### <a name="instructions"></a>Instructions 
 Чтобы получить доступ к книге для получения сведений о условном доступе, выберите книгу **Условный доступ** в разделе условный доступ. В этой книге показано ожидаемое влияние каждой политики условного доступа в клиенте. Выберите одну или несколько политик условного доступа из раскрывающегося списка и сократите область книги, применив следующие фильтры: 
 
 - **Диапазон времени**
 
-- **User**
+- **Пользователь**
 
 - **Приложения**
 
@@ -206,7 +206,7 @@ ms.locfileid: "74014361"
 - **Платформа устройства**
 - **Клиентские приложения**
 - **Риск при входе**
-- **Местоположение.**
+- **Расположение**
 - **Приложения**
 
 ![Состояние условного доступа](./media/howto-use-azure-monitor-workbooks/device-platform.png)
@@ -231,7 +231,7 @@ ms.locfileid: "74014361"
 
 - Требовать заявление о конфиденциальности
 
-- Другие
+- Другой
 
 
 Можно отфильтровать каждую тенденцию по следующим категориям:
@@ -240,7 +240,7 @@ ms.locfileid: "74014361"
 
 - Приложения
 
-- Users
+- Пользователи
 
 ![Входы с помощью предоставления элементов управления](./media/howto-use-azure-monitor-workbooks/50.png)
 
@@ -280,7 +280,7 @@ ms.locfileid: "74014361"
 
 - Приложения
 
-- Users
+- Пользователи
 
 ![Устранение неполадок при входе](./media/howto-use-azure-monitor-workbooks/52.png)
 
@@ -300,6 +300,6 @@ ms.locfileid: "74014361"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание интерактивных отчетов с помощью Monitoring книги](https://docs.microsoft.com/azure/azure-monitor/app/usage-workbooks).

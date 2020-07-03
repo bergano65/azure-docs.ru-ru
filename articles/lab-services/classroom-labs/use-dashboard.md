@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/31/2019
+ms.date: 02/20/2020
 ms.author: spelluru
-ms.openlocfilehash: d1e34a493b747383ce479bcad638098b41e59d2b
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 363e5705e9ccf4aa207ff7e5cafb615bc01bc7d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73588191"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77538946"
 ---
 # <a name="dashboard-for-classroom-labs"></a>Панель мониторинга для занятий
 В этой статье описывается представление панели мониторинга лаборатории занятий в службах лаборатории Azure. 
@@ -28,7 +28,7 @@ ms.locfileid: "73588191"
 ## <a name="costs-and-billing-tile"></a>Плитка затрат и выставления счетов
 Эта плитка содержит следующие сведения о оценке затрат:
 
-| Настройка | Значение | 
+| Параметр | Значение | 
 | ------- | ----- | 
 | Часы квоты | Максимальное число часов, в течение которых пользователь может использовать виртуальную машину за пределами запланированных часов. |
 | Запланированные часы | Часы, которые будут выполняться на основе расписания, заданного в лаборатории. Это значение доступно, только если для всех событий расписания установлено значение From/To. |

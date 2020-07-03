@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: Документация по облачным службам Azure
+summary: Узнайте, как использовать Облачные службы для размещения и запуска облачных приложений и API-интерфейсов с высоким уровнем доступности и масштабируемости. Узнайте, как управлять узлами виртуальных машин, а также настраивать, исправлять и устанавливать программное обеспечение.
+metadata:
+  title: Документация по облачным службам Azure
+  description: Узнайте, как использовать Облачные службы для размещения и запуска облачных приложений и API с высоким уровнем доступности и масштабируемости.
+  ms.service: cloud-services
+  service: cloud-services
+  ms.topic: landing-page
+  author: tgore03
+  ms.author: tagore
+  ms.date: 03/06/2020
+  ms.openlocfilehash: 11699a28ab3b5863812c9c171428896aeaaefec1
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "78943180"
+landingContent:
+- title: Сведения об облачных службах
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое Облачные службы
+      url: cloud-services-choose-me.md
+  - linkListType: video
+    links:
+    - text: Библиотека видео по Облачным службам
+      url: https://azure.microsoft.com/documentation/videos/index/?services=cloud-services
+- title: Начало работы
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: ASP.NET
+      url: cloud-services-dotnet-get-started.md
+    - text: Python для Visual Studio
+      url: cloud-services-python-ptvs.md
+- title: Разработка
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание веб-ролей и рабочих ролей PHP
+      url: ../cloud-services-php-create-web-role.md
+    - text: Сборка и развертывание приложения Node.js
+      url: cloud-services-nodejs-develop-deploy-app.md
+    - text: Сборка и развертывание веб-приложения Node.js с использованием Express
+      url: cloud-services-nodejs-develop-deploy-express-app.md
+- title: Развертывание
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание и развертывание облачной службы на портале
+      url: cloud-services-how-to-create-deploy-portal.md
+    - text: Создание пустого контейнера облачной службы в PowerShell
+      url: cloud-services-powershell-create-cloud-container.md
+- title: Управление
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Общие задачи управления
+      url: cloud-services-how-to-manage-portal.md
+    - text: Настройка облачной службы
+      url: cloud-services-how-to-configure-portal.md

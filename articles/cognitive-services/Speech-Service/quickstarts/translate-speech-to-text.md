@@ -3,20 +3,20 @@ title: Краткое руководство. Преобразование ре�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве рассматривается использование пакета SDK службы речи для интерактивного перевода речи с одного языка на другой.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 02/10/2020
-ms.author: dapine
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 4ee1950011fe608b796ff4c92520321e562c5654
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.author: trbye
+zone_pivot_groups: programming-languages-set-two-with-js-spx
+ms.openlocfilehash: c6fff4ca8a28f8980e10c82393b77994d0ef9bdb
+ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119158"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83715034"
 ---
 # <a name="quickstart-translate-speech-to-text"></a>Краткое руководство. Преобразование речи в текст
 
@@ -42,6 +42,19 @@ ms.locfileid: "77119158"
 [!INCLUDE [Header](../includes/quickstarts/translate-stt/header.md)]
 [!INCLUDE [Header](../includes/quickstarts/translate-stt/python/header.md)]
 [!INCLUDE [python](../includes/quickstarts/translate-stt/python/python.md)]
+::: zone-end
+
+::: zone pivot="programming-language-javascript"
+[!INCLUDE [Header](../includes/quickstarts/translate-stt/header.md)]
+[!INCLUDE [Header](../includes/quickstarts/translate-stt/javascript/header.md)]
+[!INCLUDE [javascript](../includes/quickstarts/translate-stt/javascript/javascript.md)]
+::: zone-end
+
+::: zone pivot="programmer-tool-spx"
+[!INCLUDE [Header](../includes/quickstarts/translate-stt/spx/header.md)]
+[!INCLUDE [SPX Setup](../includes/spx-setup.md)]
+[!INCLUDE [spx](../includes/quickstarts/translate-stt/spx/spx.md)]
+[!INCLUDE [next steps to spx basics](../includes/quickstarts/spx-next-steps.md)]
 ::: zone-end
 
 ::: zone pivot="programming-language-more"

@@ -11,12 +11,12 @@ metadata:
   author: KumudD
   ms.author: kumud
   ms.date: 08/28/2019
-  ms.openlocfilehash: f96f011eedc297b3f48d8b8dda177198809bb564
-  ms.sourcegitcommit: d200cd7f4de113291fbd57e573ada042a393e545
+  ms.openlocfilehash: a6c0bee32fbeb50c1eef0a9625706bcee9e1ae17
+  ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 08/29/2019
-  ms.locfileid: "70142946"
+  ms.lasthandoff: 04/23/2020
+  ms.locfileid: "82086476"
 landingContent:
 - title: Сведения о виртуальной сети
   linkLists:
@@ -64,6 +64,10 @@ landingContent:
     links:
     - text: Защита и изоляция доступа к ресурсам Azure
       url: https://docs.microsoft.com/learn/modules/secure-and-isolate-with-nsg-and-service-endpoints
+  - linkListType: video
+    links:
+    - text: Безопасный доступ к ресурсам Azure PaaS с помощью Приватного канала Azure
+      url: https://www.youtube.com/watch?v=PWKM5KXjWno
 - title: Подключение виртуальных сетей
   linkLists:
   - linkListType: concept
@@ -160,7 +164,7 @@ landingContent:
       url: virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md
     - text: Создание, изменение и удаление префикса общедоступного IP-адреса
       url: manage-public-ip-address-prefix.md
-- title: Справочные материалы
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:

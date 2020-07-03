@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: scottwhi
 ms.openlocfilehash: 6fa022f181e2061c6a7f3e08d1f2f501ddd9cac3
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74111413"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "79220273"
 ---
 # <a name="filtering-the-answers-that-the-search-response-includes"></a>Фильтрация результатов, возвращаемых в ответе на запрос поиска  
 
@@ -53,7 +53,7 @@ ms.locfileid: "74111413"
 
 Можно отфильтровать типы ответов, включаемых Bing в ответ (например, изображения, видео и новости), с помощью параметра запроса [респонсефилтер](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter) , который представляет собой список ответов с разделителями-запятыми. Ответ будет добавлен в ответ, если Bing найдет соответствующее для него содержимое. 
 
-Чтобы исключить конкретные ответы из ответа, например изображения, добавьте в начало `-` символа в тип ответа. Например,
+Чтобы исключить конкретные ответы из ответа, например изображения, добавьте `-` символ к типу ответа. Пример:
 
 ```
 &responseFilter=-images,-videos
@@ -102,7 +102,7 @@ Host: api.cognitive.microsoft.com
 
 ### <a name="site"></a>Сайт
 
-Чтобы получить результаты поиска из определенного домена, включите параметр запроса `site:` в строку запроса.  
+Чтобы получить результаты поиска из определенного домена, включите параметр `site:` запроса в строку запроса.  
 
 ```
 https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:contososailing.com&mkt=en-us
@@ -115,11 +115,11 @@ https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:con
 
 Чтобы ограничить результаты Интернета веб-страницами, обнаруженными Bing в течение определенного периода времени, задайте для параметра запроса [свежести](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#freshness) одно из следующих значений без учета регистра:
 
-* `Day` — возврат веб-страниц, обнаруженных Bing за последние 24 часа
-* `Week` — возврат веб-страниц, обнаруженных Bing в течение последних семи дней
-* `Month` — возврат веб-страниц, обнаруженных в течение последних 30 дней
+* `Day`— Возврат веб-страниц, обнаруженных Bing за последние 24 часа
+* `Week`— Возврат веб-страниц, обнаруженных Bing за последние семь дней
+* `Month`— Возврат веб-страниц, обнаруженных в течение последних 30 дней
 
-Вы также можете задать для этого параметра настраиваемый диапазон дат в форме `YYYY-MM-DD..YYYY-MM-DD`. 
+Можно также задать для этого параметра настраиваемый диапазон дат в форме `YYYY-MM-DD..YYYY-MM-DD`. 
 
 `https://<host>/bing/v7.0/search?q=ipad+updates&freshness=2019-02-01..2019-05-30`
 
@@ -131,7 +131,7 @@ https://api.cognitive.microsoft.com/bing/v7.0/search?q=sailing+dinghies+site:con
 
 ## <a name="limiting-the-number-of-answers-in-the-response"></a>Ограничение числа результатов в ответе
 
-Bing может возвращать несколько типов ответов в ответе JSON. Например, при запросе *гоночные + дингхиес*Bing может возвращать `webpages`, `images`, `videos`и `relatedSearches`.
+Bing может возвращать несколько типов ответов в ответе JSON. Например, при запросе *гоночные + дингхиес* `webpages`Bing может возвращать `images`,, `videos`и. `relatedSearches`
 
 ```json
 {

@@ -7,26 +7,26 @@ ms.topic: conceptual
 ms.date: 12/09/2016
 ms.author: bburns
 ms.custom: mvc
-ms.openlocfilehash: c8ed146a224ec4225a7a0e85c76227fb1dc71b0b
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 1f3f70c30ab397bd549a2f3305a738274ee4f64f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76271053"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79371177"
 ---
 # <a name="deprecated-monitor-an-azure-container-service-cluster-with-datadog"></a>(УСТАРЕЛО) Мониторинг кластера Службы контейнеров Azure с помощью DataDog
 
 [!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 В этом пошаговом руководстве предполагается, что вы [создали кластер Kubernetes с помощью службы контейнеров Azure](container-service-kubernetes-walkthrough.md).
 
 Также предполагается, что у вас установлен интерфейс командной строки Azure `az` и инструменты `kubectl`.
 
 Чтобы проверить наличие средства `az`, выполните такую команду:
 
-```console
-$ az --version
+```azurecli
+az --version
 ```
 
 Если средство `az` не установлено, следуйте инструкциям, приведенным [здесь](https://github.com/azure/azure-cli#installation).
@@ -34,13 +34,13 @@ $ az --version
 Чтобы проверить наличие средства `kubectl`, выполните такую команду:
 
 ```console
-$ kubectl version
+kubectl version
 ```
 
 Если средство `kubectl` не установлено, выполните команду:
 
-```console
-$ az acs kubernetes install-cli
+```azurecli
+az acs kubernetes install-cli
 ```
 
 ## <a name="datadog"></a>Datadog
@@ -52,7 +52,7 @@ Datadog представляет собой службу мониторинга,
 Kubernetes использует наборы DaemonSet для выполнения отдельного экземпляра контейнера на каждом узле в кластере.
 Они идеально подходят для выполнения агентов мониторинга.
 
-После входа в DataDog можно следовать [инструкциям к DataDog](https://app.datadoghq.com/account/settings#agent/kubernetes), чтобы установить на кластер агенты DataDog с помощью DaemonSet.
+После входа в Datadog вы можете выполнить [инструкции по Datadog](https://app.datadoghq.com/account/settings#agent/kubernetes) , чтобы установить агенты Datadog в кластере с помощью управляющей программы.
 
 ## <a name="conclusion"></a>Заключение
 Вот и все! Через несколько минут после того, как агенты будут запущены и начнут работать, вы увидите данные в консоли. Вы можете посетить интегрированную [панель мониторинга Kubernetes](https://app.datadoghq.com/screen/integration/kubernetes), чтобы просмотреть сводку по кластеру.

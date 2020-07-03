@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 08/16/2018
 ms.openlocfilehash: a394fee7178b2e3e167c8bd905ab175b25d1d813
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75397469"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Работа со строками в запросах журнала Azure Monitor
@@ -27,7 +27,7 @@ ms.locfileid: "75397469"
 
 
 ## <a name="strings-and-escaping-them"></a>Строки и их экранирование
-Строковые значения заключаются в одинарные или двойные кавычки. Обратная косая черта (\\) используется для экранирования символов до символа, следующего за ним, например \t для Tab, \n для новой строки и \" сам символ кавычки.
+Строковые значения заключаются в одинарные или двойные кавычки. Обратная\\косая черта () используется для экранирования символов до символа, следующего за ним, например \t для Tab, \" \n для новой строки и сам символ кавычки.
 
 ```Kusto
 print "this is a 'string' literal in double \" quotes"
@@ -44,9 +44,9 @@ print @"C:\backslash\not\escaped\with @ prefix"
 ```
 
 
-## <a name="string-comparisons"></a>Сравнение строк
+## <a name="string-comparisons"></a>Сравнения строк
 
-Оператор       |Description                         |С учетом регистра|Пример (при `true`)
+Оператор       |Описание                         |С учетом регистра|Пример (при `true`)
 ---------------|------------------------------------|--------------|-----------------------
 `==`           |Равно                              |Да           |`"aBc" == "aBc"`
 `!=`           |Не равно                          |Да           |`"abc" != "ABC"`
@@ -93,7 +93,7 @@ countof(text, search [, kind])
 ### <a name="arguments"></a>Аргументы:
 - `text` — строка входных данных. 
 - `search` — текстовая строка или регулярное выражение, которое проверяется на вхождение в text.
-- `kind` - _normal_ | _regex_ (по умолчанию: normal).
+- `kind` - _Стандартное_регулярное выражение (по умолчанию: обычная)._regex_  | 
 
 ### <a name="returns"></a>Результаты
 
@@ -363,9 +363,9 @@ print toupper("hello"); // result: "HELLO"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными руководствами по следующим ссылкам:
-* [Статистические функции в запросах Log Analytics](aggregations.md)
-* [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
-* [Создание графиков и диаграмм](charts.md)
+* [Агрегатные функции](aggregations.md)
+* [Расширенные агрегатные функции](advanced-aggregations.md)
+* [Схемы и диаграммы](charts.md)
 * [Работа c JSON и структурами данных](json-data-structures.md)
 * [Составление расширенных запросов](advanced-query-writing.md)
 * [Соединения в анализе данных из нескольких источников](joins.md)

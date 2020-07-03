@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=weig, previous-ms.author=weig
 ms.openlocfilehash: 9612114bb368898ccf31b2c8692869b84544b652
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76722069"
 ---
 # <a name="data-science-code-testing-on-azure-with-the-team-data-science-process-and-azure-devops-services"></a>Тестирование кода обработки и анализа данных в Azure с помощью командного процесса обработки и анализа данных и Azure DevOps Services
@@ -112,7 +112,7 @@ ms.locfileid: "76722069"
 
 1. Настройте автоматическую сборку и тестирование в Azure DevOps:
 
-    а. В репозитории проекта выберите **Build and Release** (Сборка и выпуск), а затем щелкните **+Создать**, чтобы создать процесс сборки.
+    a. В репозитории проекта выберите **Build and Release** (Сборка и выпуск), а затем щелкните **+Создать**, чтобы создать процесс сборки.
 
     ![Выбранные параметры для запуска нового процесса сборки](./media/code-test/create_new_build.PNG)
 
@@ -128,7 +128,7 @@ ms.locfileid: "76722069"
     
     ![Настройки для сборки и агента](./media/code-test/select_agent.PNG)
 
-    д) Выберите **+** в области слева, чтобы добавить задачу для этого этапа сборки. Поскольку мы запустим сценарий Python **test1.py** для выполнения всех проверок, эта задача использует команду PowerShell для выполнения кода Python.
+    д) Выберите **+** в левой области, чтобы добавить задачу для этого этапа сборки. Поскольку мы запустим сценарий Python **test1.py** для выполнения всех проверок, эта задача использует команду PowerShell для выполнения кода Python.
     
     ![Область "Добавить задачи" с выбранным элементом PowerShell](./media/code-test/add_task_powershell.PNG)
 
@@ -150,12 +150,12 @@ ms.locfileid: "76722069"
 
 ![Уведомление в Azure DevOps об успешной сборке](./media/code-test/vs_online_build_succeed.PNG)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * В [репозитории прогноза доходов UCI](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome) представлены конкретные примеры модульных тестов для сценариев обработки и анализа данных.
 * Выполните приведенные выше рекомендации и примеры для сценария прогнозирования доходов UCI в собственных проектах обработки и анализа данных.
 
 ## <a name="references"></a>Ссылки
-* [Что такое процесс обработки и анализа данных группы?](https://aka.ms/tdsp)
+* [Командный процесс обработки и анализа данных](https://aka.ms/tdsp)
 * [Средства тестирования для Visual Studio](https://www.visualstudio.com/vs/features/testing-tools/)
 * [Ресурсы для тестирования в Azure DevOps](https://www.visualstudio.com/team-services/)
-* [Виртуальные машины для обработки и анализа данных](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/)
+* [Виртуальная машина для обработки и анализа данных](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/)

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/21/2019
 ms.author: juliako
 ms.openlocfilehash: 126700e6290650221a9cb9711b22472301409fca
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74974178"
 ---
 # <a name="tutorial-encrypt-video-with-aes-128-and-use-the-key-delivery-service"></a>Учебник. шифрование видео с помощью AES-128 и использование службы доставки ключей
@@ -32,7 +32,7 @@ ms.locfileid: "74974178"
 
 Выходные данные примера этой статьи включают URL-адрес Проигрыватель мультимедиа Azure, URL-адрес манифеста и маркер AES, необходимый для воспроизведения содержимого. В примере задается срок действия маркера JSON Web Token (JWT) равным 1 часу. Можно открыть браузер и вставить полученный URL-адрес, чтобы запустить демонстрационную страницу Проигрывателя мультимедиа Azure с URL-адресом и токеном, который уже указан (в следующем формате: ```https://ampdemo.azureedge.net/?url= {dash Manifest URL} &aes=true&aestoken=Bearer%3D{ JWT Token here}```).
 
-В этом учебнике описаны следующие процедуры.
+В этом учебнике демонстрируется выполнение следующих действий:
 
 > [!div class="checklist"]
 > * Скачайте пример [енкриптвисаес](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES) , описанный в этой статье.
@@ -51,7 +51,7 @@ ms.locfileid: "74974178"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -79,7 +79,7 @@ ms.locfileid: "74974178"
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithAES/Program.cs#CreateMediaServicesClient)]
 
-## <a name="create-an-output-asset"></a>создание выходного ресурса;  
+## <a name="create-an-output-asset"></a>Создание выходного ресурса  
 
 Выходной [ресурс](https://docs.microsoft.com/rest/api/media/assets) сохраняет результаты задания кодирования.  
 
@@ -105,7 +105,7 @@ ms.locfileid: "74974178"
 
 Запуск задания занимает некоторое время. Поэтому вам пригодится уведомление. В примере кода ниже показано, как опрашивать службу о состоянии [задания](https://docs.microsoft.com/rest/api/media/jobs). Опрос не рекомендуется для приложений рабочей среды из-за потенциальной задержки. Его можно регулировать при чрезмерном использовании в учетной записи. Вместо этого разработчики должны использовать службу "Сетка событий". Дополнительные сведения см. в статье [Create and monitor Media Services events with Event Grid using the Azure CLI](job-state-events-cli-how-to.md) (Создание и мониторинг событий Служб мультимедиа с помощью Сетки событий и Azure CLI).
 
-**Задание** обычно проходит через такие состояния: **Запланировано**, **В очереди**, **Обработка**, **Завершено** (конечное состояние). Если в задании обнаружена ошибка, вы получите состояние **Ошибка**. Если задание находится в процессе отмены, вы получите состояние **Выполнение отмены** и **Отменено** по завершении.
+Для **задания** обычно последовательно устанавливаются следующие состояния: **Запланировано**, **В очереди**, **Идет обработка**, **Завершено** (конечное состояние). Если в задании обнаружена ошибка, вы получите состояние **Ошибка**. Если задание находится в процессе отмены, вы получите состояние **Выполнение отмены** и **Отменено** по завершении.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithAES/Program.cs#WaitForJobToFinish)]
 
@@ -143,7 +143,7 @@ ms.locfileid: "74974178"
 
 ## <a name="build-a-dash-streaming-url"></a>Создайте URL-адрес потоковой передачи данных DASH
 
-Теперь, когда [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) создан, можно получить URL-адреса потоковой передачи. Чтобы создать URL-адрес, необходимо объединить имя узла [StreamingEndpoint](https://docs.microsoft.com/rest/api/media/streamingendpoints) и путь **потокового указателя** . В этом примере используется **конечная точка потоковой передачи** *по умолчанию*. При первом создании учетной записи Служб мультимедиа эта **конечная точка потоковой передачи** *по умолчанию* будет находиться в остановленном состоянии, поэтому вам необходимо вызвать функцию **Start**.
+Теперь, когда [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) создан, можно получить URL-адреса потоковой передачи. Чтобы создать URL-адрес, необходимо объединить имя узла [StreamingEndpoint](https://docs.microsoft.com/rest/api/media/streamingendpoints) и путь **потокового указателя** . В этом примере используется **конечная точка потоковой передачи** *по умолчанию*. При первом создании учетной записи Служб мультимедиа эта **конечная точка потоковой передачи** *по умолчанию* будет находиться в состоянии "Остановлено", поэтому вам необходимо вызвать функцию **Start**.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithAES/Program.cs#GetMPEGStreamingUrl)]
 
@@ -167,9 +167,9 @@ az group delete --name amsResourceGroup
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

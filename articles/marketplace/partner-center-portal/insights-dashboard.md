@@ -1,23 +1,22 @@
 ---
-title: Панель мониторинга Marketplace Insights в коммерческой аналитике Marketplace в центре партнеров
-description: Получите доступ к сводке веб-аналитики Marketplace, которая позволяет издателям измерять взаимодействия пользователей в AppSource и витринах Azure Marketplace.
-author: ChJenk
-manager: evansma
-ms.author: v-chjen
+title: Аналитика Marketplace — коммерческий рынок Майкрософт
+description: Получите доступ к сводке веб-аналитики Marketplace, которая позволяет измерять участие клиентов в Microsoft AppSource и Azure Marketplace.
+author: dsindona
+ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/16/2019
-ms.openlocfilehash: edfdf7bbfaa5fa5abb00aa7efcb35bfbcd6e68a4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: cecff7347189c5e5b964e10439297bce405810b7
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480545"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82857921"
 ---
-# <a name="marketplace-insights-dashboard-in-commercial-marketplace-analytics"></a>Панель мониторинга Marketplace Insights в коммерческой аналитике Marketplace
+# <a name="marketplace-insights-dashboard-in-partner-center"></a>Панель мониторинга Marketplace Insights в центре партнеров
 
-Эта статья содержит сведения о панели мониторинга Marketplace Insights в центре партнеров. На этой панели мониторинга отображается сводка веб-аналитики Marketplace, которая позволяет издателям измерять взаимодействия клиентов с соответствующими страницами сведений о продукте, указанными в витринах Marketplace: AppSource и Azure Marketplace.
+Эта статья содержит сведения о панели мониторинга Marketplace Insights в центре партнеров. На этой панели мониторинга отображается сводка веб-аналитики Marketplace, которая позволяет издателям измерять взаимодействия клиентов с соответствующими страницами сведений о продукте, указанными в витринах Marketplace: Microsoft AppSource и Azure Marketplace.
 
 ## <a name="marketplace-insights-dashboard"></a>Панель мониторинга аналитики Marketplace
 
@@ -42,7 +41,7 @@ ms.locfileid: "75480545"
 Просмотреть метрики Marketplace можно различными способами.
 
 - Вкладки витрин
-- Фильтры страниц
+- Фильтры страницы
 - Фильтры по дате
 
 **Вкладки витрин**. Вы можете просмотреть метрики ваших предложений отдельно через вкладки AppSource & Azure Marketplace. Выберите предложение (s) из раскрывающегося списка предложений справа, чтобы просмотреть метрики для выбранных предложений. По умолчанию выбраны все предложения.
@@ -133,7 +132,7 @@ ms.locfileid: "75480545"
 - Если число записей превышает 1000, экспортированные данные будут асинхронно помещены на страницу загрузки в течение следующих 30 дней.
 - Фильтры можно применять для вывода интересующих вас данных. Данные можно фильтровать по именам предложений и именам кампаний.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Обзор аналитических отчетов, доступных в коммерческом рынке центра партнеров, см. в статье [аналитика для коммерческого рынка в центре партнеров](./analytics.md).
 - Для диаграмм, тенденций и значений статистических данных, суммирующих действия Marketplace для вашего предложения, см. раздел [Сводная панель мониторинга в коммерческом Analytics Marketplace](./summary-dashboard.md).

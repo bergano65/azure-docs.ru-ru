@@ -8,15 +8,17 @@ ms.author: kgremban
 ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
-ms.custom: mvc
-ms.openlocfilehash: 4fa3fb17f4eace8d389738fb46267a097610f175
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.custom:
+- mvc
+- amqp
+ms.openlocfilehash: b71db71ac61e0dcd65a2546b2164610e618dab18
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760425"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81733512"
 ---
-# <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство. Разработка модулей IoT Edge на языке C# для устройств Windows
+# <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 
 Для разработки и развертывания кода C# на устройствах Windows с Azure IoT Edge используйте Visual Studio.
 

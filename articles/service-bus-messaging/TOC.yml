@@ -19,7 +19,8 @@
               href: service-bus-quickstart-powershell.md
             - name: Azure CLI
               href: service-bus-quickstart-cli.md
-            - name: Шаблон Azure Resource Manager
+            - name: Шаблон ARM
+              displayName: Resource Manager
               href: service-bus-resource-manager-namespace-queue.md
         - name: Отправка и получение сообщений
           items:
@@ -28,11 +29,7 @@
             - name: Java
               href: service-bus-java-how-to-use-queues.md
             - name: Node.js
-              items:
-                - name: azure/service-bus package
-                  href: service-bus-nodejs-how-to-use-queues-new-package.md
-                - name: azure-sb package
-                  href: service-bus-nodejs-how-to-use-queues.md
+              href: service-bus-nodejs-how-to-use-queues-new-package.md
             - name: PHP
               href: service-bus-php-how-to-use-queues.md
             - name: Python
@@ -45,7 +42,7 @@
           items:
             - name: Портал Azure
               href: service-bus-quickstart-topics-subscriptions-portal.md
-            - name: Шаблон Azure Resource Manager
+            - name: Шаблон ARM
               href: service-bus-resource-manager-namespace-topic.md
         - name: Шаблон "публикация/подписка" для обмена сообщениями
           items:
@@ -54,11 +51,7 @@
             - name: Java
               href: service-bus-java-how-to-use-topics-subscriptions.md
             - name: Node.js
-              items:
-                - name: azure/service-bus package
-                  href: service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md
-                - name: azure-sb package
-                  href: service-bus-nodejs-how-to-use-topics-subscriptions.md
+              href: service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md
             - name: PHP
               href: service-bus-php-how-to-use-topics-subscriptions.md
             - name: Python
@@ -73,10 +66,15 @@
       href: service-bus-tutorial-topics-subscriptions-portal.md
     - name: Обновление инвентаризации с помощью CLI
       href: service-bus-tutorial-topics-subscriptions-cli.md
+    - name: Реагирование на события с помощью службы "Сетка событий"
+      href: service-bus-to-event-grid-integration-example.md
 - name: Примеры
   items:
     - name: 'Служебная шина: примеры'
       href: service-bus-samples.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: 'Обмен сообщениями: уровень "Премиум"'
@@ -93,7 +91,7 @@
       href: service-bus-outages-disasters.md
     - name: Регулирование
       href: service-bus-throttling.md
-    - name: безопасность
+    - name: Безопасность
       items:
         - name: Аутентификация и авторизация
           href: service-bus-authentication-and-authorization.md
@@ -112,8 +110,12 @@
                   href: authenticate-application.md
         - name: Встроенные средства управления безопасностью
           href: service-bus-messaging-security-controls.md
+        - name: Безопасность сети
+          href: network-security.md
 - name: Практические руководства
   items:
+    - name: Миграция из API Azure Service Manager (классическая модель) в API Resource Manager
+      href: deprecate-service-bus-management.md
     - name: Создание пространства имен
       href: service-bus-create-namespace-portal.md
     - name: Разработка
@@ -132,8 +134,6 @@
               href: message-expiration.md
             - name: Обработка сообщений с помощью службы "Сетка событий Azure"
               href: service-bus-to-event-grid-integration-concept.md
-            - name: 'Сетка событий Azure: примеры'
-              href: service-bus-to-event-grid-integration-example.md
         - name: Фильтры и действия разделов
           href: topic-filters.md
         - name: Миграция из пространства имен ценовой категории "Стандартный" в пространство имен категории "Премиум"
@@ -158,10 +158,6 @@
               href: service-bus-amqp-troubleshoot.md
         - name: Дополнительные функции
           items:
-            - name: Использование брандмауэров
-              href: service-bus-ip-filtering.md
-            - name: Конечные точки служб для виртуальной сети
-              href: service-bus-service-endpoints.md
             - name: Очереди недоставленных сообщений
               href: service-bus-dead-letter-queues.md
             - name: Предварительная выборка сообщений
@@ -182,19 +178,27 @@
           href: service-bus-end-to-end-tracing.md
         - name: Создание многоуровневого приложения Служебной шины
           href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+        - name: Отправка и получение сообщений из очередей (служебная шина Azure прежних версий)
+          href: service-bus-nodejs-how-to-use-queues.md
+        - name: Шаблон "публикация/подписка" для обмена сообщениями (служебная шина Azure прежних версий)
+          href: service-bus-nodejs-how-to-use-topics-subscriptions.md
     - name: Управление
       items:
+        - name: Автоматическое обновление единиц обмена сообщениями
+          href: automate-update-messaging-units.md
         - name: Подготовка сущностей с помощью Azure PowerShell
           href: service-bus-manage-with-ps.md
         - name: Мониторинг Служебной шины с помощью Azure Monitor
           href: service-bus-metrics-azure-monitor.md
         - name: Библиотеки управления служебной шины
           href: service-bus-management-libraries.md
-        - name: Журналы диагностики
+        - name: Журналы ресурсов
           href: service-bus-diagnostic-logs.md
         - name: Приостановка и повторная активация сущностей обмена сообщениями
           href: entity-suspend.md
-        - name: Использование шаблонов Azure Resource Manager
+        - name: Использование Service Bus Explorer для выполнения операций с данными в Служебной шине
+          href: explorer.md
+        - name: Использование шаблонов ARM
           href: service-bus-resource-manager-overview.md
           items:
             - name: Создание пространства имен
@@ -205,11 +209,19 @@
               href: service-bus-resource-manager-namespace-topic-with-rule.md
     - name: Безопасность
       items:
-        - name: 'Настройка ключей, управляемых пользователем, для шифрования неактивных данных'
+        - name: Настройка брандмауэров
+          href: service-bus-ip-filtering.md
+        - name: Настройка конечных точек служб для виртуальной сети
+          href: service-bus-service-endpoints.md
+        - name: Настройка частных конечных точек
+          href: private-link-service.md
+        - name: 'Настройка ключей, управляемых клиентом'
           href: configure-customer-managed-key.md
     - name: Диагностика
       items:
         - name: Руководство по устранению неполадок
+          href: service-bus-troubleshooting-guide.md
+        - name: Исключения в обмене сообщениями
           href: service-bus-messaging-exceptions.md
         - name: Исключения Resource Manager
           href: service-bus-resource-manager-exceptions.md
@@ -255,8 +267,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=enterprise-integration'
     - name: Блог
       href: 'https://blogs.msdn.microsoft.com/servicebus/'
-    - name: Форумы MSDN
-      href: 'https://social.msdn.microsoft.com/forums/home?forum=servbus'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-service-bus.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/service-bus/'
     - name: Калькулятор цен

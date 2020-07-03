@@ -10,17 +10,17 @@ ms.date: 11/13/2019
 ms.author: victorh
 ms.custom: mvc
 ms.openlocfilehash: 0a92d0f7d17f6bb83efbe94434c25072975dbe57
-ms.sourcegitcommit: b1a8f3ab79c605684336c6e9a45ef2334200844b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74047359"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-the-azure-cli"></a>Создание шлюза приложений, на котором размещено несколько веб-сайтов, с помощью Azure CLI
 
-Чтобы настроить [размещение нескольких веб-сайтов](multiple-site-overview.md) при создании [шлюза приложений](overview.md), можно использовать Azure CLI. В этой статье описано, как определить серверные пулы адресов с помощью масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. В этой статье предполагается, что вам принадлежат несколько доменов. Для примера здесь используются домены *www\.contoso.com* и *www\.fabrikam.com*.
+Чтобы настроить [размещение нескольких веб-сайтов](multiple-site-overview.md) при создании [шлюза приложений](overview.md), можно использовать Azure CLI. В этой статье описано, как определить серверные пулы адресов с помощью масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. В этой статье предполагается, что вы владеете несколькими доменами и в них используются примеры *www\.contoso.com* и *www\.Fabrikam.com*.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
@@ -28,13 +28,13 @@ ms.locfileid: "74047359"
 > * Создание серверных прослушивателей
 > * Создание правил маршрутизации
 > * создание масштабируемых наборов виртуальных машин с внутренними пулами.
-> * Создание записи CNAME в домене.
+> * создание записи CNAME в домене.
 
 ![Пример маршрутизации нескольких сайтов](./media/tutorial-multiple-sites-cli/scenario.png)
 
 При необходимости эти инструкции можно выполнить с помощью [Azure PowerShell](tutorial-multiple-sites-powershell.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -106,7 +106,7 @@ az network application-gateway create \
 
 ### <a name="add-the-backend-pools"></a>Добавление пулов серверной части
 
-Добавьте пулы серверной части с именами, которые требуются для размещения внутренних серверов, с помощью команды [az network application-gateway address-pool create](/cli/azure/network/application-gateway/address-pool#az-network-application-gateway-address-pool-create).
+Добавьте серверные пулы, которые необходимы для размещения внутренних серверов, с помощью команды [AZ Network приложение-шлюз адрес — создание пула](/cli/azure/network/application-gateway/address-pool#az-network-application-gateway-address-pool-create) .
 ```azurecli-interactive
 az network application-gateway address-pool create \
   --gateway-name myAppGateway \
@@ -220,7 +220,7 @@ for i in `seq 1 2`; do
 done
 ```
 
-## <a name="create-a-cname-record-in-your-domain"></a>Создание записи CNAME в домене.
+## <a name="create-a-cname-record-in-your-domain"></a>создание записи CNAME в домене.
 
 После создания шлюза приложений с общедоступным IP-адресом можно получить DNS-адрес и использовать его для создания записи CNAME в своем домене. С помощью команды [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) можно получить DNS-адрес шлюза приложений. Скопируйте значение *fqdn* для DNSSettings и используйте его в качестве значения создаваемой записи CNAME. 
 
@@ -246,12 +246,12 @@ az network public-ip show \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Можно удалить группу ресурсов, шлюз приложений и все связанные с ними ресурсы, если они больше не требуются.
+При необходимости вы можете удалить группу ресурсов, шлюз приложений и все связанные ресурсы.
 
 ```azurecli-interactive
 az group delete --name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание шлюза приложений с правилами маршрутизации на основе URL-путей](./tutorial-url-route-cli.md)

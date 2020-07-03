@@ -3,7 +3,7 @@ title: Доставка содержимого для пользователей
 description: Сведения о доставке содержимого пользователям в Китае с помощью сети доставки содержимого Azure (CDN).
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/16/2018
-ms.author: magattus
+ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: a63914116f5ef9922ac05745764e0ad505dc3c91
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: fa144c7ebd68e6f5dd192fca83dc6f306d7b8d63
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593950"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81254110"
 ---
 # <a name="china-content-delivery-with-azure-cdn"></a>Доставка содержимого для пользователей в Китае с помощью Azure CDN
 
@@ -38,7 +38,7 @@ ms.locfileid: "67593950"
 
      - Выполняет доставку содержимого за пределы Китая
 
-     - Четыре ценовые категории: Стандартное решение корпорации Майкрософт, стандарт Verizon, Verizon уровня "премиум" и стандарт Akamai
+     - Четыре ценовые категории: "Стандартный" от Майкрософт, "Стандартный" от Verizon, "Премиум" от Verizon и "Стандартный" от Akamai
 
      - [Документация](https://docs.microsoft.com/azure/cdn/)
 
@@ -48,12 +48,12 @@ ms.locfileid: "67593950"
 
      - Выполняет доставку содержимого внутри Китая
 
-     - Две ценовые категории: "Стандартный" и "премиум"
+     - Две ценовые категории: "Стандартный" и "Премиум"
 
      - [Документация](https://docs.azure.cn/en-us/cdn/)
  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Подробнее о сети доставки содержимого Azure для Китая см. по следующим ссылкам:
 

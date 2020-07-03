@@ -8,10 +8,10 @@ ms.date: 08/29/2019
 ms.author: victorh
 ms.topic: article
 ms.openlocfilehash: e97783d1a32916cad151f1d0858a8190d0005fd0
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73831967"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Развертывание и настройка брандмауэра Azure с помощью Azure CLI
@@ -33,27 +33,27 @@ ms.locfileid: "73831967"
 
 ![Инфраструктура сети, используемая в руководстве](media/tutorial-firewall-rules-portal/Tutorial_network.png)
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * настройка тестовой сетевой среды;
 > * развертывание брандмауэра;
-> * Создание маршрута по умолчанию
-> * настройка правила приложения для предоставления доступа к www.google.com;
+> * создание маршрута по умолчанию;
+> * настройка правила приложения для предоставления доступа к [www.google.com]\(www.google.com);
 > * настройка сетевых правил для предоставления доступа к внешним DNS-серверам;
 > * тестирование брандмауэра.
 
 При желании эту процедуру можно выполнить с помощью [портал Azure](tutorial-firewall-deploy-portal.md) или [Azure PowerShell](deploy-ps.md).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
-Если вы решили установить и использовать CLI локально, вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду **az --version**. Дополнительные сведения об установке или обновлении см. [здесь]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы найти версию, выполните команду **AZ--Version**. Дополнительные сведения об установке или обновлении см. [здесь]( /cli/azure/install-azure-cli).
 
 Установите расширение брандмауэра Azure:
 
@@ -179,7 +179,7 @@ fwprivaddr="$(az network firewall ip-config list -g Test-FW-RG -f Test-FW01 --qu
 
 Запишите частный IP-адрес. Вы будете использовать его позже при создании маршрута по умолчанию.
 
-## <a name="create-a-default-route"></a>Создание маршрута по умолчанию
+## <a name="create-a-default-route"></a>создание маршрута по умолчанию;
 
 Создание таблицы с отключенным распространением маршрута BGP
 
@@ -233,7 +233,7 @@ az network firewall application-rule create \
 
 Брандмауэр Azure содержит встроенную коллекцию правил для целевых полных доменных имен инфраструктуры, которые разрешены по умолчанию. Эти доменные имена предназначены для платформы и не могут использоваться для других целей. См. дополнительные сведения об [FQDN инфраструктуры](infrastructure-fqdns.md).
 
-## <a name="configure-a-network-rule"></a>настройка правила сети;
+## <a name="configure-a-network-rule"></a>Настройка правила сети
 
 Правило сети разрешает исходящий доступ к двум IP-адресам через порт 53 (DNS).
 
@@ -284,7 +284,7 @@ az network firewall network-rule create \
    Invoke-WebRequest -Uri https://www.microsoft.com
    ```
 
-   Запросы на `www.google.com` должны выполняться успешно, и запросы `www.microsoft.com` должны завершаться сбоем. Это показывает, что правила брандмауэра работают должным образом.
+   `www.google.com` Запросы должны выполняться успешно, и `www.microsoft.com` запросы должны завершаться ошибкой. Это показывает, что правила брандмауэра работают должным образом.
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
@@ -302,4 +302,4 @@ az group delete \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)
+* [Руководство. Журналы мониторинга брандмауэра Azure](./tutorial-diagnostics.md)

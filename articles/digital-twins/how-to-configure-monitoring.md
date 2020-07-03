@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/21/2020
 ms.custom: seodec18
 ms.openlocfilehash: e35e18be20af3bd9f6fdc9541f9abfe857a6b87c
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76511864"
 ---
 # <a name="how-to-configure-monitoring-in-azure-digital-twins"></a>Настройка мониторинга в Azure Digital Twins
@@ -40,17 +40,17 @@ Azure Digital Twins поддерживает надежные механизмы
 1. Выберите экземпляр Azure Digital Twins.
 1. Выберите **Журнал действий**, чтобы открыть эту панель отображения:
 
-    [Журнал действий ![](media/how-to-configure-monitoring/activity-log.png)](media/how-to-configure-monitoring/activity-log.png#lightbox)
+    [![Журнал действий](media/how-to-configure-monitoring/activity-log.png)](media/how-to-configure-monitoring/activity-log.png#lightbox)
 
 Расширенные данные о ведении журнала действий вы найдете, выполнив указанные ниже действия.
 
 1. Выберите параметр **Журналы**, чтобы отобразить панель **Обзор аналитики журнала действий**:
 
-    [Выбор ![](media/how-to-configure-monitoring/activity-log-select.png)](media/how-to-configure-monitoring/activity-log-select.png#lightbox)
+    [![Выбор](media/how-to-configure-monitoring/activity-log-select.png)](media/how-to-configure-monitoring/activity-log-select.png#lightbox)
 
 1. В разделе **Обзор аналитики журнала действий** указаны важнейшие сводные данные по журналу действий.
 
-    [Обзор анализа журнала действий ![]( media/how-to-configure-monitoring/log-analytics-overview.png)]( media/how-to-configure-monitoring/log-analytics-overview.png#lightbox)
+    [![Обзор аналитики журнала действий]( media/how-to-configure-monitoring/log-analytics-overview.png)]( media/how-to-configure-monitoring/log-analytics-overview.png#lightbox)
 
 >[!TIP]
 >Используйте **журналы действий** для быстрого анализа событий на уровне подписки.
@@ -70,12 +70,12 @@ Azure Digital Twins поддерживает надежные механизмы
 1. Откройте нужный ресурс на портале Azure.
 1. Выберите **параметры диагностики**:
 
-    [![параметры диагностики один](media/how-to-configure-monitoring/diagnostic-settings-one.png)](media/how-to-configure-monitoring/diagnostic-settings-one.png#lightbox)
+    [![Параметры диагностики, экран первый](media/how-to-configure-monitoring/diagnostic-settings-one.png)](media/how-to-configure-monitoring/diagnostic-settings-one.png#lightbox)
 
 1. Выберите **включить диагностику** для получения данных (если они не были включены ранее).
 1. Заполните предложенные поля и выберите, как и где будут храниться данные.
 
-    [параметры диагностики ![два](media/how-to-configure-monitoring/diagnostic-settings-two.png)](media/how-to-configure-monitoring/diagnostic-settings-two.png#lightbox)
+    [![Параметры диагностики, экран второй](media/how-to-configure-monitoring/diagnostic-settings-two.png)](media/how-to-configure-monitoring/diagnostic-settings-two.png#lightbox)
 
     Журналы диагностики часто сохраняются с помощью [хранилища файлов Azure](../storage/files/storage-files-deployment-guide.md) и совместно используются с [журналами Azure Monitor](../azure-monitor/log-query/get-started-portal.md). Вы можете выбрать оба варианта.
 
@@ -99,15 +99,15 @@ Azure Monitor включает в себя мощную службу log Analyti
 1. Найдите **Log Analytics** на портале Azure.
 1. Отобразятся доступные экземпляры **рабочей области log Analytics** . Выберите один из них и щелкните **Журналы**, чтобы создать запрос.
 
-    [![log Analytics](media/how-to-configure-monitoring/log-analytics.png)](media/how-to-configure-monitoring/log-analytics.png#lightbox)
+    [![Log Analytics](media/how-to-configure-monitoring/log-analytics.png)](media/how-to-configure-monitoring/log-analytics.png#lightbox)
 
 1. Если у вас еще нет экземпляра **рабочей области log Analytics** , можно создать рабочую область, нажав кнопку **Добавить** :
 
-    [![создать OMS](media/how-to-configure-monitoring/log-analytics-oms.png)](media/how-to-configure-monitoring/log-analytics-oms.png#lightbox)
+    [![Создание OMS](media/how-to-configure-monitoring/log-analytics-oms.png)](media/how-to-configure-monitoring/log-analytics-oms.png#lightbox)
 
 После подготовки экземпляра **рабочей области log Analytics** вы можете использовать мощные запросы для поиска записей в нескольких журналах или поиска с использованием конкретных критериев с помощью **управления журналами**:
 
-   [![управления журналами](media/how-to-configure-monitoring/log-analytics-management.png)](media/how-to-configure-monitoring/log-analytics-management.png#lightbox)
+   [![Управление журналами](media/how-to-configure-monitoring/log-analytics-management.png)](media/how-to-configure-monitoring/log-analytics-management.png#lightbox)
 
 Дополнительные сведения о мощных операциях запросов см. [в статье Приступая к работе с запросами](../azure-monitor/log-query/get-started-queries.md).
 
@@ -116,7 +116,7 @@ Azure Monitor включает в себя мощную службу log Analyti
 
 Журналы Azure Monitor также предоставляют мощные службы уведомлений об ошибках и предупреждений, которые можно просмотреть, выбрав пункт **Диагностика и решение проблем**.
 
-   [![уведомлений и предупреждений об ошибках](media/how-to-configure-monitoring/log-analytics-notifications.png)](media/how-to-configure-monitoring/log-analytics-notifications.png#lightbox)
+   [![Уведомления об ошибках и предупреждениях](media/how-to-configure-monitoring/log-analytics-notifications.png)](media/how-to-configure-monitoring/log-analytics-notifications.png#lightbox)
 
 >[!TIP]
 >Используйте **рабочую область log Analytics** для запроса журналов для нескольких функциональных возможностей приложения, подписок или служб.
@@ -125,7 +125,7 @@ Azure Monitor включает в себя мощную службу log Analyti
 
 Azure Digital Twins также поддерживает ведение журналов для отдельных приложений и аудит безопасности. Подробный обзор всех параметров ведения журнала Azure, доступных для вашего экземпляра Azure Digital двойников, см. в статье о [аудите журналов Azure](../security/fundamentals/log-audit.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о [журналах действий](../azure-monitor/platform/platform-logs-overview.md) Azure.
 

@@ -8,16 +8,16 @@ ms.reviewer: kasimpso
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
-ms.topic: overview
+ms.topic: end-user-help
 ms.date: 02/03/2020
 ms.author: curtand
 ms.custom: user-help
-ms.openlocfilehash: bac33386371b13950163727497cabd0f262df135
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 4249f753181ea4b54d7e1e1f098717ef669bae4a
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022415"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83744026"
 ---
 # <a name="edit-or-revoke-application-permissions-in-the-my-apps-portal"></a>Изменение или отмена разрешений приложения на портале "Мои приложения"
 

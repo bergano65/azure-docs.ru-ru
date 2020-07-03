@@ -2,28 +2,25 @@
 title: Оплата подписок Azure по счету
 description: Описывает оплату подписок Azure по счету.
 author: bandersmsft
-manager: jureid
+ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/23/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: a0f012145788d2d1d4935e10691859e5aaf71255
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 12ad1f09c988171b0d6212d79ca61d93acf92d80
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75994341"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199608"
 ---
 # <a name="pay-for-your-azure-subscription-by-invoice"></a>Оплата подписок Azure по счету
 
 Переключение на оплату по счету означает, что вы должны оплачивать счет в течение 30 дней с даты его выставления через чек или банковский перевод. Чтобы получить возможность платить за подписку Azure по счету, отправьте запрос в службу поддержки Azure. После утверждения запроса вы можете переключить подписку на оплату по счету (чек или банковский перевод) на[портале Azure](https://portal.azure.com).
 
 > [!IMPORTANT]
-> * Оплата по счету (чек или банковский перевод) доступна только для учетных записей организаций.
+> * Оплата по счету (чек или банковский перевод) доступна только для клиентов, использующих Azure от имени компании.
 > * Перед переходом на оплату по счету необходимо оплатить все неоплаченные платежи.
 > * В настоящее время оплата счетов не поддерживается для глобальной службы Azure в Китае.
 

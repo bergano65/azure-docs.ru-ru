@@ -7,10 +7,10 @@ ms.topic: reference
 ms.date: 01/20/2020
 ms.author: raynew
 ms.openlocfilehash: 9bc7dc66ccf3049ac878f7871c816e5ade1afde5
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76760714"
 ---
 # <a name="support-for-moving-azure-resources-across-regions"></a>Поддержка перемещения ресурсов Azure в разных регионах
@@ -20,19 +20,19 @@ ms.locfileid: "76760714"
 Переход к пространству имен поставщика ресурсов:
 > [!div class="op_single_selector"]
 > - [Microsoft.AAD](#microsoftaad)
-> - [Microsoft. аадиам](#microsoftaadiam)
+> - [microsoft.aadiam](#microsoftaadiam)
 > - [Microsoft.AlertsManagement](#microsoftalertsmanagement)
 > - [Microsoft.AnalysisServices](#microsoftanalysisservices)
 > - [Microsoft.ApiManagement](#microsoftapimanagement)
-> - [Microsoft.AppConfiguration](#microsoftappconfiguration)
-> - [Microsoft. AppService](#microsoftappservice)
-> - [Microsoft.Authorization](#microsoftauthorization)
+> - [Microsoft. Аппконфигуратион](#microsoftappconfiguration)
+> - [Microsoft.AppService](#microsoftappservice)
+> - [Microsoft. Authorization](#microsoftauthorization)
 > - [Microsoft.Automation](#microsoftautomation)
 > - [Microsoft.AzureActiveDirectory](#microsoftazureactivedirectory)
-> - [Microsoft.AzureData](#microsoftazuredata)
+> - [Microsoft. Азуредата](#microsoftazuredata)
 > - [Microsoft.AzureStack](#microsoftazurestack)
 > - [Microsoft.Batch](#microsoftbatch)
-> - [Microsoft. BatchAI](#microsoftbatchai)
+> - [Microsoft.BatchAI](#microsoftbatchai)
 > - [Microsoft.BingMaps](#microsoftbingmaps)
 > - [Microsoft.BizTalkServices](#microsoftbiztalkservices)
 > - [Microsoft.Blockchain](#microsoftblockchain)
@@ -41,12 +41,12 @@ ms.locfileid: "76760714"
 > - [Microsoft.Cache](#microsoftcache)
 > - [Microsoft.Cdn](#microsoftcdn)
 > - [Microsoft.CertificateRegistration](#microsoftcertificateregistration)
-> - [Microsoft.ClassicCompute](#microsoftclassiccompute)
+> - [Microsoft. ClassicCompute](#microsoftclassiccompute)
 > - [Microsoft.ClassicNetwork](#microsoftclassicnetwork)
 > - [Microsoft.ClassicStorage](#microsoftclassicstorage)
 > - [Microsoft.CognitiveServices](#microsoftcognitiveservices)
-> - [Microsoft.Compute](#microsoftcompute)
-> - [Microsoft. Container](#microsoftcontainer)
+> - [Microsoft.Compute;](#microsoftcompute)
+> - [Microsoft.Container](#microsoftcontainer)
 > - [Microsoft.ContainerInstance](#microsoftcontainerinstance)
 > - [Microsoft.ContainerRegistry](#microsoftcontainerregistry)
 > - [Microsoft.ContainerService](#microsoftcontainerservice)
@@ -54,35 +54,35 @@ ms.locfileid: "76760714"
 > - [Microsoft.CortanaAnalytics](#microsoftcortanaanalytics)
 > - [Microsoft.CostManagement](#microsoftcostmanagement)
 > - [Microsoft.CustomerInsights](#microsoftcustomerinsights)
-> - [Microsoft.CustomProviders](#microsoftcustomproviders)
-> - [Microsoft.DataBox](#microsoftdatabox)
+> - [Microsoft. Кустомпровидерс](#microsoftcustomproviders)
+> - [Microsoft. Датабокс](#microsoftdatabox)
 > - [Microsoft.DataBoxEdge](#microsoftdataboxedge)
 > - [Microsoft.Databricks](#microsoftdatabricks)
 > - [Microsoft.DataCatalog](#microsoftdatacatalog)
 > - [Microsoft.DataConnect](#microsoftdataconnect)
-> - [Microsoft. Обмен](#microsoftdataexchange)
+> - [Microsoft.DataExchange](#microsoftdataexchange)
 > - [Microsoft.DataFactory](#microsoftdatafactory)
-> - [Microsoft. Data Lake](#microsoftdatalake)
-> - [Microsoft.DataLakeAnalytics](#microsoftdatalakeanalytics)
+> - [Microsoft.DataLake](#microsoftdatalake)
+> - [Microsoft. Data Lake Analytics](#microsoftdatalakeanalytics)
 > - [Microsoft.DataLakeStore](#microsoftdatalakestore)
 > - [Microsoft.DataMigration](#microsoftdatamigration)
-> - [Microsoft.DataShare](#microsoftdatashare)
+> - [Общая папка Microsoft.](#microsoftdatashare)
 > - [Microsoft.DBforMariaDB](#microsoftdbformariadb)
 > - [Microsoft.DBforMySQL](#microsoftdbformysql)
 > - [Microsoft.DBforPostgreSQL](#microsoftdbforpostgresql)
 > - [Microsoft.DeploymentManager](#microsoftdeploymentmanager)
-> - [Microsoft.Devices](#microsoftdevices)
+> - [Microsoft. Devices](#microsoftdevices)
 > - [Microsoft.DevSpaces](#microsoftdevspaces)
 > - [Microsoft.DevTestLab](#microsoftdevtestlab)
 > - [Microsoft.DocumentDB](#microsoftdocumentdb)
 > - [Microsoft.DomainRegistration](#microsoftdomainregistration)
-> - [Microsoft.EnterpriseKnowledgeGraph](#microsoftenterpriseknowledgegraph)
+> - [Microsoft. Ентерприсекновледжеграф](#microsoftenterpriseknowledgegraph)
 > - [Microsoft.EventGrid](#microsofteventgrid)
 > - [Microsoft.EventHub](#microsofteventhub)
 > - [Microsoft.Genomics](#microsoftgenomics)
 > - [Microsoft.HanaOnAzure](#microsofthanaonazure)
 > - [Microsoft.HDInsight](#microsofthdinsight)
-> - [Microsoft.HealthcareApis](#microsofthealthcareapis)
+> - [Microsoft. Хеалскареапис](#microsofthealthcareapis)
 > - [Microsoft.HybridCompute](#microsofthybridcompute)
 > - [Microsoft.HybridData](#microsofthybriddata)
 > - [Microsoft.ImportExport](#microsoftimportexport)
@@ -92,32 +92,32 @@ ms.locfileid: "76760714"
 > - [Microsoft.KeyVault](#microsoftkeyvault)
 > - [Microsoft.Kusto](#microsoftkusto)
 > - [Microsoft.LabServices](#microsoftlabservices)
-> - [Microsoft. Локатионбаседсервицес](#microsoftlocationbasedservices)
-> - [Microsoft. файл locationservices](#microsoftlocationservices)
+> - [Microsoft.LocationBasedServices](#microsoftlocationbasedservices)
+> - [Microsoft.LocationServices](#microsoftlocationservices)
 > - [Microsoft.Logic](#microsoftlogic)
 > - [Microsoft.MachineLearning](#microsoftmachinelearning)
-> - [Microsoft. Мачинелеарнингкомпуте](#microsoftmachinelearningcompute)
-> - [Microsoft. Мачинелеарнинжекспериментатион](#microsoftmachinelearningexperimentation)
-> - [Microsoft. Мачинелеарнингмоделманажемент](#microsoftmachinelearningmodelmanagement)
-> - [Microsoft. Мачинелеарнингоператионализатион](#microsoftmachinelearningoperationalization)
+> - [Microsoft.MachineLearningCompute](#microsoftmachinelearningcompute)
+> - [Microsoft.MachineLearningExperimentation](#microsoftmachinelearningexperimentation)
+> - [Microsoft.MachineLearningModelManagement](#microsoftmachinelearningmodelmanagement)
+> - [Microsoft.MachineLearningOperationalization](#microsoftmachinelearningoperationalization)
 > - [Microsoft.MachineLearningServices](#microsoftmachinelearningservices)
 > - [Microsoft.ManagedIdentity](#microsoftmanagedidentity)
 > - [Microsoft.Maps](#microsoftmaps)
 > - [Microsoft.MarketplaceApps](#microsoftmarketplaceapps)
 > - [Microsoft.Media](#microsoftmedia)
-> - [Microsoft.Microservices4Spring](#microsoftmicroservices4spring)
+> - [Microsoft. Microservices4Spring](#microsoftmicroservices4spring)
 > - [Microsoft.Migrate](#microsoftmigrate)
 > - [Microsoft.NetApp](#microsoftnetapp)
-> - [Microsoft.Network](#microsoftnetwork)
+> - [Microsoft.Network.](#microsoftnetwork)
 > - [Microsoft.NotificationHubs](#microsoftnotificationhubs)
 > - [Microsoft.OperationalInsights](#microsoftoperationalinsights)
-> - [Microsoft.OperationsManagement](#microsoftoperationsmanagement)
-> - [Microsoft.Peering](#microsoftpeering)
+> - [Microsoft. OperationsManagement](#microsoftoperationsmanagement)
+> - [Microsoft. пиринг](#microsoftpeering)
 > - [Microsoft.Portal](#microsoftportal)
-> - [Microsoft. Порталсдк](#microsoftportalsdk)
+> - [Microsoft.PortalSdk](#microsoftportalsdk)
 > - [Microsoft.PowerBI](#microsoftpowerbi)
 > - [Microsoft.PowerBIDedicated](#microsoftpowerbidedicated)
-> - [Microsoft. Прожектоксфорд](#microsoftprojectoxford)
+> - [Microsoft.ProjectOxford](#microsoftprojectoxford)
 > - [Microsoft.RecoveryServices](#microsoftrecoveryservices)
 > - [Microsoft.Relay](#microsoftrelay)
 > - [Microsoft.ResourceGraph](#microsoftresourcegraph)
@@ -125,29 +125,29 @@ ms.locfileid: "76760714"
 > - [Microsoft.Scheduler](#microsoftscheduler)
 > - [Microsoft.Search](#microsoftsearch)
 > - [Microsoft.Security](#microsoftsecurity)
-> - [Microsoft. Серверманажемент](#microsoftservermanagement)
+> - [Microsoft.ServerManagement](#microsoftservermanagement)
 > - [Microsoft.ServiceBus](#microsoftservicebus)
 > - [Microsoft.ServiceFabric](#microsoftservicefabric)
 > - [Microsoft.ServiceFabricMesh](#microsoftservicefabricmesh)
 > - [Microsoft.SignalRService](#microsoftsignalrservice)
 > - [Microsoft.Solutions](#microsoftsolutions)
-> - [Microsoft.Sql](#microsoftsql)
+> - [Microsoft. SQL](#microsoftsql)
 > - [Microsoft.SqlVirtualMachine](#microsoftsqlvirtualmachine)
-> - [Microsoft. SqlVM](#microsoftsqlvm)
-> - [Microsoft.Storage](#microsoftstorage)
-> - [Microsoft.StorageCache](#microsoftstoragecache)
+> - [Microsoft.SqlVM](#microsoftsqlvm)
+> - [Microsoft.Storage;](#microsoftstorage)
+> - [Microsoft. Сторажекаче](#microsoftstoragecache)
 > - [Microsoft.StorageSync](#microsoftstoragesync)
 > - [Microsoft.StorageSyncDev](#microsoftstoragesyncdev)
 > - [Microsoft.StorageSyncInt](#microsoftstoragesyncint)
 > - [Microsoft.StorSimple](#microsoftstorsimple)
 > - [Microsoft.StreamAnalytics](#microsoftstreamanalytics)
-> - [Microsoft. Стреаманалитиксексплорер](#microsoftstreamanalyticsexplorer)
-> - [Microsoft. Терраформосс](#microsoftterraformoss)
+> - [Microsoft.StreamAnalyticsExplorer](#microsoftstreamanalyticsexplorer)
+> - [Microsoft.TerraformOSS](#microsoftterraformoss)
 > - [Microsoft.TimeSeriesInsights](#microsofttimeseriesinsights)
 > - [Microsoft. Token](#microsofttoken)
-> - [Microsoft. Виртуалмачинеимажес](#microsoftvirtualmachineimages)
-> - [Microsoft. VisualStudio](#microsoftvisualstudio)
-> - [Microsoft.VMwareCloudSimple](#microsoftvmwarecloudsimple)
+> - [Microsoft.VirtualMachineImages](#microsoftvirtualmachineimages)
+> - [microsoft.visualstudio](#microsoftvisualstudio)
+> - [Microsoft. Вмвареклаудсимпле](#microsoftvmwarecloudsimple)
 > - [Microsoft.Web](#microsoftweb)
 > - [Microsoft.WindowsIoT](#microsoftwindowsiot)
 > - [Microsoft. Виндовсвиртуалдесктоп](#microsoftwindowsvirtualdesktop)
@@ -179,7 +179,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | серверы | Нет |
+> | servers | Нет |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 
@@ -273,7 +273,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | Biztalk | Нет | 
+> | biztalk | Нет | 
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
 
@@ -281,7 +281,7 @@ ms.locfileid: "76760714"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | blockchainmembers | Нет |
-> | наблюдатели | Нет | 
+> | наблюдателей | Нет | 
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 
@@ -311,7 +311,7 @@ ms.locfileid: "76760714"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | кднвебаппликатионфиреваллполиЦиес | Нет |
-> | профили | Нет | 
+> | profiles | Нет | 
 > | профили и конечные точки | Нет | 
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
@@ -354,7 +354,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 
@@ -418,14 +418,14 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | приложений | Нет | 
+> | веб-масштабированием; | Нет | 
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 
@@ -512,14 +512,14 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
 
@@ -535,21 +535,21 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | серверы | Нет |  
+> | servers | Нет |  
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | серверы | Нет |  
+> | servers | Нет |  
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 
@@ -557,7 +557,7 @@ ms.locfileid: "76760714"
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
 > | servergroups | Нет | 
-> | серверы | Нет |  
+> | servers | Нет |  
 > | serversv2 | Нет | 
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
@@ -643,7 +643,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsofthanaonazure"></a>Microsoft.HanaOnAzure
 
@@ -667,7 +667,7 @@ ms.locfileid: "76760714"
 > | ------------- | ----------- |
 > | services; | Нет |  
 
-## <a name="microsofthybridcompute"></a>Microsoft. Хибридкомпуте
+## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
@@ -693,7 +693,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 > | actiongroups |  Нет | 
 > | activitylogalerts | Нет | 
 > | alertrules |  Нет | 
@@ -751,14 +751,14 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
 
@@ -792,7 +792,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 > | учетные записи и рабочие области | Нет | 
 > | учетные записи, рабочие области и проекты | Нет | 
 > | teamaccounts | Нет | 
@@ -804,7 +804,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftmachinelearningoperationalization"></a>Microsoft.MachineLearningOperationalization
 
@@ -832,7 +832,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts |  Нет |  
+> | учетные записи; |  Нет |  
 
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 
@@ -994,7 +994,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | accounts | Нет | 
+> | учетные записи; | Нет | 
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
@@ -1016,14 +1016,14 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | запросы |  Нет |  
+> | Запросы |  Нет |  
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
 
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | приложений |  Нет | 
+> | веб-масштабированием; |  Нет | 
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 
@@ -1069,7 +1069,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | приложений | Нет | 
+> | веб-масштабированием; | Нет | 
 > | clusters |  Нет | 
 > | кластеры и приложения | Нет | 
 > | containergroups | Нет | 
@@ -1084,7 +1084,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | приложений |  Нет | 
+> | веб-масштабированием; |  Нет | 
 > | containergroups | Нет | 
 > | gateways |  Нет | 
 > | networks |  Нет | 
@@ -1106,7 +1106,7 @@ ms.locfileid: "76760714"
 > | appliancedefinitions | Нет | 
 > | appliances | Нет | 
 > | applicationdefinitions | Нет | 
-> | приложений | Нет | 
+> | веб-масштабированием; | Нет | 
 > | jitrequests | Нет | 
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
@@ -1117,7 +1117,7 @@ ms.locfileid: "76760714"
 > | инстанцепулс | Нет | 
 > | managedinstances | Да | 
 > | манажединстанцес и базы данных | Да | 
-> | серверы | Да | 
+> | servers | Да | 
 > | серверы и базы данных | Да | 
 > | серверы и еластикпулс | Да | 
 > | virtualclusters | Да | 
@@ -1194,7 +1194,7 @@ ms.locfileid: "76760714"
 > | ------------- | ----------- |
 > | environments | Нет | 
 > | среды и классов EventSource | Нет | 
-> | Экземпляры | Нет | 
+> | instances | Нет | 
 > | экземпляры и среды | Нет | 
 > | экземпляры/среды/классов EventSource | Нет | 
 
@@ -1220,7 +1220,7 @@ ms.locfileid: "76760714"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Перемещение региона | 
 > | ------------- | ----------- |
-> | сохраняют | Нет | 
+> | stores | Нет | 
 
 ## <a name="microsoftvirtualmachineimages"></a>Microsoft.VirtualMachineImages
 

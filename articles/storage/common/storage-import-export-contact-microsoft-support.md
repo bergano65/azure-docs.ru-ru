@@ -9,10 +9,10 @@ ms.date: 03/29/2018
 ms.author: alkohli
 ms.subservice: common
 ms.openlocfilehash: 8361c32860d48b78c778ea5106ba04715fcc5f3c
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67621040"
 ---
 # <a name="open-a-support-ticket-for-an-importexport-job"></a>Создание запроса в службу поддержки для задания импорта и экспорта
@@ -39,8 +39,8 @@ ms.locfileid: "67621040"
             ![Выбор параметра управления учетными записями поддержки](./media/storage-import-export-contact-microsoft-support/import-export-support3.png)
         - Если вы выбрали **BLOB-объект**, щелкните **Ресурс**, **Имена контейнеров** (необязательно) и **План поддержки**.
             ![Выбор большого двоичного объекта](./media/storage-import-export-contact-microsoft-support/import-export-support2.png)
-        - Если вы выбрали **Файл**, щелкните **Ресурс**, **Имена общих папок** (необязательно) и **План поддержки**. ![Выбор файла](./media/storage-import-export-contact-microsoft-support/import-export-support4.png)
-    4. Нажмите кнопку **Далее**.
+        - Если вы выбрали **Файл**, щелкните **Ресурс**, **Имена общих папок** (необязательно) и **План поддержки. ** ![Выбор файла](./media/storage-import-export-contact-microsoft-support/import-export-support4.png)
+    4. Щелкните **Далее**.
 
 3. В разделе **Новый запрос в службу поддержки** выберите шаг 2 **Проблема**. В колонке **Проблема** сделайте следующее:
     
@@ -51,14 +51,14 @@ ms.locfileid: "67621040"
     5. Укажите дату и время начала для проблемы.
     6. В разделе **Отправка файла** щелкните значок папки, чтобы просмотреть другие файлы, которые необходимо отправить.
     7. Установите флажок **Предоставить диагностическую информацию**.
-    8. Нажмите кнопку **Далее**.
+    8. Щелкните **Далее**.
 
        ![Проблема](./media/storage-import-export-contact-microsoft-support/import-export-support5.png)
 
 4. В колонке **Новый запрос в службу поддержки** щелкните шаг 3 **Контактные данные**. В колонке **Контактные данные** сделайте следующее:
 
    1. В поле **Параметры контакта** укажите предпочтительный способ контакта (телефон или электронную почту) и язык. Время ответа выбирается автоматически в зависимости от плана подписки.
-   2. В контактные данные укажите имя, адрес электронной почты, дополнительное контактное лицо, страны или региона. Установите флажок **Save contact changes for future support requests** (Сохранить изменения контактных данных для будущих обращений в службу поддержки).
+   2. В контактной информации укажите свое имя, адрес электронной почты, необязательный контакт, страну или регион. Установите флажок **Save contact changes for future support requests** (Сохранить изменения контактных данных для будущих обращений в службу поддержки).
    3. Нажмите кнопку **Создать**.
    
        ![Контактные данные](./media/storage-import-export-contact-microsoft-support/import-export-support7.png)   
@@ -85,6 +85,6 @@ ms.locfileid: "67621040"
     ![Управление запросами на поддержку](./media/storage-import-export-contact-microsoft-support/manage-support-ticket3.png) 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Устранение неполадок со средством импорта и экспорта Azure](storage-import-export-tool-troubleshooting-v1.md).

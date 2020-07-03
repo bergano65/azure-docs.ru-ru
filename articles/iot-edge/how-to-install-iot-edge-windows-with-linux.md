@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: kgremban
-ms.openlocfilehash: 40e6f850a00a8f77e846d9574caedc345aa94cef
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 8a4579e092bbc4fd58954f1ce1f1dad3a8ddbbba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76509994"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80133163"
 ---
 # <a name="use-iot-edge-on-windows-to-run-linux-containers"></a>Использование IoT Edge в Windows для запуска контейнеров Linux
 
@@ -24,15 +24,15 @@ ms.locfileid: "76509994"
 
 В этой статье перечислены действия по установке среды выполнения Azure IoT Edge с помощью контейнеров Linux в системе Windows x64 (AMD/Intel). Дополнительные сведения о программе установки среды выполнения IoT Edge, включая сведения обо всех параметрах установки, см. в разделе [Установка среды выполнения Azure IOT EDGE в Windows](how-to-install-iot-edge-windows.md).
 
-## <a name="prerequisites"></a>Технические условия
+Сведения о том, что входит в последнюю версию IoT Edge, см. в разделе [Azure IOT Edge выпуски](https://github.com/Azure/azure-iotedge/releases).
+
+## <a name="prerequisites"></a>Предварительные условия
 
 В этом разделе можно посмотреть, поддерживает ли устройство Windows IoT Edge, а также подготовить его для подсистемы контейнеров перед установкой.
 
 ### <a name="supported-windows-versions"></a>Поддерживаемые версии Windows
 
 Azure IoT Edge с контейнерами Linux могут работать в любой версии Windows, удовлетворяющей [требованиям для настольных систем DOCKER](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install) .
-
-Дополнительные сведения о том, что входит в последнюю версию IoT Edge, см. в разделе [Выпуски Azure IoT Edge](https://github.com/Azure/azure-iotedge/releases).
 
 Если вы хотите установить IoT Edge на виртуальной машине, включите вложенную виртуализацию и выделите не менее 2 ГБ памяти. Включение вложенной виртуализации отличается в зависимости от используемой низкоуровневой оболочки. Для виртуальных машин Hyper-V версии 2 вложенная виртуализация включена по умолчанию. Для VMWare существует переключатель, позволяющий включить эту функцию на виртуальной машине.
 
@@ -53,13 +53,13 @@ Azure IoT Edge с контейнерами Linux могут работать в 
 
 При установке среды выполнения IoT Edge в первый раз на устройстве нужно подготовить устройство с помощью удостоверения из центра Интернета вещей. Одно IoT Edge устройство можно подготовить вручную, используя строку подключений устройств, предоставленную Центром Интернета вещей. Вы также можете использовать службу подготовки устройств, что удобно, если нужно автоматически подготовить несколько устройств.
 
-Дополнительные сведения о различных параметрах установки и параметрах см. в статье [Установка среды выполнения Azure IOT EDGE в Windows](how-to-install-iot-edge-windows.md). После установки и настройки DOCKER Desktop для контейнеров Linux основное различие в установке заключается в объявлении Linux с параметром **-контаинерос** . Пример.
+Дополнительные сведения о различных параметрах установки и параметрах см. в статье [Установка среды выполнения Azure IOT EDGE в Windows](how-to-install-iot-edge-windows.md). После установки и настройки DOCKER Desktop для контейнеров Linux основное различие в установке заключается в объявлении Linux с параметром **-контаинерос** . Пример:
 
 1. Если вы еще этого не сделали, зарегистрируйте новое устройство IoT Edge и получите строку подключения устройства. Скопируйте строку подключения для использования далее в этом разделе. Этот шаг можно выполнить с помощью следующих средств:
 
    * [Портал Azure](how-to-register-device.md#register-in-the-azure-portal)
    * [Azure CLI](how-to-register-device.md#register-with-the-azure-cli)
-   * [Код Visual Studio](how-to-register-device.md#register-with-visual-studio-code)
+   * [Visual Studio Code](how-to-register-device.md#register-with-visual-studio-code)
 
 2. Откройте сеанс PowerShell от имени администратора.
 
@@ -88,7 +88,7 @@ Azure IoT Edge с контейнерами Linux могут работать в 
 
 6. При появлении запроса введите строку подключения устройства, полученную на шаге 1. Строка подключения устройства связывает физическое устройство с ИДЕНТИФИКАТОРом устройства в центре Интернета вещей.
 
-   Строка подключения устройства имеет следующий формат и не должна содержать кавычки: `HostName={IoT hub name}.azure-devices.net;DeviceId={device name};SharedAccessKey={key}`
+   Строка подключения устройства имеет следующий формат и не должна содержать кавычки:`HostName={IoT hub name}.azure-devices.net;DeviceId={device name};SharedAccessKey={key}`
 
 ## <a name="verify-successful-installation"></a>Проверка установки
 
@@ -116,7 +116,7 @@ iotedge check
 iotedge list
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 

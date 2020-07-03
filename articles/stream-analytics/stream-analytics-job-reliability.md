@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 06/21/2019
 ms.custom: seodec18
 ms.openlocfilehash: d2d21e081b274bd985c48dac91fff5203a6b5b8a
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75425990"
 ---
 # <a name="guarantee-stream-analytics-job-reliability-during-service-updates"></a>Обеспечение надежности заданий Stream Analytics во время обновления служб
@@ -25,14 +25,14 @@ Stream Analytics гарантирует, что задания в сопряже
 
 _За исключением региона "Центральная Индия"_ (в сопряженном регионе которого ("Южная Индия") нет Stream Analytics), развертывание обновления в Stream Analytics не произойдет одновременно в наборе сопряженных регионов. Операции развертывания в нескольких регионах, находящихся **в одной группе**, могут происходить **одновременно**.
 
-Самые актуальные сведения о парах регионов можно найти в статье о **[доступности и парах регионов](https://docs.microsoft.com/azure/best-practices-availability-paired-regions)** .
+Самые актуальные сведения о парах регионов можно найти в статье о **[доступности и парах регионов](https://docs.microsoft.com/azure/best-practices-availability-paired-regions)**.
 
 Рекомендуется развертывать одинаковые задания в обоих парных регионах. Затем следует [отслеживать эти задания](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-set-up-alerts#scenarios-to-monitor) , чтобы получать уведомления о непредвиденных последствиях. Если одно из этих заданий завершается в [состоянии сбоя](https://docs.microsoft.com/azure/stream-analytics/job-states) после обновления Stream Analytics службы, можно обратиться в службу поддержки пользователей, чтобы помочь определить основную причину. Также следует выполнить отработку отказа всех нижестоящих потребителей в работоспособные выходные данные задания.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
-* [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)
-* [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности базы данных](stream-analytics-scale-jobs.md)
-* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
+* [Начало работы со Stream Analytics](stream-analytics-real-time-fraud-detection.md)
+* [Масштабирование заданий Stream Analytics](stream-analytics-scale-jobs.md)
+* [Справочник по языку запросов Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Stream Analytics management REST API reference](https://msdn.microsoft.com/library/azure/dn835031.aspx) (Справочник по API-интерфейсу REST для управления Stream Analytics)

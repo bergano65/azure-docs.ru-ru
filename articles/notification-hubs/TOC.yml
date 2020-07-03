@@ -1,4 +1,4 @@
-- name: Документация по Центрам уведомлений
+- name: Документация по концентраторам уведомлений
   href: index.yml
 - name: Обзор
   items:
@@ -11,7 +11,11 @@
   items:
     - name: Создание центра уведомлений на портале Azure
       href: create-notification-hub-portal.md
-    - name: Настройка центра уведомлений на портале Azure
+    - name: "Создание центра уведомлений с помощью Azure\_CLI"
+      href: create-notification-hub-azure-cli.md
+    - name: Создание центра уведомлений с помощью шаблона Azure Resource Manager
+      href: create-notification-hub-template.md
+    - name: Настройка центра уведомлений
       href: configure-notification-hub-portal-pns-settings.md
 - name: Учебники
   items:
@@ -140,10 +144,14 @@
       href: notification-hubs-push-notification-fixer.md
     - name: Отправка push-уведомлений с помощью службы push-уведомлений облака Baidu
       href: notification-hubs-baidu-china-android-notifications-get-started.md
+    - name: Использование APNS VOIP с помощью Центров уведомлений
+      href: voip-apns.md
 - name: Справочник
   items:
     - name: .NET
       href: /dotnet/api/microsoft.azure.notificationhubs
+    - name: Azure CLI
+      href: /cli/azure/ext/notification-hub/notification-hub
     - name: PowerShell
       href: /powershell/module/az.notificationhubs
     - name: REST
@@ -162,8 +170,8 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/notification-hubs/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=notificationhubs'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-notification-hubs.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-notificationhub'
     - name: Запрашивание функции

@@ -1,16 +1,16 @@
 ---
 title: Непрерывное обновление кода приложения функции с помощью Azure DevOps
 description: Узнайте, как настроить конвейер Azure DevOps, нацеленный на функции Azure.
-author: ahmedelnably
+author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/18/2019
-ms.author: aelnably
-ms.openlocfilehash: e6ea7edb16aa28428754cbe920e1d350aded0cff
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.author: cshoe
+ms.openlocfilehash: 5e2fc8fb06248e2cdad9067c56647da6d9626b50
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834022"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78255751"
 ---
 # <a name="continuous-delivery-by-using-azure-devops"></a>Непрерывная поставка с помощью Azure DevOps
 
@@ -25,11 +25,11 @@ ms.locfileid: "75834022"
 
 Чтобы создать конвейер на основе YAML, сначала выполните сборку приложения, а затем разверните приложение.
 
-### <a name="build-your-app"></a>Создайте свое приложение
+### <a name="build-your-app"></a>Создание приложения
 
 Создание приложения в Azure Pipelines зависит от языка программирования приложения. Каждый язык имеет определенные шаги сборки, которые создают артефакт развертывания. Артефакт развертывания используется для развертывания приложения-функции в Azure.
 
-# <a name="ctabcsharp"></a>[C\#](#tab/csharp)
+# <a name="c"></a>[Ц\#](#tab/csharp)
 
 Чтобы создать файл YAML для создания приложения .NET, можно использовать следующий пример:
 
@@ -46,7 +46,7 @@ steps:
     arguments: '--configuration Release --output publish_output'
     projects: '*.csproj'
     publishWebProjects: false
-    modifyOutputPath: true
+    modifyOutputPath: false
     zipAfterPublish: false
 - task: ArchiveFiles@2
   displayName: "Archive files"
@@ -60,7 +60,7 @@ steps:
     artifactName: 'drop'
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Чтобы создать файл YAML для создания приложения JavaScript, можно использовать следующий пример:
 
@@ -88,7 +88,7 @@ steps:
     artifactName: 'drop'
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Чтобы создать файл YAML для создания приложения для конкретной версии Python, можно использовать один из следующих примеров. Python поддерживается только для приложений-функций, работающих в Linux.
 
@@ -150,7 +150,7 @@ steps:
     artifactName: 'drop'
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Чтобы создать файл YAML для упаковки приложения PowerShell, можно использовать следующий пример. PowerShell поддерживается только для функций Windows Azure.
 
@@ -215,7 +215,7 @@ steps:
 
 Шаблоны в Azure DevOps — это стандартные группы задач, которые создают или развертывают приложение.
 
-### <a name="build-your-app"></a>Создайте свое приложение
+### <a name="build-your-app"></a>Создание приложения
 
 Создание приложения в Azure Pipelines зависит от языка программирования приложения. Каждый язык имеет определенные шаги сборки, которые создают артефакт развертывания. Артефакт развертывания используется для обновления приложения-функции в Azure.
 
@@ -247,7 +247,7 @@ steps:
 
 ## <a name="create-a-build-pipeline-by-using-the-azure-cli"></a>Создание конвейера сборки с помощью Azure CLI
 
-Чтобы создать конвейер сборки в Azure, используйте [команду](/cli/azure/functionapp/devops-pipeline#az-functionapp-devops-pipeline-create)`az functionapp devops-pipeline create`. Конвейер сборки создается для сборки и освобождения всех изменений кода, внесенных в репозиторий. Команда создает новый файл YAML, который определяет конвейер сборки и выпуска, а затем фиксирует его в репозитории. Необходимые условия для этой команды зависят от расположения кода.
+Чтобы создать конвейер сборки в Azure, используйте `az functionapp devops-pipeline create` [команду](/cli/azure/functionapp/devops-pipeline#az-functionapp-devops-pipeline-create). Конвейер сборки создается для сборки и освобождения всех изменений кода, внесенных в репозиторий. Команда создает новый файл YAML, который определяет конвейер сборки и выпуска, а затем фиксирует его в репозитории. Необходимые условия для этой команды зависят от расположения кода.
 
 - Если ваш код находится на GitHub:
 
@@ -265,7 +265,7 @@ steps:
 
     - Вы должны быть администратором проекта в Azure DevOps.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
 - Ознакомьтесь с [обзором Azure DevOps](/azure/devops/pipelines/).

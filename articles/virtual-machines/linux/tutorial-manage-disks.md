@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -16,12 +15,12 @@ ms.date: 11/14/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.subservice: disks
-ms.openlocfilehash: dc987fa1a3476b81b198726350d56333b53c795f
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.openlocfilehash: be2a52f1a9071e9d4bb77ab4439291fd58cd828b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75780306"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82129369"
 ---
 # <a name="tutorial---manage-azure-disks-with-the-azure-cli"></a>Руководство по управлению дисками Azure с помощью Azure CLI.
 
@@ -33,7 +32,6 @@ ms.locfileid: "75780306"
 > * дисками уровня "Стандартный" и "Премиум";
 > * производительностью дисков;
 > * присоединением и подготовкой дисков данных;
-> * изменением размеров дисков;
 > * моментальными снимками дисков.
 
 
@@ -117,7 +115,7 @@ az vm disk attach \
 
 Создайте SSH-подключение к виртуальной машине. Замените IP-адреса в примере общедоступным IP-адресом виртуальной машины.
 
-```azurecli-interactive
+```console
 ssh 10.101.10.10
 ```
 
@@ -266,7 +264,6 @@ az vm disk attach \
 > * дисками уровня "Стандартный" и "Премиум";
 > * производительностью дисков;
 > * присоединением и подготовкой дисков данных;
-> * изменением размеров дисков;
 > * моментальными снимками дисков.
 
 Перейдите к следующему руководству, чтобы узнать об автоматической настройке виртуальных машин.

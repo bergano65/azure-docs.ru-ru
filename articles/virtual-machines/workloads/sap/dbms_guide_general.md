@@ -16,28 +16,28 @@ ms.date: 12/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a852ddc68a6f51e677e5ff2e641ada25f4bf0105
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70101362"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure
-[1114181]: https://launchpad.support.sap.com/#/notes/1114181
-[1409604]: https://launchpad.support.sap.com/#/notes/1409604
-[1597355]: https://launchpad.support.sap.com/#/notes/1597355
-[1928533]: https://launchpad.support.sap.com/#/notes/1928533
-[1984787]: https://launchpad.support.sap.com/#/notes/1984787
-[1999351]: https://launchpad.support.sap.com/#/notes/1999351
-[2002167]: https://launchpad.support.sap.com/#/notes/2002167
-[2015553]: https://launchpad.support.sap.com/#/notes/2015553
-[2039619]: https://launchpad.support.sap.com/#/notes/2039619
-[2069760]: https://launchpad.support.sap.com/#/notes/2069760
-[2171857]: https://launchpad.support.sap.com/#/notes/2171857
-[2178632]: https://launchpad.support.sap.com/#/notes/2178632
-[2191498]: https://launchpad.support.sap.com/#/notes/2191498
-[2233094]: https://launchpad.support.sap.com/#/notes/2233094
-[2243692]: https://launchpad.support.sap.com/#/notes/2243692
+[1114181]:https://launchpad.support.sap.com/#/notes/1114181
+[1409604]:https://launchpad.support.sap.com/#/notes/1409604
+[1597355]:https://launchpad.support.sap.com/#/notes/1597355
+[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[1984787]:https://launchpad.support.sap.com/#/notes/1984787
+[1999351]:https://launchpad.support.sap.com/#/notes/1999351
+[2002167]:https://launchpad.support.sap.com/#/notes/2002167
+[2015553]:https://launchpad.support.sap.com/#/notes/2015553
+[2039619]:https://launchpad.support.sap.com/#/notes/2039619
+[2069760]:https://launchpad.support.sap.com/#/notes/2069760
+[2171857]:https://launchpad.support.sap.com/#/notes/2171857
+[2178632]:https://launchpad.support.sap.com/#/notes/2178632
+[2191498]:https://launchpad.support.sap.com/#/notes/2191498
+[2233094]:https://launchpad.support.sap.com/#/notes/2233094
+[2243692]:https://launchpad.support.sap.com/#/notes/2243692
 [deployment-guide]:deployment-guide.md
 [deployment-guide-3]:deployment-guide.md#b3253ee3-d63b-4d74-a49b-185e76c4088e
 [planning-guide]:planning-guide.md
@@ -108,7 +108,7 @@ ms.locfileid: "70101362"
 Как правило, установка и настройка Windows, Linux и СУБД по сути являются такими же, как и для любой виртуальной машины или компьютера без операционной системы, установленного локально. Существуют решения по реализации архитектуры и управления системой, которые отличаются при использовании Azure IaaS. В этом документе объясняются конкретные различия в архитектуре и управлении системой, которые должны быть подготовлены при использовании Azure IaaS.
 
 
-## <a name="65fa79d6-a85f-47ee-890b-22e794f51a64"></a>Структура хранилища виртуальной машины для развертываний RDBMS
+## <a name="storage-structure-of-a-vm-for-rdbms-deployments"></a><a name="65fa79d6-a85f-47ee-890b-22e794f51a64"></a>Структура хранилища виртуальной машины для развертываний RDBMS
 Чтобы проследить эту главу, прочитайте и изучите информацию, представленную в [этой главе][deployment-guide-3] [руководств по развертыванию][deployment-guide]. Прежде чем читать эту главу, необходимо ознакомиться с различными сериями виртуальных машин и отличиями между хранилищем уровня "Стандартный" и "Премиум". 
 
 Дополнительные сведения о службе хранилища Azure для виртуальных машин Azure см. в следующих статьях:
@@ -156,7 +156,7 @@ Azure обеспечивает квоту на количество операц
 >
 > ![Linux][Logo_Linux] Linux
 >
-> Для создания программного RAID-массива в Linux поддерживаются только MDADM и Диспетчер логических томов (LVM). Дополнительные сведения см. в следующих источниках.
+> Для создания программного RAID-массива в Linux поддерживаются только MDADM и Диспетчер логических томов (LVM). Дополнительная информация:
 >
 > - [Настройка программного RAID-массива в Linux](https://docs.microsoft.com/azure/virtual-machines/linux/configure-raid) с помощью MDADM
 > - [Настройка диспетчера логических томов на виртуальной машине Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/configure-lvm) с помощью диспетчера логических томов
@@ -192,7 +192,7 @@ Azure обеспечивает квоту на количество операц
 - [Преобразование виртуальной машины Linux с неуправляемых дисков на управляемые диски](https://docs.microsoft.com/azure/virtual-machines/linux/convert-unmanaged-to-managed-disks).
 
 
-### <a name="c7abf1f0-c927-4a7c-9c1d-c7b5b3b7212f"></a>Кэширование для виртуальных машин и дисков данных
+### <a name="caching-for-vms-and-data-disks"></a><a name="c7abf1f0-c927-4a7c-9c1d-c7b5b3b7212f"></a>Кэширование для виртуальных машин и дисков данных
 При подключении дисков к виртуальным машинам можно выбрать, будет ли кэшироваться трафик ввода-вывода между виртуальной машиной и дисками, расположенными в хранилище Azure. Хранилище уровня "Стандартный" и "Премиум" используют две различные технологии для этого типа кэша.
 
 Следующие рекомендации предполагают, что эти характеристики ввода-вывода для стандартных СУБД:
@@ -205,16 +205,16 @@ Azure обеспечивает квоту на количество операц
 
 Для хранилища уровня "Стандартный" возможны следующие типы кэша:
 
-* Нет
-* чтение
+* Отсутствуют
+* Чтение
 * Чтение/запись
 
 Чтобы получить постоянную и детерминированную производительность, установите кэширование для хранилища уровня "Стандартный" для всех дисков, содержащих файлы данных, связанные с СУБД, файлы журнала и повторяемости, а также табличное пространство, равное **None**. Для параметров кэширования основного виртуального жесткого диска можно оставить значения по умолчанию.
 
 Для хранилища класса Premium существуют следующие параметры кэширования.
 
-* Нет
-* чтение
+* Отсутствуют
+* Чтение
 * Чтение/запись
 * Нет + Ускоритель записи, который предназначен только для виртуальных машин Azure серии M.
 * Чтение и Ускоритель записи, которые доступны только для виртуальных машин Azure серии M.
@@ -244,10 +244,10 @@ Azure обеспечивает квоту на количество операц
 
 
 
-### <a name="10b041ef-c177-498a-93ed-44b3441ab152"></a>Устойчивость службы хранилища Microsoft Azure
+### <a name="microsoft-azure-storage-resiliency"></a><a name="10b041ef-c177-498a-93ed-44b3441ab152"></a>Устойчивость службы хранилища Microsoft Azure
 Служба хранилища Microsoft Azure сохраняет базовый виртуальный жесткий диск с ОС и подключенными дисками или большими двоичными объектами по крайней мере на трех разных узлах хранилища. Этот тип хранилища называется локально избыточным хранилищем (LRS). LRS используется по умолчанию для всех типов хранилища в Azure.
 
-Существуют и другие методы избыточности. Дополнительные сведения см. в статье [Репликация службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).
+Существуют и другие методы избыточности. Дополнительные сведения см. в статье [репликация службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy?toc=%2fazure%2fstorage%2fqueues%2ftoc.json).
 
 > [!NOTE]
 >Хранилище класса Premium — это рекомендуемый тип хранилища для виртуальных машин и дисков СУБД, в которых хранятся файлы базы данных, журналы и повторы. Единственным доступным методом избыточности для хранилища класса Premium является LRS. В результате необходимо настроить методы базы данных, чтобы включить репликацию данных базы данных в другой регион Azure или зону доступности. К методам базы данных относятся SQL Server Always On, Oracle Data Guard и репликация системы HANA.
@@ -362,7 +362,7 @@ Azure предлагает два [номера SKU балансировщика
 Дополнительные сведения о развертывании компонентов, которые доставляют данные узла в SAPOSCOL и агенте SAP Host, а также об управлении жизненным циклом этих компонентов, см. в разделе [руководство по развертыванию][deployment-guide].
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 Дополнительные сведения об определенной СУБД см. в следующих статьях:
 
 - [Рабочие нагрузки SAP на Виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](dbms_guide_sqlserver.md)

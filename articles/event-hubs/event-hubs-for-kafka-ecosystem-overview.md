@@ -10,15 +10,17 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 02/12/2020
 ms.author: shvija
-ms.openlocfilehash: fc81226e754178ad0edfff96a494dd7522662261
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 91e2d70bab8c1be4b3e5b400ce21122eccb1e9eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368503"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80811374"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
+
+> [!VIDEO https://www.youtube.com/embed/UE1WgB96_fc]
 
 ## <a name="what-does-event-hubs-for-kafka-provide"></a>Возможности, предоставленные Центрами событий для Kafka
 
@@ -72,7 +74,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 ```
 
 #### <a name="samples"></a>Примеры 
-Пошаговые инструкции по созданию концентратора событий Kafka Enabled и доступу к нему с помощью SAS или OAuth см **. в статье** [Краткое руководство. потоковая передача данных с концентраторами событий с помощью протокола Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md).
+Пошаговые инструкции по созданию концентратора событий и доступу к нему с помощью SAS или OAuth см **. в статье** [Краткое руководство. потоковая передача данных с концентраторами событий с помощью протокола Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md).
 
 Дополнительные **примеры** , демонстрирующие использование OAuth с концентраторами событий для Kafka, см. [в статье примеры на сайте GitHub](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth).
 
@@ -85,25 +87,15 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 Ниже приведен список функций Kafka, которые еще не поддерживаются:
 
 *   идемпотентный производитель;
-*   Transaction
-*   Сжатие
+*   Транзакция
+*   сжатие;
 *   хранение на основе размера;
 *   сжатие журнала;
 *   добавлений секций в существующий раздел;
 *   поддержка API HTTP Kafka;
 *   потоки Kafka.
 
-## <a name="next-steps"></a>Следующие шаги
-
-В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. Дополнительные сведения см. по следующим ссылкам:
-
-- [Создание концентраторов событий с поддержкой Kafka](event-hubs-create-kafka-enabled.md)
-- [Потоковая передача данных в Центры событий из приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md)
-- [Использование Apache Kafka MirrorMaker с Центрами событий](event-hubs-kafka-mirror-maker-tutorial.md)
-- [Connect your Apache Spark application with Kafka-enabled Azure Event Hubs](event-hubs-kafka-spark-tutorial.md) (Подключение приложения Apache Spark к Центрам событий Azure с поддержкой Kafka)
-- [Использование Apache Flink с Центрами событий Azure для Apache Kafka](event-hubs-kafka-flink-tutorial.md)
-- [Интеграция поддержки Apache Kafka Connect в Центрах событий Azure (предварительная версия)](event-hubs-kafka-connect-tutorial.md)
-- [Использование Akka Streams с Центрами событий для Apache Kafka](event-hubs-kafka-akka-streams-tutorial.md)
-- [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Переход в Центры событий Azure для экосистем Apache Kafka)
+## <a name="next-steps"></a>Дальнейшие шаги
+В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. См. сведения в [руководстве для разработчиков Apache Kafka по Центрам событий Azure](apache-kafka-developer-guide.md).
 
 

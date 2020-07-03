@@ -1,5 +1,5 @@
 ---
-title: Руководство. Запуск иммерсивного средства чтения с помощью Python
+title: Руководство по Запуск иммерсивного средства чтения с помощью Python
 titleSuffix: Azure Cognitive Services
 description: В этом учебнике описано, как создать приложение Python, которое запускает иммерсивное средство чтения.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.date: 01/14/2020
 ms.author: dylankil
 ms.openlocfilehash: a252afae0a007ee0b791b56d19ffb0685848d30a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "76844366"
 ---
-# <a name="tutorial-launch-the-immersive-reader-using-the-python-sample-project"></a>Руководство. запуска иммерсивного средства чтения с помощью тестового проекта Python
+# <a name="tutorial-launch-the-immersive-reader-using-the-python-sample-project"></a>Руководство по запуска иммерсивного средства чтения с помощью тестового проекта Python
 
 В [обзорной статье](./overview.md) вы узнали о том, что представляет собой иммерсивное средство чтения и каким образом в нем реализованы проверенные методы, улучшающие понимание прочитанного для начинающих, тех, кто изучает язык, и учащихся с особыми потребностями. В этом учебнике описано, как создать веб-приложение Python, которое запускает иммерсивное средство чтения. В этом руководстве описано следующее:
 

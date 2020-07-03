@@ -3,7 +3,7 @@ title: Изучение инцидентов с помощью Azure Sentinel | 
 description: Используйте этот учебник, чтобы узнать, как исследовать инциденты с помощью Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
-ms.author: rkarlin
-ms.openlocfilehash: fbab3eff3d7f742c2542e4264ef1b2124c5f15e5
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.author: yelevin
+ms.openlocfilehash: ecd8c508d05bfeb541a6cb5efbcdf2fffd3c78d3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72024607"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77587198"
 ---
 # <a name="tutorial-investigate-incidents-with-azure-sentinel"></a>Учебник. изучение инцидентов с помощью Azure Sentinel
 
@@ -39,7 +39,7 @@ ms.locfileid: "72024607"
 
 Инцидент может включать несколько предупреждений. Это совокупность всех соответствующих доказательств для конкретного расследования. Инцидент создается на основе правил аналитики, созданных на странице **аналитика** . Свойства, связанные с предупреждениями, такие как серьезность и состояние, задаются на уровне инцидента. После того как вы разрешите Azure Sentinel узнать, какие типы угроз вам нужны, и как их найти, вы можете отслеживать обнаруженные угрозы, изучая инциденты.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные условия
 Вы сможете исследовать инцидент только в том случае, если вы использовали поля сопоставления сущностей при настройке аналитического правила. Для работы с графиком расследования требуется, чтобы исходный инцидент включал в себя сущности.
 
 ## <a name="how-to-investigate-incidents"></a>Изучение инцидентов
@@ -97,7 +97,7 @@ ms.locfileid: "72024607"
 
     ![Просмотр связанных предупреждений](media/tutorial-investigate-cases/related-alerts.png)
 
-1. Для каждого запроса на просмотр можно выбрать параметр, чтобы открыть необработанные результаты события и запрос, используемый в Log Analytics, выбрав **события\>** .
+1. Для каждого запроса просмотра можно выбрать параметр, чтобы открыть необработанные результаты события и запрос, используемый в Log Analytics, выбрав **события\>**.
 
 1. Чтобы разобраться в инциденте, граф предоставляет параллельную временную шкалу.
 
@@ -109,7 +109,7 @@ ms.locfileid: "72024607"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом руководстве вы узнали, как приступить к исследованию инцидентов с помощью Sentinel Azure. Перейдите к руководству по [реагированию на угрозы с помощью автоматизированного модули PlayBook](tutorial-respond-threats-playbook.md).
 > [!div class="nextstepaction"]
 > [Реагирование на угрозы](tutorial-respond-threats-playbook.md) для автоматизации реагирования на угрозы.

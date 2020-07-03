@@ -5,10 +5,10 @@ ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/08/2019
 ms.openlocfilehash: f5be97458ba658f315c31ae34e540842b64e3ec4
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76989575"
 ---
 # <a name="azure-backup-monitoring-alert---faq"></a>Оповещение мониторинга Azure Backup — часто задаваемые вопросы
@@ -82,7 +82,7 @@ ms.locfileid: "76989575"
 * задание отменено;
 * второе задание резервного копирования не удалось выполнить из-за того, что еще выполняется предыдущее задание резервного копирования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. другие статьи с вопросами и ответами:
 

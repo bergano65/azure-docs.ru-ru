@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 01/07/2020
 ms.custom: sfrev
 ms.openlocfilehash: 11e32c9d1290227e638a314ed8417b1bed906842
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75749531"
 ---
 # <a name="service-fabric-programming-model-overview"></a>Общие сведения о модели программирования Service Fabric
@@ -58,8 +58,8 @@ ASP.NET Core — это межплатформенная платформа с �
 
 [Общие сведения о Service Fabric и контейнерах](service-fabric-containers-overview.md)
 
-[Общие сведения о Reliable Services](service-fabric-reliable-services-introduction.md)
+[Обзор надежных служб](service-fabric-reliable-services-introduction.md)
 
-[Общие сведения о надежных субъектах Service Fabric](service-fabric-reliable-actors-introduction.md)
+[Обзор Reliable Actors](service-fabric-reliable-actors-introduction.md)
 
 [Service Fabric и ASP.NET Core](service-fabric-reliable-services-communication-aspnetcore.md)

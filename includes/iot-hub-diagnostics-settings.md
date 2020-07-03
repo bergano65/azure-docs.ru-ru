@@ -9,17 +9,17 @@ ms.date: 02/20/2019
 ms.author: dobett
 ms.custom: include file
 ms.openlocfilehash: 3778ec2fac13aee29ce361402a535ca70fd56c33
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75750709"
 ---
 ### <a name="enable-logging-with-diagnostics-settings"></a>Включение ведения журнала с параметрами диагностики
 
 [!INCLUDE [updated-for-az](./updated-for-az.md)]
 
-1. Войдите на [портал Azure](https://portal.azure.com) и перейдите к своему Центру Интернета вещей.
+1. Войдите в [портал Azure](https://portal.azure.com) и перейдите в центр Интернета вещей.
 
 2. Выберите **Параметры диагностики**.
 

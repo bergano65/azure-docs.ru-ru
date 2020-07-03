@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 930a3f0cf629c99fc03a84c701bcf7b2807c77c1
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 73498b3537f4cf9313fc9e2464785f63c2af0d5a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75972862"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81460738"
 ---
 # <a name="use-templates-to-create-azure-data-factory-entities"></a>Создание сущностей фабрики данных Azure с помощью шаблонов
 > [!NOTE]
@@ -233,7 +233,7 @@ ms.locfileid: "75972862"
 * параметры различаются в зависимости от среды (например, среда разработки, тестирования и рабочая среда);
 * секретов (например, паролей);
 
-Если при развертывании сущностей фабрики данных Azure с помощью шаблонов секреты необходимо извлечь из [хранилища ключей Azure](../../key-vault/key-vault-overview.md), укажите **хранилище ключей** и **секретное имя**, как показано в следующем примере:
+Если при развертывании сущностей фабрики данных Azure с помощью шаблонов секреты необходимо извлечь из [хранилища ключей Azure](../../key-vault/general/overview.md), укажите **хранилище ключей** и **секретное имя**, как показано в следующем примере:
 
 ```JSON
 "parameters": {

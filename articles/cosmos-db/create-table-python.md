@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d4cfba26192eb097d06f82e18acb41c1f9640e66
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 673155706c3b7d44b41562c2dc8ce24a94ac6a58
+ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72437354"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82083637"
 ---
 # <a name="quickstart-build-a-table-api-app-with-python-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью Python и Azure Cosmos DB
 
@@ -25,19 +25,13 @@ ms.locfileid: "72437354"
 > * [Python](create-table-python.md)
 > 
 
-В этом руководстве показано, как использовать Python и [API таблиц](table-introduction.md) Azure Cosmos DB для сборки приложения путем клонирования примера с сайта GitHub. Кроме того, здесь показано, как создать учетную запись Azure Cosmos DB и использовать обозреватель данных для создания таблиц и сущностей на веб-портале Azure.
-
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать базы данных документов, пар "ключ — значение", графов и базы данных с широкими столбцами, используя возможности глобального распределения и горизонтального масштабирования Azure Cosmos DB. 
+Из этого краткого руководства вы узнаете, как создать учетную запись API таблиц Azure Cosmos DB и управлять ею с портала Azure и из Visual Studio с помощью приложения Python, клонированного из GitHub. Azure Cosmos DB — это служба многомодельной базы данных, позволяющая быстро создавать и запрашивать документы, таблицы, пары "ключ-значение" и графовые базы данных, используя возможности глобального распределения и горизонтального масштабирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-[!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
-
-Кроме того, сделайте следующее:
-
-* Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо выбрать рабочие нагрузки **Разработка для Azure** и **Разработка на Python**.
-* Также выберите параметр Python 2 в рабочей нагрузке **Разработка на Python** или скачайте Python 2.7 на сайте [python.org](https://www.python.org/downloads/release/python-2712/).
+- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure. Вы также можете воспользоваться [эмулятором Azure Cosmos DB](https://aka.ms/cosmosdb-emulator) с URI `https://localhost:8081` и ключом `C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==`.
+- [Visual Studio 2019](https://www.visualstudio.com/downloads/) с выбранными во время установки рабочими нагрузками **разработки Azure** и **разработки Python**. 
+- [Git](https://git-scm.com/downloads).
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
 
@@ -79,29 +73,33 @@ Azure Cosmos DB — это глобально распределенная мн
 
 3. Затем откройте файл решения в Visual Studio. 
 
+> ![СОВЕТ] Более подробное пошаговое руководство по аналогичному коду см. в статье с [примером API таблиц для Cosmos DB](table-storage-how-to-use-python.md).
+
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**. 
+1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
     ![Просмотр и копирование строки подключения в параметрах "Строка подключения"](./media/create-table-python/view-and-copy-connection-string-in-connection-string-settings.png)
 
 2. Скопируйте имя учетной записи с помощью кнопки копирования справа.
 
-3. Откройте файл config.py и вставьте скопированное имя учетной записи как значение параметра STORAGE_ACCOUNT_NAME в строке 19.
+3. Откройте файл *config.py* и вставьте скопированное с портала имя учетной записи как значение параметра STORAGE_ACCOUNT_NAME в строке 19.
 
 4. Вернитесь на портал и скопируйте первичный ключ.
 
 5. Вставьте скопированный первичный ключ как значение параметра STORAGE_ACCOUNT_KEY в строке 20.
 
-6. Сохраните файл config.py.
+6. Сохраните файл *config.py*.
 
-## <a name="run-the-app"></a>Запуск приложения
+## <a name="run-the-app"></a>Запустите приложение
 
-1. В Visual Studio щелкните правой кнопкой мыши проект в **обозревателе решений**, выберите текущую среду Python и щелкните ее правой кнопкой мыши.
+1. В Visual Studio щелкните проект правой кнопкой мыши в **обозревателе решений**.
 
-2. Выберите "Установить пакет Python...", а затем введите **azure-storage-table**.
+2. Выберите текущую среду Python и щелкните правой кнопкой мыши.
+
+2. Выберите **Установить пакет Python**, а затем введите *azure-storage-table*.
 
 3. Нажмите клавишу F5 для запуска приложения. Приложение откроется в браузере. 
 
@@ -115,9 +113,9 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB и таблицу с помощью обозревателя данных, а также как запустить приложение.  Теперь вы можете выполнить запрос данных с помощью API таблиц.  
+Из этого краткого руководства вы узнали, как создать учетную запись Azure Cosmos DB и таблицу с помощью обозревателя данных, а также как запустить приложение Python в Visual Studio и добавить в таблицу данные.  Теперь вы можете выполнить запрос данных с помощью API таблиц.  
 
 > [!div class="nextstepaction"]
 > [Импорт данных таблиц в API таблицы](table-import.md)

@@ -7,14 +7,16 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 8f91ed926c733b211443805722b6817b1ce005b6
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 3b8632eaf7662d705235adaad7cd03d2e7e4904b
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048359"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82626877"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое потоки данных структурирование?
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Организациям необходимо выполнять подготовку данных и структурирование для точного анализа сложных данных, которые постоянно растут каждый день. Подготовка данных необходима, чтобы организации могли использовать данные в различных бизнес-процессах и сократить время на ценность.
 
@@ -46,7 +48,7 @@ ms.locfileid: "77048359"
 | [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | CSV | Субъект-служба |
 | [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | CSV, Parquet | Ключ учетной записи, субъект-служба |
 | [База данных SQL Azure](connector-azure-sql-database.md) | - | Проверка подлинности SQL |
-| [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md) | - | Проверка подлинности SQL |
+| [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md) | - | Проверка подлинности SQL |
 
 ## <a name="the-mashup-editor"></a>Редактор гибридных приложений
 

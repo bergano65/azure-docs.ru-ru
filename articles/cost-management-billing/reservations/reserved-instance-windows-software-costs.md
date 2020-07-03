@@ -1,22 +1,19 @@
 ---
 title: Затраты на резервирование программного обеспечения для Azure
 description: Узнайте, какие счетчики программного обеспечения не учитываются в затратах на зарезервированные экземпляры виртуальных машин Azure.
-author: yashar
-manager: yashar
+author: yashesvi
+ms.reviewer: yashar
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 11/14/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 7807129061328d1c6d563b9058987388e84c6e4c
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3480f60b354de94f604dab1ea1f16d3b0ad59379
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995693"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199353"
 ---
 # <a name="software-costs-not-included-with-azure-reserved-vm-instances"></a>Затраты на программное обеспечение, которые не включены в стоимость экземпляров Azure Reserved Virtual Machine Instances
 

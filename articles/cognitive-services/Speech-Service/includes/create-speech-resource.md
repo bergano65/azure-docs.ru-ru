@@ -2,18 +2,18 @@
 title: Поддержка контейнеров
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 7/5/2019
-ms.author: dapine
-ms.openlocfilehash: 3c42bf2b2acc2472741bd603ea9d653a314ecc40
-ms.sourcegitcommit: 3f8017692169bd75483eefa96c225d45cd497f06
+ms.author: trbye
+ms.openlocfilehash: 8abd520a7bb80f1f9a2d8ebcbe46b90fe59a96ec
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73523755"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81422325"
 ---
 ## <a name="create-a-speech-resource"></a>Создание речевого ресурса
 
@@ -21,18 +21,18 @@ ms.locfileid: "73523755"
 1. Щелкните [создать **речевой** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices) ресурс
 1. Введите все необходимые параметры:
 
-    |Настройка|Значение|
+    |Параметр|Значение|
     |--|--|
-    |Имя|Требуемое имя (2-64 символов)|
-    |Подписка|Выберите подходящую подписку|
-    |Расположение|Выберите все расположенные поблизости и доступные расположения|
-    |Уровень ценообразования|`F0` — минимальная ценовая категория|
+    |Имя|Требуемое имя (от 2 до 64 символов)|
+    |Подписка|Выберите соответствующую подписку|
+    |Расположение|Выберите доступное поблизости расположение|
+    |Ценовая категория|`F0` — минимальная ценовая категория|
     |Группа ресурсов|Выберите доступную группу ресурсов|
 
-1. Щелкните **создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
-1. Собирайте настроенные `endpoint` и ключ API:
+1. Щелкните **Создать** и дождитесь создания ресурса. После создания перейдите на страницу ресурсов.
+1. Собираются `endpoint` настройки и ключ API:
 
-    |Вкладка ресурсов на портале|Настройка|Значение|
+    |Вкладка ресурсов на портале|Параметр|Применение|
     |--|--|--|
-    |**Обзор**|Конечная точка|Скопируйте конечную точку. Он выглядит так же, как `https://speech.cognitiveservices.azure.com/sts/v1.0/issuetoken`|
-    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка, состоящая из 32 буквенно-цифровых символов без пробелов или дефисов `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|
+    |**Обзор**|Конечная точка|Скопируйте конечную точку. Он выглядит примерно так.`https://speech.cognitiveservices.azure.com/sts/v1.0/issuetoken`|
+    |**Ключи**|Ключ API|Скопируйте 1 из двух ключей. Это строка, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`состоящая из 32 буквенно-цифровых символов без пробелов или дефисов.|

@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
 ms.openlocfilehash: c56bb7030b2ebc12e3afc24e2d8cb29ce2dda0bf
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74079478"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>Использование Cloud Explorer для Visual Studio для обмена сообщениями между устройством и Центром Интернета вещей
 
-![Сквозная схема](./media/iot-hub-visual-studio-cloud-device-messaging/e-to-e-diagram.png)
+![Комплексная схема](./media/iot-hub-visual-studio-cloud-device-messaging/e-to-e-diagram.png)
 
 [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) — это полезное расширение для Visual Studio. Оно позволяет просматривать ресурсы Azure, проверять их свойства и выполнять основные действия разработчика в среде Visual Studio. Эта статья посвящена использованию Cloud Explorer для отправки и получения сообщений между устройством и центром.
 
@@ -54,7 +54,7 @@ ms.locfileid: "74079478"
 
 Чтобы получить доступ к концентратору, выполните следующие действия.
 
-1. В Visual Studio выберите **просмотреть** > **Cloud Explorer** , чтобы открыть Cloud Explorer.
+1. В Visual Studio выберите **Просмотреть** > **Cloud Explorer** , чтобы открыть Cloud Explorer.
 
 1. Щелкните значок управления учетной записью, чтобы отобразить подписки.
 
@@ -96,7 +96,7 @@ ms.locfileid: "74079478"
 
     ![Результаты отправки сообщения C2D](media/iot-hub-visual-studio-cloud-device-messaging/send-c2d-message-result-vs2019.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 

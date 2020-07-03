@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: evanhi
 ms.openlocfilehash: 7f475774828bcaecd471e13de994b156041323ed
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75651388"
 ---
 # <a name="enable-and-request-just-in-time-access-for-azure-managed-applications"></a>Включение и запрос JIT-доступа для управляемых приложений Azure
@@ -104,7 +104,7 @@ JIT-доступ позволяет запрашивать повышенный 
 
 1. Чтобы просмотреть состояние всех JIT-запросов для управляемого приложения, выберите **JIT-доступ** и **журнал запросов**.
 
-   ![Просмотреть сведения о состоянии](./media/request-just-in-time-access/view-status.png)
+   ![Просмотр состояния](./media/request-just-in-time-access/view-status.png)
 
 ## <a name="known-issues"></a>Известные проблемы
 

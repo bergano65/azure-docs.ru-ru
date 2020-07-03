@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -8,14 +8,14 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 6f5d2dc30ac0f6316587fa0836b87cbd4efc0a8b
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: fa8d8ccef7d6ad6e1b5d9f19de61e45ee8c439fa
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75774397"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82587862"
 ---
-Командлет PowerShell **Get-азпиринглокатион** возвращает список расположений пиринга с обязательным параметром `Kind`, который вы будете использовать в последующих шагах:
+Командлет PowerShell **Get-азпиринглокатион** возвращает список расположений пиринга с обязательным параметром `Kind`, который вы будете использовать в последующих шагах.
 
 ```powershell
 Get-AzPeeringLocation -Kind "Exchange"
@@ -24,15 +24,15 @@ Get-AzPeeringLocation -Kind "Exchange"
 Расположения пиринга Exchange содержат следующие поля:
 * ексчанженаме
 * пиринглокатион
-* Страна
+* Country
 * пирингдбфаЦилитид
 * пирингдбфаЦилитилинк
 * MicrosoftIPv4Address
 * MicrosoftIPv6Address
 
-Проверьте наличие нужного средства пиринга, обратившись к [пирингдб](https://w www.peeringdb.com).
+Проверьте наличие нужного средства пиринга, обратившись к [пирингдб](https://www.peeringdb.com).
 
-Ниже приведен пример, демонстрирующий использование Сиэтле в качестве расположения пиринга для создания пиринга.
+В этом примере показано, как использовать Сиэтле в качестве расположения пиринга для создания пиринга.
 
 ```powershell
 $exchangeLocations = Get-AzPeeringLocation -Kind Exchange

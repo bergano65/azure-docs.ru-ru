@@ -8,14 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/08/2020
-ms.openlocfilehash: 71fb9f1ba9952be0e6b3910dd1079aa6d3c0482d
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: daebd6a4a00d82706ceda68f94736f21b8fe5a84
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834507"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81606396"
 ---
 # <a name="creating-a-new-branch-in-mapping-data-flow"></a>Создание новой ветви в потоке данных сопоставления
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Добавление новой ветви для выполнения нескольких наборов операций и преобразований в одном потоке данных. Добавление новой ветви полезно, если вы хотите использовать один и тот же источник для нескольких приемников или для объединения данных с самообъединением.
 

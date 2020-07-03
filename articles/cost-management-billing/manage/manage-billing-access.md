@@ -1,27 +1,20 @@
 ---
-title: Управление доступом к счетам Azure | Документация Майкрософт
+title: Управление доступом к сведениям о выставлении счетов в Azure
 description: Узнайте, как предоставить доступ членами вашей команды к сведениям о выставлении счетов в Azure
-services: ''
-documentationcenter: ''
 author: vikramdesai01
-manager: amberb
-editor: ''
+ms.reviewer: amberb
 tags: billing
-ms.assetid: e4c4d136-2826-4938-868f-a7e67ff6b025
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/02/2018
+ms.date: 02/12/2020
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 9f78675878bd7a36e27ec1bdce0f3e38540d6039
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: e7a6f105c6c8292e8e95b388d60dd95c3548dbb5
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75991442"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79237672"
 ---
 # <a name="manage-access-to-billing-information-for-azure"></a>Управление доступом к данным для выставления счетов в Azure
 
@@ -51,7 +44,7 @@ ms.locfileid: "75991442"
 ** Если вы являетесь клиентом Соглашения EA, Владелец учетной записи может назначить указанную выше роль другим пользователям их команды. Но чтобы эти пользователи могли просматривать данные для выставления счетов, Администратор предприятия должен включить просмотр расходов "Владелец учетной записи" на корпоративном портале.
 
 
-### <a name="opt-in"></a> Предоставление пользователям разрешений на скачивание счетов
+### <a name="allow-users-to-download-invoices"></a><a name="opt-in"></a> Предоставление пользователям разрешений на скачивание счетов
 
 После того как администратор учетной записи назначил соответствующие роли другим пользователям, они должны включить доступ к загрузке счетов на портале Azure. Все счета, созданные до декабря 2016 года, доступны только администратору учетной записи.
 

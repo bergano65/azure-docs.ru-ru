@@ -1,19 +1,19 @@
 ---
 title: Расширенная защита от угроз — портал Azure — база данных Azure для MySQL
 description: Узнайте, как настроить расширенную защиту от угроз для обнаружения аномальных действий базы данных, указывающих на потенциальные угрозы безопасности для базы данных.
-author: bolzmj
-ms.author: mbolz
+author: ajlam
+ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 11ac05c710f7daf709ffbc29aebff706aea704d5
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 4936f765052d6993e5a372bde6336e00b19a24f6
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74765052"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509267"
 ---
-# <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для службы "База данных Azure для MySQL"
+# <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
 Служба "Расширенная защита от угроз" для Базы данных Azure для MySQL позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
 
@@ -27,8 +27,8 @@ ms.locfileid: "74765052"
 > Эта функция доступна во всех областях Azure, где База данных Azure для MySQL развернута для серверов общего назначения и оптимизирована для операций в памяти.
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
-1. Запустите портал Azure: [https://portal.azure.com](https://portal.azure.com).
-2. Перейдите на страницу настройки сервера Базы данных Azure для MySQL, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)** .
+1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+2. Перейдите на страницу настройки сервера Базы данных Azure для MySQL, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)**.
 3. На странице настройки **Расширенная защита от угроз (предварительная версия)** сделайте следующее:
 
    - Включите расширенную защиту от угроз на сервере.
@@ -61,7 +61,7 @@ ms.locfileid: "74765052"
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
+* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для MySQL](https://azure.microsoft.com/pricing/details/mysql/).  

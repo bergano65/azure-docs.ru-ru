@@ -8,15 +8,15 @@ ms.assetid: 40eb75b7-827e-4d30-af6c-ca3c2af915c7
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: conceptual
-ms.date: 09/27/2019
+ms.topic: troubleshooting
+ms.date: 03/31/2020
 ms.author: iainfou
-ms.openlocfilehash: 601574cc2a478dc53a261cfcb074e43a556dd4c0
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 6ff12ce5fec8fcc49fa21ef5f3009fc2283300c4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75979514"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80654823"
 ---
 # <a name="resolve-mismatched-directory-errors-for-existing-azure-ad-domain-services-managed-domains"></a>Устранение ошибок несоответствия каталога для существующих управляемых доменов доменных служб Azure AD
 
@@ -26,7 +26,7 @@ ms.locfileid: "75979514"
 
 ## <a name="what-causes-this-error"></a>В чем причина этой ошибки?
 
-Несоответствующая ошибка каталога возникает, когда управляемый домен AD DS Azure и виртуальная сеть принадлежат двум разным клиентам Azure AD. Например, у вас может быть управляемый домен AD DS Azure с именем *aadds.contoso.com* , работающий в клиенте Azure AD contoso. Однако виртуальная сеть Azure для управляемого домена входит в состав клиента Azure AD Fabrikam.
+Несоответствующая ошибка каталога возникает, когда управляемый домен AD DS Azure и виртуальная сеть принадлежат двум разным клиентам Azure AD. Например, у вас может быть управляемый домен AD DS Azure с именем *aaddscontoso.com* , работающий в клиенте Azure AD contoso. Однако виртуальная сеть Azure для управляемого домена входит в состав клиента Azure AD Fabrikam.
 
 Azure использует управление доступом на основе ролей (RBAC) для ограничения доступа к ресурсам. При включении AD DS Azure в клиенте Azure AD хэши учетных данных синхронизируются с управляемым доменом. Для этой операции требуется, чтобы вы были администратором клиента для каталога Azure AD, а доступ к учетным данным должен контролироваться. Для развертывания ресурсов в виртуальной сети Azure и управления трафиком необходимо иметь права администратора в виртуальной сети, в которой развертывается AD DS Azure.
 

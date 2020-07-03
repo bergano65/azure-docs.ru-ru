@@ -5,15 +5,15 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: f957459cf20a018ae53ba6ec90fb478dd0c69044
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: c7779d82ddd6e5fd1bf7fcd983937ea6c10dab1c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74770906"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79537080"
 ---
-# <a name="performance-recommendations-in-azure-database-for-mysql"></a>Рекомендации по производительности в базе данных Azure для MySQL
+# <a name="performance-recommendations-in-azure-database-for-mysql"></a>Performance Recommendations in Azure Database for MySQL (Рекомендации по повышению производительности в Базе данных Azure для MySQL)
 
 **Применимо к:** База данных Azure для MySQL 5,7
 
@@ -47,5 +47,5 @@ ms.locfileid: "74770906"
 
 Рекомендации по *созданию индекса* предлагают новые индексы для ускорения наиболее часто выполняемых и длительных запросов в рабочей нагрузке. Этот тип рекомендации требует, чтобы [хранилище запросов](concepts-query-store.md) было включено. Хранилище запросов собирает сведения о запросах и предоставляет подробную статистику времени выполнения запросов и частоту, которую анализ использует для создания рекомендаций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [мониторинге и настройке](concepts-monitoring.md) в базе данных Azure для MySQL.

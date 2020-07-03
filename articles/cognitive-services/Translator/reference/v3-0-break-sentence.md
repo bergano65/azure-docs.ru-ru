@@ -1,7 +1,7 @@
 ---
-title: Метод BreakSentence в API перевода текстов
+title: Метод Translator Бреаксентенце
 titleSuffix: Azure Cognitive Services
-description: Метод API перевода текстов Бреаксентенце определяет положение границ предложения в фрагменте текста.
+description: Метод Translator Бреаксентенце определяет положение границ предложения в фрагменте текста.
 services: cognitive-services
 author: swmachan
 manager: nitinme
@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 01/21/2020
 ms.author: swmachan
-ms.openlocfilehash: 4c314148b8e1495a8b5a12c42d4989d13cdd6a08
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 01a5404100da6c669da4513ac9fd08c959df220e
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548124"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83588638"
 ---
-# <a name="translator-text-api-30-breaksentence"></a>API перевода текстов 3.0: BreakSentence
+# <a name="translator-30-breaksentence"></a>Переводчик 3,0: Бреаксентенце
 
 Определяет расположение границ предложения в фрагменте текста.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -33,7 +33,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 В таблице ниже приведены параметры, которые передаются в строке запроса.
 
-| Параметр запроса | Description |
+| Параметр запроса | Описание |
 | -------| ----------- |
 | api-version <img width=200/>   | **Обязательный параметр запроса**.<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`. |
 | Язык | **Необязательный параметр запроса**.<br/>Тег языка, определяющий язык входного текста. Если код не указан, будет применено автоматическое распознавание языка. |
@@ -41,7 +41,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 Заголовки запроса:
 
-| Заголовки | Description |
+| Заголовки | Описание |
 | ------- | ----------- |
 | Заголовки проверки подлинности <img width=200/>  | **Обязательный заголовок запроса**.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>. |
 | Content-Type | **Обязательный заголовок запроса**.<br/>Указывает тип содержимого для полезных данных. Возможные значения: `application/json`. |
@@ -65,7 +65,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 * Общий объем текста запроса не должен превышать 50 000 символов, включая пробелы.
 * Если указан параметр запроса `language`, все элементы массива должны быть на одном и том же языке. В противном случае автоматическое распознавание языка применяется к каждому элементу массива независимо друг от друга.
 
-## <a name="response-body"></a>Тело ответа
+## <a name="response-body"></a>Текст ответа
 
 Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результата содержит следующие свойства.
 
@@ -97,7 +97,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>Description</th>
+  <th>Описание</th>
   <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -110,14 +110,14 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
 
 <table width="100%">
   <th width="20%">Код состояния</th>
-  <th>Description</th>
+  <th>Описание</th>
   <tr>
     <td>200</td>
     <td>Успешно.</td>
   </tr>
   <tr>
     <td>400</td>
-    <td>Один из параметров запроса отсутствует или имеет недопустимое значение. Исправьте параметры запроса и повторите попытку.</td>
+    <td>Один из параметров запроса отсутствует или является недопустимым. Исправьте параметры запроса и повторите попытку.</td>
   </tr>
   <tr>
     <td>401</td>
@@ -141,7 +141,7 @@ https://api.cognitive.microsofttranslator.com/breaksentence?api-version=3.0
   </tr>
 </table> 
 
-Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Коды распространенных ошибок можно найти на [странице справочника по API перевода текстов версии 3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
+Если возникнет ошибка, запрос также вернет ответ JSON с ошибкой. Код ошибки представляет собой число из 6 знаков, первые 3 из которых являются кодом состояния HTTP, а оставшиеся 3 цифры определяют категорию ошибки. Общие коды ошибок можно найти на [странице справочника по транслятору v3](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#errors). 
 
 ## <a name="examples"></a>Примеры
 

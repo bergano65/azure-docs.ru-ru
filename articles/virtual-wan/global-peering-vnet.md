@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: cherylmc
 ms.openlocfilehash: 340472f84d2dd2c4f46d180992745a57e8ad1884
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73588230"
 ---
 # <a name="configure-global-vnet-peering-cross-region-vnet-for-virtual-wan"></a>Настройка пиринга глобальной виртуальной сети (виртуальной сети с несколькими регионами) для виртуальной WAN
 
 Виртуальную сеть в другом регионе можно подключить к концентратору виртуальной глобальной сети.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 Убедитесь, что вы выполнили следующие критерии:
 
 * Виртуальная сеть с несколькими регионами не подключена к другому виртуальному концентратору глобальной сети. Периферийную копию можно подключить только к одному виртуальному концентратору.
 * Виртуальная сеть (периферийная) не содержит шлюз виртуальной сети (например, VPN-шлюз Azure или шлюз виртуальной сети ExpressRoute). Если виртуальная сеть содержит шлюз виртуальной сети, необходимо удалить шлюз, прежде чем подключить периферийную виртуальную сеть к концентратору.
 
-## <a name="register"></a>Регистрация этой возможности
+## <a name="register-this-feature"></a><a name="register"></a>Регистрация этой возможности
 
 Вы можете зарегистрироваться для использования этой функции с помощью PowerShell. Если выбрать вариант "попробовать" из приведенного ниже примера, откроется Azure Cloud-Shell, и вам не потребуется устанавливать командлеты PowerShell локально на компьютер. При необходимости можно изменить подписки с помощью командлета "Select-Азсубскриптион-SubscriptionId <subid>".
 
@@ -34,13 +34,13 @@ Register-AzProviderFeature -FeatureName AllowCortexGlobalVnetPeering -ProviderNa
 Register-AzResourceProvider -ProviderNamespace 'Microsoft.Network'
 ```
 
-## <a name="verify"></a>Проверка регистрации
+## <a name="verify-registration"></a><a name="verify"></a>Проверка регистрации
 
 ```azurepowershell-interactive
 Get-AzProviderFeature -FeatureName AllowCortexGlobalVnetPeering -ProviderNamespace Microsoft.Network
 ```
 
-## <a name="hub"></a>Подключение виртуальной сети к концентратору
+## <a name="connect-a-vnet-to-the-hub"></a><a name="hub"></a>Подключение виртуальной сети к концентратору
 
 На этом шаге вы создадите подключение пиринга между центром и виртуальной сетью между регионами. Повторите эти шаги для каждой виртуальной сети, которую вы хотите подключить.
 

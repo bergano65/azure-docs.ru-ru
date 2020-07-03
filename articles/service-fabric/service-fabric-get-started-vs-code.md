@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.openlocfilehash: 67846293257661a4f7a907d76402d2e98c339225
-ms.sourcegitcommit: 79cbd20a86cd6f516acc3912d973aef7bf8c66e4
+ms.openlocfilehash: 17bff459a0399d39c6bfdd772ad16d0b5b2f6771
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77251640"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79258490"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -21,7 +21,7 @@ ms.locfileid: "77251640"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Необходимо обязательно установить следующие компоненты во всех средах:
 
@@ -48,7 +48,7 @@ ms.locfileid: "77251640"
 Для разработки .NET Core/C# необходимо установить следующие компоненты:
 
 * [.NET Core](https://www.microsoft.com/net/learn/get-started) (версия 2.0.0 или более новая)
-* [Расширение VS Code C# для Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). Необходимо для отладки служб C#. Для установки воспользуйтесь VS Code Marketplace или щелкните значок "Расширения" на **панели действий** в VS Code и выполните поиск расширения.
+* [Расширение VS Code C# для Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp). Необходимо для отладки служб C#. Для установки воспользуйтесь VS Code Marketplace или щелкните значок "Расширения" на **панели действий** в VS Code и выполните поиск расширения.
 
 ## <a name="setup"></a>Настройка
 
@@ -80,7 +80,7 @@ ms.locfileid: "77251640"
 ### <a name="service-fabric-add-service"></a>Service Fabric: Add Service (Service Fabric: добавить службу)
 Команда **Service Fabric: Add Service** (Service Fabric: добавить службу) добавляет новую службу в уже существующее приложение Service Fabric. Папка приложения, в которое добавляется служба, должна быть корневым каталогом рабочей области. 
 
-1.  Выберите команду **Service Fabric: Add Service** (Service Fabric: добавить службу).
+1.  Выберите команду **Service Fabric: добавить службу** .
 2.  Выберите тип текущего приложения Service Fabric. 
 3.  Выберите тип службы, которую необходимо добавить в приложение Service Fabric. 
 4.  Следуйте инструкциям, чтобы задать имя службы. 
@@ -111,7 +111,7 @@ ms.locfileid: "77251640"
 2.  Проверьте, удалено ли приложение. Для этого просмотрите кластер с помощью Service Fabric Explorer. Это может занять некоторое время.
 
 ### <a name="service-fabric-build-application"></a>Service Fabric: Build Application (Service Fabric: компилировать приложение)
-Команда **Service Fabric: Build Application** может создавать приложения Java или C# Service Fabric. 
+Команда **Service Fabric: Build Application** может создавать приложения Service Fabric Java или C#. 
 
 1.  Перед выполнением команды убедитесь, что открыта корневая папка приложения. Команда определяет тип приложения (C# или Java) и компилирует его соответствующим образом.
 2.  Выберите команду **Service Fabric: Build Application** (Service Fabric: компилировать приложение).
@@ -124,7 +124,7 @@ ms.locfileid: "77251640"
 2.  Выберите команду **Service Fabric: Clean Application** (Service Fabric: очистить приложение).
 3.  Выходные данные процесса очистки пишутся во встроенный терминал.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения см. в разделе [Разработка и отладка приложений Service Fabric на C# с помощью VS Code](./service-fabric-develop-csharp-applications-with-vs-code.md).
 * Дополнительные сведения см. в статье [Develop Java Service Fabric applications with Visual Studio Code](./service-fabric-develop-java-applications-with-vs-code.md) (Разработка и отладка приложений Java Service Fabric в VS Code).

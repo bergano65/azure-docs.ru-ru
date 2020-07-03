@@ -15,21 +15,21 @@ ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: b-juche
 ms.openlocfilehash: 25cae58663f6fa7ef27995c10509eb33e49dd4c7
-ms.sourcegitcommit: dd69b3cda2d722b7aecce5b9bd3eb9b7fbf9dc0a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70012570"
 ---
 # <a name="create-a-netapp-account"></a>Создание учетной записи NetApp
 Создание учетной записи NetApp предоставляет возможность настройки пула емкости и впоследствии создания тома. Чтобы создать новую учетную запись NetApp, нужно использовать колонку Azure NetApp Files.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 Вы должны получить сообщение электронной почты от команды Azure NetApp Files, подтверждая, что вам предоставлен доступ к службе. См. статью [Отправка запроса ваитлист для доступа к службе](azure-netapp-files-register.md#waitlist).
 
 Кроме того, необходимо зарегистрировать подписку для использования поставщика ресурсов NetApp. См. раздел [Регистрация поставщика ресурсов NetApp](azure-netapp-files-register.md#resource-provider).
 
-## <a name="steps"></a>Действия 
+## <a name="steps"></a>Шаги 
 
 1. Войдите на портал Azure. 
 2. Подключитесь к колонке Azure NetApp Files, используя один из следующих способов.  
@@ -48,13 +48,13 @@ ms.locfileid: "70012570"
      Выберите подписку из существующих подписок.
    * **Группа ресурсов**   
      Используйте имеющуюся группу ресурсов или создайте новую.
-   * **Местоположение.**  
+   * **Расположение**  
      Выберите регион, где нужно разместить учетную запись и ее дочерние ресурсы.  
 
      ![Новая учетная запись NetApp](../media/azure-netapp-files/azure-netapp-files-new-netapp-account.png)
 
 
-5. Щелкните **Создать**.     
+5. Нажмите кнопку **Создать**.     
    Созданная учетная запись NetApp теперь отображается в колонке Azure NetApp Files. 
 
 > [!NOTE] 
@@ -62,7 +62,7 @@ ms.locfileid: "70012570"
 >
 > `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"NotFound","message":"{\r\n \"error\": {\r\n \"code\": \"InvalidResourceType\",\r\n \"message\": \"The resource type could not be found in the namespace 'Microsoft.NetApp' for api version '2017-08-15'.\"\r\n }\r\n}"}]}`
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
 

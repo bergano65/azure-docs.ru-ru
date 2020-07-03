@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: kenchen
 ms.openlocfilehash: cf0f345b0fbf9fea2512f72c1996c9a1597cc0cd
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73747648"
 ---
 # <a name="resiliency-and-disaster-recovery"></a>Устойчивость и аварийное восстановление
@@ -65,7 +65,7 @@ Azure:SignalR:ConnectionString:<name>:<role>
 
 Если вы предпочитаете хранить строки подключения в другом месте, их также можно прочитать в коде и использовать в качестве параметров при вызове `AddAzureSignalR()` (в ASP.NET Core) или `MapAzureSignalR()` (в ASP.NET).
 
-Пример кода:
+Ниже представлен образец кода.
 
 ASP.NET Core:
 

@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 11/13/2017
 ms.author: alkohli
 ms.openlocfilehash: d86e77ef0148c0fac3dfa31153364de153b094ef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62126755"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79267889"
 ---
 # <a name="install-update-5-on-your-storsimple-device"></a>Установка обновления 5 на устройство StorSimple
 
@@ -47,7 +47,7 @@ ms.locfileid: "62126755"
 
 [!INCLUDE [storsimple-8000-install-update4-via-portal](../../includes/storsimple-8000-install-update5-via-portal.md)]
 
-Убедитесь, что на устройстве установлено **обновление 5 для StorSimple серии 8000 (6.3.9600.17845)** . Также должна измениться **дата последнего обновления**.
+Убедитесь, что на устройстве установлено **обновление 5 для StorSimple серии 8000 (6.3.9600.17845)**. Также должна измениться **дата последнего обновления**.
 
 Теперь вы увидите, что доступны обновления режима обслуживания (это сообщение может отображаться до 24 часов после установки обновлений). Следующий раздел содержит инструкции по установке обновлений в режиме обслуживания.
 
@@ -99,7 +99,7 @@ ms.locfileid: "62126755"
 
 | Порядок | КБ | Описание | Тип обновления | Время установки | Установка в папку|
 | --- | --- | --- | --- | --- | --- |
-| 3. |KB4037263 |Встроенное ПО диска |Обслуживание, <br></br>нарушает работу |~ 30 мин | ThirdOrderUpdate |
+| 3. |KB4037263 |Встроенное ПО диска |Обслуживание <br></br>нарушает работу |~ 30 мин | ThirdOrderUpdate |
 
 <br></br>
 
@@ -113,6 +113,6 @@ ms.locfileid: "62126755"
 
 [!INCLUDE [storsimple-8000-install-troubleshooting](../../includes/storsimple-8000-install-troubleshooting.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о [выпуске обновления 5](storsimple-update5-release-notes.md).
 

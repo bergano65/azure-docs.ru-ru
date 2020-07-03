@@ -12,13 +12,13 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 4c47dfb8b221b6cb4b6237669ecd17c1637107a2
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76721104"
 ---
-# <a name="heading"></a>Обработка больших двоичных данных Azure с применением методов расширенного анализа
+# <a name="process-azure-blob-data-with-advanced-analytics"></a><a name="heading"></a>Обработка данных больших двоичных объектов Azure с применением методов расширенного анализа
 Этот документ содержит сведения о работе с данными в хранилище больших двоичных объектов Azure и создании характеристик на их основе. 
 
 ## <a name="load-the-data-into-a-pandas-data-frame"></a>Загрузка данных во фрейм данных Pandas
@@ -48,7 +48,7 @@ ms.locfileid: "76721104"
 
 Теперь вы готовы просматривать эти данные и создавать функции на основе этого набора данных.
 
-## <a name="blob-dataexploration"></a>Просмотр данных
+## <a name="data-exploration"></a><a name="blob-dataexploration"></a>Исследование данных
 Вот несколько примеров того, как можно просматривать данные с помощью Pandas:
 
 1. Проверьте количество строк и столбцов. 
@@ -94,10 +94,10 @@ ms.locfileid: "76721104"
         #correlation between column_a and column_b
         dataframe_blobdata[['<column_a>', '<column_b>']].corr()
 
-## <a name="blob-featuregen"></a>Создание функций
+## <a name="feature-generation"></a><a name="blob-featuregen"></a>Создание компонентов
 Создавать функции с помощью Python вы можете приведенным ниже способом.
 
-### <a name="blob-countfeature"></a>Создание признаков со значениями индикатора
+### <a name="indicator-value-based-feature-generation"></a><a name="blob-countfeature"></a>Создание признаков со значениями индикатора
 Вот как можно создавать категориальные функции:
 
 1. Проверьте распределение категориального столбца.
@@ -116,7 +116,7 @@ ms.locfileid: "76721104"
         #Remove the original column rate_code in df1_with_dummy
         dataframe_blobdata_with_identity.drop('<categorical_column>', axis=1, inplace=True)
 
-### <a name="blob-binningfeature"></a>Создание характеристик путем группирования данных
+### <a name="binning-feature-generation"></a><a name="blob-binningfeature"></a>Создание характеристик путем группирования данных
 Вот как можно создавать функции группирования:
 
 1. Добавьте последовательность столбцов, чтобы создать числовой столбец.
@@ -130,8 +130,8 @@ ms.locfileid: "76721104"
    
         dataframe_blobdata_with_bin_bool = dataframe_blobdata.join(dataframe_blobdata_bin_bool)    
 
-## <a name="sql-featuregen"></a>Запись данных обратно в большой двоичный объект Azure и их использование в Студии машинного обучения Azure
-После изучения данных и создания необходимых функций можно передать данные (Samples или признаками) в большой двоичный объект Azure и использовать их в Машинное обучение Azure выполните следующие действия: дополнительные компоненты можно создать в Машинное обучение Azure Также Studio (классическая модель). 
+## <a name="writing-data-back-to-azure-blob-and-consuming-in-azure-machine-learning"></a><a name="sql-featuregen"></a>Запись данных обратно в большой двоичный объект Azure и их использование в Студии машинного обучения Azure
+После изучения данных и создания необходимых компонентов можно передать данные (Samples или признаками) в большой двоичный объект Azure и использовать их в Машинное обучение Azure выполните следующие действия. Дополнительные компоненты можно создать в Машинное обучение Azure Studio (классическая модель). 
 
 1. Запишите блок данных в локальный файл.
    

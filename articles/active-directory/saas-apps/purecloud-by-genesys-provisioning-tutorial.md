@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/05/2020
 ms.author: Zhchia
-ms.openlocfilehash: b0b5147faf82fedb6dc3c2eea54dcff1b9343f7a
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 119690b9046821ab538d879e1209c6ef77277370
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77087483"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77370685"
 ---
 # <a name="tutorial-configure-purecloud-by-genesys-for-automatic-user-provisioning"></a>Учебник. Настройка Пуреклауд с помощью Женесис для автоматической подготовки пользователей
 
@@ -35,7 +35,7 @@ ms.locfileid: "77087483"
 > * Подготавливайте группы и членство в группах в Пуреклауд by Женесис
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/purecloud-by-genesys-tutorial) в Пуреклауд by женесис (рекомендуется)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -82,15 +82,15 @@ ms.locfileid: "77087483"
 
     ![Ссылка на PureCloud от Genesys в списке приложений](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите URL-адрес ПУРЕКЛАУД по интерфейсу API Женесис и маркер OAuth в полях **URL-адрес клиента** и **секретный токен** соответственно. Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Пуреклауд by женесис. Если подключение не выполняется, убедитесь, что у учетной записи Пуреклауд by Женесис есть разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите URL-адрес ПУРЕКЛАУД по интерфейсу API Женесис и маркер OAuth в полях **URL-адрес клиента** и **секретный токен** соответственно. URL-адрес API будет структурирован как `{{API Url}}/api/v2/scim/v2`, используя URL-адрес API для региона Пуреклауд в [центре разработчиков пуреклауд](https://developer.mypurecloud.com/api/rest/index.html). Нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Пуреклауд by женесис. Если подключение не выполняется, убедитесь, что у учетной записи Пуреклауд by Женесис есть разрешения администратора, и повторите попытку.
 
     ![Подготовка](./media/purecloud-by-genesys-provisioning-tutorial/provisioning.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "77087483"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с пуреклауд по женесис**.
 
@@ -106,14 +106,14 @@ ms.locfileid: "77087483"
 
      |attribute|Тип|
      |---|---|
-     |userName|String|
-     |active|Логическое|
-     |displayName|String|
-     |emails[type eq "work"].value|String|
-     |title|String|
-     |phoneNumbers[type eq "mobile"].value|String|
-     |phoneNumbers[type eq "work"].value|String|
-     |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|String|
+     |userName|Строка|
+     |active|Логическое значение|
+     |displayName|Строка|
+     |emails[type eq "work"].value|Строка|
+     |title|Строка|
+     |phoneNumbers[type eq "mobile"].value|Строка|
+     |phoneNumbers[type eq "work"].value|Строка|
+     |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: Отдел|Строка|
      |urn: IETF: params: scim: схемы: расширение: Enterprise: 2.0: пользователь: менеджер|Справочник|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы в пуреклауд by женесис**.
@@ -122,8 +122,8 @@ ms.locfileid: "77087483"
 
       |attribute|Тип|
       |---|---|
-      |displayName|String|
-      |externalId|String|
+      |displayName|Строка|
+      |externalId|Строка|
       |members|Справочник|
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
@@ -154,6 +154,6 @@ ms.locfileid: "77087483"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)

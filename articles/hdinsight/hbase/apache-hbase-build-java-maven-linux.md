@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seodec18
 ms.date: 12/24/2019
 ms.openlocfilehash: 3e9b23ce450e45dfedcee8b20e09b1c2b52b6e68
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75495785"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
@@ -21,7 +21,7 @@ ms.locfileid: "75495785"
 
 В этом руководстве для создания и сборки проекта используется [Apache Maven](https://maven.apache.org/). Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache HBase в HDInsight. См. статью [Начало работы с Apache HBase](./apache-hbase-tutorial-get-started-linux.md).
 
@@ -57,13 +57,13 @@ cd C:\HDI
     mkdir conf
     ```
 
-    Эта команда создает каталог с именем `hbaseapp` в текущем расположении, содержащий базовый проект Maven. Вторая команда изменяет рабочий каталог на `hbaseapp`. Третья команда создает новый каталог, `conf`, который будет использоваться позже. Каталог `hbaseapp` содержит следующие элементы:
+    Эта команда создает каталог с именем `hbaseapp` в текущем расположении, содержащий базовый проект Maven. Вторая команда изменяет рабочий каталог на `hbaseapp`. Третья команда создает новый каталог, `conf`который будет использоваться позже. Каталог `hbaseapp` содержит следующие элементы:
 
-    * `pom.xml`: объектная модель проекта ([POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) содержит информацию и сведения о конфигурации, используемые для сборки проекта.
+    * `pom.xml`: Объектная модель проекта ([POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) содержит сведения и сведения о конфигурации, используемые для построения проекта.
     * `src\main\java\com\microsoft\examples` содержит код приложения;
     * `src\test\java\com\microsoft\examples` содержит тесты для приложения.
 
-2. Удалите созданный код примера. Удалите созданные файлы тестов и приложений `AppTest.java`и `App.java`, введя приведенные ниже команды.
+2. Удалите созданный код примера. Удалите созданные файлы `AppTest.java`тестов и приложений, а затем `App.java` введите приведенные ниже команды.
 
     ```cmd
     DEL src\main\java\com\microsoft\examples\App.java
@@ -72,7 +72,7 @@ cd C:\HDI
 
 ## <a name="update-the-project-object-model"></a>Обновление модели объекта проекта
 
-Полную ссылку на файл POM. XML см. в разделе https://maven.apache.org/pom.html.  Откройте `pom.xml`, введя следующую команду:
+Все справочные материалы по файлу pom.xml см. по адресу https://maven.apache.org/pom.html.  Откройте `pom.xml` , введя следующую команду:
 
 ```cmd
 notepad pom.xml
@@ -80,7 +80,7 @@ notepad pom.xml
 
 ### <a name="add-dependencies"></a>Добавление зависимостей
 
-В `pom.xml`добавьте следующий текст в раздел `<dependencies>`.
+В `pom.xml`добавьте в `<dependencies>` раздел следующий текст:
 
 ```xml
 <dependency>
@@ -111,7 +111,7 @@ notepad pom.xml
 
 Подключаемые модули Maven позволяют настроить этапы сборки проекта. Этот раздел используется для добавления подключаемых модулей, ресурсов и других параметров конфигурации сборки.
 
-Добавьте следующий код в файл `pom.xml`, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
+Добавьте в `pom.xml` файл следующий код, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
 
 ```xml
 <build>
@@ -257,7 +257,7 @@ public class CreateTable {
 }
 ```
 
-Этот код является классом `CreateTable`, который создает таблицу с именем `people` и заполняет ее некоторыми предопределенными пользователями.
+Этот код представляет собой `CreateTable` класс, который создает таблицу с именем `people` и заполняет ее некоторыми предопределенными пользователями.
 
 ### <a name="implement-a-searchbyemail-class"></a>Реализация класса SearchByEmail
 
@@ -342,7 +342,7 @@ public class SearchByEmail {
 }
 ```
 
-Класс `SearchByEmail` может использоваться для запроса строк по адресу электронной почты. При использовании класса можно задавать либо строку, либо регулярное выражение, так как используется фильтр регулярных выражений.
+`SearchByEmail` Класс может использоваться для запроса строк по адресу электронной почты. При использовании класса можно задавать либо строку, либо регулярное выражение, так как используется фильтр регулярных выражений.
 
 ### <a name="implement-a-deletetable-class"></a>Реализация класса DeleteTable
 
@@ -376,7 +376,7 @@ public class DeleteTable {
 }
 ```
 
-Класс `DeleteTable` очищает таблицы HBase, созданные в этом примере, отключая и удаляя таблицу, созданную классом `CreateTable`.
+`DeleteTable` Класс очищает таблицы HBase, созданные в этом примере, отключая и удаляя таблицу, созданную `CreateTable` классом.
 
 ## <a name="build-and-package-the-application"></a>Сборка и создание пакета приложения
 
@@ -646,7 +646,7 @@ public class DeleteTable {
    * **Add-HDInsightFile** — используется для загрузки файлов в кластер;
    * **Start-HBaseExample** — используется для запуска классов, созданных ранее.
 
-2. Сохраните файл `hbase-runner.psm1` в каталоге `hbaseapp`.
+2. Сохраните `hbase-runner.psm1` файл в `hbaseapp` каталоге.
 
 3. Зарегистрируйте модули с помощью Azure PowerShell. Откройте новое окно Azure PowerShell и измените приведенную ниже команду, заменив `CLUSTERNAME` именем кластера. Затем введите следующие команды:
 

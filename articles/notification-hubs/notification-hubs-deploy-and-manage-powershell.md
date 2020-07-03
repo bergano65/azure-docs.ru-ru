@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 863fdb445cce41f0fe4cbee63a3d6198c0a79339
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: e6334659d41ba201cfdde190ccc9bfa0d58009e3
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264650"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891202"
 ---
 # <a name="deploy-and-manage-notification-hubs-using-powershell"></a>Развертывание центров уведомлений и управление ими с помощью PowerShell
 
@@ -36,7 +36,7 @@ ms.locfileid: "76264650"
 
 Управление центрами уведомлений не поддерживается напрямую с помощью командлетов, включенных в Azure PowerShell. Лучше всего для PowerShell указать сборку Microsoft.Azure.NotificationHubs.dll. Сборка входит в состав [пакета NuGet для центров уведомлений Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Azure — это платформа на основе подписок. Дополнительные сведения о получении подписки см. на страницах [Как приобрести Azure], [Предложения для участников] или [Создайте бесплатную учетную запись Azure уже сегодня].
 - Компьютер с Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell].
@@ -149,8 +149,8 @@ else
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 - [Управление служебной шиной с помощью PowerShell](../service-bus-messaging/service-bus-powershell-how-to-provision.md)
-- [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](https://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
-- [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](https://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
+- [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](https://docs.microsoft.com/archive/blogs/paolos/how-to-create-service-bus-queues-topics-and-subscriptions-using-a-powershell-script)
+- [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](https://docs.microsoft.com/archive/blogs/paolos/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script)
 
 Некоторые готовые сценарии доступны для скачивания:
 
@@ -158,7 +158,7 @@ else
 
 [Как приобрести Azure]: https://azure.microsoft.com/pricing/purchase-options/
 [Предложения для участников]: https://azure.microsoft.com/pricing/member-offers/
-[Создайте бесплатную учетную запись Azure уже сегодня]: https://azure.microsoft.com/pricing/free-trial/
+[Бесплатная пробная версия]: https://azure.microsoft.com/pricing/free-trial/
 [Установка и настройка Azure PowerShell]: /powershell/azureps-cmdlets-docs
 [API .NET для центров уведомлений]: https://docs.microsoft.com/dotnet/api/overview/azure/notification-hubs?view=azure-dotnet
 [Get-AzureSBNamespace]: https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azuresbnamespace

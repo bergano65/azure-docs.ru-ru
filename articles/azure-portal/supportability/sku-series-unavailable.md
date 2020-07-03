@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 01/27/2020
 ms.author: xingwan
 ms.openlocfilehash: b0f0762ded6804c0b0d90a19223c082f0fb8fd49
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76843650"
 ---
 # <a name="region-or-sku-unavailable"></a>Регион или номер SKU недоступен
@@ -68,7 +68,7 @@ Message: This size is currently unavailable in this location for this subscripti
 
 1. В качестве **типа проблемы**выберите **выбрать тип проблемы**.
 
-1. Для параметра **выбрать тип проблемы**выберите вариант, например, **не удается получить доступ к подписке или ресурсу** > **проблема отсутствует в списке выше**. Щелкните **Сохранить**.
+1. Для параметра **выбрать тип проблемы**выберите вариант, например, **не удается получить доступ к подписке или ресурсу** > **Моя проблема не указана выше**. Нажмите кнопку **Сохранить**.
 
    ![Укажите проблему для запроса](./media/SKU-series-unavailable/support-request-select-problem-type.png)
 
@@ -82,6 +82,6 @@ Message: This size is currently unavailable in this location for this subscripti
 
 Мы всегда будем открывать Отзывы и предложения! Отправьте нам свои [предложения](https://feedback.azure.com/forums/266794-support-feedback). Кроме того, вы можете привлекать нас к нам на [форумах](https://social.msdn.microsoft.com/Forums/azure) [Twitter](https://twitter.com/azuresupport) или MSDN.
 
-## <a name="learn-more"></a>Подробнее…
+## <a name="learn-more"></a>Дополнительные сведения
 
 [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/support/faq)

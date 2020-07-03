@@ -17,10 +17,10 @@ ms.date: 01/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 99f9ad340ea3119d9d08eebef3102af8ba2c014e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157937"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-gtnexus-sso-system"></a>Руководство по Интеграция Azure Active Directory с GTNexus SSO System
@@ -39,7 +39,7 @@ ms.locfileid: "73157937"
 
 Чтобы настроить интеграцию Azure AD с GTNexus SSO System, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * GTNexus SSO System с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,21 +100,21 @@ ms.locfileid: "73157937"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
-    ![изображение](common/upload-metadata.png)
+    ![Изображение](common/upload-metadata.png)
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
-    ![изображение](common/browse-upload-metadata.png)
+    ![Изображение](common/browse-upload-metadata.png)
 
     c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** заполняются автоматически в разделе текстового поля "GTNexus SSO System".
 
-    ![image](common/idp-intiated.png)
+    ![Изображение](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются значениями, введите эти значения вручную в соответствии со своими требованиями.
@@ -125,7 +125,7 @@ ms.locfileid: "73157937"
 
 ### <a name="configure-gtnexus-sso-system-single-sign-on"></a>Настройка единого входа в GTNexus SSO System
 
-Чтобы настроить единый вход на стороне **GTNexus SSO System**, нужно отправить **XML метаданных федерации** [группе поддержки GTNexus SSO System](mailto:support@gtnexus.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **GTNexus SSO System**, нужно отправить **XML метаданных федерации**[группе поддержки GTNexus SSO System](mailto:support@gtnexus.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

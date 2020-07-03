@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/09/2019
-ms.openlocfilehash: eae7e434ce21b5f9d9f3e6c40f94261df8baa426
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.date: 3/19/2020
+ms.openlocfilehash: b42f0d7a8146f7f2b313959273abd22303c89a60
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74972359"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80062545"
 ---
 # <a name="audit-logs-in-azure-database-for-mysql"></a>Журналы аудита в базе данных Azure для MySQL
 
@@ -22,20 +22,20 @@ ms.locfileid: "74972359"
 
 ## <a name="configure-audit-logging"></a>Настройка ведения журнала аудита
 
-По умолчанию журнал аудита отключен. Чтобы включить его, установите для параметра `audit_log_enabled` значение Вкл.
+По умолчанию журнал аудита отключен. Чтобы включить его, задайте `audit_log_enabled` значение ON.
 
 Вы можете настроить еще несколько параметров.
 
 - `audit_log_events`: управляет событиями, регистрируемыми в журнале. Конкретные события аудита см. в таблице ниже.
-- `audit_log_include_users`: пользователи MySQL, включаемые в ведение журнала. Значение по умолчанию для этого параметра — пустое, которое будет включать всех пользователей для ведения журнала. Это имеет более высокий приоритет, чем `audit_log_exclude_users`. Максимальная длина параметра — 512 символов.
+- `audit_log_include_users`: Пользователи MySQL, включаемые в ведение журнала. Значение по умолчанию для этого параметра — пустое, которое будет включать всех пользователей для ведения журнала. Это имеет более высокий приоритет `audit_log_exclude_users`, чем. Максимальная длина параметра — 512 символов.
 > [!Note]
-> `audit_log_include_users` имеет более высокий приоритет, чем `audit_log_exclude_users`. Например, если `audit_log_include_users` = `demouser` и `audit_log_exclude_users` = `demouser`, пользователь будет включаться в журналы аудита, так как `audit_log_include_users` имеет более высокий приоритет.
-- `audit_log_exclude_users`: пользователи MySQL, исключаемые из журнала. Максимальная длина параметра — 512 символов.
+> `audit_log_include_users`имеет более высокий приоритет `audit_log_exclude_users`, чем. Например `audit_log_include_users`  =  `demouser` , если `audit_log_exclude_users`  = и `demouser`, пользователь будет включаться в журналы аудита, так как `audit_log_include_users` имеет более высокий приоритет.
+- `audit_log_exclude_users`: Пользователи MySQL, которые будут исключены из ведения журнала. Максимальная длина параметра — 512 символов.
 
 > [!Note]
 > Для `sql_text`журнал будет обрезан, если его длина превышает 2048 символов.
 
-| **Событие** | **Описание** |
+| **Журнале** | **Описание** |
 |---|---|
 | `CONNECTION` | — Инициация подключения (успешно или неуспешно); <br> — Повторное применение проверки подлинности пользователя с другим пользователем или паролем во время сеанса <br> — Завершение подключения |
 | `DML_SELECT`| Запросы SELECT |
@@ -55,7 +55,7 @@ ms.locfileid: "74972359"
 
 В следующих разделах описываются выходные данные журналов аудита MySQL на основе типа события. Порядок появления выбранных полей зависит от выбранного метода вывода.
 
-### <a name="connection"></a>Подключение
+### <a name="connection"></a>Соединение
 
 | **Свойство** | **Описание** |
 |---|---|
@@ -73,15 +73,15 @@ ms.locfileid: "74972359"
 | `OperationName` | `LogEvent` |
 | `LogicalServerName_s` | Имя сервера |
 | `event_class_s` | `connection_log` |
-| `event_subclass_s` | `CONNECT`, `DISCONNECT``CHANGE USER` (доступно только для MySQL 5,7) |
+| `event_subclass_s` | `CONNECT`, `DISCONNECT`, `CHANGE USER` (доступно только для MySQL 5,7) |
 | `connection_id_d` | Уникальный идентификатор соединения, созданный MySQL |
-| `host_s` | Пустой |
+| `host_s` | Пусто |
 | `ip_s` | IP-адрес клиента, подключающегося к MySQL |
 | `user_s` | Имя пользователя, который исполняет запрос |
 | `db_s` | Имя базы данных, подключенной к |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-### <a name="general"></a>Общие сведения
+### <a name="general"></a>Общие
 
 Приведенная ниже схема относится к типам событий GENERAL, DML_SELECT, DML_NONSELECT, DML, DDL, ДКЛ и ADMIN.
 
@@ -101,17 +101,20 @@ ms.locfileid: "74972359"
 | `OperationName` | `LogEvent` |
 | `LogicalServerName_s` | Имя сервера |
 | `event_class_s` | `general_log` |
-| `event_subclass_s` | `LOG`, `ERROR``RESULT` (доступно только для MySQL 5,6) |
+| `event_subclass_s` | `LOG`, `ERROR`, `RESULT` (доступно только для MySQL 5,6) |
 | `event_time` | Время начала запроса в формате UTC (метка времени) |
-| `error_code_d` | Код ошибки, если запрос не выполнен. `0` означает отсутствие ошибок |
+| `error_code_d` | Код ошибки, если запрос не выполнен. `0`означает отсутствие ошибок |
 | `thread_id_d` | Идентификатор потока, выполнившего запрос |
-| `host_s` | Пустой |
+| `host_s` | Пусто |
 | `ip_s` | IP-адрес клиента, подключающегося к MySQL |
 | `user_s` | Имя пользователя, который исполняет запрос |
 | `sql_text_s` | Текст полного запроса |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
 ### <a name="table-access"></a>Доступ к таблицам
+
+> [!NOTE]
+> Журналы доступа к таблицам выводятся только для MySQL 5,7.
 
 | **Свойство** | **Описание** |
 |---|---|
@@ -136,6 +139,60 @@ ms.locfileid: "74972359"
 | `sql_text_s` | Текст полного запроса |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="analyze-logs-in-azure-monitor-logs"></a>Анализ журналов в журналах Azure Monitor
+
+После нахождения журналов аудита в Azure Monitor журналов с помощью журналов диагностики можно выполнить дальнейший анализ событий аудита. Ниже приведены примеры запросов, которые помогут приступить к работе. Обязательно обновите указанные ниже имена серверов.
+
+- Вывод списка общих событий на определенном сервере
+
+    ```kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlAuditLogs' and event_class_s == "general_log"
+    | project TimeGenerated, LogicalServerName_s, event_class_s, event_subclass_s, event_time_t, user_s , ip_s , sql_text_s 
+    | order by TimeGenerated asc nulls last 
+    ```
+
+- Вывод списка событий подключения на определенном сервере
+
+    ```kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlAuditLogs' and event_class_s == "connection_log"
+    | project TimeGenerated, LogicalServerName_s, event_class_s, event_subclass_s, event_time_t, user_s , ip_s , sql_text_s 
+    | order by TimeGenerated asc nulls last
+    ```
+
+- Обобщение событий аудита на определенном сервере
+
+    ```kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlAuditLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, event_subclass_s, event_time_t, user_s , ip_s , sql_text_s 
+    | summarize count() by event_class_s, event_subclass_s, user_s, ip_s
+    ```
+
+- Диаграмма распределение типов событий аудита на определенном сервере
+
+    ```kusto
+    AzureDiagnostics
+    | where LogicalServerName_s == '<your server name>'
+    | where Category == 'MySqlAuditLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, event_subclass_s, event_time_t, user_s , ip_s , sql_text_s 
+    | summarize count() by LogicalServerName_s, bin(TimeGenerated, 5m)
+    | render timechart 
+    ```
+
+- Перечисление событий аудита по всем серверам MySQL с включенными журналами диагностики для журналов аудита
+
+    ```kusto
+    AzureDiagnostics
+    | where Category == 'MySqlAuditLogs'
+    | project TimeGenerated, LogicalServerName_s, event_class_s, event_subclass_s, event_time_t, user_s , ip_s , sql_text_s 
+    | order by TimeGenerated asc nulls last
+    ``` 
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка журналов аудита в портал Azure](howto-configure-audit-logs-portal.md)

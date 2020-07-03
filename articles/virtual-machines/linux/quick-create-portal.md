@@ -1,31 +1,25 @@
 ---
 title: Краткое руководство. Создание виртуальной машины Linux с помощью портала Azure
 description: Из этого краткого руководства вы узнаете, как с помощью портала Azure создать виртуальную машину Linux.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.topic: quickstart
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 11/05/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 894fa2f3cda798a409db3ee8e9761c1702baf955
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 6bf9a89a4806db53797191336578ef9148886181
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035218"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81759235"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины Linux на портале Azure
 
 Виртуальные машины Azure можно создать на портале Azure. Портал Azure — это браузерный пользовательский интерфейс, который позволяет создавать ресурсы Azure. В этом кратком руководстве показано, как использовать портал Azure для создания виртуальной машины Linux под управлением Ubuntu 18.04 LTS. Чтобы проверить работу виртуальной машины, вы также подключитесь к ней по протоколу SSH и установите веб-сервер NGINX.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-ssh-key-pair"></a>Создание пары ключей SSH
 
@@ -34,7 +28,7 @@ ms.locfileid: "74035218"
 Откройте оболочку bash и выполните команду [ssh-keygen](https://www.ssh.com/ssh/keygen/), чтобы создать пару ключей SSH. Если на вашем локальном компьютере отсутствует оболочка bash, вы можете воспользоваться [Azure Cloud Shell](https://shell.azure.com/bash).
 
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. В меню в верхней части страницы щелкните значок `>_`, чтобы открыть Cloud Shell.
 1. Убедитесь, что в верхнем левом углу CloudShell указано **Bash**. Если там указано PowerShell, в раскрывающемся списке выберите **Bash** и щелкните **Подтвердить**, чтобы перейти к оболочке Bash.
 1. Введите `ssh-keygen -t rsa -b 2048`, чтобы создать ключ SSH. 
@@ -89,7 +83,7 @@ ms.locfileid: "74035218"
     ssh azureuser@10.111.12.123
     ```
 
-3. В той же оболочке Bash, в которой вы создали пару ключей SSH (вы можете повторно открыть Cloud Shell, снова выбрав `>_` или перейдя по ссылке https://shell.azure.com/bash) ), вставьте команду подключения в оболочку, чтобы создать сеанс SSH.
+3. В той же оболочке Bash, в которой вы создали пару ключей SSH (вы можете повторно открыть Cloud Shell, снова выбрав `>_` или перейдя по ссылке `https://shell.azure.com/bash`), вставьте команду подключения в оболочку, чтобы создать сеанс SSH.
 
 ## <a name="install-web-server"></a>Установка веб-сервера
 
@@ -113,7 +107,7 @@ sudo apt-get -y install nginx
 
 Если группа ресурсов, виртуальная машина и все связанные с ними ресурсы вам больше не требуются, их можно удалить. Для этого выберите группу ресурсов для виртуальной машины, выберите действие **Удалить** и подтвердите имя удаляемой группы ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этим кратким руководство вы развернули простую виртуальную машину, создали группу безопасности сети и правило для нее, а также установили простой веб-сервер. Дополнительные сведения о виртуальных машинах Azure см. в руководстве для виртуальных машин Linux.
 

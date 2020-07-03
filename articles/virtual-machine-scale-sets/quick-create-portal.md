@@ -1,21 +1,20 @@
 ---
 title: Краткое руководство. Создание масштабируемого набора виртуальных машин с помощью портала Azure
 description: Начните работу с развертыванием. Узнайте, как быстро создать масштабируемый набор виртуальных машин с помощью портала Azure.
-author: cynthn
-tags: azure-resource-manager
-ms.service: virtual-machine-scale-sets
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm
+author: ju-shim
+ms.author: jushiman
 ms.topic: quickstart
-ms.custom: H1Hack27Feb2017
+ms.service: virtual-machine-scale-sets
+ms.subservice: ''
 ms.date: 10/23/2019
-ms.author: cynthn
-ms.openlocfilehash: 2acde4efa1dc118498f3c7da29c75e48c0478ac0
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.reviewer: mimckitt
+ms.custom: mimckitt
+ms.openlocfilehash: 582bf5c6424b9dc13b354a92e75b3a7ee2cdca6f
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76543143"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83197644"
 ---
 # <a name="quickstart-create-a-virtual-machine-scale-set-in-the-azure-portal"></a>Краткое руководство. Создание масштабируемого набора виртуальных машин на портале Azure
 

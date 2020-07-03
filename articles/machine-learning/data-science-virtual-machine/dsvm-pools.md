@@ -10,12 +10,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 12/10/2018
-ms.openlocfilehash: c5b7f4eaac91e79dde625ea00bfb6b1ea8782b31
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: cc0efc0a076ddc3fc9425999f1e38b4a32dec7a3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75530618"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79477346"
 ---
 # <a name="create-a-shared-pool-of-data-science-virtual-machines"></a>Создание общего пула виртуальных машин для обработки и анализа данных
 
@@ -35,11 +35,13 @@ ms.locfileid: "75530618"
 
 Вы можете создать масштабируемый набор из шаблона Azure Resource Manager, указав значения для файла параметров в Azure CLI:
 
-```
+```azurecli-interactive
 az group create --name [[NAME OF RESOURCE GROUP]] --location [[ Data center. For eg: "West US 2"]
 az group deployment create --resource-group  [[NAME OF RESOURCE GROUP ABOVE]]  --template-uri https://raw.githubusercontent.com/Azure/DataScienceVM/master/Scripts/CreateDSVM/Ubuntu/dsvm-vmss-cluster.json --parameters @[[PARAMETER JSON FILE]]
 ```
+
 В приведенных выше командах предполагается, что у вас есть следующее:
+
 * Копия файла параметров со значениями, указанными для вашего экземпляра масштабируемого набора.
 * Требуемое число экземпляров виртуальных машин.
 * Указатели на общий ресурс службы файлов Azure.
@@ -49,26 +51,11 @@ az group deployment create --resource-group  [[NAME OF RESOURCE GROUP ABOVE]]  -
 
 Приведенный выше шаблон позволяет использовать протокол SSH и порт JupyterHub из интерфейсного масштабируемого набора во внутреннем пуле DSVM на основе Ubuntu. Как пользователь, вы входите на виртуальную машину на Secure Shell (SSH) или в JupyterHub обычным образом. Так как экземпляры виртуальных машин можно динамически масштабировать или уменьшать, любое состояние должно быть сохранено в подключенной общей папке файлов Azure. Тот же подход можно использовать для создания пула DSVM на основе Windows.
 
-В репозитории Azure DataScienceVM на сайте GitHub можно также найти [сценарий, который подключает общий ресурс службы файлов Azure](https://raw.githubusercontent.com/Azure/DataScienceVM/master/Extensions/General/mountazurefiles.sh). Этот сценарий подключает общий ресурс службы файлов Azure в заданной точке подключения внутри файла параметров. Кроме того, он создает гибкие связи с подключенным диском в домашнем каталоге начального пользователя. Каталог записных книжек пользователя в общей папке службы файлов Azure имеет программную связь с каталогом `$HOME/notebooks/remote`, чтобы пользователи могли получать доступ, запускать и сохранять свои записные книжки Jupyter. Это же соглашение можно использовать при создании дополнительных пользователей на виртуальной машине, чтобы добавить указатель на рабочую область Jupyter каждого пользователя в общий ресурс службы файлов Azure.
+В репозитории Azure DataScienceVM на сайте GitHub можно также найти [сценарий, который подключает общий ресурс службы файлов Azure](https://raw.githubusercontent.com/Azure/DataScienceVM/master/Extensions/General/mountazurefiles.sh). Этот сценарий подключает общий ресурс службы файлов Azure в заданной точке подключения внутри файла параметров. Кроме того, он создает гибкие связи с подключенным диском в домашнем каталоге начального пользователя. Каталог записных книжек пользователя в общей папке `$HOME/notebooks/remote` службы файлов Azure имеет программную связь с каталогом, чтобы пользователи могли получать доступ, запускать и сохранять свои записные книжки Jupyter. Это же соглашение можно использовать при создании дополнительных пользователей на виртуальной машине, чтобы добавить указатель на рабочую область Jupyter каждого пользователя в общий ресурс службы файлов Azure.
 
 Масштабируемые наборы виртуальных машин поддерживают автомасштабирование. Можно задать правила создания дополнительных экземпляров и время масштабирования экземпляров. Например, вы можете уменьшить масштаб до нуля экземпляров, чтобы сэкономить на использовании облачного оборудования, когда виртуальные машины простаивают. Подробное описание процедуры [автомасштабирования](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview) приведено в документации по масштабируемым наборам виртуальных машин.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка общего удостоверения](dsvm-common-identity.md)
 * [Безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных](dsvm-secure-access-keys.md)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

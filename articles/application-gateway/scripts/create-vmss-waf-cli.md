@@ -4,7 +4,6 @@ description: Пример скрипта Azure CLI. Создание шлюза 
 services: application-gateway
 documentationcenter: networking
 author: vhorne
-editor: tysonn
 tags: azure-resource-manager
 ms.service: application-gateway
 ms.topic: sample
@@ -13,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 01/29/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: e9d2a8a8d47128161c10e81fe70a950f1ed81e1e
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 7fb66c54b13581b9afc516067c1450a154699bb5
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76273383"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81457779"
 ---
 # <a name="restrict-web-traffic-using-the-azure-cli"></a>Ограничение веб-трафика с помощью Azure CLI
 

@@ -3,21 +3,22 @@ title: Создание и шифрование виртуальной маши�
 description: С помощью этого краткого руководства вы узнаете, как создать и зашифровать виртуальную машину Linux, используя Azure PowerShell.
 author: msmbaldwin
 ms.author: mbaldwin
-ms.service: security
+ms.service: virtual-machines-linux
+ms.subservice: security
 ms.topic: quickstart
 ms.date: 05/17/2019
-ms.openlocfilehash: 14cdd1e15212141e8c631b589c9c470bbdfe38a9
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.openlocfilehash: b78ef71c63448653cab24ccea25e53f64490fa2f
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71829027"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83655835"
 ---
 # <a name="quickstart-create-and-encrypt-a-linux-vm-in-azure-with-azure-powershell"></a>Краткое руководство. Создание и шифрование виртуальной машины Linux в Azure с помощью Azure PowerShell
 
 Модуль PowerShell используется для создания ресурсов Azure и управления ими с помощью командной строки PowerShell или сценариев. В этом кратком руководстве показано, как с помощью модуля Azure PowerShell создать виртуальную машину Linux, Key Vault для хранения ключей шифрования и зашифровать виртуальную машину. В этом кратком руководстве используется образ Ubuntu 16.04 LTS marketplace от Canonical и виртуальная машина размера Standard_D2S_V3. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -32,9 +33,9 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 Создайте виртуальную машину Azure с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm), передавая ему объект конфигурации виртуальной машины, созданный выше.
 
 ```powershell-interactive
-$cred = = Get-Credential
+$cred = Get-Credential
 
-New-AzVM -Name MyVm -Credential $cred -ResourceGroupName MyResourceGroup -Image Canonical:UbuntuServer:16.04-LTS:latest -Size Standard_D2S_V3
+New-AzVM -Name MyVm -Credential $cred -ResourceGroupName MyResourceGroup -Image Canonical:UbuntuServer:18.04-LTS:latest -Size Standard_D2S_V3
 ```
 
 Развертывание виртуальной машины может занять несколько минут. 
@@ -93,7 +94,7 @@ ProgressMessage            : OS disk encryption started
 Remove-AzResourceGroup -Name "myResourceGroup"
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого краткого руководства вы создали виртуальную машину, включенный для ключей шифрования Key Vault и зашифровали виртуальную машину.  Перейдите к следующей статье, чтобы узнать больше о шифровании дисков Azure для виртуальных машин Linux.
 

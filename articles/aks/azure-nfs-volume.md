@@ -1,18 +1,18 @@
 ---
-title: Создание сервера Ubuntu NFS (сетевой файловой системы) для использования с модулями Azure Kubernetes Service (AKS)
+title: Создание тома NFS Ubuntu Linux Server
+titleSuffix: Azure Kubernetes Service
 description: Узнайте, как вручную создать том сервера Ubuntu Linux NFS для использования с модулями Pod в службе Azure Kubernetes Service (AKS).
 services: container-service
 author: ozboms
-ms.service: container-service
 ms.topic: article
 ms.date: 4/25/2019
 ms.author: obboms
-ms.openlocfilehash: 9b9c4b326596887774d9dfc0dd792052ec672be2
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 7db3f806df88e5b23012e97ba5c2f14ca65b2508
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77063821"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80803472"
 ---
 # <a name="manually-create-and-use-an-nfs-network-file-system-linux-server-volume-with-azure-kubernetes-service-aks"></a>Создание и использование тома NFS сервера Linux (сетевой файловой системы) вручную с помощью службы Kubernetes Azure (AKS)
 Обмен данными между контейнерами часто является необходимым компонентом служб и приложений, основанных на контейнерах. Обычно у вас есть различные модули, которым требуется доступ к одной и той же информации на внешнем постоянном томе.    
@@ -20,7 +20,7 @@ ms.locfileid: "77063821"
 
 В этой статье показано, как создать NFS Server на виртуальной машине Ubuntu. Кроме того, предоставьте контейнерам AKS доступ к этой общей файловой системе.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 В этой статье предполагается, что у вас уже есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
 
 Кластер AKS должен быть активным в тех же или одноранговых виртуальных сетях, что и сервер NFS. Кластер должен быть создан в существующей виртуальной сети, которая может быть той же виртуальной машиной, что и виртуальная машина.
@@ -155,7 +155,7 @@ ls -l
 Чтобы получить полное пошаговое руководство или помочь вам в отладке программы установки сервера NFS, ознакомьтесь с подробным руководством:
   - [Учебник по NFS][nfs-tutorial]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Соответствующие рекомендации см. в разделе рекомендации [по хранению и резервному копированию в AKS][operator-best-practices-storage].
 

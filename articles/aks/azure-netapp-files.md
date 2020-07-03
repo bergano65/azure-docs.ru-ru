@@ -3,28 +3,27 @@ title: Интеграция Azure NetApp Files со службой Kubernetes Az
 description: Узнайте, как интегрировать Azure NetApp Files со службой Kubernetes Azure
 services: container-service
 author: zr-msft
-ms.service: container-service
 ms.topic: article
 ms.date: 09/26/2019
 ms.author: zarhoads
-ms.openlocfilehash: 84192a831e3b1f24e20eb07a6c8695516c28970f
-ms.sourcegitcommit: e9936171586b8d04b67457789ae7d530ec8deebe
+ms.openlocfilehash: 1c4996df66d475c63110e3d2797f55598fd85b8d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71329335"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78273752"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Интеграция Azure NetApp Files со службой Kubernetes Azure
 
 [Azure NetApp Files][anf] — это высокопроизводительная служба хранилища файлов в масштабе корпоративного класса, работающая в Azure. В этой статье показано, как интегрировать Azure NetApp Files со службой Azure Kubernetes (AKS).
 
-## <a name="before-you-begin"></a>Перед началом работы
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, ознакомьтесь с кратким руководством по AKS, [используя Azure CLI][aks-quickstart-cli] или [с помощью портал Azure][aks-quickstart-portal].
+## <a name="before-you-begin"></a>Подготовка к работе
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 > [!IMPORTANT]
 > Кластер AKS также должен находиться [в регионе, поддерживающем Azure NetApp Files][anf-regions].
 
-Также требуется Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если необходимо установить или обновить, см. раздел [install Azure CLI][install-azure-cli].
+Также требуется Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ### <a name="limitations"></a>Ограничения
 
@@ -33,7 +32,8 @@ ms.locfileid: "71329335"
 * Azure NetApp Files доступен только [в выбранных регионах Azure][anf-regions].
 * Прежде чем можно будет использовать Azure NetApp Files, необходимо предоставить доступ к службе Azure NetApp Files. Для применения к Access можно использовать [форму Azure NetApp Files отправки ваитлист][anf-waitlist]. Вы не можете получить доступ к службе Azure NetApp Files, пока не получите официальное электронное письмо с подтверждением от команды Azure NetApp Files.
 * Служба Azure NetApp Files должна быть создана в той же виртуальной сети, что и кластер AKS.
-* В AKS поддерживается только статическая подготовка для Azure NetApp Files.
+* После первоначального развертывания кластера AKS поддерживается только статическая подготовка для Azure NetApp Files.
+* Чтобы использовать динамическую подготовку с Azure NetApp Files, установите и настройте [NetApp Trident](https://netapp-trident.readthedocs.io/) версии 19,07 или более поздней.
 
 ## <a name="configure-azure-netapp-files"></a>Настройка Azure NetApp Files
 
@@ -42,24 +42,26 @@ ms.locfileid: "71329335"
 
 Зарегистрируйте поставщик ресурсов *Microsoft. NetApp* :
 
-```azure-cli
+```azurecli
 az provider register --namespace Microsoft.NetApp --wait
 ```
 
 > [!NOTE]
 > Это может занять некоторое время.
 
-При создании учетной записи Azure NetApp для использования с AKS необходимо создать учетную запись в группе ресурсов **узла** . Сначала получите имя группы ресурсов с помощью команды [AZ AKS показывать][az-aks-show] и добавьте параметр запроса `--query nodeResourceGroup`. В следующем примере выполняется получение группы ресурсов узла для кластера AKS с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*:
+При создании учетной записи Azure NetApp для использования с AKS необходимо создать учетную запись в группе ресурсов **узла** . Сначала получите имя группы ресурсов, выполнив команду [az aks show][az-aks-show] и добавив параметр запроса `--query nodeResourceGroup`. В следующем примере выполняется получение группы ресурсов узла для кластера AKS с именем *myAKSCluster* в группе ресурсов с именем *myResourceGroup*:
 
 ```azurecli-interactive
-$ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
+az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
+```
 
+```output
 MC_myResourceGroup_myAKSCluster_eastus
 ```
 
-Создайте учетную запись Azure NetApp Files в группе ресурсов **узла** и в том же регионе, что и кластер AKS, выполнив команду [AZ нетаппфилес Account Create][az-netappfiles-account-create]. В следующем примере создается учетная запись с именем *myaccount1* в группе ресурсов *MC_myResourceGroup_myAKSCluster_eastus* и регионе *eastus* :
+Создайте учетную запись Azure NetApp Files в группе ресурсов **узла** и в том же регионе, что и кластер AKS, выполнив команду [AZ нетаппфилес Account Create][az-netappfiles-account-create]. В следующем примере создается учетная запись с именем *myaccount1* в *MC_myResourceGroup_myAKSCluster_eastus* группе ресурсов и *eastus* регионе.
 
-```azure-cli
+```azurecli
 az netappfiles account create \
     --resource-group MC_myResourceGroup_myAKSCluster_eastus \
     --location eastus \
@@ -68,7 +70,7 @@ az netappfiles account create \
 
 Создайте пул ресурсов с помощью команды [AZ нетаппфилес Pool Create][az-netappfiles-pool-create]. В следующем примере создается новый пул ресурсов с именем *mypool1* с размером 4 ТБ и уровнем обслуживания *Premium* :
 
-```azure-cli
+```azurecli
 az netappfiles pool create \
     --resource-group MC_myResourceGroup_myAKSCluster_eastus \
     --location eastus \
@@ -80,7 +82,7 @@ az netappfiles pool create \
 
 Создайте подсеть для [делегирования Azure NetApp Files][anf-delegate-subnet] с помощью команды [AZ Network vnet подсети Create][az-network-vnet-subnet-create]. *Эта подсеть должна находиться в той же виртуальной сети, что и кластер AKS.*
 
-```azure-cli
+```azurecli
 RESOURCE_GROUP=MC_myResourceGroup_myAKSCluster_eastus
 VNET_NAME=$(az network vnet list --resource-group $RESOURCE_GROUP --query [].name -o tsv)
 VNET_ID=$(az network vnet show --resource-group $RESOURCE_GROUP --name $VNET_NAME --query "id" -o tsv)
@@ -95,7 +97,7 @@ az network vnet subnet create \
 
 Создайте том с помощью команды [AZ нетаппфилес Volume Create][az-netappfiles-volume-create].
 
-```azure-cli
+```azurecli
 RESOURCE_GROUP=MC_myResourceGroup_myAKSCluster_eastus
 LOCATION=eastus
 ANF_ACCOUNT_NAME=myaccount1
@@ -125,9 +127,12 @@ az netappfiles volume create \
 ## <a name="create-the-persistentvolume"></a>Создание Персистентволуме
 
 Выведите список сведений о томе с помощью команды [AZ нетаппфилес Volume демонстрация][az-netappfiles-volume-show] .
-```azure-cli
-$ az netappfiles volume show --resource-group $RESOURCE_GROUP --account-name $ANF_ACCOUNT_NAME --pool-name $POOL_NAME --volume-name "myvol1"
 
+```azurecli
+az netappfiles volume show --resource-group $RESOURCE_GROUP --account-name $ANF_ACCOUNT_NAME --pool-name $POOL_NAME --volume-name "myvol1"
+```
+
+```output
 {
   ...
   "creationToken": "myfilepath2",
@@ -143,7 +148,7 @@ $ az netappfiles volume show --resource-group $RESOURCE_GROUP --account-name $AN
 }
 ```
 
-Создайте `pv-nfs.yaml`, определив Персистентволуме. Замените `path` на *креатионтокен* и `server` с *ipAddress* из предыдущей команды. Пример:
+Создайте `pv-nfs.yaml` определение персистентволуме. Замените `path` на *Креатионтокен* и `server` с *ipAddress* из предыдущей команды. Пример:
 
 ```yaml
 ---
@@ -175,7 +180,7 @@ kubectl describe pv pv-nfs
 
 ## <a name="create-the-persistentvolumeclaim"></a>Создание Персистентволумеклаим
 
-Создайте `pvc-nfs.yaml`, определив Персистентволуме. Пример:
+Создайте `pvc-nfs.yaml` определение персистентволуме. Пример:
 
 ```yaml
 apiVersion: v1
@@ -205,7 +210,7 @@ kubectl describe pvc pvc-nfs
 
 ## <a name="mount-with-a-pod"></a>Подключение с помощью Pod
 
-Создайте `nginx-nfs.yaml`, определив модуль, использующий Персистентволумеклаим. Пример:
+Создайте `nginx-nfs.yaml` определение Pod, использующего персистентволумеклаим. Пример:
 
 ```yaml
 kind: Pod
@@ -241,11 +246,13 @@ kubectl apply -f nginx-nfs.yaml
 kubectl describe pod nginx-nfs
 ```
 
-Убедитесь, что том подключен к модулю, используя [kubectl Exec][kubectl-exec] для подключения к Pod, затем `df -h`, чтобы проверить, подключен ли том.
+Убедитесь, что том подключен к модулю, используя [kubectl Exec][kubectl-exec] для подключения к Pod, а затем `df -h` проверьте, подключен ли том.
 
 ```console
 $ kubectl exec -it nginx-nfs -- bash
+```
 
+```output
 root@nginx-nfs:/# df -h
 Filesystem             Size  Used Avail Use% Mounted on
 ...
@@ -253,7 +260,7 @@ Filesystem             Size  Used Avail Use% Mounted on
 ...
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о Azure NetApp Files см. в разделе [что такое Azure NetApp Files][anf]. Дополнительные сведения об использовании NFS с AKS см. в статье [Создание и использование NFS-сервера Linux с помощью службы Kubernetes Azure (AKS) вручную][aks-nfs].
 

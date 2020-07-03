@@ -1,5 +1,5 @@
 ---
-title: Отчет о данных анализа трафика поиска
+title: Данные телеметрии для аналитики трафика поиска
 titleSuffix: Azure Cognitive Search
 description: Включите аналитику поиска трафика для Azure Когнитивный поиск, собирайте данные телеметрии и инициированные пользователем события с помощью Application Insights, а затем анализируйте результаты в Power BI отчете.
 author: HeidiSteen
@@ -7,115 +7,141 @@ manager: nitinme
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/11/2019
-ms.openlocfilehash: 84e60b0a942bad94d8e36eb20b5be8e3f55af80a
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.date: 03/18/2020
+ms.openlocfilehash: 7c843b45b5a398aaaa1aab66f80961560477cf18
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190947"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82128065"
 ---
-# <a name="implement-search-traffic-analytics-in-azure-cognitive-search"></a>Реализация аналитики трафика поиска в Azure Когнитивный поиск
+# <a name="collect-telemetry-data-for-search-traffic-analytics"></a>Сбор данных телеметрии для аналитики поиска трафика
 
-Аналитика поискового трафика — это модель реализации цикла обратной связи для службы поиска. Цель заключается в сборе данных телеметрии о событиях щелчка, инициированных пользователем, и вводе с клавиатуры. С помощью этих сведений можно определить эффективность решения поиска, включая популярные условия поиска, частоту переходов, а также то, какие входные данные запроса дают нулевые результаты.
+Аналитика трафика поиска — это шаблон для сбора телеметрических сведений о взаимодействии пользователей с приложением Azure Когнитивный поиск, например инициированными пользователем событиями щелчка и вводом с клавиатуры. С помощью этих сведений можно определить эффективность решения поиска, включая популярные условия поиска, частоту переходов, а также то, какие входные данные запроса дают нулевые результаты.
 
-Этот шаблон зависит от [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) (функции [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)) для получения данных пользователя. Также потребуется добавить инструментирование в код клиента, как описано в этой статье. Наконец, для анализа данных потребуется механизм создания отчетов. Рекомендуется Power BI но можно использовать любое средство, которое подключается к Application Insights.
+Этот шаблон зависит от [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) (функции [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)) для получения данных пользователя. Для этого необходимо добавить инструментирование в код клиента, как описано в этой статье. Наконец, для анализа данных потребуется механизм создания отчетов. Рекомендуется Power BI но можно использовать панель мониторинга приложения или любое средство, которое подключается к Application Insights.
 
 > [!NOTE]
-> Шаблон, описанный в этой статье, предназначен для расширенных сценариев и навигации данных, создаваемых клиентом. Кроме того, можно создать отчет о данных журнала, создаваемых службой поиска. Дополнительные сведения об отчетах журнала службы см. в статье [мониторинг потребления ресурсов и действий запросов](search-monitor-usage.md).
+> Шаблон, описанный в этой статье, предназначен для расширенных сценариев и навигации данных, создаваемых кодом, который добавляется в клиент. Журналы служб, напротив, просты в настройке, предоставляют ряд метрик и могут быть выполнены на портале без обязательного кода. Для всех сценариев рекомендуется включить ведение журнала. Дополнительные сведения см. в разделе [Получение и анализ данных журнала](search-monitor-logs.md).
 
 ## <a name="identify-relevant-search-data"></a>Определение соответствующих данных поиска
 
-Чтобы получать полезные метрики поиска, необходимо регистрировать некоторые пользовательские события в приложении поиска. Эти события обозначают интересующее пользователей содержимое, которое соответствует их потребностям.
-
-Аналитика поискового трафика учитывает два типа событий:
+Чтобы иметь полезные метрики для аналитики трафика поиска, необходимо зарегистрировать некоторые сигналы от пользователей приложения поиска. Эти сигналы обозначают содержимое, которое пользователи заинтересованы в работе и которые они считают релевантными. Для аналитики поискового трафика:
 
 + События поиска, созданные пользователем. интересны только поисковые запросы, инициированные пользователем. Поисковые запросы, используемые для заполнения аспектов, дополнительного содержимого или каких-либо внутренних сведений, не являются важными и ведут к искажению результатов поиска.
 
-+ События щелчка, созданные пользователем: щелкнув этот документ, мы будем называть пользователя выбором определенного результата поиска, возвращенного из поискового запроса. Щелчок обычно означает, что документ релевантный для конкретного поискового запроса.
++ События щелчка, созданные пользователем: на странице результатов поиска событие щелчка обычно означает, что документ является релевантным результатом для конкретного поискового запроса.
 
-Связывая Поиск и щелкая события с ИДЕНТИФИКАТОРом корреляции, можно анализировать поведение пользователей приложения. Эти сведения о поиске невозможно получить с помощью только журналов поискового трафика.
+Связав Поиск и щелкнув события с ИДЕНТИФИКАТОРом корреляции, вы получите более глубокое представление о том, насколько хорошо работает функция поиска приложения.
 
 ## <a name="add-search-traffic-analytics"></a>Добавление аналитики поискового трафика
 
-События, указанные в предыдущем разделе, необходимо собрать из приложения поиска, так как с ним взаимодействует пользователь. Application Insights — это расширяемое решение для мониторинга с гибкими параметрами инструментирования, доступное для нескольких платформ. Использование Application Insights позволяет воспользоваться преимуществами отчетов по поиску Power BI, созданных Когнитивный поиск Azure, чтобы упростить анализ данных.
+На странице [портала](https://portal.azure.com) для службы когнитивный Поиск Azure страница Поиск Аналитика трафика содержит лист Памятка по для следующего шаблона телеметрии. На этой странице можно выбрать или создать ресурс Application Insights, получить ключ инструментирования, скопировать фрагменты, которые можно адаптировать для решения, и загрузить Power BI отчет, построенный на основе схемы, отраженной в шаблоне.
 
-На странице [портала](https://portal.azure.com) для службы когнитивный Поиск Azure страница Поиск Аналитика трафика содержит лист Памятка по для следующего шаблона телеметрии. Вы также можете выбрать или создать ресурс Application Insights и просмотреть необходимые данные — все в одном расположении.
+![Поиск Аналитика трафика странице на портале](media/search-traffic-analytics/azuresearch-trafficanalytics.png "Поиск Аналитика трафика странице на портале")
 
-![Инструкции по аналитике поискового трафика][1]
+## <a name="1---set-up-application-insights"></a>1. Настройка Application Insights
 
-## <a name="1---select-a-resource"></a>1\. Выбор ресурса
+Выберите существующий ресурс Application Insights или [создайте его](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) , если он еще не создан. При использовании страницы Поиск Аналитика трафика можно скопировать ключ инструментирования, который требуется приложению для подключения к Application Insights.
 
-Вам необходимо выбрать или создать ресурс Application Insights (если у вас его нет). Вы можете использовать ресурс, уже находящийся в применении, для регистрации требуемых пользовательских событий.
+Получив ресурс Application Insights, можно выполнить [инструкции для поддерживаемых языков и платформ](https://docs.microsoft.com/azure/azure-monitor/app/platforms) , чтобы зарегистрировать приложение. Регистрация — это просто добавление ключа инструментирования из Application Insights в код, который настраивает связь. Ключ можно найти на портале или на странице Поиск Аналитика трафика при выборе существующего ресурса.
 
-При создании ресурса Application Insights все типы приложений допустимы для этого сценария. Выберите тот, который лучше всего соответствует используемой платформе.
+Ярлык, который подходит для некоторых типов проектов Visual Studio, отражается в следующих шагах. Он создает ресурс и регистрирует приложение всего за несколько щелчков мышью.
 
-Чтобы создать клиент телеметрии для приложения, требуется ключ инструментирования. Вы можете получить его на панели мониторинга портала Application Insights или на странице аналитики поискового трафика, выбрав нужный экземпляр.
+1. Для разработки Visual Studio и ASP.NET откройте решение и выберите **проект** > **Добавить телеметрия Application Insights**.
 
-## <a name="2---add-instrumentation"></a>2\. Добавление инструментирования
+1. Щелкните начало **работы**.
 
-На этом шаге выполняется Инструментирование собственного приложения поиска с помощью Application Insights ресурса, созданного на предыдущем шаге. Этот процесс состоит из четырех этапов:
+1. Зарегистрируйте приложение, предоставив учетная запись Майкрософт, подписку Azure и ресурс Application Insights (по умолчанию используется новый ресурс). Щелкните **Зарегистрировать**.
 
-**Шаг 1. Создание клиента телеметрии**
+На этом этапе приложение настроено для мониторинга приложений, что означает, что все загрузки страниц отслеживаются с помощью метрик по умолчанию. Дополнительные сведения о предыдущих шагах см. в разделе [Enable Application Insights телеметрии на стороне сервера](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#enable-application-insights-server-side-telemetry-visual-studio).
 
-Это объект, отправляющий события в ресурс Application Insights.
+## <a name="2---add-instrumentation"></a>2. Добавление инструментирования
 
-*C#*
+На этом шаге выполняется Инструментирование собственного приложения поиска с помощью Application Insights ресурса, созданного на предыдущем шаге. Этот процесс состоит из четырех этапов, начиная с создания клиента телеметрии.
 
-    private TelemetryClient telemetryClient = new TelemetryClient();
-    telemetryClient.InstrumentationKey = "<YOUR INSTRUMENTATION KEY>";
+### <a name="step-1-create-a-telemetry-client"></a>Шаг 1. Создание клиента телеметрии
 
-*JavaScript*
+Создайте объект, отправляющий события в Application Insights. Вы можете добавить инструментирование в код приложения на стороне сервера или клиентский код, выполняемый в браузере, представленный здесь как варианты C# и JavaScript (для других языков см. полный список [поддерживаемых платформ и инфраструктур](https://docs.microsoft.com/azure/application-insights/app-insights-platforms)). Выберите подход, который предоставляет нужную глубину информации.
 
-    <script type="text/javascript">var appInsights=window.appInsights||function(config){function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t}
-    ({
-    instrumentationKey: "<YOUR INSTRUMENTATION KEY>"
-    });
-    window.appInsights=appInsights;
-    </script>
+Данные телеметрии на стороне сервера захватывают метрики на уровне приложения, например в приложениях, выполняющихся в качестве веб-службы в облаке, или в качестве локального приложения в корпоративной сети. Данные телеметрии на стороне сервера захватывают Поиск и щелчок событий, расположение документа в результатах и сведения о запросах, но сбор данных будет ограничен любой информацией, доступной в этом слое.
 
-Для других языков и платформ см. полный [список](https://docs.microsoft.com/azure/application-insights/app-insights-platforms).
+На клиенте может быть дополнительный код, который управляет входными запросами, добавляет навигацию или включает контекст (например, запросы, инициированные с домашней страницы и страницы продукта). Если это описание решения, вы можете выбрать инструментирование на стороне клиента, чтобы данные телеметрии отражали дополнительные сведения. Сбор этой дополнительной информации выходит за рамки этого шаблона, но вы можете просматривать [Application Insights для веб-страниц](https://docs.microsoft.com/azure/azure-monitor/app/javascript#explore-browserclient-side-data) в более направлении. 
 
-**Шаг 2. запрос идентификатора поиска для корреляции**
+**Использование C#**
 
-Чтобы сопоставить запросы поиска с помощью щелчков, необходимо иметь идентификатор корреляции, связывающий эти два отдельных события. Azure Когнитивный поиск предоставляет идентификатор поиска при запросе с заголовком:
+В C# **InstrumentationKey** находится в конфигурации приложения, например appSettings. JSON, если проект является ASP.NET. Если вы не уверены в расположении ключа, обратитесь к инструкциям по регистрации.
 
-*C#*
+```csharp
+private static TelemetryClient _telemetryClient;
 
-    // This sample uses the .NET SDK https://www.nuget.org/packages/Microsoft.Azure.Search
-
-    var client = new SearchIndexClient(<SearchServiceName>, <IndexName>, new SearchCredentials(<QueryKey>)
-    var headers = new Dictionary<string, List<string>>() { { "x-ms-azs-return-searchid", new List<string>() { "true" } } };
-    var response = await client.Documents.SearchWithHttpMessagesAsync(searchText: searchText, searchParameters: parameters, customHeaders: headers);
-    IEnumerable<string> headerValues;
-    string searchId = string.Empty;
-    if (response.Response.Headers.TryGetValues("x-ms-azs-searchid", out headerValues)){
-     searchId = headerValues.FirstOrDefault();
+// Add a constructor that accepts a telemetry client:
+public HomeController(TelemetryClient telemetry)
+    {
+        _telemetryClient = telemetry;
     }
+```
 
-*JavaScript*
+**Использование JavaScript**
 
-    request.setRequestHeader("x-ms-azs-return-searchid", "true");
-    request.setRequestHeader("Access-Control-Expose-Headers", "x-ms-azs-searchid");
-    var searchId = request.getResponseHeader('x-ms-azs-searchid');
+```javascript
+<script type="text/javascript">var appInsights=window.appInsights||function(config){function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t}
+({
+instrumentationKey: "<YOUR INSTRUMENTATION KEY>"
+});
+window.appInsights=appInsights;
+</script>
+```
 
-**Шаг 3. события поиска по журналам**
+### <a name="step-2-request-a-search-id-for-correlation"></a>Шаг 2. запрос идентификатора поиска для корреляции
 
-Каждый отправляемый поисковой запрос необходимо регистрировать в качестве события поиска, используя следующую схему пользовательского события Application Insights:
+Чтобы сопоставить запросы поиска с помощью щелчков, необходимо иметь идентификатор корреляции, связывающий эти два отдельных события. Azure Когнитивный поиск предоставляет идентификатор поиска при запросе заголовка HTTP.
 
-**SearchServiceName**: (String) имя службы поиска **SearchId**: (GUID) уникальный идентификатор поискового запроса (в ответе на поиск). индекс службы поиска **IndexName**: (String) для запроса **куеритермс**: (String) Поиск слов, вводимых пользователем **ресулткаунт**: (int) количество документов, которые были возвращены (в ответе на поиск). имя профиля оценки (в строке **).**
+Наличие идентификатора поиска разрешает корреляцию метрик, созданных Когнитивный поиск Azure для самого запроса, с настраиваемыми метриками, которые вы регистрируете в Application Insights.  
+
+**Использование C#**
+
+```csharp
+// This sample uses the .NET SDK https://www.nuget.org/packages/Microsoft.Azure.Search
+
+var client = new SearchIndexClient(<SearchServiceName>, <IndexName>, new SearchCredentials(<QueryKey>)
+
+// Use HTTP headers so that you can get the search ID from the response
+var headers = new Dictionary<string, List<string>>() { { "x-ms-azs-return-searchid", new List<string>() { "true" } } };
+var response = await client.Documents.SearchWithHttpMessagesAsync(searchText: searchText, searchParameters: parameters, customHeaders: headers);
+string searchId = string.Empty;
+if (response.Response.Headers.TryGetValues("x-ms-azs-searchid", out IEnumerable<string> headerValues)){
+    searchId = headerValues.FirstOrDefault();
+}
+```
+
+**Использование JavaScript (вызов интерфейсов API RESTFUL)**
+
+```javascript
+request.setRequestHeader("x-ms-azs-return-searchid", "true");
+request.setRequestHeader("Access-Control-Expose-Headers", "x-ms-azs-searchid");
+var searchId = request.getResponseHeader('x-ms-azs-searchid');
+```
+
+### <a name="step-3-log-search-events"></a>Шаг 3. события поиска по журналам
+
+Каждый раз, когда пользователь выдает запрос на поиск, необходимо зарегистрировать это событие поиска со следующей схемой на Application Insights настраиваемом событии. Не забывайте вести журнал только созданных пользователем поисковых запросов.
+
++ **SearchServiceName**: (String) имя службы поиска
++ **SearchId**: (GUID) уникальный идентификатор поискового запроса (входит в ответ поиска).
++ **IndexName**: (String) индекс службы поиска для запроса
++ **Куеритермс**: (String) Поиск слов, вводимых пользователем
++ **Ресулткаунт**: (int) число возвращенных документов (входит в ответ поиска).
++ **Скорингпрофиле**: (строка) имя используемого профиля оценки, если таковые имеются
 
 > [!NOTE]
-> Получите число запросов, создаваемых пользователем, добавив $count=true в поисковый запрос. Дополнительные сведения см. [здесь](/rest/api/searchservice/search-documents#counttrue--false).
+> Запросите число запросов, созданных пользователем, добавив $count = true в поисковый запрос. Дополнительные сведения см. в разделе [Поиск документов (остальное)](/rest/api/searchservice/search-documents#counttrue--false).
 >
 
-> [!NOTE]
-> Помните, что необходимо регистрировать только поисковые запросы, создаваемые пользователями.
->
+**Использование C#**
 
-*C#*
-
-    var properties = new Dictionary <string, string> {
+```csharp
+var properties = new Dictionary <string, string> {
     {"SearchServiceName", <service name>},
     {"SearchId", <search Id>},
     {"IndexName", <index name>},
@@ -123,85 +149,91 @@ ms.locfileid: "77190947"
     {"ResultCount", <results count>},
     {"ScoringProfile", <scoring profile used>}
     };
-    telemetryClient.TrackEvent("Search", properties);
+_telemetryClient.TrackEvent("Search", properties);
+```
 
-*JavaScript*
+**Использование JavaScript**
 
-    appInsights.trackEvent("Search", {
-    SearchServiceName: <service name>,
-    SearchId: <search id>,
-    IndexName: <index name>,
-    QueryTerms: <search terms>,
-    ResultCount: <results count>,
-    ScoringProfile: <scoring profile used>
-    });
+```javascript
+appInsights.trackEvent("Search", {
+SearchServiceName: <service name>,
+SearchId: <search id>,
+IndexName: <index name>,
+QueryTerms: <search terms>,
+ResultCount: <results count>,
+ScoringProfile: <scoring profile used>
+});
+```
 
-**Шаг 4. события щелчка журнала**
+### <a name="step-4-log-click-events"></a>Шаг 4. события щелчка журнала
 
 Каждый щелчок документа — это событие, которое необходимо зарегистрировать для анализа поиска. Используйте пользовательские события Application Insights для регистрации этих событий по следующей схеме:
 
-**ServiceName**: (строка) имя службы поиска. **SearchId**: (GUID) уникальный идентификатор связанного поискового запроса. **DocId**: (строка) идентификатор документа. **Position**: (целое число) позиция документа на странице результатов поиска.
++ **ServiceName**: (String) имя службы поиска
++ **SearchId**: (GUID) уникальный идентификатор связанного поискового запроса.
++ **DocId**: (строка) идентификатор документа
++ **Положение**: (int) ранг документа на странице результатов поиска
 
 > [!NOTE]
 > Позиция ссылается на количественный порядок в приложении. Вы можете задать этот номер для сравнения, при условии, что он всегда один и тот же.
 >
 
-*C#*
+**Использование C#**
 
-    var properties = new Dictionary <string, string> {
+```csharp
+var properties = new Dictionary <string, string> {
     {"SearchServiceName", <service name>},
     {"SearchId", <search id>},
     {"ClickedDocId", <clicked document id>},
     {"Rank", <clicked document position>}
     };
-    telemetryClient.TrackEvent("Click", properties);
+_telemetryClient.TrackEvent("Click", properties);
+```
 
-*JavaScript*
+**Использование JavaScript**
 
-    appInsights.trackEvent("Click", {
-        SearchServiceName: <service name>,
-        SearchId: <search id>,
-        ClickedDocId: <clicked document id>,
-        Rank: <clicked document position>
-    });
+```javascript
+appInsights.trackEvent("Click", {
+    SearchServiceName: <service name>,
+    SearchId: <search id>,
+    ClickedDocId: <clicked document id>,
+    Rank: <clicked document position>
+});
+```
 
-## <a name="3---analyze-in-power-bi"></a>3\. Анализ в Power BI
+## <a name="3---analyze-in-power-bi"></a>3. Анализ в Power BI
 
-После инструментирования приложения и проверки того, что приложение правильно подключено к Application Insights, вы скачиваете предопределенный шаблон отчета для анализа данных в Power BI Desktop. Отчет содержит стандартные диаграммы и таблицы, полезные для анализа дополнительных данных, собираемых для аналитики трафика поиска. 
+После инструментирования приложения и проверки того, что приложение правильно подключено к Application Insights, вы скачиваете предопределенный шаблон отчета для анализа данных в Power BI Desktop. Отчет содержит стандартные диаграммы и таблицы, полезные для анализа дополнительных данных, собираемых для аналитики трафика поиска.
 
 1. В области навигации панели мониторинга Когнитивный поиск Azure, расположенной слева, в разделе **Параметры**щелкните **Поиск аналитики трафика**.
 
-2. На странице **Поиск аналитики трафика** на шаге 3 щелкните **Получить Power BI Desktop**, чтобы установить Power BI.
+1. На странице **Поиск аналитики трафика** на шаге 3 щелкните **Получить Power BI Desktop**, чтобы установить Power BI.
 
    ![Получение отчетов Power BI](./media/search-traffic-analytics/get-use-power-bi.png "Получение отчетов Power BI")
 
-2. На той же странице щелкните **скачать Power BI отчет**.
+1. На той же странице щелкните **скачать Power BI отчет**.
 
-3. Отчет откроется в Power BI Desktop, и вам будет предложено подключиться к Application Insights и ввести учетные данные. Сведения о подключении можно найти на страницах портал Azure для ресурса Application Insights. Для учетных данных укажите те же имя пользователя и пароль, которые используются для входа на портал.
+1. Отчет откроется в Power BI Desktop, и вам будет предложено подключиться к Application Insights и ввести учетные данные. Сведения о подключении можно найти на страницах портал Azure для ресурса Application Insights. Для учетных данных укажите те же имя пользователя и пароль, которые используются для входа на портал.
 
    ![Подключение к Application Insights](./media/search-traffic-analytics/connect-to-app-insights.png "Подключение к Application Insights")
 
-4. Нажмите кнопку **Загрузить**.
+1. Нажмите кнопку **Загрузить**.
 
 Этот отчет содержит диаграммы и таблицы, которые помогут вам принимать более взвешенные решения для улучшения производительности и релевантности поиска.
 
 Метрики содержат следующие элементы.
 
-* Поисковый том и наиболее популярные пары терминов и документов: термины, которые приводят к тому же документу, по щелчкам.
-* Поисковые запросы без щелчков. Условия основных запросов, для которых не выполнялись щелчки.
++ Поисковый том и наиболее популярные пары терминов и документов: термины, которые приводят к тому же документу, по щелчкам.
++ Поисковые запросы без щелчков. Условия основных запросов, для которых не выполнялись щелчки.
 
-На следующем снимке экрана показаны встроенные отчеты и диаграммы для анализа данных аналитики поискового трафика.
+На следующем снимке экрана показано, как может выглядеть встроенный отчет, если вы использовали все элементы схемы.
 
 ![Power BI панели мониторинга для Когнитивный поиск Azure](./media/search-traffic-analytics/azuresearch-powerbi-dashboard.png "Power BI панели мониторинга для Когнитивный поиск Azure")
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
+
 Выполните инструментирование приложения поиска для получения детальных и полезных сведений о службе поиска.
 
 Вы можете узнать больше об [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) и перейти на [страницу цен](https://azure.microsoft.com/pricing/details/application-insights/), чтобы получить дополнительные сведения о соответствующих уровнях служб.
 
 Узнайте больше о создании удивительных отчетов. Дополнительные сведения см. [в разделе Приступая к работе с Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-getting-started/) .
-
-<!--Image references-->
-[1]: ./media/search-traffic-analytics/azuresearch-trafficanalytics.png
-[2]: ./media/search-traffic-analytics/azuresearch-appinsightsdata.png
-[3]: ./media/search-traffic-analytics/azuresearch-pbitemplate.png

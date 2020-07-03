@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование runbook службы автоматизации Azure для создания кластеров (Azure HDInsight)
+title: Руководство по Использование runbook службы автоматизации Azure для создания кластеров (Azure HDInsight)
 description: Узнайте, как создавать и удалять кластеры Azure HDInsight с помощью выполняемых в облаке скриптов, оформленных в виде runbook службы автоматизации Azure.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,17 +9,17 @@ ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 12/27/2019
 ms.openlocfilehash: 05c0aaf6cc33442fa4f36eb38eb0d6d593fc6c1f
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75553124"
 ---
-# <a name="tutorial-create-azure-hdinsight-clusters-with-azure-automation"></a>Руководство. Создание кластеров Azure HDInsight с помощью службы автоматизации
+# <a name="tutorial-create-azure-hdinsight-clusters-with-azure-automation"></a>Руководство по Создание кластеров Azure HDInsight с помощью службы автоматизации
 
 Служба автоматизации Azure позволяет создавать выполняемые в облаке скрипты, которые управляют ресурсами Azure по требованию или по расписанию. В этой статье описывается создание runbook с инструкциями PowerShell для создания и удаления кластеров Azure HDInsight.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Установка модулей, необходимых для взаимодействия с HDInsight.
@@ -28,7 +28,7 @@ ms.locfileid: "75553124"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Существующая [учетная запись службы автоматизации Azure](../automation/automation-quickstart-create-account.md).
 * Существующая [учетная запись хранения Azure](../storage/common/storage-account-create.md), которая будет использоваться в качестве хранилища кластера.
@@ -65,8 +65,8 @@ ms.locfileid: "75553124"
     | Пароль | `SECURE_PASSWORD` |
     | Подтверждение пароля | `SECURE_PASSWORD` |
 
-1. Нажмите кнопку **Создать**.
-1. Повторите ту же процедуру для новых учетных данных `ssh-password` с именем пользователя `sshuser` и выбранным вами паролем. Нажмите кнопку **Создать**. Эти учетные данные нужны для хранения пароля SSH для кластера.
+1. Нажмите кнопку **создания**.
+1. Повторите ту же процедуру для новых учетных данных `ssh-password` с именем пользователя `sshuser` и выбранным вами паролем. Нажмите кнопку **создания**. Эти учетные данные нужны для хранения пароля SSH для кластера.
 
     ![Создание учетных данных](./media/manage-clusters-runbooks/create-credentials.png)
 
@@ -75,7 +75,7 @@ ms.locfileid: "75553124"
 1. Выберите **Модули Runbook** в разделе **Автоматизация процессов**.
 1. Нажмите кнопку **Создать Runbook**.
 1. На панели **Создание Runbook** введите имя runbook, например `hdinsight-cluster-create`. Выберите значение **PowerShell** в раскрывающемся списке **Тип runbook**.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
     ![Создание runbook](./media/manage-clusters-runbooks/create-runbook.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "75553124"
 1. Выберите **Модули Runbook** в разделе **Автоматизация процессов**.
 1. Нажмите кнопку **Создать Runbook**.
 1. На панели **Создание Runbook** введите имя runbook, например `hdinsight-cluster-delete`. Выберите значение **PowerShell** в раскрывающемся списке **Тип runbook**.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 1. На экране **Редактировать runbook PowerShell** введите следующий код и щелкните **Опубликовать**.
 
     ```powershell

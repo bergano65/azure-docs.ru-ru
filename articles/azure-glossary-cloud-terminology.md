@@ -16,17 +16,17 @@ ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
 ms.openlocfilehash: 7c80ba6b15cec08da9bcefea243493a824ef66bd
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75978758"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79276482"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
 
 Словарь терминов Microsoft Azure — это краткий словарь терминов, связанных с облаком на платформе Azure. См. также
 
-* [Microsoft Azure и Amazon Web Services](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/) определения служб Azure и их аналогов AWS.<!-- I propose to link to https://azure.microsoft.com/services/ instead of this -->
+* [Microsoft Azure и веб-службы Amazon](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/) — определения служб Azure и их аналогов в AWS.<!-- I propose to link to https://azure.microsoft.com/services/ instead of this -->
 * [Термины облачных вычислений](https://azure.microsoft.com/overview/cloud-computing-dictionary/) — общие термины облачной индустрии.
 
 ## <a name="account"></a>account
@@ -34,7 +34,7 @@ ms.locfileid: "75978758"
 См. разделы [Регистрация для получения подписки Azure с помощью учетной записи Office 365](cost-management-billing/manage/office-365-account-for-azure-subscription.md) и [Учетные записи для входа](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
 ## <a name="api-app"></a>приложение API;
-Другое название [приложения службы приложений](#app-service-app).
+Другое имя для [приложения службы приложений](#app-service-app).
 
 ## <a name="app-service-app"></a>Приложение службы приложений
 Вычислительные ресурсы, предоставляемые [службой приложений Azure](app-service/overview.md) для размещения веб-сайта или веб-приложения, веб-API или [серверной части мобильного приложения](app-service-mobile/app-service-mobile-value-prop.md). Приложения службы приложений также называются *приложениями службы*, *веб-приложениями*, *приложениями API* и *мобильными приложениями*.
@@ -43,17 +43,17 @@ ms.locfileid: "75978758"
 Коллекция виртуальных машин, которые находятся под общим управлением для обеспечения избыточности и надежности приложений. Во время планового или внепланового обслуживания группы доступности обеспечивают доступность как минимум одной виртуальной машины.  
 См. статьи [Управление доступностью виртуальных машин Windows в Azure](virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) и [Управление доступностью виртуальных машин Linux](virtual-machines/linux/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="classic-model"></a>классическая модель развертывания Azure
+## <a name="azure-classic-deployment-model"></a><a name="classic-model"></a>классическая модель развертывания Azure
 Одна из двух [моделей развертывания](resource-manager-deployment-model.md) , которые используются для развертывания ресурсов в Azure (новой моделью является модель Azure Resource Manager). Некоторые службы Azure поддерживают только модель развертывания с помощью Resource Manager, некоторые — только классическую модель развертывания, а другие — обе модели. Поддерживаемые модели указаны в документации по соответствующей службе Azure.
 
-## <a name="cli"></a>интерфейс командной строки Azure (CLI)
+## <a name="azure-command-line-interface-cli"></a><a name="cli"></a>Интерфейс командной строки Azure (CLI)
 Интерфейс командной строки, который можно использовать для управления службами Azure на компьютерах Windows, macOS и Linux.  Некоторыми службами или компонентами служб можно управлять только с помощью PowerShell или интерфейса командной строки. Ознакомьтесь с [Azure CLI](/cli/azure).
 
-## <a name="powershell"></a>Azure PowerShell
+## <a name="azure-powershell"></a><a name="powershell"></a>Azure PowerShell
 Интерфейс командной строки для управления службами Azure через командную строку на компьютерах с ОС Windows. Некоторыми службами или компонентами служб можно управлять только с помощью PowerShell или интерфейса командной строки.
-См. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+См. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview)
 
-## <a name="arm-model"></a>модель развертывания с помощью Azure Resource Manager
+## <a name="azure-resource-manager-deployment-model"></a><a name="arm-model"></a>модель развертывания с помощью Azure Resource Manager
 Одна из двух [моделей развертывания](resource-manager-deployment-model.md) , которые используются для развертывания ресурсов в Microsoft Azure (вторая — классическая модель развертывания). Некоторые службы Azure поддерживают только модель развертывания с помощью Resource Manager, некоторые — только классическую модель развертывания, а другие — обе модели. Поддерживаемые модели указаны в документации по соответствующей службе Azure.
 
 ## <a name="fault-domain"></a>домен сбоя
@@ -66,16 +66,16 @@ ms.locfileid: "75978758"
 
 ## <a name="geo-replication"></a>георепликация
 Процесс автоматической репликации такого содержимого, как BLOB-объекты, таблицы и очереди, в паре регионов.  
-См. статью [Активная георепликация для Базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md).
+Ознакомьтесь с [активной георепликацией для Базы данных SQL Azure](sql-database/sql-database-geo-replication-overview.md).
 <!-- The meaning of "geo" in this term seems to be different than the meaning provided in the "geo" entry -->
 
-## <a name="image"></a>изображение
+## <a name="image"></a>Изображение
 Файл с конфигурацией операционной системы и приложения, который можно использовать для создания любого количества виртуальных машин. В Azure можно использовать два типа образов — образ виртуальной машины и образ ОС. Образ виртуальной машины включает операционную систему и все диски, присоединенные к виртуальной машине на момент создания образа. Образ ОС содержит только общие сведения об операционной системе и не включает конфигурации дисков данных.  
 См. статью [Просмотр и выбор образов виртуальных машин Windows в Azure с помощью оболочки PowerShell или интерфейса командной строки](virtual-machines/windows/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ## <a name="limits"></a>ограничения
 Количество доступных для создания ресурсов или максимально возможный уровень работоспособности. Ограничения обычно связаны с подписками, службами и предложениями.  
-См. статью [Подписка Azure, границы, квоты и ограничения службы](azure-resource-manager/management/azure-subscription-service-limits.md).
+См. раздел [Подписка Azure, пределы, квоты и ограничения службы](azure-resource-manager/management/azure-subscription-service-limits.md) .
 
 ## <a name="load-balancer"></a>подсистема балансировки нагрузки
 Ресурс, который распределяет входящий трафик между компьютерами в сети. В Azure подсистема балансировки нагрузки направляет трафик на виртуальные машины, определенные в наборе подсистемы балансировки нагрузки. [Балансировщик нагрузки](load-balancer/load-balancer-overview.md) может быть внутренним или с выходом в Интернет.  
@@ -94,7 +94,7 @@ ms.locfileid: "75978758"
 Область геообъекта, не пересекающая национальные границы и содержащая один или несколько центров обработки данных. Цены, региональные службы и типы предложений применяются на уровне регионов. Обычно регионы объединяются в пары, даже если находятся в нескольких сотнях километров друг от друга. Пары регионов можно использовать как механизм для аварийного восстановления и сценариев высокой доступности. Также называется *расположением*.  
 См. статью [Регионы Azure](best-practices-availability-paired-regions.md).
 
-## <a name="resource"></a>ресурс
+## <a name="resource"></a>resource
 Элемент, который является частью решения Azure. Каждая служба Azure позволяет развертывать различные типы ресурсов, такие как базы данных или виртуальные машины.   
 См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/management/overview.md).
 
@@ -102,7 +102,7 @@ ms.locfileid: "75978758"
 Контейнер в диспетчере ресурсов, содержащий связанные ресурсы для приложения. Группа ресурсов может содержать все ресурсы для приложения или только те ресурсы, которые логически сгруппированы вместе. Можно выбрать способ распределения ресурсов для групп ресурсов, который наиболее оптимален для вашей организации.  
 См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/management/overview.md).
 
-## <a name="arm-template"></a>шаблон Resource Manager
+## <a name="resource-manager-template"></a><a name="arm-template"></a>Шаблон Resource Manager
 JSON-файл, который декларативно определяет один или несколько ресурсов Azure и устанавливает зависимости между развернутыми ресурсами. Шаблон можно использовать для согласованного и многократного развертывания ресурсов.  
 См. статью [Создание шаблонов диспетчера ресурсов Azure](resource-group-authoring-templates.md).
 
@@ -114,11 +114,11 @@ JSON-файл, который декларативно определяет од
 Средства для управления доступом, которые можно назначать пользователям, группам и службам. Роли могут выполнять такие действия, как создание, управление и чтение ресурсов Azure.  
 См. статью [RBAC: встроенные роли](role-based-access-control/built-in-roles.md).
 
-## <a name="sla"></a>соглашение об уровне обслуживания (SLA)
+## <a name="service-level-agreement-sla"></a><a name="sla"></a>Соглашение об уровне обслуживания (SLA)
 Соглашение, в котором описываются обязательства корпорации Майкрософт в отношении доступности и подключения. В каждой службе Azure есть отдельный SLA.  
 См. статью [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/).
 
-## <a name="sas"></a>подписанный URL-адрес (SAS)
+## <a name="shared-access-signature-sas"></a><a name="sas"></a>подписанный URL-адрес (SAS)
 Подпись, которая позволяет предоставлять ограниченный доступ к ресурсу, не раскрывая ключ учетной записи. Например, [служба хранилища Azure использует подписанный URL-адрес](storage/common/storage-dotnet-shared-access-signature-part-1.md) для предоставления клиентского доступа к объектам, таким как BLOB-объекты. [Центр Интернета Вещей использует подписанный URL-адрес](iot-hub/iot-hub-devguide-security.md#security-tokens) для предоставления устройствам разрешения на отправку данных телеметрии.
 
 ## <a name="storage-account"></a>запись хранения Azure
@@ -134,19 +134,19 @@ JSON-файл, который декларативно определяет од
 См. статью [Использование тегов для организации ресурсов в Azure](resource-group-using-tags.md).
 
 ## <a name="update-domain"></a>домен обновления
-Коллекция виртуальных машин в группе доступности, которые обновляются в одно и то же время. Во время планового обслуживания виртуальные машины в одном домене обновления перезапускаются вместе. Azure не перезапускает больше одного домена обновления за один раз. Он также называется доменом обновления.  
+Коллекция виртуальных машин в группе доступности, которые обновляются в одно и то же время. Во время планового обслуживания виртуальные машины в одном домене обновления перезапускаются вместе. Azure не перезапускает больше одного домена обновления за один раз. Он также называется доменом обновления.   
 См. статьи [Управление доступностью виртуальных машин Windows в Azure](virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) и [Управление доступностью виртуальных машин Linux](virtual-machines/linux/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="vm"></a>виртуальная машина
+## <a name="virtual-machine"></a><a name="vm"></a>Виртуальная машина
 Программная реализация физического компьютера, на котором работает операционная система. Несколько виртуальных машин могут одновременно работать на одном физическом компьютере. В Azure виртуальные машины могут быть разных размеров.  
 См. [документацию по виртуальным машинам](https://azure.microsoft.com/documentation/services/virtual-machines/).
 
-## <a name="vm-extension"></a>расширение виртуальной машины
+## <a name="virtual-machine-extension"></a><a name="vm-extension"></a>расширение виртуальной машины
 Ресурс, реализующий поведение или функции, которые либо помогают другим программам работать, либо предоставляют возможность для взаимодействия с работающим компьютером. Например, расширение доступа к виртуальным машинам можно использовать для сброса или изменения значений удаленного доступа на виртуальной машине Azure.
 <!-- This definition seems obscure to me; maybe a list of examples would work better than a conceptual definition? -->
 См. статью [Обзор расширений и компонентов виртуальной машины под управлением Windows](virtual-machines/windows/extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) или [Обзор расширений и компонентов виртуальных машин под управлением Linux](virtual-machines/linux/extensions-features.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
-## <a name="vnet"></a>виртуальная сеть
+## <a name="virtual-network"></a><a name="vnet"></a>Виртуальная сеть
 Сеть, обеспечивающая соединение между ресурсами Azure и изолированная от всех клиентов Azure. [VPN-шлюз Azure](vpn-gateway/vpn-gateway-about-vpngateways.md) позволяет устанавливать подключения между виртуальными сетями и между виртуальной сетью и локальной сетью. Вы можете полностью контролировать блоки IP-адресов, параметры DNS, политики безопасности и таблицы маршрутизации в виртуальной сети.  
 См. статью [Виртуальная сеть Azure](virtual-network/virtual-networks-overview.md).  
 

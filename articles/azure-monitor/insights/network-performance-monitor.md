@@ -1,18 +1,17 @@
 ---
 title: Решение "Монитор производительности сети" в Azure | Документация Майкрософт
 description: Монитор производительности сети в Azure позволяет отслеживать производительность ваших сетей практически в реальном времени для обнаружения в них узких мест производительности.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 02/20/2018
-ms.openlocfilehash: 396652e3f8a0a8d9e18effb94a48a362054dde96
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9660e87f3ee4e1c1c6a270f14928fdd111664e66
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75403143"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79480884"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Решение "Монитор производительности сети" в Azure
 
@@ -40,14 +39,15 @@ ms.locfileid: "75403143"
 * Северная Европа
 * Западная Европа
 * Центральная Франция
-
-* Центрально-западная часть США
+* Центральная Канада
+* западная часть США
+* центрально-западная часть США
 * Центрально-северная часть США
 * Центрально-южная часть США
 * Центральная часть США
 * Восточная часть США
-* Восточная часть США 2
-* Западная часть США 2
+* восточная часть США 2
+* западная часть США 2
 * Восточная Япония
 * Юго-Восточная Азия
 * Юго-Восточная Австралия
@@ -58,7 +58,7 @@ ms.locfileid: "75403143"
 * Республика Корея, центральный регион
 * Центральная Индия
 * US Government (Вирджиния)
-* Восточный Китай 2
+* Восточный Китай 2
 
 
 Список поддерживаемых регионов для мониторинга ExpressRoute см. в разделе [Поддерживаемые регионы](https://docs.microsoft.com/azure/expressroute/how-to-npm?utm_swu=8117).
@@ -155,14 +155,14 @@ ms.locfileid: "75403143"
 
 1. Установите флажки возле узлов, которые необходимо отслеживать, и снимите флажки возле тех узлов, мониторинг которых необходимо прекратить. 
 2. Установите или снимите флажок **Используйте для мониторинга** соответственно. 
-3. Щелкните **Сохранить**. 
+3. Нажмите кнопку **Сохранить**. 
 
 
 Настройте функции, которые вам нужны.
 
-- [Мониторинг производительности.](network-performance-monitor-performance-monitor.md#configuration)
-- [Монитор подключения службы](network-performance-monitor-performance-monitor.md#configuration)
-- [Мониторинг ExpressRoute.](network-performance-monitor-expressroute.md#configuration)
+- [Системный монитор](network-performance-monitor-performance-monitor.md#configuration)
+- [Монитор подключений службы](network-performance-monitor-performance-monitor.md#configuration)
+- [Монитор ExpressRoute](network-performance-monitor-expressroute.md#configuration)
 
  
 
@@ -171,7 +171,7 @@ ms.locfileid: "75403143"
 
 В следующей таблице приведены методы сбора данных и другие сведения о сборе данных для монитора производительности сети.
 
-| Платформа | Direct Agent | Агент System Center Operations Manager | Служба хранилища Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
+| Платформа | Direct Agent | Агент System Center Operations Manager | Хранилище Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
 | --- | --- | --- | --- | --- | --- | --- |
 | Windows | &#8226; | &#8226; |  |  |  |Подтверждения TCP/сообщения ICMP ECHO отправляются каждые 5 секунд. Данные отправляются каждые 3 минуты. |
  
@@ -254,7 +254,7 @@ ms.locfileid: "75403143"
 
 Все данные, представленные графически с помощью панели мониторинга Монитор производительности сети и страниц детализации, также доступны в виде запросов в [журнале](../log-query/log-query-overview.md). Вы можете выполнять интерактивный анализ данных в репозитории и сопоставлять данные из разных источников. Кроме того, вы можете создавать пользовательские оповещения и представления, а также экспортировать данные в Excel, PowerBI или ссылку с общим доступом. В области **Общие запросы** на панели мониторинга есть некоторые полезные запросы, которые можно использовать в качестве отправной точки для создания собственных запросов и отчетов. 
 
-## <a name="alerts"></a>Оповещения
+## <a name="alerts"></a>Предупреждения
 
 Монитор производительности сети использует функции оповещения [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts).
 
@@ -276,15 +276,15 @@ ms.locfileid: "75403143"
 За уведомления плата взимается отдельно, как указано на странице [Цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 
 
-## <a name="pricing"></a>Стоимость
+## <a name="pricing"></a>Цены
 
 Сведения о ценах можно найти [в Интернете](network-performance-monitor-pricing-faq.md).
 
-## <a name="provide-feedback"></a>Отправить отзыв 
+## <a name="provide-feedback"></a>Предоставление отзыва 
 
 * **UserVoice.** Если вы хотите, чтобы мы разработали новые функции для монитора производительности сети, здесь вы можете публиковать свои идеи. Посетите нашу [страницу UserVoice](https://feedback.azure.com/forums/267889-log-analytics/category/188146-network-monitoring). 
 
-* **Присоединяйтесь к когорте наших клиентов.** Мы всегда заинтересованы в новых клиентах. Став одним из них, вы получаете доступ к новым функциям и возможностям, а также помогаете нам улучшить монитор производительности сети. Если вы хотите присоединиться, заполните этот [краткий опрос](https://aka.ms/npmcohort). 
+* **Присоединяйтесь к нашей когорту:** Мы всегда заинтересованы в том, чтобы присоединить новых клиентов к нашей когорту. Став одним из них, вы получаете доступ к новым функциям и возможностям, а также помогаете нам улучшить монитор производительности сети. Если вы хотите присоединиться, заполните этот [краткий опрос](https://aka.ms/npmcohort). 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 Ознакомьтесь с дополнительными сведениями о [мониторинге производительности](network-performance-monitor-performance-monitor.md), [мониторинге подключения службы](network-performance-monitor-performance-monitor.md) и [мониторинге ExpressRoute](network-performance-monitor-expressroute.md). 

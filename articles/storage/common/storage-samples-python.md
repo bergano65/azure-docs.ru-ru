@@ -3,96 +3,586 @@ title: Примеры для работы со службой хранилища
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами, чтобы начать работу с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища Python.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 09/06/2019
+ms.date: 02/13/2020
 ms.service: storage
 ms.subservice: common
 ms.topic: sample
-ms.openlocfilehash: 7f694ee51989023a3e7a72f40700edcbb6a97bae
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: fc3079d316a252bc5a658017cb6b04fe6ef20c2f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75747989"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77485834"
 ---
-# <a name="azure-storage-samples-using-python"></a>Примеры для работы со службой хранилища Azure с помощью Python
+# <a name="azure-storage-samples-using-v12-python-client-libraries"></a>Примеры использования службы хранилища Azure с помощью клиентских библиотек версии 12 для Python
 
 В таблицах ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
 
 > [!NOTE]
-> В этих примерах используется библиотека Python версии 2.1 службы хранилища Azure. Сведения о коде версии 12 см. в разделе [примеры](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples) в репозитории GitHub.
+> В этих примерах используется последняя библиотека .NET версии 12 службы хранилища Azure. Сведения об устаревшем коде версии 2.1 см. в руководстве по [ началу работы со службой хранилища Azure с использованием Python](https://github.com/Azure-Samples/storage-blob-python-getting-started) в репозитории GitHub.
 
-## <a name="blob-samples-v21"></a>Примеры больших двоичных объектов (версия 2.1)
+## <a name="blob-samples"></a>Примеры больших двоичных объектов
 
-| **Сценарий** | **Образец кода** |
-|--------------|-----------------|
-| Добавление больших двоичных объектов | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L166) |
-| Блочный BLOB-объект | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L77) |
-| Шифрование на стороне клиента | [Управление ключами учетной записи хранения в Azure Key Vault с помощью Python](https://github.com/Azure-Samples/key-vault-python-storage-accounts) |
-| Копирование BLOB-объекта | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_advanced_samples.py#L102) |
-| Create Container (Создание контейнера) | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L91) |
-| Delete BLOB (Удаление BLOB-объекта) | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L114) |
-| Delete Container (Удаление контейнера) | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L118) |
-| Метаданные, свойства и статистика больших двоичных объектов | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_advanced_samples.py#L298) |
-| ACL, метаданные и свойства контейнера | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_advanced_samples.py#L268) |
-| Get Page Ranges (Получение диапазона страницы) | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L151) |
-| Аренда большого двоичного объекта и контейнера | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_advanced_samples.py#L377) |
-| Список больших двоичных объектов и контейнеров | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L103) |
-| Страничный BLOB-объект | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L124) |
-| SAS | [Использование подписанного URL-адреса в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_advanced_samples.py#L145) |
-| Свойства службы | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_advanced_samples.py#L540) |
-| Создание моментального снимка большого двоичного объекта | [Начало работы со службой BLOB-объектов Azure в Python](https://github.com/Azure-Samples/storage-blob-python-getting-started/blob/master/blob_basic_samples.py#L214) |
+### <a name="authentication"></a>Аутентификация
 
-## <a name="file-samples-v21"></a>Примеры файлов (версия 2.1)
+:::row:::
+   :::column span="":::
+      [Создание клиента службы BLOB-объектов с использованием строки подключения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L45)
+   :::column-end:::
+   :::column span="":::
+      [Создание клиента контейнера с использованием строки подключения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L50)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание клиента с использованием строки подключения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L56)
+   :::column-end:::
+   :::column span="":::
+      [Создание клиента службы BLOB-объектов с использованием общего ключа доступа](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L66)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание клиента BLOB-объекта с использованием URL-адреса](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L75)
+   :::column-end:::
+   :::column span="":::
+      [Создание URL-адреса SAS клиента BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L80)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание клиента службы BLOB-объектов с помощью ClientSecretCredential](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L88)
+   :::column-end:::
+   :::column span="":::
+      [Создание маркера SAS](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L110)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание клиента службы BLOB-объектов с использованием удостоверения Azure](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_authentication.py#L125)
+   :::column-end:::
+   :::column span="":::
+      [Создание моментального снимка BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_common.py#L56)
+   :::column-end:::
+:::row-end:::
 
-| **Сценарий** | **Образец кода** |
-|--------------|-----------------|
-| Создание общих папок, каталогов и файлов | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_basic_samples.py#L71) |
-| Удаление общих папок, каталогов и файлов | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_basic_samples.py#L170) |
-| Метаданные и свойства каталога | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_advanced_samples.py#L175) |
-| Скачивание файлов | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_basic_samples.py#L138) |
-| Метрики, метаданные и свойства файла | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_advanced_samples.py#L193) |
-| Свойства службы файлов | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_advanced_samples.py#L125) |
-| Список каталогов и файлов | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_basic_samples.py#L153) |
-| Список общих папок | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_advanced_samples.py#L82) |
-| Статистика, метаданные и свойства общей папки | [Начало работы со службой файлов Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started/blob/master/file_advanced_samples.py#L144) |
+### <a name="blob-service"></a>Служба больших двоичных объектов
 
-## <a name="queue-samples-v21"></a>Примеры очередей (версия 2.1)
+:::row:::
+   :::column span="":::
+      [Получение сведений об учетной записи службы BLOB-объектов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L30)
+   :::column-end:::
+   :::column span="":::
+      [Определение свойств службы BLOB-объектов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L41)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Получение свойств службы BLOB-объектов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L61)
+   :::column-end:::
+   :::column span="":::
+      [Получение статистики службы BLOB-объектов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L71)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание контейнера с помощью клиента службы](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L82)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление контейнеров](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L90)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление контейнера с помощью клиента службы](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L103)
+   :::column-end:::
+   :::column span="":::
+      [Получение клиента контейнера](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L117)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Получение клиента BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_service.py#L130)
+   :::column-end:::
+:::row-end:::
 
-| **Сценарий** | **Образец кода** |
-|--------------|-----------------|
-| Добавление сообщения | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_basic_samples.py#L94) |
-| Шифрование на стороне клиента | [Управление ключами учетной записи хранения в Azure Key Vault с помощью Python](https://github.com/Azure-Samples/key-vault-python-storage-accounts) |
-| Создание очередей | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_basic_samples.py#L75) |
-| Удаление сообщения и очереди | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_basic_samples.py#L144) |
-| Просмотр сообщения | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_basic_samples.py#L110) |
-| ACL, метаданные и статистика очереди | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_advanced_samples.py#L148) |
-| Свойства службы очередей | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_advanced_samples.py#L128) |
-| Сообщение об обновлении | [Начало работы со службой очередей Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started/blob/master/queue_basic_samples.py#L120) |
+### <a name="container"></a>Контейнер
 
-## <a name="table-samples-v21"></a>Примеры таблиц (версия 2.1)
+:::row:::
+   :::column span="":::
+      [Создание клиента контейнера с помощью службы](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L35)
+   :::column-end:::
+   :::column span="":::
+      [Создание клиента контейнера с использованием URL-адреса SAS](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L44)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание контейнера с помощью клиента контейнера](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L52)
+   :::column-end:::
+   :::column span="":::
+      [Получение свойств контейнера](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L56)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление контейнера с помощью клиента контейнера](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L61)
+   :::column-end:::
+   :::column span="":::
+      [Получение аренды контейнера](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L80)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Определение метаданных контейнера](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L101)
+   :::column-end:::
+   :::column span="":::
+      [Определение политики доступа к контейнеру](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L128)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Получение политики доступа к контейнеру](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L141)
+   :::column-end:::
+   :::column span="":::
+      [Создание маркера SAS](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L145)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание клиента контейнера с помощью маркера SAS](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L158)
+   :::column-end:::
+   :::column span="":::
+      [Отправка BLOB-объекта в контейнер](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L182)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Перечисление больших двоичных объектов в контейнере](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L189)
+   :::column-end:::
+   :::column span="":::
+      [Получение клиента BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_containers.py#L213)
+   :::column-end:::
+:::row-end:::
 
-| **Сценарий** | **Образец кода** |
-|--------------|-----------------|
-| Создание таблицы | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L46) |
-| Удаление сущности или таблицы | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L79) |
-| Вставка, слияние или замена сущностей | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L57) |
-| Query Entities (Сущности запроса) | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L62) |
-| Запросы к таблицам | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py) |
-| Свойства и ACL таблицы | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_advanced_samples.py#L138) |
-| Update Entity (Обновление сущности) | [Начало работы со службой таблиц Azure в Python](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L68) |
+### <a name="blob"></a>BLOB-объект
 
-## <a name="azure-code-samples-library"></a>Библиотека примеров кода Azure
+:::row:::
+   :::column span="":::
+      [Отправка BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_hello_world.py#L68)
+   :::column-end:::
+   :::column span="":::
+      [Скачивание большого двоичного объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_hello_world.py#L74)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_hello_world.py#L80)
+   :::column-end:::
+   :::column span="":::
+      [Отмена удаления BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_common.py#L100)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Получение свойств BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_common.py#L105)
+   :::column-end:::
+   :::column span="":::
+      [Удаление нескольких BLOB-объектов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_common.py#L133)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Копирование BLOB-объекта с помощью URL-адреса](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_common.py#L193)
+   :::column-end:::
+   :::column span="":::
+      [Отмена копирования BLOB-объекта с помощью URL-адреса](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_common.py#L205)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Получение аренды BLOB-объекта](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/samples/blob_samples_common.py#L167)
+   :::column-end:::
+:::row-end:::
 
-Чтобы просмотреть полную библиотеку примеров, перейдите в [библиотеку примеров кода Azure](https://azure.microsoft.com/resources/samples/?service=storage), включающую примеры для службы хранилища Azure, которые можно скачать и запустить локально. Пример библиотеки кода содержит пример кода в формате ZIP. Кроме того, можно просмотреть и клонировать репозиторий GitHub для каждого примера.
+## <a name="data-lake-storage-gen2-samples"></a>Примеры для Data Lake Storage 2-го поколения
 
-[!INCLUDE [storage-python-samples-include](../../../includes/storage-python-samples-include.md)]
+### <a name="data-lake-service"></a>Служба Data Lake
+
+:::row:::
+   :::column span="2":::
+      [Создание клиента службы Data Lake](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L64)
+   :::column-end:::
+:::row-end:::
+
+### <a name="file-system"></a>Файловая система
+
+:::row:::
+   :::column span="":::
+      [Создание клиента файловой системы](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L74)
+   :::column-end:::
+   :::column span="":::
+      [Удаление файловой системы](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L81)
+   :::column-end:::
+:::row-end:::
+
+### <a name="directory"></a>Каталог
+
+:::row:::
+   :::column span="":::
+      [Создание клиента каталога](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L14)
+   :::column-end:::
+   :::column span="":::
+      [Получение разрешений каталога](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L19)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Определение разрешений каталога](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L23)
+   :::column-end:::
+   :::column span="":::
+      [Переименование каталога](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_directory.py#L19)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Получение свойств каталога](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_directory.py#L25)
+   :::column-end:::
+   :::column span="":::
+      [Удалить каталог](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_directory.py#L29)
+   :::column-end:::
+:::row-end:::
+
+### <a name="file"></a>Файл
+
+:::row:::
+   :::column span="":::
+      [Создание файлового клиента](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_upload_download.py#L13)
+   :::column-end:::
+   :::column span="":::
+      [Создание файла](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L45)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Получение разрешений для файла](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L35)
+   :::column-end:::
+   :::column span="":::
+      [Определение разрешений для файла](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_access_control.py#L38)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Добавление данных в файл](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_upload_download.py#L18)
+   :::column-end:::
+   :::column span="":::
+      [Чтение данных из файла](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples/datalake_samples_upload_download.py#L29)
+   :::column-end:::
+:::row-end:::
+
+## <a name="azure-files-samples"></a>Примеры для Файлов Azure
+
+### <a name="authentication"></a>Аутентификация
+
+:::row:::
+   :::column span="":::
+      [Создание клиента общей службы с помощью строки подключения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_authentication.py#L42)
+   :::column-end:::
+   :::column span="":::
+      [Создание клиента общей службы с помощью учетной записи и ключа доступа](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_authentication.py#L49)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Создание маркера SAS](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_authentication.py#L59)
+   :::column-end:::
+:::row-end:::
+
+### <a name="file-service"></a>Служба файлов
+
+:::row:::
+   :::column span="":::
+      [Определение свойств службы](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_service.py#L39)
+   :::column-end:::
+   :::column span="":::
+      [Получение свойств службы](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_service.py#L68)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание общих ресурсов с помощью клиента службы файлов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_service.py#L77)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление общих ресурсов с помощью клиента службы файлов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_service.py#L81)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Удаление общих ресурсов с помощью клиента службы файлов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_service.py#L91)
+   :::column-end:::
+:::row-end:::
+
+### <a name="file-share"></a>Общая папка
+
+:::row:::
+   :::column span="":::
+      [Создание общего клиента с помощью строки подключения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_share.py#L52)
+   :::column-end:::
+   :::column span="":::
+      [Получение общего клиента](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_service.py#L96)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание общей папки с помощью клиента файлового ресурса](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_share.py#L39)
+   :::column-end:::
+   :::column span="":::
+      [Создание моментального снимка общей папки](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_share.py#L43)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление общей папки с помощью клиента общей папки](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_share.py#L47)
+   :::column-end:::
+   :::column span="":::
+      [Определение квоты общей папки](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_share.py#L61)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Определение метаданных общей папки](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_share.py#L66)
+   :::column-end:::
+   :::column span="":::
+      [Получение свойств общей папки](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_hello_world.py#L47)
+   :::column-end:::
+:::row-end:::
+
+### <a name="directory"></a>Каталог
+
+:::row:::
+   :::column span="":::
+      [Создать каталог](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_directory.py#L45)
+   :::column-end:::
+   :::column span="":::
+      [Отправка файла в каталог](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_directory.py#L49)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление файла из каталога](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_directory.py#L55)
+   :::column-end:::
+   :::column span="":::
+      [Удалить каталог](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_directory.py#L60)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание подкаталога](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_directory.py#L80)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление каталогов и файлов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_directory.py#L96)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление подкаталога](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_directory.py#L104)
+   :::column-end:::
+   :::column span="":::
+      [Получение клиента подкаталога](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_directory.py#L121)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Перечисление файлов](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_share.py#L87)
+   :::column-end:::
+:::row-end:::
+
+### <a name="file"></a>Файл
+
+:::row:::
+   :::column span="":::
+      [Создание файлового клиента](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_hello_world.py#L65)
+   :::column-end:::
+   :::column span="":::
+      [Создание файла](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_client.py#L48)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Отправка файла](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_client.py#L54)
+   :::column-end:::
+   :::column span="":::
+      [Скачивание файла](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_client.py#L60)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удалить файл](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_client.py#L67)
+   :::column-end:::
+   :::column span="":::
+      [Копирование файла с помощью URL-адреса](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-file-share/samples/file_samples_client.py#L101)
+   :::column-end:::
+:::row-end:::
+
+## <a name="queue-samples"></a>Примеры очередей
+
+### <a name="authentication"></a>Аутентификация
+
+:::row:::
+   :::column span="":::
+      [Проверка подлинности с помощью строки подключения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_authentication.py#L50)
+   :::column-end:::
+   :::column span="":::
+      [Создание маркера клиента службы очередей](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_authentication.py#L69)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Создание клиента очереди с помощью строки подключения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L35)
+   :::column-end:::
+   :::column span="":::
+      [Создать маркер SAS клиента очереди](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L61)
+   :::column-end:::
+:::row-end:::
+
+### <a name="queue-service"></a>Служба очередей
+
+:::row:::
+   :::column span="":::
+      [Создание клиента службы очередей](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_authentication.py#L60)
+   :::column-end:::
+   :::column span="":::
+      [Определение свойств службы очередей](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_service.py#L35)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Получение свойств службы очередей](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_service.py#L67)
+   :::column-end:::
+   :::column span="":::
+      [Создание очереди с помощью клиента службы](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_service.py#L76)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Удаление очереди с помощью клиента службы](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_service.py#L94)
+   :::column-end:::
+:::row-end:::
+
+### <a name="queue"></a>Очередь
+
+:::row:::
+   :::column span="":::
+      [Создание клиента очереди](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L72)
+   :::column-end:::
+   :::column span="":::
+      [Определение метаданных очереди](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L95)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Получение свойств очереди](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L100)
+   :::column-end:::
+   :::column span="":::
+      [Создание очереди с помощью клиента очереди](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_hello_world.py#L45)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление очереди с помощью клиента очереди](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_hello_world.py#L62)
+   :::column-end:::
+   :::column span="":::
+      [Перечисление очередей](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_service.py#L81)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Получение клиента очереди](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_service.py#L103)
+   :::column-end:::
+:::row-end:::
+
+### <a name="message"></a>Сообщение
+
+:::row:::
+   :::column span="":::
+      [Отправка сообщений](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L117)
+   :::column-end:::
+   :::column span="":::
+      [Получение сообщений](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L125)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Просмотр сообщения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L197)
+   :::column-end:::
+   :::column span="":::
+      [Обновление сообщения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L222)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Удаление сообщения](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L165)
+   :::column-end:::
+   :::column span="":::
+      [Очистка сообщений](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L173)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Определение политики доступа к сообщениям](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-queue/samples/queue_samples_message.py#L47)
+   :::column-end:::
+:::row-end:::
+
+
+## <a name="table-samples-sdk-v21"></a>Примеры таблиц (пакет SDK версии 2.1)
+
+:::row:::
+   :::column span="":::
+      [Создание таблицы](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L46)
+   :::column-end:::
+   :::column span="":::
+      [Удаление сущности или таблицы](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L79)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Вставка, слияние или замена сущностей](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L57)
+   :::column-end:::
+   :::column span="":::
+      [Запросы к сущностям](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L62)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      [Запросы к таблицам](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py)
+   :::column-end:::
+   :::column span="":::
+      [Свойства и ACL таблицы](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_advanced_samples.py#L138)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="2":::
+      [Обновление сущности](https://github.com/Azure-Samples/storage-table-python-getting-started/blob/master/table_basic_samples.py#L68)
+   :::column-end:::
+:::row-end:::
+
+## <a name="azure-code-sample-libraries"></a>Библиотеки примеров кода Azure
+
+См. список библиотек примеров для Python:
+
+* [Примеры кода для больших двоичных объектов Azure](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples)
+* [Примеры кода для Azure Data Lake](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-datalake/samples)
+* [Примеры кода для Файлов Azure](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-file-share/samples)
+* [Примеры кода для очередей Azure](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue/samples)
+
+Вы можете просмотреть и клонировать репозиторий GitHub для каждой библиотеки.
 
 ## <a name="getting-started-guides"></a>Руководства по началу работы
 
-Ознакомьтесь со следующими руководствами, если вам нужны инструкции по установке клиентских библиотек службы хранилища Azure и началу работы с ними.
+В следующих руководствах представлены инструкции по установке и использованию клиентских библиотек службы хранилища Azure.
 
 * [Начало работы со службой BLOB-объектов Azure в Python](../blobs/storage-quickstart-blobs-python.md)
-* [Начало работы со службой очередей Azure в Python](../queues/storage-python-how-to-use-queue-storage.md)
+* [Начало работы со службой очередей Azure в Python](../queues/storage-quickstart-queues-python.md)
 * [Начало работы со службой таблиц Azure в Python](../../cosmos-db/table-storage-how-to-use-python.md)
 * [Начало работы со службой файлов Azure в Python](../files/storage-python-how-to-use-file-storage.md)
 

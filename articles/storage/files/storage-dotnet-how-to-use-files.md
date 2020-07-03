@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 361ee5179b20d9488bb477a4e3c9fc0f0e6f266e
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 4d8be13a75e276d5be6ec71141a13f95601869f0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190664"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78301443"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Разработка для службы файлов Azure с помощью .NET
 
@@ -34,22 +34,22 @@ ms.locfileid: "77190664"
 
 ## <a name="understanding-the-net-apis"></a>Основные сведения об API-интерфейсах .NET
 
-Служба файлов Azure предлагает два широких подхода к использованию клиентских приложений: SMB (блок сообщений сервера) и REST. В .NET API-интерфейсы `System.IO` и `WindowsAzure.Storage` абстрактно представляют эти подходы.
+Служба файлов Azure предлагает два широких подхода к использованию клиентских приложений: SMB (блок сообщений сервера) и REST. В .NET API- `System.IO` интерфейсы `WindowsAzure.Storage` и представляют собой абстрактные подходы.
 
 API | Назначение | Примечания
 ----|-------------|------
 [System.IO](https://docs.microsoft.com/dotnet/api/system.io) | Требования вашего приложения: <ul><li>Требуется чтение и запись файлов с помощью SMB</li><li>выполнение на устройстве, которое получает доступ к учетной записи службы файлов Azure через порт 445;</li><li>не требуется управлять параметрами администрирования общей папки.</li></ul> | Файловый ввод-вывод, реализованный в службе файлов Azure по протоколу SMB, обычно аналогичен вводу-выводу с любым сетевым файловым ресурсом или локальным устройством хранения. Общие сведения о ряде функций .NET, включая ввод-вывод файлов, см. в руководстве по [консольному приложению](https://docs.microsoft.com/dotnet/csharp/tutorials/console-teleprompter) .
-[Microsoft. Azure. Storage. File](/dotnet/api/overview/azure/storage?view=azure-dotnet#version-11x) | Требования вашего приложения: <ul><li>Не удается получить доступ к службе файлов Azure по протоколу SMB через порт 445 из-за ограничений брандмауэра или поставщика услуг Интернета.</li><li>требуются административные функции, например возможность задать квоту для общей папки или создать подписанный URL-адрес.</li></ul> | В этой статье показано использование `Microsoft.Azure.Storage.File` для файлового ввода-вывода с помощью функции RESTFUL вместо протокола SMB и управления файловым ресурсом.
+[Microsoft. Azure. Storage. File](/dotnet/api/overview/azure/storage?view=azure-dotnet#version-11x) | Требования вашего приложения: <ul><li>Не удается получить доступ к службе файлов Azure по протоколу SMB через порт 445 из-за ограничений брандмауэра или поставщика услуг Интернета.</li><li>требуются административные функции, например возможность задать квоту для общей папки или создать подписанный URL-адрес.</li></ul> | В этой статье показано использование `Microsoft.Azure.Storage.File` операций файлового ввода-вывода с помощью функции RESTful вместо протокола SMB и управления файловым ресурсом.
 
 ## <a name="create-the-console-application-and-obtain-the-assembly"></a>Создание консольного приложения и получение сборки
 
 В Visual Studio создайте новое консольное приложение Windows. Ниже показано, как создать консольное приложение в Visual Studio 2019. Эти же действия можно выполнить и в других версиях Visual Studio.
 
-1. Откройте Visual Studio и выберите **Создать проект**.
+1. Запустите Visual Studio и щелкните **Создать проект**
 1. В окне **Создание нового проекта**выберите **консольное приложение (.NET Framework)** для C#, а затем нажмите кнопку **Далее**.
 1. В окне **Настройка нового проекта**введите имя приложения и нажмите кнопку **создать**.
 
-Вы можете добавить все примеры кода из этого руководства в метод `Main()` файла `Program.cs` приложения консоли.
+Вы можете добавить все примеры кода из этого учебника в `Main()` метод `Program.cs` файла консольного приложения.
 
 Клиентскую библиотеку службы хранилища Azure можно использовать в любом типе приложения .NET. К этим типам относятся облачная служба Azure, веб-приложение, настольные и мобильные приложения. Для упрощения в этом руководстве мы будем использовать консольное приложение.
 
@@ -84,7 +84,7 @@ API | Назначение | Примечания
 
 ## <a name="save-your-storage-account-credentials-to-the-appconfig-file"></a>Сохранение учетных данных учетной записи хранения в файле App. config
 
-Затем сохраните учетные данные в файле `App.config` проекта. В **Обозреватель решений**дважды щелкните `App.config` и измените файл, чтобы он был похож на следующий пример. Замените `myaccount` именем учетной записи хранения и `mykey` ключом учетной записи хранения.
+Затем сохраните учетные данные в `App.config` файле проекта. В **Обозреватель решений**дважды щелкните `App.config` и измените файл, чтобы он был похож на следующий пример. Замените `myaccount` именем вашей учетной записи хранения `mykey` и ключом учетной записи хранения.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -103,7 +103,7 @@ API | Назначение | Примечания
 
 ## <a name="add-using-directives"></a>Добавление директив using
 
-В **Обозреватель решений**откройте файл `Program.cs` и добавьте следующие директивы using в начало файла.
+В **Обозреватель решений**откройте `Program.cs` файл и добавьте следующие директивы using в начало файла.
 
 ```csharp
 using Microsoft.Azure; // Namespace for Azure Configuration Manager
@@ -116,7 +116,7 @@ using Microsoft.Azure.Storage.File; // Namespace for Azure Files
 
 ## <a name="access-the-file-share-programmatically"></a>Доступ к общей папке программным путем
 
-Затем добавьте следующее содержимое в метод `Main()` после приведенного выше кода, чтобы получить строку подключения. Этот код получает ссылку на созданный ранее файл и выводит его содержимое.
+Затем добавьте следующее содержимое в `Main()` метод после приведенного выше кода, чтобы получить строку подключения. Этот код получает ссылку на созданный ранее файл и выводит его содержимое.
 
 ```csharp
 // Create a CloudFileClient object for credentialed access to Azure Files.
@@ -383,7 +383,7 @@ var rootDirectory = mySnapshot.GetRootDirectoryReference();
 var items = rootDirectory.ListFilesAndDirectories();
 ```
 
-### <a name="list-shares-and-share-snapshots-and-restore-file-shares-or-files-from-share-snapshots"></a>Вывод списка общих папок и моментальных снимков и восстановление общих файловых ресурсов или файлов из моментальных снимков общих ресурсов
+### <a name="list-shares-and-share-snapshots-and-restore-file-shares-or-files-from-share-snapshots"></a>Вывод списка общих ресурсов и их моментальных снимков и восстановление общих папок или файлов из моментальных снимков общих ресурсов
 
 Создание снимка общего файлового ресурса позволяет в будущем восстановить отдельные файлы или весь файловый ресурс.
 
@@ -420,7 +420,7 @@ fileInliveShare.StartCopyAsync(new Uri(sourceUri));
 CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTime); mySnapshot.Delete(null, null, null);
 ```
 
-## Устранение неполадок службы файлов Azure с помощью метрик<a name="troubleshooting-azure-files-using-metrics"></a>
+## <a name="troubleshoot-azure-files-by-using-metrics"></a>Устранение неполадок службы файлов Azure с помощью метрик<a name="troubleshooting-azure-files-using-metrics"></a>
 
 Аналитика службы хранилища Azure теперь поддерживает метрики для службы файлов Azure. Данные метрик позволяют отслеживать запросы и диагностировать проблемы.
 
@@ -428,14 +428,14 @@ CloudFileShare mySnapshot = fClient.GetShareReference(baseShareName, snapshotTim
 
 В следующем примере кода показано, как использовать клиентскую библиотеку хранилища для .NET, чтобы включить метрики для службы файлов Azure.
 
-Сначала добавьте следующие директивы `using` в файл `Program.cs`, а также добавленные выше объекты.
+Сначала добавьте в `Program.cs` файл следующие `using` директивы, а также добавленные выше объекты.
 
 ```csharp
 using Microsoft.Azure.Storage.File.Protocol;
 using Microsoft.Azure.Storage.Shared.Protocol;
 ```
 
-Несмотря на то, что большие двоичные объекты Azure, таблицы Azure и очереди Azure используют общий тип `ServiceProperties` в пространстве имен `Microsoft.Azure.Storage.Shared.Protocol`, служба файлов Azure использует собственный тип `FileServiceProperties` в пространстве имен `Microsoft.Azure.Storage.File.Protocol`. Однако для компиляции следующего кода необходимо сослаться на оба пространства имен из кода.
+Хотя большие двоичные объекты Azure, таблицы Azure и очереди Azure используют `ServiceProperties` общий тип в `Microsoft.Azure.Storage.Shared.Protocol` пространстве имен, службы файлов Azure используют собственный тип, `FileServiceProperties` тип в `Microsoft.Azure.Storage.File.Protocol` пространстве имен. Однако для компиляции следующего кода необходимо сослаться на оба пространства имен из кода.
 
 ```csharp
 // Parse your storage connection string from your application's configuration file.
@@ -480,29 +480,28 @@ Console.WriteLine(serviceProperties.MinuteMetrics.Version);
 
 Если возникнут проблемы, см. статью [Устранение неполадок с файлами Azure в Windows](storage-troubleshoot-windows-file-connection-problems.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о службе файлов Azure см. в следующих ресурсах:
 
 ### <a name="conceptual-articles-and-videos"></a>Тематические статьи и видео
 
 * [Файлы Azure: удобная облачная файловая система SMB для Windows и Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
-* [Использование файлов Azure с Linux](storage-how-to-use-files-linux.md)
+* [Использование Файлов Azure в Linux](storage-how-to-use-files-linux.md)
 
 ### <a name="tooling-support-for-file-storage"></a>Средства для работы с хранилищем файлов
 
 * [Get started with AzCopy](../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) (Начало работы с AzCopy)
-* [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json#create-and-manage-file-shares)
 * [Устранение неполадок службы файлов Azure в Windows](https://docs.microsoft.com/azure/storage/storage-troubleshoot-file-connection-problems)
 
-### <a name="reference"></a>Ссылки
+### <a name="reference"></a>Справочник
 
-* [API-интерфейсы службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
+* [API-интерфейсы хранилища Azure для .NET](/dotnet/api/overview/azure/storage)
 * [File Service REST API](/rest/api/storageservices/File-Service-REST-API) (API-интерфейс REST файловой службы)
 
 ### <a name="blog-posts"></a>Записи блога
 
 * [Общедоступная версия хранилища файлов Azure](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
-* [Inside Azure File Storage (Хранилище файлов Azure: взгляд изнутри)](https://azure.microsoft.com/blog/inside-azure-file-storage/)
+* [Внутреннее хранилище файлов Azure](https://azure.microsoft.com/blog/inside-azure-file-storage/)
 * [Введение в службу Microsoft Azure Files](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 * [Сохраняемые подключения к файлам Microsoft Azure](https://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)

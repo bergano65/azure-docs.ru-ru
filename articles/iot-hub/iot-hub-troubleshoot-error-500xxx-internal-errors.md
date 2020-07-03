@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 7f3f5177e084693c45bed1088a4e1d091be100ed
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76960689"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79271048"
 ---
 # <a name="500xxx-internal-errors"></a>Внутренние ошибки 500xxx
 
@@ -27,9 +27,9 @@ ms.locfileid: "76960689"
 
 * **500008 женериктимеаут**: центр Интернета вещей не смог завершить запрос на подключение до истечения времени ожидания.
 
-* **ServiceUnavailable (без кода ошибки)** : в центре Интернета вещей произошла внутренняя ошибка.
+* **ServiceUnavailable (без кода ошибки)**: в центре Интернета вещей произошла внутренняя ошибка.
 
-* **InternalServerError (без кода ошибки)** : в центре Интернета вещей произошла внутренняя ошибка.
+* **InternalServerError (без кода ошибки)**: в центре Интернета вещей произошла внутренняя ошибка.
 
 ## <a name="cause"></a>Причина
 

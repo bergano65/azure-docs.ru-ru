@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/15/2019
 ms.author: victorh
 ms.openlocfilehash: 4198c83a167ad8f2d52f4393c39625948e18e6e3
-ms.sourcegitcommit: a170b69b592e6e7e5cc816dabc0246f97897cb0c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74089510"
 ---
 # <a name="configure-app-service-with-application-gateway-using-powershell"></a>Настройка службы приложений с использованием шлюза приложений с помощью PowerShell
@@ -164,6 +164,6 @@ DnsSettings              : {
 
 Один из способов ограничения доступа к веб-приложению — использовать [ограничения статических IP-адресов в Службе приложений Azure](../app-service/app-service-ip-restrictions.md). Например, можно ограничить веб-приложение, чтобы получать трафик только из шлюза приложения. Используйте функцию ограничения IP-адреса для службы приложения, чтобы сделать виртуальный IP-адрес шлюза приложения единственным адресом с доступом.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как настроить перенаправление, ознакомьтесь со статьей [Настройка перенаправления в шлюзе приложений с помощью PowerShell](redirect-overview.md).

@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: troubleshooting
-ms.date: 12/02/2019
-ms.openlocfilehash: 5bfefe3215558a94396e729a318e0746a4fb3aec
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 6b27e47339b80cc46290065c4d17150a301f2534
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74764803"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80067841"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mysql"></a>Использование инструкции EXPLAIN для профилирования производительности запросов в службе "База данных Azure для MySQL"
 Инструкция **EXPLAIN** представляет собой удобное средство для оптимизации запросов. С помощью инструкций EXPLAIN можно получать информацию о том, как выполняются инструкции SQL. Ниже показан пример выполнения инструкции EXPLAIN.
@@ -120,7 +120,7 @@ possible_keys: covered
 Как показано в инструкции EXPLAIN выше, теперь MySQL использует охватываемый индекс и не создает временную таблицу. 
 
 ## <a name="combined-index"></a>Составной индекс
-Составной индекс состоит из значений нескольких столбцов и может считаться массивом строк, отсортированных путем объединения значений индексированных столбцов. Этот метод может быть полезен в инструкции **Group By** .
+Составной индекс состоит из значений нескольких столбцов и может считаться массивом строк, отсортированных путем объединения значений индексированных столбцов.Этот метод может быть полезен в инструкции **GROUP BY**.
 
 ```sql
 mysql> EXPLAIN SELECT c1, c2 from tb1 WHERE c2 LIKE '%100' ORDER BY c1 DESC LIMIT 10\G
@@ -166,5 +166,5 @@ possible_keys: NULL
 Использование инструкции EXPLAIN и разных типов индексов позволяет существенно повысить производительность. Наличие индекса в таблице не обязательно означает, что MySQL сможет использовать ее для ваших запросов. Следует всегда проверять свои предположения с помощью инструкции EXPLAIN и оптимизировать запросы с помощью индексов.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Чтобы найти ответы на наиболее важные вопросы либо опубликовать новый вопрос или ответ, посетите [Форум MSDN](https://social.msdn.microsoft.com/forums/security/en-US/home?forum=AzureDatabaseforMySQL) или [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-database-mysql).

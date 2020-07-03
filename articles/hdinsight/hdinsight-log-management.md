@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/05/2020
 ms.openlocfilehash: 8c3cbf4c18b32a94abfe95e77be768020b44fda6
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064688"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79272309"
 ---
 # <a name="manage-logs-for-an-hdinsight-cluster"></a>Управление журналами для кластера HDInsight
 
@@ -91,7 +91,7 @@ Apache Ambari упрощает конфигурацию кластера HDInsig
 
 ### <a name="view-ambari-alerts-status-logs"></a>Просмотр журналов состояния оповещений Ambari
 
-Apache Ambari записывает изменения состояния оповещений в `ambari-alerts.log`. Полный путь `/var/log/ambari-server/ambari-alerts.log`. Чтобы включить отладку для журнала, измените свойство в `/etc/ambari-server/conf/log4j.properties.` изменить, а затем в разделе `# Log alert state changes`:
+Apache Ambari записывает изменения состояния оповещений в `ambari-alerts.log`. Полный путь — `/var/log/ambari-server/ambari-alerts.log`. Чтобы включить отладку для журнала, измените свойство в `/etc/ambari-server/conf/log4j.properties.` поле изменить, а затем `# Log alert state changes` введите в разделе от:
 
 ```
 log4j.logger.alerts=INFO,alerts
@@ -184,7 +184,7 @@ yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-applica
 
 Чтобы собирать журналы со всех узлов в централизованном месте, можно создать поток данных, такой как получение всех записей журнала в Solr.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Monitoring and logging](https://msdn.microsoft.com/library/dn749790.aspx) (Мониторинг и ведение журнала)
 * [Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)

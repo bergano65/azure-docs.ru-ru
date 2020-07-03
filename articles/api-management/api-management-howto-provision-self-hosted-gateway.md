@@ -10,25 +10,22 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 10/31/2019
+ms.date: 03/31/2020
 ms.author: apimpm
-ms.openlocfilehash: d33c5f75234ad7165a9062ecc3bb2a00d502f8c3
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 2870a654faad4e760a9d022488cb2c4c406cbeab
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74075285"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82203137"
 ---
 # <a name="provision-a-self-hosted-gateway-in-azure-api-management"></a>Предоставление автономного шлюза в службе управления API Azure
 
 Подготовка ресурса шлюза в экземпляре службы управления API Azure является необходимым условием для развертывания самостоятельно размещенного шлюза. В этой статье рассматриваются действия по подготовке ресурса шлюза в оснастке управления API.
 
-> [!NOTE]
-> Функция самостоятельно размещенного шлюза доступна в предварительной версии. В течение предварительной версии шлюз с самостоятельным размещением доступен только на уровнях Developer и Premium без дополнительной платы. Уровень разработчика ограничен одним развертыванием с помощью самостоятельного размещения шлюза.
+## <a name="prerequisites"></a>Предварительные условия
 
-## <a name="prerequisites"></a>предварительным требованиям
-
-Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
+Выполните следующие действия в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md) .
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
@@ -42,18 +39,15 @@ ms.locfileid: "74075285"
 
 4. При необходимости введите **Описание** ресурса шлюза.
 5. При необходимости выберите **+** в разделе **интерфейсы API** , чтобы связать один или несколько API с этим ресурсом шлюза.
-> [!TIP]
-> Вы можете связать и удалить API из шлюза на вкладке **Параметры** API.
-
 > [!IMPORTANT]
-> По умолчанию ни один из существующих API не будет связан с новым ресурсом шлюза. Поэтому попытки вызвать их через новый шлюз приведут к появлению `404 Resource Not Found` ответов.
+> По умолчанию ни один из существующих API не будет связан с новым ресурсом шлюза. Поэтому попытки вызвать их через новый шлюз приведут к `404 Resource Not Found` ответу.
 
 6. Нажмите кнопку **Добавить**.
 
 Теперь ресурс шлюза был подготовлен в экземпляре управления API. Вы можете перейти к развертыванию шлюза.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
-* Дополнительные сведения о [развертывании автономного шлюза в Kubernetes](api-management-howto-deploy-self-hosted-gateway-to-k8s.md)
-* Дополнительные сведения о [развертывании автономного шлюза в DOCKER](api-management-howto-deploy-self-hosted-gateway-to-docker.md)
+* Дополнительные сведения о [развертывании автономного шлюза в Kubernetes](how-to-deploy-self-hosted-gateway-kubernetes.md)
+* Дополнительные сведения о [развертывании автономного шлюза в DOCKER](how-to-deploy-self-hosted-gateway-docker.md)

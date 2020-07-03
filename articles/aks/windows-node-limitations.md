@@ -1,30 +1,22 @@
 ---
-title: Ограничения для пулов узлов Windows Server в службе Kubernetes Azure (AKS)
+title: Ограничения пулов узлов Windows Server
+titleSuffix: Azure Kubernetes Service
 description: Сведения об известных ограничениях при запуске пулов узлов и рабочих нагрузок приложений Windows Server в службе Kubernetes Azure (AKS)
 services: container-service
-author: mlearned
-ms.service: container-service
 ms.topic: article
-ms.date: 05/31/2019
-ms.author: mlearned
-ms.openlocfilehash: 3dd7399b68388d92d38b0f64c6e816cb94b3f295
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.date: 12/18/2019
+ms.openlocfilehash: 935b049ce5e1951952b4af4e7df9574df764b6e8
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75768577"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82208012"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Текущие ограничения для пулов узлов Windows Server и рабочих нагрузок приложений в службе Kubernetes Azure (AKS)
 
 В службе Azure Kubernetes Service (AKS) можно создать пул узлов, который будет работать под управлением Windows Server в качестве гостевой ОС на узлах. Эти узлы могут запускать собственные приложения контейнеров Windows, например созданные на .NET Framework. Так как в ОС Linux и Windows предусмотрены значительные отличия в области поддержки контейнеров, некоторые распространенные Kubernetes и компоненты, связанные с Pod, в настоящее время недоступны для пулов узлов Windows.
 
-В этой статье описаны некоторые ограничения и основные понятия ОС для узлов Windows Server в AKS. Пулы узлов для Windows Server сейчас доступны в предварительной версии.
-
-> [!IMPORTANT]
-> Функции предварительной версии AKS — это самостоятельная служба. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично покрываются службой поддержки клиентов на основе лучших усилий. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения см. в следующих статьях поддержки:
->
-> * [Политики поддержки AKS][aks-support-policies]
-> * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
+В этой статье описаны некоторые ограничения и основные понятия ОС для узлов Windows Server в AKS.
 
 ## <a name="which-windows-operating-systems-are-supported"></a>Какие операционные системы Windows поддерживаются?
 
@@ -54,9 +46,9 @@ Kubernetes является историческим, ориентированн
 
 Кластеры AKS с пулами узлов Windows должны использовать модель сети Azure CNI (Advanced). Кубенет (базовая) сеть не поддерживается. Дополнительные сведения о различиях в сетевых моделях см. в разделе [Основные понятия сети для приложений в AKS][azure-network-models]. — Для модели сети Azure CNI требуется дополнительное планирование и рекомендации по управлению IP-адресами. Дополнительные сведения о планировании и реализации Azure CNI см. в статье [Настройка сети CNI для Azure в AKS][configure-azure-cni].
 
-## <a name="can-i-change-the-min--of-pods-per-node"></a>Можно ли изменить минимальное число модулей Pod на узел?
+## <a name="can-i-change-the-max--of-pods-per-node"></a>Можно ли изменить максимальное значение. число модулей Pod на узел?
 
-В настоящее время для обеспечения надежности кластеров необходимо установить как минимум 30 модулей.
+Да. Сведения о возможных последствиях и доступных параметрах см. в разделе [Максимальное число модулей][maximum-number-of-pods]Pod.
 
 ## <a name="how-do-patch-my-windows-nodes"></a>Как исправлять узлы Windows?
 
@@ -68,11 +60,11 @@ Kubernetes является историческим, ориентированн
 
 ## <a name="how-do-i-rotate-the-service-principal-for-my-windows-node-pool"></a>Разделы справки поворачивать субъект-службу для пула узлов Windows?
 
-Во время действия предварительной версии пулы узлов Windows не поддерживают смену субъекта-службы в качестве ограничения на предварительную версию. Чтобы обновить субъект-службу, создайте пул узлов Windows и перенесите модули из старого пула в новый. После завершения этого действия удалите пул старых узлов.
+Пулы узлов Windows не поддерживают смену субъекта-службы. Чтобы обновить субъект-службу, создайте пул узлов Windows и перенесите модули из старого пула в новый. После завершения этого действия удалите пул старых узлов.
 
 ## <a name="how-many-node-pools-can-i-create"></a>Сколько пулов узлов можно создать?
 
-Кластер AKS может иметь не более восьми (8) пулов узлов. В этих пулах узлов может быть не более 400 узлов. [Ограничения пула узлов][nodepool-limitations].
+Кластер AKS может иметь не более 10 пулов узлов. В этих пулах узлов может быть не более 1000 узлов. [Ограничения пула узлов][nodepool-limitations].
 
 ## <a name="what-can-i-name-my-windows-node-pools"></a>Как можно присвоить имя пулам узлов Windows?
 
@@ -102,7 +94,7 @@ Azure Dev Spaces в настоящее время доступно только 
 
 Мы работаем над тем, чтобы приложить все необходимые компоненты Windows в AKS, но если у вас возникают пробелы, проект [AKS-Engine][aks-engine] с открытым кодом предоставляет простой и полностью настраиваемый способ запуска Kubernetes в Azure, включая поддержку Windows. Обязательно ознакомьтесь с нашим планом функций, поступающих в [AKSную схему][aks-roadmap].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к работе с контейнерами Windows Server в AKS, [Создайте пул узлов под управлением Windows Server в AKS][windows-node-cli].
 
@@ -122,5 +114,5 @@ Azure Dev Spaces в настоящее время доступно только 
 [aks-faq]: faq.md
 [azure-outbound-traffic]: ../load-balancer/load-balancer-outbound-connections.md#defaultsnat
 [nodepool-limitations]: use-multiple-node-pools.md#limitations
-[preview-support]: support-policies.md#preview-features-or-feature-flags
 [windows-container-compat]: /virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-2019%2Cwindows-10-1909
+[maximum-number-of-pods]: configure-azure-cni.md#maximum-pods-per-node

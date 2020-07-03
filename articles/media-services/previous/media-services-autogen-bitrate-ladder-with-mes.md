@@ -14,15 +14,15 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.openlocfilehash: b7f0b77ba11a0c9c1670ec240caf45fcf61a934d
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74896023"
 ---
 #  <a name="use-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Использование Media Encoder Standard для автоматического создания лестнице скорости  
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В этой статье показано, как использовать Media Encoder Standard (MES) для автоматического создания таблицы скоростей и разрешений (пар "скорость-разрешение") на основе разрешения и скорости входных данных. Созданная автоматически предустановка никогда не превышает разрешение и скорость входных данных. Например, если указаны входные данные с разрешением 720p и скоростью 3 Мбит/с, то разрешение выходных данных не выше 720p, а скорость их запуска ниже 3 Мбит/с.
 
@@ -34,7 +34,7 @@ ms.locfileid: "74896023"
 
 Чтобы кодировать источник видео не только для потоковой передачи, но и для создания MP4-файлов для прогрессивного скачивания, используйте при создании задачи кодирования предустановленный режим "Content Adaptive Multiple Bitrate MP4". При выборе предустановки **Content Adaptive Multiple Bitrate MP4** кодировщик MES применяет ту же логику кодирования, которая описана выше, но в исходящий ресурс будут помещены файлы MP4 с чередованием аудио и видео. Такой MP4-файл (например, версию с самым высоким битрейтом) можно использовать для прогрессивного скачивания.
 
-## <a id="encoding_with_dotnet"></a>Кодирование с помощью пакета SDK служб мультимедиа для .NET
+## <a name="encoding-with-media-services-net-sdk"></a><a id="encoding_with_dotnet"></a>Кодирование с помощью пакета SDK служб мультимедиа для .NET
 
 В следующем примере кода пакет SDK служб мультимедиа используется для выполнения следующих задач.
 
@@ -47,7 +47,7 @@ ms.locfileid: "74896023"
 
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и укажите в файле app.config сведения о подключении, как описано в статье [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример
 
@@ -167,14 +167,14 @@ namespace AdaptiveStreamingMESPresest
 }
 ```
 
-## <a id="output"></a>Выходные данные
+## <a name="output"></a><a id="output"></a>Выходные данные
 
 Этот раздел содержит три примера выходных данных слоев, созданных MES в результате кодирования с предустановкой **Adaptive Streaming**. 
 
 ### <a name="example-1"></a>Пример 1
 При исходной высоте 1080 и частоте кадров 29,970 создается 6 слоев видео.
 
-|Слой|Высота:|Ширина|Скорость (кбит/с)|
+|Уровень|Высота:|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|1080|1920|6780|
 |2|720|1280|3520|
@@ -186,7 +186,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-2"></a>Пример 2
 При исходной высоте 720 и частоте кадров 23,970 создается 5 слоев видео.
 
-|Слой|Высота:|Ширина|Скорость (кбит/с)|
+|Уровень|Высота:|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|720|1280|2940|
 |2|540|960|1850|
@@ -197,7 +197,7 @@ namespace AdaptiveStreamingMESPresest
 ### <a name="example-3"></a>Пример 3
 При исходной высоте 360 и частоте кадров 29,970 создается 3 слоя видео.
 
-|Слой|Высота:|Ширина|Скорость (кбит/с)|
+|Уровень|Высота:|Ширина|Скорость (кбит/с)|
 |---|---|---|---|
 |1|360|640|700|
 |2|270|480|440|
@@ -205,9 +205,9 @@ namespace AdaptiveStreamingMESPresest
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также:
 [Обзор кодирования с помощью служб мультимедиа](media-services-encode-asset.md)
 

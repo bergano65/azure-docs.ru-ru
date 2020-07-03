@@ -3,12 +3,12 @@ title: Собирайте & анализа журналов ресурсов
 description: Записывайте и анализируйте события журнала ресурсов для реестра контейнеров Azure, такие как проверка подлинности, отправка образа и извлечение образа.
 ms.topic: article
 ms.date: 01/03/2020
-ms.openlocfilehash: 72d03149cd24636ba2086dfaaff0dbba16d30f1e
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 00f9468721126bd166051df47cec1596356e9b54
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75748001"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79409649"
 ---
 # <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>Журналы реестра контейнеров Azure для диагностической оценки и аудита
 
@@ -20,11 +20,7 @@ ms.locfileid: "75748001"
 
 Сбор данных журнала ресурсов с помощью Azure Monitor может повлечь дополнительные затраты. См. [Azure Monitor цены](https://azure.microsoft.com/pricing/details/monitor/). 
 
-
-> [!IMPORTANT]
-> Эта функция сейчас доступна в предварительной версии, и некоторые [ограничения](#preview-limitations) применяются. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
-
-## <a name="preview-limitations"></a>Ограничения предварительной версии
+## <a name="repository-events"></a>События репозитория
 
 В настоящее время регистрируются следующие события уровня репозитория для образов и других артефактов:
 
@@ -41,7 +37,7 @@ ms.locfileid: "75748001"
 
 * **Контаинеррегистрилогиневентс** — события и состояние проверки подлинности реестра, включая входящий идентификатор и IP-адрес.
 * **Контаинеррегистрирепоситоревентс** — такие операции, как отправка и Извлечение изображений и других артефактов в репозиториях реестра.
-* **Азуреметрикс** - [метрики реестра контейнеров](../azure-monitor/platform/metrics-supported.md#microsoftcontainerregistryregistries) , такие как агрегированные push-уведомления и счетчики Pull.
+* **Азуреметрикс** - [метрики реестра контейнеров](../azure-monitor/platform/metrics-supported.md#microsoftcontainerregistryregistries) , такие как агрегированные push-уведомления и счетчики опрашивающей репликации.
 
 Для операций данные журнала включают:
   * Состояние успеха или сбоя
@@ -109,5 +105,3 @@ ContainerRegistryRepositoryEvents
 * Дополнительные сведения об использовании [log Analytics](../azure-monitor/log-query/get-started-portal.md) и создании [запросов журналов](../azure-monitor/log-query/get-started-queries.md).
 * Сведения о журналах платформы, доступных на разных уровнях Azure, см. в статье [Обзор журналов платформы Azure](../azure-monitor/platform/platform-logs-overview.md) .
 
-<!-- LINKS - External -->
-[terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/

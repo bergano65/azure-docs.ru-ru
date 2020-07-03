@@ -4,21 +4,22 @@ titlesuffix: Azure Virtual Network
 description: Узнайте, как назначить виртуальной машине несколько IP-адресов с помощью интерфейса командной строки Azure.
 services: virtual-network
 documentationcenter: na
-author: KumudD
-manager: twooley
+author: asudbring
+manager: KumudD
 ms.service: virtual-network
+ms.subservice: ip-services
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/17/2016
-ms.author: kumud
-ms.openlocfilehash: b99e5e6809a909184d775c70b56c249c11734cb9
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.author: allensu
+ms.openlocfilehash: cb101095aa95f9d41f7891bc3c18f7e5bfeb59db
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75646614"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82148094"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-cli"></a>Назначение виртуальной машине нескольких IP-адресов с помощью Azure CLI
 
@@ -28,7 +29,7 @@ ms.locfileid: "75646614"
 
 [!INCLUDE [virtual-network-multiple-ip-addresses-scenario.md](../../includes/virtual-network-multiple-ip-addresses-scenario.md)]
 
-## <a name = "create"></a>Создание виртуальной машины с несколькими IP-адресами
+## <a name="create-a-vm-with-multiple-ip-addresses"></a><a name = "create"></a>Создание виртуальной машины с несколькими IP-адресами
 
 Ниже мы пошагово создадим пример виртуальной машины с несколькими IP-адресами, как описано в нашем сценарии. Измените имена переменных в кавычках и типы IP-адресов в соответствии с требованиями своей реализации. 
 
@@ -164,7 +165,7 @@ az vm create \
 
 Добавьте в операционную систему виртуальной машины частные IP-адреса, выполнив шаги, соответствующие вашей операционной системе, которые описаны в разделе [Добавление IP-адресов в операционную систему виртуальной машины](#os-config) этой статьи.
 
-## <a name="add"></a>Добавление IP-адресов в виртуальную машину
+## <a name="add-ip-addresses-to-a-vm"></a><a name="add"></a>Добавление IP-адресов в виртуальную машину
 
 Выполнив следующие шаги, вы сможете назначить дополнительные частные или общедоступные IP-адреса существующему сетевому интерфейсу Azure. Примеры созданы на основе [сценария](#scenario), описанного в этой статье.
 
@@ -176,7 +177,7 @@ az vm create \
     
     Чтобы добавить к сетевой карте частный IP-адрес, создайте конфигурацию IP-адресов с помощью следующей команды. Статический IP-адрес должен быть свободен в используемой подсети.
 
-    ```bash
+    ```azurecli
     az network nic ip-config create \
     --resource-group myResourceGroup \
     --nic-name myNic1 \
@@ -196,7 +197,7 @@ az vm create \
     
         Чтобы добавить общедоступный IP-адрес в новую IP-конфигурацию, необходимо добавить и частный IP-адрес, так как все IP-конфигурации должны иметь частный IP-адрес. В конфигурацию можно добавить имеющийся ресурс общедоступного IP-адреса или создать новый. Чтобы создать ресурс, выполните следующую команду:
     
-        ```bash
+        ```azurecli
         az network public-ip create \
         --resource-group myResourceGroup \
         --location westcentralus \
@@ -206,7 +207,7 @@ az vm create \
 
         Чтобы создать новую конфигурацию IP с частным статическим IP-адресом и связанным ресурсом общедоступного IP-адреса *myPublicIP3*, введите следующую команду:
 
-        ```bash
+        ```azurecli
         az network nic ip-config create \
         --resource-group myResourceGroup \
         --nic-name myNic1 \
@@ -217,7 +218,7 @@ az vm create \
 
     - **Связывание ресурса с имеющейся IP-конфигурацией** Ресурс общедоступного IP-адреса может быть связан только с IP-конфигурацией, у которой еще нет такого ресурса. Чтобы определить, связан ли с конкретной IP-конфигурацией какой-либо общедоступный IP-адрес, выполните следующую команду:
 
-        ```bash
+        ```azurecli
         az network nic ip-config list \
         --resource-group myResourceGroup \
         --nic-name myNic1 \
@@ -234,7 +235,7 @@ az vm create \
 
         Столбец **PublicIpAddressId** для конфигурации *IpConfig-3* в выходных данных пуст. Это означает, что в настоящее время с этой конфигурацией не связан никакой общедоступный IP-адрес. Вы можете добавить к конфигурации IpConfig-3 имеющийся ресурс общедоступного IP-адреса или создать новый ресурс, выполнив следующую команду:
 
-        ```bash
+        ```azurecli
         az network public-ip create \
         --resource-group  myResourceGroup
         --location westcentralus \
@@ -245,7 +246,7 @@ az vm create \
     
         Чтобы связать ресурс общедоступного IP-адреса с имеющейся IP-конфигурацией с именем *IPConfig-3*, выполните следующую команду:
     
-        ```bash
+        ```azurecli
         az network nic ip-config update \
         --resource-group myResourceGroup \
         --nic-name myNic1 \
@@ -255,7 +256,7 @@ az vm create \
 
 3. Просмотрите идентификаторы ресурсов частных и общедоступных IP-адресов, назначенных сетевой карте. Для этого введите следующую команду.
 
-    ```bash
+    ```azurecli
     az network nic ip-config list \
     --resource-group myResourceGroup \
     --nic-name myNic1 \

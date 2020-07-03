@@ -19,6 +19,8 @@
           href: ./hdinsight-administer-use-powershell.md
         - name: Создание кластеров с помощью модулей runbook
           href: ./manage-clusters-runbooks.md
+        - name: Уведомления по электронной почте Apache Ambari
+          href: ./apache-ambari-email.md
         - name: 'Создание конвейера извлечения, преобразования и загрузки'
           href: ./hdinsight-sales-insights-etl.md
     - name: Примеры
@@ -35,8 +37,12 @@
           href: 'https://azure.microsoft.com/resources/samples/?service=hdinsight'
     - name: Основные понятия
       items:
-        - name: Компоненты Apache Hadoop в HDInsight
+        - name: Компоненты Apache в HDInsight
           href: ./hdinsight-component-versioning.md
+        - name: Корпоративный пакет безопасности
+          href: ./enterprise-security-package.md
+        - name: Заметки о выпуске Hortonworks
+          href: ./hortonworks-release-notes.md
         - name: Компоненты высокого уровня доступности
           href: ./hdinsight-high-availability-components.md
         - name: Apache Ambari в Azure HDInsight
@@ -53,14 +59,23 @@
           href: ./hdinsight-selecting-vm-size.md
         - name: Планирование ресурсов кластера
           href: ./hdinsight-capacity-planning.md
+        - name: Запрос на увеличение квоты ядра ЦП
+          href: ./quota-increase-request.md
         - name: Рекомендации по управлению кластерами
           href: ./cluster-management-best-practices.md
         - name: Доступность и надежность
           href: ./hdinsight-high-availability-linux.md
-        - name: Сравнение вариантов хранилищ
-          href: ./hdinsight-hadoop-compare-storage-options.md
         - name: Основные сведения об управляемых удостоверениях
           href: ./hdinsight-managed-identities.md
+        - name: Сравнение вариантов хранилищ
+          href: hdinsight-hadoop-compare-storage-options.md
+          items:
+            - name: Обзор службы хранилища Azure
+              href: overview-azure-storage.md
+            - name: Обзор Azure Data Lake Storage 1-го поколения
+              href: overview-data-lake-storage-gen1.md
+            - name: Обзор Azure Data Lake Storage 2-го поколения
+              href: overview-data-lake-storage-gen2.md
     - name: Практическое руководство
       items:
         - name: Создание кластеров
@@ -69,7 +84,7 @@
               href: ./hdinsight-hadoop-create-linux-clusters-portal.md
             - name: "Создание кластеров\_— шаблоны"
               href: ./hdinsight-hadoop-create-linux-clusters-arm-templates.md
-            - name: "Создание кластеров\_— CLI"
+            - name: Создание кластеров с помощью Azure CLI
               href: ./hdinsight-hadoop-create-linux-clusters-azure-cli.md
             - name: "Создание кластеров\_— PowerShell"
               href: ./hdinsight-hadoop-create-linux-clusters-azure-powershell.md
@@ -100,6 +115,8 @@
               href: hdinsight-hadoop-customize-cluster-linux.md
             - name: Разработка действий скрипта
               href: hdinsight-hadoop-script-actions-linux.md
+            - name: Поддержка программного обеспечения с открытым кодом
+              href: open-source-software.md
             - name: Добавление библиотек Apache Hive
               href: hdinsight-hadoop-add-hive-libraries.md
             - name: Использование Hue
@@ -118,6 +135,8 @@
               href: hdinsight-hadoop-linux-use-ssh-unix.md
             - name: Использование туннелирования SSH
               href: hdinsight-linux-ambari-ssh-tunnel.md
+            - name: Использование SCP с HDInsight
+              href: ./use-scp.md
             - name: Ограничение доступа к данным
               href: hdinsight-storage-sharedaccesssignature-permissions.md
             - name: Предоставление пользователям доступа к представлениям Apache Ambari
@@ -140,8 +159,16 @@
           items:
             - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
               href: ./hdinsight-hadoop-manage-ambari.md
-            - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
-              href: ./hdinsight-changing-configs-via-ambari.md
+            - name: Оптимизация с помощью Apache Ambari
+              items:
+                - name: Оптимизация кластеров
+                  href: ./hdinsight-changing-configs-via-ambari.md
+                - name: Оптимизация Apache HBase
+                  href: ./optimize-hbase-ambari.md
+                - name: Оптимизация Apache Hive
+                  href: ./optimize-hive-ambari.md
+                - name: Optimize Apache Pig
+                  href: ./optimize-pig-ambari.md
             - name: Использование REST API Apache Ambari
               href: ./hdinsight-hadoop-manage-ambari-rest-api.md
             - name: Удаление кластера
@@ -206,8 +233,20 @@
               href: ./hdinsight-hadoop-oms-log-analytics-use-queries.md
             - name: Мониторинг производительности кластера
               href: ./hdinsight-key-scenarios-to-monitor.md
-            - name: Мониторинг доступности кластера с помощью журналов Ambari и Azure Monitor
+            - name: "Доступность кластера\_— Apache Ambari"
               href: ./hdinsight-cluster-availability.md
+            - name: "Доступность кластера\_— журналы Azure Monitor"
+              href: ./cluster-availability-monitor-logs.md
+        - name: Диагностика
+          items:
+            - name: 'Устранение неполадок, связанных с действиями скрипта'
+              href: ./troubleshoot-script-action.md
+            - name: Сбои при создании ресурсов
+              href: ./troubleshoot-resource-creation-fails.md
+            - name: Устранение неполадок с Apache Oozie
+              href: ./troubleshoot-oozie.md
+            - name: Анализ и устранение ошибок WebHCat
+              href: ./hdinsight-hadoop-templeton-webhcat-debug-errors.md
     - name: Справочник
       items:
         - name: Azure PowerShell
@@ -250,10 +289,8 @@
           href: ./hdinsight-hadoop-access-yarn-app-logs-linux.md
         - name: Включение дампов кучи для служб Apache Hadoop
           href: ./hdinsight-hadoop-collect-debug-heap-dump-linux.md
-        - name: Анализ и устранение ошибок WebHCat
-          href: ./hdinsight-hadoop-templeton-webhcat-debug-errors.md
-        - name: Получение помощи на форуме
-          href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight'
+        - name: Получение справки на странице вопросов (раздел вопросов и ответов на сайте Майкрософт)
+          href: 'https://docs.microsoft.com/answers/topics/azure-hdinsight.html'
         - name: Калькулятор цен
           href: 'https://azure.microsoft.com/pricing/calculator/'
         - name: Средства Windows для HDInsight
@@ -272,7 +309,8 @@
           href: ./spark/apache-spark-jupyter-spark-sql-use-powershell.md
         - name: "Создание кластера Apache Spark\_— Azure CLI"
           href: ./spark/apache-spark-create-cluster-cli.md
-        - name: "Создание кластера Apache Spark\_— шаблон"
+        - name: "Создание кластера Apache Spark\_— шаблон Resource Manager"
+          displayName: Resource Manager
           href: ./spark/apache-spark-jupyter-spark-sql.md
     - name: Учебники
       items:
@@ -292,8 +330,20 @@
           href: ./spark/spark-best-practices.md
         - name: Настройка параметров Apache Spark
           href: ./spark/apache-spark-settings.md
-        - name: Оптимизация заданий Apache Spark
-          href: ./spark/apache-spark-perf.md
+        - name: Optimization
+          items:
+            - name: Оптимизация заданий Apache Spark
+              href: ./spark/apache-spark-perf.md
+            - name: Оптимизация обработки данных
+              href: ./spark/optimize-data-processing.md
+            - name: Оптимизация хранения данных
+              href: ./spark/optimize-data-storage.md
+            - name: Оптимизация использования памяти
+              href: ./spark/optimize-memory-usage.md
+            - name: Оптимизация конфигурации кластера
+              href: ./spark/optimize-cluster-configuration.md
+        - name: Миграция на Spark 2.3 или 2.4
+          href: ./spark/migrate-versions.md
     - name: Практическое руководство
       items:
         - name: Использование средств
@@ -416,8 +466,8 @@
       items:
         - name: "Создание кластера Apache Hadoop\_— портал"
           href: ./hadoop/apache-hadoop-linux-create-cluster-get-started-portal.md
-        - name: "Создание кластера Apache Hadoop\_— шаблон"
-          displayName: 'resource manager template, arm template, resource manager group'
+        - name: "Создание кластера Apache Hadoop\_— шаблон Resource Manager"
+          displayName: Resource Manager
           href: ./hadoop/apache-hadoop-linux-tutorial-get-started.md
     - name: Учебники
       items:
@@ -431,6 +481,8 @@
           items:
             - name: Использование песочницы Apache Hadoop
               href: ./hadoop/apache-hadoop-emulator-get-started.md
+            - name: Использование Apache Pig
+              href: use-pig.md
         - name: Разработка
           items:
             - name: Использование MapReduce с Apache Hadoop
@@ -477,10 +529,10 @@
                   href: ./hadoop/apache-hadoop-mahout-linux-mac.md
                 - name: Расширенная аналитика для HDInsight
                   href: ./hadoop/apache-hadoop-deep-dive-advanced-analytics.md
-        - name: Управление
-          items:
-            - name: Использование пустых граничных узлов
-              href: ./hdinsight-apps-use-edge-node.md
+            - name: Управление
+              items:
+                - name: Использование пустых граничных узлов
+                  href: ./hdinsight-apps-use-edge-node.md
         - name: Диагностика
           items:
             - name: Распространенные проблемы
@@ -529,6 +581,8 @@
               href: ./hadoop/troubleshoot-lost-key-vault-access.md
             - name: Исключение хранилища WASBS
               href: ./hadoop/troubleshoot-wasbs-storage-exception.md
+            - name: Управление дисковым пространством
+              href: ./hadoop/troubleshoot-disk-space.md
 - name: Apache Kafka
   items:
     - name: Обзор
@@ -541,11 +595,13 @@
           href: ./kafka/apache-kafka-get-started.md
         - name: "Создание кластера Apache Kafka\_— PowerShell"
           href: ./kafka/apache-kafka-quickstart-powershell.md
-        - name: "Создание кластера Apache Kafka\_— шаблон"
-          displayName: 'resource manager template, arm template, resource manager group'
+        - name: "Создание кластера Apache Kafka\_— шаблон Resource Manager"
+          displayName: Resource Manager
           href: ./kafka/apache-kafka-quickstart-resource-manager-template.md
     - name: Учебники
       items:
+        - name: "Создание кластера Apache Kafka\_— Azure CLI"
+          href: ./kafka/tutorial-cli-rest-proxy.md
         - name: Использование API объекта-производителя и объекта-получателя Apache Kafka
           href: ./kafka/apache-kafka-producer-consumer-api.md
         - name: Разработка приложения с помощью API потоков Apache Kafka
@@ -590,8 +646,6 @@
               href: ./kafka/apache-kafka-mirroring.md
             - name: Анализ журналов Apache Kafka
               href: ./kafka/apache-kafka-log-analytics-operations-management.md
-            - name: Создание собственных ключей
-              href: ./kafka/apache-kafka-byok.md
             - name: Шифрование и аутентификация SSL
               href: ./kafka/apache-kafka-ssl-encryption-authentication.md
         - name: Диагностика
@@ -606,6 +660,9 @@
           href: ./hbase/apache-hbase-overview.md
     - name: Краткие руководства
       items:
+        - name: "Создание кластера Apache HBase\_— шаблон Resource Manager"
+          displayName: Resource Manager
+          href: ./hbase/quickstart-resource-manager-template.md
         - name: "Запросы к Apache HBase\_— Apache Phoenix"
           href: ./hbase/apache-hbase-query-with-phoenix.md
         - name: "Запросы к Apache HBase\_— оболочка HBase"
@@ -670,6 +727,8 @@
               href: ./hbase/hbase-troubleshoot-timeouts-hbase-hbck.md
             - name: Устранение неполадок с Apache HBase
               href: ./hbase/apache-troubleshoot-hbase.md
+            - name: "REST API для отправки запросов в Apache\_HBase"
+              href: ./hbase/troubleshoot-rest-api.md
 - name: Интерактивный запрос
   items:
     - name: Обзор
@@ -678,12 +737,21 @@
           href: ./interactive-query/apache-interactive-query-get-started.md
     - name: Краткие руководства
       items:
+        - name: "Создание кластера Interactive Query\_— шаблон Resource Manager"
+          displayName: Resource Manager
+          href: ./interactive-query/quickstart-resource-manager-template.md
         - name: "Выполнение запросов Apache Hive\_— Apache Zeppelin"
           href: ./interactive-query/hdinsight-connect-hive-zeppelin.md
     - name: Учебники
       items:
         - name: Анализ данных с помощью интерактивного запроса
           href: ./interactive-query/interactive-query-tutorial-analyze-flight-data.md
+    - name: Основные понятия
+      items:
+        - name: Рекомендации по использованию шлюза
+          href: ./interactive-query/gateway-best-practices.md
+        - name: Рекомендации по выбору размера
+          href: ./interactive-query/sizing-guidelines.md
     - name: Практическое руководство
       items:
         - name: Разработка
@@ -694,8 +762,12 @@
               href: ./hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md
             - name: Использование Python с Apache Hive и Apache Pig
               href: ./hadoop/python-udf-hdinsight.md
-            - name: Apache Hive с Apache Spark
+            - name: Интеграция HWC с Apache Spark и Apache Hive
               href: ./interactive-query/apache-hive-warehouse-connector.md
+            - name: Операции HWC и Apache Spark
+              href: ./interactive-query/apache-hive-warehouse-connector-operations.md
+            - name: Интеграция HWC с Apache Zeppelin
+              href: ./interactive-query/apache-hive-warehouse-connector-zeppelin.md
             - name: Apache Hive с Hadoop
               href: ./hadoop/hdinsight-use-hive.md
             - name: Использование представления Apache Hive
@@ -728,6 +800,8 @@
               href: ./hdinsight-hadoop-hive-out-of-memory-error-oom.md
             - name: Зависание приложения Apache Tez
               href: ./interactive-query/interactive-query-troubleshoot-tez-hangs.md
+            - name: Рекомендации по выбору размера LLAP Apache Hive
+              href: ./interactive-query/hive-llap-sizing-guide.md
             - name: Производительность запросов в LLAP Apache Hive
               href: ./interactive-query/interactive-query-troubleshoot-query-performance.md
             - name: Медленная работа средства редукции
@@ -750,6 +824,8 @@
               href: ./interactive-query/interactive-query-troubleshoot-zookeeperhiveclientexception-hiveserver-configs.md
             - name: Устранение неполадок с Apache Hive
               href: ./hdinsight-troubleshoot-hive.md
+            - name: Журналы Apache Hive занимают все дисковое пространство на головном узле
+              href: ./interactive-query/interactive-query-troubleshoot-hive-logs-diskspace-full-headnodes.md
 - name: Службы машинного обучения
   items:
     - name: Обзор
@@ -758,6 +834,9 @@
           href: ./r-server/r-server-overview.md
     - name: Краткие руководства
       items:
+        - name: "Создание кластера служб ML\_— шаблон Resource Manager"
+          displayName: Resource Manager
+          href: ./r-server/quickstart-resource-manager-template.md
         - name: Пример задания. RStudio Server
           href: ./r-server/machine-learning-services-quickstart-job-rstudio.md
         - name: Пример задания. Консоль R
@@ -798,6 +877,8 @@
       items:
         - name: Использование Apache Storm для записи в хранилище
           href: ./storm/apache-storm-write-data-lake-store.md
+        - name: Apache Kafka и Apache Storm (Java)
+          href: ./hdinsight-apache-storm-with-kafka.md
     - name: Практическое руководство
       items:
         - name: Миграция из Storm в Spark
@@ -818,10 +899,6 @@
                   href: ./storm/apache-storm-example-topology.md
             - name: Конвейеры потоковой передачи
               items:
-                - name: Apache Kafka и Apache Storm (Java)
-                  href: ./hdinsight-apache-storm-with-kafka.md
-                - name: 'Концентратор событий, служба хранилища и Data Lake Storage (Java)'
-                  href: 'https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/'
                 - name: 'Концентратор событий и Apache Storm (C# и Java)'
                   href: ./storm/apache-storm-develop-csharp-event-hub-topology.md
         - name: Управление
@@ -840,8 +917,6 @@
           href: ./domain-joined/hdinsight-security-overview.md
     - name: Учебники
       items:
-        - name: Ограничение исходящего трафика с помощью брандмауэра
-          href: ./hdinsight-restrict-outbound-traffic.md
         - name: Apache HBase RBAC и Apache Ranger
           href: ./domain-joined/apache-domain-joined-run-hbase.md
         - name: Использование Apache Hive RBAC и Apache Ranger
@@ -852,18 +927,28 @@
           href: ./domain-joined/hdinsight-use-oozie-domain-joined-clusters.md
     - name: Основные понятия
       items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
+        - name: Общие рекомендации по корпоративной безопасности
+          href: ./domain-joined/general-guidelines.md
         - name: План для кластеров ESP
           href: ./domain-joined/apache-domain-joined-architecture.md
         - name: Архитектура виртуальной сети HDInsight
           href: ./hdinsight-virtual-network-architecture.md
+        - name: Протокол TLS
+          href: ./transport-layer-security.md
         - name: Планирование виртуальных сетей для HDInsight
           href: ./hdinsight-plan-virtual-network-deployment.md
+        - name: Управление сетевым трафиком
+          href: ./control-network-traffic.md
         - name: Необходимые IP-адреса для групп безопасности сети и определяемых пользователем маршрутов
           href: ./hdinsight-management-ip-addresses.md
         - name: Теги службы для Брандмауэра Azure
           href: ./hdinsight-service-tags.md
         - name: Шифрование управляемых клиентом ключей
           href: ./disk-encryption.md
+        - name: Синхронизация по протоколу LDAP в Ranger и Apache Ambari
+          href: ./domain-joined/ldap-sync.md
     - name: Практическое руководство
       items:
         - name: Управление учетными данными с помощью брокера удостоверений
@@ -880,8 +965,14 @@
           href: ./hdinsight-sync-aad-users-to-cluster.md
         - name: Управление кластерами с помощью системы корпоративной безопасности
           href: ./domain-joined/apache-domain-joined-manage.md
+        - name: Управление доступом по SSH
+          href: ./domain-joined/ssh-domain-accounts.md
         - name: Защита данных
           href: ./hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
+        - name: Ограничение исходящего трафика с помощью брандмауэра
+          href: ./hdinsight-restrict-outbound-traffic.md
+        - name: Настройка сетевого виртуального устройства
+          href: ./network-virtual-appliance.md
         - name: Диагностика
           items:
             - name: Проблемы с аутентификацией ESP

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 7bc637b5719da3c5f5e5607436aa7da0721f5a9e
-ms.sourcegitcommit: a100e3d8b0697768e15cbec11242e3f4b0e156d3
+ms.openlocfilehash: fcc7c5b8fa182cace6e3dae0b1cae4cd41c5dcb9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75680936"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81532601"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -29,7 +29,7 @@ ms.locfileid: "75680936"
 
     ![Выберите свое приложение.](media/app-service-continuous-deployment/select-your-app.png)
 
-3. Выберите **центр развертывания** > **панель мониторинга** > **FTP** .
+3. Выберите**панель мониторинга** > **FTP** >  **центра развертывания**.
 
     ![Откройте панель мониторинга FTP](./media/app-service-deploy-ftp/open-dashboard.png)
 
@@ -52,7 +52,7 @@ ms.locfileid: "75680936"
 ## <a name="deploy-files-to-azure"></a>Развертывание файлов в Azure
 
 1. Подключитесь к приложению из клиента FTP (например, [Visual Studio](https://www.visualstudio.com/vs/community/), [Cyberduck](https://cyberduck.io/) или [WinSCP](https://winscp.net/index.php)), используя полученные сведения.
-2. Скопируйте файлы и соответствующую им структуру каталогов в Azure в каталог [ **/site/wwwroot**](https://github.com/projectkudu/kudu/wiki/File-structure-on-azure) (или в каталог веб-заданий **/site/wwwroot/App_Data/Jobs/** ).
+2. Скопируйте файлы и соответствующую им структуру каталогов в Azure в каталог [**/site/wwwroot**](https://github.com/projectkudu/kudu/wiki/File-structure-on-azure) (или в каталог веб-заданий **/site/wwwroot/App_Data/Jobs/**).
 3. Перейдите по URL-адресу приложения, чтобы убедиться, что приложение работает правильно. 
 
 > [!NOTE] 
@@ -67,9 +67,9 @@ ms.locfileid: "75680936"
 
 ## <a name="enforce-ftps"></a>Принудительное применение FTPS
 
-Для повышения безопасности доступ к FTP следует разрешать только по протоколу SSL. Вы также можете отключить и FTP, и FTPS, если развертывание FTP вам не нужно.
+Для повышения безопасности следует разрешить только FTP через TLS/SSL. Вы также можете отключить и FTP, и FTPS, если развертывание FTP вам не нужно.
 
-На странице ресурсов приложения в [портал Azure](https://portal.azure.com)выберите **Configuration** > **Общие параметры** в левой области навигации.
+На странице ресурсов приложения в [портал Azure](https://portal.azure.com)выберите **Конфигурация** > **Общие параметры** в левой области навигации.
 
 Чтобы отключить незашифрованный FTP, выберите **FTPS только** в **состоянии FTP**. Чтобы полностью отключить протоколы FTP и FTPS, выберите значение **отключено**. По завершении щелкните **Сохранить**. Если используется **только FTPS**, необходимо принудительно включить TLS 1,2 или более поздней версии, перейдя в колонку **параметров TLS/SSL** веб-приложения. Протоколы TLS 1.0 и 1.1 не поддерживаются для параметра **Только FTPS**.
 
@@ -108,7 +108,7 @@ ms.locfileid: "75680936"
 ### <a name="how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode"></a>Как применить пассивный режим для подключения к FTP в Службе приложений Azure?
 Служба приложений Azure поддерживает подключение как в активном, так и в пассивном режимах. Пассивный режим является предпочтительным, так как компьютеры развертывания обычно защищены брандмауэром (встроенным в операционную систему или развернутым отдельно в домашней или корпоративной сети). См. также [пример из документации по WinSCP](https://winscp.net/docs/ui_login_connection). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы изучить более сложные сценарии развертывания, ознакомьтесь с [развертыванием в Azure с помощью Git](deploy-local-git.md). Развертывание в Azure на основе Git обеспечивает систему управления версиями, восстановление пакета, MSBuild и многое другое.
 

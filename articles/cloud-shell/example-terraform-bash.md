@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: tarcher
-ms.openlocfilehash: f5939251729905d349b79a94411cf87e3873b279
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: 8bacadd8941131f608411e61cc15c120c1b2bc60
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742067"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79458160"
 ---
 # <a name="deploy-with-terraform-from-bash-in-azure-cloud-shell"></a>Развертывание с помощью Terraform и Bash в Azure Cloud Shell
-В этой статье описывается создание группы ресурсов с помощью [поставщика Terraform AzureRM](https://www.terraform.io/docs/providers/azurerm/index.html). 
+В этой статье описывается создание группы ресурсов с помощью [поставщика Terraform AzureRM](https://www.terraform.io/docs/providers/azurerm/index.html).
 
-[Hashicorp Terraform](https://www.terraform.io/) — это средство с открытым кодом, которое кодифицирует API в декларативные файлы конфигурации, которые участники команды могут совместно использовать для редактирования, просмотра и управления версиями. Поставщик Microsoft AzureRM позволяет взаимодействовать с ресурсами, поддерживаемыми Azure Resource Manager через AzureRM API. 
+[Hashicorp Terraform](https://www.terraform.io/) — это средство с открытым кодом, которое кодифицирует API в декларативные файлы конфигурации, которые участники команды могут совместно использовать для редактирования, просмотра и управления версиями. Поставщик Microsoft AzureRM позволяет взаимодействовать с ресурсами, поддерживаемыми Azure Resource Manager через AzureRM API.
 
 ## <a name="automatic-authentication"></a>Автоматическая проверка подлинности
 Средство Terraform установлено в Bash в Cloud Shell по умолчанию. Кроме того, Cloud Shell автоматически выполняет проверку подлинности вашей стандартной подписки Azure CLI для развертывания ресурсов с помощью модулей Terraform Azure.
@@ -126,7 +126,7 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
-[Команда terraform plan](https://www.terraform.io/docs/commands/plan.html) позволяет создать план выполнения. Terraform выполняет обновление, если это не отключено явным образом, а затем определяет, какие действия необходимы для достижения желаемого состояния, указанного в файлах конфигурации. План можно сохранить с помощью команды -out. Затем он предоставляется для применения Terraform, чтобы убедиться, что выполняются только заранее запланированные действия.
+Команда [terraform plan](https://www.terraform.io/docs/commands/plan.html) создает план выполнения. Terraform выполняет обновление, если это не отключено явным образом, а затем определяет, какие действия необходимы для достижения желаемого состояния, указанного в файлах конфигурации. План можно сохранить с помощью команды -out. Затем он предоставляется для применения Terraform, чтобы убедиться, что выполняются только заранее запланированные действия.
 
 ### <a name="terraform-apply"></a>Применение Terraform
 Подготовьте ресурсы Azure с помощью `terraform apply`.
@@ -147,7 +147,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ### <a name="verify-deployment-with-azure-cli"></a>Проверка развертывания с помощью Azure CLI
 Выполните `az group show -n myRgName`, чтобы проверить, что ресурс был успешно подготовлен.
 
-```azcliinteractive
+```azurecli-interactive
 az group show -n myRgName
 ```
 
@@ -187,6 +187,6 @@ Destroy complete! Resources: 1 destroyed.
 
 Ресурс Azure успешно создан с помощью Terraform. Ознакомьтесь со следующими действиями, чтобы продолжить изучение Cloud Shell.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 [Microsoft AzureRM Provider](https://www.terraform.io/docs/providers/azurerm/#) (Поставщик Microsoft AzureRM)<br>
 [Краткое руководство по использованию Bash в Azure Cloud Shell](quickstart.md)

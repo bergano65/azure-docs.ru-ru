@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2017
-ms.author: barclayn
-ms.openlocfilehash: 5635a9e1403731eabc20a04be880fd0aeb24d729
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.author: terrylan
+ms.openlocfilehash: fc5899fe5aca4bbaa9250cf41b240816e2cbedb0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727335"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80548586"
 ---
 # <a name="how-to-log-a-security-event-support-ticket"></a>Регистрация запроса о событии, связанном с безопасностью, в службу поддержки
 
@@ -28,7 +28,7 @@ ms.locfileid: "68727335"
 
     ![Тип и определение события](./media/event-support-ticket/chart.png)
 
-3. Выбрав тип и категорию проблемы, нажмите кнопку **Start request** (Начать запрос). Укажите приведенную ниже информацию, чтобы помочь нам лучше понять проблему.
+3. Выбрав тип проблемы и категорию, нажмите кнопку "**запустить запрос**". Укажите приведенную ниже информацию, чтобы помочь нам лучше понять проблему.
 
     i. В чем заключается проблема и (или) уязвимость?
 

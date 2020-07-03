@@ -1,19 +1,19 @@
 ---
-title: Создание кэша HPC для Azure
-description: Создание экземпляра кэша Azure HPC
+title: Создание Azure HPC Cache
+description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: rohogue
 ms.openlocfilehash: aaa939051a1aeafdb0650119772fc7214506aa8d
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73582180"
 ---
-# <a name="plan-the-aggregated-namespace"></a>Планирование агрегированного пространства имен
+# <a name="plan-the-aggregated-namespace"></a>Проектирование агрегированного пространства имен
 
 Кэш Azure HPC позволяет клиентам получать доступ к различным системам хранения через виртуальное пространство имен, которое скрывает сведения о серверной системе хранения данных.
 
@@ -57,7 +57,7 @@ ms.locfileid: "73582180"
 | *IP-адрес или имя узла* | /голдлине/темплатес  | acme2017/sku798   | /templates/sku798 |
 | *IP-адрес или имя узла* | /голдлине/темплатес  | acme2017/sku980   | /templates/sku980 |
 
-Клиентское приложение может подключать кэш и легко обращаться к объединенным путям к файлам пространства имен ``/source``, ``/templates/sku798`` и ``/templates/sku980``.
+Клиентское приложение может подключить кэш и легко получить доступ к объединенным путям к ``/source``файлам пространства ``/templates/sku798``имен, ``/templates/sku980``и.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

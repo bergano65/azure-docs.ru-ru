@@ -3,7 +3,7 @@ title: Что такое сеть доставки содержимого (CDN)?
 description: Узнайте, что собой представляет сеть доставки содержимого (CDN) Azure и как ее использовать для доставки больших объемов содержимого.
 services: cdn
 documentationcenter: ''
-author: mdgattuso
+author: asudbring
 manager: danielgi
 editor: ''
 ms.assetid: 866e0c30-1f33-43a5-91f0-d22f033b16c6
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.date: 05/09/2018
-ms.author: magattus
+ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 4158df06b4eea175a4225e478325f8f151795850
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.openlocfilehash: 262e5b7bbcbf6c463ef97d5acc72248d37195124
+ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75660636"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "81260459"
 ---
 # <a name="what-is-a-content-delivery-network-on-azure"></a>Что такое сеть доставки содержимого в Azure?
 Сеть доставки содержимого (CDN) является распределенной сетью серверов, которая позволяет эффективно доставлять пользователям веб-содержимое. Сети CDN хранят кэшированное содержимое на пограничных серверах в расположениях точек подключения, находящихся рядом с пользователями. Это позволяет свести задержки к минимуму. 

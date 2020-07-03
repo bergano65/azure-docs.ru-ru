@@ -1,9 +1,10 @@
 - name: Документация по API распознавания говорящего
+  href: Home.md
 - name: Обзор
   items:
     - name: Дополнительные сведения об API распознавания говорящего
       href: Home.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Справочник по API
       href: 'https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797'
@@ -12,7 +13,7 @@
           items:
             - name: Android
               href: 'https://github.com/Microsoft/Cognitive-SpeakerRecognition-Android'
-            - name: ' Windows'
+            - name: Windows
               href: 'https://github.com/Microsoft/Cognitive-SpeakerRecognition-Windows'
 - name: Ресурсы
   items:

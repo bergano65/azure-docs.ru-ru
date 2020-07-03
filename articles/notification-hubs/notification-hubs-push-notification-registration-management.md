@@ -12,18 +12,18 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 12/17/2019
+ms.date: 03/17/2020
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/08/2019
-ms.openlocfilehash: 6ddadcafd4f068f6516039017a3d491095c78e30
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 00de9c803ef796eda8da609a4009e0a8cfcb3664
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75378268"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79455373"
 ---
-# <a name="registration-management"></a>Управление регистрациями
+# <a name="registration-management"></a>Управление регистрацией
 
 В этом разделе описывается регистрация устройств в центрах уведомлений для получения push-уведомлений. Сначала приводится общее описание, затем демонстрируются два основных типа регистрации устройств: регистрация с устройства непосредственно в центре уведомлений и регистрация с помощью серверной части приложения.
 
@@ -33,7 +33,7 @@ ms.locfileid: "75378268"
 
 ### <a name="registrations"></a>Регистрация
 
-Регистрация связывает маркер службы отправки уведомлений платформы (PNS) для устройства с тегами и, возможно, шаблоном. Маркером PNS может быть ChannelURI, маркер устройства или идентификатор регистрации FCM. Теги используются для направления уведомлений в правильный набор дескрипторов устройств. Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](notification-hubs-tags-segment-push-message.md). Шаблоны используются для преобразований в рамках регистрации. Дополнительные сведения см. в статье [Шаблоны](notification-hubs-templates-cross-platform-push-messages.md).
+Регистрация связывает маркер службы отправки уведомлений платформы (PNS) для устройства с тегами и, возможно, шаблоном. Маркером PNS может быть ChannelURI, маркер устройства или идентификатор регистрации FCM. Теги используются для направления уведомлений правильному набору маркеров устройств. Дополнительные сведения см. в разделе [Маршрутизация и выражения тегов](notification-hubs-tags-segment-push-message.md). Шаблоны используются для преобразований в рамках регистрации. Дополнительные сведения см. в статье [Шаблоны](notification-hubs-templates-cross-platform-push-messages.md).
 
 > [!NOTE]
 > Центры уведомлений Azure поддерживают не более 60 тегов для каждого устройства.
@@ -45,7 +45,7 @@ ms.locfileid: "75378268"
 Ниже приведены некоторые ключевые преимущества регистрации через установку.
 
 - Создание или обновление установки является полностью идемпотентной операцией. Поэтому его можно повторять, не заботясь о дублирующихся регистрациях.
-- Модель установки поддерживает специальный формат тегов (`$InstallationId:{INSTALLATION_ID}`), который позволяет отправлять уведомления непосредственно на конкретное устройство. Например, если код приложения задает идентификатор установки `joe93developer` для этого конкретного устройства, разработчик может ориентироваться на это устройство при отправке уведомления тегу `$InstallationId:{joe93developer}`. Это позволяет ориентироваться на конкретное устройство, не требуя дополнительного программирования.
+- Модель установки поддерживает специальный формат тегов (`$InstallationId:{INSTALLATION_ID}`), который позволяет отправлять уведомления непосредственно на конкретное устройство. Например, если код приложения задает идентификатор установки `joe93developer` для этого устройства, разработчик может ориентироваться на это устройство при отправке уведомления в `$InstallationId:{joe93developer}` тег. Это позволяет ориентироваться на конкретное устройство, не требуя дополнительного программирования.
 - Установка также позволяет частично обновлять регистрацию. Частичное обновление установки запрашивается с помощью метода PATCH из [стандарта JSON-Patch](https://tools.ietf.org/html/rfc6902). Это удобно в тех случаях, когда нужно обновить теги в регистрации. Нет необходимости удалять всю регистрацию и заново отправлять все прошлые теги.
 
 Установка может содержать следующие свойства. Полный список свойств установки см. в статье об [установке или перезаписи установки с помощью REST API](/rest/api/notificationhubs/create-overwrite-installation) или в статье [Класс Installation](/dotnet/api/microsoft.azure.notificationhubs.installation).
@@ -119,7 +119,7 @@ ms.locfileid: "75378268"
 Регистрация с устройства — это самый простой метод, но у него есть свои недостатки.
 
 - Клиентское приложение может обновлять свои теги, только когда оно активно. Например, если у пользователя есть два устройства, которые регистрируют теги, связанные со спортивными командами, то когда первое устройство регистрирует дополнительный тег (например Seahawks), второе устройство получит уведомление о теге Seahawks только при следующем запуске приложения на втором устройстве. В целом, если на теги влияют сразу несколько устройств, рекомендуется управлять тегами из серверной части.
-- Так как приложения могут подвергаться атаке злоумышленников, защита регистрации конкретными тегами требует особой осторожности, как описано в разделе "Безопасность на уровне тегов".
+- Так как приложения могут быть взломаны, защита регистрации в конкретных тегах требует дополнительной осторожности, как описано в статье [Безопасность](notification-hubs-push-notification-security.md).
 
 ### <a name="example-code-to-register-with-a-notification-hub-from-a-device-using-an-installation"></a>Пример кода регистрации в центре уведомлений с устройства с помощью установки
 
@@ -170,7 +170,7 @@ var channel = await PushNotificationChannelManager.CreatePushNotificationChannel
 string installationId = null;
 var settings = ApplicationData.Current.LocalSettings.Values;
 
-// If we have not stored an installation id in application data, create and store as application data.
+// If we have not stored an installation ID in application data, create and store as application data.
 if (!settings.ContainsKey("__NHInstallationId"))
 {
     installationId = Guid.NewGuid().ToString();
@@ -212,15 +212,15 @@ else
 // Initialize the Notification Hub
 NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString(listenConnString, hubName);
 
-// The Device id from the PNS
+// The Device ID from the PNS
 var pushChannel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
 
-// If you are registering from the client itself, then store this registration id in device
-// storage. Then when the app starts, you can check if a registration id already exists or not before
+// If you are registering from the client itself, then store this registration ID in device
+// storage. Then when the app starts, you can check if a registration ID already exists or not before
 // creating.
 var settings = ApplicationData.Current.LocalSettings.Values;
 
-// If we have not stored a registration id in application data, store in application data.
+// If we have not stored a registration ID in application data, store in application data.
 if (!settings.ContainsKey("__NHRegistrationId"))
 {
     // make sure there are no existing registrations for this push handle (used for iOS and Android)    
@@ -263,7 +263,7 @@ catch (Microsoft.WindowsAzure.Messaging.RegistrationGoneException e)
 
 Для управления регистрацией из серверной части требуется дополнительный код. Приложение с устройства должно предоставлять обновленный маркер PNS серверной части при каждом запуске приложения (а также теги и шаблоны), а серверная часть должна обновлять этот маркер в центре уведомлений. На следующем рисунке показана схема работы.
 
-![Управление регистрациями](./media/notification-hubs-registration-management/notification-hubs-registering-on-backend.png)
+![Управление регистрацией](./media/notification-hubs-registration-management/notification-hubs-registering-on-backend.png)
 
 Преимуществом управления регистрациями из серверной части является возможность изменения тегов для регистраций даже в том случае, когда соответствующее приложение на устройстве неактивно, а также возможность проверять подлинность клиентского приложения перед добавлением тега в его регистрацию.
 
@@ -317,7 +317,7 @@ public async Task<HttpResponseMessage> Put(DeviceInstallation deviceUpdate)
 
 ### <a name="example-code-to-register-with-a-notification-hub-from-a-device-using-a-registration-id"></a>Пример кода регистрации в центре уведомлений с устройства, использующего идентификатор регистрации
 
-Из серверной части приложения с регистрациями можно выполнять основные операции CRUDS. Пример.
+Из серверной части приложения с регистрациями можно выполнять основные операции CRUDS. Пример:
 
 ```csharp
 var hub = NotificationHubClient.CreateClientFromConnectionString("{connectionString}", "hubName");
@@ -328,7 +328,7 @@ var reg = new WindowsRegistrationDescription(channelUri, tags);
 // Create
 await hub.CreateRegistrationAsync(reg);
 
-// Get by id
+// Get by ID
 var r = await hub.GetRegistrationAsync<RegistrationDescription>("id");
 
 // update

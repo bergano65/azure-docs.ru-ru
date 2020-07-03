@@ -3,20 +3,19 @@ title: Масштабирование кластера службы Azure Kubern
 description: Сведения о том, как масштабировать число узлов в кластере Службы Azure Kubernetes (AKS).
 services: container-service
 author: iainfoulds
-ms.service: container-service
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: iainfou
-ms.openlocfilehash: 719f45aeeb5c7aa7e9b5e597ed461808c9d2b005
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: 55d7a00a0a8c0b655f06810f8bcea7126bb9167f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73472595"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79368423"
 ---
 # <a name="scale-the-node-count-in-an-azure-kubernetes-service-aks-cluster"></a>Масштабирование числа узлов в кластере Службы Azure Kubernetes (AKS)
 
-Если ресурсы требуют изменений приложений, вы можете вручную масштабировать кластер AKS, чтобы запустить другое число узлов. При уменьшении масштаба узлы тщательно [блокируются и][kubernetes-drain] останавливаются, чтобы минимизировать перерывы в работе приложений. При увеличении масштаба AKS ожидает, пока узлы не помечаются `Ready` кластером Kubernetes до планирования модулей массовой загрузки.
+Если ресурсы требуют изменений приложений, вы можете вручную масштабировать кластер AKS, чтобы запустить другое число узлов. При уменьшении масштаба узлы будут тщательно [заблокированы и остановлены][kubernetes-drain], чтобы свести к минимуму время простоя работающих приложений. При увеличении масштаба AKS ожидает, пока узлы не помечаются `Ready` кластером Kubernetes, прежде чем они будут запланированы для них.
 
 ## <a name="scale-the-cluster-nodes"></a>Масштабирование узлов кластера
 
@@ -28,9 +27,7 @@ az aks show --resource-group myResourceGroup --name myAKSCluster --query agentPo
 
 В следующем примере выходных данных *name* равно *nodepool1*.
 
-```console
-$ az aks show --resource-group myResourceGroup --name myAKSCluster --query agentPoolProfiles
-
+```output
 [
   {
     "count": 1,
@@ -72,7 +69,7 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 1
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы вручную масштабируете кластер AKS, чтобы увеличить или уменьшить количество узлов. Вы также можете использовать [Автомасштабирование кластера][cluster-autoscaler] для автоматического масштабирования кластера.
 

@@ -7,12 +7,12 @@ ms.date: 11/22/2019
 ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
-ms.openlocfilehash: 71a714124cecfc4f985d448371042c8aff092a11
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c69aa91596ff203445aa4fa3ccd59001ffe16649
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75463850"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "78197493"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-net"></a>Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для .NET
 
@@ -31,9 +31,9 @@ ms.locfileid: "75463850"
 * Удаление сообщений из очереди
 * Удаление очереди
 
-[Справочная документация по API](/dotnet/api/azure.storage.queues) | [исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Queues) | [пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0) | [примеры](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Queues/samples)
+[Справочная документация по API](/dotnet/api/azure.storage.queues) | [исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/storage/Azure.Storage.Queues) | [пакет (NuGet)](https://www.nuget.org/packages/Azure.Storage.Queues/12.0.0) | [примеры](https://docs.microsoft.com/azure/storage/common/storage-samples-dotnet?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Учетная запись хранения Azure — [создайте такую учетную запись](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).

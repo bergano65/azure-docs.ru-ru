@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: jobreen
 ms.openlocfilehash: 1846b036f12fe7e691021ec0248782cad946d9b7
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75650413"
 ---
 # <a name="azure-custom-providers-resource-onboarding-overview"></a>Обзор адаптации ресурсов настраиваемых поставщиков Azure
@@ -54,7 +54,7 @@ ms.locfileid: "75650413"
 }
 ```
 
-Свойство | Обязательно? | Description
+Свойство | Обязательно? | Описание
 ---|---|---
 name | Да | Имя определения конечной точки. Для адаптации ресурсов имя должно иметь значение "Associations".
 routingType | Да | Определяет тип контракта с конечной точкой. Для адаптации ресурсов допустимыми **раутингтипес** являются "прокси-сервер, кэш, расширение" и "веб-перехватчик, кэш, расширение".
@@ -76,7 +76,7 @@ endpoint | Да | Конечная точка для направления за
 }
 ```
 
-Свойство | Обязательно? | Description
+Свойство | Обязательно? | Описание
 ---|---|---
 targetResourceId | Да | Идентификатор ресурса Microsoft. Кустомпровидерс/Ресаурцепровидерс или Microsoft. Solutions/Applications.
 
@@ -146,7 +146,7 @@ X-MS-CustomProviders-ExtendedResource: /subscriptions/{subscriptionId}/resourceG
 }
 ```
 
-Конечная точка должна отвечать с помощью приложения или JSON `Content-Type` и допустимого текста ответа JSON. Поля, возвращаемые в объекте **свойств** JSON, будут добавлены в ответ на возвращаемый запрос ассоциации.
+Конечная точка должна отвечать с помощью приложения/ `Content-Type` JSON и допустимого текста ответа JSON. Поля, возвращаемые в объекте **свойств** JSON, будут добавлены в ответ на возвращаемый запрос ассоциации.
 
 ## <a name="getting-help"></a>Получение справки
 

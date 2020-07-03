@@ -4,16 +4,16 @@ description: Как диспетчер решений я хочу экспорт
 author: dominicbetts
 ms.author: dobett
 ms.date: 12/09/2019
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: b5c8f7fd1c87ce279a8edd39aacb332b8aef28be
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: f50c7e8dcb33fd2ed95829286aaf815926d9fb3f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023452"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80157647"
 ---
 # <a name="export-your-application"></a>Экспорт приложения
 
@@ -30,7 +30,7 @@ ms.locfileid: "77023452"
 
 Можно создать копию любого приложения без экземпляров устройства, журнала данных устройства и данных пользователя. В копии используется стандартный тарифный план, за который взимается плата. Вы не можете создать приложение, которое использует план бесплатного ценообразования, скопировав приложение.
 
-Выберите **Копировать**. В диалоговом окне введите сведения о новом приложении. Затем выберите **Копировать** , чтобы подтвердить продолжение работы. Дополнительные сведения о полях в форме см. в кратком руководстве по [созданию приложения](quick-deploy-iot-central.md) .
+Нажмите **Копировать**. В диалоговом окне введите сведения о новом приложении. Затем выберите **Копировать** , чтобы подтвердить продолжение работы. Дополнительные сведения о полях в форме см. в кратком руководстве по [созданию приложения](quick-deploy-iot-central.md) .
 
 ![Страница "Параметры приложения"](media/howto-use-app-templates/appcopy2.png)
 

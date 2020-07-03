@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с monday.com | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с monday.com | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и monday.com.
 services: active-directory
 documentationCenter: na
@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 12/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c7126b6e40c7d76244ec5cd62566c4bad6dc0529
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5c0353bdcce6bb4917d13de9b8f254ee77de1a4c
+ms.sourcegitcommit: fe6c9a35e75da8a0ec8cea979f9dec81ce308c0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75430910"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80297935"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mondaycom"></a>Руководство. Интеграция единого входа Azure Active Directory с monday.com
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mondaycom"></a>Руководство по Интеграция единого входа Azure Active Directory с monday.com
 
 В этом руководстве описано, как интегрировать monday.com с Azure Active Directory (Azure AD). Интеграция monday.com с Azure AD обеспечивает следующие возможности:
 
@@ -33,11 +33,11 @@ ms.locfileid: "75430910"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка monday.com с поддержкой единого входа (SSO).
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -58,7 +58,6 @@ ms.locfileid: "75430910"
 1. В разделе **Добавление из коллекции** в поле поиска введите **monday.com**.
 1. Выберите **monday.com** в области результатов и добавьте приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
-
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-mondaycom"></a>Настройка и проверка единого входа Azure AD для monday.com
 
 Настройте и проверьте единый вход Azure AD в monday.com с помощью тестового пользователя **B.Simon**. Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в monday.com.
@@ -70,7 +69,7 @@ ms.locfileid: "75430910"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в monday.com](#configure-mondaycom-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя monday.com](#create-mondaycom-test-user)** требуется для того, чтобы в monday.com существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -80,7 +79,7 @@ ms.locfileid: "75430910"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вам нужно настроить единый вход, инициируемый **поставщиком удостоверений**, и у вас есть **файл метаданных поставщика услуг**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
@@ -94,28 +93,28 @@ ms.locfileid: "75430910"
 
     c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** в разделе "Базовая конфигурация SAML" заполнятся автоматически.
 
-    ![image](common/idp-intiated.png)
+    ![Изображение](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** не заполняются автоматически, введите эти значения вручную. **Идентификатор** и **URL-адрес ответа** являются одинаковыми, а значение имеет следующий формат: `https://<your-domain>.monday.com/saml/saml_callback`
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![image](common/metadata-upload-additional-signon.png)
+    ![Изображение](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<YOUR_DOMAIN>.monday.com`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их на фактические значения идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов monday.com](mailto:dev@food.ee). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их на фактические значения идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов monday.com](https://monday.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. Приложение monday.com предусматривает использование проверочных утверждений SAML в определенном формате, что предполагает добавление пользовательских сопоставлений атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/default-attributes.png)
+    ![Изображение](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение monday.com ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | Имя | Исходный атрибут|
-    | ---------------| --------------- |
+    | Имя | Исходный атрибут |
+    |--|--|
     | Email | user.mail |
     | FirstName | user.givenname |
     | LastName | user.surname |
@@ -135,7 +134,7 @@ ms.locfileid: "75430910"
 1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 1. В верхней части экрана выберите **Новый пользователь**.
 1. В разделе **Свойства пользователя** выполните следующие действия.
-   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя** введите `B.Simon`.
    1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
    1. Нажмите кнопку **Создать**.
@@ -144,7 +143,7 @@ ms.locfileid: "75430910"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon и как предоставить такому пользователю доступ к monday.com.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **monday.com**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -182,8 +181,8 @@ ms.locfileid: "75430910"
 
     ![monday.com настройка](./media/mondaycom-tutorial/configuration03.png)
 
-    >[!NOTE]
-    >Дополнительные сведения см. в [этой](https://support.monday.com/hc/articles/360000460605-SAML-Single-Sign-on?abcb=34642) статье
+    > [!NOTE]
+    > Дополнительные сведения см. в [этой](https://support.monday.com/hc/articles/360000460605-SAML-Single-Sign-on?abcb=34642) статье
 
 ### <a name="create-mondaycom-test-user"></a>Создание тестового пользователя monday.com
 
@@ -197,9 +196,9 @@ ms.locfileid: "75430910"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

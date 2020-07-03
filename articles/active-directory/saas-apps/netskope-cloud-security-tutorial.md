@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dec8f8065114b89dfa7bcaceee3f26855953dde2
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: 3c38900d4ded3d2ee08245674bda90d96226c1eb
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74081789"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80396560"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netskope-administrator-console"></a>Руководство по интеграции единого входа Azure Active Directory с консолью администрирования Netskope Administrator Console
 
@@ -35,9 +35,9 @@ ms.locfileid: "74081789"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка консоли администрирования Netskope Administrator Console с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "74081789"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в консоль администрирования Netskope Administrator Console](#configure-netskope-administrator-console-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя консоли администрирования Netskope Administrator Console](#create-netskope-administrator-console-test-user)** требуется для того, чтобы в этой консоли существовал пользователь B. Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,13 +78,13 @@ ms.locfileid: "74081789"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `Netskope_<OrgKey>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `<OrgKey>`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenant_host_name>/saml/acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenant_host_name>/saml/acs`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Они объяснены далее в этом учебнике.
@@ -98,11 +98,11 @@ ms.locfileid: "74081789"
 
 1. Приложение консоли администрирования Netskope Administrator Console ожидает утверждения SAML в определенном формате, который требует добавить сопоставления настраиваемых атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
 
-    ![image](common/default-attributes.png)
+    ![Изображение](common/default-attributes.png)
 
 1. В дополнение к описанному выше приложение Netskope Administrator Console ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
 
-    | ИМЯ |  Исходный атрибут|
+    | Имя |  Исходный атрибут|
     | ---------| --------- |
     | admin-role | user.assignedroles |
 
@@ -133,7 +133,7 @@ ms.locfileid: "74081789"
 
 В этом разделе описано, как включить единый вход Azure для пользователя B. Simon, предоставив этому пользователю доступ к Netskope Administrator Console.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. Из списка приложений выберите **Netskope Administrator Console**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -167,7 +167,7 @@ ms.locfileid: "74081789"
     
     ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/config-pasteurls.png)
 
-    a. Скопируйте значение **Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений) и вставьте его в поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
+    а. Скопируйте значение **Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений) и вставьте его в поле **URL-адрес ответа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
     b. Скопируйте значение **Service Provider Entity ID** (Идентификатор сущности поставщика услуг) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -179,7 +179,7 @@ ms.locfileid: "74081789"
 
     ![Настройка Netskope Administrator Console](./media/netskope-cloud-security-tutorial/configuration.png)
 
-    a. Выберите **Enable SSO** (Включить единый вход).
+    а. Выберите **Enable SSO** (Включить единый вход).
 
     b. В текстовое поле **IDP URL** (URL-АДРЕС ПОСТАВЩИКА УДОСТОВЕРЕНИЙ) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -187,9 +187,9 @@ ms.locfileid: "74081789"
 
     d. Откройте скачанный сертификат в кодировке Base64 с помощью блокнота, скопируйте содержимое файла в буфер обмена, а затем вставьте его в текстовое поле **IDP CERTIFICATE** (СЕРТИФИКАТ ПОСТАВЩИКА УДОСТВОРЕНИЙ).
 
-    д. Выберите **Enable SSO** (Включить единый вход).
+    д) Выберите **Enable SSO** (Включить единый вход).
 
-    Е. В текстовое поле **IDP SLO URL** (URL-адрес целевого уровня обслуживания поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
+    е) В текстовое поле **IDP SLO URL** (URL-адрес целевого уровня обслуживания поставщика удостоверений) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
     ж. Нажмите кнопку **SUBMIT** (Отправить).
 
@@ -225,9 +225,9 @@ ms.locfileid: "74081789"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

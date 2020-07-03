@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: pafarley
 ms.openlocfilehash: 15e39eb9f5b8dd3556ea9ff8240bc2c9d252cd31
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73743049"
 ---
 # <a name="face-detection-and-attributes"></a>Обнаружение и атрибуты лиц
@@ -76,7 +76,7 @@ ms.locfileid: "73743049"
     >[!NOTE]
     > Камера с нижним углом затвора получит меньше освещения в каждом кадре, поэтому изображение будет темнее. Необходимо определить подходящий уровень для использования.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы знакомы с концепциями обнаружения лиц, Узнайте, как написать сценарий, который обнаруживает лица в определенном изображении.
 

@@ -1,25 +1,21 @@
 ---
 title: Мониторинг производительности служб приложений Azure | Документация Майкрософт
 description: Мониторинг производительности приложений для служб приложений Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 12/11/2019
-ms.openlocfilehash: 3ca9cbf2e282e3f67af3c5da470a3d81e6055f98
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 0f4d4dedab30839db56cb47ac7ac103413f2d4be
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77189586"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82733470"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
 Включение мониторинга для веб-приложений на основе ASP.NET и ASP.NET Core, работающих в [службах приложений Azure](https://docs.microsoft.com/azure/app-service/) , стало еще проще, чем когда бы то ни было. В то время как раньше требовалось вручную установить расширение сайта, в образ службы приложений теперь по умолчанию встроено Последнее расширение или агент. В этой статье описано, как включить мониторинг Application Insights, а также приводятся предварительные рекомендации по автоматизации процесса для крупномасштабных развертываний.
 
 > [!NOTE]
-> Добавление расширения Application Insights сайта вручную с помощью **средств разработки** > **расширений** является устаревшим. Этот метод установки расширения был зависеть от ручных обновлений для каждой новой версии. Последний стабильный выпуск расширения теперь [предварительно установлен](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) в составе образа службы приложений. Файлы находятся в `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` и автоматически обновляются в каждом стабильном выпуске. Если вы выполните инструкции на основе агента, чтобы включить наблюдение ниже, оно автоматически удалит устаревшее расширение.
+> Добавление расширения Application Insights сайта вручную с помощью > **расширений** **средств разработки**является устаревшим. Этот метод установки расширения был зависеть от ручных обновлений для каждой новой версии. Последний стабильный выпуск расширения теперь [предварительно установлен](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) в составе образа службы приложений. Файлы находятся в и автоматически `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` обновляются в каждом стабильном выпуске. Если вы выполните инструкции на основе агента, чтобы включить наблюдение ниже, оно автоматически удалит устаревшее расширение.
 
 ## <a name="enable-application-insights"></a>Включение Application Insights
 
@@ -32,14 +28,14 @@ ms.locfileid: "77189586"
 
     * Этот подход гораздо более настраиваемый, но требует [добавления зависимости от Application Insights пакетов NUGET SDK](https://docs.microsoft.com/azure/azure-monitor/app/asp-net). Этот метод также означает, что вам нужно самостоятельно управлять обновлениями для последних версий пакетов.
 
-    * Если необходимо выполнить пользовательские вызовы API для отслеживания событий или зависимостей, не отслеживаемых по умолчанию с помощью мониторинга на основе агентов, необходимо использовать этот метод. Дополнительные сведения см. в [статье об API для получения пользовательских событий и метрик](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) .
+    * Если необходимо выполнить пользовательские вызовы API для отслеживания событий или зависимостей, не отслеживаемых по умолчанию с помощью мониторинга на основе агентов, необходимо использовать этот метод. Дополнительные сведения см. в [статье об API для получения пользовательских событий и метрик](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) . В настоящее время это единственный поддерживаемый вариант для рабочих нагрузок на основе Linux.
 
 > [!NOTE]
 > Если обнаруживается и отслеживание на основе агентов, и инструментирование вручную на основе пакета SDK, будут учитываться только параметры инструментирования вручную. Это позволяет предотвратить отправку повторяющихся данных. Чтобы получить дополнительные сведения об этом, ознакомьтесь с [разделом устранение неполадок](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#troubleshooting) ниже.
 
 ## <a name="enable-agent-based-monitoring"></a>Включить мониторинг на основе агентов
 
-# <a name="nettabnet"></a>[.NET](#tab/net)
+# <a name="net"></a>[.NET](#tab/net)
 
 > [!NOTE]
 > Сочетание APPINSIGHTS_JAVASCRIPT_ENABLED и urlCompression не поддерживается. Дополнительные сведения см. в описании [раздела Устранение неполадок](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#troubleshooting).
@@ -59,23 +55,24 @@ ms.locfileid: "77189586"
 2. Указав ресурс для использования, вы можете выбрать способ сбора данных в Application Insights для каждой платформы для приложения. Мониторинг приложений ASP.NET по умолчанию имеет два разных уровня коллекции.
 
     ![Выбор параметров для каждой платформы](./media/azure-web-apps/choose-options-new.png)
-
-   * Уровень **базовой коллекции** .NET предоставляет основные возможности APM с одним экземпляром.
-
-   * Уровень **рекомендуемой коллекции** .NET:
-       * Добавляет тенденции использования ЦП, памяти и операций ввода-вывода.
-       * Сопоставляет микрослужбы в пределах границ запросов или зависимостей.
-       * Собирает тенденции использования и обеспечивает сопоставление от результатов доступности до транзакций.
-       * Собирает исключения, необработанные хост-процессом.
-       * Улучшает точность метрик APM под нагрузкой при использовании выборки.
+ 
+ Ниже приведена сводка данных, собираемых для каждого маршрута.
+        
+|  | Коллекция .NET Basic | Рекомендуемая коллекция для .NET |
+| --- | --- | --- |
+| Добавляет тенденции использования ЦП, памяти и операций ввода-вывода. |Да |Да |
+| Собирает тенденции использования и обеспечивает сопоставление от результатов доступности до транзакций. | Да |Да |
+| Собирает исключения, необработанные хост-процессом. | Да |Да |
+| Улучшает точность метрик APM под нагрузкой при использовании выборки. | Да |Да |
+| Сопоставляет микрослужбы в пределах границ запросов или зависимостей. | Нет (только возможности APM с одним экземпляром) |Да |
 
 3. Чтобы настроить такие параметры, как выборка, которые можно было бы контролировать с помощью файла applicationinsights. config, теперь можно взаимодействовать с теми же параметрами через параметры приложения с соответствующим префиксом. 
 
-    * Например, чтобы изменить начальный процент выборки, можно создать параметр приложения: `MicrosoftAppInsights_AdaptiveSamplingTelemetryProcessor_InitialSamplingPercentage` и значение `100`.
+    * Например, чтобы изменить начальную долю выборки, можно создать параметр приложения: `MicrosoftAppInsights_AdaptiveSamplingTelemetryProcessor_InitialSamplingPercentage` и значение. `100`
 
-    * Список поддерживаемых параметров обработчика данных телеметрии адаптивной выборки можно найти в [коде](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/master/src/ServerTelemetryChannel/AdaptiveSamplingTelemetryProcessor.cs) и [связанной документации](https://docs.microsoft.com/azure/azure-monitor/app/sampling).
+    * Список поддерживаемых параметров обработчика данных телеметрии адаптивной выборки можно найти в [коде](https://github.com/microsoft/ApplicationInsights-dotnet/blob/master/BASE/Test/ServerTelemetryChannel.Test/TelemetryChannel.Tests/AdaptiveSamplingTelemetryProcessorTest.cs) и [связанной документации](https://docs.microsoft.com/azure/azure-monitor/app/sampling).
 
-# <a name="net-coretabnetcore"></a>[.NET Core](#tab/netcore)
+# <a name="net-core"></a>[.NET Core](#tab/netcore)
 
 Поддерживаются следующие версии .NET Core: ASP.NET Core 2,0, ASP.NET Core 2,1, ASP.NET Core 2,2, ASP.NET Core 3,0
 
@@ -96,15 +93,15 @@ ms.locfileid: "77189586"
 
     ![Выбор параметров для каждой платформы](./media/azure-web-apps/choose-options-new-net-core.png)
 
-# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-В веб-приложении службы приложений в разделе **параметры** > **выберите Application Insights** > **включить**. Мониторинг на основе агента Node. js в настоящее время находится на этапе предварительной версии.
+В веб-приложении службы приложений в разделе **Параметры** > **выберите Application Insights** > **включить**. Мониторинг на основе агента Node. js в настоящее время находится на этапе предварительной версии.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 Веб-приложения на основе службы приложений Java в настоящее время не поддерживают автоматическое отслеживание на основе агентов и расширений. Чтобы включить мониторинг для приложения Java, необходимо [вручную выполнить инструментирование приложения](https://docs.microsoft.com/azure/azure-monitor/app/java-get-started).
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Веб-приложения на основе службы приложений Python в настоящее время не поддерживают автоматическое отслеживание на основе агентов и расширений. Чтобы включить мониторинг для приложения Python, необходимо [вручную выполнить инструментирование приложения](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python).
 
@@ -112,11 +109,11 @@ ms.locfileid: "77189586"
 
 ## <a name="enable-client-side-monitoring"></a>Включение наблюдения на стороне клиента
 
-# <a name="nettabnet"></a>[.NET](#tab/net)
+# <a name="net"></a>[.NET](#tab/net)
 
 Наблюдение на стороне клиента — это согласие на ASP.NET. Чтобы включить наблюдение на стороне клиента:
 
-* Выберите **параметры** > * * * Параметры приложения * * * *
+* Выберите **параметры** > * * * параметры приложения * * * *
    * В разделе Параметры приложения добавьте новое имя и **значение** **параметра приложения** :
 
      Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`
@@ -129,16 +126,16 @@ ms.locfileid: "77189586"
 
 Чтобы отключить наблюдение на стороне клиента, удалите связанную пару "ключ-значение" из параметров приложения или установите значение false.
 
-# <a name="net-coretabnetcore"></a>[.NET Core](#tab/netcore)
+# <a name="net-core"></a>[.NET Core](#tab/netcore)
 
 Наблюдение на стороне клиента **включено по умолчанию** для приложений .NET Core с **рекомендуемой коллекцией**, независимо от наличия параметра приложения "APPINSIGHTS_JAVASCRIPT_ENABLED".
 
 Если по какой-либо причине вы хотели бы отключить наблюдение на стороне клиента:
 
-* Выберите **параметры** > **Параметры приложения** .
+* Выберите **Параметры** > **Параметры приложения**
    * В разделе Параметры приложения добавьте новое имя и **значение** **параметра приложения** :
 
-     Имя: `APPINSIGHTS_JAVASCRIPT_ENABLED`
+     безымян`APPINSIGHTS_JAVASCRIPT_ENABLED`
 
      Значение: `false`
 
@@ -146,15 +143,15 @@ ms.locfileid: "77189586"
 
 ![Снимок экрана: Пользовательский интерфейс параметров приложения](./media/azure-web-apps/appinsights-javascript-disabled.png)
 
-# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+# <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
 Чтобы включить наблюдение на стороне клиента для приложения Node. js, необходимо [вручную добавить пакет SDK JavaScript на стороне клиента в приложение](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 Чтобы включить мониторинг на стороне клиента для приложения Java, необходимо [вручную добавить пакет SDK JavaScript на стороне клиента в приложение](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 Чтобы включить мониторинг на стороне клиента для приложения Python, необходимо [вручную добавить пакет SDK JavaScript на стороне клиента в приложение](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
 
@@ -168,12 +165,12 @@ ms.locfileid: "77189586"
 
 ### <a name="application-settings-definitions"></a>Определения параметров приложения
 
-|Имя параметра приложения |  Определение | Значение |
+|Имя параметра приложения |  Определение | Применение |
 |-----------------|:------------|-------------:|
 |ApplicationInsightsAgent_EXTENSION_VERSION | Главное расширение, которое управляет мониторингом среды выполнения. | `~2` |
 |XDT_MicrosoftApplicationInsights_Mode |  В режиме по умолчанию для обеспечения оптимальной производительности включены только функции, обеспечивающие их работу. | `default` или `recommended`. |
-|InstrumentationEngine_EXTENSION_VERSION | Определяет, будет ли включен модуль двоичной перезаписи `InstrumentationEngine`. Этот параметр оказывает влияние на производительность и влияет на время холодного запуска и запуска. | `~1` |
-|XDT_MicrosoftApplicationInsights_BaseExtensions | Определяет, будет ли записываться текст таблицы SQL & Azure вместе с вызовами зависимостей. Предупреждение о производительности: время холодного запуска приложения будет затронуто. Для этого параметра требуется `InstrumentationEngine`. | `~1` |
+|InstrumentationEngine_EXTENSION_VERSION | Определяет, будет ли включен модуль `InstrumentationEngine` двоичной перезаписи. Этот параметр оказывает влияние на производительность и влияет на время холодного запуска и запуска. | `~1` |
+|XDT_MicrosoftApplicationInsights_BaseExtensions | Определяет, будет ли записываться текст таблицы SQL & Azure вместе с вызовами зависимостей. Предупреждение о производительности: время холодного запуска приложения будет затронуто. Для `InstrumentationEngine`этого параметра требуется. | `~1` |
 
 ### <a name="app-service-application-settings-with-azure-resource-manager"></a>Параметры приложения службы приложений с Azure Resource Manager
 
@@ -215,7 +212,7 @@ ms.locfileid: "77189586"
 
   ![Шаблон веб-приложения службы приложений](./media/azure-web-apps/arm-template.png)
 
-Ниже приведен пример, замените все экземпляры `AppMonitoredSite` именем вашего сайта:
+Ниже приведен пример, замените все экземпляры `AppMonitoredSite` именем своего сайта:
 
 ```json
 {
@@ -334,9 +331,9 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 Обновление с версии 2.8.9 происходит автоматически без каких бы то ни было дополнительных действий. Новые биты мониторинга доставляются в фоновом режиме в целевую службу приложений, и при перезапуске приложения они будут отобраны.
 
-Чтобы проверить, какую версию расширения вы используете, перейдите `http://yoursitename.scm.azurewebsites.net/ApplicationInsights`
+Чтобы проверить, какая версия расширения используется, посетите`http://yoursitename.scm.azurewebsites.net/ApplicationInsights`
 
-![Снимок экрана: http://yoursitename.scm.azurewebsites.net/ApplicationInsights URL-пути](./media/azure-web-apps/extension-version.png)
+![Снимок экрана: URL-путьhttp://yoursitename.scm.azurewebsites.net/ApplicationInsights](./media/azure-web-apps/extension-version.png)
 
 ### <a name="upgrade-from-versions-100---265"></a>Обновление с версий 1.0.0 – 2.6.5
 
@@ -351,41 +348,41 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 Если обновление выполняется из версии до 2.5.1, убедитесь, что библиотеки DLL Аппликатионинсигсс удалены из папки Bin приложения см. в [разделе действия по устранению неполадок](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#troubleshooting).
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Ниже приведено пошаговое руководство по устранению неполадок для мониторинга на основе расширений и агентов для приложений на платформе .NET и .NET Core, работающих в службах приложений Azure.
 
 > [!NOTE]
 > Приложения Java поддерживаются только в службах приложений Azure с помощью инструментирования вручную на основе пакета SDK, поэтому приведенные ниже действия не применимы к этим сценариям.
 
-1. Убедитесь, что приложение отслеживается с помощью `ApplicationInsightsAgent`.
-    * Убедитесь, что для параметра `ApplicationInsightsAgent_EXTENSION_VERSION` приложения задано значение "~ 2".
+1. Убедитесь, что приложение отслеживается через `ApplicationInsightsAgent`.
+    * Убедитесь, `ApplicationInsightsAgent_EXTENSION_VERSION` что для параметра приложения задано значение "~ 2".
 2. Убедитесь, что приложение соответствует требованиям, которые необходимо отслеживать.
-    * Перейти к `https://yoursitename.scm.azurewebsites.net/ApplicationInsights`
+    * Перейдите по адресу `https://yoursitename.scm.azurewebsites.net/ApplicationInsights`.
 
-    ![Снимок экрана со страницей результатов https://yoursitename.scm.azurewebsites/applicationinsights](./media/azure-web-apps/app-insights-sdk-status.png)
+    ![Снимок экрана https://yoursitename.scm.azurewebsites/applicationinsights со страницей результатов](./media/azure-web-apps/app-insights-sdk-status.png)
 
-    * Убедитесь, что `Application Insights Extension Status` `Pre-Installed Site Extension, version 2.8.12.1527, is running.`
+    * Убедитесь, что `Application Insights Extension Status``Pre-Installed Site Extension, version 2.8.12.1527, is running.`
         * Если она не запущена, следуйте инструкциям по [включению мониторинга Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#enable-application-insights)
 
-    * Убедитесь, что источник состояния существует и выглядит следующим образом: `Status source D:\home\LogFiles\ApplicationInsights\status\status_RD0003FF0317B6_4248_1.json`
+    * Убедитесь, что источник состояния существует и выглядит следующим образом:`Status source D:\home\LogFiles\ApplicationInsights\status\status_RD0003FF0317B6_4248_1.json`
         * Если такое же значение отсутствует, это означает, что приложение в данный момент не выполняется или не поддерживается. Чтобы убедиться, что приложение выполняется, попробуйте вручную посетить конечные точки URL-адреса приложения или приложения, что позволит получить доступ к сведениям о среде выполнения.
 
-    * Убедитесь, что `IKeyExists` `true`
-        * Если это `false`, добавьте `APPINSIGHTS_INSTRUMENTATIONKEY` и `APPLICATIONINSIGHTS_CONNECTION_STRING` с идентификатором GUID iKey в параметры приложения.
+    * Убедитесь, `IKeyExists` что`true`
+        * Если это так `false`, добавьте `APPINSIGHTS_INSTRUMENTATIONKEY` в `APPLICATIONINSIGHTS_CONNECTION_STRING` параметры приложения и с идентификатором GUID iKey.
 
-    * Убедитесь, что отсутствуют записи для `AppAlreadyInstrumented`, `AppContainsDiagnosticSourceAssembly`и `AppContainsAspNetTelemetryCorrelationAssembly`.
-        * Если любая из этих записей существует, удалите из приложения следующие пакеты: `Microsoft.ApplicationInsights`, `System.Diagnostics.DiagnosticSource`и `Microsoft.AspNet.TelemetryCorrelation`.
+    * Убедитесь в отсутствии записей для `AppAlreadyInstrumented`, `AppContainsDiagnosticSourceAssembly`и. `AppContainsAspNetTelemetryCorrelationAssembly`
+        * Если любая из этих записей существует, удалите из приложения следующие пакеты: `Microsoft.ApplicationInsights`, `System.Diagnostics.DiagnosticSource`и. `Microsoft.AspNet.TelemetryCorrelation`
 
 В таблице ниже приведено более подробное описание этих значений, их основных причин и Рекомендуемые исправления.
 
-|Значение проблемы|Пояснение|Исправление
+|Значение проблемы|Объяснение|Fix
 |---- |----|---|
-| `AppAlreadyInstrumented:true` | Это значение указывает, что расширение обнаружило, что некоторые аспекты пакета SDK уже имеются в приложении и будут отключаться. Это может быть вызвано ссылками на `System.Diagnostics.DiagnosticSource`, `Microsoft.AspNet.TelemetryCorrelation`или `Microsoft.ApplicationInsights`  | Удалите ссылки. Некоторые из этих ссылок добавляются по умолчанию из определенных шаблонов Visual Studio, а более старые версии Visual Studio могут добавлять ссылки на `Microsoft.ApplicationInsights`.
+| `AppAlreadyInstrumented:true` | Это значение указывает, что расширение обнаружило, что некоторые аспекты пакета SDK уже имеются в приложении и будут отключаться. Это может быть вызвано ссылкой на `System.Diagnostics.DiagnosticSource`, или `Microsoft.AspNet.TelemetryCorrelation``Microsoft.ApplicationInsights`  | Удалите ссылки. Некоторые из этих ссылок добавляются по умолчанию из определенных шаблонов Visual Studio, а в более ранних версиях Visual Studio могут `Microsoft.ApplicationInsights`быть добавлены ссылки на.
 |`AppAlreadyInstrumented:true` | Если приложение предназначено для .NET Core 2,1 или 2,2, а ссылается на [Microsoft. AspNetCore. ALL](https://www.nuget.org/packages/Microsoft.AspNetCore.All) meta-Package, то оно переносится в Application Insights, а расширение будет отключаться. | Клиентам в .NET Core 2.1, 2.2 [рекомендуется](https://github.com/aspnet/Announcements/issues/287) использовать вместо него мета-пакет Microsoft. AspNetCore. app.|
 |`AppAlreadyInstrumented:true` | Это значение также может быть вызвано наличием указанных выше библиотек DLL в папке приложения из предыдущего развертывания. | Очистите папку приложения, чтобы убедиться, что эти библиотеки DLL удалены. Проверьте каталог Bin локального приложения и каталог wwwroot в службе приложений. (Чтобы проверить каталог wwwroot веб-приложения службы приложений: Advanced Tools (KUDU) > консоль отладки > CMD > хоме\сите\ввврут).
-|`AppContainsAspNetTelemetryCorrelationAssembly: true` | Это значение указывает, что расширение обнаружило ссылки на `Microsoft.AspNet.TelemetryCorrelation` в приложении и будет отключаться. | Удаление ссылки.
-|`AppContainsDiagnosticSourceAssembly**:true`|Это значение указывает, что расширение обнаружило ссылки на `System.Diagnostics.DiagnosticSource` в приложении и будет отключаться.| Удаление ссылки.
+|`AppContainsAspNetTelemetryCorrelationAssembly: true` | Это значение указывает, что расширение обнаружило `Microsoft.AspNet.TelemetryCorrelation` ссылки на приложение и будет отключаться. | Удаление ссылки.
+|`AppContainsDiagnosticSourceAssembly**:true`|Это значение указывает, что расширение обнаружило `System.Diagnostics.DiagnosticSource` ссылки на приложение и будет отключаться.| Удаление ссылки.
 |`IKeyExists:false`|Это значение указывает, что ключ инструментирования отсутствует в AppSetting, `APPINSIGHTS_INSTRUMENTATIONKEY`. Возможные причины. возможно, значения были случайно удалены, забыли установить значения в скрипте автоматизации и т. д. | Убедитесь, что параметр есть в параметрах приложения службы приложений.
 
 ### <a name="appinsights_javascript_enabled-and-urlcompression-is-not-supported"></a>APPINSIGHTS_JAVASCRIPT_ENABLED и urlCompression не поддерживаются
@@ -399,7 +396,15 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 
 Последние сведения об агенте или расширении Application Insights см. в [заметках о выпуске](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/app-insights-web-app-extensions-releasenotes.md).
 
-## <a name="next-steps"></a>Следующие шаги
+### <a name="php-and-wordpress-are-not-supported"></a>PHP и WordPress не поддерживаются
+
+Сайты PHP и WordPress не поддерживаются. В настоящее время официально поддерживаемый пакет SDK или агент не поддерживается для наблюдения за этими рабочими нагрузками на стороне сервера. Однако ручное инструментирование транзакций на стороне клиента на сайте PHP или WordPress путем добавления клиентского сценария JavaScript к веб-страницам можно выполнить с помощью [пакета SDK для JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
+
+### <a name="connection-string-and-instrumentation-key"></a>Строка подключения и ключ инструментирования
+
+При использовании мониторинга без кода требуется только строка подключения. Однако мы по-прежнему рекомендуем задать ключ инструментирования, чтобы сохранить обратную совместимость с более старыми версиями пакета SDK при выполнении инструментирования вручную.
+
+## <a name="next-steps"></a>Дальнейшие действия
 * [Запуск профилировщика в живом приложении](../app/profiler.md).
 * [Функции Azure.](https://github.com/christopheranderson/azure-functions-app-insights-sample) Отслеживайте функции Azure с помощью Application Insights.
 * [Включите отправку данных диагностики Azure](../platform/diagnostics-extension-to-application-insights.md) в Application Insights.

@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: ff612c43a058fce02bd801e15632c27979f22d17
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 90d7da9c8ddd8c9c595f2209dcc34e2f595acfd2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75435876"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78196932"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
 
 Узнайте, как настроить политики Apache Ranger для Apache Hive. В этой статье вы создадите две политики Ranger, чтобы ограничить доступ к таблице hivesampletable. Таблица hivesampletable поставляется с кластерами HDInsight. После настройки политик вы используете Excel и драйвер ODBC для подключения к таблицам Hive в HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Кластер HDInsight с Корпоративным пакетом безопасности. Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Рабочая станция с Office 2016, Office 2013 профессиональный плюс, Office 365 профессиональный плюс, Excel 2013 автономный или Office 2010 профессиональный плюс.
@@ -27,7 +27,7 @@ ms.locfileid: "75435876"
 ## <a name="connect-to-apache-ranger-admin-ui"></a>Подключение к пользовательскому интерфейсу администратора Apache Ranger
 **Подключение к пользовательскому интерфейсу администратора Ranger**
 
-1. В браузере перейдите к пользовательскому интерфейсу администратора Ranger по адресу `https://CLUSTERNAME.azurehdinsight.net/Ranger/`, где ИМЯ_КЛАСТЕРА — это имя кластера.
+1. В браузере перейдите к пользовательскому интерфейсу администратора Ranger, `https://CLUSTERNAME.azurehdinsight.net/Ranger/` где имя_кластера — имя кластера.
 
    > [!NOTE]  
    > Ranger использует учетные данные, отличающиеся от учетных данных кластера Apache Hadoop. Чтобы браузеры не использовали кэшированные учетные данные Hadoop, подключитесь к пользовательскому интерфейсу администратора Ranger в новом окне браузера в режиме InPrivate.
@@ -55,7 +55,7 @@ ms.locfileid: "75435876"
     |Свойство |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable — все|
-    |База данных Hive|значение по умолчанию|
+    |База данных Hive|default|
     |table|hivesampletable|
     |Столбец Hive|*|
     |Выберите пользователя|hiveuser1|
@@ -73,7 +73,7 @@ ms.locfileid: "75435876"
     |Свойство |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable-devicemake|
-    |База данных Hive|значение по умолчанию|
+    |База данных Hive|default|
     |table|hivesampletable|
     |Столбец Hive|ClientID, devicemake|
     |Выберите пользователя|hiveuser2|
@@ -83,12 +83,12 @@ ms.locfileid: "75435876"
 
 Инструкции см. в разделе [Создание источника данных Hive ODBC](../hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md).  
 
- | Свойство  |Description |
+ | Свойство.  |Описание |
  | --- | --- |
  | Имя базы данных-источника | Присвойте имя источнику данных |
- | Хост | Введите CLUSTERNAME.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
- | Port | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
- | База данных | Используйте **значение по умолчанию**. |
+ | Узел | Введите CLUSTERNAME.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
+ | Порт | Используйте **443**. (Этот порт был изменен с 563 на 443.) |
+ | База данных | Использовать **значение по умолчанию**. |
  | Тип сервера Hive | Выберите **Hive Server 2**. |
  | Механизм | Выберите **Служба Azure HDInsight**. |
  | Путь HTTP | Оставьте пустым. |
@@ -148,11 +148,11 @@ ms.locfileid: "75435876"
 
     После этого должны отобразиться два столбца импортируемых данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Сведения об управлении кластером HDInsight с помощью ESP см. в статье [Управление кластерами HDInsight с помощью Корпоративного пакета безопасности](apache-domain-joined-manage.md).
-* Сведения о выполнении запросов Hive с помощью SSH в кластерах HDInsight с ESP см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
+* Сведения о выполнении запросов Hive с помощью SSH в кластерах HDInsight с ESP см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#authentication-domain-joined-hdinsight).
 * Сведения о подключении к Hive с помощью Hive JDBC см. в статье [Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight](../hadoop/apache-hadoop-connect-hive-jdbc-driver.md).
 * Сведения о подключении Excel к Hadoop с помощью Hive ODBC см. в статье [Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight](../hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md).
 * Сведения о подключении Excel к Hadoop с помощью Power Query см. в [этой статье](../hadoop/apache-hadoop-connect-excel-power-query.md).

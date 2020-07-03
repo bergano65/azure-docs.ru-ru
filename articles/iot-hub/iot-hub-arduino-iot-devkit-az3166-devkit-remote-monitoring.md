@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 02/02/2018
 ms.author: liydu
-ms.openlocfilehash: 9eab035d494892671a2451866311ca06599ec030
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: 598e361949b000724645c841910b1682a7bbb1a3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73953723"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81258462"
 ---
 # <a name="connect-mxchip-iot-devkit-to-azure-iot-remote-monitoring-solution-accelerator"></a>Подключение MXChip IoT DevKit к акселератору решения Azure IoT для удаленного мониторинга
 
@@ -31,7 +31,7 @@ ms.locfileid: "73953723"
 
 Активная подписка Azure. Если у вас еще нет ее, вы можете зарегистрироваться одним из двух способов:
 
-* Вы можете активировать [бесплатную 30-дневную пробную учетную запись Microsoft Azure](https://azure.microsoft.com/free/).
+* Активация [бесплатной 30-дневной пробной Microsoft Azure учетной записи](https://azure.microsoft.com/free/)
 
 * Запросите [деньги на счете в Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), если у вас есть подписка MSDN или Visual Studio.
 
@@ -120,7 +120,7 @@ ms.locfileid: "73953723"
 
 ## <a name="change-device-id"></a>Изменение идентификатора устройства
 
-Если необходимо изменить указанный в коде идентификатор **AZ3166** на пользовательский идентификатор устройства, измените строку кода, как показано в [примере удаленного мониторинга](https://github.com/Microsoft/devkit-sdk/blob/master/AZ3166/src/libraries/AzureIoT/examples/RemoteMonitoring/RemoteMonitoring.ino#L23).
+Если необходимо изменить указанный в коде идентификатор **AZ3166** на пользовательский идентификатор устройства, измените строку кода, как показано в [примере удаленного мониторинга](../iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2.md).
 
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 
@@ -129,12 +129,12 @@ ms.locfileid: "73953723"
 * [Gitter.im](https://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы знаете, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и визуализировать данные датчиков. Мы предлагаем вам следующие шаги для дальнейшего обучения:
 
 * [Обзор акселераторов решений для Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
 
-* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
+* [Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central](/azure/iot-central/core/howto-connect-devkit)
 
 * [Пакет средств разработки Интернета вещей](https://microsoft.github.io/azure-iot-developer-kit/) 

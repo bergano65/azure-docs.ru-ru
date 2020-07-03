@@ -12,12 +12,12 @@ metadata:
   author: spelluru
   ms.author: spelluru
   ms.date: 09/06/2019
-  ms.openlocfilehash: bd834bdebad486f1f5975bbbc93809a06a69ebf8
-  ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+  ms.openlocfilehash: 095d94b09ad7cfd6e47e7322401db0bbf6ff8a03
+  ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/01/2019
-  ms.locfileid: "74666194"
+  ms.lasthandoff: 04/15/2020
+  ms.locfileid: "81393204"
 landingContent:
 - title: Сведения о службе "Сетка событий Azure"
   linkLists:
@@ -30,7 +30,7 @@ landingContent:
     - text: Основные понятия службы "Сетка событий"
       url: concepts.md
     - text: Источники событий
-      url: event-sources.md
+      url: overview.md#event-sources
     - text: Обработчики событий
       url: event-handlers.md
     - text: Фильтры событий

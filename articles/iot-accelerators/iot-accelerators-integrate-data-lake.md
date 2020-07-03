@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 0a684151e01b298c60ff17ef1470e0648a425850
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73889236"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения для удаленного мониторинга с Azure Data Lake Store
@@ -21,7 +21,7 @@ ms.locfileid: "73889236"
 
 В этом практическом руководстве используется задание Azure Stream Analytics для потоковой передачи данных из Центра Интернета вещей в вашем решении для удаленного мониторинга в Azure Data Lake Store.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим практическим руководством необходимо следующее:
 
@@ -103,7 +103,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 1. Выберите учетную запись Data Lake Store, созданную ранее, и укажите структуру папок для потоковой передачи данных в хранилище.
 
-1. В поле формата даты введите **/streaming/{дата}/{время}** . Оставьте стандартные значения формата даты (ГГГГ/ММ/ДД) и формата времени (ЧЧ).
+1. В поле формата даты введите **/streaming/{дата}/{время}**. Оставьте стандартные значения формата даты (ГГГГ/ММ/ДД) и формата времени (ЧЧ).
 
     ![Указание структуры папок](./media/iot-accelerators-integrate-data-lake/stream-analytics-new-output.png)
 

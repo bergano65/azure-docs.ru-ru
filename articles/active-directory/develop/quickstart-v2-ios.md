@@ -12,12 +12,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: 4dea0feb5d5a1cb42640b1fc05bb185e970ae8af
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.openlocfilehash: 47485d8d9007a6cf6432b7bf401c7c1c34a9863a
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
-ms.locfileid: "77084498"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81536137"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -30,7 +30,7 @@ ms.locfileid: "77084498"
 > [!NOTE]
 > **Предварительные требования**
 > * XCode 10 или более поздней версии
-> * iOS 10 или более поздней версии 
+> * iOS 10 или более поздней версии
 > * macOS 10.12+
 
 > [!div renderon="docs"]
@@ -64,7 +64,7 @@ ms.locfileid: "77084498"
 > [!div renderon="portal" class="sxs-lookup"]
 >
 > #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
-> Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления, совместимые с брокером авторизации.
+> Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления, совместимый с брокером авторизации.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >
@@ -83,13 +83,21 @@ ms.locfileid: "77084498"
 #### <a name="step-4-configure-your-project"></a>Шаг 4. Настройка проекта
 
 > [!div renderon="docs"]
-> Если вы выбрали вариант 1 выше, можно пропустить эти шаги. 
+> Если вы выбрали вариант 1 выше, можно пропустить эти шаги.
 
 > [!div renderon="portal" class="sxs-lookup"]
 > 1. Извлеките ZIP-файл и откройте проект в XCode.
 > 1. Измените **ViewController.swift** и замените строку, начинающуюся с "let kClientID", следующим фрагментом кода. Не забудьте обновить значение `kClientID`, указав идентификатор клиента, который вы ранее сохранили при регистрации приложения на портале в этом кратком руководстве.
 >    ```swift
 >    let kClientID = "Enter_the_Application_Id_Here"
+>    ```
+> 1. Измените **ViewController.swift** и замените строку, начинающуюся с let kAuthority, следующим фрагментом кода.
+>    ```swift
+>    let kAuthority = "Enter_the_Authority_Endpoint_Host_HereEnter_the_Tenant_Info_Here"
+>    ```
+> 1. Измените **ViewController.swift** и замените строку, начинающуюся с let kGraphEndpoint, следующим фрагментом кода.
+>    ```swift
+>    let kGraphEndpoint = "Enter_the_MS_Graph_Endpoint_Host_Here"
 >    ```
 > 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
 > 1. (Только для iOS) Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
@@ -109,7 +117,7 @@ ms.locfileid: "77084498"
 > 1. Создайте и запустите приложение.
 > [!div class="sxs-lookup" renderon="portal"]
 > > [!NOTE]
-> > В этом кратком руководстве поддерживается Enter_the_Supported_Account_Info_Here.
+> > `Enter_the_Supported_Account_Info_Here`
 > [!div renderon="docs"]
 >
 > 1. Извлеките ZIP-файл и откройте проект в XCode.
@@ -117,6 +125,16 @@ ms.locfileid: "77084498"
 >    ```swift
 >    let kClientID = "Enter_the_Application_Id_Here"
 >    ```
+> 1. Если вы создаете приложение для [национальных облаков Azure AD](https://docs.microsoft.com/graph/deployments#app-registration-and-token-service-root-endpoints), замените строку, начинающуюся с let kGraphEndpoint и let kAuthority соответствующими конечными точками. Для предоставления глобального доступа используйте значения по умолчанию:
+>     ```objective-c
+>     let kGraphEndpoint = "https://graph.microsoft.com/"
+>     let kAuthority = "https://login.microsoftonline.com/common"
+>     ```
+> 1. См. описание [других конечных точек](https://docs.microsoft.com/graph/deployments#app-registration-and-token-service-root-endpoints). Например, чтобы выполнить процесс для Azure AD Germany, используйте следующее:
+>     ```objective-c
+>     let kGraphEndpoint = "https://graph.microsoft.de/"
+>     let kAuthority = "https://login.microsoftonline.de/common"
+>     ```
 > 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
 > 1. (Только для iOS) Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
 > 1. (Только для iOS) В корневом узле словаря замените `Enter_the_bundle_Id_Here` на ***идентификатор пакета***, использованный на портале.
@@ -131,9 +149,9 @@ ms.locfileid: "77084498"
 >          </array>
 >       </dict>
 >    </array>
-> 
+>
 >    ```
-> 1. Создайте и запустите приложение. 
+> 1. Создайте и запустите приложение.
 
 ## <a name="more-information"></a>Дополнительные сведения
 
@@ -174,7 +192,7 @@ import MSAL
 
 ```swift
 let authority = try MSALAADAuthority(url: URL(string: kAuthority)!)
-            
+
 let msalConfiguration = MSALPublicClientApplicationConfig(clientId: kClientID, redirectUri: nil, authority: authority)
 self.applicationContext = try MSALPublicClientApplication(configuration: msalConfiguration)
 ```
@@ -191,7 +209,7 @@ self.applicationContext = try MSALPublicClientApplication(configuration: msalCon
 
  ```swift
  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+
         return MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String)
     }
 
@@ -203,21 +221,21 @@ self.applicationContext = try MSALPublicClientApplication(configuration: msalCon
 
  ```swift
  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        
+
         guard let urlContext = URLContexts.first else {
             return
         }
-        
+
         let url = urlContext.url
         let sourceApp = urlContext.options.sourceApplication
-        
+
         MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: sourceApp)
     }
  ```
 
-Наконец, ваше приложение должно содержать запись `LSApplicationQueriesSchemes` в файле ***Info.plist*** вместе с элементом `CFBundleURLTypes`. Пример уже содержит эту запись. 
+Наконец, ваше приложение должно содержать запись `LSApplicationQueriesSchemes` в файле ***Info.plist*** вместе с элементом `CFBundleURLTypes`. Пример уже содержит эту запись.
 
-   ```xml 
+   ```xml
    <key>LSApplicationQueriesSchemes</key>
    <array>
       <string>msauthv2</string>
@@ -231,10 +249,10 @@ MSAL имеет два метода получения маркеров безо
 
 #### <a name="acquiretoken-get-a-token-interactively"></a>acquireToken. Интерактивное получение маркера
 
-Иногда требуется взаимодействие пользователей с платформой удостоверений Майкрософт. В таких случаях пользователю может потребоваться выбрать свою учетную запись, ввести учетные данные или предоставить согласие на разрешения приложения. Например, 
+Иногда требуется взаимодействие пользователей с платформой удостоверений Майкрософт. В таких случаях пользователю может потребоваться выбрать свою учетную запись, ввести учетные данные или предоставить согласие на разрешения приложения. Например,
 
 * первый вход пользователей в приложение;
-* Если пользователь сбрасывает пароль, то потребуется вводить свои учетные данные. 
+* Если пользователь сбрасывает пароль, то потребуется вводить свои учетные данные.
 * Когда ваше приложение впервые запрашивает доступ к ресурсу.
 * Когда требуются политики условного доступа или MFA.
 
@@ -245,36 +263,36 @@ self.applicationContext!.acquireToken(with: parameters) { (result, error) in /* 
 
 > |Где:||
 > |---------|---------|
-> | `scopes` | Содержит запрашиваемые области (то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`)). |
+> | `scopes` | Содержит запрашиваемые области, то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`). |
 
 #### <a name="acquiretokensilent-get-an-access-token-silently"></a>acquireTokenSilent. Автоматическое получение маркера доступа
 
-Приложения не требуют, чтобы пользователи выполняли вход каждый раз при запросе маркера. Если пользователь уже вошел, этот метод позволяет приложениям запрашивать маркеры автоматически. 
+Приложения не требуют, чтобы пользователи выполняли вход каждый раз при запросе маркера. Если пользователь уже вошел, этот метод позволяет приложениям запрашивать маркеры автоматически.
 
 ```swift
-guard let account = try self.applicationContext!.allAccounts().first else { return }
-        
-let silentParams = MSALSilentTokenParameters(scopes: kScopes, account: account)
-self.applicationContext!.acquireTokenSilent(with: silentParams) { (result, error) in /* Add your handling logic */}
+self.applicationContext!.getCurrentAccount(with: nil) { (currentAccount, previousAccount, error) in
+
+   guard let account = currentAccount else {
+      return
+   }
+
+   let silentParams = MSALSilentTokenParameters(scopes: self.kScopes, account: account)
+   self.applicationContext!.acquireTokenSilent(with: silentParams) { (result, error) in /* Add your handling logic */}
+}
 ```
 
 > |Где: ||
 > |---------|---------|
-> | `scopes` | Содержит запрашиваемые области (то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`)). |
-> | `account` | Учетная запись, для которой запрашивается токен. В этом кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику для выбора учетной записи, которая будет использоваться для запросов токенов, с помощью `applicationContext.account(forHomeAccountId: self.homeAccountId)`. |
+> | `scopes` | Содержит запрашиваемые области, то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`). |
+> | `account` | Учетная запись, для которой запрашивается токен. В этом кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику для выбора учетной записи, которая будет использоваться для запросов токенов, с помощью `accountsFromDeviceForParameters:completionBlock:` и правильного идентификатора `accountIdentifier`. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В руководстве по iOS вы найдете пошаговые инструкции по созданию приложений, а также полное описание того, о чем говорится в этом кратком руководстве.
+В руководстве по iOS и macOS вы найдете пошаговые инструкции по созданию приложений, а также полное описание того, о чем говорится в этом кратком руководстве.
 
 ### <a name="learn-how-to-create-the-application-used-in-this-quickstart"></a>Узнайте, как создавать приложения, используемые в этом кратком руководстве.
 
 > [!div class="nextstepaction"]
-> [Вызов API Microsoft Graph из приложения iOS](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-ios)
+> [Руководство по вызову API Graph для iOS и macOS](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-ios)
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
-
-Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
-
-> [!div class="nextstepaction"]
-> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с NetSuite | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с NetSuite | Документация Майкрософт
 description: Сведения о том, как настроить единый вход Azure Active Directory в NetSuite.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/22/2020
+ms.date: 04/28/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a920e58f1ffd4c3e3e9769bf6346100a8677b90
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 2eba47dede77f6d8dd19bde99a94de3ff5900f99
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760064"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732807"
 ---
-# <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство. Интеграция единого входа Azure AD с NetSuite
+# <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Руководство по Интеграция единого входа Azure AD с NetSuite
 
 В этом учебнике описано, как интегрировать NetSuite с Azure Active Directory (Azure AD). Интеграция NetSuite с Azure AD обеспечивает следующие возможности.
 
@@ -91,14 +91,14 @@ NetSuite поддерживает следующие технологии:
 
     ||
     |-|
-    | `https://<Account ID>.NetSuite.com/saml2/acs`|
-    | `https://<Account ID>.na1.NetSuite.com/saml2/acs`|
-    | `https://<Account ID>.na2.NetSuite.com/saml2/acs`|
-    | `https://<Account ID>.sandbox.NetSuite.com/saml2/acs`|
-    | `https://<Account ID>.na1.sandbox.NetSuite.com/saml2/acs`|
-    | `https://<Account ID>.na2.sandbox.NetSuite.com/saml2/acs`|
+    | `https://<Instance ID>.NetSuite.com/saml2/acs`|
+    | `https://<Instance ID>.na1.NetSuite.com/saml2/acs`|
+    | `https://<Instance ID>.na2.NetSuite.com/saml2/acs`|
+    | `https://<Instance ID>.sandbox.NetSuite.com/saml2/acs`|
+    | `https://<Instance ID>.na1.sandbox.NetSuite.com/saml2/acs`|
+    | `https://<Instance ID>.na2.sandbox.NetSuite.com/saml2/acs`|
 
-    * Вы получите значение **<`Account ID`>** в разделе конфигурации Netsuite, описанное далее в руководстве на шаге 8 раздела "Конфигурация Netsuite". В этом случае вы обнаружите точный домен (например, system.na0.netsuite.com).
+    * Вы получите значение **<`Instance ID`>** в разделе конфигурации Netsuite, описанное далее в руководстве на шаге 8 раздела "Конфигурация Netsuite". В этом случае вы обнаружите точный домен (например, system.na0.netsuite.com).
 
         ![Настройка единого входа](./media/NetSuite-tutorial/domain-value.png)
 

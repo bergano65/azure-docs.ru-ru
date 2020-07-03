@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: allensu
 ms.openlocfilehash: bff6a7ca6eb1a6859ec25d488f564c66946a780b
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76045413"
 ---
 # <a name="create-a-public-load-balancer-with-ipv6-using-azure-cli"></a>Создание общедоступной подсистемы балансировки нагрузки с поддержкой IPv6 с помощью Azure CLI
@@ -282,7 +282,7 @@ Azure Load Balancer является балансировщиком нагруз
     ```
 
     > [!WARNING]
-    > В этом примере для виртуальных машин используются имя пользователя и пароль в виде открытого текста. Будьте предусмотрительны, используя эти учетные данные в виде открытого текста. Более безопасный способ обработки учетных данных в PowerShell приводится в описании командлета [`Get-Credential`](https://technet.microsoft.com/library/hh849815.aspx).
+    > В этом примере для виртуальных машин используются имя пользователя и пароль в виде открытого текста. Будьте предусмотрительны, используя эти учетные данные в виде открытого текста. Более безопасный способ обработки учетных данных в PowerShell см. в [`Get-Credential`](https://technet.microsoft.com/library/hh849815.aspx) разделе командлет.
 
 2. Создайте группу доступности.
 

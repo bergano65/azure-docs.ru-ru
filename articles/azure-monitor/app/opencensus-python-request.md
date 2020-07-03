@@ -1,30 +1,28 @@
 ---
 title: Отслеживание входящих запросов в Azure Application Insights с помощью Опенценсус Python | Документация Майкрософт
 description: Отслеживайте вызовы запросов для приложений Python через Опенценсус Python.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: lzchen
 ms.author: lechen
 ms.date: 10/15/2019
-ms.openlocfilehash: 475ba601c61169f92eddd7f203b7fa34ed2e4916
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 0396bd8d150c6145a39f36e7be9e6e2dcacef2c4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368250"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77669953"
 ---
 # <a name="track-incoming-requests-with-opencensus-python"></a>Мониторинг входящих запросов с помощью Опенценсус Python
 
-Данные входящего запроса собираются с помощью Опенценсус Python и различных интеграций. Записывайте данные входящего запроса, отправленные в веб-приложения, созданные на основе популярных веб-платформ `django`, `flask` и `pyramid`. Затем данные отправляются в Application Insights в разделе Azure Monitor как `requests` телеметрии.
+Данные входящего запроса собираются с помощью Опенценсус Python и различных интеграций. Отследите данные входящего запроса `django`, отправляемые в веб-приложения, созданные на основе популярных веб `flask` - `pyramid`платформ, и. Затем данные отправляются в Application Insights под Azure Monitor в `requests` качестве телеметрии.
 
 Сначала выполните инструментирование приложения Python с помощью последнего [пакета SDK для Опенценсус Python](../../azure-monitor/app/opencensus-python.md).
 
 ## <a name="tracking-django-applications"></a>Отслеживание Django приложений
 
-1. Скачайте и установите `opencensus-ext-django` из [PyPI](https://pypi.org/project/opencensus-ext-django/) и выполните инструментирование приложения с помощью `django` по промежуточного слоя. Входящие запросы, отправленные в приложение `django`, будут относиться к отслеживанию.
+1. Скачайте и установите `opencensus-ext-django` из [PyPI](https://pypi.org/project/opencensus-ext-django/) и выполните инструментирование приложения с `django` помощью по промежуточного слоя. Входящие запросы, отправляемые `django` в ваше приложение, будут относиться к отслеживанию.
 
-2. Включите `opencensus.ext.django.middleware.OpencensusMiddleware` в файл `settings.py` в разделе `MIDDLEWARE`.
+2. Включите `opencensus.ext.django.middleware.OpencensusMiddleware` в `settings.py` файл в `MIDDLEWARE`.
 
     ```python
     MIDDLEWARE = (
@@ -34,7 +32,7 @@ ms.locfileid: "77368250"
     )
     ```
 
-3. Убедитесь, что Азурикспортер правильно настроен в `settings.py` в разделе `OPENCENSUS`.
+3. Убедитесь, что Азурикспортер правильно настроен в вашей `settings.py` среде `OPENCENSUS`.
 
     ```python
     OPENCENSUS = {
@@ -47,7 +45,7 @@ ms.locfileid: "77368250"
     }
     ```
 
-4. Можно также добавить URL-адреса в `settings.py` в разделе `BLACKLIST_PATHS` для запросов, которые не нужно отслеживанию.
+4. Кроме того, в можно добавлять `settings.py` URL `BLACKLIST_PATHS` -адреса для запросов, которые не следует отслеживанию.
 
     ```python
     OPENCENSUS = {
@@ -63,7 +61,7 @@ ms.locfileid: "77368250"
 
 ## <a name="tracking-flask-applications"></a>Отслеживание Flask приложений
 
-1. Скачайте и установите `opencensus-ext-flask` из [PyPI](https://pypi.org/project/opencensus-ext-flask/) и выполните инструментирование приложения с помощью `flask` по промежуточного слоя. Входящие запросы, отправленные в приложение `flask`, будут относиться к отслеживанию.
+1. Скачайте и установите `opencensus-ext-flask` из [PyPI](https://pypi.org/project/opencensus-ext-flask/) и выполните инструментирование приложения с `flask` помощью по промежуточного слоя. Входящие запросы, отправляемые `flask` в ваше приложение, будут относиться к отслеживанию.
 
     ```python
     
@@ -88,7 +86,7 @@ ms.locfileid: "77368250"
     
     ```
 
-2. Вы можете настроить по промежуточного слоя `flask` непосредственно в коде. Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте их в `BLACKLIST_PATHS`.
+2. По `flask` промежуточного слоя можно настроить непосредственно в коде. Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте `BLACKLIST_PATHS`их в.
 
     ```python
     app.config['OPENCENSUS'] = {
@@ -104,7 +102,7 @@ ms.locfileid: "77368250"
 
 ## <a name="tracking-pyramid-applications"></a>Отслеживание пирамидальных приложений
 
-1. Скачайте и установите `opencensus-ext-django` из [PyPI](https://pypi.org/project/opencensus-ext-pyramid/) и выполните инструментирование приложения с помощью `pyramid` анимации. Входящие запросы, отправленные в приложение `pyramid`, будут относиться к отслеживанию.
+1. Скачайте и установите `opencensus-ext-django` из [PyPI](https://pypi.org/project/opencensus-ext-pyramid/) и выполните инструментирование приложения с `pyramid` помощью анимации. Входящие запросы, отправляемые `pyramid` в ваше приложение, будут относиться к отслеживанию.
 
     ```python
     def main(global_config, **settings):
@@ -114,7 +112,7 @@ ms.locfileid: "77368250"
                          '.pyramid_middleware.OpenCensusTweenFactory')
     ```
 
-2. Вы можете настроить `pyramid` анимации непосредственно в коде. Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте их в `BLACKLIST_PATHS`.
+2. Вы можете настроить `pyramid` анимацию непосредственно в коде. Для запросов с URL-адресов, которые не нужно отслеживанию, добавьте `BLACKLIST_PATHS`их в.
 
     ```python
     settings = {
@@ -131,10 +129,10 @@ ms.locfileid: "77368250"
     config = Configurator(settings=settings)
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
+* [Схема приложений](../../azure-monitor/app/app-map.md)
 * [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)
 * [Поиск](../../azure-monitor/app/diagnostic-search.md)
 * [Запрос к журналу (Analytics)](../../azure-monitor/log-query/log-query-overview.md)
-* [Диагностика транзакций](../../azure-monitor/app/transaction-diagnostics.md)
+* [Диагностика транзакции](../../azure-monitor/app/transaction-diagnostics.md)

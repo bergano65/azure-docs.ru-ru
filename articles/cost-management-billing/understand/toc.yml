@@ -9,6 +9,8 @@
           href: review-customer-agreement-bill.md
         - name: Просмотр счета в рамках Соглашения с партнером Майкрософт
           href: review-partner-agreement-bill.md
+        - name: Просмотр счета в рамках Соглашения Enterprise
+          href: review-enterprise-agreement-bill.md
     - name: Основные понятия
       items:
         - name: Условия использования отдельных подписок

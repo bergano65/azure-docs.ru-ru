@@ -1,5 +1,5 @@
 ---
-title: Высокая доступность виртуальных машин Azure для SAP NetWeaver в Windows с Azure NetApp Files (SMB) | Документация Майкрософт
+title: ДОСТУПНОСТЬ виртуальных машин Azure для SAP NW в Windows с Azure NetApp Files (SMB) | Документация Майкрософт
 description: Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: radeltch
-ms.openlocfilehash: d7c2bfbe3f277bbaf652191977434ea5fe4dbffd
-ms.sourcegitcommit: 428fded8754fa58f20908487a81e2f278f75b5d0
+ms.openlocfilehash: b41db629c5308348f632b3dc51c75822ba361c60
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74555302"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77591359"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-windows-with-azure-netapp-filessmb-for-sap-applications"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP
 
@@ -76,14 +76,14 @@ ms.locfileid: "74555302"
 * В примечании SAP [2802770](https://launchpad.support.sap.com/#/notes/2802770) содержится информация об устранении проблем, возникающих при использовании AL11 транзакций SAP в Windows 2012 и 2016.
 * В примечании SAP [1911507](https://launchpad.support.sap.com/#/notes/1911507) содержится информация о функции прозрачной отработки отказа для файлового ресурса в Windows Server с протоколом SMB 3,0.
 * В примечании SAP [662452](https://launchpad.support.sap.com/#/notes/662452) содержится рекомендация (деактивация создания имени 8,3) для устранения проблем с производительностью файловой системы и ошибками при доступе к данным.
-* [Установка высокого уровня доступности SAP NetWeaver в отказоустойчивом кластере Windows и в общей папке для экземпляров SAP ASCS/SCS в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-installation-wsfc-file-share) 
-* [Архитектура высокого уровня доступности виртуальных машин Azure и сценарии для SAP NetWeaver](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios)
+* [Установка в Azure высокодоступной системы SAP NetWeaver в отказоустойчивом кластере Windows с файловым ресурсом для экземпляров SAP ASCS/SCS](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-installation-wsfc-file-share) 
+* [Архитектура высокого уровня доступности и сценарии для SAP NetWeaver на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios)
 * [Добавление порта пробы в конфигурацию кластера ASCS](sap-high-availability-installation-wsfc-file-share.md)
 * [Установка экземпляра (A) SCS в отказоустойчивом кластере](https://www.sap.com/documents/2017/07/f453332f-c97c-0010-82c7-eda71af511fa.html)
 * [Создание тома SMB для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb#requirements-for-active-directory-connections)
 * [NetApp приложений SAP на Microsoft Azure с помощью Azure NetApp Files][anf-sap-applications-azure]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 В SAP разработан новый подход и альтернатива общим дискам кластера для кластеризации экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows. Вместо использования общих дисков кластера один из них может использовать файловый ресурс SMB для развертывания файлов глобального узла SAP. Azure NetApp Files поддерживает SMBv3 (вместе с NFS) с ACL NTFS с помощью Active Directory. Azure NetApp Files автоматически становится высокодоступным (как и служба PaaS). Эти функции делают Azure NetApp Files отличным вариантом для размещения общего файлового ресурса SMB для глобального SAP.  
 Поддерживаются [службы доменов Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory-domain-services/overview) и [домен Active Directory Services (AD DS)](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) . С Azure NetApp Files можно использовать существующие Active Directory контроллеры домена. Контроллеры домена могут находиться в Azure как виртуальные машины или локально с помощью ExpressRoute или S2S VPN. В этой статье мы будем использовать контроллер домена на виртуальной машине Azure.  
@@ -126,8 +126,8 @@ ms.locfileid: "74555302"
 
 1. [Задание требуемых IP-адресов DNS](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#b22d7b3b-4343-40ff-a319-097e13f62f9e)  
 2. [Задайте статические IP-адреса для виртуальных машин SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#84c019fe-8c58-4dac-9e54-173efd4b2c30).
-3. [Задайте статический IP-адрес для внутреннего балансировщика нагрузки Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#7a8f3e9b-0624-4051-9e41-b73fff816a9e).
-4. [Задайте правила балансировки нагрузки ASCS/SCS по умолчанию для внутреннего балансировщика нагрузки Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#f19bd997-154d-4583-a46e-7f5a69d0153c).
+3. [Настройте статические IP-адреса для внутренней подсистемы балансировки нагрузки Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#7a8f3e9b-0624-4051-9e41-b73fff816a9e).
+4. [Задайте правила балансировки нагрузки ASCS/SCS по умолчанию для внутренней подсистемы балансировки нагрузки Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#f19bd997-154d-4583-a46e-7f5a69d0153c).
 5. [Измените правила балансировки нагрузки ASCS/SCS по умолчанию для внутреннего балансировщика нагрузки Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#fe0bd8b5-2b43-45e3-8295-80bee5415716).
 6. [Добавление виртуальных машин Windows в домен](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#e69e9a34-4601-47a3-a41c-d2e11c626c0c).
 7. [Добавление записей реестра на обоих узлах кластера экземпляра SAP ASCS/SCS](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-infrastructure-wsfc-shared-disk#661035b2-4d0f-4d31-86f8-dc0a50d78158)
@@ -147,7 +147,7 @@ ms.locfileid: "74555302"
 
 ### <a name="install-an-ascsscs-instance-on-the-first-ascsscs-cluster-node"></a>Установка экземпляра ASCS/SCS на первом узле кластера ASCS/SCS
 
-1. Установите экземпляр SAP ASCS/SCS на первом узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к разделу: **Product** > **субд** > установки > Application Server ABAP (или Java) > системе с высоким уровнем доступности > экземпляр ASCS/SCS > первый узел кластера.  
+1. Установите экземпляр SAP ASCS/SCS на первом узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к разделу: **продукт** > **СУБД** > установка > сервер приложений ABAP (или Java) > системы с высокой доступностью > экземпляра ASCS/SCS > первый узел кластера.  
 
 2. Выберите **кластер общих** папок в качестве конфигурации общего ресурса кластера в SWPM.  
 3. При появлении запроса на шаге **Параметры кластера системы SAP**введите имя узла для Azure NetApp Files общего ресурса SMB, который вы уже создали как **имя узла общего файлового ресурса**.  В этом примере имя узла общего ресурса SMB — **анфсмб-9562**. 
@@ -156,13 +156,13 @@ ms.locfileid: "74555302"
 > Если средство проверки готовности к установке SWPM показывает, что условие функции непрерывной доступности не выполнено, его можно устранить, следуя инструкциям в разделе [отложенные сообщения об ошибках при попытке доступа к общей папке, которая больше не существует в Windows](https://support.microsoft.com/help/2820470/delayed-error-message-when-you-try-to-access-a-shared-folder-that-no-l).  
 
 > [!TIP]
-> Если средство проверки готовности к установке SWPM отображает условие размера подкачки не выполнено, можно изменить размер подкачки, перейдя к Мой компьютер > Свойства системы > Параметры производительности > Расширенный > виртуальной памяти > изменения.  
+> Если средство проверки готовности к установке SWPM отображает условие размера подкачки не выполнено, можно изменить размер подкачки, перейдя к Мой компьютер>свойства системы>параметры производительности> расширенный> виртуальной памяти> изменения.  
 
-4. Настройте ресурс кластера SAP, порт пробы `SAP-SID-IP`, с помощью PowerShell. Выполните эту настройку на одном из узлов кластера SAP ASCS/SCS, как описано в разделе [Настройка порта пробы](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-installation-wsfc-shared-disk#10822f4f-32e7-4871-b63a-9b86c76ce761).
+4. Настройте ресурс кластера SAP, порт `SAP-SID-IP` пробы, с помощью PowerShell. Выполните эту настройку на одном из узлов кластера SAP ASCS/SCS, как описано в разделе [Настройка порта пробы](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-high-availability-installation-wsfc-shared-disk#10822f4f-32e7-4871-b63a-9b86c76ce761).
 
 ### <a name="install-an-ascsscs-instance-on-the-second-ascsscs-cluster-node"></a>Установка экземпляра ASCS/SCS на второй узел кластера ASCS/SCS
 
-1. Установите экземпляр SAP ASCS/SCS на втором узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к **продукту** > **субд** > установки > Application Server ABAP (или Java) > системе с высоким уровнем доступности > ASCS/SCS, > дополнительный узел кластера.  
+1. Установите экземпляр SAP ASCS/SCS на втором узле кластера. Запустите средство установки SAP SWPM, а затем перейдите к **продукту** > **СУБД** > установка > сервер приложений ABAP (или Java) > высокодоступную систему > экземпляра ASCS/SCS > дополнительный узел кластера.  
 
 ### <a name="install-a-dbms-instance-and-sap-application-servers"></a>Установка экземпляра СУБД и серверов приложений SAP
 
@@ -177,9 +177,9 @@ ms.locfileid: "74555302"
 ### <a name="fail-over-from-cluster-node-a-to-cluster-node-b-and-back"></a>Отработка отказа с узла A на узел B кластера б и обратно
 В этом сценарии тестирования мы будем называть узел кластера sapascs1 как узел A, а кластер sapascs2 node — узлом B.
 
-1. Убедитесь, что ресурсы кластера работают на узле A. ![рис. 1. ресурсы отказоустойчивого кластера Windows Server, работающие на узле а перед тестом отработки отказа](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-figure-1.png)  
+1. Убедитесь, что ресурсы кластера работают на узле A. рис ![. 1. ресурсы отказоустойчивого кластера Windows Server, работающие на узле a до выполнения теста отработки отказа](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-figure-1.png)  
 
-2. Перезапустите узел A кластера. Ресурсы кластера SAP будут перемещены на узел B кластера. ![рис. 2. ресурсы отказоустойчивого кластера Windows Server, работающие на узле B после тестовой отработки отказа](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-figure-2.png)  
+2. Перезапустите узел A кластера. Ресурсы кластера SAP будут перемещены на узел кластера B. ![рис. 2. ресурсы отказоустойчивого кластера Windows Server, работающие на узле B после теста отработки отказа](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-figure-2.png)  
 
 
 ## <a name="lock-entry-test"></a>Проверка записи блокировки
@@ -193,11 +193,11 @@ ms.locfileid: "74555302"
 ![Рис. 3. запись блокировки сохраняется после теста отработки отказа](./media/virtual-machines-shared-sap-high-availability-guide/high-availability-windows-azure-netapp-files-smb-figure-3.png)  
 
 Дополнительные сведения см. [в разделе Устранение неполадок при отработке отказа в очереди в ASCS с ERS](https://wiki.scn.sap.com/wiki/display/SI/Troubleshooting+for+Enqueue+Failover+in+ASCS+with+ERS)
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
-* [Развертывание виртуальных машин Azure для SAP][deployment-guide]
+* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
+* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
 * [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
 * Узнайте, как установить высокий уровень доступности и спланировать аварийное восстановление SAP. 
 * HANA в Azure (крупные экземпляры) см. [в разделе SAP HANA (крупные экземпляры) высокий уровень доступности и аварийное восстановление в Azure](hana-overview-high-availability-disaster-recovery.md).
-* Сведения о том, как установить высокий уровень доступности и спланировать аварийное восстановление SAP HANA на виртуальных машинах Azure, см. в статье [высокий уровень доступности SAP HANA на виртуальные машины Azure][sap-hana-ha] .
+* Дополнительные сведения об установке высокого уровня доступности и плана для аварийного восстановления SAP HANA на виртуальных машинах Azure см. в статье [Высокий уровень доступности SAP HANA на виртуальных машинах Azure][sap-hana-ha].

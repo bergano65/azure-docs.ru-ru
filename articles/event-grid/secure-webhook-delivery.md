@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 11/18/2019
 ms.author: babanisa
-ms.openlocfilehash: 074378668b0516936e11968ea8c800d3daa667bb
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 86d647ebfcf6e4c1ea8d05f58dd1f559d6e30cfc
+ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931552"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82900471"
 ---
 # <a name="publish-events-to-azure-active-directory-protected-endpoints"></a>Публикация событий в защищенных конечных точках Azure Active Directory
 
@@ -24,15 +24,15 @@ ms.locfileid: "74931552"
 
 ## <a name="create-an-azure-ad-application"></a>Создание приложения Azure AD
 
-Начните с создания приложения Azure AD для защищенной конечной точки. См. https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
+Начните с создания приложения Azure AD для защищенной конечной точки. См. раздел https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
     - Настройте защищенный API, который будет вызываться приложением демона.
     
 ## <a name="enable-event-grid-to-use-your-azure-ad-application"></a>Включение использования приложения Azure AD в службе "Сетка событий"
 
 Используйте приведенный ниже сценарий PowerShell для создания роли и участника-службы в приложении Azure AD. Вам потребуется идентификатор клиента и идентификатор объекта из приложения Azure AD:
 
-    > [!NOTE]
-    > You must be a member of the [Azure AD Application Administrator role](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) to execute this script.
+   > [!NOTE]
+   > Для выполнения этого скрипта необходимо быть членом [роли администратора приложения Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) .
     
 1. Измените $myTenantId сценария PowerShell, чтобы использовать идентификатор клиента Azure AD.
 1. Измените $myAzureADApplicationObjectId сценария PowerShell, чтобы использовать идентификатор объекта приложения Azure AD.
@@ -103,10 +103,10 @@ else
     
 New-AzureADServiceAppRoleAssignment -Id $myApp.AppRoles[0].Id -ResourceId $myServicePrincipal.ObjectId -ObjectId $eventGridSP.ObjectId -PrincipalId $eventGridSP.ObjectId
     
-Write-Host "My Azure AD Tenant Id" + $myTenantId
-Write-Host "My Azure AD Application Id" + $myAzureADApplicationObjectId
-Write-Host "My Azure AD Application ($myApp.ObjectId): " + $myApp.ObjectId
-Write-Host "My Azure AD Application's Roles"
+Write-Host "My Azure AD Tenant Id: $myTenantId"
+Write-Host "My Azure AD Application Id: $($myApp.AppId)"
+Write-Host "My Azure AD Application ObjectId: $($myApp.ObjectId)"
+Write-Host "My Azure AD Application's Roles: "
 Write-Host $myApp.AppRoles
 ```
     

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 09/24/2019
 ms.author: allensu
 ms.openlocfilehash: 5fd68f4559420ca688b3f4d6f6d66ee52db5191e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74225441"
 ---
 # <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-by-using-azure-powershell"></a>Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure PowerShell
@@ -44,7 +44,7 @@ Connect-AzAccount
 ```azurepowershell-interactive
 New-AzResourceGroup -Name myresourcegroupoutbound -Location eastus
 ```
-## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+## <a name="create-a-virtual-network"></a>Создание виртуальной сети
 Создайте виртуальную сеть с именем *мивнетаутбаунд*. Присвойте имя подсети *мисубнетаутбаунд*. Поместите его в *миресаурцеграупаутбаунд* с помощью [New-азвиртуалнетворк](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork?view=azps-2.6.0) и [New-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=azps-2.6.0).
 
 ```azurepowershell-interactive
@@ -160,7 +160,7 @@ New-AzLoadBalancer -Name lb -Sku Standard -ResourceGroupName myresourcegroupoutb
   Remove-AzResourceGroup -Name myresourcegroupoutbound
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы создали стандартную подсистему балансировки нагрузки, настроенную для входящих и исходящих правил трафика балансировщика нагрузки, и настроили проверку работоспособности для виртуальных машин в пуле серверной части. 
 
 Чтобы узнать больше, перейдите к [руководствам для Azure Load Balancer](tutorial-load-balancer-standard-public-zone-redundant-portal.md).

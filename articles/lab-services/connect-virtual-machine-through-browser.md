@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 12/09/2019
 ms.author: takamath
 ms.openlocfilehash: 4549ee0f50c06040b70307c96b5ca96cd4162214
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74974307"
 ---
 # <a name="connect-to-your-virtual-machines-through-a-browser"></a>Подключение к виртуальным машинам через браузер 
@@ -38,6 +38,6 @@ DevTest Labs интегрируется с [Azure бастиона](https://docs
 
 ![Запуск в браузере](./media/connect-virtual-machine-through-browser/browser-connect.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Добавление виртуальной машины в лабораторию в Azure DevTest Labs](devtest-lab-add-vm.md)

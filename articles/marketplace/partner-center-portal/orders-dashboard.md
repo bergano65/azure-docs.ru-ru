@@ -1,19 +1,18 @@
 ---
 title: Панель мониторинга заказов центра партнеров в службе "аналитика коммерческих рынков"
 description: Узнайте, как получить доступ к аналитическим отчетам о заказах в магазине в графическом и загружаемом формате.
-author: ChJenk
-manager: evansma
-ms.author: v-chjen
+author: dsindona
+ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: bf4b48fafa5b877053abe653b569cf27eb50d57b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 148b80a6843168b11e4feb3558f6bf08eaeb3ace
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75481065"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81261267"
 ---
 # <a name="orders-dashboard-in-commercial-marketplace-analytics"></a>Панель мониторинга заказов в коммерческой аналитике Marketplace
 
@@ -28,7 +27,7 @@ ms.locfileid: "75481065"
 
 **Панель мониторинга заказы** в меню **анализ** отображает текущие заказы для всех предложений SaaS. Можно просматривать графические представления следующих элементов:
 
-- [Сводка заказа](#order-summary)
+- [Сводка заказов](#order-summary)
 - [Заказы по географическому представлению](#orders-by-geography)
 - [Заказы по предложениям](#orders-by-offers)
 - [Тренд заказов на сайт и на рабочее место](#orders-trend-per-site-versus-per-seat)
@@ -59,7 +58,7 @@ ms.locfileid: "75481065"
 
 ### <a name="orders-by-geography"></a>Заказы по географическому представлению
 
-В поле **ORDER BY geography тепловой карты (заказы по географическому** расположению) отображается количество заказов на схеме мира и отображаются места, сопоставленные с учетом страны клиента. Этот тепловой карты функционирует так же, как **[клиент по географической тепловой карты](./customer-dashboard.md#customer-by-geography)** .
+В поле **ORDER BY geography тепловой карты (заказы по географическому** расположению) отображается количество заказов на схеме мира и отображаются места, сопоставленные с учетом страны клиента. Этот тепловой карты функционирует так же, как **[клиент по географической тепловой карты](./customer-dashboard.md#customer-by-geography)**.
 
 ![Центр партнеров. Анализ заказов по географическому представлению](./media/orders-by-geography.png)
 
@@ -123,7 +122,7 @@ ms.locfileid: "75481065"
 
      ![Центр партнеров анализ заказа с единственным значением, примененным к фильтру](./media/filters-applied-single.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Обзор аналитических отчетов, доступных в коммерческом рынке центра партнеров, см. в статье [аналитика для коммерческого рынка в центре партнеров](./analytics.md).
 - Для диаграмм, тенденций и значений статистических данных, суммирующих действия Marketplace для вашего предложения, см. раздел [Сводная панель мониторинга в коммерческом Analytics Marketplace](./summary-dashboard.md).

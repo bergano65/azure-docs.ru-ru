@@ -1,19 +1,18 @@
 ---
 title: Dynamics 365 для предложения участия клиентов в Azure Marketplace
 description: Нерекомендуемая статья на CPP, связанная со статьей ПК; WAS "объясняется, как создать Dynamics 365 для предложения участия клиентов в AppSource Marketplace с помощью Портал Cloud Partner".
-services: Dynamics 365 for Customer Engagement, AppSource Marketplace, Cloud Partner Portal,
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: d1ef2ef0aee17a7c7ce59b8f72bf9bac43a3e1d3
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 027bc727cad9713c1298f7410caef3a80ded6a4c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73808932"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278405"
 ---
 # <a name="dynamics-365-for-customer-engagement-offer"></a>Предложение Dynamics 365 for Customer Engagement
 

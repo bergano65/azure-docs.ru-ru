@@ -8,14 +8,17 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: d48fd9aa9ba52c850a514d392f25b980d0219470
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: 5cc8bae0f0245f5c4b45ca0cd446582b04788c21
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76960910"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758758"
 ---
-# <a name="403004-devicemaximumqueuedepthexceeded"></a>403004 Девицемаксимумкуеуедепсексцеедед
+# <a name="403004-devicemaximumqueuedepthexceeded"></a>403004 DeviceMaximumQueueDepthExceeded
 
 В этой статье описываются причины и решения для ошибок **403004 девицемаксимумкуеуедепсексцеедед** .
 
@@ -27,7 +30,7 @@ ms.locfileid: "76960910"
 
 Основная причина заключается в том, что количество сообщений, поставленных в очередь для устройства, превышает [ограничение очереди (50)](./iot-hub-devguide-quotas-throttling.md#other-limits).
 
-Наиболее вероятная причина — использование протокола HTTPS для получения сообщения, что ведет к непрерывному опросу с помощью `ReceiveAsync`, что приводит к регулированию запроса центром Интернета вещей.
+Наиболее вероятной причиной этого является то, что вы используете протокол HTTPS для получения сообщения, что ведет к непрерывному опросу с помощью `ReceiveAsync`, что приводит к регулированию запроса центром Интернета вещей.
 
 ## <a name="solution"></a>Решение
 
@@ -35,4 +38,4 @@ ms.locfileid: "76960910"
 
 Кроме того, можно улучшить логику устройства, чтобы быстро завершить, отклонять или отменять сообщения в очереди, сократить время жизни или отсылать меньше сообщений. См. о [сроке жизни сообщений, отправляемых из облака на устройство](./iot-hub-devguide-messages-c2d.md#message-expiration-time-to-live).
 
-Наконец, рассмотрите возможность использования [API очистки очереди](https://docs.microsoft.com/rest/api/iothub/service/purgecommandqueue) для периодической очистки ожидающих сообщений до достижения предела.
+Наконец, рассмотрите возможность использования [API очистки очереди](https://docs.microsoft.com/rest/api/iothub/service/registrymanager/purgecommandqueue) для периодической очистки ожидающих сообщений до достижения предела.

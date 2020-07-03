@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 58d52cd194ca4391c61f2477189984273df1198a
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705706"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79251210"
 ---
 # <a name="configure-a-content-key-authorization-policy"></a>Настройка политики авторизации ключей содержимого
 
@@ -34,7 +34,7 @@ ms.locfileid: "76705706"
 
 Когда поток запрашивается проигрывателем, Службы мультимедиа, используя указанный ключ, выполняют динамическое шифрование содержимого с помощью AES или DRM. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценивает политики авторизации, заданные для ключа.
 
-Службы мультимедиа поддерживают несколько способов аутентификации пользователей, которые запрашивают ключи. Политике авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью токена. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают токены в формате простого веб-маркера ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)) и формате JSON Web Token ([JWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3)).
+Службы мультимедиа поддерживают несколько способов аутентификации пользователей, которые запрашивают ключи. Политике авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью токена. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают маркеры в формате простого веб-маркера ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)) и в формате JSON Web Token ([JWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3)).
 
 Службы мультимедиа не предоставляют службу маркеров безопасности. Вы можете создать настраиваемую службу STS или выдавать токены с помощью службы контроля доступа Azure. Чтобы создать маркер, подписанный указанным ключом, и получить утверждения, указанные в конфигурации ограничения по маркерам, должна быть настроена служба маркеров безопасности (как описано в этой статье). Если маркер является допустимым и утверждения маркера соответствуют утверждениям, настроенным для ключа содержимого, служба доставки ключей для служб мультимедиа возвращает клиенту ключ шифрования.
 
@@ -231,7 +231,7 @@ ms.locfileid: "76705706"
 ## <a name="playready-dynamic-encryption"></a>Динамическое шифрование PlayReady
 С помощью служб мультимедиа можно настроить права и ограничения, которые должны применяться в среде выполнения PlayReady DRM при попытке пользователя воспроизвести защищенное содержимое. 
 
-При защите содержимого с помощью PlayReady в политике авторизации среди прочего необходимо указать XML-строку, определяющую [шаблон лицензии PlayReady](media-services-playready-license-template-overview.md). Классы PlayReadyLicenseResponseTemplate и PlayReadyLicenseTemplate в пакете SDK Служб мультимедиа для .NET помогают определить шаблон лицензии PlayReady.
+При защите содержимого с помощью PlayReady необходимо указать в политике авторизации строку XML, определяющую [шаблон лицензии PlayReady](media-services-playready-license-template-overview.md). Классы PlayReadyLicenseResponseTemplate и PlayReadyLicenseTemplate в пакете SDK Служб мультимедиа для .NET помогают определить шаблон лицензии PlayReady.
 
 Сведения о шифровании содержимого на основе технологий PlayReady и Widevine см. в статье [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md).
 
@@ -392,8 +392,8 @@ ms.locfileid: "76705706"
 
 Чтобы получить тестовый токен на основе токена ограничения, который использовался для политики авторизации ключа, см. [этот](#test-token) раздел. 
 
-## <a id="types"></a>Типы, используемые при определении ContentKeyAuthorizationPolicy
-### <a id="ContentKeyRestrictionType"></a>ContentKeyRestrictionType
+## <a name="types-used-when-you-define-contentkeyauthorizationpolicy"></a><a id="types"></a>Типы, используемые при определении ContentKeyAuthorizationPolicy
+### <a name="contentkeyrestrictiontype"></a><a id="ContentKeyRestrictionType"></a>ContentKeyRestrictionType
 
 ```csharp
     public enum ContentKeyRestrictionType
@@ -404,7 +404,7 @@ ms.locfileid: "76705706"
     }
 ```
 
-### <a id="ContentKeyDeliveryType"></a>ContentKeyDeliveryType
+### <a name="contentkeydeliverytype"></a><a id="ContentKeyDeliveryType"></a>ContentKeyDeliveryType
 
 ```csharp 
     public enum ContentKeyDeliveryType
@@ -416,7 +416,7 @@ ms.locfileid: "76705706"
     }
 ```
 
-### <a id="TokenType"></a>TokenType
+### <a name="tokentype"></a><a id="TokenType"></a>TokenType
 
 ```csharp
     public enum TokenType
@@ -427,16 +427,16 @@ ms.locfileid: "76705706"
     }
 ```
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда политика авторизации для ключа содержимого настроена, перейдите к статье о [настройке политики доставки ресурсов](media-services-dotnet-configure-asset-delivery-policy.md).
 

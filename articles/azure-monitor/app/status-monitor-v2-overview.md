@@ -1,18 +1,16 @@
 ---
 title: Обзор агента Application Insights Azure | Документация Майкрософт
 description: Общие сведения об агенте Application Insights. Отслеживайте производительность веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, в виртуальных машинах или в Azure.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
-ms.openlocfilehash: 61c3721745550b43aea730d0bcd2230b0435ff53
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 626a8c96fdc247db174e2cbcd2e5c99cec43d2ea
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899599"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81770967"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента Application Insights Azure Monitor для локальных серверов
 
@@ -33,30 +31,30 @@ Application Insights агент расположен здесь: https://www.pow
 ![Коллекция PowerShell](https://img.shields.io/powershellgallery/v/Az.ApplicationMonitor.svg?color=Blue&label=Current%20Version&logo=PowerShell&style=for-the-badge)
 
 
-## <a name="instructions"></a>Указания
+## <a name="instructions"></a>Instructions
 - Ознакомьтесь с [инструкциями по началу работы](status-monitor-v2-get-started.md) , чтобы получить краткие примеры кода.
 - [Подробные инструкции](status-monitor-v2-detailed-instructions.md) по началу работы см. здесь.
 
 ## <a name="powershell-api-reference"></a>Справочник по API PowerShell
-- [Disable-Аппликатионинсигхтсмониторинг](status-monitor-v2-api-disable-monitoring.md)
-- [Disable-Инструментатионенгине](status-monitor-v2-api-disable-instrumentation-engine.md)
-- [Enable-Аппликатионинсигхтсмониторинг](status-monitor-v2-api-enable-monitoring.md)
-- [Enable-Инструментатионенгине](status-monitor-v2-api-enable-instrumentation-engine.md)
-- [Get-Аппликатионинсигхтсмониторингконфиг](status-monitor-v2-api-get-config.md)
-- [Get-Аппликатионинсигхтсмониторингстатус](status-monitor-v2-api-get-status.md)
-- [Set-Аппликатионинсигхтсмониторингконфиг](status-monitor-v2-api-set-config.md)
-- [Start-Аппликатионинсигхтсмониторингтраце](status-monitor-v2-api-start-trace.md)
+- [Disable-Аппликатионинсигхтсмониторинг](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#disable-applicationinsightsmonitoring)
+- [Disable-Инструментатионенгине](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#disable-instrumentationengine)
+- [Enable-Аппликатионинсигхтсмониторинг](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#enable-applicationinsightsmonitoring)
+- [Enable-Инструментатионенгине](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#enable-instrumentationengine)
+- [Get-Аппликатионинсигхтсмониторингконфиг](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#get-applicationinsightsmonitoringconfig)
+- [Get-Аппликатионинсигхтсмониторингстатус](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#get-applicationinsightsmonitoringstatus)
+- [Set-Аппликатионинсигхтсмониторингконфиг](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#set-applicationinsightsmonitoringconfig)
+- [Start-Аппликатионинсигхтсмониторингтраце](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#start-applicationinsightsmonitoringtrace)
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 - [Устранение неполадок](status-monitor-v2-troubleshoot.md)
 - [Известные проблемы](status-monitor-v2-troubleshoot.md#known-issues)
 
 
-## <a name="faq"></a>Вопросы и ответы
+## <a name="faq"></a>часто задаваемые вопросы
 
 - Поддерживает ли агент Application Insights установку прокси-серверов?
 
-  *Да*. Существует несколько способов загрузки агента Application Insights. Если компьютер имеет доступ к Интернету, можно подключить коллекция PowerShell с помощью параметров `-Proxy`.
+  *Да*. Существует несколько способов загрузки агента Application Insights. Если компьютер имеет доступ к Интернету, можно подключить коллекция PowerShell с помощью `-Proxy` параметров.
 Можно также вручную скачать модуль и либо установить его на компьютер, либо использовать его напрямую.
 Каждый из этих вариантов описан в [подробных инструкциях](status-monitor-v2-detailed-instructions.md).
 
@@ -66,7 +64,7 @@ Application Insights агент расположен здесь: https://www.pow
 
 - Разделы справки убедиться в успешности включения?
 
-  - Командлет [Get-аппликатионинсигхтсмониторингстатус](status-monitor-v2-api-get-status.md) можно использовать для проверки успешности выполнения включения.
+  - Командлет [Get-аппликатионинсигхтсмониторингстатус](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#get-applicationinsightsmonitoringstatus) можно использовать для проверки успешности выполнения включения.
   - Мы рекомендуем использовать [динамические метрики](https://docs.microsoft.com/azure/azure-monitor/app/live-stream) , чтобы быстро определить, отправляет ли приложение данные телеметрии.
 
   - Вы также можете использовать [log Analytics](../log-query/get-started-portal.md) для перечисления всех облачных ролей, отправляющих данные телеметрии:
@@ -74,18 +72,18 @@ Application Insights агент расположен здесь: https://www.pow
       union * | summarize count() by cloud_RoleName, cloud_RoleInstance
       ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Просмотр телеметрии:
 
-* [Изучите метрики](../../azure-monitor/app/metrics-explorer.md) для мониторинга производительности и использования.
+* [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
 * [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
 * [Используйте аналитику](../../azure-monitor/app/analytics.md) для более сложных запросов.
 * [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
 
 Добавление данных телеметрии:
 
-* [Создайте веб-тесты](monitor-web-app-availability.md) , чтобы убедиться, что ваш сайт остается активным.
+* [Создайте веб-тесты](monitor-web-app-availability.md), чтобы убедиться, что ваш сайт продолжает работать.
 * [Добавьте данные телеметрии веб-клиента](../../azure-monitor/app/javascript.md) , чтобы просмотреть исключения из кода веб-страницы и включить вызовы трассировки.
 * [Добавьте в код пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md) , чтобы можно было вставить вызовы трассировки и журнала.
 

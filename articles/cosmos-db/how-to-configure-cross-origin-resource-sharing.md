@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 10/11/2019
 ms.author: dech
 ms.openlocfilehash: 7a487cb10965a379a0a418efaa061be88c5d10dd
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77082977"
 ---
 # <a name="configure-cross-origin-resource-sharing-cors"></a>Настройка общего доступа к ресурсам независимо от источника (CORS)
@@ -83,7 +83,7 @@ module.exports = {
 Вот [пример кода](https://github.com/christopheranderson/cosmos-browser-sample), в котором используется TypeScript и Webpack с библиотекой пакета SDK Azure Cosmos DB для JavaScript для создания приложения Todo, которое отправляет обновления в режиме реального времени при создании элементов.
 Рекомендуется не использовать первичный ключ для взаимодействия с Azure Cosmos DB из браузера. Вместо этого используйте маркеры ресурсов для обмена данными. Дополнительные сведения о маркерах ресурсов см. в разделе [Защита доступа к Azure Cosmos DB](secure-access-to-data.md#resource-tokens).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о других способах защиты вашей учетной записи Azure Cosmos см. в следующих статьях:
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/11/2020
+ms.date: 03/25/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87224c9e3e697b86aab51d1e922af8ab2130ac40
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 907ad8705742e4b2e38b13c3c675ebd333bd27d2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77186231"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80295325"
 ---
 # <a name="building-a-conditional-access-policy"></a>Создание политики условного доступа
 
@@ -38,7 +38,7 @@ ms.locfileid: "77186231"
 
 [Облачные приложения или действия](concept-conditional-access-cloud-apps.md) могут включать или исключать облачные приложения или действия пользователей, которые будут подвергаться политике.
 
-### <a name="conditions"></a>Состояния
+### <a name="conditions"></a>Условия
 
 Политика может содержать несколько [условий](concept-conditional-access-conditions.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "77186231"
 
 Сведения, используемые для вычисления платформы устройства, берутся из непроверенных источников, таких как строки агента пользователя, которые могут быть изменены.
 
-#### <a name="locations"></a>Местоположения
+#### <a name="locations"></a>Расположения
 
 Данные о расположении предоставляются данными о географическом расположении IP-адреса. Администраторы могут определять местоположения и отмечать их как доверенные, как и для сетевых расположений своей организации.
 
@@ -85,7 +85,7 @@ ms.locfileid: "77186231"
 - Требовать многофакторную проверку подлинности (многофакторная идентификация Azure)
 - Требовать, чтобы устройство было помечено как соответствующее (Intune)
 - Требование устройства с гибридным присоединением к Azure AD
-- Требование утвержденного клиентского приложения
+- Требовать утвержденное клиентское приложение
 - Требование политики защиты приложений
 
 Администраторы могут выбрать один из предыдущих элементов управления или все выбранные элементы управления, используя следующие параметры. По умолчанию для нескольких элементов управления требуется все.
@@ -125,12 +125,12 @@ ms.locfileid: "77186231"
 
 В статье [Общие политики условного доступа](concept-conditional-access-policy-common.md) входят некоторые политики, которые мы будем использовать для большинства организаций.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Моделирование поведения входа с помощью средства What If условного доступа](troubleshoot-conditional-access-what-if.md)
 
-[Планирование развертывания многофакторной идентификации Azure на основе облачных служб](../authentication/howto-mfa-getstarted.md)
+[Планирование развертывания облачной службы Многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)
 
-[Управление соответствием устройств с помощью Intune](https://docs.microsoft.com/intune/device-compliance-get-started)
+[Управление соответствием устройств с помощью Intune](/intune/device-compliance-get-started)
 
-[Microsoft Cloud App Security и условный доступ](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+[Microsoft Cloud App Security и условный доступ](/cloud-app-security/proxy-intro-aad)

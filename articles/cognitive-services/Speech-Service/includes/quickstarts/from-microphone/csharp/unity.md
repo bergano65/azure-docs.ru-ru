@@ -7,26 +7,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 12/17/2019
+ms.date: 04/02/2020
 ms.author: erhopf
-ms.openlocfilehash: 149ec84732171cd57b3f8a9590d5340107536eac
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 951ae2c48bcdd92f640a37ddbb6430ca62a3b816
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75928106"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81275045"
 ---
 > [!NOTE]
 > Пакет SDK службы "Речь" для Unity поддерживает Windows Desktop (x86 и x64) или универсальную платформу Windows (x86, x64, ARM и ARM64), Android (x86, ARM32/64) и iOS (симулятор x64, ARM32 и ARM64).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=unity)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=unity)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=unity&pivots=programming-language-csharp).
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 Если вы уже сделали это, отлично. Давайте продолжим.
@@ -42,7 +41,7 @@ ms.locfileid: "75928106"
 1. В поле **Project Name** (Имя проекта) введите **csharp-unity**.
 1. В области **Templates** (Шаблоны) выберите **3D**.
 1. В поле **Location** (Расположение) укажите или создайте папку, в которой будет сохранен проект.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 Через некоторое время отобразится окно Unity Editor.
 
@@ -90,7 +89,7 @@ ms.locfileid: "75928106"
 
 1. Найдите и замените строку `YourSubscriptionKey` ключом подписки службы "Речь".
 
-1. Найдите строку `YourServiceRegion` и замените ее на [регион](~/articles/cognitive-services/Speech-Service/regions.md) своей подписки. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
+1. Найдите строку `YourServiceRegion` и замените ее **идентификатором региона** из [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. Например, если вы используете бесплатную пробную версию, ваш регион — `westus`.
 
 1. Сохраните изменения в скрипте.
 
@@ -134,4 +133,5 @@ ms.locfileid: "75928106"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](./footer.md)]
+[!INCLUDE [Speech recognition basics](../../speech-to-text-next-steps.md)]
+

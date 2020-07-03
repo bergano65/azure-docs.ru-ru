@@ -6,10 +6,10 @@ ms.topic: tutorial
 ms.date: 12/16/2019
 ms.custom: MVC
 ms.openlocfilehash: 8501bb1a998eb08984a118bfa5d52d1e3f3e4f84
-ms.sourcegitcommit: f0dfcdd6e9de64d5513adf3dd4fe62b26db15e8b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/26/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75498080"
 ---
 # <a name="fail-over--vmware-vms"></a>Отработка отказа виртуальных машин VMware
@@ -18,7 +18,7 @@ ms.locfileid: "75498080"
 
 Это пятый учебник в серии, в которой показано, как настроить аварийное восстановление для локальных компьютеров в Azure.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Проверка соответствия свойств виртуальной машины VMware требованиям Azure.
@@ -50,7 +50,7 @@ ms.locfileid: "75498080"
 
 3. В разделе **Вычисления и сеть** при необходимости вы можете изменить эти свойства:
     * имя Azure;
-    * группа ресурсов.
+    * Группа ресурсов
     * целевой размер;
     * [группа доступности;](../virtual-machines/windows/tutorial-availability-sets.md)
     * параметры управляемого диска.

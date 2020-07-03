@@ -1,29 +1,30 @@
 ### YamlMime:Landing
-title: Документация по тестам производительности системы безопасности Azure
+title: Документация по средствам для оценки системы безопасности Azure
 summary: Узнайте, как защитить облачные решения в Azure, используя наши рекомендации и руководства.
 metadata:
   title: Тесты производительности системы безопасности Azure
-  description: Тест производительности элементов управления безопасностью Azure содержит рекомендации, которые помогут повысить безопасность приложений и данных в Azure.
+  description: Решение для оценки системы безопасности Azure содержит рекомендации, которые помогут повысить безопасность приложений и данных в Azure.
   services: security
   ms.service: security
   ms.subservice: fundamentals
+  ms.custom: security-benchmark
   ms.topic: landing-page
   author: msmbaldwin
   ms.author: mbaldwin
   manager: rkarlin
   ms.date: 12/23/2019
-  ms.openlocfilehash: 114811ded778b2f444c94908d62209947adef735
-  ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+  ms.openlocfilehash: 7cebc4fb6e676470b46a52cf1ea62e0990e708e9
+  ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/14/2020
-  ms.locfileid: "75934766"
+  ms.lasthandoff: 04/30/2020
+  ms.locfileid: "82607761"
 landingContent:
 - title: Общие средства о тестировании производительности системы безопасности Azure
   linkLists:
   - linkListType: overview
     links:
-    - text: Вводные сведения о тестах производительности системы безопасности Azure
+    - text: Вводные сведения о решении для оценки системы безопасности Azure
       url: introduction.md
     - text: Обзор элементов управления безопасностью Azure
       url: overview.md
@@ -35,11 +36,11 @@ landingContent:
       url: security-control-network-security.md
     - text: Ведение журналов и мониторинг
       url: security-control-logging-monitoring.md
-    - text: Идентификатор и управление доступом
+    - text: Идентификаторы и управление доступом
       url: security-control-identity-access-control.md
     - text: Защита данных
       url: security-control-data-protection.md
-    - text: Управление уязвимостями
+    - text: управление уязвимостями;
       url: security-control-vulnerability-management.md
     - text: Подробнее
       url: security-control-inventory-asset-management.md

@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок в кэше Azure для Redis неполадок на стороне сервера
+title: Устранение неполадок с Кэшем Azure для Redis на стороне сервера
 description: Узнайте, как устранять распространенные проблемы на стороне сервера в кэше Azure для Redis, такие как нехватка памяти, высокая загрузка ЦП, длительные команды или ограничения пропускной способности.
 author: yegu-ms
 ms.author: yegu
@@ -7,19 +7,19 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 10/18/2019
 ms.openlocfilehash: a68c27de304a0da6470745ee4abf69590d9bf78c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433348"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79277938"
 ---
-# <a name="troubleshoot-azure-cache-for-redis-server-side-issues"></a>Устранение неполадок в кэше Azure для Redis неполадок на стороне сервера
+# <a name="troubleshoot-azure-cache-for-redis-server-side-issues"></a>Устранение неполадок с Кэшем Azure для Redis на стороне сервера
 
 В этом разделе обсуждаются проблемы, возникающие из-за состояния кэша Azure для Redis или виртуальных машин, на которых размещается.
 
 - [Нехватка памяти на сервере Redis](#memory-pressure-on-redis-server)
 - [Высокая загрузка ЦП или нагрузка на сервер](#high-cpu-usage-or-server-load)
-- [Длительно выполняемые команды](#long-running-commands)
+- [Долго выполняющиеся команды](#long-running-commands)
 - [Ограничение пропускной способности на стороне сервера](#server-side-bandwidth-limitation)
 
 > [!NOTE]
@@ -55,7 +55,7 @@ Redis предоставляет две статистики через кома
 - [Создавайте оповещения](cache-how-to-monitor.md#alerts) о таких метриках, как загрузка ЦП или сервера, чтобы получать уведомления о возможных последствиях.
 - [Масштабирование](cache-how-to-scale.md) до большего размера кэша с большим объемом ресурсов ЦП.
 
-## <a name="long-running-commands"></a>Длительно выполняемые команды
+## <a name="long-running-commands"></a>Долго выполняющиеся команды
 
 Некоторые команды Redis больше затрат на выполнение, чем другие. В [документации по командам Redis](https://redis.io/commands) показано время сложности каждой команды. Так как обработка команд Redis является однопотоковой, команда, которая занимает время выполнения, блокирует все остальные, которые поступают после него. Вы должны ознакомиться с командами, которые вы выдаете серверу Redis, чтобы понять их влияние на производительность. Например, команда [Keys](https://redis.io/commands/keys) часто используется, не зная, что это операция O (N). Вы можете избежать ключей с помощью [сканирования](https://redis.io/commands/scan) , чтобы уменьшить пиковые пики.
 

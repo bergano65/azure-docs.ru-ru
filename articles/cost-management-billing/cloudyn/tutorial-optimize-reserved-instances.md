@@ -1,25 +1,25 @@
 ---
 title: Руководство по оптимизации затрат на зарезервированный экземпляр с помощью Cloudyn в Azure
 description: В этом руководстве вы узнаете, как оптимизировать затраты на использование зарезервированных экземпляров Azure и Amazon Web Services (AWS).
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 03/12/2020
 ms.topic: tutorial
 ms.service: cost-management-billing
 ms.custom: seodec18
 ms.reviewer: benshy
-ms.openlocfilehash: 9b0dbc31f3789cb0033a531ad6c5395d3cfb8bcc
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ROBOTS: NOINDEX
+ms.openlocfilehash: 22a435a63c4ff649fe428e031bca7beecdbc46d1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76769945"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79463719"
 ---
 <!-- Intent: As a cloud-consuming administrator, I need to ensure that my reserved instances are optimized for cost and usage
 -->
 
-# <a name="tutorial-optimize-reserved-instances"></a>Руководство. оптимизации зарезервированных экземпляров
+# <a name="tutorial-optimize-reserved-instances"></a>Руководство по оптимизации зарезервированных экземпляров
 
 В этом руководстве вы узнаете, как оптимизировать затраты на использование зарезервированных экземпляров, а также использование Azure и Amazon Web Services (AWS) с помощью Cloudyn. Зарезервированный экземпляр любого поставщика облачных служб — это обязательство по долгосрочному контракту, в котором вы заранее обязуетесь использовать виртуальную машину. Кроме того, он потенциально может обеспечить значительную экономию по сравнению со стандартной моделью ценообразования виртуальных машин с оплатой за использование. Экономия достигается только тогда, когда вы полностью используете возможности своих зарезервированных экземпляров.
 
@@ -37,7 +37,9 @@ ms.locfileid: "76769945"
 
 Если у вас еще нет подписки Azure, то прежде чем начинать работу, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
+
+## <a name="prerequisites"></a>предварительные требования
 
 - Необходимо иметь учетную запись Azure.
 - У вас должна быть пробная регистрация либо платная подписка на службу Cloudyn.

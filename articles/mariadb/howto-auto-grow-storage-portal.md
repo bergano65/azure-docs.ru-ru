@@ -5,20 +5,20 @@ author: ambhatna
 ms.author: ambhatna
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 5c5e9154260a255d9e9b8bc5775a479df7e41522
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 7ec4c7a61725fa02f00bf38048182d640666ae8f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74767506"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79528903"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mariadb-using-the-azure-portal"></a>Автоматическое увеличение объема хранилища в базе данных Azure для MariaDB с помощью портал Azure
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для MariaDB, не влияя на рабочую нагрузку.
 
 Когда сервер достигает предельного размера выделенного хранилища, сервер помечается как доступный только для чтения. Однако если включить автоматическое увеличение размера хранилища, серверное хранилище будет увеличиваться в соответствии с растущими данными. Для серверов с подготовленным хранилищем объемом менее 100 ГБ размер подготовленного хранилища увеличивается на 5 ГБ, как только объем свободного хранилища превысит 1 ГБ или 10% подготовленного хранилища. Для серверов с более чем 100 ГБ подготовленного хранилища размер подготовленного хранилища увеличивается на 5%, если объем свободного пространства превышает 5% от подготовленного объема хранилища. Максимальный объем хранилища, указанный [здесь](https://docs.microsoft.com/azure/mariadb/concepts-pricing-tiers#storage) , применим.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 - [Сервер базы данных Azure для MariaDB](./quickstart-create-mariadb-server-database-using-azure-portal.md)
 
@@ -34,12 +34,12 @@ ms.locfileid: "74767506"
 
     ![База данных Azure для MariaDB-Settings_Pricing_tier — автоматическое увеличение](./media/howto-auto-grow-storage-portal/3-auto-grow.png)
 
-4. Нажмите кнопку **Сохранить** , чтобы сохранить изменения.
+4. Чтобы сохранить изменения, нажмите кнопку **ОК**.
 
 5. В уведомлении будет подтверждено, что автоматическое увеличение размера было успешно включено.
 
     ![База данных Azure для MariaDB — успешное выполнение автоматического роста](./media/howto-auto-grow-storage-portal/5-auto-grow-successful.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-metric.md).

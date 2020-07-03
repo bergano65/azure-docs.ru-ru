@@ -8,12 +8,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 10/01/2019
 ms.author: aschhab
-ms.openlocfilehash: 21a3bfd09e83571e489e15e9351e12220a99e563
-ms.sourcegitcommit: 8b44498b922f7d7d34e4de7189b3ad5a9ba1488b
+ms.openlocfilehash: f852ad70b2eb97e2b8b3e40d086e98b3836c3592
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2019
-ms.locfileid: "72301260"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77598295"
 ---
 # <a name="throttling-operations-on-azure-service-bus"></a>Операции регулирования в служебной шине Azure
 
@@ -55,6 +55,11 @@ ms.locfileid: "72301260"
 |-----------|-----------|
 | Операции с данными (отправка, SendAsync, получение, ReceiveAsync, просмотр) |1 кредит на одно сообщение |
 | Операции управления (создание, чтение, обновление, удаление в очередях, разделы, подписки, фильтры) | 10 кредитов |
+
+> [!NOTE]
+> Обратите внимание, что при отправке в раздел каждое сообщение оценивается по фильтрам до того, как оно станет доступно в подписке.
+> Каждая оценка фильтра также учитывает кредитный лимит (т. е. 1 кредит на оценку фильтра).
+>
 
 ### <a name="how-will-i-know-that-im-being-throttled"></a>Как я знаю, что выполняется регулирование?
 
@@ -99,7 +104,7 @@ The request was terminated because the entity is being throttled. Error code: 50
 
 Увеличение или уменьшение масштаба можно выполнить, создав [модули Runbook](../automation/automation-create-alert-triggered-runbook.md) , которые могут быть активированы изменениями в указанных выше метриках.
 
-## <a name="faqs"></a>Часто задаваемые вопросы
+## <a name="faqs"></a>Частые вопросы
 
 ### <a name="how-does-throttling-affect-my-application"></a>Как регулирование влияет на мое приложение?
 
@@ -117,7 +122,7 @@ The request was terminated because the entity is being throttled. Error code: 50
 
 Однако при регулировании запроса служба подразумевает, что она не может принять и обработать запрос прямо сейчас из-за ограничений ресурсов. Это **не** подразумевает потери данных, так как служебная шина просто не просмотрела запрос. В этом случае, используя политику повтора по умолчанию пакета SDK служебной шины, вы гарантируете, что запрос будет обработан в конечном итоге.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения и примеры использования обмена сообщениями в служебной шине Microsoft Azure см. в следующих дополнительных статьях:
 

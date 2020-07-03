@@ -1,0 +1,11 @@
+- name: Документация по обеспечению надежности информационных систем
+  href: ../index.yml
+- name: Ресурсы
+  expanded: true
+  items:
+    - name: Книги по SRE
+      href: books.md
+    - name: Мероприятия по SRE
+      href: events.md
+    - name: Коллекции ссылок и сводки по SRE
+      href: links.md

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: tomfitz
 ms.openlocfilehash: 23a7c54a84ec083b8fa470f26582913fcc3d2ee6
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75652207"
 ---
 # <a name="microsoftcommontagsbyresource-ui-element"></a>Элемент пользовательского интерфейса Microsoft. Common. Тагсбиресаурце
@@ -49,7 +49,7 @@ ms.locfileid: "75652207"
 
 ## <a name="remarks"></a>Remarks
 
-- Необходимо указать хотя бы один элемент в массиве `resources`.
+- Необходимо указать хотя бы один элемент `resources` в массиве.
 - Каждый элемент в `resources` должен быть полным типом ресурса. Эти элементы отображаются в раскрывающемся списке **ресурсов** и таггабле пользователем.
 - Выходные данные элемента управления форматируются для простого присваивания значений тегов в шаблоне Azure Resource Manager. Чтобы получить выходные данные элемента управления в шаблоне, включите параметр в шаблон, как показано в следующем примере:
 

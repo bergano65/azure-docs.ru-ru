@@ -1,0 +1,492 @@
+---
+title: Поддерживаемые типы ресурсов диспетчер ресурсов
+description: Укажите список типов ресурсов диспетчер ресурсов, поддерживаемых графиком ресурсов Azure и журналом изменений.
+ms.date: 04/29/2020
+ms.topic: reference
+ms.openlocfilehash: 0ab079bcd1e7e8558d754a413068ca9f0ae276c6
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594259"
+---
+# <a name="azure-resource-graph-table-and-resource-type-reference"></a>Таблица Graph ресурсов Azure и Справочник по типам ресурсов
+
+Граф ресурсов Azure поддерживает следующие **типы ресурсов** [Azure Resource Manager](../../../azure-resource-manager/management/overview.md). Каждый **тип ресурса** является частью **таблицы** в графе ресурсов.
+
+## <a name="advisorresources"></a>адвисорресаурцес
+
+- Microsoft. Advisor и конфигурации
+- Microsoft. Advisor/рекомендации
+- Microsoft. Advisor и подавления
+
+## <a name="alertsmanagementresources"></a>алертсманажементресаурцес
+
+- Microsoft. алертсманажемент/Alerts
+
+## <a name="maintenanceresources"></a>маинтенанцересаурцес
+
+- Microsoft. Maintenance/конфигуратионассигнментс
+- Microsoft. Обслуживание и обновления
+
+## <a name="resourcecontainers"></a>ресаурцеконтаинерс
+
+- Microsoft. Resources/Subscriptions
+- Microsoft. Resources/Subscriptions/resourcegroups
+
+## <a name="resources"></a>ресурсов
+
+- 84codes. клаудамкп/серверы
+- Citrix. Services/ксенаппессентиалс
+- Citrix. Services/ксендесктопессентиалс
+- conexlink. mycloudit/учетные записи
+- криптерон. безопасность и приложения
+- гридпро. евопс/учетные записи
+- гридпро. евопс/Accounts/евентрулес
+- гридпро. евопс/Accounts/рекуесттемплатес
+- гридпро. евопс/Accounts/views
+- Hive. Streaming/Services
+- incapsula. WAF/учетные записи
+- ливеарена. вещание/службы
+- маилжет. email/Services
+- Microsoft. AAD/DomainServices
+- Microsoft. аадиам/привателинкфоразуреад
+- microsoft.aadiam/tenants
+- Microsoft. аисуперкомпутер/учетные записи
+- Microsoft. аисуперкомпутер/Accounts/жобграупс
+- Microsoft. аисуперкомпутер/Accounts/жобграупс/Jobs;
+- Microsoft. алертсманажемент/актионрулес
+- Microsoft. алертсманажемент/смартдетекторалертрулес
+- Microsoft. AnalysisServices/Servers
+- Microsoft. apimanagement/Service
+- Microsoft. аппконфигуратион/конфигуратионсторес
+- Microsoft. аппплатформ/пружина
+- Microsoft. Archive/Collections
+- Microsoft. Аттестация/аттестатионпровидерс
+- Microsoft. Automation/automationaccounts
+- Microsoft. Automation/automationaccounts/конфигурации
+- Microsoft. Automation/automationaccounts/модули Runbook
+- Microsoft. аутономауссистемс/рабочие области
+- Microsoft. азконфиг/конфигуратионсторес
+- Microsoft. azureactivedirectory/b2cdirectories
+- Microsoft. азуредата/контроллеры
+- Microsoft. азуредата/хибриддатаманажерс
+- Microsoft. азуредата/постгресинстанцес
+- Microsoft. азуредата/склбигдатаклустерс
+- Microsoft. азуредата/склинстанцес
+- Microsoft. азуредата/склсерверрегистратионс
+- Microsoft. azurestack/регистрации
+- Microsoft. азурестаккхЦи/кластеры
+- Microsoft. baremetal/консолеконнектионс
+- Microsoft. baremetal/крайсерверс
+- Microsoft. baremetal/мониторингсерверс
+- Microsoft. Batch/батчаккаунтс
+- Microsoft. batchai/кластеры
+- Microsoft. batchai/филесерверс
+- Microsoft. batchai/задания
+- Microsoft. batchai/рабочие области
+- Microsoft. bingmaps/мапапис
+- Microsoft. бизталксервицес/BizTalk
+- Microsoft. блокчейн/блоккчаинмемберс
+- Microsoft. блокчейн/кордамемберс
+- Microsoft. блокчейн/наблюдатели
+- Microsoft. ботсервице/ботсервицес
+- Microsoft. Cache/Redis
+- Microsoft. CDN/кднвебаппликатионфиреваллполиЦиес
+- Microsoft. CDN/профили
+- Microsoft. CDN/профили/конечные точки
+- Microsoft. цертификатерегистратион/certificateorder
+- Microsoft. classiccompute/имя_домена
+- Microsoft. classiccompute/virtualmachines
+- Microsoft. classicnetwork/networksecuritygroups
+- Microsoft. classicnetwork/ресерведипс
+- Microsoft. classicnetwork/virtualnetworks
+- Microsoft. классикстораже/storageaccounts
+- Microsoft. Clouds/Accounts
+- Microsoft. клаудсеарч/индексы
+- Microsoft. распознавания/синсетиксаккаунтс
+- Microsoft. cognitiveservices/учетные записи
+- Microsoft. COMPUTE/availabilitysets
+- Microsoft. COMPUTE/дискакцессес
+- Microsoft. COMPUTE/дискенкриптионсетс
+- Microsoft. COMPUTE/Disks
+- Microsoft. COMPUTE/галереи
+- Microsoft. COMPUTE/галереи/приложения
+- Microsoft. COMPUTE/галереи/приложения/версии
+- Microsoft. COMPUTE/галереи/изображения
+- Microsoft. COMPUTE/галереи/Images/Versions
+- Microsoft. COMPUTE/хостграупс
+- Microsoft. COMPUTE/хостграупс/hosts
+- Microsoft. COMPUTE/Images
+- Microsoft. COMPUTE/проксимитиплацементграупс
+- Microsoft. COMPUTE/ресторепоинтколлектионс
+- Microsoft. COMPUTE/шаредвмекстенсионс
+- Microsoft. COMPUTE/шаредвмекстенсионс/Versions
+- Microsoft. COMPUTE/шаредвмимажес
+- Microsoft. COMPUTE/шаредвмимажес/Versions
+- Microsoft. COMPUTE/моментальные снимки
+- Microsoft. COMPUTE/сшпубликкэйс
+- Microsoft. COMPUTE/virtualmachines
+- Microsoft. COMPUTE/virtualmachines/Extensions
+- Microsoft. COMPUTE/virtualmachinescalesets
+- Microsoft. контаинеринстанце/контаинерграупс
+- Microsoft. containerregistry/реестров
+- Microsoft. containerregistry/реестров/ажентпулс
+- Microsoft. containerregistry/реестров/буилдтаскс
+- Microsoft. containerregistry/реестра/репликация
+- Microsoft. containerregistry/реестров/таскрунс
+- Microsoft. containerregistry/реестра/задачи
+- Microsoft. containerregistry/реестров/веб-перехватчики
+- Microsoft. containerservice/контаинерсервицес
+- Microsoft. containerservice/манажедклустерс
+- Microsoft. containerservice/опеншифтманажедклустерс
+- Microsoft. contoso/Employees
+- Microsoft. костманажемент/Connectors
+- Microsoft. кустомпровидерс/ресаурцепровидерс
+- Microsoft. датабокс/задания
+- Microsoft. датабокседже/датабокседжедевицес
+- Microsoft. кирпичы и рабочие области
+- Microsoft. catalog/каталоги
+- Каталог Microsoft.
+- Microsoft. datadog/monitors
+- Microsoft. в.
+- Фабрика Microsoft.
+- Microsoft. Data Lake Analytics/учетные записи
+- Microsoft. Data Lake Store/учетные записи
+- Microsoft. Migration/Services
+- Microsoft. Migration, службы и проекты
+- Microsoft. Migration/слоты
+- Microsoft. баккупваултс/защита
+- Microsoft. файл или учетные записи
+- Microsoft. дбформариадб/Servers
+- Microsoft. дбформискл/Servers
+- Microsoft. дбфорпостгрескл/серверграупс
+- Microsoft. дбфорпостгрескл/Servers
+- Microsoft. дбфорпостгрескл/serversv2
+- Microsoft. дбфорпостгрескл/синглесерверс
+- Microsoft. деплойментманажер/артифактсаурцес
+- Microsoft. деплойментманажер/развертывания
+- Microsoft. деплойментманажер/сервицетопологиес
+- Microsoft. деплойментманажер/сервицетопологиес/Services
+- Microsoft. деплойментманажер/сервицетопологиес/Services/сервицеунитс
+- Microsoft. деплойментманажер/шаги
+- Microsoft. десктопвиртуализатион/аппликатионграупс
+- Microsoft. десктопвиртуализатион/хостпулс
+- Microsoft. десктопвиртуализатион/рабочие области
+- Microsoft. детонатионсервице/детонатионинстанцес
+- Microsoft. Devices/еластикпулс
+- Microsoft. Devices/еластикпулс/иосубтенантс
+- Microsoft. Devices/iothubs
+- Microsoft. Devices/iothubs
+- Microsoft. devops/конвейеры
+- Microsoft. девспацес/Controllers
+- Microsoft. devtestlab/лабцентерс
+- Microsoft. devtestlab/Labs
+- Microsoft. devtestlab/Labs/сервицеруннерс
+- Microsoft. devtestlab/Labs/virtualmachines
+- Microsoft. devtestlab/Schedules
+- Microsoft. дигиталтвинс/дигиталтвинсинстанцес
+- Microsoft. documentdb/databaseaccounts
+- Microsoft. домаинрегистратион/Domains
+- Microsoft. ентерприсекновледжеграф/Services
+- Microsoft. eventgrid/Domains
+- Microsoft. eventgrid/партнернамеспацес
+- Microsoft. eventgrid/партнеррегистратионс
+- Microsoft. eventgrid/партнертопикс
+- Microsoft. eventgrid/системтопикс
+- Microsoft. eventgrid/темы
+- Microsoft. eventhub/кластеры
+- Microsoft. eventhub/пространства имен
+- Microsoft. экспериментирование/експериментворкспацес
+- Microsoft. Falcon/пространства имен
+- Microsoft. gamings/titles
+- Microsoft. Genomics/учетные записи
+- Microsoft. гуестконфигуратион/аутоманажедаккаунтс
+- Microsoft. ханаоназуре/ханаинстанцес
+- Microsoft. ханаоназуре/сапмониторс
+- Microsoft. хардваресекуритимодулес/дедикатедхсмс
+- Microsoft. hdinsight/кластеры
+- Microsoft. хеалскареапис/Services
+- Microsoft. хибридкомпуте/Machines
+- Microsoft. хибридкомпуте/Machines/Extensions
+- Microsoft. хибриддата/диспетчеры
+- Microsoft. Hydra/компоненты
+- Microsoft. Hydra/нетворкскопес
+- Microsoft. ImportExport/задания
+- Microsoft. Insights/актионграупс
+- Microsoft. Insights/активитилогалертс
+- Microsoft. Insights/alertrules
+- Microsoft. Insights/autoscalesettings
+- Microsoft. Insights/компоненты
+- Microsoft. Insights/датаколлектионрулес
+- Microsoft. Insights/гуестдиагностиксеттингс
+- Microsoft. Insights/метрикалертс
+- Microsoft. Insights/нотификатионграупс
+- Microsoft. Insights/нотификатионрулес
+- Microsoft. Insights/привателинкскопес
+- Microsoft. Insights/счедуледкуерирулес
+- Microsoft. Insights/WebTest
+- Microsoft. Insights/книги
+- Microsoft. Insights/воркбуктемплатес
+- Microsoft. иотцентрал/иотаппс
+- Microsoft. иотспацес/Graph
+- Microsoft. keyvault/хсмпулс
+- Microsoft. keyvault/хранилища
+- Microsoft. kubernetes/коннектедклустерс
+- Microsoft. kusto/кластеры
+- Microsoft. kusto/Clusters/databases
+- Microsoft. лабсервицес/лабаккаунтс
+- Microsoft. Logic/интегратионаккаунтс
+- Microsoft. Logic/интегратионсервицеенвиронментс
+- Microsoft. Logic/интегратионсервицеенвиронментс/манажедапис
+- Microsoft. Logic/рабочие процессы
+- Microsoft. machinelearning/коммитментпланс
+- Microsoft. machinelearning/WebService
+- Microsoft. machinelearning/рабочие области
+- Microsoft. мачинелеарнингкомпуте/оператионализатионклустерс
+- Microsoft. мачинелеарнингсервицес/рабочие области
+- Microsoft. Maintenance/маинтенанцеконфигуратионс
+- Microsoft. Maintenance/маинтенанцеполиЦиес
+- Microsoft. managedidentity/Groups
+- Microsoft. managedidentity/userassignedidentities класса
+- Microsoft. манажеднетворк/манажеднетворкграупс
+- Microsoft. манажеднетворк/манажеднетворкпирингполиЦиес
+- Microsoft. манажеднетворк/манажеднетворкс
+- Microsoft. манажеднетворк/манажеднетворкс/манажеднетворкграупс
+- Microsoft. манажеднетворк/манажеднетворкс/манажеднетворкпирингполиЦиес
+- Microsoft. Maps/Accounts
+- Microsoft. Maps/Accounts/приватеатласес
+- Microsoft. маркетплацеаппс/классикдевсервицес
+- Microsoft. Media/mediaservices
+- Microsoft. Media/mediaservices/лививентс
+- Microsoft. Media/mediaservices/streamingendpoint
+- Microsoft. Media/mediaservices/Transforms
+- Microsoft. microservices4spring/аппклустерс
+- Microsoft. Migrate/ассессментпрожектс
+- Microsoft. Migrate/мигратепрожектс
+- Microsoft. Migrate/мовеколлектионс
+- Microsoft. Migrate/проекты
+- Microsoft. микседреалити/холографиксброадкастаккаунтс
+- Microsoft. микседреалити/обжектундерстандингаккаунтс
+- Microsoft. микседреалити/ремотерендерингаккаунтс
+- Microsoft. микседреалити/спатиаланчорсаккаунтс
+- Microsoft. микседреалити/сурфацереконструктионаккаунтс
+- Microsoft. NetApp/нетаппаккаунтс
+- Microsoft. NetApp/нетаппаккаунтс/баккупполиЦиес
+- Microsoft. NetApp/нетаппаккаунтс/капаЦитипулс
+- Microsoft. NetApp/нетаппаккаунтс/капаЦитипулс/Volumes
+- Microsoft. NetApp/нетаппаккаунтс/капаЦитипулс/Volumes/маунттаржетс
+- Microsoft. NetApp/нетаппаккаунтс/капаЦитипулс/тома/моментальные снимки
+- Microsoft. Network/аппликатионгатевайс
+- Microsoft. Network/аппликатионгатевайвебаппликатионфиреваллполиЦиес
+- Microsoft. Network/аппликатионсекуритиграупс
+- Microsoft. Network/азурефиреваллс
+- Microsoft. Network/бастионхостс
+- Microsoft. Network/Connections
+- Microsoft. Network/ддоскустомполиЦиес
+- Microsoft. Network/ддоспротектионпланс
+- Microsoft. Network/днсзонес
+- Microsoft. Network/експрессраутеЦиркуитс
+- Microsoft. Network/експрессраутекроссконнектионс
+- Microsoft. Network/експрессраутегатевайс
+- Microsoft. Network/експрессраутепортс
+- Microsoft. Network/фиреваллполиЦиес
+- Microsoft. Network/фронтдурс
+- Microsoft. Network/фронтдурвебаппликатионфиреваллполиЦиес
+- Microsoft. Network/ипаллокатионс
+- Microsoft. Network/ипграупс
+- Microsoft. Network/loadbalancers
+- Microsoft. Network/локалнетворкгатевайс
+- Microsoft. Network/натгатевайс
+- Microsoft. Network/нетворкекспериментпрофилес
+- Microsoft. Network/нетворкинтентполиЦиес
+- Microsoft. Network/networkinterfaces
+- Microsoft. Network/нетворкманажерс
+- Microsoft. Network/нетворкпрофилес
+- Microsoft. Network/networksecuritygroups
+- Microsoft. Network/нетворквиртуалапплианцес
+- Microsoft. Network/нетворкватчерс
+- Microsoft. Network/нетворкватчерс/коннектионмониторс
+- Microsoft. Network/нетворкватчерс/панель
+- Microsoft. Network/нетворкватчерс/lenses
+- Microsoft. Network/нетворкватчерс/пингмешес
+- Microsoft. Network/p2svpngateways
+- Microsoft. Network/приватеднсзонес
+- Microsoft. Network/приватеднсзонес/виртуалнетворклинкс
+- Microsoft. Network/приватиндпоинтредиректмапс
+- Microsoft. Network/приватиндпоинтс
+- Microsoft. Network/привателинксервицес
+- Microsoft. Network/publicipaddresses
+- Microsoft. Network/публиЦиппрефиксес
+- Microsoft. Network/раутефилтерс
+- Microsoft. Network/раутетаблес
+- Microsoft. Network/самплересаурцес
+- Microsoft. Network/секуритипартнерпровидерс
+- Microsoft. Network/сервицеендпоинтполиЦиес
+- Microsoft. Network/trafficmanagerprofiles
+- Microsoft. Network/виртуалхубс
+- Microsoft. Network/virtualnetworkgateways
+- Microsoft. Network/virtualnetworks
+- Microsoft. Network/виртуалнетворктапс
+- Microsoft. Network/виртуалраутерс
+- Microsoft. Network/виртуалванс
+- Microsoft. Network/впнгатевайс
+- Microsoft. Network/впнсерверконфигуратионс
+- Microsoft. Network/впнситес
+- Microsoft. notificationhubs/пространства имен
+- Microsoft. notificationhubs/Namespaces/notificationhubs
+- Microsoft. обжектсторе/оснамеспацес
+- Microsoft. оффазуре/хипервситес
+- Microsoft. оффазуре/импортситес
+- Microsoft. оффазуре/серверситес
+- Microsoft. оффазуре/вмвареситес
+- Microsoft. operationalinsights/кластеры
+- Microsoft. operationalinsights/рабочие области
+- Microsoft. operationsmanagement/Solutions
+- Microsoft. operationsmanagement/представления
+- Microsoft. пиринг/пиринг
+- Microsoft. пиринг/пирингсервицес
+- Microsoft. портал/панели мониторинга
+- Microsoft. порталсдк/рутресаурцес
+- Microsoft. powerbi/воркспацеколлектионс
+- Microsoft. повербидедикатед/емкости
+- Microsoft. прожектаркадиа/рабочие области
+- Microsoft. прожектаркадиа/workspaces/спарккомпутес
+- Microsoft. прожектаркадиа/workspaces/склкомпутес
+- Microsoft. прожектбабилон/учетные записи
+- Microsoft. такты и рабочие области
+- Microsoft. recoveryservices/хранилища
+- Microsoft. редхатопеншифт/опеншифтклустерс
+- Microsoft. Relay/пространства имен
+- Microsoft. RemoteApp/коллекции
+- Microsoft. ресаурцеграф/запросы
+- Microsoft. Resources/deploymentscripts
+- Microsoft. Resources/темплатеспекс
+- Microsoft. SaaS/Applications
+- Microsoft. Scheduler/жобколлектионс
+- Microsoft. Search/сеарчсервицес
+- Microsoft. Security/Automation
+- Microsoft. Security/иотсекуритисолутионс
+- Microsoft. секуритидетонатион/стряпня
+- Microsoft. servicebus/пространства имен
+- Microsoft. servicefabric/кластеры
+- Microsoft. servicefabric/контаинерграупсетс
+- Microsoft. servicefabric/манажедклустерс
+- Microsoft. сервицефабрикмеш/приложения
+- Microsoft. сервицефабрикмеш/шлюзы
+- Microsoft. сервицефабрикмеш/сети
+- Microsoft. сервицефабрикмеш/секреты
+- Microsoft. сервицефабрикмеш/Volumes
+- Microsoft. сигналрсервице/SignalR
+- Microsoft. Solutions/апплианцедефинитионс
+- Microsoft. Solutions/Appliances
+- Microsoft. Solutions/аппликатиондефинитионс
+- Microsoft. Solutions/Applications
+- Microsoft. Solutions/житрекуестс
+- Microsoft. спулсервице/очереди
+- Microsoft. SQL/инстанцепулс
+- Microsoft. SQL/манажединстанцес
+- Microsoft. SQL/манажединстанцес/базы данных
+- Microsoft. SQL/Servers
+- Microsoft. SQL/Servers/databases
+- Microsoft. SQL/Servers/еластикпулс
+- Microsoft. SQL/Servers/жобаккаунтс
+- Microsoft. SQL/Servers/жобажентс
+- Microsoft. SQL/виртуалклустерс
+- Microsoft. склвиртуалмачине/склвиртуалмачинеграупс
+- Microsoft. склвиртуалмачине/склвиртуалмачинес
+- Microsoft. sqlvm/дввм
+- Microsoft. Storage/storageaccounts
+- Microsoft. сторажекаче/кэши
+- Microsoft. storagesync/сторажесинксервицес
+- Microsoft. сторажесинкдев/сторажесинксервицес
+- Microsoft. сторажесинЦинт/сторажесинксервицес
+- Microsoft. storsimple/руководители
+- Microsoft. streamanalytics/стреамингжобс
+- Microsoft. синапсе/рабочие области
+- Microsoft. синапсе/workspaces/бигдатапулс
+- Microsoft. синапсе/workspaces/склпулс
+- Microsoft. терраформосс/провидеррегистратионс
+- Microsoft. timeseriesinsights/среды
+- Microsoft. timeseriesinsights/среды/классов EventSource
+- Microsoft. timeseriesinsights/среды/референцедатасетс
+- Microsoft. Token/Stores
+- Microsoft. токенваулт/хранилища
+- Microsoft. виртуалмачинеимажес/имажетемплатес
+- Microsoft. VisualStudio/учетная запись
+- Microsoft. VisualStudio, учетная запись или расширение
+- Microsoft. VisualStudio/Account/Project
+- Microsoft. VMware/аркзонес
+- Microsoft. VMware/ресаурцепулс
+- Microsoft. VMware/vcenters
+- Microsoft. VMware/virtualmachines
+- Microsoft. VMware/виртуалмачинетемплатес
+- Microsoft. VMware/virtualnetworks
+- Microsoft. вмвареклаудсимпле/дедикатедклауднодес
+- Microsoft. вмвареклаудсимпле/дедикатедклаудсервицес
+- Microsoft. вмвареклаудсимпле/virtualmachines
+- Microsoft. вмвареоназуре/приватеклаудс
+- Microsoft. вмваревиртустреам/приватеклаудс
+- Microsoft. внфманажер/Devices
+- Microsoft. внфманажер/внфс
+- Microsoft. всонлине/учетные записи
+- Microsoft. всонлине/планы
+- Microsoft. Web/апиманажементаккаунтс/API
+- Microsoft. Web/Certificates
+- Microsoft. Web/коннектионгатевайс
+- microsoft.web/connections
+- Microsoft. Web/кустомапис
+- Microsoft. Web/hostingenvironments
+- Microsoft. Web/кубинвиронментс
+- Microsoft. Web/serverfarms
+- microsoft.web/sites
+- Microsoft. Web/Sites/премиераддонс
+- microsoft.web/sites/slots
+- Microsoft. Web/статикситес
+- Microsoft. виндовсесу/мултиплеактиватионкэйс
+- Microsoft. виндовсиот/девицесервицес
+- myget. packagemanagement/службы
+- cloudmonix/службы
+- покитдок. Platform/Services
+- Providers. Test/статефулибизаенгинес
+- Providers. Test/статефулресаурцес
+- Providers. Test/статефулресаурцес/нестедресаурцес
+- Providers. Test/стателессресаурцес
+- ravenhq. DB/базы данных
+- Raygun отсылает. крашрепортинг/Apps
+- sendgrid. Email/Accounts
+- sparkpost. Basic/Services
+- stackify. перетрассировка и службы
+- Test. Shoebox/тестресаурцес
+- Test. Shoebox/testresources2
+- TrendMicro. deepsecurity/учетные записи
+- u2uconsult. сеидентитихуб/Services
+- вандиско. Fusion/фусионграупс
+- вандиско. Fusion/фусионграупс/азурезонес
+- вандиско. Fusion/фусионграупс/азурезонес/plugins
+- вандиско. Fusion/фусионграупс/хиверепликатионрулес
+- вандиско. Fusion/фусионграупс/манажедонпремзонес
+- вандиско. Fusion/фусионграупс/онпремзонес
+- вандиско. Fusion/фусионграупс/репликатионрулес
+
+## <a name="securityresources"></a>секуритиресаурцес
+
+- Microsoft. Security/оценки
+- Microsoft. Security/оценок/подоценка
+- Microsoft. Security/ценах
+- Microsoft. Security/регулаторикомплианцестандардс
+- Microsoft. Security/регулаторикомплианцестандардс/регулаторикомплианцеконтролс
+- Microsoft. Security/регулаторикомплианцестандардс/регулаторикомплианцеконтролс/регулаторикомплианцеассессментс
+- Microsoft. Security/секуритистатусес
+- Microsoft. Security/секуритистатусес/контаинерхостс
+- Microsoft. Security/секуритистатусес/онпремисемачинес
+- Microsoft. Security/секуритистатусес/Servers
+- Microsoft. Security/секуритистатусес/подсети
+- Microsoft. Security/секуритистатусес/virtualmachines
+- Microsoft. Security/секуритистатусессуммариес
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Узнайте больше о [языке запросов](../concepts/query-language.md).
+- Узнайте больше о том, как [изучать ресурсы](../concepts/explore-resources.md).
+- Ознакомьтесь с примерами [начальных запросов](../samples/starter.md).

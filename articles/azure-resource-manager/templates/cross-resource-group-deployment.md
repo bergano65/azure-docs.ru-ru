@@ -3,12 +3,12 @@ title: Развертывание ресурсов межподписок & гр
 description: Сведения о развертывании ресурсов в нескольких подписках и группах ресурсов Azure.
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.openlocfilehash: 8f5fbd51456003059f6a32fc32b32194a936434a
-ms.sourcegitcommit: 276c1c79b814ecc9d6c1997d92a93d07aed06b84
+ms.openlocfilehash: 70868f5a3598c26ffff81f0ad3536a6c5c0a7e53
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76154216"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79460353"
 ---
 # <a name="deploy-azure-resources-to-more-than-one-subscription-or-resource-group"></a>Развертывание ресурсов Azure в нескольких подписках или группах ресурсов
 
@@ -19,7 +19,7 @@ ms.locfileid: "76154216"
 
 ## <a name="specify-subscription-and-resource-group"></a>Укажите подписку и группу ресурсов
 
-Чтобы выбрать другую группу ресурсов или подписку, используйте [вложенный или связанный шаблон](linked-templates.md). Тип ресурса `Microsoft.Resources/deployments` предоставляет параметры для `subscriptionId` и `resourceGroup`, которые позволяют указать подписку и группу ресурсов для вложенного развертывания. Если вы не укажете идентификатор подписки или группу ресурсов, используется подписка и группа ресурсов из родительского шаблона. Все группы ресурсов необходимо создать до выполнения развертывания.
+Чтобы выбрать другую группу ресурсов или подписку, используйте [вложенный или связанный шаблон](linked-templates.md). Тип `Microsoft.Resources/deployments` ресурса предоставляет параметры для `subscriptionId` и `resourceGroup`, которые позволяют указать подписку и группу ресурсов для вложенного развертывания. Если вы не укажете идентификатор подписки или группу ресурсов, используется подписка и группа ресурсов из родительского шаблона. Все группы ресурсов необходимо создать до выполнения развертывания.
 
 Учетная запись, которая используется для развертывания шаблона, должна иметь разрешения на развертывание с указанным идентификатором подписки. Если указанная подписка существует в другом клиенте Azure Active Directory, необходимо [добавить гостевых пользователей из другого каталога](../../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md).
 
@@ -40,7 +40,7 @@ ms.locfileid: "76154216"
 
 Если группы ресурсов находятся в одной подписке, значение **subscriptionId** можно удалить.
 
-В следующем примере развертываются две учетные записи хранения. Первая учетная запись хранения развертывается в группе ресурсов, указанной во время развертывания. Вторая учетная запись хранения развертывается в группе ресурсов, указанной в параметрах `secondResourceGroup` и `secondSubscriptionID`.
+В следующем примере развертываются две учетные записи хранения. Первая учетная запись хранения развертывается в группе ресурсов, указанной во время развертывания. Вторая учетная запись хранения развертывается в группе ресурсов, `secondResourceGroup` указанной в параметрах и. `secondSubscriptionID`
 
 ```json
 {
@@ -115,11 +115,11 @@ ms.locfileid: "76154216"
 }
 ```
 
-Если присвоить `resourceGroup` имя несуществующей группы ресурсов, развертывание завершится ошибкой.
+Если задано `resourceGroup` имя несуществующей группы ресурсов, развертывание завершается ошибкой.
 
 Чтобы протестировать предыдущий шаблон и просмотреть результаты, используйте PowerShell или Azure CLI.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке**, используйте:
 
@@ -162,7 +162,7 @@ New-AzResourceGroupDeployment `
   -secondSubscriptionID $secondSub
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Чтобы развернуть две учетные записи хранения в двух группах ресурсов в **одной подписке**, используйте:
 
@@ -172,7 +172,7 @@ secondRG="secondarygroup"
 
 az group create --name $firstRG --location southcentralus
 az group create --name $secondRG --location eastus
-az group deployment create \
+az deployment group create \
   --name ExampleDeployment \
   --resource-group $firstRG \
   --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/crosssubscription.json \
@@ -194,7 +194,7 @@ az group create --name $secondRG --location eastus
 az account set --subscription $firstSub
 az group create --name $firstRG --location southcentralus
 
-az group deployment create \
+az deployment group create \
   --name ExampleDeployment \
   --resource-group $firstRG \
   --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/crosssubscription.json \
@@ -205,15 +205,15 @@ az group deployment create \
 
 ## <a name="use-functions"></a>Использование функций
 
-Функции [resourceGroup ()](template-functions-resource.md#resourcegroup) и [Subscription ()](template-functions-resource.md#subscription) разрешаются по-разному в зависимости от способа указания шаблона. При связывании с внешним шаблоном функции всегда разрешаются в область этого шаблона. При вложении шаблона в родительский шаблон используйте свойство `expressionEvaluationOptions`, чтобы указать, будут ли функции разрешаться в группу ресурсов и подписку для родительского шаблона или вложенного шаблона. Задайте для свойства значение `inner`, чтобы разрешить область вложенного шаблона. Задайте для свойства значение `outer`, чтобы разрешить область действия родительского шаблона.
+Функции [resourceGroup ()](template-functions-resource.md#resourcegroup) и [Subscription ()](template-functions-resource.md#subscription) разрешаются по-разному в зависимости от способа указания шаблона. При связывании с внешним шаблоном функции всегда разрешаются в область этого шаблона. При вложении шаблона в родительский шаблон используйте `expressionEvaluationOptions` свойство, чтобы указать, будут ли функции разрешаться в группу ресурсов и подписку для родительского шаблона или вложенного шаблона. Задайте для свойства значение `inner` , чтобы разрешить область вложенного шаблона. Задайте для свойства значение `outer` , чтобы разрешить область действия родительского шаблона.
 
 В следующей таблице показано, разрешены ли функции в родительскую или внедренную группу ресурсов и подписку.
 
-| Тип шаблона | Область действия | Разрешение |
+| Тип шаблона | Область | Решение |
 | ------------- | ----- | ---------- |
 | вложенные        | внешний (по умолчанию) | Родительская группа ресурсов |
 | вложенные        | Внутреннее | Подкатегория "подгруппа ресурсов" |
-| связанные        | Н/Д   | Подкатегория "подгруппа ресурсов" |
+| связанные        | Недоступно   | Подкатегория "подгруппа ресурсов" |
 
 В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/crossresourcegroupproperties.json) показано следующее:
 
@@ -317,7 +317,7 @@ az group deployment create \
 
 Чтобы протестировать предыдущий шаблон и просмотреть результаты, используйте PowerShell или Azure CLI.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell-interactive
 New-AzResourceGroup -Name parentGroup -Location southcentralus
@@ -331,7 +331,7 @@ New-AzResourceGroupDeployment `
 
 Выходные данные из предыдущего примера:
 
-```powershell
+```output
  Name             Type                       Value
  ===============  =========================  ==========
  parentRG         String                     Parent resource group is parentGroup
@@ -340,14 +340,14 @@ New-AzResourceGroupDeployment `
  linkedRG         String                     Linked resource group is linkedgroup
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az group create --name parentGroup --location southcentralus
 az group create --name inlineGroup --location southcentralus
 az group create --name linkedGroup --location southcentralus
 
-az group deployment create \
+az deployment group create \
   --name ExampleDeployment \
   --resource-group parentGroup \
   --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/crossresourcegroupproperties.json
@@ -355,7 +355,7 @@ az group deployment create \
 
 Выходные данные из предыдущего примера:
 
-```azurecli
+```output
 "outputs": {
   "defaultScopeRG": {
     "type": "String",
@@ -378,7 +378,7 @@ az group deployment create \
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](template-syntax.md).
 * Советы по устранению распространенных ошибок развертывания см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](common-deployment-errors.md).

@@ -4,14 +4,14 @@ description: Узнайте, как применяется скидка на з�
 author: tamram
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 11/05/2019
+ms.date: 02/13/2020
 ms.author: tamram
-ms.openlocfilehash: 40fba61b173979fb9362de73a87d6192aac9941d
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: b6360619b7666ab7836a751491e05e379df32d93
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995316"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199200"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-storage"></a>Общие сведения о применении скидки на резервирование в службе хранилища Azure
 

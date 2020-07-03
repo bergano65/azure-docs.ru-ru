@@ -8,10 +8,10 @@ ms.date: 09/14/2018
 ms.author: antchu
 ms.custom: include file
 ms.openlocfilehash: 0a228f6d8b4f72acd3783f27bf192fe6bd13f988
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75392141"
 ---
 ## <a name="create-an-azure-signalr-service-instance"></a>Создание экземпляра службы Azure SignalR
@@ -31,7 +31,7 @@ ms.locfileid: "75392141"
     | **Имя ресурса** | Глобально уникальное имя | Имя, которое определяет новый экземпляр службы SignalR. Допустимые символы: `a-z`, `0-9` и `-`.  | 
     | **подписка** | Ваша подписка | Подписка, в рамках которой создается экземпляр службы SignalR. | 
     | **[Группа ресурсов](../../azure-resource-manager/management/overview.md)** |  myResourceGroup | Имя новой группы ресурсов, в которой будет создан экземпляр службы SignalR. | 
-    | **Местоположение** | Запад США | Выберите ближайший [регион](https://azure.microsoft.com/regions/). |
+    | **Местоположение** | западная часть США | Выберите ближайший [регион](https://azure.microsoft.com/regions/). |
     | **Ценовая категория** | Free | Поработайте со службой Azure SignalR бесплатно. |
     | **Число единиц** |  Неприменимо | Число единиц определяет количество подключений, которые поддерживает ваш экземпляр службы SignalR. Это можно настроить только для цен. категории "Стандартный". |
     | **Режим службы** |  Бессерверные приложения | Для использования с Функциями Azure или REST API. |

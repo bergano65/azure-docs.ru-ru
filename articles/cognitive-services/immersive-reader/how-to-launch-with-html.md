@@ -1,5 +1,5 @@
 ---
-title: Запуск иммерсивное средство чтения с содержимым HTML
+title: Запуск иммерсивного средства чтения с содержимым HTML
 titleSuffix: Azure Cognitive Services
 description: В этой статье показано, как запустить иммерсивное средство чтения с содержимым HTML.
 author: metanMSFT
@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: metan
 ms.openlocfilehash: bc7ab46113e1b819fc71a9f6e8a18400f8acfbef
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "75946246"
 ---
 # <a name="how-to-launch-the-immersive-reader-with-html-content"></a>Запуск иммерсивное средство чтения с содержимым HTML
@@ -22,7 +22,7 @@ ms.locfileid: "75946246"
 
 ## <a name="prepare-the-html-content"></a>Подготовка содержимого HTML
 
-Поместите содержимое, которое требуется визуализировать, в иммерсивное средство чтения внутри элемента контейнера. Убедитесь, что элемент контейнера имеет уникальный `id`. Иммерсивное средство чтения предоставляет поддержку основных элементов HTML. Дополнительные сведения см. в [справочнике](./reference.md#html-support) .
+Поместите содержимое, которое требуется визуализировать, в иммерсивное средство чтения внутри элемента контейнера. Убедитесь, что элемент контейнера имеет уникальное `id`значение. Иммерсивное средство чтения предоставляет поддержку основных элементов HTML. Дополнительные сведения см. в [справочнике](./reference.md#html-support) .
 
 ```html
 <div id='immersive-reader-content'>
@@ -40,7 +40,7 @@ ms.locfileid: "75946246"
 
 ## <a name="get-the-html-content-in-javascript"></a>Получение HTML-содержимого в JavaScript
 
-Используйте `id` элемента контейнера для получения HTML-содержимого в коде JavaScript.
+`id` Используйте элемент контейнера для получения HTML-содержимого в коде JavaScript.
 
 ```javascript
 const htmlContent = document.getElementById('immersive-reader-content').innerHTML;
@@ -48,7 +48,7 @@ const htmlContent = document.getElementById('immersive-reader-content').innerHTM
 
 ## <a name="launch-the-immersive-reader-with-your-html-content"></a>Запуск иммерсивное средство чтения с помощью HTML-содержимого
 
-При вызове `ImmersiveReader.launchAsync`задайте для свойства `mimeType` фрагмента значение `text/html`, чтобы включить отрисовку HTML.
+При вызове `ImmersiveReader.launchAsync`задайте для `mimeType` свойства фрагмента значение `text/html` , чтобы разрешить HTML-код отрисовки.
 
 ```javascript
 const data = {
@@ -61,6 +61,6 @@ const data = {
 ImmersiveReader.launchAsync(YOUR_TOKEN, YOUR_SUBDOMAIN, data, YOUR_OPTIONS);
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-* Изучите [Справочник по пакету SDK для иммерсивное средство чтения](./reference.md)
+* Ознакомьтесь со справочной документацией по [пакету SDK для иммерсивного средства чтения](./reference.md).

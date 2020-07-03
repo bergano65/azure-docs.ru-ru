@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: b4d78b339bab02b5c44a31939e0da769dc21c3ec
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75452162"
 ---
 # <a name="throttling-the-service-fabric-cluster-resource-manager"></a>Регулирование посредством диспетчера кластерных ресурсов Service Fabric
@@ -84,4 +84,4 @@ ms.locfileid: "75452162"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Чтобы узнать, как диспетчер кластерных ресурсов управляет нагрузкой кластера и балансирует ее, ознакомьтесь со статьей о [балансировке нагрузки](service-fabric-cluster-resource-manager-balancing.md)
-- В Cluster Resource Manager предусмотрено много параметров для описания кластера. Дополнительные сведения об этих параметрах см. в статье с [описанием кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md).
+- В Cluster Resource Manager предусмотрено много параметров для описания кластера. Чтобы узнать больше о них, ознакомьтесь с этой статьей, посвященной [описанию кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md)

@@ -1,5 +1,5 @@
 ---
-title: Сценарий PowerShell. Создание и просмотр триггеров моментальных снимков общих ресурсов Azure | Документация Майкрософт
+title: Сценарий PowerShell. Создание и просмотр триггеров моментальных снимков общего ресурса Azure | Документация Майкрософт
 description: Этот сценарий PowerShell создает и получает триггеры общего доступа к моментальным снимкам.
 services: data-share
 author: joannapea
@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
 ms.openlocfilehash: 4f3148a4d5bd0d39ccfcf7e92e80300a7e19effa
-ms.sourcegitcommit: f176e5bb926476ec8f9e2a2829bda48d510fbed7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "70307211"
 ---
 # <a name="use-powershell-to-monitor-the-usage-of-a-sent-data-share"></a>Использование PowerShell для отслеживания использования отправленных общих ресурсов данных
@@ -45,13 +45,13 @@ Get-AzDataShareTrigger -ResourceGroupName $resourceGroupName -AccountName $dataS
 
 Этот сценарий использует следующие команды: 
 
-| Command | Примечания |
+| Get-Help | Примечания |
 |---|---|
 | [New-Аздаташаретригжер](/powershell/module/az.datashare/new-azdatasharetrigger?view=azps-2.6.0) | Создайте триггер моментального снимка общего ресурса. |
 | [Get-Аздаташаретригжер](/powershell/module/az.datashare/get-azdatasharesynchronizationsetting?view=azps-2.6.0) | Возвращает параметры синхронизации общей папки. |
 |||
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure PowerShell см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/).
 

@@ -1,24 +1,23 @@
 ---
-author: IEvangelist
+author: trevorbye
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.date: 01/27/2020
+ms.date: 04/04/2020
 ms.topic: include
-ms.author: dapine
+ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 9bc514c32d97958d8ab154dc2c5533747f380e86
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: d819eaa5c90e304a642efd3a6f2458cab4eefe7f
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76900627"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81422002"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
-* Если это ваш первый проект Python, воспользуйтесь этим руководством, чтобы <a href="~/articles/cognitive-services/Speech-Service/quickstarts/create-project.md" target="_blank">создать пустой пример проекта <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md" target="_blank">Установите пакет SDK службы "Речь" для среды разработки <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+* <a href="~/articles/cognitive-services/Speech-Service/quickstarts/setup-platform.md?pivots=programming-language-python" target="_blank">Установите пакет SDK службы "Речь" для среды разработки и создайте пустой пример проекта<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ## <a name="create-a-luis-app-for-intent-recognition"></a>Создание приложения LUIS для распознавания намерений
 
@@ -41,8 +40,8 @@ ms.locfileid: "76900627"
 
 Вставьте этот код в `quickstart.py`. Обязательно обновите следующие значения:
 
-* Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS. 
-* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS. 
+* Замените `"YourLanguageUnderstandingSubscriptionKey"` ключом прогнозирования LUIS.
+* Замените `"YourLanguageUnderstandingServiceRegion"` расположением LUIS. Используйте **идентификатор региона** из [региона](https://aka.ms/speech/sdkregion)
 
 >[!TIP]
 > Если вам нужна помощь с поиском этих значений, перейдите к разделу [Создание приложения LUIS для распознавания намерений](#create-a-luis-app-for-intent-recognition).
@@ -74,7 +73,7 @@ ms.locfileid: "76900627"
 
 В объекте `IntentRecognizer` необходимо вызвать метод `recognize_once()`. С помощью этого метода служба "Речь" узнает, что для распознавания отправляется одна фраза и что после идентификации фразы необходимо остановить распознавание речи.
 
-Вставьте приведенный ниже код под строкой модели:
+Вставьте приведенный ниже код под строкой модели.
 
 [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=35)]
 
@@ -82,11 +81,13 @@ ms.locfileid: "76900627"
 
 Когда служба "Речь" возвращает результат распознавания, необходимо с ним что-то сделать. Мы оставим его как есть и выведем результат в консоли.
 
-Под вызовом `recognize_once()` добавьте следующий код: [!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=38-47)]
+Под вызовом `recognize_once()` добавьте указанный ниже код.
+
+[!code-python[](~/samples-cognitive-services-speech-sdk/quickstart/python/intent-recognition/quickstart.py?range=38-47)]
 
 ## <a name="check-your-code"></a>Проверка кода
 
-На этом этапе код должен выглядеть так:
+На этом этапе код должен выглядеть, как показано ниже.
 
 > [!NOTE]
 > Мы добавили несколько комментариев к этой версии.

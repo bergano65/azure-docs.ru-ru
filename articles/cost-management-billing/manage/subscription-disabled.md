@@ -3,21 +3,18 @@ title: Повторная активация отключенной подпис
 description: Описывается, в каких ситуациях может потребоваться отключить подписку Azure, а также как повторно активировать ее.
 keywords: подписка Azure отключена
 author: bandersmsft
-manager: amberb
+ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/01/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: be5c8cac1b0b7f926f97206ec27bf6fbc9914c91
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: deab6db6b817bc429d3bec9c13674f8141cb2d68
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989921"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199540"
 ---
 # <a name="reactivate-a-disabled-azure-subscription"></a>Повторная активация отключенной подписки Azure
 

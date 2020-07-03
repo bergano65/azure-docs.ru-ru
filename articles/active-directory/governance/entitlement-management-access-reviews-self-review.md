@@ -16,12 +16,12 @@ ms.date: 11/01/2019
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89a346f48856ea33ae5e27e3537f53dfa1ca3ae3
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.openlocfilehash: 45da1170705bab1206a98c59e02c7616c25ce502
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
-ms.locfileid: "73608817"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78967773"
 ---
 # <a name="self-review-of-an-access-package-in-azure-ad-entitlement-management"></a>Самостоятельный обзор пакета Access в управлении назначениями Azure AD
 
@@ -37,7 +37,7 @@ ms.locfileid: "73608817"
 
 1. Щелкните ссылку **проверить доступ** .
 
-1. Вы также можете перейти непосредственно к https://myaccess.microsoft.com, чтобы найти ожидающие проверки доступа, если вы не получили сообщение электронной почты.
+1. Вы также можете перейти непосредственно https://myaccess.microsoft.com к поиску незавершенных проверок доступа, если вы не получили электронное сообщение.  (Для государственных организаций США используйте `https://myaccess.microsoft.us` вместо него.)
 
 1. Щелкните проверки **доступа** на левой панели навигации, чтобы просмотреть список незавершенных проверок доступа, назначенных вам.
 
@@ -56,7 +56,7 @@ ms.locfileid: "73608817"
 
 1.  Если вы щелкнули **Да**, в поле **Причина** может потребоваться включить оператор выравнивания.
 
-1.  Нажмите кнопку **Submit**(Отправить).
+1.  Щелкните **Отправить**.
 
 Вы можете вернуться к проверке, если вы передумали, и решили изменить свой ответ перед окончанием проверки.
 

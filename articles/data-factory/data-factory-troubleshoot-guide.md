@@ -8,133 +8,129 @@ ms.topic: troubleshooting
 ms.date: 8/26/2019
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: 2ae0f3033b88b3229d3dbef35c8bc9a32510c00e
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: f07cc109b21010df89b105576cb9afcf93df774a
+ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74972342"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82744766"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Устранение неполадок фабрики данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье рассматриваются распространенные методы устранения неполадок для действий внешнего управления в фабрике данных Azure.
 
 ## <a name="connector-and-copy-activity"></a>Действие соединителя и копирования
 
-Сведения о проблемах с соединителем, например ошибка при использовании действия копирования, см. в статье [Устранение неполадок соединителей фабрики данных Azure](connector-troubleshoot-guide.md).
-  
+Сведения о проблемах с соединителем, например об ошибке при копировании, см. в статье [Устранение неполадок соединителей фабрики данных Azure](connector-troubleshoot-guide.md).
 
 ## <a name="azure-databricks"></a>Azure Databricks
 
-### <a name="error-code--3200"></a>Код ошибки: 3200
+### <a name="error-code-3200"></a>Код ошибки: 3200
 
 - **Сообщение**: Ошибка 403.
 
-- **Причина**: `The Databricks access token has expired.`
+- **Причина**:`The Databricks access token has expired.`
 
 - **Рекомендация**. по умолчанию маркер доступа Azure Databricks действителен в течение 90 дней. Создайте новый токен и обновите связанную службу.
 
+### <a name="error-code-3201"></a>Код ошибки: 3201
 
-### <a name="error-code--3201"></a>Код ошибки: 3201
+- **Сообщение**:`Missing required field: settings.task.notebook_task.notebook_path.`
 
-- **Сообщение**: `Missing required field: settings.task.notebook_task.notebook_path.`
-
-- **Причина**: `Bad authoring: Notebook path not specified correctly.`
+- **Причина**:`Bad authoring: Notebook path not specified correctly.`
 
 - **Рекомендация**: укажите путь к записной книжке в действии "кирпичы".
 
-<br/>  
+<br/> 
 
-- **Сообщение**: `Cluster... does not exist.`
+- **Сообщение**:`Cluster... does not exist.`
 
-- **Причина**: `Authoring error: Databricks cluster does not exist or has been deleted.`
+- **Причина**:`Authoring error: Databricks cluster does not exist or has been deleted.`
 
 - **Рекомендация**: Убедитесь, что кластер кирпичей существует.
 
-<br/>  
+<br/> 
 
-- **Сообщение**: `Invalid Python file URI... Please visit Databricks user guide for supported URI schemes.`
+- **Сообщение**:`Invalid Python file URI... Please visit Databricks user guide for supported URI schemes.`
 
-- **Причина**: `Bad authoring.`
+- **Причина**:`Bad authoring.`
 
-- **Рекомендация**: укажите абсолютные пути для схем адресации рабочей области или `dbfs:/folder/subfolder/foo.py` для файлов, хранящихся в файловой системе кирпичей.
+- **Рекомендация**: укажите абсолютные пути для схем адресации рабочей области или `dbfs:/folder/subfolder/foo.py` для файлов, хранящихся в файловой системе "кирпичи (DFS)".
 
-<br/>  
+<br/> 
 
-- **Сообщение**: `{0} LinkedService should have domain and accessToken as required properties.`
+- **Сообщение**:`{0} LinkedService should have domain and accessToken as required properties.`
 
-- **Причина**: `Bad authoring.`
-
-- **Рекомендация**: Проверьте [определение связанной службы](compute-linked-services.md#azure-databricks-linked-service).
-
-<br/>  
-
-- **Сообщение**: `{0} LinkedService should specify either existing cluster ID or new cluster information for creation.`
-
-- **Причина**: `Bad authoring.`
+- **Причина**:`Bad authoring.`
 
 - **Рекомендация**: Проверьте [определение связанной службы](compute-linked-services.md#azure-databricks-linked-service).
 
-<br/>  
+<br/> 
 
-- **Сообщение**: `Node type Standard_D16S_v3 is not supported. Supported node types:   Standard_DS3_v2, Standard_DS4_v2, Standard_DS5_v2, Standard_D8s_v3,   Standard_D16s_v3, Standard_D32s_v3, Standard_D64s_v3, Standard_D3_v2,   Standard_D8_v3, Standard_D16_v3, Standard_D32_v3, Standard_D64_v3,   Standard_D12_v2, Standard_D13_v2, Standard_D14_v2, Standard_D15_v2,   Standard_DS12_v2, Standard_DS13_v2, Standard_DS14_v2, Standard_DS15_v2,   Standard_E8s_v3, Standard_E16s_v3, Standard_E32s_v3, Standard_E64s_v3,   Standard_L4s, Standard_L8s, Standard_L16s, Standard_L32s, Standard_F4s,   Standard_F8s, Standard_F16s, Standard_H16, Standard_F4s_v2, Standard_F8s_v2,   Standard_F16s_v2, Standard_F32s_v2, Standard_F64s_v2, Standard_F72s_v2,   Standard_NC12, Standard_NC24, Standard_NC6s_v3, Standard_NC12s_v3,   Standard_NC24s_v3, Standard_L8s_v2, Standard_L16s_v2, Standard_L32s_v2,   Standard_L64s_v2, Standard_L80s_v2.`
+- **Сообщение**:`{0} LinkedService should specify either existing cluster ID or new cluster information for creation.`
 
-- **Причина**: `Bad authoring.`
+- **Причина**:`Bad authoring.`
+
+- **Рекомендация**: Проверьте [определение связанной службы](compute-linked-services.md#azure-databricks-linked-service).
+
+<br/> 
+
+- **Сообщение**:`Node type Standard_D16S_v3 is not supported. Supported node types: Standard_DS3_v2, Standard_DS4_v2, Standard_DS5_v2, Standard_D8s_v3, Standard_D16s_v3, Standard_D32s_v3, Standard_D64s_v3, Standard_D3_v2, Standard_D8_v3, Standard_D16_v3, Standard_D32_v3, Standard_D64_v3, Standard_D12_v2, Standard_D13_v2, Standard_D14_v2, Standard_D15_v2, Standard_DS12_v2, Standard_DS13_v2, Standard_DS14_v2, Standard_DS15_v2, Standard_E8s_v3, Standard_E16s_v3, Standard_E32s_v3, Standard_E64s_v3, Standard_L4s, Standard_L8s, Standard_L16s, Standard_L32s, Standard_F4s, Standard_F8s, Standard_F16s, Standard_H16, Standard_F4s_v2, Standard_F8s_v2, Standard_F16s_v2, Standard_F32s_v2, Standard_F64s_v2, Standard_F72s_v2, Standard_NC12, Standard_NC24, Standard_NC6s_v3, Standard_NC12s_v3, Standard_NC24s_v3, Standard_L8s_v2, Standard_L16s_v2, Standard_L32s_v2, Standard_L64s_v2, Standard_L80s_v2.`
+
+- **Причина**:`Bad authoring.`
 
 - **Рекомендация**: см. сообщение об ошибке.
 
 <br/>
 
-### <a name="error-code--3202"></a>Код ошибки: 3202
+### <a name="error-code-3202"></a>Код ошибки: 3202
 
-- **Сообщение**: `There were already 1000 jobs created in past 3600 seconds, exceeding rate limit:   1000 job creations per 3600 seconds.`
+- **Сообщение**:`There were already 1000 jobs created in past 3600 seconds, exceeding rate limit: 1000 job creations per 3600 seconds.`
 
-- **Причина**: `Too many Databricks runs in an hour.`
+- **Причина**:`Too many Databricks runs in an hour.`
 
-- **Рекомендация**. Проверьте все конвейеры, использующие эту рабочую область блоков, для их частоты создания заданий.  Если конвейеры запустили слишком много блоков обработки в статистическом модуле, перенесите некоторые конвейеры в новую рабочую область.
+- **Рекомендация**. Проверьте все конвейеры, использующие эту рабочую область блоков, для их частоты создания заданий. Если конвейеры запустили слишком много блоков обработки в статистическом модуле, перенесите некоторые конвейеры в новую рабочую область.
 
-<br/>  
+<br/> 
 
-- **Сообщение**: `Could not parse request object: Expected 'key' and 'value' to be set for JSON map field base_parameters, got 'key: "..."' instead.`
+- **Сообщение**:`Could not parse request object: Expected 'key' and 'value' to be set for JSON map field base_parameters, got 'key: "..."' instead.`
 
-- **Причина**: `Authoring error: No value provided for the parameter.`
+- **Причина**:`Authoring error: No value provided for the parameter.`
 
 - **Рекомендация**: Проверьте JSON конвейера и убедитесь, что все параметры в записной книжке басепараметерс указывают непустое значение.
 
-<br/>  
+<br/> 
 
-- **Сообщение**: `User: `Симплеусерконтекст {UserID =..., name =user@company.com, orgId =...}` is not   authorized to access cluster.`
+- **Сообщение**: `User: `симплеусерконтекст {UserID =..., Name =user@company.com, orgId =...}` is not authorized to access cluster.`
 
 - **Причина**: пользователь, создавший маркер доступа, не может получить доступ к кластеру кирпичей данных, указанному в связанной службе.
 
 - **Рекомендация**: Убедитесь, что пользователь имеет необходимые разрешения в рабочей области.
 
+### <a name="error-code-3203"></a>Код ошибки: 3203
 
-### <a name="error-code--3203"></a>Код ошибки: 3203
+- **Сообщение**:`The cluster is in Terminated state, not available to receive jobs. Please fix the cluster or retry later.`
 
-- **Сообщение**: `The cluster is in Terminated state, not available to receive jobs. Please fix the cluster or retry later.`
+- **Причина**: работа кластера была завершена. Для интерактивных кластеров эта проблема может быть условием состязания.
 
-- **Причина**: работа кластера была завершена. Для интерактивных кластеров это может быть условие состязания.
+- **Рекомендация**. чтобы избежать этой ошибки, используйте кластеры заданий.
 
-- **Рекомендация**. Лучший способ избежать этой ошибки — использовать кластеры заданий.
+### <a name="error-code-3204"></a>Код ошибки: 3204
 
+- **Сообщение**:`Job execution failed.`
 
-### <a name="error-code--3204"></a>Код ошибки: 3204
-
-- **Сообщение**: `Job execution failed.`
-
-- **Причина**: сообщения об ошибках указывают на различные проблемы, например непредвиденное состояние кластера или определенное действие. Чаще всего сообщение об ошибке не отображается.
+- **Причина**: сообщения об ошибках указывают на различные проблемы, например непредвиденное состояние кластера или определенное действие. Часто сообщение об ошибке не отображается.
 
 - **Рекомендация**: н/д
-            
-
+ 
 ## <a name="azure-data-lake-analytics"></a>Аналитика озера данных Azure
 
 Следующая таблица относится к U-SQL.
-      
-### <a name="error-code--2709"></a>Код ошибки: 2709
+ 
+### <a name="error-code-2709"></a>Код ошибки: 2709
 
-- **Сообщение**: `The access token is from the wrong tenant.`
+- **Сообщение**:`The access token is from the wrong tenant.`
 
 - **Причина**: неверный клиент Azure Active Directory (Azure AD).
 
@@ -142,903 +138,911 @@ ms.locfileid: "74972342"
 
 <br/>
 
-- **Сообщение**: `We cannot accept your job at this moment. The maximum number of queued jobs for   your account is 200. `
+- **Сообщение**:`We cannot accept your job at this moment. The maximum number of queued jobs for your account is 200. `
 
 - **Причина**: Эта ошибка вызвана регулированием на Data Lake Analytics.
 
-- **Рекомендация**. Сократите число отправленных заданий, чтобы Data Lake Analytics, изменив триггеры фабрики данных и параметры параллелизма для действий. Или увеличьте ограничения на Data Lake Analytics.
+- **Рекомендация**: Сократите число заданий, отправленных в Data Lake Analytics. Измените триггеры фабрики данных и параметры параллелизма для действий или увеличьте ограничения на Data Lake Analytics.
 
-<br/>  
+<br/> 
 
-- **Сообщение**: `This job was rejected because it requires 24 AUs. This account's administrator-defined policy prevents a job from using more than 5 AUs.`
+- **Сообщение**:`This job was rejected because it requires 24 AUs. This account's administrator-defined policy prevents a job from using more than 5 AUs.`
 
 - **Причина**: Эта ошибка вызвана регулированием на Data Lake Analytics.
 
-- **Рекомендация**. Сократите число отправленных заданий, чтобы Data Lake Analytics, изменив триггеры фабрики данных и параметры параллелизма для действий. Или увеличьте ограничения на Data Lake Analytics.
+- **Рекомендация**: Сократите число заданий, отправленных в Data Lake Analytics. Измените триггеры фабрики данных и параметры параллелизма для действий или увеличьте ограничения на Data Lake Analytics.
 
+### <a name="error-code-2705"></a>Код ошибки: 2705
 
-### <a name="error-code--2705"></a>Код ошибки: 2705
-
-- **Сообщение**: `Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.<br/>  <br/>  User is   not able to access Data Lake Store.  <br/>  <br/>  User is  not authorized to use Data Lake Analytics.`
+- **Сообщение**:`Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.<br/> <br/> User is not able to access Data Lake Store. <br/> <br/> User is not authorized to use Data Lake Analytics.`
 
 - **Причина**: субъекту-службе или сертификату не предоставлен доступ к файлу в хранилище.
 
 - **Рекомендация**: Убедитесь, что субъект-служба или сертификат, предоставляемый пользователем для заданий Data Lake Analytics, имеет доступ к учетной записи Data Lake Analytics и экземпляру Data Lake Storage по умолчанию из корневой папки.
 
+### <a name="error-code-2711"></a>Код ошибки: 2711
 
-### <a name="error-code--2711"></a>Код ошибки: 2711
-
-- **Сообщение**: `Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.<br/>  <br/>  User is   not able to access Data Lake Store.  <br/>  <br/>  User is  not authorized to use Data Lake Analytics.`
+- **Сообщение**:`Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.<br/> <br/> User is not able to access Data Lake Store. <br/> <br/> User is not authorized to use Data Lake Analytics.`
 
 - **Причина**: субъекту-службе или сертификату не предоставлен доступ к файлу в хранилище.
 
 - **Рекомендация**: Убедитесь, что субъект-служба или сертификат, предоставляемый пользователем для заданий Data Lake Analytics, имеет доступ к учетной записи Data Lake Analytics и экземпляру Data Lake Storage по умолчанию из корневой папки.
 
-<br/>  
+<br/> 
 
-- **Сообщение**: `Cannot find the 'Azure Data Lake Store' file or folder.`
+- **Сообщение**:`Cannot find the 'Azure Data Lake Store' file or folder.`
 
 - **Причина**: неверный путь к файлу U-SQL или учетные данные связанной службы не имеют доступа.
 
 - **Рекомендация**: Проверьте путь и учетные данные, указанные в связанной службе.
 
+### <a name="error-code-2704"></a>Код ошибки: 2704
 
-### <a name="error-code--2704"></a>Код ошибки: 2704
-
-- **Сообщение**: `Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.<br/>  <br/>  User is   not able to access Data Lake Store.  <br/>  <br/>  User is  not authorized to use Data Lake Analytics.`
+- **Сообщение**:`Forbidden. ACL verification failed. Either the resource does not exist or the user is not authorized to perform the requested operation.<br/> <br/> User is not able to access Data Lake Store. <br/> <br/> User is not authorized to use Data Lake Analytics.`
 
 - **Причина**: субъекту-службе или сертификату не предоставлен доступ к файлу в хранилище.
 
 - **Рекомендация**: Убедитесь, что субъект-служба или сертификат, предоставляемый пользователем для заданий Data Lake Analytics, имеет доступ к учетной записи Data Lake Analytics и экземпляру Data Lake Storage по умолчанию из корневой папки.
 
+### <a name="error-code-2707"></a>Код ошибки: 2707
 
-### <a name="error-code--2707"></a>Код ошибки: 2707
-
-- **Сообщение**: `Cannot resolve the account of AzureDataLakeAnalytics. Please check 'AccountName' and   'DataLakeAnalyticsUri'.`
+- **Сообщение**:`Cannot resolve the account of AzureDataLakeAnalytics. Please check 'AccountName' and 'DataLakeAnalyticsUri'.`
 
 - **Причина**: неверная учетная запись Data Lake Analytics в связанной службе.
 
 - **Рекомендация**: Убедитесь, что указана правильная учетная запись.
 
+### <a name="error-code-2703"></a>Код ошибки: 2703
 
-### <a name="error-code--2703"></a>Код ошибки: 2703
-
-- **Сообщение**: `Error Id: E_CQO_SYSTEM_INTERNAL_ERROR (or any error that starts with "Error   Id:").`
+- **Сообщение**:`Error Id: E_CQO_SYSTEM_INTERNAL_ERROR (or any error that starts with "Error Id:").`
 
 - **Причина**: ошибка связана с Data Lake Analytics.
 
-- **Рекомендация**. ошибка, как в примере, означает, что задание было отправлено в Data Lake Analytics и Скрипт завершился неудачно. Исследование в Data Lake Analytics. На портале перейдите к учетной записи Data Lake Analytics и найдите задание с помощью идентификатора запуска действия фабрики данных (не идентификатора запуска конвейера). Задание содержит дополнительные сведения об ошибке и поможет вам устранить неполадки. Если разрешение неясно, обратитесь в службу поддержки Data Lake Analytics и укажите URL-адрес задания, включающий имя учетной записи и идентификатор задания.
-          
+- **Рекомендация**: задание было отправлено в Data Lake Analytics, и сценарий в нем завершился неудачно. Исследование в Data Lake Analytics. На портале перейдите к учетной записи Data Lake Analytics и найдите задание с помощью идентификатора запуска действия фабрики данных (не используйте идентификатор выполнения конвейера). Задание содержит дополнительные сведения об ошибке и поможет вам устранить неполадки.
 
+   Если разрешение неясно, обратитесь в службу поддержки Data Lake Analytics и укажите URL-адрес задания, в том числе имя учетной записи и идентификатор задания.
+ 
 ## <a name="azure-functions"></a>Функции Azure
 
-### <a name="error-code--3602"></a>Код ошибки: 3602
+### <a name="error-code-3602"></a>Код ошибки: 3602
 
-- **Сообщение**: `Invalid HttpMethod: '%method;'.`
+- **Сообщение**:`Invalid HttpMethod: '%method;'.`
 
-- **Причина**: метод HTTP, указанный в полезных данных действия, не поддерживается действием функции Azure.
+- **Причина**: HttpMethod, указанный в полезных данных действия, не поддерживается действием функции Azure.
 
-- **Рекомендация**. поддерживаются методы HTTP: WHERE, POST, Get, DELETE, параметры, Head и Trace.
+- **Рекомендация**. Поддерживаемые ХТТПМЕСОДС: размещение, публикация, получение, удаление, параметры, головной элемент и трассировка.
 
+### <a name="error-code-3603"></a>Код ошибки: 3603
 
-### <a name="error-code--3603"></a>Код ошибки: 3603
+- **Сообщение**:`Response Content is not a valid JObject.`
 
-- **Сообщение**: `Response Content is not a valid JObject.`
+- **Причина**: функция Azure, которая была вызвана, не вернула полезные данные JSON в ответе. Действие функции Azure фабрики данных Azure (ADF) поддерживает только содержимое ответа JSON.
 
-- **Причина**: функция Azure, которая была вызвана, не вернула полезные данные JSON в ответе. Действие функции Azure ADF поддерживает только содержимое ответа JSON.
+- **Рекомендация**: обновление функции Azure для возврата допустимых полезных данных JSON, таких как функция C#, может возвращать`(ActionResult)new OkObjectResult("{\"Id\":\"123\"}");`
 
-- **Рекомендация**: обновите функцию Azure, чтобы вернуть допустимые полезные данные JSON C# , например, функция может возвращать (ActionResult) New окобжектресулт ("{\"Id\":\"123\"}");
-
-
-### <a name="error-code--3606"></a>Код ошибки: 3606
+### <a name="error-code-3606"></a>Код ошибки: 3606
 
 - **Сообщение**: в действии функции Azure отсутствует ключ функции.
 
 - **Причина**: определение действия функции Azure не завершено.
 
-- **Рекомендация**: Проверьте, имеет ли определение JSON входного действия азурефунктион свойство с именем "функтионкэй".
+- **Рекомендация**: Убедитесь, что у входного определения JSON действия функции Azure есть свойство `functionKey`с именем.
 
+### <a name="error-code-3607"></a>Код ошибки: 3607
 
-### <a name="error-code--3607"></a>Код ошибки: 3607
-
-- **Сообщение**: `Azure function activity missing function name.`
+- **Сообщение**:`Azure function activity missing function name.`
 
 - **Причина**: определение действия функции Azure не завершено.
 
-- **Рекомендация**: Убедитесь, что определение JSON входного азурефунктион действия имеет свойство с именем FunctionName.
+- **Рекомендация**: Убедитесь, что у входного определения JSON действия функции Azure есть свойство `functionName`с именем.
 
+### <a name="error-code-3608"></a>Код ошибки: 3608
 
-### <a name="error-code--3608"></a>Код ошибки: 3608
+- **Сообщение**:`Call to provided Azure function '%FunctionName;' failed with status-'%statusCode;' and message - '%message;'.`
 
-- **Сообщение**: `Call to provided Azure function '%FunctionName;' failed with status-'%statusCode;' and message - '%message;'.`
-
-- **Причина**: сведения о функции Azure в определении действия могут быть неправильными.
+- **Причина**. сведения о функции Azure в определении действия могут быть неправильными.
 
 - **Рекомендация**: исправьте сведения о функции Azure и повторите попытку.
 
+### <a name="error-code-3609"></a>Код ошибки: 3609
 
-### <a name="error-code--3609"></a>Код ошибки: 3609
-
-- **Сообщение**: `Azure function activity missing functionAppUrl.`
+- **Сообщение**:`Azure function activity missing functionAppUrl.`
 
 - **Причина**: определение действия функции Azure не завершено.
 
-- **Рекомендация**: Проверьте, имеет ли определение JSON входного действия азурефунктион свойство с именем "функтионаппурл".
+- **Рекомендация**: Убедитесь, что у входного определения JSON действия функции Azure есть свойство `functionAppUrl`с именем.
 
+### <a name="error-code-3610"></a>Код ошибки: 3610
 
-### <a name="error-code--3610"></a>Код ошибки: 3610
-
-- **Сообщение**: `There was an error while calling endpoint.`
+- **Сообщение**:`There was an error while calling endpoint.`
 
 - **Причина**: возможно, URL-адрес функции неверен.
 
-- **Рекомендация**: Убедитесь, что значение "функтионаппурл" в JSON действия указано правильно, и повторите попытку.
+- **Рекомендация**: Проверьте правильность значения для `functionAppUrl` в JSON действия и повторите попытку.
 
+### <a name="error-code-3611"></a>Код ошибки: 3611
 
-### <a name="error-code--3611"></a>Код ошибки: 3611
-
-- **Сообщение**: `Azure function activity missing Method in JSON.`
-
-- **Причина**: определение действия функции Azure не завершено.
-
-- **Рекомендация**: Убедитесь, что определение JSON входного действия азурефунктион имеет свойство с именем "метод".
-
-
-### <a name="error-code--3612"></a>Код ошибки: 3612
-
-- **Сообщение**: `Azure function activity missing LinkedService definition in JSON.`
+- **Сообщение**:`Azure function activity missing Method in JSON.`
 
 - **Причина**: определение действия функции Azure не завершено.
 
-- **Рекомендация**: Убедитесь, что в определении JSON входного действия азурефунктион имеются связанные сведения о связанной службе.
+- **Рекомендация**: Убедитесь, что у входного определения JSON действия функции Azure есть свойство `method`с именем.
 
+### <a name="error-code-3612"></a>Код ошибки: 3612
 
+- **Сообщение**:`Azure function activity missing LinkedService definition in JSON.`
+
+- **Причина**: определение действия функции Azure не завершено.
+
+- **Рекомендация**: Убедитесь, что в определении JSON для входного действия функции Azure имеются связанные сведения о связанной службе.
 
 ## <a name="azure-machine-learning"></a>Машинное обучение Azure
 
-### <a name="error-code--4101"></a>Код ошибки: 4101
+### <a name="error-code-4101"></a>Код ошибки: 4101
 
-- **Сообщение**: `AzureMLExecutePipeline activity '%activityName;' has invalid value for property '%propertyName;'.`
+- **Сообщение**:`AzureMLExecutePipeline activity '%activityName;' has invalid value for property '%propertyName;'.`
 
-- **Причина**: неправильный формат или отсутствует определение свойства "% PropertyName;".
+- **Причина**: неправильный формат или отсутствует определение свойства `%propertyName;`.
 
-- **Рекомендация**: Проверьте, имеет ли действие "% activityName;" свойство "% PropertyName;", определенное с правильными данными.
+- **Рекомендация**: Проверьте, имеет ли `%activityName;` действие свойство `%propertyName;` , определенное с правильными данными.
 
+### <a name="error-code-4110"></a>Код ошибки: 4110
 
-### <a name="error-code--4110"></a>Код ошибки: 4110
-
-- **Сообщение**: `AzureMLExecutePipeline activity missing LinkedService definition in JSON.`
+- **Сообщение**:`AzureMLExecutePipeline activity missing LinkedService definition in JSON.`
 
 - **Причина**: определение действия азуремлексекутепипелине не завершено.
 
-- **Рекомендация**: Проверьте, содержит ли определение JSON для входного действия азуремлексекутепипелине сведения о связанной службе.
+- **Рекомендация**: Убедитесь, что определение JSON входного азуремлексекутепипелине действия содержит правильные сведения о связанной службе.
 
+### <a name="error-code-4111"></a>Код ошибки: 4111
 
-### <a name="error-code--4111"></a>Код ошибки: 4111
-
-- **Сообщение**: `AzureMLExecutePipeline activity has wrong LinkedService type in JSON. Expected LinkedService type: '%expectedLinkedServiceType;', current LinkedService type: Expected LinkedService type: '%currentLinkedServiceType;'.`
+- **Сообщение**:`AzureMLExecutePipeline activity has wrong LinkedService type in JSON. Expected LinkedService type: '%expectedLinkedServiceType;', current LinkedService type: Expected LinkedService type: '%currentLinkedServiceType;'.`
 
 - **Причина**: неправильное определение действия.
 
-- **Рекомендация**: Проверьте, правильно ли указаны сведения о связанной службе в определении JSON входного азуремлексекутепипелине действия.
+- **Рекомендация**: Убедитесь, что определение JSON входного азуремлексекутепипелине действия содержит правильные сведения о связанной службе.
 
+### <a name="error-code-4112"></a>Код ошибки: 4112
 
-### <a name="error-code--4112"></a>Код ошибки: 4112
-
-- **Сообщение**: `AzureMLService linked service has invalid value for property '%propertyName;'.`
+- **Сообщение**:`AzureMLService linked service has invalid value for property '%propertyName;'.`
 
 - **Причина**: неправильный формат или отсутствует определение свойства "% PropertyName;".
 
-- **Рекомендация**: Проверьте, имеет ли связанная служба свойство "% PropertyName;", определенное с правильными данными.
+- **Рекомендация**: Проверьте, определена ли для связанной службы `%propertyName;` свойство с правильными данными.
 
+### <a name="error-code-4121"></a>Код ошибки: 4121
 
-### <a name="error-code--4121"></a>Код ошибки: 4121
-
-- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
+- **Сообщение**:`Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
 - **Причина**: истек срок действия учетных данных, используемых для доступа к машинное обучение Azure.
 
-- **Рекомендация**: Проверьте правильность учетных данных и повторите попытку
+- **Рекомендация**: Убедитесь, что учетные данные действительны, и повторите попытку.
 
+### <a name="error-code-4122"></a>Код ошибки: 4122
 
-### <a name="error-code--4122"></a>Код ошибки: 4122
+- **Сообщение**:`Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
+- **Причина**: учетные данные, указанные в связанной службе машинное обучение Azure, являются недопустимыми или не имеют разрешения на выполнение операции.
 
-- **Причина**: учетные данные, предоставленные в машинное обучение Azure связанной службе, недопустимы или не имеют разрешения на выполнение операции.
+- **Рекомендация**: Убедитесь, что учетные данные в связанной службе допустимы и имеют разрешение на доступ к машинное обучение Azure.
 
-- **Рекомендация**: Проверьте допустимость учетных данных в связанной службе и наличие разрешений на доступ к машинное обучение Azure.
+### <a name="error-code-4123"></a>Код ошибки: 4123
 
+- **Сообщение**:`Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-### <a name="error-code--4123"></a>Код ошибки: 4123
+- **Причина**: свойства действия, такие как `pipelineParameters` , являются недопустимыми для конвейера машинное обучение Azure (машинного обучения).
 
-- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
+- **Рекомендация**: Убедитесь, что значения свойств действия соответствуют ожидаемым полезным данным в опубликованном КОНВЕЙЕРе машинного обучения Azure, указанном в связанной службе.
 
-- **Причина**: свойства действия, такие как pipelineParameters, недопустимы для КОНВЕЙЕРа машинного обучения Azure.
+### <a name="error-code-4124"></a>Код ошибки: 4124
 
-- **Рекомендация**: проверьте значение свойств действия в соответствии с ожидаемыми полезными данными из опубликованного КОНВЕЙЕРа машинного обучения Azure, указанного в связанной службе.
-
-
-### <a name="error-code--4124"></a>Код ошибки: 4124
-
-- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
+- **Сообщение**:`Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
 - **Причина**: опубликованная конечная точка КОНВЕЙЕРа машинного обучения Azure не существует.
 
 - **Рекомендация**: Убедитесь, что опубликованная конечная точка конвейера машинное обучение Azure, указанная в связанной службе, существует в машинное обучение Azure.
 
+### <a name="error-code-4125"></a>Код ошибки: 4125
 
-### <a name="error-code--4125"></a>Код ошибки: 4125
+- **Сообщение**:`Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
 
-- **Сообщение**: `Request sent to Azure Machine Learning for operation '%operation;' failed with http status code '%statusCode;'. Error message from Azure Machine Learning: '%externalMessage;'.`
+- **Причина**: на машинное обучение Azure возникла ошибка сервера.
 
-- **Причина**: ошибка сервера в машинное обучение Azure.
+- **Рекомендация**: повторите попытку позже. Если проблема не будет устранена, обратитесь к группе Машинное обучение Azure.
 
-- **Рекомендация**: повторите попытку позже. Если проблемы не удается устранить, обратитесь в службу Машинное обучение Azure.
+### <a name="error-code-4126"></a>Код ошибки: 4126
 
-
-### <a name="error-code--4126"></a>Код ошибки: 4126
-
-- **Сообщение**: `Azure ML pipeline run failed with status: '%amlPipelineRunStatus;'. Azure ML pipeline run Id: '%amlPipelineRunId;'. Please check in Azure Machine Learning for more error logs.`
+- **Сообщение**:`Azure ML pipeline run failed with status: '%amlPipelineRunStatus;'. Azure ML pipeline run Id: '%amlPipelineRunId;'. Please check in Azure Machine Learning for more error logs.`
 
 - **Причина**: сбой запуска КОНВЕЙЕРа машинного обучения Azure.
 
-- **Рекомендация**: выполните возврат машинное обучение Azure для получения дополнительных журналов ошибок и исправления КОНВЕЙЕРа машинного обучения.
+- **Рекомендация**: Проверьте машинное обучение Azure для получения дополнительных журналов ошибок, а затем исправьте конвейер ml.
 
+## <a name="common"></a>Распространенные
 
+### <a name="error-code-2103"></a>Код ошибки: 2103
 
-## <a name="common"></a>Common
+- **Сообщение**:`Please provide value for the required property '%propertyName;'.`
 
-### <a name="error-code--2103"></a>Код ошибки: 2103
-
-- **Сообщение**: `Please provide value for the required property '%propertyName;'.`
-
-- **Причина**: значение свойства не было предоставлено, однако оно требуется в сценарии.
+- **Причина**: не указано обязательное значение для свойства.
 
 - **Рекомендация**: Укажите значение из сообщения и повторите попытку.
 
+### <a name="error-code-2104"></a>Код ошибки: 2104
 
-### <a name="error-code--2104"></a>Код ошибки: 2104
+- **Сообщение**:`The type of the property '%propertyName;' is incorrect.`
 
-- **Сообщение**: `The type of the property '%propertyName;' is incorrect.`
-
-- **Причина**: тип предоставленного свойства не соответствует ожидаемому.
+- **Причина**: предоставлен неправильный тип свойства.
 
 - **Рекомендация**: Исправьте тип свойства и повторите попытку.
 
+### <a name="error-code-2105"></a>Код ошибки: 2105
 
-### <a name="error-code--2105"></a>Код ошибки: 2105
+- **Сообщение**:`An invalid json is provided for property '%propertyName;'. Encountered an error while trying to parse: '%message;'.`
 
-- **Сообщение**: `An invalid json is provided for property '%propertyName;'. Encountered an error while trying to parse: '%message;'.`
+- **Причина**: значение свойства недопустимо или не находится в ожидаемом формате.
 
-- **Причина**: значение свойства недопустимо или не имеет ожидаемого формата.
+- **Рекомендация**: см. документацию по свойству и убедитесь, что предоставленное значение включает правильный формат и тип.
 
-- **Рекомендация**: выполните поиск в документации по свойству и убедитесь, что указанное значение имеет ожидаемый формат и тип.
+### <a name="error-code-2106"></a>Код ошибки: 2106
 
-
-### <a name="error-code--2106"></a>Код ошибки: 2106
-
-- **Сообщение**: `The storage connection string is invalid. %errorMessage;`
+- **Сообщение**:`The storage connection string is invalid. %errorMessage;`
 
 - **Причина**: строка подключения для хранилища недопустима или имеет неправильный формат.
 
-- **Рекомендация**: перейдите в портал Azure, найдите хранилище, скопируйте строку подключения и вставьте в нее связанную службу и повторите попытку.
+- **Рекомендация**: перейдите в портал Azure и найдите хранилище, скопируйте и вставьте строку подключения в связанную службу и повторите попытку.
 
+### <a name="error-code-2108"></a>Код ошибки: 2108
 
-### <a name="error-code--2108"></a>Код ошибки: 2108
+- **Сообщение**:`Error calling the endpoint '%url;'. Response status code: '%code;'`
 
-- **Сообщение**: `Error calling the endpoint '%url;'. Response status code: '%code;'`
-
-- **Причина**: не удалось выполнить запрос из-за базовой проблемы, такой как сетевое подключение, сбой DNS, проверка сертификата сервера или превышение времени ожидания.
+- **Причина**: не удалось выполнить запрос из-за базовой проблемы, такой как сетевое подключение, сбой DNS, проверка сертификата сервера или время ожидания.
 
 - **Рекомендация**: для проверки запроса используйте Fiddler/POST.
 
+### <a name="error-code-2110"></a>Код ошибки: 2110
 
-### <a name="error-code--2110"></a>Код ошибки: 2110
-
-- **Сообщение**: `The linked service type '%linkedServiceType;' is not supported for '%executorType;' activities.`
+- **Сообщение**:`The linked service type '%linkedServiceType;' is not supported for '%executorType;' activities.`
 
 - **Причина**: связанная служба, указанная в действии, неверна.
 
-- **Рекомендация**. Убедитесь, что тип связанной службы — один из поддерживаемых типов для действия. Например, для действий HDI тип связанной службы может быть HDInsight или HDInsightOnDemand.
+- **Рекомендация**: Убедитесь, что тип связанной службы является одним из поддерживаемых типов для действия. Например, тип связанной службы для действий HDI может быть HDInsight или HDInsightOnDemand.
 
+### <a name="error-code-2111"></a>Код ошибки: 2111
 
-### <a name="error-code--2111"></a>Код ошибки: 2111
+- **Сообщение**:`The type of the property '%propertyName;' is incorrect. The expected type is %expectedType;.`
 
-- **Сообщение**: `The type of the property '%propertyName;' is incorrect. The expected type is %expectedType;.`
-
-- **Причина**: тип предоставленного свойства не соответствует ожидаемому.
+- **Причина**: тип предоставленного свойства неверен.
 
 - **Рекомендация**: Исправьте тип свойства и повторите попытку.
 
+### <a name="error-code-2112"></a>Код ошибки: 2112
 
-### <a name="error-code--2112"></a>Код ошибки: 2112
-
-- **Сообщение**: `The cloud type is unsupported or could not be determined for storage from the EndpointSuffix '%endpointSuffix;'.`
+- **Сообщение**:`The cloud type is unsupported or could not be determined for storage from the EndpointSuffix '%endpointSuffix;'.`
 
 - **Причина**: тип облака не поддерживается или не может быть определен для хранилища из EndpointSuffix.
 
-- **Рекомендация**. Используйте хранилище в другом облаке и повторите попытку.
+- **Рекомендация**: Используйте хранилище в другом облаке и повторите попытку.
 
+### <a name="error-code-2128"></a>Код ошибки: 2128
 
-### <a name="error-code--2128"></a>Код ошибки: 2128
-
-- **Сообщение**: `No response from the endpoint. Possible causes: network connectivity, DNS failure, server certificate validation or timeout.`
+- **Сообщение**:`No response from the endpoint. Possible causes: network connectivity, DNS failure, server certificate validation or timeout.`
 
 - **Причина**: сетевое подключение, сбой DNS, проверка сертификата сервера или превышение времени ожидания.
 
 - **Рекомендация**: Убедитесь, что конечная точка, которую вы пытаетесь навести, отвечает на запросы. Вы можете использовать такие средства, как Fiddler/POST.
 
-
-
-## <a name="custom"></a>Пользовательские
+## <a name="custom"></a>Особые настройки
 
 Следующая таблица относится к пакетной службе Azure.
-      
-### <a name="error-code--2500"></a>Код ошибки: 2500
+ 
+### <a name="error-code-2500"></a>Код ошибки: 2500
 
-- **Сообщение**: `Hit unexpected exception and execution failed.`
+- **Сообщение**:`Hit unexpected exception and execution failed.`
 
-- **Причина**: `Can't launch command, or the program returned an error code.`
+- **Причина**:`Can't launch command, or the program returned an error code.`
 
-- **Рекомендация**: Убедитесь, что исполняемый файл существует. Если программа запущена, убедитесь, что *stdout. txt* и *stderr. txt* были переданы в учетную запись хранения. Рекомендуется создавать в коде журналы копиаус для отладки.
+- **Рекомендация**: Убедитесь, что исполняемый файл существует. Если программа запущена, убедитесь, что *stdout. txt* и *stderr. txt* были переданы в учетную запись хранения. Рекомендуется включать в код журналы для отладки.
 
+### <a name="error-code-2501"></a>Код ошибки: 2501
 
-### <a name="error-code--2501"></a>Код ошибки: 2501
-
-- **Сообщение**: `Cannot access user batch account; please check batch account settings.`
+- **Сообщение**:`Cannot access user batch account; please check batch account settings.`
 
 - **Причина**: неверный ключ доступа пакетной службы или имя пула.
 
 - **Рекомендация**: Проверьте имя пула и ключ доступа пакетной службы в связанной службе.
 
+### <a name="error-code-2502"></a>Код ошибки: 2502
 
-### <a name="error-code--2502"></a>Код ошибки: 2502
-
-- **Сообщение**: `Cannot access user storage account; please check storage account settings.`
+- **Сообщение**:`Cannot access user storage account; please check storage account settings.`
 
 - **Причина**: неправильное имя учетной записи хранения или ключ доступа.
 
 - **Рекомендация**: Проверьте имя учетной записи хранения и ключ доступа в связанной службе.
 
+### <a name="error-code-2504"></a>Код ошибки: 2504
 
-### <a name="error-code--2504"></a>Код ошибки: 2504
+- **Сообщение**:`Operation returned an invalid status code 'BadRequest'.`
 
-- **Сообщение**: `Operation returned an invalid status code 'BadRequest'.`
+- **Причина**: слишком много файлов в `folderPath` пользовательском действии. Общий размер `resourceFiles` не может превышать 32 768 символов.
 
-- **Причина**: слишком много файлов в FolderPath настраиваемого действия. Общий размер resourceFiles не может превышать 32 768 символов.
+- **Рекомендация**: удалите ненужные файлы или заархивируйте их в ZIP-файл и добавьте команду unzip, чтобы извлечь их.
+   
+   Например, используйте`powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory($zipFile, $folder); }" ; $folder\yourProgram.exe`
 
-- **Рекомендация**: удалите ненужные файлы. Или ZIP, и добавьте команду unzip, чтобы извлечь их. Например, используйте `powershell.exe -nologo -noprofile   -command "& { Add-Type -A 'System.IO.Compression.FileSystem';   [IO.Compression.ZipFile]::ExtractToDirectory($zipFile, $folder); }" ;  $folder\yourProgram.exe`
+### <a name="error-code-2505"></a>Код ошибки: 2505
 
-
-### <a name="error-code--2505"></a>Код ошибки: 2505
-
-- **Сообщение**: `Cannot create Shared Access Signature unless Account Key credentials are used.`
+- **Сообщение**:`Cannot create Shared Access Signature unless Account Key credentials are used.`
 
 - **Причина**. пользовательские действия поддерживают только учетные записи хранения, использующие ключ доступа.
 
 - **Рекомендация**: см. описание ошибки.
 
+### <a name="error-code-2507"></a>Код ошибки: 2507
 
-### <a name="error-code--2507"></a>Код ошибки: 2507
-
-- **Сообщение**: `The folder path does not exist or is empty: ...`
+- **Сообщение**:`The folder path does not exist or is empty: ...`
 
 - **Причина**: в учетной записи хранения нет файлов по указанному пути.
 
 - **Рекомендация**: путь к папке должен содержать исполняемые файлы, которые требуется запустить.
 
+### <a name="error-code-2508"></a>Код ошибки: 2508
 
-### <a name="error-code--2508"></a>Код ошибки: 2508
-
-- **Сообщение**: `There are duplicate files in the resource folder.`
+- **Сообщение**:`There are duplicate files in the resource folder.`
 
 - **Причина**: несколько файлов с одинаковыми именами находятся в разных вложенных папках FolderPath.
 
-- **Рекомендация**: структура папки с пользовательскими действиями в разделе FolderPath.  Если необходимо сохранить структуру папок, ZIP-файлы и извлечь их в пакетной службе Azure с помощью команды unzip. Например, используйте `powershell.exe -nologo -noprofile   -command "& { Add-Type -A 'System.IO.Compression.FileSystem';   [IO.Compression.ZipFile]::ExtractToDirectory($zipFile, $folder); }" ;   $folder\yourProgram.exe`
+- **Рекомендация**: структура папки с пользовательскими действиями в разделе FolderPath. Если необходимо сохранить структуру папок, ZIP-файлы и извлечь их в пакетной службе Azure с помощью команды unzip.
+   
+   Например, используйте`powershell.exe -nologo -noprofile -command "& { Add-Type -A 'System.IO.Compression.FileSystem'; [IO.Compression.ZipFile]::ExtractToDirectory($zipFile, $folder); }" ; $folder\yourProgram.exe`
 
+### <a name="error-code-2509"></a>Код ошибки: 2509
 
-### <a name="error-code--2509"></a>Код ошибки: 2509
+- **Сообщение**:`Batch url ... is invalid; it must be in Uri format.`
 
-- **Сообщение**: `Batch   url ... is invalid; it must be in Uri format.`
-
-- **Причина**: URL-адреса пакетов должны быть похожи на `https://mybatchaccount.eastus.batch.azure.com`
+- **Причина**: URL-адреса пакетов должны быть похожи на`https://mybatchaccount.eastus.batch.azure.com`
 
 - **Рекомендация**: см. описание ошибки.
 
+### <a name="error-code-2510"></a>Код ошибки: 2510
 
-### <a name="error-code--2510"></a>Код ошибки: 2510
-
-- **Сообщение**: `An   error occurred while sending the request.`
+- **Сообщение**:`An error occurred while sending the request.`
 
 - **Причина**: недопустимый URL-адрес пакета.
 
 - **Рекомендация**: Проверьте URL-адрес пакета.
-            
-
+ 
 ## <a name="hdinsight"></a>HDInsight
 
-### <a name="error-code--200"></a>Код ошибки: 200
+### <a name="error-code-200"></a>Код ошибки: 200
 
-- **Сообщение**: `Unexpected error happened: '%error;'.`
+- **Сообщение**:`Unexpected error happened: '%error;'.`
 
 - **Причина**: Внутренняя ошибка службы.
 
-- **Рекомендация**: обратитесь в службу поддержки ADF для получения дополнительной помощи.
+- **Рекомендация**: для получения дополнительной помощи обратитесь в службу поддержки ADF.
 
+### <a name="error-code-201"></a>Код ошибки: 201
 
-### <a name="error-code--201"></a>Код ошибки: 201
-
-- **Сообщение**: `JobType %jobType; is not found.`
+- **Сообщение**:`JobType %jobType; is not found.`
 
 - **Причина**. Существует новый тип задания, который не поддерживается в ADF.
 
-- **Рекомендация**: обратитесь в службу поддержки ADF для получения дополнительной помощи.
+- **Рекомендация**: для получения дополнительной помощи обратитесь в службу поддержки ADF.
 
+### <a name="error-code-202"></a>Код ошибки: 202
 
-### <a name="error-code--202"></a>Код ошибки: 202
+- **Сообщение**:`Failed to create on demand HDI cluster. Cluster name or linked service name: '%clusterName;', error: '%message;'`
 
-- **Сообщение**: `Failed to create on demand HDI cluster. Cluster name or linked service name: '%clusterName;', error: '%message;'`
+- **Причина**. сообщение об ошибке содержит сведения о том, что пошло не так.
 
-- **Причина**: в сообщении об ошибке должны отображаться сведения о том, что пошло не так.
+- **Рекомендация**: сведения о сообщении об ошибке помогут устранить проблему. Если недостаточно сведений, обратитесь за помощью в службу поддержки ADF.
 
-- **Рекомендация**: сообщение об ошибке должно помочь устранить проблему. Если недостаточно данных, обратитесь за помощью в службу поддержки ADF.
+### <a name="error-code-203"></a>Код ошибки: 203
 
+- **Сообщение**:`Failed to delete on demand HDI cluster. Cluster name or linked service name: '%clusterName;', error: '%message;'`
 
-### <a name="error-code--203"></a>Код ошибки: 203
+- **Причина**. сообщение об ошибке содержит сведения о том, что пошло не так.
 
-- **Сообщение**: `Failed to delete on demand HDI cluster. Cluster name or linked service name: '%clusterName;', error: '%message;'`
+- **Рекомендация**: сведения о сообщении об ошибке помогут устранить проблему. Если недостаточно сведений, обратитесь за помощью в службу поддержки ADF.
 
-- **Причина**: в сообщении об ошибке должны отображаться сведения о том, что пошло не так.
+### <a name="error-code-204"></a>Код ошибки: 204
 
-- **Рекомендация**: сообщение об ошибке должно помочь устранить проблему. Если недостаточно данных, обратитесь за помощью в службу поддержки ADF.
-
-
-### <a name="error-code--204"></a>Код ошибки: 204
-
-- **Сообщение**: `The resumption token is missing for runId '%runId;'.`
+- **Сообщение**:`The resumption token is missing for runId '%runId;'.`
 
 - **Причина**: Внутренняя ошибка службы.
 
-- **Рекомендация**: обратитесь в службу поддержки ADF для получения дополнительной помощи.
+- **Рекомендация**: для получения дополнительной помощи обратитесь в службу поддержки ADF.
 
+### <a name="error-code-205"></a>Код ошибки: 205
 
-### <a name="error-code--205"></a>Код ошибки: 205
-
-- **Сообщение**: `Failed to prepare cluster for LinkedService '%linkedServiceName;', the current resource status is '%status;'.`
+- **Сообщение**:`Failed to prepare cluster for LinkedService '%linkedServiceName;', the current resource status is '%status;'.`
 
 - **Причина**: при создании кластера HDi по запросу произошла ошибка.
 
-- **Рекомендация**: обратитесь в службу поддержки ADF для получения дополнительной помощи.
+- **Рекомендация**: для получения дополнительной помощи обратитесь в службу поддержки ADF.
 
+### <a name="error-code-206"></a>Код ошибки: 206
 
-### <a name="error-code--206"></a>Код ошибки: 206
+- **Сообщение**:`The batch ID for Spark job is invalid. Please retry your job, and if the problem persists, contact the ADF support for further assistance.`
 
-- **Сообщение**: `The batch ID for Spark job is invalid. Please retry your job, and if the problem persists, contact the ADF support for further assistance.`
+- **Причина**: произошла внутренняя проблема со службой, вызвавшей эту ошибку.
 
-- **Причина**: произошла внутренняя проблема со службой, которая вызвала это.
+- **Рекомендация**. Эта проблема может быть временной. Повторите задание. Если проблема не исчезнет, обратитесь за помощью в службу поддержки ADF.
 
-- **Рекомендация**. это может быть временной проблемой. Повторите задание. Если проблема не исчезнет, обратитесь за помощью в службу поддержки ADF.
+### <a name="error-code-207"></a>Код ошибки: 207
 
-
-### <a name="error-code--207"></a>Код ошибки: 207
-
-- **Сообщение**: `Could not determine the region from the provided storage account. Please try using another primary storage account for the on demand HDI or contact ADF support team and provide the activity run ID.`
+- **Сообщение**:`Could not determine the region from the provided storage account. Please try using another primary storage account for the on demand HDI or contact ADF support team and provide the activity run ID.`
 
 - **Причина**: произошла внутренняя ошибка при попытке определить регион из основной учетной записи хранения.
 
-- **Рекомендация**: попробуйте использовать другое хранилище. Если это решение не является приемлемым, обратитесь в службу поддержки ADF для получения дополнительной помощи.
+- **Рекомендация**: попробуйте использовать другое хранилище. Если этот параметр не является приемлемым, обратитесь в службу поддержки ADF для получения дополнительной помощи.
 
+### <a name="error-code-208"></a>Код ошибки: 208
 
-### <a name="error-code--208"></a>Код ошибки: 208
-
-- **Сообщение**: `Service Principal or the MSI authenticator are not instantiated. Please consider providing a Service Principal in the HDI on demand linked service which has permissions to create an HDInsight cluster in the provided subscription and try again. In case if this is not an acceptable solution, contact ADF support team for further assistance.`
+- **Сообщение**:`Service Principal or the MSI authenticator are not instantiated. Please consider providing a Service Principal in the HDI on demand linked service which has permissions to create an HDInsight cluster in the provided subscription and try again. In case if this is not an acceptable solution, contact ADF support team for further assistance.`
 
 - **Причина**: произошла внутренняя ошибка при попытке чтения субъекта-службы или создания экземпляра проверки подлинности MSI.
 
-- **Рекомендация**. Попробуйте предоставить субъект-службу с разрешениями на создание кластера HDInsight в указанной подписке и повторите попытку. Если это решение не является приемлемым, обратитесь в службу поддержки ADF для получения дополнительной помощи.
+- **Рекомендация**. Рассмотрите возможность предоставления субъекта-службы, обладающего разрешениями на создание кластера HDInsight в указанной подписке, и повторите попытку. Убедитесь, что [Управление удостоверениями настроено правильно](https://docs.microsoft.com/azure/hdinsight/hdinsight-managed-identities).
 
+   Если этот параметр не является приемлемым, обратитесь в службу поддержки ADF для получения дополнительной помощи.
 
-### <a name="error-code--2300"></a>Код ошибки: 2300
+### <a name="error-code-2300"></a>Код ошибки: 2300
 
-- **Сообщение**: `Failed to submit the job '%jobId;' to the cluster '%cluster;'. Error: %errorMessage;.`
+- **Сообщение**:`Failed to submit the job '%jobId;' to the cluster '%cluster;'. Error: %errorMessage;.`
 
-<br>
+- **Причина**: сообщение об ошибке содержит сообщение, аналогичное `The remote name could not be resolved.`. Указанный URI кластера может быть недопустимым.
 
-- **Причина**: Если сообщение об ошибке содержит сообщение, аналогичное "удаленное имя не удалось разрешить", это может означать, что указанный URI кластера недопустим.
+- **Рекомендация**: Убедитесь, что кластер не был удален, а также что указанный универсальный код ресурса (URI) указан правильно. При открытии URI в браузере должен отобразиться пользовательский интерфейс Ambari. Если кластер находится в виртуальной сети, URI должен быть частным URI. Чтобы открыть его, используйте виртуальную машину (ВМ), которая является частью той же виртуальной сети.
 
+   Дополнительные сведения см. [в разделе прямое подключение к службам Apache Hadoop](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment#directly-connect-to-apache-hadoop-services).
+ 
+ </br>
 
-- **Рекомендация**: Убедитесь, что кластер не был удален и предоставлен правильный универсальный код ресурса (URI). При открытии URI в браузере должен отобразиться пользовательский интерфейс Ambari. Если кластер находится в виртуальной сети, URI должен быть частным URI. Чтобы открыть его, используйте виртуальную машину, которая является частью той же виртуальной сети. Дополнительные сведения см. в разделе [this](https://docs.microsoft.com/azure/hdinsight/hdinsight-plan-virtual-network-deployment#directly-connect-to-apache-hadoop-services).
-                  
+- **Причина**: Если сообщение об ошибке содержит сообщение `A task was canceled.`, аналогичное, время ожидания отправки задания истекло.
 
-<br>
+- **Рекомендация**. проблема может быть как общим подключением HDInsight, так и сетевым подключением. Сначала убедитесь, что пользовательский интерфейс HDInsight Ambari доступен из любого браузера. Затем убедитесь, что учетные данные все еще действительны.
+   
+   Если вы используете автономную интегрированную среду выполнения (IR), выполните этот шаг с виртуальной машины или компьютера, на котором установлена локальная среда IR. Затем попробуйте отправить задание из фабрики данных еще раз. Если по-прежнему происходит сбой, обратитесь за поддержкой к группе фабрики данных.
 
-- **Причина**: Если сообщение об ошибке содержит сообщение, аналогичное "отменена задача", это означает, что время ожидания отправки задания истекло.
+   Дополнительные сведения см. в статье [веб-интерфейс Ambari](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-manage-ambari#ambari-web-ui).
 
-- **Рекомендация**. проблема может быть как общим подключением HDInsight, так и сетевым подключением. Сначала убедитесь, что пользовательский интерфейс HDInsight Ambari доступен из любого браузера. Убедитесь, что учетные данные все еще действительны. Если вы используете локальную среду выполнения (IR), убедитесь, что это делается с виртуальной машины или с компьютера, на котором установлено локальное IR-соединение. Затем попробуйте отправить задание из фабрики данных еще раз. Если по-прежнему происходит сбой, обратитесь за поддержкой к группе фабрики данных.
+ </br>
 
-<br>
-
-- **Причина**: Если сообщение об ошибке содержит сообщение о том, что "администратор пользователя заблокирован в Ambari" или "не авторизовано: Ambari имя пользователя или пароль неверен", это означает, что учетные данные HDInsight неправильные или истек срок их действия.
+- **Причина**: Если сообщение об ошибке содержит сообщение, `User admin is locked out in Ambari` аналогичное `Unauthorized: Ambari user name or password is incorrect`или, то учетные данные для HDInsight неверны или истек срок их действия.
 
 - **Рекомендация**: исправьте учетные данные и повторно разверните связанную службу. Сначала убедитесь, что учетные данные работают в HDInsight, открыв универсальный код ресурса (URI) кластера в любом браузере и пытаясь войти в систему. Если учетные данные не работают, их можно сбросить с портал Azure.
 
-<br>
+   Для кластера ESP сбросьте пароль с помощью [самостоятельного сброса пароля](https://docs.microsoft.com/azure/active-directory/user-help/active-directory-passwords-update-your-own-password).
 
-- **Причина**: Если сообщение об ошибке содержит сообщение, похожее на "502 — веб-сервер получил недопустимый ответ при работе в качестве шлюза или прокси-сервера", служба HDInsight возвращает эту ошибку.
+ </br>
 
+- **Причина**: Если сообщение об ошибке содержит сообщение `502 - Web server received an invalid response while acting as a gateway or proxy server`, аналогичное, эта ошибка возвращается службой HDInsight.
 
-- **Рекомендации**. Просмотрите документацию по устранению неполадок Azure HDInsight, например https://hdinsight.github.io/ambari/ambari-ui-502-error.html , https://hdinsight.github.io/spark/spark-thriftserver-errors.htmlhttps://docs.microsoft.com/azure/application-gateway/application-gateway-troubleshooting-502.
-                  
+- **Рекомендация**: ошибка 502 часто возникает при завершении работы процесса сервера Ambari. Вы можете перезапустить службы Ambari, перезагрузив головной узел.
 
-<br>
+    1. Подключитесь к одному из узлов в HDInsight с помощью SSH.
+    1. Найдите узел активного головного узла, выполнив `ping headnodehost`.
+    1. Подключитесь к активному головному узлу, так как сервер Ambari находится на активном головном узле с помощью SSH. 
+    1. Перезагрузите активный головной узел.
 
-- **Причина**: Если сообщение об ошибке содержит сообщение о том, что "не удалось выполнить обслуживание запроса на отправку, так как служба Templeton занята слишком большим количеством запросов на задание отправки" или "Корневая папка. joblauncher уже содержит приложения 500, не может принять приложение", это означает, что слишком много заданий отправляются в HDInsight одновременно.
+       Дополнительные сведения см. в документации по устранению неполадок Azure HDInsight. Пример:
 
-- **Рекомендация**. Попробуйте ограничить количество параллельных заданий, отправляемых в HDInsight. См. сведения о параллелизме действий фабрики данных, если задания отправляются одним действием. Измените триггеры, чтобы параллельные запуски конвейера были распределены по времени. Сведения об ошибке см. в документации по HDInsight для настройки Templeton. параллеллисм. job. Submit.
+       * [Ambari UI 502 error](https://hdinsight.github.io/ambari/ambari-ui-502-error.html) (Ошибка 502 интерфейса Ambari)
+       * [Рпктимеаутексцептион для сервера Apache Spark Thrift](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-troubleshoot-rpctimeoutexception)
+       * [Устранение ошибок шлюза в шлюзе приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-troubleshooting-502).
 
+ </br>
 
-### <a name="error-code--2301"></a>Код ошибки: 2301
+- **Причина**: Если сообщение об ошибке содержит сообщение, `Unable to service the submit job request as templeton service is busy with too many submit job requests` аналогичное `Queue root.joblauncher already has 500 applications, cannot accept submission of application`или, слишком много заданий отправляются в HDInsight одновременно.
 
-- **Сообщение**: `Could not get the status of the application '%physicalJobId;' from the HDInsight service. Received the following error: %message;. Please refer to HDInsight troubleshooting documentation or contact their support for further assistance.`
+- **Рекомендация**: Ограничьте число параллельных заданий, отправляемых в HDInsight. См. сведения о параллелизме действий фабрики данных, если задания отправляются одним действием. Измените триггеры, чтобы параллельные запуски конвейера были распределены по времени.
+
+   Сведения об [HDInsight documentation](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-templeton-webhcat-debug-errors) ошибке см. `templeton.parallellism.job.submit` в документации по HDInsight.
+
+### <a name="error-code-2301"></a>Код ошибки: 2301
+
+- **Сообщение**:`Could not get the status of the application '%physicalJobId;' from the HDInsight service. Received the following error: %message;. Please refer to HDInsight troubleshooting documentation or contact their support for further assistance.`
 
 - **Причина**: в кластере HDInsight или службе возникли проблемы.
 
+- **Рекомендация**. Эта ошибка возникает, когда ADF не получает ответ от кластера HDInsight при попытке запросить состояние выполняемого задания. Эта проблема может быть связана с самим кластером, или служба HDInsight может быть непростой.
 
-- **Рекомендация**. Эта ошибка возникает, когда ADF не получает ответ от кластера HDInsight при попытке получить состояние выполняющегося задания. Это может быть вызвано проблемами в самом кластере или в случае сбоя службы HDInsight. Обратитесь к документации по устранению неполадок HDInsight по адресу https://docs.microsoft.com/azure/hdinsight/hdinsight-troubleshoot-guide или обратитесь в службу поддержки за дальнейшей помощью.
-                
+   Обратитесь к документации по устранению https://docs.microsoft.com/azure/hdinsight/hdinsight-troubleshoot-guideнеполадок HDInsight по адресу или обратитесь в службу поддержки за дальнейшей помощью.
 
+### <a name="error-code-2302"></a>Код ошибки: 2302
 
-### <a name="error-code--2302"></a>Код ошибки: 2302
-
-- **Сообщение**: `Hadoop job failed with exit code '%exitCode;'. See '%logPath;/stderr' for more details. Alternatively, open the Ambari UI on the HDI cluster and find the logs for the job '%jobId;'. Contact HDInsight team for further support.`
-
-- **Причина**: задание было отправлено в кластер HDi и завершилось с ошибкой.
-
-- **Рекомендация**. Перейдите по ссылке "журналы Yarn" в выходных данных выполнения действия и найдите ошибки в выходных данных HDi. При необходимости обратитесь в службу HDInsight.
-
-
-### <a name="error-code--2303"></a>Код ошибки: 2303
-
-- **Сообщение**: `Hadoop job failed with transient exit code '%exitCode;'. See '%logPath;/stderr' for more details. Alternatively, open the Ambari UI on the HDI cluster and find the logs for the job '%jobId;'. Try again or contact HDInsight team for further support.`
+- **Сообщение**:`Hadoop job failed with exit code '%exitCode;'. See '%logPath;/stderr' for more details. Alternatively, open the Ambari UI on the HDI cluster and find the logs for the job '%jobId;'. Contact HDInsight team for further support.`
 
 - **Причина**: задание было отправлено в кластер HDi и завершилось с ошибкой.
 
-- **Рекомендация**. Перейдите по ссылке "журналы Yarn" в выходных данных выполнения действия и найдите ошибки в выходных данных HDi. Повторите попытку или обратитесь в службу поддержки HDInsight, если это необходимо.
+- **Совет**. 
 
+ 1. Проверьте пользовательский интерфейс Ambari:
+    1. Убедитесь, что все службы все еще работают.
+    1. В пользовательском интерфейсе Ambari просмотрите раздел оповещение на панели мониторинга.
+       1. Дополнительные сведения о предупреждениях и разрешениях для оповещений см. в статье [Управление кластером и его мониторинг](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.5.0/managing-and-monitoring-ambari/content/amb_predefined_alerts.html).
+    1. Проверьте память YARN. Если объем памяти YARN высок, обработка заданий может быть отложена. Если у вас недостаточно ресурсов для размещения приложения или задания Spark, увеличьте масштаб кластера, чтобы убедиться, что в кластере достаточно памяти и ядер. 
+ 1. Запустите пример тестового задания.
+    1. Если вы запустите это же задание в серверной части HDInsight, убедитесь, что оно выполнено. Примеры выполнения примеров см. в статье [Запуск примеров MapReduce, входящих в состав HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-run-samples-linux) . 
+ 1. Если задание по-прежнему не удалось выполнить в HDInsight, проверьте журналы приложений и сведения, которые предоставляются для поддержки:
+    1. Проверьте, было ли задание отправлено в YARN. Если задание не было отправлено в Yarn, `--master yarn`используйте.
+    1. Если приложение завершило выполнение, собирайте время начала и окончания приложения YARN. Если приложение не завершило выполнение, собирайте время начала и время запуска.
+    1. Проверьте и собирайте журнал приложений `yarn logs -applicationId <Insert_Your_Application_ID>`с помощью.
+    1. Проверьте и собирайте журналы диспетчер ресурсов Yarn в `/var/log/hadoop-yarn/yarn` каталоге.
+    1. Если эти действия недостаточно для устранения проблемы, обратитесь в службу поддержки Azure HDInsight и укажите указанные выше журналы и метки времени.
 
-### <a name="error-code--2304"></a>Код ошибки: 2304
+### <a name="error-code-2303"></a>Код ошибки: 2303
 
-- **Сообщение**: `MSI authentication is not supported on storages for HDI activities.`
+- **Сообщение**:`Hadoop job failed with transient exit code '%exitCode;'. See '%logPath;/stderr' for more details. Alternatively, open the Ambari UI on the HDI cluster and find the logs for the job '%jobId;'. Try again or contact HDInsight team for further support.`
 
-- **Причина**: связанные службы хранилища, используемые в действии связанной службы HDI или HDi, настроены с проверкой подлинности MSI, что не поддерживается.
+- **Причина**: задание было отправлено в кластер HDi и завершилось с ошибкой.
 
-- **Рекомендация**. Укажите полные строки подключения для учетных записей хранения, используемых в HDi связанной службе или операции HDi.
+- **Совет**. 
 
+ 1. Проверьте пользовательский интерфейс Ambari:
+    1. Убедитесь, что все службы все еще работают.
+    1. В пользовательском интерфейсе Ambari просмотрите раздел оповещение на панели мониторинга.
+       1. Дополнительные сведения о предупреждениях и разрешениях для оповещений см. в статье [Управление кластером и его мониторинг](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.5.0/managing-and-monitoring-ambari/content/amb_predefined_alerts.html).
+    1. Проверьте память YARN. Если объем памяти YARN высок, обработка заданий может быть отложена. Если у вас недостаточно ресурсов для размещения приложения или задания Spark, увеличьте масштаб кластера, чтобы убедиться, что в кластере достаточно памяти и ядер. 
+ 1. Запустите пример тестового задания.
+    1. Если вы запустите это же задание в серверной части HDInsight, убедитесь, что оно выполнено. Примеры выполнения примеров см. в статье [Запуск примеров MapReduce, входящих в состав HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-run-samples-linux) . 
+ 1. Если задание по-прежнему не удалось выполнить в HDInsight, проверьте журналы приложений и сведения, которые предоставляются для поддержки:
+    1. Проверьте, было ли задание отправлено в YARN. Если задание не было отправлено в Yarn, `--master yarn`используйте.
+    1. Если приложение завершило выполнение, собирайте время начала и окончания приложения YARN. Если приложение не завершило выполнение, собирайте время начала и время запуска.
+    1. Проверьте и собирайте журнал приложений `yarn logs -applicationId <Insert_Your_Application_ID>`с помощью.
+    1. Проверьте и собирайте журналы диспетчер ресурсов Yarn в `/var/log/hadoop-yarn/yarn` каталоге.
+    1. Если эти действия недостаточно для устранения проблемы, обратитесь в службу поддержки Azure HDInsight и укажите указанные выше журналы и метки времени.
 
-### <a name="error-code--2305"></a>Код ошибки: 2305
+### <a name="error-code-2304"></a>Код ошибки: 2304
 
-- **Сообщение**: `Failed to initialize the HDInsight client for the cluster '%cluster;'. Error: '%message;'`
+- **Сообщение**:`MSI authentication is not supported on storages for HDI activities.`
 
-- **Причина**: сведения о подключении для кластера HDi неверны, указанный пользователь не имеет разрешений на выполнение требуемого действия, или служба HDInsight столкнулась с проблемами, связанными с запросами от ADF.
+- **Причина**. связанные службы хранилища, используемые в действии связанной службы HDINSIGHT (HDI) или HDi, настроены с проверкой подлинности MSI, которая не поддерживается.
 
-- **Рекомендация**: Убедитесь в правильности сведений о пользователе. Также убедитесь, что пользовательский интерфейс Ambari для кластера HDI можно открыть в браузере с виртуальной машины, где в случае с локальным IR-компьютером установлен IR, или можно открыть с любого компьютера в случае Azure IR.
+- **Рекомендация**: укажите полные строки подключения для учетных записей хранения, используемых в HDi связанной службе или операции HDi.
 
+### <a name="error-code-2305"></a>Код ошибки: 2305
 
-### <a name="error-code--2306"></a>Код ошибки: 2306
+- **Сообщение**:`Failed to initialize the HDInsight client for the cluster '%cluster;'. Error: '%message;'`
 
-- **Сообщение**: `An invalid json is provided for script action '%scriptActionName;'. Error: '%message;'`
+- **Причина**: сведения о подключении для кластера HDi неверны, указанный пользователь не имеет разрешений на выполнение требуемого действия, или служба HDInsight отвечает на запросы от ADF.
+
+- **Рекомендация**: Проверьте правильность сведений о пользователе и убедитесь, что пользовательский интерфейс Ambari для кластера HDi можно открыть в браузере с виртуальной машины, на которой установлен IR-сервер (для локальной среды IR), или можно открыть с любого компьютера (для Azure IR).
+
+### <a name="error-code-2306"></a>Код ошибки: 2306
+
+- **Сообщение**:`An invalid json is provided for script action '%scriptActionName;'. Error: '%message;'`
 
 - **Причина**: для действия скрипта указан недопустимый формат JSON.
 
+- **Рекомендация**: сообщение об ошибке должно помочь определить причину проблемы. Исправьте конфигурацию JSON и повторите попытку.
 
-- **Рекомендация**: сообщение об ошибке должно помочь определить причину проблемы. Исправьте конфигурацию JSON и повторите попытку. Дополнительные сведения см. в https://docs.microsoft.com/azure/data-factory/compute-linked-services#azure-hdinsight-on-demand-linked-service.
-                
+   Дополнительные сведения см. [в связанной службе по запросу Azure HDInsight](https://docs.microsoft.com/azure/data-factory/compute-linked-services#azure-hdinsight-on-demand-linked-service) .
 
+### <a name="error-code-2310"></a>Код ошибки: 2310
 
-### <a name="error-code--2310"></a>Код ошибки: 2310
-
-- **Сообщение**: `Failed to submit Spark job. Error: '%message;'`
+- **Сообщение**:`Failed to submit Spark job. Error: '%message;'`
 
 - **Причина**: ADF попытался создать пакет в кластере Spark с помощью API Livy (Livy/Batch), но получено сообщение об ошибке.
 
-- **Рекомендация**: чтобы устранить проблему, следуйте указаниям в сообщении об ошибке. Если нет достаточных сведений для разрешения проблемы, обратитесь к группе HDI и предоставьте ей идентификатор и идентификатор задания, которые можно найти в выходных данных выполнения действия на странице мониторинга ADF.
+- **Рекомендация**: чтобы устранить проблему, следуйте указаниям в сообщении об ошибке. Если недостаточно сведений для разрешения проблемы, обратитесь к группе HDI и предоставьте ей идентификатор и идентификатор задания, которые можно найти в выходных данных выполнения действия на странице мониторинга ADF. Чтобы устранить неполадки, собирайте полный журнал пакетного задания.
 
+   Дополнительные сведения о том, как получить полный журнал, см. в разделе [Получение полного журнала пакетного задания](https://docs.microsoft.com/rest/api/hdinsightspark/hdinsight-spark-batch-job#get-the-full-log-of-a-batch-job).
 
-### <a name="error-code--2312"></a>Код ошибки: 2312
+### <a name="error-code-2312"></a>Код ошибки: 2312
 
-- **Сообщение**: `Spark job failed, batch id:%batchId;. Please follow the links in the activity run Output from ADF Monitoring page to troubleshoot the run on HDInsight Spark cluster. Please contact HDInsight support team for further assistance.`
+- **Сообщение**:`Spark job failed, batch id:%batchId;. Please follow the links in the activity run Output from ADF Monitoring page to troubleshoot the run on HDInsight Spark cluster. Please contact HDInsight support team for further assistance.`
 
 - **Причина**: сбой задания в кластере HDInsight Spark.
 
 - **Рекомендация**. чтобы устранить неполадки в кластере HDInsight Spark, воспользуйтесь ссылками на странице "действие запуска выходных данных" в "МОНИТОРИНГе ADF". Для получения дополнительной помощи обратитесь в службу поддержки HDInsight.
 
+   Дополнительные сведения о том, как получить полный журнал, см. в разделе [Получение полного журнала пакетного задания](https://docs.microsoft.com/rest/api/hdinsightspark/hdinsight-spark-batch-job#get-the-full-log-of-a-batch-job).
 
-### <a name="error-code--2313"></a>Код ошибки: 2313
+### <a name="error-code-2313"></a>Код ошибки: 2313
 
-- **Сообщение**: `The batch with ID '%batchId;' was not found on Spark cluster. Open the Spark History UI and try to find it there. Contact HDInsight support for further assistance.`
+- **Сообщение**:`The batch with ID '%batchId;' was not found on Spark cluster. Open the Spark History UI and try to find it there. Contact HDInsight support for further assistance.`
 
 - **Причина**: пакет был удален в кластере HDInsight Spark.
 
 - **Рекомендация**: Устранение неполадок в пакетах в кластере HDInsight Spark. Обратитесь за помощью в службу поддержки HDInsight. 
 
+   Дополнительные сведения о том, как получить полный журнал, см. в статье [Получение полного журнала пакетного задания](https://docs.microsoft.com/rest/api/hdinsightspark/hdinsight-spark-batch-job#get-the-full-log-of-a-batch-job)и предоставление доступа к полному журналу с поддержкой HDInsight для получения дополнительной помощи.
 
-### <a name="error-code--2328"></a>Код ошибки: 2328
+### <a name="error-code-2328"></a>Код ошибки: 2328
 
-- **Сообщение**: `Failed to create the on demand HDI cluster. Cluster or linked service name: '%clusterName;', error: '%message;'`
-
-- **Причина**: `The error message should show the details of what went wrong.`
-
-- **Рекомендация**: сообщение об ошибке должно помочь устранить проблему.
-
-
-### <a name="error-code--2329"></a>Код ошибки: 2329
-
-- **Сообщение**: `Failed to delete the on demand HDI cluster. Cluster or linked service name: '%clusterName;', error: '%message;'`
+- **Сообщение**:`Failed to create the on demand HDI cluster. Cluster or linked service name: '%clusterName;', error: '%message;'`
 
 - **Причина**: в сообщении об ошибке должны отображаться сведения о том, что пошло не так.
 
 - **Рекомендация**: сообщение об ошибке должно помочь устранить проблему.
 
+### <a name="error-code-2329"></a>Код ошибки: 2329
 
-### <a name="error-code--2331"></a>Код ошибки: 2331
+- **Сообщение**:`Failed to delete the on demand HDI cluster. Cluster or linked service name: '%clusterName;', error: '%message;'`
 
-- **Сообщение**: `The file path should not be null or empty.`
+- **Причина**: в сообщении об ошибке должны отображаться сведения о том, что пошло не так.
+
+- **Рекомендация**: сообщение об ошибке должно помочь устранить проблему.
+
+### <a name="error-code-2331"></a>Код ошибки: 2331
+
+- **Сообщение**:`The file path should not be null or empty.`
 
 - **Причина**: указанный путь к файлу пуст.
 
 - **Рекомендация**: укажите путь к существующему файлу.
 
+### <a name="error-code-2340"></a>Код ошибки: 2340
 
-### <a name="error-code--2340"></a>Код ошибки: 2340
-
-- **Сообщение**: `HDInsightOnDemand linked service does not support execution via SelfHosted IR. Your IR name is '%IRName;'. Please select an Azure IR instead.`
+- **Сообщение**:`HDInsightOnDemand linked service does not support execution via SelfHosted IR. Your IR name is '%IRName;'. Please select an Azure IR instead.`
 
 - **Причина**: связанная служба HDInsightOnDemand не поддерживает выполнение через селфхостед IR.
 
 - **Рекомендация**: выберите Azure IR и повторите попытку.
 
+### <a name="error-code-2341"></a>Код ошибки: 2341
 
-### <a name="error-code--2341"></a>Код ошибки: 2341
-
-- **Сообщение**: `HDInsight cluster URL '%clusterUrl;' is incorrect, it must be in URI format and the scheme must be 'https'.`
+- **Сообщение**:`HDInsight cluster URL '%clusterUrl;' is incorrect, it must be in URI format and the scheme must be 'https'.`
 
 - **Причина**: указанный URL-адрес имеет неправильный формат.
 
 - **Рекомендация**: Исправьте URL-адрес кластера и повторите попытку.
 
+### <a name="error-code-2342"></a>Код ошибки: 2342
 
-### <a name="error-code--2342"></a>Код ошибки: 2342
+- **Сообщение**:`Failed to connect to HDInsight cluster: '%errorMessage;'.`
 
-- **Сообщение**: `Failed to connect to HDInsight cluster: '%errorMessage;'.`
+- **Причина**: либо указанные учетные данные неверны для кластера, либо возникла проблема с конфигурацией сети или подключением или возникли проблемы с подключением к кластеру.
 
-- **Причина**: указанные учетные данные неверны для кластера, или возникла проблема с конфигурацией сети или подключением или возникли проблемы с подключением к кластеру.
-
-- **Рекомендация**.  
-      1. Проверьте правильность учетных данных, открыв пользовательский интерфейс Ambari кластера HDInsight в браузере.
-      2. Если кластер находится в виртуальной сети и используется локальная среда IR, URL-адрес HDI должен быть частным URL-адресом в виртуальных сетей. Это означает, что после имени кластера должно быть задано "-int". Например, "https://mycluster.azurehdinsight.net/ " следует изменить на "https://mycluster-int.azurehdinsight.net/".
-      2. Если кластер находится в виртуальной сети, используется локальная IR и используется частный URL-адрес, а подключение по-прежнему завершилось сбоем, а на виртуальной машине, где установлена среда IR, возникли проблемы с подключением к HDI. Подключитесь к виртуальной машине, где установлена среда IR, и откройте пользовательский интерфейс Ambari в браузере. Используйте частный URL-адрес кластера. Это подключение должно работать из браузера. Если это не так, обратитесь в службу поддержки HDInsight за помощью.
-      3. Если локальная среда IR не используется, кластер HDI должен быть общедоступным. Откройте пользовательский интерфейс Ambari в браузере и убедитесь, что он открыт. Если возникли проблемы с кластером или службами на нем, обратитесь в службу поддержки HDInsight за помощью.
-      Поэтому, как правило, URL-адрес кластера HDI, используемый в связанной службе ADF, должен быть доступен для службы ADF IR (с локальным размещением или Azure), чтобы проверить подключение, а также для выполнения работы. Это можно легко проверить, открыв этот URL-адрес из браузера либо с виртуальной машины, либо с общедоступного компьютера.
+- **Совет**. 
+    1. Проверьте правильность учетных данных, открыв пользовательский интерфейс Ambari кластера HDInsight в браузере.
+    1. Если кластер находится в виртуальной сети (VNet) и используется локальная среда IR, URL-адрес HDI должен быть частным URL-адресом в виртуальных сетей, а после имени кластера должен быть указан "-int".
     
+       Например, измените `https://mycluster.azurehdinsight.net/` на `https://mycluster-int.azurehdinsight.net/`. Обратите `-int` внимание `mycluster`на After, но до`.azurehdinsight.net`
+    1. Если кластер находится в виртуальной сети, используется локальная IR и используется частный URL-адрес, но подключение по-прежнему завершилось сбоем, а на виртуальной машине, где установлена среда IR, возникли проблемы с подключением к HDI. 
+    
+       Подключитесь к виртуальной машине, где установлена среда IR, и откройте пользовательский интерфейс Ambari в браузере. Используйте частный URL-адрес кластера. Это подключение должно работать из браузера. Если это не так, обратитесь в службу поддержки HDInsight за помощью.
+    1. Если локальная среда IR не используется, кластер HDI должен быть общедоступным. Откройте пользовательский интерфейс Ambari в браузере и убедитесь, что он открыт. Если возникли проблемы с кластером или службами на нем, обратитесь в службу поддержки HDInsight за помощью.
 
+       URL-адрес кластера HDI, используемый в связанной службе ADF, должен быть доступен для службы ADF IR (с локальным размещением или Azure) для передачи тестового подключения, а также для работы. Это состояние можно проверить, открыв URL-адрес из браузера либо из виртуальной машины, либо с любой общедоступной машины.
 
-### <a name="error-code--2343"></a>Код ошибки: 2343
+### <a name="error-code-2343"></a>Код ошибки: 2343
 
-- **Сообщение**: `User name and password cannot be null or empty to connect to the HDInsight cluster.`
+- **Сообщение**:`User name and password cannot be null or empty to connect to the HDInsight cluster.`
 
 - **Причина**: имя пользователя или пароль пусты.
 
 - **Рекомендация**: укажите правильные учетные данные для подключения к HDi и повторите попытку.
 
+### <a name="error-code-2345"></a>Код ошибки: 2345
 
-### <a name="error-code--2345"></a>Код ошибки: 2345
-
-- **Сообщение**: `Failed to read the content of the hive script. Error: '%message;'`
+- **Сообщение**:`Failed to read the content of the hive script. Error: '%message;'`
 
 - **Причина**: файл скрипта не существует, или ADF не удалось подключиться к расположению скрипта.
 
-- **Рекомендация**: Убедитесь, что скрипт существует, а связанная служба имеет правильные учетные данные для подключения.
+- **Рекомендация**: Убедитесь, что скрипт существует и связанная служба имеет правильные учетные данные для соединения.
 
+### <a name="error-code-2346"></a>Код ошибки: 2346
 
-### <a name="error-code--2346"></a>Код ошибки: 2346
+- **Сообщение**:`Failed to create ODBC connection to the HDI cluster with error message '%message;'.`
 
-- **Сообщение**: `Failed to create ODBC connection to the HDI cluster with error message '%message;'.`
+- **Причина**: ADF попытался установить подключение к КЛАСТЕРу HDi с открытым подключением к базе данных (ODBC) и выполнить его с ошибкой.
 
-- **Причина**: ADF попытался установить подключение ODBC к кластеру HDi и выполнить его с ошибкой.
+- **Совет**. 
 
-- **Рекомендация**: сообщение об ошибке и код ошибки могут помочь при устранении ошибок подключения ODBC. Если у вас недостаточно места для устранения проблемы, обратитесь в службу поддержки Azure HDInsight.
+   1. Убедитесь, что вы правильно настроили подключение ODBC/Java Database Connectivity (JDBC).
+      1. Для JDBC, если вы используете ту же виртуальную сеть, вы можете получить это подключение из:<br>
+        `Hive -> Summary -> HIVESERVER2 JDBC URL`
+      1. Чтобы убедиться, что настроен правильный JDBC, см. статью [Apache Hive запросов через драйвер JDBC в HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-connect-hive-jdbc-driver).
+      1. Сведения об открытой базе данных (ODB) см. в разделе [учебник. запрос Apache Hive с помощью ODBC и PowerShell](https://docs.microsoft.com/azure/hdinsight/interactive-query/apache-hive-query-odbc-driver-powershell) для обеспечения правильной настройки. 
+   1. Убедитесь, что Hiveserver2, Hive хранилище метаданных и Hiveserver2 Interactive активны и работают. 
+   1. Проверьте пользовательский интерфейс Ambari:
+      1. Убедитесь, что все службы все еще работают.
+      1. В пользовательском интерфейсе Ambari просмотрите раздел оповещение на панели мониторинга.
+         1. Дополнительные сведения о предупреждениях и разрешениях для оповещений см. в статье [Управление кластером и его мониторинг ](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.5.0/managing-and-monitoring-ambari/content/amb_predefined_alerts.html).
+   1. Если эти действия недостаточно для устранения проблемы, обратитесь к команде Azure HDInsight.
 
+### <a name="error-code-2347"></a>Код ошибки: 2347
 
-### <a name="error-code--2347"></a>Код ошибки: 2347
+- **Сообщение**:`Hive execution through ODBC failed with error message '%message;'.`
 
-- **Сообщение**: `Hive execution through ODBC failed with error message '%message;'.`
+- **Причина**: файл ADF передал скрипт Hive для выполнения в кластере HDi через подключение ODBC, и на HDi произошел сбой скрипта.
 
-- **Причина**: файл ADF передал скрипт Hive для выполнения в кластере HDi через соединение ODBC, и сценарий завершился СБОЕМ на HDi.
+- **Совет**. 
 
-- **Рекомендация**: сбой выполнения скрипта Hive в кластере HDi, сообщение об ошибке и код ошибки, которые могут помочь при устранении неполадок. Если у вас недостаточно места для устранения проблемы, обратитесь в службу поддержки Azure HDInsight.
+   1. Убедитесь, что вы правильно настроили подключение ODBC/Java Database Connectivity (JDBC).
+      1. Для JDBC, если вы используете ту же виртуальную сеть, вы можете получить это подключение из:<br>
+        `Hive -> Summary -> HIVESERVER2 JDBC URL`
+      1. Чтобы убедиться, что настроен правильный JDBC, см. статью [Apache Hive запросов через драйвер JDBC в HDInsight](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-connect-hive-jdbc-driver).
+      1. Сведения об открытой базе данных (ODB) см. в разделе [учебник. запрос Apache Hive с помощью ODBC и PowerShell](https://docs.microsoft.com/azure/hdinsight/interactive-query/apache-hive-query-odbc-driver-powershell) для обеспечения правильной настройки. 
+   1. Убедитесь, что Hiveserver2, Hive хранилище метаданных и Hiveserver2 Interactive активны и работают. 
+   1. Проверьте пользовательский интерфейс Ambari:
+      1. Убедитесь, что все службы все еще работают.
+      1. В пользовательском интерфейсе Ambari просмотрите раздел оповещение на панели мониторинга.
+         1. Дополнительные сведения о предупреждениях и разрешениях для оповещений см. в статье [Управление кластером и его мониторинг ](https://docs.cloudera.com/HDPDocuments/Ambari-2.7.5.0/managing-and-monitoring-ambari/content/amb_predefined_alerts.html).
+   1. Если эти действия недостаточно для устранения проблемы, обратитесь к команде Azure HDInsight.
 
+### <a name="error-code-2348"></a>Код ошибки: 2348
 
-### <a name="error-code--2348"></a>Код ошибки: 2348
-
-- **Сообщение**: `The main storage has not been initialized. Please check the properties of the storage linked service in the HDI linked service.`
+- **Сообщение**:`The main storage has not been initialized. Please check the properties of the storage linked service in the HDI linked service.`
 
 - **Причина**: Свойства связанной службы хранилища заданы неправильно.
 
-- **Рекомендация**: в главной связанной службе хранилища для действий HDi поддерживаются только полные строки подключения. Убедитесь, что вы не используете проверку подлинности MSI или приложения.
+- **Рекомендация**: в главной связанной службе хранилища для действий HDi поддерживаются только полные строки подключения. Убедитесь, что вы не используете авторизацию MSI или приложения.
 
+### <a name="error-code-2350"></a>Код ошибки: 2350
 
-### <a name="error-code--2350"></a>Код ошибки: 2350
-
-- **Сообщение**: `Failed to prepare the files for the run '%jobId;'. HDI cluster: '%cluster;', Error: '%errorMessage;'`
+- **Сообщение**:`Failed to prepare the files for the run '%jobId;'. HDI cluster: '%cluster;', Error: '%errorMessage;'`
 
 - **Причина**: учетные данные, предоставленные для подключения к хранилищу, где должны быть расположены файлы, неверны, или файлы не существуют.
 
-- **Рекомендация**. Эта ошибка возникает, когда ADF выполняет шаги подготовки для действий HDi. Он пытается скопировать файлы в основное хранилище перед отправкой задания в HDI. Убедитесь, что файлы существуют в указанном расположении. подключение к хранилищу указано правильно. Операции ADF HDI не поддерживают проверку подлинности MSI для учетных записей хранения, связанных с действиями HDI, поэтому убедитесь, что эти связанные службы имеют полные ключи или используют Azure Key Vault.
+- **Рекомендация**. Эта ошибка возникает, когда ADF готовится к действиям HDi и пытается скопировать файлы в основное хранилище перед отправкой задания в HDi. Убедитесь, что файлы существуют в указанном расположении и что подключение к хранилищу указано правильно. Поскольку действия ADF HDI не поддерживают проверку подлинности MSI для учетных записей хранения, связанных с действиями HDI, убедитесь, что эти связанные службы имеют полные ключи или используют Azure Key Vault.
 
+### <a name="error-code-2351"></a>Код ошибки: 2351
 
-### <a name="error-code--2351"></a>Код ошибки: 2351
-
-- **Сообщение**: `Could not open the file '%filePath;' in container/fileSystem '%container;'.`
+- **Сообщение**:`Could not open the file '%filePath;' in container/fileSystem '%container;'.`
 
 - **Причина**: файл не существует по указанному пути.
 
-- **Рекомендация**: Убедитесь, что файл существует, а связанная служба со сведениями о соединении, указывающими на этот файл, имеет правильные учетные данные.
+- **Рекомендация**: Проверьте факт существования файла, а также убедитесь, что связанная служба со сведениями о соединении, указывающими на этот файл, имеет правильные учетные данные.
 
+### <a name="error-code-2352"></a>Код ошибки: 2352
 
-### <a name="error-code--2352"></a>Код ошибки: 2352
-
-- **Сообщение**: `The file storage has not been initialized. Please check the properties of the file storage linked service in the HDI activity.`
+- **Сообщение**:`The file storage has not been initialized. Please check the properties of the file storage linked service in the HDI activity.`
 
 - **Причина**: Свойства связанной службы хранилища файлов заданы неправильно.
 
 - **Рекомендация**: Убедитесь, что свойства связанной службы хранилища файлов настроены правильно.
 
+### <a name="error-code-2353"></a>Код ошибки: 2353
 
-### <a name="error-code--2353"></a>Код ошибки: 2353
-
-- **Сообщение**: `The script storage has not been initialized. Please check the properties of the script storage linked service in the HDI activity.`
+- **Сообщение**:`The script storage has not been initialized. Please check the properties of the script storage linked service in the HDI activity.`
 
 - **Причина**: Свойства связанной службы хранилища скриптов заданы неправильно.
 
 - **Рекомендация**: Убедитесь, что свойства связанной службы хранилища скриптов настроены правильно.
 
+### <a name="error-code-2354"></a>Код ошибки: 2354
 
-### <a name="error-code--2354"></a>Код ошибки: 2354
+- **Сообщение**:`The storage linked service type '%linkedServiceType;' is not supported for '%executorType;' activities for property '%linkedServicePropertyName;'.`
 
-- **Сообщение**: `The storage linked service type '%linkedServiceType;' is not supported for '%executorType;' activities for property '%linkedServicePropertyName;'.`
+- **Причина**: тип связанной службы хранилища не поддерживается этим действием.
 
-- **Причина**: тип связанной службы хранилища не поддерживается действием.
+- **Рекомендация**: Убедитесь, что выбранная связанная служба имеет один из поддерживаемых типов для действия. Действия HDI поддерживают связанные службы AzureBlobStorage и Азуреблобфсстораже.
 
-- **Рекомендация**. Убедитесь, что выбранная связанная служба имеет один из поддерживаемых типов для этого действия. Действия HDI поддерживают связанные службы AzureBlobStorage и Азуреблобфсстораже.
+   Дополнительные сведения см. в статье [Сравнение вариантов хранения для использования с кластерами Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-compare-storage-options) .
 
+### <a name="error-code-2355"></a>Код ошибки: 2355
 
-### <a name="error-code--2355"></a>Код ошибки: 2355
+- **Сообщение**:`The '%value' provided for commandEnvironment is incorrect. The expected value should be an array of strings where each string has the format CmdEnvVarName=CmdEnvVarValue.`
 
-- **Сообщение**: `The '%value' provided for commandEnvironment is incorrect. The expected value should be an array of strings where each string has the format CmdEnvVarName=CmdEnvVarValue.`
+- **Причина**: указано неверное `commandEnvironment` значение для.
 
-- **Причина**: предоставлено неверное значение для комманденвиронмент.
+- **Рекомендация**: Убедитесь, что указанное значение аналогично следующему:
+ 
+    ``` \"commandEnvironment\": [
+    \"variableName=variableValue\"
+    ]
+    ```
 
-- **Рекомендация**.  
-      Убедитесь, что указанное значение похоже на: \"Комманденвиронмент\": [\"variableName = Вариаблевалуе\"], и каждая переменная присутствует в списке только один раз.
-    
+    Также убедитесь, что каждая переменная присутствует в списке только один раз.
 
+### <a name="error-code-2356"></a>Код ошибки: 2356
 
-### <a name="error-code--2356"></a>Код ошибки: 2356
+- **Сообщение**:`The commandEnvironment already contains a variable named '%variableName;'.`
 
-- **Сообщение**: `The commandEnvironment already contains a variable named '%variableName;'.`
+- **Причина**: указано неверное `commandEnvironment` значение для.
 
-- **Причина**: переменная была предоставлена дважды в комманденвиронмент.
+- **Рекомендация**: Убедитесь, что указанное значение аналогично следующему:
+ 
+    ``` \"commandEnvironment\": [
+    \"variableName=variableValue\"
+    ]
+    ```
 
-- **Рекомендация**.  
-      Убедитесь, что указанное значение похоже на: \"Комманденвиронмент\": [\"variableName = Вариаблевалуе\"], и каждая переменная присутствует в списке только один раз.
-    
+    Также убедитесь, что каждая переменная присутствует в списке только один раз.
 
+### <a name="error-code-2357"></a>Код ошибки: 2357
 
-### <a name="error-code--2357"></a>Код ошибки: 2357
-
-- **Сообщение**: `The certificate or password is wrong for ADLS Gen 1 storage.`
+- **Сообщение**:`The certificate or password is wrong for ADLS Gen 1 storage.`
 
 - **Причина**: указанные учетные данные неверны.
 
-- **Рекомендация**: Проверьте сведения о подключении в связанной Службе ADLS Gen 1 и убедитесь, что проверка соединения выполнена.
+- **Рекомендация**: Убедитесь, что сведения о подключении в ADLS Gen 1 связаны со службой, и убедитесь, что проверка соединения выполнена.
 
+### <a name="error-code-2358"></a>Код ошибки: 2358
 
-### <a name="error-code--2358"></a>Код ошибки: 2358
+- **Сообщение**:`The value '%value;' for the required property 'TimeToLive' in the on demand HDInsight linked service '%linkedServiceName;' has invalid format. It should be a timespan between '00:05:00' and '24:00:00'.`
 
-- **Сообщение**: `The value '%value;' for the required property 'TimeToLive' in the on demand HDInsight linked service '%linkedServiceName;' has invalid format. It should be a timespan between '00:05:00' and '24:00:00'.`
+- **Причина**: указанное значение для обязательного свойства `TimeToLive` имеет недопустимый формат. 
 
-- **Причина**: указанное значение для обязательного свойства "TimeToLive" имеет недопустимый формат. 
+- **Рекомендация**: обновите значение до предложенного диапазона и повторите попытку.
 
-- **Рекомендация**: обновите значение, чтобы оно было в предложенном диапазоне, и повторите попытку.
+### <a name="error-code-2359"></a>Код ошибки: 2359
 
+- **Сообщение**:`The value '%value;' for the property 'roles' is invalid. Expected types are 'zookeeper', 'headnode', and 'workernode'.`
 
-### <a name="error-code--2359"></a>Код ошибки: 2359
-
-- **Сообщение**: `The value '%value;' for the property 'roles' is invalid. Expected types are 'zookeeper', 'headnode', and 'workernode'.`
-
-- **Причина**: указанное значение свойства Roles недопустимо.
+- **Причина**: для свойства `roles` указано недопустимое значение.
 
 - **Рекомендация**: обновите значение, чтобы оно было одним из предложений, и повторите попытку.
 
+### <a name="error-code-2360"></a>Код ошибки: 2360
 
-### <a name="error-code--2360"></a>Код ошибки: 2360
+- **Сообщение**:`The connection string in HCatalogLinkedService is invalid. Encountered an error while trying to parse: '%message;'.`
 
-- **Сообщение**: `The connection string in HCatalogLinkedService is invalid. Encountered an error while trying to parse: '%message;'.`
-
-- **Причина**: указанная строка подключения для хкаталоглинкедсервице недопустима.
+- **Причина**: указанная строка подключения для `HCatalogLinkedService` недопустима.
 
 - **Рекомендация**: измените значение на правильную строку подключения SQL Azure и повторите попытку.
 
+### <a name="error-code-2361"></a>Код ошибки: 2361
 
-### <a name="error-code--2361"></a>Код ошибки: 2361
-
-- **Сообщение**: `Failed to create on demand HDI cluster. Cluster name is '%clusterName;'.`
+- **Сообщение**:`Failed to create on demand HDI cluster. Cluster name is '%clusterName;'.`
 
 - **Причина**: сбой создания кластера, и ADF не получил ошибку из службы HDInsight.
 
-- **Рекомендация**: откройте портал Azure и попытайтесь найти ресурс HDi с указанным именем и проверьте состояние подготовки. Для получения дополнительной помощи обратитесь в службу поддержки HDInsight.
+- **Рекомендация**: откройте портал Azure и попробуйте найти ресурс HDi с указанным именем, а затем проверьте состояние подготовки. Для получения дополнительной помощи обратитесь в службу поддержки HDInsight.
 
+### <a name="error-code-2362"></a>Код ошибки: 2362
 
-### <a name="error-code--2362"></a>Код ошибки: 2362
-
-- **Сообщение**: `Only Azure Blob storage accounts are supported as additional storages for HDInsight on demand linked service.`
+- **Сообщение**:`Only Azure Blob storage accounts are supported as additional storages for HDInsight on demand linked service.`
 
 - **Причина**: предоставленное дополнительное хранилище не было хранилищем BLOB-объектов Azure.
 
-- **Рекомендация**: предоставьте учетную запись хранилища BLOB-объектов Azure в качестве дополнительного хранилища для связанной службы HDInsight по запросу.
+- **Рекомендация**. Укажите учетную запись хранилища BLOB-объектов Azure в качестве дополнительного хранилища для связанной службы HDInsight по запросу.
 
+## <a name="web-activity"></a>Веб-действие
 
+### <a name="error-code-2128"></a>Код ошибки: 2128
 
-## <a name="web-activity"></a>веб-действие;
+- **Сообщение**:`No response from the endpoint. Possible causes: network connectivity, DNS failure, server certificate validation or timeout.`
 
-### <a name="error-code--2128"></a>Код ошибки: 2128
+- **Причина**. Эта проблема связана с подключением к сети, ошибкой DNS, проверкой сертификата сервера или истечением времени ожидания.
 
-- **Сообщение**: `No response from the endpoint. Possible causes: network connectivity, DNS failure, server certificate validation or timeout.`
+- **Рекомендация**: Убедитесь, что конечная точка, которую вы пытаетесь навести, отвечает на запросы. Вы можете использовать такие средства, как **Fiddler/POST**.
 
-- **Причина**: сетевое подключение, сбой DNS, проверка сертификата сервера или превышение времени ожидания.
+### <a name="error-code-2108"></a>Код ошибки: 2108
 
-- **Рекомендация**: Убедитесь, что конечная точка, которую вы пытаетесь навести, отвечает на запросы. Вы можете использовать такие средства, как Fiddler/POST.
+- **Сообщение**:`Error calling the endpoint '%url;'. Response status code: '%code;'`
 
-
-### <a name="error-code--2108"></a>Код ошибки: 2108
-
-- **Сообщение**: `Error calling the endpoint '%url;'. Response status code: '%code;'`
-
-- **Причина**: не удалось выполнить запрос из-за базовой проблемы, такой как сетевое подключение, сбой DNS, проверка сертификата сервера или превышение времени ожидания.
+- **Причина**: не удалось выполнить запрос из-за базовой проблемы, например сетевого подключения, сбоя DNS, проверки сертификата сервера или истечения времени ожидания.
 
 - **Рекомендация**: для проверки запроса используйте Fiddler/POST.
-<br>
 
-
-#### <a name="more-details"></a>Дополнительная информация
-Чтобы использовать Fiddler для создания сеанса HTTP отслеживаемого веб-приложения, выполните следующие действия.
+#### <a name="more-details"></a>Дополнительные сведения
+Чтобы использовать **Fiddler** для создания сеанса HTTP отслеживаемого веб-приложения, выполните следующие действия.
 
 1. Скачайте, установите и откройте [Fiddler](https://www.telerik.com/download/fiddler).
 
-1. Если веб-приложение использует протокол HTTPS, перейдите в **меню сервис** > **Параметры Fiddler** > **HTTPS**. Выберите **захват HTTPS подключение** и **расшифровка трафика HTTPS**.
+1. Если веб-приложение использует протокол HTTPS, перейдите в **меню Сервис** > **Fiddler параметры** > **HTTPS**.
 
-   ![Параметры Fiddler](media/data-factory-troubleshoot-guide/fiddler-options.png)
+   1. На вкладке HTTPS выберите **запись HTTPS подключение** и **расшифровка трафика HTTPS**.
 
-1. Если приложение использует SSL-сертификаты, добавьте сертификат Fiddler на устройство. Последовательно выберите **пункты сервис** > **параметры Fiddler** >  > **действия** **HTTPS** > **экспортировать корневой сертификат на Рабочий стол**.
+      ![Параметры Fiddler](media/data-factory-troubleshoot-guide/fiddler-options.png)
 
-1. Отключите захват, перейдя в **файловый** > **записывать трафик**. Или нажмите клавишу **F12**.
+1. Если приложение использует сертификаты TLS/SSL, добавьте сертификат Fiddler на устройство.
+
+   Выберите " **Сервис** > **Fiddler параметры** > **HTTPS** > **действия** > **экспорт корневого сертификата на Рабочий стол**".
+
+1. Отключите захват, перейдя к**трафику записи** **файлов** > . Или нажмите клавишу **F12**.
 
 1. Очистите кэш браузера, чтобы все кэшированные элементы были удалены и их нужно было снова скачать.
 
 1. Создайте запрос:
 
-   1. Перейдите на вкладку **Composer** .
+1. Перейдите на вкладку **Composer** .
 
    1. Задайте метод HTTP и URL-адрес.
-   
+ 
    1. При необходимости добавьте заголовки и текст запроса.
 
-   1. Нажмите кнопку **Выполнить**.
+   1. Выберите **выполнить**.
 
 1. Включите повторную запись трафика и завершите проблемную транзакцию на странице.
 
-1. Перейдите в **файл** > **сохранить** > **все сеансы**.
+1. Перейдите к: **файл** > **сохранить** > **все сеансы**.
 
 Дополнительные сведения см. в статье [Приступая к работе с Fiddler](https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/ConfigureFiddler).
 
@@ -1046,12 +1050,9 @@ ms.locfileid: "74972342"
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 
-*  [Блог фабрики данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
-*  [Запросы функций фабрики данных](https://feedback.azure.com/forums/270578-data-factory)
-*  [Видеоролики по Azure](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
-*  [Форум MSDN](https://social.msdn.microsoft.com/Forums/home?sort=relevancedesc&brandIgnore=True&searchTerm=data+factory)
-*  [Форум Stack Overflow для фабрики данных](https://stackoverflow.com/questions/tagged/azure-data-factory)
-*  [Сведения о фабрике данных в Twitter](https://twitter.com/hashtag/DataFactory)
-
-
-            
+* [Блог фабрики данных](https://azure.microsoft.com/blog/tag/azure-data-factory/)
+* [Запросы функций фабрики данных](https://feedback.azure.com/forums/270578-data-factory)
+* [Форум Stack Overflow для фабрики данных](https://stackoverflow.com/questions/tagged/azure-data-factory)
+* [Сведения о фабрике данных в Twitter](https://twitter.com/hashtag/DataFactory)
+* [Видео по Azure](https://azure.microsoft.com/resources/videos/index/)
+* [Форум MSDN](https://social.msdn.microsoft.com/Forums/home)

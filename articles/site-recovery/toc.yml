@@ -11,6 +11,9 @@
   items:
     - name: Репликация виртуальной машины Azure в другой регион
       href: azure-to-azure-quickstart.md
+    - name: "Создание хранилища\_— шаблон Resource Manager"
+      displayName: Resource Manager
+      href: quickstart-create-vault-template.md
 - name: Учебники
   items:
     - name: Аварийное восстановление виртуальной машины Azure в Azure
@@ -189,6 +192,8 @@
               href: azure-to-azure-how-to-reprotect.md
             - name: Настройка аварийного восстановления виртуальных машин Azure после миграции в Azure
               href: azure-to-azure-replicate-after-migration.md
+            - name: Включение аварийного восстановления между зонами
+              href: azure-to-azure-how-to-enable-zone-to-zone-disaster-recovery.md
         - name: Управление
           items:
             - name: Обновление Службы мобильности для виртуальных машин Azure
@@ -225,7 +230,7 @@
                   href: site-recovery-vmware-deployment-planner-analyze-report.md
                 - name: Анализ отчета об оценке стоимости
                   href: site-recovery-vmware-deployment-planner-cost-estimation.md
-            - name: Масштабирование серверов обработки для репликации VMware
+            - name: Горизонтальное увеличение масштаба серверов обработки для репликации VMware
               href: vmware-azure-set-up-process-server-scale.md
         - name: Настройка аварийного восстановления
           items:
@@ -383,6 +388,8 @@
               href: service-updates-how-to.md
             - name: Удаление хранилища
               href: delete-vault.md
+    - name: Использование Site Recovery для групп размещения близкого взаимодействия
+      href: how-to-enable-replication-proximity-placement-groups.md
     - name: Аварийное восстановление для приложений
       items:
         - name: Сведения об аварийном восстановлении для локальных приложений
@@ -396,7 +403,7 @@
         - name: Dynamics AX
           href: site-recovery-dynamicsax.md
         - name: RDS
-          href: 'site-recovery-workload.md#protect-rds'
+          href: 'site-recovery-workload.md#protect-remote-desktop-services'
         - name: Exchange
           href: 'site-recovery-workload.md#protect-exchange'
         - name: SAP
@@ -417,6 +424,8 @@
               href: vmware-physical-secondary-disaster-recovery.md
         - name: Виртуальные машины Hyper-V
           items:
+            - name: "Прекращение поддержки сценария \"сеть\_— сеть\" для виртуальных машин Hyper-V"
+              href: site-to-site-deprecation.md
             - name: Пошаговое руководство. Аварийное восстановление виртуальных машин Hyper-V в облаках VMM на дополнительный сайт
               href: hyper-v-vmm-disaster-recovery.md
             - name: Отработка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт
@@ -493,6 +502,8 @@
       href: /powershell/module/az.recoveryservices
     - name: AzureRM PowerShell
       href: /powershell/module/AzureRM.RecoveryServices
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.recoveryservices/allversions
     - name: REST
       href: /rest/api/site-recovery
 - name: Сопутствующие материалы
@@ -505,10 +516,10 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Блог
       href: 'https://azure.microsoft.com/blog/tag/azure-site-recovery/'
-    - name: Форум
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hypervrecovmgr'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-site-recovery.html'
     - name: Схема обучения
-      href: 'https://azure.microsoft.com/documentation/learning-paths/site-recovery/'
+      href: /learn/azure/
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/site-recovery/'
     - name: Калькулятор цен

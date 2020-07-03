@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: storsimple
 author: alkohli
 ms.service: storsimple
@@ -9,10 +9,10 @@ ms.date: 06/08/2018
 ms.author: alkohli
 ms.custom: include file
 ms.openlocfilehash: e683d17422321b780a1c01b3011292f2e2c631cb
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67185334"
 ---
 Чтобы удалить контейнер томов, нужно
@@ -26,7 +26,7 @@ ms.locfileid: "67185334"
 
     ![Колонка "Контейнеры томов"](./media/storsimple-8000-create-volume-container/createvolumecontainer2.png)
 
-2. В таблице со списком контейнеров томов выберите тот, который требуется удалить. Щелкните правой кнопкой мыши **...** , а затем выберите **Удалить**.
+2. В таблице со списком контейнеров томов выберите тот, который требуется удалить. Щелкните правой кнопкой мыши **...**, а затем выберите **Удалить**.
 
     ![Удаление контейнера томов](./media/storsimple-8000-delete-volume-container/deletevolumecontainer1.png)
 

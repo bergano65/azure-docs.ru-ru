@@ -11,12 +11,12 @@ author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 01/09/2020
-ms.openlocfilehash: cd9cada24ba5e7d2a2001d4ef0efef2a157b0fd6
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: d6dc2eeb572eeed17281677945c93067bbadee94
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834723"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628577"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Запуск, отслеживание и отмена обучающих запусков в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -30,11 +30,11 @@ ms.locfileid: "75834723"
 * Создание дочерних запусков.
 * Теги и поиск запусков.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Вам потребуются следующие элементы:
 
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 * [Рабочая область машинное обучение Azure](how-to-manage-workspace.md).
 
@@ -63,7 +63,7 @@ ws = Workspace.from_config()
 exp = Experiment(workspace=ws, name="explore-runs")
 ```
 
-Запустите запуск и процесс ведения журнала с помощью метода [`start_logging()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment(class)?view=azure-ml-py#start-logging--args----kwargs-) .
+Запустите запуск и процесс ведения журнала с помощью [`start_logging()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.experiment(class)?view=azure-ml-py#start-logging--args----kwargs-) метода.
 
 ```python
 notebook_run = exp.start_logging()
@@ -79,29 +79,31 @@ notebook_run.log(name="message", value="Hello from run!")
     ```azurecli-interactive
     az login
     ```
+    
+    [!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)] 
 
-1. Подключите конфигурацию рабочей области к папке, содержащей сценарий обучения. Замените `myworkspace` рабочей областью Машинное обучение Azure. Замените `myresourcegroup` группой ресурсов Azure, которая содержит рабочую область:
+1. Подключите конфигурацию рабочей области к папке, содержащей сценарий обучения. Замените `myworkspace` рабочей областью машинное обучение Azure. Замените `myresourcegroup` на группу ресурсов Azure, содержащую рабочую область:
 
     ```azurecli-interactive
     az ml folder attach -w myworkspace -g myresourcegroup
     ```
 
-    Эта команда создает `.azureml` подкаталог, содержащий примеры файлов среды runconfig и conda. Он также содержит файл `config.json`, который используется для взаимодействия с рабочей областью Машинное обучение Azure.
+    Эта команда создает `.azureml` подкаталог, содержащий примеры файлов среды runconfig и conda. Он также содержит `config.json` файл, который используется для взаимодействия с рабочей областью машинное обучение Azure.
 
     Дополнительные сведения см. в разделе [AZ ML Folder Attach](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/folder?view=azure-cli-latest#ext-azure-cli-ml-az-ml-folder-attach).
 
-2. Чтобы начать выполнение, используйте следующую команду. При использовании этой команды укажите имя файла runconfig (текст перед \*. runconfig, если вы ищете файловую систему) в параметре-c.
+2. Чтобы начать выполнение, используйте следующую команду. При использовании этой команды укажите имя файла runconfig (текст до \*. runconfig, если вы ищете файловую систему) в параметре-c.
 
     ```azurecli-interactive
     az ml run submit-script -c sklearn -e testexperiment train.py
     ```
 
     > [!TIP]
-    > Команда `az ml folder attach` создала подкаталог `.azureml`, который содержит два примера файлов runconfig.
+    > `az ml folder attach` Команда создала `.azureml` подкаталог, который содержит два примера файлов runconfig.
     >
     > При наличии скрипта Python, который создает объект конфигурации запуска программно, можно использовать [RunConfig. Save ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfiguration?view=azure-ml-py#save-path-none--name-none--separate-environment-yaml-false-) , чтобы сохранить его как файл RunConfig.
     >
-    > Дополнительные примеры файлов runconfig см. в разделе [https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml](https://github.com/MicrosoftDocs/pipelines-azureml/tree/master/.azureml).
+    > Дополнительные примеры файлов runconfig см. в [https://github.com/MicrosoftDocs/pipelines-azureml/](https://github.com/MicrosoftDocs/pipelines-azureml/)разделе.
 
     Дополнительные сведения см. в разделе [AZ ML Run Submit-Script](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/run?view=azure-cli-latest#ext-azure-cli-ml-az-ml-run-submit-script).
 
@@ -119,26 +121,26 @@ notebook_run.log(name="message", value="Hello from run!")
 
 ### <a name="using-the-sdk"></a>Использование пакета SDK
 
-Получение состояния выполнения с помощью метода [`get_status()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#get-status--) .
+Получение состояния выполнения с помощью [`get_status()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#get-status--) метода.
 
 ```python
 print(notebook_run.get_status())
 ```
 
-Чтобы получить идентификатор выполнения, время выполнения и дополнительные сведения о выполнении, используйте метод [`get_details()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#get-details--) .
+Чтобы получить идентификатор выполнения, время выполнения и дополнительные сведения о выполнении, используйте [`get_details()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py#get-details--) метод.
 
 ```python
 print(notebook_run.get_details())
 ```
 
-После успешного завершения выполнения используйте метод [`complete()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#complete--set-status-true-) , чтобы пометить его как завершенный.
+Когда выполнение завершится успешно, используйте [`complete()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#complete--set-status-true-) метод, чтобы пометить его как завершенный.
 
 ```python
 notebook_run.complete()
 print(notebook_run.get_status())
 ```
 
-При использовании шаблона проектирования `with...as` Python запуск автоматически помечается как завершенный, если выполнение выходит за пределы области. Не нужно вручную помечать запуск как завершенный.
+Если вы используете шаблон `with...as` разработки Python, выполнение автоматически помечается как завершенное, если выполнение выходит за пределы области. Не нужно вручную помечать запуск как завершенный.
 
 ```python
 with exp.start_logging() as notebook_run:
@@ -150,7 +152,7 @@ print(notebook_run.get_status())
 
 ### <a name="using-the-cli"></a>Использование интерфейса командной строки
 
-1. Чтобы просмотреть список запусков для эксперимента, используйте следующую команду. Замените `experiment` именем своего эксперимента:
+1. Чтобы просмотреть список запусков для эксперимента, используйте следующую команду. Замените `experiment` на имя своего эксперимента:
 
     ```azurecli-interactive
     az ml run list --experiment-name experiment
@@ -160,7 +162,7 @@ print(notebook_run.get_status())
 
     Дополнительные сведения см. в статье [AZ ML эксперимент List](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/experiment?view=azure-cli-latest#ext-azure-cli-ml-az-ml-experiment-list).
 
-2. Чтобы просмотреть сведения о конкретном выполнении, используйте следующую команду. Замените `runid` ИДЕНТИФИКАТОРом запуска:
+2. Чтобы просмотреть сведения о конкретном выполнении, используйте следующую команду. Замените `runid` на идентификатор запуска:
 
     ```azurecli-interactive
     az ml run show -r runid
@@ -192,7 +194,7 @@ print(notebook_run.get_status())
 
 ### <a name="using-the-sdk"></a>Использование пакета SDK
 
-Чтобы отменить запуск с помощью пакета SDK, используйте метод [`cancel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#cancel--) :
+Чтобы отменить запуск с помощью пакета SDK, используйте [`cancel()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#cancel--) метод:
 
 ```python
 run_config = ScriptRunConfig(source_directory='.', script='hello_with_delay.py')
@@ -203,7 +205,7 @@ local_script_run.cancel()
 print(local_script_run.get_status())
 ```
 
-Если выполнение завершается, но содержит ошибку (например, был использован неверный сценарий обучения), можно использовать метод [`fail()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)#fail-error-details-none--error-code-none---set-status-true-) , чтобы пометить его как неудачный.
+Если выполнение завершается, но содержит ошибку (например, был использован неверный сценарий обучения), можно использовать [`fail()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)#fail-error-details-none--error-code-none---set-status-true-) метод, чтобы пометить его как неудачный.
 
 ```python
 local_script_run = exp.submit(run_config)
@@ -213,7 +215,7 @@ print(local_script_run.get_status())
 
 ### <a name="using-the-cli"></a>Использование интерфейса командной строки
 
-Чтобы отменить запуск с помощью интерфейса командной строки, используйте следующую команду. Замените `runid` ИДЕНТИФИКАТОРом запуска.
+Чтобы отменить запуск с помощью интерфейса командной строки, используйте следующую команду. Замените `runid` на идентификатор запуска
 
 ```azurecli-interactive
 az ml run cancel -r runid -w workspace_name -e experiment_name
@@ -239,7 +241,7 @@ az ml run cancel -r runid -w workspace_name -e experiment_name
 > [!NOTE]
 > Дочерние запуски можно создать только с помощью пакета SDK.
 
-В этом примере кода используется скрипт `hello_with_children.py` для создания пакета из пяти дочерних запусков из отправленного запуска с помощью метода [`child_run()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#child-run-name-none--run-id-none--outputs-none-) :
+В этом примере кода используется `hello_with_children.py` скрипт для создания пакета из пяти дочерних запусков из отправленного запуска с помощью [`child_run()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#child-run-name-none--run-id-none--outputs-none-) метода:
 
 ```python
 !more hello_with_children.py
@@ -258,20 +260,45 @@ with exp.start_logging() as parent_run:
 > [!NOTE]
 > При выходе из области действия дочерние тесты автоматически помечаются как завершенные.
 
-Чтобы эффективно создать множество дочерних запусков, используйте метод [`create_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#create-children-count-none--tag-key-none--tag-values-none-) . Поскольку каждое создание приводит к сетевому вызову, создание пакета выполняется более эффективно, чем создание их по одному.
+Чтобы эффективно создать множество дочерних запусков, используйте [`create_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#create-children-count-none--tag-key-none--tag-values-none-) метод. Поскольку каждое создание приводит к сетевому вызову, создание пакета выполняется более эффективно, чем создание их по одному.
 
 ### <a name="submit-child-runs"></a>Отправить дочерние выполнения
 
-Дочерние запуски также могут быть отправлены из родительского запуска. Это позволяет создавать иерархии родительских и дочерних приложений, каждый из которых работает в разных целевых объектах вычислений, Соединенных общим родительским ИДЕНТИФИКАТОРом запуска.
+Дочерние запуски также могут быть отправлены из родительского запуска. Это позволяет создавать иерархии родительских и дочерних запусков. 
 
-Используйте метод ["submit_child ()"](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#submit-child-config--tags-none----kwargs-) для отправки дочернего выполнения из родительского запуска. Чтобы сделать это в родительском скрипте выполнения, получите контекст выполнения и отправьте дочерний запрос, используя метод ``submit_child`` экземпляра контекста.
+Может потребоваться, чтобы ваш ребенок мог использовать конфигурацию запуска, отличную от конфигурации родительского запуска. Например, вы можете использовать менее мощную конфигурацию на основе ЦП для родительского элемента, а также использовать конфигурации на основе GPU для своих детей. Другим распространенным желанием является передача каждого дочернего различных аргументов и данных. Чтобы настроить дочерний запуск, передайте `RunConfiguration` объект в конструктор дочернего элемента. `ScriptRunConfig` Этот пример кода, который бы был частью скрипта родительского `ScriptRunConfig` объекта:
+
+- Создает `RunConfiguration` извлечение именованного ресурса вычислений`"gpu-compute"`
+- Выполняет перебор различных значений аргументов для передачи дочерним `ScriptRunConfig` объектам
+- Создает и отправляет новый дочерний запуск с использованием настраиваемого ресурса вычислений и аргумента.
+- Блокируется до завершения всех дочерних запусков
 
 ```python
-## In parent run script
-parent_run = Run.get_context()
-child_run_config = ScriptRunConfig(source_directory='.', script='child_script.py')
-parent_run.submit_child(child_run_config)
+# parent.py
+# This script controls the launching of child scripts
+from azureml.core import Run, ScriptRunConfig, RunConfiguration
+
+run_config_for_aml_compute = RunConfiguration()
+run_config_for_aml_compute.target = "gpu-compute"
+run_config_for_aml_compute.environment.docker.enabled = True 
+
+run = Run.get_context()
+
+child_args = ['Apple', 'Banana', 'Orange']
+for arg in child_args: 
+    run.log('Status', f'Launching {arg}')
+    child_config = ScriptRunConfig(source_directory=".", script='child.py', arguments=['--fruit', arg], run_config = run_config_for_aml_compute)
+    # Starts the run asynchronously
+    run.submit_child(child_config)
+
+# Experiment will "complete" successfully at this point. 
+# Instead of returning immediately, block until child runs complete
+
+for child in run.get_children():
+    child.wait_for_completion()
 ```
+
+Чтобы создать множество дочерних запусков с одинаковыми конфигурациями, аргументами и входными [`create_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#create-children-count-none--tag-key-none--tag-values-none-) данными, используйте метод. Поскольку каждое создание приводит к сетевому вызову, создание пакета выполняется более эффективно, чем создание их по одному.
 
 В дочернем выполнении можно просмотреть идентификатор родительского запуска:
 
@@ -283,7 +310,7 @@ child_run.parent.id
 
 ### <a name="query-child-runs"></a>Дочерние выполнения запросов
 
-Чтобы запросить дочерние выполнения определенного родителя, используйте метод [`get_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#get-children-recursive-false--tags-none--properties-none--type-none--status-none---rehydrate-runs-true-) . Аргумент ``recursive = True`` позволяет запрашивать вложенное дерево дочерних элементов и внуками.
+Чтобы запросить дочерние выполнения определенного родителя, используйте [`get_children()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#get-children-recursive-false--tags-none--properties-none--type-none--status-none---rehydrate-runs-true-) метод. ``recursive = True`` Аргумент позволяет запрашивать вложенное дерево дочерних элементов и внуками.
 
 ```python
 print(parent_run.get_children())
@@ -297,14 +324,14 @@ print(parent_run.get_children())
 
 #### <a name="using-the-sdk"></a>Использование пакета SDK
 
-Чтобы добавить метаданные для поиска в запуски, используйте метод [`add_properties()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#add-properties-properties-) . Например, следующий код добавляет свойство `"author"` в Run:
+Чтобы добавить метаданные для поиска в запуски, используйте [`add_properties()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#add-properties-properties-) метод. Например, следующий код добавляет `"author"` свойство в Run:
 
 ```Python
 local_script_run.add_properties({"author":"azureml-user"})
 print(local_script_run.get_properties())
 ```
 
-Свойства являются неизменяемыми, поэтому они создают постоянную запись для целей аудита. В следующем примере кода возникает ошибка, так как мы уже добавили `"azureml-user"` как значение свойства `"author"` в предыдущем коде:
+Свойства являются неизменяемыми, поэтому они создают постоянную запись для целей аудита. В следующем примере кода возникает ошибка, так как мы уже добавили `"azureml-user"` в качестве значения `"author"` свойства в приведенном выше коде:
 
 ```Python
 try:
@@ -313,7 +340,7 @@ except Exception as e:
     print(e)
 ```
 
-В отличие от свойств, теги являются изменяемыми. Чтобы добавить доступную для поиска и осмысленную информацию для потребителей вашего эксперимента, используйте метод [`tag()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#tag-key--value-none-) .
+В отличие от свойств, теги являются изменяемыми. Чтобы добавить доступную для поиска и осмысленную информацию для потребителей вашего эксперимента [`tag()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py#tag-key--value-none-) , используйте метод.
 
 ```Python
 local_script_run.tag("quality", "great run")
@@ -356,7 +383,7 @@ list(exp.get_runs(properties={"author":"azureml-user"},tags="worth another look"
 
 #### <a name="using-the-cli"></a>Использование интерфейса командной строки
 
-Azure CLI поддерживает запросы [JMESPath](http://jmespath.org) , которые можно использовать для фильтрации запусков на основе свойств и тегов. Чтобы использовать запрос JMESPath с Azure CLI, укажите его с помощью параметра `--query`. В следующих примерах показаны основные запросы, использующие свойства и теги.
+Azure CLI поддерживает запросы [JMESPath](http://jmespath.org) , которые можно использовать для фильтрации запусков на основе свойств и тегов. Чтобы использовать запрос JMESPath с Azure CLI, укажите его с помощью `--query` параметра. В следующих примерах показаны основные запросы, использующие свойства и теги.
 
 ```azurecli-interactive
 # list runs where the author property = 'azureml-user'

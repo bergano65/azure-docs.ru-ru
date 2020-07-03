@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: 797ca4b76c62c62676772da3df21d26e096f0995
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "75392308"
 ---
-| Ресурс | Выбор пути миграции |
+| Ресурс | Назначение |
 |----------|---------------|
 | Максимальный размер одной очереди | 500 ТиБ |
 | Максимальный размер сообщения в очереди | 64 КиБ |

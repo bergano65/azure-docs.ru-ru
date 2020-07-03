@@ -1,24 +1,22 @@
 ---
 title: Включение описания в Microsoft AppSource и Azure Marketplace с помощью Azure Active Directory | Azure
 description: Включение типа описания с помощью Azure Active Directory в Azure Marketplace и AppSource для издателей приложений и служб.
-services: Azure, AppSource, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: qianw211
-manager: pabutler
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 09/12/2018
-ms.author: pabutler
-ms.openlocfilehash: 9423263270313659017b16a5e34511e7ef385af5
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.topic: conceptual
+ms.date: 04/15/2020
+ms.author: dsindona
+ms.openlocfilehash: 324f8def5ddafb15156a31fe5addabadcee6f115
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825887"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82160619"
 ---
 # <a name="enable-an-appsource-and-marketplace-listing-by-using-azure-active-directory"></a>Включение описания в AppSource и Marketplace с помощью Azure Active Directory
 
- Azure Active Directory (Azure AD) — это облачная служба идентификации, которая позволяет выполнять проверку подлинности с помощью учетной записи Майкрософт. В Azure AD используются стандартные отраслевые платформы. [Подробнее об Azure Active Directory](https://azure.microsoft.com/services/active-directory).
+ Azure Active Directory (Azure AD) — это облачная служба идентификации, которая позволяет выполнять проверку подлинности с помощью учетной записи Майкрософт. В Azure AD используются стандартные отраслевые платформы. Дополнительные [сведения о Azure Active Directory](https://azure.microsoft.com/services/active-directory).
 
 ## <a name="azure-ad-benefits"></a>Преимущества Azure AD
 
@@ -35,19 +33,19 @@ ms.locfileid: "73825887"
 
 | **Тип предложения**    | **Требования к единому входу в Azure AD**  |  |   |  |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
-|  | "Свяжитесь со мной" | Пробная версия | Тестовый выпуск | "Транзакция" |
-| Виртуальная машина | Недоступно | Нет | Нет | Нет |
-| Приложения Azure (шаблон решения)  | Недоступно | Недоступно | Недоступно | Недоступно |
-| Управляемые приложения  | Недоступно | Недоступно | Недоступно | Нет |
+|  | Связь со мной | Пробная версия | Тестовый выпуск | "Транзакция" |
+| Виртуальная машина | Н/Д | Нет | Нет | Нет |
+| Приложения Azure (шаблон решения)  | Н/Д | Н/Д | Н/Д | Н/Д |
+| Управляемые приложения  | Н/Д | Н/Д | Н/Д | Нет |
 | SaaS  | Нет | Да | Да | Да |
-| Контейнеры  | Недоступно | Недоступно | Недоступно | Нет |
-| Консультационные услуги  | Нет | Недоступно | Недоступно | Недоступно |
+| Контейнеры  | Н/Д | Н/Д | Н/Д | Нет |
+| Консультационные услуги  | Нет | Н/Д | Н/Д | Н/Д |
 
 Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
 
 ## <a name="azure-ad-integration"></a>Интеграция с Azure AD
 
-- Дополнительны сведения о включении единого входа с помощью интеграции Azure AD со списком см. в статье [Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)]( https://aka.ms/aaddev).
+- Дополнительны сведения о включении единого входа с помощью интеграции Azure AD со списком см. в статье [Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)]( https://docs.microsoft.com/azure/active-directory/develop/).
 - Дополнительные сведения о едином входе в Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
 
 ## <a name="enable-a-trial-listing"></a>Включение типа приложения пробной версии
@@ -75,7 +73,7 @@ ms.locfileid: "73825887"
 Если вы не использовали федеративный единый вход в Azure AD, выполните следующие действия:
 
 1. Зарегистрируйте свое приложение в Marketplace.
-1. Настройте единый вход в Azure AD с помощью [OAuth 2.0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code) или [OpenID Connect](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-openid-connect-code).
+1. Разрабатывайте единый вход с помощью Azure AD, используя [OAuth 2,0](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-oauth-code) или [OpenID Connect Connect](https://docs.microsoft.com/azure/active-directory/develop/active-directory-protocols-openid-connect-code).
 1. Включите функцию поддержки мультитенантности в Azure AD, чтобы предоставить пробную версию одним щелчком.
 
 ### <a name="single-tenant-solutions"></a>Решения для приложений с одним клиентом
@@ -83,11 +81,16 @@ ms.locfileid: "73825887"
 Используйте Azure AD для поддержки одного из следующих действий.
 
 - Добавление гостевых пользователей с помощью [Azure AD B2B](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b).
-- Ручная настройка бесплатной пробной версии для клиентов с помощью параметра публикации **Свяжитесь со мной**.
+- Вручную настройте пробные версии для клиентов, используя вариант публикации " **свяжитесь со мной** ".
 - Разработайте тестовый выпуск для одного клиента.
 - Создайте демонстрационное мультитенантное приложение, использующее единый вход.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-- Убедитесь, что была выполнена [регистрация в Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
-- Дополнительные сведения о том, как создать или завершить предложение, см. в статье [Создание учетной записи центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) .
+Если это еще не сделано, 
+
+- [Сведения](https://azuremarketplace.microsoft.com/sell) о Marketplace.
+
+Чтобы зарегистрироваться в центре партнеров, начните создавать новое предложение или работать над существующим:
+
+- [Войдите в центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать или завершить свое предложение.

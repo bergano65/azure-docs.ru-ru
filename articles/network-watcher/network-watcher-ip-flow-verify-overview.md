@@ -12,10 +12,10 @@ ms.workload: infrastructure-services
 ms.date: 11/30/2017
 ms.author: damendo
 ms.openlocfilehash: 69aca5e0901a0da8aa98fe310ac220898bf650b2
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76845012"
 ---
 # <a name="introduction-to-ip-flow-verify-in-azure-network-watcher"></a>Общие сведения о проверке IP-потока в Наблюдателе за сетями Azure
@@ -28,7 +28,7 @@ ms.locfileid: "76845012"
 
 ![1][1]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с приведенной статьей, чтобы узнать, как с помощью портала определить, разрешен или запрещен пакет для конкретной виртуальной машины. [Проверка состояния входящего и исходящего трафика виртуальной машины (разрешен или запрещен) путем проверки IP-потока (компонент Наблюдателя за сетями Azure)](diagnose-vm-network-traffic-filtering-problem.md)
 

@@ -3,8 +3,8 @@ title: Руководство. Миграция MongoDB в автономный 
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию из локальной среды MongoDB в Azure Cosmos DB API для MongoDB в автономном режиме с помощью Azure Database Migration Service.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,18 +12,18 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: f90ece0f6aa95dd643cca65b42e284faba8e5be8
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: 08fa94dbe71299a6653df0b40aa5083375526172
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75746993"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78255591"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Руководство. Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS
 
 С помощью Azure Database Migration Service можно выполнять автономную (однократную) миграцию баз данных из локального или облачного экземпляра MongoDB в API Azure Cosmos DB для MongoDB.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 >
 > * создание экземпляра Azure Database Migration Service;
@@ -33,7 +33,7 @@ ms.locfileid: "75746993"
 
 В этом руководстве показано, как перенести набор данных из базы данных MongoDB, размещенной на виртуальной машине Azure, в API Azure Cosmos DB для MongoDB с помощью Azure Database Migration Service. Если у вас еще не настроен источник MongoDB, обратитесь к статье [Установка и настройка базы данных MongoDB на виртуальной машине Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/install-mongodb).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -64,7 +64,7 @@ ms.locfileid: "75746993"
 
     ![Отображение поставщиков ресурсов](media/tutorial-mongodb-to-cosmosdb/portal-select-resource-provider.png)
 
-3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-mongodb-to-cosmosdb/portal-register-resource-provider.png)    
 
@@ -90,7 +90,7 @@ ms.locfileid: "75746993"
 
 6. Выберите ценовую категорию.
 
-    Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
+    Дополнительные сведения о затратах и ценовых категориях см. на [странице с ценами](https://aka.ms/dms-pricing).
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mongodb-to-cosmosdb/dms-settings2.png)
 
@@ -108,7 +108,7 @@ ms.locfileid: "75746993"
 
 3. Выберите **+ Новый проект миграции**.
 
-4. На экране **Новый проект миграции** задайте имя для проекта, в текстовом поле **Тип исходного сервера** выберите **MongoDB**, в текстовом поле **Тип целевого сервера** выберите **CosmosDB (MongoDB API)** , а затем для параметра **Выберите тип действия** выберите значение **Автономная миграция данных**. 
+4. На экране **Новый проект миграции** задайте имя для проекта, в текстовом поле **Тип исходного сервера** выберите **MongoDB**, в текстовом поле **Тип целевого сервера** выберите **CosmosDB (MongoDB API)**, а затем для параметра **Выберите тип действия** выберите значение **Автономная миграция данных**. 
 
     ![Создание проекта Database Migration Service](media/tutorial-mongodb-to-cosmosdb/dms-create-project.png)
 
@@ -151,7 +151,7 @@ ms.locfileid: "75746993"
 
    ![Указание сведений об источнике](media/tutorial-mongodb-to-cosmosdb/dms-specify-source.png)
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 
@@ -159,7 +159,7 @@ ms.locfileid: "75746993"
 
     ![Указание сведений о цели](media/tutorial-mongodb-to-cosmosdb/dms-specify-target.png)
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 ## <a name="map-to-target-databases"></a>Сопоставление с целевыми базами данных
 
@@ -173,7 +173,7 @@ ms.locfileid: "75746993"
 
     ![Сопоставление с целевыми базами данных](media/tutorial-mongodb-to-cosmosdb/dms-map-target-databases.png)
 
-2. Щелкните **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 3. На экране **Параметр коллекции** разверните список коллекций и просмотрите коллекции, которые будут перенесены.
 
     Azure Database Migration Service автоматически выбирает все коллекции, которые существуют в исходном экземпляре MongoDB и не существуют в целевой учетной записи Azure Cosmos DB. Чтобы повторно перенести коллекции, уже содержащие данные, необходимо явным образом выбрать их в этой колонке.
@@ -187,7 +187,7 @@ ms.locfileid: "75746993"
 
     ![Выбор таблиц коллекций](media/tutorial-mongodb-to-cosmosdb/dms-collection-setting.png)
 
-4. Щелкните **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 5. На экране **Сводка по миграции** в текстовом поле **Имя активности** задайте имя действия миграции.
 
@@ -222,8 +222,8 @@ ms.locfileid: "75746993"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)
+* [Сведения о службе Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Просмотрите другие сценарии в [руководстве по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

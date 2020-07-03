@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/12/2019
 ms.author: thvankra
 ms.openlocfilehash: 467e9627a2623779bd808ca5aebdf76d8a5eda42
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75896640"
 ---
 # <a name="migrate-one-to-few-relational-data-into-azure-cosmos-db-sql-api-account"></a>Миграция реляционных данных "один к нескольким" в учетную запись SQL API Azure Cosmos DB
@@ -25,7 +25,7 @@ ms.locfileid: "75896640"
 Предположим, что в базе данных SQL, Orders и OrderDetails имеются две следующие таблицы:
 
 
-![Сведения о заказах](./media/migrate-relational-to-cosmos-sql-api/orders.png)
+![Order Details](./media/migrate-relational-to-cosmos-sql-api/orders.png)
 
 Мы хотим объединить эту связь "один к нескольким" в один документ JSON во время миграции. Для этого можно создать запрос T-SQL, используя "FOR JSON", как показано ниже:
 
@@ -48,7 +48,7 @@ FROM Orders o;
 
 Результаты этого запроса будут выглядеть следующим образом: 
 
-![Сведения о заказах](./media/migrate-relational-to-cosmos-sql-api/for-json-query-result.png#lightbox)
+![Order Details](./media/migrate-relational-to-cosmos-sql-api/for-json-query-result.png#lightbox)
 
 
 В идеале вы хотите использовать одно действие копирования фабрики данных Azure (ADF) для запроса данных SQL в качестве источника и записывать выходные данные непосредственно в Azure Cosmos DB приемника в качестве правильных объектов JSON. Сейчас невозможно выполнить необходимое преобразование JSON в одном действии копирования. При попытке скопировать результаты приведенного выше запроса в контейнер API SQL Azure Cosmos DB мы видим поле OrderDetails как строковое свойство документа, а не ожидаемый массив JSON.
@@ -94,8 +94,8 @@ SELECT [value] FROM OPENJSON(
 ![Копия ADF](./media/migrate-relational-to-cosmos-sql-api/adf1.png)
 
 
-Для приемника действия копирования Склжсонтоблобтекст мы выберем "текст с разделителями" и назначим ему определенную папку в хранилище BLOB-объектов Azure с динамически формируемым уникальным именем файла (например, "@concat(конвейер (). RunId, '. JSON ').
-Так как наш текстовый файл не является «разделителем», и мы не хотим, чтобы он был проанализирован в отдельные столбцы с помощью запятых и нужно сохранить двойные кавычки ("), мы устанавливаем" разделитель столбцов "на знак табуляции (" \t ") или другой символ, не являющийся в данных, и" символ кавычки "  в значение "без кавычек".
+Для приемника действия копирования Склжсонтоблобтекст мы выберем «текст с разделителями» и назначим ему определенную папку в хранилище BLOB-объектов Azure с динамически формируемым уникальным именем файла (например,@concat«конвейер ()». RunId, '. JSON ').
+Так как наш текстовый файл не является «разделителем», и мы не хотим, чтобы он был проанализирован в отдельные столбцы с помощью запятых и нужно сохранить двойные кавычки ("), мы зададим" разделитель столбцов "на знак табуляции (" \t ") или другой символ, не являющийся в данных, а" символ кавычки "—" без кавычек ".
 
 ![Копия ADF](./media/migrate-relational-to-cosmos-sql-api/adf2.png)
 
@@ -340,6 +340,6 @@ pool.map(writeOrder, orderids)
 
 ![Databricks](./media/migrate-relational-to-cosmos-sql-api/databricks4.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Сведения о [моделировании данных в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/modeling-data)
 * Сведения [о том, как моделировать и секционировать данные на Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/how-to-model-partition-example)

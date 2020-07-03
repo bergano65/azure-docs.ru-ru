@@ -2,27 +2,27 @@
 title: Требования к контейнеру и рекомендации
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 09/20/2019
-ms.author: dapine
-ms.openlocfilehash: 2fa97a3a18741f506e10e5e4d61da286db3f744c
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: c62044582cb488a5ef2d20b3f407c0865b3994ba
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73481775"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80877986"
 ---
 > [!NOTE]
 > Требования и рекомендации основаны на тестах производительности с одним запросом в секунду с использованием изображения размером 8 МБ сканированного рабочего письма, которое содержит 29 строк, и всего 803 символов.
 
 В следующей таблице описаны минимальное и рекомендуемое выделение ресурсов для каждого контейнера чтения.
 
-| Контейнер | Минимальная | Рекомендуется |ПЛАТЫ<br>(Минимум, максимум)|
+| Контейнер | Минимальные | Рекомендуемая |ПЛАТЫ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
-| чтение | 1 ядра, 8 ГБ памяти, 0,24 TPS | 8 ядер, 16 ГБ памяти, 1,17 TPS | 0,24, 1,17 |
+| Чтение | 1 ядра, 8 ГБ памяти, 0,24 TPS | 8 ядер, 16 ГБ памяти, 1,17 TPS | 0,24, 1,17 |
 
 * Частота каждого ядра должна быть минимум 2,6 ГГц.
 * TPS — количество транзакций в секунду.

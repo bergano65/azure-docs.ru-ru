@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
+title: Руководство по созданию одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
 description: Это одностраничное приложение показывает, как можно использовать API Bing для поиска в Интернете, чтобы извлекать, анализировать и отображать актуальные результаты поиска в одностраничном приложении.
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: tutorial
-ms.date: 12/09/2019
+ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: 1acc17f9c2fbeb53b992891174866433d14f128d
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: f692367ad431dc8f1623e1b3d5109c313e351934
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986667"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "78943873"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 
@@ -32,13 +32,12 @@ ms.locfileid: "76986667"
 
 Чтобы использовать это приложение, требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API-интерфейсами поиска Bing. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api), чтобы получить ключ подписки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Для запуска приложения необходимы следующие элементы:
 
 * Node.js 8 или более поздняя версия.
-* ключ подписки;
-
+* Ключ подписки для API "Поиск Bing". Если у вас нет такого ключа, [создайте ресурс для Поиска Bing версии 7](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7). Можно также использовать [ключ пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
 ## <a name="get-the-source-code-and-install-dependencies"></a>Получение исходного кода и установка зависимостей
 
 Первым шагом является клонирование репозитория с исходным кодом примера приложения.
@@ -82,7 +81,7 @@ npm install
 
 HTML-форма содержит параметры, которые соответствуют параметрам запросов в [API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters). В этой таблице содержатся подробные сведения о том, как пользователи могут фильтровать результаты поиска с помощью примера приложения:
 
-| Параметр | Описание |
+| Параметр | Description |
 |-----------|-------------|
 | `query` | Текстовое поле для ввода строки запроса. |
 | `where` | Раскрывающееся меню для выбора рынка (язык и страна). |
@@ -386,7 +385,7 @@ searchItemRenderers = {
 
 Контекстные аргументы:
 
-| Параметр  | Описание |
+| Параметр  | Description |
 |------------|-------------|
 | `section` | Раздел результатов (`pole`, `mainline` или `sidebar`), в котором содержится элемент. |
 | `index`<br>`count` | Доступен, когда элемент `RankingResponse` указывает, что все результаты в данной коллекции должны отображаться. В противном случае `undefined`. Это индекс элемента и общее число элементов коллекции. Вы можете использовать эту информацию для подсчета результатов, для создания разного HTML-кода для первого или последнего результата и т. д. |

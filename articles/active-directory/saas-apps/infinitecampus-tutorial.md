@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Infinite Campus | Документация Майкрософт
+title: 'Руководство: интеграция Azure Active Directory с Infinite Campus | Документация Майкрософт'
 description: Узнайте, как настроить единый вход между Azure Active Directory и Infinite Campus.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: d54769c1f3265e2cee619520044313fca46855a5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67100370"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-infinite-campus"></a>Руководство. Интеграция Azure Active Directory с Infinite Campus
+# <a name="tutorial-azure-active-directory-integration-with-infinite-campus"></a>Руководство: интеграция Azure Active Directory с Infinite Campus
 
 В этом руководстве вы узнаете, как интегрировать Infinite Campus c Azure Active Directory (Azure AD).
 Интеграция Infinite Campus с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67100370"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Infinite Campus, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Infinite Campus с поддержкой единого входа.
 * По меньшей мере для настройки требуются права администратора Azure Active Directory и роль безопасности продуктов Campus "Student Information System (SIS)" (Информационная система для учащихся).
 
@@ -104,7 +104,7 @@ ms.locfileid: "67100370"
 
 4. В разделе "Базовая конфигурация SAML" выполните следующие действия (учтите, что домен зависит от модели размещения, но значение **FULLY-QUALIFIED-DOMAIN** должно соответствовать установленному экземпляру Infinite Campus).
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<DOMAIN>.infinitecampus.com/campus/SSO/<DISTRICTNAME>/SIS`
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<DOMAIN>.infinitecampus.com/campus/SSO/<DISTRICTNAME>/SIS`
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<DOMAIN>.infinitecampus.com/campus/<DISTRICTNAME>`
 
@@ -132,7 +132,7 @@ ms.locfileid: "67100370"
 
     ![Единый вход](./media/infinitecampus-tutorial/tutorial_infinitecampus_sso.png)
 
-    a. Установите флажок **Enable SAML Single Sign On** (Разрешить единый вход SAML).
+    а. Установите флажок **Enable SAML Single Sign On** (Разрешить единый вход SAML).
 
     b. Измените **Optional Attribute Name** (Необязательное имя атрибута), обязательно указав значение **name**.
 
@@ -140,7 +140,7 @@ ms.locfileid: "67100370"
 
     d. После нажатия элемента **Синхронизация** значения автоматически заполнятся на странице **SSO Service Provider Configuration** (Настройка поставщика услуг единого входа). Эти значения можно проверить на соответствие значениям, использованным ранее на шаге 4.
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -211,4 +211,4 @@ Infinite Campus имеет архитектуру, ориентированну�
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

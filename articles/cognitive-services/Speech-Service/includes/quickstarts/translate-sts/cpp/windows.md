@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 12/09/2019
+ms.date: 04/04/2020
 ms.author: erhopf
-ms.openlocfilehash: aab16b860440ff1fc304cbc200209c1dd6cc85c4
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: b9311d605d07bbf3844963aed97e9fc510a4897a
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156475"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80671633"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -23,8 +23,7 @@ ms.locfileid: "77156475"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=windows)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=windows)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=windows&pivots=programming-language-cpp).
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -44,8 +43,7 @@ ms.locfileid: "77156475"
    void TranslateSpeechToSpeech()
    {
        // Creates an instance of a speech translation config with specified subscription key and service region.
-       // Replace with your own subscription key and service region (e.g., "westus", use the one of SpeechSDKParameters
-       // from here: https://aka.ms/speech/sdkregion).   
+       // Replace with your own subscription key and region identifier from here: https://aka.ms/speech/sdkregion
        auto config = SpeechTranslationConfig::FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 
        // Sets source and target languages.

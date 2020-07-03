@@ -5,19 +5,19 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 7e290e6d773485b84ef42c7a79abf084e3b0da9f
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 4/21/2020
+ms.openlocfilehash: 20d8e46d6fa6b031c809d629a6af41e8e682bcef
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74765942"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82025090"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создавать реплики чтения и управлять ими в базе данных Azure для MariaDB с помощью портал Azure
 
 В этой статье вы узнаете, как создавать реплики чтения и управлять ими в службе "база данных Azure для MariaDB" с помощью портал Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - [Сервер базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-portal.md) , который будет использоваться в качестве главного сервера.
 
@@ -46,9 +46,6 @@ ms.locfileid: "74765942"
 
     ![База данных Azure для MariaDB — расположение реплики](./media/howto-read-replica-portal/replica-location.png)
 
-   > [!NOTE]
-   > Межрегионовая репликация доступна в предварительной версии. Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md). 
-
 7. Нажмите кнопку **ОК** , чтобы подтвердить создание реплики.
 
 > [!NOTE]
@@ -73,7 +70,7 @@ ms.locfileid: "74765942"
 
    ![База данных Azure для MariaDB — останавливает репликацию выбор сервера](./media/howto-read-replica-portal/stop-replication-select.png)
 
-4. Щелкните **Остановить репликацию**.
+4. Выберите пункт " **отменить репликацию**".
 
    ![База данных Azure для MariaDB — завершение репликации](./media/howto-read-replica-portal/stop-replication.png)
 
@@ -93,7 +90,7 @@ ms.locfileid: "74765942"
 
    ![База данных Azure для MariaDB — удаление реплики выбор сервера](./media/howto-read-replica-portal/delete-replica-select.png)
 
-4. Щелкните **Удалить реплику**.
+4. Выбор **удаления реплики**
 
    ![База данных Azure для MariaDB — удаление реплики](./media/howto-read-replica-portal/delete-replica.png)
 
@@ -136,6 +133,6 @@ ms.locfileid: "74765942"
 
    ![Выбор диапазона времени](./media/howto-read-replica-portal/monitor-replication-lag-time-range-thirty-mins.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о [репликах чтения](concepts-read-replicas.md)

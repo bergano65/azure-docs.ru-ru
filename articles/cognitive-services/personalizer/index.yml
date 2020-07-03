@@ -3,7 +3,7 @@ title: Документация по Персонализатору
 summary: Узнайте, как Персонализатор позволяет приложению выбрать максимально удобный режим работы для пользователей, изучая их поведение в реальном времени.
 metadata:
   ms.topic: landing-page
-  ms.date: 10/03/2019
+  ms.date: 05/01/2020
   ms.author: nitinme
   author: nitinme
   ms.service: cognitive-services
@@ -12,12 +12,12 @@ metadata:
   title: Документация по Персонализатору
   titleSuffix: Azure Cognitive Services
   description: Персонализатор Azure — это облачная служба API, с помощью которой приложение максимально удобный режим работы для своих пользователей, изучая их поведение в реальном времени.
-  ms.openlocfilehash: 964950c80ea0f3d4c014f5c98563193917bf4eef
-  ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+  ms.openlocfilehash: ef18921e9211bb1a3659fffc84bde922d500d0b0
+  ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/16/2020
-  ms.locfileid: "76122038"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83586326"
 landingContent:
 - title: Сведения о Персонализаторе
   linkLists:
@@ -66,7 +66,7 @@ landingContent:
   - linkListType: get-started
     links:
     - text: Разработка цикла Персонализатора с помощью Node.js
-      url: sdk-learning-loop.md?pivots=programming-language-nodejs
+      url: sdk-learning-loop.md?pivots=programming-language-javascript
     - text: Пакет npm
       url: https://www.npmjs.com/package/@azure/cognitiveservices-personalizer/v/1.0.0
   - linkListType: get-started
@@ -101,6 +101,8 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
+    - text: Использование режима ученика
+      url: how-to-learning-behavior.md
     - text: Оптимизация цикла с помощью автономных вычислений
       url: concepts-offline-evaluation.md
     - text: Активные и неактивные события

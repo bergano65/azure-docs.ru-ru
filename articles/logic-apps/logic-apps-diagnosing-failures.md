@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок и диагностика сбоев рабочих процессов
+title: Диагностика и устранение сбоев рабочих процессов в Azure Logic Apps
 description: Узнайте, как устранять неполадки, ошибки и сбои в рабочих процессах в Azure Logic Apps
 services: logic-apps
 ms.suite: integration
@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/31/2020
 ms.openlocfilehash: 1f83f13564a64a0d9d8a5e0144ca95af6a769d6c
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76905102"
 ---
 # <a name="troubleshoot-and-diagnose-workflow-failures-in-azure-logic-apps"></a>Диагностика и устранение сбоев рабочих процессов в Azure Logic Apps
@@ -31,7 +31,7 @@ ms.locfileid: "76905102"
 
    Входы триггера включают данные, которые требуются триггеру, и требуют для запуска рабочего процесса. Просмотр этих входных данных поможет определить, правильно ли указаны входные данные триггера и было ли выполнено условие, чтобы рабочий процесс можно было продолжить.
 
-   Например, свойство `feedUrl` здесь имеет неверное значение RSS-канала:
+   Например, `feedUrl` свойство здесь имеет неверное значение RSS-канала:
 
    ![Проверка входных данных триггера для ошибок](./media/logic-apps-diagnosing-failures/review-trigger-inputs-for-errors.png)
 
@@ -66,7 +66,7 @@ ms.locfileid: "76905102"
 
    ![Просмотр сведений о выполнении приложения логики](./media/logic-apps-diagnosing-failures/logic-app-run-details.png)
 
-1. Чтобы изучить входные данные, выходные данные и сообщения об ошибках для определенного шага, выберите этот шаг, чтобы фигура развернулась и отобразила подробные сведения. Пример.
+1. Чтобы изучить входные данные, выходные данные и сообщения об ошибках для определенного шага, выберите этот шаг, чтобы фигура развернулась и отобразила подробные сведения. Пример:
 
    ![Просмотр сведений о действии](./media/logic-apps-diagnosing-failures/logic-app-run-details-expanded.png)
 
@@ -82,6 +82,6 @@ ms.locfileid: "76905102"
 
 1. Чтобы просмотреть, как формируется запрос при создании из подсистемы Logic Apps, запустите приложение логики и перейдите на сайт тестера веб-перехватчика для получения дополнительных сведений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Мониторинг приложения логики](../logic-apps/monitor-logic-apps.md)

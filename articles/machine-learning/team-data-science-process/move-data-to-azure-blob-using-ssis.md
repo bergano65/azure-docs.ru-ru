@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 77bfd9d5bcae7bedd673354e32464d5f59bdc9b4
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76720877"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS
@@ -34,7 +34,7 @@ ms.locfileid: "76720877"
 > 
 > 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Для выполнения задач, описанных в этой статье, необходимо настроить подписку Azure и учетную запись хранения Azure. Для отправки или скачивания данных необходимо имя учетной записи хранения Azure и ключ учетной записи.
 
 * Сведения о настройке **подписки Azure** см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
@@ -42,7 +42,7 @@ ms.locfileid: "76720877"
 
 Чтобы использовать **Соединители SSIS**, необходимо загрузить следующие компоненты:
 
-* **SQL Server 2014 или 2016 Standard (или более поздняя версия)** : установка включает в себя SQL Server Integration Services.
+* **SQL Server 2014 или 2016 Standard (или более поздняя версия)**: установка включает в себя SQL Server Integration Services.
 * **Microsoft SQL Server 2014 или 2016 Integration Services пакет дополнительных компонентов для Azure**. эти соединители можно скачать соответственно, с [SQL Server 2014 Integration Services](https://www.microsoft.com/download/details.aspx?id=47366) и [SQL Server 2016 Integration Services](https://www.microsoft.com/download/details.aspx?id=49492) страниц.
 
 > [!NOTE]
@@ -64,7 +64,7 @@ ms.locfileid: "76720877"
 
 Ниже описаны параметры, используемые задачей.
 
-| Поле | Description |
+| Поле | Описание |
 | --- | --- |
 | **AzureStorageConnection** |Указывает существующий диспетчер подключений службы хранилища Azure или создает новый, который ссылается на учетную запись хранения Azure, указывающую на место размещения файлов большого двоичного объекта. |
 | **BlobContainer** |Указывает имя контейнера больших двоичных объектов, который содержит отправленные файлы в виде больших двоичных объектов. |

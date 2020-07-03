@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 12/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 7ddccef00cf1b5ad524c0e1eaa7aed52c0e55197
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77059374"
 ---
 # <a name="tutorial-configure-atlassian-cloud-for-automatic-user-provisioning"></a>Руководство. Настройка Atlassian Cloud для автоматической подготовки пользователей
@@ -28,7 +28,7 @@ ms.locfileid: "77059374"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -49,7 +49,7 @@ ms.locfileid: "77059374"
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -73,7 +73,7 @@ Azure Active Directory использует концепцию, называем
 
 * Рекомендуется назначить одного пользователя Azure AD в Atlassian Cloud для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя в Atlassian Cloud необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя в Atlassian Cloud необходимо выбрать в диалоговом окне назначения любую допустимую роль конкретного приложения (если она доступна). Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-atlassian-cloud"></a>Настройка автоматической подготовки пользователей в Atlassian Cloud 
 
@@ -92,11 +92,11 @@ Azure Active Directory использует концепцию, называем
 
     ![Ссылка на Atlassian Cloud в списке приложений](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/provisioning-tab.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Подготовка облака Atlassian](./media/atlassian-cloud-provisioning-tutorial/credentials.png)
 
@@ -106,13 +106,13 @@ Azure Active Directory использует концепцию, называем
 
 6. Щелкните **подготовка пользователей** и щелкните **создать каталог**. Скопируйте **базовый URL-адрес каталога** и **токен носителя** в поля **URL-адрес клиента** и **секретный токен** соответственно.
 
-    ![Atlassian Cloud подготовка](./media/atlassian-cloud-provisioning-tutorial/secret-token-1.png) ![Atlassian Cloud подготовка](./media/atlassian-cloud-provisioning-tutorial/secret-token-2.png) ![Atlassian Cloud подготовка](./media/atlassian-cloud-provisioning-tutorial/secret-token-3.png)
+    ![](./media/atlassian-cloud-provisioning-tutorial/secret-token-1.png) ![Подготовка облачной подготовки Atlassian](./media/atlassian-cloud-provisioning-tutorial/secret-token-2.png) ![облачная подготовка Atlassian облачной подготовки в Atlassian](./media/atlassian-cloud-provisioning-tutorial/secret-token-3.png)
 
 7. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **маркер секрета** учетной записи облака Atlassian. Примеры этих значений:
 
    * В поле **URL-адрес клиента** Введите конкретную конечную точку клиента, полученную от Atlassian, как описано в шаге 6. Например: `https://api.atlassian.com/scim/directory/{directoryId}`.
 
-   * В поле **маркер секрета** введите маркер секрета, как описано в шаге 6.
+   * В поле **секретный токен** заполните маркер секрета, как описано в шаге 6.
 
 8. После заполнения полей, показанных на шаге 7, нажмите кнопку **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Atlassian Cloud. В случае сбоя подключения убедитесь, что у учетной записи Atlassian Cloud есть разрешения администратора, и повторите попытку.
 

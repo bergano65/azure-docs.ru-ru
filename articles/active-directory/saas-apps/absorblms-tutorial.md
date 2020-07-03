@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Absorb LMS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Absorb LMS | Документы Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Absorb LMS.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 936de76d1117c56f5a9dec48b51f33b9afa15351
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67107500"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-absorb-lms"></a>Руководство по Интеграция Azure Active Directory с Absorb LMS
+# <a name="tutorial-azure-active-directory-integration-with-absorb-lms"></a>Руководство. Интеграция Azure Active Directory с Absorb LMS
 
 В этом руководстве описано, как интегрировать приложение Absorb LMS с Azure Active Directory (Azure AD).
 Интеграция Absorb LMS с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67107500"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Absorb LMS, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Absorb LMS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -108,15 +108,15 @@ ms.locfileid: "67107500"
 
     Если вы используете **Absorb 5 — UI**, примените следующую конфигурацию.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://company.myabsorb.com/account/saml`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://company.myabsorb.com/account/saml`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://company.myabsorb.com/account/saml`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://company.myabsorb.com/account/saml`.
 
     Если вы используете **Absorb 5 — New Learner Experience**, примените следующую конфигурацию.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://company.myabsorb.com/api/rest/v2/authentication/saml`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://company.myabsorb.com/api/rest/v2/authentication/saml`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://company.myabsorb.com/api/rest/v2/authentication/saml`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://company.myabsorb.com/api/rest/v2/authentication/saml`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Absorb LMS](https://support.absorblms.com/hc/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -133,7 +133,7 @@ ms.locfileid: "67107500"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -159,7 +159,7 @@ ms.locfileid: "67107500"
 
     ![Страница "Single Sign-On Configuration" (Конфигурация единого входа)](./media/absorblms-tutorial/settings.png)
 
-    a. В текстовом поле **Имя** введите имя, например Azure AD Marketplace SSO.
+    а. В текстовом поле **Имя** введите имя, например Azure AD Marketplace SSO.
 
     b. Выберите **SAML**в качестве **метода**.
 
@@ -167,9 +167,9 @@ ms.locfileid: "67107500"
 
     d. В поле **Mode** (Режим) выберите **Identity Provider Initiated** (Инициируемый поставщиком удостоверений).
 
-    д. В поле **Id Property** (Свойство идентификатора) выберите атрибут, который вы настроили в качестве идентификатора пользователя в Azure AD. Например, если вы выбрали в Azure AD *nameidentifier*, то выберите атрибут **Username**.
+    д) В поле **Id Property** (Свойство идентификатора) выберите атрибут, который вы настроили в качестве идентификатора пользователя в Azure AD. Например, если вы выбрали в Azure AD *nameidentifier*, то выберите атрибут **Username**.
 
-    Е. Выберите **Sha256** в качестве **типа подписи**.
+    е) Выберите **Sha256** в качестве **типа подписи**.
 
     ж. В поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес пользовательского доступа** со страницы **Свойства** приложения на портале Azure.
 
@@ -252,7 +252,7 @@ ms.locfileid: "67107500"
 
     ![Страница "Add User" (Добавление пользователя)](./media/absorblms-tutorial/user.png)
 
-    a. В текстовом поле **First Name** (Имя) введите имя, например **Britta**.
+    а. В текстовом поле **First Name** (Имя) введите имя, например **Britta**.
 
     b. В текстовом поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
 
@@ -260,9 +260,9 @@ ms.locfileid: "67107500"
 
     d. В поле **Пароль** введите пароль пользователя.
 
-    д. В поле **Confirm Password** (Подтверждение пароля) введите пароль еще раз.
+    д) В поле **Confirm Password** (Подтверждение пароля) введите пароль еще раз.
 
-    Е. Переведите переключатель **Is Active** (Активность) в положение **Active** (Активный).
+    е) Переведите переключатель **Is Active** (Активность) в положение **Active** (Активный).
 
 5. Щелкните **Сохранить**.
 
@@ -283,4 +283,4 @@ ms.locfileid: "67107500"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

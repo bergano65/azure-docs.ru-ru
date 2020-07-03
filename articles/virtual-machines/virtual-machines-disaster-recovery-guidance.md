@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 05/31/2017
 ms.author: cynthn
 ms.openlocfilehash: f2dc43e1f07d449bf2f8ed39ce4523c99b551dae
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77115613"
 ---
 # <a name="what-if-an-azure-service-disruption-impacts-azure-vms"></a>Что делать, если прерывание работы службы Azure влияет на виртуальные машины Azure
@@ -35,11 +35,11 @@ ms.locfileid: "77115613"
 
 
 > [!NOTE]
-> Учтите, что этот процесс нельзя контролировать и он выполняется только при нарушении работы службы на уровне региона. Поэтому для обеспечения самого высокого уровня доступности необходимо также использовать и другие стратегии архивации приложения. Дополнительные сведения см. в разделе о [стратегиях аварийного восстановления данных](https://docs.microsoft.com/azure/architecture/reliability/disaster-recovery#disaster-recovery-plan).
+> Учтите, что этот процесс нельзя контролировать и он выполняется только при нарушении работы службы на уровне региона. Поэтому для обеспечения самого высокого уровня доступности необходимо также использовать и другие стратегии архивации приложения. Дополнительные сведения см. в разделе [стратегии данных для аварийного восстановления](https://docs.microsoft.com/azure/architecture/reliability/disaster-recovery#disaster-recovery-plan).
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Начните [защищать приложения, работающие на виртуальных машинах Azure](https://aka.ms/a2a-getting-started), с помощью Azure Site Recovery
 

@@ -4,15 +4,15 @@ description: Сведения о функции SQL System, прямо в Azure 
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 5aeee91db0b1ce891d7e4090a074ddda1f15a576
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 247616d2ac4f2a5799a5896d679f6e6d5917d5a6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349536"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302157"
 ---
 # <a name="right-azure-cosmos-db"></a>RIGHT (Azure Cosmos DB)
  Возвращает правую часть строки с указанным количеством символов.  
@@ -31,7 +31,7 @@ RIGHT(<str_expr>, <num_expr>)
 *num_expr*  
    Числовое выражение, которое указывает количество символов.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает строковое выражение.  
   
@@ -49,8 +49,12 @@ SELECT RIGHT("abc", 1) AS r1, RIGHT("abc", 2) AS r2
 [{"r1": "c", "r2": "bc"}]  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

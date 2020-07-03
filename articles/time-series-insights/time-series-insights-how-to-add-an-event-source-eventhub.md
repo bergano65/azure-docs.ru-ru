@@ -1,6 +1,6 @@
 ---
 title: Добавление источника событий концентраторов событий в службу "аналитика временных рядов Azure" | Документация Майкрософт
-description: Узнайте, как добавить источник событий концентраторов событий Azure в среду "аналитика временных рядов".
+description: Узнайте о том, как добавить источник событий концентратора событий Azure в среду "Аналитика временных рядов".
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 01/30/2020
+ms.date: 04/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: c3b06289ba6ce98d4307a8255981ecdba069fdfa
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 021ac5fccf4d694895ab9941bd46dd2388f49af9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76905408"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81407460"
 ---
 # <a name="add-an-event-hub-event-source-to-your-time-series-insights-environment"></a>Добавление источника событий концентратора событий в среду "Аналитика временных рядов Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "76905408"
 > [!NOTE]
 > Действия, описанные в этой статье, применяются к средам "аналитика временных рядов" в режиме "Глобальный доступ" и "аналитика временных рядов".
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Создайте среду службы "аналитика временных рядов", как описано в статье [Создание среды службы "аналитика временных рядов Azure](./time-series-insights-update-create-environment.md)".
 - Создайте концентратор событий. Прочитайте [раздел Создание пространства имен концентраторов событий и концентратора событий с помощью портал Azure](../event-hubs/event-hubs-create.md).
@@ -40,17 +40,17 @@ ms.locfileid: "76905408"
 
 1. В [портал Azure](https://portal.azure.com)перейдите к экземпляру концентратора событий из панели **Обзор** пространства имен концентратора событий и откройте его. Выберите **сущности > концентраторы событий** или найдите свой экземпляр в поле **имя**.
 
-    [![открыть пространство имен концентратора событий](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-connect-event-hub-namespace.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-connect-event-hub-namespace.png#lightbox)
+    [![Открытие пространства имен концентратора событий](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-connect-event-hub-namespace.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-connect-event-hub-namespace.png#lightbox)
 
 1. В экземпляре концентратора событий выберите **сущности > группы потребителей**. Затем выберите **+ Группа потребителей** , чтобы добавить новую группу потребителей. 
 
-   [концентратор событий ![— Добавление группы потребителей](media/time-series-insights-how-to-add-an-event-source-eventhub/add-event-hub-consumer-group.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/add-event-hub-consumer-group.png#lightbox)
+   [![Концентратор событий — Добавление группы потребителей](media/time-series-insights-how-to-add-an-event-source-eventhub/add-event-hub-consumer-group.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/add-event-hub-consumer-group.png#lightbox)
 
    В противном случае выберите существующую группу потребителей и перейдите к следующему разделу.
 
 1. На странице **Группы потребителей** введите новое уникальное значение для параметра **Имя**.  Используйте это же имя при создании источника событий в среде "Аналитика временных рядов Azure".
 
-1. Нажмите кнопку **создания**.
+1. Щелкните **Создать**.
 
 ## <a name="add-a-new-event-source"></a>Добавление нового источника событий
 
@@ -60,7 +60,7 @@ ms.locfileid: "76905408"
 
 1. Выберите **источники событий**, а затем нажмите кнопку **Добавить**.
 
-   [![в разделе источники событий нажмите кнопку Добавить.](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-add-an-event-source.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-add-an-event-source.png#lightbox)
+   [![Нажмите кнопку "Добавить" в разделе "Источники событий"](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-add-an-event-source.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-add-an-event-source.png#lightbox)
 
 1. Введите значение для **имени источника события** , которое является уникальным для этой среды "аналитика временных рядов", например `Contoso-TSI-GA-Event-Hub-ES`.
 
@@ -70,13 +70,13 @@ ms.locfileid: "76905408"
 
    * Выберите **Использовать концентратор событий из доступных подписок**, если в одной из подписок уже есть концентратор событий. Этот вариант — самый простой подход.
 
-     [![выбрать параметр импорта источника события](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-event-hub-select-import-option.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-event-hub-select-import-option.png#lightbox)
+     [![Выбор параметра импорта источника события](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-event-hub-select-import-option.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-event-hub-select-import-option.png#lightbox)
 
     *  Если выбран параметр **Использовать концентратор событий из доступных подписок**, см. описание каждого из обязательных свойств в следующей таблице:
 
-       [сведения о подписке ![и концентраторе событий](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-configure-create-confirm.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-configure-create-confirm.png#lightbox)
+       [![Сведения о подписке и концентраторе событий](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-configure-create-confirm.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/tsi-configure-create-confirm.png#lightbox)
 
-       | Свойство | Description |
+       | Свойство | Описание |
        | --- | --- |
        | Подписка | Подписка, к которой принадлежит требуемый экземпляр концентратора событий и пространство имен. |
        | пространство имен концентратора событий; | Пространство имен концентратора событий, которому принадлежит требуемый экземпляр концентратора событий. |
@@ -88,7 +88,7 @@ ms.locfileid: "76905408"
 
        В следующей таблице описаны обязательные свойства для параметра **Ввести параметры концентратора событий вручную**:
  
-       | Свойство | Description |
+       | Свойство | Описание |
        | --- | --- |
        | Идентификатор подписки | Подписка, к которой принадлежит требуемый экземпляр концентратора событий и пространство имен. |
        | Группа ресурсов | Группа ресурсов, к которой принадлежит нужный экземпляр концентратора событий и пространство имен. |
@@ -99,7 +99,7 @@ ms.locfileid: "76905408"
 
     * Оба параметра имеют следующие параметры конфигурации:
 
-       | Свойство | Description |
+       | Свойство | Описание |
        | --- | --- |
        | Группа потребителей концентратора событий | Группа объектов-получателей, которая считывает события из концентратора событий. Мы настоятельно рекомендуем использовать выделенную группу объектов-получателей для источника событий. |
        | Формат сериализации событий | В настоящее время JSON — это единственный доступный формат сериализации. Сообщения о событиях должны быть в этом формате, или данные не могут быть прочитаны. |
@@ -107,14 +107,14 @@ ms.locfileid: "76905408"
 
 1. Добавьте имя отдельной группы объектов-получателей Аналитики временных рядов, которое вы добавили в концентратор событий.
 
-1. Нажмите кнопку **создания**.
+1. Щелкните **Создать**.
 
    После создания источника событий "аналитика временных рядов" автоматически начинает потоковую передачу данных в вашу среду.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Определите политики доступа к данным](time-series-insights-data-access.md), чтобы защитить ваши данные.
 
-* [Отправьте события](time-series-insights-send-events.md) в источник событий.
+* [Отправка событий](time-series-insights-send-events.md) в источник событий.
 
 * Получите доступ к своей среде в [обозревателе службы "Аналитика временных рядов"](https://insights.timeseries.azure.com).

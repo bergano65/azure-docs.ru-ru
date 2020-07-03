@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/12/2019
 ms.openlocfilehash: 58f7d99af638c8d03bbce46b7fcf8204aaca11d9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75435749"
 ---
 # <a name="run-the-mapreduce-examples-included-in-hdinsight"></a>Выполнение примеров MapReduce, включенных в HDInsight
@@ -21,7 +21,7 @@ ms.locfileid: "75435749"
 
 Узнайте, как выполнять примеры MapReduce, входящие в состав Apache Hadoop в HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
@@ -29,11 +29,11 @@ ms.locfileid: "75435749"
 
 ## <a name="the-mapreduce-examples"></a>Примеры MapReduce
 
-Примеры расположены в кластере HDInsight по адресу `/usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar`. Исходный код для этих примеров включен в кластер HDInsight по адресу `/usr/hdp/current/hadoop-client/src/hadoop-mapreduce-project/hadoop-mapreduce-examples`.
+Примеры расположены в кластере HDInsight в `/usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar`. Исходный код этих примеров расположен в кластере HDInsight в `/usr/hdp/current/hadoop-client/src/hadoop-mapreduce-project/hadoop-mapreduce-examples`.
 
 В архиве содержатся следующие примеры:
 
-|Пример |Description |
+|Пример |Описание |
 |---|---|
 |aggregatewordcount|Подсчитывает количество слов во входных файлах.|
 |aggregatewordhist|Выполняет вычисление гистограммы слов во входных файлах.|

@@ -17,10 +17,10 @@ ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ff89f7323ba4cdf14ed1c052b2dd4e4e06356e00
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157614"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-brightidea"></a>Руководство по Интеграция Azure Active Directory с Brightidea
@@ -39,7 +39,7 @@ ms.locfileid: "73157614"
 
 Чтобы настроить интеграцию Azure AD с Brightidea, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка с поддержкой единого входа в приложении Brightidea.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -103,11 +103,11 @@ ms.locfileid: "73157614"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вам нужно настроить единый вход, инициируемый **поставщиком удостоверений**, и у вас есть **файл метаданных поставщика услуг**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
     ![Передача файла метаданных](common/upload-metadata.png)
 
@@ -117,14 +117,14 @@ ms.locfileid: "73157614"
 
     c. После успешной передачи файла метаданных поля **Идентификатор** и **URL-адрес ответа** в текстовом поле раздела Brightidea автоматически заполняются значениями:
 
-    ![image](common/idp-intiated.png)
+    ![Изображение](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную в соответствии с поставленной задачей.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![image](common/metadata-upload-additional-signon.png)
+    ![Изображение](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.brightidea.com`.
 
@@ -136,11 +136,11 @@ ms.locfileid: "73157614"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-brightidea-single-sign-on"></a>Настройка единого входа в Brightidea
 
@@ -158,7 +158,7 @@ ms.locfileid: "73157614"
 
     ![Конфигурация Brightidea](./media/brightidea-tutorial/configure3.png)
 
-    a. Щелкните **Download Metadata** (Скачать метаданные) и передайте файл в разделе **базовой конфигурации SAML** на портале Azure.
+    а. Щелкните **Download Metadata** (Скачать метаданные) и передайте файл в разделе **базовой конфигурации SAML** на портале Azure.
 
     b. Нажмите кнопку **Добавить новый** в разделе **настройки поставщика удостоверений** и выполните следующие действия:
     
@@ -175,7 +175,7 @@ ms.locfileid: "73157614"
      
    * В текстовом поле **Имя экрана** введите значение в виде `givenName`.
      
-   * Нажмите кнопку **Сохранить изменения**.  
+   * Щелкните **Сохранить изменения**.  
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -193,7 +193,7 @@ ms.locfileid: "73157614"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.

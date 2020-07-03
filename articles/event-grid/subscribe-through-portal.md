@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 3172c92ecae094ab5d978803d2ccac7e6404a5e1
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 599f48ed241010d8551bd110c7f778c9ef508eac
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76721512"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81393176"
 ---
 # <a name="subscribe-to-events-through-portal"></a>Подписка на события через портал
 
@@ -20,7 +20,7 @@ ms.locfileid: "76721512"
 
 ## <a name="create-event-subscriptions"></a>Создание подписки на события
 
-Чтобы создать подписку на службу "Сетка событий" для любых из поддерживаемых [источников событий](event-sources.md), выполните следующие действия. Эта статья показывает, как создать подписку на службу "Сетка событий" в подписке Azure.
+Чтобы создать подписку на службу "Сетка событий" для любых из поддерживаемых [источников событий](overview.md#event-sources), выполните следующие действия. Эта статья показывает, как создать подписку на службу "Сетка событий" в подписке Azure.
 
 1. Выбор пункта **Все службы**.
 
@@ -28,7 +28,7 @@ ms.locfileid: "76721512"
 
 1. Выполните поиск по словосочетанию **подписки на Сетку событий** и выберите ее из доступных вариантов.
 
-   ![Поиск](./media/subscribe-through-portal/search.png)
+   ![Система поиска](./media/subscribe-through-portal/search.png)
 
 1. Выберите **+ Event Subscription** (+ Подписка на события).
 
@@ -64,7 +64,7 @@ ms.locfileid: "76721512"
 
 Портал предоставляет параметры для создания подписки на события, относящиеся к этому источнику.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения о [доставке сообщений и повторных попытках в Сетке событий](delivery-and-retry.md).
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).

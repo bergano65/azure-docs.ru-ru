@@ -1,19 +1,18 @@
 ---
 title: REST API Azure Enterprise
 description: В этой статье описываются интерфейсы REST API для использования с Соглашением о регистрации Azure Enterprise.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 02/04/2020
+ms.date: 05/01/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
-manager: boalcsva
-ms.openlocfilehash: f126b5cb52061c851f3ae6572cba0c3583087066
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.reviewer: boalcsva
+ms.openlocfilehash: b35937a5f4638e73dd1603dee7ad97e838efac8b
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023367"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82692656"
 ---
 # <a name="azure-enterprise-rest-apis"></a>REST API Azure Enterprise
 

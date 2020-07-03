@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: helohr
-ms.openlocfilehash: 1637cb7621d6071bbce2af66f3a106770139ad4e
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: b93f26a6799a50868feb1f3350a3dc4a73a0b2e4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368818"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79127852"
 ---
 # <a name="install-office-on-a-master-vhd-image"></a>Установка Office в главный образ VHD
 
@@ -30,7 +31,7 @@ ms.locfileid: "77368818"
 Активация на общем компьютере позволяет развернуть Office 365 профессиональный плюс на компьютере в Организации, к которому обращается несколько пользователей. Дополнительные сведения об активации общего компьютера см. в разделе [Обзор активации общего компьютера для Office 365 профессиональный плюс](/deployoffice/overview-of-shared-computer-activation-for-office-365-proplus/).
 
 Используйте [средство развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117) для установки Office. Многосеансовая поддержка Windows 10 Enterprise поддерживает только следующие версии Office:
-- Office 365 профессиональный плюс.
+- Office 365 профессиональный плюс
 - Office 365 Business, входящий в состав подписки Microsoft 365 бизнес
 
 Средству развертывания Office требуется XML-файл конфигурации. Чтобы настроить следующий пример, см. раздел [Параметры конфигурации средства развертывания Office](/deployoffice/configuration-options-for-the-office-2016-deployment-tool/).
@@ -52,7 +53,7 @@ ms.locfileid: "77368818"
 - Установите OneDrive в режиме "на пользователя". Дополнительные сведения см. в статье [Установка OneDrive в режиме "на компьютер](#install-onedrive-in-per-machine-mode)".
 
 >[!NOTE]
->Активацию на общем компьютере можно настроить с помощью групповая политика объектов (GPO) или параметров реестра. Объект групповой политики находится в папке **Конфигурация компьютера\\политики\\административные шаблоны\\Microsoft Office 2016 (компьютер)\\параметры лицензирования** .
+>Активацию на общем компьютере можно настроить с помощью групповая политика объектов (GPO) или параметров реестра. Объект GPO расположен в папке **"политики\\\\конфигурации компьютера\\" Административные шаблоны параметры лицензирования Microsoft Office\\2016 (компьютер)** .
 
 Средство развертывания Office содержит файл Setup. exe. Чтобы установить Office, выполните в командной строке следующую команду:
 
@@ -115,11 +116,11 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 Вот как можно установить OneDrive в режиме "на компьютер":
 
-1. Сначала создайте расположение для размещения установщика OneDrive. Папка локального диска или расположение [\\\\UNC] (file://unc) имеют хорошее значение.
+1. Сначала создайте расположение для размещения установщика OneDrive. Папка локального диска или [\\\\UNC] (file://UNC) — это нормально.
 
-2. Скачайте Онедривесетуп. exe в промежуточное расположение с помощью этой ссылки: <https://aka.ms/OneDriveWVD-Installer>
+2. Скачайте Онедривесетуп. exe в промежуточное расположение с помощью этой ссылки:<https://aka.ms/OneDriveWVD-Installer>
 
-3. Если вы установили Office в OneDrive, опустив **\<ЕКСКЛУДЕАПП ID = "OneDrive"/\>** , удалите все существующие установки OneDrive для каждого пользователя из командной строки с повышенными привилегиями, выполнив следующую команду:
+3. Если вы установили Office в onedrive, опустив ** \<ексклудеапп ID = "OneDrive"/\>**, удалите все существующие установки onedrive для каждого пользователя из командной строки с повышенными привилегиями, выполнив следующую команду:
     
     ```batch
     "[staged location]\OneDriveSetup.exe" /uninstall
@@ -159,6 +160,6 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hide
 
 Виртуальный рабочий стол Windows не поддерживает Skype для бизнеса и команды.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы добавили Office в образ, вы можете продолжить настройку главного образа VHD. См. раздел [Подготовка и настройка главного образа VHD](set-up-customize-master-image.md).

@@ -1,17 +1,17 @@
 ---
-title: Использование Azure Active Directory — база данных Azure для MySQL — одиночный сервер
-description: Узнайте, как настроить Azure Active Directory (Azure AD) для проверки подлинности с помощью базы данных Azure для MySQL — одиночного сервера
+title: Использование Azure Active Directory — база данных Azure для MySQL
+description: Узнайте, как настроить Azure Active Directory (Azure AD) для проверки подлинности с помощью базы данных Azure для MySQL.
 author: lfittl-msft
 ms.author: lufittl
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: bb3a8c94b377fb9c9150945ec4cf5980e006dd34
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.openlocfilehash: 0403edadd491609c2c88d5b5ac6980d97163f8d6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77110615"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79299011"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-mysql"></a>Использование Azure Active Directory для проверки подлинности с помощью MySQL
 
@@ -73,7 +73,7 @@ az login
 
 > [!NOTE]
 > Для выполнения этих действий можно также использовать Azure Cloud Shell.
-> Имейте в виду, что при извлечении маркера доступа Azure AD в Azure Cloud Shell потребуется явно вызвать `az login` и снова войти (в отдельном окне с кодом). После выполнения этого входа команда `get-access-token` будет работать должным образом.
+> Обратите внимание, что при извлечении маркера доступа Azure AD в Azure Cloud Shell необходимо явно вызвать `az login` и войти в систему (в отдельном окне с кодом). После этого вход в `get-access-token` команду будет работать должным образом.
 
 ### <a name="step-2-retrieve-azure-ad-access-token"></a>Шаг 2. получение маркера доступа Azure AD
 
@@ -136,11 +136,11 @@ mysql -h mydb.mysql.database.azure.com \
 
 Чтобы добавить пользователя Azure AD в базу данных Azure для MySQL, выполните следующие действия после подключения (см. следующий раздел о подключении).
 
-1. Сначала убедитесь, что пользователь Azure AD `<user>@yourtenant.onmicrosoft.com` является допустимым пользователем в клиенте Azure AD.
+1. Сначала убедитесь, что пользователь `<user>@yourtenant.onmicrosoft.com` Azure AD является допустимым пользователем в клиенте Azure AD.
 2. Войдите в базу данных Azure для экземпляра MySQL в качестве пользователя с правами администратора Azure AD.
-3. Создание `<user>@yourtenant.onmicrosoft.com` пользователей в базе данных Azure для MySQL.
+3. Создание пользователя `<user>@yourtenant.onmicrosoft.com` в базе данных Azure для MySQL.
 
-**Пример**.
+**Пример.**
 
 ```sql
 CREATE AADUSER 'user1@yourtenant.onmicrosoft.com';
@@ -148,7 +148,7 @@ CREATE AADUSER 'user1@yourtenant.onmicrosoft.com';
 
 Для имен пользователей, длина которых превышает 32 символов, рекомендуется использовать вместо них псевдоним, который будет использоваться при подключении: 
 
-Пример
+Пример:
 
 ```sql
 CREATE AADUSER 'userWithLongName@yourtenant.onmicrosoft.com' as 'userDefinedShortName'; 
@@ -161,7 +161,7 @@ CREATE AADUSER 'userWithLongName@yourtenant.onmicrosoft.com' as 'userDefinedShor
 
 Чтобы разрешить группе Azure AD доступ к базе данных, используйте тот же механизм, что и для пользователей, но вместо этого укажите имя группы:
 
-**Пример**.
+**Пример.**
 
 ```sql
 CREATE AADUSER 'Prod_DB_Readonly';
@@ -186,7 +186,7 @@ CREATE AADUSER 'Prod_DB_Readonly';
   * либмисклклиент: поддерживается
   * MySQL-Connector-c + +: поддерживается
 * Java
-  * Соединитель/J (MySQL-Connector-Java): поддерживается, должен использовать параметр `useSSL`
+  * Соединитель/J (MySQL-Connector-Java): поддерживается, должен использовать `useSSL` параметр
 * Python
   * Соединитель/Python: поддерживается
 * Ruby
@@ -197,15 +197,15 @@ CREATE AADUSER 'Prod_DB_Readonly';
 * Node.js
   * mysqljs: не поддерживается (не отправляет маркер в виде открытого текста без исправления)
   * node-mysql2: поддерживается
-* Perl;
+* Perl
   * ДБД:: MySQL: поддерживается
   * NET:: MySQL: не поддерживается
 * Go
-  * Go-SQL-Driver: поддерживается, добавьте `?tls=true&allowCleartextPasswords=true` в строку подключения
+  * Go-SQL-Driver: поддерживается, добавление `?tls=true&allowCleartextPasswords=true` в строку подключения
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Ознакомьтесь с общими концепциями [Azure Active Directory аутентификации с помощью базы данных Azure для MySQL — одиночного сервера](concepts-azure-ad-authentication.md) .
+* Ознакомьтесь с общими концепциями [Azure Active Directory аутентификации с помощью базы данных Azure для MySQL](concepts-azure-ad-authentication.md) .
 
 <!--Image references-->
 

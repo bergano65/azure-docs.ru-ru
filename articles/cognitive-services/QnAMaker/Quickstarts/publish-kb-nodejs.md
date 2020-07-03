@@ -1,23 +1,18 @@
 ---
-title: Краткое руководство. QnA Maker с REST API для Node.js
-titleSuffix: Azure Cognitive Services
+title: Краткое руководство. QnA Maker с помощью интерфейсов API для Node. js
 description: В этом кратком руководстве показано, как начать работу с REST API QnA Maker для Node.js. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.  QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: qna-maker
-ms.topic: quickstart
 ms.date: 02/08/2020
-ms.author: diberry
-ms.openlocfilehash: 3df0a486baa2184a58ac33c24a5d13973885890f
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
-ms.translationtype: HT
+ROBOTS: NOINDEX,NOFOLLOW
+ms.custom: RESTCURL2020FEB27
+ms.topic: conceptual
+ms.openlocfilehash: ecc3fb144fb4b4e27182567925199f841b1c4357
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77109504"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78851677"
 ---
-# <a name="quickstart-qna-maker-rest-apis-for-nodejs"></a>Краткое руководство. QnA Maker с REST API для Node.js
+# <a name="quickstart-qna-maker-rest-apis-for-nodejs"></a>Краткое руководство. QnA Maker интерфейсы API-интерфейсов RESTFUL для Node. js
 
 Начните работу с QnA Maker с REST API для Node.js. Выполните следующие действия, чтобы опробовать пример кода для базовых задач.  QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам.
 
@@ -30,7 +25,7 @@ ms.locfileid: "77109504"
 * Скачивание базы знаний
 * Получение состояния операции
 
-[Справочная документация](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | [Образцы Node.js](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/tree/master/documentation-samples/quickstarts/rest-api)
+[Справочник по](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase) | [примерам для Node. js](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/tree/master/documentation-samples/quickstarts/rest-api)
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
@@ -93,7 +88,7 @@ const request = require("requestretry");
 
 Задайте следующие значения среды:
 
-* `QNAMAKER_RESOURCE_KEY`. **Ключ** — это строка из 32 символов, которая доступна на странице "Быстрый запуск" ресурса QnA Maker на портале Azure. Это не то же самое, что ключ конечной точки прогнозирования.
+* `QNAMAKER_RESOURCE_KEY`— **Ключ** — это строка из 32 символов, которая доступна в портал Azure на QnA Maker ресурсе на странице **быстрого запуска** . Это не то же самое, что ключ конечной точки прогнозирования.
 * `QNAMAKER_AUTHORING_ENDPOINT`. Конечная точка разработки (в формате `https://YOUR-RESOURCE-NAME.cognitiveservices.azure.com`) содержит **имя ресурса**. Это не тот же URL-адрес, который используется для запроса конечной точки прогнозирования.
 
 [!code-javascript[Add Azure resources from environment variables](~/samples-qnamaker-nodejs/documentation-samples/quickstarts/rest-api/rest-api.js?name=authorization)]
@@ -167,7 +162,7 @@ node rest-apis.js
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
->[Руководство. Создание базы знаний и ответ на вопрос](../tutorials/create-publish-query-in-portal.md)
+>[Учебник. Создание и ответ на базу знаний](../tutorials/create-publish-query-in-portal.md)
 
 * [Что такое QnA Maker?](../Overview/overview.md)
 * [Редактирование базы знаний](../how-to/edit-knowledge-base.md)

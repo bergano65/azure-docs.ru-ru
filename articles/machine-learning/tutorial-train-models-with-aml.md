@@ -1,23 +1,23 @@
 ---
 title: Руководство по классификации изображений. Обучение моделей
 titleSuffix: Azure Machine Learning
-description: Узнайте, как с помощью Машинного обучения Azure обучить модель классификации изображений, используя Scikit-learn в Jupyter Notebook для Python. Это руководство представляет собой первую часть серии, состоящей из двух частей.
+description: Узнайте, как с помощью Машинного обучения Azure обучить модель классификации изображений, используя Scikit-learn в Jupyter Notebook для Python. Это руководство представляет первую часть серии (всего две части).
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
-ms.date: 11/04/2019
+ms.date: 03/18/2020
 ms.custom: seodec18
-ms.openlocfilehash: 95e5754c440cc591444df8960fde34de6fc384f0
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: bcc9e748cb5f88084b9cd3254654f9dc0fbc8aa1
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76261370"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82115573"
 ---
-# <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn-using-azure-machine-learning"></a>Руководство. Обучение моделей классификации изображений с помощью данных MNIST и scikit-learn в Службе машинного обучения Azure
+# <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Руководство по обучению моделей классификации изображений с использованием данных MNIST и Scikit-learn 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом руководстве необходимо обучить модель машинного обучения на удаленных вычислительных ресурсах. Вы будете использовать рабочий процесс обучения и развертывания для Машинного обучения Azure в Jupyter Notebook для Python.  Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
@@ -34,10 +34,10 @@ ms.locfileid: "76261370"
 
 Во [второй части этого руководства](tutorial-deploy-models-with-aml.md) описано, как выбрать и развернуть модель.
 
-Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
+Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
 >[!NOTE]
-> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) версии 1.0.65.
+> Код в этой статье протестирован с помощью [пакета SDK для Машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) версии 1.0.83.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -46,7 +46,7 @@ ms.locfileid: "76261370"
     * выполните клонирование записной книжки с учебниками в папку в рабочей области;
     * создание облачной вычислительной операции.
 
-* Откройте записную книжку **img-classification-part1-deploy.ipynb** в клонированной папке **tutorials**. 
+* Откройте записную книжку *img-classification-part1-training.ipynb* в клонированной папке *tutorials/image-classification-mnist-data*. 
 
 
 Это руководство и дополняющий его файл **utils.py** также доступны на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials), если вы хотите использовать их в собственной [локальной среде](how-to-configure-environment.md#local). Выполните `pip install azureml-sdk[notebooks] azureml-opendatasets matplotlib`, чтобы установить зависимости для этого руководства.
@@ -57,7 +57,7 @@ ms.locfileid: "76261370"
 > Перейдите в записную книжку Jupyter, чтобы вы могли просматривать его во время выполнения кода. 
 > Чтобы выполнить одну ячейку кода в записной книжке, щелкните эту ячейку и нажмите клавиши **SHIFT+ВВОД**. Или запустите всю записную книжку, выбрав **Запустить все** в верхней части панели инструментов.
 
-## <a name="start"></a>Настройка среды разработки
+## <a name="set-up-your-development-environment"></a><a name="start"></a>Настройка среды разработки
 
 Все настройки для работы по разработке можно сделать в записной книжке Python. Настройка включает следующие действия:
 
@@ -188,12 +188,15 @@ mnist_file_dataset = mnist_file_dataset.register(workspace=ws,
 ```python
 # make sure utils.py is in the same directory as this code
 from utils import load_data
+import glob
+
 
 # note we also shrink the intensity values (X) from 0-255 to 0-1. This helps the model converge faster.
-X_train = load_data(os.path.join(data_folder, "train-images-idx3-ubyte.gz"), False) / 255.0
-X_test = load_data(os.path.join(data_folder, "t10k-images-idx3-ubyte.gz"), False) / 255.0
-y_train = load_data(os.path.join(data_folder, "train-labels-idx1-ubyte.gz"), True).reshape(-1)
-y_test = load_data(os.path.join(data_folder, "t10k-labels-idx1-ubyte.gz"), True).reshape(-1)
+X_train = load_data(glob.glob(os.path.join(data_folder,"**/train-images-idx3-ubyte.gz"), recursive=True)[0], False) / 255.0
+X_test = load_data(glob.glob(os.path.join(data_folder,"**/t10k-images-idx3-ubyte.gz"), recursive=True)[0], False) / 255.0
+y_train = load_data(glob.glob(os.path.join(data_folder,"**/train-labels-idx1-ubyte.gz"), recursive=True)[0], True).reshape(-1)
+y_test = load_data(glob.glob(os.path.join(data_folder,"**/t10k-labels-idx1-ubyte.gz"), recursive=True)[0], True).reshape(-1)
+
 
 # now let's show some randomly chosen images from the traininng set.
 count = 0
@@ -228,6 +231,7 @@ plt.show()
 Создайте каталог для доставки необходимого кода с компьютера на удаленный ресурс.
 
 ```python
+import os
 script_folder = os.path.join(os.getcwd(), "sklearn-mnist")
 os.makedirs(script_folder, exist_ok=True)
 ```
@@ -245,7 +249,7 @@ import numpy as np
 import glob
 
 from sklearn.linear_model import LogisticRegression
-from sklearn.externals import joblib
+import joblib
 
 from azureml.core import Run
 from utils import load_data
@@ -265,6 +269,7 @@ X_train = load_data(glob.glob(os.path.join(data_folder, '**/train-images-idx3-ub
 X_test = load_data(glob.glob(os.path.join(data_folder, '**/t10k-images-idx3-ubyte.gz'), recursive=True)[0], False) / 255.0
 y_train = load_data(glob.glob(os.path.join(data_folder, '**/train-labels-idx1-ubyte.gz'), recursive=True)[0], True).reshape(-1)
 y_test = load_data(glob.glob(os.path.join(data_folder, '**/t10k-labels-idx1-ubyte.gz'), recursive=True)[0], True).reshape(-1)
+
 print(X_train.shape, y_train.shape, X_test.shape, y_test.shape, sep = '\n')
 
 # get hold of the current run
@@ -304,39 +309,49 @@ joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')
 
 ### <a name="create-an-estimator"></a>Создание оценщика
 
-Объект [оценщика SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) используется для отправки потокового выполнения. Создайте оценщик, выполнив следующий код, который определяет следующие элементы:
+Объект оценщика используется для отправки потокового выполнения. Машинное обучение Azure содержит предварительно настроенные оценщики для распространенных платформ машинного обучения, а также универсальный оценщик. Создайте оценщик, указав следующее:
+
 
 * Имя оценщика — `est`.
 * Выберите каталог, который содержит скрипт. Все файлы в этом каталоге передаются в узел кластера для выполнения.
 * Целевой объект вычисления. В этом примере используется созданный вычислительный кластер Службы машинного обучения Azure.
 * Имя скрипта обучения — **train.py**.
+* Среду, содержащую библиотеки, необходимые для выполнения скрипта.
 * Параметры, требуемые от скрипта обучения.
 
-В этом руководстве целевой средой является AMLCompute. Все файлы в папке скриптов передаются для выполнения в узлы кластера. Параметр **data_folder** настраивается на использование хранилища данных. Для начала создайте объект среды, в котором указаны все необходимые для обучения зависимости. 
+В этом руководстве целевой средой является AMLCompute. Все файлы в папке скриптов передаются для выполнения в узлы кластера. Параметр **data_folder** настраивается на использование хранилища данных. "Сначала создайте среду, содержащую: библиотеку scikit-learn, azureml-dataprep, необходимые для доступа к набору данных, и azureml-defaults, которые содержат зависимости для метрик ведения журнала. azureml-defaults также содержат зависимости, необходимые для развертывания модели в качестве веб-службы далее во 2 части руководства.
+
+После определения среды зарегистрируйте ее в рабочей области, чтобы повторно использовать ее во 2 части этого руководства.
 
 ```python
 from azureml.core.environment import Environment
 from azureml.core.conda_dependencies import CondaDependencies
 
-env = Environment('my_env')
-cd = CondaDependencies.create(pip_packages=['azureml-sdk','scikit-learn','azureml-dataprep[pandas,fuse]>=1.1.14'])
+# to install required packages
+env = Environment('tutorial-env')
+cd = CondaDependencies.create(pip_packages=['azureml-dataprep[pandas,fuse]>=1.1.14', 'azureml-defaults'], conda_packages = ['scikit-learn==0.22.1'])
+
 env.python.conda_dependencies = cd
+
+# Register environment to re-use later
+env.register(workspace = ws)
 ```
 
 Затем создайте эмулятор со следующим кодом.
 
 ```python
-from azureml.train.sklearn import SKLearn
+from azureml.train.estimator import Estimator
 
 script_params = {
+    # to mount files referenced by mnist dataset
     '--data-folder': mnist_file_dataset.as_named_input('mnist_opendataset').as_mount(),
     '--regularization': 0.5
 }
 
-est = SKLearn(source_directory=script_folder,
+est = Estimator(source_directory=script_folder,
               script_params=script_params,
               compute_target=compute_target,
-              environment_definition=env, 
+              environment_definition=env,
               entry_script='train.py')
 ```
 

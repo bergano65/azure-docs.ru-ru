@@ -1,24 +1,64 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Документация по Avere vFXT для Azure
+summary: Avere vFXT для Azure обеспечивает облачный слой кэширования для задач с частым использованием данных и высокопроизводительными вычислениями (HPC).
 metadata:
   title: Документация по Avere vFXT для Azure
-  description: Avere vFXT используется как слой кэширования для задач с высокопроизводительными вычислениями (HPC) и большим количеством операций чтения
-  services: avere-vfxt
-  author: ekpgh
+  description: Avere vFXT используется как слой кэширования для задач с высокопроизводительными вычислениями (HPC) и большим количеством операций чтения.
   ms.service: avere-vfxt
   ms.topic: landing-page
-  ms.date: 12/19/2019
+  author: ronhogue
   ms.author: rohogue
-abstract:
-  description: "Avere vFXT для Azure обеспечивает облачный слой кэширования для задач с частым использованием данных и высокопроизводительными вычислениями (HPC). Avere vFXT позволяет кэшировать файлы как можно ближе к вычислительным узлам. Это увеличивает скорость чтения и обеспечивает бесперебойную работу даже во время пиковой нагрузки. Avere vFXT лучше всего работает с системами, которые располагают от 1000 до 40\_000\_клиентских ядер. <p>Avere vFXT взаимодействует с существующим хранилищем данных, чтобы обеспечить размещение файлов как можно ближе к вычислительным ресурсам Azure. Активные файлы остаются в центре обработки данных для длительного хранения."
-sections:
-  - title: Начало работы с Avere vFXT для Azure
-    items:
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="avere-vfxt-deploy-plan">Планирование системы Avere vFXT для Azure</a>
-          - html: <a href="avere-vfxt-deploy-overview">Сведения о развертывании Avere vFXT</a>
-          - html: <a href="avere-vfxt-prereqs">Выполнение предварительных требований</a>
-          - html: <a href="avere-vfxt-deploy">Развертывание кластера Avere vFXT</a>
+  ms.date: 03/11/2020
+  ms.openlocfilehash: 9b80c5dae1b9b08a5fc71c321813a28b576e0de4
+  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 03/25/2020
+  ms.locfileid: "79297787"
+landingContent:
+- title: Обзор Avere vFXT для Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Общие сведения об Avere vFXT для Azure
+      url: avere-vfxt-overview.md
+  - linkListType: concept
+    links:
+    - text: ВОПРОСЫ И ОТВЕТЫ
+      url: avere-vfxt-faq.md
+- title: Планирование и подготовка
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Планирование системы Avere vFXT
+      url: avere-vfxt-deploy-plan.md
+  - linkListType: how-to-guide
+    links:
+    - text: Подготовка к созданию Avere vFXT
+      url: avere-vfxt-prereqs.md
+- title: Создание и развертывание
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Общие сведения о развертывании
+      url: avere-vfxt-deploy-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: Развертывание кластера vFXT
+      url: avere-vfxt-deploy.md
+- title: Подключение и управление
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Доступ к кластеру vFXT
+      url: avere-vfxt-cluster-gui.md
+    - text: Включение отправки данных для службы поддержки
+      url: avere-vfxt-enable-support.md
+    - text: Настройка хранилища
+      url: avere-vfxt-add-storage.md
+    - text: Подключение кластера Avere vFXT
+      url: avere-vfxt-mount-clients.md
+    - text: Перемещение данных в кластер vFXT
+      url: avere-vfxt-data-ingest.md
+    - text: Управление кластером Avere vFXT
+      url: avere-vfxt-manage-cluster.md

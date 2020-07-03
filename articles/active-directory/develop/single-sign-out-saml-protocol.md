@@ -1,28 +1,23 @@
 ---
-title: Протокол единого выхода SAML в Azure | Документация Майкрософт
+title: Протокол SAML единого выхода Azure
 description: В этой статье описывается протокол единого выхода SAML в Azure Active Directory
 services: active-directory
-documentationcenter: .net
 author: rwike77
 manager: CelesteDG
-editor: ''
-ms.assetid: 0e4aa75d-d1ad-4bde-a94c-d8a41fb0abe6
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/19/2017
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
-ms.openlocfilehash: 95d3deff73ce357f012b15a7fc1cfa3decdb4bda
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: dbe21d020d5d01f24913b95587721403fa218cc8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701371"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80881273"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Протокол единого выхода SAML
 
@@ -71,9 +66,9 @@ Azure AD отправляет `LogoutResponse` в ответ на элемент
 Azure AD устанавливает значения `ID`, `Version` и `IssueInstant` для элемента `LogoutResponse`. Он также задает для элемента `InResponseTo` значение, взятое из атрибута `ID` для `LogoutRequest`, который запрашивал ответ.
 
 ### <a name="issuer"></a>Издатель
-Azure AD присваивает этому параметру значение `https://login.microsoftonline.com/<TenantIdGUID>/`, где \<Тенантидгуид > является ИДЕНТИФИКАТОРом клиента Azure AD.
+Azure AD задает для `https://login.microsoftonline.com/<TenantIdGUID>/` этого параметра значение \<, где тенантидгуид> — идентификатор клиента клиента Azure AD.
 
 Чтобы оценить значение элемента `Issuer` , используйте значение **URI идентификатора приложения** , указанное при регистрации приложения.
 
 ### <a name="status"></a>Состояние
-Azure AD использует элемент `StatusCode` в элементе `Status`, чтобы указать успешность или неудачу выхода. При неудачной попытке выхода элемент `StatusCode` может также содержать настраиваемые сообщения об ошибках.
+Azure AD использует `StatusCode` элемент в `Status` элементе, чтобы указать успешность или неудачу выхода. При неудачной попытке выхода `StatusCode` элемент может также содержать настраиваемые сообщения об ошибках.

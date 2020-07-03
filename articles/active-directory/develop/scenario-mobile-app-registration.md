@@ -3,26 +3,22 @@ title: Регистрация мобильных приложений, вызы�
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать мобильное приложение, вызывающее веб-API (конфигурация кода приложения).
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
-ms.reviwer: brandwe
+ms.reviewer: brandwe
 ms.custom: aaddev
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75cfd304869bfb63131dfd2afed9f925c86d32fb
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: f24b3c9256f759b87c705aae9b93c2d6bc74d30c
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77132444"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82652639"
 ---
 # <a name="register-mobile-apps-that-call-web-apis"></a>Регистрация мобильных приложений, вызывающих веб-API
 
@@ -54,7 +50,7 @@ ms.locfileid: "77132444"
 
 Портал регистрации приложений предоставляет возможности предварительной версии, которые помогут вам вычислить URI ответа брокера для приложений iOS и Android:
 
-1. На портале регистрации приложений выберите **Проверка Подлинности** > **испытать новый интерфейс**.
+1. На портале регистрации приложений выберите **Проверка подлинности** > **испытать новый интерфейс**.
 
    ![Колонка проверка подлинности, в которой можно выбрать новый интерфейс](https://user-images.githubusercontent.com/13203188/60799285-2d031b00-a173-11e9-9d28-ac07a7ae894a.png)
 
@@ -76,9 +72,9 @@ ms.locfileid: "77132444"
 
 Если вы предпочитаете вручную настроить URI перенаправления, это можно сделать с помощью манифеста приложения. Вот рекомендуемый формат манифеста:
 
-- **iOS**: `msauth.<BUNDLE_ID>://auth` 
+- **iOS**:`msauth.<BUNDLE_ID>://auth` 
   - Например, введите `msauth.com.yourcompany.appName://auth`.
-- **Android**: `msauth://<PACKAGE_NAME>/<SIGNATURE_HASH>`
+- **Android**:`msauth://<PACKAGE_NAME>/<SIGNATURE_HASH>`
   - Хэш подписи Android можно создать с помощью ключа выпуска или ключа отладки с помощью команды KeyTool.
 
 ### <a name="username-password-authentication"></a>Имя пользователя — проверка подлинности с помощью пароля

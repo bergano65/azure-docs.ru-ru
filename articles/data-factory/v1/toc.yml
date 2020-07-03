@@ -14,7 +14,7 @@
           href: data-factory-create-datasets.md
         - name: Планирование и исполнение с использованием фабрики данных
           href: data-factory-scheduling-and-execution.md
-- name: Начало работы
+- name: Приступая к работе
   expanded: true
   items:
     - name: Создание конвейера для копирования данных
@@ -45,9 +45,9 @@
           href: data-factory-build-your-first-pipeline-using-rest-api.md
     - name: Перемещение данных между локальной средой и облаком
       href: data-factory-move-data-between-onprem-and-cloud.md
-    - name: Часто задаваемые вопросы
+    - name: ВОПРОСЫ И ОТВЕТЫ
       href: data-factory-faq.md
-- name: Практическое руководство
+- name: Инструкции
   items:
     - name: Перенос данных
       items:
@@ -70,7 +70,7 @@
               href: data-factory-amazon-redshift-connector.md
             - name: Amazon S3
               href: data-factory-amazon-simple-storage-service-connector.md
-            - name: Хранилище BLOB-объектов Azure
+            - name: хранилище BLOB-объектов Azure
               href: data-factory-azure-blob-connector.md
             - name: Azure Cosmos DB
               href: data-factory-azure-documentdb-connector.md
@@ -104,7 +104,7 @@
               href: data-factory-odata-connector.md
             - name: ODBC
               href: data-factory-odbc-connector.md
-            - name: Oracle
+            - name: Oracle;
               href: data-factory-onprem-oracle-connector.md
             - name: PostgreSQL
               href: data-factory-onprem-postgresql-connector.md
@@ -116,7 +116,7 @@
               href: data-factory-sap-hana-connector.md
             - name: SFTP
               href: data-factory-sftp-connector.md
-            - name: SQL Server
+            - name: "SQL\_Server"
               href: data-factory-sqlserver-connector.md
             - name: Sybase
               href: data-factory-onprem-sybase-connector.md
@@ -181,7 +181,7 @@
           href: data-factory-troubleshoot-gateway-issues.md
     - name: Вызов пакетов Integration Services при помощи хранимой процедуры
       href: how-to-invoke-ssis-package-stored-procedure-activity.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=data-factory'
@@ -201,8 +201,8 @@
       href: data-factory-customer-case-studies.md
     - name: Схема обучения
       href: 'https://azure.microsoft.com/documentation/learning-paths/data-factory'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureDataFactory'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-data-factory.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/data-factory/'
     - name: Калькулятор цен

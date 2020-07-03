@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 104b98cba0948ec5d0896877e54eab1e7cd4049f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "65825818"
 ---
 # <a name="problem-creating-an-application-proxy-application"></a>Проблема при создании приложения прокси приложения 
@@ -52,4 +52,4 @@ ms.locfileid: "65825818"
    ![Уведомление](./media/application-proxy-config-problem/error-message.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Включение прокси приложения на портале Azure](application-proxy-add-on-premises-application.md)
+[Enable Application Proxy in the Azure portal](application-proxy-add-on-premises-application.md) (Включение прокси приложения на портале Azure)

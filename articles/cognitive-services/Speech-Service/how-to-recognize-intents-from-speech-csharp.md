@@ -1,30 +1,30 @@
 ---
-title: Распознавание целей распознавания речи с помощью речевого пакета SDKC#
+title: 'Распознавание целей распознавания речи с помощью речевого пакета SDK C #'
 titleSuffix: Azure Cognitive Services
-description: В этом руководство вы узнаете, как распознать способы распознавания речи с помощью речевого пакета SDK C#для.
+description: В этом руководство вы узнаете, как распознать способы распознавания речи с помощью речевого пакета SDK для C#.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.author: dapine
-ms.openlocfilehash: 5d3c77c307739f9014010a592aa496a1cc83b333
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.author: trbye
+ms.openlocfilehash: 41ebcb7b44ea88af06a30a611960fd8bb0ceddee
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120038"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81402220"
 ---
-# <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Распознавание целей распознавания речи с помощью речевого пакета SDK дляC#
+# <a name="how-to-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Распознавание целей распознавания речи с помощью речевого пакета SDK для C #
 
 [Пакет SDK службы "Речь"](speech-sdk.md) в Cognitive Services интегрируется с [Интеллектуальной службой распознавания речи (LUIS)](https://www.luis.ai/home) для предоставления возможности **распознавания намерений**. Намерение — это действие, которое хочет выполнить пользователь, например забронировать билет на самолет, проверить прогноз погоды или совершить звонок. Пользователь может использовать любые термины, которые кажутся естественными. С помощью машинного обучения LUIS сопоставляет пользовательские запросы с определенными намерениями.
 
 > [!NOTE]
 > Приложение LUIS используется для определения намерений и сущностей, которые требуется распознать. Оно работает отдельно от приложения C#, в котором используется служба "Речь". В этой статье под словом "приложение" подразумевается приложение LUIS, а под "программа" — код C#.
 
-В этом учебнике используется речевой пакет SDK для разработки C# консольного приложения, которое извлекает из пользователя фразы продолжительностью через микрофон устройства. Вы узнаете, как:
+В этом руководство используется речевой пакет SDK для разработки консольного приложения C#, которое извлекает из пользователя фразы продолжительностью через микрофон устройства. Вы узнаете, как:
 
 > [!div class="checklist"]
 >
@@ -35,7 +35,7 @@ ms.locfileid: "77120038"
 > - распознать речь из файла;
 > - использовать асинхронное непрерывное распознавание при определенном событии.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе с этим руководством, убедитесь, что у вас есть следующие элементы:
 
@@ -91,7 +91,7 @@ ms.locfileid: "77120038"
 
    [!code-csharp[Top-level declarations](~/samples-cognitive-services-speech-sdk/samples/csharp/sharedcontent/console/intent_recognition_samples.cs#toplevel)]
 
-1. Замените указанный метод `Main()` на следующий асинхронный эквивалент:
+1. Замените предоставленный `Main()` метод следующим асинхронным эквивалентом:
 
    ```csharp
    public static async Task Main()
@@ -164,7 +164,7 @@ recognizer.AddIntent(model, "HomeAutomation.TurnOn", "on");
 | Одиночный | `RecognizeOnceAsync()` | Возвращает распознанное намерение, извлеченное из одного высказывания. |
 | Непрерывные | `StartContinuousRecognitionAsync()`<br>`StopContinuousRecognitionAsync()` | Распознает множественные речевые фрагменты; выдает события (например, `IntermediateResultReceived`), если результаты доступны. |
 
-Приложение использует Однофакторный режим, поэтому вызывает `RecognizeOnceAsync()`, чтобы начать распознавание. Результат — объект `IntentRecognitionResult`, который содержит информацию о распознанном намерении. Ответ LUIS в формате JSON извлекается с помощью следующего выражения:
+Приложение использует Однофакторный режим и поэтому вызывает `RecognizeOnceAsync()` метод, чтобы начать распознавание. Результат — объект `IntentRecognitionResult`, который содержит информацию о распознанном намерении. Ответ LUIS в формате JSON извлекается с помощью следующего выражения:
 
 ```csharp
 result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_JsonResult)
@@ -197,7 +197,7 @@ result.Properties.GetProperty(PropertyId.LanguageUnderstandingServiceResponse_Js
 [!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
 Код, используемый в данной статье, можно найти в папке **samples/csharp/sharedcontent/console**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. Распознавание речи с помощью микрофона](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnetcore)

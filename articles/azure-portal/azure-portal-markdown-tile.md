@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
 ms.openlocfilehash: 74102423461a56bb6fc19c2eb9874f96a76e34e0
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76310719"
 ---
 # <a name="use-a-markdown-tile-on-azure-dashboards-to-show-custom-content"></a>Использование плитки с поддержкой Markdown на панелях мониторинга Azure для отображения статического содержимого
@@ -61,6 +61,6 @@ ms.locfileid: "76310719"
 * iframes — теги `<iframe>` будут удалены.
 * Стиль — теги `<style>` будут удалены. Встроенные атрибуты стиля для HTML-элементов официально не поддерживаются. Некоторые встроенные элементы стиля могут работать, но если они мешают макету портала, они могут перестать работать в любое время. Плитка с поддержкой Markdown предназначена для основного статического содержимого, использующего стили портала по умолчанию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о создании панели мониторинга см. в статье [Создание панелей мониторинга на портале Azure и предоставление общего доступа к ним](../azure-portal/azure-portal-dashboards.md).

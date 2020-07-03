@@ -1,5 +1,5 @@
 ---
-title: Перезагрузка виртуальных машин Azure зависает при перезагрузке, завершении работы или остановке служб | Документация Майкрософт
+title: Работа виртуальных машин Azure завершается при перезагрузке, завершении работы или остановке служб | Документация Майкрософт
 description: Эта статья поможет вам устранить ошибки службы в Виртуальные машины Windows Azure.
 services: virtual-machines-windows
 documentationCenter: ''
@@ -12,14 +12,14 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 12/19/2019
 ms.author: tibasham
-ms.openlocfilehash: db7b26402170236843891799738088b9229e4693
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 5d6396efc9ab25baa0d32e7c33c7715863516249
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75477412"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77371352"
 ---
-# <a name="azure-windows-vm-restart-is-stuck-on-restarting-shutting-down-or-stopping-services"></a>Перезапуск виртуальной машины Windows в Azure зависает при "перезапуске", "выключении" или "остановке служб"
+# <a name="azure-windows-vm-shutdown-is-stuck-on-restarting-shutting-down-or-stopping-services"></a>Завершение работы виртуальной машины Windows в Azure зависает при "перезапуске", "выключении" или "остановке служб"
 
 В этой статье приводятся инструкции по устранению проблем с перезапуском, завершением работы или остановкой служб, которые могут возникнуть при перезагрузке виртуальной машины Windows (ВМ) в Microsoft Azure.
 
@@ -55,7 +55,7 @@ Windows использует процесс завершения работы д
    tasklist /svc | findstr /i <STOPING SERVICE>
    ``
 
-3. Получите образец дампа памяти из <STOPPING SERVICE>процесса зависания.
+3. Получение образца дампа памяти из зависших процессов <STOPPING SERVICE>.
 
    ``
    procdump.exe -s 5 -n 3 -ma <PID>
@@ -83,13 +83,13 @@ dism /online /cleanup-image /restorehealth
 
 1. Сделайте снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](https://docs.microsoft.com/azure/virtual-machines/windows/snapshot-copy-managed-disk).
 
-2. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](https://docs.microsoft.com/azure/virtual-machines/windows/troubleshoot-recovery-disks-portal).
+2. [Подключите диск операционной системы к виртуальной машине восстановления](https://docs.microsoft.com/azure/virtual-machines/windows/troubleshoot-recovery-disks-portal).
 
 3. Подключитесь по протоколу удаленного рабочего стола к виртуальной машине восстановления.
 
 4. Если диск ОС зашифрован, необходимо отключить шифрование перед переходом к следующему шагу. Дополнительные сведения см. в разделе [расшифровка зашифрованного диска ОС в виртуальной машине, которая не может быть загружена](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-bitlocker-boot-error#solution).
 
-**Обнаружение файла дампа и отправка запроса в службу поддержки**
+**Найдите файл дампа и отправьте запрос в службу поддержки**
 
 1. На виртуальной машине восстановления в подключенном диске ОС перейдите в папку Windows. Если подключенному диску ОС присвоена буква F, то необходимо перейти в F:\Windows.
 

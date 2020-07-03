@@ -1,57 +1,111 @@
 ---
-title: Учебник. Создание набора навыков в C# с помощью .NET
+title: Руководство по использованию C# и искусственного интеллекта с большими двоичными объектами
 titleSuffix: Azure Cognitive Search
-description: Пошаговый пример кода, демонстрирующий извлечение данных, естественный язык и обработку изображений AI в конвейере индексирования Azure Когнитивный поиск.
+description: Узнайте, как выполнять извлечение текста и обработку естественного языка по содержимому хранилища BLOB-объектов, используя C# и пакет SDK .NET для Когнитивного поиска Azure.
 manager: nitinme
 author: MarkHeff
 ms.author: maheff
 ms.service: cognitive-search
-ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: beea911c9bb938458d8bd12e091e6c908ebb1566
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
-ms.translationtype: MT
+ms.topic: tutorial
+ms.date: 02/27/2020
+ms.openlocfilehash: 169a33d12e98235dcb4e4f317dbb8d91eb7446a4
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74185687"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78851132"
 ---
-# <a name="tutorial-create-an-ai-enrichment-pipeline-using-c-and-the-net-sdk"></a>Учебник. создание конвейера обогащения искусственного C# интеллекта с помощью и пакета SDK для .NET
+# <a name="tutorial-use-c-and-ai-to-generate-searchable-content-from-azure-blobs"></a>Руководство по использованию C# и искусственного интеллекта для создания доступного для поиска содержимого на основе данных больших двоичных объектов Azure
 
-В этом учебнике вы узнаете о механизме программирования обогащения данных в службе "Когнитивный поиск Azure" с использованием *когнитивных методик*. Навыки подкрепляются возможностями обработки естественного языка (NLP) и анализа изображений в Cognitive Services. Настроив сочетание и конфигурацию набора навыков, можно извлечь текст и текстовые представления изображения или файл отсканированного документа. Кроме того, вы можете определить язык, сущности, ключевые фразы и многое другое. Конечным результатом является дополнительное содержимое в индексе службы, созданное конвейером индексирования с возможностями ИИ.
+Если у вас есть неструктурированный текст или изображения в хранилище BLOB-объектов Azure, [конвейер обогащения с помощью искуственного интелекта](cognitive-search-concept-intro.md) поможет извлекать информацию и создавать содержимое, применимое для сценариев полнотекстового поиска и интеллектуального анализа. В этом учебнике для C# внимание уделяется созданию полей на основе распознавания текста (OCR) изображений и обработки естественного языка. Все это позволит вам использовать информацию в запросах, аспектах и фильтрах.
 
-Из этого руководства вы узнаете, как с помощью пакета SDK для .NET выполнять следующие задачи:
+В этом учебнике используется C# и пакет [SDK для .NET](https://aka.ms/search-sdk) для выполнения следующих задач:
 
 > [!div class="checklist"]
-> * Создадите конвейер индексирования, который дополняет пример данных в маршруте к индексу.
-> * применение встроенных навыков (оптическое распознавание символов, объединение текста, распознавание языка, разделение текста, распознавание сущностей, извлечение ключевых фраз);
-> * Объединять методики, сопоставляя входные данные с результатами в наборе навыков.
-> * Выполнить запросы и просмотреть результаты.
-> * Сбросить индекс и индексаторы для дальнейшей разработки.
+> * Начните с файлов приложений и изображений в хранилище BLOB-объектов Azure.
+> * Определите конвейер для добавления возможностей OCR, извлечения текста, определения языка, распознавания сущностей и ключевых фраз.
+> * Определите индекс для хранения выходных данных (необработанное содержимое и созданные конвейером пары "имя — значение").
+> * Выполните конвейер, чтобы начать преобразования и анализ, а также создать и загрузить индекс.
+> * Изучите результаты с помощью полнотекстового поиска и расширенного синтаксиса запросов.
 
-Выходные данные — это полнотекстовый индекс с поддержкой поиска в службе "Когнитивный поиск Azure". Вы можете улучшить индекс с помощью других стандартных возможностей, таких как [синонимы](search-synonyms.md), [профили оценки](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index), [анализаторы](search-analyzers.md) и [фильтры](search-filters.md).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-В рамках этого учебника используется бесплатная служба, но количество бесплатных транзакций ограничено 20 документами в день. Если вы хотите выполнять описанные здесь операции несколько раз в день, используйте меньший набор файлов.
+## <a name="prerequisites"></a>Предварительные требования
 
-> [!NOTE]
-> По мере расширения области действия путем увеличения частоты обработки, добавления большего количества документов или добавления новых алгоритмов ИИ вам необходимо будет подключить оплачиваемый ресурс Cognitive Services. Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
->
-> За операции с применением встроенных навыков взимается [плата по мере использования по тарифам для имеющихся служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на службу "Когнитивный поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400).
++ [Хранилище Azure](https://azure.microsoft.com/services/storage/)
++ [Visual Studio](https://visualstudio.microsoft.com/downloads/)
++ [Создайте службу поиска](search-create-service-portal.md) или [найдите существующую службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу.
+> [!Note]
+> Для выполнения инструкций из этого руководства вы можете использовать бесплатную версию службы. В бесплатной версии вы можете использовать не более трех индексов, трех индексаторов и трех источников данных. В этом руководстве создается по одному объекту из каждой категории. Перед началом работы убедитесь, что у службы есть достаточно места, чтобы принять новые ресурсы.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="download-files"></a>Загрузка файлов
 
-В этом руководстве используются приведенные ниже службы, инструменты и данные. 
+1. Откройте эту [папку OneDrive](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4) и щелкните **Скачать** вверху слева, чтобы скопировать файлы на локальный компьютер. 
 
-+ [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) для хранения примера данных. Создайте учетную запись хранения в том регионе, где находится служба "Когнитивный поиск Azure".
+1. Щелкните ZIP-файл правой кнопкой мыши и выберите **Извлечь все**. Доступно 14 файлов разных типов. Используйте их для работы с этим учебником.
 
-+ [Пример данных](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4), который состоит из небольшого набора файлов различных типов. 
+## <a name="1---create-services"></a>1\. Создание служб
 
-+ [Установите Visual Studio](https://visualstudio.microsoft.com/), чтобы использовать решение в качестве интегрированной среды разработки.
+В этом учебнике используются Когнитивный поиск Azure для индексирования и создания запросов, сервер Cognitive Services — для обогащения с помощью искусственного интеллекта и хранилище BLOB-объектов Azure — для предоставления данных. В этом учебнике остается свободное выделение 20 транзакций на индексатор в день в Cognitive Services, поэтому необходимо создать только службы поиска и хранения.
 
-+ [Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом учебнике.
+Желательно создать все службы в одном регионе и одной группе ресурсов, чтобы упростить взаимодействие и управление. В реальной системе учетная запись хранения Azure может находиться в любом регионе.
 
-## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
+### <a name="start-with-azure-storage"></a>Служба хранилища Azure
+
+1. [Войдите на портал Azure](https://portal.azure.com/) и щелкните **+ Создать ресурс**.
+
+1. Выполните поиск по строке *учетная запись хранения* и выберите "Учетная запись хранения Microsoft".
+
+   ![Создание учетной записи хранения](media/cognitive-search-tutorial-blob/storage-account.png "Создание учетной записи хранения")
+
+1. На вкладке "Основные сведения" нужно ввести следующие сведения. Сохраните значения по умолчанию для остальных параметров.
+
+   + **Группа ресурсов**. Вы можете выбрать существующую группу ресурсов или создать новую, но для всех служб это должна быть одна и та же группа для совместного управления.
+
+   + **Имя учетной записи хранения.** Если вы ожидаете, что у вас будет несколько ресурсов одного типа, используйте имена, которые будут четко определять тип и регион, например *blobstoragewestus*. 
+
+   + **Расположение.** Желательно выбрать то же расположение, которое использовалось для Когнитивного поиска Azure и Cognitive Services. При использовании одного расположения плата за трафик не взимается.
+
+   + **Тип учетной записи.** Выберите значение по умолчанию *StorageV2 (общего назначения версии 2)* .
+
+1. Щелкните **Просмотреть и создать**, чтобы создать службу.
+
+1. По завершении процесса щелкните **Перейти к ресурсу** чтобы открыть страницу со сводкой.
+
+1. Щелкните службу **Большие двоичные объекты**.
+
+1. Щелкните **+ Контейнер**, чтобы создать контейнер, затем присвойте ему имя *basic-demo-data-pr*.
+
+1. Выберите *basic-demo-data-pr* и щелкните **Отправить**, чтобы открыть папку с сохраненными файлами для скачивания. Выберите все четырнадцать файлов и нажмите кнопку **ОК** для отправки.
+
+   ![Отправка образцов файлов](media/cognitive-search-quickstart-blob/sample-data.png "Отправка образцов файлов")
+
+1. Прежде чем выйти из службы хранилища Azure, получите строку подключения для создания подключения в Когнитивном поиске Azure. 
+
+   1. Вернитесь на страницу со сводкой об учетной записи хранения (в качестве примера мы использовали *blobstragewestus*). 
+   
+   1. В области навигации слева выберите **Ключи доступа** и скопируйте одну из строк подключения. 
+
+   Строка подключения — это URL-адрес в следующем формате:
+
+      ```http
+      DefaultEndpointsProtocol=https;AccountName=cogsrchdemostorage;AccountKey=<your account key>;EndpointSuffix=core.windows.net
+      ```
+
+1. Сохраните эту строку подключения в Блокноте. Она понадобится позже при настройке подключения к источнику данных.
+
+### <a name="cognitive-services"></a>Cognitive Services
+
+Обогащение ИИ основано на платформе Cognitive Services, которая включает службы "Анализ текста" для обработки естественного языка и "Компьютерное зрение" для обработки изображений. Если бы вы создавали реальный прототип или проект, на этом этапе нужно было бы создать Cognitive Services (в том же регионе, что и Когнитивный поиск Azure) для связывания с операциями индексирования.
+
+Но для нашего примера подготовку ресурсов можно пропустить, так как Когнитивный поиск Azure может подключаться к Cognitive Services в фоновом режиме и предоставляет 20 бесплатных транзакций для каждого выполнения индексатора. В примере из этого руководства используется всего семь транзакций. Это значит, что нам достаточно уровня "Бесплатный". Для крупных проектов вам, скорее всего, нужно будет подготовить Cognitive Services на уровне S0 с оплатой по мере использования. См. сведения о [подключении Cognitive Services](cognitive-search-attach-cognitive-services.md).
+
+### <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
+
+Третий компонент — Когнитивный поиск Azure, который вы можете [создать на портале](search-create-service-portal.md). Для выполнения действий в этом пошаговом руководстве можно использовать уровень "Бесплатный". 
+
+### <a name="get-an-admin-api-key-and-url-for-azure-cognitive-search"></a>Получение ключа API и URL-адреса конечной точки для администрирования Когнитивного поиска Azure
 
 Для взаимодействия со службой "Когнитивный поиск Azure" вам нужны URL-адрес службы и ключ доступа. Служба поиска создана с обоими элементами, поэтому если вы добавили службу "Когнитивный поиск Azure" в подписку, выполните следующие действия для получения необходимых сведений:
 
@@ -59,33 +113,13 @@ ms.locfileid: "74185687"
 
 1. В разделе **Параметры** > **Ключи** получите ключ администратора, чтобы обрести полные права на службу. Существуют два взаимозаменяемых ключа администратора, предназначенных для обеспечения непрерывности бизнес-процессов на случай, если вам потребуется сменить один из них. Вы можете использовать первичный или вторичный ключ для выполнения запросов на добавление, изменение и удаление объектов.
 
-   ![Получение конечной точки HTTP и ключа доступа](media/search-get-started-postman/get-url-key.png "Получение конечной точки HTTP и ключа доступа")
+   Получите также ключ запроса. Мы рекомендуем создавать запросы с доступом только для чтения.
+
+   ![Получение имени службы, ключей запросов и администратора](media/search-get-started-nodejs/service-name-and-keys.png)
 
 Если есть действительный ключ, для каждого запроса устанавливаются отношения доверия между приложением, которое отправляет запрос, и службой, которая его обрабатывает.
 
-## <a name="prepare-sample-data"></a>Подготовка примера данных
-
-Конвейер обогащения извлекает данные из источников данных Azure. Исходные данные должны поступать из поддерживаемого типа источника данных [индексатора службы "Когнитивный поиск Azure"](search-indexer-overview.md). В этом упражнении используется хранилище BLOB-объектов, чтобы продемонстрировать несколько типов содержимого.
-
-1. [Войдите на портал Azure](https://portal.azure.com), перейдите к учетной записи хранения Azure, выберите **Большие двоичные объекты**, а затем щелкните **Контейнер**.
-
-1. [Создайте контейнер больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) для хранения примера данных. Можно задать любое из допустимых значений уровня общего доступа. В рамках этого руководства предполагается, что контейнер имеет имя "basic-demo-data-pr".
-
-1. Создав контейнер, откройте его и на панели команд выберите **Отправить**, чтобы отправить [пример данных](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4).
-
-   ![Исходные файлы в хранилище BLOB-объектов Azure](./media/cognitive-search-quickstart-blob/sample-data.png)
-
-1. После загрузки примеров файлов введите имя контейнера и строку подключения для хранилища BLOB-объектов. Для этого перейдите к учетной записи хранения на портале Azure и выберите **Ключи доступа**, а затем скопируйте значение поля **Строка подключения**.
-
-   Строка подключения должна быть URL-адресом, аналогичным следующему примеру:
-
-      ```http
-      DefaultEndpointsProtocol=https;AccountName=cogsrchdemostorage;AccountKey=<your account key>;EndpointSuffix=core.windows.net
-      ```
-
-Существуют и другие способы указать строку подключения, например предоставить подписанный URL-адрес. Дополнительные сведения об учетных данных источника данных см. в статье [Индексирование документов в хранилище BLOB-объектов Azure с помощью службы поиска Azure](search-howto-indexing-azure-blob-storage.md#Credentials).
-
-## <a name="set-up-your-environment"></a>Настройка среды
+## <a name="2---set-up-your-environment"></a>2\. Настройка среды
 
 Сначала откройте Visual Studio и создайте новый проект консольного приложения, которое будет выполняться на базе .NET Core.
 
@@ -93,38 +127,52 @@ ms.locfileid: "74185687"
 
 [Пакет SDK службы "Когнитивный поиск Azure" для .NET](https://aka.ms/search-sdk) содержит несколько клиентских библиотек, которые позволяют управлять индексами, источниками данных, индексаторами и наборами навыков, а также отправлять документы, управлять ими и выполнять запросы, не вникая в детали HTTP и JSON. Эти клиентские библиотеки распределяются как пакеты NuGet.
 
-Для этого проекта необходимо установить версию 9 пакета `Microsoft.Azure.Search` NuGet и последнюю версию пакета `Microsoft.Extensions.Configuration.Json` NuGet.
+Для этого проекта установите пакет NuGet `Microsoft.Azure.Search` версии 9 или более поздней.
 
-Установите пакет NuGet `Microsoft.Azure.Search` непосредственно из консоли диспетчера пакетов в Visual Studio. Чтобы открыть консоль диспетчера пакетов, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**. Чтобы выполнить команду, перейдите к [странице пакета Microsoft.Azure.Search NuGet](https://www.nuget.org/packages/Microsoft.Azure.Search), выберите версию 9 и скопируйте команду диспетчера пакетов. Выполните эту команду консоли диспетчера пакетов.
+1. Откройте консоль диспетчера пакетов. Выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**. 
 
-Чтобы установить пакет NuGet `Microsoft.Extensions.Configuration.Json` в Visual Studio, выберите **инструменты** > **диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения.** ... Нажмите кнопку Обзор и найдите `Microsoft.Extensions.Configuration.Json` пакет NuGet. Выберите его, выберите проект, убедитесь, что используется последняя стабильная версия, и нажмите кнопку "Установить".
+1. Перейдите на [страницу пакета NuGet Microsoft.Azure.Search](https://www.nuget.org/packages/Microsoft.Azure.Search).
 
-## <a name="add-azure-cognitive-search-service-information"></a>Добавление сведений о службе "Когнитивный поиск Azure"
+1. Выберите последнюю версию (9 или более позднюю).
 
-Чтобы подключиться к службе "Когнитивный поиск Azure", вам необходимо добавить в проект сведения о службе поиска. Щелкните правой кнопкой мыши проект в обозревателе решений и последовательно выберите **Добавить** > **Новый элемент...** Присвойте файлу имя `appsettings.json` и нажмите **Добавить**. 
+1. Скопируйте команду диспетчера пакетов.
 
-Этот файл необходимо включить в выходной каталог. Для этого щелкните правой кнопкой мыши файл `appsettings.json` и выберите **Свойства**. Измените значение параметра **Копировать в выходной каталог** , чтобы **Копировать, если новее**.
+1. Вернитесь в консоль диспетчера пакетов и выполните команду, скопированную на предыдущем шаге.
 
-Скопируйте указанный ниже файл JSON в новый файл JSON.
+Затем установите последнюю версию пакета NuGet `Microsoft.Extensions.Configuration.Json`.
 
-```json
-{
-  "SearchServiceName": "Put your search service name here",
-  "SearchServiceAdminApiKey": "Put your primary or secondary API key here",
-  "SearchServiceQueryApiKey": "Put your query API key here",
-  "AzureBlobConnectionString": "Put your Azure Blob connection string here",
-}
-```
+1. Выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения...** . 
 
-Укажите службу поиска и добавьте сведения об учетной записи хранения BLOB-объектов.
+1. Щелкните **Обзор** и найдите пакет NuGet `Microsoft.Extensions.Configuration.Json`. 
 
-Сведения о службе поиска содержатся на странице учетной записи поиска на портале Azure. Имя учетной записи будет отображаться на главной странице, а ключи можно найти в разделе **Ключи**.
+1. Выберите пакет, выберите проект, убедитесь, что используется последняя стабильная версия, и нажмите кнопку **Установить**.
 
-Чтобы получить строку подключения к большим двоичным объектам, перейдите к учетной записи хранения на портале Azure, выберите **Ключи доступа**, а затем скопируйте значение поля **Строка подключения**.
+### <a name="add-service-connection-information"></a>Добавление сведений о подключении службы
 
-## <a name="add-namespaces"></a>Добавление пространств имен
+1. Щелкните правой кнопкой мыши проект в обозревателе решений и последовательно выберите **Добавить** > **Новый элемент...** . 
 
-В рамках этого руководства используется множество различных типов из разных пространств имен. Чтобы воспользоваться такими типами, добавьте приведенный ниже код в файл `Program.cs`.
+1. Присвойте файлу имя `appsettings.json` и нажмите **Добавить**. 
+
+1. Добавьте файл в каталог выходных данных.
+    1. Щелкните правой кнопкой мыши `appsettings.json` и выберите пункт **Свойства**. 
+    1. Измените значение параметра **Копировать в выходной каталог** на **Копировать более новые**.
+
+1. Скопируйте указанный ниже файл JSON в новый файл JSON.
+
+    ```json
+    {
+      "SearchServiceName": "Put your search service name here",
+      "SearchServiceAdminApiKey": "Put your primary or secondary API key here",
+      "SearchServiceQueryApiKey": "Put your query API key here",
+      "AzureBlobConnectionString": "Put your Azure Blob connection string here",
+    }
+    ```
+
+Укажите службу поиска и добавьте сведения об учетной записи хранения BLOB-объектов. Помните, что эти сведения можно получить во время выполнения действий по подготовке службы из предыдущего раздела.
+
+### <a name="add-namespaces"></a>Добавление пространств имен
+
+В файле `Program.cs` добавьте следующие пространства имен.
 
 ```csharp
 using System;
@@ -132,16 +180,21 @@ using System.Collections.Generic;
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
 using Microsoft.Extensions.Configuration;
+
+namespace EnrichwithAI
 ```
 
-## <a name="create-a-client"></a>Создание клиента
+### <a name="create-a-client"></a>Создание клиента
 
-Создайте экземпляр класса `SearchServiceClient`.
+Создайте экземпляр класса `SearchServiceClient` в разделе `Main`.
 
 ```csharp
-IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
-IConfigurationRoot configuration = builder.Build();
-SearchServiceClient serviceClient = CreateSearchServiceClient(configuration);
+public static void Main(string[] args)
+{
+    // Create service client
+    IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
+    IConfigurationRoot configuration = builder.Build();
+    SearchServiceClient serviceClient = CreateSearchServiceClient(configuration);
 ```
 
 `CreateSearchServiceClient` создает экземпляр `SearchServiceClient`, используя значения, которые хранятся в файле конфигурации приложения (appsettings.json).
@@ -160,14 +213,77 @@ private static SearchServiceClient CreateSearchServiceClient(IConfigurationRoot 
 > [!NOTE]
 > Класс `SearchServiceClient` управляет подключениями к службе поиска. Во избежание открытия слишком большого числа подключений в приложении рекомендуется по возможности совместно использовать один экземпляр `SearchServiceClient` . Его методы поддерживают такое использование, так как являются потокобезопасными.
 > 
-> 
 
-## <a name="create-a-data-source"></a>Создание источника данных
+### <a name="add-function-to-exit-the-program-during-failure"></a>Добавление функции для выхода из программы во время сбоя
 
-Вызовите метод `DataSource`, чтобы создать экземпляр `DataSource.AzureBlobStorage`. При использовании метода `DataSource.AzureBlobStorage` нужно указать имя источника данных, строку подключения и имя контейнера больших двоичных объектов.
+Этот учебник поможет вам разобраться в каждом этапе работы конвейера индексирования. Если произошла критическая ошибка, которая не позволяет программе создать источник данных, набор навыков, индекс или индексатор, программа выдаст сообщение об ошибке и выполнит выход, чтобы можно было разобраться в ее причине и устранить ее.
 
-Политика обратимого удаления не используется в рамках этого руководства, но будет определена в среде. Она применяется для идентификации удаленных больших двоичных объектов на основе значения столбца обратимого удаления. В соответствии с приведенной ниже политикой большой двоичный объект считается удаленным, если у него есть свойство метаданных `IsDeleted` со значением `true`.
+Добавьте `ExitProgram` в `Main`, чтобы обработать сценарии, требующие завершения работы программы.
 
+```csharp
+private static void ExitProgram(string message)
+{
+    Console.WriteLine("{0}", message);
+    Console.WriteLine("Press any key to exit the program...");
+    Console.ReadKey();
+    Environment.Exit(0);
+}
+```
+
+## <a name="3---create-the-pipeline"></a>3\. Создание конвейера
+
+В Когнитивном поиске Azure обработка ИИ выполняется во время индексирования (или приема данных). В этой части пошагового руководства описано, как создать четыре объекта: источник данных, определение индекса, набор навыков и индексатор. 
+
+### <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
+
+У класса `SearchServiceClient` есть свойство `DataSources`. Это свойство предоставляет все методы, которые требуются для создания, перечисления, обновления или удаления источников данных Когнитивного поиска Azure.
+
+Вызовите метод `serviceClient.DataSources.CreateOrUpdate(dataSource)`, чтобы создать экземпляр `DataSource`. При использовании метода `DataSource.AzureBlobStorage` нужно указать имя источника данных, строку подключения и имя контейнера больших двоичных объектов.
+
+```csharp
+private static DataSource CreateOrUpdateDataSource(SearchServiceClient serviceClient, IConfigurationRoot configuration)
+{
+    DataSource dataSource = DataSource.AzureBlobStorage(
+        name: "demodata",
+        storageConnectionString: configuration["AzureBlobConnectionString"],
+        containerName: "basic-demo-data-pr",
+        description: "Demo files to demonstrate cognitive search capabilities.");
+
+    // The data source does not need to be deleted if it was already created
+    // since we are using the CreateOrUpdate method
+    try
+    {
+        serviceClient.DataSources.CreateOrUpdate(dataSource);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("Failed to create or update the data source\n Exception message: {0}\n", e.Message);
+        ExitProgram("Cannot continue without a data source");
+    }
+
+    return dataSource;
+}
+```
+
+При успешном выполнении запроса метод вернет сведения о созданном источнике данных. Если при выполнении запроса возникнет ошибка, например из-за недопустимого параметра, метод вернет исключение.
+
+Теперь добавьте строку в раздел `Main`, чтобы вызвать только что добавленную функцию `CreateOrUpdateDataSource`.
+
+```csharp
+public static void Main(string[] args)
+{
+    // Create service client
+    IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
+    IConfigurationRoot configuration = builder.Build();
+    SearchServiceClient serviceClient = CreateSearchServiceClient(configuration);
+
+    // Create or Update the data source
+    Console.WriteLine("Creating or updating the data source...");
+    DataSource dataSource = CreateOrUpdateDataSource(serviceClient, configuration);
+```
+
+
+<!-- 
 ```csharp
 DataSource dataSource = DataSource.AzureBlobStorage(
     name: "demodata",
@@ -179,9 +295,9 @@ DataSource dataSource = DataSource.AzureBlobStorage(
     description: "Demo files to demonstrate cognitive search capabilities.");
 ```
 
-Теперь объект `DataSource` инициализирован и можно создать источник данных. У класса `SearchServiceClient` есть свойство `DataSources`. Это свойство предоставляет все методы, которые требуются для создания, перечисления, обновления или удаления источников данных Когнитивного поиска Azure.
+Now that you have initialized the `DataSource` object, create the data source. `SearchServiceClient` has a `DataSources` property. This property provides all the methods you need to create, list, update, or delete Azure Cognitive Search data sources.
 
-При успешном выполнении запроса метод вернет сведения о созданном источнике данных. Если при выполнении запроса возникнет ошибка, например из-за недопустимого параметра, метод вернет исключение.
+For a successful request, the method will return the data source that was created. If there is a problem with the request, such as an invalid parameter, the method will throw an exception.
 
 ```csharp
 try
@@ -192,13 +308,13 @@ catch (Exception e)
 {
     // Handle the exception
 }
-```
+``` -->
 
-Так как это ваш первый запрос, на портале Azure убедитесь, что источник данных был создан в службе "Когнитивный поиск Azure". На странице панели мониторинга службы поиска проверьте наличие нового элемента на плитке "Источники данных". Возможно, вам придется подождать несколько минут, пока обновится страница портала.
+Выполните сборку и запуск решения. Так как это ваш первый запрос, на портале Azure убедитесь, что источник данных был создан в службе "Когнитивный поиск Azure". На странице панели мониторинга службы поиска проверьте наличие нового элемента на плитке "Источники данных". Возможно, вам придется подождать несколько минут, пока обновится страница портала.
 
   ![Плитка источников данных на портале](./media/cognitive-search-tutorial-blob/data-source-tile.png "Плитка источников данных на портале")
 
-## <a name="create-a-skillset"></a>Создание набора навыков
+### <a name="step-2-create-a-skillset"></a>Шаг 2. Создание набора навыков
 
 В рамках этого раздела вы определите набор требуемых шагов обогащения данных. Каждый шаг обогащения называется *навыком*, а набор шагов обогащения — *набором навыков*. В этом руководстве для набора навыков используются [встроенные когнитивные навыки](cognitive-search-predefined-skills.md):
 
@@ -225,23 +341,28 @@ catch (Exception e)
 Навык **оптического распознавания текста** позволяет извлечь текст из изображений. При использовании этого навыка предполагается наличие поля normalized_images. Чтобы создать это поле, далее в руководстве мы зададим для конфигурации ```"imageAction"``` в определении индексатора значение ```"generateNormalizedImages"```.
 
 ```csharp
-List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "image",
-    source: "/document/normalized_images/*"));
+private static OcrSkill CreateOcrSkill()
+{
+    List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "image",
+        source: "/document/normalized_images/*"));
 
-List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
-outputMappings.Add(new OutputFieldMappingEntry(
-    name: "text",
-    targetName: "text"));
+    List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
+    outputMappings.Add(new OutputFieldMappingEntry(
+        name: "text",
+        targetName: "text"));
 
-OcrSkill ocrSkill = new OcrSkill(
-    description: "Extract text (plain and structured) from image",
-    context: "/document/normalized_images/*",
-    inputs: inputMappings,
-    outputs: outputMappings,
-    defaultLanguageCode: OcrSkillLanguage.En,
-    shouldDetectOrientation: true);
+    OcrSkill ocrSkill = new OcrSkill(
+        description: "Extract text (plain and structured) from image",
+        context: "/document/normalized_images/*",
+        inputs: inputMappings,
+        outputs: outputMappings,
+        defaultLanguageCode: OcrSkillLanguage.En,
+        shouldDetectOrientation: true);
+
+    return ocrSkill;
+}
 ```
 
 ### <a name="merge-skill"></a>Навык объединения
@@ -249,29 +370,34 @@ OcrSkill ocrSkill = new OcrSkill(
 В рамках этого раздела вы создадите навык **объединения**, который позволяет объединить поле содержимого документа с текстом, полученным с помощью навыка оптического распознавания текста.
 
 ```csharp
-List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "text",
-    source: "/document/content"));
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "itemsToInsert",
-    source: "/document/normalized_images/*/text"));
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "offsets",
-    source: "/document/normalized_images/*/contentOffset"));
+private static MergeSkill CreateMergeSkill()
+{
+    List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "text",
+        source: "/document/content"));
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "itemsToInsert",
+        source: "/document/normalized_images/*/text"));
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "offsets",
+        source: "/document/normalized_images/*/contentOffset"));
 
-List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
-outputMappings.Add(new OutputFieldMappingEntry(
-    name: "mergedText",
-    targetName: "merged_text"));
+    List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
+    outputMappings.Add(new OutputFieldMappingEntry(
+        name: "mergedText",
+        targetName: "merged_text"));
 
-MergeSkill mergeSkill = new MergeSkill(
-    description: "Create merged_text which includes all the textual representation of each image inserted at the right location in the content field.",
-    context: "/document",
-    inputs: inputMappings,
-    outputs: outputMappings,
-    insertPreTag: " ",
-    insertPostTag: " ");
+    MergeSkill mergeSkill = new MergeSkill(
+        description: "Create merged_text which includes all the textual representation of each image inserted at the right location in the content field.",
+        context: "/document",
+        inputs: inputMappings,
+        outputs: outputMappings,
+        insertPreTag: " ",
+        insertPostTag: " ");
+
+    return mergeSkill;
+}
 ```
 
 ### <a name="language-detection-skill"></a>Навык распознавания языка
@@ -279,21 +405,26 @@ MergeSkill mergeSkill = new MergeSkill(
 Навык **распознавания языка** определяет язык введенного текста и сообщает один код языка для каждого документа, отправленного по запросу. Мы будем использовать выходные данные навыка **распознавания языка** в качестве части входных данных для навыка **разделения текста**.
 
 ```csharp
-List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "text",
-    source: "/document/merged_text"));
+private static LanguageDetectionSkill CreateLanguageDetectionSkill()
+{
+    List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "text",
+        source: "/document/merged_text"));
 
-List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
-outputMappings.Add(new OutputFieldMappingEntry(
-    name: "languageCode",
-    targetName: "languageCode"));
+    List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
+    outputMappings.Add(new OutputFieldMappingEntry(
+        name: "languageCode",
+        targetName: "languageCode"));
 
-LanguageDetectionSkill languageDetectionSkill = new LanguageDetectionSkill(
-    description: "Detect the language used in the document",
-    context: "/document",
-    inputs: inputMappings,
-    outputs: outputMappings);
+    LanguageDetectionSkill languageDetectionSkill = new LanguageDetectionSkill(
+        description: "Detect the language used in the document",
+        context: "/document",
+        inputs: inputMappings,
+        outputs: outputMappings);
+
+    return languageDetectionSkill;
+}
 ```
 
 ### <a name="text-split-skill"></a>Навык разделения текста
@@ -301,26 +432,32 @@ LanguageDetectionSkill languageDetectionSkill = new LanguageDetectionSkill(
 Приведенный ниже код навыка **разделения текста** позволяет разделить текст на страницы и устанавливает для них ограничение в 4000 символов, измеренных методом `String.Length`. С помощью алгоритма текст будет при возможности разделен фрагменты, размер которых не превышает значение `maximumPageLength`. В этом случае будет сделано все возможное, чтобы разделить предложение на его границе. Поэтому размер фрагмента будет немного меньше, чем значение `maximumPageLength`.
 
 ```csharp
-List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "text",
-    source: "/document/merged_text"));
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "languageCode",
-    source: "/document/languageCode"));
+private static SplitSkill CreateSplitSkill()
+{
+    List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
 
-List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
-outputMappings.Add(new OutputFieldMappingEntry(
-    name: "textItems",
-    targetName: "pages"));
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "text",
+        source: "/document/merged_text"));
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "languageCode",
+        source: "/document/languageCode"));
 
-SplitSkill splitSkill = new SplitSkill(
-    description: "Split content into pages",
-    context: "/document",
-    inputs: inputMappings,
-    outputs: outputMappings,
-    textSplitMode: TextSplitMode.Pages,
-    maximumPageLength: 4000);
+    List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
+    outputMappings.Add(new OutputFieldMappingEntry(
+        name: "textItems",
+        targetName: "pages"));
+
+    SplitSkill splitSkill = new SplitSkill(
+        description: "Split content into pages",
+        context: "/document",
+        inputs: inputMappings,
+        outputs: outputMappings,
+        textSplitMode: TextSplitMode.Pages,
+        maximumPageLength: 4000);
+
+    return splitSkill;
+}
 ```
 
 ### <a name="entity-recognition-skill"></a>Навык распознавания сущностей
@@ -330,26 +467,31 @@ SplitSkill splitSkill = new SplitSkill(
 Обратите внимание, что в поле context задается значение ```"/document/pages/*"``` со звездочкой. Это означает, что этап обогащения вызывается для каждой страницы в ```"/document/pages"```.
 
 ```csharp
-List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "text",
-    source: "/document/pages/*"));
-    
-List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
-outputMappings.Add(new OutputFieldMappingEntry(
-    name: "organizations",
-    targetName: "organizations"));
+private static EntityRecognitionSkill CreateEntityRecognitionSkill()
+{
+    List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "text",
+        source: "/document/pages/*"));
 
-List<EntityCategory> entityCategory = new List<EntityCategory>();
-entityCategory.Add(EntityCategory.Organization);
-    
-EntityRecognitionSkill entityRecognitionSkill = new EntityRecognitionSkill(
-    description: "Recognize organizations",
-    context: "/document/pages/*",
-    inputs: inputMappings,
-    outputs: outputMappings,
-    categories: entityCategory,
-    defaultLanguageCode: EntityRecognitionSkillLanguage.En);
+    List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
+    outputMappings.Add(new OutputFieldMappingEntry(
+        name: "organizations",
+        targetName: "organizations"));
+
+    List<EntityCategory> entityCategory = new List<EntityCategory>();
+    entityCategory.Add(EntityCategory.Organization);
+
+    EntityRecognitionSkill entityRecognitionSkill = new EntityRecognitionSkill(
+        description: "Recognize organizations",
+        context: "/document/pages/*",
+        inputs: inputMappings,
+        outputs: outputMappings,
+        categories: entityCategory,
+        defaultLanguageCode: EntityRecognitionSkillLanguage.En);
+
+    return entityRecognitionSkill;
+}
 ```
 
 ### <a name="key-phrase-extraction-skill"></a>Навык извлечения ключевых фраз
@@ -357,24 +499,29 @@ EntityRecognitionSkill entityRecognitionSkill = new EntityRecognitionSkill(
 Как и созданный только что экземпляр `EntityRecognitionSkill`, навык **извлечения ключевых фраз** вызывается для каждой страницы документа.
 
 ```csharp
-List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "text",
-    source: "/document/pages/*"));
-inputMappings.Add(new InputFieldMappingEntry(
-    name: "languageCode",
-    source: "/document/languageCode"));
+private static KeyPhraseExtractionSkill CreateKeyPhraseExtractionSkill()
+{
+    List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "text",
+        source: "/document/pages/*"));
+    inputMappings.Add(new InputFieldMappingEntry(
+        name: "languageCode",
+        source: "/document/languageCode"));
 
-List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
-outputMappings.Add(new OutputFieldMappingEntry(
-    name: "keyPhrases",
-    targetName: "keyPhrases"));
+    List<OutputFieldMappingEntry> outputMappings = new List<OutputFieldMappingEntry>();
+    outputMappings.Add(new OutputFieldMappingEntry(
+        name: "keyPhrases",
+        targetName: "keyPhrases"));
 
-KeyPhraseExtractionSkill keyPhraseExtractionSkill = new KeyPhraseExtractionSkill(
-    description: "Extract the key phrases",
-    context: "/document/pages/*",
-    inputs: inputMappings,
-    outputs: outputMappings);
+    KeyPhraseExtractionSkill keyPhraseExtractionSkill = new KeyPhraseExtractionSkill(
+        description: "Extract the key phrases",
+        context: "/document/pages/*",
+        inputs: inputMappings,
+        outputs: outputMappings);
+
+    return keyPhraseExtractionSkill;
+}
 ```
 
 ### <a name="build-and-create-the-skillset"></a>Сборка и создание наборов навыков
@@ -382,45 +529,67 @@ KeyPhraseExtractionSkill keyPhraseExtractionSkill = new KeyPhraseExtractionSkill
 Выполните сборку `Skillset` с использованием созданных вами навыков.
 
 ```csharp
-List<Skill> skills = new List<Skill>();
-skills.Add(ocrSkill);
-skills.Add(mergeSkill);
-skills.Add(languageDetectionSkill);
-skills.Add(splitSkill);
-skills.Add(entityRecognitionSkill);
-skills.Add(keyPhraseExtractionSkill);
+private static Skillset CreateOrUpdateDemoSkillSet(SearchServiceClient serviceClient, IList<Skill> skills)
+{
+    Skillset skillset = new Skillset(
+        name: "demoskillset",
+        description: "Demo skillset",
+        skills: skills);
 
-Skillset skillset = new Skillset(
-    name: "demoskillset",
-    description: "Demo skillset",
-    skills: skills);
+    // Create the skillset in your search service.
+    // The skillset does not need to be deleted if it was already created
+    // since we are using the CreateOrUpdate method
+    try
+    {
+        serviceClient.Skillsets.CreateOrUpdate(skillset);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("Failed to create the skillset\n Exception message: {0}\n", e.Message);
+        ExitProgram("Cannot continue without a skillset");
+    }
+
+    return skillset;
+}
 ```
 
-Создайте набор навыков для службы поиска.
+Добавьте в раздел `Main` следующие строки.
 
 ```csharp
-try
-{
-    serviceClient.Skillsets.CreateOrUpdate(skillset);
-}
-catch (Exception e)
-{
-    // Handle exception
-}
+    // Create the skills
+    Console.WriteLine("Creating the skills...");
+    OcrSkill ocrSkill = CreateOcrSkill();
+    MergeSkill mergeSkill = CreateMergeSkill();
+    EntityRecognitionSkill entityRecognitionSkill = CreateEntityRecognitionSkill();
+    LanguageDetectionSkill languageDetectionSkill = CreateLanguageDetectionSkill();
+    SplitSkill splitSkill = CreateSplitSkill();
+    KeyPhraseExtractionSkill keyPhraseExtractionSkill = CreateKeyPhraseExtractionSkill();
+
+    // Create the skillset
+    Console.WriteLine("Creating or updating the skillset...");
+    List<Skill> skills = new List<Skill>();
+    skills.Add(ocrSkill);
+    skills.Add(mergeSkill);
+    skills.Add(languageDetectionSkill);
+    skills.Add(splitSkill);
+    skills.Add(entityRecognitionSkill);
+    skills.Add(keyPhraseExtractionSkill);
+
+    Skillset skillset = CreateOrUpdateDemoSkillSet(serviceClient, skills);
 ```
 
-## <a name="create-an-index"></a>Создание индекса
+### <a name="step-3-create-an-index"></a>Шаг 3. Создание индекса
 
 В этом разделе вы определите схему индекса, указав поля для включения в индекс поиска, а также атрибуты поиска для каждого поля. Поля имеют тип и могут принимать атрибуты, определяющие их использование (поиск, сортировка и т. д.). Имена полей в индексе не обязательно должны точно соответствовать именам полей в источнике. На более позднем этапе вы добавите сопоставления полей в индексаторе для подключения полей "источник — назначение". Для этого шага определите индекс, используя соглашения об именовании полей, относящиеся к вашему поисковому приложению.
 
 В этом упражнении используются следующие поля и типы полей:
 
-| имена полей: | `id`       | Содержимое   | languageCode | keyPhrases         | organizations     |
+| имена полей: | `id`       | content   | languageCode | keyPhrases         | organizations     |
 |--------------|----------|-------|----------|--------------------|-------------------|
 | типы полей: | Edm.String|Edm.String| Edm.String| List<Edm.String>  | List<Edm.String>  |
 
 
-### <a name="create-demoindex-class"></a>Создание класса DemoIndex
+#### <a name="create-demoindex-class"></a>Создание класса DemoIndex
 
 Поля для этого индекса определяются с помощью класса модели. Каждое свойство класса модели имеет атрибуты, которые определяют связанные с поиском характеристики соответствующего поля индекса. 
 
@@ -428,12 +597,40 @@ catch (Exception e)
 
 Обязательно укажите, что нужно использовать типы из пространств имен `Microsoft.Azure.Search` и `Microsoft.Azure.Search.Models`.
 
+Добавьте указанное ниже определение класса модели в файл `DemoIndex.cs` и включите его в то же пространство имен, где будете создавать индекс.
+
 ```csharp
 using Microsoft.Azure.Search;
 using Microsoft.Azure.Search.Models;
+
+namespace EnrichwithAI
+{
+    // The SerializePropertyNamesAsCamelCase attribute is defined in the Azure Search .NET SDK.
+    // It ensures that Pascal-case property names in the model class are mapped to camel-case
+    // field names in the index.
+    [SerializePropertyNamesAsCamelCase]
+    public class DemoIndex
+    {
+        [System.ComponentModel.DataAnnotations.Key]
+        [IsSearchable, IsSortable]
+        public string Id { get; set; }
+
+        [IsSearchable]
+        public string Content { get; set; }
+
+        [IsSearchable]
+        public string LanguageCode { get; set; }
+
+        [IsSearchable]
+        public string[] KeyPhrases { get; set; }
+
+        [IsSearchable]
+        public string[] Organizations { get; set; }
+    }
+}
 ```
 
-Добавьте указанное ниже определение класса модели в файл `DemoIndex.cs` и включите его в то же пространство имен, где будете создавать индекс.
+<!-- Add the below model class definition to `DemoIndex.cs` and include it in the same namespace where you'll create the index.
 
 ```csharp
 // The SerializePropertyNamesAsCamelCase attribute is defined in the Azure Cognitive Search .NET SDK.
@@ -458,21 +655,51 @@ public class DemoIndex
     [IsSearchable]
     public string[] Organizations { get; set; }
 }
-```
+``` -->
 
-Теперь, когда вы определили класс модели, можно легко создать определение индекса в файле `Program.cs`. Этот индекс будет иметь имя "demoindex".
+Теперь, когда вы определили класс модели, можно легко создать определение индекса в файле `Program.cs`. У этого индекса будет имя `demoindex`. Если индекс с таким именем уже существует, он будет удален.
 
 ```csharp
-var index = new Index()
+private static Index CreateDemoIndex(SearchServiceClient serviceClient)
 {
-    Name = "demoindex",
-    Fields = FieldBuilder.BuildForType<DemoIndex>()
-};
+    var index = new Index()
+    {
+        Name = "demoindex",
+        Fields = FieldBuilder.BuildForType<DemoIndex>()
+    };
+
+    try
+    {
+        bool exists = serviceClient.Indexes.Exists(index.Name);
+
+        if (exists)
+        {
+            serviceClient.Indexes.Delete(index.Name);
+        }
+
+        serviceClient.Indexes.Create(index);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("Failed to create the index\n Exception message: {0}\n", e.Message);
+        ExitProgram("Cannot continue without an index");
+    }
+
+    return index;
+}
 ```
 
 При тестировании вы можете обнаружить, что пытаетесь создать уже существующий индекс. Поэтому предварительно проверяйте, не создан ли он.
 
+Добавьте в раздел `Main` следующие строки.
+
 ```csharp
+    // Create the index
+    Console.WriteLine("Creating the index...");
+    Index demoIndex = CreateDemoIndex(serviceClient);
+```
+
+<!-- ```csharp
 try
 {
     bool exists = serviceClient.Indexes.Exists(index.Name);
@@ -489,10 +716,11 @@ catch (Exception e)
     // Handle exception
 }
 ```
+ -->
 
 Дополнительные сведения об определении индекса см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).
 
-## <a name="create-an-indexer-map-fields-and-execute-transformations"></a>Создание индексатора, сопоставление полей и выполнение преобразования
+### <a name="step-4-create-and-run-an-indexer"></a>Шаг 4. Создание и запуск индексатора
 
 Пока вы создали источник данных, набор навыков и индекс. Эти три компонента становятся частью [индексатора](search-indexer-overview.md), который объединяет каждую часть в единую многофазную операцию. Чтобы связать их вместе в индексаторе, необходимо определить сопоставления полей.
 
@@ -503,63 +731,76 @@ catch (Exception e)
 Помимо привязки входных данных к выходным данным, вы можете использовать сопоставления полей для преобразования структур данных в плоские структуры. Для получения дополнительных сведений см. раздел [Сопоставление обогащенных полей с индексом, поддерживающим поиск](cognitive-search-output-field-mapping.md).
 
 ```csharp
-IDictionary<string, object> config = new Dictionary<string, object>();
-config.Add(
-    key: "dataToExtract",
-    value: "contentAndMetadata");
-config.Add(
-    key: "imageAction",
-    value: "generateNormalizedImages");
-
-List<FieldMapping> fieldMappings = new List<FieldMapping>();
-fieldMappings.Add(new FieldMapping(
-    sourceFieldName: "metadata_storage_path",
-    targetFieldName: "id",
-    mappingFunction: new FieldMappingFunction(
-        name: "base64Encode")));
-fieldMappings.Add(new FieldMapping(
-    sourceFieldName: "content",
-    targetFieldName: "content"));
-
-List<FieldMapping> outputMappings = new List<FieldMapping>();
-outputMappings.Add(new FieldMapping(
-    sourceFieldName: "/document/pages/*/organizations/*",
-    targetFieldName: "organizations"));
-outputMappings.Add(new FieldMapping(
-    sourceFieldName: "/document/pages/*/keyPhrases/*",
-    targetFieldName: "keyPhrases"));
-outputMappings.Add(new FieldMapping(
-    sourceFieldName: "/document/languageCode",
-    targetFieldName: "languageCode"));
-
-Indexer indexer = new Indexer(
-    name: "demoindexer",
-    dataSourceName: dataSource.Name,
-    targetIndexName: index.Name,
-    description: "Demo Indexer",
-    skillsetName: skillSet.Name,
-    parameters: new IndexingParameters(
-        maxFailedItems: -1,
-        maxFailedItemsPerBatch: -1,
-        configuration: config),
-    fieldMappings: fieldMappings,
-    outputFieldMappings: outputMappings);
-
-try
+private static Indexer CreateDemoIndexer(SearchServiceClient serviceClient, DataSource dataSource, Skillset skillSet, Index index)
 {
-    bool exists = serviceClient.Indexers.Exists(indexer.Name);
+    IDictionary<string, object> config = new Dictionary<string, object>();
+    config.Add(
+        key: "dataToExtract",
+        value: "contentAndMetadata");
+    config.Add(
+        key: "imageAction",
+        value: "generateNormalizedImages");
 
-    if (exists)
+    List<FieldMapping> fieldMappings = new List<FieldMapping>();
+    fieldMappings.Add(new FieldMapping(
+        sourceFieldName: "metadata_storage_path",
+        targetFieldName: "id",
+        mappingFunction: new FieldMappingFunction(
+            name: "base64Encode")));
+    fieldMappings.Add(new FieldMapping(
+        sourceFieldName: "content",
+        targetFieldName: "content"));
+
+    List<FieldMapping> outputMappings = new List<FieldMapping>();
+    outputMappings.Add(new FieldMapping(
+        sourceFieldName: "/document/pages/*/organizations/*",
+        targetFieldName: "organizations"));
+    outputMappings.Add(new FieldMapping(
+        sourceFieldName: "/document/pages/*/keyPhrases/*",
+        targetFieldName: "keyPhrases"));
+    outputMappings.Add(new FieldMapping(
+        sourceFieldName: "/document/languageCode",
+        targetFieldName: "languageCode"));
+
+    Indexer indexer = new Indexer(
+        name: "demoindexer",
+        dataSourceName: dataSource.Name,
+        targetIndexName: index.Name,
+        description: "Demo Indexer",
+        skillsetName: skillSet.Name,
+        parameters: new IndexingParameters(
+            maxFailedItems: -1,
+            maxFailedItemsPerBatch: -1,
+            configuration: config),
+        fieldMappings: fieldMappings,
+        outputFieldMappings: outputMappings);
+
+    try
     {
-        serviceClient.Indexers.Delete(indexer.Name);
+        bool exists = serviceClient.Indexers.Exists(indexer.Name);
+
+        if (exists)
+        {
+            serviceClient.Indexers.Delete(indexer.Name);
+        }
+
+        serviceClient.Indexers.Create(indexer);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine("Failed to create the indexer\n Exception message: {0}\n", e.Message);
+        ExitProgram("Cannot continue without creating an indexer");
     }
 
-    serviceClient.Indexers.Create(indexer);
+    return indexer;
 }
-catch (Exception e)
-{
-    // Handle exception
-}
+```
+Добавьте в раздел `Main` следующие строки.
+
+```csharp
+    // Create the indexer, map fields, and execute transformations
+    Console.WriteLine("Creating the indexer...");
+    Indexer demoIndexer = CreateDemoIndexer(serviceClient, dataSource, skillset, demoIndex);
 ```
 
 Создание индексатора не займет много времени. Несмотря на то что набор данных невелик, аналитические навыки выполняют интенсивные вычисления. Некоторые навыки, такие как анализ изображений, долго выполняются.
@@ -575,80 +816,67 @@ catch (Exception e)
 
 Когда содержимое будет извлечено, вы можете установить `imageAction` для извлечения текста из изображений, найденных в источнике данных. ```"imageAction"``` с заданной конфигурацией ```"generateNormalizedImages"``` вместе с навыком распознавания текста и навыком объединения текста инструктирует индексатор извлекать текст из изображений (например слово "стоп" из знака остановки движения) и вставлять его как часть поля содержимого. Это относится как к изображениям, встроенным в документы (например, изображение внутри PDF-файлов), так и к изображениям, найденным в источнике данных, например к файлу JPG.
 
-## <a name="check-indexer-status"></a>Проверка состояния индексатора
+<a name="check-indexer-status"></a>
+
+## <a name="4---monitor-indexing"></a>4\. Мониторинг индексирования
 
 После того как индексатор будет определен, он будет выполняться автоматически при отправке запроса. В зависимости от того, какие когнитивные навыки вы определили, индексирование может занять больше времени, чем вы ожидаете. Определить, запущен ли еще индексатор, можно с помощью метода `GetStatus`.
 
 ```csharp
-try
+private static void CheckIndexerOverallStatus(SearchServiceClient serviceClient, Indexer indexer)
 {
-    IndexerExecutionInfo demoIndexerExecutionInfo = serviceClient.Indexers.GetStatus(indexer.Name);
-
-    switch (demoIndexerExecutionInfo.Status)
+    try
     {
-        case IndexerStatus.Error:
-            Console.WriteLine("Indexer has error status");
-            break;
-        case IndexerStatus.Running:
-            Console.WriteLine("Indexer is running");
-            break;
-        case IndexerStatus.Unknown:
-            Console.WriteLine("Indexer status is unknown");
-            break;
-        default:
-            Console.WriteLine("No indexer information");
-            break;
+        IndexerExecutionInfo demoIndexerExecutionInfo = serviceClient.Indexers.GetStatus(indexer.Name);
+
+        switch (demoIndexerExecutionInfo.Status)
+        {
+            case IndexerStatus.Error:
+                ExitProgram("Indexer has error status. Check the Azure Portal to further understand the error.");
+                break;
+            case IndexerStatus.Running:
+                Console.WriteLine("Indexer is running");
+                break;
+            case IndexerStatus.Unknown:
+                Console.WriteLine("Indexer status is unknown");
+                break;
+            default:
+                Console.WriteLine("No indexer information");
+                break;
+        }
     }
-}
-catch (Exception e)
-{
-    // Handle exception
+    catch (Exception e)
+    {
+        Console.WriteLine("Failed to get indexer overall status\n Exception message: {0}\n", e.Message);
+    }
 }
 ```
 
 `IndexerExecutionInfo` представляет текущее состояние и журнал выполнения индексатора.
 
 Предупреждения часто возникают с некоторыми исходными файлами и комбинациями навыков и не всегда указывают на проблему. В этом руководстве предупреждения являются неопасными (например, нет текстовых входных данных из файлов JPEG).
+
+Добавьте в раздел `Main` следующие строки.
+
+```csharp
+    // Check indexer overall status
+    Console.WriteLine("Check the indexer overall status...");
+    CheckIndexerOverallStatus(serviceClient, demoIndexer);
+```
  
-## <a name="query-your-index"></a>Отправка запроса в индекс
+## <a name="5---search"></a>5\. Поиск
 
 По завершении индексации вы можете выполнить запросы, возвращающие содержимое отдельных полей. По умолчанию служба "Когнитивный поиск Azure" возвращает 50 лучших результатов. Примеры данных малы, поэтому параметр по умолчанию работает нормально. Однако при работе с большими наборами данных вам может потребоваться включить параметры в строку запроса, чтобы вернуть больше результатов. Инструкции см. в статье [How to work with search results in Azure Search](search-pagination-page-layout.md) (Работа с результатами поиска в службе "Поиск Azure").
 
 Для проверки запросите индекс для всех полей.
+
+Добавьте в раздел `Main` следующие строки.
 
 ```csharp
 DocumentSearchResult<DemoIndex> results;
 
 ISearchIndexClient indexClientForQueries = CreateSearchIndexClient(configuration);
 
-try
-{
-    results = indexClientForQueries.Documents.Search<DemoIndex>("*");
-}
-catch (Exception e)
-{
-    // Handle exception
-}
-```
-
-`CreateSearchIndexClient` создает экземпляр `SearchIndexClient`, используя значения, которые хранятся в файле конфигурации приложения (appsettings.json). Обратите внимание, что используется ключ API запроса службы поиска, а не ключ администратора.
-
-```csharp
-private static SearchIndexClient CreateSearchIndexClient(IConfigurationRoot configuration)
-{
-   string searchServiceName = configuration["SearchServiceName"];
-   string queryApiKey = configuration["SearchServiceQueryApiKey"];
-
-   SearchIndexClient indexClient = new SearchIndexClient(searchServiceName, "demoindex", new SearchCredentials(queryApiKey));
-   return indexClient;
-}
-```
-
-В результате будет возвращена схема индекса с именем и типом, а также атрибуты каждого поля.
-
-Отправьте второй запрос с `"*"`, чтобы вернуть все содержимое одного поля, например `organizations`.
-
-```csharp
 SearchParameters parameters =
     new SearchParameters
     {
@@ -665,19 +893,63 @@ catch (Exception e)
 }
 ```
 
-Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью `$select`, используя разделенный запятыми список.
+`CreateSearchIndexClient` создает экземпляр `SearchIndexClient`, используя значения, которые хранятся в файле конфигурации приложения (appsettings.json). Обратите внимание, что используется ключ API запросов службы поиска, а не ключ администратора.
+
+```csharp
+private static SearchIndexClient CreateSearchIndexClient(IConfigurationRoot configuration)
+{
+   string searchServiceName = configuration["SearchServiceName"];
+   string queryApiKey = configuration["SearchServiceQueryApiKey"];
+
+   SearchIndexClient indexClient = new SearchIndexClient(searchServiceName, "demoindex", new SearchCredentials(queryApiKey));
+   return indexClient;
+}
+```
+
+Добавьте в раздел `Main` следующий код. Первый запрос try-catch возвращает определение индекса с именем и типом, а также атрибуты каждого поля. Второй — параметризованный запрос, где `Select` указывает, какие поля включать в результаты, например `organizations`. Строка поиска `"*"` возвращает все содержимое одного поля.
+
+```csharp
+//Verify content is returned after indexing is finished
+ISearchIndexClient indexClientForQueries = CreateSearchIndexClient(configuration);
+
+try
+{
+    results = indexClientForQueries.Documents.Search<DemoIndex>("*");
+    Console.WriteLine("First query succeeded with a result count of {0}", results.Results.Count);
+}
+catch (Exception e)
+{
+    Console.WriteLine("First query failed\n Exception message: {0}\n", e.Message);
+}
+
+SearchParameters parameters =
+    new SearchParameters
+    {
+        Select = new[] { "organizations" }
+    };
+
+try
+{
+    results = indexClientForQueries.Documents.Search<DemoIndex>("*", parameters);
+    Console.WriteLine("Second query succeeded with a result count of {0}", results.Results.Count);
+}
+catch (Exception e)
+{
+    Console.WriteLine("Second query failed\n Exception message: {0}\n", e.Message);
+}
+```
+
+Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью свойства [Select](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.searchparameters.select?view=azure-dotnet), используя разделенный запятыми список.
 
 <a name="reset"></a>
 
 ## <a name="reset-and-rerun"></a>Сброс и повторный запуск
 
-На ранних экспериментальных этапах разработки самый практичный подход к итерации проектирования — удалить все объекты из службы "Когнитивный поиск Azure" и восстановить их. Имена ресурсов являются уникальными. Удаление объекта позволяет воссоздать его с использованием того же имени.
+На ранних экспериментальных этапах разработки самый практичный подход к итерации схемы — удалить все объекты из службы "Когнитивный поиск Azure" и восстановить их с помощью кода. Имена ресурсов являются уникальными. Удаление объекта позволяет воссоздать его с использованием того же имени.
 
-В этом руководстве объясняется, как проверить наличие индексаторов и индексов, а также как удалить их, чтобы вы могли повторно выполнить код.
+Пример кода для этого учебника проверяет имеющиеся объекты и удаляет их, чтобы вы могли повторно выполнить код.
 
-Для удаления индексов, индексаторов и наборов навыков вы также можете использовать портал.
-
-По мере оптимизации кода вам может потребоваться уточнить стратегию восстановления. Дополнительные сведения см. в статье [How to rebuild an Azure Search index](search-howto-reindex.md) (Как перестроить индекс для службы "Поиск Azure").
+Для удаления индексов, индексаторов, источников данных и наборов навыков также можно использовать портал.
 
 ## <a name="takeaways"></a>Общие выводы
 
@@ -689,11 +961,13 @@ catch (Exception e)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Самый быстрый способ очистки после завершения работы с учебником — удалить группу ресурсов, содержащую службу "Когнитивный поиск Azure" и службу BLOB-объектов Azure. Предположим, обе службы находятся в одной группе, в этом случае удалите группу ресурсов, чтобы окончательно удалить все ее содержимое, включая службы и любое хранимое содержимое, созданное для этого руководства. На портале имя группы ресурсов находится на странице "Обзор" каждой службы.
+Если вы работаете в своей подписке, после завершения проекта целесообразно удалить созданные ресурсы, которые вам больше не потребуются. Работающие ресурсы могут означать лишние затраты. Можно удалить отдельные ресурсы или удалить группу ресурсов, что позволит удалить весь набор ресурсов.
 
-## <a name="next-steps"></a>Дополнительная информация
+Просматривать ресурсы и управлять ими можно на портале с помощью ссылок "Все ресурсы" или "Группы ресурсов" в области навигации слева.
 
-Настройте или расширьте конвейер, добавив пользовательские навыки. Создание пользовательского навыка и добавление его в набор навыков позволяет вам внедрять анализ текста или изображения, который вы пишете сами.
+## <a name="next-steps"></a>Дальнейшие действия
+
+Теперь, когда вы знакомы со всеми объектами в конвейере обогащения с помощью ИИ, давайте более подробно рассмотрим определения набора навыков и отдельные навыки.
 
 > [!div class="nextstepaction"]
-> [Пример. Создание пользовательского навыка для обогащения искусственного интеллекта](cognitive-search-create-custom-skill-example.md)
+> [Создание набора навыков](cognitive-search-defining-skillset.md)

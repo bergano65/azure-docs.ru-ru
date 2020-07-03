@@ -1,18 +1,17 @@
 ---
 title: Различия в языках запросов журнала Azure Monitor | Документация Майкрософт
 description: Справочная информация о языке запросов Kusto, используемого в Azure Monitor. Статья включает дополнительные элементы, относящиеся к Azure Monitor, а также элементы, которые не поддерживаются в запросах журнала Azure Monitor.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/13/2019
-ms.openlocfilehash: 16a221c0530d65e11589ac272a8e032de0cd3d2b
-ms.sourcegitcommit: 4c3d6c2657ae714f4a042f2c078cf1b0ad20b3a4
+ms.date: 04/01/2020
+ms.openlocfilehash: 265179909c8ae4a6fa630b835bc9993f042d6460
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72933097"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80585698"
 ---
 # <a name="azure-monitor-log-query-language-differences"></a>Различия в языках запросов журнала Azure Monitor
 
@@ -25,24 +24,23 @@ ms.locfileid: "72933097"
 
 ### <a name="statements-not-supported-in-azure-monitor"></a>Инструкции, которые не поддерживаются в Azure Monitor:
 
-* [псевдоним](/azure/kusto/query/aliasstatement);
-* [параметры запроса](/azure/kusto/query/queryparametersstatement).
+* [Псевдоним](/azure/kusto/query/aliasstatement)
+* [Параметры запроса](/azure/kusto/query/queryparametersstatement)
 
 ### <a name="functions-not-supported-in-azure-monitor"></a>Функции, которые не поддерживаются в Azure Monitor:
 
-* [cluster()](/azure/kusto/query/clusterfunction);
-* [cursor_after()](/azure/kusto/query/cursorafterfunction);
-* [cursor_before_or_at()](/azure/kusto/query/cursorbeforeoratfunction);
+* [cluster()](/azure/kusto/query/clusterfunction)
+* [cursor_after()](/azure/kusto/query/cursorafterfunction)
+* [cursor_before_or_at()](/azure/kusto/query/cursorbeforeoratfunction)
 * [cursor_current(), current_cursor()](/azure/kusto/query/cursorcurrent);
-* [database()](/azure/kusto/query/databasefunction);
-* [current_principal()](/azure/kusto/query/current-principalfunction);
-* [extent_id()](/azure/kusto/query/extentidfunction);
-* [extent_tags()](/azure/kusto/query/extenttagsfunction).
+* [database()](/azure/kusto/query/databasefunction)
+* [current_principal()](/azure/kusto/query/current-principalfunction)
+* [extent_id()](/azure/kusto/query/extentidfunction)
+* [extent_tags()](/azure/kusto/query/extenttagsfunction)
 
 ### <a name="operators-not-supported-in-azure-monitor"></a>Операторы, которые не поддерживаются в Azure Monitor:
 
-* [соединение между кластерами](/azure/kusto/query/joincrosscluster);
-* [оператор externaldata](/azure/kusto/query/externaldata-operator).
+* [Соединение между кластерами](/azure/kusto/query/joincrosscluster)
 
 ### <a name="plugins-not-supported-in-azure-monitor"></a>Подключаемые модули, которые не поддерживаются в Azure Monitor:
 
@@ -53,10 +51,10 @@ ms.locfileid: "72933097"
 ## <a name="additional-operators-in-azure-monitor"></a>Дополнительные операторы в Azure Monitor
 Следующие операторы поддерживают конкретные функции Azure Monitor и недоступны вне Azure Monitor.
 
-* [app()](app-expression.md);
-* [workspace()](workspace-expression.md).
+* [приложение ()](app-expression.md)
+* [Рабочая область ()](workspace-expression.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Получите ссылки на различные [ресурсы для написания запросов журнала Azure Monitor](query-language.md).
 - Ознакомьтесь с полной [справочной документацией по языку запросов Kusto](/azure/kusto/query/).

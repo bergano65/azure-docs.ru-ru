@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 07/06/2016
 ms.custom: seodec18
 ms.openlocfilehash: 1295080d0eec7a4e88029cdadd85863f5f40d034
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74689251"
 ---
 # <a name="restore-an-app-in-azure"></a>Восстановление приложения в Azure
@@ -50,7 +50,7 @@ ms.locfileid: "74689251"
    
     Вы также можете выбрать **Существующее приложение** для восстановления резервной копии приложения в другое приложение в той же группе ресурсов. Прежде чем использовать этот параметр, необходимо создать другое приложение в группе ресурсов с конфигурацией базы данных, аналогичной конфигурации базы данных в резервной копии приложения. Вы можете также **создать** приложение для восстановления содержимого.
 
-4. Последовательно выберите **ОК**.
+4. Нажмите кнопку **ОК**.
 
 <a name="StorageAccount"></a>
 
@@ -81,8 +81,8 @@ ms.locfileid: "74689251"
 
 Примеры см. в разделах:
 
-- [Примеры Azure CLI](samples-cli.md)
-- [Примеры сценариев Azure PowerShell](samples-powershell.md)
+- [Примеры для Azure CLI](samples-cli.md)
+- [Примеры Azure PowerShell](samples-powershell.md)
 
 <!-- ## Next Steps
 You can backup and restore App Service apps using REST API. -->

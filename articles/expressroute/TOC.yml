@@ -16,6 +16,12 @@
       href: how-to-routefilter-portal.md
 - name: Основные понятия
   items:
+    - name: Дистанционная работа
+      items:
+        - name: Поддержка дистанционной работы
+          href: ../networking/working-remotely-support.md?toc=%2fazure%2fexpressroute%2ftoc.json
+        - name: Возможности гибридного подключения для удаленных пользователей
+          href: work-remotely-support.md
     - name: Модели подключения
       href: expressroute-connectivity-models.md
     - name: Каналы и пиринг

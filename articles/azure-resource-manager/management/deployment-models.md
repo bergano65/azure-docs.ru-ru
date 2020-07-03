@@ -4,10 +4,10 @@ description: Описывает различия между моделью ра�
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.openlocfilehash: 85691d562f2b58cdced3264de11f3dd29a7ca168
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77064518"
 ---
 # <a name="azure-resource-manager-vs-classic-deployment-understand-deployment-models-and-the-state-of-your-resources"></a>Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов
@@ -145,9 +145,9 @@ Get-AzVM -ResourceGroupName ExampleGroup
 
 **Где можно найти примеры шаблонов диспетчера ресурсов Azure?**
 
-Полный набор начальных шаблонов можно найти в разделе [шаблонов быстрого запуска для Azure Resource Manager](https://azure.microsoft.com/documentation/templates/).
+Полный набор начальных шаблонов можно найти в [Azure Resource Manager шаблонах](https://azure.microsoft.com/documentation/templates/)быстрого запуска.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Команды для развертывания шаблонов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../templates/deploy-powershell.md).
 

@@ -3,7 +3,7 @@ title: Создание базы данных Oracle на виртуальной
 description: Быстрое создание и запуск базы данных Oracle 12c в среде Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: romitgirdhar
+author: BorisB2015
 manager: gwallace
 editor: ''
 tags: azure-resource-manager
@@ -13,19 +13,19 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: rogirdh
-ms.openlocfilehash: 53ffc6dd36dbf8588b5e1eb26b461e22c7445092
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.author: borisb
+ms.openlocfilehash: 77a374a83c178639052e8db6fc85c31e366ac0e6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75747678"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81683642"
 ---
 # <a name="create-an-oracle-database-in-an-azure-vm"></a>Создание базы данных Oracle на виртуальной машине Azure
 
 В этом руководстве объясняется, как с помощью Azure CLI развернуть виртуальную машину Azure, используя [образ из коллекции Oracle Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Oracle.OracleDatabase12102EnterpriseEdition?tab=Overview), чтобы создать базу данных Oracle 12c. После развертывания сервера вы подключитесь к нему по протоколу SSH для настройки базы данных Oracle. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
@@ -35,9 +35,10 @@ ms.locfileid: "75747678"
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
+
 ## <a name="create-virtual-machine"></a>Создание виртуальной машины
 
 Чтобы создать виртуальную машину, выполните команду [az vm create](/cli/azure/vm). 
@@ -56,7 +57,7 @@ az vm create \
 
 После создания виртуальной машины в Azure CLI отображается информация следующего вида. Обратите внимание на значение `publicIpAddress`. Этот адрес используется для доступа к виртуальной машине.
 
-```azurecli
+```output
 {
   "fqdns": "",
   "id": "/subscriptions/{snip}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
@@ -73,7 +74,7 @@ az vm create \
 
 Используйте следующую команду для создания сеанса SSH с виртуальной машиной. Замените IP-адрес общедоступным IP-адресом виртуальной машины (значение `publicIpAddress`).
 
-```bash 
+```bash
 ssh azureuser@<publicIpAddress>
 ```
 
@@ -90,7 +91,7 @@ ssh azureuser@<publicIpAddress>
 
     Выход аналогичен приведенному ниже:
 
-    ```bash
+    ```output
     Copyright (c) 1991, 2014, Oracle.  All rights reserved.
 
     Starting /u01/app/oracle/product/12.1.0/dbhome_1/bin/tnslsnr: please wait...
@@ -142,13 +143,14 @@ ssh azureuser@<publicIpAddress>
 
 3. Задайте переменные Oracle.
 
-Прежде чем подключиться, необходимо задать две переменные среды: *ORACLE_HOME* и *ORACLE_SID*.
+Перед подключением необходимо задать две переменные среды: *ORACLE_HOME* и *ORACLE_SID*.
 
 ```bash
 ORACLE_HOME=/u01/app/oracle/product/12.1.0/dbhome_1; export ORACLE_HOME
 ORACLE_SID=cdb1; export ORACLE_SID
 ```
-При необходимости можно добавить переменные ORACLE_HOME и ORACLE_SID в BASHRC-файл. При этом будут сохранены переменные среды для будущих входов. Убедитесь, что в файл `~/.bashrc` добавлены следующие инструкции, используя любой редактор по своему усмотрению.
+
+При необходимости можно добавить переменные ORACLE_HOME и ORACLE_SID в BASHRC-файл. При этом будут сохранены переменные среды для будущих входов. Убедитесь, что следующие инструкции добавлены в `~/.bashrc` файл с помощью выбранного редактора.
 
 ```bash
 # Add ORACLE_HOME. 
@@ -181,7 +183,7 @@ export ORACLE_SID=cdb1
 
     Выход аналогичен приведенному ниже:
 
-    ```bash
+    ```output
       CON_ID NAME                           OPEN_MODE 
       ----------- ------------------------- ---------- 
       2           PDB$SEED                  READ ONLY 
@@ -202,6 +204,7 @@ export ORACLE_SID=cdb1
 По умолчанию база данных Oracle не запускается автоматически при перезапуске виртуальной машины. Чтобы база данных Oracle запускалась автоматически, войдите с правами привилегированного пользователя. Затем создайте и обновите некоторые системные файлы.
 
 1. Войдите с правами привилегированного пользователя.
+
     ```bash
     sudo su -
     ```
@@ -214,7 +217,7 @@ export ORACLE_SID=cdb1
 
 3.  Создайте файл с именем `/etc/init.d/dbora` и вставьте в него следующее содержимое:
 
-    ```
+    ```bash
     #!/bin/sh
     # chkconfig: 345 99 10
     # Description: Oracle auto start-stop script.
@@ -304,7 +307,7 @@ export ORACLE_SID=cdb1
 
 4.  Подключите EM Express с помощью браузера. Убедитесь, что браузер совместим с EM Express (также необходимо установить Flash). 
 
-    ```
+    ```https
     https://<VM ip address or hostname>:5502/em
     ```
 
@@ -316,11 +319,11 @@ export ORACLE_SID=cdb1
 
 Когда вы завершите изучение первой базы данных Oracle в Azure, вы можете удалить ненужную виртуальную машину, группу ресурсов и все связанные с ней ресурсы с помощью команды [az group delete](/cli/azure/group).
 
-```azurecli-interactive 
+```azurecli-interactive
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте о других [решениях Oracle в Azure](oracle-considerations.md). 
 

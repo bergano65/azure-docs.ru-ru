@@ -9,12 +9,12 @@ ms.topic: conceptual
 author: sdgilley
 ms.author: sgilley
 ms.date: 03/22/2019
-ms.openlocfilehash: 26837337b49d79a26404fd6709b036f6907720f8
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 3f0a92b86a2c18863052249d401e70fa36e17a12
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73838837"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930256"
 ---
 # <a name="ask-a-question-you-can-answer-with-data"></a>Задайте вопрос, на который можно ответить с помощью данных
 ## <a name="video-3-data-science-for-beginners-series"></a>Видео 3. Обработка и анализ данных для начинающих
@@ -31,7 +31,7 @@ ms.locfileid: "73838837"
 *Обработка и анализ данных для начинающих* — это пять коротких видеороликов с основными сведениями об обработке и анализе данных.
 
 * Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
-* Видео 2. [Готовы ли ваши данные к обработке и анализу?](data-science-for-beginners-is-your-data-ready-for-data-science.md) *(4 мин 56 с)*
+* Видео 2. [готовы ли ваши данные](data-science-for-beginners-is-your-data-ready-for-data-science.md) к обработке и анализу данных? *(4 мин 56 с)*
 * Видео 3. Задайте вопрос, на который можно ответить с помощью данных.
 * Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
 * Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
@@ -92,4 +92,4 @@ ms.locfileid: "73838837"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Studio (классическая модель)](create-experiment.md)
-* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)
+* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/overview-what-is-azure-ml)

@@ -8,14 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/12/2019
-ms.openlocfilehash: 128b15bd5b3ba3c3ac891719bf5c3ec8e5137cce
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: b2f533e8bd9199025260aaca9cff587b13adce64
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023520"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81606307"
 ---
 # <a name="source-transformation-in-mapping-data-flow"></a>Преобразование источника в потоке данных сопоставления 
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Преобразование «источник» настраивает источник данных для потока данных. При проектировании потоков данных первым шагом всегда будет настройка преобразования «источник». Чтобы добавить источник, щелкните поле **Добавить источник** на холсте потока данных.
 
@@ -30,7 +32,7 @@ ms.locfileid: "77023520"
 * [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
 * [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
 * [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md#mapping-data-flow-properties) (JSON, Avro, Text, Parquet)
-* [Azure синапсе Analytics](connector-azure-sql-data-warehouse.md#mapping-data-flow-properties)
+* [Azure Synapse Analytics](connector-azure-sql-data-warehouse.md#mapping-data-flow-properties)
 * [База данных SQL Azure](connector-azure-sql-database.md#mapping-data-flow-properties)
 * [Azure CosmosDB](connector-azure-cosmos-db.md#mapping-data-flow-properties)
 
@@ -101,6 +103,6 @@ ms.locfileid: "77023520"
 
 Дополнительные сведения о оптимизации в потоке данных сопоставления см. на [вкладке "оптимизация"](concepts-data-flow-overview.md#optimize).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Начните создавать [Преобразование «Производный столбец](data-flow-derived-column.md) » и [Преобразование «выбор](data-flow-select.md)».

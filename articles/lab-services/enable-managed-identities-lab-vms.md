@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/03/2020
 ms.author: spelluru
 ms.openlocfilehash: 5d70f83babcf53249f581230e72326d99a0533d6
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75692671"
 ---
 # <a name="enable-user-assigned-managed-identities-on-lab-virtual-machines-in-azure-devtest-labs"></a>Включение назначенных пользователем управляемых удостоверений на виртуальных машинах лаборатории в Azure DevTest Labs

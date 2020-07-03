@@ -4,7 +4,7 @@ description: Резервное копирование и восстановле
 services: virtual-machines-linux
 documentationcenter: ''
 author: saghorpa
-manager: gwallace
+manager: juergent
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 046daed4f548d24010c3d3bef177cee8cf24a55e
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 100e1b974e54d8c0065194bc7beb18f458011434
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70098723"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77616864"
 ---
 # <a name="os-backup-and-restore-for-type-ii-skus-of-revision-3-stamps"></a>Резервное копирование и восстановление ОС для номеров SKU типа II для версий 3
 
@@ -99,4 +99,4 @@ EXCLUDE_VG=( vgHANA-data-HC2 vgHANA-data-HC3 vgHANA-log-HC2 vgHANA-log-HC3 vgHAN
 BACKUP_PROG_EXCLUDE=("${BACKUP_PROG_EXCLUDE[@]}" '/media' '/var/tmp/*' '/var/crash' '/hana' '/usr/sap'  ‘/proc’)
 ```
 
-На следующем снимке экрана показано восстановление полной резервной копии. ![Реартулконфигуратион. PNG](media/HowToHLI/OSBackupTypeIISKUs/RearToolConfiguration.PNG)
+На следующем снимке экрана показано восстановление полной резервной копии ![: РЕАРТУЛКОНФИГУРАТИОН. png.](media/HowToHLI/OSBackupTypeIISKUs/RearToolConfiguration.PNG)

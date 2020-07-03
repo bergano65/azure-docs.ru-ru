@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 11/28/2019
-ms.openlocfilehash: add55c29bb93d8dce9ad69bd9850a1db02ea5afe
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: 371c00fd63f7a89f4d50ce130e89f10e2a7a38bd
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687765"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891092"
 ---
 # <a name="fix-an-apache-hive-out-of-memory-error-in-azure-hdinsight"></a>Устранение ошибки нехватки памяти Apache Hive в Azure HDInsight
 
@@ -85,7 +85,7 @@ where (T1.KEY1 = T2.KEY1….
 
 Наша инженерная команда и команда поддержки обнаружили, что одна из проблем, которые приводят к ошибке нехватки памяти, представляет собой [известную проблему, описанную в Apache JIRA](https://issues.apache.org/jira/browse/HIVE-8306).
 
-"When Hive. Auto. Convert. Join. noconditionaltask = true мы проверяем noconditionaltask. size и если сумма размеров таблиц в соединении Map меньше noconditionaltask. размер, который план создает соединение с картой, заключается в том, что вычисления не принимаются с учетом накладных расходов, представленных в разных реализациях HashTable, в качестве результатов, если сумма входных размеров меньше, чем размер noconditionaltask по небольшим запросам, может попасть в память ".
+"When Hive. Auto. Convert. Join. noconditionaltask = true мы проверяем noconditionaltask. size и, если сумма размеров таблиц в соединении Map меньше noconditionaltask. размер, с которым план создавал соединение Map, проблема в том, что при вычислении не учитывается накладные расходы, представленные в разных реализациях HashTable, если сумма размеров входных данных меньше, чем размер noconditionaltask на небольшие запросы, будут возникать простоя".
 
 Для свойства **hive.auto.convert.join.noconditionaltask** в файле hive-site.xml задано значение **true**:
 
@@ -101,7 +101,7 @@ where (T1.KEY1 = T2.KEY1….
 </property>
 ```
 
-Скорее всего, соединение с картой не является причиной ошибки нехватки памяти в куче. Как описано в записи блога [Hadoop Yarn memory settings in HDInsight](https://blogs.msdn.com/b/shanyu/archive/2014/07/31/hadoop-yarn-memory-settings-in-hdinsigh.aspx) (Параметры памяти Hadoop Yarn в HDInsight), при использовании модуля Tez используемое пространство кучи на самом деле принадлежит контейнеру Tez. Описание памяти контейнера Tez см. на рисунке ниже.
+Скорее всего, соединение с картой не является причиной ошибки нехватки памяти в куче. Как описано в записи блога [Hadoop Yarn memory settings in HDInsight](https://docs.microsoft.com/archive/blogs/shanyu/hadoop-yarn-memory-settings-in-hdinsight) (Параметры памяти Hadoop Yarn в HDInsight), при использовании модуля Tez используемое пространство кучи на самом деле принадлежит контейнеру Tez. Описание памяти контейнера Tez см. на рисунке ниже.
 
 ![Схема памяти контейнера Tez: ошибка нехватки памяти Hive](./media/hdinsight-hadoop-hive-out-of-memory-error-oom/hive-out-of-memory-error-oom-tez-container-memory.png)
 

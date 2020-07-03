@@ -2,37 +2,39 @@
 title: Защита зоны DNS и записей — Azure DNS
 description: В этой схеме обучения приступите к защите зон и наборов записей DNS в Microsoft Azure DNS.
 services: dns
-author: rohinkoul
+author: asudbring
 ms.service: dns
 ms.topic: article
-ms.date: 12/4/2018
-ms.author: rohink
-ms.openlocfilehash: 549090f04f4969b00dc1c8ee8d5cc70a50523ca8
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.date: 2/20/2020
+ms.author: allensu
+ms.openlocfilehash: 89a945f146601084795b2e12a721a03a1b96aaea
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983832"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79371483"
 ---
 # <a name="how-to-protect-dns-zones-and-records"></a>Как защитить зоны и записи DNS
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Зоны и записи DNS являются критически важными ресурсами. Удаление зоны DNS или даже одной записи DNS может привести к полному отключению службы.  Поэтому важно, чтобы критически важные зоны и записи DNS были защищены от несанкционированных или случайных изменений.
+Зоны и записи DNS являются критически важными ресурсами. Удаление зоны DNS или отдельной записи DNS может привести к сбою службы. Важно, чтобы зоны и записи DNS были защищены от несанкционированных или случайных изменений.
 
-В этой статье объясняется, как с помощью службы DNS Azure защитить зоны и записи DNS от таких изменений.  Мы применяем две эффективные функции безопасности, предоставляемые Azure Resource Manager: [управление доступом на основе ролей](../role-based-access-control/overview.md) и [блокировки ресурсов](../azure-resource-manager/management/lock-resources.md).
+В этой статье объясняется, как Azure DNS позволяет защищать частные зоны и записи DNS для таких изменений.  Мы применяем две эффективные функции для ценных бумаг, предоставляемые Azure Resource Manager: [Управление доступом на основе ролей](../role-based-access-control/overview.md) и [блокировки ресурсов](../azure-resource-manager/management/lock-resources.md).
 
-## <a name="role-based-access-control"></a>Контроль доступа на основе ролей
+## <a name="role-based-access-control"></a>Управление доступом на основе ролей
 
-Управление доступом на основе ролей (RBAC) Azure обеспечивает точное управление доступом для пользователей, групп и ресурсов Azure. С помощью RBAC вы можете с высокой точностью предоставлять пользователям доступ, необходимый для выполнения поставленных перед ними задач. Дополнительные сведения о том, как RBAC помогает управлять доступом, см. в статье [Начало работы с управлением доступом на портале Azure](../role-based-access-control/overview.md).
+Управление доступом на основе ролей (RBAC) Azure обеспечивает точное управление доступом для пользователей, групп и ресурсов Azure. С помощью RBAC можно предоставить пользователям необходимый уровень доступа. Дополнительные сведения о том, как RBAC помогает управлять доступом, см. в статье [Начало работы с управлением доступом на портале Azure](../role-based-access-control/overview.md).
 
 ### <a name="the-dns-zone-contributor-role"></a>Роль "Участник зоны DNS"
 
-Встроенная роль "Участник зоны DNS" предоставляется в Azure для управления ресурсами DNS.  Назначение пользователю или группе разрешений участника зоны DNS дает возможность этой группе управлять ресурсами DNS, но не позволяет управлять ресурсами других типов.
+Роль участника зоны DNS — это встроенная роль для управления частными ресурсами DNS. Эта роль, примененная к пользователю или группе, позволяет им управлять ресурсами DNS.
 
-Предположим, например, что группа ресурсов *myzones* содержит пять зон для компании Contoso Corporation. Если предоставить администратору DNS разрешения "Участник зоны DNS" для этой группы ресурсов, то он получит полный контроль над этими зонами DNS. Это также позволяет избежать предоставления ненужных разрешений. Например, администратор DNS не сможет создавать или останавливать виртуальные машины.
+Группа ресурсов *myResourceGroup* содержит пять зон для Contoso Corporation. Если предоставить администратору DNS разрешения "Участник зоны DNS" для этой группы ресурсов, то он получит полный контроль над этими зонами DNS. Это позволяет избежать предоставления ненужных разрешений. Администратор DNS не может создавать или прекращать работу виртуальных машин.
 
-Самый простой способ назначения разрешений RBAC — [через портал Azure](../role-based-access-control/role-assignments-portal.md).  Откройте колонку **Управление доступом (IAM)** для группы ресурсов, затем щелкните **Добавить**, выберите роль **Участник зоны DNS** и выберите пользователей или группы, которым будут предоставлены эти разрешения.
+Самый простой способ назначения разрешений RBAC — [через портал Azure](../role-based-access-control/role-assignments-portal.md).  
+
+Откройте **элемент управления доступом (IAM)** для группы ресурсов, затем выберите **Добавить**, а затем роль **участник зоны DNS** . Выберите необходимых пользователей или группы для предоставления разрешений.
 
 ![Назначение разрешений RBAC на уровне группы ресурсов через портал Azure](./media/dns-protect-zones-recordsets/rbac1.png)
 
@@ -40,23 +42,32 @@ ms.locfileid: "76983832"
 
 ```azurepowershell
 # Grant 'DNS Zone Contributor' permissions to all zones in a resource group
-New-AzRoleAssignment -SignInName "<user email address>" -RoleDefinitionName "DNS Zone Contributor" -ResourceGroupName "<resource group name>"
+
+$usr = "<user email address>"
+$rol = "DNS Zone Contributor"
+$rsg = "<resource group name>"
+
+New-AzRoleAssignment -SignInName $usr -RoleDefinitionName $rol -ResourceGroupName $rsg
 ```
 
 Аналогичную команду также [можно выполнить через интерфейс командной строки Azure](../role-based-access-control/role-assignments-cli.md):
 
 ```azurecli
 # Grant 'DNS Zone Contributor' permissions to all zones in a resource group
-azure role assignment create --signInName "<user email address>" --roleName "DNS Zone Contributor" --resourceGroup "<resource group name>"
+
+az role assignment create \
+--assignee "<user email address>" \
+--role "DNS Zone Contributor" \
+--resource-group "<resource group name>"
 ```
 
 ### <a name="zone-level-rbac"></a>RBAC на уровне зоны
 
-Правила RBAC Azure могут применяться к подписке, группе ресурсов или к отдельному ресурсу. В случае службы DNS Azure таким ресурсом может быть отдельная зона DNS или даже отдельный набор записей.
+Правила RBAC Azure могут применяться к подписке, группе ресурсов или к отдельному ресурсу. Этот ресурс может быть отдельной зоной DNS или отдельным набором записей.
 
-Предположим, например, что группа ресурсов *myzones* содержит зону *contoso.com* и подзону *customers.contoso.com*, в которой для каждой учетной записи клиента созданы записи CNAME.  Учетной записи, используемой для управления этими записями CNAME, необходимо назначить разрешения на создание записей только в зоне *customers.contoso.com*. Она не должна иметь доступ к другим зонам.
+Например, Группа ресурсов *myResourceGroup* содержит зону *contoso.com* и подзону *Customers.contoso.com*. Записи CNAME создаются для каждой учетной записи клиента. Учетной записи администратора, используемой для управления записями CNAME, присваиваются разрешения на создание записей в зоне *Customers.contoso.com* . Учетная запись может управлять только *Customers.contoso.com* .
 
-Разрешения RBAC на уровне зоны можно предоставлять через портал Azure.  Откройте колонку **Управление доступом (IAM)** для зоны, затем щелкните **Добавить**, выберите роль **Участник зоны DNS** и выберите пользователей или группы, которым будут предоставлены эти разрешения.
+Разрешения RBAC на уровне зоны можно предоставлять через портал Azure.  Откройте **элемент управления доступом (IAM)** для зоны, выберите **Добавить**, а затем роль **участника зоны DNS** и выберите пользователей или группы, которым требуется предоставить разрешения.
 
 ![Назначение разрешений RBAC на уровне зоны DNS через портал Azure](./media/dns-protect-zones-recordsets/rbac2.png)
 
@@ -64,21 +75,32 @@ azure role assignment create --signInName "<user email address>" --roleName "DNS
 
 ```azurepowershell
 # Grant 'DNS Zone Contributor' permissions to a specific zone
-New-AzRoleAssignment -SignInName "<user email address>" -RoleDefinitionName "DNS Zone Contributor" -ResourceGroupName "<resource group name>" -ResourceName "<zone name>" -ResourceType Microsoft.Network/DNSZones
+
+$usr = "<user email address>"
+$rol = "DNS Zone Contributor"
+$rsg = "<resource group name>"
+$zon = "<zone name>"
+$typ = "Microsoft.Network/DNSZones"
+
+New-AzRoleAssignment -SignInName $usr -RoleDefinitionName $rol -ResourceGroupName $rsg -ResourceName $zon -ResourceType $typ
 ```
 
 Аналогичную команду также [можно выполнить через интерфейс командной строки Azure](../role-based-access-control/role-assignments-cli.md):
 
 ```azurecli
 # Grant 'DNS Zone Contributor' permissions to a specific zone
-azure role assignment create --signInName <user email address> --roleName "DNS Zone Contributor" --resource-name <zone name> --resource-type Microsoft.Network/DNSZones --resource-group <resource group name>
+
+az role assignment create \
+--assignee <user email address> \
+--role "DNS Zone Contributor" \
+--scope "/subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/Microsoft.Network/DnsZones/<zone name>/"
 ```
 
 ### <a name="record-set-level-rbac"></a>RBAC на уровне набора записей
 
-Мы можем пойти еще дальше. Давайте рассмотрим пример с администратором почтового сервера в Contoso Corporation, которому требуется доступ к записям MX и TXT на вершине зоны contoso.com.  Ему не нужен доступ к другим записям MX и TXT или к записям любого другого типа.  Служба DNS Azure позволяет назначить разрешения на уровне набора записей, именно к тем записям, к которым администратору почтового сервера требуется доступ.  Администратор почтового сервера получает именно тот уровень контроля, который ему необходим, и не может вносить другие изменения.
+Разрешения применяются на уровне набора записей.  Пользователю предоставляется доступ к записям, которые им нужны, и не могут вносить какие-либо другие изменения.
 
-Разрешения RBAC на уровне набора записей можно настроить через портал Azure с помощью кнопки **Пользователи** в колонке набора записей:
+Разрешения RBAC на уровне набора записей можно настроить с помощью портал Azure, используя кнопку **управления доступом (IAM)** на странице "набор записей":
 
 ![Назначение разрешений RBAC на уровне набора записей через портал Azure](./media/dns-protect-zones-recordsets/rbac3.png)
 
@@ -86,21 +108,31 @@ azure role assignment create --signInName <user email address> --roleName "DNS Z
 
 ```azurepowershell
 # Grant permissions to a specific record set
-New-AzRoleAssignment -SignInName "<user email address>" -RoleDefinitionName "DNS Zone Contributor" -Scope "/subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/Microsoft.Network/dnszones/<zone name>/<record type>/<record name>"
+
+$usr = "<user email address>"
+$rol = "DNS Zone Contributor"
+$sco = 
+"/subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/Microsoft.Network/dnszones/<zone name>/<record type>/<record name>"
+
+New-AzRoleAssignment -SignInName $usr -RoleDefinitionName $rol -Scope $sco
 ```
 
 Аналогичную команду также [можно выполнить через интерфейс командной строки Azure](../role-based-access-control/role-assignments-cli.md):
 
 ```azurecli
 # Grant permissions to a specific record set
-azure role assignment create --signInName "<user email address>" --roleName "DNS Zone Contributor" --scope "/subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/Microsoft.Network/dnszones/<zone name>/<record type>/<record name>"
+
+az role assignment create \
+--assignee "<user email address>" \
+--role "DNS Zone Contributor" \
+--scope "/subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/Microsoft.Network/dnszones/<zone name>/<record type>/<record name>"
 ```
 
 ### <a name="custom-roles"></a>Пользовательские роли
 
-Встроенная роль "Участник зоны DNS" разрешает полный контроль над ресурсом DNS. Можно также создавать собственные пользовательские роли Azure, чтобы обеспечить более детализированный контроль.
+Встроенная роль "Участник зоны DNS" разрешает полный контроль над ресурсом DNS. Можно создать собственные пользовательские роли Azure, чтобы обеспечить детальный контроль.
 
-Давайте вернемся к примеру, где в зоне *customers.contoso.com* для каждой учетной записи клиента Contoso Corporation создана запись CNAME.  Учетной записи, используемой для управления этими записями CNAME, необходимо предоставить разрешение на управление только записями CNAME.  В этом случае она не сможет изменять записи других типов (такие как записи MX) или выполнять операции на уровне зоны, такие как удаление зоны.
+Учетной записи, используемой для управления CNAME, предоставляется разрешение на управление только записями CNAME. Учетная запись не может изменять записи других типов. Учетная запись не может выполнять операции на уровне зоны, такие как удаление зоны.
 
 В следующем примере показано определение пользовательской роли для управления только записями CNAME:
 
@@ -123,7 +155,7 @@ azure role assignment create --signInName "<user email address>" --roleName "DNS
     "NotActions": [
     ],
     "AssignableScopes": [
-        "/subscriptions/ c276fc76-9cd4-44c9-99a7-4fd71546436e"
+        "/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e"
     ]
 }
 ```
@@ -138,7 +170,7 @@ azure role assignment create --signInName "<user email address>" --roleName "DNS
 > [!NOTE]
 > Применение пользовательской роли RBAC для предотвращения удаления наборов записей, разрешая при этом их обновление, не является эффективным. Наборы записей нельзя удалить, но ничто не препятствует их изменению.  К разрешенным изменениям относятся добавление и удаление записей из набора записей, включая удаление всех записей (при этом остается "пустой" набор записей). Это действует так же, как удаление набора записей с точки зрения разрешения DNS.
 
-В настоящее время определения пользовательских ролей не определяются через портал Azure. Пользовательскую роль на основе этого определения роли можно создать с помощью Azure PowerShell:
+В настоящее время невозможно определить пользовательские определения ролей с помощью портал Azure. Пользовательскую роль на основе этого определения роли можно создать с помощью Azure PowerShell:
 
 ```azurepowershell
 # Create new role definition based on input file
@@ -149,7 +181,7 @@ New-AzRoleDefinition -InputFile <file path>
 
 ```azurecli
 # Create new role definition based on input file
-azure role create -inputfile <file path>
+az role create -inputfile <file path>
 ```
 
 Затем роль можно назначить таким же образом, как и встроенные роли. Этот процесс описан ранее в этой статье.
@@ -158,26 +190,45 @@ azure role create -inputfile <file path>
 
 ## <a name="resource-locks"></a>Блокировки ресурсов
 
-Помимо функции RBAC Azure Resource Manager поддерживает и другой тип защиты — возможность "блокировать" ресурсы. Если правила RBAC позволяют контролировать действия определенных пользователей и групп, то блокировки ресурсов применяются к конкретному ресурсу и действуют для всех пользователей и ролей. Дополнительные сведения см. в статье [Блокировка ресурсов с помощью диспетчера ресурсов Azure](../azure-resource-manager/management/lock-resources.md).
+Azure Resource Manager поддерживает другой тип управления безопасностью, возможность блокировки ресурсов. Блокировки ресурсов применяются к ресурсу и действуют для всех пользователей и ролей. Дополнительные сведения см. [в разделе Блокировка ресурсов с помощью Azure Resource Manager](../azure-resource-manager/management/lock-resources.md).
 
-Существует два типа блокировки ресурсов: **CanNotDelete** и **ReadOnly**. Они могут применяться к зоне DNS или к отдельному набору записей.  Следующие разделы описывают несколько распространенных сценариев и способы их поддержки с помощью блокировок ресурсов.
+Существует два типа блокировки ресурсов: **CanNotDelete** и **ReadOnly**. Эти типы блокировки можно применять либо к Частная зона DNSной зоне, либо к отдельному набору записей. Следующие разделы описывают несколько распространенных сценариев и способы их поддержки с помощью блокировок ресурсов.
 
 ### <a name="protecting-against-all-changes"></a>Защита от любых изменений
 
-Чтобы предотвратить внесение каких-либо изменений, примените к зоне блокировку ReadOnly.  Эта блокировка не позволит создавать наборы записей, а также изменять или удалять существующие наборы.
+Чтобы предотвратить внесенные изменения, примените к зоне блокировку только для чтения. Эта блокировка предотвращает создание новых наборов записей и изменение или удаление существующих наборов записей.
 
 Блокировки ресурсов на уровне зоны можно создавать через портал Azure.  На странице зоны DNS выберите **Блокировки**, затем щелкните **+ Добавить**:
 
 ![Блокировка ресурсов на уровне зоны через портал Azure](./media/dns-protect-zones-recordsets/locks1.png)
 
-Блокировки ресурсов на уровне зоны также можно создать с помощью Azure PowerShell:
+Блокировки ресурсов на уровне зоны также можно создавать с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcelock?view=latest):
 
 ```azurepowershell
 # Lock a DNS zone
-New-AzResourceLock -LockLevel <lock level> -LockName <lock name> -ResourceName <zone name> -ResourceType Microsoft.Network/DNSZones -ResourceGroupName <resource group name>
+
+$lvl = "<lock level>"
+$lnm = "<lock name>"
+$rsc = "<zone name>"
+$rty = "Microsoft.Network/DNSZones"
+$rsg = "<resource group name>"
+
+New-AzResourceLock -LockLevel $lvl -LockName $lnm -ResourceName $rsc -ResourceType $rty -ResourceGroupName $rsg
 ```
 
-В настоящее время настройка блокировки ресурсов Azure с помощью интерфейса командной строки Azure не поддерживается.
+Аналогичную команду также [можно выполнить через интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/lock?view=azure-cli-latest#az-lock-create):
+
+```azurecli
+# Lock a DNS zone
+
+az lock create \
+--lock-type "<lock level>" \
+--name "<lock name>" \
+--resource-name "<zone name>" \
+--namespace "Microsoft.Network" \
+--resource-type "DnsZones" \
+--resource-group "<resource group name>"
+```
 
 ### <a name="protecting-individual-records"></a>Защита отдельных записей
 
@@ -186,35 +237,54 @@ New-AzResourceLock -LockLevel <lock level> -LockName <lock name> -ResourceName <
 > [!NOTE]
 > Применение к набору записей блокировки CanNotDelete (Запрет удаления) не является эффективным. Набор записей нельзя удалить, но ничто не препятствует его изменению.  К разрешенным изменениям относятся добавление и удаление записей из набора записей, включая удаление всех записей (при этом остается "пустой" набор записей). Это действует так же, как удаление набора записей с точки зрения разрешения DNS.
 
-В настоящее время блокировки ресурсов на уровне наборов записей можно настраивать только с помощью Azure PowerShell.  Эта возможность пока не предоставляется через портал Azure или интерфейс командной строки Azure.
+В настоящее время блокировки ресурсов на уровне наборов записей можно настраивать только с помощью Azure PowerShell.  Они не поддерживаются в портал Azure или Azure CLI.
 
 ```azurepowershell
 # Lock a DNS record set
-New-AzResourceLock -LockLevel <lock level> -LockName "<lock name>" -ResourceName "<zone name>/<record set name>" -ResourceType "Microsoft.Network/DNSZones/<record type>" -ResourceGroupName "<resource group name>"
+
+$lvl = "<lock level>"
+$lnm = "<lock name>"
+$rsc = "<zone name>/<record set name>"
+$rty = "Microsoft.Network/DNSZones/<record type>"
+$rsg = "<resource group name>"
+
+New-AzResourceLock -LockLevel $lvl -LockName $lnm -ResourceName $rsc -ResourceType $rty -ResourceGroupName $rsg
 ```
 
 ### <a name="protecting-against-zone-deletion"></a>Защита зоны от удаления
 
-При удалении зоны в службе DNS Azure все наборы записей в этой зоне также удаляются.  Отменить эту операцию невозможно.  Случайное удаление критически важной зоны может оказать серьезное влияние на коммерческую деятельность.  Поэтому очень важно защитить зоны от случайного удаления.
+При удалении зоны в Azure DNS все наборы записей в зоне удаляются.  Эта операция не может быть отменена. Случайное удаление критически важной зоны может оказать серьезное влияние на коммерческую деятельность.  Важно защититься от случайного удаления зоны.
 
-Применение блокировки CanNotDelete (Запрет удаления) предотвращает удаление зоны.  Однако, поскольку блокировки наследуются дочерними ресурсами, это действие также предотвращает удаление всех наборов записей, находящихся в этой зоне, что может быть нежелательно.  Более того, как уже говорилось ранее в примечании, это неэффективно, так как записи по-прежнему могут удаляться из существующих наборов записей.
+Применение блокировки CanNotDelete (Запрет удаления) предотвращает удаление зоны. Блокировки наследуются дочерними ресурсами. Блокировка предотвращает удаление наборов записей в зоне. Как описано в заметке выше, это неэффективно, так как записи по-прежнему могут быть удалены из существующих наборов записей.
 
-Альтернативным решением может быть применение блокировки CanNotDelete (Запрет удаления) к набору записей в зоне, например к набору записей типа SOA.  Так как зону нельзя удалить, не удалив также наборы записей, это обеспечивает защиту зоны от удаления, при этом наборы записей в зоне по-прежнему можно свободно изменять. При попытке удалить зону Azure Resource Manager определяет, что это действие также удалит набор записей типа SOA, и блокирует вызов, так как набор SOA заблокирован.  Наборы записей не будут удалены.
+В качестве альтернативы примените блокировку CanNotDelete к набору записей в зоне, например к набору записей SOA. Зона не удаляется, и наборы записей также не удаляются. Эта блокировка защищает от удаления зоны, а также позволяет свободно изменять наборы записей в зоне. При попытке удалить зону Azure Resource Manager обнаруживает это удаление. Удаление также приведет к удалению набора записей SOA, Azure Resource Manager блокирует вызов, так как SOA заблокирован.  Наборы записей не будут удалены.
 
 Следующая команда PowerShell создает блокировку CanNotDelete (Запрет удаления) для записи типа SOA в указанной зоне:
 
 ```azurepowershell
 # Protect against zone delete with CanNotDelete lock on the record set
-New-AzResourceLock -LockLevel CanNotDelete -LockName "<lock name>" -ResourceName "<zone name>/@" -ResourceType "Microsoft.Network/DNSZones/SOA" -ResourceGroupName "<resource group name>"
+
+$lvl = "CanNotDelete"
+$lnm = "<lock name>"
+$rsc = "<zone name>/@"
+$rty = "Microsoft.Network/DNSZones/SOA"
+$rsg = "<resource group name>"
+
+New-AzResourceLock -LockLevel $lvl -LockName $lnm -ResourceName $rsc -ResourceType $rty -ResourceGroupName $rsg
 ```
 
-Другой способ предотвратить случайное удаление зоны — настроить пользовательскую роль, благодаря чему в учетных записях оператора и службы, используемых для управления зонами, не будет разрешений на удаление зоны. Если вам понадобится удалить зону, можно применить двухэтапное удаление. Сначала нужно предоставить разрешения на удаление зоны (в области зоны, чтобы предотвратить удаление не той зоны), после чего ее можно будет удалить.
+Другим вариантом предотвращения случайного удаления зоны является использование настраиваемой роли. Эта роль гарантирует, что учетные записи, используемые для управления зонами, не имеют разрешений на удаление зоны. 
 
-Преимущество этого подхода заключается в том, что он работает для всех зон, к которым у этих учетных записей есть доступ, и при этом не нужно создавать блокировки. Но у него также есть недостаток, заключающийся в том, что пользователи учетных записей с разрешениями на удаление зоны, например владелец подписки, по-прежнему могут случайно удалить критическую зону.
+При необходимости удаления зоны можно выполнить два шага удаления:
 
-Оба подхода — блокировки ресурсов и пользовательские роли — можно использовать одновременно в качестве эшелонированного подхода к защите зоны DNS.
+ - Сначала предоставьте разрешения на удаление зоны
+ - Во вторых, предоставьте разрешения на удаление зоны.
 
-## <a name="next-steps"></a>Дальнейшие действия
+Настраиваемая роль работает для всех зон, к которым обращаются эти учетные записи. Учетные записи с разрешениями на удаление зоны, такие как владелец подписки, по-прежнему могут случайно удалить зону.
+
+В то же время можно одновременно использовать как блокировки ресурсов, так и пользовательские роли в качестве подхода к защите зоны DNS.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о работе с RBAC см. в статье [Начало работы с управлением доступом на портале Azure](../role-based-access-control/overview.md).
 * Дополнительные сведения о работе с блокировками ресурсов см. в статье [Блокировка ресурсов с помощью диспетчера ресурсов Azure](../azure-resource-manager/management/lock-resources.md).

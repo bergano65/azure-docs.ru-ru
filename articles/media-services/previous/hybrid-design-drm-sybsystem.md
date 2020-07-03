@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: willzhan
 ms.reviewer: juliako
-ms.openlocfilehash: d2f4ddfbff791fbfeb2eb006a628c0fdeb4fdce1
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: 44095cb85c62fd40032263d96ad678bdeb5effc0
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975199"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82159409"
 ---
 # <a name="hybrid-design-of-drm-subsystems"></a>Гибридный дизайн подсистем DRM 
 
 Здесь рассматривается гибридная структура подсистем управления цифровыми правами (DRM) с использованием служб мультимедиа Azure.
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Службы мультимедиа Azure поддерживают три следующие системы DRM:
 
@@ -93,53 +93,53 @@ ms.locfileid: "74975199"
 
 ## <a name="scenarios-and-samples"></a>Сценарии и примеры
 
-Как описано в предыдущем разделе, в следующих пяти гибридных сценариях используются соответствующие сочетания конфигураций **ключа содержимого** -**политики доставки ресурсов** (примеры указаны в последнем столбце таблицы):
+В соответствии с объяснениями, приведенными в предыдущем разделе, в следующих пяти гибридных сценариях используются соответствующие комбинации конфигурации-**политики доставки ресурса** **ключа содержимого**(примеры, упомянутые в последнем столбце, следуют таблице):
 
-|**Размещение содержимого и источник**|**Шифрование DRM**|**Доставка лицензий DRM**|**Настройка ключа содержимого**|**Настройка политики доставки для ресурса-контейнера**|**Пример**|
+|**Размещение содержимого и источник**|**Шифрование DRM**|**Доставка лицензий DRM**|**Настройка ключа содержимого**|**Настройка политики доставки ресурсов**|**Пример**|
 |---|---|---|---|---|---|
-|AMS|AMS|AMS|ДА|ДА|Пример 1|
-|AMS|AMS|Сторонний производитель|ДА|ДА|Пример 2|
-|AMS|Сторонний производитель|AMS|ДА|Нет|Пример 3|
+|AMS|AMS|AMS|Да|Да|Пример 1|
+|AMS|AMS|Сторонний производитель|Да|Да|Пример 2|
+|AMS|Сторонний производитель|AMS|Да|Нет|Пример 3|
 |AMS|Сторонний производитель|Внешняя|Нет|Нет|Пример 4|
-|Сторонний производитель|Сторонний производитель|AMS|ДА|Нет|    
+|Сторонний производитель|Сторонний производитель|AMS|Да|Нет|    
 
 В примерах защита PlayReady работает как для DASH, так и для Smooth Streaming. Ниже приведены URL-адреса видео, которые являются URL-адресами Smooth Streaming. Чтобы получить соответствующие URL-адреса DASH, просто добавьте "(format=mpd-time-csf)". Для проверки в браузере можно использовать [проигрыватель для тестирования мультимедиа Azure](https://aka.ms/amtest). Он позволяет настроить протокол потоковой передачи для использования с каждой технологией. Internet Explorer 11 и Microsoft Edge в Windows 10 поддерживают PlayReady через EME. Дополнительные сведения см. в записи блога [Azure Media Test Tool](https://blogs.msdn.microsoft.com/playready4/2016/02/28/azure-media-test-tool/) (Средство для тестирования мультимедиа Azure).
 
 ### <a name="sample-1"></a>Пример 1
 
-* URL-адрес источника (базовый): https://willzhanmswest.streaming.mediaservices.windows.net/1efbd6bb-1e66-4e53-88c3-f7e5657a9bbd/RussianWaltz.ism/manifest 
-* URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/ 
-* URL-адрес для приобретения лицензии Widevine (DASH): https://willzhanmswest.keydelivery.mediaservices.windows.net/Widevine/?kid=78de73ae-6d0f-470a-8f13-5c91f7c4 
-* URL-адрес для приобретения лицензии FairPlay (HLS): https://willzhanmswest.keydelivery.mediaservices.windows.net/FairPlay/?kid=ba7e8fb0-ee22-4291-9654-6222ac611bd8 
+* URL-адрес источника (базовый): `https://willzhanmswest.streaming.mediaservices.windows.net/1efbd6bb-1e66-4e53-88c3-f7e5657a9bbd/RussianWaltz.ism/manifest` 
+* URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): `https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/` 
+* URL-адрес для приобретения лицензии Widevine (DASH): `https://willzhanmswest.keydelivery.mediaservices.windows.net/Widevine/?kid=78de73ae-6d0f-470a-8f13-5c91f7c4` 
+* URL-адрес для приобретения лицензии FairPlay (HLS): `https://willzhanmswest.keydelivery.mediaservices.windows.net/FairPlay/?kid=ba7e8fb0-ee22-4291-9654-6222ac611bd8` 
 
 ### <a name="sample-2"></a>Пример 2
 
 * URL-адрес источника (базовый): https://willzhanmswest.streaming.mediaservices.windows.net/1a670626-4515-49ee-9e7f-cd50853e41d8/Microsoft_HoloLens_TransformYourWorld_816p23.ism/Manifest 
-* URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): http://willzhan12.cloudapp.net/PlayReady/RightsManager.asmx 
+* URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): `http://willzhan12.cloudapp.net/PlayReady/RightsManager.asmx` 
 
 ### <a name="sample-3"></a>Пример 3
 
 * URL-адрес источника: https://willzhanmswest.streaming.mediaservices.windows.net/8d078cf8-d621-406c-84ca-88e6b9454acc/20150807-bridges-2500.ism/manifest 
-* URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/ 
+* URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): `https://willzhanmswest.keydelivery.mediaservices.windows.net/PlayReady/` 
 
 ### <a name="sample-4"></a>Пример 4
 
 * URL-адрес источника: https://willzhanmswest.streaming.mediaservices.windows.net/7c085a59-ae9a-411e-842c-ef10f96c3f89/20150807-bridges-2500.ism/manifest 
-* URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): https://willzhan12.cloudapp.net/playready/rightsmanager.asmx 
+* URL-адрес для приобретения лицензии PlayReady (DASH и Smooth Streaming): `https://willzhan12.cloudapp.net/playready/rightsmanager.asmx` 
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="summary"></a>Резюме
+## <a name="summary"></a>Сводка
 
 Таким образом, компоненты DRM служб мультимедиа Azure являются гибкими. Их можно использовать в гибридных сценариях при правильной настройке ключа содержимого и политики доставки ресурсов, как описано в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

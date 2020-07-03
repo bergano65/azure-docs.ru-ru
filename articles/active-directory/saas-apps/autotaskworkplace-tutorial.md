@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Autotask Workplace | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Autotask Workplace | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Autotask Workplace.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 97a68fd74449ea34438348cbc4c9d09c06d46d71
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157807"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-autotask-workplace"></a>Руководство. Интеграция Azure Active Directory с Autotask Workplace
+# <a name="tutorial-azure-active-directory-integration-with-autotask-workplace"></a>Руководство по интеграции Azure Active Directory с Autotask Workplace
 
 В этом руководстве описано, как интегрировать Autotask Workplace с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Autotask Workplace обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73157807"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Autotask Workplace, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Autotask Workplace с поддержкой единого входа;
 * подписка Autotask Workplace с поддержкой единого входа;
 * права администратора или суперадминистратора в рабочей области;
@@ -110,9 +110,9 @@ ms.locfileid: "73157807"
 
     ![Сведения о домене и URL-адресах приложения Autotask Workplace](common/idp-intiated.png)
 
-    а) В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.awp.autotask.net/singlesignon/saml/metadata`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<subdomain>.awp.autotask.net/singlesignon/saml/metadata`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.awp.autotask.net/singlesignon/saml/SSO`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.awp.autotask.net/singlesignon/saml/SSO`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -131,11 +131,11 @@ ms.locfileid: "73157807"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-autotask-workplace-single-sign-on"></a>Настройка единого входа для Autotask Workplace
 
@@ -148,15 +148,15 @@ ms.locfileid: "73157807"
 
     ![Конфигурация единого входа в Autotask](./media/autotaskworkplace-tutorial/tutorial_autotaskssoconfig1.png)
 
-    а) Выберите **XML Metadata File** (XML-файл метаданных), а затем отправьте **XML-файл метаданных федерации**, скачанный на портале Azure.
+    а. Выберите **XML Metadata File** (XML-файл метаданных), а затем отправьте **XML-файл метаданных федерации**, скачанный на портале Azure.
 
-    б) Нажмите кнопку **ENABLE SSO** (Включить единый вход).
+    b. Нажмите кнопку **ENABLE SSO** (Включить единый вход).
 
     ![Подтверждение конфигурации единого входа в Autotask](./media/autotaskworkplace-tutorial/tutorial_autotaskssoconfig2.png)
 
-    в) Установите флажок **I confirm this information is correct and I trust this IdP** (Я подтверждаю эти сведения и доверяю этому поставщику удостоверений).
+    c. Установите флажок **I confirm this information is correct and I trust this IdP** (Я подтверждаю эти сведения и доверяю этому поставщику удостоверений).
 
-    г) Нажмите кнопку **Утвердить**.
+    d. Нажмите кнопку **Утвердить**.
 
 > [!Note]
 > Если вам требуется помощь по настройке Autotask Workplace и учетной записи Workplace, см. [эту страницу](https://awp.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm).

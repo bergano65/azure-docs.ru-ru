@@ -9,18 +9,18 @@ ms.date: 12/13/2019
 ms.author: jingwang
 ms.custom: include file
 ms.openlocfilehash: fb44f217b7a940bc07a164e482b67ddb53835715
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75440474"
 ---
 | Категория | Хранилище данных |
 |:--- |:--- |
 | **Azure** |[Хранилище BLOB-объектов Azure](../articles/data-factory/connector-azure-blob-storage.md) |
-| &nbsp; |[Azure Cosmos DB (SQL API)](../articles/data-factory/connector-azure-cosmos-db.md) |
-| &nbsp; |[Обозреватель данных Azure](../articles/data-factory/connector-azure-data-explorer.md) |
-| &nbsp; |[Хранилище Azure Data Lake Gen1](../articles/data-factory/connector-azure-data-lake-store.md) |
+| &nbsp; |[Azure Cosmos DB (API SQL)](../articles/data-factory/connector-azure-cosmos-db.md) |
+| &nbsp; |[Azure Data Explorer](../articles/data-factory/connector-azure-data-explorer.md) |
+| &nbsp; |[Хранилище Azure Data Lake Storage 1-го поколения](../articles/data-factory/connector-azure-data-lake-store.md) |
 | &nbsp; |[Azure Data Lake Storage 2-го поколения](../articles/data-factory/connector-azure-data-lake-storage.md) |
 | &nbsp; |[База данных Azure для MariaDB](../articles/data-factory/connector-azure-database-for-mariadb.md) |
 | &nbsp; |[База данных Azure для MySQL](../articles/data-factory/connector-azure-database-for-mysql.md) |
@@ -28,11 +28,11 @@ ms.locfileid: "75440474"
 | &nbsp; |[Файлы Azure](../articles/data-factory/connector-azure-file-storage.md) |
 | &nbsp; |[База данных SQL Azure](../articles/data-factory/connector-azure-sql-database.md) |
 | &nbsp; |[Управляемый экземпляр Базы данных SQL Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) |
-| &nbsp; |[Azure синапсе Analytics (ранее — хранилище данных SQL)](../articles/data-factory/connector-azure-sql-data-warehouse.md) |
+| &nbsp; |[Azure Synapse Analytics (прежнее название — Хранилище данных SQL)](../articles/data-factory/connector-azure-sql-data-warehouse.md) |
 | &nbsp; |[Хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) |
 | **База данных** |[Amazon Redshift](../articles/data-factory/connector-amazon-redshift.md) |
 | &nbsp; |[DB2](../articles/data-factory/connector-db2.md) |
-| &nbsp; |[Drill](../articles/data-factory/connector-drill.md). |
+| &nbsp; |[Drill](../articles/data-factory/connector-drill.md) |
 | &nbsp; |[Google BigQuery](../articles/data-factory/connector-google-bigquery.md) |
 | &nbsp; |[Greenplum](../articles/data-factory/connector-greenplum.md) |
 | &nbsp; |[HBase](../articles/data-factory/connector-hbase.md) |
@@ -61,21 +61,21 @@ ms.locfileid: "75440474"
 | **Файл** |[Amazon S3](../articles/data-factory/connector-amazon-simple-storage-service.md) |
 | &nbsp; |[Файловая система](../articles/data-factory/connector-file-system.md) |
 | &nbsp; |[FTP](../articles/data-factory/connector-ftp.md) |
-| &nbsp; |[Google Cloud Storage](../articles/data-factory/connector-google-cloud-storage.md) |
+| &nbsp; |[Google Cloud Storage](../articles/data-factory/connector-google-cloud-storage.md) |
 | &nbsp; |[HDFS](../articles/data-factory/connector-hdfs.md) |
 | &nbsp; |[SFTP](../articles/data-factory/connector-sftp.md) |
 | **Универсальный протокол** |[Базовый HTTP-запрос](../articles/data-factory/connector-http.md) |
 | &nbsp; |[Generic OData](../articles/data-factory/connector-odata.md) |
-| &nbsp; |[Универсальные данные ODBC](../articles/data-factory/connector-odbc.md) |
+| &nbsp; |[Generic ODBC](../articles/data-factory/connector-odbc.md) |
 | **Службы и приложения** |[Веб-служба Amazon Marketplace](../articles/data-factory/connector-amazon-marketplace-web-service.md) |
 | &nbsp; |[Common Data Service для приложений](../articles/data-factory/connector-dynamics-crm-office-365.md) |
 | &nbsp; |[Concur (предварительная версия)](../articles/data-factory/connector-concur.md) |
-| &nbsp; |[Dynamics 365](../articles/data-factory/connector-dynamics-crm-office-365.md) |
-| &nbsp; |[центр IoT Azure](../articles/data-factory/connector-dynamics-ax.md) |
+| &nbsp; |[Dynamics 365](../articles/data-factory/connector-dynamics-crm-office-365.md) |
+| &nbsp; |[Dynamics AX](../articles/data-factory/connector-dynamics-ax.md) |
 | &nbsp; |[Dynamics CRM](../articles/data-factory/connector-dynamics-crm-office-365.md) |
-| &nbsp; |[Google адвордс](../articles/data-factory/connector-google-adwords.md) |
+| &nbsp; |[Google AdWords](../articles/data-factory/connector-google-adwords.md) |
 | &nbsp; |[HubSpot (предварительная версия)](../articles/data-factory/connector-hubspot.md) |
-| &nbsp; |[Jira](../articles/data-factory/connector-jira.md). |
+| &nbsp; |[Jira](../articles/data-factory/connector-jira.md) |
 | &nbsp; |[Magento (предварительная версия)](../articles/data-factory/connector-magento.md) |
 | &nbsp; |[Marketo (предварительная версия)](../articles/data-factory/connector-marketo.md) |
 | &nbsp; |[Oracle Eloqua (предварительная версия)](../articles/data-factory/connector-oracle-eloqua.md) |
@@ -84,8 +84,8 @@ ms.locfileid: "75440474"
 | &nbsp; |[PayPal (Предварительная версия)](../articles/data-factory/connector-paypal.md) |
 | &nbsp; |[QuickBooks (предварительная версия)](../articles/data-factory/connector-quickbooks.md) |
 | &nbsp; |[Salesforce](../articles/data-factory/connector-salesforce.md) |
-| &nbsp; |[Облачная служба SalesForce](../articles/data-factory/connector-salesforce-service-cloud.md) |
-| &nbsp; |[Облако Salesforce Marketing](../articles/data-factory/connector-salesforce-marketing-cloud.md) |
+| &nbsp; |[Облачная служба Salesforce](../articles/data-factory/connector-salesforce-service-cloud.md) |
+| &nbsp; |[Salesforce Marketing Cloud](../articles/data-factory/connector-salesforce-marketing-cloud.md) |
 | &nbsp; |[SAP Cloud for Customer (C4C)](../articles/data-factory/connector-sap-cloud-for-customer.md) |
 | &nbsp; |[SAP ECC](../articles/data-factory/connector-sap-ecc.md) |
 | &nbsp; |[ServiceNow](../articles/data-factory/connector-servicenow.md) |

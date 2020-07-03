@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: virtual-machines
 author: cynthn
 ms.service: virtual-machines
@@ -9,10 +9,10 @@ ms.date: 04/25/2019
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: d2a85f3947e9993e5d1853e45c6d03586a074cf6
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "67185250"
 ---
 ## <a name="update-resources"></a>Обновление ресурсов
@@ -24,7 +24,7 @@ ms.locfileid: "67185250"
 
 Определение образа
 - Рекомендуемое число виртуальных ЦП
-- Рекомендуемый объем памяти
+- Рекомендуемая память
 - Описание
 - Дата окончания жизненного цикла
 
@@ -34,9 +34,9 @@ ms.locfileid: "67185250"
 - Исключения из последней версии
 - Дата окончания жизненного цикла
 
-Если вы планируете добавлять регионы реплик, не удаляйте управляемого исходного изображения. Требуется управляемого образа источника для репликации версию образа в других регионах. 
+Если вы планируете добавить регионы реплик, не удаляйте исходный управляемый образ. Исходный управляемый образ необходим для репликации версии образа в дополнительные регионы. 
 
-Чтобы обновить описание коллекции, используйте [AzGallery обновления](https://docs.microsoft.com/powershell/module/az.compute/update-azgallery).
+Чтобы обновить описание коллекции, используйте командлет [Update-азгаллери](https://docs.microsoft.com/powershell/module/az.compute/update-azgallery).
 
 ```azurepowershell-interactive
 Update-AzGallery `
@@ -44,7 +44,7 @@ Update-AzGallery `
    -ResourceGroupName $resourceGroup.Name
 ```
 
-В этом примере показано, как использовать [AzGalleryImageDefinition обновления](https://docs.microsoft.com/powershell/module/az.compute/update-azgalleryimagedefinition) Обновить дату end-of-life нашем определении образа.
+В этом примере показано, как использовать [Update-азгаллеримажедефинитион](https://docs.microsoft.com/powershell/module/az.compute/update-azgalleryimagedefinition) для обновления даты окончания срока жизни определения образа.
 
 ```azurepowershell-interactive
 Update-AzGalleryImageDefinition `
@@ -54,7 +54,7 @@ Update-AzGalleryImageDefinition `
    -EndOfLifeDate 01/01/2030
 ```
 
-В этом примере показано, как использовать [обновление AzGalleryImageVersion](https://docs.microsoft.com/powershell/module/az.compute/update-azgalleryimageversion) запрет эта версия образа, используемого в качестве *последнюю* изображения.
+В этом примере показано, как использовать командлет [Update-азгаллеримажеверсион](https://docs.microsoft.com/powershell/module/az.compute/update-azgalleryimageversion) для исключения этой версии изображения из использования в качестве *последнего* образа.
 
 ```azurepowershell-interactive
 Update-AzGalleryImageVersion `
@@ -68,7 +68,7 @@ Update-AzGalleryImageVersion `
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-При удалении ресурсов, необходимо начать с последнего элемента в вложенных ресурсов - версию образа. После удаления версии, можно удалить в определении образа. Не удается удалить коллекции, пока не были удалены все ресурсы под ним.
+При удалении ресурсов необходимо начать с последнего элемента во вложенных ресурсах — версии образа. После удаления версий определение образа можно удалить. Нельзя удалить коллекцию, пока не будут удалены все ресурсы под ней.
 
 ```azurepowershell-interactive
 $resourceGroup = "myResourceGroup"

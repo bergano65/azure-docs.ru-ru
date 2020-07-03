@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 1e3692920c35a6965a23c0305aeeebfc80505d85
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77190931"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-cognitive-search"></a>Устранение распространенных проблем с индексатором в Azure Когнитивный поиск
@@ -30,16 +30,16 @@ ms.locfileid: "77190931"
 >
 > IP-адрес службы поиска можно узнать, обратившись к полному доменному имени (например, `<your-search-service-name>.search.windows.net`).
 >
-> Диапазон IP-адресов `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) можно узнать с помощью [загружаемых файлов JSON](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) или через [API обнаружения тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview). Диапазон IP-адресов обновляется еженедельно.
+> Диапазон IP-адресов для `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) можно узнать с помощью [загружаемых файлов JSON](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#discover-service-tags-by-using-downloadable-json-files) или через [API обнаружения тегов служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#use-the-service-tag-discovery-api-public-preview). Диапазон IP-адресов обновляется еженедельно.
 
 ### <a name="configure-firewall-rules"></a>Настройка правил брандмауэра
 
-Служба хранилища Azure, CosmosDB и Azure SQL предоставляют настраиваемый брандмауэр. Включение брандмауэра нельзя связать с одним конкретным сообщением об ошибке. Как правило, ошибки брандмауэра являются универсальными и выглядят как `The remote server returned an error: (403) Forbidden` или `Credentials provided in the connection string are invalid or have expired`.
+Служба хранилища Azure, CosmosDB и Azure SQL предоставляют настраиваемый брандмауэр. Включение брандмауэра нельзя связать с одним конкретным сообщением об ошибке. Как правило, ошибки брандмауэра являются универсальными и `The remote server returned an error: (403) Forbidden` выглядят `Credentials provided in the connection string are invalid or have expired`как или.
 
 Существует два варианта предоставления индексаторам доступа к этим ресурсам в таком экземпляре:
 
 * Отключите брандмауэр, разрешая доступ из **всех сетей** (если возможно).
-* Кроме того, можно разрешить доступ для IP-адреса службы поиска и диапазона IP-адресов `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) в правилах брандмауэра ресурса (ограничение диапазона IP-адресов).
+* Кроме того, можно разрешить доступ для IP-адреса службы поиска и диапазона `AzureCognitiveSearch` IP-адресов [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) в правилах брандмауэра ресурса (ограничение диапазона IP-адресов).
 
 Сведения о настройке ограничений диапазона IP-адресов для каждого типа источника данных можно найти по следующим ссылкам:
 
@@ -47,11 +47,11 @@ ms.locfileid: "77190931"
 
 * [База данных Cosmos](https://docs.microsoft.com/azure/storage/common/storage-network-security#grant-access-from-an-internet-ip-range)
 
-* [Azure SQL;](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules)
+* [Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure#create-and-manage-ip-firewall-rules)
 
 **Ограничение**. как указано в документации по службе хранилища Azure, ограничения диапазона IP-адресов будут работать только в том случае, если служба поиска и учетная запись хранения находятся в разных регионах.
 
-Функции Azure (которые могут использоваться в качестве [настраиваемых навыков веб-API](cognitive-search-custom-skill-web-api.md)) также поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/azure-functions/ip-addresses#ip-address-restrictions). Список IP-адресов для настройки будет IP-адресом службы поиска и диапазоном IP-адресов тега службы `AzureCognitiveSearch`.
+Функции Azure (которые могут использоваться в качестве [настраиваемых навыков веб-API](cognitive-search-custom-skill-web-api.md)) также поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/azure-functions/ip-addresses#ip-address-restrictions). Список IP-адресов для настройки — это IP-адрес службы поиска и диапазон IP-адресов тега `AzureCognitiveSearch` службы.
 
 Сведения о доступе к данным в SQL Server на виртуальной машине Azure приведены [здесь](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
 
@@ -61,7 +61,7 @@ ms.locfileid: "77190931"
 
 В таких случаях виртуальную машину Azure или управляемый экземпляр SQL можно настроить так, чтобы они находились в виртуальной сети. После этого Группа безопасности сети может быть настроена для фильтрации типа сетевого трафика, который может передаваться в подсетях виртуальной сети и сетевых интерфейсов.
 
-Тег службы `AzureCognitiveSearch` можно использовать непосредственно в [правилах](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#work-with-security-rules) входящих подключений, не требуя поиска своего диапазона IP-адресов.
+Тег `AzureCognitiveSearch` службы можно использовать непосредственно в [правилах NSG](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group#work-with-security-rules) входящих подключений без необходимости поиска своего диапазона IP-адресов.
 
 Дополнительные сведения о доступе к данным в управляемом экземпляре SQL см. [здесь](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md) .
 

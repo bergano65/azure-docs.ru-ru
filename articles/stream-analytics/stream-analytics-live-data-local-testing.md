@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: f2876ea32bdcd900a454ae6b7ac58c11b8ec67c3
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76840491"
 ---
 # <a name="test-live-data-locally-using-azure-stream-analytics-tools-for-visual-studio-preview"></a>Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)
@@ -26,8 +26,8 @@ ms.locfileid: "76840491"
 |**Ввод**  |**Выходные данные**  |**Тип задания**  |
 |---------|---------|---------|
 |Локальные статические данные   |  Локальные статические данные   |   Облако или Edge |
-|Реальные входные данные   |  Локальные статические данные   |   В облаке |
-|Реальные входные данные   |  Реальные выходные данные   |   В облаке |
+|Реальные входные данные   |  Локальные статические данные   |   Облако |
+|Реальные входные данные   |  Реальные выходные данные   |   Облако |
 
 ## <a name="local-testing-with-live-data"></a>Локальное тестирование с помощью реальных данных
 
@@ -61,8 +61,8 @@ ms.locfileid: "76840491"
 
 * Для облачных входных данных поддерживаются [политики времени](stream-analytics-out-of-order-and-late-events.md), а для локальных входных данных — нет.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
+* [Создание Stream Analytics задания с помощью средств Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
 * [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)
 * [Просмотр заданий Azure Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools.md)

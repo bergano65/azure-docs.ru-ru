@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с QPrism | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с QPrism | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и QPrism.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: af3862d81270363c475ab9d925757569a6927858
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67093393"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-qprism"></a>Руководство по Интеграция Azure Active Directory с QPrism
+# <a name="tutorial-azure-active-directory-integration-with-qprism"></a>Руководство по интеграции Azure Active Directory с QPrism
 
 В этом руководстве описано, как интегрировать QPrism с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением QPrism обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67093393"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с QPrism, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка QPrism с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67093393"
 
     ![Сведения о домене и URL-адресах единого входа для приложения QPrism](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer domain>.qmyzone.com/login`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer domain>.qmyzone.com/login`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<customer domain>.qmyzone.com/metadata.php`.
 
@@ -118,7 +118,7 @@ ms.locfileid: "67093393"
 
 ### <a name="configure-qprism-single-sign-on"></a>Настройка единого входа для QPrism
 
-Чтобы настроить единый вход на стороне **QPrism**, отправьте [группе поддержки QPrism](mailto:qsupport-ce@quatrro.com) **URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **QPrism**, отправьте [группе поддержки QPrism](mailto:qsupport-ce@quatrro.com)**URL-адрес метаданных федерации приложения**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -186,5 +186,5 @@ ms.locfileid: "67093393"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

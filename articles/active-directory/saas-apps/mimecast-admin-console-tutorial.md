@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с консолью администрирования Mimecast | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с консолью администрирования Mimecast | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в консоль администрирования Mimecast.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9edadd6462052f82f92c05c1678f845ece856cfb
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160650"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Руководство по Интеграция Azure Active Directory с консолью администрирования Mimecast
+# <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Учебник. Интеграция Azure Active Directory с консолью администрирования Mimecast
 
 В этом руководстве описано, как интегрировать консоль администрирования Mimecast с Azure Active Directory (Azure AD).
 Интеграция Azure AD с консолью администрирования Mimecast обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73160650"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с консолью администрирования Mimecast, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка на консоль администрирования Mimecast с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -124,11 +124,11 @@ ms.locfileid: "73160650"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-mimecast-admin-console-single-sign-on"></a>Настройка консоли администрирования Mimecast с поддержкой единого входа
 
@@ -150,7 +150,7 @@ ms.locfileid: "73160650"
 
     ![Профиль проверки подлинности](./media/mimecast-admin-console-tutorial/ic795015.png "Профиль проверки подлинности")
     
-    a. В текстовом поле **Описание** введите имя конфигурации.
+    а. В текстовом поле **Описание** введите имя конфигурации.
     
     b. Выберите **Обязательное использование проверки подлинности SAML для консоли администрирования Mimecast**.
     
@@ -158,9 +158,9 @@ ms.locfileid: "73160650"
     
     d. В текстовое поле **URL-адрес издателя** вставьте значение **Идентификатор Azure AD**, скопированное с портала Azure.
     
-    д. В текстовое поле **URL-адрес входа** вставьте **URL-адрес входа**, скопированный с портала Azure.
+    д) В текстовое поле **URL-адрес входа** вставьте **URL-адрес входа**, скопированный с портала Azure.
 
-    Е. В текстовое поле **URL-адрес выхода** вставьте значение **URL-адрес входа**, скопированное с портала Azure.
+    е) В текстовое поле **URL-адрес выхода** вставьте значение **URL-адрес входа**, скопированное с портала Azure.
     
     >[!NOTE]
     >Значения URL-адреса входа в систему и URL-адреса выхода из системы для консоли администрирования Mimecast одинаковы.
@@ -246,9 +246,9 @@ ms.locfileid: "73160650"
 
 5. В окне нового адреса выполните следующие действия.
    
-    ![Сохранить](./media/mimecast-admin-console-tutorial/ic795006.png "Сохранить")
+    ![Сохранить](./media/mimecast-admin-console-tutorial/ic795006.png "Сохранять")
    
-    a. В соответствующие текстовые поля введите атрибуты **Email Address** (Адрес электронной почты), **Global Name** (Глобальное имя), **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) действительной учетной записи Azure AD, которую вы хотите подготовить.
+    а. В соответствующие текстовые поля введите атрибуты **Email Address** (Адрес электронной почты), **Global Name** (Глобальное имя), **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) действительной учетной записи Azure AD, которую вы хотите подготовить.
 
     b. Выберите команду **Сохранить**.
 

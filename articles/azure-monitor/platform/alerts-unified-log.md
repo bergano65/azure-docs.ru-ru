@@ -2,18 +2,16 @@
 title: Оповещения журнала в Azure Monitor
 description: Узнайте, как активировать сообщения электронной почты и уведомления, вызывать URL-адреса веб-сайтов (использовать веб-перехватчики) или автоматизировать операции при выполнении заданных вами условий запросов аналитики в интерфейсе оповещений Azure.
 author: yanivlavi
-services: monitoring
-ms.service: azure-monitor
+ms.author: yalavi
 ms.topic: conceptual
 ms.date: 5/31/2019
-ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: b8cae9f7c43098b713d0d5d8f74e46cb0386600c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: a6abf4665c27771497037da35f85bb540e6e904e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75396482"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77665227"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Оповещения журнала в Azure Monitor
 
@@ -31,7 +29,7 @@ ms.locfileid: "75396482"
 
 Правила поиска по журналам определяются следующими сведениями:
 
-- **Запрос к журналу.**  Это запрос, который будет запускаться каждый раз при срабатывании правила генерации оповещений.  Определить, следует ли активировать оповещение, можно с помощью записей, возвращаемых этим запросом. Запрос аналитики можно выполнять для конкретной рабочей области Log Analytics или приложения Application Insights, или даже для [нескольких ресурсов Log Analytics и Application Insights](../../azure-monitor/log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights) при условии, что у пользователя есть права на доступ и выполнение запроса для всех этих ресурсов. 
+- **Запрос журнала**.  Это запрос, который будет запускаться каждый раз при срабатывании правила генерации оповещений.  Определить, следует ли активировать оповещение, можно с помощью записей, возвращаемых этим запросом. Запрос аналитики можно выполнять для конкретной рабочей области Log Analytics или приложения Application Insights, или даже для [нескольких ресурсов Log Analytics и Application Insights](../../azure-monitor/log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights) при условии, что у пользователя есть права на доступ и выполнение запроса для всех этих ресурсов. 
     > [!IMPORTANT]
     > поддержка [запросов между ресурсами](../../azure-monitor/log-query/cross-workspace-query.md#querying-across-log-analytics-workspaces-and-from-application-insights) в оповещениях журнала для Application Insights и оповещения журналов для [log Analytics, настроенных с помощью API счедуледкуерирулес](../../azure-monitor/platform/alerts-log-api-switch.md) .
 
@@ -45,8 +43,8 @@ ms.locfileid: "75396482"
 
 Для [Azure Monitor Logs](../../azure-monitor/learn/tutorial-viewdata.md) и для [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostics-events) используются правила поиска по журналам двух типов. Каждый из этих типов подробно описан в последующих разделах.
 
-- **[Число результатов](#number-of-results-alert-rules)** . Если число записей, возвращенных в результатах поиска по журналам, превышает указанное количество, создается оповещение.
-- **[Измерение метрик](#metric-measurement-alert-rules)** .  Оповещение, созданное для каждого объекта в результатах поиска по журналам со значением, превышающим указанное пороговое значение.
+- **[Число результатов](#number-of-results-alert-rules)**. Если число записей, возвращенных в результатах поиска по журналам, превышает указанное количество, создается оповещение.
+- **[Измерение метрик](#metric-measurement-alert-rules)**.  Оповещение, созданное для каждого объекта в результатах поиска по журналам со значением, превышающим указанное пороговое значение.
 
 Ниже приведены различия между типами правил генерации оповещений.
 
@@ -138,7 +136,7 @@ ms.locfileid: "75396482"
 | ------- | ----------| ----------| ------- 
 | 1:05 РМ | 0 записей | 0 не > 0, поэтому FALSE |  Предупреждение не срабатывает. Действия не вызваны.
 | 1:10 РМ | 2 записи | 2 > 0 — да  | Оповещение срабатывает и группы действий с именем. Состояние оповещения активно.
-| 13:15 | 5 записей | 5 > 0 — да  | Оповещение срабатывает и группы действий с именем. Состояние оповещения активно.
+| 1:15 РМ | 5 записей | 5 > 0 — да  | Оповещение срабатывает и группы действий с именем. Состояние оповещения активно.
 | 1:20 РМ | 0 записей | 0 не > 0, поэтому FALSE |  Предупреждение не срабатывает. Действия не вызваны. Состояние оповещения осталось активным.
 
 В качестве примера используйте предыдущий вариант:
@@ -154,7 +152,7 @@ ms.locfileid: "75396482"
 - Для оповещений журнала Application Insights указываются точное имя оповещения, группа ресурсов и свойства оповещения.
 - При создании оповещений журнала Log Analytics с помощью [API scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) для них указываются точное имя оповещения, а также группа ресурсов и свойства оповещения.
 
-[Устаревший API Log Analytics](../../azure-monitor/platform/api-alerts.md) использует действия оповещения и расписания в составе сохраненных поисков Log Analytics, а не как полноценные [ресурсы Azure](../../azure-resource-manager/management/overview.md). Таким образом, чтобы включить выставление счетов для таких устаревших оповещений журнала, созданных для Log Analytics с помощью портал Azure **без** [переключения на новый API](../../azure-monitor/platform/alerts-log-api-switch.md) или с помощью [log Analytics устаревших](../../azure-monitor/platform/api-alerts.md) правил псевдо-оповещений API, в `microsoft.insights/scheduledqueryrules` для выставления счетов в Azure создаются скрытые правила. Скрытые фиктивные правила генерации оповещений, созданные для выставления счетов на `microsoft.insights/scheduledqueryrules`, отображаются как `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>` вместе с группой ресурсов и свойствами оповещения.
+[Устаревший API Log Analytics](../../azure-monitor/platform/api-alerts.md) использует действия оповещения и расписания в составе сохраненных поисков Log Analytics, а не как полноценные [ресурсы Azure](../../azure-resource-manager/management/overview.md). Поэтому для того, чтобы включить выставление счетов для прежних версий оповещений журнала, созданных для Log Analytics с помощью портала Azure **без** [перехода на новый интерфейс API](../../azure-monitor/platform/alerts-log-api-switch.md) или через [устаревший API Log Analytics](../../azure-monitor/platform/api-alerts.md), потребуется создать на странице `microsoft.insights/scheduledqueryrules` скрытые фиктивные правила генерации оповещений, которые будут отслеживаться для выставления счетов в Azure. Скрытые фиктивные правила генерации оповещений, созданные для выставления счетов на `microsoft.insights/scheduledqueryrules`, отображаются как `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>` вместе с группой ресурсов и свойствами оповещения.
 
 > [!NOTE]
 > Если в имени есть недопустимые символы, такие как `<, >, %, &, \, ?, /`, для скрытого фиктивного правила генерации оповещений, а следовательно и в счетах Azure, они будут заменены символами `_`.
@@ -164,12 +162,12 @@ ms.locfileid: "75396482"
 - [Изменить используемый API для правил генерации оповещений в рабочей области Log Analytics](../../azure-monitor/platform/alerts-log-api-switch.md) и перейти на совместимый с Azure Resource Manager [API-интерфейс scheduledQueryRules](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) без потери существующих правил генерации оповещений или мониторинга. Это действие позволит отказаться от скрытых фиктивных правил генерации оповещений, которые вы создавали для выставления счетов.
 - Если нет желания переключать используемый API, следует **удалить** исходное расписание и действие оповещения через [устаревший API Log Analytics](api-alerts.md) или [удалить исходное правило генерации оповещений для журнала через портал Azure](../../azure-monitor/platform/alerts-log.md#view--manage-log-alerts-in-azure-portal).
 
-Кроме того, для скрытых ресурсов Счедулекуерирулес, созданных для выставления счетов по правилам генерации оповещений с помощью [устаревшего log Analytics API](api-alerts.md), любые операции изменения, такие как операция вставки, завершатся ошибкой. Так как псевдо-правила типа `microsoft.insights/scheduledqueryrules` предназначены для выставления счетов по правилам генерации оповещений, созданным с помощью [устаревших log Analytics API](api-alerts.md). Все изменения правил генерации оповещений следует выполнять с помощью [устаревшего log Analytics API](api-alerts.md) (или) пользователь может [Переключить предпочтение API для правил генерации оповещений](../../azure-monitor/platform/alerts-log-api-switch.md) для использования [API счедуледкуерирулес](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) .
+Кроме того, для скрытых ресурсов Счедулекуерирулес, созданных для выставления счетов по правилам генерации оповещений с помощью [устаревшего log Analytics API](api-alerts.md), любые операции изменения, такие как операция вставки, завершатся ошибкой. Так как `microsoft.insights/scheduledqueryrules` псевдо-правила типа предназначены для выставления счетов по правилам генерации оповещений, созданным с помощью [устаревших log Analytics API](api-alerts.md). Все изменения правил генерации оповещений следует выполнять с помощью [устаревшего log Analytics API](api-alerts.md) (или) пользователь может [Переключить предпочтение API для правил генерации оповещений](../../azure-monitor/platform/alerts-log-api-switch.md) для использования [API счедуледкуерирулес](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 * Информация о [веб-перехватчиках в оповещениях журналов в Azure](alerts-log-webhook.md).
 * Сведения об [оповещениях Azure](../../azure-monitor/platform/alerts-overview.md).
 * Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md).
-* Дополнительные сведения о [Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
+* Дополнительные сведения о [log Analytics](../../azure-monitor/log-query/log-query-overview.md).

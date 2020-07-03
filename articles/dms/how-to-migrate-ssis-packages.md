@@ -3,21 +3,21 @@ title: Повторное развертывание пакетов служб S
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию или повторное развертывание пакетов SQL Server Integration Services и проектов в базе данных SQL Azure с помощью Azure Database Migration Service и Помощник по миграции данных.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 06/08/2019
-ms.openlocfilehash: b1889410a6c6925ebba5632a08c34bc967ced627
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 02/20/2020
+ms.openlocfilehash: 90a39b8fe3604a05f1d35a875ae4e34491b47d72
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437971"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77648535"
 ---
 # <a name="redeploy-ssis-packages-to-azure-sql-database-with-azure-database-migration-service"></a>Повторное развертывание пакетов служб SSIS в базе данных SQL Azure с помощью Azure Database Migration Service
 
@@ -34,7 +34,7 @@ ms.locfileid: "75437971"
 > * Оценка проектов и пакетов исходной SSIS.
 > * Перенос проектов и пакетов SSIS в Azure.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для выполнения этих действий вам потребуется следующее:
 
@@ -81,7 +81,7 @@ ms.locfileid: "75437971"
 8. Выберите **Далее**.
 9. На странице **Выбор места назначения** укажите назначение проекта.
 
-    а. В текстовом поле имя сервера введите полное имя сервера базы данных SQL Azure (< server_name >. Database. Windows. NET).
+    a. В текстовом поле имя сервера введите полное имя сервера базы данных SQL Azure (<server_name>. database.windows.net).
 
     b. Укажите сведения для проверки подлинности и выберите **Подключиться**.
 
@@ -106,13 +106,13 @@ ms.locfileid: "75437971"
 13. Выберите **Развернуть**, чтобы запустить процесс развертывания.
 
 14. После завершения развертывания можно просмотреть страницу "Результаты", на которой отображается информация об успешном или неудачном результате каждого действия развертывания.
-    а. Если произошел сбой любого действия, в столбце **Результат** выберите **Сбой**, чтобы отобразить описание ошибки.
+    a. Если произошел сбой любого действия, в столбце **Результат** выберите **Сбой**, чтобы отобразить описание ошибки.
     b. При необходимости выберите **Сохранить отчет**, чтобы сохранить результаты в XML-файл.
 
 15. Выберите **Закрыть**, чтобы выйти из мастера развертывания Integration Services.
 
 Если развертывание проекта завершается успешно, вы можете запустить любые пакеты из этого проекта в среде выполнения интеграции Azure-SSIS IR.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

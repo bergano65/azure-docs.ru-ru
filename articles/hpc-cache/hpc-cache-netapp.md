@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: rohogue
-ms.openlocfilehash: c6259dabd5ee9c53d37a3396f36832720a103c23
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 6d4dd69b30acb26d02218fe05a60ace9aa855ddc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73582171"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82194964"
 ---
 # <a name="use-azure-hpc-cache-with-azure-netapp-files"></a>Использование кэша HPC для Azure с Azure NetApp Files
 
@@ -50,7 +50,7 @@ Azure NetApp Files использует одну делегированную п
 
 Минимальный размер, заданный с помощью маски/28, предоставляет 16 IP-адресов. На практике Azure NetApp Files использует только три из доступных IP-адресов для доступа к тому. Это означает, что для покрытия всех томов необходимо создать три целевых объекта хранилища в кэше Azure HPC.
 
-Если делегированная подсеть слишком велика, Azure NetApp Filesные тома могут использовать больше IP-адресов, чем может выполнять один экземпляр кэша Azure HPC. Один кэш может иметь не более десяти целевых объектов хранилища.
+Если делегированная подсеть слишком велика, Azure NetApp Filesные тома могут использовать больше IP-адресов, чем может выполнять один экземпляр кэша Azure HPC. Один кэш может иметь не более 10 целевых объектов хранилища.
 
 В примере краткого руководства в Azure NetApp Files документации для делегированной подсети используется 10.7.0.0/16, что дает слишком большой размер подсети.
 
@@ -76,11 +76,11 @@ Azure NetApp Files использует одну делегированную п
 
 Вы также можете найти IP-адреса с помощью Azure CLI:
 
-```bash
+```azurecli
 az netappfiles volume list -g ${RESOURCE_GROUP} --account-name ${ANF_ACCOUNT} --pool-name ${POOL} --query "[].mountTargets[].ipAddress" | grep -Ee '[0-9]+[.][0-9]+[.][0-9]+[.][0-9]+' | tr -d '"' | tr -d , | sort | uniq
 ```
 
-Имена экспорта в системе Azure NetApp Files имеют один компонент пути. Не пытайтесь создать целевой объект хранилища для корневого ``/`` экспорта в Azure NetApp Files, так как этот экспорт не предоставляет доступ к файлам.
+Имена экспорта в системе Azure NetApp Files имеют один компонент пути. Не пытайтесь создать целевой объект хранилища для корневого экспорта ``/`` в Azure NetApp Files, так как этот экспорт не предоставляет доступ к файлам.
 
 Для этих целевых объектов хранилища не существует специальных ограничений на пути к виртуальному пространству имен.
 
@@ -88,7 +88,7 @@ az netappfiles volume list -g ${RESOURCE_GROUP} --account-name ${ANF_ACCOUNT} --
 
 Клиентские компьютеры должны подключать кэш вместо того, чтобы подключать Azure NetApp Files тома напрямую. Следуйте инструкциям в разделе [Подключение кэша HPC для Azure](hpc-cache-mount.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * Узнайте больше о настройке и использовании [Azure NetApp Files](../azure-netapp-files/index.yml)
 * Чтобы получить помощь в планировании и настройке системы кэша HPC Azure для использования Azure NetApp Files, [обратитесь в службу поддержки](hpc-cache-support-ticket.md).

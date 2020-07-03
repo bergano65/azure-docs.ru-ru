@@ -10,23 +10,26 @@ ms.author: daperlov
 ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
-ms.date: 02/12/2020
-ms.openlocfilehash: 7c9f22d27351b0f57c5a0158821f347073ae60b4
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.date: 04/30/2020
+ms.openlocfilehash: 54ff58735b6831bb45a9477360ffca3439d2f6b4
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77187812"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124726"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Непрерывная интеграция и доставка в фабрике данных Azure
 
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 ## <a name="overview"></a>Обзор
 
-Непрерывная интеграция — это методика автоматического тестирования каждого изменения, внесенного в базу кода, как можно раньше. Непрерывная поставка соответствует тестированию, которое происходит во время непрерывной интеграции и передает изменения в промежуточную или рабочую систему.
+Непрерывная интеграция — это методика автоматического тестирования каждого изменения, внесенного в базу кода, как можно раньше.Непрерывная поставка соответствует тестированию, которое происходит во время непрерывной интеграции и передает изменения в промежуточную или рабочую систему.
 
-В фабрике данных Azure непрерывная интеграция и доставка (CI/CD) означает перемещение конвейеров фабрики данных из одной среды (разработки, тестирования, рабочей) в другую. Вы можете использовать интеграцию с интерфейсом UX фабрики данных с шаблонами Azure Resource Manager, чтобы выполнить CI/CD.
+В фабрике данных Azure непрерывная интеграция и доставка (CI/CD) означает перемещение конвейеров фабрики данных из одной среды (разработки, тестирования, рабочей) в другую. В фабрике данных Azure используются [шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview) для хранения конфигурации различных объектов ADF (конвейеры, наборы данных, потоки и т. д.). Существует два предлагаемых метода повышения фабрики данных в другой среде.
 
-В интерфейсе фабрики данных можно создать шаблон диспетчер ресурсов из раскрывающегося меню **шаблон ARM** . При выборе параметра **Экспорт шаблона ARM**портал создает шаблон диспетчер ресурсов для фабрики данных и файл конфигурации, включающий все строки подключения и другие параметры. Затем создается один файл конфигурации для каждой среды (разработка, тестирование, Рабочая среда). Главный файл шаблона Resource Manager одинаков для всех сред.
+-    Автоматическое развертывание с использованием интеграции фабрики данных с [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops)
+-    Вручную отправьте шаблон диспетчер ресурсов с помощью интеграции с интерфейсом UX фабрики данных с Azure Resource Manager.
 
 Чтобы получить 9-минутное введение в эту функцию и демонстрацию, просмотрите это видео:
 
@@ -40,45 +43,26 @@ ms.locfileid: "77187812"
 
 1.  Фабрика данных разработки создается и настраивается с помощью Azure Repos Git. Все разработчики должны иметь разрешение на создание ресурсов фабрики данных, таких как конвейеры и DataSets.
 
-1.  По мере внесения изменений в свои ветви их компонентов разработчики выполняют отладку своих конвейеров с самыми последними изменениями. Дополнительные сведения об отладке выполнения конвейера см. в статье [Итеративная разработка и отладка с помощью фабрики данных Azure](iterative-development-debugging.md).
+1.  Разработчик [создает ветвь компонентов](source-control.md#creating-feature-branches) для внесения изменений. Они выполняют отладку своих конвейеров с самыми последними изменениями. Дополнительные сведения об отладке выполнения конвейера см. в статье [Итеративная разработка и отладка с помощью фабрики данных Azure](iterative-development-debugging.md).
 
-1.  После того как разработчики будут удовлетворены изменениями, они создают запрос на вытягивание из ветви их компонентов в главную или коллективную ветвь для получения изменений, которые будут проверены одноранговыми узлами.
+1.  После того, как разработчик удовлетворен своими изменениями, он создает запрос на вытягивание из своей ветви компонентов в главную или коллективную ветвь для получения изменений, которые будут проверены одноранговыми узлами.
 
-1.  После утверждения запроса на вытягивание и слияния изменений в главной ветви изменения могут быть опубликованы в фабрике разработки.
+1.  После утверждения запроса на вытягивание и слияния изменений в главной ветви изменения публикуются в фабрике разработки.
 
-1.  Когда группа готова к развертыванию изменений в фабрике тестов, а затем в производственной фабрике, Группа экспортирует шаблон диспетчер ресурсов из главной ветви.
+1.  Когда группа готова к развертыванию изменений в тестовой или UAT фабрике, Группа переходит к выпуску Azure Pipelines и развертывает нужную версию фабрики разработки в UAT. Это развертывание выполняется как часть задачи Azure Pipelines и использует параметры шаблона диспетчер ресурсов, чтобы применить соответствующую конфигурацию.
 
-1.  Экспортированный шаблон диспетчер ресурсов развертывается с различными файлами параметров в фабрике тестирования и производственной фабрике.
+1.  После проверки изменений в фабрике тестов выполните развертывание в производственной фабрике с помощью следующей задачи выпуска конвейеров.
 
-## <a name="create-a-resource-manager-template-for-each-environment"></a>Создание шаблона Resource Manager для каждой среды
+> [!NOTE]
+> Только фабрика разработки связана с репозиторием Git. На тестовой и рабочей фабрике не должно быть связанного с ними репозитория Git. их следует обновлять только через конвейер Azure DevOps или с помощью шаблона управления ресурсами.
 
-1. В списке **шаблон ARM** выберите **Экспорт шаблона ARM** , чтобы экспортировать шаблон диспетчер ресурсов для фабрики данных в среде разработки.
+На приведенном ниже рисунке показаны различные этапы этого жизненного цикла.
 
-   ![Экспорт шаблона диспетчер ресурсов](media/continuous-integration-deployment/continuous-integration-image1.png)
-
-1. В фабриках тестов и рабочих данных выберите **Импорт шаблона ARM**. После этого вы перейдете на портал Azure, где сможете импортировать экспортированный шаблон. Выберите **создать собственный шаблон в редакторе** , чтобы открыть редактор шаблонов диспетчер ресурсов.
-
-   ![Создание собственного шаблона](media/continuous-integration-deployment/custom-deployment-build-your-own-template.png) 
-
-1. Выберите **загрузить файл**и выберите созданный шаблон диспетчер ресурсов.
-
-   ![Изменить шаблон](media/continuous-integration-deployment/custom-deployment-edit-template.png)
-
-1. В разделе Параметры введите значения конфигурации, например учетные данные связанной службы. Когда все будет готово, выберите **приобрести** , чтобы развернуть шаблон диспетчер ресурсов.
-
-   ![Раздел параметров](media/continuous-integration-deployment/continuous-integration-image5.png)
-
-### <a name="connection-strings"></a>Строки подключения
-
-Сведения о настройке строк подключения см. в статье о соединителе. Дополнительные сведения о базе данных SQL Azure см. в статье [Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure](connector-azure-sql-database.md). Чтобы проверить строку подключения, можно открыть представление кода для ресурса в интерфейсе фабрики данных. В представлении кода часть пароля или ключа учетной записи в строке подключения удаляется. Чтобы открыть представление кода, выберите значок, выделенный здесь:
-
-![Открыть представление кода для просмотра строки подключения](media/continuous-integration-deployment/continuous-integration-codeview.png)
+![Схема непрерывной интеграции с помощью Azure Pipelines](media/continuous-integration-deployment/continuous-integration-image12.png)
 
 ## <a name="automate-continuous-integration-by-using-azure-pipelines-releases"></a>Автоматизация непрерывной интеграции с помощью Azure Pipelines выпусков
 
 Ниже приведено пошаговое инструкции по настройке выпуска Azure Pipelines, который автоматизирует развертывание фабрики данных в нескольких средах.
-
-![Схема непрерывной интеграции с помощью Azure Pipelines](media/continuous-integration-deployment/continuous-integration-image12.png)
 
 ### <a name="requirements"></a>Требования
 
@@ -104,7 +88,7 @@ ms.locfileid: "77187812"
 
 1.  В поле **имя этапа** введите имя среды.
 
-1.  Выберите **Добавить артефакт**, а затем выберите репозиторий, настроенный для вашей фабрики данных. Выберите **adf_publish** для **ветви по умолчанию**. В качестве **версии по умолчанию**выберите **Последняя из ветви по умолчанию**.
+1.  Выберите **Добавить артефакт**, а затем выберите репозиторий Git, настроенный с помощью фабрики данных разработки. Выберите [ветвь опубликовать](source-control.md#configure-publishing-settings) репозитория для **ветви по умолчанию**. По умолчанию эта ветвь публикации имеет значение `adf_publish` . В качестве **версии по умолчанию**выберите **Последняя из ветви по умолчанию**.
 
     ![Добавление артефакта](media/continuous-integration-deployment/continuous-integration-image7.png)
 
@@ -114,17 +98,17 @@ ms.locfileid: "77187812"
 
     ![Представление "этап"](media/continuous-integration-deployment/continuous-integration-image14.png)
 
-    б.  Создайте новое задание. Найдите **Развертывание группы ресурсов Azure**и нажмите кнопку **Добавить**.
+    b.  Создайте новое задание. Найдите **Развертывание группы ресурсов Azure**и нажмите кнопку **Добавить**.
 
-    в.  В задаче развертывание выберите подписку, группу ресурсов и расположение для целевой фабрики данных. При необходимости укажите учетные данные.
+    c.  В задаче развертывание выберите подписку, группу ресурсов и расположение для целевой фабрики данных. При необходимости укажите учетные данные.
 
-    .  В списке **действие** выберите **создать или обновить группу ресурсов**.
+    d.  В списке **действие** выберите **создать или обновить группу ресурсов**.
 
-    д)  Нажмите кнопку с многоточием ( **...** ) рядом с полем **шаблон** . Найдите шаблон Azure Resource Manager, созданный с помощью **шаблона Импорт ARM** , в разделе [Создание диспетчер ресурсов шаблона для каждого окружения](continuous-integration-deployment.md#create-a-resource-manager-template-for-each-environment) этой статьи. Найдите этот файл в папке <FactoryName> ветви adf_publish.
+    д)  Нажмите кнопку с многоточием (**...**) рядом с полем **шаблон** . Найдите шаблон Azure Resource Manager, созданный в ветви публикации настроенного репозитория Git. Найдите файл `ARMTemplateForFactory.json` в <FactoryName> папке adf_publish ветви.
 
-    е)  Выберите **…** рядом с полем **Параметры шаблона** , чтобы выбрать файл параметров. Выбранный файл будет зависеть от того, была создана копия или используется файл по умолчанию Армтемплатепараметерсфорфактори. JSON.
+    е)  Выберите **...** рядом с полем **Параметры шаблона** , чтобы выбрать файл параметров. Найдите файл `ARMTemplateParametersForFactory.json` в <FactoryName> папке adf_publish ветви.
 
-    ж.  Выберите **…** рядом с полем **переопределить параметры шаблона** и введите сведения о целевой фабрике данных. Для учетных данных, полученных из Azure Key Vault, введите имя секрета в двойные кавычки. Например, если имя секрета — cred1, введите **"$ (cred1)"** для этого значения.
+    ж.  Выберите **...** рядом с полем **переопределить параметры шаблона** и введите значения требуемых параметров для целевой фабрики данных. Для учетных данных, полученных из Azure Key Vault, введите имя секрета в двойные кавычки. Например, если имя секрета — cred1, введите **"$ (cred1)"** для этого значения.
 
     h. Выберите **добавочный** для **режима развертывания**.
 
@@ -135,7 +119,7 @@ ms.locfileid: "77187812"
 
 1.  Сохраните конвейер выпуска.
 
-1. Чтобы запустить выпуск, выберите **создать выпуск**.
+1. Чтобы запустить выпуск, выберите **создать выпуск**. Сведения об автоматизации создания выпусков см. в статье [триггеры выпуска Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/release/triggers?view=azure-devops)
 
    ![Выбор создания выпуска](media/continuous-integration-deployment/continuous-integration-image10.png)
 
@@ -171,7 +155,7 @@ ms.locfileid: "77187812"
 
     Файл параметров также должен находиться в ветви публикации.
 
--  Добавьте [задачу Azure Key Vault](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-key-vault) перед задачей «Azure Resource Manager развертывание», описанной в предыдущем разделе.
+1. Добавьте [задачу Azure Key Vault](https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-key-vault) перед задачей «Azure Resource Manager развертывание», описанной в предыдущем разделе.
 
     1.  На вкладке **задачи** создайте новую задачу. Выполните поиск **Azure Key Vault** и добавьте его.
 
@@ -179,11 +163,11 @@ ms.locfileid: "77187812"
 
     ![Добавление задачи Key Vault](media/continuous-integration-deployment/continuous-integration-image8.png)
 
-   #### <a name="grant-permissions-to-the-azure-pipelines-agent"></a>Предоставление разрешений для агента Azure Pipelines
+#### <a name="grant-permissions-to-the-azure-pipelines-agent"></a>Предоставление разрешений для агента Azure Pipelines
 
-   Azure Key Vaultная задача может завершиться ошибкой с ошибкой отказа в доступе, если не заданы правильные разрешения. Скачайте журналы для выпуска и выберите файл PS1, содержащий команду, чтобы предоставить разрешения агенту Azure Pipelines. Вы можете выполнить команду напрямую. Также можно скопировать идентификатор субъекта из файла и добавить политику доступа вручную в портал Azure. минимальные требуемые разрешения — `Get` и `List`.
+Azure Key Vaultная задача может завершиться ошибкой с ошибкой отказа в доступе, если не заданы правильные разрешения. Скачайте журналы для выпуска и выберите файл PS1, содержащий команду, чтобы предоставить разрешения агенту Azure Pipelines. Вы можете выполнить команду напрямую. Также можно скопировать идентификатор субъекта из файла и добавить политику доступа вручную в портал Azure. `Get`и `List` являются минимальными необходимыми разрешениями.
 
-### <a name="update-active-triggers"></a>Обновление активных триггеров
+### <a name="updating-active-triggers"></a>Обновление активных триггеров
 
 При попытке обновления активных триггеров развертывание может завершиться сбоем. Чтобы обновить активные триггеры, необходимо вручную закрыть их, а затем перезапустить после развертывания. Это можно сделать с помощью задачи Azure PowerShell:
 
@@ -199,292 +183,59 @@ ms.locfileid: "77187812"
     $triggersADF | ForEach-Object { Stop-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_.name -Force }
     ```
 
-Вы можете выполнить аналогичные действия (с помощью функции `Start-AzDataFactoryV2Trigger`), чтобы перезапустить триггеры после развертывания.
+Вы можете выполнить аналогичные действия (с `Start-AzDataFactoryV2Trigger` функцией), чтобы перезапустить триггеры после развертывания.
 
-### <a name="sample-pre--and-post-deployment-script"></a>Пример скрипта, выполняемого до и после развертывания
+В нижней части этой статьи группа фабрики данных предоставила [Пример сценария, выполняемого до и после развертывания](#script) . 
 
-Следующий пример скрипта можно использовать для завершения триггеров перед развертыванием и их перезапуска. Скрипт также содержит код для удаления ресурсов. Сохраните скрипт в репозитории Azure DevOps Git и сослаться на него с помощью Azure PowerShell задачи, используя версию 4. *.
+## <a name="manually-promote-a-resource-manager-template-for-each-environment"></a>Ручное повышение диспетчер ресурсов шаблона для каждой среды
 
-При выполнении скрипта, выполняемого перед развертыванием, в поле **аргументы скрипта** необходимо указать вариант следующих параметров.
+1. В списке **шаблон ARM** выберите **Экспорт шаблона ARM** , чтобы экспортировать шаблон диспетчер ресурсов для фабрики данных в среде разработки.
 
-`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $true -deleteDeployment $false`
+   ![Экспорт шаблона диспетчер ресурсов](media/continuous-integration-deployment/continuous-integration-image1.png)
 
+1. В фабриках тестов и рабочих данных выберите **Импорт шаблона ARM**. После этого вы перейдете на портал Azure, где сможете импортировать экспортированный шаблон. Выберите **создать собственный шаблон в редакторе** , чтобы открыть редактор шаблонов диспетчер ресурсов.
 
-При выполнении скрипта, выполняемого после развертывания, в поле **аргументы скрипта** необходимо указать вариант следующих параметров.
+   ![Создание собственного шаблона](media/continuous-integration-deployment/custom-deployment-build-your-own-template.png) 
 
-`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $false -deleteDeployment $true`
+1. Выберите **загрузить файл**и выберите созданный шаблон диспетчер ресурсов. Это файл **arm_template. JSON** , расположенный в ZIP-файле, экспортированном на шаге 1.
 
-    ![Azure PowerShell task](media/continuous-integration-deployment/continuous-integration-image11.png)
+   ![Изменить шаблон](media/continuous-integration-deployment/custom-deployment-edit-template.png)
 
-Ниже приведен скрипт, который можно использовать для выполнения до и после развертывания. Учетные записи для удаленных ресурсов и ссылок на ресурсы.
+1. В разделе Параметры введите значения конфигурации, например учетные данные связанной службы. Когда все будет готово, выберите **приобрести** , чтобы развернуть шаблон диспетчер ресурсов.
 
-```powershell
-param
-(
-    [parameter(Mandatory = $false)] [String] $armTemplate,
-    [parameter(Mandatory = $false)] [String] $ResourceGroupName,
-    [parameter(Mandatory = $false)] [String] $DataFactoryName,
-    [parameter(Mandatory = $false)] [Bool] $predeployment=$true,
-    [parameter(Mandatory = $false)] [Bool] $deleteDeployment=$false
-)
-
-function getPipelineDependencies {
-    param([System.Object] $activity)
-    if ($activity.Pipeline) {
-        return @($activity.Pipeline.ReferenceName)
-    } elseif ($activity.Activities) {
-        $result = @()
-        return $activity.Activities | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
-    } elseif ($activity.ifFalseActivities -or $activity.ifTrueActivities) {
-        $result = @()
-        $activity.ifFalseActivities | Where-Object {$_ -ne $null} | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
-        $activity.ifTrueActivities | Where-Object {$_ -ne $null} | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
-    } elseif ($activity.defaultActivities) {
-        $result = @()
-        $activity.defaultActivities | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
-        if ($activity.cases) {
-            $activity.cases | ForEach-Object{ $_.activities } | ForEach-Object{$result += getPipelineDependencies -activity $_ }
-        }
-        return $result
-    }
-}
-
-function pipelineSortUtil {
-    param([Microsoft.Azure.Commands.DataFactoryV2.Models.PSPipeline]$pipeline,
-    [Hashtable] $pipelineNameResourceDict,
-    [Hashtable] $visited,
-    [System.Collections.Stack] $sortedList)
-    if ($visited[$pipeline.Name] -eq $true) {
-        return;
-    }
-    $visited[$pipeline.Name] = $true;
-    $pipeline.Activities | ForEach-Object{ getPipelineDependencies -activity $_ -pipelineNameResourceDict $pipelineNameResourceDict}  | ForEach-Object{
-        pipelineSortUtil -pipeline $pipelineNameResourceDict[$_] -pipelineNameResourceDict $pipelineNameResourceDict -visited $visited -sortedList $sortedList
-    }
-    $sortedList.Push($pipeline)
-
-}
-
-function Get-SortedPipelines {
-    param(
-        [string] $DataFactoryName,
-        [string] $ResourceGroupName
-    )
-    $pipelines = Get-AzDataFactoryV2Pipeline -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
-    $ppDict = @{}
-    $visited = @{}
-    $stack = new-object System.Collections.Stack
-    $pipelines | ForEach-Object{ $ppDict[$_.Name] = $_ }
-    $pipelines | ForEach-Object{ pipelineSortUtil -pipeline $_ -pipelineNameResourceDict $ppDict -visited $visited -sortedList $stack }
-    $sortedList = new-object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSPipeline]
-    
-    while ($stack.Count -gt 0) {
-        $sortedList.Add($stack.Pop())
-    }
-    $sortedList
-}
-
-function triggerSortUtil {
-    param([Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger]$trigger,
-    [Hashtable] $triggerNameResourceDict,
-    [Hashtable] $visited,
-    [System.Collections.Stack] $sortedList)
-    if ($visited[$trigger.Name] -eq $true) {
-        return;
-    }
-    $visited[$trigger.Name] = $true;
-    $trigger.Properties.DependsOn | Where-Object {$_ -and $_.ReferenceTrigger} | ForEach-Object{
-        triggerSortUtil -trigger $triggerNameResourceDict[$_.ReferenceTrigger.ReferenceName] -triggerNameResourceDict $triggerNameResourceDict -visited $visited -sortedList $sortedList
-    }
-    $sortedList.Push($trigger)
-}
-
-function Get-SortedTriggers {
-    param(
-        [string] $DataFactoryName,
-        [string] $ResourceGroupName
-    )
-    $triggers = Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
-    $triggerDict = @{}
-    $visited = @{}
-    $stack = new-object System.Collections.Stack
-    $triggers | ForEach-Object{ $triggerDict[$_.Name] = $_ }
-    $triggers | ForEach-Object{ triggerSortUtil -trigger $_ -triggerNameResourceDict $triggerDict -visited $visited -sortedList $stack }
-    $sortedList = new-object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger]
-    
-    while ($stack.Count -gt 0) {
-        $sortedList.Add($stack.Pop())
-    }
-    $sortedList
-}
-
-function Get-SortedLinkedServices {
-    param(
-        [string] $DataFactoryName,
-        [string] $ResourceGroupName
-    )
-    $linkedServices = Get-AzDataFactoryV2LinkedService -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
-    $LinkedServiceHasDependencies = @('HDInsightLinkedService', 'HDInsightOnDemandLinkedService', 'AzureBatchLinkedService')
-    $Akv = 'AzureKeyVaultLinkedService'
-    $HighOrderList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
-    $RegularList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
-    $AkvList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
-
-    $linkedServices | ForEach-Object {
-        if ($_.Properties.GetType().Name -in $LinkedServiceHasDependencies) {
-            $HighOrderList.Add($_)
-        }
-        elseif ($_.Properties.GetType().Name -eq $Akv) {
-            $AkvList.Add($_)
-        }
-        else {
-            $RegularList.Add($_)
-        }
-    }
-
-    $SortedList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]($HighOrderList.Count + $RegularList.Count + $AkvList.Count)
-    $SortedList.AddRange($HighOrderList)
-    $SortedList.AddRange($RegularList)
-    $SortedList.AddRange($AkvList)
-    $SortedList
-}
-
-$templateJson = Get-Content $armTemplate | ConvertFrom-Json
-$resources = $templateJson.resources
-
-#Triggers 
-Write-Host "Getting triggers"
-$triggersADF = Get-SortedTriggers -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
-$triggersTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/triggers" }
-$triggerNames = $triggersTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
-$activeTriggerNames = $triggersTemplate | Where-Object { $_.properties.runtimeState -eq "Started" -and ($_.properties.pipelines.Count -gt 0 -or $_.properties.pipeline.pipelineReference -ne $null)} | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
-$deletedtriggers = $triggersADF | Where-Object { $triggerNames -notcontains $_.Name }
-$triggerstostop = $triggerNames | where { ($triggersADF | Select-Object name).name -contains $_ }
-
-if ($predeployment -eq $true) {
-    #Stop all triggers
-    Write-Host "Stopping deployed triggers"
-    $triggerstostop | ForEach-Object { 
-        Write-host "Disabling trigger " $_
-        Stop-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force 
-    }
-}
-else {
-    #Deleted resources
-    #pipelines
-    Write-Host "Getting pipelines"
-    $pipelinesADF = Get-SortedPipelines -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
-    $pipelinesTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/pipelines" }
-    $pipelinesNames = $pipelinesTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
-    $deletedpipelines = $pipelinesADF | Where-Object { $pipelinesNames -notcontains $_.Name }
-    #dataflows
-    $dataflowsADF = Get-AzDataFactoryV2DataFlow -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
-    $dataflowsTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/dataflows" }
-    $dataflowsNames = $dataflowsTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40) }
-    $deleteddataflow = $dataflowsADF | Where-Object { $dataflowsNames -notcontains $_.Name }
-    #datasets
-    Write-Host "Getting datasets"
-    $datasetsADF = Get-AzDataFactoryV2Dataset -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
-    $datasetsTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/datasets" }
-    $datasetsNames = $datasetsTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40) }
-    $deleteddataset = $datasetsADF | Where-Object { $datasetsNames -notcontains $_.Name }
-    #linkedservices
-    Write-Host "Getting linked services"
-    $linkedservicesADF = Get-SortedLinkedServices -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
-    $linkedservicesTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/linkedservices" }
-    $linkedservicesNames = $linkedservicesTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
-    $deletedlinkedservices = $linkedservicesADF | Where-Object { $linkedservicesNames -notcontains $_.Name }
-    #Integrationruntimes
-    Write-Host "Getting integration runtimes"
-    $integrationruntimesADF = Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
-    $integrationruntimesTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/integrationruntimes" }
-    $integrationruntimesNames = $integrationruntimesTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
-    $deletedintegrationruntimes = $integrationruntimesADF | Where-Object { $integrationruntimesNames -notcontains $_.Name }
-
-    #Delete resources
-    Write-Host "Deleting triggers"
-    $deletedtriggers | ForEach-Object { 
-        Write-Host "Deleting trigger "  $_.Name
-        $trig = Get-AzDataFactoryV2Trigger -name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
-        if ($trig.RuntimeState -eq "Started") {
-            Stop-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_.Name -Force 
-        }
-        Remove-AzDataFactoryV2Trigger -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
-    }
-    Write-Host "Deleting pipelines"
-    $deletedpipelines | ForEach-Object { 
-        Write-Host "Deleting pipeline " $_.Name
-        Remove-AzDataFactoryV2Pipeline -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
-    }
-    Write-Host "Deleting dataflows"
-    $deleteddataflow | ForEach-Object { 
-        Write-Host "Deleting dataflow " $_.Name
-        Remove-AzDataFactoryV2DataFlow -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
-    }
-    Write-Host "Deleting datasets"
-    $deleteddataset | ForEach-Object { 
-        Write-Host "Deleting dataset " $_.Name
-        Remove-AzDataFactoryV2Dataset -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
-    }
-    Write-Host "Deleting linked services"
-    $deletedlinkedservices | ForEach-Object { 
-        Write-Host "Deleting Linked Service " $_.Name
-        Remove-AzDataFactoryV2LinkedService -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
-    }
-    Write-Host "Deleting integration runtimes"
-    $deletedintegrationruntimes | ForEach-Object { 
-        Write-Host "Deleting integration runtime " $_.Name
-        Remove-AzDataFactoryV2IntegrationRuntime -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
-    }
-
-    if ($deleteDeployment -eq $true) {
-        Write-Host "Deleting ARM deployment ... under resource group: " $ResourceGroupName
-        $deployments = Get-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName
-        $deploymentsToConsider = $deployments | Where { $_.DeploymentName -like "ArmTemplate_master*" -or $_.DeploymentName -like "ArmTemplateForFactory*" } | Sort-Object -Property Timestamp -Descending
-        $deploymentName = $deploymentsToConsider[0].DeploymentName
-
-       Write-Host "Deployment to be deleted: " $deploymentName
-        $deploymentOperations = Get-AzResourceGroupDeploymentOperation -DeploymentName $deploymentName -ResourceGroupName $ResourceGroupName
-        $deploymentsToDelete = $deploymentOperations | Where { $_.properties.targetResource.id -like "*Microsoft.Resources/deployments*" }
-
-        $deploymentsToDelete | ForEach-Object { 
-            Write-host "Deleting inner deployment: " $_.properties.targetResource.id
-            Remove-AzResourceGroupDeployment -Id $_.properties.targetResource.id
-        }
-        Write-Host "Deleting deployment: " $deploymentName
-        Remove-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName -Name $deploymentName
-    }
-
-    #Start active triggers - after cleanup efforts
-    Write-Host "Starting active triggers"
-    $activeTriggerNames | ForEach-Object { 
-        Write-host "Enabling trigger " $_
-        Start-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force 
-    }
-}
-```
+   ![Раздел параметров](media/continuous-integration-deployment/continuous-integration-image5.png)
 
 ## <a name="use-custom-parameters-with-the-resource-manager-template"></a>Использование пользовательских параметров с шаблоном Resource Manager
 
-Если вы находитесь в режиме GIT, можно переопределить свойства по умолчанию в шаблоне диспетчер ресурсов, чтобы задать свойства, параметризованные в шаблоне, и свойства, которые жестко запрограммированы. Может потребоваться переопределить шаблон параметризации по умолчанию в следующих сценариях:
+Если у вашей фабрики разработки есть связанный репозиторий Git, можно переопределить параметры шаблона диспетчер ресурсов по умолчанию для шаблона диспетчер ресурсов, созданного путем публикации или экспорта шаблона. Может потребоваться переопределить шаблон параметризации по умолчанию в следующих сценариях:
 
 * Вы используете автоматизированную CI/CD и хотите изменить некоторые свойства во время развертывания диспетчер ресурсов, но свойства не будут параметризованы по умолчанию.
 * Ваша фабрика настолько велика, что шаблон диспетчер ресурсов по умолчанию является недопустимым, так как он содержит больше максимально допустимых параметров (256).
 
-В этих условиях для переопределения шаблона параметризации по умолчанию создайте файл с именем ARM-Template-Parameters-Definition. JSON в папке, указанной в качестве корневой папки для интеграции с Git фабрики данных. Необходимо использовать точное имя файла. Фабрика данных считывает этот файл из любой ветви, на которой Вы находитесь на портале фабрики данных Azure, а не только из ветви совместной работы. Вы можете создать или изменить файл из частной ветви, где можно протестировать изменения, выбрав **Экспорт шаблона ARM** в пользовательском интерфейсе. Затем можно выполнить слияние файла в ветвь совместной работы. Если файл не найден, используется шаблон по умолчанию.
+Чтобы переопределить шаблон параметризации по умолчанию, создайте файл с именем **ARM-Template-Parameters-Definition. JSON** в корневой папке ветви Git. Необходимо использовать точное имя файла.
 
-### <a name="syntax-of-a-custom-parameters-file"></a>Синтаксис пользовательского файла параметров
+   ![Файл пользовательских параметров](media/continuous-integration-deployment/custom-parameters.png)
 
-Ниже приведены некоторые рекомендации, которые необходимо выполнить при создании файла пользовательских параметров. Файл состоит из раздела для каждого типа сущности: триггера, конвейера, связанной службы, набора данных, среды выполнения интеграции и т. д.
+При публикации из ветви совместной работы фабрика данных считывает этот файл и использует его конфигурацию для создания свойств, которые будут параметризованы. Если файл не найден, используется шаблон по умолчанию.
+
+При экспорте шаблона диспетчер ресурсов фабрика данных считывает этот файл из любой ветви, над которой вы работаете в данный момент, а не только из ветви совместной работы. Вы можете создать или изменить файл из частной ветви, где можно протестировать изменения, выбрав **Экспорт шаблона ARM** в пользовательском интерфейсе. Затем можно выполнить слияние файла в ветвь совместной работы.
+
+> [!NOTE]
+> Пользовательский шаблон параметризации не изменяет ограничение на число параметров шаблона ARM, равное 256. Он позволяет выбирать и уменьшать количество параметризованных свойств.
+
+### <a name="custom-parameter-syntax"></a>Пользовательский синтаксис параметров
+
+Ниже приведены некоторые рекомендации, которые следует выполнить при создании файла пользовательских параметров, **ARM-Template-Parameters-Definition. JSON**. Файл состоит из раздела для каждого типа сущности: триггера, конвейера, связанной службы, набора данных, среды выполнения интеграции и потока данных.
+
 * Введите путь к свойству в соответствующем типе сущности.
-* Присвоение имени свойства значения `*` указывает, что необходимо параметризовать все свойства под ним (только на первый уровень, но не рекурсивно). В эту конфигурацию можно также указать исключения.
-* Установка значения свойства в виде строки указывает, что необходимо параметризовать свойство. Используйте формат `<action>:<name>:<stype>`.
+* Задание имени свойства  `*` означает, что необходимо параметризовать все свойства под ним (только на первый уровень, но не рекурсивно). В эту конфигурацию можно также указать исключения.
+* Установка значения свойства в виде строки указывает, что необходимо параметризовать свойство. Используйте формат  `<action>:<name>:<stype>` .
    *  `<action>` может быть одним из следующих символов:
       * `=` означает, что текущее значение сохраняется как значение по умолчанию для параметра.
       * `-` означает, что значение по умолчанию для параметра не сохраняется.
       * `|` является особым случаем для секретов из Azure Key Vault для строк подключения или ключей.
-   * `<name>` — имя параметра. Если оно пустое, оно принимает имя свойства. Если значение начинается с `-` символа, оно сокращается. Например, `AzureStorage1_properties_typeProperties_connectionString` будет сокращена до `AzureStorage1_connectionString`.
-   * `<stype>` — это тип параметра. Если `<stype>` пуст, тип по умолчанию — `string`. Поддерживаемые значения: `string`, `bool`, `number`, `object`и `securestring`.
+   * `<name>` имя параметра. Если оно пустое, оно принимает имя свойства. Если значение начинается с `-` символа, оно сокращается. Например, `AzureStorage1_properties_typeProperties_connectionString` сократится до `AzureStorage1_connectionString` .
+   * `<stype>` тип параметра. Если  `<stype>`   параметр пуст, используется тип по умолчанию `string` . Поддерживаемые значения: `string` , `bool` , `number` , `object` и `securestring` .
 * Указание массива в файле определения указывает на то, что соответствующее свойство в шаблоне является массивом. Фабрика данных выполняет перебор всех объектов в массиве с помощью определения, указанного в объекте среды выполнения интеграции массива. Второй объект, строка, становится именем свойства, которое используется в качестве имени параметра для каждой итерации.
 * Определение не может быть специфичным для экземпляра ресурса. Любое определение применяется ко всем ресурсам этого типа.
 * По умолчанию все защищенные строки, такие как Key Vault секреты и защищенные строки, такие как строки подключения, ключи и токены, являются параметризованными.
@@ -556,27 +307,27 @@ else {
 
 #### <a name="pipelines"></a>Конвейеры
     
-* Любое свойство в пути `activities/typeProperties/waitTimeInSeconds` параметризовано. Любое действие в конвейере, которое имеет свойство уровня кода с именем `waitTimeInSeconds` (например, действие `Wait`), параметризовано как число с именем по умолчанию. Но в шаблоне диспетчер ресурсов не будет значения по умолчанию. Он будет обязательным входом во время развертывания диспетчер ресурсов.
-* Аналогично, свойство с именем `headers` (например, в `Web` действии) параметризовано с типом `object` (JObject). Он имеет значение по умолчанию, то есть то же значение, что и у исходной фабрики.
+* Любое свойство в пути `activities/typeProperties/waitTimeInSeconds` является параметризованным. Любое действие в конвейере, которое имеет свойство уровня кода с именем `waitTimeInSeconds` (например, `Wait` действие), параметризовано как число с именем по умолчанию. Но в шаблоне диспетчер ресурсов не будет значения по умолчанию. Он будет обязательным входом во время развертывания диспетчер ресурсов.
+* Аналогично, свойство `headers` с именем (например, в `Web` действии) параметризовано с типом `object` (JObject). Он имеет значение по умолчанию, то есть то же значение, что и у исходной фабрики.
 
 #### <a name="integrationruntimes"></a>интегратионрунтимес
 
-* Все свойства в пути `typeProperties` параметризованы с соответствующими значениями по умолчанию. Например, в свойствах типа `IntegrationRuntimes` есть два свойства: `computeProperties` и `ssisProperties`. Оба типа свойств создаются с соответствующими значениями по умолчанию и типами (Object).
+* Все свойства в пути `typeProperties` параметризованы с соответствующими значениями по умолчанию. Например, в разделе Свойства типа есть два свойства `IntegrationRuntimes` : `computeProperties` и `ssisProperties` . Оба типа свойств создаются с соответствующими значениями по умолчанию и типами (Object).
 
 #### <a name="triggers"></a>Триггеры
 
-* В разделе `typeProperties`два свойства являются параметризованными. Первый из них `maxConcurrency`, для которого задано значение по умолчанию и он имеет тип`string`. Имя параметра по умолчанию `<entityName>_properties_typeProperties_maxConcurrency`.
-* Свойство `recurrence` также является параметризованным. В нем все свойства на этом уровне указываются для параметризации в виде строк, значения по умолчанию и имена параметров. Исключением является свойство `interval`, параметризованное как тип `number`. Имя параметра добавляется в суффикс с `<entityName>_properties_typeProperties_recurrence_triggerSuffix`. Аналогичным образом свойство `freq` — это строка, которая параметризована как строка. Однако свойство `freq` параметризовано без значения по умолчанию. Имя сокращено и суффиксы. Например, `<entityName>_freq`.
+* В разделе `typeProperties` два свойства являются параметризованными. Первый из них — `maxConcurrency` , для которого задано значение по умолчанию и тип `string` . Он имеет имя параметра по умолчанию `<entityName>_properties_typeProperties_maxConcurrency` .
+* `recurrence`Свойство также является параметризованным. В нем все свойства на этом уровне указываются для параметризации в виде строк, значения по умолчанию и имена параметров. Исключением является `interval` свойство, которое параметризовано как тип `number` . Имя параметра имеет суффикс `<entityName>_properties_typeProperties_recurrence_triggerSuffix` . Аналогично, `freq` свойство является строкой и параметризовано как строка. Однако `freq` свойство является параметризованным без значения по умолчанию. Имя сокращено и суффиксы. Например, `<entityName>_freq`.
 
 #### <a name="linkedservices"></a>LinkedServices
 
-* Связанные службы являются уникальными. Так как связанные службы и наборы данных имеют широкий спектр типов, можно указать настройку для конкретного типа. В этом примере для всех связанных служб типа `AzureDataLakeStore`будет применен конкретный шаблон. Для всех остальных (через `*`) будет применен другой шаблон.
-* Свойство `connectionString` будет параметризовано как значение `securestring`. Он не имеет значения по умолчанию. Имя параметра будет сокращено с суффиксом `connectionString`.
-* `secretAccessKey` свойства — это `AzureKeyVaultSecret` (например, в связанной службе Amazon S3). Он автоматически параметризован как Azure Key Vault секрет и получен из настроенного хранилища ключей. Вы также можете параметризовать само хранилище ключей.
+* Связанные службы являются уникальными. Так как связанные службы и наборы данных имеют широкий спектр типов, можно указать настройку для конкретного типа. В этом примере для всех связанных служб типа `AzureDataLakeStore` будет применен конкретный шаблон. Для всех остальных (через `*` ) будет применен другой шаблон.
+* `connectionString`Свойство будет параметризовано как `securestring` значение. Он не имеет значения по умолчанию. Имя параметра будет сокращено с суффиксом `connectionString` .
+* Свойство должно `secretAccessKey` быть равно `AzureKeyVaultSecret` (например, в связанной службе Amazon S3). Он автоматически параметризован как Azure Key Vault секрет и получен из настроенного хранилища ключей. Вы также можете параметризовать само хранилище ключей.
 
 #### <a name="datasets"></a>Наборы данных
 
-* Хотя настройка для наборов данных доступна для конкретного типа, можно предоставить конфигурацию без явной настройки уровня \*. В предыдущем примере все свойства набора данных в разделе `typeProperties` являются параметризованными.
+* Хотя настройка для наборов данных доступна для конкретного типа, можно предоставить конфигурацию без явной \* настройки на уровне. В предыдущем примере все свойства набора данных в разделе `typeProperties` являются параметризованными.
 
 ### <a name="default-parameterization-template"></a>Шаблон параметризации по умолчанию
 
@@ -657,7 +408,7 @@ else {
                     "database": "=",
                     "serviceEndpoint": "=",
                     "batchUri": "=",
-            "poolName": "=",
+                    "poolName": "=",
                     "databaseName": "=",
                     "systemNumber": "=",
                     "server": "=",
@@ -690,7 +441,9 @@ else {
 }
 ```
 
-В следующем примере показано, как добавить одно значение в шаблон параметризации по умолчанию. Мы хотим добавить существующий Azure Databricks идентификатор интерактивного кластера для связанной службы "кирпичы" в файл параметров. Обратите внимание, что этот файл совпадает с предыдущим файлом, за исключением добавления `existingClusterId` в поле свойства `Microsoft.DataFactory/factories/linkedServices`.
+### <a name="example-parameterizing-an-existing-azure-databricks-interactive-cluster-id"></a>Пример. Параметризация существующего Azure Databricksного идентификатора интерактивного кластера
+
+В следующем примере показано, как добавить одно значение в шаблон параметризации по умолчанию. Мы хотим добавить существующий Azure Databricks идентификатор интерактивного кластера для связанной службы "кирпичы" в файл параметров. Обратите внимание, что этот файл совпадает с предыдущим файлом, за исключением добавления `existingClusterId` в поле свойства `Microsoft.DataFactory/factories/linkedServices` .
 
 ```json
 {
@@ -817,41 +570,61 @@ else {
 
 Если вы не настроили Git, вы можете получить доступ к связанным шаблонам с помощью **шаблона Export ARM** в списке **шаблонов ARM** .
 
+## <a name="exclude-azure-ssis-integration-runtimes-from-cicd"></a>Исключить среды выполнения интеграции Azure SSIS из CI/CD
+
+Если в вашей фабрике разработки есть среда выполнения интеграции Azure SSIS, вы можете исключить все среды выполнения интеграции Azure SSIS из процесса CI/CD в приведенном ниже сценарии.
+
+- Azure-SSIS IRная инфраструктура является сложной и различается в каждой среде.  
+- Azure-SSIS IR настраивается вручную для каждой среды с тем же именем. В противном случае публикация завершится ошибкой, если в зависимости от Azure-SSIS IR есть какие-либо действия.
+
+Чтобы исключить среду выполнения интеграции Azure SSIS, сделайте следующее:
+
+1. Добавьте файл publish_config. JSON в корневую папку в ветви совместной работы, если она не существует.
+1. Добавьте приведенный ниже параметр в publish_config. JSON: 
+
+```json
+{
+    " excludeIRs": "true"
+}
+```
+
+При публикации из ветви совместной работы среды выполнения интеграции Azure SSIS будут исключены из созданного шаблона диспетчер ресурсов.
+
 ## <a name="hotfix-production-branch"></a>Рабочая ветвь исправления
 
 Если вы развертываете фабрику в рабочей среде и понимаете, что есть ошибка, которую необходимо исправить немедленно, но вы не можете развернуть текущую ветвь совместной работы, может потребоваться развернуть исправление. Этот подход известен как быстрое устранение неполадок или исправление QFE.
 
-1.  В Azure DevOps перейдите к выпуску, развернутому в рабочей среде. Поиск последней развернутой фиксации.
+1.    В Azure DevOps перейдите к выпуску, развернутому в рабочей среде. Поиск последней развернутой фиксации.
 
-2.  В сообщении о фиксации получите идентификатор фиксации ветви совместной работы.
+2.    В сообщении о фиксации получите идентификатор фиксации ветви совместной работы.
 
-3.  Создайте новую ветвь исправления из этой фиксации.
+3.    Создайте новую ветвь исправления из этой фиксации.
 
-4.  Перейдите в службу "Фабрика данных Azure" и переключитесь на ветвь исправлений.
+4.    Перейдите в службу "Фабрика данных Azure" и переключитесь на ветвь исправлений.
 
-5.  Исправьте ошибку с помощью UX фабрики данных Azure. Проверьте изменения.
+5.    Исправьте ошибку с помощью UX фабрики данных Azure. Проверьте изменения.
 
-6.  После проверки исправления выберите **Экспорт шаблона ARM** , чтобы получить диспетчер ресурсов шаблона исправления.
+6.    После проверки исправления выберите **Экспорт шаблона ARM** , чтобы получить диспетчер ресурсов шаблона исправления.
 
-7.  Вручную проверить эту сборку в ветви adf_publish.
+7.    Вручную проверить эту сборку в ветви adf_publish.
 
-8.  Если конвейер выпуска настроен на автоматический запуск на основе adf_publish возврата, новый выпуск будет запущен автоматически. В противном случае выпуск выставится в очередь вручную.
+8.    Если конвейер выпуска настроен на автоматический запуск на основе adf_publish возврата, новый выпуск будет запущен автоматически. В противном случае выпуск выставится в очередь вручную.
 
-9.  Разверните выпуск исправления на фабриках тестирования и производства. Этот выпуск содержит предыдущие рабочие нагрузки, а также исправление, выполненное на шаге 5.
+9.    Разверните выпуск исправления на фабриках тестирования и производства. Этот выпуск содержит предыдущие рабочие нагрузки, а также исправление, выполненное на шаге 5.
 
-10. Добавьте изменения из исправления в ветвь Development, чтобы в последующих выпусках не включалась та же ошибка.
+10.   Добавьте изменения из исправления в ветвь Development, чтобы в последующих выпусках не включалась та же ошибка.
 
 ## <a name="best-practices-for-cicd"></a>Рекомендации для CI/CD
 
 Если вы используете интеграцию с Git с фабрикой данных и конвейер CI/CD, который перемещает изменения из разработки в тест, а затем в рабочую среду, мы рекомендуем следующие рекомендации:
 
--   **Интеграция с Git**. Необходимо настроить только фабрику данных разработки с помощью интеграции с Git. Изменения в тестовых и рабочих средах развертываются с помощью CI/CD и не требуют интеграции с Git.
+-   **Интеграция с Git**. Настройка только фабрики данных разработки с помощью интеграции с Git. Изменения в тестовых и рабочих средах развертываются с помощью CI/CD и не требуют интеграции с Git.
 
--   **Сценарий CI/CD фабрики данных**. Перед шагом диспетчер ресурсов развертывания в CI/CD необходимо выполнить определенные задачи, такие как остановка и перезапуск триггеров и выполнение очистки. Рекомендуется использовать скрипты PowerShell до и после развертывания. Дополнительные сведения см. в разделе [Обновление активных триггеров](#update-active-triggers).
+-   **Скрипты, выполняемые до и после развертывания**. Перед шагом диспетчер ресурсов развертывания в CI/CD необходимо выполнить определенные задачи, такие как остановка и перезапуск триггеров и выполнение очистки. Рекомендуется использовать скрипты PowerShell до и после задачи развертывания. Дополнительные сведения см. в разделе [Обновление активных триггеров](#updating-active-triggers). Команда фабрики данных [предоставила сценарий](#script) для использования в нижней части этой страницы.
 
 -   **Среды выполнения интеграции и совместное использование**. Среды выполнения интеграции не меняются часто и похожи на все этапы в CI/CD. Поэтому фабрика данных предполагает наличие одинакового имени и типа среды выполнения интеграции во всех стадиях НЕПРЕРЫВного развертывания и чтения. Если вы хотите совместно использовать среды выполнения интеграции на всех этапах, рассмотрите возможность использования фабрики ternary только для хранения общих сред выполнения интеграции. Эту общую фабрику можно использовать во всех средах в качестве связанного типа среды выполнения интеграции.
 
--   **Key Vault**. При использовании связанных служб, основанных на Azure Key Vault, их можно использовать еще больше за счет хранения отдельных хранилищ ключей для разных сред. Кроме того, можно настроить отдельные уровни разрешений для каждого хранилища ключей. Например, вы не хотите, чтобы члены команды имели разрешения для рабочих секретов. При использовании этого подхода рекомендуется иметь одинаковые имена секретов на всех этапах. Если вы сохраняете одни и те же имена, вам не нужно изменять шаблоны диспетчер ресурсов в средах CI/CD, так как единственное, что изменяется, — это имя хранилища ключей, которое является одним из параметров шаблона диспетчер ресурсов.
+-   **Key Vault**. При использовании связанных служб, сведения о соединении которых хранятся в Azure Key Vault, рекомендуется хранить отдельные хранилища ключей для разных сред. Кроме того, можно настроить отдельные уровни разрешений для каждого хранилища ключей. Например, вы не хотите, чтобы члены команды имели разрешения для рабочих секретов. При использовании этого подхода рекомендуется иметь одинаковые имена секретов на всех этапах. Если вы сохраняете одни и те же имена секретов, вам не нужно параметризовать каждую строку подключения в средах CI/CD, так как единственное, что изменяется, — это имя хранилища ключей, которое является отдельным параметром.
 
 ## <a name="unsupported-features"></a>Неподдерживаемые функции
 
@@ -863,3 +636,283 @@ else {
 -   Вы не можете опубликовать из частных ветвей.
 
 -   В настоящее время вы не можете размещать проекты в BitBucket.
+
+## <a name="sample-pre--and-post-deployment-script"></a><a name="script"></a>Пример скрипта, выполняемого до и после развертывания
+
+Следующий пример скрипта можно использовать для завершения триггеров перед развертыванием и их перезапуска. Скрипт также содержит код для удаления ресурсов. Сохраните скрипт в репозитории Azure DevOps Git и сослаться на него с помощью Azure PowerShell задачи, используя версию 4. *.
+
+При выполнении скрипта, выполняемого перед развертыванием, в поле **аргументы скрипта** необходимо указать вариант следующих параметров.
+
+`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $true -deleteDeployment $false`
+
+
+При выполнении скрипта, выполняемого после развертывания, в поле **аргументы скрипта** необходимо указать вариант следующих параметров.
+
+`-armTemplate "$(System.DefaultWorkingDirectory)/<your-arm-template-location>" -ResourceGroupName <your-resource-group-name> -DataFactoryName <your-data-factory-name>  -predeployment $false -deleteDeployment $true`
+
+![Задача Azure PowerShell](media/continuous-integration-deployment/continuous-integration-image11.png)
+
+Ниже приведен скрипт, который можно использовать для выполнения до и после развертывания. Учетные записи для удаленных ресурсов и ссылок на ресурсы.
+
+  
+```powershell
+param
+(
+    [parameter(Mandatory = $false)] [String] $armTemplate,
+    [parameter(Mandatory = $false)] [String] $ResourceGroupName,
+    [parameter(Mandatory = $false)] [String] $DataFactoryName,
+    [parameter(Mandatory = $false)] [Bool] $predeployment=$true,
+    [parameter(Mandatory = $false)] [Bool] $deleteDeployment=$false
+)
+
+function getPipelineDependencies {
+    param([System.Object] $activity)
+    if ($activity.Pipeline) {
+        return @($activity.Pipeline.ReferenceName)
+    } elseif ($activity.Activities) {
+        $result = @()
+        $activity.Activities | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
+        return $result
+    } elseif ($activity.ifFalseActivities -or $activity.ifTrueActivities) {
+        $result = @()
+        $activity.ifFalseActivities | Where-Object {$_ -ne $null} | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
+        $activity.ifTrueActivities | Where-Object {$_ -ne $null} | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
+        return $result
+    } elseif ($activity.defaultActivities) {
+        $result = @()
+        $activity.defaultActivities | ForEach-Object{ $result += getPipelineDependencies -activity $_ }
+        if ($activity.cases) {
+            $activity.cases | ForEach-Object{ $_.activities } | ForEach-Object{$result += getPipelineDependencies -activity $_ }
+        }
+        return $result
+    } else {
+        return @()
+    }
+}
+
+function pipelineSortUtil {
+    param([Microsoft.Azure.Commands.DataFactoryV2.Models.PSPipeline]$pipeline,
+    [Hashtable] $pipelineNameResourceDict,
+    [Hashtable] $visited,
+    [System.Collections.Stack] $sortedList)
+    if ($visited[$pipeline.Name] -eq $true) {
+        return;
+    }
+    $visited[$pipeline.Name] = $true;
+    $pipeline.Activities | ForEach-Object{ getPipelineDependencies -activity $_ -pipelineNameResourceDict $pipelineNameResourceDict}  | ForEach-Object{
+        pipelineSortUtil -pipeline $pipelineNameResourceDict[$_] -pipelineNameResourceDict $pipelineNameResourceDict -visited $visited -sortedList $sortedList
+    }
+    $sortedList.Push($pipeline)
+
+}
+
+function Get-SortedPipelines {
+    param(
+        [string] $DataFactoryName,
+        [string] $ResourceGroupName
+    )
+    $pipelines = Get-AzDataFactoryV2Pipeline -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $ppDict = @{}
+    $visited = @{}
+    $stack = new-object System.Collections.Stack
+    $pipelines | ForEach-Object{ $ppDict[$_.Name] = $_ }
+    $pipelines | ForEach-Object{ pipelineSortUtil -pipeline $_ -pipelineNameResourceDict $ppDict -visited $visited -sortedList $stack }
+    $sortedList = new-object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSPipeline]
+    
+    while ($stack.Count -gt 0) {
+        $sortedList.Add($stack.Pop())
+    }
+    $sortedList
+}
+
+function triggerSortUtil {
+    param([Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger]$trigger,
+    [Hashtable] $triggerNameResourceDict,
+    [Hashtable] $visited,
+    [System.Collections.Stack] $sortedList)
+    if ($visited[$trigger.Name] -eq $true) {
+        return;
+    }
+    $visited[$trigger.Name] = $true;
+    $trigger.Properties.DependsOn | Where-Object {$_ -and $_.ReferenceTrigger} | ForEach-Object{
+        triggerSortUtil -trigger $triggerNameResourceDict[$_.ReferenceTrigger.ReferenceName] -triggerNameResourceDict $triggerNameResourceDict -visited $visited -sortedList $sortedList
+    }
+    $sortedList.Push($trigger)
+}
+
+function Get-SortedTriggers {
+    param(
+        [string] $DataFactoryName,
+        [string] $ResourceGroupName
+    )
+    $triggers = Get-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
+    $triggerDict = @{}
+    $visited = @{}
+    $stack = new-object System.Collections.Stack
+    $triggers | ForEach-Object{ $triggerDict[$_.Name] = $_ }
+    $triggers | ForEach-Object{ triggerSortUtil -trigger $_ -triggerNameResourceDict $triggerDict -visited $visited -sortedList $stack }
+    $sortedList = new-object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSTrigger]
+    
+    while ($stack.Count -gt 0) {
+        $sortedList.Add($stack.Pop())
+    }
+    $sortedList
+}
+
+function Get-SortedLinkedServices {
+    param(
+        [string] $DataFactoryName,
+        [string] $ResourceGroupName
+    )
+    $linkedServices = Get-AzDataFactoryV2LinkedService -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
+    $LinkedServiceHasDependencies = @('HDInsightLinkedService', 'HDInsightOnDemandLinkedService', 'AzureBatchLinkedService')
+    $Akv = 'AzureKeyVaultLinkedService'
+    $HighOrderList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
+    $RegularList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
+    $AkvList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]
+
+    $linkedServices | ForEach-Object {
+        if ($_.Properties.GetType().Name -in $LinkedServiceHasDependencies) {
+            $HighOrderList.Add($_)
+        }
+        elseif ($_.Properties.GetType().Name -eq $Akv) {
+            $AkvList.Add($_)
+        }
+        else {
+            $RegularList.Add($_)
+        }
+    }
+
+    $SortedList = New-Object Collections.Generic.List[Microsoft.Azure.Commands.DataFactoryV2.Models.PSLinkedService]($HighOrderList.Count + $RegularList.Count + $AkvList.Count)
+    $SortedList.AddRange($HighOrderList)
+    $SortedList.AddRange($RegularList)
+    $SortedList.AddRange($AkvList)
+    $SortedList
+}
+
+$templateJson = Get-Content $armTemplate | ConvertFrom-Json
+$resources = $templateJson.resources
+
+#Triggers 
+Write-Host "Getting triggers"
+$triggersADF = Get-SortedTriggers -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+$triggersTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/triggers" }
+$triggerNames = $triggersTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
+$activeTriggerNames = $triggersTemplate | Where-Object { $_.properties.runtimeState -eq "Started" -and ($_.properties.pipelines.Count -gt 0 -or $_.properties.pipeline.pipelineReference -ne $null)} | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
+$deletedtriggers = $triggersADF | Where-Object { $triggerNames -notcontains $_.Name }
+$triggerstostop = $triggerNames | where { ($triggersADF | Select-Object name).name -contains $_ }
+
+if ($predeployment -eq $true) {
+    #Stop all triggers
+    Write-Host "Stopping deployed triggers"
+    $triggerstostop | ForEach-Object { 
+        Write-host "Disabling trigger " $_
+        Remove-AzDataFactoryV2TriggerSubscription -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force
+    $status = Get-AzDataFactoryV2TriggerSubscriptionStatus -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_
+    while ($status.Status -ne "Disabled"){
+            Start-Sleep -s 15
+            $status = Get-AzDataFactoryV2TriggerSubscriptionStatus -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_
+    }
+    Stop-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force 
+    }
+}
+else {
+    #Deleted resources
+    #pipelines
+    Write-Host "Getting pipelines"
+    $pipelinesADF = Get-SortedPipelines -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $pipelinesTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/pipelines" }
+    $pipelinesNames = $pipelinesTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
+    $deletedpipelines = $pipelinesADF | Where-Object { $pipelinesNames -notcontains $_.Name }
+    #dataflows
+    $dataflowsADF = Get-AzDataFactoryV2DataFlow -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $dataflowsTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/dataflows" }
+    $dataflowsNames = $dataflowsTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40) }
+    $deleteddataflow = $dataflowsADF | Where-Object { $dataflowsNames -notcontains $_.Name }
+    #datasets
+    Write-Host "Getting datasets"
+    $datasetsADF = Get-AzDataFactoryV2Dataset -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $datasetsTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/datasets" }
+    $datasetsNames = $datasetsTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40) }
+    $deleteddataset = $datasetsADF | Where-Object { $datasetsNames -notcontains $_.Name }
+    #linkedservices
+    Write-Host "Getting linked services"
+    $linkedservicesADF = Get-SortedLinkedServices -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $linkedservicesTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/linkedservices" }
+    $linkedservicesNames = $linkedservicesTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
+    $deletedlinkedservices = $linkedservicesADF | Where-Object { $linkedservicesNames -notcontains $_.Name }
+    #Integrationruntimes
+    Write-Host "Getting integration runtimes"
+    $integrationruntimesADF = Get-AzDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
+    $integrationruntimesTemplate = $resources | Where-Object { $_.type -eq "Microsoft.DataFactory/factories/integrationruntimes" }
+    $integrationruntimesNames = $integrationruntimesTemplate | ForEach-Object {$_.name.Substring(37, $_.name.Length-40)}
+    $deletedintegrationruntimes = $integrationruntimesADF | Where-Object { $integrationruntimesNames -notcontains $_.Name }
+
+    #Delete resources
+    Write-Host "Deleting triggers"
+    $deletedtriggers | ForEach-Object { 
+        Write-Host "Deleting trigger "  $_.Name
+        $trig = Get-AzDataFactoryV2Trigger -name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName
+        if ($trig.RuntimeState -eq "Started") {
+            Stop-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_.Name -Force 
+        }
+        Remove-AzDataFactoryV2Trigger -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
+    Write-Host "Deleting pipelines"
+    $deletedpipelines | ForEach-Object { 
+        Write-Host "Deleting pipeline " $_.Name
+        Remove-AzDataFactoryV2Pipeline -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
+    Write-Host "Deleting dataflows"
+    $deleteddataflow | ForEach-Object { 
+        Write-Host "Deleting dataflow " $_.Name
+        Remove-AzDataFactoryV2DataFlow -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
+    Write-Host "Deleting datasets"
+    $deleteddataset | ForEach-Object { 
+        Write-Host "Deleting dataset " $_.Name
+        Remove-AzDataFactoryV2Dataset -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
+    Write-Host "Deleting linked services"
+    $deletedlinkedservices | ForEach-Object { 
+        Write-Host "Deleting Linked Service " $_.Name
+        Remove-AzDataFactoryV2LinkedService -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
+    Write-Host "Deleting integration runtimes"
+    $deletedintegrationruntimes | ForEach-Object { 
+        Write-Host "Deleting integration runtime " $_.Name
+        Remove-AzDataFactoryV2IntegrationRuntime -Name $_.Name -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Force 
+    }
+
+    if ($deleteDeployment -eq $true) {
+        Write-Host "Deleting ARM deployment ... under resource group: " $ResourceGroupName
+        $deployments = Get-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName
+        $deploymentsToConsider = $deployments | Where { $_.DeploymentName -like "ArmTemplate_master*" -or $_.DeploymentName -like "ArmTemplateForFactory*" } | Sort-Object -Property Timestamp -Descending
+        $deploymentName = $deploymentsToConsider[0].DeploymentName
+
+       Write-Host "Deployment to be deleted: " $deploymentName
+        $deploymentOperations = Get-AzResourceGroupDeploymentOperation -DeploymentName $deploymentName -ResourceGroupName $ResourceGroupName
+        $deploymentsToDelete = $deploymentOperations | Where { $_.properties.targetResource.id -like "*Microsoft.Resources/deployments*" }
+
+        $deploymentsToDelete | ForEach-Object { 
+            Write-host "Deleting inner deployment: " $_.properties.targetResource.id
+            Remove-AzResourceGroupDeployment -Id $_.properties.targetResource.id
+        }
+        Write-Host "Deleting deployment: " $deploymentName
+        Remove-AzResourceGroupDeployment -ResourceGroupName $ResourceGroupName -Name $deploymentName
+    }
+
+    #Start active triggers - after cleanup efforts
+    Write-Host "Starting active triggers"
+    $activeTriggerNames | ForEach-Object { 
+        Write-host "Enabling trigger " $_
+        Add-AzDataFactoryV2TriggerSubscription -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force
+    $status = Get-AzDataFactoryV2TriggerSubscriptionStatus -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_
+    while ($status.Status -ne "Enabled"){
+            Start-Sleep -s 15
+            $status = Get-AzDataFactoryV2TriggerSubscriptionStatus -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_
+    }
+    Start-AzDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_ -Force 
+    }
+}
+```

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Созданию приложения для iOS, которое создает фотографию и запускает ее в Иммерсивном средстве чтения (Swift)
+title: Руководство по Созданию приложения для iOS, которое создает фотографию и запускает ее в Иммерсивном средстве чтения (Swift)
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве вы создадите приложение для iOS с нуля и добавите изображение в функциональность Иммерсивного средства чтения.
 services: cognitive-services
@@ -9,20 +9,20 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 01/14/2020
 ms.author: metan
-ms.openlocfilehash: 69ff58d6cdabe49000b00afecfc6b4ad1a3f2daa
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: a7e0cb41f32a60e4f00cb60cc3c86e40ab926785
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76841852"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82735136"
 ---
-# <a name="tutorial-create-an-ios-app-that-launches-the-immersive-reader-with-content-from-a-photo-swift"></a>Руководство. Созданию приложения для iOS, которое запускает иммерсивное средство чтения с содержимым из фотографии (Swift)
+# <a name="tutorial-create-an-ios-app-that-launches-the-immersive-reader-with-content-from-a-photo-swift"></a>Руководство по Созданию приложения для iOS, которое запускает иммерсивное средство чтения с содержимым из фотографии (Swift)
 
 [Иммерсивное средство чтения](https://www.onenote.com/learningtools) — это включительно разработанное решение, в котором реализованы проверенные методы, улучшающие понимание при чтении.
 
 [API чтение службы Cognitive Service "Компьютерное зрение"](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text) обнаруживает текстовое содержимое в изображении, используя новейшие модели распознавания Майкрософт и преобразует обнаруженный текст в поток символов, пригодный для машинного чтения.
 
-В этом руководстве вы создадите приложение для iOS с нуля, интегрируете API чтения, а также Иммерсивное средство чтения с помощью пакета SDK Ииммерсивного средства чтения. Полностью рабочий пример этого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS/samples/picture-to-immersive-reader-swift).
+В этом руководстве вы создадите приложение для iOS с нуля, интегрируете API чтения, а также Иммерсивное средство чтения с помощью пакета SDK Ииммерсивного средства чтения. Полностью рабочий пример этого руководства доступен [здесь](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/ios).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -53,7 +53,7 @@ ms.locfileid: "76841852"
   target 'picture-to-immersive-reader-swift' do
   use_frameworks!
   # Pods for picture-to-immersive-reader-swift
-  pod 'immersive-reader-sdk', :path => 'https://github.com/microsoft/immersive-reader-sdk/tree/master/iOS/immersive-reader-sdk'
+  pod 'immersive-reader-sdk', :git => 'https://github.com/microsoft/immersive-reader-sdk.git'
   end
 ```
 4. В окне терминала в каталоге проекта Xcode запустите команду `pod install`, чтобы установить pod пакета SDK для иммерсивного средства чтения

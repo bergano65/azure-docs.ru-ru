@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: a043a1655950f3ed7688e59352f8a912146e12c9
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76720458"
 ---
 # <a name="the-team-data-science-process-lifecycle"></a>Жизненный цикл процесса обработки и анализа данных группы
@@ -29,9 +29,9 @@ ms.locfileid: "76720458"
 Жизненный цикл TDSP включает пять основных этапов, которые выполняются циклически. Эти этапы включают:
 
    1. [Коммерческий аспект](lifecycle-business-understanding.md).
-   2. [Получение и анализ данных](lifecycle-data.md).
+   2. [Получение и понимание данных](lifecycle-data.md)
    3. [Моделирование](lifecycle-modeling.md)
-   4. [Deployment](lifecycle-deployment.md)
+   4. [Развертывание](lifecycle-deployment.md)
    5. [Прием клиентом](lifecycle-acceptance.md).
 
 Визуальное представление жизненного цикла процесса обработки и анализа данных группы: 
@@ -47,7 +47,7 @@ ms.locfileid: "76720458"
    * **Способы** — структура конкретных задач и рекомендации по их выполнению.
    * **Артефакты** — конечные результаты и поддержка их реализации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Кроме того, предоставляются полные пошаговые руководства, которые демонстрируют все этапы процесса для конкретных сценариев. Статья [Пошаговые руководства по процессу обработки и анализа данных группы](walkthroughs.md) содержит список сценариев, ссылки и описания эскизов. В пошаговых руководствах показано, как объединить облачные, локальные инструменты и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение. 
 

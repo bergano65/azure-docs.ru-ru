@@ -17,10 +17,10 @@ ms.date: 09/19/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0b14c08604fcc0f6d2550127ca1f1aa053172b75
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "72026733"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workteam"></a>Руководство по Интеграция единого входа Azure Active Directory с Workteam
@@ -35,9 +35,9 @@ ms.locfileid: "72026733"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Workteam с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "72026733"
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Workteam](#configure-workteam-sso)** необходима чтобы настроить параметры единого входа на стороне приложения.
     1. **[Создание тестового пользователя Workteam](#create-workteam-test-user)** требуется для того, чтобы в Workteam существовал пользователь B.Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,7 +78,7 @@ ms.locfileid: "72026733"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено в режиме инициированном **IDP** и ему заданы требуемые URL-адреса в Azure. Пользователь должен сохранить конфигурацию, нажав кнопку **Сохранить**.
 
@@ -110,7 +110,7 @@ ms.locfileid: "72026733"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Workteam.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Workteam**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -148,7 +148,7 @@ ms.locfileid: "72026733"
 
      ![Workteam и Saml](./media/workteam-tutorial/tutorial_workteam_saml.png)
 
-    a. Укажите для параметра **SAML IdP** (Поставщик удостоверений SAML) значение **AD Azure**.
+    а. Укажите для параметра **SAML IdP** (Поставщик удостоверений SAML) значение **AD Azure**.
 
     b. В текстовое поле **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
@@ -156,7 +156,7 @@ ms.locfileid: "72026733"
 
     d. В Блокноте откройте скачанный с портала Azure **сертификат в кодировке base-64**, скопируйте его содержимое, а затем вставьте его в поле **SAML Signing Certificate (Base64)** (Сертификат для подписи SAML (Base64)).
 
-    д. Последовательно выберите **ОК**.
+    д) Нажмите кнопку **ОК**.
 
 ### <a name="create-workteam-test-user"></a>Создание тестового пользователя Workteam
 
@@ -174,11 +174,11 @@ ms.locfileid: "72026733"
 
     ![Новый пользователь Workteam](./media/workteam-tutorial/tutorial_workteam_newuser.png)
 
-    a. В текстовом поле **Name** (Имя) введите имя пользователя, например **B.Simon**.
+    а. В текстовом поле **Name** (Имя) введите имя пользователя, например **B.Simon**.
 
     b. В текстовое поле **E-mail** (Адрес электронной почты) введите адрес электронной почты пользователя, например `B.Simon\@contoso.com`.
 
-    c. Последовательно выберите **ОК**.
+    c. Нажмите кнопку **ОК**.
 
 ## <a name="test-sso"></a>Проверка единого входа 
 
@@ -188,9 +188,9 @@ ms.locfileid: "72026733"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

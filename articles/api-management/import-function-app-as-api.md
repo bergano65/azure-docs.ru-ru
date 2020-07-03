@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 06/28/2019
+ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 97e4863294a32e7c11cd0c4bfa987b4e5764c0d4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 6f4626a8c42f3a50fa273c55099158750241bfee
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75442583"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202930"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -35,18 +35,18 @@ ms.locfileid: "75442583"
 > * проверка API на портале Azure;
 > * проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Выполните задачи в кратком руководстве по [созданию экземпляра службы "Управление API Azure"](get-started-create-service-instance.md).
 * Убедитесь, что в подписке есть приложение-функция Azure. Дополнительные сведения см. в разделе [Создание приложения-функции](../azure-functions/functions-create-first-azure-function.md#create-a-function-app). В приложении должны быть функции с триггером HTTP и уровень авторизации со значением *Анонимный* или *Функция*.
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
-## <a name="add-new-api-from-azure-function-app"></a> Импорт приложения-функции Azure в качестве нового API
+## <a name="import-an-azure-function-app-as-a-new-api"></a><a name="add-new-api-from-azure-function-app"></a> Импорт приложения-функции Azure в качестве нового API
 
 Выполните следующие действия, чтобы создать новый интерфейс API из приложения-функции Azure.
 
-1. В своем экземпляре службы **Управление API Azure** выберите в меню слева **API**.
+1. На портале Azure перейдите к службе "Управление API" и в меню выберите **Интерфейсы API**.
 
 2. В списке **Добавление нового API** выберите **Приложение-функция**.
 
@@ -71,13 +71,10 @@ ms.locfileid: "75442583"
     > [!NOTE]
     > Вы можете импортировать только функции, которые основаны на триггере HTTP и имеют уровень авторизации *Анонимный* или *Функция*.
 
-7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости измените другие предварительно заполненные поля.
-
-    ![Добавление из приложения-функции](./media/import-function-app-as-api/add-06.png)
-
+7. Переключитесь в **полное** представление и назначьте **продукт** вашему новому API. При необходимости задайте значения в других полях во время создания или позже, перейдя на вкладку **Параметры**. Эти параметры описаны в руководстве [Импорт и публикация первого интерфейса API](import-and-publish.md#-import-and-publish-a-backend-api).
 8. Нажмите кнопку **Создать**.
 
-## <a name="append-azure-function-app-to-api"></a> Добавление приложения-функции Azure в API
+## <a name="append-azure-function-app-to-an-existing-api"></a><a name="append-azure-function-app-to-api"></a> Добавление приложения-функции Azure в API
 
 Выполните описанные ниже шаги, чтобы добавить существующее приложение-функцию в имеющийся API.
 
@@ -111,14 +108,14 @@ ms.locfileid: "75442583"
 
     ![Добавление из приложения-функции](./media/import-function-app-as-api/append-04.png)
 
-## <a name="authorization"></a> Авторизация
+## <a name="authorization"></a><a name="authorization"></a> Авторизация
 
 Во время импорта приложения-функции Azure автоматически создается:
 
 * ключ узла в приложении-функции с именем apim-{*имя экземпляра службы "Управление API Azure"* };
 * именованное значение в экземпляре службы "Управление API Azure" с именем {*имя экземпляра приложения-функции Azure*}-key, которое содержит созданный ключ узла.
 
-При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/backend/update#backendcredentialscontract)`PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
+При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook-trigger.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/backend/update#backendcredentialscontract)`PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
 
 > [!WARNING]
 > Удаление или изменение значения ключа узла в приложении-функции Azure или именованного значения службы "Управление API Azure" приведет к разрыву подключения между службами. Значения не синхронизируются автоматически.
@@ -143,7 +140,7 @@ ms.locfileid: "75442583"
 
 ![Добавление из приложения-функции](./media/import-function-app-as-api/keys-01.png)
 
-## <a name="test-in-azure-portal"></a> Проверка нового API на портале Azure
+## <a name="test-the-new-api-in-the-azure-portal"></a><a name="test-in-azure-portal"></a> Проверка нового API на портале Azure
 
 Операции можно вызывать непосредственно на портале Azure. Использование портала Azure — удобный способ просмотра и тестирования операций с API.  
 

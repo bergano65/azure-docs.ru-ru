@@ -7,17 +7,17 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 06/20/2019
 ms.openlocfilehash: 2e27958dd9379a26ca7e7f4d7e427e5afa216e29
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75981163"
 ---
 # <a name="build-your-first-serverless-app-by-using-azure-logic-apps-and-azure-functions-in-visual-studio"></a>Создание первого бессерверного приложения с помощью Azure Logic Apps и функций Azure в Visual Studio
 
 Вы можете быстро разрабатывать и развертывать облачные приложения с помощью бессерверных средств и возможностей в Azure, таких как [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [функции Azure](../azure-functions/functions-overview.md). В этой статье показано, как в Visual Studio приступить к созданию бессерверного приложения на основе приложения логики, которое вызывает функцию Azure. Дополнительные сведения о бессерверных решениях в Azure см. в статье [Обзор бессерверных компонентов Azure с функциями и Logic Apps](../logic-apps/logic-apps-serverless-overview.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы создать бессерверное приложение в Visual Studio, вам потребуется:
 
@@ -38,13 +38,13 @@ ms.locfileid: "75981163"
 
   * Средства Azure Logic Apps для необходимой версии Visual Studio:
 
-    * [Visual Studio 2019](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019)
+    * [Visual Studio 2019](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019)
 
-    * [Visual Studio 2017](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
+    * [Visual Studio 2017](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
 
     * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
   
-    Вы можете скачать и установить средства Azure Logic Apps напрямую из Visual Studio Marketplace или узнать, [как установить это расширение из Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions). 
+    Вы можете скачать и установить Azure Logic Apps средства непосредственно из Visual Studio Marketplace или узнать, [как установить это расширение в Visual Studio](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions). 
     После завершения установки перезагрузите Visual Studio.
 
   * [Azure functions Core Tools](https://www.npmjs.com/package/azure-functions-core-tools) для локальных функций отладки.
@@ -64,14 +64,14 @@ ms.locfileid: "75981163"
 
    ![Создание проекта в Visual Studio](./media/logic-apps-serverless-get-started-vs/create-new-project-visual-studio.png)
 
-1. В разделе **Установленные** выберите **Visual C#** или **Visual Basic**. Затем выберите **облако** > **Группа ресурсов Azure**.
+1. В разделе **Установленные** выберите **Visual C#** или **Visual Basic**. Затем выберите**Группа ресурсов** **Cloud** > Azure.
 
    > [!NOTE]
    > Если категория **облако** или проект **группы ресурсов Azure** не существуют, убедитесь, что вы установили пакет Azure SDK для Visual Studio.
 
    Если вы используете Visual Studio 2019, сделайте следующее:
 
-   1. В поле **создать проект** выберите шаблон проекта **группы ресурсов Azure** для любого визуального элемента C# или Visual Basic, а затем нажмите кнопку **Далее**.
+   1. В поле **создать новый проект** выберите шаблон проекта **группы ресурсов Azure** для Visual C# или Visual Basic, а затем нажмите кнопку **Далее**.
 
    1. Укажите имя и другие сведения о проекте, которые будут использоваться для группы ресурсов Azure. Когда все будет готово, выберите **Создать**.
 
@@ -83,7 +83,7 @@ ms.locfileid: "75981163"
    > [!TIP]
    > В сценариях, где вы не хотите развертывать решение в группе ресурсов Azure, можно использовать шаблон пустое **приложение логики** , который просто создает пустое приложение логики.
 
-1. В списке **Показывать шаблоны из этого расположения** выберите Быстрый запуск **Azure (GitHub.com/Azure/Azure-QuickStart-Templates)** .
+1. В списке **Показывать шаблоны из этого расположения** выберите Быстрый запуск **Azure (GitHub.com/Azure/Azure-QuickStart-Templates)**.
 
 1. В поле поиска введите "Logic-App" в качестве фильтра. В результатах выберите шаблон **101-Logic-App-and-Function-App** .
 
@@ -100,7 +100,7 @@ ms.locfileid: "75981163"
 
 Прежде чем можно будет открыть приложение логики в конструкторе приложений логики в Visual Studio, необходимо иметь группу ресурсов Azure, которая уже развернута в Azure. Это позволит конструктору создавать подключения к ресурсам и службам из приложения логики. Для выполнения этой задачи выполните следующие действия, чтобы развернуть решение из Visual Studio на портал Azure:
 
-1. В обозреватель решений в контекстном меню проекта ресурса выберите **развернуть** > **создать**.
+1. В Обозреватель решений в контекстном меню проекта ресурса выберите **развернуть** > **Новый**.
 
    ![Создание развертывания для группы ресурсов](./media/logic-apps-serverless-get-started-vs/deploy.png)
 
@@ -136,11 +136,11 @@ ms.locfileid: "75981163"
 
 ## <a name="create-your-azure-functions-project"></a>Создание проекта функций Azure
 
-Чтобы создать проект функций и выполнить функции с помощью JavaScript, Python, F#PowerShell, пакетной службы или bash, выполните действия, описанные в разделе [Работа с Azure functions Core Tools](../azure-functions/functions-run-local.md). Чтобы разработать функцию Azure с помощью C# внутри решения, используйте библиотеку C# классов, выполнив действия, описанные в статье [Публикация библиотеки классов .NET в качестве приложение-функция](https://blogs.msdn.microsoft.com/appserviceteam/2017/03/16/publishing-a-net-class-library-as-a-function-app/).
+Чтобы создать проект функций и выполнить функции с помощью JavaScript, Python, F #, PowerShell, пакетной службы или bash, выполните действия, описанные в разделе [Работа с Azure functions Core Tools](../azure-functions/functions-run-local.md). Чтобы разработать функцию Azure с помощью C# внутри решения, используйте библиотеку классов C#, выполнив действия, описанные в статье [Публикация библиотеки классов .NET в качестве приложение-функция](https://blogs.msdn.microsoft.com/appserviceteam/2017/03/16/publishing-a-net-class-library-as-a-function-app/).
 
 ## <a name="deploy-functions-from-visual-studio"></a>Развертывание функций из Visual Studio
 
-Шаблон развертывания развертывает все функции Azure, которые имеются в решении, из репозитория Git, заданного переменными в файле azuredeploy. JSON. При создании и разработке проекта функций в решении можно вернуть проект в систему управления версиями Git (например, GitHub или Azure DevOps), а затем обновить переменную `repo`, чтобы шаблон развертывает функцию Azure.
+Шаблон развертывания развертывает все функции Azure, которые имеются в решении, из репозитория Git, заданного переменными в файле azuredeploy. JSON. При создании и разработке проекта функций в решении можно вернуть проект в систему управления версиями Git (например, GitHub или Azure DevOps), а затем обновить `repo` переменную, чтобы шаблон развертывает функцию Azure.
 
 ## <a name="manage-logic-apps-and-view-run-history"></a>Управление приложениями логики и просмотр журнала выполнения
 
@@ -157,6 +157,6 @@ ms.locfileid: "75981163"
 
 Теперь опубликованное приложение логики можно скачать в проект группы ресурсов. Поэтому, хотя вы могли запускать приложение логики в портал Azure, вы по-прежнему можете импортировать это приложение в Visual Studio и управлять им. Дополнительные сведения см. в статье [Управление приложениями логики в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Управление приложениями логики в Visual Studio](manage-logic-apps-with-visual-studio.md)

@@ -7,12 +7,13 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: helohr
-ms.openlocfilehash: 23763123ce8e92b6bb15b2b33a196ed1a1d75c9f
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+manager: lizross
+ms.openlocfilehash: fc6eb22f81279003a5355993db231ffec8e31b7d
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368795"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82611965"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
@@ -57,7 +58,7 @@ Set-VM -Name <VMNAME> -CheckpointType Disabled
 Можно также выполнить следующий командлет PowerShell, чтобы изменить диск на фиксированный.
 
 ```powershell
-Convert-VHD –Path c:\\test\\MY-VM.vhdx –DestinationPath c:\\test\\MY-NEW-VM.vhd -VHDType Fixed
+Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd -VHDType Fixed
 ```
 
 ## <a name="software-preparation-and-installation"></a>Подготовка и установка программного обеспечения
@@ -86,7 +87,7 @@ Convert-VHD –Path c:\\test\\MY-VM.vhdx –DestinationPath c:\\test\\MY-NEW-VM.
 
 Чтобы отключить автоматическое обновление через локальные групповая политика:
 
-1. Откройте **редактор локальных групповых политик\\административные шаблоны\\компоненты Windows\\центр обновления Windows**.
+1. Откройте **редактор локальных групповых политик\\административные шаблоны\\компонентов\\Windows Центр обновления Windows**.
 2. Щелкните правой кнопкой мыши пункт **настроить автоматическое обновление** и установите для него значение **отключено**.
 
 Можно также выполнить следующую команду в командной строке, чтобы отключить автоматическое обновление.
@@ -112,7 +113,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v SpecialRoam
 1. На Active Directory сервере откройте **консоль управления групповыми политиками**.
 2. Разверните домен и групповая политика объекты.
 3. Щелкните правой кнопкой мыши **объект Групповая политика** , созданный для параметров групповой политики, и выберите **изменить**.
-4. В **редактор "Управление групповыми политиками"** последовательно выберите **Конфигурация компьютера** > **политики** > **Административные шаблоны** > **компоненты Windows** > **службы удаленных рабочих столов** > удаленный рабочий стол **Узел сеансов** > **перенаправление устройств и ресурсов**.
+4. В **редактор "Управление групповыми политиками"** перейдите к разделу**политики** >  **конфигурации** > компьютера**Административные шаблоны** > **компоненты** > **службы удаленных рабочих столов** > **Удаленный рабочий стол устройство узла** > сеансов**и перенаправление ресурсов**.
 5. Включите параметр **Разрешить перенаправление** часового пояса.
 
 Эту команду также можно выполнить на главном образе для перенаправления часовых поясов:
@@ -198,12 +199,12 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\rdp-s
 
     ![Снимок экрана уведомления об успешно созданном образе.](media/1f41b7192824a2950718a2b7bb9e9d69.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас есть образ, можно создать или обновить пулы узлов. Дополнительные сведения о создании и обновлении пулов узлов см. в следующих статьях:
 
-- [Create a host pool with an Azure Resource Manager template](create-host-pools-arm-template.md) (Создание пула узлов с помощью шаблона Azure Resource Manager)
+- [Создание пула узлов с помощью шаблона Azure Resource Manager](./virtual-desktop-fall-2019/create-host-pools-arm-template.md)
 - [Руководство. Создание пула узлов с помощью Azure Marketplace](create-host-pools-azure-marketplace.md)
-- [Create a host pool with PowerShell](create-host-pools-powershell.md) (Создание пула узлов с помощью PowerShell)
+- [Создание пула узлов с помощью PowerShell](create-host-pools-powershell.md)
 - [Создание контейнера профиля для пула узлов с помощью общей папки](create-host-pools-user-profile.md)
-- [Настройка метода балансировки нагрузки виртуальных рабочих столов Windows](configure-host-pool-load-balancing.md)
+- [Настройка метода балансировки нагрузки Виртуального рабочего стола Windows](configure-host-pool-load-balancing.md)

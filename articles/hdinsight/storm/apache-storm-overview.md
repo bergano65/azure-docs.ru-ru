@@ -2,29 +2,28 @@
 title: Основные сведения об Apache Storm в Azure HDInsight
 description: Apache Storm позволяет обрабатывать потоки данных в режиме реального времени. Azure HDInsight позволяет легко создавать кластеры Storm в облаке Azure. С помощью Visual Studio можно создать решения Storm, используя C#, а затем развернуть их в кластерах HDInsight Storm.
 author: hrasheed-msft
-ms.reviewer: jasonh
-keywords: варианты использования apache storm, кластер storm, сведения об apache storm
-ms.service: hdinsight
-ms.custom: hdinsightactive,hdiseo17may2017
-ms.topic: overview
-ms.date: 06/12/2019
 ms.author: hrasheed
-ms.openlocfilehash: 9c7e49fe522859f97f00f760822d5eef60db5f69
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.reviewer: jasonh
+ms.service: hdinsight
+ms.topic: overview
+ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
+ms.date: 04/20/2020
+ms.openlocfilehash: 97b1466e6ac1f2c2dfb931655b64b0f9937ba21d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74228860"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82183268"
 ---
 # <a name="what-is-apache-storm-on-azure-hdinsight"></a>Основные сведения об Apache Storm в Azure HDInsight
 
-[Apache Storm](https://storm.apache.org/) — это распределенная отказоустойчивая вычислительная система с открытым исходным кодом. Ее можно использовать для обработки потоков данных в реальном времени с помощью [Apache Hadoop](https://hadoop.apache.org/). Решения Storm могут также обеспечить гарантированную обработку данных и возможность воспроизвести те данные, которые не прошли удачную обработку в первый раз.
+[Apache Storm](https://storm.apache.org/) — это распределенная отказоустойчивая вычислительная система с открытым исходным кодом. Ее можно использовать для обработки потоков данных в реальном времени с помощью [Apache Hadoop](../hadoop/apache-hadoop-introduction.md). Решения Storm могут также обеспечить гарантированную обработку данных и возможность воспроизвести те данные, которые не прошли удачную обработку в первый раз.
 
 ## <a name="why-use-apache-storm-on-hdinsight"></a>Преимущества использования Apache Storm в HDInsight
 
 Использование Storm в HDInsight обеспечивает следующие преимущества:
 
-* __Соглашение об уровне обслуживания (SLA) 99 % в отношении бесперебойной работы Storm__. Дополнительные сведения см. в документе [Соглашение об уровне обслуживания для HDInsight](https://azure.microsoft.com/support/legal/sla/hdinsight/v1_0/).
+* __Соглашение об уровне обслуживания (SLA) 99 % в отношении бесперебойной работы Storm__. Для кластеров Storm в HDInsight действует полная и постоянная поддержка. Кроме того, для кластеров Storm в HDInsight заявлена гарантированная доступность в течение 99,9 % времени. Это означает, что корпорация Майкрософт гарантирует возможность подключения к кластеру Storm извне в течение как минимум 99,9 % времени. Дополнительные сведения см. на странице [службы поддержки Azure](https://azure.microsoft.com/support/options/). См. также [сведения о соглашении об уровне обслуживания для HDInsight](https://azure.microsoft.com/support/legal/sla/hdinsight/v1_0/).
 
 * Простая настройка с помощью скриптов во время или после создания кластера Storm. Дополнительные сведения см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](../hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -34,15 +33,11 @@ ms.locfileid: "74228860"
 
     * Поддержка Java-интерфейса Trident. Вы можете создавать топологии Storm, поддерживающие обработку сообщений в рамках подхода "только один раз", сохраняемость "транзакционных" хранилищ данных, а также набор распространенных операций Stream Analytics.
 
-* **Динамическое масштабирование**. Вы можете добавить или удалить рабочие узлы, не влияя на выполняющиеся топологии Storm.
+* **Динамическое масштабирование**. Вы можете добавить или удалить рабочие узлы, не влияя на выполняющиеся топологии Storm. Чтобы использовать новые узлы, добавленные с помощью операций масштабирования, деактивируйте и повторно активируйте выполняющиеся топологии.
 
-    * Чтобы использовать новые узлы, добавленные с помощью операций масштабирования, нужно деактивировать и повторно активировать выполняющиеся топологии.
+* **Создание конвейеров потоковой передачи с помощью нескольких служб Azure**. Storm в HDInsight интегрируется с другими службами Azure, например Центрами событий, Базой данных SQL, службой хранилища Azure и Azure Data Lake Storage. Пример приложения, которое интегрируется со службами Azure, см. в руководстве по [обработке событий из Центров событий Azure с помощью Apache Storm в HDInsight](https://github.com/Azure-Samples/hdinsight-java-storm-eventhub).
 
-* **Создание конвейеров потоковой передачи с помощью нескольких служб Azure**. Storm в HDInsight интегрируется с другими службами Azure, такими как Центры событий, база данных SQL, служба хранилища Azure и Azure Data Lake Storage.
-
-    Пример приложения, которое интегрируется со службами Azure, см. в руководстве по [обработке событий из Центров событий Azure с помощью Apache Storm в HDInsight](https://github.com/Azure-Samples/hdinsight-java-storm-eventhub).
-
-Список компаний, использующих Apache Storm в качестве решения для анализа данных в реальном времени, см. на [этой странице](https://storm.apache.org/documentation/Powered-By.html).
+Список компаний, использующих Apache Storm в качестве решения для анализа данных в реальном времени, см. на [этой странице](https://storm.apache.org/Powered-By.html).
 
 Чтобы начать работу с помощью Storm, см. статью [Учебник: создание и мониторинг топологии Apache Storm в Azure HDInsight](apache-storm-quickstart.md).
 
@@ -60,35 +55,24 @@ Storm работает с топологиями, а не заданиями [Ap
 
 Система Apache Storm гарантирует, что каждое входящее сообщение будет полностью обработано даже в том случае, когда анализ данных распределен между сотнями узлов.
 
-Функции узла Nimbus схожи с возможностями службы Apache Hadoop JobTracker. Через [Apache ZooKeeper](https://zookeeper.apache.org/) этот узел назначает задачи другим узлам в кластере. Узлы Zookeeper обеспечивают координацию кластера и упрощают взаимодействие между узлом Nimbus и процессом контролера на рабочих узлах. Если один узел обработки выходит из строя, узел Nimbus узнает об этом и назначает задачу и связанные данные другому узлу.
+Узел Nimbus предоставляет функции аналогичные Apache Hadoop JobTracker. Nimbus назначает задачи другим узлам в кластере с помощью Apache ZooKeeper. Узлы Zookeeper обеспечивают координацию кластера и способствуют взаимодействию между узлом Nimbus и процессом контролера на рабочих узлах. Если один узел обработки выходит из строя, узел Nimbus узнает об этом и назначает задачу и связанные данные другому узлу.
 
 По умолчанию для кластеров Apache Storm используется только один узел Nimbus, но кластер Storm в HDInsight имеет два. При сбое основного узла кластер Storm переключится на дополнительный на время восстановления основного узла. На схеме ниже показана конфигурация потока задач для Storm в HDInsight.
 
 ![Схема с контролерами и компонентами Nimbus и Zookeeper](./media/apache-storm-overview/storm-diagram-nimbus.png)
 
-## <a name="ease-of-creation"></a>Простота создания
-
-Новый кластер Storm в HDInsight можно создать в считаные минуты. Дополнительные сведения о создании кластера Storm см. в статье [Create Linux-based clusters in HDInsight by using the Azure portal](../hdinsight-hadoop-create-linux-clusters-portal.md) (Создание кластеров Linux в HDInsight с помощью портала Azure).
-
 ## <a name="ease-of-use"></a>Простота использования
 
-* __Подключение Secure Shell (SSH)__ . Головные узлы кластера Storm доступны через Интернет по протоколу SSH. С помощью SSH вы можете выполнять команды непосредственно в кластере.
-
-  Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
-
-* __Веб-подключение__. Все кластеры HDInsight предоставляют веб-интерфейс Ambari. Он позволяет легко отслеживать, настраивать и администрировать службы в кластере. Кластеры Storm также предоставляют пользовательский интерфейс Storm. С его помощью вы можете отслеживать и контролировать выполнение топологий Storm из браузера.
-
-  Дополнительные сведения см. в руководствах по [управлению кластерами HDInsight с помощью веб-интерфейса Apache Ambari](../hdinsight-hadoop-manage-ambari.md) и [мониторингу и администрированию пользовательского интерфейса Apache Storm](apache-storm-deploy-monitor-topology-linux.md#monitor-and-manage-a-topology-using-the-storm-ui).
-
-* __Azure PowerShell и классический Azure CLI__. Обе эти служебные программы командной строки можно использовать для работы с HDInsight и другими службами Azure из клиентской системы.
-
-* __Интеграция с Visual Studio__. Средства Azure Data Lake для Visual Studio включают шаблоны проектов для создания топологий C# Storm с помощью платформы SCP.NET. Средства Data Lake также предоставляют средства для развертывания, отслеживания и администрирования решений с помощью Storm в HDInsight.
-
-  Дополнительные сведения см. в статье [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
+|Использование |Описание |
+|---|---|
+|Подключение Secure Shell (SSH)|Головные узлы кластера Storm доступны через Интернет по протоколу SSH. С помощью SSH вы можете выполнять команды непосредственно в кластере. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).|
+|Веб-подключение|Все кластеры HDInsight предоставляют веб-интерфейс Ambari. Он позволяет легко отслеживать, настраивать и администрировать службы в кластере. Кластеры Storm также предоставляют пользовательский интерфейс Storm. С его помощью вы можете отслеживать и контролировать выполнение топологий Storm из браузера. Дополнительные сведения см. в руководствах по [управлению кластерами HDInsight с помощью веб-интерфейса Apache Ambari](../hdinsight-hadoop-manage-ambari.md) и [мониторингу и администрированию пользовательского интерфейса Apache Storm](apache-storm-deploy-monitor-topology-linux.md#monitor-and-manage-a-topology-using-the-storm-ui).|
+|Azure PowerShell и Azure CLI|Azure PowerShell и Azure CLI предоставляют служебные программы командной строки для работы с HDInsight и другими службами Azure из клиентской системы.|
+|Интеграция Visual Studio|Средства Azure Data Lake для Visual Studio включают шаблоны проектов для создания топологий C# Storm с помощью платформы SCP.NET. Средства Data Lake также предоставляют средства для развертывания, отслеживания и администрирования решений с помощью Storm в HDInsight. Дополнительные сведения см. в статье [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).|
 
 ## <a name="integration-with-other-azure-services"></a>Интеграция с другими службами Azure
 
-* __Хранилище Azure Data Lake Storage__. Примеры использования Data Lake Storage с кластером Storm см. в статье, посвященной [использованию Azure Data Lake Storage с помощью Apache Storm в HDInsight](apache-storm-write-data-lake-store.md).
+* __Хранилище Azure Data Lake Storage__. См. статью [Использование Azure Data Lake Storage с Apache Storm в HDInsight](apache-storm-write-data-lake-store.md).
 
 * __Центры событий__. Примеры использования Центров событий с кластером Storm
 
@@ -97,12 +81,6 @@ Storm работает с топологиями, а не заданиями [Ap
     * [Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)](apache-storm-develop-csharp-event-hub-topology.md)
 
 * __База данных SQL__, __Cosmos DB__, __Центры событий__ и __HBase__. Примеры шаблонов для работы с ними включены в средства Data Lake для Visual Studio. Дополнительные сведения см. в руководстве по [разработке топологии C# для Apache Storm в HDInsight](apache-storm-develop-csharp-visual-studio-topology.md).
-
-## <a name="support"></a>Поддержка
-
-Для кластеров Storm в HDInsight действует полная поддержка корпоративного уровня. Кроме того, для кластеров Storm в HDInsight заявлена гарантированная доступность в течение 99,9 % времени. Это означает, что корпорация Майкрософт гарантирует возможность подключения к кластеру Storm извне в течение как минимум 99,9 % времени.
-
-Дополнительные сведения см. на странице [службы поддержки Azure](https://azure.microsoft.com/support/options/).
 
 ## <a name="apache-storm-use-cases"></a>Варианты использования Apache Storm
 
@@ -120,9 +98,7 @@ Storm работает с топологиями, а не заданиями [Ap
 
 ## <a name="development"></a>Разработка
 
-Средства Data Lake для Visual Studio позволяют разработчикам .NET проектировать и реализовывать топологии на языке C#. Вы также можете создавать гибридные топологии, в которых используются компоненты Java и C#.
-
-Дополнительные сведения см. в статье [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
+Средства Data Lake для Visual Studio позволяют разработчикам .NET проектировать и реализовывать топологии на языке C#. Вы также можете создавать гибридные топологии, в которых используются компоненты Java и C#. Дополнительные сведения см. в статье [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
 
 Можно также разрабатывать решения Java с помощью интегрированной среды разработки по своему усмотрению. Дополнительные сведения см. в руководстве по [разработке топологии Java для Apache Storm в HDInsight](apache-storm-develop-java-topology.md).
 
@@ -132,13 +108,11 @@ Storm работает с топологиями, а не заданиями [Ap
 
 ### <a name="guaranteed-message-processing"></a>Гарантированная обработка сообщений
 
-Apache Storm может обеспечить различные уровни гарантированной обработки сообщений. Например, простое приложение Storm гарантирует как минимум одну обработку, в то время как [Trident](https://storm.apache.org/releases/current/Trident-API-Overview.html) может гарантировать ровно одну обработку.
-
-Дополнительные сведения см. в статье о [гарантированной обработке данных](https://storm.apache.org/about/guarantees-data-processing.html) на сайте apache.org.
+Apache Storm может обеспечить различные уровни гарантированной обработки сообщений. Например, простое приложение Storm гарантирует как минимум одну обработку, в то время как Trident может гарантировать только одну обработку. См.сведения о [гарантиях на обработку данных](https://storm.apache.org/about/guarantees-data-processing.html) на веб-сайте apache.org.
 
 ### <a name="ibasicbolt"></a>IBasicBolt
 
-Шаблон чтения входного кортежа, выдающий значение 0 или больше, а затем непосредственно в конце метод execute, запрашивающий подтверждение входного кортежа, является типичным. Storm обеспечивает интерфейс [IBasicBolt](https://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/IBasicBolt.html) для автоматизации этого шаблона.
+Типичным является шаблон чтения входного кортежа, выдающий значение 0 или больше, а затем подтверждающий входной кортеж непосредственно в конце метода execute. Storm обеспечивает интерфейс [IBasicBolt](https://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/IBasicBolt.html) для автоматизации этого шаблона.
 
 ### <a name="joins"></a>Соединения
 
@@ -166,13 +140,13 @@ Apache Storm предоставляет внутренний временной 
 
 Для расчета значения "Первые N" см. пример [RollingTopWords](https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/org/apache/storm/starter/RollingTopWords.java).
 
-## <a name="logging"></a>Ведение журналов
+## <a name="logging"></a>Logging
 
-Storm использует [Apache Log4j 2](https://logging.apache.org/log4j/2.x/) для записи информации в журнал. По умолчанию в журнал записывается большой объем данных, и разобраться в этой информации может быть трудно. Чтобы управлять ведением журналов, включите файл конфигурации ведения журналов в топологию Storm.
+Storm использует Apache Log4j 2 для записи информации в журнал. По умолчанию в журнал записывается большой объем данных, и разобраться в этой информации может быть трудно. Чтобы управлять ведением журналов, включите файл конфигурации ведения журналов в топологию Storm.
 
 Пример топологии, в котором показано, как настроить ведение журнала, см. в примере Storm в HDInsight в статье [Разработка топологий на основе Java для базовых приложений подсчета слов с помощью Apache Storm и Maven в HDInsight](apache-storm-develop-java-topology.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены статьи с описанием решений для анализа данных в реальном времени с помощью Apache Storm в HDInsight.
 

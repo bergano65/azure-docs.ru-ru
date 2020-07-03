@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Cisco Webex | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Cisco Webex | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Webex.
 services: active-directory
 documentationCenter: na
@@ -12,17 +12,17 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/16/2020
+ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9f6ab2d5811060b7dc36323a80fed6961b8cf5a9
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.openlocfilehash: 01fe4d06d5f73eacee1d1cdaf1963232b84daf05
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76290688"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77046790"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex"></a>Руководство. Интеграция единого входа Azure Active Directory с Cisco Webex
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex"></a>Руководство по Интеграция единого входа Azure Active Directory с Cisco Webex
 
 В этом руководстве описано, как интегрировать Cisco Webex с Azure Active Directory (Azure AD). Интеграция Cisco Webex с Azure AD обеспечивает следующие возможности.
 
@@ -45,7 +45,7 @@ ms.locfileid: "76290688"
 
 * Cisco Webex поддерживает единый вход, инициированный **пакетом обновления**.
 * Cisco Webex поддерживает **автоматическую** подготовку пользователей.
-* После настройки Cisco Webex можно применять элементы управления сеансами, которые защищают от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Элементы управления сеансом являются расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
+* После настройки Cisco Webex можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-cisco-webex-from-the-gallery"></a>добавление Cisco Webex из коллекции;
 
@@ -207,6 +207,6 @@ ms.locfileid: "76290688"
 
 - [Попробуйте Cisco WebEx с Azure AD](https://aad.portal.azure.com)
 
-- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/protect-webex)
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
-- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/protect-webex)

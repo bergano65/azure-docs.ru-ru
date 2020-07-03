@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: tutorial
-ms.date: 12/26/2019
+ms.date: 04/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: bebc7dde30dad57157d0abee7f2294d9da58fd5c
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.openlocfilehash: 3ccb9c7aff6eb59c4883bc3218e205fb7877e86e
+ms.sourcegitcommit: bc738d2986f9d9601921baf9dded778853489b16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75861818"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80618383"
 ---
 # <a name="tutorial-set-up-an-azure-time-series-insights-preview-environment"></a>Руководство. Настройка среды "Аналитика временных рядов Azure" (предварительная версия)
 
@@ -30,7 +30,6 @@ ms.locfileid: "75861818"
 > * Запускать пример акселератора решений для потоковой передачи данных в среду "Аналитика временных рядов Azure" (предварительная версия).
 > * Выполнять базовый анализ данных.
 > * Определять тип и иерархию модели временных рядов и связывать ее с экземплярами.
-> * Используйте соединитель Power BI и визуализируйте данные в Power BI.
 
 >[!TIP]
 > [Акселераторы решений Интернета вещей](https://www.azureiotsolutions.com/Accelerators) предоставляют готовые настроенные решения корпоративного уровня, позволяя ускорить разработку настраиваемых решений Интернета вещей.
@@ -193,7 +192,7 @@ ms.locfileid: "75861818"
 
     Отобразится диаграмма временного ряда. Измените **интервал** на **30 с**.
 
-1. Повторите предыдущий шаг с другими двумя экземплярами временных рядов, чтобы просмотреть все три, как показано на этой диаграмме:
+1. Повторите предыдущий шаг с двумя другими экземплярами временных рядов, чтобы просмотреть все три, как показано на этой диаграмме:
 
     [![Диаграмма всех временных рядов.](media/v2-update-provision/tsi-explorer-add-three-instances.png)](media/v2-update-provision/tsi-explorer-add-three-instances.png#lightbox)
 
@@ -359,3 +358,8 @@ ms.locfileid: "75861818"
 
 > [!div class="nextstepaction"]
 > [Time Series Model](./time-series-insights-update-tsm.md) (Моделирование временных рядов)
+
+См. сведения о подключении среды к Power BI
+
+> [!div class="nextstepaction"]
+> [Визуализация данных из Аналитики временных рядов в Power BI](./how-to-connect-power-bi.md)

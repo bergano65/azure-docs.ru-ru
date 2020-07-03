@@ -1,19 +1,18 @@
 ---
 title: Вкладка параметров для предложения "Dynamics 365 для служб взаимодействия клиентов" | Azure Marketplace
 description: Устаревшая статья CPP, связанная со статьей ПК; WAS "настроил параметры предложения для предложения приложения Dynamics 365 для служб взаимодействия с клиентами в AppSource Marketplace".
-services: Dynamics 365 for Customer Engagement Offer, Azure, Marketplace, Cloud Partner Portal, AppSource
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 34d4886b8913da24177b939d88eb90dd8650542f
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 06ae437209b52d3aae92cd1784ccae722992766e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73824755"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278371"
 ---
 # <a name="dynamics-365-for-customer-engagement-offer-settings-tab"></a>Вкладка "Параметры предложения" Dynamics 365 for Customer Engagement
 

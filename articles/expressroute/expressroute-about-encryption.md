@@ -5,21 +5,21 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/13/2019
+ms.date: 05/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: 7dd9106539b6756d74629ac663241a5b5562cefb
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 77755ab6bdbb3c1e6416475f5066b5dd463eb7f5
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75437040"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82838762"
 ---
 # <a name="expressroute-encryption"></a>Шифрование ExpressRoute
  
 ExpressRoute поддерживает несколько технологий шифрования для обеспечения конфиденциальности и целостности данных, проходящих между сетью и сетью Майкрософт.
 
 ## <a name="point-to-point-encryption-by-macsec-faq"></a>Шифрование "точка — точка" с помощью Максек часто задаваемых вопросов
-Максек является [стандартом IEEE](https://1.ieee802.org/security/802-1ae/). Он шифрует данные на уровне управления доступом к носителю (MAC) или в сетевом уровне 2. Максек можно использовать для шифрования физических связей между сетевыми устройствами и сетевыми устройствами Майкрософт при подключении к Майкрософт через [ExpressRoute Direct](expressroute-erdirect-about.md). По умолчанию Максек отключен на портах ExpressRoute Direct. Вы перенесете собственный ключ Максек для шифрования и храните его в [Azure Key Vault](../key-vault/key-vault-overview.md). Вы решаете, когда следует поворачивать ключ. См. другие вопросы и ответы ниже.
+Максек является [стандартом IEEE](https://1.ieee802.org/security/802-1ae/). Он шифрует данные на уровне управления доступом к носителю (MAC) или в сетевом уровне 2. Максек можно использовать для шифрования физических связей между сетевыми устройствами и сетевыми устройствами Майкрософт при подключении к Майкрософт через [ExpressRoute Direct](expressroute-erdirect-about.md). По умолчанию Максек отключен на портах ExpressRoute Direct. Вы перенесете собственный ключ Максек для шифрования и храните его в [Azure Key Vault](../key-vault/general/overview.md). Вы решаете, когда следует поворачивать ключ. См. другие вопросы и ответы ниже.
 ### <a name="can-i-enable-macsec-on-my-expressroute-circuit-provisioned-by-an-expressroute-provider"></a>Можно ли включить Максек в канале ExpressRoute, подготовленном поставщиком ExpressRoute?
 Нет. Максек шифрует весь трафик на физической связи с ключом, принадлежащим одной сущности (т. е. заказчику). Поэтому он доступен только в ExpressRoute Direct.
 ### <a name="can-i-encrypt-some-of-the-expressroute-circuits-on-my-expressroute-direct-ports-and-leave-other-circuits-on-the-same-ports-unencrypted"></a>Можно ли зашифровать некоторые каналы ExpressRoute на своих прямых портах ExpressRoute и оставить другие цепи на одних и тех же портах без шифрования? 
@@ -30,8 +30,8 @@ ExpressRoute поддерживает несколько технологий ш
 Нет. Если Максек настроен и обнаружено несовпадение ключей, подключение к Майкрософт теряется. Другими словами, мы не будем возвращаться к незашифрованному соединению, предоставляя данные. 
 ### <a name="will-enabling-macsec-on-expressroute-direct-degrade-network-performance"></a>Включает ли Максек в ExpressRoute прямую производительность сети?
 Шифрование и расшифровка Максек происходят в оборудовании на используемых маршрутизаторах. На наши стороны не влияет на производительность. Тем не менее следует обратиться к поставщику сети для устройств, которые вы используете, и узнать, не имеет ли Максек производительность.
-### <a name="which-cipher-suites-are-supported-for-encryption"></a>какие комплекты шифров поддерживаются для шифрования?
-Мы поддерживаем AES128 и AES256.
+### <a name="which-cipher-suites-are-supported-for-encryption"></a>Какие комплекты шифров поддерживаются для шифрования?
+Поддерживается только версия [расширенной нумерации пакетов](https://1.ieee802.org/security/802-1aebw/) AES128 и AES256. Кроме того, отключите [идентификатор Secure Channel (SCI)](https://en.wikipedia.org/wiki/IEEE_802.1AE) в конфигурации максек на устройстве. 
 
 ## <a name="end-to-end-encryption-by-ipsec-faq"></a>Полное шифрование по протоколу IPsec: вопросы и ответы
 Протокол IPsec является [стандартом IETF](https://tools.ietf.org/html/rfc6071). Он шифрует данные на уровне протокола Интернета (IP) или уровня сети 3. Протокол IPsec можно использовать для шифрования сквозного подключения между локальной сетью и виртуальной сетью в Azure. См. другие вопросы и ответы ниже.

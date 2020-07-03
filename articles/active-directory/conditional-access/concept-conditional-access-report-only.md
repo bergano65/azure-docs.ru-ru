@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 02/11/2020
+ms.date: 05/01/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 75880f4c533a503852d62ff940e53d4bcc30d218
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 0c5643b0ce9d93c28372b30e6fc114816cafbce6
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77186120"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690475"
 ---
 # <a name="what-is-conditional-access-report-only-mode"></a>Что такое режим "только отчет с условным доступом"?
 
@@ -26,7 +26,7 @@ ms.locfileid: "77186120"
 
 - Политики условного доступа можно включить в режиме «только отчет».
 - Во время входа в систему политики в режиме «только отчет» оцениваются, но не применяются.
-- Результаты регистрируются на вкладках **Условный доступ** и **только для отчетов (Предварительная версия)** сведений журнала входа.
+- Результаты записываются на вкладках " **Условный доступ** " и " **только отчет** " в подробных сведениях журнала входа.
 - Клиенты с подпиской Azure Monitor могут отслеживать влияние политик условного доступа с помощью книги условного доступа.
 
 > [!WARNING]
@@ -49,6 +49,6 @@ ms.locfileid: "77186120"
 
 Администраторы имеют возможность создавать несколько политик в режиме «только отчет», поэтому необходимо понимать как отдельные последствия каждой политики, так и общее влияние нескольких политик, вычисленных вместе. Новая книга условного доступа "аналитика" позволяет администраторам визуализировать запросы условного доступа и отслеживать влияние политики на заданный диапазон времени, набор приложений и пользователей. 
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка режима «только для отчетов» в политике условного доступа](howto-conditional-access-report-only.md)

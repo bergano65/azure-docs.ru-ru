@@ -1,21 +1,23 @@
 ---
 title: Предложение виртуальной машины в Azure Marketplace
 description: Общие сведения о процессе публикации предложения виртуальной машины в Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/04/2018
-ms.author: pabutler
-ms.openlocfilehash: 0313c4f2581615e1d1a3a57fc191db7d7cc6e825
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: b857cf8b7485beb884adf77d99f82d965f55a0ad
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73808559"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82142800"
 ---
 # <a name="virtual-machine-offer"></a>Предложение виртуальной машины
+
+> [!IMPORTANT]
+> Начиная с 13 апреля 2020 г. Мы начинаем перемещать Управление предложениями виртуальных машин Azure в центр партнеров. После миграции вы создадите предложения в центре партнеров и будете управлять ими. Следуйте инструкциям в разделе [Создание предложения виртуальной машины Azure](https://docs.microsoft.com/azure/marketplace/partner-center-portal/azure-vm-create-offer) для управления перенесенными предложениями.
 
 |    |    |
 |-----------------------------------------------------------------|------------------------------------------|
@@ -43,6 +45,6 @@ ms.locfileid: "73808559"
  
 4. Сертификация и публикация предложения. Оформив предложение и выполнив технические требования, вы можете отправить предложение на публикацию. После отправки начнется процесс публикации, в ходе которого решение тестируется, проверяется, сертифицируется и активируется на Marketplace.  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Прежде чем следовать этим действиям, необходимо выполнить [технические и бизнес-требования](./cpp-prerequisites.md) для публикации виртуальной машины в Microsoft Azure Marketplace. 

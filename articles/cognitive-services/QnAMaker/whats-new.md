@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
-ms.date: 11/08/2019
+ms.date: 02/14/2020
 ms.author: diberry
-ms.openlocfilehash: 2d7615d810e96beb61c3fe0b182a88158dc77c07
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: c0ee1abcb99e10d57d05945f45595e5bfd76fa28
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76844842"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80155993"
 ---
 # <a name="whats-new-in-qna-maker"></a>Новые возможности QnA Maker
 
@@ -24,6 +24,14 @@ ms.locfileid: "76844842"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 Узнайте о новых возможностях QnA Maker.
+
+### <a name="march-2020"></a>Март 2020 г.
+
+* TLS 1.2 теперь применяется для всех HTTP-запросов к этой службе. Дополнительные сведения см. в статье [Безопасность в Azure Cognitive Services](../cognitive-services-security.md).
+
+### <a name="february-2020"></a>Февраль 2020 г.
+
+* [Пакет npm](https://www.npmjs.com/package/@azure/cognitiveservices-qnamaker) с API GenerateAnswer
 
 ### <a name="november-2019"></a>Ноябрь 2019 г.
 

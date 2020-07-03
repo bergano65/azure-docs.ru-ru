@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Marketo | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Marketo | Документация Майкрософт
 description: Узнайте, как настроить единый вход в Marketo через Azure Active Directory.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 0488fd1e9bc10d61d6660745acfc8c39becf3a89
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159473"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-marketo"></a>Руководство по Интеграция Azure Active Directory с Marketo
+# <a name="tutorial-azure-active-directory-integration-with-marketo"></a>Руководство. Интеграция Azure Active Directory с Marketo
 
 В этом руководстве описано, как интегрировать Marketo с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Marketo обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73159473"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Marketo, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Marketo с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "73159473"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Marketo](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://saml.marketo.com/sp`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://saml.marketo.com/sp`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://login.marketo.com/saml/assertion/\<munchkinid\>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://login.marketo.com/saml/assertion/\<munchkinid\>`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Marketo](https://investors.marketo.com/contactus.cfm). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -120,7 +120,7 @@ ms.locfileid: "73159473"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -130,7 +130,7 @@ ms.locfileid: "73159473"
 
 1. Чтобы получить идентификатор Munchkin для приложения, войдите в Marketo, используя учетные данные администратора, и выполните следующие действия.
    
-    a. Войдите в приложение Marketo, используя учетные данные администратора.
+    а. Войдите в приложение Marketo, используя учетные данные администратора.
    
     b. Нажмите кнопку **Администратор** в области навигации вверху.
    
@@ -146,7 +146,7 @@ ms.locfileid: "73159473"
 
 2. Для настройки единого входа в приложение выполните следующие действия:
    
-    a. Войдите в приложение Marketo, используя учетные данные администратора.
+    а. Войдите в приложение Marketo, используя учетные данные администратора.
    
     b. Нажмите кнопку **Администратор** в области навигации вверху.
    
@@ -160,9 +160,9 @@ ms.locfileid: "73159473"
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_08.png) 
    
-    д. **Включите** параметры единого входа.
+    д) **Включите** параметры единого входа.
    
-    Е. Вставьте **идентификатор Azure AD** в текстовое поле **Issuer ID** (Идентификатор издателя).
+    е) Вставьте **идентификатор Azure AD** в текстовое поле **Issuer ID** (Идентификатор издателя).
    
     ж. В текстовом поле **Идентификатор сущности** введите URL-адрес в формате `http://saml.marketo.com/sp`.
    
@@ -187,7 +187,7 @@ ms.locfileid: "73159473"
 
 3. Чтобы включить единый вход для пользователей, выполните следующие действия.
    
-    a. Войдите в приложение Marketo, используя учетные данные администратора.
+    а. Войдите в приложение Marketo, используя учетные данные администратора.
    
     b. Нажмите кнопку **Администратор** в области навигации вверху.
    
@@ -272,7 +272,7 @@ ms.locfileid: "73159473"
 
 5. Введите следующую информацию в мастере приглашения нового пользователя.
    
-    a. Введите адрес **электронной почты** пользователя в соответствующее текстовое поле.
+    а. Введите адрес **электронной почты** пользователя в соответствующее текстовое поле.
    
     ![Настройка единого входа](./media/marketo-tutorial/tutorial_marketo_16.png)
    
@@ -280,7 +280,7 @@ ms.locfileid: "73159473"
    
     c. Введите **фамилию**.
    
-    d. Щелкните **Далее**
+    d. Нажмите кнопку **Далее**
 
 6. На вкладке **Разрешения** выберите **роли пользователя** и нажмите кнопку **Далее**.
    

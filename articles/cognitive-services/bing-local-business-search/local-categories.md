@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: rosh
 ms.openlocfilehash: 56b94d66eb0929d2fd0ca74a1a631d229330adfa
-ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "69906394"
 ---
 # <a name="search-categories-for-the-bing-local-business-search-api"></a>Поиск категорий для API Bing Local Business Search
 
-API Bing Local Business Search позволяет искать сущности локального бизнеса в различных категориях с приоритетом в пользу закрытия расположения пользователя. Поисковые запросы можно включить в поиск вместе с [параметрами](specify-geographic-search.md) `localCircularView` и `localMapView`.
+API Bing Local Business Search позволяет искать сущности локального бизнеса в различных категориях с приоритетом в пользу закрытия расположения пользователя. Поисковые запросы можно включить в поиск вместе с  [параметрами](specify-geographic-search.md)`localCircularView` и `localMapView`.
 
 
 ## <a name="toplevel-categories"></a>Категории верхнего уровня 

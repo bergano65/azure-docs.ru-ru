@@ -7,14 +7,14 @@ ms.topic: tutorial
 ms.date: 10/23/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: e3154b9635da889ed7f0484fc04c565c27e9241b
-ms.sourcegitcommit: f0f73c51441aeb04a5c21a6e3205b7f520f8b0e1
+ms.openlocfilehash: eb00234fb7522c763dbaa910bee99cf327bebaf1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77031515"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77597904"
 ---
-# <a name="tutorial-extend-windows-file-servers-with-azure-file-sync"></a>Руководство. Расширение файловых серверов Windows с использованием службы "Синхронизация файлов Azure"
+# <a name="tutorial-extend-windows-file-servers-with-azure-file-sync"></a>Руководство по Расширение файловых серверов Windows с использованием службы "Синхронизация файлов Azure"
 
 В этой статье показаны основные шаги, необходимые для повышения емкости хранилища сервера Windows с использованием службы "Синхронизация файлов Azure". Хотя в этом руководстве используется виртуальная машина Azure для экземпляра Windows Server, этот процесс обычно выполняется на локальных серверах. Вы можете найти инструкции по развертыванию службы "Синхронизация файлов Azure" в собственной среде в статье [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md).
 
@@ -27,8 +27,6 @@ ms.locfileid: "77031515"
 > * Создание конечной точки сервера
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

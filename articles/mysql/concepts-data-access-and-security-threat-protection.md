@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 747e2f088b545026775feed45535b1f9bc90209f
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 01ac6ccbc2789d2052bab07e2da51630b6dbf581
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74771008"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79537165"
 ---
 # <a name="azure-database-for-mysql-advanced-threat-protection"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
@@ -40,8 +40,8 @@ ms.locfileid: "74771008"
 - **Доступ из потенциально опасного приложения.** Это предупреждение активируется, когда доступ к базе данных получают потенциально опасные приложения. В некоторых случаях предупреждения обнаруживают выполнение теста на проникновение. В других случаях — атаку с помощью обычных средств.
 - **Подбор учетных данных Базы данных Azure для MySQL.** Это предупреждение активируется при большом количестве неудачных попыток входа с разными учетными данными. В некоторых случаях предупреждения обнаруживают выполнение теста на проникновение. В других случаях — атаку методом подбора.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
+* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для MySQL](https://azure.microsoft.com/pricing/details/mysql/). 
 * Настройка [Расширенной защита от угроз для Базы данных Azure для MySQL](howto-database-threat-protection-portal.md) с помощью портала Azure  

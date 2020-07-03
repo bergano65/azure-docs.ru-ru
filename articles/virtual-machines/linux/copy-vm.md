@@ -1,35 +1,28 @@
 ---
 title: Копирование виртуальной машины Linux с помощью Azure CLI
 description: Сведения о том, как создать копию виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков.
-services: virtual-machines-linux
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-tags: azure-resource-manager
-ms.assetid: 770569d2-23c1-4a5b-801e-cddcd1375164
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
-ms.devlang: azurecli
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 4612d15dd5d3ab6e814f09210d5ff3991fef0328
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.custom: legacy
+ms.openlocfilehash: 406eda6902ae451c7fdf79e1bd1215c035a66750
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77121876"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792230"
 ---
 # <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-and-managed-disks"></a>Создание копии виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков
 
-В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux, используя Azure CLI и модель развертывания с помощью Azure Resource Manager. 
+В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux с помощью Azure CLI. Сведения о копировании, создании, хранении и совместном использовании образов виртуальных машин в масштабе см. в статье [Общие галереи изображений](shared-images.md).
 
 Кроме того, можно [передать VHD и создать виртуальную машину на его основе](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
--   Установка [Azure CLI](/cli/azure/install-az-cli2).
+-   Установите [Azure CLI](/cli/azure/install-az-cli2).
 
 -   Войдите в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az-login).
 

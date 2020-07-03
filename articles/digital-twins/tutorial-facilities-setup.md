@@ -1,5 +1,5 @@
 ---
-title: Руководство. Развертывание предварительной версии среды и пространственного графа в Azure Digital Twins | Документация Майкрософт
+title: Руководство по Развертывание предварительной версии среды и пространственного графа в Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как развертывать экземпляр Azure Digital Twins и настроить пространственные ресурсы.
 services: digital-twins
 ms.author: alinast
@@ -9,14 +9,16 @@ ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 01/10/2020
-ms.openlocfilehash: 16e4a7e2f06d2630c970f8daa4428e7a184a79df
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 878b64fe6dd491adbb61c4c74cf4a5fc039858cd
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77163047"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79371415"
 ---
-# <a name="tutorial-deploy-azure-digital-twins-preview-and-configure-a-spatial-graph"></a>Руководство. развертыванию Azure Digital Twins (предварительная версия) и настройке пространственного графа
+# <a name="tutorial-deploy-azure-digital-twins-preview-and-configure-a-spatial-graph"></a>Руководство по развертыванию Azure Digital Twins (предварительная версия) и настройке пространственного графа
+
+[!INCLUDE [digital-twins-preview-limit-alert](../../includes/digital-twins-preview-limit-alert.md)]
 
 Служба Azure Digital Twins (предварительная версия) позволяет объединять людей, места и устройства в связанной пространственной системе. В руководствах этой серии показано, как с помощью Azure Digital Twins определять степень заполненности помещения, а также оптимальные условия температуры и качества воздуха. 
 
@@ -38,7 +40,7 @@ ms.locfileid: "77163047"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас нет учетной записи, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- Подписка Azure. Если у вас нет учетной записи Azure, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 - Пакет SDK для .NET Core. Примеры Azure Digital Twins, используемые в этих руководствах, написаны на C#. Убедитесь, что установили [пакет SDK для .NET Core версии 2.1.403 или более поздней](https://www.microsoft.com/net/download) на компьютере разработки. Он нужен для выполнения сборки и запуска примера. Проверьте, установлена ​​ли на вашем компьютере правильная версия, запустив `dotnet --version` в окне команд.
 

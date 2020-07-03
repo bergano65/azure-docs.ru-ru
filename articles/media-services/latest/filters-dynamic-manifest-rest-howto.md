@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 06/13/2019
 ms.author: juliako
 ms.openlocfilehash: f9134dd3bc926e6e2f454e5187e03365e91ed22a
-ms.sourcegitcommit: 5b073caafebaf80dc1774b66483136ac342f7808
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75780340"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Создание фильтров с помощью REST API Служб мультимедиа
@@ -31,7 +31,7 @@ ms.locfileid: "75780340"
 > [!NOTE]
 > Обязательно ознакомьтесь с [пресентатионтимеранже](filters-concept.md#presentationtimerange).
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -83,7 +83,7 @@ ms.locfileid: "75780340"
 
 ## <a name="create-account-filters"></a>Создание фильтров учетной записи
 
-В загруженной ранее коллекции Postman последовательно выберите **Account Filters (Фильтры учетной записи)** ->**Create or update an Account Filter (Создать или обновить фильтр учетной записи)** .
+В скачанной коллекции POST щелкните-> **фильтры учетной записи****создать или обновить фильтр учетной записи**.
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 
@@ -93,7 +93,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Выберите вкладку **Текст** и вставьте код json, который был [определен ранее](#define-a-filter).
 
-Нажмите кнопку **Отправить**. 
+Выберите **Отправить**. 
 
 Фильтр создан.
 
@@ -101,7 +101,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ## <a name="create-asset-filters"></a>Создание фильтров ресурсов  
 
-В загруженной ранее коллекции Postman "Службы мультимедиа версии 3" выберите **Ресурсы-контейнеры**->**Создать или обновить фильтр ресурса-контейнера**.
+В скачанной коллекции после загрузки служб мультимедиа v3 выберите **активы**->**создать или обновить фильтр активов**.
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 
@@ -111,7 +111,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Выберите вкладку **Текст** и вставьте код json, который был [определен ранее](#define-a-filter).
 
-Нажмите кнопку **Отправить**. 
+Выберите **Отправить**. 
 
 Фильтр ресурса-контейнера создан.
 

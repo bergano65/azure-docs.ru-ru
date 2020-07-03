@@ -11,14 +11,16 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: 1c2db107302e4851641ef430db61ec9b29ee151f
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: 8c85a652cde840336c51e1a5b5459f9dc591e0be
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77187481"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81414685"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 Эта статья содержит наиболее распространенные ошибки, которые могут возникнуть при выполнении пакетов SQL Server Integration Services (SSIS) в среде выполнения интеграции SSIS. В нем описываются возможные причины и действия по устранению ошибок.
 
@@ -36,10 +38,10 @@ ms.locfileid: "77187481"
 * Источник данных или назначение перегружены. Проверьте загрузку источника данных или назначения и убедитесь, что у него достаточно ресурсов. Например, если вы использовали базу данных SQL Azure, рассмотрите возможность увеличения масштаба, если база данных, скорее всего, истекает время ожидания.
 * Сеть между средой выполнения интеграции SSIS и источником данных или назначением нестабильна, особенно если подключение осуществляется между регионами или между локальными сетями и Azure. Примените шаблон повтора в пакете служб SSIS, выполнив следующие действия.
   * Убедитесь, что пакеты служб SSIS могут быть повторно запущены при сбое без побочных эффектов (например, потери данных или дублирование данных).
-  * Настройте **Повтор** и **интервал повтора** для действия " **выполнение пакета служб SSIS** " на вкладке " **Общие** ". ![задать свойства на вкладке "Общие"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
+  * Настройте **Повтор** и **интервал повтора** для действия " **выполнение пакета служб SSIS** " на вкладке " ![ **Общие** ". Задайте свойства на вкладке "Общие".](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
   * Для ADO.NET и OLE DB компонента источника или назначения задайте **ConnectRetryCount** и **ConnectRetryInterval** в диспетчере соединений в пакете служб SSIS или в действии служб SSIS.
 
-### <a name="error-message-ado-net-source-has-failed-to-acquire-the-connection--with-a-network-related-or-instance-specific-error-occurred-while-establishing-a-connection-to-sql-server-the-server-was-not-found-or-was-not-accessible"></a>Сообщение об ошибке: "источнику ADO NET не удалось получить подключение"... "" при установлении соединения с SQL Server возникла ошибка, связанная с сетью или с конкретным экземпляром. Сервер не найден или недоступен ".
+### <a name="error-message-ado-net-source-has-failed-to-acquire-the-connection--with-a-network-related-or-instance-specific-error-occurred-while-establishing-a-connection-to-sql-server-the-server-was-not-found-or-was-not-accessible"></a>Сообщение об ошибке: "источнику ADO NET не удалось получить подключение"... "" при установлении соединения с SQL Server возникла ошибка, связанная с сетью или с конкретным экземпляром. Сервер не найден или недоступен".
 
 Причина этой проблемы обычно заключается в том, что источник данных или назначение недоступны из среды выполнения интеграции MSSQL Integration Services. Причины могут быть разными. Попробуйте выполнить следующие действия:
 * Убедитесь, что источник данных или имя назначения или IP-адрес правильно передаются.
@@ -54,7 +56,7 @@ ms.locfileid: "77187481"
 
 ### <a name="error-message-the-connection--is-not-found"></a>Сообщение об ошибке: "подключение"... не найден "
 
-Эту ошибку может вызывать известная проблема, существующая в предыдущих версиях SQL Server Management Studio (SSMS). Если пакет содержит пользовательский компонент (например, пакет дополнительных компонентов Azure для MSSQL Integration Services или компоненты партнера), который не установлен на компьютере, на котором используется среда SSMS для развертывания, эта среда удалит компонент и выдаст сообщение об ошибке. Обновите среду [SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) до последней версии, в которой эта проблема исправлена.
+Эту ошибку может вызывать известная проблема, существующая в предыдущих версиях SQL Server Management Studio (SSMS). Если пакет содержит пользовательский компонент (например, пакет дополнительных компонентов Azure для MSSQL Integration Services или компоненты партнера), который не установлен на компьютере, на котором используется среда SSMS для развертывания, эта среда удалит компонент и выдаст сообщение об ошибке. Обновите [среду SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) до последней версии с исправленной проблемой.
 
 ### <a name="error-messagessis-executor-exit-code--1073741819"></a>Сообщение об ошибке: "код выхода исполнителя служб SSIS:-1073741819".
 
@@ -72,7 +74,7 @@ ms.locfileid: "77187481"
 * Возможная причина и рекомендуемое действие.
   * Если действие SSIS выполняется пакет из файловой системы (файла пакета или файла проекта), эта ошибка возникает, если проект, пакет или файл конфигурации недоступен с пакетными учетными данными, предоставленными в действии служб SSIS.
     * Если вы используете файл Azure, сделайте следующее:
-      * Путь к файлу должен начинаться с \\\\\<имя учетной записи хранения\>. file.core.windows.net\\\<путь к общей папке\>
+      * Путь к файлу должен начинаться \\ \\ \<с имени\>учетной записи\\\<хранения. File.Core.Windows.NET путь к общей папке\>
       * Домен должен иметь значение "Azure".
       * Имя пользователя должно быть \<именем учетной записи хранения\>
       * Пароль должен быть \<ключом доступа к хранилищу\>
@@ -106,7 +108,7 @@ ms.locfileid: "77187481"
 Эта ошибка в основном вызвана временной проблемой, поэтому попробуйте повторить выполнение пакета. Примените шаблон повтора в пакете служб SSIS, выполнив следующие действия.
 
 * Убедитесь, что пакеты служб SSIS могут быть повторно запущены при сбое без побочных эффектов (например, потери данных или дублирование данных).
-* Настройте **Повтор** и **интервал повтора** для действия " **выполнение пакета служб SSIS** " на вкладке " **Общие** ". ![задать свойства на вкладке "Общие"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
+* Настройте **Повтор** и **интервал повтора** для действия " **выполнение пакета служб SSIS** " на вкладке " ![ **Общие** ". Задайте свойства на вкладке "Общие".](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
 * Для ADO.NET и OLE DB компонента источника или назначения задайте **ConnectRetryCount** и **ConnectRetryInterval** в диспетчере соединений в пакете служб SSIS или в действии служб SSIS.
 
 ### <a name="error-message-there-is-no-active-worker"></a>Сообщение об ошибке: "нет активного рабочего процесса".
@@ -144,7 +146,7 @@ ms.locfileid: "77187481"
 
 Убедитесь, что соответствующий поставщик, используемый соединителями OLE DB в вашем пакете, правильно установлен на компьютере локальной среды выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) .
 
-### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-systemiofileloadexception-could-not-load-file-or-assembly-microsoftwindowsazurestorage-version-cultureneutral-publickeytoken31bf3856ad364e35-or-one-of-its-dependencies-the-located-assemblys-manifest-definition-does-not-match-the-assembly-reference"></a>Сообщение об ошибке: "ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {" Оператионеррормессажес ":" Error: System. IO. FileLoadException: не удалось загрузить файл или сборку "Microsoft. WindowsAzure. Storage", версия =... Culture = Neutral, PublicKeyToken = 31bf3856ad364e35 ' или одну из его зависимостей. Определение манифеста найденной сборки не соответствует ссылке на сборку. ..."
+### <a name="error-message-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-error-systemiofileloadexception-could-not-load-file-or-assembly-microsoftwindowsazurestorage-version-cultureneutral-publickeytoken31bf3856ad364e35-or-one-of-its-dependencies-the-located-assemblys-manifest-definition-does-not-match-the-assembly-reference"></a>Сообщение об ошибке: "ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {" Оператионеррормессажес ":" Error: System. IO. FileLoadException: не удалось загрузить файл или сборку "Microsoft. WindowsAzure. Storage", версия =..., культура = нейтральная, PublicKeyToken = 31bf3856ad364e35 или одна из его зависимостей. Определение манифеста найденной сборки не соответствует ссылке на сборку. ..."
 
 Одна из возможных причин заключается в том, что локальная среда выполнения интеграции не установлена или не обновлена должным образом. Предложить скачать и переустановить последнюю локальную среду выполнения интеграции. Дополнительные сведения можно найти на странице [Создание и Настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md#installation-best-practices) .
 
@@ -155,15 +157,15 @@ ms.locfileid: "77187481"
   * Журнал выполнения можно найти в [отчете SSMS](https://docs.microsoft.com/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
   * Виртуальную сеть можно также использовать для доступа к локальным данным в качестве альтернативы. Дополнительные сведения можно найти в привязке [среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) .
 
-### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выход: {"Оператионеррормессажес": "код выхода исполнителя служб SSIS:-1. \ n", "LogLocation": "...\\Ссистелеметри\\ExecutionLog\\...", "Еффективеинтегратионрунтиме": "...", "Ексекутиондуратион":..., "durationInQueue": {"integrationRuntimeQueue":...}} "
+### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "службы SSIS Exit код выхода:-1. \ n", "LogLocation": "... \\Ссистелеметри\\ExecutionLog\\... "," еффективеинтегратионрунтиме ":"... "," ексекутиондуратион ":...," дуратионинкуеуе ": {" интегратионрунтимекуеуе ":...}}"
 
-Убедитесь, что C++ среда Visual Runtime установлена на компьютере с локальной средой выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) .
+Убедитесь, что Visual C++ среда выполнения установлена на компьютере, где размещена локальная среда выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) .
 
 ### <a name="multiple-package-executions-are-triggered-unexpectedly"></a>Несколько запусков пакета вызываются неожиданно
 
 * Возможная причина и рекомендуемое действие.
   * Действие хранимой процедуры ADF или операция поиска используются для запуска выполнения пакета служб SSIS. Команда t-SQL может вызвать временную ошибку и запустить повторное выполнение, что приведет к выполнению нескольких пакетов.
-  * Вместо этого используйте действие Ексекутессиспаккаже, которое гарантирует, что выполнение пакета не будет выполняться повторно, если число повторных попыток не задается пользователем. Подробные сведения можно найти по адресу [https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)
+  * Вместо этого используйте действие Ексекутессиспаккаже, которое гарантирует, что выполнение пакета не будет выполняться повторно, если число повторных попыток не задается пользователем. Подробные сведения можно найти по адресу[https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity)
   * Уточните команду t-SQL, чтобы выполнить повторный запуск, проверив, активировано ли уже выполнение.
 
 ### <a name="package-execution-takes-too-long"></a>Выполнение пакета занимает слишком много времени
@@ -177,7 +179,7 @@ ms.locfileid: "77187481"
   * Сведения о том, как задать количество узлов и максимальное параллельное выполнение на каждом узле, см. [в статье Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
 * Среда выполнения интеграции служб SSIS остановлена или имеет неработоспособное состояние. Сведения о проверке состояния и ошибок среды выполнения интеграции SSIS см. в разделе [Среда выполнения интеграции Azure SSIS](monitor-integration-runtime.md#azure-ssis-integration-runtime).
 
-Также рекомендуется установить время ожидания на вкладке **Общие** : ![задать свойства на вкладке Общие](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png).
+Также рекомендуется установить время ожидания на вкладке **Общие** : ![задать свойства на вкладке](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)общие.
 
 ### <a name="poor-performance-in-package-execution"></a>Низкая производительность при выполнении пакета
 
@@ -190,4 +192,4 @@ ms.locfileid: "77187481"
 * Проверьте производительность узла IR в портал Azure:
   * Сведения о мониторинге среды выполнения интеграции SSIS см. в разделе [Среда выполнения интеграции Azure SSIS](monitor-integration-runtime.md#azure-ssis-integration-runtime).
   * Журнал ЦП и памяти для среды выполнения интеграции служб SSIS можно найти, просмотрев метрики фабрики данных в портал Azure.
-    ![метрики мониторинга среды выполнения интеграции SSIS](media/ssis-integration-runtime-ssis-activity-faq/monitor-metrics-ssis-integration-runtime.png)
+    ![Мониторинг метрик среды выполнения интеграции SSIS](media/ssis-integration-runtime-ssis-activity-faq/monitor-metrics-ssis-integration-runtime.png)

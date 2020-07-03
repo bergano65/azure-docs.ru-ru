@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание приложения для перевода текста с помощью WPF и C# — API "Перевод текстов"
+title: Руководство по Создание приложения для перевода текста с помощью WPF и C# — Переводчик
 titleSuffix: Azure Cognitive Services
 description: В рамках этого руководства вы создадите приложение WPF для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки.
 services: cognitive-services
@@ -10,16 +10,16 @@ ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: swmachan
-ms.openlocfilehash: ecb42d200eb8808f6bfa4cfb91e98909e350038b
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 0d500a7c24538adb139a42924134f784973f496b
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77118606"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83588575"
 ---
-# <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство. Создание приложения для перевода текста с помощью WPF
+# <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
-В рамках этого руководства вы создадите приложение [Windows Presentation Foundation (WPF)](https://docs.microsoft.com/visualstudio/designers/getting-started-with-wpf?view=vs-2019), в котором службы Azure Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В частности, приложение будет вызывать API-интерфейсы "Перевод текстов" и ["Проверка орфографии Bing"](https://azure.microsoft.com/services/cognitive-services/spell-check/).
+В рамках этого руководства вы создадите приложение [Windows Presentation Foundation (WPF)](https://docs.microsoft.com/visualstudio/designers/getting-started-with-wpf?view=vs-2019), в котором службы Azure Cognitive Services используются для перевода текста, определения языка и проверки орфографии с помощью ключа одной подписки. В частности, приложение будет вызывать API-интерфейсы из Переводчика и средства [Проверка орфографии Bing](https://azure.microsoft.com/services/cognitive-services/spell-check/).
 
 Что такое WPF? Это инфраструктура пользовательского интерфейса, позволяющая создавать классические клиентские приложения. Платформа разработки WPF поддерживает широкий набор функций для разработки приложений, включая модель приложения, ресурсы, элементы управления, графику, макет, привязку данных, документы и безопасность. Это подмножество платформы .NET. Поэтому, если вы ранее создавали приложения на платформе .NET с помощью ASP.NET или Windows Forms, у вас не возникнет трудностей в процессе программирования. Для реализации декларативной модели программирования приложений, которая рассматривается в следующих разделах, в WPF используется расширяемый язык разметки приложений (XAML).
 
@@ -29,7 +29,7 @@ ms.locfileid: "77118606"
 > * создание проекта WPF в Visual Studio;
 > * добавление сборок приложения и пакетов NuGet в проект;
 > * создание пользовательского интерфейса для приложения с помощью XAML;
-> * применение API "Перевод текстов" для получения списка языков, перевода текста и определения исходного языка;
+> * использование Переводчика для получения списка языков,перевода текста и определения исходного языка;
 > * применение API "Проверка орфографии Bing" для проверки вводимого текста и повышения точности перевода;
 > * Запуск приложения WPF
 
@@ -39,9 +39,9 @@ ms.locfileid: "77118606"
 
 | Служба | Компонент | Описание |
 |---------|---------|-------------|
-| Перевод текстов | [Get Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | Получение полного списка поддерживаемых языков для перевода текста. |
-| Перевод текстов | [Translate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Перевод текста более чем на 60 языков. |
-| Перевод текстов | [Detect](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect) | Определение языка исходного текста. Для определения используется показатель достоверности. |
+| API перевода | [Get Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | Получение полного списка поддерживаемых языков для перевода текста. |
+| API перевода | [Translate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Перевод текста более чем на 60 языков. |
+| API перевода | [Detect](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect) | Определение языка исходного текста. Для определения используется показатель достоверности. |
 | API Проверки орфографии Bing | [Spell Check](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Исправление орфографических ошибок для повышения точности перевода. |
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -61,11 +61,11 @@ ms.locfileid: "77118606"
 
 1. Запустите Visual Studio. Выберите **Создать новый проект**.
 1. В окне **Создать новый проект**, найдите и выберите **Приложение WPF (.NET Framework)** . Чтобы ограничить параметры, вы можете выбрать C# в параметре **Язык**.
-1. Нажмите кнопку **Далее** и задайте имя проекту `MSTranslatorTextDemo`.
+1. Нажмите кнопку **Далее** и задайте имя проекту `MSTranslatorDemo`.
 1. Установите платформу версии **.NET Framework 4.7.2** или более поздней и выберите **Создать**.
    ![Введите имя и версию платформы в Visual Studio](media/name-wpf-project-visual-studio.png)
 
-Вы создали проект. Обратите внимание на две открытые вкладки: `MainWindow.xaml` и `MainWindow.xaml.cs`. В рамках этого руководства мы будем добавлять код в эти два файла. Мы изменим `MainWindow.xaml` для пользовательского интерфейса приложения. Мы изменим `MainWindow.xaml.cs` для наших вызовов перевода текста и проверки орфографии Bing.
+Вы создали проект. Обратите внимание на две открытые вкладки: `MainWindow.xaml` и `MainWindow.xaml.cs`. В рамках этого руководства мы будем добавлять код в эти два файла. Мы изменим `MainWindow.xaml` для пользовательского интерфейса приложения. Мы изменим `MainWindow.xaml.cs` для наших вызовов Переводчика и Проверки орфографии Bing.
    ![Проверка среды](media/blank-wpf-project.png)
 
 В рамках следующего раздела мы добавим в проект сборки и пакет NuGet, чтобы расширить возможности проекта, например добавить функцию анализа JSON.
@@ -131,12 +131,12 @@ ms.locfileid: "77118606"
 1. В Visual Studio выберите вкладку для файла `MainWindow.xaml`.
 1. Скопируйте этот код в проект, а затем выберите **Файл > Сохранить MainWindow.xaml**, чтобы сохранить изменения.
    ```xaml
-   <Window x:Class="MSTranslatorTextDemo.MainWindow"
+   <Window x:Class="MSTranslatorDemo.MainWindow"
            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-           xmlns:local="clr-namespace:MSTranslatorTextDemo"
+           xmlns:local="clr-namespace:MSTranslatorDemo"
            mc:Ignorable="d"
            Title="Microsoft Translator" Height="400" Width="700" BorderThickness="0">
        <Grid>
@@ -173,15 +173,15 @@ ms.locfileid: "77118606"
 
 ## <a name="create-your-app"></a>Создание приложения
 
-В файле `MainWindow.xaml.cs` содержится код, управляющий приложением. В рамках следующих разделов мы добавим код для заполнения раскрывающихся меню и вызова API-интерфейсов "Перевод текстов" и "Проверка орфографии Bing".
+В файле `MainWindow.xaml.cs` содержится код, управляющий приложением. В рамках следующих разделов мы добавим код для заполнения раскрывающихся меню и вызова нескольких API-интерфейсов, предоставляемых Переводчиком и Проверкой орфографии Bing.
 
-* Во время запуска программы и инициализации окна `MainWindow` вызывается метод `Languages` API "Перевод текстов", чтобы извлечь и заполнить раскрывающиеся меню выбора языков. Этот метод однократно вызывается в начале каждого сеанса.
+* Во время запуска программы и инициализации окна `MainWindow` вызывается метод `Languages` Переводчика, чтобы извлечь и заполнить раскрывающиеся меню выбора языков. Этот метод однократно вызывается в начале каждого сеанса.
 * Если нажать кнопку **Перевести**, приложение получает сведения о выбранном пользователем языке и текст. Для этого текста выполняется проверка орфографии и перевод, после чего перевод и сведения об определенном языке отображаются пользователю.
-  * Для перевода текста из `TextToTranslate` вызывается метод `Translate` API "Перевод текстов". В этом запросе также передаются языки `to` и `from`, выбранные с помощью раскрывающихся меню.
-  * Чтобы определить язык текста `TextToTranslate`, вызывается метод `Detect` API "Перевод текстов".
+  * Для перевода текста из `TextToTranslate` вызывается метод `Translate` Переводчика. В этом запросе также передаются языки `to` и `from`, выбранные с помощью раскрывающихся меню.
+  * Чтобы определить язык текста `TextToTranslate`, вызывается метод `Detect` API Переводчика.
   * Для проверки орфографии `TextToTranslate` и исправления ошибок используется Проверка орфографии Bing.
 
-Все наши проекты инкапсулируются в класс `MainWindow : Window`. Сначала добавим код, чтобы указать ключ подписки, объявить конечные точки для Перевода текстов и Проверки орфографии Bing, а также инициализировать приложение.
+Все наши проекты инкапсулируются в класс `MainWindow : Window`. Сначала добавим код, чтобы указать ключ подписки, объявить конечные точки для Переводчика и Проверки орфографии Bing, а также инициализировать приложение.
 
 1. В Visual Studio выберите вкладку для файла `MainWindow.xaml.cs`.
 1. Замените заполненные инструкции `using` следующим кодом:  
@@ -202,7 +202,7 @@ ms.locfileid: "77118606"
        // This sample uses the Cognitive Services subscription key for all services. To learn more about
        // authentication options, see: https://docs.microsoft.com/azure/cognitive-services/authentication.
        const string COGNITIVE_SERVICES_KEY = "YOUR_COG_SERVICES_KEY";
-       // Endpoints for Translator Text and Bing Spell Check
+       // Endpoints for Translator and Bing Spell Check
        public static readonly string TEXT_TRANSLATION_API_ENDPOINT = "https://api.cognitive.microsofttranslator.com/{0}?api-version=3.0";
        const string BING_SPELL_CHECK_API_ENDPOINT = "https://westus.api.cognitive.microsoft.com/bing/v7.0/spellcheck/";
        // An array of language codes
@@ -263,7 +263,7 @@ ms.locfileid: "77118606"
 
 ## <a name="get-supported-languages"></a>Получение сведений о поддерживаемых языках
 
-API "Перевод текстов" сейчас поддерживает более 60 языков. Так как со временем будет добавлена поддержка новых языков, вместо указания списка в коде приложения рекомендуем вызвать ресурс языков Перевода текстов.
+API Переводчика сейчас поддерживает более 60 языков. Так как со временем будет добавлена поддержка новых языков, вместо того чтобы задавать список в коде приложения, рекомендуем вызвать ресурс "Языки" Переводчика.
 
 В рамках этого раздела мы создадим запрос `GET` к ресурсу языков на получение списка языков, доступных для перевода.
 
@@ -362,7 +362,7 @@ API "Перевод текстов" сейчас поддерживает бол
 
 ## <a name="detect-language-of-source-text"></a>Определение языка исходного текста
 
-Создадим метод определения языка исходного текста (текст, введенный в текстовом поле) с помощью API "Перевод текстов". Значение, возвращаемое этим запросом, используется в запросе на перевод.
+Создадим метод определения языка исходного текста (текст, введенный в текстовом поле) с помощью Переводчика. Значение, возвращаемое этим запросом, используется в запросе на перевод.
 
 1. В Visual Studio выберите вкладку для файла `MainWindow.xaml.cs`.
 2. Добавьте следующий код в проект после метода `PopulateLanguageMenus()`:
@@ -372,7 +372,7 @@ API "Перевод текстов" сейчас поддерживает бол
    {
        string detectUri = string.Format(TEXT_TRANSLATION_API_ENDPOINT ,"detect");
 
-       // Create request to Detect languages with Translator Text
+       // Create request to Detect languages with Translator
        HttpWebRequest detectLanguageWebRequest = (HttpWebRequest)WebRequest.Create(detectUri);
        detectLanguageWebRequest.Headers.Add("Ocp-Apim-Subscription-Key", COGNITIVE_SERVICES_KEY);
        detectLanguageWebRequest.Headers.Add("Ocp-Apim-Subscription-Region", "westus");
@@ -418,7 +418,7 @@ API "Перевод текстов" сейчас поддерживает бол
 
 ## <a name="spell-check-the-source-text"></a>Проверка орфографии в исходном тексте
 
-Теперь с помощью API "Проверка орфографии Bing" создадим метод проверки орфографии в исходном тексте. Проверка орфографии гарантирует, что мы получим точный перевод от API "Перевод текстов". При нажатии кнопки **Перевести** любые изменения исходного текста передаются в запросе на перевод.
+Теперь с помощью API "Проверка орфографии Bing" создадим метод проверки орфографии в исходном тексте. Проверка орфографии гарантирует, что мы получим точный перевод от Переводчика. При нажатии кнопки **Перевести** любые изменения исходного текста передаются в запросе на перевод.
 
 1. В Visual Studio выберите вкладку для файла `MainWindow.xaml.cs`.
 2. Добавьте следующий код в проект после метода `DetectLanguage()`:
@@ -559,7 +559,7 @@ private string CorrectSpelling(string text)
    }
    ```
 
-Прежде всего необходимо получить сведения о языках исходного текста и перевода, а также текст, который пользователь ввел в форму. Если для исходного языка установлено значение **Detect** (Определить), для определения языка текста вызывается метод `DetectLanguage()`. Текст может быть написан на языке, который не поддерживает API "Перевод текстов". В этом случае выводится сообщение с информацией для пользователя и исходный текст возвращается без перевода.
+Прежде всего необходимо получить сведения о языках исходного текста и перевода, а также текст, который пользователь ввел в форму. Если для исходного языка установлено значение **Detect** (Определить), для определения языка текста вызывается метод `DetectLanguage()`. Текст может быть написан на языке, который не поддерживает Переводчик. В этом случае выводится сообщение с информацией для пользователя и исходный текст возвращается без перевода.
 
 Если исходным языком является английский (независимо от того, указан ли он или обнаружен), проверяется правописание с помощью `CorrectSpelling()` и применяются все исправления. Исправленный текст добавляется обратно в текстовое поле, чтобы продемонстрировать пользователю сделанные изменения.
 
@@ -580,4 +580,4 @@ private string CorrectSpelling(string text)
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Microsoft Translator Text API reference](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference) (Руководство по API для работы с текстами Microsoft Translator)
+> [Справочник по Переводчику Майкрософт](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)

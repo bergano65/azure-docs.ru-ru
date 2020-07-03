@@ -2,25 +2,21 @@
 title: Включение автоматической подготовки пользователей для приложений с несколькими клиентами в Azure AD
 description: Рекомендации для независимых поставщиков программного обеспечения для включения автоматической подготовки
 services: active-directory
-documentationcenter: azure
 author: BarbaraSelden
 manager: CelesteDG
 ms.service: active-directory
-ms.subservice: app-mgmt
-ms.devlang: na
+ms.subservice: app-provisioning
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/23/2019
 ms.author: baselden
 ms.reviewer: zhchia
-ms.collection: active-directory
-ms.openlocfilehash: 963cec069052484362e4eb31eb2479f4a915cae8
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 3713b7a191c5c7c90e0e76bde25d1b1b3bf3700b
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066451"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593596"
 ---
 # <a name="enable-automatic-user-provisioning-for-your-multi-tenant-application"></a>Включение автоматической подготовки пользователей для приложения с несколькими клиентами
 
@@ -67,8 +63,8 @@ Azure AD предоставляет несколько путей интегра
 | Возможности, включенные и улучшенные с помощью автоматической подготовки| Служба подготовки Azure AD (SCIM 2,0)| API Microsoft Graph (OData v 4.0)| SAML JIT |
 |---|---|---|---|
 | Управление пользователями и группами в Azure AD| √| √| Только для пользователя |
-| Управление пользователями и группами, синхронизированными из локальной Active Directory| √| √| Только для пользователей * |
-| Доступ к данным за пределами пользователей и групп во время подготовки доступа к данным Office 365 (команды, SharePoint, электронная почта, календарь, документы и т. д.)| X +| √| X |
+| Управление пользователями и группами, синхронизированными из локальной Active Directory| √*| √*| Только для пользователей * |
+| Доступ к данным за пределами пользователей и групп во время подготовки доступа к данным Office 365 (команды, SharePoint, электронная почта, календарь, документы и т. д.)| X+| √| X |
 | Создание, чтение и обновление пользователей на основе бизнес-правил| √| √| √ |
 | Удаление пользователей на основе бизнес-правил| √| √| X |
 | Управление автоматической подготовкой пользователей для всех приложений из портал Azure| √| X| √ |
@@ -76,8 +72,8 @@ Azure AD предоставляет несколько путей интегра
 | Поддержка учетных записей гостей (B2B)| √| √| √ |
 | Поддержка некорпоративных учетных записей (B2C)| X| √| √ |
 
-<sup>*</sup> — для синхронизации пользователей из AD с Azure AD требуется настройка Azure AD Connect.  
-<sup>+</sup >— использование scim для подготовки не исключает возможность интеграции приложения с Microsoft Graph для других целей.
+<sup>*</sup>— Для синхронизации пользователей из AD с Azure AD требуется Azure AD Connect Setup.  
+<sup>+</sup >— Использование SCIM для подготовки не исключает возможность интеграции приложения с MIcrosoft Graph для других целей.
 
 ## <a name="azure-ad-provisioning-service-scim"></a>Служба подготовки Azure AD (SCIM)
 
@@ -87,7 +83,7 @@ Azure AD предоставляет несколько путей интегра
 
 * [Дополнительные сведения о стандарте SCIM](https://aka.ms/SCIMOverview)
 
-* [Использование системы для управления междоменными удостоверениями (SCIM) для автоматической инициализации пользователей и групп из Azure Active Directory в приложения](../app-provisioning/use-scim-to-provision-users-and-groups.md)
+* [Использование системы для управления удостоверениями между доменами (SCIM) для автоматической подготовки пользователей и групп из Azure Active Directory в приложения](../app-provisioning/use-scim-to-provision-users-and-groups.md)
 
 * [Общие сведения о реализации Azure AD SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md)
 

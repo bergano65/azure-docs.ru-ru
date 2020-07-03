@@ -1,19 +1,19 @@
 ---
-author: IEvangelist
-ms.author: dapine
-ms.date: 06/25/2019
+author: aahill
+ms.author: aahi
+ms.date: 05/18/2020
 ms.service: cognitive-services
 ms.topic: include
-ms.openlocfilehash: 247cf2c76368572efd5603bd879d49a3d7365c78
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: 173a7f4fc1cfe7b615393d2ca5ecd2941b5ad928
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "67704214"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83701875"
 ---
 В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. После отправки формы команда Azure Cognitive Services просматривает ее и проверяет, соответствуете ли вы критериям доступа к частному реестру контейнеров.
 
 > [!IMPORTANT]
-> В форме необходимо указать электронный адрес, связанный с учетной записью Майкрософт или учетной записью Azure Active Directory (Azure AD).
+> В форме необходимо указать электронный адрес, связанный с учетной записью Майкрософт или учетной записью Azure Active Directory (Azure AD). 
 
 Если ваш запрос будет одобрен, вы получите по электронной почте инструкции по получению учетных данных и доступа к частному реестру контейнеров.

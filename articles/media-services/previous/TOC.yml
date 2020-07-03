@@ -1,5 +1,5 @@
 - name: Документация по Службам мультимедиа
-  href: index.md
+  href: index.yml
 - name: Обзор
   href: media-services-overview.md
   items:
@@ -257,8 +257,6 @@
           items:
             - name: "Кодировщик Haivision\_KB"
               href: media-services-configure-kb-live-encoder.md
-            - name: Кодировщик NewTek TriCaster
-              href: media-services-configure-tricaster-live-encoder.md
             - name: Кодировщик Wirecast
               href: media-services-configure-wirecast-live-encoder.md
         - name: Обработка длительных операций
@@ -393,12 +391,11 @@
           href: media-services-deliver-asset-download.md
         - name: Сценарий потоковой передачи отработки отказа
           href: media-services-implement-failover.md
+          displayName: 'HA, high availability'
     - name: Использование
       items:
         - name: Воспроизведение мультимедиа с помощью существующих проигрывателей
           href: media-services-playback-content-with-existing-players.md
-        - name: Воспроизведение мультимедиа с помощью Проигрывателя мультимедиа
-          href: media-services-develop-video-players.md
         - name: Другие параметры воспроизведения
           items:
             - name: Приложение для Магазина Windows с потоковой передачей Smooth Streaming

@@ -1,18 +1,14 @@
 ---
 title: Панель мониторинга общих сведений об Azure Application Insights | Документация Майкрософт
 description: Мониторинг приложений с помощью Azure Application Insights и функции "Панель мониторинга общих сведений".
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 06/03/2019
-ms.openlocfilehash: 45c04cc32733873061bd6ff44b2e5484b106a893
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: e5188972d9058b85a9765c7d33f6209b37245d7e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75406653"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77669902"
 ---
 # <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
 
@@ -24,7 +20,7 @@ Application Insights всегда предоставляло сводную па
 
 ![Область панели мониторинга общих сведений](./media/overview-dashboard/overview.png)
 
-## <a name="better-performance"></a>Повышенная производительность
+## <a name="better-performance"></a>более высокая производительность;
 
 Выбор диапазона времени упростили, создав интерфейс с возможностью работы одним щелчком.
 
@@ -55,12 +51,12 @@ Application Insights всегда предоставляло сводную па
 
 ![Кнопка "Обзор"](./media/overview-dashboard/app-insights-overview-dashboard-07.png)
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Если выбрать **параметр настроить параметры плитки** и задать настраиваемый диапазон времени, превышающий 31 день, на панели мониторинга не будут отображаться данные за 31 день, даже если срок хранения данных по умолчанию 90 дней. В настоящее время обходной путь для этого поведения отсутствует.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Воронки](../../azure-monitor/app/usage-funnels.md)
 - [Сохранение](../../azure-monitor/app/usage-retention.md)
-- [Средство "Маршруты пользователей"](../../azure-monitor/app/usage-flows.md)
+- [Маршруты пользователей](../../azure-monitor/app/usage-flows.md)

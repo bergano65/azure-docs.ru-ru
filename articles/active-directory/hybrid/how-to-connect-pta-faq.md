@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/15/2019
+ms.date: 03/09/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06dfe1e76682d70170bfea104050b1000269c38f
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 661d4f622dce45aeca1d41ead60f05ccdcfbc9c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75932391"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81406877"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -35,16 +35,16 @@ ms.locfileid: "75932391"
 
 Функция сквозной аутентификации предоставляется бесплатно. Для ее использования не требуются платные выпуски Azure AD.
 
-## <a name="is-pass-through-authentication-available-in-the-microsoft-azure-germany-cloudhttpswwwmicrosoftdecloud-deutschland-and-the-microsoft-azure-government-cloudhttpsazuremicrosoftcomfeaturesgov"></a>Доступна ли сквозная аутентификация в [Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
+## <a name="is-pass-through-authentication-available-in-the-microsoft-azure-germany-cloud-and-the-microsoft-azure-government-cloud"></a>Доступна ли сквозная аутентификация в [Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
 
 Нет. Сквозная аутентификация доступна только в доступном по всему миру экземпляре Azure AD.
 
-## <a name="does-conditional-accessactive-directory-conditional-access-azure-portalmd-work-with-pass-through-authentication"></a>Работает ли [условный доступ](../active-directory-conditional-access-azure-portal.md) со сквозной проверкой подлинности?
+## <a name="does-conditional-access-work-with-pass-through-authentication"></a>Работает ли [условный доступ](../active-directory-conditional-access-azure-portal.md) со сквозной проверкой подлинности?
 
 Да. Все возможности условного доступа, включая многофакторную идентификацию Azure, работают с сквозной проверкой подлинности.
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>Поддерживает ли сквозная проверка подлинности в качестве имени пользователя "Alternate ID", а не "userPrincipalName"?
-В ограниченном экстенте сквозная проверка подлинности поддерживает альтернативный идентификатор в качестве имени пользователя при настройке в Azure AD Connect. В качестве предварительного требования Azure AD Connect требуется синхронизировать локальный атрибут `UserPrincipalName` Active Directory с Azure AD. В результате `UserPrincipalName` в локальной среде AD и Azure AD становятся идентичными. Если вы хотите использовать другой атрибут для синхронизации из локальной службы AD в качестве имени участника-пользователя в Azure AD, необходимо использовать либо синхронизацию хэша паролей, либо AD FS. Дополнительные сведения см. в статье [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md). Не все приложения Office 365 поддерживают `Alternate ID`. Ознакомьтесь с заявлением о поддержке в документации по конкретным приложениям.
+Вход с использованием значения, отличного от имени участника-пользователя, такого как альтернативный адрес электронной почты, в настоящее время тестируется в закрытой предварительной версии для сквозной проверки подлинности (PTA) и синхронизации хэша паролей (PHS).
 
 ## <a name="does-password-hash-synchronization-act-as-a-fallback-to-pass-through-authentication"></a>Действует ли синхронизация хэша паролей как переход на резервный ресурс при сквозной аутентификации?
 
@@ -54,7 +54,7 @@ ms.locfileid: "75932391"
 
 При использовании Azure AD Connect для переключения метода входа с синхронизации хэша паролей на сквозную аутентификацию сквозная проверка подлинности станет основным методом входа для пользователей в управляемых доменах. Обратите внимание, что для всех хэшей паролей пользователей, которые ранее были синхронизированы при синхронизации хэша паролей, сохраняются в Azure AD.
 
-## <a name="can-i-install-an-azure-ad-application-proxymanage-appsapplication-proxymd-connector-on-the-same-server-as-a-pass-through-authentication-agent"></a>Можно ли установить соединитель [прокси приложения Azure AD](../manage-apps/application-proxy.md) на одном сервере с агентом сквозной проверки подлинности?
+## <a name="can-i-install-an-azure-ad-application-proxy-connector-on-the-same-server-as-a-pass-through-authentication-agent"></a>Можно ли установить соединитель [прокси приложения Azure AD](../manage-apps/application-proxy.md) на одном сервере с агентом сквозной проверки подлинности?
 
 Да. Эта конфигурация поддерживается в переработанной версии агента сквозной аутентификации (версия 1.5.193.0 или более поздняя).
 
@@ -75,7 +75,7 @@ ms.locfileid: "75932391"
 ## <a name="what-do-pass-through-authentication-agents-communicate-over-ports-80-and-443"></a>Какие данные передают агенты сквозной проверки подлинности через порты 80 и 443?
 
 - Агенты аутентификации выполняют HTTPS-запросы через порт 443 для всех операций этой функции.
-- Агенты аутентификации выполняют HTTP-запросы через порт 80 для скачивания списков отзыва SSL-сертификатов (CLR).
+- Агенты проверки подлинности выполняют HTTP-запросы через порт 80 для загрузки списков отзыва сертификатов (CRL) TLS/SSL.
 
      >[!NOTE]
      >В последних обновлениях было сокращено количество портов, необходимых для работы этой функции. Если вы используете предыдущие версии Azure AD Connect или агента аутентификации, также не закрывайте следующие порты: 5671, 8080, 9090, 9091, 9350, 9352 и 10100–10120.
@@ -107,7 +107,7 @@ ms.locfileid: "75932391"
 
 ## <a name="do-i-have-to-manually-renew-certificates-used-by-pass-through-authentication-agents"></a>Нужно ли вручную продлевать сертификаты, используемые агентами сквозной проверки подлинности?
 
-Обмен данными между каждым агентом сквозной проверки подлинности и Azure AD защищен с помощью проверки подлинности на основе сертификата. Эти [сертификаты автоматически продлеваются каждые несколько месяцев средствами Azure AD](how-to-connect-pta-security-deep-dive.md#operational-security-of -the-authentication-agents). Нет необходимости вручную продлевать их действие. Старые просроченные сертификаты при необходимости можно удалить.
+Обмен данными между каждым агентом сквозной проверки подлинности и Azure AD защищен с помощью проверки подлинности на основе сертификата. [В Azure AD эти сертификаты автоматически обновляются каждые несколько месяцев](how-to-connect-pta-security-deep-dive.md#operational-security-of-the-authentication-agents). Нет необходимости вручную продлевать их действие. Старые просроченные сертификаты при необходимости можно удалить.
 
 ## <a name="how-do-i-remove-a-pass-through-authentication-agent"></a>Ка удалить агент сквозной аутентификации?
 
@@ -121,7 +121,7 @@ ms.locfileid: "75932391"
 
 ## <a name="can-i-use-pass-through-authentication-in-a-multi-forest-active-directory-environment"></a>Можно ли использовать сквозную аутентификацию в среде с несколькими лесами Active Directory?
 
-Да. Среды с несколькими лесами поддерживаются, если между лесами Active Directory существуют отношения доверия и правильно настроена маршрутизация по суффиксу имени.
+Да. Среды с несколькими лесами поддерживаются, если Active Directory между лесами есть отношения доверия лесов (двусторонняя) и если правильно настроена маршрутизация суффикса имени.
 
 ## <a name="does-pass-through-authentication-provide-load-balancing-across-multiple-authentication-agents"></a>Обеспечивает ли сквозная проверка подлинности балансировку нагрузки в нескольких агентах проверки подлинности?
 
@@ -148,7 +148,7 @@ ms.locfileid: "75932391"
 
 ## <a name="why-do-i-need-a-cloud-only-global-administrator-account-to-enable-pass-through-authentication"></a>Зачем для включения сквозной аутентификации нужна облачная учетная запись глобального администратора?
 
-Рекомендуется включать или отключать сквозную аутентификацию, используя облачную учетную запись глобального администратора. См. дополнительные сведения о [добавлении облачной учетной записи глобального администратора](../active-directory-users-create-azure-portal.md). Выполните эти инструкции, чтобы не потерять доступ к клиенту.
+Рекомендуется включать или отключать сквозную аутентификацию, используя облачную учетную запись глобального администратора. Узнайте [, как добавить облачную учетную запись глобального администратора](../active-directory-users-create-azure-portal.md). Выполните эти инструкции, чтобы не потерять доступ к клиенту.
 
 ## <a name="how-can-i-disable-pass-through-authentication"></a>Как можно отключить сквозную проверку подлинности?
 

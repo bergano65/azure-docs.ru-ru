@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.openlocfilehash: fc69761a05ea381d39d58d5ebf0046e0d9874961
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77210471"
 ---
 # <a name="example-create-a-custom-skill-using-python"></a>Пример. Создание пользовательского навыка с помощью Python
@@ -21,7 +21,7 @@ ms.locfileid: "77210471"
 
 Пользовательский навык прост в проектировании (он объединяет две строки), чтобы вы могли сосредоточиться на средствах и технологиях, используемых для разработки пользовательских навыков в Python. После того как вы пройдете простой навык, вы сможете создать более сложные сценарии.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 + Изучите [Пользовательский интерфейс навыка](cognitive-search-custom-skill-interface.md) , чтобы получить представление о интерфейсе ввода-вывода, который должен быть реализован в пользовательском навыке.
 
@@ -30,7 +30,7 @@ ms.locfileid: "77210471"
   + [Python 3,75](https://www.python.org/downloads/release/python-375/)
   + [Visual Studio Code](https://code.visualstudio.com/)
   + [Расширение Python для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-  + [Основные инструменты службы "Функции Azure"](https://docs.microsoft.com/azure/azure-functions/functions-run-local#v2)
+  + [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local#v2)
   + [Расширение "Функции Azure" для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 
 ## <a name="create-an-azure-function"></a>Создание функции Azure
@@ -57,7 +57,7 @@ ms.locfileid: "77210471"
 
 Редактор Visual Studio Code создаст проект приложения-функции в новой рабочей области. Проект будет содержать файлы конфигурации [host.json](../azure-functions/functions-host-json.md) и [local.settings.json](../azure-functions/functions-run-local.md#local-settings-file), а также файлы проекта для указанного языка. 
 
-Новая функция, активируемая HTTP, также создается в папке **конкатенации** проекта приложения-функции. Внутри него будет файл с именем "\_\_init__. Корректировка" с этим содержимым:
+Новая функция, активируемая HTTP, также создается в папке **конкатенации** проекта приложения-функции. Внутри него будет файл с именем «\_\_init__. Корректировка» с этим содержимым:
 
 ```py
 import logging
@@ -181,7 +181,7 @@ Visual Studio Code упрощает отладку кода. Нажмите кл
 
 Когда поведение функции будет удовлетворено, его можно опубликовать.
 
-1. В Visual Studio Code нажмите клавишу F1, чтобы открыть палитру команд. В палитре команд найдите и выберите **развернуть в приложение-функция...** . 
+1. В Visual Studio Code нажмите клавишу F1, чтобы открыть палитру команд. В палитре команд найдите и выберите **развернуть в приложение-функция...**. 
 
 1. Выберите подписку Azure, в которой вы хотите развернуть приложение.
 
@@ -263,7 +263,7 @@ POST [Function URL you copied above]
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Поздравляем! Вы создали свой первый пользовательский навык. Теперь вы можете использовать ту же схему для добавления пользовательских функций. Чтобы получить дополнительные сведения, перейдите по следующим ссылкам.
 
 + [Power Skills: репозиторий пользовательских навыков](https://github.com/Azure-Samples/azure-search-power-skills)

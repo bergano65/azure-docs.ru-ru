@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/24/2019
 ms.author: pafarley
 ms.openlocfilehash: fe1b5b4171dc5e61c1c82abfd723d0b77a05a5b9
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "76294343"
 ---
 # <a name="define-and-use-moderation-jobs-net"></a>Определение и использование заданий по созадачам (.NET)
@@ -26,7 +26,7 @@ ms.locfileid: "76294343"
 - отслеживание и получение окончательного состояния проверки;
 - Отправка результатов проверки в URL-адрес обратного вызова
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 
@@ -47,7 +47,7 @@ ms.locfileid: "76294343"
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. Добавьте в свое решение новый проект **Консольное приложение (.NET Framework)** .
+1. Добавьте в свое решение новый проект **Консольное приложение (.NET Framework)**.
 
    В примере кода назовите проект **CreateReviews**.
 
@@ -124,7 +124,7 @@ public static class Clients
 Добавьте следующие константы и статические поля в класс **Program** в файле Program.cs.
 
 > [!NOTE]
-> Константе TeamName присваивается имя, указанное вами при создании подписки Content Moderator. Вы получаете Теамнаме с веб-сайта Content Moderator.
+> Константе TeamName присваивается имя, указанное вами при создании подписки Content Moderator. Получить TeamName можно на веб-сайте Content Moderator.
 > После входа в меню **Settings** (Параметры) (значок шестеренки) выберите **Credentials** (Учетные данные).
 >
 > Имя группы указано в поле **Id** (Идентификатор) в разделе **API**.
@@ -314,6 +314,6 @@ Get review details.
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

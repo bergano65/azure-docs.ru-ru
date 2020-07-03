@@ -12,12 +12,12 @@ ms.date: 09/27/2019
 ms.author: mimart
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f9ff446bae0a010b12e84172d5af60c6ca81c0e
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 72b3e37a423442194b81e3d10ecc7157201ff8be
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76896907"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79266628"
 ---
 # <a name="end-user-experiences-for-applications-in-azure-active-directory"></a>Возможности для взаимодействия пользователя с приложениями в Azure Active Directory
 
@@ -32,7 +32,7 @@ Azure Active Directory (Azure AD) предоставляет несколько 
 
 ## <a name="azure-ad-access-panel"></a>панель доступа Azure AD;
 
-Панель доступа по адресу https://myapps.microsoft.com представляет собой веб-портал, который позволяет пользователям с учетной записью организации в Azure Active Directory просматривать и запускать облачные приложения, к которым администратор Azure AD предоставил доступ. Если вы являетесь пользователем [Azure Active Directory Premium](https://azure.microsoft.com/pricing/details/active-directory/), вы также можете использовать возможности панели доступа для самостоятельного управления группами.
+Панель доступа в https://myapps.microsoft.com — это веб-портал, который позволяет пользователю с учетной записью организации в Azure Active Directory просматривать и запускать приложения, к которым им был предоставлен доступ администратор Azure AD. Если вы являетесь пользователем [Azure Active Directory Premium](https://azure.microsoft.com/pricing/details/active-directory/), вы также можете использовать возможности панели доступа для самостоятельного управления группами.
 
 ![На снимке экрана показан портал панели доступа Azure AD](media/what-is-single-sign-on/azure-ad-access-panel.png)
 
@@ -76,6 +76,6 @@ Azure AD также поддерживает ссылки для прямого 
 
 Эти ссылки используют тот же механизм управления доступом, что и панель доступа и Office 365, и только пользователи или группы, которым назначено приложение на портале Azure, смогут пройти аутентификацию. Неавторизированный пользователь увидит сообщение о том, что ему не предоставлен доступ. Кроме того, отобразится ссылка для загрузки панели доступа, на которой пользователь может увидеть приложения, к которым у него есть доступ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о планах развертывания Azure Active Directory см. [здесь](../fundamentals/active-directory-deployment-plans.md).

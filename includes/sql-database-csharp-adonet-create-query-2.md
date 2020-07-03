@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 12/10/2018
 ms.author: genemi
 ms.openlocfilehash: e30651cb0ed7d74082163a92acbc428c21018255
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67185365"
 ---
 ## <a name="c-program-example"></a>Пример программы C#
@@ -17,7 +17,7 @@ ms.locfileid: "67185365"
 
 - [Подключение к базе данных SQL с помощью ADO.NET](#cs_1_connect)
 - [Методы, возвращающие инструкции T-SQL](#cs_2_return)
-    - создание таблиц.
+    - Создание таблиц
     - Заполнение таблиц данными
     - Обновление, удаление и выбор данных
 - [Отправка T-SQL в базе данных](#cs_3_submit)

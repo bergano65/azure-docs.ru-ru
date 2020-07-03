@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 02/03/2020
-ms.openlocfilehash: 377639d7a88478308709743ab842db71028686ed
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: ffcfb4f6ec5f6c654d0b243af85034ab575e0d88
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77023316"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80297168"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -29,17 +29,17 @@ ms.locfileid: "77023316"
 
 [Postman](https://www.getpostman.com/) — это средство тестирования REST, которое размещает ключевые возможности HTTP-запроса в полезном графическом пользовательском интерфейсе на основе плагина для настольных систем.
 
-С помощью клиента Postman разработчики решений могут указать тип HTTP-запроса (*POST*, *GET*, *UPDATE*, *PATCH* и *DELETE*), конечную точку API, которую нужно вызвать, и использование SSL. Postman также поддерживает добавление заголовков, параметров, данных форм и текста HTTP-запросов.
+С помощью клиента posts разработчики решений могут указать тип HTTP-запроса (*POST*, *Get*, *Update*, *Patch*и *Delete*), конечной точки API для вызова и использования протокола TLS. Postman также поддерживает добавление заголовков, параметров, данных форм и текста HTTP-запросов.
 
 ## <a name="configure-azure-active-directory-to-use-the-oauth-20-implicit-grant-flow"></a>Настройка Azure Active Directory для использования потока неявного предоставления разрешений OAuth 2.0
 
 1. Выполните действия, описанные в [кратком руководстве](quickstart-view-occupancy-dotnet.md#set-permissions-for-your-app) , чтобы создать и настроить приложение Azure Active Directory. Кроме того, можно повторно использовать существующую регистрацию приложения.
 
-    [![настроить новый URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
+    [![Настройка нового URI перенаправления POST](media/how-to-configure-postman/authentication-redirect-uri.png)](media/how-to-configure-postman/authentication-redirect-uri.png#lightbox)
 
-1. Теперь добавьте **URI перенаправления** для `https://www.getpostman.com/oauth2/callback`.
+1. Теперь добавьте **URI перенаправления** в `https://www.getpostman.com/oauth2/callback`.
 
-1. Установите флажок **неявное предоставление** > **маркеров доступа** , чтобы разрешить использование потока неявного предоставления OAuth 2,0. Выберите **Настройка**, а затем **сохранить**.
+1. Установите флажок **неявные** > **маркеры доступа** GRANT, чтобы разрешить использование потока неявного предоставления OAuth 2,0. Выберите **Настройка**, а затем **сохранить**.
 
 1. Скопируйте **идентификатор клиента** приложения Azure Active Directory.
 
@@ -68,14 +68,14 @@ ms.locfileid: "77023316"
     | Тип предоставления разрешения | `Implicit` |
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
     | URL-адрес аутентификации | Используйте **URL-адрес авторизации** из **шага 1** . |
-    | Идентификатор клиента | Используйте **идентификатор приложения** для Azure Active Directoryного приложения, созданного или повторно используемого из предыдущего раздела. |
-    | Область действия | Не указывайте |
+    | ИД клиента | Используйте **идентификатор приложения** для Azure Active Directoryного приложения, созданного или повторно используемого из предыдущего раздела. |
+    | Область | Не указывайте |
     | Состояние | Не указывайте |
     | Аутентификация клиента | `Send as Basic Auth header` |
 
 1. Теперь клиент должен выглядеть следующим образом.
 
-    [Пример маркера клиента ![POST](media/how-to-configure-postman/configure-postman-oauth-token.png)](media/how-to-configure-postman/configure-postman-oauth-token.png#lightbox)
+    [![Пример токена клиента POST](media/how-to-configure-postman/configure-postman-oauth-token.png)](media/how-to-configure-postman/configure-postman-oauth-token.png#lightbox)
 
 1. Выберите **Request Token** (Токен запроса).
   
@@ -85,16 +85,16 @@ ms.locfileid: "77023316"
 
 После выполнения предыдущих шагов настройте Postman на выполнение аутентифицированного HTTP-запроса POST, состоящего из нескольких частей.
 
-1. На вкладке **заголовки** добавьте **тип содержимого** "ключ заголовка HTTP-запроса" со значением `multipart/mixed`.
+1. На вкладке **заголовки** добавьте содержимое ключа заголовка HTTP **-** запроса со значением `multipart/mixed`.
 
-   [![указать тип содержимого multipart/Mixed](media/how-to-configure-postman/configure-postman-content-type.png)](media/how-to-configure-postman/configure-postman-content-type.png#lightbox)
+   [![Указание типа содержимого multipart/Mixed](media/how-to-configure-postman/configure-postman-content-type.png)](media/how-to-configure-postman/configure-postman-content-type.png#lightbox)
 
 1. Сериализируйте текстовые данные в файлы. Данные JSON будут сохранены в качестве JSON-файла.
 1. На вкладке **текст** выберите `form-data`. 
 1. Добавьте каждый файл, назначив имя **ключа** , выбрав `File`.
 1. Далее выберите каждый файл, используя кнопку **Выберите файл**.
 
-   [Пример тела формы клиента ![POST](media/how-to-configure-postman/configure-postman-form-body.png)](media/how-to-configure-postman/configure-postman-form-body.png#lightbox)
+   [![Пример тела формы клиента POST](media/how-to-configure-postman/configure-postman-form-body.png)](media/how-to-configure-postman/configure-postman-form-body.png#lightbox)
 
    >[!NOTE]
    > * Клиент Postman не требует, чтобы составные части имели назначенный вручную **Content-Type** или **Content-Disposition**.
@@ -109,7 +109,7 @@ ms.locfileid: "77023316"
    YOUR_MANAGEMENT_API_URL/spaces/blobs?includes=description
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об API управления Digital Twins и их использовании см. в статье [How to use Azure Digital Twins management APIs](how-to-navigate-apis.md) (Как использовать API управления Azure Digital Twins).
 

@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: edfb2fe5cc37a00335ca7b5be851a88825b03eb1
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72792215"
 ---
 # <a name="how-to-manage-concurrency-in-azure-cognitive-search"></a>Управление параллелизмом в Azure Когнитивный поиск
@@ -20,13 +20,13 @@ ms.locfileid: "72792215"
 При управлении ресурсами Когнитивный поиск Azure, такими как индексы и источники данных, важно безопасно обновлять ресурсы, особенно если доступ к ресурсам осуществляется параллельно разными компонентами приложения. Если два клиента одновременно обновляют ресурс, не координируя свои действия, то могут возникать состояния гонки. Чтобы избежать этого, Azure Когнитивный поиск предлагает *модель оптимистичного параллелизма*. При этом в отношении ресурса нет никаких блокировок. Для каждого ресурса существует тег ETag, который определяет версию ресурса. Это позволяет создавать запросы, избегая случайных перезаписей.
 
 > [!Tip]
-> Концептуальный код в [примере C# решения](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) объясняет, как работает управление параллелизмом в Azure когнитивный Поиск. Код создает условия, которые вызывают управление параллелизмом. Большинству разработчиков, скорее всего, достаточно будет прочитать [приведенный ниже фрагмент кода](#samplecode), но если вы хотите выполнить его, то измените файл appsettings.json, добавив имя службы и ключ API администратора. URL-адрес службы — `http://myservice.search.windows.net`, а имя службы — `myservice`.
+> Концептуальный код в [примере решения C#](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) объясняет, как работает управление параллелизмом в Azure когнитивный Поиск. Код создает условия, которые вызывают управление параллелизмом. Большинству разработчиков, скорее всего, достаточно будет прочитать [приведенный ниже фрагмент кода](#samplecode), но если вы хотите выполнить его, то измените файл appsettings.json, добавив имя службы и ключ API администратора. URL-адрес службы — `http://myservice.search.windows.net`, а имя службы — `myservice`.
 
-## <a name="how-it-works"></a>Принципы работы
+## <a name="how-it-works"></a>Принцип работы
 
 Оптимистическая блокировка реализуется за счет проверки условий доступа в вызовах API при записи в индексы, индексаторы, источники данных и ресурсы synonymMap.
 
-Все ресурсы имеют [*тег сущности (ETag)* ](https://en.wikipedia.org/wiki/HTTP_ETag), который предоставляет сведения о версии объекта. Если сначала проверить ETag, то можно избежать параллельных обновлений в стандартном рабочем процессе (получение, локальное изменение, обновление), убедившись, что ETag ресурса соответствует локальной копии.
+Все ресурсы имеют [*тег сущности (ETag)*](https://en.wikipedia.org/wiki/HTTP_ETag), который предоставляет сведения о версии объекта. Если сначала проверить ETag, то можно избежать параллельных обновлений в стандартном рабочем процессе (получение, локальное изменение, обновление), убедившись, что ETag ресурса соответствует локальной копии.
 
 + Интерфейс REST API использует [ETag](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search) в заголовке запроса.
 + Пакет SDK для .NET задает ETag с помощью объекта accessCondition, устанавливая в ресурсе [заголовок If-Match | If-None-Match](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search). Любой объект, наследуемый из [IResourceWithETag (пакет SDK для .NET)](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.iresourcewithetag), содержит объект accessCondition.
@@ -44,7 +44,7 @@ ms.locfileid: "72792215"
 + Сбой обновления, если ресурс больше не существует
 + Сбой обновления, если версия ресурса изменяется
 
-### <a name="sample-code-from-dotnetetagsexplainer-programhttpsgithubcomazure-samplessearch-dotnet-getting-startedtreemasterdotnetetagsexplainer"></a>Пример кода из [программы DotNetETagsExplainer](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer)
+### <a name="sample-code-from-dotnetetagsexplainer-program"></a>Пример кода из [программы DotNetETagsExplainer](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer)
 
 ```
     class Program
@@ -169,7 +169,7 @@ ms.locfileid: "72792215"
 
 Конструктивный шаблон для реализации оптимистической блокировки должен включать в себя цикл повторных попыток проверки условия доступа, тест для условия доступа и, при необходимости, должен получать обновленный ресурс перед попыткой повторного применения изменений.
 
-В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код из [примера синонима C# для Azure когнитивный Поиск](search-synonyms-tutorial-sdk.md).
+В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код из примера на [C# синонима для Azure когнитивный Поиск](search-synonyms-tutorial-sdk.md).
 
 Этот фрагмент получает индекс "hotels", проверяет версию объекта при операции обновления, порождает исключение, если условие не выполняется, а затем совершает повторную попытку операции (до трех раз), начиная с извлечения индекса с сервера, чтобы получить последнюю версию.
 
@@ -211,11 +211,11 @@ ms.locfileid: "72792215"
 
 Попробуйте изменить один из следующих примеров, включив теги ETags или объекты AccessCondition.
 
-+ [Пример REST API на портале GitHub](https://github.com/Azure-Samples/search-rest-api-getting-started)
-+ [Пример пакета SDK для .NET на портале GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started) Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
++ [REST API пример на GitHub](https://github.com/Azure-Samples/search-rest-api-getting-started)
++ [Пример пакета SDK для .NET на сайте GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started). Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
-[Common HTTP request and response headers used in Azure Search (Распространенные заголовки запросов и ответов HTTP в службе "Поиск Azure")](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)
-[HTTP status codes (Azure Search) (Коды состояния HTTP в службе "Поиск Azure")](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)
-[Index operations (Azure Search Service REST API) (Операции с индексами в службе "Поиск Azure" (REST API))](https://docs.microsoft.com/rest/api/searchservice/index-operations)
+[Общие](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)
+
+[коды состояния HTTP](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)для операций с индексами HTTP-запросов и ответов[(REST API)](https://docs.microsoft.com/rest/api/searchservice/index-operations)

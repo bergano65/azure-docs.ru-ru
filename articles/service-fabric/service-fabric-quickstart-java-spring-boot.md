@@ -6,73 +6,56 @@ ms.topic: quickstart
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c12cd53b55cac48aae3d69506204c9d107e34aa6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: eb96989b4a2731e78471b848d690b48352408d1c
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75464382"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "77121483"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-app-on-azure-service-fabric"></a>Краткое руководство. Развертывание приложения Java Spring Boot в Azure Service Fabric
 
-В этом руководстве объясняется, как развернуть приложение Java Spring Boot в Azure Service Fabric. Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими. 
+В этом кратком руководстве мы развернем приложение Java Spring Boot в Azure Service Fabric, используя уже знакомые нам средства командной строки в Linux и MacOS. Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими. 
 
-Это краткое руководство использует пример [Начало работы](https://spring.io/guides/gs/spring-boot/) с веб-сайта Spring Boot. В этом кратком руководстве приведены пошаговые инструкции по развертыванию Spring Boot в виде приложения Service Fabric с использованием знакомых средств командной строки. Когда вы завершите работу с руководством, у вас будет пример Spring Boot, работающий на Service Fabric.
+## <a name="prerequisites"></a>Предварительные требования
 
-![Пример Spring Boot Service Fabric](./media/service-fabric-quickstart-java-spring-boot/spring-boot-service-fabric-sample.png)
+#### <a name="linux"></a>[Linux](#tab/linux)
 
-Из этого краткого руководства вы узнаете, как выполнять следующие задачи:
+- [Среда Java](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development) и [Yeoman](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-yeoman-generators-for-containers-and-guest-executables).
+- [Пакет SDK и интерфейс командной строки (CLI) для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#installation-methods).
+- [Git](https://git-scm.com/downloads);
 
-* Развертывание приложения Spring Boot в Service Fabric
-* Развертывание приложения в локальном кластере.
-* Масштабирование приложения на несколько узлов
-* Отработка отказа службы без ущерба для ее доступности
+#### <a name="macos"></a>[MacOS](#tab/macos)
 
-## <a name="prerequisites"></a>предварительные требования
+- [Среда Java и Yeoman](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman).
+- [Пакет SDK и интерфейс командной строки (CLI) для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli#cli-mac).
+- [Git](https://git-scm.com/downloads);
 
-Для работы с этим кратким руководством сделайте следующее:
-
-1. Установите пакет SDK и интерфейс командной строки Service Fabric:
-
-    а. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli#cli-mac)
-    
-    b. [Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#installation-methods)
-
-1. [установите Git](https://git-scm.com/);
-1. установка Yeoman;
-
-    а. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman)
-
-    b. [Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-yeoman-generators-for-containers-and-guest-executables)
-1. Настройте среду Java:
-
-    а. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman)
-    
-    b.  [Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development)
+--- 
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
-В окне терминала выполните следующую команду, чтобы клонировать пример приложения Spring Boot Getting Started на локальный компьютер.
+В окне терминала выполните следующую команду, чтобы клонировать пример [начального приложения](https://github.com/spring-guides/gs-spring-boot) Spring Boot на локальный компьютер.
 
 ```bash
 git clone https://github.com/spring-guides/gs-spring-boot.git
 ```
 
 ## <a name="build-the-spring-boot-application"></a>Создание приложения Spring Boot 
-1. Чтобы создать приложение, перейдите в каталог `gs-spring-boot/complete` и выполните следующую команду: 
+В каталоге *gs-spring-boot/complete* выполните указанную ниже команду, чтобы скомпилировать приложение. 
 
-    ```bash
-    ./gradlew build
-    ``` 
+```bash
+./gradlew build
+``` 
 
 ## <a name="package-the-spring-boot-application"></a>Упаковка приложения Spring Boot 
-1. В клонированном экземпляре каталога `gs-spring-boot` выполните команду `yo azuresfguest`. 
+1. В каталоге *gs-spring-boot* клонированного приложения выполните команду `yo azuresfguest`. 
 
 1. Введите следующие сведения для каждого запроса.
 
     ![Записи Spring Boot Yeoman](./media/service-fabric-quickstart-java-spring-boot/yeoman-entries-spring-boot.png)
 
-1. В папке `SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/code` создайте файл с именем `entryPoint.sh`. Добавьте в файл `entryPoint.sh` следующий код. 
+1. В папке *SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/code* создайте файл с именем *entryPoint.sh*. Добавьте в файл *entryPoint.sh* следующий код: 
 
     ```bash
     #!/bin/bash
@@ -91,7 +74,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
        </Resources>
     ```
 
-    Файл **ServiceManifest.xml** теперь выглядит следующим образом: 
+    Файл *ServiceManifest.xml* теперь выглядит следующим образом: 
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -136,17 +119,17 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
     docker run --name sftestcluster -d -p 19080:19080 -p 19000:19000 -p 25100-25200:25100-25200 -p 8080:8080 mysfcluster
     ```
 
-    Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер является рабочим, откройте Service Fabric Explorer по адресу **http://localhost:19080** . Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает. 
+    Запуск локального кластера занимает некоторое время. Чтобы убедиться, что кластер работает, откройте Service Fabric Explorer по адресу `http://localhost:19080`. Наличие пяти работоспособных узлов означает, что локальный кластер запущен и работает. 
     
     ![В Service Fabric Explorer отображаются работоспособные узлы](./media/service-fabric-quickstart-java-spring-boot/service-fabric-explorer-healthy-nodes.png)
 
-1. Откройте папку `gs-spring-boot/SpringServiceFabric`.
+1. Откройте папку *gs-spring-boot/SpringServiceFabric*.
 1. Выполните следующую команду, чтобы подключиться к локальному кластеру.
 
     ```bash
     sfctl cluster select --endpoint http://localhost:19080
     ```
-1. Выполните скрипт `install.sh`.
+1. Выполните сценарий *install.sh*.
 
     ```bash
     ./install.sh
@@ -157,6 +140,8 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
     ![Пример Spring Boot Service Fabric](./media/service-fabric-quickstart-java-spring-boot/spring-boot-service-fabric-sample.png)
 
 Теперь вы можете получить доступ к приложению Spring Boot, которое развернуто в кластере Service Fabric.
+
+Дополнительные сведения см. на странице [начального приложения](https://spring.io/guides/gs/spring-boot/) Spring Boot.
 
 ## <a name="scale-applications-and-services-in-a-cluster"></a>Масштабирование приложений и служб в кластере
 

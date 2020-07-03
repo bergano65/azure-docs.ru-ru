@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/04/2018
-ms.openlocfilehash: 78f2e06947c2b81ffe5e6cd8a88438db4dabf158
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 328ca7cd2c6f76095c8334ae6fdb4aa75fbb867d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426417"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80292004"
 ---
 # <a name="implement-cicd-for-stream-analytics-on-iot-edge-using-apis"></a>Реализация CI/CD для Stream Analytics на IoT Edge с использованием API
 
@@ -57,7 +57,7 @@ echo $response
 
 |Метод|Request URL (URL-адрес запроса)|
 |------|-----------|
-|ОТПРАВКА|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourcegroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}?api-version=2017-04-01-preview|
+|ОТПРАВКА|`https://management.azure.com/subscriptions/{\**subscription-id**}/resourcegroups/{**resource-group-name**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**job-name**}?api-version=2017-04-01-preview`|
  
 Пример использования команды **curl**:
 
@@ -144,7 +144,7 @@ curl -u { <username:password> } -H "Content-Type: application/json" -X { <method
 
 |Метод|Request URL (URL-адрес запроса)|
 |------|-----------|
-|POST|https://management.azure.com/subscriptions/{**идентификатор_подписки**}/resourceGroups/{**имя_группы_ресурсов**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**имя_задания**}/publishedgepackage?api-version=2017-04-01-preview|
+|POST|`https://management.azure.com/subscriptions/{\**subscriptionid**}/resourceGroups/{**resourcegroupname**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**jobname**}/publishedgepackage?api-version=2017-04-01-preview`|
 
 Эта асинхронная операция возвращает состояние 202 до того, как задание будет успешно опубликовано. Заголовок ответа расположения содержит универсальный код ресурса (URI), который используется для получения состояния процесса. Во время выполнения процесса вызов универсального кода ресурса (URI) в заголовке расположения возвращает состояние 202. После того как процесс завершится, универсальный код ресурса (URI) возвращает состояние 200. 
 
@@ -255,8 +255,8 @@ curl -d –X GET https://management.azure.com/subscriptions/{subscriptionid}/res
 После того как вы настроите манифест развертывания, ознакомьтесь со статьей о [развертывании модулей Azure IoT Edge с помощью Azure CLI](../iot-edge/how-to-deploy-modules-cli.md), чтобы приступить к развертыванию.
 
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
  
-* [Azure Stream Analytics в IoT Edge (предварительная версия)](stream-analytics-edge.md)
+* [Azure Stream Analytics в IoT Edge](stream-analytics-edge.md)
 * [Deploy Azure Stream Analytics as an IoT Edge module - preview](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-stream-analytics) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))
 * [Разработка заданий Edge Stream Analytics с помощью средств Visual Studio](stream-analytics-tools-for-visual-studio-edge-jobs.md)

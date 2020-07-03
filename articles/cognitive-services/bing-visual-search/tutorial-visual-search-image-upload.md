@@ -1,21 +1,21 @@
 ---
-title: Руководство. Отправка изображения — Визуальный поиск Bing
+title: Руководство по Отправка изображения с помощью API Визуального поиска Bing
 titleSuffix: Azure Cognitive Services
-description: Описание процесса передачи изображения в службу Bing для получения полезных сведений о нем, а также для его анализа и отображения ответа.
+description: Узнайте, как отправить изображение в Bing, получить аналитические сведения и отобразить ответ.
 services: cognitive-services
 author: swhite-msft
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: tutorial
-ms.date: 11/29/2019
+ms.date: 03/31/2020
 ms.author: scottwhi
-ms.openlocfilehash: 84a8219221525400a9d3241c2f183d24344c2f6a
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: ecd1ab5e613bb326b65f6aa50f3f85172bc334ac
+ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74689180"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80477934"
 ---
 # <a name="tutorial-upload-images-to-the-bing-visual-search-api"></a>Руководство по отправке изображений в API "Визуальный поиск Bing"
 
@@ -69,7 +69,7 @@ API визуального поиска Bing позволяет искать в 
 
 Чтобы пользователь мог выбрать изображение для отправки, в нашем приложении используется тег `<input>` с атрибутом типа `file`. В пользовательском интерфейсе должно быть видно, что приложение использует Bing для получения результатов поиска.
 
-Добавьте в `requestSection` `<div>` тег `<div>`. Элемент ввода файлов принимает один файл любого типа изображения (например, JPG, GIF, PNG). Событие `onchange` указывает обработчик, который вызывается, когда пользователь выбирает файл.
+Добавьте `requestSection``<div>` в `<div>`. Элемент ввода файлов принимает один файл любого типа изображения (например, JPG, GIF, PNG). Событие `onchange` указывает обработчик, который вызывается, когда пользователь выбирает файл.
 
 Тег `<output>` используется для отображения эскиза выбранного изображения.
 
@@ -241,7 +241,7 @@ function expandCollapse(divToToggle) {
 <p><input type="button" id="query" value="Get insights" onclick="document.body.style.cursor='wait'; handleQuery()" /></p>
 ```
 
-Добавьте обработчик `onclick` `handleQuery()` для этой кнопки в тег `<script>`.
+Добавьте обработчик `onclick``handleQuery()` для этой кнопки в тег `<script>`.
 
 ## <a name="handle-the-query"></a>Обработка запроса
 
@@ -770,7 +770,7 @@ function addDivContent(div, tag, json) {
         </style>
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 >[!div class="nextstepaction"]
 > [Руководство. Find similar images from previous searches using ImageInsightsToken](./tutorial-visual-search-insights-token.md) (Поиск похожих изображений из предыдущих операций поиска с помощью токена ImageInsightsToken)

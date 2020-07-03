@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
 ms.date: 03/05/2019
-ms.author: magattus
+ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: b711a12161bc134bdcbb8c1f3e74f2e5ae06e701
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.openlocfilehash: dfd7b933502b96c0952a24dbee563e9b537dcdd8
+ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74083141"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81683475"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint-using-resource-manager-template"></a>Краткое руководство. Создание профиля Azure CDN и конечной точки с помощью шаблона Resource Manager
 
@@ -42,7 +42,7 @@ ms.locfileid: "74083141"
 
 Создайте группу ресурсов в выбранном расположении. В этом примере показано, как создать группу ресурсов с именем cdn в восточной части США.
 
-```bash
+```azurecli-interactive
 az group create --name cdn --location eastus
 ```
 
@@ -180,7 +180,7 @@ az group create --name cdn --location eastus
 
 Разверните шаблон с помощью интерфейса командной строки Azure. Вам будет предложено ввести 2 варианта входных данных:
 
-**cdnProfileSku** — провайдер CDN, который вы хотите использовать. Доступны следующие параметры.
+**cdnProfileSku** — провайдер CDN, который вы хотите использовать. Доступны следующие возможности:
 
 * Standard_Microsoft
 * Standard_Akamai
@@ -189,7 +189,7 @@ az group create --name cdn --location eastus
 
 **endpointOriginHostName** — конечная точка, которая будет обрабатываться с помощью CDN, например, cdndemo.azurewebsites.net.
 
-```bash
+```azurecli-interactive
 az group deployment create --resource-group cdn --template-file arm-cdn.json
 ```
 
@@ -197,7 +197,7 @@ az group deployment create --resource-group cdn --template-file arm-cdn.json
 
 ## <a name="view-the-cdn-profile"></a>Просмотр профиля CDN
 
-```bash
+```azurecli-interactive
 az cdn profile list --resource-group cdn -o table
 ```
 
@@ -205,30 +205,30 @@ az cdn profile list --resource-group cdn -o table
 
 ## <a name="view-the-cdn-endpoint-for-the-profile-standard-microsoft"></a>Просмотр конечной точки CDN для профиля standard-microsoft
 
-```bash
+```azurecli-interactive
 az cdn endpoint list --profile-name standard-microsoft --resource-group cdn -o table
 ```
 
 ![Просмотр конечной точки CDN](./media/create-profile-resource-manager-template/cdn-view-endpoint.png)
 
-Чтобы просмотреть содержимое, используйте имя узла. Например, получите доступ к https://cdndemo-azurewebsites-net.azureedge.net с помощью браузера.
+Чтобы просмотреть содержимое, используйте имя узла. Например, в браузере перейдите по адресу https:\//cdndemo-azurewebsites-net.azureedge.net.
 
 ## <a name="clean-up"></a>Очистка
 
 Удаление группы ресурсов автоматически удалит все ресурсы, которые были развернуты в нем.
 
-```bash
+```azurecli-interactive
 az group delete --name cdn
 ```
 
 ![Удаление группы ресурсов](./media/create-profile-resource-manager-template/cdn-delete-resource-group.png)
 
-## <a name="references"></a>Справочники
+## <a name="references"></a>Ссылки
 
 * Для профиля CDN — [Справочник по шаблону Azure Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.cdn/2017-10-12/profiles).
 * Для конечной точки CDN — [Справочная документация по шаблону Azure Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.cdn/2017-10-12/profiles/endpoints).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о добавлении личного домена к конечной точке CDN см. в следующем руководстве:
 

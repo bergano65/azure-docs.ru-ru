@@ -6,16 +6,16 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 01/31/2020
+ms.date: 02/14/2020
 ms.author: diberry
-ms.openlocfilehash: a21834cec456ded82c15dc916cc4991a196ea22c
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: 4d8da7d2bc51c4fc4ebc8d71f230f24f20b3aa24
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76966885"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "77368471"
 ---
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 * Распознавание речи Azure — ключ ресурса из 32 символов и URL-адреса конечной точки для разработки. Создайте их с помощью [портала Azure](../luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal) или [Azure CLI](../luis-how-to-azure-subscription.md#create-resources-in-azure-cli).
 * Импорт приложения [TravelAgent](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/quickstarts/change-model/TravelAgent.json) из репозитория GitHub cognitive-services-language-understanding.
@@ -28,49 +28,11 @@ ms.locfileid: "76966885"
 
 [!INCLUDE [Quickstart explanation of example utterance JSON file](get-started-get-model-json-example-utterances.md)]
 
-
 ## <a name="change-model-programmatically"></a>Изменение модели программными средствами
-
-На Go добавьте [API](https://aka.ms/luis-apim-v3-authoring) сущности машинного обучения в приложение.
 
 1. Создайте файл с именем `model.py`. Добавьте следующий код:
 
-    ```python
-    ########### Python 3.6 #############
-    import requests
-
-    # 32 character Authoring key
-    LUIS_authoringKey  = "YOUR-KEY"
-
-    LUIS_APP_ID = "YOUR-APP-ID"
-
-    # Authoring endpoint, example: your-resource-name.api.cognitive.microsoft.com
-    LUIS_ENDPOINT = "YOUR-ENDPOINT"
-
-    # The version number of your LUIS app
-    LUIS_APP_VERSION = "0.1"
-
-    URI_AddUtterances = f'https://{LUIS_ENDPOINT}/luis/authoring/v3.0-preview/apps/{LUIS_APP_ID}/versions/{LUIS_APP_VERSION}/examples'
-    URI_Train = f'https://{LUIS_ENDPOINT}/luis/authoring/v3.0-preview/apps/{LUIS_APP_ID}/versions/{LUIS_APP_VERSION}/train'
-
-    HEADERS = {'Ocp-Apim-Subscription-Key': LUIS_authoringKey}
-
-    def addUtterances():
-        r = requests.post(URI_AddUtterances,headers=HEADERS)
-        print(r.json())
-
-    def train():
-        r = requests.post(URI_Train,headers=HEADERS)
-        print(r.json())
-
-    def trainStatus():
-        r = requests.get(URI_Train,headers=HEADERS)
-        print(r.json())
-
-    addUtterances()
-    train()
-    trainStatus()
-    ```
+    [!code-python[Add example utterances to Language Understanding in python](~/samples-luis/documentation-samples/quickstarts/change-model/python/3.x/add-utterances-3-6.py)]
 
 1. Замените значения, начинающиеся с `YOUR-`, собственными значениями.
 

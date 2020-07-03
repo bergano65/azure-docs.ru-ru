@@ -15,11 +15,11 @@ ms.date: 03/19/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: 87cd7c63939331190530a46071a6b4c40480562f
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72792586"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79269761"
 ---
 # <a name="media-encoder-premium-workflow-formats-and-codecs"></a>Форматы и кодеки рабочего процесса Premium Media Encoder
 
@@ -28,13 +28,13 @@ ms.locfileid: "72792586"
 
 Этот документ содержит список форматов входных и выходных файлов, а также список кодеков, которые поддерживает общедоступная предварительная версия **расширенного рабочего процесса кодировщика мультимедиа** .
 
-[Входные форматы и кодеки Media Encoder Premium Workflow](#input_formats)
+[Media Encoder Premium Workflow форматы входных данных и кодеки](#input_formats)
 
 Выходные форматы и кодеки Media Encoder Premium Workflow
 
 **Расширенный рабочий процесс кодировщика мультимедиа** поддерживает скрытые субтитры, описанные в [этом](#closed_captioning) разделе. 
 
-## <a id="input_formats"></a>Входные форматы и кодеки расширенного рабочего процесса кодировщика мультимедиа
+## <a name="media-encoder-premium-workflow-input-formats-and-codecs"></a><a id="input_formats"></a>Входные форматы и кодеки расширенного рабочего процесса кодировщика мультимедиа
 
 В следующем разделе приводится список кодеков и форматов файлов, которые этот кодировщик мультимедиа поддерживает на входе.
 
@@ -71,7 +71,7 @@ ms.locfileid: "72792586"
 * Windows Media Audio
 * WAV/PCM
 
-## <a id="output_format"></a>Выходные форматы и кодеки расширенного рабочего процесса кодировщика мультимедиа
+## <a name="media-encoder-premium-workflow-output-formats-and-codecs"></a><a id="output_format"></a>Выходные форматы и кодеки расширенного рабочего процесса кодировщика мультимедиа
 
 В следующем разделе приводится список кодеков и форматов файлов, которые этот кодировщик мультимедиа поддерживает на выходе.
 
@@ -112,7 +112,7 @@ ms.locfileid: "72792586"
 >[!NOTE]
 >При кодировании в формат Dolby® Digital (AC3) выходные данные могут записываться только в MP4-файл ISO.
 
-## <a id="closed_captioning"></a>Поддержка скрытых титров
+## <a name="support-for-closed-captioning"></a><a id="closed_captioning"></a>Поддержка скрытых титров
 
 При приеме **расширенный рабочий процесс кодировщика мультимедиа** поддерживает:
 
@@ -137,14 +137,14 @@ ms.locfileid: "72792586"
 
 Если входящее видео не содержит скрытых субтитров, выходящий ресурс по-прежнему будет содержать пустой файл TTML. 
 
-## <a name="need-help"></a>Нужна помощь?
+## <a name="need-help"></a>Требуется помощь?
 
 Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

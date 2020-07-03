@@ -9,12 +9,12 @@ manager: ''
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: spelluru
-ms.openlocfilehash: c5418f8c5e759ad0e5c388e0925fa724fe148797
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: dfc60fbc03021e72dccc0f60a7ac34d204ef6df9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368534"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82025192"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-event-hubs-resources"></a>Проверка подлинности управляемого удостоверения с Azure Active Directory для доступа к ресурсам концентраторов событий
 Концентраторы событий Azure поддерживают проверку подлинности Azure Active Directory (Azure AD) с помощью [управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). Управляемые удостоверения для ресурсов Azure могут авторизовать доступ к ресурсам концентраторов событий с помощью учетных данных Azure AD из приложений, работающих на виртуальных машинах Azure, приложений-функций, масштабируемых наборов виртуальных машин и других служб. Используя управляемые удостоверения для ресурсов Azure вместе с проверкой подлинности Azure AD, можно избежать хранения учетных данных в приложениях, выполняемых в облаке.
@@ -35,7 +35,7 @@ ms.locfileid: "77368534"
 
 Дополнительные сведения о назначении ролей RBAC см. [в статье Проверка подлинности с помощью Azure Active Directory для доступа к ресурсам концентраторов событий](authorize-access-azure-active-directory.md).
 
-## <a name="use-event-hubs-with-managed-identities"></a>Использование концентраторов событий с управляемыми удостоверениями
+## <a name="use-event-hubs-with-managed-identities"></a>Использование Центров событий с управляемыми удостоверениями для ресурсов Azure
 Чтобы использовать концентраторы событий с управляемыми удостоверениями, необходимо назначить удостоверение роли и соответствующую область. Процедура в этом разделе использует простое приложение, которое выполняется под управляемым удостоверением и обращается к ресурсам концентраторов событий.
 
 Здесь мы используем пример веб-приложения, размещенного в [службе приложений Azure](https://azure.microsoft.com/services/app-service/). Пошаговые инструкции по созданию веб-приложения см. [в статье создание ASP.NET Core веб-приложения в Azure](../app-service/app-service-web-get-started-dotnet.md) .
@@ -72,17 +72,20 @@ ms.locfileid: "77368534"
 После назначения роли веб-приложение будет иметь доступ к ресурсам концентраторов событий в определенной области. 
 
 ### <a name="test-the-web-application"></a>Тестирование веб-приложения
-1. Создайте пространство имен концентраторов событий и концентратор событий. 
+1. Создайте пространство имен Центров событий и концентратор событий. 
 2. Разверните веб-приложение в Azure. Ссылки на веб-приложение на сайте GitHub см. в следующем разделе с вкладками. 
 3. Убедитесь, что Сендрецеиве. aspx задан в качестве документа по умолчанию для веб-приложения. 
 3. Включите **удостоверение** для веб-приложения. 
 4. Назначьте это удостоверение роли **владельца данных концентраторов событий** на уровне пространства имен или концентратора событий. 
 5. Запустите веб-приложение, введите имя пространства имен и имя концентратора событий, сообщение и нажмите кнопку **Отправить**. Чтобы получить событие, выберите **получить**. 
 
-#### <a name="azuremessagingeventhubs-latesttablatest"></a>[Azure. Messaging. EventHubs (последняя версия)](#tab/latest)
+#### <a name="azuremessagingeventhubs-latest"></a>[Azure. Messaging. EventHubs (последняя версия)](#tab/latest)
 Теперь вы можете запустить веб-приложение и указать в браузере страницу с примером страницы ASPX. Вы можете найти пример веб-приложения, которое отправляет и получает данные из ресурсов концентраторов событий в [репозитории GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp).
 
-Установите последний пакет из [NuGet](https://www.nuget.org/packages/Azure.Messaging.EventHubs/)и приступите к отправке событий в концентраторы событий с помощью **евенсубпродуцерклиент** и получения событий с помощью **евенсубконсумерклиент**.  
+Установите последний пакет из [NuGet](https://www.nuget.org/packages/Azure.Messaging.EventHubs/)и приступите к отправке событий в концентраторы событий с помощью **евенсубпродуцерклиент** и получения событий с помощью **евенсубконсумерклиент**. 
+
+> [!NOTE]
+> Пример на языке Java, в котором для публикации событий в концентраторе событий используется управляемое удостоверение, см. [в разделе Публикация событий с помощью примера Azure Identity на сайте GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs/src/samples/java/com/azure/messaging/eventhubs).
 
 ```csharp
 protected async void btnSend_Click(object sender, EventArgs e)
@@ -127,7 +130,7 @@ protected async void btnReceive_Click(object sender, EventArgs e)
 }
 ```
 
-#### <a name="microsoftazureeventhubs-legacytabold"></a>[Microsoft. Azure. EventHubs (устаревшая)](#tab/old)
+#### <a name="microsoftazureeventhubs-legacy"></a>[Microsoft.Azure.EventHubs (устаревшая версия)](#tab/old)
 Теперь вы можете запустить веб-приложение и указать в браузере страницу с примером страницы ASPX. Вы можете найти пример веб-приложения, которое отправляет и получает данные из ресурсов концентраторов событий в [репозитории GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac/ManagedIdentityWebApp).
 
 Установите последний пакет из [NuGet](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/)и начните отправлять и получать данные из концентраторов событий с помощью EventHubClient, как показано в следующем коде: 
@@ -141,16 +144,17 @@ var ehClient = EventHubClient.CreateWithManagedIdentity(new Uri($"sb://{EventHub
 Apache Kafka приложения можно использовать для отправки и получения сообщений из концентраторов событий Azure с помощью управляемого удостоверения OAuth. См. Следующий пример на сайте GitHub: [концентраторы событий для Kafka — отправка и получение сообщений с помощью управляемого удостоверения OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth/java/managedidentity).
 
 ## <a name="samples"></a>Примеры
+- Примеры **Azure. Messaging. EventHubs**
+    - [.NET](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp)
+    - [Java](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs/src/samples/java/com/azure/messaging/eventhubs)
 - [Примеры Microsoft. Azure. EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/Rbac). 
     
-    В этих примерах используется старая библиотека **Microsoft. Azure. EventHubs** , но вы можете легко обновить ее, используя последнюю библиотеку **Azure. Messaging. EventHubs** . Чтобы переместить пример из старой библиотеки в новую, ознакомьтесь с [руководством по миграции из Microsoft. Azure. EventHubs в Azure. Messaging. EventHubs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/migration-guide-from-v4.md).
-- [Примеры Azure. Messaging. EventHubs](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/ManagedIdentityWebApp)
-
+    В этих примерах используется старая библиотека **Microsoft. Azure. EventHubs** , но вы можете легко обновить ее, используя последнюю библиотеку **Azure. Messaging. EventHubs** . Чтобы переместить пример из старой библиотеки в новую, ознакомьтесь с [руководством по миграции из Microsoft. Azure. EventHubs в Azure. Messaging. EventHubs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md).
     Этот пример обновлен для использования последней библиотеки **Azure. Messaging. EventHubs** .
 - [Концентраторы событий для Kafka — отправка и получение сообщений с помощью управляемого удостоверения OAuth](https://github.com/Azure/azure-event-hubs-for-kafka/tree/master/tutorials/oauth/java/managedidentity)
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - Сведения об управляемых удостоверениях для ресурсов Azure см. в следующей статье: [что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md)
 - См. следующие статьи:
     - [Проверка подлинности запросов к концентраторам событий Azure из приложения с помощью Azure Active Directory](authenticate-application.md)

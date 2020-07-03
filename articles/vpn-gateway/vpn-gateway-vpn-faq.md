@@ -5,18 +5,18 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 03/05/2020
 ms.author: yushwang
-ms.openlocfilehash: c556b71acf814203a67317039dafeede5f7b65a6
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 027047a212df72479a4f1b2511729365f3fa09e4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77016754"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79279888"
 ---
-# <a name="vpn-gateway-faq"></a>Вопросы и ответы по VPN-шлюзу
+# <a name="vpn-gateway-faq"></a>VPN-шлюз: вопросы и ответы
 
-## <a name="connecting"></a>Подключение к виртуальным сетям
+## <a name="connecting-to-virtual-networks"></a><a name="connecting"></a>Подключение к виртуальным сетям
 
 ### <a name="can-i-connect-virtual-networks-in-different-azure-regions"></a>Можно ли подключать виртуальные сети в разных регионах Azure?
 
@@ -54,7 +54,7 @@ ms.locfileid: "77016754"
 
 Вы можете настроить виртуальную сеть на параллельное использование подключений "сеть — сеть" и "точка — сеть" при условии, что вы создаете подключение "сеть — сеть" с помощью типа VPN, основанного на маршрутизации, для своего шлюза. В классической модели развертывания типы VPN на основе маршрутов называются динамическими шлюзами.
 
-## <a name="gateways"></a>Шлюзы виртуальной сети
+## <a name="virtual-network-gateways"></a><a name="gateways"></a>Шлюзы виртуальной сети
 
 ### <a name="is-a-vpn-gateway-a-virtual-network-gateway"></a>Является ли VPN-шлюз виртуальным сетевым шлюзом?
 
@@ -70,7 +70,7 @@ VPN-шлюз — это тип шлюза виртуальной сети. Он
 
 ### <a name="can-i-update-my-policy-based-vpn-gateway-to-route-based"></a>Можно ли обновить VPN-шлюз на основе политик, чтобы он был основан на маршрутах?
 
-Нет. Тип шлюза виртуальной сети Azure не может быть изменен с политики на основанный на маршрутах или другим способом. Шлюз необходимо удалить и создать заново, процесс занимает около 60 минут. IP-адрес шлюза и общий ключ не сохранится.
+Нет.Тип шлюза виртуальной сети Azure нельзя изменить со шлюза на основе политик или наоборот. Шлюз необходимо удалить и создать заново, процесс занимает около 60 минут. IP-адрес шлюза и общий ключ не сохранится.
 1. Удалите все подключения, связанные с удаляемым шлюзом.
 1. Удалите шлюз:
    - [Портал Azure](vpn-gateway-delete-vnet-gateway-portal.md)
@@ -131,7 +131,7 @@ VPN Azure использует проверку подлинности с пом
 
 Да. Вы можно развернуть собственные VPN-шлюзы или серверы в Azure из магазина Azure. Вы также можете развернуть собственные VPN-шлюзы или серверы в Azure, создав собственные VPN-маршрутизаторы. Вам понадобится настроить в виртуальной сети пользовательские маршруты, чтобы правильно маршрутизировать трафик между локальными сетями и подсетями вашей виртуальной сети.
 
-### <a name="gatewayports"></a>Почему на моем шлюзе виртуальной сети открыты определенные порты?
+### <a name="why-are-certain-ports-opened-on-my-virtual-network-gateway"></a><a name="gatewayports"></a>Почему на моем шлюзе виртуальной сети открыты определенные порты?
 
 Они необходимы для обмена данными в рамках инфраструктуры Azure. Они защищены (заблокированы) посредством сертификатов Azure. Без подходящих сертификатов внешние сущности, включая клиентов этих шлюзов, не смогут как-либо повлиять на эти конечные точки.
 
@@ -141,7 +141,7 @@ VPN Azure использует проверку подлинности с пом
 
 Дополнительные сведения см. в статье [Сведения о параметрах VPN-шлюза](vpn-gateway-about-vpn-gateway-settings.md).
 
-## <a name="s2s"></a>Подключения типа "сеть — сеть" и VPN-устройства
+## <a name="site-to-site-connections-and-vpn-devices"></a><a name="s2s"></a>Подключения типа "сеть — сеть" и VPN-устройства
 
 ### <a name="what-should-i-consider-when-selecting-a-vpn-device"></a>Что следует учесть при выборе VPN-устройства?
 
@@ -169,25 +169,29 @@ VPN Azure использует проверку подлинности с пом
 
 Другие программные решения VPN должны работать с нашим шлюзом при условии, что они соответствуют реализации промышленного стандарта IPsec. Для получения инструкций по настройке и поддержке обратитесь к поставщику программного обеспечения.
 
-## <a name="P2S"></a>Собственная аутентификация Azure с использованием сертификата для подключений типа "точка — сеть"
+## <a name="how-do-i-change-the-authentication-type-for-my-point-to-site-connections"></a>Разделы справки изменить тип проверки подлинности для подключений типа "точка — сеть"?
+
+Вы можете изменить метод проверки подлинности для подключений типа "точка — сеть", перейдя к разделу **Конфигурация "точка — сеть** " в VPN-шлюзе и установив нужный переключатель. Текущие параметры: **сертификат Azure, проверка подлинности RADIUS и Azure Active Directory**. Обратите внимание, что текущие клиенты **могут не подключаться** после изменения, пока новый профиль не будет скачан и настроен на клиенте.
+
+## <a name="point-to-site-using-native-azure-certificate-authentication"></a><a name="P2S"></a>Собственная аутентификация Azure с использованием сертификата для подключений типа "точка — сеть"
 
 Этот раздел посвящен модели развертывания с помощью Resource Manager.
 
 [!INCLUDE [P2S Azure cert](../../includes/vpn-gateway-faq-p2s-azurecert-include.md)]
 
-## <a name="P2SRADIUS"></a>Аутентификация RADIUS для подключений типа "точка — сеть"
+## <a name="point-to-site-using-radius-authentication"></a><a name="P2SRADIUS"></a>Аутентификация RADIUS для подключений типа "точка — сеть"
 
 Этот раздел посвящен модели развертывания с помощью Resource Manager.
 
 [!INCLUDE [vpn-gateway-point-to-site-faq-include](../../includes/vpn-gateway-faq-p2s-radius-include.md)]
 
-## <a name="V2VMulti"></a>Подключения типа "виртуальная сеть — виртуальная сеть" и многосайтовые подключения
+## <a name="vnet-to-vnet-and-multi-site-connections"></a><a name="V2VMulti"></a>Подключения типа "виртуальная сеть — виртуальная сеть" и многосайтовые подключения
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq-include](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
 ### <a name="can-i-use-azure-vpn-gateway-to-transit-traffic-between-my-on-premises-sites-or-to-another-virtual-network"></a>Можно ли использовать шлюз VPN Azure для передачи трафика между локальными сайтами или в другую виртуальную сеть?
 
-**Модель развертывания Resource Manager**<br>
+**Модель развертывания диспетчера ресурсов**<br>
 Да. Дополнительные сведения см. в разделе, посвященном [BGP](#bgp).
 
 **Классическая модель развертывания**<br>
@@ -213,16 +217,16 @@ VPN Azure использует проверку подлинности с пом
 
 Да, это поддерживается. Дополнительные сведения см. в статье [Настройка сосуществующих соединений ExpressRoute и VPN типа "сеть — сеть"](../expressroute/expressroute-howto-coexist-classic.md).
 
-## <a name="ipsecike"></a>Политика IPsec/протокол IKE
+## <a name="ipsecike-policy"></a><a name="ipsecike"></a>Политика IPsec/IKE
 
 [!INCLUDE [vpn-gateway-ipsecikepolicy-faq-include](../../includes/vpn-gateway-faq-ipsecikepolicy-include.md)]
 
 
-## <a name="bgp"></a>BGP
+## <a name="bgp"></a><a name="bgp"></a>BGP
 
 [!INCLUDE [vpn-gateway-faq-bgp-include](../../includes/vpn-gateway-faq-bgp-include.md)]
 
-## <a name="vms"></a>Возможность межсетевого подключения и виртуальные машины
+## <a name="cross-premises-connectivity-and-vms"></a><a name="vms"></a>Возможность межсетевого подключения и виртуальные машины
 
 ### <a name="if-my-virtual-machine-is-in-a-virtual-network-and-i-have-a-cross-premises-connection-how-should-i-connect-to-the-vm"></a>Если моя виртуальная машина находится в виртуальной сети с распределенным подключением, как следует подключаться к виртуальной машине?
 
@@ -239,7 +243,7 @@ VPN Azure использует проверку подлинности с пом
 [!INCLUDE [Troubleshoot VM connection](../../includes/vpn-gateway-connect-vm-troubleshoot-include.md)]
 
 
-## <a name="faq"></a>Часто задаваемые вопросы по виртуальной сети
+## <a name="virtual-network-faq"></a><a name="faq"></a>Виртуальная сеть: вопросы и ответы
 
 Дополнительные сведения о виртуальных сетях см. в статье [Часто задаваемые вопросы по виртуальной сети](../virtual-network/virtual-networks-faq.md).
 

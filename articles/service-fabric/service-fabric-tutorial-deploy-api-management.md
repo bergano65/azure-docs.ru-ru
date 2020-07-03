@@ -4,12 +4,12 @@ description: Узнайте, как быстро приступить к раб�
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: mvc
-ms.openlocfilehash: 201d617ce15216ba168bc484f644e165d5ae0e71
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 7bd781a21a32ca29fe3f5dd2f4432dbf1e5ca411
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75465359"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80292140"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "75465359"
 > [!IMPORTANT]
 > Эта функция доступна в ценовой категории **Премиум** и **Разработка** управления API, так как необходима поддержка виртуальной сети.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы
 
@@ -97,10 +97,10 @@ az account set --subscription <guid>
 
 Загрузите и сохраните следующие шаблоны Resource Manager и файл параметров:
 
-* [Network-apim. JSON][network-arm]
-* [Network-apim. parameters. JSON][network-parameters-arm]
-* [apim. JSON][apim-arm]
-* [apim. parameters. JSON][apim-parameters-arm]
+* [network-apim.json][network-arm]
+* [network-apim.parameters.json][network-parameters-arm]
+* [apim.json][apim-arm]
+* [apim.parameters.json][apim-parameters-arm]
 
 Шаблон *network-apim.json* развертывает новую подсеть и группу безопасности сети в виртуальной сети, где развертывается кластер Service Fabric.
 
@@ -190,13 +190,13 @@ az account set --subscription <guid>
 |---|---|
 |apimInstanceName|sf-apim|
 |apimPublisherEmail|myemail@contosos.com|
-|apimSku|Developer|
+|apimSku|Разработка|
 |serviceFabricCertificateName|sfclustertutorialgroup320171031144217|
 |certificatePassword|q6D7nN%6ck@6|
 |serviceFabricCertificateThumbprint|C4C1E541AD512B8065280292A8BA6079C3F26F10 |
 |serviceFabricCertificate|&lt;строка в формате base-64&gt;|
 |url_path|/api/values|
-|clusterHttpManagementEndpoint|https://mysfcluster.southcentralus.cloudapp.azure.com:19080|
+|clusterHttpManagementEndpoint|`https://mysfcluster.southcentralus.cloudapp.azure.com:19080`|
 |inbound_policy|&lt;строка XML&gt;|
 
 Значения *certificatePassword* и *serviceFabricCertificateThumbprint* должны соответствовать сертификату кластера, который вы использовали для настройки кластера.
@@ -277,7 +277,7 @@ az group deployment create --name ApiMgmtDeployment --resource-group $ResourceGr
 
 Помимо собственных ресурсов кластер содержит другие ресурсы Azure. Чтобы удалить кластер и все ресурсы, который он использует, проще всего удалить группу ресурсов.
 
-Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно узнать, войдя на [портал Azure](https://portal.azure.com). Удалите группу ресурсов и все ресурсы кластера с помощью [командлета Remove-азресаурцеграуп](/en-us/powershell/module/az.resources/remove-azresourcegroup).
+Войдите в Azure и выберите идентификатор подписки, в которой вы хотите удалить кластер.  Идентификатор подписки можно найти, войдя в [портал Azure](https://portal.azure.com). Удалите группу ресурсов и все ресурсы кластера с помощью [командлета Remove-азресаурцеграуп](/en-us/powershell/module/az.resources/remove-azresourcegroup).
 
 ```powershell
 $ResourceGroupName = "sfclustertutorialgroup"
@@ -289,7 +289,7 @@ ResourceGroupName="sfclustertutorialgroup"
 az group delete --name $ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об использовании [управления API](/azure/api-management/import-and-publish).
 

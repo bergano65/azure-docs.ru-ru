@@ -9,16 +9,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 11/04/2019
+ms.date: 03/09/2020
 ms.custom: seodec18
-ms.openlocfilehash: b7f837c56214d2d01d0f119e0107a095bcfd782b
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.openlocfilehash: 3c917912e50c864f49abd5afcd28df4633702f0f
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198775"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82993700"
 ---
-# <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматизированных экспериментов машинного обучения в Python
+# <a name="configure-automated-ml-experiments-in-python"></a>Configure automated ML experiments in Python (Настройка экспериментов автоматизированного машинного обучения на Python)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом руководство вы узнаете, как определить различные параметры конфигурации для автоматических экспериментов машинного обучения с помощью [пакета SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). Автоматическое машинное обучение выбирает алгоритм и гиперпараметры, а также создает модель, готовую для развертывания. Доступно несколько параметров, с помощью которых можно настроить эксперименты автоматического машинного обучения.
@@ -35,7 +35,7 @@ ms.locfileid: "77198775"
 * Изучение метрик модели
 * регистрация и развертывание модели.
 
-Если вы предпочитаете работать без кода, вы также можете [создавать автоматические эксперименты машинного обучения в машинное обучение Azure Studio](how-to-create-portal-experiments.md).
+Если вы предпочитаете работать без кода, вы также можете [создавать автоматические эксперименты машинного обучения в машинное обучение Azure Studio](how-to-use-automated-ml-for-ml-models.md).
 
 ## <a name="select-your-experiment-type"></a>Выбор типа эксперимента
 
@@ -43,26 +43,29 @@ ms.locfileid: "77198775"
 
 Эта служба также поддерживает приведенные ниже алгоритмы для автоматизации и настройки. Пользователю не нужно указывать алгоритм.
 
+> [!NOTE]
+> Если вы планируете экспортировать модели, созданные в автоматическом ML, в [модель ONNX](concept-onnx.md), то только те алгоритмы, которые обозначены как *, могут быть преобразованы в формат ONNX. Дополнительные сведения о [преобразовании моделей в ONNX](concept-automated-ml.md#use-with-onnx). <br> <br> Также обратите внимание, что в настоящее время ONNX поддерживает только задачи классификации и регрессии. 
+
 Классификация | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
-[Логистическая регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
-[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
-[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#classification)|[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)|[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)
-[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#decision-trees)|[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)|[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)
-[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)|[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)
-[Линейная классификация опорных векторов](https://scikit-learn.org/stable/modules/svm.html#classification)|[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)|[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)
-[Поддержка классификации вектора (SVC)](https://scikit-learn.org/stable/modules/svm.html#classification)|[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)|[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)
-[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)|[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
-[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)|[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
-[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)|[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)| [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
-[Классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier)|[DNNная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [DNNная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
-[DNNй Линейный классификатор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)|[Линейная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
-[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)|[Быстрая линейная регрессия](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.fastlinearregressor?view=nimbusml-py-latest)|[Auto-ARIMA](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
-[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)|[Регрессия градиентного спуска в сети](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.onlinegradientdescentregressor?view=nimbusml-py-latest)|[профет](https://facebook.github.io/prophet/docs/quick_start.html)
+[Логистическая регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)* | [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)* | [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
+[Светло GBM](https://lightgbm.readthedocs.io/en/latest/index.html)* |[Светло GBM](https://lightgbm.readthedocs.io/en/latest/index.html)*|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
+[Повышение градиента](https://scikit-learn.org/stable/modules/ensemble.html#classification)* |[Повышение градиента](https://scikit-learn.org/stable/modules/ensemble.html#regression)* |[Градиентное усиление](https://scikit-learn.org/stable/modules/ensemble.html#regression)
+[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#decision-trees)* |[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)* |[Дерево принятия решений](https://scikit-learn.org/stable/modules/tree.html#regression)
+[K ближайших соседей](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)* |[K ближайших соседей](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)* |[Алгоритм "К ближайших соседей"](https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-regression)
+[Линейный SVC](https://scikit-learn.org/stable/modules/svm.html#classification)* |[Назначите Лассо](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)* |[Лассо LARS](https://scikit-learn.org/stable/modules/linear_model.html#lars-lasso)
+[Поддержка классификации вектора (SVC)](https://scikit-learn.org/stable/modules/svm.html#classification)* |[Спуск градиента метод стохастического (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)* |[Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#regression)
+[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)* |[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)* |[Случайный лес](https://scikit-learn.org/stable/modules/ensemble.html#random-forests)
+[Очень случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)* |[Очень случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)* |[Крайне случайные деревья](https://scikit-learn.org/stable/modules/ensemble.html#extremely-randomized-trees)
+[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)* |[Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)* | [Xgboost](https://xgboost.readthedocs.io/en/latest/parameter.html)
+[Классификатор DNN](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNClassifier) |[DNNная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor) | [DNNная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/DNNRegressor)|
+[DNNй Линейный классификатор](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearClassifier)|[Линейная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor) |[Линейная регрессия](https://www.tensorflow.org/api_docs/python/tf/estimator/LinearRegressor)
+[Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)* |[Быстрая линейная регрессия](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.fastlinearregressor?view=nimbusml-py-latest)|[Auto-ARIMA](https://www.alkaline-ml.com/pmdarima/modules/generated/pmdarima.arima.auto_arima.html#pmdarima.arima.auto_arima)
+[Спуск градиента метод стохастического (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)* |[Регрессия градиентного спуска в сети](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.onlinegradientdescentregressor?view=nimbusml-py-latest)|[профет](https://facebook.github.io/prophet/docs/quick_start.html)
 |[Усредненный классификатор перцептрона](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.averagedperceptronbinaryclassifier?view=nimbusml-py-latest)||форекастткн
-|[Классификатор линейного SVMа](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.linearsvmbinaryclassifier?view=nimbusml-py-latest)||
+|[Классификатор линейного SVMа](https://docs.microsoft.com/python/api/nimbusml/nimbusml.linear_model.linearsvmbinaryclassifier?view=nimbusml-py-latest)* ||
 
-Используйте параметр `task` в конструкторе `AutoMLConfig`, чтобы указать тип эксперимента.
+Используйте `task` параметр в `AutoMLConfig` конструкторе, чтобы указать тип эксперимента.
 
 ```python
 from azureml.train.automl import AutoMLConfig
@@ -82,6 +85,7 @@ automl_config = AutoMLConfig(task = "classification")
 В следующих примерах кода показано, как хранить данные в этих форматах.
 
 * табулардатасет
+
   ```python
   from azureml.core.dataset import Dataset
   from azureml.opendatasets import Diabetes
@@ -93,27 +97,27 @@ automl_config = AutoMLConfig(task = "classification")
 
 * Кадр данных Pandas
 
-    ```python
-    import pandas as pd
-    from sklearn.model_selection import train_test_split
+  ```python
+  import pandas as pd
+  from sklearn.model_selection import train_test_split
 
-    df = pd.read_csv("your-local-file.csv")
-    train_data, test_data = train_test_split(df, test_size=0.1, random_state=42)
-    label = "label-col-name"
-    ```
+  df = pd.read_csv("your-local-file.csv")
+  train_data, test_data = train_test_split(df, test_size=0.1, random_state=42)
+  label = "label-col-name"
+  ```
 
 ## <a name="fetch-data-for-running-experiment-on-remote-compute"></a>Получение данных для выполнения эксперимента на удаленных вычислительных ресурсах
 
-Для удаленных выполнений обучающие данные должны быть доступны для удаленного вычислений. Класс [`Datasets`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) в пакете SDK предоставляет следующие возможности:
+Для удаленных выполнений обучающие данные должны быть доступны для удаленного вычислений. Класс [`Datasets`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) в пакете SDK предоставляет функции для:
 
 * простое перемещение данных из статических файлов или источников URL-адресов в рабочую область
 * предоставление доступа к данным в сценариях обучения при работе в облачных ресурсах
 
-См. Пример использования класса [`Dataset` для подключения](how-to-train-with-datasets.md#option-2--mount-files-to-a-remote-compute-target) данных к целевому объекту вычислений.
+Пример `Dataset` использования [класса для подключения](how-to-train-with-datasets.md#mount-files-to-remote-compute-targets) данных к целевому объекту вычислений см. в разделе.
 
 ## <a name="train-and-validation-data"></a>Обучение и проверка данных
 
-Отдельные наборы обучения и проверки можно указать непосредственно в конструкторе `AutoMLConfig`.
+Отдельные наборы обучения и проверки можно указать непосредственно в `AutoMLConfig` конструкторе.
 
 ### <a name="k-folds-cross-validation"></a>Перекрестная проверка по K-сверткам
 
@@ -130,14 +134,14 @@ automl_config = AutoMLConfig(task = "classification")
 ## <a name="compute-to-run-experiment"></a>Объект вычислений для выполнения эксперимента
 
 Затем следует определить, где модель будет обучаться. Эксперимент автоматического машинного обучения можно запустить в следующих вычислительных средах.
-*   Локальный компьютер или ноутбук. Как правило, при наличии небольшого набора данных и если вы по-прежнему находитесь на этапе изучения.
-*   Удаленный компьютер в облаке. [Управляемая Вычислительная среда Машинного обучения Azure](concept-compute-target.md#amlcompute) — это управляемая служба, которая позволяет обучать модели машинного обучения в кластерах виртуальных машин Azure.
+* Локальный компьютер или ноутбук. Как правило, при наличии небольшого набора данных и если вы по-прежнему находитесь на этапе изучения.
+* Удаленный компьютер в облаке. [Управляемая Вычислительная среда Машинного обучения Azure](concept-compute-target.md#amlcompute) — это управляемая служба, которая позволяет обучать модели машинного обучения в кластерах виртуальных машин Azure.
 
-    В этом [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning) приведены примеры записных книжек с локальными и удаленными целевыми объектами вычислений.
+  В этом [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning) приведены примеры записных книжек с локальными и удаленными целевыми объектами вычислений.
 
-*   Кластер Azure Databricks в подписке Azure. Дополнительные сведения см. здесь. [установка Azure Databricks кластера для автоматического ML](how-to-configure-environment.md#azure-databricks)
+* Кластер Azure Databricks в подписке Azure. Дополнительные сведения см. здесь. [установка Azure Databricks кластера для автоматического ML](how-to-configure-environment.md#azure-databricks)
 
-    Примеры записных книжек с Azure Databricks см. на этом [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/azure-databricks/automl) .
+  Примеры записных книжек с Azure Databricks см. на этом [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/azure-databricks/automl) .
 
 <a name='configure-experiment'></a>
 
@@ -147,41 +151,41 @@ automl_config = AutoMLConfig(task = "classification")
 
 Некоторые примеры:
 
-1.  Эксперимент по классификации, использующий вес AUC в качестве основной метрики с временем ожидания эксперимента, равным 30 минутам и 2 сгибам перекрестной проверки.
+1. Эксперимент по классификации, использующий вес AUC в качестве основной метрики с временем ожидания эксперимента, равным 30 минутам и 2 сгибам перекрестной проверки.
 
-    ```python
-    automl_classifier=AutoMLConfig(
-        task='classification',
-        primary_metric='AUC_weighted',
-        experiment_timeout_minutes=30,
-        blacklist_models='XGBoostClassifier',
-        training_data=train_data,
-        label_column_name=label,
-        n_cross_validations=2)
-    ```
-2.  Ниже приведен пример эксперимента регрессии, установленный в конец после 60 минут с пятью перекрестными свертываниями.
+   ```python
+       automl_classifier=AutoMLConfig(
+       task='classification',
+       primary_metric='AUC_weighted',
+       experiment_timeout_minutes=30,
+       blacklist_models=['XGBoostClassifier'],
+       training_data=train_data,
+       label_column_name=label,
+       n_cross_validations=2)
+   ```
+2. Ниже приведен пример эксперимента регрессии, установленный в конец после 60 минут с пятью перекрестными свертываниями.
 
-    ```python
-    automl_regressor = AutoMLConfig(
-        task='regression',
-        experiment_timeout_minutes=60,
-        whitelist_models='kNN regressor'
-        primary_metric='r2_score',
-        training_data=train_data,
-        label_column_name=label,
-        n_cross_validations=5)
-    ```
+   ```python
+      automl_regressor = AutoMLConfig(
+      task='regression',
+      experiment_timeout_minutes=60,
+      whitelist_models=['KNN'],
+      primary_metric='r2_score',
+      training_data=train_data,
+      label_column_name=label,
+      n_cross_validations=5)
+   ```
 
-Три разных значения параметра `task` (Третий тип задачи — `forecasting`, и использует аналогичный пул алгоритмов в качестве `regression` задач), определяющий список применяемых моделей. Используйте параметры `whitelist` или `blacklist`, чтобы дополнительно изменить итерации с помощью доступных моделей для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels) для ([классификация](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.classification), [Прогнозирование](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.forecasting)и [регрессия](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.regression)).
+Три различных `task` значения параметров (Третий тип задачи — `forecasting`и используют аналогичный пул алгоритмов в качестве `regression` задач) для определения списка применяемых моделей. Используйте параметры `whitelist` или `blacklist` для дальнейшего изменения итераций с доступными моделями для включения или исключения. Список поддерживаемых моделей можно найти в [классе суппортедмоделс](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels) для ([классификация](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.classification), [Прогнозирование](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.forecasting)и [регрессия](https://docs.microsoft.com/python/api/azureml-train-automl-client/azureml.train.automl.constants.supportedmodels.regression)).
 
-Для автоматического выполнения проверки машинного обучения необходимо, чтобы в `experiment_timeout_minutes` был установлен минимальный тайм-аут, равный 15 минутам, чтобы избежать ошибок времени ожидания эксперимента.
+Чтобы избежать сбоев в работе экспериментов, для службы автоматической проверки машинного обучения `experiment_timeout_minutes` необходимо задать значение не менее 15 минут, или 60 минут, если длина строки по размеру столбца превышает 10 000 000.
 
 ### <a name="primary-metric"></a>Основная метрика
 Основная метрика определяет метрику, используемую во время обучения модели для оптимизации. Доступные метрики, которые можно выбрать, определяются выбранным типом задачи, а в следующей таблице показаны допустимые основные метрики для каждого типа задачи.
 
 |Классификация | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
-|точность| spearman_correlation; | spearman_correlation;
+|accuracy| spearman_correlation; | spearman_correlation;
 |AUC_weighted | normalized_root_mean_squared_error; | normalized_root_mean_squared_error;
 |average_precision_score_weighted | r2_score; | r2_score;
 |norm_macro_recall | normalized_mean_absolute_error; | normalized_mean_absolute_error;
@@ -191,25 +195,25 @@ automl_config = AutoMLConfig(task = "classification")
 
 ### <a name="data-featurization"></a>Добавление признаков данных
 
-В каждом автоматическом эксперименте машинного обучения данные [автоматически масштабируются и нормализованы](concept-automated-ml.md#preprocess) для помощи в *определенных* алгоритмах, которые чувствительны к функциям различных масштабов.  Однако можно также включить дополнительные Добавление признаков, например отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-create-portal-experiments.md#featurization).
+В каждом автоматическом эксперименте машинного обучения данные [автоматически масштабируются и нормализованы](concept-automated-ml.md#preprocess) для помощи в *определенных* алгоритмах, которые чувствительны к функциям различных масштабов.  Однако можно также включить дополнительные Добавление признаков, например отсутствующие значения добавления отсутствующих, Encoding и Transforms. [Узнайте больше о том, что входит в добавление признаков](how-to-use-automated-ml-for-ml-models.md#featurization).
 
-При настройке экспериментов можно включить дополнительные параметры `featurization`. В следующей таблице показаны допустимые параметры для Добавление признаков в [классе`AutoMLConfig`](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlconfig?view=azure-ml-py).
+При настройке экспериментов можно включить дополнительные параметры `featurization`. В следующей таблице показаны допустимые параметры для Добавление признаков в [классе аутомлконфиг](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig).
 
 |Конфигурация Добавление признаков | Описание |
 | ------------- | ------------- |
 |`"featurization":`&nbsp;`'FeaturizationConfig'`| Указывает, что следует использовать настраиваемый шаг добавление признаков. [Узнайте, как настроить добавление признаков](how-to-configure-auto-train.md#customize-feature-engineering).|
 |`"featurization": 'off'`| Указывает, что шаг добавление признаков не должен выполняться автоматически.|
-|`"featurization": 'auto'`| Указывает, что в рамках предварительной обработки [шаги снятие данных и добавление признаков](how-to-create-portal-experiments.md#advanced-featurization-options) выполняются автоматически.|
+|`"featurization": 'auto'`| Указывает, что в рамках предварительной обработки [шаги снятие данных и добавление признаков](how-to-use-automated-ml-for-ml-models.md#advanced-featurization-options) выполняются автоматически.|
 
 > [!NOTE]
 > Автоматические шаги Добавление признаков машинного обучения (нормализация компонентов, обработка недостающих данных, преобразование текста в числовые и т. д.) становятся частью базовой модели. При использовании модели для прогнозов те же действия Добавление признаков, которые применяются во время обучения, автоматически применяются к входным данным.
 
 ### <a name="time-series-forecasting"></a>Прогнозирование временных рядов
-Для задачи "`forecasting` временных рядов" требуются дополнительные параметры в объекте конфигурации:
+Для задачи " `forecasting` временные ряды" требуются дополнительные параметры в объекте конфигурации:
 
-1. `time_column_name`: обязательный параметр, определяющий имя столбца в обучающих данных, который содержит допустимый временной ряд.
-1. `max_horizon`: определяет продолжительность прогнозирования на основе периодичности обучающих данных. Например, если у вас есть обучающие данные с дневными гранями времени, то определите, сколько дней требуется для обучения модели.
-1. `grain_column_names`: определяет имена столбцов, которые содержат отдельные данные временных рядов в обучающих данных. Например, при прогнозировании продаж определенной торговой марки по магазину необходимо определить столбцы Store и BRANDа в качестве столбцов детализации. Для каждого уровня детализации и группирования будут созданы отдельные временные ряды и прогнозы. 
+1. `time_column_name`: Обязательный параметр, определяющий имя столбца в обучающих данных, который содержит допустимый временной ряд.
+1. `max_horizon`: Определяет период времени, в течение которого необходимо прогнозировать время, основанное на периодичности обучающих данных. Например, если у вас есть обучающие данные с дневными гранями времени, то определите, сколько дней требуется для обучения модели.
+1. `grain_column_names`: Определяет имена столбцов, которые содержат отдельные данные временных рядов в обучающих данных. Например, при прогнозировании продаж определенной торговой марки по магазину необходимо определить столбцы Store и BRANDа в качестве столбцов детализации. Для каждого уровня детализации и группирования будут созданы отдельные временные ряды и прогнозы. 
 
 Примеры используемых ниже параметров см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb).
 
@@ -242,17 +246,17 @@ automl_config = AutoMLConfig(task = 'forecasting',
                              **time_series_settings)
 ```
 
-### <a name="ensemble"></a>Конфигурация ансамблей
+### <a name="ensemble-configuration"></a><a name="ensemble"></a>Конфигурация ансамблей
 
-Модели ансамблей включены по умолчанию и отображаются как окончательные итерации выполнения в автоматическом запуске машинного обучения. Поддерживаемые в настоящее время методы ансамблей — это голосование и стек. Голосование реализуется как мягкое голосование с помощью взвешенных средних значений, а реализация стека использует две реализации слоя, где первый слой имеет те же модели, что и ансамблей голосования, а вторая модель слоев используется для поиска оптимального сочетания модели из первого слоя. Если используются модели ONNX **или** включено объяснение модели, то стек будет отключен и будут использоваться только голосование.
+Модели ансамблей включены по умолчанию и отображаются как окончательные итерации выполнения в автоматическом запуске машинного обучения. Поддерживаемые в настоящее время методы ансамблей — это голосование и стек. Голосование реализуется как мягкое голосование с помощью взвешенных средних значений, а реализация стека использует две реализации слоя, где первый слой имеет те же модели, что и ансамблей голосования, а вторая модель слоев используется для поиска оптимального сочетания моделей из первого слоя. Если используются модели ONNX **или** включено объяснение модели, то стек будет отключен и будут использоваться только голосование.
 
-Существует несколько аргументов по умолчанию, которые можно указать как `kwargs` в объекте `AutoMLConfig`, чтобы изменить поведение ансамблей стека по умолчанию.
+Существует несколько аргументов по умолчанию, которые могут быть `kwargs` предоставлены `AutoMLConfig` как в объекте для изменения поведения ансамблей стека по умолчанию.
 
-* `stack_meta_learner_type`: мета-учебник — это модель, обученная на выходе отдельных разнородных моделей. Мета-сведения по умолчанию `LogisticRegression` для задач классификации (или `LogisticRegressionCV`, если включена перекрестная проверка) и `ElasticNet` для задач «регрессия» и «прогнозирование» (или `ElasticNetCV` при включенной перекрестной проверке). Этот параметр может быть одной из следующих строк: `LogisticRegression`, `LogisticRegressionCV`, `LightGBMClassifier`, `ElasticNet`, `ElasticNetCV`, `LightGBMRegressor`или `LinearRegression`.
-* `stack_meta_learner_train_percentage`: определяет пропорцию обучающего набора (при выборе типа обучения и проверки) для зарезервированного для обучения мета-знания. Значение по умолчанию: `0.2`.
+* `stack_meta_learner_type`: мета-изучение — это модель, обученная на выходе отдельных разнородных моделей. Мета-знания по умолчанию `LogisticRegression` предназначены для задач классификации ( `LogisticRegressionCV` или если включена перекрестная проверка), а `ElasticNet` также для задач «регрессия» и « `ElasticNetCV` прогнозирование» (или при включенной перекрестной проверке). Этот параметр может быть одной из следующих `LogisticRegression`строк:, `LogisticRegressionCV`, `LightGBMClassifier`, `ElasticNet`, `ElasticNetCV` `LightGBMRegressor`, или. `LinearRegression`
+* `stack_meta_learner_train_percentage`: определяет пропорцию обучающего набора (при выборе типа обучения и проверки), зарезервированного для обучения мета-знания. Значение по умолчанию — `0.2`.
 * `stack_meta_learner_kwargs`: необязательные параметры для передачи в инициализатор мета-знания. Эти параметры и типы параметров отражают параметры и типы параметров из соответствующего конструктора модели и пересылаются конструктору модели.
 
-В следующем коде показан пример указания пользовательского поведения ансамблей в объекте `AutoMLConfig`.
+В следующем коде показан пример указания пользовательского поведения ансамблей в `AutoMLConfig` объекте.
 
 ```python
 ensemble_settings = {
@@ -278,7 +282,7 @@ automl_classifier = AutoMLConfig(
         )
 ```
 
-Обучение ансамблей включено по умолчанию, но его можно отключить с помощью `enable_voting_ensemble` и `enable_stack_ensemble` логических параметров.
+Обучение ансамблей включено по умолчанию, но его можно отключить с помощью логических параметров `enable_voting_ensemble` и `enable_stack_ensemble` .
 
 ```python
 automl_classifier = AutoMLConfig(
@@ -295,7 +299,7 @@ automl_classifier = AutoMLConfig(
 
 ## <a name="run-experiment"></a>Выполнение эксперимента
 
-Для автоматического создания машинного обучения создается объект `Experiment`, который является именованным объектом в `Workspace`, используемом для запуска экспериментов.
+Для автоматического создания машинного обучения создается `Experiment` объект, который является именованным объектом в, `Workspace` используемом для запуска экспериментов.
 
 ```python
 from azureml.core.experiment import Experiment
@@ -319,11 +323,12 @@ run = experiment.submit(automl_config, show_output=True)
 >Сначала зависимости устанавливаются на новую виртуальную машину.  Это может занять до 10 минут, прежде чем отобразятся выходные данные.
 >Если для параметра `show_output` задать значение `True`, выходные данные отобразятся в консоли.
 
-### <a name="exit-criteria"></a>Условия выхода
+### <a name="exit-criteria"></a><a name="exit"></a>Условия выхода
+
 Существует несколько параметров, которые можно определить для завершения эксперимента.
 1. Без критериев. Если параметры выхода не определены, эксперимент будет продолжен до тех пор, пока не будет выполнен дальнейший переход к основной метрике.
-1. Выход по истечении определенного времени: использование `experiment_timeout_minutes` в параметрах позволяет определить продолжительность выполнения эксперимента в минутах.
-1. Выйти после достижения оценки: использование `experiment_exit_score` приведет к завершению эксперимента после достижения основного показателя метрики.
+1. Выход через некоторое время. Использование `experiment_timeout_minutes` в параметрах позволяет определить продолжительность выполнения эксперимента в минутах.
+1. Выход после достижения оценки: использование `experiment_exit_score` завершает эксперимент после достижения первичного показателя метрики.
 
 ### <a name="explore-model-metrics"></a>Изучение метрик модели
 
@@ -332,7 +337,7 @@ run = experiment.submit(automl_config, show_output=True)
 ## <a name="understand-automated-ml-models"></a>Знакомство с автоматизированными моделями ML
 
 Любая модель, созданная с помощью автоматизированного ML, включает следующие шаги:
-+ Автоматизированное проектирование компонентов (если `"featurization": 'auto'`)
++ Автоматизированное проектирование компонентов ( `"featurization": 'auto'`если)
 + Масштабирование, нормализация и алгоритм с использованием значений параметров
 
 Мы сделаем его прозрачным, чтобы получить эти сведения из fitted_model выходных данных автоматизированного ML.
@@ -345,7 +350,7 @@ best_run, fitted_model = automl_run.get_output()
 
 ### <a name="automated-feature-engineering"></a>Автоматизированное проектирование признаков
 
-См. список предварительной обработки и [автоматизированного проектирования](concept-automated-ml.md#preprocess) признаков, которые происходят при `"featurization": 'auto'`.
+См. список предварительной обработки и [автоматизированного проектирования](concept-automated-ml.md#preprocess) признаков, `"featurization": 'auto'`которые происходят, когда.
 
 Рассмотрим следующий пример.
 + Существует четыре функции ввода: A (числовой), B (числовой), C (numeric), D (DateTime).
@@ -355,7 +360,7 @@ best_run, fitted_model = automl_run.get_output()
 
 Используйте эти два API на первом шаге модели, чтобы понять больше.  См. [Этот пример записной книжки](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand).
 
-+ API 1: `get_engineered_feature_names()` возвращает список имен инженерных функций.
++ API 1: `get_engineered_feature_names()` возвращает список имен сконструированных функций.
 
   Использование:
   ```python
@@ -381,7 +386,7 @@ best_run, fitted_model = automl_run.get_output()
   >[!Note]
   >Используйте "тимесериестрансформер" для задачи = "прогнозирование"; в противном случае используйте "Преобразователь" для задачи "регрессия" или "Классификация".
 
-  Выходные данные.
+  Результат
   ```
   [{'RawFeatureName': 'A',
     'TypeDetected': 'Numeric',
@@ -407,7 +412,7 @@ best_run, fitted_model = automl_run.get_output()
 
    Где:
 
-   |Вывод|Определение|
+   |Выходные данные|Определение|
    |----|--------|
    |равфеатуренаме|Имя входного компонента или столбца из предоставленного набора данных.|
    |типедетектед|Обнаружен тип данных функции ввода.|
@@ -416,7 +421,7 @@ best_run, fitted_model = automl_run.get_output()
    |Преобразования|Список преобразований, применяемых к функциям ввода для создания сконструированных функций.|
    
 ### <a name="customize-feature-engineering"></a>Настройка проектирования характеристик
-Чтобы настроить проектирование характеристик, укажите `"featurization": FeaturizationConfig`.
+Чтобы настроить проектирование компонентов, укажите `"featurization": FeaturizationConfig`.
 
 Поддерживаемые настройки включают в себя:
 
@@ -449,7 +454,7 @@ featurization_config.add_transformer_params('HashOneHotEncoder', [], {"number_of
 [('RobustScaler', RobustScaler(copy=True, quantile_range=[10, 90], with_centering=True, with_scaling=True)), ('LogisticRegression', LogisticRegression(C=0.18420699693267145, class_weight='balanced', dual=False, fit_intercept=True, intercept_scaling=1, max_iter=100, multi_class='multinomial', n_jobs=1, penalty='l2', random_state=None, solver='newton-cg', tol=0.0001, verbose=0, warm_start=False))
 ```
 
-Чтобы получить дополнительные сведения, используйте эту вспомогательную функцию, показанную в [этом примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification/auto-ml-classification.ipynb).
+Чтобы получить дополнительные сведения, используйте эту вспомогательную функцию: 
 
 ```python
 from pprint import pprint
@@ -469,7 +474,7 @@ def print_model(model, prefix=""):
             print()
 
 
-print_model(fitted_model)
+print_model(model)
 ```
 
 Следующий пример выходных данных предназначен для конвейера, использующего конкретный алгоритм (Логистикрегрессион с Робустскалар, в данном случае).
@@ -500,16 +505,16 @@ LogisticRegression
 
 ### <a name="predict-class-probability"></a>Вероятность прогнозного класса
 
-Модели, созданные с помощью автоматизированного машинного обучения, имеют объекты-оболочки, которые зеркально отражают функциональные возможности класса исходного кода с открытым исходным кодом. Большинство объектов-оболочек модели классификации, возвращаемых автоматизированным ML, реализуют функцию `predict_proba()`, которая принимает образец данных о функциях, схожих с массивом или разреженную матрицу (значения X), и возвращает n-мерный массив каждого образца и соответствующий вероятность его класса.
+Модели, созданные с помощью автоматизированного машинного обучения, имеют объекты-оболочки, которые зеркально отражают функциональные возможности класса исходного кода с открытым исходным кодом. Большинство объектов-оболочек модели классификации, возвращаемых автоматизированным `predict_proba()` ml, реализуют функцию, которая принимает образец данных о функциях, схожих с массивом или разреженные данные функций (значения X), и возвращает n-мерный массив каждого образца и соответствующую вероятность его класса.
 
-Предполагая, что вы извлекли наиболее подходящую модель выполнения и замещаете, используя те же вызовы, приведенные выше, вы можете вызвать `predict_proba()` непосредственно из модели с назначением, предоставив `X_test` пример в соответствующем формате в зависимости от типа модели.
+Предполагая, что вы извлекли наиболее подходящую модель выполнения и подходящего использования, используя те же вызовы `predict_proba()` , приведенные выше, вы можете вызвать непосредственно `X_test` из модели с заданной назначением, указав пример в соответствующем формате в зависимости от типа модели.
 
 ```python
 best_run, fitted_model = automl_run.get_output()
 class_prob = fitted_model.predict_proba(X_test)
 ```
 
-Если базовая модель не поддерживает функцию `predict_proba()` или имеет неверный формат, будет вызвано исключение класса модели. Примеры реализации этой функции для различных типов моделей см. в справочной документации по [рандомфорестклассифиер](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier.predict_proba) и [XGBoost](https://xgboost.readthedocs.io/en/latest/python/python_api.html) .
+Если базовая модель не поддерживает `predict_proba()` функцию или имеет неверный формат, будет вызвано исключение класса модели. Примеры реализации этой функции для различных типов моделей см. в справочной документации по [рандомфорестклассифиер](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier.predict_proba) и [XGBoost](https://xgboost.readthedocs.io/en/latest/python/python_api.html) .
 
 <a name="explain"></a>
 
@@ -521,7 +526,7 @@ class_prob = fitted_model.predict_proba(X_test)
 
 Общие сведения о том, как пояснения к модели и важность признаков можно включить в других областях пакета SDK за пределами автоматизированного машинного обучения, см. в статье о [концепции](how-to-machine-learning-interpretability.md) , посвященной возможностям интерпретации.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о том, [как и где можно развернуть модель](how-to-deploy-and-where.md).
 

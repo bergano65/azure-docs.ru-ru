@@ -5,14 +5,14 @@ services: web-application-firewall
 ms.topic: conceptual
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 11/19/2019
+ms.date: 04/16/2020
 ms.author: ant
-ms.openlocfilehash: 1fac524af4b69f8e35934840643c6d3ad99fe1cd
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.openlocfilehash: fb3b922b753b9696aa26ea189597589ecc5772db
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74174607"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81536630"
 ---
 # <a name="migrate-web-application-firewall-policies-using-azure-powershell"></a>Перенос политик брандмауэра веб-приложения с помощью Azure PowerShell
 
@@ -28,6 +28,13 @@ ms.locfileid: "74174607"
 2. Скопируйте скрипт в окно Cloud Shell и запустите его.
 3. Сценарий запрашивает идентификатор подписки, имя группы ресурсов, имя шлюза приложений, с которым связана конфигурация WAF, и имя новой политики WAF, которую необходимо создать. После ввода этих входных данных сценарий запускается и создает новую политику WAF.
 4. Свяжите новую политику WAF с вашим шлюзом приложений. Перейдите к политике WAF на портале и перейдите на вкладку **связанные шлюзы приложений** . Выберите **связать шлюз приложений** , а затем выберите шлюз приложений, к которому необходимо связать политику WAF.
+
+> [!NOTE]
+> Сценарий не выполняет миграцию, если выполняются следующие условия.
+> - Все правила отключены. Чтобы завершить миграцию, убедитесь, что весь группу правил не отключен.
+> - Записи исключения с оператором *Equals Any* . Чтобы завершить миграцию, убедитесь, что не заданы элементы исключения с оператором *Equals* .
+>
+> Дополнительные сведения см. в описании функции *ValidateInput* в скрипте.
 
 ```azurepowershell-interactive
 <#PSScriptInfo
@@ -210,6 +217,6 @@ function Main() {
 
 Main
 ```
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о [группах правил и правилах CR в брандмауэре веб-приложений](application-gateway-crs-rulegroups-rules.md).

@@ -9,13 +9,13 @@ ms.topic: conceptual
 author: FrancescaLazzeri
 ms.author: lazzeri
 ms.reviewer: cgronlun
-ms.date: 01/21/2020
-ms.openlocfilehash: 65f43bf87e704c85d83220f4ffbc50581aafb549
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.date: 05/07/2020
+ms.openlocfilehash: ad384896301e809940f6e99df2f5562cfdb6a6fe
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76315471"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82927587"
 ---
 # <a name="how-to-select-algorithms-for-azure-machine-learning"></a>Выбор алгоритмов для Машинное обучение Azure
 
@@ -40,7 +40,35 @@ ms.locfileid: "76315471"
 
 Вместе с рекомендациями на листе Машинное обучение Azure Algorithm Памятка по следует учитывать другие требования при выборе алгоритма машинного обучения для решения. Ниже приведены дополнительные факторы, которые следует учитывать, такие как точность, время обучения, линейность, количество параметров и число функций.
 
-## <a name="additional-requirements-for-a-data-science-scenario"></a>Дополнительные требования к сценарию обработки и анализа данных
+## <a name="comparison-of-machine-learning-algorithms"></a>Сравнение алгоритмов машинного обучения
+
+Некоторые алгоритмы обучения делают определенные предположения о структуре данных или желаемых результатов. Если вы сможете найти тот алгоритм, который соответствует вашим потребностям, с ним вы сможете получить более точные результаты, более точные прогнозы и сократить время обучения.
+
+В следующей таблице перечислены некоторые из наиболее важных характеристик алгоритмов из семейств классификации, регрессии и кластеризации.
+
+| **Алгоритм** | **Правильно** | **Время обучения** | **Линейность** | **Параметры** | **Примечания** |
+| --- |:---:|:---:|:---:|:---:| --- |
+| **Семейство классификаций** | | | | | |
+| [Логистическая регрессия двух классов](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-logistic-regression?WT.mc_id=docs-article-lazzeri) |Хорошая.  |Быстрый |Да |4 | |
+| [Лес решений с двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-decision-forest?WT.mc_id=docs-article-lazzeri) |Высокая |Средний |нет |5 |Показывает меньшее время оценки. Предложение не работает с Многоклассовый классификатор "один — все" из-за более медленных оценок, вызванных действовать блокировкой в накоплении прогнозов дерева |
+| [Дерево решений, увеличивающееся двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-boosted-decision-tree?WT.mc_id=docs-article-lazzeri) |Высокая |Средний |нет |6 |Большой объем памяти |
+| [Нейронная сеть с двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-neural-network?WT.mc_id=docs-article-lazzeri) |Хорошая. |Средний |нет |8 | |
+| [Среднее перцептрона, основанное на двух классах](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-averaged-perceptron?WT.mc_id=docs-article-lazzeri) |Хорошая. |Средний |Да |4 | |
+| [Поддержка векторного компьютера с двумя классами](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/two-class-support-vector-machine?WT.mc_id=docs-article-lazzeri) |Хорошая. |Быстрый |Да |5 |Подходит для больших наборов функций |
+| [Логистическая регрессия в многоклассовой](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-logistic-regression?WT.mc_id=docs-article-lazzeri) |Хорошая. |Быстрый |Да |4 | |
+| [Лес решений в многоклассовых решениях](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-decision-forest?WT.mc_id=docs-article-lazzeri) |Высокая |Средний |нет |5 |Показывает меньшее время оценки |
+| [Многоклассическое дерево принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-boosted-decision-tree?WT.mc_id=docs-article-lazzeri) |Высокая |Средний |нет |6 | Как правило, повышение точности с небольшим риском меньшего объема |
+| [Многоклассовая нейронная сеть](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/multiclass-neural-network?WT.mc_id=docs-article-lazzeri) |Хорошая. |Средний |нет |8 | |
+| [Многоклассовая, одна-VS-все](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/one-vs-all-multiclass?WT.mc_id=docs-article-lazzeri) | - | - | - | - |Просмотрите свойства выбранного двухклассового метода |
+| **Семейство регрессии** | | | | | |
+| [Линейная регрессия](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/linear-regression?WT.mc_id=docs-article-lazzeri) |Хорошая. |Быстрый |Да |4 | |
+| [Регрессия леса принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/decision-forest-regression?WT.mc_id=docs-article-lazzeri)|Высокая |Средний |нет |5 | |
+| [Регрессия повышенного дерева принятия решений](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/boosted-decision-tree-regression?WT.mc_id=docs-article-lazzeri) |Высокая |Средний |нет |6 |Большой объем памяти |
+| [Регрессия нейронной сети](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/neural-network-regression?WT.mc_id=docs-article-lazzeri) |Хорошая. |Средний |нет |8 | |
+| **Семейство кластеров** | | | | | |
+| [Кластеризация K-средних](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/k-means-clustering?WT.mc_id=docs-article-lazzeri) |Высокая |Средний |Да |8 |Алгоритм кластеризации |
+
+## <a name="requirements-for-a-data-science-scenario"></a>Требования к сценарию обработки и анализа данных
 
 Зная, что вы хотите сделать с данными, необходимо определить дополнительные требования для решения. 
 
@@ -118,9 +146,8 @@ ms.locfileid: "76315471"
 
 Можно также воспользоваться [модулем важность функции перестановки](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/permutation-feature-importance?WT.mc_id=docs-article-lazzeri) , чтобы вычислить набор оценок важности признаков для набора данных. Эти показатели можно использовать для определения лучших функций, используемых в модели.
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
- - [Дополнительные сведения о конструкторе Машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/service/concept-designer?WT.mc_id=docs-article-lazzeri)
+ - [Дополнительные сведения о конструкторе Машинное обучение Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer?WT.mc_id=docs-article-lazzeri)
  - Описание всех алгоритмов машинного обучения, доступных в Машинное обучение Azure Designer, см. в разделе [Справочник по алгоритмам и модулям конструктора машинное обучение](https://docs.microsoft.com/azure/machine-learning/algorithm-module-reference/module-reference?WT.mc_id=docs-article-lazzeri) .
- - Сведения о связи между глубоким обучением, машинным обучением и AI см. в статье [глубокое обучение и машинное обучение](https://docs.microsoft.com/azure/machine-learning/service/concept-deep-learning-vs-machine-learning?WT.mc_id=docs-article-lazzeri)
+ - Сведения о связи между глубоким обучением, машинным обучением и AI см. в статье [глубокое обучение и машинное обучение](https://docs.microsoft.com/azure/machine-learning/concept-deep-learning-vs-machine-learning?WT.mc_id=docs-article-lazzeri)

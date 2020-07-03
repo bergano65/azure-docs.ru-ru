@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Kudos | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Kudos | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kudos.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
 ms.openlocfilehash: 1fb1a1bc7bfd8b3cc9d7758bf8e80d8759f9357e
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74227486"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-kudos"></a>Руководство по Интеграция Azure Active Directory с Kudos
+# <a name="tutorial-azure-active-directory-integration-with-kudos"></a>Руководство. Интеграция Azure Active Directory с Kudos
 
 В этом руководстве описано, как интегрировать Kudos с Azure Active Directory (Azure AD).
 Интеграция Kudos с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "74227486"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Kudos, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Kudos с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,7 +118,7 @@ ms.locfileid: "74227486"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -130,13 +130,13 @@ ms.locfileid: "74227486"
 
 1. В верхнем меню щелкните **Значок параметров**.
 
-    ![Параметры](./media/kudos-tutorial/ic787806.png "Параметры")
+    ![Параметры](./media/kudos-tutorial/ic787806.png "Настройки")
 
 1. Щелкните **Интеграция > Единый вход** и выполните следующие действия.
 
     ![Единый вход](./media/kudos-tutorial/ic787807.png "Единый вход")
 
-    a. В текстовое поле **URL-адрес для входа** вставьте значение **URL-адрес входа**, скопированное с портала Azure.
+    а. В текстовое поле **URL-адрес для входа** вставьте значение **URL-адрес входа**, скопированное с портала Azure.
 
     b. Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат X.509** .
 
@@ -144,7 +144,7 @@ ms.locfileid: "74227486"
 
     d. В текстовом поле **URL-адрес Kudos** введите название своей компании.
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -207,7 +207,7 @@ ms.locfileid: "74227486"
 
 1. В верхнем меню щелкните **Значок параметров**.
 
-   ![Параметры](./media/kudos-tutorial/ic787806.png "Параметры")
+   ![Параметры](./media/kudos-tutorial/ic787806.png "Настройки")
 
 1. Выберите **Администратор пользователей**.
 
@@ -219,7 +219,7 @@ ms.locfileid: "74227486"
 
     ![Добавление пользователей](./media/kudos-tutorial/ic787810.png "Добавление пользователя")
 
-    a. В соответствующие текстовые поля введите атрибуты **First Name** (Имя), **Last Name** (Фамилия), **Email** (Адрес электронной почты) и другие данные действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
+    а. В соответствующие текстовые поля введите атрибуты **First Name** (Имя), **Last Name** (Фамилия), **Email** (Адрес электронной почты) и другие данные действующей учетной записи Azure Active Directory, которую вы хотите подготовить.
 
     b. Нажмите кнопку **Создать пользователя**.
 

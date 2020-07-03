@@ -18,8 +18,6 @@
       href: spring-cloud-quickstart-launch-app-maven.md
 - name: Учебники
   items:
-    - name: Подготовка приложения Java Spring к развертыванию
-      href: spring-cloud-tutorial-prepare-app-deployment.md
     - name: Настройка сервера конфигурации
       href: spring-cloud-tutorial-config-server.md
     - name: Масштабирование приложения вручную
@@ -34,16 +32,33 @@
       href: spring-cloud-tutorial-bind-redis.md
     - name: Привязка приложения к Azure MySQL
       href: spring-cloud-tutorial-bind-mysql.md
+    - name: Панель мониторинга размыкателя цепи в Azure Spring Cloud
+      href: spring-cloud-tutorial-circuit-breaker.md
+    - name: Сопоставление пользовательского имени DNS с Azure Spring Cloud
+      href: spring-cloud-tutorial-custom-domain.md
+    - name: Развертывание приложений Azure Spring Cloud с помощью IntelliJ
+      href: spring-cloud-tutorial-intellij-deploy-apps.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Основные сведения о квотах и ограничениях Azure Spring Cloud
       href: spring-cloud-quotas.md
     - name: Основные сведения о метриках в Azure Spring Cloud
       href: spring-cloud-concept-metrics.md
+    - name: Средства управления безопасностью для службы Azure Spring Cloud
+      href: spring-cloud-concept-security-controls.md
+    - name: Основные сведения о состоянии приложения в Azure Spring Cloud
+      href: spring-cloud-concept-app-status.md
     - name: Планирование аварийного восстановления
       href: disaster-recovery.md
 - name: Практические руководства
   items:
+    - name: Подготовка приложения Java Spring к развертыванию
+      href: spring-cloud-tutorial-prepare-app-deployment.md
     - name: 'Как запустить, приостановить или удалить приложение Azure Spring Cloud'
       href: spring-cloud-howto-start-stop-delete.md
     - name: Настройка промежуточной среды
@@ -56,6 +71,8 @@
       href: spring-cloud-howto-log-streaming.md
     - name: Использование постоянного хранилища в Azure Spring Cloud
       href: spring-cloud-howto-persistent-storage.md
+    - name: Интеграция Azure Spring Cloud с решениями Azure для распределения нагрузки
+      href: spring-cloud-howto-integrate-azure-load-balancers.md
 - name: Развертывание DevOps в Azure Spring Cloud
   items:
     - name: CI/CD и Azure DevOps
@@ -76,3 +93,5 @@
       href: spring-cloud-faq.md
     - name: Руководство по устранению неполадок
       href: spring-cloud-troubleshoot.md
+    - name: Справочник по REST API
+      href: 'https://docs.microsoft.com/rest/api/azurespringclould/'

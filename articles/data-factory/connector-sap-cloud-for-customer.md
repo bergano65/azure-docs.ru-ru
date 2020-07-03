@@ -12,14 +12,15 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/02/2019
-ms.openlocfilehash: 0b0352632491dbfc46ed4819653c6cb902eee4ce
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 1d3772a17d0429d9b3a5bf95d2060f2dfbbbafe1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74923722"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81418054"
 ---
 # <a name="copy-data-from-sap-cloud-for-customer-c4c-using-azure-data-factory"></a>Копирование данных из SAP Cloud for Customer (C4C) с помощью фабрики данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные в SAP Cloud for Customer (C4C) или из C4C. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
@@ -47,12 +48,12 @@ ms.locfileid: "74923722"
 
 Для связанной службы SAP Cloud for Customer поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
-| Тип | Для свойства type нужно задать значение **SapCloudForCustomer**. | ДА |
-| URL-адрес | URL-адрес службы SAP C4C OData. | ДА |
-| Имя пользователя | Укажите имя пользователя для подключения к SAP C4C. | ДА |
-| пароль | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | ДА |
+| type | Для свойства type нужно задать значение **SapCloudForCustomer**. | Да |
+| url | URL-адрес службы SAP C4C OData. | Да |
+| username | Укажите имя пользователя для подключения к SAP C4C. | Да |
+| пароль | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника |
 
 >[!IMPORTANT]
@@ -83,14 +84,14 @@ ms.locfileid: "74923722"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных SAP Cloud for Customer.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md) . В этом разделе содержится список свойств, поддерживаемых набором данных SAP Cloud for Customer.
 
 Чтобы скопировать данные из SAP Cloud for Customer, задайте для свойства type набора данных значение **SapCloudForCustomerResource**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **SapCloudForCustomerResource**. |ДА |
-| path | Укажите путь к сущности SAP C4C OData. |ДА |
+| type | Свойство type для набора данных должно иметь значение **SapCloudForCustomerResource**. |Да |
+| path | Укажите путь к сущности SAP C4C OData. |Да |
 
 **Пример.**
 
@@ -117,11 +118,11 @@ ms.locfileid: "74923722"
 
 ### <a name="sap-c4c-as-source"></a>SAP C4C в качестве источника
 
-Чтобы скопировать данные из SAP Cloud for Customer, задайте тип источника в действии копирования как **SapCloudForCustomerSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные из SAP Cloud for Customer, задайте тип источника в действии копирования как **SapCloudForCustomerSource**. В разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
-| Тип | Для свойства type нужно задать значение **SapCloudForCustomerSource**.  | ДА |
+| type | Для свойства type нужно задать значение **SapCloudForCustomerSource**.  | Да |
 | query | Укажите пользовательский запрос OData для чтения данных. | Нет |
 
 Образец запроса для получения данных за определенный день: `"query": "$filter=CreatedOn ge datetimeoffset'2017-07-31T10:02:06.4202620Z' and CreatedOn le datetimeoffset'2017-08-01T10:02:06.4202620Z'"`
@@ -160,11 +161,11 @@ ms.locfileid: "74923722"
 
 ### <a name="sap-c4c-as-sink"></a>SAP C4C в качестве приемника
 
-Чтобы скопировать данные в SAP Cloud for Customer, задайте тип приемника в действии копирования как **SapCloudForCustomerSink**. В разделе **sink** действия копирования поддерживаются следующие свойства:
+Чтобы скопировать данные в SAP Cloud for Customer, задайте тип приемника в действии копирования как **SapCloudForCustomerSink**. В разделе **приемника** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательно для заполнения |
+| Свойство | Описание | Обязательный |
 |:--- |:--- |:--- |
-| Тип | Для свойства type нужно задать значение **SapCloudForCustomerSink**.  | ДА |
+| type | Для свойства type нужно задать значение **SapCloudForCustomerSink**.  | Да |
 | writeBehavior | Поведение операции при записи. Может иметь значение "Insert", "Update". | Нет. По умолчанию "Insert". |
 | writeBatchSize | Размер пакета операции записи. Размер пакета для обеспечения максимальной производительности может различаться для разных таблиц или серверов. | Нет. По умолчанию 10. |
 
@@ -216,17 +217,17 @@ ms.locfileid: "74923722"
 | Edm.Binary | Byte[] |
 | Edm.Boolean | Bool |
 | Edm.Byte | Byte[] |
-| Edm.DateTime | Дата и время |
+| Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |
-| Edm.Double | DOUBLE |
-| Edm.Single | Отдельная |
-| Edm.Guid | GUID |
+| Edm.Double | Double |
+| Edm.Single | Single |
+| Edm.Guid | Guid |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |
 | Edm.SByte | Int16 |
 | Edm.String | Строка |
-| Edm.Time | Интервал времени |
+| Edm.Time | TimeSpan |
 | Edm.DateTimeOffset | DateTimeOffset |
 
 
@@ -234,5 +235,5 @@ ms.locfileid: "74923722"
 
 Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

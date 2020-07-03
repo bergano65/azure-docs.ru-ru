@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/02/2019
 ms.openlocfilehash: 3010c1d597907e7d5c7f82c8b42721dc1f934f6f
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74782025"
 ---
 # <a name="hdinsight-cluster-management-best-practices"></a>Рекомендации по управлению кластерами HDInsight
@@ -21,14 +21,14 @@ ms.locfileid: "74782025"
 
 ## <a name="how-do-i-create-hdinsight-clusters"></a>Разделы справки создать кластеры HDInsight?
 
-| Вариант | Документы |
+| Параметр | Документы |
 |---|---|
 | Фабрика данных Azure | [Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure](./hdinsight-hadoop-create-linux-clusters-adf.md) |
-| Пользовательский шаблон диспетчер ресурсов | [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов диспетчер ресурсов](./hdinsight-hadoop-create-linux-clusters-arm-templates.md) |
+| Пользовательский шаблон диспетчер ресурсов | [Создание кластеров Apache Hadoop в HDInsight с помощью шаблонов Resource Manager](./hdinsight-hadoop-create-linux-clusters-arm-templates.md) |
 | Шаблоны быстрого запуска | [Шаблоны быстрого запуска HDInsight](https://azure.microsoft.com/resources/templates/?term=hdinsight) |
 | Примеры Azure | [Примеры Azure HDInsight](https://docs.microsoft.com/samples/browse/?products=azure-hdinsight) |
-| портала Azure | [Создание кластеров под управлением Linux в HDInsight с помощью портал Azure](./spark/apache-spark-intellij-tool-plugin.md) |
-| Azure CLI | [Создание кластеров HDInsight с помощью Azure CLI](./hdinsight-hadoop-create-linux-clusters-azure-cli.md) |
+| Портал Azure | [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](./spark/apache-spark-intellij-tool-plugin.md) |
+| Azure CLI | [Создание кластеров HDInsight с помощью интерфейса командной строки Azure](./hdinsight-hadoop-create-linux-clusters-azure-cli.md) |
 | Azure PowerShell | [Создание кластеров под управлением Linux в HDInsight с помощью Azure PowerShell](./hdinsight-hadoop-create-linux-clusters-azure-powershell.md) |
 | cURL | [Создание кластеров Apache Hadoop с помощью REST API Azure](./hdinsight-hadoop-create-linux-clusters-curl-rest.md) |
 | Пакеты SDK (.NET, Python, Java) | [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet), [Python](https://docs.microsoft.com/python/api/overview/azure/hdinsight?view=azure-python), [Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable), [Go](https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview) |
@@ -38,10 +38,10 @@ ms.locfileid: "74782025"
 
 ## <a name="how-do-i-customize-hdinsight-clusters"></a>Разделы справки настроить кластеры HDInsight?
 
-| Вариант | Документы |
+| Параметр | Документы |
 |---|---|
 | Действия сценария | [Настройка кластеров Azure HDInsight с помощью действий сценария](./hdinsight-hadoop-customize-cluster-linux.md) |
-| Загрузке | [Настройка кластеров HDInsight с помощью начальной загрузки](./hdinsight-hadoop-customize-cluster-bootstrap.md) |
+| Начальная загрузка | [Настройка кластеров HDInsight с помощью начальной загрузки](./hdinsight-hadoop-customize-cluster-bootstrap.md) |
 | Внешние метахранилища | [Использование внешних хранилищ метаданных в Azure HDInsight](./hdinsight-use-external-metadata-stores.md) |
 | Пользовательская база данных Ambari DB | [Настройка кластеров HDInsight с помощью настраиваемой базы данных Ambari DB](./hdinsight-custom-ambari-db.md) |
 
@@ -56,10 +56,10 @@ ms.locfileid: "74782025"
 
 ## <a name="how-do-i-manage-running-hdinsight-clusters"></a>Разделы справки управлять работающими кластерами HDInsight?
 
-| Вариант | Документы |
+| Параметр | Документы |
 |---|---|
-| Автоматическое масштабирование | [Автоматическое масштабирование кластеров Azure HDInsight](./hdinsight-autoscale-clusters.md) |
-| Ручное масштабирование | [Масштабирование кластеров Azure HDInsight](./hdinsight-scaling-best-practices.md) |
+| Автомасштабирование | [Автоматическое масштабирование кластеров Azure HDInsight](./hdinsight-autoscale-clusters.md) |
+| Масштабирование вручную | [Масштабирование кластеров Azure HDInsight](./hdinsight-scaling-best-practices.md) |
 | Мониторинг с помощью Ambari| [Мониторинг производительности кластера в Azure HDInsight](./hdinsight-key-scenarios-to-monitor.md) |
 | Мониторинг с помощью журналов Azure Monitor | [Use Azure Monitor logs to monitor HDInsight clusters](./hdinsight-hadoop-oms-log-analytics-tutorial.md) (Мониторинг кластеров HDInsight с помощью журналов Azure Monitor) |
 

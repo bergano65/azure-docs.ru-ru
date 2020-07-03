@@ -3,20 +3,20 @@ title: Устранение неполадок пользовательских 
 titleSuffix: Azure AD B2C
 description: Настройка Application Insights для трассировки выполнения пользовательских политик.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 3aeef1614f22563e0fd348c5bc6ae7ff1e7b0b03
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 403dbe6106cb7a1d277ba672112d2bc45dbc2987
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76848152"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78186273"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Собирайте журналы Azure Active Directory B2C с помощью Application Insights
 
@@ -50,18 +50,18 @@ ms.locfileid: "76848152"
    UserJourneyRecorderEndpoint="urn:journeyrecorder:applicationinsights"
    ```
 
-1. Если он еще не существует, добавьте `<UserJourneyBehaviors>` дочерний узел в узел `<RelyingParty>`. Он должен располагаться сразу после `<DefaultUserJourney ReferenceId="UserJourney Id" from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />`.
+1. Добавьте в `<UserJourneyBehaviors>` `<RelyingParty>` узел дочерний узел, если он еще не создан. Он должен располагаться сразу `<DefaultUserJourney ReferenceId="UserJourney Id" from your extensions policy, or equivalent (for example:SignUpOrSigninWithAAD" />`после.
 1. Добавьте следующий узел в качестве дочернего узла элемента `<UserJourneyBehaviors>`. Обязательно замените `{Your Application Insights Key}` Application Insightsным **ключом инструментирования** , записанным ранее.
 
     ```XML
     <JourneyInsights TelemetryEngine="ApplicationInsights" InstrumentationKey="{Your Application Insights Key}" DeveloperMode="true" ClientEnabled="false" ServerEnabled="true" TelemetryVersion="1.0.0" />
     ```
 
-    * `DeveloperMode="true"` указывает ApplicationInsights ускорить передачу данных телеметрии через конвейер обработки. Подходит для разработки, но ограничена большими объемами томов.
-    * `ClientEnabled="true"` отправляет скрипт на стороне клиента ApplicationInsights для отслеживания просмотра страниц и ошибок на стороне клиента. Их можно просмотреть в таблице **бровсертимингс** на портале Application Insights. Настроив `ClientEnabled= "true"`, вы добавляете в скрипт страницы Application Insights и получаете время загрузки страниц и вызовов AJAX, количество, сведения об исключениях браузера и сбоях AJAX, а также число пользователей и сеансов. Это поле является **необязательным**и по умолчанию имеет значение `false`.
+    * `DeveloperMode="true"`сообщает ApplicationInsights, что необходимо ускорить передачу данных телеметрии через конвейер обработки. Подходит для разработки, но ограничена большими объемами томов.
+    * `ClientEnabled="true"`отправляет скрипт на стороне клиента ApplicationInsights для отслеживания просмотра страниц и ошибок на стороне клиента. Их можно просмотреть в таблице **бровсертимингс** на портале Application Insights. При установке `ClientEnabled= "true"`вы добавляете в скрипт страницы Application Insights и получаете время загрузки страниц и вызовов AJAX, количество, сведения об исключениях браузера и сбоях AJAX, а также число пользователей и сеансов. Это поле является **необязательным**и по умолчанию `false` имеет значение.
     * Параметр `ServerEnabled="true"` отправляет существующие данные JSON UserJourneyRecorder как пользовательское событие в Application Insights.
 
-    Пример.
+    Пример:
 
     ```XML
     <TrustFrameworkPolicy
@@ -93,7 +93,7 @@ ms.locfileid: "76848152"
 
 Ниже приведен список запросов, которые можно использовать для просмотра журналов.
 
-| Запрос | Description |
+| query | Описание |
 |---------------------|--------------------|
 `traces` | Просмотр всех журналов, созданных Azure AD B2C |
 `traces | where timestamp > ago(1d)` | Просмотр всех журналов, созданных Azure AD B2C за последний день

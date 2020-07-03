@@ -1,18 +1,18 @@
 ---
 title: Размещение исходного кода мобильного приложения в облаке с помощью GitHub и Azure DevOps
 description: Сведения о службах для размещения кода мобильного приложения в облаке с помощью служб Майкрософт.
-author: elamalani
+author: codemillmatt
 ms.assetid: 12a8a079-9b3c-4faf-2222-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: 8662b9f77614339ff514fa4fcf97dc1ee8fc7417
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: 66d8980ab53010af0703d789fbe791c60a32052d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75454491"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80240963"
 ---
 # <a name="cloud-hosted-source-code-management-services"></a>Службы управления исходным кодом, размещенные в облаке
 Если у вас есть группы разработчиков с несколькими членами группы, работающими на одной базе кода, необходимо найти подходящее место для размещения кода. Хранение данных в облаке и централизованный репозиторий позволяет любому пользователю отправлять, изменять и управлять файлами кода. Они также могут взаимодействовать с другими разработчиками в проектах. Код может быть легко доступен независимо от того, где вы используете, если у вас есть подключение к Интернету.
@@ -50,7 +50,7 @@ ms.locfileid: "75454491"
 - Просмотрите популярные проекты и следуйте им.
 - Сеть и знакомство с другими сотрудниками отрасли.
 
-**Справочные материалы**
+**Ссылки**
 - [GitHub](https://github.com/)
 - [Руководства GitHub](https://guides.github.com/)
 - [Форум сообщества GitHub](https://github.community/)
@@ -74,6 +74,6 @@ ms.locfileid: "75454491"
 - Обеспечьте качество кода с помощью политик ветвей, таких как минимальное количество проверок кода, требования для успешного построения и применение стратегий слияния Git.
 - Подключите любимую среду разработки для доступа к репозиториев и управления работой.
 
-**Справочные материалы**
+**Ссылки**
 - [Начало работы с Azure Repos](https://azure.microsoft.com/services/devops/repos/) 
 - [Документация по Azure Repos](/azure/devops/repos/?view=azure-devops)

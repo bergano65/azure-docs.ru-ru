@@ -1,18 +1,14 @@
 ---
 title: Интеллектуальное обнаружение в Azure Application Insights | Документация Майкрософт
 description: Служба Application Insights автоматически выполняет углубленный анализ телеметрии вашего приложения и предупреждает о потенциальных проблемах.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 02/07/2019
-ms.openlocfilehash: ae9af5721e53277f6c939840721ca50ea67ca51e
-ms.sourcegitcommit: 8e271271cd8c1434b4254862ef96f52a5a9567fb
+ms.openlocfilehash: ff9f88e1d2e643d04c4417283420217e7d496caf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72818817"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81536800"
 ---
 # <a name="smart-detection-in-application-insights"></a>Интеллектуальное обнаружение в Application Insights
  Интеллектуальное обнаружение автоматически предупреждает о потенциальных проблемах с производительностью и аномалиях сбоев в веб-приложении. Она выполняет упреждающий анализ данных телеметрии, которые приложение отправляет в [Application Insights](../../azure-monitor/app/app-insights-overview.md). В случае внезапного увеличения частоты сбоев или числа аномальных тенденций в производительности клиента или сервера вы получите оповещение. Эта функция не требует настройки. Она работает, если приложение отправляет достаточный объем данных телеметрии.
@@ -38,7 +34,7 @@ ms.locfileid: "72818817"
 
 * [Интеллектуальное обнаружение. Аномальные сбои.](../../azure-monitor/app/proactive-failure-diagnostics.md) С помощью машинного обучения мы настраиваем для вашего приложения ожидаемое количество неудачно завершенных запросов, сопоставляя его с нагрузкой и другими факторами. Если частота сбоев превысит ожидаемое ограничение, вам будет отправлено предупреждение.
 * [Интеллектуальное обнаружение. Аномалии производительности.](../../azure-monitor/app/proactive-performance-diagnostics.md) Если время ответа операции или продолжительность зависимости длиннее по сравнению с базовым показателем за предыдущие периоды, или если обнаружен аномальный шаблон времени отклика и времени загрузки страницы, выводится уведомление.   
-* Общие ухудшения и проблемы, такие как [Трассировка снижение](https://docs.microsoft.com/azure/azure-monitor/app/proactive-trace-severity), [утечка памяти](https://docs.microsoft.com/azure/azure-monitor/app/proactive-potential-memory-leak), [аномальное увеличение объема исключений](https://docs.microsoft.com/azure/azure-monitor/app/proactive-exception-volume) и [антишаблон безопасности](https://docs.microsoft.com/azure/azure-monitor/app/proactive-application-security-detection-pack).
+* Общие проблемы и неполадки, такие как [снижение производительности](https://docs.microsoft.com/azure/azure-monitor/app/proactive-trace-severity), [утечка памяти](https://docs.microsoft.com/azure/azure-monitor/app/proactive-potential-memory-leak), [аномальный рост объема исключений](https://docs.microsoft.com/azure/azure-monitor/app/proactive-exception-volume) и [антишаблон безопасности](https://docs.microsoft.com/azure/azure-monitor/app/proactive-application-security-detection-pack).
 
 (Каждое уведомление содержит ссылки на материалы соответствующих статей.)
 
@@ -50,14 +46,14 @@ ms.locfileid: "72818817"
 
 Кроме того, вы можете изменить настройку с помощью шаблонов Azure Resource Manager. Дополнительные сведения см. в статье [Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-monitor/app/proactive-arm-config).
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Эти диагностические средства позволяют проверять данные телеметрии из приложения:
 
-* [Обозреватель метрик](../../azure-monitor/app/metrics-explorer.md)
+* [Обозреватель метрик](../../azure-monitor/platform/metrics-charts.md)
 * [Обозреватель поиска](../../azure-monitor/app/diagnostic-search.md)
 * [Аналитика, мощный язык запросов](../../azure-monitor/log-query/get-started-portal.md)
 

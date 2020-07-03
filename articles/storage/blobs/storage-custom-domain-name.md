@@ -1,5 +1,5 @@
 ---
-title: Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure
+title: Map a custom domain to an Azure Blob Storage endpoint (Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure)
 titleSuffix: Azure Storage
 description: Сопоставьте личный домен с хранилищем больших двоичных объектов или веб-конечной точкой в учетной записи хранения Azure.
 author: normesta
@@ -9,19 +9,21 @@ ms.date: 01/23/2020
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 892f8bb24da00f1bd5827725f40fdc4359be0937
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 9d05677ec47851557594ef47499da653accad141
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906547"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79370480"
 ---
-# <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Сопоставьте личный домен с конечной точкой хранилища BLOB-объектов Azure
+# <a name="map-a-custom-domain-to-an-azure-blob-storage-endpoint"></a>Map a custom domain to an Azure Blob Storage endpoint (Сопоставление личного домена с конечной точкой хранилища BLOB-объектов Azure)
 
 Вы можете сопоставлять личный домен с конечной точкой службы BLOB-объектов или с конечной точкой для [статического сайта](storage-blob-static-website.md) . 
 
+[!INCLUDE [updated-for-az](../../../includes/storage-data-lake-gen2-support.md)]
+
 > [!NOTE] 
-> Это сопоставление работает только для поддоменов (например, `www.contoso.com`). Если вы хотите, чтобы конечная точка веб-узла была доступна в корневом домене (например, `contoso.com`), необходимо использовать Azure CDN. Инструкции см. в разделе о [сопоставлении пользовательского домена с включенным протоколом HTTPS](#enable-https) этой статьи. Так как вы переходите к этому разделу этой статьи, чтобы включить корневой домен личного домена, шаг в этом разделе для включения HTTPS является необязательным. 
+> Это сопоставление работает только для поддоменов (например, `www.contoso.com`). Если вы хотите, чтобы конечная точка веб-узла была доступна в корневом домене `contoso.com`(например,), необходимо использовать Azure CDN. Инструкции см. в разделе о [сопоставлении пользовательского домена с включенным протоколом HTTPS](#enable-https) этой статьи. Так как вы переходите к этому разделу этой статьи, чтобы включить корневой домен личного домена, шаг в этом разделе для включения HTTPS является необязательным. 
 
 <a id="enable-http" />
 
@@ -65,7 +67,7 @@ ms.locfileid: "76906547"
    | Тип конечной точки |  endpoint | имя узла |
    |------------|-----------------|-------------------|
    |Служба BLOB-объектов  | `https://mystorageaccount.blob.core.windows.net/` | `mystorageaccount.blob.core.windows.net` |
-   |статический веб-сайт  | `https://mystorageaccount.z5.web.core.windows.net/` | `mystorageaccount.z5.web.core.windows.net` |
+   |Статический веб-сайт  | `https://mystorageaccount.z5.web.core.windows.net/` | `mystorageaccount.z5.web.core.windows.net` |
   
    Установите это значение в дальнейшем.
 
@@ -103,7 +105,7 @@ ms.locfileid: "76906547"
 
 3. В текстовом поле **доменное имя** введите имя пользовательского домена, включая поддомен.  
    
-   Например, если домен является *contoso.com* , а псевдонимом дочернего домена является *www*, введите `www.contoso.com`. Если ваш поддомен — *фотографии*, введите `photos.contoso.com`.
+   Например, если доменом является *contoso.com* , а псевдонимом поддоменом является *www*, `www.contoso.com`введите. Если ваш поддомен — *фотографии*, введите `photos.contoso.com`.
 
 4. Чтобы зарегистрировать личный домен, нажмите кнопку **сохранить** .
 
@@ -151,7 +153,7 @@ ms.locfileid: "76906547"
    | Тип конечной точки |  endpoint | имя узла |
    |------------|-----------------|-------------------|
    |Служба BLOB-объектов  | `https://mystorageaccount.blob.core.windows.net/` | `mystorageaccount.blob.core.windows.net` |
-   |статический веб-сайт  | `https://mystorageaccount.z5.web.core.windows.net/` | `mystorageaccount.z5.web.core.windows.net` |
+   |Статический веб-сайт  | `https://mystorageaccount.z5.web.core.windows.net/` | `mystorageaccount.z5.web.core.windows.net` |
   
    Установите это значение в дальнейшем.
 
@@ -171,11 +173,11 @@ ms.locfileid: "76906547"
 
    - Псевдоним поддомена, например `www` или `photos`. Поддомен является обязательным, корневые домены не поддерживаются.
 
-     Добавьте `asverify` поддомен в псевдоним. Пример: `asverify.www` или `asverify.photos`.
+     `asverify` Добавьте поддомен в псевдоним. Пример: `asverify.www` или `asverify.photos`.
        
    - Имя узла, полученное в разделе [Получение имени узла конечной точки хранилища](#endpoint) выше в этой статье. 
 
-     Добавьте `asverify` поддомена в имя узла. Например: `asverify.mystorageaccount.blob.core.windows.net`.
+     Добавьте поддомен `asverify` в имя узла. Например: `asverify.mystorageaccount.blob.core.windows.net`.
 
 4. Чтобы зарегистрировать личный домен, нажмите кнопку **сохранить** .
 
@@ -195,7 +197,7 @@ ms.locfileid: "76906547"
 
 3. В текстовом поле **доменное имя** введите имя пользовательского домена, включая поддомен.  
    
-   Например, если домен является *contoso.com* , а псевдонимом дочернего домена является *www*, введите `www.contoso.com`. Если ваш поддомен — *фотографии*, введите `photos.contoso.com`.
+   Например, если доменом является *contoso.com* , а псевдонимом поддоменом является *www*, `www.contoso.com`введите. Если ваш поддомен — *фотографии*, введите `photos.contoso.com`.
 
 4. Установите флажок **Использовать непрямую проверку CNAME**.
 
@@ -231,7 +233,7 @@ ms.locfileid: "76906547"
 
 Чтобы удалить сопоставление пользовательского домена, отмените регистрацию пользовательского домена. Используйте одну из следующих процедур.
 
-#### <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+#### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Чтобы удалить параметр личного домена, выполните приведенные ниже действия.
 
@@ -246,7 +248,7 @@ ms.locfileid: "76906547"
 
 После успешного удаления личного домена вы увидите уведомление на портале о том, что ваша учетная запись хранения успешно обновлена.
 
-#### <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Воспользуйтесь командой интерфейса командной строки [az storage account update](https://docs.microsoft.com/cli/azure/storage/account) и укажите пустую строку (`""`) в качестве значения аргумента `--custom-domain`, чтобы отменить регистрацию личного домена.
 
@@ -268,7 +270,7 @@ ms.locfileid: "76906547"
       --custom-domain ""
   ```
 
-#### <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+#### <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -311,7 +313,7 @@ ms.locfileid: "76906547"
 
 2. [Сопоставление содержимого Azure CDN с личным доменом](../../cdn/cdn-map-content-to-custom-domain.md).
 
-3. [Включение протокола HTTPS для личного домена Azure CDN](../../cdn/cdn-custom-ssl.md).
+3. [Включите протокол HTTPS в Azure CDN пользовательском домене](../../cdn/cdn-custom-ssl.md).
 
    > [!NOTE] 
    > При обновлении статического веб-сайта не забудьте очистить кэшированное содержимое на пограничных серверах CDN, выполнив очистку конечной точки CDN. Дополнительные сведения см. в статье [Очистка конечной точки сети CDN Azure](../../cdn/cdn-purge-endpoint.md).
@@ -324,6 +326,6 @@ ms.locfileid: "76906547"
 
    * [Цены и выставление счетов при использовании хранилища BLOB-объектов с Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-storage-custom-domain-https#http-to-https-redirection).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Дополнительные сведения о размещении статических веб-сайтов в хранилище больших двоичных объектов Azure](storage-blob-static-website.md)

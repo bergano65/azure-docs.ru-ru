@@ -1,24 +1,17 @@
 ---
-title: Просмотр использования ресурса службы Azure с помощью REST API | Документация Майкрософт
+title: Просмотр использования ресурса службы Azure с помощью REST API
 description: Узнайте, как использовать интерфейсы REST API для просмотра использования ресурса службы Azure.
-services: billing
-documentationcenter: na
 author: lleonard-msft
-manager: ''
-editor: ''
 ms.service: cost-management-billing
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.topic: reference
+ms.date: 03/31/2020
 ms.author: banders
-ms.openlocfilehash: eb444f090c1b2047e3d71c1b2ec52699a61bd880
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 60a9e17b16f0b539693beb987b4d0610d11a3050
+ms.sourcegitcommit: b0ff9c9d760a0426fd1226b909ab943e13ade330
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989310"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80521195"
 ---
 # <a name="review-azure-resource-usage-using-the-rest-api"></a>Просмотр использования ресурса службы Azure с помощью REST API
 
@@ -39,9 +32,11 @@ Content-Type: application/json
 Authorization: Bearer
 ```
 
-Для этого также требуется параметр `{subscriptionGuid}`, который должен содержать идентификатор подписки, который может быть считан с помощью учетных данных, предоставленных в токене API. Компонент `{reportName}`
+Для этого также требуется параметр `{subscriptionGuid}`, который должен содержать идентификатор подписки, который может быть считан с помощью учетных данных, предоставленных в токене API. 
 
-Ниже приведены обязательные заголовки. 
+Параметр `{reportName}` позволяет указать имя отчета. Чтобы получить список имен отчетов, можно использовать операцию Reports_List: `/subscriptions/{subscriptionId}/providers/Microsoft.CostManagement/reports`. Пример выходных данных см. [на GitHub](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/cost-management/resource-manager/Microsoft.CostManagement/preview/2018-08-01-preview/examples/ReportList.json).
+
+Ниже приведены обязательные заголовки.
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
@@ -93,7 +88,7 @@ Authorization: Bearer
 
 ## <a name="filtering-reports"></a>Фильтрация отчетов
 
-При создании отчета разделы `filter` и `dimensions` тела запроса позволяют сосредоточиться на стоимости отдельных типов ресурсов. В предыдущем теле запроса показано, как фильтровать все ресурсы в регионе. 
+При создании отчета разделы `filter` и `dimensions` тела запроса позволяют сосредоточиться на стоимости отдельных типов ресурсов. В предыдущем теле запроса показано, как фильтровать все ресурсы в регионе.
 
 ### <a name="get-all-compute-usage"></a>Получение всех сведений об использовании вычислений
 
@@ -105,9 +100,9 @@ Authorization: Bearer
         "name": "ResourceType",
         "operator": "In",
         "values": [
-                "Microsoft.ClassicCompute/virtualMachines", 
+                "Microsoft.ClassicCompute/virtualMachines",
                 "Microsoft.Compute/virtualMachines"
-        ] 
+        ]
     }
 }
 ```
@@ -123,7 +118,7 @@ Authorization: Bearer
         "operator": "In",
         "values": [
                 "Microsoft.Sql/servers"
-        ] 
+        ]
     }
 }
 ```

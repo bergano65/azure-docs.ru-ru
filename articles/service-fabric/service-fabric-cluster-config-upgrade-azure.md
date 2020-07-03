@@ -5,19 +5,19 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/09/2018
 ms.author: dekapur
-ms.openlocfilehash: 476a2d910b916ea29132b108478d06f756454813
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c2973428354f101b5b546128b08bf67587923a8e
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75463283"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82793080"
 ---
 # <a name="upgrade-the-configuration-of-a-cluster-in-azure"></a>Обновление конфигурации кластера в Azure 
 
 В этой статье описывается, как настроить различные параметры структуры для кластера Service Fabric. Для кластеров, размещенных в Azure, можно настроить параметры на [портале Azure](https://portal.azure.com) или использовать шаблон Azure Resource Manager.
 
 > [!NOTE]
-> Не все параметры доступны на портале, и рекомендуется [настроить его с помощью шаблона Azure Resource Manager](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code). Портал предназначен только для Service Fabric сценария Дев\тест.
+> Не все параметры доступны на портале, поэтому [рекомендуется выполнять настройку с помощью шаблона Azure Resource Manager](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code). Портал используется только для сценариев разработки и тестирования Service Fabric.
 > 
 
 
@@ -26,10 +26,10 @@ ms.locfileid: "75463283"
 ## <a name="customize-cluster-settings-using-resource-manager-templates"></a>Настройка параметров кластера с помощью шаблонов Resource Manager
 Кластеры Azure можно настроить с помощью JSON-шаблона Resource Manager. Дополнительные сведения см. в статье о [параметрах конфигурации для кластеров](service-fabric-cluster-fabric-settings.md). В качестве примера ниже приведены инструкции, с помощью которых можно добавить новый параметр *MaxDiskQuotaInMB* в раздел *Diagnostics*, используя обозреватель ресурсов Azure.
 
-1. Перейдите на сайт https://resources.azure.com.
-2. Перейдите к подписке, развернув **subscriptions** ->  **\<Ваша подписка>**  -> **resourceGroups** ->  **\<Ваша группа ресурсов >**  -> **providers** -> **Microsoft.ServiceFabric** -> **clusters** ->  **\<Имя вашего кластера>**
-3. В правом верхнем углу выберите пункт **Чтение и запись**.
-4. Выберите **Изменить** и обновите элемент JSON `fabricSettings`, а затем добавьте новый элемент.
+1. Перейдите на страницу https://resources.azure.com.
+2. Перейдите к своей подписке, **развернув** -> **\<подписки>**  ->  **resourceGroups** -> **\<группу ресурсов>**  ->  **поставщикам** -> **Microsoft. ServiceFabric** -> **кластеры** -> **\<имя кластера>**
+3. В правом верхнем углу выберите **чтение и запись.**
+4. Выберите **изменить** и обновите `fabricSettings` элемент JSON и добавьте новый элемент:
 
 ```json
       {
@@ -53,4 +53,4 @@ ms.locfileid: "75463283"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Изучите сведения о [параметрах кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
-* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-up-down.md).
+* Ознакомьтесь с концепцией [масштабирования кластера](service-fabric-cluster-scale-in-out.md).

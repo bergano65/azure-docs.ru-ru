@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 02/02/2018
 ms.author: tagore
-ms.openlocfilehash: 16b0727a78ad8ad582535fa1f5b0e57079cc4c05
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 3b4028a09f69acd5d7a6579b4610785ed32e227d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75385592"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77469533"
 ---
 # <a name="collect-performance-counters-for-your-azure-cloud-service"></a>Сбор данных счетчиков производительности для облачной службы Azure
 
@@ -103,7 +103,7 @@ Azure Application Insights для облачных служб позволяет
 
 Application Insights автоматически собирает данные следующих счетчиков производительности:
 
-* \Process (?? APP_WIN32_PROC??)\% процессорного времени
+* \Process (?? APP_WIN32_PROC??) \% Процессорное время
 * \Память\доступные байты
 * \.NET CLR Exceptions(??APP_CLR_PROC??)\# Исключений в секунду
 * \Process(??APP_WIN32_PROC??)\Байт исключительного пользования
@@ -115,13 +115,13 @@ Application Insights автоматически собирает данные с
 ### <a name="azure-diagnostics"></a>Диагностика Azure
 
 > [!IMPORTANT]
-> Все эти данные собираются в учетной записи хранения, но портал **не** содержит встроенных средств для их визуализации. Настоятельно рекомендуем интегрировать в приложение другую службу диагностики, например Application Insights.
+> Хотя все эти данные объединяются в учетную запись хранения, портал **не предоставляет собственный** способ построения диаграммы данных. Настоятельно рекомендуем интегрировать в приложение другую службу диагностики, например Application Insights.
 
 Расширение системы диагностики Azure для облачных служб позволяет указать счетчики производительности для сбора данных. Сведения об установке диагностики Azure см. в разделе [Настройка расширения системы диагностики](cloud-services-how-to-monitor.md#setup-diagnostics-extension).
 
-Счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определен для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters**. Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Этот элемент имеет два атрибута: `counterSpecifier` и `sampleRate`. Атрибут `counterSpecifier` определяет набор счетчиков производительности системы (описанный в предыдущем разделе) для сбора данных. Значение `sampleRate` указывает, как часто выполняется опрос. В целом все счетчики производительности передаются в Azure в соответствии со значением атрибута `scheduledTransferPeriod` родительского элемента `PerformanceCounters`.
+Счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определяется для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters** . Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Этот элемент имеет два атрибута: `counterSpecifier` и `sampleRate`. Атрибут `counterSpecifier` определяет набор счетчиков производительности системы (описанный в предыдущем разделе) для сбора данных. Значение `sampleRate` указывает, как часто выполняется опрос. В целом все счетчики производительности передаются в Azure в соответствии со значением атрибута `scheduledTransferPeriod` родительского элемента `PerformanceCounters`.
 
-Дополнительные сведения об элементе схемы `PerformanceCounters` см. в разделе [Схема Диагностики Azure](../azure-monitor/platform/diagnostics-extension-schema-1dot3.md#performancecounters-element).
+Дополнительные сведения об элементе схемы `PerformanceCounters` см. в разделе [Схема Диагностики Azure](../azure-monitor/platform/diagnostics-extension-schema-windows.md#performancecounters-element).
 
 Период, определенный атрибутом `sampleRate`, использует тип данных продолжительности XML, чтобы указать, как часто проверяется счетчик производительности. В приведенном ниже примере скорость равна `PT3M`, что означает `[P]eriod[T]ime[3][M]inutes`: каждые три минуты.
 
@@ -259,7 +259,7 @@ counterServiceUsed.Increment();
 
 ### <a name="azure-diagnostics"></a>Диагностика Azure
 
-Как указывалось ранее, счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определен для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters**. Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Укажите для атрибута `counterSpecifier` категорию и имя созданного в коде счетчика производительности. 
+Как указывалось ранее, счетчики производительности, данные которых вы хотите собрать, определены в файле **diagnostics.wadcfgx**. Откройте этот файл (он определяется для каждой роли) в Visual Studio и найдите элемент **DiagnosticsConfiguration** > **PublicConfig** > **WadCfg** > **DiagnosticMonitorConfiguration** > **PerformanceCounters** . Добавьте новый дочерний элемент **PerformanceCounterConfiguration**. Укажите для атрибута `counterSpecifier` категорию и имя созданного в коде счетчика производительности. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -291,7 +291,7 @@ counterServiceUsed.Increment();
 - [Счетчики производительности](../azure-monitor/app/cloudservices.md#performance-counters)
 - [Системные счетчики производительности в Application Insights](../azure-monitor/app/performance-counters.md)
 - [Specifying a Counter Path](https://msdn.microsoft.com/library/windows/desktop/aa373193(v=vs.85)) (Указание пути счетчика)
-- [Схема Диагностики Azure — элементы PerformanceCounters](../azure-monitor/platform/diagnostics-extension-schema-1dot3.md#performancecounters-element)
+- [Схема Диагностики Azure — элементы PerformanceCounters](../azure-monitor/platform/diagnostics-extension-schema-windows.md#performancecounters-element)
 
 
 

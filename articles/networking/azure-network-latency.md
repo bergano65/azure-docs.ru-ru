@@ -5,14 +5,14 @@ services: networking
 author: nayak-mahesh
 ms.service: virtual-network
 ms.topic: article
-ms.date: 02/10/2020
+ms.date: 03/10/2020
 ms.author: kumud
-ms.openlocfilehash: dc2cb6545093e8ab70d18014a5fd9d0e7d36f8b7
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: d9cae04499f046749e504bcab89b893fcc31a81c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77122395"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80886961"
 ---
 # <a name="azure-network-round-trip-latency-statistics"></a>Статистика задержки циклического приема в сети Azure
 
@@ -22,12 +22,12 @@ Azure постоянно отслеживает задержку (скорост
 
 Измерения задержки собираются от агентов ThousandEyes, размещенных в облачных регионах Azure по всему миру, которые постоянно отправляют проверки сети между собой через 1-минутные интервалы. Статистика месячной задержки определяется усреднением собранных выборок за месяц.
 
-## <a name="january-2020-round-trip-latency-figures"></a>Цифры задержки при круговой задержке 2020 января
+## <a name="march-2020-round-trip-latency-figures"></a>Цифры задержки при круговой от2020 марта
 
-Ниже приведено ежемесячное среднее время приема-передачи между регионами Azure за последние 31 день (начиная с 31 января 2020). [ThousandEyes](https://thousandeyes.com)поддерживают следующие измерения.
+Ниже приведено ежемесячное среднее время приема-передачи между регионами Azure за последние 31 день (заканчивается 31 марта 2020). [ThousandEyes](https://thousandeyes.com)поддерживают следующие измерения.
 
-[![статистики задержки между регионами Azure](media/azure-network-latency/azure-network-latency.png)](media/azure-network-latency/azure-network-latency.png#lightbox)
+[![Статистика задержки между регионами Azure](media/azure-network-latency/azure-network-latency.png)](media/azure-network-latency/azure-network-latency.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о [регионах Azure](https://azure.microsoft.com/global-infrastructure/regions/).

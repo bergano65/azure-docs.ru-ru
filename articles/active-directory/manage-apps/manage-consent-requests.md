@@ -13,10 +13,10 @@ ms.author: mimart
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0451fe18629a572c9b49f14924bfa50293f42a2b
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77367851"
 ---
 # <a name="managing-consent-to-applications-and-evaluating-consent-requests"></a>Управление согласия для приложений и оценка запросов на согласие
@@ -108,7 +108,7 @@ ms.locfileid: "77367851"
 
 Более широкий обзор, в том числе способы решения дополнительных сложных сценариев, см. в статье [Использование Azure AD для управления доступом к приложениям](what-is-access-management.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Пять шагов по защите инфраструктуры удостоверений](https://docs.microsoft.com/azure/security/fundamentals/steps-secure-identity#before-you-begin-protect-privileged-accounts-with-mfa)
 

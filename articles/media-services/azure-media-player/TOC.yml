@@ -1,0 +1,52 @@
+- name: Обзор
+  items:
+    - name: Обзор Проигрывателя мультимедиа Azure
+      href: azure-media-player-overview.md
+    - name: Заметки о выпуске
+      href: azure-media-player-release-notes.md
+    - name: Журнал изменений
+      href: azure-media-player-changelog.md
+- name: Краткие руководства
+  items:
+    - name: Краткое руководство по Проигрывателю мультимедиа Azure
+      href: azure-media-player-quickstart.md
+- name: Учебники
+  items:
+    - name: Полная настройка Проигрывателя мультимедиа Azure
+      href: azure-media-player-full-setup.md
+- name: Основные понятия
+  items:
+    - name: Технология воспроизведения
+      href: azure-media-player-playback-technology.md
+    - name: Защищенное содержимое
+      href: azure-media-player-protected-content.md
+    - name: Список функций
+      href: azure-media-player-feature-list.md
+    - name: Модуль переопределения URL-адресов
+      href: azure-media-player-url-rewriter.md
+    - name: Возможности доступа
+      href: azure-media-player-accessibility.md
+    - name: Создание подключаемых модулей
+      href: azure-media-player-writing-plugins.md
+    - name: Коллекция подключаемых модулей
+      href: azure-media-player-plugin-gallery.md
+    - name: Локализация
+      href: azure-media-player-localization.md
+- name: Примеры
+  items:
+    - name: Демонстрация возможностей Проигрывателя мультимедиа Azure
+      href: demos.md
+    - name: Примеры использования Проигрывателя мультимедиа Azure
+      href: 'https://github.com/Azure-Samples/azure-media-player-samples'
+- name: Справочник
+  items:
+    - name: API
+      href: 'https://docs.microsoft.com/en-us/javascript/api/azuremediaplayer/?view=azure-node-latest'
+    - name: Методы API
+      href: azure-media-player-api-methods.md
+    - name: Параметры
+      href: azure-media-player-options.md
+    - name: Коды ошибок
+      href: azure-media-player-error-codes.md
+    - name: Известные проблемы
+      href: azure-media-player-known-issues.md

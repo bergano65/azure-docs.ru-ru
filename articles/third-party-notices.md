@@ -7,10 +7,10 @@ ms.service: azure
 ms.topic: conceptual
 ms.date: 03/08/2019
 ms.openlocfilehash: b68d521ba3ec678dad49273f0bd2fdfa5ceabee1
-ms.sourcegitcommit: 8074f482fcd1f61442b3b8101f153adb52cf35c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72750422"
 ---
 # <a name="legal-notices"></a>Юридическая информация
@@ -19,9 +19,9 @@ ms.locfileid: "72750422"
 
 Microsoft, Windows, Microsoft Azure и (или) другие продукты и службы Microsoft, упомянутые в настоящем документе, могут быть товарными знаками или зарегистрированными товарными знаками корпорации Майкрософт в США и других странах.
 Лицензия для этого проекта не предоставляет права на использование любых имен, логотипов или товарных знаков Майкрософт.
-Общие правила работы с товарными знаками корпорации Майкрософт см. здесь: [https://go.microsoft.com/fwlink/?LinkID=254653](https://go.microsoft.com/fwlink/?LinkID=254653).
+Общие рекомендации корпорации Майкрософт по использованию товарных знаков [https://go.microsoft.com/fwlink/?LinkID=254653](https://go.microsoft.com/fwlink/?LinkID=254653)можно найти по адресу.
 
-Сведения о конфиденциальности см. здесь: [https://privacy.microsoft.com/en-us/](https://privacy.microsoft.com/en-us/)
+Сведения о конфиденциальности можно найти по адресу[https://privacy.microsoft.com/en-us/](https://privacy.microsoft.com/en-us/)
 
 Корпорация Майкрософт и все участники сохраняют за собой все остальные права, будь-то авторские права, права на патенты или товарные знаки, в том числе косвенные, предполагаемые по процессуальному отводу или иные.
 

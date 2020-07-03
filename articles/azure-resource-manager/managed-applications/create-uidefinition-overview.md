@@ -5,14 +5,14 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: 5fcc87e894cfab0075b33835a0673b133c629b73
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 2956c76f5bec353639b39228b982db21b6932deb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75650881"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80294889"
 ---
-# <a name="createuidefinitionjson-for-azure-managed-applications-create-experience"></a>CreateUiDefinition. JSON для процесса создания управляемого приложения Azure
+# <a name="createuidefinitionjson-for-azure-managed-applications-create-experience"></a>Использование файла CreateUiDefinition.json для создания управляемого приложения Azure
 
 В этом документе представлены основные понятия файла **createUiDefinition. JSON** , который портал Azure использует для определения пользовательского интерфейса при создании управляемого приложения.
 
@@ -35,10 +35,10 @@ ms.locfileid: "75650881"
 CreateUiDefinition всегда содержит три свойства: 
 
 * handler;
-* version
+* Версия
 * параметры
 
-Обработчик всегда должен быть `Microsoft.Azure.CreateUIDef`, а последняя поддерживаемая версия — `0.1.2-preview`.
+Обработчик всегда должен иметь `Microsoft.Azure.CreateUIDef`значение, а последняя поддерживаемая версия — `0.1.2-preview`.
 
 Схема свойства parameters зависит от сочетания определенных значений handler и version. Для управляемых приложений поддерживаются свойства `basics`, `steps` и `outputs`. Свойства basics и steps содержат [элементы](create-uidefinition-elements.md), например текстовые поля и раскрывающиеся списки, которые отображаются на портале Azure. Свойство output используется для сопоставления значений определенных элементов с параметрами шаблона развертывания Azure Resource Manager.
 
@@ -50,7 +50,7 @@ CreateUiDefinition всегда содержит три свойства:
 
 Основные принципы — это первый шаг, созданный при портал Azure синтаксического анализа файла. Помимо отображения элементов, указанных в `basics`, портал вводит элементы, чтобы пользователи выбрали подписку, группу ресурсов и местоположение для развертывания. По возможности элементы, которые запрашивают параметры уровня развертывания, такие как имя кластера или учетные данные администратора, должны быть в этом шаге.
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 Свойство steps может содержать как ноль, так и несколько дополнительных шагов для отображения после basics, каждый из которых содержит один или несколько элементов. Вы можете добавить действия для каждой роли или уровня развертываемого приложения. Например, добавьте шаг для входных данных главного узла и шаг для рабочих узлов в кластере.
 
@@ -89,13 +89,13 @@ CreateUiDefinition всегда содержит три свойства:
 
 CreateUiDefinition предоставляет [функции](create-uidefinition-functions.md) для работы с входными и выходными элементами элементов, а также такими функциями, как условия. Эти функции похожи как в синтаксисе, так и в функциональности для Azure Resource Manager функций шаблонов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Файл createUiDefinition.json имеет простую схему. Его реальные возможности основаны на поддерживаемых элементах и функциях. Эти элементы более подробно описаны здесь:
 
-- [CreateUiDefinition elements](create-uidefinition-elements.md) (Элементы CreateUiDefinition)
+- [Элементы](create-uidefinition-elements.md)
 - [Функции](create-uidefinition-functions.md)
 
-Текущая схема JSON для createUiDefinition доступна здесь: https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json.
+Текущая схема JSON для createUiDefinition доступна здесь: `https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json`.
 
 Пример файла пользовательского интерфейса: [createUiDefinition.json](https://github.com/Azure/azure-managedapp-samples/blob/master/Managed%20Application%20Sample%20Packages/201-managed-app-using-existing-vnet/createUiDefinition.json).

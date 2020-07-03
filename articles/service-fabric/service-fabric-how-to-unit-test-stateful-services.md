@@ -4,10 +4,10 @@ description: Дополнительные сведения о модульном
 ms.topic: conceptual
 ms.date: 09/04/2018
 ms.openlocfilehash: 9c657bd8295d01a4e0fa4e44e969b33946684bfa
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75639842"
 ---
 # <a name="create-unit-tests-for-stateful-services"></a>Создание модульных тестов для служб с отслеживанием состояния
@@ -23,7 +23,7 @@ ms.locfileid: "75639842"
 Начиная с версии 3.3.0, [ServiceFabric.Mocks](https://www.nuget.org/packages/ServiceFabric.Mocks/) предоставляет API для макетирования как оркестрации реплик, так и управления состоянием. Библиотека будет использоваться в примерах.
 
 [Nuget](https://www.nuget.org/packages/ServiceFabric.Mocks/)
-[GitHub](https://github.com/loekd/ServiceFabric.Mocks)
+[GitHub](https://github.com/loekd/ServiceFabric.Mocks) NuGet
 
 *ServiceFabric. макеты не принадлежат или не обслуживаются корпорацией Майкрософт. Однако в настоящее время это рекомендуемая библиотека Майкрософт для модульного тестирования служб с отслеживанием состояния.*
 

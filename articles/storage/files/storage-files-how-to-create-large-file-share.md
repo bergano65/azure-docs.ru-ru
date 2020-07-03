@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 94a376c01229de20e6a1264da3f29532becefa8a
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: add2805d9a360d3d9cd45ab54f476a6852fb7bd5
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368665"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858586"
 ---
 # <a name="enable-and-create-large-file-shares"></a>Включение и создание больших файловых ресурсов
 
@@ -20,22 +20,23 @@ ms.locfileid: "77368665"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Если вы планируете использовать Azure CLI, [установите последнюю версию](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 - Если вы планируете использовать Azure PowerShell, [установите последнюю версию](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.0.0).
 
 ## <a name="restrictions"></a>Ограничения
 
-Сейчас можно использовать только локально избыточное хранилище (LRS) или хранилище, избыточное в виде зоны (ZRS), в учетных записях с поддержкой больших файловых ресурсов. Нельзя использовать хранилище, избыточное в геопоясе (ГЗРС), геоизбыточное хранилище (GRS) или геоизбыточное хранилище с доступом для чтения (RA-GRS).
-Включение больших файловых ресурсов в учетной записи является необратимым процессом. После включения учетной записи вы не сможете преобразовать ее в ГЗРС, GRS или RA-GRS.
+Сейчас можно использовать только локально избыточное хранилище (LRS) или хранилище, избыточное в виде зоны (ZRS), в учетных записях с поддержкой больших файловых ресурсов. Вы не можете использовать хранилище, избыточное в геопоясе (ГЗРС), геоизбыточное хранилище (GRS), геоизбыточное хранилище с доступом на чтение (RA-GRS) или геоизбыточное хранилище с доступом на чтение (RA-ГЗРС).
 
-## <a name="create-a-new-storage-account"></a>Создать новую учетную запись хранения
+Включение больших файловых ресурсов в учетной записи является необратимым процессом. После включения учетной записи вы не сможете преобразовать ее в ГЗРС, GRS, RA-GRS или RA-ГЗРС.
+
+## <a name="create-a-new-storage-account"></a>Создание новой учетной записи хранения
 
 ### <a name="portal"></a>Портал
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. На портале Azure щелкните **Все службы**. 
-1. В списке ресурсов введите **учетные записи хранения**. По мере ввода символов список отфильтруется соответствующим образом. Выберите **Учетные записи хранения**.
+1. В портал Azure выберите **все службы**. 
+1. В списке ресурсов введите **учетные записи хранения**. По мере ввода символов список отфильтруется соответствующим образом. Выберите **учетные записи хранения**.
 1. В появившемся окне **учетные записи хранения** выберите **Добавить**.
 1. Выберите подписку, которая будет использоваться для создания учетной записи хранения.
 1. В поле **Группа ресурсов** выберите **Создать**. Введите имя новой группы ресурсов.
@@ -43,32 +44,32 @@ ms.locfileid: "77368665"
     ![Снимок экрана, на котором показано, как создавать группу ресурсов на портале](media/storage-files-how-to-create-large-file-share/create-large-file-share.png)
 
 1. Далее введите имя своей учетной записи хранения. Это имя должно быть уникальным в пределах Azure. Имя также должно иметь длину от 3 до 24 символов и может содержать только цифры и строчные буквы.
-1. Выберите расположение для своей учетной записи хранения и убедитесь, что это [одна из поддерживаемых репликаций для больших файловых ресурсов](storage-files-planning.md#regional-availability).
+1. Выберите расположение для вашей учетной записи хранения.
 1. Настройте репликацию на **локально избыточное хранилище** или **хранилище, избыточное**в виде зоны.
 1. Оставьте значения по умолчанию для этих полей:
 
    |Поле  |Значение  |
    |---------|---------|
    |Модель развертывания     |Resource Manager         |
-   |Производительность     |Стандартный         |
+   |Производительность     |Standard         |
    |Тип учетной записи     |StorageV2 (учетная запись общего назначения версии 2)         |
-   |Уровень доступа     |Высокий         |
+   |Уровень доступа     |Горячий         |
 
 1. Выберите **Дополнительно**, а затем нажмите кнопку **Enabled (включено** ) справа от **больших файловых ресурсов**.
 1. Выберите **Просмотр и создание**, чтобы просмотреть настройки учетной записи хранения и создать учетную запись.
 
     ![Снимок экрана с переключателем "включено" в новой учетной записи хранения в портал Azure](media/storage-files-how-to-create-large-file-share/large-file-shares-advanced-enable.png)
 
-1. Выберите **Создать**.
+1. Щелкните **Создать**.
 
 ### <a name="cli"></a>CLI
 
 Сначала [установите последнюю версию Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , чтобы можно было включить большие файловые ресурсы.
 
-Чтобы создать учетную запись хранения с включенными большими файловыми ресурсами, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourResourceGroup>`и `<yourDesiredRegion>` информацией.
+Чтобы создать учетную запись хранения с включенными большими файловыми ресурсами, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourResourceGroup>`и `<yourDesiredRegion>` данными.
 
 ```azurecli-interactive
-## This command creates a large file share–enabled account. It will not support GZRS, GRS, or RA-GRS.
+## This command creates a large file share–enabled account. It will not support GZRS, GRS, RA-GRS, or RA-GZRS.
 az storage account create --name <yourStorageAccountName> -g <yourResourceGroup> -l <yourDesiredRegion> --sku Standard_LRS --kind StorageV2 --enable-large-file-share
 ```
 
@@ -76,16 +77,16 @@ az storage account create --name <yourStorageAccountName> -g <yourResourceGroup>
 
 Сначала [установите последнюю версию PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.0.0) , чтобы можно было включить большие файловые ресурсы.
 
-Чтобы создать учетную запись хранения с включенными большими файловыми ресурсами, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourResourceGroup>`и `<yourDesiredRegion>` информацией.
+Чтобы создать учетную запись хранения с включенными большими файловыми ресурсами, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourResourceGroup>`и `<yourDesiredRegion>` данными.
 
-```PowerShell
-## This command creates a large file share–enabled account. It will not support GZRS, GRS, or RA-GRS.
+```powershell
+## This command creates a large file share–enabled account. It will not support GZRS, GRS, RA-GRS, or RA-GZRS.
 New-AzStorageAccount -ResourceGroupName <yourResourceGroup> -Name <yourStorageAccountName> -Location <yourDesiredRegion> -SkuName Standard_LRS -EnableLargeFileShare;
 ```
 
 ## <a name="enable-large-files-shares-on-an-existing-account"></a>Включение общих папок с большими файлами в существующей учетной записи
 
-Вы также можете включить большие файловые ресурсы в существующих учетных записях. Если включить большие файловые ресурсы, вы не сможете преобразовать их в ГЗРС, GRS или RA-GRS. Включение больших файловых ресурсов необратимо в этой учетной записи хранения.
+Вы также можете включить большие файловые ресурсы в существующих учетных записях. Если включить большие файловые ресурсы, вы не сможете выполнить преобразование в ГЗРС, GRS, RA-GRS или RA-ГЗРС. Включение больших файловых ресурсов необратимо в этой учетной записи хранения.
 
 ### <a name="portal"></a>Портал
 
@@ -112,7 +113,7 @@ az storage account update --name <yourStorageAccountName> -g <yourResourceGroup>
 
 Чтобы включить большие файловые ресурсы в существующей учетной записи, используйте следующую команду. Замените `<yourStorageAccountName>` и `<yourResourceGroup>` своими сведениями.
 
-```PowerShell
+```powershell
 Set-AzStorageAccount -ResourceGroupName <yourResourceGroup> -Name <yourStorageAccountName> -EnableLargeFileShare
 ```
 
@@ -132,7 +133,7 @@ Set-AzStorageAccount -ResourceGroupName <yourResourceGroup> -Name <yourStorageAc
 
 ### <a name="cli"></a>CLI
 
-Чтобы создать большой файловый ресурс, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourStorageAccountKey>`и `<yourFileShareName>` информацией.
+Чтобы создать большой файловый ресурс, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourStorageAccountKey>`и `<yourFileShareName>` данными.
 
 ```azurecli-interactive
 az storage share create --account-name <yourStorageAccountName> --account-key <yourStorageAccountKey> --name <yourFileShareName>
@@ -140,9 +141,9 @@ az storage share create --account-name <yourStorageAccountName> --account-key <y
 
 ### <a name="powershell"></a>PowerShell
 
-Чтобы создать большой файловый ресурс, используйте следующую команду. Замените `<YourStorageAccountName>`, `<YourStorageAccountKey>`и `<YourStorageAccountFileShareName>` информацией.
+Чтобы создать большой файловый ресурс, используйте следующую команду. Замените `<YourStorageAccountName>`, `<YourStorageAccountKey>`и `<YourStorageAccountFileShareName>` данными.
 
-```PowerShell
+```powershell
 ##Config
 $storageAccountName = "<YourStorageAccountName>"
 $storageAccountKey = "<YourStorageAccountKey>"
@@ -165,7 +166,7 @@ New-AzStorageShare -Name $shareName -Context $ctx
 
 ### <a name="cli"></a>CLI
 
-Чтобы задать для квоты максимальный размер, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourStorageAccountKey>`и `<yourFileShareName>` информацией.
+Чтобы задать для квоты максимальный размер, используйте следующую команду. Замените `<yourStorageAccountName>`, `<yourStorageAccountKey>`и `<yourFileShareName>` данными.
 
 ```azurecli-interactive
 az storage share update --account-name <yourStorageAccountName> --account-key <yourStorageAccountKey> --name <yourFileShareName> --quota 102400
@@ -173,9 +174,9 @@ az storage share update --account-name <yourStorageAccountName> --account-key <y
 
 ### <a name="powershell"></a>PowerShell
 
-Чтобы задать для квоты максимальный размер, используйте следующую команду. Замените `<YourStorageAccountName>`, `<YourStorageAccountKey>`и `<YourStorageAccountFileShareName>` информацией.
+Чтобы задать для квоты максимальный размер, используйте следующую команду. Замените `<YourStorageAccountName>`, `<YourStorageAccountKey>`и `<YourStorageAccountFileShareName>` данными.
 
-```PowerShell
+```powershell
 ##Config
 $storageAccountName = "<YourStorageAccountName>"
 $storageAccountKey = "<YourStorageAccountKey>"
@@ -185,7 +186,7 @@ $ctx = New-AzStorageContext -StorageAccountName $storageAccountName -StorageAcco
 Set-AzStorageShareQuota -ShareName $shareName -Context $ctx -Quota 102400
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Подключить и подключить общую папку в Windows](storage-how-to-use-files-windows.md)
 * [Подключение и монтирование файлового ресурса в Linux](storage-how-to-use-files-linux.md)

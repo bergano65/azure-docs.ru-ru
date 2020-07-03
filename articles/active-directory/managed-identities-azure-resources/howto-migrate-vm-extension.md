@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/25/2018
 ms.author: markvi
-ms.openlocfilehash: 3440713c287967655678e1cde2c000a6ed28b900
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.openlocfilehash: 01b8e1dbc290bed86ccfc3c7016e8bd9168e427a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74183956"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80049062"
 ---
 # <a name="how-to-stop-using-the-virtual-machine-managed-identities-extension-and-start-using-the-azure-instance-metadata-service"></a>Как отключить использование расширения управляемых удостоверений виртуальной машины и начать использовать службу метаданных экземпляра Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "74183956"
 
 Расширение виртуальной машины для управляемых удостоверений используется для запроса токенов для управляемого удостоверения на виртуальной машине. Рабочий процесс состоит из следующих шагов:
 
-1. Во первых, Рабочая нагрузка в ресурсе вызывает локальную конечную точку `http://localhost/oauth2/token` для запроса маркера доступа.
+1. Во первых, Рабочая нагрузка в ресурсе вызывает локальную `http://localhost/oauth2/token` конечную точку для запроса маркера доступа.
 2. Затем расширение виртуальной машины использует учетные данные для управляемого удостоверения, чтобы запросить маркер доступа из Azure AD. 
 3. Маркер доступа возвращается вызывающему объекту и может использоваться для проверки подлинности в службах, поддерживающих проверку подлинности Azure AD, например Azure Key Vault или службы хранилища Azure.
 
@@ -35,14 +35,14 @@ ms.locfileid: "74183956"
 
 ### <a name="provision-the-extension"></a>Подготавливает расширение 
 
-При настройке для виртуальной машины или масштабируемого набора виртуальных машин управляемое удостоверение можно выбрать подготовку управляемых удостоверений для расширения виртуальной машины ресурсов Azure с помощью параметра `-Type` в командлете [Set-азвмекстенсион](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension) . Можно передать либо `ManagedIdentityExtensionForWindows`, либо `ManagedIdentityExtensionForLinux`, в зависимости от типа виртуальной машины, и присвоить ей имя с помощью параметра `-Name`. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
+Если для виртуальной машины или масштабируемого набора виртуальных машин настроено управляемое удостоверение, при необходимости вы можете выбрать подготовку управляемых удостоверений для расширения виртуальной машины ресурсов Azure `-Type` с помощью параметра командлета [Set-азвмекстенсион](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension) . Вы можете передать значение `ManagedIdentityExtensionForWindows` или `ManagedIdentityExtensionForLinux`, в зависимости от типа виртуальной машины, и присвоить ему имя с `-Name` помощью параметра. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
 
 ```powershell
    $settings = @{ "port" = 50342 }
    Set-AzVMExtension -ResourceGroupName myResourceGroup -Location WestUS -VMName myVM -Name "ManagedIdentityExtensionForWindows" -Type "ManagedIdentityExtensionForWindows" -Publisher "Microsoft.ManagedIdentity" -TypeHandlerVersion "1.0" -Settings $settings 
 ```
 
-Можно также использовать шаблон развертывания Azure Resource Manager для инициализации расширения виртуальной машины, добавив следующий код JSON в раздел `resources` шаблона (используйте `ManagedIdentityExtensionForLinux` для элементов name и Type в версии Linux).
+Можно также использовать шаблон развертывания Azure Resource Manager для инициализации расширения виртуальной машины, добавив следующий код JSON в `resources` раздел шаблона (используйте `ManagedIdentityExtensionForLinux` для элементов name и Type для версии Linux).
 
     ```json
     {
@@ -66,14 +66,14 @@ ms.locfileid: "74183956"
     ```
     
     
-При работе с масштабируемыми наборами виртуальных машин можно также подготавливать управляемые удостоверения для расширения масштабируемого набора виртуальных машин Azure Resources с помощью командлета [Add-азвмссекстенсион](/powershell/module/az.compute/add-azvmssextension) . Можно передать либо `ManagedIdentityExtensionForWindows`, либо `ManagedIdentityExtensionForLinux`, в зависимости от типа масштабируемого набора виртуальных машин, и присвоить ему имя с помощью параметра `-Name`. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
+При работе с масштабируемыми наборами виртуальных машин можно также подготавливать управляемые удостоверения для расширения масштабируемого набора виртуальных машин Azure Resources с помощью командлета [Add-азвмссекстенсион](/powershell/module/az.compute/add-azvmssextension) . Вы можете передать значение `ManagedIdentityExtensionForWindows` или `ManagedIdentityExtensionForLinux`, в зависимости от типа масштабируемого набора виртуальных машин, и присвоить ему имя `-Name` с помощью параметра. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
 
    ```powershell
    $setting = @{ "port" = 50342 }
    $vmss = Get-AzVmss
    Add-AzVmssExtension -VirtualMachineScaleSet $vmss -Name "ManagedIdentityExtensionForWindows" -Type "ManagedIdentityExtensionForWindows" -Publisher "Microsoft.ManagedIdentity" -TypeHandlerVersion "1.0" -Setting $settings 
    ```
-Чтобы настроить расширение масштабируемого набора виртуальных машин с помощью шаблона развертывания Azure Resource Manager, добавьте следующий код JSON в раздел `extensionpProfile` шаблона (используйте `ManagedIdentityExtensionForLinux` для элементов name и Type в версии Linux).
+Чтобы настроить расширение масштабируемого набора виртуальных машин с помощью шаблона развертывания Azure Resource Manager, добавьте следующий код JSON в `extensionpProfile` раздел шаблона (используйте `ManagedIdentityExtensionForLinux` для элементов name и Type для версии Linux).
 
     ```json
     "extensionProfile": {
@@ -96,7 +96,7 @@ ms.locfileid: "74183956"
 Подготовка расширения виртуальной машины может завершиться ошибкой из-за сбоев уточняющего запроса DNS. В этом случае перезапустите виртуальную машину и повторите попытку. 
 
 ### <a name="remove-the-extension"></a>Удаление расширения 
-Чтобы удалить расширение, используйте `-n ManagedIdentityExtensionForWindows` или `-n ManagedIdentityExtensionForLinux` коммутатора (в зависимости от типа виртуальной машины) с помощью команды [AZ VM расширение Delete](https://docs.microsoft.com/cli/azure/vm/)или [AZ vmss Extension Delete](https://docs.microsoft.com/cli/azure/vmss) для масштабируемых наборов виртуальных машин с помощью Azure CLI или `Remove-AzVMExtension` для PowerShell:
+Чтобы удалить расширение, `-n ManagedIdentityExtensionForWindows` используйте или `-n ManagedIdentityExtensionForLinux` коммутатор (в зависимости от типа виртуальной машины) с помощью команды [AZ VM Extension Delete](https://docs.microsoft.com/cli/azure/vm/)или [AZ vmss Extension Delete](https://docs.microsoft.com/cli/azure/vmss) для масштабируемых наборов виртуальных машин с помощью Azure CLI или `Remove-AzVMExtension` PowerShell:
 
 ```azurecli-interactive
 az vm identity --resource-group myResourceGroup --vm-name myVm -n ManagedIdentityExtensionForWindows
@@ -119,11 +119,11 @@ GET http://localhost:50342/oauth2/token?resource=https%3A%2F%2Fmanagement.azure.
 Metadata: true
 ```
 
-| Элемент | ОПИСАНИЕ |
+| Элемент | Описание |
 | ------- | ----------- |
 | `GET` | HTTP-команда, указывающая, что необходимо извлечь данные из конечной точки. В этом случае используется маркер доступа OAuth. | 
 | `http://localhost:50342/oauth2/token` | Конечная точка управляемых удостоверений для ресурсов Azure, где 50342 — порт по умолчанию, который можно настроить. |
-| `resource` | Параметр строки запроса, указывающий URI идентификатора приложения целевого ресурса. Он также отображается в утверждении (аудитории) `aud` выданного маркера. В этом примере запрашивается маркер для доступа к Azure Resource Manager, который имеет универсальный код ресурса (URI) идентификатора приложения https://management.azure.com/. |
+| `resource` | Параметр строки запроса, указывающий URI идентификатора приложения целевого ресурса. Он также отображается в утверждении (аудитории) `aud` выданного маркера. В этом примере запрашивается маркер для доступа к Azure Resource Manager, который имеет универсальный код ресурса (URI) идентификатора приложения `https://management.azure.com/`. |
 | `Metadata` | Поле заголовка HTTP-запроса, необходимое управляемым удостоверениям для ресурсов Azure для устранения рисков от атак с подделкой запроса со стороны сервера (SSRF). Должно быть присвоено значение true (все в нижнем регистре).|
 | `object_id` | (Необязательно.) Параметр строки запроса, указывающий object_id управляемого удостоверения, для которого требуется токен. Требуется, если виртуальная машина имеет несколько управляемых удостоверений, назначаемых пользователем.|
 | `client_id` | (Необязательно.) Параметр строки запроса, указывающий client_id управляемого удостоверения, для которого требуется токен. Требуется, если виртуальная машина имеет несколько управляемых удостоверений, назначаемых пользователем.|
@@ -145,9 +145,9 @@ Content-Type: application/json
 }
 ```
 
-| Элемент | ОПИСАНИЕ |
+| Элемент | Описание |
 | ------- | ----------- |
-| `access_token` | Запрашиваемый маркер доступа. При вызове защищенного REST API маркер внедряется в поле `Authorization` заголовка запроса в качестве маркера носителя, позволяя API выполнить проверку подлинности вызывающего объекта. | 
+| `access_token` | Запрошенный маркер доступа. При вызове защищенного REST API маркер внедряется в поле `Authorization` заголовка запроса в качестве маркера носителя, позволяя API выполнить проверку подлинности вызывающего объекта. | 
 | `refresh_token` | Не используется управляемыми удостоверениями для ресурсов Azure. |
 | `expires_in` | Количество секунд, в течение которых маркер доступа является действительным, прежде чем его срок действия истечет (с момента выдачи). Время выдачи можно найти в утверждении `iat` маркера. |
 | `expires_on` | Период времени после истечения срока действия маркера доступа. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC (соответствует утверждению `exp` маркера). |
@@ -166,9 +166,9 @@ Content-Type: application/json
 Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <location> -Publisher Microsoft.ManagedIdentity -VMName <vm name> -ResourceGroupName <resource group name> -ForceRerun <Any string different from any last value used>
 ```
 
-Описание 
-- Имя и тип расширения для Windows: `ManagedIdentityExtensionForWindows`
-- Имя и тип расширения для Linux: `ManagedIdentityExtensionForLinux`
+Где: 
+- Имя и тип расширения для Windows:`ManagedIdentityExtensionForWindows`
+- Имя и тип расширения для Linux:`ManagedIdentityExtensionForLinux`
 
 #### <a name="automation-script-fails-when-attempting-schema-export-for-managed-identities-for-azure-resources-extension"></a>Скрипт автоматизации завершается ошибкой при попытке экспорта схемы для расширения управляемых удостоверений для ресурсов Azure
 
@@ -190,13 +190,13 @@ Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <loc
     * CentOS 7.1; 
     * Red Hat 7.2 
     * Ubuntu 15.04. 
-    * Ubuntu 16.04.
+    * Ubuntu 16.04
  * Развертывание виртуальных машин с управляемыми удостоверениями влияет на производительность, так как расширение виртуальной машины также должно быть подготовлено. 
  * Наконец, расширение виртуальной машины может поддерживать только 32 назначаемых пользователем управляемых удостоверений на каждую виртуальную машину. 
 
 ## <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
-[Служба метаданных экземпляров Azure (IMDS)](/azure/virtual-machines/windows/instance-metadata-service) — это конечная точка RESTful, которая предоставляет сведения о выполняющихся экземплярах виртуальных машин, которые можно использовать для управления виртуальными машинами и их настройки. Конечная точка доступна по известному ненаправляемому IP-адресу (`169.254.169.254`), доступ к которому можно получить только с виртуальной машины.
+[Служба метаданных экземпляров Azure (IMDS)](/azure/virtual-machines/windows/instance-metadata-service) — это конечная точка RESTful, которая предоставляет сведения о выполняющихся экземплярах виртуальных машин, которые можно использовать для управления виртуальными машинами и их настройки. Конечная точка доступна на хорошо известном IP-адресе, не поддерживающем`169.254.169.254`маршрутизацию (), доступ к которому можно получить только с помощью виртуальной машины.
 
 Использование Azure IMDS для запроса маркеров имеет несколько преимуществ. 
 
@@ -209,7 +209,7 @@ Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <loc
 По этим причинам служба IMDS Azure является нерекомендуемым способом запроса токенов, как только расширение виртуальной машины будет признано устаревшим. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Использование управляемых удостоверений для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](how-to-use-vm-token.md)
 * [Служба метаданных экземпляров Azure](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service)

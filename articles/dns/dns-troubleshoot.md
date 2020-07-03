@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 09/20/2019
 ms.author: rohink
 ms.openlocfilehash: b5e1624bf852256f6e8fb0b616258f932c5a8998
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76939029"
 ---
 # <a name="azure-dns-troubleshooting-guide"></a>Руководство по устранению неполадок службы DNS Azure
@@ -85,11 +85,11 @@ Azure DNS управляет записями DNS как наборами зап
 ### <a name="recommended-articles"></a>Рекомендуемые статьи
 
 * [Зоны и записи DNS](dns-zones-records.md)
-* [Get started with Azure DNS using the Azure portal](dns-getstarted-create-recordset-portal.md) (Начало работы с Azure DNS с использованием портала Azure)
+* [Создание наборов записей и записей DNS с помощью портала Azure](dns-getstarted-create-recordset-portal.md)
 * [SRV-запись (Википедия)](https://en.wikipedia.org/wiki/SRV_record)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь со статьей [Зоны и записи DNS](dns-zones-records.md).
 * Чтобы начать работу с Azure DNS, узнайте, как [создать зону DNS](dns-getstarted-create-dnszone-portal.md) и [записи DNS](dns-getstarted-create-recordset-portal.md).

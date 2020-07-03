@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: 999dbb8c36c4e0413f287b2a73cf39ab4acd15f5
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75610052"
 ---
 # <a name="develop-java-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Java Service Fabric с помощью Visual Studio Code
@@ -21,7 +21,7 @@ ms.locfileid: "75610052"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что уже установлено VS Code, расширение Service Fabric Reliable Services для VS Code и все зависимости, необходимые для среды разработки. Дополнительные сведения см в разделе [Руководство](./service-fabric-get-started-vs-code.md#prerequisites).
 
@@ -40,10 +40,10 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
 ![Приложение для голосования Java в рабочей области](./media/service-fabric-develop-java-applications-with-vs-code/java-voting-application.png)
 
-## <a name="build-the-application"></a>создание приложения;
+## <a name="build-the-application"></a>Построение приложения
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть **палитру команд** в VS Code.
-2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)** . Выходные данные сборки передаются во встроенный терминал.
+2. Найдите и выберите команду **Service Fabric: Build Application (Создание приложения Service Fabric)**. Выходные данные сборки передаются во встроенный терминал.
 
    ![Команда сборки приложения в VS Code](./media/service-fabric-develop-java-applications-with-vs-code/sf-build-application.png)
 
@@ -53,7 +53,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 > [!IMPORTANT]
 > Развертывание приложений Java не поддерживается на компьютерах под управлением Windows.
 
-1. В **Палитре команд** выберите **Service Fabric: развертывания приложения (Localhost)** . Выходные данные процесса установки отправляются в интегрированный терминал.
+1. В **Палитре команд** выберите **Service Fabric: развертывания приложения (Localhost)**. Выходные данные процесса установки отправляются в интегрированный терминал.
 
    ![Команда развертывания приложения в VS Code](./media/service-fabric-develop-java-applications-with-vs-code/sf-deploy-application.png)
 
@@ -96,7 +96,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
    ![Конфигурация отладки для launch.json-файла](./media/service-fabric-develop-java-applications-with-vs-code/launch-json-java.png)
 
-4. Развертывание приложения в локальном кластере с помощью команды **Service Fabric: развертывание приложения (Localhost)** . Убедитесь, что приложение выполняется в Service Fabric Explorer. Теперь приложение готово к отладке.
+4. Развертывание приложения в локальном кластере с помощью команды **Service Fabric: развертывание приложения (Localhost)**. Убедитесь, что приложение выполняется в Service Fabric Explorer. Теперь приложение готово к отладке.
 
 Чтобы задать точку останова, выполните следующее.
 

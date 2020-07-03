@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
 ms.openlocfilehash: 8b8883b579233962de61e7247e6ac1cbcb2a6d80
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76761055"
 ---
 # <a name="chaining-service-bus-entities-with-autoforwarding"></a>Объединение в цепочки сущностей служебной шины с помощью автоматической переадресации
@@ -27,7 +27,7 @@ ms.locfileid: "76761055"
 
 ## <a name="using-autoforwarding"></a>Использование автоматической переадресации
 
-Вы можете включить функцию перенаправления, задав свойства [QueueDescription. ForwardTo][QueueDescription.ForwardTo] или [SubscriptionDescription. ForwardTo][SubscriptionDescription.ForwardTo] в объектах [QueueDescription][QueueDescription] или [SubscriptionDescription][SubscriptionDescription] для источника, как показано в следующем примере:
+Автоматическую переадресацию можно включить, задав свойства [QueueDescription.ForwardTo][QueueDescription.ForwardTo] или [SubscriptionDescription.ForwardTo][SubscriptionDescription.ForwardTo] объектов источника [QueueDescription][QueueDescription] или [SubscriptionDescription][SubscriptionDescription], как показано в следующем примере:
 
 ```csharp
 SubscriptionDescription srcSubscription = new SubscriptionDescription (srcTopic, srcSubscriptionName);
@@ -61,13 +61,13 @@ namespaceManager.CreateSubscription(srcSubscription));
 
 Служебная шина тарифицирует каждое перенаправленное сообщение как одну операцию. Например, отправка сообщения в раздел с 20 подписками, каждая из которых настроена на автоматическую переадресацию сообщений в другую очередь или раздел, тарифицируется как 21 операция, если все подписки первого уровня получили копию сообщения.
 
-Для создания подписки, привязанной к другой очереди или разделу, создатель подписки должен иметь разрешение на **управление** как исходной, так и целевой сущностями. Для отправки сообщений в исходный раздел требуется только разрешение на **отправку** для исходного раздела.
+Для создания подписки, связанной с другой очередью или разделом, создатель подписки должен иметь разрешения на **Управление** как исходной, так и целевой сущности. Для отправки сообщений в исходный раздел требуется только разрешение на **отправку** для исходного раздела.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Подробные сведения об автоматической переадресации см. в следующих разделах:
 
-* [ForwardTo][QueueDescription.ForwardTo]
+* [Отправить][QueueDescription.ForwardTo]
 * [QueueDescription][QueueDescription]
 * [SubscriptionDescription][SubscriptionDescription]
 

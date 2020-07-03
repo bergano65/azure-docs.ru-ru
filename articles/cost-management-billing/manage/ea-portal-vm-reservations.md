@@ -1,19 +1,18 @@
 ---
 title: Зарезервированные экземпляры виртуальной машины Azure EA
 description: В этой статье рассказывается о том, как резервирование Azure для зарезервированных экземпляров виртуальных машин поможет сэкономить деньги при регистрации вашей компании.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 02/04/2020
+ms.date: 05/01/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
-manager: boalcsva
-ms.openlocfilehash: f9a9da6176269876cff9d5137972c7aac5dea5fd
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.reviewer: boalcsva
+ms.openlocfilehash: 4321d2b48a3672b537cf0f50c5e02e3196e68ed8
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77025679"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82691167"
 ---
 # <a name="azure-ea-vm-reserved-instances"></a>Зарезервированные экземпляры виртуальной машины Azure EA
 
@@ -58,10 +57,12 @@ ms.locfileid: "77025679"
 
 ### <a name="how-can-i-change-the-subscription-associated-with-reserved-instance-or-transfer-my-reserved-instance-benefits-to-a-subscription-under-the-same-account"></a>Как можно изменить подписку, связанную с зарезервированным экземпляром, или перенести преимущества зарезервированного экземпляра в подписку под той же учетной записью?
 
-В любой момент времени только одна подписка может получать преимущества зарезервированного экземпляра. Чтобы изменить такую подписку:
+Чтобы изменить такую подписку:
 
-- войдите на [портал Azure](https://aka.ms/reservations);
-- обновите примененную область подписки, связав другую подписку с той же учетной записью.
+- Войдите на [портал Azure](https://aka.ms/reservations).
+- Обновите примененную область подписки, связав другую подписку с той же учетной записью.
+
+См. сведения об [изменении области резервирования](../reservations/manage-reserved-vm-instance.md#change-the-reservation-scope).
 
 ### <a name="how-to-view-reserved-instance-usage-details"></a>Как просмотреть сведения об использовании зарезервированного экземпляра
 

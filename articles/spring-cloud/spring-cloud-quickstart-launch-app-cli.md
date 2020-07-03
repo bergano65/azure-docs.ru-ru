@@ -4,14 +4,14 @@ description: Из этого краткого руководства вы узн
 author: bmitchell287
 ms.service: spring-cloud
 ms.topic: quickstart
-ms.date: 11/04/2019
+ms.date: 02/15/2020
 ms.author: brendm
-ms.openlocfilehash: adb5b64456de743142ffb464ebb2c5e9f8dc8f86
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: c05e53bd8ad8ade8c1e42729f46c99a0059c4dce
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190772"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79470866"
 ---
 # <a name="quickstart-launch-a-java-spring-application-using-the-azure-cli"></a>Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI
 
@@ -69,12 +69,13 @@ az extension add --name spring-cloud
     ```azurecli
         az group create --location eastus --name <resource group name>
     ```
+
     Узнайте больше о [группах ресурсов Azure](../azure-resource-manager/management/overview.md).
 
 4. Откройте окно Azure CLI и выполните приведенные ниже команды, чтобы подготавливать экземпляр Azure Spring Cloud к работе.
 
     ```azurecli
-        az spring-cloud create -n <service name> -g <resource group name>
+        az spring-cloud create -n <service instance name> -g <resource group name>
     ```
 
     Развертывание экземпляра службы займет около пяти минут.
@@ -82,7 +83,7 @@ az extension add --name spring-cloud
 5. Задайте стандартные имена группы ресурсов и кластера с помощью следующих команд:
 
     ```azurecli
-        az configure --defaults group=<service group name>
+        az configure --defaults group=<resource group name>
         az configure --defaults spring-cloud=<service instance name>
     ```
 
@@ -93,8 +94,8 @@ az extension add --name spring-cloud
 
 Обновите файл config-server, указав расположение репозитория Git для нашего проекта:
 
-```git
-az spring-cloud config-server git set -n <your-service-name> --uri https://github.com/Azure-Samples/piggymetrics-config
+```azurecli
+az spring-cloud config-server git set -n <service instance name> --uri https://github.com/Azure-Samples/piggymetrics-config
 ```
 
 > [!div class="nextstepaction"]
@@ -104,14 +105,14 @@ az spring-cloud config-server git set -n <your-service-name> --uri https://githu
 
 1. Создайте папку и клонируйте пример репозитория приложения в облачную учетную запись Azure.  
 
-    ```azurecli
+    ```console
         mkdir source-code
         git clone https://github.com/Azure-Samples/piggymetrics
     ```
 
 2. Перейдите в каталог и выполните сборку проекта.
 
-    ```azurecli
+    ```console
         cd piggymetrics
         mvn clean package -D skipTests
     ```
@@ -143,28 +144,39 @@ az spring-cloud app deploy -n auth-service --jar-path ./auth-service/target/auth
 
 ## <a name="assign-public-endpoint-to-gateway"></a>Назначение общедоступной конечной точки шлюзу
 
-Нам нужен способ доступа к приложению через веб-браузер. Приложению шлюза требуется общедоступная конечная точка, которую можно назначить с помощью следующей команды:
+Нам нужен способ доступа к приложению через веб-браузер. Приложению шлюза требуется общедоступная конечная точка.
+
+1. Назначьте конечную точку, использую следующую команду:
 
 ```azurecli
 az spring-cloud app update -n gateway --is-public true
 ```
 
-Наконец, отправьте к приложению **gateway** запрос на получение общедоступного IP-адреса, чтобы убедиться, что приложение запущено:
+2. Отправьте к приложению **gateway** запрос на получение общедоступного IP-адреса, чтобы убедиться, что приложение запущено:
+
+Linux:
 
 ```azurecli
 az spring-cloud app show --name gateway | grep url
 ```
 
-Перейдите по URL-адресу, полученному с помощью предыдущей команды, чтобы запустить приложение PiggyMetrics.
+Windows:
+
+```azurecli
+az spring-cloud app show -s <service name> -g <resource group> -n gateway -o table
+```
+
+3. Перейдите по URL-адресу, полученному с помощью предыдущей команды, чтобы запустить приложение PiggyMetrics.
     ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/launch-app.png)
 
 URL-адрес можно найти на портале Azure. 
 1. Перейдите к службе.
-1. Выберите **Приложения**.
-1. Выберите **шлюз**.
+2. Выберите **Приложения**.
+3. Выберите **шлюз**.
 
     ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app1.png)
-1. Найдите URL-адрес на странице **общих сведений о шлюзе**. ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app2-url.png)
+    
+4. Найдите URL-адрес на странице **общих сведений о шлюзе**. ![Снимок экрана выполнения PiggyMetrics](media/spring-cloud-quickstart-launch-app-cli/navigate-app2-url.png)
 
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-cli-quickstart&step=public-endpoint)

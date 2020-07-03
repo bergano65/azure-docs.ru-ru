@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 10/18/2019
+ms.date: 01/08/2020
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: 14e33bf77144e4cd5728ec85d3012dc0ba717ece
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 37bb28419f23fee2c179171a2e5c0e4e851ac9a0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75945654"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77471760"
 ---
 # <a name="deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -47,7 +47,7 @@ ms.locfileid: "75945654"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этой статьей необходимо запустить PowerShell локально. Необходимо установить модуль Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
@@ -64,14 +64,14 @@ ms.locfileid: "75945654"
 >[!NOTE]
 >Брандмауэр Azure должен быть напрямую подключен к Интернету. Если сеть AzureFirewallSubnet использует стандартный маршрут к локальной сети через BGP, установите пользовательский маршрут 0.0.0.0/0 и задайте для параметра **NextHopType** значение **Интернет**, чтобы обеспечить прямое подключение к Интернету.
 >
->В настоящее время Брандмауэр Azure не поддерживает принудительное туннелирование. Если для вашей конфигурации требуется принудительное туннелирование в локальной сети и вы можете определить префиксы целевых IP-адресов для назначений в Интернете, эти диапазоны можно настроить с помощью локальной сети в качестве следующего прыжка через определяемый пользователем маршрут в AzureFirewallSubnet. Для определения этих маршрутов можно также использовать BGP.
+>Брандмауэр Azure можно настроить для поддержки принудительного туннелирования. Дополнительные сведения см. в статье [принудительное туннелирование в брандмауэре Azure](forced-tunneling.md).
 
 >[!NOTE]
 >Трафик между виртуальными сетями с прямым пирингом передается напрямую, даже если маршрут UDR указывает на Брандмауэр Azure как шлюз по умолчанию. Чтобы маршрутизировать трафик между подсетями к брандмауэру в этом сценарии, в UDR для обеих подсетей нужно явно указать префикс целевой подсети.
 
 Связанную справочную документацию по Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/module/az.network/new-azfirewall).
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="declare-the-variables"></a>Объявление переменных
 
@@ -367,7 +367,7 @@ Get-AzRouteTable `
   -ResourceGroupName $RG1 `
   -Name UDR-DG `
   | Add-AzRouteConfig `
-  -Name "ToSpoke" `
+  -Name "ToFirewall" `
   -AddressPrefix 0.0.0.0/0 `
   -NextHopType "VirtualAppliance" `
   -NextHopIpAddress $AzfwPrivateIP `
@@ -464,7 +464,7 @@ $NIC.IpConfigurations.privateipaddress
 <!---2. Open a Windows PowerShell command prompt on **VM-Onprem**, and ping the private IP for **VM-spoke-01**.
 
    You should get a reply.--->
-Откройте веб-браузер в **VM-Onprem** и перейдите по адресу http://\<частный IP-адрес VM-spoke-01\>.
+Откройте веб-браузер на **виртуальной машине локально**и перейдите к частному IP\<-адресу\>виртуальной машины http://-лучевой-01.
 
 Вы должны увидеть веб-страницу по умолчанию "Службы IIS".
 
@@ -493,8 +493,8 @@ Set-AzFirewall -AzureFirewall $azfw
 
 Вы можете сохранить ресурсы брандмауэра для следующего руководства или, если он больше не нужен, удалить группу ресурсов **FW-Hybrid-Test**, чтобы удалить ресурсы, связанные с брандмауэром.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь вы можете отследить журналы Брандмауэра Azure.
 
-[Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)
+[Руководство. Журналы мониторинга брандмауэра Azure](./tutorial-diagnostics.md)

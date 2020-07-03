@@ -1,0 +1,16 @@
+- name: Создание учетной записи для Удаленной отрисовки Azure
+  href: create-an-account.md
+- name: Получение маркеров доступа к службе
+  href: tokens.md
+- name: Настройка аутентификации
+  href: authentication.md
+- name: Использование внешних API Azure для проверки подлинности
+  href: frontend-apis.md
+- name: Использование REST API управления сеансами
+  href: session-rest-api.md
+- name: Преобразование моделей
+  href: conversion/toc.yml
+- name: Удаленная отрисовка с помощью Unity
+  href: unity/toc.yml
+- name: Создание трассировок производительности на стороне клиента
+  href: performance-tracing.md

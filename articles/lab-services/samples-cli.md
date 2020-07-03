@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.custom: mvc
-ms.openlocfilehash: 35c1a18587ebae1253bd1661a57e21c39f34ee51
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 075b5dc06c59682b33c20b182e0dc585b2727027
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760510"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82097852"
 ---
 # <a name="azure-cli-samples-for-azure-lab-services"></a>Примеры Azure CLI для Службы лабораторий Azure
 
@@ -26,6 +26,6 @@ ms.locfileid: "76760510"
 
 | | |
 |---|---|
-| [Создание и проверка доступности виртуальной машины](scripts/create-verify-virtual-machine-in-lab-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Создает виртуальную машину Windows с минимальной конфигурацией. |
-| [Запуск виртуальной машины](scripts/start-connect-virtual-machine-in-lab-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Запускает виртуальную машину. |
-| [Остановка и удаление виртуальной машины](scripts/stop-delete-virtual-machine-in-lab-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Останавливает и удаляет виртуальную машину. |
+| [Создание и проверка доступности виртуальной машины](scripts/create-verify-virtual-machine-in-lab-cli.md) | Создает виртуальную машину Windows с минимальной конфигурацией. |
+| [Запуск виртуальной машины](scripts/start-connect-virtual-machine-in-lab-cli.md) | Запускает виртуальную машину. |
+| [Остановка и удаление виртуальной машины](scripts/stop-delete-virtual-machine-in-lab-cli.md) | Останавливает и удаляет виртуальную машину. |

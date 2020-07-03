@@ -1,14 +1,14 @@
 ---
 title: Руководство по управлению запросами на портале Azure
 description: Работая с этим учебником, вы создадите запрос Resource Graph и предоставите новый запрос в совместный доступ на портале Azure.
-ms.date: 11/21/2019
+ms.date: 05/20/2020
 ms.topic: tutorial
-ms.openlocfilehash: 00cb3f95112804c81beb6bce6fc35891e6197e60
-ms.sourcegitcommit: 8a2949267c913b0e332ff8675bcdfc049029b64b
+ms.openlocfilehash: e63a92a4570a0713ed65e1090e4d77d25fb10f95
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74303939"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83637752"
 ---
 # <a name="tutorial-create-and-share-an-azure-resource-graph-query-in-the-azure-portal"></a>Руководство по Создание запроса Azure Resource Graph и предоставление общего доступа к нему на портале Azure
 
@@ -151,7 +151,7 @@ Resources
 
 После завершения работы с этим учебником удалите все созданные для него закрытые и общие запросы, если они больше не нужны.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого учебника вы создали закрытые и общие запросы. Чтобы узнать больше о языке Resource Graph, перейдите на страницу сведений о языке запросов.
 

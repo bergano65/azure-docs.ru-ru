@@ -8,13 +8,13 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: victorh
 ms.openlocfilehash: 33dcebf14f4d534962783a30ec94f7ff6529ae0d
-ms.sourcegitcommit: 8e31a82c6da2ee8dafa58ea58ca4a7dd3ceb6132
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74195922"
 ---
-# <a name="deploy-an-azure-firewall-with-availability-zones-using-azure-powershell"></a>Развертывание брандмауэра Azure с Зоны доступности помощью Azure PowerShell
+# <a name="deploy-an-azure-firewall-with-availability-zones-using-azure-powershell"></a>Развертывание Брандмауэра Azure с использованием Зон доступности и Azure PowerShell
 
 Брандмауэр Azure можно настроить во время развертывания. Это позволит охватить несколько зон доступности, что повысит уровень доступности.
 
@@ -58,6 +58,6 @@ New-AzFirewall `
   -Zone 1,2,3
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)
+- [Руководство. Журналы мониторинга брандмауэра Azure](./tutorial-diagnostics.md)

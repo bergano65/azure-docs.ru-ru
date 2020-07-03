@@ -4,17 +4,17 @@ description: В этой статье разработчики решений у
 author: Philmea
 ms.author: philmea
 ms.date: 12/26/2019
-ms.topic: tutorial
+ms.topic: how-to
 ms.custom: mvc
 ms.service: iot-pnp
 services: iot-pnp
 manager: philmea
-ms.openlocfilehash: 485b17ff236de32eab5388629c1bb6044ba19197
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
-ms.translationtype: HT
+ms.openlocfilehash: e349aadfd629202b1c8cdb5c53a88e0a6c2e06de
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75531349"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80159223"
 ---
 # <a name="connect-to-and-interact-with-an-iot-plug-and-play-preview-device"></a>Подключение к устройству IoT Plug and Play (предварительная версия) и взаимодействие с ним
 
@@ -91,7 +91,7 @@ select * from devices where HAS_CAPABILITYMODEL('id without version', version)
 1. На вкладке **Маршруты** выберите **Добавить**.
 1. Введите значение в поле **Имя** и выберите **Конечная точка**. Если вы еще не настроили конечную точку, выберите **Добавить конечную точку**.
 1. В раскрывающемся списке **Источник данных** выберите пункт **Digital Twin Change Events** (События изменения цифрового двойника).
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 В следующем коде JSON показан пример события изменения цифрового двойника:
 
@@ -138,6 +138,6 @@ select * from devices where HAS_CAPABILITYMODEL('id without version', version)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали о решениях службы, взаимодействующих с устройствами IoT Plug and Play, далее мы рекомендуем ознакомиться с [обнаружением моделей](concepts-model-discovery.md).

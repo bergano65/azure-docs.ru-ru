@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 01/31/2020
 ms.author: danlep
 ms.openlocfilehash: e3aeababcd062e315c9d80a35f183173a6fd1273
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77117843"
 ---
 ### <a name="resource-availability"></a>Доступность ресурсов
 
-| OS | Номер SKU GPU | Количество ЦП | максимальная загрузка ЦП; | Максимальный объем памяти (ГБ) | Хранилище (ГБ) |
+| Операционная система | Номер SKU GPU | Количество ЦП | максимальная загрузка ЦП; | Максимальный объем памяти (ГБ) | Хранилище (ГБ) |
 | --- | --- | --- | --- | --- | --- |
 | Linux | K80 | 1 | 6 | 56 | 50 |
 | Linux | K80 | 2 | 12 | 112 | 50 |

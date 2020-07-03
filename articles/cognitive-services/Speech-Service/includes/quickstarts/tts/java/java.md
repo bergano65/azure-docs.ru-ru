@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Синтез речи в службе "Речь" с помощью Java
 titleSuffix: Azure Cognitive Services
-description: ПОДЛЕЖИТ УТОЧНЕНИЮ
+description: TBD
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -11,16 +11,16 @@ ms.topic: include
 ms.date: 10/28/2019
 ms.author: erhopf
 ms.openlocfilehash: a92858d2510a2951575160f64906824694e9c327
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "74818414"
 ---
 **Выберите целевую среду**
 
-#### <a name="java-runtimetabjre"></a>[Среда выполнения Java](#tab/jre)
+#### <a name="java-runtime"></a>[Среда выполнения Java](#tab/jre)
 [!INCLUDE [jre](./jre.md)]
-#### <a name="androidtabandroid"></a>[Android](#tab/android)
+#### <a name="android"></a>[Android](#tab/android)
 [!INCLUDE [android](./android.md)]
 * * *

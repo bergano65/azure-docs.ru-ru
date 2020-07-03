@@ -2,13 +2,13 @@
 title: Типы ресурсов расширения
 description: Список типов ресурсов Azure, используемых для расширения возможностей других типов ресурсов.
 ms.topic: conceptual
-ms.date: 01/20/2020
-ms.openlocfilehash: c14cf6fec2da11534a7358599c79961a3258470b
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.date: 04/06/2020
+ms.openlocfilehash: 3a3fbc531750bec4b16e38f1fe79f613c1b94f5e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76515371"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80754871"
 ---
 # <a name="resource-types-that-extend-capabilities-of-other-resources"></a>Типы ресурсов, расширяющие возможности других ресурсов
 
@@ -24,12 +24,12 @@ ms.locfileid: "76515371"
 - Microsoft. Authorization/checkAccess
 - Microsoft. Authorization/Деняссигнментс
 - Microsoft. Authorization/Финдорфанролеассигнментс
-- Microsoft. Authorization/locks
+- Microsoft.Authorization/locks
 - Microsoft. Authorization/разрешения
 - Microsoft. Authorization/Полициассигнментс
 - Microsoft. Authorization/policyDefinitions
 - Microsoft. Authorization/Полицисетдефинитионс
-- Microsoft. Authorization/roleAssignments
+- Microsoft.Authorization/roleAssignments
 - Microsoft. Authorization/Ролеассигнментсусажеметрикс
 - Microsoft. Authorization/roleDefinitions
 - Microsoft. Billing/Биллингпериодс
@@ -81,7 +81,6 @@ ms.locfileid: "76515371"
 - Microsoft. Гуестконфигуратион/Software
 - Microsoft. Гуестконфигуратион/Софтвареупдатепрофиле
 - Microsoft. Гуестконфигуратион/Софтвареупдатес
-- Microsoft. Insights/Аутоматедекспортсеттингс
 - Microsoft. Insights/базовый план
 - Microsoft. Insights/калкулатебаселине
 - Microsoft. Insights/ДатаколлектионрулеассоЦиатионс
@@ -114,7 +113,7 @@ ms.locfileid: "76515371"
 - Microsoft. Полициинсигхтс/Полицитраккедресаурцес
 - Microsoft. Полициинсигхтс/исправление
 - Microsoft. RecoveryServices/Баккуппротектедитемс
-- Microsoft. RecoveryServices/Репликатионелигибилитиресултс  
+- Microsoft. RecoveryServices/Репликатионелигибилитиресултс    
 - Microsoft. Ресаурцехеалс/Аваилабилитистатусес
 - Microsoft. Ресаурцехеалс/Чилдаваилабилитистатусес
 - Microsoft. Ресаурцехеалс/Чилдресаурцес
@@ -131,7 +130,6 @@ ms.locfileid: "76515371"
 - Microsoft. Security/оценки
 - Microsoft. Security/Комплианцересултс
 - Microsoft. Security/Датаколлектионажентс
-- Microsoft. Security/Датаколлектионресултс
 - Microsoft. Security/Девицесекуритиграупс
 - Microsoft. Security/networkData
 - Microsoft. Security/Сервервулнерабилитяссессментс
@@ -141,20 +139,21 @@ ms.locfileid: "76515371"
 - Microsoft. Секуритинсигхтс/закладки
 - Microsoft. Секуритинсигхтс/cases
 - Microsoft. Секуритинсигхтс/Connects
+- Microsoft. Секуритинсигхтс/Датаконнекторсчеккрекуирементс
 - Microsoft. Секуритинсигхтс/сущности
 - Microsoft. Секуритинсигхтс/Ентитикуериес
+- Microsoft. Секуритинсигхтс/инциденты
 - Microsoft. Секуритинсигхтс/Оффицеконсентс
 - Microsoft. Секуритинсигхтс/параметры
 - Microsoft. Софтвареплан/Хибридусебенефитс
 - Microsoft. Subscription/Креатесубскриптион
-- Microsoft. support/креатесуппорттиккет
 - Microsoft. support/суппорттиккетс
 - Microsoft. WorkloadMonitor/компоненты
 - Microsoft. WorkloadMonitor/Мониторинстанцес
 - Microsoft. WorkloadMonitor/monitors
 - Microsoft. WorkloadMonitor/Нотификатионсеттингс
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Чтобы получить идентификатор ресурса для расширения ресурса в шаблоне Azure Resource Manager, используйте [екстенсионресаурцеид](../templates/template-functions-resource.md#extensionresourceid).
 - Пример создания ресурса расширения в шаблоне см. в разделе подписки на [События сетки событий](/azure/templates/microsoft.eventgrid/2019-06-01/eventsubscriptions).

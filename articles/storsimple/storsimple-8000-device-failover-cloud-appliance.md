@@ -1,5 +1,5 @@
 ---
-title: Отработка отказа и аварийное восстановление на облачное устройство StorSimple | Документация Майкрософт
+title: Отработка отказа и аварийное восстановление на облачное устройство StorSimple
 description: Узнайте, как выполнять отработку отказа физического устройства StorSimple серии 8000 на облачное устройство.
 services: storsimple
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 45c521fd044fa258b8052a3f0de48784cf4160e8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 347b899608d4322a7873b9f80f38ca1c767194d7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60584445"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77468751"
 ---
 # <a name="fail-over-to-your-storsimple-cloud-appliance"></a>Отработка отказа на облачное устройство StorSimple
 
@@ -31,7 +31,7 @@ ms.locfileid: "60584445"
 
 Сведения об отработке отказа с одного физического устройства StorSimple на другое физическое устройство см. в статье [Fail over to a StorSimple physical device](storsimple-8000-device-failover-physical-device.md) (Отработка отказа на физическое устройство StorSimple). Сведения об отработке отказа на то же устройство см. в статье [Fail over to a StorSimple 8000 series physical device](storsimple-8000-device-failover-same-device.md) (Отработка отказа на то же физическое устройство StorSimple).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Обязательно ознакомьтесь с рекомендациями по отработке отказа устройств. Дополнительные сведения см. в статье с [общими рекомендациями по отработке отказа устройств](storsimple-8000-device-failover-disaster-recovery.md).
 
@@ -90,7 +90,7 @@ ms.locfileid: "60584445"
        ![Просмотр целевых контейнеров томов](./media/storsimple-8000-device-failover-disaster-recovery/failover-phy-dev17.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * После отработки отказа, возможно, нужно будет [отключить или удалить устройство StorSimple](storsimple-8000-deactivate-and-delete-device.md).
 

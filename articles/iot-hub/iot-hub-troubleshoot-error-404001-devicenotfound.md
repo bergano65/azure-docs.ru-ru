@@ -9,13 +9,13 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 15aa21c2ec2c11bb251f7208fd22c92ceb859d6d
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76960832"
 ---
-# <a name="404001-devicenotfound"></a>404001 Девиценотфаунд
+# <a name="404001-devicenotfound"></a>404001 DeviceNotFound
 
 В этой статье описываются причины и решения для ошибок **404001 девиценотфаунд** .
 

@@ -3,19 +3,23 @@ title: Указание конечных точек службы Service Fabric
 description: В этой статье поясняется, как описать ресурсы конечной точки в манифесте служб, включая настройку конечных точек HTTPS.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: cc4eedf5e5fee0bbfa0a763e9b9ec0dd25409afa
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 88e71d15829e68bde635f5b4d40224b8fa914f40
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75464186"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81417597"
 ---
-# <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте служб
+# <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
-Манифест служб позволяет объявлять и изменять ресурсы, используемые в службе, не меняя скомпилированный код. Azure Service Fabric поддерживает настройку ресурсов конечных точек для службы. Доступ к ресурсам, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента SecurityGroup. Объявление ресурсов позволяет изменять их при развертывании, т. е. службе не нужно внедрять новый механизм настройки. Определение схемы для файла ServiceManifest.xml устанавливается с пакетом SDK и средствами для Service Fabric в расположении *C:\Program Files\Microsoft SDKs\Service Fabric\schemas\ServiceFabricServiceModel.xsd*.
+Манифест службы позволяет объявлять или изменять ресурсы, используемые службой, без изменения скомпилированного кода. Service Fabric поддерживает настройку ресурсов конечных точек для службы. Доступ к ресурсам, указанным в манифесте служб, можно контролировать в манифесте приложения с помощью элемента SecurityGroup. Объявление ресурсов позволяет изменять их при развертывании, т. е. службе не нужно внедрять новый механизм настройки. Определение схемы для файла ServiceManifest.xml устанавливается с пакетом SDK и средствами для Service Fabric в расположении *C:\Program Files\Microsoft SDKs\Service Fabric\schemas\ServiceFabricServiceModel.xsd*.
 
 ## <a name="endpoints"></a>Конечные точки
 Если ресурс конечной точки определен в манифесте службы, Service Fabric назначает порты из диапазона зарезервированных портов приложений, если порт не указан явным образом. Например, рассмотрим конечную точку *ServiceEndpoint1* , которая указана во фрагменте кода манифеста, приведенном после абзаца. Кроме того, службы также могут запрашивать наличие в ресурсе конкретного порта. Репликам службы, которые выполняются на различных узлах кластера, можно назначить разные номера портов, а реплики службы, выполняющиеся на одном и том же узле, будут совместно используют один порт. Реплики службы при необходимости могут использовать эти порты для репликации и прослушивания клиентских запросов.
+
+При активации службы, которая указывает конечную точку HTTPS, Service Fabric установит запись управления доступом для порта, привязать указанный сертификат сервера к порту, а также предоставит удостоверение, которое служба выполняет как разрешения для закрытого ключа сертификата. Поток активации вызывается при каждом запуске Service Fabric или при изменении объявления сертификата приложения с помощью обновления. Сертификат конечной точки также будет отслеживаться для изменений и продлений, а разрешения будут периодически повторно применены по мере необходимости.
+
+После завершения работы службы Service Fabric очистит запись управления доступом к конечной точке и удалит привязку к сертификату. Однако все разрешения, примененные к закрытому ключу сертификата, не будут очищены.
 
 > [!WARNING] 
 > При проектировании статические порты не должны пересекаться с диапазоном портов приложений, указанным в ClusterManifest. Если указан статический порт, назначьте его за пределами диапазона портов приложения, в противном случае это приведет к конфликтам портов. При использовании выпуска 6.5 CU2 мы выпустим **предупреждение о работоспособности** , когда обнаружите такой конфликт, но разрешите, что развертывание продолжит синхронизироваться с поставленным поведением 6,5. Однако мы можем не допустить развертывания приложения из следующих основных выпусков.
@@ -85,6 +89,7 @@ Service Fabric автоматически создает список управ
       <Endpoint Name="ServiceEndpoint1" Protocol="http"/>
       <Endpoint Name="ServiceEndpoint2" Protocol="http" Port="80"/>
       <Endpoint Name="ServiceEndpoint3" Protocol="https"/>
+      <Endpoint Name="ServiceEndpoint4" Protocol="https" Port="14023"/>
 
       <!-- This endpoint is used by the replicator for replicating the state of your service.
            This endpoint is configured through the ReplicatorSettings config section in the Settings.xml
@@ -106,7 +111,7 @@ Service Fabric автоматически создает список управ
 > При использовании HTTPS не используйте тот же порт и сертификат для разных экземпляров службы (независимо от приложения), развернутых на одном узле. Обновление двух разных служб, использующих один порт в разных экземплярах приложения, приведет к сбою обновлений. Дополнительные сведения. см в статье [Обновление нескольких приложений с помощью конечных точек HTTPS](service-fabric-application-upgrade.md#upgrading-multiple-applications-with-https-endpoints).
 >
 
-Ниже приведен пример ApplicationManifest, который необходимо задать для HTTPS. Требуется предоставить отпечаток для сертификата. EndpointRef является ссылкой на EndpointResource в ServiceManifest, для которого задается протокол HTTPS. Можно добавить несколько элементов Endpointcertificate.  
+Ниже приведен пример ApplicationManifest, демонстрирующий конфигурацию, необходимую для конечной точки HTTPS. Сертификат сервера или конечной точки может быть объявлен по отпечатку или общему имени субъекта, и должно быть указано значение. Ендпоинтреф — это ссылка на Ендпоинтресаурце в ServiceManifest, протокол которой должен быть установлен в протокол HTTPS. Можно добавить несколько элементов Endpointcertificate.  
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,7 +132,8 @@ Service Fabric автоматически создает список управ
     <ServiceManifestRef ServiceManifestName="Stateful1Pkg" ServiceManifestVersion="1.0.0" />
     <ConfigOverrides />
     <Policies>
-      <EndpointBindingPolicy CertificateRef="TestCert1" EndpointRef="ServiceEndpoint3"/>
+      <EndpointBindingPolicy CertificateRef="SslCertByTP" EndpointRef="ServiceEndpoint3"/>
+      <EndpointBindingPolicy CertificateRef="SslCertByCN" EndpointRef="ServiceEndpoint4"/>
     </Policies>
   </ServiceManifestImport>
   <DefaultServices>
@@ -143,7 +149,8 @@ Service Fabric автоматически создает список управ
     </Service>
   </DefaultServices>
   <Certificates>
-    <EndpointCertificate Name="TestCert1" X509FindValue="FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF F0" X509StoreName="MY" />  
+    <EndpointCertificate Name="SslCertByTP" X509FindValue="FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF F0" X509StoreName="MY" />  
+    <EndpointCertificate Name="SslCertByCN" X509FindType="FindBySubjectName" X509FindValue="ServiceFabric-EndpointCertificateBinding-Test" X509StoreName="MY" />  
   </Certificates>
 </ApplicationManifest>
 ```
@@ -170,7 +177,7 @@ Service Fabric автоматически создает список управ
       </Endpoints>
     </ResourceOverrides>
         <Policies>
-           <EndpointBindingPolicy CertificateRef="TestCert1" EndpointRef="ServiceEndpoint"/>
+           <EndpointBindingPolicy CertificateRef="SslCertByTP" EndpointRef="ServiceEndpoint"/>
         </Policies>
   </ServiceManifestImport>
 ```
@@ -187,7 +194,7 @@ Service Fabric автоматически создает список управ
   </Parameters>
 ```
 
-При развертывании приложения эти значения можно передать в качестве объекта ApplicationParameters.  Пример.
+При развертывании приложения эти значения можно передать в качестве объекта ApplicationParameters.  Пример:
 
 ```powershell
 PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -ApplicationTypeName "AppType" -ApplicationTypeVersion "1.0.0" -ApplicationParameter @{Port='1001'; Protocol='https'; Type='Input'; Port1='2001'; Protocol='http'}
@@ -195,7 +202,7 @@ PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -Application
 
 Примечание. Если не заданы значения для ApplicationParameters, берется значение по умолчанию, предоставленное в ServiceManifest для соответствующего параметра EndPointName.
 
-Пример.
+Пример:
 
 Допустим, в ServiceManifest заданы следующие значения:
 

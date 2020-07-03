@@ -1,22 +1,24 @@
 ---
 title: Необходимые условия для API | Azure Marketplace
 description: Предварительные требования для использования API Портала Cloud Partner.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: d3c2d89d3c3561e86047529e5b284e4481fc1652
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.date: 04/08/2020
+ms.author: dsindona
+ms.openlocfilehash: df94cba1f77ae3ea8cf595e7c651af7a69108bb6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819704"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81255980"
 ---
 <a name="api-prerequisites"></a>Предварительные требования для API
 ================
+
+> [!NOTE]
+> Портал Cloud Partner API интегрированы с центром партнеров и продолжат работать после переноса ваших предложений в центр партнеров. Интеграция содержит небольшие изменения. Ознакомьтесь с изменениями, приведенными в [справочнике по портал Cloud Partner API](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-api-overview) , чтобы убедиться, что код будет продолжать работать после перехода в центр партнеров.
 
 Существует два программных ресурса, которые необходимы, чтобы использовать API Портала Cloud Partner: субъект-служба и маркер доступа Azure Active Directory (Azure AD).
 
@@ -42,7 +44,7 @@ ms.locfileid: "73819704"
 3. В раскрывающемся списке **Тип** выберите **Субъект-служба** и добавьте следующие данные:
 
 -   **Понятное имя** для субъекта-службы, например `spAccount`.
--   **Идентификатор приложения**. Чтобы найти этот идентификатор, перейдите на [портал Azure](https://portal.azure.com), выберите **Azure Active Directory**, щелкните **Регистрация приложений** и выберите свое приложение.
+-   **Идентификатор приложения**. Чтобы найти этот идентификатор, перейдите в [портал Azure](https://portal.azure.com), щелкните **Azure Active Directory**, выберите **Регистрация приложений**и щелкните свое приложение.
 -   **Идентификатор клиента**, также известный как **идентификатор каталога**, для клиента Azure AD. Этот идентификатор можно найти на странице Azure Active Directory [портала Azure](https://portal.azure.com) в разделе **Свойства**.
 -   **Идентификатор объекта** субъекта-службы. Этот идентификатор можно получить на портале Azure. Перейдите к **Azure Active Directory**, щелкните **Регистрация приложений**, выберите свое приложение и щелкните имя приложения в разделе **Управляемое приложение в локальном каталоге**. Перейдите на страницу **Свойства**, чтобы найти идентификатор объекта. Убедитесь, что вы копируете не начальный идентификатор объекта, который находится в приложении, а идентификатор объекта в управляемом приложении.
 -   **Роль**, связанная с учетной записью, которая будет использоваться для RBAC.

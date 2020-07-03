@@ -3,16 +3,16 @@ title: Использование Azure Image Builder с коллекцией о
 description: Создание версий образа общей коллекции Azure с помощью Azure Image Builder и Azure PowerShell.
 author: cynthn
 ms.author: cynthn
-ms.date: 01/14/2020
-ms.topic: article
+ms.date: 05/05/2020
+ms.topic: how-to
 ms.service: virtual-machines-windows
-manager: gwallace
-ms.openlocfilehash: d5856780d0d9f1a1943bca1c2f076bb3ec914e1d
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.subservice: imaging
+ms.openlocfilehash: 89c93d83631884cab1143a520fea01246f1b5e89
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76263359"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82871823"
 ---
 # <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительная версия: создание образа Windows и его распространение в общую коллекцию образов 
 
@@ -20,7 +20,7 @@ ms.locfileid: "76263359"
 
 Для настройки образа мы будем использовать JSON-шаблон. JSON-файл, который мы используем: [армтемплатевинсиг. JSON](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json). Мы будем скачивать и редактировать локальную версию шаблона, поэтому эта статья написана с помощью локального сеанса PowerShell.
 
-Чтобы распространить образ в общую коллекцию образов, шаблон использует [шаредимаже](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#distribute-sharedimage) в качестве значения для раздела `distribute` шаблона.
+Чтобы распространить образ в общую коллекцию образов, шаблон использует [шаредимаже](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#distribute-sharedimage) в качестве значения для `distribute` раздела шаблона.
 
 Построитель образов Azure автоматически запускает Sysprep для подготовки образа, это универсальная команда Sysprep, которую можно [переопределить](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#vms-created-from-aib-images-do-not-create-successfully) при необходимости. 
 
@@ -43,9 +43,9 @@ Register-AzProviderFeature -FeatureName VirtualMachineTemplatePreview -ProviderN
 Get-AzProviderFeature -FeatureName VirtualMachineTemplatePreview -ProviderNamespace Microsoft.VirtualMachineImages
 ```
 
-Дождитесь `Registered` `RegistrationState` перед переходом к следующему шагу.
+`RegistrationState` Дождитесь до перехода к следующему `Registered` шагу.
 
-Проверьте регистрацию поставщиков. Убедитесь, что каждый из них возвращает `Registered`.
+Проверьте регистрацию поставщиков. Убедитесь, что каждый `Registered`из них возвращает.
 
 ```powershell
 Get-AzResourceProvider -ProviderNamespace Microsoft.VirtualMachineImages | Format-table -Property ResourceTypes,RegistrationState
@@ -54,7 +54,7 @@ Get-AzResourceProvider -ProviderNamespace Microsoft.Compute | Format-table -Prop
 Get-AzResourceProvider -ProviderNamespace Microsoft.KeyVault | Format-table -Property ResourceTypes,RegistrationState
 ```
 
-Если они не возвращают `Registered`, для регистрации поставщиков используйте следующую команду:
+Если они не возвращаются `Registered`, используйте следующую команду для регистрации поставщиков:
 
 ```powershell
 Register-AzResourceProvider -ProviderNamespace Microsoft.VirtualMachineImages
@@ -89,24 +89,58 @@ $imageTemplateName="helloImageTemplateWin02ps"
 # Distribution properties object name (runOutput).
 # This gives you the properties of the managed image on completion.
 $runOutputName="winclientR01"
-```
 
-
-
-## <a name="create-the-resource-group"></a>Создание группы ресурсов
-
-Создайте группу ресурсов и предоставьте разрешение Azure Image Builder для создания ресурсов в этой группе ресурсов.
-
-```powershell
+# Create a resource group for Image Template and Shared Image Gallery
 New-AzResourceGroup `
    -Name $imageResourceGroup `
    -Location $location
-New-AzRoleAssignment `
-   -ObjectId ef511139-6170-438e-a6e1-763dc31bdf74 `
-   -Scope /subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup `
-   -RoleDefinitionName Contributor
 ```
 
+
+## <a name="create-a-user-assigned-identity-and-set-permissions-on-the-resource-group"></a>Создание назначенного пользователем удостоверения и задание разрешений для группы ресурсов
+Построитель образов будет использовать предоставленное [удостоверение пользователя](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell) для внедрения образа в галерею образов Azure (SIG). В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа в SIG. Затем определение роли будет назначено удостоверению пользователя.
+
+```powershell
+# setup role def names, these need to be unique
+$timeInt=$(get-date -UFormat "%s")
+$imageRoleDefName="Azure Image Builder Image Def"+$timeInt
+$idenityName="aibIdentity"+$timeInt
+
+## Add AZ PS module to support AzUserAssignedIdentity
+Install-Module -Name Az.ManagedServiceIdentity
+
+# create identity
+New-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName
+
+$idenityNameResourceId=$(Get-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName).Id
+$idenityNamePrincipalId=$(Get-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName).PrincipalId
+```
+
+
+### <a name="assign-permissions-for-identity-to-distribute-images"></a>Назначение разрешений удостоверению для распространения изображений
+
+Эта команда загрузит шаблон определения роли Azure и обновит шаблон, указав параметры, указанные ранее.
+
+```powershell
+$aibRoleImageCreationUrl="https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/12_Creating_AIB_Security_Roles/aibRoleImageCreation.json"
+$aibRoleImageCreationPath = "aibRoleImageCreation.json"
+
+# download config
+Invoke-WebRequest -Uri $aibRoleImageCreationUrl -OutFile $aibRoleImageCreationPath -UseBasicParsing
+
+((Get-Content -path $aibRoleImageCreationPath -Raw) -replace '<subscriptionID>',$subscriptionID) | Set-Content -Path $aibRoleImageCreationPath
+((Get-Content -path $aibRoleImageCreationPath -Raw) -replace '<rgName>', $imageResourceGroup) | Set-Content -Path $aibRoleImageCreationPath
+((Get-Content -path $aibRoleImageCreationPath -Raw) -replace 'Azure Image Builder Service Image Creation Role', $imageRoleDefName) | Set-Content -Path $aibRoleImageCreationPath
+
+# create role definition
+New-AzRoleDefinition -InputFile  ./aibRoleImageCreation.json
+
+# grant role definition to image builder service principal
+New-AzRoleAssignment -ObjectId $idenityNamePrincipalId -RoleDefinitionName $imageRoleDefName -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
+
+### NOTE: If you see this error: 'New-AzRoleDefinition: Role definition limit exceeded. No more role definitions can be created.' See this article to resolve:
+https://docs.microsoft.com/azure/role-based-access-control/troubleshooting
+```
 
 
 ## <a name="create-the-shared-image-gallery"></a>Создание Общей коллекции образов
@@ -173,13 +207,13 @@ Invoke-WebRequest `
    -replace '<region1>',$location | Set-Content -Path $templateFilePath
 (Get-Content -path $templateFilePath -Raw ) `
    -replace '<region2>',$replRegion2 | Set-Content -Path $templateFilePath
-
+((Get-Content -path $templateFilePath -Raw) -replace '<imgBuilderId>',$idenityNameResourceId) | Set-Content -Path $templateFilePath
 ```
 
 
 ## <a name="create-the-image-version"></a>Создание версии образа
 
-Шаблон должен быть отправлен в службу, при этом будут скачаны зависимые артефакты, например сценарии, и сохраните их в промежуточной группе ресурсов с префиксом *IT_* .
+Шаблон должен быть отправлен в службу, при этом будут скачаны зависимые артефакты, например сценарии, и сохраните их в промежуточной группе ресурсов с префиксом *IT_*.
 
 ```powershell
 New-AzResourceGroupDeployment `
@@ -261,7 +295,7 @@ New-AzVM -ResourceGroupName $vmResourceGroup -Location $replRegion2 -VM $vmConfi
 dir c:\
 ```
 
-Вы увидите каталог с именем `buildActions`, созданный во время настройки образа.
+Вы должны увидеть каталог с именем `buildActions` , созданный во время настройки образа.
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
@@ -270,7 +304,7 @@ dir c:\
 
 Это приведет к удалению созданного образа вместе со всеми остальными файлами ресурсов. Убедитесь, что вы завершили работу с этим развертыванием, прежде чем удалять ресурсы.
 
-Сначала удалите шаблон группы ресурсов, иначе промежуточная группа ресурсов (*IT_* ), используемая AIB, не будет очищена.
+Сначала удалите шаблон группы ресурсов, иначе промежуточная группа ресурсов (*IT_*), используемая AIB, не будет очищена.
 
 Получение ResourceID шаблона образа. 
 
@@ -284,12 +318,30 @@ $resTemplateId = Get-AzResource -ResourceName $imageTemplateName -ResourceGroupN
 Remove-AzResource -ResourceId $resTemplateId.ResourceId -Force
 ```
 
+Удаление назначения роли
+
+```powerShell
+Remove-AzRoleAssignment -ObjectId $idenityNamePrincipalId -RoleDefinitionName $imageRoleDefName -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
+```
+
+удалить определения
+
+```powerShell
+Remove-AzRoleDefinition -Name "$idenityNamePrincipalId" -Force -Scope "/subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup"
+```
+
+удалить удостоверение
+
+```powerShell
+Remove-AzUserAssignedIdentity -ResourceGroupName $imageResourceGroup -Name $idenityName -Force
+```
+
 Удалите группу ресурсов.
 
 ```powerShell
 Remove-AzResourceGroup $imageResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
 Сведения о том, как обновить созданную версию образа, см. в статье [Использование Azure Image Builder для создания другой версии образа](image-builder-gallery-update-image-version.md).

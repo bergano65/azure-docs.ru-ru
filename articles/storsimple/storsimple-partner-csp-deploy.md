@@ -1,5 +1,5 @@
 ---
-title: Обзор Microsoft Azure StorSimple и программы поставщика облачных решений | Документация Майкрософт
+title: Развертывание виртуального массива StorSimple для программы поставщика облачных решений
 description: Общие сведения о StorSimple и CSP для партнеров StorSimple.
 services: storsimple
 documentationcenter: NA
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
-ms.openlocfilehash: 0dac86a696599a391cb243ad11e16931e00b8921
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7f1927a67127766c72be463c283225135b2a2aad
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60629988"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77466915"
 ---
 # <a name="deploy-storsimple-virtual-array-for-cloud-solution-provider-program"></a>Развертывание виртуального массива StorSimple для программы поставщика облачных решений
 
@@ -29,7 +29,7 @@ ms.locfileid: "60629988"
 
 В этой статье описывается, как партнер CSP может добавить клиента или новую подписку имеющегося клиента, а затем создать службу для развертывания виртуального массива StorSimple в CSP.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы убедитесь, что выполнены следующие условия:
 
@@ -40,11 +40,11 @@ ms.locfileid: "60629988"
 
 При добавлении клиента автоматически создается подписка. Чтобы добавить клиента (и автоматически создать подписку), на портале партнеров сделайте следующее:
 
-1. Перейдите в [Центр партнеров](https://partnercenter.microsoft.com/) и выполните вход с использованием учетных данных CSP. Нажмите на кнопку **Панель мониторинга**.
+1. Перейдите в [Центр партнеров](https://partnercenter.microsoft.com/) и выполните вход с использованием учетных данных CSP. Нажмите кнопку **Панель мониторинга**.
 
      ![Панель мониторинга в Центре партнеров](./media/storsimple-partner-csp-deploy/image1.png)
                               
-2. В левой области щелкните **Клиенты**. В правой области щелкните **Добавить клиентов**. Введите сведения о клиенте. Щелкните **Далее: Подписки** для создания подписки клиента.
+2. В левой области щелкните **Клиенты**. В правой области щелкните **Добавить клиентов**. Введите сведения о клиенте. Щелкните **Далее: подписки**, чтобы создать подписку клиента.
 
     ![Добавление клиента](./media/storsimple-partner-csp-deploy/image2.png)
 
@@ -77,7 +77,7 @@ ms.locfileid: "60629988"
 
 В некоторых случаях, когда у вас уже есть клиент, вам может понадобиться добавить подписку. Чтобы добавить подписку для имеющегося клиента, на портале партнеров сделайте следующее:
 
-1. Перейдите в [Центр партнеров](https://partnercenter.microsoft.com/) и выполните вход с использованием учетных данных CSP. Нажмите на кнопку **Панель мониторинга**.
+1. Перейдите в [Центр партнеров](https://partnercenter.microsoft.com/) и выполните вход с использованием учетных данных CSP. Нажмите кнопку **Панель мониторинга**.
 
      ![Панель мониторинга в Центре партнеров](./media/storsimple-partner-csp-deploy/image1.png)
                               
@@ -101,7 +101,7 @@ ms.locfileid: "60629988"
 
     ![Создание службы диспетчера устройств StorSimple](./media/storsimple-partner-csp-deploy/image8.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Если у вас есть дополнительные вопросы о StorSimple в CSP, перейдите к [StorSimple в CSP: простом едином входе Azure Active Directory](storsimple-partner-csp-faq.md).
+- Если у вас есть дополнительные вопросы о StorSimple в CSP, перейдите к статье [StorSimple in CSP: Frequently asked questions](storsimple-partner-csp-faq.md) (StorSimple в CSP: часто задаваемые вопросы).
 - Если вы уже готовы развернуть StorSimple, перейдите к статье [Deploy your StorSimple in CSP](storsimple-partner-csp-deploy.md) (Развертывание StorSimple в рамках программы CSP).

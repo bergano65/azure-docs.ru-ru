@@ -1,19 +1,17 @@
 ---
 title: Настройка оповещений о доступности с помощью Azure Application Insights | Документация Майкрософт
 description: Настройка веб-тестов в Application Insights. Получение оповещений, когда веб-сайт становится недоступным или медленно реагирует на запросы.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 06/19/2019
 ms.reviewer: sdash
-ms.openlocfilehash: a1637ac82c33c2a541bcec9f2848a248c29d56ca
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 5af6aec2267384c37f664522d075bf26c632e7e9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74872678"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81382884"
 ---
 # <a name="availability-alerts"></a>Оповещения о доступности
 
@@ -36,6 +34,9 @@ ms.locfileid: "74872678"
 
    ![Изменить после сохранения](./media/availability-alerts/set-action-group.png)
 
+> [!NOTE]
+> Оповещения о доступности, созданные с помощью этого интерфейса, основаны на состоянии. Это означает, что при выполнении условий предупреждения создается одно предупреждение, если сайт обнаруживается как недоступный. Если сайт по-прежнему работает при следующем вычислении условий оповещения, это не приведет к созданию нового предупреждения. Поэтому, если ваш сайт не работает в течение часа и вы настроили оповещение по электронной почте, вы получите только сообщение электронной почты, когда сайт выйдет из системы, и последующее сообщение электронной почты при резервном копировании сайта. Вы не получите непрерывные оповещения о том, что сайт по-прежнему недоступен.
+
 ### <a name="alert-on-x-out-of-y-locations-reporting-failures"></a>Оповещение о том, что X из Y расположений сообщают о сбоях
 
 Правило генерации оповещений о том, что X из Y расположений сообщают о сбоях, включено по умолчанию в [новом унифицированном интерфейсе оповещений](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-unified-alerts) при создании нового теста доступности. Вы можете отказаться, выбрав "классический" вариант или отключив правило генерации оповещений.
@@ -50,7 +51,7 @@ ms.locfileid: "74872678"
 
 1. Выберите ресурс Application Insights в интерфейсе метрик и укажите метрику доступности:
 
-    ![Выбор метрик доступности](./media/availability-alerts/select-metric.png)
+    ![Выбор метрики доступности](./media/availability-alerts/select-metric.png)
 
 2. Команда настройки оповещений в меню перенаправит вас на новый интерфейс, где можно выбрать определенные тесты или расположения, чтобы настроить правило генерации оповещений. Здесь можно также настроить группы действий для этого правила.
 
@@ -66,11 +67,11 @@ ms.locfileid: "74872678"
 
 Чтобы автоматизировать этот процесс с помощью шаблонов Azure Resource Manager, см. документацию [Создание оповещения метрики с помощью шаблона диспетчер ресурсов](../../azure-monitor/platform/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert) .
 
-## <a name="troubleshooting"></a>Устранение неисправностей
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Выделенная [статья по устранению неполадок](troubleshoot-availability.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Многошаговые веб-тесты](availability-multistep.md)
 * [Веб-тесты проверки связи URL](monitor-web-app-availability.md)

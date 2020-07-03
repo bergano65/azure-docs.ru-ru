@@ -1,18 +1,17 @@
 ---
 title: Анализ текстовых данных в журналах Azure Monitor | Документация Майкрософт
 description: Описывает различные варианты анализа данных журнала в записях Azure Monitor во время сбора данных и их извлечения в запросе, сравнивая относительные преимущества каждого.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 12/04/2018
-ms.openlocfilehash: 82ad197a1f64040dfb91aa73d7a6dfd4210f99a1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: d7a37d51c411488231205fd036f9a287f5206ce5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75365280"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77672452"
 ---
 # <a name="parse-text-data-in-azure-monitor-logs"></a>Анализ текстовых данных в журналах Azure Monitor
 Некоторые данные журнала, собранные Azure Monitor, будут содержать несколько фрагментов информации в одном свойстве. Анализ этих данных в нескольких свойствах облегчает использование в запросах. Типичным примером является [особый журнал](../../log-analytics/log-analytics-data-sources-custom-logs.md), который собирает всю запись журнала с несколькими значениями в одно свойство. Создавая отдельные свойства для разных значений, вы можете выполнять поиск и вычисления в каждом из них.
@@ -137,7 +136,7 @@ MyCustomCSVLog_CL
 ## <a name="parse-predefined-structures-in-a-query"></a>Выполнение анализа предопределенных структур в запросе
 Если ваши данные отформатированы в известной структуре, вы можете использовать одну из функций в [языке запросов Kusto](/azure/kusto/query/) для анализа предопределенных структур:
 
-- [JSON](/azure/kusto/query/parsejsonfunction)
+- [ФОРМАТ](/azure/kusto/query/parsejsonfunction)
 - [XML](/azure/kusto/query/parse-xmlfunction)
 - [IРv4](/azure/kusto/query/parse-ipv4function)
 - [URL-адрес](/azure/kusto/query/parseurlfunction)
@@ -188,5 +187,5 @@ MyCustomCSVLog
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше о [запросах журнала](log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.

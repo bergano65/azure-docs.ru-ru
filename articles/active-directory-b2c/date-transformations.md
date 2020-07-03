@@ -2,20 +2,20 @@
 title: Примеры преобразования "утверждения даты" для пользовательских политик
 description: Примеры преобразования "утверждения даты" для схемы Azure Active Directory B2C в схеме "инфраструктура процедур идентификации" (инфраструктура процедур идентификации).
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/03/2020
-ms.author: marsma
+ms.date: 02/16/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b831a3175e1dc8b19395d1c923b076ac9428690c
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: c02ac9392d6f3f95deef38ff86250e96dfb76d96
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982914"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79476694"
 ---
 # <a name="date-claims-transformations"></a>Преобразования утверждений даты
 
@@ -29,13 +29,13 @@ ms.locfileid: "76982914"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | leftOperand | string | Тип первого утверждения, который должен быть больше (позже) второго утверждения. |
-| InputClaim | rightOperand | string | Тип второго утверждения, который должен быть меньше (раньше) первого утверждения. |
+| InputClaim | leftOperand | строка | Тип первого утверждения, который должен быть больше (позже) второго утверждения. |
+| InputClaim | rightOperand | строка | Тип второго утверждения, который должен быть меньше (раньше) первого утверждения. |
 | InputParameter | AssertIfEqualTo | Логическое | Указывает, выполняется ли это утверждение, если левый операнд равен правому. |
 | InputParameter | AssertIfRightOperandIsNotPresent | Логическое | Указывает, выполняется ли это утверждение, если правый операнд отсутствует. |
-| InputParameter | TreatAsEqualIfWithinMillseconds | int | Указывает количество миллисекунд между двумя датами и временем, после которого они считаются равными (например, чтобы учесть разницу в показаниях часов). |
+| InputParameter | TreatAsEqualIfWithinMillseconds | INT | Указывает количество миллисекунд между двумя датами и временем, после которого они считаются равными (например, чтобы учесть разницу в показаниях часов). |
 
-Преобразование утверждений **AssertDateTimeIsGreaterThan** всегда выполняется из [технического профиля проверки](validation-technical-profile.md), вызываемого с помощью [самоподтвержденного технического профиля](self-asserted-technical-profile.md). В метаданных самоподтвержденного технического профиля **DateTimeGreaterThan** задаются сообщения об ошибках, которые технический профиль отображает пользователю.
+Преобразование утверждений **AssertDateTimeIsGreaterThan** всегда выполняется из [технического профиля проверки](validation-technical-profile.md), вызываемого с помощью [самоподтвержденного технического профиля](self-asserted-technical-profile.md). В метаданных самоподтвержденного технического профиля **DateTimeGreaterThan** задаются сообщения об ошибках, которые технический профиль отображает пользователю. Сообщения об ошибках можно [локализовать](localization-string-ids.md#claims-transformations-error-messages).
 
 ![Выполнение AssertStringClaimsAreEqual](./media/date-transformations/assert-execution.png)
 
@@ -81,8 +81,8 @@ ms.locfileid: "76982914"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **leftOperand**: 2018-10-01T15:00:00.0000000Z
-    - **rightOperand**: 2018-10-01T14:00:00.0000000Z
+    - **лефтоперанд**: 2020-03-01T15:00:00.0000000 z
+    - **ригхтоперанд**: 2020-03-01T14:00:00.0000000 z
 - Результат: возникла ошибка.
 
 ## <a name="convertdatetodatetimeclaim"></a>ConvertDateToDateTimeClaim
@@ -110,11 +110,11 @@ ms.locfileid: "76982914"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **inputClaim**: 2019-06-01
+    - **inputClaim**: 2020-15-03
 - Исходящие утверждения:
-    - **outputClaim**: 1559347200 (1 Июня 2019 г., 00:00:00)
+    - **outputClaim**: 2020-15-03T00:00:00.0000000 z
 
-## <a name="convertdatetimetodateclaim"></a>конвертдатетиметодатеклаим 
+## <a name="convertdatetimetodateclaim"></a>конвертдатетиметодатеклаим
 
 Преобразует тип данных DateTime в **дату** - **время** . Преобразование «утверждения» удаляет формат времени из даты.
 
@@ -123,7 +123,7 @@ ms.locfileid: "76982914"
 | InputClaim | InputClaim | dateTime | ClaimType, который необходимо преобразовать. |
 | outputClaim | outputClaim | Дата | ClaimType, который создается после вызова ClaimsTransformation. |
 
-В следующем примере показано преобразование утверждения `systemDateTime` (тип данных dateTime) в другое утверждение `systemDate` (тип данных Date).
+В следующем примере показано преобразование утверждения `systemDateTime` (тип данных DateTime) в другое утверждение `systemDate` (тип данных Date).
 
 ```XML
 <ClaimsTransformation Id="ConvertToDate" TransformationMethod="ConvertDateTimeToDateClaim">
@@ -139,9 +139,9 @@ ms.locfileid: "76982914"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-  - **inputClaim**: 1559347200 (1 июня 2019 12:00:00 AM)
+  - **inputClaim**: 2020-15-03T11:34:22.0000000 z
 - Исходящие утверждения:
-  - **outputClaim**: 2019-06-01
+  - **outputClaim**: 2020-15-03
 
 ## <a name="getcurrentdatetime"></a>GetCurrentDateTime
 
@@ -162,7 +162,7 @@ ms.locfileid: "76982914"
 ### <a name="example"></a>Пример
 
 * Исходящие утверждения:
-    * **currentDateTime**: 1534418820 (16 августа 2018 г., 11:27:00)
+    * **куррентдатетиме**: 2020-15-03T11:40:35.0000000 z
 
 ## <a name="datetimecomparison"></a>DateTimeComparison
 
@@ -172,8 +172,8 @@ ms.locfileid: "76982914"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | firstDateTime | dateTime | Первое значение dateTime для сравнения со вторым значением dateTime. При значении NULL возникает исключение. |
 | InputClaim | secondDateTime | dateTime | Второе значение dateTime для сравнения с первым значением dateTime. Значение NULL обрабатывается как текущее значение dateTime. |
-| InputParameter | оператор | string | Одно из следующих значений: "same", "later than" или "earlier than" ("равно", "позже" или "раньше"). |
-| InputParameter | timeSpanInSeconds | int | Добавление временного диапазона к первым дате и времени. |
+| InputParameter | оператор | строка | Одно из следующих значений: "same", "later than" или "earlier than" ("равно", "позже" или "раньше"). |
+| InputParameter | timeSpanInSeconds | INT | Добавление временного диапазона к первым дате и времени. |
 | outputClaim | набор по | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
 
 Это преобразование позволяет определить, являются ли два утверждения ClaimType равными, больше (позже) или меньше (раньше) друг друга. Например, вы можете сохранить время, когда пользователь последний раз принимал ваши условия предоставления услуг (TOS). Через 3 месяца вы можете попросить пользователя принять TOS еще раз.
@@ -198,8 +198,8 @@ ms.locfileid: "76982914"
 ### <a name="example"></a>Пример
 
 - Входящие утверждения:
-    - **firstDateTime**: 2018-01-01T00:00:00.100000Z
-    - **secondDateTime**: 2018-04-01T00:00:00.100000Z
+    - **фирстдатетиме**: 2020-01-01T00:00:00.100000 z
+    - **секонддатетиме**: 2020-04-01T00:00:00.100000 z
 - Входные параметры:
     - **operator**: later than
     - **timeSpanInSeconds**: 7776000 (90 дней)

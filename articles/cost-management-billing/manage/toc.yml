@@ -83,24 +83,30 @@
       items:
         - name: Начало работы на портале Azure EA
           href: ea-portal-get-started.md
-        - name: Интерпретация счета EA
-          href: ../understand/review-enterprise-agreement-bill.md
         - name: Роли EA в Azure
           href: understand-ea-roles.md
         - name: Администрирование на портале Azure EA
           href: ea-portal-administration.md
+        - name: Администрирование на Azure EA Portal для партнеров
+          href: ea-partner-portal-administration.md
+        - name: Операции переноса в рамках Azure Enterprise
+          href: ea-transfers.md
         - name: Задачи EA в клиентском соглашении Майкрософт
           href: mca-enterprise-operations.md
         - name: Соглашения и изменения для Azure EA
           href: ea-portal-agreements.md
         - name: Счета на корпоративную регистрацию
           href: ea-portal-enrollment-invoices.md
+        - name: Цены в рамках Azure EA
+          href: ea-pricing-overview.md
         - name: REST API Azure Enterprise
           href: ea-portal-rest-apis.md
         - name: Зарезервированные экземпляры виртуальной машины Azure EA
           href: ea-portal-vm-reservations.md
         - name: Устранение неполадок с доступом к порталу Azure EA
           href: ea-portal-troubleshoot.md
+        - name: Azure Marketplace
+          href: ea-azure-marketplace.md
 - name: Диагностика
   items:
     - name: Подписки не найдены
@@ -109,7 +115,7 @@
       href: billing-troubleshoot-azure-payment-issues.md
     - name: Карта не принимается
       href: troubleshoot-declined-card.md
-    - name: Проблемы с регистрацией
+    - name: Проблемы при регистрации учетной записи Azure
       href: troubleshoot-azure-sign-up.md
     - name: Проблемы со входом в подписку
       href: troubleshoot-sign-in-issue.md

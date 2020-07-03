@@ -7,12 +7,12 @@ ms.date: 05/16/2018
 ms.topic: conceptual
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: 29b3ed46ffe7f2236fc63d65ed49385b29b1a08a
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.openlocfilehash: a05fbf6e1908f88014cd8da99fafb875de033f45
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73889482"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79499311"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 
@@ -36,17 +36,17 @@ ms.locfileid: "73889482"
 
 Администраторы клиента могут использовать колонку устройств Интернета вещей расширения Центра Интернета вещей для удаления устройства. Эта операция также удалит все данные, связанные с этим устройством.
 
-Выполнять операции удаления для устройств можно также с помощью REST API. Дополнительные сведения см. в статье [Service - Delete Device](/rest/api/iothub/service/deletedevice) (Служба. Удаление устройства).
+Выполнять операции удаления для устройств можно также с помощью REST API. Дополнительные сведения см. в статье [Service - Delete Device](/rest/api/iothub/service/registrymanager/deletedevice) (Служба. Удаление устройства).
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
 
 Администраторы клиента могут использовать копирование и вставку в области устройства IoT в расширении центра Интернета вещей Azure в портал Azure для экспорта данных, связанных с устройством.
 
-Выполнять операции экспорта для устройств можно также с помощью REST API. Дополнительные сведения см. в [Service - Get Device](/rest/api/iothub/service/getdevice) (Служба. Получение сведений об устройстве).
+Выполнять операции экспорта для устройств можно также с помощью REST API. Дополнительные сведения см. в [Service - Get Device](/rest/api/iothub/service/registrymanager/getdevice) (Служба. Получение сведений об устройстве).
 
 > [!NOTE]
 > При использовании корпоративных служб корпорация Майкрософт создает некоторые данные, известные как создаваемые системой журналы. Некоторые создаваемые системой журналы Центра Интернета вещей недоступны и не подлежат экспорту администраторами клиента. Эти журналы содержат сведения о фактических действиях, выполненных в службе, и диагностические данные, связанные с отдельными устройствами.
 
 ## <a name="links-to-additional-documentation"></a>Ссылки на дополнительную документацию
 
-Полную документацию по API служб Центра Интернета вещей см. [здесь](https://docs.microsoft.com/rest/api/iothub/service).
+Полную документацию по API служб Центра Интернета вещей см. [здесь](https://docs.microsoft.com/rest/api/iothub/service/configuration).

@@ -3,20 +3,20 @@ title: Пользовательские проверки электронной 
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить электронное письмо с проверкой подлинности, отправляемое клиентам при регистрации для использования приложений с поддержкой Azure AD B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/05/2020
-ms.author: marsma
+ms.date: 03/05/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2bda00924015bf5abc616b7c346eacfeda53c2ed
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 6cc0508a63f26b955ac5e0ebf3ef58a184a35997
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77045942"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78671632"
 ---
 # <a name="custom-email-verification-in-azure-active-directory-b2c"></a>Настраиваемая проверка электронной почты в Azure Active Directory B2C
 
@@ -45,17 +45,17 @@ ms.locfileid: "77045942"
 1. Введите **имя** ключа политики. Например, `SendGridSecret`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
 1. В поле **Секрет** введите ранее записанный секрет клиента.
 1. Для параметра **Использование ключа** выберите `Signature`.
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 ## <a name="create-sendgrid-template"></a>Создание шаблона SendGrid
 
 После создания учетной записи SendGrid и ключа API SendGrid, хранящегося в ключе политики Azure AD B2C, создайте [динамический шаблон транзакций](https://sendgrid.com/docs/ui/sending-email/how-to-send-an-email-with-dynamic-transactional-templates/)SendGrid.
 
 1. На сайте SendGrid откройте страницу [шаблоны транзакций](https://sendgrid.com/dynamic_templates) и выберите **создать шаблон**.
-1. Введите уникальное имя шаблона, например `Verification email`, а затем нажмите кнопку **сохранить**.
+1. Введите уникальное имя шаблона, например `Verification email` , и нажмите кнопку **сохранить**.
 1. Чтобы начать редактирование нового шаблона, выберите **Добавить версию**.
 1. Выберите **Редактор кода** и **Продолжайте работу**.
-1. В редакторе HTML вставьте следующий шаблон HTML или используйте собственный. Параметры `{{otp}}` и `{{email}}` будут динамически заменены значением одноразового пароля и адресом электронной почты пользователя.
+1. В редакторе HTML вставьте следующий шаблон HTML или используйте собственный. Параметры `{{otp}}` и `{{email}}` будут заменены динамическими значениями одноразового пароля и адресом электронной почты пользователя.
 
     ```HTML
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -158,7 +158,7 @@ ms.locfileid: "77045942"
 
 ## <a name="add-azure-ad-b2c-claim-types"></a>Добавление типов утверждений Azure AD B2C
 
-В политике добавьте следующие типы утверждений в элемент `<ClaimsSchema>` в `<BuildingBlocks>`.
+В политике добавьте следующие типы утверждений в `<ClaimsSchema>` элемент в. `<BuildingBlocks>`
 
 Эти типы утверждений необходимы для создания и проверки адреса электронной почты с помощью кода одноразового пароля (OTP).
 
@@ -185,11 +185,11 @@ ms.locfileid: "77045942"
 
 Структура объекта JSON определяется идентификаторами в точечной нотации InputParameters и Трансформатионклаимтипес Inputclaim. Числа в точечной нотации подразумевают массивы. Значения берутся из значений Inputclaim и свойств InputParameters "" value ". Дополнительные сведения о преобразованиях утверждений JSON см. в разделе [преобразования утверждений JSON](json-transformations.md).
 
-Добавьте следующее преобразование утверждений в элемент `<ClaimsTransformations>` в `<BuildingBlocks>`. Внесите следующие изменения в XML-код преобразования утверждений.
+Добавьте следующее преобразование заявок в `<ClaimsTransformations>` элемент в. `<BuildingBlocks>` Внесите следующие изменения в XML-код преобразования утверждений.
 
-* Обновите значение `template_id` InputParameter, указав идентификатор шаблона транзакций SendGrid, который вы создали ранее в [шаблоне Create SendGrid](#create-sendgrid-template).
-* Обновите значение адреса `from.email`. Используйте допустимый адрес электронной почты, чтобы предотвратить пометку сообщения электронной почты как спама.
-* Обновите значение параметра входной строки темы `personalizations.0.dynamic_template_data.subject` со строкой темы, подходящей для вашей организации.
+* Обновите `template_id` значение InputParameter, указав идентификатор шаблона транзакций SendGrid, который вы создали ранее в [шаблоне Create SendGrid](#create-sendgrid-template).
+* Обновите `from.email` значение адреса. Используйте допустимый адрес электронной почты, чтобы предотвратить пометку сообщения электронной почты как спама.
+* Обновите значение входного `personalizations.0.dynamic_template_data.subject` параметра строки темы со строкой темы, подходящей для вашей организации.
 
 ```XML
 <ClaimsTransformation Id="GenerateSendGridRequestBody" TransformationMethod="GenerateJson">
@@ -213,7 +213,7 @@ ms.locfileid: "77045942"
 
 ## <a name="add-datauri-content-definition"></a>Добавить определение содержимого DataUri
 
-Под преобразованиями утверждений в `<BuildingBlocks>`добавьте следующий [контентдефинитион](contentdefinitions.md) для ссылки на URI данных версии 2.0.0:
+Под преобразованиями утверждений в `<BuildingBlocks>`добавьте следующие [контентдефинитион](contentdefinitions.md) для ссылки на URI данных версии 2.0.0:
 
 ```XML
 <ContentDefinitions>
@@ -229,14 +229,14 @@ ms.locfileid: "77045942"
 
 Этот пример элемента управления отображением настраивается следующим образом:
 
-1. Получение типа утверждения адреса `email` от пользователя.
-1. Дождитесь, пока пользователь предоставит тип утверждения `verificationCode` с кодом, отправленным пользователю.
-1. Возврат `email` в самостоятельно утвержденный технический профиль, который содержит ссылку на этот элемент управления отображения.
-1. С помощью действия `SendCode` Создайте код OTP и отправьте пользователю сообщение электронной почты с кодом OTP.
+1. Получение типа `email` утверждения адреса от пользователя.
+1. Дождитесь, пока пользователь предоставит `verificationCode` тип утверждения с кодом, отправленным пользователю.
+1. `email` Возврат к самостоятельно утвержденному техническому профилю, который содержит ссылку на этот элемент управления отображением.
+1. С помощью `SendCode` действия создайте код OTP и отправьте пользователю сообщение электронной почты с кодом OTP.
 
 ![Действие отправки кода проверки по электронной почте](media/custom-email/display-control-verification-email-action-01.png)
 
-В разделе определения содержимого по-прежнему в `<BuildingBlocks>`добавьте в [политику следующий элемент списка типа](display-controls.md) [верификатионконтрол](display-control-verification.md) .
+В разделе определения содержимого, находящиеся в `<BuildingBlocks>`, добавьте в политику следующий элемент списка типа [верификатионконтрол](display-control-verification.md) . [DisplayControl](display-controls.md)
 
 ```XML
 <DisplayControls>
@@ -267,9 +267,9 @@ ms.locfileid: "77045942"
 
 ## <a name="add-otp-technical-profiles"></a>Добавление технических профилей OTP
 
-`GenerateOtp` технический профиль создает код для адреса электронной почты. `VerifyOtp` технический профиль проверяет код, связанный с адресом электронной почты. Можно изменить конфигурацию формата и срок действия одноразового пароля. Дополнительные сведения о технических профилях OTP см. [в статье Определение технического профиля одноразового пароля](one-time-password-technical-profile.md).
+`GenerateOtp` Технический профиль создает код для адреса электронной почты. `VerifyOtp` Технический профиль проверяет код, связанный с адресом электронной почты. Можно изменить конфигурацию формата и срок действия одноразового пароля. Дополнительные сведения о технических профилях OTP см. [в статье Определение технического профиля одноразового пароля](one-time-password-technical-profile.md).
 
-Добавьте следующие технические профили в элемент `<ClaimsProviders>`.
+Добавьте в `<ClaimsProviders>` элемент следующие технические профили.
 
 ```XML
 <ClaimsProvider>
@@ -299,10 +299,6 @@ ms.locfileid: "77045942"
       <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
       <Metadata>
         <Item Key="Operation">VerifyCode</Item>
-        <Item Key="UserMessage.VerificationHasExpired">You have exceed the maximum time allowed.</Item>
-        <Item Key="UserMessage.MaxRetryAttemped">You have exceed the number of retries allowed.</Item>
-        <Item Key="UserMessage.InvalidCode">You have entered the wrong code.</Item>
-        <Item Key="UserMessage.ServerError">Cannot verify the code, please try again later.</Item>
       </Metadata>
       <InputClaims>
         <InputClaim ClaimTypeReferenceId="email" PartnerClaimType="identifier" />
@@ -317,7 +313,7 @@ ms.locfileid: "77045942"
 
 Этот REST API технический профиль создает содержимое электронной почты (с использованием формата SendGrid). Дополнительные сведения о технических профилях RESTFUL см. [в разделе Определение технического профиля RESTful](restful-technical-profile.md).
 
-Как и в случае с техническими профилями OTP, добавьте следующие технические профили в элемент `<ClaimsProviders>`.
+Как и в случае с техническими профилями OTP, добавьте в `<ClaimsProviders>` элемент следующие технические профили.
 
 ```XML
 <ClaimsProvider>
@@ -348,7 +344,7 @@ ms.locfileid: "77045942"
 
 ## <a name="make-a-reference-to-the-displaycontrol"></a>Создание ссылки на тип элемента
 
-На последнем шаге добавьте ссылку на созданный тип элемента. Замените существующий `LocalAccountSignUpWithLogonEmail` самостоятельно утвержденный технический профиль следующим, если вы использовали более раннюю версию политики Azure AD B2C. Этот технический профиль использует `DisplayClaims` со ссылкой на элемент конфигурации.
+На последнем шаге добавьте ссылку на созданный тип элемента. Если вы использовали `LocalAccountSignUpWithLogonEmail` более раннюю версию Azure AD B2C политики, замените имеющийся самоподтвержденный технический профиль следующим. В этом техническом профиле используется `DisplayClaims` ссылка на элемент конфигурации.
 
 Дополнительные сведения см. в разделе [самостоятельно утвержденный технический профиль](restful-technical-profile.md) и [тип](display-controls.md)элемента.
 
@@ -363,6 +359,12 @@ ms.locfileid: "77045942"
         <Item Key="IpAddressClaimReferenceId">IpAddress</Item>
         <Item Key="ContentDefinitionReferenceId">api.localaccountsignup</Item>
         <Item Key="language.button_continue">Create</Item>
+        
+        <!--OTP validation error messages-->
+        <Item Key="UserMessageIfSessionDoesNotExist">You have exceed the maximum time allowed.</Item>
+        <Item Key="UserMessageIfMaxRetryAttempted">You have exceed the number of retries allowed.</Item>
+        <Item Key="UserMessageIfInvalidCode">You have entered the wrong code.</Item>
+        <Item Key="UserMessageIfSessionConflict">Cannot verify the code, please try again later.</Item>
       </Metadata>
       <InputClaims>
         <InputClaim ClaimTypeReferenceId="email" />
@@ -393,11 +395,11 @@ ms.locfileid: "77045942"
 
 ## <a name="optional-localize-your-email"></a>Используемых Локализация электронной почты
 
-Чтобы локализовать сообщение электронной почты, необходимо отправить локализованные строки в SendGrid или ваш поставщик электронной почты. Например, чтобы локализовать тему сообщения электронной почты, текст, сообщение кода или подпись сообщения электронной почты. Для этого можно использовать преобразование утверждений [жетлокализедстрингстрансформатион](string-transformations.md) , чтобы скопировать локализованные строки в типы утверждений. В преобразовании «`GenerateSendGridRequestBody` утверждения», которая создает полезные данные JSON, использует входные утверждения, содержащие локализованные строки.
+Чтобы локализовать сообщение электронной почты, необходимо отправить локализованные строки в SendGrid или ваш поставщик электронной почты. Например, чтобы локализовать тему сообщения электронной почты, текст, сообщение кода или подпись сообщения электронной почты. Для этого можно использовать преобразование утверждений [жетлокализедстрингстрансформатион](string-transformations.md) , чтобы скопировать локализованные строки в типы утверждений. В преобразовании « `GenerateSendGridRequestBody` утверждения», которое создает полезные данные JSON, использует входные утверждения, содержащие локализованные строки.
 
 1. В политике определите следующие строковые утверждения: subject, Message, Кодеинтро и Signature.
 1. Определите преобразование [жетлокализедстрингстрансформатион](string-transformations.md) Claims, чтобы заменить локализованные строковые значения на утверждения из шага 1.
-1. Измените преобразование утверждений `GenerateSendGridRequestBody`, чтобы использовать входные утверждения со следующим фрагментом XML.
+1. Измените преобразование `GenerateSendGridRequestBody` утверждения, чтобы использовать входные утверждения со следующим фрагментом XML.
 1. Обновите шаблон Сендгринд, чтобы использовать динамические параметры вместо всех строк, которые будут локализованы Azure AD B2C.
 
 ```XML

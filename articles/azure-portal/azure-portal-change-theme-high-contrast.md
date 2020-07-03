@@ -11,10 +11,10 @@ ms.service: azure-portal
 ms.custom: accessibility
 manager: mtillman
 ms.openlocfilehash: ae135e0d7ac613d78b1c1f76e233503a60570f0f
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76310770"
 ---
 # <a name="turn-on-high-contrast-or-change-the-theme-in-the-azure-portal"></a>Включение режима высокой контрастности или изменение темы на портале Azure
@@ -50,7 +50,7 @@ ms.locfileid: "76310770"
 
 1. Нажмите кнопку **Применить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Сочетания клавиш на портале Azure](azure-portal-keyboard-shortcuts.md)
 - [Поддерживаемые браузеры и устройства](../azure-preview-portal-supported-browsers-devices.md)

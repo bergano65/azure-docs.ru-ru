@@ -1,19 +1,19 @@
 ---
 title: Анализ первопричин с помощью оповещений в Azure | Документация Майкрософт
 description: В этом руководстве вы узнаете, как проводить анализ первопричин с помощью оповещений, используя Аналитику временных рядов Azure.
-author: aditidugar
-ms.author: adugar
+author: Philmea
+ms.author: philmea
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/20/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 70d29359d4a4bcf9f5badbbf0c553d7bed88a02b
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: c3cb940583677d813873c07fbfa679fdcc1dff59
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52284575"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77565474"
 ---
 # <a name="tutorial-conduct-a-root-cause-analysis-on-an-alert"></a>Руководство. Анализ первопричин с помощью оповещений
 
@@ -96,7 +96,7 @@ ms.locfileid: "52284575"
 
 [!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как с помощью обозревателя Аналитики временных рядов с акселератором решения для удаленного мониторинга диагностировать первопричину предупреждения. Чтобы узнать, как выявлять и устранять проблемы с подключенными устройствами с помощью акселератора решений, перейдите к следующему руководству.
 

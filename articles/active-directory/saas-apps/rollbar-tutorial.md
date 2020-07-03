@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Rollbar | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Rollbar | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Rollbar.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
 ms.openlocfilehash: d76f4e9d61d8fd210fe9332084f9f44d19e54eed
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67092679"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rollbar"></a>Руководство по Интеграция Azure Active Directory с Rollbar
+# <a name="tutorial-azure-active-directory-integration-with-rollbar"></a>Руководство по интеграции Azure Active Directory с Rollbar
 
 В этом руководстве описано, как интегрировать Rollbar с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Rollbar обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67092679"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Rollbar, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Rollbar с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67092679"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Rollbar](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес `https://saml.rollbar.com`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес `https://saml.rollbar.com`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://rollbar.com/<accountname>/saml/sso/azure/`.
 
@@ -126,7 +126,7 @@ ms.locfileid: "67092679"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -148,7 +148,7 @@ ms.locfileid: "67092679"
 
     ![Конфигурация](./media/rollbar-tutorial/configure2.png)
 
-    a. Выберите **AZURE** из раскрывающегося списка **SAML Identity Provider** (Поставщик удостоверений SAML).
+    а. Выберите **AZURE** из раскрывающегося списка **SAML Identity Provider** (Поставщик удостоверений SAML).
 
     b. Откройте файл метаданных в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **SAML Metadata** (Метаданные SAML).
 
@@ -162,7 +162,7 @@ ms.locfileid: "67092679"
     > Чтобы выполнить следующее действие, необходимо добавить себя в качестве пользователя в приложение Rollbar в Azure.
     >
 
-    a. Если нужно, чтобы все пользователи проходили аутентификацию с помощью Azure, щелкните **log in via your identity provider** (вход с использованием поставщика удостоверений), чтобы повторить аутентификацию через Azure.  
+    а. Если нужно, чтобы все пользователи проходили аутентификацию с помощью Azure, щелкните **log in via your identity provider** (вход с использованием поставщика удостоверений), чтобы повторить аутентификацию через Azure.  
 
     b.  После возвращения на экран установите флажок **Require login via SAML Identity Provider** (Требовать вход с использованием поставщика удостоверений SAML).
 
@@ -257,5 +257,5 @@ ms.locfileid: "67092679"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

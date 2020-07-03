@@ -1,26 +1,19 @@
 ---
-title: Создание образов виртуальных машин Azure для Linux с помощью пакета Pack
+title: Создание образов виртуальных машин Azure Linux с помощью пакета Pack
 description: Сведения об использовании Packer для создания образов виртуальных машин Linux в Azure
-services: virtual-machines-linux
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: azurecli
+ms.subservice: imaging
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/07/2019
 ms.author: cynthn
-ms.openlocfilehash: a9f0750908123c236596683ec2ad6de505c46213
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: fa899764e4e80e7eba849e02d617c8c1ca2ae410
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036946"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792706"
 ---
 # <a name="how-to-use-packer-to-create-linux-virtual-machine-images-in-azure"></a>Создание образов виртуальных машин Linux в Azure с помощью Packer
 Каждая виртуальная машина в Azure создается из образа, определяющего дистрибутив Linux и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием средства с открытым кодом [Packer](https://www.packer.io/).
@@ -40,7 +33,7 @@ az group create -n myResourceGroup -l eastus
 
 
 ## <a name="create-azure-credentials"></a>Создание учетных данных Azure
-Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете управлять разрешениями на то, какие операции может выполнять субъект-служба в Azure, и определять их.
+Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете определять разрешения на то, какие операции может выполнять субъект-служба в Azure, и управлять ими.
 
 Создайте субъект-службу с помощью командлета [az ad sp create-for-rbac](/cli/azure/ad/sp) и выведите учетные данные, необходимые для Packer:
 
@@ -50,7 +43,7 @@ az ad sp create-for-rbac --query "{ client_id: appId, client_secret: password, t
 
 Ниже приведен пример выходных данных предыдущей команды.
 
-```azurecli
+```output
 {
     "client_id": "f5b6a5cf-fbdf-4a9f-b3b8-3c2cd00225a4",
     "client_secret": "0e760437-bf34-4aad-9f8d-870be799c55d",
@@ -64,7 +57,7 @@ az ad sp create-for-rbac --query "{ client_id: appId, client_secret: password, t
 az account show --query "{ subscription_id: id }"
 ```
 
-Выходные данные этих двух команд будут использоваться в следующем шаге.
+Используйте выходные данные этих двух команд на следующем шаге.
 
 
 ## <a name="define-packer-template"></a>Определение шаблона Packer
@@ -141,7 +134,7 @@ az account show --query "{ subscription_id: id }"
 
 Ниже приведен пример выходных данных предыдущей команды.
 
-```bash
+```output
 azure-arm output will be in this color.
 
 ==> azure-arm: Running builder ...
@@ -231,8 +224,8 @@ az vm open-port \
 ## <a name="test-vm-and-nginx"></a>Тестирование виртуальной машины и NGINX
 Теперь можно открыть веб-браузер и ввести в адресной строке `http://publicIpAddress`. Укажите собственный общедоступный IP-адрес, настроенный при создании виртуальной машины. Отобразится страница NGINX по умолчанию, как показано ниже.
 
-![Сайт nginx по умолчанию](./media/build-image-with-packer/nginx.png) 
+![Сайт NGINX по умолчанию](./media/build-image-with-packer/nginx.png) 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Вы также можете использовать существующие скрипты подготовки пакета с помощью [Azure Image Builder](image-builder.md).

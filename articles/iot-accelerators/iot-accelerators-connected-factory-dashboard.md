@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 07/10/2018
 ms.author: dobett
 ms.openlocfilehash: b53177d578768428665891704269e63bd8edb09e
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73820179"
 ---
 # <a name="use-features-in-the-connected-factory-solution-accelerator-dashboard"></a>Использование функций панели мониторинга акселератора решений для подключенной фабрики
@@ -33,7 +33,7 @@ ms.locfileid: "73820179"
 
 1. Фильтр будет применен. Дополнительный значок воронки указывает на то, что фильтр применен:
 
-    [![Фильтр акселератора решений для подключенной фабрики применен](./media/iot-accelerators-connected-factory-dashboard/filterapplied-inline.png)](./media/iot-accelerators-connected-factory-dashboard/filterapplied-expanded.png#lightbox)
+    [![Применен фильтр ускорителя решений подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/filterapplied-inline.png)](./media/iot-accelerators-connected-factory-dashboard/filterapplied-expanded.png#lightbox)
 
     > [!NOTE]
     > Активный фильтр не влияет на отображаемые значения общей эффективности оборудования и ключевых показателей эффективности. Он просто фильтрует содержимое списка.
@@ -46,17 +46,17 @@ ms.locfileid: "73820179"
 
 1. Щелкните **значок браузера** на панели навигации панели мониторинга:
 
-    [![Обозреватель сервера акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/browser-inline.png)](./media/iot-accelerators-connected-factory-dashboard/browser-expanded.png#lightbox)
+    [![Обозреватель сервера Solution Accelerator для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/browser-inline.png)](./media/iot-accelerators-connected-factory-dashboard/browser-expanded.png#lightbox)
 
 1. Выберите сервер из списка серверов, развернутых в акселераторе решений:
 
-    [![Список серверов акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/serverlist-inline.png)](./media/iot-accelerators-connected-factory-dashboard/serverlist-expanded.png#lightbox)
+    [![Список серверов Solution Accelerator для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/serverlist-inline.png)](./media/iot-accelerators-connected-factory-dashboard/serverlist-expanded.png#lightbox)
 
 1. Щелкните **Подключиться**. Отобразится диалоговое окно. При работе с имитацией нажмите **Продолжить**.
 
 1. Щелкните любой из узлов в дереве сервера, чтобы развернуть его. Рядом с узлами, публикующими данные телеметрии, отображаются флажки:
 
-    [![Дерево сервера акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/servertree-inline.png)](./media/iot-accelerators-connected-factory-dashboard/servertree-expanded.png#lightbox)
+    [![Дерево сервера Solution Accelerator подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/servertree-inline.png)](./media/iot-accelerators-connected-factory-dashboard/servertree-expanded.png#lightbox)
 
 1. Щелкните правой кнопкой мыши элемент для чтения, записи, публикации или вызова этого узла. Доступные действия зависят от разрешений и атрибутов узла. Параметр "Чтение" отображает контекстную панель, показывая значение определенного узла. Параметр "Запись" отображает контекстную панель, в которой можно ввести новое значение. Параметр "Вызов" отображает узел, в котором можно ввести параметры вызова.
 
@@ -68,11 +68,11 @@ ms.locfileid: "73820179"
 
 1. Щелкните узел правой кнопкой мыши. Нажмите **Опубликовать**:
 
-    [![Публикация узла акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/publishnode-inline.png)](./media/iot-accelerators-connected-factory-dashboard/publishnode-expanded.png#lightbox)
+    [![Узел публикации ускорителя решений подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/publishnode-inline.png)](./media/iot-accelerators-connected-factory-dashboard/publishnode-expanded.png#lightbox)
 
 1. Отобразится контекстная панель. Это означает, что публикация выполнена успешно. Рядом с узлом в представлении уровня станции отображается флажок:
 
-    [![Успешная публикация акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/publishsuccess-inline.png)](./media/iot-accelerators-connected-factory-dashboard/publishsuccess-expanded.png#lightbox)
+    [![Успешная публикация решения для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/publishsuccess-inline.png)](./media/iot-accelerators-connected-factory-dashboard/publishsuccess-expanded.png#lightbox)
 
 ## <a name="command-and-control"></a>Команды и управление
 
@@ -82,11 +82,11 @@ ms.locfileid: "73820179"
 
 1. Выберите требуемую команду. Щелкните правой кнопкой мыши узел **OpenPressureReleaseValve**. Нажмите **Вызов**:
 
-    [![Вызов команды акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/callcommand-inline.png)](./media/iot-accelerators-connected-factory-dashboard/callcommand-expanded.png#lightbox)
+    [![Команда вызова ускорителя решений подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/callcommand-inline.png)](./media/iot-accelerators-connected-factory-dashboard/callcommand-expanded.png#lightbox)
 
 1. После этого появится контекстная панель, на которой можно узнать, какой метод вы собираетесь вызывать, а также просмотреть все сведения о параметрах. Нажмите **Вызов**:
 
-    [![Параметры вызова акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/callpanel-inline.png)](./media/iot-accelerators-connected-factory-dashboard/callpanel-expanded.png#lightbox)
+    [![Параметры вызова ускорителя решений подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/callpanel-inline.png)](./media/iot-accelerators-connected-factory-dashboard/callpanel-expanded.png#lightbox)
 
 1. На контекстной панели появится оповещение об успешном вызове метода. Это можно проверить по значению узла давления, обновленному в результате вызова.
 
@@ -96,7 +96,7 @@ ms.locfileid: "73820179"
 
 При развертывании акселератора решений создается несколько ресурсов в выбранной подписке Azure. Эти ресурсы можно просмотреть на [портале Azure](https://portal.azure.com). Имя **группы ресурсов**, создаваемой при развертывании, зависит от имени, выбранного для акселератора решений.
 
-[![Группа ресурсов акселератора решений для подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/resourcegroup-inline.png)](./media/iot-accelerators-connected-factory-dashboard/resourcegroup-expanded.png#lightbox)
+[![Группа ресурсов ускорителя решений подключенной фабрики](./media/iot-accelerators-connected-factory-dashboard/resourcegroup-inline.png)](./media/iot-accelerators-connected-factory-dashboard/resourcegroup-expanded.png#lightbox)
 
 Параметры каждого ресурса можно просмотреть, выбрав его в списке в группе ресурсов.
 
@@ -111,5 +111,5 @@ ms.locfileid: "73820179"
 
 Теперь, когда вы развернули рабочей акселератор решений, можно продолжить знакомство с акселератором решений Интернета вещей. Для этого ознакомьтесь со следующими статьями:
 
-* [Настройка комплекта Solution Accelerator для подключенной фабрики](iot-accelerators-connected-factory-configure.md)
+* [Настройка акселератора решения "Подключенная фабрика"](iot-accelerators-connected-factory-configure.md)
 * [Разрешения на сайте azureiotsolutions.com](iot-accelerators-permissions.md)

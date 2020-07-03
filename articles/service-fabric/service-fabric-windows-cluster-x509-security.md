@@ -5,17 +5,17 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 10/15/2017
 ms.author: dekapur
-ms.openlocfilehash: 5a18f957dfb7143f403d5ac30ea184023021f12c
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: cf7d418d8bca8f690acf29ba701fdc54ced1ca6c
+ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75613930"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82562004"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-x509-certificates"></a>Защита автономного кластера под управлением Windows с помощью сертификатов X.509
 В этой статье описано, как обезопасить обмен данными между разными узлами автономного кластера Windows. Кроме того, здесь рассматриваются способы аутентификации для клиентов, которые подключаются к кластеру при помощи сертификатов X.509. Аутентификация гарантирует, что только авторизованные пользователи могут получить доступ к кластеру и развернутым приложениям для выполнения задач управления. Безопасность на основе сертификатов необходимо включить в кластере при его создании.  
 
-Дополнительные сведения об обеспечении безопасности кластера, в том числе при обмене данными между узлами и между клиентом и узлом, а также об управлении доступом на основе ролей см. в статье о [сценариях защиты кластера](service-fabric-cluster-security.md).
+Дополнительные сведения о безопасности кластера, такие как безопасность узла на узел, безопасность клиента на узел и управление доступом на основе ролей, см. в статье [сценарии безопасности кластера](service-fabric-cluster-security.md).
 
 ## <a name="which-certificates-do-you-need"></a>Необходимые сертификаты
 Сначала нужно [скачать пакет Service Fabric для Windows Server](service-fabric-cluster-creation-for-windows-server.md#download-the-service-fabric-for-windows-server-package) на один из узлов в кластере. В скачанном пакете содержится файл ClusterConfig.X509.MultiMachine.json. Откройте его и ознакомьтесь с разделом security в разделе properties.
@@ -116,7 +116,7 @@ ms.locfileid: "75613930"
 
 В следующей таблице перечислены сертификаты, необходимые для настройки кластера:
 
-| **Параметр CertificateInformation** | **Описание** |
+| **Параметр Цертификатеинформатион** | **Описание** |
 | --- | --- |
 | ClusterCertificate |Рекомендуется использовать в тестовой среде. Этот сертификат нужен, чтобы защитить связь между узлами кластера. Для обновления можно использовать два разных сертификата — основной и дополнительный. Укажите отпечаток основного сертификата в разделе Thumbprint, а отпечаток дополнительного сертификата — в переменных ThumbprintSecondary. |
 | ClusterCertificateCommonNames |Рекомендуется использовать в рабочей среде. Этот сертификат нужен, чтобы защитить связь между узлами кластера. Можно использовать одно или два общих имени сертификата для кластера. CertificateIssuerThumbprint соответствует отпечатку издателя сертификата. Если используется несколько сертификатов с одним общим именем, вы можете указать несколько отпечатков издателя.|
@@ -253,14 +253,14 @@ ms.locfileid: "75613930"
 Для кластеров, которые применяются для тестирования, можно использовать самозаверяющие сертификаты.
 
 ## <a name="optional-create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата (необязательно)
-Защищенный самозаверяющий сертификат создается при помощи сценария CertSetup.ps1, который находится в папке пакета SDK для Service Fabric в каталоге C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\Secure. Измените в этом файле имя сертификата по умолчанию. (Найдите значение CN = ServiceFabricDevClusterCert.) Запустите этот скрипт как `.\CertSetup.ps1 -Install`.
+Защищенный самозаверяющий сертификат создается при помощи сценария CertSetup.ps1, который находится в папке пакета SDK для Service Fabric в каталоге C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\Secure. Измените в этом файле имя сертификата по умолчанию. (Найдите значение CN = ServiceFabricDevClusterCert.) Запустите этот скрипт от `.\CertSetup.ps1 -Install`имени.
 
 Теперь экспортируйте сертификат в PFX-файл, защищенный паролем. Сначала получите отпечаток сертификата. 
 1. В меню **Запуск** выберите **Управление сертификатами компьютеров**. 
 
 2. Перейдите в папку **Local Computer\Personal** и найдите созданный сертификат. 
 
-3. Дважды щелкните файл сертификата, чтобы открыть его, выберите вкладку **Сведения** и прокрутите вниз до поля **Отпечаток**. 
+3. Дважды щелкните сертификат, чтобы открыть его, выберите вкладку **сведения** и прокрутите вниз до поля **отпечаток** . 
 
 4. Удалите пробелы и вставьте значение отпечатка в приведенную ниже команду PowerShell. 
 
@@ -292,7 +292,7 @@ ms.locfileid: "75613930"
     $PfxFilePath ="C:\mypfx.pfx"
     Import-PfxCertificate -Exportable -CertStoreLocation Cert:\LocalMachine\My -FilePath $PfxFilePath -Password (ConvertTo-SecureString -String $pswd -AsPlainText -Force)
     ```
-3. Затем настройте контроль доступа для этого сертификата, чтобы служба Service Fabric, которая выполняется под учетной записью сетевой службы, могла использовать его, выполняя следующий сценарий. Укажите отпечаток сертификата и имя **сетевой службы** для учетной записи службы. Можно проверить правильность списков контроля доступа (ACL) для сертификата, открыв сертификат. Для этого щелкните **Запуск** > **Управление сертификатами компьютеров** и просмотрите **Все задачи** > **Управление закрытыми ключами**.
+3. Затем настройте контроль доступа для этого сертификата, чтобы служба Service Fabric, которая выполняется под учетной записью сетевой службы, могла использовать его, выполняя следующий сценарий. Укажите отпечаток сертификата и **сетевой службы** для учетной записи службы. Чтобы проверить правильность списков ACL в сертификате, откройте сертификат в **главном** > **Управление сертификатами компьютера** и просмотрите **все задачи** > **Управление закрытыми ключами**.
    
     ```powershell
     param
@@ -309,7 +309,7 @@ ms.locfileid: "75613930"
     $cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object -FilterScript { $PSItem.ThumbPrint -eq $pfxThumbPrint; }
    
     # Specify the user, the permissions, and the permission type
-    $permission = "$($serviceAccount)","FullControl","Allow"
+    $permission = "$($serviceAccount)","FullControl","Allow" # "NT AUTHORITY\NetworkService" is the service account
     $accessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $permission
    
     # Location of the machine-related keys
@@ -338,7 +338,7 @@ ms.locfileid: "75613930"
 .\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.X509.MultiMachine.json
 ```
 
-Обеспечив защиту автономного кластера под управлением Windows и настройки прошедших проверку подлинности клиентов, которые могут к нему подключаться, выполните инструкции по [подключению к кластеру с помощью PowerShell](service-fabric-connect-to-secure-cluster.md#connect-to-a-cluster-using-powershell). Пример.
+Обеспечив защиту автономного кластера под управлением Windows и настройки прошедших проверку подлинности клиентов, которые могут к нему подключаться, выполните инструкции по [подключению к кластеру с помощью PowerShell](service-fabric-connect-to-secure-cluster.md#connect-to-a-cluster-using-powershell). Пример:
 
 ```powershell
 $ConnectArgs = @{  ConnectionEndpoint = '10.7.0.5:19000';  X509Credential = $True;  StoreLocation = 'LocalMachine';  StoreName = "MY";  ServerCertThumbprint = "057b9544a6f2733e0c8d3a60013a58948213f551";  FindType = 'FindByThumbprint';  FindValue = "057b9544a6f2733e0c8d3a60013a58948213f551"   }
@@ -355,7 +355,7 @@ Connect-ServiceFabricCluster $ConnectArgs
 ```
 
 > [!NOTE]
-> Из-за неправильной конфигурации сертификата кластер может не восстановиться во время развертывания. Чтобы самостоятельно определить проблемы с безопасностью, откройте средство просмотра событий и выберите группу **Журналы приложений и служб** > **Microsoft-Service Fabric**.
+> Из-за неправильной конфигурации сертификата кластер может не восстановиться во время развертывания. Для самостоятельной диагностики проблем безопасности просмотрите Просмотр событий группы >  **журналы приложений и служб****Microsoft-Service Fabric**.
 > 
 > 
 

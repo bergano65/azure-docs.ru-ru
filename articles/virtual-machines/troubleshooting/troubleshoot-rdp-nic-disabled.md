@@ -12,19 +12,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/12/2018
 ms.author: genli
-ms.openlocfilehash: 3849106fbc488f456a4d267d0ccef76647c1939f
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 315974e4995630eb3af055ac0e1c44f7d8dd0737
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981316"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77918246"
 ---
 #  <a name="cannot-remote-desktop-to-a-vm-because-the-network-interface-is-disabled"></a>Сбой подключения удаленного рабочего стола к виртуальной машине из-за отключенного сетевого интерфейса
 
 В этой статье объясняется, как устранить проблему, когда невозможно установить подключение удаленного рабочего стола к Виртуальным машинам Azure под управлением Windows, если сетевой интерфейс отключен.
 
-> [!NOTE]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
 ## <a name="symptoms"></a>Симптомы
 
@@ -39,7 +37,7 @@ ms.locfileid: "75981316"
 ### <a name="use-serial-control"></a>Использование последовательной консоли
 
 1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#use-cmd-or-powershell-in-serial-console
-). Если последовательная консоль на нужной виртуальной машине не включена, ознакомьтесь со сведениями о том, как [сбросить сетевой интерфейс](#reset-network-interface).
+). Если последовательное консоль не включена на виртуальной машине, см. раздел [Сброс сетевого интерфейса](#reset-network-interface).
 2. Проверьте состояние сетевого интерфейса:
 
         netsh interface show interface

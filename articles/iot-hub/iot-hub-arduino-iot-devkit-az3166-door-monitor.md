@@ -9,10 +9,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
 ms.openlocfilehash: 6bebe8ac6b9869466938600d6267fd0062c84477
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75977300"
 ---
 # <a name="door-monitor----using-azure-functions-and-sendgrid-send-email-when-a-door-is-opened"></a>Монитор двери — использование функций Azure и SendGrid, отправка электронной почты при открытии дверцы           
@@ -39,7 +39,7 @@ ms.locfileid: "75977300"
 
 Активная подписка Azure. Если у вас еще нет ее, вы можете зарегистрироваться одним из этих способов:
 
-* Вы можете активировать [бесплатную 30-дневную пробную учетную запись Microsoft Azure](https://azure.microsoft.com/free/).
+* Активировать [бесплатную 30-дневную пробную Microsoft Azureную учетную запись](https://azure.microsoft.com/free/).
 * Запросите [деньги на счете в Azure](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), если у вас есть подписка MSDN или Visual Studio.
 
 ## <a name="deploy-the-sendgrid-service-in-azure"></a>Развертывание службы SendGrid в Azure
@@ -53,7 +53,7 @@ ms.locfileid: "75977300"
 
 Чтобы подготовить службы Azure, нажмите кнопку **Развертывание в Azure**. С помощью этой кнопки можно быстро и легко развернуть проекты с открытым исходным кодом в Microsoft Azure.
 
-Нажмите кнопку **Deploy to Azure** (Развернуть в Azure) ниже. 
+Нажмите кнопку **развернуть в Azure** ниже. 
 
 [![Развертывание в Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FVSChina%2Fdevkit-door-monitor%2Fmaster%2FSendGridDeploy%2Fazuredeploy.json)
 
@@ -81,7 +81,7 @@ ms.locfileid: "75977300"
 
 ![Управление SendGrid](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/sendgrid-manage.png)
 
-На странице SendGrid щелкните **Параметры** > **Ключи API** > **Создание ключа API**.
+На странице SendGrid щелкните **Параметры** > **API ключи** > **создать ключ API**.
 
 ![Первый снимок экрана создания API SendGrid](media/iot-hub-arduino-iot-devkit-az3166-door-monitor/sendgrid-create-api-first.png)
 
@@ -95,7 +95,7 @@ ms.locfileid: "75977300"
 
 Ниже показано, как подготовить другие связанные с Центром Интернета вещей службы и развернуть решение "Функции Azure" для этого проекта.
 
-Нажмите кнопку **Deploy to Azure** (Развернуть в Azure) ниже. 
+Нажмите кнопку **развернуть в Azure** ниже. 
 
 [![Развертывание в Azure](https://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FVSChina%2Fdevkit-door-monitor%2Fmaster%2Fazuredeploy.json)
 
@@ -159,7 +159,7 @@ ms.locfileid: "75977300"
 
 2. Терминал предложит перейти в режим настройки. Чтобы сделать это, удерживая нажатой кнопку "A", нажмите и отпустите кнопку "Reset" (Сброс). На экране отображается идентификационный номер DevKit и слово *Configuration*.
 
-#### <a name="macos"></a>MacOS
+#### <a name="macos"></a>macOS
 
 1. Переведите плату DevKit в режим настройки. Для этого, удерживая нажатой кнопку A, нажмите и отпустите кнопку сброса. На экране отобразится надпись "Configuration" (Настройка).
 
@@ -200,4 +200,4 @@ ms.locfileid: "75977300"
 Вы узнали, как подключить устройство DevKit к акселератору решения Azure IoT для удаленного мониторинга и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
 
 * [Общие сведения об акселераторе решения Azure IoT для удаленного мониторинга](https://docs.microsoft.com/azure/iot-suite/)
-* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](/azure/iot-central/core/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)
+* [Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central](/azure/iot-central/core/howto-connect-devkit)

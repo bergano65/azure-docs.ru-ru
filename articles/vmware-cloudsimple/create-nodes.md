@@ -1,6 +1,6 @@
 ---
-title: Инициализация узлов для решений VMware (AVS) — Azure
-description: Узнайте, как добавлять узлы в VMWare с развертыванием AVS.
+title: Предоставление узлов для решения VMware с помощью Клаудсимпле — Azure
+description: Узнайте, как добавить узлы в VMWare с помощью развертывания Клаудсимпле
 author: dikamath
 ms.author: dikamath
 ms.date: 08/14/2019
@@ -8,34 +8,34 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 94ca681153f1e3ccd9ff628b41a9d0e547be5802
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: eb033425d18b472c9da1a2d6a1bb6f166702905e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77024812"
 ---
-# <a name="provision-nodes-for-azure-vmware-solutions-avs"></a>Инициализация узлов для решений VMware для Azure (AVS)
+# <a name="provision-nodes-for-azure-vmware-solution-by-cloudsimple"></a>Подготавливаете узлы для решения VMware для Azure с помощью Клаудсимпле
 
-Подготавливайте узлы в портал Azure. Затем можно настроить емкость с оплатой по мере использования для среды частного облака AVS.
+Подготавливайте узлы в портал Azure. Затем можно настроить емкость с оплатой по мере использования для среды частного облака Клаудсимпле.
 
-## <a name="sign-in-to-azure"></a>Войдите в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
-## <a name="add-a-node-to-your-avs-private-cloud"></a>Добавление узла в частное облако AVS
+## <a name="add-a-node-to-your-cloudsimple-private-cloud"></a>Добавление узла в частное облако Клаудсимпле
 
 1. Выбор пункта **Все службы**.
-2. Поиск **узлов AVS**.
+2. Выполните поиск **узлов клаудсимпле**.
 
-   ![Поиск узлов AVS](media/create-cloudsimple-node-search.png)
+   ![Поиск узлов Клаудсимпле](media/create-cloudsimple-node-search.png)
 
-3. Выберите **узлы AVS**.
+3. Выберите **узлы клаудсимпле**.
 4. Нажмите кнопку **Добавить** , чтобы создать узлы.
 
-    ![Добавление узлов AVS](media/create-cloudsimple-node-add.png)
+    ![Добавление узлов Клаудсимпле](media/create-cloudsimple-node-add.png)
 
-5. Выберите подписку, в которой нужно подготавливать узлы AVS.
+5. Выберите подписку, в которой нужно подготавливать узлы Клаудсимпле.
 6. Выберите группу ресурсов для узлов. Чтобы добавить новую группу ресурсов, щелкните **создать**.
 7. Введите префикс для обозначения узлов.
 8. Выберите расположение ресурсов узла.
@@ -46,6 +46,6 @@ ms.locfileid: "77024812"
 13. Проверьте параметры. Чтобы изменить параметры, нажмите кнопку **назад**.
 14. Щелкните **Создать**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Создание частного облака AVS](create-private-cloud.md)
+* [Создание частного облака](create-private-cloud.md)

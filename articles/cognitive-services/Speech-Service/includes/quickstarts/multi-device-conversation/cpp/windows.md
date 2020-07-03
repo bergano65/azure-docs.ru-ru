@@ -5,14 +5,14 @@ manager: cpoulain
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: include
-ms.date: 01/15/2020
+ms.date: 04/04/2020
 ms.author: ralphe
-ms.openlocfilehash: a77fedd92800a73ef446f1f8241a518e42f977ee
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 015986ffa687142cf20ca18cff175ac6c5952a11
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77156089"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80671268"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -20,8 +20,7 @@ ms.locfileid: "77156089"
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=windows)
-> * [Создать пустой пример проекта.](../../../../quickstarts/create-project.md?tabs=windows)
+> * [Настройте среду разработки и создайте пустой проект](../../../../quickstarts/setup-platform.md?tabs=windows&pivots=programming-language-cpp).
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 
@@ -56,8 +55,7 @@ ms.locfileid: "77156089"
         // Set these
         std::string subscriptionKey("YourSubscriptionKey");
 
-        // Replace below with your own service region (e.g., "westus", use the one of SpeechSDKParameters
-        // from here: https://aka.ms/speech/sdkregion).   
+        // Replace below with your own region identifier from here: https://aka.ms/speech/sdkregion
         std::string region("YourServiceRegion");
         
         std::string speechLanguage("en-US");

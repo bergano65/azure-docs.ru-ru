@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: cherylmc
 ms.openlocfilehash: 877a17327f13e407f86cb3a1a21f051572f74343
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73499723"
 ---
 # <a name="virtual-wan-default-policies-for-ipsec-connectivity"></a>Политики виртуальной глобальной сети по умолчанию для подключений IPsec

@@ -3,25 +3,22 @@ title: Подготовка мобильных приложений — вызо
 titleSuffix: Microsoft identity platform
 description: Узнайте, как создать мобильное приложение, вызывающее веб-API. (Подготовка приложений для рабочей среды.)
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
-ms.reviwer: jmprieur
+ms.reviewer: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 1ea19b8b76f4eb4a2c984f0e39eb0fd373c8b83c
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 28ace84f9a80b71209d7963d02b66317292b151b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77132387"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80882545"
 ---
 # <a name="prepare-mobile-apps-for-production"></a>Подготовка мобильных приложений для рабочей среды
 

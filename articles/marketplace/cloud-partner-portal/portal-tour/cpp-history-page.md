@@ -1,19 +1,18 @@
 ---
 title: Страница "журнал аудита" для Azure Marketplace
 description: Общие сведения о странице журнала аудита в Портал Cloud Partner для Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/13/2018
-ms.author: pabutler
-ms.openlocfilehash: a09eca891c434a6bd836269908c3e2cf37fbd3f5
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: cd9577a4bcdb1914ac0a7a23e4a98c31f6e43030
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821553"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80288909"
 ---
 # <a name="audit-history-page"></a>Страница "Журнал аудита"
 
@@ -27,6 +26,6 @@ ms.locfileid: "73821553"
 ![Страница "Журнал аудита"](./media/audit-history-page1.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 С помощью следующего пункта меню навигации можно получить доступ к функции [Seller Insights](./cpp-insights-page.md) на Портале Cloud Partner, которая предоставляет наборы настраиваемых панелей мониторинга для предложений в Marketplace.

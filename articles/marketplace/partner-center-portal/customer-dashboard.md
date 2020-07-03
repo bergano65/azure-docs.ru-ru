@@ -1,19 +1,18 @@
 ---
-title: Панель мониторинга клиентов в службе анализа коммерческих рынков в центре партнеров
+title: Панель мониторинга клиентов в службе анализа коммерческих рынков Майкрософт в центре партнеров
 description: Узнайте, как получить доступ к информации о клиентах, в том числе о тенденциях роста, с помощью панели мониторинга клиентов в коммерческом аналитике Marketplace.
-author: ChJenk
-manager: evansma
-ms.author: v-chjen
+author: dsindona
+ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: f2eaaf2ec2f3dad1da345d0cfeadf1cae223a592
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 4d9dc0315a5c87ed67390e8edb23d44ee55f242b
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76264022"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82732773"
 ---
 # <a name="customer-dashboard-in-commercial-marketplace-analytics"></a>Панель мониторинга клиентов в аналитике коммерческого рынка
 

@@ -1,20 +1,18 @@
 ---
 title: Управление пользователями на Портал Cloud Partner | Azure Marketplace
 description: Устаревшая статья CPP, указанная в статье о ПК; WAS — «Управление пользователями на портале облачных партнеров»
-services: Azure, Marketplace, Cloud Partner Portal, Partner Center
-author: ChJenk
-manager: pbutlerm
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.author: v-chjen
-ms.openlocfilehash: 15c173748f6e38d72f6f05d83a93bbf1fd4a243d
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.author: dsindona
+ms.openlocfilehash: d0a83f0a6c842e7b364e7fa8553768bab063dc68
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74666415"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80288484"
 ---
 # <a name="managing-users-on-the-cloud-partner-portal"></a>Управление пользователями на Портал Cloud Partner
 

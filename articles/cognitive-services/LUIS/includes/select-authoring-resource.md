@@ -1,22 +1,17 @@
 ---
 title: Выбор ресурса для разработки
-titleSuffix: Azure Cognitive Services
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/04/2019
-ms.author: diberry
-ms.openlocfilehash: 969ba0981ecb0a17f0a808e39c3ad15802418f78
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.date: 03/25/2020
+ms.openlocfilehash: b16e720e8b28d9440cde4fdf5e84dbfc00c00ca8
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73580448"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83658681"
 ---
 ## <a name="select-subscription-and-authoring-resource"></a>Выбор подписки и ресурса для разработки
 
-Чтобы просмотреть список приложений или создать приложение на портале LUIS, выберите подписку и ресурс для разработки. Доступ к приложениям осуществляется через ресурс для разработки LUIS. 
+Чтобы просмотреть список приложений или создать приложение на портале LUIS, выберите подписку и ресурс для разработки. Доступ к приложениям осуществляется через ресурс для разработки LUIS.
 
-![Выбор подписки для разработки и ресурса для разработки](../media/select-authoring-resource/select-authoring-resource.png)
+> [!div class="mx-imgBorder"]
+> ![Выбор подписки для разработки и ресурса для разработки](../media/select-authoring-resource/select-authoring-resource-my-english-app.png)

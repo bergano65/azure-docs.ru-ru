@@ -5,18 +5,18 @@ ms.service: cloud-services
 ms.topic: include
 ms.date: 11/25/2018
 ms.openlocfilehash: 5deba9d8968f71ef1b21517e74e6af4c39aa9271
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76279371"
 ---
 > [!WARNING]
-> Когда вы включаете диагностику в существующей роли, при развертывании пакета все настроенные расширения будут отключены. К ним относятся:
+> Когда вы включаете диагностику в существующей роли, при развертывании пакета все настроенные расширения будут отключены. Сюда входит следующее.
 >
 > * диагностика агента мониторинга Microsoft;
 > * мониторинг системы безопасности Microsoft Azure;
-> * Защита от вредоносного ПО                 
+> * Microsoft Antimalware                 
 > * Microsoft Monitoring Agent
 > * агент профилировщика службы Microsoft;      
 > * расширение домена Microsoft Azure;        

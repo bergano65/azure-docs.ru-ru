@@ -1,18 +1,17 @@
 ---
 title: Решение мониторинга контейнеров в Azure Monitor | Документация Майкрософт
 description: Решение для мониторинга контейнеров в Azure Monitor помогает просматривать узлы контейнеров DOCKER и Windows и управлять ими в одном расположении.
-ms.service: azure-monitor
 ms.subservice: logs
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
 ms.date: 07/22/2019
-ms.openlocfilehash: b71818d5d840a0466b5ff6f271df117043341f7b
-ms.sourcegitcommit: 5acd8f33a5adce3f5ded20dff2a7a48a07be8672
+ms.openlocfilehash: 171f897f6e110e8f759281c139addab477ecede3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72899109"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77664700"
 ---
 # <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
@@ -26,8 +25,8 @@ ms.locfileid: "72899109"
 
 - Docker Swarm
 - DC/OS
-- kubernetes
-- Service Fabric
+- Kubernetes
+- Service Fabric.
 - Red Hat OpenShift.
 
 Если вы развернули контейнеры в [Azure Service Fabric](../../service-fabric/service-fabric-overview.md), рекомендуется включить [решение Service Fabric](../../service-fabric/service-fabric-diagnostics-oms-setup.md) и это решение, включив мониторинг событий кластера. Перед включением решения Service Fabric ознакомьтесь [с разрешениями Service Fabric](../../service-fabric/service-fabric-diagnostics-event-analysis-oms.md) , чтобы понять, что оно предоставляет и как его использовать.
@@ -46,15 +45,15 @@ ms.locfileid: "72899109"
 
 В следующей таблице показано, как система управления DOCKER и отслеживание операционной системы поддерживают инвентаризацию контейнеров, производительность и журналы с Azure Monitor.   
 
-| | ACS | Linux | Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Ориентированное на производительность | Контейнер<br>Мероприятие | Мероприятие<br>Журнал | Контейнер<br>Журнал |
+| | ACS | Linux | Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Тестирование | Контейнер<br>событие | событие<br>Журнал | Контейнер<br>Журнал |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| kubernetes | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
+| Kubernetes | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
 | Mesosphere<br>DC/OS | &#8226; | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; |
 | Docker<br>Swarm | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
 | Служба<br>Fabric | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
-| Red Hat Open<br>Shift | | &#8226; | | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; | | &#8226; |
+| Red Hat Open<br>Сдвиг | | &#8226; | | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; | | &#8226; |
 | Windows Server<br>(изолированный) | | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
-| Сервер Linux<br>(изолированный) | | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
+| Linux Server<br>(изолированный) | | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | | &#8226; |
 
 ### <a name="docker-versions-supported-on-linux"></a>Версии Docker, поддерживаемые в Linux
 
@@ -69,7 +68,7 @@ ms.locfileid: "72899109"
 - openSUSE 13.2
 - openSUSE LEAP 42.2
 - CentOS 7.2 и 7.3
-- SLES 12
+- SLES 12
 - RHEL 7.2 и 7.3
 - Платформа контейнеров Red Hat OpenShift (OCP) 3.4 и 3.5
 - ACS Mesosphere DC/OS 1.7.3–1.8.8
@@ -81,7 +80,7 @@ ms.locfileid: "72899109"
 
 ### <a name="supported-windows-operating-system"></a>Поддерживаемая операционная система Windows
 
-- Windows Server 2016
+- Windows Server 2016
 - Юбилейный выпуск Windows 10 (профессиональный или корпоративный)
 
 ### <a name="docker-versions-supported-on-windows"></a>Версии Docker, поддерживаемые в Windows
@@ -117,7 +116,7 @@ ms.locfileid: "72899109"
 
 ### <a name="install-and-configure-linux-container-hosts"></a>Установка и настройка узлов контейнера Linux
 
-После установки Docker используйте приведенные ниже параметры узла контейнера, чтобы настроить агент для использования с Docker. Сначала необходимо получить идентификатор и ключ рабочей области Log Analytics, которые можно найти на портале Azure. В рабочей области щелкните **Быстрый запуск** > **Компьютеры**, чтобы просмотреть **идентификатор рабочей области** и **первичный ключ**.  Скопируйте их и вставьте в любой удобный для вас редактор.
+После установки Docker используйте приведенные ниже параметры узла контейнера, чтобы настроить агент для использования с Docker. Сначала необходимо получить идентификатор и ключ рабочей области Log Analytics, которые можно найти на портале Azure. В рабочей области щелкните **быстрое начало** > **Компьютеры** , чтобы просмотреть **идентификатор рабочей области** и **первичный ключ**.  Скопируйте их и вставьте в любой удобный для вас редактор.
 
 **Для всех узлов контейнера Linux, за исключением CoreOS:**
 
@@ -131,7 +130,7 @@ ms.locfileid: "72899109"
 sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/docker/containers:/var/lib/docker/containers -e WSID="your workspace id" -e KEY="your key" -h=`hostname` -p 127.0.0.1:25225:25225 --name="omsagent" --restart=always microsoft/oms
 ```
 
-**Для всех узлов контейнера Linux Azure для государственных организаций, включая CoreOS:**
+**Для всех узлов контейнеров Linux в Azure для государственных организаций, включая CoreOS:**
 
 Запустите контейнер, который вы хотите отслеживать. Используйте следующий пример, внеся в него необходимые изменения:
 
@@ -186,7 +185,7 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
 
 Существует три способа добавления агента Log Analytics в Red Hat OpenShift, чтобы начать сбор данных мониторинга контейнера:
 
-* [установить агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) непосредственно на каждом узле OpenShift;  
+* [Установка агента log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) непосредственно на каждом узле OpenShift  
 * [включить расширение виртуальной машины Log Analytics](../../azure-monitor/learn/quick-collect-azurevm.md) на каждом узле OpenShift, размещенном в Azure;  
 * Установка агента Log Analytics как набора управляющих программ OpenShift  
 
@@ -253,19 +252,18 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
     Выходные данные должны выглядеть примерно так:  
 
     ```
-    [ocpadmin@khocp-master-0 ~]$ oc describe ds oms  
-    Name:           oms  
-    Image(s):       microsoft/oms  
-    Selector:       name=omsagent  
-    Node-Selector:  zone=default  
-    Labels:         agentVersion=1.4.0-12  
-                    dockerProviderVersion=10.0.0-25  
-                    name=omsagent  
-    Desired Number of Nodes Scheduled: 3  
-    Current Number of Nodes Scheduled: 3  
-    Number of Nodes Misscheduled: 0  
-    Pods Status:    3 Running / 0 Waiting / 0 Succeeded / 0 Failed  
-    No events.  
+    [ocpadmin@khocp-master-0 ~]$ oc describe secret omsagent-secret  
+    Name:           omsagent-secret  
+    Namespace:      omslogging  
+    Labels:         <none>  
+    Annotations:    <none>  
+
+    Type:   Opaque  
+
+    Data  
+    ====  
+    KEY:    89 bytes  
+    WSID:   37 bytes  
     ```
 
 5. Разверните YAML-файл набора daemon-set агента Log Analytics, выполнив следующую команду:
@@ -279,18 +277,19 @@ sudo docker run --privileged -d -v /var/run/docker.sock:/var/run/docker.sock -v 
     Выходные данные должны выглядеть примерно так:
 
     ```
-    [ocpadmin@khocp-master-0 ~]$ oc describe secret omsagent-secret  
-    Name:           omsagent-secret  
-    Namespace:      omslogging  
-    Labels:         <none>  
-    Annotations:    <none>  
-
-    Type:   Opaque  
-
-     Data  
-     ====  
-     KEY:    89 bytes  
-     WSID:   37 bytes  
+    [ocpadmin@khocp-master-0 ~]$ oc describe ds oms  
+    Name:           oms  
+    Image(s):       microsoft/oms  
+    Selector:       name=omsagent  
+    Node-Selector:  zone=default  
+    Labels:         agentVersion=1.4.0-12  
+                    dockerProviderVersion=10.0.0-25  
+                    name=omsagent  
+    Desired Number of Nodes Scheduled: 3  
+    Current Number of Nodes Scheduled: 3  
+    Number of Nodes Misscheduled: 0  
+    Pods Status:    3 Running / 0 Waiting / 0 Succeeded / 0 Failed  
+    No events.  
     ```
 
 #### <a name="configure-a-log-analytics-linux-agent-for-kubernetes"></a>Настройка агента Log Analytics в Linux для Kubernetes
@@ -602,7 +601,7 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 3. Разверните строку Failed (ошибка) и нажмите кнопку +, чтобы добавить критерии в запрос. Затем закомментируйте строку сводки в запросе.
    ![Контейнеры со сбоями](./media/containers/containers-state-failed-select.png)  
 1. Выполните запрос, а затем разверните строку в результатах, чтобы просмотреть идентификатор изображения.  
-   ![контейнеры со сбоями](./media/containers/containers-state-failed.png)  
+   ![Контейнеры со сбоями](./media/containers/containers-state-failed.png)  
 1. Введите следующую команду в запрос журнала. `ContainerImageInventory | where ImageID == <ImageID>` для просмотра сведений об образе, таких как размер образа, количество остановленных образов, а также образы со сбоями.  
    ![Контейнеры со сбоями](./media/containers/containers-failed04.png)
 
@@ -639,6 +638,6 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 
 Создав запрос, который вы считаете полезным, сохраните его, щелкнув **Избранное** в верхней части страницы поиска по журналам. Позднее вы сможете легко открыть его на странице **Моя панель мониторинга**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Журналы запросов](../log-query/log-query-overview.md) для просмотра подробных записей данных контейнера.

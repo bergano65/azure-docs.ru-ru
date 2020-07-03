@@ -1,19 +1,16 @@
 ---
 title: Автоматический сбор зависимостей в Azure Application Insights | Документация Майкрософт
 description: Автоматический сбор и визуализация зависимостей Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: reference
-author: nikmd23
-ms.author: nimolnar
-ms.date: 04/29/2019
-ms.reviewer: mbullwin
-ms.openlocfilehash: e774690fae2314b8db6e14f19a67c7ae1ce3a203
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+author: mrbullwinkle
+ms.author: mbullwin
+ms.date: 05/06/2020
+ms.openlocfilehash: 21e98ee9dc59e7520fb715f1146e492b9198f883
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77064280"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891607"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
@@ -28,12 +25,17 @@ ms.locfileid: "77064280"
 | ASP.NET WebAPI | 4.5+ |
 | ASP.NET Core | 1.1+ |
 | <b>Библиотеки обмена данными</b> |
-| [HTTPClient](https://www.microsoft.com/net/) | 4.5+, .NET Core 1.1+ |
+| [HttpClient](https://www.microsoft.com/net/) | 4.5+, .NET Core 1.1+ |
 | [SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) | .NET Core 1.0+, NuGet 4.3.0 |
+| [Microsoft.Data.SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient/1.1.2)| 1.1.0 — последний стабильный выпуск. (См. Примечание ниже.)
 | [Пакет SDK для клиента концентраторов событий](https://www.nuget.org/packages/Microsoft.Azure.EventHubs) | 1.1.0 |
 | [Пакет SDK для клиента служебной шины](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus) | 3.0.0 |
 | <b>Клиенты хранилища</b>|  |
 | ADO.NET | 4.5+ |
+
+> [!NOTE]
+> Существует [известная ошибка](https://github.com/microsoft/ApplicationInsights-dotnet/issues/1347) , связанная с более старыми версиями Microsoft. Data. SqlClient. Для устранения этой проблемы рекомендуется использовать 1.1.0 или более позднюю версию. Entity Framework Core не обязательно поставляется с последним стабильным выпуском Microsoft. Data. SqlClient, поэтому мы рекомендуем подтвердить, что вы по крайней мере 1.1.0, чтобы избежать этой проблемы.   
+
 
 ## <a name="java"></a>Java
 | Серверы приложений | Версии |
@@ -43,15 +45,15 @@ ms.locfileid: "77064280"
 | [Jetty](https://www.eclipse.org/jetty/) | 9 |
 | <b>Платформы приложений</b> |  |
 | [Spring](https://spring.io/) | 3.0 |
-| [Spring Boot](https://spring.io/projects/spring-boot) | 1.5.9+<sup>*</sup> |
+| [Spring Boot](https://spring.io/projects/spring-boot) | 1.5.9 +<sup>*</sup> |
 | Сервлет Java | 3.1+ |
-| <b>Библиотеки обмена данными</b> |  |
-| [HTTP-клиент Apache](https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient) | 4.3+<sup>†</sup> |
+| <b>Библиотеки связи</b> |  |
+| [HTTP-клиент Apache](https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient) | 4.3 +<sup>†</sup> |
 | <b>Клиенты хранилища</b> | |
-| [SQL Server]( https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc) | 1+<sup>†</sup> |
+| [SQL Server]( https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc) | 1 +<sup>†</sup> |
 | [PostgreSQL (бета-поддержка)](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/CHANGELOG.md#version-240-beta) | |
-| [Oracle]( https://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html) | 1+<sup>†</sup> |
-| [MySql]( https://mvnrepository.com/artifact/mysql/mysql-connector-java) | 1+<sup>†</sup> |
+| [Oracle]( https://www.oracle.com/technetwork/database/application-development/jdbc/downloads/index.html) | 1 +<sup>†</sup> |
+| [MySql]( https://mvnrepository.com/artifact/mysql/mysql-connector-java) | 1 +<sup>†</sup> |
 | <b>Библиотеки ведения журналов</b> | |
 | [Logback](https://logback.qos.ch/) | 1+ |
 | [Log4j](https://logging.apache.org/log4j/) | 1.2+ |
@@ -66,15 +68,15 @@ ms.locfileid: "77064280"
 
 | Библиотеки обмена данными | Версии |
 | ------------------------|----------|
-| [HTTP](https://nodejs.org/api/http.html), [HTTPS](https://nodejs.org/api/https.html) | 0.10+ |
+| [http](https://nodejs.org/api/http.html), [HTTPS](https://nodejs.org/api/https.html) | 0.10+ |
 | <b>Клиенты хранилища</b> | |
 | [Redis](https://www.npmjs.com/package/redis) | 2.x |
 | [MongoDb](https://www.npmjs.com/package/mongodb); [MongoDb Core](https://www.npmjs.com/package/mongodb-core) | 2. x-3. x |
 | [MySQL](https://www.npmjs.com/package/mysql) | 2.0.0-2.16. x |
-| [PostgreSql](https://www.npmjs.com/package/pg); | 6. x-7. x |
+| [PostgreSQL](https://www.npmjs.com/package/pg); | 6. x-7. x |
 | [PG-пул](https://www.npmjs.com/package/pg-pool) | 1. x-2. x |
 | <b>Библиотеки ведения журналов</b> | |
-| [консоль](https://nodejs.org/api/console.html) | 0.10+ |
+| [Консоль](https://nodejs.org/api/console.html) | 0.10+ |
 | [Bunyan](https://www.npmjs.com/package/bunyan) | 1.x |
 | [Winston](https://www.npmjs.com/package/winston) | 2. x-3. x |
 

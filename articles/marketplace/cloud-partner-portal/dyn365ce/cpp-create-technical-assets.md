@@ -1,19 +1,18 @@
 ---
 title: Создание Dynamics 365 для технических ресурсов в службах взаимодействия с клиентами | Azure Marketplace
 description: Эта статья CPP устарела и связана со статьей ПК. был "создан технический ресурс для приложения Dynamics 365 для предложения приложений для сотрудничества с клиентами".
-services: Dynamics 365 for Customer Engagement, Azure, Marketplace, Cloud Partner Portal, AppSource
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: 1b3552a8c6d97b526edb354e849e1b72dc0eb104
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 79812b4dc4a8942882be326a4d00d619f4017162
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73825631"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278439"
 ---
 # <a name="create-technical-assets-for-azure-application-offer"></a>Создание технических ресурсов для предложения приложения Azure
 

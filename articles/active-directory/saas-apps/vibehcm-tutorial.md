@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Vibe HCM| Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Vibe HCM| Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Vibe HCM.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
 ms.openlocfilehash: 4267b75be72c1d162b4abaf7184afcdd02c38720
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "68943108"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-vibe-hcm"></a>Руководство по Интеграция Azure Active Directory с Vibe HCM
+# <a name="tutorial-azure-active-directory-integration-with-vibe-hcm"></a>Руководство по интеграции Azure Active Directory с Vibe HCM
 
 В этом руководстве вы узнаете, как интегрировать Vibe HCM с Azure Active Directory (Azure AD).
 Интеграция Vibe HCM с Azure Active Directory обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "68943108"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Vibe HCM, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Vibe HCM с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария

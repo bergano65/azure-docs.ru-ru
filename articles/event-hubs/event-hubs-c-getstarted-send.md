@@ -16,10 +16,10 @@ ms.custom: seodec18
 ms.date: 11/05/2019
 ms.author: shvija
 ms.openlocfilehash: 5bd4bb66b7e3c3ec37724f8684105befbc9132ff
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "73720666"
 ---
 # <a name="quickstart-send-events-to-azure-event-hubs-using-c"></a>Краткое руководство. Отправка событий в Центры событий Azure с помощью C
@@ -154,7 +154,7 @@ ms.locfileid: "73720666"
 
 Поздравляем! Теперь вы можете отправлять сообщения в концентратор событий.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь со следующими статьями:
 
 - [EventProcessorHost](event-hubs-event-processor-host.md)

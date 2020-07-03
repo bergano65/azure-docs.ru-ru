@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Andromeda | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Andromeda | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Andromeda.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 68fa570ecfbafe2000bfa6eb9fa159dff48219a6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67107086"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-andromeda"></a>Руководство по Интеграция Azure Active Directory с Andromeda
+# <a name="tutorial-azure-active-directory-integration-with-andromeda"></a>Руководство по интеграции Azure Active Directory с Andromeda
 
 Из этого руководства вы узнаете, как интегрировать Andromeda с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Andromeda обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "67107086"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Andromeda, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Andromeda с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -107,9 +107,9 @@ ms.locfileid: "67107086"
 
     ![Сведения о домене и URL-адресах единого входа приложения Andromeda](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantURL>.ngcxpress.com/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantURL>.ngcxpress.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantURL>.ngcxpress.com/SAMLConsumer.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantURL>.ngcxpress.com/SAMLConsumer.aspx`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -129,16 +129,16 @@ ms.locfileid: "67107086"
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
-    | ИМЯ | Исходный атрибут|
+    | Имя | Исходный атрибут|
     | ------ | -----------|
-    | role        | Определенная роль для приложения |
-    | Тип        | Тип приложения |
+    | роль        | Определенная роль для приложения |
+    | type        | Тип приложения |
     | company       | CompanyName |
 
     > [!NOTE]
     > Значения, указанные выше, приведены в качестве примера. Эти значения представлены исключительно для демонстрации. Используйте роли своей организации.
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -150,9 +150,9 @@ ms.locfileid: "67107086"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Нажмите кнопку **ОК**.
+    е) Нажмите кнопку **ОК**.
 
     ж. Выберите команду **Сохранить**.
 
@@ -164,7 +164,7 @@ ms.locfileid: "67107086"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -186,7 +186,7 @@ ms.locfileid: "67107086"
 
     ![Конфигурация Andromeda](./media/andromedascm-tutorial/tutorial_andromedascm_config.png)
 
-    a. Установите флажок **Enable SSO with SAML** (Включить единый вход с помощью SAML).
+    а. Установите флажок **Enable SSO with SAML** (Включить единый вход с помощью SAML).
 
     b. В разделе **Andromeda Information** (Сведения о приложении Andromeda) скопируйте значение **SP Identity** (Идентификатор удостоверения поставщика услуг) и вставьте его в текстовое поле **Идентификатор** раздела **Базовая конфигурация SAML**.
 
@@ -194,9 +194,9 @@ ms.locfileid: "67107086"
 
     d. Скопируйте значение **Logon URL** (URL-адрес входа) и вставьте его в текстовое поле **URL-адрес входа** раздела **Базовая конфигурация SAML**.
 
-    д. В разделе **SAML Identity Provider** (Поставщик удостоверений SAML) введите имя поставщика удостоверений.
+    д) В разделе **SAML Identity Provider** (Поставщик удостоверений SAML) введите имя поставщика удостоверений.
 
-    Е. В текстовое поле **Single Sign On End Point** (Конечная точка единого входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
+    е) В текстовое поле **Single Sign On End Point** (Конечная точка единого входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
     ж. Откройте в Блокноте **сертификат в кодировке Base64**, загруженный с портала Azure, и вставьте его в текстовое поле **Сертификат X 509**.
     
@@ -272,4 +272,4 @@ ms.locfileid: "67107086"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

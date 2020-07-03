@@ -3,28 +3,32 @@ title: Технические профили Azure MFA в пользовател
 titleSuffix: Azure AD B2C
 description: Справочник по настраиваемой политике для технических профилей Azure многофакторной идентификации (MFA) в Azure AD B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/17/2019
-ms.author: marsma
+ms.date: 03/26/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a8aaea6b2afb4d89e6e667edba0eeba2f4ddcca8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: c9ed0e329b498112feafaf21c34e85ea436cbb77
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75480220"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80332804"
 ---
 # <a name="define-an-azure-mfa-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Определение технического профиля Azure MFA в Azure AD B2C настраиваемой политике
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Azure Active Directory B2C (Azure AD B2C) обеспечивает поддержку проверки номера телефона с помощью многофакторной идентификации Azure (MFA). Используйте этот технический профиль, чтобы создать и отправить код на номер телефона, а затем проверить код.
+Azure Active Directory B2C (Azure AD B2C) обеспечивает поддержку проверки номера телефона с помощью многофакторной идентификации Azure (MFA). Используйте этот технический профиль, чтобы создать и отправить код на номер телефона, а затем проверить код. Технический профиль Azure MFA также может возвращать сообщение об ошибке.  Этот профиль проверяет данные, предоставленные пользователем, прежде чем продолжать путь взаимодействия пользователя. В техническом профиле проверки отображается сообщение об ошибке на странице с автоматическим подтверждением.
 
-Технический профиль Azure MFA также может возвращать сообщение об ошибке. Вы можете спроектировать интеграцию с Azure MFA с помощью **технического профиля проверки**. Технический профиль проверки вызывает службу Azure MFA. Этот профиль проверяет данные, предоставленные пользователем, прежде чем продолжать путь взаимодействия пользователя. В техническом профиле проверки отображается сообщение об ошибке на странице с автоматическим подтверждением.
+Этот технический профиль:
+
+- Не предоставляет интерфейс для взаимодействия с пользователем. Вместо этого пользовательский интерфейс вызывается из [самостоятельно утвержденного](self-asserted-technical-profile.md) технического профиля или [элемента управления отображением](display-controls.md) в качестве [технического профиля проверки](validation-technical-profile.md).
+- Использует службу Azure MFA для создания и отправки кода на номер телефона, а затем проверяет код.  
+- Проверяет номер телефона через текстовые сообщения.
 
 [!INCLUDE [b2c-public-preview-feature](../../includes/active-directory-b2c-public-preview.md)]
 
@@ -53,7 +57,7 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 Элемент **inputclaim** содержит список утверждений для отправки в Azure mfa. Вы также можете сопоставлять имя заявки с именем, определенным в техническом профиле MFA.
 
-| клаимреференцеид | Обязательно для заполнения | Description |
+| клаимреференцеид | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | userPrincipalName | Да | Идентификатор пользователя, владеющего номером телефона. |
 | phoneNumber | Да | Номер телефона, по которому отправляется код SMS. |
@@ -64,26 +68,26 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 ### <a name="output-claims"></a>Исходящие утверждения
 
-Поставщик протокола Azure MFA не возвращает **OutputClaims**, поэтому нет необходимости указывать выходные утверждения. Однако можно включить утверждения, которые не возвращаются поставщиком удостоверений Azure MFA, при условии, что задан атрибут `DefaultValue`.
+Поставщик протокола Azure MFA не возвращает **OutputClaims**, поэтому нет необходимости указывать выходные утверждения. Однако можно включить утверждения, которые не возвращаются поставщиком удостоверений Azure MFA, при условии, что задан `DefaultValue` атрибут.
 
 Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения исходящих утверждений или создания новых.
 
 ### <a name="metadata"></a>Метаданные
 
-| attribute | Обязательно для заполнения | Description |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | Операция | Да | Должен быть **оневайсмс**.  |
-| усермессажеифинвалидформат | Нет | Пользовательское сообщение об ошибке, если указанный номер телефона не является допустимым номером телефона |
-| усермессажеифкаулднтсендсмс | Нет | Пользовательское сообщение об ошибке, если указанный номер телефона не принимает SMS |
-| усермессажеифсервереррор | Нет | Пользовательское сообщение об ошибке, если на сервере произошла внутренняя ошибка |
 
-### <a name="return-an-error-message"></a>Возврат сообщения об ошибке
+#### <a name="ui-elements"></a>Элементы пользовательского интерфейса
 
-Как описано в статье [метаданные](#metadata), можно настроить сообщение об ошибке, отображаемое пользователю для различных вариантов ошибок. Дальнейшую локализацию этих сообщений можно выполнить с помощью префикса языкового стандарта. Пример.
+Следующие метаданные можно использовать для настройки сообщений об ошибках, отображаемых при отправке ошибки SMS. Метаданные должны быть настроены в [самостоятельно утвержденном](self-asserted-technical-profile.md) техническом профиле. Сообщения об ошибках можно [локализовать](localization-string-ids.md#azure-mfa-error-messages).
 
-```XML
-<Item Key="en.UserMessageIfInvalidFormat">Invalid phone number.</Item>
-```
+| Атрибут | Обязательный | Описание |
+| --------- | -------- | ----------- |
+| усермессажеифкаулднтсендсмс | Нет | Сообщение об ошибке пользователя, если указанный номер телефона не принимает SMS. |
+| усермессажеифинвалидформат | Нет | Сообщение об ошибке пользователя, если указанный номер телефона не является допустимым номером телефона. |
+| усермессажеифсервереррор | Нет | Сообщение об ошибке пользователя, если на сервере произошла внутренняя ошибка. |
+| усермессажеифсроттлед| Нет | Сообщение об ошибке пользователя, если запрос был отрегулирован.|
 
 ### <a name="example-send-an-sms"></a>Пример. Отправка SMS
 
@@ -91,19 +95,19 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 ```XML
 <TechnicalProfile Id="AzureMfa-SendSms">
-    <DisplayName>Send Sms</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Metadata>
-        <Item Key="Operation">OneWaySMS</Item>
-    </Metadata>
-    <InputClaimsTransformations>
-        <InputClaimsTransformation ReferenceId="CombinePhoneAndCountryCode" />
-        <InputClaimsTransformation ReferenceId="ConvertStringToPhoneNumber" />
-    </InputClaimsTransformations>
-    <InputClaims>
-        <InputClaim ClaimTypeReferenceId="userPrincipalName" />
-        <InputClaim ClaimTypeReferenceId="fullPhoneNumber" PartnerClaimType="phoneNumber" />
-    </InputClaims>
+  <DisplayName>Send Sms</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="Operation">OneWaySMS</Item>
+  </Metadata>
+  <InputClaimsTransformations>
+    <InputClaimsTransformation ReferenceId="CombinePhoneAndCountryCode" />
+    <InputClaimsTransformation ReferenceId="ConvertStringToPhoneNumber" />
+  </InputClaimsTransformations>
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="userPrincipalName" />
+    <InputClaim ClaimTypeReferenceId="fullPhoneNumber" PartnerClaimType="phoneNumber" />
+  </InputClaims>
 </TechnicalProfile>
 ```
 
@@ -115,7 +119,7 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 Элемент **inputclaim** содержит список утверждений для отправки в Azure mfa. Вы также можете сопоставлять имя заявки с именем, определенным в техническом профиле MFA.
 
-| клаимреференцеид | Обязательно для заполнения | Description |
+| клаимреференцеид | Обязательный | Описание |
 | --------- | -------- | ----------- | ----------- |
 | phoneNumber| Да | Тот же номер телефона, который использовался ранее для отправки кода. Он также используется для нахождение сеанса проверки телефона. |
 | верификатионкоде  | Да | Код проверки, предоставленный пользователем для проверки |
@@ -124,28 +128,26 @@ Web.TPEngine.Providers.AzureMfaProtocolProvider, Web.TPEngine, Version=1.0.0.0, 
 
 ### <a name="output-claims"></a>Исходящие утверждения
 
-Поставщик протокола Azure MFA не возвращает **OutputClaims**, поэтому нет необходимости указывать выходные утверждения. Однако можно включить утверждения, которые не возвращаются поставщиком удостоверений Azure MFA, при условии, что задан атрибут `DefaultValue`.
+Поставщик протокола Azure MFA не возвращает **OutputClaims**, поэтому нет необходимости указывать выходные утверждения. Однако можно включить утверждения, которые не возвращаются поставщиком удостоверений Azure MFA, при условии, что задан `DefaultValue` атрибут.
 
 Элемент **OutputClaimsTransformations** может содержать коллекцию элементов **OutputClaimsTransformation**, которые используются для изменения исходящих утверждений или создания новых.
 
-## <a name="metadata"></a>Метаданные
+### <a name="metadata"></a>Метаданные
 
-| attribute | Обязательно для заполнения | Description |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | Операция | Да | Необходимо **проверить** |
-| усермессажеифинвалидформат | Нет | Пользовательское сообщение об ошибке, если указанный номер телефона не является допустимым номером телефона |
-| усермессажеифвронгкодинтеред | Нет | Настраиваемое сообщение об ошибке, если код, указанный для проверки, неверен |
-| усермессажеифмаксалловедкодеретриреачед | Нет | Пользовательское сообщение об ошибке, если пользователь попытался слишком много раз проверить код проверки |
-| усермессажеифсроттлед | Нет | Настраиваемое сообщение об ошибке, если пользователь регулируется |
-| усермессажеифсервереррор | Нет | Пользовательское сообщение об ошибке, если на сервере произошла внутренняя ошибка |
 
-### <a name="return-an-error-message"></a>Возврат сообщения об ошибке
+#### <a name="ui-elements"></a>Элементы пользовательского интерфейса
 
-Как описано в статье [метаданные](#metadata), можно настроить сообщение об ошибке, отображаемое пользователю для различных вариантов ошибок. Дальнейшую локализацию этих сообщений можно выполнить с помощью префикса языкового стандарта. Пример.
+Следующие метаданные можно использовать для настройки сообщений об ошибках, отображаемых при сбое проверки кода. Метаданные должны быть настроены в [самостоятельно утвержденном](self-asserted-technical-profile.md) техническом профиле. Сообщения об ошибках можно [локализовать](localization-string-ids.md#azure-mfa-error-messages).
 
-```XML
-<Item Key="en.UserMessageIfWrongCodeEntered">Wrong code has been entered.</Item>
-```
+| Атрибут | Обязательный | Описание |
+| --------- | -------- | ----------- |
+| усермессажеифмаксалловедкодеретриреачед| Нет | Сообщение об ошибке пользователя, если пользователь попытался слишком много раз выполнить проверку кода. |
+| усермессажеифсервереррор | Нет | Сообщение об ошибке пользователя, если на сервере произошла внутренняя ошибка. |
+| усермессажеифсроттлед| Нет | Сообщение об ошибке пользователя, если запрос регулируется.|
+| усермессажеифвронгкодинтеред| Нет| Сообщение об ошибке пользователя, если код, указанный для проверки, неверен.|
 
 ### <a name="example-verify-a-code"></a>Пример: Проверка кода
 

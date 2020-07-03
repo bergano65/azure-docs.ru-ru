@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: brendm
 ms.openlocfilehash: 8a7ba3c3b9c19b2084b6892b55ac417da38ab047
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76278895"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Квоты и планы обслуживания для Azure Веснного облака
@@ -23,9 +23,9 @@ ms.locfileid: "76278895"
 
 В течение периода действия предварительной версии Azure Веснное облако предлагает только один уровень служб.
 
-Ресурс | Объем
+Ресурс | Сумма
 ------- | -------
-Виртуальных ЦП | 4 на экземпляр службы
+vCPU | 4 на экземпляр службы
 Память | 8 ГБ на экземпляр службы
 Экземпляры службы Azure Spring Cloud по регионам на одну подписку | 10
 Всего экземпляров приложений на экземпляр службы Azure Spring Cloud | 500

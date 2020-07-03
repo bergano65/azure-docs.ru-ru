@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
-ms.openlocfilehash: 47ff8870df7c89ee2ab3e48e064e31aa581f65f0
-ms.sourcegitcommit: 827248fa609243839aac3ff01ff40200c8c46966
+ms.openlocfilehash: 90034a56fcf5211059d37270e12391249f7a16b5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73748632"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77920167"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
 
@@ -28,7 +28,7 @@ ms.locfileid: "73748632"
 
 Вы включаете [принудительное туннелирование](../../vpn-gateway/vpn-gateway-forced-tunneling-rm.md) в подсетях виртуальной сети Azure, чтобы направить весь интернет-трафик обратно в локальную сеть. В этом случае виртуальные машины Azure, на которых выполняется Windows, не смогут активировать Windows.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Виртуальные машины Windows Azure должны подключиться к серверу управления ключами Azure для активации Windows. Для активации требуется, чтобы запрос на активацию поступал с общедоступного IP-адреса Azure. В случае принудительного туннелирования активация будет завершаться ошибкой, так как запрос на активацию поступает из вашей локальной сети вместо общедоступного IP-адреса Azure.
 
@@ -85,6 +85,8 @@ IP-адрес сервера управления ключами для глоб
 
 ### <a name="for-classic-vms"></a>Классические виртуальные машины
 
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 1. Откройте Azure PowerShell и [войдите в свою подписку Azure](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
 2. Выполните следующие команды:
 
@@ -109,9 +111,9 @@ IP-адрес сервера управления ключами для глоб
 
 4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Ключи установки клиента сервера управления ключами](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
+- [Ключи установки клиента KMS](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
 )
 - [Просмотр и выбор методов активации](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134256(v=ws.11)
 )

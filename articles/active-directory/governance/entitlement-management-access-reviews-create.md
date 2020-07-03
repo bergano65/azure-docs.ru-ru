@@ -17,10 +17,10 @@ ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a862bbb1f574e4adab2f7d8e59a1abe8e5a5fa2a
-ms.sourcegitcommit: c62a68ed80289d0daada860b837c31625b0fa0f0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73608843"
 ---
 # <a name="create-an-access-review-of-an-access-package-in-azure-ad-entitlement-management"></a>Создание проверки доступа к пакету Access в управлении назначениями Azure AD
@@ -30,10 +30,10 @@ ms.locfileid: "73608843"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы включить проверку пакетов доступа, необходимо выполнить необходимые условия для создания пакета Access.
-- Azure AD Premium P2
-- Глобальный администратор, администратор пользователей, владелец каталога или диспетчер пакетов Access
+- Azure AD Premium P2
+- Глобальный администратор, Администратор пользователей, Владелец каталога или Диспетчер пакетов для доступа.
 
-Дополнительные сведения см. в разделе [требования к лицензии](entitlement-management-overview.md#license-requirements).
+Дополнительные сведения см. в статье [Лицензионные требования](entitlement-management-overview.md#license-requirements).
 
 
 ## <a name="create-an-access-review-of-an-access-package"></a>Создание проверки доступа к пакету Access

@@ -6,22 +6,22 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 09/28/2019
 ms.author: mjbrown
-ms.openlocfilehash: 8b64d933057b3ddb07f5f99889c7d7c23c74f545
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 0ba86d6955805fc97743a1a51aa586b179d82235
+ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873664"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82869872"
 ---
 # <a name="provision-throughput-on-a-database-in-azure-cosmos-db"></a>Подготовка пропускной способности для базы данных в Azure Cosmos DB
 
-Узнайте, как подготовить пропускную способность для базы данных в Azure Cosmos DB. Вы можете подготовить пропускную способность для [одного](how-to-provision-container-throughput.md) контейнера или для базы данных и разделить ее между контейнерами внутри базы данных. Сведения о том, когда следует использовать пропускную способность уровня контейнера и уровня базы данных, см. в статье [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md). Вы можете подготовить пропускную способность уровня базы данных с помощью портала Azure или пакетов SDK для Azure Cosmos DB.
+Узнайте, как подготовить пропускную способность для базы данных в Azure Cosmos DB. Можно подготавливать пропускную способность для одного [контейнера](how-to-provision-container-throughput.md)или для базы данных и совместно использовать пропускную способность между контейнерами внутри нее. Сведения об использовании пропускной способности уровня контейнера и базы данных см. в статье [варианты использования для подготовки пропускной способности для контейнеров и баз данных](set-throughput.md) . Вы можете подготовить пропускную способность уровня базы данных с помощью портала Azure или пакетов SDK для Azure Cosmos DB.
 
 ## <a name="provision-throughput-using-azure-portal"></a>Подготовка пропускной способности с помощью портала Azure
 
-### <a id="portal-sql"></a>API SQL (Core)
+### <a name="sql-core-api"></a><a id="portal-sql"></a>API SQL (Core)
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
 1. [Создайте новую учетную запись Azure Cosmos](create-sql-api-dotnet.md#create-account) или выберите существующую.
 
@@ -30,7 +30,7 @@ ms.locfileid: "74873664"
    * Введите идентификатор базы данных.
    * Выберите **Подготовить пропускную способность**.
    * Укажите пропускную способность (например, 1000 ЕЗ/с).
-   * Нажмите кнопку **ОК**.
+   * Щелкните **ОК**.
 
     ![Снимок экрана: диалоговое окно "Новая база данных"](./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png)
 
@@ -46,9 +46,9 @@ ms.locfileid: "74873664"
 > [!Note]
 > Используйте пакеты SDK для Cosmos или API SQL, чтобы подготовить пропускную способность для всех API. При необходимости также можно использовать указанный ниже пример для API Cassandra.
 
-### <a id="dotnet-all"></a>Все API
+### <a name="all-apis"></a><a id="dotnet-all"></a>Все API
 
-### <a name="net-v2-sdk"></a>Пакет SDK для .Net версии 2
+# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
 
 ```csharp
 //set the throughput for the database
@@ -63,12 +63,16 @@ await client.CreateDatabaseIfNotExistsAsync(
     options);
 ```
 
-### <a name="net-v3-sdk"></a>Пакет SDK для .Net версии 3
+# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
 
 [!code-csharp[](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos/tests/Microsoft.Azure.Cosmos.Tests/SampleCodeForDocs/DatabaseDocsSampleCode.cs?name=DatabaseCreateWithThroughput)]
 
-### <a id="dotnet-cassandra"></a>API Cassandra
-Аналогичную команду можно выполнить с помощью любого драйвера, совместимого с CQL. 
+---
+
+### <a name="cassandra-api"></a><a id="dotnet-cassandra"></a>API Cassandra
+
+Аналогичную команду можно выполнить с помощью любого драйвера, совместимого с CQL.
+
 ```csharp
 // Create a Cassandra keyspace and provision throughput of 400 RU/s
 session.Execute("CREATE KEYSPACE IF NOT EXISTS myKeySpace WITH cosmosdb_provisioned_throughput=400");
@@ -78,7 +82,7 @@ session.Execute("CREATE KEYSPACE IF NOT EXISTS myKeySpace WITH cosmosdb_provisio
 
 См. подробнее о подготовке пропускной способности в Azure Cosmos DB:
 
-* [Globally scale provisioned throughput](scaling-throughput.md) (Глобальное масштабирование подготовленной пропускной способности)
+* [Глобальное масштабирование подготовленной пропускной способности](scaling-throughput.md)
 * [Обеспечение необходимой пропускной способности для контейнеров и баз данных](set-throughput.md)
 * [Provision throughput for an Azure Cosmos DB container](how-to-provision-container-throughput.md) (Подготовка пропускной способности для контейнера Azure Cosmos DB)
 * [Пропускная способность и единицы запросов в Azure Cosmos DB](request-units.md)

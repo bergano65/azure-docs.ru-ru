@@ -10,10 +10,10 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: 5c23b9ef280a4a4e3458d279ecf060d2e3d50295
-ms.sourcegitcommit: 92d42c04e0585a353668067910b1a6afaf07c709
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "72992149"
 ---
 # <a name="module-twin-json-schema"></a>Схема JSON двойника модуля
@@ -21,13 +21,13 @@ ms.locfileid: "72992149"
 Служба "Сетка событий" в IoT Edge интегрируется с экосистемой IoT Edge и поддерживает создание разделов и подписок с помощью модуля двойника. Он также сообщает о текущем состоянии всех разделов и подписок на события для сообщаемых свойств в модуле двойника.
 
 > [!WARNING]
-> Из-за ограничений в экосистеме IoT Edge все элементы массива в следующем примере JSON кодируются как строки JSON. См. раздел `EventSubscription.Filter.EventTypes` и `EventSubscription.Filter.AdvancedFilters` Keys в следующем примере.
+> Из-за ограничений в экосистеме IoT Edge все элементы массива в следующем примере JSON кодируются как строки JSON. См `EventSubscription.Filter.EventTypes` . `EventSubscription.Filter.AdvancedFilters` раздел и ключи в следующем примере.
 
 ## <a name="desired-properties-json"></a>JSON требуемых свойств
 
-* Значение каждой пары «ключ-значение» в разделе «разделы» имеет такую же схему JSON, которая используется для `Topic.Properties` в API при создании разделов.
-* Значение каждой пары "ключ-значение" в разделе **EventSubscriptions** имеет такую же схему JSON, которая используется для `EventSubscription.Properties` в API при создании разделов.
-* Чтобы удалить раздел, задайте для него значение `null` в нужных свойствах.
+* Значение каждой пары «ключ-значение» в разделе «разделы» имеет такую же схему JSON, которая используется для `Topic.Properties` API при создании разделов.
+* Значение каждой пары "ключ-значение" в разделе **EventSubscriptions** имеет такую же схему JSON, которая используется для `EventSubscription.Properties` API при создании разделов.
+* Чтобы удалить раздел, задайте для `null` него значение в нужных свойствах.
 * Удаление подписок на события с помощью требуемых свойств не поддерживается.
 
 ```json

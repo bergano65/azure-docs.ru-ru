@@ -5,15 +5,18 @@ author: nberdy
 ms.author: nberdy
 ms.date: 08/08/2019
 ms.topic: overview
-ms.custom: mvc
+ms.custom:
+- mvc
+- amqp
+- mqtt
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: 78678474430792eb7fe419ef4f15828d461c1fec
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 06c0ff7060f4a9d71af11ae75d52ad7f4bf14c6b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647413"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81730851"
 ---
 # <a name="what-is-azure-iot-hub"></a>Что такое Центр Интернета вещей в Azure?
 

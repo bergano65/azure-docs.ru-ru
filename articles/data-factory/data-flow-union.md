@@ -7,21 +7,27 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 02/12/2019
-ms.openlocfilehash: adba1eb61676dbebcb356490b14b279ebe69c644
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.date: 04/27/2020
+ms.openlocfilehash: 1874e3536a3dda123c7fff9726c02e5d92d88804
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930151"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82204344"
 ---
 # <a name="azure-data-factory-mapping-data-flow-union-transformation"></a>Преобразование объединения потока данных в фабрике данных Azure
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Операция объединения группирует несколько потоков данных в один, при этом результаты команды SQL Union для таких потоков используются в качестве новых выходных данных для преобразования с объединением. Вся схема из каждого входного потока будет объединена в потоке данных без необходимости использовать ключ объединения.
 
 Можно объединить n-число потоков в таблице параметров, щелкнув значок "+" рядом с каждой настроенной строкой, включая исходные данные, а также потоки из существующих преобразований в потоке данных.
 
-![Преобразование «объединение»](media/data-flow/union.png "Объединение множеств")
+Ниже приведен краткий видеоролик с пошаговыми руководствами преобразования «объединение» в потоке данных сопоставления ADF:
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4vngz]
+
+![Union transformation](media/data-flow/union.png "Union") (Преобразование "Объединение множеств")
 
 В этом случае можно объединить разнородные метаданные из нескольких источников (в этом примере три разных исходных файла) и объединить их в один поток:
 
@@ -43,6 +49,6 @@ ms.locfileid: "74930151"
 
 ![Выходные данные объединения](media/data-flow/unionoutput.png "Выходные данные объединения")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Изучите аналогичные преобразования, включая [соединение](data-flow-join.md) и [существование](data-flow-exists.md).

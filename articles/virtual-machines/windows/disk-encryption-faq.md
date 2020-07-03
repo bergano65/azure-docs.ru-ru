@@ -2,22 +2,29 @@
 title: Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Windows
 description: В этой статье содержатся ответы на часто задаваемые вопросы о Microsoft Azure шифровании дисков для виртуальных машин IaaS Windows.
 author: msmbaldwin
-ms.service: security
+ms.service: virtual-machines-windows
+ms.subservice: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 11/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: ea2a66a6b012664a9596a02ea32c1a0b677ee3ea
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: 61de52e5a6703682d52d49efe9decb814231dae4
+ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74384264"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82901282"
 ---
-# <a name="azure-disk-encryption-for-windows-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Windows
+# <a name="azure-disk-encryption-for-windows-virtual-machines-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Windows
 
 Эта статья содержит ответы на часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Windows. Дополнительные сведения об этой службе см. в статье [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md).
 
+## <a name="what-is-azure-disk-encryption-for-windows-vms"></a>Что такое шифрование дисков Azure для виртуальных машин Windows?
+
+Шифрование дисков Azure для виртуальных машин Windows использует функцию BitLocker в Windows для обеспечения полного шифрования диска операционной системы и дисков данных. Кроме того, он обеспечивает шифрование временного диска, если [параметр параметра volumetype значение имеет значение ALL](disk-encryption-windows.md#enable-encryption-on-a-newly-added-data-disk).  Содержимое передается в зашифрованном виде из виртуальной машины в серверную часть хранилища. Таким образом, обеспечивается сквозное шифрование с помощью управляемого клиентом ключа.
+ 
+См. раздел [Поддерживаемые виртуальные машины и операционные системы](disk-encryption-overview.md#supported-vms-and-operating-systems).
+ 
 ## <a name="where-is-azure-disk-encryption-in-general-availability-ga"></a>В каких регионах предоставляется общедоступная версия шифрования дисков Azure?
 
 Шифрование дисков Azure находится в общем доступе во всех общедоступных регионах Azure.
@@ -36,7 +43,7 @@ ms.locfileid: "74384264"
 
 ## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Какие размеры виртуальных машин и операционные системы поддерживают шифрование дисков Azure?
 
-В статье [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md) перечислены [размеры виртуальных машин](disk-encryption-overview.md#supported-vm-sizes) и [операционные системы виртуальных машин](disk-encryption-overview.md#supported-operating-systems) , поддерживающие шифрование дисков Azure.
+В статье [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md) перечислены [размеры виртуальных машин](disk-encryption-overview.md#supported-vms) и [операционные системы виртуальных машин](disk-encryption-overview.md#supported-operating-systems) , поддерживающие шифрование дисков Azure.
 
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Можно ли с помощью шифрования дисков Azure зашифровать загрузочные тома и тома данных?
 
@@ -47,6 +54,19 @@ ms.locfileid: "74384264"
 ## <a name="can-i-encrypt-an-unmounted-volume-with-azure-disk-encryption"></a>Можно ли зашифровать неподключенный том с помощью шифрования дисков Azure?
 
 Нет, шифрование дисков Azure шифрует только подключенные тома.
+
+## <a name="what-is-storage-server-side-encryption"></a>Что такое шифрование на стороне сервера хранилища?
+
+Шифрование на стороне сервера хранилища шифрует управляемые диски Azure в службе хранилища Azure. Управляемые диски шифруются по умолчанию с помощью шифрования на стороне сервера с ключом, управляемым платформой (начиная с 10 июня 2017 г.). Вы можете управлять шифрованием управляемых дисков с помощью собственных ключей, указав ключ, управляемый клиентом. Дополнительные сведения см. в статье [Шифрование управляемых дисков Azure на стороне сервера](disk-encryption.md).
+ 
+## <a name="how-is-azure-disk-encryption-different-from-storage-server-side-encryption-with-customer-managed-key-and-when-should-i-use-each-solution"></a>Чем шифрование дисков Azure отличается от шифрования на стороне сервера хранилища с помощью ключа, управляемого клиентом, и когда следует использовать каждое решение?
+
+Шифрование дисков Azure обеспечивает сквозное шифрование диска операционной системы, дисков данных и временного диска с помощью управляемого клиентом ключа.
+
+- Если ваши требования включают шифрование всех указанных выше и сквозного шифрования, используйте шифрование дисков Azure. 
+- Если ваши требования включают шифрование только неактивных данных с помощью управляемого клиентом ключа, используйте [Шифрование на стороне сервера с ключами, управляемыми клиентом](disk-encryption.md). Вы не можете зашифровать диск с помощью шифрования дисков Azure и шифрования на стороне сервера хранилища с помощью управляемых пользователем ключей.
+- Если вы используете сценарий, вызываемый в [неподдерживаемых сценариях для Windows](disk-encryption-windows.md#unsupported-scenarios), рассмотрите возможность [шифрования на стороне сервера с помощью управляемых клиентом ключей](disk-encryption.md). 
+- Если политика вашей организации позволяет шифровать содержимое неактивных данных с помощью управляемого Azure ключа, никаких действий не требуется — содержимое шифруется по умолчанию. Для управляемых дисков содержимое в хранилище шифруется по умолчанию с помощью шифрования на стороне сервера с ключом, управляемым платформой. Ключ управляется службой хранилища Azure. 
 
 ## <a name="how-do-i-rotate-secrets-or-encryption-keys"></a>Разделы справки поворачивать секреты или ключи шифрования?
 
@@ -102,16 +122,13 @@ ms.locfileid: "74384264"
 
 | Версии Windows                 | Версия | Метод шифрования        |
 |----------------------------------|--------|--------------------------|
-| Windows Server 2012, Windows 10 или более поздней версии  | > = 1511 |XTS-AES 256 bit           |
+| Windows Server 2012, Windows 10 или более поздней версии  | >= 1511 |XTS-AES 256 bit           |
 | Windows Server 2012, Windows 8, 8,1, 10 | < 1511 |AES 256 bit *              |
-| Windows Server 2008 R2            |        |Бит AES 256 с диффузором |
+| Windows Server 2008 R2            |        |Бит AES 256 с диффузором |
 
-\* AES 256 bit с диффузором не поддерживается в Windows 2012 и более поздних версиях.
+\*Бит AES 256 с диффузором не поддерживается в Windows 2012 и более поздних версиях.
 
 Чтобы определить версию ОС Windows, запустите на виртуальной машине средство winver.
-
-## <a name="if-i-use-encryptformatall-and-specify-all-volume-types-will-it-erase-the-data-on-the-data-drives-that-we-already-encrypted"></a>Если используется параметр EncryptFormatAll и указаны все типы томов, удалятся ли данные из уже зашифрованных дисков?
-Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. 
 
 ## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Можно ли выполнять резервное копирование и восстановление зашифрованной виртуальной машины? 
 
@@ -121,9 +138,9 @@ Azure Backup предоставляет механизм резервного к
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
-- [Шифрование дисков Azure для виртуальных машин IaaS](disk-encryption-overview.md)
+- [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
 - [Шифрование диска в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-apply-disk-encryption)
 - [Шифрование неактивных данных в Azure](../../security/fundamentals/encryption-atrest.md)

@@ -6,20 +6,18 @@
   items:
     - name: Что собой представляет виртуальная машина для обработки и анализа данных?
       href: overview.md
-    - name: Сведения о Виртуальной машине для обработки и анализа данных с геоинформационной системой и средствами ИИ
+    - name: Что собой представляет виртуальная машина для обработки и анализа геоданных средствами ИИ?
       href: geo-ai-dsvm-overview.md
-    - name: 'Средства, входящие в состав DSVM'
+    - name: Средства предоставляемые на виртуальной машине для обработки и анализа данных
       href: tools-included.md
 - name: Краткие руководства
   expanded: true
   items:
     - name: Создание виртуальной машины Windows для обработки и анализа данных
       href: provision-vm.md
-    - name: Создание виртуальной машины Ubuntu для обработки и анализа данных
+    - name: Создание виртуальной машины для обработки и анализа данных на платформе Ubuntu
       href: dsvm-ubuntu-intro.md
-    - name: Создание виртуальной машины CentOS для обработки и анализа данных
-      href: linux-dsvm-intro.md
-    - name: Создание виртуальной машины для обработки и анализа данных с геоинформационной системой и средствами ИИ
+    - name: Создание виртуальной машины для обработки и анализа геоданных средствами ИИ
       href: provision-geo-ai-dsvm.md
 - name: Основные понятия
   items:
@@ -43,11 +41,11 @@
   href: dsvm-samples-and-walkthroughs.md
 - name: Практические руководства
   items:
-    - name: Использование виртуальной машины Windows для обработки и анализа данных
+    - name: Использование виртуальной машины для обработки и анализа данных на платформе Windows
       href: vm-do-ten-things.md
     - name: Использование виртуальной машины Linux для обработки и анализа данных
       href: linux-dsvm-walkthrough.md
-    - name: Использование виртуальной машины для обработки и анализа данных с геоинформационной системой и средствами ИИ
+    - name: Использование виртуальной машины для обработки и анализа геоданных средствами ИИ
       href: use-geo-ai-dsvm.md
     - name: Создание автомасштабируемого пула виртуальных машин для обработки и анализа данных
       href: dsvm-pools.md
@@ -57,18 +55,16 @@
       href: dsvm-secure-access-keys.md
 - name: Ресурсы
   items:
-    - name: Форум MSDN
-      href: 'https://social.microsoft.com/Forums/home?forum=dsvm'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-data-science-vm.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=dsvm'
     - name: "Руководство по разработке на\_R"
       href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context
 - name: Справочник
   items:
-    - name: Виртуальная машина Ubuntu для обработки и анализа данных
+    - name: Виртуальная машина для обработки и анализа данных на платформе Ubuntu
       href: reference-ubuntu-vm.md
-    - name: Виртуальная машина CentOS для обработки и анализа данных
-      href: reference-centos-vm.md
     - name: Заметки о выпуске
       href: release-notes.md
     - name: Известные проблемы

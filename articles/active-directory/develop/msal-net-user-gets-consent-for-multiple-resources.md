@@ -14,14 +14,14 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 94c9a2b6a46262ad293da9ca3ba493d6f898c870
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77085840"
 ---
 # <a name="user-gets-consent-for-several-resources-using-msalnet"></a>Пользователь получает согласие на использование нескольких ресурсов с помощью MSAL.NET
-Конечная точка платформы Microsoft Identity не позволяет получить маркер для нескольких ресурсов одновременно. При использовании библиотеки проверки подлинности Microsoft для .NET (MSAL.NET) параметр областей в методе получения маркера должен содержать только области для одного ресурса. Однако вы можете заранее согласиться с несколькими ресурсами, указав дополнительные области с помощью метода `.WithExtraScopeToConsent` Builder.
+Конечная точка платформы Microsoft Identity не позволяет получить маркер для нескольких ресурсов одновременно. При использовании библиотеки проверки подлинности Microsoft для .NET (MSAL.NET) параметр областей в методе получения маркера должен содержать только области для одного ресурса. Однако можно заранее согласиться с несколькими ресурсами, указав дополнительные области с помощью метода `.WithExtraScopeToConsent` Builder.
 
 > [!NOTE]
 > Получение согласия для нескольких ресурсов работает для платформы Microsoft Identity, но не для Azure AD B2C. Azure AD B2C поддерживает только разрешение администратора, а не согласие пользователя.
@@ -31,7 +31,7 @@ ms.locfileid: "77085840"
 - HTTPS:\//mytenant.onmicrosoft.com/customerapi (с 2 областями `customer.read` и `customer.write`)
 - HTTPS:\//mytenant.onmicrosoft.com/vendorapi (с 2 областями `vendor.read` и `vendor.write`)
 
-Следует использовать модификатор `.WithExtraScopeToConsent`, который имеет параметр *екстраскопестоконсент* , как показано в следующем примере:
+Следует использовать `.WithExtraScopeToConsent` модификатор, который имеет параметр *екстраскопестоконсент* , как показано в следующем примере:
 
 ```csharp
 string[] scopesForCustomerApi = new string[]

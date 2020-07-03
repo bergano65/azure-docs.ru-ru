@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/20/2019
 ms.openlocfilehash: 3ec50acc693452fe73d929effcea98b12fc5ff8b
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75933933"
 ---
 # <a name="work-in-the-apache-hadoop-ecosystem-on-hdinsight-from-a-windows-pc"></a>Работа в экосистеме Apache Hadoop в HDInsight на компьютере с Windows
@@ -27,9 +27,9 @@ Azure PowerShell — это среда сценариев, которая по�
 
 При помощи PowerShell можно выполнять такие задачи:
 
-* [создание кластеров](hdinsight-hadoop-create-linux-clusters-azure-powershell.md);
-* [выполнение запросов Apache Hive](hadoop/apache-hadoop-use-hive-powershell.md);
-* [управление кластерами](hdinsight-administer-use-powershell.md).
+* [Создание кластеров с помощью PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md).
+* [Выполнение Apache Hive запросов с помощью PowerShell](hadoop/apache-hadoop-use-hive-powershell.md).
+* [Управление кластерами с помощью PowerShell](hdinsight-administer-use-powershell.md).
 
 Указания по установке и настройке последней версии Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
@@ -59,8 +59,8 @@ Visual Studio с пакетом SDK для .NET позволяет управл�
 
 При помощи пакета SDK для .NET в Visual Studio можно выполнять следующие задачи:
 * [Пакет SDK Azure HDInsight для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet).
-* [выполнять запросы Apache Hive с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md);
-* [использовать определяемые пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop](hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md).
+* [Выполнение запросов Apache Hive с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md).
+* [Используйте определяемые пользователем функции C# с Apache Hive и потоковой передачей Apache Pig на Apache Hadoop](hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md).
 
 ## <a name="intellij-idea-and-eclipse-ide-for-spark-clusters"></a>Intellij IDEA и Eclipse IDE для кластеров Spark
 

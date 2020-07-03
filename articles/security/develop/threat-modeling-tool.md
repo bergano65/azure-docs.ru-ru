@@ -8,10 +8,10 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 02/16/2017
 ms.openlocfilehash: 0d800102b6f6ff77944a2b625d3bcecef69c1ee9
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75548748"
 ---
 # <a name="microsoft-threat-modeling-tool"></a>Средство моделирования угроз Microsoft
@@ -37,7 +37,7 @@ ms.locfileid: "75548748"
 
 В таблице ниже перечислены важные ссылки, которые помогут вам приступить к работе со средством моделирования угроз:
 
-| Шаг  | Description                                                                                   |
+| Шаг  | Описание                                                                                   |
 | ----- | --------------------------------------------------------------------------------------------- |
 | **1** | [Скачивание средства моделирования угроз](https://aka.ms/threatmodelingtool)                                |
 | **2** | [Руководство по началу работы](threat-modeling-tool-getting-started.md)    |

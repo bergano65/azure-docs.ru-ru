@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: sideeksh
 ms.openlocfilehash: d8c896bc655339fbd7d51f738fb629450e8c12ae
-ms.sourcegitcommit: 0576bcb894031eb9e7ddb919e241e2e3c42f291d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72376216"
 ---
 # <a name="support-for-using-site-recovery-with-azure-backup"></a>Поддержка использования Site Recovery с Azure Backup
 
 В этой статье описывается поддержка использования [службы Site Recovery](site-recovery-overview.md) вместе со [службой Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview).
 
-**Действие** | **Поддержка Site Recovery** | **Дополнительные сведения**
+**Действие** | **Поддержка Site Recovery** | **Сведения**
 --- | --- | ---
 **Совместное развертывание служб** | Поддерживается | Службы являются взаимодействующими и могут быть настроены вместе.
 **Резервное копирование и восстановление файлов** | Поддерживается | Если резервное копирование и репликация включены для виртуальной машины и выполняются резервные копии, то нет проблем с восстановлением файлов на виртуальных машинах на основе источника или в группе виртуальных машин. Репликация выполняется как обычно без изменений в работоспособности репликации.

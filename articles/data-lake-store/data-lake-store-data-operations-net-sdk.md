@@ -1,23 +1,23 @@
 ---
-title: 'Пакет SDK для .NET: операции файловой системы в Azure Data Lake Storage 1-го поколения'
+title: Пакет SDK для .NET — операции файловой системы в Data Lake Storage 1-го поколения — Azure
 description: Используйте пакет SDK для Azure Data Lake Storage 1-го поколения .NET для операций файловой системы на Data Lake Storage 1-го поколения таких как создание папок и т. д.
 author: twooley
 ms.service: data-lake-store
 ms.topic: conceptual
 ms.date: 01/03/2020
 ms.author: twooley
-ms.openlocfilehash: 7e33ecbbb49fc2b0683d0757da36deec72796806
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 9e52a3cb8d31b5fccc9a0b5a3a76d4e9b43de123
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75638907"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82690966"
 ---
 # <a name="filesystem-operations-on-data-lake-storage-gen1-using-the-net-sdk"></a>Операции файловой системы на Data Lake Storage 1-го поколения с помощью пакета SDK для .NET
 
 > [!div class="op_single_selector"]
 > * [Пакет SDK для .NET](data-lake-store-data-operations-net-sdk.md)
-> * [пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
+> * [Пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
 > * [REST API](data-lake-store-data-operations-rest-api.md)
 > * [Python](data-lake-store-data-operations-python.md)
 >
@@ -27,7 +27,7 @@ ms.locfileid: "75638907"
 
 Инструкции по выполнению операций управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET см. в разделе [операции управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-get-started-net-sdk.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Visual Studio 2013 или более поздней версии**. В инструкциях этой статьи используется Visual Studio 2019.
 
@@ -40,7 +40,7 @@ ms.locfileid: "75638907"
 На [сайте GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted) доступен пример кода, который используется для создания файлов в хранилище, объединения и скачивания файлов, а также для удаления файлов из хранилища. В этом разделе статьи рассматриваются основные части этого кода.
 
 1. В Visual Studio выберите меню **файл** , **создать**, а затем **проект**.
-1. Выберите **консольное приложение (.NET Framework)** , а затем нажмите кнопку **Далее**.
+1. Выберите **консольное приложение (.NET Framework)**, а затем нажмите кнопку **Далее**.
 1. В окне**Имя проекта** введите `CreateADLApplication`, а затем выберите **Создать**.
 1. Добавьте пакеты NuGet в проект.
 
@@ -48,10 +48,10 @@ ms.locfileid: "75638907"
    1. На вкладке **Диспетчер пакетов NuGet** убедитесь, что для параметра **источник пакета** задано значение **NuGet.org**. Кроме того, убедитесь, что установлен флажок **включить предварительные выпуски** .
    1. Найдите и установите следующие пакеты NuGet:
 
-      * `Microsoft.Azure.DataLake.Store`. в этой статье используется версия 1.0.0.
-      * `Microsoft.Rest.ClientRuntime.Azure.Authentication`. в этой статье используется v 2.3.1.
+      * `Microsoft.Azure.DataLake.Store`— В этой статье используется версия 1.0.0.
+      * `Microsoft.Rest.ClientRuntime.Azure.Authentication`— В этой статье используется v 2.3.1.
 
-      Закройте **диспетчер пакетов NuGet**.
+      Закройте **Диспетчер пакетов NuGet**.
 
 1. Откройте файл **Program.cs**, удалите существующий код и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
 
@@ -83,7 +83,7 @@ ms.locfileid: "75638907"
 
 В остальных разделах этой статьи можно увидеть, как использовать доступные методы .NET для выполнения таких операций, как проверка подлинности, отправка файлов и т. д.
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 * Дополнительные сведения о проверке подлинности пользователей в приложении см. в статье [Аутентификация пользователей в Data Lake Store с помощью пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md).
 * Дополнительные сведения о проверке подлинности между службами в приложении см. в статье [Аутентификация между службами в Data Lake Store с помощью пакета SDK для .NET](data-lake-store-service-to-service-authenticate-net-sdk.md).
@@ -156,7 +156,7 @@ var directoryEntry = client.GetDirectoryEntry(fileName);
 PrintDirectoryEntry(directoryEntry);
 ```
 
-Определение метода `PrintDirectoryEntry` доступно в примере [на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted).
+Определение `PrintDirectoryEntry` метода доступно как часть примера [на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted).
 
 ## <a name="rename-a-file"></a>Переименование файла
 
@@ -180,7 +180,7 @@ foreach (var entry in client.EnumerateDirectory("/Test"))
 }
 ```
 
-Определение метода `PrintDirectoryEntry` доступно в примере [на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted).
+Определение `PrintDirectoryEntry` метода доступно как часть примера [на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted).
 
 ## <a name="delete-directories-recursively"></a>Рекурсивное удаление каталогов
 
@@ -195,10 +195,10 @@ client.DeleteRecursive("/Test");
 
 Ниже приведено несколько примеров, демонстрирующих использование пакета SDK для файловой системы Data Lake Storage 1-го поколения.
 
-* [Базовый пример на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted)
-* [Расширенный пример на сайте GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-samples)
+* [Базовый пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted)
+* [Расширенный пример на GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-samples)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)
 * [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: aahi
 ms.openlocfilehash: 5ffd9f05bb429ba611a08d7985dbc9d509a9df0c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "66390163"
 ---
 # <a name="language-and-region-support-for-bing-spell-check-api"></a>Поддержка языков и регионов в API проверки орфографии Bing
@@ -27,7 +27,7 @@ ms.locfileid: "66390163"
 |:----------- |:-------------:|
 | Арабский      | `ar`          |
 | Китайский (Китай)     | `zh-CN`          |
-| Китайский (Гонконг, CАР)    | `zh-HK`          |
+| китайский (Гонконг, CАР)    | `zh-HK`          |
 | Китайский (Тайвань)     | `zh-TW`          |
 | Датский      | `da`          |
 | Нидерландский (Бельгия)       | `nl-BE`          |
@@ -40,8 +40,8 @@ ms.locfileid: "66390163"
 | Английский (Новая Зеландия)    | `en-NZ`          |
 | Английский (Филиппины)     | `en-PH`          |
 | Английский (Южная Африка)    | `en-ZA`          |
-| Английский (Соединенное Королевство)    | `en-GB`          |
-| английский (США)    | `en-US`          |
+| Английский (Великобритания)    | `en-GB`          |
+| Английский (США)    | `en-US`          |
 | Финский     | `fi`          |
 | Французский (Бельгия)     | `fr-BE`          |
 | Французский (Канада)     | `fr-CA`          |
@@ -61,7 +61,7 @@ ms.locfileid: "66390163"
 | Испанский (Аргентина)    | `es-AR`          |
 | Испанский (Чили)     | `es-CL`          |
 | Испанский (Мексика)    | `es-MX`          |
-| испанский (Испания)    | `es-ES`          |
+| Испанский (Испания)    | `es-ES`          |
 | Испанский (США)    | `es-US`          |
 | Шведский     | `sv`          |
 | Турецкий     | `tr`          |

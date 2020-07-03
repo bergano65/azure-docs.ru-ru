@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с TalentLMS | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с TalentLMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в TalentLMS.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 970ab9de270b1227884a13ac578d4c439043b20c
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233364"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-talentlms"></a>Руководство по Интеграция Azure Active Directory с TalentLMS
+# <a name="tutorial-azure-active-directory-integration-with-talentlms"></a>Руководство по интеграции Azure Active Directory с TalentLMS
 
 В этом руководстве описано, как интегрировать приложение TalentLMS с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением TalentLMS обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "74233364"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TalentLMS, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка TalentLMS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74233364"
 
     ![Сведения о домене и URL-адресах единого входа для TalentLMS](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.TalentLMSapp.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.TalentLMSapp.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `http://<tenant-name>.talentlms.com`.
 
@@ -125,7 +125,7 @@ ms.locfileid: "74233364"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -145,7 +145,7 @@ ms.locfileid: "74233364"
 
     ![Единый вход](./media/talentlms-tutorial/IC777297.png "Единый вход")
 
-    a. Из списка **Тип интеграции единого входа** выберите **SAML 2.0**.
+    а. Из списка **Тип интеграции единого входа** выберите **SAML 2.0**.
 
     b. В текстовое поле **Identity provider (IDP)** (Поставщик удостоверений) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
@@ -153,9 +153,9 @@ ms.locfileid: "74233364"
 
     d.  В текстовое поле **Remote sign-in URL** (URL-адрес удаленного входа) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
 
-    д. В текстовое поле **Remote sign-out URL** (URL-адрес удаленного выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    д) В текстовое поле **Remote sign-out URL** (URL-адрес удаленного выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    Е. Укажите следующие сведения.
+    е) Укажите следующие сведения.
 
     * В текстовое поле **TargetedID** (Целевой идентификатор) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
@@ -231,7 +231,7 @@ ms.locfileid: "74233364"
 
     ![Добавление пользователя](./media/talentlms-tutorial/IC777299.png "Добавить пользователя")  
 
-    a. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
+    а. В текстовое поле **First name** (Имя) введите имя пользователя, например **Britta**.
 
     b. В текстовое поле **Last name** (Фамилия) введите фамилию пользователя, например **Simon**.
  

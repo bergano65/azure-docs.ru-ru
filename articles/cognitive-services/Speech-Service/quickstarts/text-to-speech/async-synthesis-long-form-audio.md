@@ -10,31 +10,30 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: eef9a99e4c94fa45e21abfc9d19fcef1230ffe76
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 62236b472aa5c4812cd62af44a15b805b5326271
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75944679"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592565"
 ---
 # <a name="quickstart-asynchronous-synthesis-for-long-form-audio-in-python-preview"></a>Краткое руководство. асинхронное синтез для звука в длинном формате в Python (Предварительная версия)
 
 В этом кратком руководстве вы используете длинный аудио API для асинхронного преобразования текста в речь и получения звуковых выходных данных из URI, предоставленного службой. Этот REST API идеально подходит для поставщиков содержимого, которым требуется синтезирование звука из текста более 5 000 символов (или более 10 минут в длину). Дополнительные сведения см. в разделе [Long Audio API](../../long-audio-api.md).
 
-> [!NOTE]
-> Асинхронное синтез для длинных аудиофайлов можно использовать только с [пользовательскими нейронными голосовыми](../../how-to-custom-voice.md#custom-neural-voices)данными.
+Асинхронное синтез для длинных аудио-данных можно использовать с [общедоступными нейронными](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#neural-voices) и [пользовательскими нейронными голоса](../../how-to-custom-voice.md#custom-neural-voices), каждый из которых поддерживает конкретный язык и диалект. 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
 * Python 2.7. x или 3. x.
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download)или ваш любимый текстовый редактор.
-* Подписка Azure и ключ подписки на службу речи. [Создайте учетную запись Azure](../../get-started.md#try-the-speech-service-using-a-new-azure-account) и [Создайте речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#create-a-speech-resource-in-azure) для получения ключа. При создании ресурса речи убедитесь, что для ценовой категории задано значение **S0**, а для параметра расположение — [поддерживаемый регион](../../regions.md#standard-and-neural-voices).
+* Подписка Azure и ключ подписки на службу речи. [Создайте учетную запись Azure](../../get-started.md#new-resource) и [Создайте речевой ресурс](https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started#new-resource) для получения ключа. При создании ресурса речи убедитесь, что для ценовой категории задано значение **S0**, а для параметра расположение — [поддерживаемый регион](../../regions.md#standard-and-neural-voices).
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
-Создайте проект Python, используя любую IDE или любой текстовый редактор. Затем скопируйте этот фрагмент кода в файл с именем `voice_synthesis_client.py`.
+Создайте проект Python, используя любую IDE или любой текстовый редактор. Затем скопируйте этот фрагмент кода в файл с именем `voice_synthesis_client.py` .
 
 ```python
 import argparse
@@ -56,15 +55,15 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 ## <a name="get-a-list-of-supported-voices"></a>Получение списка поддерживаемых голосов
 
-Этот код возвращает список доступных голосов, которые можно использовать для преобразования текста в речь. Добавьте код в `voice_synthesis_client.py`:
+Этот код позволяет получить полный список голосов для определенного региона или конечной точки, которые можно использовать. Проверьте [поддерживаемый регион или конечную точку](../../long-audio-api.md). Добавьте код в `voice_synthesis_client.py` :
 
 ```python
-parser = argparse.ArgumentParser(description='Cris client tool to submit voice synthesis requests.')
+parser = argparse.ArgumentParser(description='Text-to-speech client tool to submit voice synthesis requests.')
 parser.add_argument('--voices', action="store_true", default=False, help='print voice list')
-parser.add_argument('-key', action="store", dest="key", required=True, help='the cris subscription key, like ff1eb62d06d34767bda0207acb1da7d7 ')
+parser.add_argument('-key', action="store", dest="key", required=True, help='the speech subscription key, like fg1f763i01d94768bda32u7a******** ')
 parser.add_argument('-region', action="store", dest="region", required=True, help='the region information, could be centralindia, canadacentral or uksouth')
 args = parser.parse_args()
-baseAddress = 'https://%s.cris.ai/api/texttospeech/v3.0-beta1/' % args.region
+baseAddress = 'https://%s.customvoice.api.speech.microsoft.com/api/texttospeech/v3.0-beta1/' % args.region
 
 def getVoices():
     response=requests.get(baseAddress+"voicesynthesis/voices", headers={"Ocp-Apim-Subscription-Key":args.key}, verify=False)
@@ -83,7 +82,7 @@ if args.voices:
 Проверим, что вы сделали до сих пор. В запросе ниже необходимо обновить несколько вещей:
 
 * Замените `<your_key>` на ваш ключ подписки службы "Речь". Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
-* Замените `<region>` регионом, в котором был создан ваш речевой ресурс (например, `eastus` или `westus`). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
+* Замените на `<region>` регион, в котором был создан ваш речевой ресурс (например: `eastus` или `westus` ). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
 
 Выполните следующую команду:
 
@@ -100,13 +99,15 @@ Name: Microsoft Server Speech Text to Speech Voice (en-US, xxx), Description: xx
 Name: Microsoft Server Speech Text to Speech Voice (zh-CN, xxx), Description: xxx , Id: xxx, Locale: zh-CN, Gender: Female, PublicVoice: xxx, Created: 2019-08-26T04:55:39Z
 ```
 
+Если параметр **публиквоице** имеет **значение true**, речь является общедоступным нейронным голоса. В противном случае это пользовательский нейронный счет. 
+
 ## <a name="prepare-input-files"></a>Подготовка входных файлов
 
 Подготовьте входной текстовый файл. Это может быть обычный текст или SSML текст. Требования к входному файлу см. в разделе [Подготовка содержимого для синтеза](https://docs.microsoft.com/azure/cognitive-services/speech-service/long-audio-api#prepare-content-for-synthesis).
 
 ## <a name="convert-text-to-speech"></a>Преобразование текста в речь
 
-После подготовки входного текстового файла добавьте этот код для синтеза речи в `voice_synthesis_client.py`:
+После подготовки входного текстового файла добавьте следующий код для синтеза речи `voice_synthesis_client.py` :
 
 > [!NOTE]
 > "Конкатенатересулт" является необязательным параметром. Если этот параметр не задан, выходные данные будут формироваться для каждого абзаца. Вы также можете объединить звуковые данные в 1 выход, задав параметр. По умолчанию для вывода звука задано значение Metallica-16khz-16-разрядный-Mono-PCM. Дополнительные сведения о поддерживаемых звуковых выходах см. в разделе [форматы выходных данных звука](https://docs.microsoft.com/azure/cognitive-services/speech-service/long-audio-api#audio-output-formats).
@@ -175,10 +176,10 @@ if args.submit:
 Давайте создадим запрос на синтезирование текста, используя входной файл в качестве источника. В запросе ниже необходимо обновить несколько вещей:
 
 * Замените `<your_key>` на ваш ключ подписки службы "Речь". Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
-* Замените `<region>` регионом, в котором был создан ваш речевой ресурс (например, `eastus` или `westus`). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
-* Замените `<input>` на путь к текстовому файлу, подготовленному для преобразования текста в речь.
-* Замените `<locale>` требуемым языковым стандартом вывода. Дополнительные сведения см. в разделе [Поддержка языков](../../language-support.md#neural-voices).
-* Замените `<voice_guid>` требуемым выходным голосовым. Используйте один из голосов, возвращаемых, чтобы [получить список поддерживаемых голосов](#get-a-list-of-supported-voices).
+* Замените на `<region>` регион, в котором был создан ваш речевой ресурс (например: `eastus` или `westus` ). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
+* Замените на `<input>` путь к текстовому файлу, подготовленному для преобразования текста в речь.
+* Замените на `<locale>` нужный языковой стандарт вывода. Дополнительные сведения см. в разделе [Поддержка языков](../../language-support.md#neural-voices).
+* Замените на `<voice_guid>` нужный выходной поток. Используйте один из голосов, возвращаемых, чтобы [получить список поддерживаемых голосов](#get-a-list-of-supported-voices).
 
 Преобразуйте текст в речь с помощью следующей команды:
 
@@ -215,7 +216,7 @@ Succeeded... Result file downloaded : xxxx.zip
 
 Сервер будет иметь до **20 000** запросов для каждой учетной записи подписки Azure. Если сумма запроса превышает это ограничение, удалите предыдущие запросы перед созданием новых. Если не удалить существующие запросы, вы получите уведомление об ошибке.
 
-Добавьте код в `voice_synthesis_client.py`:
+Добавьте код в `voice_synthesis_client.py` :
 
 ```python
 parser.add_argument('--syntheses', action="store_true", default=False, help='print synthesis list')
@@ -251,7 +252,7 @@ if args.delete:
 Теперь давайте проверим, какие запросы были отправлены ранее. Прежде чем продолжить, необходимо обновить несколько вещей в этом запросе:
 
 * Замените `<your_key>` на ваш ключ подписки службы "Речь". Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
-* Замените `<region>` регионом, в котором был создан ваш речевой ресурс (например, `eastus` или `westus`). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
+* Замените на `<region>` регион, в котором был создан ваш речевой ресурс (например: `eastus` или `westus` ). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
 
 Выполните следующую команду:
 
@@ -271,8 +272,8 @@ ID : xxx , Name : xxx : Succeeded
 Теперь удалим ранее отправленный запрос. В приведенном ниже коде необходимо обновить несколько вещей.
 
 * Замените `<your_key>` на ваш ключ подписки службы "Речь". Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
-* Замените `<region>` регионом, в котором был создан ваш речевой ресурс (например, `eastus` или `westus`). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
-* Замените `<synthesis_id>` значением, возвращенным в предыдущем запросе.
+* Замените на `<region>` регион, в котором был создан ваш речевой ресурс (например: `eastus` или `westus` ). Эти сведения доступны на вкладке **Обзор** ресурса в [портал Azure](https://aka.ms/azureportal).
+* Замените на `<synthesis_id>` значение, возвращенное в предыдущем запросе.
 
 > [!NOTE]
 > Запросы с состоянием "работает" или "ожидание" не могут быть удалены или удалены.
@@ -292,7 +293,7 @@ delete successful
 
 ## <a name="get-the-full-client"></a>Получение полного клиента
 
-Завершенный `voice_synthesis_client.py` можно скачать на сайте [GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Python/voiceclient.py).
+Завершение `voice_synthesis_client.py` можно скачать на сайте [GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/blob/master/CustomVoice-API-Samples/Python/voiceclient.py).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Nexonia | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Nexonia | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Nexonia.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
 ms.openlocfilehash: 73b166c5a6a39ca01f43dccc356536dad43dca38
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160278"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-nexonia"></a>Руководство по Интеграция Azure Active Directory с Nexonia
+# <a name="tutorial-azure-active-directory-integration-with-nexonia"></a>Руководство по интеграции Azure Active Directory с Nexonia
 
 В этом руководстве описано, как интегрировать Nexonia с Azure Active Directory.
 Интеграция Azure AD с приложением Nexonia обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "73160278"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Nexonia, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Nexonia с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -47,7 +47,7 @@ ms.locfileid: "73160278"
 
 * Nexonia поддерживает единый вход, инициируемый **поставщиком удостоверений**.
 
-## <a name="adding-nexonia-from-the-gallery"></a>Добавление Nexonia из коллекции
+## <a name="adding-nexonia-from-the-gallery"></a>Добавление Nexonia из коллекции.
 
 Чтобы настроить интеграцию Nexonia с Azure AD, необходимо добавить Nexonia из коллекции в список управляемых приложений SaaS.
 
@@ -105,7 +105,7 @@ ms.locfileid: "73160278"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Nexonia](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `Nexonia`
+    а. В текстовом поле **Идентификатор** введите URL-адрес: `Nexonia`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://system.nexonia.com/assistant/saml.do?orgCode=<organizationcode>`.
 
@@ -120,7 +120,7 @@ ms.locfileid: "73160278"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 

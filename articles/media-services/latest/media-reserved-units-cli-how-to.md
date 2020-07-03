@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/26/2019
+ms.date: 03/09/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 13fa733417558ab8be9ff1e5a9f1e484fb40f445
-ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.openlocfilehash: 79f2df0f94b212ea45c01c825b23f1dbb4cc40db
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70102947"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80582287"
 ---
 # <a name="scaling-media-processing"></a>Масштабирование при обработке мультимедиа
 
@@ -33,9 +33,9 @@ ms.locfileid: "70102947"
 
 |Тип зарезервированных единиц|Сценарий|Пример результатов для [видео длительностью 7 мин. с разрешением 1080p](https://nimbuspmteam.blob.core.windows.net/asset-46f1f723-5d76-477e-a153-3fd0f9f90f73/SeattlePikePlaceMarket_7min.ts?sv=2015-07-08&sr=c&si=013ab6a6-5ebf-431e-8243-9983a6b5b01c&sig=YCgEB8DxYKK%2B8W9LnBykzm1ZRUTwQAAH9QFUGw%2BIWuc%3D&se=2118-09-21T19%3A28%3A57Z)|
 |---|---|---|
-| **S1**|Односкоростное кодирование. <br/>Файлы с разрешением SD или ниже, без учета времени, низкие затраты.|Кодирование в файл MP4 с односкоростным SD-файлом с помощью "H264 Single bitrate с односкоростным SD-16x9" занимает около 7 минут.|
-| **S2**|Односкоростное и многоскоростное кодирование.<br/>Обычное использование для кодирования SD и HD.|Кодирование с предустановленной установкой H264 Single bitrate с односкоростной скоростью 720p занимает около 6 минут.<br/><br/>Кодирование с предустановленной установкой "H264 Single bitrate несколько скорость 720p" занимает около 12 минут.|
-| **S3**|Односкоростное и многоскоростное кодирование.<br/>Видеоролики с разрешением Full HD и 4К. С учетом времени, более быстрое полное кодирование.|Кодирование с предустановкой "H264 Single bitrate односкоростной" требует приблизительно 3 минут.<br/><br/>Кодирование с предустановкой H264 Multiple Bitrate 1080p длится 8 минут.|
+| **S1**|Односкоростное кодирование. <br/> Файлы с разрешением SD или ниже, без учета времени, низкие затраты.|Кодирование в файл MP4 с односкоростным SD-файлом с помощью "H264 Single bitrate с односкоростным SD-16x9" занимает около 7 минут.|
+| **S2**|Односкоростное и многоскоростное кодирование.<br/> Обычное использование для кодирования SD и HD.|Кодирование с предустановленной установкой H264 Single bitrate с односкоростной скоростью 720p занимает около 6 минут.<br/><br/>Кодирование с предустановленной установкой "H264 Single bitrate несколько скорость 720p" занимает около 12 минут.|
+| **S3**|Односкоростное и многоскоростное кодирование.<br/> Видеоролики с разрешением Full HD и 4К. С учетом времени, более быстрое полное кодирование.|Кодирование с предустановкой "H264 Single bitrate односкоростной" требует приблизительно 3 минут.<br/><br/>Кодирование с предустановкой H264 Multiple Bitrate 1080p длится 8 минут.|
 
 ## <a name="considerations"></a>Рекомендации
 
@@ -46,8 +46,6 @@ ms.locfileid: "70102947"
 
 > [!NOTE]
 > Для заданий анализа аудио и видео, которые активируют Службы мультимедиа версии 3 или Индексатор видео, настоятельно рекомендуется подготовить к работе вашу учетную запись с помощью 10 единиц MRU S3. Если вам требуется более 10 единиц MRU S3, отправьте запрос в службу поддержки с помощью [портала Azure](https://portal.azure.com/).
->
-> В настоящее время нельзя использовать портал Azure для управления другими ресурсами v3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
@@ -76,4 +74,4 @@ az ams account mru set -n amsaccount -g amsResourceGroup --count 10 --type S3
 ## <a name="see-also"></a>См. также
 
 * [Квоты и ограничения](limits-quotas-constraints.md)
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
+* [Azure CLI](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)

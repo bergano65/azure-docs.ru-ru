@@ -1,6 +1,6 @@
 ---
-title: Настройка Azure-SSIS Integration Runtime для отработки отказа базы данных SQL
-description: В этой статье описывается настройка Azure-SSIS Integration Runtime с помощью георепликации базы данных SQL Azure и отработка отказа для базы данных SSISDB
+title: Настройка среды выполнения интеграции Azure SSIS для отработки отказа базы данных SQL
+description: В этой статье описывается, как настроить среду выполнения интеграции Azure-SSIS с георепликацией и отработкой отказа базы данных SQL Azure для базы данных SSISDB.
 services: data-factory
 ms.service: data-factory
 ms.workload: data-services
@@ -11,125 +11,143 @@ manager: mflasko
 ms.reviewer: douglasl
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 08/14/2018
-ms.openlocfilehash: 92f7d25a9c19409b220b6a71fba87da91e51a415
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.date: 04/09/2020
+ms.openlocfilehash: 795247cd0d6adfd27115b73c1d0de02e6810d670
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928496"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83201142"
 ---
-# <a name="configure-the-azure-ssis-integration-runtime-with-azure-sql-database-geo-replication-and-failover"></a>Настройка Azure-SSIS Integration Runtime с помощью георепликации базы данных SQL Azure и отработка отказа
+# <a name="configure-the-azure-ssis-integration-runtime-with-sql-database-geo-replication-and-failover"></a>Настройка среды выполнения интеграции Azure SSIS с георепликацией и отработкой отказа базы данных SQL
 
-В этой статье описывается настройка Azure-SSIS Integration Runtime с помощью георепликации базы данных SQL Azure для базы данных SSISDB. В процессе отработки отказа работоспособность Azure-SSIS Integration Runtime можно отслеживать через базу данных-получатель.
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-xxx-md.md)]
+
+В этой статье описывается настройка среды выполнения интеграции Azure-SSIS (IR) с помощью георепликации базы данных SQL Azure для базы данных SSISDB. В процессе отработки отказа работоспособность Azure-SSIS Integration Runtime можно отслеживать через базу данных-получатель.
 
 Дополнительные сведения о георепликации и отработке отказа базы данных SQL см. в статье [Обзор. Активная георепликация и группы автоматической отработки отказа](../sql-database/sql-database-geo-replication-overview.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="scenario-1---azure-ssis-ir-is-pointing-to-read-write-listener-endpoint"></a>Сценарий 1. Azure-SSIS IR указывает на конечную точку прослушивателя записи
+## <a name="azure-ssis-ir-failover-with-a-sql-database-managed-instance"></a>Azure-SSIS IR отработки отказа с помощью управляемого экземпляра базы данных SQL
 
-### <a name="conditions"></a>Условия
+### <a name="prerequisites"></a>Предварительные требования
 
-Данный раздел применяется при выполнении следующих условий:
+Управляемый экземпляр базы данных SQL Azure использует *главный ключ базы данных (DMK)* , чтобы защитить данные, учетные данные и сведения о соединении, хранящиеся в базе данных. Чтобы включить автоматическую расшифровку DMK, копия ключа шифруется с помощью *главного ключа сервера (SMK)*. 
 
-- Azure-SSIS IR указывает на конечную точку прослушивателя записи группы отработки отказа.
+SMK не реплицируется в группе отработки отказа. После отработки отказа необходимо добавить пароль как на первичном, так и на вторичном экземплярах для расшифровки DMK.
 
-  И
+1. Выполните следующую команду для SSISDB на основном экземпляре. На этом шаге добавляется новый пароль шифрования.
 
-- В сервере Базы данных SQL *не* настроено правило конечной точки службы для виртуальной сети.
+    ```sql
+    ALTER MASTER KEY ADD ENCRYPTION BY PASSWORD = 'password'
+    ```
 
-### <a name="solution"></a>Решение
+2. Создайте группу отработки отказа в управляемом экземпляре базы данных SQL Azure.
 
-Когда происходит отработка отказа, она является прозрачной для Azure-SSIS IR. Azure-SSIS IR автоматически подключается к новой первичной точке группы отработки отказа.
+3. Запустите **sp_control_dbmasterkey_password** на дополнительном экземпляре, используя новый пароль шифрования.
 
-## <a name="scenario-2---azure-ssis-ir-is-pointing-to-primary-server-endpoint"></a>Сценарий 2. Azure-SSIS IR указывает на конечную точку основного сервера
+    ```sql
+    EXEC sp_control_dbmasterkey_password @db_name = N'SSISDB',   
+        @password = N'<password>', @action = N'add';  
+    GO
+    ```
 
-### <a name="conditions"></a>Условия
+### <a name="scenario-1-azure-ssis-ir-is-pointing-to-a-readwrite-listener-endpoint"></a>Сценарий 1. Azure-SSIS IR указывает на конечную точку прослушивателя для чтения и записи
 
-Данный раздел применяется при выполнении одного из следующих условий:
+Если вы хотите, чтобы Azure-SSIS IR указывала на конечную точку прослушивателя для чтения и записи, сначала необходимо указать конечную точку сервера-источника. После помещения SSISDB в группу отработки отказа можно перейти на конечную точку прослушивателя для чтения и записи и перезапустить Azure-SSIS IR.
 
-- Azure-SSIS IR указывает на конечную точку основного сервера группы отработки отказа. Эта конечная точка изменяется при отработке отказа.
+#### <a name="solution"></a>Решение
 
-  Или
+В случае отработки отказа выполните следующие действия.
 
-- В сервере Базы данных SQL Azure настроено правило конечной точки службы для виртуальной сети.
+1. Останавливает Azure-SSIS IR в основном регионе.
 
-  Или
-
-- Сервер базы данных является управляемым экземпляром базы данных SQL, настроенным с помощью виртуальной сети.
-
-### <a name="solution"></a>Решение
-
-При отработке отказа необходимо выполнить следующие действия:
-
-1. Остановите среду выполнения интеграции Azure SSIS.
-
-2. Для основной конечной точки и виртуальной сети в новом регионе необходимо перенастроить среду выполнения интеграции.
-
-3. Перезапустите среду выполнения интеграции.
-
-В следующих разделах данные шаги описаны более подробно.
-
-### <a name="prerequisites"></a>Технические условия
-
-- Убедитесь, что вы активировали аварийное восстановление для сервера Базы данных SQL Azure на случай сбоя в работе сервера в то же время. Дополнительные сведения см. в статье [Обзор обеспечения непрерывности бизнес-процессов с помощью Базы данных SQL Azure](../sql-database/sql-database-business-continuity.md).
-
-- Если вы используете виртуальную сеть в текущем регионе, нужно использовать другую виртуальную сеть в новом регионе для подключения среды выполнения интеграции Azure-SSIS. Дополнительные сведения см. в статье [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md).
-
-- Если вы используете выборочную установку, может потребоваться подготовить еще один универсальный код ресурса SAS для контейнера больших двоичных объектов, в котором хранится сценарий выборочной установки и связанные с ним файлы, чтобы он оставался доступным во время сбоя. Дополнительные сведения см. в статье [Пользовательская установка для среды выполнения интеграции Azure–SSIS](how-to-configure-azure-ssis-ir-custom-setup.md).
-
-### <a name="steps"></a>Действия
-
-Выполните следующие шаги, чтобы остановить среду выполнения интеграции Azure-SSIS, переключить ее в новый регион и запустить снова.
-
-1. Остановите среду выполнения интеграции в исходном регионе.
-
-2. Чтобы обновить настройки в среде выполнения интеграции, вызовите следующую команду в PowerShell.
+2. Измените Azure-SSIS IR с помощью нового региона, виртуальной сети и URI подписанного URL-адрес (SAS) для пользовательской установки на вторичном экземпляре. Так как Azure-SSIS IR указывает на прослушиватель чтения и записи, а конечная точка прозрачна для Azure-SSIS IR, нет необходимости изменять конечную точку.
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
-                    -CatalogServerEndpoint "Azure SQL Database server endpoint" `
-                    -CatalogAdminCredential "Azure SQL Database server admin credentials" `
-                    -VNetId "new VNet" `
-                    -Subnet "new subnet" `
-                    -SetupScriptContainerSasUri "new custom setup SAS URI"
+                -VNetId "new VNet" `
+                -Subnet "new subnet" `
+                -SetupScriptContainerSasUri "new custom setup SAS URI"
     ```
 
-    Дополнительные сведения об этой команде PowerShell см. в статье [Создание среды выполнения интеграции Azure SSIS в службе "Фабрика данных Azure"](create-azure-ssis-integration-runtime.md).
+3. Перезапустите Azure-SSIS IR.
 
-3. Запустите среду выполнения интеграции снова.
+### <a name="scenario-2-azure-ssis-ir-is-pointing-to-a-primary-server-endpoint"></a>Сценарий 2. Azure-SSIS IR указывает на конечную точку сервера-источника
 
-## <a name="scenario-3---attaching-an-existing-ssisdb-ssis-catalog-to-a-new-azure-ssis-ir"></a>Сценарий 3. присоединение существующего каталога SSISDB (каталог SSIS) к новому Azure-SSIS IR
+Этот сценарий подходит, если Azure-SSIS IR указывает на конечную точку сервера-источника.
 
-В случае сбоя ADF или Azure-SSIS IR в текущем регионе можно сделать SSISDB невозможной работать с новым Azure-SSIS IR в новом регионе.
+#### <a name="solution"></a>Решение
 
-### <a name="prerequisites"></a>Технические условия
+В случае отработки отказа выполните следующие действия.
 
-- Если вы используете виртуальную сеть в текущем регионе, нужно использовать другую виртуальную сеть в новом регионе для подключения среды выполнения интеграции Azure-SSIS. Дополнительные сведения см. в статье [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md).
+1. Останавливает Azure-SSIS IR в основном регионе.
 
-- Если вы используете выборочную установку, может потребоваться подготовить еще один универсальный код ресурса SAS для контейнера больших двоичных объектов, в котором хранится сценарий выборочной установки и связанные с ним файлы, чтобы он оставался доступным во время сбоя. Дополнительные сведения см. в статье [Пользовательская установка для среды выполнения интеграции Azure–SSIS](how-to-configure-azure-ssis-ir-custom-setup.md).
+2. Измените Azure-SSIS IR, указав сведения о новом регионе, конечной точке и виртуальной сети для вторичного экземпляра.
 
-### <a name="steps"></a>Действия
+    ```powershell
+    Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
+                -CatalogServerEndpoint "Azure SQL Database server endpoint" `
+                -CatalogAdminCredential "Azure SQL Database server admin credentials" `
+                -VNetId "new VNet" `
+                -Subnet "new subnet" `
+                -SetupScriptContainerSasUri "new custom setup SAS URI"
+    ```
 
-Выполните следующие шаги, чтобы остановить среду выполнения интеграции Azure-SSIS, переключить ее в новый регион и запустить снова.
+3. Перезапустите Azure-SSIS IR.
 
-1. Выполните хранимую процедуру, чтобы прикрепить SSISDB к **\<new_data_factory_name\>** или **\<new_integration_runtime_name** \>.
+### <a name="scenario-3-azure-ssis-ir-is-pointing-to-a-public-endpoint-of-a-sql-database-managed-instance"></a>Сценарий 3. Azure-SSIS IR указывает на общедоступную конечную точку управляемого экземпляра базы данных SQL
+
+Этот сценарий подходит, если Azure-SSIS IR указывает на общедоступную конечную точку управляемого экземпляра базы данных SQL Azure и не присоединяется к виртуальной сети. Единственное отличие от сценария 2 в том, что вам не нужно изменять сведения о виртуальной сети для Azure-SSIS IR после отработки отказа.
+
+#### <a name="solution"></a>Решение
+
+В случае отработки отказа выполните следующие действия.
+
+1. Останавливает Azure-SSIS IR в основном регионе.
+
+2. Измените Azure-SSIS IR, указав новый регион и сведения о конечной точке для вторичного экземпляра.
+
+    ```powershell
+    Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
+                -CatalogServerEndpoint "Azure SQL Database server endpoint" `
+                -CatalogAdminCredential "Azure SQL Database server admin credentials" `
+                -SetupScriptContainerSasUri "new custom setup SAS URI"
+    ```
+
+3. Перезапустите Azure-SSIS IR.
+
+### <a name="scenario-4-attach-an-existing-ssisdb-instance-ssis-catalog-to-a-new-azure-ssis-ir"></a>Сценарий 4. присоединение существующего экземпляра SSISDB (каталога служб SSIS) к новой Azure-SSIS IR
+
+Этот сценарий подходит, если вы хотите, чтобы база данных SSISDB работала с новым Azure-SSIS IR в новом регионе, когда в текущем регионе происходит Azure-SSIS IR аварии.
+
+#### <a name="solution"></a>Решение
+
+В случае отработки отказа выполните следующие действия.
+
+> [!NOTE]
+> Используйте PowerShell для шага 4 (создание IR). В противном случае портал Azure сообщит об ошибке с текстом SSISDB уже существует.
+
+1. Останавливает Azure-SSIS IR в основном регионе.
+
+2. Выполните хранимую процедуру для обновления метаданных в SSISDB, чтобы принимать подключения от ** \< new_data_factory_name \> ** и ** \< new_integration_runtime_name \> **.
    
-  ```SQL
+    ```sql
     EXEC [catalog].[failover_integration_runtime] @data_factory_name='<new_data_factory_name>', @integration_runtime_name='<new_integration_runtime_name>'
-   ```
+    ```
 
-2. Создайте новую фабрику данных с именем **\<new_data_factory_name\>** в новом регионе. Дополнительные сведения см. в разделе Создание фабрики данных.
+3. Создайте новую фабрику данных с именем ** \< new_data_factory_name \> ** в новом регионе.
 
-     ```powershell
-     Set-AzDataFactoryV2 -ResourceGroupName "new resource group name" `
-                         -Location "new region"`
-                         -Name "<new_data_factory_name>"
-     ```
-    Дополнительные сведения об этой команде PowerShell см. в статье [Создание фабрики данных Azure с помощью PowerShell](quickstart-create-data-factory-powershell.md) .
+    ```powershell
+    Set-AzDataFactoryV2 -ResourceGroupName "new resource group name" `
+                      -Location "new region"`
+                      -Name "<new_data_factory_name>"
+    ```
+    
+    Дополнительные сведения об этой команде PowerShell см. в статье [Создание фабрики данных Azure с помощью PowerShell](quickstart-create-data-factory-powershell.md).
 
-3. Создайте новый Azure-SSIS IR с именем **\<new_integration_runtime_name\>** в новом регионе, используя Azure PowerShell.
+4. Создайте новый Azure-SSIS IR с именем ** \< new_integration_runtime_name \> ** в новом регионе с помощью Azure PowerShell.
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName "new resource group name" `
@@ -149,16 +167,109 @@ ms.locfileid: "74928496"
                                            -CatalogPricingTier $SSISDBPricingTier
     ```
 
-    Дополнительные сведения об этой команде PowerShell см. в статье [Создание среды выполнения интеграции Azure SSIS в службе "Фабрика данных Azure"](create-azure-ssis-integration-runtime.md).
+    Дополнительные сведения об этой команде PowerShell см. [в статье Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
 
-4. Запустите среду выполнения интеграции снова.
+
+
+## <a name="azure-ssis-ir-failover-with-sql-database"></a>Azure-SSIS IR отработки отказа с помощью базы данных SQL
+
+### <a name="scenario-1-azure-ssis-ir-is-pointing-to-a-readwrite-listener-endpoint"></a>Сценарий 1. Azure-SSIS IR указывает на конечную точку прослушивателя для чтения и записи
+
+Этот сценарий подходит в следующих случаях:
+
+- Azure-SSIS IR указывает на конечную точку прослушивателя для чтения и записи группы отработки отказа.
+- На сервере базы данных SQL *не* настроено правило для конечной точки службы виртуальной сети.
+
+Если вы хотите, чтобы Azure-SSIS IR указывала на конечную точку прослушивателя для чтения и записи, сначала необходимо указать конечную точку сервера-источника. После помещения SSISDB в группу отработки отказа можно перейти на конечную точку прослушивателя для чтения и записи и перезапустить Azure-SSIS IR.
+
+#### <a name="solution"></a>Решение
+
+Когда происходит отработка отказа, она прозрачна для Azure-SSIS IR. Azure-SSIS IR автоматически подключается к новой первичной точке группы отработки отказа. 
+
+Если вы хотите обновить регион или другую информацию в Azure-SSIS IR, можно ее отключить, изменить и перезапустить.
+
+
+### <a name="scenario-2-azure-ssis-ir-is-pointing-to-a-primary-server-endpoint"></a>Сценарий 2. Azure-SSIS IR указывает на конечную точку сервера-источника
+
+Этот сценарий подходит, если Azure-SSIS IR указывает на конечную точку сервера-источника.
+
+#### <a name="solution"></a>Решение
+
+В случае отработки отказа выполните следующие действия.
+
+1. Останавливает Azure-SSIS IR в основном регионе.
+
+2. Измените Azure-SSIS IR, указав сведения о новом регионе, конечной точке и виртуальной сети для вторичного экземпляра.
+
+    ```powershell
+    Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
+                    -CatalogServerEndpoint "Azure SQL Database server endpoint" `
+                    -CatalogAdminCredential "Azure SQL Database server admin credentials" `
+                    -VNetId "new VNet" `
+                    -Subnet "new subnet" `
+                    -SetupScriptContainerSasUri "new custom setup SAS URI"
+    ```
+
+3. Перезапустите Azure-SSIS IR.
+
+### <a name="scenario-3-attach-an-existing-ssisdb-ssis-catalog-to-a-new-azure-ssis-ir"></a>Сценарий 3. присоединение существующего экземпляра SSISDB (каталога SSIS) к новой Azure-SSIS IR
+
+Этот сценарий подходит, если вы хотите подготавливать новый Azure-SSIS IR в дополнительном регионе. Он также подходит, если вы хотите, чтобы база данных SSISDB продолжала работать с новым Azure-SSIS IR в новом регионе, когда в текущем регионе происходит Azure-SSIS IR аварии.
+
+#### <a name="solution"></a>Решение
+
+В случае отработки отказа выполните следующие действия.
+
+> [!NOTE]
+> Используйте PowerShell для шага 4 (создание IR). В противном случае портал Azure сообщит об ошибке с текстом SSISDB уже существует.
+
+1. Останавливает Azure-SSIS IR в основном регионе.
+
+2. Выполните хранимую процедуру для обновления метаданных в SSISDB, чтобы принимать подключения от ** \< new_data_factory_name \> ** и ** \< new_integration_runtime_name \> **.
+   
+    ```sql
+    EXEC [catalog].[failover_integration_runtime] @data_factory_name='<new_data_factory_name>', @integration_runtime_name='<new_integration_runtime_name>'
+    ```
+
+3. Создайте новую фабрику данных с именем ** \< new_data_factory_name \> ** в новом регионе.
+
+    ```powershell
+    Set-AzDataFactoryV2 -ResourceGroupName "new resource group name" `
+                         -Location "new region"`
+                         -Name "<new_data_factory_name>"
+    ```
+    
+    Дополнительные сведения об этой команде PowerShell см. в статье [Создание фабрики данных Azure с помощью PowerShell](quickstart-create-data-factory-powershell.md).
+
+4. Создайте новый Azure-SSIS IR с именем ** \< new_integration_runtime_name \> ** в новом регионе с помощью Azure PowerShell.
+
+    ```powershell
+    Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName "new resource group name" `
+                                           -DataFactoryName "new data factory name" `
+                                           -Name "<new_integration_runtime_name>" `
+                                           -Description $AzureSSISDescription `
+                                           -Type Managed `
+                                           -Location $AzureSSISLocation `
+                                           -NodeSize $AzureSSISNodeSize `
+                                           -NodeCount $AzureSSISNodeNumber `
+                                           -Edition $AzureSSISEdition `
+                                           -LicenseType $AzureSSISLicenseType `
+                                           -MaxParallelExecutionsPerNode $AzureSSISMaxParallelExecutionsPerNode `
+                                           -VnetId "new vnet" `
+                                           -Subnet "new subnet" `
+                                           -CatalogServerEndpoint $SSISDBServerEndpoint `
+                                           -CatalogPricingTier $SSISDBPricingTier
+    ```
+
+    Дополнительные сведения об этой команде PowerShell см. [в статье Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь со следующими параметрами конфигурации для среды выполнения интеграции Azure-SSIS:
 
-- [Настройка среды выполнения интеграции Azure-SSIS для высокой производительности](configure-azure-ssis-integration-runtime-performance.md);
+- [Настройка среды выполнения интеграции Azure SSIS для обеспечения высокой производительности](configure-azure-ssis-integration-runtime-performance.md)
 
-- [Пользовательская установка для среды выполнения интеграции Azure–SSIS](how-to-configure-azure-ssis-ir-custom-setup.md);
+- [Пользовательская установка для среды выполнения интеграции Azure–SSIS](how-to-configure-azure-ssis-ir-custom-setup.md)
 
-- [Подготовка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services](how-to-configure-azure-ssis-ir-enterprise-edition.md).
+- [Предоставление выпуска Enterprise Edition для среды выполнения интеграции Azure SSIS](how-to-configure-azure-ssis-ir-enterprise-edition.md)

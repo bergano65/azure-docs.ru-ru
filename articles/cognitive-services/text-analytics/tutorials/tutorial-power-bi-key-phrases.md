@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Power BI с Анализом текста в Cognitive Services
+title: Руководство по Интеграция Power BI с Анализом текста в Cognitive Services
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как использовать API службы "Анализ текста" для извлечения ключевых фраз из текста, хранимого в Power BI.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: tutorial
 ms.date: 12/19/2019
 ms.author: aahi
 ms.openlocfilehash: 2398bfa2ce828e716831cc7ce438bd1c241ca5f8
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "75378540"
 ---
-# <a name="tutorial-integrate-power-bi-with-the-text-analytics-cognitive-service"></a>Руководство. Интеграция Power BI с Анализом текста в Cognitive Services
+# <a name="tutorial-integrate-power-bi-with-the-text-analytics-cognitive-service"></a>Руководство по Интеграция Power BI с Анализом текста в Cognitive Services
 
 Microsoft Power BI Desktop — бесплатное приложение, позволяющее подключиться к данным, а затем преобразовать и визуализировать их. Служба "Анализ текста", входящая в набор служб Microsoft Azure Cognitive Services, обеспечивает обработку естественного языка. Она может извлечь из необработанного и неструктурированного текста самые важные фразы, выполнить анализ тональности и определить в нем известные сущности, например торговые марки. Оба инструмента помогают быстро узнать, о чем говорят ваши пользователи и что они при этом испытывают.
 
@@ -30,7 +30,7 @@ Microsoft Power BI Desktop — бесплатное приложение, поз
 > * Использование API ключевых фраз службы "Анализ текста" для извлечения наиболее важных фраз из отзывов клиентов.
 > * Создание облака слов на основе отзывов клиентов.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 <a name="Prerequisites"></a>
 
 - Microsoft Power BI Desktop ([скачать бесплатно](https://powerbi.microsoft.com/get-started/)).

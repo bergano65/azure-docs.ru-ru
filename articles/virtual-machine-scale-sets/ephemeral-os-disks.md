@@ -1,19 +1,20 @@
 ---
 title: Временные диски ОС для масштабируемых наборов виртуальных машин Azure
 description: Дополнительные сведения о временных дисках операционной системы для масштабируемых наборов виртуальных машин Azure.
-author: cynthn
-ms.service: virtual-machine-scale-sets
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm
+author: vaibhav-agar
+ms.author: vaaga
 ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: disks
 ms.date: 07/01/2019
-ms.author: cynthn
-ms.openlocfilehash: 5d459d55c0a1fcdf14e95b28e2a9c1b634846751
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviewer: jushimana
+ms.custom: vaaga
+ms.openlocfilehash: 6e9c7ed918e2dbcbf5334aee2bb0f1c7ac7bc8cc
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278961"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83195839"
 ---
 # <a name="ephemeral-os-disks-for-vm-instances"></a>Временные диски ОС для экземпляров виртуальных машин
 

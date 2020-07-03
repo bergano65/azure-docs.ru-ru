@@ -14,10 +14,10 @@ ms.reviewer: kexia
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 221ab7c50a84650f1b2adf3fdb2b284365795f42
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74024281"
 ---
 # <a name="sign-in-options-for-microsoft-accounts-in-azure-active-directory"></a>Параметры входа для учетных записей Майкрософт в Azure Active Directory
@@ -34,6 +34,6 @@ ms.locfileid: "74024281"
 
 [Дополнительные параметры входа работают только с личными учетными записями Майкрософт](https://azure.microsoft.com/updates/microsoft-account-signin-options/ ) , но не могут использоваться для входа в ресурсы рабочей или учебной учетной записи.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка фирменной символики для входа](../fundamentals/add-custom-domain.md)

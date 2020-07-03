@@ -15,28 +15,28 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: fedec6ea764394d36f5b4d7c883f7cb9f9520a29
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "64869027"
 ---
 # <a name="get-started-with-the-java-client-sdk-for-azure-media-services"></a>Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure  
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 В этом руководстве описано, как реализовать простую службу доставки видео с помощью служб мультимедиа Azure и клиентского пакета SDK для Java.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
-* Учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Учетная запись служб мультимедиа. Инструкции по созданию учетной записи служб мультимедиа см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
+* Учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Учетная запись служб мультимедиа. Сведения о создании учетной записи служб мультимедиа см. в разделе [Создание учетной записи служб мультимедиа](media-services-portal-create-account.md).
 * Текущая версия [пакета SDK для Java для служб мультимедиа Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure-media/latest).
 
-## <a name="how-to-import-the-azure-media-services-java-client-sdk-package"></a>Практическое руководство: Импорт клиентского пакета SDK для Java для служб мультимедиа Azure
+## <a name="how-to-import-the-azure-media-services-java-client-sdk-package"></a>Практическое руководство. Импорт клиентского пакета SDK для Java для служб мультимедиа Azure
 
 Чтобы начать использовать пакет SDK служб мультимедиа для Java, добавьте ссылку на текущую версию (0.9.8) пакета `azure-media` из [пакета SDK Java для служб мультимедиа Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure-media/latest).
 
@@ -50,20 +50,20 @@ ms.locfileid: "64869027"
 >[!NOTE]
 >Исходный код пакета SDK для Java для служб мультимедиа Azure можно найти в [репозитории GitHub](https://github.com/Azure/azure-sdk-for-java/tree/0.9/services/azure-media). Перейдите на ветвь 0.9, а не на главную ветвь. 
 
-## <a name="how-to-use-azure-media-services-with-java"></a>Практическое руководство: Использование служб мультимедиа Azure с Java
+## <a name="how-to-use-azure-media-services-with-java"></a>Практическое руководство. Использование служб мультимедиа Azure с Java
 
 >[!NOTE]
->При создании учетной записи служб мультимедиа в нее добавляется конечная точка потоковой передачи **по умолчанию** в состоянии **Остановлена**. Чтобы начать потоковую передачу содержимого и воспользоваться динамической упаковкой и динамическим шифрованием, конечная точка потоковой передачи, из которой необходимо выполнять потоковую передачу содержимого, должна находиться в состоянии **Выполняется**.
+>При создании учетной записи служб мультимедиа конечная точка потоковой передачи **по умолчанию** добавляется в учетную запись в **остановленном** состоянии. Чтобы начать потоковую передачу содержимого и воспользоваться функциями динамической упаковки и динамического шифрования, конечная точка потоковой передачи, из которой необходимо выполнять потоковую передачу содержимого, должна находиться в состоянии **Выполняется**.
 
 В следующем коде демонстрируется создание ресурса-контейнера, передача файла мультимедиа в него, выполнение задания с задачей преобразования ресурса-контейнера и создание указателя для потоковой передачи вашего видео.
 
 Для использования этого кода настройте учетную запись служб мультимедиа. Сведения о настройке учетной записи см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 
 Код подключается к API служб мультимедиа Azure, используя проверку подлинности субъекта-службы Azure AD. Создайте приложение Azure AD и укажите в коде значения для следующих переменных:
-* `tenant`: домен клиента Azure AD, в котором размещается приложение Azure AD;
-* `clientId`: идентификатор клиента приложения Azure AD;
-* `clientKey`: ключ клиента приложения Azure AD;
-* `restApiEndpoint`: конечная точка REST API учетной записи служб мультимедиа Azure.
+* `tenant`. Домен клиента Azure AD, в котором размещается приложение Azure AD.
+* `clientId`. Идентификатор клиента приложения Azure AD.
+* `clientKey`. Ключ клиента приложения Azure AD.
+* `restApiEndpoint`. Конечная точка REST API учетной записи служб мультимедиа Azure.
 
 Вы можете создать приложение Azure AD и получить предыдущие значения конфигурации на портале Azure. Дополнительные сведения см. в разделе **Проверка подлинности субъекта-службы** статьи [Приступая к работе с аутентификацией Azure AD с помощью портала Azure](https://docs.microsoft.com/azure/media-services/media-services-portal-get-started-with-aad).
 
@@ -307,7 +307,7 @@ ms.locfileid: "64869027"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

@@ -3,22 +3,19 @@ title: Обновите свою учетную запись Azure
 description: Описывает, как обновить учетную запись Azure.
 keywords: обновление до подписки с оплатой по мере использования
 author: bandersmsft
-manager: jureid
+ms.reviewer: sasrin
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/10/2020
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3e1e99313454c8352b96b8f11ec35f482521f7b5
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 29454bc5edb02ff571e06be3e9f203792d473aed
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75989778"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199455"
 ---
 # <a name="upgrade-your-azure-free-account-or-azure-for-students-starter-account"></a>Обновление бесплатной учетной записи Azure или учетной записи Начального набора Microsoft Azure для учащихся
 
@@ -30,7 +27,7 @@ ms.locfileid: "75989778"
 
 ## <a name="upgrade-your-azure-free-account"></a>Обновление бесплатной учетной записи Azure
 
-При обновлении бесплатной учетной записи Azure вы сохраняете оставшийся кредит в течение полных 30 дней с момента регистрации. Пример: Если вы зарегистрировались 1 ноября и выполнили обновление 5 ноября, все неиспользованные кредиты будут доступны до 30 ноября. Кроме того, вам предоставляется доступ к бесплатным службам в течение 12 месяцев.
+При обновлении бесплатной учетной записи Azure вы сохраняете оставшийся кредит в течение полных 30 дней с момента регистрации. Пример: Если вы зарегистрировались 1 ноября и выполнили обновление 5 ноября, все неиспользованные деньги на счете будут доступны до 30 ноября. Кроме того, вам предоставляется доступ к бесплатным службам в течение 12 месяцев.
 
 1. Войдите на [портал Azure](https://portal.azure.com)
 1. Выполните поиск по запросу **Подписки**.

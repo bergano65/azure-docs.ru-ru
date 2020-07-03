@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -9,17 +9,17 @@ ms.date: 12/05/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 80c961c1aa4da199fa87b97bc8e0a37e60c2235f
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74903110"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
 Пользовательская политика IPsec/IKE поддерживается во всех SKU Azure, за исключением номера SKU "базовый".
 
 ### <a name="how-many-policies-can-i-specify-on-a-connection"></a>Сколько политик можно указать для подключения?
-Можно указать только ***одну*** комбинацию политик для каждого подключения.
+Для данного соединения можно указать только ***одну*** комбинацию политики.
 
 ### <a name="can-i-specify-a-partial-policy-on-a-connection-for-example-only-ike-algorithms-but-not-ipsec"></a>Можно ли указать частичную политику для подключения (например, только алгоритмы IKE без IPsec)?
 Нет, следует указать все алгоритмы и параметры для IKE (основной режим) и IPsec (быстрый режим). Указать частичную политику нельзя.
@@ -27,7 +27,7 @@ ms.locfileid: "74903110"
 ### <a name="what-are-the-algorithms-and-key-strengths-supported-in-the-custom-policy"></a>Какие алгоритмы и уровни стойкости ключей поддерживает настраиваемая политика?
 В таблице ниже перечислены поддерживаемые алгоритмы шифрования и уровни стойкости ключей, которые могут настроить клиенты. Необходимо выбрать один вариант для каждого поля.
 
-| **IPsec/IKEv2**  | **Варианты**                                                                   |
+| **IPsec/IKEv2**  | **Параметры**                                                                   |
 | ---              | ---                                                                           |
 | Шифрование IKEv2 | AES256, AES192, AES128, DES3, DES                                             |
 | Проверка целостности IKEv2  | SHA384, SHA256, SHA1, MD5                                                     |
@@ -35,7 +35,7 @@ ms.locfileid: "74903110"
 | Шифрование IPsec | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, нет      |
 | Целостность IPsec  | GCMAES256, GCMAES192, GCMAES128, SHA256, SHA1, MD5                            |
 | Группа PFS        | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, нет                              |
-| Время существования QM SA   | Секунды (целое число, **минимум 300**, по умолчанию — 27 000 с)<br>Килобайты (целое число, **минимум 1024**, по умолчанию — 102 400 000 КБ)           |
+| Время существования QM SA   | Секунды (целое число; **min. 300**/Default 27000 секунд)<br>КБ (целое число; **min. 1024,/Default.** 102400000 КБ)           |
 | Селектор трафика | UsePolicyBasedTrafficSelectors ($True/$False; по умолчанию — $False)                 |
 |                  |                                                                               |
 
@@ -67,7 +67,7 @@ ms.locfileid: "74903110"
 
 Дополнительные сведения см. в статье [Подключение VPN-шлюзов Azure к нескольким локальным VPN-устройствам на основе политики с помощью PowerShell](../articles/vpn-gateway/vpn-gateway-connect-multiple-policybased-rm-ps.md).
 
-### <a name ="DH"></a>Поддерживаемые группы Диффи-Хелмана
+### <a name="which-diffie-hellman-groups-are-supported"></a><a name ="DH"></a>Поддерживаемые группы Диффи-Хелмана
 В таблице ниже перечислены поддерживаемые группы Диффи-Хелмана для протокола IKE (DHGroup) и IPsec (PFSGroup).
 
 | **Группа Диффи-Хелмана**  | **DHGroup**              | **PFSGroup** | **Длина ключа** |

@@ -2,21 +2,18 @@
 title: Изменение предложения подписки Azure
 description: Сведения о смене подписки Azure и переключении на другое предложение с помощью Центра управления учетной записью Azure.
 author: bandersmsft
-manager: amberb
+ms.reviewer: amberb
 tags: billing,top-support-issue
 ms.service: cost-management-billing
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/02/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 8e083391a04188345143f8fdf9a5a945abcd9eb1
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 4aa02dae521844f2654a50f77be9b2ee3c46a74f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75994289"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199523"
 ---
 # <a name="change-your-azure-subscription-to-a-different-offer"></a>Изменение подписки Azure на другое предложение
 

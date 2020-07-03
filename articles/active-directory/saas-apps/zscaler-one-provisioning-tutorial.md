@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 87413932acee576934ee50b59546371b03ceaf7e
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77064178"
 ---
 # <a name="tutorial-configure-zscaler-one-for-automatic-user-provisioning"></a>Руководство. Настройка Zscaler для автоматической подготовки пользователей
@@ -30,7 +30,7 @@ ms.locfileid: "77064178"
 > В этом руководстве описывается соединитель, созданный на основе службы подготовки пользователей Azure AD. Сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. [в статье Автоматизация подготовки пользователей и ее отработки в приложения SaaS (программное обеспечение как услуга) с Azure Active Directory](../active-directory-saas-app-provisioning.md).
 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом учебнике, предполагается, что у вас есть:
 
@@ -51,7 +51,7 @@ ms.locfileid: "77064178"
 
     ![Значок Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -73,7 +73,7 @@ Azure Active Directory использует концепцию, называем
 
 * Рекомендуется назначить одного пользователя Azure AD, чтобы Zscaler его для проверки конфигурации автоматической подготовки пользователей. Позднее можно назначить дополнительных пользователей или группы.
 
-* При назначении пользователя Zscaler выберите любую допустимую роль конкретного приложения, если она доступна, в диалоговом окне Назначение. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+* При назначении пользователя Zscaler выберите любую допустимую роль конкретного приложения, если она доступна, в диалоговом окне Назначение. Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
 
 ## <a name="configure-automatic-user-provisioning-to-zscaler-one"></a>Настройка автоматической подготовки пользователей для Zscaler
 
@@ -84,7 +84,7 @@ Azure Active Directory использует концепцию, называем
 
 ### <a name="configure-automatic-user-provisioning-for-zscaler-one-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Zscaler 1 в Azure AD
 
-1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения** > **все приложения** > **Zscaler одно**.
+1. Войдите на [портал Azure](https://portal.azure.com). Выберите **корпоративные приложения** > **все приложения** > ,**Zscaler одно**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -92,21 +92,21 @@ Azure Active Directory использует концепцию, называем
 
     ![Ссылка на Zscaler в списке "приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Zscaler одну подготовку](./media/zscaler-one-provisioning-tutorial/provisioning-tab.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Zscaler один режим подготовки](./media/zscaler-one-provisioning-tutorial/provisioning-credentials.png)
 
 5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **токен секрета** с параметрами для вашей учетной записи Zscaler, как описано в шаге 6.
 
-6. Чтобы получить URL-адрес клиента и маркер секрета, перейдите в раздел **администрирование** > **Параметры проверки подлинности** в пользовательском интерфейсе Zscaler одного портала. В разделе **Authentication Type** (Тип проверки подлинности) выберите **SAML**.
+6. Чтобы получить URL-адрес клиента и маркер секрета, перейдите в раздел **Администрирование** > **Параметры проверки подлинности** в Zscaler один пользовательский интерфейс портала. В разделе **Authentication Type** (Тип проверки подлинности) выберите **SAML**.
 
     ![Zscaler один параметр проверки подлинности](./media/zscaler-one-provisioning-tutorial/secret-token-1.png)
 
-    а. Выберите **настроить SAML** , чтобы открыть диалоговое окно **Настройка параметров SAML** .
+    a. Выберите **настроить SAML** , чтобы открыть диалоговое окно **Настройка параметров SAML** .
 
     ![Zscaler. одна настройка SAML](./media/zscaler-one-provisioning-tutorial/secret-token-2.png)
 
@@ -120,7 +120,7 @@ Azure Active Directory использует концепцию, называем
 
     ![Zscaler одно уведомление по электронной почте](./media/zscaler-one-provisioning-tutorial/notification.png)
 
-9. Щелкните **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей, чтобы Zscaler их**.
 
@@ -160,10 +160,10 @@ Azure Active Directory использует концепцию, называем
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 

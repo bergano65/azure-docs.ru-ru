@@ -8,15 +8,15 @@ ms.assetid: e6faeddd-ef9e-4e23-84d6-c9b3f7d16567
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.topic: conceptual
-ms.date: 11/26/2019
+ms.topic: how-to
+ms.date: 03/30/2020
 ms.author: iainfou
-ms.openlocfilehash: 9dc7e6341f77fc17ae26f34ea029b3eb5414dcbc
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.openlocfilehash: 5955f52cda73630f371a46f83ac0fb9a252b80e3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74705318"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80655490"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-in-azure-ad-domain-services"></a>Создание групповой управляемой учетной записи службы (gMSA) в доменных службах Azure AD
 
@@ -26,15 +26,15 @@ ms.locfileid: "74705318"
 
 В этой статье показано, как создать gMSA в управляемом домене Azure AD DS с помощью Azure PowerShell.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 Для работы с этой статьей необходимы следующие ресурсы и привилегии:
 
 * Активная подписка Azure.
-    * Если у вас еще нет подписки Azure, создайте [учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+    * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
-* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте AAD.
+* Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
     * При необходимости выполните инструкции из руководства по [созданию и настройке Azure Active Directory экземпляра доменных служб][create-azure-ad-ds-instance].
 * Виртуальная машина управления Windows Server, присоединенная к управляемому домену AD DS Azure.
     * При необходимости выполните инструкции из руководства по [созданию виртуальной машины управления][tutorial-create-management-vm].
@@ -58,44 +58,44 @@ ms.locfileid: "74705318"
     * Корневой ключ KDS используется для создания и получения паролей для Gmsa. В AD DS Azure для вас создается корневой каталог KDS.
     * У вас нет привилегий для создания другого или просмотра корневого ключа KDS по умолчанию.
 
-## <a name="create-a-gmsa"></a>Создание gMSA
+## <a name="create-a-gmsa"></a>Создайте групповую управляемую учетную запись службы.
 
 Сначала создайте настраиваемое подразделение с помощью командлета [New-адорганизатионалунит][New-AdOrganizationalUnit] . Дополнительные сведения о создании пользовательских подразделений и управлении ими см. [в разделе Пользовательские подразделения в Azure AD DS][create-custom-ou].
 
 > [!TIP]
 > Чтобы выполнить эти действия для создания gMSA, [Используйте виртуальную машину управления][tutorial-create-management-vm]. Эта виртуальная машина управления уже должна иметь необходимые командлеты AD PowerShell и подключение к управляемому домену.
 
-В следующем примере создается пользовательское подразделение с именем *миневау* в управляемом домене AD DS Azure с именем *aadds.contoso.com*. Используйте собственное подразделение и управляемое доменное имя:
+В следующем примере создается пользовательское подразделение с именем *миневау* в управляемом домене AD DS Azure с именем *aaddscontoso.com*. Используйте собственное подразделение и управляемое доменное имя:
 
 ```powershell
-New-ADOrganizationalUnit -Name "myNewOU" -Path "DC=contoso,DC=COM"
+New-ADOrganizationalUnit -Name "myNewOU" -Path "DC=aaddscontoso,DC=COM"
 ```
 
 Теперь создайте gMSA с помощью командлета [New-адсервицеаккаунт][New-ADServiceAccount] . Определены следующие примеры параметров:
 
 * Параметр **-Name** имеет значение *вебфармсвк* .
 * Параметр **-path** задает настраиваемое подразделение для gMSA, созданного на предыдущем шаге.
-* Записи DNS и имена субъектов-служб заданы для *WebFarmSvc.aadds.contoso.com*
-* Субъектам в *contoso-Server $* разрешено получать пароль, используя удостоверение.
+* Записи DNS и имена субъектов-служб заданы для *WebFarmSvc.aaddscontoso.com*
+* Участникам в *ааддсконтосо-Server $* разрешено получать пароль, используя удостоверение.
 
 Укажите собственные имена и доменные имена.
 
 ```powershell
 New-ADServiceAccount -Name WebFarmSvc `
-    -DNSHostName WebFarmSvc.aadds.contoso.com `
-    -Path "OU=MYNEWOU,DC=contoso,DC=com" `
+    -DNSHostName WebFarmSvc.aaddscontoso.com `
+    -Path "OU=MYNEWOU,DC=aaddscontoso,DC=com" `
     -KerberosEncryptionType AES128, AES256 `
     -ManagedPasswordIntervalInDays 30 `
-    -ServicePrincipalNames http/WebFarmSvc.aadds.contoso.com/aadds.contoso.com, `
-        http/WebFarmSvc.aadds.contoso.com/contoso, `
-        http/WebFarmSvc/aadds.contoso.com, `
-        http/WebFarmSvc/contoso `
-    -PrincipalsAllowedToRetrieveManagedPassword CONTOSO-SERVER$
+    -ServicePrincipalNames http/WebFarmSvc.aaddscontoso.com/aaddscontoso.com, `
+        http/WebFarmSvc.aaddscontoso.com/aaddscontoso, `
+        http/WebFarmSvc/aaddscontoso.com, `
+        http/WebFarmSvc/aaddscontoso `
+    -PrincipalsAllowedToRetrieveManagedPassword AADDSCONTOSO-SERVER$
 ```
 
 Теперь приложения и службы можно настроить для использования gMSA по мере необходимости.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о Gmsa см. в статье [Приступая к работе с групповыми управляемыми учетными записями служб][gmsa-start].
 

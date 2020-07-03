@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: e0fa85b8a90ea57d9b81bd2eeaa6d080b7582acd
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: af0c39ed8211ac2041d143112437ad5d6b384259
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68945276"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80244738"
 ---
 # <a name="detect-color-schemes-in-images"></a>Обнаружение цветовых схем на изображениях
 
@@ -56,8 +56,8 @@ ms.locfileid: "68945276"
 
 | Изображение | Преобладающие цвета |
 |-------|-----------------|
-|![Белый цветок на зеленом фоне](./Images/flower.png)| Передний план: Черный<br/>Фон: Белый<br/>Цвета: черный, белый, зеленый|
-![Поезд, проходящий через станцию](./Images/train_station.png) | Передний план: Черный<br/>Фон: Черный<br/>Цвета: Черный |
+|![Белый цветок на зеленом фоне](./Images/flower.png)| Передний план: черный<br/>Фон: белый<br/>Цвета: черный, белый, зеленый|
+![Поезд, проходящий через станцию](./Images/train_station.png) | Передний план: черный<br/>Фон: черный<br/>Цвета: черный |
 
 ### <a name="accent-color-examples"></a>Примеры акцентных цветов
 
@@ -75,9 +75,12 @@ ms.locfileid: "68945276"
 
 | Изображение | Черно-белое |
 |-------|----------------|
-|![Черно-белая фотография здания на Манхэттене](./Images/bw_buildings.png) | true |
-|![Синий дом и передний двор](./Images/house_yard.png) | False |
+|![Черно-белая фотография здания на Манхэттене](./Images/bw_buildings.png) | Да |
+|![Синий дом и передний двор](./Images/house_yard.png) | false |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="use-the-api"></a>Использование API
 
-Ознакомьтесь с принципами [определения типов изображений](concept-detecting-image-types.md).
+Функция обнаружения цветовых схем является частью API [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) . Вы можете вызывать этот API с помощью собственного пакета SDK или с помощью вызовов REST. Включите `Color` в параметр запроса **висуалфеатурес** . Затем, когда вы получаете полный ответ JSON, просто Проанализируйте строку для содержимого `"color"` раздела.
+
+* [Краткое руководство. Компьютерное зрение пакета SDK для .NET](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
+* [Краткое руководство. Анализ изображения (REST API)](./quickstarts/csharp-analyze.md)

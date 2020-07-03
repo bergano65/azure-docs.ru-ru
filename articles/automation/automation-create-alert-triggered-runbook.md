@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/29/2019
 ms.topic: conceptual
-ms.openlocfilehash: df28116c588ed77f02c78a42a85feb91ca339e7b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: eb7a1cc0cb589fa3d2fe605913d47be4444516e8
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75366706"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996867"
 ---
 # <a name="use-an-alert-to-trigger-an-azure-automation-runbook"></a>Использование оповещения для активации runbook службы автоматизации Azure
 
@@ -29,11 +29,11 @@ ms.locfileid: "75366706"
 
 Когда оповещение вызывает runbook, фактически осуществляется вызов веб-перехватчика с помощью HTTP-запроса POST. Текст запроса POST содержит объект в формате JSON с полезными свойствами, связанными с оповещением. В следующей таблице приведены ссылки на схему полезных данных для каждого типа оповещения.
 
-|Оповещение  |Description|Схема полезных данных  |
+|Предупреждение  |Описание|Схема полезных данных  |
 |---------|---------|---------|
 |[Общее оповещение](../azure-monitor/platform/alerts-common-schema.md?toc=%2fazure%2fautomation%2ftoc.json)|Общая схема оповещений, которая стандартизует возможности использования уведомлений об оповещениях в Azure уже сегодня.|Общая схема полезных данных оповещений|
-|[Оповещение журнала действий](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json)    |Отправляет уведомление, когда какое-либо новое событие в журнале действий Azure соответствует определенным условиям. Например, если в **myProductionResourceGroup** выполняется операция `Delete VM` или возникает новое событие службы "Работоспособность служб Azure" в состоянии **Активное**.| [Схема полезных данных оповещения журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md)        |
-|[Оповещения на основе метрик практически в реальном времени](../azure-monitor/platform/alerts-metric-near-real-time.md?toc=%2fazure%2fautomation%2ftoc.json)    |Отправляет уведомление быстрее, чем оповещения о метриках, когда одна или несколько метрик уровня платформы удовлетворяют указанным условиям. Например, если за последние 5 минут значение метрики **% ЦП** на виртуальной машине превышает **90** и значение метрики **Сеть (входящий трафик)** превышает **500 МБ**.| [Схема полезны данных оповещения на основе метрик почти в реальном времени](../azure-monitor/platform/alerts-webhooks.md#payload-schema)          |
+|[Оповещение журнала действий](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json)    |Отправляет уведомление, когда какое-либо новое событие в журнале действий Azure соответствует определенным условиям. Например, если в **myProductionResourceGroup** выполняется операция `Delete VM` или возникает новое событие службы "Работоспособность служб Azure" в состоянии Активное.| [Схема полезных данных оповещения журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md)        |
+|[Оповещения на основе метрик практически в реальном времени](../azure-monitor/platform/alerts-metric-near-real-time.md?toc=%2fazure%2fautomation%2ftoc.json)    |Отправляет уведомление быстрее, чем оповещения о метриках, когда одна или несколько метрик уровня платформы удовлетворяют указанным условиям. Например, если значение " **ЦП%** " на виртуальной машине превышает 90, а значение " **сеть в** " превышает 500 МБ за последние 5 минут.| [Схема полезны данных оповещения на основе метрик почти в реальном времени](../azure-monitor/platform/alerts-webhooks.md#payload-schema)          |
 
 Так как данные, предоставляемые для каждого типа оповещения, различны, оповещения разных типов обрабатываются по-разному. В следующем разделе вы узнаете, как создать runbook для обработки различных типов оповещений.
 
@@ -41,11 +41,11 @@ ms.locfileid: "75366706"
 
 Чтобы применять автоматизацию к оповещениям, нужен runbook с логикой для управления полезными данными JSON оповещения, которые передаются в runbook. Приведенный ниже пример модуля Runbook должен быть вызван из оповещения Azure.
 
-Как описано в предыдущем разделе, каждый тип оповещения имеет свою схему. Сценарий принимает данные веб-перехватчика во входном параметре runbook `WebhookData` из оповещения. Затем сценарий оценивает полезные данные JSON, чтобы определить, какой тип оповещения использован.
+Как описано в предыдущем разделе, каждый тип оповещения имеет свою схему. Скрипт принимает данные веб-перехватчика из предупреждения в входном `WebhookData` параметре Runbook. Затем скрипт оценивает полезные данные JSON, чтобы определить, какой тип оповещений используется.
 
-В этом примере используется оповещение из виртуальной машины. Он извлекает данные виртуальной машины из полезных данных и использует эту информацию для остановки виртуальной машины. Подключение должно быть настроено в учетной записи службы автоматизации, в которой выполняется runbook. При использовании оповещений для активации модулей runbook очень важно проверять состояние оповещения в активируемом модуле. Модуль runbook будет активирован каждый раз, когда состояние оповещения меняется. Оповещения имеют несколько состояний. Два наиболее распространенных — это `Activated` и `Resolved`. Проверьте это состояние в логике runbook, чтобы убедиться, что модуль runbook выполняется не более одного раза. Пример в этой статье показывает, как выполнять поиск только оповещений `Activated`.
+В этом примере используется оповещение из виртуальной машины. Он извлекает данные виртуальной машины из полезных данных и использует эту информацию для остановки виртуальной машины. Подключение должно быть настроено в учетной записи службы автоматизации, в которой выполняется runbook. При использовании оповещений для активации модулей Runbook важно проверить состояние предупреждения в запущенном модуле Runbook. Модуль Runbook запускается каждый раз при изменении состояния предупреждения. Оповещения имеют несколько состояний, в которых два наиболее распространенных активированы и разрешены. Проверьте состояние в логике модуля Runbook, чтобы убедиться, что модуль Runbook не выполняется более одного раза. В примере в этой статье показано, как искать предупреждения с состоянием "активировано".
 
-Модуль Runbook использует [учетную запись запуска от имени](automation-create-runas-account.md) **AzureRunAsConnection** для проверки подлинности в Azure, чтобы выполнить действие управления для виртуальной машины.
+Модуль Runbook использует `AzureRunAsConnection` [учетную запись запуска от имени](automation-create-runas-account.md) ресурса подключения для проверки подлинности в Azure, чтобы выполнить действие управления для виртуальной машины.
 
 Используйте этот пример для создания runbook **Stop-AzureVmInResponsetoVMAlert**. Можно изменить сценарий PowerShell и использовать его для множества разных ресурсов.
 
@@ -139,13 +139,13 @@ ms.locfileid: "75366706"
                     throw "Could not retrieve connection asset: $ConnectionAssetName. Check that this asset exists in the Automation account."
                 }
                 Write-Verbose "Authenticating to Azure with service principal." -Verbose
-                Add-AzureRMAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint | Write-Verbose
+                Add-AzAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint | Write-Verbose
                 Write-Verbose "Setting subscription to work against: $SubId" -Verbose
-                Set-AzureRmContext -SubscriptionId $SubId -ErrorAction Stop | Write-Verbose
+                Set-AzContext -SubscriptionId $SubId -ErrorAction Stop | Write-Verbose
 
                 # Stop the Resource Manager VM
                 Write-Verbose "Stopping the VM - $ResourceName - in resource group - $ResourceGroupName -" -Verbose
-                Stop-AzureRmVM -Name $ResourceName -ResourceGroupName $ResourceGroupName -Force
+                Stop-AzVM -Name $ResourceName -ResourceGroupName $ResourceGroupName -Force
                 # [OutputType(PSAzureOperationResponse")]
             }
             else {
@@ -195,3 +195,5 @@ ms.locfileid: "75366706"
 * Дополнительные сведения о различных способах запуска модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Дополнительные сведения о том, как создать оповещение журнала действий, см. в разделе [Создание оповещений журнала действий](../azure-monitor/platform/activity-log-alerts.md?toc=%2fazure%2fautomation%2ftoc.json).
 * Дополнительные сведения о том, как создать оповещение почти в реальном времени, см. в разделе [Создание правила оповещения с помощью портала Azure](../azure-monitor/platform/alerts-metric.md?toc=/azure/azure-monitor/toc.json).
+* Справочник по командлетам PowerShell см. в документации по [Az.Automation](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation
+).

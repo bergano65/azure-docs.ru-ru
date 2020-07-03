@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.date: 01/07/2020
 ms.custom: seodec18
 ms.openlocfilehash: c117510749abcf997e414371faa6dea1dc79ea7a
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75861767"
 ---
 # <a name="azure-time-series-insights-preview-explorer"></a>Обозреватель предварительной версии службы "аналитика временных рядов Azure"
 
 В этой статье описываются различные функции и параметры, доступные в [демонстрационном веб-приложении](https://insights.timeseries.azure.com/preview/demo)Azure Time Series Insights.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы начать работу с обозревателем предварительного просмотра службы "аналитика временных рядов Azure", необходимо:
 
@@ -35,7 +35,7 @@ ms.locfileid: "75861767"
 
 Обозреватель предварительной версии службы "аналитика временных рядов Azure" состоит из следующих семи элементов:
 
-[Обзор обозревателя "аналитика временных рядов !["](media/v2-update-explorer/preview-explorer-overview.png)](media/v2-update-explorer/preview-explorer-overview.png#lightbox)
+[![Обзор обозревателя предварительного просмотра аналитики временных рядов](media/v2-update-explorer/preview-explorer-overview.png)](media/v2-update-explorer/preview-explorer-overview.png#lightbox)
 
 1. [Панель "среда](#1-environment-panel)": отображает все среды службы "аналитика временных рядов Azure".
 1. [Панель навигации](#2-navigation-bar): позволяет переключаться между страницами **анализ** и **модель** .
@@ -52,13 +52,13 @@ ms.locfileid: "75861767"
 
 1. Щелкните стрелку раскрывающегося списка рядом с отображаемой средой.
 
-   [панель среды ![](media/v2-update-explorer/environment-panel.png)](media/v2-update-explorer/environment-panel.png#lightbox)
+   [![Панель среды](media/v2-update-explorer/environment-panel.png)](media/v2-update-explorer/environment-panel.png#lightbox)
 
 1. Затем выберите нужную среду.
 
 ## <a name="2-navigation-bar"></a>2. панель навигации
 
-  [![панели навигации](media/v2-update-explorer/tsi-preview-navigation-bar.png)](media/v2-update-explorer/tsi-preview-navigation-bar.png#lightbox)
+  [![Панель навигации](media/v2-update-explorer/tsi-preview-navigation-bar.png)](media/v2-update-explorer/tsi-preview-navigation-bar.png#lightbox)
 
 Используйте панель навигации для выбора между двумя представлениями:
 
@@ -69,7 +69,7 @@ ms.locfileid: "75861767"
 
 Предварительная версия службы "аналитика временных рядов Azure" поддерживает операции создания, чтения, обновления и удаления (CRUD) в модели временных рядов.
 
-[![панели «Поиск модели»](media/v2-update-explorer/model-search-panel.png)](media/v2-update-explorer/model-search-panel.png#lightbox)
+[![Панель «Поиск модели»](media/v2-update-explorer/model-search-panel.png)](media/v2-update-explorer/model-search-panel.png#lightbox)
 
 * **Тип модели временных рядов**. с помощью типов "аналитика временных рядов" можно определить переменные или формулы для выполнения вычислений. Они связаны с определенным экземпляром "аналитика временных рядов". Один тип может содержать одну или несколько переменных.
 * **Иерархия модели временных рядов**. иерархии представляют собой систематические организации данных. Иерархии изображают связи между разными сущностями данных аналитики временных рядов.
@@ -81,7 +81,7 @@ ms.locfileid: "75861767"
 
 Дерево иерархии и панель поиска позволяют легко находить и перемещаться по иерархии [модели временных рядов](./time-series-insights-update-tsm.md) , чтобы найти конкретные экземпляры временных рядов, которые нужно отобразить на диаграмме. При выборе экземпляров они не только добавляются в текущую диаграмму, но и также добавляются в данные. 
 
-[дерево иерархии ![и панель поиска](media/v2-update-explorer/tsi-preview-explorer-hierarchy-search.png)](media/v2-update-explorer/tsi-preview-explorer-hierarchy-search.png#lightbox)
+[![Дерево иерархии и панель поиска](media/v2-update-explorer/tsi-preview-explorer-hierarchy-search.png)](media/v2-update-explorer/tsi-preview-explorer-hierarchy-search.png#lightbox)
 
 Панель результатов поиска также позволяет просматривать результаты в представлении иерархии или в виде списка, что упрощает поиск экземпляров, которые нужно отобразить.
  
@@ -89,13 +89,13 @@ ms.locfileid: "75861767"
 
 В этом случае отображаются поля экземпляра и другие метаданные, связанные с выбранными экземплярами "аналитика временных рядов". Установив флажки справа, можно скрыть или отобразить определенные экземпляры из текущей диаграммы. 
 
-  [![области просмотра](media/v2-update-explorer/tsi-preview-ui-explorer-well.png)](media/v2-update-explorer/tsi-preview-ui-explorer-well.png#lightbox)
+  [![Область просмотра](media/v2-update-explorer/tsi-preview-ui-explorer-well.png)](media/v2-update-explorer/tsi-preview-ui-explorer-well.png#lightbox)
 
 Вы можете удалить определенные элементы данных из текущих данных, выбрав красный элемент управления **Удаление** (корзина) в левой части элемента. Также можно управлять отображением каждого элемента на диаграмме. Можно добавить тени min/max, точки данных, сдвинуть элемент во времени и визуализировать экземпляр с пошаговым способом. 
 
 Кроме того, элемент управления исследования позволяет легко создавать изменения времени и точечные диаграммы.  
 
-  [![параметры макета](media/v2-update-explorer/well-layout-options.png)](media/v2-update-explorer/well-layout-options.png#lightbox)
+  [![Параметры удобного макета](media/v2-update-explorer/well-layout-options.png)](media/v2-update-explorer/well-layout-options.png#lightbox)
 
 > [!NOTE]
 > Если появится следующее сообщение, в экземпляре не будет данных, пока не выбран временной интервал. Чтобы устранить эту проблему, увеличьте период времени или подтвердите, что экземпляр отправляет данные.
@@ -106,7 +106,7 @@ ms.locfileid: "75861767"
 
 Диаграмма позволяет отображать экземпляры временных рядов в виде строк. Чтобы увеличить диаграмму, можно свернуть панель среды, модель данных и панель управления интервалом времени, щелкнув соответствующие веб-элементы управления. 
 
-  [Обзор диаграммы предварительной версии ![](media/v2-update-explorer/tsi-preview-chart-overview.png)](media/v2-update-explorer/tsi-preview-chart-overview.png#lightbox)
+  [![Обзор диаграммы предварительного просмотра](media/v2-update-explorer/tsi-preview-chart-overview.png)](media/v2-update-explorer/tsi-preview-chart-overview.png#lightbox)
 
 1. **Тип диаграммы**: определяет, какие элементы данных доступны для визуализации.
 
@@ -116,27 +116,27 @@ ms.locfileid: "75861767"
 
 1. **Элемент управления осью y**: циклический перебор доступных параметров представления оси y:
 
-    * `Stacked`: каждая строка имеет отдельную ось Y.
-    * `Overlap`: используйте его для стека нескольких строк на одной оси Y, при этом данные по оси Y изменяются в зависимости от выбранной линии.
-    * `Shared`: все данные по оси Y отображаются вместе.
+    * `Stacked`: Каждая строка имеет отдельную ось Y.
+    * `Overlap`: Используйте его для выделения нескольких строк на одной оси Y, при этом данные по оси Y изменяются в зависимости от выбранной линии.
+    * `Shared`: Все данные по оси Y отображаются вместе.
 
 1. **Элемент маркера**: выбранный в данный момент элемент данных и связанные с ним сведения.
 
 Можно продолжить детализацию определенного среза данных, щелкнув точку данных на текущем графе, удерживая нажатой **кнопку** мыши, а затем перетащив выбранную область на конечную точку по своему усмотрению. **Щелкните правой кнопкой мыши** синюю выделенную область, а затем выберите **масштаб** , как показано ниже. Вы также можете просматривать и скачивать события телеметрии в выбранном интервале времени.
 
-  [масштаб предварительной версии диаграммы ![](media/v2-update-explorer/preview-chart-zoom.png)](media/v2-update-explorer/preview-chart-zoom.png#lightbox)
+  [![Просмотр масштаба диаграммы](media/v2-update-explorer/preview-chart-zoom.png)](media/v2-update-explorer/preview-chart-zoom.png#lightbox)
 
 После выполнения действия **масштабирования** выбранный набор данных будет отображен. Выберите элемент управления "формат", чтобы прокручивать три представления оси y для данных "аналитика временных рядов".
 
-  [![ная Предварительная версия диаграммы оси y](media/v2-update-explorer/tsi-preview-explorer-standard-chart.png)](media/v2-update-explorer/tsi-preview-explorer-standard-chart.png#lightbox)
+  [![Предварительная версия диаграммы по оси y](media/v2-update-explorer/tsi-preview-explorer-standard-chart.png)](media/v2-update-explorer/tsi-preview-explorer-standard-chart.png#lightbox)
 
 Ниже приведен пример **перекрывающейся диаграммы** :
 
-  [перекрывающийся параметр диаграммы ![](media/v2-update-explorer/tsi-preview-explorer-overlapping-chart.png)](media/v2-update-explorer/tsi-preview-explorer-overlapping-chart.png#lightbox)
+  [![Перекрывающиеся параметры диаграммы](media/v2-update-explorer/tsi-preview-explorer-overlapping-chart.png)](media/v2-update-explorer/tsi-preview-explorer-overlapping-chart.png#lightbox)
 
 Кнопка **"другие действия** " разворачивается для отображения **скачивания в виде CSV-файла**, **подключения к Power BI**, **отображения данных диаграммы в виде таблицы**и **просмотра параметров необработанных событий** .
 
-  [![«другие действия»](media/v2-update-explorer/more-actions-icon.png)](media/v2-update-explorer/more-actions-icon.png#lightbox)
+  [![Параметр "другие действия"](media/v2-update-explorer/more-actions-icon.png)](media/v2-update-explorer/more-actions-icon.png#lightbox)
 
 Дополнительные сведения о параметре " **Подключение к Power BI** " в [собственном Power BIном соединителе "аналитика временных рядов](concepts-power-bi.md)".
 
@@ -151,7 +151,7 @@ ms.locfileid: "75861767"
 
 Следующие веб-элементы управления доступны в обновлении Time Series Insights для выбора интервала рабочего времени. 
 
-  [качественный контроль ![](media/v2-update-explorer/exploration-well-control.png)](media/v2-update-explorer/exploration-well-control.png#lightbox)
+  [![Качественный контроль](media/v2-update-explorer/exploration-well-control.png)](media/v2-update-explorer/exploration-well-control.png#lightbox)
 
 1. **Ползунок внутреннего диапазона дат**: используйте два элемента управления конечной точки, перетаскивая их на нужное время. Этот внутренний диапазон дат ограничивается элементом управления "ползунок внешнего диапазона дат".
 
@@ -163,7 +163,7 @@ ms.locfileid: "75861767"
 
 1. **Ползунок диапазона времени**: используйте его для быстрого переключения между предустановленными значениями интервала времени, например за последние **30 минут**, за **последние 12 часов**или на **Пользовательский диапазон**. С изменением этого значения изменяются также доступные диапазоны интервалов, описанные в параграфе о ползунке размера интервала.
 
-   [![на панель выбора и из нее](media/v2-update-explorer/to-and-from-element.png)](media/v2-update-explorer/to-and-from-element.png#lightbox)
+   [![На панель выбора и из нее](media/v2-update-explorer/to-and-from-element.png)](media/v2-update-explorer/to-and-from-element.png#lightbox)
 
 ## <a name="7-app-bar"></a>7. панель приложения
 
@@ -171,15 +171,15 @@ ms.locfileid: "75861767"
 
 ### <a name="current-session-share-link-control"></a>Элемент управления ссылкой на общий доступ к текущему сеансу
 
-  [значок общего доступа к ![](media/v2-update-explorer/tsi-preview-explorer-share-icon.png)](media/v2-update-explorer/tsi-preview-explorer-share-icon.png#lightbox)
+  [![Значок "Предоставить общий доступ"](media/v2-update-explorer/tsi-preview-explorer-share-icon.png)](media/v2-update-explorer/tsi-preview-explorer-share-icon.png#lightbox)
 
 Щелкните значок новый **общий ресурс** , чтобы поделиться ссылкой на URL-адрес с вашей командой.
 
-  [![поделиться URL-адресом экземпляра](media/v2-update-explorer/tsi-preview-explorer-share-your-view.png)](media/v2-update-explorer/tsi-preview-explorer-share-your-view.png#lightbox)
+  [![Совместное использование URL-адреса экземпляра](media/v2-update-explorer/tsi-preview-explorer-share-your-view.png)](media/v2-update-explorer/tsi-preview-explorer-share-your-view.png#lightbox)
 
 ### <a name="tenant-section"></a>Раздел клиента
 
-  [Выбор клиента ![](media/v2-update-explorer/tsi-preview-explorer-tenant-selection.png)](media/v2-update-explorer/tsi-preview-explorer-tenant-selection.png#lightbox)
+  [![Выбор клиента](media/v2-update-explorer/tsi-preview-explorer-tenant-selection.png)](media/v2-update-explorer/tsi-preview-explorer-tenant-selection.png#lightbox)
 
 * Отображает текущие сведения об учетной записи для входа в службу "аналитика временных рядов".
 * Используйте его для переключения между доступными темами "аналитика временных рядов".
@@ -189,7 +189,7 @@ ms.locfileid: "75861767"
 
 Чтобы выбрать новую тему, выберите значок профиля, расположенный в правом верхнем углу. Затем выберите **изменить тему**.
 
-  [Выбор темы ![](media/v2-update-explorer/tsi-preview-theme-selection.png)](media/v2-update-explorer/tsi-preview-theme-selection.png#lightbox)
+  [![Выбор темы](media/v2-update-explorer/tsi-preview-theme-selection.png)](media/v2-update-explorer/tsi-preview-theme-selection.png#lightbox)
 
 > [!TIP]
 > Выбрать язык также можно, выбрав значок профиля.
@@ -199,7 +199,7 @@ ms.locfileid: "75861767"
 * **Светло-тема**: тема по умолчанию, показанная в этом документе.
 * **Темная тема**: отображает обозреватель, как показано ниже:
 
-  [![выбранной темной темы](media/v2-update-explorer/tsi-preview-dark-theme-selected.png)](media/v2-update-explorer/tsi-preview-dark-theme-selected.png#lightbox)
+  [![Выбранная темная тема](media/v2-update-explorer/tsi-preview-dark-theme-selected.png)](media/v2-update-explorer/tsi-preview-dark-theme-selected.png#lightbox)
 
 ## <a name="s1s2-environment-controls"></a>Элементы управления средой S1/S2
 
@@ -209,7 +209,7 @@ ms.locfileid: "75861767"
 
 Вместо иерархии отображается панель "условия аналитики временных рядов". Панель термины позволяет определять запросы в среде. Используйте его для фильтрации данных на основе предиката.
 
-  [![, где панель запросов](media/v2-update-explorer/s1-s2-preview-query.png)](media/v2-update-explorer/s1-s2-preview-query.png#lightbox)
+  [![Где находится панель запросов](media/v2-update-explorer/s1-s2-preview-query.png)](media/v2-update-explorer/s1-s2-preview-query.png#lightbox)
 
 Панель редактора условий службы "Аналитика временных рядов" (предварительная версия) принимает следующие параметры:
 
@@ -220,23 +220,23 @@ ms.locfileid: "75861767"
 | `<`, `>`, `<=`, `>=` | Double, DateTime, TimeSpan | |
 | `=`, `!=`, `<>` | String, Bool, Double, DateTime, TimeSpan, NULL |
 | `IN` | String, Bool, Double, DateTime, TimeSpan, NULL | Все операнды должны быть одного типа или являться константой NULL. |
-| `HAS` | String | В правой части разрешены только константные строковые литералы. Пустые строки и значения NULL не допускаются. |
+| `HAS` | Строка | В правой части разрешены только константные строковые литералы. Пустые строки и значения NULL не допускаются. |
 
 Дополнительные сведения о поддерживаемых операциях запросов и типах данных см. в статье [выражение временных рядов (целевой сервер)](https://docs.microsoft.com/rest/api/time-series-insights/preview#time-series-expression-and-syntax).
 
 ### <a name="examples-of-where-clauses"></a>Примеры предложений WHERE
 
-  [Примеры предложения WHERE ![](media/v2-update-explorer/tsi-preview-example-queries.png)](media/v2-update-explorer/tsi-preview-example-queries.png#lightbox)
+  [![Примеры предложения WHERE](media/v2-update-explorer/tsi-preview-example-queries.png)](media/v2-update-explorer/tsi-preview-example-queries.png#lightbox)
 
 **Мера**: раскрывающийся список, в котором отображаются все числовые столбцы (**Double**), которые можно использовать в качестве элементов для текущей диаграммы.
 
 **Разделить по**: в этом раскрывающемся списке отображаются все доступные столбцы категорий (строки) в модели, по которым можно группировать данные. Можно добавить до пяти условий для просмотра на одной оси x. Введите необходимые параметры, а затем нажмите кнопку **Добавить** , чтобы добавить новый термин.
 
-  [1 ![запрошенное и отфильтрованное представление](media/v2-update-explorer/s1-s2-preview-filtered-view.png)](media/v2-update-explorer/s1-s2-preview-filtered-view.png#lightbox)
+  [![Одно запрошенное и отфильтрованное представление](media/v2-update-explorer/s1-s2-preview-filtered-view.png)](media/v2-update-explorer/s1-s2-preview-filtered-view.png#lightbox)
 
 Вы можете отображать и скрывать элементы на панели диаграммы, щелкнув значок видимого, как показано на следующем рисунке. Чтобы полностью удалить запросы, выберите красный **крестик**.
 
-  [![отмена запрошенного и отфильтрованного параметра](media/v2-update-explorer/s1-s2-preview-filtered-view-cancel.png)](media/v2-update-explorer/s1-s2-preview-filtered-view-cancel.png#lightbox)
+  [![Отмена запрошенного и отфильтрованного параметра](media/v2-update-explorer/s1-s2-preview-filtered-view-cancel.png)](media/v2-update-explorer/s1-s2-preview-filtered-view-cancel.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

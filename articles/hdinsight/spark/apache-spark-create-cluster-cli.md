@@ -7,28 +7,29 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: quickstart
 ms.date: 02/03/2020
-ms.openlocfilehash: ac937519ca3fa9381fe4970f2e4336fe4a0a9227
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 02113988c76dd2565c7109c2ac18c3d1287189db
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76989337"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891128"
 ---
 # <a name="quickstart-create-apache-spark-cluster-in-azure-hdinsight-using-azure-cli"></a>Краткое руководство. Создание кластера Apache Spark в Azure HDInsight с помощью Azure CLI
 
-В этом кратком руководстве вы узнаете, как создать кластер Apache Spark в Azure HDInsight с помощью Azure CLI. Apache Spark обеспечивает быстрый анализ данных и кластерные вычисления, используя обработку в памяти. [Интерфейс командной строки Azure (Azure CLI)](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
+Из этого краткого руководства вы узнаете, как создать кластер Apache Spark в Azure HDInsight с помощью интерфейса командной строки (CLI) Azure. Azure HDInsight — это управляемая комплексная служба аналитики с открытым кодом, предназначенная для предприятий. Платформа Apache Spark для HDInsight обеспечивает быструю аналитику данных и кластерные вычисления, используя обработку в памяти. Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если вы используете несколько кластеров вместе, вам нужно создать виртуальную сеть. Если же вы используете кластер Spark, вы также можете использовать Hive Warehouse Connector. См. сведения о [планировании виртуальной сети для Azure HDInsight](../hdinsight-plan-virtual-network-deployment.md) и [интеграции Apache Spark и Apache Hive с Hive Warehouse Connector](../interactive-query/apache-hive-warehouse-connector.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Azure CLI. Если вы еще не установили Azure CLI, обратитесь к статье [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
+- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli), если вы не хотите использовать Azure Cloud Shell.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-an-apache-spark-cluster"></a>Создание кластера Apache Spark
 
-1. Войдите в свою подписку Azure. Если вы планируете использовать Azure Cloud Shell, щелкните **Попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
+1. Войдите в свою подписку Azure. Если вы планируете использовать Azure Cloud Shell, щелкните **Попробовать** в правом верхнем углу следующего блока кода. В противном случае введите следующую команду:
 
     ```azurecli-interactive
     az login
@@ -141,7 +142,7 @@ az group delete \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как создать кластер Apache Spark в Azure HDInsight с помощью Azure CLI.  Из следующего руководства вы узнаете, как с помощью кластера Spark в HDInsight выполнять интерактивные запросы, используя пример данных.
+Из этого краткого руководства вы узнали, как создать кластер Apache Spark в Azure HDInsight с помощью Azure CLI.  Из следующего руководства вы узнаете, как с помощью кластера HDInsight выполнять интерактивные запросы, используя для этого пример данных.
 
 > [!div class="nextstepaction"]
 > [Выполнение интерактивных запросов в Apache Spark](./apache-spark-load-data-run-query.md)

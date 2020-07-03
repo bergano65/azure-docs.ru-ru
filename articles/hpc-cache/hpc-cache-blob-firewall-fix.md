@@ -7,13 +7,13 @@ ms.topic: conceptual
 ms.date: 11/7/2019
 ms.author: rohogue
 ms.openlocfilehash: 6643662d498db8cbcffcb120a9ceabc46cfc04cb
-ms.sourcegitcommit: 4821b7b644d251593e211b150fcafa430c1accf0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74174412"
 ---
-# <a name="work-around-blob-storage-account-firewall-settings"></a>Обход параметров брандмауэра для учетной записи хранения BLOB-объектов
+# <a name="work-around-blob-storage-account-firewall-settings"></a>Обход параметров брандмауэра для учетной записи хранения больших двоичных объектов
 
 Определенный параметр, используемый в брандмауэрах учетной записи хранения, может привести к сбою создания целевого объекта хранилища BLOB-объектов. Группа по работе с кэшем HPC Azure работает над исправлением для этой проблемы, но его можно обойти, следуя инструкциям в этой статье.
 

@@ -4,16 +4,16 @@ description: Узнайте, как подключиться к API Azure Cosmos
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.topic: conceptual
-ms.date: 11/01/2019
-author: sivethe
-ms.author: sivethe
+ms.date: 03/20/2020
+author: timsander1
+ms.author: tisande
 ms.custom: seodec18
-ms.openlocfilehash: 533917e4cc39a1f4885a1604c11480fe09870c61
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 84b703cceeb130b177b8ab32281ef616b1ec632b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75441613"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80548822"
 ---
 # <a name="connect-to-an-azure-cosmos-account-using-studio-3t"></a>Подключение к учетной записи Azure Cosmos с помощью 3T Studio
 
@@ -21,9 +21,6 @@ ms.locfileid: "75441613"
 
 * Скачайте и установите [Studio 3T](https://studio3t.com/).
 * Сведения о [строке подключения](connect-mongodb-account.md) учетной записи Azure Cosmos.
-
-> [!NOTE]
-> В настоящее время совместная работа 3T v 1.2 и более ранние версии поддерживаются API Cosmos DB для MongoDB.
 
 ## <a name="create-the-connection-in-studio-3t"></a>Создание подключения в Studio 3T
 
@@ -113,7 +110,7 @@ ms.locfileid: "75441613"
 
     ![Снимок экрана результатов запроса Mongo Chef](./media/mongodb-mongochef/QueryDocument1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
 - Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.

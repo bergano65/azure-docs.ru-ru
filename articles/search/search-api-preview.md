@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 02/11/2020
 ms.openlocfilehash: db941152186127302680b5e659e43cd2d82a8908
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77162282"
 ---
 # <a name="preview-features-in-azure-cognitive-search"></a>Предварительные версии функций в Azure Когнитивный поиск
@@ -21,8 +21,8 @@ ms.locfileid: "77162282"
 
 Хотя некоторые функции предварительной версии могут быть доступны на портале и пакете SDK для .NET, REST API всегда имеет предварительные версии функций.
 
-+ Для операций поиска [ **`2019-05-06-Preview`** ](https://docs.microsoft.com/rest/api/searchservice/index-2019-05-06-preview) является текущей предварительной версией.
-+ Для операций управления [ **`2019-10-01-Preview`** ](https://docs.microsoft.com/rest/api/searchmanagement/index-2019-10-01-preview) является текущей предварительной версией.
++ Для операций поиска [**`2019-05-06-Preview`**](https://docs.microsoft.com/rest/api/searchservice/index-2019-05-06-preview) — это текущая Предварительная версия.
++ Для операций управления [**`2019-10-01-Preview`**](https://docs.microsoft.com/rest/api/searchmanagement/index-2019-10-01-preview) — это текущая Предварительная версия.
 
 > [!IMPORTANT]
 > Для предварительной версии функции соглашение об уровне обслуживания не предусмотрено. Мы не рекомендуем использовать ее в рабочей среде. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
@@ -44,7 +44,7 @@ ms.locfileid: "77162282"
 
 |||
 |-|-|
-| [Индексатор Cosmos DB](search-howto-index-cosmosdb.md) | Поддержка API MongoDB (Предварительная версия), API Gremlin (Предварительная версия) и типы API API Cassandra (Предварительная версия). | 
+| [Индексатор Cosmos DB](search-howto-index-cosmosdb.md) | Поддержка API MongoDB (Предварительная версия), API Gremlin (Предварительная версия) и типы API API Cassandra (Предварительная версия). | 
 |  [Индексатор Azure Data Lake Storage 2-го поколения (Предварительная версия)](search-howto-index-azure-data-lake-storage.md) | Индексирование содержимого и метаданных из Data Lake Storage 2-го поколения.| 
 | [параметр запроса moreLikeThis (Предварительная версия)](search-more-like-this.md) | Поиск документов, относящихся к определенному документу. Эта компонент был доступен в более ранних предварительных версиях. | 
 
@@ -53,7 +53,7 @@ ms.locfileid: "77162282"
 |||
 |-|-|
 | [Поддержка частных конечных точек](service-create-private-endpoint.md) | Вы можете создать виртуальную сеть с защищенным клиентом (например, виртуальную машину), а затем создать службу поиска, которая использует закрытую конечную точку. |
-| Ограничение доступа к IP-адресу | Используя [`api-version=2019-10-01-Preview`](https://docs.microsoft.com/rest/api/searchmanagement/index-2019-10-01-preview) REST API управления, можно создать службу, имеющую ограничения на IP-адреса, к которым разрешен доступ. |
+| Ограничение доступа к IP-адресу | С [`api-version=2019-10-01-Preview`](https://docs.microsoft.com/rest/api/searchmanagement/index-2019-10-01-preview) помощью REST API управления можно создать службу, имеющую ограничения на IP-адреса, к которым разрешен доступ. |
 
 ## <a name="earlier-preview-features"></a>Функции более ранней предварительной версии
 
@@ -69,7 +69,7 @@ ms.locfileid: "77162282"
 
 Служба Когнитивный поиск Azure доступна в нескольких версиях. Дополнительные сведения см. в разделе [Версии API](search-api-versions.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с справочной документацией по поиску REST API. Если вы столкнулись с проблемами, попросите помощь по [StackOverflow](https://stackoverflow.com/) или [обратитесь в службу поддержки](https://azure.microsoft.com/support/community/?product=search).
 

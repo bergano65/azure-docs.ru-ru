@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
 ms.openlocfilehash: ed0cd51fc686735f2d9c110ce46d5904107cafc2
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75430617"
 ---
 # <a name="how-to-use-role-based-access-control-in-azure-api-management"></a>Как использовать управление доступом на основе ролей в службе управления API Azure
@@ -32,19 +32,19 @@ ms.locfileid: "75430617"
 
 В таблице ниже содержатся краткие описания встроенных ролей. Эти роли можно назначать с помощью портала Azure или других инструментов, включая Azure [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell), [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli) и [REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest). Дополнительные сведения о том, как назначать встроенные роли, см. в разделе [Начало работы с управлением доступом на портале Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 
-| Роль          | Доступ на чтение<sup>[1]</sup> | Доступ на запись<sup>[2]</sup> | Создание, удаление и масштабирование служб, настройка VPN и личных доменов | Доступ к устаревшему порталу издателя | Description
+| Роль          | Доступ на чтение<sup>[1]</sup> | Доступ на запись<sup>[2]</sup> | Создание, удаление и масштабирование служб, настройка VPN и личных доменов | Доступ к устаревшему порталу издателя | Описание
 | ------------- | ---- | ---- | ---- | ---- | ---- 
 | Участник службы управления API | ✓ | ✓ | ✓ | ✓ | Суперпользователь. Имеет полный доступ CRUD к службам и сущностям управления API (например, к интерфейсам API и политикам). Имеет доступ к устаревшему порталу издателя. |
 | Средство чтения службы управления API | ✓ | | || Имеет доступ на чтение к службам и сущностям управления API. |
 | Оператор службы управления API | ✓ | | ✓ | | Может управлять службами управления API, но не может управлять сущностями.|
 | Редактор службы управления API<sup>*</sup> | ✓ | ✓ | |  | Может управлять сущностями управления API, но не может управлять службами.|
-| <sup>*</sup> диспетчера содержимого управления API | ✓ | | | ✓ | Может управлять порталом разработчика. Имеет доступ на чтение к службам и сущностям.|
+| Диспетчер содержимого API Management<sup>*</sup> | ✓ | | | ✓ | Может управлять порталом разработчика. Имеет доступ на чтение к службам и сущностям.|
 
 <sup>[1] Полный доступ к службам и сущностям управления API (например, к интерфейсам API и политикам).</sup>
 
 <sup>[2] Доступ на запись к службам и сущностям управления API, за исключением следующих операций: создание, удаление и масштабирование экземпляров; настройка VPN; настройка пользовательского домена.</sup>
 
-<sup>\* роль "редактор служб" будет доступна после переноса всего пользовательского интерфейса администратора с существующего портала издателя на портал Azure. Роль Диспетчер содержимого будет доступна после рефакторинга портала издателя, чтобы он содержал только функциональные возможности, связанные с управлением порталом разработчика.</sup>  
+<sup>\*Роль редактора служб будет доступна после переноса всего пользовательского интерфейса администратора с существующего портала издателя на портал Azure. Роль Диспетчер содержимого будет доступна после рефакторинга портала издателя, чтобы он содержал только функциональные возможности, связанные с управлением порталом разработчика.</sup>  
 
 ## <a name="custom-roles"></a>Пользовательские роли
 
@@ -70,7 +70,7 @@ New-AzRoleAssignment -ObjectId <object ID of the user account> -RoleDefinitionNa
 
 В статье [Операции поставщиков ресурсов Azure Resource Manager](../role-based-access-control/resource-provider-operations.md#microsoftapimanagement) содержится список разрешений, которые могут быть предоставлены на уровне управления API.
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 
 
 > [!VIDEO https://channel9.msdn.com/Blogs/AzureApiMgmt/Role-Based-Access-Control-in-API-Management/player]
@@ -83,4 +83,4 @@ New-AzRoleAssignment -ObjectId <object ID of the user account> -RoleDefinitionNa
   * [Начало работы с управлением доступом на портале Azure](../role-based-access-control/overview.md)
   * [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../role-based-access-control/role-assignments-portal.md)
   * [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md)
-  * [Операции поставщиков ресурсов Azure Resource Manager](../role-based-access-control/resource-provider-operations.md#microsoftapimanagement)
+  * [Операции поставщика ресурсов Azure Resource Manager](../role-based-access-control/resource-provider-operations.md#microsoftapimanagement)

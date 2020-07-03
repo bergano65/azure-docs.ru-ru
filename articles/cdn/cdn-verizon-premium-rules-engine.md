@@ -2,17 +2,17 @@
 title: Переопределение поведения HTTP с помощью обработчика правил Azure CDN-Verizon Premium
 description: Обработчик правил позволяет настроить обработку HTTP-запросов с помощью Azure CDN Verizon Premium, таких как блокировка доставки определенных типов содержимого, определение политики кэширования и изменение заголовков HTTP.
 services: cdn
-author: mdgattuso
+author: asudbring
 ms.service: azure-cdn
 ms.topic: article
 ms.date: 05/31/2019
-ms.author: magattus
-ms.openlocfilehash: aa0606eafb8fe4c517b0c18e0137058a120115ba
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.author: allensu
+ms.openlocfilehash: 2e5e4265f30631f8e68d8f9e7156ea578ae85e7a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74082957"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81253481"
 ---
 # <a name="override-http-behavior-using-the-azure-cdn-from-verizon-premium-rules-engine"></a>Переопределение поведения HTTP с помощью Azure CDN из обработчика правил Verizon Premium
 
@@ -40,9 +40,9 @@ ms.locfileid: "74082957"
 
     ![Обработчик правил для DSA](./media/cdn-rules-engine/cdn-dsa-rules-engine.png)
 
-## <a name="tutorial"></a>Руководство
+## <a name="tutorial"></a>Учебник
 
-1. На странице **профиля CDN** выберите **Управление**.
+1. На странице **профиль CDN** выберите **Управление**.
    
     ![Кнопка "Управление" для профиля CDN](./media/cdn-rules-engine/cdn-manage-btn.png)
    
@@ -73,7 +73,7 @@ ms.locfileid: "74082957"
    >
    >
 
-5. Чтобы добавить новую функцию, нажмите кнопку **+** рядом с пунктом **Функции**.  В раскрывающемся списке в левой части выберите **Принудительно извлечь внутренний максимальный возраст**.  В появившемся текстовом поле введите **300**. Не изменяйте остальные значения по умолчанию.
+5. Чтобы добавить новый компонент, нажмите **+** кнопку рядом с **компонентом компоненты**.  В раскрывающемся списке в левой части выберите **Принудительно извлечь внутренний максимальный возраст**.  В появившемся текстовом поле введите **300**. Не изменяйте остальные значения по умолчанию.
    
    ![Функция правила CDN](./media/cdn-rules-engine/cdn-new-feature.png)
    
@@ -96,8 +96,8 @@ ms.locfileid: "74082957"
 ## <a name="see-also"></a>См. также
 
 - [Общие сведения о сети доставки содержимого Azure](cdn-overview.md)
-- [Обработчик правил Azure CDN](cdn-verizon-premium-rules-engine-reference.md)
+- [Справочник по обработчику правил](cdn-verizon-premium-rules-engine-reference.md)
 - [Условия соответствия обработчика правил](cdn-verizon-premium-rules-engine-reference-match-conditions.md)
-- [Условные выражения обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
-- [Функции обработчика правил Azure CDN](cdn-verizon-premium-rules-engine-reference-features.md)
+- [Условные выражения обработчика правил](cdn-verizon-premium-rules-engine-reference-conditional-expressions.md)
+- [Функции обработчика правил](cdn-verizon-premium-rules-engine-reference-features.md)
 - [Пятничный видеоролик об Azure. Azure CDN's powerful new Premium Features](https://azure.microsoft.com/documentation/videos/azure-cdns-powerful-new-premium-features/) (Новые возможности Azure CDN уровня "Премиум")

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Kallidus | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Kallidus | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kallidus.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 07/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e3caa48e1461552f2999aa2fd91447a41d146379
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76120322"
 ---
-# <a name="tutorial-integrate-kallidus-with-azure-active-directory"></a>Руководство. Интеграция Kallidus с Azure Active Directory
+# <a name="tutorial-integrate-kallidus-with-azure-active-directory"></a>Руководство по Интеграция Kallidus с Azure Active Directory
 
 В этом руководстве описано, как интегрировать Kallidus с Azure Active Directory (Azure AD). При интеграции Kallidus с Azure AD вам доступны следующие возможности.
 

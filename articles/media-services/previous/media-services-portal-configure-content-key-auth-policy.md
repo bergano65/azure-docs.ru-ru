@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 8580bafd4d68ef6567b09fefcaa01c682ae2cafe
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74968805"
 ---
 # <a name="configure-a-content-key-authorization-policy"></a>Настройка политики авторизации ключей содержимого
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
  Службы мультимедиа Azure позволяют защищать потоковое содержимое MPEG-DASH, Smooth Streaming и HTTP Live Streaming (HLS) с помощью стандарта AES (использующего 128-разрядные ключи шифрования) или технологии [ управления цифровыми правами (DRM) PlayReady](https://www.microsoft.com/playready/overview/). Кроме того, Службы мультимедиа позволяют передавать потоки MPEG DASH с шифрованием Widevine DRM. PlayReady и Widevine шифруются согласно спецификации общего шифрования (ISO/IEC 23001-7 CENC).
 
 Службы мультимедиа также включают в себя службы доставки ключей и лицензий, с помощью которых клиенты могут получать ключи AES либо лицензии PlayReady или Widevine для воспроизведения зашифрованного содержимого.
@@ -33,7 +33,7 @@ ms.locfileid: "74968805"
 
 Когда проигрыватель запрашивает поток, для которого настроено динамическое шифрование, Службы мультимедиа, используя настроенный ключ, выполняют динамическое шифрование содержимого с помощью AES или DRM. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценивает политики авторизации, заданные для ключа.
 
-Если вы планируете использовать несколько ключей содержимого или хотите задать URL-адрес службы доставки ключей или лицензий, отличный от адреса службы доставки ключей Служб мультимедиа, используйте пакет SDK для .NET или интерфейсы REST API для Служб мультимедиа. Дополнительные сведения см. здесь:
+Если вы планируете использовать несколько ключей содержимого или хотите задать URL-адрес службы доставки ключей или лицензий, отличный от адреса службы доставки ключей Служб мультимедиа, используйте пакет SDK для .NET или интерфейсы REST API для Служб мультимедиа. Дополнительные сведения можно найти в разделе
 
 * [Настройка политики авторизации ключей содержимого с помощью пакета SDK Служб мультимедиа для .NET](media-services-dotnet-configure-content-key-auth-policy.md)
 * [Настройка политики авторизации ключей содержимого с помощью REST API для Служб мультимедиа](media-services-rest-configure-content-key-auth-policy.md)
@@ -80,14 +80,14 @@ ms.locfileid: "74968805"
 
 Вы можете нажать кнопку **импорта XML-файла политики** и выбрать другой XML-файл, который соответствует XML-схеме, определенной в статье [Обзор шаблонов лицензий PlayReady Служб мультимедиа](media-services-playready-license-template-overview.md).
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png

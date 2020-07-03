@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b135b14fb18904901ad78a1f5d9dc66c8a2bc67
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.openlocfilehash: fdc011a39c5526e6a2577ab1b21567bbe64ffcc6
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74538807"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82788881"
 ---
 # <a name="how-to-manage-stale-devices-in-azure-ad"></a>Руководство. управление устаревшими устройствами в Azure AD
 
@@ -57,7 +57,7 @@ ms.locfileid: "74538807"
 
     ![Метка активности](./media/manage-stale-devices/01.png)
 
-- Командлет [Get-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/get-msoldevice?view=azureadps-1.0):
+- Командлет [Get-MsolDevice](/powershell/module/msonline/get-msoldevice?view=azureadps-1.0):
 
     ![Метка активности](./media/manage-stale-devices/02.png)
 
@@ -129,11 +129,11 @@ ms.locfileid: "74538807"
 
 Типичная процедура состоит из следующих шагов:
 
-1. подключение к Azure Active Directory с помощью командлета [Connect-MsolService](https://docs.microsoft.com/powershell/module/msonline/connect-msolservice?view=azureadps-1.0);
+1. подключение к Azure Active Directory с помощью командлета [Connect-MsolService](/powershell/module/msonline/connect-msolservice?view=azureadps-1.0);
 1. Получение списка устройств
-1. отключение устройства с помощью командлета [Disable-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/disable-msoldevice?view=azureadps-1.0); 
+1. отключение устройства с помощью командлета [Disable-MsolDevice](/powershell/module/msonline/disable-msoldevice?view=azureadps-1.0); 
 1. Ожидание периода времени перед удалением, в зависимости от количества указанных вами дней.
-1. удаление устройства с помощью командлета [Remove-MsolDevice](https://docs.microsoft.com/powershell/module/msonline/remove-msoldevice?view=azureadps-1.0).
+1. удаление устройства с помощью командлета [Remove-MsolDevice](/powershell/module/msonline/remove-msoldevice?view=azureadps-1.0).
 
 ### <a name="get-the-list-of-devices"></a>Получение списка устройств
 
@@ -151,7 +151,7 @@ $dt = [datetime]’2017/01/01’
 Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-olderthan-Jan-1-2017-summary.csv
 ```
 
-## <a name="what-you-should-know"></a>Необходимая информация
+## <a name="what-you-should-know"></a>Учитываемые аспекты
 
 ### <a name="why-is-the-timestamp-not-updated-more-frequently"></a>Почему метка времени не обновляется чаще?
 
@@ -176,7 +176,7 @@ Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, Devi
 
 Будет запрещена любая аутентификация, которая включает проверку этого устройства в AAD. Ниже приведены распространенные примеры.
 
-- **Гибридные устройства, присоединенные к AAD** — пользователь может использовать устройство для входа в локальный домен. Но он не получит доступ к ресурсам AAD, например к Office 365.
+- **Гибридное устройство, присоединенное к Azure AD** . пользователи могут иметь возможность использовать устройство для входа в свой локальный домен. Но он не получит доступ к ресурсам AAD, например к Office 365.
 - **Устройства, присоединенные к AAD** — пользователь не может использовать устройство для входа. 
 - **Мобильные устройства** — пользователь не получит доступа к ресурсам AAD, например к Office 365. 
 

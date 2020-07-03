@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
 ms.openlocfilehash: c3dbd01faf61c164c88f09b0da03c07be4abd187
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75429124"
 ---
 # <a name="message-enrichments-for-device-to-cloud-iot-hub-messages"></a>Дополнения сообщений для сообщений центра Интернета вещей, отправляемых с устройства в облако
@@ -29,7 +29,7 @@ ms.locfileid: "75429124"
 
 * Одна или несколько [конечных точек](iot-hub-devguide-endpoints.md) , к которым следует применить обогащение.
 
-**Ключ** является строкой. Ключ может содержать только буквенно-цифровые символы или следующие специальные символы: дефис (`-`), символ подчеркивания (`_`) и точка (`.`).
+**Ключ** является строкой. Ключ может содержать только буквенно-цифровые символы или следующие специальные символы:`-`дефис (), символ`_`подчеркивания () и`.`точка ().
 
 **Значением** может быть любой из следующих примеров:
 
@@ -63,8 +63,8 @@ ms.locfileid: "75429124"
 | **Метод** | **Command** |
 | ----- | -----| 
 | Портал | [Портал Azure](https://portal.azure.com) | См. [руководство по обогащению сообщений](tutorial-message-enrichments.md) | 
-| Интерфейс командной строки Azure   | [AZ IOT сообщение в центре Интернета вещей](https://docs.microsoft.com/cli/azure/iot/hub/message-enrichment?view=azure-cli-latest) |
-| Azure PowerShell | [Add-Азиосубмессажеенричмент](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubmessageenrichment?view=azps-2.8.0) |
+| Azure CLI   | [AZ IOT сообщение в центре Интернета вещей](https://docs.microsoft.com/cli/azure/iot/hub/message-enrichment?view=azure-cli-latest) |
+| Azure PowerShell | [Add-AzIotHubMessageEnrichment;](https://docs.microsoft.com/powershell/module/az.iothub/add-aziothubmessageenrichment?view=azps-2.8.0) |
 
 Добавление дополнений сообщений не приводит к задержке маршрутизации сообщений.
 
@@ -88,7 +88,7 @@ ms.locfileid: "75429124"
 
 * Обогащение сообщений не применяется к событиям изменения цифровых двойника (в составе [общедоступной предварительной версии IoT Plug and Play](../iot-pnp/overview-iot-plug-and-play.md)).
 
-## <a name="pricing"></a>Стоимость
+## <a name="pricing"></a>Цены
 
 Дополнения сообщений доступны без дополнительной платы. В настоящее время при отправке сообщения в центр Интернета вещей выставляются счета. Вы платите только один раз для этого сообщения, даже если оно переходит на несколько конечных точек.
 

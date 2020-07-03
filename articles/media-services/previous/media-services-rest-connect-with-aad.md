@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: willzhan; johndeu
-ms.openlocfilehash: fc6766943747c066581fe3820481cfe4a35d5296
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: a693eb374365670da3fe8c4b2bb8ce664a024217
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76774974"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80295439"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-media-services-api-with-rest"></a>Использование аутентификации Azure AD для доступа к API Служб мультимедиа с помощью REST
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 Процесс аутентификации Azure AD в службах мультимедиа Azure можно выполнить двумя способами.
 
@@ -36,7 +36,7 @@ ms.locfileid: "76774974"
     > [!NOTE]
     > **Субъект-служба** — это лучшая методика для большинства приложений, подключающихся к службам мультимедиа Azure. 
 
-В этом учебнике описаны следующие действия.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Получение сведений об аутентификации с портала Azure
@@ -47,14 +47,14 @@ ms.locfileid: "76774974"
 > [!IMPORTANT]
 > Службы мультимедиа в настоящее время поддерживают модель аутентификации с помощью службы контроля доступа Azure. Тем не менее авторизация посредством службы контроля доступа будет объявлена устаревшей 1 июня 2018 года. Мы рекомендуем как можно быстрее перейти на использование модели аутентификации Azure AD.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
+- [Создайте учетную запись служб мультимедиа Azure с помощью портал Azure](media-services-portal-create-account.md).
 - Изучите статьею [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в этой статье. 
 
-    В этом руководстве мы используем **Postman**, но подойдет любой инструмент REST. Другие варианты включают **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
+    В этом руководстве мы используем **Postman**, но подойдет любой инструмент REST. Другие варианты: **Visual Studio Code** с подключаемым модулем RESTful или **Telerik Fiddler**. 
 
 ## <a name="get-the-authentication-information-from-the-azure-portal"></a>Получение сведений об аутентификации с портала Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "76774974"
 
 Чтобы получить доступ к API служб мультимедиа, необходимо собрать следующие данные.
 
-|Параметр|Пример|Description|
+|Параметр|Пример|Описание|
 |---|-------|-----|
 |Домен клиента Azure Active Directory|microsoft.onmicrosoft.com|Azure AD в качестве конечной точки службы токенов безопасности (STS) создается в следующем формате: <https://login.microsoftonline.com/{your-ad-tenant-name.onmicrosoft.com}/oauth2/token>. Azure AD выдает маркер JWT для доступа к ресурсам (маркер доступа).|
 |Конечная точка REST API|<https://amshelloworld.restv2.westus.media.azure.net/api/>|Это конечная точка, к которой отправляются все вызовы REST API служб мультимедиа в вашем приложении.|
@@ -75,7 +75,7 @@ ms.locfileid: "76774974"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Перейдите к экземпляру службы мультимедиа Azure.
-3. Выберите **Доступ через API**.
+3. Выберите **доступ через API**.
 4. Щелкните **Подключение к API служб мультимедиа Azure с помощью субъекта-службы**.
 
     ![Доступ через API](./media/connect-with-rest/connect-with-rest01.png)
@@ -124,11 +124,11 @@ ms.locfileid: "76774974"
 
 В этом разделе показано, как использовать **Postman** для выполнения REST API, который возвращает токен носителя JWT (токен доступа). Чтобы вызвать любой REST API служб мультимедиа, необходимо добавить заголовок Authorization к вызовам, а к каждому вызову — значение Bearer *токен_доступа* (как показано в следующем разделе этого руководства). 
 
-1. Откройте **Postman**.
+1. Откройте **POST**.
 2. Выберите **POST**.
 3. Введите URL-адрес, содержащий имя клиента, в следующем формате: имя клиента должно заканчиваться на **.onmicrosoft.com**, а URL-адрес — на **oauth2/token**. 
 
-    https://login.microsoftonline.com/{your-aad-tenant-name.onmicrosoft.com}/oauth2/token
+    `https://login.microsoftonline.com/{your-aad-tenant-name.onmicrosoft.com}/oauth2/token`
 
 4. Выберите вкладку **Headers** (Заголовки).
 5. Введите данные **заголовков**, используя сетку данных "ключ — значение". 
@@ -162,7 +162,7 @@ ms.locfileid: "76774974"
 
 В этом разделе показано, как получить доступ к API **ресурсов** с помощью **Postman**.
 
-1. Откройте **Postman**.
+1. Откройте **POST**.
 2. Выберите **GET**.
 3. Вставьте конечную точку REST API (например, https://amshelloworld.restv2.westus.media.azure.net/api/Assets)
 4. Перейдите на вкладку **Authorization** (Авторизация). 
@@ -190,7 +190,7 @@ ms.locfileid: "76774974"
 
 Возвращенный ответ содержит ресурсы, которые находятся в вашей учетной записи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Пример кода доступен в разделе [Azure AD Authentication for Azure Media Services Access: Both via REST API](https://github.com/willzhan/WAMSRESTSoln) (Аутентификация Azure AD для доступа к службам мультимедиа Azure с помощью REST API)
 * [Передача файлов в учетную запись служб мультимедиа с помощью .NET](media-services-dotnet-upload-files.md)

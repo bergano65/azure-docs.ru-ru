@@ -2,24 +2,23 @@
 title: Как активировать сложные действия с помощью оповещений Azure Monitor
 description: Сведения о том, как создать действие приложения логики для обработки оповещений Azure Monitor.
 author: dkamstra
-services: azure-monitor
-ms.service: azure-monitor
+ms.author: dukek
 ms.topic: conceptual
 ms.date: 07/18/2018
-ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: ad196f52935af4ab4aa7af1b80183161065d4b4b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 655a3acc44a1418778b37fbef85e5df75d042317
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75365028"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78206242"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
 Эта статья описывает, как настроить и активировать приложение логики, чтобы создать беседу в Microsoft Teams при срабатывании оповещения.
 
 ## <a name="overview"></a>Обзор
+
 Когда активируется оповещение Azure Monitor, оно вызывает [группу действий](../../azure-monitor/platform/action-groups.md). Группы действий позволяют активировать одно или несколько действий для уведомления других лиц об оповещении и устранения его причины.
 
 Общий процесс приведен ниже:
@@ -48,7 +47,7 @@ ms.locfileid: "75365028"
 
 5.  Выберите триггер **При получении HTTP-запроса**.
 
-    ![Триггеры приложения логики](media/action-groups-logic-app/logic-app-triggers.png "Триггеры приложений логики")
+    ![Триггеры приложений логики](media/action-groups-logic-app/logic-app-triggers.png "Триггеры приложений логики")
 
 6.  Выберите **Изменить**, чтобы изменить триггер HTTP-запроса.
 
@@ -69,10 +68,10 @@ ms.locfileid: "75365028"
                 "activityLog": {
                     "authorization": {
                     "action": "microsoft.insights/activityLogAlerts/write",
-                    "scope": "/subscriptions/�"
+                    "scope": "/subscriptions/…"
                     },
                     "channels": "Operation",
-                    "claims": "�",
+                    "claims": "…",
                     "caller": "logicappdemo@contoso.com",
                     "correlationId": "91ad2bac-1afa-4932-a2ce-2f8efd6765a3",
                     "description": "",
@@ -82,12 +81,12 @@ ms.locfileid: "75365028"
                     "level": "Informational",
                     "operationName": "microsoft.insights/activityLogAlerts/write",
                     "operationId": "61f59fc8-1442-4c74-9f5f-937392a9723c",
-                    "resourceId": "/subscriptions/�",
+                    "resourceId": "/subscriptions/…",
                     "resourceGroupName": "LOGICAPP-DEMO",
                     "resourceProviderName": "microsoft.insights",
                     "status": "Succeeded",
                     "subStatus": "",
-                    "subscriptionId": "�",
+                    "subscriptionId": "…",
                     "submissionTimestamp": "2018-04-03T22:33:36.1068742+00:00",
                     "resourceType": "microsoft.insights/activityLogAlerts"
                 }
@@ -101,11 +100,11 @@ ms.locfileid: "75365028"
 
     ![Задание заголовка Content-Type](media/action-groups-logic-app/content-type-header.png "Задание заголовка Content-Type")
 
-10. Выберите **+** **новый шаг** , а затем щелкните **Добавить действие**.
+10. Выберите **+** **новый шаг** и нажмите кнопку **Добавить действие**.
 
     ![Добавление действия](media/action-groups-logic-app/add-action.png "Добавление действия")
 
-11. Найдите и выберите соединитель Microsoft Teams. Выберите действие **Отправить сообщение Microsoft Teams** .
+11. Найдите и выберите соединитель Microsoft Teams. Выберите действие **Microsoft Teams — отправить сообщение** .
 
     ![Действия Microsoft Teams](media/action-groups-logic-app/microsoft-teams-actions.png "Действия Microsoft Teams")
 
@@ -129,7 +128,7 @@ ms.locfileid: "75365028"
 
 14. В верхней части окна **Конструктор Logic Apps** выберите **Сохранить**, чтобы сохранить приложение логики.
 
-15. Откройте существующую группу действий и добавьте в нее действие, которое ссылается на приложение логики. Если у вас нет группы действий, ознакомьтесь со статьей [Создание групп действий и управление ими в портал Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups) для ее создания. Не забывайте сохранять изменения.
+15. Откройте существующую группу действий и добавьте в нее действие, которое ссылается на приложение логики. Если у вас нет группы действий, см. раздел [Создание групп действий и управление ими в портал Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups) для ее создания. Обязательно сохраните изменения.
 
     ![Обновление группы действий](media/action-groups-logic-app/update-action-group.png "Обновление группы действий")
 
@@ -151,7 +150,7 @@ ms.locfileid: "75365028"
                 "activityLog": {
                     "channels": "Admin",
                     "correlationId": "e416ed3c-8874-4ec8-bc6b-54e3c92a24d4",
-                    "description": "�",
+                    "description": "…",
                     "eventSource": "ServiceHealth",
                     "eventTimestamp": "2018-04-03T22:44:43.7467716+00:00",
                     "eventDataId": "9ce152f5-d435-ee31-2dce-104228486a6d",
@@ -159,23 +158,23 @@ ms.locfileid: "75365028"
                     "operationName": "Microsoft.ServiceHealth/incident/action",
                     "operationId": "e416ed3c-8874-4ec8-bc6b-54e3c92a24d4",
                     "properties": {
-                        "title": "�",
-                        "service": "�",
+                        "title": "...",
+                        "service": "...",
                         "region": "Global",
-                        "communication": "�",
+                        "communication": "...",
                         "incidentType": "Incident",
-                        "trackingId": "�",
+                        "trackingId": "...",
                         "impactStartTime": "2018-03-22T21:40:00.0000000Z",
                         "impactMitigationTime": "2018-03-22T21:41:00.0000000Z",
                         "impactedServices": "[{"ImpactedRegions"}]",
-                        "defaultLanguageTitle": "�",
-                        "defaultLanguageContent": "�",
+                        "defaultLanguageTitle": "...",
+                        "defaultLanguageContent": "...",
                         "stage": "Active",
                         "communicationId": "11000001466525",
                         "version": "0.1.1"
                     },
                     "status": "Active",
-                    "subscriptionId": "�",
+                    "subscriptionId": "...",
                     "submissionTimestamp": "2018-04-03T22:44:50.8013523+00:00"
                 }
             },
@@ -238,7 +237,7 @@ ms.locfileid: "75365028"
         "status": "Activated",
         "context": {
         "timestamp": "2018-04-09T19:00:07.7461615Z",
-        "id": "�",
+        "id": "...",
         "name": "TEST-VM CPU Utilization",
         "description": "",
         "conditionType": "SingleResourceMultipleMetricCriteria",
@@ -260,12 +259,12 @@ ms.locfileid: "75365028"
             }
             ]
         },
-        "subscriptionId": "�",
+        "subscriptionId": "...",
         "resourceGroupName": "TEST",
         "resourceName": "test-vm",
         "resourceType": "Microsoft.Compute/virtualMachines",
-        "resourceId": "�",
-        "portalLink": "�"
+        "resourceId": "...",
+        "portalLink": "..."
         },
         "properties": {}
     }
@@ -285,7 +284,7 @@ ms.locfileid: "75365028"
 
       !["Действие после истинного условия оповещения метрики"](media/action-groups-logic-app/metric-alert-true-condition-post-action.png "Действие записи состояния истинного оповещения метрики")
 
-  1. В условии **If false** Определите действие Microsoft Teams, чтобы сообщить о том, что оповещение метрики не соответствует ожиданиям приложения логики. Включите полезные данные JSON. Обратите внимание на то, как указываются ссылки на динамическое содержимое `triggerBody` в выражении `json()`.
+  1. В условии **If false** Определите действие Microsoft Teams, чтобы сообщить, что оповещение метрики не соответствует ожиданиям приложения логики. Включите полезные данные JSON. Обратите внимание на то, как указываются ссылки на динамическое содержимое `triggerBody` в выражении `json()`.
 
       !["Действие записи условия оповещения метрики"](media/action-groups-logic-app/metric-alert-false-condition-post-action.png "Действие записи состояния "ложное оповещение метрики"")
 
@@ -294,8 +293,8 @@ ms.locfileid: "75365028"
 ## <a name="calling-other-applications-besides-microsoft-teams"></a>Вызов других приложений помимо Microsoft Teams
 Служба Logic Apps имеет ряд различных соединителей, которые позволяют активировать действия в самых разных приложениях и базах данных. К таким приложениям, например, относятся Slack, SQL Server, Oracle, Salesforce. Дополнительные сведения о соединителях Azure Logic Apps см. в [этой статье](../../connectors/apis-list.md).  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Изучите [обзор оповещений журнала действий Azure](../../azure-monitor/platform/alerts-overview.md) и узнайте, как получать оповещения.  
 * Узнайте, как [настроить оповещения при поступлении уведомлений о Работоспособности служб Azure](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).
-* Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
+* Дополнительные сведения о [группах действий](../../azure-monitor/platform/action-groups.md).
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: ec12927b40096b7ff04fae6b7cbc69a7bc11e8f6
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75549301"
 ---
 # <a name="transformations"></a>Преобразования
@@ -34,7 +34,7 @@ ms.locfileid: "75549301"
 1. Выберите объект, который требуется обновить в схеме.
 
    ![Объект в схеме](media/how-to-transformation/transform1.png)</br>
-1. Выберите код для `ExtensionAttribute3` в объекте User.
+1. Нахождение кода для `ExtensionAttribute3` объекта User.
 
     ```
                             {
@@ -114,4 +114,4 @@ ms.locfileid: "75549301"
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
+- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)

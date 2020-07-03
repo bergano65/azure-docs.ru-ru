@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
 ms.openlocfilehash: 7bcfdeec832b14eb53c0dab6cb2f53970d85c804
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76310685"
 ---
 # <a name="set-your-azure-portal-preferences"></a>Задание настроек для портала Azure
@@ -55,7 +55,7 @@ ms.locfileid: "76310685"
 > Если вы являетесь администратором и хотите применить параметр неактивного времени ожидания для всех пользователей портал Azure, см. статью [Задание времени ожидания бездействия на уровне каталога для пользователей портал Azure](admin-timeout.md)
 >
 
-### <a name="choose-your-default-view"></a>Выберите представление по умолчанию 
+### <a name="choose-your-default-view"></a>Выбор представления по умолчанию 
 
 Вы можете изменить страницу, которая открывается по умолчанию при входе в портал Azure.
 
@@ -119,7 +119,7 @@ ms.locfileid: "76310685"
 >Эти языковые и региональные параметры влияют только на портал Azure. Ссылки на документацию, которые открываются в новой вкладке или окне, будут использовать языковые параметры браузера для определения языка, который будет отображаться.
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание и совместное использование настраиваемых панелей мониторинга](azure-portal-dashboards.md)
-* [портал Azure серии видеороликов](azure-portal-video-series.md)
+* [Серия видеоинструкций по работе с порталом Azure](azure-portal-video-series.md)

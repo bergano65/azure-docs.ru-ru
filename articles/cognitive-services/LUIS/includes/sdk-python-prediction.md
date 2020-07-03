@@ -5,17 +5,17 @@ services: cognitive-services
 author: diberry
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: luis
+ms.subservice: language-understanding
+ms.date: 02/14/2020
 ms.topic: include
 ms.custom: include file
-ms.date: 01/23/2020
 ms.author: diberry
-ms.openlocfilehash: 31280b1efa3db22e8008f401a25ca627dda4153f
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: eabec50f57785bde6760db053eb3b12f6f5b6452
+ms.sourcegitcommit: ffc6e4f37233a82fcb14deca0c47f67a7d79ce5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76772404"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81732094"
 ---
 С помощью клиентской библиотеки прогнозирования для Python в службе "Распознавание речи" (LUIS) можно выполнить следующие задачи.
 
@@ -28,6 +28,7 @@ ms.locfileid: "76772404"
 
 * Учетную запись на портале LUIS [можно создать бесплатно](https://www.luis.ai).
 * [Python 3.x](https://www.python.org/)
+* Идентификатор приложения LUIS. Используйте общедоступный идентификатор приложения для Интернета вещей `df67dcdb-c37d-46af-88e1-8b97951ca1c2`. Пользовательский запрос, используемый в коде из этого краткого руководства, относится только к этому приложению.
 
 ## <a name="setting-up"></a>Настройка
 

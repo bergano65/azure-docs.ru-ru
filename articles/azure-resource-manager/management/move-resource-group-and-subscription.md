@@ -2,13 +2,13 @@
 title: Перемещение ресурсов в новую подписку или группу ресурсов
 description: Перемещайте ресурсы в новую группу ресурсов или новую подписку с помощью Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 11/08/2019
-ms.openlocfilehash: c91081ee25a3b98fa25b8b9b9047da186b22181b
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.date: 03/02/2020
+ms.openlocfilehash: ffb5f8be81d3628084d127db404ab994d4d5b938
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75891357"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80631504"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -54,7 +54,7 @@ ms.locfileid: "75891357"
    Если идентификаторы клиентов исходных и целевых подписок не совпадают, используйте следующие методы для выверки идентификаторов клиентов:
 
    * [Передача прав владения подпиской Azure другой учетной записи](../../billing/billing-subscription-transfer.md)
-   * [Как связать или добавить подписку Azure в Azure Active Directory](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md)
+   * [Как связать или добавить подписку Azure к Azure Active Directory](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md)
 
 1. Подписка назначения должна быть зарегистрирована для перемещаемого поставщика ресурсов. В противном случае отображается сообщение о том, что **подписка не зарегистрирована для типа ресурса**. Эта ошибка может возникнуть при перемещении ресурса в новую подписку, которая никогда не использовалась с этим типом ресурса.
 
@@ -86,8 +86,8 @@ ms.locfileid: "75891357"
 
 1. Учетная запись, используемая для перемещения ресурсов, должна предоставлять по крайней мере следующие разрешения:
 
-   * **Microsoft.Resources/subscriptions/resourceGroups/moveResources/action** для исходной группы ресурсов;
-   * **Microsoft.Resources/subscriptions/resourceGroups/write** для целевой группы ресурсов.
+   * **Microsoft. Resources/Subscriptions/resourceGroups/мовересаурцес/Action** в исходной группе ресурсов.
+   * **Microsoft. Resources/Subscriptions/resourceGroups/Write** в Целевой группе ресурсов.
 
 1. Прежде чем перемещать ресурсы, проверьте квоты подписки, в которую вы перемещаете ресурсы. Если при перемещении ресурсов квота подписки будет превышена, возможно, вам придется запросить увеличение квоты. Полный список ограничений и способы запросить увеличение квоты см. в статье [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md).
 
@@ -97,7 +97,7 @@ ms.locfileid: "75891357"
 
    Дополнительные сведения см. в разделе [сценарий перемещения по подпискам](#scenario-for-move-across-subscriptions).
 
-## <a name="scenario-for-move-across-subscriptions"></a>Сценарий для перемещения между подписками
+## <a name="scenario-for-move-across-subscriptions"></a>Scenario for move across subscriptions (Сценарий перемещения между подписками)
 
 Перемещение ресурсов из одной подписки в другую состоит из трех этапов:
 
@@ -107,7 +107,7 @@ ms.locfileid: "75891357"
 
 * Шаг 1. Если зависимые ресурсы распределяются по разным группам ресурсов, сначала переместите их в одну группу ресурсов.
 * Шаг 2. Перемещение ресурса и зависимых ресурсов вместе из исходной подписки в целевую подписку.
-* Шаг 3. при необходимости Перераспределите зависимые ресурсы в разные группы ресурсов в целевой подписке. 
+* Шаг 3. при необходимости Перераспределите зависимые ресурсы в разные группы ресурсов в целевой подписке.
 
 ## <a name="validate-move"></a>Проверка перемещения
 
@@ -260,8 +260,9 @@ POST https://management.azure.com/subscriptions/{source-subscription-id}/resourc
 Например, перемещение виртуальной машины может потребовать перемещения семи типов ресурсов с тремя разными поставщиками ресурсов. Поставщики и типы ресурсов:
 
 * Microsoft.Compute;
-   * virtualMachines
-   * disks
+
+  * virtualMachines
+  * disks
 * Microsoft.Network.
   * networkInterfaces
   * publicIPAddresses
@@ -276,6 +277,6 @@ POST https://management.azure.com/subscriptions/{source-subscription-id}/resourc
 
 Сейчас не все ресурсы в службе поддержки Azure перемещаются. Список ресурсов, поддерживающих перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](move-support-resources.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](move-support-resources.md).

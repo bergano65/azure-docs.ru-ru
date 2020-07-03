@@ -4,14 +4,14 @@ ms.service: cost-management-billing
 ms.topic: include
 ms.date: 04/29/2019
 ms.author: magattus
-ms.openlocfilehash: f5cef027dfa38bfb68f24c990047719e540ff0a1
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: 7dd97fa49931168b9a42b5c9ac7887b84298a5f0
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224454"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80335047"
 ---
-| Resource (Ресурс) | Ограничение по умолчанию |
+| Ресурс | Ограничение |
 | --- | --- |
 | Профили сети доставки содержимого Azure |25 |
 | Конечные точки сети доставки содержимого на профиль |25 |

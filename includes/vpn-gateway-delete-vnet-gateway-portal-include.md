@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -9,24 +9,24 @@ ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: d36d2be59010c47348a8e196b28d87e5b967868e
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "67185158"
 ---
-### <a name="step-1-navigate-to-the-virtual-network-gateway"></a>Шаг 1. Перейдите к шлюзу виртуальной сети
+### <a name="step-1-navigate-to-the-virtual-network-gateway"></a>Шаг 1. Переход к шлюзу виртуальной сети
 
 1. На [портале Azure](https://portal.azure.com) выберите **Все ресурсы**. 
 2. Чтобы открыть страницу шлюза виртуальной сети, перейдите к шлюзу виртуальной сети, который требуется удалить, и щелкните его.
 
-### <a name="step-2-delete-connections"></a>Шаг 2. Удаление подключений
+### <a name="step-2-delete-connections"></a>Шаг 2. Удаление подключений
 
 1. На странице шлюза виртуальной сети щелкните **Подключения**, чтобы просмотреть все подключения к шлюзу.
 2. В строке с именем подключения щелкните **…** и в раскрывающемся списке выберите **Удалить**.
 3. Нажмите кнопку **Да**, чтобы подтвердить удаление подключения. Если имеется несколько подключений, удалите их все.
 
-### <a name="step-3-delete-the-virtual-network-gateway"></a>Шаг 3. Удаление шлюза виртуальной сети
+### <a name="step-3-delete-the-virtual-network-gateway"></a>Шаг 3. Удаление шлюза виртуальной сети
 
 Учтите: если кроме конфигурации типа "сеть — сеть" в этой виртуальной сети есть конфигурация типа "точка — сеть", удаление шлюза виртуальной сети приведет к автоматическому отключению всех клиентов P2S без предупреждения.
 

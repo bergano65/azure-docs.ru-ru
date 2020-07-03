@@ -2,21 +2,17 @@
 title: Экономия благодаря использованию бесплатной учетной записи Azure
 description: Узнайте, почему взимается плата за использование бесплатной учетной записи Azure. Узнайте, как избежать расходов.
 author: amberbhargava
-manager: amberb
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/12/2020
 ms.author: banders
-ms.openlocfilehash: 632d8ef84fc30ee7e97b8961d74fbb95ced42234
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 557e099b4250d5514920aa6c22399ce225f35d92
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75990064"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77200954"
 ---
 # <a name="avoid-charges-with-your-azure-free-account"></a>Экономия благодаря использованию бесплатной учетной записи Azure
 

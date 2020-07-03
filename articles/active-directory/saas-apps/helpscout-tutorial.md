@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Help Scout | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Help Scout | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Help Scout.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 10/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b71ccbc6cfdb9d3d37fc46b0e932fa98eee2fb43
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73159086"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Руководство по Интеграция Azure Active Directory с Help Scout
+# <a name="tutorial-azure-active-directory-integration-with-help-scout"></a>Учебник. Интеграция Azure Active Directory с Help Scout
 
 В этом учебнике описано, как интегрировать Help Scout с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Help Scout обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "73159086"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Help Scout, вам потребуется:
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* подписка Azure AD; Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Help Scout с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -96,7 +96,7 @@ ms.locfileid: "73159086"
 
     ![Сведения о домене и URL-адресах единого входа приложения Help Scout](common/idp-intiated.png)
 
-    a. **Идентификатор** — это **URI аудитории (идентификатор сущности поставщика службы)** из Help Scout, который начинается с `urn:`
+    а. **Идентификатор** — это **URI аудитории (идентификатор сущности поставщика службы)** из Help Scout, который начинается с `urn:`
 
     b. **URL-адрес ответа** — это **URL-адрес обратной отправки (URL-адрес службы обработчика утверждений)** из Help Scout, который начинается с `https://` 
 
@@ -117,11 +117,11 @@ ms.locfileid: "73159086"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -139,7 +139,7 @@ ms.locfileid: "73159086"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **B.Simon**.
+    а. В поле **Имя** введите **B.Simon**.
   
     b. В поле **Имя пользователя** введите **B.Simon\@yourcompanydomain.extension**.  
     Например B.Simon@contoso.com.
@@ -198,7 +198,7 @@ ms.locfileid: "73159086"
 
     ![Настройка единого входа](./media/helpscout-tutorial/settings3.png)
 
-    a. Скопируйте значение **URL-адреса обратной отправки (URL-адрес службы обработчика утверждений)** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **базовой конфигурации SAML** на портале Azure.
+    а. Скопируйте значение **URL-адреса обратной отправки (URL-адрес службы обработчика утверждений)** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **базовой конфигурации SAML** на портале Azure.
 
     b. Скопируйте значение **URI аудитории** и вставьте его в текстовое поле **URL-адрес ответа** в разделе **базовой конфигурации SAML** на портале Azure.
 
@@ -206,7 +206,7 @@ ms.locfileid: "73159086"
 
     ![Настройка единого входа](./media/helpscout-tutorial/settings4.png)
 
-    a. В текстовом поле **URL-адрес входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    а. В текстовом поле **URL-адрес входа** вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
     b. Нажмите кнопку **Upload Certificate** (Отправить сертификат), чтобы передать **сертификат(Base64)** , скачанный с портала Azure.
 
@@ -214,7 +214,7 @@ ms.locfileid: "73159086"
 
     d. Наконец, можно включить параметр **Force SAML Sign-on** (Принудительный вход SAML), если вы хотите, чтобы пользователи входили в Help Scout только с помощью этого метода. Если вы все же хотите оставить для них возможность войти в систему с помощью своих учетных данных Help Scout, можете оставить параметр отключенным. Даже если эта функция включена, владелец учетной записи всегда сможет войти в Help Scout с помощью своего пароля учетной записи.
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 ### <a name="create-help-scout-test-user"></a>Создание тестового пользователя Help Scout
 

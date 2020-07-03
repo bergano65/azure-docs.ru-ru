@@ -10,14 +10,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/27/2019
-ms.openlocfilehash: ee5acc97e4b05a0e93f4ceee8c04b400da211b49
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 9d96e3f7d127f4839592e766537cbdb07cc697dc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76769490"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81414943"
 ---
 # <a name="understanding-data-factory-pricing-through-examples"></a>Изучение ценообразования Фабрики данных Azure посредством примеров
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается и демонстрируется модель ценообразования Фабрики данных Azure с подробными примерами.
 
@@ -161,16 +163,16 @@ ms.locfileid: "76769490"
 - Операции Фабрики данных = **0,0001 долл. США**
   - Чтение и запись = 10\*00001 = 0,0001 долл. США [1 R/W = 0,50/50 000 долл. США = 0.00001]
   - Отслеживание  = 2\*000005 = 0,00001 долл. США [1 Отслеживание = 0,25 долл. США/50 000 = 0,000005]
-- Выполнение &amp; оркестрации конвейера = **$1,463**
+- &amp; Выполнение оркестрации конвейера = **$1,463**
   - Выполнение действий = 001\*2 = 0,002 [1 выполнение = 1 долл. США/1000 = 0,001]
   - Действия потока данных = $1,461 пропорционально в течение 20 минут (время выполнения 10 мин + 10 минут TTL). $0.274/час на Azure Integration Runtime с 16 ядрами общее вычисление
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы ознакомились с ценами на Фабрику данных Azure, можно начинать работу.
 
-- [Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"](quickstart-create-data-factory-portal.md)
+- [Создание фабрики данных с помощью пользовательского интерфейса фабрики данных Azure](quickstart-create-data-factory-portal.md)
 
-- [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)
+- [Знакомство с Фабрикой данных Azure](introduction.md)
 
-- [Визуальная разработка в Фабрике данных Azure](author-visually.md)
+- [Визуальное создание в фабрике данных Azure](author-visually.md)

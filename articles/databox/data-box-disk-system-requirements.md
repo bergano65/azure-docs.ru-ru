@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 09/04/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: fb2fd89664517e44cf5128a5c82e583f03087061
-ms.sourcegitcommit: 49c4b9c797c09c92632d7cedfec0ac1cf783631b
+ms.openlocfilehash: 6ac1fb1a69433be240e4250ea37835037f0b2ffa
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70307695"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873944"
 ---
 ::: zone target="docs"
 
@@ -52,11 +52,11 @@ ms.locfileid: "70307695"
 
 Для клиента Windows нужно также установить следующие компоненты.
 
-| **Программное обеспечение**| **Версия** |
+| **Программное обеспечение**.| **Версия** |
 | --- | --- |
 | Windows PowerShell |5.0 |
 | .NET Framework |4.5.1 |
-| Windows Management Framework |5.0|
+| Windows Management Framework |5.1|
 | BitLocker| - |
 
 ## <a name="other-required-software-for-linux-clients"></a>Другое необходимое программное обеспечение для клиентов Linux
@@ -76,13 +76,9 @@ ms.locfileid: "70307695"
 
 | **Учетная запись хранения** | **Примечания** |
 | --- | --- |
-| Классический | Стандартная |
-| Общего назначения  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
+| Классический | Standard |
+| Общее назначение  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
 | Учетная запись хранения больших двоичных объектов | |
-
->[!NOTE]
-> Учетные записи второго поколения Azure Data Lake Storage не поддерживаются.
-
 
 ## <a name="supported-storage-types-for-upload"></a>Поддерживаемые типы хранилищ для загрузки
 
@@ -97,7 +93,7 @@ ms.locfileid: "70307695"
 
 ::: zone target="docs"
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 * [Deploy your Azure Data Box Disk](data-box-disk-deploy-ordered.md) (Развертывание диска Azure Data Box)
 

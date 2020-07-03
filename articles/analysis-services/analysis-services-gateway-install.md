@@ -8,10 +8,10 @@ ms.date: 01/17/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: f6218b32fb9574adf62384d2a6ee5a62f3788de8
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77062155"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Установка и настройка локального шлюза данных
@@ -20,20 +20,20 @@ ms.locfileid: "77062155"
 
 Дополнительные сведения о том, как Azure Analysis Services работает с шлюзом, см. в разделе [Подключение к локальным источникам данных](analysis-services-gateway.md). Дополнительные сведения о расширенных сценариях установки и шлюзе см. в [документации по локальным шлюзам данных](/data-integration/gateway/service-gateway-onprem).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 **Минимальные требования:**
 
 * .NET Framework 4.5;
 * 64-разрядная версия Windows 8/Windows Server 2012 R2 (или более поздней версии)
 
-**Рекомендуется:**
+**Такую**
 
 * 8-ядерный ЦП;
 * 8 ГБ ОЗУ;
 * 64-разрядная версия Windows 8/Windows Server 2012 R2 (или более поздней версии)
 
-**Важные сведения:**
+**Важные моменты:**
 
 * Во время установки и регистрации шлюза в Azure выбирается регион по умолчанию для вашей подписки. Можно выбрать другую подписку и регион. При наличии серверов в нескольких регионах необходимо установить шлюз для каждого региона. 
 * Шлюз нельзя устанавливать на контроллере домена.
@@ -44,11 +44,11 @@ ms.locfileid: "77062155"
 * Войдите в Azure с помощью учетной записи в Azure AD для того же [клиента](/previous-versions/azure/azure-services/jj573650(v=azure.100)#what-is-an-azure-ad-tenant), что и подписка, в которой вы регистрируете шлюз. Учетные записи Azure B2B (гостевые) не поддерживаются при установке и регистрации шлюза.
 * Если источники данных находятся в виртуальной сети Azure, необходимо настроить свойство сервера [AlwaysUseGateway](analysis-services-vnet-gateway.md).
 
-## <a name="download"></a>Загрузка
+## <a name="download"></a><a name="download"></a>Скачать
 
  [Скачайте шлюз](https://go.microsoft.com/fwlink/?LinkId=820925&clcid=0x409).
 
-## <a name="install"></a>Установка
+## <a name="install"></a><a name="install"></a>Установить
 
 1. Запустите программу установки.
 
@@ -67,7 +67,7 @@ ms.locfileid: "77062155"
    > [!NOTE]
    > При входе с использованием учетной записи домена она сопоставляется с учетной записью организации в Azure AD. Учетная запись вашей организации используется как администратор шлюза.
 
-## <a name="register"></a>Регистрация
+## <a name="register"></a><a name="register"></a>Зарегистрировать
 
 Чтобы создать ресурс шлюза в Azure, необходимо зарегистрировать локальный экземпляр, установленный с помощью облачной службы шлюза. 
 
@@ -83,7 +83,7 @@ ms.locfileid: "77062155"
    ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-name.png)
 
 
-## <a name="create-resource"></a>Создание ресурса шлюза Azure
+## <a name="create-an-azure-gateway-resource"></a><a name="create-resource"></a>Создание ресурса шлюза Azure
 
 После установки и регистрации шлюза необходимо создать ресурс шлюза в Azure. Войдите в Azure с помощью учетной записи, использованной при регистрации шлюза.
 
@@ -107,7 +107,7 @@ ms.locfileid: "77062155"
 
      Когда все будет готово, нажмите **Создать**.
 
-## <a name="connect-servers"></a>Подключение серверов к ресурсу шлюза
+## <a name="connect-servers-to-the-gateway-resource"></a><a name="connect-servers"></a>Подключение серверов к ресурсу шлюза
 
 1. В обзоре сервера Azure Analysis Services щелкните **Локальный шлюз данных**.
 
@@ -127,7 +127,7 @@ ms.locfileid: "77062155"
 
 Вот и все. Если необходимо открывать порты или устранять неполадки, требуется извлечь [локальный шлюз данных](analysis-services-gateway.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление службами Analysis Services](analysis-services-manage.md)   
 * [Получение данных из служб Azure Analysis Services](analysis-services-connect.md)   

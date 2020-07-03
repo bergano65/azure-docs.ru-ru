@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 90c890925378c30ce5688d2713990b4b2cdd20c5
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75430676"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
@@ -27,7 +27,7 @@ ms.locfileid: "75430676"
 > [!IMPORTANT]
 > Авторизация OAuth 2,0 пока недоступна в интерактивной консоли нового портала разработчика.
 
-## <a name="prerequisites"> </a>Предварительные требования
+## <a name="prerequisites"></a><a name="prerequisites"> </a>Предварительные требования
 
 В этом руководстве описано, как настроить экземпляр службы API Management для авторизации учетных записей разработчиков по протоколу OAuth 2.0. В нем не рассматривается настройка поставщика OAuth 2.0. Настройка каждого поставщика OAuth 2.0 имеет свои особенности, хотя инструкции в целом схожи, а данные, необходимые для настройки этого протокола в экземпляре службы API Management, одинаковы. В примерах в этом разделе в качестве поставщика OAuth 2.0 используется служба Azure Active Directory.
 
@@ -36,10 +36,10 @@ ms.locfileid: "75430676"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
-## <a name="step1"> </a>Настройка сервера авторизации OAuth 2,0 в управлении API
+## <a name="configure-an-oauth-20-authorization-server-in-api-management"></a><a name="step1"> </a>Настройка сервера авторизации OAuth 2.0 в управлении API
 
 > [!NOTE]
-> Если экземпляр службы управления API еще не создан, см. раздел [Создание экземпляра службы управления API][Create an API Management service instance].
+> Если экземпляр службы управления API еще не создан, выполните инструкции в статье [Создание экземпляра службы управления API Azure][Create an API Management service instance].
 
 1. Перейдите на вкладку OAuth 2.0 в меню слева и щелкните **+ Добавить**.
 
@@ -58,7 +58,7 @@ ms.locfileid: "75430676"
 
     Установите нужные флажки в разделе **Типы предоставления авторизации**. **Authorization code** (Код авторизации).
 
-    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, где `<tenant_id>` заменяется ИДЕНТИФИКАТОРом вашего клиента Azure AD.
+    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, `<tenant_id>` где заменяется идентификатором вашего клиента Azure AD.
 
     `https://login.microsoftonline.com/<tenant_id>/oauth2/authorize`
 
@@ -82,7 +82,7 @@ ms.locfileid: "75430676"
 
     После заполнения формы щелкните **Создать**, чтобы сохранить конфигурацию сервера авторизации OAuth 2.0 для службы API Management. Сохранив конфигурацию сервера, вы можете настроить интерфейсы API для ее использования, как описано в следующем разделе.
 
-## <a name="step2"> </a>Настройка API для использования авторизации пользователя OAuth 2,0
+## <a name="configure-an-api-to-use-oauth-20-user-authorization"></a><a name="step2"> </a>Настройка API для авторизации пользователей по протоколу OAuth 2.0
 
 1. В меню **Управление API** слева щелкните **API**.
 
@@ -96,7 +96,7 @@ ms.locfileid: "75430676"
 
     ![Параметры OAuth 2.0](./media/api-management-howto-oauth2/oauth-07.png)
 
-## <a name="step3"> </a>Устаревший портал разработчика. Тестирование авторизации пользователя OAuth 2,0
+## <a name="legacy-developer-portal---test-the-oauth-20-user-authorization"></a><a name="step3"> </a>Устаревший портал разработчика. Тестирование авторизации пользователя OAuth 2,0
 
 [!INCLUDE [api-management-portal-legacy.md](../../includes/api-management-portal-legacy.md)]
 
@@ -118,7 +118,7 @@ ms.locfileid: "75430676"
 > [!NOTE]
 > Если всплывающие окна отключены, то в браузере появится запрос на их включение. Включив всплывающие окна, еще раз выберите пункт **Authorization code** , чтобы открыть форму входа.
 
-![Вход][api-management-oauth2-signin]
+![Войти][api-management-oauth2-signin]
 
 После входа поле **Request headers** (Заголовки запроса) заполняется заголовком `Authorization : Bearer`, используемым для авторизации запроса.
 

@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 01/27/2020
+ms.date: 02/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 94fafd8b0411c1c7a4032769eec0eb5818844648
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 0fa6785b2c4029dc5eb3f0397b1144616be357fe
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77118144"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82594174"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-rest-api-and-python"></a>Обучение модели Распознавателя документов по примерам с метками с помощью REST API и Python
 
@@ -28,15 +28,19 @@ ms.locfileid: "77118144"
 - Среда [Python](https://www.python.org/downloads/), если вы хотите выполнить этот пример кода локально.
 - Минимум шесть документов одного типа. Вы будете использовать эти данные для обучения модели и тестирования формы. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте файлы для обучения в корневой каталог контейнера хранилища BLOB-объектов в учетной записи хранения Azure.
 
+## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
+
+[!INCLUDE [create resource](../includes/create-resource.md)]
+
 ## <a name="set-up-training-data"></a>Подготовка данных для обучения
 
-Прежде всего вам нужно настроить входные данные. Использование маркированных данных налагает особые требования к входным данным наряду с теми, которые применяются при обучении настраиваемой модели. 
+Затем вам нужно настроить входные данные. Использование маркированных данных налагает особые требования к входным данным наряду с теми, которые применяются при обучении настраиваемой модели. 
 
 Убедитесь, что все обучающие документы имеют одинаковый формат. Если у вас есть формы в разных форматах, рассортируйте их по вложенным папкам соответствующим образом. При обучении вам нужно будет обращаться к вложенным папкам с помощью API.
 
 Чтобы обучить модель с использованием маркированных данных, во вложенной папке должны размещаться следующие входные файлы. Ниже описано, как создать эти файлы.
 
-* **Исходные формы**, из которых извлекаются данные. Поддерживаются следующие типы: JPEG, PNG, BMP, PDF и TIFF.
+* **Исходные формы**, из которых извлекаются данные. Поддерживаются типы JPEG, PNG, PDF и TIFF.
 * **Файлы макета OCR** в формате JSON, которые описывают размеры и положения всех доступных для чтения фрагментов текста в каждой исходной форме. Для создания этих данных вы будете использовать API макета Распознавателя документов. 
 * **Файлы меток** в формате JSON, которые описывают метки данных, присвоенные пользователем вручную.
 
@@ -215,7 +219,7 @@ headers = {
     'Ocp-Apim-Subscription-Key': '<subsription key>',
 }
 
-body =  {
+body =     {
     "source": source,
     "sourceFilter": {
         "prefix": prefix,
@@ -451,7 +455,7 @@ print("Train operation did not complete within the allocated time.")
                     "#/readResults/0/lines/8/words/1"
                   ]
                 },
-                ...     
+                ...        
               ]
             }
           ]
@@ -482,11 +486,8 @@ print("Train operation did not complete within the allocated time.")
               "page":1,
               "confidence":1,
               "elements":[ 
-                { 
-                  "$ref":"#/analyzeResult/readResults/0/lines/15/words/0"
-                }
-              ],
-              "fieldName":"total"
+                "#/analyzeResult/readResults/0/lines/15/words/0"
+              ]
             },
             "invoice #":{ 
               "type":"string",
@@ -505,11 +506,8 @@ print("Train operation did not complete within the allocated time.")
               "page":1,
               "confidence":1,
               "elements":[ 
-                { 
-                  "$ref":"#/analyzeResult/readResults/0/lines/12/words/0"
-                }
-              ],
-              "fieldName":"invoice #"
+                "#/analyzeResult/readResults/0/lines/12/words/0"
+              ]
             },
             "vat":{ 
               "type":"string",
@@ -528,11 +526,8 @@ print("Train operation did not complete within the allocated time.")
               "page":1,
               "confidence":0.9839357733726502,
               "elements":[ 
-                { 
-                  "$ref":"#/analyzeResult/readResults/0/lines/16/words/0"
-                }
-              ],
-              "fieldName":"vat"
+                "#/analyzeResult/readResults/0/lines/16/words/0"
+              ]
             },
             ...
           }

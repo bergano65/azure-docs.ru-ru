@@ -7,12 +7,12 @@ ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 6a530c96c99a9f22f1943a5b874656bcabd9594b
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: c2bf401713dc7ae3b060181f1df56d0915f68aed
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906472"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "78269506"
 ---
 # <a name="quickstart-manage-blobs-with-javascript-v10-sdk-in-nodejs"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 10 в Node.js
 
@@ -409,4 +409,4 @@ console.log(`Container "${containerName}" is deleted`);
 
 > [!div class="nextstepaction"]
 > [Репозиторий пакета SDK версии 10 службы хранилища Azure для JavaScript](https://github.com/Azure/azure-storage-js)
-> [Справочник по API JavaScript для службы хранилища Azure](/javascript/api/overview/azure/storage?view=azure-node-legacy)
+> [Справочник по API JavaScript для службы хранилища Azure](/javascript/api/overview/azure/storage-overview)

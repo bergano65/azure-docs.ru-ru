@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/11/2018
 ms.author: wesmc
 ms.openlocfilehash: efbe41be6c923f3547df86fd6faeb56bff5e0802
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73954531"
 ---
 # <a name="connect-raspberry-pi-online-simulator-to-azure-iot-hub-nodejs"></a>Подключение онлайн-симулятора Raspberry Pi к Центру Интернета вещей Azure (Node.js)
@@ -40,7 +40,7 @@ ms.locfileid: "73954531"
 
 * Изучим основы использования онлайн-симулятора Raspberry Pi.
 
-* Создайте центр IoT.
+* Создайте Центр Интернета вещей.
 
 * Зарегистрируем устройство для Pi в Центре Интернета вещей.
 
@@ -50,7 +50,7 @@ ms.locfileid: "73954531"
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-* Как создать Центр Интернета вещей Azure и получить строку подключения нового устройства. Если ее нет, можно создать [бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
+* Как создать Центр Интернета вещей Azure и получить строку подключения нового устройства. Если у вас нет учетной записи Azure, [Создайте бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
 
 * Как использовать онлайн-симулятор Raspberry Pi.
 
@@ -61,7 +61,7 @@ ms.locfileid: "73954531"
 Нажмите кнопку, чтобы запустить онлайн-симулятор Raspberry Pi.
 
 > [!div class="button"]
-> <a href="https://azure-samples.github.io/raspberry-pi-web-simulator/#GetStarted" target="_blank">Запустить симулятор Raspberry Pi</a>
+> <a href="https://azure-samples.github.io/raspberry-pi-web-simulator/#GetStarted" target="_blank">Запуск симулятора Raspberry Pi</a>
 
 В веб-симуляторе есть 3 области.
 
@@ -82,7 +82,7 @@ ms.locfileid: "73954531"
 
 ![Общие сведения об онлайн-симуляторе Pi](media/iot-hub-raspberry-pi-web-simulator/0-overview.png)
 
-## <a name="create-an-iot-hub"></a>Создание центра IoT
+## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
@@ -96,7 +96,7 @@ ms.locfileid: "73954531"
 1. 
    ![Замена строки подключения устройства](media/iot-hub-raspberry-pi-web-simulator/1-connectionstring.png)
 
-2. Выберите **выполнить** или введите `npm start`, чтобы запустить приложение.
+2. Выберите **выполнить** или введите `npm start` , чтобы запустить приложение.
 
 Должны отобразиться следующие результаты, содержащие данные датчика и сообщения, которые отправляются в Центр Интернета вещей: ![Выходные данные — данные датчика, отправленные с Raspberry Pi в Центр Интернета вещей](media/iot-hub-raspberry-pi-web-simulator/2-run-application.png)
 
@@ -106,7 +106,7 @@ ms.locfileid: "73954531"
 
 Чтобы узнать больше о способах обработки данных, отправляемых устройством, перейдите к следующему разделу.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы запустили пример приложения, чтобы собрать данные датчика и отправить их в Центр Интернета вещей.
 

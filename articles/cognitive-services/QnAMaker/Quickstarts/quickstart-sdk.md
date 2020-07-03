@@ -2,14 +2,14 @@
 title: Краткое руководство. Использование пакета SDK для создания базы знаний и управления ей в QnA Maker
 description: В этом кратком руководстве показано, как создать базу знаний и управлять ею с использованием клиентского пакета SDK.
 ms.topic: quickstart
-ms.date: 01/13/2020
+ms.date: 04/27/2020
 zone_pivot_groups: programming-languages-set-six
-ms.openlocfilehash: 730c58dbbe44fe56c0d5bc8f377a2c547b691351
-ms.sourcegitcommit: 49e14e0d19a18b75fd83de6c16ccee2594592355
+ms.openlocfilehash: 350020069edc2ae01f1716b1e6166da43054b24b
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946002"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82204045"
 ---
 # <a name="quickstart-create-and-manage-knowledge-base"></a>Краткое руководство. Создание базы знаний и управление ею
 
@@ -19,18 +19,18 @@ ms.locfileid: "75946002"
 [!INCLUDE [Get intent with C# and REST](../includes/quickstart-sdk-csharp.md)]
 ::: zone-end
 
-::: zone pivot="programming-language-python"
-[!INCLUDE [Get intent with Python and REST](../includes/quickstart-sdk-python.md)]
+::: zone pivot="programming-language-javascript"
+[!INCLUDE [Get intent with Node.js and REST](../includes/quickstart-sdk-nodejs.md)]
 ::: zone-end
 
-::: zone pivot="programming-language-nodejs"
-[!INCLUDE [Get intent with Node.js and REST](../includes/quickstart-sdk-nodejs.md)]
+::: zone pivot="programming-language-python"
+[!INCLUDE [Get intent with Python and REST](../includes/quickstart-sdk-python.md)]
 ::: zone-end
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
->[Руководство. Создание базы знаний и ответ на вопрос](../tutorials/create-publish-query-in-portal.md)
+>[Руководство. Тестирование базы знаний с использованием пакетного файла](./batch-testing.md)
 
 * [Что такое QnA Maker?](../Overview/overview.md)
 * [Редактирование базы знаний](../how-to/edit-knowledge-base.md)

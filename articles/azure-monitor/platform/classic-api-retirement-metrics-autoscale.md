@@ -1,18 +1,15 @@
 ---
-title: Прекращается поддержка API классической модели развертывания для метрик и автомасштабирования в Azure Monitor
+title: Снятие API развертывания для метрик Azure Monitor и автомасштабирования
 description: Прекращается поддержка классических API метрик и автомасштабирования, именуемых также моделью развертывания RDFE или Azure Service Management (ASM)
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
-author: rboucher
-ms.author: robb
 ms.date: 11/19/2018
-ms.openlocfilehash: 7a93419ee84e6a50ce07cefa941a8df9f85b7b6e
-ms.sourcegitcommit: ae461c90cada1231f496bf442ee0c4dcdb6396bc
+ms.openlocfilehash: d9b6118bc165a9b0a78ae9c4da895719249b22b7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72552196"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81114230"
 ---
 # <a name="azure-monitor-retirement-of-classic-deployment-model-apis-for-metrics-and-autoscale"></a>Прекращается поддержка API классической модели развертывания для метрик и автомасштабирования в Azure Monitor
 
@@ -38,7 +35,7 @@ ms.locfileid: "72552196"
 
 Если вы не уверены, происходит ли вызов классических API со стороны вашего кода или пользовательских средств, проверьте следующее:
 
-- Просмотрите универсальный код ресурса (URI), на который ссылается код или средство. Классические API используют URI https://management.core.windows.net. Следует использовать более новые URI для интерфейсов API на основе Resource Manager, начинающиеся с https://management.azure.com/.
+- Просмотрите универсальный код ресурса (URI), на который ссылается код или средство. Классические API используют URI https://management.core.windows.net. Следует использовать более новые URI для интерфейсов API на основе Resource Manager, начинающиеся с `https://management.azure.com/`.
 
 - Сравните имя сборки на вашем компьютере. Более старая классическая сборка находится здесь: https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Monitoring/.
 
@@ -88,7 +85,7 @@ ms.locfileid: "72552196"
 
 Если у вас возникли какие-либо вопросы, пишите нам на адрес MonitorClassicAPIhelp@microsoft.com.  
 
-## <a name="references"></a>Справочники
+## <a name="references"></a>Ссылки
 
 - [Более новые REST API для Azure Monitor](https://docs.microsoft.com/rest/api/monitor/) 
 - [Более новый пакет SDK для Azure Monitor](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor/)

@@ -4,21 +4,21 @@ description: Описывает использование REST API Azure Analys
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/14/2020
+ms.date: 04/15/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2281f9d493edf955881772ec174c82b527f1b6fa
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.openlocfilehash: c5f6cec8b7fd1169a4f04649fcaf7bb7ada33833
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76029879"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81406283"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
-Вы можете задать асинхронное обновление данных в табличных моделях Azure Analysis Services, используя любой язык программирования, с помощью которого можно вызвать REST. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 
+Используя любой язык программирования, поддерживающий вызовы RESTFUL, можно выполнять асинхронные операции обновления данных в Azure Analysis Services табличных моделях. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 
 
-Операции обновления данных могут занять некоторое время в зависимости от ряда факторов, включая объем данных, уровень оптимизации с использованием секций и т. д. Эти операции традиционно были вызваны с помощью существующих методов, таких как использование [Tom](https://docs.microsoft.com/bi-reference/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo) (табличная модель объектов), командлеты [PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) или [TMSL](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference) (язык сценариев табличной модели). Но для использования этих методов может понадобиться применить ненадежные длительные HTTP-подключения.
+Операции обновления данных могут занять некоторое время в зависимости от ряда факторов, включая объем данных, уровень оптимизации с использованием секций и т. д. Эти операции традиционно были вызваны с помощью существующих методов, таких как использование [Tom](https://docs.microsoft.com/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo) (табличная модель объектов), командлеты [PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) или [TMSL](https://docs.microsoft.com/analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference) (язык сценариев табличной модели). Но для использования этих методов может понадобиться применить ненадежные длительные HTTP-подключения.
 
 REST API для Azure Analysis Services позволяет выполнять обновления данных асинхронно. REST API устраняет необходимость в длительных подключениях через клиентские приложения. Кроме того, здесь предусмотрены другие возможности, обеспечивающие надежность работы, такие как выполнение повторных попыток и пакетных фиксаций.
 
@@ -97,13 +97,13 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
-| Имя             | Тип  | Description  |По умолчанию  |
+| Имя             | Type  | Описание  |По умолчанию  |
 |------------------|-------|--------------|---------|
-| `Type`           | Перечисление.  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/bi-reference/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
+| `Type`           | Перечисление.  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/analysis-services/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
 | `CommitMode`     | Перечисление.  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
-| `MaxParallelism` | Int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/bi-reference/tmsl/sequence-command-tmsl) или другими способами.       | 10        |
+| `MaxParallelism` | Int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/analysis-services/tmsl/sequence-command-tmsl) или другими способами.       | 10        |
 | `RetryCount`     | Int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
-| `Objects`        | Array | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
+| `Objects`        | Массив | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
 
 Значение CommitMode — partialBatch. Оно используется при начальной загрузке для больших наборов данных, что может занять несколько часов. Если обновление завершится сбоем после успешной фиксации одного или нескольких пакетов, эти пакеты останутся зафиксированными (т. е. для них не будет выполнен откат).
 
@@ -112,7 +112,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 ### <a name="status-values"></a>Значения состояния
 
-|Значение состояния  |Description  |
+|Значение состояния  |Описание  |
 |---------|---------|
 |`notStarted`    |   Операция еще не запущена.      |
 |`inProgress`     |   Выполняется операция.      |
@@ -208,8 +208,8 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 ### <a name="to-use-the-code-sample"></a>Как пользоваться примером кода
 
-1.  Клонируйте или скачайте репозиторий. Откройте решение RestApiSample.
-2.  Найдите строку **client.BaseAddress = …** и укажите [базовый URL-адрес](#base-url).
+1.    Клонируйте или скачайте репозиторий. Откройте решение RestApiSample.
+2.    Найдите строку **client.BaseAddress = …** и укажите [базовый URL-адрес](#base-url).
 
 В примере кода используется проверка подлинности [субъекта-службы](#service-principal) .
 
@@ -217,14 +217,14 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Дополнительные сведения о том, как настроить субъект-службу и назначить необходимые разрешения в Azure AS, см. в статьях [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md) и [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md). Выполнив эти шаги, сделайте дополнительно следующее:
 
-1.  В примере кода найдите фрагмент **string authority = …** и замените **стандартный** идентификатор на код клиента своей организации.
-2.  Закомментируйте или раскомментируйте код, так чтобы класс ClientCredential использовался для создания экземпляра объекта cred. Убедитесь, что доступ к значениям \<App ID> и \<App Key> осуществляется безопасно, или настройте для субъектов-служб проверку подлинности.
-3.  Запустите образец.
+1.    В примере кода найдите **центр String =...**, замените **Общий** идентификатором клиента вашей организации.
+2.    Закомментируйте или раскомментируйте код, так чтобы класс ClientCredential использовался для создания экземпляра объекта cred. Убедитесь, что доступ к значениям \<App ID> и \<App Key> осуществляется безопасно, или настройте для субъектов-служб проверку подлинности.
+3.    Запустите образец.
 
 
 ## <a name="see-also"></a>См. также
 
-[Примеры](analysis-services-samples.md)   
+[Регистрируют](analysis-services-samples.md)   
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)   
 
 

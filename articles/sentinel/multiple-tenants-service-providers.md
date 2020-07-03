@@ -3,7 +3,7 @@ title: Работа с несколькими клиентами в Azure Sentin
 description: Как работать с несколькими клиентами в Azure Sentinel для поставщиков услуг МССП.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,21 +13,21 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
-ms.author: rkarlin
-ms.openlocfilehash: 34997fb3cd91e4540c76ecdd781d21e2ed1bdb07
-ms.sourcegitcommit: 992e070a9f10bf43333c66a608428fcf9bddc130
+ms.author: yelevin
+ms.openlocfilehash: fdb58686fcdd18a8e2861aab533717dbc91e8893
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71240489"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79476021"
 ---
 # <a name="work-with-multiple-tenants-in-azure-sentinel"></a>Работа с несколькими клиентами в Azure Sentinel 
 
-Если вы являетесь поставщиком управляемой службы безопасности (МССП) и используете [Azure лигхсаусе](../lighthouse/overview.md) для управления центрами деятельности по обеспечению безопасности клиентов, вы сможете управлять ресурсами-метками Azure ваших клиентов без прямого подключения к Клиент клиента из собственного клиента Azure. 
+Если вы являетесь управляемым поставщиком службы безопасности (МССП) и используете [Azure лигхсаусе](../lighthouse/overview.md) для управления центрами деятельности по обеспечению безопасности клиентов, вы сможете управлять своими клиентскими ресурсами Azure, не подключаясь напрямую к клиенту клиента, из собственного клиента Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 - [Подключение Лигхсаусе Azure](../lighthouse/how-to/onboard-customer.md)
-- Для правильной работы клиент должен быть зарегистрирован в поставщике ресурсов Sentinel Azure по крайней мере в одной подписке. Если в вашем клиенте есть зарегистрированный Sentinel Azure, вы можете приступить к работе. Если нет, в портал Azure выберите **подписки** , а `Microsoft.Security.Insights` затем — **поставщики ресурсов** , а затем найдите и выберите **Register**.
+- Для правильной работы клиент должен быть зарегистрирован в поставщике ресурсов Sentinel Azure по крайней мере в одной подписке. Если в вашем клиенте есть зарегистрированный Sentinel Azure, вы можете приступить к работе. В противном случае выберите **подписки** из портал Azure, а затем — **поставщики ресурсов**.  Затем на экране **поставщиков ресурсов SoC-Resource** найдите и выберите `Microsoft.OperationalInsights` и `Microsoft.SecurityInsights`, а затем нажмите кнопку **зарегистрировать**.
    ![Проверка поставщиков ресурсов](media/multiple-tenants-service-providers/check-resource-provider.png)
 ## <a name="how-to-access-azure-sentinel-from-other-tenants"></a>Как получить доступ к Azure Sentinel из других клиентов
 1. В разделе **Каталог + подписка**выберите делегированные каталоги и подписки, в которых находятся рабочие области Sentinel Azure вашего клиента.
@@ -43,8 +43,8 @@ ms.locfileid: "71240489"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как легко управлять несколькими клиентами Sentinel Azure. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
-- Узнайте, как [получить представление о данных и потенциальных угрозах](quickstart-get-visibility.md).
-- Приступая [к обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
+- Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
+- Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 

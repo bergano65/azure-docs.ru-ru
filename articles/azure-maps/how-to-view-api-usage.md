@@ -1,19 +1,19 @@
 ---
 title: Просмотр Azure Maps метрик использования API | Карты Microsoft Azure
 description: В этой статье вы узнаете, как просмотреть метрики для вызовов API карт Microsoft Azure в портал Azure.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 08/06/2018
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: cc9834f4e1df1a68f78230ec587254c72aeabbcf
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 0eb117af712b3b1f63a3f99c96cba9775f8e3996
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77208691"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80335154"
 ---
 # <a name="view-azure-maps-api-usage-metrics"></a>Просмотр метрик использования API Azure Maps
 
@@ -42,7 +42,7 @@ ms.locfileid: "77208691"
 
       ![Панель метрик использования Azure Maps](media/how-to-view-api-usage/portal-metrics.png)
 
-5. Затем можно выбрать *диапазон времени*, щелкнув **За последние 24 часа (Автоматически)** . По умолчанию диапазон времени установлен в 24 часа. После нажатия кнопки вы увидите все выбираемые интервалы времени. Вы можете выбрать *степень детализации времени*, а также отображение времени в *местном часовом поясе* или в формате *GMT* в том же раскрывающемся списке. Нажмите кнопку **Применить**.
+5. Затем можно выбрать *диапазон времени*, щелкнув **За последние 24 часа (Автоматически)**. По умолчанию диапазон времени установлен в 24 часа. После нажатия кнопки вы увидите все выбираемые интервалы времени. Вы можете выбрать *степень детализации времени*, а также отображение времени в *местном часовом поясе* или в формате *GMT* в том же раскрывающемся списке. Нажмите кнопку **Применить**.
 
     ![Диапазон времени метрик Azure Maps](media/how-to-view-api-usage/time-range.png)
 
@@ -56,7 +56,7 @@ ms.locfileid: "77208691"
 
 8. Вы также можете просмотреть несколько метрик на одном графике, просто нажав кнопку **Добавить метрику** сверху.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об API Azure Maps, для которых вы хотите отслеживать использование:
 > [!div class="nextstepaction"] 

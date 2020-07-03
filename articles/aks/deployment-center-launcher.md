@@ -2,24 +2,21 @@
 title: Центр развертывания для Azure Kubernetes
 description: Центр развертывания в Azure DevOps упрощает настройку надежного конвейера Azure DevOps для вашего приложения
 ms.author: puagarw
-ms.prod: devops
-ms.technology: devops-cicd
 ms.topic: tutorial
 ms.date: 07/12/2019
 author: pulkitaggarwl
-monikerRange: vsts
-ms.openlocfilehash: 5384180720d391c6b4ae830f9316a70e80003063
-ms.sourcegitcommit: c2e7595a2966e84dc10afb9a22b74400c4b500ed
+ms.openlocfilehash: b0a9597e370648faab3787218c7d038798dbd455
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71972978"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80048111"
 ---
 # <a name="deployment-center-for-azure-kubernetes"></a>Центр развертывания для Azure Kubernetes
 
 Центр развертывания в Azure DevOps упрощает настройку надежного конвейера Azure DevOps для вашего приложения. По умолчанию центр развертывания настраивает конвейер Azure DevOps для развертывания обновлений приложения в кластере Kubernetes. Вы можете расширить настроенный по умолчанию конвейер Azure DevOps, а также добавить более широкие возможности: получение подтверждения перед развертыванием, настройку дополнительных ресурсов Azure, запуск сценариев, обновление приложения или даже запуск дополнительных проверочных тестов.
 
-Изучив данный учебник, вы научитесь:
+Выполняя данное руководство, вы сделаете следующее:
 
 > [!div class="checklist"]
 > * Настраивать конвейер Azure DevOps для развертывания обновлений приложения в кластере Kubernetes.
@@ -41,7 +38,7 @@ ms.locfileid: "71972978"
 
 1. Чтобы создать кластер AKS, выполните следующие команды:
 
-    ```cmd
+    ```azurecli
     # Create a resource group in the South India location:
 
     az group create --name azooaks --location southindia
@@ -140,6 +137,6 @@ ms.locfileid: "71972978"
 
 Вы можете удалить связанные ресурсы, которые вы создали, когда они больше не нужны. Для этого воспользуйтесь функционалом удаления на панели мониторинга DevOps Projects.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете изменить эти конвейеры сборки и выпуска в соответствии с потребностями вашей команды. Вы также можете использовать эту модель CI/CD в качестве шаблона для других конвейеров.

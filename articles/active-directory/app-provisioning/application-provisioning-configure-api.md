@@ -2,26 +2,21 @@
 title: Использование Microsoft Graph API для настройки подготовки — Azure Active Directory | Документация Майкрософт
 description: Необходимо настроить подготовку для нескольких экземпляров приложения? Узнайте, как сэкономить время с помощью API-интерфейсов Microsoft Graph для автоматизации настройки автоматической подготовки.
 services: active-directory
-documentationcenter: ''
 author: msmimart
 manager: CelesteDG
-ms.assetid: ''
 ms.service: active-directory
-ms.subservice: app-mgmt
+ms.subservice: app-provisioning
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: mimart
 ms.reviewer: arvinh
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5780227274e8f9574fcdfcd388d75e333cc3d42
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 585cafc548b3458c6e9cc0ef91c44f163fb7fa2f
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77367824"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593953"
 ---
 # <a name="configure-provisioning-using-microsoft-graph-apis"></a>Настройка подготовки с помощью API-интерфейсов Microsoft Graph
 
@@ -174,7 +169,7 @@ Content-type: application/json
 
 ### <a name="retrieve-the-template-for-the-provisioning-connector"></a>Получение шаблона для соединителя подготовки
 
-Приложения в коллекции, для которых включена подготовка, имеют шаблоны для упрощения настройки. Используйте следующий запрос, чтобы [получить шаблон для конфигурации подготовки](https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-beta&tabs=http).
+Приложения в коллекции, для которых включена подготовка, имеют шаблоны для упрощения настройки. Используйте следующий запрос, чтобы [получить шаблон для конфигурации подготовки](https://docs.microsoft.com/graph/api/synchronization-synchronizationtemplate-list?view=graph-rest-beta&tabs=http). Обратите внимание, что вам потребуется указать идентификатор. ИДЕНТИФИКАТОР ссылается на предыдущий ресурс, который в данном случае является ServicePrincipal. 
 
 #### <a name="request"></a>*Запрос*
 
@@ -266,10 +261,10 @@ Content-type: application/json
 
 ### <a name="test-the-connection-to-the-application"></a>Проверка подключения к приложению
 
-Проверьте соединение с приложением стороннего производителя. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Просмотрите [документацию по API](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) , чтобы просмотреть доступные варианты. 
+Проверьте соединение с приложением стороннего производителя. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Приложения часто используют BaseAddress вместо ClientSecret. Чтобы определить, какие учетные данные требуются приложению, перейдите на страницу конфигурации подготовки для приложения и в режиме разработчика щелкните Проверить подключение. В сетевом трафике будут показаны параметры, используемые для учетных данных. Полный список учетных данных можно найти [здесь](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http). 
 
 #### <a name="request"></a>*Запрос*
-```http
+```msgraph-interactive
 POST https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{id}/validateCredentials
 { 
     credentials: [ 
@@ -293,7 +288,7 @@ HTTP/1.1 204 No Content
 Для настройки подготовки необходимо установить доверие между Azure AD и приложением. Авторизуйте доступ к сторонним приложениям. Ниже приведен пример для приложения, которое требует clientSecret и Секреттокен. Каждое приложение имеет свои требования. Просмотрите [документацию по API](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-beta&tabs=http) , чтобы просмотреть доступные варианты. 
 
 #### <a name="request"></a>*Запрос*
-```json
+```msgraph-interactive
 PUT https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/secrets 
  
 { 
@@ -529,7 +524,7 @@ Content-type: application/json
 }
 
 ```
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 
 - [Обзор документации по Microsoft Graph синхронизации](https://docs.microsoft.com/graph/api/resources/synchronization-overview?view=graph-rest-beta)
 - [Интеграция пользовательского приложения SCIM с Azure AD](use-scim-to-provision-users-and-groups.md)

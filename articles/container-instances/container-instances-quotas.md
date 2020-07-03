@@ -4,10 +4,10 @@ description: Квоты, ограничения и доступность по �
 ms.topic: article
 ms.date: 03/01/2019
 ms.openlocfilehash: b3e7f2f67d806bd2fca74f58d446b0de9a4b8f44
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77117901"
 ---
 # <a name="quotas-and-limits-for-azure-container-instances"></a>Квоты и ограничения службы "Экземпляры контейнеров Azure"
@@ -20,7 +20,7 @@ ms.locfileid: "77117901"
 
 [!INCLUDE [container-instances-limits](../../includes/container-instances-limits.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Вы можете повысить лимит нескольких ограничений и квот. Чтобы запросить увеличение квоты на один или несколько ресурсов, которые поддерживают такую возможность, отправьте [запрос в службу поддержки Azure][azure-support] (указав "Квота" в качестве **типа проблемы**).
 

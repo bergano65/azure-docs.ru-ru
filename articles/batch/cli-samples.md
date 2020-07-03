@@ -1,26 +1,15 @@
 ---
-title: Примеры использования интерфейса командной строки Azure — пакетная служба Azure
+title: Примеры использования интерфейса командной строки Azure
 description: Примеры использования Azure CLI для службы Azure Batch. Узнайте, как создать учетную запись пакетной службы и добавить приложение.
-services: batch
-documentationcenter: batch
-author: LauraBrenner
-manager: evansma
-editor: ''
-tags: ''
-ms.assetid: ''
-ms.service: batch
 ms.topic: sample
-ms.tgt_pltfrm: ''
-ms.workload: ''
 ms.date: 01/29/2018
-ms.author: labrenne
 ms.custom: mvc
-ms.openlocfilehash: dd95511365a25c8f642cb7dcc5ef477f90926d31
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 59fc944024e2d51b16193db01ff06f2d434ad1e7
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022704"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83725760"
 ---
 # <a name="azure-cli-examples-for-azure-batch"></a>Примеры использования Azure CLI для пакетной службы Azure
 

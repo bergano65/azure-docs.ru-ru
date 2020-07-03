@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 17b53c508f0c4c5ba8fa257fcdc692cdaa45d470
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76294224"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием пакета SDK для Python
 > [!div class="op_single_selector"]
 > * [Пакет SDK для .NET](data-lake-store-data-operations-net-sdk.md)
-> * [пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
+> * [Пакет SDK для Java](data-lake-store-get-started-java-sdk.md)
 > * [REST API](data-lake-store-data-operations-rest-api.md)
 > * [Python](data-lake-store-data-operations-python.md)
 >
@@ -25,7 +25,7 @@ ms.locfileid: "76294224"
 
 В этой статье содержатся сведения об использовании пакета SDK для Python для выполнения операций файловой системы в Azure Data Lake Storage 1-го поколения. Дополнительные сведения о том, как выполнять операции управления учетными записями в Data Lake Storage 1-го поколения с помощью пакета SDK для Python, см. в [этой статье](data-lake-store-get-started-python.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
@@ -122,8 +122,8 @@ pip install azure-datalake-store
     ## Delete a directory
     adlsFileSystemClient.rm('/mysampledirectory', recursive=True)
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Операции управления учетными записями в Azure Data Lake Store с использованием Python](data-lake-store-get-started-python.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Операции управления учетными записями в Data Lake Storage 1-го поколения с помощью Python](data-lake-store-get-started-python.md).
 
 ## <a name="see-also"></a>См. также
 

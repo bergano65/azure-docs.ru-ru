@@ -3,19 +3,19 @@ title: Запуск экземпляров контейнеров Azure — сл
 titleSuffix: Azure Cognitive Services
 description: Разверните контейнер службы речи в экземпляре контейнера Azure и протестируйте его в веб-браузере.
 services: cognitive-services
-author: IEvangelist
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 01/23/2020
-ms.author: dapine
-ms.openlocfilehash: e5d9143b0c84b579945b283ccae1cce36a7a4291
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.date: 04/01/2020
+ms.author: aahi
+ms.openlocfilehash: 610d5ce095097a31ee92c67f0112d1657424858e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76717409"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80878754"
 ---
 # <a name="deploy-the-speech-service-container-to-azure-container-instances"></a>Развертывание контейнера службы речи в службе "экземпляры контейнеров Azure"
 

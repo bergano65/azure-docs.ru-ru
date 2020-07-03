@@ -15,10 +15,10 @@ ms.workload: identity
 ms.date: 12/06/2019
 ms.author: chmutali
 ms.openlocfilehash: 09501a80d6ddcbbc9fa6cc08e36f47beb13d1663
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77063228"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning-preview"></a>Руководство по настройке SAP SuccessFactors для подготовки пользователей в Azure AD (Предварительная версия)
@@ -97,19 +97,19 @@ SuccessFactors решение Azure Active Directory для подготовки
 
 * Войдите в SAP SuccessFactors с учетной записью пользователя, имеющего доступ к центру администрирования.
 * Выполните поиск по запросу *Управление ролями разрешений*, а затем выберите **Управление ролями разрешений** в результатах поиска.
-  ![управление ролями разрешений](./media/sap-successfactors-inbound-provisioning/manage-permission-roles.png)
+  ![Управление ролями разрешений](./media/sap-successfactors-inbound-provisioning/manage-permission-roles.png)
 * В списке роль разрешений щелкните **создать**.
   > [!div class="mx-imgBorder"]
-  > ![создать новую роль разрешений](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
+  > ![Создать новую роль разрешений](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
 * Добавьте имя и **Описание** **роли** для новой роли разрешений. Имя и описание должны указывать, что роль предназначена для разрешений на использование API.
   > [!div class="mx-imgBorder"]
-  > ![сведений о роли разрешений](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
-* В разделе Параметры разрешений щелкните **разрешение...** , затем прокрутите вниз список разрешений и выберите пункт **Управление инструментами интеграции**. Установите флажок **разрешить администратору доступ к API OData через обычную проверку подлинности**.
+  > ![Сведения о роли разрешений](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
+* В разделе Параметры разрешений щелкните **разрешение...**, затем прокрутите вниз список разрешений и выберите пункт **Управление инструментами интеграции**. Установите флажок **разрешить администратору доступ к API OData через обычную проверку подлинности**.
   > [!div class="mx-imgBorder"]
-  > ![управление средствами интеграции](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
+  > ![Управление инструментами интеграции](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
 * Прокрутите вниз в том же окне и выберите **Центральный API сотрудника**. Добавьте разрешения, как показано ниже, для чтения с помощью API ODATA и редактирования с помощью API ODATA. Выберите параметр изменить, если вы планируете использовать одну и ту же учетную запись для сценария SuccessFactors для обратной записи. 
   > [!div class="mx-imgBorder"]
-  > ![разрешения на запись](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
+  > ![Чтение разрешений на запись](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
 * Нажмите кнопку **Готово**. Щелкните **Сохранить изменения**.
 
 ### <a name="create-a-permission-group-for-the-api-user"></a>Создание группы разрешений для пользователя API
@@ -119,10 +119,10 @@ SuccessFactors решение Azure Active Directory для подготовки
   > ![Управление группами разрешений](./media/sap-successfactors-inbound-provisioning/manage-permission-groups.png)
 * В окне Управление группами разрешений щелкните **создать**.
   > [!div class="mx-imgBorder"]
-  > ![добавить новую группу](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
+  > ![Добавление новой группы](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
 * Добавьте имя группы для новой группы. Имя группы должно указывать, что группа предназначена для пользователей API.
   > [!div class="mx-imgBorder"]
-  > ![имя группы разрешений](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
+  > ![Имя группы разрешений](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
 * Добавление участников в группу. Например, можно выбрать **имя пользователя** в раскрывающемся меню пул людей, а затем ввести имя пользователя учетной записи API, которая будет использоваться для интеграции. 
   > [!div class="mx-imgBorder"]
   > ![Добавление членов группы](./media/sap-successfactors-inbound-provisioning/add-group-members.png)
@@ -135,10 +135,10 @@ SuccessFactors решение Azure Active Directory для подготовки
 * В разделе **предоставить эту роль для...** нажмите кнопку **Добавить..** ..
 * Выберите **группу разрешений...** в раскрывающемся меню выберите команду **выбрать...** , чтобы открыть окно группы для поиска и выбора группы, созданной выше. 
   > [!div class="mx-imgBorder"]
-  > ![добавить группу разрешений](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
+  > ![Добавить группу разрешений](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
 * Проверьте роль разрешений, предоставляемую группе разрешений. 
   > [!div class="mx-imgBorder"]
-  > ![роли разрешений и сведений о группе](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
+  > ![Сведения о роли и группе разрешений](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
 * Щелкните **Сохранить изменения**.
 
 ## <a name="configuring-user-provisioning-from-successfactors-to-azure-ad"></a>Настройка подготовки пользователей из SuccessFactors в Azure AD
@@ -165,11 +165,11 @@ SuccessFactors решение Azure Active Directory для подготовки
 
 6. После добавления приложения и отображения экрана сведений о приложений выберите **Подготовка**.
 
-7. Изменение режима **подготовки** на **Автоматический**
+7. Для параметра **Режим подготовки** **к работе** выберите значение **Автоматически**.
 
 8. В разделе **Учетные данные администратора** заполните поля следующим образом.
 
-   * **Имя пользователя администратора** — введите имя пользователя учетной записи API SuccessFactors с ДОБАВЛЕНным идентификатором компании. Он имеет формат: **username\@companyID**
+   * **Имя пользователя администратора** — введите имя пользователя учетной записи API SuccessFactors с ДОБАВЛЕНным идентификатором компании. Он имеет формат: **username\@companyID** .
 
    * **Пароль администратора —** Введите пароль учетной записи пользователя API SuccessFactors. 
 
@@ -244,11 +244,11 @@ SuccessFactors решение Azure Active Directory для подготовки
 
       * **Применить это сопоставление**
 
-         * **Всегда** — применить это сопоставление как при создании, так и при обновлении пользователей
+         * **Всегда** — применять это сопоставление для действий создания и обновления пользователей
 
-         * **Только при создании** — применить это сопоставление только при создании пользователей
+         * **Только во время создания** — применение этого сопоставления только для действий по созданию пользователя
 
-1. Чтобы сохранить сопоставления, щелкните **Сохранить** в верхней части раздела "Сопоставление атрибутов".
+1. Чтобы сохранить сопоставления, щелкните **сохранить** в верхней части раздела сопоставления атрибутов.
 
 После завершения настройки сопоставления атрибутов [можно включить и запустить службу подготовки пользователей](#enable-and-launch-user-provisioning).
 
@@ -261,7 +261,7 @@ SuccessFactors решение Azure Active Directory для подготовки
 
 1. На вкладке **Подготовка** установите для параметра **Состояние подготовки** значение **Вкл**.
 
-2. Выберите команду **Сохранить**.
+2. Нажмите кнопку **Сохранить**.
 
 3. Эта операция начнет начальную синхронизацию, что может занять переменное количество часов в зависимости от количества пользователей в клиенте SuccessFactors. Можно проверить индикатор выполнения, чтобы отслеживать ход выполнения цикла синхронизации. 
 
@@ -270,9 +270,9 @@ SuccessFactors решение Azure Active Directory для подготовки
 5. После завершения первичной синхронизации на вкладке **Подготовка** будет создан сводный отчет аудита, как показано ниже.
 
    > [!div class="mx-imgBorder"]
-   > Индикатор ![подготовки](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
+   > ![Индикатор выполнения подготовки](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Дополнительные сведения о поддерживаемых атрибутах SuccessFactors для входящей подготовки](../app-provisioning/sap-successfactors-attribute-reference.md)
 * [Узнайте, как настроить обратную запись электронной почты в SuccessFactors](sap-successfactors-writeback-tutorial.md)

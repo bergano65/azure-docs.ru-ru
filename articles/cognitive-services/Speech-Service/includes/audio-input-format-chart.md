@@ -2,23 +2,19 @@
 title: Формат голосового ввода
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
-author: markamos
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 11/20/2019
-ms.author: erhopf
-ms.openlocfilehash: db95679ba85668b7a2a9ed1ad8e4ab5dea6ff488
-ms.sourcegitcommit: c69c8c5c783db26c19e885f10b94d77ad625d8b4
+ms.date: 03/16/2020
+ms.author: trbye
+ms.openlocfilehash: b33e131acda0bc7ba094427f6d68cce73bb4142f
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74708409"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81400516"
 ---
 ## <a name="supported-audio-input-format"></a>Поддерживаемый формат голосового ввода
 
-Пакет SDK службы "Речь" использует следующий формат голосового ввода.
-
-| Формат | Кодек | Bitrate | Частота выборки | Каналы |
-|--------|-------|---------|-------------|----------|
-| WAV | PCM | 16-разрядный | 8 или 16 кГц | 1 (моно) |
+[!INCLUDE [supported-audio-formats](supported-audio-formats.md)]

@@ -1,5 +1,5 @@
 ---
-title: Настройка расширенной защиты от угроз для Azure Key Vault | Документация Майкрософт
+title: Защита от угроз для Azure Key Vault
 description: В этой статье объясняется, как настроить расширенную защиту от угроз для Azure Key Vault в центре безопасности Azure.
 services: security-center
 author: memildin
@@ -8,38 +8,43 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: memildin
-ms.openlocfilehash: f7f716734875d652de575991a4dc1b7bfe948ae3
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 449096590df6145c9f80dcf2c97726931909a2ae
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76773532"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77914812"
 ---
-# <a name="set-up-advanced-threat-protection-for-azure-key-vault-preview"></a>Настройка расширенной защиты от угроз для Azure Key Vault (Предварительная версия)
+# <a name="threat-protection-for-azure-key-vault-preview"></a>Защита от угроз для Azure Key Vault (Предварительная версия)
 
 Расширенная защита от угроз для Azure Key Vault предоставляет дополнительный уровень анализа безопасности. Это средство обнаруживает потенциально опасные попытки доступа или использования учетных записей Key Vault. Используя собственную расширенную защиту от угроз в центре безопасности Azure, можно решать угрозы без эксперта по безопасности и без изучения дополнительных систем мониторинга безопасности.
 
 Когда центр безопасности обнаруживает аномальные действия, он отображает предупреждения. Он также отправляет администратору подписки сведения о подозрительной активности и рекомендации по исследованию и исправлению обнаруженных угроз.
 
-## <a name="set-up-advanced-threat-protection-from-azure-security-center"></a>Настройка расширенной защиты от угроз из центра безопасности Azure
+## <a name="configuring-threat-protection-from-security-center"></a>Настройка защиты от угроз в центре безопасности
 
-По умолчанию расширенная защита от угроз включена для всех учетных записей Key Vault при оформлении подписки на уровень "Стандартный" центра безопасности. Дополнительные сведения см. на странице [цен](security-center-pricing.md).
+По умолчанию расширенная защита от угроз включена для всех учетных записей Key Vault при подоформлении стандартной ценовой категории центра безопасности. Дополнительные сведения см. на странице [цен](security-center-pricing.md).
 
 Чтобы включить или отключить защиту для конкретной подписки, выполните следующие действия.
 
-1. В левой области в центре безопасности выберите **параметры ценообразования &** .
+1. В левой области в центре безопасности выберите **параметры ценообразования &**.
+
 1. Выберите подписку с учетными записями хранения, для которых требуется включить или отключить защиту от угроз.
+
 1. Выберите **ценовую категорию**.
+
 1. В группе " **Выбор ценовой категории по типу ресурса** " найдите строку **хранилища ключей** и выберите параметр **включена** или **отключена**.
 
-    [![включение или отключение Advanced Threat Protection для Key Vault в центре безопасности Azure](media/advanced-threat-protection-key-vault/atp-for-akv-enable-atp-for-akv.png)](media/advanced-threat-protection-key-vault/atp-for-akv-enable-atp-for-akv.png#lightbox)
-1. Щелкните **Сохранить**.
+    [![Включение или отключение расширенной защиты от угроз для Key Vault в центре безопасности Azure](media/advanced-threat-protection-key-vault/atp-for-akv-enable-atp-for-akv.png)](media/advanced-threat-protection-key-vault/atp-for-akv-enable-atp-for-akv.png#lightbox)
+
+1. Нажмите кнопку **Сохранить**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как включать и отключать расширенную защиту от угроз для Azure Key Vault. 
 
-Другие связанные материалы см. в следующей статье:
+Связанные материалы см. в следующих статьях:
 
-- [Обнаружение угроз для уровней служб Azure в центре безопасности](security-center-alerts-service-layer.md). в этой статье описываются предупреждения, связанные с Advanced Threat protection для Azure Key Vault.
+- [Защита от угроз в центре безопасности Azure](threat-protection.md). в этой статье описываются источники оповещений системы безопасности в центре безопасности Azure.
+- [Key Vault оповещениях системы безопасности](alerts-reference.md#alerts-azurekv)— Key Vault раздел ссылочной таблицы для всех оповещений центра безопасности Azure.

@@ -1,19 +1,20 @@
 ---
 title: Развертывание приложения в масштабируемом наборе виртуальных машин Azure
 description: Узнайте, как развертывать приложения в экземплярах виртуальных машин Windows и Linux, размещенных в масштабируемом наборе.
-author: cynthn
-tags: azure-resource-manager
-ms.assetid: f8892199-f2e2-4b82-988a-28ca8a7fd1eb
+author: ju-shim
+ms.author: jushiman
+ms.topic: how-to
 ms.service: virtual-machine-scale-sets
-ms.topic: conceptual
+ms.subservice: management
 ms.date: 05/29/2018
-ms.author: cynthn
-ms.openlocfilehash: 6bc319ea50da4ff6a654b2c9ab09bbe218695533
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviewer: avverma
+ms.custom: avverma
+ms.openlocfilehash: 7c39088890680b6cfc903083283ed09cb7618d16
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278106"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124930"
 ---
 # <a name="deploy-your-application-on-virtual-machine-scale-sets"></a>Развертывание приложения в масштабируемых наборах виртуальных машин
 
@@ -29,7 +30,7 @@ ms.locfileid: "76278106"
 - [Azure PowerShell](tutorial-use-custom-image-powershell.md)
 
 
-## <a name="already-provisioned"></a>Установка приложения с помощью расширения настраиваемых сценариев
+## <a name="install-an-app-with-the-custom-script-extension"></a><a name="already-provisioned"></a>Установка приложения с помощью расширения настраиваемых сценариев
 Расширение настраиваемых сценариев скачивает и выполняет сценарии на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или GitHub или передать на портал Azure во время выполнения расширения. Дополнительные сведения об установке приложения с расширением пользовательского скрипта см. в следующих учебниках:
 
 - [Azure CLI](tutorial-install-apps-cli.md)
@@ -40,9 +41,9 @@ ms.locfileid: "76278106"
 ## <a name="install-an-app-to-a-windows-vm-with-powershell-dsc"></a>Установка приложения на виртуальную машину Windows с помощью PowerShell DSC
 [PowerShell Desired State Configuration](/powershell/scripting/dsc/overview/overview) — это платформа управления, которая позволяет определить конфигурацию целевых виртуальных машин. Конфигурации DSC определяют компоненты, которые следует установить на виртуальной машине, а также параметры настройки узла. На каждом целевом узле, который обрабатывает запрашиваемые действия на основе отправленных конфигураций, выполняется модуль локального диспетчера конфигураций (LCM).
 
-Расширение PowerShell DSC позволяет настроить экземпляры виртуальных машин в масштабируемом наборе с помощью PowerShell. Следующий пример:
+Расширение PowerShell DSC позволяет настроить экземпляры виртуальных машин в масштабируемом наборе с помощью PowerShell. В следующем примере происходит следующее:
 
-- Указывает, что экземпляры виртуальной машины должны загрузить пакет DSC с GitHub: *https://github.com/Azure-Samples/compute-automation-configurations/raw/master/dsc.zip*
+- Предписывает экземплярам виртуальных машин загрузить пакет DSC из GitHub-*https://github.com/Azure-Samples/compute-automation-configurations/raw/master/dsc.zip*
 - Настраивает расширение для запуска сценария установки: `configure-http.ps1`.
 - Получает сведения о масштабируемом наборе с помощью командлета [Get-AzVmss](/powershell/module/az.compute/get-azvmss).
 - Применяет расширение к экземплярам виртуальных машин с помощью командлета [Update-AzVmss](/powershell/module/az.compute/update-azvmss).

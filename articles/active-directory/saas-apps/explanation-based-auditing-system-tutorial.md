@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 02/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 49c15365b60359bc393dcd854c7f9487810f0a7d
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73156310"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-explanation-based-auditing-system"></a>Руководство по Интеграция Azure Active Directory с Explanation-Based Auditing System
@@ -38,7 +38,7 @@ ms.locfileid: "73156310"
 
 Чтобы настроить интеграцию Azure AD с GTNexus Explanation-Based Auditing System, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Explanation-Based Auditing System с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,7 +101,7 @@ ms.locfileid: "73156310"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
@@ -115,7 +115,7 @@ ms.locfileid: "73156310"
 
 ### <a name="configure-explanation-based-auditing-system-single-sign-on"></a>Настройка единого входа в Explanation-Based Auditing System
 
-Чтобы настроить единый вход на стороне **Explanation-Based Auditing System**, нужно отправить **URL-адрес метаданных федерации приложений** [группе поддержки Explanation-Based Auditing System](mailto:support@maizeanalytics.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Explanation-Based Auditing System**, нужно отправить **URL-адрес метаданных федерации приложений**[группе поддержки Explanation-Based Auditing System](mailto:support@maizeanalytics.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

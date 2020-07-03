@@ -1,6 +1,6 @@
 ---
-title: Решения Azure VMware (AVS) — выделение общедоступных IP-адресов
-description: В этой статье описывается, как выделить общедоступные IP-адреса для виртуальных машин в среде частного облака AVS.
+title: Решение VMware для Azure от Клаудсимпле — выделение общедоступных IP-адресов
+description: В этой статье описывается, как выделить общедоступные IP-адреса для виртуальных машин в среде частного облака.
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 08/15/2019
@@ -8,18 +8,18 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 87133f5efb9f096d3fdb0956aab1caac58b4bd94
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 565c9ad0fbd37b026a1ba555d83b9032d2efcba4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77024302"
 ---
-# <a name="allocate-public-ip-addresses-for-avs-private-cloud-environment"></a>Выделение общедоступных IP-адресов для среды частного облака AVS
+# <a name="allocate-public-ip-addresses-for-private-cloud-environment"></a>Выделение общедоступных IP-адресов для среды частного облака
 
-Откройте вкладку общедоступные IP-адреса на странице "сеть", чтобы выделить общедоступные для виртуальных машин виртуальные машины в среде частного облака AVS.
+Откройте вкладку общедоступные IP-адреса на странице сеть, чтобы выделить общедоступные для виртуальных машин виртуальные машины в среде частного облака.
 
-1. [Откройте портал AVS](access-cloudsimple-portal.md) и выберите **сеть** в боковом меню.
+1. [Откройте портал клаудсимпле](access-cloudsimple-portal.md) и выберите **сеть** в боковом меню.
 2. Выберите **общедоступные IP-адреса**.
 3. Щелкните **новый общедоступный IP-адрес**.
 

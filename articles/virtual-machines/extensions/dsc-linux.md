@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 102433b88ffb140cae46433be1c0edef90857e6d
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 2f04b5ecb2019a77bbb38e97c3869cc0a9447955
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75969934"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79250625"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft. OSTCExtensions. Дскфорлинукс)
 
@@ -38,13 +38,13 @@ ms.locfileid: "75969934"
 
  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 ### <a name="operating-system"></a>Операционная система
 
 Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
 
-| Дистрибуция | Версия |
+| Distribution | Версия |
 |---|---|
 | Debian | Все версии |
 | Ubuntu| 18,04 |
@@ -59,11 +59,11 @@ ms.locfileid: "75969934"
 
 Ниже приведены все поддерживаемые параметры открытой конфигурации:
 
-* `FileUri`: (необязательный, строковый) универсальный код ресурса (URI) MOF-файла, файла meta MOF или настраиваемого ZIP-файла ресурса.
-* `ResourceName`: (необязательный, строковый) имя пользовательского модуля ресурсов.
+* `FileUri`: (необязательно, строка) URI MOF-файла, файла meta MOF или ZIP-файла настраиваемого ресурса.
+* `ResourceName`— (необязательно, строка) имя пользовательского модуля ресурсов.
 * `ExtensionAction` (необязательный, строчный): указывает, что делает расширения. Допустимые значения: Register, Push, Pull, install и Remove. Если он не указан, по умолчанию он считается действием Push.
-* `NodeConfigurationName`: (необязательный, строковый) имя конфигурации узла, которую нужно применить.
-* `RefreshFrequencyMins`: (необязательный, int) указывает частоту (в минутах), с которой DSC пытается получить конфигурацию с опрашивающего сервера. 
+* `NodeConfigurationName`: (необязательный, строка) имя конфигурации узла, которую необходимо применить.
+* `RefreshFrequencyMins`: (необязательный, int) указывает периодичность (в минутах), с которой DSC пытается получить конфигурацию с опрашивающего сервера. 
        Если конфигурация на опрашивающем сервере отличается от текущей на целевом узле, она копируется в ожидающее хранилище и применяется.
 * `ConfigurationMode` (необязательный, строчный): указывает, каким образом DSC следует применить конфигурацию. Допустимые значения: ApplyOnly, ApplyAndMonitor и ApplyAndAutoCorrect.
 * `ConfigurationModeFrequencyMins` (необязательный, целочисленный): указывает интервал (в минутах), с которым DSC проверяет, что конфигурация находится в требуемом состоянии.
@@ -76,10 +76,10 @@ ms.locfileid: "75969934"
 
 Ниже приведены все поддерживаемые параметры защищенной конфигурации:
 
-* `StorageAccountName`: (необязательно, String) имя учетной записи хранения, содержащей файл
+* `StorageAccountName`— (необязательно, строка) имя учетной записи хранения, содержащей файл
 * `StorageAccountKey`: (необязательный, строковый) ключ учетной записи хранения, содержащей файл
-* `RegistrationUrl`(необязательный, строковый) URL-адрес учетной записи службы автоматизации Azure.
-* `RegistrationKey`(необязательный, строковый) ключ доступа учетной записи службы автоматизации Azure.
+* `RegistrationUrl`(необязательно, строка) URL-адрес учетной записи службы автоматизации Azure.
+* `RegistrationKey`(необязательно, строка) ключ доступа учетной записи службы автоматизации Azure.
 
 
 ## <a name="scenarios"></a>Сценарии
@@ -290,6 +290,9 @@ $publicConfig = '{
 Перед развертыванием расширения Дскфорлинукс настройте `public.json` и `protected.json` в соответствии с различными сценариями в разделе 3.
 
 #### <a name="classic"></a>Классический
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 Классический режим развертывания также называется режимом управления службами Azure. Его можно включить с помощью команды:
 ```
 $ azure config mode asm
@@ -306,7 +309,7 @@ $ azure vm extension set <vm-name> DSCForLinux Microsoft.OSTCExtensions <version
 $ azure vm extension list
 ```
 
-#### <a name="resource-manager"></a>Диспетчер ресурсов
+#### <a name="resource-manager"></a>Resource Manager
 Чтобы переключиться в режим Azure Resource Manager, выполните команду:
 ```
 $ azure config mode arm
@@ -363,7 +366,7 @@ Set-AzureVMExtension -ExtensionName $extensionName -VM $vm -Publisher $publisher
   -PublicConfiguration $publicConfig | Update-AzureVM
 ```
 
-#### <a name="resource-manager"></a>Диспетчер ресурсов
+#### <a name="resource-manager"></a>Resource Manager
 
 Вы можете войти в учетную запись Azure в Azure Resource Managerном режиме, выполнив команду:
 
@@ -428,7 +431,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 ### <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Сведения об использовании службы поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

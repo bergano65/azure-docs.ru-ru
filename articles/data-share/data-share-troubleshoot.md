@@ -8,10 +8,10 @@ ms.service: data-share
 ms.topic: troubleshooting
 ms.date: 07/10/2019
 ms.openlocfilehash: 901f2b56bc045dc9a9837dd18b2e6ce7169aa3b9
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76964232"
 ---
 # <a name="troubleshoot-common-issues-in-azure-data-share"></a>Устранение распространенных неполадок в общей папке данных Azure 
@@ -60,7 +60,7 @@ ms.locfileid: "76964232"
 
 Для совместного использования на основе SQL требуются дополнительные разрешения. Дополнительные сведения см. в разделе Устранение неполадок совместного использования на основе SQL.
 
-## <a name="troubleshooting-sql-based-sharing"></a>Устранение неполадок совместного использования на основе SQL
+## <a name="troubleshooting-sql-based-sharing"></a>Устранение неполадок с совместным использованием на основе SQL
 
 "Пользователь x не существует в базе данных SQL"
 
@@ -78,7 +78,7 @@ ms.locfileid: "76964232"
     exec sp_addrolemember db_datawriter, "<share_acc_name>"; 
     exec sp_addrolemember db_ddladmin, "<share_acc_name>";
 ```
-Обратите внимание, что *< share_acc_name >* — имя общего ресурса данных.      
+Обратите внимание на то, что *<share_acc_name>* — это имя вашего ресурса Data Share.      
 
 Убедитесь, что выполнены все предварительные требования, указанные в руководстве [общий доступ к данным](share-your-data.md) и [прием и получение данных](subscribe-to-data-share.md) .
 
@@ -87,7 +87,7 @@ ms.locfileid: "76964232"
 
 Если сообщение об ошибке связано с разрешениями, убедитесь, что служба общего доступа к данным имеет необходимые разрешения. Дополнительные сведения см. в разделе [роли и требования](concepts-roles-permissions.md) . Если вы впервые занимаетесь созданием моментального снимка, вам может потребоваться несколько минут для предоставления общему ресурсу данных доступа к хранилищу данных Azure. Подождите несколько минут и повторите попытку.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать, как приступить к обмену данными, перейдите к [этому](share-your-data.md) руководству. 
 

@@ -3,17 +3,16 @@ title: Пример диаграммы метрик Azure Monitor
 description: Сведения о визуализации данных Azure Monitor.
 author: vgorbenko
 services: azure-monitor
-ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 8cc653b8e5d2c239243bf6a09955b10011c7408b
-ms.sourcegitcommit: 36eb583994af0f25a04df29573ee44fbe13bd06e
+ms.openlocfilehash: 1aaeb853a67b36a21a09db57e015029d10cd0c36
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74538965"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77660876"
 ---
 # <a name="metric-chart-examples"></a>Примеры диаграмм метрик 
 
@@ -51,7 +50,7 @@ ms.locfileid: "74538965"
 
 Во время выбора метрики необходимо выбрать учетную запись хранения и метрику **Транзакции**. Измените тип диаграммы на **Линейчатая диаграмма**. Щелкните **Apply splitting** (Применить разделение) и выберите **API-имя** измерения. После этого щелкните **Добавить фильтр** и еще раз выберите измерение **API-имя**. В диалоговом окне фильтра выберите API, которые необходимо отобразить на диаграмме.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о Azure Monitor см. в статье [Создание интерактивных отчетов с книгами Azure Monitor](../../azure-monitor/app/usage-workbooks.md).
 * Ознакомьтесь со статьей [Обозреватель метрик Azure Monitor](metrics-charts.md).

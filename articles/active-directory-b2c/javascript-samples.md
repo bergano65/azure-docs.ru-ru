@@ -3,20 +3,20 @@ title: Примеры для JavaScript
 titleSuffix: Azure AD B2C
 description: Узнайте, как использовать JavaScript в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1381ddb16697b1e892794604bbfafda815bd6182
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: a26f6c5e69ca083335580a0368459e062de3941e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77149085"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78187667"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Примеры JavaScript для Azure Active Directory B2C
 
@@ -30,18 +30,18 @@ ms.locfileid: "77149085"
 * Выберите [Макет страницы](page-layout.md)
 * Использование [b2clogin.com](b2clogin.md) в запросах
 
-В этой статье описывается, как изменить пользовательскую политику, чтобы включить выполнение скрипта.
+В этой статье объясняется, как изменить настраиваемые политики, чтобы разрешить выполнение сценариев.
 
 > [!NOTE]
 > Если вы хотите включить JavaScript для потоков пользователей, см. раздел [версии JavaScript и страницы в Azure Active Directory B2C](user-flow-javascript-overview.md).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="select-a-page-layout"></a>Выберите макет страницы
 
 * Выберите [Макет страницы](contentdefinitions.md#select-a-page-layout) для элементов пользовательского интерфейса приложения.
 
-    Если вы планируете использовать JavaScript, необходимо [определить версию макета страницы](contentdefinitions.md#migrating-to-page-layout) со страницей `contract` версии для *всех* определений содержимого в пользовательской политике.
+    Если предполагается использовать JavaScript, необходимо [определить версию макета страницы](contentdefinitions.md#migrating-to-page-layout) с версией страницы `contract` для *всех* определений содержимого в пользовательской политике.
 
 ## <a name="add-the-scriptexecution-element"></a>Добавление элемента ScriptExecution
 

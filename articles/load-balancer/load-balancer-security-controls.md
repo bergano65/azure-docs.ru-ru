@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: allensu
 ms.openlocfilehash: 6043e574697489b6566641c352bc21a2b6d87f51
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74214899"
 ---
 # <a name="security-controls-for-azure-load-balancer"></a>Элементы управления безопасностью для Azure Load Balancer
@@ -34,15 +34,15 @@ ms.locfileid: "74214899"
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Yes | См. раздел [журналы Azure Monitor для общедоступной базовой Load Balancer](load-balancer-monitor-log.md). |
-| Ведение журнала и аудит в плоскости управления и управления| Yes | См. раздел [журналы Azure Monitor для общедоступной базовой Load Balancer](load-balancer-monitor-log.md). |
+| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | См. раздел [журналы Azure Monitor для общедоступной базовой Load Balancer](load-balancer-monitor-log.md). |
+| Ведение журнала и аудит в плоскости управления и управления| Да | См. раздел [журналы Azure Monitor для общедоступной базовой Load Balancer](load-balancer-monitor-log.md). |
 | Ведение журнала и аудит в плоскости данных | Недоступно |  |
 
-## <a name="identity"></a>Удостоверение
+## <a name="identity"></a>Идентификация
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Проверка подлинности| Недоступно |  |
+| Аутентификация| Недоступно |  |
 | Авторизация| Недоступно |  |
 
 ## <a name="data-protection"></a>Защита данных
@@ -53,7 +53,7 @@ ms.locfileid: "74214899"
 | Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Недоступно | |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Недоступно | |
 | Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |
-| Вызовы API в зашифрованном виде| Yes | Через [Azure Resource Manager](../azure-resource-manager/index.yml). |
+| Вызовы API в зашифрованном виде| Да | Через [Azure Resource Manager](../azure-resource-manager/index.yml). |
 
 ## <a name="configuration-management"></a>Управление конфигурацией
 
@@ -61,6 +61,6 @@ ms.locfileid: "74214899"
 |---|---|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Недоступно |  | 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: f0029fcf8e9efdea529212a7cca49cc8660c623f
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: 3b377f87bdba40c90cb3af6caef2c089d7b7de49
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74276968"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77615494"
 ---
 # <a name="tutorial-share-azure-spatial-anchors-across-sessions-and-devices"></a>Руководство по Совместное использование Пространственных привязок Azure между сеансами и устройствами
 
@@ -28,7 +28,7 @@ ms.locfileid: "74276968"
 > [!div class="checklist"]
 > * Развернуть веб-приложение ASP.NET Core в Azure, которое можно использовать для обмена привязками, храня их в памяти в течение некоторого времени.
 > * Настроить сцену AzureSpatialAnchorsLocalSharedDemo в примере Unity из наших кратких руководств, чтобы воспользоваться преимуществами веб-приложения для совместного использования пространственных привязок.
-> * Развернуть и запустить привязку на одном или нескольких устройствах.
+> * развернуть и запустить привязку на одном или нескольких устройствах.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -44,13 +44,13 @@ ms.locfileid: "74276968"
 
 ## <a name="deploy-your-sharing-anchors-service"></a>Развертывание службы совместного использования привязок
 
-## <a name="visual-studiotabvs"></a>[Visual Studio](#tab/VS)
+## <a name="visual-studio"></a>[Visual Studio](#tab/VS)
 
 Откройте Visual Studio, а затем откройте проект в папке `Sharing\SharingServiceSample`.
 
 [!INCLUDE [Publish Azure](../../../includes/spatial-anchors-publish-azure.md)]
 
-## <a name="visual-studio-codetabvsc"></a>[Visual Studio Code](#tab/VSC)
+## <a name="visual-studio-code"></a>[Visual Studio Code](#tab/VSC)
 
 Перед развертыванием службы в VS Code необходимо создать группу ресурсов и план службы приложений.
 
@@ -74,13 +74,13 @@ ms.locfileid: "74276968"
 
 В диалоговом окне **Настройка плана размещения** используйте следующие параметры:
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ |
+| Параметр | Рекомендуемое значение | Описание |
 |-|-|-|
 |План обслуживания приложения| MySharingServicePlan | Имя плана службы приложений. |
-| Location | Запад США | Центр обработки данных, где размещается веб-приложение. |
+| Расположение | западная часть США | Центр обработки данных, где размещается веб-приложение. |
 | Размер | Free | [Ценовая категория](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), которая определяет возможности размещения. |
 
-Нажмите кнопку **ОК**.
+Щелкните **ОК**.
 
 Откройте Visual Studio Code, а затем откройте проект в папке `Sharing\SharingServiceSample`. Выполните действия в <a href="https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vscode?view=aspnetcore-2.2#open-it-with-visual-studio-code" target="_blank">этом руководстве</a>, чтобы развернуть службу общего доступа с помощью Visual Studio Code. Вы можете выполнить шаги, начиная с раздела "Открыть в Visual Studio Code". Не создавайте еще один проект MVC, как описано в предыдущем шаге, поскольку у вас уже есть проект, который нужно развернуть и опубликовать — SharingServiceSample.
 
@@ -90,9 +90,15 @@ ms.locfileid: "74276968"
 
 [!INCLUDE [Run Share Anchors Sample](../../../includes/spatial-anchors-run-share-sample.md)]
 
+## <a name="troubleshooting"></a>Устранение неполадок
+
+### <a name="unity-20193"></a>Unity 2019.3
+
+Из-за критических изменений сейчас Unity 2019.3 не поддерживается. Используйте Unity 2019.1 или 2019.2.
+
 [!INCLUDE [Clean-up section](../../../includes/clean-up-section-portal.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы развернули веб-приложение ASP.NET Core в Azure, а затем настроили и развернули приложение Unity. Вы создали в приложении пространственные привязки и предоставили к ним доступ другим устройствам с помощью веб-приложения ASP.NET Core.
 

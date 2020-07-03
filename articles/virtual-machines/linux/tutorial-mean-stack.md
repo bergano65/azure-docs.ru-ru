@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 08/08/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 50ccf0d6db5a50f7dd89732bc870ced6bcf1c2d7
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 9e0ed3454f11907c5f183f08fd2ec51db3384225
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034408"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80154327"
 ---
 # <a name="tutorial-create-a-mongodb-express-angularjs-and-nodejs-mean-stack-on-a-linux-virtual-machine-in-azure"></a>Руководство по Создание стека MongoDB, Express, AngularJS и Node.js (MEAN) на виртуальной машине Linux в Azure
 
@@ -89,7 +89,7 @@ ssh azureuser@13.72.77.9
 sudo apt-get install -y nodejs
 ```
 
-## <a name="install-mongodb-and-set-up-the-server"></a>Установка MongoDB и настройка сервера
+## <a name="install-mongodb-and-set-up-the-server"></a>установка MongoDB и настройка сервера;
 [MongoDB](https://www.mongodb.com) хранит данные в гибких документах, похожих на JSON-файлы. Поля в базе данных могут отличаться в разных документах, а структура данных может изменяться с течением времени. В нашем примере приложения мы добавляем записи в MongoDB, которые содержат имя книги, номер ISBN, имя автора и количество страниц. 
 
 1. На виртуальной машине с помощью оболочки Bash, открытой с использованием SSH, установите ключ MongoDB.
@@ -146,7 +146,7 @@ sudo apt-get install -y nodejs
     });
     ```
 
-## <a name="install-express-and-set-up-routes-to-the-server"></a>Установка Express и настройка маршрутов на сервер
+## <a name="install-express-and-set-up-routes-to-the-server"></a>установка Express и настройка маршрутов на сервер;
 
 [Express](https://expressjs.com) — это небольшая гибкая платформа веб-приложений Node.js, которая предоставляет функции для веб-приложений и мобильных приложений. В этом руководстве Express используется для передачи сведений о книге в базу данных MongoDB и обратно. [Mongoose](https://mongoosejs.com) представляет собой простое решение на основе схемы для моделирования данных приложения. В этом руководстве Mongoose используется, чтобы предоставить схему книг для базы данных.
 
@@ -327,7 +327,7 @@ sudo apt-get install -y nodejs
 
     ![Запись о книге](media/tutorial-mean/meanstack-init.png)
 
-3. Введите данные в текстовые поля и нажмите кнопку **Добавить**. Например:
+3. Введите данные в текстовые поля и нажмите кнопку **Добавить**. Пример:
 
     ![Добавление записи о книге](media/tutorial-mean/meanstack-add.png)
 
@@ -337,9 +337,9 @@ sudo apt-get install -y nodejs
 
 5. Можно нажать кнопку **Удалить**, чтобы удалить запись о книге из базы данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках этого руководства вы создали веб-приложение, отслеживающее записи о книгах, с помощью стека MEAN на виртуальной машине Linux. Вы научились выполнять следующие задачи:
+В рамках этого руководства вы создали веб-приложение, отслеживающее записи о книгах, с помощью стека MEAN на виртуальной машине Linux. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины Linux
@@ -349,7 +349,7 @@ sudo apt-get install -y nodejs
 > * получение доступа к маршрутам с помощью AngularJS;
 > * Выполнение приложения
 
-Перейдите к следующему руководству, чтобы узнать, как защитить веб-серверы с помощью SSL-сертификатов.
+Перейдите к следующему руководству, чтобы узнать, как защитить веб-серверы с помощью TLS-сертификатов.
 
 > [!div class="nextstepaction"]
-> [Secure a web server with SSL certificates on a Linux virtual machine in Azure](tutorial-secure-web-server.md) (Защита веб-сервера на виртуальной машине Linux в облаке Azure с помощью SSL-сертификата)
+> [Защита веб-сервера с помощью TLS](tutorial-secure-web-server.md)

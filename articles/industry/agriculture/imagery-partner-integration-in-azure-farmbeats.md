@@ -5,12 +5,13 @@ author: uhabiba04
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
-ms.openlocfilehash: 62e5b363f8008380a61e24c0549573a30ecaeb73
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.custom: has-adal-ref
+ms.openlocfilehash: 430907f43fb40f0ee24505bdc366a98a49f23b47
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77131855"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82613291"
 ---
 # <a name="imagery-partner-integration"></a>Интеграция с партнерскими решениями для получения снимков
 
@@ -61,30 +62,37 @@ headers = {"Authorization": "Bearer " + access_token, …} 
 В следующем примере кода Python извлекается маркер доступа. Затем можно использовать маркер для последующих вызовов API к Фармбеатс.
 
 ```python
-from azure.common.credentials import ServicePrincipalCredentials 
-import adal 
-#FarmBeats API Endpoint 
-ENDPOINT = "https://<yourdatahub>.azurewebsites.net"   
-CLIENT_ID = "<Your Client ID>"   
-CLIENT_SECRET = "<Your Client Secret>"   
-TENANT_ID = "<Your Tenant ID>" 
-AUTHORITY_HOST = 'https://login.microsoftonline.com' 
-AUTHORITY = AUTHORITY_HOST + '/' + TENANT_ID 
-#Authenticating with the credentials 
-context = adal.AuthenticationContext(AUTHORITY) 
-token_response = context.acquire_token_with_client_credentials(ENDPOINT, CLIENT_ID, CLIENT_SECRET) 
-#Should get an access token here 
-access_token = token_response.get('accessToken') 
+import requests
+import json
+import msal
+
+# Your service principal App ID
+CLIENT_ID = "<CLIENT_ID>"
+# Your service principal password
+CLIENT_SECRET = "<CLIENT_SECRET>"
+# Tenant ID for your Azure subscription
+TENANT_ID = "<TENANT_ID>"
+
+AUTHORITY_HOST = 'https://login.microsoftonline.com'
+AUTHORITY = AUTHORITY_HOST + '/' + TENANT_ID
+
+ENDPOINT = "https://<yourfarmbeatswebsitename-api>.azurewebsites.net"
+SCOPE = ENDPOINT + "/.default"
+
+context = msal.ConfidentialClientApplication(CLIENT_ID, authority=AUTHORITY, client_credential=CLIENT_SECRET)
+token_response = context.acquire_token_for_client(SCOPE)
+# We should get an access token here
+access_token = token_response.get('access_token')
 ```
 
 ## <a name="http-request-headers"></a>Заголовки HTTP-запросов
 
 Ниже приведены наиболее распространенные заголовки запросов, которые необходимо указать при вызове API в Фармбеатс Датахуб.
 
-**Верхняя часть** | **Описание и пример**
+**Заголовок** | **Описание и пример**
 --- | ---
 Content-Type  | Формат запроса (Content-Type: Application/<format>). Для API-интерфейсов Фармбеатс Датахуб используется формат JSON. Content-Type: application/json
-Авторизация | Указывает маркер доступа, необходимый для выполнения вызова API. Авторизация: носитель < доступ — токен >
+Авторизация | Указывает маркер доступа, необходимый для выполнения вызова API. Авторизация: носитель <доступ — токен>
 Принять  | Формат ответа. Для API-интерфейсов Фармбеатс Датахуб используется формат JSON. Принять: приложение/JSON
 
 
@@ -113,10 +121,10 @@ curl -X GET "https://microsoft-farmbeats.azurewebsites.net/Device" -H
 
 
 ```bash
-curl -X POST "https://microsoft-farmbeats.azurewebsites.net/Device" -H  
-"accept: application/json" -H  
+curl -X POST "https://microsoft-farmbeats.azurewebsites.net/Device" -H
+"accept: application/json" -H
 "Content-Type: application/json" -H "Authorization: Bearer <Access-Token>" -d
-"{  \"deviceModelId\": \"ID123\",  \"hardwareId\": \"MHDN123\",  \"reportingInterval\": 900,  
+"{  \"deviceModelId\": \"ID123\",  \"hardwareId\": \"MHDN123\",  \"reportingInterval\": 900,
 \"name\": \"Device123\",  \"description\": \"Test Device 123\",}"
 ```
 

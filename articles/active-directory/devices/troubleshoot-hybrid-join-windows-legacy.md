@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e168deea1ba442d48f483264c1e97ce618040f18
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74379117"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
@@ -23,20 +23,20 @@ ms.locfileid: "74379117"
 Эта статья касается только устройств под управлением следующих ОС: 
 
 - Windows 7 
-- Windows 8.1 
+- Windows 8.1 
 - Windows Server 2008 R2 
-- Windows Server 2012 
+- Windows Server 2012 
 - Windows Server 2012 R2 
 
 Сведения об устройствах под управлением Windows 10 и Windows Server 2016 см. в статье [Troubleshooting hybrid Azure Active Directory joined Windows 10 and Windows Server 2016 devices](troubleshoot-hybrid-join-windows-current.md) (Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory).
 
 В этой статье предполагается, что вы [настроили гибридное присоединение устройств к Azure Active Directory](hybrid-azuread-join-plan.md) для поддержки следующих сценариев:
 
-- Условный доступ на основе устройств
+- Условный доступ на основе информации об устройстве
 
 В этой статье содержатся рекомендации по устранению неполадок для решения потенциальных проблем.  
 
-**Важная информация** 
+**Что следует учитывать:** 
 
 - Гибридное присоединение к Azure AD на устройствах Windows нижнего уровня работают несколько иначе, чем в Windows 10. Многие клиенты не понимают, что им нужно настроить AD FS (для федеративных доменов) или эффективный единый вход (для управляемых доменов).
 - Для клиентов с федеративными доменами, если точка подключения к службе (SCP) настроена таким образом, что она указывает на управляемое доменное имя (например, contoso.onmicrosoft.com, а не contoso.com), тогда гибридное присоединение к Azure AD на устройствах Windows нижнего уровня не будет работать.
@@ -103,6 +103,6 @@ ms.locfileid: "74379117"
    - или, если ваш домен управляемый, то эффективный SSO не был настроен или не работает;
    - пользователь достиг предела подключенных устройств. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ответы на вопросы можно найти в статье [Azure Active Directory device management FAQ](faq.md) (Часто задаваемые вопросы по управлению устройствами Azure Active Directory).  

@@ -13,10 +13,10 @@ ms.author: baselden
 ms.reviewer: plenzke
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5ad84b8910e8d4f8af9845c33c22d128e317dedc
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74232111"
 ---
 # <a name="plan-an-azure-active-directory-reporting-and-monitoring-deployment"></a>Планирование развертывания Azure Active Directory отчетов и мониторинга
@@ -61,7 +61,7 @@ ms.locfileid: "74232111"
 
 В зависимости от конечного назначения данных журнала необходимо иметь одно из следующих значений:
 
-* Учетная запись хранения Azure, для которой у вас есть разрешения ListKeys. Рекомендуется использовать общую учетную запись хранения вместо учетной записи хранилища BLOB-объектов. Информацию о ценах на хранение можно узнать на странице [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/?service=storage).
+* Учетная запись хранения Azure, для которой имеется разрешение ListKeys. Рекомендуется использовать общую учетную запись хранения вместо учетной записи хранилища BLOB-объектов. Информацию о ценах на хранение можно узнать на странице [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/?service=storage).
 
 * Пространство имен концентраторов событий Azure для интеграции со сторонними решениями SIEM.
 
@@ -75,7 +75,7 @@ ms.locfileid: "74232111"
 
 При сбое технологических проектов они обычно делают это из-за несовпадения ожидания, результатов и обязанностей. Чтобы избежать этих ловушек, [Убедитесь, что вы подрабатываете нужные заинтересованные лица](https://aka.ms/deploymentplans). Также убедитесь, что роли заинтересованных лиц в проекте хорошо понятны, путем документирования заинтересованных лиц, а также их ввода и подотчетности.
 
-### <a name="plan-communications"></a>Планирование информирования
+### <a name="plan-communications"></a>Планирование обмена данными
 
 Связь важна для успеха любой новой службы. Заблаговременное взаимодействие с пользователями, как изменится их опыт, когда изменится, и как получить поддержку в случае возникновения проблем.
 
@@ -97,13 +97,13 @@ ms.locfileid: "74232111"
 
 * Требуется для решения в соответствии с бизнес-потребностями
 * Приятно, чтобы удовлетворить потребности бизнеса
-* Не применяется
+* Неприменимо
 
-|Область |ОПИСАНИЕ |
+|Область |Описание |
 |-|-|
 |Сохранение| **Срок хранения журнала более 30 дней**. Из-за юридических или бизнес-требований необходимо хранить журналы аудита и журналы входа Azure AD дольше 30 дней. |
-|Аналитика| **Журналы должны иметь возможность поиска**. Сохраненные журналы должны поддерживать поиск с помощью аналитических средств. |
-| Operational Insights;| **Аналитика для различных команд**. Необходимо предоставить доступ различным пользователям для получения оперативной аналитики, такой как использование приложения, ошибки входа, использование самообслуживания, тенденции и т. д. |
+|Analytics| **Журналы должны иметь возможность поиска**. Сохраненные журналы должны поддерживать поиск с помощью аналитических средств. |
+| Operational Insights| **Аналитика для различных команд**. Необходимо предоставить доступ различным пользователям для получения оперативной аналитики, такой как использование приложения, ошибки входа, использование самообслуживания, тенденции и т. д. |
 | Аналитика безопасности| **Аналитика для различных команд**. Необходимо предоставить доступ различным пользователям для получения оперативной аналитики, такой как использование приложения, ошибки входа, использование самостоятельной службы, тенденции и т. д. |
 | Интеграция в SIEM Systems      | **Интеграция SIEM**. Необходимо интегрировать и выполнять потоковую передачу журналов входа и журналов аудита Azure AD в существующие системы SIEM. |
 
@@ -111,7 +111,7 @@ ms.locfileid: "74232111"
 
 С помощью мониторинга Azure AD вы можете направить журналы действий Azure AD в систему, которая наилучшим образом соответствует вашим бизнес-потребностям. Затем их можно хранить для долгосрочной отчетности и анализа, чтобы получить ценные сведения о среде и интегрировать ее с SIEM инструментами.
 
-#### <a name="decision-flow-chartan-image-showing-what-is-described-in-subsequent-sectionsmediareporting-deployment-plandeploy-reporting-flow-diagrampng"></a>Схема потока принятия решений![Изображение, показывающее, что описано в последующих разделах](media/reporting-deployment-plan/deploy-reporting-flow-diagram.png)
+#### <a name="decision-flow-chartan-image-showing-what-is-described-in-subsequent-sections"></a>Схема потока принятия решений![Изображение, показывающее, что описано в последующих разделах](media/reporting-deployment-plan/deploy-reporting-flow-diagram.png)
 
 #### <a name="archive-logs-in-a-storage-account"></a>Архивация журналов в учетной записи хранения
 
@@ -119,7 +119,7 @@ ms.locfileid: "74232111"
 
 См. сведения о том, как [направлять данные в учетную запись хранения](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-azure-monitor-route-logs-to-storage-account).
 
-#### <a name="send-logs-to-azure-monitor-logs"></a>Отправка журналов в журналы Azure Monitor
+#### <a name="send-logs-to-azure-monitor-logs"></a>Отправка данных в журналы Azure Monitor
 
 [Журналы Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) объединяют данные мониторинга из разных источников. Он также предоставляет язык запросов и модуль аналитики, позволяющие получить представление о работе приложений и использовании ресурсов. Отправляя журналы действий Azure AD в журналы Azure Monitor, можно быстро получать, отслеживать и оповещать собранные данные. Используйте этот метод, если у вас нет решения SIEM, которое планируется отправить данные напрямую, но требуется выполнить запросы и анализ. После того как данные находятся в журналах Azure Monitor, их можно отправить в концентратор событий и из SIEM, если хотите.
 
@@ -149,7 +149,7 @@ ms.locfileid: "74232111"
 
 * Читатель сведений о безопасности
 
-* Средство чтения отчетов
+* Средство просмотра отчетов
 
 Дополнительные сведения об [административных ролях Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
 
@@ -171,11 +171,11 @@ ms.locfileid: "74232111"
 
 [Отправка журналов в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
 
-[Установка и использование представлений Log Analytics для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-install-use-log-analytics-views)
+[Установка и использование представлений log Analytics для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-install-use-log-analytics-views)
 
 [Анализ журналов действий Azure AD с помощью журналов Azure Monitor (предварительная версия)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-analyze-activity-logs-log-analytics)
 
-* [Interpret the Azure AD audit logs schema in Azure Monitor (preview)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema) (Интерпретация схемы журналов аудита Azure Active Directory в Azure Monitor (предварительная версия))
+* [Анализ схемы журналов аудита в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema)
 
 * [Анализ схемы журналов входа в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-azure-monitor-sign-ins-log-schema)
 
@@ -189,7 +189,7 @@ ms.locfileid: "74232111"
 
  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте реализовать [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-configure) 
 

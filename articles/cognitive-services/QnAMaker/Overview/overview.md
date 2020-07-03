@@ -1,23 +1,18 @@
 ---
 title: Общие сведения о службе QnA Maker
-titleSuffix: Azure Cognitive Services
 description: QnA Maker — это облачная служба обработки естественного языка, которая позволяет легко создавать слой беседы на основе пользовательских данных. Ее можно использовать для поиска в пользовательской базе знаний наиболее подходящего ответа на вопрос, заданный на естественном языке.
-services: cognitive-services
-author: diberry
-manager: nitinme
-ms.service: cognitive-services
-ms.subservice: qna-maker
 ms.topic: overview
-ms.date: 11/22/2019
-ms.author: diberry
-ms.openlocfilehash: 7bac2546ac35f5f188a6490c4d9ecb2b86d7bb2d
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.date: 05/26/2020
+ms.openlocfilehash: 5962ab2294a19c600beb00816394d96059bd4108
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843062"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873727"
 ---
 # <a name="what-is-the-qna-maker-service"></a>Общие сведения о службе QnA Maker
+
+[!INCLUDE [TLS 1.2 enforcement](../../../../includes/cognitive-services-tls-announcement.md)]
 
 QnA Maker — это облачная служба обработки естественного языка (NLP), которая позволяет легко создавать слой беседы на основе пользовательских данных. Ее можно использовать для поиска в пользовательской базе знаний наиболее подходящего ответа на вопрос, заданный на естественном языке.
 
@@ -77,6 +72,10 @@ QnA Maker [импортирует содержимое](../concepts/knowledge-ba
 ## <a name="development-lifecycle"></a>Жизненный цикл разработки
 
 QnA Maker обеспечивает возможности разработки, обучения, публикации и совместной работы для интеграции в полный жизненный цикл разработки.
+
+> [!div class="mx-imgBorder"]
+> ![Схематическое изображение цикла разработки](../media/qnamaker-overview-learnabout/development-cycle.png)
+
 
 ## <a name="how-do-i-start"></a>С чего начать
 

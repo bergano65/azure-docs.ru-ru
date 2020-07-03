@@ -1,28 +1,31 @@
 ---
 title: Методы проверки подлинности | Карты Microsoft Azure
 description: В этой статье вы узнаете о Azure Active Directory (Azure AD) и проверке подлинности с помощью общего ключа. Оба используются для служб Microsoft Azure Maps. Узнайте, как получить ключ подписки Azure Maps.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 01/28/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: ee8b166077c64ae5e0f2cce18ee0bc77e8c996f4
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 21d29cba85adfc147ec9deb6ab362a5da943bf10
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77210129"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80335702"
 ---
 # <a name="authentication-with-azure-maps"></a>Аутентификация в Azure Maps
 
 Azure Maps поддерживает два способа проверки подлинности запросов: Аутентификация с помощью общего ключа и проверка подлинности Azure Active Directory. В этой статье объясняются методы проверки подлинности, которые помогут вам реализовать Azure Maps служб.
 
+> [!NOTE]
+> Чтобы улучшить безопасное взаимодействие с Azure Maps, мы теперь поддерживаем протокол TLS 1,2, и мы исправим поддержку TLS 1,0 и 1,1. Чтобы избежать перерывов в работе служб, **Обновите серверы и приложения, чтобы использовать TLS 1,2 до 2 апреля 2020**.  Если в настоящее время используется TLS 1. x, оцените готовность TLS 1,2 и разработайте план миграции с помощью тестирования, описанного в статье [решение проблемы tls 1,0](https://docs.microsoft.com/security/solving-tls1-problem).
+
 ## <a name="shared-key-authentication"></a>Аутентификация на основе общего ключа
 
- Первичные и вторичные ключи создаются после создания учетной записи Azure Maps. Рекомендуется использовать первичный ключ в качестве ключа подписки при вызове Azure Maps с помощью проверки подлинности с использованием общего ключа. Проверка подлинности с помощью общего ключа передает ключ, созданный учетной записью Azure Maps, в службу Azure Maps. Для каждого запроса к Azure Maps службам добавьте *ключ подписки* в качестве параметра в URL-адрес. Вторичный ключ можно использовать в таких сценариях, как изменение ключевых изменений.  
+ Первичные и вторичные ключи создаются после создания учетной записи Azure Maps. Рекомендуется использовать первичный ключ в качестве ключа подписки при вызове Azure Maps с помощью проверки подлинности с использованием общего ключа. Проверка подлинности с помощью общего ключа передает ключ, созданный учетной записью Azure Maps, в службу Azure Maps. Для каждого запроса к Azure Maps службам добавьте *ключ подписки* в качестве параметра в URL-адрес. Вторичный ключ можно использовать в таких сценариях, как изменение ключевых изменений.  
 
 Сведения о просмотре ключей в портал Azure см. в разделе [Управление проверкой подлинности](https://aka.ms/amauthdetails).
 
@@ -88,7 +91,7 @@ Authorization: Bearer eyJ0e….HNIVN
 
 [Управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) предоставляют службы Azure с автоматически управляемым удостоверением, которое может быть разрешено для доступа к службам Azure Maps. Примеры управляемых удостоверений: служба приложений Azure, функции Azure и виртуальные машины Azure.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения об аутентификации приложения в Azure AD и Azure Maps см. в статье об [управлении аутентификацией](https://docs.microsoft.com/azure/azure-maps/how-to-manage-authentication).
 

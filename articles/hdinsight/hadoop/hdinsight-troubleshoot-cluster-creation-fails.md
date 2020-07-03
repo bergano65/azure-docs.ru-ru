@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: troubleshooting
-ms.date: 08/26/2019
-ms.openlocfilehash: 1e13c7ef8eae81ef2a12a8761b0596f6329f94dc
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.date: 04/14/2020
+ms.openlocfilehash: 14b449590f6ffc5e735faa26baadfcc4e526450c
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76937910"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996412"
 ---
 # <a name="troubleshoot-cluster-creation-failures-with-azure-hdinsight"></a>Устранение сбоев при создании кластера с помощью Azure HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "76937910"
 
 ## <a name="permissions-issues"></a>Проблемы с разрешениями
 
-Если вы используете Azure Data Lake Storage 2-го поколения и получаете сообщение об ошибке ```AmbariClusterCreationFailedErrorCode```, ```Internal server error occurred while processing the request. Please retry the request or contact support.```, откройте портал Azure, перейдите к своей учетной записи хранения и в разделе Управление доступом (IAM) убедитесь, что **участник данных BLOB-объекта хранилища** или роль **владельца данных BLOB-объекта хранилища** назначили доступ к **управляемому удостоверению, назначенному пользователю** для подписки. Подробные инструкции см. в разделе о [настройке разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account).
+Если вы используете Azure Data Lake Storage 2-го поколения и получаете сообщение об ошибке `AmbariClusterCreationFailedErrorCode`":::no-loc text="Internal server error occurred while processing the request. Please retry the request or contact support.":::", откройте портал Azure, перейдите к своей учетной записи хранения и в разделе Управление доступом (IAM) убедитесь, что **участник данных BLOB-объектов хранилища** или роль **владельца данных BLOB-объекта хранилища** назначили пользователю доступ к **управляемому удостоверению** подписки. Подробные инструкции см. в разделе о [настройке разрешений для управляемого удостоверения в учетной записи Data Lake Storage 2-го поколения](../hdinsight-hadoop-use-data-lake-storage-gen2.md#set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account).
 
 Если вы используете Azure Data Lake Storage 1-го поколения, см. инструкции по настройке и настройке [здесь](../hdinsight-hadoop-use-data-lake-store.md). Data Lake Storage 1-го поколения не поддерживается для кластеров HBase и не поддерживается в HDInsight версии 4,0.
 
@@ -51,12 +51,12 @@ ms.locfileid: "76937910"
 
 Разрешить трафик с IP-адресов, указанных в таблице ниже.
 
-| Исходный IP-адрес | Место назначения | Направление |
+| Исходный IP-адрес | Назначение | Направление |
 |---|---|---|
-| 168.61.49.99 | *: 443 | Вход. |
-| 23.99.5.239 | *: 443 | Вход. |
-| 168.61.48.131 | *: 443 | Вход. |
-| 138.91.141.162 | *: 443 | Вход. |
+| 168.61.49.99 | *: 443 | Входящий трафик |
+| 23.99.5.239 | *: 443 | Входящий трафик |
+| 168.61.48.131 | *: 443 | Входящий трафик |
+| 138.91.141.162 | *: 443 | Входящий трафик |
 
 Также добавьте IP-адреса, относящиеся к региону, в котором создается кластер. Список адресов для каждого региона Azure см. в разделе [IP-адреса управления HDInsight](../hdinsight-management-ip-addresses.md) .
 
@@ -68,7 +68,7 @@ ms.locfileid: "76937910"
 
 ## <a name="unsupported-component-versions"></a>Неподдерживаемые версии компонентов
 
-Убедитесь, что вы используете [поддерживаемую версию Azure HDInsight](../hdinsight-component-versioning.md) и все [компоненты Apache Hadoop](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions) в решении.  
+Убедитесь, что вы используете [поддерживаемую версию Azure HDInsight](../hdinsight-component-versioning.md) и все [компоненты Apache Hadoop](../hdinsight-component-versioning.md#apache-components-available-with-different-hdinsight-versions) в решении.  
 
 ## <a name="storage-account-name-restrictions"></a>Ограничения имен учетных записей хранения
 
@@ -82,7 +82,7 @@ ms.locfileid: "76937910"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Расширение возможностей HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
+* [Расширение Azure HDInsight с помощью виртуальной сети Azure](../hdinsight-plan-virtual-network-deployment.md)
 * [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-storage-gen2.md)  
 * [Использование службы хранилища Azure с кластерами Azure HDInsight](../hdinsight-hadoop-use-blob-storage.md)
 * [Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md)

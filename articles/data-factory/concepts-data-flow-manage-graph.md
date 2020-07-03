@@ -7,14 +7,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/04/2019
-ms.openlocfilehash: da180bfb1aec29fa15b070fd73ba84d708ada927
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 0d357c4c671070a5c5e9d4587e2f90b6628996f4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74928307"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81605351"
 ---
 # <a name="mapping-data-flow-graphs"></a>Сопоставление графов потока данных
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Область конструктора «потоки данных сопоставления» — это область «строительство», в которой потоки данных создаются сверху вниз, слева направо. К каждому преобразованию прикреплена панель элементов со знаком плюс (+). Сосредоточьтесь на своей бизнес-логике, а не на соединении узлов через ребра в среде DAG свободной формы.
 
@@ -44,6 +46,6 @@ ms.locfileid: "74928307"
 
 ![Поиск](media/data-flow/search001.png "Граф поиска")
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После завершения проектирования потока данных Включите кнопку Отладка и протестируйте ее в режиме отладки либо непосредственно в [конструкторе потока данных](concepts-data-flow-debug-mode.md) , либо в окне [Отладка конвейера](control-flow-execute-data-flow-activity.md).

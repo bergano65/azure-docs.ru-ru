@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
@@ -9,13 +9,13 @@ ms.date: 09/26/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 0cf30666ab9950459f2a48f8fe271fd770f4efe1
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "71839203"
 ---
-| Resource |  Ограничение |
+| Ресурс |  Ограничение |
 | --- | --- |
 | Виртуальные глобальные концентраторы на регион | 1  |
 | Виртуальные глобальные концентраторы на виртуальную сеть глобальной сети |Регионы Azure |

@@ -8,10 +8,10 @@ ms.workload: storage
 ms.topic: quickstart
 ms.date: 12/01/2019
 ms.openlocfilehash: fc7f13fb7ffe1667aaeaa4a3cc1916c6049a98c1
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 03/26/2020
 ms.locfileid: "75551664"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
@@ -25,7 +25,7 @@ ms.locfileid: "75551664"
 - пула емкости;
 - тома NFS для Azure NetApp Files.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="before-you-begin"></a>Перед началом 
 
@@ -42,13 +42,13 @@ ms.locfileid: "75551664"
 > Процесс регистрации может занять некоторое время.
 >
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 Чтобы выполнить регистрацию с помощью портала, откройте сеанс Cloud Shell, как указано выше, и выполните следующие действия на интерфейсе командной строки Azure:
 
 [!INCLUDE [azure-netapp-files-cloudshell-include](../../includes/azure-netapp-files-azure-cloud-shell-window.md)]
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 Для работы с этой статьей требуется модуль Azure PowerShell Az 2.6.0 или более поздней версии. Чтобы узнать, какая версия используется сейчас, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). При желании вместо сеанса PowerShell можно использовать консоль Cloud Shell.
 
@@ -62,7 +62,7 @@ ms.locfileid: "75551664"
     Register-AzResourceProvider -ProviderNamespace Microsoft.NetApp
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 [!INCLUDE [azure-netapp-files-cloudshell-include](../../includes/azure-netapp-files-azure-cloud-shell-window.md)]
 
@@ -70,7 +70,7 @@ ms.locfileid: "75551664"
 
 ## <a name="create-a-netapp-account"></a>Создание учетной записи NetApp
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. В поле поиска на портале Azure введите **Azure NetApp Files**, затем выберите **Azure NetApp Files** из появившегося списка.
 
@@ -92,7 +92,7 @@ ms.locfileid: "75551664"
 
 4. Нажмите кнопку **Создать**, чтобы создать учетную запись NetApp.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 1. Определите некоторые переменные, чтобы мы могли ссылаться на них во всех остальных примерах:
 
@@ -119,7 +119,7 @@ ms.locfileid: "75551664"
     New-AzNetAppFilesAccount -ResourceGroupName $resourceGroup -Location $location -Name $anfAccountName
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Определите некоторые переменные, чтобы мы могли ссылаться на них во всех остальных примерах:
 
@@ -154,7 +154,7 @@ ms.locfileid: "75551664"
 
 ## <a name="set-up-a-capacity-pool"></a>Настройка пула емкости
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. В колонке управления Azure NetApp Files выберите свою учетную запись NetApp (**myaccount1**).
 
@@ -175,7 +175,7 @@ ms.locfileid: "75551664"
 
 5. Нажмите кнопку **ОК**.
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 1. Определение новых переменных для дальнейшего использования
 
@@ -191,7 +191,7 @@ ms.locfileid: "75551664"
     New-AzNetAppFilesPool -ResourceGroupName $resourceGroup -Location $location -AccountName $anfAccountName -Name $poolName -PoolSize $poolSizeBytes -ServiceLevel $serviceLevel
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Определение новых переменных для дальнейшего использования
 
@@ -217,7 +217,7 @@ ms.locfileid: "75551664"
 
 ## <a name="create-nfs-volume-for-azure-netapp-files"></a>Создание тома NFS для Azure NetApp Files
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. В колонке управления Azure NetApp Files для своей учетной записи NetApp щелкните **Тома**.
 
@@ -261,7 +261,7 @@ ms.locfileid: "75551664"
 
     ![Созданный том](../media/azure-netapp-files/azure-netapp-files-create-volume-created.png)  
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 1. Создайте делегирование подсети для "Microsoft.NetApp/volumes" с помощью команды [New-AzDelegation](/powershell/module/az.network/new-azdelegation).
 
@@ -299,7 +299,7 @@ ms.locfileid: "75551664"
         -ProtocolType NFSv3
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Определение некоторых переменных для последующего использования.
     
@@ -356,7 +356,7 @@ ms.locfileid: "75551664"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-# <a name="portaltabazure-portal"></a>[Портал](#tab/azure-portal)
+# <a name="portal"></a>[Портал](#tab/azure-portal)
 
 По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.  
 
@@ -380,7 +380,7 @@ ms.locfileid: "75551664"
 
     ![Удалить группу ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-confirm-resource-group-deletion.png ) 
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.  
 
@@ -393,7 +393,7 @@ ms.locfileid: "75551664"
     Remove-AzResourceGroup -Name $resourceGroup
     ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.  
 

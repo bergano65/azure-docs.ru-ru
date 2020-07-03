@@ -4,11 +4,11 @@ description: В этой статье описаны распространен�
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.openlocfilehash: cb764fa441c063328dc350cf26f42c5bc7a0ca99
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76936202"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79247661"
 ---
 # <a name="manage-azure-file-share-backups"></a>Управление резервными копиями файловых ресурсов Azure
 
@@ -163,6 +163,6 @@ ms.locfileid: "76936202"
 
    ![Выбрать отмену регистрации](./media/manage-afs-backup/select-unregister.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Устранение неполадок резервного копирования файловых ресурсов Azure](https://docs.microsoft.com/azure/backup/troubleshoot-azure-files).

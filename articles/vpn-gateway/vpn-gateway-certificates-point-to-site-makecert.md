@@ -8,21 +8,21 @@ ms.topic: article
 ms.date: 09/05/2018
 ms.author: cherylmc
 ms.openlocfilehash: ad2ab31e6771efc54238d5747863fa2a9bb2f356
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75833973"
 ---
 # <a name="generate-and-export-certificates-for-point-to-site-connections-using-makecert"></a>Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью MakeCert
 
 Для аутентификации подключений типа "точка — сеть" используются сертификаты. Эта статья поможет создать самозаверяющий корневой сертификат, а также сертификаты клиента с помощью MakeCert. Если вы ищете инструкции для других сертификатов, ознакомьтесь со статьями [Создание и экспорт сертификатов для подключений "точка-сеть" с помощью PowerShell](vpn-gateway-certificates-point-to-site.md) или [Generate and export certificates for Point-to-Site using Linux strongSwan CLI](vpn-gateway-certificates-point-to-site-linux.md) (Создание и экспорт сертификатов для подключений "точка-сеть" с помощью Linux strongSwan CLI).
 
-Хотя для создания сертификатов мы рекомендуем использовать сведения статьи [Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью PowerShell](vpn-gateway-certificates-point-to-site.md), мы предоставили инструкции по MakeCert в качестве необязательного метода. Сертификаты, созданные с помощью другого метода, можно установить [на любой поддерживаемой клиентской операционной системе](vpn-gateway-howto-point-to-site-resource-manager-portal.md#faq). Однако MakeCert имеет такие ограничения:
+Хотя для создания сертификатов мы рекомендуем использовать сведения статьи [Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью PowerShell](vpn-gateway-certificates-point-to-site.md), мы предоставили инструкции по MakeCert в качестве необязательного метода. Сертификаты, создаваемые с помощью любого из этих методов, можно установить в [любой поддерживаемой клиентской операционной системе](vpn-gateway-howto-point-to-site-resource-manager-portal.md#faq). Однако MakeCert имеет такие ограничения:
 
 * Мы не рекомендуем использовать MakeCert. Это значит, что средство может быть удалено в любой момент. Если MakeCert больше недоступен, это никак не повлияет на сертификаты, созданные с помощью этого средства. MakeCert используется только для создания сертификатов, а не как механизм проверки.
 
-## <a name="rootcert"></a>Создание самозаверяющего корневого сертификата
+## <a name="create-a-self-signed-root-certificate"></a><a name="rootcert"></a>Создание самозаверяющего корневого сертификата
 
 Ниже приведены инструкции по созданию самозаверяющего сертификата с помощью MakeCert. Они не зависят от модели развертывания. Они подходят как для модели с использованием диспетчера ресурсов, так и для классической модели.
 
@@ -38,7 +38,7 @@ ms.locfileid: "75833973"
    makecert -sky exchange -r -n "CN=P2SRootCert" -pe -a sha256 -len 2048 -ss My
    ```
 
-## <a name="cer"></a>Экспорт открытого ключа (CER)
+## <a name="export-the-public-key-cer"></a><a name="cer"></a>Экспорт открытого ключа (CER)
 
 [!INCLUDE [Export public key](../../includes/vpn-gateway-certificates-export-public-key-include.md)]
 
@@ -52,7 +52,7 @@ ms.locfileid: "75833973"
 
 Не устанавливайте самозаверяющий сертификат непосредственно на клиентский компьютер. Нужно создать сертификат клиента из самозаверяющего сертификата. Затем его следует экспортировать и установить на клиентском компьютере. Приведенные ниже инструкции не зависят от модели развертывания. Они подходят как для модели с использованием диспетчера ресурсов, так и для классической модели.
 
-### <a name="clientcert"></a>Создание сертификата клиента
+### <a name="generate-a-client-certificate"></a><a name="clientcert"></a>Создание сертификата клиента
 
 На каждом клиентском компьютере, который подключается к виртуальной сети с помощью подключения типа "точка —сеть", должен быть установлен сертификат клиента. Вы можете создать сертификат клиента из самозаверяющего корневого сертификата, а затем экспортировать и установить его. Если сертификат клиента не установлен, произойдет сбой аутентификации. 
 
@@ -69,15 +69,15 @@ ms.locfileid: "75833973"
    makecert.exe -n "CN=P2SChildCert" -pe -sky exchange -m 96 -ss My -in "P2SRootCert" -is my -a sha256
    ```
 
-### <a name="clientexport"></a>Экспорт сертификата клиента
+### <a name="export-a-client-certificate"></a><a name="clientexport"></a>Экспорт сертификата клиента
 
 [!INCLUDE [Export client certificate](../../includes/vpn-gateway-certificates-export-client-cert-include.md)]
 
-### <a name="install"></a>Установка экспортированного сертификата клиента
+### <a name="install-an-exported-client-certificate"></a><a name="install"></a>Установка экспортированного сертификата клиента
 
 См. инструкции по [установке сертификата клиента](point-to-site-how-to-vpn-client-install-azure-cert.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Продолжайте настраивать параметры конфигурации типа "точка-сеть". 
 

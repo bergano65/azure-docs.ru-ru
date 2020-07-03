@@ -1,24 +1,22 @@
 ---
 title: Настройка сертификата шифрования в кластерах Windows
 description: Узнайте, как настроить сертификат шифрования и шифровать секреты в кластерах Windows.
-author: vturecek
 ms.topic: conceptual
 ms.date: 01/04/2019
-ms.author: vturecek
-ms.openlocfilehash: d9413a37be221adc375836719dc1f467a5571fa0
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: eb4909d62a2627c368f24dab572b25c6f1df30ec
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610188"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82583287"
 ---
 # <a name="set-up-an-encryption-certificate-and-encrypt-secrets-on-windows-clusters"></a>Настройка сертификата шифрования и шифрование секретов в кластерах Windows
-В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Windows. Сведения о кластерах Linux см [. в разделе Настройка сертификата шифрования и шифрование секретов в кластерах Linux.][secret-management-linux-specific-link]
+В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Windows. Инструкции для кластеров Linux приведены в разделе [Настройка сертификата шифрования и шифрование секретов в кластерах Linux][secret-management-linux-specific-link].
 
-[Azure Key Vault][key-vault-get-started] используется в качестве безопасного места хранения сертификатов, а также как способ получения сертификатов, установленных в кластерах Service Fabric в Azure. Если вы не выполняете развертывание в Azure, то использование хранилища ключей для управления секретами в приложениях Service Fabric не требуется. Однако *использование* секретов в приложении осуществляется без привязки к определенной облачной платформе, чтобы приложения могли быть развернуты в кластере, размещенном в любом месте. 
+В качестве безопасного расположения для хранения сертификатов здесь используется [хранилище ключей Azure][key-vault-get-started]. С его помощью сертификаты также устанавливаются в кластеры Service Fabric в Azure. Если вы не выполняете развертывание в Azure, то использование хранилища ключей для управления секретами в приложениях Service Fabric не требуется. Однако *Использование* секретов в приложении не зависит от облачной платформы, что позволяет развертывать приложения в кластере, размещенном в любом месте. 
 
 ## <a name="obtain-a-data-encipherment-certificate"></a>Получение сертификата шифрования данных
-Сертификат о шифровании данных используется исключительно для шифрования и расшифровки [параметров][parameters-link] в параметрах. XML и [переменные среды][environment-variables-link] в службе ServiceManifest. XML. Он не применяется для аутентификации или подписывания зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
+Сертификат шифрования данных используются исключительно для шифрования и расшифровки [параметров][parameters-link] в файле Settings.xml службы и [переменных среды][environment-variables-link] в ее файле ServiceManifest.xml. Он не применяется для аутентификации или подписывания зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
 
 * Сертификат должен содержать закрытый ключ.
 * Сертификат должен быть создан для обмена ключами, которые можно экспортировать в файл обмена личной информацией (PFX-файл).
@@ -31,7 +29,7 @@ ms.locfileid: "75610188"
   ```
 
 ## <a name="install-the-certificate-in-your-cluster"></a>Установка сертификата в кластере
-Этот сертификат должен быть установлен на каждом узле в кластере. Инструкции по установке см. [в разделе Создание кластера с помощью Azure Resource Manager][service-fabric-cluster-creation-via-arm] . 
+Этот сертификат должен быть установлен на каждом узле в кластере. Инструкции по созданию и настройке кластера с помощью Azure Resource Manager см. в [этой статье][service-fabric-cluster-creation-via-arm]. 
 
 ## <a name="encrypt-application-secrets"></a>Шифрование секретов приложений
 Для шифрования секрета используется следующая команда PowerShell. Эта команда шифрует только значение; она **не** подписывает зашифрованный текст. Чтобы создать зашифрованные данные для значений секретов, необходимо использовать тот же сертификат шифрования, установленный в кластере.
@@ -43,10 +41,10 @@ Invoke-ServiceFabricEncryptText -CertStore -CertThumbprint "<thumbprint>" -Text 
 Результирующая строка в кодировке Base-64 содержит как зашифрованные данные секрета, так и сведения о сертификате, с помощью которого выполнено шифрование секрета.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Узнайте, как [указать зашифрованные секреты в приложении.][secret-management-specify-encrypted-secrets-link]
+Узнайте, как [указать зашифрованные секреты в приложении][secret-management-specify-encrypted-secrets-link].
 
 <!-- Links -->
-[key-vault-get-started]:../key-vault/key-vault-overview.md
+[key-vault-get-started]:../key-vault/general/overview.md
 [service-fabric-cluster-creation-via-arm]: service-fabric-cluster-creation-via-arm.md
 [parameters-link]:service-fabric-how-to-parameterize-configuration-files.md
 [environment-variables-link]: service-fabric-how-to-specify-environment-variables.md

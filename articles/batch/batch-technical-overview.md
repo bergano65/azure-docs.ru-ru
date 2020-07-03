@@ -1,25 +1,14 @@
 ---
-title: Выполнение пакетной службой Azure крупномасштабных параллельных заданий в облаке | Документация Майкрософт
+title: Выполнение пакетной службой Azure больших параллельных заданий в облаке
 description: Узнайте об использовании пакетной службы Azure для крупномасштабных параллельных рабочих нагрузок и рабочих нагрузок HPC.
-services: batch
-documentationcenter: ''
-author: mscurrell
-manager: evansma
-editor: ''
-ms.assetid: ''
-ms.service: batch
-ms.workload: big-compute
-ms.tgt_pltfrm: na
 ms.topic: overview
 ms.date: 01/19/2018
-ms.author: markscu
-ms.custom: mvc
-ms.openlocfilehash: 7ca2a5e91a0ec0d765e106baca20f135996bc26e
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: f2bdaeec47b50b715920b27d6adf6e078a354964
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77022806"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82116355"
 ---
 # <a name="what-is-azure-batch"></a>Что такое пакетная служба Azure?
 
@@ -58,7 +47,7 @@ ms.locfileid: "77022806"
 
 В пакетной службе Azure также доступны высокоуровневые возможности для конкретных рабочих нагрузок:
 * Пакетная служба поддерживает крупномасштабные [рабочие нагрузки рендеринга](batch-rendering-service.md) с использованием средств отрисовки, которые включают Autodesk Maya, 3ds Max, Arnold и V-Ray. 
-* Пользователи R могут установить [пакет R doAzureParallel](https://github.com/Azure/doAzureParallel), чтобы легко развертывать выполнение алгоритмов R в пулах пакетной службы.
+* Пользователи R могут установить [пакет R doAzureParallel](https://github.com/Azure/doAzureParallel), чтобы легко горизонтально увеличивать масштаб выполнения алгоритмов R в пулах пакетной службы.
 
 Кроме того, задания пакетной службы можно использовать как часть более крупного рабочего процесса Azure для преобразования данных, управляемых такими средствами, как [фабрика данных Azure](../data-factory/transform-data-using-dotnet-custom-activity.md).
 

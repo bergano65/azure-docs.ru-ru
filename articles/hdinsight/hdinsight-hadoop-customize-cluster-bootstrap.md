@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
-ms.date: 11/21/2019
-ms.openlocfilehash: e641340ac04415ee4a20cda2bc09bbdbef9802a6
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.date: 04/01/2020
+ms.openlocfilehash: 796dbc53d1adf310028e06dea319b9a60d5cf54b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75931400"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80529350"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -46,7 +46,7 @@ ms.locfileid: "75931400"
 
 Сведения об установке дополнительных компонентов в кластере HDInsight во время создания см. в статье [Настройка кластеров hdinsight с помощью действия сценария (Linux)](hdinsight-hadoop-customize-cluster-linux.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
@@ -85,8 +85,8 @@ New-AzHDInsightCluster `
 
 **Чтобы проверить изменения, выполните следующие действия:**
 
-1. Перейдите к `https://CLUSTERNAME.azurehdinsight.net/`, где `CLUSTERNAME` — имя кластера.
-1. В меню слева выберите **куст** > **конфигурации** > **Дополнительно**.
+1. Перейдите в `https://CLUSTERNAME.azurehdinsight.net/` папку `CLUSTERNAME` , где — имя кластера.
+1. В меню слева перейдите к разделу **Hive** > **конфигурации** > Hive**Дополнительно**.
 1. Разверните узел **Расширенный Hive — сайт**.
 1. Нахождение **Hive. хранилище метаданных. Client. Socket. timeout** и подтвердите, что значение равно **90-х**.
 
@@ -126,12 +126,24 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 
 ![Hadoop настраивает шаблон Azure Resource Manager начальной загрузки кластера](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)
 
+Пример фрагмента шаблона диспетчер ресурсов для переключения конфигурации в spark2 — значения по умолчанию для периодической очистки журналов событий из хранилища.  
+
+```json
+"configurations": {
+    "spark2-defaults": {
+        "spark.history.fs.cleaner.enabled": "true",
+        "spark.history.fs.cleaner.interval": "7d",
+        "spark.history.fs.cleaner.maxAge": "90d"
+    }
+}
+```
+
 ## <a name="see-also"></a>См. также
 
-* [Создание кластеров Apache Hadoop в hdinsight](hdinsight-hadoop-provision-linux-clusters.md) содержит инструкции по созданию кластера HDInsight с помощью других настраиваемых параметров.
-* [Разработка скриптов действия сценария для HDInsight](hdinsight-hadoop-script-actions-linux.md)
-* [Установка и использование Apache Spark в кластерах HDInsight](spark/apache-spark-jupyter-spark-sql-use-portal.md)
-* [Установка и использование Apache Giraph в кластерах HDInsight под управлением Windows](hdinsight-hadoop-giraph-install.md).
+* статью [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md), в которой даются указания по созданию кластера HDInsight с использованием других настраиваемых параметров.
+* [Разработка скриптов действия скрипта для HDInsight](hdinsight-hadoop-script-actions-linux.md)
+* [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](spark/apache-spark-jupyter-spark-sql-use-portal.md).
+* [Установите и используйте Apache Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install.md).
 
 ## <a name="appendix-powershell-sample"></a>Приложение. Пример PowerShell
 

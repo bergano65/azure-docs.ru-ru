@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 01/23/2020
 ms.author: victorh
 ms.openlocfilehash: bc34afe82c1b73afb5f3d5d1a07f2a5059590146
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76706003"
 ---
 # <a name="azure-firewall-log-analytics-samples"></a>Примеры журналов в Azure Firewall для анализа
@@ -30,7 +30,7 @@ ms.locfileid: "76706003"
 2. Откройте **Конструктор представлений** под разделом **Общие**.
 3. Щелкните **Импорт**.
 4. Найдите и выберите файл **AzureFirewall.omsview**, который вы скачали ранее.
-5. Выберите команду **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
 Вот как выглядит представление данных из журнала правил приложений:
 
@@ -175,6 +175,6 @@ AzureDiagnostics
 ![запись журнала](media/log-analytics-samples/log2.png)
 
 ![запись журнала](media/log-analytics-samples/log3.png)
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в [руководстве по мониторингу журналов и метрик Брандмауэра Azure](tutorial-diagnostics.md).

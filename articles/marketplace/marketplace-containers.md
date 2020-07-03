@@ -1,50 +1,47 @@
 ---
-title: Руководство по публикации предложения "Контейнеры" в Azure Marketplace
-description: В этой статье описываются требования к публикации предложения "Контейнеры" в Marketplace.
+title: Рекомендации по публикации для предложений контейнеров в Azure Marketplace
+description: В этой статье описываются требования к публикации предложений контейнеров в Azure Marketplace.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-author: ellacroi
-manager: nunoc
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: article
-ms.date: 07/09/2018
-ms.author: ellacroi
-ms.openlocfilehash: ffdc6b22209c1d334ac7b75c7079e755a7405154
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.topic: conceptual
+ms.date: 04/15/2020
+ms.author: dsindona
+ms.openlocfilehash: 99aecee930e5d77302ad54babd927588519e33fd
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73822994"
+ms.lasthandoff: 04/26/2020
+ms.locfileid: "82160466"
 ---
-# <a name="containers-offer-publishing-guide"></a>Руководство по публикации предложения "Контейнеры"
+# <a name="publishing-guide-for-container-offers"></a>Рекомендации по публикации для предложений контейнеров
 
-Предложение "Контейнеры" поможет опубликовать образ контейнера в Azure Marketplace. Сведения в этом руководстве помогут понять требования к этому предложению. 
+С помощью предложений контейнеров вы сможете опубликовать образ контейнера в Azure Marketplace. Сведения в этом руководстве помогут понять требования к этому предложению. 
 
-Ниже приведены предложения транзакций с развертыванием и выставлением счетов через Marketplace. Пользователь видит призыв к действию — "Получить сейчас".
+Предложения контейнеров — это предложения транзакций, которые развертываются и выставляются через Azure Marketplace. Пользователь видит призыв к действию — "Получить сейчас".
 
-Используйте тип предложения "Контейнер", если ваше решение представляет собой образ контейнера Docker, подготовленный в виде службы контейнеров Azure на основе Kubernetes.
+Используйте тип предложения *контейнера* , если решение представляет собой образ контейнера DOCKER, настроенный как экземпляр службы контейнеров Azure на основе Kubernetes. 
 
->[!NOTE]
->Например, это может быть "Служба Azure Kubernetes" или "Экземпляры контейнеров Azure" (самая популярная среди пользователей Azure в случае среды выполнения контейнеров на основе Kubernetes).  
+> [!NOTE]
+> Примерами экземпляров службы контейнеров Azure на основе Kubernetes являются служба Kubernetes Azure или службы "экземпляры контейнеров Azure", выбранные клиенты Azure для среды выполнения контейнеров на основе Kubernetes.  
 
 В настоящее время корпорация Майкрософт поддерживает свободное лицензирование и модель с использованием собственной лицензии (BYOL).
 
-## <a name="containers-offer"></a>Предложение "Контейнеры"
+## <a name="container-offer-requirements"></a>Требования к контейнерному предложению
 
-| Требование | Сведения |  
+| Требование | Подробности |  
 |:--- |:--- |  
-| Выставление счетов и ценообразование | Поддерживается либо бесплатная, либо модель выставления счетов BYOL. |  
-| Образ, созданный из файла Dockerfile | Образы контейнеров должны соответствовать спецификации образов Docker и создаваться из файла Dockerfile.<ul> <li>Дополнительные сведения о создании образов Docker см. в разделе об использовании по адресу [docs.docker.com/engine/reference/builder/#usage](https://docs.docker.com/engine/reference/builder/#usage).</li> </ul> |  
-| Размещение в ACR | Образы контейнеров должны размещаться в репозитории в Реестре контейнеров Azure (ACR).<ul> <li>Дополнительные сведения о работе с ACR см. на странице "Краткое руководство. Создание реестра контейнеров на портале Azure" по адресу [docs.microsoft.com/azure/container-registry/container-registry-get-started-portal](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal).</li> </ul> |  
-| Добавление тегов к образам | У образа контейнера должен быть хотя бы один тег (но не более 16).<ul> <li>Дополнительные сведения о пометке образа тегами см. на странице тегов Docker по адресу [docs.docker.com/engine/reference/commandline/tag](https://docs.docker.com/engine/reference/commandline/tag).</li> </ul> |  
+| Выставление счетов и ценообразование | Поддерживается либо бесплатная, либо модель выставления счетов BYOL.<br><br> |  
+| Образ, созданный из Dockerfile | Образы контейнеров должны быть основаны на спецификации образа DOCKER и построены на основе Dockerfile.<br> <br>Дополнительные сведения о создании образов DOCKER см. в разделе "использование" [справочника по Dockerfile](https://docs.docker.com/engine/reference/builder/#usage).<br><br> |  
+| Размещение в репозитории реестра контейнеров Azure | Образы контейнеров должны размещаться в репозитории реестра контейнеров Azure.<br> <br>Дополнительные сведения о работе с реестром контейнеров Azure см. [в разделе Краткое руководство. создание закрытого реестра контейнеров с помощью портал Azure](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal).<br><br> |  
+| Добавление тегов к образам | Образы контейнеров должны содержать по крайней мере один тег (максимальное число тегов: 16).<br><br>Дополнительные сведения о добавлении тегов к изображению см. `docker tag` на странице сайта [документации DOCKER](https://docs.docker.com/engine/reference/commandline/tag) .<br><br> |  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Если это еще не сделано, 
+Если вы еще не сделали этого, Узнайте, как [расширить свой облачный бизнес с помощью Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
 
-- [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.
+Чтобы зарегистрироваться и начать работу в центре партнеров, выполните следующие действия.
 
-Если вы зарегистрированы и создаете предложение или работаете над существующим,
-
-- [войдите на Портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.
-- Дополнительные сведения см. в статье [Контейнеры](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/containers/cpp-containers-offer).
+- [Войдите в центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать или завершить свое предложение.
+- Дополнительные сведения см. [в разделе Создание предложения контейнера Azure](./partner-center-portal/create-azure-container-offer.md) .

@@ -2,21 +2,18 @@
 title: Расшифровка подробных данных об использовании и расходах | Документация Майкрософт
 description: Узнайте, как правильно расшифровать подробные сведения об использовании и расходах
 author: bandersmsft
-manager: micflan
+ms.reviewer: micflan
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 04/24/2019
+ms.date: 03/20/2020
 ms.author: banders
-ms.openlocfilehash: a68393b2852f8ddc758e2a47b9e1b5d94befb7b4
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3b4a5601f18a07ba1ecd6fdd93628d671a0acad2
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76290144"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80065638"
 ---
 # <a name="understand-the-terms-in-your-azure-usage-and-charges-file"></a>Общие сведения об условиях в файле сведений об использовании и расходах Azure
 
@@ -77,10 +74,12 @@ MeterName | All | Имя единицы измерения.
 MeterRegion | All | Имя расположения центра обработки данных для служб, цены на которые определяются на основе расположения. См. Location.
 MeterSubCategory | All | Имя категории подклассификации единицы измерения.
 OfferId<sup>1</sup> | All | Название приобретенного предложения.
+PayGPrice | All | Розничная цена на ресурс.
 PartNumber<sup>1</sup> | EA, PAYG | Идентификатор, используемый для получения цен в конкретной единице измерения.
 PlanName | EA, PAYG | Имя плана Marketplace.
 PreviousInvoiceId | MCA | Ссылка на исходный счет, если этот элемент строки является возвратом денежных средств.
 PricingCurrency | MCA | Валюта, используемая при оценке на основе согласованных цен.
+PricingModel | All | Идентификатор, указывающий на способ тарификации за единицу измерения. (Значения: On Demand, Reservation, Spot)
 Продукт | All | Имя продукта.
 ProductId<sup>1</sup> | MCA | Уникальный идентификатор продукта.
 ProductOrderId | All | Уникальный идентификатор заказа продукта.

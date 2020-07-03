@@ -13,17 +13,17 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
 ms.openlocfilehash: c34de48d0184057f42d1b779abee56e1fa9ac169
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75751308"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78255167"
 ---
 # <a name="tutorial-migrate-rds-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос RDS MySQL в базу данных Azure для MySQL Online с помощью DMS
 
 С помощью службы Azure Database Migration Service базы данных из экземпляра RDS MySQL можно перенести в [Базу данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/), не отключая базу данных-источник от сети. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется перенос примера базы данных **сотрудников** из экземпляра RDS MySQL в Базу данных Azure для MySQL с помощью интерактивного действия миграции в Azure Database Migration Service.
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 >
 > * Перенос примера схемы с помощью служебных программ mysqldump и mysql.
@@ -33,7 +33,7 @@ ms.locfileid: "75751308"
 > * мониторинг миграции.
 
 > [!NOTE]
-> Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Дополнительные сведения см. на странице с [ценами](https://azure.microsoft.com/pricing/details/database-migration/) на Azure Database Migration Service.
+> Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Дополнительные сведения см. на странице [цен](https://azure.microsoft.com/pricing/details/database-migration/) на Azure Database Migration Service.
 
 > [!IMPORTANT]
 > Чтобы оптимизировать процесс миграции, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
@@ -42,7 +42,7 @@ ms.locfileid: "75751308"
 
 В этой статье описывается выполнение интерактивного переноса из экземпляра RDS MySQL в Базу данных Azure для MySQL.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -143,7 +143,7 @@ ms.locfileid: "75751308"
 
     ![Отображение поставщиков ресурсов](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/portal-select-resource-provider.png)
 
-3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/portal-register-resource-provider.png)
 
@@ -187,7 +187,7 @@ ms.locfileid: "75751308"
 
 3. Выберите **+ Новый проект миграции**.
 4. В окне **New migration project** (Новый проект миграции) задайте имя для проекта, в текстовом поле **Source server type** (Тип исходного сервера) выберите **MySQL**, а затем в текстовом поле **Target server type** (Тип целевого сервера) выберите **AzureDbForMySQL**.
-5. В разделе **Выберите тип действия** выберите **Миграция данных по сети**.
+5. В разделе **Выбор типа действия** выберите **Перенос данных в сети**.
 
     > [!IMPORTANT]
     > Не забудьте выбрать режим **миграции данных по сети**, так как автономная миграция не поддерживается для этого сценария.
@@ -230,7 +230,7 @@ ms.locfileid: "75751308"
 
 * Выберите **Запустить миграцию**.
 
-    Появится окно действия миграции и в поле **Состояние** будет указано **Инициализация**.
+    Откроется окно действие миграции, в котором будет **инициализировано** **состояние** действия.
 
 ## <a name="monitor-the-migration"></a>Мониторинг миграции
 
@@ -248,7 +248,7 @@ ms.locfileid: "75751308"
 
 ## <a name="perform-migration-cutover"></a>Выполнение прямой миграции
 
-После завершения начальной полной загрузки базы данных помечаются как **готовые к прямой миграции**.
+После завершения начальной полной загрузки базы данных помечаются как **готовые к прямую миграцию**.
 
 1. Когда вы будете готовы выполнить миграцию базы данных, щелкните **Запустить прямую миграцию**.
 

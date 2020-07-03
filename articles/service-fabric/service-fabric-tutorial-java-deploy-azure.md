@@ -6,14 +6,14 @@ ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 354f7db2a634ae2adee2f2fa0e2a6055c1c20613
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: df6719cad79bdb063c2d4d74892206b6e5bbd414
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75465280"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80292039"
 ---
-# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство. Развертывание приложения Java в кластере Service Fabric в Azure
+# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по развертыванию приложения Java в кластере Service Fabric в Azure
 
 Это руководство является третьей частью цикла. В нем показано, как развернуть приложение Service Fabric в кластере в Azure.
 
@@ -53,13 +53,13 @@ ms.locfileid: "75465280"
 
 2. Вход в учетную запись Azure
 
-    ```bash
+    ```azurecli
     az login
     ```
 
 3. Установите подписку Azure, которую вы хотите использовать для создания ресурсов.
 
-    ```bash
+    ```azurecli
     az account set --subscription [SUBSCRIPTION-ID]
     ```
 
@@ -73,7 +73,7 @@ ms.locfileid: "75465280"
 
     Предыдущая команда возвращает следующие сведения, которые следует отметить для дальнейшего использования.
 
-    ```
+    ```output
     Source Vault Resource Id: /subscriptions/<subscription_id>/resourceGroups/testkeyvaultrg/providers/Microsoft.KeyVault/vaults/<name>
     Certificate URL: https://<name>.vault.azure.net/secrets/<cluster-dns-name-for-certificate>/<guid>
     Certificate Thumbprint: <THUMBPRINT>
@@ -81,7 +81,7 @@ ms.locfileid: "75465280"
 
 5. Создайте группу ресурсов для учетной записи хранения, в которой хранятся ваши журналы.
 
-    ```bash
+    ```azurecli
     az group create --location [REGION] --name [RESOURCE-GROUP-NAME]
 
     Example: az group create --location westus --name teststorageaccountrg
@@ -89,7 +89,7 @@ ms.locfileid: "75465280"
 
 6. Создайте учетную запись хранения, которая будет использоваться для хранения создаваемых журналов.
 
-    ```bash
+    ```azurecli
     az storage account create -g [RESOURCE-GROUP-NAME] -l [REGION] --name [STORAGE-ACCOUNT-NAME] --kind Storage
 
     Example: az storage account create -g teststorageaccountrg -l westus --name teststorageaccount --kind Storage
@@ -101,13 +101,13 @@ ms.locfileid: "75465280"
 
 8. Скопируйте URL-адрес SAS учетной записи для использования в дальнейшем при создании кластера Service Fabric. Результат будет выглядеть, как следующий URL-адрес:
 
-    ```
+    ```output
     ?sv=2017-04-17&ss=bfqt&srt=sco&sp=rwdlacup&se=2018-01-31T03:24:04Z&st=2018-01-30T19:24:04Z&spr=https,http&sig=IrkO1bVQCHcaKaTiJ5gilLSC5Wxtghu%2FJAeeY5HR%2BPU%3D
     ```
 
 9. Создайте группу ресурсов, содержащую ресурсы концентратора событий. Центры событий используются для отправки сообщений из Service Fabric на сервер, где запущены ресурсы ELK.
 
-    ```bash
+    ```azurecli
     az group create --location [REGION] --name [RESOURCE-GROUP-NAME]
 
     Example: az group create --location westus --name testeventhubsrg
@@ -115,7 +115,7 @@ ms.locfileid: "75465280"
 
 10. Создайте ресурс Центров событий, используя следующую команду. Следуя инструкциям, введите данные namespaceName, eventHubName, customerGroupName, sendAuthorizationRule и receiveAuthorizationRule.
 
-    ```bash
+    ```azurecli
     az group deployment create -g [RESOURCE-GROUP-NAME] --template-file eventhubsdeploy.json
 
     Example:
@@ -158,7 +158,7 @@ ms.locfileid: "75465280"
 
     Скопируйте значение поля **sr** в возвращаемом JSON. Значение поля **sr** — это токен SAS для концентраторов событий. Следующий URL-адрес является примером поля **sr**:
 
-    ```bash
+    ```output
     https%3A%2F%testeventhub.servicebus.windows.net%testeventhub&sig=7AlFYnbvEm%2Bat8ALi54JqHU4i6imoFxkjKHS0zI8z8I%3D&se=1517354876&skn=sender
     ```
 
@@ -185,7 +185,7 @@ ms.locfileid: "75465280"
 
 14. Выполните следующую команду, чтобы создать кластер Service Fabric.
 
-    ```bash
+    ```azurecli
     az sf cluster create --location 'westus' --resource-group 'testlinux' --template-file sfdeploy.json --parameter-file sfdeploy.parameters.json --secret-identifier <certificate_url_from_step4>
     ```
 
@@ -217,11 +217,11 @@ ms.locfileid: "75465280"
     ./install.sh
     ```
 
-5. Для доступа к Service Fabric Explorer откройте любой веб-браузер и введите https://testlinuxcluster.westus.cloudapp.azure.com:19080. Выберите сертификат из хранилища сертификатов, который вы хотите использовать для подключения к этой конечной точке. Если вы используете компьютер Linux, сертификаты, созданные скриптом *new-service-fabric-cluster-certificate.sh*, нужно импортировать в Chrome для просмотра Service Fabric Explorer. Если вы используете компьютер Mac, необходимо установить PFX-файл в цепочку ключей. Обратите внимание, что приложение установлено в кластере.
+5. Для доступа к Service Fabric Explorer откройте любой веб-браузер и введите `https://testlinuxcluster.westus.cloudapp.azure.com:19080`. Выберите сертификат из хранилища сертификатов, который вы хотите использовать для подключения к этой конечной точке. Если вы используете компьютер Linux, сертификаты, созданные скриптом *new-service-fabric-cluster-certificate.sh*, нужно импортировать в Chrome для просмотра Service Fabric Explorer. Если вы используете компьютер Mac, необходимо установить PFX-файл в цепочку ключей. Обратите внимание, что приложение установлено в кластере.
 
     ![SFX Java Azure](./media/service-fabric-tutorial-java-deploy-azure/sfxjavaonazure.png)
 
-6. Чтобы получить доступ к приложению, введите https://testlinuxcluster.westus.cloudapp.azure.com:8080
+6. Чтобы получить доступ к приложению, введите `https://testlinuxcluster.westus.cloudapp.azure.com:8080`
 
     ![Приложение для голосования Java Azure](./media/service-fabric-tutorial-java-deploy-azure/votingappjavaazure.png)
 

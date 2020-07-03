@@ -1,5 +1,5 @@
 ---
-title: Руководство. интеграции единого входа Azure Active Directory с Adobe Creative Cloud | Документация Майкрософт
+title: Руководство по интеграции единого входа Azure Active Directory с Adobe Creative Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Adobe Creative Cloud.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 10/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 25dd638c15fecbef787e4ceabea9ae7cb4359582
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76120372"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-adobe-creative-cloud"></a>Руководство. интеграции единого входа Azure Active Directory с Adobe Creative Cloud
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-adobe-creative-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Adobe Creative Cloud
 
 > [!NOTE]
 > В этой статье описывается пользовательская настройка консоли администрирования Adobe на основе SAML для Azure Active Directory (Azure AD). Для конфигураций нового поколения рекомендуется использовать [соединитель Azure AD](https://helpx.adobe.com/enterprise/using/sso-setup-azure.html). Соединитель Azure AD можно настроить за считанные минуты, что сокращает процесс утверждения домена, настройки единого входа и синхронизации пользователей.

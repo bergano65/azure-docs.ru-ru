@@ -3,19 +3,19 @@ title: Часто задаваемые вопросы
 description: Ответы на часто задаваемые вопросы, связанные со службой "экземпляры контейнеров Azure"
 author: dkkapur
 ms.topic: article
-ms.date: 01/07/2020
-ms.openlocfilehash: 4a3fb4c1818d86f7fe2913790fd9e573c630cbfd
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.date: 04/10/2020
+ms.openlocfilehash: 4fca198356c8db006c4190e0f16b20f78dc1d477
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75888045"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82115233"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Часто задаваемые вопросы о службе "экземпляры контейнеров Azure"
 
 В этой статье рассматриваются часто задаваемые вопросы о службе "экземпляры контейнеров Azure".
 
-## <a name="deployment"></a>Развертывание.
+## <a name="deployment"></a>Развертывание
 
 ### <a name="how-large-can-my-container-image-be"></a>Насколько велика возможность создания образа контейнера?
 
@@ -35,17 +35,17 @@ ms.locfileid: "75888045"
 
 #### <a name="windows-server-2016-base-images"></a>Базовые образы Windows Server 2016
 
-* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `10.0.14393.x`, `sac2016`
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`, `10.0.14393.x`
+* [Сервер Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `10.0.14393.x`,`sac2016`
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2016`,`10.0.14393.x`
 
 > [!NOTE]
 > Образы Windows на основе полугодовых каналов выпуска 1709 или 1803 не поддерживаются.
 
 #### <a name="windows-server-2019-and-client-base-images-preview"></a>Windows Server 2019 и базовые образы клиента (Предварительная версия)
 
-* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809`, `10.0.17763.x`
-* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019`, `1809`, `10.0.17763.x`
-* [Windows](https://hub.docker.com/_/microsoft-windows): `1809`, `10.0.17763.x` 
+* [Nano Server](https://hub.docker.com/_/microsoft-windows-nanoserver): `1809` `10.0.17763.914` или более ранней версии
+* [Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore): `ltsc2019`, `1809` `10.0.17763.914` или более ранней версии
+* [Windows](https://hub.docker.com/_/microsoft-windows): `1809` `10.0.17763.914` или более ранней версии
 
 ### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>Какой уровень образа .NET или .NET Core следует использовать в моем контейнере? 
 
@@ -55,9 +55,12 @@ ms.locfileid: "75888045"
 
 ### <a name="how-many-cores-and-memory-should-i-allocate-for-my-containers-or-the-container-group"></a>Сколько ядер и памяти следует выделить для контейнеров или группы контейнеров?
 
-Это действительно зависит от рабочей нагрузки. Запустите небольшие и протестируйте производительность, чтобы увидеть, как находятся ваши контейнеры. [Отслеживайте использование ресурсов ЦП и памяти](container-instances-monitor.md), а затем добавляйте ядра или память на основе типов процессов, развертываемых в контейнере. 
+Это действительно зависит от рабочей нагрузки. Запустите небольшие и протестируйте производительность, чтобы увидеть, как находятся ваши контейнеры. [Отслеживайте использование ресурсов ЦП и памяти](container-instances-monitor.md), а затем добавляйте ядра или память на основе типов процессов, развертываемых в контейнере.
 
 Также проверьте [доступность ресурсов](container-instances-region-availability.md#availability---general) для региона, в котором выполняется развертывание, для верхних границ для ядер ЦП и памяти, доступных для каждой группы контейнеров. 
+
+> [!NOTE]
+> Основная инфраструктура службы использует небольшой объем ресурсов группы контейнеров. Ваши контейнеры смогут получать доступ к большинству, но не ко всем ресурсам, выделенным группе. По этой причине запланируйте небольшой буфер ресурсов при запросе ресурсов для контейнеров в группе.
 
 ### <a name="what-underlying-infrastructure-does-aci-run-on"></a>В какой базовой инфраструктуре работает ACI?
 
@@ -85,7 +88,7 @@ ms.locfileid: "75888045"
 
 Вы можете [Развернуть группы контейнеров в выбранной виртуальной сети Azure](container-instances-vnet.md) и делегировать частные IP-адреса группам контейнеров, чтобы маршрутизировать трафик между виртуальными сетями в ресурсах Azure. Развертывание группы контейнеров в виртуальной сети в настоящее время доступно для рабочих нагрузок в подмножестве регионов Azure.
 
-## <a name="pricing"></a>Стоимость
+## <a name="pricing"></a>Цены
 
 ### <a name="when-does-the-meter-start-running"></a>Когда запускается Счетчик?
 
@@ -95,7 +98,7 @@ ms.locfileid: "75888045"
 
 Счетчики останавливаются после остановки всей группы контейнеров. Пока контейнер в группе контейнеров работает, мы содержали ресурсы на случай, если вы хотите запустить контейнеры снова. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные [сведения](container-instances-overview.md) о службе "экземпляры контейнеров Azure".
 * [Устранение распространенных](container-instances-troubleshooting.md) неполадок в службе "экземпляры контейнеров Azure".

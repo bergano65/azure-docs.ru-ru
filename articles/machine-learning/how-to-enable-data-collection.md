@@ -11,12 +11,12 @@ ms.author: copeters
 author: lostmygithubaccount
 ms.date: 11/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3c481a2e12d83e865025cd90e59e0eba572ad9a5
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 44acc81df9eb6dc6a6af28b5b0f4730aa93adffc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75771399"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80475430"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
@@ -56,11 +56,11 @@ ms.locfileid: "75771399"
 ```
 
 >[!NOTE]
-> В версиях пакета SDK Машинное обучение Azure для Python, предшествующего версии 0.1.0 A16, аргумент `designation` называется `identifier`. Если вы разработали код с более ранней версией, необходимо соответствующим образом обновить его.
+> В версиях пакета SDK Машинное обучение Azure для Python, предшествующего версии 0.1.0 A16, `designation` аргумент имеет имя. `identifier` Если вы разработали код с более ранней версией, необходимо соответствующим образом обновить его.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLFree), прежде чем начинать работу.
+- Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://aka.ms/AMLFree), прежде чем начинать работу.
 
 - Необходимо установить рабочую область Азуремачине Learning, локальный каталог, содержащий скрипты, и пакет SDK для Машинное обучение Azure для Python. Сведения об их установке см. в статье [Настройка среды разработки](how-to-configure-environment.md).
 
@@ -121,19 +121,15 @@ ms.locfileid: "75771399"
 
 Если у вас уже есть служба с зависимостями, установленными в файле и файле оценки среды, включите сбор данных, выполнив следующие действия.
 
-1. Перейдите в [машинное обучение Azure](https://ml.azure.com).
+1. Перейдите в [Машинное обучение Azure](https://ml.azure.com).
 
 1. Перейдите в рабочую область.
 
-1. Выберите **развертывания** > **выберите Служба** > **изменить**.
+1. Выберите **развертывания** > **выбрать службу** > **изменить**.
 
    ![Изменение службы](././media/how-to-enable-data-collection/EditService.PNG)
 
-1. В окне **Дополнительные параметры**выберите **включить сбор данных модели**.
-
-    [![выбор сбора данных](./media/how-to-enable-data-collection/CheckDataCollection.png)](././media/how-to-enable-data-collection/CheckDataCollection.png#lightbox)
-
-   Чтобы отвести наблюдение за работоспособностью службы, можно также выбрать **включить диагностику AppInsights** .
+1. В окне **Дополнительные параметры**выберите **включить диагностику Application Insights и сбор данных**.
 
 1. Выберите **Обновить** , чтобы применить изменения.
 
@@ -143,17 +139,15 @@ ms.locfileid: "75771399"
 
 ### <a name="option-1---disable-data-collection-in-azure-machine-learning"></a>Вариант 1. Отключение сбора данных в Машинное обучение Azure
 
-1. Войдите в [машинное обучение Azure](https://ml.azure.com).
+1. Войдите в [Машинное обучение Azure](https://ml.azure.com).
 
 1. Перейдите в рабочую область.
 
-1. Выберите **развертывания** > **выберите Служба** > **изменить**.
+1. Выберите **развертывания** > **выбрать службу** > **изменить**.
 
-   [![выберите параметр "Изменить".](././media/how-to-enable-data-collection/EditService.PNG)](./././media/how-to-enable-data-collection/EditService.PNG#lightbox)
+   [![Выбор параметра "Изменить"](././media/how-to-enable-data-collection/EditService.PNG)](./././media/how-to-enable-data-collection/EditService.PNG#lightbox)
 
-1. В окне **Дополнительные параметры**снимите флажок **включить сбор данных модели**.
-
-    [![снять флажок "сбор данных"](./media/how-to-enable-data-collection/UncheckDataCollection.png)](././media/how-to-enable-data-collection/UncheckDataCollection.png#lightbox)
+1. В окне **Дополнительные параметры**снимите флажок **включить диагностику Application Insights и сбор данных**.
 
 1. Чтобы применить изменение, нажмите кнопку **Обновить**.
 
@@ -172,13 +166,13 @@ ms.locfileid: "75771399"
 
 ### <a name="quickly-access-your-blob-data"></a>Быстрый доступ к данным большого двоичного объекта
 
-1. Войдите в [машинное обучение Azure](https://ml.azure.com).
+1. Войдите в [Машинное обучение Azure](https://ml.azure.com).
 
 1. Перейдите в рабочую область.
 
-1. Выберите **Хранилище**.
+1. Выберите пункт **Служба хранилища**.
 
-    [![выбрать вариант хранения](./media/how-to-enable-data-collection/StorageLocation.png)](././media/how-to-enable-data-collection/StorageLocation.png#lightbox)
+    [![Выберите вариант хранения](./media/how-to-enable-data-collection/StorageLocation.png)](././media/how-to-enable-data-collection/StorageLocation.png#lightbox)
 
 1. Выполните путь к выходным данным большого двоичного объекта, используя следующий синтаксис:
 
@@ -193,27 +187,27 @@ ms.locfileid: "75771399"
 
 1. Выберите **получить данные** и выберите [**хранилище BLOB-объектов Azure**](https://docs.microsoft.com/power-bi/desktop-data-sources).
 
-    [Настройка ![Power BI большого двоичного объекта](./media/how-to-enable-data-collection/PBIBlob.png)](././media/how-to-enable-data-collection/PBIBlob.png#lightbox)
+    [![Настройка Power BI большого двоичного объекта](./media/how-to-enable-data-collection/PBIBlob.png)](././media/how-to-enable-data-collection/PBIBlob.png#lightbox)
 
-1. Добавьте имя учетной записи хранения и введите ключ к хранилищу данных. Эти сведения можно найти, выбрав **параметры** > **ключи доступа** в большом двоичном объекте.
+1. Добавьте имя учетной записи хранения и введите ключ к хранилищу данных. Эти сведения можно найти, выбрав **Параметры** > **ключи доступа** в большом двоичном объекте.
 
 1. Выберите контейнер **данных модели** и нажмите кнопку **изменить**.
 
-    [![навигатор Power BI](./media/how-to-enable-data-collection/pbiNavigator.png)](././media/how-to-enable-data-collection/pbiNavigator.png#lightbox)
+    [![Навигатор Power BI](./media/how-to-enable-data-collection/pbiNavigator.png)](././media/how-to-enable-data-collection/pbiNavigator.png#lightbox)
 
 1. В редакторе запросов щелкните в столбце **имя** и добавьте учетную запись хранения.
 
 1. Введите путь к модели в фильтре. Если вы хотите просматривать файлы только из определенного года или месяца, просто разверните путь фильтра. Например, чтобы просмотреть только данные в марте, используйте следующий путь фильтра:
 
-   /моделдата/\<SubscriptionId >/\<resourcegroupname >/\<workspacename >/\<webservicename >/\<modelname >/\<моделверсион >/\<обозначение >/\<года >/3
+   /моделдата/\<SubscriptionId>/\<resourcegroupname>/\<workspacename>/\<webservicename>/\<modelname>/\<моделверсион\<>/>/\<year>/3
 
 1. Отфильтруйте данные, относящиеся к вам, на основе значений **имен** . Если вы сохранили прогнозы и входные данные, необходимо создать запрос для каждого из них.
 
 1. Щелкните двойные стрелки вниз рядом с заголовком столбца **содержимого** , чтобы объединить файлы.
 
-    [![Power BI содержимого](./media/how-to-enable-data-collection/pbiContent.png)](././media/how-to-enable-data-collection/pbiContent.png#lightbox)
+    [![Power BI содержимое](./media/how-to-enable-data-collection/pbiContent.png)](././media/how-to-enable-data-collection/pbiContent.png#lightbox)
 
-1. Нажмите кнопку **ОК**. Предварительная загрузка данных.
+1. Нажмите кнопку **OK**. Предварительная загрузка данных.
 
     [![Power BI объединение файлов](./media/how-to-enable-data-collection/pbiCombine.png)](././media/how-to-enable-data-collection/pbiCombine.png#lightbox)
 
@@ -231,11 +225,11 @@ ms.locfileid: "75771399"
 
 1. В рабочей области "сведения о модулях **данных" выберите Отправить данные**.
 
-    [!["Выбор параметра" отправить данные о модулях данных "](./media/how-to-enable-data-collection/dbupload.png)](././media/how-to-enable-data-collection/dbupload.png#lightbox)
+    [![Выбор параметра отправки данных для кирпичов](./media/how-to-enable-data-collection/dbupload.png)](././media/how-to-enable-data-collection/dbupload.png#lightbox)
 
-1. Выберите **создать новую таблицу** и выберите **другие источники данных** > **хранилище BLOB-объектов Azure** > **создать таблицу в записной книжке**.
+1. Выберите **создать новую таблицу** и выберите **другие источники** > данных > **хранилище BLOB-объектов Azure****создать таблицу в записной книжке**.
 
-    [Создание таблицы ![ных блоков данных](./media/how-to-enable-data-collection/dbtable.PNG)](././media/how-to-enable-data-collection/dbtable.PNG#lightbox)
+    [![Создание таблицы кирпичей данных](./media/how-to-enable-data-collection/dbtable.PNG)](././media/how-to-enable-data-collection/dbtable.PNG#lightbox)
 
 1. Обновите расположение данных. Например:
 
@@ -244,6 +238,6 @@ ms.locfileid: "75771399"
     file_type = "csv"
     ```
 
-    [Установка ![кирпичей](./media/how-to-enable-data-collection/dbsetup.png)](././media/how-to-enable-data-collection/dbsetup.png#lightbox)
+    [![Установка кирпичей](./media/how-to-enable-data-collection/dbsetup.png)](././media/how-to-enable-data-collection/dbsetup.png#lightbox)
 
 1. Выполните действия, описанные в шаблоне, чтобы просмотреть и проанализировать данные.

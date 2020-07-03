@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 11/06/2019
-ms.openlocfilehash: becb05616ecac51fa4646836a6b1a2f3b71d3543
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.date: 03/06/2020
+ms.openlocfilehash: f1541c177cea2d223a5e7df576d95fab7eafb310
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75540845"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80296941"
 ---
 # <a name="regenerate-storage-account-access-keys"></a>Повторное создание ключей доступа для учетной записи хранения
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -24,13 +24,16 @@ ms.locfileid: "75540845"
 
 В целях безопасности может потребоваться изменить ключи доступа для учетной записи хранения Azure. При повторном создании ключа доступа Машинное обучение Azure необходимо обновить, чтобы использовать новый ключ. Машинное обучение Azure может использовать учетную запись хранения как для хранилища модели, так и для хранилища данных.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
 
 * [Пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
 * [Расширение CLI машинное обучение Azure](reference-azure-machine-learning-cli.md).
+
+> [!NOTE]
+> Фрагменты кода в этом документе были протестированы с версией 1.0.83 пакета SDK для Python.
 
 <a id="whattoupdate"></a> 
 
@@ -90,7 +93,9 @@ for name, ds in datastores.items():
         az login
         ```
 
-    1. Чтобы обновить рабочую область для использования нового ключа, используйте следующую команду. Замените `myworkspace` именем рабочей области Машинное обучение Azure и замените `myresourcegroup` именем группы ресурсов Azure, содержащей рабочую область.
+        [!INCLUDE [select-subscription](../../includes/machine-learning-cli-subscription.md)]
+
+    1. Чтобы обновить рабочую область для использования нового ключа, используйте следующую команду. Замените `myworkspace` именем рабочей области машинное обучение Azure и замените `myresourcegroup` именем группы ресурсов Azure, содержащей рабочую область.
 
         ```azurecli-interactive
         az ml workspace sync-keys -w myworkspace -g myresourcegroup
@@ -120,8 +125,8 @@ for name, ds in datastores.items():
     
     ```
 
-    Поскольку `overwrite=True` указан, этот код перезаписывает существующую регистрацию и обновляет ее для использования нового ключа.
+    Так `overwrite=True` как указан, этот код перезаписывает существующую регистрацию и обновляет ее для использования нового ключа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Дополнительные сведения о регистрации хранилищ данных см. в справочнике по классам [`Datastore`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) .
+Дополнительные сведения о регистрации хранилищ данных см. в справочнике [`Datastore`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) по классам.

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: virtual-machines
 author: msmbaldwin
 ms.service: virtual-machines
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/06/2019
 ms.author: mbaldwin
 ms.custom: include file
-ms.openlocfilehash: 398da52ba424c08bd1bbdc6f02641109e136f45c
-ms.sourcegitcommit: 77bfc067c8cdc856f0ee4bfde9f84437c73a6141
+ms.openlocfilehash: 6f7f319d2ebb4cd39933addf04f249df02d7819f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72511516"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81314093"
 ---
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -23,7 +23,7 @@ ms.locfileid: "72511516"
 
 Создайте группу ресурсов с помощью команды [AZ Group create](/cli/azure/group?view=azure-cli-latest#az-group-create) Azure CLI, команды [New-азресаурцеграуп](/powershell/module/az.resources/new-azresourcegroup) Azure PowerShell или из [портал Azure](https://portal.azure.com).
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 ```azurecli-interactive
 az group create --name "myResourceGroup" --location eastus
@@ -40,11 +40,11 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 Создайте хранилище ключей с помощью команды [AZ keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) Azure CLI, команды [New-азкэйваулт](/powershell/module/az.keyvault/new-azkeyvault) Azure PowerShell, [портал Azure](https://portal.azure.com)или [шаблона диспетчер ресурсов](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
 
 >[!WARNING]
-> Чтобы обеспечить, что секреты шифрования не пересекают региональные границы, шифрование дисков Azure требует, чтобы Key Vault и виртуальные машины размещались в одном регионе. Создайте и используйте Key Vault в том же регионе, что и виртуальные машины для шифрования. 
+> Ваше хранилище ключей и виртуальные машины должны находиться в одной подписке. Кроме того, чтобы гарантировать, что секреты шифрования не пересекают региональные границы, шифрование дисков Azure требует, чтобы Key Vault и виртуальные машины размещались в одном регионе. Создайте и используйте Key Vault, который находится в той же подписке и регионе, что и виртуальные машины для шифрования. 
 
 Каждый Key Vault должен иметь уникальное имя. В следующих примерах замените <your-unique-keyvault-name> именем своего хранилища ключей.
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 При создании хранилища ключей с помощью Azure CLI добавьте флаг "--Enabled-to-Disk-Encryption".
 
@@ -67,13 +67,13 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 2. Выберите подписку, группу ресурсов, расположение группы ресурсов, Key Vault имя, идентификатор объекта, юридические условия и соглашение, а затем щелкните **приобрести**. 
 
 
-##  <a name="set-key-vault-advanced-access-policies"></a>Настройка политик расширенного доступа к хранилищу ключей
+##  <a name="set-key-vault-advanced-access-policies"></a>установить политики расширенного доступа к хранилищу ключей.
 
 Платформа Azure должна иметь доступ к ключам шифрования или секретам, расположенным в вашем хранилище ключей, чтобы предоставлять их виртуальной машине при ее загрузке для расшифровки томов. 
 
 Если вы не включили хранилище ключей для шифрования дисков, развертывания или развертывания шаблона во время создания (как показано на предыдущем шаге), необходимо обновить его политики расширенного доступа.  
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Включите шифрование дисков для хранилища ключей с помощью команды [az keyvault update](/cli/azure/keyvault#az-keyvault-update). 
 
@@ -115,12 +115,12 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
      Set-AzKeyVaultAccessPolicy -VaultName "<your-unique-keyvault-name>" -ResourceGroupName "MyResourceGroup" -EnabledForTemplateDeployment
      ```
 
-### <a name="azure-portal"></a>портала Azure
+### <a name="azure-portal"></a>Портал Azure
 
 1. Выберите хранилище ключей, перейдите к разделу **политики доступа**и **щелкните, чтобы отобразить дополнительные политики доступа**.
 2. Установите флажок **Включить доступ к шифрованию дисков Azure для шифрования томов**.
 3. Выберите **Включить доступ к виртуальным машинам Azure для развертывания** или **Включить доступ к Azure Resource Manager для развертывания шаблонов**, если это необходимо. 
-4. В нижней части страницы нажмите кнопку **Save**.
+4. Нажмите кнопку **Сохранить**.
 
     ![Установка политики расширенного доступа к хранилищу Azure Key Vault](../articles/virtual-machines/media/disk-encryption/keyvault-portal-fig4.png)
 
@@ -135,15 +135,15 @@ New-AzKeyvault -name "<your-unique-keyvault-name>" -ResourceGroupName "myResourc
 
 URL-адреса KEK хранилища ключей должны иметь версию. Это требование Azure. Ниже приведены примеры действительных URL-адресов секрета и ключа шифрования ключей.
 
-* Пример допустимого URL-адреса секрета: *https://contosovault.vault.azure.net/secrets/EncryptionSecretWithKek/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
-* Пример допустимого URL-адреса KEK: *https://contosovault.vault.azure.net/keys/diskencryptionkek/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
+* Пример допустимого секретного URL-адреса:*https://contosovault.vault.azure.net/secrets/EncryptionSecretWithKek/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
+* Пример допустимого URL-адреса KEK:*https://contosovault.vault.azure.net/keys/diskencryptionkek/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
 
 Шифрование дисков Azure не поддерживает указание номеров портов в URL-адресах секрета и ключа шифрования ключей для хранилища ключей. Ниже приведены примеры недопустимых и допустимых URL-адресов хранилища ключей.
 
-  * Допустимый URL-адрес хранилища ключей: *https://contosovault.vault.azure.net/secrets/contososecret/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
-  * Недопустимый URL-адрес хранилища ключей: *https://contosovault.vault.azure.net:443/secrets/contososecret/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
+  * Допустимый URL-адрес хранилища ключей:*https://contosovault.vault.azure.net/secrets/contososecret/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
+  * Недопустимый URL-адрес хранилища ключей:*https://contosovault.vault.azure.net:443/secrets/contososecret/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*
 
-### <a name="azure-cli"></a>Azure CLI
+### <a name="azure-cli"></a>Azure CLI
 
 Используйте команду Azure CLI [AZ keyvault Key Create](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-create) , чтобы создать новый KEK и сохранить его в хранилище ключей.
 
@@ -151,7 +151,7 @@ URL-адреса KEK хранилища ключей должны иметь в�
 az keyvault key create --name "myKEK" --vault-name "<your-unique-keyvault-name>" --kty RSA-HSM
 ```
 
-. Вместо этого можно импортировать закрытый ключ с помощью команды Azure CLI [AZ keyvault Key Import](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-import) :
+Вместо этого можно импортировать закрытый ключ с помощью команды Azure CLI [AZ keyvault Key Import](/cli/azure/keyvault/key?view=azure-cli-latest#az-keyvault-key-import) :
 
 В любом случае укажите имя Azure CLI KEK в параметре [AZ VM Encryption Enable](/cli/azure/vm/encryption?view=azure-cli-latest#az-vm-encryption-enable) --ключ-Encryption-Key. 
 

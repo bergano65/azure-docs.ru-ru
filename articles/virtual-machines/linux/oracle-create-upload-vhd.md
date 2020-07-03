@@ -1,25 +1,18 @@
 ---
 title: Создание и передача Oracle Linux виртуального жесткого диска
 description: Узнайте, как создать и передать виртуальный жесткий диск (VHD-файл) Azure, содержащий операционную систему Oracle Linux.
-services: virtual-machines-linux
-documentationcenter: ''
-author: MicahMcKittrick-MSFT
-manager: gwallace
-editor: tysonn
-tags: azure-service-management,azure-resource-manager
-ms.assetid: dd96f771-26eb-4391-9a89-8c8b6d691822
+author: gbowerman
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/10/2019
-ms.author: mimckitt
-ms.openlocfilehash: e0250737f1f2934548a16ee42e9ff582f2403c48
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.author: guybo
+ms.openlocfilehash: fd6d17709cc3e5e9f6bb89ed7480fcd9ee80fd97
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75747725"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759387"
 ---
 # <a name="prepare-an-oracle-linux-virtual-machine-for-azure"></a>Подготовка виртуальной машины Oracle Linux для Azure
 
@@ -30,22 +23,22 @@ ms.locfileid: "75747725"
 * Hyper-V и Azure поддерживают Oracle Linux с неповрежденным ядром Enterprise (UEK) или ядром, совместимым с Red Hat.
 * Oracle UEK2 не поддерживается в Hyper-V и Azure, поскольку не включает необходимые драйверы.
 * Формат VHDX не поддерживается в Azure, поддерживается только **фиксированный VHD**.  Можно преобразовать диск в формат VHD с помощью диспетчера Hyper-V или командлета convert-vhd.
-* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. Для дисков данных можно использовать [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+* При установке системы Linux рекомендуется использовать стандартные разделы, а не LVM (как правило, значение по умолчанию во многих дистрибутивах). Это позволит избежать конфликта имен LVM при клонировании виртуальных машин, особенно если диск с OC может быть подключен к другой ВМ в целях устранения неполадок. [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) могут использоваться на дисках данных, если они предпочтительны.
 * Версии ядра Linux ниже 2.6.37 не поддерживают NUMA в Hyper-V с виртуальными машинами большего размера. Эта проблема в основном влияет на старые дистрибутивы с использованием вышестоящего ядра Red Hat 2.6.32 и была исправлена в Oracle Linux 6,6 и более поздних версиях.
 * Не настраивайте раздел подкачки на диске с ОС. Можно настроить агент Linux для создания файла подкачки на временном диске ресурсов.  Дополнительные сведения описаны далее.
 * Размер виртуальной памяти всех VHD в Azure должен быть округлен до 1 МБ. При конвертации диска в формате RAW в виртуальный жесткий диск убедитесь, что размер диска RAW в несколько раз превышает 1 МБ. См. дополнительные сведения в [примечаниях по установке Linux](create-upload-generic.md#general-linux-installation-notes).
-* Убедитесь, что `Addons` включен репозиторий. Измените файл `/etc/yum.repos.d/public-yum-ol6.repo`(Oracle Linux 6) или `/etc/yum.repos.d/public-yum-ol7.repo`(Oracle Linux 7) и измените строку `enabled=0` на `enabled=1` в разделе **[ol6_addons]** или **[ol7_addons]** в этом файле.
+* Убедитесь, что `Addons` включен репозиторий. Измените файл `/etc/yum.repos.d/public-yum-ol6.repo`(Oracle Linux 6) или `/etc/yum.repos.d/public-yum-ol7.repo`(Oracle Linux 7) и измените значение в строке `enabled=0` на `enabled=1` **[ol6_addons]** или **[ol7_addons]** в этом файле.
 
 ## <a name="oracle-linux-64-and-later"></a>Oracle Linux 6,4 и более поздних версий
 Необходимо выполнить определенные действия с конфигурацией операционной системы, чтобы виртуальная машина запускалась в среде Azure.
 
 1. На центральной панели диспетчера Hyper-V выберите виртуальную машину.
-2. Щелкните **Подключение** , чтобы открыть окно виртуальной машины.
+2. Щелкните **Подключиться**, чтобы открыть окно для виртуальной машины.
 3. Удалите NetworkManager, выполнив следующую команду:
    
         # sudo rpm -e --nodeps NetworkManager
    
-    **Примечание.** Если пакет еще не установлен, эта команда завершится с сообщением об ошибке. Это ожидаемое поведение.
+    **Примечание.** Если пакет еще не установлен, эта команда завершится с сообщением об ошибке. Такое поведение является стандартным.
 4. Создайте файл с именем **network** в каталоге `/etc/sysconfig/`. Файл должен содержать следующий текст:
    
         NETWORKING=yes
@@ -102,7 +95,7 @@ ms.locfileid: "75747725"
         # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
-14. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
+14. В диспетчере Hyper-V щелкните **действие-> завершить работу** . Виртуальный жесткий диск Linux готов к передаче в Azure.
 
 ---
 ## <a name="oracle-linux-70-and-later"></a>Oracle Linux 7,0 и более поздних версий
@@ -115,7 +108,7 @@ ms.locfileid: "75747725"
 * В качестве загрузчика по умолчанию теперь используется GRUB2, поэтому изменилась процедура правки параметров ядра (см. ниже).
 * XFS теперь является файловой системой по умолчанию. При желании можно продолжать использование файловой системы ext4.
 
-**Шаги настройки**
+**Этапы настройки**
 
 1. В диспетчере Hyper-V выберите виртуальную машину.
 2. Щелкните **Подключение** , чтобы открыть окно консоли для виртуальной машины.
@@ -178,8 +171,8 @@ ms.locfileid: "75747725"
         # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
-15. В диспетчере Hyper-V выберите **Действие -> Завершение работы**. Виртуальный жесткий диск Linux готов к передаче в Azure.
+15. В диспетчере Hyper-V щелкните **действие-> завершить работу** . Виртуальный жесткий диск Linux готов к передаче в Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь вы можете создавать новые виртуальные машины в Azure с помощью VHD-файла системы Oracle Linux. Если вы отправляете VHD-файл в Azure впервые, см. раздел [Вариант 1. Передача VHD](upload-vhd.md#option-1-upload-a-vhd).
 

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: virtual-machines
 author: roygara
 ms.service: virtual-machines
@@ -9,22 +9,22 @@ ms.date: 09/25/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 5104c3b4446a8d3747ce7cc1648ef05dd117eb3d
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74013777"
 ---
 Обозреватель службы хранилища 1.10.0 позволяет пользователям отправлять, скачивать и копировать управляемые диски, а также создавать моментальные снимки. Из-за этих дополнительных возможностей можно использовать Обозреватель службы хранилища для переноса данных из локальной среды в Azure и переноса данных между регионами Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этой статьи потребуется следующее:
 - Подписка Azure
 - Один или несколько управляемых дисков Azure
 - Последняя версия [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/)
 
-## <a name="connect-to-an-azure-subscription"></a>подключение к подписке Azure
+## <a name="connect-to-an-azure-subscription"></a>Подключение к подписке Azure
 
 Если ваша Обозреватель службы хранилища не подключена к Azure, вы не сможете использовать ее для управления ресурсами. В этом разделе описано, как подключить его к учетной записи Azure, чтобы можно было управлять ресурсами с помощью Обозреватель службы хранилища.
 
@@ -50,7 +50,7 @@ ms.locfileid: "74013777"
 
     ![Выберите группу ресурсов 1](media/disks-upload-vhd-to-managed-disk-storage-explorer/select-rg1.png)
 
-1. Щелкните **Отправить**.
+1. Выберите команду **Отправить**.
 
     ![Кнопка "Отправить"](media/disks-upload-vhd-to-managed-disk-storage-explorer/upload-button.png)
 
@@ -128,4 +128,4 @@ ms.locfileid: "74013777"
 
     ![Открыть моментальный снимок на портале](media/disks-upload-vhd-to-managed-disk-storage-explorer/open-in-portal.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги

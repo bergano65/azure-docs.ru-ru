@@ -5,24 +5,21 @@ services: active-directory
 documentationcenter: .net
 author: navyasric
 manager: CelesteDG
-editor: ''
-ms.assetid: 09f6f318-e88b-4024-9ee1-e7f09fb19a82
 ms.service: active-directory
 ms.subservice: azuread-dev
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: fbef4d84e86c3d35e35a8bbeb04a399ad87a1b89
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ROBOTS: NOINDEX
+ms.openlocfilehash: a301029f30a77f4e62ad3529aac488a81c12566e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77164088"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80154531"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Вызовы между службами с использованием делегированного удостоверения пользователя в потоке On-Behalf-Of
 
@@ -35,9 +32,9 @@ ms.locfileid: "77164088"
 
 ## <a name="on-behalf-of-flow-diagram"></a>Схема потока On-Behalf-Of
 
-Поток OBO начинается после того, как пользователь пройдет проверку подлинности для приложения с использованием [потока для предоставления кода проверки подлинности в OAuth 2.0](v1-protocols-oauth-code.md). На этом этапе приложение отправляет маркер доступа (токен A) в веб-API среднего уровня (API A), содержащий утверждения пользователя и его согласие на доступ к API A. Затем API A может отправить запрос проверки подлинности в нижестоящий веб-API (API B).
+Поток OBO начинается после того, как пользователь пройдет проверку подлинности для приложения с использованием [потока для предоставления кода проверки подлинности в OAuth 2.0](v1-protocols-oauth-code.md). На этом этапе приложение отправляет маркер доступа (токен а) веб-API среднего уровня (API A), содержащий утверждения пользователя и согласие на доступ к API а. Затем API а выполняет аутентифицированный запрос к подчиненному веб-API (API B).
 
-Эти действия относятся к потоку "от имени". ![показывает действия в потоке по](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)у OAuth 2.0.
+Эти действия относятся к потоку "от имени". ![в этом разделе показаны действия, описанные в последовательности "от имени по протоколу OAuth 2.0".](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
 
 1. Клиентское приложение отправляет запрос к API A с токеном A.
 1. API A выполняет проверку подлинности на конечной точке выдачи токена Azure AD и запрашивает токен доступа к API B.
@@ -82,7 +79,7 @@ ms.locfileid: "77164088"
 1. Выберите **Зарегистрировать**, чтобы создать приложение.
 1. Настройте разрешения для приложения. В окне **разрешения API**выберите **Добавить разрешение** , а затем **Мои API**.
 1. Введите имя службы среднего уровня в текстовом поле.
-1. Щелкните **выбрать разрешения** , а затем выберите **доступ \<имя службы >** .
+1. Щелкните **Выбор разрешений** и выберите **имя службы \<Access>**.
 
 ### <a name="configure-known-client-applications"></a>Настройка известных клиентских приложений
 
@@ -94,7 +91,7 @@ ms.locfileid: "77164088"
 1. Найдите массив свойств `knownClientApplications` и добавьте идентификатор клиента для клиентского приложения в качестве одного из элементов массива.
 1. Сохраните манифест, нажав кнопку **Сохранить**.
 
-## <a name="service-to-service-access-token-request"></a>Запрос маркера взаимного доступа между службами
+## <a name="service-to-service-access-token-request"></a>Запрос маркера доступа для взаимодействия между службами
 
 Чтобы запросить токен доступа, отправьте запрос HTTP POST к конечной точке Azure AD для конкретного клиента с указанными параметрами.
 
@@ -104,23 +101,23 @@ https://login.microsoftonline.com/<tenant>/oauth2/token
 
 Клиентское приложение защищается либо общим секретом, либо сертификатом.
 
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый сценарий: запрос маркера доступа с помощью общего секрета
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый пример. Запрос маркера доступа по общему секрету
 
-При использовании общего секрета запрос маркера взаимного доступа между службами содержит следующие параметры:
+Если используется общий секрет, запрос маркера доступа для взаимодействия между службами содержит следующие параметры.
 
-| Параметр |  | Description |
+| Параметр |  | Описание |
 | --- | --- | --- |
-| grant_type |обязательно | Тип запроса токена. Запрос OBO использует JSON Web Token (JWT), поэтому необходимо задать значение **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
-| assertion |обязательно | Значение маркера доступа, используемого в запросе. |
-| client_id |обязательно | Идентификатор приложения, назначенный вызывающей службе при регистрации в Azure AD. Чтобы узнать идентификатор приложения на портале Azure, нажмите **Active Directory**, выберите каталог, а затем щелкните имя приложения. |
-| client_secret |обязательно | Ключ, зарегистрированный для вызывающей службы в Azure AD. Значение ключа должно было быть записано при регистрации. |
-| ресурс |обязательно | URI идентификатора приложения принимающей службы (защищенный ресурс). Чтобы узнать URI идентификатора приложения на портале Azure, нажмите **Active Directory** и выберите каталог. Щелкните имя приложения, выберите **Все параметры**, а затем выберите пункт **Свойства**. |
-| requested_token_use |обязательно | Указывает, как должен быть обработан запрос. Для потока On-Behalf-Of это значение должно быть равно **on_behalf_of**. |
-| область |обязательно | Список областей для запроса токена, разделенный пробелами. Для OpenID Connect необходимо указать область **openid**.|
+| grant_type |обязательные | Тип запроса токена. Запрос OBO использует JSON Web Token (JWT), поэтому необходимо задать значение **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
+| assertion |обязательные | Значение маркера доступа, используемого в запросе. |
+| client_id |обязательные | Идентификатор приложения, назначенный вызывающей службе при регистрации в Azure AD. Чтобы узнать идентификатор приложения на портале Azure, нажмите **Active Directory**, выберите каталог, а затем щелкните имя приложения. |
+| client_secret |обязательные | Ключ, зарегистрированный для вызывающей службы в Azure AD. Значение ключа должно было быть записано при регистрации. |
+| resource |обязательные | URI идентификатора приложения принимающей службы (защищенный ресурс). Чтобы узнать URI идентификатора приложения на портале Azure, нажмите **Active Directory** и выберите каталог. Щелкните имя приложения, выберите **Все параметры**, а затем выберите пункт **Свойства**. |
+| requested_token_use |обязательные | Позволяет указать, как должен обрабатываться запрос. Для потока On-Behalf-Of это значение должно быть равно **on_behalf_of**. |
+| scope |обязательные | Список областей для запроса маркера с разделителями-пробелами. Для OpenID Connect необходимо указать область **openid**.|
 
 #### <a name="example"></a>Пример
 
-Ниже приведен HTTP-запрос POST маркера доступа для веб-API https://graph.windows.net. Параметр `client_id` определяет службу, которая запрашивает токен доступа.
+Ниже приведен HTTP-запрос POST маркера доступа для веб-API https://graph.microsoft.com. Параметр `client_id` определяет службу, которая запрашивает токен доступа.
 
 ```
 // line breaks for legibility only
@@ -132,32 +129,32 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 &client_id=625391af-c675-43e5-8e44-edd3e30ceb15
 &client_secret=0Y1W%2BY3yYb3d9N8vSjvm8WrGzVZaAaHbHHcGbcgG%2BoI%3D
-&resource=https%3A%2F%2Fgraph.windows.net
-&assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiJodHRwczovL2Rkb2JhbGlhbm91dGxvb2sub25taWNyb3NvZnQuY29tLzE5MjNmODYyLWU2ZGMtNDFhMy04MWRhLTgwMmJhZTAwYWY2ZCIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzI2MDM5Y2NlLTQ4OWQtNDAwMi04MjkzLTViMGM1MTM0ZWFjYi8iLCJpYXQiOjE0OTM0MjMxNTIsIm5iZiI6MTQ5MzQyMzE1MiwiZXhwIjoxNDkzNDY2NjUyLCJhY3IiOiIxIiwiYWlvIjoiWTJaZ1lCRFF2aTlVZEc0LzM0L3dpQndqbjhYeVp4YmR1TFhmVE1QeG8yYlN2elgreHBVQSIsImFtciI6WyJwd2QiXSwiYXBwaWQiOiJiMzE1MDA3OS03YmViLTQxN2YtYTA2YS0zZmRjNzhjMzI1NDUiLCJhcHBpZGFjciI6IjAiLCJlX2V4cCI6MzAyNDAwLCJmYW1pbHlfbmFtZSI6IlRlc3QiLCJnaXZlbl9uYW1lIjoiTmF2eWEiLCJpcGFkZHIiOiIxNjcuMjIwLjEuMTc3IiwibmFtZSI6Ik5hdnlhIFRlc3QiLCJvaWQiOiIxY2Q0YmNhYy1iODA4LTQyM2EtOWUyZi04MjdmYmIxYmI3MzkiLCJwbGF0ZiI6IjMiLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzdWIiOiJEVXpYbkdKMDJIUk0zRW5pbDFxdjZCakxTNUllQy0tQ2ZpbzRxS1MzNEc4IiwidGlkIjoiMjYwMzljY2UtNDg5ZC00MDAyLTgyOTMtNWIwYzUxMzRlYWNiIiwidW5pcXVlX25hbWUiOiJuYXZ5YUBkZG9iYWxpYW5vdXRsb29rLm9ubWljcm9zb2Z0LmNvbSIsInVwbiI6Im5hdnlhQGRkb2JhbGlhbm91dGxvb2sub25taWNyb3NvZnQuY29tIiwidmVyIjoiMS4wIn0.R-Ke-XO7lK0r5uLwxB8g5CrcPAwRln5SccJCfEjU6IUqpqcjWcDzeDdNOySiVPDU_ZU5knJmzRCF8fcjFtPsaA4R7vdIEbDuOur15FXSvE8FvVSjP_49OH6hBYqoSUAslN3FMfbO6Z8YfCIY4tSOB2I6ahQ_x4ZWFWglC3w5mK-_4iX81bqi95eV4RUKefUuHhQDXtWhrSgIEC0YiluMvA4TnaJdLq_tWXIc4_Tq_KfpkvI004ONKgU7EAMEr1wZ4aDcJV2yf22gQ1sCSig6EGSTmmzDuEPsYiyd4NhidRZJP4HiiQh-hePBQsgcSgYGvz9wC6n57ufYKh2wm_Ti3Q
+&resource=https%3A%2F%2Fgraph.microsoft.com
+&assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.ewogICJhdWQiOiAiaHR0cHM6Ly9ncmFwaC5taWNyb3NvZnQuY29tIiwKICAiaXNzIjogImh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzI2MDM5Y2NlLTQ4OWQtNDAwMi04MjkzLTViMGM1MTM0ZWFjYi8iLAogICJpYXQiOiAxNDkzNDIzMTY4LAogICJuYmYiOiAxNDkzNDIzMTY4LAogICJleHAiOiAxNDkzNDY2OTUxLAogICJhY3IiOiAiMSIsCiAgImFpbyI6ICJBU1FBMi84REFBQUE1NnZGVmp0WlNjNWdBVWwrY1Z0VFpyM0VvV2NvZEoveWV1S2ZqcTZRdC9NPSIsCiAgImFtciI6IFsKICAgICJwd2QiCiAgXSwKICAiYXBwaWQiOiAiNjI1MzkxYWYtYzY3NS00M2U1LThlNDQtZWRkM2UzMGNlYjE1IiwKICAiYXBwaWRhY3IiOiAiMSIsCiAgImVfZXhwIjogMzAyNjgzLAogICJmYW1pbHlfbmFtZSI6ICJUZXN0IiwKICAiZ2l2ZW5fbmFtZSI6ICJOYXZ5YSIsCiAgImlwYWRkciI6ICIxNjcuMjIwLjEuMTc3IiwKICAibmFtZSI6ICJOYXZ5YSBUZXN0IiwKICAib2lkIjogIjFjZDRiY2FjLWI4MDgtNDIzYS05ZTJmLTgyN2ZiYjFiYjczOSIsCiAgInBsYXRmIjogIjMiLAogICJwdWlkIjogIjEwMDMzRkZGQTEyRUQ3RkUiLAogICJzY3AiOiAiVXNlci5SZWFkIiwKICAic3ViIjogIjNKTUlaSWJlYTc1R2hfWHdDN2ZzX0JDc3kxa1l1ekZKLTUyVm1Zd0JuM3ciLAogICJ0aWQiOiAiMjYwMzljY2UtNDg5ZC00MDAyLTgyOTMtNWIwYzUxMzRlYWNiIiwKICAidW5pcXVlX25hbWUiOiAibmF2eWFAZGRvYmFsaWFub3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLAogICJ1cG4iOiAibmF2eWFAZGRvYmFsaWFub3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLAogICJ1dGkiOiAieEN3ZnpoYS1QMFdKUU9MeENHZ0tBQSIsCiAgInZlciI6ICIxLjAiCn0.cqmUVjfVbqWsxJLUI1Z4FRx1mNQAHP-L0F4EMN09r8FY9bIKeO-0q1eTdP11Nkj_k4BmtaZsTcK_mUygdMqEp9AfyVyA1HYvokcgGCW_Z6DMlVGqlIU4ssEkL9abgl1REHElPhpwBFFBBenOk9iHddD1GddTn6vJbKC3qAaNM5VarjSPu50bVvCrqKNvFixTb5bbdnSz-Qr6n6ACiEimiI1aNOPR2DeKUyWBPaQcU5EAK0ef5IsVJC1yaYDlAcUYIILMDLCD9ebjsy0t9pj_7lvjzUSrbMdSCCdzCqez_MSNxrk1Nu9AecugkBYp3UVUZOIyythVrj6-sVvLZKUutQ
 &requested_token_use=on_behalf_of
 &scope=openid
 ```
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>Второй сценарий: запрос маркера доступа с помощью сертификата
+### <a name="second-case-access-token-request-with-a-certificate"></a>Второй пример. Запрос маркера доступа по сертификату
 
-Запрос маркера взаимного доступа между службами с помощью сертификата содержит следующие параметры:
+Запрос маркера доступа по сертификату для взаимодействия между службами содержит следующие параметры.
 
-| Параметр |  | Description |
+| Параметр |  | Описание |
 | --- | --- | --- |
-| grant_type |обязательно | Тип запроса токена. Запрос OBO использует маркер доступа JWT, поэтому необходимо задать значение **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
-| assertion |обязательно | Значение токена, используемого в запросе. |
-| client_id |обязательно | Идентификатор приложения, назначенный вызывающей службе при регистрации в Azure AD. Чтобы узнать идентификатор приложения на портале Azure, нажмите **Active Directory**, выберите каталог, а затем щелкните имя приложения. |
-| client_assertion_type |обязательно |Значение должно быть `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
-| client_assertion |обязательно | Маркер JSON Web Token, который создается и подписывается с помощью сертификата, зарегистрированного как учетные данные для приложения. Сведения о формате утверждений и о том, как зарегистрировать сертификат, см. в статье [Учетные данные сертификата](../develop/active-directory-certificate-credentials.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json).|
-| ресурс |обязательно | URI идентификатора приложения принимающей службы (защищенный ресурс). Чтобы узнать URI идентификатора приложения на портале Azure, нажмите **Active Directory** и выберите каталог. Щелкните имя приложения, выберите **Все параметры**, а затем выберите пункт **Свойства**. |
-| requested_token_use |обязательно | Указывает, как должен быть обработан запрос. Для потока On-Behalf-Of это значение должно быть равно **on_behalf_of**. |
-| область |обязательно | Список областей для запроса токена, разделенный пробелами. Для OpenID Connect необходимо указать область **openid**.|
+| grant_type |обязательные | Тип запроса токена. Запрос OBO использует маркер доступа JWT, поэтому необходимо задать значение **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
+| assertion |обязательные | Значение маркера, которое используется в запросе. |
+| client_id |обязательные | Идентификатор приложения, назначенный вызывающей службе при регистрации в Azure AD. Чтобы узнать идентификатор приложения на портале Azure, нажмите **Active Directory**, выберите каталог, а затем щелкните имя приложения. |
+| client_assertion_type |обязательные |Значение должно быть `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
+| client_assertion |обязательные | Маркер JSON Web Token, который создается и подписывается с помощью сертификата, зарегистрированного как учетные данные для приложения. Сведения о формате утверждений и о том, как зарегистрировать сертификат, см. в статье [Учетные данные сертификата](../develop/active-directory-certificate-credentials.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json).|
+| resource |обязательные | URI идентификатора приложения принимающей службы (защищенный ресурс). Чтобы узнать URI идентификатора приложения на портале Azure, нажмите **Active Directory** и выберите каталог. Щелкните имя приложения, выберите **Все параметры**, а затем выберите пункт **Свойства**. |
+| requested_token_use |обязательные | Позволяет указать, как должен обрабатываться запрос. Для потока On-Behalf-Of это значение должно быть равно **on_behalf_of**. |
+| scope |обязательные | Список областей для запроса маркера с разделителями-пробелами. Для OpenID Connect необходимо указать область **openid**.|
 
 Эти параметры будут практически такими же, как и для запроса по общему секрету, но параметр `client_secret parameter` заменяется двумя параметрами: `client_assertion_type` и `client_assertion`.
 
 #### <a name="example"></a>Пример
 
-Ниже приведен HTTP-запрос POST маркера доступа для веб-API https://graph.windows.net с сертификатом. Параметр `client_id` определяет службу, которая запрашивает токен доступа.
+Ниже приведен HTTP-запрос POST маркера доступа для веб-API https://graph.microsoft.com с сертификатом. Параметр `client_id` определяет службу, которая запрашивает токен доступа.
 
 ```
 // line breaks for legibility only
@@ -170,7 +167,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 &client_id=625391af-c675-43e5-8e44-edd3e30ceb15
 &client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=eyJhbGciOiJSUzI1NiIsIng1dCI6Imd4OHRHeXN5amNScUtqRlBuZDdSRnd2d1pJMCJ9.eyJ{a lot of characters here}M8U3bSUKKJDEg
-&resource=https%3A%2F%2Fgraph.windows.net
+&resource=https%3A%2F%2Fgraph.microsoft.com
 &assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiJodHRwczovL2Rkb2JhbGlhbm91dGxvb2sub25taWNyb3NvZnQuY29tLzE5MjNmODYyLWU2ZGMtNDFhMy04MWRhLTgwMmJhZTAwYWY2ZCIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzI2MDM5Y2NlLTQ4OWQtNDAwMi04MjkzLTViMGM1MTM0ZWFjYi8iLCJpYXQiOjE0OTM0MjMxNTIsIm5iZiI6MTQ5MzQyMzE1MiwiZXhwIjoxNDkzNDY2NjUyLCJhY3IiOiIxIiwiYWlvIjoiWTJaZ1lCRFF2aTlVZEc0LzM0L3dpQndqbjhYeVp4YmR1TFhmVE1QeG8yYlN2elgreHBVQSIsImFtciI6WyJwd2QiXSwiYXBwaWQiOiJiMzE1MDA3OS03YmViLTQxN2YtYTA2YS0zZmRjNzhjMzI1NDUiLCJhcHBpZGFjciI6IjAiLCJlX2V4cCI6MzAyNDAwLCJmYW1pbHlfbmFtZSI6IlRlc3QiLCJnaXZlbl9uYW1lIjoiTmF2eWEiLCJpcGFkZHIiOiIxNjcuMjIwLjEuMTc3IiwibmFtZSI6Ik5hdnlhIFRlc3QiLCJvaWQiOiIxY2Q0YmNhYy1iODA4LTQyM2EtOWUyZi04MjdmYmIxYmI3MzkiLCJwbGF0ZiI6IjMiLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzdWIiOiJEVXpYbkdKMDJIUk0zRW5pbDFxdjZCakxTNUllQy0tQ2ZpbzRxS1MzNEc4IiwidGlkIjoiMjYwMzljY2UtNDg5ZC00MDAyLTgyOTMtNWIwYzUxMzRlYWNiIiwidW5pcXVlX25hbWUiOiJuYXZ5YUBkZG9iYWxpYW5vdXRsb29rLm9ubWljcm9zb2Z0LmNvbSIsInVwbiI6Im5hdnlhQGRkb2JhbGlhbm91dGxvb2sub25taWNyb3NvZnQuY29tIiwidmVyIjoiMS4wIn0.R-Ke-XO7lK0r5uLwxB8g5CrcPAwRln5SccJCfEjU6IUqpqcjWcDzeDdNOySiVPDU_ZU5knJmzRCF8fcjFtPsaA4R7vdIEbDuOur15FXSvE8FvVSjP_49OH6hBYqoSUAslN3FMfbO6Z8YfCIY4tSOB2I6ahQ_x4ZWFWglC3w5mK-_4iX81bqi95eV4RUKefUuHhQDXtWhrSgIEC0YiluMvA4TnaJdLq_tWXIc4_Tq_KfpkvI004ONKgU7EAMEr1wZ4aDcJV2yf22gQ1sCSig6EGSTmmzDuEPsYiyd4NhidRZJP4HiiQh-hePBQsgcSgYGvz9wC6n57ufYKh2wm_Ti3Q
 &requested_token_use=on_behalf_of
 &scope=openid
@@ -180,20 +177,20 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 В случае успеха возвращается отклик JSON OAuth 2.0 со следующими параметрами:
 
-| Параметр | Description |
+| Параметр | Описание |
 | --- | --- |
-| token_type |Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о токенах носителей см. в разделе [OAuth 2.0 Authorization Framework: использование токена носителя (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
-| область |Область доступа, предоставляемая токеном. |
+| token_type |Обозначает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о токенах носителей см. в разделе [OAuth 2.0 Authorization Framework: использование токена носителя (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
+| scope |Область доступа, предоставленная в маркере. |
 | expires_in |Срок действия доступа для токена (в секундах). |
 | expires_on |Время истечения срока действия маркера доступа. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC до истечения срока действия. Это значение используется для определения времени существования кэшированных маркеров. |
-| ресурс |URI идентификатора приложения принимающей службы (защищенный ресурс). |
-| access_token |Запрашиваемый маркер доступа. Вызывающая служба может использовать этот токен для проверки подлинности принимающей службы. |
+| resource |URI идентификатора приложения принимающей службы (защищенный ресурс). |
+| access_token |Запрошенный маркер доступа. Вызывающая служба может использовать этот маркер для проверки подлинности в вызываемой службе. |
 | id_token |Запрашиваемый токен удостоверения. Вызывающая служба может использовать этот токен для проверки удостоверения пользователя и запуска сеанса пользователя. |
-| refresh_token |Токен обновления для запрошенного токена доступа. Вызывающая служба может использовать этот токен для запроса другого токена доступа после того, как срок действия текущего токена доступа истек. |
+| refresh_token |Маркер обновления для запрошенного маркера доступа. Вызывающая служба может с помощью этого маркера запросить другой маркер доступа после истечения срока действия текущего маркера доступа. |
 
-### <a name="success-response-example"></a>Пример ответа с успешным предоставлением доступа
+### <a name="success-response-example"></a>Пример ответа об успешном выполнении
 
-В следующем примере показано сообщение о предоставлении доступа в ответ на запрос маркера доступа к веб-API https://graph.windows.net.
+В следующем примере показано сообщение о предоставлении доступа в ответ на запрос маркера доступа к веб-API https://graph.microsoft.com.
 
 ```json
 {
@@ -203,7 +200,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
     "ext_expires_in":"302683",
     "expires_on":"1493466951",
     "not_before":"1493423168",
-    "resource":"https://graph.windows.net",
+    "resource":"https://graph.microsoft.com",
     "access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLndpbmRvd3MubmV0IiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMjYwMzljY2UtNDg5ZC00MDAyLTgyOTMtNWIwYzUxMzRlYWNiLyIsImlhdCI6MTQ5MzQyMzE2OCwibmJmIjoxNDkzNDIzMTY4LCJleHAiOjE0OTM0NjY5NTEsImFjciI6IjEiLCJhaW8iOiJBU1FBMi84REFBQUE1NnZGVmp0WlNjNWdBVWwrY1Z0VFpyM0VvV2NvZEoveWV1S2ZqcTZRdC9NPSIsImFtciI6WyJwd2QiXSwiYXBwaWQiOiI2MjUzOTFhZi1jNjc1LTQzZTUtOGU0NC1lZGQzZTMwY2ViMTUiLCJhcHBpZGFjciI6IjEiLCJlX2V4cCI6MzAyNjgzLCJmYW1pbHlfbmFtZSI6IlRlc3QiLCJnaXZlbl9uYW1lIjoiTmF2eWEiLCJpcGFkZHIiOiIxNjcuMjIwLjEuMTc3IiwibmFtZSI6Ik5hdnlhIFRlc3QiLCJvaWQiOiIxY2Q0YmNhYy1iODA4LTQyM2EtOWUyZi04MjdmYmIxYmI3MzkiLCJwbGF0ZiI6IjMiLCJwdWlkIjoiMTAwMzNGRkZBMTJFRDdGRSIsInNjcCI6IlVzZXIuUmVhZCIsInN1YiI6IjNKTUlaSWJlYTc1R2hfWHdDN2ZzX0JDc3kxa1l1ekZKLTUyVm1Zd0JuM3ciLCJ0aWQiOiIyNjAzOWNjZS00ODlkLTQwMDItODI5My01YjBjNTEzNGVhY2IiLCJ1bmlxdWVfbmFtZSI6Im5hdnlhQGRkb2JhbGlhbm91dGxvb2sub25taWNyb3NvZnQuY29tIiwidXBuIjoibmF2eWFAZGRvYmFsaWFub3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJ4Q3dmemhhLVAwV0pRT0x4Q0dnS0FBIiwidmVyIjoiMS4wIn0.cqmUVjfVbqWsxJLUI1Z4FRx1mNQAHP-L0F4EMN09r8FY9bIKeO-0q1eTdP11Nkj_k4BmtaZsTcK_mUygdMqEp9AfyVyA1HYvokcgGCW_Z6DMlVGqlIU4ssEkL9abgl1REHElPhpwBFFBBenOk9iHddD1GddTn6vJbKC3qAaNM5VarjSPu50bVvCrqKNvFixTb5bbdnSz-Qr6n6ACiEimiI1aNOPR2DeKUyWBPaQcU5EAK0ef5IsVJC1yaYDlAcUYIILMDLCD9ebjsy0t9pj_7lvjzUSrbMdSCCdzCqez_MSNxrk1Nu9AecugkBYp3UVUZOIyythVrj6-sVvLZKUutQ",
     "refresh_token":"AQABAAAAAABnfiG-mA6NTae7CdWW7QfdjKGu9-t1scy_TDEmLi4eLQMjJGt_nAoVu6A4oSu1KsRiz8XyQIPKQxSGfbf2FoSK-hm2K8TYzbJuswYusQpJaHUQnSqEvdaCeFuqXHBv84wjFhuanzF9dQZB_Ng5za9xKlUENrNtlq9XuLNVKzxEyeUM7JyxzdY7JiEphWImwgOYf6II316d0Z6-H3oYsFezf4Xsjz-MOBYEov0P64UaB5nJMvDyApV-NWpgklLASfNoSPGb67Bc02aFRZrm4kLk-xTl6eKE6hSo0XU2z2t70stFJDxvNQobnvNHrAmBaHWPAcC3FGwFnBOojpZB2tzG1gLEbmdROVDp8kHEYAwnRK947Py12fJNKExUdN0njmXrKxNZ_fEM33LHW1Tf4kMX_GvNmbWHtBnIyG0w5emb-b54ef5AwV5_tGUeivTCCysgucEc-S7G8Cz0xNJ_BOiM_4bAv9iFmrm9STkltpz0-Tftg8WKmaJiC0xXj6uTf4ZkX79mJJIuuM7XP4ARIcLpkktyg2Iym9jcZqymRkGH2Rm9sxBwC4eeZXM7M5a7TJ-5CqOdfuE3sBPq40RdEWMFLcrAzFvP0VDR8NKHIrPR1AcUruat9DETmTNJukdlJN3O41nWdZOVoJM-uKN3uz2wQ2Ld1z0Mb9_6YfMox9KTJNzRzcL52r4V_y3kB6ekaOZ9wQ3HxGBQ4zFt-2U0mSszIAA",
     "id_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJub25lIn0.eyJhdWQiOiI2MjUzOTFhZi1jNjc1LTQzZTUtOGU0NC1lZGQzZTMwY2ViMTUiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8yNjAzOWNjZS00ODlkLTQwMDItODI5My01YjBjNTEzNGVhY2IvIiwiaWF0IjoxNDkzNDIzMTY4LCJuYmYiOjE0OTM0MjMxNjgsImV4cCI6MTQ5MzQ2Njk1MSwiYW1yIjpbInB3ZCJdLCJmYW1pbHlfbmFtZSI6IlRlc3QiLCJnaXZlbl9uYW1lIjoiTmF2eWEiLCJpcGFkZHIiOiIxNjcuMjIwLjEuMTc3IiwibmFtZSI6Ik5hdnlhIFRlc3QiLCJvaWQiOiIxY2Q0YmNhYy1iODA4LTQyM2EtOWUyZi04MjdmYmIxYmI3MzkiLCJwbGF0ZiI6IjMiLCJzdWIiOiJEVXpYbkdKMDJIUk0zRW5pbDFxdjZCakxTNUllQy0tQ2ZpbzRxS1MzNEc4IiwidGlkIjoiMjYwMzljY2UtNDg5ZC00MDAyLTgyOTMtNWIwYzUxMzRlYWNiIiwidW5pcXVlX25hbWUiOiJuYXZ5YUBkZG9iYWxpYW5vdXRsb29rLm9ubWljcm9zb2Z0LmNvbSIsInVwbiI6Im5hdnlhQGRkb2JhbGlhbm91dGxvb2sub25taWNyb3NvZnQuY29tIiwidXRpIjoieEN3ZnpoYS1QMFdKUU9MeENHZ0tBQSIsInZlciI6IjEuMCJ9."
@@ -234,7 +231,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 ```
 GET /me?api-version=2013-11-08 HTTP/1.1
-Host: graph.windows.net
+Host: graph.microsoft.com
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCIsImtpZCI6InowMzl6ZHNGdWl6cEJmQlZLMVRuMjVRSFlPMCJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLndpbmRvd3MubmV0IiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMjYwMzljY2UtNDg5ZC00MDAyLTgyOTMtNWIwYzUxMzRlYWNiLyIsImlhdCI6MTQ5MzQyMzE2OCwibmJmIjoxNDkzNDIzMTY4LCJleHAiOjE0OTM0NjY5NTEsImFjciI6IjEiLCJhaW8iOiJBU1FBMi84REFBQUE1NnZGVmp0WlNjNWdBVWwrY1Z0VFpyM0VvV2NvZEoveWV1S2ZqcTZRdC9NPSIsImFtciI6WyJwd2QiXSwiYXBwaWQiOiI2MjUzOTFhZi1jNjc1LTQzZTUtOGU0NC1lZGQzZTMwY2ViMTUiLCJhcHBpZGFjciI6IjEiLCJlX2V4cCI6MzAyNjgzLCJmYW1pbHlfbmFtZSI6IlRlc3QiLCJnaXZlbl9uYW1lIjoiTmF2eWEiLCJpcGFkZHIiOiIxNjcuMjIwLjEuMTc3IiwibmFtZSI6Ik5hdnlhIFRlc3QiLCJvaWQiOiIxY2Q0YmNhYy1iODA4LTQyM2EtOWUyZi04MjdmYmIxYmI3MzkiLCJwbGF0ZiI6IjMiLCJwdWlkIjoiMTAwMzNGRkZBMTJFRDdGRSIsInNjcCI6IlVzZXIuUmVhZCIsInN1YiI6IjNKTUlaSWJlYTc1R2hfWHdDN2ZzX0JDc3kxa1l1ekZKLTUyVm1Zd0JuM3ciLCJ0aWQiOiIyNjAzOWNjZS00ODlkLTQwMDItODI5My01YjBjNTEzNGVhY2IiLCJ1bmlxdWVfbmFtZSI6Im5hdnlhQGRkb2JhbGlhbm91dGxvb2sub25taWNyb3NvZnQuY29tIiwidXBuIjoibmF2eWFAZGRvYmFsaWFub3V0bG9vay5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJ4Q3dmemhhLVAwV0pRT0x4Q0dnS0FBIiwidmVyIjoiMS4wIn0.cqmUVjfVbqWsxJLUI1Z4FRx1mNQAHP-L0F4EMN09r8FY9bIKeO-0q1eTdP11Nkj_k4BmtaZsTcK_mUygdMqEp9AfyVyA1HYvokcgGCW_Z6DMlVGqlIU4ssEkL9abgl1REHElPhpwBFFBBenOk9iHddD1GddTn6vJbKC3qAaNM5VarjSPu50bVvCrqKNvFixTb5bbdnSz-Qr6n6ACiEimiI1aNOPR2DeKUyWBPaQcU5EAK0ef5IsVJC1yaYDlAcUYIILMDLCD9ebjsy0t9pj_7lvjzUSrbMdSCCdzCqez_MSNxrk1Nu9AecugkBYp3UVUZOIyythVrj6-sVvLZKUutQ
 ```
 
@@ -252,32 +249,32 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdW
 
 Запрос утверждения SAML между службами содержит следующие параметры:
 
-| Параметр |  | Description |
+| Параметр |  | Описание |
 | --- | --- | --- |
-| grant_type |обязательно | Тип запроса токена. Для запроса с использованием JWT это значение должно быть равно **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
-| assertion |обязательно | Значение маркера доступа, используемого в запросе.|
-| client_id |обязательно | Идентификатор приложения, назначенный вызывающей службе при регистрации в Azure AD. Чтобы узнать идентификатор приложения на портале Azure, нажмите **Active Directory**, выберите каталог, а затем щелкните имя приложения. |
-| client_secret |обязательно | Ключ, зарегистрированный для вызывающей службы в Azure AD. Значение ключа должно было быть записано при регистрации. |
-| ресурс |обязательно | URI идентификатора приложения принимающей службы (защищенный ресурс). Это ресурс, который будет аудиторией токена SAML. Чтобы узнать URI идентификатора приложения на портале Azure, нажмите **Active Directory** и выберите каталог. Щелкните имя приложения, выберите **Все параметры**, а затем выберите пункт **Свойства**. |
-| requested_token_use |обязательно | Указывает, как должен быть обработан запрос. Для потока On-Behalf-Of это значение должно быть равно **on_behalf_of**. |
-| requested_token_type | обязательно | Задает тип запрашиваемого токена. Можно задать значение **urn:ietf:params:oauth:token-type:saml2** или **urn:ietf:params:oauth:token-type:saml1** в зависимости от требований запрашиваемого ресурса. |
+| grant_type |обязательные | Тип запроса токена. Для запроса с использованием JWT это значение должно быть равно **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
+| assertion |обязательные | Значение маркера доступа, используемого в запросе.|
+| client_id |обязательные | Идентификатор приложения, назначенный вызывающей службе при регистрации в Azure AD. Чтобы узнать идентификатор приложения на портале Azure, нажмите **Active Directory**, выберите каталог, а затем щелкните имя приложения. |
+| client_secret |обязательные | Ключ, зарегистрированный для вызывающей службы в Azure AD. Значение ключа должно было быть записано при регистрации. |
+| resource |обязательные | URI идентификатора приложения принимающей службы (защищенный ресурс). Это ресурс, который будет аудиторией токена SAML. Чтобы узнать URI идентификатора приложения на портале Azure, нажмите **Active Directory** и выберите каталог. Щелкните имя приложения, выберите **Все параметры**, а затем выберите пункт **Свойства**. |
+| requested_token_use |обязательные | Позволяет указать, как должен обрабатываться запрос. Для потока On-Behalf-Of это значение должно быть равно **on_behalf_of**. |
+| requested_token_type | обязательные | Задает тип запрашиваемого токена. Можно задать значение **urn:ietf:params:oauth:token-type:saml2** или **urn:ietf:params:oauth:token-type:saml1** в зависимости от требований запрашиваемого ресурса. |
 
 Отклик содержит токен SAML с кодировками UTF8 и Base64url.
 
 - **SubjectConfirmationData для утверждения SAML, полученного из вызова OBO.** Если целевому приложению необходимо значение получателя в параметре **SubjectConfirmationData**, то значением должен быть URL-адрес ответа без подстановочных знаков в конфигурации приложения-ресурса.
 - **Узел SubjectConfirmationData.** Узел не может содержать атрибут **InResponseTo**, так как он не входит в состав отклика SAML. Приложение, получающее токен SAML, должно иметь возможность принимать утверждение SAML без атрибута **InResponseTo**.
 
-- **Согласие.** Должно быть предоставлено согласие на получение токена SAML, содержащего данные пользователей в потоке OAuth. Сведения о разрешениях и получении согласия администратора см. в статье [Разрешения и согласие в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-permissions-and-consent).
+- **Согласие.** Должно быть предоставлено согласие на получение токена SAML, содержащего данные пользователей в потоке OAuth. Сведения о разрешениях и получении согласия администратора см. в статье [Разрешения и согласие в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/azuread-dev/v1-permissions-consent).
 
 ### <a name="response-with-saml-assertion"></a>Отклик с утверждением SAML
 
-| Параметр | Description |
+| Параметр | Описание |
 | --- | --- |
-| token_type |Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о маркерах носителей см. в спецификации [Платформа авторизации OAuth2.0: использование маркера носителя (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
-| область |Область доступа, предоставляемая токеном. |
+| token_type |Обозначает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о маркерах носителей см. в спецификации [Платформа авторизации OAuth2.0: использование маркера носителя (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
+| scope |Область доступа, предоставленная в маркере. |
 | expires_in |Срок действия доступа для токена (в секундах). |
 | expires_on |Время истечения срока действия маркера доступа. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC до истечения срока действия. Это значение используется для определения времени существования кэшированных маркеров. |
-| ресурс |URI идентификатора приложения принимающей службы (защищенный ресурс). |
+| resource |URI идентификатора приложения принимающей службы (защищенный ресурс). |
 | access_token |Параметр, возвращающий утверждение SAML. |
 | refresh_token |Маркер обновления. Вызывающая служба может использовать этот токен для запроса другого токена доступа по истечении срока действия текущего утверждения SAML. |
 
@@ -294,7 +291,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InowMzl6ZHNGdW
 
 Общедоступные клиенты с URL-адресами ответа с подстановочными знаками не могут использовать `id_token` для потоков OBO. Тем не менее конфиденциальный клиент может активировать маркеры **доступа**, полученные с помощью потока неявного предоставления, даже если для общедоступного клиента зарегистрирован универсальный код ресурса (URI) перенаправления с подстановочными знаками.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о протоколе OAuth 2.0 и другом способе проверки подлинности между службами с использованием учетных данных клиента:
 

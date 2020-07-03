@@ -4,10 +4,10 @@ description: Уведомления о работоспособности слу
 ms.topic: conceptual
 ms.date: 6/27/2019
 ms.openlocfilehash: 21416edc95d345eb183030a9b0cccb7529305d6d
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75748650"
 ---
 # <a name="view-service-health-notifications-by-using-the-azure-portal"></a>Просмотр уведомлений о работоспособности служб на портале Azure
@@ -26,7 +26,7 @@ ms.locfileid: "75748650"
 
     В Azure Monitor отображено единое представление всех параметров мониторинга и данных. Сначала открывается раздел **Журнал действий** .
 
-1. Выберите **Оповещения**.
+1. Выберите **оповещения**.
 
     ![Снимок экрана журнала мониторинга активности с выбранными оповещениями](./media/service-notifications/service-health-summary.png)
 

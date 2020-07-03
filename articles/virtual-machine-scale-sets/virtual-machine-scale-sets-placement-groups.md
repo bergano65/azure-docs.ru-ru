@@ -1,19 +1,20 @@
 ---
 title: Работа с крупными масштабируемыми наборами виртуальных машин Azure
 description: Что необходимо знать о больших масштабируемых наборах виртуальных машин Azure, чтобы использовать их в своем приложении.
-author: cynthn
-ms.author: cynthn
-tags: azure-resource-manager
-ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
-ms.service: virtual-machine-scale-sets
+author: mimckitt
+ms.author: mimckitt
 ms.topic: conceptual
+ms.service: virtual-machine-scale-sets
+ms.subservice: management
 ms.date: 11/9/2017
-ms.openlocfilehash: 618b677ee836327e8ed4ab7798ab35d92b364c98
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.reviewer: jushiman
+ms.custom: mimckitt
+ms.openlocfilehash: c2490d8dc1d828992d309f07de1f75fa61ecb3be
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76272525"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83200961"
 ---
 # <a name="working-with-large-virtual-machine-scale-sets"></a>Работа с крупными масштабируемыми наборами виртуальных машин
 Теперь вы можете создавать [масштабируемые наборы виртуальных машин](/azure/virtual-machine-scale-sets/) Azure, включающие до 1000 виртуальных машин. В этом документе под _крупным масштабируемым набором виртуальных машин_ подразумевается масштабируемый набор, в который можно добавить более 100 виртуальных машин. Эта возможность задается с помощью свойства масштабируемого набора (_singlePlacementGroup=False_). 
@@ -43,18 +44,21 @@ ms.locfileid: "76272525"
 
 ![](./media/virtual-machine-scale-sets-placement-groups/portal-large-scale.png)
 
-Вы можете создать большой масштабируемый набор виртуальных машин с помощью команды [Azure CLI](https://github.com/Azure/azure-cli) _AZ vmss Create_ . Эта команда задает интеллектуальные значения по умолчанию, такие как размер подсети, на основе аргумента _instance-count_:
+Крупный масштабируемый набор виртуальных машин можно создать с помощью команды [Azure CLI](https://github.com/Azure/azure-cli) _az vmss create_. Эта команда задает интеллектуальные значения по умолчанию, такие как размер подсети, на основе аргумента _instance-count_:
 
-```bash
+```azurecli
 az group create -l southcentralus -n biginfra
 az vmss create -g biginfra -n bigvmss --image ubuntults --instance-count 1000
 ```
+
 Команда _vmss create_ задаст определенные значения конфигурации по умолчанию, если их не указать. Чтобы узнать, какие параметры можно переопределить, используйте следующую команду:
-```bash
+
+```azurecli
 az vmss create --help
 ```
 
 Если для создания крупного масштабируемого набора используется шаблон Azure Resource Manager, он должен создавать масштабируемый набор на основе управляемых дисков Azure. Вы можете задать для свойства _singlePlacementGroup_ значение _false_ в разделе _properties_ ресурса _Microsoft.Compute/virtualMachineScaleSets_. В следующем фрагменте JSON показано начало шаблона масштабируемого набора, включая параметры "capacity": 1000 и _"singlePlacementGroup": false_:
+
 ```json
 {
   "type": "Microsoft.Compute/virtualMachineScaleSets",
@@ -71,7 +75,8 @@ az vmss create --help
       "mode": "Automatic"
     }
 ```
-Полный пример шаблона крупного масштабируемого набора доступен по адресу [https://github.com/gbowerman/azure-myriad/blob/master/bigtest/bigbottle.json](https://github.com/gbowerman/azure-myriad/blob/master/bigtest/bigbottle.json).
+
+Полный пример шаблона большого масштабируемого набора см. в разделе [https://github.com/gbowerman/azure-myriad/blob/master/bigtest/bigbottle.json](https://github.com/gbowerman/azure-myriad/blob/master/bigtest/bigbottle.json) .
 
 ## <a name="converting-an-existing-scale-set-to-span-multiple-placement-groups"></a>Преобразование существующего масштабируемого набора для поддержки нескольких групп размещения
 Чтобы существующий масштабируемый набор виртуальных машин мог масштабироваться до более 100 виртуальных машин, необходимо задать для свойства _singlePlacementGroup_ значение _false_ в модели масштабируемого набора. Вы можете попробовать изменить это свойство в [обозревателе ресурсов Azure](https://resources.azure.com/). Найдите существующий масштабируемый набор, выберите _Изменить_ и измените свойство _singlePlacementGroup_. Если вы не видите это свойство, возможно, вы открыли масштабируемый набор в более старой версии Microsoft.Compute API.

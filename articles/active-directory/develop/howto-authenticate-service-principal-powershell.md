@@ -5,7 +5,6 @@ description: Использование Azure PowerShell для создания
 services: active-directory
 author: rwike77
 manager: CelesteDG
-ms.assetid: d2caf121-9fbe-4f00-bf9d-8f3d1f00a6ff
 ms.service: active-directory
 ms.subservice: develop
 ms.custom: aaddev
@@ -14,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.date: 10/10/2019
 ms.author: ryanwi
 ms.reviewer: tomfitz
-ms.openlocfilehash: c6c07c48bf94b50d46a50a47f57857fdd15a0e8e
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 7bd8c3b25c23ba8586e38ec8eb7d1baefaa21633
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76697257"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80884194"
 ---
 # <a name="how-to-use-azure-powershell-to-create-a-service-principal-with-a-certificate"></a>Практическое руководство по использованию Azure PowerShell для создания субъекта-службы с сертификатом
 
@@ -50,7 +49,7 @@ ms.locfileid: "76697257"
 
 ## <a name="create-service-principal-with-self-signed-certificate"></a>Создание субъекта-службы с самозаверяющим сертификатом
 
-Ниже приводится простой пример сценария. Для создания субъекта-службы с самозаверяющим сертификатом используются [новые азадсервицепринЦипал](/powershell/module/az.resources/new-azadserviceprincipal) . с помощью [New-AzureRmRoleAssignment](/powershell/module/az.resources/new-azroleassignment) можно назначить роль [читателя](/azure/role-based-access-control/built-in-roles#reader) субъекту-службе. Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
+Ниже приводится простой пример сценария. Для создания субъекта-службы с самозаверяющим сертификатом используются [новые азадсервицепринЦипал](/powershell/module/az.resources/new-azadserviceprincipal) . с помощью [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) можно назначить роль [читателя](/azure/role-based-access-control/built-in-roles#reader) субъекту-службе. Назначение ролей ограничивается текущей выбранной подпиской Azure. Чтобы выбрать другую подписку, выполните командлет [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext).
 
 > [!NOTE]
 > Командлет New-SelfSignedCertificate и модуль PKI сейчас не поддерживаются в PowerShell Core. 

@@ -1,14 +1,14 @@
 ---
 title: Настройка среды для оператора схемы
 description: Узнайте, как настроить среду Azure для использования с помощью встроенной роли "Управление доступом на основе ролей" (RBAC).
-ms.date: 08/26/2019
+ms.date: 05/06/2020
 ms.topic: how-to
-ms.openlocfilehash: fba0dd3f2eeb69f768800d1d04640510462d3c86
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: a61997f5e3247e5b42d5e2f07c0fc38cc1b5114d
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873222"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864017"
 ---
 # <a name="configure-your-environment-for-a-blueprint-operator"></a>Настройка среды для роли "Оператор схем"
 

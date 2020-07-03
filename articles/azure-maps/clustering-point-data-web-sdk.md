@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen
-ms.openlocfilehash: e65681aefc047ba540d4ad0d91ef6e4d2af5f3ca
-ms.sourcegitcommit: b07964632879a077b10f988aa33fa3907cbaaf0e
+ms.openlocfilehash: ce2891201331ee1efd861d2f13cec78c0551b6ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77190259"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80804577"
 ---
 # <a name="clustering-point-data"></a>Данные точки кластеризации
 
@@ -26,7 +26,7 @@ ms.locfileid: "77190259"
 
 ## <a name="enabling-clustering-on-a-data-source"></a>Включение кластеризации в источнике данных
 
-Включите кластеризацию в классе `DataSource`, задав для параметра `cluster` значение true. Задайте `ClusterRadius`, чтобы выбрать соседние точки и объединить их в кластер. Значение `ClusterRadius` находится в пикселях. Используйте `clusterMaxZoom`, чтобы указать уровень масштабирования для отключения логики кластеризации. Ниже приведен пример включения кластеризации в источнике данных.
+Включите кластеризацию в `DataSource` классе, задав для `cluster` параметра значение true. Установите `ClusterRadius` этот флажок, чтобы выбрать соседние точки и объединить их в кластер. Значение `ClusterRadius` находится в пикселях. Используйте `clusterMaxZoom` , чтобы указать уровень масштабирования для отключения логики кластеризации. Ниже приведен пример включения кластеризации в источнике данных.
 
 ```javascript
 //Create a data source and enable clustering.
@@ -44,15 +44,15 @@ var datasource = new atlas.source.DataSource(null, {
 ```
 
 > [!TIP]
-> Если две точки данных близки друг к другу, возможно, кластер никогда не будет разбиваться, независимо от того, насколько близки к масштабу пользователя. Для решения этой задачи можно задать параметр `clusterMaxZoom`, чтобы отключить логику кластеризации и просто отобразить все данные.
+> Если две точки данных близки друг к другу, возможно, кластер никогда не будет разбиваться, независимо от того, насколько близки к масштабу пользователя. Чтобы решить эту эту задачи, можно задать `clusterMaxZoom` параметр отключения логики кластеризации и просто отобразить все.
 
-Ниже приведены дополнительные методы, предоставляемые классом `DataSource` для кластеризации:
+Ниже приведены дополнительные методы, предоставляемые `DataSource` классом для кластеризации.
 
 | Метод | Возвращаемый тип | Описание |
 |--------|-------------|-------------|
-| Жетклустерчилдрен (clusterId: число) | Promise&lt;Массив&lt;Компонент&lt;Геометрия, любая&gt; \| Фигура&gt;&gt; | Извлекает дочерние элементы заданного кластера на следующем уровне масштабирования. Эти дочерние элементы могут быть сочетанием фигур и подкластеров. Подкластеры будут представлять собой компоненты со свойствами, соответствующими ClusteredProperties. |
+| Жетклустерчилдрен (clusterId: число) | &lt;Геометрическая&lt;функция массива&gt; \| &lt;Promise, любая фигура&gt;&gt; | Извлекает дочерние элементы заданного кластера на следующем уровне масштабирования. Эти дочерние элементы могут быть сочетанием фигур и подкластеров. Подкластеры будут представлять собой компоненты со свойствами, соответствующими ClusteredProperties. |
 | Жетклустерекспансионзум (clusterId: число) | Promise&lt;число&gt; | Вычисляет уровень масштабирования, при котором кластер начинает расширяться или разбиваться на части. |
-| Жетклустерлеавес (clusterId: число, ограничение: число, смещение: число) | Promise&lt;Массив&lt;Компонент&lt;Геометрия, любая&gt; \| Фигура&gt;&gt; | Извлекает все точки в кластере. Задайте `limit`, чтобы вернуть подмножество точек, и используйте `offset`, чтобы пролистать страницы с точками. |
+| Жетклустерлеавес (clusterId: число, ограничение: число, смещение: число) | &lt;Геометрическая&lt;функция массива&gt; \| &lt;Promise, любая фигура&gt;&gt; | Извлекает все точки в кластере. Задайте `limit`, чтобы вернуть подмножество точек, и используйте `offset`, чтобы пролистать страницы с точками. |
 
 ## <a name="display-clusters-using-a-bubble-layer"></a>Отображение кластеров с помощью пузырькового слоя
 
@@ -62,77 +62,77 @@ var datasource = new atlas.source.DataSource(null, {
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Базовый уровень кластеризации пузырьков" src="//codepen.io/azuremaps/embed/qvzRZY/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Дополнительные сведения см. в разделе <a href='https://codepen.io/azuremaps/pen/qvzRZY/'>кластеризация уровня "базовый</a> " с помощью Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Базовый уровень кластеризации пузырьков" src="//codepen.io/azuremaps/embed/qvzRZY/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. раздел Создание <a href='https://codepen.io/azuremaps/pen/qvzRZY/'>высокоуровневой пузырьковой категории</a> с помощью<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="display-clusters-using-a-symbol-layer"></a>Отображение кластеров с помощью слоя символов
 
-При визуализации точек данных слой символов автоматически скрывает символы, которые пересекаются друг с другом, чтобы обеспечить Улучшенный пользовательский интерфейс. Это поведение по умолчанию может оказаться нежелательным, если необходимо отобразить плотность точек данных на карте. Однако эти параметры можно изменить. Чтобы отобразить все символы, задайте для параметра `allowOverlap` в свойстве "слои символов" `iconOptions` значение `true`. 
+При визуализации точек данных слой символов автоматически скрывает символы, которые пересекаются друг с другом, чтобы обеспечить Улучшенный пользовательский интерфейс. Это поведение по умолчанию может оказаться нежелательным, если необходимо отобразить плотность точек данных на карте. Однако эти параметры можно изменить. Чтобы отобразить все символы, установите `allowOverlap` для `iconOptions` `true`свойства "слои символов" значение. 
 
 Использование кластеризации для отображения плотности точек данных с сохранением чистого пользовательского интерфейса. В примере ниже показано, как добавить пользовательские символы и представить кластеры и отдельные точки данных с помощью слоя символов.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Кластеризованный слой символов" src="//codepen.io/azuremaps/embed/Wmqpzz/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Сведения о том, как Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>, см. в разделе <a href='https://codepen.io/azuremaps/pen/Wmqpzz/'>уровень кластеризованных символов</a> пера.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Кластеризованный слой символов" src="//codepen.io/azuremaps/embed/Wmqpzz/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. Azure Maps <a href='https://codepen.io/azuremaps/pen/Wmqpzz/'>Clustered Symbol layer</a> () на<a href='https://codepen.io/azuremaps'>@azuremaps</a> <a href='https://codepen.io'>CodePen</a>().
 </iframe>
 
 ## <a name="clustering-and-the-heat-maps-layer"></a>Кластеризация и уровень тепловых карт
 
-Тепловые карты — это отличный способ отображения плотности данных на карте. Этот метод визуализации может самостоятельно управлять большим количеством точек данных. Если точки данных кластеризованы, а размер кластера используется в качестве веса тепловой карт, то тепловая схема может работать с еще большим объемом данных. Чтобы получить этот параметр, задайте для параметра `weight` слоя тепловой карте значение `['get', 'point_count']`. Если радиус кластера мал, то тепловая схема будет выглядеть почти так же, как на тепловой карте с помощью некластеризованных точек данных, но она будет работать гораздо лучше. Тем не менее, чем меньше радиус кластера, тем точнее будет тепловая схема, но с меньшим количеством преимуществ производительности.
+Тепловые карты — это отличный способ отображения плотности данных на карте. Этот метод визуализации может самостоятельно управлять большим количеством точек данных. Если точки данных кластеризованы, а размер кластера используется в качестве веса тепловой карт, то тепловая схема может работать с еще большим объемом данных. Чтобы получить этот параметр, задайте для `weight` `['get', 'point_count']`слоя тепловой карт значение. Если радиус кластера мал, то тепловая схема будет выглядеть почти так же, как на тепловой карте с помощью некластеризованных точек данных, но она будет работать гораздо лучше. Тем не менее, чем меньше радиус кластера, тем точнее будет тепловая схема, но с меньшим количеством преимуществ производительности.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Взвешенная тепловая схема кластера" src="//codepen.io/azuremaps/embed/VRJrgO/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/VRJrgO/'>взвешенная тепловая текстура кластера</a> с Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Взвешенная тепловая схема кластера" src="//codepen.io/azuremaps/embed/VRJrgO/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Ознакомьтесь с <a href='https://codepen.io/azuremaps/pen/VRJrgO/'>взвешенной тепловой картой кластера</a> с помощью Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="mouse-events-on-clustered-data-points"></a>События мыши на точках кластеризованных данных
 
 Когда события мыши возникают на слое, содержащем кластеризованные точки данных, точка кластеризованных данных возвращается в событие в виде объекта функции геообъектной точки. Этот компонент будет иметь следующие свойства:
 
-| Имя свойства             | Тип    | Описание   |
+| Имя свойства.             | Type    | Описание   |
 |---------------------------|---------|---------------|
 | `cluster`                 | Логическое | Указывает, представляет ли компонент кластер. |
-| `cluster_id`              | string  | Уникальный идентификатор кластера, который можно использовать с методами `getClusterExpansionZoom`, `getClusterChildren` и `getClusterLeaves` для DataSource. |
+| `cluster_id`              | строка  | Уникальный идентификатор кластера, который можно использовать с методами `getClusterExpansionZoom`, `getClusterChildren` и `getClusterLeaves` для DataSource. |
 | `point_count`             | number  | Число точек, содержащихся в кластере.  |
-| `point_count_abbreviated` | string  | Строка, которая сокращает значение `point_count`, если оно длинное. (например, 4000 преобразуется в 4K).  |
+| `point_count_abbreviated` | строка  | Строка, которая сокращает `point_count` значение, если оно длинное. (например, 4000 преобразуется в 4K).  |
 
-В этом примере используется пузырьковый слой, который отображает точки кластера и добавляет событие Click. При срабатывании события щелчка код вычисляет и масштабирует карту до следующего уровня масштаба, при котором кластер разбивается друг на друга. Эта функция реализуется с помощью метода `getClusterExpansionZoom` класса `DataSource` и свойства `cluster_id` в кластеризованной точке данных, которую щелкнули.
+В этом примере используется пузырьковый слой, который отображает точки кластера и добавляет событие Click. При срабатывании события щелчка код вычисляет и масштабирует карту до следующего уровня масштаба, при котором кластер разбивается друг на друга. Эта функция реализуется с помощью `getClusterExpansionZoom` метода `DataSource` класса и `cluster_id` свойства кластеризованной точки данных, которую щелкнули.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Жетклустерекспансионзум кластера" src="//codepen.io/azuremaps/embed/moZWeV/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/moZWeV/'>Жетклустерекспансионзум Clustering</a> by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Жетклустерекспансионзум кластера" src="//codepen.io/azuremaps/embed/moZWeV/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. раздел <a href='https://codepen.io/azuremaps/pen/moZWeV/'>Жетклустерекспансионзум Clustering</a> by Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() ON <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="display-cluster-area"></a>Отобразить область кластера 
 
-Данные точки, которые представляет кластер, распределяются по области. В этом примере при наведении указателя мыши на кластер происходит два основных поведения. Во-первых, отдельные точки данных, содержащиеся в кластере, будут использоваться для вычисления выпуклой поверхности. Затем выпуклой поверхности будет отображаться на карте для отображения области.  Выпуклой поверхности — это многоугольник, который заключает набор точек, например эластичную полосу, и может быть вычислен с помощью метода `atlas.math.getConvexHull`. Все точки, содержащиеся в кластере, можно получить из источника данных с помощью метода `getClusterLeaves`.
+Данные точки, которые представляет кластер, распределяются по области. В этом примере при наведении указателя мыши на кластер происходит два основных поведения. Во-первых, отдельные точки данных, содержащиеся в кластере, будут использоваться для вычисления выпуклой поверхности. Затем выпуклой поверхности будет отображаться на карте для отображения области.  Выпуклой поверхности — это многоугольник, который заключает набор точек, например эластичную полосу, и может быть вычислен с помощью `atlas.math.getConvexHull` метода. Все точки, содержащиеся в кластере, можно получить из источника данных с `getClusterLeaves` помощью метода.
 
 <br/>
 
- <iframe height="500" style="width: 100%;" scrolling="no" title="Выпуклой поверхности области кластера" src="//codepen.io/azuremaps/embed/QoXqWJ/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/QoXqWJ/'>кластерная область выпуклой поверхности</a> by Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+ <iframe height="500" style="width: 100%;" scrolling="no" title="Выпуклой поверхности области кластера" src="//codepen.io/azuremaps/embed/QoXqWJ/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. раздел <a href='https://codepen.io/azuremaps/pen/QoXqWJ/'>кластерное перо выпуклой поверхности</a> by Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="aggregating-data-in-clusters"></a>Статистическая обработка данных в кластерах
 
-Часто кластеры представляются с помощью символа с количеством точек в кластере. Но иногда желательно настроить стиль кластеров с дополнительными метриками. При использовании статистических выражений кластера пользовательские свойства можно создавать и заполнять с помощью вычисления [статистического выражения](data-driven-style-expressions-web-sdk.md#aggregate-expression) .  Агрегаты кластера можно определить в `clusterProperties` параметре `DataSource`.
+Часто кластеры представляются с помощью символа с количеством точек в кластере. Но иногда желательно настроить стиль кластеров с дополнительными метриками. При использовании статистических выражений кластера пользовательские свойства можно создавать и заполнять с помощью вычисления [статистического выражения](data-driven-style-expressions-web-sdk.md#aggregate-expression) .  Статистические выражения кластера можно определить в `clusterProperties` параметре `DataSource`.
 
 В следующем примере используется статистическое выражение. Код вычисляет счетчик на основе свойства типа сущности каждой точки данных в кластере. Когда пользователь щелкает кластер, появляется всплывающее окно с дополнительными сведениями о кластере.
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Статистические выражения кластера" src="//codepen.io/azuremaps/embed/jgYyRL/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/jgYyRL/'>агрегаты кластера</a> перьев по Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Статистические выражения кластера" src="//codepen.io/azuremaps/embed/jgYyRL/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. раздел <a href='https://codepen.io/azuremaps/pen/jgYyRL/'>агрегаты кластера</a> перьев по Azure Maps<a href='https://codepen.io/azuremaps'>@azuremaps</a>() в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Класс DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)
+> [DataSource class](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [Объект DataSourceOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.datasourceoptions?view=azure-iot-typescript-latest)
@@ -143,7 +143,7 @@ var datasource = new atlas.source.DataSource(null, {
 См. примеры кодов для добавления функций в приложение:
 
 > [!div class="nextstepaction"]
-> [Добавление слоя пузырьков](map-add-bubble-layer.md)
+> [Добавить пузырьковый слой](map-add-bubble-layer.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя символов](map-add-pin.md)

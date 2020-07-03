@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 01/27/2020
 ms.author: aschhab
 ms.openlocfilehash: 1e514e2856afae4ff6f877bb193935da1bc5d623
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76773479"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Общие сведения об интеграции служебной шины Azure со службой "Сетка событий"
@@ -111,7 +111,7 @@ ms.locfileid: "76773479"
 
 ### <a name="use-filters-to-limit-where-you-get-events-from"></a>Использование фильтров для ограничения источников получения событий
 
-Если нужно получать события, например только из одной очереди или одной подписки в пространстве имен, используйте в службе "Сетка событий" фильтры *Начинается с* или *Оканчивается на*. В некоторых интерфейсах эти фильтры называются *Префикс* и *Суффикс*. Если требуется получить события для нескольких, но не всех очередей и подписок, создайте несколько подписок на службу "Сетка событий" и укажите для каждой из них фильтр.
+Если нужно получать события, например только из одной очереди или одной подписки в пространстве имен, используйте в службе "Сетка событий" фильтры *Начинается с* или *Оканчивается на*. В некоторых интерфейсах фильтры называются *префиксами* и фильтрами *суффиксов* . Если требуется получить события для нескольких, но не всех очередей и подписок, создайте несколько подписок на службу "Сетка событий" и укажите для каждой из них фильтр.
 
 ## <a name="create-event-grid-subscriptions-for-service-bus-namespaces"></a>Создание подписок на службу "Сетка событий" для пространств имен служебной шины
 
@@ -119,7 +119,7 @@ ms.locfileid: "76773479"
 
 * На портале Azure
 * в [Azure CLI](#azure-cli-instructions);
-* в [PowerShell](#powershell-instructions).
+* В [PowerShell](#powershell-instructions)
 
 ## <a name="azure-portal-instructions"></a>Инструкции по созданию подписки на портале Azure
 
@@ -138,7 +138,7 @@ ms.locfileid: "76773479"
 
 ## <a name="azure-cli-instructions"></a>Инструкции по работе в Azure CLI
 
-Для начала установите Azure CLI 2.0 или более поздней версии. [Скачайте установщик](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Нажмите клавиши **Windows+X** и откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
+Для начала установите Azure CLI 2.0 или более поздней версии. [Скачайте установщик](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Выберите **Windows + X**, а затем откройте новую консоль PowerShell с разрешениями администратора. В качестве альтернативы можно использовать командную оболочку на портале Azure.
 
 Выполните следующий код.
 
@@ -174,7 +174,7 @@ New-AzEVentGridSubscription -EventSubscriptionName "<YOUR EVENT GRID SUBSCRIPTIO
 
 Здесь вы можете просмотреть остальные параметры установки или выполнить тестирование поступления событий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Примеры](service-bus-to-event-grid-integration-example.md) использования служебной шины со службой "Сетка событий".
 * Дополнительные сведения о [службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/).
@@ -183,8 +183,8 @@ New-AzEVentGridSubscription -EventSubscriptionName "<YOUR EVENT GRID SUBSCRIPTIO
 * Дополнительные сведения о [служебной шине](https://docs.microsoft.com/azure/service-bus/).
 
 [1]: ./media/service-bus-to-event-grid-integration-concept/sbtoeventgrid1.png
-[19]: ./media/service-bus-to-event-grid-integration-concept/sbtoeventgriddiagram.png
+[стр]: ./media/service-bus-to-event-grid-integration-concept/sbtoeventgriddiagram.png
 [8]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgrid8.png
 [9]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgrid9.png
 [20]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgridportal.png
-[21]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgridportal2.png
+[открыт]: ./media/service-bus-to-event-grid-integration-example/sbtoeventgridportal2.png

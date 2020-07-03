@@ -1,48 +1,78 @@
 ---
-title: Краткое руководство. Выполнение запроса из учетной записи API SQL для Azure Cosmos DB с помощью Node.js
+title: Краткое руководство. Выполнение запроса из учетной записи API SQL для Azure Cosmos DB с использованием Node.js
 description: Сведения о том, как с помощью Node.js создать приложение, которое подключается к учетной записи API SQL для Azure Cosmos DB и запрашивает данные.
 author: deborahc
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 11/19/2019
+ms.date: 02/26/2020
 ms.author: dech
-ms.openlocfilehash: 8df78df27ffb7e8bb8fc88567bd0b3d37be20488
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 0b29f9c1f395e079c97d5877d08bd7bd73c7ea53
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76719506"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80240320"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-from-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Подключение и выполнение запроса к данным из учетной записи API SQL для Azure Cosmos DB с помощью Node.js
 
 > [!div class="op_single_selector"]
-> * [.NET версии 3](create-sql-api-dotnet.md)
-> * [.NET версии 4](create-sql-api-dotnet-V4.md)
-> * [Java](create-sql-api-java.md)
-> * [Node.js](create-sql-api-nodejs.md)
-> * [Python](create-sql-api-python.md)
-> * [Xamarin](create-sql-api-xamarin-dotnet.md)
+> - [.NET версии 3](create-sql-api-dotnet.md)
+> - [.NET версии 4](create-sql-api-dotnet-V4.md)
+> - [Java](create-sql-api-java.md)
+> - [Node.js](create-sql-api-nodejs.md)
+> - [Python](create-sql-api-python.md)
+> - [Xamarin](create-sql-api-xamarin-dotnet.md)
 
-В этом кратком руководстве показано, как с помощью приложения Node.js подключиться к учетной записи [SQL API](sql-api-introduction.md) для Azure Cosmos DB. Затем, используя запросы SQL Azure Cosmos DB, можно запросить данные и управлять ими. Приложение Node.js, создаваемое в этой статье, использует [пакет SDK для JavaScript SQL](sql-api-sdk-node.md). В этом кратком руководстве используется версия 2.0 [пакета SDK для JavaScript](https://www.npmjs.com/package/@azure/cosmos).
+В этом кратком руководстве вы научитесь создавать учетную запись API SQL Azure Cosmos DB и управлять ею на портале Azure, а также с помощью приложения Node.js, клонированного с GitHub. Azure Cosmos DB — это служба многомодельной базы данных, позволяющая быстро создавать и запрашивать документы, таблицы, пары "ключ-значение" и графовые базы данных, используя возможности глобального распределения и горизонтального масштабирования.
+
+## <a name="walkthrough-video"></a>Пошаговое видеоруководство
+
+Просмотрите это видео, чтобы ознакомиться с полным пошаговым руководством по содержимому этой статьи.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Quickstart-Use-Nodejs-to-connect-and-query-data-from-Azure-Cosmos-DB-SQL-API-account/player]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] 
-[!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
+- Учетная запись Azure с активной подпиской. [Создайте бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio). Или [воспользуйтесь пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure. Вы также можете воспользоваться [эмулятором Azure Cosmos DB](https://aka.ms/cosmosdb-emulator) с URI `https://localhost:8081` и ключом `C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==`.
+- [Node.js 6.0.0+](https://nodejs.org/).
+- [Git](https://www.git-scm.com/downloads).
 
-* Кроме того, примите во внимание:
-    * [Node.js](https://nodejs.org/en/) версии 6.0.0 или более поздней.
-    * [Git](https://git-scm.com/);
+## <a name="create-an-azure-cosmos-account"></a>Создание учетной записи Azure Cosmos
 
-## <a name="create-a-database"></a>Создание базы данных 
+В рамках этого краткого руководства вы можете использовать [бесплатную пробную версию Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/), чтобы создать учетную запись Azure Cosmos.
 
-[!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
+1. Перейдите на страницу [Бесплатная пробная версия Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/).
+
+1. Выберите учетную запись API **SQL** и нажмите **Create** (Создать). Войдите под своей учетной записью Майкрософт.
+
+1. После успешного входа учетная запись Azure Cosmos должна быть готова. Выберите **Open in the Azure portal** (Открыть на портале Azure), чтобы открыть только что созданную учетную запись.
+
+Для использования бесплатной пробной версии Azure Cosmos DB подписка Azure не требуется. Эта версия предоставляет учетную запись Azure Cosmos на ограниченный период длительностью 30 дней. Если вы хотите использовать учетную запись Azure Cosmos дольше, [создайте ее](create-cosmosdb-resources-portal.md#create-an-azure-cosmos-db-account) в подписке Azure.
 
 ## <a name="add-a-container"></a>Добавление контейнера
 
-[!INCLUDE [cosmos-db-create-collection](../../includes/cosmos-db-create-collection.md)]
+Теперь вы можете использовать средство обозреватель данных на портале Azure для создания базы данных и контейнера.
+
+1. Щелкните **Обозреватель данных** > **Создать контейнер**.
+
+   Справа отобразится область **Добавить контейнер**. Возможно, вам придется прокрутить экран вправо, чтобы увидеть ее.
+
+   ![Панель "Добавить контейнер" в обозревателе данных на портале Azure](./media/create-sql-api-nodejs/azure-cosmosdb-data-explorer.png)
+
+2. На странице **Добавить контейнер** введите параметры для нового контейнера.
+
+   | Параметр           | Рекомендуемое значение | Описание                                                                                                                                                                                                                                                                                                                                                                           |
+   | ----------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | **Идентификатор базы данных**   | Задания           | Введите _Задача_ в качестве имени новой базы данных. Имена баз данных должны быть длиной от 1 до 255 символов и не могут содержать символы `/, \\, #, ?` или пробел в конце. Проверьте параметр **Provision database throughput** (Подготовка пропускной способности базы данных), который позволяет предоставить общий доступ к пропускной способности, подготовленной для базы данных всех контейнеров в пределах базы данных. Этот параметр также способствует экономии денежных средств. |
+   | **Пропускная способность**    | 400             | Для пропускной способности сохраните значение в 400 единиц запроса в секунду. Чтобы сократить задержку, позже вы можете увеличить масштаб пропускной способности.                                                                                                                                                                                                                                                    |
+   | **Идентификатор контейнера**  | Items           | Введите _Items_ в качестве имени нового контейнера. Для идентификаторов контейнеров предусмотрены те же требования к символам, что и для имен баз данных.                                                                                                                                                                                                                                                               |
+   | **Ключ секции** | /category       | В примере, описанном в этой статье, используется ключ секции _/category_.                                                                                                                                                                                                                                                                                                           |
+
+   Помимо указанных выше параметров вы также можете добавить **уникальные ключи** для контейнера. В рамках этого примера оставим это поле пустым. Уникальные ключи предоставляют разработчикам возможность добавить слой целостности данных в базу данных. Создавая политику уникальных ключей при создании контейнера, вы гарантируете уникальность одного или нескольких значений ключа секции. Дополнительные сведения см. в статье [Уникальные ключи в Azure Cosmos DB](unique-keys.md).
+
+   Щелкните **ОК**. В обозревателе данных отобразится новая база данных и контейнер.
 
 ## <a name="add-sample-data"></a>Добавление демонстрационных данных
 
@@ -56,119 +86,124 @@ ms.locfileid: "76719506"
 
 Теперь необходимо клонировать приложение Node.js из GitHub. Задайте строку подключения и выполните ее.
 
-1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
+1. Выполните команду ниже, чтобы клонировать репозиторий с примером. Эта команда создает копию примера приложения на локальном компьютере.
 
-    ```bash
-    md "C:\git-samples"
-    ```
-
-2. Откройте окно терминала git, например git bash, и выполните команду `cd`, чтобы перейти в новую папку для установки примера приложения.
-
-    ```bash
-    cd "C:\git-samples"
-    ```
-
-3. Выполните команду ниже, чтобы клонировать репозиторий с примером. Эта команда создает копию примера приложения на локальном компьютере.
-
-    ```bash
-    git clone https://github.com/Azure-Samples/azure-cosmos-db-sql-api-nodejs-getting-started.git
-    ```
+   ```bash
+   git clone https://github.com/Azure-Samples/azure-cosmos-db-sql-api-nodejs-getting-started.git
+   ```
 
 ## <a name="review-the-code"></a>Просмотр кода
 
-Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных Azure Cosmos, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string). 
+Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных Azure Cosmos, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string).
 
-Обратите внимание, что если вам знакома предыдущая версия пакета SDK для JavaScript, вы уже видели термины "коллекция" и "документ". Так как Azure Cosmos DB поддерживает [несколько моделей API](https://docs.microsoft.com/azure/cosmos-db/introduction), пакет SDK для JavaScript версии 2.0+ использует общий термин "контейнер", который может быть коллекцией, графом или таблицей, и термин "элемент" для описания содержимого контейнера.
+Если вам знакома предыдущая версия пакета SDK для SQL на JavaScript, вы уже видели термины _коллекция_ и _документ_. Так как Azure Cosmos DB поддерживает [несколько моделей API](introduction.md), [пакет SDK для JavaScript версии 2.0+](https://www.npmjs.com/package/@azure/cosmos) использует общий термин _контейнер_, который может быть коллекцией, графом или таблицей, и термин _элемент_ для описания содержимого контейнера.
 
-Приведенные ниже фрагменты кода взяты из файла **app.js**.
+Пакет SDK Cosmos DB для JavaScript называется @azure/cosmos и может быть установлен из npm...
 
-* Инициализирован объект `CosmosClient`.
+```bash
+npm install @azure/cosmos
+```
 
-    ```javascript
-    const client = new CosmosClient({ endpoint, key });
-    ```
+Приведенные ниже фрагменты кода взяты из файла _app.js_.
 
-* Создайте базу данных Azure Cosmos.
+- `CosmosClient` импортируется из npm-пакета `@azure/cosmos`.
 
-    ```javascript
-    const { database } = await client.databases.createIfNotExists({ id: databaseId });
-    ```
+  ```javascript
+  const CosmosClient = require("@azure/cosmos").CosmosClient;
+  ```
 
-* Создается контейнер (коллекция) в базе данных.
+- Новый объект `CosmosClient` инициализирован.
 
-    ```javascript
-    const { container } = await client.database(databaseId).containers.createIfNotExists({ id: containerId });
-    ```
+  ```javascript
+  const client = new CosmosClient({ endpoint, key });
+  ```
 
-* Создается элемент (документ).
+- Выберите базу данных "Задачи".
 
-    ```javascript
-    const { item } = await client.database(databaseId).container(containerId).items.create(itemBody);
-    ```
+  ```javascript
+  const database = client.database(databaseId);
+  ```
 
-* SQL-запрос через JSON выполняется в базе данных семейства. Запрос возвращает все дочерние элементы семейства "Андерсон". 
+- Выберите контейнер или коллекцию "Элементы".
 
-    ```javascript
-      const querySpec = {
-        query: 'SELECT VALUE r.children FROM root r WHERE r.lastName = @lastName',
-        parameters: [
-          {
-            name: '@lastName',
-            value: 'Andersen'
-          }
-        ]
-      }
+  ```javascript
+  const container = database.container(containerId);
+  ```
 
-      const { resources: results } = await client
-        .database(databaseId)
-        .container(containerId)
-        .items.query(querySpec)
-        .fetchAll()
-      for (var queryResult of results) {
-        let resultString = JSON.stringify(queryResult)
-        console.log(`\tQuery returned ${resultString}\n`)
-      }
-    ```    
+- Выберите все элементы в контейнере "Элементы".
+
+  ```javascript
+  // query to return all items
+  const querySpec = {
+    query: "SELECT * from c"
+  };
+
+  const { resources: items } = await container.items
+    .query(querySpec)
+    .fetchAll();
+  ```
+
+- Создайте элемент.
+
+  ```javascript
+  const { resource: createdItem } = await container.items.create(newItem);
+  ```
+
+- Обновите элемент.
+
+  ```javascript
+  const { id, category } = createdItem;
+
+  createdItem.isComplete = true;
+  const { resource: updatedItem } = await container
+    .item(id, category)
+    .replace(createdItem);
+  ```
+
+- Удаление элемента
+
+  ```javascript
+  const { resource: result } = await container.item(id, category).delete();
+  ```
+
+> [!NOTE]
+> В методах обновления и удаления элемент следует выбирать из базы данных путем вызова `container.item()`. Передаются два параметра — это идентификатор и ключ секции элемента. В этом случае ключ секции является значением поля category.
 
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
 
 Теперь вернитесь на портал Azure, чтобы получить сведения о строке подключения учетной записи Azure Cosmos. Скопируйте строку подключения в приложение, чтобы с ее помощью подключиться к базе данных.
 
-1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos и на левой панели навигации щелкните **Ключи**, а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл `config.js`.
+1. В учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/) выберите **Ключи** на панели навигации слева, а затем выберите **Ключи записи-чтения**. На следующем шаге нажмите кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл _app.js_.
 
-    ![Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"](./media/create-sql-api-dotnet/keys.png)
+   ![Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"](./media/create-sql-api-dotnet/keys.png)
 
-2. Откройте файл `config.js`. 
+2. Откройте файл _config.js_.
 
-3. Скопируйте значение универсального кода ресурса (URI) на портале (с помощью кнопки копирования) и добавьте его в качестве значения параметра ключа конечной точки в файле `config.js`. 
+3. Скопируйте значение универсального кода ресурса (URI) на портале (с помощью кнопки копирования) и добавьте его в качестве значения параметра ключа конечной точки в файл _config.js_.
 
-    `config.endpoint = "<Your Azure Cosmos account URI>"`
+   `endpoint: "<Your Azure Cosmos account URI>"`
 
-4. Затем скопируйте значение первичного ключа с портала и добавьте его в качестве значения параметра `config.key` в файле `config.js`. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено. 
+4. Затем скопируйте значение первичного ключа с портала и добавьте его в качестве значения `config.key` в файл _config.js_. Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Azure Cosmos DB, обновлено.
 
-    `config.key = "<Your Azure Cosmos account key>"`
-    
+   `key: "<Your Azure Cosmos account key>"`
+
 ## <a name="run-the-app"></a>Запустите приложение
 
-1. В окне терминала запустите `npm install`, чтобы установить необходимые модули npm.
+1. В окне терминала выполните команду `npm install`, чтобы установить необходимый npm-пакет @azure/cosmos.
 
 2. Запустите `node app.js` в окне терминала, чтобы запустить приложение Node.
 
-Вернитесь в обозреватель данных, где вы можете запрашивать и изменять новые данные, а также работать с ними.
+3. Будут перечислены два элемента, созданные ранее согласно инструкциям в этом кратком руководстве. Создается новый элемент. Вместо флага "isComplete" для этого элемента отображается "true", а затем элемент удаляется.
+
+Вы можете продолжить экспериментировать с этим примером приложения или вернуться в обозреватель данных, внести изменения и работать со своими данными.
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 
 [!INCLUDE [cosmosdb-tutorial-review-slas](../../includes/cosmos-db-tutorial-review-slas.md)]
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-
-[!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве описано, как создать учетную запись Azure Cosmos и контейнер с помощью обозревателя данных, а также как запустить приложение. Теперь вы можете импортировать дополнительные данные в базу данных Azure Cosmos. 
+В этом кратком руководстве описано, как создать учетную запись Azure Cosmos DB и контейнер с помощью обозревателя данных, а также как запустить приложение Node.js. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB.
 
 > [!div class="nextstepaction"]
-> [Импорт данных в DocumentDB с помощью средства миграции базы данных](import-data.md)
-
-
+> [Импорт данных в Azure Cosmos DB](import-data.md)

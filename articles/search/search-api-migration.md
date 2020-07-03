@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: edb45eebc2c4eacc2f30d13988943f097a7190fa
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74112170"
 ---
 # <a name="upgrade-to-the-latest-azure-cognitive-search-service-rest-api-version"></a>Обновление до последней версии REST API службы Когнитивный поиск Azure
@@ -49,7 +49,7 @@ ms.locfileid: "74112170"
 
 ### <a name="indexer-execution-result-errors-no-longer-have-status"></a>Ошибки результатов выполнения индексатора больше не имеют состояния
 
-Структура ошибок для выполнения индексатора ранее имела элемент `status`. Этот элемент был удален, так как он не предоставляет полезные сведения.
+Структура ошибок для выполнения индексатора ранее имела `status` элемент. Этот элемент был удален, так как он не предоставляет полезные сведения.
 
 ### <a name="indexer-data-source-api-no-longer-returns-connection-strings"></a>API источника данных индексатора больше не возвращает строки подключения
 
@@ -72,8 +72,8 @@ ms.locfileid: "74112170"
 
 Если вы выполняете обновление с версии API предварительного просмотра, приведенные выше действия также применимы, но необходимо помнить, что некоторые функции предварительной версии недоступны в версия 2019-05-06:
 
-* ["Больше нравится" запросы](search-more-like-this.md)
-* [Индексирование BLOB-объектов CSV](search-howto-index-csv-blobs.md)
+* [Запросы "Скорее всего".](search-more-like-this.md)
+* [Индексирование больших двоичных объектов в формате CSV](search-howto-index-csv-blobs.md)
 * [Поддержка MongoDB API для индексаторов Cosmos DB](search-howto-index-cosmosdb.md)
 
 Если в коде используются эти функции, вы не сможете выполнить обновление до версии API 2019-05-06 без удаления их использования.
@@ -142,7 +142,7 @@ ms.locfileid: "74112170"
 > [!NOTE]
 > Нельзя управлять индексами, созданными со старым форматом "плоский", из портал Azure. Обновите индексы с "плоского" представления до "дерева" в самом раннем удобства.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с справочной документацией по поиску REST API. Если вы столкнулись с проблемами, попросите помощь по [StackOverflow](https://stackoverflow.com/) или [обратитесь в службу поддержки](https://azure.microsoft.com/support/community/?product=search).
 

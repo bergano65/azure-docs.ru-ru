@@ -9,11 +9,11 @@ ms.custom: mvc
 ms.topic: quickstart
 ms.date: 05/14/2019
 ms.openlocfilehash: 02e009e6fff2e717693d1579d409199ab179d941
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74973427"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79290332"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql---hyperscale-citus-in-the-azure-portal"></a>Краткое руководство. Создание Базы данных Azure для PostgreSQL с решением "Гипермасштабирование (Citus)" на портале Azure
 
@@ -132,7 +132,7 @@ SELECT gu.login, count(*)
 
 На предыдущих шагах вы создали ресурсы Azure в группе серверов. Если эти ресурсы вам больше не нужны, удалите группу серверов. Нажмите кнопку **Удалить** на странице **Обзор**, чтобы удалить группу серверов. При появлении запроса на всплывающей странице проверьте имя группы серверов и нажмите кнопку **Удалить**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого краткого руководства вы узнали, как подготовить к работе группу серверов Hyperscale (Citus). Вы подключились к ней с помощью psql, создали схему и выполнили распределение данных.
 

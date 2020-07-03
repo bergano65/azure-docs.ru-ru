@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 12/20/2019
+ms.date: 04/24/2020
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: f617beec8a53570ede7755040cfbb92a7d1712b7
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 681723ee9370f889ef86e6eae0878b148c17606b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75460557"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82176368"
 ---
 # <a name="configure-azure-storage-connection-strings"></a>Настройка строк подключения службы хранилища Azure
 
@@ -25,11 +25,9 @@ ms.locfileid: "75460557"
 * получить доступ к учетной записи хранения в Azure;
 * получить доступ к указанным ресурсам Azure через подписанный URL-адрес (SAS).
 
+Сведения о том, как просмотреть ключи доступа к учетной записи и скопировать строку подключения, см. в статье [Управление ключами доступа учетной записи хранения](storage-account-keys-manage.md).
+
 [!INCLUDE [storage-account-key-note-include](../../../includes/storage-account-key-note-include.md)]
-
-## <a name="view-and-copy-a-connection-string"></a>Просмотр и копирование строки подключения
-
-[!INCLUDE [storage-view-keys-include](../../../includes/storage-view-keys-include.md)]
 
 ## <a name="store-a-connection-string"></a>Сохранение строки подключения
 
@@ -62,7 +60,7 @@ ms.locfileid: "75460557"
 Служба хранилища Azure поддерживает в строке подключения как HTTP, так и HTTPS, однако *настоятельно рекомендуется использовать HTTPS*.
 
 > [!TIP]
-> Данные о строках подключения учетной записи хранения можно найти на [портале Azure](https://portal.azure.com). В колонке меню учетной записи хранения выберите **ПАРАМЕТРЫ** > **Ключи доступа**, чтобы просмотреть строки подключения для первичных и вторичных ключей доступа.
+> Данные о строках подключения учетной записи хранения можно найти на [портале Azure](https://portal.azure.com). В колонке меню учетной записи хранения перейдите к разделу **Параметры** > **ключи доступа** , чтобы просмотреть строки подключения для первичных и вторичных ключей доступа.
 >
 
 ## <a name="create-a-connection-string-using-a-shared-access-signature"></a>Создание строки подключения с помощью подписанного URL-адреса

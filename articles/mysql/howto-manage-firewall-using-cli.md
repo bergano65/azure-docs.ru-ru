@@ -6,21 +6,21 @@ ms.author: andrela
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: 0c64a5d80bace68f72274224ca9ba7c99a84f86a
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 3/18/2020
+ms.openlocfilehash: 11aa4a80deba4df14c239e69910ea38bac1b9c55
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74764956"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80063515"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью Azure CLI
 Правила брандмауэра уровня сервера можно использовать для управления доступом к серверу базы данных Azure для MySQL с определенного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Общие сведения о брандмауэрах базы данных Azure для MySQL см. в статье [правила брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md).
 
 Правила виртуальной сети (VNet) также можно использовать для защиты доступа к серверу. Дополнительные сведения о [создании конечных точек и правил виртуальных сетевых служб и управлении ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).
 
-## <a name="prerequisites"></a>Технические условия
-* [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+## <a name="prerequisites"></a>Предварительные условия
+* [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 * [Сервер и база данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md).
 
 ## <a name="firewall-rule-commands"></a>Команды для правил брандмауэра:
@@ -29,8 +29,8 @@ ms.locfileid: "74764956"
 Команды:
 - **create**: создание правила брандмауэра сервера Azure MySQL.
 - **delete**: удаление правила брандмауэра сервера Azure MySQL.
-- **list**: вывод списка правил брандмауэра сервера Azure MySQL.
-- **show**: отображение сведений о правиле брандмауэра сервера Azure MySQL.
+- **List**: Перечисление правил брандмауэра сервера Azure MySQL.
+- **Показывать**: отображение сведений о правиле брандмауэра сервера Azure MySQL.
 - **update**: обновление правила брандмауэра сервера Azure MySQL.
 
 ## <a name="sign-in-to-azure-and-list-your-azure-database-for-mysql-servers"></a>Войдите в Azure и выведите список серверов базы данных Azure для MySQL.
@@ -42,7 +42,7 @@ ms.locfileid: "74764956"
     ```
    Эта команда выведет код, который понадобится на следующем шаге.
 
-2. Откройте браузер, перейдите на страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin), а затем введите код.
+2. Откройте страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin)с помощью веб-браузера, а затем введите код.
 
 3. В командной строке выполните вход с использованием учетных данных Azure.
 
@@ -118,7 +118,7 @@ az mysql server firewall-rule delete --resource-group myresourcegroup --server-n
 ```
 При успешном выполнении выходные данные отсутствуют. В случае сбоя отображается текст сообщения об ошибке.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [правилах брандмауэра сервера базы данных Azure для MySQL](./concepts-firewall-rules.md).
 - [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure](./howto-manage-firewall-using-portal.md).
 - Более безопасный доступ к серверу путем [создания конечных точек и правил службы виртуальной сети и управления ими с помощью Azure CLI](howto-manage-vnet-using-cli.md).

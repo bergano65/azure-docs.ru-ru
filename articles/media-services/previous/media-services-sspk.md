@@ -1,6 +1,6 @@
 ---
-title: Лицензирование пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming
-description: Информация о лицензировании пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming
+title: Лицензирование&reg; пакета Microsoft Smooth Streaming Client Licensing Kit
+description: Сведения о лицензировании пакета Microsoft&reg; Smooth Streaming clienting Kit.
 services: media-services
 documentationcenter: ''
 author: xpouyat
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: xpouyat
-ms.openlocfilehash: 3e7742e7035f3c4f4827a2edae1ad5a705aa221f
-ms.sourcegitcommit: e0e6663a2d6672a9d916d64d14d63633934d2952
+ms.openlocfilehash: bd77c53a195a9549f6aaad9ee2928206f5324b0c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72693413"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81686898"
 ---
-# <a name="licensing-microsoft-smooth-streaming-client-porting-kit"></a>Лицензирование пакета для портирования клиента бесперебойной потоковой передачи Microsoft® Smooth Streaming 
-## <a name="overview"></a>Краткое описание
+# <a name="licensing-microsoftreg-smooth-streaming-client-porting-kit"></a>Лицензирование&reg; пакета Microsoft Smooth Streaming Client Licensing Kit 
+## <a name="overview"></a>Обзор
 Пакет для переноса клиента бесперебойной потоковой передачи Microsoft Smooth Streaming (далее для краткости называется **SSPK**) представляет собой реализацию клиента Smooth Streaming. Он оптимизирован так, чтобы помочь производителям встроенных устройств, операторам кабельной и мобильной связи, поставщикам служб содержимого, производителям мобильных устройств, независимым поставщикам программного обеспечения и поставщикам решений создавать продукты и услуги, которые поддерживают потоковую передачу адаптивного содержимого в формате Smooth Streaming. Клиент SSPK не зависит от оборудования и платформы. Лицензиат может легко перенести его на любое устройство и любую платформу. 
 
 Ниже вы видите схему архитектуры высокого уровня. Поле IIS Smooth Streaming Porting Kit здесь обозначает клиента Smooth Streaming, который предоставляет корпорация Майкрософт. Этот клиент содержит всю основную логику для воспроизведения контента Smooth Streaming. Затем партнеры переносят содержимое на конкретное устройство или платформу, создавая соответствующие интерфейсы. 
@@ -71,11 +71,11 @@ ms.locfileid: "72693413"
 * Отсутствие отчислений за первые 10 000 устройств в течение каждого года. 
 
 ## <a name="licensing-procedure-and-sspk-access"></a>Процедура лицензирования и доступ к SSPK.
-Все запросы на лицензирование отправляйте по электронной почте по адресу [sspkinfo@microsoft.com](mailto:sspkinfo@microsoft.com).
+Электронная [sspkinfo@microsoft.com](mailto:sspkinfo@microsoft.com) почта для всех запросов на лицензирование.
 
-Зарегистрированные обладатели лицензии на промежуточный продукт получают доступ к [Порталу распространения SSPK](https://microsoft.sharepoint.com/teams/SSPKDOWNLOAD/) .
+Зарегистрированные обладатели лицензии на промежуточный продукт получают доступ к Порталу распространения SSPK .
 
-Обладатели лицензий на промежуточные и конечные продукты SSPK могут отправлять технические вопросы на адрес электронной почты [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com).
+Промежуточные и окончательные лицензии SSPK могут отправлять технические вопросы [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com)по.
 
 ## <a name="microsoft-smooth-streaming-client-interim-product-agreement-licensees"></a>Обладатели лицензий на промежуточный продукт пакета для портирования клиента Microsoft Smooth Streaming.
 
@@ -91,10 +91,10 @@ ms.locfileid: "72693413"
 * EchoStar Purchasing Corporation
 * Enseo, Inc.
 * Fluendo S.A.
+* Гуангзау Шикун электроника., Ltd.
 * HANDAN BroadInfoCom Co., Ltd.
 * Infomir GMBH
 * Irdeto USA Inc.
-* iWEDIA S.A. 
 * Liberty Global Services BV
 * MediaTek Inc.
 * MStar Co, Ltd
@@ -105,7 +105,6 @@ ms.locfileid: "72693413"
 * SoftAtHome
 * Sony Corporation
 * Tatung Technology Inc.
-* TCL Technology Electronics (Huizhou) Co., Ltd.
 * Top Victory Investments, Ltd.
 * Vestel Elektronik Sanayi ve Ticaret A.S.
 * VisualOn, Inc.
@@ -152,7 +151,6 @@ ms.locfileid: "72693413"
 * SmarDTV S.A.
 * SoftAtHome
 * Sony Corporation
-* TCL Overseas Marketing (Macao Commercial Offshore) Limited
 * Technicolor Delivery Technologies, SAS
 * Tongfang Global Ltd.
 * Top Victory Investments, Ltd.
@@ -165,6 +163,6 @@ ms.locfileid: "72693413"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

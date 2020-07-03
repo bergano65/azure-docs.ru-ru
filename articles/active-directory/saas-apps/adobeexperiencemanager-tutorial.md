@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Adobe Experience Manager | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Adobe Experience Manager | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Adobe Experience Manager.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f39751f40b32c5da24e13d75d2607d7da0a57ad3
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73154113"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство по Интеграция Azure Active Directory с Adobe Experience Manager
+# <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство. Интеграция Azure Active Directory с Adobe Experience Manager
 
 В этом руководстве описано, как интегрировать Adobe Experience Manager с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Adobe Experience Manager обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73154113"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Adobe Experience Manager, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Adobe Experience Manager с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -108,7 +108,7 @@ ms.locfileid: "73154113"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Adobe Experience Manager](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите уникальное значение, которое определяется на сервере AEM.
+    а. В текстовом поле **Идентификатор** введите уникальное значение, которое определяется на сервере AEM.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<AEM Server Url>/saml_login`.
 
@@ -129,11 +129,11 @@ ms.locfileid: "73154113"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-adobe-experience-manager-single-sign-on"></a>Настройка единого входа Adobe Experience Manager
 
@@ -147,7 +147,7 @@ ms.locfileid: "73154113"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin6.png)
 
-4. Выберите **Account settings** (Параметры учетной записи)  >  **Manage TrustStore** (Управление TrustStore).
+4. Выберите **Account settings** (Параметры учетной записи)  > **Manage TrustStore** (Управление TrustStore).
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_managetrust.png)
 
@@ -167,7 +167,7 @@ ms.locfileid: "73154113"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin9.png)
 
-9. Вернитесь на страницу администрирования. Выберите **Settings** (Параметры)  >  **Operations** (Операции)  >  **Web Console** (Веб-консоль).
+9. Вернитесь на страницу администрирования. Выберите **Settings** (Параметры)  > **Operations** (Операции)  > **Web Console** (Веб-консоль).
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin1.png)
 
@@ -183,7 +183,7 @@ ms.locfileid: "73154113"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobeexperiencemanager-tutorial/tutorial_adobeexperiencemanager_admin4.png)
 
-    a. В текстовом поле **Path** (Путь) введите **/** .
+    а. В текстовом поле **Path** (Путь) введите **/** .
 
     b. В поле **IDP URL** (URL-адрес IDP) вставьте значение **Login URL** (URL-адрес входа), скопированное на портале Azure.
 
@@ -191,9 +191,9 @@ ms.locfileid: "73154113"
 
     d. В поле **Security Provided Entity ID** (Идентификатор сущности системы безопасности) введите уникальное значение **Azure Ad Identifier** (Идентификатор Azure AD), настроенное на портале Azure.
 
-    д. В поле **Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений) введите значение **URL-адрес ответа**, настроенное на портале Azure.
+    д) В поле **Assertion Consumer Service URL** (URL-адрес службы обработчика утверждений) введите значение **URL-адрес ответа**, настроенное на портале Azure.
 
-    Е. В поле **Password of Key Store** (Пароль хранилища ключей) введите **пароль**, установленный в хранилище ключей.
+    е) В поле **Password of Key Store** (Пароль хранилища ключей) введите **пароль**, установленный в хранилище ключей.
 
     ж. В поле **User Attribute ID** (Идентификатор пользовательского атрибута) введите **идентификатор имени** или другой пользовательский идентификатор, который используется в вашем случае.
 

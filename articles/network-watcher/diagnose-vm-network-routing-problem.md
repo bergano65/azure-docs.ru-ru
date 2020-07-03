@@ -1,5 +1,5 @@
 ---
-title: Руководство. диагностике проблем с маршрутизацией сети виртуальной машины с помощью портала Azure
+title: Руководство по диагностике проблем с маршрутизацией сети виртуальной машины с помощью портала Azure
 titleSuffix: Azure Network Watcher
 description: Из этого руководства вы узнаете, как диагностировать проблему с маршрутизацией на виртуальной машине с помощью возможности следующего прыжка в Наблюдателе за сетями Azure.
 services: network-watcher
@@ -18,13 +18,13 @@ ms.date: 04/20/2018
 ms.author: damendo
 ms.custom: mvc
 ms.openlocfilehash: 52d398fa9c258528ef8f87842ba94f139bbf737b
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76845203"
 ---
-# <a name="tutorial-diagnose-a-virtual-machine-network-routing-problem-using-the-azure-portal"></a>Руководство. диагностике проблемы с маршрутизацией в сети виртуальной машины с помощью портала Azure
+# <a name="tutorial-diagnose-a-virtual-machine-network-routing-problem-using-the-azure-portal"></a>Руководство по диагностике проблемы с маршрутизацией в сети виртуальной машины с помощью портала Azure
 
 При развертывании виртуальной машины Azure создает для нее несколько маршрутов по умолчанию. Вы можете создавать настраиваемые маршруты для переопределения маршрутов по умолчанию Azure. В некоторых случаях пользовательский маршрут может привести к тому, что виртуальная машина не сможет взаимодействовать с другими ресурсами. В этом руководстве описано следующее:
 

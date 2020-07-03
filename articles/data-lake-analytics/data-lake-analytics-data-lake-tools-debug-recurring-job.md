@@ -10,10 +10,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 05/20/2018
 ms.openlocfilehash: 5a2935d559a967151c5bdc01c4b0806fe52179b4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "60629786"
 ---
 # <a name="troubleshoot-an-abnormal-recurring-job"></a>Устранение неполадок, связанных с неправильно повторяющимся заданием
@@ -27,17 +27,17 @@ ms.locfileid: "60629786"
 
 **Представление связанных заданий** в средствах Azure Data Lake для Visual Studio поможет ускорить устранение неполадок в обоих случаях.
 
-## <a name="step-1-find-recurring-jobs-and-open-related-job-view"></a>Шаг 1. Поиск повторяющихся заданий и откройте представление связанных заданий
+## <a name="step-1-find-recurring-jobs-and-open-related-job-view"></a>Шаг 1. Поиск повторяющихся заданий и просмотр представления связанных заданий
 
 Чтобы использовать представление связанных заданий для устранения неполадок с повторяющимся заданием, найдите такое задание в Visual Studio и откройте представление.
 
-### <a name="case-1-you-have-the-url-for-the-recurring-job"></a>Вариант 1. У вас есть URL-адрес повторяющегося задания
+### <a name="case-1-you-have-the-url-for-the-recurring-job"></a>Вариант 1. У вас есть URL-адрес повторяющегося задания
 
-В меню **Сервис** > **Data Lake** > **Представление заданий** можно вставить URL-адрес задания, чтобы открыть представление задания в Visual Studio. Выберите **Просмотреть связанные задания**, чтобы открыть представление связанных заданий.
+С помощью **инструментов** > **Data Lake** > **представление заданий**можно вставить URL-адрес задания, чтобы открыть представление задания в Visual Studio. Выберите **Просмотреть связанные задания**, чтобы открыть представление связанных заданий.
 
 ![Ссылка на просмотр связанных заданий в средствах Data Lake Analytics](./media/data-lake-analytics-data-lake-tools-debug-recurring-job/view-related-job.png)
  
-### <a name="case-2-you-have-the-pipeline-for-the-recurring-job-but-not-the-url"></a>Вариант 2. У вас есть конвейер для повторяющегося задания, но не URL-адрес
+### <a name="case-2-you-have-the-pipeline-for-the-recurring-job-but-not-the-url"></a>Вариант 2. У вас есть конвейер для повторяющегося задания, но нет его URL-адреса
 
 В Visual Studio можно открыть браузер конвейера, выбрав "Обозреватель серверов" > учетную запись Azure Data Lake Analytics > **Конвейеры**. (Если этот узел не удается найти в обозревателе серверов, [скачайте последнюю версию подключаемого модуля](https://aka.ms/adltoolsvs).) 
 
@@ -47,7 +47,7 @@ ms.locfileid: "60629786"
 
 ![Выбор конвейера и открытие представления связанных заданий](./media/data-lake-analytics-data-lake-tools-debug-recurring-job/recurring-job-view.png)
 
-## <a name="step-2-analyze-a-statistics-report"></a>Шаг 2. Анализ статистического отчета
+## <a name="step-2-analyze-a-statistics-report"></a>Шаг 2. Анализ статистического отчета
 
 Сводка и статистический отчет отображаются в верхней части представления связанных заданий. Здесь можно найти возможную причину неполадки. 
 
@@ -56,7 +56,7 @@ ms.locfileid: "60629786"
 
 ![Схема процесса проверки статистики](./media/data-lake-analytics-data-lake-tools-debug-recurring-job/recurring-job-metrics-debugging-flow.png)
 
-## <a name="step-3-compare-the-abnormal-job-to-a-normal-job"></a>Шаг 3. Сравните Неправильное задание в обычном задание
+## <a name="step-3-compare-the-abnormal-job-to-a-normal-job"></a>Шаг 3. Сравнение неправильно выполняемого задания с обычным
 
 В списке в нижней части представления связанных заданий можно найти все отправленные запуски повторяющегося задания. Для поиска дополнительных сведений и потенциальных решений щелкните правой кнопкой мыши неправильно выполняемое задание. С помощью представления "Отличия заданий" сравните неправильно выполняемое задание с ранее выполненным нормальным.
 
@@ -66,7 +66,7 @@ ms.locfileid: "60629786"
 
 ![Схема процесса проверки различий между заданиями](./media/data-lake-analytics-data-lake-tools-debug-recurring-job/recurring-job-diff-debugging-flow.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Устранение неравномерного распределения данных](data-lake-analytics-data-lake-tools-data-skew-solutions.md)
 * [Отладка определяемого пользователем кода C# для заданий U-SQL, завершившихся сбоем](data-lake-analytics-debug-u-sql-jobs.md)

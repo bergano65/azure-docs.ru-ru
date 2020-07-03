@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/03/2019
 ms.author: jeedes
-ms.openlocfilehash: 30a4dcbd15d8a47d99b3a61879a7e61938d3b133
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: 26a761708f56ff7aba8daf86d2991579e60291cb
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160538"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81870196"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mitel-micloud-connect"></a>Руководство по Интеграция Azure Active Directory с Mitel MiCloud Connect
 
@@ -91,7 +91,7 @@ ms.locfileid: "73160538"
 
 1. Чтобы открыть страницу конфигураций на [портале Azure](https://portal.azure.com/), сделайте следующее:
 
-    a. На странице интеграции с приложением **Mitel Connect** щелкните **Единый вход**.
+    а. На странице интеграции с приложением **Mitel Connect** щелкните **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "73160538"
 
 2. Чтобы открыть диалоговое окно конфигурации на портале Mitel Account, сделайте следующее:
 
-    a. В меню **Phone System** (Телефонная система) щелкните **Add-On Features** (Функции надстройки).
+    а. В меню **Phone System** (Телефонная система) щелкните **Add-On Features** (Функции надстройки).
 
     b. Справа от элемента **Single Sign-On** (Единый вход) щелкните **Activate** (Активировать) или **Settings** (Параметры).
     
@@ -128,7 +128,7 @@ ms.locfileid: "73160538"
     * [https://portal.shoretelsky.com]( **https://portal.shoretelsky.com** ) — для использования портала Mitel Account как приложения Mitel по умолчанию;
     * [https://teamwork.shoretel.com]( **https://teamwork.shoretel.com** ) — для использования Teamwork как приложения Mitel по умолчанию.
 
-    **Примечание.** Приложение Mitel по умолчанию — это приложение, на которое пользователь переходит, когда щелкает плитку Mitel Connect на Панели доступа. Также это приложение, к которому предоставляется доступ при выполнении тестовой настройки из Azure AD.
+    **ПРИМЕЧАНИЕ.** Приложение Mitel по умолчанию — это приложение, на которое пользователь переходит, когда щелкает плитку Mitel Connect на Панели доступа. Также это приложение, к которому предоставляется доступ при выполнении тестовой настройки из Azure AD.
 
 8. Нажмите кнопку **Сохранить** в диалоговом окне **Базовая конфигурация SAML** на портале Azure.
 
@@ -140,7 +140,7 @@ ms.locfileid: "73160538"
 
 11. На портале Azure на странице **Вход на основе SAML** в разделе **Настройка Mitel Connect** сделайте следующее:
 
-    a. Скопируйте URL-адрес в поле **URL-адрес входа** и вставьте его в поле **Sign-in URL** (URL-адрес входа) на портале Mitel Account.
+    а. Скопируйте URL-адрес в поле **URL-адрес входа** и вставьте его в поле **Sign-in URL** (URL-адрес входа) на портале Mitel Account.
 
     b. Скопируйте URL-адрес в поле **Идентификатор Azure AD** и вставьте его в поле **Entity ID** (Идентификатор сущности) на портале Mitel Account.
     ![image](./media/mitel-connect-tutorial/Mitel_Azure_SetupConnect.png)
@@ -163,7 +163,7 @@ ms.locfileid: "73160538"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите brittasimon@\<домен_вашей_компании\>.\<доменная_зона\>.  
 Например, BrittaSimon@contoso.com.
@@ -202,7 +202,7 @@ ms.locfileid: "73160538"
 
 В этом разделе описано, как создать пользователя Britta Simon из учетной записи MiCloud Connect. Перед использованием единого входа необходимо создать и активировать пользователей.
 
-Дополнительные сведения о добавлении пользователей на портале Mitel Account см. в статье [Adding a User](https://docs.shoretel.com/connectcloud/Account/Users/AddUser) (Добавление пользователя) базы знаний Mitel.
+Дополнительные сведения о добавлении пользователей на портале Mitel Account см. в статье [Adding a User](https://oneview.mitel.com/s/article/Adding-a-User-092815) (Добавление пользователя) базы знаний Mitel.
 
 Создайте пользователя из своей учетной записи MiCloud Connect, указав следующие значения:
 
@@ -214,7 +214,7 @@ ms.locfileid: "73160538"
 * **Username:** (Имя пользователя) `brittasimon@<yourcompanydomain>.<extension>`.  
 (Пример: [brittasimon@contoso.com](mailto:brittasimon@contoso.com). Как правило, имя пользователя совпадает с рабочим адресом электронной почты пользователя.)
 
-**Примечание**. Имя пользователя MiCloud Connect должно совпадать с адресом электронной почты пользователя в Azure.
+**ПРИМЕЧАНИЕ.** Имя пользователя MiCloud Connect должно совпадать с адресом электронной почты пользователя в Azure.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

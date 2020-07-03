@@ -1,6 +1,6 @@
 ### YamlMime:Landing
-title: Платформа удостоверений Майкрософт (ранее — Azure Active Directory для разработчиков)
-summary: Платформа удостоверений Майкрософт — это решение на основе платформы для разработчиков Azure Active Directory (Azure AD). С ее помощью разработчики могут создавать приложения, которые обеспечивают вход с использованием любых удостоверений Майкрософт и получение маркеров для вызова таких программных API-интерфейсов Майкрософт, как Microsoft Graph или других программных интерфейсов, созданных разработчиками. Это полнофункциональная платформа, состоящая из стандартных совместимых служб аутентификации OAuth 2.0 и OpenID Connect, библиотек с открытым кодом, возможностей регистрации и настройки приложений, обзорной и справочной документации, примеров для быстрого запуска, примеров кода, материалов и практических руководств.
+title: Документация по платформе удостоверений Майкрософт
+summary: Платформа удостоверений Майкрософт позволяет разработчикам создавать приложения, которые обеспечивают вход с использованием любых удостоверений Майкрософт и получение маркеров для вызова API Майкрософт (например, Microsoft Graph) и пользовательских API. Это полнофункциональная платформа, которая включает стандартные совместимые службы аутентификации OAuth 2.0 и OpenID Connect, библиотеки с открытым кодом, возможности регистрации и настройки приложений, обзорную и справочную документацию, примеры для быстрого запуска, примеры кода, а также материалы и практические руководства.
 metadata:
   ms.topic: landing-page
   ms.date: 06/22/2019
@@ -9,37 +9,35 @@ metadata:
   ms.service: active-directory
   ms.subservice: develop
   ms.workload: identity
-  ms.openlocfilehash: ea67860d851e9228ca14c6e53c4831f8d6f34f17
-  ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+  ms.openlocfilehash: 71f591f04e8762761c449ca4924db5edb4de3f6c
+  ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/13/2020
-  ms.locfileid: "77194544"
+  ms.lasthandoff: 05/20/2020
+  ms.locfileid: "83681765"
 landingContent:
 - title: Общие сведения о платформе удостоверений Майкрософт
   linkLists:
   - linkListType: overview
     links:
-    - text: Развитие платформы удостоверений Майкрософт
-      url: about-microsoft-identity-platform.md
     - text: Платформа удостоверений Майкрософт (версия 2.0)
       url: v2-overview.md
+    - text: Развитие платформы удостоверений Майкрософт
+      url: about-microsoft-identity-platform.md
     - text: Azure Active Directory для разработчиков (версия 1.0)
       url: ../azuread-dev/v1-overview.md
   - linkListType: concept
     links:
     - text: Основные сведения об аутентификации
       url: authentication-scenarios.md
-    - text: Видео с объяснениями основных понятий
-      url: identity-videos.md
     - text: Потоки аутентификации и сценарии приложений
       url: authentication-flows-app-scenarios.md
     - text: Рекомендации
       url: identity-platform-integration-checklist.md
-  - linkListType: learn
+  - linkListType: video
     links:
-    - text: One Dev Minute — платформа удостоверений Майкрософт
-      url: https://youtu.be/y_fgJAatVhk
+    - text: Видеоматериалы. Платформа удостоверений для разработчиков
+      url: identity-videos.md
 - title: Создание одностраничного приложения
   linkLists:
   - linkListType: get-started
@@ -48,11 +46,17 @@ landingContent:
       url: scenario-spa-overview.md
   - linkListType: quickstart
     links:
-    - text: JavaScript
+    - text: Код проверки подлинности (JavaScript)
+      url: quickstart-v2-javascript-auth-code.md
+    - text: Неявное предоставление разрешения (JavaScript)
       url: quickstart-v2-javascript.md
+    - text: Angular
+      url: quickstart-v2-angular.md
   - linkListType: tutorial
     links:
-    - text: JavaScript
+    - text: Код проверки подлинности (JavaScript)
+      url: tutorial-v2-javascript-auth-code.md
+    - text: Неявное предоставление разрешения (JavaScript)
       url: tutorial-v2-javascript-spa.md
   - linkListType: download
     links:
@@ -82,7 +86,7 @@ landingContent:
       url: https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2
   - linkListType: download
     links:
-    - text: Примеры: ASP.NET Core, ASP.NET, Java, Python
+    - text: 'Примеры: ASP.NET Core, ASP.NET, Java, Python'
       url: sample-v2-code.md#web-applications
 - title: Создание веб-приложения, которое вызывает веб-API
   linkLists:
@@ -102,7 +106,7 @@ landingContent:
       url: https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2#scope-of-this-tutorial
   - linkListType: download
     links:
-    - text: Примеры: ASP.NET Core, ASP.NET, Node.js, Ruby, Java, Python
+    - text: 'Примеры: ASP.NET Core, ASP.NET, Node.js, Ruby, Java, Python'
       url: sample-v2-code.md#web-applications
 - title: Создание защищенного веб-API
   linkLists:
@@ -150,7 +154,7 @@ landingContent:
       url: tutorial-v2-windows-uwp.md
   - linkListType: download
     links:
-    - text: Пример: .NET, .NET Core, Java, Python
+    - text: 'Пример: .NET, .NET Core, Java, Python'
       url: sample-v2-code.md#desktop-and-mobile-public-client-apps
 - title: Создание управляющей программы, которая вызывает веб-API
   linkLists:
@@ -166,7 +170,7 @@ landingContent:
       url: https://github.com/Azure-Samples/ms-identity-aspnet-daemon-webapp
   - linkListType: download
     links:
-    - text: Примеры: консоль ASP.NET, веб-приложение ASP.NET, Java, Python
+    - text: 'Примеры: консоль ASP.NET, веб-приложение ASP.NET, Java, Python'
       url: sample-v2-code.md#daemon-applications
 - title: Создание мобильного приложения, которое вызывает веб-API
   linkLists:

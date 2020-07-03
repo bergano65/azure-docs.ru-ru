@@ -1,6 +1,6 @@
 ---
-title: Коды ошибок (кодирования и анализ) задания службы мультимедиа Azure | Документация Майкрософт
-description: В этой статье содержит ссылки на Справочник по коды ошибок задания и дает полезные ссылки на связанные разделы.
+title: Задание служб мультимедиа Azure (кодирование и анализ) коды ошибок | Документация Майкрософт
+description: В этой статье содержатся ссылки на разделы справки по кодам ошибок заданий и приводятся полезные ссылки на соответствующие статьи.
 author: Juliako
 manager: femila
 editor: ''
@@ -13,20 +13,20 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/28/2019
 ms.author: juliako
-ms.openlocfilehash: 9443a50d130e6542672eb143bcb56d04d63959a4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d66347bc5510189b1d947b4c6b00345b0a56c3f7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65235707"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80582219"
 ---
 # <a name="media-services-job-error-codes"></a>Коды ошибок заданий служб мультимедиа
 
-Этот раздел содержит ссылки на документ справочник по REST для подробного описания [задания](transforms-jobs-concept.md) коды ошибок и сообщений.
+В этом разделе приведена ссылка на справочный документ по ПРОЧному описанию кодов ошибок и сообщений об ошибках [заданий](transforms-jobs-concept.md) .
 
 ## <a name="job-error-codes"></a>Коды ошибок задания
 
-В следующем документе REST приводятся подробные объяснения об [задания коды ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
+В следующем документе содержатся подробные объяснения о [кодах ошибок заданий](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
@@ -34,10 +34,10 @@ ms.locfileid: "65235707"
 
 ## <a name="see-also"></a>См. также
 
-- [Коды ошибок для потоковой передачи конечной точки](streaming-endpoint-error-codes.md)
+- [Коды ошибок конечной точки потоковой передачи](streaming-endpoint-error-codes.md)
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [Квоты и ограничения](limits-quotas-constraints.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Пример: доступ к код ошибки и сообщения из ApiException с помощью .NET](configure-connect-dotnet-howto.md#connect-to-the-net-client)
+[Пример: доступ к ErrorCode и сообщению из Апиексцептион с помощью .NET](configure-connect-dotnet-howto.md#connect-to-the-net-client)

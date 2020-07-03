@@ -8,17 +8,17 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 11/26/2019
 ms.openlocfilehash: 0755131f7d8071e37eadc1339ebc5e122725fa71
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75426241"
 ---
 # <a name="process-real-time-iot-data-streams-with-azure-stream-analytics"></a>Обработка потоков данных IoT в режиме реального времени с помощью Azure Stream Analytics
 
 Из этой статьи вы узнаете, как создать логику обработки потоков для сбора данных с устройств "Интернет вещей" (IoT). Вы используете реальный вариант использования "Интернет вещей" (IoT), чтобы продемонстрировать, как быстро и появился создать решение.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Создайте бесплатную [подписку Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Скачайте пример запроса и файлы данных с сайта [GitHub](https://aka.ms/azure-stream-analytics-get-started-iot).
@@ -38,7 +38,7 @@ ms.locfileid: "75426241"
 }  
 ```
 
-В реальном сценарии у вас могут быть сотни таких датчиков, создающих события в виде потока. В идеале необходимо устройство шлюза, выполняющее код для отправки этих событий в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) или [центры Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/). Задание Stream Analytics будет принимать эти события из Центров событий и выполнять аналитику в режиме реального времени с помощью запросов. Затем результаты можно отправить в [поддерживаемое место назначения выходных данных](stream-analytics-define-outputs.md).
+В реальном сценарии у вас могут быть сотни таких датчиков, создающих события в виде потока. В идеале необходимо устройство шлюза, выполняющее код для отправки этих событий в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) или [центры Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/). Задание Stream Analytics будет принимать эти события из Центров событий и выполнять аналитику в режиме реального времени с помощью запросов. Затем можно отправить результаты в один из [поддерживаемых выходов](stream-analytics-define-outputs.md).
 
 Для удобства в этом руководстве по началу работы приведен пример файла данных, полученных с реальных устройств SensorTag. На основе этого примера можно выполнять различные запросы и просматривать их результаты. В последующих руководствах вы узнаете, как подключить задание к источникам входных данных и местам назначения выходных данных, а также развернуть его в службе Azure.
 
@@ -60,7 +60,7 @@ ms.locfileid: "75426241"
 Скачайте [HelloWorldASA-InputStream. JSON](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/GettingStarted/HelloWorldASA-InputStream.json
 ) с сайта GitHub. Затем перейдите к заданию Azure Stream Analytics в портал Azure.
 
-Выберите **запрос** в разделе **топология задания** в меню слева. Затем выберите **отправить образец входных данных**. Отправьте файл `HelloWorldASA-InputStream.json` и нажмите кнопку **ОК**.
+Выберите **запрос** в разделе **топология задания** в меню слева. Затем выберите **отправить образец входных данных**. Отправьте `HelloWorldASA-InputStream.json` файл и нажмите кнопку **ОК**.
 
 ![Плитка "Запрос" на панели мониторинга Stream Analytics](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-05.png)
 

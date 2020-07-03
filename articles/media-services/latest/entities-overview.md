@@ -1,7 +1,7 @@
 ---
-title: Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа v3
+title: Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
 titleSuffix: Azure Media Services
-description: Сведения о фильтрации, упорядочении и разбиении на страницы сущностей служб мультимедиа Azure.
+description: Сведения о фильтрации, упорядочении и разбиении на страницы сущностей служб мультимедиа Azure v3.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 01/21/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: c5ae9839b7bbb86e28c9f8adab0aa0ec5e885087
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.openlocfilehash: 7e4f1141a9d4bd58451782e8412063a22565556d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76311705"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80584532"
 ---
 # <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
 
@@ -26,7 +26,7 @@ ms.locfileid: "76311705"
 
 ## <a name="considerations"></a>Рекомендации
 
-* Свойства сущностей, которые относятся к типу `Datetime`, всегда имеют формат UTC.
+* Свойства сущностей, имеющих `Datetime` тип, всегда имеют формат UTC.
 * Перед отправкой запроса пробелы в строке запроса должны быть закодированы в виде URL-адреса.
 
 ## <a name="comparison-operators"></a>Операторы сравнения
@@ -35,42 +35,42 @@ ms.locfileid: "76311705"
 
 Операторы равенства:
 
-- `eq`. проверяет, *равно* ли поле значению константы.
+- `eq`. Проверьте, *равно* ли поле значению константы.
 - `ne`: Проверьте, *не равно* ли поле значению константы.
 
 Операторы диапазона:
 
-- `gt`. проверяет *, превышает ли* поле постоянное значение.
-- `lt`: проверяет, меньше ли поле, *чем* постоянное значение.
+- `gt`: Проверьте, больше ли поле, *чем* постоянное значение.
+- `lt`: Проверяет, меньше ли поле, *чем* постоянное значение.
 - `ge`: Проверка того, что поле *больше или равно* значению константы.
 - `le`: Проверка того, что поле *меньше или равно* значению константы.
 
-## <a name="filter"></a>Фильтр
+## <a name="filter"></a>Filter
 
-Используйте `$filter`, чтобы указать параметр фильтра OData, чтобы найти только интересующие вас объекты.
+Используйте `$filter` для предоставления параметра фильтра OData, чтобы найти только интересующие вас объекты.
 
-В приведенных ниже примерах фильтрации по значению `alternateId` ресурса.
+В следующем примере показано, `alternateId` как фильтровать значение ресурса:
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01&$filter=properties/alternateId%20eq%20'unique identifier'
 ```
 
-В следующем C# примере производится фильтрация по дате создания ресурса:
+В следующем примере кода C# фильтры по дате создания ресурса:
 
 ```csharp
 var odataQuery = new ODataQuery<Asset>("properties/created lt 2018-05-11T17:39:08.387Z");
 var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGroup, CustomerAccountName, odataQuery);
 ```
 
-## <a name="order-by"></a>Сортировка по
+## <a name="order-by"></a>Упорядочить по
 
-Используйте `$orderby`, чтобы отсортировать возвращенные объекты по указанному параметру. Пример.  
+Используйте `$orderby` для сортировки возвращаемых объектов по указанному параметру. Пример:  
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01$orderby=properties/created%20gt%202018-05-11T17:39:08.387Z
 ```
 
-Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте в имя поля `asc` или `desc`, разделяя их пробелом. Например: `$orderby properties/created desc`.
+Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте либо `asc` `desc` к имени поля, разделенному пробелом. Например: `$orderby properties/created desc`.
 
 ## <a name="skip-token"></a>Пропустить токен
 
@@ -81,11 +81,11 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 Если при разбиении по коллекциям создаются или удаляются сущности, изменения отражаются в возвращенных результатах (если эти изменения находятся в той части коллекции, которая еще не была загружена).
 
 > [!TIP]
-> Следует всегда использовать `nextLink` для перечисления коллекции и не зависеть от конкретного размера страницы.
+> Всегда используйте `nextLink` для перечисления коллекции и не зависят от конкретного размера страницы.
 >
-> Значение `nextLink` будет представлено только в том случае, если имеется более одной страницы сущностей.
+> `nextLink` Значение будет представлено только в том случае, если имеется более одной страницы сущностей.
 
-Рассмотрим следующий пример использования `$skiptoken`. Замените *amstestaccount* именем своей учетной записи и установите для значения *api-version* последнюю версию.
+Рассмотрим следующий пример использования Where `$skiptoken` . Замените *amstestaccount* именем своей учетной записи и установите для значения *api-version* последнюю версию.
 
 Если вы запрашиваете список ресурсов следующим образом:
 
@@ -123,7 +123,7 @@ HTTP/1.1 200 OK
 https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01&$skiptoken=Asset+517
 ```
 
-В следующем C# примере показано, как перечислить все указатели потоковой передачи в учетной записи.
+В следующем примере C# показано, как перечислить все указатели потоковой передачи в учетной записи.
 
 ```csharp
 var firstPage = await MediaServicesArmClient.StreamingLocators.ListAsync(CustomerResourceGroup, CustomerAccountName);
@@ -145,7 +145,7 @@ while (currentPage.NextPageLink != null)
 https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qbtest/providers/Microsoft.Media/mediaServices/qbtest/transforms/VideoAnalyzerTransform/jobs?$filter=properties/state%20eq%20Microsoft.Media.JobState'Scheduled'%20or%20properties/state%20eq%20Microsoft.Media.JobState'Processing'&api-version=2018-07-01
 ```
 
-Один и тот же запрос создается C# следующим образом: 
+Такой же запрос создается в C# следующим образом: 
 
 ```csharp
 var odataQuery = new ODataQuery<Job>("properties/state eq Microsoft.Media.JobState'Scheduled' or properties/state eq Microsoft.Media.JobState'Processing'");
@@ -156,7 +156,7 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 
 В следующей таблице показано, как можно применить параметры фильтрации и упорядочивания к разным сущностям.
 
-|Имя сущности|Имя свойства|Фильтр|Заказ|
+|Имя сущности|Имя свойства.|Filter|Порядок|
 |---|---|---|---|
 |[Ресурсы](https://docs.microsoft.com/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
 ||properties.alternateId |`eq`||
@@ -172,7 +172,7 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 ||properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 ||properties.lastModified | `gt`, `ge`, `lt`, `le` | `asc` и `desc`| 
 |[Указатели потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
-||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+||properties.created    |`eq`, `ne`, `ge`, `le`,  `gt`, `lt`|`asc` и `desc`|
 ||properties.endTime    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 |[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
@@ -180,7 +180,7 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 || properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 || properties.lastModified | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Список ресурсов](https://docs.microsoft.com/rest/api/media/assets/list)
 * [Список политик ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies/list)

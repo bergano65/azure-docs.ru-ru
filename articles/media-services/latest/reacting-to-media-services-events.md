@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 08/08/2019
 ms.author: juliako
 ms.openlocfilehash: e24bacb0ea7ab406442022915872fc77e9cc1a5e
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74887890"
 ---
 # <a name="handling-event-grid-events"></a>Обработка событий Сетки событий
@@ -45,4 +45,4 @@ ms.locfileid: "74887890"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Мониторинг событий — портал](monitor-events-portal-how-to.md)
-* [События монитора — CLI](job-state-events-cli-how-to.md)
+* [Мониторинг событий (CLI)](job-state-events-cli-how-to.md)

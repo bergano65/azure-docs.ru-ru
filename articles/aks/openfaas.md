@@ -1,24 +1,23 @@
 ---
 title: Использование OpenFaaS со Службой Azure Kubernetes (AKS)
-description: Развертывание и использование OpenFaaS со Службой Azure Kubernetes (AKS)
+description: Узнайте, как развернуть и использовать OpenFaaS в кластере Azure Kubernetes Service (AKS) для создания бессерверных функций с контейнерами.
 author: justindavies
-ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: juda
 ms.custom: mvc
-ms.openlocfilehash: 7949735eff4478d2d04700e1c6df69d28fe25979
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: 95039573c607f516755f08f1ebad8b968416ec8b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76278480"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80631472"
 ---
 # <a name="using-openfaas-on-aks"></a>Использование OpenFaaS в AKS
 
 [OpenFaaS][open-faas] — это платформа для создания бессерверных функций с помощью контейнеров. Как проект с открытым кодом она стала очень популярной в сообществе. В этом документе описано, как установить и использовать OpenFaas в кластере Службы Azure Kubernetes (AKS).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
@@ -29,9 +28,11 @@ ms.locfileid: "76278480"
 
 ## <a name="add-the-openfaas-helm-chart-repo"></a>Добавление репозитория диаграммы OpenFaaS Helm
 
+Перейдите в [https://shell.azure.com](https://shell.azure.com) , чтобы открыть Azure Cloud Shell в браузере.
+
 OpenFaaS поддерживает собственные диаграммы Helm, чтобы поддерживать актуальность всех последних изменений.
 
-```azurecli-interactive
+```console
 helm repo add openfaas https://openfaas.github.io/faas-netes/
 helm repo update
 ```
@@ -42,13 +43,13 @@ helm repo update
 
 Создайте пространство имен для системы OpenFaaS и функций:
 
-```azurecli-interactive
+```console
 kubectl apply -f https://raw.githubusercontent.com/openfaas/faas-netes/master/namespaces.yml
 ```
 
 Создайте пароль для портала пользовательского интерфейса OpenFaaS и REST API:
 
-```azurecli-interactive
+```console
 # generate a random password
 PASSWORD=$(head -c 12 /dev/urandom | shasum| cut -d' ' -f1)
 
@@ -63,7 +64,7 @@ kubectl -n openfaas create secret generic basic-auth \
 
 Диаграмма Helm для OpenFaaS будет включена в клонированный репозиторий. С помощью этой диаграммы разверните OpenFaaS в кластере AKS.
 
-```azurecli-interactive
+```console
 helm upgrade openfaas --install openfaas/openfaas \
     --namespace openfaas  \
     --set basic_auth=true \
@@ -73,7 +74,7 @@ helm upgrade openfaas --install openfaas/openfaas \
 
 Выходные данные:
 
-```
+```output
 NAME:   openfaas
 LAST DEPLOYED: Wed Feb 28 08:26:11 2018
 NAMESPACE: openfaas
@@ -93,7 +94,7 @@ To verify that openfaas has started, run:
   kubectl --namespace=openfaas get deployments -l "release=openfaas, app=openfaas"
 ```
 
-Для получения доступа к шлюзу OpenFaaS создается общедоступный IP-адрес. Чтобы получить этот IP-адрес, используйте команду [kubectl Get Service][kubectl-get] . Процесс назначения службе IP-адреса может занять около минуты.
+Для получения доступа к шлюзу OpenFaaS создается общедоступный IP-адрес. Чтобы получить этот IP-адрес, используйте команду [kubectl get service][kubectl-get]. Процесс назначения службе IP-адреса может занять около минуты.
 
 ```console
 kubectl get service -l component=gateway --namespace openfaas
@@ -101,7 +102,7 @@ kubectl get service -l component=gateway --namespace openfaas
 
 Выходные данные.
 
-```console
+```output
 NAME               TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)          AGE
 gateway            ClusterIP      10.0.156.194   <none>         8080/TCP         7m
 gateway-external   LoadBalancer   10.0.28.18     52.186.64.52   8080:30800/TCP   7m
@@ -111,17 +112,17 @@ gateway-external   LoadBalancer   10.0.28.18     52.186.64.52   8080:30800/TCP  
 
 ![Пользовательский интерфейс OpenFaaS](media/container-service-serverless/openfaas.png)
 
-Установите интерфейс командной строки (CLI) OpenFaaS. В этом примере используется brew. Дополнительные параметры см. в документации по интерфейсу [командной строки OpenFaaS][open-faas-cli] .
+Установите интерфейс командной строки (CLI) OpenFaaS. В этом примере используется brew. Дополнительные варианты см. в [документации по OpenFaaS CLI][open-faas-cli].
 
 ```console
 brew install faas-cli
 ```
 
-Задайте для `$OPENFAAS_URL` общедоступный IP-адрес, указанный выше.
+Укажите `$OPENFAAS_URL` общедоступный IP-адрес, указанный выше.
 
 Выполните вход с помощью Azure CLI:
 
-```azurecli-interactive
+```console
 export OPENFAAS_URL=http://52.186.64.52:8080
 echo -n $PASSWORD | ./faas-cli login -g $OPENFAAS_URL -u admin --password-stdin
 ```
@@ -136,13 +137,13 @@ echo -n $PASSWORD | ./faas-cli login -g $OPENFAAS_URL -u admin --password-stdin
 
 Для вызова функции используйте curl. Замените IP-адрес в следующем примере IP-адресом шлюза OpenFaas.
 
-```azurecli-interactive
+```console
 curl -X POST http://52.186.64.52:8080/function/figlet -d "Hello Azure"
 ```
 
 Выходные данные:
 
-```console
+```output
  _   _      _ _            _
 | | | | ___| | | ___      / \    _____   _ _ __ ___
 | |_| |/ _ \ | |/ _ \    / _ \  |_  / | | | '__/ _ \
@@ -195,34 +196,34 @@ COSMOS=$(az cosmosdb list-connection-strings \
 
 Используйте средство *mongoimport* для загрузки экземпляра CosmosDB с данными.
 
-При необходимости установите средства MongoDB. В следующем примере эти средства устанавливаются с помощью brew. другие параметры см. в [документации по MongoDB][install-mongo] .
+При необходимости установите средства MongoDB. В следующем примере эти средства устанавливаются с помощью brew. Другие варианты см. в [документации MongoDB][install-mongo].
 
-```azurecli-interactive
+```console
 brew install mongodb
 ```
 
 Загрузите данные в базу данных.
 
-```azurecli-interactive
+```console
 mongoimport --uri=$COSMOS -c plans < plans.json
 ```
 
 Выходные данные:
 
-```console
+```output
 2018-02-19T14:42:14.313+0000    connected to: localhost
 2018-02-19T14:42:14.918+0000    imported 1 document
 ```
 
 Выполните следующую команду для создания функции. Обновите значение аргумента `-g` адресом своего шлюза OpenFaaS.
 
-```azurecli-interctive
+```console
 faas-cli deploy -g http://52.186.64.52:8080 --image=shanepeckham/openfaascosmos --name=cosmos-query --env=NODE_ENV=$COSMOS
 ```
 
 После развертывания можно будет увидеть только что созданную конечную точку OpenFaaS для функции.
 
-```console
+```output
 Deployed. 202 Accepted.
 URL: http://52.186.64.52:8080/function/cosmos-query
 ```
@@ -243,7 +244,7 @@ curl -s http://52.186.64.52:8080/function/cosmos-query
 
 ![замещающий текст](media/container-service-serverless/OpenFaaSUI.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы можете продолжить изучение OpenFaaSного семинара с помощью набора практических лабораторных занятий, в которых рассматриваются такие темы, как создание собственного робота GitHub, использование секретов, просмотр метрик и автоматическое масштабирование.
 

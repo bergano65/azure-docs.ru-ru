@@ -6,10 +6,10 @@ ms.topic: reference
 ms.date: 09/12/2019
 ms.author: cshoe
 ms.openlocfilehash: 83bef8d788d3ef8bb6f8337b8e39b195748702bb
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74227296"
 ---
 # <a name="handle-azure-functions-binding-errors"></a>Обработчик ошибок привязки функций Azure

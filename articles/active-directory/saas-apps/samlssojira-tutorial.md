@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 957fee48397bc0b23737157dec0e74cf6505fab5
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.openlocfilehash: d6f6cb87cf7628c48ce6adf12336c4b712dc0ff9
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73160132"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82202678"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH
 
@@ -39,7 +39,7 @@ ms.locfileid: "73160132"
 
 Чтобы настроить интеграцию Azure AD с SAML SSO for Jira by resolution GmbH, вам потребуется следующее:
 
-* подписка Azure AD Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Azure AD. Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 * Подписка SAML SSO for Jira by resolution GmbH с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,15 +100,15 @@ ms.locfileid: "73160132"
 
 3. После этого щелкните значок **правки**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
 
     ![Информация о едином входе домена и URL-адресов приложения SAML SSO for Jira by resolution GmbH](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<server-base-url>/plugins/servlet/samlsso`.
 
     c. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком службы**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -161,7 +161,7 @@ ms.locfileid: "73160132"
 
     ![Настройка единого входа](./media/samlssojira-tutorial/addon5a.png)
  
-    a. Для типа поставщика удостоверений выберите значение **Azure AD**.
+    а. Для типа поставщика удостоверений выберите значение **Azure AD**.
     
     b. Добавьте **имя** поставщика удостоверений (например, Azure AD).
     
@@ -177,7 +177,7 @@ ms.locfileid: "73160132"
 
     ![Настройка единого входа](./media/samlssojira-tutorial/addon5c.png)
 
-    a. Нажмите кнопку **Select Metadata XML File** (Выбрать XML-файл метаданных) и выберите ранее скачанный файл **XML метаданных федерации**.
+    а. Нажмите кнопку **Select Metadata XML File** (Выбрать XML-файл метаданных) и выберите ранее скачанный файл **XML метаданных федерации**.
 
     b. Нажмите кнопку **Import** (Импортировать).
      
@@ -217,7 +217,7 @@ ms.locfileid: "73160132"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **Britta Simon**.
+    а. В поле **Имя** введите **Britta Simon**.
   
     b. В поле **Имя пользователя** введите <b>BrittaSimon@contoso.com</b>.
 
@@ -229,7 +229,7 @@ ms.locfileid: "73160132"
 
 Из этого раздела вы узнаете, как добавить пользователя Britta Simon в корпоративное приложение, которое позволит ему применять единый вход.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**. 
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**. 
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -275,7 +275,7 @@ ms.locfileid: "73160132"
 
     ![Добавление сотрудника](./media/samlssojira-tutorial/user4-new.png) 
 
-    a. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя — <b>BrittaSimon@contoso.com</b>.
+    а. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя — <b>BrittaSimon@contoso.com</b>.
 
     b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя — **Britta Simon**.
 
@@ -283,7 +283,7 @@ ms.locfileid: "73160132"
 
     d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
-    д. Нажмите кнопку **Create user** (Создать пользователя), чтобы завершить процедуру.
+    д) Нажмите кнопку **Create user** (Создать пользователя), чтобы завершить процедуру.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -291,7 +291,7 @@ ms.locfileid: "73160132"
 
 Щелкнув элемент "SAML SSO for Jira by resolution GmbH" на панели доступа, вы должны автоматически войти в SAML SSO for Jira by resolution GmbH, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
-Единый вход можно также проверить, перейдя по адресу [https://\<server-base-url>/plugins/servlet/samlsso](https://\<server-base-url>/plugins/servlet/samlsso). Замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
+Вы также можете протестировать единый вход, если перейдете по адресу `https://<server-base-url>/plugins/servlet/samlsso`. Замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
 
 
 ## <a name="enable-single-sign-on-redirection-for-jira"></a>Включение перенаправления для единого входа в Jira
@@ -311,7 +311,7 @@ ms.locfileid: "73160132"
 
 1. Нажмите кнопку **Save Settings** (Сохранить параметры) в правом верхнем углу.
 
-После включения этой функции вы по-прежнему сможете выполнять запрос имени пользователя и пароля. Для этого перейдите по адресу [https://\<server-base-url>/login.jsp?nosso](https://\<server-base-url>/login.jsp?nosso) и установите флажок **Enable nosso** (Включить запрет SSO). Как и ранее, замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
+После включения этой функции вы по-прежнему сможете выполнять запрос имени пользователя и пароля, даже если установлен флажок **Enable nosso** (Включить запрет SSO). Для этого перейдите по адресу `https://\<server-base-url>/login.jsp?nosso`. Как и ранее, замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

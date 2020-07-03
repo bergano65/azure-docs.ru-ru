@@ -4,12 +4,12 @@ description: Дополнительные сведения о восстанов
 ms.topic: tutorial
 ms.date: 01/31/2019
 ms.custom: mvc
-ms.openlocfilehash: 8a66cee7e844f0049f2d2ca2f6841943aa267f3e
-ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
+ms.openlocfilehash: 56410b5302611d5de3d72f727e1a4c36bd49ca7e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114184"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82160944"
 ---
 # <a name="restore-a-disk-and-create-a-recovered-vm-in-azure"></a>Восстановление диска и создание восстановленной виртуальной машины в Azure
 
@@ -87,8 +87,21 @@ az backup recoverypoint list \
         --target-resource-group targetRG
     ```
 
-> [!WARNING]
-> Если параметр target-resource-group не указан, управляемые диски будут восстановлены в предоставленную учетную запись в виде неуправляемых дисков. Это существенно повлияет на время восстановления, поскольку время на восстановление дисков полностью зависит от используемой учетной записи хранения.
+    > [!WARNING]
+    > Если параметр target-resource-group не указан, управляемые диски будут восстановлены в предоставленную учетную запись в виде неуправляемых дисков. Это существенно повлияет на время восстановления, поскольку время на восстановление дисков полностью зависит от используемой учетной записи хранения. Клиенты получат преимущество мгновенного восстановления, только если указан параметр target-resource-group. Если вы хотите восстановить управляемые диски как неуправляемые, не указывайте параметр target-resource-group. Вместо этого предоставьте параметр restore-as-unmanaged-disk, как показано ниже. Этот параметр доступен, начиная с версии 3.4.0 az.
+
+    ```azurecli-interactive
+    az backup restore restore-disks \
+    --resource-group myResourceGroup \
+    --vault-name myRecoveryServicesVault \
+    --container-name myVM \
+    --item-name myVM \
+    --storage-account mystorageaccount \
+    --rp-name myRecoveryPointName
+    --restore-as-unmanaged-disk
+    ```
+
+Это восстановит для данной учетной записи хранения управляемые диски как неуправляемые, и функция "мгновенного" восстановления использоваться не будет. В будущих версиях CLI необходимо будет обязательно указывать параметр target-resource-group или параметр restore-as-unmanaged-disk.
 
 ### <a name="unmanaged-disks-restore"></a>Восстановление неуправляемых дисков
 

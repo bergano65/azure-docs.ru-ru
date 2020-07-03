@@ -15,16 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/28/2018
 ms.author: terrylan
-ms.openlocfilehash: f7d993799fed637fbec55afc8f06d90c8fc6910f
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: c73f585e3102618cea378716491f9354810a6db8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726782"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80125011"
 ---
 # <a name="best-practices-for-securing-paas-databases-in-azure"></a>Рекомендации по защите баз данных PaaS в Azure
 
-В этой статье рассматривается набор рекомендаций по безопасности [Базы данных SQL Azure](../../sql-database/sql-database-technical-overview.md) и [Хранилища данных SQL](../../sql-data-warehouse/sql-data-warehouse-overview-what-is.md), предназначенных для защиты веб-приложений и мобильных приложений платформы как услуги (PaaS). Эти рекомендации основаны на нашем опыте, полученном в процессе использования Azure AD, и на отзывах других пользователей.
+В этой статье рассматривается набор рекомендаций по безопасности [Базы данных SQL Azure](../../sql-database/sql-database-technical-overview.md) и [Хранилища данных SQL](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md), предназначенных для защиты веб-приложений и мобильных приложений платформы как услуги (PaaS). Эти рекомендации основаны на нашем опыте, полученном в процессе использования Azure AD, и на отзывах других пользователей.
 
 База данных SQL Azure и Хранилище данных SQL предоставляют службу реляционной базы данных для веб-приложений. Давайте рассмотрим службы, помогающие защитить приложения и данные при использовании Базы данных SQL Azure и хранилища данных SQL в развертывании PaaS.
 
@@ -52,8 +52,8 @@ ms.locfileid: "68726782"
 
 Дополнительные сведения об аутентификации Azure AD см. в следующих статьях:
 
-- [Использование аутентификации Azure Active Directory для аутентификации с помощью Базы данных SQL, Управляемого экземпляра или Хранилища данных SQL](../../sql-database/sql-database-aad-authentication.md)
-- [Аутентификация в хранилище данных SQL Azure](../../sql-data-warehouse/sql-data-warehouse-authentication.md)
+- [Использование аутентификации Azure Active Directory для аутентификации с помощью базы данных SQL, управляемого экземпляра или хранилища данных SQL](../../sql-database/sql-database-aad-authentication.md)
+- [Аутентификация в хранилище данных SQL Azure](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-authentication.md)
 - [Token-based authentication support for Azure SQL DB using Azure AD authentication](../../sql-database/sql-database-aad-authentication.md) (Поддержка аутентификации на основе маркера для Базы данных SQL Azure с использованием аутентификации Azure AD)
 
 > [!NOTE]
@@ -68,7 +68,7 @@ ms.locfileid: "68726782"
 
 Чтобы узнать больше о брандмауэре SQL Azure и ограничениях IP-адресов, ознакомьтесь со следующими статьями:
 
-- [Управление доступом к службам "База данных SQL Azure" и "Хранилище данных SQL"](../../sql-database/sql-database-control-access.md)
+- [Управление доступом к службам "База данных SQL Azure" и "Хранилище данных SQL"](../../sql-database/sql-database-manage-logins.md)
 - [Правила брандмауэра службы "База данных SQL Azure" и "Хранилище данных SQL"](../../sql-database/sql-database-firewall-configure.md)
 
 
@@ -83,7 +83,7 @@ SQL Azure обеспечивает шифрование столбцов с по
 
 Для защиты базы данных можно принять дополнительные меры предосторожности, такие как проектирование безопасной системы, шифрование конфиденциальных ресурсов и создание брандмауэра на серверах базы данных.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье представлен набор рекомендаций по безопасности Базы данных SQL и хранилища данных SQL, предназначенных для защиты веб-приложений и мобильных приложений PaaS. Дополнительные сведения о безопасности развернутых служб PaaS см. в следующих статьях:
 
 - [Защита развернутых приложений PaaS](paas-deployments.md)

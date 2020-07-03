@@ -1,47 +1,26 @@
 - name: Документация по службе "Пользовательское визуальное распознавание"
   href: index.yml
 - name: Обзор
+  expanded: true
   items:
     - name: Что собой представляет Пользовательское визуальное распознавание
       href: home.md
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   items:
-    - name: Использование веб-портала
+    - name: Построение классификатора
       items:
-        - name: Построение классификатора
+        - name: Использование веб-портала
           href: getting-started-build-a-classifier.md
-        - name: Создание средства обнаружения объектов
+        - name: Использование пакета SDK для Пользовательского визуального распознавания
+          href: quickstarts/image-classification.md
+    - name: Создание средства обнаружения объектов
+      items:
+        - name: Использование веб-портала
           href: get-started-build-detector.md
-    - name: С помощью пакета SDK для .NET
-      items:
-        - name: Классификация изображений
-          href: csharp-tutorial.md
-        - name: Обнаружение объектов
-          href: csharp-tutorial-od.md
-    - name: С помощью пакета SDK для Python
-      items:
-        - name: Классификация изображений
-          href: python-tutorial.md
-        - name: Обнаружение объектов
-          href: python-tutorial-od.md
-    - name: Использование пакета SDK для Java
-      items:
-        - name: Классификация изображений
-          href: java-tutorial.md
-        - name: Обнаружение объектов
-          href: java-tutorial-od.md
-    - name: Использование пакета SDK для Node.js
-      items:
-        - name: Классификация изображений
-          href: node-tutorial.md
-        - name: Обнаружение объектов
-          href: node-tutorial-object-detection.md
-    - name: Использование пакета SDK для Go
-      items:
-        - name: Классификация изображений
-          href: go-tutorial.md
-        - name: Обнаружение объектов
-          href: go-tutorial-object-detection.md
+        - name: Использование пакета SDK для Пользовательского визуального распознавания
+          href: quickstarts/object-detection.md
 - name: Учебники
   items:
     - name: Предоставление визуальных сведений о состоянии на устройстве Интернета вещей
@@ -54,6 +33,8 @@
       href: test-your-model.md
     - name: Усовершенствование классификатора
       href: getting-started-improving-your-classifier.md
+    - name: Выбор домена
+      href: select-domain.md
     - name: Использование API прогнозирования
       href: use-prediction-api.md
     - name: Использование функции Smart Labeler
@@ -108,5 +89,7 @@
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Шифрование
+      href: custom-vision-encryption-of-data-at-rest.md
     - name: Заметки о выпуске
       href: release-notes.md

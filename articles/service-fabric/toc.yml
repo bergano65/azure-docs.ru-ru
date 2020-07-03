@@ -7,6 +7,9 @@
 - name: Краткие руководства
   expanded: true
   items:
+    - name: Шаблон ARM
+      displayName: Resource Manager
+      href: quickstart-cluster-template.md
     - name: Создание приложения .NET
       href: service-fabric-quickstart-dotnet.md
     - name: Развертывание приложения-контейнера Linux
@@ -113,6 +116,9 @@
       href: service-fabric-powershell-samples.md
     - name: Интерфейс командной строки Service Fabric
       href: samples-cli.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Основные сведения о микрослужбах
@@ -121,7 +127,7 @@
       href: service-fabric-content-roadmap.md
     - name: Сценарии приложений
       href: service-fabric-application-scenarios.md
-    - name: Архитектура
+    - name: Architecture
       href: service-fabric-architecture.md
     - name: Безопасность
       items:
@@ -133,6 +139,10 @@
           href: service-fabric-cluster-security.md
         - name: Встроенные средства управления безопасностью
           href: service-fabric-security-controls.md
+        - name: Проверка подлинности на основе сертификата в Service Fabric
+          href: cluster-security-certificates.md
+        - name: Управление сертификатами в Service Fabric
+          href: cluster-security-certificate-management.md
     - name: Терминология
       href: service-fabric-technical-overview.md
     - name: Создание приложений
@@ -145,8 +155,8 @@
               href: service-fabric-containers-overview.md
             - name: Docker Compose (предварительная версия)
               href: service-fabric-docker-compose.md
-            - name: управление ресурсами;
-              href: service-fabric-resource-governance.md
+            - name: Пробы
+              href: probes-codepackage.md
         - name: Надежные службы
           items:
             - name: Обзор надежных служб
@@ -177,7 +187,7 @@
           items:
             - name: Обзор Reliable Actors
               href: service-fabric-reliable-actors-introduction.md
-            - name: Архитектура
+            - name: Architecture
               href: service-fabric-reliable-actors-platform.md
             - name: Применение функций уровня службы
               href: service-fabric-reliable-actors-using.md
@@ -193,6 +203,8 @@
               href: service-fabric-reliable-actors-notes-on-actor-type-serialization.md
         - name: Гостевые исполняемые файлы
           href: service-fabric-guest-executables-introduction.md
+        - name: Управление ресурсами
+          href: service-fabric-resource-governance.md
     - name: Приложения и службы
       items:
         - name: Модель приложения
@@ -210,7 +222,7 @@
               href: service-fabric-manifest-example-container-app.md
         - name: Модель размещения
           href: service-fabric-hosting-model.md
-        - name: Безопасность приложения
+        - name: Защита приложений
           href: service-fabric-application-and-service-security.md
         - name: Состояние службы
           href: service-fabric-concepts-state.md
@@ -264,6 +276,10 @@
               href: service-fabric-backup-restore-service-trigger-restore.md
             - name: Резервное копирование раздела по запросу
               href: service-fabric-backup-restore-service-ondemand-backup.md
+        - name: Initializer Code Packages
+          href: initializer-codepackages.md
+        - name: RunToCompletion
+          href: run-to-completion.md
     - name: Кластеры
       items:
         - name: Общие сведения о кластерах
@@ -296,7 +312,7 @@
           items:
             - name: Общие сведения о диспетчере кластерных ресурсов
               href: service-fabric-cluster-resource-manager-introduction.md
-            - name: Архитектура
+            - name: Architecture
               href: service-fabric-cluster-resource-manager-architecture.md
             - name: Описание кластера
               href: service-fabric-cluster-resource-manager-cluster-description.md
@@ -316,6 +332,8 @@
               href: service-fabric-cluster-resource-manager-defragmentation-metrics.md
             - name: Балансировка кластера
               href: service-fabric-cluster-resource-manager-balancing.md
+            - name: Создание подкластеров
+              href: cluster-resource-manager-subclustering.md
             - name: Регулирование
               href: service-fabric-cluster-resource-manager-advanced-throttling.md
             - name: Перемещение служб
@@ -324,7 +342,7 @@
               href: service-fabric-cluster-resource-manager-autoscaling.md
     - name: Мониторинг и диагностика
       items:
-        - name: Обзор мониторинга
+        - name: Общие сведения о мониторинге
           href: service-fabric-diagnostics-overview.md
         - name: Мониторинг приложений
           href: service-fabric-diagnostics-event-generation-app.md
@@ -354,11 +372,11 @@
       href: service-fabric-api-management-overview.md
     - name: Модель ресурсов приложения
       href: service-fabric-concept-resource-model.md
-    - name: Управляемое удостоверение (предварительная версия)
+    - name: Управляемое удостоверение
       href: concepts-managed-identity.md
     - name: Настройка учетных данных репозитория контейнеров
       href: configure-container-repository-credentials.md
-- name: Руководства
+- name: Практические руководства
   items:
     - name: Настройка среды разработки
       items:
@@ -366,7 +384,7 @@
           href: service-fabric-get-started.md
         - name: Linux
           href: service-fabric-get-started-linux.md
-        - name: MacOS
+        - name: macOS
           href: service-fabric-get-started-mac.md
         - name: Настройка интерфейса командной строки Service Fabric
           href: service-fabric-cli.md
@@ -404,14 +422,10 @@
           items:
             - name: Развертывание гостевого исполняемого файла
               href: service-fabric-deploy-existing-app.md
-            - name: Развертывание нескольких пользовательских приложений
-              href: service-fabric-deploy-multiple-apps.md
         - name: Создание службы контейнеров
           items:
             - name: Docker Compose (предварительная версия)
               href: service-fabric-docker-compose.md
-            - name: управление ресурсами для контейнеров и служб;
-              href: service-fabric-resource-governance.md
             - name: Драйверы томов и драйверы ведения журналов
               href: service-fabric-containers-volume-logging-drivers.md
             - name: Просмотр журналов контейнеров
@@ -446,7 +460,7 @@
                   href: service-fabric-reliable-services-secure-communication-java.md
                 - name: Безопасные подключения WCF
                   href: service-fabric-reliable-services-secure-communication-wcf.md
-            - name: Настройка
+            - name: Configure
               href: service-fabric-reliable-services-configuration.md
             - name: Отправка уведомлений
               href: service-fabric-reliable-services-notifications.md
@@ -643,9 +657,9 @@
                   href: service-fabric-tutorial-create-vnet-and-linux-cluster.md
             - name: Масштабирование
               items:
-                - name: Масштабирование вручную
-                  href: service-fabric-cluster-scale-up-down.md
-                - name: Масштабирование программными средствами
+                - name: Горизонтальное увеличение масштаба вручную
+                  href: service-fabric-cluster-scale-in-out.md
+                - name: Горизонтальное увеличение масштаба программными средствами
                   href: service-fabric-cluster-programmatic-scaling.md
                 - name: Масштабирование типа первичного узла
                   href: service-fabric-scale-up-node-type.md
@@ -677,6 +691,8 @@
                   href: service-fabric-cluster-security-update-certs-azure.md
                 - name: Удаленное подключение к виртуальной машине узла кластера
                   href: service-fabric-cluster-remote-connect-to-azure-cluster-node.md
+                - name: Обновление узлов кластера для использования управляемых дисков
+                  href: upgrade-managed-disks.md
         - name: Изолированные кластеры
           items:
             - name: Создание
@@ -753,7 +769,7 @@
           href: service-fabric-reverse-proxy-diagnostics.md
         - name: Устранение неполадок локального кластера
           href: service-fabric-troubleshoot-local-cluster-setup.md
-    - name: Использование управляемого удостоверения для приложений Service Fabric (предварительная версия)
+    - name: Использование управляемого удостоверения для приложений Service Fabric
       items:
         - name: Настройка кластера
           items:
@@ -773,7 +789,7 @@
           href: how-to-managed-identity-service-fabric-app-code.md
         - name: Предоставление доступа другим ресурсам Azure
           href: how-to-grant-access-other-resources.md
-- name: Справочные материалы
+- name: Справочник
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.servicefabric/
@@ -876,8 +892,8 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Часто задаваемые вопросы
       href: service-fabric-common-questions.md
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=AzureServiceFabric'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-service-fabric.html'
     - name: Ограничения при развертывании с помощью Azure Resource Manager
       href: service-fabric-azure-resource-manager-guardrails.md
     - name: Цены
@@ -886,7 +902,7 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Заметки о выпуске
       href: release-notes.md
-    - name: Пример кода
+    - name: Образец кода
       href: 'https://aka.ms/servicefabricsamples'
     - name: Варианты поддержки
       href: service-fabric-support.md

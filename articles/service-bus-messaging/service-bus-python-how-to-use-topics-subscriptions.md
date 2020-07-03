@@ -13,12 +13,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/27/2020
 ms.author: aschhab
-ms.openlocfilehash: 03e22c4c179850e5140015c0abc2d89f16d4b624
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 4745d675086f1b07bf7fccf17c14c76e4b18fba2
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76774543"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80478068"
 ---
 # <a name="quickstart-use-service-bus-topics-and-subscriptions-with-python"></a>Краткое руководство. Использование разделов и подписок Служебной шины с Python
 
@@ -35,7 +35,7 @@ ms.locfileid: "76774543"
 ## <a name="prerequisites"></a>Предварительные требования
 - Подписка Azure. Вы можете активировать [преимущества подписчика Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Пространство имен Служебной шины Azure, созданное с помощью инструкций в [руководстве по созданию раздела и подписок Служебной шины с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Скопируйте имя пространства имен, имя ключа общего доступа и значение первичного ключа из экрана **Политики общего доступа**. Эти данные понадобятся далее в этой статье. 
-- Python 3.4x или более поздней версии с установленным пакетом [Azure SDK для Python][Azure Python package]. Дополнительные сведения см. в [руководстве по установке Python](/azure/python/python-sdk-azure-install).
+- Python 3.4x или более поздней версии с установленным пакетом [Azure SDK для Python][Azure Python package]. Дополнительные сведения см. в [руководстве по установке Python](/azure/developer/python/azure-sdk-install).
 
 ## <a name="create-a-servicebusservice-object"></a>Создание объекта ServiceBusService
 

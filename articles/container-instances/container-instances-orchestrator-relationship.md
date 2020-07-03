@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.custom: mvc
 ms.openlocfilehash: f3f8693d1a9a12e7c35d126ab3e3ca53448e5e40
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74533664"
 ---
 # <a name="azure-container-instances-and-container-orchestrators"></a>Экземпляры контейнеров Azure и оркестраторы контейнеров
@@ -56,7 +56,7 @@ ms.locfileid: "74533664"
 
 В настоящее время виртуальные узлы поддерживают экземпляры контейнеров Linux. Начните работать с виртуальными узлами с помощью [Azure CLI](https://go.microsoft.com/fwlink/?linkid=2047538) или [портала Azure](https://go.microsoft.com/fwlink/?linkid=2047545).
 
-Виртуальные узлы используют [Виртуальные Kubelet][aci-connector-k8s] с открытым исходным кодом для имитации Kubernetes [Kubelet][kubelet-doc] путем регистрации в качестве узла с неограниченной емкостью. Виртуальная Kubelet передает создание [модулей][pod-doc] Pod в виде групп контейнеров в службе "экземпляры контейнеров Azure".
+Виртуальные узлы используют открытый код [Virtual Kubelet][aci-connector-k8s], чтобы имитировать Kubernetes [kubelet][kubelet-doc], регистрируя его как узел с неограниченной емкостью. Virtual Kubelet подготавливает создание объектов [pod][pod-doc] в качестве группы контейнеров в Экземплярах контейнеров Azure.
 
 Для дополнительных примеров расширения Kubernetes API в бессерверные платформы контейнеров см. проект [Virtual Kubelet](https://github.com/virtual-kubelet/virtual-kubelet).
 

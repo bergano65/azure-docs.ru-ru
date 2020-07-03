@@ -16,10 +16,10 @@ ms.date: 12/20/2019
 ms.author: mblythe
 ms.custom: accessibility
 ms.openlocfilehash: e42dfc82fa0db028894dd77225621e867d79dac6
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75641339"
 ---
 # <a name="keyboard-shortcuts-in-the-azure-portal"></a>Сочетания клавиш на портале Azure
@@ -28,7 +28,7 @@ ms.locfileid: "75641339"
 
 ## <a name="actions"></a>Действия
 
-|Требуемое действие |Сочетание клавиш |
+|Операция |Сочетание клавиш |
 | --- | --- |
 |Создание ресурса|G+N|
 |Открыть **все службы**|G+B|
@@ -37,7 +37,7 @@ ms.locfileid: "75641339"
 |Переместить вверх выбранный элемент левой боковой панели |ALT + SHIFT + стрелка вверх|
 |Переместить выбранный элемент левой боковой панели вниз |ALT + SHIFT + стрелка вниз|
 
-## <a name="navigation"></a>Навигация
+## <a name="navigation"></a>Навигации
 
 |Для этого выполните навигацию |Сочетание клавиш |
 | --- | --- |

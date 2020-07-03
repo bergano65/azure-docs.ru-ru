@@ -1,19 +1,18 @@
 ---
 title: Страница "аналитика" для Azure Marketplace
 description: Общие сведения о странице Insights в Портал Cloud Partner для Azure Marketplace.
-services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/14/2018
-ms.author: pabutler
-ms.openlocfilehash: b1b8d716beec17b7da82968ede8d24ced348e04a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 8002d67ebd6dbeb70282bbbae84b115a778cffaf
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73821522"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80288875"
 ---
 # <a name="insights-page"></a>Страница "Аналитические сведения"
 
@@ -27,8 +26,8 @@ ms.locfileid: "73821522"
 | **Orders & usage** (Заказы и использование) | информация о заказах и их выполнении, которая представлена в форме графиков и в форматах, доступных для скачивания |
 | **Клиент**      | информация о клиенте, включая его профиль покупателя |
 | **Развертывание**    | информация об успешных и неудачных развертываниях, которая представлена как в форматах графиков, так и в форматах уровня события |
-| **Загрузки**     | список запросов на скачивание за последние 30 дней |
-| **Analytics**     | сводка веб-аналитики и анализ эффективности кампании |
+| **Скачиваемые файлы**     | список запросов на скачивание за последние 30 дней |
+| **Аналитика**     | сводка веб-аналитики и анализ эффективности кампании |
 |  |  |
 
 
@@ -38,7 +37,7 @@ ms.locfileid: "73821522"
 ![Сводная панель мониторинга страницы Seller Insights](./media/insights-page1.png)
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об использовании Seller Insights для оптимизации продаж см. в статье [Начало работы с Seller Insights](./../../cloud-partner-portal-orig/si-getting-started.md).
 

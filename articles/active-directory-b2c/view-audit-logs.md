@@ -3,21 +3,21 @@ title: Доступ и проверка журналов аудита
 titleSuffix: Azure AD B2C
 description: Как программно получить доступ к журналам аудита Azure AD B2C и в портал Azure.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/16/2019
-ms.author: marsma
+ms.date: 02/20/2020
+ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 5695968973c7446220d8d77b84dfebb4a23ae8c7
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 83086fa2cb96eba423b9111134a0406d7256821f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76847762"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79264223"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -32,14 +32,14 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 Категория **B2C** в журналах аудита содержит следующие типы действий:
 
-|тип действия; |Description  |
+|тип действия; |Описание  |
 |---------|---------|
 |Авторизация |Действия, касающиеся авторизации пользователя для доступа к ресурсам B2C (например, администратор, обращающийся к списку политик B2C).         |
 |Каталог |Действия, связанные с атрибутами каталога, полученными при входе администратора с помощью портал Azure. |
 |Приложение | Операции создания, чтения, обновления и удаления (CRUD) в приложениях B2C. |
-|Ключ |Операции CRUD с ключами, хранящимися в контейнере ключей B2C. |
+|Клавиши |Операции CRUD с ключами, хранящимися в контейнере ключей B2C. |
 |Ресурс |Операции CRUD с ресурсами B2C. Например, политики и поставщики удостоверений.
-|Проверка подлинности |Проверка учетных данных пользователя и выдачи маркера.|
+|Аутентификация |Проверка учетных данных пользователя и выдачи маркера.|
 
 Сведения о действиях CRUD для объектов пользователя см. в категории **основного каталога**.
 
@@ -51,12 +51,12 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 Панель сведения об активности содержит следующие важные сведения.
 
-|Section|Поле|Description|
+|Раздел|Поле|Описание|
 |-------|-----|-----------|
 | Действие | Имя | Какое действие выполнялось. Например, *выдайте приложению id_token*, которое завершает фактический вход пользователя. |
 | "Кем инициировано (субъект)". | ObjectId | **Идентификатор объекта** приложения B2C, в котором выполняется вход пользователя. Этот идентификатор недоступен в портал Azure, но доступен через API Microsoft Graph. |
 | "Кем инициировано (субъект)". | Имени | **Идентификатор** приложения B2C, в котором выполняется вход пользователя. |
-| Целевые объекты | ObjectId | **Идентификатор объекта** пользователя, который подписывается. |
+| "Целевые объекты"; | ObjectId | **Идентификатор объекта** пользователя, который подписывается. |
 | Дополнительные сведения | TenantId | **Идентификатор клиента** Azure AD B2C клиента. |
 | Дополнительные сведения | PolicyId | **Идентификатор политики** потока пользователя (политики), используемого для входа пользователя. |
 | Дополнительные сведения | ApplicationId | **Идентификатор** приложения B2C, в котором выполняется вход пользователя. |
@@ -88,55 +88,19 @@ Azure Active Directory B2C (Azure AD B2C) выдает журналы аудит
 
 ### <a name="enable-reporting-api-access"></a>Включить доступ к API отчетов
 
-Чтобы разрешить доступ на основе скриптов или приложений к API отчетов Azure AD, вам потребуется приложение Azure Active Directory, зарегистрированное в клиенте Azure AD B2C со следующими разрешениями API:
+Чтобы разрешить доступ на основе скриптов или приложений к API отчетов Azure AD, вам потребуется приложение, зарегистрированное в клиенте Azure AD B2C со следующими разрешениями API. Вы можете включить эти разрешения в существующую регистрацию приложения в клиенте B2C или создать новую, специально для использования с автоматизацией журналов аудита.
 
-* Microsoft Graph > разрешения приложения > AuditLog. Read. ALL
+* Microsoft Graph > разрешения приложения > AuditLog > AuditLog. Read. ALL
 
-Эти разрешения можно включить для существующей регистрации Azure Active Directory приложения в клиенте B2C или создать новую, специально для использования с автоматизацией журналов аудита.
+Выполните действия, описанные в следующей статье, чтобы зарегистрировать приложение с необходимыми разрешениями:
 
-Выполните следующие действия, чтобы зарегистрировать приложение, предоставить ему необходимые разрешения Microsoft Graph API, а затем создать секрет клиента.
+[Управление Azure AD B2C с помощью Microsoft Graph](microsoft-graph-get-started.md)
 
-### <a name="register-application-in-azure-active-directory"></a>Регистрация приложения в Azure Active Directory
-
-[!INCLUDE [active-directory-b2c-appreg-mgmt](../../includes/active-directory-b2c-appreg-mgmt.md)]
-
-### <a name="assign-api-access-permissions"></a>Назначение разрешений доступа API
-
-#### <a name="applicationstabapplications"></a>[Приложения](#tab/applications/)
-
-1. На странице Обзор **зарегистрированного приложения** выберите **Параметры**.
-1. В разделе **доступ через API**выберите **необходимые разрешения**.
-1. Нажмите кнопку **Добавить**, а затем **выберите API**.
-1. Выберите **Microsoft Graph**, а затем **выберите**.
-1. В разделе **разрешения приложения**выберите **чтение всех данных журнала аудита**.
-1. Нажмите кнопку **выбрать** и выберите **Готово**.
-1. Щелкните **Предоставить разрешения** и затем выберите **Да**.
-
-#### <a name="app-registrations-previewtabapp-reg-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
-
-1. В разделе **Управление** выберите **Разрешения API**.
-1. В разделе **Настроенные разрешения** выберите **Добавить разрешение**.
-1. Перейдите на вкладку **API-интерфейсы Майкрософт** .
-1. Выберите **Microsoft Graph**.
-1. Выберите **Разрешения приложений**.
-1. Разверните **AuditLog** и установите флажок **AuditLog. Read. ALL** .
-1. Выберите **Добавить разрешения**. В соответствии с инструкциями подождите несколько минут, прежде чем перейти к следующему шагу.
-1. Выберите **Предоставить согласие администратора для (имя арендатора)** .
-1. Выберите учетную запись, выполнившего вход, если ей назначена роль *глобального администратора* , или выполните вход с помощью учетной записи в клиенте Azure AD B2C, которому назначена роль *глобального администратора* .
-1. Нажмите кнопку **Принять**.
-1. Выберите **Обновить**и убедитесь, что "предоставлено..." отображается в разделе **состояние** разрешения *AuditLog. Read. ALL* . Распространение разрешений может занять несколько минут.
-
-* * *
-
-### <a name="create-client-secret"></a>Создать секрет клиента
-
-[!INCLUDE [active-directory-b2c-client-secret](../../includes/active-directory-b2c-client-secret.md)]
-
-Теперь у вас есть приложение с требуемым доступом API, ИДЕНТИФИКАТОРом приложения и ключом, которые можно использовать в скриптах автоматизации. Пример того, как можно получить события действий с помощью скрипта, см. в разделе сценарий PowerShell далее в этой статье.
+После регистрации приложения с соответствующими разрешениями в разделе скрипта PowerShell далее в этой статье приводятся примеры того, как можно получить события действий с помощью скрипта.
 
 ### <a name="access-the-api"></a>Доступ к API
 
-Чтобы скачать события журнала аудита Azure AD B2C с помощью API, отфильтруйте журналы в категории `B2C`. Чтобы отфильтровать по категории, используйте параметр строки запроса `filter` при вызове конечной точки API отчетов Azure AD.
+Чтобы скачать события журнала аудита Azure AD B2C с помощью API, отфильтруйте журналы в `B2C` категории. Для фильтрации по категории используйте параметр строки `filter` запроса при вызове КОНЕЧНОЙ точки API отчетов Azure AD.
 
 ```HTTP
 https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?$filter=loggedByService eq 'B2C' and activityDateTime gt 2019-09-10T02:28:17Z
@@ -149,13 +113,14 @@ https://graph.microsoft.com/v1.0/auditLogs/directoryAudits?$filter=loggedByServi
 Вы можете попробовать этот скрипт в [Azure Cloud Shell](overview.md). Обязательно обновите его с помощью идентификатора приложения, секрета клиента и имени клиента Azure AD B2C.
 
 ```powershell
-# This script requires the registration of a Web Application in Azure Active Directory:
-# https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-reporting-api
+# This script requires an application registration that's granted Microsoft Graph API permission
+# https://docs.microsoft.com/azure/active-directory-b2c/microsoft-graph-get-started
 
 # Constants
-$ClientID       = "your-client-application-id-here"       # Insert your application's client ID, a GUID (registered by Global Admin)
+$ClientID       = "your-client-application-id-here"       # Insert your application's client ID, a GUID
 $ClientSecret   = "your-client-application-secret-here"   # Insert your application's client secret
-$tenantdomain   = "your-b2c-tenant.onmicrosoft.com"       # Insert your Azure AD B2C tenant; for example, contoso.onmicrosoft.com
+$tenantdomain   = "your-b2c-tenant.onmicrosoft.com"       # Insert your Azure AD B2C tenant domain name
+
 $loginURL       = "https://login.microsoftonline.com"
 $resource       = "https://graph.microsoft.com"           # Microsoft Graph API resource URI
 $7daysago       = "{0:s}" -f (get-date).AddDays(-7) + "Z" # Use 'AddMinutes(-5)' to decrement minutes, for example
@@ -258,4 +223,4 @@ if ($oauth.access_token -ne $null) {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Можно автоматизировать другие задачи администрирования, например [управлять пользователями с помощью .NET](manage-user-accounts-graph-api.md).
+Можно автоматизировать другие задачи администрирования, например [управлять Azure AD B2C учетными записями пользователей с помощью Microsoft Graph](manage-user-accounts-graph-api.md).

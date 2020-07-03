@@ -13,16 +13,16 @@ ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 113736198f40510981c80909c862282fa07ac68d
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: 52a08661ffa25bf2105791c1217cfc460034502a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74073770"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82188575"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-linux-vms"></a>Ограничение установки расширений на виртуальных машинах Linux с помощью службы "Политика Azure"
 
-Если нужно заблокировать использование или установку определенных расширений на виртуальные машины Linux, можно создать через интерфейс командной строки политику Azure, которая ограничивает расширения для виртуальных машин в определенной группе ресурсов. 
+Если вы хотите предотвратить использование или установку определенных расширений на виртуальных машинах Linux, можно создать определение политики Azure с помощью интерфейса командной строки, чтобы ограничить расширения для виртуальных машин в группе ресурсов. 
 
 В этом руководстве используется интерфейс командной строки в Azure Cloud Shell, который постоянно обновляется до последней версии. Если вы намерены запустить Azure CLI локально, установите версию не ниже 2.0.26. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
@@ -34,7 +34,7 @@ ms.locfileid: "74073770"
 
 В [оболочке Bash Cloud Shell](https://shell.azure.com/bash) введите такой текст:
 
-```azurecli-interactive 
+```bash
 vim ~/clouddrive/azurepolicy.rules.json
 ```
 
@@ -75,7 +75,7 @@ vim ~/clouddrive/azurepolicy.rules.json
 
 В [оболочке Bash Cloud Shell](https://shell.azure.com/bash) введите такой текст:
 
-```azurecli-interactive
+```bash
 vim ~/clouddrive/azurepolicy.parameters.json
 ```
 
@@ -171,6 +171,6 @@ az policy assignment delete --name 'not-allowed-vmextension-linux' --resource-gr
 az policy definition delete --name 'not-allowed-vmextension-linux'
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md)

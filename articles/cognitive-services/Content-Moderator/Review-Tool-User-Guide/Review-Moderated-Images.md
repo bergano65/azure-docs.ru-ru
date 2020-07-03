@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: pafarley
 ms.openlocfilehash: b02324923e3f004395105b8e04165390cb950fe7
-ms.sourcegitcommit: 38251963cf3b8c9373929e071b50fd9049942b37
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "73044114"
 ---
 # <a name="create-human-reviews"></a>Создание пользовательских проверок
 
 В этом руководство вы узнаете, как настроить [рецензию](../review-api.md#reviews) на веб-сайте средства проверки. Проверяет хранение и отображение содержимого для оценки человеческим модератором. Модераторы могут изменять примененные Теги и применять собственные пользовательские теги. Когда пользователь завершает проверку, результаты отправляются в указанную конечную точку обратного вызова, и содержимое удаляется с сайта.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Войдите или создайте учетную запись на сайте [средства проверки](https://contentmoderator.cognitive.microsoft.com/) Content Moderator.
 
@@ -54,6 +54,6 @@ ms.locfileid: "73044114"
 
 ![Снимок экрана с отображением в средстве проверки отмеченного текста в окне браузера Chrome](../images/reviewresults_text.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 В этом разделе вы узнали, как настроить и использовать [проверки в средстве](https://contentmoderator.cognitive.microsoft.com)Content Moderatorных проверок. Дополнительные сведения о создании рецензий программными средствами см. в [руководстве по REST API](../try-review-api-review.md) или в разделе Краткое руководство по [пакету SDK для .NET](../dotnet-sdk-quickstart.md) .

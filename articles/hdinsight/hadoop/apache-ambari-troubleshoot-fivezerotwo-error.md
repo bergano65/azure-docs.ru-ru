@@ -8,10 +8,10 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/05/2019
 ms.openlocfilehash: 2b17c2488e47148e8845433f9c7613e1127fbffa
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75895755"
 ---
 # <a name="scenario-apache-ambari-ui-502-error-in-azure-hdinsight"></a>Сценарий: Ошибка пользовательского интерфейса Apache Ambari 502 в Azure HDInsight
@@ -22,7 +22,7 @@ ms.locfileid: "75895755"
 
 При попытке доступа к пользовательскому интерфейсу Apache Ambari для кластера HDInsight вы получаете примерно следующее сообщение: "502-веб-сервер получил недопустимый ответ при работе в качестве шлюза или прокси-сервера".
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 В общем случае код состояния HTTP 502 означает, что сервер Ambari работает неправильно на активном головного узла. Существует несколько возможных основных причин.
 
@@ -32,7 +32,7 @@ ms.locfileid: "75895755"
 
 ### <a name="ambari-server-failed-to-start"></a>Не удалось запустить сервер Ambari
 
-Вы можете проверить журналы ambari-Server, чтобы узнать, почему не удалось запустить сервер Ambari. Одна из распространенных причин — ошибка проверки согласованности базы данных. Это можно найти в этом файле журнала: `/var/log/ambari-server/ambari-server-check-database.log`.
+Вы можете проверить журналы ambari-Server, чтобы узнать, почему не удалось запустить сервер Ambari. Одна из распространенных причин — ошибка проверки согласованности базы данных. Это можно найти в следующем файле журнала: `/var/log/ambari-server/ambari-server-check-database.log`.
 
 Если вы внесли изменения в узел кластера, отмените их. Для изменения любых конфигураций, связанных с Hadoop/Spark, всегда используйте пользовательский интерфейс Ambari.
 
@@ -49,7 +49,7 @@ service ambari-server start
 
 ### <a name="ambari-server-killed-by-oom-killer"></a>Сервер Ambari, уничтоженный с помощью нехватки памяти
 
-В некоторых сценариях в головного узла не хватает памяти, а в Linux с нехваткой данных начинается выбор процессов для уничтожения. Эту ситуацию можно проверить, выполнив поиск по ИДЕНТИФИКАТОРу процесса Амбарисервер, который не должен быть найден. Затем взгляните на `/var/log/syslog`и выполните поиск примерно следующего вида:
+В некоторых сценариях в головного узла не хватает памяти, а в Linux с нехваткой данных начинается выбор процессов для уничтожения. Эту ситуацию можно проверить, выполнив поиск по ИДЕНТИФИКАТОРу процесса Амбарисервер, который не должен быть найден. Затем найдите `/var/log/syslog`и найдите нечто вроде этого:
 
 ```
 Jul 27 15:29:30 xxx-xxxxxx kernel: [874192.703153] java invoked oom-killer: gfp_mask=0x23201ca, order=0, oom_score_adj=0
@@ -65,12 +65,12 @@ Jul 27 15:29:30 xxx-xxxxxx kernel: [874192.703153] java invoked oom-killer: gfp_
 Error Processing URI: /api/v1/clusters/xxxxxx/host_components - (java.lang.OutOfMemoryError) Java heap space
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
 
-* Подключайтесь с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов путем подключения сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подключайтесь с помощью [@AzureSupport](https://twitter.com/azuresupport) официальной учетной записи Microsoft Azure для улучшения качества работы клиентов, подключив сообщество Azure к нужным ресурсам: ответы, поддержка и эксперты.
 
 * Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Дополнительные сведения см. [в](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)этой службе. Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).

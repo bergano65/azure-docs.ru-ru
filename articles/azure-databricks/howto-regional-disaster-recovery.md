@@ -9,10 +9,10 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.openlocfilehash: 2604d5b357feacce3493b4a4ded971144262611d
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77161942"
 ---
 # <a name="regional-disaster-recovery-for-azure-databricks-clusters"></a>Региональное аварийное восстановление кластеров Azure Databricks
@@ -310,6 +310,6 @@ ms.locfileid: "77161942"
 
 Если вы используете другие службы Azure, обязательно реализуйте рекомендации по аварийному восстановлению для этих служб. Например, если вы решили использовать внешний экземпляр хранилище метаданных Hive, следует рассмотреть возможность аварийного восстановления для [SQL Server Azure](../sql-database/sql-database-disaster-recovery.md), [Azure HDInsight](../hdinsight/hdinsight-high-availability-linux.md)и (или) [базы данных Azure для MySQL](../mysql/concepts-business-continuity.md). Общие сведения об аварийном восстановлении см. в статье [Аварийное восстановление для приложений Azure](https://docs.microsoft.com/azure/architecture/resiliency/disaster-recovery-azure-applications).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в [документации по Azure Databricks](index.yml).

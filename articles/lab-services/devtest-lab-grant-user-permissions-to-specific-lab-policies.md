@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/07/2019
 ms.author: spelluru
 ms.openlocfilehash: 9b31f3e68fbabc32f301fdcd8066a3bfbf1c2dbd
-ms.sourcegitcommit: 11265f4ff9f8e727a0cbf2af20a8057f5923ccda
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72028438"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79284217"
 ---
 # <a name="grant-user-permissions-to-specific-lab-policies"></a>Предоставление пользователю разрешений для определенных политик лаборатории
 ## <a name="overview"></a>Обзор
@@ -28,9 +28,9 @@ ms.locfileid: "72028438"
 ## <a name="policies-as-resources"></a>Политики как ресурсы
 Как уже обсуждалось в одноименной статье, [управление доступом на основе ролей (RBAC)](../role-based-access-control/role-assignments-portal.md) обеспечивает точное управление доступом для Azure. С помощью RBAC вы можете распределить обязанности внутри команды разработчиков и предоставить пользователям доступ на том уровне, который им необходим для выполнения поставленных задач.
 
-В DevTest Labs политика — это тип ресурса, который включает действие RBAC **Microsoft.DevTestLab/labs/policySets/policies/** . Каждая политика лаборатории представляет собой ресурс типа "Политика" и может быть назначена в качестве области действия для роли RBAC.
+В DevTest Labs политика — это тип ресурса, который включает действие RBAC **Microsoft.DevTestLab/labs/policySets/policies/**. Каждая политика лаборатории представляет собой ресурс типа "Политика" и может быть назначена в качестве области действия для роли RBAC.
 
-Например, чтобы предоставить пользователям разрешение на чтение и запись для политики **разрешенных размеров виртуальных машин** , необходимо создать пользовательскую роль, которая работает с **Microsoft. DevTestLab/Labs/policySets/** policys/Action, а затем назначить соответствующих пользователей Эта пользовательская роль в области действия **Microsoft. DevTestLab/Labs/policySets/Policies/AllowedVmSizesInLab**.
+Например, чтобы предоставить пользователям разрешение на чтение и запись для политики **разрешенных размеров виртуальных машин** , создайте пользовательскую роль, которая работает с **Microsoft. DevTestLab/Labs/policySets/** policys/Action, а затем назначьте соответствующие пользователи этой пользовательской роли в области **Microsoft. DevTestLab/Labs/policySets/Policies/AllowedVmSizesInLab**.
 
 Дополнительные сведения о пользовательских ролях в RBAC см. в статье [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md).
 
@@ -41,7 +41,7 @@ ms.locfileid: "72028438"
 
 * Получать список всех операций и действий по тому или иному поставщику ресурсов.
 * Получать список действий по определенной роли:
-* Создание настраиваемой роли
+* Создание пользовательской роли
 
 Примеры выполнения этих задач демонстрирует следующий сценарий PowerShell:
 
@@ -85,12 +85,12 @@ ms.locfileid: "72028438"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 После того как пользователю будут предоставлены разрешения для определенных политик лаборатории, можно выполнить следующие действия.
 
 * [Безопасный доступ к лаборатории](devtest-lab-add-devtest-user.md)
-* [Определение политик лаборатории](devtest-lab-set-lab-policy.md)
-* [Создание шаблона лаборатории](devtest-lab-create-template.md)
+* [Настройка политик лаборатории](devtest-lab-set-lab-policy.md)
+* [Создание лабораторного шаблона](devtest-lab-create-template.md)
 * [Создание пользовательских артефактов для виртуальных машин](devtest-lab-artifact-author.md)
 * [Добавление виртуальной машины в лабораторию](devtest-lab-add-vm.md)
 

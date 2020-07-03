@@ -1,29 +1,24 @@
 ---
 title: Жизненный цикл и состояния виртуальной машины Linux в Azure
-description: В этой статье приведен обзор жизненного цикла виртуальной машины Linux в Azure, включая описание различных состояний, в которых виртуальная машина может находиться в любой момент.
-services: virtual-machines-linux
-documentationcenter: ''
+description: Общие сведения о жизненном цикле виртуальной машины в Azure, включая описание различных состояний, в которых виртуальная машина может находиться в любое время.
+services: virtual-machines
 author: shandilvarun
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/09/2018
 ms.author: vashan
-ms.openlocfilehash: 1ddd245b03d8886d686daba34a00c63ec64ffb07
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: c1452252e6cbd7b741c14c2ea52728ba144c65a1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034767"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81757850"
 ---
 # <a name="virtual-machines-lifecycle-and-states"></a>Жизненный цикл и состояния виртуальных машин
 
 [!INCLUDE [virtual-machines-common-states-lifecycle](../../../includes/virtual-machines-common-states-lifecycle.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Мониторинг виртуальных машин в Azure](monitor.md).

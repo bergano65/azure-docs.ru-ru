@@ -11,17 +11,17 @@ ms.service: azure-app-configuration
 ms.workload: tbd
 ms.devlang: csharp
 ms.topic: tutorial
-ms.date: 01/21/2020
+ms.date: 04/08/2020
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: b35c23e6dd88af01391bf7f01a7e736a1a744fff
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 4641c50f0579e2a8db514df58c0401eb2173d793
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76714429"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81309052"
 ---
-# <a name="tutorial-use-key-vault-references-in-an-aspnet-core-app"></a>Руководство. использованию ссылок Key Vault в приложении ASP.NET Core
+# <a name="tutorial-use-key-vault-references-in-an-aspnet-core-app"></a>Руководство по использованию ссылок Key Vault в приложении ASP.NET Core
 
 В этом учебнике вы узнаете, как использовать службу "Конфигурация приложений Azure" с Azure Key Vault. Конфигурация приложений Azure и Key Vault — это дополняющие службы, которые используются параллельно в большинстве развертываний приложений.
 
@@ -110,7 +110,6 @@ ms.locfileid: "76714429"
     "tenantId": "35ad10f1-7799-4766-9acf-f2d946161b77",
     "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
     "resourceManagerEndpointUrl": "https://management.azure.com/",
-    "activeDirectoryGraphResourceId": "https://graph.windows.net/",
     "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
     "galleryEndpointUrl": "https://gallery.azure.com/",
     "managementEndpointUrl": "https://management.core.windows.net/"
@@ -125,7 +124,7 @@ ms.locfileid: "76714429"
 
 1. Добавьте переменные среды для хранения значений *clientId*, *clientSecret* и *tenantId*.
 
-    #### <a name="windows-command-prompttabcmd"></a>[Командная строка Windows](#tab/cmd)
+    #### <a name="windows-command-prompt"></a>[Командная строка Windows](#tab/cmd)
 
     ```cmd
     setx AZURE_CLIENT_ID <clientId-of-your-service-principal>
@@ -133,7 +132,7 @@ ms.locfileid: "76714429"
     setx AZURE_TENANT_ID <tenantId-of-your-service-principal>
     ```
 
-    #### <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+    #### <a name="powershell"></a>[PowerShell](#tab/powershell)
 
     ```PowerShell
     $Env:AZURE_CLIENT_ID = <clientId-of-your-service-principal>
@@ -141,7 +140,7 @@ ms.locfileid: "76714429"
     $Env:AZURE_TENANT_ID = <tenantId-of-your-service-principal>
     ```
 
-    #### <a name="bashtabbash"></a>[Bash](#tab/bash)
+    #### <a name="bash"></a>[Bash](#tab/bash)
 
     ```bash
     export AZURE_CLIENT_ID = <clientId-of-your-service-principal>
@@ -161,20 +160,18 @@ ms.locfileid: "76714429"
 1. Добавьте ссылку на необходимые пакеты NuGet, выполнив следующую команду.
 
     ```dotnetcli
-    dotnet add package Microsoft.Azure.KeyVault
     dotnet add package Azure.Identity
     ```
 
 1. Откройте файл *Program.cs* и добавьте ссылки на приведенные ниже необходимые пакеты.
 
     ```csharp
-    using Microsoft.Azure.KeyVault;
     using Azure.Identity;
     ```
 
-1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration`. Добавьте параметр `UseAzureKeyVault`, чтобы передать в Key Vault новую ссылку `KeyVaultClient`.
+1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration`. Добавьте параметр `ConfigureKeyVault` и передайте правильные учетные данные в Key Vault.
 
-    #### <a name="net-core-2xtabcore2x"></a>[.NET Core 2.x](#tab/core2x)
+    #### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -195,7 +192,7 @@ ms.locfileid: "76714429"
             .UseStartup<Startup>();
     ```
 
-    #### <a name="net-core-3xtabcore3x"></a>[.NET Core 3.x](#tab/core3x)
+    #### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -217,7 +214,7 @@ ms.locfileid: "76714429"
             .UseStartup<Startup>());
     ```
 
-1. При инициализации подключения к службе "Конфигурация приложений Azure" вы передали ссылку `KeyVaultClient` в метод `UseAzureKeyVault`. После инициализации можно получить доступ к значениям ссылок на Key Vault так же, как и к значениям обычных ключей "Конфигурация приложений Azure".
+1. При инициализации подключения к службе "Конфигурация приложений" устанавливается подключение к Key Vault путем вызова метода `ConfigureKeyVault`. После инициализации можно получить доступ к значениям ссылок на Key Vault так же, как и к значениям обычных ключей "Конфигурация приложений Azure".
 
     Чтобы увидеть этот процесс в действии, откройте файл *Index.cshtml* в папке **Представления** > **Главная страница**. Замените содержимое файла приведенным ниже кодом.
 
@@ -245,13 +242,13 @@ ms.locfileid: "76714429"
 
 1. Чтобы создать приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
-    ```
+    ```dotnetcli
     dotnet build
     ```
 
 1. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
 
-    ```
+    ```dotnetcli
     dotnet run
     ```
 

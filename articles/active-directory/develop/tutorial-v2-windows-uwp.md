@@ -2,25 +2,21 @@
 title: Приступая к работе с платформой удостоверений Майкрософт и универсальной платформой Windows | Azure
 description: В этой статье описано, как приложения для универсальной платформы Windows (UWP) могут вызвать API, которому требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 4a62026ecec2317173361f166adcc3a7981f6d1c
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 0dc70aa67a1414c08ec70e2e034f4ab12b194c0a
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701184"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81535950"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Вызов API Microsoft Graph из приложения для универсальной платформы Windows (XAML)
 
@@ -32,6 +28,9 @@ ms.locfileid: "76701184"
 
 >[!NOTE]
 > Для работы с этим руководством требуется Visual Studio с установленным компонентом "Разработка приложений для универсальной платформы Windows". Ознакомьтесь со статьей о [настройке](https://docs.microsoft.com/windows/uwp/get-started/get-set-up) для получения инструкций по скачиванию и настройке Visual Studio для разработки приложений для универсальной платформы Windows.
+
+>[!NOTE]
+> Если вы не знакомы с платформой удостоверений Майкрософт, рекомендуем начать со статьи [Вызов API Microsoft Graph из приложения для универсальной платформы Windows (UWP)](quickstart-v2-uwp.md).
 
 ## <a name="how-this-guide-works"></a>Принцип работы с руководством
 
@@ -119,7 +118,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
         //Set the scope for API call to user.read
         string[] scopes = new string[] { "user.read" };
 
-        // Below are the clientId (Application Id) of your app registration and the tenant information. 
+        // Below are the clientId (Application Id) of your app registration and the tenant information.
         // You have to replace:
         // - the content of ClientID with the Application Id for your app registration
         // - the content of Tenant with the information about the accounts allowed to sign in in your application:
@@ -127,9 +126,9 @@ Visual Studio автоматически создает файл *MainPage.xaml*
         //   - for any Work or School accounts, use organizations
         //   - for any Work or School accounts, or Microsoft personal account, use common
         //   - for Microsoft Personal account, use consumers
-        private const string ClientId = "0b8b0665-bc13-4fdc-bd72-e0227b9fc011";        
+        private const string ClientId = "0b8b0665-bc13-4fdc-bd72-e0227b9fc011";
 
-        public IPublicClientApplication PublicClientApp { get; } 
+        public IPublicClientApplication PublicClientApp { get; }
 
         public MainPage()
         {
@@ -154,8 +153,8 @@ Visual Studio автоматически создает файл *MainPage.xaml*
          ResultText.Text = string.Empty;
          TokenInfoText.Text = string.Empty;
 
-         // It's good practice to not do work on the UI thread, so use ConfigureAwait(false) whenever possible.            
-         IEnumerable<IAccount> accounts = await PublicClientApp.GetAccountsAsync().ConfigureAwait(false); 
+         // It's good practice to not do work on the UI thread, so use ConfigureAwait(false) whenever possible.
+         IEnumerable<IAccount> accounts = await PublicClientApp.GetAccountsAsync().ConfigureAwait(false);
          IAccount firstAccount = accounts.FirstOrDefault();
 
          try
@@ -203,7 +202,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
     }
     ```
 
-#### Интерактивное получение маркера<a name="more-information"></a>
+#### <a name="get-a-user-token-interactively"></a>Интерактивное получение маркера<a name="more-information"></a>
 
 Метод `AcquireTokenInteractive` отображает окно, в котором пользователю предлагается выполнить вход. Когда пользователь впервые запрашивает доступ к защищенному ресурсу, приложение обычно требует выполнить интерактивный вход. Пользователям также может потребоваться выполнить вход при сбое автоматической операции получения маркера, например, если истек срок действия пароля пользователя.
 
@@ -240,7 +239,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
        {
            var request = new System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get, url);
            // Add the token in Authorization header
-           request.Headers.Authorization = 
+           request.Headers.Authorization =
              new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
            response = await httpClient.SendAsync(request);
            var content = await response.Content.ReadAsStringAsync();
@@ -292,7 +291,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
 > [!NOTE]
 > MSAL.NET использует асинхронные методы для получения маркеров или управления учетными записями. Вам нужно поддерживать действия пользовательского интерфейса в потоке пользовательского интерфейса. Именно поэтому нужно вызвать `Dispatcher.RunAsync` и соблюдать меры предосторожности при вызове `ConfigureAwait(false)`.
 
-#### Дополнительные сведения о выходе<a name="more-information-on-sign-out"></a>
+#### <a name="more-information-about-signing-out"></a>Дополнительные сведения о выходе<a name="more-information-on-sign-out"></a>
 
 Метод `SignOutButton_Click` удаляет пользователя из кэша пользователей MSAL. Этот метод фактически указывает MSAL забыть текущего пользователя. Последующий запрос получения маркера завершается успешно только в том случае, если он выполняется интерактивно.
 
@@ -317,7 +316,7 @@ Visual Studio автоматически создает файл *MainPage.xaml*
    }
    ```
 
-#### Дополнительные сведения<a name="more-information-1"></a>
+#### <a name="more-information"></a>Дополнительные сведения<a name="more-information-1"></a>
 
 Маркеры идентификаторов, полученные с использованием **OpenID Connect**, также содержат небольшой набор данных, относящихся к пользователю. `DisplayBasicTokenInfo` отображает базовые сведения, содержащиеся в маркере, Эти сведения включают отображаемое имя и идентификатор пользователя. В них также есть сведения о сроке действия маркера и строка, представляющая сам маркер доступа. Если вы несколько раз нажмете кнопку **Call Microsoft Graph API** (Вызвать API Microsoft Graph), то увидите, что для последующих запросов повторно используется тот же маркер. Также можно увидеть, что библиотека MSAL продлила срок действия маркера.
 
@@ -436,8 +435,3 @@ Visual Studio автоматически создает файл *MainPage.xaml*
 Обходное решение. Выберите **Sign in with other options** (Вход с другими параметрами). Затем выберите **Sign in with a username and password** (Вход с использованием имени пользователя и пароля). Выберите **Provide your password** (Ввести пароль). После этого пройдите процесс проверки подлинности по телефону.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
-
-Помогите нам улучшить платформу Microsoft Identity. Поделитесь своим мнением, ответив на два вопроса.
-
-> [!div class="nextstepaction"]
-> [Опрос по платформе удостоверений Майкрософт](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

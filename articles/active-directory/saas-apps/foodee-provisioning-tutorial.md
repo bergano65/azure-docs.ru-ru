@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 08/30/2019
 ms.author: Zhchia
 ms.openlocfilehash: 2195056ec66550063aba5ce5e2b977b51a6dc5e3
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77057832"
 ---
 # <a name="tutorial-configure-foodee-for-automatic-user-provisioning"></a>Учебник. Настройка пищи для автоматической подготовки пользователей
@@ -31,7 +31,7 @@ ms.locfileid: "77057832"
 >
 > Сейчас этот соединитель доступен в режиме предварительной версии. Дополнительные сведения о функциях Azure "условия использования" для предварительной версии функций см. в статье дополнительные [условия использования для предварительного просмотра Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этом учебнике предполагается, что выполнены следующие предварительные требования:
 
@@ -79,7 +79,7 @@ Azure AD использует концепцию, называемую *назн
 
     ![Команда Azure Active Directory](common/select-azuread.png)
 
-1. Щелкните **Корпоративные приложения** > **Все приложения**.
+1. Выберите **корпоративные приложения** > **все приложения**.
 
     ![Область "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -108,7 +108,7 @@ Azure AD использует концепцию, называемую *назн
 
     ![Ссылка на еду в списке "приложения"](common/all-applications.png)
 
-1. Выберите вкладку **Подготовка**.
+1. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
@@ -118,7 +118,7 @@ Azure AD использует концепцию, называемую *назн
 
 1. В разделе **учетные данные администратора**выполните следующие действия.
 
-   а. В поле **URL-адрес клиента** введите значение **https:\//Concierge.Food.ee/scim/v2** , полученное ранее.
+   a. В поле **URL-адрес клиента** введите значение **https:\//Concierge.Food.ee/scim/v2** , полученное ранее.
 
    b. В поле **секретный токен** введите значение **токена API** , полученное ранее.
    
@@ -130,7 +130,7 @@ Azure AD использует концепцию, называемую *назн
 
     ![Текстовое поле для уведомления по электронной почте](common/provisioning-notification-email.png)
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 1. В разделе **сопоставления**выберите **синхронизировать Azure Active Directory пользователей с Food**.
 
@@ -170,9 +170,9 @@ Azure AD использует концепцию, называемую *назн
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Managing user account provisioning for enterprise apps in the Azure portal](../app-provisioning/configure-automatic-user-provisioning-portal.md) (Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure)
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

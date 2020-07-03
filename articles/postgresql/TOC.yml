@@ -15,6 +15,9 @@
           href: quickstart-create-server-database-azure-cli.md
         - name: "Создание базы данных с помощью команды az mysql up в Azure\_CLI"
           href: quickstart-create-server-up-azure-cli.md
+        - name: Создание базы данных с помощью шаблона ARM
+          href: quickstart-create-postgresql-server-database-using-arm-template.md
+          displayName: deploy azure resource manager template
         - name: Подключение и запросы
           items:
             - name: Python
@@ -60,6 +63,9 @@
   items:
     - name: Azure CLI
       href: sample-scripts-azure-cli.md
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Отдельный сервер
@@ -102,6 +108,8 @@
               href: concepts-data-access-and-security-private-link.md
             - name: Шифрование данных
               href: concepts-data-encryption-postgresql.md
+            - name: Базовые средства безопасности
+              href: security-baseline.md
         - name: Непрерывность бизнес-процессов
           items:
             - name: Общие сведения о непрерывности бизнес-процессов
@@ -147,6 +155,8 @@
           items:
             - name: Реплики чтения
               href: concepts-read-replicas.md
+            - name: Логическое декодирование
+              href: concepts-logical.md
     - name: Гипермасштабирование (Citus)
       items:
         - name: Узлы
@@ -163,6 +173,10 @@
               href: concepts-hyperscale-firewall-rules.md
             - name: Настройка SSL
               href: concepts-hyperscale-ssl-connection-security.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Резервное копирование и восстановление
+              href: concepts-hyperscale-backup.md
         - name: Мониторинг и настройка
           items:
             - name: Мониторинг и настройка
@@ -189,6 +203,8 @@
               href: howto-create-users.md
             - name: Настройка интеграции Azure AD
               href: howto-configure-sign-in-aad-authentication.md
+            - name: Подключение с использованием управляемого удостоверения
+              href: howto-connect-with-managed-identity.md
         - name: Оптимизация
           items:
             - name: Операции массовой вставки
@@ -245,6 +261,8 @@
           items:
             - name: Устранение ошибок подключения
               href: howto-troubleshoot-common-connection-issues.md
+            - name: Устранение неполадок с шифрованием данных
+              href: howto-data-encryption-troubleshoot.md
         - name: Расширенная защита от угроз
           items:
             - name: Портал Azure
@@ -265,12 +283,20 @@
           items:
             - name: Портал Azure
               href: howto-data-encryption-portal.md
+            - name: Azure CLI
+              href: howto-data-encryption-cli.md
+            - name: Проверка шифрования данных
+              href: howto-data-encryption-validation.md
         - name: Перезапуск сервера
           items:
             - name: Портал Azure
               href: howto-restart-server-portal.md
             - name: Azure CLI
               href: howto-restart-server-cli.md
+        - name: Запрет доступа к общедоступной сети
+          items:
+            - name: Портал Azure
+              href: howto-deny-public-network-access.md
         - name: Репликация
           items:
             - name: Управление репликами чтения с помощью портала Azure
@@ -279,6 +305,8 @@
               href: howto-read-replicas-cli.md
     - name: Гипермасштабирование (Citus)
       items:
+        - name: Создание пользователей
+          href: howto-hyperscale-create-users.md
         - name: Масштабирование
           href: howto-hyperscale-scaling.md
         - name: Управление брандмауэром
@@ -313,8 +341,8 @@
       href: 'https://azure.microsoft.com/roadmap/?category=databases'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/postgresql/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=AzureDatabaseforPostgreSQL'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-database-postgresql.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-database-postgresql'
     - name: Видео

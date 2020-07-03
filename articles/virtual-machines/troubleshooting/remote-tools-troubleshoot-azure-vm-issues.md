@@ -1,6 +1,6 @@
 ---
 title: Использование инструментов удаленного управления для устранения неполадок виртуальной машины Azure | Документация Майкрософт
-description: ''
+description: Узнайте о программах PsExec, сценариях PowerShell и других удаленных средствах, которые можно использовать для устранения неполадок с удаленными виртуальными машинами Azure без использования RDP.
 services: virtual-machines-windows
 documentationcenter: ''
 author: Deland-Han
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 01/11/2018
 ms.author: delhan
-ms.openlocfilehash: 3f028431fcd4b338d2e610ce1828a02b753c4d32
-ms.sourcegitcommit: 8cf199fbb3d7f36478a54700740eb2e9edb823e8
+ms.openlocfilehash: d29b2b7c2b9194f20afe4c74d117847f0e343b12
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74483703"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80422607"
 ---
 # <a name="use-remote-tools-to-troubleshoot-azure-vm-issues"></a>Использование инструментов удаленного управления для устранения неполадок виртуальной машины Azure
 
@@ -39,7 +39,7 @@ psexec \\<computer>-u user -s cmd
 
 >[!NOTE]
 >* Команда должна выполняться на компьютере, который находится в той же виртуальной сети.
->* Для замены \<> компьютера можно использовать DIP или HostName.
+>* Для замены \<> компьютера можно использовать DIP или hostname.
 >* Параметр -s гарантирует, что команда вызывается с помощью системной учетной записи (с разрешениями администратора).
 >* PsExec использует TCP-порты 135 и 445. В результате два порта должны быть открыты в брандмауэре.
 
@@ -60,6 +60,9 @@ psexec \\<computer>-u user -s cmd
 Отправьте скрипт в учетную запись хранения и создайте собственный контейнер. Затем выполните приведенный ниже сценарий в Azure PowerShell на компьютере, который может подключиться к виртуальной машине.
 
 ### <a name="for-classic-deployment-model-vms"></a>Для виртуальных машин классической модели развертывания
+
+[!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
+
 
 ```powershell
 #Set up the basic variables.
@@ -211,7 +214,7 @@ Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
 
 1. Из другой виртуальной машины в той же виртуальной сети откройте редактор реестра (regedit. exe).
 
-2. Выберите **Файл** > **Подключить сетевой реестр**.
+2. Выберите **файл** > **Подключить сетевой реестр**.
 
    ![Редактор реестра](./media/remote-tools-troubleshoot-azure-vm-issues/remote-registry.png) 
 
@@ -234,7 +237,7 @@ Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
 
 1. На другой виртуальной машине в той же виртуальной сети откройте экземпляр **Services. msc**.
 
-2. Щелкните правой кнопкой мыши **Службы (локальные)** .
+2. Щелкните правой кнопкой мыши **Службы (локальные)**.
 
 3. Выберите **Connect to another computer** (Подключение к другому компьютеру).
 
@@ -246,7 +249,7 @@ Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
 
 5. Внесите необходимые изменения в службы.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о командлете Enter-PSSession см. в разделе [Enter-PSSession](https://technet.microsoft.com/library/hh849707.aspx).
 - Дополнительные сведения о расширении пользовательских скриптов для Windows с помощью классической модели развертывания см. в разделе [расширение пользовательских скриптов для Windows](../extensions/custom-script-classic.md).

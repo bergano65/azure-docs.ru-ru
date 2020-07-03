@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 12/27/2019
-ms.openlocfilehash: 82ae0cab2d3dd7c65371e7a5bfec506e484fcdd2
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 03bc49c24e3c2d32e97f3e5e03bd39da63428a6e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169788"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77505580"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое Рабочая область Машинное обучение Azure?
 
@@ -28,7 +28,7 @@ ms.locfileid: "77169788"
 
 Таксономия рабочей области показана на следующей схеме:
 
-[![Схема рабочей области](./media/concept-workspace/azure-machine-learning-taxonomy.png)](./media/concept-workspace/azure-machine-learning-taxonomy.png#lightbox)
+[![Таксономия рабочей области](./media/concept-workspace/azure-machine-learning-taxonomy.png)](./media/concept-workspace/azure-machine-learning-taxonomy.png#lightbox)
 
 На схеме показаны следующие компоненты рабочей области.
 
@@ -78,7 +78,10 @@ ms.locfileid: "77169788"
 | Создание ресурсов вычислений и управление ими    | **&check;**   | **&check;** | **&check;** |  **&check;**   |
 | Создание виртуальной машины записной книжки |   | **&check;** | |     |
 
-## <a name='create-workspace'></a>Создание рабочей области
+> [!WARNING]
+> Перемещение рабочей области Машинное обучение Azure в другую подписку или перемещение ответственной подписки на новый клиент не поддерживается. Это может привести к ошибкам.
+
+## <a name="create-a-workspace"></a><a name='create-workspace'></a>Создание рабочей области
 
 При создании рабочей области вы решаете, следует ли создавать ее с помощью [выпуска Basic или Enterprise Edition](overview-what-is-azure-ml.md#sku). Этот выпуск определяет функции, доступные в рабочей области. Помимо прочего, Enterprise Edition предоставляет доступ к [конструктору машинное обучение Azure](concept-designer.md) и версии Studio для создания [автоматических экспериментов машинного обучения](tutorial-first-experiment-automated-ml.md).  Дополнительную информацию и сведения о ценах см. на странице [цен на машинное обучение Azure](https://azure.microsoft.com/pricing/details/machine-learning/).
 
@@ -92,11 +95,11 @@ ms.locfileid: "77169788"
 > [!NOTE]
 > Имя рабочей области не учитывает регистр.
 
-## <a name="upgrade"></a>Обновление до выпуска Enterprise Edition
+## <a name="upgrade-to-enterprise-edition"></a><a name="upgrade"></a>Обновление до выпуска Enterprise Edition
 
 Вы можете [Обновить рабочую область с уровня "базовый" до выпуска Enterprise](how-to-manage-workspace.md#upgrade) с помощью портал Azure. Рабочую область Enterprise Edition нельзя понизить до рабочей области Basic Edition. 
 
-## <a name="resources"></a>Связанные ресурсы
+## <a name="associated-resources"></a><a name="resources"></a>Связанные ресурсы
 
 При создании новой рабочей области она автоматически создает несколько ресурсов Azure, которые используются в рабочей области:
 
@@ -108,14 +111,14 @@ ms.locfileid: "77169788"
 > [!NOTE]
 > В дополнение к созданию версий можно также использовать имеющиеся службы Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к работе с Машинное обучение Azure, см.:
 
 + [Обзор Машинное обучение Azure](overview-what-is-azure-ml.md)
 + [Создание рабочей области](how-to-manage-workspace.md)
 + [Управление рабочей областью](how-to-manage-workspace.md)
-+ [Руководство. Приступая к созданию первого эксперимента ML с помощью пакета SDK для Python](tutorial-1st-experiment-sdk-setup.md)
++ [Руководство по Начало работы по созданию эксперимента Машинного обучения с помощью пакета SDK для Python](tutorial-1st-experiment-sdk-setup.md)
 + [Руководство. Начало работы с Машинное обучение Azure с помощью пакета SDK для R](tutorial-1st-r-experiment.md)
 + [Учебник. Создание первой модели классификации с помощью автоматизированного машинного обучения](tutorial-first-experiment-automated-ml.md) (доступно только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) )
 + [Учебник. Прогнозирование цен автомобилей с помощью конструктора](tutorial-designer-automobile-price-train-score.md) (доступно только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) )

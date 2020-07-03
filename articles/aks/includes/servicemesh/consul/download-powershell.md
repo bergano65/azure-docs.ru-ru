@@ -1,17 +1,16 @@
 ---
 author: paulbouwer
-ms.service: container-service
 ms.topic: include
 ms.date: 10/09/2019
 ms.author: pabouwer
-ms.openlocfilehash: 6b94d892410bd665bdcb76fc96bc1602d09cf652
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 8931ba97cf72891c78e20389be10178dd2c0317a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530567"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77594288"
 ---
-В оболочке на основе PowerShell в Windows используйте `Invoke-WebRequest` для загрузки выпуска диаграммы Consul Helm, а затем извлеките с помощью `Expand-Archive` следующим образом:
+В оболочке на основе PowerShell в Windows используйте `Invoke-WebRequest` для загрузки выпуска Consul Helm Chart, а затем извлеките с `Expand-Archive` помощью следующим образом:
 
 ```powershell
 # Specify the Consul Helm chart version that will be leveraged throughout these instructions

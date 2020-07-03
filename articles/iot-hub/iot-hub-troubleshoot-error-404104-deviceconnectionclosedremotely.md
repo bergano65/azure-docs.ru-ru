@@ -8,12 +8,13 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: 686946b65b4b7540f404a291c87c5ad9c7b7a0ca
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.custom: mqtt
+ms.openlocfilehash: c8cb91aa0c7ce1610320d4107db282d3c34407ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76960806"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758726"
 ---
 # <a name="404104-deviceconnectionclosedremotely"></a>404104 DeviceConnectionClosedRemotely
 
@@ -47,7 +48,7 @@ ms.locfileid: "76960806"
 
 - Устройство потеряло базовое сетевое подключение дольше, чем [MQTT поддержания активности](iot-hub-mqtt-support.md#default-keep-alive-timeout), что приводит к удаленному времени ожидания простоя. Параметр проверки активности MQTT может быть разным для каждого устройства.
 
-- Устройство отправило сброс на уровне TCP/IP, но не отправило `MQTT DISCONNECT`уровня приложения. По сути, устройство внезапно закрыло базовое подключение к сокету. Иногда эта проблема вызвана ошибками в более ранних версиях пакета SDK для IoT Azure.
+- Устройство отправило сброс на уровне TCP/IP, но не отправило уровень `MQTT DISCONNECT`приложения. По сути, устройство внезапно закрыло базовое подключение к сокету. Иногда эта проблема вызвана ошибками в более ранних версиях пакета SDK для IoT Azure.
 
 - Сбой приложения на стороне устройства.
 
@@ -71,6 +72,6 @@ ms.locfileid: "76960806"
 
 См. раздел [решения для внутренних ошибок сервера центра Интернета вещей](iot-hub-troubleshoot-error-500xxx-internal-errors.md#solution).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Для надежного управления подключениями рекомендуется использовать пакеты SDK для устройств Azure IoT. Дополнительные сведения см. в статье [Управление подключением и надежным обменом сообщениями с помощью пакетов SDK для устройств центра Интернета вещей Azure](iot-hub-reliability-features-in-sdks.md) .

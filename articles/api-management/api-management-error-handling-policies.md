@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: apimpm
 ms.openlocfilehash: 2c021a6d10c95b58ac444de8ea895ca01371a2b0
-ms.sourcegitcommit: 3eb0cc8091c8e4ae4d537051c3265b92427537fe
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75902456"
 ---
 # <a name="error-handling-in-api-management-policies"></a>Обработка ошибок в политиках управления API
@@ -59,32 +59,32 @@ ms.locfileid: "75902456"
 
 В разделе `on-error` можно использовать следующие политики.
 
--   [choose](api-management-advanced-policies.md#choose)
--   [set-variable](api-management-advanced-policies.md#set-variable)
+-   [выбрали](api-management-advanced-policies.md#choose)
+-   [Set-Variable](api-management-advanced-policies.md#set-variable)
 -   [find-and-replace](api-management-transformation-policies.md#Findandreplacestringinbody)
 -   [return-response](api-management-advanced-policies.md#ReturnResponse)
 -   [set-header](api-management-transformation-policies.md#SetHTTPheader)
 -   [set-method](api-management-advanced-policies.md#SetRequestMethod)
 -   [set-status](api-management-advanced-policies.md#SetStatus)
 -   [send-request](api-management-advanced-policies.md#SendRequest)
--   [send-one-way-request](api-management-advanced-policies.md#SendOneWayRequest)
+-   [Отправить односторонний запрос](api-management-advanced-policies.md#SendOneWayRequest)
 -   [log-to-eventhub](api-management-advanced-policies.md#log-to-eventhub)
 -   [json-to-xml](api-management-transformation-policies.md#ConvertJSONtoXML)
 -   [xml-to-json](api-management-transformation-policies.md#ConvertXMLtoJSON)
 
 ## <a name="lasterror"></a>lastError
 
-Если возникает ошибка и управление переходит к разделу политики `on-error`, то ошибка сохраняется в [контексте. Свойство LastError](api-management-policy-expressions.md#ContextVariables) , к которому могут обращаться политики в разделе `on-error`. LastError имеет следующие свойства.
+Если возникает ошибка и управление переходит к разделу `on-error` политики, то ошибка сохраняется в [контексте. Свойство LastError](api-management-policy-expressions.md#ContextVariables) , к которому могут обращаться политики в `on-error` разделе. LastError имеет следующие свойства.
 
-| Имя       | Тип   | Description                                                                                               | Обязательно для заполнения |
+| Имя       | Тип   | Описание                                                                                               | Обязательный |
 | ---------- | ------ | --------------------------------------------------------------------------------------------------------- | -------- |
-| `Source`   | string | Указывает имя элемента, в котором произошла ошибка. Может быть либо политикой, либо встроенным именем шага конвейера.      | Да      |
-| `Reason`   | string | Код ошибки в машинном формате, который удобно использовать для обработки ошибок.                                       | Нет       |
-| `Message`  | string | Описание ошибки в понятном для человека формате.                                                                         | Да      |
-| `Scope`    | string | Имя области, в которой возникла ошибка. Здесь возможны следующие значения: global, product, api или operation. | Нет       |
-| `Section`  | string | Имя раздела, в котором произошла ошибка. Возможные значения: inbound, backend, outbound или on-error.      | Нет       |
-| `Path`     | string | Задает вложенные политики, например: choose[3]/when[2].                                                 | Нет       |
-| `PolicyId` | string | Значение атрибута `id` для политики, в которой произошла ошибка (если указано клиентом).             | Нет       |
+| `Source`   | строка | Указывает имя элемента, в котором произошла ошибка. Может быть либо политикой, либо встроенным именем шага конвейера.      | Да      |
+| `Reason`   | строка | Код ошибки в машинном формате, который удобно использовать для обработки ошибок.                                       | Нет       |
+| `Message`  | строка | Описание ошибки в понятном для человека формате.                                                                         | Да      |
+| `Scope`    | строка | Имя области, в которой возникла ошибка. Здесь возможны следующие значения: global, product, api или operation. | Нет       |
+| `Section`  | строка | Имя раздела, в котором произошла ошибка. Возможные значения: inbound, backend, outbound или on-error.      | Нет       |
+| `Path`     | строка | Задает вложенные политики, например: choose[3]/when[2].                                                 | Нет       |
+| `PolicyId` | строка | Значение атрибута `id` для политики, в которой произошла ошибка (если указано клиентом).             | Нет       |
 
 > [!TIP]
 > Доступ к коду состояния можно получить с помощью context.Response.StatusCode.
@@ -101,9 +101,9 @@ ms.locfileid: "75902456"
 | настройка | URI не соответствует ни одному API или операции | OperationNotFound       | Unable to match incoming request to an operation. (Не удалось сопоставить входящий запрос с операцией.)                                                                      |
 | авторизация | Не предоставлен ключ подписки             | SubscriptionKeyNotFound | Access denied due to missing subscription key. Make sure to include subscription key when making requests to this API. (Доступ запрещен из-за отсутствия ключа подписки. Обязательно включайте ключ подписки в запросы к этому API.) |
 | авторизация | Недопустимое значение ключа подписки         | SubscriptionKeyInvalid  | Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription. (Доступ запрещен из-за недопустимого ключа подписки. Укажите допустимый ключ активной подписки.)            |
-| установка нескольких | Подчиненное соединение (от клиента к шлюзу управления API) было прервано клиентом, хотя запрос был отложен | клиентконнектионфаилуре | установка нескольких |
-| установка нескольких | Вышестоящее подключение (от шлюза управления API к серверной службе) не было установлено или было прервано серверной частью | баккендконнектионфаилуре | установка нескольких |
-| установка нескольких | Во время вычисления определенного выражения возникло исключение времени выполнения | експрессионвалуивалуатионфаилуре | установка нескольких |
+| несколько | Подчиненное соединение (от клиента к шлюзу управления API) было прервано клиентом, хотя запрос был отложен | клиентконнектионфаилуре | несколько |
+| несколько | Вышестоящее подключение (от шлюза управления API к серверной службе) не было установлено или было прервано серверной частью | баккендконнектионфаилуре | несколько |
+| несколько | Во время вычисления определенного выражения возникло исключение времени выполнения | експрессионвалуивалуатионфаилуре | несколько |
 
 ## <a name="predefined-errors-for-policies"></a>Стандартные ошибки для политик
 
@@ -114,21 +114,21 @@ ms.locfileid: "75902456"
 | rate-limit   | Превышено ограничение скорости                                             | RateLimitExceeded         | Rate limit is exceeded (Превышено ограничение скорости)                                                                                                               |
 | quota        | Превышена квота                                                  | QuotaExceeded             | превышена квота на количество вызовов. Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) -или- Out of bandwidth quota. (Превышена квота пропускной способности.) Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) |
 | jsonp        | Недопустимое значение параметра обратного вызова (содержит неправильные символы) | CallbackParameterInvalid  | Value of callback parameter {callback-parameter-name} is not a valid JavaScript identifier. (Значение параметра обратного вызова {имя параметра обратного вызова} не является допустимым идентификатором JavaScript.)                                          |
-| ip-filter    | Не удалось проанализировать IP-адрес вызывающего объекта из запроса                          | FailedToParseCallerIP     | Failed to establish IP address for the caller. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                        |
-| ip-filter    | IP-адрес вызывающего объекта не входит в список разрешенных                                | CallerIpNotAllowed        | Caller IP address {ip-address} is not allowed. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                        |
-| ip-filter    | IP-адрес вызывающего объекта включен в список заблокированных                                    | CallerIpBlocked           | Caller IP address is blocked. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                                         |
-| check-header | Отсутствует обязательный заголовок или его значение               | HeaderNotFound            | Header {header-name} was not found in the request. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                    |
-| check-header | Отсутствует обязательный заголовок или его значение               | HeaderValueNotAllowed     | Header {header-name} value of {header-value} is not allowed. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                          |
-| validate-jwt | В запросе отсутствует маркер JWT                                 | TokenNotFound             | JWT not found in the request. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                                         |
-| validate-jwt | Ошибка при проверке подписи                                     | TokenSignatureInvalid     | <сообщение из библиотеки jwt\>. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                                          |
-| validate-jwt | Недопустимая аудитория                                                | TokenAudienceNotAllowed   | <сообщение из библиотеки jwt\>. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                                          |
-| validate-jwt | Недопустимый издатель                                                  | TokenIssuerNotAllowed     | <сообщение из библиотеки jwt\>. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                                          |
-| validate-jwt | Истек срок действия маркера                                                   | TokenExpired              | <сообщение из библиотеки jwt\>. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                                          |
-| validate-jwt | Ключ подписи не удалось разрешить по идентификатору                            | TokenSignatureKeyNotFound | <сообщение из библиотеки jwt\>. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                                                          |
-| validate-jwt | В маркере отсутствуют необходимые утверждения                          | TokenClaimNotFound        | JWT token is missing the following claims: <c1\>, <c2\>, … Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                            |
-| validate-jwt | Несоответствие значений утверждения                                           | TokenClaimValueNotAllowed | Claim {claim-name} value of {claim-value} is not allowed. Access denied. (Недопустимое значение {значение_утверждения} для утверждения {имя_утверждения}. Доступ запрещен.)                                                             |
+| ip-filter    | Не удалось проанализировать IP-адрес вызывающего объекта из запроса                          | FailedToParseCallerIP     | Failed to establish IP address for the caller. Доступ запрещен.                                                                        |
+| ip-filter    | IP-адрес вызывающего объекта не входит в список разрешенных                                | CallerIpNotAllowed        | Caller IP address {ip-address} is not allowed. Доступ запрещен.                                                                        |
+| ip-filter    | IP-адрес вызывающего объекта включен в список заблокированных                                    | CallerIpBlocked           | Caller IP address is blocked. Доступ запрещен.                                                                                         |
+| check-header | Отсутствует обязательный заголовок или его значение               | HeaderNotFound            | Header {header-name} was not found in the request. Доступ запрещен.                                                                    |
+| check-header | Отсутствует обязательный заголовок или его значение               | HeaderValueNotAllowed     | Header {header-name} value of {header-value} is not allowed. Доступ запрещен.                                                          |
+| validate-jwt | В запросе отсутствует маркер JWT                                 | TokenNotFound             | JWT not found in the request. Доступ запрещен.                                                                                         |
+| validate-jwt | Ошибка при проверке подписи                                     | TokenSignatureInvalid     | <сообщение из библиотеки jwt\>. Доступ запрещен.                                                                                          |
+| validate-jwt | Недопустимая аудитория                                                | TokenAudienceNotAllowed   | <сообщение из библиотеки jwt\>. Доступ запрещен.                                                                                          |
+| validate-jwt | Недопустимый издатель                                                  | TokenIssuerNotAllowed     | <сообщение из библиотеки jwt\>. Доступ запрещен.                                                                                          |
+| validate-jwt | Истек срок действия маркера                                                   | TokenExpired              | <сообщение из библиотеки jwt\>. Доступ запрещен.                                                                                          |
+| validate-jwt | Ключ подписи не удалось разрешить по идентификатору                            | TokenSignatureKeyNotFound | <сообщение из библиотеки jwt\>. Доступ запрещен.                                                                                          |
+| validate-jwt | В маркере отсутствуют необходимые утверждения                          | TokenClaimNotFound        | JWT token is missing the following claims: <c1\>, <c2\>, … Доступ запрещен.                                                            |
+| validate-jwt | Несоответствие значений утверждения                                           | TokenClaimValueNotAllowed | Claim {claim-name} value of {claim-value} is not allowed. Доступ запрещен.                                                             |
 | validate-jwt | Прочие сбои при проверке данных                                       | JwtInvalid                | <сообщение из библиотеки jwt\>                                                                                                          |
-| прямой запрос или отправка запроса | Код и заголовки состояния ответа HTTP не были получены из серверной части в течение заданного времени ожидания | Время ожидания | установка нескольких |
+| прямой запрос или отправка запроса | Код и заголовки состояния ответа HTTP не были получены из серверной части в течение заданного времени ожидания | Время ожидания | несколько |
 
 ## <a name="example"></a>Пример
 

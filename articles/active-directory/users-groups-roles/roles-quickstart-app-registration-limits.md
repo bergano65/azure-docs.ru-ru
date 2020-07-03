@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12803e2f65e17155e8bbcaf4842789adc101b0dd
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 7acd76ff45f783f614b2a1d3f0d5c10d800a1ea9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74024407"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77559051"
 ---
 # <a name="quickstart-grant-permission-to-create-unlimited-app-registrations"></a>Краткое руководство. предоставление разрешения на создание неограниченных регистраций приложений
 
-В этом кратком руководстве вы создадите пользовательскую роль с разрешениями на создание неограниченного числа регистраций приложений, а затем назначаете эту роль пользователю. После этого назначенный пользователь может использовать портал Azure AD, Azure AD PowerShell, Azure AD API Graph или Microsoft Graph API для создания регистраций приложений. В отличие от встроенной роли разработчика приложения, эта пользовательская роль предоставляет возможность создавать неограниченное количество регистраций приложений. Роль разработчика приложения предоставляет возможность, но общее число созданных объектов ограничено 250, чтобы не допустить попадания [в квоту на объект на уровне каталога](directory-service-limits-restrictions.md).
+В этом кратком руководстве вы создадите пользовательскую роль с разрешениями на создание неограниченного числа регистраций приложений, а затем назначаете эту роль пользователю. После этого назначенный пользователь может использовать портал Azure AD, Azure AD PowerShell или Microsoft Graph API для создания регистраций приложений. В отличие от встроенной роли разработчика приложения, эта пользовательская роль предоставляет возможность создавать неограниченное количество регистраций приложений. Роль разработчика приложения предоставляет возможность, но общее число созданных объектов ограничено 250, чтобы не допустить попадания [в квоту на объект на уровне каталога](directory-service-limits-restrictions.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -32,7 +32,7 @@ ms.locfileid: "74024407"
 
 ## <a name="create-a-new-custom-role-using-the-azure-ad-portal"></a>Создание новой настраиваемой роли с помощью портала Azure AD
 
-1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
+1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в Организации Azure AD.
 1. Выберите **Azure Active Directory**, выберите **роли и администраторы**, а затем выберите **создать настраиваемую роль**.
 
     ![Создание или изменение ролей на странице "роли и Администраторы"](./media/roles-create-custom/new-custom-role.png)
@@ -49,7 +49,7 @@ ms.locfileid: "74024407"
 
 ### <a name="assign-the-role-to-a-user-using-the-azure-ad-portal"></a>Назначение роли пользователю с помощью портала Azure AD
 
-1. Войдите в [центр администрирования Azure ad](https://aad.portal.azure.com) с правами администратора привилегированных ролей или глобального администратора в вашей организации Azure AD.
+1. Войдите в  [центр администрирования Azure AD](https://aad.portal.azure.com)с правами администратора привилегированных ролей или глобального администратора в вашей организации Azure AD.
 1. Выберите **Azure Active Directory** и выберите **роли и администраторы**.
 1. Выберите роль создателя регистрация приложения и щелкните **добавить назначение**.
 1. Выберите нужного пользователя и нажмите кнопку **выбрать** , чтобы добавить пользователя к роли.
@@ -135,7 +135,7 @@ $customRole = New-AzureAdRoleDefinition -RolePermissions $rolePermissions -Displ
 
 HTTP-запрос на создание настраиваемой роли.
 
-ПУБЛИКАЦИЯ
+POST
 
 ``` HTTP
 https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions
@@ -172,7 +172,7 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions
 
 HTTP-запрос на назначение настраиваемой роли.
 
-ПУБЛИКАЦИЯ
+POST
 
 ``` HTTP
 https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
@@ -188,7 +188,7 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Вы можете оставить комментарий на [форуме об административных ролях Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 - Дополнительные сведения о ролях и назначении роли администратора см. в разделе [Назначение ролей администратора](directory-assign-admin-roles.md).

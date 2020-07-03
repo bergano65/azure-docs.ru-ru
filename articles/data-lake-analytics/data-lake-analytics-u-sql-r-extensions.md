@@ -10,19 +10,19 @@ ms.assetid: c1c74e5e-3e4a-41ab-9e3f-e9085da1d315
 ms.topic: conceptual
 ms.date: 06/20/2017
 ms.openlocfilehash: c5dd3f493e85afc925b639c142a293eed1e8cbd7
-ms.sourcegitcommit: 2d9a9079dd0a701b4bbe7289e8126a167cfcb450
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71672696"
 ---
 # <a name="extend-u-sql-scripts-with-r-code-in-azure-data-lake-analytics"></a>Расширение возможностей сценариев U-SQL c кодом R в Azure Data Lake Analytics
 
 В следующих примерах представлены основные шаги по развертыванию кода R:
 * Используйте инструкцию `REFERENCE ASSEMBLY`, чтобы включить расширения R для скрипта U-SQL.
-* Используйте операцию `REDUCE`, чтобы секционировать входные данные по ключу.
+* Используйте `REDUCE` операцию, чтобы секционировать входные данные по ключу.
 * Расширения R для U-SQL включают встроенное средство редукции (`Extension.R.Reducer`), которое выполняет код R в каждой назначенной ему вершине. 
-* Использование выделенных именованных кадров данных, именуемых `inputFromUSQL` и `outputToUSQL` соответственно, для передачи данных между U-SQL и R. имена идентификаторов входных и выходных кадров исправляются (т. е. пользователи не могут изменять эти предопределенные имена идентификаторов кадров данных и входных и выходных).
+* Использование выделенных именованных кадров данных `inputFromUSQL` , `outputToUSQL` называемых и соответственно, для передачи данных между U-SQL и R. имена идентификаторов входного и выходного фрейма таблицы являются фиксированными (т. е. пользователи не могут изменять эти предопределенные имена идентификаторов кадров данных и входных и выходных).
 
 ## <a name="embedding-r-code-in-the-u-sql-script"></a>Внедрение кода R в скрипт U-SQL
 
@@ -206,7 +206,7 @@ ms.locfileid: "71672696"
 
     OUTPUT @RScriptOutput TO @OutputFileModelSummary USING Outputters.Tsv();
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
 * [Использование оконных функций U-SQL для заданий в службе аналитики озера данных Azure](data-lake-analytics-use-window-functions.md)

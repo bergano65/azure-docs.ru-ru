@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 11/4/2019
 ms.author: caya
 ms.openlocfilehash: 5d0543a3a43d53e462a6406312faddf37d2653c6
-ms.sourcegitcommit: 018e3b40e212915ed7a77258ac2a8e3a660aaef8
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "73795592"
 ---
 # <a name="add-health-probes-to-your-service"></a>Добавление проб работоспособности в службу
 По умолчанию входной контроллер выполняет инициализацию HTTP GET для предоставляемых модулей Pod.
-Свойства зонда можно настроить, добавив [проверку готовности или динамической проверки](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) в `deployment`/`pod` спецификации.
+Свойства зонда можно настроить, добавив [проверку готовности или динамической проверки](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) в `deployment` / `pod` спецификацию.
 
-## <a name="with-readinessprobe-or-livenessprobe"></a>С `readinessProbe` или `livenessProbe`
+## <a name="with-readinessprobe-or-livenessprobe"></a>С `readinessProbe` или`livenessProbe`
 ```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -50,17 +50,17 @@ spec:
 * [Действие HttpGet](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.14/#httpgetaction-v1-core)
 
 > [!NOTE]
-> * `readinessProbe` и `livenessProbe` поддерживаются при настройке с помощью `httpGet`.
+> * `readinessProbe`и `livenessProbe` поддерживаются при настройке с `httpGet`помощью.
 > * Проверка на портах, отличных от показанных в модуле Pod, сейчас не поддерживается.
-> * `HttpHeaders`, `InitialDelaySeconds``SuccessThreshold` не поддерживаются.
+> * `HttpHeaders`, `InitialDelaySeconds`, `SuccessThreshold` не поддерживаются.
 
-##  <a name="without-readinessprobe-or-livenessprobe"></a>Без `readinessProbe` или `livenessProbe`
-Если указанные выше зонды не предоставлены, контроллер входящего трафика предполагала, что служба доступна в `Path`, указанной для `backend-path-prefix` аннотации, или `path`, указанных в определении `ingress` для службы.
+##  <a name="without-readinessprobe-or-livenessprobe"></a>Без `readinessProbe` или`livenessProbe`
+Если указанные `Path` выше проверки не предоставлены, то контроллер входящего трафика предполагала, что служба доступна в указанном для `backend-path-prefix` аннотации или `path` указании в `ingress` определении службы.
 
 ## <a name="default-values-for-health-probe"></a>Значения по умолчанию для проверки работоспособности
 Для любого свойства, которое не может быть определено с помощью проверки готовности или жизни, устанавливаются значения по умолчанию.
 
-| Свойство проверки шлюза приложений | По умолчанию |
+| Свойство проверки шлюза приложений | Значение по умолчанию |
 |-|-|
 | `Path` | / |
 | `Host` | localhost |

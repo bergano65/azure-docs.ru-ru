@@ -8,18 +8,17 @@ metadata:
   description: 'API Анализа текста — это облачная служба, которая обеспечивает расширенную обработку необработанного текста на естественных языках и включает в себя четыре основные функции: анализ тональности, извлечение ключевых фраз, распознавание именованных сущностей и определение языка. Узнайте, как анализировать содержимое разными способами, ознакомившись с нашими краткими руководствами, примерами и учебниками.'
   author: aahill
   manager: nitinme
-  layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: text-analytics
   ms.topic: landing-page
   ms.date: 01/29/2019
   ms.author: aahi
-  ms.openlocfilehash: 67cfa12683776490bbf0ddf27bc2ce2b1a3779a0
-  ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+  ms.openlocfilehash: 468315f79f7d0f9d10013c4068b5bb29436b3166
+  ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/04/2020
-  ms.locfileid: "76986552"
+  ms.lasthandoff: 03/24/2020
+  ms.locfileid: "79415144"
 landingContent:
 - title: Об API Анализа текста
   linkLists:
@@ -46,7 +45,7 @@ landingContent:
     - text: Использование Python
       url: quickstarts/text-analytics-sdk.md?pivots=programming-language-python#sentiment-analysis
     - text: Использование Node.js
-      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-nodejs#sentiment-analysis
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-javascript#sentiment-analysis
     - text: Использование Go
       url: quickstarts/text-analytics-sdk.md?pivots=programming-language-go#sentiment-analysis
     - text: Использование Ruby
@@ -70,7 +69,7 @@ landingContent:
     - text: Использование Python
       url: quickstarts/text-analytics-sdk.md?pivots=programming-language-python#language-detection
     - text: Использование Node.js
-      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-nodejs#language-detection
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-javascript#language-detection
     - text: Использование Go
       url: quickstarts/text-analytics-sdk.md?pivots=programming-language-go#language-detection
     - text: Использование Ruby
@@ -88,7 +87,7 @@ landingContent:
     - text: Использование Python
       url: quickstarts/text-analytics-sdk.md?pivots=programming-language-python#key-phrase-extraction
     - text: Использование Node.js
-      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-nodejs#key-phrase-extraction
+      url: quickstarts/text-analytics-sdk.md?pivots=programming-language-javascript#key-phrase-extraction
     - text: Использование Go
       url: quickstarts/text-analytics-sdk.md?pivots=programming-language-go#key-phrase-extraction
     - text: Использование Ruby

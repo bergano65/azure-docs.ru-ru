@@ -13,11 +13,11 @@ ms.date: 08/03/2018
 ms.author: curtand
 ms.reviewer: jairoc
 ms.openlocfilehash: 0ff8b85a15d94ded2d702e0df247f9ebc4d3f923
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77062274"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79266316"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Присоединения рабочего устройства к сети организации
 Присоедините свое рабочее устройство Windows 10 к сети вашей организации, чтобы вы могли получать доступ к потенциально ограниченным ресурсам.
@@ -61,7 +61,7 @@ ms.locfileid: "77062274"
 
     ![Пункт "Учетные записи" в окне параметров](./media/user-help-join-device-on-network/join-device-settings-accounts.png)
 
-2. Выберите **доступ к рабочей или учебной**учетной записи и убедитесь, что вы видите текст, который выглядит примерно так: **подключен к *\<your_organization >* Azure AD**.
+2. Выберите **доступ к рабочей или учебной**учетной записи и убедитесь, что вы видите текст, который выглядит примерно так: **подключен к * \<your_organization>* Azure AD**.
 
     ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-join-device-on-network/join-device-oobe-verify.png)
 
@@ -106,11 +106,11 @@ ms.locfileid: "77062274"
 
     ![Пункт "Учетные записи" в окне параметров](./media/user-help-join-device-on-network/join-device-settings-accounts.png)
 
-2. Выберите **доступ к рабочей или учебной**учетной записи и убедитесь, что вы видите текст, который выглядит примерно так: **подключен к *\<your_organization >* Azure AD**.
+2. Выберите **доступ к рабочей или учебной**учетной записи и убедитесь, что вы видите текст, который выглядит примерно так: **подключен к * \<your_organization>* Azure AD**.
 
     ![Окно доступа к учетной записи места работы или учебного заведения с подключенной учетной записью Contoso](./media/user-help-join-device-on-network/join-device-setup-verify.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Когда вы присоедините свое устройство к сети вашей организации, вы сможете получать доступ ко всем своим ресурсам, используя сведения рабочей или учебной учетной записи.
 
 - Если ваша организация хочет, чтобы вы зарегистрировали личное устройство, например, ваш телефон, перейдите к статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).

@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: ramkris
-ms.openlocfilehash: 4a7c307e8a4d4088fe4d2f7800398fda4704219c
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.openlocfilehash: 2e38aeba198f875961024f8c25c7fb0123479f87
+ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73720831"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80985275"
 ---
 # <a name="tutorial-build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Руководство по Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -39,30 +39,30 @@ ms.locfileid: "73720831"
 > 
 > 
 
-## <a id="Prerequisites"></a>Необходимые условия для изучения этого учебника по разработке веб-приложения Java
+## <a name="prerequisites-for-this-java-web-application-tutorial"></a><a id="Prerequisites"></a>Необходимые условия для изучения этого учебника по разработке веб-приложения Java
 Для работы с этим учебником необходимы:
 
-* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 
   [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
-* [Комплект разработчика Java (JDK 7 +)](https://aka.ms/azure-jdks).
+* [Комплект разработчика Java (JDK 7 +)](/java/azure/jdk/?view=azure-java-stable).
 * [Интегрированная среда разработки Eclipse для разработчиков Java EE.](https://www.eclipse.org/downloads/packages/release/luna/sr1/eclipse-ide-java-ee-developers)
 * [Открытый веб-сайт Azure со средой выполнения Java (например, Tomcat или Jetty).](../app-service/app-service-web-get-started-java.md)
 
 При первой установке этих средств воспользуйтесь пошаговыми инструкциями, представленными в разделе "Quick Start" (Быстрый запуск) статьи [Tutorial: Installing TomCat7 and Using it with Eclipse](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) (Руководство по установке TomCat7 и его использованию с Eclipse) на сайте coreservlets.com.
 
-## <a id="CreateDB"></a>Шаг 1. создание учетной записи Azure Cosmos DB;
-Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB для работы с этим руководством, можно перейти к разделу [Шаг 2. Создание приложения Java JSP](#CreateJSP).
+## <a name="step-1-create-an-azure-cosmos-db-account"></a><a id="CreateDB"></a>Шаг 1. создание учетной записи Azure Cosmos DB;
+Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB для работы с этим руководством, можно перейти к разделу [Шаг 2. Создание приложения Java JSP](#CreateJSP).
 
 [!INCLUDE [create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
 [!INCLUDE [keys](../../includes/cosmos-db-keys.md)]
 
-## <a id="CreateJSP"></a>Шаг 2. Создание приложения Java JSP
+## <a name="step-2-create-the-java-jsp-application"></a><a id="CreateJSP"></a>Шаг 2. Создание приложения Java JSP
 Для создания приложения JSP:
 
-1. Во-первых, необходимо создать проект Java. В меню Eclipse выберите **File** (Файл), щелкните **New** (Создать), а затем выберите **Dynamic Web Project** (Динамический веб-проект). Если элемента **Dynamic Web Project** (Динамический веб-проект) нет в списке доступных проектов, откройте меню **File** (Файл), щелкните пункт **New** (Создать), а затем выберите **Project** (Проект), разверните список **Web** (Интернет), выберите **Dynamic Web Project** (Динамический веб-проект) и нажмите кнопку **Next** (Далее).
+1. Сначала необходимо создать проект Java. В меню Eclipse выберите **File** (Файл), щелкните **New** (Создать), а затем выберите **Dynamic Web Project** (Динамический веб-проект). Если элемента **Dynamic Web Project** (Динамический веб-проект) нет в списке доступных проектов, откройте меню **File** (Файл), щелкните пункт **New** (Создать), а затем выберите **Project** (Проект), разверните список **Web** (Интернет), выберите **Dynamic Web Project** (Динамический веб-проект) и нажмите кнопку **Next** (Далее).
    
     ![Разработка приложений JSP Java](./media/sql-api-java-application/image10.png)
 2. Введите имя проекта в **соответствующем** поле и в раскрывающемся меню **Target Runtime** (Целевая среда выполнения). Если необходимо, выберите значение (например, Apache Tomcat v7.0), а затем нажмите кнопку **Finish** (Готово). Выбор целевой среды выполнения позволит вам запустить локальный проект через Eclipse.
@@ -81,7 +81,7 @@ ms.locfileid: "73720831"
    
     ![Привет, мир! — учебник по разработке приложений Java](./media/sql-api-java-application/image12.png)
 
-## <a id="InstallSDK"></a>Шаг 3. Установка пакета Java SDK для SQL
+## <a name="step-3-install-the-sql-java-sdk"></a><a id="InstallSDK"></a>Шаг 3. Установка пакета Java SDK для SQL
 Самый простой способ извлечь данные из пакета Java SDK для SQL и его зависимости — использовать [Apache Maven](https://maven.apache.org/).
 
 Для этого необходимо преобразовать проект в проект Maven, выполнив следующие действия.
@@ -109,7 +109,7 @@ ms.locfileid: "73720831"
 6. Нажмите кнопку **ОК**, и Maven установит пакет Java SDK для SQL.
 7. Сохраните файл pom.xml.
 
-## <a id="UseService"></a>Шаг 4. Использование службы Azure Cosmos DB в приложении Java
+## <a name="step-4-using-the-azure-cosmos-db-service-in-a-java-application"></a><a id="UseService"></a>Шаг 4. Использование службы Azure Cosmos DB в приложении Java
 1. Сначала определим объект TodoItem в файле TodoItem.java.
    
         @Data
@@ -343,7 +343,7 @@ ms.locfileid: "73720831"
             return true;
         }
 
-## <a id="Wire"></a>Шаг 5. Подключение другой части проекта по разработке приложений Java
+## <a name="step-5-wiring-the-rest-of-the-of-java-application-development-project-together"></a><a id="Wire"></a>Шаг 5. Подключение другой части проекта по разработке приложений Java
 Теперь нам необходимо создать пользовательский интерфейс и привязать его к нашему объекту DAO.
 
 1. Во-первых, необходимо начать с построения контроллера для вызова DAO:
@@ -715,7 +715,7 @@ ms.locfileid: "73720831"
 5. Отлично! Теперь осталось протестировать приложение. Запустите приложение локально и добавьте несколько элементов Todo, заполнив имя элемента и категории и нажав кнопку **Add Task**(Добавить задачу).
 6. Как только элемент появится, вы можете проверить его завершение, отметив флажком и щелкнув команду **Update Tasks**(Обновить задачи).
 
-## <a id="Deploy"></a>Шаг 6. Развертывание приложения Java на веб-сайтах Azure
+## <a name="step-6-deploy-your-java-application-to-azure-web-sites"></a><a id="Deploy"></a>Шаг 6. Развертывание приложения Java на веб-сайтах Azure
 Веб-сайты Azure упрощают развертывание приложений Java с помощью простого экспорта приложения в виде WAR-файла либо с помощью загрузки через систему управления версиями (например, GIT) или через клиент FTP.
 
 1. Чтобы экспортировать приложение в виде WAR-файла, щелкните правой кнопкой мыши проект в **обозревателе проектов**, выберите **Export** (Экспорт) и щелкните **WAR File** (WAR-файл).
@@ -723,13 +723,13 @@ ms.locfileid: "73720831"
    
    * В поле веб-проекта введите azure-documentdb-java-sample.
    * В поле Destination (Назначение) выберите место назначения для сохранения WAR-файла.
-   * Нажмите кнопку **Готово**
+   * Нажмите кнопку **Готово**.
 3. Теперь, когда вы создали WAR-файл, можно просто передать его на веб-сайт Azure в каталог **webapps**. Инструкции по передаче файла см. в статье [Добавление приложения Java в веб-приложения службы приложений Azure](../app-service/web-sites-java-add-app.md).
    
     После загрузки WAR-файла в каталог веб-приложения среда выполнения обнаруживает, что вы добавили его и автоматически загрузит ее.
 4. Чтобы оценить готовый продукт, перейдите к `http://YOUR\_SITE\_NAME.azurewebsites.net/azure-java-sample/` и приступайте к добавлению задач.
 
-## <a id="GetProject"></a>Получение проекта из GitHub
+## <a name="get-the-project-from-github"></a><a id="GetProject"></a>Получение проекта из GitHub
 Все примеры в этом учебнике включены в проект [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) на портале GitHub. Чтобы импортировать проект todo в Eclipse, убедитесь, что у вас есть программное обеспечение и ресурсы, перечисленные в разделе [Необходимые условия](#Prerequisites) , а затем выполните следующие действия.
 
 1. Установите [проект Lombok](https://projectlombok.org/). Lombok используется для формирования конструкторов, получателей и заданий в проекте. Дважды щелкните загруженный файл lombok.jar для установки или установите его из командной строки.

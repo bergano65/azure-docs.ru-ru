@@ -9,13 +9,13 @@ ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
 ms.openlocfilehash: 8570bce87aeea5473b4aadf9bd30bc0a648a6f0f
-ms.sourcegitcommit: 12de9c927bc63868168056c39ccaa16d44cdc646
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "72518308"
 ---
-# <a name="azcopy-bench"></a>azcopy Bench
+# <a name="azcopy-bench"></a>azcopy bench
 
 Запускает нагрузочный тест производительности путем передачи тестовых данных в указанное место назначения. Тестовые данные создаются автоматически.
 
@@ -43,15 +43,15 @@ azcopy bench [destination] [flags]
 
 Запустите тест производительности с параметрами по умолчанию (подходящими для тестирования производительности в сети до 1 Гбит/с): "
 
-- azcopy Bench "https://[учетная запись]. BLOB. Core. Windows. NET/[контейнер]? <SAS> "
+- azcopy Bench "https://[учетная запись]. BLOB. Core. Windows. NET/[контейнер]? <SAS>"
 
 Запустите тест производительности, который отправляет 100 файлов, размер каждой 2 гиб: (подходит для тестирования производительности в быстрой сети, например 10 Гбит/с): "
 
-- azcopy Bench "https://[учетная запись]. BLOB. Core. Windows. NET/[контейнер]? <SAS> " --File-Count 100--size-to-File 2G
+- azcopy Bench "https://[учетная запись]. BLOB. Core. Windows. NET/[контейнер]? <SAS>" --File-Count 100--size-to-File 2G
 
 То же, что и выше, но используйте 50 000 файлов, каждый 8 MiB в размере и вычислите их хэши MD5 (так же, как флаг--WHERE-MD5 делает это в команде Copy). При выполнении теста производительности параметр--"использовать-MD5" позволяет проверить, влияет ли вычисление MD5 на пропускную способность для выбранного числа и размера файла:
 
-- azcopy Bench "https://[учетная запись]. BLOB. Core. Windows. NET/[контейнер]? <SAS> " --File-Count 50000--size-for-File 8 млн--WHERE-MD5
+- azcopy Bench "https://[учетная запись]. BLOB. Core. Windows. NET/[контейнер]? <SAS>" --File-Count 50000--size-for-File 8 млн--WHERE-MD5
 
 ## <a name="options"></a>Параметры
 
@@ -77,6 +77,6 @@ azcopy bench [destination] [flags]
 
 **--выходной** формат строки выходных данных команды. Среди вариантов: Text, JSON. Значение по умолчанию — Text. ("текст" по умолчанию).
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 
 - [azcopy](storage-ref-azcopy.md)

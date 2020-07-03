@@ -1,18 +1,14 @@
 ---
 title: Анализ использования с помощью Azure Application Insights | Документация Майкрософт
 description: Получение сведений о пользователях и их действиях с веб-приложением.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
-ms.date: 09/19/2019
-ms.openlocfilehash: aa37717c5037294c2b5ec61f7815b007cbf74992
-ms.sourcegitcommit: cf36df8406d94c7b7b78a3aabc8c0b163226e1bc
+ms.date: 03/25/2019
+ms.openlocfilehash: e964b1b5b9d5500f2d9f24ed765299389e6dbbb9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2019
-ms.locfileid: "73884827"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80283962"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -26,7 +22,7 @@ ms.locfileid: "73884827"
 
     * *Не хотите устанавливать серверный код? Просто [Создайте ресурс Azure Application Insights](../../azure-monitor/app/create-new-resource.md ).*
 
-2. **Код веб-страницы:** Добавьте следующий скрипт на веб-страницу перед закрывающим ``</head>``. Замените ключ инструментирования на подходящее значение для ресурса Application Insights.
+2. **Код веб-страницы:** Добавьте следующий скрипт на веб-страницу перед закрытием ``</head>``. Замените ключ инструментирования на подходящее значение для ресурса Application Insights.
     
     ```html
     <script type="text/javascript">
@@ -56,7 +52,7 @@ ms.locfileid: "73884827"
 
 Отчеты о пользователях и сеансах позволяют фильтровать данные по страницам или пользовательским событиям, а также разделять их по свойствам, таким как расположение, среда и страница. Можно также добавить собственные фильтры.
 
-![Users](./media/usage-overview/users.png)  
+![Пользователи](./media/usage-overview/users.png)  
 
 Аналитические сведения справа позволяют выделять важные закономерности в наборе данных.  
 
@@ -118,7 +114,7 @@ ms.locfileid: "73884827"
 
 При разработке каждого компонента приложения обдумайте, как вы будете измерять его успех у пользователей. Решите, какие бизнес-события необходимо записывать, и с самого начала запрограммируйте вызовы отслеживания для этих событий в приложении.
 
-## <a name="a--b-testing"></a>Тестирование A или B
+## <a name="a--b-testing"></a>Тестирование A или B 
 Если неизвестно, какой вариант функции будет более эффективен, выпустите их оба, чтобы каждый из них был доступен для разных пользователей. Измерьте успешность каждого варианта, а затем перейдите к единой версии.
 
 В рамках этого способа необходимо вложить разные значения свойств во все данные телеметрии, отправляемые каждой версией приложения. Для этого нужно определить свойства в активном контексте телеметрии TelemetryContext. Эти свойства по умолчанию добавляются к каждому сообщению телеметрии, которое отправляет приложение, — не только к настраиваемым сообщениям, но также к стандартным данным телеметрии.
@@ -133,10 +129,14 @@ ms.locfileid: "73884827"
     // Telemetry initializer class
     public class MyTelemetryInitializer : ITelemetryInitializer
     {
-        public void Initialize (ITelemetry telemetry)
-        {
-            telemetry.Properties["AppVersion"] = "v2.1";
-        }
+        public void Initialize(ITelemetry item)
+            {
+                var itemProperties = item as ISupportProperties;
+                if (itemProperties != null && !itemProperties.Properties.ContainsKey("AppVersion"))
+                {
+                    itemProperties.Properties["AppVersion"] = "v2.1";
+                }
+            }
     }
 ```
 
@@ -155,9 +155,9 @@ ms.locfileid: "73884827"
 **ASP.NET Core приложения**
 
 > [!NOTE]
-> Добавление инициализатора с помощью `ApplicationInsights.config` или `TelemetryConfiguration.Active` недопустимо для приложений ASP.NET Core. 
+> Добавление инициализатора `ApplicationInsights.config` с помощью `TelemetryConfiguration.Active` или using недопустимо для приложений ASP.NET Core. 
 
-Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений добавление нового `TelemetryInitializer` выполняется путем его добавления в контейнер внедрения зависимостей, как показано ниже. Это делается в методе `ConfigureServices` класса `Startup.cs`.
+Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений Добавление нового `TelemetryInitializer` выполняется путем добавления его в контейнер внедрения зависимостей, как показано ниже. Это делается в `ConfigureServices` методе `Startup.cs` класса.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
@@ -170,10 +170,10 @@ ms.locfileid: "73884827"
 
 Все новые клиенты телеметрии автоматически добавляют указанное значение свойства. Отдельные события телеметрии могут переопределять значения по умолчанию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
    - [Пользователи, сеансы, события](usage-segmentation.md)
    - [Воронки](usage-funnels.md)
-   - [Удержание](usage-retention.md)
-   - [Средство "Маршруты пользователей"](usage-flows.md)
-   - [Книги](../../azure-monitor/app/usage-workbooks.md)
+   - [Сохранение](usage-retention.md)
+   - [Маршруты пользователей](usage-flows.md)
+   - [Workbooks](../../azure-monitor/app/usage-workbooks.md)
    - [Добавление контекста пользователей](usage-send-user-context.md)

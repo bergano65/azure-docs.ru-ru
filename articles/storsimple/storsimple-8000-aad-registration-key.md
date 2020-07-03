@@ -1,17 +1,17 @@
 ---
-title: Использование новой проверки подлинности для службы StorSimple 8000 Device Manager в Azure
+title: Аутентификация Azure AD для StorSimple 8000 в Device Manager
 description: Из этой статьи вы узнаете, как использовать для службы аутентификацию на основе AAD, создать ключ регистрации и регистрировать устройства вручную.
 author: alkohli
 ms.service: storsimple
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 798b3bf054d5ade2a441bbef5875bb014f526aee
-ms.sourcegitcommit: 5397b08426da7f05d8aa2e5f465b71b97a75550b
+ms.openlocfilehash: b16132c24d35ee2c9902fa2b21c44416d8376b4d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2020
-ms.locfileid: "76276947"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77470910"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
 
@@ -39,10 +39,10 @@ ms.locfileid: "76276947"
 
 Если вы используете StorSimple серии 8000, убедитесь, что в правила брандмауэра включен следующий URL-адрес:
 
-| Шаблон URL-адреса                         | В облаке | Компонент или функция         |
+| Шаблон URL-адреса                         | Облако | Компонент или функция         |
 |------------------------------------|-------|----------------------------------|
 | `https://login.windows.net`        | Azure Public |Служба аутентификации AAD      |
-| `https://login.microsoftonline.us` | US (США) |Служба аутентификации AAD      |
+| `https://login.microsoftonline.us` | US Government |Служба аутентификации AAD      |
 
 Полный список шаблонов URL-адресов для устройств StorSimple серии 8000 см. в разделе [Шаблоны URL-адресов для правил брандмауэра](storsimple-8000-system-requirements.md#url-patterns-for-firewall-rules).
 
@@ -54,9 +54,9 @@ ms.locfileid: "76276947"
 
 | Если на вашем устройстве используется| Сделайте следующее                                    |
 |--------------------------|------------------------|
-| Обновление 5 или более поздней версии. Устройство отключено от сети. <br> Вы увидите оповещение о том, что URL-адрес не включен в список разрешений.|1. Измените правила брандмауэра, включив в них URL-адрес проверки подлинности. Нужные адреса вы можете найти [здесь](#url-changes-for-aad-authentication).<br>2. [получите ключ регистрации AAD из службы](#aad-based-registration-keys).<br>3. [подключитесь к интерфейсу Windows PowerShell устройства StorSimple 8000](storsimple-8000-deployment-walkthrough-u2.md#use-putty-to-connect-to-the-device-serial-console).<br>4. Используйте командлет `Redo-DeviceRegistration`, чтобы зарегистрировать устройство с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
+| Обновление 5 или более поздней версии. Устройство отключено от сети. <br> Вы увидите оповещение о том, что URL-адрес не включен в список разрешений.|1. Измените правила брандмауэра, включив в них URL-адрес проверки подлинности. Нужные адреса вы можете найти [здесь](#url-changes-for-aad-authentication).<br>2. [получите ключ регистрации AAD из службы](#aad-based-registration-keys).<br>3. [подключитесь к интерфейсу Windows PowerShell устройства StorSimple 8000](storsimple-8000-deployment-walkthrough-u2.md#use-putty-to-connect-to-the-device-serial-console).<br>4. Используйте `Redo-DeviceRegistration` командлет для регистрации устройства с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
 | Обновление 5 или более поздней версии. Устройство подключено к сети.| Никаких действий не требуется.                                       |
-| Обновление 4 или более поздней версии. Устройство отключено от сети. |1. Измените правила брандмауэра, включив в них URL-адрес проверки подлинности.<br>2. [Загрузите обновление 5 с сервера каталога](storsimple-8000-install-update-5.md#download-updates-for-your-device).<br>3. [Примените обновление 5 с помощью метода исправления](storsimple-8000-install-update-5.md#install-update-5-as-a-hotfix).<br>4. [получите ключ регистрации AAD из службы](#aad-based-registration-keys).<br>5. [подключитесь к интерфейсу Windows PowerShell устройства StorSimple 8000](storsimple-8000-deployment-walkthrough-u2.md#use-putty-to-connect-to-the-device-serial-console). <br>6. Используйте командлет `Redo-DeviceRegistration`, чтобы зарегистрировать устройство с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
+| Обновление 4 или более поздней версии. Устройство отключено от сети. |1. Измените правила брандмауэра, включив в них URL-адрес проверки подлинности.<br>2. [Загрузите обновление 5 с сервера каталога](storsimple-8000-install-update-5.md#download-updates-for-your-device).<br>3. [Примените обновление 5 с помощью метода исправления](storsimple-8000-install-update-5.md#install-update-5-as-a-hotfix).<br>4. [получите ключ регистрации AAD из службы](#aad-based-registration-keys).<br>5. [подключитесь к интерфейсу Windows PowerShell устройства StorSimple 8000](storsimple-8000-deployment-walkthrough-u2.md#use-putty-to-connect-to-the-device-serial-console). <br>6. Используйте `Redo-DeviceRegistration` командлет для регистрации устройства с помощью Windows PowerShell. Укажите ключ, полученный на предыдущем шаге.|
 | Обновление 4 или более ранней версии. Устройство подключено к сети. |Измените правила брандмауэра, чтобы включить в них URL-адрес аутентификации.<br> Установите обновление 5 с помощью портала Azure.              |
 | Сброс к исходной версии перед установкой обновления 5.      |Пока на устройстве используется старое программное обеспечение, на портале отображается регистрационный ключ на основе AAD. Если устройство использует обновление 4 или более раннее, выполните действия, описанные в предыдущем сценарии.              |
 
@@ -75,7 +75,7 @@ ms.locfileid: "76276947"
 
 #### <a name="to-generate-the-aad-service-registration-key"></a>Создание регистрационного ключа службы AAD
 
-1. В **Device Manager StorSimple**перейдите в раздел **Управление &gt;** **ключи**. Вы также можете найти _ключи_ с помощью панели поиска.
+1. В **диспетчере устройств StorSimple** выберите **Управление &gt;** **Ключи**. Вы также можете найти _ключи_ с помощью панели поиска.
     
 2. Щелкните **Создать ключ**.
 
@@ -88,7 +88,7 @@ ms.locfileid: "76276947"
     > [!NOTE] 
     > Если вы создаете облачное устройство StorSimple в службе, зарегистрированной на устройстве StorSimple серии 8000, во время этого процесса не создавайте регистрационный ключ. Дождитесь завершения создания устройства, а затем создайте регистрационный ключ.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)](storsimple-8000-deployment-walkthrough-u2.md)
 

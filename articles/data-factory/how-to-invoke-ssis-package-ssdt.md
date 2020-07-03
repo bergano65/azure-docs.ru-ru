@@ -12,20 +12,23 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 07/31/2019
-ms.openlocfilehash: 5f21623af9b89bbb020063dfb72f7b60e65a6ebe
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 11e76fea87c60ae2b56cc15d5827be6e1b2b5a01
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927709"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81399426"
 ---
 # <a name="execute-ssis-packages-in-azure-from-ssdt"></a>Выполнение пакетов служб SSIS в Azure из SSDT
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
+
 В этой статье описывается функция проектов SQL Server Integration Services (SSIS) с поддержкой Azure в SQL Server Data Tools (SSDT), которая позволяет запускать пакеты на Azure-SSIS Integration Runtime (IR) в фабрике данных Azure (ADF).  Эту функцию можно использовать для тестирования существующих пакетов служб SSIS, прежде чем претянуть & Shift/перенести их в Azure или разрабатывать новые пакеты служб SSIS для работы в Azure.
 
 С помощью этой функции можно создать новый Azure-SSIS IR или присоединить существующий объект к проектам служб SSIS, а затем выполнить на нем пакеты.  Мы поддерживаем запуск пакетов для развертывания в каталоге служб SSIS (SSISDB) в модели развертывания проекта, а также для развертывания в файловых системах, файловых ресурсах или файлах Azure в модели развертывания пакетов. 
 
-## <a name="prerequisites"></a>Технические условия
-Чтобы использовать эту функцию, скачайте и установите последнюю версию SSDT с расширением проектов [SSIS](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer) для Visual Studio отсюда или как автономный [установщик отсюда.](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) 
+## <a name="prerequisites"></a>Предварительные условия
+Чтобы использовать эту функцию, скачайте и установите последнюю версию SSDT с расширением проектов SSIS для Visual Studio отсюда или как автономный [установщик отсюда.](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) [here](https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)
 
 ## <a name="azure-enable-ssis-projects"></a>Включение проектов служб SSIS в Azure
 В SSDT можно создать новые проекты служб SSIS с поддержкой Azure с помощью шаблона **Integration Services проекта (Azure с возможностью использования)** .
@@ -80,15 +83,15 @@ ms.locfileid: "74927709"
 > Для выполнения пакетов в Azure требуется запущенная Azure-SSIS IR, поэтому если Azure-SSIS IR остановлена, откроется диалоговое окно для запуска.  За исключением любых пользовательских настроек, этот процесс должен выполняться в течение 5 минут, но для Azure-SSIS IR присоединения к виртуальной сети может потребоваться около 20-30 минут.  После выполнения пакетов в Azure можно запретить Azure-SSIS IR для управления затратами на выполнение, щелкнув правой кнопкой мыши узел на обозреватель решений панели в SSDT, чтобы открыть меню, а затем выбрать пункт меню **старт\стоп\манаже** , чтобы сделать это на портале или приложении ADF.
 
 ### <a name="checking-package-execution-logs"></a>Проверка журналов выполнения пакетов
-При запуске пакета выполняется форматирование и отображение журнала в окне хода выполнения SSDT.  Для долго выполняющегося пакета мы периодически будем обновлять свой журнал с учетом минут.  Вы можете остановить выполнение пакета, нажав кнопку **остановить** на панели инструментов SSDT, которая немедленно отменит ее.  Кроме того, можно временно найти необработанные данные журнала в UNC-пути: `\\<YourConnectedAzureStorage>.file.core.windows.net\ssdtexecution\<YourProjectName-FirstConnectTime>\<YourPackageName-tmp-ExecutionTime>\logs`, но мы будем очищать его через один день.
+При запуске пакета выполняется форматирование и отображение журнала в окне хода выполнения SSDT.  Для долго выполняющегося пакета мы периодически будем обновлять свой журнал с учетом минут.  Вы можете остановить выполнение пакета, нажав кнопку **остановить** на панели инструментов SSDT, которая немедленно отменит ее.  Кроме того, можно временно найти необработанные данные журнала в пути UNC: `\\<YourConnectedAzureStorage>.file.core.windows.net\ssdtexecution\<YourProjectName-FirstConnectTime>\<YourPackageName-tmp-ExecutionTime>\logs`, но мы будем очищать его через один день.
 
 ### <a name="switching-package-protection-level"></a>Переключение уровня защиты пакета
-Исполнение пакетов служб SSIS в Azure не поддерживает уровни защиты **EncryptSensitiveWithUserKey**/**EncryptAllWithUserKey** .  Следовательно, если вы настроили пакеты с их помощью, мы временно переключим их в **EncryptSensitiveWithPassword**/**EncryptAllWithPassword**соответственно, используя случайные пароли при передаче пакетов в службу файлов Azure для выполнения на Azure-SSIS IR.
+Исполнение пакетов служб SSIS в Azure не поддерживает уровни защиты **EncryptSensitiveWithUserKey**/**EncryptAllWithUserKey** .  Следовательно, если вы настроили пакеты с их помощью, мы временно переключим их в **EncryptSensitiveWithPassword**/**EncryptAllWithPassword**, используя случайные пароли при передаче пакетов в службу файлов Azure для выполнения на Azure-SSIS IR.
 
 > [!NOTE]
-> Если пакеты содержат задачи "выполнение пакета", которые ссылаются на другие пакеты, настроенные с **EncryptSensitiveWithUserKey**/**EncryptAllWithUserKey** , необходимо вручную перенастроить эти пакеты, чтобы использовать **EncryptSensitiveWithPassword**/**EncryptAllWithPassword**, соответственно, перед выполнением пакетов.
+> Если пакеты содержат задачи «Выполнение пакета», которые ссылаются на другие пакеты, настроенные с помощью уровней защиты **EncryptSensitiveWithUserKey**/**EncryptAllWithUserKey** , необходимо вручную перенастроить эти пакеты, чтобы использовать **EncryptSensitiveWithPassword**/**EncryptAllWithPassword**, соответственно, перед выполнением пакетов.
 
-Если для пакетов уже настроены уровни защиты **EncryptSensitiveWithPassword**/**EncryptAllWithPassword** , мы не изменим их, но при передаче пакетов в службу файлов Azure для выполнения на Azure-SSIS IR будут использоваться случайные пароли.
+Если в пакетах уже настроены уровни защиты **EncryptSensitiveWithPassword**/**EncryptAllWithPassword** , мы будем не изменять их, но при передаче пакетов в службу файлов Azure для выполнения на Azure-SSIS IR будут продолжать использовать созданные случайным образом пароли.
 
 ### <a name="using-package-configuration-file"></a>Использование файла конфигурации пакета
 При использовании файлов конфигурации пакетов в модели развертывания пакетов для изменения значений переменных во время выполнения мы автоматически загружаем эти файлы в файлы Azure для выполнения на Azure-SSIS IR.
@@ -96,7 +99,7 @@ ms.locfileid: "74927709"
 ### <a name="using-execute-package-task"></a>Использование задачи «Выполнение пакета»
 Если пакеты содержат задачи «Выполнение пакета», которые ссылаются на другие пакеты, хранящиеся в локальных файловых системах, необходимо выполнить следующие дополнительные настройки.
 
-1. Отправьте другие пакеты в службу файлов Azure в той же учетной записи хранения Azure, которая подключена к проектам, и получите новый UNC-путь, например `\\test.file.core.windows.net\ssdtexecution\Package1.dtsx`
+1. Отправьте другие пакеты в службу файлов Azure в той же учетной записи хранения Azure, которая подключена к проектам, и получите новый UNC-путь, например`\\test.file.core.windows.net\ssdtexecution\Package1.dtsx`
 
 2. Замените пути к файлам этих пакетов в диспетчере подключения файлов для задач «Выполнение пакета» на новый UNC-путь.
    - Если компьютер, на котором работает SSDT, не может получить доступ к новому UNC-пути, можно изменить путь к файлу на панели свойств диспетчера подключения файлов.
@@ -104,5 +107,5 @@ ms.locfileid: "74927709"
 
 Если пакеты содержат задачи «Выполнение пакета», которые ссылаются на другие пакеты в том же проекте, дополнительная настройка не требуется.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Когда вы удовлетворены выполнением пакетов в Azure из SSDT, вы можете развернуть и запустить их как выполнение действий пакета служб SSIS в конвейерах ADF. см. раздел [Запуск пакетов служб SSIS как выполнение действий пакета SSIS в конвейерах ADF](https://docs.microsoft.com/azure/data-factory/how-to-invoke-ssis-package-ssis-activity).

@@ -1,20 +1,20 @@
 ---
 title: Создание схемы с помощью Azure Maps | Карты Microsoft Azure
 description: Из этой статьи вы узнаете, как визуализировать карту на веб-странице с помощью веб-пакета SDK Microsoft Azure Maps.
-author: jingjing-z
-ms.author: jinzh
+author: Philmea
+ms.author: philmea
 ms.date: 07/26/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 578abae5b206b31674b00b9d27ef34174b93759f
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 97eb1ebb61e5ff78ed918fded8107f5775b533c2
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988589"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83124029"
 ---
 # <a name="create-a-map"></a>Создание карты
 
@@ -22,12 +22,12 @@ ms.locfileid: "76988589"
 
 ## <a name="loading-a-map"></a>Загрузка схемы
 
-Чтобы загрузить карту, создайте новый экземпляр [класса Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). При инициализации карты передайте идентификатор элемента DIV для отрисовки карты и передайте набор параметров для использования при загрузке карты. Если сведения о проверке подлинности по умолчанию не указаны в пространстве имен `atlas`, эти сведения необходимо указать в параметрах Map при загрузке схемы. Эта схема асинхронно загружает несколько ресурсов для повышения производительности. Таким образом, после создания экземпляра Map присоедините к карте событие `ready` или `load`, а затем добавьте дополнительный код, взаимодействующий с картой с обработчиком событий. Событие `ready` срабатывает, как только на карте загружено достаточно ресурсов для взаимодействия с программным способом. Событие `load` срабатывает после полного завершения загрузки представления первоначальной таблицы. 
+Чтобы загрузить карту, создайте новый экземпляр [класса Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map). При инициализации карты передайте идентификатор элемента DIV для отрисовки карты и передайте набор параметров для использования при загрузке карты. Если в пространстве имен не указаны сведения для проверки подлинности по умолчанию `atlas` , эти сведения необходимо указать в параметрах Map при загрузке схемы. Эта схема асинхронно загружает несколько ресурсов для повышения производительности. Таким образом, после создания экземпляра Map присоедините `ready` `load` событие или к карте, а затем добавьте дополнительный код, взаимодействующий с картой с обработчиком событий. `ready`Событие срабатывает, как только на карте загружено достаточно ресурсов для взаимодействия с программным способом. `load`Событие срабатывает после полного завершения загрузки представления первоначальной таблицы. 
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Базовая Загрузка карт" src="//codepen.io/azuremaps/embed/rXdBXx/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел " <a href='https://codepen.io/azuremaps/pen/rXdBXx/'>Базовая схема</a> перьевого отображения", Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Базовая Загрузка карт" src="//codepen.io/azuremaps/embed/rXdBXx/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. раздел " <a href='https://codepen.io/azuremaps/pen/rXdBXx/'>Базовая схема</a> пера: Загрузка" с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 > [!TIP]
@@ -35,13 +35,25 @@ ms.locfileid: "76988589"
 
 ## <a name="show-a-single-copy-of-the-world"></a>Отображение одной копии мира
 
-Когда на широком экране отображается изображение, несколько копий мира отображаются по горизонтали. Этот вариант прекрасно подходит для некоторых сценариев, но для других приложений желательно просмотреть единую копию мира. Это поведение реализуется путем установки параметра Maps `renderWorldCopies` в значение `false`.
+Когда на широком экране отображается изображение, несколько копий мира отображаются по горизонтали. Этот вариант прекрасно подходит для некоторых сценариев, но для других приложений желательно просмотреть единую копию мира. Это поведение реализуется путем установки параметра Maps `renderWorldCopies` в значение `false` .
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Рендерворлдкопиес = false" src="//codepen.io/azuremaps/embed/eqMYpZ/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Ознакомьтесь с пером <a href='https://codepen.io/azuremaps/pen/eqMYpZ/'>рендерворлдкопиес = false</a> , Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Рендерворлдкопиес = false" src="//codepen.io/azuremaps/embed/eqMYpZ/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
+См. Рендерворлдкопиес (перо) <a href='https://codepen.io/azuremaps/pen/eqMYpZ/'>= false</a> by Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+
+## <a name="map-options"></a>Параметры карт
+
+При создании схемы существует несколько различных типов параметров, которые могут быть переданы для настройки функций Map, как показано ниже.
+
+- [Камераоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.cameraoptions) и [камерабаундоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.cameraboundsoptions) используются для указания области, отображаемой картой.
+- [Сервицеоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.serviceoptions) используются для указания того, как эта схема должна взаимодействовать со службами, которые работают с картой.
+- [Стилеоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.styleoptions) используются для указания того, должен ли сопоставленный стиль и отрисовываться.
+- [Усеринтерактионоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.userinteractionoptions) используются для указания способа, которым должна достигаться схема при взаимодействии пользователя с картой. 
+
+Эти параметры можно также обновить после загрузки схемы с помощью `setCamera` функций,, `setServiceOptions` `setStyle` и `setUserInteraction` . 
 
 ## <a name="controlling-the-map-camera"></a>Управление камерой карт
 
@@ -51,27 +63,65 @@ ms.locfileid: "76988589"
 
 ### <a name="set-the-camera"></a>Настройка камеры
 
-В следующем коде создается [объект Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) , а также устанавливаются параметры центрирования и масштабирования. Свойства карт, такие как выравнивание по центру и масштабу, являются частью [камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions).
+Камера на карте управляет тем, что отображается в области просмотра холста Map. Параметры камеры можно передать в параметры карты при инициализации или передаче в `setCamera` функцию Maps.
+
+```javascript
+//Set the camera options when creating the map.
+var map = new atlas.Map('map', {
+    center: [-122.33, 47.6],
+    zoom: 12
+
+    //Additional map options.
+};
+
+//Update the map camera at anytime using setCamera function.
+map.setCamera({
+    center: [-110, 45],
+    zoom: 5 
+});
+```
+
+В следующем коде создается [объект Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map) , а также устанавливаются параметры центрирования и масштабирования. Свойства карт, такие как выравнивание по центру и масштабу, являются частью [камераоптионс](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.cameraoptions).
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Создание карты с помощью CameraOptions' src='//codepen.io/azuremaps/embed/qxKBMN/?height=543&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите, <a href='https://codepen.io/azuremaps/pen/qxKBMN/'>как перо создает карту с помощью `CameraOptions` </a>Azure Location Based Services (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Создание карты с помощью CameraOptions' src='//codepen.io/azuremaps/embed/qxKBMN/?height=543&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/qxKBMN/'>Создать карту через `CameraOptions` </a>от Azure Location Based Services (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <a id="setCameraBoundsOptions"></a>
 
 ### <a name="set-the-camera-bounds"></a>Настройка границ камеры
 
-В следующем коде [объект Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) создается с помощью `new atlas.Map()`. Свойства карты, например `CameraBoundsOptions`, можно определить через функцию [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) класса Map. Свойства границ и заполнения задаются с помощью `setCamera`.
+Ограничивающий прямоугольник можно использовать для обновления камеры на карте. Если ограничивающий прямоугольник был вычислен из данных Point, часто бывает полезно указать значение заполнения пикселов в параметрах камеры для учета размера значка. Это позволит гарантировать, что точки не выходят за границы окна просмотра карт.
+
+```javascript
+map.setCamera({
+    bounds: [-122.4, 47.6, -122.3, 47.7],
+    padding: 10
+});
+```
+
+В следующем коде [объект Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map) создается с помощью `new atlas.Map()` . Свойства карты, например `CameraBoundsOptions`, можно определить через функцию [setCamera](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map) класса Map. Свойства границ и заполнения задаются с помощью `setCamera`.
 
 <br/>
 
-<iframe height='500' scrolling='no' title='Создание карты с помощью CameraBoundsOptions' src='//codepen.io/azuremaps/embed/ZrRbPg/?height=543&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите, <a href='https://codepen.io/azuremaps/pen/ZrRbPg/'>как перо создает карту с помощью `CameraBoundsOptions` </a>Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+<iframe height='500' scrolling='no' title='Создание карты с помощью CameraBoundsOptions' src='//codepen.io/azuremaps/embed/ZrRbPg/?height=543&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Посмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/ZrRbPg/'>Создание карты через `CameraBoundsOptions` </a>от Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ### <a name="animate-map-view"></a>Просмотр анимации карты
 
-В следующем коде первый блок кода создает карту и задает стили карт ввода и масштабирования. Во втором блоке кода для кнопки анимировать создается обработчик событий нажатия. При нажатии этой кнопки функция `setCamera` вызывается с некоторыми случайными значениями для [камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions) и [аниматионоптионс](/javascript/api/azure-maps-control/atlas.animationoptions).
+При настройке параметров камеры на карте можно также задать [Параметры анимации](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.animationoptions) . Эти параметры определяют тип анимации и длительность, которую необходимо предпринять для перемещения камеры.
+
+```javascript
+map.setCamera({
+    center: [-122.33, 47.6],
+    zoom: 12,
+    duration: 1000,
+    type: 'fly'  
+});
+```
+
+В следующем коде первый блок кода создает карту и задает стили карт ввода и масштабирования. Во втором блоке кода для кнопки анимировать создается обработчик событий нажатия. При нажатии этой кнопки `setCamera` функция вызывается с некоторыми случайными значениями для [Камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions) и [аниматионоптионс](/javascript/api/azure-maps-control/atlas.animationoptions).
 
 <br/>
 
@@ -89,7 +139,7 @@ ms.locfileid: "76988589"
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
+> [Схема](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map)
 
 > [!div class="nextstepaction"]
 > [камераоптионс](/javascript/api/azure-maps-control/atlas.cameraoptions)
@@ -100,7 +150,7 @@ ms.locfileid: "76988589"
 См. примеры кодов для добавления функций в приложение:
 
 > [!div class="nextstepaction"]
-> [Изменение стиля схемы](choose-map-style.md)
+> [Изменение стиля карты](choose-map-style.md)
 
 > [!div class="nextstepaction"]
 > [Добавление элементов управления на карту](map-add-controls.md)

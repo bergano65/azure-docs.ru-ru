@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 10/22/2019
 ms.author: diberry
-ms.openlocfilehash: a91246e4a4b3dc98bf11d2b014478fd40252f14b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.openlocfilehash: dee07859da97f76d9a2db3ccbb71ae74d8ff4846
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73508026"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78270424"
 ---
 # <a name="sentiment-analysis"></a>Анализ мнений
 Если настроен анализ тональности, он входит в ответ JSON LUIS. Дополнительные сведения об анализе тональности см. в документации по [анализу текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/).
@@ -26,7 +26,7 @@ ms.locfileid: "73508026"
 
 Данные тональности представляют собой оценку между 1 и 0, означающую положительную (ближе к 1) или отрицательную (ближе к 0) тональность данных.
 
-#### <a name="english-languagetabenglish"></a>[Английский язык](#tab/english)
+#### <a name="english-language"></a>[Английский язык](#tab/english)
 
 При использовании языка и региональных параметров `en-us` выводится следующий ответ:
 
@@ -37,7 +37,7 @@ ms.locfileid: "73508026"
 }
 ```
 
-#### <a name="other-languagestabother-languages"></a>[Другие языки](#tab/other-languages)
+#### <a name="other-languages"></a>[Другие языки](#tab/other-languages)
 
 Для всех других языков и региональных параметров выводится ответ:
 
@@ -46,9 +46,9 @@ ms.locfileid: "73508026"
   "score": 0.9163064
 }
 ```
-* * * 
+* * *
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-Дополнительные сведения о [конечной точке прогнозирования v3](luis-migration-api-v3.md).
+Дополнительные сведения о [конечной точке прогнозирования V3](luis-migration-api-v3.md).
 

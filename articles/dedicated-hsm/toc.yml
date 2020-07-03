@@ -1,8 +1,8 @@
-- name: Документация по выделенному устройству HSM
+- name: Документация по Выделенному устройству HSM
   href: index.yml
 - name: Обзор
   items:
-    - name: Общие сведения о выделенном устройстве HSM
+    - name: Общие сведения о Выделенном устройстве HSM
       href: overview.md
 - name: Учебники
   items:
@@ -12,9 +12,9 @@
       href: tutorial-deploy-hsm-powershell.md
 - name: Основные понятия
   items:
-    - name: высокую доступность;
+    - name: Высокий уровень доступности
       href: high-availability.md
-    - name: Мониторинг
+    - name: Наблюдение
       href: monitoring.md
     - name: Сеть
       href: Networking.md
@@ -26,6 +26,8 @@
   items:
     - name: Выбор архитектуры развертывания
       href: deployment-architecture.md
+    - name: Устранение неполадок
+      href: troubleshoot.md
 - name: Ресурсы
   items:
     - name: Часто задаваемые вопросы

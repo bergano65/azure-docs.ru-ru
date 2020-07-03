@@ -1,0 +1,86 @@
+### YamlMime:Landing
+title: Документация по голосовым помощникам
+summary: Речевые помощники, использующие службу распознавания речи, позволяют разработчикам создавать естественные, человеческие в своем опыте интерфейсы общения для своих приложений и работы.
+metadata:
+  title: Документация по голосовым помощникам. руководства и Справочник по API в Azure Cognitive Services | Документация Майкрософт
+  titleSuffix: Azure Cognitive Services
+  services: cognitive-services
+  author: trevorbye
+  manager: nitinme
+  ms.service: speech-service
+  ms.topic: landing-page
+  ms.date: 03/10/2020
+  ms.author: trbye
+  ms.openlocfilehash: c4b1c6348e834f83e20c612678075405a14f1a9d
+  ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+  ms.translationtype: MT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 04/29/2020
+  ms.locfileid: "82106208"
+landingContent:
+- title: О помощниках
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Что такое голосовой помощник?
+      url: voice-assistants.md
+    - text: Что такое приложение с пользовательскими командами?
+      url: custom-commands.md
+    - text: Что такое Direct Line Speech?
+      url: direct-line-speech.md
+  - linkListType: reference
+    links:
+    - text: 'Голосовые помощники: часто задаваемые вопросы'
+      url: faq-voice-assistants.md
+    - text: Цены на речевые помощники
+      url: https://azure.microsoft.com/pricing/details/cognitive-services/speech-services
+  - linkListType: get-started
+    links:
+    - text: Создание и развертывание примера помощника для голоса в подписке Azure (GitHub)
+      url: https://github.com/Azure-Samples/Cognitive-Services-Voice-Assistant
+- title: Разработка с помощью пользовательских команд
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Создание приложения пользовательских команд
+      url: quickstart-custom-speech-commands-create-new.md
+    - text: Создание пользовательской команды с параметрами
+      url: quickstart-custom-speech-commands-create-parameters.md
+    - text: Использование пользовательских команд с Пользовательским голосом
+      url: quickstart-custom-speech-commands-select-custom-voice.md
+    - text: Использование пользовательских команд с пакетом SDK службы "Речь"
+      url: quickstart-custom-speech-commands-speech-sdk.md
+  - linkListType: how-to-guide
+    links:
+    - text: Выполнение команд из клиента
+      url: how-to-custom-speech-commands-fulfill-sdk.md
+    - text: Добавление проверки параметров
+      url: how-to-custom-speech-commands-validations.md
+    - text: Добавление подтверждения
+      url: how-to-custom-speech-commands-confirmations.md
+    - text: Добавление одноэтапного исправления
+      url: how-to-custom-speech-commands-one-step-correction.md
+- title: Разработка с помощью прямого перевода строки
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: C# (UWP)
+      url: quickstart-voice-assistant-csharp-uwp.md
+    - text: Java (Windows, macOS, Linux)
+      url: quickstart-voice-assistant-java-jre.md
+    - text: Java (Android)
+      url: quickstart-voice-assistant-java-android.md
+  - linkListType: tutorial
+    links:
+    - text: Включение голосовых команд в боте с помощью пакета SDK службы "Речь"
+      url: tutorial-voice-enable-your-bot-speech-sdk.md
+- title: Разработка с помощью пользовательского ключевого слова
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Создание пользовательского ключевого слова
+      url: speech-devices-sdk-create-kws.md
+  - linkListType: reference
+    links:
+    - text: Рекомендации по именованию пользовательских ключевых слов
+      url: speech-devices-sdk-kws-guidelines.md

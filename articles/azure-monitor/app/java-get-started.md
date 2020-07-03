@@ -1,34 +1,32 @@
 ---
 title: Краткое руководство. анализ веб-приложений Java с помощью Azure Application Insights
 description: 'Сведения о мониторинге производительности веб-приложений Java с помощью Application Insights. '
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: abc16f8e1fdc6b81634b926eeb287e5d03efdc40
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: e56ba304d197984110de5127a0f163ac0accf1aa
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76963688"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81537514"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
 В этом кратком руководстве вы используете Application Insights для автоматического инструментирования запросов, мониторинга зависимостей и сбора счетчиков производительности, диагностики проблем производительности и исключений, а также для написания кода, который позволяет отслеживать действия пользователей с приложением.
 
-Application Insights — это расширяемая служба аналитики для веб-разработчиков, которая помогает понять производительность и использование приложения в реальном времени. Надстройка Application Insights поддерживает приложения Java, работающие под управлением Linux, Unix или Windows.
+Application Insights — это расширяемая служба аналитики для разработчиков веб-ресурсов, позволяющая оценивать производительность и использование работающего приложения. Надстройка Application Insights поддерживает приложения Java, работающие под управлением Linux, Unix или Windows.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+* Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) бесплатно.
 * Работающее приложение Java.
 
 ## <a name="get-an-application-insights-instrumentation-key"></a>Получение ключа инструментирования Application Insights
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. В портал Azure создайте ресурс Application Insights. Задайте тип приложения: веб-приложение Java.
+2. На портале Azureсоздайте ресурс Application Insights. Задайте тип приложения: веб-приложение Java.
 
 3. Найдите ключ инструментирования нового ресурса. Далее будет необходимо вставить его в проект кода.
 
@@ -38,7 +36,7 @@ Application Insights — это расширяемая служба аналит
 
 *Выберите тип проекта.*
 
-# <a name="maventabmaven"></a>[Maven](#tab/maven)
+# <a name="maven"></a>[Maven](#tab/maven)
 
 Если проект уже настроен на использование Maven для сборки, объедините приведенный ниже код в файл *POM. XML* .
 
@@ -56,7 +54,7 @@ Application Insights — это расширяемая служба аналит
     </dependencies>
 ```
 
-# <a name="gradletabgradle"></a>[Gradle](#tab/gradle)
+# <a name="gradle"></a>[Gradle](#tab/gradle)
 
 Если проект уже настроен на использование Gradle для сборки, объедините приведенный ниже код в файл *Build. Gradle* .
 
@@ -70,17 +68,17 @@ Application Insights — это расширяемая служба аналит
     }
 ```
 
-# <a name="other-typestabother"></a>[Другие типы](#tab/other)
+# <a name="other-types"></a>[Другие типы](#tab/other)
 
 Скачайте [последнюю версию](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) и скопируйте необходимые файлы в проект, заменив все предыдущие версии.
 
 ---
 
 ### <a name="questions"></a>Вопросы
-* *Какова связь между компонентами `-web-auto`, `-web` и `-core`?*
-  * `applicationinsights-web-auto` предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время ответа, автоматически регистрируя Application Insights фильтр сервлета во время выполнения.
-  * `applicationinsights-web` также предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время ответа, но требуют ручной регистрации Application Insights фильтра сервлета в приложении.
-  * `applicationinsights-core` предоставляет только простой API, например, если приложение не основано на сервлета.
+* *Какова связь между `-web-auto`компонентами `-web` и? `-core`*
+  * `applicationinsights-web-auto`предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время отклика путем автоматической регистрации фильтра Application Insights сервлета в среде выполнения.
+  * `applicationinsights-web`также предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время ответа, но требуют ручной регистрации фильтра Application Insights сервлета в приложении.
+  * `applicationinsights-core`предоставляет только простой API, например, если приложение не основано на сервлета.
   
 * *Как обновить пакет SDK до последней версии?*
   * Если вы используете Gradle или Maven...
@@ -120,7 +118,7 @@ Application Insights — это расширяемая служба аналит
 </ApplicationInsights>
 ```
 
-При необходимости файл конфигурации может находиться в любом расположении, доступном для приложения.  Системное свойство `-Dapplicationinsights.configurationDirectory` указывает каталог, содержащий *ApplicationInsights. XML*. Например, файл конфигурации, расположенный в каталоге `E:\myconfigs\appinsights\ApplicationInsights.xml`, будет настроен со свойством `-Dapplicationinsights.configurationDirectory="E:\myconfigs\appinsights"`.
+При необходимости файл конфигурации может находиться в любом расположении, доступном для приложения.  Свойство `-Dapplicationinsights.configurationDirectory` System указывает каталог, содержащий *ApplicationInsights. XML*. Например, файл конфигурации, расположенный в каталоге `E:\myconfigs\appinsights\ApplicationInsights.xml`, будет настроен со свойством `-Dapplicationinsights.configurationDirectory="E:\myconfigs\appinsights"`.
 
 * Ключ инструментирования пересылается вместе с каждым элементом телеметрии; служба Application Insights отобразит его в ресурсе.
 * Компонент HTTP-запросов является необязательным. Он автоматически передает на портал телеметрию о запросах и значения времени ответа.
@@ -178,7 +176,7 @@ Application Insights — это расширяемая служба аналит
 
 ![Пример аналитики](./media/java-get-started/0025.png)
 
-## <a name="7-install-your-app-on-the-server"></a>7. Установка приложения на сервере
+## <a name="install-your-app-on-the-server"></a>Установка приложения на сервере
 Теперь опубликуйте приложение на сервере, откройте доступ для пользователей и изучайте телеметрию на портале.
 
 * Убедитесь, что брандмауэр позволяет приложению отправлять телеметрию на следующие порты:
@@ -225,7 +223,7 @@ Application Insights — это расширяемая служба аналит
 
 Пакет средств разработки для Java Application Insights теперь поддерживает [распределенную трассировку W3C](https://w3c.github.io/trace-context/).
 
-Конфигурация входящих параметров пакета средств разработки описана далее в статье о [корреляции](correlation.md#telemetry-correlation-in-the-java-sdk).
+Конфигурация входящих параметров пакета средств разработки описана далее в статье о [корреляции](correlation.md).
 
 Конфигурация входящих параметров пакета средств разработки задана в файле [AI-Agent.xml](java-agent.md).
 
@@ -260,7 +258,7 @@ Application Insights — это расширяемая служба аналит
 * `displayName` — имя, отображаемое в портале Application Insights.
 * `objectName` — имя объекта JMX.
 * `attribute` — атрибут имени объекта JMX для выборки
-* `type` (необязательно) — тип атрибута объекта JMX:
+* `type`(необязательно) — тип атрибута объекта JMX:
   * по умолчанию: простой тип, такой как int или long;
   * `composite`— данные счетчика производительности имеют формат "Атрибут.Данные";
   * `tabular`— данные счетчика производительности имеют формат строки таблицы.
@@ -289,28 +287,28 @@ Application Insights — это расширяемая служба аналит
 Итак, вы отправляете телеметрию с веб-сервера. Теперь для получения полного представления о приложении можно настроить дополнительные функции мониторинга:
 
 * [Добавьте телеметрии на веб-страницы][usage] для мониторинга просмотров страниц и метрик пользователя.
-* [Настройте веб-тесты][availability] , которые помогут быть уверенными в том, что приложение остается работоспособным и правильно отвечает на запросы.
+* [Настройте веб-тесты][availability], которые помогут быть уверенными в том, что приложение остается работоспособным и правильно отвечает на запросы.
 
 ## <a name="send-your-own-telemetry"></a>Отправка собственных данных телеметрии
 После установки пакета SDK можно использовать интерфейс API для отправки собственных данных телеметрии.
 
-* [Следите за пользовательскими событиями и метриками][api] , чтобы узнать, какие пользователи выполняются с приложением.
-* [Поиск событий и журналов][diagnostic] для диагностики неполадок.
+* [Отслеживайте пользовательские события и метрики][api], чтобы знать, какие операции выполняют пользователи в приложении.
+* [Выполняйте поиск событий и журналов][diagnostic] для диагностики неполадок.
 
-## <a name="availability-web-tests"></a>Веб-тесты на доступность
+## <a name="availability-web-tests"></a>Доступность веб-тестов
 Application Insights может тестировать ваш веб-сайт через равные промежутки времени для проверки, работает ли он и правильно ли отвечает на запросы.
 
 [Дополнительные сведения о настройке веб-тестов доступности см. здесь.][availability]
 
-## <a name="questions-problems"></a>Есть вопросы? Проблемы?
+## <a name="questions-problems"></a>Вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Отслеживайте вызовы зависимостей.](java-agent.md)
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.
 * Пишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md) для отслеживания использования в браузере или на сервере.
-* Используйте [аналитику](../../azure-monitor/app/analytics.md), чтобы выполнять эффективные запросы телеметрии из приложения.
+* Использование [аналитики](../../azure-monitor/app/analytics.md) для мощных запросов телеметрии из приложения
 * Дополнительные сведения см. в разделе [Azure for Java developers](/java/azure) (Azure для разработчиков Java).
 
 <!--Link references-->
@@ -320,5 +318,5 @@ Application Insights может тестировать ваш веб-сайт ч
 [availability]: ../../azure-monitor/app/monitor-web-app-availability.md
 [diagnostic]: ../../azure-monitor/app/diagnostic-search.md
 [javalogs]: java-trace-logs.md
-[metrics]: ../../azure-monitor/app/metrics-explorer.md
+[metrics]: ../../azure-monitor/platform/metrics-charts.md
 [usage]: javascript.md

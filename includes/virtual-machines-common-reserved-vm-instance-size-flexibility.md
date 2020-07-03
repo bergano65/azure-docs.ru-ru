@@ -3,14 +3,16 @@ author: yashar
 ms.author: banders
 ms.service: virtual-machines-windows
 ms.topic: include
-ms.date: 11-20-2018
-ms.openlocfilehash: 9a7de2b41c8016bdb7849cdef428d6f54a8ccf64
-ms.sourcegitcommit: ae8b23ab3488a2bbbf4c7ad49e285352f2d67a68
+ms.date: 02-18-2020
+ms.openlocfilehash: aebe8f05bd1a3607da6d1153c87490891fc6b299
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74005444"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77471467"
 ---
+При покупке зарезервированного экземпляра виртуальной машины можно выбрать оптимизацию для гибкости размера экземпляра или приоритета емкости. Дополнительные сведения о настройке и изменении параметров оптимизации для зарезервированных экземпляров виртуальных машин см. [в разделе Изменение параметра оптимизации для зарезервированных экземпляров виртуальных машин](../articles/cost-management-billing/reservations/manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances).
+
 При использовании зарезервированного экземпляра виртуальной машины, оптимизированного для гибкости размера экземпляра, приобретаемое резервирование можно применить к размерам виртуальных машин в одной группе гибкости размера экземпляра. Например, если вы приобретаете резервирование для размера виртуальной машины, указанного в серии DSv2, например Standard_DS5_v2, скидка на резервирование может применяться к четырем размерам, перечисленным в этой группе гибкости размера экземпляра:
 
 - Standard_DS1_v2

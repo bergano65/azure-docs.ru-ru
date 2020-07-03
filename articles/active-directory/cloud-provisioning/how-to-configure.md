@@ -7,27 +7,27 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/05/2019
+ms.date: 02/26/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 853950cf441007eac0170f32f28f2d9c16a71292
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: c086227d23901cb7904d8cc0a768e9f4b5ad43db
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75549437"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77620971"
 ---
-# <a name="azure-ad-connect-cloud-provisioning-new-agent-configuration"></a>Azure AD Connect подготовка новой конфигурации агента в облаке
+# <a name="create-a-new-configuration-for-azure-ad-connect-cloud-based-provisioning"></a>Создание новой конфигурации для Azure AD Connect подготовки на основе облака
 
 После установки агента необходимо войти в портал Azure и настроить Azure Active Directory (Azure AD) Connect Cloud (подготовка облака). Чтобы включить агент, выполните следующие действия.
 
 ## <a name="configure-provisioning"></a>Настройка подготовки
 Чтобы настроить подготовку, выполните следующие действия.
 
-1.  На портале Azure выберите **Azure Active Directory**.
+1.  В портал Azure выберите **Azure Active Directory**.
 1.  Выберите **Azure AD Connect**.
-1.  Выберите **Управление подготовкой (Предварительная версия)** .
+1.  Выберите **Управление подготовкой (Предварительная версия)**.
 
     ![Управление подготовкой (Предварительная версия)](media/how-to-configure/manage1.png)
 
@@ -41,9 +41,9 @@ ms.locfileid: "75549437"
 ## <a name="scope-provisioning-to-specific-users-and-groups"></a>Подготовка области для конкретных пользователей и групп
 Агент можно использовать для синхронизации конкретных пользователей и групп с помощью локальных групп Active Directory или подразделений. Нельзя настроить группы и подразделения в конфигурации. 
 
-1.  На портале Azure выберите **Azure Active Directory**.
+1.  В портал Azure выберите **Azure Active Directory**.
 1.  Выберите **Azure AD Connect**.
-1.  Выберите **Управление подготовкой (Предварительная версия)** .
+1.  Выберите **Управление подготовкой (Предварительная версия)**.
 1.  В разделе **Конфигурация**выберите свою конфигурацию.
 
     ![Раздел конфигурации](media/how-to-configure/scope1.png)
@@ -56,16 +56,17 @@ ms.locfileid: "75549437"
 
     ![Выбранный параметр групп безопасности](media/how-to-configure/scope3.png)
 
-1.  Можно также изменить область, включив в нее только определенные подразделения. Нажмите кнопку **Готово** и **сохранить**.
+1.  Можно также изменить область, включив в нее только определенные подразделения. Нажмите кнопку **Готово** и **сохранить**.  
+2.  После изменения области необходимо [перезапустить подготовку](#restart-provisioning) , чтобы начать немедленную синхронизацию изменений.
 
     ![Выбран параметр подразделений](media/how-to-configure/scope4.png)
 
 
 ## <a name="restart-provisioning"></a>Перезапустить подготовку 
 Если вы не хотите ждать следующего запланированного выполнения, активируйте запуск подготовки с помощью кнопки **перезапустить подготовку** . 
-1.  На портале Azure выберите **Azure Active Directory**.
+1.  В портал Azure выберите **Azure Active Directory**.
 1.  Выберите **Azure AD Connect**.
-1.  Выберите **Управление подготовкой (Предварительная версия)** .
+1.  Выберите **Управление подготовкой (Предварительная версия)**.
 1.  В разделе **Конфигурация**выберите свою конфигурацию.
 
     ![Выбор конфигурации для перезапуска подготовки](media/how-to-configure/scope1.png)
@@ -75,9 +76,9 @@ ms.locfileid: "75549437"
 ## <a name="remove-a-configuration"></a>Удалить конфигурацию
 Чтобы удалить конфигурацию, выполните следующие действия.
 
-1.  На портале Azure выберите **Azure Active Directory**.
+1.  В портал Azure выберите **Azure Active Directory**.
 1.  Выберите **Azure AD Connect**.
-1.  Выберите **Управление подготовкой (Предварительная версия)** .
+1.  Выберите **Управление подготовкой (Предварительная версия)**.
 1.  В разделе **Конфигурация**выберите свою конфигурацию.
 
     ![Выбор конфигурации для удаления конфигурации](media/how-to-configure/scope1.png)
@@ -93,4 +94,4 @@ ms.locfileid: "75549437"
 ## <a name="next-steps"></a>Дальнейшие действия 
 
 - [Что собой представляет подготовка?](what-is-provisioning.md)
-- [What is Azure AD Connect cloud provisioning?](what-is-cloud-provisioning.md) (Что такое подготовка облака Azure AD Connect?)
+- [Что такое облачная подготовка Azure AD Connect?](what-is-cloud-provisioning.md)

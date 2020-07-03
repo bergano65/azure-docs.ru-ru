@@ -4,14 +4,15 @@ description: В этой статье описываются функции мо
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
+ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: d2e9fcd6f6292c1da76e725e90deda4547b3682d
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: fb24100eaebc54b98adf2f09fa3e557e4d6fa0be
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74975522"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82580653"
 ---
 # <a name="monitor-and-tune-azure-database-for-postgresql---hyperscale-citus"></a>Мониторинг и Настройка базы данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -27,19 +28,19 @@ ms.locfileid: "74975522"
 
 Эти метрики доступны для узлов с горизонтальным масштабированием (Цитус):
 
-|Метрика|Отображаемое имя метрики|Единица|Описание|
+|Метрика|Отображаемое имя метрики|Единицы|Описание|
 |---|---|---|---|
-|active_connections|Активные подключения|Количество|Число активных подключений к серверу.|
+|active_connections|Активные подключения|Счетчик|Число активных подключений к серверу.|
 |cpu_percent|Нагрузка ЦП|Процент|Процент используемого ЦП.|
-|/|IOPS|Количество|Ознакомьтесь с [определением операций ввода-вывода](../virtual-machines/linux/premium-storage-performance.md#iops) и [пропускной способностью масштабирования](concepts-hyperscale-configuration-options.md)|
+|/|ОПЕРАЦИЙ ВВОДА-ВЫВОДА|Счетчик|Ознакомьтесь с [определением операций ввода-вывода](../virtual-machines/linux/premium-storage-performance.md#iops) и [пропускной способностью масштабирования](concepts-hyperscale-configuration-options.md)|
 |memory_percent|Процент памяти|Процент|Процент используемой памяти.|
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
 |network_bytes_egress|Сеть (исходящий трафик)|Байты|Исходящий сетевой трафик по активным подключениям.|
 |storage_percent|Storage percentage|Процент|Процент использованного объема хранилища сервера (от максимального объема).|
-|storage_used|Используемое хранилище|Байты|Используемый объем хранилища. Хранилище, используемое службой, может содержать файлы базы данных, журналы транзакций и журналы сервера.|
+|storage_used|Storage used|Байты|Используемый объем хранилища. Хранилище, используемое службой, может содержать файлы базы данных, журналы транзакций и журналы сервера.|
 
 Azure не предоставляет статистических метрик для кластера в целом, но метрики для нескольких узлов можно разместить на одном графе.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Рекомендации по созданию оповещений для метрики см. в статье [Настройка оповещений на основе метрик для базы данных Azure для PostgreSQL на портале Azure](howto-hyperscale-alert-on-metric.md).
+- См. раздел [Настройка оповещений](howto-hyperscale-alert-on-metric.md) для получения рекомендаций по созданию оповещения для метрики.

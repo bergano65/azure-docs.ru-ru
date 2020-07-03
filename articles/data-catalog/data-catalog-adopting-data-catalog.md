@@ -7,10 +7,10 @@ ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
 ms.openlocfilehash: 63d1213a2dded41df3f462722b354b03fe9f6e33
-ms.sourcegitcommit: be8e2e0a3eb2ad49ed5b996461d4bff7cba8a837
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72801881"
 ---
 # <a name="approach-and-process-for-adopting-azure-data-catalog"></a>Процедура внедрения каталога данных Azure | Документация Майкрософт
@@ -129,7 +129,7 @@ ms.locfileid: "72801881"
 
 После реализации пилотного проекта пришло время выполнить план внедрения каталога данных.
 
-### <a name="execute"></a>Выполнить
+### <a name="execute"></a>Execute
 
 На этом этапе вы выделили варианты использования каталога данных и определили первый проект. Кроме того, вы зарегистрировали основные источники данных компании Adventure Works и добавили информацию из существующей книги Excel с помощью инструмента, разработанного ИТ-отделом. Теперь пришло время поработать с пилотной группой, чтобы начать внедрение каталога данных.
 
@@ -165,4 +165,4 @@ ms.locfileid: "72801881"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Создание каталога данных Azure](data-catalog-get-started.md)
+[Создание Каталога данных Azure](data-catalog-get-started.md)

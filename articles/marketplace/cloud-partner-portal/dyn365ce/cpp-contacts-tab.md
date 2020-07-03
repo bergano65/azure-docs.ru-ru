@@ -1,19 +1,18 @@
 ---
 title: Вкладка "Контакты" для предложений по Dynamics 365 для служб взаимодействия с клиентами | Azure Marketplace
 description: Нерекомендуемая статья на CPP, связанная со статьей ПК; WAS "настройте контактную информацию для Dynamics 365 для предложения участия клиентов в AppSource Marketplace".
-services: Dynamics 365 for Customer Engagement, Azure, AppSource, Marketplace, Cloud Partner Portal,
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/30/2019
-ms.author: v-chjen
-ms.openlocfilehash: a7f52979678713f73f08ea36f626b7889d1cd88a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 8c7973d267f083180f2dd73c55fbf90fef25e9ce
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73818754"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80278473"
 ---
 # <a name="azure-application-contacts-tab"></a>Вкладка "Контакты" приложения Azure
 

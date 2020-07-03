@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Mimecast Personal Portal | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Mimecast Personal Portal | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Mimecast Personal Portal.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 259635613855e4d7687cf569c94bbd3dd04027fe
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160627"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mimecast-personal-portal"></a>Руководство. Интеграция Azure Active Directory с Mimecast Personal Portal
+# <a name="tutorial-azure-active-directory-integration-with-mimecast-personal-portal"></a>Руководство по интеграции Azure Active Directory с Mimecast Personal Portal
 
 В этом руководстве описано, как интегрировать Mimecast Personal Portal с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Mimecast Personal Portal обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73160627"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Mimecast Personal Portal, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка на Mimecast Personal Portal с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73160627"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Mimecast Personal Portal](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес. 
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес. 
 
     | Регион  |  Значение | 
     | --------------- | --------------- | 
@@ -147,11 +147,11 @@ ms.locfileid: "73160627"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-mimecast-personal-portal-single-sign-on"></a>Настройка единого входа Mimecast Personal Portal
 
@@ -159,7 +159,7 @@ ms.locfileid: "73160627"
 
 2. Выберите **Services \> Application** ("Службы" > "Приложение").
    
-    ![Приложения](./media/mimecast-personal-portal-tutorial/ic794998.png "ПРИЛОЖЕНИЯ")
+    ![Приложения](./media/mimecast-personal-portal-tutorial/ic794998.png "Приложения")
 
 3. Щелкните **Профили проверки подлинности**.
    
@@ -173,7 +173,7 @@ ms.locfileid: "73160627"
    
     ![Профиль проверки подлинности](./media/mimecast-personal-portal-tutorial/ic795001.png "Профиль проверки подлинности")
    
-    a. В текстовом поле **Описание** введите имя конфигурации.
+    а. В текстовом поле **Описание** введите имя конфигурации.
    
     b. Выберите **Обязательное использование проверки подлинности SAML для личного портала Mimecast**.
    
@@ -181,9 +181,9 @@ ms.locfileid: "73160627"
    
     d. В текстовое поле **URL-адрес издателя** вставьте **идентификатор Azure AD**, скопированный c портала Azure.
    
-    д. В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса входа**, скопированное с портала Azure.
+    д) В текстовое поле **URL-адрес входа** вставьте значение **URL-адреса входа**, скопированное с портала Azure.
    
-    Е. В текстовое поле **URL-адрес выхода** вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
+    е) В текстовое поле **URL-адрес выхода** вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
 
     ж. Откройте в Блокноте сертификат в кодировке **Base64**, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Identity Provider Certificate (Metadata)** (Сертификат поставщика удостоверений (метаданные)).
 
@@ -266,9 +266,9 @@ ms.locfileid: "73160627"
 
 5. В диалоговом окне "New Address" (Новый адрес) введите соответствующие данные действующей учетной записи Azure AD, которую необходимо подготовить.
    
-    ![Сохранить](./media/mimecast-personal-portal-tutorial/ic795006.png "Сохранить")
+    ![Сохранить](./media/mimecast-personal-portal-tutorial/ic795006.png "Сохранять")
    
-    a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon\@contoso.com**.
+    а. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon\@contoso.com**.
     
     b. В текстовое поле **Global Name** (Глобальное имя) введите **имя пользователя** **BrittaSimon**.
 

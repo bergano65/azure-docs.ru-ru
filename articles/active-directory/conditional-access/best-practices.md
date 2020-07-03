@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccfbb31c29b9e240a4865c8d7d98d7b6af00d1fd
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: f4560a514ddb9949c8cc07864b2319a5878b245e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74963942"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80295362"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Рекомендации по условному доступу в Azure Active Directory
 
@@ -27,7 +27,7 @@ ms.locfileid: "74963942"
 
 В этой статье предполагается, что вы знакомы с концепциями и терминологией, описанными в разделе [что такое условный доступ в Azure Active Directory?](../active-directory-conditional-access-azure-portal.md)
 
-## <a name="whats-required-to-make-a-policy-work"></a>Что необходимо для работы политики?
+## <a name="whats-required-to-make-a-policy-work"></a>Что необходимо для обеспечения работы политики?
 
 При создании политики отсутствуют выбранные пользователи, группы, приложения или элементы управления доступом.
 
@@ -41,7 +41,7 @@ ms.locfileid: "74963942"
 | **Пользователи и группы** | Выберите по меньшей мере одного пользователя или группу, которая имеет права для доступа к выбранным облачным приложениям. | Политика условного доступа, которая не имеет назначенных пользователей и групп, никогда не запускается. |
 | **Элементы управления доступом** | Выберите по меньшей мере один элемент управления доступом. | Процессор политики должен знать, что делать в случае выполнения условий. |
 
-## <a name="what-you-should-know"></a>Необходимая информация
+## <a name="what-you-should-know"></a>Учитываемые аспекты
 
 ### <a name="how-are-conditional-access-policies-applied"></a>Как применяются политики условного доступа?
 
@@ -143,7 +143,7 @@ Azure Active Directory применяет обе политики, и польз
 
 Дополнительные сведения см. в статье [Перенос классических политик на портале Azure](policy-migration.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать:
 

@@ -5,17 +5,19 @@ author: djpmsft
 ms.author: daperlov
 ms.service: data-factory
 ms.topic: tutorial
-ms.date: 01/14/2020
-ms.openlocfilehash: dee8c919b815c6f22b171f58be9fc6a38167056a
-ms.sourcegitcommit: dbcc4569fde1bebb9df0a3ab6d4d3ff7f806d486
+ms.date: 04/17/2020
+ms.openlocfilehash: 3abec9b0c37e0475e369ce3cd2f91e40a1040b75
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76030035"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628969"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Видеоматериалы по потоку данных для сопоставления
 
-Ниже приведен список видеороликов с учебниками по потокам данных для сопоставления, созданных командой Фабрики данных Azure.
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
+Ниже приведен список видеороликов с учебниками по потокам данных для сопоставления, созданных командой Фабрики данных Azure. 
 
 Поскольку в продукт постоянно вносятся обновления, некоторые функции были добавлены или отличаются в текущем пользовательском интерфейсе Фабрики данных Azure.
 
@@ -33,6 +35,8 @@ ms.locfileid: "76030035"
 
 [Monitor and manage mapping data flow performance](https://www.youtube.com/watch?v=fktIWdJiqTk) (Мониторинг и управление производительностью потока данных для сопоставления)
 
+[Расчет времени для измерения производительности](http://youtu.be/6CSbWm4lRhw?hd=1)
+
 ## <a name="transformation-overviews"></a>Обзоры преобразований
 
 [Aggregate transformation](http://youtu.be/jdL75xIr98I) (Преобразование "Статистическое выражение")
@@ -42,6 +46,8 @@ ms.locfileid: "76030035"
 [Derived Column transformation](https://www.youtube.com/watch?v=FFCbU4ujCiY) (Преобразование "Производственный столбец")
 
 [Join transformation](https://www.youtube.com/watch?v=zukwayEXRtg) (Преобразование "Соединение")
+
+[Шаблон самосоединения](https://www.youtube.com/watch?v=Dx1kANfnvmk&feature=youtu.be&hd=1)
 
 [Преобразование "Уточняющий запрос"](https://www.youtube.com/watch?v=9U-0VPU2ZPU)
 
@@ -67,6 +73,10 @@ ms.locfileid: "76030035"
 
 [Exists Transformation](http://youtu.be/GS8JVgNBMfs?hd=1) (Преобразование "Exists")
 
+[Динамическое объединение и динамический поиск](https://youtu.be/CMOPPie9bXM)
+
+[Преобразование в плоскую структуру](https://youtu.be/VY2tFQJoAXE)
+
 ## <a name="source-and-sink"></a>Источник и приемник
 
 [Reading and writing JSONs](https://www.youtube.com/watch?v=yY5aB7Kdhjg) (Чтение и запись элементов JSON)
@@ -85,6 +95,8 @@ ms.locfileid: "76030035"
 
 [Data warehouse loading pattern](https://www.youtube.com/watch?v=7mLqwtmeQFg) (Шаблон загрузки данных в хранилище данных)
 
+[Параметры вывода данных в файле озера данных](https://www.youtube.com/watch?v=NAPSbjvSQA8)
+
 ## <a name="optimizing-mapping-data-flows"></a>Оптимизация потоков данных для сопоставления
 
 [Data lineage](https://www.youtube.com/watch?v=5KvqYF-y93s) (Происхождение данных)
@@ -96,6 +108,12 @@ ms.locfileid: "76030035"
 [Decrease start-up times](https://youtu.be/FFCbU4ujCiY?t=528) (Уменьшение времени запуска)
 
 [SQL DB performance](https://youtu.be/iyZT5CY3V_4) (Производительность базы данных SQL)
+
+[Ведение журналов и аудит](https://www.youtube.com/watch?v=UC__LOyuf8M)
+
+[Dynamically optimize data flow cluster size at runtime](https://www.youtube.com/watch?v=jWSkJdtiJNM) (Динамическая оптимизация размера кластера потока данных во время выполнения)
+
+[Оптимизация времени запуска для потоков данных ](https://www.youtube.com/watch?v=VT_2ZV3a7Fc)
 
 ## <a name="mapping-data-flow-scenarios"></a>Сценарии потоков данных для сопоставления
 
@@ -130,3 +148,17 @@ ms.locfileid: "76030035"
 [Logical Models vs. Physical Models](http://youtu.be/K5tgzLjEE9Q) (Сравнение логических и физических моделей)
 
 [Detect source data changes](http://youtu.be/CaxIlI7oXfI?hd=1) (Обнаружение изменений исходных данных)
+
+## <a name="data-flow-expressions"></a>Выражения для потока данных
+
+[Выражения для даты и времени](https://www.youtube.com/watch?v=uboyCZ25r_E&feature=youtu.be&hd=1)
+
+[Разделение массивов и оператор Case](https://www.youtube.com/watch?v=DHNH8ZO7YjI)
+
+[Использование интерполяции строк и параметров](https://youtu.be/hb3-cn2CMgM)
+
+[Введение в скрипт потока данных: копирование, вставка, фрагменты](https://www.youtube.com/watch?v=3_1I4XdoBKQ)
+
+[ADF Data Quality Expressions](https://www.youtube.com/watch?v=O8gmv5-lXhs) (Выражения для проверки качества данных в ADF)
+
+[Агрегатная функция collect](https://www.youtube.com/watch?v=zneE18EHJSE)

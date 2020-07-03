@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: jaredro
 ms.openlocfilehash: 2c28df35eec862afb5b0078ca7693898e9b58533
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75436945"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79264847"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-powershell"></a>Создание и изменение пиринга для канала ExpressRoute с помощью PowerShell
 
@@ -49,7 +49,7 @@ ms.locfileid: "75436945"
 
 [!INCLUDE [expressroute-cloudshell](../../includes/expressroute-cloudshell-powershell-about.md)]
 
-## <a name="msft"></a>Пиринг Майкрософт
+## <a name="microsoft-peering"></a><a name="msft"></a>Пиринг Майкрософт
 
 Этот раздел поможет создать, получить, обновить и (или) удалить конфигурацию пиринга Майкрософт для канала ExpressRoute.
 
@@ -123,7 +123,7 @@ ms.locfileid: "75436945"
 > [!IMPORTANT]
 > Корпорация Майкрософт проверяет, назначены ли вам указанные "объявленные общедоступные префиксы" и "одноранговый ASN" (или "клиент ASN") в реестре Интернет-маршрутизации. Если вы получаете общедоступные префиксы из другой сущности и если назначение не записано в реестре маршрутизации, автоматическая проверка не будет завершена и потребуется проверка вручную. Если автоматическая проверка не удалась, в выходных данных "Get-АзекспрессраутеЦиркуитпирингконфиг" будет отображаться "Адвертиседпубликпрефиксесстате" (требуется проверка) (см. раздел "получение сведений об пиринга Майкрософт" ниже). 
 > 
-> Если отображается сообщение "требуется проверка", собирайте документы, которые отображают открытые префиксы, для вашей организации назначается сущность, указанная в качестве владельца префиксов в реестре маршрутизации, и отправка этих документов для проверки вручную открыв запрос в службу поддержки, как показано ниже. 
+> Если вы видите сообщение "требуется проверка", собирайте документы, которые отображают открытые префиксы, в вашу организацию, используя сущность, указанную в качестве владельца префиксов в реестре маршрутизации, и отправьте эти документы для проверки вручную, открыв запрос в службу поддержки, как показано ниже. 
 > 
 >
 
@@ -137,7 +137,7 @@ ms.locfileid: "75436945"
    Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    ```
 
-### <a name="getmsft"></a>Получение сведений о пиринге Майкрософт
+### <a name="to-get-microsoft-peering-details"></a><a name="getmsft"></a>Получение сведений о пиринге Майкрософт
 
 Для получения сведений о конфигурации можно использовать следующий пример:
 
@@ -147,7 +147,7 @@ $ckt = Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupNa
 Get-AzExpressRouteCircuitPeeringConfig -Name "MicrosoftPeering" -ExpressRouteCircuit $ckt
 ```
 
-### <a name="updatemsft"></a>Обновление конфигурации пиринга Майкрософт
+### <a name="to-update-microsoft-peering-configuration"></a><a name="updatemsft"></a>Обновление конфигурации пиринга Майкрософт
 
 С помощью следующего примера можно обновить любую часть конфигурации:
 
@@ -159,7 +159,7 @@ Set-AzExpressRouteCircuitPeeringConfig  -Name "MicrosoftPeering" -ExpressRouteCi
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ```
 
-### <a name="deletemsft"></a>Удаление пиринга Майкрософт
+### <a name="to-delete-microsoft-peering"></a><a name="deletemsft"></a>Удаление пиринга Майкрософт
 
 Для удаления конфигурации пиринга выполните следующий командлет.
 
@@ -169,7 +169,7 @@ Remove-AzExpressRouteCircuitPeeringConfig -Name "MicrosoftPeering" -ExpressRoute
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ```
 
-## <a name="private"></a>Частный пиринг Azure
+## <a name="azure-private-peering"></a><a name="private"></a>Частный пиринг Azure
 
 Этот раздел поможет вам создать, получить, обновить и (или) удалить конфигурацию частного пиринга Azure для канала ExpressRoute.
 
@@ -183,7 +183,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    Install-Module Az
    ```
 
-   Импортируйте все модули AZ.\* в пределах известного диапазона семантических версий.
+   Импортируйте все модули AZ.\* modules в пределах известного диапазона семантических версий.
 
    ```azurepowershell-interactive
    Import-Module Az
@@ -269,7 +269,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
    > 
    >
 
-### <a name="getprivate"></a>Получение сведений о частном пиринге Azure
+### <a name="to-get-azure-private-peering-details"></a><a name="getprivate"></a>Получение сведений о частном пиринге Azure
 
 Для получения сведений о конфигурации можно использовать следующий пример кода:
 
@@ -279,7 +279,7 @@ $ckt = Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupNa
 Get-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt
 ```
 
-### <a name="updateprivate"></a>Обновление конфигурации частного пиринга Azure
+### <a name="to-update-azure-private-peering-configuration"></a><a name="updateprivate"></a>Обновление конфигурации частного пиринга Azure
 
 С помощью следующего примера можно обновить любую часть конфигурации. В приведенном ниже примере значение идентификатора виртуальной локальной сети для канала изменяется со 100 на 500.
 
@@ -289,7 +289,7 @@ Set-AzExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRoute
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ```
 
-### <a name="deleteprivate"></a>Удаление частного пиринга Azure
+### <a name="to-delete-azure-private-peering"></a><a name="deleteprivate"></a>Удаление частного пиринга Azure
 
 Для удаления конфигурации пиринга выполните следующий пример кода:
 
@@ -305,7 +305,7 @@ Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следующий шаг — [связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md).
 

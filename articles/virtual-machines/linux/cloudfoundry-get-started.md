@@ -1,26 +1,18 @@
 ---
 title: начало работы с Cloud Foundry на Microsoft Azure
 description: Запуск OSS или Pivotal Cloud Foundry в Microsoft Azure
-services: virtual-machines-linux
-documentationcenter: ''
 author: seanmck
-manager: gwallace
-editor: ''
-tags: ''
-keywords: ''
-ms.assetid: 2a15ffbf-9f86-41e4-b75b-eb44c1a2a7ab
 ms.service: virtual-machines-linux
+ms.subservice: workloads
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure-services
 ms.date: 01/19/2017
 ms.author: seanmck
-ms.openlocfilehash: 447550d2f6bca570869c9fa93724e4dbaba02132
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 8645afac5734cdbffb8df6f341529e688ca526d7
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036819"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891644"
 ---
 # <a name="cloud-foundry-on-azure"></a>Cloud Foundry в Azure
 
@@ -36,7 +28,7 @@ Cloud Foundry — это платформа как услуга (PaaS) с от�
 
 Корпорация Майкрософт прилагает все усилия, чтобы поддерживать OSS CF с помощью следующих каналов сообщества:
 
-- #<a name="bosh-azure-cpi-channel-on-cloud-foundry-slackhttpsslackcloudfoundryorg"></a>канал bosh-azure-cpi на сайте [Cloud Foundry Slack](https://slack.cloudfoundry.org/);
+- #<a name="bosh-azure-cpi-channel-on-cloud-foundry-slack"></a>канал bosh-azure-cpi на сайте [Cloud Foundry Slack](https://slack.cloudfoundry.org/);
 - [список рассылки cf-bosh](https://lists.cloudfoundry.org/pipermail/cf-bosh);
 - выпуски GitHub о [CPI](https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/issues) и [Service Broker](https://github.com/Azure/meta-azure-service-broker/issues).
 
@@ -63,7 +55,7 @@ Cloud Foundry придерживается методики [12-факторно
 
 Cloud Foundry идеально подходит для гибкой разработки программного обеспечения, включая использование непрерывной интеграции (CI) и непрерывной доставки (CD). Если вы используете Azure DevOps Services для управления проектами и хотите установить конвейер CI/CD, нацеленный на Cloud Foundry, то можете использовать [расширение для сборки Cloud Foundry для Azure DevOps Services](https://marketplace.visualstudio.com/items?itemName=ms-vsts.cloud-foundry-build-extension). Этот подключаемый модуль упрощает настройку и автоматизацию развертываний на платформе Cloud Foundry, работающей в Azure или в другой среде.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Pivotal Cloud Foundry on Microsoft Azure](https://azure.microsoft.com/marketplace/partners/pivotal/pivotal-cloud-foundryazure-pcf/) (Pivotal Cloud Foundry в Microsoft Azure)
+- [Pivotal Cloud Foundry on Microsoft Azure](https://azuremarketplace.microsoft.com/marketplace/apps/pivotal.pivotal-cloud-foundry) (Pivotal Cloud Foundry в Microsoft Azure)
 - [Развертывание первого приложения в Cloud Foundry в Microsoft Azure](./cloudfoundry-deploy-your-first-app.md)

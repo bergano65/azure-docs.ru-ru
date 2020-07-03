@@ -1,0 +1,135 @@
+---
+title: Обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure
+description: Узнайте, как обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure делает резервные копии более безопасными.
+ms.topic: conceptual
+ms.date: 04/27/2020
+ms.openlocfilehash: f1e3ecae5d643b8e32f8f4f07808d56cdc421163
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82791380"
+---
+# <a name="soft-delete-for-sql-server-in-azure-vm-and-sap-hana-in-azure-vm-workloads"></a>Обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure
+
+Azure Backup теперь обеспечивает обратимое удаление для SQL Server на виртуальной машине Azure и SAP HANA в рабочих нагрузках виртуальных машин Azure. Это дополнение к уже поддерживаемому [сценарию обратимого удаления виртуальной машины Azure](soft-delete-virtual-machines.md).
+
+[Обратимое удаление](backup-azure-security-feature-cloud.md) — это функция безопасности, позволяющая защитить данные резервных копий даже после удаления. При обратимом удалении, даже если вредоносный субъект удаляет резервную копию базы данных (или данные резервной копии случайно удаляются), данные резервной копии сосохранены в течение 14 дополнительных дней. Это позволяет восстановить этот элемент резервного копирования без потери данных. Это дополнительное хранение данных резервных копий в течение 14 дней в состоянии "обратимого" удаления не влечет за собой никаких затрат на клиент.
+
+>[!NOTE]
+>После включения предварительной версии для подписки невозможно отключить обратимое удаление только для SQL Server или SAP HANA баз данных, сохранив его для виртуальных машин в том же хранилище. Для детального управления можно создавать отдельные хранилища.
+
+## <a name="steps-to-enroll-in-preview"></a>Действия для регистрации в предварительной версии
+
+1. Войдите в свою учетную запись Azure.
+
+   ```powershell
+   Login-AzureRmAccount
+   ```
+
+2. Выберите подписку, которую вы хотите зарегистрировать в предварительной версии:
+
+   ```powershell
+   Get-AzureRmSubscription –SubscriptionName "Subscription Name" | Select-AzureRmSubscription
+   ```
+
+3. Зарегистрируйте эту подписку в программе предварительной версии:
+
+   ```powershell
+   Register-AzureRMProviderFeature -FeatureName WorkloadBackupSoftDelete -ProviderNamespace Microsoft.RecoveryServices
+   ```
+
+4. Подождите 30 минут, пока подписка не будет зарегистрирована в предварительной версии.
+
+5. Чтобы проверить состояние, выполните следующие командлеты:
+
+   ```powershell
+   Get-AzureRmProviderFeature -FeatureName WorkloadBackupSoftDelete -ProviderNamespace Microsoft.RecoveryServices
+   ```
+
+6. После того как подписка отобразится как зарегистрированная, выполните следующую команду:
+
+   ```powershell
+   Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices
+   ```
+
+>[!NOTE]
+>Каждый раз, когда в подписке с поддержкой обратимого удаления создаются новые хранилища или хранилища, необходимо повторно запустить следующую команду, чтобы включить эту функцию для вновь созданных хранилищ.<BR>
+> `Register-AzureRmResourceProvider -ProviderNamespace Microsoft.RecoveryServices`
+
+## <a name="soft-delete-for-sql-server-in-azure-vm-using-azure-portal"></a>Обратимое удаление для SQL Server на виртуальной машине Azure с помощью портал Azure
+
+>[!NOTE]
+>Эти инструкции также применимы к SAP HANA в виртуальной машине Azure.
+
+1. Для удаления резервных данных базы данных на сервере SQL Server резервная копия должна быть остановлена. В портал Azure перейдите к хранилищу служб восстановления, перейдите к элементу архивации и выберите пункт **прерывать архивацию**.
+
+   ![Завершение резервного копирования](./media/soft-delete-sql-saphana-in-azure-vm/stop-backup.png)
+
+2. В следующем окне вы получите возможность удалить или хранить данные резервной копии. При выборе **удалить данные резервной копии**резервная копия базы данных не будет окончательно удалена. Вместо этого данные резервного копирования будут храниться в течение 14 дней в состоянии обратимого удаления. Удаление откладывается до 15-го дня с регулярными оповещениями по электронной почте на первый, 12-и 15-й день, сообщающий пользователю о состоянии резервного копирования базы данных.
+
+   ![удаление резервных копий;](./media/soft-delete-sql-saphana-in-azure-vm/delete-backup-data.png)
+
+3. В течение 14 дней в хранилище служб восстановления значок обратимого удаления появится рядом с красным значком "мягкое удаление".
+
+   ![Обратимо удаленные элементы](./media/soft-delete-sql-saphana-in-azure-vm/soft-deleted-items.png)
+
+4. Чтобы восстановить обратимо удаленную базу данных, необходимо сначала отменить ее удаление. Чтобы отменить удаление, выберите обратимо удаленную базу данных, а затем выберите пункт **Удалить**.
+
+   ![Отменить удаление базы данных](./media/soft-delete-sql-saphana-in-azure-vm/undelete-database.png)
+
+   Появится окно с предупреждением о том, что при выборе отменить удаление все точки восстановления для базы данных будут удалены и доступны для выполнения операции восстановления. Элемент резервного копирования будет храниться в состоянии "остановить защиту с сохранением данных" с приостановленными резервными копиями, а резервные данные будут храниться неограниченно без действующих политик резервного копирования.
+
+   ![Отменить удаление предупреждения](./media/soft-delete-sql-saphana-in-azure-vm/undelete-warning.png)
+
+5. На этом этапе можно также восстановить данные, выбрав **восстановить** для выбранного обратимо удаляемого элемента резервного копирования.
+
+   ![Восстановление виртуальной машины](./media/soft-delete-sql-saphana-in-azure-vm/restore-vm.png)
+
+6. После завершения процесса отмены удаления будет возвращено состояние "прерывать резервное копирование с помощью удержания данных", после чего можно выбрать **возобновить резервное копирование**. Операция **возобновления** резервного копирования возвращает резервную копию в активном состоянии, связанную с политикой резервного копирования, выбранной пользователем, определяющей расписания резервного копирования и хранения.
+
+   ![Возобновить резервное копирование](./media/soft-delete-sql-saphana-in-azure-vm/resume-backup.png)
+
+## <a name="soft-delete-for-sql-server-in-vm-using-azure-powershell"></a>Обратимое удаление для SQL Server в виртуальной машине с помощью Azure PowerShell
+
+>[!NOTE]
+>Версия AZ. RecoveryServices, необходимая для использования обратимого удаления с помощью Azure PowerShell, является минимальной 2.2.0. Используйте `Install-Module -Name Az.RecoveryServices -Force` для получения последней версии.
+
+Последовательность шагов по использованию Azure PowerShell такая же, как и в портал Azure, описанном выше.
+
+### <a name="delete-the-backup-item-using-azure-powershell"></a>Удаление элемента резервного копирования с помощью Azure PowerShell
+
+Удалите элемент резервного копирования с помощью командлета [Disable-азрековерисервицесбаккуппротектион](https://docs.microsoft.com/powershell/module/az.recoveryservices/Disable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) PS.
+
+```powershell
+Disable-AzRecoveryServicesBackupProtection -Item $myBkpItem -RemoveRecoveryPoints -VaultId $myVaultID -Force
+```
+
+**Делетестате** элемента резервного копирования изменится с **нотделетед** на **тобеделетед**. Данные резервной копии будут храниться в течение 14 дней. Если вы хотите отменить операцию удаления, необходимо выполнить отмену-удаление.
+
+### <a name="undoing-the-deletion-operation-using-azure-powershell"></a>Отмена операции удаления с помощью Azure PowerShell
+
+Сначала извлеките соответствующий элемент резервного копирования, который находится в состоянии обратимого удаления (то есть удаляется).
+
+```powershell
+Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadType SQLDataBase -VaultId $myVaultID | Where-Object {$_.DeleteState -eq "ToBeDeleted"}
+
+$myBkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureWorkload -WorkloadType SQLDataBase -VaultId $myVaultID -Name AppVM1
+```
+
+Затем выполните операцию отмены удаления с помощью командлета [Undo-азрековерисервицесбаккупитемделетион](https://docs.microsoft.com/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion?view=azps-3.8.0) PS.
+
+```powershell
+Undo-AzRecoveryServicesBackupItemDeletion -Item $myBKpItem -VaultId $myVaultID -Force
+```
+
+**Делетестате** элемента резервного копирования вернется к **нотделетед**. Но защита по-прежнему останавливается. Возобновите резервное копирование, чтобы снова включить защиту.
+
+## <a name="how-to-disable-soft-delete"></a>Как отключить обратимое удаление
+
+Отключение этой функции не рекомендуется. Единственное обстоятельство, когда следует отключать обратимое удаление, — это планирование перемещения защищенных элементов в новое хранилище и не может ждать 14 дней, необходимых перед удалением и повторной защитой (например, в тестовой среде). Инструкции по отключению обратимого удаления см. в разделе [Включение и отключение обратимого удаления](backup-azure-security-feature-cloud.md#enabling-and-disabling-soft-delete).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Ознакомьтесь с [часто задаваемыми вопросами](backup-azure-security-feature-cloud.md#frequently-asked-questions) об обратимом удалении
+- Ознакомьтесь со всеми [функциями безопасности в Azure Backup](security-overview.md)

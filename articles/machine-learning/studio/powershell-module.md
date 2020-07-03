@@ -9,14 +9,16 @@ ms.topic: conceptual
 author: likebupt
 ms.author: keli19
 ms.date: 04/25/2019
-ms.openlocfilehash: fd2e3a5ec7e69280b38d653009f551580618a541
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 6afd222730a9864e0b8edd681b1ce919b03c3be8
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168946"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79204296"
 ---
 # <a name="powershell-modules-for-azure-machine-learning-studio-classic"></a>Модули PowerShell для Машинное обучение Azure Studio (классическая модель)
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 С помощью модулей PowerShell можно программно управлять ресурсами и активами студии (классическими), такими как рабочие области, наборы данных и веб-службы.
 
@@ -30,7 +32,7 @@ ms.locfileid: "77168946"
 
 Проверьте [таблицу поддержки](#support-table) указанную ниже, чтобы увидеть, какие ресурсы поддерживаются каждым из модулей. 
 
-## <a name="az-rm"></a> Azure PowerShell Az и AzureRM
+## <a name="azure-powershell-az-and-azurerm"></a><a name="az-rm"></a> Azure PowerShell Az и AzureRM
 
 Az теперь является предполагаемым модулем PowerShell для взаимодействия с Azure и включает все прежние функции AzureRM. AzureRM продолжит получать исправления ошибки, но не будет получать новые командлеты или функции.  AZ и AzureRM управляют решениями развернутых служб с помощью модуля **Azure Resource Manager**. К этим ресурсам относятся рабочие области Studio (классические) и Studio (классическая модель) "новые веб-службы". 
 
@@ -38,7 +40,7 @@ Az теперь является предполагаемым модулем Pow
 
 Чтобы начать работу с использованием команды Az, выполните действия, описанные в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
-## <a name="classic"></a> Классический PowerShell
+## <a name="powershell-classic"></a><a name="classic"></a> Классический PowerShell
 
 [Классический модуль PowerShell](https://aka.ms/amlps) для Studio (классическая модель) позволяет управлять ресурсами, развернутыми с помощью **классической модели развертывания**. В число этих ресурсов входят пользовательские активы (классические) Studio, "классические" веб-службы и "классические" конечные точки веб-служб.
 
@@ -48,10 +50,10 @@ Az теперь является предполагаемым модулем Pow
 
 Классическую программу PowerShell можно установить вместе с az или AzureRM, чтобы охватить как "новые", так и "классические" типы ресурсов.
 
-## <a name="support-table"></a> Таблица поддержки PowerShell
+## <a name="powershell-support-table"></a><a name="support-table"></a> Таблица поддержки PowerShell
 
 
-| | **Az** |  **PowerShell — классическая модель** |
+| | **AZ** |  **Классическая модель PowerShell** |
 | --- | --- | --- |
 | Создание и удаление рабочих областей | [Шаблоны Resource Manager](https://docs.microsoft.com/azure/machine-learning/studio/deploy-with-resource-manager-template) |  |
 | Управление планами обязательств рабочей области | [New-AzMlCommitmentPlan](https://docs.microsoft.com/powershell/module/az.machinelearning/new-azmlcommitmentplan) | |
@@ -63,7 +65,7 @@ Az теперь является предполагаемым модулем Pow
 | Управление настраиваемыми модулями | | [New-AmlCustomModule](https://github.com/hning86/azuremlps#manage-custom-module) |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с полной документацией по этому модулю PowerShell:
-* [PowerShell — классическая модель](https://aka.ms/amlps)
+* [Классическая модель PowerShell](https://aka.ms/amlps)
 * [Azure PowerShell Az](https://docs.microsoft.com/powershell/module/az.machinelearning/#machine_learning)

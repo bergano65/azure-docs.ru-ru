@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 7/12/2019
-ms.openlocfilehash: b3165daa06ed975df9ccb677699d3ceb449327ab
-ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
+ms.openlocfilehash: 81f072822226e4a573cf0086cac7e64ca1cfe45f
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74941954"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628169"
 ---
 # <a name="move-files-with-azure-data-factory"></a>Перемещение файлов с помощью фабрики данных Azure
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается шаблон решения, который можно использовать для перемещения файлов из одной папки в другую между файловыми хранилищами. Один из распространенных сценариев использования этого шаблона: файлы постоянно удаляются в целевую папку исходного хранилища. Создав триггер расписания, конвейер ADF может периодически перемещать эти файлы из источника в целевое хранилище.  Способ, которым конвейер ADF достигает "перемещения файлов", получает файлы из целевой папки, копируя их в другую папку в целевом хранилище, а затем удаляя те же файлы из целевой папки в исходном хранилище.
 
@@ -70,4 +72,4 @@ ms.locfileid: "74941954"
 
 - [Копирование новых и измененных файлов с помощью LastModifiedDate с фабрикой данных Azure](solution-template-copy-new-files-lastmodifieddate.md)
 
-- [Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure](solution-template-copy-files-multiple-containers.md)
+- [Копирование файлов из нескольких контейнеров с помощью Фабрики данных Azure](solution-template-copy-files-multiple-containers.md)

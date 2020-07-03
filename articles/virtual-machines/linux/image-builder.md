@@ -1,30 +1,28 @@
 ---
-title: Создание виртуальной машины Linux с помощью Azure Image Builder (Предварительная версия)
-description: Создание виртуальной машины Linux с помощью построителя образов Azure.
+title: Использование Azure Image Builder с коллекцией образов для виртуальных машин Linux (Предварительная версия)
+description: Создание образов виртуальных машин Linux с помощью Azure Image Builder и коллекции общих образов.
 author: cynthn
 ms.author: cynthn
-ms.date: 05/02/2019
-ms.topic: article
+ms.date: 05/05/2019
+ms.topic: how-to
 ms.service: virtual-machines-linux
-manager: gwallace
-ms.openlocfilehash: 1bac04bbb67c7472de92c6da322121bafc20a560
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.subservice: imaging
+ms.reviewer: danis
+ms.openlocfilehash: 9774d7765906d07c974ca19ce6a0f4807898c3a0
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68695435"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82928335"
 ---
-# <a name="preview-create-a-linux-vm-with-azure-image-builder"></a>Предварительный просмотр: Создание виртуальной машины Linux с помощью Azure Image Builder
+# <a name="preview-create-a-linux-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительная версия: создание образа Linux и его распространение в общую коллекцию образов 
 
-В этой статье показано, как создать настраиваемый образ Linux с помощью построителя образов Azure и Azure CLI. В примере, приведенном в этой статье, для настройки изображения используются три различных [настраиваемых способа](image-builder-json.md#properties-customize).
+В этой статье показано, как использовать построитель образов Azure и Azure CLI для создания версии образа в [общей коллекции образов](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries), а затем распространять образ глобально. Это также можно сделать с помощью [Azure PowerShell](../windows/image-builder-gallery.md).
 
-- Shell (Скриптури) — загружает и запускает [сценарий оболочки](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/customizeScript.sh).
-- Shell (inline) — выполняет определенные команды. В этом примере встроенные команды включают создание каталога и обновление операционной системы.
-- Файл — копирует [файл из GitHub](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/exampleArtifacts/buildArtifacts/index.html) в каталог на виртуальной машине.
 
-Можно также указать `buildTimeoutInMinutes`. Значение по умолчанию — 240 минут. Вы можете увеличить время сборки, чтобы обеспечить более длительное выполнение сборок.
+Мы будем использовать шаблон Sample. JSON для настройки образа. JSON-файл, который мы используем: [хеллоимажетемплатефорсиг. JSON](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Linux_Shared_Image_Gallery_Image/helloImageTemplateforSIG.json). 
 
-Мы будем использовать шаблон Sample. JSON для настройки образа. JSON-файл, который мы используем: [хеллоимажетемплателинукс. JSON](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/0_Creating_a_Custom_Linux_Managed_Image/helloImageTemplateLinux.json). 
+Чтобы распространить образ в общую коллекцию образов, шаблон использует [шаредимаже](image-builder-json.md#distribute-sharedimage) в качестве значения для `distribute` раздела шаблона.
 
 > [!IMPORTANT]
 > Azure Image Builder сейчас находится в общедоступной предварительной версии.
@@ -47,7 +45,8 @@ az feature show --namespace Microsoft.VirtualMachineImages --name VirtualMachine
 
 ```azurecli-interactive
 az provider show -n Microsoft.VirtualMachineImages | grep registrationState
-
+az provider show -n Microsoft.KeyVault | grep registrationState
+az provider show -n Microsoft.Compute | grep registrationState
 az provider show -n Microsoft.Storage | grep registrationState
 ```
 
@@ -55,147 +54,172 @@ az provider show -n Microsoft.Storage | grep registrationState
 
 ```azurecli-interactive
 az provider register -n Microsoft.VirtualMachineImages
-
+az provider register -n Microsoft.Compute
+az provider register -n Microsoft.KeyVault
 az provider register -n Microsoft.Storage
 ```
 
-## <a name="setup-example-variables"></a>Примеры переменных программы установки
+## <a name="set-variables-and-permissions"></a>Задание переменных и разрешений 
 
 Мы будем использовать несколько фрагментов информации повторно, поэтому мы создадим некоторые переменные для хранения этих данных.
 
+Для предварительной версии построитель изображений поддерживает создание пользовательских образов в той же группе ресурсов, что и исходный управляемый образ. Обновите имя группы ресурсов в этом примере, чтобы оно совпадало с группой ресурсов исходного управляемого образа.
 
 ```azurecli-interactive
-# Resource group name - we are using myImageBuilderRG in this example
-imageResourceGroup=myImageBuilerRGLinux
+# Resource group name - we are using ibLinuxGalleryRG in this example
+sigResourceGroup=ibLinuxGalleryRG
 # Datacenter location - we are using West US 2 in this example
-location=WestUS2
-# Name for the image - we are using myBuilderImage in this example
-imageName=myBuilderImage
-# Run output name
-runOutputName=aibLinux
+location=westus2
+# Additional region to replicate the image to - we are using East US in this example
+additionalregion=eastus
+# name of the shared image gallery - in this example we are using myGallery
+sigName=myIbGallery
+# name of the image definition to be created - in this example we are using myImageDef
+imageDefName=myIbImageDef
+# image distribution metadata reference name
+runOutputName=aibLinuxSIG
 ```
 
 Создайте переменную для идентификатора подписки. Это можно сделать с помощью `az account show | grep id`.
 
 ```azurecli-interactive
-subscriptionID=<Your subscription ID>
+subscriptionID=<Subscription ID>
 ```
 
-## <a name="create-the-resource-group"></a>Создайте группу ресурсов.
-Используется для хранения артефакта шаблона конфигурации образа и образа.
+Создайте группу ресурсов.
 
 ```azurecli-interactive
-az group create -n $imageResourceGroup -l $location
+az group create -n $sigResourceGroup -l $location
 ```
 
-## <a name="set-permissions-on-the-resource-group"></a>Задание разрешений для группы ресурсов
-Предоставьте разрешение "участник" построителя образов для создания образа в группе ресурсов. Без соответствующих разрешений сборка образа завершится ошибкой. 
+## <a name="create-a-user-assigned-identity-and-set-permissions-on-the-resource-group"></a>Создание назначенного пользователем удостоверения и задание разрешений для группы ресурсов
+Построитель образов будет использовать предоставленное [удостоверение пользователя](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity) для внедрения образа в галерею образов Azure (SIG). В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа в SIG. Затем определение роли будет назначено удостоверению пользователя.
 
-`--assignee` Значение представляет собой идентификатор регистрации приложения для службы "Построитель образов". 
+```bash
+# create user assigned identity for image builder to access the storage account where the script is located
+idenityName=aibBuiUserId$(date +'%s')
+az identity create -g $sigResourceGroup -n $idenityName
 
-```azurecli-interactive
+# get identity id
+imgBuilderCliId=$(az identity show -g $sigResourceGroup -n $idenityName | grep "clientId" | cut -c16- | tr -d '",')
+
+# get the user identity URI, needed for the template
+imgBuilderId=/subscriptions/$subscriptionID/resourcegroups/$sigResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/$idenityName
+
+# this command will download a Azure Role Definition template, and update the template with the parameters specified earlier.
+curl https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/solutions/12_Creating_AIB_Security_Roles/aibRoleImageCreation.json -o aibRoleImageCreation.json
+
+imageRoleDefName="Azure Image Builder Image Def"$(date +'%s')
+
+# update the definition
+sed -i -e "s/<subscriptionID>/$subscriptionID/g" aibRoleImageCreation.json
+sed -i -e "s/<rgName>/$sigResourceGroup/g" aibRoleImageCreation.json
+sed -i -e "s/Azure Image Builder Service Image Creation Role/$imageRoleDefName/g" aibRoleImageCreation.json
+
+# create role definitions
+az role definition create --role-definition ./aibRoleImageCreation.json
+
+# grant role definition to the user assigned identity
 az role assignment create \
-    --assignee cf32a0cc-373c-47c9-9156-0db11f6a6dfc \
-    --role Contributor \
-    --scope /subscriptions/$subscriptionID/resourceGroups/$imageResourceGroup
+    --assignee $imgBuilderCliId \
+    --role $imageRoleDefName \
+    --scope /subscriptions/$subscriptionID/resourceGroups/$sigResourceGroup
 ```
 
-## <a name="download-the-template-example"></a>Скачать пример шаблона
 
-Для использования создан шаблон конфигурации с параметризованным примером образа. Скачайте файл Sample. JSON и настройте его с помощью переменных, заданных ранее.
+## <a name="create-an-image-definition-and-gallery"></a>Создание определения образа и коллекции
+
+Чтобы использовать построитель изображений с общей коллекцией изображений, необходимо иметь существующую коллекцию образов и определение образа. Построитель образов не будет создавать коллекцию изображений и определение изображения.
+
+Если у вас еще нет определения коллекции и образа, начните с их создания. Сначала создайте коллекцию образов.
 
 ```azurecli-interactive
-curl https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/0_Creating_a_Custom_Linux_Managed_Image/helloImageTemplateLinux.json -o helloImageTemplateLinux.json
-
-sed -i -e "s/<subscriptionID>/$subscriptionID/g" helloImageTemplateLinux.json
-sed -i -e "s/<rgName>/$imageResourceGroup/g" helloImageTemplateLinux.json
-sed -i -e "s/<region>/$location/g" helloImageTemplateLinux.json
-sed -i -e "s/<imageName>/$imageName/g" helloImageTemplateLinux.json
-sed -i -e "s/<runOutputName>/$runOutputName/g" helloImageTemplateLinux.json
+az sig create \
+    -g $sigResourceGroup \
+    --gallery-name $sigName
 ```
 
-При необходимости можно изменить этот пример. JSON. Например, можно увеличить значение `buildTimeoutInMinutes` , чтобы обеспечить более длительное выполнение сборок. Файл можно изменить в Cloud Shell с помощью текстового редактора, например `vi`.
+Затем создайте определение образа.
 
 ```azurecli-interactive
-vi helloImageTemplateLinux.json
+az sig image-definition create \
+   -g $sigResourceGroup \
+   --gallery-name $sigName \
+   --gallery-image-definition $imageDefName \
+   --publisher myIbPublisher \
+   --offer myOffer \
+   --sku 18.04-LTS \
+   --os-type Linux
 ```
 
-> [!NOTE]
-> Для исходного образа необходимо всегда [указывать версию](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-version-failure), но нельзя использовать `latest`.
->
-> При добавлении или изменении группы ресурсов, в которой распространяется образ, необходимо убедиться, что [для группы ресурсов заданы разрешения](#set-permissions-on-the-resource-group).
 
+## <a name="download-and-configure-the-json"></a>Скачивание и настройка JSON
 
-## <a name="submit-the-image-configuration"></a>Отправка конфигурации образа
-Отправка конфигурации образа в службу "Построитель образов виртуальных машин"
+Скачайте шаблон JSON и настройте его с помощью переменных.
+
+```azurecli-interactive
+curl https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Linux_Shared_Image_Gallery_Image/helloImageTemplateforSIG.json -o helloImageTemplateforSIG.json
+sed -i -e "s/<subscriptionID>/$subscriptionID/g" helloImageTemplateforSIG.json
+sed -i -e "s/<rgName>/$sigResourceGroup/g" helloImageTemplateforSIG.json
+sed -i -e "s/<imageDefName>/$imageDefName/g" helloImageTemplateforSIG.json
+sed -i -e "s/<sharedImageGalName>/$sigName/g" helloImageTemplateforSIG.json
+sed -i -e "s/<region1>/$location/g" helloImageTemplateforSIG.json
+sed -i -e "s/<region2>/$additionalregion/g" helloImageTemplateforSIG.json
+sed -i -e "s/<runOutputName>/$runOutputName/g" helloImageTemplateforSIG.json
+sed -i -e "s%<imgBuilderId>%$imgBuilderId%g" helloImageTemplateforSIG.json
+```
+
+## <a name="create-the-image-version"></a>Создание версии образа
+
+В следующей части будет создана версия образа в коллекции. 
+
+Отправьте конфигурацию образа в службу Azure Image Builder.
 
 ```azurecli-interactive
 az resource create \
-    --resource-group $imageResourceGroup \
-    --properties @helloImageTemplateLinux.json \
+    --resource-group $sigResourceGroup \
+    --properties @helloImageTemplateforSIG.json \
     --is-full-object \
     --resource-type Microsoft.VirtualMachineImages/imageTemplates \
-    -n helloImageTemplateLinux01
+    -n helloImageTemplateforSIG01
 ```
-
-При успешном завершении он возвратит сообщение об успешном выполнении и создаст артефакт шаблона конфигурации построителя образов в $imageResourceGroup. Группу ресурсов на портале можно увидеть, если включить параметр "Показать скрытые типы".
-
-Кроме того, в фоновом режиме построитель изображений создает промежуточную группу ресурсов в подписке. Построитель образов использует группу ресурсов промежуточного хранения для сборки образа. Имя группы ресурсов будет иметь следующий формат: `IT_<DestinationResourceGroup>_<TemplateName>`.
-
-> [!IMPORTANT]
-> Не удаляйте промежуточную группу ресурсов напрямую. Если удалить артефакт шаблона образа, он автоматически удалит промежуточную группу ресурсов. Дополнительные сведения см. в разделе [Очистка](#clean-up) в конце этой статьи.
-
-Если служба сообщает о сбое во время отправки шаблона конфигурации образа, см. инструкции по [устранению неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#template-submission-errors--troubleshooting) . Кроме того, необходимо удалить шаблон, прежде чем повторять попытку отправки сборки. Чтобы удалить шаблон, выполните следующие действия.
-
-```azurecli-interactive
-az resource delete \
-    --resource-group $imageResourceGroup \
-    --resource-type Microsoft.VirtualMachineImages/imageTemplates \
-    -n helloImageTemplateLinux01
-```
-
-## <a name="start-the-image-build"></a>Запуск сборки образа
 
 Запустите сборку образа.
 
-
 ```azurecli-interactive
 az resource invoke-action \
-     --resource-group $imageResourceGroup \
+     --resource-group $sigResourceGroup \
      --resource-type  Microsoft.VirtualMachineImages/imageTemplates \
-     -n helloImageTemplateLinux01 \
+     -n helloImageTemplateforSIG01 \
      --action Run 
 ```
 
-Дождитесь завершения сборки. в этом примере это может занять 10-15 минут.
-
-При возникновении ошибок ознакомьтесь с этими действиями по [устранению неполадок](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#image-build-errors--troubleshooting) .
+Создание образа и его репликация в оба региона могут занять некоторое время. Дождитесь завершения этой части, прежде чем переходить к созданию виртуальной машины.
 
 
 ## <a name="create-the-vm"></a>Создание виртуальной машины
 
-Создайте виртуальную машину с помощью созданного образа.
+Создайте виртуальную машину на основе версии образа, созданной с помощью Azure Image Builder.
 
 ```azurecli-interactive
 az vm create \
-  --resource-group $imageResourceGroup \
-  --name myVM \
-  --admin-username azureuser \
-  --image $imageName \
+  --resource-group $sigResourceGroup \
+  --name myAibGalleryVM \
+  --admin-username aibuser \
   --location $location \
+  --image "/subscriptions/$subscriptionID/resourceGroups/$sigResourceGroup/providers/Microsoft.Compute/galleries/$sigName/images/$imageDefName/versions/latest" \
   --generate-ssh-keys
 ```
 
-Получите IP-адрес из выходных данных по созданию виртуальной машины и используйте его для подключения к виртуальной машине по протоколу SSH.
+Подключитесь к виртуальной машине по протоколу SSH.
 
 ```azurecli-interactive
-ssh azureuser@<pubIp>
+ssh aibuser@<publicIpAddress>
 ```
 
-Вы должны увидеть, что образ был настроен с сообщением дня, как только подключение SSH установлено.
+Вы должны увидеть, что образ был настроен с *сообщением дня* , как только подключение SSH установлено.
 
 ```console
-
 *******************************************************
 **            This VM was built from the:            **
 **      !! AZURE VM IMAGE BUILDER Custom Image !!    **
@@ -203,38 +227,75 @@ ssh azureuser@<pubIp>
 *******************************************************
 ```
 
-Введите `exit` , когда завершите подключение SSH.
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-## <a name="check-the-source"></a>Проверка источника
+Если вы хотите выполнить повторную настройку версии образа, чтобы создать новую версию того же образа, пропустите дальнейшие действия и перейдите к разделу [Использование Azure Image Builder для создания другой версии образа](image-builder-gallery-update-image-version.md).
 
-В шаблоне Image Builder в разделе "Свойства" вы увидите исходное изображение, сценарий настройки, который он запускает, и где он распределен.
 
-```azurecli-interactive
-cat helloImageTemplateLinux.json
-```
+Это приведет к удалению созданного образа вместе со всеми остальными файлами ресурсов. Убедитесь, что вы завершили работу с этим развертыванием, прежде чем удалять ресурсы.
 
-Более подробные сведения об этом JSON файле см. в статье [Справочник](image-builder-json.md) по шаблонам в конструкторе образов
-
-## <a name="clean-up"></a>Очистка
-
-По завершении можно удалить ресурсы.
+При удалении ресурсов коллекции образов необходимо удалить все версии образа, прежде чем можно будет удалить определение образа, использованное для их создания. Чтобы удалить галерею, сначала необходимо удалить все определения образов в коллекции.
 
 Удалите шаблон построителя образов.
 
 ```azurecli-interactive
 az resource delete \
-    --resource-group $imageResourceGroup \
+    --resource-group $sigResourceGroup \
     --resource-type Microsoft.VirtualMachineImages/imageTemplates \
-    -n helloImageTemplateLinux01
+    -n helloImageTemplateforSIG01
 ```
 
-Удалите группу ресурсов образа.
+Удаление назначений разрешений, ролей и удостоверений
+```azurecli-interactive
+az role assignment delete \
+    --assignee $imgBuilderCliId \
+    --role "$imageRoleDefName" \
+    --scope /subscriptions/$subscriptionID/resourceGroups/$sigResourceGroup
 
-```bash
-az group delete -n $imageResourceGroup
+az role definition delete --name "$imageRoleDefName"
+
+az identity delete --ids $imgBuilderId
 ```
 
+Получить версию образа, созданную построителем образов, это всегда `0.`начинается с, а затем удаляет версию образа.
 
-## <a name="next-steps"></a>Следующие шаги
+```azurecli-interactive
+sigDefImgVersion=$(az sig image-version list \
+   -g $sigResourceGroup \
+   --gallery-name $sigName \
+   --gallery-image-definition $imageDefName \
+   --subscription $subscriptionID --query [].'name' -o json | grep 0. | tr -d '"')
+az sig image-version delete \
+   -g $sigResourceGroup \
+   --gallery-image-version $sigDefImgVersion \
+   --gallery-name $sigName \
+   --gallery-image-definition $imageDefName \
+   --subscription $subscriptionID
+```   
 
-Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](image-builder-json.md).
+
+Удаление определения образа.
+
+```azurecli-interactive
+az sig image-definition delete \
+   -g $sigResourceGroup \
+   --gallery-name $sigName \
+   --gallery-image-definition $imageDefName \
+   --subscription $subscriptionID
+```
+
+Удалите коллекцию.
+
+```azurecli-interactive
+az sig delete -r $sigName -g $sigResourceGroup
+```
+
+Удалите ее.
+
+```azurecli-interactive
+az group delete -n $sigResourceGroup -y
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения о [галереях общих образов Azure](shared-image-galleries.md).

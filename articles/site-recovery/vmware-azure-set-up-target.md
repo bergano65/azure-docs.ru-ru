@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/03/2019
 ms.author: mayg
 ms.openlocfilehash: c721234f2e1d806d51d31f3466e441bf8360f6b8
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "73693166"
 ---
 # <a name="prepare-the-target-environment-for-disaster-recovery-of-vmware-vms-or-physical-servers-to-azure"></a>Подготовка целевой среды к аварийному восстановлению виртуальных машин VMware или физических серверов в Azure
@@ -41,4 +41,4 @@ ms.locfileid: "73693166"
 Если у вас нет виртуальной сети, ее можно создать, нажав кнопку **+ Network (+ сеть** ) в верхней части страницы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Настройка параметров репликации](vmware-azure-set-up-replication.md).
+[Настройте параметры репликации](vmware-azure-set-up-replication.md).

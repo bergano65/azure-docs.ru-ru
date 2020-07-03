@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 07/08/2019
 ms.author: cshoe
-ms.openlocfilehash: 35df4c6c20345053bcc39a267a90a7bb1b227241
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 1688fe848beb62731391bf4399a0dabec5265320
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76766235"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79277522"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
 
@@ -18,7 +18,7 @@ ms.locfileid: "76766235"
 
 Рассмотрим следующие элементы, связанные с расширениями привязки:
 
-- Расширения привязки явно не регистрируются в функциях 1. x, за исключением случаев [создания библиотеки C# классов с помощью Visual Studio](#local-csharp).
+- Расширения привязки явно не регистрируются в функциях 1. x, за исключением случаев [создания библиотеки классов C# с помощью Visual Studio](#local-csharp).
 
 - Триггеры HTTP и Timer поддерживаются по умолчанию и не нуждаются в расширении.
 
@@ -28,10 +28,10 @@ ms.locfileid: "76766235"
 |-------------------------|------------------------------------|------------------------------------|
 |Портал Azure|Автоматически|Автоматически|
 |Разработка Non-.NET языков или локальных средств Azure Core Tools|Автоматически|[Использование Azure Functions Core Tools и пакетов расширений](#extension-bundles)|
-|C#Библиотека классов с помощью Visual Studio|[С помощью средств NuGet](#vs)|[С помощью средств NuGet](#vs)|
-|Библиотека классов C# с использованием Visual Studio Code|Н/Д|[С помощью .NET Core CLI](#vs-code)|
+|Библиотека классов C# с использованием Visual Studio|[С помощью средств NuGet](#vs)|[С помощью средств NuGet](#vs)|
+|Библиотека классов C# с использованием Visual Studio Code|Недоступно|[С помощью .NET Core CLI](#vs-code)|
 
-## <a name="extension-bundles"></a>Пакеты расширений для локальной разработки
+## <a name="extension-bundles-for-local-development"></a><a name="extension-bundles"></a>Пакеты расширений для локальной разработки
 
 Пакеты расширений — это технология развертывания, позволяющая добавить совместимый набор функций расширений привязки к приложению-функции. При создании приложения добавляется предопределенный набор расширений. Пакеты расширений, определенные в пакете, совместимы друг с другом, что позволяет избежать конфликтов между пакетами. Пакеты расширений можно включить в файле host. JSON приложения.  
 
@@ -41,13 +41,13 @@ ms.locfileid: "76766235"
 
 Если вы не используете пакеты расширений, необходимо установить пакет SDK для .NET Core 2. x на локальном компьютере перед установкой каких бы то ни было расширений привязки. Пакеты расширений удаляют это требование для локальной разработки. 
 
-Чтобы использовать пакеты расширений, обновите файл *Host. JSON* , включив в него следующую запись для `extensionBundle`:
+Чтобы использовать пакеты расширений, обновите файл *Host. JSON* , включив в него следующую запись `extensionBundle`:
  
 [!INCLUDE [functions-extension-bundles-json](../../includes/functions-extension-bundles-json.md)]
 
 <a name="local-csharp"></a>
 
-## <a name="vs"></a>Библиотека классов C\# в Visual Studio
+## <a name="c-class-library-with-visual-studio"></a><a name="vs"></a>Библиотека\# классов C в Visual Studio
 
 В **Visual Studio**пакеты можно установить из консоли диспетчера пакетов с помощью команды [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package) , как показано в следующем примере:
 
@@ -55,15 +55,15 @@ ms.locfileid: "76766235"
 Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <TARGET_VERSION>
 ```
 
-Имя пакета, используемого для данной привязки, приведено в справочной статье для этой привязки. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#packages---functions-1x).
+Имя пакета, используемого для данной привязки, приведено в справочной статье для этой привязки. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#functions-1x).
 
 Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на отдельных страницах пакета по адресу [NuGet.org](https://nuget.org). Основные версии, соответствующие функциям среды выполнения 1. x или 2. x, указаны в справочной статье для привязки.
 
-Если для ссылки на привязку используется `Install-Package`, не нужно использовать [пакеты расширений](#extension-bundles). Этот подход характерен для библиотек классов, созданных в Visual Studio.
+При использовании `Install-Package` для ссылки на привязку не нужно использовать [пакеты расширений](#extension-bundles). Этот подход характерен для библиотек классов, созданных в Visual Studio.
 
-## <a name="vs-code"></a>C# библиотека классов с Visual Studio Code
+## <a name="c-class-library-with-visual-studio-code"></a><a name="vs-code"></a>Библиотека классов C# с Visual Studio Code
 
-В **Visual Studio Code**установите пакеты для проекта библиотеки C# классов из командной строки с помощью команды [DotNet Add Package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package) в .NET Core CLI. В следующем примере показано, как добавить привязку:
+В **Visual Studio Code**установите пакеты для проекта библиотеки классов C# из командной строки с помощью команды [DotNet add package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package) в .NET Core CLI. В следующем примере показано, как добавить привязку:
 
 ```terminal
 dotnet add package Microsoft.Azure.WebJobs.Extensions.<BINDING_TYPE_NAME> --version <TARGET_VERSION>
@@ -71,10 +71,10 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.<BINDING_TYPE_NAME> --vers
 
 Интерфейс .NET Core CLI можно использовать только при разработке в среде "Функции Azure" версии 2.х.
 
-Замените `<BINDING_TYPE_NAME>` именем пакета, который содержит необходимую привязку. Нужную ссылочную статью привязки можно найти в [списке поддерживаемых привязок](./functions-triggers-bindings.md#supported-bindings).
+Замените `<BINDING_TYPE_NAME>` на имя пакета, содержащего необходимую привязку. Нужную ссылочную статью привязки можно найти в [списке поддерживаемых привязок](./functions-triggers-bindings.md#supported-bindings).
 
 Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на отдельных страницах пакета по адресу [NuGet.org](https://nuget.org). Основные версии, соответствующие функциям среды выполнения 1. x или 2. x, указаны в справочной статье для привязки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 > [!div class="nextstepaction"]
 > [Пример триггера и привязки функции Azure](./functions-bindings-example.md)

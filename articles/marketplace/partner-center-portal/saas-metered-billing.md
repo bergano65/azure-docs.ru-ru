@@ -1,19 +1,18 @@
 ---
 title: Оплата с оплатой с использованием службы измерения Marketplace | Azure Marketplace
 description: Эта документация представляет собой руководство для независимых продавцов по публикации предложений SaaS с гибкими моделями выставления счетов.
-author: MaggiePucciEvans
-manager: evansma
-ms.author: evansma
+author: dsindona
+ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 07/10/2019
-ms.openlocfilehash: f1b60831e08383ee455cd3afbfbc21ed27445ffc
-ms.sourcegitcommit: 014e916305e0225512f040543366711e466a9495
+ms.openlocfilehash: 8e5a4813301cbab16d1cffabaaa60688f6e826ae
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75934173"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80281329"
 ---
 # <a name="metered-billing-using-the-marketplace-metering-service"></a>Расчет с оплатой с использованием службы измерения Marketplace
 
@@ -118,7 +117,7 @@ ms.locfileid: "75934173"
 
 Максимальное число измерений, которое можно настроить для одного предложения, составляет 18 уникальных измерений.
 
-## <a name="get-support"></a>Получить поддержку
+## <a name="get-support"></a>Получение поддержки
 
 Если у вас есть одно из следующих действий, можно открыть запрос в службу поддержки.
 
@@ -136,6 +135,6 @@ ms.locfileid: "75934173"
 
 Дополнительные варианты поддержки издателя см. [в разделе Поддержка программы коммерческого рынка в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/support) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения см. в статье [API-интерфейсы службы измерения Marketplace](./marketplace-metering-service-apis.md) .

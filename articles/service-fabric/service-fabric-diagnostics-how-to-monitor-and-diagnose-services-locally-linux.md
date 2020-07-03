@@ -3,12 +3,12 @@ title: Отладка приложений Service Fabric Azure в Linux
 description: Сведения о мониторинге и диагностике служб Service Fabric на локальном компьютере разработчика под управлением Linux.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: d8b5ec2f2190586f5eced5eee112b190a82504c3
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.openlocfilehash: fa8c4053a348c539c2e9e7a87d002d0fcf4a4d52
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
-ms.locfileid: "75526300"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80991336"
 ---
 # <a name="monitor-and-diagnose-services-in-a-local-linux-machine-development-setup"></a>Мониторинг и диагностика служб в локальной настройке разработки машин Linux
 
@@ -24,7 +24,7 @@ ms.locfileid: "75526300"
 
 ## <a name="debugging-service-fabric-java-applications"></a>Отладка приложений Java в Service Fabric
 
-Для приложений Java доступно [несколько платформ ведения журналов](https://en.wikipedia.org/wiki/Java_logging_framework) . Так как `java.util.logging` является параметром по умолчанию в среде JRE, он также используется для [примеров кода в GitHub](https://github.com/Azure-Samples/service-fabric-java-getting-started). Далее в этой статье описывается настройка платформы `java.util.logging` .
+Для приложений Java доступно [несколько платформ ведения журналов](https://en.wikipedia.org/wiki/Java_logging_framework) . Так `java.util.logging` как является параметром по умолчанию JRE, он также используется для [примеров кода в GitHub](https://github.com/Azure-Samples/service-fabric-java-getting-started). Далее в этой статье описывается настройка платформы `java.util.logging` .
 
 С помощью java.util.logging журналы приложения можно перенаправлять в память, потоки вывода, файлы консоли или сокеты. Для каждого из этих вариантов существуют обработчики по умолчанию, входящие в состав платформы. Чтобы настроить обработчик файлов для приложения, который будет перенаправлять все журналы в локальный файл, можно создать файл `app.properties`.
 
@@ -53,13 +53,13 @@ java -Djava.library.path=$LD_LIBRARY_PATH -Djava.util.logging.config.file=<path 
 
 Если обработчик не настроен явно, по умолчанию регистрируется обработчик консоли. Просмотреть журналы в системном журнале можно в папке /var/log/syslog.
 
-Дополнительные сведения см. на странице GitHub с [примерами кода](https://github.com/Azure-Samples/service-fabric-java-getting-started).
+Дополнительные сведения см. в [примерах кода в GitHub](https://github.com/Azure-Samples/service-fabric-java-getting-started).
 
 
 ## <a name="debugging-service-fabric-c-applications"></a>Отладка приложений C# в Service Fabric
 
 
-Для трассировки приложений CoreCLR на платформе Linux доступно несколько платформ. Дополнительные сведения см. в разделе о [ведении журналов](http:/github.com/aspnet/logging) на сайте GitHub.  Так как EventSource знаком разработчикам на языке C#, в этой статье он используется для трассировки в образцах CoreCLR на Linux.
+Для трассировки приложений CoreCLR на платформе Linux доступно несколько платформ. Дополнительные сведения см. в разделе [ведение журнала в расширениях .NET](https://github.com/dotnet/extensions/tree/master/src/Logging).  Так как EventSource знаком разработчикам на языке C#, в этой статье он используется для трассировки в образцах CoreCLR на Linux.
 
 Сначала необходимо добавить System.Diagnostics.Tracing, чтобы иметь возможность записывать журналы в память, выходные потоки или файлы консоли.  Для ведения журналов с помощью EventSource добавьте в project.json следующий проект:
 
@@ -130,6 +130,6 @@ public static TextWriter Out = Console.Out;
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Код трассировки, добавленный в приложение, также можно использовать для диагностики приложения в кластере Azure. Ознакомьтесь с этими статьями, в которых рассматриваются различные варианты инструментов и описывается, как их настроить.
 * [Сбор журналов с помощью системы диагностики Azure](service-fabric-diagnostics-how-to-setup-lad.md)

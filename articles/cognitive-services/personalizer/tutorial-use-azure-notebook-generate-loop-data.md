@@ -1,5 +1,5 @@
 ---
-title: Руководство. Azure Notebook. Персонализатор
+title: Руководство по Azure Notebook. Персонализатор
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве описано, как смоделировать в Azure Notebook цикл _system Персонализатора, который предлагает типы кофе для клиентов. Пользователи и их предпочтения хранятся в наборе данных о пользователях. Также доступны сведения о видах кофе, сохраненные в наборе данных о кофе.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: tutorial
-ms.date: 02/03/2020
+ms.date: 04/27/2020
 ms.author: diberry
-ms.openlocfilehash: 03e8b658f7edf4640d738e5ea3af84953185d0f5
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 1f004fe1dae58faaded0b872dcdebdb4e9af66aa
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76986841"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82193009"
 ---
-# <a name="tutorial-use-personalizer-in-azure-notebook"></a>Руководство. Использование Персонализатора в Azure Notebook
+# <a name="tutorial-use-personalizer-in-azure-notebook"></a>Руководство по Использование Персонализатора в Azure Notebook
 
 В этом руководстве описано, как в Azure Notebook выполняется цикл Персонализатора, на примере которого мы рассмотрим соответствующий полный жизненный цикл.
 

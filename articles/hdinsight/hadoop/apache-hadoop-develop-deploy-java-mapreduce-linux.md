@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 01/16/2020
 ms.openlocfilehash: a37a8bb45c11d5b74f3059a153806e3d083cf452
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76311960"
 ---
 # <a name="develop-java-mapreduce-programs-for-apache-hadoop-on-hdinsight"></a>Разработка программ MapReduce на Java для Apache Hadoop в HDInsight
 
 Узнайте, как использовать Apache Maven, чтобы создать приложение MapReduce на основе Java, а также запустить его с помощью Apache Hadoop в Azure HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks).
 
@@ -44,13 +44,13 @@ cd C:\HDI
    mvn archetype:generate -DgroupId=org.apache.hadoop.examples -DartifactId=wordcountjava -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
    ```
 
-    Эта команда создает каталог с именем, указанным в параметре `artifactID` (в этом примере это**Каталог wordcountjava** ). Этот каталог содержит следующие элементы:
+    Эта команда создает каталог с именем, указанным в `artifactID` параметре (**Каталог wordcountjava** в этом примере). Этот каталог содержит следующие элементы:
 
     * `pom.xml` — это [объектная модель проекта (POM)](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html), которая содержит сведения и данные конфигурации, использующиеся при сборке проекта;
     * срк\маин\жава\орг\апаче\хадуп\ексамплес: содержит код приложения.
     * срк\тест\жава\орг\апаче\хадуп\ексамплес: содержит тесты для вашего приложения.
 
-1. Удалите созданный код примера. Удалите созданные файлы тестов и приложений `AppTest.java`и `App.java`, введя приведенные ниже команды.
+1. Удалите созданный код примера. Удалите созданные файлы `AppTest.java`тестов и приложений, а затем `App.java` введите приведенные ниже команды.
 
     ```cmd
     cd wordcountjava
@@ -60,7 +60,7 @@ cd C:\HDI
 
 ## <a name="update-the-project-object-model"></a>Обновление модели объекта проекта
 
-Полную ссылку на файл POM. XML см. в разделе https://maven.apache.org/pom.html. Откройте `pom.xml`, введя следующую команду:
+Все справочные материалы по файлу pom.xml см. по адресу https://maven.apache.org/pom.html. Откройте `pom.xml` , введя следующую команду:
 
 ```cmd
 notepad pom.xml
@@ -68,7 +68,7 @@ notepad pom.xml
 
 ### <a name="add-dependencies"></a>Добавление зависимостей
 
-В `pom.xml`добавьте следующий текст в раздел `<dependencies>`.
+В `pom.xml`добавьте в `<dependencies>` раздел следующий текст:
 
 ```xml
 <dependency>
@@ -102,7 +102,7 @@ notepad pom.xml
 
 Подключаемые модули Maven позволяют настроить этапы сборки проекта. Этот раздел используется для добавления подключаемых модулей, ресурсов и других параметров конфигурации сборки.
 
-Добавьте следующий код в файл `pom.xml`, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
+Добавьте в `pom.xml` файл следующий код, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
 
 ```xml
 <build>
@@ -281,10 +281,10 @@ mvn clean package
     zenith  2
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе объясняется, как разработать задание MapReduce на Java. Чтобы узнать о других методах работы с HDInsight, см. следующие документы.
 
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hdinsight-use-hive.md)
-* [Использование MapReduce с HDInsight](hdinsight-use-mapreduce.md)
+* [Использование MapReduce в Hadoop в HDInsight](hdinsight-use-mapreduce.md)
 * [Центр разработчиков Java](https://azure.microsoft.com/develop/java/)

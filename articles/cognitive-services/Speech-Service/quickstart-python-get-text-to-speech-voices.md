@@ -3,19 +3,19 @@ title: Перечисление голосовых моделей для пре�
 titleSuffix: Azure Cognitive Services
 description: В этой статье описано, как получить полный список стандартных и нейронных голосовых моделей для региона или конечной точки с использованием Python. Список возвращается как JSON, а доступность голосовой модели зависит от региона.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: how-to
-ms.date: 02/10/2020
-ms.author: dapine
-ms.openlocfilehash: 51fe6cea80e097f34432ab8dc7293c758bd8d720
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.date: 04/13/2020
+ms.author: trbye
+ms.openlocfilehash: b388c8d8b61e2fc638ae2bce5bc6d9eeb25ee0d4
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119810"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81401012"
 ---
 # <a name="get-the-list-of-text-to-speech-voices-using-python"></a>Получение списка голосовых моделей для преобразований текста в речь с использованием Python
 
@@ -26,7 +26,7 @@ ms.locfileid: "77119810"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Python 2.7.x или 3.x;
-* [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
+* <a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual Studio <span class="docon docon-navigate-external x-hidden-focus"></span></a>, <a href="https://code.visualstudio.com/download" target="_blank"> Visual Studio Code <span class="docon docon-navigate-external x-hidden-focus"></span></a> или другой редактор кода;
 * ключ подписки Azure для службы "Речь".
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей

@@ -5,14 +5,14 @@ services: event-grid
 author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/21/2019
+ms.date: 04/28/2020
 ms.author: spelluru
-ms.openlocfilehash: f9fca0a9fefb5959747a4492139ae422a118db02
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.openlocfilehash: 0f503b21d5a7d0fdfbee79354c198775789c0b91
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70390178"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82888781"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -59,9 +59,9 @@ ms.locfileid: "70390178"
 
 * operatorType — тип сравнения;
 * ключ — поле в данных события, которое используется для фильтрации (это может быть число, логическое значение или строка);
-* value или values — значения для сравнения с ключом.
+* Values — значение или значения, сравниваемые с ключом.
 
-Если указать один фильтр с несколькими значениями, то выполняется операция **или** , поэтому значением ключевого поля должно быть одно из следующих значений. Пример:
+Если указать один фильтр с несколькими значениями, то выполняется операция **или** , поэтому значением ключевого поля должно быть одно из следующих значений. Например:
 
 ```json
 "advancedFilters": [
@@ -76,7 +76,7 @@ ms.locfileid: "70390178"
 ]
 ```
 
-При указании нескольких различных фильтров выполняется операция **и** , поэтому должно выполняться каждое условие фильтра. Пример: 
+При указании нескольких различных фильтров выполняется операция **и** , поэтому должно выполняться каждое условие фильтра. Например: 
 
 ```json
 "advancedFilters": [
@@ -97,9 +97,9 @@ ms.locfileid: "70390178"
 ]
 ```
 
-### <a name="operator"></a>Оператор
+### <a name="operators"></a>Операторы
 
-Доступны такие операторы для чисел:
+Доступные для **чисел** операторы:
 
 * NumberGreaterThan;
 * NumberGreaterThanOrEquals;
@@ -108,9 +108,10 @@ ms.locfileid: "70390178"
 * NumberIn;
 * NumberNotIn.
 
-Доступный оператор логических значений: BoolEquals
+Ниже приведен допустимый оператор для **логических** значений. 
+- BoolEquals
 
-Доступные операторы для строк:
+Ниже приведены доступные операторы для **строк** .
 
 * StringContains;
 * StringBeginsWith;
@@ -118,15 +119,15 @@ ms.locfileid: "70390178"
 * StringIn;
 * StringNotIn.
 
-При сравнении строк учитывается регистр.
+Все сравнения строк **не** учитывают регистр.
 
-### <a name="key"></a>Ключ
+### <a name="key"></a>Key
 
 Для событий в схеме "Сетка событий" используются следующие значения для ключа:
 
-* id
+* ID
 * Раздел
-* Subject
+* Субъект
 * EventType
 * DataVersion;
 * дата события (например Data.key1).
@@ -134,7 +135,7 @@ ms.locfileid: "70390178"
 Для событий в схеме "События в облаке" используются следующие значения для ключа:
 
 * EventId
-* Source
+* Источник
 * EventType
 * EventTypeVersion;
 * дата события (например Data.key1).
@@ -143,12 +144,12 @@ ms.locfileid: "70390178"
 
 ### <a name="values"></a>Значения
 
-Значения могут быть такими:
+Допустимые значения:
 
 * number
 * строка
 * boolean
-* array
+* массиве
 
 ### <a name="limitations"></a>Ограничения
 
@@ -157,10 +158,160 @@ ms.locfileid: "70390178"
 * пять расширенных фильтров на каждую подписку сетки событий;
 * 512 знаков для значения строки;
 * пять значений для операторов **in** и **not in**;
+* Ключи с ** `.` символом (точкой)** . Пример: `http://schemas.microsoft.com/claims/authnclassreference` или `john.doe@contoso.com`. В настоящее время escape-символы в ключах не поддерживаются. 
 
 Один ключ можно использовать в нескольких фильтрах.
 
-## <a name="next-steps"></a>Следующие шаги
+### <a name="examples"></a>Примеры
+
+### <a name="stringcontains"></a>StringContains;
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringContains",
+    "key": "data.key1",
+    "values": [
+        "microsoft", 
+        "azure"
+    ]
+}]
+```
+
+### <a name="stringbeginswith"></a>StringBeginsWith;
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringBeginsWith",
+    "key": "data.key1",
+    "values": [
+        "event", 
+        "grid"
+    ]
+}]
+```
+
+### <a name="stringendswith"></a>StringEndsWith;
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringEndsWith",
+    "key": "data.key1",
+    "values": [
+        "jpg", 
+        "jpeg", 
+        "png"
+    ]
+}]
+```
+
+### <a name="stringin"></a>StringIn;
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringIn",
+    "key": "data.key1",
+    "values": [
+        "exact", 
+        "string", 
+        "matches"
+    ]
+}]
+```
+
+### <a name="stringnotin"></a>StringNotIn.
+
+```json
+"advancedFilters": [{
+    "operatorType": "StringNotIn",
+    "key": "data.key1",
+    "values": [
+        "aws", 
+        "bridge"
+    ]
+}]
+```
+
+### <a name="numberin"></a>NumberIn;
+
+```json
+
+"advancedFilters": [{
+    "operatorType": "NumberIn",
+    "key": "data.counter",
+    "values": [
+        5,
+        1
+    ]
+}]
+
+```
+
+### <a name="numbernotin"></a>NumberNotIn.
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberNotIn",
+    "key": "data.counter",
+    "values": [
+        41,
+        0,
+        0
+    ]
+}]
+```
+
+### <a name="numberlessthan"></a>NumberLessThan;
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberLessThan",
+    "key": "data.counter",
+    "value": 100
+}]
+```
+
+### <a name="numbergreaterthan"></a>NumberGreaterThan;
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberGreaterThan",
+    "key": "data.counter",
+    "value": 20
+}]
+```
+
+### <a name="numberlessthanorequals"></a>NumberGreaterThanOrEquals;
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberLessThanOrEquals",
+    "key": "data.counter",
+    "value": 100
+}]
+```
+
+### <a name="numbergreaterthanorequals"></a>NumberGreaterThanOrEquals;
+
+```json
+"advancedFilters": [{
+    "operatorType": "NumberGreaterThanOrEquals",
+    "key": "data.counter",
+    "value": 30
+}]
+```
+
+### <a name="boolequals"></a>BoolEquals
+
+```json
+"advancedFilters": [{
+    "operatorType": "BoolEquals",
+    "key": "data.isEnabled",
+    "value": true
+}]
+```
+
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о фильтрации событий для Сетки событий с помощью [PowerShell и Azure CLI](how-to-filter-events.md).
 * Сведения о том, как быстро приступить к использованию службы "Сетка событий", см. в разделе [Создание и перенаправление пользовательского события со службой "Сетка событий Azure"](custom-event-quickstart.md).

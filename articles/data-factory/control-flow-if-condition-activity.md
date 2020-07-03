@@ -11,14 +11,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: ef63a159c132f5b565123eeb4824fb1ae5812ce1
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 9b491c4f0cc99395c44d989bf19fa2a7b03da696
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75444151"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81417172"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Действие условия If в фабрике данных Azure
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
 Действие условия If предоставляет те же функциональные возможности, что и инструкция if в языках программирования. Оно определяет набор действий, если условие принимает значение `true`, и другой набор действий, если условие принимает значение `false`. 
 
 ## <a name="syntax"></a>Синтаксис
@@ -63,10 +65,10 @@ ms.locfileid: "75444151"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Description | Допустимые значения | Обязательно для заполнения
+Свойство | Описание | Допустимые значения | Обязательный
 -------- | ----------- | -------------- | --------
-name | Имя действия условия If. | String | Да
-type | Для этого свойства необходимо задать значение **IfCondition**. | String | Да
+name | Имя действия условия If. | Строка | Да
+type | Для этого свойства необходимо задать значение **IfCondition**. | Строка | Да
 expression | Выражение, для которого возвращается значение true или false. | Выражение с типом результата "логический" | Да
 ifTrueActivities | Набор действий, которые выполняются, если выражение получает значение `true`. | Array | Да
 ifFalseActivities | Набор действий, которые выполняются, если выражение получает значение `false`. | Array | Да
@@ -182,7 +184,7 @@ ifFalseActivities | Набор действий, которые выполняю
 
 ```json
 "expression":  {
-    "value":  "@pipeline().parameters.routeSelection == 1", 
+    "value":  "@equals(pipeline().parameters.routeSelection,1)", 
     "type": "Expression"
 }
 ```
@@ -285,11 +287,11 @@ Write-Host "\nActivity 'Error' section:" -foregroundcolor "Yellow"
 $result.Error -join "`r`n"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие выполнения конвейера](control-flow-execute-pipeline-activity.md)
-- [Действие ForEach](control-flow-for-each-activity.md)
+- [Действие For Each](control-flow-for-each-activity.md)
 - [Действие получения метаданных](control-flow-get-metadata-activity.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 - [Веб-действие](control-flow-web-activity.md)

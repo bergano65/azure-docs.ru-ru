@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: d56007e5a196a0857f3b69ac51f5e3b5a88c4f6e
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "67593488"
 ---
 # <a name="real-time-stats-in-microsoft-azure-cdn"></a>Статистика в реальном времени в сети CDN Microsoft Azure
@@ -29,7 +29,7 @@ ms.locfileid: "67593488"
 
 Доступны следующие диаграммы:
 
-* [Пропускная способность](#bandwidth)
+* [Связи](#bandwidth)
 * [Коды состояний](#status-codes)
 * [Состояния кэша](#cache-statuses)
 * [Подключения](#connections)
@@ -84,13 +84,13 @@ ms.locfileid: "67593488"
 
 Можно временно скрыть данные журнала для определенного кода состояния.  В условных обозначениях непосредственно под диаграммой щелкните код состояния, который нужно скрыть. Код состояния сразу же пропадет из диаграммы. Если щелкнуть этот код состояния еще раз, он снова появится на диаграмме.
 
-## <a name="connections"></a>Подключения
+## <a name="connections"></a>Соединения
 ![Диаграмма "Подключения"](./media/cdn-real-time-stats/cdn-connections.png)
 
 На этой диаграмме показано количество подключений, установленных с пограничными серверами. Подключение устанавливается при каждом запросе к ресурсу, который проходит через сеть CDN.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Получение уведомлений с помощью [оповещения в режиме реального времени в Azure CDN](cdn-real-time-alerts.md)
 * Дополнительные сведения о [расширенных HTTP-отчетах](cdn-advanced-http-reports.md).
-* [Анализ вариантов использования CDN Azure](cdn-analyze-usage-patterns.md).
+* Анализ [закономерностей использования](cdn-analyze-usage-patterns.md)
 

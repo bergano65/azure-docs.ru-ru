@@ -10,12 +10,12 @@ ms.date: 12/04/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: blobs
-ms.openlocfilehash: c83e56a47f4b212a5612cb9e6965ce8e73228dcb
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.openlocfilehash: c1d26fda57d665cc8d83f594f4efeebebc7bf139
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74892895"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "81456895"
 ---
 # <a name="tutorial---encrypt-and-decrypt-blobs-using-azure-key-vault"></a>Руководство. Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
 
@@ -23,13 +23,13 @@ ms.locfileid: "74892895"
 
 **Предполагаемое время выполнения**: 20 минут
 
-Общие сведения о хранилище ключей Azure см. в статье [Что такое хранилище ключей Azure?](../../key-vault/key-vault-overview.md)
+Общие сведения о хранилище ключей Azure см. в статье [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
 
 Общие сведения о шифровании на стороне клиента для службы хранилища Azure см. в статье [Шифрование на стороне клиента для службы хранилища Microsoft Azure](../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником требуется:
+Для работы с этим учебником необходимо наличие следующих компонентов.
 
 * Учетная запись хранения Azure
 * Visual Studio 2013 или более поздней версии
@@ -48,11 +48,11 @@ ms.locfileid: "74892895"
 
 ## <a name="set-up-your-azure-key-vault"></a>Настройка хранилища ключей Azure
 
-Для продолжения работы с этим руководством необходимо выполнить действия, описанные в руководстве по [ настройке и получению секрета из Azure Key Vault с помощью веб-приложения .NET](../../key-vault/quick-create-net.md).
+Для продолжения работы с этим руководством необходимо выполнить действия, описанные в руководстве по [ настройке и получению секрета из Azure Key Vault с помощью веб-приложения .NET](../../key-vault/secrets/quick-create-net.md).
 
 * Создать хранилище ключей.
 * Добавить ключ или секрет в хранилище ключей.
-* Зарегистрировать приложение в Azure Active Directory.
+* Зарегистрируйте приложение в Azure Active Directory.
 * Разрешить приложению использовать ключ или секрет.
 
 Запишите ClientID и ClientSecret, сформированные при регистрации приложения в Azure Active Directory.
@@ -129,7 +129,8 @@ private async static Task<string> GetToken(string authority, string resource, st
 // This is standard code to interact with Blob storage.
 StorageCredentials creds = new StorageCredentials(
     CloudConfigurationManager.GetSetting("accountName"),
-    CloudConfigurationManager.GetSetting("accountKey");
+    CloudConfigurationManager.GetSetting("accountKey")
+);
 CloudStorageAccount account = new CloudStorageAccount(creds, useHttps: true);
 CloudBlobClient client = account.CreateCloudBlobClient();
 CloudBlobContainer contain = client.GetContainerReference(CloudConfigurationManager.GetSetting("container"));
@@ -230,9 +231,9 @@ SymmetricKey sec = (SymmetricKey) cloudResolver.ResolveKeyAsync(
     CancellationToken.None).GetAwaiter().GetResult();
 ```
 
-Вот и все. Так просто!
+Вот и все. Вот и все!
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании службы хранилища Microsoft Azure с C# см. в статье [Клиентская библиотека службы хранилища Microsoft Azure для .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx).
 

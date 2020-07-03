@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: c84452ff71fa34a65b2e56ec753b68bf551c7e35
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.openlocfilehash: 0c8739dff39490f14b613af483f769ac031c1bd9
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826282"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82792383"
 ---
 # <a name="frequently-asked-questions-for-connected-factory-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения "Подключенная фабрика"
 
@@ -30,7 +30,7 @@ ms.locfileid: "73826282"
 Унифицированная архитектура OPC (OPC UA, выпущена в 2008 г.) — это независящий от платформы, сервис-ориентированный стандарт взаимодействия. OPC UA используется в различных производственных системах и устройствах, например в производственных компьютерах, контроллерах ПЛК и датчиках. В OPC UA интегрированы функции спецификаций классической технологии OPC с одной расширяемой платформой со встроенными средствами обеспечения безопасности. Этим стандартом управляет OPC Foundation. [OPC Foundation](https://opcfoundation.org/) — это некоммерческая организация, в которую входит более 440 членов. Ее цель заключается в обеспечении надежного, безопасного взаимодействия между несколькими поставщиками и платформами на основе спецификации OPC через следующие компоненты:
 
 * Инфраструктура
-* Спецификации
+* Характеристики
 * Технология
 * Процессы
 
@@ -68,7 +68,7 @@ IP-адрес можно удалить двумя вариантами.
 1. Используйте следующее имя пользователя: `docker`.
 1. Используемый пароль зависит от версии, с помощью которой выполнялось развертывание.
     * Для решений, развертываемых с помощью сценария build.ps1 до 1 июня 2017 г., используйте пароль `Passw0rd`.
-    * Для решений, развертываемых с помощью сценария build.ps1 после 1 июня 2017 г., пароль можно найти в файле `<name of your deployment>.config.user`. Пароль хранится в параметре **VmAdminPassword**. Пароль формируется случайным образом во время развертывания (если он не указан с помощью параметра `build.ps1` сценария `-VmAdminPassword`).
+    * Для решений, развертываемых с помощью сценария build.ps1 после 1 июня 2017 г., пароль можно найти в файле `<name of your deployment>.config.user`. Пароль хранится в параметре **VmAdminPassword**. Пароль формируется случайным образом во время развертывания (если он не указан с помощью параметра `-VmAdminPassword` сценария `build.ps1`).
 
 ### <a name="how-do-i-stop-and-start-all-docker-processes-in-the-simulation-vm"></a>Как остановить и запустить все процессы docker на виртуальной машине симуляции?
 
@@ -76,7 +76,7 @@ IP-адрес можно удалить двумя вариантами.
 1. Чтобы проверить, какие контейнеры активны, выполните команду `docker ps`.
 1. Чтобы остановить все контейнеры симуляции, выполните команду `./stopsimulation`.
 1. Чтобы запустить все контейнеры симуляции, сделайте следующее:
-    * Экспортируйте переменную оболочки с именем **IOTHUB_CONNECTIONSTRING**. Используйте значение **IotHubOwnerConnectionString** в файле `<name of your deployment>.config.user`. Например:
+    * Экспортируйте переменную оболочки с именем **IOTHUB_CONNECTIONSTRING**. Используйте значение **IotHubOwnerConnectionString** в файле `<name of your deployment>.config.user`. Пример:
 
         ```sh
         export IOTHUB_CONNECTIONSTRING="HostName={yourdeployment}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={your key}"
@@ -111,7 +111,7 @@ IP-адрес можно удалить двумя вариантами.
 * publisher.rio.corp.contoso;
 * publisher.seattle.corp.contoso.
 
-С помощью инструмента [DeviceExplorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) или [расширения центра Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) можно проверить, какие устройства зарегистрированы в центре Интернета вещей, используемом решением. Чтобы использовать обозреватель устройств, требуется строка подключения к Центру Интернета вещей в вашем развертывании. Чтобы использовать расширение центра Интернета вещей для Azure CLI, требуется имя центра Интернета вещей.
+С помощью инструмента [DeviceExplorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/) или [расширения центра Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension) можно проверить, какие устройства зарегистрированы в центре Интернета вещей, используемом решением. Чтобы использовать обозреватель устройств, требуется строка подключения к Центру Интернета вещей в вашем развертывании. Чтобы использовать расширение центра Интернета вещей для Azure CLI, требуется имя центра Интернета вещей.
 
 ### <a name="how-can-i-get-log-data-from-the-simulation-components"></a>Как получить данные журнала из компонентов симуляции?
 
@@ -125,7 +125,7 @@ IP-адрес можно удалить двумя вариантами.
 
 ### <a name="how-can-i-check-if-the-simulation-is-sending-data-to-the-cloud"></a>Как проверить, отправляет ли симуляция данные в облако?
 
-Инструмент [DeviceExplorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer) или команда [Azure IoT CLI Extension monitor-events](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-monitor-events) позволяют просмотреть данные, отправленные в Центр Интернета вещей с определенных устройств. Чтобы использовать эти инструменты, требуется знать строку подключения к Центру Интернета вещей в вашем развертывании. Дополнительные сведения см. в разделе [Как найти строку подключения Центра Интернета вещей, используемого моим решением?](#how-do-i-find-out-the-connection-string-of-the-iot-hub-used-by-my-solution)
+С помощью [обозревателя Интернета вещей Azure](https://github.com/Azure/azure-iot-explorer) или команды [Monitor-Events интерфейса командной строки Azure IOT](https://docs.microsoft.com/cli/azure/ext/azure-iot/iot/hub?view=azure-cli-latest#ext-azure-iot-az-iot-hub-monitor-events) можно проверить данные, отправляемые в центр Интернета вещей с определенных устройств. Чтобы использовать эти инструменты, требуется знать строку подключения к Центру Интернета вещей в вашем развертывании. Дополнительные сведения см. в разделе [Как найти строку подключения Центра Интернета вещей, используемого моим решением?](#how-do-i-find-out-the-connection-string-of-the-iot-hub-used-by-my-solution)
 
 Проверьте данные, отправленные одним из устройств издателя:
 
@@ -190,10 +190,10 @@ IP-адрес можно удалить двумя вариантами.
 
 1. Перезапустите службу приложений для решения "Подключенная фабрика".
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Следующие шаги
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-overview.md)
+* [Обзор акселератора решений для прогнозного обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
-* [Комплексная защита в Интернете вещей](/azure/iot-fundamentals/iot-security-ground-up)
+* [Все аспекты безопасности Интернета вещей](/azure/iot-fundamentals/iot-security-ground-up)

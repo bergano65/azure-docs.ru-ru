@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/12/2017
 ms.author: yushwang
 ms.openlocfilehash: 78147a96d6d9e92c2602b6a83cbed743cf2abf37
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77152046"
 ---
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways-using-powershell"></a>Настройка BGP на VPN-шлюзах Azure с помощью PowerShell
@@ -38,13 +38,13 @@ ms.locfileid: "77152046"
 
 Вы можете объединять блоки для создания более сложных, многоскачковых и транзитных сетей, в соответствии со своими задачами.
 
-## <a name ="enablebgp"></a>Часть 1 — настройка BGP для VPN-шлюза Azure
+## <a name="part-1---configure-bgp-on-the-azure-vpn-gateway"></a><a name ="enablebgp"></a>Часть 1 — настройка BGP для VPN-шлюза Azure
 Описанные ниже действия позволят настроить параметры BGP для VPN-шлюза Azure в соответствии со следующей схемой:
 
 ![Шлюз BGP](./media/vpn-gateway-bgp-resource-manager-ps/bgp-gateway.png)
 
 ### <a name="before-you-begin"></a>Перед началом
-* Убедитесь в том, что у вас уже есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/).
+* Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки Azure, вы можете активировать преимущества для [подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
 * Установите командлеты PowerShell для Azure Resource Manager. См. дополнительные сведения об [установке и настройке командлетов Azure PowerShell](/powershell/azure/overview). 
 
 ### <a name="step-1---create-and-configure-vnet1"></a>Шаг 1. Создание и настройка VNet1
@@ -135,7 +135,7 @@ $vnet1gw.BgpSettingsText
 
 С помощью созданного шлюза можно установить подключение между локальными или виртуальными сетями с использованием BGP. В следующих разделах описано, как это сделать.
 
-## <a name ="crossprembbgp"></a>Часть 2 — создание подключения между локальными сетями с использованием BGP
+## <a name="part-2---establish-a-cross-premises-connection-with-bgp"></a><a name ="crossprembbgp"></a>Часть 2 — создание подключения между локальными сетями с использованием BGP
 
 Чтобы установить подключение между локальными сетями, нужно создать локальный сетевой шлюз, который будет представлять локальное VPN-устройство, а также подключение между VPN-шлюзом и шлюзом локальной сети. Несмотря на то что эти действия подробно описаны в других статьях, в этой статье указаны дополнительные свойства, необходимые для параметров конфигурации BGP.
 
@@ -209,7 +209,7 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection15 -ResourceGroupName $RG
 
 Подключение установится через несколько минут. Сразу после создания подключения IPsec начнется сеанс пиринга BGP.
 
-## <a name ="v2vbgp"></a>Часть 3 — создание подключения между виртуальными сетями с использованием BGP
+## <a name="part-3---establish-a-vnet-to-vnet-connection-with-bgp"></a><a name ="v2vbgp"></a>Часть 3 — создание подключения между виртуальными сетями с использованием BGP
 
 В этом разделе мы добавим подключение между виртуальными сетями с использованием BGP, как показано на следующей схеме:
 

@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: bba459be4408f4a4bc438bb33b0570a91e84f2cd
-ms.sourcegitcommit: 5925df3bcc362c8463b76af3f57c254148ac63e3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75563366"
 ---
 # <a name="defragmentation-of-metrics-and-load-in-service-fabric"></a>Дефрагментация метрик и нагрузки в Service Fabric
@@ -33,7 +33,7 @@ ms.locfileid: "75563366"
 
 <center>
 
-![сравнения сбалансированных и дефрагментированных кластеров][Image1]
+![Сравнение сбалансированных и дефрагментированных кластеров][Image1]
 </center>
 
 Обратите внимание на число перемещений, необходимых для размещения крупного объекта службы в сценарии с балансировкой. В дефрагментированном кластере большая рабочая нагрузка может быть размещена на узле 4 или 5 без ожидания перемещения каких-либо других служб.
@@ -89,7 +89,7 @@ ClusterManifest.xml:
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- Диспетчер кластерных ресурсов предоставляет много параметров для описания кластера. Дополнительные сведения об этих параметрах см. в статье с [описанием кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md).
-- Метрики показывают, как диспетчер кластерных ресурсов Service Fabric управляет потреблением и емкостью в кластере. Чтобы узнать больше о метриках и их настройке, ознакомьтесь с [этой статьей](service-fabric-cluster-resource-manager-metrics.md).
+- Диспетчер кластерных ресурсов предоставляет много параметров для описания кластера. Чтобы узнать больше о них, ознакомьтесь с этой статьей, посвященной [описанию кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md)
+- Метрики показывают, как диспетчер кластерных ресурсов Service Fabric управляет потреблением и емкостью в кластере. Дополнительные сведения о метриках и их настройке см. в [этой статье](service-fabric-cluster-resource-manager-metrics.md) .
 
 [Image1]:./media/service-fabric-cluster-resource-manager-defragmentation-metrics/balancing-defrag-compared.png

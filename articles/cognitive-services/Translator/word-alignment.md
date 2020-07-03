@@ -1,5 +1,5 @@
 ---
-title: Сопоставлении слов с помощью API перевода текстов
+title: Выравнивание слов — переводчик
 titleSuffix: Azure Cognitive Services
 description: Чтобы получить сведения о сопоставлении, следует использовать метод Translate, включив необязательный параметр includeAlignment.
 services: cognitive-services
@@ -8,15 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
-ms.date: 06/04/2019
+ms.date: 05/26/2020
 ms.author: swmachan
-ms.custom: seodec18
-ms.openlocfilehash: dd4ff1e39c062910f4627973c801dc3c51f345e5
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 7288087bfe7d2a7bb03ce8a99831ad8b7f5b549f
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837224"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83995621"
 ---
 # <a name="how-to-receive-word-alignment-information"></a>Как получить сведения о сопоставлении слов
 

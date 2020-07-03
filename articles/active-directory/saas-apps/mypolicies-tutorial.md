@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с myPolicies | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с myPolicies | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении myPolicies.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
 ms.openlocfilehash: 373840827dd74ffa1c4ed191f10203bd69c7f6c1
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160396"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mypolicies"></a>Руководство по Интеграция Azure Active Directory с myPolicies
+# <a name="tutorial-azure-active-directory-integration-with-mypolicies"></a>Руководство по интеграции Azure Active Directory с myPolicies
 
 В этом руководстве описано, как интегрировать приложение myPolicies с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением myPolicies обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "73160396"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с myPolicies, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка myPolicies с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,9 +105,9 @@ ms.locfileid: "73160396"
 
     ![Сведения о домене и URL-адресах единого входа для приложения myPolicies](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantname>.mypolicies.com/`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<tenantname>.mypolicies.com/`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantname>.mypolicies.com/users/auth/saml/callback`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<tenantname>.mypolicies.com/users/auth/saml/callback`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов myPolicies](mailto:support@mypolicies.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -120,7 +120,7 @@ ms.locfileid: "73160396"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 

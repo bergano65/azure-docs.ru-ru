@@ -3,8 +3,8 @@ title: Инфраструктура и подключение к SAP HANA в Azu
 description: Настройте требуемую инфраструктуру для подключения, чтобы использовать SAP HANA в Azure (крупные экземпляры).
 services: virtual-machines-linux
 documentationcenter: ''
-author: RicksterCDN
-manager: gwallace
+author: msjuergent
+manager: bburns
 editor: ''
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 36f0b78f563bb4dda76f192259541d1c2b1fa060
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: cea89087742f1987f693b8bfb627bd71038a0c14
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74224673"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77616920"
 ---
 # <a name="sap-hana-large-instances-deployment"></a>Развертывание SAP HANA (крупные экземпляры) 
 
@@ -51,6 +51,6 @@ ms.locfileid: "74224673"
 Выполните следующую процедуру, чтобы подключиться к крупным экземплярам HANA после развертывания в Майкрософт.
 
 1. [Подключение виртуальных машин Azure к крупным экземплярам HANA](hana-connect-azure-vm-large-instances.md)
-2. [Подключение виртуальной сети к каналу ExpressRoute крупных экземпляров HANA](hana-connect-vnet-express-route.md)
+2. [Подключение сети к большим экземплярам HANA ExpressRoute](hana-connect-vnet-express-route.md)
 3. [Дополнительные требования к сети (необязательно)](hana-additional-network-requirements.md).
 

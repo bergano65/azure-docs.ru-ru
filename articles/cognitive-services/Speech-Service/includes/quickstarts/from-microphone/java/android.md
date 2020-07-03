@@ -10,20 +10,20 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 11/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 9a260577906ec94ecba87bb1be02fe35d8c763b3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 2641464e52b80c59b6c6b5a123ad1605c1d41495
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75467461"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81275059"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходимые условия:
 
 > [!div class="checklist"]
 > * [Создать ресурс службы "Речь" Azure.](../../../../get-started.md)
-> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=android)
+> * [Настроить среду разработки.](../../../../quickstarts/setup-platform.md?tabs=android&pivots=programming-language-java)
 > * Убедитесь, что у вас есть доступ к микрофону для аудиозахвата.
 
 ## <a name="create-a-user-interface"></a>Создание пользовательского интерфейса
@@ -58,7 +58,7 @@ ms.locfileid: "75467461"
 
 1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.
 
-1. Кроме того, замените строку `YourServiceRegion` на [регион](~/articles/cognitive-services/Speech-Service/regions.md), связанный с вашей подпиской. Например, используйте `westus` для подписки с бесплатной пробной версией.
+1. Кроме того, найдите строку `YourServiceRegion` и замените ее **идентификатором региона** из [региона](https://aka.ms/speech/sdkregion), связанного с вашей подпиской. Например, используйте `westus` для подписки с бесплатной пробной версией.
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
@@ -78,5 +78,4 @@ ms.locfileid: "75467461"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[!INCLUDE [footer](./footer.md)]
-
+[!INCLUDE [Speech recognition basics](../../speech-to-text-next-steps.md)]

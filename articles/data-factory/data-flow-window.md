@@ -8,16 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/30/2019
-ms.openlocfilehash: fa34def67d91332a00bf0ee92b365957a47f9616
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 1f440a5877dcefeca8c1baa82fad4299b5ce7bce
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931482"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81606227"
 ---
 # <a name="azure-data-factory-window-transformation"></a>Преобразование окна фабрики данных Azure
 
-
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Преобразование окна позволяет определять агрегирования столбцов на основе окон в ваших потоках данных. В построителе выражений вы можете определить различные типы объединений на основе данных или временных окон (предложение SQL OVER, например LEAD, LAG, NTILE, CUMEDIST, RANK и т. д.). В ваших выходных данных будет сгенерировано новое поле, которое будет включать такие агрегаты. Вы также можете включить дополнительные поля "Группировать по".
 
@@ -47,6 +47,6 @@ ms.locfileid: "74931482"
 
 Полный список объединений и аналитических функций, которые доступны вам для использования в языке выражений Потока данных ADF через построитель выражений, приведены здесь: https://aka.ms/dataflowexpressions.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы ищете простое агрегирование по группам, используйте [Преобразование «Статистическая обработка](data-flow-aggregate.md) »

@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 06/14/2019
 ms.author: erhopf
 ms.openlocfilehash: 539a35f170b2ee0c94762a30ed9376ca4a416210
-ms.sourcegitcommit: 7c2dba9bd9ef700b1ea4799260f0ad7ee919ff3b
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71827901"
 ---
 # <a name="enable-diagnostic-logging-for-azure-cognitive-services"></a>Включение ведения журнала диагностики для Azure Cognitive Services
@@ -116,6 +116,6 @@ by bin(TimeGenerated, 10s), OperationName
 * Чтобы понять, как включить ведение журнала, а также метрики и категории журналов, которые поддерживаются различными службами Azure, прочитайте [Обзор метрик](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics) в Microsoft Azure и обзор статей о [журналах диагностики Azure](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview) .
 * Прочтите эти статьи, чтобы узнать о концентраторах событий:
   * [Что такое Центры событий Azure?](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)
-  * [Начало работы с Центрами событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-csharp-ephcs-getstarted)
+  * [Приступая к работе с Центрами событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-csharp-ephcs-getstarted)
 * Ознакомьтесь с разделом [скачивании метрик и журналов диагностики из службы хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet#download-blobs).
 * Прочитайте [сведения о поиске по журналам в Azure Monitor журналах](https://docs.microsoft.com/azure/log-analytics/log-analytics-log-search-new).

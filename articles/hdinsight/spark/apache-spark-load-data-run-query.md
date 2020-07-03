@@ -5,21 +5,21 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
-ms.date: 10/03/2019
-ms.openlocfilehash: 8c5fe1970857a04c7b237a101ac228dea024815b
-ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+ms.custom: hdinsightactive,mvc
+ms.date: 02/12/2020
+ms.openlocfilehash: 5eb6788a558e4429296731f1693edd18bf92f98f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73494489"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77198894"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Руководство по Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight
 
 В этом руководстве описывается, как создать кадр данных из CSV-файла и как отправлять интерактивные запросы SQL Spark к кластеру [Apache Spark](https://spark.apache.org/) в Azure HDInsight. В Spark кадр данных — это распределенная коллекция данных, упорядоченных в именованных столбцах. Она эквивалентна таблице в реляционной базе данных или фрейме данных в R/Python.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 > [!div class="checklist"]
 > * Создание кадра данных из CSV-файла
 > * Выполнение запросов к кадру данных
@@ -60,7 +60,9 @@ Jupyter Notebook — это интерактивная среда Notebook, ко
 
     ![Состояние интерактивного SQL-запроса Spark](./media/apache-spark-load-data-run-query/hdinsight-spark-interactive-spark-query-status.png "Состояние интерактивного SQL-запроса Spark")
 
-2. Выполните следующий код, чтобы создать кадр данных и временную таблицу **hvac**.
+1. Запишите возвращенный идентификатор сеанса. На рисунке выше идентификатор сеанса равен 0. При необходимости можно получить сведения о сеансе, перейдя по ссылке `https://CLUSTERNAME.azurehdinsight.net/livy/sessions/ID/statements`, где CLUSTERNAME — это имя кластера Spark, а ID — идентификатор сеанса.
+
+1. Выполните следующий код, чтобы создать кадр данных и временную таблицу **hvac**.
 
     ```python
     # Create a dataframe and table from sample data
@@ -101,7 +103,7 @@ Jupyter Notebook — это интерактивная среда Notebook, ко
 
 Кроме того, можно выбрать имя группы ресурсов, чтобы открыть страницу группы ресурсов, а затем щелкнуть **Удалить группу ресурсов**. Вместе с группой ресурсов вы также удалите кластер Spark в HDInsight и учетную запись хранения по умолчанию.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике описывается, как создать кадр данных из CSV-файла и как отправлять интерактивные запросы SQL Spark к кластеру Apache Spark в Azure HDInsight. Теперь переходите к следующей статье, в которой объясняется, как перенести зарегистрированные в Apache Spark данные в средство бизнес-аналитики, например в Power BI.
 

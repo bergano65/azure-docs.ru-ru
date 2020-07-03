@@ -1,22 +1,21 @@
 ---
 title: Автоматизация процессов Application Insights Azure с помощью Logic Apps
 description: Узнайте, как можно быстро автоматизировать повторяющиеся процессы, добавив соединитель Application Insights в приложение логики.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 03/11/2019
-ms.openlocfilehash: 95a3577d352b6bc4b56d36b5b79658571a6be1ff
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4a0944e661932d86fac75f78c4faf5be751806c5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75407518"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79473172"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
 Постоянно выполняете одинаковые запросы к данным телеметрии, чтобы проверить, что ваша служба работает правильно? Хотите автоматизировать эти запросы для поиска тенденций и аномалий и создавать на их основе собственные рабочие процессы? Соединитель Azure Application Insights для Logic Apps — это подходящий инструмент для этой цели.
+
+> [!NOTE]
+> Соединитель Azure Application Insights был заменен [соединителем Azure Monitor](../platform/logicapp-flow-connector.md) , интегрированным с Azure Active Directory вместо использования ключа API, а также позволяет получать данные из log Analytics рабочей области.
 
 Благодаря этой интеграции можно автоматизировать множество процессов, не написав ни строчки кода. Можно создать приложение логики с соединителем Application Insights, чтобы быстро автоматизировать любой процесс Application Insights. 
 
@@ -90,13 +89,13 @@ ms.locfileid: "75407518"
 
 1. В поле поиска введите **Office 365 Outlook**.
 
-1. Щелкните **Office 365 Outlook – Send an email** (Office 365 Outlook — отправка сообщения электронной почты).
+1. Щелкните **Office 365 Outlook — отправить сообщение электронной почты**.
 
     ![Выбор Office 365 Outlook](./media/automate-with-logic-apps/9sendemail.png)
 
 1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
-   а. Введите адрес электронной почты получателя.
+   a. Введите адрес электронной почты получателя.
 
    b. Введите тему сообщения.
 
@@ -110,7 +109,7 @@ ms.locfileid: "75407518"
 
 1. В меню динамического содержимого выполните следующее.
 
-    а. Выберите **Имя вложения**.
+    a. Выберите **Имя вложения**.
 
     b. Выберите **Содержимое вложения**.
     
@@ -129,7 +128,7 @@ ms.locfileid: "75407518"
 
 ![Сообщение электронной почты приложения логики](./media/automate-with-logic-apps/flow9.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте больше о создании [запросов Analytics](../../azure-monitor/log-query/get-started-queries.md).
 - Дополнительные сведения о [Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps).

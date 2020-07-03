@@ -8,35 +8,35 @@ ms.topic: tutorial
 ms.date: 10/20/2018
 ms.author: cherylmc
 ms.openlocfilehash: 686ac8013879eff8adc4476d56119bbb4a169900
-ms.sourcegitcommit: 6c01e4f82e19f9e423c3aaeaf801a29a517e97a0
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74813138"
 ---
 # <a name="tutorial-create-and-modify-an-expressroute-circuit"></a>Руководство по Создание и изменение канала ExpressRoute
 
 > [!div class="op_single_selector"]
-> * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
+> * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
-> * [Интерфейс командной строки Azure](howto-circuit-cli.md)
+> * [Azure CLI](howto-circuit-cli.md)
 > * [Шаблон Azure Resource Manager](expressroute-howto-circuit-resource-manager-template.md)
 > * [Видео — портал Azure](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
 
-Эта статья поможет создать канал Azure ExpressRoute, используя портал Azure и модель развертывания с помощью Azure Resource Manager. Вы также сможете проверять состояние канала, обновлять, удалять или отзывать его.
+Эта статья поможет создать канал Azure ExpressRoute, используя портал Azure и модель развертывания с помощью Azure Resource Manager. Вы также сможете проверять состояние каналов, обновлять, удалять или отзывать их.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Перед началом
 
 * Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
 * Убедитесь в том, что у вас есть доступ к [порталу Azure](https://portal.azure.com).
 * Убедитесь в том, что у вас есть разрешения на создание сетевых ресурсов. Если у вас нет нужных разрешений, обратитесь к администратору учетной записи.
 * Вы можете [просмотреть видео](https://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit), прежде чем начать, чтобы лучше понять выполняемые действия.
 
-## <a name="create"></a>Создание и подготовка канала ExpressRoute
+## <a name="create-and-provision-an-expressroute-circuit"></a><a name="create"></a>Создание и подготовка канала ExpressRoute
 
-### <a name="1-sign-in-to-the-azure-portal"></a>1. Выполните вход на портал Azure.
+### <a name="1-sign-in-to-the-azure-portal"></a>1. Вход на портал Azure
 
 В браузере откройте [портал Azure](https://portal.azure.com) и выполните вход с помощью учетной записи Azure.
 
@@ -78,7 +78,7 @@ ms.locfileid: "74813138"
 
 Чтобы просмотреть свойства канала, выберите его. На странице **Обзор** канала отобразится ключ службы в соответствующем поле. Скопируйте ключ службы своего канала и передайте его поставщику услуг для завершения подготовки. Ключ службы канала соответствует каналу.
 
-![Свойства](./media/expressroute-howto-circuit-portal-resource-manager/servicekey1.png)
+![Просмотреть свойства](./media/expressroute-howto-circuit-portal-resource-manager/servicekey1.png)
 
 ### <a name="4-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>4. Отправка ключа службы поставщику услуг подключения для подготовки
 
@@ -87,19 +87,19 @@ ms.locfileid: "74813138"
 Вновь созданный канал ExpressRoute будет имеет следующее состояние:
 
 Состояние поставщика: Не подготовлено<BR>
-Состояние канала: Включено
+Состояние канала: Активировано
 
 ![Инициация процесса подготовки](./media/expressroute-howto-circuit-portal-resource-manager/status.png)
 
 Когда поставщик услуг подключения находится в процессе его включения, канал переходит в следующее состояние:
 
 Состояние поставщика: Подготовка<BR>
-Состояние канала: Включено
+Состояние канала: Активировано
 
 Для того чтобы канал ExpressRoute можно было использовать, он должен находиться в следующем состоянии:
 
 Состояние поставщика: Подготовлено<BR>
-Состояние канала: Включено
+Состояние канала: Активировано
 
 ### <a name="5-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>5. Периодическая проверка состояния и статуса ключа канала
 
@@ -118,11 +118,11 @@ ms.locfileid: "74813138"
 
 Теперь свяжите виртуальную сеть с каналом ExpressRoute. При работе с моделью развертывания Resource Manager пользуйтесь статьей [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md) .
 
-## <a name="status"></a>Получение состояния канала ExpressRoute
+## <a name="getting-the-status-of-an-expressroute-circuit"></a><a name="status"></a>Получение состояния канала ExpressRoute
 
 Чтобы просмотреть состояние канала, выберите его и просмотрите данные на странице "Обзор".
 
-## <a name="modify"></a>Изменение канала ExpressRoute
+## <a name="modifying-an-expressroute-circuit"></a><a name="modify"></a>Изменение канала ExpressRoute
 
 Некоторые свойства канала ExpressRoute можно изменить, не повлияв на подключение. На странице **Конфигурация** можно изменить пропускную способность, номер SKU, модель выставления счетов, а также разрешить классические операции. Сведения об ограничениях см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 
@@ -151,7 +151,7 @@ ms.locfileid: "74813138"
 
 ![Изменение канала](./media/expressroute-howto-circuit-portal-resource-manager/modify-circuit-configuration.png)
 
-## <a name="delete"></a>Отзыв и удаление канала ExpressRoute
+## <a name="deprovisioning-and-deleting-an-expressroute-circuit"></a><a name="delete"></a>Отзыв и удаление канала ExpressRoute
 
 Канал ExpressRoute можно удалить, щелкнув значок **Удалить** . Обратите внимание на следующие сведения:
 
@@ -159,7 +159,7 @@ ms.locfileid: "74813138"
 * Если подготовка поставщика услуг канала ExpressRoute находится в состоянии **Идет подготовка** или **Подготовлено** то свяжитесь с поставщиком услуг, чтобы отозвать канал с его стороны. Мы будем резервировать ресурсы и выставлять вам счета до тех пор, пока поставщик услуг не завершит отзыв канала и не отправит нам соответствующее уведомление.
 * Если поставщик услуг отзовет канал (состояние подготовки поставщика услуг изменится на **Не подготовлено**), вы можете удалить такой канал. Это приостанавливает выставление счетов для канала.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Создав канал, выполните задачи, описанные в следующих статьях:
 

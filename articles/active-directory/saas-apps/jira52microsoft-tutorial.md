@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с JIRA SAML SSO by Microsoft (V5.2) | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft (V5.2) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в JIRA SAML SSO by Microsoft (V5.2).
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d3b304bb35ea69906fc9576f45733134387be1b9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67099514"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft-v52"></a>Руководство по Интеграция Azure Active Directory с JIRA SAML SSO by Microsoft (V5.2)
+# <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft-v52"></a>Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft (V5.2)
 
 В этом руководстве описано, как интегрировать JIRA SAML SSO by Microsoft (V5.2) с Azure Active Directory (Azure AD).
 Интеграция Azure AD с JIRA SAML SSO by Microsoft (V5.2) обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "67099514"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="description"></a>ОПИСАНИЕ
+## <a name="description"></a>Description
 
 Используйте учетную запись Microsoft Azure Active Directory с сервером Atlassian JIRA, чтобы включить единый вход. Таким образом, все пользователи вашей организации смогут использовать учетные данные Azure AD для входа в приложение JIRA. Этот подключаемый модуль для федерации использует SAML 2.0.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с JIRA SAML SSO by Microsoft (V5.2), потребуется следующее:
 
@@ -58,11 +58,11 @@ ms.locfileid: "67099514"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по этой ссылке: [пробная версия](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="supported-versions-of-jira"></a>Поддерживаемые версии JIRA
 
-* JIRA Core и JIRA Software: 5,2
+* JIRA Core и JIRA Software: 5.2;
 * JIRA также поддерживает версии с 6.0. по 7.12. Для получения дополнительных сведений щелкните [JIRA SAML SSO by Microsoft](jiramicrosoft-tutorial.md).
 
 > [!NOTE]
@@ -132,7 +132,7 @@ ms.locfileid: "67099514"
 
     ![Сведения о домене и URL-адресах единого входа для приложения JIRA SAML SSO by Microsoft (версии 5.2)](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<domain:port>/`.
 
@@ -172,7 +172,7 @@ ms.locfileid: "67099514"
     > [!TIP]
     > Убедитесь, что с приложением сопоставлен только один сертификат, чтобы при разрешении метаданных не возникла ошибка. Если имеется несколько сертификатов, то при разрешении метаданных администратор увидит сообщение об ошибке.
 
-    a. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure, и нажмите кнопку **Разрешить**. Будет прочитан URL-адрес метаданных поставщика удостоверений, а также будут заполнены все поля сведений.
+    а. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure, и нажмите кнопку **Разрешить**. Будет прочитан URL-адрес метаданных поставщика удостоверений, а также будут заполнены все поля сведений.
 
     b. Скопируйте значения **идентификатора, URL-адреса ответа и URL-адреса входа** и вставьте их в соответствующие поля **идентификатора, URL-адреса ответа и URL-адреса входа** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -183,9 +183,9 @@ ms.locfileid: "67099514"
     > [!Note]
     > По умолчанию идентификатор пользователя SAML указан в идентификаторе имени. Его можно заменить атрибутом и ввести имя соответствующего атрибута.
 
-    д. Если выбран параметр **User ID is in an Attribute element** (Идентификатор пользователя указан в элементе Attribute), введите в текстовое поле **Attribute name** (Имя атрибута) имя атрибута, в котором ожидается идентификатор пользователя. 
+    д) Если выбран параметр **User ID is in an Attribute element** (Идентификатор пользователя указан в элементе Attribute), введите в текстовое поле **Attribute name** (Имя атрибута) имя атрибута, в котором ожидается идентификатор пользователя. 
 
-    Е. При использовании федеративного домена (например, AD FS и т. д.) для Azure AD выберите параметр **Включить обнаружение домашней области** и настройте **доменное имя**.
+    е) При использовании федеративного домена (например, AD FS и т. д.) для Azure AD выберите параметр **Включить обнаружение домашней области** и настройте **доменное имя**.
 
     ж. В поле **Доменное имя** введите доменное имя, если вы используете вход на основе AD FS.
 
@@ -270,7 +270,7 @@ ms.locfileid: "67099514"
 
     ![Добавление сотрудника](./media/jira52microsoft-tutorial/user4.png)
 
-    a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
+    а. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
     b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
 
@@ -278,7 +278,7 @@ ms.locfileid: "67099514"
 
     d. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
-    д. Щелкните **Create user** (Создать пользователя).
+    д) Щелкните **Create user** (Создать пользователя).
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
@@ -292,4 +292,4 @@ ms.locfileid: "67099514"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

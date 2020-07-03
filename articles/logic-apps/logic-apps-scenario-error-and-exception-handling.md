@@ -8,10 +8,10 @@ ms.reviewer: klam, estfan, logicappspm
 ms.topic: article
 ms.date: 07/29/2016
 ms.openlocfilehash: 1bb6e28c9dcae01f3233178706d2a24156fa509a
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76902701"
 ---
 # <a name="scenario-exception-handling-and-error-logging-for-logic-apps"></a>Сценарий обработки исключений и ведения журнала ошибок для приложений логики
@@ -90,7 +90,7 @@ ms.locfileid: "76902701"
 ```
 
 
-## <a name="steps"></a>Действия
+## <a name="steps"></a>Шаги
 
 Необходимо записать в журнал источник (запрос) записи пациента, полученный с портала Dynamics CRM Online.
 
@@ -109,7 +109,7 @@ ms.locfileid: "76902701"
 
    ![Добавление записи журнала](media/logic-apps-scenario-error-and-exception-handling/insertlogentry.png)
 
-   **Проверка на наличие ошибки создания записи**
+   **Проверка на ошибку создания записи**
 
    ![Условие](media/logic-apps-scenario-error-and-exception-handling/condition.png)
 
@@ -118,7 +118,7 @@ ms.locfileid: "76902701"
 > [!NOTE]
 > Приведенные ниже фрагменты кода используется только в качестве примера. Так как в этом руководстве используется пример из реальной жизни, который уже реализован в рабочей среде, значения свойств **исходного узла**, связанные с планированием приемов, могут не отображаться. 
 
-### <a name="logging"></a>Ведение журнала
+### <a name="logging"></a>Logging
 
 В следующем примере кода приложения логики показано, как обрабатывать ведение журналов.
 
@@ -431,7 +431,7 @@ ms.locfileid: "76902701"
 
 Каждый документ в Azure Cosmos DB должен иметь уникальный идентификатор. Мы используем идентификатор `PatientId` , к которому добавляем метку времени, преобразованную в значение в формате Unix (значение с двойной точностью). Чтобы удалить дробное значение, мы обрежем метку времени.
 
-Исходный код API контроллера ошибок доступен [в репозитории GitHub](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi/blob/master/LogicAppsExceptionManagementApi/Controllers/LogController.cs).
+Исходный код API контроллера ошибок можно просмотреть на сайте [GitHub](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi/blob/master/LogicAppsExceptionManagementApi/Controllers/LogController.cs).
 
 Для вызова API из приложения логики используется следующий синтаксис:
 
@@ -478,7 +478,7 @@ ms.locfileid: "76902701"
 
 Исходный код приложения API управления исключениями Logic Apps доступен в этом [репозитории GitHub](https://github.com/HEDIDIN/LogicAppsExceptionManagementApi "API управления исключениями приложений логики").
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Примеры приложений логики и распространенные сценарии](../logic-apps/logic-apps-examples-and-scenarios.md)
 * [Мониторинг приложений логики](../logic-apps/monitor-logic-apps.md)

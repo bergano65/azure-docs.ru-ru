@@ -2,15 +2,15 @@
 title: Запуск Функций Azure, не активируемых HTTP-запросом, вручную
 description: Запуск Функций Azure, не активируемых HTTP-запросом, с использованием HTTP-запроса
 author: craigshoemaker
-ms.topic: tutorial
-ms.date: 12/12/2018
+ms.topic: article
+ms.date: 04/23/2020
 ms.author: cshoe
-ms.openlocfilehash: 4ce7b8590e4718585fe841921466e049dc204928
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
-ms.translationtype: HT
+ms.openlocfilehash: fd7b0be967c7a0bbc605c51408448917b5222d36
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769138"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121820"
 ---
 # <a name="manually-run-a-non-http-triggered-function"></a>Запуск функции, не активируемой HTTP-запросом, вручную
 
@@ -37,11 +37,17 @@ ms.locfileid: "75769138"
 
 ## <a name="get-the-functions-master-key"></a>Получение главного ключа функции
 
-Перейдите к своей функции на портале Azure, щелкните **Управление** и найдите раздел **Ключи узла**. Нажмите кнопку **Копировать** в строке *_master*, чтобы скопировать главный ключ в буфер обмена.
+1. Перейдите к функции в портал Azure и выберите **функции ключи**. Затем выберите функциональную клавишу, которую необходимо скопировать. 
 
-![Копирование главного ключа с экрана управления функции](./media/functions-manually-run-non-http/azure-portal-functions-master-key.png)
+    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key.png" alt-text="Нахождение копируемого главного ключа." border="true":::
 
-После копирования главного ключа щелкните имя функции, чтобы вернуться в окно файла кода. Далее щелкните вкладку **Журналы**. Вы увидите сообщения из функции, которые записывались сюда, когда вы вручную запускали функцию из Postman.
+1. В разделе **изменение ключа** скопируйте значение ключа в буфер обмена и нажмите кнопку **ОК**.
+
+    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key-copy.png" alt-text="Скопируйте главный ключ в буфер обмена." border="true":::
+
+1. После копирования ключа *_Master* выберите **код + тест**, а затем выберите **журналы**. Вы увидите сообщения из функции, которые записывались сюда, когда вы вручную запускали функцию из Postman.
+
+    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-function-log.png" alt-text="Просмотрите журналы, чтобы просмотреть результаты тестирования главного ключа." border="true":::
 
 > [!CAUTION]  
 > Главный ключ предоставляет высокий уровень разрешений в приложении-функции, поэтому никогда не передавайте этот ключ третьим лицам и не включайте его в состав приложения.
@@ -51,27 +57,27 @@ ms.locfileid: "75769138"
 Откройте Postman и выполните следующие действия:
 
 1. В текстовом поле URL-адреса введите **запрашиваемое расположение**.
-2. Для метода HTTP задается тип **POST**.
-3. **Щелкните** вкладку **Headers** (Заголовки).
-4. Введите **x-functions-key** как первый **ключ** и вставьте главный ключ (из буфера обмена) в поле **Value** (Значение).
-5. Введите **Content-Type** как второй **ключ** и введите **application/json** как **значение**.
+1. Для метода HTTP задается тип **POST**.
+1. Выберите вкладку **Headers** (Заголовки).
+1. Введите **x-functions-Key** в качестве первого ключа и вставьте в качестве значения главный ключ (из буфера обмена).
+1. Введите **Content-Type** в качестве второго ключа и введите в качестве значения **Application/JSON** .
 
-    ![Параметры заголовков в Postman](./media/functions-manually-run-non-http/functions-manually-run-non-http-headers.png)
+    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-headers.png" alt-text="Параметры после заголовков." border="true":::
 
-6. **Щелкните** вкладку **Body** (Текст).
-7. Введите **{ "input": "test" }** как текст для запроса.
+1. Откройте вкладку **Тело**.
+1. Введите **{"input": "Test"}** в качестве текста для запроса.
 
-    ![Параметры текста Postman](./media/functions-manually-run-non-http/functions-manually-run-non-http-body.png)
+    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-body.png" alt-text="Параметры тела сообщения." border="true":::
 
-8. Нажмите кнопку **Отправить**.
+1. Нажмите кнопку **Отправить**.
+        
+    :::image type="content" source="./media/functions-manually-run-non-http/functions-manually-run-non-http-send.png" alt-text="Отправить запрос с помощью POST." border="true":::
 
-    ![Отправка запроса с помощью Postman](./media/functions-manually-run-non-http/functions-manually-run-non-http-send.png)
+    Postman затем сообщает о состоянии **202 — принято**.
 
-Postman затем сообщает о состоянии **202 — принято**.
+1. Далее перейдите к своей функции на портале Azure. Просмотрите журналы, и вы увидите сообщения, поступающие из ручного вызова функции.
 
-Далее перейдите к своей функции на портале Azure. Найдите окно *Журналы*, и вы увидите сообщения, поступающие в результате вызова функции вручную.
-
-![Результаты в журнале функций после вызова вручную](./media/functions-manually-run-non-http/azure-portal-function-log.png)
+    :::image type="content" source="./media/functions-manually-run-non-http/azure-portal-functions-master-key-logs.png" alt-text="Просмотрите журналы, чтобы просмотреть результаты тестирования главного ключа." border="true":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

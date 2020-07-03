@@ -2,20 +2,20 @@
 title: TrustFrameworkPolicy — Azure Active Directory B2C | Документация Майкрософт
 description: Указание элемента TrustFrameworkPolicy в настраиваемой политике для Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 01/31/2020
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b49c873112358db4fec2992ef3d2d61161e8b373
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: c964a7bde0b7db9357c73fc79d2df3170075fcc1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76982421"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78186392"
 ---
 # <a name="trustframeworkpolicy"></a>TrustFrameworkPolicy
 
@@ -38,15 +38,15 @@ ms.locfileid: "76982421"
 
 Элемент **TrustFrameworkPolicy** содержит следующие атрибуты:
 
-| attribute | Обязательно для заполнения | Description |
+| Атрибут | Обязательный | Описание |
 |---------- | -------- | ----------- |
 | PolicySchemaVersion | Да | Версия схемы, которая будет использоваться для выполнения политики. Значение должно быть `0.3.0.0`. |
 | TenantObjectId | Нет | Уникальный идентификатор объекта для Azure Active Directory B2C клиента (Azure AD B2C). |
 | TenantId | Да | Уникальный идентификатор арендатора, к которому относится эта политика. |
 | PolicyId | Да | Уникальный идентификатор политики. Этот идентификатор должен начинаться с префикса *B2C_1A_* |
 | PublicPolicyUri | Да | Универсальный код ресурса (URI) для политики, который является сочетанием идентификатора арендатора и идентификатора политики. |
-| DeploymentMode | Нет | Возможные значения: `Production`или `Development`. Значение по умолчанию — `Production`. Это свойство используется при отладке политики. Дополнительные сведения см. в статье о [сборе журналов](troubleshoot-with-application-insights.md). |
-| UserJourneyRecorderEndpoint | Нет | Конечная точка, которая используется, когда для **DeploymentMode** задано значение `Development`. Значение должно быть равно `urn:journeyrecorder:applicationinsights`. Дополнительные сведения см. в статье о [сборе журналов](troubleshoot-with-application-insights.md). |
+| DeploymentMode | Нет | Возможные значения: `Production`или `Development`. Значение по умолчанию — `Production`. Это свойство используется при отладке политики. Дополнительные сведения см. в разделе [Сбор журналов](troubleshoot-with-application-insights.md). |
+| UserJourneyRecorderEndpoint | Нет | Конечная точка, которая используется, когда для **DeploymentMode** задано значение `Development`. Значение должно быть равно `urn:journeyrecorder:applicationinsights`. Дополнительные сведения см. в разделе [Сбор журналов](troubleshoot-with-application-insights.md). |
 
 
 В следующем примере показано, как указать элемент **TrustFrameworkPolicy**:
@@ -88,7 +88,7 @@ ms.locfileid: "76982421"
 
 В элементе **BasePolicy** содержатся следующие элементы:
 
-| Элемент | Вхождения | Description |
+| Элемент | Вхождения | Описание |
 | ------- | ----------- | --------|
 | TenantId | 1:1 | Идентификатор арендатора Azure AD B2C. |
 | PolicyId | 1:1 | Идентификатор родительской политики. |
@@ -153,7 +153,7 @@ B2C_1A_TrustFrameWorkBase или B2C_1A_TrustFrameworkExtensionPolicy:
  Элемент **TrustFrameworkPolicy** содержит следующие элементы:
 
 - BasePolicy, как указано выше;
-- [BuildingBlocks](buildingblocks.md);
-- [ClaimsProviders](claimsproviders.md);
-- [UserJourneys](userjourneys.md);
-- [RelyingParty](relyingparty.md).
+- [BuildingBlocks](buildingblocks.md)
+- [ClaimsProviders](claimsproviders.md)
+- [UserJourneys](userjourneys.md)
+- [RelyingParty](relyingparty.md)

@@ -6,17 +6,21 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 06/11/2019
+ms.date: 03/19/2020
 ms.custom: seodec18
-ms.openlocfilehash: c683cfeadcc13e5112a4687e18db9338d3574cd3
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b33aeeee03fa57d87a60fd4c1904d5e4a86dd004
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75459602"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80067094"
 ---
-# <a name="perform-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-classic-preview"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинное обучение Azure Studio (классическая модель) (Предварительная версия)
+# <a name="perform-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-classic"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинное обучение Azure Studio (классическая модель)
+
 В этой статье описывается, как быстро настроить простое Azure Stream Analytics задание, которое интегрирует Машинное обучение Azure Studio (классическая модель). Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
+
+> [!TIP]
+> Для повышения производительности и надежности настоятельно рекомендуется использовать [машинное обучение Azure](machine-learning-udf.md) udf вместо машинное обучение Azure Studio (классическая модель).
 
 Вы сможете применить сведения, полученные в рамках этой статьи, в следующих сценариях:
 
@@ -35,7 +39,7 @@ ms.locfileid: "75459602"
 
 ![Обзор интеграции машинного обучения в Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-figure-1.png)  
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 Чтобы начать, у вас должны быть следующие компоненты:
 
 * Активная подписка Azure.
@@ -51,7 +55,7 @@ ms.locfileid: "75459602"
 ## <a name="create-a-storage-container-and-upload-the-csv-input-file"></a>Создание контейнера хранилища и передача входного CSV-файла
 Для этого шага можно использовать любой CSV-файл, например файл, доступный на GitHub.
 
-1. На портале Azure последовательно выберите **Создать ресурс** > **Хранилище** > **Учетная запись хранения**.
+1. В портал Azure щелкните **создать ресурс** > **хранилище** > **учетная запись хранения**.
 
 2. Введите имя (в примере используется `samldemo`). Имя должно быть уникальным в Azure и может содержать только строчные буквы и цифры. 
 
@@ -59,7 +63,7 @@ ms.locfileid: "75459602"
 
     ![указание сведений об учетной записи хранения](./media/stream-analytics-machine-learning-integration-tutorial/create-storage-account1.png)
 
-4. На портале Azure выберите учетную запись хранения. В колонке учетной записи хранения щелкните **Контейнеры**, а затем щелкните **+&nbsp;Контейнер**, чтобы создать хранилище BLOB-объектов.
+4. На портале Azure выберите учетную запись хранения. В колонке учетная запись хранения щелкните **контейнеры** и щелкните ** + &nbsp;контейнер** , чтобы создать хранилище BLOB-объектов.
 
     ![Создание контейнера хранилища BLOB-объектов для входных данных](./media/stream-analytics-machine-learning-integration-tutorial/create-storage-account2.png)
 
@@ -118,7 +122,7 @@ ms.locfileid: "75459602"
 
 1. Перейдите на [портал Azure](https://portal.azure.com).  
 
-2. Щелкните **Создать ресурс** > **Интернет вещей** > **Задание Stream Analytics**. 
+2. Щелкните **создать ресурс** > **"Интернет вещей"** > **Stream Analytics задание**. 
 
 3. Назовите задание `azure-sa-ml-demo`, укажите подписку, существующую группу ресурсов (или создайте новую), а затем выберите расположение для задания.
 
@@ -140,11 +144,11 @@ ms.locfileid: "75459602"
    |**Псевдоним входных данных** | Используйте имя `datainput` и выберите **Select blob storage from your subscription** (Выбрать хранилище BLOB-объектов из своей подписки).       |
    |**Учетная запись хранения**  |  выберите учетную запись хранения, созданную ранее.  |
    |**Контейнер**  | Выберите созданный ранее контейнер (`azuresamldemoblob`).        |
-   |**Формат сериализации событий**  |  Выберите **CSV**.       |
+   |**Формат сериализации событий**  |  Выберите **CSV**       |
 
    ![Указание параметров входных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-create-sa-input-new-portal.png)
 
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ### <a name="configure-the-job-output"></a>Настройка выходных данных для задания
 Задание передает результаты в то же хранилище BLOB-объектов, в котором получает входные данные. 
@@ -157,14 +161,14 @@ ms.locfileid: "75459602"
 
    |Поле  |Значение  |
    |---------|---------|
-   |**Псевдоним выходных данных** | Используйте имя `datamloutput` и выберите **Select blob storage from your subscription** (Выбрать хранилище BLOB-объектов из своей подписки).       |
+   |**Псевдоним вывода** | Используйте имя `datamloutput` и выберите **Select blob storage from your subscription** (Выбрать хранилище BLOB-объектов из своей подписки).       |
    |**Учетная запись хранения**  |  выберите учетную запись хранения, созданную ранее.  |
    |**Контейнер**  | Выберите созданный ранее контейнер (`azuresamldemoblob`).        |
-   |**Формат сериализации событий**  |  Выберите **CSV**.       |
+   |**Формат сериализации событий**  |  Выберите **CSV**       |
 
    ![Указание параметров выходных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/create-stream-analytics-output.png) 
 
-4. Выберите команду **Сохранить**.   
+4. Нажмите кнопку **Сохранить**.   
 
 
 ### <a name="add-the-machine-learning-function"></a>Добавление функции машинного обучения 
@@ -174,7 +178,7 @@ ms.locfileid: "75459602"
 
 1. У вас должны быть URL-адрес веб-службы и ключ API в скачанной ранее книге Excel.
 
-2. Перейдите к колонке задания и выберите **Функции** >  **+ Добавить** > **AzureML**
+2. Перейдите к колонке задания > **функции** > **+ добавить** > **AzureML** .
 
 3. Заполните колонку **Функция Машинного обучения Azure** следующими значениями:
 
@@ -182,11 +186,11 @@ ms.locfileid: "75459602"
    |---------|---------|
    | **Псевдоним функции** | Используйте имя `sentiment` и выберите **Provide Azure Machine Learning function settings manually** (Указать параметры функции Машинного обучения Azure вручную). После этого введите URL-адрес и ключ.      |
    | **URL-адрес**| Вставьте URL-адрес веб-службы.|
-   |**Key** | Вставьте ключ API. |
+   |**Клавиша** | Вставьте ключ API. |
   
    ![Параметры добавления функции службы "Машинное обучение" в задание Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/add-machine-learning-function.png)  
     
-4. Выберите команду **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 ### <a name="create-a-query-to-transform-the-data"></a>Создание запроса для преобразования данных
 
@@ -248,7 +252,7 @@ Stream Analytics использует декларативный запрос н
 * **События функций** отображает количество событий в запросе. По умолчанию каждый запрос к веб-службе машинного обучения может содержать до 1000 событий.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)
 * [Справочник по языку запросов Azure Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)

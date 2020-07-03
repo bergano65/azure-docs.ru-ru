@@ -2,18 +2,18 @@
 title: Выполнение сценариев оболочки на виртуальной машине Linux в Azure
 description: В этом разделе описывается, как выполнять скрипты в виртуальной машине Azure под управлением Linux с помощью функции "выполнить команду".
 services: automation
-ms.service: automation
+ms.service: virtual-machines
 author: bobbytreed
 ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: 21787854590d3ca0be2cbd6e9d167de33482c787
-ms.sourcegitcommit: b4f201a633775fee96c7e13e176946f6e0e5dd85
+ms.openlocfilehash: 80fc33a93d4d83dad1e687b176b39728fc7e8807
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72597879"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758602"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-by-using-run-command"></a>Выполнение сценариев оболочки на виртуальной машине Linux с помощью команды Run
 
@@ -39,11 +39,11 @@ ms.locfileid: "72597879"
 * Чтобы вернуть результаты скрипта, требуется разрешить исходящие подключения из виртуальной машины.
 
 > [!NOTE]
-> Для правильной работы для выполнения команды требуется подключение (порт 443) к общедоступным IP-адресам Azure. Если у расширения нет доступа к этим конечным точкам, скрипты могут выполняться успешно, но не будут возвращать результаты. Если вы блокируете трафик на виртуальной машине, вы можете использовать [теги службы](../../virtual-network/security-overview.md#service-tags) , чтобы разрешить трафик в общедоступные IP-адреса Azure с помощью тега `AzureCloud`.
+> Для правильной работы для выполнения команды требуется подключение (порт 443) к общедоступным IP-адресам Azure. Если у расширения нет доступа к этим конечным точкам, скрипты могут выполняться успешно, но не будут возвращать результаты. Если вы блокируете трафик на виртуальной машине, вы можете использовать [теги службы](../../virtual-network/security-overview.md#service-tags) , чтобы разрешить трафик в общедоступные IP-адреса Azure `AzureCloud` с помощью тега.
 
 ## <a name="available-commands"></a>Доступные команды
 
-В этой таблице представлен список команд, доступных для виртуальных машин Linux. Для выполнения любого пользовательского скрипта можно использовать команду **руншеллскрипт** . При использовании Azure CLI или PowerShell для выполнения команды значение, указанное для параметра `--command-id` или `-CommandId`, должно быть одним из приведенных ниже значений. При указании значения, которое не является доступной командой, появляется следующее сообщение об ошибке:
+В этой таблице представлен список команд, доступных для виртуальных машин Linux. Для выполнения любого пользовательского скрипта можно использовать команду **руншеллскрипт** . При использовании Azure CLI или PowerShell для выполнения команды значение, указанное для параметра `--command-id` или `-CommandId` , должно быть одним из приведенных ниже значений. При указании значения, которое не является доступной командой, появляется следующее сообщение об ошибке:
 
 ```error
 The entity was not found in this Azure location
@@ -54,7 +54,7 @@ The entity was not found in this Azure location
 |**RunShellScript**|Запускает сценарий оболочки Linux.|
 |**ifconfig**| Возвращает конфигурацию всех сетевых интерфейсов.|
 
-## <a name="azure-cli"></a>Azure CLI
+## <a name="azure-cli"></a>Azure CLI
 
 В следующем примере используется команда [AZ VM Run-Command](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) для запуска сценария оболочки на виртуальной машине Linux в Azure.
 
@@ -63,9 +63,9 @@ az vm run-command invoke -g myResourceGroup -n myVm --command-id RunShellScript 
 ```
 
 > [!NOTE]
-> Чтобы выполнить команды от имени другого пользователя, введите `sudo -u`, чтобы указать учетную запись пользователя.
+> Чтобы выполнить команды от имени другого пользователя, введите `sudo -u` , чтобы указать учетную запись пользователя.
 
-## <a name="azure-portal"></a>портала Azure
+## <a name="azure-portal"></a>Портал Azure
 
 Перейдите к виртуальной машине в [портал Azure](https://portal.azure.com) и выберите **команду выполнить** в разделе **операции**. Отобразится список доступных команд для выполнения на виртуальной машине.
 
@@ -90,12 +90,12 @@ Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' 
 
 ## <a name="limiting-access-to-run-command"></a>Ограничение доступа к команде запуска
 
-Для получения списка команд выполнения или отображения сведений о команде требуется разрешение `Microsoft.Compute/locations/runCommands/read` на уровне подписки. Это разрешение имеет встроенную роль [читателя](../../role-based-access-control/built-in-roles.md#reader) и более высокие уровни.
+Для получения списка команд выполнения или отображения сведений о команде требуется `Microsoft.Compute/locations/runCommands/read` разрешение на уровне подписки. Это разрешение имеет встроенную роль [читателя](../../role-based-access-control/built-in-roles.md#reader) и более высокие уровни.
 
-Для выполнения команды требуется разрешение `Microsoft.Compute/virtualMachines/runCommand/action` на уровне подписки. Это разрешение имеют роль [участника виртуальной машины](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) и более высокие уровни.
+Для выполнения команды требуется `Microsoft.Compute/virtualMachines/runCommand/action` разрешение на уровне подписки. Это разрешение имеют роль [участника виртуальной машины](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) и более высокие уровни.
 
 Можно использовать одну из [встроенных ролей](../../role-based-access-control/built-in-roles.md) или создать [настраиваемую роль](../../role-based-access-control/custom-roles.md) для использования команды Run.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о других способах удаленного выполнения сценариев и команд в виртуальной машине см. в статье [Запуск сценариев на виртуальной машине Linux](run-scripts-in-vm.md).

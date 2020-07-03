@@ -1,16 +1,16 @@
 ---
 title: Мониторинг функций Azure с помощью журналов Azure Monitor
 description: Узнайте, как использовать журналы Azure Monitor с помощью функций Azure для наблюдения за выполнением функций.
-author: ahmedelnably
+author: craigshoemaker
 ms.topic: conceptual
-ms.date: 10/09/2019
-ms.author: aelnably
-ms.openlocfilehash: f4af646569edc8a9274af752e7e4f2a36585ae4d
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.date: 04/15/2020
+ms.author: cshoe
+ms.openlocfilehash: 4b21912de95ccba1d97d187922bfada4d9dc2c56
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769104"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83121657"
 ---
 # <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Мониторинг функций Azure с помощью журналов Azure Monitor
 
@@ -25,44 +25,50 @@ Azure Monitor использует версию [языка запросов Kus
 
 ## <a name="setting-up"></a>Настройка
 
-В разделе **мониторинг** выберите **параметры диагностики** , а затем щелкните **Добавить параметр диагностики**.
+1. В разделе **мониторинг** приложения функции в [портал Azure](https://portal.azure.com)выберите **параметры диагностики**, а затем щелкните **Добавить параметр диагностики**.
 
-![Добавление параметра диагностики](media/functions-monitor-log-analytics/diagnostic-settings-add.png)
+   :::image type="content" source="media/functions-monitor-log-analytics/diagnostic-settings-add.png" alt-text="Выбор параметров диагностики":::
 
-На странице **параметры диагностики** выберите **Отправить log Analytics**, а затем выберите свою рабочую область log Analytics. В разделе **Журнал** выберите **функтионапплогс**эта таблица содержит нужные журналы.
+1. На странице **параметры диагностики** в разделе **сведения о категории** и **Журнал**выберите **функтионапплогс**.
 
-![Добавление параметра диагностики](media/functions-monitor-log-analytics/choose-table.png)
+   Таблица **функтионапплогс** содержит нужные журналы.
+
+1. В разделе **сведения о назначении**выберите **Отправить log Analytics**. затем выберите свою **рабочую область log Analytics**. 
+
+1. Введите **имя параметров диагностики**и нажмите кнопку **сохранить**.
+
+   :::image type="content" source="media/functions-monitor-log-analytics/choose-table.png" alt-text="Добавление параметра диагностики":::
 
 ## <a name="user-generated-logs"></a>Журналы, созданные пользователем
 
-Для создания пользовательских журналов можно использовать определенную инструкцию ведения журнала в зависимости от языка. ниже приведены примеры фрагментов кода.
+Чтобы создать пользовательские журналы, используйте инструкцию ведения журнала, относящуюся к вашему языку. Ниже приведены примеры фрагментов кода.
 
 
-# <a name="ctabcsharp"></a>[C#](#tab/csharp)
+# <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
 log.LogInformation("My app logs here.");
 ```
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 ```java
 context.getLogger().info("My app logs here.");
 ```
 
-# <a name="javascripttabjavascript"></a>[JavaScript](#tab/javascript)
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
 context.log('My app logs here.');
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
 Write-Host "My app logs here."
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 ```python
 logging.info('My app logs here.')
@@ -72,11 +78,19 @@ logging.info('My app logs here.')
 
 ## <a name="querying-the-logs"></a>Запрос журналов
 
-Чтобы запросить созданные журналы, перейдите в рабочую область Log Analytics, в которой вы настроили отправку журналов функций, и щелкните **журналы**.
+Для создания запросов к созданным журналам:
+ 
+1. В приложении функции выберите **параметры диагностики**. 
 
-![Окно запроса в LA Workspace](media/functions-monitor-log-analytics/querying.png)
+1. В списке **параметры диагностики** выберите рабочую область log Analytics, в которую будут отправлены журналы функций. 
 
-Функции Azure записывают все журналы в таблицу **функтионапплогс** . Вот несколько примеров запросов.
+1. На странице **log Analytics Рабочая область** выберите **журналы**.
+
+   Функции Azure записывают все журналы в таблицу **функтионапплогс** в разделе **логманажемент**. 
+
+   :::image type="content" source="media/functions-monitor-log-analytics/querying.png" alt-text="Окно запроса в Log Analytics рабочей области":::
+
+Ниже приведены некоторые примеры запросов.
 
 ### <a name="all-logs"></a>Все журналы
 
@@ -87,7 +101,7 @@ FunctionAppLogs
 
 ```
 
-### <a name="a-specific-function-logs"></a>Журналы конкретных функций
+### <a name="specific-function-logs"></a>Журналы конкретных функций
 
 ```
 
@@ -108,6 +122,6 @@ FunctionAppLogs
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Обзор функций Azure](functions-overview.md)
-- Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md)
+- Ознакомьтесь с [обзором функций Azure](functions-overview.md).
+- Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md).
 - Узнайте больше о [языке запросов](../azure-monitor/log-query/get-started-queries.md).

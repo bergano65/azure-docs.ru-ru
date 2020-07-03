@@ -3,20 +3,18 @@ title: Цепочки функций в устойчивых функциях (A
 description: Ознакомьтесь с примером устойчивой функции, которая выполняет последовательность функций.
 author: cgillum
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 11/29/2019
 ms.author: azfuncdf
-ms.openlocfilehash: de2fd1a46d931c5d1b625094940a981509bf1488
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: 8da4ce7801cc98f9ffb32eb7b506eaf1ccd877dd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75769563"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77562073"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
 
 Цепочкой функций называют схему выполнения последовательности функций в определенном порядке. Часто требуется передать выходные данные одной функции во входные данные другой. В этой статье описываются цепочки последовательности, создаваемой по завершении "Краткого руководства по Устойчивым функциям" (для [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md)). Дополнительные сведения об Устойчивых функций см. в статье, посвященной [обзору Устойчивых функций](durable-functions-overview.md).
-
-[!INCLUDE [v1-note](../../../includes/functions-durable-v1-tutorial-note.md)]
 
 [!INCLUDE [durable-functions-prerequisites](../../../includes/durable-functions-prerequisites.md)]
 
@@ -24,79 +22,116 @@ ms.locfileid: "75769563"
 
 В этой статье описаны следующие функции в примере приложения:
 
-* Функция оркестратора `E1_HelloSequence`, которая вызывает `E1_SayHello` несколько раз подряд. При этом сохраняются выходные данные каждого вызова `E1_SayHello` и записываются результаты.
-* Функция действия `E1_SayHello`, которая добавляет Hello в начало строки.
+* `E1_HelloSequence`: [Функция Orchestrator](durable-functions-bindings.md#orchestration-trigger) , которая вызывает `E1_SayHello` несколько раз в последовательности. При этом сохраняются выходные данные каждого вызова `E1_SayHello` и записываются результаты.
+* `E1_SayHello`: [Функция действия](durable-functions-bindings.md#activity-trigger) , которая добавляет строку в начало строки с "Hello".
+* `HttpStart`: Функция, активируемая по протоколу HTTP, которая запускает экземпляр Orchestrator.
 
-В следующих разделах описывается конфигурация и код, используемые для C# написания сценариев и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
+### <a name="e1_hellosequence-orchestrator-function"></a>E1_HelloSequence Orchestrator, функция
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+[!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=13-25)]
+
+Для всех функций оркестратора на C# должен использоваться параметр типа `DurableOrchestrationContext`, который присутствует в сборке `Microsoft.Azure.WebJobs.Extensions.DurableTask`. Этот объект контекста позволяет вызывать другие функции *действий* и передавать входные параметры с помощью `CallActivityAsync` метода.
+
+Этот код трижды последовательно вызывает `E1_SayHello` с разными значениями параметров. Значение, возвращаемое при каждом вызове, добавляется в список `outputs`, который возвращается в качестве результата функции.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 > [!NOTE]
 > Устойчивые функции JavaScript доступны только для среды выполнения функций 2,0.
 
-## <a name="e1_hellosequence"></a>E1_HelloSequence
-
-### <a name="functionjson-file"></a>Файл function.json
+#### <a name="functionjson"></a>function.json
 
 Если вы используете для разработки Visual Studio Code или портал Azure, файл *function.json* с указанным здесь содержимым позволит создать функцию оркестратора. Для большинства функций оркестратора файл *function.json* будет выглядеть почти так же.
 
-[!code-json[Main](~/samples-durable-functions/samples/csx/E1_HelloSequence/function.json)]
+[!code-json[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/function.json)]
 
 Самое важное здесь — это тип привязки `orchestrationTrigger`. Во всех функциях оркестратора должен использоваться такой тип триггера.
 
 > [!WARNING]
 > Чтобы не нарушать требование "без ввода и вывода", применяемое к функциям оркестратора, не используйте никакие привязки входных или выходных данных совместно с триггером привязки `orchestrationTrigger`.  Если вам нужны входные или выходные привязки, используйте их в контексте функций `activityTrigger`, которые вызываются оркестратором. Дополнительные сведения см. в статье [ограничения кода функции Orchestrator](durable-functions-code-constraints.md) .
 
-### <a name="c-script-visual-studio-code-and-azure-portal-sample-code"></a>Скрипт C# (пример кода Visual Studio Code и портала Azure)
+#### <a name="indexjs"></a>Файл index.js
 
-Ниже приведен исходный код:
-
-[!code-csharp[Main](~/samples-durable-functions/samples/csx/E1_HelloSequence/run.csx)]
-
-Для всех функций оркестратора на C# должен использоваться параметр типа `DurableOrchestrationContext`, который присутствует в сборке `Microsoft.Azure.WebJobs.Extensions.DurableTask`. Если вы работаете со скриптом C#, для ссылки на сборку можно использовать нотацию `#r`. Этот объект контекста позволяет вызывать другие функции *действий* и передавать входные параметры с помощью метода `CallActivityAsync`.
-
-Этот код трижды последовательно вызывает `E1_SayHello` с разными значениями параметров. Значение, возвращаемое при каждом вызове, добавляется в список `outputs`, который возвращается в качестве результата функции.
-
-### <a name="javascript"></a>JavaScript
-
-Ниже приведен исходный код:
+Ниже приведена функция.
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/index.js)]
 
-Все функции оркестратора на JavaScript должны содержать модуль [`durable-functions`](https://www.npmjs.com/package/durable-functions). Это библиотека, позволяющая писать Устойчивые функции JavaScript. Есть три существенных различия между функциями оркестратора и другими функциями JavaScript:
+Все функции оркестрации JavaScript должны включать [ `durable-functions` модуль](https://www.npmjs.com/package/durable-functions). Это библиотека, позволяющая писать Устойчивые функции JavaScript. Есть три существенных различия между функциями оркестратора и другими функциями JavaScript:
 
-1. Эта функция является [функцией генератора](https://docs.microsoft.com/scripting/javascript/advanced/iterators-and-generators-javascript).
+1. Функция является [функцией генератора.](https://docs.microsoft.com/scripting/javascript/advanced/iterators-and-generators-javascript)
 2. Эта функция упаковывается в вызов к методу `orchestrator` модуля `durable-functions` (в нашем примере это `df`).
 3. Функции должны быть синхронными. Так как метод orchestrator обрабатывает вызов аргумента context.done, функция должна возвращать значение.
 
-Объект `context` содержит объект `df`, что позволяет вызывать другие функции *действий* и передавать им входные параметры с помощью метода `callActivity`. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Значение, возвращаемое при каждом вызове, добавляется в список `outputs`, который возвращается в качестве результата функции.
+`context` Объект содержит объект контекста `df` устойчивого оркестрации, который позволяет вызывать другие функции *действий* и передавать входные параметры с помощью `callActivity` метода. Этот код вызывает `E1_SayHello` три раза подряд с разными значениями параметров, указывая с помощью `yield`, что процесс выполнения должен ожидать возврата из асинхронных функций действий. Возвращаемое значение каждого вызова добавляется в `outputs` массив, который возвращается в конце функции.
 
-## <a name="e1_sayhello"></a>E1_SayHello
+---
 
-### <a name="functionjson-file"></a>Файл function.json
+### <a name="e1_sayhello-activity-function"></a>Функция действия E1_SayHello
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+[!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=27-32)]
+
+Действия используют `ActivityTrigger` атрибут. Используйте предоставленные `IDurableActivityContext` для выполнения действий, связанных с действиями, например для доступа к `GetInput<T>`входному значению с помощью.
+
+Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
+
+Вместо привязки к `IDurableActivityContext`можно выполнить прямую привязку к типу, который передается в функцию действия. Пример:
+
+[!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=34-38)]
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+#### <a name="e1_sayhellofunctionjson"></a>E1_SayHello/функтион.жсон
 
 Файл *Function.json* для функции действия `E1_SayHello` будет таким же, как и для `E1_HelloSequence`, с одним исключением: в нем используется тип привязки `activityTrigger` вместо `orchestrationTrigger`.
 
-[!code-json[Main](~/samples-durable-functions/samples/csx/E1_SayHello/function.json)]
+[!code-json[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/function.json)]
 
 > [!NOTE]
 > Для любой функции, которую вызывает функция оркестратора, должна использоваться привязка `activityTrigger`.
 
 Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
 
-### <a name="c"></a>C#
-
-[!code-csharp[Main](~/samples-durable-functions/samples/csx/E1_SayHello/run.csx)]
-
-Эта функция имеет параметр типа `DurableActivityContext`, который используется для получения входных данных, переданных в нее с помощью вызова функции Orchestrator `CallActivityAsync<T>`.
-
-### <a name="javascript"></a>JavaScript
+#### <a name="e1_sayhelloindexjs"></a>E1_SayHello/индекс.ЖС
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/index.js)]
 
 В отличие от функции оркестратора JavaScript, функция действия не требует дополнительной настройки. Входные данные, которые ей передает функция оркестратора, размещаются в объекте `context.bindings` под именем привязки `activityTrigger` (в нашем примере это `context.bindings.name`). Имя привязки можно задать в качестве параметра экспортируемой функции и обращаться к нему напрямую, как показано в этом примере кода.
 
+---
+
+### <a name="httpstart-client-function"></a>Функция клиента HttpStart
+
+Вы можете запустить экземпляр функции Orchestrator с помощью клиентской функции. Для запуска экземпляров будет `HttpStart` использоваться функция, активируемая HTTP `E1_HelloSequence`.
+
+# <a name="c"></a>[C#](#tab/csharp)
+
+[!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs?range=13-30)]
+
+Для взаимодействия с оркестрации функция должна включать `DurableClient` входную привязку. Для начала оркестрации используется клиент. Он также может помочь вернуть ответ HTTP, содержащий URL-адреса для проверки состояния нового оркестрации.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+#### <a name="httpstartfunctionjson"></a>HttpStart/Function. JSON
+
+[!code-json[Main](~/samples-durable-functions/samples/javascript/HttpStart/function.json?highlight=16-20)]
+
+Для взаимодействия с оркестрации функция должна включать `durableClient` входную привязку.
+
+#### <a name="httpstartindexjs"></a>HttpStart/index. js
+
+[!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
+
+Используйте `df.getClient` для получения `DurableOrchestrationClient` объекта. Для начала оркестрации используется клиент. Он также может помочь вернуть ответ HTTP, содержащий URL-адреса для проверки состояния нового оркестрации.
+
+---
+
 ## <a name="run-the-sample"></a>Запуск примера
 
-Чтобы выполнить функцию оркестратора `E1_HelloSequence`, отправьте указанный ниже запрос HTTP POST.
+Чтобы выполнить `E1_HelloSequence` согласование, отправьте в `HttpStart` функцию следующий запрос HTTP POST.
 
 ```
 POST http://{host}/orchestrators/E1_HelloSequence
@@ -137,17 +172,11 @@ Content-Type: application/json; charset=utf-8
 Как видите, параметр `runtimeStatus` для экземпляра имеет значение *Завершено*, а `output` содержит результат выполнения функции оркестратора, сериализованный в формате JSON.
 
 > [!NOTE]
-> Конечная точка HTTP POST, которая запустила функцию оркестратора, реализована в этом примере как функция с именем HttpStart и активацией по HTTP-запросу. Вы можете использовать аналогичную логику запуска и для других типов триггеров, например `queueTrigger`, `eventHubTrigger` или `timerTrigger`.
+> Вы можете использовать аналогичную логику запуска и для других типов триггеров, например `queueTrigger`, `eventHubTrigger` или `timerTrigger`.
 
-Просмотрите журналы выполнения функции. Функция `E1_HelloSequence` запущена и выполнена несколько раз из-за поведения воспроизведения, описанного в разделе [надежность оркестрации](durable-functions-orchestrations.md#reliability) . С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
+Просмотрите журналы выполнения функции. `E1_HelloSequence` Функция была запущена и выполнена несколько раз из-за поведения воспроизведения, описанного в разделе [надежность оркестрации](durable-functions-orchestrations.md#reliability) . С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
 
-## <a name="visual-studio-sample-code"></a>Пример кода для Visual Studio
-
-Пример описанной оркестрации, реализованной в одном файле C# в проекте Visual Studio:
-
-[!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs)]
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом примере показана простая оркестрация с цепочкой функций. В приведенном ниже примере кода показана реализация шаблона развертывания и объединения.
 

@@ -1,34 +1,28 @@
 ---
-title: Использование виртуальных машин точки Azure (Предварительная версия)
-description: Узнайте, как использовать виртуальные машины Azure для хранения затрат
-services: virtual-machines-linux
-documentationcenter: ''
+title: Использование виртуальных машин точки Azure
+description: Узнайте, как использовать виртуальные машины Azure для хранения затрат.
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 10/14/2019
+ms.date: 03/25/2020
 ms.author: cynthn
-ms.openlocfilehash: 9a9989f7b8e75be09a72d76f84d664504b3af474
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.reviewer: jagaveer
+ms.openlocfilehash: 80601170a39333ea0075bb4ec262dd48c7f2d76d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790144"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81758338"
 ---
-# <a name="preview-use-spot-vms-in-azure"></a>Предварительная версия: использование плашечных виртуальных машин в Azure
+# <a name="use-spot-vms-in-azure"></a>Использование плашечных виртуальных машин в Azure
 
 
 [!INCLUDE [common-spot-vms](../../../includes/virtual-machines-common-spot-vms.md)]  
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Используйте [CLI](spot-cli.md), [портал](../windows/spot-portal.md) или [PowerShell](../windows/spot-powershell.md) для развертывания плашечных виртуальных машин.
 
 Также можно развернуть [масштабируемый набор с другими экземплярами виртуальных машин](../../virtual-machine-scale-sets/use-spot.md).

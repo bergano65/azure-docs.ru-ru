@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/06/2019
 ms.openlocfilehash: ade29318fdd1510d03ddd208534258a30b256e98
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75979379"
 ---
 # <a name="validate-xml-with-schemas-in-azure-logic-apps-with-enterprise-integration-pack"></a>Проверка XML с помощью схем в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -21,7 +21,7 @@ ms.locfileid: "75979379"
 
 Сведения об ограничениях, связанных с учетными записями и артефактами, такими как схемы, см. в разделе [Ограничения учетной записи интеграции](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас нет ее, вы можете <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрироваться для получения бесплатной учетной записи Azure</a>.
 
@@ -52,7 +52,7 @@ ms.locfileid: "75979379"
 
 1. Войдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> с помощью учетных данных учетной записи Azure.
 
-1. Чтобы найти и открыть учетную запись интеграции, в главном меню Azure выберите **Все службы**. В поле поиска введите "учетная запись интеграции". Щелкните **Учетные записи интеграции**.
+1. Чтобы найти и открыть учетную запись интеграции, в главном меню Azure выберите **Все службы**. В поле поиска введите "учетная запись интеграции". Выберите **учетные записи интеграции**.
 
    ![Поиск учетной записи интеграции](./media/logic-apps-enterprise-integration-schemas/find-integration-account.png)
 
@@ -154,7 +154,7 @@ ms.locfileid: "75979379"
 
 1. В главном меню Azure выберите **Все службы**. 
    В поле поиска введите "учетная запись интеграции". 
-   Щелкните **Учетные записи интеграции**.
+   Выберите **учетные записи интеграции**.
 
 1. Выберите учетную запись интеграции, в которую необходимо обновить схему.
 
@@ -174,7 +174,7 @@ ms.locfileid: "75979379"
 
 1. В главном меню Azure выберите **Все службы**. 
    В поле поиска введите "учетная запись интеграции". 
-   Щелкните **Учетные записи интеграции**.
+   Выберите **учетные записи интеграции**.
 
 1. Выберите учетную запись интеграции, в которой необходимо удалить схему.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Origami | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Origami | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Origami.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: fd347f4eb5f77dacc3c9fd61d0e885e9b3ee7959
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67095636"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-origami"></a>Руководство по Интеграция Azure Active Directory с Origami
+# <a name="tutorial-azure-active-directory-integration-with-origami"></a>Руководство. Интеграция Azure Active Directory с Origami
 
 В этом учебнике описано, как интегрировать Origami с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Origami обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "67095636"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Origami, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Origami с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -118,7 +118,7 @@ ms.locfileid: "67095636"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -136,7 +136,7 @@ ms.locfileid: "67095636"
    
     ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_531.png)
 
-    a. Выберите пункт **Включить единый вход**.
+    а. Выберите пункт **Включить единый вход**.
 
     b. В текстовое поле **Identity Provider's Sign-in Page URL** (URL-адрес страницы входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
@@ -144,7 +144,7 @@ ms.locfileid: "67095636"
 
     d. Нажмите кнопку **Browse** (Обзор), чтобы отправить файл метаданных, скачанный с портала Azure.
 
-    д. Нажмите кнопку **Сохранить изменения**.
+    д) Щелкните **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -219,17 +219,17 @@ ms.locfileid: "67095636"
    
     ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_56.png)
 
-    a. В текстовом поле **Имя пользователя** введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
+    а. В текстовом поле **Имя пользователя** введите адрес электронной почты пользователя, например **brittasimon\@contoso.com**.
 
     b. В текстовом поле **Пароль** введите пароль.
 
     c. В текстовом поле **подтверждения пароля** введите пароль еще раз.
 
-    d. В текстовом поле **First Name** (Имя) введите имя, допустим, **Britta**.
+    d. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    д. В текстовом поле **Last Name** (Фамилия) введите фамилию, предположим, **Simon**.
+    д) В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
    
     ![Настройка единого входа](./media/origami-tutorial/tutorial_origami_57.png)
 
@@ -249,5 +249,5 @@ ms.locfileid: "67095636"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

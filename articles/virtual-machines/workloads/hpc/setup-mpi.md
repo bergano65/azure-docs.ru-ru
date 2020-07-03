@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
 ms.openlocfilehash: 469e926932ffa11ef9f2a262b78a587ba435549e
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77023996"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Настройка интерфейса передачи сообщений для HPC
@@ -120,7 +120,7 @@ sudo ./platform_mpi-09.01.04.03r-ce.bin
 
 [Загрузите Intel MPI](https://software.intel.com/mpi-library/choose-download).
 
-Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте `I_MPI_FABRICS=shm:ofa`, а для 2019 — `I_MPI_FABRICS=shm:ofi`.
+Измените переменную среды I_MPI_FABRICS в зависимости от версии. Для Intel MPI 2018 используйте `I_MPI_FABRICS=shm:ofa` , а для 2019 —. `I_MPI_FABRICS=shm:ofi`
 
 По умолчанию закрепление процессов работает правильно для 15, 30 и 60 ППН.
 
@@ -141,7 +141,7 @@ CC=<mpi-install-path/bin/mpicc>CXX=<mpi-install-path/bin/mpicxx> ./configure
 make
 ```
 
-Тесты MPI находятся в папке `mpi/`.
+Тесты MPI находятся в `mpi/` папке.
 
 
 ## <a name="discover-partition-keys"></a>Обнаружение ключей разделов
@@ -198,6 +198,6 @@ chmod 644 /home/$USER/.ssh/config
 
 В приведенном выше синтаксисе предполагается наличие общего домашнего каталога, иначе каталог. ssh должен быть скопирован на каждый узел.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.

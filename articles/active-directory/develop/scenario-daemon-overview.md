@@ -2,31 +2,27 @@
 title: Создание управляющего приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как создать управляющее приложение, вызывающее веб-API
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/31/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 9465b77d03fb3dbb668bd40bf2c7e6ded6891a05
-ms.sourcegitcommit: 42517355cc32890b1686de996c7913c98634e348
+ms.openlocfilehash: df06c4c55941f4424d6b90d2846af17bf055b2e4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76962069"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885469"
 ---
 # <a name="scenario-daemon-application-that-calls-web-apis"></a>Сценарий: управляющее приложение, вызывающее веб-API
 
 Изучите все, что нужно для создания управляющего приложения, вызывающего веб-API.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
@@ -42,7 +38,7 @@ ms.locfileid: "76962069"
 - Настольные приложения (например, службы Windows или управляющие программы на платформе Linux), выполняющие пакетные задания или службу операционной системы, выполняемую в фоновом режиме.
 - Веб-API, которым требуется управлять каталогами, а не отдельными пользователями
 
-Существует еще один распространенный случай, когда приложения, не использующие управляющие программы, используют учетные данные клиента. даже если они действуют от имени пользователей, им нужно получить доступ к веб-API или ресурсу в качестве удостоверения по техническим причинам. Примером является доступ к секретам в Azure Key Vault или базе данных SQL Azure для кэша.
+Существует еще один распространенный случай, когда приложения, не использующие управляющие программы, используют учетные данные клиента. даже если они действуют от имени пользователей, им нужно получить доступ к веб-API или ресурсу по собственному идентификатору, чтобы получить технические причины. Примером является доступ к секретам в Azure Key Vault или базе данных SQL Azure для кэша.
 
 Приложения, получившие маркер для собственных удостоверений:
 

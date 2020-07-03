@@ -3,12 +3,12 @@ title: Создание кластера Azure Service Fabric
 description: Сведения о настройке защищенного кластера Service Fabric в Azure с помощью Azure Resource Manager.  Вы можете создать кластер с помощью шаблона по умолчанию или собственного шаблона.
 ms.topic: conceptual
 ms.date: 08/16/2018
-ms.openlocfilehash: 935f67c25f4a2aee7d06be7591dbe7576c87806e
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 24bc80a7ab3ce61b79466cdd943c60efd367ce01
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75349871"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81458306"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Создание кластера Service Fabric с помощью Azure Resource Manager 
 > [!div class="op_single_selector"]
@@ -19,24 +19,24 @@ ms.locfileid: "75349871"
 
 [Кластер Azure Service Fabric](service-fabric-deploy-anywhere.md) — это подключенный к сети набор виртуальных машин, в котором вы развертываете микрослужбы и управляете ими.  Кластер Service Fabric, работающий в Azure, — это ресурс Azure, развернутый с помощью Azure Resource Manager. В этой статье описывается развертывание защищенного кластера Service Fabric в Azure с помощью Resource Manager. Вы можете использовать шаблон кластера по умолчанию или собственный шаблон.  Если у вас еще нет своего шаблона, [узнайте, как его создать](service-fabric-cluster-creation-create-template.md).
 
-Тип безопасности, выбранный для защиты кластера (т. е. удостоверение Windows, X509 и т. д.), должен быть указан для первоначального создания кластера и не может быть изменен в дальнейшем. Перед настройкой кластера прочтите [Service Fabric сценарии безопасности кластера][service-fabric-cluster-security]. В Azure для защиты кластера и его конечных точек, проверки подлинности клиентов и шифрования данных Service Fabric требует использования сертификата x509. Azure Active Directory также рекомендуется использовать для обеспечения безопасного доступа к конечным точкам управления. Дополнительные сведения см.в статье [Set up Azure Active Directory for client authentication](service-fabric-cluster-creation-setup-aad.md) (Настройка Azure AD для проверки подлинности клиентов).
+Тип безопасности, выбранный для защиты кластера (т. е. удостоверение Windows, X509 и т. д.), должен быть указан для первоначального создания кластера и не может быть изменен в дальнейшем. Перед настройкой кластера ознакомьтесь со статьей [Сценарии защиты кластера Service Fabric][service-fabric-cluster-security]. В Azure для защиты кластера и его конечных точек, проверки подлинности клиентов и шифрования данных Service Fabric требует использования сертификата x509. Azure Active Directory также рекомендуется использовать для обеспечения безопасного доступа к конечным точкам управления. Дополнительные сведения см.в статье [Set up Azure Active Directory for client authentication](service-fabric-cluster-creation-setup-aad.md) (Настройка Azure AD для проверки подлинности клиентов).
 
 Перед созданием рабочего кластера для запуска производственных рабочих нагрузок мы рекомендуем сначала ознакомиться с [контрольным списком готовности рабочей среды](service-fabric-production-readiness-checklist.md).
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия 
+## <a name="prerequisites"></a>Предварительные условия 
 В этой статье для развертывания кластера используйте модули Azure CLI или Service Fabric RM для PowerShell:
 
-* [Azure PowerShell 4,1 и выше][azure-powershell]
-* [Azure CLI версии 2,0 и выше][azure-CLI]
+* [Azure PowerShell версии 4.1 и выше][azure-powershell].
+* [Azure CLI версии 2.0 и выше][azure-CLI]
 
 Найти справочную документацию для модулей Service Fabric можно здесь:
 * [Az.ServiceFabric](https://docs.microsoft.com/powershell/module/az.servicefabric)
 * [az SF CLI module](https://docs.microsoft.com/cli/azure/sf?view=azure-cli-latest)
 
-### <a name="sign-in-to-azure"></a>Войдите в Azure
+### <a name="sign-in-to-azure"></a>Вход в Azure
 
 Перед выполнением любой из команд в этой статье нужно выполнить вход в Azure.
 
@@ -58,12 +58,12 @@ az account set --subscription $subscriptionId
 
 Выполните следующую команду, чтобы быстро создать кластер с помощью шаблона по умолчанию, указав минимальные параметры.
 
-Используемый шаблон доступен в [примерах шаблонов Azure Service Fabric для Windows](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure-NSG) и [Ubuntu](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeTypes-Secure).
+Используемый шаблон доступен в [образцах шаблонов Azure Service Fabric: шаблон Windows](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure-NSG) и [Ubuntu](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeTypes-Secure) .
 
 Следующая команда позволяет создать кластеры Windows или Linux (нужно указать соответствующую ОС). Команды PowerShell или CLI также сохраняют сертификат в указанную папку *CertificateOutputFolder*, но сначала нужно убедиться, что папка для сертификатов уже создана. Команда принимает и другие параметры (например, номер SKU виртуальной машины).
 
 > [!NOTE]
-> Следующая команда PowerShell работает только с модулем Azure PowerShell `Az`. Чтобы проверить текущую версию Azure Resource Manager PowerShell, выполните следующую команду PowerShell "Get-Module AZ". Если нужно обновить версию PowerShell для Azure Resource Manager, щелкните [эту ссылку](/powershell/azure/install-Az-ps). 
+> Следующая команда PowerShell работает только с модулем Azure PowerShell `Az` . Чтобы проверить текущую версию Azure Resource Manager PowerShell, выполните следующую команду PowerShell "Get-Module AZ". Если нужно обновить версию PowerShell для Azure Resource Manager, щелкните [эту ссылку](/powershell/azure/install-Az-ps). 
 >
 >
 
@@ -107,7 +107,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 ### <a name="use-your-own-custom-template"></a>Использование собственного шаблона
 
-Если необходимо создать пользовательский шаблон в соответствии с потребностями, советуем начать с одного из шаблонов, доступных в [примерах шаблонов Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master). Узнайте, как [настроить шаблон кластера][customize-your-cluster-template].
+Если вам нужно создать настраиваемый шаблон в соответствии с вашими потребностями, настоятельно рекомендуется начать с одного из шаблонов, доступных в [примерах шаблона Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master). Узнайте, как [настроить собственный шаблон кластера][customize-your-cluster-template].
 
 Если у вас уже есть пользовательский шаблон, дважды проверьте, что все три параметра, связанные с сертификатом, в шаблоне и файле параметров имеют указанные ниже имена, а значения равны нулю.
 
@@ -159,10 +159,10 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 Создайте кластер, используя следующую команду, если уже имеется сертификат, который нужно использовать для защиты кластера.
 
-Если это подписанный ЦС сертификат, который также используется в других целях, рекомендуется предоставить отдельную группу ресурсов, специально для хранилища ключей. Рекомендуется поместить хранилище ключей в собственной группе ресурсов. Так вы сможете удалять группы ресурсов для вычислений и хранения, включая группу ресурсов, в которой размещен кластер Service Fabric, без потери ключей и секретов. **Группа ресурсов с хранилищем ключей *должна находиться в том же регионе*, что и кластер, который ее использует**.
+Если это подписанный ЦС сертификат, который также используется в других целях, рекомендуется предоставить отдельную группу ресурсов, специально для хранилища ключей. Рекомендуется поместить хранилище ключей в собственной группе ресурсов. Так вы сможете удалять группы ресурсов для вычислений и хранения, включая группу ресурсов, в которой размещен кластер Service Fabric, без потери ключей и секретов. **Группа ресурсов, содержащая хранилище ключей, *должна находиться в том же регионе* , что и кластер, который его использует.**
 
 ### <a name="use-the-default-five-node-one-node-type-template-that-ships-in-the-module"></a>Использование шаблона по умолчанию с типом для одного или пяти узлов, который поставляется в модуле
-Используемый шаблон доступен в [примерах Azure для Windows](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure-NSG) и [Ubuntu](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeTypes-Secure).
+Используемый шаблон доступен на странице [примеры Azure: шаблон Windows](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure-NSG) и [Ubuntu](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeTypes-Secure) .
 
 Развертывание кластера с помощью PowerShell:
 
@@ -200,7 +200,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 ```
 
 ### <a name="use-your-own-custom-cluster-template"></a>Использование собственного шаблона кластера
-Если необходимо создать пользовательский шаблон в соответствии с потребностями, советуем начать с одного из шаблонов, доступных в [примерах шаблонов Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master). Узнайте, как [настроить шаблон кластера][customize-your-cluster-template].
+Если вам нужно создать настраиваемый шаблон в соответствии с вашими потребностями, настоятельно рекомендуется начать с одного из шаблонов, доступных в [примерах шаблона Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master). Узнайте, как [настроить собственный шаблон кластера][customize-your-cluster-template].
 
 Если у вас уже есть пользовательский шаблон, дважды проверьте, что все три параметра, связанные с сертификатом, в шаблоне и файле параметров имеют указанные ниже имена, а значения равны нулю.
 
@@ -251,7 +251,7 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 ### <a name="use-a-pointer-to-a-secret-uploaded-into-a-key-vault"></a>Использование указателя на секрет, переданный в хранилище ключей
 
-Чтобы использовать имеющееся хранилище ключей, [необходимо включить его для развернутой службы](../key-vault/key-vault-manage-with-cli2.md#bkmk_KVperCLI), благодаря чему поставщик вычислительных ресурсов сможет получить из него сертификаты и установить его на узлах кластера.
+Чтобы использовать существующее хранилище ключей, хранилище ключей должно быть [включено для развертывания](../key-vault/general/manage-with-cli2.md#bkmk_KVperCLI) , чтобы позволить поставщику ресурсов вычислений получать из него сертификаты и устанавливать их на узлах кластера.
 
 Развертывание кластера с помощью PowerShell:
 
@@ -262,7 +262,7 @@ $parameterFilePath="c:\mytemplates\mytemplate.json"
 $templateFilePath="c:\mytemplates\mytemplateparm.json"
 $secretID="https://test1.vault.azure.net:443/secrets/testcertificate4/55ec7c4dc61a462bbc645ffc9b4b225f"
 
-New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -SecretIdentifier $secretId -TemplateFile $templateFilePath -ParameterFile $parameterFilePath 
+New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -SecretIdentifier $secretID -TemplateFile $templateFilePath -ParameterFile $parameterFilePath 
 ```
 
 Развертывание кластера с помощью Azure CLI:
@@ -271,14 +271,14 @@ New-AzServiceFabricCluster -ResourceGroupName $resourceGroupName -SecretIdentifi
 declare $resourceGroupName = "testRG"
 declare $parameterFilePath="c:\mytemplates\mytemplate.json"
 declare $templateFilePath="c:\mytemplates\mytemplateparm.json"
-declare $secertId="https://test1.vault.azure.net:443/secrets/testcertificate4/55ec7c4dc61a462bbc645ffc9b4b225f"
+declare $secretID="https://test1.vault.azure.net:443/secrets/testcertificate4/55ec7c4dc61a462bbc645ffc9b4b225f"
 
 az sf cluster create --resource-group $resourceGroupName --location $resourceGroupLocation  \
-    --secret-identifier az $secretID  \
-    --template-file $templateFilePath --parameter-file $parametersFilePath 
+    --secret-identifier $secretID  \
+    --template-file $templateFilePath --parameter-file $parameterFilePath 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 На этом этапе у вас есть защищенный кластер, работающий в Azure. Далее [подключитесь к этому кластеру](service-fabric-connect-to-secure-cluster.md) и узнайте, как [управлять секретами приложений](service-fabric-application-secret-management.md).
 
 Синтаксис и свойства JSON, используемые в шаблоне, доступны в справочнике по шаблону [Microsoft.ServiceFabric/clusters](/azure/templates/microsoft.servicefabric/clusters).

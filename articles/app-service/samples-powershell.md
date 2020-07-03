@@ -6,12 +6,12 @@ ms.assetid: b48d1137-8c04-46e0-b430-101e07d7e470
 ms.topic: sample
 ms.date: 03/08/2017
 ms.custom: mvc
-ms.openlocfilehash: f32db2a4dda0ceb69644b64a5c76155b448c5a28
-ms.sourcegitcommit: 48b7a50fc2d19c7382916cb2f591507b1c784ee5
+ms.openlocfilehash: f289bd453f2387282402394c807fe9700151f221
+ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74687029"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81532431"
 ---
 # <a name="powershell-samples-for-azure-app-service"></a>Примеры PowerShell для Службы приложений Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "74687029"
 | [Создание приложения и развертывание кода в промежуточной среде](./scripts/powershell-deploy-staging-environment.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает приложение Службы приложений со слотом развертывания для изменений промежуточного кода. |
 |**Настройка приложения**||
 | [Сопоставление личного домена с приложением](./scripts/powershell-configure-custom-domain.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений и сопоставляет c ним имя личного домена. |
-| [Привязка SSL-сертификата к приложению](./scripts/powershell-configure-ssl-certificate.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений и привязывает к нему SSL-сертификат имени личного домена. |
+| [Привязка TLS/SSL-сертификата к приложению](./scripts/powershell-configure-ssl-certificate.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает приложение Службы приложений и привязывает к нему TLS/SSL-сертификат имени личного домена. |
 |**Масштабирование приложения**||
 | [Масштабирование приложения вручную](./scripts/powershell-scale-manual.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает приложение Службы приложений и масштабирует его по двум экземплярам. |
 | [Глобальное масштабирование приложения с помощью высокодоступной архитектуры](./scripts/powershell-scale-high-availability.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создает два приложения Службы приложений в двух разных географических регионах и делает их доступными через одну конечную точку с помощью диспетчера трафика Azure. |

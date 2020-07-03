@@ -9,13 +9,13 @@ metadata:
   ms.collection: collection
   author: DCtheGeek
   ms.author: dacoulte
-  ms.date: 11/04/2019
-  ms.openlocfilehash: 1a91f7fe63753ddc7c8b88d487064b15206fcfe3
-  ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+  ms.date: 05/20/2020
+  ms.openlocfilehash: b28cae1fd59e863c04d744a5c17108f1bd942a4d
+  ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/04/2019
-  ms.locfileid: "73494346"
+  ms.lasthandoff: 05/27/2020
+  ms.locfileid: "84119352"
 landingContent:
 - title: Сведения о службе "Политика Azure"
   linkLists:
@@ -73,10 +73,8 @@ landingContent:
       url: ./how-to/author-policies-for-arrays.md
   - linkListType: concept
     links:
-    - text: Политика для AKS
-      url: ./concepts/rego-for-aks.md
-    - text: Политика для обработчика AKS
-      url: ./concepts/aks-engine.md
+    - text: Политика для Kubernetes
+      url: ./concepts/policy-for-kubernetes.md
     - text: Политика для виртуальных машин
       url: ./concepts/guest-configuration.md
 - title: Просмотр и оптимизация ресурсов
@@ -93,26 +91,24 @@ landingContent:
   linkLists:
   - linkListType: get-started
     links:
+    - text: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт
+      url: /answers/topics/azure-policy.html.html
     - text: Канал на YouTube, посвященный системе управления Azure
       url: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
     - text: Функция запроса продукта
-      url: https://feedback.azure.com/forums/915958-azure-governance
+      url: https://feedback.azure.com/forums/915958-azure-governance?category_id=345055
     - text: Техническое сообщество по системе управления Azure
       url: https://techcommunity.microsoft.com/t5/Azure-Governance/bd-p/AzureGovernance
-- title: Справочные материалы
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:
-    - text: Инфраструктура CLI Azure
+    - text: Azure CLI
       url: /cli/azure/policy
     - text: Azure PowerShell (служба "Политика")
       url: /powershell/module/az.resources/#policies
     - text: Azure PowerShell (служба анализа политик)
       url: /powershell/module/az.policyinsights#policy_insights
-    - text: Пакет Azure SDK для .NET (назначения)
-      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
-    - text: Пакет Azure SDK для .NET (определения политик)
-      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
     - text: REST (анализ политик)
       url: /rest/api/policy-insights/
     - text: REST (назначения)
@@ -123,3 +119,21 @@ landingContent:
       url: /rest/api/resources/policysetdefinitions
     - text: Шаблоны Resource Manager
       url: /azure/templates/microsoft.authorization/allversions
+- title: Справка (дополнительно)
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Пакет Azure SDK для .NET (назначения)
+      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
+    - text: Пакет Azure SDK для .NET (определения политик)
+      url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
+    - text: Пакет SDK Azure для Node (Policy)
+      url: /javascript/api/@azure/arm-policy
+    - text: Пакет SDK Azure для Node (PolicyInsights)
+      url: /javascript/api/@azure/arm-policyinsights
+    - text: Пакет SDK Azure для Python (Policy)
+      url: /python/api/azure-mgmt-resource/azure.mgmt.resource.policy
+    - text: Пакет SDK Azure для Python (PolicyClient)
+      url: /python/api/azure-mgmt-resource/azure.mgmt.resource.policyclient
+    - text: Пакет SDK Azure для Python (PolicyInsights)
+      url: /python/api/azure-mgmt-policyinsights/azure.mgmt.policyinsights

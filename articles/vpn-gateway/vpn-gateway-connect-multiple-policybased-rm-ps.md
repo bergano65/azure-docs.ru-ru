@@ -5,24 +5,22 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 01/10/2020
+ms.date: 02/26/2020
 ms.author: yushwang
-ms.openlocfilehash: dec088ed751856957735867f740dc951c3b8f2ac
-ms.sourcegitcommit: 76bc196464334a99510e33d836669d95d7f57643
+ms.openlocfilehash: 687c33e50a986cf8af08d0201fe0159a79cf02a9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77162078"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80123323"
 ---
 # <a name="connect-azure-vpn-gateways-to-multiple-on-premises-policy-based-vpn-devices-using-powershell"></a>Подключение VPN-шлюзов Azure к нескольким локальным VPN-устройствам на основе политики с помощью PowerShell
 
 Эта статья поможет вам настроить VPN-шлюз Azure на основе маршрутов для подключения к нескольким локальным VPN-устройствам на основе политики, которые используют настраиваемые политики IPsec/IKE для VPN-подключений типа "сеть — сеть".
 
+## <a name="about-policy-based-and-route-based-vpn-gateways"></a><a name="about"></a>VPN-шлюзы на основе политики и маршрутов
 
-
-## <a name="about"></a>VPN-шлюзы на основе политики и маршрутов
-
-VPN-устройства на основе политики *и* маршрутов отличаются способом установки селекторов трафика IPsec для подключения:
+На основе политик *и* VPN-устройств, основанных на маршрутах, различаются настройки селекторов трафика IPSec для соединения.
 
 * VPN-устройства **на основе политики** используют комбинации префиксов из двух сетей, чтобы определить способ шифрования и расшифровки трафика через IPsec- туннели. Обычно это включено для устройств брандмауэра, выполняющих фильтрацию пакетов. Шифрование и расшифровка туннеля IPsec добавляются в фильтрацию пакетов и подсистему обработки.
 * VPN-устройства **на основе маршрута** используют селекторы трафика типа "любой к любому" (подстановочные) и позволяют таблицам пересылки и маршрута направлять трафик в различные IPsec-туннели. Обычно это включено для платформ маршрутизатора, где каждый IPsec-туннель смоделирован как сетевой интерфейс или VTI (виртуальный интерфейс туннеля).
@@ -40,9 +38,9 @@ VPN-устройства на основе политики *и* маршрут�
 
 |                          | **VPN-шлюзы на основе политики** | **VPN-шлюзы на основе маршрута**       |**VPN-шлюзы на основе маршрута**                          |
 | ---                      | ---                         | ---                              |---                                                 |
-| **SKU шлюза Azure**    | Basic                       | Basic                            | Standard, HighPerformance, VpnGw1, VpnGw2, VpnGw3  |
-| **Версия IKE**          | IKEv1                       | IKEv2                            | IKEv1 и IKEv2                                    |
-| **Максимальной. Подключения S2S** | **1**                       | 10                               |Стандартный: 10<br> Другие номера SKU: 30                     |
+| **SKU шлюза Azure**    | Basic                       | Basic                            | VpnGw1, VpnGw2, VpnGw3, VpnGw4, VpnGw5  |
+| **Версия IKE**          | IKEv1                       | IKEv2                            | IKEv1 и IKEv2                         |
+| **Максимальной. Подключения S2S** | **1**                       | 10                               | 30                     |
 |                          |                             |                                  |                                                    |
 
 С настраиваемой политикой IPsec/IKE теперь можно настроить VPN-шлюзы Azure на основе маршрута, чтобы использовать селекторы трафика на основе префикса с параметром "**PolicyBasedTrafficSelectors**" для подключения к локальным VPN-устройствам на основе политики. Эта возможность позволит подключиться из виртуальной сети Azure и VPN-шлюза к нескольким локальным устройствам VPN и брандмауэра на основе политики, не ограничиваясь единым подключением из текущих VPN-шлюзов Azure на основе политики.
@@ -58,162 +56,155 @@ VPN-устройства на основе политики *и* маршрут�
 
 Как показано на схеме, у VPN-шлюза Azure есть селекторы трафика из виртуальной сети для каждого локального префикса в сети, а не префиксов кросс-подключения. Например, локальные сайты 2, 3 и 4 могут все взаимодействовать с сетью VNet1, но не могут подключиться через VPN-шлюз Azure друг к другу. На схеме показаны селекторы трафика с кросс-подключением, недоступные для VPN-шлюза Azure в этой конфигурации.
 
-## <a name="configurepolicybased"></a>Настройка селекторов трафика на основе политики для подключения
+## <a name="workflow"></a><a name="workflow"></a>Рабочий процесс
 
 Инструкции в этой статье основаны на том же примере, который описан в статье о [настройке политики IPsec/IKE для подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md) для установки подключения VPN типа "сеть — сеть". Это показано на схеме ниже:
 
 ![s2s-policy](./media/vpn-gateway-connect-multiple-policybased-rm-ps/s2spolicypb.png)
 
 Этапы подключения:
-1. Создание виртуальной сети, VPN-шлюза и шлюза локальной сети для распределенного подключения.
-2. Создайте политику IPsec/IKE
-3. Применение политики при создании подключения типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" и **включение селекторов трафика на основе политики** для подключения.
-4. Если подключение уже создано, можно применить или обновить политику для существующего подключения.
+1. Создайте виртуальную сеть, VPN-шлюз и шлюз локальной сети для подключения между организациями.
+2. Создайте политику IPsec/IKE.
+3. Примените политику при создании подключения S2S или VNet-to-VNet, а также **включите селекторы трафика на основе политики** для подключения.
+4. Если подключение уже создано, можно применить или обновить политику к существующему соединению.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
-Убедитесь в том, что у вас уже есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial).
+* Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки Azure, вы можете активировать преимущества для [подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial).
 
-[!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
+* [!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
-## <a name="enablepolicybased"></a>Включение селекторов трафика на основе политики для подключения
+## <a name="enable-policy-based-traffic-selectors"></a><a name="enablepolicybased"></a>Включить селекторы трафика на основе политики
 
-Чтобы перейти к этому разделу, убедитесь, что выполнены требования [по настройке политики IPsec/IKE (часть 3)](vpn-gateway-ipsecikepolicy-rm-powershell.md). В следующем примере используются те же параметры и действия:
+В этом разделе показано, как включить селекторы трафика на основе политики для соединения. Убедитесь, что вы завершили [часть 3 статьи Настройка политики IPSec/IKE](vpn-gateway-ipsecikepolicy-rm-powershell.md). В действиях, описанных в этой статье, используются те же параметры.
 
 ### <a name="step-1---create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>Шаг 1. Создание виртуальной сети, VPN-шлюза и шлюза локальной сети
 
-#### <a name="1-connect-to-your-subscription-and-declare-your-variables"></a>1. Подключитесь к подписке и объявите переменные
+#### <a name="connect-to-your-subscription-and-declare-your-variables"></a>Подключитесь к подписке и объявите переменные.
 
-[!INCLUDE [sign in](../../includes/vpn-gateway-cloud-shell-ps-login.md)]
+1. Если вы используете PowerShell локально на компьютере, выполните вход с помощью командлета *Connect-азаккаунт* . Вместо этого используйте Azure Cloud Shell в браузере.
 
-Объявите переменные. В этом упражнении мы используем следующие переменные:
+2. Объявите переменные. В этом упражнении мы используем следующие переменные:
 
-```azurepowershell-interactive
-$Sub1          = "<YourSubscriptionName>"
-$RG1           = "TestPolicyRG1"
-$Location1     = "East US 2"
-$VNetName1     = "TestVNet1"
-$FESubName1    = "FrontEnd"
-$BESubName1    = "Backend"
-$GWSubName1    = "GatewaySubnet"
-$VNetPrefix11  = "10.11.0.0/16"
-$VNetPrefix12  = "10.12.0.0/16"
-$FESubPrefix1  = "10.11.0.0/24"
-$BESubPrefix1  = "10.12.0.0/24"
-$GWSubPrefix1  = "10.12.255.0/27"
-$DNS1          = "8.8.8.8"
-$GWName1       = "VNet1GW"
-$GW1IPName1    = "VNet1GWIP1"
-$GW1IPconf1    = "gw1ipconf1"
-$Connection16  = "VNet1toSite6"
+   ```azurepowershell-interactive
+   $Sub1          = "<YourSubscriptionName>"
+   $RG1           = "TestPolicyRG1"
+   $Location1     = "East US 2"
+   $VNetName1     = "TestVNet1"
+   $FESubName1    = "FrontEnd"
+   $BESubName1    = "Backend"
+   $GWSubName1    = "GatewaySubnet"
+   $VNetPrefix11  = "10.11.0.0/16"
+   $VNetPrefix12  = "10.12.0.0/16"
+   $FESubPrefix1  = "10.11.0.0/24"
+   $BESubPrefix1  = "10.12.0.0/24"
+   $GWSubPrefix1  = "10.12.255.0/27"
+   $DNS1          = "8.8.8.8"
+   $GWName1       = "VNet1GW"
+   $GW1IPName1    = "VNet1GWIP1"
+   $GW1IPconf1    = "gw1ipconf1"
+   $Connection16  = "VNet1toSite6"
+   $LNGName6      = "Site6"
+   $LNGPrefix61   = "10.61.0.0/16"
+   $LNGPrefix62   = "10.62.0.0/16"
+   $LNGIP6        = "131.107.72.22"
+   ```
 
-$LNGName6      = "Site6"
-$LNGPrefix61   = "10.61.0.0/16"
-$LNGPrefix62   = "10.62.0.0/16"
-$LNGIP6        = "131.107.72.22"
-```
+#### <a name="create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>Создание виртуальной сети, VPN-шлюза и шлюза локальной сети
 
-#### <a name="2-create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>2. Создайте виртуальную сеть, VPN-шлюз и шлюз локальной сети.
+1. Создайте группу ресурсов.
 
-Создайте группу ресурсов.
+   ```azurepowershell-interactive
+   New-AzResourceGroup -Name $RG1 -Location $Location1
+   ```
+2. Используйте приведенный ниже пример, чтобы создать виртуальную сеть TestVNet1 с тремя подсетями и VPN-шлюзом. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем.
 
-```azurepowershell-interactive
-New-AzResourceGroup -Name $RG1 -Location $Location1
-```
+    ```azurepowershell-interactive
+    $fesub1 = New-AzVirtualNetworkSubnetConfig -Name $FESubName1 -AddressPrefix $FESubPrefix1
+    $besub1 = New-AzVirtualNetworkSubnetConfig -Name $BESubName1 -AddressPrefix $BESubPrefix1
+    $gwsub1 = New-AzVirtualNetworkSubnetConfig -Name $GWSubName1 -AddressPrefix $GWSubPrefix1
+    
+    New-AzVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1 -Location $Location1 -AddressPrefix $VNetPrefix11,$VNetPrefix12 -Subnet $fesub1,$besub1,$gwsub1
+    
+    $gw1pip1    = New-AzPublicIpAddress -Name $GW1IPName1 -ResourceGroupName $RG1 -Location $Location1 -AllocationMethod Dynamic
+    $vnet1      = Get-AzVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1
+    $subnet1    = Get-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet1
+    $gw1ipconf1 = New-AzVirtualNetworkGatewayIpConfig -Name $GW1IPconf1 -Subnet $subnet1 -PublicIpAddress $gw1pip1
+    
+    New-AzVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1 -Location $Location1 -IpConfigurations $gw1ipconf1 -GatewayType Vpn -VpnType RouteBased -GatewaySku HighPerformance
+    
+    New-AzLocalNetworkGateway -Name $LNGName6 -ResourceGroupName $RG1 -Location $Location1 -GatewayIpAddress $LNGIP6 -AddressPrefix $LNGPrefix61,$LNGPrefix62
+    ```
 
-Используйте приведенный ниже пример, чтобы создать виртуальную сеть TestVNet1 с тремя подсетями и VPN-шлюзом. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем.
+### <a name="step-2---create-an-s2s-vpn-connection-with-an-ipsecike-policy"></a>Шаг 2. Создание VPN-подключения S2S с помощью политики IPsec/IKE
 
-```azurepowershell-interactive
-$fesub1 = New-AzVirtualNetworkSubnetConfig -Name $FESubName1 -AddressPrefix $FESubPrefix1
-$besub1 = New-AzVirtualNetworkSubnetConfig -Name $BESubName1 -AddressPrefix $BESubPrefix1
-$gwsub1 = New-AzVirtualNetworkSubnetConfig -Name $GWSubName1 -AddressPrefix $GWSubPrefix1
+1. Создайте политику IPsec/IKE.
 
-New-AzVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1 -Location $Location1 -AddressPrefix $VNetPrefix11,$VNetPrefix12 -Subnet $fesub1,$besub1,$gwsub1
+   > [!IMPORTANT]
+   > Вам необходимо создать политику IPsec/IKE для включения параметра "UsePolicyBasedTrafficSelectors" для подключения.
 
-$gw1pip1    = New-AzPublicIpAddress -Name $GW1IPName1 -ResourceGroupName $RG1 -Location $Location1 -AllocationMethod Dynamic
-$vnet1      = Get-AzVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1
-$subnet1    = Get-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet1
-$gw1ipconf1 = New-AzVirtualNetworkGatewayIpConfig -Name $GW1IPconf1 -Subnet $subnet1 -PublicIpAddress $gw1pip1
+   В следующем примере создается политика IPsec/IKE с этими алгоритмами и параметрами:
+    * IKEv2: AES256, SHA384, DHGroup24
+    * IPsec: AES256, SHA256, PFS (Нет), срок действия SA (14 400 секунд и 102 400 000 КБ).
 
-New-AzVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1 -Location $Location1 -IpConfigurations $gw1ipconf1 -GatewayType Vpn -VpnType RouteBased -GatewaySku HighPerformance
+   ```azurepowershell-interactive
+   $ipsecpolicy6 = New-AzIpsecPolicy -IkeEncryption AES256 -IkeIntegrity SHA384 -DhGroup DHGroup24 -IpsecEncryption AES256 -IpsecIntegrity SHA256 -PfsGroup None -SALifeTimeSeconds 14400 -SADataSizeKilobytes 102400000
+   ```
+1. Создайте VPN-подключение S2S с селекторами трафика на основе политики и политикой IPsec/IKE и примените политику IPsec/IKE, созданную на предыдущем шаге. Обратите внимание на дополнительный параметр "-UsePolicyBasedTrafficSelectors $True", который позволяет использовать селекторы трафика на основе политик в соединении.
 
-New-AzLocalNetworkGateway -Name $LNGName6 -ResourceGroupName $RG1 -Location $Location1 -GatewayIpAddress $LNGIP6 -AddressPrefix $LNGPrefix61,$LNGPrefix62
-```
+   ```azurepowershell-interactive
+   $vnet1gw = Get-AzVirtualNetworkGateway -Name $GWName1  -ResourceGroupName $RG1
+   $lng6 = Get-AzLocalNetworkGateway  -Name $LNGName6 -ResourceGroupName $RG1
 
-### <a name="step-2---create-a-s2s-vpn-connection-with-an-ipsecike-policy"></a>Шаг 2. Создание подключения VPN типа "сеть — сеть" с помощью политики IPsec/IKE
+   New-AzVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng6 -Location $Location1 -ConnectionType IPsec -UsePolicyBasedTrafficSelectors $True -IpsecPolicies $ipsecpolicy6 -SharedKey 'AzureA1b2C3'
+   ```
+1. После выполнения этих действий подключение VPN типа "сеть — сеть" будет использовать для подключения определенную выше политику IPsec/IKE и включит селекторы трафика на основе политики. Вы можете повторить те же действия, чтобы добавить подключения для дополнительных локальных VPN-устройств на основе политики из одного VPN-шлюза Azure.
 
-#### <a name="1-create-an-ipsecike-policy"></a>1. Создание политики IPsec/IKE
+## <a name="to-update-policy-based-traffic-selectors"></a><a name="update"></a>Обновление селекторов трафика на основе политик
+В этом разделе показано, как обновить параметр селекторов трафика на основе политики для существующего VPN-подключения S2S.
 
-> [!IMPORTANT]
-> Вам необходимо создать политику IPsec/IKE для включения параметра "UsePolicyBasedTrafficSelectors" для подключения.
+1. Получение ресурса подключения
 
-В следующем примере создается политика IPsec/IKE с этими алгоритмами и параметрами:
-* IKEv2: AES256, SHA384, DHGroup24
-* IPsec: AES256, SHA256, PFS (Нет), срок действия SA (14 400 секунд и 102 400 000 КБ).
-
-```azurepowershell-interactive
-$ipsecpolicy6 = New-AzIpsecPolicy -IkeEncryption AES256 -IkeIntegrity SHA384 -DhGroup DHGroup24 -IpsecEncryption AES256 -IpsecIntegrity SHA256 -PfsGroup None -SALifeTimeSeconds 14400 -SADataSizeKilobytes 102400000
-```
-
-#### <a name="2-create-the-s2s-vpn-connection-with-policy-based-traffic-selectors-and-ipsecike-policy"></a>2. Создание VPN-подключения S2S с селекторами трафика на основе политики и политикой IPsec/IKE
-Создайте подключение VPN типа "сеть — сеть" и примените политику IPsec/IKE, созданную на предыдущем шаге. Чтобы включить селекторы трафика на основе политики для подключения, дополнительному параметру -UsePolicyBasedTrafficSelectors должно быть задано значение $True.
-
-```azurepowershell-interactive
-$vnet1gw = Get-AzVirtualNetworkGateway -Name $GWName1  -ResourceGroupName $RG1
-$lng6 = Get-AzLocalNetworkGateway  -Name $LNGName6 -ResourceGroupName $RG1
-
-New-AzVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupName $RG1 -VirtualNetworkGateway1 $vnet1gw -LocalNetworkGateway2 $lng6 -Location $Location1 -ConnectionType IPsec -UsePolicyBasedTrafficSelectors $True -IpsecPolicies $ipsecpolicy6 -SharedKey 'AzureA1b2C3'
-```
-
-После выполнения этих действий подключение VPN типа "сеть — сеть" будет использовать для подключения определенную выше политику IPsec/IKE и включит селекторы трафика на основе политики. Вы можете повторить те же действия, чтобы добавить подключения для дополнительных локальных VPN-устройств на основе политики из одного VPN-шлюза Azure.
-
-## <a name="update-policy-based-traffic-selectors-for-a-connection"></a>Обновление селекторов трафика на основе политики для подключения
-Из последнего раздела вы узнаете, как обновить параметр селекторов трафика на основе политики для существующего подключения VPN типа "сеть — сеть".
-
-### <a name="1-get-the-connection"></a>1. получение подключения
-Получение ресурса подключения
-
-```azurepowershell-interactive
-$RG1          = "TestPolicyRG1"
-$Connection16 = "VNet1toSite6"
-$connection6  = Get-AzVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupName $RG1
-```
-
-### <a name="2-check-the-policy-based-traffic-selectors-option"></a>2. Проверьте параметр селекторов трафика на основе политики.
+   ```azurepowershell-interactive
+   $RG1          = "TestPolicyRG1"
+   $Connection16 = "VNet1toSite6"
+   $connection6  = Get-AzVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupName $RG1
+   ```
+1. Просмотрите параметр селекторов трафика на основе политики.
 В следующей строке показано, используются ли для подключения селекторы трафика на основе политики:
 
-```azurepowershell-interactive
-$connection6.UsePolicyBasedTrafficSelectors
-```
+   ```azurepowershell-interactive
+   $connection6.UsePolicyBasedTrafficSelectors
+   ```
 
-Если строка возвращает значение **True**, селекторы трафика на основе политики настроены для подключения. В противном случае возвращается значение **False**.
+   Если строка возвращает значение **True**, селекторы трафика на основе политики настроены для подключения. В противном случае возвращается значение **False**.
+1. После получения ресурса подключения можно включить или отключить селекторы трафика на основе политики для соединения.
 
-### <a name="3-enabledisable-the-policy-based-traffic-selectors-on-a-connection"></a>3. Включение и отключение селекторов трафика на основе политики для подключения
-После получения ресурса подключения можно включить или отключить этот параметр.
+   - Включение
 
-#### <a name="to-enable-usepolicybasedtrafficselectors"></a>Включение параметра UsePolicyBasedTrafficSelectors
-В следующем примере включается параметр селекторов трафика на основе политики и не изменяется политика IPsec/IKE:
+      В следующем примере включается параметр селекторов трафика на основе политики и не изменяется политика IPsec/IKE:
 
-```azurepowershell-interactive
-$RG1          = "TestPolicyRG1"
-$Connection16 = "VNet1toSite6"
-$connection6  = Get-AzVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupName $RG1
+      ```azurepowershell-interactive
+      $RG1          = "TestPolicyRG1"
+      $Connection16 = "VNet1toSite6"
+      $connection6  = Get-AzVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupName $RG1
 
-Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection6 -UsePolicyBasedTrafficSelectors $True
-```
+      Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection6 -UsePolicyBasedTrafficSelectors $True
+      ```
 
-#### <a name="to-disable-usepolicybasedtrafficselectors"></a>Отключение параметра UsePolicyBasedTrafficSelectors
-В следующем примере отключается параметр селекторов трафика на основе политики и не изменяется политика IPsec/IKE:
+   - Для отключения
 
-```azurepowershell-interactive
-$RG1          = "TestPolicyRG1"
-$Connection16 = "VNet1toSite6"
-$connection6  = Get-AzVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupName $RG1
+      В следующем примере отключается параметр селекторов трафика на основе политики и не изменяется политика IPsec/IKE:
 
-Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection6 -UsePolicyBasedTrafficSelectors $False
-```
+      ```azurepowershell-interactive
+      $RG1          = "TestPolicyRG1"
+      $Connection16 = "VNet1toSite6"
+      $connection6  = Get-AzVirtualNetworkGatewayConnection -Name $Connection16 -ResourceGroupName $RG1
 
-## <a name="next-steps"></a>Дальнейшие действия
+      Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection6 -UsePolicyBasedTrafficSelectors $False
+      ```
+
+## <a name="next-steps"></a>Дальнейшие шаги
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Дополнительные сведения о настраиваемых политиках IPsec/IKE см. в статье [Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](vpn-gateway-ipsecikepolicy-rm-powershell.md).

@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: 18a4fb9a979841bbf6cd0090fc67a77327c61596
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76849712"
 ---
 # <a name="release-notes-azure-event-grid-on-iot-edge"></a>Заметки о выпуске: сетка событий Azure на IoT Edge
@@ -23,9 +23,9 @@ ms.locfileid: "76849712"
 
 * Создание раздела
 * Создание подписки на события
-* Расширенные фильтры
+* расширенные фильтры
 * Пакетная обработка выходных данных
-* политики повтора;
+* Политики повтора
 * Модуль для публикации модулей
 * Опубликовать в веб-перехватчике в качестве назначения
 * Публикация в центре IoT Edge в качестве назначения
@@ -33,7 +33,7 @@ ms.locfileid: "76849712"
 * Сохраненное состояние для метаданных
 * Интеграция модуля хранилища BLOB-объектов
 
-Теги: `1.0.0-preview1`
+Тэги`1.0.0-preview1`
 
 ## <a name="100-preview2"></a>1.0.0 — preview2
 
@@ -47,4 +47,4 @@ ms.locfileid: "76849712"
 * Публикация в разделах служебной шины в качестве назначения
 * Публикация в очереди хранилища в качестве назначения
 
-Теги: `1.0.0-preview2`, `1.0`, `latest`
+Теги: `1.0.0-preview2`, `1.0`,`latest`

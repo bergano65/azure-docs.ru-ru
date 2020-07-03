@@ -3,20 +3,20 @@ title: Краткое руководство. Синтезирование ре�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве будет использоваться пакет SDK службы "Речь" для преобразования текста в синтезированную речь и воспроизведения результата через динамик.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 02/10/2020
-ms.author: dapine
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 95cf6ea645e4a9a769e95692e1116ec2f1ac8c61
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.author: trbye
+zone_pivot_groups: programming-languages-set-two-with-js-spx
+ms.openlocfilehash: 03d564242748fa52c176aaaa5341ede4449477fb
+ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119415"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83715256"
 ---
 # <a name="quickstart-synthesize-speech-to-a-speaker"></a>Краткое руководство. Синтезирование речи в виде речи докладчика
 
@@ -42,6 +42,19 @@ ms.locfileid: "77119415"
 [!INCLUDE [Header](../includes/quickstarts/tts/header.md)]
 [!INCLUDE [Header](../includes/quickstarts/tts/python/header.md)]
 [!INCLUDE [python](../includes/quickstarts/tts/python/python.md)]
+::: zone-end
+
+::: zone pivot="programming-language-javascript"
+[!INCLUDE [Header](../includes/quickstarts/tts/header.md)]
+[!INCLUDE [Header](../includes/quickstarts/tts/javascript/header.md)]
+[!INCLUDE [javascript](../includes/quickstarts/tts/javascript/javascript.md)]
+::: zone-end
+
+::: zone pivot="programmer-tool-spx"
+[!INCLUDE [Header](../includes/quickstarts/tts/spx/header.md)]
+[!INCLUDE [SPX Setup](../includes/spx-setup.md)]
+[!INCLUDE [spx](../includes/quickstarts/tts/spx/spx.md)]
+[!INCLUDE [next steps to spx basics](../includes/quickstarts/spx-next-steps.md)]
 ::: zone-end
 
 ::: zone pivot="programming-language-more"

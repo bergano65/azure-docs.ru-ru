@@ -1,36 +1,29 @@
 ---
-title: Включение Azure Monitor для виртуальных машин (классическая модель) с помощью PowerShell или шаблонов
+title: Включение Azure Monitor для виртуальных машин с помощью PowerShell или шаблонов
 description: В этой статье описывается, как включить Azure Monitor для виртуальных машин для одной или нескольких виртуальных машин Azure или масштабируемых наборов виртуальных машин с помощью шаблонов Azure PowerShell или Azure Resource Manager.
-ms.service: azure-monitor
 ms.subservice: ''
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2019
-ms.openlocfilehash: 4fc5afe3bbb4b2ccf2329432347b23fe9a69c5ea
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 77fe4b4ffbf7c189a5bf64e662f395fc78e53944
+ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75977677"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82581500"
 ---
-# <a name="enable-azure-monitor-for-vms-preview-using-azure-powershell-or-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин (Предварительная версия) с помощью шаблонов Azure PowerShell или диспетчер ресурсов
+# <a name="enable-azure-monitor-for-vms-using-azure-powershell-or-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин с помощью шаблонов Azure PowerShell или диспетчер ресурсов
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-В этой статье объясняется, как включить Azure Monitor для виртуальных машин (Предварительная версия) для виртуальных машин Azure или масштабируемых наборов виртуальных машин с помощью шаблонов Azure PowerShell или Azure Resource Manager. По завершении этого процесса вы сможете успешно приступили к наблюдению за всеми виртуальными машинами и узнать, испытывает ли они проблемы с производительностью или доступности.
+В этой статье объясняется, как включить Azure Monitor для виртуальных машин для виртуальных машин Azure или масштабируемых наборов виртуальных машин с помощью шаблонов Azure PowerShell или Azure Resource Manager. По завершении этого процесса вы сможете успешно приступили к наблюдению за всеми виртуальными машинами и узнать, испытывает ли они проблемы с производительностью или доступности.
 
 ## <a name="set-up-a-log-analytics-workspace"></a>Настройка рабочей области Log Analytics
 
 Если у вас нет рабочей области Log Analytics, ее необходимо создать. Ознакомьтесь с методами, предлагаемыми в разделе [Предварительные требования](vminsights-enable-overview.md#log-analytics) , прежде чем продолжить процедуру настройки. Затем можно завершить развертывание Azure Monitor для виртуальных машин с помощью метода Azure Resource Manager шаблона.
 
-### <a name="enable-performance-counters"></a>Включение счетчиков производительности
-
-Если указанная в решении рабочая область Log Analytics еще не настроена для сбора данных от необходимых решению счетчиков производительности, их необходимо включить отдельно. Это можно сделать одним из двух способов:
-* вручную, как описано в статье [Источники данных о производительности Windows и Linux в Log Analytics](../../azure-monitor/platform/data-sources-performance-counters.md);
-* Путем скачивания и запуска скрипта PowerShell, доступного из [коллекции Azure PowerShell](https://www.powershellgallery.com/packages/Enable-VMInsightsPerfCounters/1.1)
-
-### <a name="install-the-servicemap-solution"></a>Установка решения ServiceMap
+### <a name="install-the-vminsights-solution"></a>Установка решения Вминсигхтс
 
 В этом методе используется шаблон JSON, который задает конфигурацию для включения компонентов решения в рабочей области Log Analytics.
 
@@ -64,7 +57,7 @@ ms.locfileid: "75977677"
                     {
                         "apiVersion": "2015-11-01-preview",
                         "location": "[parameters('WorkspaceLocation')]",
-                        "name": "[concat('ServiceMap', '(', parameters('WorkspaceName'),')')]",
+                        "name": "[concat('VMInsights', '(', parameters('WorkspaceName'),')')]",
                         "type": "Microsoft.OperationsManagement/solutions",
                         "dependsOn": [
                             "[concat('Microsoft.OperationalInsights/workspaces/', parameters('WorkspaceName'))]"
@@ -74,9 +67,9 @@ ms.locfileid: "75977677"
                         },
 
                         "plan": {
-                            "name": "[concat('ServiceMap', '(', parameters('WorkspaceName'),')')]",
+                            "name": "[concat('VMInsights', '(', parameters('WorkspaceName'),')')]",
                             "publisher": "Microsoft",
-                            "product": "[Concat('OMSGallery/', 'ServiceMap')]",
+                            "product": "[Concat('OMSGallery/', 'VMInsights')]",
                             "promotionCode": ""
                         }
                     }
@@ -100,7 +93,7 @@ ms.locfileid: "75977677"
 
         Для завершения изменения конфигурации может потребоваться несколько минут. По завершении появится сообщение, похожее на следующее и содержащее результат:
 
-        ```powershell
+        ```output
         provisioningState       : Succeeded
         ```
 
@@ -114,7 +107,7 @@ ms.locfileid: "75977677"
 
         Для завершения изменения конфигурации может потребоваться несколько минут. По завершении отобразится сообщение, похожее на следующее и содержащее результат:
 
-        ```azurecli
+        ```output
         provisioningState       : Succeeded
         ```
 
@@ -155,7 +148,7 @@ New-AzResourceGroupDeployment -Name OnboardCluster -ResourceGroupName <ResourceG
 ```
 Для завершения изменения конфигурации может потребоваться несколько минут. По завершении появится сообщение, похожее на следующее и содержащее результат:
 
-```powershell
+```output
 provisioningState       : Succeeded
 ```
 
@@ -171,13 +164,13 @@ az group deployment create --resource-group <ResourceGroupName> --template-file 
 
 Результат выглядит следующим образом:
 
-```azurecli
+```output
 provisioningState       : Succeeded
 ```
 
 ## <a name="enable-with-powershell"></a>Включение с помощью PowerShell
 
-Чтобы включить Azure Monitor для виртуальных машин для нескольких виртуальных машин или масштабируемых наборов виртуальных машин, используйте сценарий PowerShell [Инсталл-вминсигхтс. ps1](https://www.powershellgallery.com/packages/Install-VMInsights/1.0). Он доступен из коллекции Azure PowerShell. Этот сценарий выполняет итерацию:
+Чтобы включить Azure Monitor для виртуальных машин для нескольких виртуальных машин или масштабируемых наборов виртуальных машин, используйте сценарий PowerShell [Инсталл-вминсигхтс. ps1](https://www.powershellgallery.com/packages/Install-VMInsights). Он доступен из коллекции Azure PowerShell. Этот сценарий выполняет итерацию:
 
 - Каждая виртуальная машина и масштабируемый набор виртуальных машин в вашей подписке.
 - Группа ресурсов с областью действия, заданная параметром *ResourceGroup*.
@@ -185,7 +178,7 @@ provisioningState       : Succeeded
 
 Для каждой виртуальной машины или масштабируемого набора виртуальных машин в сценарии проверяется, установлено ли расширение виртуальной машины. Если расширение виртуальной машины установлено, сценарий попытается переустановить его. Если расширение виртуальной машины не установлено, скрипт устанавливает Log Analytics и расширения виртуальной машины агента зависимостей.
 
-Убедитесь, что используется модуль Azure PowerShell AZ Version 1.0.0 или более поздней версии с включенными псевдонимами совместимости `Enable-AzureRM`. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
+Убедитесь, что используется модуль Azure PowerShell AZ Version 1.0.0 или более поздней версии с `Enable-AzureRM` включенными псевдонимами совместимости. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 Чтобы получить список сведений об аргументах сценария и пример использования, выполните команду `Get-Help`.
 

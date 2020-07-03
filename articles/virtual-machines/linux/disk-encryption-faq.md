@@ -2,21 +2,28 @@
 title: Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Linux
 description: В этой статье содержатся ответы на часто задаваемые вопросы о Microsoft Azure шифровании дисков для виртуальных машин IaaS под управлением Linux.
 author: msmbaldwin
-ms.service: security
+ms.service: virtual-machines-linux
+ms.subservice: security
 ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 77b092920bff75c806ec78a933d23df546bf636a
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 7c49467451963ceb52f114430343fafb955ec4f7
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74036349"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82786994"
 ---
-# <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
+# <a name="azure-disk-encryption-for-linux-virtual-machines-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Linux
 
 Эта статья содержит ответы на часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин Linux. Дополнительные сведения об этой службе см. в статье [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md).
+
+## <a name="what-is-azure-disk-encryption-for-linux-vms"></a>Что такое шифрование дисков Azure для виртуальных машин Linux?
+
+Шифрование дисков Azure для виртуальных машин Linux использует функцию DM-Encryption в Linux для обеспечения полного шифрования диска * и дисков данных операционной системы. Кроме того, он обеспечивает шифрование временного диска при использовании [функции енкриптформаталл](disk-encryption-linux.md#use-encryptformatall-feature-for-data-disks-on-linux-vms). Содержимое передается в зашифрованном виде из виртуальной машины в серверную часть хранилища. Таким образом, обеспечивается сквозное шифрование с помощью управляемого клиентом ключа.
+ 
+См. раздел [Поддерживаемые виртуальные машины и операционные системы](disk-encryption-overview.md#supported-vms-and-operating-systems).
 
 ## <a name="where-is-azure-disk-encryption-in-general-availability-ga"></a>В каких регионах предоставляется общедоступная версия шифрования дисков Azure?
 
@@ -36,7 +43,7 @@ ms.locfileid: "74036349"
 
 ## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Какие размеры виртуальных машин и операционные системы поддерживают шифрование дисков Azure?
 
-В статье [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md) перечислены [размеры виртуальных машин](disk-encryption-overview.md#supported-vm-sizes) и [операционные системы виртуальных машин](disk-encryption-overview.md#supported-operating-systems) , поддерживающие шифрование дисков Azure.
+В статье [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md) перечислены [размеры виртуальных машин](disk-encryption-overview.md#supported-vms) и [операционные системы виртуальных машин](disk-encryption-overview.md#supported-operating-systems) , поддерживающие шифрование дисков Azure.
 
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Можно ли с помощью шифрования дисков Azure зашифровать загрузочные тома и тома данных?
 
@@ -47,6 +54,20 @@ ms.locfileid: "74036349"
 ## <a name="can-i-encrypt-an-unmounted-volume-with-azure-disk-encryption"></a>Можно ли зашифровать неподключенный том с помощью шифрования дисков Azure?
 
 Нет, шифрование дисков Azure шифрует только подключенные тома.
+
+## <a name="what-is-storage-server-side-encryption"></a>Что такое шифрование на стороне сервера хранилища?
+
+Шифрование на стороне сервера хранилища шифрует управляемые диски Azure в службе хранилища Azure. Управляемые диски шифруются по умолчанию с помощью шифрования на стороне сервера с ключом, управляемым платформой (начиная с 10 июня 2017 г.). Вы можете управлять шифрованием управляемых дисков с помощью собственных ключей, указав ключ, управляемый клиентом. Дополнительные сведения см. в статье [Шифрование управляемых дисков Azure на стороне сервера](disk-encryption.md).
+ 
+## <a name="how-is-azure-disk-encryption-different-from-storage-server-side-encryption-with-customer-managed-key-and-when-should-i-use-each-solution"></a>Чем шифрование дисков Azure отличается от шифрования на стороне сервера хранилища с помощью ключа, управляемого клиентом, и когда следует использовать каждое решение?
+
+Шифрование дисков Azure обеспечивает сквозное шифрование диска операционной системы, дисков данных и временного диска с помощью управляемого клиентом ключа.
+- Если ваши требования включают шифрование всех указанных выше и сквозного шифрования, используйте шифрование дисков Azure. 
+- Если ваши требования включают шифрование только неактивных данных с помощью управляемого клиентом ключа, используйте [Шифрование на стороне сервера с ключами, управляемыми клиентом](disk-encryption.md). Вы не можете зашифровать диск с помощью шифрования дисков Azure и шифрования на стороне сервера хранилища с помощью управляемых клиентом ключей. 
+- Если дистрибутив Linux не указан в списке [Поддерживаемые операционные системы для шифрования дисков Azure](disk-encryption-overview.md#supported-operating-systems) или используется сценарий, вызываемый в [неподдерживаемых сценариях для Windows](disk-encryption-linux.md#unsupported-scenarios), рассмотрите возможность [шифрования на стороне сервера с помощью управляемых клиентом ключей](disk-encryption.md).
+- Если политика вашей организации позволяет шифровать содержимое неактивных данных с помощью управляемого Azure ключа, никаких действий не требуется — содержимое шифруется по умолчанию. Для управляемых дисков содержимое в хранилище шифруется по умолчанию с помощью шифрования на стороне сервера с ключом, управляемым платформой. Ключ управляется службой хранилища Azure. 
+
+
 
 ## <a name="how-do-i-rotate-secrets-or-encryption-keys"></a>Разделы справки поворачивать секреты или ключи шифрования?
 
@@ -92,7 +113,7 @@ ms.locfileid: "74036349"
 > [!NOTE]
 > Расширение "Microsoft. Остцекстенсион. AzureDiskEncryptionForLinux" для шифрования дисков Linux Azure не рекомендуется к использованию. Это расширение Опубликовано для предварительной версии шифрования дисков Azure. Не следует использовать предварительную версию расширения в тестовом или рабочем развертывании.
 
-> Для сценариев развертывания, таких как Azure Resource Manager (ARM), где у вас есть необходимость развернуть расширение шифрования дисков Azure для виртуальной машины Linux, чтобы включить шифрование на виртуальной машине IaaS под управлением Linux, необходимо использовать поддерживаемое в производстве расширение "шифрование дисков Azure". Microsoft. Azure. Security. AzureDiskEncryptionForLinux ".
+> Для сценариев развертывания, таких как Azure Resource Manager (ARM), где у вас есть необходимость развернуть расширение шифрования дисков Azure для виртуальной машины Linux, чтобы включить шифрование на виртуальной машине IaaS под управлением Linux, необходимо использовать поддерживаемое в производстве расширение "Microsoft. Azure. Security. AzureDiskEncryptionForLinux" для шифрования дисков Azure.
 
 ## <a name="can-i-apply-azure-disk-encryption-on-my-custom-linux-image"></a>Можно ли применять шифрование дисков Azure в пользовательском образе Linux?
 
@@ -100,7 +121,7 @@ ms.locfileid: "74036349"
 
 ## <a name="can-i-apply-updates-to-a-linux-red-hat-vm-that-uses-the-yum-update"></a>Можно ли применить обновления к виртуальной машине Linux Red Hat с использованием команды yum update?
 
-Да, можно выполнить обновление Yum на виртуальной машине Red Hat Linux.  Дополнительные сведения см. [в разделе Управление пакетами Linux за брандмауэром](disk-encryption-troubleshooting.md#linux-package-management-behind-a-firewall).
+Да, можно выполнить обновление Yum на виртуальной машине Red Hat Linux.  Дополнительные сведения см. [в статье шифрование дисков Azure в изолированной сети](disk-encryption-isolated-network.md).
 
 ## <a name="what-is-the-recommended-azure-disk-encryption-workflow-for-linux"></a>Какие действия по шифрованию дисков Azure рекомендуется использовать для Linux?
 
@@ -127,7 +148,9 @@ ms.locfileid: "74036349"
 Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](disk-encryption-linux.md#use-encryptformatall-feature-for-data-disks-on-linux-vms).        
 
 ## <a name="is-xfs-filesystem-supported"></a>Поддерживается ли файловая система XFS?
-Тома XFS поддерживаются для шифрования диска данных только с помощью Енкриптформаталл. Это приведет к переформатированию тома, а также к удалению всех данных, сохраненных ранее. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](disk-encryption-linux.md#use-encryptformatall-feature-for-data-disks-on-linux-vms).
+Поддерживается шифрование дисков ОС XFS.
+
+Шифрование дисков данных XFS поддерживается только при использовании параметра Енкриптформаталл. Это приведет к переформатированию тома, а также к удалению всех данных, сохраненных ранее. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](disk-encryption-linux.md#use-encryptformatall-feature-for-data-disks-on-linux-vms).
 
 ## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Можно ли выполнять резервное копирование и восстановление зашифрованной виртуальной машины? 
 
@@ -137,9 +160,9 @@ Azure Backup предоставляет механизм резервного к
 
 Задать вопрос или оставить отзыв можно на [форуме по шифрованию дисков Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDiskEncryption).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
-- [Шифрование дисков Azure для виртуальных машин IaaS](disk-encryption-overview.md)
+- [Общие сведения о шифровании дисков Azure](disk-encryption-overview.md)
 - [Шифрование диска в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-apply-disk-encryption)
 - [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)

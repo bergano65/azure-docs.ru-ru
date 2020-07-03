@@ -4,15 +4,15 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 8b9596738d9b02fa26f9c363287323b905654a1f
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 5ca8d0c4a6d244823dda6f0f79a3cf5c743a12a9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349223"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78296428"
 ---
 # <a name="stringtonumber-azure-cosmos-db"></a>Стрингтонумбер (Azure Cosmos DB)
  Возвращает выражение, преобразованное в число. Если выражение не может быть преобразовано, возвращает значение undefine.  
@@ -28,13 +28,13 @@ StringToNumber(<str_expr>)
 *str_expr*  
    Строковое выражение, анализируемое как выражение числа JSON. Числа в JSON должны быть целым числом или плавающей запятой. Дополнительные сведения о формате JSON см. в разделе [JSON.org](https://json.org/)  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое или неопределенное выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как `StringToNumber` ведет себя по разным типам. 
+  В следующем примере показано, `StringToNumber` как ведет себя в разных типах. 
 
 Пробелы допускаются только до или после числа.
 
@@ -83,8 +83,12 @@ SELECT
 {{}}
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

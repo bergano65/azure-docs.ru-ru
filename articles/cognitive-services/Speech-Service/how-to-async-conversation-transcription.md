@@ -10,22 +10,22 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: amishu
-ms.openlocfilehash: d20cdb2f37c3da357ca112045a0d2845bbb6df98
-ms.sourcegitcommit: 2a2af81e79a47510e7dea2efb9a8efb616da41f0
+ms.openlocfilehash: 57543f4a3779145ce66259eec1abac195b63c7ba
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76260027"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "80384302"
 ---
 # <a name="asynchronous-conversation-transcription-preview"></a>Асинхронная транскрипция диалога (Предварительная версия)
 
-В этой статье функция записи асинхронного диалога демонстрируется с помощью API **ремотеконверсатионтранскриптионклиент** . Если вы настроили запись разговора для асинхронного транскрипции и имеете `conversationId`, можно получить описание, связанное с этим `conversationId` помощью API **ремотеконверсатионтранскриптионклиент** .
+В этой статье функция записи асинхронного диалога демонстрируется с помощью API **ремотеконверсатионтранскриптионклиент** . Если вы настроили запись `conversationId`разговора для асинхронного транскрипции и имеете возможность, вы можете получить сопоставленную с ним транскрипцию `conversationId` с помощью API **ремотеконверсатионтранскриптионклиент** .
 
 ## <a name="asynchronous-vs-real-time--asynchronous"></a>Асинхронное и в режиме реального времени + асинхронное
 
-С помощью асинхронной записи сообщений потоковая передача передается в режиме реального времени, но не требуется. Вместо этого после отправки звука используйте `conversationId` `Conversation`, чтобы запросить состояние асинхронной транскрипции. Когда асинхронная транскрипция готова, вы получите `RemoteConversationTranscriptionResult`.
+С помощью асинхронной записи сообщений потоковая передача передается в режиме реального времени, но не требуется. Вместо этого после отправки звука используйте предложение `conversationId` из `Conversation` для запроса состояния асинхронной транскрипции. Когда асинхронная транскрипция готова, вы получите `RemoteConversationTranscriptionResult`.
 
-В режиме реального времени и асинхронных событий вы получаете запись в режиме реального времени, но также можете получить транскрипцию, выполнив запрос к `conversationId` (аналогично асинхронному сценарию).
+В режиме реального времени и асинхронных событий вы получаете запись в режиме реального времени, но также можете получить транскрипцию с помощью запроса `conversationId` (аналогично асинхронному сценарию).
 
 Для выполнения асинхронной записи требуются два действия. Первым шагом является Отправка звукового сигнала, выбор асинхронного режима только для асинхронного выполнения или в режиме реального времени. Второй шаг — получение результатов транскрипции.
 
@@ -42,7 +42,7 @@ SpeechConfig speechConfig = SpeechConfig.fromSubscription("YourSubscriptionKey",
 speechConfig.setProperty("ConversationTranscriptionInRoomAndOnline", "true");
 
 // Set the property for asynchronous transcription
-speechConfig.setServiceProperty("transcriptionMode", "Async", ServicePropertyChannel.UriQueryParameter);
+speechConfig.setServiceProperty("transcriptionMode", "async", ServicePropertyChannel.UriQueryParameter);
 
 // Set the property for real-time plus asynchronous transcription
 //speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", ServicePropertyChannel.UriQueryParameter);
@@ -56,8 +56,8 @@ Conversation conversation = conversationFuture.get();
 
 // Create an audio stream from a wav file or from the default microphone if you want to stream live audio from the supported devices
 // Replace with your own audio file name and Helper class which implements AudioConfig using PullAudioInputStreamCallback
-PullAudioInputStreamCallback wavfilePullStreamCallback = Helper.OpenWavFile("16Khz16Bits8channelsOfRecordedPCMAudio.wav");
-// Create an audio stream format assuming the file used above is 16Khz, 16 bits and 8 channel pcm wav file
+PullAudioInputStreamCallback wavfilePullStreamCallback = Helper.OpenWavFile("16kHz16Bits8channelsOfRecordedPCMAudio.wav");
+// Create an audio stream format assuming the file used above is 16kHz, 16 bits and 8 channel pcm wav file
 AudioStreamFormat audioStreamFormat = AudioStreamFormat.getWaveFormatPCM((long)16000, (short)16,(short)8);
 // Create an input stream
 AudioInputStream audioStream = AudioInputStream.createPullStream(wavfilePullStreamCallback, audioStreamFormat);
@@ -105,7 +105,7 @@ Future<?> future = transcriber.startTranscribingAsync();
 
 ```java
 // Set the property for asynchronous transcription
-//speechConfig.setServiceProperty("transcriptionMode", "Async", ServicePropertyChannel.UriQueryParameter);
+//speechConfig.setServiceProperty("transcriptionMode", "async", ServicePropertyChannel.UriQueryParameter);
 
 // Set the property for real-time plus asynchronous transcription
 speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", ServicePropertyChannel.UriQueryParameter);
@@ -121,7 +121,7 @@ speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", Service
 
 **Удаленный сеанс** можно получить, отредактировав файл POM. XML следующим образом.
 
-1. В конце файла перед закрывающим тегом `</project>`создайте элемент `repositories` со ссылкой на репозиторий Maven для пакета SDK для распознавания речи:
+1. В конце файла перед закрывающим тегом `</project>`создайте `repositories` элемент со ссылкой на РЕПОЗИТОРИЙ Maven для пакета SDK для распознавания речи:
 
    ```xml
    <repositories>
@@ -133,7 +133,7 @@ speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", Service
    </repositories>
    ```
 
-2. Также добавьте элемент `dependencies` с ремотеконверсатион-Client-SDK 1.8.0 в качестве зависимости:
+2. Также добавьте `dependencies` элемент с ремотеконверсатион-Client-SDK 1.8.0 в качестве зависимости:
 
    ```xml
    <dependencies>
@@ -145,11 +145,11 @@ speechConfig.setServiceProperty("transcriptionMode", "RealTimeAndAsync", Service
    </dependencies>
    ```
 
-3. Сохранить изменения
+3. Сохраните изменения
 
 ### <a name="sample-transcription-code"></a>Пример кода транскрипции
 
-После создания `conversationId`Создайте клиентский **ремотеконверсатионтранскриптионклиент** для записи удаленного диалога в клиентском приложении, чтобы запросить состояние асинхронной транскрипции. Чтобы получить объект [поллерфлукс](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/core/azure-core/src/main/java/com/azure/core/util/polling/PollerFlux.java) , используйте метод **жеттранскриптионоператион** в **ремотеконверсатионтранскриптионклиент** . Объект Поллерфлукс будет содержать сведения о состоянии удаленной операции **ремотеконверсатионтранскриптионоператион** и конечный результат **ремотеконверсатионтранскриптионресулт**. После завершения операции получите **ремотеконверсатионтранскриптионресулт** , вызвав **жетфиналресулт** в [синкполлер](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/core/azure-core/src/main/java/com/azure/core/util/polling/SyncPoller.java). В этом коде мы просто печатаем содержимое результатов в системный вывод.
+`conversationId`После создания Создайте клиентский **ремотеконверсатионтранскриптионклиент** для записи удаленного диалога в клиентском приложении, чтобы запросить состояние асинхронной транскрипции. Чтобы получить объект [поллерфлукс](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/core/azure-core/src/main/java/com/azure/core/util/polling/PollerFlux.java) , используйте метод **жеттранскриптионоператион** в **ремотеконверсатионтранскриптионклиент** . Объект Поллерфлукс будет содержать сведения о состоянии удаленной операции **ремотеконверсатионтранскриптионоператион** и конечный результат **ремотеконверсатионтранскриптионресулт**. После завершения операции получите **ремотеконверсатионтранскриптионресулт** , вызвав **жетфиналресулт** в [синкполлер](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/core/azure-core/src/main/java/com/azure/core/util/polling/SyncPoller.java). В этом коде мы просто печатаем содержимое результатов в системный вывод.
 
 ```java
 // Create the speech config object
@@ -199,7 +199,7 @@ if(resultResponse != null) {
 System.out.println("Operation finished");
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)

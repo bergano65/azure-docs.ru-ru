@@ -4,15 +4,15 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: c7ea3ca82cadb1351d8581f3d652ce060d67969b
-ms.sourcegitcommit: 7f6d986a60eff2c170172bd8bcb834302bb41f71
+ms.openlocfilehash: 7e17547f88465103b61eabec04978ea806ffa2c9
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71349249"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78296445"
 ---
 # <a name="stringtonull-azure-cosmos-db"></a>Стрингтонулл (Azure Cosmos DB)
  Возвращает выражение, преобразованное в значение null. Если выражение не может быть преобразовано, возвращает значение undefine.  
@@ -28,13 +28,13 @@ StringToNull(<str_expr>)
 *str_expr*  
    Строковое выражение, анализируемое как выражение null.
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает пустое или неопределенное выражение.  
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как `StringToNull` ведет себя по разным типам. 
+  В следующем примере показано, `StringToNull` как ведет себя в разных типах. 
 
 Ниже приведены примеры с допустимыми входными данными.
 
@@ -85,8 +85,12 @@ SELECT
 [{}]
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

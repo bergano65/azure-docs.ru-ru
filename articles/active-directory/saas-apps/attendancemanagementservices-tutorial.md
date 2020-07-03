@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Attendance Management Services | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Attendance Management Services | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Attendance Management Services.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7143d0afce7a3644286703a9eba0da1ee45305f2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67106555"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-attendance-management-services"></a>Руководство. Интеграция Azure Active Directory с Attendance Management Services
+# <a name="tutorial-azure-active-directory-integration-with-attendance-management-services"></a>Руководство по интеграции Azure Active Directory с Attendance Management Services
 
 В этом руководстве описано, как интегрировать Attendance Management Services с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Attendance Management Services обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "67106555"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Attendance Management Services, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Attendance Management Services с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "67106555"
 
     ![Сведения о домене и URL-адресах единого входа для Attendance Management Services](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://id.obc.jp/<tenant information >/`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://id.obc.jp/<tenant information >/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://id.obc.jp/<tenant information >/`.
 
@@ -121,7 +121,7 @@ ms.locfileid: "67106555"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -139,7 +139,7 @@ ms.locfileid: "67106555"
 
     ![Конфигурация Attendance Management Services](./media/attendancemanagementservices-tutorial/user2.png)
 
-    a. Установите флажок **Use SAML authentication** (Использовать аутентификацию SAML).
+    а. Установите флажок **Use SAML authentication** (Использовать аутентификацию SAML).
 
     b. В текстовое поле **Identifier** (Идентификатор) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
@@ -147,9 +147,9 @@ ms.locfileid: "67106555"
 
     d. Щелкните **Select a file** (Выбрать файл), чтобы передать сертификат, скачанный из Azure AD.
 
-    д. Установите флажок **Disable password authentication** (Отключить проверку пароля).
+    д) Установите флажок **Disable password authentication** (Отключить проверку пароля).
 
-    Е. Щелкните **Registration** (Регистрация).
+    е) Щелкните **Registration** (Регистрация).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -221,7 +221,7 @@ ms.locfileid: "67106555"
 
     ![Добавление сотрудника](./media/attendancemanagementservices-tutorial/user4.png)
 
-    a. В текстовое поле **OBCiD** введите электронную почту пользователя, например `BrittaSimon\@contoso.com`.
+    а. В текстовое поле **OBCiD** введите электронную почту пользователя, например `BrittaSimon\@contoso.com`.
 
     b. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
@@ -239,4 +239,4 @@ ms.locfileid: "67106555"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -15,19 +14,19 @@ ms.workload: infrastructure
 ms.date: 06/11/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 4046aac5e8362bf315eca11d9cd96a6e862e2c55
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 9b70474a985cde1cd6d7d98e84f7f228fde7a812
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034607"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460109"
 ---
 # <a name="tutorial-use-azure-security-center-to-monitor-linux-virtual-machines"></a>Руководство по Использование Центра безопасности Azure для мониторинга виртуальных машин Linux
 
 Центр безопасности Azure поможет получить рекомендации по безопасности ресурсов Azure. Центр безопасности предлагает встроенный мониторинг безопасности. Это позволяет распознавать угрозы, которые в противном случае могли быть не замечены. В этом руководстве вы узнаете о центре безопасности Azure и научитесь:
  
 > [!div class="checklist"]
-> * Настраивать сбор данных.
+> * Настройка сбора данных
 > * Устанавливать политики безопасности.
 > * Просматривать и устранять неполадки конфигурации.
 > * Просматривать обнаруженные угрозы.
@@ -122,8 +121,8 @@ ms.locfileid: "74034607"
 
 ![Атака по протоколу RDP](./media/tutorial-azure-security/rdp-attack.png)
 
-## <a name="next-steps"></a>Дополнительная информация
-В этом руководстве вы настроили центр безопасности Azure, а затем проверили в нем виртуальные машины. Вы научились выполнять следующие задачи:
+## <a name="next-steps"></a>Дальнейшие действия
+В этом руководстве вы настроили центр безопасности Azure, а затем проверили в нем виртуальные машины. Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
 > * Настройка сбора данных
@@ -134,5 +133,5 @@ ms.locfileid: "74034607"
 Перейдите к следующему руководству, чтобы узнать больше о создании конвейера CI/CD с помощью Jenkins, GitHub и Docker.
 
 > [!div class="nextstepaction"]
-> [Создание конвейера для непрерывной интеграции и доставки с использованием Jenkins, GitHub и Docker](tutorial-jenkins-github-docker-cicd.md)
+> [Создание конвейера для непрерывной интеграции и доставки с использованием Jenkins, GitHub и Docker](../../jenkins/tutorial-jenkins-github-docker-cicd.md)
 

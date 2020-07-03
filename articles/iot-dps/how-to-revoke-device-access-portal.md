@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.openlocfilehash: af883da67f4e1bc819514e88ff480526e16124db
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74974927"
 ---
 # <a name="how-to-disenroll-a-device-from-azure-iot-hub-device-provisioning-service"></a>Практическое руководство по отзыву регистрации устройства из службы подготовки устройств к добавлению в Центр Интернета вещей Azure
@@ -104,7 +104,7 @@ ms.locfileid: "74974927"
 
 6. Прокрутите страницу **Добавить регистрацию** до конца и выберите **Отключить** в переключателе **Включить запись**, а затем **Сохранить**. 
 
-    [![Использование отключенной записи индивидуальной регистрации для исключения устройства из группы регистрации на портале](./media/how-to-revoke-device-access-portal/disable-individual-enrollment-in-enrollment-group.png)](./media/how-to-revoke-device-access-portal/disable-individual-enrollment-in-enrollment-group.png#lightbox)
+    [![Использовать отключенную запись отдельной регистрации для отключения устройства от групповой регистрации на портале](./media/how-to-revoke-device-access-portal/disable-individual-enrollment-in-enrollment-group.png)](./media/how-to-revoke-device-access-portal/disable-individual-enrollment-in-enrollment-group.png#lightbox)
 
 После успешного создания регистрации отключенная регистрация устройства появится на вкладке **Индивидуальные регистрации**. 
 

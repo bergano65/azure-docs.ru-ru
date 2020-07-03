@@ -6,19 +6,20 @@ ms.author: sngun
 tags: azure-resource-manager
 ms.service: cosmos-db
 ms.topic: quickstart
-ms.date: 01/21/2020
-ms.openlocfilehash: 12c2b0b089702b9e56ae099abbefd85769bc1d21
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.date: 02/27/2020
+ms.custom: subject-armqs
+ms.openlocfilehash: f524a1e1db426b9b9dafb2fb95d77538a34b04ec
+ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549547"
+ms.lasthandoff: 04/17/2020
+ms.locfileid: "81605464"
 ---
 # <a name="quickstart-create-an-azure-cosmos-db-and-a-container-by-using-azure-resource-manager-template"></a>Краткое руководство. Создание Azure Cosmos DB и контейнера с помощью шаблона Azure Resource Manager
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. С помощью Azure Cosmos DB вы можете быстро создавать базы данных с парами "ключ — значение", документами, графами и обращаться к ним. В этом кратком руководстве рассматривается развертывание шаблона Resource Manager для создания базы данных Azure Cosmos DB и контейнера в ней. Впоследствии в этом контейнере можно будет хранить данные.
 
-[Шаблон Resource Manager](../azure-resource-manager/templates/overview.md) является файлом нотации объектов JavaScript (JSON), определяющими инфраструктуру и конфигурацию вашего проекта. Шаблон использует декларативный синтаксис, который позволяет указать объект, который вы собираетесь развернуть. При этом, для развертывания объекта, не нужно писать последовательность команд. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.DocumentDB/allversions).
+[!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -26,15 +27,17 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Подписка Azure или бесплатная пробная учетная запись Azure Cosmos DB.
 
-- [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] 
+- [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-- [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]  
+- [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
 ## <a name="create-an-azure-cosmos-account-database-container"></a>Создание учетной записи, базы данных и контейнера Azure Cosmos DB
 
+### <a name="review-the-template"></a>Изучение шаблона
+
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-create/).
 
-[!code-json[<Resource Manager template create Azure Cosmos DB>](~/quickstart-templates/101-cosmosdb-create/azuredeploy.json)]
+:::code language="json" source="~/quickstart-templates/101-cosmosdb-create/azuredeploy.json":::
 
 В шаблоне определены три ресурса Azure:
 
@@ -46,9 +49,11 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Другие примеры шаблонов Azure Cosmos DB можно найти в [коллекции шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Documentdb).
 
+### <a name="deploy-the-template"></a>Развертывание шаблона
+
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создаст учетную запись, базу данных и контейнер Azure Cosmos DB.
 
-   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-create%2Fazuredeploy.json"><img src="./media/quick-create-template/deploy-to-azure.png" alt="deploy to azure"/></a>
+   [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-cosmosdb-create%2Fazuredeploy.json)
 
 2. Введите или выберите следующие значения.
 
@@ -59,13 +64,13 @@ Azure Cosmos DB — это глобально распределенная мн
     * **Подписка**. Выберите нужную подписку Azure.
     * **Группа ресурсов**. Щелкните **Создать**, введите уникальное имя новой группы ресурсов и нажмите кнопку **ОК**.
     * **Расположение**. Выберите расположение.  Например, **центральная часть США**.
-    * **Имя учетной записи**. Имя учетной записи Azure Cosmos DB. Оно должно быть глобально уникальным. 
-    * **Расположение**. Введите расположение, в котором вы хотите создать учетную запись Azure Cosmos DB. Это может быть то же расположение, в котором размещена группа ресурсов. 
+    * **Имя учетной записи**. Имя учетной записи Azure Cosmos DB. Оно должно быть глобально уникальным.
+    * **Расположение**. Введите расположение, в котором вы хотите создать учетную запись Azure Cosmos DB. Это может быть то же расположение, в котором размещена группа ресурсов.
     * **Основной регион**. Регион первичной реплики для учетной записи Azure Cosmos DB.
     * **Дополнительный регион**. Регион вторичной реплики для учетной записи Azure Cosmos DB.
     * **Имя базы данных**: имя базы данных Azure Cosmos DB.
     * **Имя контейнера**: имя контейнера Azure Cosmos DB.
-    * **Пропускная способность**.  Пропускная способность контейнера, минимальное значение — 400 единиц запросов в секунду. 
+    * **Пропускная способность**.  Пропускная способность контейнера, минимальное значение — 400 единиц запросов в секунду.
     * **I agree to the terms and conditions state above** (Я принимаю указанные выше условия). Установите этот флажок.
 
 3. Щелкните **Приобрести**. После успешного развертывания учетной записи Azure Cosmos DB вы получите такое уведомление:
@@ -78,7 +83,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Вы можете проверить учетную запись, базу данных и контейнер Azure Cosmos DB на портале Azure или просмотреть созданный секрет, используя следующий скрипт Azure CLI или Azure PowerShell.
 
-# <a name="clitabcli"></a>[CLI](#tab/CLI)
+# <a name="cli"></a>[CLI](#tab/CLI)
 
 ```azurecli-interactive
 echo "Enter your Azure Cosmos account name:" &&
@@ -88,11 +93,11 @@ read resourcegroupName &&
 az cosmosdb show -g $resourcegroupName -n $cosmosAccountName
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the resource group name where your Azure Cosmos account exists"
-(Get-AzResource -ResourceType "Microsoft.DocumentDB/databaseAccounts" -ResourceGroupName $resourceGroupName).Name 
+(Get-AzResource -ResourceType "Microsoft.DocumentDB/databaseAccounts" -ResourceGroupName $resourceGroupName).Name
  Write-Host "Press [ENTER] to continue..."
 ```
 
@@ -103,7 +108,7 @@ $resourceGroupName = Read-Host -Prompt "Enter the resource group name where your
 Если вы планируете продолжить работу с последующими учебниками, эти ресурсы можно не удалять.
 Удалите группу ресурсов, если она больше не нужна. Учетная запись Azure Cosmos DB и связанные ресурсы будут также удалены. Чтобы удалить группу ресурсов с помощью Azure CLI или Azure PowerShell, выполните следующие действия.
 
-# <a name="clitabcli"></a>[CLI](#tab/CLI)
+# <a name="cli"></a>[CLI](#tab/CLI)
 
 ```azurecli-interactive
 echo "Enter the Resource Group name:" &&
@@ -112,7 +117,7 @@ az group delete --name $resourceGroupName &&
 echo "Press [ENTER] to continue ..."
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"

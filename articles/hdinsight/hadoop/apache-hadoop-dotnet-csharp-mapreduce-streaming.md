@@ -6,24 +6,24 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive
-ms.date: 11/22/2019
-ms.openlocfilehash: 025b5c5c1e3b8543111e112202906ef6f1fdb482
-ms.sourcegitcommit: c31dbf646682c0f9d731f8df8cfd43d36a041f85
+ms.custom: hdinsightactive,seoapr2020
+ms.date: 04/28/2020
+ms.openlocfilehash: 28817489af535ee45a6cc06cc5fe9d4fde9da8eb
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74561801"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996838"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
 Узнайте, как использовать C# для создания решения MapReduce в HDInsight.
 
-Потоковая передача Apache Hadoop выполняется служебной программой, которая позволяет запускать задания MapReduce с помощью скрипта или исполняемого файла. В этом примере .NET используется для реализации модулей сопоставления и редукции для решения для подсчета слов.
+Apache Hadoop потоковая передача позволяет выполнять задания MapReduce с помощью скрипта или исполняемого файла. Здесь .NET используется для реализации модуля сопоставления и сокращения для решения по подсчету слов.
 
 ## <a name="net-on-hdinsight"></a>.NET в HDInsight
 
-Кластеры HDInsight используют [Mono (https://mono-project.com)](https://mono-project.com) для запуска приложений .NET. Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, включенной в HDInsight, см. в разделе [Apache Hadoop компоненты, доступные в разных версиях hdinsight](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions).
+Кластеры HDInsight используют [Monohttps://mono-project.com) (](https://mono-project.com) для запуска приложений .NET). Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, включенной в HDInsight, см. в разделе [Apache Hadoop компоненты, доступные в разных версиях hdinsight](../hdinsight-component-versioning.md#apache-components-available-with-different-hdinsight-versions).
 
 Дополнительные сведения о совместимости Mono с различными версиями платформы .NET Framework см. в разделе [Compatibility](https://www.mono-project.com/docs/about-mono/compatibility/) (Совместимость).
 
@@ -39,7 +39,7 @@ ms.locfileid: "74561801"
 
 Дополнительные сведения см. в разделе [Потоковая передача Hadoop](https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * приведенному.
 
@@ -49,12 +49,9 @@ ms.locfileid: "74561801"
 
 * При использовании PowerShell вам потребуется [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
 
-* SSH-клиент (необязательно). Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
-
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-* [Схема универсального кода ресурса (URI)](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Для службы хранилища Azure это будет `wasb://`, для Azure Data Lake Storage 2-го поколения — `abfs://` или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure или Azure Data Lake Storage 2-го поколения включена безопасная передача, URI будет `wasbs://` или `abfss://` соответственно (см. также сведения о [безопасной передаче](../../storage/common/storage-require-secure-transfer.md)).
-
+* Схема универсального кода ресурса (URI) для основного хранилища кластеров. Эта схема будет использоваться `wasb://` для службы хранилища Azure `abfs://` , Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure или Data Lake Storage 2-го поколения включено безопасное перемещение, URI будет иметь `wasbs://` значение или `abfss://`соответственно.
 
 ## <a name="create-the-mapper"></a>Создание модуля сопоставления
 
@@ -150,17 +147,17 @@ namespace reducer
 
 Далее необходимо передать приложения модуля *сопоставления* и программы *сокращения* в хранилище HDInsight.
 
-1. В Visual Studio выберите **View** > **Обозреватель сервера**.
+1. В Visual Studio выберите **Просмотреть** > **Обозреватель сервера**.
 
-1. Щелкните правой кнопкой мыши **Azure**, выберите **подключиться к Microsoft Azure подписке...** и завершите вход.
+1. Щелкните правой кнопкой мыши **Azure**, выберите **подключиться к Microsoft Azure подписке...** и завершите процесс входа.
 
-1. Разверните кластер HDInsight, в который нужно развернуть это приложение. Отобразится запись с текстом **(Учетная запись хранения по умолчанию)** .
+1. Разверните кластер HDInsight, в который нужно развернуть это приложение. Отобразится запись с текстом **(Учетная запись хранения по умолчанию)**.
 
    ![Учетная запись хранения, кластер HDInsight, обозреватель сервера, Visual Studio](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/hdinsight-storage-account.png)
 
-   * Если вы можете расширить запись **(учетную запись хранения по умолчанию)** , вы используете **учетную запись хранения Azure** в качестве хранилища по умолчанию для кластера. Чтобы просмотреть файлы в хранилище по умолчанию для кластера, разверните запись и дважды щелкните элемент **(контейнер по умолчанию)** .
+   * Если вы можете расширить запись **(учетную запись хранения по умолчанию)** , вы используете **учетную запись хранения Azure** в качестве хранилища по умолчанию для кластера. Чтобы просмотреть файлы в хранилище по умолчанию для кластера, разверните запись и дважды щелкните элемент **(контейнер по умолчанию)**.
 
-   * Если запись **(учетная запись хранения по умолчанию)** не может быть расширена, вы используете **Azure Data Lake Storage** в качестве хранилища по умолчанию для кластера. Чтобы просмотреть файлы в хранилище по умолчанию кластера, дважды щелкните запись **(Контейнер по умолчанию)** .
+   * Если запись **(учетная запись хранения по умолчанию)** не может быть расширена, вы используете **Azure Data Lake Storage** в качестве хранилища по умолчанию для кластера. Чтобы просмотреть файлы в хранилище по умолчанию кластера, дважды щелкните запись **(Контейнер по умолчанию)**.
 
 1. Чтобы передать EXE-файлы, используйте один из следующих методов.
 
@@ -221,14 +218,16 @@ namespace reducer
 
    В следующем списке описывается, что представляет каждый параметр и параметр.
 
-   * *хадуп-стреаминг. jar*— указывает JAR-файл, содержащий функциональность потоковой передачи MapReduce.
-   * `-files`: указывает файлы модуля *сопоставления. exe* и средства *сокращения. exe* для этого задания. `wasbs:///`, `adl:///`или `abfs:///` объявления протокола перед каждым файлом — это путь к корню хранилища по умолчанию для кластера.
-   * `-mapper`: указывает файл, который реализует модуль сопоставления.
-   * `-reducer`: указывает файл, который реализует класс reduce.
-   * `-input`: задает входные данные.
-   * `-output`: Указывает выходной каталог.
+   |Параметр | Описание |
+   |---|---|
+   |hadoop-streaming.jar|Указывает JAR-файл, содержащий функцию потоковой передачи MapReduce.|
+   |— файлы|Указывает файлы *сопоставителя. exe* и *reduce. exe* для этого задания. Объявление `wasbs:///`протокола `adl:///`, или `abfs:///` перед каждым файлом представляет собой путь к корню хранилища по умолчанию для кластера.|
+   |-сопоставитель|Указывает файл, который реализует модуль сопоставления.|
+   |-reduce|Указывает файл, который реализует класс reduce.|
+   |— входные данные|Задает входные данные.|
+   |-Output|Указывает выходной каталог.|
 
-3. После завершения задания MapReduce используйте следующую команду, чтобы просмотреть результаты.
+1. После завершения задания MapReduce используйте следующую команду, чтобы просмотреть результаты.
 
    ```bash
    hdfs dfs -text /example/wordcountout/part-00000
@@ -270,8 +269,6 @@ youth   17
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об использовании MapReduce с HDInsight см. [в статье Использование MapReduce в Apache Hadoop в hdinsight](hdinsight-use-mapreduce.md).
-
-Сведения об использовании языка C# с Hive и Pig см. в статье [Использование определяемых пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop в HDInsight](apache-hadoop-hive-pig-udf-dotnet-csharp.md).
-
-Сведения об использовании языка C# со Storm в HDInsight см. в разделе [Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio](../storm/apache-storm-develop-csharp-visual-studio-topology.md).
+* [Используйте MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md).
+* [Используйте определяемую пользователем функцию C# с Apache Hive и Apache Pig](apache-hadoop-hive-pig-udf-dotnet-csharp.md).
+* [Разработка программ Java MapReduce](apache-hadoop-develop-deploy-java-mapreduce-linux.md)

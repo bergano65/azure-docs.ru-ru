@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 10/24/2019
-  ms.openlocfilehash: 8d49e2c455bdd27917bb33cbf428b3a6b52facd3
-  ms.sourcegitcommit: 2d3740e2670ff193f3e031c1e22dcd9e072d3ad9
+  ms.openlocfilehash: 92648f5b1720cd8274817d289dae1f4631e8b7e7
+  ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/16/2019
-  ms.locfileid: "74132728"
+  ms.lasthandoff: 04/28/2020
+  ms.locfileid: "82195958"
 landingContent:
 - title: Сведения о Content Moderator
   linkLists:
@@ -37,11 +37,11 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: С помощью пакета SDK для .NET
-      url: dotnet-sdk-quickstart.md
+      url: client-libraries.md?pivots=programming-language-csharp
     - text: С помощью пакета SDK для Python
-      url: python-sdk-quickstart.md
+      url: client-libraries.md?pivots=programming-language-python
     - text: Использование пакета SDK для Java
-      url: java-sdk-quickstart.md
+      url: client-libraries.md?pivots=programming-language-java
   - linkListType: how-to-guide
     links:
     - text: Использование консоли API
@@ -124,7 +124,7 @@ landingContent:
       url: Review-Tool-User-Guide/workflows.md
     - text: Определение и использование заданий (консоль API)
       url: try-review-api-job.md
-- title: Справочные материалы
+- title: Справочник
   linkLists:
   - linkListType: reference
     links:

@@ -1,25 +1,19 @@
 ---
-title: Создание образов виртуальных машин Windows с помощью пакета Pack в Azure
+title: Создание образов виртуальных машин Windows с помощью пакета Pack
 description: Сведения об использовании Packer для создания образов виртуальных машин Windows в Azure
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
+ms.subservice: imaging
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 02/22/2019
 ms.author: cynthn
-ms.openlocfilehash: b2ff9869b0de7a0285644bea462101cd1dc80b99
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: f813551ed665628898bb219a611947c3026ac67c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039221"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82084487"
 ---
 # <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
@@ -41,7 +35,7 @@ New-AzResourceGroup -Name $rgName -Location $location
 ```
 
 ## <a name="create-azure-credentials"></a>Создание учетных данных Azure
-Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете управлять разрешениями на то, какие операции может выполнять субъект-служба в Azure, и определять их.
+Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете определять разрешения на то, какие операции может выполнять субъект-служба в Azure, и управлять ими.
 
 Создайте субъект-службу с помощью командлета [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment). Значение для `-DisplayName` должно быть уникальным; Замените на собственное значение по мере необходимости.  
 
@@ -75,7 +69,7 @@ Get-AzSubscription
 | Параметр                           | Где можно получить |
 |-------------------------------------|----------------------------------------------------|
 | *client_id*                         | Просмотрите идентификатор субъекта-службы с помощью `$sp.applicationId` |
-| *client_secret*                     | Просмотр автоматически созданного пароля с `$plainPassword` |
+| *client_secret*                     | Просмотреть автоматически созданный пароль с помощью`$plainPassword` |
 | *tenant_id*                         | Выходные данные команды `$sub.TenantId` |
 | *subscription_id*                   | Выходные данные команды `$sub.SubscriptionId` |
 | *managed_image_resource_group_name* | Имя группы ресурсов, созданной на первом шаге |
@@ -214,7 +208,7 @@ ManagedImageLocation: eastus
 
 
 ## <a name="create-a-vm-from-the-packer-image"></a>Создание виртуальной машины на основе образа Packer
-Теперь вы можете создать виртуальную машину из образа с помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). Если они еще не существуют, создаются поддерживающие сетевые ресурсы. При появлении запроса введите имя пользователя с правами администратора и пароль. Этот пользователь будет создан на виртуальной машине. В следующем примере создается виртуальная машина *myVM* из образа *myPackerImage*.
+Теперь вы можете создать виртуальную машину из образа с помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). Если они еще не существуют, создаются поддерживающие сетевые ресурсы. При появлении запроса введите имя пользователя с правами администратора и пароль. Этот пользователь будет создан на виртуальной машине. В следующем примере создается виртуальная машина с именем *myVM* из *образа mypackerimage*:
 
 ```powershell
 New-AzVm `
@@ -248,5 +242,5 @@ Get-AzPublicIPAddress `
 ![Сайт IIS по умолчанию](./media/build-image-with-packer/iis.png) 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 Вы также можете использовать существующие скрипты подготовки пакета с помощью [Azure Image Builder](image-builder.md).

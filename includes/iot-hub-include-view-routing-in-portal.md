@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
@@ -9,10 +9,10 @@ ms.date: 03/05/2019
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: 178236f774b0e1a6fe20c73afe0e7fd6965e67a5
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67235425"
 ---
 Настроив конечные точки и маршруты сообщений, можно просмотреть их конфигурацию на портале. Войдите на [портал Azure](https://portal.azure.com) и перейдите в раздел **Группы ресурсов**. Затем выберите группу ресурсов и центр (имя центра в этом руководстве начинается с `ContosoTestHub`). Отобразится панель Центра Интернета вещей.

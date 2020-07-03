@@ -10,12 +10,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 11/04/2019
   ms.author: robreed
-  ms.openlocfilehash: 2ff0b9a194faf4d5a6b9e5181c52dc135208bdee
-  ms.sourcegitcommit: c22327552d62f88aeaa321189f9b9a631525027c
+  ms.openlocfilehash: e80cdec365a14caee5c74900e1c21f7349165e66
+  ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/04/2019
-  ms.locfileid: "73508556"
+  ms.lasthandoff: 04/13/2020
+  ms.locfileid: "81261284"
 landingContent:
 - title: Общие сведения об Azure Arc
   linkLists:
@@ -31,7 +31,9 @@ landingContent:
       url: ./servers/overview.md
   - linkListType: quickstart
     links:
-    - text: Подключение компьютеров к Azure с помощью Azure Arc для серверов — портал
-      url: ./servers/quickstart-onboard-portal.md
-    - text: Подключение компьютеров к Azure с помощью Azure Arc для серверов — PowerShell
-      url: ./servers/quickstart-onboard-portal.md
+    - text: Подключение компьютеров к Azure Arc на портале Azure
+      url: ./servers/onboard-portal.md
+    - text: Подключение компьютеров в большом масштабе с помощью субъекта-службы
+      url: ./servers/onboard-service-principal.md
+    - text: Подключение компьютеров к Azure с помощью PowerShell DSC
+      url: ./servers/onboard-dsc.md

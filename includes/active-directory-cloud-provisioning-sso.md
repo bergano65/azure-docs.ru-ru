@@ -5,12 +5,12 @@ ms.subservice: cloud-provisioning
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: billmath
-ms.openlocfilehash: ba1bdd60a3363cfab694bae9b8ee3cf63e24b054
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 3aa1571b46938b03f556fa124d3f0a2a70f2c5c3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76907582"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79504368"
 ---
 ## <a name="steps-to-enable-single-sign-on"></a>Действия по включению единого входа
 Подготовка облака работает с единым входом.  В настоящее время невозможно включить единый вход при установке агента, однако можно выполнить приведенные ниже действия, чтобы включить единый вход и использовать его. 
@@ -18,7 +18,7 @@ ms.locfileid: "76907582"
 ### <a name="step-1-download-and-extract-azure-ad-connect-files"></a>Шаг 1. скачивание и извлечение файлов Azure AD Connect
 1.  Сначала скачайте последнюю версию [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594)
 2.  Откройте командную строку с правами администратора и перейдите к только что загруженному MSI.
-3.  Выполните следующую команду: `msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
+3.  Выполните следующую команду:`msiexec /a C:\filepath\AzureADConnect.msi /qb TARGETDIR=C:\filepath\extractfolder`
 4. Измените FilePath и екстрактфолдер, чтобы они соответствовали пути к файлу и имени папки извлечения.  Теперь содержимое должно находиться в папке извлечения.
 
 ### <a name="step-2-import-the-seamless-sso-powershell-module"></a>Шаг 2. импорт модуля PowerShell для простого единого входа

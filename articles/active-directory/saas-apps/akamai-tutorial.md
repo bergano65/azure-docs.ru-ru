@@ -17,10 +17,10 @@ ms.date: 11/28/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 042dd242285081001ca48c9f17e4d42c2294c0ff
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74979140"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-akamai"></a>Руководство по интеграции единого входа Azure Active Directory с Akamai
@@ -35,9 +35,9 @@ ms.locfileid: "74979140"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Подписка Akamai с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -68,7 +68,7 @@ ms.locfileid: "74979140"
     * **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
 1. **[Настройка единого входа в Akamai](#configure-akamai-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
     * **[Создание тестового пользователя в Akamai](#create-akamai-test-user)** нужно для того, чтобы в Akamai существовал пользователь B.Simon, связанный с представлением этого же пользователя в Azure AD.
-1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -78,13 +78,13 @@ ms.locfileid: "74979140"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** введите значения следующих полей.
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<Yourapp>.login.go.akamai-access.com/sp/response`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<Yourapp>.login.go.akamai-access.com/sp/response`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https:// <Yourapp>.login.go.akamai-access.com/sp/response`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https:// <Yourapp>.login.go.akamai-access.com/sp/response`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Akamai](https://www.akamai.com/us/en/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -113,7 +113,7 @@ ms.locfileid: "74979140"
 
 В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Akamai.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Akamai**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -140,7 +140,7 @@ ms.locfileid: "74979140"
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure02.png)
 
-    a. Укажите уникальное имя в **Name** (Имя).
+    а. Укажите уникальное имя в **Name** (Имя).
     
     b. Выберите **Third Party SAML** (SAML стороннего производителя) и щелкните **Create Identity Provider and Configure** (Создать и настроить поставщик удостоверений).
 
@@ -263,7 +263,7 @@ ms.locfileid: "74979140"
 
     ![Настройка Akamai](./media/header-akamai-tutorial/configure27.png)
 
-    a. Укажите имя и описание.
+    а. Укажите имя и описание.
 
     b. Укажите IP-адрес или полное доменное имя сервера приложений и порт для подключения SSH.
 
@@ -271,7 +271,7 @@ ms.locfileid: "74979140"
 
     d. Укажите значение в поле "External host Name" (Имя внешнего узла).
 
-    д. Укажите расположение соединителя и выберите нужный соединитель.
+    д) Укажите расположение соединителя и выберите нужный соединитель.
 
 #### <a name="authentication"></a>Аутентификация
 
@@ -323,9 +323,9 @@ ms.locfileid: "74979140"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

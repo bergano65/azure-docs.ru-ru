@@ -2,35 +2,32 @@
 title: Получение маркера в веб-приложении, вызывающем веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как получить маркер для веб-приложения, которое вызывает веб-API.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: abf7d800eda376c21dfdd672032ddb65e27355be
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 40e788099a159e1f60c0af02deccd7e3bef82744
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759080"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181738"
 ---
 # <a name="a-web-app-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-приложение, вызывающее веб-API: получение маркера для приложения
 
 Вы создали объект клиентского приложения. Теперь вы будете использовать его для получения маркера для вызова веб-API. В ASP.NET или ASP.NET Core вызов веб-API выполняется в контроллере:
 
-- Получите маркер для веб-API с помощью кэша маркеров. Чтобы получить этот маркер, вызовите метод `AcquireTokenSilent`.
+- Получите маркер для веб-API с помощью кэша маркеров. Чтобы получить этот маркер, вызовите метод MSAL `AcquireTokenSilent` (или эквивалент в Microsoft. Identity. Web).
 - Вызовите защищенный API, передав ему маркер доступа в качестве параметра.
 
-# <a name="aspnet-coretabaspnetcore"></a>[ASP.NET Core](#tab/aspnetcore)
+# <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Методы контроллера защищены атрибутом `[Authorize]`, который заставляет пользователей проходить проверку подлинности для использования веб-приложения. Ниже приведен код, который вызывает Microsoft Graph:
+Методы контроллера защищены `[Authorize]` атрибутом, который заставляет пользователей проходить проверку подлинности для использования веб-приложения. Ниже приведен код, который вызывает Microsoft Graph:
 
 ```csharp
 [Authorize]
@@ -48,16 +45,16 @@ public class HomeController : Controller
 }
 ```
 
-`ITokenAcquisition` служба внедряется функцией ASP.NET с помощью внедрения зависимостей.
+Эта `ITokenAcquisition` служба внедряется функцией ASP.NET с помощью внедрения зависимостей.
 
-Ниже приведен упрощенный код для действия `HomeController`, который получает маркер для вызова Microsoft Graph:
+Ниже приведен упрощенный код для действия `HomeController`, которое получает маркер для вызова Microsoft Graph:
 
 ```csharp
 public async Task<IActionResult> Profile()
 {
  // Acquire the access token.
  string[] scopes = new string[]{"user.read"};
- string accessToken = await tokenAcquisition.GetAccessTokenOnBehalfOfUserAsync(scopes);
+ string accessToken = await tokenAcquisition.GetAccessTokenForUserAsync(scopes);
 
  // Use the access token to call a protected web API.
  HttpClient client = new HttpClient();
@@ -75,19 +72,19 @@ public async Task<IActionResult> Profile()
 
 Эти дополнительные действия описаны в главе 3 учебника по [3-webapp-Multi-API](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/3-WebApp-multi-APIs) .
 
-# <a name="aspnettabaspnet"></a>[ASP.NET](#tab/aspnet)
+# <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
 Код для ASP.NET похож на код, показанный для ASP.NET Core:
 
-- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор пользователя `ClaimsPrincipal` элемента контроллера. (ASP.NET использует `HttpContext.User`.)
-- После этого он создает объект `IConfidentialClientApplication` MSAL.NET.
-- Наконец, он вызывает метод `AcquireTokenSilent` конфиденциального клиентского приложения.
+- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор пользователя для `ClaimsPrincipal` члена контроллера. (ASP.NET использует `HttpContext.User`.)
+- После этого он создает объект MSAL.NET `IConfidentialClientApplication` .
+- Наконец, он вызывает `AcquireTokenSilent` метод конфиденциального клиентского приложения.
 
-# <a name="javatabjava"></a>[Java](#tab/java)
+# <a name="java"></a>[Java](#tab/java)
 
 В примере Java код, вызывающий API, находится в методе Жетусерсфромграф в [ауспажеконтроллер. Java # L62](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L62).
 
-Метод пытается вызвать `getAuthResultBySilentFlow`. Если пользователь должен согласиться с дополнительными областями, код обрабатывает объект `MsalInteractionRequiredException` для вызова пользователю.
+Метод пытается вызвать `getAuthResultBySilentFlow`. Если пользователь должен согласиться с дополнительными областями, код обрабатывает `MsalInteractionRequiredException` объект для вызова пользователю.
 
 ```java
 @RequestMapping("/msal4jsample/graph/me")
@@ -145,7 +142,7 @@ public ModelAndView getUserFromGraph(HttpServletRequest httpRequest, HttpServlet
 // Code omitted here
 ```
 
-# <a name="pythontabpython"></a>[Python](#tab/python)
+# <a name="python"></a>[Python](#tab/python)
 
 В образце Python код, вызывающий Microsoft Graph, находится в [app. Корректировка l53-L62](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/48637475ed7d7733795ebeac55c5d58663714c60/app.py#L53-L62).
 
@@ -164,7 +161,9 @@ def graphcall():
     return render_template('display.html', result=graph_data)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+---
+
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-web-app-call-api-call-api.md)

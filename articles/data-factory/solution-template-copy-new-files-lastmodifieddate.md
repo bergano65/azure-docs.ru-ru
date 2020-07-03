@@ -11,14 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 3/8/2019
-ms.openlocfilehash: 971d311dfb54d417a8f66f504d01f08f8bcfc48b
-ms.sourcegitcommit: b5ff5abd7a82eaf3a1df883c4247e11cdfe38c19
+ms.openlocfilehash: 363af1012b327a55703cc6e35a02dc1f27869bd0
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74942093"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629071"
 ---
 # <a name="copy-new-and-changed-files-by-lastmodifieddate-with-azure-data-factory"></a>Копирование новых и измененных файлов с помощью LastModifiedDate с фабрикой данных Azure
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается шаблон решения, который можно использовать для копирования новых и измененных файлов только с помощью LastModifiedDate из файлового хранилища в целевое хранилище. 
 
@@ -49,7 +51,7 @@ ms.locfileid: "74942093"
 
 3. Выберите **Использовать этот шаблон**.
 
-    ![Использование шаблона](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate4.png)
+    ![Использовать этот шаблон](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate4.png)
     
 4. На панели откроется доступный конвейер, как показано в следующем примере:
 
@@ -63,7 +65,7 @@ ms.locfileid: "74942093"
    - **LastModified_From** = 2019-02-01T00:00:00Z
    - **LastModified_To** = 2019-03-01T00:00:00Z
     
-    В примере показано, что файлы, которые были в последний раз изменены в диапазоне времени (**2019-02-01T00:00:00Z** до **2019-03-01T00:00:00Z**), будут скопированы из исходного пути **sourcefolder/** в папку назначения путь к **папке destinationfolder/** .  Их можно заменить собственными параметрами.
+    В примере показано, что файлы, которые были в последний раз изменены в диапазоне времени (**2019-02-01T00:00:00Z** до **2019-03-01T00:00:00Z**), будут скопированы из исходного пути **sourcefolder/** в папку назначения путь к **папке destinationfolder/**.  Их можно заменить собственными параметрами.
 
     ![Запуск конвейера](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate6.png)
 
@@ -83,11 +85,11 @@ ms.locfileid: "74942093"
     
 10. Задайте значения для **параметров запуска триггера** следующим образом, а затем нажмите кнопку **Готово**.
     - **FolderPath_Source** = **sourcefolder**.  Вы можете заменить папку в исходном хранилище данных.
-    - **Directory_Source** = **вложенную папку**.  Вы можете заменить вложенной папкой в исходном хранилище данных.
+    - **Directory_Source** = **Вложенная папка**Directory_Source.  Вы можете заменить вложенной папкой в исходном хранилище данных.
     - **FolderPath_Destination** = **destinationfolder**.  Вы можете заменить папку в целевом хранилище данных.
-    - **Directory_Destination** = **вложенную папку**.  Вы можете заменить вложенной папкой в целевом хранилище данных.
-    - **LastModified_From** =   **\@Trigger (). Outputs. windowStartTime**.  Это системная переменная из триггера, определяющая время, когда конвейер был активирован в последний раз.
-    - **LastModified_To** =  **\@Trigger (). Outputs. windowEndTime**.  Это системная переменная из триггера, определяющая время активации конвейера на данный момент.
+    - **Directory_Destination** = **Вложенная папка**Directory_Destination.  Вы можете заменить вложенной папкой в целевом хранилище данных.
+    - **LastModified_From** =  **Триггер LastModified_From\@(). Outputs. windowStartTime**.  Это системная переменная из триггера, определяющая время, когда конвейер был активирован в последний раз.
+    - **LastModified_To** = **Триггер LastModified_To\@(). Outputs. windowEndTime**.  Это системная переменная из триггера, определяющая время активации конвейера на данный момент.
     
     ![Входные параметры](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate11.png)
     
@@ -105,4 +107,4 @@ ms.locfileid: "74942093"
     
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Общие сведения о службе фабрики данных Azure, службе интеграции данных в облаке](introduction.md)
+- [Знакомство с Фабрикой данных Azure](introduction.md)

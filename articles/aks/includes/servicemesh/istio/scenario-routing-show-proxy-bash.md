@@ -1,21 +1,20 @@
 ---
 author: paulbouwer
-ms.service: container-service
 ms.topic: include
 ms.date: 10/09/2019
 ms.author: pabouwer
-ms.openlocfilehash: ea7b64a21d6b8bc535aeca366435510ac16bb90a
-ms.sourcegitcommit: f29fec8ec945921cc3a89a6e7086127cc1bc1759
+ms.openlocfilehash: 8872ebc45294487f1a22c3417b308fe6267df613
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72530164"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77594186"
 ---
 ```bash
 kubectl describe pod -l "app=voting-analytics, version=1.0" -n voting | egrep "istio-proxy:|voting-analytics:" -A2
 ```
 
-Контейнер `istio-proxy` автоматически был вставлен с помощью Istio для управления сетевым трафиком из компонентов, как показано в следующем примере выходных данных:
+`istio-proxy` Контейнер автоматически был вставлен с помощью Istio для управления сетевым трафиком из компонентов, как показано в следующем примере выходных данных:
 
 ```console
   voting-analytics:

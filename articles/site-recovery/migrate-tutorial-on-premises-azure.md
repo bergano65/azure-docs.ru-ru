@@ -7,18 +7,20 @@ ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 11/12/2019
 ms.author: raynew
-ms.custom: MVC
-ms.openlocfilehash: 24015810a295ef88b7d3e63bfc464ddddef6b55f
-ms.sourcegitcommit: 44c2a964fb8521f9961928f6f7457ae3ed362694
+ms.openlocfilehash: b978190776aee3c89d3beadde76d20c4327b012f
+ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73939624"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80388922"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Миграция локальных компьютеров в Azure
 
 
-В этой статье описан процесс миграции локальных компьютеров в Azure с помощью [Azure Site Recovery](site-recovery-overview.md). Как правило, Site Recovery используется для управления аварийным восстановлением локальных компьютеров и виртуальных машин Azure. Тем не менее эта служба может также использоваться для миграции. При миграции используются те же шаги, что и при аварийном восстановлении за одним исключением. При миграции отработка отказа компьютеров с локального сайта выполняется в конце. В отличие от аварийного восстановления вы не можете восстановить размещение в локальную среду в сценарии миграции.
+В этой статье описан процесс миграции локальных компьютеров в Azure с помощью [Azure Site Recovery](site-recovery-overview.md). 
+
+> [!TIP]
+> Для переноса виртуальных машин AWS в Azure теперь нужно использовать службу "Миграция Azure", а не Azure Site Recovery. [Подробнее](../migrate/migrate-services-overview.md).
 
 
 В этом руководстве показано, как перенести локальные виртуальные машины и физические серверы в Azure. Вы узнаете, как выполнять следующие задачи:
@@ -32,11 +34,11 @@ ms.locfileid: "73939624"
 
 
 > [!TIP]
-> Теперь вы можете перенести локальные серверы в Azure с помощью службы "Миграция Azure". [Подробнее](../migrate/migrate-services-overview.md)
+> Теперь вы можете перенести локальные серверы в Azure с помощью службы "Миграция Azure". [Дополнительные сведения](../migrate/migrate-services-overview.md)
 
 ## <a name="before-you-start"></a>Перед началом работы
 
-Обратите внимание, что устройства, экспортированные с помощью паравиртуализованных драйверов, не поддерживаются.
+Устройства, экспортированные с помощью паравиртуализированных драйверов, не поддерживаются.
 
 
 ## <a name="prepare-azure-and-on-premises"></a>Подготовка Azure и локальной среды
@@ -58,7 +60,7 @@ ms.locfileid: "73939624"
 
 ## <a name="set-up-the-source-environment"></a>Настройка исходной среды
 
-**Сценарий** | **Дополнительные сведения**
+**Сценарий** | **Сведения**
 --- | --- 
 VMware | Настройте [исходную среду](vmware-azure-set-up-source.md) и [сервер конфигурации](vmware-azure-deploy-configuration-server.md).
 Физический компьютер | [Настройте](physical-azure-set-up-source.md) исходную среду и сервер конфигурации.
@@ -77,7 +79,7 @@ Hyper-V | Настройте [исходную среду](hyper-v-azure-tutoria
 
 ## <a name="set-up-a-replication-policy"></a>Настройка политики репликации
 
-**Сценарий** | **Дополнительные сведения**
+**Сценарий** | **Сведения**
 --- | --- 
 VMware | Настройте [политику репликации](vmware-azure-set-up-replication.md) для виртуальных машин VMware.
 Физический компьютер | Настройте [политику репликации](physical-azure-disaster-recovery.md#create-a-replication-policy) для физических компьютеров.
@@ -85,7 +87,7 @@ Hyper-V | Настройте [политику репликации](hyper-v-azu
 
 ## <a name="enable-replication"></a>Включение репликации
 
-**Сценарий** | **Дополнительные сведения**
+**Сценарий** | **Сведения**
 --- | --- 
 VMware | [Включите репликацию](vmware-azure-enable-replication.md) виртуальных машин VMware.
 Физический компьютер | [Включите репликацию](physical-azure-disaster-recovery.md#enable-replication) для физических компьютеров.
@@ -136,8 +138,8 @@ Hyper-V | [Включение репликации](hyper-v-azure-tutorial.md#en
     - Если вы переносите виртуальные машины Hyper-V в Azure, установите агент виртуальной машины Azure на виртуальной машине Azure после миграции.
 - Вручную удалите поставщик или агент Site Recovery с виртуальной машины. Если вы переносите виртуальные машины VMware или физические серверы, удалите службу Mobility Service на виртуальной машине.
 - Для повышения устойчивости:
-    - Обеспечьте безопасность данных путем резервного копирования виртуальных машин Azure с помощью службы Azure Backup. [Узнайте больше]( https://docs.microsoft.com/azure/backup/quick-backup-vm-portal).
-    - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Узнайте больше](azure-to-azure-quickstart.md).
+    - Обеспечьте безопасность данных путем резервного копирования виртуальных машин Azure с помощью службы Azure Backup. [Подробнее]( https://docs.microsoft.com/azure/backup/quick-backup-vm-portal).
+    - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Подробнее](azure-to-azure-quickstart.md).
 - Для повышения уровня безопасности:
     - Заблокируйте и ограничьте доступ входящего трафика с помощью [JIT-администрирования]( https://docs.microsoft.com/azure/security-center/security-center-just-in-time) центра безопасности Azure.
     - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
@@ -156,9 +158,9 @@ Hyper-V | [Включение репликации](hyper-v-azure-tutorial.md#en
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В рамках работы с этим руководством вы перенесли локальные виртуальные машины в виртуальные машины Azure. Now
+В рамках работы с этим руководством вы перенесли локальные виртуальные машины в виртуальные машины Azure. Сейчас
 
 > [!div class="nextstepaction"]
 > [Настройте аварийное восстановление](azure-to-azure-replicate-after-migration.md) виртуальных машин Azure в дополнительный регион Azure.

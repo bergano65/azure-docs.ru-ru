@@ -17,10 +17,10 @@ ms.date: 05/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f44324bbdd5af6675dfb4f5664cbbde2627edfec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67098567"
 ---
 # <a name="tutorial-integrate-knowledge-anywhere-lms-with-azure-active-directory"></a>Руководство по Интеграция Knowledge Anywhere LMS с Azure Active Directory
@@ -35,9 +35,9 @@ ms.locfileid: "67098567"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы приступить к работе, потребуется следующее:
+Чтобы приступить к работе, потребуется следующее.
 
-* подписка Azure AD Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
 * подписка Knowledge Anywhere LMS с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -76,7 +76,7 @@ ms.locfileid: "67098567"
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-   ![Правка базовой конфигурации SAML](common/edit-urls.png)
+   ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
@@ -130,7 +130,7 @@ ms.locfileid: "67098567"
 
     ![Конфигурация Knowledge Anywhere LMS](./media/knowledge-anywhere-lms-tutorial/configure4.png)
 
-    a. Введите имя поставщика удостоверений в соответствии с вашей организацией. Например: `Azure`.
+    а. Введите имя поставщика удостоверений в соответствии с вашей организацией. Например: `Azure`.
 
     b. В текстовое поле **IDP Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **Идентификатор Azure AD**, скопированное на портале Azure.
 
@@ -138,9 +138,9 @@ ms.locfileid: "67098567"
 
     d. Откройте в блокноте скачанный с портала Azure файл сертификата, скопируйте содержимое сертификата и вставьте его в текстовое поле **Сертификат**.
 
-    д. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    д) В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
-    Е. Выберите **Main Site** (Основной сайт) из раскрывающегося списка для параметра **Домен**.
+    е) Выберите **Main Site** (Основной сайт) из раскрывающегося списка для параметра **Домен**.
 
     ж. Скопируйте значение **SP Entity ID** (Идентификатор сущности поставщика услуг) и вставьте его в текстовое поле **Идентификатор** в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -164,7 +164,7 @@ ms.locfileid: "67098567"
 
 В этом разделе описано, как разрешить пользователю B. Simon использовать единый вход Azure путем предоставления доступа к Knowledge Anywhere LMS.
 
-1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Knowledge Anywhere LMS**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
@@ -192,4 +192,4 @@ ms.locfileid: "67098567"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

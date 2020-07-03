@@ -10,15 +10,15 @@ ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
 ms.openlocfilehash: 93a7181a3b720a3b313bb75855b2564c4cd33bc1
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514159"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79214332"
 ---
 ::: zone target="docs"
 
-# <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство. Копирование данных на Диск Microsoft Azure Data Box и проверка
+# <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство по Копирование данных на Диск Microsoft Azure Data Box и проверка
 
 ::: zone-end
 

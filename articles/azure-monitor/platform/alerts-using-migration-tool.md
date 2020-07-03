@@ -1,18 +1,17 @@
 ---
-title: Перенос классических оповещений в Azure Monitor с помощью добровольного средства миграции
+title: Миграция Azure Monitor правил оповещений
 description: Узнайте, как использовать добровольное средство миграции для переноса классических правил генерации оповещений.
 author: yanivlavi
-ms.service: azure-monitor
+ms.author: yalavi
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: c4ebb2e9572f1dcc9ade548a55fc44d7441e5a79
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: ab5c16995a2d2bad6e44f0f9d1187ca3d66be1b6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76705587"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81114256"
 ---
 # <a name="use-the-voluntary-migration-tool-to-migrate-your-classic-alert-rules"></a>Использование произвольного средства миграции для переноса классических правил генерации оповещений
 
@@ -43,7 +42,7 @@ ms.locfileid: "76705587"
     > [!NOTE]
     > Процесс миграции не будет влиять на оценку классических правил генерации оповещений. Они будут продолжать выполнять и отправлять оповещения до тех пор, пока они не будут перенесены и новые правила генерации оповещений вступят в силу.
 
-## <a name="how-to-use-the-migration-tool"></a>Использование средства миграции
+## <a name="how-to-use-the-migration-tool"></a>Как использовать средство миграции
 
 Чтобы активировать миграцию классических правил генерации оповещений в портал Azure, выполните следующие действия.
 
@@ -97,7 +96,7 @@ ms.locfileid: "76705587"
 
 Дополнительные сведения о проблемах, которые могут возникнуть во время миграции, см. в разделе [руководство по устранению неполадок](alerts-understand-migration.md#common-problems-and-remedies) . Если для завершения миграции потребуется какое-либо действие, вы получите уведомление по адресам электронной почты, указанным при настройке средства.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Подготовка к миграции](alerts-prepare-migration.md)
+- [Подготовка к переносу](alerts-prepare-migration.md)
 - [Принцип работы средства миграции](alerts-understand-migration.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с ZIVVER | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ZIVVER | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ZIVVER.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/22/2019
 ms.author: jeedes
 ms.openlocfilehash: 02b292c5db3d20f56d7b8291ea31d8da9863809b
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233246"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zivver"></a>Руководство по Интеграция Azure Active Directory с ZIVVER
+# <a name="tutorial-azure-active-directory-integration-with-zivver"></a>Руководство. Интеграция Azure Active Directory с ZIVVER
 
 В этом руководстве описано, как интегрировать ZIVVER с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением ZIVVER обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "74233246"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ZIVVER, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка ZIVVER с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -113,14 +113,14 @@ ms.locfileid: "74233246"
 
 6. В дополнение к описанному выше приложение ZIVVER ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
-    | ИМЯ | Пространство имен | Исходный атрибут|
+    | Имя | Пространство имен | Исходный атрибут|
     | ---------------| --------------- |
     | ZivverAccountKey | https:\//zivver.com/SAML/Attributes | user.objectid |
 
     >[!NOTE]
     >Если вы используете гибридную конфигурацию с локальной средой Active Directory и инструментом Azure AD Connect, значением должно быть `user.objectGUID`.
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
     ![image](common/new-save-attribute.png)
 
@@ -132,9 +132,9 @@ ms.locfileid: "74233246"
 
     d. В качестве источника выберите **Атрибут**.
 
-    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+    д) В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    Е. Выберите команду **Сохранить**.
+    е) Выберите команду **Сохранить**.
 
 7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **XML-файл метаданных федерации**, а затем щелкните значок**Копировать**, чтобы скопировать **URL-адрес метаданных федерации приложений** из предложенных вариантов, и сохраните его на своем компьютере.
 
@@ -144,7 +144,7 @@ ms.locfileid: "74233246"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 

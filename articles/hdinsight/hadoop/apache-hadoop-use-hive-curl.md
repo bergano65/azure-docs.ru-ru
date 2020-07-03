@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/06/2020
-ms.openlocfilehash: 3bb09f1958685a3474b49d2d194e89fe81a80076
-ms.sourcegitcommit: 2f8ff235b1456ccfd527e07d55149e0c0f0647cc
+ms.openlocfilehash: 10a2f413142124db7547e68280a0d5e9abac9b98
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75690497"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79298756"
 ---
 # <a name="run-apache-hive-queries-with-apache-hadoop-in-hdinsight-using-rest"></a>Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST
 
@@ -21,7 +21,7 @@ ms.locfileid: "75690497"
 
 Узнайте, как с помощью REST API WebHCat выполнять запросы Apache Hive с Apache Hadoop в кластере Azure HDInsight.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "75690497"
 
 ## <a name="base-uri-for-rest-api"></a>Базовый URI для API-интерфейса RESTful
 
-Базовый универсальный код ресурса (URI) для REST API в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в имени полного доменного имени (FQDN) URI (`CLUSTERNAME.azurehdinsight.net`) не учитывает регистр, другие вхождения в URI учитывают регистр.
+Базовый универсальный код ресурса (URI) для REST API в HDInsight — `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`, где `CLUSTERNAME` — это имя кластера.  В именах кластеров в URI **учитывается регистр**.  Хотя имя кластера в части URI (`CLUSTERNAME.azurehdinsight.net`) в полном доменном имени () не учитывает регистр, другие ВХОЖДЕНИЯ в URI учитывают регистр.
 
 ## <a name="authentication"></a>Проверка подлинности
 
@@ -42,7 +42,7 @@ ms.locfileid: "75690497"
 Сохраните свои учетные данные, чтобы избежать их повторного ввода для каждого примера.  Имя кластера будет сохранено на отдельном шаге.
 
 **A. bash**  
-Измените приведенный ниже сценарий, заменив `PASSWORD` фактическим паролем.  Затем введите команду.
+Измените приведенный ниже сценарий, `PASSWORD` заменив его фактическим паролем.  Затем введите команду.
 
 ```bash
 export password='PASSWORD'
@@ -58,7 +58,7 @@ $creds = Get-Credential -UserName "admin" -Message "Enter the HDInsight login"
 
 Фактический регистр имени кластера может отличаться от ожидаемого, в зависимости от способа создания кластера.  В этих шагах будет показан фактический регистр, а затем сохранен в переменной для всех последующих примеров.
 
-Измените приведенные ниже сценарии, чтобы заменить `CLUSTERNAME` именем кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
+Измените приведенные ниже сценарии, `CLUSTERNAME` чтобы они заменили имя кластера. Затем введите команду. (Имя кластера для FQDN не учитывает регистр.)
 
 ```bash
 export clusterName=$(curl -u admin:$password -sS -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters" | jq -r '.items[].Clusters.cluster_name')
@@ -146,7 +146,7 @@ $clusterName
 
    Эти операторы выполняют следующие действия:
 
-   * `DROP TABLE` — если таблица уже существует, она удаляется.
+   * `DROP TABLE`— Если таблица уже существует, она удаляется.
    * `CREATE EXTERNAL TABLE` — создает "внешнюю" таблицу в Hive. Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
 
      > [!NOTE]  
@@ -155,8 +155,8 @@ $clusterName
      > Удаление внешней таблицы **не** приводит к удалению данных, будет удалено только определение таблицы.
 
    * `ROW FORMAT` — настройка форматирования данных. Поля всех журналов разделены пробелами.
-   * `STORED AS TEXTFILE LOCATION`, где хранятся данные (каталог example/Data) и хранятся в виде текста.
-   * `SELECT`. Подсчитывает количество строк, в которых столбец **t4** содержит значение **[ERROR]** . Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
+   * `STORED AS TEXTFILE LOCATION`— Где хранятся данные (каталог example/Data) и хранятся в виде текста.
+   * `SELECT`— Выбирает количество строк, в которых столбец **T4** содержит значение **[Error]**. Эта инструкция возвращает значение **3**, так как данное значение содержат три строки.
 
      > [!NOTE]  
      > Обратите внимание, что при использовании Curl пробелы между операторами HiveQL заменяются знаком `+`. Заключенные в кавычки значения, содержащие пробелы в качестве разделителя, заменять на `+`не нужно.
@@ -185,9 +185,9 @@ $clusterName
 
 1. После изменения состояния задания на **SUCCEEDED** результаты задания можно получить из хранилища больших двоичных объектов Azure. Параметр `statusdir`, передаваемый с помощью запроса, содержит расположение выходного файла. В данном случае это `/example/rest`. Этот адрес задает каталог `example/curl` для сохранения выходных данных, который размещен в хранилище по умолчанию для кластера.
 
-    Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI со службой хранилища Azure см. в документе [Использование Azure CLI со службой хранилища Azure](https://docs.microsoft.com/azure/storage/storage-azure-cli#create-and-manage-blobs).
+    Вы можете вывести список этих файлов и скачать их с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). Дополнительные сведения об использовании Azure CLI со службой хранилища Azure см. в документе [Использование Azure CLI со службой хранилища Azure](https://docs.microsoft.com/azure/storage/storage-azure-cli).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight.
 

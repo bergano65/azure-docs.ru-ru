@@ -6,14 +6,14 @@ manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
-ms.topic: quickstart
-ms.date: 11/04/2019
-ms.openlocfilehash: e73e69f90b1228154d7f209c54c6b52cc03d5eb4
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 02/25/2020
+ms.openlocfilehash: d2b25fb93a1e35ffa82cf49c60d181b841b1692d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76837796"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77616196"
 ---
 # <a name="documentation-resources-for-ai-enrichment-in-azure-cognitive-search"></a>Ресурсы документации для обогащения данных с помощью ИИ в Когнитивном поиске Azure
 
@@ -23,9 +23,9 @@ ms.locfileid: "76837796"
 
 ## <a name="getting-started"></a>Начало работы
 + [Общие сведения об ИИ в Когнитивном поиске Azure](cognitive-search-concept-intro.md)
-+ [Краткое руководство. Создание когнитивного набора навыков на портале Azure](cognitive-search-quickstart-blob.md)
-+ [Руководство. Обогащенное индексирование с помощью ИИ](cognitive-search-tutorial-blob.md)
-+ [Пример. Создание пользовательского навыка для обогащения ИИ](cognitive-search-create-custom-skill-example.md)
++ [Краткое руководство. Создание набора квалификационных навыков в портал Azure](cognitive-search-quickstart-blob.md)
++ [Учебник. обогащенное индексирование с помощью искусственного интеллекта](cognitive-search-tutorial-blob.md)
++ [Пример. Создание пользовательского навыка для обогащения искусственного интеллекта](cognitive-search-create-custom-skill-example.md)
 
 ## <a name="how-to-guidance"></a>Практические руководства
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
@@ -63,7 +63,7 @@ ms.locfileid: "76837796"
   + [Создание набора навыков (api-version=2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
   + [Создание индексатора (api-version=2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 + [Azure Search Service REST](https://docs.microsoft.com/rest/api/searchservice/) (Руководство по REST Службы поиска Azure)
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")

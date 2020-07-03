@@ -1,25 +1,19 @@
 ---
-title: Мониторинг виртуальных машин Linux в Azure
-description: Сведения о параметрах мониторинга для виртуальных машин Linux в Azure.
-services: virtual-machines-linux
-documentationcenter: ''
+title: Мониторинг ввоза в банкоматы в Azure
+description: Узнайте о возможностях мониторинга виртуальных машин в Azure.
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: monitoring
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.date: 08/14/2017
 ms.author: cynthn
 ms.topic: conceptual
-ms.openlocfilehash: a23a6f88a5194e42d543e35e783db206e768a919
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 15ab009a7db1898c58507ee6867f404c4d13d450
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74035677"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "78944632"
 ---
 # <a name="how-to-monitor-virtual-machines-in-azure"></a>Мониторинг виртуальных машин в Azure
 

@@ -1,19 +1,18 @@
 ---
 title: Обновление предложений Marketplace | Azure Marketplace
 description: Обновление предложений в AppSource и Azure Marketplace с помощью Портала Cloud Partner
-services: Azure, AppSource, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/11/2019
-ms.author: pabutler
-ms.openlocfilehash: b3f579dbdc943b2380c9de3dde6b2ebf4754d4d1
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: 101369a050770be3acd9534cef6229037fe1c366
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826712"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80288518"
 ---
 # <a name="update-azure-marketplace-and-appsource-offers"></a>Обновление предложений в Azure Marketplace и AppSource
 
@@ -104,7 +103,7 @@ ms.locfileid: "73826712"
 
 1. Выберите номер SKU, цену на который нужно снизить.
 2. Необходимо задать более низкую цену так же, как вы задавали ее изначально: непосредственно в пользовательском интерфейсе портала или с помощью электронной таблицы импорта и экспорта.
-3. Щелкните **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 4. Щелкните **Опубликовать**, чтобы начать процесс публикации.
 
 Опубликованные в marketplace цены сразу становятся видимыми для новых клиентов, которые будут платить согласно сниженной цене.  Для существующих клиентов сниженная цена применяется задним числом, то есть с начала периода выставления счетов, в течение которого произошло снижение.  Если клиентам уже выставлены счета за период, в течение которого произошло снижение, в следующем периоде выставления счетов им будет возмещена разница между старой и новой ценой.
@@ -125,6 +124,6 @@ ms.locfileid: "73826712"
 Чтобы просмотреть журнал действий, связанных с публикацией, щелкните вкладку **Журнал** в области вертикального меню слева на Портале Cloud Partner.  Страница "Журнал" предоставляет гибкую фильтрацию на основе нескольких характеристик и поддерживает сортировку столбцов.  Указано время каждого события публикации.  Дополнительные сведения см. в статье [Страница "Журнал аудита"](../portal-tour/cpp-history-page.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Портал Cloud Partner можно также использовать для [удаления опубликованных номеров SKU или предложений](./cpp-delete-offer.md).

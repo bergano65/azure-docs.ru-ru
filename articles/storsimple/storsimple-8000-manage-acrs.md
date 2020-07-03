@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/31/2017
 ms.author: alkohli
 ms.openlocfilehash: ade7da25d2307a382c17e7a3cbb26b601c34ef78
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "64693240"
 ---
 # <a name="use-the-storsimple-manager-service-to-manage-access-control-records"></a>Использование службы StorSimple Manager для управления записями контроля доступа
@@ -59,7 +59,7 @@ ms.locfileid: "64693240"
 
     1. Введите имя для записи контроля доступа.
     
-    2. Введите имя IQN нужного узла Windows Server в строке **Имя инициатора iSCSI (IQN)** .
+    2. Введите имя IQN нужного узла Windows Server в строке **Имя инициатора iSCSI (IQN)**.
 
     3. Нажмите кнопку **Добавить**, чтобы создать запись контроля доступа.
 
@@ -91,7 +91,7 @@ ms.locfileid: "64693240"
 
     ![Изменение записей контроля доступа](./media/storsimple-8000-manage-acrs/editacr2.png)
 
-4. Выберите команду **Сохранить**. При появлении запроса на подтверждение нажмите кнопку **Да**. 
+4. Выберите команду **Сохранить**. При запросе подтверждения нажмите кнопку **Да**. 
 
     ![Изменение записей контроля доступа](./media/storsimple-8000-manage-acrs/editacr3.png)
 

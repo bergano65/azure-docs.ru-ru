@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Zscaler Internet Access Administrator | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Zscaler Internet Access Administrator | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Zscaler Internet Access Administrator.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a149527c6e00972991bf0b18e6f7c599799a0c91
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73161037"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Руководство. Интеграция Azure Active Directory с Zscaler Internet Access Administrator
+# <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Руководство по Интеграция Azure Active Directory с Zscaler Internet Access Administrator
 
 В этом руководстве описано, как интегрировать Zscaler Internet Access Administrator с Azure Active Directory (Azure AD).
 Интеграция Azure Active Directory с Zscaler Internet Access Administrator обеспечивает следующие преимущества.
@@ -39,7 +39,7 @@ ms.locfileid: "73161037"
 
 Чтобы настроить интеграцию Azure Active Directory с Zscaler Internet Access Administrator, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Zscaler Internet Access Administrator
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,13 +100,13 @@ ms.locfileid: "73161037"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![Сведения о домене и URL-адресах единого входа для Zscaler Internet Access Administrator](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите требуемый URL-адрес:
+    а. В текстовом поле **Идентификатор** введите требуемый URL-адрес:
 
     | |
     |--|
@@ -134,15 +134,15 @@ ms.locfileid: "73161037"
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-    | ИМЯ  | Исходный атрибут  |
+    | Имя  | Исходный атрибут  |
     | ---------| ------------ |
     | Роль     | user.assignedroles |
 
-    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+    а. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![image](./common/new-save-attribute.png)
+    ![Изображение](./common/new-save-attribute.png)
     
-    ![image](./common/new-attribute-details.png)
+    ![Изображение](./common/new-attribute-details.png)
 
     b. В списке **Источник атрибута** выберите значение атрибута.
 
@@ -161,11 +161,11 @@ ms.locfileid: "73161037"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-zscaler-internet-access-administrator-single-sign-on"></a>Настройка единого входа в Zscaler Internet Access Administrator
 
@@ -175,7 +175,7 @@ ms.locfileid: "73161037"
 
     ![Администрирование](./media/zscaler-internet-access-administrator-tutorial/AdminSSO.png "Администрирование")
 
-    a. Установите флажок **Enable SAML Authentication** (Включить аутентификацию SAML).
+    а. Установите флажок **Enable SAML Authentication** (Включить аутентификацию SAML).
 
     b. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
@@ -185,9 +185,9 @@ ms.locfileid: "73161037"
 
     ![Администрирование](./media/zscaler-internet-access-administrator-tutorial/ic800207.png)
 
-    a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
+    а. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    b. Щелкните **Активировать**.
+    b. Нажмите кнопку **Активировать**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

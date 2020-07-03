@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: scottwhi
 ms.openlocfilehash: 7683930af1de0fc4e4d112c1e559358d5d5d5609
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "68500597"
 ---
 # <a name="get-insights-about-a-video"></a>Получение полезных сведений о видео
@@ -97,5 +97,5 @@ Host: api.cognitive.microsoft.com
 ## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
-> [Поиск видео, набирающих популярность](trending-videos.md)
+> [Поиск видеороликов по тенденциям](trending-videos.md)
 

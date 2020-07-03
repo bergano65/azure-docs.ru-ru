@@ -1,26 +1,31 @@
 - name: Документация по Когнитивному поиску Azure
   href: index.yml
 - name: Обзор
-  expanded: true
   items:
     - name: Что собой представляет Когнитивный поиск Azure?
       href: search-what-is-azure-search.md
     - name: Новые возможности
       href: whats-new.md
 - name: Краткие руководства
+  expanded: true
   items:
-    - name: Создание службы
-      href: search-create-service-portal.md
     - name: Портал
       items:
+        - name: Создание службы
+          href: search-create-service-portal.md
         - name: Создание индекса
           href: search-get-started-portal.md
         - name: Создание приложения
           href: search-create-app-portal.md
-        - name: Создание набора навыков когнитивного поиска
+        - name: Создание набора навыков
           href: cognitive-search-quickstart-blob.md
         - name: Создание хранилища знаний
           href: knowledge-store-create-portal.md
+        - name: Подача запросов с использованием обозревателя поиска
+          href: search-explorer.md
+    - name: Шаблон ARM
+      displayName: Resource Manager
+      href: search-get-started-arm.md
     - name: 'C#'
       href: search-get-started-dotnet.md
     - name: Java
@@ -35,7 +40,7 @@
       href: search-get-started-python.md
 - name: Учебники
   items:
-    - name: 'Создание первого приложения на C#'
+    - name: 'Создание приложения C#'
       items:
         - name: "1.\_Страница базового поиска"
           href: tutorial-csharp-create-first-app.md
@@ -47,13 +52,17 @@
           href: tutorial-csharp-facets.md
         - name: "5.\_Добавление упорядочивания результатов"
           href: tutorial-csharp-orders.md
-    - name: Индексирование в Базе данных SQL Azure
-      href: search-indexer-tutorial.md
-    - name: Индексация больших двоичных объектов JSON в Azure
-      href: search-semi-structured-data.md
-    - name: Индексирование нескольких источников данных Azure
-      href: tutorial-multiple-data-sources.md
-    - name: Расширение возможностей с помощью ИИ (когнитивный поиск)
+    - name: Индексация данных Azure
+      items:
+        - name: Индексирование в Базе данных SQL Azure
+          href: search-indexer-tutorial.md
+        - name: Индексация больших двоичных объектов JSON в Azure
+          href: search-semi-structured-data.md
+        - name: Индексирование нескольких источников данных Azure
+          href: tutorial-multiple-data-sources.md
+    - name: Индексация любых данных
+      href: tutorial-optimize-indexing-push-api.md
+    - name: Использование AI для создания содержимого
       items:
         - name: 'C#'
           href: cognitive-search-tutorial-blob-dotnet.md
@@ -61,6 +70,10 @@
           href: cognitive-search-tutorial-blob.md
         - name: Python
           href: cognitive-search-tutorial-blob-python.md
+    - name: Отладка набора навыков
+      href: cognitive-search-tutorial-debug-sessions.md
+    - name: Подача запросов из Power Apps
+      href: search-howto-powerapps.md
 - name: Примеры
   items:
     - name: 'Примеры для C#'
@@ -73,14 +86,9 @@
       href: 'https://docs.microsoft.com/samples/browse/?products=azure-cognitive-search&languages=python'
     - name: Примеры REST
       href: 'https://docs.microsoft.com/samples/browse/?products=azure-cognitive-search&languages=rest'
-- name: Обучение
-  items:
-    - name: Введение (Microsoft Learn)
-      href: 'https://docs.microsoft.com/learn/modules/intro-to-azure-search/'
-    - name: Добавление функции поиска в приложения (Pluralsight)
-      href: 'https://www.pluralsight.com/courses/azure-adding-search-abilities-apps'
-    - name: Курс для разработчиков (Pluralsight)
-      href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Полнотекстовый поиск
@@ -89,17 +97,198 @@
       href: search-indexer-overview.md
     - name: Обогащение данных с помощью средств ИИ
       href: cognitive-search-concept-intro.md
-    - name: Наборы навыков
-      href: cognitive-search-working-with-skillsets.md
-    - name: Хранилище знаний
-      href: knowledge-store-concept-intro.md
-    - name: Проекции
-      href: knowledge-store-projection-overview.md
-    - name: Добавочное обогащение данных
-      href: cognitive-search-incremental-indexing-conceptual.md
+      items:
+        - name: Наборы навыков
+          href: cognitive-search-working-with-skillsets.md
+        - name: Сеансы отладки
+          href: cognitive-search-debug-session.md
+        - name: Хранилище знаний
+          href: knowledge-store-concept-intro.md
+        - name: Проекции
+          href: knowledge-store-projection-overview.md
+        - name: Добавочное обогащение данных
+          href: cognitive-search-incremental-indexing-conceptual.md
 - name: Практические руководства
   items:
-    - name: Планирование
+    - name: Создание индексов и конструкций
+      items:
+        - name: Создание простого индекса
+          href: search-what-is-an-index.md
+        - name: Создание индекса (портал)
+          href: search-create-index-portal.md
+        - name: Создание многоязычного индекса
+          href: search-language-support.md
+        - name: Анализаторы
+          items:
+            - name: Добавление анализаторов
+              href: search-analyzers.md
+            - name: Добавление анализатора языка
+              href: index-add-language-analyzers.md
+            - name: Добавление настраиваемого анализатора
+              href: index-add-custom-analyzers.md
+        - name: Синонимы
+          items:
+            - name: Добавление синонимов
+              href: search-synonyms.md
+            - name: Пример синонимов
+              href: search-synonyms-tutorial-sdk.md
+        - name: Моделирование сложных типов данных
+          href: search-howto-complex-data-types.md
+        - name: Моделирование реляционных данных
+          href: index-sql-relational-data.md
+    - name: Прием данных
+      items:
+        - name: Общие сведения об импорте данных
+          href: search-what-is-data-import.md
+        - name: Импорт данных (портал)
+          href: search-import-data-portal.md
+        - name: Перестроение индекса
+          href: search-howto-reindex.md
+        - name: Индексирование больших наборов данных
+          href: search-howto-large-index.md
+        - name: Обработка одновременных обновлений
+          href: search-howto-concurrency.md
+    - name: Прием данных Azure
+      items:
+        - name: Настройка индексаторов
+          href: search-indexer-overview.md
+        - name: Монитор индексаторов
+          href: search-howto-monitor-indexers.md
+        - name: Расписание индексаторов
+          href: search-howto-schedule-indexers.md
+        - name: Сопоставление полей
+          href: search-indexer-field-mappings.md
+        - name: Источники данных
+          items:
+            - name: Большие двоичные объекты Azure
+              items:
+                - name: Поиск по большим двоичным объектам
+                  href: search-blob-storage-integration.md
+                - name: Общие сведения об использовании больших двоичных объектов с AI
+                  href: search-blob-ai-integration.md
+                - name: Настройка индексатора больших двоичных объектов
+                  href: search-howto-indexing-azure-blob-storage.md
+                - name: Индексирование больших двоичных объектов по модели "один ко многим"
+                  href: search-howto-index-one-to-many-blobs.md
+                - name: Индексация больших двоичных объектов CSV
+                  href: search-howto-index-csv-blobs.md
+                - name: Индексация больших двоичных объектов JSON
+                  href: search-howto-index-json-blobs.md
+            - name: Таблицы Azure
+              href: search-howto-indexing-azure-tables.md
+            - name: Azure Cosmos DB
+              href: search-howto-index-cosmosdb.md
+            - name: Azure Data Lake Storage 2-го поколения
+              href: search-howto-index-azure-data-lake-storage.md
+            - name: База данных SQL
+              href: search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md
+            - name: Управляемые экземпляры SQL
+              href: search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md
+            - name: виртуальные машины SQL Server.
+              href: search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md
+        - name: Подключение с использованием управляемых удостоверений
+          items:
+            - name: Общие сведения об управляемых удостоверениях
+              href: search-howto-managed-identities-data-sources.md
+            - name: Хранилище Azure
+              href: search-howto-managed-identities-storage.md
+            - name: Azure Cosmos DB
+              href: search-howto-managed-identities-cosmos-db.md
+            - name: База данных SQL
+              href: search-howto-managed-identities-sql.md
+    - name: Прием данных с помощью ИИ
+      items:
+        - name: Вложение ресурса Cognitive Services
+          href: cognitive-search-attach-cognitive-services.md
+        - name: Наборы навыков
+          items:
+            - name: Определение набора навыков
+              href: cognitive-search-defining-skillset.md
+            - name: Ссылка на заметку
+              href: cognitive-search-concept-annotations-syntax.md
+            - name: Сопоставление с полями индекса
+              href: cognitive-search-output-field-mapping.md
+            - name: Извлечение информации из изображений
+              href: cognitive-search-concept-image-scenarios.md
+            - name: Обогащение кэша (добавочное)
+              href: search-howto-incremental-index.md
+        - name: Пользовательские навыки
+          items:
+            - name: Интеграция пользовательских навыков
+              href: cognitive-search-custom-skill-interface.md
+            - name: Пример. Функции Azure (Python)
+              href: cognitive-search-custom-skill-python.md
+            - name: "Пример\_— Функции Azure"
+              href: cognitive-search-create-custom-skill-example.md
+            - name: "Пример\_— Распознаватель документов Azure"
+              href: cognitive-search-custom-skill-form.md
+            - name: "Пример\_— контейнеры"
+              href: 'https://go.microsoft.com/fwlink/?linkid=2089500'
+        - name: Советы по проектированию
+          href: cognitive-search-concept-troubleshooting.md
+        - name: Ссылки на документацию
+          href: cognitive-search-resources-documentation.md
+        - name: Хранилище знаний
+          items:
+            - name: Создание с помощью REST и Postman
+              href: knowledge-store-create-rest.md
+            - name: Просмотр данных с помощью Обозревателя службы хранилища
+              href: knowledge-store-view-storage-explorer.md
+            - name: Подключение с помощью Power BI
+              href: knowledge-store-connect-power-bi.md
+            - name: Примеры проекции
+              href: knowledge-store-projections-examples.md
+    - name: Запрос
+      items:
+        - name: Типы запросов и составление запросов
+          href: search-query-overview.md
+        - name: Создание простого запроса
+          href: search-query-simple-examples.md
+        - name: Использование полного синтаксиса Lucene
+          href: search-query-lucene-examples.md
+        - name: Частично введенные термины и специальные символы
+          href: search-query-partial-matching.md
+        - name: Поиск нечетких соответствий
+          href: search-query-fuzzy.md
+        - name: Автозавершение при поиске по мере ввода
+          items:
+            - name: Создание средства подбора
+              href: index-add-suggesters.md
+            - name: Добавление автозаполнения и предложений
+              href: search-autocomplete-tutorial.md
+        - name: Справочник по синтаксису
+          items:
+            - name: Простой синтаксис запросов
+              href: query-simple-syntax.md
+            - name: Полный синтаксис запросов Lucene
+              href: query-lucene-syntax.md
+            - name: moreLikeThis (предварительная версия)
+              href: search-more-like-this.md
+    - name: Filter
+      items:
+        - name: Общие сведения о фильтрах
+          href: search-filters.md
+        - name: Фильтры аспекта
+          href: search-filters-facets.md
+        - name: Добавление фасетной навигации
+          href: search-faceted-navigation.md
+        - name: Устранение неполадок с фильтрами коллекций
+          href: search-query-troubleshoot-collection-filters.md
+        - name: Основные сведения о фильтрах коллекций
+          href: search-query-understand-collection-filters.md
+        - name: Фильтрация по языку
+          href: search-filters-language.md
+    - name: Результаты
+      items:
+        - name: Работа с результатами
+          href: search-pagination-page-layout.md
+        - name: Оценка релевантности
+          href: index-similarity-and-scoring.md
+        - name: Профили оценки
+          href: index-add-scoring-profiles.md
+        - name: Алгоритм проверки сходства
+          href: index-ranking-similarity.md
+    - name: План
       items:
         - name: Выбор уровня
           href: search-sku-tier.md
@@ -111,22 +300,6 @@
           href: search-performance-optimization.md
         - name: Мультитенантная архитектура
           href: search-modeling-multitenant-saas-applications.md
-    - name: Безопасность
-      items:
-        - name: Общие сведения о безопасности
-          href: search-security-overview.md
-        - name: Создание частной конечной точки
-          href: service-create-private-endpoint.md
-        - name: Управление ключами службы
-          href: search-security-api-keys.md
-        - name: Доступ администратора на основе ролей
-          href: search-security-rbac.md
-        - name: Фильтры системы безопасности
-          href: search-security-trimming-for-azure-search.md
-        - name: Фильтр по удостоверениям AAD
-          href: search-security-trimming-for-azure-search-with-aad.md
-        - name: Управление ключами шифрования
-          href: search-security-manage-encryption-keys.md
     - name: Разработка
       items:
         - name: Версии API
@@ -151,182 +324,42 @@
               href: search-dotnet-mgmt-sdk-migration.md
         - name: Обновление REST API
           href: search-api-migration.md
-    - name: Создание индекса
+    - name: Безопасность
       items:
-        - name: Создание простого индекса
-          href: search-what-is-an-index.md
-        - name: Создание индекса (портал)
-          href: search-create-index-portal.md
-        - name: Создание многоязычного индекса
-          href: search-language-support.md
-        - name: Анализаторы
-          items:
-            - name: Добавление анализаторов
-              href: search-analyzers.md
-            - name: Добавление анализатора языка
-              href: index-add-language-analyzers.md
-            - name: Добавление настраиваемого анализатора
-              href: index-add-custom-analyzers.md
-        - name: Опережающий ввод
-          items:
-            - name: Создание средства подбора
-              href: index-add-suggesters.md
-            - name: Добавление предложения или автозаполнение
-              href: search-autocomplete-tutorial.md
-        - name: Синонимы
-          items:
-            - name: Добавление синонимов
-              href: search-synonyms.md
-            - name: Пример синонимов
-              href: search-synonyms-tutorial-sdk.md
-        - name: Моделирование сложных типов данных
-          href: search-howto-complex-data-types.md
-        - name: Моделирование реляционных данных
-          href: index-sql-relational-data.md
-    - name: Индексирование (импорт)
-      items:
-        - name: Общие сведения об импорте данных
-          href: search-what-is-data-import.md
-        - name: Импорт данных (портал)
-          href: search-import-data-portal.md
-        - name: Перестроение индекса
-          href: search-howto-reindex.md
-        - name: Индексирование больших наборов данных
-          href: search-howto-large-index.md
-        - name: Обработка одновременных обновлений
-          href: search-howto-concurrency.md
-    - name: Использование индексатора
-      items:
-        - name: Настройка индексаторов
-          href: search-indexer-overview.md
-        - name: Сопоставление полей
-          href: search-indexer-field-mappings.md
-        - name: Монитор индексаторов
-          href: search-howto-monitor-indexers.md
-        - name: Расписание индексаторов
-          href: search-howto-schedule-indexers.md
-        - name: Источники данных
-          items:
-            - name: Большие двоичные объекты Azure
-              items:
-                - name: Поиск по большим двоичным объектам
-                  href: search-blob-storage-integration.md
-                - name: Общие сведения об использовании больших двоичных объектов с AI
-                  href: search-blob-ai-integration.md
-                - name: Настройка индексатора больших двоичных объектов
-                  href: search-howto-indexing-azure-blob-storage.md
-                - name: Индексирование больших двоичных объектов по модели "один ко многим"
-                  href: search-howto-index-one-to-many-blobs.md
-                - name: Индексация больших двоичных объектов CSV
-                  href: search-howto-index-csv-blobs.md
-                - name: Индексация больших двоичных объектов JSON
-                  href: search-howto-index-json-blobs.md
-            - name: Azure Cosmos DB
-              href: search-howto-index-cosmosdb.md
-            - name: Azure Data Lake Storage 2-го поколения
-              href: search-howto-index-azure-data-lake-storage.md
-            - name: База данных SQL Azure
-              href: search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md
-            - name: Хранилище таблиц Azure
-              href: search-howto-indexing-azure-tables.md
-            - name: Управляемые экземпляры SQL
-              href: search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md
-            - name: виртуальные машины SQL Server.
-              href: search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md
-    - name: Обогащение данных с помощью средств ИИ
-      items:
-        - name: Вложение ресурса Cognitive Services
-          href: cognitive-search-attach-cognitive-services.md
-        - name: Наборы навыков
-          items:
-            - name: Определение набора навыков
-              href: cognitive-search-defining-skillset.md
-            - name: Ссылка на заметку
-              href: cognitive-search-concept-annotations-syntax.md
-            - name: Сопоставление с полями индекса
-              href: cognitive-search-output-field-mapping.md
-            - name: Извлечение информации из изображений
-              href: cognitive-search-concept-image-scenarios.md
-            - name: Обогащение кэша (добавочное)
-              href: search-howto-incremental-index.md
-        - name: Пользовательские навыки
-          items:
-            - name: Интеграция пользовательских навыков
-              href: cognitive-search-custom-skill-interface.md
-            - name: Пример. Функции Azure (Python)
-              href: cognitive-search-custom-skill-python.md
-            - name: "Пример\_— Функции Azure"
-              href: cognitive-search-create-custom-skill-example.md
-            - name: "Пример\_— контейнеры"
-              href: 'https://go.microsoft.com/fwlink/?linkid=2089500'
-        - name: Советы по проектированию
-          href: cognitive-search-concept-troubleshooting.md
-        - name: Ссылки на документацию
-          href: cognitive-search-resources-documentation.md
-        - name: Хранилище знаний
-          items:
-            - name: Создание с помощью REST и Postman
-              href: knowledge-store-create-rest.md
-            - name: Просмотр данных с помощью Обозревателя службы хранилища
-              href: knowledge-store-view-storage-explorer.md
-            - name: Подключение с помощью Power BI
-              href: knowledge-store-connect-power-bi.md
-            - name: Примеры проекции
-              href: knowledge-store-projections-examples.md
-    - name: Запрос документов
-      items:
-        - name: Типы запросов и составление запросов
-          href: search-query-overview.md
-        - name: Создание простого запроса
-          href: search-query-simple-examples.md
-        - name: Использование полного синтаксиса Lucene
-          href: search-query-lucene-examples.md
-        - name: Использование обозревателя поиска (портал)
-          href: search-explorer.md
-        - name: Специальные символы и частично указанные термины
-          href: search-query-partial-matching.md
-        - name: Справочник по синтаксису
-          items:
-            - name: Простой синтаксис запросов
-              href: query-simple-syntax.md
-            - name: Полный синтаксис запросов Lucene
-              href: query-lucene-syntax.md
-            - name: moreLikeThis (предварительная версия)
-              href: search-more-like-this.md
-    - name: Применение фильтров
-      items:
-        - name: Общие сведения о фильтрах
-          href: search-filters.md
-        - name: Фильтры аспекта
-          href: search-filters-facets.md
-        - name: Добавление фасетной навигации
-          href: search-faceted-navigation.md
-        - name: Устранение неполадок с фильтрами коллекций
-          href: search-query-troubleshoot-collection-filters.md
-        - name: Основные сведения о фильтрах коллекций
-          href: search-query-understand-collection-filters.md
-        - name: Пример многоуровневых аспектов
-          href: search-example-adventureworks-multilevel-faceting.md
-    - name: Обработка результатов
-      items:
-        - name: Функции страниц
-          href: search-pagination-page-layout.md
-        - name: Настройка релевантности (профили повышения)
-          href: index-add-scoring-profiles.md
-    - name: Управление службой
+        - name: Общие сведения о безопасности
+          href: search-security-overview.md
+        - name: Создание частной конечной точки
+          href: service-create-private-endpoint.md
+        - name: Настройка брандмауэра IP-адресов
+          href: service-configure-firewall.md
+        - name: Управление ключами службы
+          href: search-security-api-keys.md
+        - name: Доступ администратора на основе ролей
+          href: search-security-rbac.md
+        - name: Фильтры системы безопасности
+          href: search-security-trimming-for-azure-search.md
+        - name: Фильтр по удостоверениям AAD
+          href: search-security-trimming-for-azure-search-with-aad.md
+        - name: Управление ключами шифрования
+          href: search-security-manage-encryption-keys.md
+    - name: Управление
       items:
         - name: Портал
           href: search-manage.md
         - name: PowerShell
           href: search-manage-powershell.md
-    - name: Мониторинг и ведение журналов
+        - name: Перемещение служб между регионами
+          href: search-howto-move-across-regions.md
+    - name: Монитор
       items:
         - name: Основные сведения
           href: search-monitor-usage.md
-        - name: Мониторинг действий запросов
-          href: search-monitor-queries.md
         - name: Ведение журнала диагностики
           href: search-monitor-logs.md
+        - name: Визуализация журналов диагностики
+          href: search-monitor-logs-powerbi.md
+        - name: Мониторинг действий запросов
+          href: search-monitor-queries.md
         - name: Поиск в аналитике трафика
           href: search-traffic-analytics.md
     - name: Диагностика
@@ -355,7 +388,7 @@
           href: /rest/api/searchservice
         - name: Версия 2019-05-06-Preview для службы поиска
           href: /rest/api/searchservice/index-2019-05-06-preview
-        - name: Management 2015-08-15
+        - name: Управление 2020-03-13
           href: /rest/api/searchmanagement
         - name: Management 2019-10-01-Preview
           href: /rest/api/searchmanagement/index-2019-10-01-preview
@@ -445,11 +478,15 @@
         - name: Демонстрация с финансовыми файлами
           href: 'https://wolterskluwereap.azurewebsites.net/'
         - name: Демонстрация с файлами JFK
-          href: 'https://aka.ms/jfkfiles'
-        - name: Демонстрация заданий NYC
-          href: 'https://aka.ms/azjobsdemo'
-        - name: Варианты использования поиска
-          href: 'https://searchsamples.azurewebsites.net/'
+          href: 'https://www.microsoft.com/en-us/ai/ai-lab-jfk-files'
+    - name: Обучение
+      items:
+        - name: Введение (Microsoft Learn)
+          href: 'https://docs.microsoft.com/learn/modules/intro-to-azure-search/'
+        - name: Добавление функции поиска в приложения (Pluralsight)
+          href: 'https://www.pluralsight.com/courses/azure-adding-search-abilities-apps'
+        - name: Курс для разработчиков (Pluralsight)
+          href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
     - name: ВОПРОСЫ И ОТВЕТЫ
       href: search-faq-frequently-asked-questions.md
     - name: Цены

@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 08/24/2018
 tags: connectors
 ms.openlocfilehash: 116922e018410f260b33f4dfd76e5983fbbcc0a5
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74789330"
 ---
 # <a name="manage-project-online-projects-tasks-and-resources-by-using-azure-logic-apps"></a>Управление проектами, задачами и ресурсами Project Online с помощью Azure Logic Apps
@@ -23,15 +23,15 @@ ms.locfileid: "74789330"
 * получать список имеющихся проектов или задач;
 * получать проекты для изменения, записывать их после изменения или публиковать.
 
-Project Online помогает вам планировать, определять приоритеты и управлять проектами и инвестициями портфеля проектов практически из любого места на любом устройстве, предоставляя мощные возможности управления проектами. Вы можете использовать триггеры Project Online, которые получают ответы от Project Online и обеспечивают доступность выходных данных для других действий. Вы можете использовать действия в своих приложениях логики для выполнения различных задач в Project Online. Если вы не знакомы с приложениями логики, ознакомьтесь со статьей [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md).
+Project Online помогает вам планировать, определять приоритеты и управлять проектами и инвестициями портфеля проектов практически из любого места на любом устройстве, предоставляя мощные возможности управления проектами. Вы можете использовать триггеры Project Online, которые получают ответы от Project Online и обеспечивают доступность выходных данных для других действий. Вы можете использовать действия в своих приложениях логики для выполнения различных задач в Project Online. Если вы не знакомы с приложениями логики, ознакомьтесь с [Azure Logic Apps?](../logic-apps/logic-apps-overview.md)
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/). 
 
 * Project Online, доступная через [учетную запись Office 365](https://www.office.com/). 
 
-* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 
 * Приложение логики, из которого необходимо получить доступ к данным Project Online. Чтобы начать работу с триггером Project Online, [создайте пустое приложение логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). Чтобы использовать действия Project Online, запустите свое приложение логики с помощью другого триггера, например триггера **повторения**.
 

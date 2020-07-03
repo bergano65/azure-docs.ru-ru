@@ -3,20 +3,20 @@ title: BuildingBlocks
 titleSuffix: Azure AD B2C
 description: Сведения об указании элемента BuildingBlocks настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 12/10/2019
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 87157980a352f9665852c78a94dcfc227c08b487
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: cf9c333af48e1c148dcd20ccf5ce91b284bd728b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75367560"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78189877"
 ---
 # <a name="buildingblocks"></a>BuildingBlocks
 

@@ -1,26 +1,22 @@
 ---
-title: Изменение значений времени существования маркера по умолчанию для пользовательских приложений Azure AD | Документация Майкрософт
+title: Изменение значений времени существования маркера по умолчанию для пользовательских приложений Azure AD
 description: Обновление политик времени существования токена для приложения, разрабатываемого в Azure AD
 services: active-directory
-documentationcenter: ''
 author: rwike77
 manager: CelesteDG
-ms.assetid: ''
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: ryanwi
 ms.custom: aaddev, seoapril2019
-ms.openlocfilehash: 431f18b9babb52b5000d3bf4cca75a0f5e29bb93
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: fc71ebe61fba8c1bdb6b7625b16a50d8995a581a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76702816"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80883359"
 ---
 # <a name="how-to-change-the-token-lifetime-defaults-for-a-custom-developed-application"></a>Как изменить стандартное время существования токена для специально разработанного приложения
 
@@ -34,4 +30,4 @@ ms.locfileid: "76702816"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * См. в разделе [Настройка времени существования маркеров в Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-configurable-token-lifetimes) чтобы узнать, как настроить время существования маркера, выданного Azure AD, включая то, как задать время существования маркеров для всех приложений в вашей организации, для многопользовательского приложения или для конкретной службы. 
-* [Справочник по токенам в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims)
+* [Справочник по маркерам Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims)

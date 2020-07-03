@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit | Документация Майкрософт
+title: Руководство по Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Azure AD SAML Toolkit.
 services: active-directory
 documentationCenter: na
@@ -11,19 +11,18 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/12/2019
+ms.date: 04/24/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1aa2d58a40c623cc451ca30aaa9d75a4a6b3d4c0
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 4d2681c09030ff0f36938d7a09e1d1b2e9aa645c
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983884"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82166316"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-azure-ad-saml-toolkit"></a>Руководство. Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-azure-ad-saml-toolkit"></a>Руководство по Интеграция единого входа Azure Active Directory с Azure AD SAML Toolkit
 
 В этом руководстве описано, как интегрировать Azure AD SAML Toolkit с Azure Active Directory (Azure AD). Интеграция Azure AD SAML Toolkit с Azure AD обеспечивает следующие возможности.
 
@@ -45,6 +44,7 @@ ms.locfileid: "76983884"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * Azure AD SAML Toolkit поддерживает единый вход, инициируемый **поставщиком службы**.
+* После настройки Azure AD SAML Toolkit можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-azure-ad-saml-toolkit-from-the-gallery"></a>Добавление Azure AD SAML Toolkit из коллекции
 
@@ -76,17 +76,20 @@ ms.locfileid: "76983884"
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Azure AD SAML Toolkit** найдите раздел **Управление** и выберите **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
-1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры. Параметры можно получить на странице настройки SAML в наборе средств SAML. 
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 1. На странице **Базовая конфигурация SAML** введите значения для следующих полей.
 
-    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://samltoolkit.azurewebsites.net/SAML/Login/<3digitnumber>`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://samltoolkit.azurewebsites.net/`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `https://samltoolkit.azurewebsites.net`
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://samltoolkit.azurewebsites.net/SAML/Consume/<3digitnumber>`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://samltoolkit.azurewebsites.net/SAML/Consume`
+
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Замените эти значения фактическими URL-адресом входа, URL-адресом ответа и идентификатором, как описано далее в этом руководстве.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **Сертификат (необработанный)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -154,6 +157,8 @@ ms.locfileid: "76983884"
 
     1. Нажмите кнопку **Создать**.
 
+    1. Скопируйте URL-адрес входа, идентификатор и URL-адрес службы ACS на странице настройки единого входа для набора средств SAML. Вставьте эти данные в соответствующие текстовые поля в **разделе базовой конфигурации SAML** на портале Azure.
+
 ### <a name="create-azure-ad-saml-toolkit-test-user"></a>Создание тестового пользователя Azure AD SAML Toolkit
 
 В этом разделе описано, как в приложении Azure AD SAML Toolkit создать пользователя B.Simon. Azure AD SAML Toolkit поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Azure AD SAML Toolkit, он создается после выполнения аутентификации.
@@ -173,3 +178,7 @@ ms.locfileid: "76983884"
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 - [Попробуйте Azure AD SAML Toolkit с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Как Cloud App Security помогает защитить среду Azure](https://docs.microsoft.com/cloud-app-security/protect-azure)

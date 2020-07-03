@@ -3,7 +3,7 @@ title: Руководство по запуску сборника схем в A
 description: Руководство по В этой статье описывается, как запустить сборник схем в Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.assetid: e4afc5c8-ffad-4169-8b73-98d00155fa5a
@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/12/2019
-ms.author: rkarlin
-ms.openlocfilehash: 7e26e901fdee8cac79cfb55aa0999487e87b8a78
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.date: 02/18/2019
+ms.author: yelevin
+ms.openlocfilehash: f6adcb978dbe540d3bdd352089d4dde407d0fb4c
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74113925"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77585090"
 ---
 # <a name="tutorial-set-up-automated-threat-responses-in-azure-sentinel"></a>Руководство по настройке автоматического реагирования на угрозы в Azure Sentinel
 
@@ -64,7 +64,7 @@ ms.locfileid: "74113925"
 
    ![приложение логики;](./media/tutorial-respond-threats-playbook/playbookimg.png)
 
-3. На странице **Azure Sentinel - Playbooks (Preview)** (Azure Sentinel. Сборники схем (предварительная версия)) нажмите кнопку **Добавить**.
+3. На странице **Azure Sentinel — Сборники схем** нажмите кнопку **Добавить**.
 
    ![Создание приложения логики](./media/tutorial-respond-threats-playbook/create-playbook.png) 
 
@@ -115,7 +115,7 @@ ms.locfileid: "74113925"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом учебнике вы узнали, как запустить сборник схем в Azure Sentinel. Перейдите к статье [об упреждающем обнаружении угроз](hunting.md) с помощью Azure Sentinel.
 

@@ -12,14 +12,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/24/2018
-ms.openlocfilehash: 3c077e2c04cae94d2e1a2a84ccd7d09c7a0829b4
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 4da54318bea21daf9ec363be61bea18adaa2ce63
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75439720"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82629038"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Разностное копирование из базы данных с помощью управляющей таблицы
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 В этой статье описывается шаблон, доступный для добавочной загрузки новых или обновленных строк из таблицы базы данных в Azure с помощью внешней таблицы управления, в которой хранится значение верхнего предела.
 
@@ -35,7 +37,7 @@ ms.locfileid: "75439720"
 Шаблон состоит из четырех действий.
 - **Поиск** получает старое значение верхнего предела, которое хранится во внешней таблице элементов управления.
 - Другое действие **поиска** извлекает текущее значение высокой подложки из базы данных-источника.
-- **Копировать** копирует только изменения из базы данных источника в целевое хранилище. Запрос, определяющий изменения в базе данных-источнике, аналогичен "SELECT * FROM Data_Source_Table, где TIMESTAMP_Column >" последняя большая Подложка "и TIMESTAMP_Column < =" текущий верхний предел ".
+- **Копировать** копирует только изменения из базы данных источника в целевое хранилище. Запрос, определяющий изменения в базе данных-источнике, аналогичен "SELECT * FROM Data_Source_Table, где TIMESTAMP_Column >" последняя большая Подложка "и TIMESTAMP_Column <=" текущий верхний предел ".
 - **SqlServerStoredProcedure** записывает текущее значение высокой подложки во внешнюю таблицу управления для разностного копирования в следующий раз.
 
 Шаблон определяет следующие параметры:
@@ -108,11 +110,11 @@ ms.locfileid: "75439720"
   
     ![Проверка конвейера](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable8.png)
 
-9. Выберите **хранимая процедура**. В качестве **имени хранимой процедуры**выберите **[dbo]. [ update_watermark]** . Выберите **параметр импорта**, а затем выберите **добавить динамическое содержимое**.  
+9. Выберите **хранимая процедура**. В качестве **имени хранимой процедуры**выберите **[dbo]. [ update_watermark]**. Выберите **параметр импорта**, а затем выберите **добавить динамическое содержимое**.  
 
     ![Задание действия хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable9.png)  
 
-10. Запишите содержимое **\@{Activity (' лукупкуррентватермарк '). Output. firstRow. невватермарквалуе}** и нажмите кнопку **Готово**.  
+10. Запишите содержимое ** \@{Activity (' лукупкуррентватермарк '). Output. firstRow. невватермарквалуе}** и нажмите кнопку **Готово**.  
 
     ![Запись содержимого для параметров хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable10.png)       
      
@@ -145,4 +147,4 @@ ms.locfileid: "75439720"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Полное копирование из базы данных с помощью таблицы элементов управления и фабрики данных Azure](solution-template-bulk-copy-with-control-table.md)
-- [Копирование файлов из нескольких контейнеров с помощью фабрики данных Azure](solution-template-copy-files-multiple-containers.md)
+- [Копирование файлов из нескольких контейнеров с помощью Фабрики данных Azure](solution-template-copy-files-multiple-containers.md)

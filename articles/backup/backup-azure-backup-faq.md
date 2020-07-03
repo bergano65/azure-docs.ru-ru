@@ -3,12 +3,12 @@ title: Ответы на часто задаваемые вопросы
 description: 'Ответы на часто задаваемые вопросы о возможностях службы Azure Backup, в частности о хранилищах служб восстановления, объектах, для которых можно создавать резервные копии, принципе работы, шифровании и ограничениях. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: c8449ef27ca73cd6e0c2908ce4cbebea2c513dbc
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
-ms.translationtype: HT
+ms.openlocfilehash: c82942c17d330eb5f632ef3ce43f00b338ba85f8
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75450090"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83196267"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 
@@ -22,7 +22,7 @@ ms.locfileid: "75450090"
 
 ### <a name="are-there-limits-on-the-number-of-serversmachines-that-can-be-registered-against-each-vault"></a>Существует ли ограничение на число серверов и компьютеров, которые можно зарегистрировать в каждом хранилище?
 
-Вы можете зарегистрировать не более 1000 виртуальных машин Azure в одном хранилище. Если вы используете агент Microsoft Azure Backup, вы можете зарегистрировать не более 50 агентов в одном хранилище. Кроме того, вы можете зарегистрировать 50 серверов MAB и (или) DPM в хранилище.
+Вы можете зарегистрировать не более 1000 виртуальных машин Azure в одном хранилище. Если вы используете агент Microsoft Azure Backup, можно зарегистрировать до 50 агентов MARS на хранилище. Вы также можете зарегистрировать серверы MABS или серверы DPM 50 в хранилище.
 
 ### <a name="how-many-datasourcesitems-can-be-protected-in-a-vault"></a>Сколько источников данных и элементов можно защитить в хранилище?
 
@@ -107,7 +107,7 @@ Windows 8 или более поздняя версия | 54 400 ГБ
 Windows 7 |1700 ГБ
 Windows Server 2012 или более поздней версии; | 54 400 ГБ
 Windows Server 2008, Windows Server 2008 R2 | 1700 ГБ
-Azure | 16 дисков данных<br/> Чтобы зарегистрироваться для использования закрытой предварительной версии виртуальных машин, поддерживающих более 16 дисков (до 32 дисков), напишите нам на адрес AskAzureBackupTeam@microsoft.com. <br><br> Диск с данными размером до 32 ТБ
+Azure | См. [таблицу поддержки для резервного копирования виртуальных машин Azure](https://docs.microsoft.com/azure/backup/backup-support-matrix-iaas#vm-storage-support) .
 
 ### <a name="how-is-the-data-source-size-determined"></a>Как вычисляется размер источника данных?
 
@@ -123,7 +123,7 @@ Exchange |Сумма размеров всех баз данных Exchange на
 
 ### <a name="is-there-a-limit-on-the-amount-of-data-backed-up-using-a-recovery-services-vault"></a>Существует ли ограничение на объем данных резервного копирования в хранилище Служб восстановления?
 
-Не существует ограничений на объем данных резервного копирования в хранилище Служб восстановления.
+Не существует ограничения на общий объем данных, которые можно архивировать с помощью хранилища служб восстановления. Отдельные источники данных (кроме виртуальных машин Azure) могут иметь размер не более 54 400 ГБ. Дополнительные сведения об ограничениях см. в [разделе ограничения хранилища в матрице поддержки](https://docs.microsoft.com/azure/backup/backup-support-matrix#vault-support).
 
 ### <a name="why-is-the-size-of-the-data-transferred-to-the-recovery-services-vault-smaller-than-the-data-selected-for-backup"></a>Почему размер данных, переданных в хранилище Служб восстановления, меньше размера данных, выбранных для резервного копирования?
 

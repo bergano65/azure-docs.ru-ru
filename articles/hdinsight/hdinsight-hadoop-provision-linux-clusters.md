@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
-ms.date: 02/12/2020
-ms.openlocfilehash: b4922326b92efa88552eb100488a29fc53e1f914
-ms.sourcegitcommit: 333af18fa9e4c2b376fa9aeb8f7941f1b331c11d
+ms.date: 04/30/2020
+ms.openlocfilehash: 4eaa9c4e3d200eedd57c468639c1af3830911d1d
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2020
-ms.locfileid: "77198992"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82889261"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -26,6 +26,8 @@ ms.locfileid: "77198992"
 > [!IMPORTANT]  
 > Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен. Узнайте, как [удалить кластер](hdinsight-delete-cluster.md).
 
+Если вы используете несколько кластеров вместе, вам нужно создать виртуальную сеть и, если вы используете кластер Spark, также хотите использовать соединитель хранилища Hive. Дополнительные сведения см. в статьях [планирование виртуальной сети для Azure HDInsight](./hdinsight-plan-virtual-network-deployment.md) и [интеграция Apache Spark и Apache Hive с помощью соединителя хранилища Hive](interactive-query/apache-hive-warehouse-connector.md).
+
 ## <a name="cluster-setup-methods"></a>Способы установки кластера
 
 В приведенной ниже таблице представлены различные способы установки кластера HDInsight.
@@ -36,10 +38,10 @@ ms.locfileid: "77198992"
 | [Фабрика данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md). |✔ |✔ |✔ |✔ |
 | [Azure CLI](hdinsight-hadoop-create-linux-clusters-azure-cli.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 | [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
-| [cURL](hdinsight-hadoop-create-linux-clusters-curl-rest.md) |&nbsp; |✔ |✔ |&nbsp; |
-| [Шаблоны диспетчера ресурсов Azure](hdinsight-hadoop-create-linux-clusters-arm-templates.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
+| [Листывания](hdinsight-hadoop-create-linux-clusters-curl-rest.md) |&nbsp; |✔ |✔ |&nbsp; |
+| [Шаблоны Azure Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md) |&nbsp; |✔ |&nbsp; |&nbsp; |
 
-В этой статье описывается настройка в [портал Azure](https://portal.azure.com), где можно создать кластер HDInsight с помощью представления по умолчанию или *классической*модели.
+В этой статье описывается настройка в [портал Azure](https://portal.azure.com), где можно создать кластер HDInsight.
 
 ## <a name="basics"></a>Основы
 
@@ -95,16 +97,16 @@ ms.locfileid: "77198992"
 
 Имя пользователя HTTP имеет следующие ограничения.
 
-* Разрешенные специальные символы: `_` и `@`
-* Недопустимые символы: #;. "",\/: "! *? $ (){}[] < > | &--= +% ~ ^ Space
+* Разрешенные специальные символы `_` : и`@`
+* Недопустимые символы: #;. ""\/,: "! *? $ ({}) [] <>|&--= +% ~ ^ Space
 * Максимальная длина: 20
 
 Имя пользователя SSH имеет следующие ограничения.
 
-* Разрешенные специальные символы:`_` и `@`
-* Недопустимые символы: #;. "",\/: "! *? $ (){}[] < > | &--= +% ~ ^ Space
+* Разрешенные специальные символы`_` : и`@`
+* Недопустимые символы: #;. ""\/,: "! *? $ ({}) [] <>|&--= +% ~ ^ Space
 * Максимальная длина: 64
-* Зарезервированные имена: Hadoop, Users, Oozie, Hive, mapred, ambari-QA, Zookeeper, TEZ, HDFS, sqoop, Yarn, хкат, AMS, HBase, множество, администратор, Admin, пользователь, Пользователь1, тест, Пользователь2, test1, user3, admin1, 1, 123, a, актусер, ADM, Admin2, ASPNET, Backup, Console, Дэвид, гость, Джон, владелец, корень, сервер, SQL, поддержка, support_388945a0, sys, test2, test3, user4, User5, Spark
+* Зарезервированные имена: Hadoop, Users, Oozie, Hive, mapred, ambari-QA, Zookeeper, TEZ, HDFS, sqoop, Yarn, хкат, AMS, HBase, множество, администратор, администратор, пользователь, Пользователь1, тест, Пользователь2, test1, user3, admin1, 1, 123, a, актусер, ADM, Admin2, ASPNET, резервное копирование, консоль, Дэвид, гость, Джон, владелец, корень, сервер, SQL, поддержка, support_388945a0, sys, test2, test3, user4, User5, Spark
 
 ## <a name="storage"></a>Память
 
@@ -128,6 +130,9 @@ ms.locfileid: "77198992"
 Во время настройки вы указываете контейнер BLOB-объектов в учетной записи хранения Azure или хранилище Data Lake Storage для конечной точки хранилища по умолчанию. Хранилище по умолчанию содержит журналы приложений и системный журнал. При необходимости вы можете указать дополнительные связанные учетные записи хранения Azure и учетные записи Data Lake Storage, к которым кластер может получать доступ. Кластер HDInsight должен находиться в том же расположении Azure, что и зависимые учетные записи хранения.
 
 [!INCLUDE [secure-transfer-enabled-storage-account](../../includes/hdinsight-secure-transfer.md)]
+
+> [!IMPORTANT]
+> Включение безопасного обмена хранилищами после создания кластера может привести к ошибкам с помощью учетной записи хранения и не рекомендуется. Лучше создать новый кластер с использованием учетной записи хранения с уже включенной безопасной защитой.
 
 ### <a name="metastore-settings"></a>Параметры хранилище метаданных
 
@@ -169,7 +174,7 @@ Ambari используется для мониторинга кластеров
 
 ### <a name="tls"></a>TLS
 
-Дополнительные сведения см. в разделе [безопасность транспортного уровня](./hdinsight-plan-virtual-network-deployment.md#transport-layer-security) .
+Дополнительные сведения см. в разделе [безопасность транспортного уровня](./transport-layer-security.md) .
 
 ### <a name="virtual-network"></a>Виртуальная сеть
 
@@ -187,7 +192,7 @@ Ambari используется для мониторинга кластеров
 
 Этот параметр доступен только для типа кластера Kafka. Дополнительные сведения см. в разделе [использование прокси-сервера RESTful](./kafka/rest-proxy.md).
 
-### <a name="identity"></a>Тождество
+### <a name="identity"></a>Удостоверение
 
 Дополнительные сведения см. [в статье управляемые удостоверения в Azure HDInsight](./hdinsight-managed-identities.md).
 
@@ -195,13 +200,13 @@ Ambari используется для мониторинга кластеров
 
 ![HDInsight выберите размер узла](./media/hdinsight-hadoop-provision-linux-clusters/azure-portal-cluster-configuration.png)
 
-За использование узла взимается плата, если кластер существует. Начисление оплаты начинается после создания кластера и прекращается только после его удаления. Перевести кластер в режим ожидания или отменить его выделение невозможно.
+За использование узла взимается плата, если кластер существует. Начисление оплаты начинается после создания кластера и прекращается только после его удаления. Кластер не может быть освобожден или помещен в удержание.
 
 ### <a name="node-configuration"></a>конфигурация узла;
 
 Для каждого типа кластера используется своя терминология. Кроме того, типы отличаются количеством узлов и стандартными размерами виртуальных машин. В следующей таблице число узлов каждого типа указано в скобках.
 
-| Тип | Узлы | Схема |
+| Type | Узлы | Схема |
 | --- | --- | --- |
 | Hadoop |Головной узел (2), Рабочий узел (1 +) |![Узлы кластера HDInsight Hadoop](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hadoop-cluster-type-nodes.png) |
 | HBase |Головной сервер (2), региональный сервер (от 1), основной узел или узел Zookeeper (3) |![Установка типа кластера HDInsight HBase](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-hbase-cluster-type-setup.png) |
@@ -240,9 +245,9 @@ Ambari используется для мониторинга кластеров
 > [!IMPORTANT]  
 > Если в кластере требуется более 32 рабочих узлов, необходимо выбрать размер головного узла с по крайней мере 8 ядрами и 14 ГБ ОЗУ.
 
-Дополнительные сведения см. в разделе [Размеры виртуальных машин](../virtual-machines/windows/sizes.md). Сведения о расценках на разные размеры см. [здесь](https://azure.microsoft.com/pricing/details/hdinsight).
+Дополнительные сведения см. в статье [размеры виртуальных машин](../virtual-machines/windows/sizes.md). Сведения о расценках на разные размеры см. [здесь](https://azure.microsoft.com/pricing/details/hdinsight).
 
-### <a name="add-application"></a>Добавление приложения
+### <a name="add-application"></a>Добавить приложение
 
 Пользователи могут устанавливать приложения HDInsight в кластере HDInsight под управлением Linux. Вы можете использовать приложения, предоставляемые корпорацией Майкрософт, сторонними производителями или разработанные самостоятельно. Дополнительные сведения см. в статье [Установка сторонних приложений Apache Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md).
 
@@ -279,7 +284,7 @@ Ambari используется для мониторинга кластеров
 
 Подробные сведения см. в статье [Настройка кластеров HDInsight с помощью начальной загрузки](hdinsight-hadoop-customize-cluster-bootstrap.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение сбоев при создании кластера с помощью Azure HDInsight](./hadoop/hdinsight-troubleshoot-cluster-creation-fails.md)
 * [Что такое Azure HDInsight и стек технологий Apache Hadoop](hadoop/apache-hadoop-introduction.md)

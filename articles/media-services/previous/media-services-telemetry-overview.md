@@ -15,17 +15,17 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: e2cbb36158722a47518f575b391340b5e25bd908
-ms.sourcegitcommit: 8bd85510aee664d40614655d0ff714f61e6cd328
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74895776"
 ---
 # <a name="azure-media-services-telemetry"></a>Телеметрия Служб мультимедиа Azure  
 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 
 Службы мультимедиа Azure (AMS) позволяют получить доступ к данным телеметрии и метрик для служб. Текущая версия AMS позволяет собирать данные телеметрии для работающих сущностей **Channel**, **StreamingEndpoint** и **Archive**. 
 
@@ -51,9 +51,9 @@ ms.locfileid: "74895776"
 
 Данные телеметрии можно использовать одним из следующих способов.
 
-- Можно считывать данные непосредственно из хранилища таблиц Azure (например, с помощью пакета SDK для хранилища). Описание таблиц хранилища телеметрии см. в подразделе **Использование данных телеметрии** [этого](https://msdn.microsoft.com/library/mt742089.aspx) раздела.
+- Можно считывать данные непосредственно из хранилища таблиц Azure (например, с помощью пакета SDK для хранилища). Описание таблиц хранилища телеметрии см. в подразделе **Использование данных телеметрии**[этого](https://msdn.microsoft.com/library/mt742089.aspx) раздела.
 
-или
+либо
 
 - Для чтения данных из хранилища можно использовать поддержку, реализованную в пакете SDK служб мультимедиа для .NET, как описано в [этом](media-services-dotnet-telemetry.md) разделе. 
 
@@ -74,13 +74,13 @@ ms.locfileid: "74895776"
 
 Данные телеметрии хранятся в одной таблице, TelemetryMetrics20160321, где 20160321 — дата ее создания. Система телеметрии создает отдельную таблицу для данных по каждому новому дню в 00:00 (UTC). Таблица используется для хранения повторяющихся значений, например скорости приема в пределах заданного периода времени, количества отправленных байтов и т. д. 
 
-Свойство|Value|Примеры и примечания
+Свойство|Значение|Примеры и примечания
 ---|---|---
 PartitionKey|{ИД_учетной_записи}_{ИД_сущности}|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66<br/<br/>Идентификатор учетной записи добавляется в ключ секции для упрощения рабочих процессов, в которых несколько учетных записей служб мультимедиа записывают данные в одну учетную запись хранения.
-RowKey|{число секунд до полуночи}_{случайное значение}|01688_00199<br/><br/>Ключ строки начинается с числа секунд до полуночи, чтобы сделать возможным выполнение запросов получения N первых элементов в секции. Дополнительные сведения см. в [этой статье](../../cosmos-db/table-storage-design-guide.md#log-tail-pattern). 
-Timestamp|Дата и время|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
+RowKey|{число секунд до полуночи}_{случайное значение}|01688_00199<br/><br/>Ключ строки начинается с числа секунд до полуночи, чтобы сделать возможным выполнение запросов получения N первых элементов в секции. Дополнительные сведения см. в [этой](../../cosmos-db/table-storage-design-guide.md#log-tail-pattern) статье. 
+Отметка времени|Дата и время|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
 Тип|Тип сущности, предоставляющей данные телеметрии.|Channel, StreamingEndpoint, Archive.<br/><br/>Тип события — это просто строковое значение.
-Name|Имя события телеметрии.|ChannelHeartbeat, StreamingEndpointRequestLog.
+Имя|Имя события телеметрии.|ChannelHeartbeat, StreamingEndpointRequestLog.
 ObservedTime|Время возникновения события телеметрии (UTC).|2016-09-09T22:42:36.924Z<br/><br/>Наблюдаемое время предоставляется сущностью, отправляющей данные телеметрии (например, сущностью Channel). Возможны проблемы синхронизации между компонентами, поэтому данное значение является приблизительным.
 ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 Свойства, относящиеся к сущности|Определяются событием.|StreamName: stream1, Bitrate 10123…<br/><br/>Остальные свойства определены для конкретного типа события. Таблица Azure содержит пары "ключ-значение".  (То есть различные строки в таблице имеют разные наборы свойств.)
@@ -95,32 +95,32 @@ ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 
 **Конечная точка потоковой передачи**
 
-Свойство|Value|Примеры
+Свойство|Значение|Примеры
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
-Timestamp|Timestamp|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
+Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
 Тип|Тип|StreamingEndpoint
-Name|Name|StreamingEndpointRequestLog
+Имя|Имя|StreamingEndpointRequestLog
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 HostName|Имя узла конечной точки.|builddemoserver.origin.mediaservices.windows.net
 StatusCode|Состояние HTTP.|200
 ResultCode|Сведения о коде результата.|S_OK
 RequestCount|Общее число запросов в совокупности.|3
-Передано байт|Совокупное число отправленных байтов.|2987358
+BytesSent|Совокупное число отправленных байтов.|2987358
 ServerLatency|Средняя задержка сервера (включая хранилище).|129
 E2ELatency|Средняя совокупная задержка.|250
 
 **Динамический канал**
 
-Свойство|Value|Примеры и примечания
+Свойство|Значение|Примеры и примечания
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
-Timestamp|Timestamp|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
+Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
 Тип|Тип|Канал
-Name|Name|ChannelHeartbeat
+Имя|Имя|ChannelHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 TrackType|Тип дорожки: видео, звук или текст.|video/audio
@@ -132,20 +132,20 @@ OverlapCount|Перекрытие при приеме.|0
 DiscontinuityCount|Прерывание дорожки.|0
 LastTimestamp|Метка времени последнего получения данных.|1800488800
 NonincreasingCount|Число фрагментов, отклоненных из-за невозрастающей метки времени.|2
-UnalignedKeyFrames|Получены ли фрагменты (для уровней качества), в которых ключевые кадры не выровнены. |Да
-UnalignedPresentationTime|Получены ли фрагменты (для уровней качества или дорожек), в которых время презентации не согласовано.|Да
-UnexpectedBitrate|Значение True, если расчетная или фактическая скорость для аудио- или видеодорожки превышает 40 000 бит/с и значение IncomingBitrate равно 0 ЛИБО значения IncomingBitrate и actualBitrate отличаются на 50 %. |Да
-Работоспособность|Значение True, если значения <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime и <br/>UnexpectedBitrate<br/> равны 0.|Да<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames = True<br/>- UnalignedPresentationTime = True<br/>- UnexpectedBitrate = True
+UnalignedKeyFrames|Получены ли фрагменты (для уровней качества), в которых ключевые кадры не выровнены. |True
+UnalignedPresentationTime|Получены ли фрагменты (для уровней качества или дорожек), в которых время презентации не согласовано.|True
+UnexpectedBitrate|Значение True, если расчетная или фактическая скорость для аудио- или видеодорожки превышает 40 000 бит/с и значение IncomingBitrate равно 0 ЛИБО значения IncomingBitrate и actualBitrate отличаются на 50 %. |True
+Healthy|Значение True, если значения <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime и <br/>UnexpectedBitrate<br/> равны 0.|True<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames = True<br/>- UnalignedPresentationTime = True<br/>- UnexpectedBitrate = True
 
-**Динамический архив**
+**Динамический Архив**
 
-Свойство|Value|Примеры и примечания
+Свойство|Значение|Примеры и примечания
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
-Timestamp|Timestamp|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
+Отметка времени|Отметка времени|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
 Тип|Тип|Архив
-Name|Name|ArchiveHeartbeat
+Имя|Имя|ArchiveHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 ManifestName|URL-адрес программы.|asset-eb149703-ed0a-483c-91c4-e4066e72cce3/a0a5cfbf-71ec-4bd2-8c01-a92a2b38c9ba.ism
@@ -153,7 +153,7 @@ TrackName|Имя дорожки.|audio_1
 TrackType|Тип дорожки.|Audio/video
 CustomAttribute|Шестнадцатеричная строка, позволяющая различать разные дорожки с одинаковым именем и скоростью (при многокамерной съемке).|
 Bitrate|Скорость дорожки.|785000
-Работоспособность|Значение True, если FragmentDiscardedCount = 0 и ArchiveAcquisitionError = False.|Значение True (эти два значения отсутствуют в метрике, но присутствуют в исходном событии).<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- FragmentDiscardedCount > 0<br/>- ArchiveAcquisitionError = True
+Healthy|Значение True, если FragmentDiscardedCount = 0 и ArchiveAcquisitionError = False.|Значение True (эти два значения отсутствуют в метрике, но присутствуют в исходном событии).<br/><br/>Healthy — это составная функция, которая возвращает значение false, если выполнено любое из следующих условий:<br/><br/>- FragmentDiscardedCount > 0<br/>- ArchiveAcquisitionError = True
 
 ## <a name="general-qa"></a>Общие вопросы и ответы
 
@@ -163,7 +163,7 @@ Bitrate|Скорость дорожки.|785000
 
 - пакет SDK для AMS;
 - Microsoft Azure Storage Explorer (поддерживает экспорт в файл данных с разделителями-запятыми и обработку в Excel).
-- REST API
+- REST API
 
 ### <a name="how-to-find-average-bandwidth-consumption"></a>Как узнать среднее использование пропускной способности?
 
@@ -220,6 +220,6 @@ Bitrate|Скорость дорожки.|785000
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

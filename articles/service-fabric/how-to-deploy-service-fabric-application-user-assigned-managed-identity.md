@@ -3,14 +3,14 @@ title: Развертывание приложения с управляемым
 description: В этой статье показано, как развернуть приложение Service Fabric с управляемым удостоверением, назначенным пользователем.
 ms.topic: article
 ms.date: 12/09/2019
-ms.openlocfilehash: a5eeaf0d6420fa36c0a78f7553ddfd82197d8ec4
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 9aef81db7a455b72c83cf96898a0c228f1c382fd
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610341"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81415627"
 ---
-# <a name="deploy-service-fabric-application-with-a-user-assigned-managed-identity-preview"></a>Развертывание Service Fabric приложения с помощью управляемого удостоверения, назначенного пользователем (Предварительная версия)
+# <a name="deploy-service-fabric-application-with-a-user-assigned-managed-identity"></a>Развертывание Service Fabric приложения с управляемым удостоверением, назначенным пользователем
 
 Чтобы развернуть приложение Service Fabric с управляемым удостоверением, приложение должно быть развернуто с помощью Azure Resource Manager, обычно с шаблоном Azure Resource Manager. Дополнительные сведения о развертывании приложения Service Fabric с помощью Azure Resource Manager см. в статье [Управление приложениями и службами в качестве Azure Resource Managerных ресурсов](service-fabric-application-arm-resource.md).
 
@@ -18,7 +18,7 @@ ms.locfileid: "75610341"
 > 
 > Приложения, которые не развертываются как ресурсы Azure, **не могут** иметь управляемые удостоверения. 
 >
-> Service Fabric развертывание приложения с управляемым удостоверением поддерживается в версии API `"2019-06-01-preview"`. Можно также использовать ту же версию API для типа приложения, версию типа приложения и ресурсы службы.
+> Service Fabric развертывание приложения с управляемым удостоверением поддерживается в версии `"2019-06-01-preview"`API. Можно также использовать ту же версию API для типа приложения, версию типа приложения и ресурсы службы.
 >
 
 ## <a name="user-assigned-identity"></a>Удостоверение, назначенное пользователем
@@ -62,9 +62,9 @@ ms.locfileid: "75610341"
 
 ### <a name="application-package"></a>Пакет приложения
 
-1. Для каждого удостоверения, определенного в разделе `managedIdentities` шаблона Azure Resource Manager, добавьте тег `<ManagedIdentity>` в манифесте приложения в разделе **участников** . Атрибут `Name` должен соответствовать свойству `name`, определенному в разделе `managedIdentities`.
+1. Для каждого удостоверения, определенного в `managedIdentities` разделе шаблона Azure Resource Manager, добавьте `<ManagedIdentity>` тег в манифест приложения в разделе **участников** . `Name` Атрибут должен соответствовать `name` свойству, определенному в `managedIdentities` разделе.
 
-    **ApplicationManifest. XML**
+    **ApplicationManifest.xml**
 
     ```xml
       <Principals>
@@ -74,9 +74,9 @@ ms.locfileid: "75610341"
       </Principals>
     ```
 
-2. В разделе **ServiceManifestImport** добавьте **идентитибиндингполици** для службы, которая использует управляемое удостоверение. Эта политика сопоставляет удостоверение `AdminUser` с именем удостоверения, зависящего от службы, которое необходимо добавить в манифест службы позже.
+2. В разделе **ServiceManifestImport** добавьте **идентитибиндингполици** для службы, которая использует управляемое удостоверение. Эта политика сопоставляет `AdminUser` удостоверение с именем удостоверения, зависящего от службы, которое необходимо добавить в манифест службы позже.
 
-    **ApplicationManifest. XML**
+    **ApplicationManifest.xml**
 
     ```xml
       <ServiceManifestImport>
@@ -86,9 +86,9 @@ ms.locfileid: "75610341"
       </ServiceManifestImport>
     ```
 
-3. Обновите манифест службы, чтобы добавить **ManagedIdentity** в раздел **Resources** с именем, соответствующим `ServiceIdentityRef` в `IdentityBindingPolicy` манифеста приложения:
+3. Обновите манифест службы, чтобы добавить **ManagedIdentity** в раздел **Resources** с именем, соответствующим `ServiceIdentityRef` в `IdentityBindingPolicy` манифесте приложения:
 
-    **ServiceManifest. XML**
+    **ServiceManifest.xml**
 
     ```xml
       <Resources>
@@ -99,7 +99,7 @@ ms.locfileid: "75610341"
       </Resources>
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Использование управляемого удостоверения в коде приложения Service Fabric](how-to-managed-identity-service-fabric-app-code.md)
 * [Как предоставить Service Fabric доступ к другим ресурсам Azure для приложений](how-to-grant-access-other-resources.md)

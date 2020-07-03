@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc
 ms.date: 06/21/2019
-ms.openlocfilehash: 3399cc47af20df05d6315a4bd77965f799eaf5f9
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: f435a33befdde96a92c900663a2ddcca1d319260
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75426169"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82201199"
 ---
 # <a name="what-is-azure-stream-analytics"></a>Знакомство с Azure Stream Analytics
 
@@ -39,7 +39,7 @@ Azure Stream Analytics — это служба аналитики, работа
 
 На следующем рисунке показано, как данные отправляются в Stream Analytics, анализируются и направляются для выполнения других действий, например хранения или отображения:
 
-![Конвейер Stream Analytics](./media/stream-analytics-introduction/stream-analytics-intro-pipeline.png)
+![Конвейер Stream Analytics](./media/stream-analytics-introduction/stream-analytics-e2e-pipeline.png)
 
 ## <a name="key-capabilities-and-benefits"></a>Основные возможности и преимущества
 
@@ -49,9 +49,9 @@ Azure Stream Analytics — это служба аналитики, работа
 
 ## <a name="ease-of-getting-started"></a>Простое начало работы
 
-Приступить к работе с Azure Stream Analytics несложно. Подключиться к нескольким источникам и приемникам и создать конвейер можно в несколько щелчков. Служба Stream Analytics может подключаться к [Центрам событий Azure](/azure/event-hubs/) и [Центру Интернета вещей Azure](/azure/iot-hub/) для приема потоковых данных, а также к [хранилищу BLOB-объектов Azure](/azure/storage/storage-introduction) для приема исторических данных. Входные данные для задания также могут содержать статические или редко меняющиеся эталонные данные из хранилища BLOB-объектов Azure или [Базы данных SQL](stream-analytics-use-reference-data.md#azure-sql-database), которые можно подключить к потоковым данным для операций поиска.
+Приступить к работе с Azure Stream Analytics несложно. Подключиться к нескольким источникам и приемникам и создать конвейер можно в несколько щелчков. Служба Stream Analytics может подключаться к [Центрам событий Azure](/azure/event-hubs/) и [Центру Интернета вещей Azure](/azure/iot-hub/) для приема потоковых данных, а также к [хранилищу BLOB-объектов Azure](/azure/storage/common/storage-introduction) для приема исторических данных. Входные данные для задания также могут содержать статические или редко меняющиеся эталонные данные из хранилища BLOB-объектов Azure или [Базы данных SQL](stream-analytics-use-reference-data.md#azure-sql-database), которые можно подключить к потоковым данным для операций поиска.
 
-Stream Analytics может направлять выходные данные задания в несколько систем хранения, таких как [хранилище BLOB-объектов Azure](/azure/storage/storage-introduction), [База данных SQL Azure](/azure/sql-database/), [Azure Data Lake Store](/azure/data-lake-store/) и [Azure Cosmos DB](/azure/cosmos-db/introduction). Вы можете выполнить пакетную аналитику с использованием сохраненных данных с помощью Azure HDInsight или направить выходные данные в другую службу, например в Центры событий для обработки или в [Power BI](https://docs.microsoft.com/power-bi/) для визуализации в режиме реального времени.
+Stream Analytics может направлять выходные данные задания в несколько систем хранения, таких как [хранилище BLOB-объектов Azure](/azure/storage/common/storage-introduction), [База данных SQL Azure](/azure/sql-database/), [Azure Data Lake Store](/azure/data-lake-store/) и [Azure Cosmos DB](/azure/cosmos-db/introduction). Вы можете выполнить пакетную аналитику с использованием сохраненных данных с помощью Azure HDInsight или направить выходные данные в другую службу, например в Центры событий для обработки или в [Power BI](https://docs.microsoft.com/power-bi/) для визуализации в режиме реального времени.
 
 Полный список поддерживаемых выходов Stream Analytics см. в статье о [выходных данных Azure Stream Analytics](stream-analytics-define-outputs.md).
 
@@ -65,7 +65,7 @@ Azure Stream Analytics использует простой язык запрос
 
 ## <a name="fully-managed"></a>Полная управляемость
 
-Azure Stream Analytics является полностью управляемым независимым от сервера предложением (PaaS) в Azure. Вам не нужно подготавливать оборудование или управлять кластерами для запуска заданий. Azure Stream Analytics полностью управляет заданием, настраивая сложные вычислительные кластеры в облаке и обеспечивая необходимую производительность для выполнения задания. Благодаря интеграции с Центрами событий Azure и Центром Интернета вещей Azure задания могут ежесекундно принимать миллионы событий от подключенных устройств, посещаемых пользователями ресурсов и файлов журналов. С помощью функции секционирования Центров событий вы можете разделять вычисления на логические шаги и дополнительно разделять каждый шаг для улучшения масштабируемости.
+Azure Stream Analytics является полностью управляемым независимым от сервера предложением (PaaS) в Azure. Вам не нужно подготавливать оборудование или управлять кластерами для выполнения заданий. Azure Stream Analytics полностью управляет заданием, настраивая сложные вычислительные кластеры в облаке и обеспечивая необходимую производительность для выполнения задания. Благодаря интеграции с Центрами событий Azure и Центром Интернета вещей Azure задания могут ежесекундно принимать миллионы событий от подключенных устройств, посещаемых пользователями ресурсов и файлов журналов. С помощью функции секционирования Центров событий вы можете разделять вычисления на логические шаги и дополнительно разделять каждый шаг для улучшения масштабируемости.
 
 ## <a name="run-in-the-cloud-or-on-the-intelligent-edge"></a>Выполнение в облаке или на интеллектуальной границе
 
@@ -87,7 +87,7 @@ Azure Stream Analytics имеет встроенные возможности в
 
 Являясь управляемой службой, Stream Analytics гарантирует доступность 99,9 % для обработки событий с ежеминутной степенью детализации. Дополнительные сведения см. на странице [Соглашение об уровне обслуживания для Azure Stream Analytics](https://azure.microsoft.com/support/legal/sla/stream-analytics/v1_0/). 
 
-### <a name="security"></a>безопасность
+### <a name="security"></a>Безопасность
 
 С точки зрения безопасности Azure Stream Analytics выполняет шифрование всех входящих и исходящих подключений и поддерживает TLS 1.2. Встроенные контрольные точки также шифруются. Stream Analytics не хранит входящие данные, так как все задачи обработки выполняются в памяти.
 

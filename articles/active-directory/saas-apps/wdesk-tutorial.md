@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением Wdesk | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением Wdesk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wdesk.
 services: active-directory
 documentationCenter: na
@@ -12,16 +12,16 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 04/02/2020
 ms.author: jeedes
-ms.openlocfilehash: a4cfcf20fc7a6a3532f65c3e797da6c876844d2c
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 349a9920adc0d9353ee8e8e821f54bc2ea2f2616
+ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76985571"
+ms.lasthandoff: 04/05/2020
+ms.locfileid: "80666990"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wdesk"></a>Руководство. Интеграция единого входа Azure Active Directory с Wdesk
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-wdesk"></a>Руководство по Интеграция единого входа Azure Active Directory с Wdesk
 
 В этом руководстве вы узнаете, как интегрировать Wdesk с Azure Active Directory (Azure AD). Интеграция Wdesk с Azure AD обеспечивает следующие возможности:
 
@@ -181,6 +181,10 @@ ms.locfileid: "76985571"
 
     ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig2.png)
 
+1. В разделе **SAML User ID Settings** (Параметры идентификатора пользователя в SAML) установите флажок **SAML User ID is Wdesk Username** (идентификатора пользователя в SAML — имя пользователя в Wdesk).
+
+    ![Настройка единого входа](./media/wdesk-tutorial/wdesk-username.png)
+
 4. В разделе **General Settings** (Общие параметры) установите флажок **Enable SAML Single Sign On** (Включить единый вход SAML):
 
     ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfig3.png)
@@ -223,7 +227,7 @@ ms.locfileid: "76985571"
    
     ![Создание тестового пользователя Azure AD](./media/wdesk-tutorial/createuser1.png)  
 
-5. В текстовом поле **Пользователь** введите имя пользователя, например brittasimon@contoso.com, и нажмите кнопку **Продолжить**.
+5. В текстовом поле **Пользователь** введите имя пользователя, например b.simon@contoso.com, и нажмите кнопку **Продолжить**.
 
     ![Создание тестового пользователя Azure AD](./media/wdesk-tutorial/createuser3.png)
 
@@ -231,9 +235,9 @@ ms.locfileid: "76985571"
   
     ![Создание тестового пользователя Azure AD](./media/wdesk-tutorial/createuser4.png)
  
-    а. В текстовом поле **Адрес электронной почты** введите адрес электронной почты пользователя, например brittasimon@contoso.com.
+    а. В текстовом поле **Адрес электронной почты** введите адрес электронной почты пользователя, например b.simon@contoso.com.
 
-    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **B**.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 

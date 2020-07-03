@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Panorama9 | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Panorama9 | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Panorama9.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: c88088b804f90769512d33a5e96fdedc5ce6fba8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67094929"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Руководство. Интеграция Azure Active Directory с Panorama9
+# <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Учебник. Интеграция Azure Active Directory с Panorama9
 
 В этом руководстве описано, как интегрировать Panorama9 с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Panorama9 обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67094929"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Panorama9, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка с поддержкой единого входа в Panorama9.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67094929"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Panorama9](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://dashboard.panorama9.com/saml/access/3262`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://dashboard.panorama9.com/saml/access/3262`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://www.panorama9.com/saml20/<tenant-name>`.
 
@@ -114,7 +114,7 @@ ms.locfileid: "67094929"
 
 5. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-    ![Изменить сертификат подписи SAML](common/edit-certificate.png)
+    ![Изменение сертификата подписи SAML](common/edit-certificate.png)
 
 6. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток** и сохраните его на компьютере.
 
@@ -124,7 +124,7 @@ ms.locfileid: "67094929"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -136,7 +136,7 @@ ms.locfileid: "67094929"
 
 2. На панели инструментов вверху щелкните **Manage** (Управление), затем щелкните **Extensions** (Расширения).
    
-    ![Расширения](./media/panorama9-tutorial/ic790023.png "Расширения")
+    ![Расширения](./media/panorama9-tutorial/ic790023.png "Модули")
 
 3. В диалоговом окне **Extensions** (Расширения) щелкните **Single Sign-On** (Единый вход).
    
@@ -144,9 +144,9 @@ ms.locfileid: "67094929"
 
 4. В разделе **Параметры** выполните следующие действия.
    
-    ![Параметры](./media/panorama9-tutorial/ic790025.png "Параметры")
+    ![Параметры](./media/panorama9-tutorial/ic790025.png "Настройки")
    
-    a. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
+    а. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
    
     b. В текстовое поле **Certificate fingerprint** (Отпечаток сертификата) вставьте значение **Отпечаток**, которое вы скопировали на портале Azure.    
          
@@ -239,5 +239,5 @@ ms.locfileid: "67094929"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

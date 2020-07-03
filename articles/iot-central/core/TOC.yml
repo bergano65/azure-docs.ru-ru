@@ -6,13 +6,23 @@
       href: overview-iot-central.md
     - name: Обзор пользовательского интерфейса
       href: overview-iot-central-tour.md
+    - name: Разработка устройств
+      href: overview-iot-central-developer.md
+    - name: Последние обновления
+      items:
+        - name: "Новые функции в версии за апрель 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-april-2020-new-features/'
+        - name: "Обновления за апрель 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-april-2020-updates/'
+        - name: "Март 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-march-2020-updates/'
 - name: Краткие руководства
   expanded: true
   items:
     - name: 1. Создание приложения
       href: quick-deploy-iot-central.md
     - name: 2. Добавление имитированного устройства
-      href: quick-create-pnp-device.md
+      href: quick-create-simulated-device.md
     - name: 3. Настройка правила и действий
       href: quick-configure-rules.md
     - name: 4. Мониторинг устройств
@@ -21,6 +31,10 @@
   items:
     - name: Подключение
       items:
+        - name: Подключение устройства (Node.js)
+          href: tutorial-connect-device-nodejs.md
+        - name: Подключение устройства (Python)
+          href: tutorial-connect-device-python.md
         - name: Подключение устройства Plug and Play (предварительная версия)
           href: tutorial-connect-pnp-device.md
         - name: Создание шаблона для устройства шлюза
@@ -35,7 +49,7 @@
       items:
         - name: Создание правила
           href: tutorial-create-telemetry-rules.md
-        - name: Использование REST API
+        - name: Обзор интерфейсов API для IoT Central
           href: 'https://docs.microsoft.com/learn/modules/manage-iot-central-apps-with-rest-api/'
 - name: Основные понятия
   items:
@@ -43,7 +57,7 @@
       href: concepts-architecture.md
     - name: Что представляют собой шаблоны приложений?
       href: concepts-app-templates.md
-    - name: Подключение
+    - name: Взаимодействие устройств
       href: concepts-get-connected.md
     - name: Подключение устройств IoT Edge
       href: concepts-iot-edge.md
@@ -55,6 +69,8 @@
           href: howto-set-up-template.md
         - name: Подготовка и подключение MXChip IoT DevKit
           href: howto-connect-devkit.md
+        - name: "Подготовка и подключение пакета средств разработки Azure\_Sphere"
+          href: howto-connect-sphere.md
         - name: Подготовка и подключение устройства RuuviTag
           href: howto-connect-ruuvi.md
         - name: Подготовка и подключение Rigado Cascade 500
@@ -71,6 +87,8 @@
           href: howto-manage-devices.md
         - name: Настройка правил
           href: howto-configure-rules.md
+        - name: Использование рабочих процессов для интеграции с другими службами
+          href: howto-configure-rules-advanced.md
         - name: Анализ данных устройства
           href: howto-create-analytics.md
         - name: Добавление плиток на панель мониторинга
@@ -79,11 +97,9 @@
           href: howto-create-personal-dashboards.md
         - name: Выполнение задания
           href: howto-run-a-job.md
-        - name: Создание версии шаблона устройства
-          href: howto-version-device-template.md
     - name: Преобразование
       items:
-        - name: Настройка экспорта непрерывных данных
+        - name: Экспорт данных в целевое расположение в Azure
           href: howto-export-data.md
         - name: Создание действий веб-перехватчиков на основе правил
           href: howto-create-webhooks.md
@@ -115,6 +131,8 @@
               href: howto-manage-iot-central-from-cli.md
             - name: Управление с помощью Azure PowerShell
               href: howto-manage-iot-central-from-powershell.md
+            - name: Программное управление
+              href: howto-manage-iot-central-programmatically.md
             - name: Управление с портала CSP
               href: howto-create-and-manage-applications-csp.md
         - name: Настройка приложения
@@ -123,43 +141,45 @@
               href: howto-manage-preferences.md
             - name: Переключение чата в реальном времени
               href: howto-show-hide-chat.md
-- name: Сопутствующие материалы
+- name: Ресурсы
   items:
+    - name: Возможности получения поддержки и справки
+      href: /azure/iot-fundamentals/iot-support-help
     - name: Отраслевые шаблоны приложений
       items:
         - name: Розничная торговля
-          href: ../retail/overview-iot-central-retail-pnp.md
+          href: ../retail/overview-iot-central-retail.md
         - name: Энергетика
           href: ../energy/overview-iot-central-energy.md
         - name: Государственные организации
           href: ../government/overview-iot-central-government.md
         - name: Здравоохранение
           href: ../healthcare/overview-iot-central-healthcare.md
-    - name: Службы платформы
+    - name: Службы Azure IoT
       items:
         - name: Центр Интернета вещей
           href: /azure/iot-hub
-        - name: IoT Plug and Play
-          href: /azure/iot-pnp
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
-        - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Maps
+        - name: IoT Central
+          href: 'https://docs.microsoft.com/microsoft-iot-central/'
+        - name: IoT Edge
+          href: /azure/iot-edge
+        - name: Акселераторы решений для Интернета вещей
+          href: /azure/iot-accelerators
+        - name: IoT Plug and Play
+          href: /azure/iot-pnp
+        - name: Azure Maps
           href: /azure/azure-maps
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
-    - name: Решения с Edge
+    - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
-        - name: Azure IoT Edge
-          href: /azure/iot-edge
+        - name: Пакеты SDK для служб IoT
+          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
-- name: Ресурсы
-  items:
-    - name: Возможности получения поддержки и справки
-      href: /azure/iot-fundamentals/iot-support-help
-    - name: REST API
+    - name: Справочник по API для IoT Central
       href: 'https://docs.microsoft.com/rest/api/iotcentral/'
     - name: Запросы данных клиентов
       href: iot-central-customer-data-requests.md

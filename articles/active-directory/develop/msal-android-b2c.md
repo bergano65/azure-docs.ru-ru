@@ -14,10 +14,10 @@ ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
 ms.openlocfilehash: 0998bb04b0dfc69db4696f2e390cfe259eba6718
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76696527"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>Использование MSAL для Android с B2C
@@ -30,11 +30,11 @@ ms.locfileid: "76696527"
 
 При наличии B2C приложения с двумя политиками:
 - Регистрация и вход в систему
-    * Вызывается `B2C_1_SISOPolicy`
+    * Имя`B2C_1_SISOPolicy`
 - Изменить профиль
-    * Вызывается `B2C_1_EditProfile`
+    * Имя`B2C_1_EditProfile`
 
-В файле конфигурации для приложения будет объявлено два `authorities`. По одному для каждой политики. Свойство `type` каждого центра `B2C`.
+Файл конфигурации для приложения будет объявлять два `authorities`. По одному для каждой политики. `type` Свойство каждого из полномочий имеет `B2C`значение.
 
 ### `app/src/main/res/raw/msal_config.json`
 ```json
@@ -54,11 +54,11 @@ ms.locfileid: "76696527"
 }
 ```
 
-`redirect_uri` должны быть зарегистрированы в конфигурации приложения, а также в `AndroidManifest.xml` для поддержки перенаправления во время [потока предоставления кода авторизации](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-oauth-code).
+`redirect_uri` Должен быть зарегистрирован в конфигурации приложения, а также в `AndroidManifest.xml` для поддержки перенаправления во время [потока предоставления кода авторизации](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-oauth-code).
 
 ## <a name="initialize-ipublicclientapplication"></a>Инициализация Ипубликклиентаппликатион
 
-`IPublicClientApplication` создается фабричным методом, позволяющим выполнять синтаксический анализ конфигурации приложения в асинхронном режиме.
+`IPublicClientApplication`создается с помощью фабричного метода, позволяющего выполнять синтаксический анализ конфигурации приложения в асинхронном режиме.
 
 ```java
 PublicClientApplication.createMultipleAccountPublicClientApplication(
@@ -81,7 +81,7 @@ PublicClientApplication.createMultipleAccountPublicClientApplication(
 
 ## <a name="interactively-acquire-a-token"></a>Интерактивное получение маркера
 
-Чтобы получить маркер в интерактивном режиме с помощью MSAL, создайте экземпляр `AcquireTokenParameters` и укажите его в методе `acquireToken`. В запросе токена ниже используется центр `default`.
+Чтобы получить маркер в интерактивном режиме с помощью MSAL, создайте `AcquireTokenParameters` экземпляр и предоставьте его `acquireToken` методу. В запросе токена ниже используется `default` центр.
 
 ```java
 IMultipleAccountPublicClientApplication pca = ...; // Initialization not shown
@@ -112,7 +112,7 @@ pca.acquireToken(parameters);
 
 ## <a name="silently-renew-a-token"></a>Автоматическое продление срока действия токена
 
-Чтобы получить маркер в автоматическом режиме с помощью MSAL, создайте экземпляр `AcquireTokenSilentParameters` и предоставьте его методу `acquireTokenSilentAsync`. В отличие от метода `acquireToken`, для получения маркера в автоматическом режиме необходимо указать `authority`.
+Чтобы получить маркер в автоматическом режиме с помощью MSAL, `AcquireTokenSilentParameters` создайте экземпляр и предоставьте его `acquireTokenSilentAsync` методу. В `authority` отличие от `acquireToken` метода, необходимо указать для получения маркера в автоматическом режиме.
 
 ```java
 IMultilpeAccountPublicClientApplication pca = ...; // Initialization not shown
@@ -139,7 +139,7 @@ pca.acquireTokenSilentAsync(parameters);
 
 ## <a name="specify-a-policy"></a>Укажите политику
 
-Так как политики в B2C представляются в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания предложения `fromAuthority` при создании параметров `acquireToken` или `acquireTokenSilent`.  Пример.
+Так как политики в B2C представляются в виде отдельных центров, вызов политики, отличной от значения по умолчанию, достигается путем указания `fromAuthority` предложения `acquireToken` при `acquireTokenSilent` создании или настройке параметров.  Пример:
 
 ```java
 AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
@@ -153,11 +153,11 @@ AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
 
 ## <a name="handle-password-change-policies"></a>Работа с политиками изменения паролей
 
-Пользовательский поток регистрации или входа в локальную учетную запись отображает "**забыли пароль?** " . При переходе по этой ссылке поток пользователя сброса паролей не активируется автоматически.
+Пользовательский поток регистрации или входа в локальную учетную запись отображает "**забыли пароль?**" . При переходе по этой ссылке поток пользователя сброса паролей не активируется автоматически.
 
-Вместо этого код ошибки `AADB2C90118` возвращается в приложение. Приложение должно справиться с этим кодом ошибки, запустив конкретный поток пользователя, который сбрасывает пароль.
+Вместо этого в приложение возвращается код ошибки `AADB2C90118`. Приложение должно справиться с этим кодом ошибки, запустив конкретный поток пользователя, который сбрасывает пароль.
 
-Чтобы перехватить код ошибки сброса пароля, в `AuthenticationCallback`можно использовать следующую реализацию:
+Чтобы перехватить код ошибки сброса пароля, можно использовать следующую реализацию в `AuthenticationCallback`:
 
 ```java
 new AuthenticationCallback() {
@@ -185,7 +185,7 @@ new AuthenticationCallback() {
 
 ## <a name="use-iauthenticationresult"></a>Использование Иаусентикатионресулт
 
-Успешный получение маркера приводит к `IAuthenticationResult`ному объекту. Он содержит маркер доступа, пользовательские утверждения и метаданные.
+Успешное получение маркера приводит к `IAuthenticationResult` получению объекта. Он содержит маркер доступа, пользовательские утверждения и метаданные.
 
 ### <a name="get-the-access-token-and-related-properties"></a>Получение маркера доступа и связанных свойств
 
@@ -227,15 +227,15 @@ String tenantId = account.getTenantId();
 
 ### <a name="idtoken-claims"></a>Утверждения IdToken
 
-Утверждения, возвращенные в IdToken, заполняются службой маркеров безопасности (STS), а не MSAL. В зависимости от используемого поставщика удостоверений (IdP) некоторые утверждения могут отсутствовать. Некоторые поставщиков удостоверений в настоящее время не предоставляют утверждение `preferred_username`. Так как это утверждение используется MSAL для кэширования, вместо него используется значение заполнителя, `MISSING FROM THE TOKEN RESPONSE`. Дополнительные сведения об утверждениях B2C IdToken см. [в разделе Обзор маркеров в Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-tokens#claims).
+Утверждения, возвращенные в IdToken, заполняются службой маркеров безопасности (STS), а не MSAL. В зависимости от используемого поставщика удостоверений (IdP) некоторые утверждения могут отсутствовать. Некоторые поставщиков удостоверений в настоящее время не `preferred_username` предоставляют заявку. Так как это утверждение используется MSAL для кэширования, вместо него используется значение `MISSING FROM THE TOKEN RESPONSE`заполнителя. Дополнительные сведения об утверждениях B2C IdToken см. [в разделе Обзор маркеров в Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-tokens#claims).
 
 ## <a name="managing-accounts-and-policies"></a>Управление учетными записями и политиками
 
-B2C рассматривает каждую политику как отдельный центр. Поэтому маркеры доступа, маркеры обновления и маркеры идентификации, возвращаемые из каждой политики, не взаимозаменяемы. Это означает, что каждая политика возвращает отдельный объект `IAccount`, маркеры которого нельзя использовать для вызова других политик.
+B2C рассматривает каждую политику как отдельный центр. Поэтому маркеры доступа, маркеры обновления и маркеры идентификации, возвращаемые из каждой политики, не взаимозаменяемы. Это означает, что каждая политика возвращает `IAccount` отдельный объект, маркеры которого нельзя использовать для вызова других политик.
 
 Каждая политика добавляет `IAccount` в кэш для каждого пользователя. Если пользователь входит в приложение и вызывает две политики, у них будет два `IAccount`. Чтобы удалить этого пользователя из кэша, необходимо вызвать `removeAccount()` для каждой политики.
 
-При обновлении маркеров для политики с `acquireTokenSilent`укажите те же `IAccount`, которые были возвращены предыдущими вызовами политики для `AcquireTokenSilentParameters`. Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
+При обновлении маркеров для политики с помощью `acquireTokenSilent`укажите то же `IAccount` значение, которое было возвращено предыдущими вызовами политики в. `AcquireTokenSilentParameters` Предоставление учетной записи, возвращаемой другой политикой, приведет к ошибке.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

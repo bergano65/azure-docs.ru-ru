@@ -6,12 +6,14 @@
       href: overview.md
 - name: Краткие руководства
   items:
-    - name: Требование многофакторной проверки подлинности для конкретных приложений
-      href: app-based-mfa.md
     - name: Обеспечение принятия условий использования
       href: require-tou.md
     - name: Блокировка доступа при обнаружении риска для безопасности сеанса
       href: app-sign-in-risk.md
+- name: Учебники
+  items:
+    - name: Требование многофакторной идентификации Azure
+      href: ../authentication/tutorial-enable-azure-mfa.md?toc=/azure/active-directory/conditional-access/toc.json&bc=/azure/active-directory/conditional-access/breadcrumb/toc.json
 - name: Основные понятия
   expanded: false
   items:
@@ -33,6 +35,8 @@
           href: concept-conditional-access-grant.md
         - name: Сеанс
           href: concept-conditional-access-session.md
+    - name: Аналитические сведения и отчеты
+      href: howto-conditional-access-insights-reporting.md
     - name: Режим "Только отчет"
       href: concept-conditional-access-report-only.md
     - name: Зависимости служб
@@ -41,7 +45,7 @@
       href: location-condition.md
     - name: Средство "Что если"
       href: what-if-tool.md
-    - name: Управление
+    - name: Пользовательские элементы управления
       href: controls.md
     - name: Перенос классической политики
       href: policy-migration.md
@@ -56,22 +60,24 @@
       href: best-practices.md
     - name: Распространенные политики условного доступа
       items:
+        - name: Блокировка устаревших методов проверки подлинности
+          href: howto-conditional-access-policy-block-legacy.md
         - name: Запрос на MFA для администраторов
           href: howto-conditional-access-policy-admin-mfa.md
         - name: Запрос на MFA для управления Azure
           href: howto-conditional-access-policy-azure-management.md
         - name: Обязательная многофакторная проверка подлинности для всех пользователей
           href: howto-conditional-access-policy-all-users-mfa.md
-        - name: Блокировка устаревших методов проверки подлинности
-          href: howto-conditional-access-policy-block-legacy.md
         - name: Условный доступ на основе рисков
           href: howto-conditional-access-policy-risk.md
-        - name: Запрос на доверенное расположение для регистрации MFA
+        - name: Безопасная регистрация сведений для защиты
           href: howto-conditional-access-policy-registration.md
         - name: Блокирование доступа по расположению
           href: howto-conditional-access-policy-location.md
         - name: Требовать соответствующие устройства
           href: howto-conditional-access-policy-compliant-device.md
+        - name: Заблокировать доступ
+          href: howto-conditional-access-policy-block-access.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
     - name: Требование доступа из утвержденных клиентских приложений
@@ -92,14 +98,18 @@
       href: policy-migration-mfa.md
     - name: Устранение неполадок
       items:
+        - name: Устранение проблем со входом
+          href: troubleshoot-conditional-access.md
         - name: Устранение неполадок с помощью средства What If
           href: troubleshoot-conditional-access-what-if.md
+        - name: ВОПРОСЫ И ОТВЕТЫ
+          href: faqs.md
 - name: Ресурсы
   items:
     - name: Форум отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/active-directory/'
     - name: Обновления службы

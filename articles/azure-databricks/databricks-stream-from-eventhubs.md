@@ -1,5 +1,5 @@
 ---
-title: 'Руководство. Потоковая передача данных в Azure Databricks при помощи Центров событий '
+title: 'Руководство по потоковой передаче данных в Azure Databricks при помощи Центров событий '
 description: Сведения об использовании Azure Databricks с помощью Центров событий для приема потоковой передачи данных из Twitter и чтения данных практически в реальном времени.
 services: azure-databricks
 author: lenadroid
@@ -11,13 +11,13 @@ ms.workload: Active
 ms.date: 12/08/2019
 ms.author: alehall
 ms.openlocfilehash: fa5568a5af483a61b4e0854cbc7c2ade3b8dc4b1
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75889145"
 ---
-# <a name="tutorial-stream-data-into-azure-databricks-using-event-hubs"></a>Руководство. Потоковая передача данных в Azure Databricks при помощи Центров событий
+# <a name="tutorial-stream-data-into-azure-databricks-using-event-hubs"></a>Руководство по потоковой передаче данных в Azure Databricks при помощи Центров событий
 
 Из этого руководства вы узнаете, как подключить систему приема данных к Azure Databricks для потоковой передачи данных в кластер Apache Spark практически в реальном времени. Настройте систему приема данных с помощью Центров событий Azure, а затем подключите ее к Azure Databricks для обработки поступающих сообщений. Для получения доступа к потоку данных используйте API-интерфейсы Twitter, чтобы получать твиты в Центрах событий. При наличии данных в Azure Databricks вы можете выполнять аналитические задания для дальнейшего анализа данных.
 

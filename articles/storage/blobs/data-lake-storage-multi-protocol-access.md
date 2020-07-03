@@ -5,17 +5,17 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/01/2019
+ms.date: 02/25/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: f34c5d5069a158579864320d0fbf965de8936d9c
-ms.sourcegitcommit: 8e9a6972196c5a752e9a0d021b715ca3b20a928f
+ms.openlocfilehash: e3997fc215637175165402a926bffc6ac8d02771
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75896109"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77914864"
 ---
-# <a name="multi-protocol-access-on-azure-data-lake-storage"></a>Доступ с несколькими протоколами на Azure Data Lake Storage
+# <a name="multi-protocol-access-on-azure-data-lake-storage"></a>Multi-protocol access on Azure Data Lake Storage (preview) (Доступ с использованием нескольких протоколов на Azure Data Lake Storage (предварительная версия))
 
 Интерфейсы API больших двоичных объектов теперь работают с учетными записями, имеющими иерархическое пространство имен. Это разблокирует экосистему средств, приложений и служб, а также несколько функций хранилища BLOB-объектов для учетных записей с иерархическим пространством имен.
 
@@ -26,7 +26,11 @@ ms.locfileid: "75896109"
 Функции хранилища BLOB-объектов, такие как [ведение журнала диагностики](../common/storage-analytics-logging.md), [уровни доступа](storage-blob-storage-tiers.md)и [политики управления жизненным циклом хранилища BLOB-объектов](storage-lifecycle-management-concepts.md) , теперь работают с учетными записями, имеющими иерархическое пространство имен. Таким образом, можно включить иерархические пространства имен в учетных записях хранения BLOB-объектов без потери доступа к этим важным функциям. 
 
 > [!NOTE]
-> Многопротокольный доступ на Data Lake Storage является общедоступным и доступен во всех регионах. Некоторые службы Azure или функции хранилища BLOB-объектов, включенные при доступе по нескольким протоколам, остаются в предварительной версии. Дополнительные сведения см. в таблицах в каждом разделе этой статьи. 
+> Многопротокольный доступ на Data Lake Storage является общедоступным и доступен во всех регионах. Некоторые службы Azure или функции хранилища BLOB-объектов, включенные при доступе по нескольким протоколам, остаются в предварительной версии.  В этих статьях приведены сведения о текущей поддержке функций хранилища BLOB-объектов и интеграции служб Azure. 
+>
+> [Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md)
+>
+>[Службы Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
 
 ## <a name="how-multi-protocol-access-on-data-lake-storage-works"></a>Как работает многопротокольный доступ к хранилищу данных Data Lake
 
@@ -36,62 +40,12 @@ API-интерфейсы больших двоичных объектов и API
 
 Существующие средства и приложения, использующие API больших двоичных объектов, получают эти преимущества автоматически. Разработчикам не придется изменять их. Data Lake Storage 2-го поколения постоянно применяет списки ACL уровня каталога и файлов независимо от протокола, используемого инструментами и приложениями для доступа к данным. 
 
-## <a name="blob-storage-feature-support"></a>Поддержка функций хранилища BLOB-объектов
+## <a name="see-also"></a>См. также
 
-Многопротокольный доступ на Data Lake Storage позволяет использовать дополнительные функции хранилища BLOB-объектов с Data Lake Storage. В этой таблице перечислены функции, включенные с помощью многопротокольного доступа к Data Lake Storage. 
-
-Элементы, отображаемые в этой таблице, будут меняться со временем, так как поддержка функций хранилища BLOB-объектов будет по-видимому расширена. 
-
-> [!NOTE]
-> Хотя доступ с несколькими протоколами в Data Lake Storage является общедоступным, поддержка некоторых из этих функций остается в предварительной версии. 
-
-|Функция хранилища BLOB-объектов | Уровень поддержки |
-|---|---|
-|[Стильный уровень доступа](storage-blob-storage-tiers.md)|Общедоступная версия|
-|API-интерфейсы RESTFUL для BLOB-объектов|Общедоступная версия|
-|Пакеты SDK для BLOB-объектов |Общедоступная версия|
-|[PowerShell (BLOB-объект)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-powershell) |Общедоступная версия|
-|[Интерфейс командной строки (BLOB)](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-cli) |Общедоступная версия|
-|[Уведомления через службу "Сетка событий Azure"](data-lake-storage-events.md)|Общедоступная версия|
-|Пакеты SDK для BLOB-объектов с семантикой файловой системы ([.net](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-dotnet) &vert; [Python](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-python) &vert; [Java](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-java))|Предварительная версия|
-|[PowerShell с семантикой файловой системы](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-powershell)|Предварительная версия|
-|[Интерфейс командной строки с семантикой файловой системы](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-directory-file-acl-cli)|Предварительная версия|
-|[Журналы диагностики](../common/storage-analytics-logging.md)| Предварительная версия|
-|[Политики управления жизненным циклом](storage-lifecycle-management-concepts.md)| Предварительная версия|
-|[Архивный уровень доступа](storage-blob-storage-tiers.md)| Предварительная версия|
-|[blobfuse](storage-how-to-mount-container-linux.md)|Еще не поддерживается|
-|[Неизменяемое хранилище](storage-blob-immutable-storage.md)|Еще не поддерживается|
-|[Моментальные снимки](storage-blob-snapshots.md)|Еще не поддерживается|
-|[Обратимое удаление](storage-blob-soft-delete.md)|Еще не поддерживается|
-|[Статические веб-сайты](storage-blob-static-website.md)|Еще не поддерживается|
-
-Дополнительные сведения об общих проблемах и ограничениях, связанных с Azure Data Lake Storage 2-го поколения, см. в разделе [Известные проблемы](data-lake-storage-known-issues.md).
-
-## <a name="azure-ecosystem-support"></a>Поддержка экосистемы Azure
-
-Многопротокольный доступ на Data Lake Storage также позволяет подключать другие службы Azure к Data Lake Storage. В этой таблице перечислены службы, включенные с помощью многопротокольного доступа к Data Lake Storage. 
-
-Как и список поддерживаемых функций хранилища BLOB-объектов, элементы, отображаемые в этой таблице, будут меняться со временем, так как поддержка служб Azure продолжится. 
-
-> [!NOTE]
-> Хотя доступ с несколькими протоколами в Data Lake Storage является общедоступным, поддержка некоторых из этих служб остается в предварительной версии. 
-
-|Служба Azure | Уровень поддержки |
-|---|---|
-|[Azure Data Box](data-lake-storage-migrate-on-premises-hdfs-cluster.md)|Общедоступная версия|
-|[Запись концентраторов событий Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview)|Общедоступная версия|
-|[Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-portal)|Общедоступная версия|
-|[Центр Интернета вещей](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c)|Общедоступная версия|
-|[Приложения логики](https://azure.microsoft.com/services/logic-apps/)|Общедоступная версия|
-|[Когнитивный поиск Azure](https://docs.microsoft.com/azure/search/search-howto-index-azure-data-lake-storage)|Предварительная версия|
-
-Полный список поддержки для Data Lake Storage 2-го поколения в службе экосистемы Azure см. в статье [интеграция Azure Data Lake Storage со службами Azure](data-lake-storage-integrate-with-azure-services.md).
-
-Дополнительные сведения об общих проблемах и ограничениях, связанных с Azure Data Lake Storage 2-го поколения, см. в разделе [Известные проблемы](data-lake-storage-known-issues.md).
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-См. [Известные проблемы](data-lake-storage-known-issues.md)
+- [Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md)
+- [Службы Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
+- [Платформы с открытым кодом, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-open-source-platforms.md)
+- [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
 
 
 

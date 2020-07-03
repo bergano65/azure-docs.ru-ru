@@ -16,14 +16,14 @@ ms.topic: reference
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3e6c490ee9d8b6f7f07f52e70ceb8c7c49d699b6
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: f0c6484f46731e0ff2d16d00cb0038202511d193
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76897021"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80331074"
 ---
-# <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
+# <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
 Эта статья содержит ответы на часто задаваемые вопросы о расширении Azure Active Directory (Azure AD) Connect Health. Здесь представлены сведения об использовании службы, в частности о модели выставления счетов, возможностях, ограничениях и поддержке.
 
 ## <a name="general-questions"></a>Общие вопросы
@@ -37,9 +37,9 @@ ms.locfileid: "76897021"
 
 |Роль| Версия операционной системы|
 |--|--|
-|Службы федерации Active Directory (AD FS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
+|Службы федерации Active Directory (AD FS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
 |Azure AD Connect | Версия 1.0.9125 или более поздняя|
-|Доменные службы Active Directory (AD DS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
+|Доменные службы Active Directory (AD DS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
 
 Обратите внимание, что функции, предоставляемые службой, могут отличаться в зависимости от роли и операционной системы. Другими словами, не для всех версий операционной системы могут быть доступны все возможности. Ознакомьтесь с описанием функций, чтобы получить дополнительные сведения.
 
@@ -52,7 +52,7 @@ ms.locfileid: "76897021"
 
 Сведения о лицензировании также приведены на [странице Azure AD](https://aka.ms/aadpricing).
 
-Пример:
+Пример.
 
 | Зарегистрированные агенты | Необходимые лицензии | Пример конфигурации мониторинга |
 | ------ | --------------- | --- |
@@ -66,7 +66,7 @@ ms.locfileid: "76897021"
 
 Azure AD Connect Health не поддерживается в облаке для Германии, кроме [функции отчетов об ошибках синхронизации](how-to-connect-health-sync.md#object-level-synchronization-error-report).
 
-| Роли | Возможности | Поддерживается в облаке для Германии |
+| Роли | Компоненты | Поддерживается в облаке для Германии |
 | ------ | --------------- | --- |
 | Connect Health для синхронизации | Мониторинг, аналитика, оповещения, анализ | Нет |
 |  | Отчет об ошибках синхронизации | Да |
@@ -107,8 +107,8 @@ Azure AD Connect Health не поддерживается в облаке для
 
 Если необходимо настроить прокси-сервер во время регистрации агента, следует заранее изменить параметры прокси-сервера для Internet Explorer.
 
-1. Откройте Internet Explorer и последовательно выберите **Сервис** > **Свойства браузера** > **Подключения** > **Настройка параметров локальной сети**.
-2. Установите флажок **Использовать прокси-сервер для локальной сети**.
+1. Откройте Internet Explorer > **Параметры** > **Интернет свойства** > **подключения** > параметры**локальной сети**.
+2. Установите флажок **использовать прокси-сервер для локальной сети**.
 3. Выберите **Дополнительно**, если для HTTP и HTTPS используются различные порты прокси-сервера.
 
 **Вопрос. Поддерживает ли Azure AD Connect Health обычную проверку подлинности при подключении к прокси-серверам HTTP?**
@@ -133,8 +133,8 @@ Azure AD Connect Health не поддерживается в облаке для
 
 Ниже перечислены возможные причины, по которым регистрация агента работоспособности может завершиться сбоем:
 
-* Агент не может подключиться к необходимым конечным точкам, так как трафик блокируется брандмауэром. Это особенно часто происходит на прокси-серверах веб-приложений. Убедитесь, что исходящие подключения к необходимым конечным точкам и портам разрешены. Дополнительные сведения см. в разделе [Требования](how-to-connect-health-agent-install.md#requirements).
-* Исходящие подключения проверяются протоколом SSL на сетевом уровне. В результате сертификат, используемый агентом, заменяется проверяющим сервером или сущностью, что приводит к ошибке регистрации агента.
+* Агент не может подключиться к необходимым конечным точкам, так как трафик блокируется брандмауэром. Это особенно часто происходит на прокси-серверах веб-приложений. Убедитесь, что исходящие подключения к необходимым конечным точкам и портам разрешены. Дополнительные сведения см. в [разделе требования](how-to-connect-health-agent-install.md#requirements) .
+* Исходящая связь проходит проверку TLS на уровне сети. В результате сертификат, используемый агентом, заменяется проверяющим сервером или сущностью, что приводит к ошибке регистрации агента.
 * Пользователь не имеет доступа для регистрации агента. По умолчанию доступ имеют глобальные администраторы. Можно использовать [управление доступом на основе ролей](how-to-connect-health-operations.md#manage-access-with-role-based-access-control) и делегировать доступ другим пользователям.
 
 **Вопрос. я получаю предупреждение о том, что служба работоспособности данные устарели. Разделы справки устранить проблему?**
@@ -192,7 +192,7 @@ CheckForMS17-010
 
 **В. Почему не создаются журналы аудита ADFS?**
 
-Включите журналы аудита с помощью командлета PowerShell <i>Get-AdfsProperties -AuditLevel</i>. Подробнее о [журналах аудита AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server#auditing-levels-in-ad-fs-for-windows-server-2016). Обратите внимание: если расширенные параметры аудита отправляются на сервер AD FS, все изменения, внесенные в файл auditpol.exe, перезаписываются (даже если созданное приложение не настроено). В этом случае настройте локальную политику безопасности для ведения журнала сбоев и успешных выполнений созданного приложения.
+Включите журналы аудита с помощью командлета PowerShell <i>Get-AdfsProperties -AuditLevel</i>. Дополнительные сведения см. в статье [журналы аудита ADFS](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server#auditing-levels-in-ad-fs-for-windows-server-2016). Обратите внимание: если расширенные параметры аудита отправляются на сервер AD FS, все изменения, внесенные в файл auditpol.exe, перезаписываются (даже если созданное приложение не настроено). В этом случае настройте локальную политику безопасности для ведения журнала сбоев и успешных выполнений созданного приложения.
 
 **Вопрос. когда будет автоматически продлен сертификат агента до истечения срока действия?**
 Сертификация агента будет автоматически продлена **6 месяцев** до даты окончания срока ее действия. Если он не продлен, убедитесь, что сетевое подключение агента стабильно. Может также решить проблему, перезапустить службы агента или обновить последнюю версию.
@@ -200,9 +200,9 @@ CheckForMS17-010
 
 ## <a name="related-links"></a>Связанные ссылки
 * [Azure AD Connect Health](whatis-hybrid-identity-health.md)
-* [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
-* [Операции Azure AD Connect Health](how-to-connect-health-operations.md)
+* [Установка агента Azure AD Connect Health](how-to-connect-health-agent-install.md)
+* [Azure AD Connect Health операции](how-to-connect-health-operations.md)
 * [Использование Azure AD Connect Health с AD FS](how-to-connect-health-adfs.md)
 * [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md)
 * [Использование Azure AD Connect Health с AD DS](how-to-connect-health-adds.md)
-* [Azure AD Connect Health: история выпусков версий](reference-connect-health-version-history.md)
+* [Журнал версий Azure AD Connect Health](reference-connect-health-version-history.md)

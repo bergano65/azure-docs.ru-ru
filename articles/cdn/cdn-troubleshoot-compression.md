@@ -3,8 +3,8 @@ title: Устранение неполадок со сжатием файлов 
 description: Узнайте, как устранить неполадки со сжатием файлов Azure CDN.
 services: cdn
 documentationcenter: ''
-author: zhangmanling
-manager: erikre
+author: sohamnc
+manager: danielgi
 editor: ''
 ms.assetid: a6624e65-1a77-4486-b473-8d720ce28f8b
 ms.service: azure-cdn
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 5195dc3c47d2a4377147b2ef49b23bab6b3fee77
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: aff2dadee365fcdc7e14070714aa1d2cbba901ff
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593323"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79476429"
 ---
 # <a name="troubleshooting-cdn-file-compression"></a>Устранение неполадок со сжатием файлов CDN
 Эта статья поможет вам устранить неполадки со [сжатием файлов CDN](cdn-improve-performance.md).
@@ -36,12 +36,13 @@ ms.locfileid: "67593323"
 > 
 > 
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 Возможно несколько причин, включая указанные ниже.
 
 * Запрошенное содержимое не подходит для сжатия.
 * Сжатие не включено для запрошенного типа файла.
 * В запросе HTTP не было заголовка, запрашивающего допустимый тип сжатия.
+* Источник отправляет поблочное содержимое.
 
 ## <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 > [!TIP]
@@ -97,7 +98,7 @@ ms.locfileid: "67593323"
 
 С помощью средств разработчика в браузере проверьте заголовки ответов, чтобы убедиться в том, что файл кэширован в регионе, где он запрашивается.
 
-* Проверьте заголовок ответа **Server** в формате  **платформа (POP/идентификатор сервера)** , как показано в примере ниже.
+* Проверьте заголовок ответа **Server** в формате  **платформа (POP/идентификатор сервера)**, как показано в примере ниже.
 * Проверьте заголовок ответа **X-Cache** .  Он должен иметь значение **HIT**.  
 
 ![Заголовки ответа CDN](./media/cdn-troubleshoot-compression/cdn-response-headers.png)
@@ -116,6 +117,6 @@ ms.locfileid: "67593323"
 ### <a name="check-the-request-at-the-origin-server-for-a-via-header"></a>Проверьте, есть ли в запросе на сервере-источнике заголовок **Via** .
 HTTP-заголовок **Via** указывает веб-серверу, что запрос передается через прокси-сервер.  Если запрос содержит заголовок **Via** , веб-серверы Microsoft IIS по умолчанию не сжимают ответы.  Чтобы изменить это поведение, сделайте следующее.
 
-* **IIS 6**: [Задайте HcNoCompressionForProxies = «ЛОЖЬ» в свойствах метабазы IIS](/previous-versions/iis/6.0-sdk/ms525390(v=vs.90))
-* **IIS 7 и более**: [Задайте для обоих **noCompressionForHttp10** и **noCompressionForProxies** значение False в конфигурации сервера](https://www.iis.net/configreference/system.webserver/httpcompression)
+* **IIS 6**: [задайте HcNoCompressionForProxies="FALSE" в свойствах метабазы IIS](/previous-versions/iis/6.0-sdk/ms525390(v=vs.90))
+* **IIS 7 и выше**: [присвойте параметрам **noCompressionForHttp10** и **noCompressionForProxies** значение False в конфигурации сервера](https://www.iis.net/configreference/system.webserver/httpcompression).
 

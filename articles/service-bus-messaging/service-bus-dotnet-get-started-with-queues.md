@@ -14,25 +14,25 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 01/24/2020
 ms.author: aschhab
-ms.openlocfilehash: 60428e3c5be4ac994f83f44c4492ebd80ee65da7
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 5718106aee0e60d111398efdb839945c2c7a8a06
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76760987"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77471743"
 ---
 # <a name="get-started-with-service-bus-queues"></a>Начало работы с очередями служебной шины
 [!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 В этом руководстве вы создадите консольные приложения .NET Core для отправки сообщений в очередь служебной шины и получения сообщений из нее.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Visual Studio 2019](https://www.visualstudio.com/vs).
 - [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
 - Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать [преимущества подписчика MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) или зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
 - Если у вас нет подходящей очереди служебной шины, [создайте ее с помощью портала Azure](service-bus-quickstart-portal.md).
 
-  - Ознакомьтесь с кратким обзором очередей служебной шины.
+  - Ознакомьтесь с общими сведениями об очередях Служебной шины.
   - Создайте пространство имен служебной шины.
   - Получите строку подключения.
   - Создается очередь служебной шины.
@@ -41,21 +41,21 @@ ms.locfileid: "76760987"
 
 Для отправки сообщений в очередь создайте консольное приложение C# с помощью Visual Studio.
 
-### <a name="create-a-console-application"></a>Создание консольного приложение
+### <a name="create-a-console-application"></a>Создание консольного приложения
 
 Запустите Visual Studio и создайте проект **консольного приложения (.NET Core)** для C#. В этом примере имя приложения *коресендерапп*.
 
 ### <a name="add-the-service-bus-nuget-package"></a>Получение пакета NuGet для служебной шины
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
-1. Нажмите кнопку **Обзор**. Найдите и выберите **[Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)** .
+1. Нажмите кнопку **Обзор**. Найдите и выберите **[Microsoft. Azure. servicebus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)**.
 1. Нажмите кнопку **установить** , чтобы завершить установку, а затем закройте диспетчер пакетов NuGet.
 
     ![Установка пакета NuGet][nuget-pkg]
 
 ### <a name="write-code-to-send-messages-to-the-queue"></a>Написание кода для отправки сообщений в очередь
 
-1. В *Program.CS*добавьте следующие операторы `using` в начале определения пространства имен перед объявлением класса:
+1. В *Program.CS*добавьте следующие `using` инструкции в начале определения пространства имен перед объявлением класса:
 
     ```csharp
     using System.Text;
@@ -64,7 +64,7 @@ ms.locfileid: "76760987"
     using Microsoft.Azure.ServiceBus;
     ```
 
-1. В классе `Program` объявите следующие переменные:
+1. В `Program` классе объявите следующие переменные:
 
     ```csharp
     const string ServiceBusConnectionString = "<your_connection_string>";
@@ -74,7 +74,7 @@ ms.locfileid: "76760987"
 
     Введите строку подключения для пространства имен в качестве `ServiceBusConnectionString` переменной. Введите имя очереди.
 
-1. Замените метод `Main()` следующим **асинхронным** методом `Main`. Он вызывает метод `SendMessagesAsync()`, который будет добавлен на следующем шаге для отправки сообщений в очередь. 
+1. Замените `Main()` метод следующим **асинхронным** `Main` методом. Он вызывает `SendMessagesAsync()` метод, который будет добавлен на следующем шаге для отправки сообщений в очередь. 
 
     ```csharp
     public static async Task Main(string[] args)
@@ -94,7 +94,7 @@ ms.locfileid: "76760987"
         await queueClient.CloseAsync();
     }
     ```
-1. Сразу после метода `MainAsync()` добавьте следующий метод `SendMessagesAsync()`, который выполняет отправку количества сообщений, указанных `numberOfMessagesToSend` (в настоящее время установлено равным 10):
+1. Сразу после `MainAsync()` метода добавьте следующий `SendMessagesAsync()` метод, который выполняет отправку числа сообщений, `numberOfMessagesToSend` указанных в (в данный момент установлено равным 10):
 
     ```csharp
     static async Task SendMessagesAsync(int numberOfMessagesToSend)
@@ -201,16 +201,17 @@ namespace CoreSenderApp
 
 ### <a name="write-code-to-receive-messages-from-the-queue"></a>Написание кода для получения сообщений из очереди
 
-1. В *Program.CS*добавьте следующие операторы `using` в начале определения пространства имен перед объявлением класса:
+1. В *Program.CS*добавьте следующие `using` инструкции в начале определения пространства имен перед объявлением класса:
 
     ```csharp
+    using System;
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
     using Microsoft.Azure.ServiceBus;
     ```
 
-1. В классе `Program` объявите следующие переменные:
+1. В `Program` классе объявите следующие переменные:
 
     ```csharp
     const string ServiceBusConnectionString = "<your_connection_string>";
@@ -220,18 +221,23 @@ namespace CoreSenderApp
 
     Введите строку подключения для пространства имен в качестве `ServiceBusConnectionString` переменной. Введите имя очереди.
 
-1. Замените содержимое объекта `Main()` по умолчанию следующей строкой кода:
+1. Замените метод `Main()` следующим кодом:
 
     ```csharp
-    public static async Task Main(string[] args)
-    {    
+    static void Main(string[] args)
+    {
+        MainAsync().GetAwaiter().GetResult();
+    }
+
+    static async Task MainAsync()
+    {
         queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
 
         Console.WriteLine("======================================================");
         Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
         Console.WriteLine("======================================================");
 
-        // Register the queue message handler and receive messages in a loop
+        // Register QueueClient's MessageHandler and receive messages in a loop
         RegisterOnMessageHandlerAndReceiveMessages();
 
         Console.ReadKey();
@@ -240,7 +246,7 @@ namespace CoreSenderApp
     }
     ```
 
-1. Сразу после метода `MainAsync()` добавьте следующий метод, который регистрирует обработчик сообщений и получает сообщения, отправленные приложением отправителя:
+1. Сразу после `MainAsync()` метода добавьте следующий метод, который регистрирует обработчик сообщений и получает сообщения, отправленные приложением отправителя:
 
     ```csharp
     static void RegisterOnMessageHandlerAndReceiveMessages()
@@ -391,7 +397,7 @@ namespace CoreReceiverApp
 > [!NOTE]
 > Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет пользователям легко подключаться к пространству имен служебной шины и администрировать сущности обмена сообщениями. Это средство предоставляет расширенные возможности, такие как функции импорта и экспорта, а также возможность тестирования разделов, очередей, подписок, служб ретранслятора, центров уведомлений и концентраторов событий.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с [примерами в репозитории GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples), демонстрирующими расширенные возможности обмена сообщениями служебной шины.
 

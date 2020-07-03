@@ -1,25 +1,14 @@
 ---
-title: Отправка большого количества задач в пакетной службе Azure | Документация Майкрософт
+title: Отправка большого числа задач
 description: Сведения об эффективной отправке большого количества задач в одном задании пакетной службы
-services: batch
-documentationcenter: ''
-author: LauraBrenner
-manager: evansma
-editor: ''
-ms.assetid: ''
-ms.service: batch
-ms.topic: article
-ms.tgt_pltfrm: ''
-ms.workload: big-compute
+ms.topic: how-to
 ms.date: 08/24/2018
-ms.author: labrenne
-ms.custom: ''
-ms.openlocfilehash: c3857e512da5fe4fceefa5f735ddc65f73e11623
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
-ms.translationtype: MT
+ms.openlocfilehash: 46ab5e8879167a1808c51d4c4cd5c7071cb67cff
+ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77026053"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83778960"
 ---
 # <a name="submit-a-large-number-of-tasks-to-a-batch-job"></a>Отправка большого количества задач в пакетное задание
 
@@ -52,19 +41,19 @@ ms.locfileid: "77026053"
 
 Может потребоваться некоторое время, чтобы добавить большую коллекцию задач в задание, например до 1 минуты, чтобы добавить 20 000 задач через API .NET. В зависимости от API пакетной службы и рабочей нагрузки вы можете повысить пропускную способность задачи, изменив один или несколько компонентов ниже.
 
-* **Размер задачи**. Добавление больших задач занимает больше времени, чем добавление небольших. Чтобы уменьшить размер каждой задачи в коллекции, вы можете упростить командную строку задачи, уменьшить количество переменных среды или более эффективно выполнить требования к выполнению задачи. Например, вместо использования большого количества файлов ресурсов установите зависимости задачи с помощью [задачи запуска](batch-api-basics.md#start-task) в пуле или используйте [пакет приложения](batch-application-packages.md) либо [контейнер Docker](batch-docker-container-workloads.md).
+* **Размер задачи**. Добавление больших задач занимает больше времени, чем добавление небольших. Чтобы уменьшить размер каждой задачи в коллекции, вы можете упростить командную строку задачи, уменьшить количество переменных среды или более эффективно выполнить требования к выполнению задачи. Например, вместо использования большого количества файлов ресурсов установите зависимости задачи с помощью [задачи запуска](jobs-and-tasks.md#start-task) в пуле или используйте [пакет приложения](batch-application-packages.md) либо [контейнер Docker](batch-docker-container-workloads.md).
 
-* **Количество параллельных операций**. В зависимости от API пакетной службы повысьте пропускную способность, увеличив максимальное количество параллельных операций, выполняемых клиентом пакетной службы. Настройте этот параметр с помощью свойства [BatchClientParallelOptions.MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в API .NET или параметра `threads` такого метода, как [TaskOperations.add_collection](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python), в расширении пакета SDK для Python в пакетной службе. (Это свойство недоступно в пакете SDK Python для машинного кода.) По умолчанию это свойство имеет значение 1, но его значение больше, чтобы повысить пропускную способность операций. Вы компенсируете увеличенную пропускную способность за счет использования пропускной способности сети и производительности ЦП. Пропускная способность задачи увеличивается в 100 раз по сравнению с `MaxDegreeOfParallelism` или `threads`. На практике вы должны установить количество параллельных операций ниже 100. 
+* **Количество параллельных операций**. В зависимости от API пакетной службы повысьте пропускную способность, увеличив максимальное количество параллельных операций, выполняемых клиентом пакетной службы. Настройте этот параметр с помощью свойства [BatchClientParallelOptions.MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в API .NET или параметра `threads` такого метода, как [TaskOperations.add_collection](/python/api/azure-batch/azure.batch.operations.TaskOperations?view=azure-python), в расширении пакета SDK для Python в пакетной службе. (Это свойство недоступно в исходном пакете SDK для Python в пакетной службе.) По умолчанию для этого свойства установлено значение 1, но установите большее значение, чтобы повысить пропускную способность операций. Вы компенсируете увеличенную пропускную способность за счет использования пропускной способности сети и производительности ЦП. Пропускная способность задачи увеличивается в 100 раз по сравнению с `MaxDegreeOfParallelism` или `threads`. На практике вы должны установить количество параллельных операций ниже 100. 
  
   Расширение CLI пакетной службы Azure с шаблонами пакетной службы автоматически увеличивает количество параллельных операций на основе количества доступных ядер, но это свойство не настраивается в CLI. 
 
 * **Ограничения подключения HTTP**. Количество параллельных подключений HTTP может регулировать производительность клиента пакетной службы, когда он добавляет большое количество задач. Для определенных API количество подключений HTTP ограничено. Например, при разработке с помощью API .NET свойству [ServicePointManager.DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit) по умолчанию задается значение 2. Мы рекомендуем увеличить значение до числа, близкого к числу параллельных операций или более высокого.
 
-## <a name="example-batch-net"></a>Пример: .NET пакетной службы
+## <a name="example-batch-net"></a>Пример .NET для пакетной службы
 
 В следующих фрагментах кода C# показаны параметры, которые нужно настроить при добавлении большого количества задач с помощью API .NET пакетной службы.
 
-Чтобы увеличить пропускную способность задачи, увеличьте значение свойства [MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient?view=azure-dotnet). Пример.
+Чтобы увеличить пропускную способность задачи, увеличьте значение свойства [MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient?view=azure-dotnet). Пример:
 
 ```csharp
 BatchClientParallelOptions parallelOptions = new BatchClientParallelOptions()
@@ -74,7 +63,7 @@ BatchClientParallelOptions parallelOptions = new BatchClientParallelOptions()
 ...
 ```
 Добавьте коллекцию задач в задание, используя соответствующую перегрузку метода [AddTaskAsync](/dotnet/api/microsoft.azure.batch.cloudjob.addtaskasync?view=azure-dotnet) или [AddTask](/dotnet/api/microsoft.azure.batch.cloudjob.addtask?view=azure-dotnet
-). Пример.
+). Пример:
 
 ```csharp
 // Add a list of tasks as a collection
@@ -84,7 +73,7 @@ await batchClient.JobOperations.AddTaskAsync(jobId, tasksToAdd, parallelOptions)
 ```
 
 
-## <a name="example-batch-cli-extension"></a>Пример: расширение CLI пакетной службы
+## <a name="example-batch-cli-extension"></a>Пример расширение CLI пакетной службы
 
 Используя расширения CLI пакетной службы Azure с [шаблонами CLI пакетной службы](batch-cli-templates.md), создайте JSON-файл шаблона задания, который включает в себя [фабрику задач](https://github.com/Azure/azure-batch-cli-extensions/blob/master/doc/taskFactories.md). Фабрика задач настраивает коллекцию связанных задач для задания из одного определения задачи.  
 
@@ -127,7 +116,7 @@ await batchClient.JobOperations.AddTaskAsync(jobId, tasksToAdd, parallelOptions)
 ```
 Сведения о запуске задания с помощью шаблона см. в статье [Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов](batch-cli-templates.md).
 
-## <a name="example-batch-python-sdk-extension"></a>Пример: расширение пакета SDK для Python в пакетной службе
+## <a name="example-batch-python-sdk-extension"></a>Пример расширение пакета SDK для Python в пакетной службе
 
 Чтобы использовать расширение пакета SDK для Python в пакетной службе Azure, сначала установите пакет SDK для Python и расширение:
 
@@ -145,7 +134,7 @@ client = batch.BatchExtensionsClient(
 ...
 ```
 
-Создайте коллекцию задач для добавления в задание. Пример.
+Создайте коллекцию задач для добавления в задание. Пример:
 
 
 ```python

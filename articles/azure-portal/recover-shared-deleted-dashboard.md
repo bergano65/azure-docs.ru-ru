@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
 ms.openlocfilehash: af0c72f0bc5dd8f3a3cbae7b82b1ac56447cbb08
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77133294"
 ---
 # <a name="recover-a-deleted-dashboard-in-the-azure-portal"></a>Восстановление удаленной панели мониторинга в портал Azure
@@ -21,7 +21,7 @@ ms.locfileid: "77133294"
 
 1. В меню портал Azure выберите **группы ресурсов**, а затем выберите группу ресурсов, в которой была опубликована панель мониторинга (по умолчанию она называется **панели мониторинга**).
 
-1. В разделе **Журнал действий**разверните операцию **удалить панель мониторинга** . Перейдите на вкладку **Журнал изменений** и выберите **\<удаленный ресурс\>** .
+1. В разделе **Журнал действий**разверните операцию **удалить панель мониторинга** . Перейдите на вкладку **Журнал изменений** , а затем выберите ** \<удаленный\>ресурс**.
 
     ![Снимок экрана вкладки "журнал изменений"](media/recover-shared-deleted-dashboard/change-history-tab.png)
 

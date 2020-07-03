@@ -3,20 +3,20 @@ title: Краткое руководство. Перевод речи на не�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве рассматривается использование пакета SDK службы речи для интерактивного перевода речи с одного языка на другой.
 services: cognitive-services
-author: IEvangelist
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 02/10/2020
-ms.author: dapine
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 7f68e3a1a6dd1e3583b9cd1c44fdb311137584e3
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.author: trbye
+zone_pivot_groups: programming-languages-set-two-with-js-spx
+ms.openlocfilehash: 666b8ba42a7b97b25b4ecf1fcae9983685e94bed
+ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77119217"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83715119"
 ---
 # <a name="quickstart-translate-speech-to-multiple-languages"></a>Краткое руководство. Перевод речи на несколько языков
 
@@ -42,6 +42,19 @@ ms.locfileid: "77119217"
 [!INCLUDE [Header](../includes/quickstarts/translate-stt-multiple-languages/header.md)]
 [!INCLUDE [Header](../includes/quickstarts/translate-stt-multiple-languages/python/header.md)]
 [!INCLUDE [python](../includes/quickstarts/translate-stt-multiple-languages/python/python.md)]
+::: zone-end
+
+::: zone pivot="programming-language-javascript"
+[!INCLUDE [Header](../includes/quickstarts/translate-stt-multiple-languages/header.md)]
+[!INCLUDE [Header](../includes/quickstarts/translate-stt-multiple-languages/javascript/header.md)]
+[!INCLUDE [javascript](../includes/quickstarts/translate-stt-multiple-languages/javascript/javascript.md)]
+::: zone-end
+
+::: zone pivot="programmer-tool-spx"
+[!INCLUDE [Header](../includes/quickstarts/translate-stt-multiple-languages/spx/header.md)]
+[!INCLUDE [SPX Setup](../includes/spx-setup.md)]
+[!INCLUDE [spx](../includes/quickstarts/translate-stt-multiple-languages/spx/spx.md)]
+[!INCLUDE [next steps to spx basics](../includes/quickstarts/spx-next-steps.md)]
 ::: zone-end
 
 ::: zone pivot="programming-language-more"

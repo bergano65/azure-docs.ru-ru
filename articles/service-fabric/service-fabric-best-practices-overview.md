@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: pepogors
 ms.openlocfilehash: 46601fd91fccb5bd0866bd999cc7643c37c6d582
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75551783"
 ---
 # <a name="azure-service-fabric-application-and-cluster-best-practices"></a>Рекомендации по приложению и кластеру Azure Service Fabric
@@ -18,9 +18,9 @@ ms.locfileid: "75551783"
 
 ## <a name="security"></a>Безопасность
 
-* [Рекомендации по безопасности](service-fabric-best-practices-security.md)
+* [Рекомендации по обеспечению безопасности](service-fabric-best-practices-security.md)
 
-## <a name="networking"></a>Работа в сети
+## <a name="networking"></a>Сеть
 
 * [Рекомендации по работе в сети](service-fabric-best-practices-networking.md)
 

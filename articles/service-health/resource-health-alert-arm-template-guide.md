@@ -1,14 +1,14 @@
 ---
-title: Создание оповещений о работоспособности ресурсов Azure — шаблоны диспетчер ресурсов
+title: Шаблон для создания оповещений Работоспособность ресурсов
 description: Создание оповещений, которые уведомляют о том, когда ресурсы Azure стали недоступны, программными средствами.
 ms.topic: conceptual
 ms.date: 9/4/2018
-ms.openlocfilehash: d42dfdc5806fa6340cf4bb7051b53764e98c26e3
-ms.sourcegitcommit: f34165bdfd27982bdae836d79b7290831a518f12
+ms.openlocfilehash: 60ff5bdf2f4f0dab94c18fd7c751869c1893ad65
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75922759"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759014"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -21,7 +21,7 @@ ms.locfileid: "75922759"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы следовать инструкциям на этой странице, необходимо заранее сделать следующее:
 
@@ -161,7 +161,7 @@ ms.locfileid: "75922759"
 ],
 ```
 
-Например: `"/subscriptions/d37urb3e-ed41-4670-9c19-02a1d2808ff9/resourcegroups/myRG/providers/microsoft.compute/virtualmachines/myVm"`
+Пример: `"/subscriptions/d37urb3e-ed41-4670-9c19-02a1d2808ff9/resourcegroups/myRG/providers/microsoft.compute/virtualmachines/myVm"`
 
 > Чтобы получить эту строку, перейдите на портал Azure и посмотрите на URL-адрес в разделе ресурса Azure.
 
@@ -228,6 +228,9 @@ ms.locfileid: "75922759"
 ```
 
 Если необходимо получать уведомления для всех четырех этапов событий работоспособности, можно удалить это условие, и вы будете получать оповещение независимо от свойства `status`.
+
+> [!NOTE]
+> Каждый раздел "anyOf" должен содержать только одно значение типа поля.
 
 ### <a name="adjusting-the-resource-health-alerts-to-avoid-unknown-events"></a>Корректировка оповещений службы "Работоспособность ресурсов" во избежание событий Unknown (Неизвестно)
 
@@ -433,11 +436,11 @@ ms.locfileid: "75922759"
 
 Тем не менее вам лучше знать, какие конфигурации эффективны для вас, поэтому используйте инструменты, приведенные в этой документации, чтобы настроить свою собственную конфигурацию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительная информация о службе "Работоспособность ресурсов".
--  [Обзор службы "Работоспособность ресурсов Azure"](Resource-health-overview.md)
--  [Типы ресурсов и проверок работоспособности, доступные в службе "Работоспособность ресурсов Azure"](resource-health-checks-resource-types.md)
+-  [Обзор Работоспособность ресурсов Azure](Resource-health-overview.md)
+-  [Типы ресурсов и проверки работоспособности, доступные через Работоспособность ресурсов Azure](resource-health-checks-resource-types.md)
 
 
 Создание оповещений службы "Работоспособность служб":

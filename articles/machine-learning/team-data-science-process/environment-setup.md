@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: d11e1614307d5b6cb267ae72bae6f32adb4b244a
-ms.sourcegitcommit: f52ce6052c795035763dbba6de0b50ec17d7cd1d
+ms.openlocfilehash: 6d1185e13397b3e466bd1e8d609a46f2f68bf390
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76722226"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80063938"
 ---
 # <a name="set-up-data-science-environments-for-use-in-the-team-data-science-process"></a>Настройка сред обработки и анализа данных для использования в процессе обработки и анализа данных группы
 Процесс обработки и анализа данных группы использует различные специализированные среды для хранения, обработки и анализа данных. Сюда относятся хранилище BLOB-объектов Azure, несколько типов виртуальных машин Azure, кластеры HDInsight (Hadoop) и рабочие области Машинного обучения Azure. Выбор используемой среды зависит от типа и количества данных, которые нужно моделировать, и места хранения этих данных в облаке. 
@@ -34,6 +34,6 @@ ms.locfileid: "76722226"
 
 Узнайте, как создавать следующие компоненты:
 
-- [Виртуальная машина для обработки и анализа данных под управлением Windows](../data-science-virtual-machine/provision-vm.md)
+- [Виртуальная машина Windows для обработки и анализа данных](../data-science-virtual-machine/provision-vm.md)
 - [Виртуальная машина для обработки и анализа данных Ubuntu](../data-science-virtual-machine/dsvm-ubuntu-intro.md)
 - [Виртуальная машина для обработки и анализа данных CentOS](../data-science-virtual-machine/linux-dsvm-intro.md)

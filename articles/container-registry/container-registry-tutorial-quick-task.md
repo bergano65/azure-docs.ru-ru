@@ -4,14 +4,14 @@ description: В этом руководстве описывается, как �
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.custom: seodec18, mvc
-ms.openlocfilehash: b8a45cf3a72ed8f38f6f28a2f0225d0913f906da
-ms.sourcegitcommit: 12d902e78d6617f7e78c062bd9d47564b5ff2208
+ms.openlocfilehash: 82b539ba8f275755ee31a00c2127a0dba7c38d9f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74456053"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78398513"
 ---
-# <a name="tutorial-build-and-deploy-container-images-in-the-cloud-with-azure-container-registry-tasks"></a>Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"
+# <a name="tutorial-build-and-deploy-container-images-in-the-cloud-with-azure-container-registry-tasks"></a>Руководство по Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"
 
 **Задачи ACR** — это набор компонентов в Реестре контейнеров Azure, предоставляющий упрощенные и эффективные сборки образов контейнера Docker в Azure. В этой статье вы узнаете, как использовать функцию *быстрой задачи* решения "Задачи ACR".
 
@@ -52,13 +52,13 @@ ms.locfileid: "74456053"
 
 Клонируйте репозиторий с помощью `git`, замените **\<your-github-username\>** своим именем пользователя GitHub:
 
-```azurecli-interactive
+```console
 git clone https://github.com/<your-github-username>/acr-build-helloworld-node
 ```
 
 Введите каталог, содержащий исходный код:
 
-```azurecli-interactive
+```console
 cd acr-build-helloworld-node
 ```
 
@@ -72,7 +72,9 @@ cd acr-build-helloworld-node
 
 Чтобы упростить выполнение примеров команд, руководства из этой серии используют переменные среды оболочки. Выполните следующую команду, чтобы задать переменную `ACR_NAME`. Замените **\<registry-name\>** уникальным именем нового реестра контейнеров. Имя реестра должно быть уникальным в пределах Azure и состоять только из строчных букв и содержать от 5 до 50 буквенно-цифровых знаков. Другие ресурсы, создаваемые в руководстве, основаны на этом имени, поэтому вам требуется изменить только первую переменную.
 
-```azurecli-interactive
+[![Внедрение запуска](https://shell.azure.com/images/launchcloudshell.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
+
+```console
 ACR_NAME=<registry-name>
 ```
 
@@ -93,8 +95,7 @@ az acr build --registry $ACR_NAME --image helloacrtasks:v1 .
 
 Результат выполнения команды [az acr build][az-acr-build] будет аналогичен следующему примеру. Вы можете просмотреть сведения об отправке исходного кода ("контекста") в Azure и дополнительные сведения об операции `docker build`, которую решение "Задача ACR" выполняет в облаке. Так как решение "Задачи ACR" использует `docker build` для создания образов, чтобы начать немедленно использовать это решение, изменения в файлах Dockerfiles не требуются.
 
-```console
-$ az acr build --registry $ACR_NAME --image helloacrtasks:v1 .
+```output
 Packing source code into tar file to upload...
 Sending build context (4.813 KiB) to ACR...
 Queued a build with build ID: da1
@@ -242,17 +243,7 @@ az container create \
 
 Значение `--dns-name-label` должно быть уникальным в пределах Azure, поэтому предыдущая команда добавляет имя реестра контейнеров к метке DNS-имени контейнера. В выходных данных команды содержится полное доменное имя (FQDN) контейнера, например:
 
-```console
-$ az container create \
->     --resource-group $RES_GROUP \
->     --name acr-tasks \
->     --image $ACR_NAME.azurecr.io/helloacrtasks:v1 \
->     --registry-login-server $ACR_NAME.azurecr.io \
->     --registry-username $(az keyvault secret show --vault-name $AKV_NAME --name $ACR_NAME-pull-usr --query value -o tsv) \
->     --registry-password $(az keyvault secret show --vault-name $AKV_NAME --name $ACR_NAME-pull-pwd --query value -o tsv) \
->     --dns-name-label acr-tasks-$ACR_NAME \
->     --query "{FQDN:ipAddress.fqdn}" \
->     --output table
+```output
 FQDN
 ----------------------------------------------
 acr-tasks-myregistry.eastus.azurecontainer.io
@@ -270,8 +261,7 @@ az container attach --resource-group $RES_GROUP --name acr-tasks
 
 Выходные данные `az container attach` сначала отображают состояние контейнера, когда он извлекает образ и запускается, а затем связывает STDOUT и STDERR вашей локальной консоли с аналогичным содержимым контейнера.
 
-```console
-$ az container attach --resource-group $RES_GROUP --name acr-tasks
+```output
 Container 'acr-tasks' is in state 'Running'...
 (count: 1) (last timestamp: 2018-08-22 18:39:10+00:00) pulling image "myregistry.azurecr.io/helloacrtasks:v1"
 (count: 1) (last timestamp: 2018-08-22 18:39:15+00:00) Successfully pulled image "myregistry.azurecr.io/helloacrtasks:v1"
@@ -303,7 +293,7 @@ az group delete --resource-group $RES_GROUP
 az ad sp delete --id http://$ACR_NAME-pull
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы протестировали внутренний цикл с быстрой задачей, настройте **задачу сборки** для активации сборок образов контейнера при фиксации исходного кода в репозитории Git:
 

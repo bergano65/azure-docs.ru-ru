@@ -1,28 +1,27 @@
 ---
 title: Microsoft Business Applications независимый поставщик программного обеспечения (ISV) подключение программы по подключению
 description: Вот как присоединиться к программе Business Applications ISV Connect.
-services: Azure Marketplace, Cloud Partner Portal
 author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 7/12/2019
-ms.author: evansma
-ms.openlocfilehash: 4a47886176b704cc3bc36cc9fa85d1d3faee4c58
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: f7fd3f43c7faddb5481411dc9c4c94864b6dc0b1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73819149"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80288977"
 ---
 # <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Microsoft Business Applications независимый поставщик программного обеспечения (ISV) подключение программы по подключению
 
-[Программа Business Applications Connect ISV](https://partner.microsoft.com/solutions/business-applications/isv-overview) предназначена для ускорения роста и общего успеха независимых поставщиков программного обеспечения (ISV), создающих современные, облачные, бизнес-решения с *участием клиентов Dynamics 365 и PowerApps* (предложения Dynamics CE) или *Dynamics 365 Финансы и операции* ("предложения Dynamics Ops"). Вот как они должны быть частью.
+[Программа Business Applications Connect ISV](https://partner.microsoft.com/solutions/business-applications/isv-overview) предназначена для ускорения роста и общего успеха независимых поставщиков программного обеспечения (ISV), создающих современные, облачные, бизнес-решения с *участием клиента Dynamics 365 и PowerApps* ("предложения Dynamics CE") или *Dynamics 365 Финансы и операции* ("предложения Dynamics Ops"). Вот как они должны быть частью.
 
 > [!IMPORTANT]
-> Существующие партнеры независимых поставщиков программного обеспечения с *участием клиентов dynamics 365*, *Dynamics 365 для финансов и операций*, а также приложения *PowerApps* должны выполнить все описанные ниже действия по адаптации до **15 октября 2019,** чтобы избежать появления существующие предложения удалены из [Microsoft AppSource](https://appsource.microsoft.com).
+> Существующие партнеры независимых поставщиков программного обеспечения с *участием клиентов dynamics 365*, *Dynamics 365 for Финансы и Operations*, а также приложения *PowerApps* должны выполнить все описанные ниже действия по адаптации до **15 октября 2019,** чтобы избежать удаления существующих предложений из [Microsoft AppSource](https://appsource.microsoft.com).
 
-Чтобы зарегистрироваться и воспользоваться преимуществами всех [технических, маркетинговых и коммерческих преимуществ](https://partner.microsoft.com/solutions/business-applications/isv-overview) программы Business Applications ISV Connect, мы запрашиваете существующих партнеров ISV (с предложениями *Dynamics CE* и *Ops* ) для завершения следующие шаги:
+Чтобы зарегистрироваться и воспользоваться преимуществами всех [технических, маркетинговых и коммерческих преимуществ](https://partner.microsoft.com/solutions/business-applications/isv-overview) программы Business Applications ISV Connect, мы запрашиваете существующих партнеров ISV (с предложениями *Dynamics CE* и *Ops* ), чтобы выполнить следующие действия.
 
 - [Настройте учетную запись центра партнеров Майкрософт](#set-up-your-microsoft-partner-center-account).
 - [Примите Business Applicationsное дополнение](#accept-the-business-applications-isv-program-addendum).

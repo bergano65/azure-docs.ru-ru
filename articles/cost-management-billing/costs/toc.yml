@@ -10,6 +10,9 @@
       items:
         - name: Начало анализа затрат
           href: quick-acm-cost-analysis.md
+        - name: "Создание бюджета\_— шаблон ARM"
+          href: quick-create-budget-template.md
+          displayName: 'ARM template, resource manager template'
     - name: Учебники
       items:
         - name: Создание бюджетов и управление ими
@@ -22,6 +25,8 @@
       items:
         - name: Рекомендации для Управления затратами Azure
           href: cost-mgt-best-practices.md
+        - name: Выбор между службой "Управление затратами" и Cloudyn
+          href: choose-between-azure-cost-management-cloudyn.md
         - name: Интерпретация данных службы "Управление затратами"
           href: understand-cost-mgt-data.md
         - name: Общие сведения об областях и работа с ними
@@ -30,6 +35,8 @@
           href: migrate-cost-management-api.md
     - name: Практические руководства
       items:
+        - name: Предотвращение и анализ непредвиденных расходов
+          href: ../manage/getting-started.md
         - name: Назначение прав доступа к данным
           href: assign-access-acm-data.md
         - name: Выполнение распространенных задач с помощью анализа затрат
@@ -58,6 +65,8 @@
           href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
     - name: Ресурсы
       items:
+        - name: Видео по управлению затратами
+          href: 'https://www.youtube.com/c/AzureCostManagement'
         - name: Развитие навыков с помощью Microsoft Learn
           href: /learn/browse/?products=azure-cost-management
         - name: Форум обратной связи по Управлению затратами

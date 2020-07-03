@@ -5,18 +5,18 @@ author: shsha
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: shsha
-ms.openlocfilehash: 350718e4ce890fcbfaa7f2b10cc4c47dfac4da90
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: b8e0a19e3f654fc561e7c7e26c6a2da463e24d5f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614712"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78969029"
 ---
 # <a name="set-up-an-encryption-certificate-and-encrypt-secrets-on-linux-clusters"></a>Настройка сертификата шифрования и шифрование секретов в кластерах Linux
-В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Linux. Сведения о кластерах Windows см. [в разделе Настройка сертификата шифрования и шифрование секретов в кластерах Windows][secret-management-windows-specific-link].
+В этой статье описывается, как настроить сертификат шифрования и использовать его для шифрования секретов в кластерах Linux. Инструкции для кластеров Windows приведены в разделе [Настройка сертификата шифрования и шифрование секретов в кластерах Windows][secret-management-windows-specific-link].
 
 ## <a name="obtain-a-data-encipherment-certificate"></a>Получение сертификата шифрования данных
-Сертификат о шифровании данных используется исключительно для шифрования и расшифровки [параметров][parameters-link] в параметрах. XML и [переменные среды][environment-variables-link] в службе ServiceManifest. XML. Он не применяется для аутентификации или подписывания зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
+Сертификат шифрования данных используются исключительно для шифрования и расшифровки [параметров][parameters-link] в файле Settings.xml службы и [переменных среды][environment-variables-link] в ее файле ServiceManifest.xml. Он не применяется для аутентификации или подписывания зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
 
 * Сертификат должен содержать закрытый ключ.
 * Использование ключа сертификата должно включать шифрование данных (10) и не должно включать аутентификацию сервера или клиента.
@@ -36,7 +36,7 @@ ms.locfileid: "75614712"
 
 ```console
 user@linux:$ echo "Hello World!" > plaintext.txt
-user@linux:$ iconv -f ASCII -t UTF-16LE plaintext.txt -o plaintext_UTF-16.txt
+user@linux:$ iconv -f ASCII -t UTF-16LE plaintext.txt | tr -d '\n' > plaintext_UTF-16.txt
 user@linux:$ openssl smime -encrypt -in plaintext_UTF-16.txt -binary -outform der TestCert.pem | base64 > encrypted.txt
 ```
 Результирующая строка в кодировке Base-64 в файле encrypted.txt содержит как зашифрованные данные секрета, так и сведения о сертификате, с помощью которого выполнено шифрование. Можно проверить его действительность, расшифровав его с помощью OpenSSL.
@@ -44,8 +44,8 @@ user@linux:$ openssl smime -encrypt -in plaintext_UTF-16.txt -binary -outform de
 user@linux:$ cat encrypted.txt | base64 -d | openssl smime -decrypt -inform der -inkey TestCert.prv
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
-Узнайте, как [указать зашифрованные секреты в приложении.][secret-management-specify-encrypted-secrets-link]
+## <a name="next-steps"></a>Дальнейшие шаги
+Узнайте, как [указать зашифрованные секреты в приложении][secret-management-specify-encrypted-secrets-link].
 
 <!-- Links -->
 [parameters-link]:service-fabric-how-to-parameterize-configuration-files.md

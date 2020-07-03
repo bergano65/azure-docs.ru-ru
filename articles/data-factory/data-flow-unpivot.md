@@ -8,16 +8,16 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 01/30/2019
-ms.openlocfilehash: b207012335e68d389a07b54408e840dbb305a30c
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: c3e769334beb6a5739eebb8d7e8dc370533c2dc6
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74930135"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81606242"
 ---
 # <a name="azure-data-factory-unpivot-transformation"></a>Преобразование отмены свертывания в фабрике данных Azure
 
-
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Используйте функцию отмены свертывания в ADF для сопоставления потока данных как способ превратить Ненормализованный набор данных в более нормализованную версию путем развертывания значений из нескольких столбцов одной записи в несколько записей с одинаковыми значениями в одном столбце.
 
@@ -53,6 +53,6 @@ ms.locfileid: "74930135"
 
 В окончательном наборе результатов для несвернутых данных отображаются итоговые значения столбца, которые теперь не объединены в значения отдельных строк.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте [Преобразование «Сведение](data-flow-pivot.md) » для сведения строк в столбцы.

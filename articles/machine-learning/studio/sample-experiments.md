@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/05/2018
-ms.openlocfilehash: 5400f10be3d4ef0954102e55ab578f5bc5ccc00a
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: a8743aeea6278588da308feb37016b679a4f0509
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77169154"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82929270"
 ---
 # <a name="create-azure-machine-learning-studio-classic-experiments-from-working-examples-in-azure-ai-gallery"></a>Создавайте эксперименты Машинное обучение Azure Studio (классические) на основе рабочих примеров в Коллекция решений ИИ Azure
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Узнайте, как использовать примеры экспериментов машинного обучения из [коллекции решений Azure AI](https://gallery.azure.ai/), чтобы не создавать собственные решения с нуля. Эти примеры помогут вам создать решение машинного обучения.
 
@@ -58,5 +60,4 @@ ms.locfileid: "77169154"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Импорт обучающих данных в Студию машинного обучения Azure из разных источников данных](import-data.md)
-* [Краткое руководство по языку программирования R для службы машинного обучения Azure](r-quickstart.md)
 * [Развертывание веб-службы машинного обучения Azure](deploy-a-machine-learning-web-service.md)

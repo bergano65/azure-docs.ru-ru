@@ -1,20 +1,20 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: cognitive-services
 author: diberry
 manager: nitinme
 ms.custom: include file
 ms.service: cognitive-services
-ms.subservice: luis
+ms.date: 05/06/2020
+ms.subservice: language-understanding
 ms.topic: include
-ms.date: 11/05/2019
 ms.author: diberry
-ms.openlocfilehash: de1073f0ec0140d1bf9874ce8d9cf447772d7909
-ms.sourcegitcommit: 359930a9387dd3d15d39abd97ad2b8cb69b8c18b
+ms.openlocfilehash: 25922efcaf9afdf8145ec963f470acc8fc642e31
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73648084"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83588966"
 ---
-Эти несколько фраз предназначены только для демонстрации. В реальном приложении следует использовать не менее 15 фраз различной длины, с различным порядком и количеством слов, в различных временах и с различной степенью грамматической и пунктуационной правильности.
+Эти несколько фраз предназначены только для демонстрации. В реальном приложении следует использовать не менее 15-30 [речевых фрагментов](../luis-concept-utterance.md) разной длины, с разным порядком и количеством слов, в разных временах и с разной степенью грамматической и пунктуационной правильности.

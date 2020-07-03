@@ -7,13 +7,13 @@ author: divyaswarnkar
 ms.author: divswa
 ms.reviewer: jonfan, divswa, logicappspm
 ms.topic: article
-ms.date: 01/27/2017
-ms.openlocfilehash: 78c0d20c0f32a6d63d134e958b30d38fe11fcc5c
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.date: 04/22/2020
+ms.openlocfilehash: c32b3ee5c4689e960834d543de1ca377e918751d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74790664"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82106293"
 ---
 # <a name="decode-edifact-messages-for-azure-logic-apps-with-the-enterprise-integration-pack"></a>Декодирование сообщений EDIFACT для Azure Logic Apps с помощью пакета интеграции Enterprise
 
@@ -24,17 +24,21 @@ ms.locfileid: "74790664"
 Вам понадобится следующее:
 
 * Учетная запись Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-* [Учетная запись интеграции](logic-apps-enterprise-integration-create-integration-account.md), уже определенная и связанная с подпиской Azure. Для работы с соединителем для декодирования сообщений EDIFACT потребуется учетная запись интеграции. 
+* [Учетная запись интеграции](logic-apps-enterprise-integration-create-integration-account.md) , которая уже определена и связана с подпиской Azure. Для работы с соединителем для декодирования сообщений EDIFACT потребуется учетная запись интеграции. 
 * В учетной записи интеграции должны быть определены по крайней мере два [партнера](logic-apps-enterprise-integration-partners.md).
 * В учетной записи интеграции должно быть определено [соглашение EDIFACT](logic-apps-enterprise-integration-edifact.md).
 
 ## <a name="decode-edifact-messages"></a>Декодирование сообщений EDIFACT
 
-1. [Создание приложения логики](quickstart-create-first-logic-app-workflow.md).
+> [!IMPORTANT]
+> Соединитель EDIFACT поддерживает только символы UTF-8.
+> Если в выходных данных содержатся непредвиденные символы, убедитесь, что в сообщениях EDIFACT используется кодировка UTF-8. 
+
+1. [Создайте приложение логики](quickstart-create-first-logic-app-workflow.md).
 
 2. В соединителе для декодирования сообщений EDIFACT нет триггеров, поэтому вам придется добавить триггер, чтобы запустить приложение логики (например, триггер запроса). В конструкторе приложений логики добавьте триггер, а затем добавьте действие в приложение логики.
 
-3. В поле поиска введите "EDIFACT" в качестве фильтра. Выберите**Decode EDIFACT Message** (Декодировать сообщение EDIFACT).
+3. В поле поиска введите "EDIFACT" в качестве фильтра. Выберите **декодировать сообщение EDIFACT**.
    
     ![поиск EDIFACT](./media/logic-apps-enterprise-integration-edifact-decode/edifactdecodeimage1.png)
 
@@ -57,7 +61,7 @@ ms.locfileid: "74790664"
 
     ![создано подключение к учетной записи интеграции](./media/logic-apps-enterprise-integration-edifact-decode/edifactdecodeimage4.png)  
 
-    Пример.
+    Пример:
 
     ![Выбор неструктурированного файла сообщения EDIFACT для декодирования](./media/logic-apps-enterprise-integration-edifact-decode/edifactdecodeimage5.png)  
 
@@ -94,6 +98,6 @@ ms.locfileid: "74790664"
 ## <a name="view-swagger-file"></a>Просмотр файла Swagger
 Дополнительные сведения о Swagger для соединителя EDIFACT см.в [этой статье](/connectors/edifact/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Дополнительные сведения о Пакете интеграции Enterprise](logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise") 
 

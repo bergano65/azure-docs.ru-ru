@@ -8,10 +8,10 @@ ms.date: 11/05/2019
 ms.author: dech
 ms.reviewer: sngun
 ms.openlocfilehash: 45dd4e8dcfd74cdb5d96b935e239b9f4b5094a7c
-ms.sourcegitcommit: bc7725874a1502aa4c069fc1804f1f249f4fa5f7
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73720926"
 ---
 # <a name="tutorial-create-a-notebook-in-azure-cosmos-db-to-analyze-and-visualize-the-data"></a>Руководство по Создание записной книжки в Azure Cosmos DB для анализа и визуализации данных
@@ -233,7 +233,7 @@ df_cosmos.head(10)
    show(p)
    ```
 
-   В выходных данных отображается геосхема мира с различными цветами. Более светлое цветовое значение представляет страны и регионы от наибольшего до наименьшего дохода.
+   В выходных данных отображается геосхема мира с различными цветами. Более светлое цветовое значение представляет страны от наибольшего до наименьшего дохода.
 
    ![Визуализация дохода для стран](./media/create-notebook-visualize-data/countries-revenue-map-visualization.png)
 
@@ -288,6 +288,6 @@ df_cosmos.head(10)
 
    ![Визуализация коэффициента конверсии покупок](./media/create-notebook-visualize-data/visualize-purchase-conversion-rate.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о командах записной книжки см. в статье [Использование встроенных команд и компонентов записной книжки в Azure Cosmos DB](use-notebook-features-and-commands.md).

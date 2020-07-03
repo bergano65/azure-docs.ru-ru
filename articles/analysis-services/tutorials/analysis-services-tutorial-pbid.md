@@ -8,13 +8,13 @@ ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: owend
 ms.openlocfilehash: 4d8c753f06e58fd1cce1c55eca213637cb70e436
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73572320"
 ---
-# <a name="tutorial-connect-with-power-bi-desktop"></a>Руководство по Подключение с помощью Power BI Desktop
+# <a name="tutorial-connect-with-power-bi-desktop"></a>Руководство. Подключение с помощью Power BI Desktop
 
 В этом руководстве с помощью Power BI Desktop вы подключитесь к базе данных модели из примера adventureworks на своем сервере. В предложенных вам задачах моделируются типичные действия пользователя при подключении к модели и создании простого отчета на основе данных модели.
 
@@ -23,7 +23,7 @@ ms.locfileid: "73572320"
 > * Подключение с помощью Power BI Desktop
 > * Создание простого отчета
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 - [База данных модели из примера adventureworks,](../analysis-services-create-sample-model.md) размещенная на сервере.
 - Разрешения на [*чтение*](../analysis-services-server-admins.md) для базы данных модели из примера adventureworks.
@@ -69,5 +69,5 @@ ms.locfileid: "73572320"
 
 Если этот отчет вам не нужен, не сохраняйте его, или удалите файл, если вы его уже сохранили.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Из этого руководства вы узнали, как с помощью Power BI Desktop подключиться к модели данных на сервере и создать по ней простой отчет. Если вы еще не умеете создавать модель данных, см. [руководство по моделированию табличных данных на примере Adventure Works Internet Sales](https://docs.microsoft.com/analysis-services/tutorial-tabular-1400/as-adventure-works-tutorial) в документации по SQL Server Analysis Services.

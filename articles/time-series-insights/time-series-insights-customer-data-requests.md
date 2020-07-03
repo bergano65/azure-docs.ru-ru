@@ -4,17 +4,17 @@ description: Сведения о функциях запроса данных к
 author: deepakpalled
 ms.author: dpalled
 manager: cshankar
-ms.date: 02/14/2020
+ms.date: 04/17/2020
 ms.topic: conceptual
 ms.service: time-series-insights
 services: time-series-insights
 ms.custom: seodec18
-ms.openlocfilehash: 64660e497bb1765b649e00b07fdb5db8c05910f5
-ms.sourcegitcommit: f97f086936f2c53f439e12ccace066fca53e8dc3
+ms.openlocfilehash: 3578710bf066e7745215d8efacafd2cf6c005eac
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2020
-ms.locfileid: "77368694"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81640497"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 
@@ -66,7 +66,7 @@ ms.locfileid: "77368694"
 
 Дополнительные сведения см. [в статье Настройка хранения в аналитике временных рядов](time-series-insights-how-to-configure-retention.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше о [предоставлении доступа к данным в среду службы "аналитика временных рядов Azure](./time-series-insights-data-access.md)".
 

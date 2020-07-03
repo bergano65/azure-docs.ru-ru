@@ -1,19 +1,18 @@
 ---
 title: Страница "все издатели" для Azure Marketplace
 description: Устаревшая статья CPP, указанная в статье о ПК; "Общие сведения обо всех издателях в Портал Cloud Partner для Azure Marketplace".
-services: Azure, Marketplace, Cloud Partner Portal, Partner Center
-author: ChJenk
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.author: v-chjen
-ms.openlocfilehash: eb932841d01d61b2753195de30d1b41a13242935
-ms.sourcegitcommit: 57eb9acf6507d746289efa317a1a5210bd32ca2c
+ms.author: dsindona
+ms.openlocfilehash: 679a88395dbfe6b41f1c947e605a21faca183e3f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2019
-ms.locfileid: "74665735"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80288960"
 ---
 # <a name="all-publishers-page"></a>Страница "Все издатели"
 

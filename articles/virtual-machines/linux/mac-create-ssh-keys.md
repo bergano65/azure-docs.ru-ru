@@ -1,25 +1,18 @@
 ---
 title: Создание и использование пары ключей SSH для виртуальных машин Linux в Azure
 description: Сведения о создании и использовании пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure с целью повышения безопасности процесса аутентификации.
-services: virtual-machines-linux
-documentationcenter: ''
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 34ae9482-da3e-4b2d-9d0d-9d672aa42498
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: 2da8264b7a1d0ad2ec485f106457cef18f233261
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: af18a32143ebc9db7be923b09de106b79022321f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76843911"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78969045"
 ---
 # <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция: создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
 
@@ -28,7 +21,7 @@ ms.locfileid: "76843911"
 > [!NOTE]
 > В настройках виртуальных машин, созданных с помощью ключей SSH, пароли отключены по умолчанию. Это сильно усложняет выполнение атак методом подбора. 
 
-Дополнительные сведения и примеры доступны в разделе [Подробное руководство по созданию пары ключей SSH и дополнительных сертификатов для виртуальной машины Linux в Azure](create-ssh-keys-detailed.md).
+Дополнительные сведения и примеры см. [в разделе подробные инструкции по созданию пар ключей SSH](create-ssh-keys-detailed.md).
 
 Дополнительные способы создания и использования ключей SSH на компьютере Windows описываются в разделе [Использование ключей SSH с Windows в Azure](ssh-from-windows.md).
 
@@ -55,7 +48,7 @@ az vm create --name VMname --resource-group RGname --generate-ssh-keys
 Чтобы создать виртуальную машину Linux, которая использует ключи SSH для аутентификации, укажите свой открытый ключ SSH при создании виртуальной машины с помощью портала Azure, Azure CLI, шаблонов Resource Manager или других методов.
 
 * [Создание виртуальной машины Linux с помощью портала Azure](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Создание виртуальной машины Linux с помощью Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Создание виртуальной машины Linux с Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Создание виртуальной машины Linux с помощью шаблона Azure](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 Если вам не знаком формат открытого ключа SSH, можно отобразить открытый ключ командой `cat`, при необходимости заменив `~/.ssh/id_rsa.pub` путем и именем файла собственного открытого ключа.
@@ -72,13 +65,13 @@ ssh-rsa AAAAB3NzaC1yc2EAABADAQABAAACAQC1/KanayNr+Q7ogR5mKnGpKWRBQU7F3Jjhn7utdf7Z
 
 Если вы копируете содержимое файла открытого ключа и вставляете его на портале Azure или в шаблоне Resource Manager, в этом содержимом не должно быть завершающего пробела. Чтобы скопировать открытый ключ в macOS, можно передать файл открытого ключа в `pbcopy`. Аналогичным образом в Linux можно передать файл открытого ключа в такие программы, как `xclip`.
 
-По умолчанию открытый ключ виртуальной машины Linux в Azure хранится в файле ~/.ssh/id_rsa.pub, если только вы не изменили это расположение во время создания пары ключей. При использовании [Azure CLI 2.0](/cli/azure) для создания виртуальной машины с использованием существующего открытого ключа укажите значение и (необязательно) расположение этого ключа, выполнив команду [az vm create](/cli/azure/vm#az-vm-create) с параметром `--ssh-key-value`. В следующей команде замените *VMname*, *RGname* и *keyFile* собственными значениями.
+По умолчанию открытый ключ виртуальной машины Linux в Azure хранится в файле ~/.ssh/id_rsa.pub, если только вы не изменили это расположение во время создания пары ключей. При использовании [Azure CLI 2.0](/cli/azure) для создания виртуальной машины с использованием существующего открытого ключа укажите значение и (необязательно) расположение этого ключа, выполнив команду [az vm create](/cli/azure/vm#az-vm-create) с параметром `--ssh-key-values`. В следующей команде замените *VMname*, *RGname* и *keyFile* собственными значениями.
 
 ```azurecli
 az vm create --name VMname --resource-group RGname --ssh-key-values mysshkey.pub
 ```
 
-Если вы хотите использовать несколько ключей SSH с виртуальной машиной, их можно ввести в списке с разделителями-пробелами, как это `--ssh-key-values sshkey-desktop.pub sshkey-laptop.pub`.
+Если вы хотите использовать несколько ключей SSH с виртуальной машиной, их можно ввести в список с разделителями-пробелами, как это `--ssh-key-values sshkey-desktop.pub sshkey-laptop.pub`сделать.
 
 
 ## <a name="ssh-into-your-vm"></a>SSH-подключение к виртуальной машине
@@ -93,7 +86,7 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 Если виртуальная машина использует политику доступа JIT, запросите доступ, прежде чем подключиться к виртуальной машине. Дополнительные сведения о политике JIT см. в статье [Управление доступом к виртуальным машинам с помощью JIT-доступа](../../security-center/security-center-just-in-time.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о работе с парами ключей SSH см. в разделе [Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами](create-ssh-keys-detailed.md).
 

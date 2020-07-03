@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 12/06/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 3c1e34bb418f9be2e26afc117343f1fa50bd8566
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76309065"
 ---
 Эти вопросы и ответы применимы к подключениям P2S, использующих классическую модель развертывания.
@@ -27,7 +27,7 @@ ms.locfileid: "76309065"
 * Windows 8.1 (32-разрядная и 64-разрядная версии)
 * Windows Server 2012 (только 64-разрядная версия)
 * Windows Server 2012 R2 (только 64-разрядная версия)
-* Windows 10
+* быть под управлением ОС Windows 10;
 
 ### <a name="can-i-use-any-software-vpn-client-that-supports-sstp-for-point-to-site"></a>Можно ли использовать для подключения "точка — сеть" любой VPN-клиент, поддерживающий SSTP?
 

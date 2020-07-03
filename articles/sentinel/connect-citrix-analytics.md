@@ -3,7 +3,7 @@ title: Подключение Citrix Analytics (Security) к Azure Sentinel | Д
 description: Узнайте, как подключить Citrix Analytics (Security) к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: cabailey
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.service: azure-sentinel
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: cabailey
-ms.openlocfilehash: b4a720702cdadf641665c4c8dc3754edd1c42361
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: bbc77340375b22f137045d68b7449dd1e8adc4b7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610630"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77588388"
 ---
 # <a name="connect-citrix-analytics-security"></a>Подключение Citrix Analytics (модуль безопасности) 
 
@@ -27,7 +27,7 @@ ms.locfileid: "75610630"
 
 
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 - Разрешения на чтение и запись в рабочей области "Sentinel" Azure.
 
@@ -36,13 +36,13 @@ ms.locfileid: "75610630"
 
 ## <a name="connect-azure-sentinel-to-citrix-analytics-security"></a>Подключение Sentinel Azure к Citrix Analytics (безопасность)
 
-1. В портал Azure перейдите в раздел **Azure Sentinel** > **соединители данных** , а затем выберите соединитель **Citrix Analytics (безопасность)** .
+1. В портал Azure перейдите к**соединителям данных** **Azure Sentinel** > , а затем выберите соединитель **Citrix Analytics (безопасность)** .
 
 2. Выберите **открыть страницу соединителя**.
 
 3. Следуйте инструкциям на странице **Citrix Analytics (безопасность)** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить Citrix Analytics (Security) к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).

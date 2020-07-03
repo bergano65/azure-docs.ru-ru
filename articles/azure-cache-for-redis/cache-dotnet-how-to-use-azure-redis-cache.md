@@ -7,19 +7,19 @@ ms.service: cache
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 05/18/2018
-ms.openlocfilehash: b22d40e29d2150592f2753edd789458fbf25911f
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/11/2020
+ms.openlocfilehash: 6384416c2feef3c9a9517bce08374a7667eb5d6b
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75433526"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "79369069"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-a-net-framework-application"></a>Краткое руководство. Использование кэша Azure для Redis с приложениями .NET Framework
 
 Из этого краткого руководства вы узнаете, как реализовать кэш Azure для Redis в приложении .NET Framework для обеспечения доступа к защищенному выделенному кэшу, к которому может обращаться любое приложение в Azure. Вы будете использовать клиент [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) с кодом C# в консольном приложении .NET.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 - [Visual Studio 2019](https://www.visualstudio.com/downloads/)
@@ -49,8 +49,7 @@ ms.locfileid: "75433526"
 
 В Visual Studio выберите **Файл** > **Создать** > **Проект**.
 
-В разделе **Visual C#** щелкните **Классическое приложение Windows**, а затем — **Консольное приложение** и **ОК**, чтобы создать новое консольное приложение.
-
+Выберите **Консольное приложение (.NET Framework)** , а затем нажмите кнопку**Далее**. Введите **имя проекта** и щелкните **Создать**, чтобы создать новое консольное приложение.
 
 <a name="configure-the-cache-clients"></a>
 
@@ -128,7 +127,7 @@ using System.Configuration;
         {
             // Connection refers to a property that returns a ConnectionMultiplexer
             // as shown in the previous example.
-            IDatabase cache = lazyConnection.Value.GetDatabase();
+            IDatabase cache = Connection.GetDatabase();
 
             // Perform cache operations using the cache object...
 

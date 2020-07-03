@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 05/16/2018
-ms.openlocfilehash: 65a15a8506b88e95e14af8c87bcbe33087301519
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 986c2783f3d130114da93406bfaf70d5c038d5ed
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75647838"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82856148"
 ---
 # <a name="use-hdinsight-tools-for-intellij-with-hortonworks-sandbox"></a>Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks
 
@@ -22,7 +22,7 @@ ms.locfileid: "75647838"
 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) — это интегрированная среда разработки (IDE) Java для создания программного обеспечения для компьютеров. После разработки и тестирования приложений в песочнице Hortonworks их можно переместить в [Azure HDInsight](apache-hadoop-introduction.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этой статьей необходимо иметь следующее:
 
@@ -32,7 +32,7 @@ ms.locfileid: "75647838"
 
 - [Java Developer Kit (JDK) версии 1.8 или более поздней версии](https://aka.ms/azure-jdks). Для набора средств Azure для IntelliJ требуется пакет JDK.
 
-- [Выпуск IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download) с подключаемым модулем [Scala](https://plugins.jetbrains.com/idea/plugin/1347-scala) и подключаемым модулем [Набор средств Azure для IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij). Средства HDInsight для IntelliJ доступны в составе набора средств Azure для IntelliJ. 
+- [Выпуск IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download) с подключаемым модулем [Scala](https://plugins.jetbrains.com/idea/plugin/1347-scala) и подключаемым модулем [Набор средств Azure для IntelliJ](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij). Средства HDInsight для IntelliJ доступны в составе набора средств Azure для IntelliJ.
 
 Чтобы установить подключаемые модули, сделайте следующее:
 
@@ -49,10 +49,10 @@ ms.locfileid: "75647838"
 
 1. Откройте IntelliJ IDEA на компьютере. В диалоговом окне **New Project** (Новый проект) сделайте следующее:
 
-   1. Выберите **HDInsight** > **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)).
+   1. Выберите **hdinsight** > **Spark в hdinsight (Scala)**.
    2. В списке **средств сборки** выберите один из следующих вариантов в зависимости от сценария:
 
-      * **Maven.** Для поддержки мастера создания проекта Scala.
+      * **Maven**: для поддержки мастера создания проектов Scala.
       * **SBT.** Для управления зависимостями и сборки проекта Scala.
 
    ![IntelliJ создать новый проект Scala](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-scala-project.png)
@@ -72,7 +72,7 @@ ms.locfileid: "75647838"
 5. Если представление **Project** (Проект) еще не открыто, нажмите клавиши **ALT+1**, чтобы открыть его.
 6. В **обозревателе проектов** разверните проект и выберите **src**.
 7. Щелкните правой кнопкой мыши **src**, наведите указатель мыши на пункт **New** (Создать), а затем щелкните **Scala Class** (Класс Scala).
-8. В поле **Name** (Имя) введите имя. В поле **Kind** (Тип) выберите **Object** (Объект). Нажмите кнопку **ОК**.
+8. В поле **Имя** введите имя. В поле **Kind** (Тип) выберите **Object** (Объект). Затем нажмите кнопку **ОК**.
 
     ![Диалоговое окно создания класса Scala](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-create-new-scala-class.png)
 
@@ -124,7 +124,7 @@ ms.locfileid: "75647838"
 1. Откройте проект в IntelliJ.
 2. В меню **View** (Вид) выберите **Tool Windows** (Окна инструментов) и выберите **Azure Explorer**.
 3. Разверните **Azure**, щелкните правой кнопкой мыши **HDInsight**, а затем выберите **Link an Emulator** (Установить связь с эмулятором).
-4. В диалоговом окне **Link A New Emulator** (Установка связи с новым эмулятором) введите пароль, настроенный для учетной записи привилегированного пользователя песочницы Hortonworks. Затем введите значения, аналогичные приведенным на следующем снимке экрана. Нажмите кнопку **ОК**. 
+4. В диалоговом окне **Link A New Emulator** (Установка связи с новым эмулятором) введите пароль, настроенный для учетной записи привилегированного пользователя песочницы Hortonworks. Затем введите значения, аналогичные приведенным на следующем снимке экрана. Затем нажмите кнопку **ОК**. 
 
    ![Диалоговое окно установки связи с новым эмулятором](./media/hdinsight-tools-for-intellij-with-hortonworks-sandbox/intellij-link-an-emulator.png)
 
@@ -146,7 +146,7 @@ ms.locfileid: "75647838"
 
 3. Нажмите кнопку **Submit** (Отправить). Журналы отправки заданий отображаются в окне инструмента отправки Spark.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [создавать приложения Apache Spark для кластера HDInsight Spark на платформе Linux с помощью средств HDInsight в Azure Toolkit for IntelliJ](../spark/apache-spark-intellij-tool-plugin.md).
 

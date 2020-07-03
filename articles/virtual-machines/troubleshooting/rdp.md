@@ -15,10 +15,10 @@ ms.topic: troubleshooting
 ms.date: 12/13/2018
 ms.author: genli
 ms.openlocfilehash: 2fd2efa9de3deff1fcf983ac0fa45e412357d312
-ms.sourcegitcommit: ca359c0c2dd7a0229f73ba11a690e3384d198f40
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "71057270"
 ---
 # <a name="troubleshoot-rdp-issues"></a>Устранение неполадок с протоколом удаленного рабочего стола
@@ -28,19 +28,19 @@ ms.locfileid: "71057270"
 - [Сброс RDP](reset-rdp.md)
 - [Устранение неполадок с RDP](troubleshoot-rdp-connection.md)
 - [Подробные сведения об устранении неполадок с RDP](detailed-troubleshoot-rdp.md)
-- [Устранение ошибки с RDP-подключением из-за отключения DHCP](troubleshoot-rdp-dhcp-disabled.md)
-- [Устранение ошибки RDP-подключения, возникающей из-за параметров NSG](troubleshoot-rdp-nsg-problem.md)
+- [Устранение ошибок с RDP-подключением из-за отключения DHCP](troubleshoot-rdp-dhcp-disabled.md)
+- [Устранение ошибок RDP-подключения, возникающих из-за параметров NSG](troubleshoot-rdp-nsg-problem.md)
 - [Устранение определенных ошибок](troubleshoot-specific-rdp-errors.md)
 - [Устранение ошибок, связанных с отсутствием сервера лицензирования](troubleshoot-rdp-no-license-server.md)
 - [Устранение неполадок со службами удаленных рабочих столов](troubleshoot-remote-desktop-services-issues.md)
 - [Устранение внутренней ошибки](Troubleshoot-rdp-internal-error.md)
 - [Устранение проблем с частыми отключениями](troubleshoot-rdp-intermittent-connectivity.md)
 - [Устранение общей ошибки](troubleshoot-rdp-general-error.md)
-- [Ошибки, связанные с аутентификацией, при работе с модулями Runbook службы автоматизации Azure](troubleshoot-authentication-error-rdp-vm.md)
-- [Устранение неполадок с RDP-подключением к виртуальной машине Azure по идентификатору события](event-id-troubleshoot-vm-rdp-connecton.md)
-- [Устранение ошибок RDP-подключения к виртуальной машине, возникающих из-за статического IP-адреса](troubleshoot-rdp-static-ip.md)
+- [Устранение ошибок аутентификации](troubleshoot-authentication-error-rdp-vm.md)
+- [Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события](event-id-troubleshoot-vm-rdp-connecton.md)
+- [Устранение ошибок RDP-подключения, возникающих из-за статического IP-адреса](troubleshoot-rdp-static-ip.md)
 - [Устранение ошибок RDP-подключения к виртуальной машине, возникающих из-за отключенного сетевого адаптера](troubleshoot-rdp-nic-disabled.md)
-- [Устранение ошибки RDP-подключения, вызванной безопасным режимом](troubleshoot-rdp-safe-mode.md)
+- [Устранение ошибки RDP-подключения, возникающей из-за использования безопасного режима](troubleshoot-rdp-safe-mode.md)
 - [Отключение брандмауэра гостевой ОС на виртуальной машине Azure](disable-guest-os-firewall-windows.md)
 - [Включение или отключение правила брандмауэра в гостевой ОС](enable-disable-firewall-rule-guest-os.md)
 - [Входящий трафик блокируется брандмауэром гостевой ОС](guest-os-firewall-blocking-inbound-traffic.md)

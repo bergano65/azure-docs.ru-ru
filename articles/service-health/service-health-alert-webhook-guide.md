@@ -1,15 +1,15 @@
 ---
-title: Отправка уведомлений о работоспособности службы Azure с помощью веб-перехватчика
+title: Отправка уведомлений о работоспособности службы Azure через веб-перехватчики
 description: Отправка персонализированных уведомлений о событиях работоспособности служб в существующую систему управления проблемами.
 ms.topic: conceptual
 ms.service: service-health
 ms.date: 3/27/2018
-ms.openlocfilehash: 95926185057d9fc1177b974fe76b2da18ebfc124
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: 2609a267bd151354f83482ab16c4b9345aa88cc4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551681"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80062856"
 ---
 # <a name="use-a-webhook-to-configure-health-notifications-for-problem-management-systems"></a>Использование веб-перехватчика для настройки уведомлений о работоспособности для систем управления проблемами
 
@@ -31,7 +31,7 @@ ms.locfileid: "75551681"
 ## <a name="configure-a-custom-notification-by-using-the-service-health-webhook-payload"></a>Настройка пользовательского уведомления с помощью полезных данных веб-перехватчика службы работоспособности служб
 Чтобы настроить собственную интеграцию с веб-перехватчиком, необходимо проанализировать полезные данные JSON, которые отправляются через уведомление о работоспособности службы.
 
-См. [пример](../azure-monitor/platform/activity-log-alerts-webhook.md) `ServiceHealth` полезных данных веб-перехватчика.
+См. [Пример](../azure-monitor/platform/activity-log-alerts-webhook.md) `ServiceHealth` полезных данных веб-перехватчика.
 
 Чтобы убедиться, что это предупреждение о работоспособности службы, просмотрите `context.eventSource == "ServiceHealth"`. Наиболее актуальны следующие свойства:
 - **Data. Context. activityLog. status**
@@ -46,7 +46,7 @@ ms.locfileid: "75551681"
 ## <a name="create-a-link-to-the-service-health-dashboard-for-an-incident"></a>Создание ссылки на панель мониторинга работоспособности службы для инцидента
 Вы можете создать прямую ссылку на панель мониторинга работоспособности службы на настольном или мобильном устройстве, создав специальный URL-адрес. Используйте *trackingId* и первые три и последние три цифры *SubscriptionId* в следующем формате:
 
-HTTPS<i></i>://App.Azure.com/h/ *&lt;trackingId&gt;* / *&lt;первых трех и последних трех цифрах SubscriptionId&gt;*
+HTTPS<i></i>://App.Azure.com/h/*&lt;trackingId&gt;*/*первые три и последние три&gt; &lt;цифры SubscriptionId*
 
 Например, если значение *SubscriptionId* — bba14129-e895-429b-8809-278e836ecdb3, а *trackingId* — 0DET-УРБ, URL-адрес работоспособности службы будет следующим:
 
@@ -56,15 +56,15 @@ HTTPS<i></i>://App.Azure.com/h/0DET-URB/bbadb3
 Свойство **Level** в полезных данных от низкого до высокого уровня может быть *информационным*, *предупреждением*, *ошибкой*или *критическим*.
 
 ## <a name="parse-the-impacted-services-to-determine-the-incident-scope"></a>Анализ затронутых служб для определения области инцидента
-Оповещения о работоспособности служб могут сообщать о проблемах в нескольких регионах и службах. Чтобы получить полные сведения, необходимо проанализировать значение `impactedServices`.
+Оповещения о работоспособности служб могут сообщать о проблемах в нескольких регионах и службах. Чтобы получить полные сведения, необходимо выполнить синтаксический анализ значения `impactedServices`.
 
-Содержимое, которое находится внутри, представляет собой экранированную строку [JSON](https://json.org/) , которая, в случае неэкранирования, содержит другой объект JSON, который можно регулярно анализировать. Пример.
+Содержимое, которое находится внутри, представляет собой экранированную строку [JSON](https://json.org/) , которая, в случае неэкранирования, содержит другой объект JSON, который можно регулярно анализировать. Пример:
 
 ```json
 {"data.context.activityLog.properties.impactedServices": "[{\"ImpactedRegions\":[{\"RegionName\":\"Australia East\"},{\"RegionName\":\"Australia Southeast\"}],\"ServiceName\":\"Alerts & Metrics\"},{\"ImpactedRegions\":[{\"RegionName\":\"Australia Southeast\"}],\"ServiceName\":\"App Service\"}]"}
 ```
 
-принимает следующий вид:
+обретает
 
 ```json
 [
@@ -113,7 +113,7 @@ HTTPS<i></i>://App.Azure.com/h/0DET-URB/bbadb3
 
 1. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
-- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).
-- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+- Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
+- Сведения об [уведомлениях о работоспособности служб](../azure-monitor/platform/service-notifications.md).
+- Дополнительные сведения о [группах действий](../azure-monitor/platform/action-groups.md).

@@ -1,5 +1,5 @@
 ---
-title: Создание нескольких конечных точек для модели
+title: Создание нескольких конечных точек модели
 titleSuffix: ML Studio (classic) - Azure
 description: Используйте PowerShell для создания нескольких моделей машинного обучения и конечных точек веб-службы с одним алгоритмом, но разными наборами данных для обучения.
 services: machine-learning
@@ -10,14 +10,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 04/04/2017
-ms.openlocfilehash: 9d94b6627348d08c76fa040255ba0856a2ffa945
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.openlocfilehash: 70fafa79c87d19d62ef936b286c82813d8e7fe17
+ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77168817"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82208522"
 ---
-# <a name="use-powershell-to-create-studio-classic-models-and-web-service-endpoints-from-one-experiment"></a>Использование PowerShell для создания моделей (классической модели) и веб-служб в одном эксперименте
+# <a name="create-multiple-web-service-endpoints-from-one-experiment-with-ml-studio-classic-and-powershell"></a>Создание нескольких конечных точек веб-службы из одного эксперимента с помощью студии машинного обучения (классическая модель) и PowerShell
+
+[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 При машинном обучении часто возникает следующая задача: требуется создать множество моделей с одинаковым рабочим процессом обучения и одинаковым алгоритмом. Но для их обучения нужно использовать разные входные наборы данных. В этой статье показано, как сделать это в масштабе в Машинное обучение Azure Studio (классическая модель), используя только один эксперимент.
 

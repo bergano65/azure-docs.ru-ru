@@ -10,21 +10,21 @@ ms.workload: identity
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: ajburnle
-ms.custom: fasttrack-edit
+ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de205beaf9800c2061cc41343b4153bd0e2b5dc7
-ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+ms.openlocfilehash: 5f29d103ce1be426fb0b5c462cc1d831fefe87b6
+ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2020
-ms.locfileid: "77024608"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80050008"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Краткое руководство. Создание клиента в Azure Active Directory
 С помощью портала Azure Active Directory (Azure AD) можно выполнять все административные задачи, включая создание клиента для своей организации. 
 
 В этом кратком руководстве вы узнаете, как получить доступ к порталу Azure и Azure Active Directory. Кроме того, вы узнаете, как создать базовый клиент для своей организации.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="create-a-new-tenant-for-your-organization"></a>Создание клиента для организации
 После входа на портал Azure можно создать клиент для своей организации. Новый клиент представляет организацию и помогает управлять определенным экземпляром облачных служб Майкрософт для внутренних и внешних пользователей.
@@ -56,7 +56,7 @@ ms.locfileid: "77024608"
 Будет создан клиент с доменом contoso.onmicrosoft.com.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Если вы не собираетесь использовать это приложение в дальнейшем, можно удалить клиент, выполнив следующие действия.
+Если вы не собираетесь использовать это приложение в дальнейшем, можно удалить клиент, выполнив следующие действия:
 
 - Войдите в каталог, который нужно удалить, с помощью фильтра **Каталог и подписка** на портале Azure и при необходимости переключитесь на целевой каталог.
 - Выберите **Azure Active Directory**, а затем на странице **Contoso — обзор** выберите **Удалить каталог**.

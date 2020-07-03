@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: cherylmc
 ms.openlocfilehash: e833e20085d7cfd8f727acb394851e96e7e19368
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75864372"
 ---
-# <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Рабочие процессы ExpressRoute для подготовки цепей и состояний цепей
+# <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Процедуры ExpressRoute для подготовки каналов и состояний каналов
 На этой странице описаны процедуры подготовки служб и настройки маршрутизации на высоком уровне.
 
 ![Рабочий процесс настройки канала](./media/expressroute-workflows/expressroute-circuit-workflow.png)

@@ -22,16 +22,14 @@
           href: functions-create-your-first-function-visual-studio.md
         - name: Командная строка
           href: functions-create-first-azure-function-azure-cli.md
-        - name: Maven (Java)
-          href: functions-create-first-java-maven.md
     - name: Подключение к хранилищу
       items:
         - name: Visual Studio Code
           href: functions-add-output-binding-storage-queue-vs-code.md
         - name: Visual Studio
           href: functions-add-output-binding-storage-queue-vs.md
-        - name: Maven (Java)
-          href: functions-add-output-binding-storage-queue-java.md
+        - name: Командная строка
+          href: functions-add-output-binding-storage-queue-cli.md
 - name: Учебники
   items:
     - name: Использование функций Azure с Logic Apps
@@ -42,12 +40,16 @@
       href: functions-openapi-definition.md
     - name: Подключение к виртуальной сети
       href: functions-create-vnet.md
+    - name: Обеспечение частного доступа к сайтам
+      href: functions-create-private-site-access.md
     - name: Изменение размера изображения с помощью службы "Сетка событий"
       href: ../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fazure-functions%2ftoc.json
     - name: Создание бессерверного веб-приложения
       href: /learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr
     - name: Машинное обучение с помощью TensorFlow
       href: functions-machine-learning-tensorflow.md
+    - name: Классификация изображений с помощью PyTorch
+      href: machine-learning-pytorch.md
     - name: Создание пользовательского образа Linux
       href: functions-create-function-linux-custom-image.md
     - name: Функции на устройстве IoT Edge
@@ -123,6 +125,13 @@
           href: functions-reference-python.md
         - name: TypeScript
           href: 'functions-reference-node.md#typescript'
+    - name: Безопасность
+      items:
+        - name: Общие сведения о безопасности
+          href: security-concepts.md
+          displayName: 'secure, ssl'
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Диагностика
       href: functions-diagnostics.md
     - name: Стоимость плана потребления
@@ -132,13 +141,15 @@
       displayName: best practice
     - name: Рекомендации по работе с хранилищем
       href: storage-considerations.md
-      displayName: 'encryption, keys'
+      displayName: 'encryption, keys, mount, files'
     - name: Прокси функций
       href: functions-proxies.md
     - name: Сетевые параметры
       href: functions-networking-options.md
     - name: IP-адреса
       href: ip-addresses.md
+    - name: Пользовательские обработчики
+      href: functions-custom-handlers.md
 - name: Практические руководства
   items:
     - name: Разработка
@@ -167,10 +178,16 @@
                   href: create-visual-studio.md
                 - name: Visual Studio Code
                   href: create-visual-studio-code.md
+                - name: Использование Java с Gradle
+                  href: functions-create-first-java-gradle.md
                 - name: Java с использованием Eclipse
                   href: functions-create-maven-eclipse.md
                 - name: Java с использованием IntelliJ IDEA
                   href: functions-create-maven-intellij.md
+                - name: Использование Kotlin с Maven
+                  href: functions-create-first-kotlin-maven.md
+                - name: Использование Kotlin с IntelliJ
+                  href: functions-create-maven-kotlin-intellij.md
                 - name: План Службы приложений для Linux
                   href: create-function-app-linux-app-service-plan.md
                 - name: План "Потребление Linux"
@@ -197,6 +214,8 @@
               href: add-output-binding-storage-queue-vs-code.md
             - name: Хранилище. Visual Studio
               href: add-output-binding-storage-queue-vs.md
+            - name: "Служба хранилища\_— Java"
+              href: functions-add-output-binding-storage-queue-java.md
         - name: Отладка и тестирование
           items:
             - name: Тестирование функций
@@ -282,6 +301,8 @@
           href: ../app-service/overview-managed-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Добавление ссылок на секреты из Key Vault
           href: ../app-service/app-service-key-vault-references.md?toc=%2fazure%2fazure-functions%2ftoc.json
+        - name: Шифрование данных сайта
+          href: configure-encrypt-at-rest-using-cmk.md
     - name: Интеграция
       items:
         - name: Добавление привязок
@@ -314,6 +335,8 @@
       items:
         - name: Устранение неполадок с хранилищем
           href: functions-recover-storage-account.md
+        - name: Устранение неполадок с зависимостями Python
+          href: recover-module-not-found.md
 - name: Справочник
   items:
     - name: Справочники по API
@@ -329,12 +352,16 @@
         - name: Хранилище BLOB-объектов
           items:
             - name: Обзор
+              displayName: Blob storage
               href: functions-bindings-storage-blob.md
             - name: Триггер
+              displayName: Blob storage
               href: functions-bindings-storage-blob-trigger.md
             - name: Входные данные
+              displayName: Blob storage
               href: functions-bindings-storage-blob-input.md
             - name: Выходные данные
+              displayName: Blob storage
               href: functions-bindings-storage-blob-output.md
         - name: Azure Cosmos DB
           items:
@@ -342,28 +369,64 @@
               href: functions-bindings-cosmosdb.md
               displayName: Azure Cosmos DB
             - name: Функции 2.x
-              href: functions-bindings-cosmosdb-v2.md
               displayName: Azure Cosmos DB
+              items:
+                - name: Обзор
+                  href: functions-bindings-cosmosdb-v2.md
+                  displayName: Azure Cosmos DB
+                - name: Триггер
+                  href: functions-bindings-cosmosdb-v2-trigger.md
+                  displayName: Azure Cosmos DB
+                - name: Входные данные
+                  href: functions-bindings-cosmosdb-v2-input.md
+                  displayName: Azure Cosmos DB
+                - name: Выходные данные
+                  href: functions-bindings-cosmosdb-v2-output.md
+                  displayName: Azure Cosmos DB
         - name: Сетка событий Azure
           items:
             - name: Обзор
               href: functions-bindings-event-grid.md
+              displayName: Event Grid
             - name: Триггер
               href: functions-bindings-event-grid-trigger.md
+              displayName: Event Grid
             - name: Выходные данные
               href: functions-bindings-event-grid-output.md
+              displayName: Event Grid
         - name: Центры событий
-          href: functions-bindings-event-hubs.md
+          items:
+            - name: Обзор
+              href: functions-bindings-event-hubs.md
+              displayName: Azure Event Hubs
+            - name: Триггер
+              href: functions-bindings-event-hubs-trigger.md
+              displayName: Azure Event Hubs
+            - name: Выходные данные
+              href: functions-bindings-event-hubs-output.md
+              displayName: Azure Event Hubs
         - name: Центр Интернета вещей
-          href: functions-bindings-event-iot.md
+          items:
+            - name: Обзор
+              href: functions-bindings-event-iot.md
+              displayName: Azure IoT Hubs
+            - name: Триггер
+              href: functions-bindings-event-iot-trigger.md
+              displayName: Azure IoT Hubs
+            - name: Выходные данные
+              href: functions-bindings-event-iot-output.md
+              displayName: Azure IoT Hubs
         - name: HTTP и веб-перехватчики
           items:
             - name: Обзор
               href: functions-bindings-http-webhook.md
+              displayName: HTTP
             - name: Триггер
               href: functions-bindings-http-webhook-trigger.md
+              displayName: HTTP
             - name: Выходные данные
               href: functions-bindings-http-webhook-output.md
+              displayName: HTTP
         - name: Microsoft Graph
           href: functions-bindings-microsoft-graph.md
         - name: Мобильные приложения
@@ -371,13 +434,40 @@
         - name: Центры уведомлений
           href: functions-bindings-notification-hubs.md
         - name: Хранилище очередей
-          href: functions-bindings-storage-queue.md
+          items:
+            - name: Обзор
+              href: functions-bindings-storage-queue.md
+              displayName: Queue storage
+            - name: Триггер
+              href: functions-bindings-storage-queue-trigger.md
+              displayName: Queue storage
+            - name: Выходные данные
+              href: functions-bindings-storage-queue-output.md
+              displayName: Queue storage
         - name: SendGrid
           href: functions-bindings-sendgrid.md
         - name: Служебная шина
-          href: functions-bindings-service-bus.md
+          items:
+            - name: Обзор
+              href: functions-bindings-service-bus.md
+              displayName: Service Bus
+            - name: Триггер
+              href: functions-bindings-service-bus-trigger.md
+              displayName: Service Bus
+            - name: Выходные данные
+              href: functions-bindings-service-bus-output.md
+              displayName: Service Bus
         - name: Служба SignalR
-          href: functions-bindings-signalr-service.md
+          items:
+            - name: Обзор
+              href: functions-bindings-signalr-service.md
+              displayName: SignalR Service
+            - name: Входные данные
+              href: functions-bindings-signalr-service-input.md
+              displayName: SignalR Service
+            - name: Выходные данные
+              href: functions-bindings-signalr-service-output.md
+              displayName: SignalR Service
         - name: Хранилище таблиц
           href: functions-bindings-storage-table.md
         - name: Таймер
@@ -410,8 +500,8 @@
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Видео
       href: 'https://www.youtube.com/c/AzureFunctions'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureFunctions'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-functions.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-functions'
     - name: Twitter

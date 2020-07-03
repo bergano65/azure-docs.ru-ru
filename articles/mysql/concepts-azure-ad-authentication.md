@@ -1,17 +1,17 @@
 ---
-title: Проверка подлинности Active Directory — база данных Azure для MySQL — один сервер
-description: Сведения о концепциях Azure Active Directory для проверки подлинности с помощью базы данных Azure для MySQL — одиночного сервера
+title: Проверка подлинности Active Directory — база данных Azure для MySQL
+description: Сведения о концепциях Azure Active Directory для проверки подлинности с помощью базы данных Azure для MySQL
 author: lfittl-msft
 ms.author: lufittl
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: eb26bc09ce273280b55a023c563427b5b323ace9
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 960536c3f80aa7870d6f2056d8e95cd1a4338dfe
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76706106"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79299028"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-mysql"></a>Использование Azure Active Directory для проверки подлинности с помощью MySQL
 
@@ -43,7 +43,7 @@ ms.locfileid: "76706106"
 > [!NOTE]
 > Сведения о создании и заполнении Azure AD, а также настройке Azure AD с помощью базы данных Azure для MySQL см. в статье [Настройка и вход в Azure AD для базы данных Azure для MySQL](howto-configure-sign-in-azure-ad-authentication.md).
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 На следующей высокоуровневой схеме показано, как работает аутентификация с помощью аутентификации Azure AD и базы данных Azure для MySQL. Стрелки обозначают пути обмена данными.
 
@@ -87,10 +87,10 @@ ms.locfileid: "76706106"
 - Если администратор Azure AD удален с сервера, сервер больше не будет связан с клиентом Azure AD, поэтому все имена входа Azure AD будут отключены для сервера. Добавление нового администратора Azure AD из того же клиента приведет к повторному включению имен входа Azure AD.
 - База данных Azure для MySQL сопоставляет маркеры доступа для пользователя базы данных Azure для MySQL, используя уникальный идентификатор пользователя Azure AD, а не имя пользователя. Это означает, что при удалении пользователя Azure AD в Azure AD и создании нового пользователя с тем же именем база данных Azure для MySQL считает, что другой пользователь. Таким образом, если пользователь удаляется из Azure AD, а затем добавляется новый пользователь с тем же именем, новый пользователь не сможет подключиться к существующему пользователю.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения о создании и заполнении Azure AD, а также настройке Azure AD с помощью базы данных Azure для MySQL см. в статье [Настройка и вход в Azure AD для базы данных Azure для MySQL](howto-configure-sign-in-azure-ad-authentication.md).
-- Обзор имен входа и пользователей базы данных для базы данных Azure для MySQL см. в статье [Создание пользователей в базе данных Azure для MySQL — одиночный сервер](howto-create-users.md).
+- Обзор имен входа и пользователей базы данных для базы данных Azure для MySQL см. в статье [Создание пользователей в базе данных Azure для](howto-create-users.md)MySQL.
 
 <!--Image references-->
 

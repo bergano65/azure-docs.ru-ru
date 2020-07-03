@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
-ms.openlocfilehash: e985fdda4638529e8ade2c700456d595ff355e8a
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: 6e9d1f35d021c3381f9c2887dfb1c150bb720871
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76988742"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80804662"
 ---
 # <a name="use-the-azure-maps-services-module"></a>Использование модуля Azure Maps Services
 
@@ -23,17 +23,17 @@ ms.locfileid: "76988742"
 
 1. Создайте HTML-файл.
 1. Загрузите модуль служб Azure Maps Services. Загрузить его можно одним из двух способов:
-    - Используйте глобально размещенную версию сети доставки содержимого Azure модуля Azure Maps Services. Добавьте ссылку на скрипт в элемент `<head>` файла:
+    - Используйте глобально размещенную версию сети доставки содержимого Azure модуля Azure Maps Services. Добавьте ссылку на скрипт в `<head>` элемент файла:
 
         ```html
         <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
         ```
 
-    - Также можно загрузить модуль служб для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-](https://www.npmjs.com/package/azure-maps-rest) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Используйте следующую команду:
+    - Также можно загрузить модуль служб для исходного кода веб-пакета SDK Azure Maps с помощью пакета [Azure-Maps-](https://www.npmjs.com/package/azure-maps-rest) NPM, а затем разместить его в приложении. Этот пакет также включает определения TypeScript. Выполните эту команду:
     
-        > **NPM установка Azure-Maps-RESTful**
+        > **npm install azure-maps-rest**
     
-        Затем добавьте ссылку на скрипт в элемент `<head>` файла:
+        Затем добавьте ссылку на скрипт в `<head>` элемент файла:
 
          ```html
         <script src="node_modules/azure-maps-rest/dist/atlas-service.min.js"></script>
@@ -124,7 +124,7 @@ ms.locfileid: "76988742"
 
     Дополнительные сведения см. [в статье Проверка подлинности с помощью Azure Maps](azure-maps-authentication.md).
 
-1. В следующем коде используется созданный клиент URL-адреса службы поиска Azure Maps для геокодирования адреса: "1 Microsoft Way, Redmond, WA". Код использует функцию `searchAddress` и отображает результаты в виде таблицы в тексте страницы.
+1. В следующем коде используется созданный клиент URL-адреса службы поиска Azure Maps для геокодирования адреса: "1 Microsoft Way, Redmond, WA". Код использует `searchAddress` функцию и отображает результаты в виде таблицы в тексте страницы.
 
     ```javascript
     // Search for "1 microsoft way, redmond, wa".
@@ -159,7 +159,7 @@ ms.locfileid: "76988742"
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Использование модуля "службы"" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+<iframe height="500" style="width: 100%;" scrolling="no" title="Использование модуля "службы"" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
 Посмотрите перо <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> , Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -169,7 +169,7 @@ ms.locfileid: "76988742"
 
 Azure Maps веб-пакет SDK поддерживает облако Azure для государственных организаций. Все URL-адреса JavaScript и CSS, используемые для доступа к Azure Maps Web SDK, остаются прежними, однако для подключения к облачной версии платформы Azure Maps на платформе Azure для государственных организаций необходимо выполнить следующие задачи.
 
-При использовании интерактивного элемента управления картой добавьте следующую строку кода перед созданием экземпляра класса `Map`. 
+При использовании интерактивного элемента управления картой добавьте следующую строку кода перед созданием экземпляра `Map` класса. 
 
 ```javascript
 atlas.setDomain('atlas.azure.us');
@@ -177,15 +177,15 @@ atlas.setDomain('atlas.azure.us');
 
 При проверке подлинности карт и служб обязательно используйте сведения о проверке подлинности Azure Maps на облачной платформе Azure для государственных организаций.
 
-При использовании модуля служб необходимо задать домен для служб при создании экземпляра конечной точки URL-адреса API. Например, следующий код создает экземпляр класса `SearchURL` и указывает домен в облаке Azure для государственных организаций.
+При использовании модуля служб необходимо задать домен для служб при создании экземпляра конечной точки URL-адреса API. Например, следующий код создает экземпляр `SearchURL` класса и указывает домен в облаке Azure для государственных организаций.
 
 ```javascript
 var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 ```
 
-При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL-адресов на `atlas.azure.us`. Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на `https://atlas.azure.us/search/`.
+При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL `atlas.azure.us`-адреса на. Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на. `https://atlas.azure.us/search/`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

@@ -1,5 +1,5 @@
 ---
-title: Добавление всплывающего меню решением для удаленного мониторинга пользовательского интерфейса — Azure | Документация Майкрософт
+title: Добавление всплывающего элемента в пользовательский интерфейс решения для удаленного мониторинга в Azure | Документация Майкрософт
 description: В этой статье показано, как добавить всплывающий элемент на страницу в веб-интерфейс акселератора решения для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/05/2018
 ms.topic: conceptual
-ms.openlocfilehash: ccb1a7ff6abbc68f42c7632a8ba7a392b2c48794
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3820b34a9c79f3b514327fa45a05eebaf8a2a1ca
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61447120"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82193179"
 ---
 # <a name="add-a-custom-flyout-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решения для удаленного мониторинга
 
@@ -24,7 +24,7 @@ ms.locfileid: "61447120"
 
 Пример всплывающего элемента в этой статье отображается на странице с сеткой, добавление которой описано в статье [Add a custom grid to the Remote Monitoring solution accelerator web UI](iot-accelerators-remote-monitoring-customize-grid.md) (Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
@@ -35,7 +35,7 @@ ms.locfileid: "61447120"
 
 Прежде чем продолжить, необходимо выполнить шаги, указанные в следующих статьях:
 
-- [Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md);
+- [Добавьте пользовательскую страницу в пользовательский веб-интерфейс акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-page.md).
 - [Добавление пользовательской службы в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md)
 - [Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-grid.md)
 
@@ -61,7 +61,7 @@ ms.locfileid: "61447120"
 
 Чтобы добавить всплывающий элемент, измените **src/components/pages/example/basicPage.js**.
 
-Добавьте **Btn** к импорту из **components/shared** и добавьте импорт для **svgs** и **ExampleFlyoutContainer**.
+Добавьте **Btn** к импорту из **components/shared** и добавьте импорт для **svgs** и ** ExampleFlyoutContainer **.
 
 ```js
 import {
@@ -133,9 +133,9 @@ export class BasicPage extends Component {
 npm start
 ```
 
-Предыдущая команда запускает пользовательский интерфейс локально по адресу [http://localhost:3000/dashboard](http://localhost:3000/dashboard). Перейдите на страницу **Пример** и щелкните **Открыть всплывающий элемент**.
+Предыдущая команда запускает пользовательский интерфейс локально по адресу `http://localhost:3000/dashboard`. Перейдите на страницу **Пример** и щелкните **Открыть всплывающий элемент**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении станицы в веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 

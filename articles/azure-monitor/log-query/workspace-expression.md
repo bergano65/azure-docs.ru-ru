@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 09/10/2018
 ms.openlocfilehash: 255888acf5da6149b6a964b23ed038b99715481c
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75364957"
 ---
 # <a name="workspace-expression-in-azure-monitor-log-query"></a>Выражение workspace() в запросе журнала Azure Monitor
@@ -26,7 +26,7 @@ ms.locfileid: "75364957"
 
 - *Идентификатор*: определяет рабочую область с помощью одного из форматов в следующей таблице.
 
-| Идентификатор | Description | Пример
+| Идентификатор | Описание | Пример
 |:---|:---|:---|
 | Имя ресурса | Понятное имя рабочей области (имя компонента). | workspace("contosoretail") |
 | Полное имя | Полное имя рабочей области в формате: subscriptionName/resourceGroup/componentName. | workspace('Contoso/ContosoResource/ContosoWorkspace') |

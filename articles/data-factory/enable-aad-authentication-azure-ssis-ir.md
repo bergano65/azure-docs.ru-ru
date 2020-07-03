@@ -11,14 +11,16 @@ ms.author: sawinark
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 5/14/2019
-ms.openlocfilehash: 70367a38fbf7b59486e2eaaf6c05634aa7575869
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: 77b49d8446c7882a155742e8455d77bd1ec110cb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74927439"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81606193"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье показано, как включить проверку подлинности Azure Active Directory (Azure AD) с помощью управляемого удостоверения для фабрики данных Azure (ADF) и использовать его вместо обычных методов проверки подлинности (например, проверки подлинности SQL) в следующих целях:
 
@@ -26,7 +28,7 @@ ms.locfileid: "74927439"
 
 - Подключайтесь к различным ресурсам Azure при запуске пакетов служб SSIS на Azure-SSIS IR.
 
-Дополнительные сведения об управляемом удостоверении для ADF см. в статье [управляемые идентий для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity).
+Дополнительные сведения об управляемом удостоверении для ADF см. в статье [управляемое удостоверение для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity).
 
 > [!NOTE]
 >-  В этом сценарии проверка подлинности Azure AD с управляемым удостоверением для ADF используется только в операциях создания и последующих запусков среды выполнения интеграции SSIS, которые в свою очередь будут подключаться к SSISDB и подключиться к нему. Для выполнения пакетов служб SSIS IR будет по-прежнему подключаться к SSISDB с помощью проверки подлинности SQL с полностью управляемыми учетными записями, созданными во время подготовки SSISDB.
@@ -42,7 +44,7 @@ ms.locfileid: "74927439"
 
 Можно использовать существующую группу Azure AD или создать новую с помощью Azure AD PowerShell.
 
-1.  Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2).
+1.  Установите модуль [Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2) .
 
 2.  Войдите с помощью командлета  `Connect-AzureAD` и выполните следующий командлет, чтобы создать группу и сохранить ее в переменной:
 
@@ -63,7 +65,7 @@ ms.locfileid: "74927439"
     6de75f3c-8b2f-4bf4-b9f8-78cc60a18050 SSISIrGroup
     ```
 
-3.  Добавьте в группу управляемое удостоверение службы "Фабрика данных Azure". Чтобы получить идентификатор объекта управляемого идентификатора (например, 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc, но не использовать идентификатор приложения управляемого удостоверения для этой цели), см. статью [Управление идентий для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) .
+3.  Добавьте в группу управляемое удостоверение службы "Фабрика данных Azure". Чтобы получить идентификатор управляемого объекта удостоверения (например, 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc, но не использовать идентификатор приложения управляемого удостоверения для этой цели), см. статью [Управление удостоверениями для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) .
 
     ```powershell
     Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc
@@ -79,7 +81,7 @@ ms.locfileid: "74927439"
 
 Для  [настройки и администрирования аутентификации Azure AD с использованием SQL](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure) выполните следующие действия.
 
-1.  На портале Azure выберите **Все службы**  ->  **Серверы SQL Server** на левой панели навигации.
+1.  В портал Azure выберите **все службы** -> **серверы SQL Server** в области навигации слева.
 
 2.  Выберите сервер Базы данных SQL Azure, для которого нужно настроить аутентификацию Azure AD.
 
@@ -93,7 +95,7 @@ ms.locfileid: "74927439"
 
 ### <a name="create-a-contained-user-in-azure-sql-database-server-representing-the-azure-ad-group"></a>Создание на сервере Базы данных SQL Azure автономного пользователя, представляющего группу Azure AD
 
-На следующем шаге вам потребуется  [Microsoft SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)  (SSMS).
+Для следующего шага требуется [Microsoft SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
 
 1. Запустите SSMS.
 
@@ -105,9 +107,9 @@ ms.locfileid: "74927439"
 
 5. Выберите **подключить** и завершите процесс входа.
 
-6. В **обозревателе объектов** разверните папку **Базы данных**  ->  **Системные базы данных**.
+6. В **обозревателе объектов** разверните папку **Базы данных** -> **Системные базы данных**.
 
-7. Щелкните правой кнопкой мыши базу данных **master** и выберите **Создать запрос**.
+7. Щелкните правой кнопкой мыши базу данных **master** и выберите **создать запрос**.
 
 8. В окне запроса введите следующую команду T-SQL и нажмите кнопку **выполнить** на панели инструментов.
 
@@ -153,15 +155,15 @@ ms.locfileid: "74927439"
 
 ### <a name="add-the-managed-identity-for-your-adf-as-a-user-in-azure-sql-database-managed-instance"></a>Добавление управляемого удостоверения для ADF в качестве пользователя управляемого экземпляра Базы данных SQL Azure
 
-На следующем шаге вам потребуется  [Microsoft SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)  (SSMS).
+Для следующего шага требуется [Microsoft SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
 
 1.  Запустите SSMS.
 
 2.  Подключитесь к Управляемый экземпляр с помощью учетной записи SQL Server, которая является **sysadmin**. Это временное ограничение, которое будет удалено после того, как участники сервера Azure AD (имена входа) для Управляемый экземпляр Базы данных SQL Azure станут общедоступными. При попытке использовать учетную запись администратора Azure AD для создания имени входа вы увидите следующую ошибку: сообщение 15247, уровень 16, состояние 1, пользователь строки 1 не имеет разрешения на выполнение этого действия.
 
-3.  В **обозревателе объектов** разверните папку **Базы данных**  ->  **Системные базы данных**.
+3.  В **обозревателе объектов** разверните папку **Базы данных** -> **Системные базы данных**.
 
-4.  Щелкните правой кнопкой мыши базу данных **master** и выберите **Создать запрос**.
+4.  Щелкните правой кнопкой мыши базу данных **master** и выберите **создать запрос**.
 
 5.  В окне запроса выполните следующий скрипт T-SQL, чтобы добавить управляемое удостоверение для ADF-файла в качестве пользователя.
 
@@ -198,7 +200,7 @@ ms.locfileid: "74927439"
 
 1.  Установите модуль [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/tag/v5.5.0-March2018) .
 
-2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример.
+2.  Не задавайте в скрипте параметр `CatalogAdminCredential`. Пример:
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
@@ -223,7 +225,7 @@ ms.locfileid: "74927439"
 
 При запуске пакетов служб SSIS на Azure-SSIS IR можно использовать проверку подлинности управляемого удостоверения для подключения к различным ресурсам Azure. Сейчас мы уже поддерживали аутентификацию управляемого удостоверения в следующих диспетчерах соединений.
 
-- [Диспетчер подключений OLE DB](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager#managed-identities-for-azure-resources-authentication)
+- [диспетчер соединений OLE DB](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager#managed-identities-for-azure-resources-authentication)
 
 - [Диспетчер соединений ADO.NET](https://docs.microsoft.com/sql/integration-services/connection-manager/ado-net-connection-manager#managed-identities-for-azure-resources-authentication)
 

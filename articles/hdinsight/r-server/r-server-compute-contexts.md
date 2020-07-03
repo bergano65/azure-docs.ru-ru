@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
 ms.openlocfilehash: b67bd5b6310e1f8ce35dc14690757209ef62c9d7
-ms.sourcegitcommit: 51ed913864f11e78a4a98599b55bbb036550d8a5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75660262"
 ---
 # <a name="compute-context-options-for-ml-services-on-hdinsight"></a>Параметры контекста вычислений для Служб машинного обучения в HDInsight
@@ -57,7 +57,7 @@ ms.locfileid: "75660262"
 
 С учетом этих принципов в следующем разделе приведены некоторые общие правила выбора контекста вычислений.
 
-### <a name="local"></a>Местного уровня
+### <a name="local"></a>Local
 
 - Если объем анализируемых данных мал и не требует повторяющегося анализа, то следует передать его непосредственно в подпрограммы анализа с помощью *локальных* или *localpar*.
 - Если нужно проанализировать данные небольшого или среднего объема, для которых потребуется повторный анализ, скопируйте их в локальную файловую систему, импортируйте в XDF-формат и проанализируйте в контексте *local* или *localpar*.

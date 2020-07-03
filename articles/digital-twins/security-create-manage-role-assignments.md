@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/07/2020
 ms.custom: seodec18
 ms.openlocfilehash: 1c83ca0abfd17db873bec62f0a0d052703862a45
-ms.sourcegitcommit: 9add86fb5cc19edf0b8cd2f42aeea5772511810c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77110406"
 ---
 # <a name="create-and-manage-role-assignments-in-azure-digital-twins"></a>Создание назначений ролей и управление ими в Azure Digital Twins
@@ -36,13 +36,13 @@ ms.locfileid: "77110406"
 
 В таблице ниже описывается каждый атрибут.
 
-| attribute | Имя | Обязательно | Тип | Description |
+| Атрибут | Имя | Обязательно | Тип | Описание |
 | --- | --- | --- | --- | --- |
-| roleId | Идентификатор определения роли | Да | String | Уникальный идентификатор необходимого назначения ролей. Поиск определения ролей и их идентификаторов с помощью запроса API или проверки таблицы ниже. |
-| objectId | Идентификаторы объектов | Да | String | Идентификатор Azure Active Directory, идентификатор объекта субъекта-службы или доменное имя. Чему или кому назначается роль. Назначение ролей должно быть отформатировано в соответствии со связанным типом. Для objectIdType `DomainName` свойство objectId должно начинаться со знака `“@”`. |
-| objectIdType | Тип идентификатора объекта | Да | String | Использованный вид идентификатора объекта. См. **Поддерживаемые objectIdTypes** ниже. |
-| path | Путь пространства | Да | String | Полный путь к объекту `Space`. Например, `/{Guid}/{Guid}`. Если идентификатору требуется назначение ролей для всего графа, укажите `"/"`. Этот символ обозначает корень, но его использование не рекомендуется. Всегда следуйте принципу минимальных привилегий. |
-| tenantId | Идентификатор клиента | Различается | String | В большинстве случаев идентификатор клиента Azure Active Directory. Не разрешено для ObjectIdTypes свойства `DeviceId` и `TenantId`. Требуется для ObjectIdTypes свойства `UserId` и `ServicePrincipalId`. Необязательно для ObjectIdType свойства DomainName. |
+| roleId | Идентификатор определения роли | Да | Строка | Уникальный идентификатор необходимого назначения ролей. Поиск определения ролей и их идентификаторов с помощью запроса API или проверки таблицы ниже. |
+| objectId | Идентификаторы объектов | Да | Строка | Идентификатор Azure Active Directory, идентификатор объекта субъекта-службы или доменное имя. Чему или кому назначается роль. Назначение ролей должно быть отформатировано в соответствии со связанным типом. Для objectIdType `DomainName` свойство objectId должно начинаться со знака `“@”`. |
+| objectIdType | Тип идентификатора объекта | Да | Строка | Использованный вид идентификатора объекта. См. **Поддерживаемые objectIdTypes** ниже. |
+| path | Путь пространства | Да | Строка | Полный путь к объекту `Space`. Например, `/{Guid}/{Guid}`. Если идентификатору требуется назначение ролей для всего графа, укажите `"/"`. Этот символ обозначает корень, но его использование не рекомендуется. Всегда следуйте принципу минимальных привилегий. |
+| tenantId | Идентификатор клиента | Различается | Строка | В большинстве случаев идентификатор клиента Azure Active Directory. Не разрешено для ObjectIdTypes свойства `DeviceId` и `TenantId`. Требуется для ObjectIdTypes свойства `UserId` и `ServicePrincipalId`. Необязательно для ObjectIdType свойства DomainName. |
 
 ### <a name="supported-role-definition-identifiers"></a>Поддерживаемые идентификаторы определения ролей
 
@@ -60,7 +60,7 @@ ms.locfileid: "77110406"
 
 Azure Digital Twins поддерживает полное функционирование операций *СОЗДАНИЕ*, *ЧТЕНИЕ* и *УДАЛЕНИЕ* для назначения ролей. Операции *ОБНОВЛЕНИЕ* обрабатываются путем добавления назначений ролей, удаление назначений ролей или изменение узлов [пространственного интеллектуального графа](./concepts-objectmodel-spatialgraph.md), к которым назначения ролей предоставляют доступ.
 
-[![конечных точек назначения ролей](media/security-roles/role-assignments.png)](media/security-roles/role-assignments.png#lightbox)
+[![Конечные точки назначения ролей](media/security-roles/role-assignments.png)](media/security-roles/role-assignments.png#lightbox)
 
 В предоставленной справочной документации по Swagger содержатся дополнительные сведения о всех доступных API конечных точек, операций запроса и определения.
 
@@ -112,7 +112,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments
 
 ### <a name="retrieve-all-roles"></a>Получение всех ролей
 
-[![системные роли](media/security-roles/system-api.png)](media/security-roles/system-api.png#lightbox)
+[![Системные роли](media/security-roles/system-api.png)](media/security-roles/system-api.png#lightbox)
 
 Чтобы получить список всех доступных ролей (определений ролей), создайте аутентифицированный запрос HTTP GET.
 
@@ -161,12 +161,12 @@ YOUR_MANAGEMENT_API_URL/system/roles
 YOUR_MANAGEMENT_API_URL/roleassignments/check?userId=YOUR_USER_ID&path=YOUR_PATH&accessType=YOUR_ACCESS_TYPE&resourceType=YOUR_RESOURCE_TYPE
 ```
 
-| **Значение параметра** | **Обязательно** |  **Тип** |  **Описание** |
+| **Значение параметра** | **Обязательное** |  **Type** |  **Описание** |
 | --- | --- | --- | --- |
-| YOUR_USER_ID |  True | String |   Свойство objectId для objectIdType идентификатора пользователя. |
-| YOUR_PATH | True | String |   Выбранный путь для проверки доступа. |
-| YOUR_ACCESS_TYPE |  True | String |   *Чтение*, *Создание*, *Обновление*или *Удаление* |
-| YOUR_RESOURCE_TYPE | True | String |  *Device*, *девицеблобметадата*, *девицеекстендедпроперти*, *екстендедпропертикэй*, *ExtendedType*, *Endpoint*, *хранилище ключей*, *Match*, *онтологи*, *отчет*, *определения роли*, *датчик*, *сенсорекстендедпроперти*, *пространство*, *SpaceBlobMetadata*, *SpaceExtendedProperty*, *SpaceResource*, *SpaceRoleAssignment*, *система*,  *Уердефинедфунктион*, *User*, *усерблобметадата*или *усерекстендедпроперти* |
+| YOUR_USER_ID |  True | Строка |   Свойство objectId для objectIdType идентификатора пользователя. |
+| YOUR_PATH | True | Строка |   Выбранный путь для проверки доступа. |
+| YOUR_ACCESS_TYPE |  True | Строка |   *Чтение*, *Создание*, *Обновление*или *Удаление* |
+| YOUR_RESOURCE_TYPE | True | Строка |  *Device*, *девицеблобметадата*, *девицеекстендедпроперти*, *екстендедпропертикэй*, *ExtendedType*, *Endpoint*, *хранилище ключей*, *Match*, *онтологи*, *отчет*, *определения роли*, *датчик*, *сенсорекстендедпроперти*, *пространство*, *SpaceBlobMetadata*, *SpaceExtendedProperty*, *SpaceResource*, *SpaceRoleAssignment*, *System*, *UerDefinedFunction*, *пользователь*, *UserBlobMetadata*или *UserExtendedProperty* |
 
 Успешный запрос возвращает логическое значение `true` или `false` для указания того, назначен ли тип доступа пользователю для данного пути и ресурса.
 
@@ -275,7 +275,7 @@ YOUR_MANAGEMENT_API_URL/roleassignments
    }
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Подробнее об управлении доступом на основе ролей Azure Digital Twins см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
 

@@ -2,17 +2,20 @@
 title: Ultra Disks для виртуальных машин Linux — управляемые диски Azure
 description: Дополнительные сведения о Ultra Disks для виртуальных машин Azure
 author: roygara
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
 ms.topic: conceptual
-ms.date: 11/14/2019
+ms.date: 05/11/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 6cba3c6680e957f7ff251457dee2c44ca63ca85a
-ms.sourcegitcommit: 5a8c65d7420daee9667660d560be9d77fa93e9c9
+ms.openlocfilehash: 35eeab099f988941c5acd7ef3da9aa818193bbef
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74124239"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83197378"
 ---
 # <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
+
+В этой статье объясняется, как развернуть и использовать Ultra Disk. для получения концептуальных сведений о Ultra Disks см. раздел [какие типы дисков доступны в Azure?](disks-types.md#ultra-disk).
+
 [!INCLUDE [virtual-machines-disks-ultra-ssd](../../../includes/virtual-machines-disks-getting-started-ultra-ssd.md)]

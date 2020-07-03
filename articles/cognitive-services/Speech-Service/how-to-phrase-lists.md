@@ -1,22 +1,22 @@
 ---
 title: Списки фраз — служба речи
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как предоставить речевой службе список фраз с помощью объекта `PhraseListGrammar`, чтобы улучшить результаты распознавания речи в текст.
+description: Узнайте, как предоставить речевой службе список фраз с помощью `PhraseListGrammar` объекта, чтобы улучшить результаты распознавания речи в текст.
 services: cognitive-services
-author: rhurey
+author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
-ms.author: rhurey
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 2ceb53b50810aef501278710ae990c57fc45030c
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.date: 02/04/2020
+ms.author: dapine
+zone_pivot_groups: programming-languages-speech-services-one-nomore-no-go
+ms.openlocfilehash: d6418a863e8af75e4f2f063d9e6151e19a0e7e6e
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74971678"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82977589"
 ---
 # <a name="phrase-lists-for-speech-to-text"></a>Списки фраз для преобразования речи в текст
 
@@ -24,14 +24,14 @@ ms.locfileid: "74971678"
 
 Например, если у вас есть команда "переместить в" и потенциальное место назначения "назад", можно добавить запись "перейти к назад". Добавление фразы увеличит вероятность того, что при распознавании звукового сигнала будет располагаться "переместить в" назад "вместо" переместить в ".
 
-В список фраз можно добавить отдельные слова или полные фразы. Во время распознавания запись в списке фраз используется, если точное совпадение для целой фразы включено в звук в виде отдельной фразы. Если точное совпадение с фразой не найдено, распознавание не используется.
+В список фраз можно добавить отдельные слова или полные фразы. Во время распознавания запись в списке фраз используется, если точное совпадение для целой фразы включено в звук в виде отдельной фразы. Если точное совпадение с фразой не найдено, распознавание не происходит.
 
 >[!Note]
 > В настоящее время списки фраз поддерживают только английский язык для преобразования речи в текст.
 
 ## <a name="how-to-use-phrase-lists"></a>Использование списков фраз
 
-В приведенных ниже примерах показано, как создать список фраз с помощью объекта `PhraseListGrammar`.
+В примерах ниже показано, как создать список фраз с помощью `PhraseListGrammar` объекта.
 
 ::: zone pivot="programming-language-csharp"
 
@@ -77,7 +77,7 @@ phrase_list_grammar.addPhrase("Move to Ted")
 
 ::: zone-end
 
-::: zone pivot="programming-language-more"
+::: zone pivot="programming-language-javascript"
 
 ```JavaScript
 var phraseListGrammar = SpeechSDK.PhraseListGrammar.fromRecognizer(reco);
@@ -91,7 +91,7 @@ phraseListGrammar.addPhrase("Move to Ted");
 >[!Note]
 > Максимальное число списков фраз, которое будет использоваться службой речи для сопоставления речи, — 1024 словосочетания.
 
-Также можно удалить фразы, связанные с `PhraseListGrammar`, вызвав Clear ().
+Можно также очистить фразы, связанные с `PhraseListGrammar` , вызвав Clear ().
 
 ::: zone pivot="programming-language-csharp"
 
@@ -125,7 +125,7 @@ phrase_list_grammar.clear()
 
 ::: zone-end
 
-::: zone pivot="programming-language-more"
+::: zone pivot="programming-language-javascript"
 
 ```JavaScript
 phraseListGrammar.clear();
@@ -134,7 +134,7 @@ phraseListGrammar.clear();
 ::: zone-end
 
 > [!NOTE]
-> Изменения объекта `PhraseListGrammar` вступают в силу при следующем распознавании или после повторного подключения к службе речи.
+> Изменения `PhraseListGrammar` объекта вступают в силу при следующем распознавании или после повторного подключения к службе речи.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

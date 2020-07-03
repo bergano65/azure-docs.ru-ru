@@ -8,10 +8,10 @@ ms.date: 02/20/2018
 ms.author: rogarana
 ms.subservice: blobs
 ms.openlocfilehash: b3fe9c7481e79b8eeda9f18e9a036fa8c72e658d
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75372097"
 ---
 # <a name="download-large-amounts-of-random-data-from-azure-storage"></a>Скачивание больших объемов случайных данных из службы хранилища Azure
@@ -25,7 +25,7 @@ ms.locfileid: "75372097"
 > * Выполнение приложения
 > * Проверка количества подключений.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимо изучить предыдущее руководство по использованию хранилища: [Передача больших объемов случайных данных в параллельном режиме в службу хранилища Azure][previous-tutorial].
 
@@ -98,7 +98,7 @@ dotnet run
 Приложение считывает контейнеры, расположенные в учетной записи хранения, указанной в **storageconnectionstring**. При помощи метода [ListBlobsSegmented](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer) за раз оно проходит по 10 больших двоичных объектов в контейнерах и скачивает их на локальный компьютер с помощью метода [DownloadToFileAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblob.downloadtofileasync).
 В следующей таблице показаны [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions), которые определятся для каждого большого двоичного объекта при скачивании.
 
-|Свойство|Значение|Description|
+|Свойство|Значение|Описание|
 |---|---|---|
 |[DisableContentMD5Validation](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.disablecontentmd5validation)| Да| Это свойство отключает проверку хэша MD5 отправляемого содержимого. При этом передача ускоряется. Но без проверки MD5 не будет подтверждения о достоверности или целостности передаваемых файлов. |
 |[StoreBlobContentMD5](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.storeblobcontentmd5)| false| Это свойство определяет, будет ли хэш MD5 вычисляться и сохраняться.   |

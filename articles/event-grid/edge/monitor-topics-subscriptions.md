@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: event-grid
 services: event-grid
 ms.openlocfilehash: ce7c92f121fb458d528d63d0af0aad025b377386
-ms.sourcegitcommit: cfbea479cc065c6343e10c8b5f09424e9809092e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77086676"
 ---
 # <a name="monitor-topics-and-event-subscriptions"></a>Отслеживание разделов и подписок на события
@@ -21,7 +21,7 @@ ms.locfileid: "77086676"
 
 ## <a name="enable-metrics"></a>Включить метрики
 
-Настройте модуль для отправки метрик, задав для переменной среды `metrics__reporterType` значение `prometheus` в параметрах создания контейнера:
+Настройте модуль для отправки метрик, задав для `metrics__reporterType` `prometheus` переменной среды значение в параметрах создания контейнера:
 
  ```json
         {
@@ -40,7 +40,7 @@ ms.locfileid: "77086676"
         }
  ```    
 
-Метрики будут доступны на `5888/metrics` модуля для HTTP и `4438/metrics` для HTTPS. Например, `http://<modulename>:5888/metrics?api-version=2019-01-01-preview` для HTTP. На этом этапе модуль метрик может опрашивать конечную точку для сбора метрик, как в этом [примере архитектуры](https://github.com/veyalla/ehm).
+Метрики будут доступны в `5888/metrics` модуле для HTTP и `4438/metrics` для HTTPS. Например, `http://<modulename>:5888/metrics?api-version=2019-01-01-preview` для HTTP. На этом этапе модуль метрик может опрашивать конечную точку для сбора метрик, как в этом [примере архитектуры](https://github.com/veyalla/ehm).
 
 ## <a name="available-metrics"></a>Доступные метрики
 
@@ -48,7 +48,7 @@ ms.locfileid: "77086676"
 
 ### <a name="topic-metrics"></a>Метрики разделов
 
-| Метрика | Description |
+| Метрика | Описание |
 | ------ | ----------- |
 | евентсрецеивед | Число событий, опубликованных в разделе
 | унматчедевентс | Число событий, опубликованных в разделе, которые не соответствуют подписке на события и удаляются
@@ -60,7 +60,7 @@ ms.locfileid: "77086676"
 
 ### <a name="event-subscription-metrics"></a>Метрики подписки на события
 
-| Метрика | Description |
+| Метрика | Описание |
 | ------ | ----------- |
 | деливерисукцесскаунтс | Количество событий, успешно доставленных в настроенную конечную точку
 | деливерифаилурекаунтс | Число событий, которые не удалось доставить в настроенную конечную точку

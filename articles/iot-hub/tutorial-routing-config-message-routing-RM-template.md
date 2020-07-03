@@ -10,10 +10,10 @@ ms.date: 03/25/2019
 ms.author: robinsh
 ms.custom: mvc
 ms.openlocfilehash: 8f245653a8b84944e1e8a3f48a49992f0065be58
-ms.sourcegitcommit: a22cb7e641c6187315f0c6de9eb3734895d31b9d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74084392"
 ---
 # <a name="tutorial-use-an-azure-resource-manager-template-to-configure-iot-hub-message-routing"></a>Руководство по Применение шаблона Azure Resource Manager для настройки маршрутизации сообщений в Центре Интернета вещей
@@ -339,7 +339,7 @@ ms.locfileid: "74084392"
 }
 ```
 
-### <a name="resources-outputs"></a>Ресурсы: outputs
+### <a name="resources-outputs"></a>Ресурсы: Выходные данные
 
 Если вы хотите вернуть в скрипт развертывания значение для отображения, используйте раздел выходных данных. Эта часть шаблона возвращает строку подключения к очереди служебной шины. Возвращать значение необязательно, и здесь мы настроили его только для демонстрации того, как правильно возвращать результаты вызывающему скрипту.
 
@@ -416,7 +416,7 @@ New-AzResourceGroupDeployment `
 
 [!INCLUDE [iot-hub-include-view-routing-in-portal](../../includes/iot-hub-include-view-routing-in-portal.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда у вас настроены все ресурсы и маршруты для сообщений, переходите к следующему учебнику, где вы научитесь обрабатывать и отображать сведения о перенаправленных сообщениях.
 

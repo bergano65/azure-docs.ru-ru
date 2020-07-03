@@ -4,20 +4,20 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: cynthn
-ms.openlocfilehash: 8607fd6f01ea02841017d09dac7236812f2330b9
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 651027ffd63a376ff0b8595636ece4c8f39c86e8
+ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77133726"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82615927"
 ---
-| Ресурс | Ограничение по умолчанию |
+| Ресурс | Ограничение |
 | --- | --- |
 | Число ВМ на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |25 000<sup>1</sup> на регион. |
 | Общее количество ядер виртуальных машин на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. Обратитесь в службу поддержки, чтобы увеличить ограничение. |
 | Общее число ядер виртуальной машины Azure на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. Обратитесь в службу поддержки, чтобы увеличить ограничение. |
 | Виртуальная машина на ряд, например Dv2 и F, количество ядер на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> на регион. Обратитесь в службу поддержки, чтобы увеличить ограничение. |
-| [Групп доступности](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) на подписку |2 000. США за регион. |
+| [Групп доступности](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) на подписку |2 500. США за регион. |
 | Количество виртуальных машин на одну группу доступности | 200 |
 | Сертификатов на подписку |Без ограничений<sup>2</sup> |
 

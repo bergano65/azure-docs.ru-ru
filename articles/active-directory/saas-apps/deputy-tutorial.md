@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 33830ce5822b2edee345cf58fc6f2a53d3c863fa
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.openlocfilehash: cd021b9547048e9f5218ce4f2b8b110b15d05963
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74227603"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80048558"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-deputy"></a>Руководство по Интеграция Azure Active Directory с Deputy
 
@@ -39,7 +39,7 @@ ms.locfileid: "74227603"
 
 Чтобы настроить интеграцию Azure AD с Deputy, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Deputy с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,13 +100,13 @@ ms.locfileid: "74227603"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Deputy](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
+    а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
     |  |
     | ----|
@@ -166,15 +166,15 @@ ms.locfileid: "74227603"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-deputy-single-sign-on"></a>Настройка единого входа в Deputy
 
-1. Перейдите по следующему URL-адресу: [https://(ваш_поддомен).deputy.com/exec/config/system_config]( https://(your-subdomain).deputy.com/exec/config/system_config). Выберите пункт **Параметры безопасности** и нажмите кнопку **Изменить**.
+1. Перейдите по URL-адресу `https://(your-subdomain).deputy.com/exec/config/system_config`. Выберите пункт **Параметры безопасности** и нажмите кнопку **Изменить**.
    
     ![Настройка единого входа](./media/deputy-tutorial/tutorial_deputy_004.png)
 
@@ -182,7 +182,7 @@ ms.locfileid: "74227603"
 
     ![Настройка единого входа](./media/deputy-tutorial/tutorial_deputy_005.png)
     
-    a. разрешите **вход с помощью учетных записей социальных сетей**;
+    а. разрешите **вход с помощью учетных записей социальных сетей**;
    
     b. Откройте в блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Сертификат OpenSSL**.
    
@@ -190,9 +190,9 @@ ms.locfileid: "74227603"
     
     d. в текстовом поле SAML SSO URL (URL-адрес единого входа) замените `<your subdomain>` на ваш поддомен;
    
-    д. В текстовом поле "SAML SSO URL" (URL-адрес единого входа) замените `<saml sso url>` на **URL-адрес входа**, скопированный на портале Azure.
+    д) В текстовом поле "SAML SSO URL" (URL-адрес единого входа) замените `<saml sso url>` на **URL-адрес входа**, скопированный на портале Azure.
    
-    Е. Нажмите кнопку **Сохранить параметры**.
+    е) Нажмите кнопку **Сохранить параметры**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -265,7 +265,7 @@ ms.locfileid: "74227603"
    
     ![Новый пользователь](./media/deputy-tutorial/tutorial_deputy_003.png "Новый пользователь")
 
-    a. В текстовом поле **Имя** введите имя, например **BrittaSimon**.
+    а. В текстовом поле **Имя** введите имя, например **BrittaSimon**.
    
     b. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты той учетной записи Azure AD, которую нужно подготовить.
    

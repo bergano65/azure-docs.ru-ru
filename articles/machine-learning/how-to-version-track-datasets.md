@@ -7,16 +7,16 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.author: sihhu
-author: sihhu
+author: MayMSFT
 ms.reviewer: nibaccam
-ms.date: 11/04/2019
+ms.date: 03/09/2020
 ms.custom: ''
-ms.openlocfilehash: 4c8f3e7e47f9c8f924faf513d984d5474c105038
-ms.sourcegitcommit: f53cd24ca41e878b411d7787bd8aa911da4bc4ec
+ms.openlocfilehash: 5bd4436fc63fb570f052606ab557dbcf243cf5e7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75834797"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80476853"
 ---
 # <a name="version-and-track-datasets-in-experiments"></a>Версии и отслеживание наборов данных в экспериментах
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "75834797"
 * Когда новые данные доступны для повторного обучения
 * При применении различных подходов к подготовке данных или проектированию компонентов
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
@@ -52,7 +52,7 @@ ms.locfileid: "75834797"
 
 ### <a name="register-a-dataset-version"></a>Регистрация версии набора данных
 
-Следующий код регистрирует новую версию набора данных `titanic_ds`, присвоив параметру `create_new_version` значение `True`. Если в рабочей области нет уже зарегистрированного набора данных `titanic_ds`, код создает новый набор данных с именем `titanic_ds` и устанавливает для его версии значение 1.
+Следующий код регистрирует новую версию `titanic_ds` набора данных, присвоив `create_new_version` параметру значение. `True` Если в рабочей области нет `titanic_ds` уже зарегистрированного набора данных, код создает новый набор данных с именем `titanic_ds` и устанавливает для его версии значение 1.
 
 ```Python
 titanic_ds = titanic_ds.register(workspace = workspace,
@@ -63,9 +63,9 @@ titanic_ds = titanic_ds.register(workspace = workspace,
 
 ### <a name="retrieve-a-dataset-by-name"></a>Получение набора данных по имени
 
-По умолчанию метод [get_by_name ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-by-name-workspace--name--version--latest--) в классе `Dataset` возвращает последнюю версию набора данных, зарегистрированную в рабочей области. 
+По умолчанию метод [get_by_name ()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-by-name-workspace--name--version--latest--) в `Dataset` классе возвращает последнюю версию набора данных, зарегистрированную в рабочей области. 
 
-Следующий код возвращает версию 1 набора данных `titanic_ds`.
+Следующий код возвращает версию 1 `titanic_ds` набора данных.
 
 ```Python
 from azureml.core import Dataset
@@ -120,7 +120,7 @@ dataset2.register(workspace = workspace,
 
 В качестве входных и выходных данных каждого шага конвейера Машинное обучение можно использовать набор данных. При повторном запуске конвейеров выходные данные каждого шага конвейера регистрируются в качестве новой версии набора данных.
 
-Поскольку Машинное обучение конвейеры заполняют выходные данные каждого шага в новую папку при каждом повторном выполнении конвейера, выходные наборы данных с управлением версиями воспроизводимы.
+Поскольку Машинное обучение конвейеры заполняют выходные данные каждого шага в новую папку при каждом повторном выполнении конвейера, выходные наборы данных с управлением версиями воспроизводимы. Дополнительные сведения о [наборах данных в конвейерах](how-to-create-your-first-pipeline.md#steps).
 
 ```Python
 from azureml.core import Dataset
@@ -156,9 +156,9 @@ prep_step = PythonScriptStep(script_name="prepare.py",
 
 ## <a name="track-datasets-in-experiments"></a>Отслеживание наборов данных в экспериментах
 
-Для каждого Машинное обучение эксперимента можно легко отслеживать наборы данных, используемые в качестве входных данных, с помощью объекта эксперимента `Run`.
+Для каждого Машинное обучение эксперимента можно легко отслеживать наборы данных, используемые в качестве входных данных, с `Run` помощью объекта эксперимента.
 
-В следующем коде используется метод [`get_details()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#get-details--) для наблюдения за входными наборами данных, которые использовались при выполнении эксперимента:
+В следующем коде [`get_details()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#get-details--) метод используется для мониторинга того, какие входные наборы данных использовались при выполнении эксперимента:
 
 ```Python
 # get input datasets
@@ -169,9 +169,9 @@ input_dataset = inputs[0]['dataset']
 input_dataset.to_path()
 ```
 
-Вы также можете найти `input_datasets` из экспериментов с помощью [машинное обучение Azure Studio](https://ml.azure.com/). 
+Можно также найти `input_datasets` эксперименты с помощью https://ml.azure.com/. 
 
-На следующем рисунке показано, где найти входной набор данных эксперимента в Машинное обучение Azure Studio. В этом примере перейдите в область **эксперименты** и откройте вкладку **свойства** для конкретного запуска эксперимента, `keras-mnist`.
+На следующем рисунке показано, где найти входной набор данных эксперимента в Машинное обучение Azure Studio. В этом примере перейдите в область **эксперименты** и откройте вкладку **свойства** для конкретного запуска эксперимента `keras-mnist`.
 
 ![Входные наборы данных](./media/how-to-version-track-datasets/input-datasets.png)
 
@@ -183,11 +183,13 @@ model = run.register_model(model_name='keras-mlp-mnist',
                            datasets =[('training data',train_dataset)])
 ```
 
-После регистрации можно просмотреть список моделей, зарегистрированных в наборе данных, с помощью Python или [машинное обучение Azure Studio](https://ml.azure.com/). Следующее представление находится на панели **наборы данных** в разделе **активы**. Выберите набор данных и перейдите на вкладку **модели** для списка моделей, зарегистрированных в наборе данных. 
+После регистрации можно просмотреть список моделей, зарегистрированных в наборе данных, с помощью Python или перейдите по https://ml.azure.com/адресу.
+
+Следующее представление находится на панели **наборы данных** в разделе **активы**. Выберите набор данных и перейдите на вкладку **модели** для списка моделей, зарегистрированных в наборе данных. 
 
 ![Модели входных наборов данных](./media/how-to-version-track-datasets/dataset-models.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Обучение с наборами данных](how-to-train-with-datasets.md)
 * [Дополнительные образцы набора данных записные книжки](https://aka.ms/dataset-tutorial)

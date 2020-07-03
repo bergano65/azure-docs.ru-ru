@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: jobreen
 author: jjbfour
 ms.date: 05/13/2019
-ms.openlocfilehash: dbf75262440474c5cb50a6d733ac7cba212b5f3f
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.openlocfilehash: 277faa2d47df9fddd1762d90d9aa2fb5bf00d4df
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75651661"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82508141"
 ---
 # <a name="azure-managed-application-with-managed-identity"></a>Управляемое удостоверение приложения Azure с помощью управляемого удостоверения
 
@@ -50,11 +50,11 @@ ms.locfileid: "75651661"
 
 ### <a name="using-createuidefinition"></a>Использование CreateUIDefinition
 
-Управляемое приложение можно настроить с помощью управляемого удостоверения с помощью [CreateUIDefinition. JSON](./create-uidefinition-overview.md). В [разделе Outputs](./create-uidefinition-overview.md#outputs)ключевое `managedIdentity` можно использовать для переопределения свойства Identity шаблона управляемого приложения. Пример ниже включит в управляемом приложении удостоверение, **назначенное системой** . Более сложные объекты Identity можно формировать с помощью элементов CreateUIDefinition, чтобы задать потребителю входные данные. Эти входные данные можно использовать для создания управляемых приложений с **удостоверением, назначенным пользователем**.
+Управляемое приложение можно настроить с помощью управляемого удостоверения с помощью [CreateUIDefinition. JSON](./create-uidefinition-overview.md). В [разделе Outputs](./create-uidefinition-overview.md#outputs)можно использовать ключ `managedIdentity` для переопределения свойства Identity шаблона управляемого приложения. Пример ниже включит в управляемом приложении удостоверение, **назначенное системой** . Более сложные объекты Identity можно формировать с помощью элементов CreateUIDefinition, чтобы задать потребителю входные данные. Эти входные данные можно использовать для создания управляемых приложений с **удостоверением, назначенным пользователем**.
 
 ```json
 "outputs": {
-    "managedIdentity": "[parse('{\"Type\":\"SystemAssigned\"}')]"
+    "managedIdentity": { "Type": "SystemAssigned" }
 }
 ```
 
@@ -66,77 +66,71 @@ ms.locfileid: "75651661"
 - Для управляемого удостоверения требуются сложные входные данные потребителя.
 - Для создания управляемого приложения требуется управляемое удостоверение.
 
-#### <a name="systemassigned-createuidefinition"></a>SystemAssigned CreateUIDefinition
+#### <a name="managed-identity-createuidefinition-control"></a>Управляемый элемент управления CreateUIDefinition Identity
 
-Базовый CreateUIDefinition, который включает удостоверение SystemAssigned для управляемого приложения.
-
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
-  "handler": "Microsoft.Azure.CreateUIDef",
-  "version": "0.1.2-preview",
-    "parameters": {
-        "basics": [
-            {}
-        ],
-        "steps": [
-        ],
-        "outputs": {
-            "managedIdentity": "[parse('{\"Type\":\"SystemAssigned\"}')]"
-        }
-    }
-}
-```
-
-#### <a name="userassigned-createuidefinition"></a>Усерассигнед CreateUIDefinition
-
-Базовый CreateUIDefinition, который принимает **назначенный пользователем ресурс удостоверения** в качестве входных данных и включает удостоверение Усерассигнед для управляемого приложения.
+CreateUIDefinition поддерживает встроенный [управляемый элемент управления идентификацией](./microsoft-managedidentity-identityselector.md).
 
 ```json
 {
   "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
   "handler": "Microsoft.Azure.CreateUIDef",
-  "version": "0.1.2-preview",
-    "parameters": {
-        "basics": [
-            {}
-        ],
-        "steps": [
-            {
-                "name": "manageIdentity",
-                "label": "Identity",
-                "subLabel": {
-                    "preValidation": "Manage Identities",
-                    "postValidation": "Done"
-                },
-                "bladeTitle": "Identity",
-                "elements": [
-                    {
-                        "name": "userAssignedText",
-                        "type": "Microsoft.Common.TextBox",
-                        "label": "User assigned managed identity",
-                        "defaultValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testRG/providers/Microsoft.ManagedIdentity/userassignedidentites/myuserassignedidentity",
-                        "visible": true
-                    }
-                ]
-            }
-        ],
-        "outputs": {
-            "managedIdentity": "[parse(concat('{\"Type\":\"UserAssigned\",\"UserAssignedIdentities\":{',string(steps('manageIdentity').userAssignedText),':{}}}'))]"
-        }
+  "version": "0.0.1-preview",
+  "parameters": {
+    "basics": [],
+    "steps": [
+      {
+        "name": "applicationSettings",
+        "label": "Application Settings",
+        "subLabel": {
+          "preValidation": "Configure your application settings",
+          "postValidation": "Done"
+        },
+        "bladeTitle": "Application Settings",
+        "elements": [
+          {
+            "name": "appName",
+            "type": "Microsoft.Common.TextBox",
+            "label": "Managed application Name",
+            "toolTip": "Managed application instance name",
+            "visible": true
+          },
+          {
+            "name": "appIdentity",
+            "type": "Microsoft.ManagedIdentity.IdentitySelector",
+            "label": "Managed Identity Configuration",
+            "toolTip": {
+              "systemAssignedIdentity": "Enable system assigned identity to grant the managed application access to additional existing resources.",
+              "userAssignedIdentity": "Add user assigned identities to grant the managed application access to additional existing resources."
+            },
+            "defaultValue": {
+              "systemAssignedIdentity": "Off"
+            },
+            "options": {
+              "hideSystemAssignedIdentity": false,
+              "hideUserAssignedIdentity": false,
+              "readOnlySystemAssignedIdentity": false
+            },
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "outputs": {
+      "applicationResourceName": "[steps('applicationSettings').appName]",
+      "location": "[location()]",
+      "managedIdentity": "[steps('applicationSettings').appIdentity]"
     }
+  }
 }
 ```
 
-Приведенный выше CreateUIDefinition. JSON создает пользовательский интерфейс, который содержит текстовое поле для потребителя, чтобы ввести идентификатор ресурса Azure с **назначенным пользователем удостоверением** . Созданный интерфейс выглядит следующим образом:
-
-![Образец назначенного пользователем удостоверения CreateUIDefinition](./media/publish-managed-identity/user-assigned-identity.png)
+![CreateUIDefinition управляемых удостоверений](./media/publish-managed-identity/msi-cuid.png)
 
 ### <a name="using-azure-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов Azure
 
 > [!NOTE]
 > Шаблоны управляемых приложений Marketplace автоматически создаются для клиентов, которые проходят через портал Azure создания.
-> В этих сценариях для включения удостоверения необходимо использовать `managedIdentity` выходной ключ в CreateUIDefinition.
+> В этих сценариях для `managedIdentity` включения удостоверения необходимо использовать выходной ключ в CreateUIDefinition.
 
 Управляемое удостоверение можно также включить с помощью шаблонов Azure Resource Manager. Пример ниже включит в управляемом приложении удостоверение, **назначенное системой** . Более сложные объекты Identity можно формировать с помощью Azure Resource Manager параметров шаблона для предоставления входных данных. Эти входные данные можно использовать для создания управляемых приложений с **удостоверением, назначенным пользователем**.
 
@@ -272,7 +266,7 @@ ms.locfileid: "75651661"
 
 ### <a name="authoring-the-maintemplate-with-a-linked-resource"></a>Создание mainTemplate с помощью связанного ресурса
 
-Кроме обновления CreateUIDefinition, основной шаблон также необходимо обновить, чтобы принять переданный идентификатор связанного ресурса. Основной шаблон можно обновить, чтобы принять новые выходные данные, добавив новый параметр. Поскольку `managedIdentity` выходные данные переопределяют значение созданного шаблона управляемого приложения, оно не передается в основной шаблон и не должно включаться в раздел Parameters.
+Кроме обновления CreateUIDefinition, основной шаблон также необходимо обновить, чтобы принять переданный идентификатор связанного ресурса. Основной шаблон можно обновить, чтобы принять новые выходные данные, добавив новый параметр. Поскольку `managedIdentity` выходные данные переопределяют значение в созданном шаблоне управляемого приложения, оно не передается в основной шаблон и не должно включаться в раздел Parameters.
 
 Пример основного шаблона, который задает сетевой профиль для существующего сетевого интерфейса, предоставляемого CreateUIDefinition.
 
@@ -316,7 +310,7 @@ ms.locfileid: "75651661"
 
 ## <a name="accessing-the-managed-identity-token"></a>Доступ к маркеру управляемого удостоверения
 
-Теперь доступ к маркеру управляемого приложения можно получить через API `listTokens` из клиента издателя. Пример запроса может выглядеть следующим образом:
+Теперь доступ к маркеру управляемого приложения можно получить через `listTokens` API клиента издателя. Пример запроса может выглядеть следующим образом:
 
 ``` HTTP
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Solutions/applications/{applicationName}/listTokens?api-version=2018-09-01-preview HTTP/1.1
@@ -331,10 +325,10 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 
 Параметры текста запроса:
 
-Параметр | Обязательно для заполнения | Description
+Параметр | Обязательный | Описание
 ---|---|---
-аусоризатионаудиенце | *нет* | URI идентификатора приложения целевого ресурса. Он также является утверждением `aud` (аудитории) выданного маркера. Значение по умолчанию — "https://management.azure.com/"
-userAssignedIdentities | *нет* | Список назначаемых пользователем управляемых удостоверений для получения маркера. Если не указано, `listTokens` вернет маркер для управляемого системой удостоверения.
+аусоризатионаудиенце | *Нет* | URI идентификатора приложения целевого ресурса. Кроме того, это `aud` утверждение (аудитория) выданного маркера. Значение по умолчанию —https://management.azure.com/""
+userAssignedIdentities | *Нет* | Список назначаемых пользователем управляемых удостоверений для получения маркера. Если он не указан `listTokens` , возвращает маркер для управляемого системой удостоверения.
 
 
 Пример ответа может выглядеть следующим образом:
@@ -358,19 +352,19 @@ Content-Type: application/json
 }
 ```
 
-Ответ будет содержать массив токенов в свойстве `value`:
+Ответ будет содержать массив токенов в `value` свойстве:
 
-Параметр | Description
+Параметр | Описание
 ---|---
-access_token | Запрашиваемый маркер доступа.
+access_token | Запрошенный маркер доступа.
 expires_in | Количество секунд, в течение которых маркер доступа будет действителен.
 expires_on | Период времени после истечения срока действия маркера доступа. Представляется в виде числа секунд от эпохи.
 not_before | Интервал времени, когда вступает в силу маркер доступа. Представляется в виде числа секунд от эпохи.
-аусоризатионаудиенце | `aud` (аудитория), запрошенный маркером доступа. Это то же самое, что было указано в `listTokens` запросе.
+аусоризатионаудиенце | Маркер `aud` доступа, запрошенный (аудиторией). Это то же самое, что было указано в `listTokens` запросе.
 resourceId | Идентификатор ресурса Azure для выданного маркера. Это либо идентификатор управляемого приложения, либо идентификатор удостоверения, назначенный пользователем.
 token_type | Тип маркера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Настройка управляемого приложения с помощью настраиваемого поставщика](../custom-providers/overview.md)

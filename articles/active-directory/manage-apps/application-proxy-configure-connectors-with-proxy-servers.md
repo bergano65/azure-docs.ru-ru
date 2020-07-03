@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 04/07/2020
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d305f3354e7b1af6d43f31f0dd5fe9f54ef3e66f
-ms.sourcegitcommit: 3486e2d4eb02d06475f26fbdc321e8f5090a7fac
+ms.openlocfilehash: 0aafb971ca1ce812a68045f7d0c0c2ab7f532133
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73242281"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80877394"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -27,6 +27,7 @@ ms.locfileid: "73242281"
 
 * Настройка соединителей для обхода локальных исходящих прокси-серверов.
 * Настройка соединителей для доступа к прокси приложения Azure AD через исходящий прокси-сервер.
+* Настройте использование прокси-сервера между соединителем и внутренним приложением.
 
 Дополнительные сведения о соединителях см. в статье [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md).
 
@@ -38,7 +39,7 @@ ms.locfileid: "73242281"
 
 Можно настроить соединитель, чтобы он игнорировал локальный прокси-сервер и подключался к службам Azure напрямую. Мы рекомендуем использовать именно этот подход (если допускает политика сети), так как он позволяет сократить количество конфигураций.
 
-Чтобы отключить в соединителе использование исходящего прокси-сервера, измените файл C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config. Добавьте в него раздел *system.net* с приведенным далее текстом:
+Чтобы отключить использование исходящего прокси-сервера для соединителя, измените файл C:\Program Files\Microsoft AAD App proxy Connector\applicationproxyconnectorservice.exe.config. и добавьте раздел *System.NET* , показанный в этом примере кода:
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -76,7 +77,7 @@ ms.locfileid: "73242281"
 
 Если автоматическое обнаружение веб-прокси включено в среде и настроено должным образом, соединитель обнаружит исходящий прокси-сервер автоматически и попытается его использовать. Тем не менее можно явным образом настроить использование исходящего прокси-сервера для соединителя.
 
-Для этого измените файл C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config и добавьте раздел *system.net*, поместив в него следующий образец кода. Вместо *proxyserver:8080* укажите имя или IP-адрес локального прокси-сервера и номер порта для доступа к нему. Значение должно иметь префикс http://, даже если вы используете IP-адрес.
+Для этого измените файл C:\Program Files\Microsoft AAD App Proxy Connector\ApplicationProxyConnectorService.exe.config и добавьте раздел *system.net*, поместив в него следующий образец кода. Измените *proxyserver: 8080* , чтобы отразить имя или IP-адрес локального прокси-сервера, а также порт, на котором он прослушивается. Значение должно иметь префикс http://, даже если вы используете IP-адрес.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -104,7 +105,7 @@ ms.locfileid: "73242281"
 * правила для исходящих подключений прокси-сервера;
 * проверка подлинности прокси-сервера;
 * порты прокси-сервера;
-* проверка SSL.
+* Проверка TLS
 
 #### <a name="proxy-outbound-rules"></a>правила для исходящих подключений прокси-сервера;
 
@@ -113,10 +114,10 @@ ms.locfileid: "73242281"
 | URL-адрес | Как он используется |
 | --- | --- |
 | \*.msappproxy.net;<br>\*.servicebus.windows.net. | Связь между соединителем и облачной службой прокси приложения |
-| mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Azure использует эти URL-адреса для проверки сертификатов |
-| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>*. microsoftonline.com<br>* . microsoftonline-p.com<br>*. msauth.net<br>* . msauthimages.NET<br>*. msecnd.net<br>* . msftauth.NET<br>*. msftauthimages.net<br>* . phonefactor.NET<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net | Соединитель использует эти URL-адреса во время регистрации. |
+| mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Соединитель использует эти URL-адреса для проверки сертификатов. |
+| login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>*. microsoftonline.com<br>*. microsoftonline-p.com<br>*. msauth.NET<br>*. msauthimages.NET<br>*. msecnd.NET<br>*. msftauth.NET<br>*. msftauthimages.NET<br>*. phonefactor.NET<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctdl.windowsupdate.com:80 | Соединитель использует эти URL-адреса во время регистрации. |
 
-Если брандмауэр или прокси-сервер позволяет настраивать списки разрешений DNS, можно разрешить подключения к \*. msappproxy.net и \*. servicebus.windows.net. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
+Если брандмауэр или прокси-сервер позволяет настраивать списки разрешений DNS, можно разрешить подключения к \*. msappproxy.NET и \*. servicebus.Windows.NET. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
 
 Невозможно разрешить подключения по полному доменному имени. Вместо этого укажите диапазоны IP-адресов. Используйте следующие параметры:
 
@@ -129,14 +130,31 @@ ms.locfileid: "73242281"
 
 #### <a name="proxy-ports"></a>порты прокси-сервера;
 
-Соединитель устанавливает исходящие SSL-подключения, используя метод CONNECT. По сути он создает туннель через исходящий прокси-сервер. В настройках прокси-сервера разрешите туннелирование к портам 443 и 80.
+Соединитель создает исходящие подключения на основе TLS с помощью метода CONNECT. По сути он создает туннель через исходящий прокси-сервер. В настройках прокси-сервера разрешите туннелирование к портам 443 и 80.
 
 > [!NOTE]
 > При запуске служебной шины по протоколу HTTPS используется порт 443. По умолчанию служебная шина пытается использовать прямые TCP-подключения, а протокол HTTPS применяет только при невозможности прямого подключения.
 
-#### <a name="ssl-inspection"></a>проверка SSL.
+#### <a name="tls-inspection"></a>Проверка TLS
 
-Для трафика соединителя не стоит использовать проверку SSL, так как это вызывает проблемы. Этот соединитель использует сертификат для проверки подлинности службы прокси приложения, а он может быть потерян при проверке SSL.
+Не используйте проверку TLS для трафика соединителя, так как это приводит к проблемам с трафиком соединителя. Соединитель использует сертификат для проверки подлинности в службе прокси приложения, и этот сертификат может быть потерян во время проверки TLS.
+
+## <a name="configure-using-a-proxy-between-the-connector-and-backend-application"></a>Настройка использования прокси-сервера между соединителем и внутренним приложением
+Использование прямого прокси-сервера для обмена данными с внутренним приложением может быть специальным требованием в некоторых средах.
+Чтобы включить эту функцию, выполните следующие действия:
+
+### <a name="step-1-add-the-required-registry-value-to-the-server"></a>Шаг 1. добавление необходимого значения реестра на сервер
+1. Чтобы включить использование прокси-сервера по умолчанию, добавьте следующий параметр реестра `UseDefaultProxyForBackendRequests = 1` (DWORD) в раздел реестра конфигурации соединителя, расположенный в папке "HKEY_LOCAL_MACHINE \Софтваре\микрософт\микрософт AAD App proxy Connector".
+
+### <a name="step-2-configure-the-proxy-server-manually-using-netsh-command"></a>Шаг 2. Настройка прокси-сервера вручную с помощью команды netsh
+1.  Включите групповую политику Настройка параметров прокси-сервера для каждого компьютера. Это находится в: Конфигурация компьютера \ административные шаблоны \ компоненты Windows\internet Explorer. Этот параметр необходимо задать, а не задать для параметра "на пользователя".
+2.  Запустите `gpupdate /force` на сервере или перезагрузите сервер, чтобы убедиться в том, что он использует обновленные параметры групповой политики.
+3.  Запустите командную строку с повышенными привилегиями с правами `control inetcpl.cpl`администратора и введите.
+4.  Настройте необходимые параметры прокси-сервера. 
+
+Эти параметры позволяют соединителю использовать один и тот же прокси-сервер для обмена данными с Azure и серверным приложением. Если соединителю для обмена данными с Azure не требуется использовать прямой прокси-сервер или другой прямой прокси-сервер, можно настроить его с помощью изменения файла Аппликатионпроксиконнекторсервице. exe. config, как описано в разделах обход исходящих прокси-серверов или использование исходящего прокси.
+
+Служба обновления соединителя также будет использовать прокси-сервер компьютера. Это поведение можно изменить, изменив файл ApplicationProxyConnectorUpdaterService. exe. config.
 
 ## <a name="troubleshoot-connector-proxy-problems-and-service-connectivity-issues"></a>Устранение неполадок в работе соединителя через прокси-сервера и с подключением к службе
 
@@ -185,5 +203,5 @@ ms.locfileid: "73242281"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о соединителях прокси приложения Azure AD](application-proxy-connectors.md)
+* [Общие сведения о соединителях Azure AD Application Proxy](application-proxy-connectors.md)
 * При возникновении проблем с подключением соединителя задайте вопрос на [форуме Azure Active Directory](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD&forum=WindowsAzureAD) или отправьте запрос в службу технической поддержки.

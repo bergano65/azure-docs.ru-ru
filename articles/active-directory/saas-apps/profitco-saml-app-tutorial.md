@@ -1,0 +1,146 @@
+---
+title: Руководство по Интеграция единого входа Azure Active Directory с Profit.co SAML App | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и Profit.co SAML App.
+services: active-directory
+documentationCenter: na
+author: jeevansd
+manager: mtillman
+ms.reviewer: barbkess
+ms.assetid: 27f42934-c636-43dd-9c20-a3c6316f2763
+ms.service: active-directory
+ms.subservice: saas-app-tutorial
+ms.workload: identity
+ms.tgt_pltfrm: na
+ms.topic: tutorial
+ms.date: 03/27/2020
+ms.author: jeedes
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: 564ca97210d85c5118901f30261abe3de9df1053
+ms.sourcegitcommit: d57d2be09e67d7afed4b7565f9e3effdcc4a55bf
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81770925"
+---
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-profitco-saml-app"></a>Руководство по Интеграция единого входа Azure Active Directory с Profit.co SAML App
+
+В этом руководстве описано, как интегрировать Profit.co SAML App с Azure Active Directory (Azure AD). Интеграция Profit.co SAML с Azure AD обеспечивает следующие возможности:
+
+* С помощью Azure AD вы можете контролировать доступ к Profit.co SAML App.
+* Вы можете включить автоматический вход пользователей в Profit.co SAML App с учетными записями Azure AD.
+* Централизованное управление учетными записями через портал Azure.
+
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье о [едином входе в приложения с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on).
+
+## <a name="prerequisites"></a>Предварительные требования
+
+Чтобы приступить к работе, потребуется следующее.
+
+* Подписка Azure AD. Если у вас нет подписки, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Profit.co SAML App с поддержкой единого входа.
+
+## <a name="scenario-description"></a>Описание сценария
+
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Profit.co SAML App поддерживает единый вход, инициированный поставщиком удостоверений.
+
+* После настройки Profit.co SAML App можно включить управление сеансом. Это защищает от утечки данных и несанкционированного доступа к конфиденциальным данным вашей организации в режиме реального времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+
+## <a name="add-profitco-saml-app-from-the-gallery"></a>Добавление приложения Profit.co SAML App из коллекции
+
+Чтобы настроить интеграцию Profit.co SAML App с Azure AD, необходимо добавить Profit.co SAML App из коллекции в список управляемых приложений SaaS.
+
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Profit.co SAML App**.
+1. Выберите **Profit.co SAML App** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+
+## <a name="configure-and-test-azure-ad-single-sign-on-for-profitco-saml-app"></a>Настройка и проверка единого входа Azure AD для Profit.co SAML App
+
+Настройте и проверьте единый вход Azure AD в Profit.co SAML App с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Profit.co SAML App.
+
+Ниже приведены основные действия по настройке и проверке единого входа Azure AD с помощью Profit.co SAML App:
+
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя B.Simon.
+    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить B.Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа в Profit.co SAML App](#configure-profitco-saml-app-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя Profit.co SAML App](#create-a-profitco-saml-app-test-user)** требуется для того, чтобы в Profit.co SAML App существовал пользователь B.Simon. связанный с одноименным пользователем в Azure AD.
+1. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
+
+## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
+
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
+
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Profit.co SAML App** найдите раздел **Управление**. Выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок карандаша, чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить эти параметры.
+
+   ![Снимок экрана: настройка единого входа на странице SAML с выделенным значком пера](common/edit-urls.png)
+
+1. В разделе **Базовая конфигурация SAML** приложение предварительно настроено и заданы требуемые URL-адреса в Azure. Пользователям нужно сохранить конфигурацию, нажав кнопку **Сохранить**.
+
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Копировать**. Это позволит скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
+
+    ![Снимок экрана: "Сертификат подписи SAML" с выделенной кнопкой "Копировать"](common/copy-metadataurl.png)
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
+В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
+
+1. Слева на портале Azure выберите **Azure Active Directory** > **Пользователи** > **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `B.Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
+   1. Выберите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **создания**.
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как включить единый вход в Azure для пользователя B.Simon, предоставив этому пользователю доступ к Profit.co SAML App.
+
+1. На портале Azure выберите **Корпоративные приложения** > **Все приложения**.
+1. В списке приложений выберите **Profit.co SAML App**.
+1. На странице сводных сведений о приложении откройте раздел **Управление** и выберите **Пользователи и группы**.
+
+   ![Снимок экрана: раздел "Управление" с выделенным пунктом "Пользователи и группы"](common/users-groups-blade.png)
+
+1. Выберите **Добавить пользователя**. В диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Снимок экрана: страница "Пользователи и группы" с выделенным элементом "Добавить пользователя"](common/add-assign-user.png)
+
+1. В диалоговом окне **Пользователи и группы** выберите **B. Simon** из списка пользователей. Затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если вы хотите получить значение роли в утверждении SAML, выберите в диалоговом окне **Выбор роли** подходящую роль для пользователя в предложенном списке. Затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Добавление назначения** выберите **Назначить**.
+
+## <a name="configure-profitco-saml-app-sso"></a>Настройка единого входа в Profit.co SAML App
+
+Чтобы настроить единый вход на стороне Profit.co SAML App, необходимо отправить URL-адрес метаданных федерации приложений в [службу поддержки Profit.co SAML App](mailto:support@profit.co). Специалисты службы поддержки правильно настроят подключение единого входа SAML на обеих сторонах подключения.
+
+### <a name="create-a-profitco-saml-app-test-user"></a>Создание тестового пользователя в приложении Profit.co SAML App
+
+В этом разделе описано, как создать пользователя B.Simon в приложении Profit.co SAML App. Обратитесь в  [службу поддержки Profit.co SAML App](mailto:support@profit.co), чтобы добавить пользователей на платформу Profit.co SAML App. Единый вход нельзя использовать до создания и активации пользователей.
+
+## <a name="test-sso"></a>Проверка единого входа
+
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью Панели доступа.
+
+Выбрав плитку Profit.co SAML App на панели доступа, вы автоматически войдете в приложение Profit.co SAML App, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в [этой статье](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+
+## <a name="additional-resources"></a>Дополнительные ресурсы
+
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Пробное использование Profit.co SAML App с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
+
+- [Защита приложений с помощью функции управления настройками условного доступа для приложений в Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

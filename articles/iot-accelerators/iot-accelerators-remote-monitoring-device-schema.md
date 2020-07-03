@@ -8,12 +8,15 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 12/18/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0f9669d491648ecc621aab27d0908dcc3dc84438
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: ac681bb13ccea49c7a2f566a6fcdb6adb8cec5bb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65823331"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81683747"
 ---
 # <a name="understand-the-device-model-schema"></a>Общие сведения о схеме модели устройства
 
@@ -29,7 +32,7 @@ ms.locfileid: "65823331"
 * Статья [Implement the device model behavior](iot-accelerators-remote-monitoring-device-behavior.md) (Реакция модели устройства на событие) содержит сведения о файлах JavaScript, используемых для того, чтобы имитированное устройство реагировало на событие.
 * Статья [Create a new simulated device](iot-accelerators-remote-monitoring-create-simulated-device.md) (Создание имитированного устройства) объединяет все сведения, а также описывает процедуру развертывания нового типа имитированного устройства в решение.
 
-В этой статье раскрываются следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 
 >[!div class="checklist"]
 > * использование JSON-файла для определения модели имитированного устройства;
@@ -114,7 +117,7 @@ ms.locfileid: "65823331"
 
 Служба моделирования запускает файл **chiller-01-state.js** каждые 5 секунд, чтобы обновить состояние устройства. Вы можете просмотреть файлы JavaScript для стандартных имитированных устройств в [папке сценариев](https://github.com/Azure/device-simulation-dotnet/tree/master/Services/data/devicemodels/scripts) на GitHub. Обычно эти файлы JavaScript имеют суффикс **-state**. Это позволяет отличить их от файлов, которые реализуют метод реакции на события.
 
-## <a name="properties"></a>properties
+## <a name="properties"></a>Элемент Property
 
 Раздел `Properties` схемы определяет значения свойств, которые устройство передает в решение. Пример:
 
@@ -164,8 +167,8 @@ ms.locfileid: "65823331"
 * Object — можно сериализовать с помощью JSON.
 * Binary — можно сериализовать с помощью Base64.
 * Text
-* Boolean
-* Integer
+* Логическое значение
+* Целое число
 * Double
 * DateTime
 
@@ -233,7 +236,7 @@ ms.locfileid: "65823331"
 
 Вы можете просмотреть файлы JavaScript для стандартных имитированных устройств в [папке сценариев](https://github.com/Azure/device-simulation-dotnet/tree/master/Services/data/devicemodels/scripts) на GitHub. Обычно эти файлы JavaScript имеют суффикс **-method**. Это позволяет отличить их от файлов, которые реализуют поведение состояния.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описано, как создать пользовательскую модель имитированного устройства. Из этой статьи вы узнали, как выполнять следующие задачи:
 

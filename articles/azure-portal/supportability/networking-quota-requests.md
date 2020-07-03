@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
 ms.openlocfilehash: 9b5c7043b06172c2d4931ca1c3fd3ac5d0e80883
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76547811"
 ---
 # <a name="networking-limit-increase"></a>Увеличение лимита сети
@@ -37,11 +37,11 @@ ms.locfileid: "76547811"
 
     ![Справка и поддержка](./media/networking-quota-request/help-plus-support.png)
 
-1. Выберите **Новый запрос в службу поддержки**.
+1. Выберите **новый запрос в службу поддержки**.
 
     ![Новый запрос на техническую поддержку](./media/networking-quota-request/new-support-request.png)
 
-1. В качестве **типа проблемы**выберите **пределы службы и подписки (квоты)** .
+1. В качестве **типа проблемы**выберите **пределы службы и подписки (квоты)**.
 
     ![Раскрывающийся список "ограничения подписки из типа проблемы"](./media/networking-quota-request/select-quota-issue-type.png)
 
@@ -69,19 +69,19 @@ ms.locfileid: "76547811"
 
 Выполните эти инструкции, чтобы создать запрос в службу поддержки с помощью функции " **использование и квота** " в портал Azure.
 
-1. В https://portal.azure.com найдите и выберите **подписки**.
+1. В https://portal.azure.comнайдите и выберите **подписки**.
 
-    ![Подписки](./media/networking-quota-request/search-for-suscriptions.png)
+    ![Subscriptions](./media/networking-quota-request/search-for-suscriptions.png)
 
 1. Выберите подписку, которая требует увеличенную квоту.
 
     ![Выбор подписки](./media/networking-quota-request/select-subscription-change-quota.png)
 
-1. Выберите **Использование и квоты**.
+1. Выбор **использования + квоты**
 
     ![Использование и квоты](./media/networking-quota-request/select-usage-plus-quotas.png)
 
-1. В правом верхнем углу выберите **Запросить увеличение**.
+1. В правом верхнем углу выберите **запросить увеличение**.
 
     ![Запросить увеличение](./media/networking-quota-request/request-increase-from-subscription.png)
 

@@ -8,17 +8,17 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.openlocfilehash: c393eb782c2ff16eb5b3e5967b39938dfe2f1534
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75426462"
 ---
 # <a name="how-to-start-an-azure-stream-analytics-job"></a>Запуск задания Azure Stream Analytics
 
 Вы можете запустить задание Azure Stream Analytics с помощью портал Azure, Visual Studio и PowerShell. При запуске задания выбирается время, в течение которого задание начинает создавать выходные данные. Портал Azure, Visual Studio и PowerShell имеют различные методы настройки времени начала. Эти методы описаны ниже.
 
-## <a name="start-options"></a>Параметры начального экрана
+## <a name="start-options"></a>Параметры запуска
 Для запуска задания доступны три следующих варианта. Обратите внимание, что все указанные ниже значения указаны в [метке времени с помощью](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics). Если метка времени не указана, будет использоваться время прибытия.
 * **Теперь**: создает начальную точку потока событий вывода, что и при запуске задания. Если используется темпоральный оператор (например, временное окно, ЗАПАЗДЫВАНИЕ или соединение), Azure Stream Analytics будет автоматически искать данные в источнике входных данных. Например, если вы запускаете задание Now и в запросе используется 5-минутное окно "переворачивающегося", Azure Stream Analytics будет искать данные за 5 минут назад во входных данных.
 Первое возможное событие вывода будет иметь отметку времени, равную или больше текущего времени, а ASA гарантирует, что для всех входных событий, которые могут логически участвовать в выходных данных, учитывается. Например, частично обработанные статистические выражения не создаются. Это всегда полное агрегированное значение.
@@ -54,10 +54,10 @@ Start-AzStreamAnalyticsJob `
 
 Существует три варианта для **аутпутстартмоде**: *жобстарттиме*, *CustomTime*и *ластаутпутевенттиме*. Если это свойство отсутствует, по умолчанию используется значение *жобстарттиме*. Дополнительные сведения об этих параметрах см. выше.
 
-Дополнительные сведения о командлете `Start-AzStreamAnalyitcsJob` см. в [справочнике по Start-азстреаманалитиксжоб](/powershell/module/az.streamanalytics/start-azstreamanalyticsjob).
+Дополнительные сведения о `Start-AzStreamAnalyitcsJob` командлете см. в [справочнике по Start-азстреаманалитиксжоб](/powershell/module/az.streamanalytics/start-azstreamanalyticsjob).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Краткое руководство по созданию задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
 * [Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)
-* [Краткое руководство. Создание Stream Analytics задания с помощью средств Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
+* [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)

@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 11/19/2019
-ms.openlocfilehash: a154874f4f1026b36da473ba18788fc804609ac9
-ms.sourcegitcommit: 812bc3c318f513cefc5b767de8754a6da888befc
+ms.openlocfilehash: 38606f424e38fc68519181f485b5b698d0705d6a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77152233"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79477584"
 ---
 # <a name="join-data"></a>Объединение данных
 
@@ -62,10 +62,10 @@ ms.locfileid: "77152233"
     * Выберите этот параметр, чтобы просмотреть ключи из обеих входных таблиц.
     * Отмените выбор, чтобы получить только ключевые столбцы из левого входа.
 
-1. Запустили конвейер.
+1. Отправьте конвейер.
 
 1. Чтобы просмотреть результаты, щелкните правой кнопкой мыши **данные объединения** и выберите **визуализировать**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 

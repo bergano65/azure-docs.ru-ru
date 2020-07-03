@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с moconavi | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с moconavi | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и moconavi.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 038520e662a205bc173035fd19656cbaf4800239
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160518"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-moconavi"></a>Руководство по Интеграция Azure Active Directory с moconavi
+# <a name="tutorial-azure-active-directory-integration-with-moconavi"></a>Руководство по интеграции Azure Active Directory с moconavi
 
 В этом руководстве описано, как интегрировать moconavi с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением moconavi обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "73160518"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с moconavi, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка moconavi с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "73160518"
 
     ![Сведения о домене и URL-адресах для единого входа для приложения moconavi](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<yourserverurl>/moconavi-saml2/saml/login`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<yourserverurl>/moconavi-saml2/saml/login`.
 
     b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<yourserverurl>/moconavi-saml2`.
 
@@ -122,7 +122,7 @@ ms.locfileid: "73160518"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -205,9 +205,9 @@ ms.locfileid: "73160518"
 
     ![Проверка единого входа](./media/moconavi-tutorial/testing3.png)
 
-    a. Введите **ключ аутентификации** `azureAD` в текстовое поле **Input Authentication Key** (Ввод ключа аутентификации).
+    а. Введите **ключ аутентификации**`azureAD` в текстовое поле **Input Authentication Key** (Ввод ключа аутентификации).
 
-    b. Введите **идентификатор пользователя** `your ad account` в текстовое поле **Input User ID** (Ввод идентификатора пользователя).
+    b. Введите **идентификатор пользователя**`your ad account` в текстовое поле **Input User ID** (Ввод идентификатора пользователя).
 
     c. Нажмите кнопку **LOGIN** (Войти).
 

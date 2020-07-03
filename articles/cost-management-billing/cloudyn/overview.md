@@ -1,61 +1,34 @@
 ---
-title: Обзор службы Cloudyn в Azure | Документы Майкрософт
+title: Обзор службы Cloudyn в Azure
 description: Cloudyn — это решение по управлению затратами на несколько облачных служб, которое помогает в работе с Azure и другими облачными ресурсами.
-keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 01/24/2020
+ms.date: 03/12/2020
 ms.topic: overview
 ms.service: cost-management-billing
 ms.reviewer: benshy
 ms.custom: seodec18
-ms.openlocfilehash: bfd00613a3949b29e2defcb6f97398a39091d0e6
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ROBOTS: NOINDEX
+ms.openlocfilehash: 9e1acee631316ec961af364769daa1f2a3001e72
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76774057"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80065888"
 ---
 # <a name="what-is-the-cloudyn-service"></a>Общие сведения о службе Cloudyn
 
 Служба Cloudyn, дочернего подразделения Майкрософт, позволяет отслеживать использование облака и затраты на ресурсы Azure и других поставщиков облачных услуг, включая AWS и Google. Простые для понимания отчеты панели мониторинга помогают с распределением затрат, а также с виртуальными счетами и возвратными платежами. Cloudyn помогает оптимизировать расходы на облако, выявляя недостаточно нагруженные ресурсы, которые затем можно настроить.
 
-См. ознакомительное видео [Общие сведения о службе Cloudyn](https://azure.microsoft.com/resources/videos/azure-cost-management-overview-and-demo).
-
+См. ознакомительное видео [Общие сведения о службе Cloudyn](https://azure.microsoft.com/resources/videos/azure-cost-management-overview-and-demo/).
+ 
 Служба "Управление затратами Azure" предоставляет те же возможности, что и Cloudyn. Служба "Управление затратами Azure" является собственным решением Azure по управлению затратами. Она позволяет анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с целью экономии средств. Дополнительные сведения см. в статье [Управление затратами Azure](../cost-management-billing-overview.md).
+ 
+[!INCLUDE [cloudyn-note](../../../includes/cloudyn-note.md)]
 
-См. подробнее о выборе соответствующего варианта в [видео об Управлении затратами Azure и Cloudyn](https://www.youtube.com/watch?v=PmwFWwSluh8).
-
->[!VIDEO https://www.youtube.com/embed/PmwFWwSluh8]
-
-## <a name="cloudyn-features-moving-to-azure-cost-management"></a>Перенос функций Cloudyn в службу "Управление затратами Azure"
-
-Корпорация Майкрософт приобрела службу Cloudyn и переносит ее функции управления затратами с портала Cloudyn в Azure. Чтобы использовать новые функции, войдите на портал Azure и выберите службу [управления затратами и выставлением счетов](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) Azure со списка. По сравнению с Cloudyn привычный интерфейс обеспечивает улучшенную производительность и меньшую задержку данных (примерно восемь часов).
-
-Перенос основных функций, предлагаемых в рамках Соглашения Enterprise, подписки MSDN или подписки с оплатой по мере использования, в службу "Управление затратами Azure" завершено. Перенос подписок CSP в эту службу выполняется.
-
-Если вы имеете категорию предложения, перенос которого еще не завершено, продолжайте использовать портал Cloudyn. Все остальные могут использовать службу "Управления затратами Azure".
-
-| Предложения и функции Microsoft Azure | Рекомендуемая служба управления затратами |
-| --- | --- |
-| Соглашение Azure Enterprise | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
-| Azure Web Direct (PAYG/MSDN) | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
-| Azure для государственных организаций | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
-| Azure CSP | [Cloudyn](https://azure.cloudyn.com); |
-| Поддержка анализа затрат в нескольких облаках для AWS (предварительная версия) | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
-| Рекомендации AWS | [Cloudyn](https://azure.cloudyn.com); |
-
-Некоторые из приведенных ниже функций доступны в Cloudyn, но теперь все они доступны в службе "Управление затратами Azure".
-
-- Программные интерфейсы
-- Рекомендации по вычислениям Azure
-- Рекомендации по резервированию Azure
-- сведения о бюджете;
-- Анализ затрат
-- Экспорт данных в учетную запись хранения Azure
-- Низкая задержка
-- Соединитель и пакет содержимого Power BI
-- Поддержка тегов ресурсов
+См. подробнее о выборе соответствующего варианта в [видео об Управлении затратами Azure и Cloudyn](https://www.youtube.com/watch?v=15DzKPMBRxM).
+ 
+>[!VIDEO https://www.youtube.com/embed/15DzKPMBRxM]
 
 ## <a name="monitor-usage-and-spending"></a>Отслеживание использования и расходов
 
@@ -84,4 +57,4 @@ ms.locfileid: "76774057"
 
 Теперь, когда вы знакомы с Cloudyn, следующим шагом является регистрация облачной среды и анализ данных.
 
-- [Регистрация индивидуальной подписки Azure](quick-register-azure-sub.md)
+- [Регистрация в программе CSP для партнеров и просмотр данных о затратах](quick-register-csp.md)

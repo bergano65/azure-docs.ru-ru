@@ -15,12 +15,12 @@
       href: quick-backup-vm-powershell.md
     - name: Резервное копирование виртуальной машины с помощью интерфейса командной строки
       href: quick-backup-vm-cli.md
-    - name: "Резервное копирование виртуальной машины\_— шаблон Resource Manager"
-      displayName: ARM
+    - name: Резервное копирование виртуальной машины (шаблон ARM)
+      displayName: Resource Manager
       href: quick-backup-vm-template.md
 - name: Учебники
   items:
-    - name: Резервное копирование виртуальных машин Azure в нужном масштабе
+    - name: Резервное копирование нескольких виртуальных машин Azure
       href: tutorial-backup-vm-at-scale.md
     - name: Резервное копирование виртуальных машин Azure с помощью PowerShell
       href: tutorial-backup-azure-vm.md
@@ -32,8 +32,6 @@
       href: tutorial-sql-backup.md
     - name: Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
       href: tutorial-backup-sap-hana-db.md
-    - name: Резервное копирование общих папок в службе Файлы Azure
-      href: tutorial-backup-azure-files.md
     - name: Резервное копирование Windows Server
       href: tutorial-backup-windows-server-to-azure.md
     - name: Восстановление файлов в Windows Server
@@ -46,6 +44,11 @@
           href: tutorial-sap-hana-restore-cli.md
         - name: Управление резервными копиями баз данных SAP HANA с помощью CLI
           href: tutorial-sap-hana-manage-cli.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Таблицы поддержки
@@ -58,8 +61,12 @@
           href: backup-support-matrix-mabs-dpm.md
         - name: Таблица поддержки агента Служб восстановления Microsoft Azure
           href: backup-support-matrix-mars-agent.md
+        - name: Таблица поддержки резервного копирования SQL Server
+          href: sql-support-matrix.md
         - name: Матрица поддержки резервного копирования SAP HANA
           href: sap-hana-backup-support-matrix.md
+        - name: Таблица поддержки резервного копирования общих папок в Azure
+          href: azure-file-share-support-matrix.md
         - name: Поддерживаемые номера SKU виртуальных машин для Политики Azure
           href: backup-azure-policy-supported-skus.md
     - name: Часто задаваемые вопросы
@@ -142,10 +149,16 @@
       items:
         - name: Обзор
           href: backup-azure-about-mars.md
+        - name: Установка и обновление
+          items:
+            - name: Установка агента MARS
+              href: install-mars-agent.md
+            - name: Обновление агента MARS
+              href: upgrade-mars-agent.md
         - name: Резервное копирование
           items:
             - name: Резервное копирование файлов и папок Windows Server
-              href: backup-configure-vault.md
+              href: backup-windows-with-mars-agent.md
             - name: Резервное копирование состояния системы Windows Server
               href: backup-azure-system-state.md
         - name: Восстановить
@@ -158,6 +171,8 @@
           href: backup-azure-manage-mars.md
     - name: Резервное копирование общих папок Azure
       items:
+        - name: Обзор
+          href: azure-file-share-backup-overview.md
         - name: на портале Azure;
           items:
             - name: Резервное копирование
@@ -182,6 +197,14 @@
               href: restore-afs-powershell.md
             - name: Управление
               href: manage-afs-powershell.md
+        - name: С помощью REST API
+          items:
+            - name: Резервное копирование
+              href: backup-azure-file-share-rest-api.md
+            - name: Восстановить
+              href: restore-azure-file-share-rest-api.md
+            - name: Управление
+              href: manage-azure-file-share-rest-api.md
     - name: "Резервное копирование базы данных SAP\_HANA на виртуальной машине Azure"
       items:
         - name: Обзор
@@ -273,23 +296,23 @@
         - name: Настройка отчетов службы Azure Backup
           items:
             - name: Настройка отчетов службы Azure Backup
-              href: backup-azure-configure-reports.md
-            - name: Модель данных для отчетов Azure Backup
-              href: backup-azure-reports-data-model.md
-            - name: Модель данных Log Analytics для Azure Backup
-              href: backup-azure-log-analytics-data-model.md
+              href: configure-reports.md
         - name: Настройка диагностических событий для хранилищ Служб восстановления
           items:
             - name: Использование параметров диагностики для хранилищ Службы восстановления
               href: backup-azure-diagnostic-events.md
             - name: 'Модель данных Log Analytics для диагностических событий, связанных с ресурсами'
-              href: backup-azure-log-analytics-new-data-model.md
+              href: backup-azure-reports-data-model.md
+            - name: Модель данных Log Analytics для Azure Backup (режим Диагностики Azure)
+              href: backup-azure-diagnostics-mode-data-model.md
     - name: Служба автоматизации
       items:
         - name: Встроенная Политика Azure для Azure Backup
           items:
             - name: Автоматическое включение резервного копирования при создании виртуальной машины с использованием Политики Azure
               href: backup-azure-auto-enable-backup.md
+            - name: Настройка параметров диагностики хранилища в большом масштабе
+              href: azure-policy-configure-diagnostics.md
         - name: PowerShell
           items:
             - name: Работа с виртуальными машинами на портале Azure
@@ -318,30 +341,44 @@
               href: backup-azure-arm-userestapi-managejobs.md
         - name: Шаблоны Resource Manager
           href: backup-rm-template-samples.md
-    - name: безопасность
+    - name: Безопасность
       items:
+        - name: Обзор
+          href: security-overview.md
         - name: Управление доступом на основе ролей
           href: backup-rbac-rs-vault.md
-        - name: Безопасность облачных рабочих нагрузок
-          href: backup-azure-security-feature-cloud.md
+        - name: Обратимое удаление
+          items:
+            - name: Обзор
+              href: backup-azure-security-feature-cloud.md
+            - name: Для виртуальных машин
+              href: soft-delete-virtual-machines.md
+            - name: Для SQL Server и SAP HANA на виртуальных машинах Azure
+              href: soft-delete-sql-saphana-in-azure-vm.md
         - name: Безопасность гибридных резервных копий
           href: backup-azure-security-feature.md
+        - name: Частные конечные точки
+          href: private-endpoints.md
+        - name: Шифрование
+          href: backup-encryption.md
         - name: Встроенные средства управления безопасностью
           href: backup-security-controls.md
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Диагностика
       items:
         - name: Azure
           href: backup-azure-vms-troubleshoot.md
         - name: Истечение времени ожидания агента Azure Backup или расширения виртуальной машины
           href: backup-azure-troubleshoot-vm-backup-fails-snapshot-timeout.md
+        - name: Агент Azure Backup
+          href: backup-azure-mars-troubleshoot.md
         - name: Резервное копирование файлов и папок выполняется медленно
           href: backup-azure-troubleshoot-slow-backup-performance-issue.md
         - name: Azure Backup Server
           href: backup-azure-mabs-troubleshoot.md
         - name: System Center DPM
           href: backup-azure-scdpm-troubleshooting.md
-        - name: Агент Azure Backup
-          href: backup-azure-mars-troubleshoot.md
         - name: Общая папка Azure
           href: troubleshoot-azure-files.md
         - name: "SQL\_Server"
@@ -356,8 +393,10 @@
       href: /dotnet/api/microsoft.azure.management.recoveryservices.backup
     - name: Azure CLI
       href: /cli/azure/backup?view=azure-cli-latest
-    - name: PowerShell
+    - name: Azure PowerShell
       href: /powershell/module/az.recoveryservices
+    - name: "PowerShell\_– агент Azure Backup"
+      href: /powershell/module/msonlinebackup
     - name: "REST\_— Backup"
       href: /rest/api/backup/
     - name: "REST\_— хранилище Служб восстановления"
@@ -366,10 +405,12 @@
       href: /azure/templates/microsoft.recoveryservices/allversions
 - name: Ресурсы
   items:
+    - name: Соответствие нормативным требованиям
+      href: compliance-offerings.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=windowsazureonlinebackup'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-backup.html'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы

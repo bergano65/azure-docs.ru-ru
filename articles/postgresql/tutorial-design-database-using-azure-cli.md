@@ -1,5 +1,5 @@
 ---
-title: Руководство. разработке базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI
+title: Руководство по разработке базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI
 description: Это руководство содержит сведения о создании и настройке первой базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер", а также о выполнении запросов к ней с помощью Azure CLI.
 author: rachel-msft
 ms.author: raagyema
@@ -9,13 +9,13 @@ ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 06/25/2019
 ms.openlocfilehash: c79e64fddaf404b459dd2215e4a2e9236f1bc221
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75460007"
 ---
-# <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-azure-cli"></a>Руководство. Разработка базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI 
+# <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-azure-cli"></a>Руководство по Разработка базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI 
 Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
 > [!div class="checklist"]
 > * Создание сервера Базы данных Azure для PostgreSQL
@@ -199,7 +199,7 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 
 Для команды `az postgres server restore` необходимо настроить следующие параметры:
 
-| Параметр | Рекомендуемое значение | Description  |
+| Параметр | Рекомендуемое значение | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |

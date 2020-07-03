@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Документация по QnA Maker
   description: QnA Maker — это облачная служба API, которая позволяет работать с данными в форме вопросов и ответов. QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам. Служба QnA Maker отвечает на вопросы, сформулированные на естественном языке, сопоставляя их с наиболее точными ответами в разделе вопросов и ответов вашей базы знаний.
-  ms.openlocfilehash: e566fdb18bdabe80447de9b2882cf7d57209d15e
-  ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+  ms.openlocfilehash: 189782ca4e8d9c6a098f6080a62be4da0f2be853
+  ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 01/29/2020
-  ms.locfileid: "76844115"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83651161"
 landingContent:
 - title: Сведения о QnA Maker
   linkLists:
@@ -96,8 +96,6 @@ landingContent:
     links:
     - text: 'Портал: Создание бота QnA'
       url: tutorials/create-qna-bot.md
-    - text: '.Net: Создание бота с помощью QnA Maker и Распознавания речи'
-      url: tutorials/integrate-qnamaker-luis.md
     - text: Другие примеры ботов
       url: https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md
 - title: Справочник

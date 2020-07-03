@@ -1,24 +1,24 @@
 ---
-title: включить файл
-description: включить файл
+title: Включить имя файла
+description: Включить файл
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 12/18/2019
+ms.date: 04/16/2020
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 6a95cc4d3dcc4a8ade261e2966550b59610ab159
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 32f972b177e004612856db91e790c5c2781a2b44
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75392356"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81536452"
 ---
 Следующие ограничения применяются только при выполнении операций управления с помощью Azure Resource Manager с хранилищем Azure.
 
-| Ресурс | Ограничение по умолчанию |
+| Ресурс | Ограничение |
 | --- | --- |
 | Операций управления учетными записями хранения (чтение) |800 за 5 минут |
-| Операций управления учетными записями хранения (запись) |200 в час |
+| Операций управления учетными записями хранения (запись) |10 в секунду/1200 в час |
 | Операции управления учетными записями хранения (список) |100 за 5 минут |

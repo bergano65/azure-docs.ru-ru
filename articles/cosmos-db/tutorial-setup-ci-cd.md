@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 01/28/2020
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: 4b05b4b44df53846a4880249785c6a5deda62f8a
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 521d5d8d587b39cf573dedc37ea9f6fd53646e66
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846539"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80410952"
 ---
 # <a name="set-up-a-cicd-pipeline-with-the-azure-cosmos-db-emulator-build-task-in-azure-devops"></a>Настройка конвейера CI/CD с использованием задачи сборки эмулятора Azure Cosmos DB в Azure DevOps
 
@@ -59,7 +59,7 @@ Import-Module "$env:ProgramFiles\Azure Cosmos DB Emulator\PSModules\Microsoft.Az
 Start-CosmosDbEmulator
 ```
 
-## <a name="addEmulatorBuildTaskToBuildDefinition"></a>Добавление задачи в конвейер сборки
+## <a name="add-the-task-to-a-build-pipeline"></a><a name="addEmulatorBuildTaskToBuildDefinition"></a>Добавление задачи в конвейер сборки
 
 1. Прежде чем добавлять задачи в конвейер сборки, необходимо добавить задание агента. Перейдите в конвейер сборки, выберите **...** , а затем — **Добавить задание агента**.
 
@@ -178,4 +178,4 @@ namespace todo.Tests
 
 См. дополнительные сведения об [использовании эмулятора Azure Cosmos DB для разработки и тестирования в локальной среде](https://docs.microsoft.com/azure/cosmos-db/local-emulator).
 
-См. дополнительные сведения об [экспорте сертификатов эмулятора Azure Cosmos DB для использования с Java, Python и Node.js](https://docs.microsoft.com/azure/cosmos-db/local-emulator-export-ssl-certificates).
+Инструкции см. в статье об [экспорте TLS/SSL-сертификатов эмулятора Azure Cosmos DB для использования с Java, Python и Node.js](https://docs.microsoft.com/azure/cosmos-db/local-emulator-export-ssl-certificates).

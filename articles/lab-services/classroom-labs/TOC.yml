@@ -22,47 +22,63 @@
   items:
     - name: 'Основные понятия, используемые при работе с лабораториями для аудитории'
       href: classroom-labs-concepts.md
+    - name: Основные понятия об архитектурах при работе с лабораториями для аудитории
+      href: classroom-labs-fundamentals.md
     - name: Сценарии
       items:
         - name: Использование лабораторий для проведения учебных занятий
           href: classroom-labs-scenarios.md
+        - name: "Лаборатории для аудитории\_— типы классов"
+          items:
+            - name: Общие сведения о типах классов
+              href: class-types.md
+            - name: Глубокое обучение при обработке естественного языка
+              href: class-type-deep-learning-natural-language-processing.md
+            - name: Создание скриптов оболочки в Linux
+              href: class-type-shell-scripting-linux.md
+            - name: Этичный взлом
+              href: class-type-ethical-hacking.md
+            - name: Управление базами данных
+              href: class-type-database-management.md
+            - name: Использование Python с Jupyter Notebook
+              href: class-type-jupyter-notebook.md
+            - name: Разработка мобильных приложений с помощью Android Studio
+              href: class-type-mobile-dev-android-studio.md
+            - name: Аналитика больших данных
+              href: class-type-big-data-analytics.md
 - name: Практические руководства
   items:
     - name: Руководство для администратора
       href: administrator-guide.md
-    - name: "Лаборатории для аудитории\_— типы классов"
-      items:
-        - name: Общие сведения о типах классов
-          href: class-types.md
-        - name: Глубокое обучение при обработке естественного языка
-          href: class-type-deep-learning-natural-processing.md
-        - name: Создание скриптов оболочки в Linux
-          href: class-type-shell-scripting-linux.md
-        - name: Этичный взлом
-          href: class-type-ethical-hacking.md
-        - name: Управление базами данных
-          href: class-type-database-management.md
-        - name: Использование Python с Jupyter Notebook
-          href: class-type-jupyter-notebook.md
-        - name: Разработка мобильных приложений с помощью Android Studio
-          href: class-type-mobile-dev-android-studio.md
+    - name: Руководство по ускоренной настройке учетной записи лаборатории
+      href: account-setup-guide.md
+    - name: Руководство по ускоренной настройке лаборатории
+      href: setup-guide.md
     - name: Создание и настройка учетных записей лаборатории (владелец учетной записи лаборатории)
       items:
         - name: Создание и администрирование учетных записей лаборатории
           href: how-to-manage-lab-accounts.md
-        - name: Настройка учетных записей лаборатории
+        - name: Управление лабораториями в учетной записи лаборатории
+          href: manage-labs.md
+        - name: Настройка автоматического завершения работы виртуальных машин
           href: how-to-configure-lab-accounts.md
+        - name: Добавление создателя лаборатории
+          href: add-lab-creator.md
         - name: Разрешение создателю лаборатории выбирать ее расположение
           href: allow-lab-creator-pick-lab-location.md
-        - name: Подключение лабораторий к пиринговой виртуальной сети
+        - name: Подключение к одноранговой виртуальной сети
           href: how-to-connect-peer-virtual-network.md
         - name: Подключение и отключение коллекции общих образов
           href: how-to-attach-detach-shared-image-gallery.md
-        - name: Добавление пользователя в качестве владельца в лабораторию для аудитории
+        - name: Добавление владельцев в аудиторную лабораторию
           href: how-to-add-user-lab-owner.md
-        - name: Параметры брандмауэра для Служб лабораторий Azure
+        - name: Настройка параметров брандмауэра
           href: how-to-configure-firewall-settings.md
-    - name: Создание и настройка лаборатории для аудитории (инструктор)
+        - name: Выбор образов Marketplace для лабораторий
+          href: specify-marketplace-images.md
+        - name: Указание сведений о поддержке (владелец учетной записи лаборатории)
+          href: lab-account-owner-support-information.md
+    - name: Создание и настройка лабораторий для аудитории (преподаватель)
       items:
         - name: Создание и администрирование лабораторий для аудитории
           href: how-to-manage-classroom-labs.md
@@ -83,17 +99,35 @@
         - name: Включение автоматического завершения работы при отключении
           href: how-to-enable-shutdown-disconnect.md
         - name: Включение вложенной виртуализации в шаблоне виртуальной машины
-          href: how-to-enable-nested-virtualization-template-vm.md
+          items:
+            - name: Общие сведения о включении вложенной виртуализации в шаблоне виртуальной машины
+              href: how-to-enable-nested-virtualization-template-vm.md
+            - name: Включение вложенной виртуализации в шаблоне виртуальной машины с помощью пользовательского интерфейса
+              href: how-to-enable-nested-virtualization-template-vm-ui.md
+            - name: Включение вложенной виртуализации в шаблоне виртуальной машины с помощью скрипта
+              href: how-to-enable-nested-virtualization-template-vm-using-script.md
         - name: Подготовка виртуальной машины Windows
           href: how-to-prepare-windows-template.md
+        - name: Управление поведением завершения работы Windows
+          href: how-to-windows-shutdown.md
+        - name: Просмотр сведений о поддержке (преподаватель)
+          href: lab-creator-support-information.md
+        - name: Доступ к виртуальным машинам учащихся из представления преподавателя
+          href: instructor-access-virtual-machines.md
     - name: Подключение к виртуальным машинам в лабораториях для аудитории (учащийся)
       items:
         - name: Доступ к лабораториям для аудитории
           href: how-to-use-classroom-lab.md
-        - name: Использование подключения с удаленным рабочим столом для виртуальных машин Linux
+        - name: Подключение к виртуальным машинам Linux
           href: how-to-use-remote-desktop-linux-student.md
+        - name: Подключение к виртуальной машине с компьютера Mac с помощью RDP
+          href: connect-virtual-machine-mac-remote-desktop.md
+        - name: Подключение к виртуальной машине с компьютера Chromebook с помощью RDP
+          href: connect-virtual-machine-chromebook-remote-desktop.md
         - name: Установка или сброс паролей для виртуальных машин
           href: how-to-set-virtual-machine-passwords-student.md
+        - name: Просмотр сведений о поддержке (учащийся)
+          href: lab-user-support-information.md
 - name: Справочник
   items:
     - name: REST API
@@ -102,11 +136,13 @@
       href: reference-powershell-module.md
 - name: Ресурсы
   items:
+    - name: Блог по Службам лабораторий Azure
+      href: 'https://aka.ms/azlabs-blog'
     - name: Обновления Azure
       href: 'https://azure.microsoft.com/updates/?product=lab-services'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/lab-services/'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/azure-lab-services'
+    - name: Форум технического сообщества
+      href: 'https://techcommunity.microsoft.com/t5/azure-lab-services/bd-p/AzureLabServices'
     - name: Часто задаваемые вопросы
       href: classroom-labs-faq.md

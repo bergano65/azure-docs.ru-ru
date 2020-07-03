@@ -1,32 +1,26 @@
 ---
 title: Учебник. Виртуальные машины Windows высокого уровня доступности в Azure
 description: Из этого руководства вы узнаете, как развертывать виртуальные машины высокого уровня доступности в группах доступности с помощью Azure PowerShell
-documentationcenter: ''
 services: virtual-machines-windows
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: tutorial
 ms.date: 11/30/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 0f94f4d312cefec80a0f294e256ee1ad908b903c
-ms.sourcegitcommit: a107430549622028fcd7730db84f61b0064bf52f
+ms.openlocfilehash: d269b95e5e6fb8491afd4c2f9729cbb047cf3419
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74068131"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82100453"
 ---
 # <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-azure-powershell"></a>Руководство по Создание и развертывание виртуальных машин высокого уровня доступности с помощью Azure PowerShell
 
 В этом руководстве показано, как повысить доступность и надежность виртуальных машин с помощью групп доступности. Группы доступности распределяют развернутые в Azure виртуальные машины между несколькими изолированными аппаратными узлами в кластере. 
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * "Создать группу доступности"
@@ -113,7 +107,7 @@ for ($i=1; $i -le 2; $i++)
 
 ## <a name="check-for-available-vm-sizes"></a>Знакомство с доступными размерами виртуальной машины 
 
-Позднее вы можете добавить в группу доступности другие виртуальные машины, но следует понимать, какие размеры виртуальных машин доступны на оборудовании. Выполните командлет [Get-AzVMSize](https://docs.microsoft.com/powershell/module/az.compute/get-azvmsize) для получения списка всех доступных размеров в аппаратном кластере для группы доступности.
+При добавлении виртуальной машины в группу доступности следует знать, какие размеры виртуальных машин доступны на оборудовании. Используйте команду [Get-AzVMSize](https://docs.microsoft.com/powershell/module/az.compute/get-azvmsize), чтобы получить все доступные размеры для виртуальных машин, которые можно развернуть в группе доступности.
 
 ```azurepowershell-interactive
 Get-AzVMSize `
@@ -128,9 +122,9 @@ Get-AzVMSize `
 Войдите на [портал Azure](https://portal.azure.com), выберите **Все службы** и введите **Помощник**. Панель мониторинга службы "Помощник" отображает персонализированные рекомендации для выбранной подписки. Дополнительные сведения можно найти в разделе [Приступая к работе с Azure Advisor](../../advisor/advisor-get-started.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * "Создать группу доступности"
@@ -141,6 +135,6 @@ Get-AzVMSize `
 Перейдите к следующему руководству, чтобы узнать о масштабируемых наборах виртуальных машин.
 
 > [!div class="nextstepaction"]
-> [Создание масштабируемого набора виртуальных машин](tutorial-create-vmss.md)
+> [Создание масштабируемого набора виртуальной машины](tutorial-create-vmss.md)
 
 

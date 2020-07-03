@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 09/09/2019
 ms.author: raynew
 ms.openlocfilehash: 0b0942b517c8dc83c048bd1203a58d9861515dfb
-ms.sourcegitcommit: 609d4bdb0467fd0af40e14a86eb40b9d03669ea1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73663049"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79257411"
 ---
 # <a name="configuration-server-requirements-for-vmware-disaster-recovery-to-azure"></a>Требования к серверу конфигурации для аварийного восстановления VMware в Azure
 
@@ -26,12 +26,12 @@ ms.locfileid: "73663049"
 
 Для аварийного восстановления виртуальных машин VMware в Azure вы развертываете сервер конфигурации как виртуальную машину VMware.
 
-- Site Recovery предоставляет шаблон OVA, который нужно загрузить с портала Azure и импортировать в vCenter Server для настройки виртуальной машины сервера конфигурации.
+- Site Recovery предоставляет для скачивания с портала Azure шаблон OVA, который вы можете импортировать в vCenter Server для настройки виртуальной машины сервера конфигурации.
 - При развертывании сервера конфигурации с использованием шаблона OVA виртуальная машина автоматически соответствует требованиям, перечисленным в этой статье.
 - Мы настоятельно рекомендуем настроить сервер конфигурации с помощью шаблона OVA. Однако, если вы настраиваете аварийное восстановление для виртуальных машин VMware и не можете использовать шаблон OVA, можно развернуть сервер конфигурации, следуя [этим инструкциям](physical-azure-set-up-source.md).
 - При развертывании сервера конфигурации для аварийного восстановления локальных физических компьютеров в Azure следуйте инструкциям в [этой статье](physical-azure-set-up-source.md). 
 
 [!INCLUDE [site-recovery-configuration-server-requirements](../../includes/site-recovery-configuration-and-scaleout-process-server-requirements.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Настройка аварийного восстановления [виртуальных машин VMware](vmware-azure-tutorial.md) в Azure.

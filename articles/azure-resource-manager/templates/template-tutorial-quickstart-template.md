@@ -2,17 +2,17 @@
 title: Учебник. Использование шаблонов быстрого запуска
 description: Узнайте, как использовать шаблоны быстрого запуска Azure для разработки шаблонов.
 author: mumian
-ms.date: 10/04/2019
+ms.date: 03/27/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 0feb0a1a682328f1e23a7d800eb4f5653a6acdd1
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.openlocfilehash: 4b82e02ecc009e587b89d1fd151fd13f75a4bcf8
+ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76765415"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80408508"
 ---
-# <a name="tutorial-use-azure-quickstart-templates"></a>Руководство. Tutorial: Use Azure Quickstart templates (Учебник. Использование шаблонов быстрого запуска)
+# <a name="tutorial-use-azure-quickstart-templates"></a>Руководство по Tutorial: Use Azure Quickstart templates (Учебник. Использование шаблонов быстрого запуска)
 
 [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) — это репозиторий шаблонов, наполняемый силами сообщества. Примеры шаблонов можно использовать при разработке шаблонов. В этом руководстве вы найдете определение ресурса веб-сайта и добавите его в собственный шаблон. Это занимает около **12 минут**.
 
@@ -63,7 +63,7 @@ ms.locfileid: "76765415"
 
 Если вы еще не создали группу ресурсов, см. [этот раздел](template-tutorial-create-first-template.md#create-resource-group). В этом примере предполагается, что для переменной **templateFile** указан путь к файлу шаблона, как показано в [первом учебнике](template-tutorial-create-first-template.md#deploy-template).
 
-# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 New-AzResourceGroupDeployment `
@@ -75,10 +75,12 @@ New-AzResourceGroupDeployment `
   -webAppName demoapp
 ```
 
-# <a name="azure-clitabazure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы выполнить эту команду развертывания, необходимо иметь [последнюю версию](/cli/azure/install-azure-cli) Azure CLI.
 
 ```azurecli
-az group deployment create \
+az deployment group create \
   --name addwebapp \
   --resource-group myResourceGroup \
   --template-file $templateFile \
@@ -86,6 +88,9 @@ az group deployment create \
 ```
 
 ---
+
+> [!NOTE]
+> Если развертывание завершилось сбоем, используйте параметр **debug** с командой развертывания, чтобы отобразить журналы отладки.  Можно также использовать параметр **verbose** для отображения полных журналов отладки.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

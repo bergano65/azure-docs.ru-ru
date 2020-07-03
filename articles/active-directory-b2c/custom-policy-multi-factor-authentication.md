@@ -2,20 +2,20 @@
 title: Многофакторная идентификация в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как включить многофакторную идентификацию в потребительских приложениях, защищенных с помощью Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: marsma
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: cbe9fc1d45e5c1f56f0e0ad91a0f3ffb53373d02
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+ms.openlocfilehash: 25724ba82e57c5e3800fa1a989dd4f504df1c163
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846657"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78189282"
 ---
 # <a name="enable-multi-factor-authentication-in-azure-active-directory-b2c"></a>Включение многофакторной идентификации в Azure Active Directory B2C
 
@@ -32,7 +32,7 @@ Azure Active Directory B2C (Azure AD B2C) интегрируется напря�
 
 ![Набор многофакторной идентификации](./media/custom-policy-multi-factor-authentication/add-policy.png)
 
-**Включите** **многофакторную идентификацию**.
+**Включите****многофакторную идентификацию**.
 
 Чтобы проверить взаимодействие, используйте функцию **Выполнить поток пользователя**. Рассмотрим следующий сценарий.
 

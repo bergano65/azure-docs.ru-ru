@@ -3,12 +3,12 @@ title: Мониторинг экземпляров контейнеров
 description: Как отслеживать потребление контейнерами вычислительных ресурсов, таких как ЦП и память, в службе "Экземпляры контейнеров Azure".
 ms.topic: article
 ms.date: 04/24/2019
-ms.openlocfilehash: bd86161bc7840be599eb5ee9a20f6dbf143f5f22
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: e8d41e419abe43530186e256ac6253e2d4783f9b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74533642"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82116373"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Мониторинг ресурсов контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -25,13 +25,13 @@ ms.locfileid: "74533642"
 
 ## <a name="available-metrics"></a>Доступные метрики
 
-Azure Monitor предоставляет следующие [метрики для Экземпляров контейнеров Azure][supported-metrics]. Эти метрики доступны как для отдельных контейнеров, так и для групп контейнеров.
+Azure Monitor предоставляет следующие [метрики для Экземпляров контейнеров Azure][supported-metrics]. Эти метрики доступны как для отдельных контейнеров, так и для групп контейнеров. По умолчанию метрики объединяются в виде средних значений.
 
-* **Использование ЦП** — измеряется в **миллиядрах**. Одно миллиядро равно 0,001 используемого ядра ЦП. Таким образом, 500 миллиядер соответствует загрузке одного ядра на 50 %. Вычисляется в виде **среднего использования** всех ядер.
+* **Использование ЦП** — измеряется в **миллиядрах**. Одним из милликоре является 1/1000th ядра ЦП, поэтому 500 миллиардах представляет использование ядра ЦП 0,5.
 
-* **Использование памяти** — вычисляется как **среднее число байт**.
+* **Использование памяти** — в байтах.
 
-* **Получено байт по сети в секунду** и **Передано байт по сети в секунду** — вычисляется как **среднее число байт в секунду**. 
+* **Число байт в сети, принимаемых в** секунду, в **байтах, переданных в секунду**. 
 
 ## <a name="get-metrics---azure-portal"></a>Получение метрик на портале Azure
 
@@ -57,9 +57,11 @@ CONTAINER_GROUP=$(az container show --resource-group <resource-group> --name <co
 
 Следующая команда возвращает метрики потребления **ЦП**:
 
-```console
-$ az monitor metrics list --resource $CONTAINER_GROUP --metric CPUUsage --output table
+```azurecli
+az monitor metrics list --resource $CONTAINER_GROUP --metric CPUUsage --output table
+```
 
+```output
 Timestamp            Name       Average
 -------------------  ---------  ---------
 2019-04-23 22:59:00  CPU Usage
@@ -78,9 +80,11 @@ Timestamp            Name       Average
 
 Измените значение параметра `--metric` в команде для получения других [поддерживаемых метрик][supported-metrics]. Например, используйте следующую команду для возвращения метрики потребления **памяти**. 
 
-```console
-$ az monitor metrics list --resource $CONTAINER_GROUP --metric MemoryUsage --output table
+```azurecli
+az monitor metrics list --resource $CONTAINER_GROUP --metric MemoryUsage --output table
+```
 
+```output
 Timestamp            Name          Average
 -------------------  ------------  ----------
 2019-04-23 22:59:00  Memory Usage
@@ -99,9 +103,11 @@ Timestamp            Name          Average
 
 В группе с несколькими контейнерами можно добавить измерение `containerName`, чтобы получить метрики по отдельным контейнерам.
 
-```console
-$ az monitor metrics list --resource $CONTAINER_GROUP --metric MemoryUsage --dimension containerName --output table
+```azurecli
+az monitor metrics list --resource $CONTAINER_GROUP --metric MemoryUsage --dimension containerName --output table
+```
 
+```output
 Timestamp            Name          Containername             Average
 -------------------  ------------  --------------------  -----------
 2019-04-23 22:59:00  Memory Usage  aci-tutorial-app
@@ -130,11 +136,11 @@ Timestamp            Name          Containername             Average
 2019-04-23 23:10:00  Memory Usage  aci-tutorial-sidecar  847872.0
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Подробные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
+Дополнительные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
 
-Из этой статьи вы узнаете, как создать [оповещения о метриках][metric-alert] для получения уведомлений, когда значение метрики для Экземпляров контейнеров Azure достигает порогового значения.
+Сведения о создании [оповещения о метриках][metric-alert] для получения уведомлений, когда значение метрики для Экземпляров контейнеров Azure достигает порогового значения.
 
 <!-- IMAGES -->
 [cpu-chart]: ./media/container-instances-monitor/cpu-multi.png

@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/27/2019
-ms.openlocfilehash: 2a3e1f1997857ab9812fe87d5ec68b71e280e6ce
-ms.sourcegitcommit: 5bbe87cf121bf99184cc9840c7a07385f0d128ae
+ms.openlocfilehash: 646254238f83166c53fe94a1821c68ff4dac8f04
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76122548"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82651929"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-app-service-preview"></a>Развертывание модели машинного обучения в службе приложений Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -29,25 +29,25 @@ ms.locfileid: "76122548"
 
 * Расширенная [Проверка подлинности](/azure/app-service/configure-authentication-provider-aad) для усиления безопасности. Методы проверки подлинности включают как Azure Active Directory, так и многофакторную проверку подлинности.
 * Автоматическое [масштабирование](/azure/azure-monitor/platform/autoscale-get-started?toc=%2fazure%2fapp-service%2ftoc.json) без необходимости повторного развертывания.
-* [Поддержка SSL](/azure/app-service/configure-ssl-certificate-in-code) для безопасной связи между клиентами и службой.
+* [Поддержка TLS](/azure/app-service/configure-ssl-certificate-in-code) для безопасной связи между клиентами и службой.
 
 Дополнительные сведения о функциях, предоставляемых службой приложений Azure, см. в статье [Обзор службы приложений](/azure/app-service/overview).
 
 > [!IMPORTANT]
 > Если требуется возможность регистрировать данные оценки, используемые в развернутой модели, или результаты оценки, следует развернуть в службе Azure Kubernetes. Дополнительные сведения см. [в разделе Получение данных в рабочих моделях](how-to-enable-data-collection.md).
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 * Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [Создание рабочей области](how-to-manage-workspace.md) .
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 * Обученная модель машинного обучения, зарегистрированная в вашей рабочей области. Если модель отсутствует, используйте [учебник по классификации образов: обучение модели](tutorial-train-models-with-aml.md) для обучения и регистрации.
 
     > [!IMPORTANT]
     > В фрагментах кода в этой статье предполагается, что вы установили следующие переменные:
     >
-    > * `ws` — ваша рабочая область Машинное обучение Azure.
-    > * `model` — Зарегистрированная модель, которая будет развернута.
-    > * `inference_config` — конфигурация вывода для модели.
+    > * `ws`— Рабочая область Машинное обучение Azure.
+    > * `model`— Зарегистрированная модель, которая будет развернута.
+    > * `inference_config`— Конфигурация вывода для модели.
     >
     > Дополнительные сведения об установке этих переменных см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
@@ -74,7 +74,7 @@ ms.locfileid: "76122548"
 Эти сущности инкапсулированы в __конфигурацию вывода__. В конфигурации зависимостей указываются скрипт входа и другие зависимости.
 
 > [!IMPORTANT]
-> При создании конфигурации вывода для использования со службой приложений Azure необходимо использовать объект [среды](https://docs.microsoft.com//python/api/azureml-core/azureml.core.environment%28class%29?view=azure-ml-py) . Обратите внимание, что при определении пользовательской среды необходимо добавить azureml-Defaults с версией > = 1.0.45 в качестве зависимости PIP. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы. В следующем примере демонстрируется создание объекта среды и его использование с конфигурацией вывода:
+> При создании конфигурации вывода для использования со службой приложений Azure необходимо использовать объект [среды](https://docs.microsoft.com//python/api/azureml-core/azureml.core.environment%28class%29?view=azure-ml-py) . Обратите внимание, что при определении пользовательской среды необходимо добавить azureml-Defaults с версией >= 1.0.45 в качестве зависимости PIP. Этот пакет содержит функции, необходимые для размещения модели в качестве веб-службы. В следующем примере демонстрируется создание объекта среды и его использование с конфигурацией вывода:
 >
 > ```python
 > from azureml.core.environment import Environment
@@ -103,7 +103,7 @@ ms.locfileid: "76122548"
 Чтобы создать образ DOCKER, развернутый в службе приложений Azure, используйте [модель. Package](https://docs.microsoft.com//python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#package-workspace--models--inference-config-none--generate-dockerfile-false-). В следующем фрагменте кода показано, как создать новый образ из модели и конфигурации вывода:
 
 > [!NOTE]
-> В фрагменте кода предполагается, что `model` содержит зарегистрированную модель и `inference_config` содержит конфигурацию для среды вывода. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
+> В фрагменте кода предполагается, что `model` содержит зарегистрированную модель `inference_config` и содержит конфигурацию для среды вывода. Дополнительные сведения см. в разделе [Развертывание моделей с помощью машинное обучение Azure](how-to-deploy-and-where.md).
 
 ```python
 from azureml.core import Model
@@ -114,14 +114,14 @@ package.wait_for_creation(show_output=True)
 print(package.location)
 ```
 
-При `show_output=True`отображаются выходные данные процесса сборки DOCKER. После завершения процесса образ будет создан в реестре контейнеров Azure для вашей рабочей области. После построения образа в реестре контейнеров Azure отобразится расположение. Возвращаемое расположение имеет формат `<acrinstance>.azurecr.io/package:<imagename>`. Например, `myml08024f78fd10.azurecr.io/package:20190827151241`.
+Если `show_output=True`задано значение, выводятся выходные данные процесса сборки DOCKER. После завершения процесса образ будет создан в реестре контейнеров Azure для вашей рабочей области. После построения образа в реестре контейнеров Azure отобразится расположение. Возвращаемое расположение имеет формат `<acrinstance>.azurecr.io/package@sha256:<imagename>`. Например, `myml08024f78fd10.azurecr.io/package@sha256:20190827151241`.
 
 > [!IMPORTANT]
 > Сохраните сведения о расположении, так как они используются при развертывании образа.
 
 ## <a name="deploy-image-as-a-web-app"></a>Развертывание образа как веб-приложения
 
-1. Используйте следующую команду, чтобы получить учетные данные входа для реестра контейнеров Azure, содержащего образ. Замените `<acrinstance>` на значение TH e, возвращенное ранее из `package.location`:
+1. Используйте следующую команду, чтобы получить учетные данные входа для реестра контейнеров Azure, содержащего образ. Замените `<acrinstance>` на значение, возвращенное ранее `package.location`из:
 
     ```azurecli-interactive
     az acr credential show --name <myacr>
@@ -157,12 +157,12 @@ print(package.location)
     В этом примере используется __Базовая__ ценовая категория (`--sku B1`).
 
     > [!IMPORTANT]
-    > Образы, созданные Машинное обучение Azure используют Linux, поэтому необходимо использовать параметр `--is-linux`.
+    > Образы, созданные Машинное обучение Azure используют Linux, поэтому необходимо использовать `--is-linux` параметр.
 
-1. Чтобы создать веб-приложение, используйте следующую команду. Замените `<app-name>` именем, которое вы хотите использовать. Замените `<acrinstance>` и `<imagename>` значениями, полученными `package.location` ранее:
+1. Чтобы создать веб-приложение, используйте следующую команду. Замените `<app-name>` на имя, которое вы хотите использовать. Замените `<acrinstance>` и `<imagename>` значениями, полученными `package.location` ранее:
 
     ```azurecli-interactive
-    az webapp create --resource-group myresourcegroup --plan myplanname --name <app-name> --deployment-container-image-name <acrinstance>.azurecr.io/package:<imagename>
+    az webapp create --resource-group myresourcegroup --plan myplanname --name <app-name> --deployment-container-image-name <acrinstance>.azurecr.io/package@sha256:<imagename>
     ```
 
     Эта команда возвращает сведения, аналогичные следующему документу JSON:
@@ -188,10 +188,10 @@ print(package.location)
     > [!IMPORTANT]
     > На этом этапе веб-приложение создано. Однако так как вы не указали учетные данные в реестре контейнеров Azure, который содержит образ, веб-приложение неактивно. На следующем шаге вы укажите сведения для проверки подлинности для реестра контейнеров.
 
-1. Чтобы предоставить веб-приложению учетные данные, необходимые для доступа к реестру контейнеров, используйте следующую команду. Замените `<app-name>` именем, которое вы хотите использовать. Замените `<acrinstance>` и `<imagename>` значениями, полученными `package.location` ранее. Замените `<username>` и `<password>` полученными ранее сведениями об имени для входа записи контроля доступа:
+1. Чтобы предоставить веб-приложению учетные данные, необходимые для доступа к реестру контейнеров, используйте следующую команду. Замените `<app-name>` на имя, которое вы хотите использовать. Замените `<acrinstance>` и `<imagename>` значениями, полученными `package.location` ранее. Замените `<username>` и `<password>` на сведения об имени входа записи контроля доступа, полученные ранее:
 
     ```azurecli-interactive
-    az webapp config container set --name <app-name> --resource-group myresourcegroup --docker-custom-image-name <acrinstance>.azurecr.io/package:<imagename> --docker-registry-server-url https://<acrinstance>.azurecr.io --docker-registry-server-user <username> --docker-registry-server-password <password>
+    az webapp config container set --name <app-name> --resource-group myresourcegroup --docker-custom-image-name <acrinstance>.azurecr.io/package@sha256:<imagename> --docker-registry-server-url https://<acrinstance>.azurecr.io --docker-registry-server-user <username> --docker-registry-server-password <password>
     ```
 
     Эта команда возвращает сведения, аналогичные следующему документу JSON:
@@ -220,7 +220,7 @@ print(package.location)
     },
     {
         "name": "DOCKER_CUSTOM_IMAGE_NAME",
-        "value": "DOCKER|myml08024f78fd10.azurecr.io/package:20190827195524"
+        "value": "DOCKER|myml08024f78fd10.azurecr.io/package@sha256:20190827195524"
     }
     ]
     ```
@@ -234,7 +234,7 @@ print(package.location)
 > az webapp log tail --name <app-name> --resource-group myresourcegroup
 > ```
 >
-> После загрузки образа и активации сайта в журнале отобразится сообщение о том, что `Container <container name> for site <app-name> initialized successfully and is ready to serve requests`.
+> После загрузки образа и активации сайта в журнале отобразится сообщение о том `Container <container name> for site <app-name> initialized successfully and is ready to serve requests`, что это так.
 
 После развертывания образа имя узла можно найти с помощью следующей команды:
 
@@ -246,7 +246,7 @@ az webapp show --name <app-name> --resource-group myresourcegroup
 
 ## <a name="use-the-web-app"></a>Использование веб-приложения
 
-Веб-служба, которая передает запросы модели, расположена по адресу `{baseurl}/score`. Например, `https://<app-name>.azurewebsites.net/score`. В следующем примере кода Python показано, как отправить данные в URL-адрес и отобразить ответ:
+Веб-служба, которая передает запросы модели, находится в `{baseurl}/score`папке. Например, `https://<app-name>.azurewebsites.net/score`. В следующем примере кода Python показано, как отправить данные в URL-адрес и отобразить ответ:
 
 ```python
 import requests
@@ -271,6 +271,6 @@ print(response.json())
 
 * Узнайте, как настроить веб-приложение в [службе приложений](/azure/app-service/containers/) в документации по Linux.
 * Дополнительные сведения о масштабировании см. в статье [Приступая к работе с автомасштабированием в Azure](/azure/azure-monitor/platform/autoscale-get-started?toc=%2fazure%2fapp-service%2ftoc.json).
-* [Используйте SSL-сертификат в службе приложений Azure](/azure/app-service/configure-ssl-certificate-in-code).
+* [Используйте сертификат TLS/SSL в службе приложений Azure](/azure/app-service/configure-ssl-certificate-in-code).
 * [Настройте приложение службы приложений для использования Azure Active Directory входа](/azure/app-service/configure-authentication-provider-aad).
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)

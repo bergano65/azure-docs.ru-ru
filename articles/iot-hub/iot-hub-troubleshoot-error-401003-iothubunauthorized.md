@@ -8,12 +8,15 @@ services: iot-hub
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
-ms.openlocfilehash: d0a9f643516af5945037acb3dd1da24b06944171
-ms.sourcegitcommit: fa6fe765e08aa2e015f2f8dbc2445664d63cc591
+ms.custom:
+- amqp
+- mqtt
+ms.openlocfilehash: f46d41c8287d03cbe9582ed560244cbd85cdeeaa
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76960637"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81759590"
 ---
 # <a name="401003-iothubunauthorized"></a>401003 IoTHubUnauthorized
 
@@ -33,7 +36,7 @@ ms.locfileid: "76960637"
 * IotHub "\*" не содержит указанное устройство "\*"
 * Правило авторизации "\*" не разрешает доступ для "\*"
 * Сбой проверки подлинности для этого устройства, продление маркера или сертификата и повторное подключение
-* Отпечаток не соответствует конфигурации: Thumbprint: SHA1Hash =\*, SHA2Hash =\*; Конфигурация: Примарисумбпринт =\*, Секондарисумбпринт =\*
+* Отпечаток не соответствует конфигурации: Thumbprint: SHA1Hash\*=, SHA2Hash\*=; Конфигурация: Примарисумбпринт =\*, секондарисумбпринт =\*
 
 ## <a name="cause"></a>Причина
 
@@ -67,6 +70,6 @@ ms.locfileid: "76960637"
 - Учетные данные авторизации правильно сформированы для используемого протокола. Дополнительные сведения см. в разделе [Управление доступом в центре Интернета вещей](iot-hub-devguide-security.md).
 - Используемое правило авторизации имеет разрешение для запрошенной операции.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы упростить проверку подлинности в центре Интернета вещей, мы рекомендуем использовать [пакеты SDK для Azure IOT](iot-hub-devguide-sdks.md).

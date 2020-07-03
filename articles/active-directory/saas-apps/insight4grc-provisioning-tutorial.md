@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/04/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0ca9ed8781a13f9ab5e949e0e5f019a851dc75f4
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 1404854e054c8fc4967ba863486969b8a87db526
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77057487"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77621513"
 ---
 # <a name="tutorial-configure-insight4grc-for-automatic-user-provisioning"></a>Учебник. Настройка Insight4GRC для автоматической подготовки пользователей
 
@@ -35,7 +35,7 @@ ms.locfileid: "77057487"
 > * Подготавливайте группы и членство в группах в Insight4GRC
 > * [Единый вход](https://docs.microsoft.com/azure/active-directory/saas-apps/insight4grc-tutorial) в Insight4GRC (рекомендуется)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -82,15 +82,15 @@ ms.locfileid: "77057487"
 
     ![Ссылка на Insight4GRC в списке "Приложения"](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
-5. В разделе **учетные данные администратора** введите учетные данные администратора Insight4GRC и имя пользователя. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Insight4GRC. Если подключение не выполняется, убедитесь, что у учетной записи Insight4GRC есть разрешения администратора, и повторите попытку.
+5. В разделе **учетные данные администратора** введите URL-адрес КОНЕЧНОЙ точки scim в поле **URL-адрес клиента**. URL-адрес енпоинт должен быть в формате `https://<Insight4GRC Domain Name>.insight4grc.com/public/api/scim/v2 ` , где **Insight4GRC доменное имя** — это значение, полученное на предыдущих шагах. Введите значение токена носителя, полученное ранее в **маркере секрета**. Щелкните **проверить подключение** , чтобы убедиться, что Azure AD может подключиться к Insight4GRC. Если подключение не выполняется, убедитесь, что у учетной записи Insight4GRC есть разрешения администратора, и повторите попытку.
 
     ![Подготовка](./media/insight4grc-provisioning-tutorial/provisioning.png)
 
@@ -106,14 +106,14 @@ ms.locfileid: "77057487"
 
    |attribute|Тип|
    |---|---|
-   |userName|String|
-   |externalId|String|
-   |active|Логическое|
-   |title|String|
-   |name.givenName|String|
-   |name.familyName|String|
-   |emails[type eq "work"].value|String|
-   |phoneNumbers[type eq "work"].value|String|
+   |userName|Строка|
+   |externalId|Строка|
+   |active|логический|
+   |title|Строка|
+   |name.givenName|Строка|
+   |name.familyName|Строка|
+   |emails[type eq "work"].value|Строка|
+   |phoneNumbers[type eq "work"].value|Строка|
 
 10. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory группы с Insight4GRC**.
 
@@ -121,8 +121,8 @@ ms.locfileid: "77057487"
 
       |attribute|Тип|
       |---|---|
-      |displayName|String|
-      |externalId|String|
+      |displayName|Строка|
+      |externalId|Строка|
       |members|Справочник|
 
 10. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
@@ -155,4 +155,4 @@ ms.locfileid: "77057487"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md).
+* [Узнайте, как просматривать журналы и получать отчеты о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md).

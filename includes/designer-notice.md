@@ -7,13 +7,15 @@ ms.custom: include file
 ms.topic: include
 author: nibaccam
 ms.author: nibaccam
-ms.date: 11/04/2019
-ms.openlocfilehash: 0802cfea424beb26f34ff2250cfd64ce69db0ca6
-ms.sourcegitcommit: a9b1f7d5111cb07e3462973eb607ff1e512bc407
+ms.date: 03/20/2020
+ms.openlocfilehash: 4b6275dfcac011693c2b90dce7b8d308ecec2f93
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76314081"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80371962"
 ---
 > [!TIP]
-> Клиентам, которые сейчас используют или оценивают Студию машинного обучения (классическую), рекомендуется опробовать [конструктор Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer), который предоставляет перетаскиваемые модули Машинного обучения __и__ обеспечивает масштабируемость, управление версиями и корпоративную безопасность.
+> Клиентам, которые в настоящее время используют или оценивают Студию машинного обучения (классическую), рекомендуется попробовать [конструктор Машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/concept-designer) (предварительная версия), который предоставляет модули машинного обучения для перетаскивания, __а также__ масштабируемость, управление версиями и корпоративную безопасность.
+>
+>Ознакомьтесь с дополнительными сведениями о [Машинном обучении Azure и Студии машинного обучения (классической)](../articles/machine-learning/compare-azure-ml-to-studio-classic.md).

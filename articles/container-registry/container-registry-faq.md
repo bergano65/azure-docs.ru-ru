@@ -3,16 +3,16 @@ title: Часто задаваемые вопросы
 description: Ответы на часто задаваемые вопросы, связанные со службой реестра контейнеров Azure
 author: sajayantony
 ms.topic: article
-ms.date: 07/02/2019
+ms.date: 03/18/2020
 ms.author: sajaya
-ms.openlocfilehash: 74863823f3e8ef32565e01981d3a742d696a8165
-ms.sourcegitcommit: f2149861c41eba7558649807bd662669574e9ce3
+ms.openlocfilehash: 39b543c5f886b22d488198873b75cf76555692fa
+ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708314"
+ms.lasthandoff: 05/03/2020
+ms.locfileid: "82731650"
 ---
-# <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о Реестре контейнеров Azure
+# <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о реестре контейнеров Azure
 
 В этой статье рассматриваются часто задаваемые вопросы и известные проблемы реестра контейнеров Azure.
 
@@ -104,27 +104,28 @@ az role assignment create --role "Reader" --assignee user@contoso.com --scope /s
 - [Как включить TLS 1,2?](#how-to-enable-tls-12)
 - [Поддерживает ли реестр контейнеров Azure отношение доверия с содержимым?](#does-azure-container-registry-support-content-trust)
 - [Разделы справки предоставить доступ к образам или Push-уведомлениям без разрешения на управление ресурсом реестра?](#how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource)
-- [Разделы справки включить автоматическое помещение образа в карантин для реестра](#how-do-i-enable-automatic-image-quarantine-for-a-registry)
+- [Разделы справки включить автоматическое помещение образа в карантин для реестра?](#how-do-i-enable-automatic-image-quarantine-for-a-registry)
+- [Разделы справки включить анонимный доступ по запросу?](#how-do-i-enable-anonymous-pull-access)
 
 ### <a name="how-do-i-access-docker-registry-http-api-v2"></a>Разделы справки доступ к API HTTP версии 2 реестра DOCKER?
 
-Запись контроля доступа поддерживает HTTP API версии 2 реестра DOCKER. Доступ к API можно получить по адресу `https://<your registry login server>/v2/`. Пример: `https://mycontainerregistry.azurecr.io/v2/`
+Запись контроля доступа поддерживает HTTP API версии 2 реестра DOCKER. Доступ к API можно получить по `https://<your registry login server>/v2/`адресу. Пример: `https://mycontainerregistry.azurecr.io/v2/`
 
 ### <a name="how-do-i-delete-all-manifests-that-are-not-referenced-by-any-tag-in-a-repository"></a>Разделы справки удалить все манифесты, на которые не ссылаются какие-либо теги в репозитории?
 
 Если вы используете bash:
 
-```bash
+```azurecli
 az acr repository show-manifests -n myRegistry --repository myRepository --query "[?tags[0]==null].digest" -o tsv  | xargs -I% az acr repository delete -n myRegistry -t myRepository@%
 ```
 
 Для PowerShell:
 
-```powershell
+```azurecli
 az acr repository show-manifests -n myRegistry --repository myRepository --query "[?tags[0]==null].digest" -o tsv | %{ az acr repository delete -n myRegistry -t myRepository@$_ }
 ```
 
-Примечание. Вы можете добавить `-y` в команду Delete, чтобы пропустить подтверждение.
+Примечание. чтобы пропустить подтверждение `-y` , можно добавить команду Delete.
 
 Дополнительные сведения см. [в статье Удаление образов контейнеров в реестре контейнеров Azure](container-registry-delete.md).
 
@@ -151,13 +152,13 @@ docker push myregistry.azurecr.io/1gb:latest
 
 Вы увидите, что использование хранилища увеличилось в портал Azure, или вы можете запросить использование с помощью интерфейса командной строки.
 
-```bash
+```azurecli
 az acr show-usage -n myregistry
 ```
 
 Удалите образ с помощью Azure CLI или портала и проверьте обновленное использование через несколько минут.
 
-```bash
+```azurecli
 az acr repository delete -n myregistry --image 1gb
 ```
 
@@ -186,42 +187,42 @@ az acr login -n MyRegistry
 Включите TLS 1,2 с помощью любого последнего клиента DOCKER (версия 18.03.0 и выше). 
 
 > [!IMPORTANT]
-> Начиная с 13 января 2020 г. Реестр контейнеров Azure требует, чтобы все безопасные подключения серверов и приложений использовали TLS 1,2. Поддержка TLS 1,0 и 1,1 будет прекращена.
+> С 13 января 2020 года Реестр контейнеров Azure будет требовать использовать протокол TLS версии 1.2 для всех безопасных подключений серверов и приложений. Поддержка протоколов TLS версии 1.0 и 1.1 будет прекращена.
 
-### <a name="does-azure-container-registry-support-content-trust"></a>Поддерживает ли Реестр контейнеров Azure функцию доверия к содержимому?
+### <a name="does-azure-container-registry-support-content-trust"></a>Поддерживает ли реестр контейнеров Azure отношение доверия с содержимым?
 
 Да, вы можете использовать надежные образы в реестре контейнеров Azure, так как [DOCKER Нотари](https://docs.docker.com/notary/getting_started/) интегрирован и может быть включен. Дополнительные сведения см. [в статье о доверии содержимого в реестре контейнеров Azure](container-registry-content-trust.md).
 
 
 ####  <a name="where-is-the-file-for-the-thumbprint-located"></a>Где находится файл для отпечатка?
 
-В разделе `~/.docker/trust/tuf/myregistry.azurecr.io/myrepository/metadata`:
+В `~/.docker/trust/tuf/myregistry.azurecr.io/myrepository/metadata`разделе:
 
 * Открытые ключи и сертификаты всех ролей (за исключением ролей делегирования) хранятся в `root.json`.
-* Открытые ключи и сертификаты роли делегирования хранятся в JSON-файле своей родительской роли (например `targets.json` для роли `targets/releases`).
+* Открытые ключи и сертификаты роли делегирования хранятся в JSON-файле своей родительской роли (например `targets.json` , `targets/releases` для роли).
 
 Рекомендуется проверить эти открытые ключи и сертификаты после общей проверки туф, выполненной клиентом DOCKER и Нотари.
 
 ### <a name="how-do-i-grant-access-to-pull-or-push-images-without-permission-to-manage-the-registry-resource"></a>Разделы справки предоставить доступ к образам или Push-уведомлениям без разрешения на управление ресурсом реестра?
 
-Запись контроля доступа поддерживает [пользовательские роли](container-registry-roles.md) , предоставляющие различные уровни разрешений. В частности, `AcrPull` и `AcrPush` роли позволяют пользователям получать и/или отправлять изображения без разрешения на управление ресурсами реестра в Azure.
+Запись контроля доступа поддерживает [пользовательские роли](container-registry-roles.md) , предоставляющие различные уровни разрешений. В частности `AcrPull` , `AcrPush` роли позволяют пользователям получать и (или) отправлять изображения без разрешения на управление ресурсом реестра в Azure.
 
-* Портал Azure. Реестр — > управления доступом (IAM) — > Добавить (выберите `AcrPull` или `AcrPush` для роли).
+* Портал Azure. Реестр — > управления доступом (IAM) — > добавить (выберите `AcrPull` или `AcrPush` для роли).
 * Azure CLI. Найдите идентификатор ресурса реестра, выполнив следующую команду:
 
   ```azurecli
   az acr show -n myRegistry
   ```
   
-  Затем можно назначить пользователю роль `AcrPull` или `AcrPush` (в следующем примере используется `AcrPull`):
+  Затем можно назначить роль `AcrPull` или `AcrPush` пользователю (в следующем примере используется `AcrPull`):
 
   ```azurecli
-    az role assignment create --scope resource_id --role AcrPull --assignee user@example.com
-    ```
+  az role assignment create --scope resource_id --role AcrPull --assignee user@example.com
+  ```
 
   Или назначьте роль субъекту-службе, определяемому ИДЕНТИФИКАТОРом приложения:
 
-  ```
+  ```azurecli
   az role assignment create --scope resource_id --role AcrPull --assignee 00000000-0000-0000-0000-000000000000
   ```
 
@@ -239,25 +240,30 @@ az acr login -n MyRegistry
   az acr repository list -n myRegistry
   ```
 
- Чтобы извлечь изображение, сделайте следующее:
-    
-  ```azurecli
+* Чтобы извлечь изображение, сделайте следующее:
+
+  ```bash
   docker pull myregistry.azurecr.io/hello-world
   ```
 
-При использовании только роли `AcrPull` или `AcrPush` у уполномоченного не будет разрешения на управление ресурсом реестра в Azure. Например, `az acr list` или `az acr show -n myRegistry` не будет показывать реестр.
+При использовании только роли `AcrPull` или `AcrPush` у уполномоченного объекта нет разрешения на управление ресурсом реестра в Azure. Например, `az acr list` или `az acr show -n myRegistry` не будет показывать реестр.
 
 ### <a name="how-do-i-enable-automatic-image-quarantine-for-a-registry"></a>Разделы справки включить автоматическое помещение образа в карантин для реестра?
 
 Карантин изображений в настоящее время является предварительной версией функции записи контроля доступа. Можно включить режим карантина для реестра, чтобы только те образы, которые успешно прошли проверку безопасности, были видны обычным пользователям. Дополнительные сведения см. в [репозитории GitHub](https://github.com/Azure/acr/tree/master/docs/preview/quarantine)для записи контроля доступа.
 
+### <a name="how-do-i-enable-anonymous-pull-access"></a>Разделы справки включить анонимный доступ по запросу?
+
+Настройка реестра контейнеров Azure для анонимного доступа через запрос на вытягивание в настоящее время является функцией предварительной версии. Чтобы включить общий доступ, отправьте запрос в службу поддержки по https://aka.ms/acr/support/create-ticketадресу. Дополнительные сведения см. на [форуме обратной связи Azure](https://feedback.azure.com/forums/903958-azure-container-registry/suggestions/32517127-enable-anonymous-access-to-registries).
+
+
 ## <a name="diagnostics-and-health-checks"></a>Диагностика и проверка работоспособности
 
-- [Проверка работоспособности с помощью `az acr check-health`](#check-health-with-az-acr-check-health)
+- [Проверить работоспособность с помощью`az acr check-health`](#check-health-with-az-acr-check-health)
 - [Сбой docker pull с ошибкой: NET/http: запрос отменен при ожидании соединения (превышение времени ожидания клиента.](#docker-pull-fails-with-error-nethttp-request-canceled-while-waiting-for-connection-clienttimeout-exceeded-while-awaiting-headers)
 - [Отправка DOCKER завершается успешно, но docker pull завершается ошибкой: не санкционировано: требуется проверка подлинности](#docker-push-succeeds-but-docker-pull-fails-with-error-unauthorized-authentication-required)
-- [`az acr login` успешно, но команды DOCKER завершаются ошибкой: не санкционировано: требуется проверка подлинности](#az-acr-login-succeeds-but-docker-fails-with-error-unauthorized-authentication-required)
-- [Включение и получение журналов отладки управляющей программы DOCKER](#enable-and-get-the-debug-logs-of-the-docker-daemon) 
+- [`az acr login`успешно, но команды DOCKER завершаются ошибкой: не санкционировано: требуется проверка подлинности](#az-acr-login-succeeds-but-docker-fails-with-error-unauthorized-authentication-required)
+- [Включение и получение журналов отладки управляющей программы DOCKER](#enable-and-get-the-debug-logs-of-the-docker-daemon)    
 - [Новые разрешения пользователя могут не действовать сразу после обновления](#new-user-permissions-may-not-be-effective-immediately-after-updating)
 - [Данные проверки подлинности не задаются в правильном формате при вызове Direct REST API](#authentication-information-is-not-given-in-the-correct-format-on-direct-rest-api-calls)
 - [Почему портал Azure не содержит список всех репозиториев или тегов?](#why-does-the-azure-portal-not-list-all-my-repositories-or-tags)
@@ -265,19 +271,20 @@ az acr login -n MyRegistry
 - [Почему запрос на вытягивание или принудительную отправку завершился с неразрешенной операцией?](#why-does-my-pull-or-push-request-fail-with-disallowed-operation)
 - [Разделы справки собирайте трассировки HTTP в Windows?](#how-do-i-collect-http-traces-on-windows)
 
-### <a name="check-health-with-az-acr-check-health"></a>Проверка работоспособности с помощью `az acr check-health`
+### <a name="check-health-with-az-acr-check-health"></a>Проверить работоспособность с помощью`az acr check-health`
 
 Сведения об устранении распространенных проблем среды и реестра см. в статье [Проверка работоспособности реестра контейнеров Azure](container-registry-check-health.md).
 
 ### <a name="docker-pull-fails-with-error-nethttp-request-canceled-while-waiting-for-connection-clienttimeout-exceeded-while-awaiting-headers"></a>Сбой docker pull с ошибкой: NET/http: запрос отменен при ожидании соединения (превышение времени ожидания клиента.
 
  - Если эта ошибка является временной, повторная попытка будет выполнена.
- - Если `docker pull` постоянно завершается сбоем, возможно, возникла проблема с управляющей программой DOCKER. Как правило, проблему можно устранить путем перезапуска управляющей программы DOCKER. 
- - Если эта проблема продолжает возникать после перезапуска управляющей программы DOCKER, проблема может быть связана с неполадками с сетевым подключением к компьютеру. Чтобы проверить работоспособность общей сети на компьютере, выполните следующую команду, чтобы проверить подключение к конечной точке. Минимальная версия `az acr`, содержащая эту команду проверки подключения, — 2.2.9. Обновите Azure CLI, если используется более старая версия.
+ - Если `docker pull` сбой постоянно завершается, возможно, возникла проблема с управляющей программой DOCKER. Как правило, проблему можно устранить путем перезапуска управляющей программы DOCKER. 
+ - Если эта проблема продолжает возникать после перезапуска управляющей программы DOCKER, проблема может быть связана с неполадками с сетевым подключением к компьютеру. Чтобы проверить работоспособность общей сети на компьютере, выполните следующую команду, чтобы проверить подключение к конечной точке. Минимальная `az acr` версия, содержащая эту команду проверки подключения, — 2.2.9. Обновите Azure CLI, если используется более старая версия.
  
-   ```azurecli
-    az acr check-health -n myRegistry
-    ```
+  ```azurecli
+  az acr check-health -n myRegistry
+  ```
+
  - Всегда следует использовать механизм повтора во всех операциях клиента DOCKER.
 
 ### <a name="docker-pull-is-slow"></a>Слишком большое извлечение DOCKER
@@ -288,7 +295,7 @@ az acr login -n MyRegistry
 
 ### <a name="docker-push-succeeds-but-docker-pull-fails-with-error-unauthorized-authentication-required"></a>Отправка DOCKER завершается успешно, но docker pull завершается ошибкой: не санкционировано: требуется проверка подлинности
 
-Эта ошибка может возникать при использовании версии управляющей программы DOCKER Red Hat, где `--signature-verification` включен по умолчанию. Можно проверить параметры управляющей программы DOCKER для Red Hat Enterprise Linux (RHEL) или Fedora, выполнив следующую команду:
+Эта ошибка может возникать при использовании версии Red Hat управляющей программы DOCKER, где `--signature-verification` включена по умолчанию. Можно проверить параметры управляющей программы DOCKER для Red Hat Enterprise Linux (RHEL) или Fedora, выполнив следующую команду:
 
 ```bash
 grep OPTIONS /etc/sysconfig/docker
@@ -296,42 +303,39 @@ grep OPTIONS /etc/sysconfig/docker
 
 Например, Fedora 28 Server имеет следующие параметры управляющей программы docker:
 
-```
-OPTIONS='--selinux-enabled --log-driver=journald --live-restore'
-```
+`OPTIONS='--selinux-enabled --log-driver=journald --live-restore'`
 
-При отсутствии `--signature-verification=false` `docker pull` завершается ошибкой, как показано ниже.
+В `--signature-verification=false` `docker pull` случае отсутствия происходит сбой со следующим сообщением:
 
-```bash
+```output
 Trying to pull repository myregistry.azurecr.io/myimage ...
 unauthorized: authentication required
 ```
 
 Чтобы устранить эту ошибку, сделайте следующее:
-1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы DOCKER `/etc/sysconfig/docker`. Пример.
-
-  ```
-  OPTIONS='--selinux-enabled --log-driver=journald --live-restore --signature-verification=false'
-  ```
+1. Добавьте параметр `--signature-verification=false` в файл `/etc/sysconfig/docker`конфигурации управляющей программы DOCKER. Пример:
+   
+   `OPTIONS='--selinux-enabled --log-driver=journald --live-restore --signature-verification=false'`
+   
 2. Перезапустите службу управляющей программы DOCKER, выполнив следующую команду:
+   
+   ```bash
+   sudo systemctl restart docker.service
+   ```
 
-  ```bash
-  sudo systemctl restart docker.service
-  ```
-
-Сведения о `--signature-verification` можно найти, выполнив `man dockerd`.
+Подробные сведения `--signature-verification` о них можно найти, `man dockerd`выполнив.
 
 ### <a name="az-acr-login-succeeds-but-docker-fails-with-error-unauthorized-authentication-required"></a>AZ запись контроля доступа завершается успешно, но DOCKER завершается с ошибкой: не санкционировано: требуется проверка подлинности
 
-Убедитесь, что используется URL-адрес сервера в нижнем регистре, например `docker push myregistry.azurecr.io/myimage:latest`, даже если имя ресурса реестра имеет регистр букв верхнего или смешанного типа, например `myRegistry`.
+Убедитесь, что используется URL-адрес сервера со всеми строчными буквами, например `docker push myregistry.azurecr.io/myimage:latest`, даже если имя ресурса реестра имеет регистр букв в верхнем или `myRegistry`смешанном регистре, например.
 
-### <a name="enable-and-get-the-debug-logs-of-the-docker-daemon"></a>Включение и получение журналов отладки управляющей программы DOCKER  
+### <a name="enable-and-get-the-debug-logs-of-the-docker-daemon"></a>Включение и получение журналов отладки управляющей программы DOCKER    
 
-Запустите `dockerd` с параметром `debug`. Сначала создайте файл конфигурации управляющей программы DOCKER (`/etc/docker/daemon.json`), если он не существует, и добавьте параметр `debug`.
+Начните `dockerd` с `debug` параметра. Сначала создайте файл конфигурации управляющей программы DOCKER (`/etc/docker/daemon.json`), если он не существует, и добавьте `debug` параметр:
 
 ```json
-{   
-    "debug": true   
+{    
+    "debug": true    
 }
 ```
 
@@ -341,12 +345,12 @@ unauthorized: authentication required
 sudo service docker restart
 ```
 
-Подробные сведения можно найти в [документации по DOCKER](https://docs.docker.com/engine/admin/#enable-debugging). 
+Подробные сведения можно найти в [документации по DOCKER](https://docs.docker.com/engine/admin/#enable-debugging).    
 
- * Журналы могут быть созданы в разных местах в зависимости от используемой системы. Например, для Ubuntu 14,04 это `/var/log/upstart/docker.log`.   
+ * Журналы могут быть созданы в разных местах в зависимости от используемой системы. Например, для Ubuntu 14,04 это `/var/log/upstart/docker.log`.    
 Дополнительные сведения см. в [документации по DOCKER](https://docs.docker.com/engine/admin/#read-the-logs) .    
 
- * Для Docker для Windows журналы создаются в папке% LOCALAPPDATA%/доккер/. Однако он еще не может содержать всю отладочную информацию.   
+ * Для Docker для Windows журналы создаются в папке% LOCALAPPDATA%/доккер/. Однако он еще не может содержать всю отладочную информацию.    
 
    Для доступа к полному журналу управляющей программы могут потребоваться некоторые дополнительные действия.
 
@@ -356,21 +360,21 @@ sudo service docker restart
     docker run --net=host --ipc=host --uts=host --pid=host -it --security-opt=seccomp=unconfined --privileged --rm -v /:/host alpine /bin/sh
     chroot /host
     ```
-    Теперь у вас есть доступ ко всем файлам виртуальной машины, на которых выполняется `dockerd`. Журнал находится в `/var/log/docker.log`.
+    Теперь у вас есть доступ ко всем файлам виртуальной машины, на `dockerd`которых выполняется. Журнал находится в `/var/log/docker.log`.
 
 ### <a name="new-user-permissions-may-not-be-effective-immediately-after-updating"></a>Новые разрешения пользователя могут не действовать сразу после обновления
 
 При предоставлении новых разрешений (новых ролей) субъекту-службе изменение может не вступить в силу немедленно. Существуют две возможные причины этой ошибки.
 
 * Задержка назначения роли Azure Active Directory. Обычно это происходит быстро, но может занять несколько минут из-за задержки распространения.
-* Задержка разрешений на сервере маркеров записи контроля доступа. Этот процесс может занять больше 10 минут. Чтобы устранить эту проблемы, можно `docker logout` и снова выполнить проверку подлинности с тем же пользователем через 1 минуту:
+* Задержка разрешений на сервере маркеров записи контроля доступа. Этот процесс может занять больше 10 минут. Чтобы устранить эту проблемы, можно `docker logout` снова выполнить проверку подлинности с тем же пользователем через 1 минуту:
 
   ```bash
   docker logout myregistry.azurecr.io
   docker login myregistry.azurecr.io
   ```
 
-В настоящее время запись контроля доступа пользователей не поддерживает удаление домашних репликаций. Обходной путь состоит в том, чтобы включить в шаблон главную репликацию, но пропустить ее создание, добавив `"condition": false`, как показано ниже:
+В настоящее время запись контроля доступа пользователей не поддерживает удаление домашних репликаций. Обходной путь состоит в том, чтобы включить в шаблон домашнюю репликацию, но пропустить ее `"condition": false` создание, добавив, как показано ниже:
 
 ```json
 {
@@ -388,8 +392,8 @@ sudo service docker restart
 
 ### <a name="authentication-information-is-not-given-in-the-correct-format-on-direct-rest-api-calls"></a>Данные проверки подлинности не задаются в правильном формате при вызове Direct REST API
 
-Может возникнуть ошибка `InvalidAuthenticationInfo`, особенно с помощью средства `curl` с параметром `-L``--location` (чтобы следовать перенаправлениям).
-Например, можно получить большой двоичный объект, используя `curl` с параметром `-L` и обычной проверкой подлинности:
+Может возникнуть `InvalidAuthenticationInfo` ошибка, особенно с помощью `curl` средства с параметром `-L` `--location` (для соблюдения перенаправлений).
+Например, можно получить большой двоичный объект `curl` с `-L` помощью параметра with и обычной проверки подлинности:
 
 ```bash
 curl -L -H "Authorization: basic $credential" https://$registry.azurecr.io/v2/$repository/blobs/$digest
@@ -404,9 +408,9 @@ RequestId:00000000-0000-0000-0000-000000000000
 Time:2019-01-01T00:00:00.0000000Z</Message></Error>
 ```
 
-Основная причина заключается в том, что некоторые `curl` реализации следуют перенаправлениям с заголовками из исходного запроса.
+Основная причина заключается в том, `curl` что некоторые реализации следуют перенаправлениям с заголовками исходного запроса.
 
-Чтобы устранить эту проблему, необходимо следовать перенаправлениям вручную без заголовков. Распечатайте заголовки ответа с параметром `-D -` `curl` и затем Extract: `Location` заголовок:
+Чтобы устранить эту проблему, необходимо следовать перенаправлениям вручную без заголовков. Распечатайте заголовки ответа с `-D -` параметром `curl` , а затем извлеките `Location` : заголовок:
 
 ```bash
 redirect_url=$(curl -s -D - -H "Authorization: basic $credential" https://$registry.azurecr.io/v2/$repository/blobs/$digest | grep "^Location: " | cut -d " " -f2 | tr -d '\r')
@@ -424,9 +428,9 @@ curl $redirect_url
 * Отсутствие подключения к сети
 * Брандмауэр
 * Блокирование рекламы
-* Создается предупреждающее оповещение.
+* Ошибки DNS
 
-Обратитесь к администратору сети или проверьте конфигурацию сети и подключение. Попробуйте запустить `az acr check-health -n yourRegistry` с помощью Azure CLI, чтобы проверить, может ли ваша среда подключаться к реестру контейнеров. Кроме того, в браузере можно попытаться использовать режиме инкогнито или частный сеанс, чтобы избежать устаревших кэшей браузера или файлов cookie.
+Обратитесь к администратору сети или проверьте конфигурацию сети и подключение. Попробуйте выполнить `az acr check-health -n yourRegistry` с помощью Azure CLI, чтобы проверить, может ли ваша среда подключаться к реестру контейнеров. Кроме того, в браузере можно попытаться использовать режиме инкогнито или частный сеанс, чтобы избежать устаревших кэшей браузера или файлов cookie.
 
 ### <a name="why-does-my-pull-or-push-request-fail-with-disallowed-operation"></a>Почему запрос на вытягивание или принудительную отправку завершился с неразрешенной операцией?
 
@@ -437,10 +441,10 @@ curl $redirect_url
 
 ### <a name="how-do-i-collect-http-traces-on-windows"></a>Разделы справки собирайте трассировки HTTP в Windows?
 
-#### <a name="prerequisites"></a>Технические условия
+#### <a name="prerequisites"></a>Предварительные условия
 
-- Включение расшифровки HTTPS в Fiddler: <https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS>
-- Включение DOCKER для использования прокси-сервера через пользовательский интерфейс docker: <https://docs.docker.com/docker-for-windows/#proxies>
+- Включение расшифровки HTTPS в Fiddler:<https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS>
+- Включение DOCKER для использования прокси-сервера через пользовательский интерфейс docker:<https://docs.docker.com/docker-for-windows/#proxies>
 - Не забудьте выполнить откат после завершения.  DOCKER не будет работать, если этот параметр включен и Fiddler не работает.
 
 #### <a name="windows-containers"></a>Контейнеры Windows
@@ -457,7 +461,7 @@ curl $redirect_url
 
 Настройте прокси-сервер DOCKER для вывода предыдущей команды и порта 8888 (например, 10.0.75.1:8888).
 
-## <a name="tasks"></a>Задачи
+## <a name="tasks"></a>Задания
 
 - [Разделы справки выполнения пакетной отмены?](#how-do-i-batch-cancel-runs)
 - [Разделы справки включить папку Git в команду AZ контроля доступа?](#how-do-i-include-the-git-folder-in-az-acr-build-command)
@@ -475,13 +479,11 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 
 ### <a name="how-do-i-include-the-git-folder-in-az-acr-build-command"></a>Разделы справки включить папку Git в команду AZ контроля доступа?
 
-При передаче локальной исходной папки в команду `az acr build` по умолчанию папка `.git` исключается из переданного пакета. Можно создать файл `.dockerignore` со следующим параметром. Она сообщает команде восстановить все файлы в разделе `.git` в отправленном пакете. 
+Если передать в `az acr build` команду локальную исходную папку, `.git` папка будет исключена из переданного пакета по умолчанию. Можно создать `.dockerignore` файл со следующим параметром. Она сообщает команде восстановить все файлы `.git` в переданном пакете. 
 
-```sh
-!.git/**
-```
+`!.git/**`
 
-Этот параметр также применяется к команде `az acr run`.
+Этот параметр также применяется к `az acr run` команде.
 
 ### <a name="does-tasks-support-gitlab-for-source-triggers"></a>Поддерживают ли задачи GitLab для исходных триггеров?
 
@@ -491,16 +493,16 @@ az acr task list-runs -r $myregistry --run-status Running --query '[].runId' -o 
 
 | Служба Git | Исходный контекст | Сборка вручную | Автоматическая сборка с помощью триггера Commit |
 |---|---|---|---|
-| GitHub | https://github.com/user/myapp-repo.git#mybranch:myfolder | Да | Да |
-| Azure Repos | https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder | Да | Да |
-| GitLab | https://gitlab.com/user/myapp-repo.git#mybranch:myfolder | Да | Нет |
-| Bitbucket; | https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder | Да | Нет |
+| GitHub | `https://github.com/user/myapp-repo.git#mybranch:myfolder` | Да | Да |
+| Azure Repos | `https://dev.azure.com/user/myproject/_git/myapp-repo#mybranch:myfolder` | Да | Да |
+| GitLab | `https://gitlab.com/user/myapp-repo.git#mybranch:myfolder` | Да | нет |
+| Bitbucket; | `https://user@bitbucket.org/user/mayapp-repo.git#mybranch:myfolder` | Да | нет |
 
 ## <a name="run-error-message-troubleshooting"></a>Выполнение устранения неполадок с сообщением об ошибке
 
 | Сообщение об ошибке | Руководство по устранению неполадок |
 |---|---|
-|Доступ к виртуальной машине не был настроен, поэтому подписки не найдены|Это может произойти, если вы используете `az login --identity` в задаче записи контроля доступа. Это временная ошибка, которая возникает, когда не распространяется назначение роли для управляемого удостоверения. Подождите несколько секунд, прежде чем повторять попытку.|
+|Доступ к виртуальной машине не был настроен, поэтому подписки не найдены|Это может произойти, если вы используете `az login --identity` в ЗАДАЧе контроля доступа. Это временная ошибка, которая возникает, когда не распространяется назначение роли для управляемого удостоверения. Подождите несколько секунд, прежде чем повторять попытку.|
 
 ## <a name="cicd-integration"></a>Интеграция CI/CD
 

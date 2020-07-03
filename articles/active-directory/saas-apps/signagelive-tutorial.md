@@ -17,10 +17,10 @@ ms.date: 1/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6dab2fd0ee2f25e835b4bd07a3534475d3d93b5e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73160923"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-signagelive"></a>Руководство по Интеграция Azure Active Directory с Signagelive
@@ -38,7 +38,7 @@ ms.locfileid: "73160923"
 
 Чтобы настроить интеграцию Azure AD с Signagelive, вам потребуется:
 
-* подписка Azure AD Если у вас нет среды Azure AD, вы можете получить [пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Azure AD. Если у вас нет среды Azure AD, вы можете получить [пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 * подписка Signagelive с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -101,7 +101,7 @@ ms.locfileid: "73160923"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните следующие действия:
 
@@ -120,7 +120,7 @@ ms.locfileid: "73160923"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -146,13 +146,13 @@ ms.locfileid: "73160923"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    a. В поле **Имя** введите **BrittaSimon**.
+    а. В поле **Имя** введите **BrittaSimon**.
   
     b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например, в этом случае можно ввести BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и сохраните значение, которое отображается в поле пароля.
 
-    d. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

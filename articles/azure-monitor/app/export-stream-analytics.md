@@ -1,18 +1,14 @@
 ---
 title: Экспорт из Azure Application Insights с помощью Stream Analytics | Документация Майкрософт
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 01/08/2019
-ms.openlocfilehash: 3be1a643cbe942c0b740ae8ebcc2c7f2dda24854
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: 15d1efa3a632024429d41f27fc23c569cd85bec2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677949"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81536885"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -59,7 +55,7 @@ ms.locfileid: "72677949"
 
     ![Выберите типы событий.](./media/export-stream-analytics/080.png)
 
-1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
+1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
    
     Данные также будут экспортированы в хранилище. 
 2. Проверьте экспортированные данные. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". (Если этой команды нет в меню, установите пакет SDK Azure: откройте диалоговое окно "Создание проекта", разверните узел "Visual C#/облако" и выберите "Получить Microsoft Azure SDK для .NET".)
@@ -93,13 +89,13 @@ ms.locfileid: "72677949"
 
 ### <a name="set-path-prefix-pattern"></a>Установка шаблона префикса пути
 
-**Задайте в поле "Формат даты" значение в формате ГГГГ-ММ-ДД (с дефисами).**
+**Не забудьте задать формат даты гггг-мм-дд (с тире).**
 
 Шаблон префикса пути указывает, где Stream Analytics находит входные файлы в хранилище. Вам необходимо настроить это поле в соответствии с тем, как функция непрерывного экспорта сохраняет данные. Задайте следующее значение:
 
     webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 
-В данном примере:
+В этом примере:
 
 * `webapplication27` — имя ресурса Application Insights ( **только строчные буквы**).
 * `1234...` — ключ инструментирования ресурса Application Insights с **удаленными дефисами**. 
@@ -111,7 +107,7 @@ ms.locfileid: "72677949"
 > 
 
 ## <a name="add-new-output"></a>Добавление новых выходных данных
-Теперь выберите свое задание и последовательно нажмите элементы **Выходные данные** > **Добавить**.
+Теперь выберите свое задание > **выходные данные** > **добавить**.
 
 ![](./media/export-stream-analytics/SA006.png)
 
@@ -184,7 +180,7 @@ ms.locfileid: "72677949"
 
 * Этот запрос включает в себя значения свойств измерения вне зависимости от того, соответствует ли конкретному измерению фиксированный индекс в массиве.
 
-## <a name="run-the-job"></a>Выполнение задания
+## <a name="run-the-job"></a>Запуск задания
 Дату запуска задания можно выбрать в прошлом. 
 
 ![Выбор задания и элемента "Запрос". Вставка следующего примера.](./media/export-stream-analytics/SA008.png)
@@ -205,18 +201,18 @@ ms.locfileid: "72677949"
 
 ![Выбор набора данных и полей в Power BI.](./media/export-stream-analytics/210.png)
 
-## <a name="no-data"></a>Нет данных?
+## <a name="no-data"></a>Данные отсутствуют?
 * Проверьте правильность [формата даты](#set-path-prefix-pattern) — ГГГГ-ММ-ДД (с дефисами).
 
-## <a name="video"></a>Видео
+## <a name="video"></a>Видеоролик
 Ноам Бен Зив (Noam Ben Zeev) показывает, как обрабатывать экспортированные данные с помощью Stream Analytics.
 
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/Export-to-Power-BI-from-Application-Insights/player]
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [непрерывный экспорт.](export-telemetry.md)
+## <a name="next-steps"></a>Дальнейшие шаги
+* [Непрерывный экспорт](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)
 

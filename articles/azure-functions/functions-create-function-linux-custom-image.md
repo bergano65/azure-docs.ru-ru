@@ -1,20 +1,20 @@
 ---
 title: Создание Функций Azure на Linux с помощью пользовательского образа
 description: Узнайте, как создавать функции Azure под управлением пользовательского образа Linux.
-ms.date: 01/15/2020
+ms.date: 03/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-zone_pivot_groups: programming-languages-set-functions01
-ms.openlocfilehash: edb947f0748c186e146bce5f4dbe9d0b95a2568d
-ms.sourcegitcommit: 5d6ce6dceaf883dbafeb44517ff3df5cd153f929
+zone_pivot_groups: programming-languages-set-functions
+ms.openlocfilehash: fee4e16bd77664e541eeb36cb807a77d13191899
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76846485"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82165728"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-container"></a>Создание функции на Linux с помощью пользовательского контейнера
 
-В этом руководстве вы создадите и развернете код Python в Функциях Azure в качестве пользовательского контейнера Docker, используя базовый образ Linux. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости или конфигурации, не поддерживаемые в рамках встроенного образа.
+В этом руководстве показано, как создать и развернуть код в Функциях Azure в качестве пользовательского контейнера Docker, используя базовый образ Linux. Пользовательский образ может быть удобен, если вы используете конкретную версию языка или особые зависимости или конфигурации, не поддерживаемые в рамках встроенного образа.
 
 Вы также можете использовать контейнер Службы приложений Azure по умолчанию, как описано в статье [Краткое руководство. Создание функции, выполняемой в Linux, с помощью инструментов командной строки](functions-create-first-azure-function-azure-cli-linux.md). Поддерживаемые базовые образы для Функций Azure находятся в [репозитории базовых образов Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base).
 
@@ -31,236 +31,158 @@ ms.locfileid: "76846485"
 > * Включите SSH-подключения к контейнеру.
 > * Добавьте выходную привязку Хранилища очередей. 
 
-Этот учебник можно запускать на любом компьютере под управлением Windows, Mac OS или Linux. Завершение этого учебника приведет к расходам в несколько долларов США в вашей учетной записи Azure.
+Инструкции из этого руководства можно выполнять на компьютере под управлением Windows, macOS или Linux. Завершение этого учебника приведет к расходам в несколько долларов США в вашей учетной записи Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [functions-requirements-cli](../../includes/functions-requirements-cli.md)]
 
-- Учетная запись Azure с активной подпиской. [Создайте учетную запись бесплатно](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-- [Azure Functions Core Tools](./functions-run-local.md#v2) 2.7.1846 или более поздней версии
-- [Azure CLI](/cli/azure/install-azure-cli) 2.0.77 или более поздней версии
-- [Среда выполнения Функций Azure версии 2](functions-versions.md)
-- Следующие компоненты языковой среды выполнения:
-    ::: zone pivot="programming-language-csharp"
-    - [.NET Core версии 2.2.x или более поздней](https://dotnet.microsoft.com/download)
-    ::: zone-end
-    ::: zone pivot="programming-language-javascript"
-    - [Node.js](https://nodejs.org/en/download/)
-    ::: zone-end
-    ::: zone pivot="programming-language-powershell"
-    - [PowerShell](/powershell/scripting/install/installing-windows-powershell?view=powershell-7)
-    ::: zone-end
-    ::: zone pivot="programming-language-python"
-    - [Python 3.6 — 64-разрядная версия](https://www.python.org/downloads/release/python-3610/) или [Python 3.7 — 64-разрядная версия](https://www.python.org/downloads/release/python-376/)
-    ::: zone-end
-    ::: zone pivot="programming-language-typescript"
-    - [Node.js](https://nodejs.org/en/download/)
-    - [TypeScript](http://www.typescriptlang.org/#download-links)
-    ::: zone-end
-- [Docker](https://docs.docker.com/install/)
-- [Идентификатор Docker](https://hub.docker.com/signup)
+<!---Requirements specific to Docker --->
++ [Docker](https://docs.docker.com/install/)  
 
-### <a name="prerequisite-check"></a>Проверка предварительных условий
++ [Идентификатор Docker](https://hub.docker.com/signup)
 
-1. В окне терминала или командном окне запустите `func --version`, чтобы убедиться, что используется версия Azure Functions Core Tools 2.7.1846 или более поздняя.
-1. Выполните команду `az --version`, чтобы проверить, является ли версия Azure CLI версией 2.0.76 или более поздней.
-1. Выполните команду `az login`, чтобы войти в Azure и проверить активную подписку.
-1. Запустите `docker login`, чтобы войти в Docker. Эта команда завершается ошибкой, если Docker не запущен. В таком случае запустите Docker и повторите команду.
+[!INCLUDE [functions-cli-verify-prereqs](../../includes/functions-cli-verify-prereqs.md)]
+
++ Запустите `docker login`, чтобы войти в Docker. Эта команда завершится ошибкой, если вы не запустили Docker. В таком случае запустите Docker и повторите команду.
+
+[!INCLUDE [functions-cli-create-venv](../../includes/functions-cli-create-venv.md)]
 
 ## <a name="create-and-test-the-local-functions-project"></a>Создание и тестирование локального проекта службы "Функции"
 
-1. В терминале или командной строке создайте папку для этого учебника в соответствующем расположении, а затем перейдите в эту папку.
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python"  
+Чтобы создать проект приложения-функции в папке с именем `LocalFunctionsProject`, в терминале или в командной строке выполните следующую команду для выбранного языка.  
+::: zone-end  
+::: zone pivot="programming-language-csharp"  
+```
+func init LocalFunctionsProject --worker-runtime dotnet --docker
+```
+::: zone-end  
+::: zone pivot="programming-language-javascript"  
+```
+func init LocalFunctionsProject --worker-runtime node --language javascript --docker
+```
+::: zone-end  
+::: zone pivot="programming-language-powershell"  
+```
+func init LocalFunctionsProject --worker-runtime powershell --docker
+```
+::: zone-end  
+::: zone pivot="programming-language-python"  
+```
+func init LocalFunctionsProject --worker-runtime python --docker
+```
+::: zone-end  
+::: zone pivot="programming-language-typescript"  
+```
+func init LocalFunctionsProject --worker-runtime node --language typescript --docker
+```
+::: zone-end
+::: zone pivot="programming-language-java"  
+В пустой папке выполните следующую команду, чтобы создать проект функций из [архетипа Maven](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html).
 
-1. Следуйте инструкциям в разделе [Создание и активация виртуальной среды](functions-create-first-function-python.md#create-and-activate-a-virtual-environment), чтобы создать виртуальную среду, необходимую для целей для этого учебника.
+# <a name="bash"></a>[bash](#tab/bash)
+```bash
+mvn archetype:generate -DarchetypeGroupId=com.microsoft.azure -DarchetypeArtifactId=azure-functions-archetype -Ddocker
+```
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+```powershell
+mvn archetype:generate "-DarchetypeGroupId=com.microsoft.azure" "-DarchetypeArtifactId=azure-functions-archetype" "-Ddocker"
+```
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+```cmd
+mvn archetype:generate "-DarchetypeGroupId=com.microsoft.azure" "-DarchetypeArtifactId=azure-functions-archetype" "-Ddocker"
+```
+---
 
-1. Чтобы создать проект приложения-функции в папке с именем `LocalFunctionsProject`, выполните следующую команду для выбранного языка. Параметр `--docker` создает `Dockerfile` для проекта, который определяет настраиваемый контейнер, который подходит для Функций Azure и выбранной среды выполнения.
+Maven запрашивает значения, которые позволят завершить создание проекта развертывания.   
+Предоставьте следующие значения в ответ на соответствующие запросы:
 
-    ::: zone pivot="programming-language-csharp"
-    ```
-    func init LocalFunctionsProject --worker-runtime dotnet --docker
-    ```
-    ::: zone-end
+| prompt | Значение | Описание |
+| ------ | ----- | ----------- |
+| **groupId** | `com.fabrikam` | Это значение уникально идентифицирует проект среди всех остальных. Оно должно соответствовать [правилам именования пакетов](https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7) для Java. |
+| **artifactId** | `fabrikam-functions` | Это значение содержит имя JAR-файла, без номера версии. |
+| **version** | `1.0-SNAPSHOT` | Выберите значение по умолчанию. |
+| **package** | `com.fabrikam.functions` | Это значение определяет пакет Java для создаваемого кода функции. Используйте значение по умолчанию. |
 
-    ::: zone pivot="programming-language-javascript"
-    ```
-    func init LocalFunctionsProject --worker-runtime node --language javascript --docker
-    ```
-    ::: zone-end
+Введите `Y` или нажмите клавишу ВВОД для подтверждения.
 
-    ::: zone pivot="programming-language-powershell"
-    ```
-    func init LocalFunctionsProject --worker-runtime powershell --docker
-    ```
-    ::: zone-end
+Maven создаст файлы проекта в новой папке с именем _artifactId_, то есть `fabrikam-functions` в нашем примере. 
+::: zone-end
+Параметр `--docker` создает `Dockerfile` для проекта, который определяет настраиваемый контейнер, который подходит для Функций Azure и выбранной среды выполнения.
 
-    ::: zone pivot="programming-language-python"
-    ```
-    func init LocalFunctionsProject --worker-runtime python --docker
-    ```
-    ::: zone-end
+Перейдите в папку проекта:
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python"  
+```
+cd LocalFunctionsProject
+```
+::: zone-end  
+::: zone pivot="programming-language-java"  
+```
+cd fabrikam-functions
+```
+::: zone-end  
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python" 
+Добавьте функцию в проект с помощью следующей команды, где аргумент `--name` — уникальное имя функции, а аргумент `--template` указывает триггер функции. С помощью `func new` создайте вложенную папку с именем функции, которая содержит файл кода на выбранном для проекта языке и файл конфигурации *function.json*.
 
-    ::: zone pivot="programming-language-typescript"
-    ```
-    func init LocalFunctionsProject --worker-runtime node --language typescript --docker
-    ```
-    ::: zone-end
-    
-1. Перейдите в папку проекта:
+```
+func new --name HttpExample --template "HTTP trigger"
+```
+::: zone-end  
+Чтобы протестировать функцию локально, запустите локальный узел среды выполнения Функций Azure в корневой папке проекта. 
+::: zone pivot="programming-language-csharp"  
+```
+func start --build  
+```
+::: zone-end  
+::: zone pivot="programming-language-javascript,programming-language-powershell,programming-language-python"   
+```
+func start  
+```
+::: zone-end  
+::: zone pivot="programming-language-typescript"  
+```
+npm install
+npm start
+```
+::: zone-end  
+::: zone pivot="programming-language-java"  
+```
+mvn clean package  
+mvn azure-functions:run
+```
+::: zone-end
+Когда в выходных данных отобразится конечная точка `HttpExample`, перейдите по `http://localhost:7071/api/HttpExample?name=Functions`. Браузер должен показать приветственное сообщение, которое возвращает `Functions`, значение, передаваемое параметру запроса `name`.
 
-    ```
-    cd LocalFunctionsProject
-    ```
-    
-1. Добавьте функцию в проект с помощью следующей команды, где аргумент `--name` — уникальное имя функции, а аргумент `--template` указывает триггер функции. С помощью `func new` создайте вложенную папку с именем функции, которая содержит файл кода на выбранном для проекта языке и файл конфигурации *function.json*.
-
-    ```
-    func new --name HttpExample --template "HTTP trigger"
-    ```
-
-1. Чтобы протестировать функцию локально, запустите локальный узел среды выполнения Функций Azure в папке *LocalFunctionsProject*.
-   
-    ::: zone pivot="programming-language-csharp"
-    ```
-    func start --build
-    ```
-    ::: zone-end
-
-    ::: zone pivot="programming-language-javascript"
-    ```
-    func start
-    ```
-    ::: zone-end
-
-    ::: zone pivot="programming-language-powershell"
-    ```
-    func start
-    ```
-    ::: zone-end
-
-    ::: zone pivot="programming-language-python"
-    ```
-    func start
-    ```
-    ::: zone-end    
-
-    ::: zone pivot="programming-language-typescript"
-    ```
-    npm install
-    ```
-
-    ```
-    npm start
-    ```
-    ::: zone-end
-
-1. Когда в выходных данных отобразится конечная точка `HttpExample`, перейдите по `http://localhost:7071/api/HttpExample?name=Functions`. Браузер должен отображать сообщение, например "Hello, Functions" (зависит от выбранного языка программирования).
-
-1. Чтобы остановить хост, используйте клавиши **Ctrl**-**C**.
+Чтобы остановить хост, используйте клавиши **Ctrl**-**C**.
 
 ## <a name="build-the-container-image-and-test-locally"></a>Создание образа контейнера и тестирование его локально
 
-1. (Необязательно) Изучите *файл Docker" в папке *LocalFunctionsProj*. В этом Dockerfile описана среда, требуемая для запуска приложения-функции на платформе Linux. 
+При необходимости вы можете изучите файл *Dockerfile" в корневой папке проекта. В этом файле описана среда, необходимая для запуска приложения-функции на платформе Linux.  Полный список поддерживаемых базовых образов для Функций Azure можно найти на [странице базового образа Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base).
+    
+В корневой папке проекта выполните команду [docker build](https://docs.docker.com/engine/reference/commandline/build/), указав имя `azurefunctionsimage` и тег `v1.0.0`. Замените `<DOCKER_ID>` идентификатором вашей учетной записи Docker Hub. Эта команда отвечает за создание образа Docker для контейнера.
 
-    ::: zone pivot="programming-language-csharp"
-    ```Dockerfile
-    FROM microsoft/dotnet:2.2-sdk AS installer-env
+```
+docker build --tag <DOCKER_ID>/azurefunctionsimage:v1.0.0 .
+```
 
-    COPY . /src/dotnet-function-app
-    RUN cd /src/dotnet-function-app && \
-        mkdir -p /home/site/wwwroot && \
-        dotnet publish *.csproj --output /home/site/wwwroot
+После выполнения команды можно запустить новый контейнер локально.
     
-    # To enable ssh & remote debugging on app service change the base image to the one below
-    # FROM mcr.microsoft.com/azure-functions/dotnet:2.0-appservice 
-    FROM mcr.microsoft.com/azure-functions/dotnet:2.0
-    ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
-        AzureFunctionsJobHost__Logging__Console__IsEnabled=true
-    
-    COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
-    ```
-    ::: zone-end
+Чтобы протестировать сборку, запустите образ в локальном контейнере, используя команду [docker run](https://docs.docker.com/engine/reference/commandline/run/), еще раз заменив `<DOCKER_ID` идентификатором Docker и добавив аргумент портов `-p 8080:80`.
 
-    ::: zone pivot="programming-language-javascript"
-    ```Dockerfile
-    # To enable ssh & remote debugging on app service change the base image to the one below
-    # FROM mcr.microsoft.com/azure-functions/node:2.0-appservice
-    FROM mcr.microsoft.com/azure-functions/node:2.0
-    
-    ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
-        AzureFunctionsJobHost__Logging__Console__IsEnabled=true
-    
-    COPY . /home/site/wwwroot
-    
-    RUN cd /home/site/wwwroot && \
-    npm install    
-    ```
-    ::: zone-end
+```
+docker run -p 8080:80 -it <docker_id>/azurefunctionsimage:v1.0.0
+```
 
-    ::: zone pivot="programming-language-powershell"
-    ```Dockerfile
-    # To enable ssh & remote debugging on app service change the base image to the one below
-    # FROM mcr.microsoft.com/azure-functions/powershell:2.0-appservice
-    FROM mcr.microsoft.com/azure-functions/powershell:2.0
-    ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
-        AzureFunctionsJobHost__Logging__Console__IsEnabled=true
-    
-    COPY . /home/site/wwwroot    
-    ```
-    ::: zone-end
+::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python"  
+После того, как образ будет запущен в локальном контейнере, откройте браузер на `http://localhost:8080`, который должен отобразить изображение-заполнитель, показанный ниже. На этом этапе отображается образ, так как функция выполняется в локальном контейнере, как в Azure. Это означает, что функция защищена ключом доступа, как определено в *function.json* со свойством `"authLevel": "function"`. Однако контейнер еще не опубликован в приложении-функции в Azure, поэтому ключ функции еще недоступен. Если вы хотите выполнить тестирование для локального контейнера, закройте docker, измените свойство авторизации на `"authLevel": "anonymous"`, перестройте образ и запустите docker. Затем сбросьте `"authLevel": "function"` в *function.json*. Дополнительные сведения см. в разделе [Ключи авторизации](functions-bindings-http-webhook-trigger.md#authorization-keys).
 
-    ::: zone pivot="programming-language-python"
-    ```Dockerfile
-    # To enable ssh & remote debugging on app service change the base image to the one below
-    # FROM mcr.microsoft.com/azure-functions/python:2.0-python3.7-appservice
-    FROM mcr.microsoft.com/azure-functions/python:2.0-python3.7
-    
-    ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
-        AzureFunctionsJobHost__Logging__Console__IsEnabled=true
-    
-    COPY requirements.txt /
-    RUN pip install -r /requirements.txt
-    
-    COPY . /home/site/wwwroot    
-    ```
-    ::: zone-end
+![Изображение-заполнитель указывает, что контейнер запущен локально](./media/functions-create-function-linux-custom-image/run-image-local-success.png)
 
-    ::: zone pivot="programming-language-typescript"
-    ```Dockerfile
-    # To enable ssh & remote debugging on app service change the base image to the one below
-    # FROM mcr.microsoft.com/azure-functions/node:2.0-appservice
-    FROM mcr.microsoft.com/azure-functions/node:2.0
-    
-    ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
-        AzureFunctionsJobHost__Logging__Console__IsEnabled=true
-    
-    COPY . /home/site/wwwroot
-    
-    RUN cd /home/site/wwwroot && \
-    npm install    
-    ```
-    ::: zone-end
+::: zone-end
+::: zone pivot="programming-language-java"  
+После того, как образ будет запущен в локальном контейнере, перейдите по адресу `http://localhost:8080/api/HttpExample?name=Functions`, где должно появиться такое же приветственное сообщение, как описано выше. Так как архетип Maven создает функцию, активируемую HTTP, которая использует анонимную авторизацию, вы сможете вызвать функцию, даже если она выполняется в контейнере. 
+::: zone-end  
 
-    > [!NOTE]
-    > Полный список поддерживаемых базовых образов для Функций Azure можно найти на [странице базового образа Функций Azure](https://hub.docker.com/_/microsoft-azure-functions-base).
-    
-1. В папке *LocalFunctionsProject* выполните команду [docker build](https://docs.docker.com/engine/reference/commandline/build/), указав имя, `azurefunctionsimage`, и тег `v1.0.0`. Замените `<docker_id>` идентификатором вашей учетной записи Docker Hub. Эта команда отвечает за создание образа Docker для контейнера.
-
-    ```
-    docker build --tag <docker_id>/azurefunctionsimage:v1.0.0 .
-    ```
-    
-    После выполнения команды можно запустить новый контейнер локально.
-    
-1. Чтобы протестировать сборку, запустите образ в локальном контейнере, используя команду [docker run](https://docs.docker.com/engine/reference/commandline/run/), еще раз заменив `<docker_id>` идентификатором Docker и добавив аргумент портов `-p 8080:80`.
-
-    ```
-    docker run -p 8080:80 -it <docker_id>/azurefunctionsimage:v1.0.0
-    ```
-    
-1. После того, как образ будет запущен в локальном контейнере, откройте браузер на `http://localhost:8080`, который должен отобразить изображение-заполнитель, показанный ниже. На этом этапе отображается образ, так как функция выполняется в локальном контейнере, как в Azure. Это означает, что функция защищена ключом доступа, как определено в *function.json* со свойством `"authLevel": "function"`. Однако контейнер еще не опубликован в приложении-функции в Azure, поэтому ключ функции еще недоступен. Если вы хотите выполнить тестирование локально, закройте docker, измените свойство авторизации на `"authLevel": "anonymous"`, перестройте образ и перезапустите docker. Затем сбросьте `"authLevel": "function"` в *function.json*. Дополнительные сведения см. в разделе [Ключи авторизации](functions-bindings-http-webhook.md#authorization-keys).
-
-    ![Изображение-заполнитель указывает, что контейнер запущен локально](./media/functions-create-function-linux-custom-image/run-image-local-success.png)
-
-1. Когда вы закончите проверку приложения-функции в контейнере, остановите docker, нажав **Ctrl**+**C**.
+Когда вы закончите проверку приложения-функции в контейнере, остановите docker, нажав клавиши **CTRL**+**C**.
 
 ## <a name="push-the-image-to-docker-hub"></a>Отправка образа в Docker Hub
 
@@ -333,14 +255,15 @@ Docker Hub — это реестр контейнеров, который со�
     az functionapp create --name <app_name> --storage-account <storage_name> --resource-group AzureFunctionsContainers-rg --plan myPremiumPlan --deployment-container-image-name <docker_id>/azurefunctionsimage:v1.0.0
     ```
     
-    Параметр *Deployment-Container-Image-Name* указывает образ, используемый для приложения-функции. Чтобы просмотреть сведения об образе, используемом для развертывания, можно использовать команду[az functionapp config container show](/cli/azure/functionapp/config/container#az-functionapp-config-container-show). Кроме того вы можете использовать команду[az functionapp config container set](/cli/azure/functionapp/config/container#az-functionapp-config-container-set),чтобы развернуть из другого образа.
+    Параметр *Deployment-Container-Image-Name* указывает образ, используемый для приложения-функции. Чтобы просмотреть сведения об образе, используемом для развертывания, можно использовать команду[az functionapp config container show](/cli/azure/functionapp/config/container#az-functionapp-config-container-show). Кроме того вы можете использовать команду[az functionapp config container set](/cli/azure/functionapp/config/container#az-functionapp-config-container-set),чтобы развернуть другой образ.
 
 1. Получите строку подключения для учетной записи хранения, созданной с помощью команды [az storage account show-connection-string](/cli/azure/storage/account), назначив ее переменной оболочки `storageConnectionString`.
 
     ```azurecli
     az storage account show-connection-string --resource-group AzureFunctionsContainers-rg --name <storage_name> --query connectionString --output tsv
+    ```
     
-1. Add this setting to the function app by using the [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set) command. In the following command, replace `<app_name>` with the name of your function app, and replace `<connection_string>` with the connection string from the previous step (a long encoded string that begins with "DefaultEndpointProtocol="):
+1. Добавьте этот параметр в приложение-функцию, выполнив команду [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). В следующей команде замените `<app_name>` именем приложения-функции, а `<connection_string>` — строкой подключения из предыдущего шага (длинная зашифрованная строка, которая начинается с "DefaultEndpointProtocol="):
  
     ```azurecli
     az functionapp config appsettings set --name <app_name> --resource-group AzureFunctionsContainers-rg --settings AzureWebJobsStorage=<connection_string>
@@ -348,18 +271,18 @@ Docker Hub — это реестр контейнеров, который со�
 
 1. Теперь функция может использовать эту строку подключения для доступа к учетной записи хранения.
 
-> [!TIP]
-> В bash переменную оболочки можно использовать для записи строки подключения вместо использования буфера обмена. Сначала используйте следующую команду, чтобы создать переменную со строкой подключения.
-> 
-> ```bash
-> storageConnectionString=$(az storage account show-connection-string --resource-group AzureFunctionsContainers-rg --name <storage_name> --query connectionString --output tsv)
-> ```
-> 
-> Затем используйте переменную во второй команде.
-> 
-> ```azurecli
-> az functionapp config appsettings set --name <app_name> --resource-group AzureFunctionsContainers-rg --settings AzureWebJobsStorage=$storageConnectionString
-> ```
+    > [!TIP]
+    > В bash переменную оболочки можно использовать для записи строки подключения вместо использования буфера обмена. Сначала используйте следующую команду, чтобы создать переменную со строкой подключения.
+    > 
+    > ```bash
+    > storageConnectionString=$(az storage account show-connection-string --resource-group AzureFunctionsContainers-rg --name <storage_name> --query connectionString --output tsv)
+    > ```
+    > 
+    > Затем используйте переменную во второй команде.
+    > 
+    > ```azurecli
+    > az functionapp config appsettings set --name <app_name> --resource-group AzureFunctionsContainers-rg --settings AzureWebJobsStorage=$storageConnectionString
+    > ```
 
 > [!NOTE]    
 > Если вы публикуете пользовательский образ в закрытой учетной записи контейнера, вместо этого для строки подключения следует использовать переменные среды в Dockerfile. Дополнительные сведения см. в инструкции по [ENV](https://docs.docker.com/engine/reference/builder/#env). Необходимо также задать переменные `DOCKER_REGISTRY_SERVER_USERNAME` и `DOCKER_REGISTRY_SERVER_PASSWORD`. Чтобы использовать значения, необходимо перестроить образ, отправить его в реестр, а затем перезапустить приложение-функцию в Azure.
@@ -370,7 +293,7 @@ Docker Hub — это реестр контейнеров, который со�
 
 1. Получите URL-адрес функции с помощью ключа доступа (функции), используя портал Azure или с помощью Azure CLI с командой `az rest`.)
 
-    # <a name="portaltabportal"></a>[Портал](#tab/portal)
+    # <a name="portal"></a>[Портал](#tab/portal)
 
     1. Войдите в портал Azure, а затем найдите приложение-функцию, введя имя приложения-функции в поле **Поиск** в верхней части страницы. В результатах выберите ресурс **Службы приложений Azure**.
 
@@ -387,7 +310,7 @@ Docker Hub — это реестр контейнеров, который со�
     > [!NOTE]  
     > Так как приложение-функция развертывается как контейнер, нельзя вносить изменения в код функции на портале. Вместо этого необходимо обновить проект в локальном образе, снова отправить образ в реестр, а затем повторно развернуть его в Azure. Непрерывное развертывание можно настроить в более позднем разделе.
     
-    # <a name="azure-clitabazurecli"></a>[Azure CLI](#tab/azurecli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azurecli)
 
     1. Создайте строку URL-адреса в следующем формате, заменив `<subscription_id>`, `<resource_group>` и `<app_name>` идентификатором подписки Azure, группой ресурсов приложения-функции и именем приложения-функции соответственно:
 
@@ -498,7 +421,7 @@ SSH обеспечивает безопасный обмен данными ме
 
 1. В браузере откройте `https://<app_name>.scm.azurewebsites.net/`, заменив `<app_name>` уникальным именем. Это URL-адрес конечной точки Дополнительных инструментов (Kudu) для контейнера приложения-функции.
 
-1. Войдите в свою учетную запись Azure, а затем выберите вкладку **SSH**, чтобы создать подключение к контейнеру. Если Azure по-прежнему находится в процессе обновления образа контейнера, подключение может занять несколько секунд.
+1. Войдите в свою учетную запись Azure, а затем выберите вкладку **SSH**, чтобы создать подключение к контейнеру. Если Azure все еще обновляет образ контейнера, подключение может занять некоторое время.
 
 1. После установки подключения к контейнеру выполните команду `top`, чтобы просмотреть выполняющиеся в данный момент процессы. 
 
@@ -510,347 +433,47 @@ SSH обеспечивает безопасный обмен данными ме
 
 В этом разделе показано, как интегрировать функцию с очередью службы Хранилища Azure. Выходная привязка, которая была добавлена в эту функцию, записывает в сообщение очереди данные HTTP-запроса.
 
-## <a name="retrieve-the-azure-storage-connection-string"></a>Получение строки подключения к Службе хранилища Azure
+[!INCLUDE [functions-cli-get-storage-connection](../../includes/functions-cli-get-storage-connection.md)]
 
-Ранее вы создали учетную запись хранения Azure для использования приложением-функции. Строка подключения данной учетной записи надежно хранится в параметрах приложения в Azure. Скачав параметр в файл *local.settings.json*, вы можете использовать это подключение для записи данных в очередь службы хранилища в той же учетной записи при локальном запуске функции. 
+[!INCLUDE [functions-register-storage-binding-extension-csharp](../../includes/functions-register-storage-binding-extension-csharp.md)]
 
-1. В корневом каталоге проекта выполните следующую команду, заменив `<app_name>` именем приложения-функции из предыдущего краткого руководства. Эта команда перезапишет все существующие значения в файле.
+[!INCLUDE [functions-add-output-binding-cli](../../includes/functions-add-output-binding-cli.md)]
 
-    ```
-    func azure functionapp fetch-app-settings <app_name>
-    ```
-    
-1. Откройте файл *local.settings.json* и найдите значение `AzureWebJobsStorage`, которое является строкой подключения к учетной записи хранения. В других разделах этой статьи вы будете использовать имя `AzureWebJobsStorage` и строку подключения.
-
-> [!IMPORTANT]
-> Файл *local.settings.json* содержит секреты, скачанные из Azure, поэтому всегда исключайте этот файл из системы управления версиями. Файл *.gitignore*, созданный с помощью локального проекта функций, по умолчанию исключает файл.
-
-### <a name="add-an-output-binding-to-functionjson"></a>Добавление выходной привязки в файл function.json
-
-В службе "Функции Azure" для каждого типа привязок требуется `direction`, `type` и уникальное `name`, которое определяется в файле *function.json*. *function.json* уже содержит входную привязку для типа "httpTrigger" и выходную привязку для HTTP-ответа. Чтобы добавить привязку к очереди хранилища, измените файл, добавляя выходную привязку для типа "queue", где очередь отображается в коде в качестве входного аргумента с именем `msg`. Для привязки очереди также требуется имя используемой очереди, в данном случае `outqueue`, и имена параметров, в которых содержится строка подключения, в данном случае `AzureWebJobStorage`.
-
-::: zone pivot="programming-language-csharp"
-
-В проекте библиотеки классов C# привязки определяются как атрибуты привязки в методе функции. Затем на основе этих атрибутов автоматически создается файл *function.json*.
-
-1. Для привязки очереди выполните следующую команду [dotnet add package](/dotnet/core/tools/dotnet-add-package), чтобы добавить Пакет расширений хранилища в свой проект.
-
-    ```
-    dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 3.0.4
-    ```
-
-1. Откройте файл *HttpTrigger.cs* и добавьте следующий оператор `using`:
-
-    ```cs
-    using Microsoft.Azure.WebJobs.Extensions.Storage;
-    ```
-    
-1. Добавьте следующий параметр в определение метода `Run`:
-    
-    ```csharp
-    [Queue("outqueue"), StorageAccount("AzureWebJobsStorage")] ICollector<string> msg
-    ```
-    
-    Определение метода `Run` теперь должно соответствовать следующему коду:
-    
-    ```csharp
-    [FunctionName("HttpTrigger")]
-    public static async Task<IActionResult> Run(
-        [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, 
-        [Queue("outqueue"), StorageAccount("AzureWebJobsStorage")] ICollector<string> msg, ILogger log)
-    ```
-
-Параметр `msg` относится к типу `ICollector<T>`, который представляет собой коллекцию сообщений, записываемых в выходную привязку после завершения функции. В этом случае выходные данные представляют собой очередь хранилища с именем `outqueue`. Строка подключения к учетной записи хранения задана атрибутом `StorageAccountAttribute`. Он указывает параметр, который содержит строку подключения к учетной записи хранения и может применяться на уровне класса, метода или параметра. В этом случае вы можете опустить `StorageAccountAttribute`, так как уже используете учетную запись хранения по умолчанию.
-
-::: zone-end
-
-::: zone pivot="programming-language-javascript"
-
-Обновите *function.json* в соответствии со следующими данными путем добавления привязки очереди после привязки HTTP:
-
-```json
-{
-  "bindings": [
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ]
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "res"
-    },
-    {
-      "type": "queue",
-      "direction": "out",
-      "name": "msg",
-      "queueName": "outqueue",
-      "connection": "AzureWebJobsStorage"
-    }
-  ]
-}
-```
-::: zone-end
-
-::: zone pivot="programming-language-powershell"
-
-Обновите *function.json* в соответствии со следующими данными путем добавления привязки очереди после привязки HTTP:
-
-```json
-{
-  "bindings": [
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "Request",
-      "methods": [
-        "get",
-        "post"
-      ]
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "Response"
-    },
-    {
-      "type": "queue",
-      "direction": "out",
-      "name": "msg",
-      "queueName": "outqueue",
-      "connection": "AzureWebJobsStorage"
-    }
-  ]
-}
-```
-::: zone-end
-
-::: zone pivot="programming-language-python"
-
-Обновите *function.json* в соответствии со следующими данными путем добавления привязки очереди после привязки HTTP:
-
-```json
-{
-  "scriptFile": "__init__.py",
-  "bindings": [
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ]
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "$return"
-    },
-    {
-      "type": "queue",
-      "direction": "out",
-      "name": "msg",
-      "queueName": "outqueue",
-      "connection": "AzureWebJobsStorage"
-    }
-  ]
-}
-```
-::: zone-end
-
-::: zone pivot="programming-language-typescript"
-
-Обновите *function.json* в соответствии со следующими данными путем добавления привязки очереди после привязки HTTP:
-
-```json
-{
-  "bindings": [
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "Request",
-      "methods": [
-        "get",
-        "post"
-      ]
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "Response"
-    },
-    {
-      "type": "queue",
-      "direction": "out",
-      "name": "msg",
-      "queueName": "outqueue",
-      "connection": "AzureWebJobsStorage"
-    }
-  ]
-}
-```
-::: zone-end
+::: zone pivot="programming-language-csharp"  
+[!INCLUDE [functions-add-storage-binding-csharp-library](../../includes/functions-add-storage-binding-csharp-library.md)]  
+::: zone-end  
+::: zone pivot="programming-language-java" 
+[!INCLUDE [functions-add-output-binding-java-cli](../../includes/functions-add-output-binding-java-cli.md)]
+::: zone-end  
 
 ## <a name="add-code-to-use-the-output-binding"></a>Добавление кода для использования выходной привязки
 
-После определения привязки имя привязки (в данном случае `msg`) отображается в коде функции в качестве аргумента (или в объекте `context` в JavaScript и TypeScript). Затем эту переменную можно использовать для записи сообщений в очередь. Вам нужно писать код для проверки подлинности, получения ссылки на очередь или записи данных. Все эти задачи интеграции удобно осуществляются в среде выполнения Функций Azure и с использованием выходной привязки очереди.
+Определив привязку очереди, можно обновлять функцию, чтобы она получала выходной параметр `msg` и записывала сообщения в очередь.
 
-::: zone pivot="programming-language-csharp"
-```csharp
-[FunctionName("HttpTrigger")]
-public static async Task<IActionResult> Run(
-    [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, 
-    [Queue("outqueue"), StorageAccount("AzureWebJobsStorage")] ICollector<string> msg, ILogger log)
-{
-    log.LogInformation("C# HTTP trigger function processed a request.");
+::: zone pivot="programming-language-python"     
+[!INCLUDE [functions-add-output-binding-python](../../includes/functions-add-output-binding-python.md)]
+::: zone-end  
 
-    string name = req.Query["name"];
+::: zone pivot="programming-language-javascript"  
+[!INCLUDE [functions-add-output-binding-js](../../includes/functions-add-output-binding-js.md)]
+::: zone-end  
 
-    string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-    dynamic data = JsonConvert.DeserializeObject(requestBody);
-    name = name ?? data?.name;
+::: zone pivot="programming-language-typescript"  
+[!INCLUDE [functions-add-output-binding-ts](../../includes/functions-add-output-binding-ts.md)]
+::: zone-end  
 
-    if (!string.IsNullOrEmpty(name))
-    {
-        // Add a message to the output collection.
-        msg.Add(string.Format("Name passed to the function: {0}", name));
-    }
-    
-    return name != null
-        ? (ActionResult)new OkObjectResult($"Hello, {name}")
-        : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
-}
-```
+::: zone pivot="programming-language-powershell"  
+[!INCLUDE [functions-add-output-binding-powershell](../../includes/functions-add-output-binding-powershell.md)]  
 ::: zone-end
 
-::: zone pivot="programming-language-javascript"
-```js
-module.exports = async function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+::: zone pivot="programming-language-csharp"  
+[!INCLUDE [functions-add-storage-binding-csharp-library-code](../../includes/functions-add-storage-binding-csharp-library-code.md)]
+::: zone-end 
 
-    if (req.query.name || (req.body && req.body.name)) {
-        // Add a message to the Storage queue.
-        context.bindings.msg = "Name passed to the function: " +
-            (req.query.name || req.body.name);
+::: zone pivot="programming-language-java"
+[!INCLUDE [functions-add-output-binding-java-code](../../includes/functions-add-output-binding-java-code.md)]
 
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
-};
-```
-::: zone-end
-
-::: zone pivot="programming-language-powershell"
-```powershell
-using namespace System.Net
-
-# Input bindings are passed in via param block.
-param($Request, $TriggerMetadata)
-
-# Write to the Azure Functions log stream.
-Write-Host "PowerShell HTTP trigger function processed a request."
-
-# Interact with query parameters or the body of the request.
-$name = $Request.Query.Name
-if (-not $name) {
-    $name = $Request.Body.Name
-}
-
-if ($name) {
-    $outputMsg = "Name passed to the function: $name"
-    Push-OutputBinding -name msg -Value $outputMsg
-
-    $status = [HttpStatusCode]::OK
-    $body = "Hello $name"
-}
-else {
-    $status = [HttpStatusCode]::BadRequest
-    $body = "Please pass a name on the query string or in the request body."
-}
-
-# Associate values to output bindings by calling 'Push-OutputBinding'.
-Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
-    StatusCode = $status
-    Body = $body
-})
-```
-::: zone-end
-
-::: zone pivot="programming-language-python"
-```python
-import logging
-
-import azure.functions as func
-
-
-def main(req: func.HttpRequest, msg: func.Out[func.QueueMessage]) -> str:
-
-    name = req.params.get('name')
-    if not name:
-        try:
-            req_body = req.get_json()
-        except ValueError:
-            pass
-        else:
-            name = req_body.get('name')
-
-    if name:
-        msg.set(name)
-        return func.HttpResponse(f"Hello {name}!")
-    else:
-        return func.HttpResponse(
-            "Please pass a name on the query string or in the request body",
-            status_code=400
-        )
-```
-::: zone-end
-
-::: zone pivot="programming-language-typescript"
-```typescript
-import { AzureFunction, Context, HttpRequest } from "@azure/functions"
-
-const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-    context.log('HTTP trigger function processed a request.');
-    const name = (req.query.name || (req.body && req.body.name));
-
-    if (name) {
-        // Add a message to the Storage queue.
-        context.bindings.msg = "Name passed to the function: " +
-            (req.query.name || req.body.name);
-        
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
-};
-
-export default httpTrigger;
-```
+[!INCLUDE [functions-add-output-binding-java-test-cli](../../includes/functions-add-output-binding-java-test-cli.md)]
 ::: zone-end
 
 ### <a name="update-the-image-in-the-registry"></a>Обновление образа в реестре
@@ -873,71 +496,7 @@ export default httpTrigger;
 
 Используйте в браузере тот же URL-адрес, что и перед вызовом функции. Браузер должен отобразить тот же ответ, что и раньше, так как вы не изменяли эту часть кода функции. Однако добавленный код написал сообщение, используя параметр URL-адреса `name` в очередь хранилища `outqueue`.
 
-Очередь можно просмотреть на [портале Azure](../storage/queues/storage-quickstart-queues-portal.md) или в [Обозревателе службы хранилища Azure](https://storageexplorer.com/). Очередь также можно просмотреть в интерфейсе командной строки Azure. Для этого выполните приведенные ниже шаги.
-
-1. Откройте файл *local.setting.json* проекта функций и скопируйте значение строки подключения. В окне терминала или командной строки выполните следующую команду, чтобы создать переменную среды с именем `AZURE_STORAGE_CONNECTION_STRING`. Вставьте конкретную строку подключения вместо `<connection_string>`. (Эта переменная среды означает, что вам не нужно указывать строку подключения для каждой последующей команды с помощью аргумента `--connection-string`.)
-
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
-    
-    ```bash
-    AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
-    ```
-    
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
-    
-    ```powershell
-    $env:AZURE_STORAGE_CONNECTION_STRING = "<connection_string>"
-    ```
-    
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
-    
-    ```cmd
-    set AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
-    ```
-    
-    ---
-    
-1. (Дополнительно) Команду [`az storage queue list`](/cli/azure/storage/queue#az-storage-queue-list) можно использовать для просмотра очередей службы хранилища в учетной записи. В выходных данных этой команды должна быть очередь с именем `outqueue`, созданная при написании функцией первого сообщения в этой очереди.
-    
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
-    
-    ```azurecli
-    az storage queue list --output tsv
-    ```
-    
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
-    
-    ```azurecli
-    az storage queue list --output tsv
-    ```
-    
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
-    
-    ```azurecli
-    az storage queue list --output tsv
-    ```
-    
-    ---
-
-1. Используйте команду [`az storage message peek`](/cli/azure/storage/message#az-storage-message-peek), чтобы просматривать сообщения в этой очереди. Необходимо указывать первое имя, использованное ранее при проверке функции. Команда получает первое сообщение в очереди в [кодировке Base64](functions-bindings-storage-queue.md#encoding), поэтому необходимо также декодировать сообщение, чтобы просмотреть его в виде текста.
-
-    # <a name="bashtabbash"></a>[bash](#tab/bash)
-    
-    ```bash
-    echo `echo $(az storage message peek --queue-name outqueue -o tsv --query '[].{Message:content}') | base64 --decode`
-    ```
-    
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
-    
-    ```powershell
-    [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($(az storage message peek --queue-name outqueue -o tsv --query '[].{Message:content}')))
-    ```
-    
-    # <a name="cmdtabcmd"></a>[Cmd](#tab/cmd)
-    
-    Коллекцию сообщений требуется разыменовать и раскодировать из base64, поэтому запустите PowerShell и выполните соответствующую команду PowerShell.
-
-    ---
+[!INCLUDE [functions-add-output-binding-view-queue-cli](../../includes/functions-add-output-binding-view-queue-cli.md)]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Cezanne HR Software | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Cezanne HR Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Cezanne HR Software.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fa689e6138f8d965e59f7cfa7a85e0835301086c
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73158699"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство по Интеграция Azure Active Directory с Cezanne HR Software
+# <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство. Интеграция Azure Active Directory с Cezanne HR Software
 
 В этом руководстве описано, как интегрировать Cezanne HR Software с Azure Active Directory (Azure AD).
 Интеграция Cezanne HR Software с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73158699"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Cezanne HR Software, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на Cezanne HR Software с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73158699"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Cezanne HR Software](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://w3.cezanneondemand.com/CezanneOnDemand/-/<tenantidentifier>`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://w3.cezanneondemand.com/CezanneOnDemand/-/<tenantidentifier>`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес: `https://w3.cezanneondemand.com/CezanneOnDemand/`.
 
@@ -123,11 +123,11 @@ ms.locfileid: "73158699"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-cezanne-hr-software-single-sign-on"></a>Настройка единого входа Cezanne HR Software
 
@@ -149,7 +149,7 @@ ms.locfileid: "73158699"
 
     ![Настройка единого входа на стороне приложения](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_003.png)
 
-    a. Введите имя поставщика удостоверений в поле **Отображаемое имя**.
+    а. Введите имя поставщика удостоверений в поле **Отображаемое имя**.
 
     b. В текстовое поле **Идентификатор сущности** вставьте значение **идентификатора Azure AD**, скопированное на портале Azure.
 
@@ -157,9 +157,9 @@ ms.locfileid: "73158699"
 
     d. В текстовое поле **Security Token Service Endpoint** (Конечная точка службы токенов безопасности) вставьте значение **URL-адреса для входа в учетную запись**, скопированное на портале Azure.
 
-    д. В текстовом поле "User ID Attribute Name" (Имя атрибута идентификатора пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    д) В текстовом поле "User ID Attribute Name" (Имя атрибута идентификатора пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
-    Е. Чтобы передать сертификат, скачанный с портала Azure, щелкните значок **Upload** (Передать).
+    е) Чтобы передать сертификат, скачанный с портала Azure, щелкните значок **Upload** (Передать).
 
     ж. Нажмите кнопку **ОК** .
 
@@ -234,7 +234,7 @@ ms.locfileid: "73158699"
 
     ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_006.png "Новый пользователь")
 
-    a. Установите для параметра **Внутренний пользователь** значение "Выкл.".
+    а. Установите для параметра **Внутренний пользователь** значение "Выкл.".
 
     b. В текстовом поле **First name** (Имя) введите имя пользователя, например **Britta**.  
 
@@ -246,25 +246,25 @@ ms.locfileid: "73158699"
 
     ![Новый пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_007.png "Новый пользователь")
 
-    a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
+    а. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 
     b. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
     c. В раскрывающемся списке **Роль безопасности** выберите **Специалист отдела кадров**.
 
-    d. Последовательно выберите **ОК**.
+    d. Нажмите кнопку **ОК**.
 
 5. Перейдите на вкладку **Единый вход** и нажмите кнопку **Добавить** в области **Идентификаторы SAML 2.0)** .
 
-    ![User](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
+    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_008.png "Пользователь")
 
 6. Выберите значение в списке **Поставщик удостоверений** и в текстовом поле **Идентификатор пользователя** введите адрес электронной почты учетной записи Britta Simon.
 
-    ![User](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_009.png "Пользователь")
+    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_009.png "Пользователь")
 
 7. Нажмите кнопку **Сохранить** .
 
-    ![User](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_010.png "Пользователь")
+    ![Пользователь](./media/cezannehrsoftware-tutorial/tutorial_cezannehrsoftware_010.png "Пользователь")
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

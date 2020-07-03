@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: bdb510113a8d65ac04b54e77158f46d03cccd9de
-ms.sourcegitcommit: b050c7e5133badd131e46cab144dd5860ae8a98e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "72791927"
 ---
 # <a name="ocr-cognitive-skill"></a>Когнитивный навык распознавания текста
@@ -32,9 +32,9 @@ ms.locfileid: "72791927"
 + . -
 
 > [!NOTE]
-> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Расходы начисляются при вызове API в Cognitive Services, а также для извлечения изображений в рамках этапа взлома документов в Azure Когнитивный поиск. За извлечение текста из документов плата не взимается.
+> Когда вы расширяете область, увеличивая частоту обработки, добавляя дополнительные документы или добавляете дополнительные алгоритмы искусственного интеллекта, вам потребуется [подключить ресурс Cognitive Services для оплаты](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при распознавании документов в службе "Когнитивный поиск Azure". За извлечение текста из документов плата не взимается.
 >
-> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение изображений описаны на [странице цен на когнитивный Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на службу "Когнитивный поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="skill-parameters"></a>Параметры навыков
@@ -53,13 +53,13 @@ ms.locfileid: "72791927"
 
 | Ввод имени      | Описание                                          |
 |---------------|------------------------------------------------------|
-| image         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
+| Изображение         | Сложный тип. Сейчас работает только с полем /document/normalized_images, созданным индексатором большого двоичного объекта Azure, если для ```imageAction``` установлено значение, отличное от ```none```. Дополнительные сведения см. в [этом примере](#sample-output).|
 
 
 ## <a name="skill-outputs"></a>Выходные данные навыка
 | Имя вывода     | Описание                   |
 |---------------|-------------------------------|
-| текст          | Обычный текст, извлеченный из изображения.   |
+| text          | Обычный текст, извлеченный из изображения.   |
 | layoutText    | Сложный тип, описывающий извлеченный текст и расположение, где найден указанный текст.|
 
 
@@ -204,8 +204,8 @@ ms.locfileid: "72791927"
 }
 ```
 
-## <a name="see-also"></a>Дополнительные материалы
+## <a name="see-also"></a>См. также
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Text Merge cognitive skill](cognitive-search-skill-textmerger.md) (Когнитивный навык слияния текста)
-+ [How to define a skillset](cognitive-search-defining-skillset.md) (Определение набора навыков)
-+ [Создание индексатора (REST)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [Определение набора навыков](cognitive-search-defining-skillset.md)
++ [Создание индексатора — REST](https://docs.microsoft.com/rest/api/searchservice/create-indexer)

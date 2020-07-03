@@ -13,22 +13,22 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 09/12/2019
 ms.author: cynthn
-ms.openlocfilehash: 8631b05bc42df86ef6865bf2a07c0e3deaaad2fe
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 2e97442d4104f52c1a76ba8cd1d81c99508bb242
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034278"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81605184"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure
-Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](https://www.xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
+Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](http://xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные условия
 Для работы с этой статьей требуется существующая виртуальная машина Ubuntu 18,04 LTS в Azure. Если требуется создать виртуальную машину, используйте один из следующих методов:
 
-- [Интерфейс командной строки Azure](quick-create-cli.md)
-- [портал Azure](quick-create-portal.md).
+- [Azure CLI](quick-create-cli.md)
+- [Портал Azure](quick-create-portal.md)
 
 
 ## <a name="install-a-desktop-environment-on-your-linux-vm"></a>Установка среды рабочего стола на виртуальной машине Linux
@@ -48,7 +48,7 @@ ssh azureuser@myvm.westus.cloudapp.azure.com
 
 ```bash
 sudo apt-get update
-sudo apt-get install xfce4
+sudo apt-get -y install xfce4
 ```
 
 ## <a name="install-and-configure-a-remote-desktop-server"></a>Установка и настройка сервера удаленных рабочих столов
@@ -136,7 +136,7 @@ tail -f /var/log/syslog
 Если ответ не поступает в клиент удаленного рабочего стола, а события не отображаются в системном журнале, это означает, что трафик с удаленного рабочего стола не достигает виртуальной машины. Проверьте правила групп безопасности сети и убедитесь, что в их числе есть правило, разрешающее трафик по протоколу TCP через порт 3389. Дополнительные сведения см. в статье [Устранение проблем с подключением к приложениям на виртуальных машинах Linux в Azure](../windows/troubleshoot-app-connection.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о создании и использовании ключей SSH на виртуальных машинах Linux см. в статье [Создание пары из открытого и закрытого ключей SSH для виртуальных машин Linux](mac-create-ssh-keys.md).
 
 Сведения об использовании SSH в Windows см. в статье [Использование SSH с Windows в Azure](ssh-from-windows.md).

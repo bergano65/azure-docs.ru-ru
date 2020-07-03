@@ -23,18 +23,26 @@
       items:
         - name: Рекомендации по ускорению Azure NetApp Files
           href: azure-netapp-files-performance-considerations.md
-        - name: Результаты тестов производительности для Azure NetApp Files
-          href: azure-netapp-files-performance-benchmarks.md
         - name: Рекомендации по тестам производительности для Azure NetApp Files
           href: azure-netapp-files-performance-metrics-volumes.md
+        - name: Тесты производительности для Linux
+          href: performance-benchmarks-linux.md
         - name: Часто задаваемые вопросы о производительности SMB
           href: azure-netapp-files-smb-performance.md
     - name: Модель затрат для Azure NetApp Files
       href: azure-netapp-files-cost-model.md
     - name: Рекомендации по планированию сети Azure NetApp Files
       href: azure-netapp-files-network-topologies.md
-    - name: 'Архитектура решений, использующих Azure NetApp Files'
-      href: azure-netapp-files-solution-architectures.md
+    - name: Решения
+      items:
+        - name: 'Архитектура решений, использующих Azure NetApp Files'
+          href: azure-netapp-files-solution-architectures.md
+        - name: Конкретные решения
+          items:
+            - name: Преимущества использования Azure NetApp Files с Oracle Database
+              href: solutions-benefits-azure-netapp-files-oracle-database.md
+            - name: Преимущества использования Azure NetApp Files для автоматизации работы с электронными макетами
+              href: solutions-benefits-azure-netapp-files-electronic-design-automation.md
     - name: Вопросы и ответы об Azure NetApp Files
       href: azure-netapp-files-faqs.md
 - name: Практические руководства

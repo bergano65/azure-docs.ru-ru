@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Справочник по модулю PowerShell ADSyncConfig | Документация Майкрософт'
+title: 'Azure AD Connect: справочник по модулю PowerShell ADSyncConfig | Документация Майкрософт'
 description: Этот документ содержит справочные сведения о модуле PowerShell ADSyncConfig.psm1.
 author: billmath
 manager: daveba
@@ -10,14 +10,14 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 554bb99121190198982f64deb6ee0674aa8831ed
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8159ef45dee8a2f9ace69c2a5b66a29e4948d82c
+ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60381201"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82982009"
 ---
-# <a name="azure-ad-connect--adsyncconfig-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADSyncConfig
+# <a name="azure-ad-connect--adsyncconfig-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADSyncConfig
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADSyncConfig.psm1, который входит в состав Azure AD Connect.
 
 
@@ -26,13 +26,13 @@ ms.locfileid: "60381201"
 ### <a name="synopsis"></a>Краткий обзор
 Возвращает имя учетной записи и домен, настроенные в каждом соединителе AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ADSyncADConnectorAccount
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Эта функция использует командлет Get-ADSyncConnector, который доступен в AAD Connect, для извлечения из параметров подключения таблицы учетных записей соединителей AD.
 
 ### <a name="examples"></a>Примеры
@@ -47,39 +47,38 @@ Get-ADSyncADConnectorAccount
 ### <a name="synopsis"></a>Краткий обзор
 Получает объекты AD DS с отключенным наследованием разрешений.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Get-ADSyncObjectsWithInheritanceDisabled [-SearchBase] <String> [[-ObjectClass] <String>] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Выполняет поиск в AD, начиная с параметра SearchBase, и возвращает все объекты, отфильтрованные по параметру ObjectClass, у которых в настоящее время отключено наследование списка управления доступом.
 
 ### <a name="examples"></a>Примеры
 
 #### <a name="example-1"></a>Пример 1
+Поиск объектов с отключенным наследованием в домене Contoso (по умолчанию возвращаются только объекты "organizationalUnit")
 ```
-Find objects with disabled inheritance in 'Contoso' domain (by default returns 'organizationalUnit' objects only)
-```
-
 Get-ADSyncObjectsWithInheritanceDisabled -SearchBase 'Contoso'
+```
 
 #### <a name="example-2"></a>Пример 2
+Поиск объектов "User" с отключенным наследованием в домене "contoso"
 ```
-Find 'user' objects with disabled inheritance in 'Contoso' domain
-```
-
 Get-ADSyncObjectsWithInheritanceDisabled -SearchBase 'Contoso' -ObjectClass 'user'
+```
 
 #### <a name="example-3"></a>Пример 3
+Найти все типы объектов с отключенным наследованием в подразделении
 ```
-Find all types of objects with disabled inheritance in a OU
-```
-
 Get-ADSyncObjectsWithInheritanceDisabled -SearchBase OU=AzureAD,DC=Contoso,DC=com -ObjectClass '*'
+```
 
-### <a name="parameters"></a>Параметры
+
+
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-searchbase"></a>-SearchBase
 Значение SearchBase для запроса LDAP. Это может быть различающееся имя домена AD или полное доменное имя.
@@ -97,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 #### <a name="-objectclass"></a>-ObjectClass
-Класс объектов для поиска. Это может быть "*" (любой класса объектов), user, group, container и т. д. По умолчанию эта функция выполняет поиск класса объектов organizationalUnit.
+Класс объектов для поиска, который может иметь значение "*" (для любого класса объектов), "User", "Group", "Container" и т. д. По умолчанию эта функция будет искать класс объектов "organizationalUnit".
 
 ```yaml
 Type: String
@@ -120,7 +119,7 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Инициализация леса и домена Active Directory для основных разрешений на чтение.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="userdomain"></a>UserDomain
 ```
@@ -134,7 +133,7 @@ Set-ADSyncBasicReadPermissions -ADConnectorAccountDN <String> [-ADobjectDN <Stri
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncBasicReadPermissions предоставит необходимые разрешения для учетной записи синхронизации AD, включая следующие:
 1.
 доступ на чтение свойств всех атрибутов для всех потомков объектов computer;
@@ -176,7 +175,7 @@ Set-ADSyncBasicReadPermissions -ADConnectorAccountDN 'CN=ADConnector,OU=AzureAD,
 Set-ADSyncBasicReadPermissions -ADConnectorAccountName 'ADConnector' -ADConnectorAccountDomain 'Contoso.com' -ADobjectDN 'OU=AzureAD,DC=Contoso,DC=com'
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectoraccountname"></a>-ADConnectorAccountName
 Имя учетной записи Active Directory, которая используется или будет использоваться службой синхронизации Azure AD Connect для управления объектами в каталоге.
@@ -293,7 +292,7 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Инициализация леса и домена Active Directory для гибридной среды Exchange.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="userdomain"></a>UserDomain
 ```
@@ -307,7 +306,7 @@ Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN 
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncExchangeHybridPermissions предоставит необходимые разрешения для учетной записи синхронизации AD, включая следующие:
 1.
 доступ на чтение и запись свойств всех атрибутов для всех потомков объектов user;
@@ -343,7 +342,7 @@ Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN 'CN=ADConnector,OU=Azu
 Set-ADSyncExchangeHybridPermissions -ADConnectorAccountName 'ADConnector' -ADConnectorAccountDomain 'Contoso.com' -ADobjectDN 'OU=AzureAD,DC=Contoso,DC=com'
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectoraccountname"></a>-ADConnectorAccountName
 Имя учетной записи Active Directory, которая используется или будет использоваться службой синхронизации Azure AD Connect для управления объектами в каталоге.
@@ -460,7 +459,7 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Инициализация леса и домена Active Directory для общедоступных почтовых папок Exchange.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="userdomain"></a>UserDomain
 ```
@@ -475,7 +474,7 @@ Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountDN <String> [-A
  [-SkipAdminSdHolders] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncExchangeMailPublicFolderPermissions предоставит необходимые разрешения для учетной записи синхронизации AD, включая следующее:
 1.
 доступ на чтение свойств всех атрибутов для всех потомков объектов publicfolder.
@@ -505,7 +504,7 @@ Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountDN 'CN=ADConnec
 Set-ADSyncExchangeMailPublicFolderPermissions -ADConnectorAccountName 'ADConnector' -ADConnectorAccountDomain 'Contoso.com' -ADobjectDN 'OU=AzureAD,DC=Contoso,DC=com'
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectoraccountname"></a>-ADConnectorAccountName
 Имя учетной записи Active Directory, которая используется или будет использоваться службой синхронизации Azure AD Connect для управления объектами в каталоге.
@@ -622,7 +621,7 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Инициализация леса и домена Active Directory для компонента mS-DS-ConsistencyGuid.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="userdomain"></a>UserDomain
 ```
@@ -636,7 +635,7 @@ Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountDN <String> [-ADobje
  [-SkipAdminSdHolders] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncMsDsConsistencyGuidPermissions предоставит необходимые разрешения для учетной записи синхронизации AD, включая следующее:
 1.
 доступ на чтение и запись свойств атрибута mS-DS-ConsistencyGuid для всех потомков объектов user.
@@ -666,7 +665,7 @@ Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountDN 'CN=ADConnector,O
 Set-ADSyncMsDsConsistencyGuidPermissions -ADConnectorAccountName 'ADConnector' -ADConnectorAccountDomain 'Contoso.com' -ADobjectDN 'OU=AzureAD,DC=Contoso,DC=com'
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectoraccountname"></a>-ADConnectorAccountName
 Имя учетной записи Active Directory, которая используется или будет использоваться службой синхронизации Azure AD Connect для управления объектами в каталоге.
@@ -783,7 +782,7 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Инициализация леса и домена Active Directory для синхронизации хэшей паролей.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="userdomain"></a>UserDomain
 ```
@@ -796,7 +795,7 @@ Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName <String> -ADConnec
 Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncPasswordHashSyncPermissions предоставит необходимые разрешения для учетной записи синхронизации AD, включая следующие:
 1.
 Репликация изменений каталога
@@ -817,7 +816,7 @@ Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountName 'ADConnector' -ADC
 Set-ADSyncPasswordHashSyncPermissions -ADConnectorAccountDN 'CN=ADConnector,OU=AzureAD,DC=Contoso,DC=com'
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectoraccountname"></a>-ADConnectorAccountName
 Имя учетной записи Active Directory, которая будет использоваться службой синхронизации Azure AD Connect для управления объектами в каталоге.
@@ -904,7 +903,7 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Инициализация леса и домена Active Directory для обратной записи паролей из Azure AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="userdomain"></a>UserDomain
 ```
@@ -918,7 +917,7 @@ Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountDN <String> [-ADobject
  [-SkipAdminSdHolders] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncPasswordWritebackPermissions предоставит необходимые разрешения для учетной записи синхронизации AD, включая следующие:
 1.
 сброс пароля для потомков объектов user;
@@ -952,7 +951,7 @@ Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountDN 'CN=ADConnector,OU=
 Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountName 'ADConnector' -ADConnectorAccountDomain 'Contoso.com' -ADobjectDN 'OU=AzureAD,DC=Contoso,DC=com'
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectoraccountname"></a>-ADConnectorAccountName
 Имя учетной записи Active Directory, которая используется или будет использоваться службой синхронизации Azure AD Connect для управления объектами в каталоге.
@@ -1071,14 +1070,14 @@ Accept wildcard characters: False
 Типичный пример — учетная запись AD Connect (MSOL), автоматически созданная службой AAD Connect.
 Эта учетная запись имеет разрешения на репликацию для все доменов, однако ее легко скомпрометировать, так как она не защищена.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <PSCredential>
  [-DisableCredentialValidation] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncRestrictedPermissions ограничит доступ указанной учетной записи.
 Сужение разрешения включает следующие шаги:
 1.
@@ -1111,7 +1110,7 @@ Set-ADSyncRestrictedPermissions [-ADConnectorAccountDN] <String> [-Credential] <
 Set-ADSyncRestrictedPermissions -ADConnectorAccountDN "CN=TestAccount1,CN=Users,DC=Contoso,DC=com" -Credential $(Get-Credential)
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectoraccountdn"></a>-ADConnectorAccountDN
 Различающееся имя учетной записи Active Directory, для которой нужно ограничить разрешения.
@@ -1200,7 +1199,7 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Инициализация леса и домена Active Directory для обратной групп из Azure AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 #### <a name="userdomain"></a>UserDomain
 ```
@@ -1214,7 +1213,7 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN <String> [-ADob
  [-SkipAdminSdHolders] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Функция Set-ADSyncUnifiedGroupWritebackPermissions предоставит необходимые разрешения для учетной записи синхронизации AD, включая следующие:
 1.
 Универсальные разрешения на чтение и запись, удаление, удаление дерева, создание и удаление дочерних объектов для всех типов объектов и дочерних объектов группы.
@@ -1245,7 +1244,7 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN 'CN=ADConnector
 Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountName 'ADConnector' -ADConnectorAccountDomain 'Contoso.com' -ADobjectDN 'OU=AzureAD,DC=Contoso,DC=com'
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adconnectoraccountname"></a>-ADConnectorAccountName
 Имя учетной записи Active Directory, которая используется или будет использоваться службой синхронизации Azure AD Connect для управления объектами в каталоге.
@@ -1362,13 +1361,13 @@ Accept wildcard characters: False
 ### <a name="synopsis"></a>Краткий обзор
 Отображает разрешения указанного объекта AD.
 
-### <a name="syntax"></a>Синтаксис
+### <a name="syntax"></a>SYNTAX
 
 ```
 Show-ADSyncADObjectPermissions [-ADobjectDN] <String> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>DESCRIPTION
 Эта функция возвращает все текущие разрешения конструктора приложений, заданные для данного объекта конструктора приложений, указанного в параметре — ADobjectDN.
 Значение ADobjectDN должно быть указано в формате различающегося имени.
 
@@ -1379,7 +1378,7 @@ Show-ADSyncADObjectPermissions [-ADobjectDN] <String> [<CommonParameters>]
 Show-ADSyncADObjectPermissions -ADobjectDN 'OU=AzureAD,DC=Contoso,DC=com'
 ```
 
-### <a name="parameters"></a>Параметры
+### <a name="parameters"></a>PARAMETERS
 
 #### <a name="-adobjectdn"></a>-ADobjectDN
 {{Введите описание ADobjectDN}}

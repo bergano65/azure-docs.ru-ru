@@ -10,16 +10,16 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 11/05/2019
+ms.date: 03/16/2020
 ms.author: juliako
-ms.openlocfilehash: d4175f2508edab1cf54e415652e9e9cb37b879b1
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 35be4ec2c4f5f8c299120c0ba7dbdcb1dd112473
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514346"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79472039"
 ---
-# <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Руководство. Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST
+# <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST
 
 Службы мультимедиа Azure позволяют кодировать файлы мультимедиа в разные форматы, пригодные для воспроизведения в разных браузерах и на различных устройствах. Например, можно организовать потоковую передачу содержимого в форматах HLS или MPEG DASH от Apple. Перед тем как передавать файл мультимедиа высокого качества, его нужно закодировать. Рекомендации по кодировке см. в статье [Encoding with Azure Media Services](encoding-concept.md) (Кодирование в Службах мультимедиа Azure).
 
@@ -58,7 +58,9 @@ ms.locfileid: "76514346"
  git clone https://github.com/Azure-Samples/media-services-v3-rest-postman.git
  ```
 
-[!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
+## <a name="access-api"></a>Доступ к API
+
+Подробные сведения см. в статье [Получение учетных данных для доступа к API Служб мультимедиа](access-api-howto.md).
 
 ## <a name="configure-postman"></a>Настройка Postman
 
@@ -75,7 +77,7 @@ ms.locfileid: "76514346"
     > [!Note]
     > Задайте переменным доступа новые значения, полученные в разделе **Доступ к API Служб мультимедиа** выше.
 
-7. Дважды щелкните выбранный файл и введите значения, которые вы получили, получив [доступ к API](#access-the-media-services-api).
+7. Дважды щелкните выбранный файл и введите значения, которые вы получили, получив [доступ к API](#access-api).
 8. Закройте диалоговое окно.
 9. Выберите среду **Azure Media Service v3 Environment** в раскрывающемся списке.
 

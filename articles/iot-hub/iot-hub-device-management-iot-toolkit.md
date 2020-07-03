@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
-ms.openlocfilehash: 9d4d82472664900c96b77b31740573d0463465b8
-ms.sourcegitcommit: f9601bbccddfccddb6f577d6febf7b2b12988911
+ms.openlocfilehash: d85e0e967dd802a77ccbc11b884d7a9f2891524d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75911911"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81688097"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для Visual Studio Code
 
@@ -47,8 +47,8 @@ ms.locfileid: "75911911"
 
 * Активная подписка Azure.
 * Центр Интернета вещей Azure в подписке;
-* [Код Visual Studio](https://code.visualstudio.com/)
-* [Средства Azure IOT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или [открыть эту ссылку в Visual Studio Code](vscode:extension/vsciot-vscode.azure-iot-tools).
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Средства Azure IOT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или скопируйте этот URL-адрес и вставьте его в окно браузера`vscode:extension/vsciot-vscode.azure-iot-tools`:.
 
 ## <a name="sign-in-to-access-your-iot-hub"></a>Вход в систему для получения доступа к Центру Интернета вещей
 
@@ -71,7 +71,7 @@ ms.locfileid: "75911911"
 
 2. В поле ввода введите имя метода и полезные данные.
 
-3. Результаты будут показаны в **выходных данных** > представлении **центра Интернета вещей Azure** .
+3. Результаты будут показаны в **выводе** > представления**центра Интернета вещей Azure** .
 
 ## <a name="read-device-twin"></a>Чтение двойников устройств
 
@@ -87,7 +87,7 @@ ms.locfileid: "75911911"
 
 3. Выберите **Update Device Twin** (Обновить двойник устройства), чтобы обновить его.
 
-## <a name="send-cloud-to-device-messages"></a>Отправка сообщений между устройством и облаком
+## <a name="send-cloud-to-device-messages"></a>Отправка сообщений из облака на устройство
 
 Чтобы отправить сообщение из Центра Интернета вещей на устройство, выполните следующие действия.
  
@@ -95,9 +95,9 @@ ms.locfileid: "75911911"
 
 2. Введите сообщение в поле ввода.
 
-3. Результаты будут показаны в **выходных данных** > представлении **центра Интернета вещей Azure** .
+3. Результаты будут показаны в **выводе** > представления**центра Интернета вещей Azure** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы узнали, как использовать расширение средств Интернета вещей Azure для Visual Studio Code с различными параметрами управления.
 

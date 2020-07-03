@@ -1,26 +1,18 @@
 ---
 title: Настройка LVM на виртуальной машине под управлением Linux
 description: Узнайте, как настроить диспетчер логических томов на виртуальной машине Linux в Azure.
-services: virtual-machines-linux
-documentationcenter: na
-author: MicahMcKittrick-MSFT
-manager: gwallace
-editor: tysonn
-tag: azure-service-management,azure-resource-manager
-ms.assetid: 7f533725-1484-479d-9472-6b3098d0aecc
+author: gbowerman
 ms.service: virtual-machines-linux
-ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 09/27/2018
-ms.author: mimckitt
+ms.author: guybo
 ms.subservice: disks
-ms.openlocfilehash: 4fdb3af0433cc32aa7cdbee3c8ca9bdb85031135
-ms.sourcegitcommit: 05cdbb71b621c4dcc2ae2d92ca8c20f216ec9bc4
+ms.openlocfilehash: 7f560a1e6266b5f2452bf9442d2d4c983de1236e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76045346"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80066793"
 ---
 # <a name="configure-lvm-on-a-linux-vm-in-azure"></a>Настройка диспетчера логических томов на виртуальной машине Linux в Azure
 В этом документе рассматривается, как настроить диспетчер логических томов (LVM) на виртуальной машине Azure. Диспетчер логических томов можно использовать на диске операционной системы или на дисках с данными в виртуальных машинах VM, однако по умолчанию для большинства облачных образов диспетчер логических томов не настраивается на диске операционной системы. Приведенные ниже действия предназначены для настройки диспетчера логических томов на дисках с данными.
@@ -65,7 +57,7 @@ ms.locfileid: "76045346"
     LVM_ACTIVATED_ON_DISCOVERED="enable" 
     ```
 
-## <a name="configure-lvm"></a>Настройка LVM
+## <a name="configure-lvm"></a>Настройка диспетчера логических томов
 В этом руководстве предполагается, что подключены три диска данных с именами `/dev/sdc`, `/dev/sdd` и `/dev/sde`. Эти пути могут не совпадать с именами путей к дискам для вашей виртуальной машины. Запустите команду`sudo fdisk -l`или подобную, чтобы просмотреть список доступных дисков.
 
 1. Подготовьте физические тома.

@@ -11,14 +11,14 @@ ms.subservice: user-help
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: curtand
-ms.openlocfilehash: 16cb512d3f8f8afcc199cb52c13e09b12107576f
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 264b2803774bcec000fc767693cf96d15e684790
+ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77062427"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82628407"
 ---
-# <a name="set-up-the-microsoft-authenticator-app-as-your-verification-method"></a>Настройка Microsoft Authenticator приложения в качестве метода проверки
+# <a name="set-up-the-microsoft-authenticator-app-as-your-verification-method"></a>Set up an authenticator app as your two-factor verification method (Настройка приложения Authenticator в качестве метода проверки)
 
 Ниже приведены инструкции по добавлению двухфакторной проверки подлинности и описаны способы сброса пароля. После первоначальной настройки вы можете вернуться к странице **Сведения для защиты**, чтобы добавить, обновить или удалить сведения для защиты.
 
@@ -48,7 +48,7 @@ ms.locfileid: "77062427"
 
 ### <a name="to-set-up-the-microsoft-authenticator-app"></a>Настройка приложения Microsoft Authenticator
 
-1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myprofile.microsoft.com/.
+1. Войдите в рабочую или учебную учетную запись, а затем перейдите на страницу https://myaccount.microsoft.com/.
 
     ![Страница "Мой профиль" с выделенными ссылками на сведения для защиты](media/security-info/securityinfo-myprofile-page.png)
 

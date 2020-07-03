@@ -11,13 +11,13 @@ ms.topic: sample
 ms.date: 07/30/2019
 ms.author: aahi
 ms.openlocfilehash: d34f3a03e1bcd35c270d13c4dda57d0394a36e4b
-ms.sourcegitcommit: 88ae4396fec7ea56011f896a7c7c79af867c90a1
+ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/27/2020
 ms.locfileid: "70387791"
 ---
-# <a name="example-detect-language-with-text-analytics"></a>Пример: Определение языка с помощью API "Анализ текста"
+# <a name="example-detect-language-with-text-analytics"></a>Пример Определение языка с помощью API "Анализ текста"
 
 Функция [распознавания языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) анализ текста Azure REST API оценивает ввод текста для каждого документа и возвращает идентификаторы языка с показателем, указывающим на надежность анализа.
 
@@ -69,7 +69,7 @@ ms.locfileid: "70387791"
 
 + Создайте запрос POST. Для изучения документации по API для этого запроса см. [API Распознавание языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7)
 
-+ Задайте конечную точку HTTP для распознавание языка. Используйте ресурс "Анализ текста" в Azure либо отдельный контейнер [Text Analytics](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v2.1/languages`. Например, `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/languages`.
++ Задайте конечную точку HTTP для распознавание языка. Используйте ресурс "Анализ текста" в Azure либо отдельный контейнер [Text Analytics](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v2.1/languages`. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/languages`.
 
 + Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 
@@ -159,7 +159,7 @@ ms.locfileid: "70387791"
 
 Например, слово "Impossible" часто встречается в английском и французском языках, и при ограниченном контексте ответ будет основан на указании "US". Если известно, что источник текста находится во Франции, такие данные можно использовать в качестве указания.
 
-**Входные данные**
+**Ввод**
 
 ```json
     {
@@ -228,7 +228,7 @@ ms.locfileid: "70387791"
 
 Содержимое на разных языках в одном и том же документе возвращает язык с самым большим представлением в содержимом, но с более низкой положительным рейтингом. Рейтинг отражает предельную силу оценки. В следующем примере входные данные — сочетание английского, испанского и французского языков. Анализатор подсчитывает число знаков в каждом сегменте, чтобы определить преобладающий язык.
 
-**Входные данные**
+**Ввод**
 
 ```json
     {
@@ -272,12 +272,12 @@ ms.locfileid: "70387791"
 + Запрос POST передается в конечную точку `/languages` используя личный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), допустимые для вашей подписки.
 + Выходные данные ответа состоят из идентификаторов языка для каждого ИД документа. Выходные данные можно передавать в любое приложение, принимающее JSON. Примеры приложений, среди прочих, включают в себя Excel и Power BI.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
- API анализа текста: [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)</br>
+ API "Анализ текста": [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)</br>
  [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Анализ тональности](text-analytics-how-to-sentiment-analysis.md)

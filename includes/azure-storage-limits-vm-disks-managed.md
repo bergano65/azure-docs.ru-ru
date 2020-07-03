@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: roygara
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2018
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: f7c73d7d07bdfaa4fbbd7eeca4f00895c5add354
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.openlocfilehash: 2766ea87544f2a21fb654f687eb62dee3c0714ab
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76548232"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80334633"
 ---
 **HDD (цен. категория "Стандартный") управляемые диски**  
 [!INCLUDE [disk-storage-standard-hdd-sizes](disk-storage-standard-hdd-sizes.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "76548232"
 
 **SSD (цен. категория "Премиум") управляемые диски: ограничения для каждой виртуальной машины**
 
-| Ресурс | Ограничение по умолчанию |
+| Ресурс | Ограничение |
 | --- | --- |
 | Максимальное число операций ввода-вывода в секунду на ВМ |80 000 операций ввода-вывода в секунду для виртуальной машины GS5 |
 | Максимальная пропускная способность на виртуальную машину |2000 МБ/с для виртуальной машины GS5 |

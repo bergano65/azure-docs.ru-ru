@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/07/2016
 tags: connectors
 ms.openlocfilehash: ec809a897ce2579125c8797dc8c1d8c7d30a8f9c
-ms.sourcegitcommit: 76b48a22257a2244024f05eb9fe8aa6182daf7e2
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74789554"
 ---
 # <a name="get-started-with-the-microsoft-translator-connector"></a>Начало работы с соединителем Microsoft Translator

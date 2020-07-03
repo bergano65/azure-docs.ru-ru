@@ -2,21 +2,18 @@
 title: API-интерфейсы для автоматизации резервирования Azure | Документация Майкрософт
 description: Дополнительные сведения об API-интерфейсах Azure можно использовать для программного получения сведений о резервировании.
 author: yashesvi
-manager: yashesvi
+ms.reviewer: yashesvi
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 10/01/2019
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 992e46cd8f10ff3c434f34a9f90c777870f3ada4
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: c2e590f011c92df6aa942e8e1fc799023f15750f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995823"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79237587"
 ---
 # <a name="apis-for-azure-reservation-automation"></a>API-интерфейсы для автоматизации резервирования Azure
 

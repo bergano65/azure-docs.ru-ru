@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
@@ -8,15 +8,15 @@ ms.topic: include
 ms.date: 02/12/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 0e3f996ab2a42057198368759c75f10e911d5f54
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 608b148dc3929065df44530da65e695df19be03e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68936886"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79486013"
 ---
 ### <a name="is-bgp-supported-on-all-azure-vpn-gateway-skus"></a>VPN-шлюзы Azure поддерживают BGP для всех классов SKU?
-Нет, BGP поддерживается в VPN-шлюзах Azure класса **VpnGw1**, **VpnGw2**, **VpnGw3**, **Standard** и **HighPerformance**. **Basic** не поддерживается.
+Протокол BGP поддерживается для всех SKU Azure VPN Гатеави, за исключением "Базовый номер SKU".
 
 ### <a name="can-i-use-bgp-with-azure-policy-based-vpn-gateways"></a>Можно ли использовать BGP с VPN-шлюзами Azure с управлением на основе политик?
 Нет, BGP поддерживают только VPN-шлюзы с управлением на основе маршрута.
@@ -24,14 +24,14 @@ ms.locfileid: "68936886"
 ### <a name="can-i-use-private-asns-autonomous-system-numbers"></a>Можно ли использовать частные номера автономной системы (ASN)?
 Да, вы можете использовать собственные общедоступные или частные ASN как для локальных сетей, так и для виртуальных сетей Azure.
 
-### <a name="can-i-use-32-bit-asns-autonomous-system-numbers"></a>Можно ли использовать 32-битные номера автономной системы (ASN)?
-Нет, сейчас VPN-шлюзы Azure поддерживают только 16-битные номера ASN.
+### <a name="can-i-use-32-bit-4-byte-asns-autonomous-system-numbers"></a>Можно ли использовать 32-битный (4-байтовый) ASN (номера автономных систем)?
+Да, VPN-шлюзы Azure теперь поддерживают 32-разрядную (4-байтовую) ASN. Используйте PowerShell, CLI или SDK для настройки с использованием ASN в десятичном формате.
 
 ### <a name="are-there-asns-reserved-by-azure"></a>Существуют ли ASN, зарезервированные Azure?
 Да, следующие ASN зарезервированы Azure для внутреннего и внешнего пиринга:
 
-* общедоступные ASN — 8074, 8075, 12076;
-* частные ASN — 65515, 65517, 65518, 65519, 65520.
+* общедоступные ASN — 8074, 8075, 12076;
+* частные ASN — 65515, 65517, 65518, 65519, 65520.
 
 При подключении к VPN-шлюзам Azure эти ASN нельзя указывать для локальных VPN-устройств.
 

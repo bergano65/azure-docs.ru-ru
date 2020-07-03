@@ -4,15 +4,15 @@ description: Узнайте о том, как системная функция 
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 11321ef9d7b81af279b04e0e435b19c645cf3bcf
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: 696e14e75998ead04c99fab2b84fc4c742d5f54a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74871658"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78302667"
 ---
 # <a name="atn2-azure-cosmos-db"></a>ATN2 (Azure Cosmos DB)
  Возвращает основное значение арктангенса y/x, выраженное в радианах.  
@@ -28,7 +28,7 @@ ATN2(<numeric_expr>, <numeric_expr>)
 *numeric_expr*  
    Числовое выражение.  
   
-## <a name="return-types"></a>Возвращаемые типы
+## <a name="return-types"></a>Типы возвращаемых данных
   
   Возвращает числовое выражение.  
   
@@ -46,8 +46,12 @@ SELECT ATN2(35.175643, 129.44) AS atn2
 [{"atn2": 1.3054517947300646}]  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="remarks"></a>Remarks
+
+Эта системная функция не будет использовать индекс.
+
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)

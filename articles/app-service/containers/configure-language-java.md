@@ -10,22 +10,22 @@ ms.date: 11/22/2019
 ms.author: brendm
 ms.reviewer: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 9c95772c8f10d7170a06d1d6793545a60fc8dd7c
-ms.sourcegitcommit: 380e3c893dfeed631b4d8f5983c02f978f3188bf
+ms.openlocfilehash: ffc7c289fd675a68c8b02af1777fea3d4530e17a
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75750744"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82889494"
 ---
-# <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java для Linux для службы приложений Azure
+# <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Java в Linux для Службы приложений Azure
 
-Служба приложений Azure в Linux позволяет разработчикам Java быстро создавать, развертывать и масштабировать Упакованные веб-приложения Tomcat, Вилдфли или Java Standard Edition (SE) в полностью управляемой службе на основе Linux. Возможно развертывание приложений с подключаемыми модулями Maven из командной строки или в редакторах, например Visual Studio Code, Eclipse или IntelliJ.
+Служба приложений Azure в Linux позволяет разработчикам Java быстро создавать, развертывать и масштабировать свои Tomcat или Упакованные веб-приложения Java Standard Edition (SE) в полностью управляемой службе на основе Linux. Возможно развертывание приложений с подключаемыми модулями Maven из командной строки или в редакторах, например Visual Studio Code, Eclipse или IntelliJ.
 
-Это краткое описание содержит основные понятия и инструкции для разработчиков Java, использующих встроенный контейнер Linux в службе приложений. Если вы никогда не использовали службу приложений Azure, сначала выполните инструкции из руководства по [Java](quickstart-java.md) и [Java с помощью PostgreSQL](tutorial-java-enterprise-postgresql-app.md) .
+Это краткое описание содержит основные понятия и инструкции для разработчиков Java, использующих встроенный контейнер Linux в службе приложений. Если вы никогда не использовали службу приложений Azure, следуйте инструкциям в [кратком руководстве по Java](quickstart-java.md).
 
 ## <a name="deploying-your-app"></a>Развертывание приложения
 
-Вы можете использовать [подключаемый модуль Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) , чтобы развернуть JAR-и WAR-файлы. Развертывание с популярными IDE также поддерживается с [Azure Toolkit for IntelliJ](/java/azure/intellij/azure-toolkit-for-intellij) или [Azure Toolkit for Eclipse](/java/azure/eclipse/azure-toolkit-for-eclipse).
+Вы можете использовать [подключаемый модуль Maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) , чтобы развернуть JAR-и WAR-файлы. Развертывание с популярными IDE также поддерживается с [Azure Toolkit for IntelliJ](/azure/developer/java/toolkit-for-intellij/) или [Azure Toolkit for Eclipse](/azure/developer/java/toolkit-for-eclipse).
 
 В противном случае ваш метод развертывания будет зависеть от типа архива:
 
@@ -56,7 +56,7 @@ ms.locfileid: "75750744"
 
 ### <a name="troubleshooting-tools"></a>Средства диагностики
 
-Встроенные образы Java основаны на операционной системе [Alpine Linux](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) . Используйте диспетчер пакетов `apk`, чтобы установить любые средства или команды для устранения неполадок.
+Встроенные образы Java основаны на операционной системе [Alpine Linux](https://alpine-linux.readthedocs.io/en/latest/getting_started.html) . Используйте диспетчер `apk` пакетов для установки любых средств или команд для устранения неполадок.
 
 ### <a name="flight-recorder"></a>«Черный ящик»
 
@@ -64,7 +64,7 @@ ms.locfileid: "75750744"
 
 #### <a name="timed-recording"></a>Время записи
 
-Чтобы приступить к работе, подключитесь к службе приложений по протоколу SSH и выполните команду `jcmd`, чтобы просмотреть список всех запущенных процессов Java. Кроме жкмд, вы должны увидеть, что приложение Java выполняется с ИДЕНТИФИКАТОРом процесса (PID).
+Чтобы приступить к работе, подключитесь к службе приложений по `jcmd` протоколу SSH и выполните команду, чтобы просмотреть список всех запущенных процессов Java. Кроме жкмд, вы должны увидеть, что приложение Java выполняется с ИДЕНТИФИКАТОРом процесса (PID).
 
 ```shell
 078990bbcd11:/home# jcmd
@@ -83,13 +83,13 @@ jcmd 116 JFR.start name=MyRecording settings=profile duration=30s filename="/hom
 
 #### <a name="continuous-recording"></a>Непрерывная запись
 
-Zulu «черного ящика» можно использовать для непрерывного профилирования приложения Java с минимальным влиянием на производительность среды выполнения ([источник](https://assets.azul.com/files/Zulu-Mission-Control-data-sheet-31-Mar-19.pdf)). Для этого выполните следующую команду Azure CLI, чтобы создать параметр приложения с именем JAVA_OPTS с требуемой конфигурацией. Содержимое параметра JAVA_OPTS приложения передается команде `java` при запуске приложения.
+Zulu «черного ящика» можно использовать для непрерывного профилирования приложения Java с минимальным влиянием на производительность среды выполнения ([источник](https://assets.azul.com/files/Zulu-Mission-Control-data-sheet-31-Mar-19.pdf)). Для этого выполните следующую команду Azure CLI, чтобы создать параметр приложения с именем JAVA_OPTS с требуемой конфигурацией. Содержимое параметра JAVA_OPTS приложения передается `java` команде при запуске приложения.
 
 ```azurecli
 az webapp config appsettings set -g <your_resource_group> -n <your_app_name> --settings JAVA_OPTS=-XX:StartFlightRecording=disk=true,name=continuous_recording,dumponexit=true,maxsize=1024m,maxage=1d
 ```
 
-После начала записи вы можете в любое время сохранить дамп текущих данных, используя команду `JFR.dump`.
+После того, как запись будет запущена, вы можете в любое время сохранить данные в памяти, `JFR.dump` используя команду.
 
 ```shell
 jcmd <pid> JFR.dump name=continuous_recording filename="/home/recording1.jfr"
@@ -113,7 +113,7 @@ jcmd <pid> JFR.dump name=continuous_recording filename="/home/recording1.jfr"
 
 ### <a name="set-java-runtime-options"></a>Настройка параметров среды выполнения Java
 
-Чтобы задать выделенную память или другие параметры среды выполнения ВИРТУАЛЬНОЙ машины Java в средах Tomcat и Java SE, создайте [параметр приложения](../configure-common.md?toc=/azure/app-service/containers/toc.json#configure-app-settings) с именем `JAVA_OPTS` с параметрами. При запуске служба приложений для Linux передает этот параметр в качестве переменной среды в среду выполнения Java.
+Чтобы задать выделенную память или другие параметры среды выполнения ВИРТУАЛЬНОЙ машины Java в средах Tomcat и Java SE, создайте [параметр приложения](../configure-common.md?toc=/azure/app-service/containers/toc.json#configure-app-settings) с `JAVA_OPTS` именем с параметрами. При запуске служба приложений для Linux передает этот параметр в качестве переменной среды в среду выполнения Java.
 
 На портале Azure в разделе **Параметры приложения** для веб-приложения создайте параметр приложения `JAVA_OPTS`, включающий в себя дополнительные параметры, такие как `-Xms512m -Xmx1204m`.
 
@@ -130,13 +130,13 @@ jcmd <pid> JFR.dump name=continuous_recording filename="/home/recording1.jfr"
 
 Разработчики, запускающие отдельное приложение в одном слоте развертывания в плане службы приложений, могут использовать следующие параметры.
 
-- Экземпляры B1 и S1: `-Xms1024m -Xmx1024m`
-- Экземпляры B2 и S2: `-Xms3072m -Xmx3072m`
-- Экземпляры B3 и S3: `-Xms6144m -Xmx6144m`
+- Экземпляры B1 и S1:`-Xms1024m -Xmx1024m`
+- Экземпляры B2 и S2:`-Xms3072m -Xmx3072m`
+- Экземпляры B3 и S3:`-Xms6144m -Xmx6144m`
 
 При настройке параметров кучи приложения просмотрите сведения о плане службы приложений и примите во внимание, что наличие нескольких приложений и одного слота развертывания требует оптимального выделения памяти.
 
-Если вы развертываете JAR-приложение, оно должно называться *app. jar* , чтобы встроенный образ мог правильно опознать ваше приложение. (Подключаемый модуль Maven выполняет это переименование автоматически.) Если вы не хотите переименовывать JAR-файл в *app. jar*, вы можете отправить сценарий оболочки с помощью команды, чтобы запустить JAR. Затем вставьте полный путь к этому скрипту в текстовом поле [файл запуска](app-service-linux-faq.md#built-in-images) в разделе конфигурации на портале. Сценарий запуска не запускается из каталога, в который он помещен. Поэтому всегда используйте абсолютные пути для ссылок на файлы в скрипте запуска (например, `java -jar /home/myapp/myapp.jar`).
+Если вы развертываете JAR-приложение, оно должно называться *app. jar* , чтобы встроенный образ мог правильно опознать ваше приложение. (Подключаемый модуль Maven выполняет это переименование автоматически.) Если вы не хотите переименовывать JAR-файл в *app. jar*, вы можете отправить сценарий оболочки с помощью команды, чтобы запустить JAR. Затем вставьте полный путь к этому скрипту в текстовое поле [Файл запуска](app-service-linux-faq.md#built-in-images) в разделе конфигурации на портале. Скрипт запуска не выполняется в каталоге, в который он помещен. Поэтому всегда используйте абсолютные пути для создания ссылок на файлы в скрипте запуска (например, `java -jar /home/myapp/myapp.jar`).
 
 ### <a name="turn-on-web-sockets"></a>Включение веб-сокетов
 
@@ -172,7 +172,7 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 ### <a name="adjust-startup-timeout"></a>Настроить время ожидания запуска
 
-Если приложение Java особенно велико, следует увеличить предельное время запуска. Для этого создайте параметр приложения `WEBSITES_CONTAINER_START_TIME_LIMIT` и задайте для него время ожидания в секундах, по истечении которого служба приложений должна ждать. Максимальное значение — `1800` секунд.
+Если приложение Java особенно велико, следует увеличить предельное время запуска. Для этого создайте параметр приложения `WEBSITES_CONTAINER_START_TIME_LIMIT` и задайте для него время ожидания в секундах, по истечении которого служба приложений должна ждать. Максимальное значение — `1800` секунды.
 
 ### <a name="pre-compile-jsp-files"></a>Предварительная компиляция файлов JSP
 
@@ -186,15 +186,15 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 Настройте проверку подлинности приложения в портал Azure с помощью параметра **Проверка подлинности и авторизация** . Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации. Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](../configure-authentication-provider-aad.md?toc=/azure/app-service/containers/toc.json) и связанных статьях о других поставщиках удостоверений. Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](../app-service-authentication-how-to.md?toc=/azure/app-service/containers/toc.json).
 
-#### <a name="tomcat-and-wildfly"></a>Tomcat и Вилдфли
+#### <a name="tomcat"></a>Tomcat
 
-Приложение Tomcat или Вилдфли может получить доступ к утверждениям пользователя непосредственно из сервлета путем приведения объекта Principal к объекту Map. Объект Map будет сопоставлять каждый тип утверждения с коллекцией утверждений для этого типа. В приведенном ниже коде `request` является экземпляром `HttpServletRequest`.
+Приложение Tomcat может получить доступ к утверждениям пользователя непосредственно из сервлета, приведя объект Principal к объекту Map. Объект Map будет сопоставлять каждый тип утверждения с коллекцией утверждений для этого типа. В приведенном ниже коде `request` является экземпляром `HttpServletRequest`.
 
 ```java
 Map<String, Collection<String>> map = (Map<String, Collection<String>>) request.getUserPrincipal();
 ```
 
-Теперь можно проверить объект `Map` для любого конкретного утверждения. Например, следующий фрагмент кода выполняет перебор всех типов заявок и выводит содержимое каждой коллекции.
+Теперь можно проверить `Map` объект на наличие конкретного утверждения. Например, следующий фрагмент кода выполняет перебор всех типов заявок и выводит содержимое каждой коллекции.
 
 ```java
 for (Object key : map.keySet()) {
@@ -218,7 +218,7 @@ public String getScheme()
 public int getServerPort()
 ```
 
-Чтобы отключить эту функцию, создайте параметр приложения с именем `WEBSITE_AUTH_SKIP_PRINCIPAL` со значением `1`. Чтобы отключить все фильтры сервлета, добавленные службой приложений, создайте параметр с именем `WEBSITE_SKIP_FILTERS` со значением `1`.
+Чтобы отключить эту функцию, создайте параметр приложения с именем `WEBSITE_AUTH_SKIP_PRINCIPAL` и значением `1`. Чтобы отключить все фильтры сервлета, добавленные службой приложений, создайте параметр с `WEBSITE_SKIP_FILTERS` именем со значением `1`.
 
 #### <a name="spring-boot"></a>Spring Boot
 
@@ -230,7 +230,7 @@ public int getServerPort()
 
 ### <a name="use-keyvault-references"></a>Использование ссылок KeyVault
 
-[Azure KeyVault](../../key-vault/key-vault-overview.md) обеспечивает централизованное управление секретами с помощью политик доступа и журнала аудита. Вы можете хранить секреты (например, пароли или строки подключения) в KeyVault и обращаться к этим секретам в приложении с помощью переменных среды.
+[Azure KeyVault](../../key-vault/general/overview.md) обеспечивает централизованное управление секретами с помощью политик доступа и журнала аудита. Вы можете хранить секреты (например, пароли или строки подключения) в KeyVault и обращаться к этим секретам в приложении с помощью переменных среды.
 
 Сначала следуйте инструкциям, [чтобы предоставить приложению доступ к Key Vault](../app-service-key-vault-references.md#granting-your-app-access-to-key-vault) и [сделать ссылку KeyVault на секрет в параметре приложения](../app-service-key-vault-references.md#reference-syntax). Можно проверить, что ссылка разрешается в секрет, выполнив печать переменной среды во время удаленного доступа к терминалу службы приложений.
 
@@ -238,7 +238,7 @@ public int getServerPort()
 
 ### <a name="using-the-java-key-store"></a>Использование хранилища ключей Java
 
-По умолчанию все общедоступные или частные сертификаты, [Отправленные в службу приложений Linux](../configure-ssl-certificate.md) , будут загружены в соответствующие хранилища ключей Java при запуске контейнера. После отправки сертификата необходимо перезапустить службу приложений, чтобы она загрузилась в хранилище ключей Java. Общедоступные сертификаты загружаются в хранилище ключей на `$JAVA_HOME/jre/lib/security/cacerts`, а частные сертификаты хранятся в `$JAVA_HOME/lib/security/client.jks`.
+По умолчанию все общедоступные или частные сертификаты, [Отправленные в службу приложений Linux](../configure-ssl-certificate.md) , будут загружены в соответствующие хранилища ключей Java при запуске контейнера. После отправки сертификата необходимо перезапустить службу приложений, чтобы она загрузилась в хранилище ключей Java. Общедоступные сертификаты загружаются в хранилище `$JAVA_HOME/jre/lib/security/cacerts`ключей по адресу, а частные `$JAVA_HOME/lib/security/client.jks`сертификаты хранятся в.
 
 Для шифрования подключения JDBC с сертификатами в хранилище ключей Java может потребоваться дополнительная настройка. Обратитесь к документации по выбранному драйверу JDBC.
 
@@ -250,7 +250,7 @@ public int getServerPort()
 
 #### <a name="initializing-the-java-key-store"></a>Инициализация хранилища ключей Java
 
-Чтобы инициализировать объект `import java.security.KeyStore`, загрузите файл хранилища ключей с паролем. Пароль по умолчанию для обоих хранилищ ключей — "чанжеит".
+Чтобы инициализировать `import java.security.KeyStore` объект, загрузите файл хранилища ключей с паролем. Пароль по умолчанию для обоих хранилищ ключей — "чанжеит".
 
 ```java
 KeyStore keyStore = KeyStore.getInstance("jks");
@@ -266,9 +266,9 @@ keyStore.load(
 
 #### <a name="manually-load-the-key-store"></a>Загрузка хранилища ключей вручную
 
-Сертификаты можно загрузить вручную в хранилище ключей. Создайте параметр приложения `SKIP_JAVA_KEYSTORE_LOAD`со значением `1`, чтобы отключить автоматическую загрузку сертификатов в хранилище ключей службой приложений. Все открытые сертификаты, отправленные в службу приложений через портал Azure, хранятся в `/var/ssl/certs/`. Частные сертификаты хранятся в разделе `/var/ssl/private/`.
+Сертификаты можно загрузить вручную в хранилище ключей. Создайте параметр `SKIP_JAVA_KEYSTORE_LOAD`приложения со значением, `1` чтобы отключить автоматическую загрузку сертификатов в хранилище ключей службой приложений. Все открытые сертификаты, отправленные в службу приложений с помощью портал Azure, `/var/ssl/certs/`хранятся в разделе. Частные сертификаты хранятся в `/var/ssl/private/`.
 
-Вы можете взаимодействовать или отлаживать инструмент для работы с ключами Java, [открыв SSH-подключение](app-service-linux-ssh-support.md) к службе приложений и выполнив команду `keytool`. Список команд см. в [документации по основным средствам](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) . Дополнительные сведения об API хранилища ключей см. в [официальной документации](https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html).
+Вы можете взаимодействовать или отлаживать инструмент для работы с ключами Java, [открыв SSH-подключение](app-service-linux-ssh-support.md) к службе приложений `keytool`и выполнив команду. Список команд см. в [документации по основным средствам](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html) . Дополнительные сведения об API хранилища ключей см. в [официальной документации](https://docs.oracle.com/javase/8/docs/api/java/security/KeyStore.html).
 
 ## <a name="configure-apm-platforms"></a>Настройка платформ APM
 
@@ -285,7 +285,6 @@ keyStore.load(
 7. На портале Azure перейдите к приложению в службе приложений и создайте параметр приложения.
     - Если приложение использует **Java SE**, создайте переменную среды `JAVA_OPTS` со значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar`.
     - Если вы используете **Tomcat**, создайте переменную среды `CATALINA_OPTS` со значением `-javaagent:/home/site/wwwroot/apm/newrelic/newrelic.jar`.
-    - Если вы используете **вилдфли**, ознакомьтесь с новой документацией Relic [здесь](https://docs.newrelic.com/docs/agents/java-agent/additional-installation/wildfly-version-11-installation-java) , чтобы получить рекомендации по установке агента Java и конфигурации JBoss.
 
 ### <a name="configure-appdynamics"></a>Настройка AppDynamics
 
@@ -296,7 +295,6 @@ keyStore.load(
 5. На портале Azure перейдите к приложению в службе приложений и создайте параметр приложения.
     - Если вы используете **Java SE**, создайте переменную среды `JAVA_OPTS` со значением `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>`, где `<app-name>` — имя службы приложений.
     - Если вы используете **Tomcat**, создайте переменную среды `CATALINA_OPTS` со значением `-javaagent:/home/site/wwwroot/apm/appdynamics/javaagent.jar -Dappdynamics.agent.applicationName=<app-name>`, где `<app-name>` — имя службы приложений.
-    - Если вы используете **вилдфли**, см. документацию AppDynamics [здесь](https://docs.appdynamics.com/display/PRO45/JBoss+and+Wildfly+Startup+Settings) , чтобы получить рекомендации по установке агента Java и конфигурации JBoss.
 
 > [!NOTE]
 > Если у вас уже есть переменная среды `JAVA_OPTS` или `CATALINA_OPTS`, добавьте параметр `-javaagent:/...` в конец текущего значения.
@@ -305,9 +303,9 @@ keyStore.load(
 
 ### <a name="starting-jar-apps"></a>Запуск JAR-приложений
 
-По умолчанию служба приложений ждет, что приложение JAR будет называться *app. jar*. Если оно имеет это имя, оно будет запущено автоматически. Для пользователей Maven можно задать имя JAR, включив `<finalName>app</finalName>` в раздел `<build>` файла *POM. XML*. [Вы можете сделать то же самое в Gradle](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName) , задав свойство `archiveFileName`.
+По умолчанию служба приложений ждет, что приложение JAR будет называться *app. jar*. Если оно имеет это имя, оно будет запущено автоматически. Для пользователей Maven можно задать имя JAR, включив `<finalName>app</finalName>` в `<build>` раздел файла *POM. XML*. [Вы можете сделать то же самое в Gradle](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName) , задав `archiveFileName` свойство.
 
-Если вы хотите использовать другое имя для JAR-файла, необходимо также указать [команду запуска](app-service-linux-faq.md#built-in-images) , которая ВЫПОЛНЯЕТ файл JAR. Например, `java -jar my-jar-app.jar`. Можно задать значение для команды запуска на портале, в разделе Конфигурация > Общие параметры или с параметром приложения с именем `STARTUP_COMMAND`.
+Если вы хотите использовать другое имя для JAR-файла, необходимо также указать [команду запуска](app-service-linux-faq.md#built-in-images) , которая ВЫПОЛНЯЕТ файл JAR. Например, `java -jar my-jar-app.jar`. Можно задать значение для команды запуска на портале, в разделе Конфигурация > общие параметры или с параметром приложения с именем `STARTUP_COMMAND`.
 
 ### <a name="server-port"></a>Порт сервера
 
@@ -330,9 +328,9 @@ keyStore.load(
 |------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
 | PostgreSQL | `org.postgresql.Driver`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
 | MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
-| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+| SQL Server | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#download)                                                           |
 
-Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную среды `CATALINA_OPTS`, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
+Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или API сохраняемости Java (JPA), сначала настройте переменную `CATALINA_OPTS` среды, которая считывается в Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
 ```xml
 <appSettings>
@@ -343,7 +341,7 @@ keyStore.load(
 </appSettings>
 ```
 
-Или задайте переменные среды на странице Параметры **конфигурации** > **приложения** в портал Azure.
+Или задайте переменные среды на странице**Параметры приложения** **конфигурации** > в портал Azure.
 
 Затем определите, должен ли источник данных быть доступным для одного приложения или для всех приложений, работающих в сервлете Tomcat.
 
@@ -351,7 +349,7 @@ keyStore.load(
 
 1. Создайте файл *context. XML* в каталоге *META-INF или* проекте. Создайте *файл META-INF или* каталог, если он не существует.
 
-2. В *context. XML*добавьте элемент `Context`, чтобы связать источник данных с адресом JNDI. Замените заполнитель `driverClassName` именем класса драйвера из приведенной выше таблицы.
+2. В *context. XML*добавьте `Context` элемент, чтобы связать источник данных с адресом JNDI. Замените заполнитель `driverClassName` именем класса драйвера из приведенной выше таблицы.
 
     ```xml
     <Context>
@@ -377,9 +375,9 @@ keyStore.load(
 
 #### <a name="shared-server-level-resources"></a>Общие ресурсы уровня сервера
 
-Для добавления общего источника данных на уровне сервера потребуется изменить файл Server. XML Tomcat. Сначала отправьте [сценарий запуска](app-service-linux-faq.md#built-in-images) и задайте путь к скрипту в параметре запуска **Configuration** > **Startup**. Скрипт запуска можно загрузить с помощью [FTP](../deploy-ftp.md).
+Для добавления общего источника данных на уровне сервера потребуется изменить файл Server. XML Tomcat. Сначала отправьте [сценарий запуска](app-service-linux-faq.md#built-in-images) и задайте путь к скрипту в**команде запуска** **конфигурации** > . Скрипт запуска можно загрузить с помощью [FTP](../deploy-ftp.md).
 
-Сценарий запуска [преобразует XSL-преобразование](https://www.w3schools.com/xml/xsl_intro.asp) в файл Server. XML и выводит полученный XML-файл в `/usr/local/tomcat/conf/server.xml`. Сценарий запуска должен установить либксслт через apk. Файл XSL и скрипт запуска можно отправить через FTP. Ниже приведен пример скрипта запуска.
+Сценарий запуска [преобразует XSL-преобразование](https://www.w3schools.com/xml/xsl_intro.asp) в файл Server. XML и выводит результирующий XML-файл в `/usr/local/tomcat/conf/server.xml`. Сценарий запуска должен установить либксслт через apk. Файл XSL и скрипт запуска можно отправить через FTP. Ниже приведен пример скрипта запуска.
 
 ```sh
 # Install libxslt. Also copy the transform file to /home/tomcat/conf/
@@ -491,522 +489,15 @@ xsltproc --output /home/tomcat/conf/server.xml /home/tomcat/conf/transform.xsl 
 
 Дополнительные сведения по этому вопросу см. в [документации по доступу к данным](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-data-access.html) и [внешним конфигурациям](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html) .
 
-## <a name="configure-java-ee-wildfly"></a>Настройка Java EE (Вилдфли)
-
-> [!NOTE]
-> Java Enterprise Edition в службе приложений Linux в настоящее время находится на этапе предварительной версии. Этот стек **не** рекомендуется для работы в рабочей среде.
-
-Служба приложений Azure в Linux позволяет разработчикам Java создавать, развертывать и масштабировать приложения Java Enterprise (Java EE) в полностью управляемой службе на основе Linux.  Базовая среда выполнения Java Enterprise — это сервер приложений [вилдфли](https://wildfly.org/) с открытым исходным кодом.
-
-В этом разделе содержатся следующие подразделы:
-
-- [Масштабирование с помощью службы приложений](#scale-with-app-service)
-- [Настройка конфигурации сервера приложений](#customize-application-server-configuration)
-- [Установка модулей и зависимостей](#install-modules-and-dependencies)
-- [Настройка источников данных](#configure-data-sources)
-- [Использование служебной шины в качестве брокера сообщений](#use-service-bus-as-a-message-broker)
-
-### <a name="scale-with-app-service"></a>Масштабирование с помощью Службы приложений
-
-Сервер приложений WildFly работает в Службе приложений на платформе Linux в автономном режиме, а не в конфигурации домена. При масштабировании плана службы приложений каждый экземпляр WildFly настраивается как отдельный сервер.
-
-Вы можете выполнять вертикальное или горизонтальное масштабирование своего приложения, придерживаясь [правил масштабирования](../../monitoring-and-diagnostics/monitoring-autoscale-get-started.md) и [увеличивая число экземпляров](../manage-scale-up.md?toc=/azure/app-service/containers/toc.json).
-
-### <a name="customize-application-server-configuration"></a>Настройка параметров сервера приложений
-
-Экземпляры веб-приложения не имеют состояния, поэтому каждый новый экземпляр должен быть настроен при запуске для поддержки конфигурации Вилдфли, необходимой для приложения.
-Вы можете написать скрипт запуска Bash для вызова интерфейса командной строки WildFly и выполнения таких действий:
-
-- настройка источников данных;
-- настройка поставщиков службы обмена сообщениями;
-- Добавьте другие модули и зависимости в конфигурацию сервера Вилдфли.
-
-Сценарий выполняется, когда Вилдфли работает, но перед запуском приложения. Скрипт должен использовать интерфейс [командной строки JBoss](https://docs.jboss.org/author/display/WFLY/Command+Line+Interface) , вызываемый из */ОПТ/жбосс/вилдфли/бин/жбосс-кли.ш* , чтобы настроить сервер приложений с любой конфигурацией или изменениями, необходимыми после запуска сервера.
-
-Не используйте интерактивный режим CLI для настройки Вилдфли. Вместо этого можно передать скрипт с командами в интерфейс командной строки JBoss с помощью команды `--file`, например:
-
-```bash
-/opt/jboss/wildfly/bin/jboss-cli.sh -c --file=/path/to/your/jboss_commands.cli
-```
-
-Используйте FTP для передачи скрипта запуска в расположение в экземпляре службы приложений в каталоге */Home* , например */Хоме/Сите/деплойментс/тулс*. Дополнительные сведения см. в статье [развертывание приложения в службе приложений Azure с помощью FTP/S](https://docs.microsoft.com/azure/app-service/deploy-ftp).
-
-Задайте в поле **скрипт запуска** в портал Azure расположение сценария оболочки запуска, например */Хоме/Сите/деплойментс/тулс/йоур-стартуп-скрипт.ш*.
-
-Укажите [Параметры приложения](../configure-common.md?toc=/azure/app-service/containers/toc.json#configure-app-settings) в конфигурации приложения, чтобы передать переменные среды для использования в скрипте. В параметрах приложения хранятся строки подключения и другие секретные данные, необходимые для настройки приложения из системы управления версиями.
-
-### <a name="install-modules-and-dependencies"></a>Установка модулей и зависимостей
-
-Чтобы установить модули и их зависимости в подкаталог Вилдфли через интерфейс командной строки JBoss, необходимо создать следующие файлы в своем собственном каталоге. Для некоторых модулей и зависимостей может понадобиться дополнительная настройка (например, JNDI или других API). Следующий список включает минимальный набор параметров для настройки зависимостей, применимый в большинстве случаев.
-
-- [Дескриптор модуля XML](https://jboss-modules.github.io/jboss-modules/manual/#descriptors). Этот XML-файл определяет имя, атрибуты и зависимости вашего модуля. Этот [пример файла module.xml](https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6/html/administration_and_configuration_guide/example_postgresql_xa_datasource) определяет модуль Postgres, зависимость JDBC (файл с расширением .jar) и другие требуемые зависимости модуля.
-- Все необходимые зависимости для вашего модуля (файлы с расширением .jar).
-- Скрипт с командами интерфейса командной строки JBoss CLI для настройки нового модуля. Этот файл будет содержать команды для выполнения в интерфейсе командной строки JBoss, благодаря которым сервер сможет использовать зависимости. См. [документацию по командам для добавления модулей, источников данных и поставщиков службы обмена сообщениями ](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/management_cli_guide/#how_to_cli).
-- Скрипт запуска Bash для вызова интерфейса командной строки JBoss и выполнения скрипта из предыдущего шага. Этот файл будет выполняться при перезапуске экземпляра службы приложений или при подготовке новых экземпляров во время горизонтального масштабирования. Этот сценарий запуска позволяет выполнять любые другие настройки приложения, так как команды JBoss передаются в интерфейс командной строки JBoss. Как минимум, этот файл можно использовать как отдельную команду для передачи соответствующего скрипта JBoss в интерфейс командной строки JBoss:
-
-```bash
-/opt/jboss/wildfly/bin/jboss-cli.sh -c --file=/path/to/your/jboss_commands.cli
-```
-
-После получения файлов и содержимого для модуля выполните следующие действия, чтобы добавить модуль на сервер приложений Вилдфли.
-
-1. Используйте FTP для передачи файлов в расположение в экземпляре службы приложений в каталоге */Home* , например */Хоме/Сите/деплойментс/тулс*. Дополнительные сведения см. в статье [развертывание приложения в службе приложений Azure с помощью FTP/S](../deploy-ftp.md).
-2. На странице **настройка** > **Общие параметры** портал Azure задайте в поле **сценарий запуска** расположение сценария оболочки запуска, например */Хоме/Сите/деплойментс/тулс/стартуп.ш*.
-3. Перезапустите экземпляр службы приложений, нажав кнопку **перезапустить** в разделе **Обзор** портала или с помощью Azure CLI.
-
-### <a name="configure-data-sources"></a>Настройка источников данных
-
-Чтобы настроить Вилдфли/JBoss для доступа к источнику данных, используйте общий процесс, описанный выше в разделе "Установка модулей и зависимостей". В следующем разделе приведены подробные сведения об этом процессе для источников данных PostgreSQL, MySQL и SQL Server.
-
-В этом разделе предполагается, что у вас уже есть приложение, экземпляр службы приложений и экземпляр службы базы данных Azure. Приведенные ниже инструкции относятся к имени службы приложений, ее группе ресурсов и сведениям о подключении к базе данных. Эти сведения можно найти на портал Azure.
-
-Если вы предпочитаете весь процесс с начала работы с примером приложения, см. раздел [учебник. Создание веб-приложения Java EE и postgres в Azure](tutorial-java-enterprise-postgresql-app.md).
-
-Следующие шаги описывают требования к подключению существующей службы приложений и базы данных.
-
-1. Скачайте драйвер JDBC для [PostgreSQL](https://jdbc.postgresql.org/download.html), [MySQL](https://dev.mysql.com/downloads/connector/j/)или [SQL Server](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server). Распакуйте скачанный архив, чтобы получить JAR-файл драйвера.
-
-2. Создайте файл с именем, например *Module. XML* , и добавьте следующую разметку. Замените заполнитель `<module name>` (включая угловые скобки) `org.postgres` для PostgreSQL, `com.mysql` для MySQL или `com.microsoft` для SQL Server. Замените `<JDBC .jar file path>` именем JAR-файла из предыдущего шага, включая полный путь к расположению, в которое будет размещен файл в экземпляре службы приложений. Это может быть любое расположение в каталоге */Home* .
-
-    ```xml
-    <?xml version="1.0" ?>
-    <module xmlns="urn:jboss:module:1.1" name="<module name>">
-        <resources>
-           <resource-root path="<JDBC .jar file path>" />
-        </resources>
-        <dependencies>
-            <module name="javax.api"/>
-            <module name="javax.transaction.api"/>
-        </dependencies>
-    </module>
-    ```
-
-3. Создайте файл с именем, например *датасаурце-коммандс. CLI* , и добавьте следующий код. Замените `<JDBC .jar file path>` значением, использованным на предыдущем шаге. Замените `<module file path>` именем файла и путем службы приложений из предыдущего шага, например */Хоме/модуле.ксмл*.
-
-    **PostgreSQL**
-
-    ```console
-    module add --name=org.postgres --resources=<JDBC .jar file path> --module-xml=<module file path>
-
-    /subsystem=datasources/jdbc-driver=postgres:add(driver-name=postgres,driver-module-name=org.postgres,driver-class-name=org.postgresql.Driver,driver-xa-datasource-class-name=org.postgresql.xa.PGXADataSource)
-
-    data-source add --name=postgresDS --driver-name=postgres --jndi-name=java:jboss/datasources/postgresDS --connection-url=$DATABASE_CONNECTION_URL --user-name=$DATABASE_SERVER_ADMIN_FULL_NAME --password=$DATABASE_SERVER_ADMIN_PASSWORD --use-ccm=true --max-pool-size=5 --blocking-timeout-wait-millis=5000 --enabled=true --driver-class=org.postgresql.Driver --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter --jta=true --use-java-context=true --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker
-
-    reload --use-current-server-config=true
-    ```
-
-    **MySQL**
-
-    ```console
-    module add --name=com.mysql --resources=<JDBC .jar file path> --module-xml=<module file path>
-
-    /subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=com.mysql,driver-class-name=com.mysql.cj.jdbc.Driver)
-
-    data-source add --name=mysqlDS --jndi-name=java:jboss/datasources/mysqlDS --connection-url=$DATABASE_CONNECTION_URL --driver-name=mysql --user-name=$DATABASE_SERVER_ADMIN_FULL_NAME --password=$DATABASE_SERVER_ADMIN_PASSWORD --use-ccm=true --max-pool-size=5 --blocking-timeout-wait-millis=5000 --enabled=true --driver-class=com.mysql.cj.jdbc.Driver --jta=true --use-java-context=true --exception-sorter-class-name=com.mysql.cj.jdbc.integration.jboss.ExtendedMysqlExceptionSorter
-
-    reload --use-current-server-config=true
-    ```
-
-    **SQL Server**
-
-    ```console
-    module add --name=com.microsoft --resources=<JDBC .jar file path> --module-xml=<module file path>
-
-    /subsystem=datasources/jdbc-driver=sqlserver:add(driver-name=sqlserver,driver-module-name=com.microsoft,driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver,driver-datasource-class-name=com.microsoft.sqlserver.jdbc.SQLServerDataSource)
-
-    data-source add --name=sqlDS --jndi-name=java:jboss/datasources/sqlDS --driver-name=sqlserver --connection-url=$DATABASE_CONNECTION_URL --validate-on-match=true --background-validation=false --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLExceptionSorter
-
-    reload --use-current-server-config=true
-    ```
-
-    Этот файл запускается сценарием запуска, описанным на следующем шаге. Он устанавливает драйвер JDBC в качестве модуля Вилдфли, создает соответствующий источник данных Вилдфли и перезагружает сервер, чтобы убедиться, что изменения вступят в силу.
-
-4. Создайте файл с именем, например *Startup.sh* , и добавьте следующий код. Замените `<JBoss CLI script>` именем файла, созданного на предыдущем шаге. Не забудьте указать полный путь к расположению, в которое будет размещен файл в экземпляре службы приложений, например */Хоме/датасаурце-коммандс.кли*.
-
-    ```bash
-    #!/usr/bin/env bash
-    /opt/jboss/wildfly/bin/jboss-cli.sh -c --file=<JBoss CLI script>
-    ```
-
-5. Используйте протокол FTP для передачи JAR-файла JDBC, файла XML модуля, скрипта CLI JBoss и скрипта запуска для экземпляра службы приложений. Вставьте эти файлы в расположение, указанное на предыдущих шагах, например */Home*. Дополнительные сведения о FTP см. в статье [развертывание приложения в службе приложений Azure с помощью FTP/S](https://docs.microsoft.com/azure/app-service/deploy-ftp).
-
-6. Используйте Azure CLI, чтобы добавить параметры в службу приложений, которые содержат сведения о подключении к базе данных. Замените `<resource group>` и `<webapp name>` значениями, используемыми службой приложений. Замените `<database server name>`, `<database name>`, `<admin name>`и `<admin password>` сведениями о подключении к базе данных. Вы можете получить сведения о службе приложений и базе данных из портал Azure.
-
-    **PostgreSQL:**
-
-    ```bash
-    az webapp config appsettings set \
-        --resource-group <resource group> \
-        --name <webapp name> \
-        --settings \
-            DATABASE_CONNECTION_URL=jdbc:postgresql://<database server name>:5432/<database name>?ssl=true \
-            DATABASE_SERVER_ADMIN_FULL_NAME=<admin name> \
-            DATABASE_SERVER_ADMIN_PASSWORD=<admin password>
-    ```
-
-    **MySQL**
-
-    ```bash
-    az webapp config appsettings set \
-        --resource-group <resource group> \
-        --name <webapp name> \
-        --settings \
-            DATABASE_CONNECTION_URL=jdbc:mysql://<database server name>:3306/<database name>?ssl=true\&useLegacyDatetimeCode=false\&serverTimezone=GMT \
-            DATABASE_SERVER_ADMIN_FULL_NAME=<admin name> \
-            DATABASE_SERVER_ADMIN_PASSWORD=<admin password>
-    ```
-
-    **SQL Server:**
-
-    ```bash
-    az webapp config appsettings set \
-        --resource-group <resource group> \
-        --name <webapp name> \
-        --settings \
-            DATABASE_CONNECTION_URL=jdbc:sqlserver://<database server name>:1433;database=<database name>;user=<admin name>;password=<admin password>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    ```
-
-    Значения DATABASE_CONNECTION_URL различаются для каждого сервера базы данных и отличаются от значений в портал Azure. Приведенные здесь форматы URL-адресов (и в приведенных выше фрагментах) необходимы для использования Вилдфли:
-
-    * **PostgreSQL:** `jdbc:postgresql://<database server name>:5432/<database name>?ssl=true`
-    * **MySQL:** `jdbc:mysql://<database server name>:3306/<database name>?ssl=true\&useLegacyDatetimeCode=false\&serverTimezone=GMT`
-    * **SQL Server:** `jdbc:sqlserver://<database server name>:1433;database=<database name>;user=<admin name>;password=<admin password>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;`
-
-7. В портал Azure перейдите к службе приложений и найдите страницу **Configuration** > **General Settings (общие параметры** ). Задайте в поле **скрипт запуска** имя и расположение сценария запуска, например */Хоме/стартуп.ш*.
-
-При следующем перезапуске службы приложений будет запущен сценарий запуска и выполнены необходимые действия по настройке. Чтобы убедиться, что эта конфигурация выполняется правильно, вы можете получить доступ к службе приложений с помощью SSH, а затем запустить сценарий запуска самостоятельно из командной строки bash. Также можно изучить журналы службы приложений. Дополнительные сведения об этих параметрах см. в разделе [ведение журналов и отладка приложений](#logging-and-debugging-apps).
-
-Далее необходимо обновить конфигурацию Вилдфли для приложения и повторно развернуть его. Выполните указанные ниже действия.
-
-1. Откройте файл *src/Main/Resources/META-INF/сохраняемость. XML* для своего приложения и найдите элемент `<jta-data-source>`. Замените его содержимое, как показано ниже:
-
-    **PostgreSQL**
-
-    ```xml
-    <jta-data-source>java:jboss/datasources/postgresDS</jta-data-source>
-    ```
-
-    **MySQL**
-
-    ```xml
-    <jta-data-source>java:jboss/datasources/mysqlDS</jta-data-source>
-    ```
-
-    **SQL Server**
-
-    ```xml
-    <jta-data-source>java:jboss/datasources/postgresDS</jta-data-source>
-    ```
-
-2. Перестройте и повторно разверните приложение, выполнив следующую команду в командной строке Bash:
-
-    ```bash
-    mvn package -DskipTests azure-webapp:deploy
-    ```
-
-3. Перезапустите экземпляр службы приложений, нажав кнопку **перезапустить** в разделе **Обзор** портал Azure или с помощью Azure CLI.
-
-Теперь ваш экземпляр службы приложений настроен для доступа к базе данных.
-
-Дополнительные сведения о настройке подключения к базе данных с помощью Вилдфли см. в разделе [PostgreSQL](https://developer.jboss.org/blogs/amartin-blog/2012/02/08/how-to-set-up-a-postgresql-jdbc-driver-on-jboss-7), [MySQL](https://docs.jboss.org/jbossas/docs/Installation_And_Getting_Started_Guide/5/html/Using_other_Databases.html#Using_other_Databases-Using_MySQL_as_the_Default_DataSource)или [SQL Server](https://docs.jboss.org/jbossas/docs/Installation_And_Getting_Started_Guide/5/html/Using_other_Databases.html#d0e3898).
-
-### <a name="use-service-bus-as-a-message-broker"></a>Использование служебной шины в качестве брокера сообщений
-
-Вы можете настроить Вилдфли и конфет на основе сообщений, чтобы использовать [служебную шину Azure](/azure/service-bus-messaging) в качестве брокера сообщений. После настройки можно отправлять и получать сообщения с помощью [Apache Qpid](https://qpid.apache.org) в качестве клиента JMS. Существует несколько шагов по настройке адаптера ресурсов JMS (JMS RA), который включит Enterprise Java конфет (Ежбс) для настройки удаленной фабрики и очереди подключений JMS. Эта удаленная настройка будет указывать на служебную шину Azure и использовать поставщик JMS Apache Qpid для протокола AMQP.
-
-Следующие шаги описывают необходимую конфигурацию и код. В этих шагах предполагается, что вы создали экземпляр службы приложений для размещения Bean, пространство имен служебной шины, очередь и раздел с подпиской. Сведения о создании этих ресурсов см. в следующих статьях:
-
-- [Краткое руководство. Создание приложения Java в службе приложений Azure на платформе Linux](/azure/app-service/containers/quickstart-java)
-- [Краткое руководство. Использование Azure CLI для создания очереди служебной шины](/azure/service-bus-messaging/service-bus-quickstart-cli)
-- [Краткое руководство. Использование портал Azure для создания раздела служебной шины и подписок на раздел](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)
-
-1. Откройте терминал Bash и выполните следующие команды, чтобы сохранить сведения о ресурсах Azure в переменных среды. Замените заполнители (включая угловые скобки) указанными значениями.
-
-    | Переменная            | Значение                                                                      |
-    |---------------------|----------------------------------------------------------------------------|
-    | RESOURCEGROUP_NAME  | Имя группы ресурсов, содержащей экземпляр службы приложений.       |
-    | WEBAPP_NAME         | Имя экземпляра службы приложений.                                     |
-    | РЕГИОН              | Имя региона, в котором размещено приложение.                           |
-    | DEFAULT_SBNAMESPACE | Имя пространства имен служебной шины.                                    |
-    | SB_SAS_POLICY       | Имя политики подписанного URL-адрес (SAS) для пространства имен.   |
-    | SB_SAS_KEY          | Первичный или вторичный ключ для политики SAS вашей очереди.                  |
-    | SB_QUEUE            | Имя очереди служебной шины.                                        |
-    | SB_TOPIC            | Имя раздела служебной шины.                                        |
-    | SB_SUBSCRIPTION     | Имя подписки на раздел.                                |
-
-    ```bash
-    RESOURCEGROUP_NAME=<resource group>
-    WEBAPP_NAME=<web app>
-    WEBAPP_PLAN_NAME=${WEBAPP_NAME}-appservice-plan
-    REGION=<region>
-    DEFAULT_SBNAMESPACE=<namespace>
-    SB_SAS_POLICY=<SAS policy>
-    SB_SAS_KEY=<SAS key>
-    SB_QUEUE=<queue>
-    SB_TOPIC=<topic>
-    SB_SUBSCRIPTION=<subscription>
-    PROVIDER_URL=amqps://${DEFAULT_SBNAMESPACE}.servicebus.windows.net?amqp.idleTimeout=120000
-    ```
-
-    Эти данные можно найти на портале Azure. Для политики и ключа SAS обязательно используйте значения для пространства имен, чтобы ваше приложение могли получить доступ как к очереди, так и к подписке раздела. Чтобы найти эти значения на портал Azure, перейдите к ресурсу пространства имен, выберите **политики общего доступа**, а затем выберите политику **RootManageSharedAccessKey** .
-
-2. Скачайте [поставщик JMS Apache Qpid](https://qpid.apache.org/components/jms/index.html). Нахождение JAR-файлов в каталогах *lib* и *lib/Optional* .
-
-3. Создайте файл с именем *Module. XML* и добавьте следующую разметку. Замените каждый экземпляр заполнителя `<version>` (включая угловые скобки) на правильную версию для каждого JAR-файла, чтобы имена файлов совпадали с файлами, извлеченными на шаге 1.
-
-    ```xml
-    <module xmlns="urn:jboss:module:1.1" name="org.jboss.genericjms.provider">
-        <resources>
-            <resource-root path="proton-j-<version>.jar"/>
-            <resource-root path="qpid-jms-client-<version>.jar"/>
-            <resource-root path="slf4j-log4j12-<version>.jar"/>
-            <resource-root path="slf4j-api-<version>.jar"/>
-            <resource-root path="log4j-<version>.jar"/>
-            <resource-root path="netty-buffer-<version>.jar" />
-            <resource-root path="netty-codec-<version>.jar" />
-            <resource-root path="netty-codec-http-<version>.jar" />
-            <resource-root path="netty-common-<version>.jar" />
-            <resource-root path="netty-handler-<version>.jar" />
-            <resource-root path="netty-resolver-<version>.jar" />
-            <resource-root path="netty-transport-<version>.jar" />
-            <resource-root path="netty-transport-native-epoll-<version>-linux-x86_64.jar" />
-            <resource-root path="netty-transport-native-kqueue-<version>-osx-x86_64.jar" />
-            <resource-root path="netty-transport-native-unix-common-<version>.jar" />
-            <resource-root path="qpid-jms-discovery-<version>jar" />
-        </resources>
-        <dependencies>
-            <module name="javax.api"/>
-            <module name="javax.jms.api"/>
-        </dependencies>
-    </module>
-    ```
-
-4. Создайте файл с именем *Startup.sh* и добавьте следующий код.
-
-    ```bash
-    echo "Generating jndi.properties file in /home/site/deployments/tools directory"
-    echo "connectionfactory.mymdbconnection=amqps://${DEFAULT_SBNAMESPACE}.servicebus.windows.net?amqp.idleTimeout=120000&jms.username=${SB_SAS_POLICY}&jms.password=${SB_SAS_KEY}" > /home/site/deployments/tools/jndi.properties
-    echo "queue.mymdbqueue=${SB_QUEUE}" >> /home/site/deployments/tools/jndi.properties
-    echo "topic.mymdbtopic=${SB_TOPIC}" >> /home/site/deployments/tools/jndi.properties
-    echo "queue.mymdbsubscription=${SB_TOPIC}/Subscriptions/${SB_SUBSCRIPTION}" >> /home/site/deployments/tools/jndi.properties
-    echo "====== contents of /home/site/deployments/tools/jndi.properties ======"
-    cat /home/site/deployments/tools/jndi.properties
-    echo "====== EOF /home/site/deployments/tools/jndi.properties ======"
-    echo "Generating commands.cli file for /home/site/deployments/tools directory"
-    echo "# Start batching commands" > /home/site/deployments/tools/commands.cli
-    echo "batch" >> /home/site/deployments/tools/commands.cli
-    echo "# Configure the ee subsystem to enable MDB annotation property substitution" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=ee:write-attribute(name=annotation-property-replacement,value=true)" >> /home/site/deployments/tools/commands.cli
-    echo "# Define system properties to be used in the substititution" >> /home/site/deployments/tools/commands.cli
-    echo "/system-property=property.mymdb.queue:add(value=java:global/remoteJMS/mymdbqueue})" >> /home/site/deployments/tools/commands.cli
-    echo "/system-property=property.mymdb.topic:add(value=java:global/remoteJMS/mymdbsubscription)" >> /home/site/deployments/tools/commands.cli
-    echo "/system-property=property.connection.factory:add(value=java:global/remoteJMS/mymdbconnection)" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=ee:list-add(name=global-modules, value={\"name\" => \"org.jboss.genericjms.provider\", \"slot\" =>\"main\"}" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=naming/binding=\"java:global/remoteJMS\":add(binding-type=external-context,module=org.jboss.genericjms.provider,class=javax.naming.InitialContext,environment=[java.naming.factory.initial=org.apache.qpid.jms.jndi.JmsInitialContextFactory,org.jboss.as.naming.lookup.by.string=true,java.naming.provider.url=/home/site/deployments/tools/jndi.properties])" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=resource-adapters/resource-adapter=generic-ra:add(module=org.jboss.genericjms,transaction-support=XATransaction)" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=resource-adapters/resource-adapter=generic-ra/connection-definitions=sbf-cd:add(class-name=org.jboss.resource.adapter.jms.JmsManagedConnectionFactory, jndi-name=java:/jms/mymdbconnection)" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=resource-adapters/resource-adapter=generic-ra/connection-definitions=sbf-cd/config-properties=ConnectionFactory:add(value=mymdbconnection)" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=resource-adapters/resource-adapter=generic-ra/connection-definitions=sbf-cd/config-properties=JndiParameters:add(value=\"java.naming.factory.initial=org.apache.qpid.jms.jndi.JmsInitialContextFactory;java.naming.provider.url=/home/site/deployments/tools/jndi.properties\")" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=resource-adapters/resource-adapter=generic-ra/connection-definitions=sbf-cd:write-attribute(name=security-application,value=true)" >> /home/site/deployments/tools/commands.cli
-    echo "/subsystem=ejb3:write-attribute(name=default-resource-adapter-name, value=generic-ra)" >> /home/site/deployments/tools/commands.cli
-    echo "# Run the batch commands" >> /home/site/deployments/tools/commands.cli
-    echo "run-batch" >> /home/site/deployments/tools/commands.cli
-    echo "reload" >> /home/site/deployments/tools/commands.cli
-    echo "====== contents of /home/site/deployments/tools/commands.cli ======"
-    cat /home/site/deployments/tools/commands.cli
-    echo "======= EOF /home/site/deployments/tools/commands.cli ========"
-    mkdir /opt/jboss/wildfly/modules/system/layers/base/org/jboss/genericjms/provider
-    mkdir /opt/jboss/wildfly/modules/system/layers/base/org/jboss/genericjms/provider/main
-    cp  /home/site/deployments/tools/*.jar /opt/jboss/wildfly/modules/system/layers/base/org/jboss/genericjms/provider/main/
-    cp /home/site/deployments/tools/module.xml /opt/jboss/wildfly/modules/system/layers/base/org/jboss/genericjms/provider/main/
-    cp /home/site/deployments/tools/jndi.properties /opt/jboss/wildfly/standalone/configuration/
-    /opt/jboss/wildfly/bin/jboss-cli.sh -c --file=/home/site/deployments/tools/commands.cli
-    echo "Startup Run done"
-    ```
-
-    Ваш экземпляр службы приложений будет запускать этот скрипт при каждом запуске, предоставляя дополнительную конфигурацию, необходимую для Вилдфли. Этот скрипт копирует зависимости приложения в необходимые расположения. Он также создает файлы *JNDI. Properties* и *Commands. CLI* , которые используют переменные среды, показанные на шаге 1. Эти значения также передаются в экземпляр службы приложений на более позднем этапе.
-
-    Файл *Commands. CLI* — это [вилдфли сценарий CLI](https://docs.jboss.org/author/display/WFLY/Command+Line+Interface) , запускаемый сценарием запуска. Команды в этом файле настраивают JMS и JNDI, используя файл *JNDI. Properties* . Эти команды создают подключение между приложением и вашей очередью или разделом служебной шины.
-
-5. Используйте протокол FTP для передачи JAR-файлов, файла *Module. XML* и файла *Startup.sh* в экземпляр службы приложений. Вставьте *Startup.sh* в каталог */Home* и вставьте другие файлы в каталог */Хоме/Сите/деплойментс/тулс* . Обязательно отправьте каждый JAR-файл, указанный в файле *Module. XML* , чтобы обеспечить транзитивное замыкание зависимостей. Дополнительные сведения о FTP см. в статье [развертывание приложения в службе приложений Azure с помощью FTP/S](https://docs.microsoft.com/azure/app-service/deploy-ftp).
-
-6. Обновите реализацию Мессажелистенер, добавив следующие инструкции `import`:
-
-    ```java
-    import javax.ejb.ActivationConfigProperty;
-    import javax.ejb.MessageDriven;
-    import javax.ejb.TransactionAttribute;
-    import javax.ejb.TransactionAttributeType;
-    import javax.ejb.TransactionManagement;
-    import javax.ejb.TransactionManagementType;
-    import javax.jms.JMSException;
-    import javax.jms.Message;
-    import javax.jms.MessageListener;
-    import javax.jms.TextMessage;
-    ```
-
-7. Затем обновите заметки класса прослушивателя, чтобы они соответствовали следующему примеру. Этот класс предоставляет пример реализации, которая регистрирует получение сообщений.
-
-    ```java
-    @TransactionManagement(TransactionManagementType.BEAN)
-    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    @MessageDriven(name = "MyQueueListener", activationConfig = {
-            @ActivationConfigProperty(propertyName = "connectionFactory", propertyValue = "${property.connection.factory}"),
-            @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "${property.mymdb.queue}"),
-            @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
-            @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
-    public class MyQueueListener implements MessageListener {
-
-        private static final Logger LOGGER = Logger.getLogger(TopicListener.class.toString());
-
-        public void onMessage(Message rcvMessage) {
-            TextMessage msg = null;
-            try {
-                if (rcvMessage instanceof TextMessage) {
-                    msg = (TextMessage) rcvMessage;
-                    LOGGER.info("Received Message from topic: " + msg.getText());
-                } else {
-                    LOGGER.warning("Message of wrong type: " + rcvMessage.getClass().getName());
-                }
-            } catch (JMSException e) {
-                LOGGER.warning("Exception on message : " + e.getMessage());
-                throw new RuntimeException(e);
-            }
-        }
-    }
-    ```
-
-    Значения `connectionFactory` и `destinationLookup` ссылаются на значения системных свойств Вилдфли, настроенные с помощью скрипта *Startup.sh* . Значение `destinationType` — `javax.jms.Queue`, указывающее, что вы подключаетесь к экземпляру очереди служебной шины. Это значение должно быть `javax.jms.Topic` при подключении к разделу служебной шины, как показано ниже:
-
-    ```java
-    @TransactionManagement(TransactionManagementType.BEAN)
-    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    @MessageDriven(name = "MyTopicListener", activationConfig = {
-            @ActivationConfigProperty(propertyName = "connectionFactory", propertyValue = "${property.connection.factory}"),
-            @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "${property.mymdb.topic}"),
-            @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic"),
-            @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
-        public class MyTopicListener implements MessageListener {
-        // ...
-    }
-    ```
-
-8. Обновите раздел `dependencies` в файле *POM. XML* , чтобы добавить следующие зависимости:
-
-    ```xml
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.qpid</groupId>
-            <artifactId>qpid-jms-client</artifactId>
-            <version>0.40.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.qpid</groupId>
-            <artifactId>proton-j</artifactId>
-            <version>0.31.0</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.ejb</groupId>
-            <artifactId>jboss-ejb-api_3.2_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.jms</groupId>
-            <artifactId>jboss-jms-api_2.0_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.servlet</groupId>
-            <artifactId>jboss-servlet-api_4.0_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.spec.javax.annotation</groupId>
-            <artifactId>jboss-annotations-api_1.3_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-    ```
-
-9. Обновите конфигурацию `azure-webapp-maven-plugin` в файле *POM. XML* , чтобы они ссылались на данные учетной записи служебной шины. При необходимости измените `1.7.0` на текущую версию [подключаемого модуля Maven для Службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
-
-    ```xml
-    <plugin>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.7.0</version>
-        <configuration>
-
-            <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
-            <appServicePlanName>${WEBAPP_PLAN_NAME}</appServicePlanName>
-            <appName>${WEBAPP_NAME}</appName>
-            <region>${REGION}</region>
-
-            <!-- Java Runtime Stack for Web App on Linux-->
-            <linuxRuntime>wildfly 14-jre8</linuxRuntime>
-
-            <appSettings>
-                <property>
-                    <name>DEFAULT_SBNAMESPACE</name>
-                    <value>${DEFAULT_SBNAMESPACE}</value>
-                </property>
-                <property>
-                    <name>SB_SAS_POLICY</name>
-                    <value>${SB_SAS_POLICY}</value>
-                </property>
-                <property>
-                    <name>SB_SAS_KEY</name>
-                    <value>${SB_SAS_KEY}</value>
-                </property>
-                <property>
-                    <name>PROVIDER_URL</name>
-                    <value>${PROVIDER_URL}</value>
-                </property>
-                <property>
-                    <name>SB_QUEUE</name>
-                    <value>${SB_QUEUE}</value>
-                </property>
-                <property>
-                    <name>SB_TOPIC</name>
-                    <value>${SB_TOPIC}</value>
-                </property>
-                <property>
-                    <name>SB_SUBSCRIPTION</name>
-                    <value>${SB_SUBSCRIPTION}</value>
-                </property>
-            </appSettings>
-        </configuration>
-    </plugin>
-    ```
-
-    Эти параметры настраивают экземпляр службы приложений таким образом, чтобы в нем были установлены те же переменные среды, что и локально. Она использует переменные среды для сохранения данных вашей учетной записи из исходных файлов.
-
-10. Перестройте и повторно разверните приложение.
-
-    ```bash
-    mvn package -DskipTests azure-webapp:deploy
-    ```
-
-Bean, управляемые сообщениями, теперь настроены для использования служебной шины в качестве механизма обмена сообщениями.
-
-При следующем перезапуске службы приложений будет запущен сценарий запуска и выполнены необходимые действия по настройке. Чтобы убедиться, что эта конфигурация выполняется правильно, вы можете получить доступ к службе приложений с помощью SSH, а затем запустить сценарий запуска самостоятельно из командной строки bash. Также можно изучить журналы службы приложений. Дополнительные сведения об этих параметрах см. в разделе [ведение журналов и отладка приложений](#logging-and-debugging-apps).
-
-Пример, с помощью которого можно протестировать эти инструкции, см. в репозитории [Миграция Java — EE-App-to-Azure-2](https://github.com/Azure-Samples/migrate-java-ee-app-to-azure-2) на сайте GitHub и найдите пример `helloworld-mdb-propertysubstitution`.
-
 ## <a name="use-redis-as-a-session-cache-with-tomcat"></a>Использование Redis в качестве кэша сеансов с Tomcat
 
 Вы можете настроить Tomcat для использования внешнего хранилища сеансов, такого как [кэш Azure для Redis](/azure/azure-cache-for-redis/). Это позволяет сохранить состояние сеанса пользователя (например, данные покупательской корзины) при передаче пользователя на другой экземпляр приложения, например при выполнении автоматического масштабирования, перезапуска или отработки отказа.
 
 Чтобы использовать Tomcat с Redis, необходимо настроить приложение для использования реализации [персистентманажер](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html) . Следующие шаги описывают этот процесс с помощью [диспетчера сеансов сводных данных: Redis-Store](https://github.com/pivotalsoftware/session-managers/tree/master/redis-store) в качестве примера.
 
-1. Откройте терминал Bash и используйте `<variable>=<value>`, чтобы задать каждую из следующих переменных среды.
+1. Откройте терминал Bash и используйте `<variable>=<value>` для установки каждой из следующих переменных среды.
 
-    | Переменная                 | Значение                                                                      |
+    | Переменная                 | Применение                                                                      |
     |--------------------------|----------------------------------------------------------------------------|
     | RESOURCEGROUP_NAME       | Имя группы ресурсов, содержащей экземпляр службы приложений.       |
     | WEBAPP_NAME              | Имя экземпляра службы приложений.                                     |
@@ -1068,23 +559,27 @@ Bean, управляемые сообщениями, теперь настрое
 
 7. Перейдите к разделу " **Дополнительные параметры** **" в**экземпляре Redis и установите для параметра **Разрешить доступ только через SSL** . Это позволяет вашему экземпляру службы приложений взаимодействовать с кэшем Redis через инфраструктуру Azure.
 
-8. Обновите конфигурацию `azure-webapp-maven-plugin` в файле *POM. XML* вашего приложения, чтобы они ссылались на сведения об учетной записи Redis. В этом файле используются ранее настроенные переменные среды для сохранения данных учетной записи из исходных файлов.
+8. Обновите `azure-webapp-maven-plugin` конфигурацию в файле *POM. XML* вашего приложения, чтобы они ссылались на сведения об учетной записи Redis. В этом файле используются ранее настроенные переменные среды для сохранения данных учетной записи из исходных файлов.
 
-    При необходимости измените `1.7.0` на текущую версию [подключаемого модуля Maven для Службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+    При необходимости измените `1.9.1` на текущую версию [подключаемого модуля Maven для Службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
     ```xml
     <plugin>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-webapp-maven-plugin</artifactId>
-        <version>1.7.0</version>
-        <configuration>
-
+        <version>1.9.1</version>
+        <configuration>            
             <!-- Web App information -->
+            <schemaVersion>v2</schemaVersion>
             <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
             <appServicePlanName>${WEBAPP_PLAN_NAME}-${REGION}</appServicePlanName>
             <appName>${WEBAPP_NAME}-${REGION}</appName>
-            <region>${REGION}</region>
-            <linuxRuntime>tomcat 9.0-jre8</linuxRuntime>
+            <region>${REGION}</region>            
+            <runtime>
+                <os>linux</os>
+                <javaVersion>jre8</javaVersion>
+                <webContainer>tomcat 9.0</webContainer>
+            </runtime>
 
             <appSettings>
                 <property>
@@ -1150,6 +645,8 @@ Bean, управляемые сообщениями, теперь настрое
 ### <a name="deprecation-and-retirement"></a>Нерекомендуемые версии и прекращение использования
 
 Если планируется прекращение использования какой-либо поддерживаемой среды выполнения Java, то разработчики для Azure, использующие эту среду выполнения, получат соответствующее уведомление по крайней мере за шесть месяцев до прекращения использования.
+
+[!INCLUDE [robots933456](../../../includes/app-service-web-configure-robots933456.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

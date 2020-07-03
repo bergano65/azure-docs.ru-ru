@@ -14,18 +14,18 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: ce56c406c884471c445b25343d5c42f9edcbe4c4
-ms.sourcegitcommit: 98ce5583e376943aaa9773bf8efe0b324a55e58c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73176557"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79249546"
 ---
 # <a name="page-templates-in-azure-api-management"></a>Шаблоны страниц в службе управления API Azure
-Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью синтаксиса [DotLiquid](http://dotliquidmarkup.org/), выбранного редактора, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и указанного набора локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления на странице](api-management-page-controls.md) можно гибко настраивать содержимое страниц по своему усмотрению с использованием этих шаблонов.  
+Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
   
  С помощью шаблонов в этом разделе вы сможете настроить содержимое страниц входа, регистрации и страницы с ошибкой "Страница не найдена" на портале разработчика.  
   
--   [Вход](#SignIn)  
+-   [Войти](#SignIn)  
   
 -   [Регистрация](#SignUp)  
   
@@ -38,7 +38,7 @@ ms.locfileid: "73176557"
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
   
-##  <a name="SignIn"></a> Вход  
+##  <a name="sign-in"></a><a name="SignIn"></a>Войти  
  Шаблон **входа** позволяет настроить страницу входа на портале разработчика.  
   
  ![Страница входа](./media/api-management-page-templates/APIM-Sign-In-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для страницы входа в APIM")  
@@ -99,12 +99,12 @@ ms.locfileid: "73176557"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  Шаблон может использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
--   [basic-signin](api-management-page-controls.md#basic-signin)  
+-   [Базовый — вход](api-management-page-controls.md#basic-signin)  
   
--   [providers](api-management-page-controls.md#providers)  
+-   [поставщик](api-management-page-controls.md#providers)  
   
 ### <a name="data-model"></a>Модель данных  
  Сущность [входа пользователя](api-management-template-data-model-reference.md#UseSignIn).  
@@ -137,7 +137,7 @@ ms.locfileid: "73176557"
 }
 ```  
   
-##  <a name="SignUp"></a> Регистрация  
+##  <a name="sign-up"></a><a name="SignUp"></a>Регистрация  
  Шаблон **регистрации** позволяет настроить страницу регистрации на портале разработчика.  
   
  ![Страница регистрации](./media/api-management-page-templates/APIM-Sign-Up-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика страницы регистрации APIM")  
@@ -158,7 +158,7 @@ ms.locfileid: "73176557"
 </div>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  Шаблон может использовать следующие [элементы управления страницы](api-management-page-controls.md).  
   
 -   [sign-up](api-management-page-controls.md#sign-up)  
@@ -185,7 +185,7 @@ ms.locfileid: "73176557"
 }  
 ```  
   
-##  <a name="PageNotFound"></a> Страница не найдена  
+##  <a name="page-not-found"></a><a name="PageNotFound"></a> Страница не найдена  
  Шаблон страницы с ошибкой **Страница не найдена** позволяет настроить страницу с ошибкой "Страница не найдена" на портале разработчика.  
   
  ![Страница "не найдено"](./media/api-management-page-templates/APIM-Not-Found-Page-Developer-Portal-Templates.png "Шаблоны портала разработчика для APIM не найденных страниц")  
@@ -222,18 +222,18 @@ ms.locfileid: "73176557"
 </p>  
 ```  
   
-### <a name="controls"></a>Управление  
+### <a name="controls"></a>Элементы управления  
  Этот шаблон не может использовать [элементы управления страницы](api-management-page-controls.md).  
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Тип|Описание|  
+|Свойство|Type|Описание|  
 |--------------|----------|-----------------|  
-|referenceCode|string|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|errorCode|string|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|emailBody|string|Текст сообщения электронной почты формируется, если эта страница отобразилась в результате внутренней ошибки.|  
-|requestedUrl|string|URL-адрес, запрашиваемый, если страница не найдена.|  
-|referrerUrl|string|URL-адрес источника ссылки для запрошенного URL-адреса.|  
+|referenceCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|errorCode|строка|Код формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|emailBody|строка|Текст сообщения электронной почты формируется, если эта страница отобразилась в результате внутренней ошибки.|  
+|requestedUrl|строка|URL-адрес, запрашиваемый, если страница не найдена.|  
+|referrerUrl|строка|URL-адрес источника ссылки для запрошенного URL-адреса.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   
@@ -247,5 +247,5 @@ ms.locfileid: "73176557"
 }  
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о работе с шаблонами см. в статье [Настройка портала разработчика в службе управления API Azure с помощью шаблонов](api-management-developer-portal-templates.md).

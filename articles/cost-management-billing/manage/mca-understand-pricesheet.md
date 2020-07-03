@@ -2,21 +2,17 @@
 title: Термины в прейскуранте Клиентского соглашения Майкрософт в Azure
 description: Узнайте, как правильно интерпретировать сведения о потреблении и счетах для клиентов с Клиентским соглашением Майкрософт.
 author: bandersmsft
-manager: amberb
 tags: billing
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 02/10/2020
+ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 46d0f259d30f9864c371f8bd3dd01f593004c808
-ms.sourcegitcommit: f718b98dfe37fc6599d3a2de3d70c168e29d5156
+ms.openlocfilehash: 1e776e351fe723f0fbc5b1d6a8f5593a9fc975b7
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77133573"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "77199625"
 ---
 # <a name="terms-in-your-microsoft-customer-agreement-price-sheet"></a>Условия в прейскуранте Клиентского соглашения Майкрософт
 

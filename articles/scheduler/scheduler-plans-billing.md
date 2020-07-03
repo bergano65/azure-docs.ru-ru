@@ -1,25 +1,26 @@
 ---
-title: Тарифные планы и выставление счетов — планировщик Azure
+title: Планы и выставление счетов
 description: Дополнительные сведения о тарифных планах и выставлении счетов для планировщика Azure
 services: scheduler
 ms.service: scheduler
 author: derek1ee
 ms.author: deli
-ms.reviewer: klam
-ms.assetid: 13a2be8c-dc14-46cc-ab7d-5075bfd4d724
+ms.reviewer: klam, estfan
 ms.topic: article
 ms.date: 08/18/2016
-ms.openlocfilehash: 4b63367ab9686eee66bf3f00dddc2e2efe4cb941
-ms.sourcegitcommit: 29880cf2e4ba9e441f7334c67c7e6a994df21cfe
+ms.openlocfilehash: e821036ff4ddb5a9786bc4f4537bb81539ab2c87
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71300865"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78898474"
 ---
 # <a name="plans-and-billing-for-azure-scheduler"></a>Тарифные планы и выставление счетов для планировщика Azure
 
 > [!IMPORTANT]
-> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее.
+> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
+>
+> Планировщик больше не доступен в портал Azure, но командлеты PowerShell для [REST API](/rest/api/scheduler) и [планировщика Azure](scheduler-powershell-reference.md) в настоящее время остаются доступными, чтобы можно было управлять заданиями и коллекциями заданий.
 
 ## <a name="job-collection-plans"></a>Тарифные планы коллекций заданий
 
@@ -27,7 +28,7 @@ ms.locfileid: "71300865"
 
 | Тарифный план коллекции заданий | Макс. число заданий на коллекцию | Макс. повторяемость | Макс. число коллекций заданий на подписку | Ограничения | 
 |:--- |:--- |:--- |:--- |:--- |
-| **Стандартный** | 50 заданий на коллекцию | Один раз в минуту. Нельзя выполнять задания чаще одного раза в минуту. | Каждая подписка Azure может включать до 100 стандартных коллекций заданий. | Доступ к полному набору функций планировщика | 
+| **Standard Edition** | 50 заданий на коллекцию | Один раз в минуту. Нельзя выполнять задания чаще одного раза в минуту. | Каждая подписка Azure может включать до 100 стандартных коллекций заданий. | Доступ к полному набору функций планировщика | 
 | **P10 Премиум** | 50 заданий на коллекцию | Один раз в минуту. Нельзя выполнять задания чаще одного раза в минуту. | Каждая подписка Azure может включать до 10 000 коллекций заданий в рамках плана P10 "Премиум". Если вам требуется несколько коллекций, <a href="mailto:wapteams@microsoft.com">свяжитесь с нами</a>. | Доступ к полному набору функций планировщика |
 | **P20 Премиум** | 1000 заданий на коллекцию | Один раз в минуту. Нельзя выполнять задания чаще одного раза в минуту. | Каждая подписка Azure может включать до 5000 коллекций заданий P20 "Премиум". Если вам требуется несколько коллекций, <a href="mailto:wapteams@microsoft.com">свяжитесь с нами</a>. | Доступ к полному набору функций планировщика |
 |||||| 
@@ -80,8 +81,7 @@ ms.locfileid: "71300865"
 
   Служба планировщика оплачивается по количеству активных коллекций заданий (стандартных или премиальных).
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Что такое планировщик Azure?](scheduler-intro.md)
 * [Основные понятия, терминология и иерархия сущностей планировщика Azure](scheduler-concepts-terms.md)
 * [Ограничения, значения по умолчанию и коды ошибок планировщика Azure](scheduler-limits-defaults-errors.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с direct | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с direct | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и direct.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
 ms.openlocfilehash: f1e201b5f86311aeaeca4d077140f4dc429a0357
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67104201"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-direct"></a>Руководство по Интеграция Azure Active Directory с direct
+# <a name="tutorial-azure-active-directory-integration-with-direct"></a>Руководство. Интеграция Azure Active Directory с direct
 
 В этом руководстве описано, как интегрировать direct с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением direct обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67104201"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с direct, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка direct с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -121,7 +121,7 @@ ms.locfileid: "67104201"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -195,7 +195,7 @@ ms.locfileid: "67104201"
 
 2. Если вы хотите протестировать в **режиме, инициируемом поставщиком услуг**:
 
-    a. Щелкните элемент **direct** на панели доступа, и вы будете перенаправлены на страницу входа приложения.
+    а. Щелкните элемент **direct** на панели доступа, и вы будете перенаправлены на страницу входа приложения.
 
     b. Введите свой `subdomain` в отображаемом текстовом поле и нажмите клавишу "次へ (Далее)"; вы автоматически войдете в приложение **direct**.
 
@@ -207,5 +207,5 @@ ms.locfileid: "67104201"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -1,24 +1,20 @@
 ---
 title: Мониторинг сайта SharePoint с помощью Application Insights
 description: Начало мониторинга нового приложения с помощью нового ключа инструментирования
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 07/11/2018
-ms.openlocfilehash: 041368d6310aca2183c7acbfe49d57d7e9683765
-ms.sourcegitcommit: 57669c5ae1abdb6bac3b1e816ea822e3dbf5b3e1
+ms.openlocfilehash: 395e8d667985318f4a084428c6fd4c395ee8b956
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2020
-ms.locfileid: "77048345"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77671449"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
 Azure Application Insights позволяет отслеживать доступность, производительность и использование приложений. В этой статье вы узнаете, как настроить эту службу для сайта SharePoint.
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
-На [портале Azure](https://portal.azure.com)создайте новый ресурс Application Insights. Выберите приложение ASP.NET в качестве типа приложения.
+На [портале Azure](https://portal.azure.com) создайте ресурс Application Insights. Выберите приложение ASP.NET в качестве типа приложения.
 
 ![Нажмите «Свойства», выберите ключ и нажмите сочетание клавиш CTRL + C](./media/sharepoint/001.png)
 
@@ -43,7 +39,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 </script>
 ```
 
-Вставьте сценарий непосредственно перед &lt;/ХЕАД&gt; тега каждой страницы, которую нужно отвести. Если у веб-сайта есть эталонная страница, можно разместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
+Вставьте сценарий непосредственно перед тегом &lt;/ХЕАД&gt; каждой страницы, которую требуется отвести от него. Если у веб-сайта есть эталонная страница, можно разместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
 
 Сценарий содержит ключ инструментирования, который направляет данные телеметрии к ресурсу Application Insights.
 
@@ -136,7 +132,7 @@ function onRequestFail(sender, args) {
 
 
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Использование веб-тестов](../../azure-monitor/app/monitor-web-app-availability.md) для мониторинга доступности сайта.
 * [Использование Application Insights](../../azure-monitor/app/app-insights-overview.md) для других типов приложений.
 

@@ -8,10 +8,10 @@ ms.date: 09/01/2019
 ms.author: govindk
 ms.reviewer: sngun
 ms.openlocfilehash: 19ca835ca8211202cd358ac2ec3695675183a372
-ms.sourcegitcommit: 6794fb51b58d2a7eb6475c9456d55eb1267f8d40
+ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "70240768"
 ---
 # <a name="restore-data-from-a-backup-in-azure-cosmos-db"></a>Восстановление данных из резервной копии в Azure Cosmos DB 
@@ -53,7 +53,7 @@ ms.locfileid: "70240768"
 
 Рекомендуем удалить контейнер или базу данных сразу после переноса данных. Если восстановленные базы данных или контейнеры не будут удалены, то затраты на единицы запросов, хранение и исходящий трафик увеличатся.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перенос данных в исходную учетную запись описан в следующих статьях:
 

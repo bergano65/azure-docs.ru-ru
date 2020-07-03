@@ -8,10 +8,10 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: a04867d356aaf2f55dbe900d2e35b42f74206851
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74873273"
 ---
 # <a name="mathematical-functions-azure-cosmos-db"></a>Математические функции (Azure Cosmos DB)  
@@ -30,7 +30,7 @@ ms.locfileid: "74873273"
     [4]
 ```
 
-## <a name="functions"></a>Функции Azure
+## <a name="functions"></a>Функции
 
 Следующие поддерживаемые встроенные математические функции выполняют вычисление, обычно на основе входных аргументов и возвращают числовое выражение.
   
@@ -50,6 +50,6 @@ ms.locfileid: "74873273"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
-- [Определяемые пользователем функции](sql-query-udfs.md)
-- [Статистические функции](sql-query-aggregates.md)
+- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Определенные пользователем функции](sql-query-udfs.md)
+- [Статистические выражения](sql-query-aggregates.md)

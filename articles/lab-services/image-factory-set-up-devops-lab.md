@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 01/24/2020
 ms.author: spelluru
 ms.openlocfilehash: bb67f765684c77ed5f8527226bef578e450579e0
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76758688"
 ---
 # <a name="run-an-image-factory-from-azure-devops"></a>Запуск фабрики образов из Azure DevOps
@@ -44,14 +44,14 @@ Azure DevOps позволяет хранить исходный код, запу
 
 Если у вас уже есть учетная запись DevOps или проект, которые вы хотите использовать, пропустите этот шаг.
 
-Чтобы приступить к работе, создайте бесплатную учетную запись в Azure DevOps. Посетите https://www.visualstudio.com/ и выберите "начало **работы** " в разделе **Azure DevOps** (ранее — VSTS). Необходимо выбрать уникальное имя учетной записи и выбрать управление кодом с помощью Git. После создания этого файла сохраните URL-адрес в командном проекте. Ниже приведен пример URL-адреса: `https://<accountname>.visualstudio.com/MyFirstProject`.
+Чтобы приступить к работе, создайте бесплатную учетную запись в Azure DevOps. Посетите https://www.visualstudio.com/ страницу и выберите "начало **работы** " справа в разделе **Azure DevOps** (ранее — VSTS). Необходимо выбрать уникальное имя учетной записи и выбрать управление кодом с помощью Git. После создания этого файла сохраните URL-адрес в командном проекте. Вот пример URL-адреса: `https://<accountname>.visualstudio.com/MyFirstProject`.
 
 ## <a name="check-in-the-image-factory-to-git"></a>Возврат фабрики изображений в Git
 Все PowerShell, шаблоны и конфигурация для фабрики изображений находятся в [репозитории GitHub общедоступной DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/Scripts/ImageFactory). Самый быстрый способ получить код в новом командном проекте — это импортировать репозиторий. Это извлекается во весь репозиторий DevTest Labs (поэтому вы получите дополнительные документы и примеры).
 
-1. Посетите проект Azure DevOps, созданный на предыдущем шаге (URL-адрес выглядит как **https:\//\<accountname >. VisualStudio. com/мифирстпрожект**).
+1. Посетите проект Azure DevOps, созданный на предыдущем шаге (URL-адрес выглядит как **https:\//\<AccountName>. VisualStudio.com/MyFirstProject**).
 2. Выберите **Импорт репозитория**.
-3. Введите **URL-адрес клона** для репозитория DevTest Labs: `https://github.com/Azure/azure-devtestlab`.
+3. Введите **URL-адрес клона** для репозитория DevTest Labs `https://github.com/Azure/azure-devtestlab`:.
 4. Выберите **Импортировать**.
 
     ![Импорт репозитория Git](./media/set-up-devops-lab/import-git-repo.png)
@@ -66,7 +66,7 @@ Azure DevOps позволяет хранить исходный код, запу
 
 1. Для начала выберите **Настройка сборки** на домашней странице проекта DevOps:
 
-    ![Кнопка настройки сборки](./media/set-up-devops-lab/setup-build-button.png)
+    ![Кнопка установки сборки](./media/set-up-devops-lab/setup-build-button.png)
 2. Укажите **имя** сборки (например, создайте и доставьте образы в DevTest Labs).
 3. Выберите **пустое** определение сборки и нажмите кнопку **Применить** , чтобы создать сборку.
 4. На этом этапе можно выбрать **Размещение** для агента сборки.
@@ -116,7 +116,7 @@ Azure DevOps позволяет хранить исходный код, запу
 3. Выберите **конечную точку службы**.
 4. В качестве **пути к сценарию**выберите **... (многоточие)** справа.
 5. Перейдите к скрипту **макеголденимажевмс. ps1** .
-6. Параметры сценария должны выглядеть следующим образом: `-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -DevTestLabName $(DevTestLabName) -vmSize $(VMSize) -machineUserName $(MachineUserName) -machinePassword (ConvertTo-SecureString -string '$(MachinePassword)' -AsPlainText -Force) -StandardTimeoutMinutes $(StandardTimeoutMinutes)`
+6. Параметры сценария должны выглядеть следующим образом:`-ConfigurationLocation $(System.DefaultWorkingDirectory)$(ConfigurationLocation) -DevTestLabName $(DevTestLabName) -vmSize $(VMSize) -machineUserName $(MachineUserName) -machinePassword (ConvertTo-SecureString -string '$(MachinePassword)' -AsPlainText -Force) -StandardTimeoutMinutes $(StandardTimeoutMinutes)`
 
     ![Завершение определения сборки](./media/set-up-devops-lab/complete-build-definition.png)
 
@@ -126,5 +126,5 @@ Azure DevOps позволяет хранить исходный код, запу
 
 ![Виртуальные машины в лаборатории](./media/set-up-devops-lab/vms-in-lab.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Первый шаг в настройке фабрики образов на основе Azure DevTest Labs завершен. В следующей статье серии вы получаете обобщенные и сохраненные в пользовательских образах виртуальные машины. После этого они будут распространяться на все остальные лабораторные занятия. См. следующую статью серии: [Сохранение пользовательских образов и распространение в несколько лабораторий](image-factory-save-distribute-custom-images.md).

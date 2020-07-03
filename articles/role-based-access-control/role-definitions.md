@@ -1,6 +1,6 @@
 ---
-title: Общие сведения об определениях ролей в RBAC для ресурсов Azure | Документация Майкрософт
-description: Сведения об определениях ролей при управлении доступом на основе ролей (RBAC) для точного управления доступом к ресурсам Azure.
+title: Общие сведения об определениях ролей Azure в Azure RBAC
+description: Узнайте о определениях ролей Azure в контроле доступа на основе ролей Azure (Azure RBAC) для точного управления доступом к ресурсам Azure.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,24 +11,26 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/11/2019
+ms.date: 05/08/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 3ff4b2cb6a59a35dc6da4748a7c7fbb4758a4fcf
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 3dc2834af501d3ecc2ff44c2511916447f27cfae
+ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981000"
+ms.lasthandoff: 05/09/2020
+ms.locfileid: "82996613"
 ---
-# <a name="understand-role-definitions-for-azure-resources"></a>Общие сведения об определениях ролей для ресурсов Azure
+# <a name="understand-azure-role-definitions"></a>Общие сведения о определениях ролей Azure
 
-Чтобы составить представление о роли или создать собственную [пользовательскую роль для ресурсов Azure](custom-roles.md), полезно узнать, как определяются роли. В этой статье подробно описаны определения ролей и приведены примеры.
+Если вы пытаетесь понять, как работает роль Azure, или вы создаете собственную [настраиваемую роль Azure](custom-roles.md), то полезно понимать, как определяются роли. В этой статье подробно описаны определения ролей и приведены примеры.
 
-## <a name="role-definition-structure"></a>Структура определения роли
+## <a name="role-definition"></a>Определение роли
 
-*Определение роли* представляет собой коллекцию разрешений. Иногда оно называется просто *ролью*. В определении роли перечисляются операции, которые можно выполнить, например чтение, запись и удаление. В ней также перечисляются операции, которые нельзя выполнить, или операции, которые относятся к базовым данным. Определение роли имеет следующую структуру:
+*Определение роли* представляет собой коллекцию разрешений. Иногда оно называется просто *ролью*. В определении роли перечисляются операции, которые можно выполнить, например чтение, запись и удаление. Он также может выводить список операций, исключаемых из разрешенных операций или операций, связанных с базовыми данными.
+
+Ниже приведен пример свойств в определении роли при отображении с помощью Azure PowerShell.
 
 ```
 Name
@@ -42,13 +44,43 @@ NotDataActions []
 AssignableScopes []
 ```
 
+Ниже приведен пример свойств в определении роли при отображении с использованием портал Azure, Azure CLI или REST API:
+
+```
+roleName
+name
+type
+description
+actions []
+notActions []
+dataActions []
+notDataActions []
+assignableScopes []
+```
+
+В следующей таблице описано, что означают свойства роли.
+
+| Свойство | Описание |
+| --- | --- |
+| `Name`</br>`roleName` | Отображаемое имя роли. |
+| `Id`</br>`name` | Уникальный идентификатор роли. |
+| `IsCustom`</br>`roleType` | Указывает, является ли эта роль настраиваемой. Задайте для `true` параметра `CustomRole` значение или для пользовательских ролей. Задайте значение `false` или `BuiltInRole` для встроенных ролей. |
+| `Description`</br>`description` | Описание роли. |
+| `Actions`</br>`actions` | Массив строк, описывающий операции управления, которые роль разрешает выполнять. |
+| `NotActions`</br>`notActions` | Массив строк, указывающий операции управления, которые исключаются из разрешенных `Actions`. |
+| `DataActions`</br>`dataActions` | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. |
+| `NotDataActions`</br>`notDataActions` | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `DataActions`. |
+| `AssignableScopes`</br>`assignableScopes` | Массив строк, указывающий области, доступные для назначения роли. |
+
+### <a name="operations-format"></a>Формат операций
+
 Операции указываются с помощью строк в следующем формате:
 
 - `{Company}.{ProviderName}/{resourceType}/{action}`
 
 Часть `{action}` строки операции указывает тип операций, которые можно выполнять с ресурсом того или иного типа. Например, в `{action}` могут содержаться следующие подстроки:
 
-| Подстрока действия    | Description         |
+| Подстрока действия    | Описание         |
 | ------------------- | ------------------- |
 | `*` | Подстановочный знак предоставляет доступ ко всем операциям, которые соответствуют строке. |
 | `read` | Разрешает операции чтения (GET). |
@@ -56,7 +88,11 @@ AssignableScopes []
 | `action` | Включает настраиваемые операции, такие как перезапуск виртуальных машин (POST). |
 | `delete` | Разрешает операции удаления (DELETE). |
 
-Здесь приведено определение роли [Участник](built-in-roles.md#contributor) в формате JSON. Операция подстановочного знака (`*`) в разделе `Actions` указывает, что субъект, которому назначена эта роль, может выполнять все действия или, иными словами, осуществлять полное управление. Сюда входят и действия, определяемые в будущем (по мере добавления новых типов ресурсов в Azure). Операции, указанные в разделе `NotActions`, вычитаются из раздела `Actions`. При использовании роли [Участник](built-in-roles.md#contributor)`NotActions` удаляет для этой роли возможность управлять доступом к ресурсам, а также назначать доступ к ресурсам.
+### <a name="role-definition-example"></a>Пример определения роли
+
+Вот определение роли [участника](built-in-roles.md#contributor) , отображаемое в Azure PowerShell и Azure CLI. Операция подстановочного знака (`*`) в разделе `Actions` указывает, что субъект, которому назначена эта роль, может выполнять все действия или, иными словами, осуществлять полное управление. Сюда входят и действия, определяемые в будущем (по мере добавления новых типов ресурсов в Azure). Операции, указанные в разделе `NotActions`, вычитаются из раздела `Actions`. При использовании роли [Участник](built-in-roles.md#contributor)`NotActions` удаляет для этой роли возможность управлять доступом к ресурсам, а также назначать доступ к ресурсам.
+
+Роль участника, отображаемая в Azure PowerShell:
 
 ```json
 {
@@ -70,13 +106,47 @@ AssignableScopes []
   "NotActions": [
     "Microsoft.Authorization/*/Delete",
     "Microsoft.Authorization/*/Write",
-    "Microsoft.Authorization/elevateAccess/Action"
+    "Microsoft.Authorization/elevateAccess/Action",
+    "Microsoft.Blueprint/blueprintAssignments/write",
+    "Microsoft.Blueprint/blueprintAssignments/delete"
   ],
   "DataActions": [],
   "NotDataActions": [],
   "AssignableScopes": [
     "/"
   ]
+}
+```
+
+Роль участника, отображаемая в Azure CLI:
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Lets you manage everything except access to resources.",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+  "name": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+  "permissions": [
+    {
+      "actions": [
+        "*"
+      ],
+      "notActions": [
+        "Microsoft.Authorization/*/Delete",
+        "Microsoft.Authorization/*/Write",
+        "Microsoft.Authorization/elevateAccess/Action",
+        "Microsoft.Blueprint/blueprintAssignments/write",
+        "Microsoft.Blueprint/blueprintAssignments/delete"
+      ],
+      "dataActions": [],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Contributor",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
@@ -92,13 +162,15 @@ AssignableScopes []
 
 Ранее управление доступом на основе ролей не использовалось для операций с данными. Авторизация для операций с данными отличается в зависимости от поставщиков ресурсов. Одна и та же модель авторизации управления доступом на основе ролей, используемая для операций управления, была расширена для операций с данными.
 
-В структуру определения роли для поддержки операций с данными добавлены новые свойства данных. Операции с данными указаны в свойствах `DataActions` и `NotDataActions`. За счет добавления этих свойств данных, поддерживается разделение управления и данных. Это предотвращает случайный доступ текущих назначений ролей с подстановочными знаками (`*`) к данным. Ниже приведены некоторые операции с данными, которые можно указать в разделах `DataActions` и `NotDataActions`:
+Для поддержки операций с данными новые свойства данных были добавлены в определение роли. Операции с данными указаны в свойствах `DataActions` и `NotDataActions`. За счет добавления этих свойств данных, поддерживается разделение управления и данных. Это предотвращает случайный доступ текущих назначений ролей с подстановочными знаками (`*`) к данным. Ниже приведены некоторые операции с данными, которые можно указать в разделах `DataActions` и `NotDataActions`:
 
 - Считывание списка больших двоичных объектов в контейнере.
 - Запись большого двоичного объекта хранилища в контейнер.
 - Удаление сообщения из очереди.
 
-Ниже приведено определение роли [читателя данных BLOB-объекта хранилища](built-in-roles.md#storage-blob-data-reader) , которое включает операции в свойствах `Actions` и `DataActions`. Эта роль позволяет считывать контейнер больших двоичных объектов, а также базовые данные большого двоичного объекта.
+Ниже приведено определение роли [читателя данных BLOB-объекта хранилища](built-in-roles.md#storage-blob-data-reader) , которое включает операции в `Actions` свойствах и `DataActions` . Эта роль позволяет считывать контейнер больших двоичных объектов, а также базовые данные большого двоичного объекта.
+
+Роль модуля чтения данных BLOB-объекта хранилища, отображаемая в Azure PowerShell:
 
 ```json
 {
@@ -107,7 +179,8 @@ AssignableScopes []
   "IsCustom": false,
   "Description": "Allows for read access to Azure Storage blob containers and data",
   "Actions": [
-    "Microsoft.Storage/storageAccounts/blobServices/containers/read"
+    "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+    "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
   ],
   "NotActions": [],
   "DataActions": [
@@ -117,6 +190,35 @@ AssignableScopes []
   "AssignableScopes": [
     "/"
   ]
+}
+```
+
+Роль модуля чтения данных BLOB-объекта хранилища, отображаемая в Azure CLI:
+
+```json
+{
+  "assignableScopes": [
+    "/"
+  ],
+  "description": "Allows for read access to Azure Storage blob containers and data",
+  "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+  "name": "2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+  "permissions": [
+    {
+      "actions": [
+        "Microsoft.Storage/storageAccounts/blobServices/containers/read",
+        "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
+      ],
+      "notActions": [],
+      "dataActions": [
+        "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read"
+      ],
+      "notDataActions": []
+    }
+  ],
+  "roleName": "Storage Blob Data Reader",
+  "roleType": "BuiltInRole",
+  "type": "Microsoft.Authorization/roleDefinitions"
 }
 ```
 
@@ -137,36 +239,38 @@ AssignableScopes []
 &nbsp;&nbsp;&nbsp;&nbsp;Действия<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`*`
 
-Участник данных BLOB-объекта хранилища
+участник данных BLOB-объектов хранилища;
 
 &nbsp;&nbsp;&nbsp;&nbsp;Действия<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/delete`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/read`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/write`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Действия с данными<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;`Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write`
 
-Так как Алиса имеет действие с подстановочным знаком (`*`) в области действия подписки, его разрешения наследуются, чтобы позволить им выполнять все действия по управлению. Алиса может выполнять чтение, запись и удаление контейнеров. Однако она не может производить операции с данными без выполнения дополнительных шагов. Например, по умолчанию Алиса не может считывать большие двоичные объекты в контейнере. Чтобы выполнять чтение больших двоичных объектов, Алиса должна извлечь ключи доступа к хранилищу и использовать их для получения доступа к большим двоичным объектам.
+Так как Алиса имеет действие с`*`подстановочным знаком () в области действия подписки, его разрешения наследуются, чтобы позволить им выполнять все действия по управлению. Алиса может выполнять чтение, запись и удаление контейнеров. Однако она не может производить операции с данными без выполнения дополнительных шагов. Например, по умолчанию Алиса не может считывать большие двоичные объекты в контейнере. Чтобы выполнять чтение больших двоичных объектов, Алиса должна извлечь ключи доступа к хранилищу и использовать их для получения доступа к большим двоичным объектам.
 
-Разрешения Боба ограничены только `Actions` и `DataActions`, указанными в роли [участник данных BLOB-объекта хранилища](built-in-roles.md#storage-blob-data-contributor) . На основе роли Боб может выполнять операции управления и операции с данными. Например, Боб может читать, записывать и удалять контейнеры в указанной учетной записи хранения, а также выполнять чтение, запись и удаление больших двоичных объектов.
+Разрешения Боба ограничиваются только `Actions` и `DataActions` задаются в роли [участника данных BLOB-объекта хранилища](built-in-roles.md#storage-blob-data-contributor) . На основе роли Боб может выполнять операции управления и операции с данными. Например, Боб может читать, записывать и удалять контейнеры в указанной учетной записи хранения, а также выполнять чтение, запись и удаление больших двоичных объектов.
 
 Дополнительные сведения об управлении и безопасности плоскости данных для хранилища см. в [руководстве по безопасности службы хранилища Azure](../storage/blobs/security-recommendations.md).
 
-### <a name="what-tools-support-using-rbac-for-data-operations"></a>Какие средства поддерживают использование RBAC для операций с данными?
+### <a name="what-tools-support-using-azure-roles-for-data-operations"></a>Какие средства поддерживают использование ролей Azure для операций с данными?
 
 Для просмотра операций с данными и работы с ними необходимо иметь правильные версии средств или пакетов SDK:
 
-| Средство  | Версия  |
+| Инструмент  | Версия  |
 |---------|---------|
 | [Azure PowerShell](/powershell/azure/install-az-ps) | 1.1.0 или более поздней версии |
 | [Azure CLI](/cli/azure/install-azure-cli) | 2.0.30 или более поздней версии |
 | [Azure для .NET](/dotnet/azure/) | 2.8.0-preview или более поздней версии |
-| [Пакет Azure SDK для Go](/azure/go/azure-sdk-go-install) | 15.0.0 или более поздней версии |
+| [Azure SDK для Go](/azure/go/azure-sdk-go-install) | 15.0.0 или более поздней версии |
 | [Azure для Java](/java/azure/) | 1.9.0 или более поздней версии |
 | [Azure для Python](/azure/python/) | 0.40.0 или более поздней версии |
-| [Пакет Azure SDK для Ruby ](https://rubygems.org/gems/azure_sdk) | 0.17.1 или более поздней версии |
+| [Пакет SDK Azure для Ruby](https://rubygems.org/gems/azure_sdk) | 0.17.1 или более поздней версии |
 
 Чтобы просмотреть и использовать операции с данными в REST API, необходимо установить для параметра **api-version** следующую версию или более позднюю:
 
@@ -176,13 +280,14 @@ AssignableScopes []
 
 В разрешении `Actions` описаны операции управления, которые разрешает выполнять роль. Это коллекция строк операций, которые определяют защищенные действия поставщиков ресурсов Azure. Ниже приведены некоторые примеры операций управления, которые можно использовать в `Actions`.
 
-| Строка операции    | Description         |
-| ------------------- | ------------------- |
-| `*/read` | Предоставляет доступ к операциям чтения для всех типов ресурсов всех поставщиков ресурсов Azure.|
-| `Microsoft.Compute/*` | Предоставляет доступ ко всем операциям для всех типов ресурсов в поставщике ресурсов Microsoft.Compute.|
-| `Microsoft.Network/*/read` | Предоставляет доступ к операциям чтения для всех типов ресурсов в поставщике ресурсов Microsoft.Network.|
-| `Microsoft.Compute/virtualMachines/*` | Предоставляет доступ ко всем операциям виртуальных машин и их дочерних типов ресурсов.|
-| `microsoft.web/sites/restart/Action` | Предоставляет доступ к перезапуску веб-приложения.|
+> [!div class="mx-tableFixed"]
+> | Строка операции    | Описание         |
+> | ------------------- | ------------------- |
+> | `*/read` | Предоставляет доступ к операциям чтения для всех типов ресурсов всех поставщиков ресурсов Azure.|
+> | `Microsoft.Compute/*` | Предоставляет доступ ко всем операциям для всех типов ресурсов в поставщике ресурсов Microsoft.Compute.|
+> | `Microsoft.Network/*/read` | Предоставляет доступ к операциям чтения для всех типов ресурсов в поставщике ресурсов Microsoft.Network.|
+> | `Microsoft.Compute/virtualMachines/*` | Предоставляет доступ ко всем операциям виртуальных машин и их дочерних типов ресурсов.|
+> | `microsoft.web/sites/restart/Action` | Предоставляет доступ к перезапуску веб-приложения.|
 
 ## <a name="notactions"></a>NotActions
 
@@ -192,18 +297,19 @@ AssignableScopes []
 > Если пользователю назначена роль, которая исключает определенную операцию в `NotActions`, а также другая роль, которая предоставляет доступ к той же операции, то пользователю будет разрешено выполнять эту операцию. `NotActions` не является запрещающим правилом. Это просто удобный способ создания набора допустимых операций путем исключения некоторых операций.
 >
 
-## <a name="dataactions"></a>Действия с операциями
+## <a name="dataactions"></a>Действия с данными
 
 В разрешении `DataActions` указаны операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. Например, если у пользователя есть доступ на чтение большого двоичного объекта для учетной записи хранения, это позволит считывать большие двоичные объекты в этой учетной записи хранения. Ниже приведены некоторые примеры операций с данными, которые можно использовать в `DataActions`.
 
-| Строка операции    | Description         |
-| ------------------- | ------------------- |
-| `Microsoft.Storage/storageAccounts/ blobServices/containers/blobs/read` | Возвращает большой двоичный объект или список больших двоичных объектов. |
-| `Microsoft.Storage/storageAccounts/ blobServices/containers/blobs/write` | Возвращает результат записи большого двоичного объекта. |
-| `Microsoft.Storage/storageAccounts/ queueServices/queues/messages/read` | Возвращает сообщение. |
-| `Microsoft.Storage/storageAccounts/ queueServices/queues/messages/*` | Возвращает сообщение или результат записи или удаления сообщения. |
+> [!div class="mx-tableFixed"]
+> | Строка операции    | Описание         |
+> | ------------------- | ------------------- |
+> | `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read` | Возвращает большой двоичный объект или список больших двоичных объектов. |
+> | `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write` | Возвращает результат записи большого двоичного объекта. |
+> | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/read` | Возвращает сообщение. |
+> | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/*` | Возвращает сообщение или результат записи или удаления сообщения. |
 
-## <a name="notdataactions"></a>нотдатаактионс
+## <a name="notdataactions"></a>NotDataActions
 
 Разрешение `NotDataActions` указывает операции с данными, которые исключаются из разрешенных `DataActions`. Доступ, предоставляемый роли (набор действующих разрешений), вычисляется путем вычитания операций `NotDataActions` из операций `DataActions`. Каждый поставщик ресурсов предоставляет соответствующий набор API-интерфейсов для выполнения операций с данными.
 
@@ -213,23 +319,24 @@ AssignableScopes []
 
 ## <a name="assignablescopes"></a>AssignableScopes
 
-Свойство `AssignableScopes` указывает области (группы управления, подписки, группы ресурсов или ресурсы), для которых доступно определение этой роли. Роль можно сделать доступной для назначения только в группах управления, подписках или группах ресурсов, которым он необходим. Необходимо использовать по крайней мере одну группу управления, подписку, группу ресурсов или один идентификатор ресурса.
+`AssignableScopes` Свойство определяет области (группы управления, подписки или группы ресурсов), для которых доступно определение этой роли. Роль можно сделать доступной для назначения только в группах управления, подписках или группах ресурсов, которым он необходим. Необходимо использовать по крайней мере одну группу управления, подписку или группу ресурсов.
 
 Для встроенных ролей в качестве `AssignableScopes` задана корневая область (`"/"`). Корневая область указывает, что роль доступна для назначения во всех областях. Примеры допустимых назначаемых областей:
 
-| Роль доступна для назначения | Пример |
-|----------|---------|
-| Одна подписка | `"/subscriptions/{subscriptionId1}"` |
-| Две подписки | `"/subscriptions/{subscriptionId1}", "/subscriptions/{subscriptionId2}"` |
-| Группа сетевых ресурсов | `"/subscriptions/{subscriptionId1}/resourceGroups/Network"` |
-| Одна группа управления | `"/providers/Microsoft.Management/managementGroups/{groupId1}"` |
-| Группа управления и подписка | `"/providers/Microsoft.Management/managementGroups/{groupId1}", /subscriptions/{subscriptionId1}",` |
-| Все области (применимо только к встроенным ролям) | `"/"` |
+> [!div class="mx-tableFixed"]
+> | Роль доступна для назначения | Пример |
+> |----------|---------|
+> | Одна подписка | `"/subscriptions/{subscriptionId1}"` |
+> | Две подписки | `"/subscriptions/{subscriptionId1}", "/subscriptions/{subscriptionId2}"` |
+> | Группа сетевых ресурсов | `"/subscriptions/{subscriptionId1}/resourceGroups/Network"` |
+> | Одна группа управления | `"/providers/Microsoft.Management/managementGroups/{groupId1}"` |
+> | Группа управления и подписка | `"/providers/Microsoft.Management/managementGroups/{groupId1}", /subscriptions/{subscriptionId1}",` |
+> | Все области (применимо только к встроенным ролям) | `"/"` |
 
-Для дополнительных сведений об `AssignableScopes` для пользовательских ролей см. статью [Пользовательские роли в Azure](custom-roles.md).
+Дополнительные сведения о `AssignableScopes` пользовательских ролях см. в статье [пользовательские роли Azure](custom-roles.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Встроенные роли управления доступом на основе ролей в Azure](built-in-roles.md)
-* [Пользовательские роли для ресурсов Azure](custom-roles.md)
-* [Операции поставщиков ресурсов Azure Resource Manager](resource-provider-operations.md)
+* [Встроенные роли Azure](built-in-roles.md)
+* [Пользовательские роли Azure](custom-roles.md)
+* [Операции поставщика ресурсов Azure Resource Manager](resource-provider-operations.md)

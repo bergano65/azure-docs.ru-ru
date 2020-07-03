@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: Включить имя файла
+description: включить файл
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/07/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: f7167cbb26e69941cade01ab8c0b8d9dc633f0d2
-ms.sourcegitcommit: aef6040b1321881a7eb21348b4fd5cd6a5a1e8d8
+ms.openlocfilehash: e2a950037aed2a8ded4d4e55920721285cbfc05c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72168395"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82204475"
 ---
 При работе с пользовательскими политиками IPsec учитывайте следующие требования.
 
@@ -28,9 +28,9 @@ ms.locfileid: "72168395"
 
 | Параметр | Параметры |
 |--- |--- |
-| Шифрование IKE | AES256, AES192, AES128 |
-| Целостность IKE | SHA384, SHA256, SHA1 |
-| Группа DH | DHGroup24, ECP384, ECP256, DHGroup14, DHGroup2048, DHGroup2 |
-| Шифрование IPsec | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128 |
-| Целостность IPsec | GCMASE256, GCMAES192, GCMAES128, SHA256, SHA1 |
-| Группа PFS | PFS24, ECP384, ECP256, PFS2048, PFS2 |
+| Шифрование IKE | GCMAES256, GCMAES128, AES256, AES128 |
+| Целостность IKE | SHA384, SHA256 |
+| Группа DH | ECP384, ECP256, DHGroup24, DHGroup14 |
+| Шифрование IPsec | GCMAES256, GCMAES128, AES256, AES128, нет |
+| Целостность IPsec | GCMAES256, GCMAES128, SHA256 |
+| Группа PFS | ECP384, ECP256, PFS24, PFS14, нет |

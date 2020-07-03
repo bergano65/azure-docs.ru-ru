@@ -1,7 +1,7 @@
 ---
 title: Как выбрать аудиоустройство ввода с помощью пакета SDK для распознавания речи
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как выбрать устройства звукового ввода в речевомC++пакете C#SDK (,, Python, цели-C, Java, JavaScript), получая идентификаторы звуковых устройств, подключенных к системе.
+description: Дополнительные сведения о выборе устройств звукового ввода в пакете SDK для распознавания речи (C++, C#, Python, цели-C, Java, JavaScript) см. в статье идентификаторы звуковых устройств, подключенных к системе.
 services: cognitive-services
 author: chlandsi
 manager: nitinme
@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: chlandsi
 ms.openlocfilehash: 9891cdb59c757035afd17339b052d5587ac99b0c
-ms.sourcegitcommit: 598c5a280a002036b1a76aa6712f79d30110b98d
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "74109973"
 ---
 # <a name="how-to-select-an-audio-input-device-with-the-speech-sdk"></a>Как выбрать устройство ввода звука с помощью пакета SDK для распознавания речи
@@ -175,7 +175,7 @@ namespace ConsoleApp
 
 ## <a name="audio-device-ids-on-uwp"></a>Идентификатор аудиоустройства в UWP
 
-На универсальной платформе Windows (UWP) аудиоустройства для входа можно получить с помощью свойства `Id()` соответствующего объекта [`DeviceInformation`](/uwp/api/windows.devices.enumeration.deviceinformation).
+В универсальная платформа Windows (UWP) устройства ввода звука можно получить с помощью `Id()` свойства соответствующего [`DeviceInformation`](/uwp/api/windows.devices.enumeration.deviceinformation) объекта.
 
 В приведенных ниже фрагментах кода показано, как это сделать в C++ и C#:
 
@@ -365,7 +365,7 @@ CFArrayRef CreateInputDeviceArray()
 
 ## <a name="audio-device-ids-on-ios"></a>Идентификатор аудиоустройства в iOS
 
-Выбор аудиоустройства с помощью пакета SDK для распознавания речи не поддерживается на устройствах iOS. Тем не менее, с помощью пакета SDK приложения могут повлиять на маршрутизацию аудио через платформу [`AVAudioSession`](https://developer.apple.com/documentation/avfoundation/avaudiosession?language=objc).
+Выбор аудиоустройства с помощью пакета SDK для распознавания речи не поддерживается на устройствах iOS. Однако приложения, использующие пакет SDK, могут повлиять на маршрутизацию звука через [`AVAudioSession`](https://developer.apple.com/documentation/avfoundation/avaudiosession?language=objc) платформу.
 
 Например, инструкция
 
@@ -380,7 +380,7 @@ CFArrayRef CreateInputDeviceArray()
 
 В JavaScript метод [MediaDevices.enumerateDevices()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/enumerateDevices) можно использовать для перечисления устройств мультимедиа и поиска идентификаторов устройств для их передачи `fromMicrophone(...)`.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
 > [!div class="nextstepaction"]
 > [Примеры на сайте GitHub](https://aka.ms/csspeech/samples)

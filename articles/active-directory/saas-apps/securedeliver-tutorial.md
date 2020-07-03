@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с SECURE DELIVER | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с SECURE DELIVER | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SECURE DELIVER.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7dbf96c3480f47e5f6b292759a949c9bbf36dc07
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67091188"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-secure-deliver"></a>Руководство по Интеграция Azure Active Directory с SECURE DELIVER
+# <a name="tutorial-azure-active-directory-integration-with-secure-deliver"></a>Руководство. Интеграция Azure Active Directory с SECURE DELIVER
 
 В этом руководстве описано, как интегрировать SECURE DELIVER с Azure Active Directory (Azure AD).
 Интеграция SECURE DELIVER с Azure AD имеет следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "67091188"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SECURE DELIVER, вам потребуется следующее.
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка SECURE DELIVER с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "67091188"
 
     ![Сведения о домене и URL-адресах единого входа для SECURE DELIVER](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.i-securedeliver.jp/sd/<tenantname>/jsf/login/sso`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.i-securedeliver.jp/sd/<tenantname>/jsf/login/sso`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.i-securedeliver.jp/sd/<tenantname>/postResponse`.
 
@@ -121,7 +121,7 @@ ms.locfileid: "67091188"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -197,5 +197,5 @@ ms.locfileid: "67091188"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -7,12 +7,12 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.topic: conceptual
 ms.date: 08/07/2019
-ms.openlocfilehash: 8f354152c23dd7ad0413f27585d724f8070ca003
-ms.sourcegitcommit: ec2eacbe5d3ac7878515092290722c41143f151d
+ms.openlocfilehash: a254465d9055fcf1cf10a2a1d6eb82b2afc16f0b
+ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75551528"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82692272"
 ---
 # <a name="performance-benchmark-test-recommendations-for-azure-netapp-files"></a>Рекомендации по тестам производительности для Azure NetApp Files
 
@@ -123,5 +123,5 @@ FIO доступен в двоичном формате как для Linux, т�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Service levels for Azure NetApp Files](azure-netapp-files-service-levels.md) (Уровни обслуживания для для службы Azure NetApp Files)
-- [Показатели производительности для Azure NetApp Files](azure-netapp-files-performance-benchmarks.md)
+- [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
+- [Тесты производительности для Linux](performance-benchmarks-linux.md)

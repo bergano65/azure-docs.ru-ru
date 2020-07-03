@@ -1,18 +1,18 @@
 ---
 title: Добавление проверки подлинности в мобильные приложения с помощью центра приложений Visual Studio и служб Azure
 description: Узнайте о таких службах, как центр приложений Visual Studio, которые помогают настроить проверку подлинности пользователей и позволяют мобильным приложениям проходить проверку подлинности с помощью учетных записей социальных сетей, Azure Active Directory и пользовательской проверки подлинности.
-author: elamalani
+author: codemillmatt
 ms.assetid: 34a8a070-2222-4faf-9090-ccff02097224
 ms.service: vs-appcenter
 ms.topic: article
-ms.date: 10/22/2019
-ms.author: emalani
-ms.openlocfilehash: bc7d8d4aaec6ebe27a0f8d2ecc11ca408266f7ef
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.date: 03/24/2020
+ms.author: masoucou
+ms.openlocfilehash: 820005bca008ea3bdb59659c815da3ec36beb0d4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75453247"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80241053"
 ---
 # <a name="add-authentication-and-manage-user-identities-in-your-mobile-apps"></a>Добавление проверки подлинности и управление удостоверениями пользователей в мобильных приложениях
 
@@ -20,8 +20,8 @@ ms.locfileid: "75453247"
 
 Используйте следующие службы, чтобы включить проверку подлинности пользователей в мобильных приложениях.
 
-## <a name="visual-studio-app-center"></a>Центр приложений Visual Studio.
-[Проверка подлинности центра приложений](/appcenter/auth/) — это облачная служба управления удостоверениями, которую разработчики могут использовать для проверки подлинности пользователей и управления удостоверениями пользователей. Проверка подлинности в центре приложений также интегрируется с другими частями центра приложений Visual Studio. Разработчики могут использовать удостоверение пользователя для [просмотра данных пользователей](/appcenter/data/index) в других службах и даже [отправлять push-уведомления пользователям, а не отдельным устройствам](/appcenter/push/push-to-user#app-center-auth-set-identity). 
+## <a name="visual-studio-app-center"></a>Центр приложений Visual Studio
+[Проверка подлинности центра приложений](/appcenter/auth/) — это облачная служба управления удостоверениями, которую разработчики могут использовать для проверки подлинности пользователей и управления удостоверениями пользователей. Проверка подлинности в центре приложений также интегрируется с другими частями центра приложений Visual Studio. Разработчики могут использовать удостоверение пользователя для [просмотра данных пользователей](/appcenter/data/index) в других службах и даже [отправлять push-уведомления пользователям, а не отдельным устройствам](/appcenter/push/push-to-user#setting-user-identity). 
 
 **Основные возможности**
 - На платформе Azure Active Directory B2C (Azure AD B2C). 
@@ -36,11 +36,11 @@ ms.locfileid: "75453247"
 - Простое взаимодействие с пользователем и пакет SDK для Magical. для этого используется оболочка библиотеки проверки подлинности Майкрософт с пакетом SDK для центра приложений Visual Studio.
 - Поддержка платформ для iOS, Android, Xamarin и реагирования на машинный код.
 
-**Справочные материалы**
+**Ссылки**
 - [Регистрация в центре приложений Visual Studio](https://appcenter.ms/signup?utm_source=Mobile%20Development%20Docs&utm_medium=Azure&utm_campaign=New%20azure%20docs) 
 - [Приступая к работе с проверкой подлинности App Center](/appcenter/auth/)
 
-## <a name="azure-active-directory-b2c"></a>Azure Active Directory B2C
+## <a name="azure-active-directory-b2c"></a>Azure Active Directory B2C
 [Azure AD B2C](https://azure.microsoft.com/services/active-directory-b2c/) — это служба управления удостоверениями "бизнес-потребитель" (B2C), которую разработчики могут использовать для проверки подлинности своих клиентов. Эта служба "белые метки" позволяет разработчикам настраивать и контролировать взаимодействие пользователей с веб-приложениями, настольными, мобильными и одностраничными. С помощью Azure AD B2C пользователи могут регистрировать, изменять свои профили, а также входить в них и сбрасывать пароли. Azure AD B2C реализует формы протоколов OpenID Connect и OAuth 2.0. 
 
 **Основные возможности**
@@ -52,7 +52,7 @@ ms.locfileid: "75453247"
 - Легко интегрируются с базами данных CRM, инструментами для маркетинговой аналитики и системами проверки учетных записей.
 - Сбор данных для входа, предпочтений и преобразований для клиентов.
 
-**Справочные материалы**
+**Ссылки**
 - [Портал Azure](https://portal.azure.com/)
 - [Документация по Azure AD B2C](/azure/active-directory-b2c/)
 - [Краткие руководства](/azure/active-directory-b2c/active-directory-b2c-quickstarts-web-app)
@@ -69,8 +69,8 @@ ms.locfileid: "75453247"
 - Тысячи предварительно интегрированных приложений для коммерческих и пользовательских приложений, таких как Office 365, Salesforce.com и Box.
 - Возможность управления доступом в масштабе.
 
-**Справочные материалы**
+**Ссылки**
 - [Портал Azure](https://portal.azure.com/)
 - [Что такое Azure AD?](/azure/active-directory/fundamentals/active-directory-whatis)
-- [Начало работы с Azure AD](/azure/active-directory/fundamentals/active-directory-whatis)
+- [Начало работы с Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis)
 - [Краткие руководства](/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)

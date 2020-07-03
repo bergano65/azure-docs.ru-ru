@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 12/02/2019
-ms.openlocfilehash: e3c87143652895c57b464cba229a0e68049ffeb2
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.date: 4/13/2020
+ms.openlocfilehash: 506bf076c955beb5c5e57811bbdb42bfedb8cbe3
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74767523"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81382967"
 ---
 # <a name="configure-and-access-audit-logs-in-the-azure-portal"></a>Настройка и доступ к журналам аудита в портал Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "74767523"
 > [!IMPORTANT]
 > Функции журнала аудита в настоящее время доступны в предварительной версии.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
@@ -30,21 +30,21 @@ ms.locfileid: "74767523"
 
 Включение и Настройка ведения журнала аудита.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. Выберите сервер базы данных Azure для MariaDB.
+1. Выберите сервер Базы данных Azure для MariaDB.
 
 1. В разделе **Параметры** на боковой панели выберите **Параметры сервера**.
     ![Параметры сервера](./media/howto-configure-audit-logs-portal/server-parameters.png)
 
 1. Обновите параметр **audit_log_enabled** в значение ON.
-    ![включить журналы аудита](./media/howto-configure-audit-logs-portal/audit-log-enabled.png)
+    ![Включить журналы аудита](./media/howto-configure-audit-logs-portal/audit-log-enabled.png)
 
 1. Выберите [типы событий](concepts-audit-logs.md#configure-audit-logging) для записи, обновив параметр **audit_log_events** .
-    ![событий журнала аудита](./media/howto-configure-audit-logs-portal/audit-log-events.png)
+    ![События журнала аудита](./media/howto-configure-audit-logs-portal/audit-log-events.png)
 
 1. Добавьте всех пользователей MariaDB, которые будут исключены из ведения журнала, путем обновления параметра **audit_log_exclude_users** . Укажите пользователей, указав имя пользователя MariaDB.
-    журнал аудита ![исключение пользователей](./media/howto-configure-audit-logs-portal/audit-log-exclude-users.png)
+    ![Исключить пользователей из журнала аудита](./media/howto-configure-audit-logs-portal/audit-log-exclude-users.png)
 
 1. После изменения параметров нажмите кнопку **Сохранить**. Также вы можете нажать кнопку **Отменить**, чтобы отменить изменения.
     ![Сохранить](./media/howto-configure-audit-logs-portal/save-parameters.png)
@@ -60,13 +60,14 @@ ms.locfileid: "74767523"
 1. Укажите приемники данных для отправки журналов аудита (учетную запись хранения, концентратор событий и (или) рабочую область Log Analytics).
 
 1. Выберите "Мисклаудитлогс" в качестве типа журнала.
-![настроить параметр диагностики](./media/howto-configure-audit-logs-portal/configure-diagnostic-setting.png)
+![Настройка параметра диагностики](./media/howto-configure-audit-logs-portal/configure-diagnostic-setting.png)
 
 1. После настройки приемников данных для передачи журналов аудита в можно нажать кнопку **сохранить**.
-![сохранить параметр диагностики](./media/howto-configure-audit-logs-portal/save-diagnostic-setting.png)
+![Сохранить параметр диагностики](./media/howto-configure-audit-logs-portal/save-diagnostic-setting.png)
 
 1. Получите доступ к журналам аудита, просмотрев их в настроенных приемниках данных. Для отображения журналов может потребоваться до 10 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MariaDB.
+- Дополнительные сведения о [журналах аудита](concepts-audit-logs.md) в базе данных Azure для MariaDB
+- Узнайте, как настроить журналы аудита в [Azure CLI](howto-configure-audit-logs-cli.md)

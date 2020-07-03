@@ -3,20 +3,20 @@ title: Включить проверку одноразового пароля (
 titleSuffix: Azure AD B2C
 description: Узнайте, как настроить сценарий одноразового пароля (OTP) с помощью Azure AD B2C пользовательских политик.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 02/10/2020
-ms.author: marsma
+ms.date: 03/26/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9becb91cfffd4553b2b8aa1a2d616963eae92ab0
-ms.sourcegitcommit: d12880206cf9926af6aaf3bfafda1bc5b0ec7151
+ms.openlocfilehash: 35497f978a1819f09411487e4bbc7eb1d05cc80d
+ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
-ms.locfileid: "77114050"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82900376"
 ---
 # <a name="define-a-one-time-password-technical-profile-in-an-azure-ad-b2c-custom-policy"></a>Определение технического профиля с одноразовым паролем в Azure AD B2C настраиваемой политике
 
@@ -51,7 +51,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 Элемент **inputclaim** содержит список утверждений, необходимых для отправки поставщику одноразового пароля. Вы также можете сопоставлять имя утверждения с именем, определенным ниже.
 
-| клаимреференцеид | Обязательно | Description |
+| клаимреференцеид | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | идентификатор | Да | Идентификатор для идентификации пользователя, который должен проверить код позже. Он обычно используется в качестве идентификатора назначения, в которое доставляется код, например адрес электронной почты или номер телефона. |
 
@@ -61,7 +61,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 Элемент **OutputClaims** содержит список заявок, созданных поставщиком протокола одноразовых паролей. Вы также можете сопоставлять имя утверждения с именем, определенным ниже.
 
-| клаимреференцеид | Обязательно | Description |
+| клаимреференцеид | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | отпженератед | Да | Созданный код, сеанс которого управляется Azure AD B2C. |
 
@@ -69,43 +69,39 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 ### <a name="metadata"></a>Метаданные
 
-Для настройки создания и обслуживания кода можно использовать следующие параметры.
+Для настройки режима создания кода можно использовать следующие параметры:
 
-| attribute | Обязательно | Description |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| кодикспиратионинсекондс | нет | Время в секундах до истечения срока действия кода. Минимум: `60`; Максимум: `1200`; Значение по умолчанию: `600`. |
-| коделенгс | нет | Длина кода. Значение по умолчанию — `6`. |
-| CharacterSet | нет | Кодировка для кода, отформатированная для использования в регулярном выражении. Например, `a-z0-9A-Z`. Значение по умолчанию — `0-9`. Кодировка должна содержать не менее 10 различных символов в указанном наборе. |
-| нумретряттемптс | нет | Число попыток проверки, прежде чем код будет считаться недопустимым. Значение по умолчанию — `5`. |
-| Операция | Да | Операция, которая выполняется. Возможные значения: `GenerateCode`или `VerifyCode`. |
-| реусесамекоде | нет | Должно ли быть задано дублирование кода, а не создание нового кода, если срок действия данного кода не истек и он по-прежнему действителен. Значение по умолчанию — `false`. |
-
-### <a name="returning-error-message"></a>Возвращаемое сообщение об ошибке
-
-В режиме создания кода не возвращается сообщение об ошибке.
+| кодикспиратионинсекондс | нет | Время в секундах до истечения срока действия кода. Минимум: `60`; Максимум: `1200`; По умолчанию: `600`. |
+| коделенгс | нет | Длина кода. Значение по умолчанию — `6`. |
+| CharacterSet | нет | Кодировка для кода, отформатированная для использования в регулярном выражении. Например, `a-z0-9A-Z`. Значение по умолчанию — `0-9`. Кодировка должна содержать не менее 10 различных символов в указанном наборе. |
+| нумретряттемптс | нет | Число попыток проверки, прежде чем код будет считаться недопустимым. Значение по умолчанию — `5`. |
+| Операция | Да | Операция, которая выполняется. Возможное значение: `GenerateCode`. |
+| реусесамекоде | нет | Должно ли быть задано дублирование кода, а не создание нового кода, если срок действия данного кода не истек и он по-прежнему действителен. Значение по умолчанию — `false`. |
 
 ### <a name="example"></a>Пример
 
-В следующем примере `TechnicalProfile` используется для создания кода:
+Следующий пример `TechnicalProfile` используется для создания кода:
 
 ```XML
 <TechnicalProfile Id="GenerateCode">
-    <DisplayName>Generate Code</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Metadata>
-        <Item Key="Operation">GenerateCode</Item>
-        <Item Key="CodeExpirationInSeconds">600</Item>
-        <Item Key="CodeLength">6</Item>
-        <Item Key="CharacterSet">0-9</Item>
-        <Item Key="NumRetryAttempts">5</Item>
-        <Item Key="ReuseSameCode">false</Item>
-    </Metadata>
-    <InputClaims>
-        <InputClaim ClaimTypeReferenceId="identifier" PartnerClaimType="identifier" />
-    </InputClaims>
-    <OutputClaims>
-        <OutputClaim ClaimTypeReferenceId="otpGenerated" PartnerClaimType="otpGenerated" />
-    </OutputClaims>
+  <DisplayName>Generate Code</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="Operation">GenerateCode</Item>
+    <Item Key="CodeExpirationInSeconds">600</Item>
+    <Item Key="CodeLength">6</Item>
+    <Item Key="CharacterSet">0-9</Item>
+    <Item Key="NumRetryAttempts">5</Item>
+    <Item Key="ReuseSameCode">false</Item>
+  </Metadata>
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="identifier" PartnerClaimType="identifier" />
+  </InputClaims>
+  <OutputClaims>
+    <OutputClaim ClaimTypeReferenceId="otpGenerated" PartnerClaimType="otpGenerated" />
+  </OutputClaims>
 </TechnicalProfile>
 ```
 
@@ -117,7 +113,7 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 Элемент **inputclaim** содержит список утверждений, необходимых для отправки поставщику одноразового пароля. Вы также можете сопоставлять имя утверждения с именем, определенным ниже.
 
-| клаимреференцеид | Обязательно | Description |
+| клаимреференцеид | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | идентификатор | Да | Идентификатор для идентификации пользователя, который ранее сгенерировал код. Он обычно используется в качестве идентификатора назначения, в которое доставляется код, например адрес электронной почты или номер телефона. |
 | отптоверифи | Да | Код проверки, предоставленный пользователем. |
@@ -132,46 +128,46 @@ Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.
 
 ### <a name="metadata"></a>Метаданные
 
-Следующие параметры можно использовать для настройки сообщения об ошибке, отображаемого при сбое проверки кода.
+В режиме проверки кода можно использовать следующие параметры.
 
-| attribute | Обязательно | Description |
+| Атрибут | Обязательный | Описание |
+| --------- | -------- | ----------- |
+| Операция | Да | Операция, которая выполняется. Возможное значение: `VerifyCode`. |
+
+
+### <a name="ui-elements"></a>Элементы пользовательского интерфейса
+
+Следующие метаданные можно использовать для настройки сообщений об ошибках, отображаемых при сбое проверки кода. Метаданные должны быть настроены в [самостоятельно утвержденном](self-asserted-technical-profile.md) техническом профиле. Сообщения об ошибках можно [локализовать](localization-string-ids.md#one-time-password-error-messages).
+
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
 | усермессажеифсессиондоеснотексист | нет | Сообщение, отображаемое пользователю, если истек срок действия сеанса проверки кода. Это либо срок действия кода, либо код, который никогда не был создан для данного идентификатора. |
 | усермессажеифмаксретряттемптед | нет | Сообщение, отображаемое пользователю, если превышено максимально допустимое количество попыток проверки. |
 | усермессажеифинвалидкоде | нет | Сообщение, отображаемое пользователю, если он предоставил недопустимый код. |
-
-### <a name="returning-error-message"></a>Возвращаемое сообщение об ошибке
-
-Как описано в статье [метаданные](#metadata), можно настроить сообщение об ошибке, отображаемое пользователю для различных вариантов ошибок. Вы можете дополнительно локализовать эти сообщения, добавив префикс в языковой стандарт, например:
-
-```XML
-<Item Key="en.UserMessageIfInvalidCode">Wrong code has been entered.</Item>
-```
+| усермессажеифверификатионфаиледретрялловед | нет | Сообщение, отображаемое пользователю, если он предоставил недопустимый код, и пользователь может предоставить правильный код.  |
+|усермессажеифсессионконфликт|нет| Сообщение, отображаемое пользователю, если не удается проверить код.|
 
 ### <a name="example"></a>Пример
 
-В следующем примере `TechnicalProfile` используется для проверки кода:
+Следующий пример `TechnicalProfile` используется для проверки кода:
 
 ```XML
 <TechnicalProfile Id="VerifyCode">
-    <DisplayName>Verify Code</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-    <Metadata>
-        <Item Key="Operation">VerifyCode</Item>
-        <Item Key="UserMessageIfInvalidCode">Wrong code has been entered.</Item>
-        <Item Key="UserMessageIfSessionDoesNotExist">Code has expired.</Item>
-        <Item Key="UserMessageIfMaxRetryAttempted">You've tried too many times.</Item>
-    </Metadata>
-    <InputClaims>
-        <InputClaim ClaimTypeReferenceId="identifier" PartnerClaimType="identifier" />
-        <InputClaim ClaimTypeReferenceId="otpGenerated" PartnerClaimType="otpToVerify" />
-    </InputClaims>
+  <DisplayName>Verify Code</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.OneTimePasswordProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <Metadata>
+    <Item Key="Operation">VerifyCode</Item>
+  </Metadata>
+  <InputClaims>
+    <InputClaim ClaimTypeReferenceId="identifier" PartnerClaimType="identifier" />
+    <InputClaim ClaimTypeReferenceId="otpGenerated" PartnerClaimType="otpToVerify" />
+  </InputClaims>
 </TechnicalProfile>
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В следующей статье приведены примеры использования одноразового профиля технические Password с пользовательской проверкой электронной почты.
+См. следующую статью, в которой приведен пример использования технического профиля с одноразовым паролем с пользовательской проверкой электронной почты:
 
 - [Настраиваемая проверка электронной почты в Azure Active Directory B2C](custom-email.md)
 

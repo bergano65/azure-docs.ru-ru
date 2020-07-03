@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: container-registry
 author: dlepow
@@ -9,13 +9,13 @@ ms.date: 07/12/2019
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: 700dbfde3be2f24eb57acbdeb9d2841ef2bdfe44
-ms.sourcegitcommit: 323c3f2e518caed5ca4dd31151e5dee95b8a1578
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "77112298"
 ---
-В выходных данных команды в разделе `identity` показано удостоверение типа `SystemAssigned` задается в задаче. `principalId` является ИДЕНТИФИКАТОРом субъекта для удостоверения задачи:
+В выходных данных команды в `identity` разделе показано, что в задаче `SystemAssigned` задано удостоверение типа. `principalId` — Идентификатор субъекта для удостоверения задачи:
 
 ```console
 [...]

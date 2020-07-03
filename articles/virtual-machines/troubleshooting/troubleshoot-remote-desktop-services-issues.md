@@ -12,19 +12,17 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 92c4a40de7e35d0580fe407e36305a50ad68094c
-ms.sourcegitcommit: 3dc1a23a7570552f0d1cc2ffdfb915ea871e257c
+ms.openlocfilehash: 4b314fbdb9cbc0c0b797cbee8e92ee4702bbea81
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75981785"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77919470"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
 В этой статье описывается устранение неполадок подключения к виртуальной машине Azure, когда службы удаленных рабочих столов (TermService) не запускаются или их запуск завершается ошибкой.
 
-> [!NOTE]  
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Azure Resource Manager и классическая модель](../../azure-resource-manager/management/deployment-models.md). В этой статье описывается использование модели развертывания Resource Manager. Для новых развертываний рекомендуется использовать эту модель развертывания вместо классической.
 
 ## <a name="symptoms"></a>Симптомы
 
@@ -36,14 +34,14 @@ ms.locfileid: "75981785"
 
 - Вы удаленно просматриваете журналы событий в виртуальной машине c помощью средства "Просмотр событий". Вы увидите, что службы удаленных рабочих столов (TermService) не запускаются или происходит сбой запуска. Ниже приведен пример журнала:
 
-    **Имя журнала**: Система </br>
-    **Источник**: Service Control Manager </br>
+    **Имя журнала**: System </br>
+    **Источник**: диспетчер управления службами </br>
     **Дата**: 16.12.2017 11:19:36</br>
-    **Код события**: 7022</br>
+    **Идентификатор события**: 7022</br>
     **Категория задачи**: Отсутствует</br>
-    **Уровень**: Ошибка</br>
-    **Ключевые слова**: Классический</br>
-    **Пользователь**: Н/Д</br>
+    **Уровень**: ошибка</br>
+    **Ключевые слова**: классические</br>
+    **Пользователь**: н/д</br>
     **Компьютер**: vm.contoso.com</br>
     **Описание**: Служба "Службы удаленных рабочих столов" зависла при запуске. 
 
@@ -99,16 +97,16 @@ ms.locfileid: "75981785"
     |  Ошибка |  Предложение |
     |---|---|
     |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termservice-service-is-stopped-because-of-an-access-denied-problem). |
-    |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |Ознакомьтесь с разделом [Служба TermService отключена](#termservice-service-is-disabled).  |  
+    |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |См. раздел [Служба TermService отключена](#termservice-service-is-disabled).  |  
     |1058 — ERROR_SERVICE_DISABLED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs).  |
-    |1059 — ERROR_CIRCULAR_DEPENDENCY |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.|
+    |1059 — ERROR_CIRCULAR_DEPENDENCY |[Обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , чтобы быстро устранить проблему.|
     |1067 — ERROR_PROCESS_ABORTED  |Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs).  |
-    |1068 — ERROR_SERVICE_DEPENDENCY_FAIL|[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.|
+    |1068 — ERROR_SERVICE_DEPENDENCY_FAIL|[Обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , чтобы быстро устранить проблему.|
     |1069 — ERROR_SERVICE_LOGON_FAILED  |Ознакомьтесь с разделом [Происходит сбой службы TermService из-за ошибки входа в систему](#termservice-service-fails-because-of-logon-failure). |
     |1070 — ERROR_SERVICE_START_HANG   | Ознакомьтесь с разделом [Происходит сбой службы TermService сбоя или она зависает](#termservice-service-crashes-or-hangs). |
-    |1077 — ERROR_SERVICE_NEVER_STARTED   | Ознакомьтесь с разделом [Служба TermService отключена](#termservice-service-is-disabled).  |
-    |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему. |
-    |1753   |[Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.   |
+    |1077 — ERROR_SERVICE_NEVER_STARTED   | См. раздел [Служба TermService отключена](#termservice-service-is-disabled).  |
+    |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   |[Обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , чтобы быстро устранить проблему. |
+    |1753   |[Обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) , чтобы быстро устранить проблему.   |
     
 #### <a name="termservice-service-is-stopped-because-of-an-access-denied-problem"></a>Служба TermService остановлена из-за отказа в доступе
 
@@ -123,7 +121,7 @@ ms.locfileid: "75981785"
    $wc.DownloadFile($source,$destination) 
    ```
 
-3. Далее запустите трассировку **procmon**:
+3. Теперь запустите трассировку **Procmon** :
 
    ```
    procmon /Quiet /Minimized /BackingFile c:\temp\ProcMonTrace.PML 
@@ -203,9 +201,9 @@ ms.locfileid: "75981785"
 
 #### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
-1. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
+1. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления. Убедитесь, что в консоли "Управление дисками" для подключенного диска отображается состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
-3. Откройте командную строку с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. Предполагается, что буква диска, назначенная подключенному диску ОС, — **F**. Замените его соответствующим значением в виртуальной машине. 
+3. Откройте экземпляр командной строки с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. Предполагается, что буква диска, назначенная подключенному диску ОС, — **F**. Замените его соответствующим значением в виртуальной машине. 
 
    ```
    reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv
@@ -221,6 +219,6 @@ ms.locfileid: "75981785"
 
 4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обращение в службу поддержки
+## <a name="need-help-contact-support"></a>Требуется помощь? Обращение в службу поддержки
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

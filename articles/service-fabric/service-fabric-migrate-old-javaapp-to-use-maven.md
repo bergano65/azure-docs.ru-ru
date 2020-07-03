@@ -5,36 +5,40 @@ author: rapatchi
 ms.topic: conceptual
 ms.date: 08/23/2017
 ms.author: rapatchi
-ms.openlocfilehash: b5e126ebdf3b89470472391c59d378c7a6d39b86
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 0e8154039dde3de571e7960b244ab1d43cc764c7
+ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75609814"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82204293"
 ---
 # <a name="update-your-previous-java-service-fabric-application-to-fetch-java-libraries-from-maven"></a>Обновление старого приложения Java в Service Fabric для получения библиотек Java из Maven
-Мы недавно разместили двоичные файлы Java Service Fabric из пакета SDK для Java Service Fabric в Maven. Теперь вы можете использовать **mavencentral** для получения последних зависимостей Service Fabric Java. С помощью этого краткого руководства вы обновите существующие приложения Java, созданные ранее для использования с пакетом SDK для Java Service Fabric. Чтобы обеспечить совместимость со сборкой Maven, будет использован шаблон Yeoman или Eclipse.
+Service Fabric двоичные файлы Java были перемещены из пакета SDK для Java Service Fabric в размещение Maven. **Mavencentral** можно использовать для получения последних зависимостей Java Service Fabric. Это средство поможет вам обновить существующие приложения Java, созданные для Service Fabric пакета SDK для Java, используя шаблон Yeoman или Eclipse, совместимый с сборкой на основе Maven.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные условия
+
 1. Сначала удалите существующий пакет SDK для Java.
 
    ```bash
    sudo dpkg -r servicefabricsdkjava
    ```
+
 2. Установите последнюю версию интерфейса командной строки Service Fabric, следуя инструкциям [здесь](service-fabric-cli.md).
 
-3. Чтобы собрать приложения Java в Service Fabric и работать с ними, сначала установите JDK 1.8 и Gradle. Для установки JDK 1.8 (openjdk-8-jdk) и Gradle (если они еще не установлены) используйте следующие команды:
+3. Чтобы выполнить сборку и работу с Service Fabric приложениями Java, убедитесь, что установлены JDK 1,8 и Gradle. Для установки JDK 1.8 (openjdk-8-jdk) и Gradle (если они еще не установлены) используйте следующие команды:
 
    ```bash
    sudo apt-get install openjdk-8-jdk-headless
    sudo apt-get install gradle
    ```
+
 4. Обновите скрипты установки и удаления приложения для использования нового интерфейса командной строки Service Fabric, следуя инструкциям [здесь](service-fabric-application-lifecycle-sfctl.md). В качестве образца используйте наши [примеры](https://github.com/Azure-Samples/service-fabric-java-getting-started) для начала работы.
 
 >[!TIP]
 > После удаления пакета SDK для Java Service Fabric Yeoman не будет работать. Чтобы восстановить и запустить генератор шаблонов Java Yeoman Service Fabric, выполните предварительные требования, описанные [здесь](service-fabric-create-your-first-linux-application-with-java.md).
 
 ## <a name="service-fabric-java-libraries-on-maven"></a>Библиотеки Java для Service Fabric в Maven
+
 Библиотеки Java для Service Fabric размещены в Maven. Чтобы использовать библиотеки Java для Service Fabric из **mavenCentral**, вы можете добавить зависимости в файлы ``pom.xml`` или ``build.gradle`` своих проектов.
 
 ### <a name="actors"></a>Субъекты
@@ -80,7 +84,8 @@ ms.locfileid: "75609814"
   ```
 
 ### <a name="others"></a>Прочее
-#### <a name="transport"></a>Транспорт
+
+#### <a name="transport"></a>Транспортировка
 
 Поддержка транспортного уровня для приложения Java в Service Fabric. Вам не нужно явно добавлять эту зависимость в приложения Reliable Actors или Reliable Services, если ваша программа не находится на транспортном уровне.
 
@@ -122,11 +127,11 @@ ms.locfileid: "75609814"
   }
   ```
 
-
 ## <a name="migrating-service-fabric-stateless-service"></a>Миграция службы без отслеживания состояния Service Fabric
 
 Чтобы собрать существующую службу Java без отслеживания состояния в Service Fabric с помощью зависимостей Service Fabric, полученных из Maven, необходимо обновить файл ``build.gradle`` в службе. Ранее файл выглядел так:
-```
+
+```gradle
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
     compile project(':Interface')
@@ -158,8 +163,10 @@ task copyDeps <<{
     }
 }
 ```
-Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
-```
+
+Теперь для получения зависимостей из Maven **обновленный файл ** ``build.gradle`` будет содержать следующие части:
+
+```gradle
 repositories {
         mavenCentral()
 }
@@ -211,11 +218,13 @@ task copyDeps <<{
     }
 }
 ```
+
 Чтобы понять, как скрипт сборки будет выглядеть для службы Java без отслеживания состояния в Service Fabric, см. любой пример в нашей подборке примеров для начала работы. Например, это файл [build.gradle](https://github.com/Azure-Samples/service-fabric-java-getting-started/blob/master/reliable-services-actor-sample/build.gradle) для примера EchoServer.
 
 ## <a name="migrating-service-fabric-actor-service"></a>Миграция службы субъекта в Service Fabric
 
 Чтобы собрать существующее приложение Java субъекта в Service Fabric с помощью зависимостей Service Fabric, полученных из Maven, необходимо обновить файл ``build.gradle`` в пакете интерфейса и в пакете службы. При наличии пакета TestClient его также необходимо обновить. То есть для субъекта ``Myactor`` вам нужно обновить следующие части:
+
 ```
 ./Myactor/build.gradle
 ./MyactorInterface/build.gradle
@@ -225,15 +234,18 @@ task copyDeps <<{
 #### <a name="updating-build-script-for-the-interface-project"></a>Обновление скрипта построения для проекта интерфейса
 
 Ранее файл выглядел так:
-```
+
+```gradle
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
 }
 .
 .
 ```
-Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
-```
+
+Теперь для получения зависимостей из Maven **обновленный файл ** ``build.gradle`` будет содержать следующие части:
+
+```gradle
 repositories {
     mavenCentral()
 }
@@ -266,7 +278,8 @@ compileJava.dependsOn(explodeDeps)
 #### <a name="updating-build-script-for-the-actor-project"></a>Обновление скрипта построения для проекта субъекта
 
 Ранее файл выглядел так:
-```
+
+```gradle
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
     compile project(':MyactorInterface')
@@ -304,8 +317,10 @@ task copyDeps<< {
     }
 }
 ```
-Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
-```
+
+Теперь для получения зависимостей из Maven **обновленный файл ** ``build.gradle`` будет содержать следующие части:
+
+```gradle
 repositories {
     mavenCentral()
 }
@@ -365,7 +380,8 @@ task copyDeps<< {
 #### <a name="updating-build-script-for-the-test-client-project"></a>Обновление скрипта построения для проекта тестового клиента
 
 Эти изменения похожи на изменения, описанные в предыдущем разделе, посвященном проекту субъекта. Ранее скрипт Gradle выглядел так:
-```
+
+```gradle
 dependencies {
     compile fileTree(dir: '/opt/microsoft/sdk/servicefabric/java/packages/lib', include: ['*.jar'])
       compile project(':MyactorInterface')
@@ -404,8 +420,10 @@ task copyDeps<< {
         }
 }
 ```
-Теперь, чтобы получить зависимости от Maven, **обновленный** ``build.gradle`` будет иметь соответствующие части следующим образом.
-```
+
+Теперь для получения зависимостей из Maven **обновленный файл ** ``build.gradle`` будет содержать следующие части:
+
+```gradle
 repositories {
     mavenCentral()
 }
@@ -464,7 +482,7 @@ task copyDeps<< {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание первого Java-приложения Service Fabric в Linux](service-fabric-create-your-first-linux-application-with-java.md)
 * [Подключаемый модуль Service Fabric для разработки приложений Eclipse на Java](service-fabric-get-started-eclipse.md)

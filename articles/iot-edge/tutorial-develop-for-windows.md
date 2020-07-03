@@ -10,13 +10,13 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
 ms.openlocfilehash: 58a63c9e11cf86318f0e9f051d034cbbaf7c40a9
-ms.sourcegitcommit: 984c5b53851be35c7c3148dcd4dfd2a93cebe49f
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76772251"
 ---
-# <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Руководство. разработке модулей IoT Edge для устройств с Windows
+# <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Руководство по разработке модулей IoT Edge для устройств с Windows
 
 Узнайте, как разработать и развернуть код на устройствах Windows с IoT Edge с помощью Visual Studio.
 

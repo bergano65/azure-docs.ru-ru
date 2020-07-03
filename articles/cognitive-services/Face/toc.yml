@@ -7,14 +7,8 @@
       href: Overview.md
 - name: Краткие руководства
   items:
-    - name: С помощью клиентского пакета SDK
-      items:
-        - name: Пакет SDK для .NET
-          href: Quickstarts/csharp-sdk.md
-        - name: Пакет SDK для Python
-          href: QuickStarts/python-sdk.md
-        - name: Пакет SDK для GO
-          href: QuickStarts/go-sdk.md
+    - name: Использование клиентской библиотеки
+      href: Quickstarts/client-libraries.md
     - name: Использование REST API
       items:
         - name: Определение лиц на изображении
@@ -115,5 +109,7 @@
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Соответствие нормативным требованиям
       href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Шифрование
+      href: face-encryption-of-data-at-rest.md
     - name: Заметки о выпуске
       href: ReleaseNotes.md

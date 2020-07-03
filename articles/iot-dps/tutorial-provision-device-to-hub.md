@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
 ms.openlocfilehash: 3fe2fa8b094830e2d15c1cebce782381b4ca7bc7
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74975046"
 ---
 # <a name="tutorial-provision-the-device-to-an-iot-hub-using-the-azure-iot-hub-device-provisioning-service"></a>Руководство по Подготовка устройства в Центре Интернета вещей с помощью службы подготовки устройств для Центра Интернета вещей Azure
@@ -90,8 +90,8 @@ ms.locfileid: "74975046"
 
 Дополнительные сведения см. в примере клиента подготовки устройства [prov_dev_client_sample.c](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/samples/prov_dev_client_sample/prov_dev_client_sample.c). В примере демонстрируется подготовка имитированного устройства с помощью TPM, сертификатов X.509 и симметричных ключей. Пошаговые инструкции по использованию примера см. в руководствах по аттестации [TPM](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device), [X.509](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-x509), и [симметричного ключа](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-symm-key).
 
-## <a name="next-steps"></a>Дополнительная информация
-Из этого руководства вы узнали, как выполнить следующие задачи:
+## <a name="next-steps"></a>Дальнейшие действия
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Регистрация устройства

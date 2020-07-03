@@ -3,7 +3,7 @@ title: Интерпретировать Azure Active Directory схему жур
 description: Описание схемы журнала аудита Azure AD для использования в Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: cawrites
+author: MarkusVi
 manager: daveba
 editor: ''
 ms.assetid: 4b18127b-d1d0-4bdc-8f9c-6a4c991c5f75
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: chadam
+ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f75af14e388626a9ebbb54d43079f30dcfdd98a
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: d9f58b213e50a021651f35112a48d8f74ae59571
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68987958"
 ---
 # <a name="interpret-the-azure-ad-audit-logs-schema-in-azure-monitor-preview"></a>Интерпретация схемы журналов аудита Azure AD в Azure Monitor (предварительная версия)
@@ -152,7 +152,7 @@ ms.locfileid: "68987958"
 | time       | Дата и время (в формате UTC). |
 | operationName | Имя операции. |
 | operationVersion | Запрошенная клиентом версия REST API. |
-| category | В настоящее время поддерживается только значение *Audit*. |
+| категория | В настоящее время поддерживается только значение *Audit*. |
 | tenantId | Связанный с журналами уникальный идентификатор (GUID) клиента. |
 | resultType | Результат операции. Значение результата может быть *Success* или *Failure*. |
 | resultSignature |  Это поле не сопоставлено, и его можно игнорировать. | 
@@ -161,23 +161,23 @@ ms.locfileid: "68987958"
 | callerIpAddress | IP-адрес отправившего запрос клиента. | 
 | correlationId | Необязательный код GUID, который передал клиент. Это значение может помочь найти связь между операциями на стороне клиента и операциями на стороне сервера. Кроме того, оно может пригодиться при отслеживании журналов, в которые записываются данные о работе служб. |
 | identity | Удостоверение из маркера, предоставленное при выполнении запроса. Это может быть учетная запись пользователя, учетная запись системы или субъект-служба. |
-| уровень | Тип сообщения. Для журналов аудита уровень всегда имеет значение *Informational*. |
-| расположение | Расположение центра обработки данных. |
-| свойства | Список поддерживаемых свойств, относящихся к журналу аудита. Этот процесс описан в следующей таблице. | 
+| level | Тип сообщения. Для журналов аудита уровень всегда имеет значение *Informational*. |
+| location | Расположение центра обработки данных. |
+| properties | Список поддерживаемых свойств, относящихся к журналу аудита. Этот процесс описан в следующей таблице. | 
 
 <br>
 
-| Имя свойства | Описание |
+| Имя свойства. | Описание |
 |---------------|-------------|
 | AuditEventCategory | Тип события аудита. Может иметь значение *User Management*, *Application Management* или другого типа.|
 | Identity Type | Это может быть *Application* или *User*. |
 | Тип операции | Может иметь значение *Add*, *Update* или *Delete* или *Other*. |
-| Тип целевого ресурса | Задает тип целевого ресурса, с которым выполнялась операция. Может иметь значение *Application*, *User*, *Role*, *Policy*. | 
+| Target Resource Type | Задает тип целевого ресурса, с которым выполнялась операция. Может иметь значение *Application*, *User*, *Role*, *Policy*. | 
 | Target Resource Name | Имя целевого ресурса. Это может быть имя приложения, имя роли, имя участника-пользователя или имя субъекта-службы. |
-| additionalTargets | Содержит список дополнительных свойств для конкретных операций. Например, для операции обновления *targetUpdatedProperties* содержит предыдущие и новые значения. | 
+| additionalTargets | Содержит список дополнительных свойств для конкретных операций. Например, для операции обновления старые значения и новые значения перечислены в разделе *таржетупдатедпропертиес*. | 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Interpret the Azure AD sign-in logs schema in Azure Monitor (preview)](reference-azure-monitor-sign-ins-log-schema.md) (Интерпретация схемы журналов входа Azure Active Directory в Azure Monitor (предварительная версия))
+* [Анализ схемы журналов входа в Azure Monitor](reference-azure-monitor-sign-ins-log-schema.md)
 * [Журналы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs)
 * [Часто задаваемые вопросы и известные проблемы](concept-activity-logs-azure-monitor.md#frequently-asked-questions)

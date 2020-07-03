@@ -3,7 +3,7 @@ title: Подключение данных F5 к Azure Sentinel | Докумен
 description: Узнайте, как подключить данные F5 к Azure Sentinel.
 services: sentinel
 documentationcenter: na
-author: rkarlin
+author: yelevin
 manager: rkarlin
 editor: ''
 ms.assetid: 0001cad6-699c-4ca9-b66c-80c194e439a5
@@ -14,13 +14,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
-ms.author: rkarlin
-ms.openlocfilehash: cf6dc6977ff066b646beac4db5562ae8d97ab066
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.author: yelevin
+ms.openlocfilehash: 6f33cecca1c67f91d0f2be64ab156f45ee500521
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75610562"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "77588269"
 ---
 # <a name="connect-f5-to-azure-sentinel"></a>Подключение F5 к Azure Sentinel
 
@@ -35,12 +35,12 @@ ms.locfileid: "75610562"
    - Задайте **номер порта** **514**или порт, который будет использоваться агентом.
    - Можно задать **максимальный размер строки запроса** , равный размеру, заданному в агенте.
 
-1. Чтобы использовать соответствующую схему в Log Analytics для событий CEF, выполните поиск по запросу `CommonSecurityLog`.
+1. Чтобы использовать соответствующую схему в Log Analytics для событий CEF, выполните поиск по `CommonSecurityLog`запросу.
 
 1. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить метку F5 к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).

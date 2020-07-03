@@ -10,14 +10,14 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
-ms.custom: it-pro, seo-update-azuread-jan
+ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3a43ce4c560e89d88594d173aae7b2ad2db99ee
-ms.sourcegitcommit: 653e9f61b24940561061bd65b2486e232e41ead4
+ms.openlocfilehash: fcf6e7a4fb5e76dddba6162bbabfdc5abc806a20
+ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74273110"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82610621"
 ---
 # <a name="azure-active-directory-b2b-collaboration-code-and-powershell-samples"></a>Примеры кода и команд PowerShell для службы совместной работы Azure Active Directory B2B
 
@@ -25,8 +25,8 @@ ms.locfileid: "74273110"
 Можно выполнить массовое приглашение внешних пользователей в организацию, используя электронные адреса, сохраненные в CSV-файле.
 
 1. Подготовьте CSV-файл. Создайте CSV-файл и назовите его invitations.csv. В этом примере файл сохранен в папке C:\data. Он содержит следующие сведения:
-  
-   ИМЯ                  |  InvitedUserEmailAddress
+
+   Имя                  |  InvitedUserEmailAddress
    --------------------- | --------------------------
    Приглашенный Gmail B2B     | b2binvitee@gmail.com
    Приглашенный B2B Outlook   | b2binvitee@outlook.com
@@ -56,7 +56,7 @@ ms.locfileid: "74273110"
 - отправка копий сообщений или полное подавление электронных сообщений.
 
 ## <a name="code-sample"></a>Пример кода
-Ниже показано, как вызвать API приглашения в режиме "только приложение" и получить URL-адрес активации для ресурса, в который вы приглашаете пользователя службы B2B. Цель этого действия — отправить настраиваемое сообщение с приглашением. Электронное сообщение можно составить, используя HTTP-клиент, чтобы настроить его внешний вид, и отправить его с помощью API Graph.
+Ниже показано, как вызвать API приглашения в режиме "только приложение" и получить URL-адрес активации для ресурса, в который вы приглашаете пользователя службы B2B. Цель этого действия — отправить настраиваемое сообщение с приглашением. Электронное сообщение можно составить, используя HTTP-клиент, чтобы настроить его внешний вид, и отправить его с помощью API Microsoft Graph.
 
 ```csharp
 namespace SampleInviteApp
@@ -70,47 +70,47 @@ namespace SampleInviteApp
     class Program
     {
         /// <summary>
-        /// Microsoft graph resource.
+        /// Microsoft Graph resource.
         /// </summary>
         static readonly string GraphResource = "https://graph.microsoft.com";
- 
+
         /// <summary>
-        /// Microsoft graph invite endpoint.
+        /// Microsoft Graph invite endpoint.
         /// </summary>
         static readonly string InviteEndPoint = "https://graph.microsoft.com/v1.0/invitations";
- 
+
         /// <summary>
         ///  Authentication endpoint to get token.
         /// </summary>
         static readonly string EstsLoginEndpoint = "https://login.microsoftonline.com";
- 
+
         /// <summary>
         /// This is the tenantid of the tenant you want to invite users to.
         /// </summary>
         private static readonly string TenantID = "";
- 
+
         /// <summary>
         /// This is the application id of the application that is registered in the above tenant.
         /// The required scopes are available in the below link.
         /// https://developer.microsoft.com/graph/docs/api-reference/v1.0/api/invitation_post
         /// </summary>
         private static readonly string TestAppClientId = "";
- 
+
         /// <summary>
         /// Client secret of the application.
         /// </summary>
         private static readonly string TestAppClientSecret = @"";
- 
+
         /// <summary>
         /// This is the email address of the user you want to invite.
         /// </summary>
         private static readonly string InvitedUserEmailAddress = @"";
- 
+
         /// <summary>
         /// This is the display name of the user you want to invite.
         /// </summary>
         private static readonly string InvitedUserDisplayName = @"";
- 
+
         /// <summary>
         /// Main method.
         /// </summary>
@@ -120,7 +120,7 @@ namespace SampleInviteApp
             Invitation invitation = CreateInvitation();
             SendInvitation(invitation);
         }
- 
+
         /// <summary>
         /// Create the invitation object.
         /// </summary>
@@ -135,7 +135,7 @@ namespace SampleInviteApp
             invitation.SendInvitationMessage = true;
             return invitation;
         }
- 
+
         /// <summary>
         /// Send the guest user invite request.
         /// </summary>
@@ -143,17 +143,17 @@ namespace SampleInviteApp
         private static void SendInvitation(Invitation invitation)
         {
             string accessToken = GetAccessToken();
- 
+
             HttpClient httpClient = GetHttpClient(accessToken);
- 
-            // Make the invite call. 
+
+            // Make the invite call.
             HttpContent content = new StringContent(JsonConvert.SerializeObject(invitation));
             content.Headers.Add("ContentType", "application/json");
             var postResponse = httpClient.PostAsync(InviteEndPoint, content).Result;
             string serverResponse = postResponse.Content.ReadAsStringAsync().Result;
             Console.WriteLine(serverResponse);
         }
- 
+
         /// <summary>
         /// Get the HTTP client.
         /// </summary>
@@ -171,16 +171,16 @@ namespace SampleInviteApp
                 httpClient.DefaultRequestHeaders.GetValues("client-request-id").Single());
             return httpClient;
         }
- 
+
         /// <summary>
-        /// Get the access token for our application to talk to microsoft graph.
+        /// Get the access token for our application to talk to Microsoft Graph.
         /// </summary>
-        /// <returns>Returns the access token for our application to talk to microsoft graph.</returns>
+        /// <returns>Returns the access token for our application to talk to Microsoft Graph.</returns>
         private static string GetAccessToken()
         {
             string accessToken = null;
- 
-            // Get the access token for our application to talk to microsoft graph.
+
+            // Get the access token for our application to talk to Microsoft Graph.
             try
             {
                 AuthenticationContext testAuthContext =
@@ -195,10 +195,10 @@ namespace SampleInviteApp
                 Console.WriteLine("An exception was thrown while fetching the token: {0}.", ex);
                 throw;
             }
- 
+
             return accessToken;
         }
- 
+
         /// <summary>
         /// Invitation class.
         /// </summary>
@@ -208,17 +208,17 @@ namespace SampleInviteApp
             /// Gets or sets display name.
             /// </summary>
             public string InvitedUserDisplayName { get; set; }
- 
+
             /// <summary>
             /// Gets or sets display name.
             /// </summary>
             public string InvitedUserEmailAddress { get; set; }
- 
+
             /// <summary>
             /// Gets or sets a value indicating whether Invitation Manager should send the email to InvitedUser.
             /// </summary>
             public bool SendInvitationMessage { get; set; }
- 
+
             /// <summary>
             /// Gets or sets invitation redirect URL
             /// </summary>
@@ -229,7 +229,6 @@ namespace SampleInviteApp
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
-

@@ -2,24 +2,21 @@
 title: Регистрация веб-API, который вызывает веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как создать веб-API, который вызывает нисходящие веб-API (регистрация приложений).
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: bafd71f34602535bb6193a8d8114a1182e4e8f40
-ms.sourcegitcommit: af6847f555841e838f245ff92c38ae512261426a
+ms.openlocfilehash: 048f7d41bd9d106121859e6b1fc013258067af9c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76701796"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80885129"
 ---
 # <a name="a-web-api-that-calls-web-apis-app-registration"></a>Веб-API, который вызывает веб-API: регистрация приложения
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с TOPdesk — Secure | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с TOPdesk — Secure | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TOPdesk - Secure.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 393557531fe69a494a16e0f4c49ac07891e490ec
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233400"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Secure
+# <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Учебник. Интеграция Azure Active Directory с TOPdesk — Secure
 
 В этом руководстве описано, как интегрировать TOPdesk - Secure с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением TOPdesk - Secure обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "74233400"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TOPdesk - Secure, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка TOPdesk — Secure с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "74233400"
 
     ![Сведения о домене и URL-адресах единого входа для приложения TOPdesk - Secure](common/sp-identifier-reply.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net`.
+    а. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net`.
 
     b. В поле **URL-адрес идентификатора** введите URL-адрес метаданных TOPdesk, который вы можете скопировать из конфигурации TOPdesk. При этом нужно использовать такой формат: `https://<companyname>.topdesk.net/saml-metadata/<identifier>`.
 
@@ -123,11 +123,11 @@ ms.locfileid: "74233400"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-topdesk---secure-single-sign-on"></a>Настройка единого входа в TOPdesk — Secure
 
@@ -135,7 +135,7 @@ ms.locfileid: "74233400"
 
 2. В меню **TOPdesk** выберите пункт **Settings** (Параметры).
 
-    ![Параметры](./media/topdesk-secure-tutorial/ic790598.png "Параметры")
+    ![Параметры](./media/topdesk-secure-tutorial/ic790598.png "Настройки")
 
 3. Щелкните **Параметры входа**.
 
@@ -143,13 +143,13 @@ ms.locfileid: "74233400"
 
 4. Разверните меню **Login Settings** (Параметры входа), а затем выберите **General** (Общие).
 
-    ![Общие сведения](./media/topdesk-secure-tutorial/ic790600.png "Общие")
+    ![Общие сведения](./media/topdesk-secure-tutorial/ic790600.png "Общие сведения")
 
 5. В разделе **Secure** (Безопасность) для конфигурации **SAML login** (Вход SAML) сделайте следующее.
 
     ![Технические параметры](./media/topdesk-secure-tutorial/ic790855.png "Технические параметры")
 
-    a. Нажмите кнопку **Скачать** , чтобы скачать общедоступный файл метаданных, а затем сохраните его локально на компьютере.
+    а. Нажмите кнопку **Скачать** , чтобы скачать общедоступный файл метаданных, а затем сохраните его локально на компьютере.
 
     b. Откройте файл метаданных и определите местоположение узла **AssertionConsumerService** .
 
@@ -159,9 +159,9 @@ ms.locfileid: "74233400"
 
 6. Чтобы создать файл сертификата, выполните следующие действия:
 
-    ![Certificate](./media/topdesk-secure-tutorial/ic790606.png "Сертификат")
+    ![Сертификат](./media/topdesk-secure-tutorial/ic790606.png "Сертификат")
 
-    a. Откройте скачанный файл метаданных на портале Azure.
+    а. Откройте скачанный файл метаданных на портале Azure.
 
     b. Разверните узел **RoleDescriptor**, содержащий **xsi:type** со значением **fed:ApplicationServiceType**.
 
@@ -177,7 +177,7 @@ ms.locfileid: "74233400"
 
     ![Помощник настройки SAML](./media/topdesk-secure-tutorial/ic790608.png "Помощник настройки SAML")
 
-    a. Чтобы отправить скачанный файл метаданных через портал Azure, напротив пункта **Federation Metadata** (Метаданные федерации) нажмите кнопку **Browse** (Обзор).
+    а. Чтобы отправить скачанный файл метаданных через портал Azure, напротив пункта **Federation Metadata** (Метаданные федерации) нажмите кнопку **Browse** (Обзор).
 
     b. Чтобы отправить файл сертификата, напротив пункта **Certificate (RSA)** (Сертификат (RSA)) нажмите кнопку **Browse** (Обзор).
 
@@ -185,9 +185,9 @@ ms.locfileid: "74233400"
 
     d. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
 
-    д. В текстовое поле **Атрибут имени пользователя** введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    д) В текстовое поле **Атрибут имени пользователя** введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    Е. В текстовом поле **Отображаемое имя** введите имя конфигурации.
+    е) В текстовом поле **Отображаемое имя** введите имя конфигурации.
 
     ж. Выберите команду **Сохранить**.
 
@@ -259,7 +259,7 @@ ms.locfileid: "74233400"
 
     ![Создание оператора](./media/topdesk-secure-tutorial/ic790611.png "Новый оператор")
 
-    a. Перейдите на вкладку **General** (Общие).
+    а. Перейдите на вкладку **Общие** .
 
     b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
@@ -267,7 +267,7 @@ ms.locfileid: "74233400"
 
     d. В текстовом поле **Login Name** (Имя для входа в систему) в разделе **TOPdesk Login** (Вход в TOPdesk) введите имя для входа пользователя.
 
-    д. Выберите команду **Сохранить**.
+    д) Выберите команду **Сохранить**.
 
 > [!NOTE]
 > Вы можете использовать любые другие инструменты создания учетных записей пользователей TOPdesk — Secure или API-интерфейсы, предоставляемые TOPdesk — Secure, для подготовки учетных записей пользователя AAD.

@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 10/24/2019
-ms.openlocfilehash: 6c199a0dd75b89d9c9368e799c97a28b73758d06
-ms.sourcegitcommit: b45ee7acf4f26ef2c09300ff2dba2eaa90e09bc7
+ms.custom: hdinsightactive,seoapr2020
+ms.date: 04/23/2020
+ms.openlocfilehash: 832caaed0816e3dd7d177f634209dea42e5312c7
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73097105"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82192686"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -21,16 +21,15 @@ ms.locfileid: "73097105"
 
 Узнайте, как выполнять запросы Hive с использованием представления Hive Apache Ambari. Представление Hive позволяет создавать, оптимизировать и выполнять запросы Hive из веб-браузера.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
-* Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
-* веб-браузера;
+Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
 ## <a name="run-a-hive-query"></a>Выполнение запроса Hive
 
-1. В [портал Azure](https://portal.azure.com/)выберите свой кластер.  Инструкции см. в разделе [список и отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters) . Кластер откроется в новой колонке портала.
+1. В [портал Azure](https://portal.azure.com/)выберите свой кластер.  Инструкции см. в разделе [список и отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters) . Кластер открывается в новом представлении портала.
 
-1. На **панели мониторинга кластера**выберите **представления Ambari**. Если запрашивается проверка подлинности, используйте имя пользователя и пароль учетной записи входа в кластер (по умолчанию — `admin`), указанные при создании кластера. Кроме того, перейдите к `https://CLUSTERNAME.azurehdinsight.net/#/main/views` в браузере, где `CLUSTERNAME` — имя кластера.
+1. На **панели мониторинга кластера**выберите **представления Ambari**. Если запрашивается проверка подлинности, используйте имя пользователя и пароль учетной записи входа в кластер (по умолчанию — `admin`), указанные при создании кластера. Можно также выбрать `https://CLUSTERNAME.azurehdinsight.net/#/main/views` в браузере, где `CLUSTERNAME` — это имя кластера.
 
 1. В списке представлений выберите __Представление Hive__.
 
@@ -59,18 +58,15 @@ ms.locfileid: "73097105"
         GROUP BY t4;
     ```
 
-    Эти операторы выполняют следующие действия:
+    Эти инструкции выполняют следующие действия:
 
-   * `DROP TABLE` — удаляет таблицу и файл данных, если таблица уже существует.
-
-   * `CREATE EXTERNAL TABLE` — создает "внешнюю" таблицу в Hive.
-     Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
-
-   * `ROW FORMAT` — показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.
-
-   * `STORED AS TEXTFILE LOCATION` — показывает место хранения данных и их формат (текст).
-
-   * `SELECT` — выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].
+    |. | Описание |
+    |---|---|
+    |DROP TABLE|удаляет таблицу и файл данных, если таблица уже существует.|
+    |CREATE EXTERNAL TABLE|создает "внешнюю" таблицу в Hive. Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.|
+    |ФОРМАТ СТРОКИ|показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.|
+    |ХРАНИТСЯ КАК РАСПОЛОЖЕНИЕ TEXTFILE|показывает место хранения данных и их формат (текст).|
+    |SELECT|выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].|
 
    > [!IMPORTANT]  
    > Оставьте для параметра __База данных__ значение __по умолчанию__. В примерах в этом документе используется база данных по умолчанию, входящая в состав HDInsight.
@@ -100,7 +96,7 @@ ms.locfileid: "73097105"
 > [!IMPORTANT]  
 > Tez используется не для всех запросов. Многие запросы можно разрешить и без применения Tez.
 
-## <a name="view-job-history"></a>Просмотр журнала заданий
+## <a name="view-job-history"></a>Просмотреть журнал заданий
 
 На вкладке __Задания__ отображается журнал запросов Hive.
 
@@ -114,9 +110,9 @@ ms.locfileid: "73097105"
 
 ## <a name="saved-queries"></a>Сохраненные запросы
 
-На вкладке **Запрос** можно при желании сохранять запросы. После сохранения запроса можно повторно использовать его из вкладки __Saved Queries__ (Сохраненные запросы).
+На вкладке **запрос** можно при необходимости сохранить запросы. После сохранения запроса можно повторно использовать его из вкладки __Saved Queries__ (Сохраненные запросы).
 
-![Вкладка «Просмотр сохраненных запросов Apache Hive»](./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png)
+![Вкладка «Apache Hive представлений сохраненных запросов»](./media/apache-hadoop-use-hive-ambari-view/ambari-saved-queries.png)
 
 > [!TIP]  
 > Запросы сохраняются в системе хранения данных кластера по умолчанию. Сохраненные запросы можно найти в следующем расположении: `/user/<username>/hive/scripts`. Они хранятся в виде обычных текстовых файлов `.hql`.
@@ -131,7 +127,7 @@ ms.locfileid: "73097105"
 
 ![Apache Hive просмотре вкладки пользовательских функций](./media/apache-hadoop-use-hive-ambari-view/user-defined-functions.png)
 
-После добавления в представление Hive UDF в нижней части **редактора запросов** появляется кнопка **Insert udfs** (Вставить определяемые пользователем функции). Нажав эту кнопку, вы увидите раскрывающийся список функций, определенных в представлении Hive. Выбирая определяемую пользователем функцию, вы добавляете в запрос соответствующие инструкции HiveQL.
+В нижней части **редактора запросов**появится кнопка **Вставить UDF** . Эта запись отображает раскрывающийся список пользовательских функций, определенных в представлении Hive. Выбирая определяемую пользователем функцию, вы добавляете в запрос соответствующие инструкции HiveQL.
 
 Например, если определена определяемая пользователем функция со следующими свойствами:
 
@@ -150,24 +146,20 @@ add jar /myudfs.jar;
 create temporary function myawesomeudf as 'com.myudfs.Awesome';
 ```
 
-Затем вы можете использовать эту функцию в своем запросе. Пример: `SELECT myawesomeudf(name) FROM people;`.
+Затем вы можете использовать эту функцию в своем запросе. Например, `SELECT myawesomeudf(name) FROM people;`.
 
 Дополнительные сведения об использовании определяемых пользователем функций с Hive в HDInsight см. в следующих статьях:
 
 * [Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight](python-udf-hdinsight.md)
-* [How to add custom Hive UDFs to HDInsight](https://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx) (Как добавить пользовательские UDF Hive в HDInsight)
+* [Использование определяемых пользователем функций Java с Apache Hive в HDInsight](./apache-hadoop-hive-java-udf.md)
 
 ## <a name="hive-settings"></a>Параметры Hive
 
 Вы можете изменять различные настройки Hive. Например, для изменения механизма выполнения для Hive с Tez (значение по умолчанию) на MapReduce.
 
-## <a id="nextsteps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общая информация о Hive в HDInsight:
 
 * [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
-
-Дополнительная информация о других способах работы с Hadoop в HDInsight.
-
-* [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
-* [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)
+* [Use the Apache Beeline client with Apache Hive](apache-hadoop-use-hive-beeline.md) (Использование клиента Apache Beeline с Apache Hive)

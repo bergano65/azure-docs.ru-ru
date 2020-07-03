@@ -11,13 +11,13 @@ ms.topic: conceptual
 ms.date: 10/01/2019
 ms.author: aahi
 ms.openlocfilehash: ca93de71f64efaf21c78b37b9c9aee193d13b28d
-ms.sourcegitcommit: 15e3bfbde9d0d7ad00b5d186867ec933c60cebe6
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 04/29/2020
 ms.locfileid: "71840220"
 ---
-# <a name="how-to-use-the-anomaly-detector-api-on-your-time-series-data"></a>Практическое руководство. Использование API детектора аномалий в данных временных рядов  
+# <a name="how-to-use-the-anomaly-detector-api-on-your-time-series-data"></a>Как использовать API детектора аномалии для данных временных рядов  
 
 [API детектора аномалий](https://westus2.dev.cognitive.microsoft.com/docs/services/AnomalyDetector/operations/post-timeseries-entire-detect) предоставляет два метода обнаружения аномалий. Аномалии можно определить как пакет в течение временных рядов или по мере создания данных, обнаруживая состояние аномалии последней точки данных. Модель обнаружения возвращает результаты аномалий вместе с ожидаемым значением точки данных, а также верхние и нижние границы обнаружения аномалий. Эти значения можно использовать для визуализации диапазона нормальных значений и аномалий в данных.
 
@@ -26,7 +26,7 @@ ms.locfileid: "71840220"
 API детектора аномалий предоставляет режимы обнаружения: пакетная и потоковая передача.
 
 > [!NOTE]
-> Следующие URL-адреса запросов должны быть объединены с соответствующей конечной точкой для подписки. Например: `https://<your-custom-subdomain>.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect`
+> Следующие URL-адреса запросов должны быть объединены с соответствующей конечной точкой для подписки. Пример: `https://<your-custom-subdomain>.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/entire/detect`
 
 
 ### <a name="batch-detection"></a>Пакетное обнаружение
@@ -47,9 +47,9 @@ API детектора аномалий предоставляет режимы 
 
 ## <a name="adjusting-lower-and-upper-anomaly-detection-boundaries"></a>Настройка границ обнаружения нижних и верхних аномалий
 
-По умолчанию верхние и нижние границы для обнаружения аномалий вычисляются с помощью `expectedValue`, `upperMargin` и `lowerMargin`. Если требуются разные границы, рекомендуется применить `marginScale` к `upperMargin` или `lowerMargin`. Границы будут вычисляться следующим образом:
+По умолчанию верхние и нижние границы для обнаружения аномалий вычисляются `expectedValue`с `upperMargin`помощью, `lowerMargin`и. Если требуются разные границы, рекомендуется применить `marginScale` к `upperMargin` или. `lowerMargin` Границы будут вычисляться следующим образом:
 
-|Границ  |Вычисление  |
+|Граница  |Вычисление  |
 |---------|---------|
 |`upperBoundary` | `expectedValue + (100 - marginScale) * upperMargin`        |
 |`lowerBoundary` | `expectedValue - (100 - marginScale) * lowerMargin`        |
@@ -68,7 +68,7 @@ API детектора аномалий предоставляет режимы 
 
 ![85. чувствительность](../media/sensitivity_85.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Что такое API детектора аномалий?](../overview.md)
-* [Краткое руководство Обнаружение аномалий в данных временных рядов с помощью Детектор аномалий API REST](../quickstarts/detect-data-anomalies-csharp.md)
+* [Общие сведения об API Детектора аномалий](../overview.md)
+* [Краткое руководство. обнаружение аномалий в данных временных рядов с помощью детектора аномалий REST API](../quickstarts/detect-data-anomalies-csharp.md)

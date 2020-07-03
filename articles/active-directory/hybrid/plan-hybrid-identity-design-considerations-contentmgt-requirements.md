@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0d970fd133f8c43319e7f1fdb6b3a50c3c05f687
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 04/26/2020
 ms.locfileid: "64918444"
 ---
 # <a name="determine-content-management-requirements-for-your-hybrid-identity-solution"></a>Определение требований к управлению содержимым для решения гибридной идентификации
@@ -28,7 +28,7 @@ ms.locfileid: "64918444"
 
 Ваше решение для идентификации будет использоваться различными техническими компонентами для управления содержимым, как показано на рисунке ниже:
 
-![Средства управления безопасностью](./media/plan-hybrid-identity-design-considerations/securitycontrols.png)
+![средства управления безопасностью](./media/plan-hybrid-identity-design-considerations/securitycontrols.png)
 
 **Элементы управления безопасности, которые будут использовать вашу систему управления идентификацией**
 
@@ -60,12 +60,12 @@ ms.locfileid: "64918444"
 * Нужно ли вашей компании внедрить корпоративные политики для определенного типа сообщений электронной почты (не отвечать всем, не перенаправлять)?
 
 > [!NOTE]
-> Составьте письменный ответ на каждый вопрос и убедитесь, что он логически обоснован. [Определение стратегии защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md) .  Ответив на эти вопросы, вы сможете выбрать тот вариант, который лучше всего подходит для вашего бизнеса.
+> Составьте письменный ответ на каждый вопрос и убедитесь, что он логически обоснован. [Определите стратегию защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md) , чтобы получить доступ к параметрам, а также преимуществам и недостаткам каждого из них.  Ответив на эти вопросы, вы сможете выбрать тот вариант, который лучше всего подходит для вашего бизнеса.
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
-[Определение требований к контролю доступа](plan-hybrid-identity-design-considerations-accesscontrol-requirements.md)
+## <a name="next-steps"></a>Следующие шаги
+[Определение требований к управлению доступом](plan-hybrid-identity-design-considerations-accesscontrol-requirements.md)
 
 ## <a name="see-also"></a>См. также
 [Обзор рекомендаций по проектированию](plan-hybrid-identity-design-considerations-overview.md)

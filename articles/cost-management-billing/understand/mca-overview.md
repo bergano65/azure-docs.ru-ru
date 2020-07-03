@@ -1,21 +1,18 @@
 ---
-title: Начало работы с выставлением счетов в рамках Клиентского соглашения Майкрософт в Azure
+title: Начало работы с учетной записью выставления счетов в рамках Клиентского соглашения Майкрософт — Azure
 description: Общие сведения об учетной записи выставления счетов по клиентскому соглашению Майкрософт
 author: bandersmsft
-manager: amberbhargava
+ms.reviewer: amberbhargava
 ms.service: cost-management-billing
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 09/10/2019
+ms.date: 03/27/2020
 ms.author: banders
-ms.openlocfilehash: 7d26c98ae8e5b9b95038a4a775134282703fa7c6
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: df54109010c694934dda005d6e8f1c219ec49efc
+ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995121"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80371003"
 ---
 # <a name="get-started-with-your-microsoft-customer-agreement-billing-account"></a>Начало работы с учетной записью выставления счетов клиентского соглашения Майкрософт
 

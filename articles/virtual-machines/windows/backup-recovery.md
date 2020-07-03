@@ -1,27 +1,22 @@
 ---
-title: Общие сведения о параметрах резервного копирования для виртуальных машин Windows в Azure
+title: Общие сведения о параметрах резервного копирования
 description: Обзор параметров резервного копирования для виртуальных машин Windows в Azure.
-services: virtual-machines-windows
-documentationcenter: virtual-machines
 author: cynthn
-manager: gwallace
-editor: tysonn
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
+ms.subservice: recovery
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/13/2017
 ms.author: cynthn
-ms.openlocfilehash: 4216d14cfdbebabf912f8a407dbd8777150ff88f
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 79ce6ee6b15b0e9bdf5e0f48c44731c476069d93
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74039242"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82083569"
 ---
 # <a name="backup-and-restore-options-for-virtual-machines-in-azure"></a>Параметры резервного копирования и восстановления для виртуальных машин в Azure
-Защиту данных можно обеспечить, выполняя архивацию через регулярные интервалы. Доступно несколько вариантов резервного копирования для виртуальных машин на основе сценариев использования.
+Для защиты данных можно создавать архивы с регулярным интервалом. Доступно несколько вариантов резервного копирования для виртуальных машин на основе сценариев использования.
 
 [!INCLUDE [virtual-machines-common-backup-recovery](../../../includes/virtual-machines-common-backup-recovery.md)]

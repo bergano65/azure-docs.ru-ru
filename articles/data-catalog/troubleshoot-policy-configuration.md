@@ -7,13 +7,13 @@ ms.service: data-catalog
 ms.topic: troubleshooting
 ms.date: 08/01/2019
 ms.openlocfilehash: 84bd14f8ae18527b4f6e9d8509a12555baec8771
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "68879550"
 ---
-# <a name="troubleshooting-azure-data-catalog"></a>Устранение неполадок каталога данных Azure
+# <a name="troubleshooting-azure-data-catalog"></a>Устранение проблем с Каталогом данных Azure
 
 В этой статье описаны распространенные проблемы, связанные с устранением неполадок в ресурсах каталога данных Azure. 
 
@@ -41,4 +41,4 @@ ms.locfileid: "68879550"
 
 ## <a name="next-steps"></a>Следующие шаги
 
-* [Создание каталога данных Azure](data-catalog-get-started.md)
+* [Создание Каталога данных Azure](data-catalog-get-started.md)

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: bharathb
-ms.openlocfilehash: 9111193bb441487b9e3c49bc9ee1a296d49f8a31
-ms.sourcegitcommit: 7efb2a638153c22c93a5053c3c6db8b15d072949
+ms.openlocfilehash: 34698a215477abdd7d68c3dfe050657ecf049690
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72882383"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80984901"
 ---
 # <a name="options-to-migrate-your-on-premises-or-cloud-data-to-azure-cosmos-db"></a>Параметры для переноса локальных или облачных данных в Azure Cosmos DB
 
@@ -28,47 +28,47 @@ ms.locfileid: "72882383"
 
 * **Размер данных**. Большинство средств миграции очень хорошо работает для небольших DataSet. Если набор данных превышает несколько сотен гигабайт, выбор средств миграции ограничен. 
 
-* **Ожидаемая длительность миграции**. миграцию можно настроить так, чтобы она переводилась на более длительный, инкрементный темп, который потребляет меньше пропускной способности или может использовать всю пропускную способность, подготовленную в целевом контейнере Azure Cosmos DB и выполнять миграцию меньше Таймаут.
+* **Ожидаемая длительность миграции**. миграцию можно настроить так, чтобы она настроилась в заданный период времени, который потребляет меньше пропускной способности или может использовать всю пропускную способность, подготовленную в целевом контейнере Azure Cosmos DB, и выполнить миграцию за меньшее время.
 
 ## <a name="azure-cosmos-db-sql-api"></a>API SQL для Azure Cosmos DB
-|**Тип миграции**|**Решение**|**Рекомендации**|
+|**Тип перемещения**|**Решение**|**Рекомендации**|
 |---------|---------|---------|
-|Автономно|[Средство переноса данных](https://docs.microsoft.com/azure/cosmos-db/import-data)|&bull; простота настройки и поддержки нескольких источников <br/>&bull; не подходит для больших наборов данных|
-|Автономно|[Фабрика данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db)|&bull; простота настройки и поддержки нескольких источников <br/>&bull; использует библиотеку Azure Cosmos DBного выполнителя <br/>&bull; подходит для больших наборов данных <br/>&bull; отсутствия контрольных точек — это означает, что если проблема возникает во время миграции, необходимо перезапустить весь процесс миграции.<br/>&bull; отсутствия очереди недоставленных сообщений — это означает, что несколько ошибочных файлов могут прерывать весь процесс миграции.|
-|Автономно|[Соединитель Azure Cosmos DB Spark](https://docs.microsoft.com/azure/cosmos-db/spark-connector)|&bull; использует библиотеку Azure Cosmos DBного выполнителя <br/>&bull; подходит для больших наборов данных <br/>&bull; требуется пользовательская установка Spark <br/>&bull; Spark чувствительна к несогласованности схем, и это может стать проблемой во время миграции |
-|Автономно|[Пользовательский инструмент с библиотекой Cosmos DBного выполнителя](https://docs.microsoft.com/azure/cosmos-db/migrate-cosmosdb-data)|&bull; предоставляет возможности создания контрольных точек, недоставленных сообщений, что повышает устойчивость к миграции <br/>&bull; подходит для очень больших наборов данных (10 ТБ +)  <br/>&bull; требуется пользовательская установка этого средства в качестве службы приложений |
-|В сети|[Функции Cosmos DB и API пр](https://docs.microsoft.com/azure/cosmos-db/change-feed-functions)|&bull; легко настроить <br/>&bull; работает только в том случае, если источником является Azure Cosmos DB контейнер <br/>&bull; не подходит для больших наборов данных <br/>&bull; не собирает удаления из исходного контейнера |
-|В сети|[Настраиваемая служба миграции с использованием пр](https://aka.ms/CosmosDBMigrationSample)|&bull; обеспечивает отслеживание хода выполнения <br/>&bull; работает только в том случае, если источником является Azure Cosmos DB контейнер <br/>&bull; работает также для больших наборов данных <br/>&bull; требует, чтобы пользователь настроил службу приложений для размещения обработчика веб-канала изменений <br/>&bull; не собирает удаления из исходного контейнера|
-|В сети|[стриим](https://docs.microsoft.com/azure/cosmos-db/cosmosdb-sql-api-migrate-data-striim)|&bull; работает с большим количеством источников, таких как Oracle, DB2, SQL Server <br/>&bull; легко создавать конвейеры ETL и предоставляет панель мониторинга для мониторинга <br/>&bull; поддерживает большие наборы данных <br/>&bull;, поскольку это средство стороннего производителя, оно должно быть приобретено в Marketplace и установлено в среде пользователя.|
+|Offline|[Средство переноса данных](https://docs.microsoft.com/azure/cosmos-db/import-data)|&bull;Простота настройки и поддержки нескольких источников <br/>&bull;Не подходит для больших наборов данных|
+|Offline|[Фабрика данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db).|&bull;Простота настройки и поддержки нескольких источников <br/>&bull;Использование библиотеки Azure Cosmos DBного выполнителя <br/>&bull;Подходит для больших наборов данных <br/>&bull;Отсутствие контрольных точек — это означает, что если проблема возникает во время миграции, необходимо перезапустить весь процесс миграции.<br/>&bull;Отсутствие очереди недоставленных сообщений — это означает, что несколько ошибочных файлов могут прерывать весь процесс миграции.|
+|Offline|[Соединитель Azure Cosmos DB Spark](https://docs.microsoft.com/azure/cosmos-db/spark-connector)|&bull;Использование библиотеки Azure Cosmos DBного выполнителя <br/>&bull;Подходит для больших наборов данных <br/>&bull;Требуется пользовательская установка Spark <br/>&bull;Spark учитывает несоответствия схем, и это может быть проблемой во время миграции |
+|Offline|[Пользовательский инструмент с библиотекой Cosmos DBного выполнителя](https://docs.microsoft.com/azure/cosmos-db/migrate-cosmosdb-data)|&bull;Предоставляет возможности создания контрольных точек, недоставленных сообщений, что повышает устойчивость к миграции <br/>&bull;Подходит для очень больших наборов данных (10 ТБ +)  <br/>&bull;Требует, чтобы пользовательская установка этого средства выполнялась как служба приложений |
+|Справка в Интернете|[Функции Cosmos DB и API пр](https://docs.microsoft.com/azure/cosmos-db/change-feed-functions)|&bull;Простота настройки <br/>&bull;Работает только в том случае, если источником является контейнер Azure Cosmos DB <br/>&bull;Не подходит для больших наборов данных <br/>&bull;Не собирает удаления из исходного контейнера |
+|Справка в Интернете|[Настраиваемая служба миграции с использованием пр](https://github.com/nomiero/CosmosDBLiveETLSample)|&bull;Обеспечивает отслеживание хода выполнения <br/>&bull;Работает только в том случае, если источником является контейнер Azure Cosmos DB <br/>&bull;Работает также с большими наборами данных <br/>&bull;Требует, чтобы пользователь настроил службу приложений для размещения обработчика веб-канала изменений <br/>&bull;Не собирает удаления из исходного контейнера|
+|Справка в Интернете|[стриим](https://docs.microsoft.com/azure/cosmos-db/cosmosdb-sql-api-migrate-data-striim)|&bull;Работает с большим разнообразием источников, таких как Oracle, DB2 SQL Server <br/>&bull;Простота построения конвейеров ETL и предоставление панели мониторинга для мониторинга <br/>&bull;Поддерживает большие наборы данных <br/>&bull;Поскольку это средство стороннего производителя, оно должно быть приобретено в Marketplace и установлено в среде пользователя.|
 
 ## <a name="azure-cosmos-db-mongo-api"></a>Azure Cosmos DB API Mongo
-|**Тип миграции**|**Решение**|**Рекомендации**|
+|**Тип перемещения**|**Решение**|**Рекомендации**|
 |---------|---------|---------|
-|Автономно|[Средство переноса данных](https://docs.microsoft.com/azure/cosmos-db/import-data)|&bull; простота настройки и поддержки нескольких источников <br/>&bull; не подходит для больших наборов данных|
-|Автономно|[Фабрика данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db)|&bull; простота настройки и поддержки нескольких источников <br/>&bull; использует библиотеку Azure Cosmos DBного выполнителя <br/>&bull; подходит для больших наборов данных <br/>&bull; отсутствия контрольных точек означает, что все проблемы во время миграции потребуют перезапуска всего процесса миграции.<br/>&bull; недостаток очереди недоставленных сообщений означает, что несколько ошибочных файлов могут прерывать весь процесс миграции. <br/>&bull; требуется пользовательский код для увеличения пропускной способности чтения для определенных источников данных|
-|Автономно|[Существующие средства Mongo (монгодумп, mongorestore, Studio3T)](https://azure.microsoft.com/resources/videos/using-mongodb-tools-with-azure-cosmos-db/)|&bull; простота настройки и интеграции <br/>&bull; требуется настраиваемая обработка для регулирования|
-|В сети|[Azure Database Migration Service](https://docs.microsoft.com/azure/dms/tutorial-mongodb-cosmos-db-online)|&bull; использует библиотеку Azure Cosmos DBного выполнителя <br/>&bull; подходит для больших наборов данных и отвечает за репликацию динамических изменений <br/>&bull; работает только с другими источниками MongoDB|
+|Offline|[Средство переноса данных](https://docs.microsoft.com/azure/cosmos-db/import-data)|&bull;Простота настройки и поддержки нескольких источников <br/>&bull;Не подходит для больших наборов данных|
+|Offline|[Фабрика данных Azure](https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db).|&bull;Простота настройки и поддержки нескольких источников <br/>&bull;Использование библиотеки Azure Cosmos DBного выполнителя <br/>&bull;Подходит для больших наборов данных <br/>&bull;Отсутствие контрольных точек означает, что любые проблемы во время миграции потребуют перезапуска всего процесса миграции.<br/>&bull;Отсутствие очереди недоставленных сообщений означает, что несколько ошибочных файлов могут прерывать весь процесс миграции. <br/>&bull;Требуется пользовательский код для увеличения пропускной способности чтения для определенных источников данных|
+|Offline|[Существующие средства Mongo (монгодумп, mongorestore, Studio3T)](https://azure.microsoft.com/resources/videos/using-mongodb-tools-with-azure-cosmos-db/)|&bull;Простота настройки и интеграции <br/>&bull;Требуется настраиваемая обработка для регулирования|
+|Справка в Интернете|[Azure Database Migration Service](https://docs.microsoft.com/azure/dms/tutorial-mongodb-cosmos-db-online)|&bull;Использование библиотеки Azure Cosmos DBного выполнителя <br/>&bull;Подходит для больших наборов данных и отвечает за репликацию динамических изменений <br/>&bull;Работает только с другими источниками MongoDB|
 
-## <a name="azure-cosmos-db-cassandra-api"></a>API Cassandra Azure Cosmos DB
-|**Тип миграции**|**Решение**|**Рекомендации**|
+## <a name="azure-cosmos-db-cassandra-api"></a>API Cassandra для Azure Cosmos DB
+|**Тип перемещения**|**Решение**|**Рекомендации**|
 |---------|---------|---------|
-|Автономно|[cqlsh COPY, команда](https://docs.microsoft.com/azure/cosmos-db/cassandra-import-data#migrate-data-using-cqlsh-copy-command)|&bull; легко настроить <br/>&bull; не подходит для больших наборов данных <br/>&bull; работает, только если источником является таблица Cassandra|
-|Автономно|[Копирование таблицы с помощью Spark](https://docs.microsoft.com/azure/cosmos-db/cassandra-import-data#migrate-data-using-spark) |&bull; может использовать возможности Spark для параллельного преобразования и приема <br/>&bull; требуется конфигурация с пользовательской политикой повтора для управления регулированием|
-|В сети|[Стриим (из Oracle DB или Apache Cassandra)](https://docs.microsoft.com/azure/cosmos-db/cosmosdb-cassandra-api-migrate-data-striim)|&bull; работает с большим количеством источников, таких как Oracle, DB2, SQL Server <br/>&bull; легко создавать конвейеры ETL и предоставляет панель мониторинга для мониторинга <br/>&bull; поддерживает большие наборы данных <br/>&bull;, поскольку это средство стороннего производителя, оно должно быть приобретено в Marketplace и установлено в среде пользователя.|
-|В сети|[Блитзз (из Oracle DB или Apache Cassandra)](https://docs.microsoft.com/azure/cosmos-db/oracle-migrate-cosmos-db-blitzz)|<br/>&bull; поддерживает большие наборы данных <br/>&bull;, поскольку это средство стороннего производителя, оно должно быть приобретено в Marketplace и установлено в среде пользователя.|
+|Offline|[cqlsh COPY, команда](https://docs.microsoft.com/azure/cosmos-db/cassandra-import-data#migrate-data-using-cqlsh-copy-command)|&bull;Простота настройки <br/>&bull;Не подходит для больших наборов данных <br/>&bull;Работает, только если источником является таблица Cassandra|
+|Offline|[Копирование таблицы с помощью Spark](https://docs.microsoft.com/azure/cosmos-db/cassandra-import-data#migrate-data-using-spark) |&bull;Может использовать возможности Spark для параллельного преобразования и приема <br/>&bull;Требуется конфигурация с пользовательской политикой повтора для управления регулированием|
+|Справка в Интернете|[Стриим (из Oracle DB или Apache Cassandra)](https://docs.microsoft.com/azure/cosmos-db/cosmosdb-cassandra-api-migrate-data-striim)|&bull;Работает с большим разнообразием источников, таких как Oracle, DB2 SQL Server <br/>&bull;Простота построения конвейеров ETL и предоставление панели мониторинга для мониторинга <br/>&bull;Поддерживает большие наборы данных <br/>&bull;Поскольку это средство стороннего производителя, оно должно быть приобретено в Marketplace и установлено в среде пользователя.|
+|Справка в Интернете|[Блитзз (из Oracle DB или Apache Cassandra)](https://docs.microsoft.com/azure/cosmos-db/oracle-migrate-cosmos-db-blitzz)|<br/>&bull;Поддерживает большие наборы данных <br/>&bull;Поскольку это средство стороннего производителя, оно должно быть приобретено в Marketplace и установлено в среде пользователя.|
 
-## <a name="other-apis"></a>Другие API
+## <a name="other-apis"></a>Other APIs
 Для API-интерфейсов, отличных от API SQL, Mongo API и API Cassandra, существуют различные средства, поддерживаемые всеми экосистемами API. 
 
-**API таблицы**; 
+**API таблиц** 
 * [Средство переноса данных](https://docs.microsoft.com/azure/cosmos-db/table-import#data-migration-tool)
 * [AzCopy](https://docs.microsoft.com/azure/cosmos-db/table-import#migrate-data-by-using-azcopy)
 
-**API Gremlin**;
+**API Gremlin**
 * [Библиотека массовых исполнителей Graph](https://docs.microsoft.com/azure/cosmos-db/bulk-executor-graph-dotnet)
 * [Gremlin Spark](https://github.com/Azure/azure-cosmosdb-spark/blob/2.4/samples/graphframes/main.scala) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения см. в примерах приложений, использующих библиотеку небольшого выполнителя в [.NET](bulk-executor-dot-net.md) и [Java](bulk-executor-java.md). 
 * Библиотека небольшого Исполнительного исполнителя интегрирована в соединитель Cosmos DB Spark. Дополнительные сведения см. в статье о [соединителе Azure Cosmos DB Spark](spark-connector.md) .  

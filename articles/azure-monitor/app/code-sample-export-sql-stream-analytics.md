@@ -1,21 +1,17 @@
 ---
 title: Экспорт в SQL из Azure Application Insights | Документация Майкрософт
 description: Осуществляйте непрерывный экспорт данных Application Insights в SQL с использованием Stream Analytics.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 09/11/2017
-ms.openlocfilehash: 41efcbc7b70395302858638a9f44f3cbba27bf9a
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.openlocfilehash: e67365038b9a481bc0cacf079e5d197cc3139a5f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72678264"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81536919"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Пошаговое руководство. Экспорт в SQL из Application Insights с использованием Stream Analytics
-В этой статье показано, как переместить данные телеметрии из [azure Application Insights][start] в базу данных SQL Azure с помощью [непрерывного экспорта][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
+В этой статье показано, как переместить данные телеметрии из [Azure Application Insights][start] в базу данных SQL Azure, используя [непрерывный экспорт][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
 
 Непрерывный экспорт позволяет переместить данные телеметрии в службу хранилища Azure в формате JSON. Мы выполним анализ объектов JSON, используя Azure Stream Analytics, и создадим строки в таблице базы данных.
 
@@ -26,7 +22,7 @@ ms.locfileid: "72678264"
 В этом примере мы используем данные просмотров страницы, но этот же шаблон можно легко использовать и для других типов данных, таких как пользовательские события и исключения. 
 
 ## <a name="add-application-insights-to-your-application"></a>Добавление Application Insights в приложение
-Чтобы приступить к работе, сделайте следующее:
+Чтобы начать работу:
 
 1. [Настройте Application Insights для веб-страниц](../../azure-monitor/app/javascript.md). 
    
@@ -65,7 +61,7 @@ ms.locfileid: "72678264"
     ![Выберите типы событий.](./media/code-sample-export-sql-stream-analytics/085-types.png)
 
 
-1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
+1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
    
     Данные также будут экспортированы в хранилище. 
 2. Проверьте экспортированные данные на портале (щелкните **Обзор**, выберите учетную запись хранения и щелкните **Контейнеры**) или в Visual Studio. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". (Если этой команды нет в меню, установите пакет SDK Azure: откройте диалоговое окно "Создание проекта", разверните узел "Visual C#/облако" и выберите "Получить Microsoft Azure SDK для .NET".)
@@ -77,7 +73,7 @@ ms.locfileid: "72678264"
 События записываются в JSON-файлы больших двоичных объектов. Каждый файл может содержать одно или несколько событий. Поэтому нам нужна возможность считывать данные событий и отфильтровывать необходимые поля. С данными можно выполнять любые действия, но сейчас мы будем использовать Stream Analytics для перемещения данных в базу данных SQL. Это облегчит выполнение многих любопытных запросов.
 
 ## <a name="create-an-azure-sql-database"></a>Создание базы данных SQL Azure
-После повторного запуска из подписки в [портал Azure][portal]создайте базу данных (и новый сервер, если у вас ее еще нет), в которую будут записываться данные.
+В своей подписке на [портале Azure][portal] создайте базу данных (и сервер, если у вас его еще нет), куда будут записываться данные.
 
 !["Создать", "Данные", SQL.](./media/code-sample-export-sql-stream-analytics/090-sql.png)
 
@@ -157,13 +153,13 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
 
 #### <a name="set-path-prefix-pattern"></a>Установка шаблона префикса пути
 
-**Задайте в поле "Формат даты" значение в формате ГГГГ-ММ-ДД (с дефисами).**
+**Не забудьте задать формат даты гггг-мм-дд (с тире).**
 
 Шаблон префикса пути указывает, как Stream Analytics находит входные файлы в хранилище. Вам необходимо настроить это поле в соответствии с тем, как функция непрерывного экспорта сохраняет данные. Задайте следующее значение:
 
     webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
 
-В данном примере:
+В этом примере:
 
 * `webapplication27` — имя ресурса Application Insights ( **только строчные буквы**). 
 * `1234...` — ключ инструментирования ресурса Application Insights с **удаленными дефисами**. 
@@ -243,7 +239,7 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
     FROM [dbo].[PageViewsTable]
 
 
-## <a name="related-articles"></a>Связанные статьи
+## <a name="related-articles"></a>Похожие статьи
 * [Экспорт в Power BI с использованием Stream Analytics](../../azure-monitor/app/export-power-bi.md )
 * [Подробный справочник по модели данных типов и значений свойств.](../../azure-monitor/app/export-data-model.md)
 * [Непрерывный экспорт в Application Insights](../../azure-monitor/app/export-telemetry.md)
@@ -253,7 +249,7 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
 
 [diagnostic]: ../../azure-monitor/app/diagnostic-search.md
 [export]: ../../azure-monitor/app/export-telemetry.md
-[metrics]: ../../azure-monitor/app/metrics-explorer.md
+[metrics]: ../../azure-monitor/platform/metrics-charts.md
 [portal]: https://portal.azure.com/
 [start]: ../../azure-monitor/app/app-insights-overview.md
 

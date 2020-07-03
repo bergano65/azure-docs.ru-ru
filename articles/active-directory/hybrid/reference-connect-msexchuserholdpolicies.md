@@ -15,10 +15,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f4c637a01825616334cda8faa594efd08f29de8d
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74213075"
 ---
 # <a name="azure-ad-connect---msexchuserholdpolicies-and-cloudmsexchuserholdpolicies"></a>Azure AD Connect МсексчусерхолдполиЦиес и КлаудмсексчусерхолдполиЦиес
@@ -38,13 +38,13 @@ ms.locfileid: "74213075"
 
 |Атрибут Active Directory|Имя атрибута|Flow type (Тип потока)|Атрибут метавселенной|Правило синхронизации|
 |-----|-----|-----|-----|-----|
-|Локальная служба Active Directory|msExchUserHoldPolicies|Напрямую|мсексчусерхолдполицес|В от AD-user Exchange|
+|Локальная служба Active Directory|msExchUserHoldPolicies|Прямой доступ|мсексчусерхолдполицес|В от AD-user Exchange|
 
 Исходящий трафик в Azure AD:
 
 |Атрибут метавселенной|Имя атрибута|Flow type (Тип потока)|Атрибут Azure AD|Правило синхронизации|
 |-----|-----|-----|-----|-----|
-|Azure Active Directory|msExchUserHoldPolicies|Напрямую|msExchUserHoldPolicies|Out To AAD — Усерексчанжеонлине|
+|Azure Active Directory|msExchUserHoldPolicies|Прямой доступ|msExchUserHoldPolicies|Out To AAD — Усерексчанжеонлине|
 
 ## <a name="cloudmsexchuserholdpolicies-synchronization-flow"></a>поток синхронизации КлаудмсексчусерхолдполиЦиес
 По умолчанию КлаудмсексчусерхолдполиЦиес синхронизируется путем Azure AD Connect непосредственно к атрибуту КлаудмсексчусерхолдполиЦиес в метавселенной. Затем, если Мсексчусерхолдполицес не имеет значение NULL в метавселенной, атрибут в потоке передается в Active Directory.
@@ -55,7 +55,7 @@ ms.locfileid: "74213075"
 
 |Атрибут Active Directory|Имя атрибута|Flow type (Тип потока)|Атрибут метавселенной|Правило синхронизации|
 |-----|-----|-----|-----|-----|
-|Локальная служба Active Directory|клаудмсексчусерхолдполиЦиес|Напрямую|клаудмсексчусерхолдполиЦиес|В от AAD-User Exchange|
+|Локальная служба Active Directory|клаудмсексчусерхолдполиЦиес|Прямой доступ|клаудмсексчусерхолдполиЦиес|В от AAD-User Exchange|
 
 Исходящий трафик в локальную Active Directory:
 
@@ -70,5 +70,5 @@ ms.locfileid: "74213075"
 
 При определенных обстоятельствах, например, если оба были изменены локально и в Azure одновременно, это может привести к некоторым проблемам.  
 
-## <a name="next-steps"></a>Дополнительная информация
-Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

@@ -6,14 +6,14 @@ ms.topic: tutorial
 ms.date: 07/10/2019
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: b226c37c36da033862377860be4c413229651fb6
-ms.sourcegitcommit: 003e73f8eea1e3e9df248d55c65348779c79b1d6
+ms.openlocfilehash: 6ce2e5a71d48942642ee01d8d2cc75a232abf259
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75614049"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82159955"
 ---
-# <a name="tutorial-monitor-and-diagnose-an-aspnet-core-application-on-service-fabric-using-application-insights"></a>Руководство. Мониторинг и диагностика приложения ASP.NET Core в Service Fabric с помощью Application Insights
+# <a name="tutorial-monitor-and-diagnose-an-aspnet-core-application-on-service-fabric-using-application-insights"></a>Руководство по Мониторинг и диагностика приложения ASP.NET Core в Service Fabric с помощью Application Insights
 
 Это руководство представляет собой пятую часть цикла. В нем описывается настройка мониторинга и диагностики приложения ASP.NET Core, запущенного в кластере Service Fabric, с помощью Application Insights. Мы будем собирать данные телеметрии из приложения, разработанного в первой части цикла, [Создание приложения .NET Service Fabric](service-fabric-tutorial-create-dotnet-app.md).
 
@@ -32,7 +32,7 @@ ms.locfileid: "75614049"
 > * [Настройка CI/CD с помощью Azure Pipelines](service-fabric-tutorial-deploy-app-with-cicd-vsts.md)
 > * Настройка мониторинга и диагностики приложения
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -168,7 +168,7 @@ ConfigureServices(services => services
 >[!NOTE]
 >Если у вас не установлена последняя версия пакета SDK для .NET Core, вы можете получить ошибку сборки.
 
-После завершения развертывания приложения перейдите по адресу [localhost: 8080](localhost:8080), по которому должен быть доступен пример одностраничного приложения Voting. Проголосуйте за несколько элементов на свой выбор, чтобы создать примеры данных и данные телеметрии. А я пока схожу за десертом.
+Когда развертывание приложения завершится, перейдите по адресу `localhost:8080`, где должен отображаться пример одностраничного приложения для голосования. Проголосуйте за несколько элементов на свой выбор, чтобы создать примеры данных и данные телеметрии. А я пока схожу за десертом.
 
 ![Примеры голосования в Application Insights](./media/service-fabric-tutorial-monitoring-aspnet/vote-sample.png)
 
@@ -251,7 +251,7 @@ public async Task<IActionResult> Delete(string name)
 }
 ```
 
-После внесения этих изменений **запустите** приложение, чтобы выполнить сборку его последней версии и развернуть ее. После развертывания приложения перейдите по адресу [localhost: 8080](localhost:8080), после чего добавьте и удалите несколько параметров голосования. Затем вернитесь к ресурсу Application Insights, чтобы просмотреть трассировки для последнего выполнения (как и прежде, трассировки могут появиться в Application Insights через 1–2 минуты). Для всех добавленных и удаленных голосов теперь должно отображаться пользовательское событие\* и все данные телеметрии ответа.
+После внесения этих изменений **запустите** приложение, чтобы выполнить сборку его последней версии и развернуть ее. После развертывания приложения перейдите по адресу `localhost:8080`, после чего добавьте и удалите несколько параметров голосования. Затем вернитесь к ресурсу Application Insights, чтобы просмотреть трассировки для последнего выполнения (как и прежде, трассировки могут появиться в Application Insights через 1–2 минуты). Для всех добавленных и удаленных голосов теперь должно отображаться пользовательское событие\* и все данные телеметрии ответа.
 
 ![Пользовательские события](./media/service-fabric-tutorial-monitoring-aspnet/custom-events.png)
 

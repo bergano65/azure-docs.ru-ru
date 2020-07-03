@@ -2,31 +2,27 @@
 title: 'Azure AD Connect агент подготовки: журнал выпусков версий | Документация Майкрософт'
 description: В этой статье перечислены все выпуски агента подготовки Azure AD Connect и описаны новые функции и исправлены проблемы.
 services: active-directory
-documentationcenter: ''
 author: cmmdesai
-manager: daveba
-editor: ''
-ms.assetid: ''
+manager: CelesteDG
 ms.service: active-directory
-ms.devlang: na
 ms.topic: reference
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/04/2020
-ms.subservice: app-mgmt
+ms.date: 02/26/2020
+ms.subservice: app-provisioning
 ms.author: chmutali
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: cac9eac2d17fa0a4f1db487d4c7f8beb67de24a9
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.reviewer: celested
+ms.openlocfilehash: 9a756d276b194aa8d1acb0297a7b4909a8082a84
+ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77066347"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82593255"
 ---
 # <a name="azure-ad-connect-provisioning-agent-version-release-history"></a>Агент подготовки Azure AD Connect: журнал выпусков версий
+
 В этой статье перечислены версии и возможности выпущенного агента подготовки Azure Active Directory Connect. Команда Azure AD регулярно обновляет агент подготовки с помощью новых функций и функций. Агент подготовки обновляется автоматически при выпуске новой версии. 
 
-Мы рекомендуем включить автоматическое обновление для агентов, чтобы обеспечить наличие новейших компонентов и исправлений ошибок. Корпорация Майкрософт предоставляет прямую поддержку последней версии агента и одной версии.
+Корпорация Майкрософт предоставляет прямую поддержку последней версии агента и одной версии.
 
 ## <a name="11960"></a>1.1.96.0
 

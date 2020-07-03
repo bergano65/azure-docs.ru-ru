@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: raynew
 ms.openlocfilehash: 8bca88fc63a7fc04a22d2a68adbe59259b07f50e
-ms.sourcegitcommit: dbde4aed5a3188d6b4244ff7220f2f75fce65ada
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74185878"
 ---
 # <a name="how-does-hyper-v-replication-work"></a>Как работает репликация Hyper-V?
@@ -30,7 +30,7 @@ ms.locfileid: "74185878"
 
 ## <a name="architectural-components"></a>Компоненты архитектуры
 
-![Архитектура](./media/hyper-v-replication-architecture/architecture.png)
+![Architecture](./media/hyper-v-replication-architecture/architecture.png)
 
 
 
@@ -86,6 +86,6 @@ I
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Попробуйте выполнить [миграцию Hyper-V](tutorial-migrate-hyper-v.md) с помощью миграции сервера миграция Azure.

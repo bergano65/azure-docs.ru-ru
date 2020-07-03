@@ -10,24 +10,24 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 1/14/2020
 ms.author: cbasoglu
-ms.openlocfilehash: 3b96ded52aa2148df9e96d6f1e878d50b821abab
-ms.sourcegitcommit: d29e7d0235dc9650ac2b6f2ff78a3625c491bbbf
+ms.openlocfilehash: b41967033b00144ca5bd52ce23cf8aabcea6749e
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76170471"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "78228080"
 ---
 # <a name="speech-services-with-sovereign-clouds"></a>Службы речи с облаками независимых
 
 ## <a name="azure-government-united-states"></a>Azure для государственных организаций (США)
 
-Доступ к этому выделенному экземпляру, операциями которого управляют граждане США, прошедшие проверку, предоставляется только учреждениям США федерального уровня, уровня штата, местного уровня или уровня общины и их партнерам.
+Доступ к этому выделенному экземпляру осуществляется только федеральным органам США, Штатам, местным регионам и уровня общины и их партнерам, которые управляются с помощью привилегированных сотрудников США.
 - Регионы: US Gov (Вирджиния)
-- SR в Спичсдк:*config. Фромхост ("WSS://виргиниа.СТТ.Спич.Азуре.ус", "\<\>ключ");*
-- TTS в Спичсдк: *config. Фромхост ("HTTPS[]()://Virginia.TTS.Speech.Azure.US", "\<\>ключ");*
+- SR в Спичсдк:*config. Фромхост ("WSS://виргиниа.СТТ.Спич.Азуре.ус", "\<ваш ключ\>");*
+- TTS в Спичсдк: *config. Фромхост ("HTTPS[]()://Virginia.TTS.Speech.Azure.US", "\<ваш ключ\>");*
 - Токены проверки подлинности: HTTPS[]()://Virginia.API.Cognitive.Microsoft.US/STS/v1.0/issueToken
 - Портал Azure: https://portal.azure.us  
-- Пользовательское распознавание речи портал: https://virginia.cris.azure.us/Home/CustomSpeech
+- Пользовательское распознавание речи портал:https://virginia.cris.azure.us/Home/CustomSpeech
 - Доступные номера SKU: S0
 - Поддерживаемые функции
   - Преобразование речи в текст
@@ -35,7 +35,7 @@ ms.locfileid: "76170471"
   - Преобразование текста в речь
   - Переводчик речи
 - Неподдерживаемые функции
-  - Пользовательские голосовые модели
+  - Custom Voice (Пользовательские голосовые модели)
   - Нейронные голоса для преобразования текста в речь
 - Поддерживаемые языковые стандарты: поддерживаются языковые стандарты для следующих языков.
   - Арабский (AR-*)
@@ -48,15 +48,15 @@ ms.locfileid: "76170471"
   - Русский
   - Испанский (ES-*)
 
-## <a name="microsoft-azure-china"></a>Microsoft Azure для Китая
+## <a name="microsoft-azure-china"></a>Microsoft Azure Китая
 
 В Китае, центре обработки данных Azure с прямым доступом к китайским, портативным, китайским и прочим центральным сетям перевозчиков для китайских пользователей, обеспечивающих высокую скорость и устойчивую работу локальной сети.
 - Регионы: Восточный Китай 2 (Шанхай)
-- SR в Спичсдк: *config. Фромхост ("WSS://chinaeast2.STT.Speech.Azure.CN", "\<\>ключ");*
-- TTS в Спичсдк: *config. Фромхост ("HTTPS[]()://chinaeast2.TTS.Speech.Azure.CN", "\<\>ключ");*
-- Токены проверки подлинности: HTTPS[]()://chinaeast2.API.Cognitive.Microsoft.CN/STS/v1.0/issueToken
+- SR в Спичсдк: *config. Фромхост ("WSS://chinaeast2.STT.Speech.Azure.CN", "\<ваш ключ\>");*
+- TTS в Спичсдк: *config. Фромхост ("HTTPS[]()://chinaeast2.TTS.Speech.Azure.CN", "\<ваш ключ\>");*
+- Токены проверки подлинности: HTTPS[]()://chinaeast2.API.Cognitive.Azure.CN/STS/v1.0/issueToken
 - Портал Azure: https://portal.azure.cn
-- Пользовательское распознавание речи портал: https://chinaeast2.cris.azure.cn/Home/CustomSpeech
+- Пользовательское распознавание речи портал:https://speech.azure.cn/CustomSpeech
 - Доступные номера SKU: S0
 - Поддерживаемые функции
   - Преобразование речи в текст
@@ -64,7 +64,7 @@ ms.locfileid: "76170471"
   - Преобразование текста в речь
   - Переводчик речи
 - Неподдерживаемые функции
-  - Пользовательские голосовые модели
+  - Custom Voice (Пользовательские голосовые модели)
   - Нейронные голоса для преобразования текста в речь
 - Поддерживаемые языковые стандарты: поддерживаются языковые стандарты для следующих языков.
   - Арабский (AR-*)

@@ -1,18 +1,14 @@
 ---
 title: Непрерывный мониторинг конвейера выпуска DevOps с помощью Azure Pipelines и Azure Application Insights | Документация Майкрософт
 description: Содержит инструкции для быстрой настройки непрерывного мониторинга с помощью Application Insights
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
-ms.date: 07/16/2019
-ms.openlocfilehash: c891cc7564a60dfd665d84d569e266332d255fa9
-ms.sourcegitcommit: 1bd2207c69a0c45076848a094292735faa012d22
+ms.date: 05/01/2020
+ms.openlocfilehash: 0d47fb1eccdfcfc7b2719825575f06dc85e62452
+ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72677517"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82652753"
 ---
 # <a name="add-continuous-monitoring-to-your-release-pipeline"></a>Добавление постоянного мониторинга к конвейеру выпуска
 
@@ -24,7 +20,7 @@ Azure Pipelines интегрируется с Application Insights Azure, что
 
 1. В [Azure DevOps](https://dev.azure.com)выберите организацию и проект.
    
-1. В меню слева страницы проекта выберите **конвейеры**  > **выпуски**. 
+1. В меню слева страницы проекта выберите **конвейеры** > **выпуски**. 
    
 1. Раскройте стрелку рядом с полем **создать** и выберите **Новый конвейер выпуска**. Если у вас еще нет конвейера, на появившейся странице выберите **создать конвейер** .
    
@@ -38,7 +34,7 @@ Azure Pipelines интегрируется с Application Insights Azure, что
 
 1. В области конфигурации **этап 1** заполните следующие поля: 
 
-    | Параметр        | Value |
+    | Параметр        | Применение |
    | ------------- |:-----|
    | **Название этапа**      | Укажите имя этапа или оставьте его на **этапе 1**. |
    | **Подписка Azure.** | Раскрывающийся список и выберите связанную подписку Azure, которую хотите использовать.|
@@ -55,17 +51,19 @@ Azure Pipelines интегрируется с Application Insights Azure, что
 
 Чтобы изменить параметры правила генерации оповещений, выполните следующие действия.
 
-1. В левой области страницы конвейер выпуска выберите **настроить Application Insights оповещения**.
+В левой области страницы конвейер выпуска выберите **настроить Application Insights оповещения**.
 
-1. В области **оповещения Azure Monitor** нажмите кнопку с многоточием **...** рядом с полем **Правила оповещений**.
-   
-1. В диалоговом окне **правила генерации оповещений** щелкните значок раскрывающегося списка рядом с правилом оповещения, например **доступность**. 
-   
-1. Измените **пороговое значение** и другие параметры в соответствии с вашими требованиями.
-   
-   ![Изменить оповещение](media/continuous-monitoring/003.png)
-   
-1. Нажмите кнопку **ОК**, а затем выберите **сохранить** в верхнем правом углу окна Azure DevOps. Введите описательный комментарий и нажмите кнопку **ОК**.
+Четыре правила генерации оповещений по умолчанию создаются с помощью встроенного скрипта.
+
+```bash
+$subscription = az account show --query "id";$subscription.Trim("`"");$resource="/subscriptions/$subscription/resourcegroups/"+"$(Parameters.AppInsightsResourceGroupName)"+"/providers/microsoft.insights/components/" + "$(Parameters.ApplicationInsightsResourceName)";
+az monitor metrics alert create -n 'Availability_$(Release.DefinitionName)' -g $(Parameters.AppInsightsResourceGroupName) --scopes $resource --condition 'avg availabilityResults/availabilityPercentage < 99' --description "created from Azure DevOps";
+az monitor metrics alert create -n 'FailedRequests_$(Release.DefinitionName)' -g $(Parameters.AppInsightsResourceGroupName) --scopes $resource --condition 'count requests/failed > 5' --description "created from Azure DevOps";
+az monitor metrics alert create -n 'ServerResponseTime_$(Release.DefinitionName)' -g $(Parameters.AppInsightsResourceGroupName) --scopes $resource --condition 'avg requests/duration > 5' --description "created from Azure DevOps";
+az monitor metrics alert create -n 'ServerExceptions_$(Release.DefinitionName)' -g $(Parameters.AppInsightsResourceGroupName) --scopes $resource --condition 'count exceptions/server > 5' --description "created from Azure DevOps";
+```
+
+Можно изменить скрипт и добавить дополнительные правила генерации оповещений, изменить условия оповещения или удалить правила генерации оповещений, которые не имеют смысла в целях развертывания.
 
 ## <a name="add-deployment-conditions"></a>Добавление условий развертывания
 

@@ -7,6 +7,8 @@
       href: what-is-application-management.md
     - name: Что собой представляет прокси приложения для локальных приложений?
       href: what-is-application-proxy.md
+    - name: Общие сценарии управления приложениями
+      href: common-scenarios.md
     - name: Что собой представляет подготовка приложения?
       href: /azure/active-directory/app-provisioning/user-provisioning?context=azure/active-directory/manage-apps/context/manage-apps-context
 - name: Краткие руководства
@@ -68,7 +70,7 @@
               href: manage-certificates-for-federated-single-sign-on.md
             - name: Ограничения клиента
               href: tenant-restrictions.md
-            - name: Настройка шифрования токенов SAML (предварительная версия)
+            - name: Настройка шифрования токенов SAML
               href: howto-saml-token-encryption.md
             - name: Порталы пользователей
               href: end-user-experiences.md
@@ -84,7 +86,7 @@
           href: application-proxy-connectors.md
         - name: Группы соединителей
           href: application-proxy-connector-groups.md
-        - name: безопасность
+        - name: Безопасность
           href: application-proxy-security.md
         - name: Топология сети
           href: application-proxy-network-topology.md
@@ -139,9 +141,7 @@
               href: grant-admin-consent.md
             - name: Настройка рабочего процесса согласия администратора (предварительная версия)
               href: configure-admin-consent-workflow.md
-            - name: Способы назначения пользователей и групп для приложения
-              href: methods-for-assigning-users-and-groups.md
-            - name: Назначение приложения пользователю
+            - name: Назначение приложению пользователя или группы
               href: assign-user-or-group-access-portal.md
             - name: Создание коллекций в разделе "Мои приложения"
               href: access-panel-collections.md
@@ -159,6 +159,8 @@
               href: manage-self-service-access.md
             - name: Обнаружение домашней области
               href: configure-authentication-for-federated-users-portal.md
+        - name: Автоматизация единого входа на основе SAML с помощью API MS Graph
+          href: application-saml-sso-configure-api.md
         - name: "Перенос приложений в Azure\_AD"
           items:
             - name: Ресурсы по миграции
@@ -339,8 +341,8 @@
       href: /azure/active-directory/develop/developer-support-help-options?context=azure/active-directory/manage-apps/context/manage-apps-context
     - name: Форум отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-active-directory.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/active-directory'
     - name: Обновления службы

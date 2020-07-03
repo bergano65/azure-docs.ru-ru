@@ -11,10 +11,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: d099d7c233c3f4b5e65bfdb7d4b875a0e4098499
-ms.sourcegitcommit: 12a26f6682bfd1e264268b5d866547358728cd9a
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75864287"
 ---
 # <a name="tasks-for-the-team-lead-on-a-team-data-science-process-team"></a>Задачи для руководителя команды в команде обработки и анализа данных группы
@@ -49,7 +49,7 @@ TDSP — это гибкая, итеративная методология об
 > [!NOTE] 
 > В этой статье используются Azure DevOps и DSVM для настройки среды группы TDSP, так как это способ реализации TDSP в корпорации Майкрософт. Если ваша команда использует другие платформы размещения кода или разработки, то задачи руководителя команды одинаковы, но способ их выполнения может отличаться.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом учебнике предполагается, что [менеджер группы](group-manager-tasks.md)настроил следующие ресурсы и разрешения:
 
@@ -77,7 +77,7 @@ TDSP — это гибкая, итеративная методология об
 - Небольшая группа обработки и анализа данных, не имеющая нескольких команд обработки и анализа данных. 
 - Более крупная группа обработки и анализа данных с несколькими группами обработки и анализа данных, которая, тем не менее, хочет оптимизировать совместную работу между группами с помощью таких действий, как планирование спринта уровня группы. 
 
-Если команды выбирают репозитории для отдельных групп в проекте одной группы, руководители группы должны создавать репозитории с такими именами, как *\<теамнаме > Template* и *\<теамнаме > Utilities*. Например: *теаматемплате* и *теамаутилитиес*. 
+Если команды выбирают репозитории для отдельных групп в рамках одного проекта группы, руководители группы должны создавать репозитории с такими именами, как * \<теамнаме>Template* и * \<теамнаме>Utilities*. Например: *теаматемплате* и *теамаутилитиес*. 
 
 В любом случае руководители рабочих групп должны знать, какие шаблоны и служебные программы для настройки и клонирования. Руководители проектов должны следовать [задачам руководителя проекта для группы обработки и анализа данных](project-lead-tasks.md) создавать репозитории проектов, как в отдельных проектах, так и в одном проекте. 
 
@@ -85,68 +85,68 @@ TDSP — это гибкая, итеративная методология об
 
 Чтобы создать отдельный проект для команды, выполните следующие действия.
 
-1. In your web browser, go to your group's Azure DevOps organization home page at URL *https:\//\<server name>/\<organization name>* , and select **New project**. 
+1. В веб-браузере перейдите на домашнюю страницу вашей группы Azure DevOps Organization по URL-адресу *HTTPS\//\<: имя сервера>\</название организации>* и выберите **создать проект**. 
    
-   ![Select New project](./media/team-lead-tasks/team-leads-2-create-new-team.png)
+   ![Выбор нового проекта](./media/team-lead-tasks/team-leads-2-create-new-team.png)
    
-1. In the **Create project** dialog, enter your team name, such as *MyTeam*, under **Project name**, and then select **Advanced**. 
+1. В диалоговом окне **Создание проекта** введите имя команды, например *myTeam*, в поле **имя проекта**, а затем выберите **Дополнительно**. 
    
-1. Under **Version control**, select **Git**, and under **Work item process**, select **Agile**. Щелкните **Создать**. 
+1. В разделе **Управление версиями**выберите **Git**, а в разделе **процесс рабочего элемента**выберите **Agile**. Щелкните **Создать**. 
    
    ![Создание проекта](./media/team-lead-tasks/team-leads-3-create-new-team-2.png)
    
-The team project **Summary** page opens, with page URL *https:\//\<server name>/\<organization name>/\<team name>* .
+Откроется страница **сводки** командного проекта с URL-адресом страницы *\//\<HTTPS: имя сервера\<>/название организации\<>/имя команды>*.
 
-### <a name="rename-the-myteam-default-repository-to-teamutilities"></a>Rename the MyTeam default repository to TeamUtilities
+### <a name="rename-the-myteam-default-repository-to-teamutilities"></a>Переименуйте репозиторий MyTeam по умолчанию в TeamUtilities
 
-1. On the **MyTeam** project **Summary** page, under **What service would you like to start with?** , select **Repos**. 
+1. На странице **Сводка по** проекту **myTeam** в разделе **какую службу вы хотите начать?** выберите **репозиториев**. 
    
-   ![Select Repos](./media/team-lead-tasks/team-leads-6-rename-team-project-repo.png)
+   ![Выбор репозиториев](./media/team-lead-tasks/team-leads-6-rename-team-project-repo.png)
    
-1. On the **MyTeam** repo page, select the **MyTeam** repository at the top of the page, and then select **Manage repositories** from the dropdown. 
+1. На странице репозиторий **myTeam** выберите репозиторий **myTeam** в верхней части страницы, а затем выберите **управление репозиториями** из раскрывающегося списка. 
    
-   ![Select Manage repositories](./media/team-lead-tasks/team-leads-7-rename-team-project-repo-2.png)
-1. On the **Project Settings** page, select the **...** next to the **MyTeam** repository, and then select **Rename repository**. 
+   ![Выберите управление репозиториями.](./media/team-lead-tasks/team-leads-7-rename-team-project-repo-2.png)
+1. На странице **Параметры проекта** щелкните **...** рядом с репозиторием **myTeam** , а затем выберите **Переименовать репозиторий**. 
    
-   ![Select Rename repository](./media/team-lead-tasks/team-leads-8-rename-team-project-repo-3.png)
+   ![Выбор переименования репозитория](./media/team-lead-tasks/team-leads-8-rename-team-project-repo-3.png)
    
-1. In the **Rename the MyTeam repository** popup, enter *TeamUtilities*, and then select **Rename**. 
+1. В всплывающем окне **Переименование репозитория myTeam** введите *TeamUtilities*, а затем выберите **Переименовать**. 
 
-### <a name="create-the-teamtemplate-repository"></a>Create the TeamTemplate repository
+### <a name="create-the-teamtemplate-repository"></a>Создание репозитория Теамтемплате
 
-1. On the **Project Settings** page, select **New repository.** 
+1. На странице **Параметры проекта** выберите **создать репозиторий.** 
    
-   ![Select New repository](./media/team-lead-tasks/team-leads-9-create-team-utilities.png)
+   ![Выбрать новый репозиторий](./media/team-lead-tasks/team-leads-9-create-team-utilities.png)
    
-   Or, select **Repos** from the left navigation of the **MyTeam** project **Summary** page, select a repository at the top of the page, and then select **New repository** from the dropdown.
+   Или выберите **репозиториев** в левой области навигации страницы **сводки** проекта **myTeam** , выберите репозиторий в верхней части страницы, а затем в раскрывающемся списке выберите пункт **создать репозиторий** .
    
-1. In the **Create a new repository** dialog, make sure **Git** is selected under **Type**. Enter *TeamTemplate* under **Repository name**, and then select **Create**.
+1. В диалоговом окне **Создание нового репозитория** убедитесь, что в разделе **Тип**выбрано значение **Git** . Введите *теамтемплате* в поле **Имя репозитория**и нажмите кнопку **создать**.
    
-   ![Create repository](./media/team-lead-tasks/team-leads-10-create-team-utilities-2.png)
+   ![Создать репозиторий](./media/team-lead-tasks/team-leads-10-create-team-utilities-2.png)
    
-1. Confirm that you can see the two repositories **TeamUtilities** and **TeamTemplate** on your project settings page. 
+1. Убедитесь, что на странице параметров проекта доступны два репозитория **TeamUtilities** и **теамтемплате** . 
    
-   ![Two team repositories](./media/team-lead-tasks/team-leads-11-two-repo-in-team.png)
+   ![Два репозитория команды](./media/team-lead-tasks/team-leads-11-two-repo-in-team.png)
 
-### <a name="import-the-contents-of-the-group-common-repositories"></a>Import the contents of the group common repositories
+### <a name="import-the-contents-of-the-group-common-repositories"></a>Импорт содержимого групп общих репозиториев
 
-To populate your team repositories with the contents of the group common repositories set up by your group manager:
+Чтобы заполнить репозитории команды содержимым групп общих репозиториев, настроенных руководителем группы:
 
-1. From your **MyTeam** project home page, select **Repos** in the left navigation. If you get a message that the **MyTeam** template is not found, select the link in **Otherwise, navigate to your default TeamTemplate repository.** 
+1. На домашней странице проекта **myTeam** выберите **репозиториев** в левой области навигации. Если вы получаете сообщение о том, что шаблон **myTeam** не найден, выберите ссылку в **противном случае, перейдите к репозиторию теамтемплате по умолчанию.** 
    
-   The default **TeamTemplate** repository opens. 
+   Откроется репозиторий **теамтемплате** по умолчанию. 
    
-1. On the **TeamTemplate is empty** page, select **Import**. 
+1. На странице **теамтемплате пусто** выберите **Импорт**. 
    
-   ![Select Import](./media/team-lead-tasks/import-repo.png)
+   ![Выбор импорта](./media/team-lead-tasks/import-repo.png)
    
-1. In the **Import a Git repository** dialog, select **Git** as the **Source type**, and enter the URL for your group common template repository under **Clone URL**. The URL is *https:\//\<server name>/\<organization name>/_git/\<repository name>* . For example: *https:\//dev.azure.com/DataScienceUnit/GroupCommon/_git/GroupProjectTemplate*. 
+1. В диалоговом окне **Импорт репозитория git** выберите **Git** в качестве **типа источника**и введите URL-адрес для репозитория общего шаблона группы в поле **URL-адрес клона**. URL-адрес — *HTTPS\//\<: имя сервера>\</имя Организации>/_git\</имя репозитория>*. Например: *https:\//dev.Azure.com/DataScienceUnit/GroupCommon/_git/GroupProjectTemplate*. 
    
-1. Выберите **Импортировать**. The contents of your group template repository are imported into your team template repository. 
+1. Выберите **Импортировать**. Содержимое репозитория шаблонов групп импортируется в репозиторий шаблонов команд. 
    
-   ![Import group common template repository](./media/team-lead-tasks/import-repo-2.png)
+   ![Импорт репозитория общих шаблонов групп](./media/team-lead-tasks/import-repo-2.png)
    
-1. At the top of your project's **Repos** page, drop down and select the **TeamUtilities** repository.
+1. В верхней части страницы **репозиториев** проекта раскрывающийся список и выберите репозиторий **TeamUtilities** .
    
 1. Повторите процесс импорта, чтобы импортировать содержимое репозитория общих служебных программ для группы, например *GroupUtilities*, в репозиторий **TeamUtilities** . 
    
@@ -170,7 +170,7 @@ To populate your team repositories with the contents of the group common reposit
      
    - Чтобы отправить файлы, нажмите кнопку **Отправить**файлы. 
      
-     ![Загрузка файлов](./media/team-lead-tasks/upload-files.png)
+     ![Отправка файлов](./media/team-lead-tasks/upload-files.png)
      
    - Чтобы изменить существующие файлы, перейдите к файлу и выберите **изменить**. 
      
@@ -199,7 +199,7 @@ To populate your team repositories with the contents of the group common reposit
    
 1. Перейдите в созданный каталог.
    
-1. В Git Bash выполните команду `git clone <clone URL>`, где \<URL-адрес клона > — это URL-адрес, скопированный из диалогового окна **клон** .
+1. В Git Bash выполните команду `git clone <clone URL>`, где \<URL-адрес клона> — это URL-адрес, скопированный из диалогового окна **клон** .
    
    Например, выполните одну из следующих команд, чтобы клонировать репозиторий **TeamUtilities** в каталог *myTeam* на локальном компьютере. 
    
@@ -226,7 +226,7 @@ git push
 ```
 
 > [!NOTE]
-> Если вы впервые зафиксируете в репозитории Git, может потребоваться настроить глобальные параметры *User.Name* и *User. email* перед выполнением команды `git commit`. Выполните эти две команды:
+> Если вы впервые фиксируете в репозитории Git, может потребоваться настроить глобальные параметры *User.Name* и *User. email* перед выполнением `git commit` команды. Выполните эти две команды:
 > 
 > `git config --global user.name <your name>`
 > 

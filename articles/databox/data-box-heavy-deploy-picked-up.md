@@ -9,22 +9,22 @@ ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: cfb9f54f5ba219a4db87144ab1e7ebff2b72b69e
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 3aedfed980a61ea6718a02a188ff88d4941026d9
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514448"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199180"
 ---
 ::: zone target = "docs"
 
-# <a name="tutorial-return-azure-data-box-heavy-and-verify-data-upload-to-azure"></a>Руководство. Возврат устройства Azure Data Box Heavy и проверка корректности передачи данных в Azure
+# <a name="tutorial-return-azure-data-box-heavy-and-verify-data-upload-to-azure"></a>Руководство по Возврат устройства Azure Data Box Heavy и проверка корректности передачи данных в Azure
 
 ::: zone-end
 
 ::: zone target = "chromeless"
 
-# <a name="return-azure-data-box-heavy-and-verify-data-upload-to-azure"></a>Возврат устройства Azure Data Box Heavy и проверка корректности передачи данных в Azure
+## <a name="return-azure-data-box-heavy-and-verify-data-upload-to-azure"></a>Возврат устройства Azure Data Box Heavy и проверка корректности передачи данных в Azure
 
 ::: zone-end
 

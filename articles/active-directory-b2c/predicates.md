@@ -3,20 +3,20 @@ title: Элементы Predicates и PredicateValidations
 titleSuffix: Azure AD B2C
 description: Запретите Добавление неверно сформированных данных в клиент Azure AD B2C с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
-author: mmacy
+author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 10/28/2019
-ms.author: marsma
+ms.date: 03/30/2020
+ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a09478bd2e32a1ab484b85fec33ae03878ebb10c
-ms.sourcegitcommit: 5b9287976617f51d7ff9f8693c30f468b47c2141
+ms.openlocfilehash: 887c9432f04cce775e045bb6da83f0af4a4a4bce
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74951026"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80396893"
 ---
 # <a name="predicates-and-predicatevalidations"></a>Элементы Predicates и PredicateValidations
 
@@ -42,16 +42,17 @@ ms.locfileid: "74951026"
 
 Элемент **Predicate** содержит следующие атрибуты.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | ДА | Идентификатор, который используется для предиката. Другие элементы могут использовать этот идентификатор в политике. |
-| Метод | ДА | Тип метода для проверки. Возможные значения: **IsLengthRange**, **MatchesRegex**, **IncludesCharacters** или **IsDateRange**. Значение **IsLengthRange** проверяет, находится ли длина строкового значения утверждения в заданном диапазоне (от минимального до максимального параметра). Значение **MatchesRegex** проверяет, соответствует ли строковое значение утверждения регулярному выражению. Значение **IncludesCharacters** проверяет, содержит ли строковое значение утверждения набор знаков. Значение **IsDateRange** проверяет, находится ли значение утверждения даты в заданном диапазоне (от минимального до максимального параметра). |
+| Идентификатор | Да | Идентификатор, который используется для предиката. Другие элементы могут использовать этот идентификатор в политике. |
+| Метод | Да | Тип метода для проверки. Возможные значения: [IsLengthRange](#islengthrange), [MatchesRegex](#matchesregex), [IncludesCharacters](#includescharacters) или [IsDateRange](#isdaterange).  |
+| HelpText | Нет | Сообщение об ошибке для пользователей при неудачном завершении проверки. Эту строку можно локализовать с помощью [настройки языка](localization.md). |
 
 Элемент **Predicate** содержит следующие элементы.
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| UserHelpText | 1:1 | Сообщение об ошибке для пользователей при неудачном завершении проверки. Эту строку можно локализовать с помощью [настройки языка](localization.md). |
+| UserHelpText | 0:1 | Не рекомендуется Сообщение об ошибке для пользователей, если проверка не пройдена. |
 | Параметры | 1:1 | Параметры для типа метода проверки строки. |
 
 Элемент **Parameters** содержит следующие элементы.
@@ -66,41 +67,75 @@ ms.locfileid: "74951026"
 | ------- | ----------- | ----------- |
 | Идентификатор | 1:1 | Идентификатор параметра. |
 
-В следующем примере показан метод `IsLengthRange` с параметрами `Minimum` и `Maximum`, которые указывают диапазон длины строки:
+### <a name="predicate-methods"></a>Методы предиката
+
+#### <a name="islengthrange"></a>IsLengthRange
+
+Метод IsLengthRange проверяет, находится ли длина строкового утверждения в диапазоне от минимального и максимального числа указанных параметров. Элемент predicate поддерживает следующие параметры:
+
+| Параметр | Обязательный | Описание |
+| ------- | ----------- | ----------- |
+| Максимальная | Да | Максимальное число символов, которое можно указать. |
+| Минимальные | Да | Минимальное число символов, которое необходимо указать. |
+
+
+В следующем примере показан метод IsLengthRange с параметрами `Minimum` `Maximum` , который указывает диапазон длины строки:
 
 ```XML
-<Predicate Id="IsLengthBetween8And64" Method="IsLengthRange">
-  <UserHelpText>The password must be between 8 and 64 characters.</UserHelpText>
-    <Parameters>
-      <Parameter Id="Minimum">8</Parameter>
-      <Parameter Id="Maximum">64</Parameter>
+<Predicate Id="IsLengthBetween8And64" Method="IsLengthRange" HelpText="The password must be between 8 and 64 characters.">
+  <Parameters>
+    <Parameter Id="Minimum">8</Parameter>
+    <Parameter Id="Maximum">64</Parameter>
   </Parameters>
 </Predicate>
 ```
 
+#### <a name="matchesregex"></a>MatchesRegex
+
+Метод MatchesRegex проверяет, соответствует ли строковое значение утверждения регулярному выражению. Элемент predicate поддерживает следующие параметры:
+
+| Параметр | Обязательный | Описание |
+| ------- | ----------- | ----------- |
+| RegularExpression | Да | Шаблон регулярного выражения для сопоставления. |
+
 В следующем примере показан метод `MatchesRegex` с параметром `RegularExpression`, определяющим регулярное выражение:
 
 ```XML
-<Predicate Id="PIN" Method="MatchesRegex">
-  <UserHelpText>The password must be numbers only.</UserHelpText>
+<Predicate Id="PIN" Method="MatchesRegex" HelpText="The password must be numbers only.">
   <Parameters>
     <Parameter Id="RegularExpression">^[0-9]+$</Parameter>
   </Parameters>
 </Predicate>
 ```
 
+#### <a name="includescharacters"></a>инклудесчарактерс
+
+Метод Инклудесчарактерс проверяет, содержит ли строковое значение утверждения символьную кодировку. Элемент predicate поддерживает следующие параметры:
+
+| Параметр | Обязательный | Описание |
+| ------- | ----------- | ----------- |
+| CharacterSet | Да | Набор символов, которые можно указать. `a-z`Например, символы в нижнем регистре, `A-Z`символы верхнего регистра, `0-9`цифры или список символов, например `@#$%^&amp;*\-_+=[]{}|\\:',?/~"();!`. |
+
 В следующем примере показан метод `IncludesCharacters` с параметром `CharacterSet`, определяющим набор знаков:
 
 ```XML
-<Predicate Id="Lowercase" Method="IncludesCharacters">
-  <UserHelpText>a lowercase letter</UserHelpText>
+<Predicate Id="Lowercase" Method="IncludesCharacters" HelpText="a lowercase letter">
   <Parameters>
     <Parameter Id="CharacterSet">a-z</Parameter>
   </Parameters>
 </Predicate>
 ```
 
-В следующем примере показан метод `IsDateRange` с параметрами `Minimum` и `Maximum`, которые указывают диапазон дат в формате `yyyy-MM-dd` и `Today`.
+#### <a name="isdaterange"></a>исдатеранже
+
+Метод Исдатеранже проверяет, находится ли значение утверждения даты между указанным диапазоном минимального и максимального числа параметров. Элемент predicate поддерживает следующие параметры:
+
+| Параметр | Обязательный | Описание |
+| ------- | ----------- | ----------- |
+| Максимальная | Да | Максимально возможную дату, которую можно указать. Формат даты соответствует `yyyy-mm-dd` соглашению или `Today`. |
+| Минимальные | Да | Минимальная возможная дата, которую можно указать. Формат даты соответствует `yyyy-mm-dd` соглашению или `Today`.|
+
+В следующем примере показан метод `IsDateRange` с параметрами `Minimum` и `Maximum`, которые указывают диапазон дат в формате `yyyy-mm-dd` и `Today`.
 
 ```XML
 <Predicate Id="DateRange" Method="IsDateRange" HelpText="The date must be between 1970-01-01 and today.">
@@ -143,9 +178,9 @@ ms.locfileid: "74951026"
 
 Элемент **PredicateValidation** содержит следующий атрибут.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | ДА | Идентификатор, который используется для проверки предиката. Элемент **ClaimType** может использовать этот идентификатор в политике. |
+| Идентификатор | Да | Идентификатор, который используется для проверки предиката. Элемент **ClaimType** может использовать этот идентификатор в политике. |
 
 Элемент **PredicateValidation** содержит следующий элемент.
 
@@ -161,22 +196,22 @@ ms.locfileid: "74951026"
 
 Элемент **PredicateGroup** содержит следующий атрибут.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | ДА | Идентификатор, который используется для группы предикатов.  |
+| Идентификатор | Да | Идентификатор, который используется для группы предикатов.  |
 
 Элемент **PredicateGroup** содержит следующие элементы.
 
 | Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
-| UserHelpText | 1:1 |  Описание предиката, которое помогает пользователям понять, какое значение следует вводить. |
+| UserHelpText | 0:1 |  Описание предиката, которое помогает пользователям понять, какое значение следует вводить. |
 | PredicateReferences | 1:n | Список ссылок на предикаты. |
 
 Элемент **PredicateReferences** содержит следующие атрибуты.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| MatchAtLeast | Нет | Указывает, какому минимальному количеству определений предикатов значение должно соответствовать, чтобы ввод был принят. |
+| MatchAtLeast | Нет | Указывает, какому минимальному количеству определений предикатов значение должно соответствовать, чтобы ввод был принят. Если значение не указано, оно должно соответствовать всем определениям предикатов. |
 
 Элемент **PredicateReferences** содержит следующие элементы.
 
@@ -186,9 +221,9 @@ ms.locfileid: "74951026"
 
 Элемент **PredicateReference** содержит следующие атрибуты.
 
-| Атрибут | Обязательно для заполнения | Описание |
+| Атрибут | Обязательный | Описание |
 | --------- | -------- | ----------- |
-| Идентификатор | ДА | Идентификатор, который используется для проверки предиката.  |
+| Идентификатор | Да | Идентификатор, который используется для проверки предиката.  |
 
 
 ## <a name="configure-password-complexity"></a>Настройка сложности пароля
@@ -199,65 +234,57 @@ ms.locfileid: "74951026"
 - **Lowercase** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль строчную букву.
 - **Uppercase** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль прописную букву.
 - **Number** с помощью метода `IncludesCharacters` проверяет, содержит ли пароль цифру.
-- , **Используя метод** `IncludesCharacters`, проверяет, что пароль содержит один или несколько символов.
+- С помощью `IncludesCharacters` метода проверяет, содержит один из нескольких **символов символа.**
 - **PIN** с помощью метода `MatchesRegex` проверяет, содержит ли пароль только цифры.
 - **AllowedAADCharacters** с помощью метода `MatchesRegex` проверяет, используются ли в пароле только допустимые знаки.
 - **DisallowedWhitespace** с помощью метода `MatchesRegex` проверяет, не начинается или не заканчивается ли пароль пробелом.
 
 ```XML
 <Predicates>
-  <Predicate Id="IsLengthBetween8And64" Method="IsLengthRange">
-    <UserHelpText>The password must be between 8 and 64 characters.</UserHelpText>
+  <Predicate Id="IsLengthBetween8And64" Method="IsLengthRange" HelpText="The password must be between 8 and 64 characters.">
     <Parameters>
       <Parameter Id="Minimum">8</Parameter>
       <Parameter Id="Maximum">64</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="Lowercase" Method="IncludesCharacters">
-    <UserHelpText>a lowercase letter</UserHelpText>
+  <Predicate Id="Lowercase" Method="IncludesCharacters" HelpText="a lowercase letter">
     <Parameters>
       <Parameter Id="CharacterSet">a-z</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="Uppercase" Method="IncludesCharacters">
-    <UserHelpText>an uppercase letter</UserHelpText>
+  <Predicate Id="Uppercase" Method="IncludesCharacters" HelpText="an uppercase letter">
     <Parameters>
       <Parameter Id="CharacterSet">A-Z</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="Number" Method="IncludesCharacters">
-    <UserHelpText>a digit</UserHelpText>
+  <Predicate Id="Number" Method="IncludesCharacters" HelpText="a digit">
     <Parameters>
       <Parameter Id="CharacterSet">0-9</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="Symbol" Method="IncludesCharacters">
-    <UserHelpText>a symbol</UserHelpText>
+  <Predicate Id="Symbol" Method="IncludesCharacters" HelpText="a symbol">
     <Parameters>
       <Parameter Id="CharacterSet">@#$%^&amp;*\-_+=[]{}|\\:',.?/`~"();!</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="PIN" Method="MatchesRegex">
-    <UserHelpText>The password must be numbers only.</UserHelpText>
+  <Predicate Id="PIN" Method="MatchesRegex" HelpText="The password must be numbers only.">
     <Parameters>
       <Parameter Id="RegularExpression">^[0-9]+$</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="AllowedAADCharacters" Method="MatchesRegex">
-    <UserHelpText>An invalid character was provided.</UserHelpText>
+  <Predicate Id="AllowedAADCharacters" Method="MatchesRegex" HelpText="An invalid character was provided.">
     <Parameters>
       <Parameter Id="RegularExpression">(^([0-9A-Za-z\d@#$%^&amp;*\-_+=[\]{}|\\:',?/`~"();! ]|(\.(?!@)))+$)|(^$)</Parameter>
     </Parameters>
   </Predicate>
 
-  <Predicate Id="DisallowedWhitespace" Method="MatchesRegex">
-    <UserHelpText>The password must not begin or end with a whitespace character.</UserHelpText>
+  <Predicate Id="DisallowedWhitespace" Method="MatchesRegex" HelpText="The password must not begin or end with a whitespace character.">
     <Parameters>
       <Parameter Id="RegularExpression">(^\S.*\S$)|(^\S+$)|(^$)</Parameter>
     </Parameters>
@@ -361,8 +388,7 @@ ms.locfileid: "74951026"
 
 ```XML
 <Predicates>
-  <Predicate Id="DateRange" Method="IsDateRange">
-    <UserHelpText>The date must be between 01-01-1980 and today.</UserHelpText>
+  <Predicate Id="DateRange" Method="IsDateRange" HelpText="The date must be between 01-01-1980 and today.">
     <Parameters>
       <Parameter Id="Minimum">1980-01-01</Parameter>
       <Parameter Id="Maximum">Today</Parameter>
@@ -399,3 +425,7 @@ ms.locfileid: "74951026"
   <PredicateValidationReference Id="CustomDateRange" />
 </ClaimType>
  ```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Узнайте, как [настроить сложность пароля с помощью пользовательских политик в Azure Active Directory B2C](custom-policy-password-complexity.md) используя проверки предикатов.

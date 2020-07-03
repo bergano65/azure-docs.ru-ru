@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с GitHub | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с GitHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и GitHub.
 services: active-directory
 documentationCenter: na
@@ -15,20 +15,19 @@ ms.topic: tutorial
 ms.date: 01/31/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ddc2622a67979f989c030d615c402387e7762d5
-ms.sourcegitcommit: 4f6a7a2572723b0405a21fea0894d34f9d5b8e12
+ms.openlocfilehash: e812e1b03637a3ecd7a45f02664c4e3547f1aef1
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76983493"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "79138983"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github"></a>Руководство. Интеграция единого входа Azure Active Directory с GitHub
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github"></a>Руководство по Интеграция единого входа Azure Active Directory с GitHub
 
 В этом руководстве описано, как интегрировать GitHub с Azure Active Directory (Azure AD). Интеграция GitHub с Azure AD обеспечивает следующие возможности.
 
-* Контроль доступа к GitHub с помощью Azure AD.
-* Вы можете включить автоматический вход пользователей в GitHub с помощью учетных записей Azure AD.
-* Централизованное управление учетными записями через портал Azure.
+* С помощью Azure AD можно контролировать доступ к облачной организации GitHub Enterprise.
+* Управляйте доступом к облачной организации GitHub Enterprise в одном централизованном расположении — на портале Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
@@ -45,7 +44,7 @@ ms.locfileid: "76983493"
 
 * GitHub поддерживает единый вход инициированного **пакета обновления**.
 
-* GitHub поддерживает [**автоматическую** подготовку пользователей](github-provisioning-tutorial.md).
+* GitHub поддерживает [**автоматическую** подготовку пользователей](github-provisioning-tutorial.md) (приглашения организации).
 * После настройки GitHub можете применить функцию управления сеансом, которая защищает от хищения конфиденциальных данных вашей организации и несанкционированного доступа к ним в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
 ## <a name="adding-github-from-the-gallery"></a>Добавление GitHub из коллекции
@@ -163,6 +162,8 @@ ms.locfileid: "76983493"
     c. Откройте в Блокноте сертификат, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Public Certificate** (Общедоступный сертификат).
 
     d. Щелкните значок **Изменить**, чтобы изменить **метод подписи** и **метод выборки** с **RSA-SHA1** и **SHA1** на **RSA-SHA256** и **SHA256**, как показано ниже.
+    
+    д) Замените URL-адрес по умолчанию на **URL-адрес службы обработчика утверждений (URL-адрес ответа)** , чтобы URL-адрес в GitHub совпадал с URL-адресом на странице регистрации приложения в Azure.
 
     ![Изображение](./media/github-tutorial/tutorial_github_sha.png)
 

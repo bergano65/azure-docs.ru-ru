@@ -2,24 +2,21 @@
 title: Переход к рабочей среде веб-приложения, которое вызывает веб-API — платформа Microsoft Identity | Службы
 description: Узнайте, как перейти к рабочей среде веб-приложения, которое вызывает веб-API.
 services: active-directory
-documentationcenter: dev-center-name
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: b1307df8f6dfb0457719b13c9e5cd0bf28660caa
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.openlocfilehash: 6404d00b87b9ee745b9e3a92c646404e574417c1
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76758957"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80881667"
 ---
 # <a name="a-web-app-that-calls-web-apis-move-to-production"></a>Веб-приложение, вызывающее веб-API: переместить в рабочую среду
 
@@ -38,7 +35,7 @@ ms.locfileid: "76758957"
 - Вызывает собственный веб-API.
 
 > [!div class="nextstepaction"]
-> [Руководство по веб-приложению ASP.NET Core](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial#scope-of-this-tutorial)
+> [Руководство. Веб-приложение ASP.NET Core](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial#scope-of-this-tutorial)
 
 <!--- Removing this diagram as it's already shown from the next step linked tutorial
 

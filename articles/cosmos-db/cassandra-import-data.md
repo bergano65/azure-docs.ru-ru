@@ -9,15 +9,14 @@ ms.subservice: cosmosdb-cassandra
 ms.topic: tutorial
 ms.date: 12/03/2018
 ms.custom: seodec18
-Customer intent: As a developer, I want to migrate my existing Cassandra workloads to Azure Cosmos DB so that the overhead to manage resources, clusters, and garbage collection is automatically handled by Azure Cosmos DB.
-ms.openlocfilehash: c754740369da6d0a8084b9b60ef178fb28e32f1b
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: b450d8463c09647b8f87547afe9d714c4b8659c4
+ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75445671"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82858565"
 ---
-# <a name="tutorial-migrate-your-data-to-cassandra-api-account-in-azure-cosmos-db"></a>Руководство. Перенос данных в учетную запись API Cassandra в Azure Cosmos DB
+# <a name="tutorial-migrate-your-data-to-cassandra-api-account-in-azure-cosmos-db"></a>Руководство по Перенос данных в учетную запись API Cassandra в Azure Cosmos DB
 
 Как у разработчика у вас могут существовать рабочие нагрузки Cassandra, выполняемые локально или в облаке, и может понадобиться перенести их в Azure. Такие рабочие нагрузки можно перенести в учетную запись API Cassandra в Azure Cosmos DB. В этом руководстве приведены инструкции к различным методам переноса данных Apache Cassandra в учетную запись API Cassandra в Azure Cosmos DB.
 
@@ -67,7 +66,7 @@ ms.locfileid: "75445671"
 
 * **Увеличьте пропускную способность.** Продолжительность перемещения данных зависит от пропускной способности, которую вы предоставите для таблиц в Azure Cosmos DB. Увеличьте пропускную способность на время выполнения миграции. Более высокая пропускная способность позволяет избежать ограничения скорости и выполнить перенос быстрее. После переноса уменьшите пропускную способность для экономии расходов. Также рекомендуется разместить учетную запись Azure Cosmos в том же регионе, где находится база данных-источник. 
 
-* **Включите SSL.** В Azure Cosmos DB строгие требования к безопасности и стандарты. Обязательно включите SSL при взаимодействии с учетной записью. При использовании CQL с SSH у вас есть возможность предоставить сведения SSL.
+* **Включите протокол TLS.** В Azure Cosmos DB строгие требования к безопасности и стандарты. Обязательно включите TLS при взаимодействии с учетной записью. При использовании CQL с SSH у вас есть возможность предоставить сведения о TLS.
 
 ## <a name="options-to-migrate-data"></a>Варианты миграции данных
 

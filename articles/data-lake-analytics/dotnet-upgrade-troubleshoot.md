@@ -1,6 +1,6 @@
 ---
-title: Устранение неполадок в работе Azure Data Lake Analytics сбоев заданий U-SQL из-за обновления .NET 4.7.2
-description: Устранение ошибок заданий U-SQL из-за обновления до .NET 4.7.2.
+title: Устранение неполадок в работе Azure Data Lake Analytics сбоев заданий U-SQL из-за .NET Framework обновления 4.7.2
+description: Устранение ошибок заданий U-SQL из-за обновления до .NET Framework 4.7.2.
 services: data-lake-analytics
 author: guyhay
 ms.author: guyhay
@@ -9,12 +9,12 @@ ms.service: data-lake-analytics
 ms.topic: troubleshooting
 ms.workload: big-data
 ms.date: 10/11/2019
-ms.openlocfilehash: 2be2f50558fef41659c9a3313871b17961f6ad6d
-ms.sourcegitcommit: 9405aad7e39efbd8fef6d0a3c8988c6bf8de94eb
+ms.openlocfilehash: f909419810cbd837e57b19a13b2df6ae9ad2ee97
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74873239"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79213586"
 ---
 # <a name="azure-data-lake-analytics-is-upgrading-to-the-net-framework-v472"></a>Azure Data Lake Analytics выполняется обновление до .NET Framework v 4.7.2
 
@@ -22,12 +22,12 @@ ms.locfileid: "74873239"
 
 Это обновление с .NET Framework 4.5.2 до версии 4.7.2 означает, что .NET Framework, развернутые в среде выполнения U-SQL (среда выполнения по умолчанию), теперь всегда будет 4.7.2. Для .NET Framework версий не существует параллельного варианта.
 
-После завершения этого обновления до .NET 4.7.2 управляемый код системы будет работать как версия 4.7.2. пользовательские библиотеки, такие как настраиваемые сборки U-SQL, будут работать в режиме обратной совместимости, подходящем для версии, которая была создана сборкой. предмет.
+После выполнения этого обновления до .NET Framework 4.7.2 управляемый код системы будет выполняться как версия 4.7.2. пользовательские библиотеки, такие как настраиваемые сборки U-SQL, будут работать в режиме обратной совместимости, подходящем для версии, для которой была создана сборка.
 
 - Если библиотеки DLL сборки созданы для версии 4.5.2, развернутая платформа будет рассматривать их как библиотеки 4.5.2, предоставляя (с некоторыми исключениями) семантику 4.5.2.
 - Теперь вы можете использовать пользовательские сборки U-SQL, которые используют функции версии 4.7.2, если вы нацелены на .NET Framework 4.7.2.
 
-В связи с этим обновлением до .NET 4.7.2 существует возможность внести критические изменения в задания U-SQL, использующие пользовательские сборки .NET. Мы рекомендуем проверить наличие проблем обратной совместимости, используя приведенную ниже процедуру.
+Из-за этого обновления до .NET Framework 4.7.2 можно внести критические изменения в задания U-SQL, использующие пользовательские сборки .NET. Мы рекомендуем проверить наличие проблем обратной совместимости, используя приведенную ниже процедуру.
 
 ## <a name="how-to-check-for-backwards-compatibility-issues"></a>Проверка на наличие проблем обратной совместимости
 
@@ -57,7 +57,7 @@ ms.locfileid: "74873239"
 
 ### <a name="what-are-the-most-common-backwards-compatibility-issues-you-may-encounter"></a>Каковы наиболее распространенные проблемы обратной совместимости, которые могут возникнуть
 
-Наиболее распространенная обратная совместимость, которая, вероятно, будет выявлена средством проверки (мы создали этот список, запустив средство проверки на основе собственных внутренних заданий ADLA), на которые повлияли библиотеки (Обратите внимание, что библиотеки можно вызывать только косвенно, поэтому важно, чтобы предпринять необходимые действия #1, чтобы проверить, влияют ли ваши задания), и возможные действия для их устранения. Примечание. почти во всех случаях для собственных заданий предупреждения выдавали ложные срабатывания из-за узких особенностей наиболее критических изменений.
+Наиболее распространенная обратная совместимость, которая, вероятно, будет выявлена средством проверки (мы создали этот список, запустив средство проверки на основе собственных внутренних заданий ADLA), на которые повлияли библиотеки (Обратите внимание, что библиотеки можно вызывать только косвенно, поэтому важно предпринять необходимые действия #1, чтобы проверить, влияют ли ваши задания), и возможные действия для их устранения. Примечание. почти во всех случаях для собственных заданий предупреждения выдавали ложные срабатывания из-за узких особенностей наиболее критических изменений.
 
 - Чтобы результирующая задача завершилась, реализация свойства IAsyncResult.CompletedSynchronously должна быть правильной
   - При вызове TaskFactory.FromAsync реализация свойства IAsyncResult.CompletedSynchronously должна быть правильной, чтобы результирующая задача завершилась. То есть свойство должно возвращать значение true, если (и только если) реализация завершилась синхронно. Раньше свойство не проверялось.
@@ -65,7 +65,7 @@ ms.locfileid: "74873239"
   - Предлагаемое действие: Убедитесь, что TaskFactory. FromAsync правильно возвращает значение true
 
 - DataObject.GetData теперь получает данные в кодировке UTF-8
-  - Для приложений, предназначенных для NET Framework 4, а также для выполняющихся в .NET Framework 4.5.1 или более ранних версиях, DataObject.GetData получает HTML-данные в виде строки ASCII. В результате символы, не входящие в набор ASCII (символы, коды ASCII которых больше 0x7F), представляются двумя случайными символами. #N # #N # для приложений, предназначенных для .NET Framework 4,5 или более поздней версии и выполняемых в .NET Framework 4.5.2, `DataObject.GetData` извлекает данные в формате HTML в кодировке UTF-8, которая представляет символы, превышающие 0x7F.
+  - Для приложений, предназначенных для NET Framework 4, а также для выполняющихся в .NET Framework 4.5.1 или более ранних версиях, DataObject.GetData получает HTML-данные в виде строки ASCII. В результате символы, не входящие в набор ASCII (символы, коды ASCII которых больше 0x7F), представляются двумя случайными символами. #N # #N # для приложений, предназначенных для .NET Framework 4,5 или более поздней версии и `DataObject.GetData` выполняемых на .NET Framework 4.5.2, Извлекает HTML-данные в кодировке UTF-8, которая представляет символы более 0x7f.
   - Затронутые библиотеки: гло
   - Предлагаемое действие. Убедитесь, что извлекаемые данные имеют нужный формат.
 
@@ -77,7 +77,7 @@ ms.locfileid: "74873239"
 - HtmlTextWriter неправильно отображает элемент `<br/>`
   - Начиная с .NET Framework 4.6, при вызове `HtmlTextWriter.RenderBeginTag()` и `HtmlTextWriter.RenderEndTag()` с элементом `<BR />` правильно вставляется только один `<BR />` (вместо двух).
   - Затронутые библиотеки: System. Web
-  - Предлагаемое действие. Убедитесь, что вы вставляете предполагаемый объем `<BR />`, чтобы случайное поведение не проявлялось в рабочем задании.
+  - Предлагаемое действие. Убедитесь, что вы вставляете `<BR />` ожидаемое количество, поэтому случайное поведение не отображается в рабочем задании.
 
 - Был изменен вызов метода CreateDefaultAuthorizationContext с аргументом NULL
   - В .NET Framework 4.6 изменилась реализация AuthorizationContext, возвращаемая вызовом `CreateDefaultAuthorizationContext(IList<IAuthorizationPolicy>)` с нулевым аргументом authorizationPolicies.
@@ -85,7 +85,7 @@ ms.locfileid: "74873239"
   - Предлагаемое действие: Убедитесь, что вы обрабатываете новое ожидаемое поведение при наличии политики авторизации, имеющей значение null.
   
 - RSACng теперь правильно загружает ключи RSA нестандартного размера
-  - В версиях .NET Framework до 4.6.2 клиенты с нестандартным размером ключа для сертификатов RSA не могли получить доступ к этим ключам через методы расширения `GetRSAPublicKey()` и `GetRSAPrivateKey()`. Создается `CryptographicException` с сообщением "запрошенный размер ключа не поддерживается". С .NET Framework 4.6.2 Эта проблема исправлена. Аналогично, `RSA.ImportParameters()` и `RSACng.ImportParameters()` теперь работают с нестандартными размерами ключей, не вызывая `CryptographicException`.
+  - В версиях .NET Framework до 4.6.2 клиенты с нестандартным размером ключа для сертификатов RSA не могли получить доступ к этим ключам через методы расширения `GetRSAPublicKey()` и `GetRSAPrivateKey()`. Исключение `CryptographicException` с сообщением "запрошенный размер ключа не поддерживается". С .NET Framework 4.6.2 Эта проблема исправлена. Аналогично `RSA.ImportParameters()` , `RSACng.ImportParameters()` и теперь работать с нестандартными размерами ключей `CryptographicException`без вызова.
   - Затронутые библиотеки: mscorlib, System. Core
   - Предлагаемое действие: Убедитесь, что ключи RSA работают должным образом.
 
@@ -95,7 +95,7 @@ ms.locfileid: "74873239"
   - Предлагаемое действие:
 
 - Вызовы к конструкторам ClaimsIdentity
-  - Начиная с .NET Framework 4.6.2 конструкторы `T:System.Security.Claims.ClaimsIdentity` с параметром `T:System.Security.Principal.IIdentity` иначе задают свойство `P:System.Security.Claims.ClaimsIdentify.Actor`. Если аргумент `T:System.Security.Principal.IIdentity` является объектом `T:System.Security.Claims.ClaimsIdentity`, а свойство `P:System.Security.Claims.ClaimsIdentify.Actor` этого объекта `T:System.Security.Claims.ClaimsIdentity` не равно `null`, свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется с помощью метода `M:System.Security.Claims.ClaimsIdentity.Clone`. В 4.6.1 Framework и более ранних версиях свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется как существующая ссылка. Из-за этого изменения, начиная с .NET Framework 4.6.2, свойство `P:System.Security.Claims.ClaimsIdentify.Actor` нового объекта `T:System.Security.Claims.ClaimsIdentity` не равно свойству `P:System.Security.Claims.ClaimsIdentify.Actor` аргумента `T:System.Security.Principal.IIdentity` конструктора. В .NET Framework 4.6.1 и более ранних версиях они равны.
+  - Начиная с .NET Framework 4.6.2 конструкторы `T:System.Security.Claims.ClaimsIdentity` с параметром `T:System.Security.Principal.IIdentity` иначе задают свойство `P:System.Security.Claims.ClaimsIdentify.Actor`. Если аргумент `T:System.Security.Principal.IIdentity` является объектом `T:System.Security.Claims.ClaimsIdentity`, а свойство `P:System.Security.Claims.ClaimsIdentify.Actor` этого объекта `T:System.Security.Claims.ClaimsIdentity` не равно `null`, свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется с помощью метода `M:System.Security.Claims.ClaimsIdentity.Clone`. В 4.6.1 Framework и более ранних версиях `P:System.Security.Claims.ClaimsIdentify.Actor` свойство прикрепляется как существующая ссылка. Из- `P:System.Security.Claims.ClaimsIdentify.Actor` за этого изменения, начиная с .NET Framework 4.6.2, свойство нового `T:System.Security.Claims.ClaimsIdentity` объекта не равно `P:System.Security.Claims.ClaimsIdentify.Actor` свойству `T:System.Security.Principal.IIdentity` аргумента конструктора. В .NET Framework 4.6.1 и более ранних версиях они равны.
   - Затронутые библиотеки: mscorlib
   - Предлагаемое действие: Убедитесь, что ClaimsIdentity работает должным образом в новой среде выполнения
 

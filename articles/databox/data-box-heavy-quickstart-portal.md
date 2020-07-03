@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 09/03/2019
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 70d5481c37777150927914042133286a77f53b89
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.openlocfilehash: 9d007f4fa8721214a7c97595fa297ef44199119f
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76514414"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199130"
 ---
 ::: zone target = "docs"
 
@@ -39,11 +39,7 @@ ms.locfileid: "76514414"
 
 ### <a name="for-service"></a>Для службы
 
-Перед тем как начать, убедитесь в следующем.
-
-- Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
-- Для службы Data Box используется подписка с [Соглашением Microsoft Enterprise (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/), подписка [поставщика облачных решений (CSP)](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview) или подписка со [спонсорским предложением Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/).
-- У вас есть доступ владельца или участника подписки для заказа Data Box Heavy.
+[!INCLUDE [Data Box service prerequisites](../../includes/data-box-supported-subscriptions.md)]
 
 ### <a name="for-device"></a>Для устройств
 
@@ -57,7 +53,6 @@ ms.locfileid: "76514414"
     - При использовании кабеля с пропускной способностью 40 Гбит/с его конец, подключаемый к устройству, должен иметь тип разъема QSFP+.
     - Если используется кабель с пропускной способностью 10 Гбит/с, вам потребуется кабель SFP+. Один его конец подключается к 10-гигабитному коммутатору, а другой — к устройству с использованием адаптера QSFP+ на SFP+ (или адаптера QSA).
 - Кабели питания уложены в лоток на задней стороне устройства.
-
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -78,7 +73,7 @@ ms.locfileid: "76514414"
 
 ::: zone target = "chromeless"
 
-# <a name="cable-and-connect-to-your-device"></a>Присоединение кабелей и подключение к устройству
+## <a name="cable-and-connect-to-your-device"></a>Присоединение кабелей и подключение к устройству
 
 Выполнив предварительные требования, можно приступать к подготовке устройства к работе и его подключению.
 

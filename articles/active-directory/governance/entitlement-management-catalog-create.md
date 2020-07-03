@@ -1,9 +1,9 @@
 ---
-title: Создание & управление ресурсами в управлении объемом обслуживания — Azure AD
+title: Создание & Управление каталогом ресурсов в управлении назначением — Azure AD
 description: Узнайте, как создать новый контейнер ресурсов и получать доступ к пакетам в Azure Active Directory управлении назначением.
 services: active-directory
 documentationCenter: ''
-author: msaburnley
+author: barclayn
 manager: daveba
 editor: HANKI
 ms.service: active-directory
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 10/07/2019
-ms.author: ajburnle
+ms.date: 03/22/2020
+ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5895ed256fa5f0337b74d9dbe14c4074dad4b522
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: ffa6f2fbdcde41d81e268779c3a0586bd8310792
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77120236"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80437553"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
 
@@ -53,7 +53,7 @@ ms.locfileid: "77120236"
 
 ### <a name="creating-a-catalog-programmatically"></a>Создание каталога программным способом
 
-Вы также можете создать каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [создания акцесспаккажекаталог](https://docs.microsoft.com/graph/api/accesspackagecatalog-post?view=graph-rest-beta).
+Вы также можете создать каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызывать API для [создания акцесспаккажекаталог](https://docs.microsoft.com/graph/api/accesspackagecatalog-post?view=graph-rest-beta).
 
 ## <a name="add-resources-to-a-catalog"></a>Добавление ресурсов в каталог
 
@@ -83,7 +83,7 @@ ms.locfileid: "77120236"
 
 ### <a name="adding-a-resource-to-a-catalog-programmatically"></a>Программное добавление ресурса в каталог
 
-Вы также можете добавить ресурс в каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли, каталог и владелец ресурса, с приложением, имеющим делегированное `EntitlementManagement.ReadWrite.All` разрешение, может вызывать API для [создания акцесспаккажересаурцерекуест](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta).
+Вы также можете добавить ресурс в каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли, каталог и владелец ресурса с приложением, имеющим делегированное `EntitlementManagement.ReadWrite.All` разрешение, может вызывать API для [создания акцесспаккажересаурцерекуест](https://docs.microsoft.com/graph/api/accesspackageresourcerequest-post?view=graph-rest-beta).
 
 ## <a name="remove-resources-from-a-catalog"></a>Удаление ресурсов из каталога
 
@@ -99,7 +99,7 @@ ms.locfileid: "77120236"
 
 1. Выберите ресурсы, которые необходимо удалить.
 
-1. Нажмите кнопку **Удалить** (или нажмите кнопку с многоточием ( **...** ) и выберите **Удалить ресурс**).
+1. Нажмите кнопку **Удалить** (или нажмите кнопку с многоточием (**...**) и выберите **Удалить ресурс**).
 
 ## <a name="add-additional-catalog-owners"></a>Добавление дополнительных владельцев каталога
 

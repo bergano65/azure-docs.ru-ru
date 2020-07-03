@@ -1,179 +1,279 @@
 ---
-title: Теги ресурсов для логической организации
+title: Разметка ресурсов, групп ресурсов и подписок для логической организации
 description: Здесь описано, как применить теги, чтобы организовать ресурсы Azure для выставления счетов и управления.
 ms.topic: conceptual
-ms.date: 01/03/2020
-ms.openlocfilehash: c7f8d8672e205fa677bff33c8ed173c1105b26c6
-ms.sourcegitcommit: bdf31d87bddd04382effbc36e0c465235d7a2947
+ms.date: 05/06/2020
+ms.openlocfilehash: 9ba7c58f6fa56b8ef2c233a5fe7f8f8e04fe29e1
+ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2020
-ms.locfileid: "77166604"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82864493"
 ---
-# <a name="use-tags-to-organize-your-azure-resources"></a>Использование тегов для организации ресурсов в Azure
+# <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Использование тегов для Организации ресурсов Azure и иерархии управления
 
-Вы примените теги к ресурсам Azure, чтобы логически упорядочить их в таксономии. Каждый тег состоит из пары "имя — значение". Например, имя Environment и значение Production можно применить ко всем ресурсам в рабочей среде.
+Вы примените теги к ресурсам, группам ресурсов и подпискам Azure, чтобы логически упорядочить их в таксономии. Каждый тег состоит из пары "имя — значение". Например, имя Environment и значение Production можно применить ко всем ресурсам в рабочей среде.
 
-Применив теги, вы сможете получить все ресурсы в подписке с именем и значением нужного тега. Теги позволяют извлекать связанные ресурсы из разных групп ресурсов. Такой подход может быть полезным, когда требуется организовать ресурсы для выставления счетов или управления.
+Рекомендации по реализации стратегии тегов см. в разделе [руководство по именованию ресурсов и созданию тегов](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json).
 
-Ваша таксономия должна учитывать стратегию добавления тегов метаданных самообслуживания в дополнение к стратегии автоматического добавления тегов, чтобы снизить нагрузку на пользователей и повысить точность.
+> [!IMPORTANT]
+> В именах тегов не учитывается регистр. В значениях тегов учитывается регистр.
 
 [!INCLUDE [Handle personal data](../../../includes/gdpr-intro-sentence.md)]
 
-## <a name="limitations"></a>Ограничения
-
-Действительны следующие ограничения для тегов.
-
-* Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
-* Каждый ресурс или группа ресурсов может иметь не более 50 пар "имя-значение" для тегов. Если необходимо применить больше тегов, чем максимально допустимое число, используйте строку JSON для значения тега. Строка JSON может содержать много значений, применяемых к одному имени тега. Группа ресурсов может содержать множество ресурсов, каждая из которых содержит 50 пар "имя-значение" для тегов.
-* Имя тега ограничено 512 символами, а значение тега — 256 символами. Для учетных записей хранения имя тега ограничено 128 символами, а значение тега — 256 символами.
-* Обобщенные виртуальные машины не поддерживают теги.
-* Теги, примененные к группе ресурсов, не наследуются ресурсами в этой группе.
-* Теги нельзя применять к классическим ресурсам, например к облачным службам Microsoft Azure.
-* Имена тегов не могут содержать следующие символы: `<`, `>`, `%`, `&`, `\`, `?`, `/`
-
-   > [!NOTE]
-   > В настоящее время Azure DNS зоны и службы диспетчера трафика не позволяют использовать пробелы в теге. 
-
 ## <a name="required-access"></a>Требуемый доступ
 
-Чтобы применить теги к ресурсам, у пользователя должен быть доступ на запись к этому типу ресурсов. Чтобы применить теги ко всем типам ресурсов, используйте роль [участника](../../role-based-access-control/built-in-roles.md#contributor). Чтобы применить теги только к одному типу ресурсов, используйте роль участника для этого ресурса. Например, чтобы применить теги к виртуальным машинам, используйте [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor).
+Чтобы применить теги к ресурсу, необходимо иметь доступ на запись к типу ресурса **Microsoft. Resources/Tags** . Роль « [участник тегов](../../role-based-access-control/built-in-roles.md#tag-contributor) » позволяет применять теги к сущности без доступа к самой сущности. В настоящее время роль участника тега не может применять теги к ресурсам или группам ресурсов на портале. Он может применять теги к подпискам на портале. Она поддерживает все операции с тегами с помощью PowerShell и REST API.  
 
-## <a name="policies"></a>Политики
-
-Вы можете использовать службу [Политика Azure](../../governance/policy/overview.md), чтобы принудительно применять правила и соглашения. Создавая политику, можно избежать сценария, в котором ресурсы развертываются в подписку, не соответствующую ожидаемым тегам вашей организации. Вместо ручного применения тегов или поиска ресурсов, которые не соответствуют требованиям, вы можете создать политику, которая автоматически применяет необходимые теги во время развертывания. Теги также можно применить к существующим ресурсам с новым действием [изменения](../../governance/policy/concepts/effects.md#modify) и [задачей исправления](../../governance/policy/how-to/remediate-resources.md). В следующем разделе приведены примеры политик для тегов.
-
-[!INCLUDE [Tag policies](../../../includes/azure-policy-samples-policies-tags.md)]
+Роль [участника](../../role-based-access-control/built-in-roles.md#contributor) также предоставляет необходимый доступ для применения тегов к любой сущности. Чтобы применить теги только к одному типу ресурсов, используйте роль участника для этого ресурса. Например, чтобы применить теги к виртуальным машинам, используйте [Участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor).
 
 ## <a name="powershell"></a>PowerShell
 
-Чтобы просмотреть существующие теги для *группы ресурсов*, используйте этот командлет:
+### <a name="apply-tags"></a>Применить Теги
+
+Azure PowerShell предлагает две команды для применения тегов- [New-азтаг](/powershell/module/az.resources/new-aztag) и [Update-азтаг](/powershell/module/az.resources/update-aztag). Необходимо иметь модуль AZ. Resources 1.12.0 или более поздней версии. Версию можно проверить с помощью `Get-Module Az.Resources`. Вы можете установить этот модуль или [установить Azure PowerShell](/powershell/azure/install-az-ps) 3.6.1 или более поздней версии.
+
+**New-азтаг** заменяет все теги в ресурсе, группе ресурсов или подписке. При вызове команды передайте идентификатор ресурса сущности, которую вы хотите пометить.
+
+В следующем примере набор тегов применяется к учетной записи хранения.
 
 ```azurepowershell-interactive
-(Get-AzResourceGroup -Name examplegroup).Tags
+$tags = @{"Dept"="Finance"; "Status"="Normal"}
+$resource = Get-AzResource -Name demoStorage -ResourceGroup demoGroup
+New-AzTag -ResourceId $resource.id -Tag $tags
 ```
 
-Этот скрипт вернет ответ в следующем формате:
+После выполнения команды Обратите внимание, что ресурс имеет два тега.
 
-```powershell
-Name                           Value
-----                           -----
-Dept                           IT
-Environment                    Test
+```output
+Properties :
+        Name    Value
+        ======  =======
+        Dept    Finance
+        Status  Normal
 ```
 
-Чтобы просмотреть существующие теги для *ресурса с указанным именем и группой ресурсов*, используйте:
+Если выполнить команду еще раз, но на этот раз с другими тегами, обратите внимание, что предыдущие Теги удалены.
 
 ```azurepowershell-interactive
-(Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup).Tags
+$tags = @{"Team"="Compliance"; "Environment"="Production"}
+New-AzTag -ResourceId $resource.id -Tag $tags
 ```
 
-Если у вас есть идентификатор ресурса для ресурса, можно передать этот идентификатор ресурса для получения тегов.
-
-```azurepowershell-interactive
-(Get-AzResource -ResourceId /subscriptions/<subscription-id>/resourceGroups/<rg-name>/providers/Microsoft.Storage/storageAccounts/<storage-name>).Tags
+```output
+Properties :
+        Name         Value
+        ===========  ==========
+        Environment  Production
+        Team         Compliance
 ```
 
-Чтобы получить *группы ресурсов с указанными именем и значением тега*, используйте:
+Чтобы добавить теги к ресурсу, который уже содержит теги, используйте **Update-азтаг**. Задайте для параметра **-Operation** значение **Merge**.
 
 ```azurepowershell-interactive
-(Get-AzResourceGroup -Tag @{ "Dept"="Finance" }).ResourceGroupName
+$tags = @{"Dept"="Finance"; "Status"="Normal"}
+Update-AzTag -ResourceId $resource.id -Tag $tags -Operation Merge
 ```
 
-Чтобы получить *ресурсы с указанными именем и значением тега*, используйте:
+Обратите внимание, что два новых тега были добавлены к двум существующим тегам.
 
-```azurepowershell-interactive
-(Get-AzResource -Tag @{ "Dept"="Finance"}).Name
+```output
+Properties :
+        Name         Value
+        ===========  ==========
+        Status       Normal
+        Dept         Finance
+        Team         Compliance
+        Environment  Production
 ```
 
-Чтобы получить *ресурсы с определенным тегом*, используйте:
+Каждое имя тега может иметь только одно значение. Если указать новое значение для тега, старое значение будет заменено даже при использовании операции MERGE. В следующем примере тег Status изменяется с нормального на зеленый.
 
 ```azurepowershell-interactive
-(Get-AzResource -TagName "Dept").Name
+$tags = @{"Status"="Green"}
+Update-AzTag -ResourceId $resource.id -Tag $tags -Operation Merge
 ```
 
-Каждый раз, когда вы добавляете теги к ресурсу или группе ресурсов, вы перезаписываете существующие теги в этом ресурсе или группе. Поэтому необходимо использовать другой подход, исходя из того, имеются ли теги в ресурсе или в группе ресурсов.
-
-Чтобы добавить теги в *группу ресурсов без тегов*, используйте этот командлет:
-
-```azurepowershell-interactive
-Set-AzResourceGroup -Name examplegroup -Tag @{ "Dept"="IT"; "Environment"="Test" }
+```output
+Properties :
+        Name         Value
+        ===========  ==========
+        Status       Green
+        Dept         Finance
+        Team         Compliance
+        Environment  Production
 ```
 
-Чтобы добавить теги в *группу ресурсов с существующими тегами*, извлеките их, добавьте новый тег и повторно примените теги:
+Если для параметра **-Operation** задано значение **Replace**, существующие теги заменяются новым набором тегов.
 
 ```azurepowershell-interactive
-$tags = (Get-AzResourceGroup -Name examplegroup).Tags
-$tags.Add("Status", "Approved")
-Set-AzResourceGroup -Tag $tags -Name examplegroup
+$tags = @{"Project"="ECommerce"; "CostCenter"="00123"; "Team"="Web"}
+Update-AzTag -ResourceId $resource.id -Tag $tags -Operation Replace
 ```
 
-Чтобы добавить теги в *ресурс без тегов*, используйте этот командлет:
+В ресурсе остаются только новые теги.
+
+```output
+Properties :
+        Name        Value
+        ==========  =========
+        CostCenter  00123
+        Team        Web
+        Project     ECommerce
+```
+
+Одни и те же команды также работают с группами ресурсов или подписками. Вы передаете идентификатор для группы ресурсов или подписки, которые необходимо пометить.
+
+Чтобы добавить новый набор тегов в группу ресурсов, используйте:
 
 ```azurepowershell-interactive
-$resource = Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup
-Set-AzResource -Tag @{ "Dept"="IT"; "Environment"="Test" } -ResourceId $resource.ResourceId -Force
+$tags = @{"Dept"="Finance"; "Status"="Normal"}
+$resourceGroup = Get-AzResourceGroup -Name demoGroup
+New-AzTag -ResourceId $resourceGroup.ResourceId -tag $tags
+```
+
+Чтобы обновить теги для группы ресурсов, используйте:
+
+```azurepowershell-interactive
+$tags = @{"CostCenter"="00123"; "Environment"="Production"}
+$resourceGroup = Get-AzResourceGroup -Name demoGroup
+Update-AzTag -ResourceId $resourceGroup.ResourceId -Tag $tags -Operation Merge
+```
+
+Чтобы добавить новый набор тегов к подписке, используйте:
+
+```azurepowershell-interactive
+$tags = @{"CostCenter"="00123"; "Environment"="Dev"}
+$subscription = (Get-AzSubscription -SubscriptionName "Example Subscription").Id
+New-AzTag -ResourceId "/subscriptions/$subscription" -Tag $tags
+```
+
+Чтобы обновить теги для подписки, используйте:
+
+```azurepowershell-interactive
+$tags = @{"Team"="Web Apps"}
+$subscription = (Get-AzSubscription -SubscriptionName "Example Subscription").Id
+Update-AzTag -ResourceId "/subscriptions/$subscription" -Tag $tags -Operation Merge
 ```
 
 В группе ресурсов может быть несколько ресурсов с одним и тем же именем. В этом случае можно задать каждый ресурс с помощью следующих команд:
 
 ```azurepowershell-interactive
 $resource = Get-AzResource -ResourceName sqlDatabase1 -ResourceGroupName examplegroup
-$resource | ForEach-Object { Set-AzResource -Tag @{ "Dept"="IT"; "Environment"="Test" } -ResourceId $_.ResourceId -Force }
+$resource | ForEach-Object { Update-AzTag -Tag @{ "Dept"="IT"; "Environment"="Test" } -ResourceId $_.ResourceId -Operation Merge }
 ```
 
-Чтобы добавить теги в *ресурс с существующими тегами*, используйте:
+### <a name="list-tags"></a>Вывод списка тегов
+
+Чтобы получить теги для ресурса, группы ресурсов или подписки, используйте команду [Get-азтаг](/powershell/module/az.resources/get-aztag) и передайте идентификатор ресурса для сущности.
+
+Чтобы просмотреть теги для ресурса, используйте:
 
 ```azurepowershell-interactive
-$resource = Get-AzResource -ResourceName examplevnet -ResourceGroupName examplegroup
-$resource.Tags.Add("Status", "Approved")
-Set-AzResource -Tag $resource.Tags -ResourceId $resource.ResourceId -Force
+$resource = Get-AzResource -Name demoStorage -ResourceGroup demoGroup
+Get-AzTag -ResourceId $resource.id
 ```
 
-Чтобы применить все теги из группы ресурсов к его ресурсам и *не сохранить существующие теги в ресурсах*, используйте следующий скрипт:
+Чтобы просмотреть теги для группы ресурсов, используйте:
 
 ```azurepowershell-interactive
-$group = Get-AzResourceGroup -Name examplegroup
-Get-AzResource -ResourceGroupName $group.ResourceGroupName | ForEach-Object {Set-AzResource -ResourceId $_.ResourceId -Tag $group.Tags -Force }
+$resourceGroup = Get-AzResourceGroup -Name demoGroup
+Get-AzTag -ResourceId $resourceGroup.ResourceId
 ```
 
-Чтобы применить все теги из группы ресурсов к своим ресурсам и *сохранить существующие теги на ресурсах, которые не являются повторяющимися*, используйте следующий скрипт:
+Чтобы просмотреть теги для подписки, используйте:
 
 ```azurepowershell-interactive
-$group = Get-AzResourceGroup -Name examplegroup
-if ($null -ne $group.Tags) {
-    $resources = Get-AzResource -ResourceGroupName $group.ResourceGroupName
-    foreach ($r in $resources)
-    {
-        $resourcetags = (Get-AzResource -ResourceId $r.ResourceId).Tags
-        if ($resourcetags)
-        {
-            foreach ($key in $group.Tags.Keys)
-            {
-                if (-not($resourcetags.ContainsKey($key)))
-                {
-                    $resourcetags.Add($key, $group.Tags[$key])
-                }
-            }
-            Set-AzResource -Tag $resourcetags -ResourceId $r.ResourceId -Force
-        }
-        else
-        {
-            Set-AzResource -Tag $group.Tags -ResourceId $r.ResourceId -Force
-        }
-    }
-}
+$subscription = (Get-AzSubscription -SubscriptionName "Example Subscription").Id
+Get-AzTag -ResourceId "/subscriptions/$subscription"
 ```
 
-Чтобы удалить все теги, передайте пустую хэш-таблицу:
+### <a name="list-by-tag"></a>Список по тегу
+
+Чтобы получить ресурсы с указанными именем и значением тега, используйте:
 
 ```azurepowershell-interactive
-Set-AzResourceGroup -Tag @{} -Name examplegroup
+(Get-AzResource -Tag @{ "CostCenter"="00123"}).Name
+```
+
+Чтобы получить ресурсы с заданным именем тега и любым значением тега, используйте:
+
+```azurepowershell-interactive
+(Get-AzResource -TagName "Dept").Name
+```
+
+Чтобы получить группы ресурсов с указанными именем и значением тега, используйте:
+
+```azurepowershell-interactive
+(Get-AzResourceGroup -Tag @{ "CostCenter"="00123" }).ResourceGroupName
+```
+
+### <a name="remove-tags"></a>Удалить теги
+
+Чтобы удалить определенные теги, используйте **Update-азтаг** и Set **-Operation** для **удаления**. Передайте теги, которые нужно удалить.
+
+```azurepowershell-interactive
+$removeTags = @{"Project"="ECommerce"; "Team"="Web"}
+Update-AzTag -ResourceId $resource.id -Tag $removeTags -Operation Delete
+```
+
+Указанные теги удаляются.
+
+```output
+Properties :
+        Name        Value
+        ==========  =====
+        CostCenter  00123
+```
+
+Чтобы удалить все теги, используйте команду [Remove-азтаг](/powershell/module/az.resources/remove-aztag) .
+
+```azurepowershell-interactive
+$subscription = (Get-AzSubscription -SubscriptionName "Example Subscription").Id
+Remove-AzTag -ResourceId "/subscriptions/$subscription"
 ```
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Чтобы просмотреть существующие теги для *группы ресурсов*, используйте этот командлет:
+### <a name="apply-tags"></a>Применить Теги
+
+При добавлении тегов в группу ресурсов или ресурс можно либо перезаписать существующие теги, либо добавить новые теги в существующие теги.
+
+Чтобы перезаписать теги для ресурса, используйте:
+
+```azurecli-interactive
+az resource tag --tags 'Dept=IT' 'Environment=Test' -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
+```
+
+Чтобы добавить тег к существующим тегам для ресурса, используйте:
+
+```azurecli-interactive
+az resource update --set tags.'Status'='Approved' -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
+```
+
+Чтобы перезаписать существующие теги в группе ресурсов, используйте:
+
+```azurecli-interactive
+az group update -n examplegroup --tags 'Environment=Test' 'Dept=IT'
+```
+
+Чтобы добавить тег к существующим тегам в группе ресурсов, используйте:
+
+```azurecli-interactive
+az group update -n examplegroup --set tags.'Status'='Approved'
+```
+
+В настоящее время Azure CLI не поддерживает применение тегов к подпискам.
+
+### <a name="list-tags"></a>Вывод списка тегов
+
+Чтобы просмотреть существующие теги для ресурса, используйте:
+
+```azurecli-interactive
+az resource show -n examplevnet -g examplegroup --resource-type "Microsoft.Network/virtualNetworks" --query tags
+```
+
+Чтобы просмотреть существующие теги для группы ресурсов, используйте этот командлет:
 
 ```azurecli-interactive
 az group show -n examplegroup --query tags
@@ -188,16 +288,12 @@ az group show -n examplegroup --query tags
 }
 ```
 
-Чтобы просмотреть существующие теги для *ресурса с указанным именем, типом и группой ресурсов*, используйте следующую команду:
+### <a name="list-by-tag"></a>Список по тегу
+
+Чтобы получить все ресурсы с определенным тегом и значением, используйте команду `az resource list`:
 
 ```azurecli-interactive
-az resource show -n examplevnet -g examplegroup --resource-type "Microsoft.Network/virtualNetworks" --query tags
-```
-
-При циклическом переборе коллекции ресурсов может потребоваться отобразить ресурс с помощью идентификатора ресурса. Полный пример показан далее в этой статье. Чтобы просмотреть существующие теги для *ресурса с указанным идентификатором ресурса*, используйте следующую команду:
-
-```azurecli-interactive
-az resource show --id <resource-id> --query tags
+az resource list --tag Dept=Finance
 ```
 
 Чтобы получить группы ресурсов с определенным тегом, используйте команду `az group list`:
@@ -206,64 +302,7 @@ az resource show --id <resource-id> --query tags
 az group list --tag Dept=IT
 ```
 
-Чтобы получить все ресурсы с определенным тегом и значением, используйте команду `az resource list`:
-
-```azurecli-interactive
-az resource list --tag Dept=Finance
-```
-
-При добавлении тегов в группу ресурсов или ресурс можно либо перезаписать существующие теги, либо добавить новые теги в существующие теги.
-
-Чтобы перезаписать существующие теги в группе ресурсов, используйте:
-
-```azurecli-interactive
-az group update -n examplegroup --tags 'Environment=Test' 'Dept=IT'
-```
-
-Чтобы добавить тег к существующим тегам в группе ресурсов, используйте:
-
-```azurecli-interactive
-az group update -n examplegroup --set tags.'Status'='Approved'
-```
-
-Чтобы перезаписать теги для ресурса, используйте:
-
-```azurecli-interactive
-az resource tag --tags 'Dept=IT' 'Environment=Test' -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
-```
-
-Чтобы добавить тег к существующим тегам для ресурса, используйте:
-
-```azurecli-interactive
-az resource update --set tags.'Status'='Approved' -g examplegroup -n examplevnet --resource-type "Microsoft.Network/virtualNetworks"
-```
-
-Чтобы применить все теги из группы ресурсов к его ресурсам и *не сохранить существующие теги в ресурсах*, используйте следующий скрипт:
-
-```azurecli-interactive
-jsontags=$(az group show --name examplegroup --query tags -o json)
-tags=$(echo $jsontags | tr -d '"{},' | sed 's/: /=/g')
-resourceids=$(az resource list -g examplegroup --query [].id --output tsv)
-for id in $resourceids
-do
-  az resource tag --tags $tags --id $id
-done
-```
-
-Чтобы применить все теги из группы ресурсов к ресурсам и *сохранить существующие теги для ресурсов*, используйте следующий скрипт:
-
-```azurecli-interactive
-jsontags=$(az group show --name examplegroup --query tags -o json)
-tags=$(echo $jsontags | tr -d '"{},' | sed 's/: /=/g')
-
-resourceids=$(az resource list -g examplegroup --query [].id --output tsv)
-for id in $resourceids
-do
-  resourcejsontags=$(az resource show --id $id --query tags -o json)
-  resourcetags=$(echo $resourcejsontags | tr -d '"{},' | sed 's/: /=/g')
-  az resource tag --tags $tags$resourcetags --id $id
-done
-```
+### <a name="handling-spaces"></a>Обработка пробелов
 
 Если имена или значения тегов содержат пробелы, необходимо выполнить несколько дополнительных действий. В следующем примере все теги из группы ресурсов применяются к его ресурсам, если теги могут содержать пробелы.
 
@@ -283,17 +322,21 @@ IFS=$origIFS
 
 ## <a name="templates"></a>Шаблоны
 
-Чтобы пометить ресурс во время развертывания, добавьте элемент `tags` в развертываемый ресурс. и укажите имя и значение тега.
+Вы можете помечать ресурсы, группы ресурсов и подписки во время развертывания с помощью шаблона диспетчер ресурсов.
 
-### <a name="apply-a-literal-value-to-the-tag-name"></a>Применение литерального значения к имени тега
+### <a name="apply-values"></a>Применить значения
 
-В следующем примере показана учетная запись хранения с двумя тегами (`Dept` и `Environment`), которым присвоены литеральные значения.
+В следующем примере выполняется развертывание учетной записи хранения с тремя тегами. Два тега (`Dept` и `Environment`) задаются как литеральные значения. Для одного тега`LastDeployed`() задан параметр, который по умолчанию имеет текущую дату.
 
 ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "utcShort": {
+            "type": "string",
+            "defaultValue": "[utcNow('d')]"
+        },
         "location": {
             "type": "string",
             "defaultValue": "[resourceGroup().location]"
@@ -307,7 +350,8 @@ IFS=$origIFS
             "location": "[parameters('location')]",
             "tags": {
                 "Dept": "Finance",
-                "Environment": "Production"
+                "Environment": "Production",
+                "LastDeployed": "[parameters('utcShort')]"
             },
             "sku": {
                 "name": "Standard_LRS"
@@ -319,11 +363,9 @@ IFS=$origIFS
 }
 ```
 
-Чтобы задать тег для значения DateTime, используйте [функцию UtcNow](../templates/template-functions-string.md#utcnow).
+### <a name="apply-an-object"></a>Применение объекта
 
-### <a name="apply-an-object-to-the-tag-element"></a>Применение объекта к элементу тега
-
-Можно определить параметр объекта, который хранит несколько тегов, и применить этот объект к элементу тега. Каждое свойство в объекте становится отдельным тегом ресурса. В следующем примере содержится параметр с именем `tagValues`, который применяется к элементу тега.
+Можно определить параметр объекта, который хранит несколько тегов, и применить этот объект к элементу тега. Такой подход обеспечивает большую гибкость, чем предыдущий пример, поскольку объект может иметь различные свойства. Каждое свойство в объекте становится отдельным тегом ресурса. В следующем примере содержится параметр с именем `tagValues`, который применяется к элементу тега.
 
 ```json
 {
@@ -359,7 +401,7 @@ IFS=$origIFS
 }
 ```
 
-### <a name="apply-a-json-string-to-the-tag-name"></a>Применение строки JSON к имени тега
+### <a name="apply-a-json-string"></a>Применение строки JSON
 
 Для хранения большого количества значений в одном теге примените строку JSON, представляющую значения. Вся строка JSON хранится в виде одного тега, длина которого не должна превышать 256 символов. В следующем примере приведен один тег с именем `CostCenter`, содержащий несколько значений из строки JSON.  
 
@@ -394,7 +436,7 @@ IFS=$origIFS
 
 ### <a name="apply-tags-from-resource-group"></a>Применение тегов из группы ресурсов
 
-Чтобы применить теги из группы ресурсов к ресурсу, используйте функцию [resourceGroup](../templates/template-functions-resource.md#resourcegroup) . При получении значения тега используйте синтаксис `tags[tag-name]` вместо синтаксиса `tags.tag-name`, так как некоторые символы не анализируются должным образом в нотации с точкой.
+Чтобы применить теги из группы ресурсов к ресурсу, используйте функцию [resourceGroup](../templates/template-functions-resource.md#resourcegroup) . При получении значения тега используйте `tags[tag-name]` синтаксис вместо `tags.tag-name` синтаксиса, так как некоторые символы не анализируются правильно в точечной нотации.
 
 ```json
 {
@@ -426,13 +468,107 @@ IFS=$origIFS
 }
 ```
 
+### <a name="apply-tags-to-resource-groups-or-subscriptions"></a>Применение тегов к группам ресурсов или подпискам
+
+Вы можете добавить теги в группу ресурсов или подписку, развернув тип ресурса **Microsoft. Resources/Tags** . Теги применяются к целевой группе ресурсов или подписке для развертывания. Каждый раз при развертывании шаблона заменяются все теги, которые были ранее применены.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "tagName": {
+            "type": "string",
+            "defaultValue": "TeamName"
+        },
+        "tagValue": {
+            "type": "string",
+            "defaultValue": "AppTeam1"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/tags",
+            "name": "default",
+            "apiVersion": "2019-10-01",
+            "dependsOn": [],
+            "properties": {
+                "tags": {
+                    "[parameters('tagName')]": "[parameters('tagValue')]"
+                }
+            }
+        }
+    ]
+}
+```
+
+Чтобы применить теги к группе ресурсов, используйте либо PowerShell, либо Azure CLI. Разверните в группе ресурсов, которую необходимо пометить.
+
+```azurepowershell-interactive
+New-AzResourceGroupDeployment -ResourceGroupName exampleGroup -TemplateFile https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/tags.json
+```
+
+```azurecli-interactive
+az deployment group create --resource-group exampleGroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/tags.json
+```
+
+Чтобы применить теги к подписке, используйте либо PowerShell, либо Azure CLI. Выполните развертывание в подписке, которую нужно пометить.
+
+```azurepowershell-interactive
+New-AzSubscriptionDeployment -name tagresourcegroup -Location westus2 -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/tags.json
+```
+
+```azurecli-interactive
+az deployment sub create --name tagresourcegroup --location westus2 --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/tags.json
+```
+
+Следующий шаблон добавляет теги из объекта в группу ресурсов или подписку.
+
+```json
+"$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "tags": {
+            "type": "object",
+            "defaultValue": {
+                "TeamName": "AppTeam1",
+                "Dept": "Finance",
+                "Environment": "Production"
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/tags",
+            "name": "default",
+            "apiVersion": "2019-10-01",
+            "dependsOn": [],
+            "properties": {
+                "tags": "[parameters('tags')]"
+            }
+        }
+    ]
+}
+```
+
 ## <a name="portal"></a>Портал
 
 [!INCLUDE [resource-manager-tag-resource](../../../includes/resource-manager-tag-resources.md)]
 
 ## <a name="rest-api"></a>REST API
 
-Портал Azure и PowerShell используют [интерфейс REST API диспетчера ресурсов Resource Manager](/rest/api/resources/). Если вам нужно интегрировать теги в другую среду, их можно получить с помощью метода **GET** по идентификатору ресурса и обновить набор тегов с помощью вызова метода **PATCH**.
+Для работы с тегами с помощью REST API Azure используйте:
+
+* [Теги — создание или обновление в области действия](/rest/api/resources/tags/createorupdateatscope) (операция размещения)
+* [Теги — обновление в области](/rest/api/resources/tags/updateatscope) (операция исправления)
+* [Теги — получение в области действия](/rest/api/resources/tags/getatscope) (операция Get)
+* [Теги — удаление в области действия](/rest/api/resources/tags/deleteatscope) (операция удаления)
+
+## <a name="inherit-tags"></a>Наследование тегов
+
+Теги, применяемые к группе ресурсов или подписке, не наследуются ресурсами. Чтобы применить теги из подписки или группы ресурсов к ресурсам, см. раздел [политики Azure — Теги](tag-policies.md).
 
 ## <a name="tags-and-billing"></a>Теги и выставление счетов
 
@@ -442,7 +578,24 @@ IFS=$origIFS
 
 Подробнее об операциях REST API см. в [справочнике по REST API для выставления счетов Azure](/rest/api/billing/).
 
+## <a name="limitations"></a>Ограничения
+
+Действительны следующие ограничения для тегов.
+
+* Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
+* Сейчас группы управления не поддерживают теги.
+* Каждый ресурс, Группа ресурсов и подписка могут иметь не более 50 пар "имя-значение" для тегов. Если необходимо применить больше тегов, чем максимально допустимое число, используйте строку JSON для значения тега. Строка JSON может содержать много значений, применяемых к одному имени тега. Группа ресурсов или подписка может содержать множество ресурсов, каждая из которых содержит 50 пар "имя-значение" для тегов.
+* Имя тега ограничено 512 символами, а значение тега — 256 символами. Для учетных записей хранения имя тега ограничено 128 символами, а значение тега — 256 символами.
+* Обобщенные виртуальные машины не поддерживают теги.
+* Теги нельзя применять к классическим ресурсам, например к облачным службам Microsoft Azure.
+* Имена тегов не могут содержать следующие символы: `<`, `>`, `%`, `&`, `\`, `?`, `/`
+
+   > [!NOTE]
+   > В настоящее время зоны Azure DNS и службы диспетчера трафика также не разрешают использовать пробелы в теге.
+   >
+   > Передняя дверца Azure не поддерживает использование `#` в имени тега.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Не все типы ресурсов поддерживают теги. Сведения о возможности применения тегов к типу ресурса см. в статье о [поддержке тегов ресурсами Azure](tag-support.md).
-* Общие сведения об использовании портала см. в статье [Управление ресурсами Azure через портал](manage-resource-groups-portal.md).  
+* Рекомендации по реализации стратегии тегов см. в разделе [руководство по именованию ресурсов и созданию тегов](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json).

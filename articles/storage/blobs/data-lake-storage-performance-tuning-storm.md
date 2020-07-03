@@ -9,23 +9,23 @@ ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: 125c583512f6bae34c2dd3c3dd76a1b96a181ac1
-ms.sourcegitcommit: b77e97709663c0c9f84d95c1f0578fcfcb3b2a6c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74327899"
 ---
 # <a name="tune-performance-storm-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: & Azure Data Lake Storage 2-го поколения HDInsight
 
 Изучите факторы, которые важны для настройки производительности в топологии Azure Storm. Например, нужно понимать характеристики работы, выполняемой элементами spout и bolt (в случае, когда работа связана с интенсивными рабочими нагрузками ввода-вывода или активным использованием памяти). В этой статье рассматривается ряд рекомендаций по улучшению производительности, в том числе по устранению типичных неполадок.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-* **Подписка Azure**. Ознакомьтесь с [бесплатной пробной версией Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе [Краткое руководство. Создание учетной записи хранения для аналитики](data-lake-storage-quickstart-create-account.md).
-* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
-* **Запущенный кластер Storm в Data Lake Storage 2-го поколения**. Дополнительные сведения см. в статье [Основные сведения об Apache Storm в службе HDInsight. Аналитика в реальном времени для Hadoop](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-overview).
-* **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие вопросы, связанные с производительностью, см. в [рекомендациях по настройке производительности Data Lake Storage 2-го поколения](data-lake-storage-performance-tuning-guidance.md).   
+* **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
+* **Учетная запись Azure Data Lake Storage 2-го поколения**. Инструкции по ее созданию см. в разделе [Краткое руководство. Создание учетной записи хранения для аналитики](data-lake-storage-quickstart-create-account.md).
+* **Кластер Azure HDInsight** с доступом к учетной записи Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
+* **Запущенный кластер Storm в Data Lake Storage 2-го поколения**. Дополнительные сведения см. в разделе о чем больше [в HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-overview).
+* **Рекомендации по настройке производительности для Data Lake Storage 2-го поколения**.  Общие понятия производительности см. в разделе [Data Lake Storage 2-го поколения рекомендации по настройке производительности](data-lake-storage-performance-tuning-guidance.md).   
 
 ## <a name="tune-the-parallelism-of-the-topology"></a>Настройка параллелизма топологии
 
@@ -95,7 +95,7 @@ ms.locfileid: "74327899"
 
 * **Количество сбоев.** Это число кортежей, которые не удалось полностью обработать прежде, чем истекло время их ожидания.
 
-* **Емкость.** Это мера занятости вашей системы. Если это значение равно 1, элементы bolt работают с максимально возможной скоростью. Если это значение меньше 1, необходимо увеличить параллелизм. Если значение больше 1, уменьшите параллелизм.
+* **Ресурсов.** Это мера занятости вашей системы. Если это значение равно 1, элементы bolt работают с максимально возможной скоростью. Если это значение меньше 1, необходимо увеличить параллелизм. Если значение больше 1, уменьшите параллелизм.
 
 ## <a name="troubleshoot-common-problems"></a>Устранение распространенных неполадок
 Здесь описано несколько типичных сценариев устранения неполадок.
@@ -110,10 +110,10 @@ ms.locfileid: "74327899"
 
 Чтобы проверить, применяется ли для вас регулирование, включите ведение журнала отладки на стороне клиента.
 
-1. В **Ambari** ** > ости** > **config** > **Расширенное расширение-Worker-log4j**измените **&lt;корневой уровень = "info"&gt;** на&lt;**корневого уровня = "Debug"&gt;** . Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
+1. В **Ambari** > **Storm** > **файле**config > Ambari**с расширенным набором данных-Worker-log4j**измените ** &lt;значение корневого&gt; уровня = "info"** на ** &lt;root&gt;Level = "Отладка"**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 2-го поколения.
 
-## <a name="next-steps"></a>Дополнительная информация
-Сведения о дополнительных настройках производительности Storm см. в этом [блоге](https://blogs.msdn.microsoft.com/shanyu/2015/05/14/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs/).
+## <a name="next-steps"></a>Дальнейшие действия
+В [этом блоге](https://blogs.msdn.microsoft.com/shanyu/2015/05/14/performance-tuning-for-hdinsight-storm-and-microsoft-azure-eventhubs/)можно ссылаться на дополнительную настройку производительности для работы с ними.
 
 Дополнительный пример для запуска есть [в этом разделе GitHub](https://github.com/hdinsight/storm-performance-automation).

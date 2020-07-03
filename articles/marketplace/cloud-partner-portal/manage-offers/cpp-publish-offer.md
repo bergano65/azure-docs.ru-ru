@@ -1,19 +1,18 @@
 ---
 title: Опубликовать предложения Marketplace | Azure Marketplace
 description: Публикация предложений в Azure Marketplace и AppSource Marketplace с помощью Портала Cloud Partner
-services: Azure, AppSource, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 01/12/2019
-ms.author: pabutler
-ms.openlocfilehash: e77f0994f604f3a7365f1ed1ddb9191a2510883a
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: ab75afd2278433dc36c3d1280b41edfa1e34ddce
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73826740"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80286410"
 ---
 # <a name="publish-azure-marketplace-and-appsource-offers"></a>Публикация предложений Azure Marketplace и AppSource
 
@@ -38,6 +37,6 @@ ms.locfileid: "73826740"
 Возможно, у вас возникнет желание отменить публикацию уже после того, как вы запустите этот процесс. Запрос на публикацию можно отменить только тогда, когда процесс достигнет шага *Выход издателя*. Чтобы отменить публикацию, щелкните **Отменить публикацию**. Состояние публикации будет сброшено на шаг 1. Чтобы повторно выполнить публикацию, щелкните **Опубликовать** и выполняйте следующие действия на вкладке **Состояние**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Во время процесса публикации полезно наблюдать за состоянием предложения до момента активации предложения. Дополнительные сведения см. в [этой статье](./cpp-view-status-offer.md). 

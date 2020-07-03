@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/12/2019
+ms.date: 04/21/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 3b2d78bd929e23d49a57f337022f6678114bb5fe
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.openlocfilehash: 125f4188ed3f12f366c619af9efe3aa203987c19
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75457450"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81870519"
 ---
 # <a name="require-secure-transfer-to-ensure-secure-connections"></a>Требовать безопасное перемещение для обеспечения безопасных соединений
 
@@ -25,7 +25,7 @@ ms.locfileid: "75457450"
 
 Подключение к файловому ресурсу Azure через SMB без шифрования завершается сбоем, если для учетной записи хранения требуется безопасная отправка. Примеры небезопасных подключений включают в себя протоколы SMB 2,1, SMB 3,0 без шифрования или некоторые версии клиента SMB для Linux.
 
-По умолчанию при создании учетной записи хранения в портал Azure включается свойство **Обязательное безопасное перемещение** . Однако при создании учетной записи хранения с помощью пакета SDK она отключена.
+По умолчанию при создании учетной записи хранения включается свойство **Обязательное безопасное перемещение** .
 
 > [!NOTE]
 > Так как служба хранилища Azure не поддерживает протокол HTTPS для имен личных доменов, при использовании данных имен этот параметр не применяется. Классические учетные записи хранения не поддерживаются.
@@ -123,6 +123,6 @@ az storage account update -g {ResourceGroupName} -n {StorageAccountName} --https
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Рекомендации по безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)

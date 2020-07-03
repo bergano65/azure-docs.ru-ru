@@ -16,10 +16,10 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 448d46cd21a63488c4f567d5555fe6406fc0fa73
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67089092"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thirdlight"></a>Руководство по Интеграция Azure Active Directory с ThirdLight
@@ -38,7 +38,7 @@ ms.locfileid: "67089092"
 
 Чтобы настроить интеграцию Azure AD с ThirdLight, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка ThirdLight с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -134,11 +134,11 @@ ms.locfileid: "67089092"
 
 1. Последовательно выберите **Configuration** > **System Administration** > **SAML2** (Конфигурация > Системное администрирование > SAML2).
 
-    ![Администрирование системы](./media/thirdlight-tutorial/ic805843.png "Администрирование системы")
+    ![Системное администрирование](./media/thirdlight-tutorial/ic805843.png "Администрирование системы")
 
 1. В разделе конфигурации SAML2 выполните следующие действия:
   
-    ![Раздел конфигурации SAML2](./media/thirdlight-tutorial/ic805844.png "SAML2 configuration section")
+    ![Раздел конфигурации SAML2](./media/thirdlight-tutorial/ic805844.png "Раздел конфигурации SAML2")
 
     1. Выберите параметр **Разрешить единый вход SAML2**.
 
@@ -170,7 +170,7 @@ ms.locfileid: "67089092"
 
     1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    1. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **создания**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -214,7 +214,7 @@ ms.locfileid: "67089092"
 
 1. Введите имя пользователя, имя или описание, адрес электронной почты для действующей учетной записи Azure AD, которую вы хотите подготовить. Выберите предустановку или группу новых участников.
 
-1. Нажмите кнопку **Создать**.
+1. Нажмите кнопку **создания**.
 
 > [!NOTE]
 > Вы можете использовать любые другие средства или API, предоставленные ThirdLight, для подготовки учетных записей пользователей Azure AD.
@@ -231,4 +231,4 @@ ms.locfileid: "67089092"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

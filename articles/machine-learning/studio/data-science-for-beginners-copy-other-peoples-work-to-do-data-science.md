@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
-ms.openlocfilehash: 3a99ad12af7f6eecb74f6c0d52a269770fd5ed7c
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: 91f1f69db7f3faa9e1bbdae7966716c974a4dfa5
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73837820"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930290"
 ---
 # <a name="copy-other-peoples-work-to-do-data-science"></a>Копирование работы других пользователей для обработки и анализа данных
 ## <a name="video-5-data-science-for-beginners-series"></a>Видео 5. Обработка и анализ данных для начинающих
@@ -36,7 +36,7 @@ ms.locfileid: "73837820"
 *Обработка и анализ данных для начинающих* — это пять коротких видеороликов с основными сведениями об обработке и анализе данных.
 
 * Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
-* Видео 2. [Готовы ли ваши данные к обработке и анализу?](data-science-for-beginners-is-your-data-ready-for-data-science.md) *(4 мин 56 с)*
+* Видео 2. [готовы ли ваши данные](data-science-for-beginners-is-your-data-ready-for-data-science.md) к обработке и анализу данных? *(4 мин 56 с)*
 * Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
 * Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
 * Видео 5. Копирование работы других пользователей для обработки и анализа данных.
@@ -52,7 +52,7 @@ ms.locfileid: "73837820"
 
 У Майкрософт есть облачная служба, которая называется [машинное обучение Azure Studio (классическая модель)](https://azure.microsoft.com/services/machine-learning-studio/). Используя ее, вы получаете рабочую область, где можно экспериментировать с разными алгоритмами машинного обучения. Если вы разработаете готовое решение, его можно запустить как веб-службу.
 
-В эту службу также входит **[коллекция средств ИИ Azure](https://gallery.azure.ai/)** . Он содержит ресурсы, в том числе набор экспериментов или моделей Машинное обучение Azure Studio (классическая модель), которые были созданы и добавлены другими пользователями. Эти эксперименты — отличный способ начать создание собственных решений, используя разработки других пользователей. Давайте внимательно его рассмотрим.
+В эту службу также входит **[коллекция средств ИИ Azure](https://gallery.azure.ai/)**. Он содержит ресурсы, в том числе набор экспериментов или моделей Машинное обучение Azure Studio (классическая модель), которые были созданы и добавлены другими пользователями. Эти эксперименты — отличный способ начать создание собственных решений, используя разработки других пользователей. Давайте внимательно его рассмотрим.
 
 ![Коллекция решений ИИ Azure](./media/data-science-for-beginners-copy-other-peoples-work-to-do-data-science/azure-ai-gallery.png)
 
@@ -71,11 +71,11 @@ ms.locfileid: "73837820"
 
 ![Страница описания эксперимента с применением кластеризации](./media/data-science-for-beginners-copy-other-peoples-work-to-do-data-science/clustering-experiment-description-page.png)
 
-Обратите внимание на ссылку, которая говорит о том, что она **открыта в студии (классическая модель)** .
+Обратите внимание на ссылку, которая говорит о том, что она **открыта в студии (классическая модель)**.
 
 ![Кнопка "открыть в студии" (классическая модель)](./media/data-science-for-beginners-copy-other-peoples-work-to-do-data-science/open-in-studio.png)
 
-Я могу щелкнуть это, и он примет мне право **машинное обучение Azure Studio (классическая модель)** . После этого она будет помещена в рабочую область пользователя. Эксперимент включает в себя набор данных, все выполненные операции обработки, использованные алгоритмы и сохраненные результаты.
+Я могу щелкнуть это, и он примет мне право **машинное обучение Azure Studio (классическая модель)**. После этого она будет помещена в рабочую область пользователя. Эксперимент включает в себя набор данных, все выполненные операции обработки, использованные алгоритмы и сохраненные результаты.
 
 ![Открытие коллекции экспериментов в Машинное обучение Studio (классическая модель) — пример алгоритма кластеризации](./media/data-science-for-beginners-copy-other-peoples-work-to-do-data-science/cluster-experiment-open-in-studio.png)
 
@@ -92,4 +92,4 @@ ms.locfileid: "73837820"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Azure Studio (классическая модель)](create-experiment.md)
-* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/preview/overview-what-is-azure-ml)
+* [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/overview-what-is-azure-ml)

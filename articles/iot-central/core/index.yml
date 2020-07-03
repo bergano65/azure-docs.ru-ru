@@ -9,13 +9,13 @@ metadata:
   ms.topic: landing-page
   author: philmea
   ms.author: philmea
-  ms.date: 10/25/2019
-  ms.openlocfilehash: cddfdbe709849f81f585ad7537556945ec14c990
-  ms.sourcegitcommit: 21e33a0f3fda25c91e7670666c601ae3d422fb9c
+  ms.date: 02/18/2020
+  ms.openlocfilehash: 53988177d28de184b5fcc494284185fac619b170
+  ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 02/05/2020
-  ms.locfileid: "77023435"
+  ms.lasthandoff: 05/19/2020
+  ms.locfileid: "83660283"
 landingContent:
 - title: Сведения об Azure IoT Central
   linkLists:
@@ -23,14 +23,18 @@ landingContent:
     links:
     - text: Сведения об Azure IoT Central
       url: overview-iot-central.md
-    - text: Параметры решения для Интернета вещей
-      url: overview-iot-central-tour.md
     - text: Обзор пользовательского интерфейса
       url: overview-iot-central-tour.md
+    - text: Разработка для устройств
+      url: overview-iot-central-developer.md
+    - text: Последние обновления
+      url: https://azure.microsoft.com/updates/?status=nowavailable&updateType=features&category=iot&query=azure%20iot%20central
   - linkListType: architecture
     links:
     - text: Архитектура Azure IoT Central
       url: concepts-architecture.md
+    - text: Шаблоны приложений
+      url: concepts-app-templates.md
   - linkListType: quickstart
     links:
     - text: Создание приложения
@@ -39,12 +43,14 @@ landingContent:
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Настройка шаблона устройства
-      url: howto-set-up-template.md
+    - text: Подключение устройства
+      url: tutorial-connect-device-nodejs.md
     - text: Подключение устройства IoT Plug and Play (предварительная версия)
-      url: tutorial-add-device.md
+      url: tutorial-connect-pnp-device.md
   - linkListType: how-to-guide
     links:
+    - text: Настройка шаблона устройства
+      url: howto-set-up-template.md
     - text: Подготовка и подключение MXChip IoT DevKit
       url: howto-connect-devkit.md
     - text: Подключение других облаков Интернета вещей
@@ -53,8 +59,8 @@ landingContent:
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Использование наборов устройств
-      url: howto-use-device-sets.md
+    - text: Использование групп устройств
+      url: tutorial-use-device-groups.md
   - linkListType: how-to-guide
     links:
     - text: Управление устройствами
@@ -68,9 +74,11 @@ landingContent:
   - linkListType: tutorial
     links:
     - text: Создание правил телеметрии
-      url: howto-create-telemetry-rules.md
-    - text: Экспорт в хранилище BLOB-объектов
-      url: howto-export-data-blob-storage.md
+      url: tutorial-create-telemetry-rules.md
+    - text: Экспорт данных в целевое расположение в Azure
+      url: howto-export-data.md
+    - text: Обзор интерфейсов API для IoT Central
+      url: https://docs.microsoft.com/learn/modules/manage-iot-central-apps-with-rest-api/
   - linkListType: how-to-guide
     links:
     - text: Создание настраиваемых правил

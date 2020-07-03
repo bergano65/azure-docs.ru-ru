@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ForeSee CX Suite | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с ForeSee CX Suite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ForeSee CX Suite.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
 ms.openlocfilehash: c78fa8ec470f04bcd88ab403249f77a65120c707
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "67550403"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство. Интеграция Azure Active Directory с ForeSee CX Suite
+# <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство по интеграции Azure Active Directory с ForeSee CX Suite
 
 В этом руководстве описано, как интегрировать ForeSee CX Suite с Azure Active Directory (Azure AD).
 Интеграция приложения ForeSee CX Suite с Azure AD обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "67550403"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ForeSee CX Suite, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка ForeSee CX Suite с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "67550403"
 
 4. Если у вас есть **файл метаданных поставщика служб**, выполните следующие действия в разделе **Базовая конфигурация SAML**:
 
-    a. Щелкните **Отправить файл метаданных**.
+    а. Щелкните **Отправить файл метаданных**.
 
     ![Передача файла метаданных](common/upload-metadata.png)
 
@@ -117,7 +117,7 @@ ms.locfileid: "67550403"
 
     ![Сведения о домене и URL-адресах единого входа приложения ForeSee CX Suite](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://cxsuite.foresee.com/`.
+    а. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://cxsuite.foresee.com/`.
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: https:\//www.okta.com/saml2/service-provider/\<уникальный_ИД>
 
@@ -132,7 +132,7 @@ ms.locfileid: "67550403"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
     b. Идентификатор Azure AD
 
@@ -208,5 +208,5 @@ ms.locfileid: "67550403"
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что такое условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

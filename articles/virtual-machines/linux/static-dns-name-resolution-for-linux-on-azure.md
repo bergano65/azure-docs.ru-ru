@@ -1,26 +1,19 @@
 ---
 title: Использование внутренней службы DNS для разрешения имен виртуальных машин с помощью Azure CLI
-description: Сведения о создании виртуальных сетевых карт и использовании внутренних DNS-имен для разрешения имен виртуальных машин в Azure с помощью Azure CLI.
-services: virtual-machines-linux
-documentationcenter: ''
+description: Как создать виртуальные сетевые карты и использовать внутренние DNS для разрешения имен виртуальных машин в Azure с помощью Azure CLI.
 author: cynthn
-manager: gwallace
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: networking
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-linux
-ms.devlang: azurecli
 ms.topic: article
 ms.date: 02/16/2017
 ms.author: cynthn
-ms.openlocfilehash: acfdfd4edf90b90998a913fa0c6479bedf0028b7
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: 07a78e4987a844627824ac5034046cf6a393ad8d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034741"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81757849"
 ---
 # <a name="create-virtual-network-interface-cards-and-use-internal-dns-for-vm-name-resolution-on-azure"></a>Создание виртуальных сетевых карт и использование внутренних DNS-имен для разрешения имен виртуальных машин в Azure
 
@@ -28,11 +21,11 @@ ms.locfileid: "74034741"
 
 Для этого необходимы следующие компоненты:
 
-* [учетная запись Azure](https://azure.microsoft.com/pricing/free-trial/);
+* [Учетная запись Azure;](https://azure.microsoft.com/pricing/free-trial/)
 * [файлы открытого и закрытого ключа SSH](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="quick-commands"></a>Быстрые команды
-Если вам необходимо быстро выполнить задачу, в следующем разделе описаны нужные команды. Дополнительные сведения и контекст для каждого этапа можно найти в остальной части документа, [начиная отсюда](#detailed-walkthrough). Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
+Если вам необходимо быстро выполнить задачу, в следующем разделе описаны нужные команды. Более подробные сведения и контекст для каждого шага можно найти в оставшейся части документа, начиная с [этой статьи](#detailed-walkthrough). Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 
 Предварительные требования: группа ресурсов, виртуальная сеть и подсеть, группа безопасности сети с разрешенными входящими подключениями SSH.
 
@@ -135,7 +128,7 @@ az network vnet subnet update \
 ## <a name="create-the-virtual-network-interface-card-and-static-dns-names"></a>Создание виртуальной сетевой карты и статических DNS-имен
 Платформа Azure является очень гибкой, но чтобы использовать DNS-имена для разрешения имен виртуальных машин, необходимо создать виртуальные сетевые карты с метками DNS. Виртуальные сетевые карты имеют большое значение, так как их можно повторно использовать, подключая к разным виртуальным машинам на протяжении жизненного цикла инфраструктуры. Это позволяет использовать виртуальную сетевую карту как статический ресурс, тогда как виртуальные машины могут быть временными. С помощью меток DNS на виртуальных сетевых картах можно обеспечить простое разрешение имен из других виртуальных машин в виртуальной сети. Использование сопоставляемых имен позволяет другим виртуальным машинам получить доступ к серверу автоматизации по DNS-имени `Jenkins` или серверу Git в качестве `gitrepo`.  
 
-Создайте виртуальную сетевую карту с помощью команды [az network nic create](/cli/azure/network/nic). Следующий пример создает виртуальную сетевую карту `myNic`, подключает ее к виртуальной сети `myVnet` `myVnet` и создает внутреннюю запись DNS-имени `jenkins`.
+Создайте виртуальную сетевую карту с помощью команды [az network nic create](/cli/azure/network/nic). Следующий пример создает виртуальную сетевую карту `myNic`, подключает ее к виртуальной сети `myVnet``myVnet` и создает внутреннюю запись DNS-имени `jenkins`.
 
 ```azurecli
 az network nic create \
@@ -163,6 +156,6 @@ az vm create \
 
 Используя флаги командной строки для вызова существующих ресурсов, мы укажем среде Azure развернуть виртуальную машину в существующей сети. После развертывания виртуальную сеть и подсеть можно оставить в качестве статических или постоянных ресурсов в регионе Azure для повторного развертывания.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Создание полной среды Linux с помощью интерфейса командной строки Azure](create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Создание виртуальной машины Linux с помощью шаблона Azure](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Создание виртуальной машины Linux в Azure с помощью шаблонов](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

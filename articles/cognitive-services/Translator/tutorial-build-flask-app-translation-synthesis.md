@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание приложения Flask для перевода, синтеза и анализа текста. API Перевода текстов
+title: Руководство по Создание приложения Flask для перевода, синтеза и анализа текста — Переводчик
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве описано, как создать веб-приложение на основе Flask для перевода текста, анализа тональности и синтеза речи на основе переведенного текста.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: swmachan
-ms.openlocfilehash: b41b68725b6747cbada13a9acc321724b3f89d67
-ms.sourcegitcommit: 7c18afdaf67442eeb537ae3574670541e471463d
+ms.openlocfilehash: 955476eefc7575edb90634ce305bbebdf62e2371
+ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77118574"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83592361"
 ---
-# <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Руководство. Создание приложения Flask в Azure Cognitive Services
+# <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Руководство по Создание приложения Flask в Azure Cognitive Services
 
 В этом руководстве описано, как создать веб-приложение Flask, которое использует Azure Cognitive Services для перевода текста, анализа тональности и синтеза речи на основе переведенного текста. Здесь описаны код Python и маршруты Flask, которые потребуются нашему приложению, а также приведены сведения о создании кода HTML и JavaScript, которые собирают приложение воедино. Если вы столкнетесь с проблемами, сообщите нам об этом с помощью расположенной ниже кнопки обратной связи.
 
@@ -27,7 +27,7 @@ ms.locfileid: "77118574"
 > * получение ключей подписки Azure;
 > * настройка среды разработки и установка зависимостей;
 > * создание приложения Flask;
-> * применение API Перевода текстов для перевода текста;
+> * Перевод текста с помощью Переводчика
 > * применение Анализа текста для определения положительной или отрицательной тональности введенного текста и перевода;
 > * применение служб речи для преобразования переведенного текст в синтезированную речь;
 > * локальное выполнение приложения Flask.
@@ -52,14 +52,14 @@ Flask — это микроплатформа для создания веб-п
 * [Средства Git](https://git-scm.com/downloads).
 * Среда разработки или редактор кода, например [Visual Studio Code](https://code.visualstudio.com/) или [Atom](https://atom.io/).  
 * Браузер [Chrome](https://www.google.com/chrome/browser/) или [Firefox](https://www.mozilla.org/firefox).
-* Ключ подписки для службы **Перевод текстов** (обратите внимание, что регион выбирать не обязательно).
+* Ключ подписки **Переводчика** (обратите внимание, что регион выбирать не обязательно).
 * Ключ подписки для службы **Анализ текста** в регионе **Западная часть США**.
 * Ключ подписки для службы **Речь** в регионе **Западная часть США**.
 
 ## <a name="create-an-account-and-subscribe-to-resources"></a>Создание учетной записи и подписки на ресурсы
 
 Как упоминалось ранее, в этом руководстве вам потребуются три ключа подписки. Это означает, что в учетной записи Azure следует создать ресурсы для следующих служб:
-* Перевод текстов
+* API перевода
 * Анализ текста
 * Службы "Речь"
 
@@ -245,14 +245,14 @@ def about():
 
 Итак, вы получили некоторое представление о работе приложения Flask. Теперь мы сделаем следующее:
 
-* напишем на Python код, который вызывает API Перевода текстов и возвращает ответ;
+* напишем на Python код, который вызывает Переводчика и возвращает ответ;
 * создадим маршрут Flask для вызова этого кода Python;
 * добавим в HTML область для ввода и перевода текста, элемент управления для выбора языка и кнопку получения перевода;
 * напишем код JavaScript, который позволяет пользователям взаимодействовать с приложением Flask из HTML.
 
-### <a name="call-the-translator-text-api"></a>Вызов API Перевода текстов
+### <a name="call-the-translator"></a>Вызов переводчика
 
-Прежде всего вам нужно написать функцию для вызова API Перевода текстов. Эта функция будет принимать два аргумента: `text_input` и `language_output`. Эта функция вызывается всякий раз, когда пользователь нажимает в приложении кнопку перевода. Текстовая область с HTML-страницы отправляется в параметре `text_input`, а значение выбранного языка — `language_output`.
+Прежде всего вам нужно написать функцию для вызова Переводчика. Эта функция будет принимать два аргумента: `text_input` и `language_output`. Эта функция вызывается всякий раз, когда пользователь нажимает в приложении кнопку перевода. Текстовая область с HTML-страницы отправляется в параметре `text_input`, а значение выбранного языка — `language_output`.
 
 1. Для начала создайте файл с именем `translate.py` в корневом каталоге рабочей папки.
 2. Теперь добавьте в `translate.py` следующий код. Эта функция принимает два аргумента: `text_input` и `language_output`.
@@ -288,7 +288,7 @@ def about():
        response = requests.post(constructed_url, headers=headers, json=body)
        return response.json()
    ```
-3. Добавьте ключ подписки Перевода текстов и сохраните файл.
+3. Добавьте ключ подписки Переводчика и сохраните файл.
 
 ### <a name="add-a-route-to-apppy"></a>Добавление маршрута в `app.py`
 
@@ -780,7 +780,7 @@ flask run
        <option value="(zh-TW, Yating, Apollo)">Chinese (Taiwan)| Female | Yaiting, Apollo</option>
        <option value="(zh-TW, Zhiwei, Apollo)">Chinese (Taiwan) | Male | Zhiwei, Apollo</option>
        <option value="(hr-HR, Matej)">Croatian | Male | Matej</option>
-       <option value="(en-US, Jessa24kRUS)">English (US) | Female | Jessa24kRUS</option>
+       <option value="(en-US, AriaRUS)">English (US) | Female | AriaRUS</option>
        <option value="(en-US, Guy24kRUS)">English (US) | Male | Guy24kRUS</option>
        <option value="(en-IE, Sean)">English (IE) | Male | Sean</option>
        <option value="(fr-FR, Julie, Apollo)">French | Female | Julie, Apollo</option>
@@ -961,6 +961,6 @@ flask run
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Справочник по API перевода текстов](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)
+* [Справочник по Переводчику](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference)
 * [Справочник по API анализа текста](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7)
 * [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-text-to-speech)

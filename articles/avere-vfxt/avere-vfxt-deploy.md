@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: e70d1dfebcf25ee8f4e90a062cee6dd72a663e02
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76547529"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79252601"
 ---
 # <a name="deploy-the-vfxt-cluster"></a>Развертывание кластера vFXT
 
@@ -28,7 +28,7 @@ ms.locfileid: "76547529"
 
 Перед запуском шаблона создания убедитесь, что у вас есть следующие необходимые компоненты:  
 
-* [Новая подписка](avere-vfxt-prereqs.md#create-a-new-subscription).
+* [Новая подписка](avere-vfxt-prereqs.md#create-a-new-subscription)
 * [Разрешения владельца подписки](avere-vfxt-prereqs.md#configure-subscription-owner-permissions).
 * [Квота для кластера vFXT](avere-vfxt-prereqs.md#quota-for-the-vfxt-cluster).
 * [Конечная точка службы хранилища (при необходимости)](avere-vfxt-prereqs.md#create-a-storage-service-endpoint-in-your-virtual-network-if-needed) — требуется для развертываний, использующих существующую виртуальную сеть и создав хранилище BLOB-объектов.
@@ -74,7 +74,7 @@ ms.locfileid: "76547529"
 
 * **Location** (Расположение). Укажите расположение кластера и ресурсов Azure.
 
-Щелкните **OK**, когда все будет готово.
+По завершении нажмите кнопку **ОК** .
 
 > [!NOTE]
 > Если для контроллера кластера нужно настроить доступный из Интернета IP-адрес, создайте для этого кластера новую виртуальную сеть и не используйте существующие сети. Этот параметр вы найдете на второй странице.
@@ -155,7 +155,7 @@ ms.locfileid: "76547529"
 
    ![Страница выходных значений со значениями SSHSTRING, RESOURCE_GROUP, LOCATION, NETWORK_RESOURCE_GROUP, NETWORK, SUBNET, SUBNET_ID, VSERVER_IPs и MGMT_IP в полях с метками](media/avere-vfxt-outputs-values.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда кластер работает и вы узнаете его IP-адрес управления, [подключитесь к средству настройки кластера](avere-vfxt-cluster-gui.md).
 

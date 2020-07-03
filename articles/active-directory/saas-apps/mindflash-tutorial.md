@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Mindflash | Документация Майкрософт
+title: Учебник. Интеграция Azure Active Directory с Mindflash | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Mindflash.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.openlocfilehash: 78d4f44e9fe2310fab485804e0aaf70aa0dfbdb0
-ms.sourcegitcommit: d6b68b907e5158b451239e4c09bb55eccb5fef89
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "74233537"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство по Интеграция Azure Active Directory с Mindflash
+# <a name="tutorial-azure-active-directory-integration-with-mindflash"></a>Руководство. Интеграция Azure Active Directory с Mindflash
 
 В этом руководстве описано, как интегрировать Mindflash с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Mindflash обеспечивает следующие преимущества.
@@ -34,11 +34,11 @@ ms.locfileid: "74233537"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Mindflash, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Mindflash с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -105,7 +105,7 @@ ms.locfileid: "74233537"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Mindflash](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.mindflash.com`.
+    а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.mindflash.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.mindflash.com`.
 
@@ -120,11 +120,11 @@ ms.locfileid: "74233537"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-mindflash-single-sign-on"></a>Настройка единого входа в Mindflash
 
@@ -199,13 +199,13 @@ ms.locfileid: "74233537"
    
     ![Добавление новых пользователей](./media/mindflash-tutorial/ic787141.png "Добавление новых пользователей")
    
-    a. В текстовое поле **First Name** (Имя) введите **имя пользователя**, например **Britta**.
+    а. В текстовое поле **First Name** (Имя) введите **имя пользователя**, например **Britta**.
 
     b. В текстовое поле **Last Name** (Фамилия) введите **фамилию**, например **Simon**.
     
     c. В текстовое поле **Email** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon\@contoso.com**.
 
-    b. Щелкните **Добавить**.
+    b. Нажмите кнопку **Добавить**.
 
 >[!NOTE]
 >Для подготовки учетных записей пользователей AAD можно использовать любые другие средства создания учетных записей Mindflash или API, предоставляемые Mindflash. 

@@ -1,6 +1,6 @@
 ---
-title: включение файла
-description: включение файла
+title: включить файл
+description: включить файл
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: a11b291ab89dc9f8159e00e1f2304706f041068e
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 2325509f68ced7c66d9f733b07247ae01301b565
+ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67185465"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82181547"
 ---
 ## <a name="test-your-code"></a>Тестирование кода
 
@@ -41,13 +41,11 @@ ms.locfileid: "67185465"
 
 После входа вы увидите сведения о профиле пользователя, который возвращается вызовом Microsoft Graph API. Результаты отображаются в поле **API Call Results** (Результаты вызова API). Основные сведения о токене, полученном при вызове `AcquireTokenInteractive` или `AcquireTokenSilent`, должны отображаться в поле **Token Info** (Сведения о токене). Результаты содержат следующие свойства:
 
-|Свойство  |Формат  |ОПИСАНИЕ |
+|Свойство  |Формат  |Description |
 |---------|---------|---------|
+|**Имя пользователя** |<span>user@domain.com</span> |Имя пользователя, которое используется для идентификации пользователя.|
+|**Истечение срока действия маркера** |Дата и время |Время окончания срока действия маркера. MSAL продлевает срок действия, по мере необходимости обновляя маркер.|
 
-|**Username** |<span>user@domain.com</span> |Имя пользователя для идентификации пользователя.| |**Token Expires** |Дата, время |Время истечения срока действия токена. MSAL продлевает срок действия, по мере необходимости обновляя токен.|
-
-
-<!--start-collapse-->
 ### <a name="more-information-about-scopes-and-delegated-permissions"></a>Дополнительные сведения об областях и делегированных разрешениях
 
 Для чтения профиля пользователя API Microsoft Graph требуется область *user.read*. По умолчанию эта область автоматически добавляется в каждое приложение, зарегистрированное на портале регистрации приложений. Для других API Microsoft Graph, а также для пользовательских API вашего внутреннего сервера, могут потребоваться дополнительные области. Для отображения списка календарей пользователя API Microsoft Graph требуется область *Calendars.Read*.
@@ -56,7 +54,5 @@ ms.locfileid: "67185465"
 
 >[!NOTE]
 >При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
-
-<!--end-collapse-->
 
 [!INCLUDE [Help and support](./active-directory-develop-help-support-include.md)]

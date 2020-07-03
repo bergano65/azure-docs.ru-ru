@@ -1,20 +1,18 @@
 ---
 title: Веб-аналитика
-description: .
-services: Azure, Marketplace, Cloud Partner Portal,
-author: pbutlerm
-manager: Ricardo.Villalobos
+description: В этой статье вы найдете инструкции по изучению и использованию решения "Веб-аналитика" для эффективного развития вашего бизнеса.
+author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pabutler
-ms.openlocfilehash: d47a67be157f71a30a6ae155790ed78a78fd6743
-ms.sourcegitcommit: ac56ef07d86328c40fed5b5792a6a02698926c2d
+ms.author: dsindona
+ms.openlocfilehash: bd6d6375b19689c582c0f129378c76936e624e04
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73814647"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81416281"
 ---
 <a name="web-analytics"></a>Веб-аналитика
 =============
@@ -42,37 +40,37 @@ ms.locfileid: "73814647"
 
 1. Добавьте в свой URL-адрес параметр запроса **mktcmpid**, который описывает кампанию и на какую страницу или событие попадут клиенты.
 
-Например, вы можете использовать: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign>
+Например, вы можете использовать: ```https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign```
 
 1. (Дополнительно.) Используйте один из наших поддерживаемых общих идентификаторов кампании в URL-адресе. Мы хотим, чтобы вы могли использовать дополнительные теги, поэтому мы поддерживаем их автоматическое распознавание:
     
     1. **utm\_campaign**;
     2. **utm\_source**;
-    3. **ref**;
+    3. **ref**
     4. **src**
 
-Например, вы можете использовать: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?utm_campaign=NewCampaign>
+Например, вы можете использовать: ```https://appsource.microsoft.com/product/dynamics-365/contoso.offername?utm_campaign=NewCampaign```
 
 Вы можете выбрать комбинацию из нескольких идентификаторов кампаний для дальнейшего определения нескольких источников, создающих трафик для кампании, например, откуда пришел клиент (электронная почта, блог, источник в социальных сетях и т. д.).
 
-Например:
+Пример:
 
-1. Ссылка на информационный бюллетень: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=newsletter>
-2. Ссылка на LinkedIn: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=LinkedIn>
+1. Ссылка на информационный бюллетень: ```https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=newsletter```
+2. Ссылка на LinkedIn: ```https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=LinkedIn```
 
 ### <a name="ensuring-campaigns-pass-through-all-your-pages"></a>**Обеспечение прохождения кампаний через все ваши страницы**
 
 Может существовать сценарий, когда в ваших кампаниях есть промежуточная страница, на которую вы направляете трафик и которая затем отправляет клиентов в marketplace. Важно передать начальные идентификаторы кампании в конечный URL-адрес, который вы отправляете в marketplace.
 
-Пример:
+Например:
 
-1. Маркетинговый сотрудник покупает рекламу в Google для привлечения трафика на целевую страницу ​​компании \'. Эта целевая страница содержит ссылку на \"пробную версию продукта\", которая ведет на <https://appsource.com>.
+1. Маркетинговый сотрудник покупает рекламу в Google для привлечения трафика на целевую страницу ​​компании ```https://contoso.com```. Эта целевая страница содержит ссылку на \"пробную версию продукта\", которая ведет на ```https://appsource.com```.
 2. Пользователь щелкает объявление и попадает на целевую страницу компании.
     1.  URL-адрес реферрала = google.com
-    2.  URL-адрес целевой страницы = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
+    2.  URL-адрес целевой страницы = ```https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName```
 3. Пользователь щелкает ссылку \"пробной версии продукта\" и переходит в AppSource.
-    1. URL-адрес реферрала = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
-    2. URL-адрес целевой страницы (**убедитесь, что этот URL-адрес содержит utm\_campaign и utm\_source**) = [https://appsource.microsoft.com/product/dynamics-365/contoso.offername?**utmutm\_campaign=MyCampaignAdName&utm\_source=MySourceAdName**](https://appsource.microsoft.com/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
+    1. URL-адрес реферрала = ```https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName```
+    2. URL-адрес целевой страницы (**Убедитесь, что этот\_URL-адрес\_содержит УТМ кампанию и источник УТМ, добавленные по этому URL-адресу**) =```https://appsource.microsoft.com/product/dynamics-365/contoso.offername?**utm\_campaign=MyCampaignAdName&utm\_source=MySourceAdName**```
 
 <a name="how-to-evaluate-the-success-of-a-campaign"></a>Как оценить успех кампании
 -----------------------------------------
@@ -95,7 +93,7 @@ ms.locfileid: "73814647"
 
 Подобно тому как мы смотрим на домены ваших клиентов, эта диаграмма позволяет вам видеть распределение ваших данных по кампаниям, с помощью которых пользователи попадают в marketplace. \_NoCampaign означает, что у клиента не было идентификатора кампании в URL-адресе, когда он переходил в marketplace.
 
-<a name="next-steps"></a>**Next Steps**
+<a name="next-steps"></a>**Дальнейшие действия**
 --------------
 
 Теперь, когда у вас есть возможность отслеживать успех ваших предложений, можно приступить к созданию дополнительных кампаний.

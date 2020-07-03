@@ -1,21 +1,20 @@
 ---
 title: Совместное использование образов коллекций в клиентах в Azure
 description: Узнайте, как совместно использовать образы виртуальных машин в клиентах Azure с помощью общих коллекций образов.
-services: virtual-machines-linux
 author: cynthn
-manager: gwallace
-ms.service: virtual-machines-linux
+ms.service: virtual-machines
+ms.subservice: imaging
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
-ms.topic: article
-ms.date: 04/05/2019
+ms.topic: how-to
+ms.date: 05/04/2019
 ms.author: cynthn
-ms.openlocfilehash: 18337620a6f9506e402149909667026e4a8ba7eb
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.reviewer: akjosh
+ms.openlocfilehash: 62f136eb1c2684bfd307a05ccbb4836739da6f3a
+ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034971"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82789459"
 ---
 # <a name="share-gallery-vm-images-across-azure-tenants"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure
 
@@ -28,7 +27,7 @@ ms.locfileid: "74034971"
 
 ## <a name="create-a-vm-using-azure-cli"></a>Создание виртуальной машины с помощью Azure CLI
 
-Войдите в субъект-службу для клиента 1, используя appID, ключ приложения и идентификатор клиента 1. При необходимости можно использовать `az account show --query "tenantId"` для получения идентификаторов клиентов.
+Войдите в субъект-службу для клиента 1, используя appID, ключ приложения и идентификатор клиента 1. При необходимости можно `az account show --query "tenantId"` использовать для получения идентификаторов клиентов.
 
 ```azurecli-interactive
 az account clear
@@ -54,6 +53,6 @@ az vm create \
   --generate-ssh-keys
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок с коллекциями общих образов](troubleshooting-shared-images.md).

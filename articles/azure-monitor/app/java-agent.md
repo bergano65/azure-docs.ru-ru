@@ -1,26 +1,22 @@
 ---
 title: Мониторинг производительности веб-приложений Java — Azure Application Insights
 description: Расширенный мониторинг производительности и использования веб-сайта Java с помощью Application Insights.
-ms.service: azure-monitor
-ms.subservice: application-insights
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
 ms.date: 01/10/2019
-ms.openlocfilehash: 8194c4b16d114be9b2b95ff56dea59d98cfdae10
-ms.sourcegitcommit: a5ebf5026d9967c4c4f92432698cb1f8651c03bb
+ms.openlocfilehash: b047a8dd8c67679a5cc8a45e8be82f9ab5227aa4
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2019
-ms.locfileid: "74931142"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81537548"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
 
-Если вы выполнили [Инструментирование веб-приложения Java с Application Insights][java], вы можете использовать агент Java для получения более подробных сведений, не внося изменения в код:
+[Инструментирование веб-приложения Java с помощью Application Insights][java] позволяет получать более подробную информацию без изменения кода, используя для этого агент для Java.
 
 * **Зависимости** — данные о вызовах других компонентов в вашем приложении, включая:
-  * Регистрируются **исходящие HTTP-вызовы** через Apache HttpClient, OkHttp и `java.net.HttpURLConnection`.
+  * **Исходящие вызовы HTTP** , выполненные через Apache HttpClient, `java.net.HttpURLConnection` OkHttp и, фиксируются.
   * **Вызовы Redis** , выполненные через клиент Jedis, фиксируются.
   * **Запросы JDBC** — для MySQL и PostgreSQL, если вызов занимает больше 10 секунд, агент сообщает о плане запроса.
 
@@ -30,10 +26,10 @@ ms.locfileid: "74931142"
   * **Logback**
 
 * **Улучшенное именование операций:** (используется для агрегирования запросов на портале)
-  * **Пружина** на основе `@RequestMapping`.
-  * **JAX-RS** — на основе `@Path`. 
+  * **Пружинный** на `@RequestMapping`основе.
+  * **JAX-RS** -на основе `@Path`. 
 
-Чтобы использовать агент для Java, его необходимо установить на сервере. Веб-приложения должны быть инструментированы с помощью [пакета SDK для Application Insights Java][java]. 
+Чтобы использовать агент для Java, его необходимо установить на сервере. Веб-приложения необходимо инструментировать [пакетом SDK для Java Application Insights][java]. 
 
 ## <a name="install-the-application-insights-agent-for-java"></a>Установка агента Application Insights для Java
 1. [Скачайте агент](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) на компьютер с сервером Java. Обязательно скачайте агент Java той же версии, что и веб-пакеты и пакет SDK для Java Application Insights.
@@ -88,12 +84,12 @@ ms.locfileid: "74931142"
 * Выберите элементы "Параметры > Параметры приложения".
 * В разделе "Параметры приложения" добавьте новую пару "ключ — значение":
 
-Ключ: `JAVA_OPTS` значение: `-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.5.0.jar`
+Ключ: `JAVA_OPTS` значение:`-javaagent:D:/home/site/wwwroot/applicationinsights-agent-2.5.0.jar`
 
 Для получения последней версии агента Java ознакомьтесь с выпусками [здесь](https://github.com/Microsoft/ApplicationInsights-Java/releases
 ). 
 
-Агент должен быть упакован в проект в виде ресурса таким образом, чтобы он закончится в папке D:/Home, site/wwwroot/. Вы можете убедиться, что агент находится в нужном каталоге службы приложений, перейдя к **средствам разработки** > **дополнительные инструменты** > **консоль отладки** и проверив содержимое каталога сайта.    
+Агент должен быть упакован в проект в виде ресурса таким образом, чтобы он закончится в папке D:/Home, site/wwwroot/. Чтобы убедиться, что агент находится в нужном каталоге службы приложений, перейдите в **меню средства** > разработки**Дополнительные инструменты** > **консоль отладки** и проверьте содержимое каталога сайта.    
 
 * Сохраните параметры и перезапустите приложение. (Эти действия применимы только к службам приложений, работающим в Windows.)
 
@@ -115,19 +111,19 @@ ms.locfileid: "74931142"
 > [!NOTE]
 > Режим обратной совместимости включен по умолчанию, и параметр enableW3CBackCompat является необязательным и должен использоваться только в том случае, если вы хотите отключить эту функцию. 
 
-В идеале он может использоваться, когда все ваши службы обновлены к новой версии пакетов SDK, поддерживающих протокол консорциума W3C. Настоятельно рекомендуется как можно скорее перейти к новой версии пакетов SDK с поддержкой W3C.
+В идеале он может использоваться, когда все ваши службы обновлены к новой версии пакетов SDK, поддерживающих протокол консорциума W3C. Настоятельно рекомендуется перейти к новой версии пакетов SDK с поддержкой W3C как можно скорее.
 
 Убедитесь, что **оба [входящий](correlation.md#enable-w3c-distributed-tracing-support-for-java-apps) и исходящий (агенты) конфигурации** совпадают.
 
 ## <a name="view-the-data"></a>Просмотр данных
 В ресурсе Application Insights агрегированная Удаленная зависимость и время выполнения метода отображаются [под плиткой "производительность"][metrics].
 
-Для поиска отдельных экземпляров отчетов зависимости, исключений и методов откройте окно [поиска][diagnostic].
+Для поиска отдельных экземпляров отчетов по зависимостям, исключениям и методам откройте [Поиск][diagnostic].
 
 [Дополнительные сведения о диагностировании проблем зависимостей](../../azure-monitor/app/asp-net-dependencies.md#diagnosis).
 
-## <a name="questions-problems"></a>Есть вопросы? Проблемы?
-* Нет данных? [Настройка исключений брандмауэра](../../azure-monitor/app/ip-addresses.md)
+## <a name="questions-problems"></a>Вопросы? Проблемы?
+* Данные отсутствуют? [Настройка исключений брандмауэра](../../azure-monitor/app/ip-addresses.md)
 * [Устранение неполадок Java](java-troubleshoot.md)
 
 <!--Link references-->
@@ -139,4 +135,4 @@ ms.locfileid: "74931142"
 [eclipse]: app-insights-java-eclipse.md
 [java]: java-get-started.md
 [javalogs]: java-trace-logs.md
-[metrics]: ../../azure-monitor/app/metrics-explorer.md
+[metrics]: ../../azure-monitor/platform/metrics-charts.md

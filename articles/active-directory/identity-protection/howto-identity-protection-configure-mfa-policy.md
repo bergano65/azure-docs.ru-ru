@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2fa6a4cf184b426355f62117ea51642127eee529
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74382144"
 ---
 # <a name="how-to-configure-the-azure-multi-factor-authentication-registration-policy"></a>Как настроить политику регистрации многофакторной идентификации Azure
@@ -35,14 +35,14 @@ ms.locfileid: "74382144"
 
 ## <a name="policy-configuration"></a>Настройки политики
 
-1. Перейдите на [портал Azure](https://portal.azure.com).
-1. Перейдите в **Azure Active Directory** > **Безопасность** > **Идентификация** > **MFA**.
+1. Перейдите к [портал Azure](https://portal.azure.com).
+1. Перейдите к **Azure Active Directory** >  > **Политика регистрации MFA**для**защиты удостоверений****системы безопасности** > .
    1. В разделе " **назначения** "
       1. **Пользователи** . Выберите **все пользователи** или **выберите отдельных пользователей и группы,** если хотите ограничить развертывание.
          1. При необходимости можно исключить пользователей из политики.
    1. В разделе **элементы управления**
       1. Убедитесь, что флажок **требовать регистрацию Azure MFA** установлен, и нажмите кнопку **выбрать**.
-   1. **Принудительное применение политики** ** - **
+   1. **Принудительно** - **включить** политику
    1. **Сохранить**
 
 ## <a name="user-experience"></a>Возможности для пользователя
@@ -53,10 +53,10 @@ ms.locfileid: "74382144"
 
 - [Процедуры входа с защитой идентификации Azure AD](concept-identity-protection-user-experience.md).  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Включение политик входа и риска для пользователей](howto-identity-protection-configure-risk-policies.md)
 
 - [Включение самостоятельного сброса пароля в Azure AD](../authentication/howto-sspr-deployment.md)
 
-- [Включение многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)
+- [Включение Многофакторной идентификации Azure](../authentication/howto-mfa-getstarted.md)

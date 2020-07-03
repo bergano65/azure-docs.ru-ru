@@ -1,5 +1,5 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с CA PPM | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с CA PPM | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и CA PPM.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dc1808b2368400bb13283b0b1c16a24b928179ba
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157586"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-ca-ppm"></a>Руководство по Интеграция Azure Active Directory с CA PPM
+# <a name="tutorial-azure-active-directory-integration-with-ca-ppm"></a>Учебник. Интеграция Azure Active Directory с CA PPM
 
 В этом учебнике описано, как интегрировать CA PPM с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением CA PPM обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73157586"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с CA PPM, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка на CA PPM с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73157586"
 
     ![Сведения о домене и URL-адресах единого входа для приложения CA PPM](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://ca.ondemand.saml.20.post.<companyname>`.
+    а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://ca.ondemand.saml.20.post.<companyname>`.
 
     b. В текстовом поле **URL-адрес ответа** введите такое значение: `https://fedsso.ondemand.ca.com/affwebservices/public/saml2assertionconsumer`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "73157586"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-ca-ppm-single-sign-on"></a>Настройка единого входа в CA PPM
 

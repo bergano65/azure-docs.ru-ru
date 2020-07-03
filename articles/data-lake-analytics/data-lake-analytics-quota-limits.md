@@ -10,10 +10,10 @@ ms.assetid: 49416f38-fcc7-476f-a55e-d67f3f9c1d34
 ms.topic: conceptual
 ms.date: 03/15/2018
 ms.openlocfilehash: c1d7c8cc4b50682a74ac88b2113f0d44ebc55199
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75644721"
 ---
 # <a name="adjust-quotas-and-limits-in-azure-data-lake-analytics"></a>Настройка квот и ограничений в Azure Data Lake Analytics
@@ -34,7 +34,7 @@ ms.locfileid: "75644721"
 
 **Максимальное количество единиц аналитики (Австралия) на учетную запись:** 250, по умолчанию — 32
 
-Это максимальное число единиц аналитики, которые могут выполняться параллельно в вашей учетной записи. Если общее количество единиц аналитики по всем выполняемым заданиям превысит это ограничение, новые задания будут автоматически помещаться в очередь. Пример.
+Это максимальное число единиц аналитики, которые могут выполняться параллельно в вашей учетной записи. Если общее количество единиц аналитики по всем выполняемым заданиям превысит это ограничение, новые задания будут автоматически помещаться в очередь. Пример:
 
 * Если выполняется только одно задание на 32 единицы использования аналитики, то при отправке второго задания оно будет помещено в очередь, пока не завершится первое задание.
 * Если выполняются четыре задания, каждое из которых использует по 8 единиц аналитики, то при отправке пятого задания, на которое нужно 8 единиц использования аналитики, оно будет ожидать в очереди заданий, пока не освободятся эти 8 единиц использования аналитики.
@@ -51,7 +51,7 @@ ms.locfileid: "75644721"
 
 ## <a name="adjust-adla-account-limits"></a>Регулировка ограничений учетной записи Azure Data Lake Analytics
 
-1. Выполните вход на [портал Azure](https://portal.azure.com).
+1. Войдите в [портал Azure](https://portal.azure.com).
 2. Выберите существующую учетную запись ADLA.
 3. Нажмите кнопку **Свойства**.
 4. Отрегулируйте значения для **Максимум AU**, **Maximum number of running jobs** (Максимальное число выполняемых заданий) и **Пороговые значения для отправки заданий** по необходимости.
@@ -66,7 +66,7 @@ ms.locfileid: "75644721"
 
     ![Azure Data Lake Analytics: страница на портале](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request.png)
 2. Для типа проблемы укажите **Квота**.
-3. Выберите **подписку**, которая не является пробной.
+3. Выберите **подписку** (убедитесь, что она не является пробной подпиской).
 4. Выберите тип квоты **Data Lake Analytics**.
 
     ![Azure Data Lake Analytics: страница на портале](./media/data-lake-analytics-quota-limits/data-lake-analytics-quota-support-request-basics.png)
@@ -79,8 +79,8 @@ ms.locfileid: "75644721"
 
 Корпорация Майкрософт проверит запрос и удовлетворит потребности вашего бизнеса как можно скорее.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Управление аналитикой озера данных Azure с помощью Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
-* [Устранение неполадок с заданиями аналитики озера данных Azure с помощью портала Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+* [Мониторинг и устранение неполадок Azure Data Lake Analytics заданий с помощью портал Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 5e954de97e6573e330c42915b44bbc0c40abc54d
-ms.sourcegitcommit: db2d402883035150f4f89d94ef79219b1604c5ba
+ms.openlocfilehash: 9e93d4b3f1880f2ac56a32a7b85aa6801fb7c14e
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77063254"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78205146"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Учебник. Настройка ServiceNow для автоматической подготовки пользователей
 
@@ -35,7 +35,7 @@ ms.locfileid: "77063254"
 > * Предоставление группам и членству в группах в ServiceNow
 > * [Единый вход](servicenow-tutorial.md) в ServiceNow (рекомендуется)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
 
@@ -88,11 +88,11 @@ ms.locfileid: "77063254"
 
     ![Ссылка на ServiceNow в списке приложений](common/all-applications.png)
 
-3. Выберите вкладку **Подготовка**.
+3. Перейдите на вкладку **Подготовка** .
 
     ![Вкладка "подготовка"](common/provisioning.png)
 
-4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+4. Установите для **режима подготовки** значение **автоматически**.
 
     ![Вкладка "подготовка"](common/provisioning-automatic.png)
 
@@ -104,7 +104,7 @@ ms.locfileid: "77063254"
 
     ![Почтовое уведомление](common/provisioning-notification-email.png)
 
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 
 8. В разделе **сопоставления** выберите **синхронизировать Azure Active Directory пользователей с ServiceNow**.
 
@@ -142,13 +142,13 @@ ms.locfileid: "77063254"
 * **Ентрижоинингпропертивалуеисмиссинг:** Проверьте [сопоставления атрибутов](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) , чтобы обозначить соответствующий атрибут. Это значение должно присутствовать у пользователя или группы, которые вы пытаетесь подготавливать. 
 * Ознакомьтесь с [API-интерфейсом ServiceNow для протокола SOAP](https://docs.servicenow.com/bundle/newyork-application-development/page/integrate/web-services-apis/reference/r_DirectWebServiceAPIFunctions.html) , чтобы ознакомиться с любыми требованиями или ограничениями (например, Format, чтобы указать код страны для пользователя).
 * Для некоторых развертываний ServiceNow требуется разрешить диапазоны IP-адресов для службы подготовки Azure AD. Зарезервированные диапазоны IP-адресов для службы подготовки Azure AD можно найти [здесь по адресу](https://www.microsoft.com/download/details.aspx?id=56519) "азуреактиведиректоридомаинсервицес".
-* Подготовка пользователей в облаке для государственных организаций ServiceNow в настоящее время не поддерживается.
+* По умолчанию запросы на подготовку отправляются по протоколу HTTPS://{имя вашего экземпляра}. Service-Now. com/{Table-name}. Если требуется URL-адрес пользовательского клиента, можно указать весь URL-адрес в поле имя экземпляра.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/22/2020
 ms.author: juliako
 ms.openlocfilehash: 70d366551dc3130d2a1bdac6108e3b3de95976d9
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76545931"
 ---
 # <a name="azure-media-services-v3-community"></a>Сообщество служб мультимедиа Azure v3  
@@ -32,7 +32,7 @@ ms.locfileid: "76545931"
 
 ### <a name="twitter"></a>Twitter
 
-Вы можете использовать [@MSFTAzureMediaный](https://twitter.com/MSFTAzureMedia) маркер Twitter, чтобы связаться с нами или следовать обновлениям в Twitter. Используйте маркер [@AzureSupport](https://twitter.com/azuresupport) Twitter, чтобы запросить поддержку в Twitter.  
+Вы можете использовать маркер [@MSFTAzureMedia](https://twitter.com/MSFTAzureMedia) Twitter, чтобы связаться с нами или следовать обновлениям в Twitter. Используйте маркер [@AzureSupport](https://twitter.com/azuresupport) Twitter для запроса поддержки в Twitter.  
 
 ### <a name="online-forums"></a>Интернет-форумы
 
@@ -46,6 +46,6 @@ ms.locfileid: "76545931"
 
 [![StackOverflow](./media/media-services-community/stack-overflow.png)](https://stackoverflow.com/questions/tagged/azure-media-services) 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Общие сведения о службах мультимедиа Azure](media-services-overview.md)

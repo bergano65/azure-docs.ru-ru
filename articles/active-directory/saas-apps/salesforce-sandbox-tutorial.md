@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с песочницей Salesforce | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с песочницей Salesforce | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Salesforce Sandbox.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b9d6d11b6b56483f954049fdc1858db31f35c14a
-ms.sourcegitcommit: 7221918fbe5385ceccf39dff9dd5a3817a0bd807
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2020
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "76290009"
 ---
-# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce-sandbox"></a>Руководство. Интеграция единого входа Azure Active Directory с Salesforce Sandbox
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-salesforce-sandbox"></a>Руководство по Интеграция единого входа Azure Active Directory с Salesforce Sandbox
 
 В этом руководстве описано, как интегрировать Salesforce Sandbox с Azure Active Directory (Azure AD). Интеграция Salesforce Sandbox с Azure AD обеспечивает приведенные ниже возможности.
 

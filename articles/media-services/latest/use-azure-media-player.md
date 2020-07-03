@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: juliako
-ms.openlocfilehash: a0b0a4e89242103811f20071b7235c825c9d8bd2
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.openlocfilehash: d9e42e809443a2dd6cdeb989f692b96d63269f79
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74967530"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "78673583"
 ---
 # <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure
 
@@ -26,8 +26,6 @@ ms.locfileid: "74967530"
 
 > [!NOTE]
 > Для зашифрованного содержимого Widevine требуется воспроизведение HTTPS.
-
-[Начните бесплатное пробное использование](https://azure.microsoft.com/pricing/free-trial/)
 
 ## <a name="use-azure-media-player-demo-page"></a>Использование демонстрационной страницы Проигрывателя мультимедиа Azure
 
@@ -51,11 +49,11 @@ ms.locfileid: "74967530"
 
 Проигрыватель мультимедиа Azure можно легко настроить. Для базового воспроизведения мультимедийного содержимого из учетной записи Служб мультимедиа потребуется всего несколько минут. Дополнительные сведения о настройке Проигрывателя мультимедиа Azure см. в [документации по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs). 
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Документация по Проигрывателю мультимедиа Azure](https://aka.ms/ampdocs)
-- [Примеры Проигрывателя мультимедиа Azure](https://aka.ms/ampsamples)
+- [Документация по Проигрыватель мультимедиа Azure](https://aka.ms/ampdocs)
+- [Примеры использования Проигрывателя мультимедиа Azure](https://aka.ms/ampsamples)

@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/22/2019
 ms.author: juliako
-ms.openlocfilehash: f8ff3dc71727abf9e276cccc951c4d1143f4200d
-ms.sourcegitcommit: f4d8f4e48c49bd3bc15ee7e5a77bee3164a5ae1b
+ms.openlocfilehash: 4e40d26e392219fb751328bc54855d87e80bae19
+ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73583098"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80345992"
 ---
 # <a name="tutorial-upload-encode-and-stream-videos-with-media-services-v3"></a>Руководство по Отправка, кодировка и потоковая передача видео с помощью Служб мультимедиа версии 3
 
@@ -72,7 +72,7 @@ ms.locfileid: "73583098"
 6. Создает **указатель потоковой передачи**.
 7. компиляция URL-адресов потоковой передачи.
 
-### <a name="a-idstart_using_dotnet-start-using-media-services-apis-with-net-sdk"></a><a id="start_using_dotnet" />Начало использования API Служб мультимедиа с пакетом SDK для .NET
+### <a name="start-using-media-services-apis-with-net-sdk"></a><a id="start_using_dotnet" />Начало использования API Служб мультимедиа с пакетом SDK для .NET
 
 Чтобы начать использование API Служб мультимедиа с .NET, создайте объект **AzureMediaServicesClient**. Чтобы создать объект, введите учетные данные, необходимые клиенту для подключения к Azure с помощью Azure AD. В коде, который вы клонировали в начале статьи, функция **GetCredentialsAsync** создает объект ServiceClientCredentials с использованием учетных данных, предоставленных в локальном файле конфигурации.
 
@@ -88,6 +88,8 @@ ms.locfileid: "73583098"
 
 * создает **ресурс**;
 * получает записываемый [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) в [контейнере в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet#upload-blobs-to-a-container) ресурса;
+
+    При использовании функции [ListContainerSas](https://docs.microsoft.com/rest/api/media/assets/listcontainersas) ресурса для получения URL-адресов SAS обратите внимание, что функция возвращает несколько URL-адресов SAS, так как для каждой учетной записи хранения существует два ключа. Учетная запись хранения имеет два ключа, чтобы обеспечить легкую смену ключей (например, можно использовать первый ключ и в это время заменить второй ключ, а затем начать использовать новый ключ, а в это время заменить первый ключ). Первый URL-адресом SAS представляет собой ключ к хранилищу данных 1, а второй — ключ к хранилищу данных 2.
 * отправляет файл в контейнер в хранилище через URL-адрес SAS.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#CreateInputAsset)]
@@ -153,7 +155,7 @@ ms.locfileid: "73583098"
 
 ### <a name="get-streaming-urls"></a>Получение URL-адресов потоковой передачи
 
-После создания [указателя потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) можно получить URL-адреса потоковой передачи, как показано в разделе **GetStreamingURLs**. Чтобы создать URL-адрес, необходимо сцепить имя узла [конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints) и путь **указателя потоковой передачи**. В этом примере используется **конечная точка потоковой передачи** *по умолчанию*. При первом создании учетной записи Служб мультимедиа эта **конечная точка потоковой передачи** *по умолчанию* будет находиться в остановленном состоянии, поэтому вам необходимо вызвать функцию **Start**.
+После создания [указателя потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) можно получить URL-адреса потоковой передачи, как показано в разделе **GetStreamingURLs**. Чтобы создать URL-адрес, необходимо сцепить имя узла [конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints) и путь **указателя потоковой передачи**. В этом примере используется **конечная точка потоковой передачи** *по умолчанию*. При первом создании учетной записи Служб мультимедиа эта **конечная точка потоковой передачи** *по умолчанию* будет находиться в состоянии "Остановлено", поэтому вам необходимо вызвать функцию **Start**.
 
 > [!NOTE]
 > В этом методе вам необходим locatorName, который использовался при создании **указателя потоковой передачи** для выходного ресурса.
@@ -177,7 +179,7 @@ ms.locfileid: "73583098"
 
 ## <a name="test-the-streaming-url"></a>Тестирование URL-адреса потоковой передачи.
 
-Для тестирования потоковой передачи в этой статье используется решение "Проигрыватель мультимедиа Azure".
+Для тестирования потоковой передачи в этой статье используется Проигрыватель мультимедиа Azure.
 
 > [!NOTE]
 > Если проигрыватель размещен на сайте HTTPS, обновите URL-адрес до HTTPS.
@@ -206,7 +208,7 @@ az group delete --name amsResourceGroup
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как отправлять, кодировать и выполнять потоковую передачу своего видео, перейдите к следующей статье: 
 

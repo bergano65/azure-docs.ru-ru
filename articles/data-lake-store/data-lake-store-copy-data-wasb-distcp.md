@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 01/03/2020
 ms.author: twooley
 ms.openlocfilehash: 455e73ece2d46a508b3077c13c8106fe53beb4de
-ms.sourcegitcommit: f788bc6bc524516f186386376ca6651ce80f334d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75638839"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen1"></a>Использование DistCp для копирования данных между большими двоичными объектами службы хранилища Azure и Azure Data Lake Storage 1-го поколения
@@ -23,7 +23,7 @@ ms.locfileid: "75638839"
 
 Если у вас есть кластер HDInsight с доступом к Azure Data Lake Storage 1-го поколения, вы можете использовать средства экосистемы Hadoop, такие как DistCp, для копирования данных в хранилище кластера HDInsight (WASB) и обратно в учетную запись Data Lake Storage 1-го поколения. В этой статье показано, как использовать средство DistCp.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
@@ -71,7 +71,7 @@ HDInsight An кластер поставляется с инструментом
 
 Так как самый низкий уровень детализации инструмента DistCp — это один файл, установка максимального количества одновременных копий является наиболее важным параметром, чтобы оптимизировать его относительно Data Lake Storage 1-го поколения. Количество одновременных копий можно контролировать, задав параметр число модулей сопоставления (m ') в командной строке. Этот параметр указывает максимальное количество модулей сопоставления, которые используются для копирования данных. Значение по умолчанию — 20.
 
-Пример:
+Пример.
 
 ```
  hadoop distcp wasb://<container_name>@<storage_account_name>.blob.core.windows.net/example/data/gutenberg adl://<data_lake_storage_gen1_account>.azuredatalakestore.net:443/myfolder -m 100
@@ -87,7 +87,7 @@ HDInsight An кластер поставляется с инструментом
 
    `m = (number of nodes * YARN memory for each node) / YARN container size`
 
-Пример:
+Пример.
 
 Предположим, что в кластере имеется четыре узла узла d14v2s, и вы хотите переместить 10 ТБ данных из 10 разных папок. Эти папки содержат различные объемы данных, и размеры файлов в каждой папке отличаются.
 
@@ -115,7 +115,7 @@ HDInsight An кластер поставляется с инструментом
 
 * Если выполняется копирование из учетной записи хранилища BLOB-объектов Azure, задание копирования может регулироваться на стороне хранилища BLOB-объектов. Это снижает производительность задания копирования. Дополнительные сведения об ограничениях хранилища BLOB-объектов Azure см. в статье ограничения хранилища Azure в [подписке Azure и ограничениях службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 * [Копирование данных из больших двоичных объектов службы хранилища Azure в Data Lake Storage 1-го поколения](data-lake-store-copy-data-azure-storage-blob.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

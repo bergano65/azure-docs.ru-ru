@@ -7,17 +7,17 @@ ms.date: 07/22/2019
 ms.author: srrengar
 ms.custom: mvc
 ms.openlocfilehash: ab58d622511e0d5793eb6df312bc3fd6dd15bfd6
-ms.sourcegitcommit: f4f626d6e92174086c530ed9bf3ccbe058639081
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "75376636"
 ---
-# <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство. Мониторинг кластера Service Fabric в Azure
+# <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Руководство по Мониторинг кластера Service Fabric в Azure
 
 Мониторинг и диагностика критически важны для разработки, тестирования и развертывания рабочих нагрузок в любой облачной среде. Этот учебник представляет собой вторую часть цикла. В нем показано, как отслеживать и диагностировать кластер Service Fabric с помощью событий, счетчиков производительности и отчетов о работоспособности.   Дополнительные сведения см. в обзоре о [мониторинге кластера](service-fabric-diagnostics-overview.md#platform-cluster-monitoring) и [мониторинге инфраструктуры](service-fabric-diagnostics-overview.md#infrastructure-performance-monitoring).
 
-В этом руководстве описано следующее.
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Просмотр событий Service Fabric
@@ -36,7 +36,7 @@ ms.locfileid: "75376636"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 

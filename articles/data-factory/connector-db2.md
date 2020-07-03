@@ -9,19 +9,21 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 01/14/2020
+ms.date: 05/07/2020
 ms.author: jingwang
-ms.openlocfilehash: 3d3a1704b75de53bf65012329fba5f8522adff3a
-ms.sourcegitcommit: b5106424cd7531c7084a4ac6657c4d67a05f7068
+ms.openlocfilehash: 9f705a0a56975860cf07d8a9b09de9999a923501
+ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75941753"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82891442"
 ---
 # <a name="copy-data-from-db2-by-using-azure-data-factory"></a>Копирование данных из DB2 с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
 > * [Версия 1](v1/data-factory-onprem-db2-connector.md)
 > * [Текущая версия](connector-db2.md)
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных DB2. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
@@ -46,7 +48,10 @@ ms.locfileid: "75941753"
 * IBM DB2 для LUW версии 10.5
 * IBM DB2 для LUW версии 10.1
 
-## <a name="prerequisites"></a>Технические условия
+>[!TIP]
+>Соединитель DB2 строится на основе поставщик OLE DB для DB2 (Майкрософт). Сведения об устранении ошибок соединителя DB2 см. в статье [коды ошибок поставщика данных](https://docs.microsoft.com/host-integration-server/db2oledbv/data-provider-error-codes#drda-protocol-errors).
+
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -62,22 +67,73 @@ ms.locfileid: "75941753"
 
 Для связанной службы DB2 поддерживаются следующие свойства:
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства типа необходимо задать значение **Db2** | Да |
+| connectionString | Укажите сведения, необходимые для подключения к экземпляру DB2.<br/> Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `password` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |нет |
+
+Типичные свойства в строке подключения:
+
+| Свойство | Описание | Обязательно |
+|:--- |:--- |:--- |
 | server |Имя сервера DB2. Вы можете указать номер порта следом за именем сервера, разделив их двоеточием, например `server:port`. |Да |
-| база данных |Имя базы данных DB2. |Да |
+| База данных |Имя базы данных DB2. |Да |
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных DB2.<br/>Допустимое значение: **Базовый**. |Да |
 | username |Укажите имя пользователя для подключения к базе данных DB2. |Да |
 | password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
-| паккажеколлектион | Укажите в разделе место, где необходимые пакеты создаются автозаменой службой ADF при запросе к базе данных. | Нет |
-| certificateCommonName | При использовании SSL (SSL) или шифрования TLS необходимо ввести значение для общего имени сертификата. | Нет |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
+| паккажеколлектион | Укажите в разделе место, где необходимые пакеты создаются автозаменой службой ADF при запросе к базе данных. | нет |
+| certificateCommonName | При использовании SSL (SSL) или шифрования TLS необходимо ввести значение для общего имени сертификата. | нет |
 
 > [!TIP]
-> Если выводится сообщение об ошибке `The package corresponding to an SQL statement execution request was not found. SQLSTATE=51002 SQLCODE=-805`, причина — необходимый пакет для пользователя не создается. По умолчанию ADF попытается создать пакет в коллекции с именем в качестве пользователя, который использовался для подключения к DB2. Укажите свойство коллекции пакетов, чтобы указать, где ADF должен создавать необходимые пакеты при запросе к базе данных.
+> Если появляется сообщение об ошибке `The package corresponding to an SQL statement execution request was not found. SQLSTATE=51002 SQLCODE=-805`, причина — необходимый пакет для пользователя не создается. По умолчанию ADF попытается создать пакет в коллекции с именем в качестве пользователя, который использовался для подключения к DB2. Укажите свойство коллекции пакетов, чтобы указать, где ADF должен создавать необходимые пакеты при запросе к базе данных.
 
-**Пример**.
+**Пример.**
+
+```json
+{
+    "name": "Db2LinkedService",
+    "properties": {
+        "type": "Db2",
+        "typeProperties": {
+            "connectionString": "server=<server:port>; database=<database>; authenticationType=Basic;username=<username>; password=<password>; packageCollection=<packagecollection>;certificateCommonName=<certname>;"
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+**Пример: хранение пароля в Azure Key Vault**
+
+```json
+{
+    "name": "Db2LinkedService",
+    "properties": {
+        "type": "Db2",
+        "typeProperties": {
+            "connectionString": "server=<server:port>; database=<database>; authenticationType=Basic;username=<username>; packageCollection=<packagecollection>;certificateCommonName=<certname>;",
+            "password": { 
+                "type": "AzureKeyVaultSecret", 
+                "store": { 
+                    "referenceName": "<Azure Key Vault linked service name>", 
+                    "type": "LinkedServiceReference" 
+                }, 
+                "secretName": "<secretName>" 
+            }
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+
+Если вы использовали связанную службу DB2 со следующими полезными данными, она по-прежнему поддерживается "как есть", хотя вы предлагаете использовать новую пересылку.
+
+**Предыдущие полезные данные:**
 
 ```json
 {
@@ -104,11 +160,11 @@ ms.locfileid: "75941753"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных DB2.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md) . Этот раздел содержит список свойств, поддерживаемых набором данных DB2.
 
 Для копирования данных из DB2 поддерживаются следующие свойства:
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type набора данных должно иметь значение **Db2Table** . | Да |
 | схема | Имя схемы. |Нет (если свойство query указано в источнике действия)  |
@@ -133,7 +189,7 @@ ms.locfileid: "75941753"
 }
 ```
 
-Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается как есть, хотя вы предлагаете использовать новый.
+Если вы использовали `RelationalTable` типизированный набор данных, он по-прежнему поддерживается "как есть", хотя вы можете использовать новый объект, который будет использоваться в дальнейшем.
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
@@ -143,12 +199,12 @@ ms.locfileid: "75941753"
 
 Чтобы скопировать данные из DB2, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Description | Обязательно для заполнения |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение **Db2Source** . | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"query": "SELECT * FROM \"DB2ADMIN\".\"Customers\""`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример**.
+**Пример.**
 
 ```json
 "activities":[
@@ -190,29 +246,29 @@ ms.locfileid: "75941753"
 |:--- |:--- |
 | BigInt |Int64 |
 | Двоичные данные |Byte[] |
-| BLOB-объекты |Byte[] |
-| CHAR |String |
-| Clob |String |
+| BLOB-объект |Byte[] |
+| Char |Строка |
+| Clob |Строка |
 | Дата |Datetime |
-| DB2DynArray |String |
-| DbClob |String |
+| DB2DynArray |Строка |
+| DbClob |Строка |
 | Decimal |Decimal |
 | DecimalFloat |Decimal |
 | Double |Double |
 | Float |Double |
-| GRAPHIC |String |
+| GRAPHIC |Строка |
 | Целое число |Int32 |
 | LongVarBinary |Byte[] |
-| LongVarChar |String |
-| LongVarGraphic |String |
+| LongVarChar |Строка |
+| LongVarGraphic |Строка |
 | Числовой |Decimal |
-| Real |Отдельная |
+| Real |Single |
 | SmallInt |Int16 |
-| Время |TimeSpan |
+| Time |TimeSpan |
 | Отметка времени |Дата и время |
 | VarBinary |Byte[] |
-| VarChar |String |
-| VarGraphic |String |
+| VarChar |Строка |
+| VarGraphic |Строка |
 | Xml |Byte[] |
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска

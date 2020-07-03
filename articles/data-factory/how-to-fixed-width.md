@@ -8,14 +8,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 8/18/2019
 ms.author: makromer
-ms.openlocfilehash: d6885e9b30cc71bda822a29574c4d574f2b020a0
-ms.sourcegitcommit: bb65043d5e49b8af94bba0e96c36796987f5a2be
+ms.openlocfilehash: d629a9031f032a77efc953311a45b55996568191
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72387046"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81414373"
 ---
 # <a name="process-fixed-length-text-files-by-using-data-factory-mapping-data-flows"></a>Обработка текстовых файлов фиксированной длины с помощью потоков данных сопоставления фабрики данных
+
+[!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 С помощью сопоставления потоков данных в Microsoft Azure фабрика данных можно преобразовывать данные из текстовых файлов с фиксированной шириной. В следующей задаче мы определим набор данных для текстового файла без разделителя, а затем настроили разбиение подстроки на основе порядкового номера.
 
@@ -65,13 +67,13 @@ ms.locfileid: "72387046"
 
     ```substring(Column_1,1,4)```
 
-    ![Производный столбец](media/data-flow/fwderivedcol1.png)
+    ![производный столбец](media/data-flow/fwderivedcol1.png)
 
 11. Повторите шаг 10 для всех столбцов, которые необходимо проанализировать.
 
 12. Перейдите на вкладку **Проверка** , чтобы просмотреть новые столбцы, которые будут созданы:
 
-    ![Обследован](media/data-flow/fwinspect.png)
+    ![обследован](media/data-flow/fwinspect.png)
 
 13. Используйте команду выбрать преобразование, чтобы удалить столбцы, которые не требуются для преобразования.
 
@@ -87,6 +89,6 @@ ms.locfileid: "72387046"
 
   Теперь данные с фиксированной шириной разбиваются на четыре символа и присвоены значениям col1, col2, Col3, Col4 и т. д. На основе предыдущего примера данные разбиваются на четыре столбца.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Создайте оставшуюся часть логики потока данных с помощью [преобразования потоков данных](concepts-data-flow-overview.md)сопоставления.

@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 titleSuffix: Azure
 description: включить файл
 services: internet-peering
@@ -8,42 +8,42 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: e3e87e59f5b3c95051d9ee53e4b8d87afe9d9ba8
-ms.sourcegitcommit: aee08b05a4e72b192a6e62a8fb581a7b08b9c02a
+ms.openlocfilehash: e06b5261ca6923e158c818d236a30cf6ebff189b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75774566"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81680925"
 ---
 В этом разделе описывается выполнение следующих операций изменения для прямого пиринга.
 
 ### <a name="add-exchange-peering-connections"></a>Добавление подключений пиринга Exchange
 
-1. Нажмите кнопку **+ добавить подключения** в верхней части экрана и настройте новое соединение пиринга.
+1. Нажмите кнопку **+ добавить подключения** и настройте новое соединение пиринга.
     > [!div class="mx-imgBorder"]
-    > ![представление ресурсов пиринга](../media/setup-exchange-modify-addconnection.png)
-1. Заполните форму **подключения пиринга Exchange** и нажмите кнопку **сохранить**. Чтобы получить справку по настройке подключения пиринга, ознакомьтесь с инструкциями в разделе "Создание и инициализация прямого пиринга" выше.
+    > ![Представление ресурсов пиринга](../media/setup-exchange-modify-addconnection.png)
+1. Заполните форму **Подключение пиринга Exchange** и нажмите кнопку **сохранить**. Чтобы получить справку по настройке подключения пиринга, ознакомьтесь с инструкциями в разделе "Создание и инициализация прямого пиринга".
     > [!div class="mx-imgBorder"]
-    > ![представление ресурсов пиринга](../media/setup-exchange-modify-savenewconnection.png)
+    > ![Форма подключения пиринга Exchange](../media/setup-exchange-modify-savenewconnection.png)
 
 ### <a name="remove-exchange-peering-connections"></a>Удаление подключений пиринга Exchange
 
-1. Щелкните подключение пиринга, которое необходимо удалить, а затем нажмите кнопку **...**  > **удалить подключение** .
+1. Выберите подключение пиринга, которое нужно удалить, а затем выберите **...**  >  **Удаление подключения**.
     > [!div class="mx-imgBorder"]
-    > ![удаление подключения пиринга](../media/setup-exchange-modify-deleteconnection.png)
-1. Введите идентификатор ресурса в поле **Подтверждение удаления** , как показано в выделенных полях, и нажмите кнопку **Удалить**.
+    > ![Кнопка удаления соединения](../media/setup-exchange-modify-deleteconnection.png)
+1. Введите идентификатор ресурса в поле **Подтверждение удаления** и выберите **Удалить**.
     > [!div class="mx-imgBorder"]
-    > ![одноранговое подключение Делетеконфирм](../media/setup-exchange-modify-deleteconnectionconfirm.png)
+    > ![Подтверждение удаления](../media/setup-exchange-modify-deleteconnectionconfirm.png)
 
-### <a name="add-ipv4ipv6-session-on-active-connections"></a>Добавить сеанс IPv4/IPv6 на активных подключениях
+### <a name="add-an-ipv4-or-ipv6-session-on-active-connections"></a>Добавление сеанса IPv4 или IPv6 для активных соединений
 
-1. Щелкните подключение пиринга, которое необходимо изменить, а затем нажмите кнопку **...**  > **изменить подключение** .
+1. Выберите подключение пиринга, которое необходимо изменить, а затем выберите **...**  >  **Изменить соединение**.
     > [!div class="mx-imgBorder"]
-    > ![изменение подключения пиринга](../media/setup-exchange-modify-editconnection.png)
-1. Добавьте сведения об адресе **IPv4** или **IPv6** и нажмите кнопку **сохранить**.
+    > ![Кнопка изменения соединения](../media/setup-exchange-modify-editconnection.png)
+1. Добавьте сведения об **адресе IPv4** или **IPv6** и нажмите кнопку **сохранить**.
     > [!div class="mx-imgBorder"]
-    > ![изменение подключения пиринга](../media/setup-exchange-modify-editconnectionsettings.png)
+    > ![Изменение соединения пиринга](../media/setup-exchange-modify-editconnectionsettings.png)
 
-### <a name="remove-ipv4ipv6-session-on-active-connections"></a>Удалить сеанс IPv4 или IPv6 на активных подключениях
+### <a name="remove-an-ipv4-or-ipv6-session-on-active-connections"></a>Удаление сеанса IPv4 или IPv6 на активных подключениях
 
-Удаление сеанса IPv4 или IPv6 из существующего подключения в настоящее время не поддерживается на портале. Обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).
+Удаление сеанса IPv4 или IPv6 из существующего подключения сейчас не поддерживается на портале. Для получения дополнительных сведений обратитесь в службу [пиринга Майкрософт](mailto:peeringexperience@microsoft.com).

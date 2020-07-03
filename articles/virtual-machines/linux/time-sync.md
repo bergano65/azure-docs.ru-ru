@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.topic: article
@@ -13,12 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 1e459e96c128e20f44f1a5adcb18c5b1824c3bf5
-ms.sourcegitcommit: 85e7fccf814269c9816b540e4539645ddc153e6e
+ms.openlocfilehash: 7c93c1f525713a90abd71c30a21401b9d1cfcb9f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74534122"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "81460908"
 ---
 # <a name="time-sync-for-linux-vms-in-azure"></a>Синхронизация времени для виртуальных машин Linux в Azure
 
@@ -27,11 +26,11 @@ ms.locfileid: "74534122"
 Платформа Azure основана на инфраструктуре, работающей под управлением Windows Server 2016. В Windows Server 2016 реализованы улучшенные алгоритмы коррекции времени и синхронизации локальных часов с временем в формате UTC.  Функция "Точное время" в Windows Server 2016 значительно улучшила работу службы VMICTimeSync, которая регулирует точность времени в виртуальных машинах и на сервере. К числу улучшений относится более точное исходное время при запуске или восстановлении виртуальной машины, а также коррекция задержки при прерывании. 
 
 >[!NOTE]
->Краткий обзор службы времени в Windows можно получить в [этом видео](https://aka.ms/WS2016TimeVideo).
+>Краткий обзор службы времени Windows см. в этом [видео](https://aka.ms/WS2016TimeVideo).
 >
 > Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time). 
 
-## <a name="overview"></a>Краткое описание
+## <a name="overview"></a>Обзор
 
 Точность часов компьютера оценивается по тому, насколько близки их показания к стандартному времени в формате UTC. Время UTC устанавливается по точным атомным часам, отклонение которых не превышает одной секунды за 300 лет. Однако для считывания времени UTC напрямую требуется специальное оборудование. Вместо этого со временем UTC синхронизируются серверы времени, к которым затем обращаются другие компьютеры. Таким образом достигается масштабируемость и надежность. На каждом компьютере выполняется служба синхронизации времени, которая знает, какие серверы времени следует использовать, и регулярно проверяет необходимость коррекции часов компьютера, при необходимости корректируя время. 
 
@@ -49,7 +48,7 @@ ms.locfileid: "74534122"
 
 
 
-## <a name="configuration-options"></a>Варианты настройки
+## <a name="configuration-options"></a>Параметры конфигурации
 
 В целом есть три способа настроить синхронизацию времени для виртуальных машин Linux, размещенных в Azure:
 
@@ -133,36 +132,37 @@ cat /sys/class/ptp/ptp0/clock_name
 
 ### <a name="chrony"></a>chrony
 
-В Red Hat Enterprise Linux и CentOS 7.x средство [chrony](https://chrony.tuxfamily.org/) настроено для использования источника времени PTP. Управляющая программа NTP (ntpd) не поддерживает источники PTP, поэтому рекомендуется использовать **chronyd**. Чтобы включить PTP, обновите файл **chrony.conf**.
+В Ubuntu 19,10 и более поздних версиях Red Hat Enterprise Linux и CentOS 7. x, [чрони](https://chrony.tuxfamily.org/) настроены на использование часового источника PTP. Вместо чрони в старых выпусках Linux используется управляющая программа сетевого времени (НТПД), которая не поддерживает источники PTP. Чтобы включить PTP в этих выпусках, чрони необходимо установить и настроить вручную (в чрони. conf) с помощью следующего кода:
 
 ```bash
 refclock PHC /dev/ptp0 poll 3 dpoll -2 offset 0
 ```
 
+Дополнительные сведения об Ubuntu и NTP см. в статье [Синхронизация времени](https://help.ubuntu.com/lts/serverguide/NTP.html).
+
 Дополнительные сведения о Red Hat и NTP см. в статье [Настройка NTP](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/s1-configure_ntp). 
 
-Дополнительные сведения о chrony см. в статье [Использование chrony](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-using_chrony).
+Дополнительные сведения о чрони см. [в разделе Использование чрони](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/sect-using_chrony).
 
-Если одновременно включены источники chrony и TimeSync, один из них можно пометить как **предпочтительный**. Другой при этом помечается как резервный. Так как службы NTP корректируют часы через большие периоды времени, служба VMICTimeSync восстанавливает показания часов после приостановки виртуальных машин гораздо быстрее, чем средства на основе NTP, используемые отдельно.
+Если источники чрони и Тимесинк включены одновременно, можно пометить один из них как **предпочтительный**, который задает другой источник в качестве резервной копии. Так как службы NTP корректируют часы через большие периоды времени, служба VMICTimeSync восстанавливает показания часов после приостановки виртуальных машин гораздо быстрее, чем средства на основе NTP, используемые отдельно.
 
-По умолчанию чронид ускоряет или снижает производительность системных часов для устранения любого смещения времени. Если смещение становится слишком большим, чрони не сможет исправить смещение. Чтобы преодолеть этот параметр `makestep` в **/ЕТК/чрони.конф** можно изменить, чтобы принудительно тимесинк, если смещение превышает заданное пороговое значение.
+По умолчанию чронид ускоряет или снижает производительность системных часов для устранения любого смещения времени. Если смещение станет слишком большим, чрони не сможет исправить смещение. Чтобы преодолеть это, `makestep` параметр в **/ЕТК/чрони.конф** можно изменить, чтобы принудительно тимесинк, если смещение превышает заданное пороговое значение.
+
  ```bash
 makestep 1.0 -1
 ```
-Здесь чрони будет принудительно обновлять время, если смещение больше 1 секунды. Чтобы применить изменения, перезапустите службу чронид.
+
+Здесь чрони будет принудительно обновлять время, если смещение больше 1 секунды. Чтобы применить изменения, перезапустите службу чронид:
 
 ```bash
 systemctl restart chronyd
 ```
 
-
 ### <a name="systemd"></a>systemd 
 
-В Ubuntu и SUSE синхронизация времени настраивается с помощью [systemd](https://www.freedesktop.org/wiki/Software/systemd/). Дополнительные сведения об Ubuntu см. в статье о [синхронизации времени](https://help.ubuntu.com/lts/serverguide/NTP.html). Дополнительные сведения о SUSE см. в разделе 4.5.8 [заметок о выпуске SUSE Linux Enterprise Server 12 с пакетом обновления 3 (SP3)](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP3/#InfraPackArch.ArchIndependent.SystemsManagement).
+В версиях SUSE и Ubuntu до 19,10, синхронизация времени настраивается с использованием [системы](https://www.freedesktop.org/wiki/Software/systemd/). Дополнительные сведения о Ubuntu см. в статье [Синхронизация времени](https://help.ubuntu.com/lts/serverguide/NTP.html). Дополнительные сведения о SUSE см. в разделе 4.5.8 статьи [заметки о Выпуске SUSE Linux Enterprise Server 12 SP3](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP3/#InfraPackArch.ArchIndependent.SystemsManagement).
 
-
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time).
 

@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: ec853657d6dd1f3b019d8a414cfa28edc1083b29
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74769920"
 ---
 # <a name="use-azure-active-directory-for-authenticating-with-postgresql"></a>Использование Azure Active Directory для проверки подлинности с помощью PostgreSQL
@@ -43,7 +43,7 @@ ms.locfileid: "74769920"
 > [!NOTE]
 > Сведения о создании и заполнении Azure AD, а также настройке Azure AD с помощью базы данных Azure для PostgreSQL см. в статье [Настройка и вход в Azure AD для базы данных Azure для PostgreSQL](howto-configure-sign-in-aad-authentication.md).
 
-## <a name="architecture"></a>Архитектура
+## <a name="architecture"></a>Architecture
 
 На следующей высокоуровневой схеме показано, как работает аутентификация с помощью аутентификации Azure AD и базы данных Azure для PostgreSQL. Стрелки обозначают пути обмена данными.
 
@@ -57,7 +57,7 @@ ms.locfileid: "74769920"
 
 ## <a name="permissions"></a>Разрешения
 
-Чтобы создать новых пользователей, которые могут проходить проверку подлинности в Azure AD, необходимо иметь роль `azure_ad_admin` в базе данных. Эта роль назначается путем настройки учетной записи администратора Azure AD для конкретного сервера базы данных Azure для PostgreSQL.
+Чтобы создать новых пользователей, которые могут проходить проверку подлинности в Azure AD `azure_ad_admin` , необходимо иметь роль в базе данных. Эта роль назначается путем настройки учетной записи администратора Azure AD для конкретного сервера базы данных Azure для PostgreSQL.
 
 Чтобы создать нового пользователя базы данных Azure AD, необходимо подключиться к администратору Azure AD. Это продемонстрировано в этой [настройке и входе в Azure AD для базы данных Azure для PostgreSQL](howto-configure-sign-in-aad-authentication.md).
 
@@ -77,7 +77,7 @@ ms.locfileid: "74769920"
 > [!NOTE]
 > Дополнительные сведения о подключении с помощью токена Active Directory см. в статье [Настройка и вход с помощью Azure AD для базы данных Azure для PostgreSQL](howto-configure-sign-in-aad-authentication.md).
 
-## <a name="additional-considerations"></a>Дополнительные замечания
+## <a name="additional-considerations"></a>Дополнительные сведения
 
 - Для повышения управляемости рекомендуем подготовить специальную группу Azure AD от имени администратора.
 - Только один администратор Azure AD (пользователь или группа) можно настроить для сервера базы данных Azure для PostgreSQL в любое время.

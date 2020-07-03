@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.custom: seodec18
 ms.date: 04/15/2019
 ms.author: juliako
-ms.openlocfilehash: ff27ae0fd639316f03fe89ffc906561b3ef85f6f
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.custom: seodec18
+ms.openlocfilehash: 2dea262fadb61adc9e219b76f9ac048c11e650d5
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76515077"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80065964"
 ---
 # <a name="get-a-signing-key-from-the-existing-policy"></a>Получение ключа подписи из существующей политики
 
@@ -25,7 +25,7 @@ ms.locfileid: "76515077"
 
 В примере этой статьи показано, как использовать .NET для получения ключа подписи из существующей политики. 
  
-## <a name="download"></a>Загрузить 
+## <a name="download"></a>Скачать 
 
 Клонируйте репозиторий GitHub, содержащий пример .NET, на компьютер с помощью следующей команды.  
 
@@ -41,6 +41,6 @@ ms.locfileid: "76515077"
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithDRM/Program.cs#GetOrCreateContentKeyPolicy)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md) 

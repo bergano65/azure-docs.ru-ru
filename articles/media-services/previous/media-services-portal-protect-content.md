@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 0c2a9612fab6c685cbc690aa9bbc12d1c7b7b746
-ms.sourcegitcommit: 5ab4f7a81d04a58f235071240718dfae3f1b370b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2019
+ms.lasthandoff: 04/27/2020
 ms.locfileid: "74978208"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/);   > Новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
 >
 
  Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки. С помощью служб мультимедиа Azure можно доставлять содержимое, динамически шифруемое с помощью алгоритма AES с 128-разрядным ключом шифрования. При использовании управления цифровыми правами (DRM) PlayReady и (или) Widevine и Apple FairPlay можно использовать шифрование CENC. 
@@ -38,9 +38,9 @@ ms.locfileid: "74978208"
 
 1. На [портале](https://portal.azure.com/) выберите свою учетную запись Служб мультимедиа.
 
-1. Выберите **Параметры** > **Защита контента**.
+1. Выберите **Параметры** > **Защита содержимого**.
 
-    ![Система защиты содержимого](./media/media-services-portal-content-protection/media-services-content-protection001.png)
+    ![Защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection001.png)
 
 ## <a name="keylicense-authorization-policy"></a>политику авторизации ключей и лицензий
 Службы мультимедиа поддерживают несколько способов аутентификации пользователей, запрашивающих ключи или лицензии. Потребуется настроить политику авторизации для ключа содержимого. Чтобы клиенту можно было доставлять ключ или лицензию, он должен соответствовать политике. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера.
@@ -53,7 +53,7 @@ ms.locfileid: "74978208"
 ### <a name="token-authorization"></a>Авторизация с помощью маркера
 При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают маркеры в форматах простого веб-маркера (SWT) и JSON Web Token (JWT). Службы мультимедиа не предоставляют службу токенов безопасности. Вы можете создать настраиваемую службу STS или выдавать токены с помощью службы контроля доступа Azure. Чтобы создать маркер, подписанный указанным ключом, и получить утверждения, указанные в конфигурации ограничения по маркерам, должна быть настроена служба маркеров безопасности. Если маркер является допустимым, а его утверждения соответствуют утверждениям, настроенным для ключа (или лицензии), служба доставки ключей Служб мультимедиа возвращает клиенту запрошенный ключ (или лицензию).
 
-При настройке политики ограничения по маркеру необходимо задать такие параметры, как основной ключ проверки, издатель и аудитория. Основной ключ проверки содержит ключ, которым был подписан маркер. Издателем является служба токенов проверки подлинности, которая выдала токен. Аудитория (иногда называется областью) описывает назначение маркера или ресурс, доступ к которому обеспечивает маркер. Служба доставки ключей служб мультимедиа проверяет, соответствуют ли эти значения в маркере значениям в шаблоне.
+При настройке политики ограничения по маркеру необходимо задать такие параметры, как основной ключ проверки, издатель и аудитория. Основной ключ проверки содержит ключ, которым был подписан маркер. Издателем является служба токенов безопасности, которая выдает токен. Аудитория (иногда называется областью) описывает назначение маркера или ресурс, доступ к которому обеспечивает маркер. Служба доставки ключей служб мультимедиа проверяет, соответствуют ли эти значения в маркере значениям в шаблоне.
 
 ![политику авторизации ключей и лицензий](./media/media-services-portal-content-protection/media-services-content-protection002.png)
 
@@ -73,10 +73,10 @@ ms.locfileid: "74978208"
 ## <a name="widevine-license-template"></a>Шаблон лицензии Widevine
 Шаблон лицензии Widevine позволяет включить функции, предусмотренные в лицензиях Widevine.
 
-### <a name="basic"></a>"Базовый"
+### <a name="basic"></a>Basic
 Если выбрать тип лицензии **Базовый**, то шаблон будет создан со всеми значениями по умолчанию.
 
-### <a name="advanced"></a>Расширенная
+### <a name="advanced"></a>Дополнительно
 Подробные сведения о шаблоне прав Widevine см. в статье [Общие сведения о шаблоне лицензии Widevine](media-services-widevine-license-template-overview.md).
 
 ![Расширенная защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection005.png)
@@ -90,7 +90,7 @@ ms.locfileid: "74978208"
 Чтобы воспользоваться преимуществами динамического шифрования, необходимо закодировать исходный файл в набор MP4-файлов с переменной скоростью.
 
 ### <a name="select-an-asset-that-you-want-to-encrypt"></a>Выбор ресурса-контейнера для шифрования
-Чтобы просмотреть все ресурсы-контейнеры, выберите **Параметры** > **Активы**.
+Чтобы просмотреть все ресурсы, выберите **Параметры** > **ресурсы**.
 
 ![Параметр "Активы"](./media/media-services-portal-content-protection/media-services-content-protection007.png)
 
@@ -105,17 +105,17 @@ ms.locfileid: "74978208"
 #### <a name="drm"></a>DRM
 1. После выбора **DRM** можно увидеть различные политики защиты содержимого (которые в этот момент необходимо настраивать) и набор потоковых протоколов:
 
-    а) **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
+    а. **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
 
-    б) **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
+    b. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
 
-    в) **PlayReady only with Smooth Streaming, HLS and MPEG-DASH** (PlayReady только с Smooth Streaming, HLS и MPEG-DASH): динамически шифрует потоки Smooth Streaming, HLS и MPEG-DASH, используя систему DRM PlayReady.
+    c. **PlayReady only with Smooth Streaming, HLS and MPEG-DASH** (PlayReady только с Smooth Streaming, HLS и MPEG-DASH): динамически шифрует потоки Smooth Streaming, HLS и MPEG-DASH, используя систему DRM PlayReady.
 
-    г) **Widevine only with MPEG-DASH** (Widevine только с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя систему DRM Widevine.
+    d. **Widevine only with MPEG-DASH** (Widevine только с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя систему DRM Widevine.
     
     д) **FairPlay only with HLS** (FairPlay только с HLS): динамически шифрует поток HLS, используя FairPlay.
 
-1. Чтобы включить шифрование FairPlay на колонке **Глобальные параметры системы защиты содержимого**, выберите **Конфигурация FairPlay**. Выберите **Сертификат приложения** и введите **Секретный ключ приложения**.
+1. Чтобы включить шифрование FairPlay на колонке **Глобальные параметры системы защиты содержимого**, выберите **Конфигурация FairPlay**. Затем выберите **сертификат приложения**и введите **секретный ключ приложения**.
 
     ![Тип шифрования](./media/media-services-portal-content-protection/media-services-content-protection009.png)
 
@@ -124,13 +124,13 @@ ms.locfileid: "74978208"
 >[!NOTE] 
 >Если вы планируете воспроизводить HLS-поток с шифрованием AES в Safari, см. [эту запись блога](https://azure.microsoft.com/blog/how-to-make-token-authorized-aes-encrypted-hls-stream-working-in-safari/).
 
-## <a name="additional-notes"></a>Дополнительные замечания
+## <a name="additional-notes"></a>Дополнительные сведения
 
-* Widevine — это служба, предоставляемая Google Inc. и подпадает под условия обслуживания и политики конфиденциальности Google, Inc.
+* Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Отправить отзыв
+## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

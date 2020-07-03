@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 01/24/2019
 ms.author: aschhab
 ms.openlocfilehash: a2c353d612280981a83b32463d34efdc70878495
-ms.sourcegitcommit: b5d646969d7b665539beb18ed0dc6df87b7ba83d
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2020
-ms.locfileid: "76759284"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "79260999"
 ---
 # <a name="message-transfers-locks-and-settlement"></a>Передача, блокировка и согласование сообщений
 
@@ -134,7 +134,7 @@ for (int i = 0; i < 100; i++)
 >
 > Когда блокировка будет потеряна, служебная шина Azure создаст Локклостексцептион, который будет отображаться в коде клиентского приложения. В этом случае клиентская логика повтора по умолчанию должна запускаться автоматически и повторить операцию.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

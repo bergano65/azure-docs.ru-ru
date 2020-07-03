@@ -6,15 +6,15 @@ author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
-ms.date: 02/21/2019
+ms.date: 05/26/2020
 ms.author: swmachan
 ms.topic: reference
-ms.openlocfilehash: 97d399f4a8ec704fd90eb6c49f0835be7e9e4537
-ms.sourcegitcommit: 35715a7df8e476286e3fee954818ae1278cef1fc
+ms.openlocfilehash: fefd3fcd82454d505099f83944b0e251b71410f0
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73836596"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83996913"
 ---
 # <a name="custom-translator-frequently-asked-questions"></a>Часто задаваемые вопросы о настраиваемом трансляторе
 
@@ -41,7 +41,7 @@ ms.locfileid: "73836596"
 
 ## <a name="how-do-you-access-a-deployed-system"></a>Как получить доступ к развернутой системе?
 
-Доступ к развернутым системам можно получить через API перевода текстов Майкрософт версии 3, указав идентификатор категории. Дополнительные сведения об API перевода текстов можно найти на [этой веб-странице](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference).
+К развернутым системам можно получить доступ через Microsoft Translator v3, указав CategoryID. Дополнительные сведения о переводчике можно найти на веб-странице [Справочник по API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference) .
 
 ## <a name="how-do-i-skip-alignment-and-sentence-breaking-if-my-data-is-already-sentence-aligned"></a>Как пропустить выравнивание и разбивку предложений, если в моих данных предложения уже выровнены?
 

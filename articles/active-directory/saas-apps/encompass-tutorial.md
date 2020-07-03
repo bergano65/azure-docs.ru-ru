@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Encompass | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Encompass | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Encompass.
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cb259ae6ad46824f32854f7012119d534337578e
-ms.sourcegitcommit: 0b1a4101d575e28af0f0d161852b57d82c9b2a7e
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/24/2020
 ms.locfileid: "73157222"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-encompass"></a>Руководство. Интеграция Azure Active Directory с Encompass
+# <a name="tutorial-azure-active-directory-integration-with-encompass"></a>Руководство по интеграции Azure Active Directory с Encompass
 
 В этом руководстве описано, как интегрировать приложение Encompass с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Encompass обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "73157222"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Encompass, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Encompass с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -106,7 +106,7 @@ ms.locfileid: "73157222"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Encompass](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** укажите значение для определенного клиента.
+    а. В текстовом поле **Идентификатор** укажите значение для определенного клиента.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<subdomain>.voxmobile.com/voxportal/ws/saml/consume`.
 
@@ -121,11 +121,11 @@ ms.locfileid: "73157222"
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    а. URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD.
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-encompass-single-sign-on"></a>Настройка единого входа в Encompass
 

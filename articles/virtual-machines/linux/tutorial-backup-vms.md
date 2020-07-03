@@ -5,7 +5,6 @@ services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
-editor: tysonn
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
@@ -15,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 07/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 2a53086b959f5b93d17d307a59682a44fe1f33a8
-ms.sourcegitcommit: 49cf9786d3134517727ff1e656c4d8531bbbd332
+ms.openlocfilehash: d233cba65d190178c500f78d4817e233ab46d780
+ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74034584"
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "81460076"
 ---
 # <a name="tutorial-back-up-and-restore-files-for-linux-virtual-machines-in-azure"></a>Руководство по резервному копированию и восстановлению файлов для виртуальных машин Linux в Azure
 
@@ -43,7 +42,7 @@ ms.locfileid: "74034584"
 ## <a name="create-a-backup"></a>Создание резервной копии
 Создайте операцию ежедневного резервного копирования в хранилище служб восстановления.
 
-1. Войдите на [портале Azure](https://portal.azure.com/).
+1. Войдите на [портал Azure](https://portal.azure.com/).
 2. В меню слева выберите **Виртуальные машины**. 
 3. В этом списке выберите нужную виртуальную машину для архивации.
 4. В колонке виртуальной машины в разделе **Параметры** щелкните **Архивация**. Откроется колонка **Включение архивации**.
@@ -64,7 +63,7 @@ ms.locfileid: "74034584"
 
 В этом примере показано, как восстановить веб-страницу nginx по умолчанию /var/www/html/index.nginx-debian.html. Общедоступный IP-адрес виртуальной машины в этом примере — *13.69.75.209*. IP-адрес виртуальной машины можно определить, выполнив следующую команду:
 
- ```bash 
+ ```azurecli
  az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
  ```
 
@@ -78,6 +77,7 @@ ms.locfileid: "74034584"
     ```bash
     ssh 13.69.75.209
     ```
+
 2. Удалите /var/www/html/index.nginx-debian.html.
 
     ```bash
@@ -122,7 +122,7 @@ ms.locfileid: "74034584"
     
 12. В результате выполнения скрипта вы получите путь к точке подключения. Результат будет выглядеть примерно так:
 
-    ```bash
+    ```output
     Microsoft Azure VM Backup - File Recovery
     ______________________________________________
                           
@@ -158,9 +158,9 @@ ms.locfileid: "74034584"
 18. На локальном компьютере вернитесь на вкладку браузера, в которой открыт портал Azure, и на этапе **Step 3: Unmount the disks after recovery** (Шаг 3. Отключение дисков после восстановления) нажмите кнопку **Unmount Disks** (Отключить диски). Если вы забудете сделать это, соединение с точкой подключения будет автоматически закрыто через 12 часов. После этих 12 часов для создания нового соединения с точкой подключения потребуется скачать новый скрипт.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+В этом руководстве вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание архива виртуальной машины

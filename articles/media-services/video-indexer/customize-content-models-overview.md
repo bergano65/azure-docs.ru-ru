@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: anzaman
 ms.openlocfilehash: 09e6fd8530ddb1745a92c6f31f4d5a5843a2ac10
-ms.sourcegitcommit: 38b11501526a7997cfe1c7980d57e772b1f3169b
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76513173"
 ---
 # <a name="customizing-content-models-in-video-indexer"></a>Настройка моделей содержимого в индексаторе видео
@@ -45,6 +45,6 @@ ms.locfileid: "76513173"
 * [Настройка моделей Person с помощью веб-сайта индексатора видео](customize-person-model-with-website.md)
 * [Настройка моделей Person с помощью API индексатора видео](customize-person-model-with-api.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)

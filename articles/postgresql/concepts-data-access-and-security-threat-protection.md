@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 3d86c76472580567c95d285924761e1714465d6f
-ms.sourcegitcommit: 6bb98654e97d213c549b23ebb161bda4468a1997
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "74768747"
 ---
 # <a name="advanced-threat-protection-in-azure-database-for-postgresql---single-server"></a>Расширенная защита от угроз в базе данных Azure для PostgreSQL — один сервер
@@ -41,6 +41,6 @@ ms.locfileid: "74768747"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
+* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/postgresql/). 
 * Настройка [Расширенной защиты от угроз для Базы данных Azure для PostgreSQL](howto-database-threat-protection-portal.md) с помощью портала Azure  

@@ -1,0 +1,141 @@
+---
+title: Создание образа из виртуальной машины (Предварительная версия)
+description: Узнайте, как использовать Azure PowerShell для создания образа в общей коллекции образов на основе существующей виртуальной машины в Azure.
+author: cynthn
+ms.topic: how-to
+ms.service: virtual-machines
+ms.subservice: imaging
+ms.workload: infrastructure
+ms.date: 05/04/2020
+ms.author: cynthn
+ms.reviewer: akjosh
+ms.openlocfilehash: 454ed810f950924d3dd790a2442fe29816bf940d
+ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82838473"
+---
+# <a name="preview-create-an-image-from-a-vm"></a>Предварительная версия: создание образа из виртуальной машины
+
+Если у вас уже есть виртуальная машина, которую вы хотите использовать для создания нескольких идентичных виртуальных машин, вы можете использовать эту виртуальную машину, чтобы создать образ в общей коллекции образов с помощью Azure PowerShell. Вы также можете создать образ из виртуальной машины с помощью [Azure CLI](image-version-vm-cli.md).
+
+Вы можете записать образ из [специализированных и обобщенных](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries#generalized-and-specialized-images) виртуальных машин с помощью Azure PowerShell. 
+
+Изображения в коллекции образов имеют два компонента, которые будут созданы в этом примере:
+- **Определение образа** содержит сведения о образе и требования для его использования. Сюда входит, является ли образ Windows или Linux, специализированным или обобщенным, заметками о выпуске, а также минимальным и максимальным требованиями к памяти. Это определение типа образа. 
+- **Версия образа** — это то, что используется для создания виртуальной машины при использовании общей коллекции образов. В зависимости от требований для вашей среды, у вас может быть несколько версий образа. При создании виртуальной машины используется версия образа для создания новых дисков для виртуальной машины. Версии образов можно использовать несколько раз.
+
+
+## <a name="before-you-begin"></a>Перед началом
+
+Для работы с этой статьей необходимо иметь имеющуюся коллекцию общих образов и существующую виртуальную машину в Azure для использования в качестве источника. 
+
+Если к виртуальной машине подключен диск данных, размер диска данных не может превышать 1 ТБ.
+
+При работе с этой статьей при необходимости замените имена ресурсов.
+
+
+## <a name="get-the-gallery"></a>Получение коллекции
+
+Вы можете вывести список всех коллекций и определений изображений по имени. Результаты представлены в формате `gallery\image definition\image version`.
+
+```azurepowershell-interactive
+Get-AzResource -ResourceType Microsoft.Compute/galleries | Format-Table
+```
+
+После нахождения нужной коллекции и определений изображений создайте переменные для них, которые будут использоваться позже. Этот пример получает коллекцию с именем *мигаллери* в группе ресурсов *myResourceGroup* .
+
+```azurepowershell-interactive
+$gallery = Get-AzGallery `
+   -Name myGallery `
+   -ResourceGroupName myResourceGroup
+```
+
+## <a name="get-the-vm"></a>Получение виртуальной машины
+
+Список виртуальных машин, доступных в группе ресурсов, можно просмотреть с помощью команды [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm). Зная имя виртуальной машины и группу ресурсов, в которой она находится, можно снова использовать `Get-AzVM` для получения объекта виртуальной машины и сохранить его в переменной для последующего использования. Этот пример получает виртуальную машину с именем *саурцевм* из группы ресурсов "myResourceGroup" и назначает ее переменной *$sourceVm*. 
+
+```azurepowershell-interactive
+$sourceVm = Get-AzVM `
+   -Name sourceVM `
+   -ResourceGroupName myResourceGroup
+```
+
+Рекомендуется стоп\деаллокате виртуальную машину перед созданием образа с помощью команды " [останавливается-AzVM](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm)".
+
+```azurepowershell-interactive
+Stop-AzVM `
+   -ResourceGroupName $sourceVm.ResourceGroupName `
+   -Name $sourceVm.Name `
+   -Force
+```
+
+## <a name="create-an-image-definition"></a>Создание определения образа 
+
+Определения образов создают логическую группировку для изображений. Они используются для управления сведениями об образе. Имена определений образов могут состоять из букв верхнего или нижнего регистра, цифр, точек, тире и точек. 
+
+При создании определения образа убедитесь, что содержит все правильные сведения. Если вы обобщенно используете виртуальную машину (с помощью Sysprep для Windows или waagent-unготовить для Linux), то следует создать определение образа `-OsState generalized`с помощью. Если виртуальная машина не была обобщена, создайте определение образа с `-OsState specialized`помощью.
+
+Дополнительные сведения о значениях, которые можно указать для определения изображения, см. в разделе [определения изображений](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries#image-definitions).
+
+Создайте определение образа с помощью команды [New-азгаллеримажедефинитион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). 
+
+В этом примере определение образа называется *мимажедефинитион*и предназначено для специализированной виртуальной машины под Windows. Чтобы создать определение для образов с помощью Linux, используйте `-OsType Linux`. 
+
+```azurepowershell-interactive
+$imageDefinition = New-AzGalleryImageDefinition `
+   -GalleryName $gallery.Name `
+   -ResourceGroupName $gallery.ResourceGroupName `
+   -Location $gallery.Location `
+   -Name 'myImageDefinition' `
+   -OsState specialized `
+   -OsType Windows `
+   -Publisher 'myPublisher' `
+   -Offer 'myOffer' `
+   -Sku 'mySKU'
+```
+
+
+## <a name="create-an-image-version"></a>Создание версии образа
+
+Создайте версию образа с помощью команды [New-азгаллеримажеверсион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). 
+
+Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *majorversion*. *Minorversion*. *Исправление*.
+
+В этом примере используется версия образа *1.0.0*, которая реплицируется в центры обработки данных в регионах *центрально-западная часть США* и *центрально-южная часть США*. При выборе целевых регионов для репликации Помните, что также необходимо включить *Исходный* регион в качестве цели для репликации.
+
+Чтобы создать версию образа из виртуальной машины, используйте `$vm.Id.ToString()` для. `-Source`
+
+```azurepowershell-interactive
+   $region1 = @{Name='South Central US';ReplicaCount=1}
+   $region2 = @{Name='East US';ReplicaCount=2}
+   $targetRegions = @($region1,$region2)
+
+$job = $imageVersion = New-AzGalleryImageVersion `
+   -GalleryImageDefinitionName $imageDefinition.Name`
+   -GalleryImageVersionName '1.0.0' `
+   -GalleryName $gallery.Name `
+   -ResourceGroupName $gallery.ResourceGroupName `
+   -Location $gallery.Location `
+   -TargetRegion $targetRegions  `
+   -Source $sourceVm.Id.ToString() `
+   -PublishingProfileEndOfLifeDate '2020-12-01' `  
+   -asJob 
+```
+
+Репликация образа во все целевые регионы может занять некоторое время, поэтому мы создали задание, чтобы отслеживать ход выполнения. Чтобы просмотреть ход выполнения задания, введите `$job.State`.
+
+```azurepowershell-interactive
+$job.State
+```
+
+> [!NOTE]
+> Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
+>
+> Вы также можете сохранить образ в хранилище `-StorageAccountType Premium_LRS`премиун, добавив хранилище или [избыточное в зону](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) , добавив `-StorageAccountType Standard_ZRS` его при создании версии образа.
+>
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Убедившись, что новая версия образа работает правильно, можно создать виртуальную машину. Создайте виртуальную машину на основе [специализированной версии образа](vm-specialized-image-version-powershell.md) или [обобщенной версии образа](vm-generalized-image-version-powershell.md).

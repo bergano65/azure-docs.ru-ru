@@ -1,20 +1,18 @@
 ---
-title: Общие сведения о применении скидки на резервирование в Azure Cosmos DB | Документы Майкрософт
+title: Общие сведения о применении скидки по резервированию в Azure Cosmos DB
 description: Узнайте, как скидка на резервирование применяется к подготовленной пропускной способности (ЕЗ/с) в Azure Cosmos DB.
-services: cosmos-db
 author: bandersmsft
-manager: kfile
-ms.service: cosmos-db
-ms.topic: conceptual
-ms.date: 09/30/2019
 ms.author: banders
 ms.reviewer: sngun
-ms.openlocfilehash: cb20c88577bba614c70fdf5a266d482d06aeca57
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.service: cosmos-db
+ms.topic: conceptual
+ms.date: 02/12/2020
+ms.openlocfilehash: 81818cc5ba2af1f9f0f70f7aa27fe62ed2c90c77
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "75995563"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80065684"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-cosmos-db"></a>Общие сведения о применении скидки на резервирование в Azure Cosmos DB
 

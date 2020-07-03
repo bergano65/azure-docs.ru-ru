@@ -1,5 +1,5 @@
 ---
-title: Руководство. Размещение статического веб-сайта в хранилище BLOB-объектов (служба хранилища Azure)
+title: Руководство по Размещение статического веб-сайта в хранилище BLOB-объектов (служба хранилища Azure)
 description: Узнайте, как настроить учетную запись хранения для размещения статического веб-сайта и развернуть его в службе хранилища Azure.
 author: normesta
 ms.service: storage
@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.date: 1/22/2020
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 97679ec48ee9120005118b6cacaf37e45657db08
-ms.sourcegitcommit: 67e9f4cc16f2cc6d8de99239b56cb87f3e9bff41
+ms.openlocfilehash: 03850315a05f569d2c6ba9405b6ec38bb6b1305d
+ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2020
-ms.locfileid: "76906634"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "78330401"
 ---
 <!---Customer intent: I want to host files for a static website in Blob storage and access the website from an Azure endpoint.--->
 
-# <a name="tutorial-host-a-static-website-on-blob-storage"></a>Руководство. Размещение статического веб-сайта в хранилище BLOB-объектов
+# <a name="tutorial-host-a-static-website-on-blob-storage"></a>Руководство по Размещение статического веб-сайта в хранилище BLOB-объектов
 
 Из этого руководства вы узнаете, как создать и развернуть статический веб-сайт в службе хранилища Azure. В конечном итоге у вас будет статический веб-сайт, к которому пользователи будут иметь публичный доступ. 
 
@@ -32,7 +32,7 @@ ms.locfileid: "76906634"
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
 > [!NOTE] 
-> Создайте учетную запись хранения общего назначения версии 2. Статические веб-сайты недоступны в учетной записи хранения другого типа.
+> Обязательно создайте учетную запись хранения общего назначения версии 2 (цен. категория "Стандартный"). Статические веб-сайты недоступны в учетной записи хранения другого типа.
 
 В этом руководстве используется бесплатное средство для программистов [Visual Studio Code](https://code.visualstudio.com/download), с помощью которого создается статический веб-сайт и развертывается в учетную запись службы хранилища Azure.
 
@@ -92,8 +92,6 @@ ms.locfileid: "76906634"
 1. Выберите подписку, содержащую учетную запись хранения, для которой вы включили размещение статического веб-сайта. Затем при появлении запроса выберите учетную запись хранения.
 
 Visual Studio Code передаст файлы в конечную веб-точку и покажет строку состояния с успешным результатом. Запустите веб-сайт, чтобы просмотреть его в Azure.
-
-![Просмотр развертывания статического веб-сайта в Azure](media/storage-blob-static-website-host/view-static-website-endpoint.png)
 
 Вы успешно прошли краткое руководство и развернули статический веб-сайт в Azure.
 

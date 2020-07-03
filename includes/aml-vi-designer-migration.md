@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: machine-learning
 ms.service: machine-learning
@@ -9,10 +9,10 @@ author: xiaoharper
 ms.author: zhanxia
 ms.date: 10/18/2019
 ms.openlocfilehash: e3cb977871af2e6cd7a59dd48505090dd29e8a76
-ms.sourcegitcommit: ce4a99b493f8cf2d2fd4e29d9ba92f5f942a754c
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2019
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "75541807"
 ---
 1. Войдите в [Студию машинного обучения Azure](https://ml.azure.com).
@@ -26,7 +26,7 @@ ms.locfileid: "75541807"
     
 1. Перейдите в раздел конструктора рабочей области, чтобы просмотреть список черновиков конвейера. 
     
-    Преобразованные веб-службы можно найти, перейдя к **конечным точкам** > **конечные точки в режиме реального времени**.
+    Преобразованные веб-службы можно найти, перейдя **к конечным точкам** > в**режиме реального времени**.
 
 1. Выберите черновик конвейера, чтобы открыть его.
 

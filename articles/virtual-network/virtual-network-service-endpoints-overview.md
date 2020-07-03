@@ -13,18 +13,18 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 72c2c90f7a71bd9bf251adb492168fa5d2baa60a
-ms.sourcegitcommit: f523c8a8557ade6c4db6be12d7a01e535ff32f32
+ms.openlocfilehash: ae9d219c376aa704be34088a4f7c48c35baa9669
+ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74378694"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82509505"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
 
 Конечные точки службы виртуальной сети расширяют пространство частных адресов виртуальной сети. Конечные точки также расширяют удостоверение виртуальной сети на службы Azure через прямое подключение. Конечные точки позволяют защищать критически важные ресурсы служб Azure в пределах отдельных виртуальных сетей. Трафик, поступающий из виртуальной сети в службу Azure, всегда остается в магистральной сети Microsoft Azure.
 
-Эта функция доступна для следующих служб и регионов Azure. Ресурс *Microsoft.\** находится в круглых скобках. Включите этот ресурс на стороне подсети при настройке конечных точек службы для службы:
+Эта функция доступна для следующих служб и регионов Azure. Ресурс *Microsoft.\* * Resource находится в круглых скобках. Включите этот ресурс на стороне подсети при настройке конечных точек службы для службы:
 
 **Общедоступная версия**
 
@@ -35,17 +35,17 @@ ms.locfileid: "74378694"
 - **[Сервер базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. SQL*): общедоступный в регионах Azure, где доступна служба базы данных.
 - **[База данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** (*Microsoft. SQL*): общедоступная версия в регионах Azure, где доступна служба базы данных.
 - **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. азурекосмосдб*): общедоступная версия доступна во всех регионах Azure.
-- **[Azure Key Vault](../key-vault/key-vault-overview-vnet-service-endpoints.md)** (*Microsoft. KeyVault*): общедоступная версия доступна во всех регионах Azure.
+- **[Azure Key Vault](../key-vault/general/overview-vnet-service-endpoints.md)** (*Microsoft. KeyVault*): общедоступная версия доступна во всех регионах Azure.
 - **[Служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. servicebus*): общедоступная версия доступна во всех регионах Azure.
 - **[Концентраторы событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. EventHub*). общедоступно во всех регионах Azure.
 - **[Azure Data Lake Store Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*Microsoft. AzureActiveDirectory*): общедоступная версия доступна во всех регионах Azure, где доступна ADLS 1-го поколения.
-- **[Служба приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** . общедоступная версия доступна во всех регионах Azure, где доступна служба приложений.
+- **[Служба приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)**. общедоступная версия доступна во всех регионах Azure, где доступна служба приложений.
 
 **Общедоступная предварительная версия**
 
-- **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)** (*Microsoft. ContainerRegistry*): Предварительная версия доступна во всех регионах Azure, где доступен реестр контейнеров Azure.
+- **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)** (*Microsoft. ContainerRegistry*): Предварительная версия доступна в ограниченных регионах Azure, где доступен реестр контейнеров Azure.
 
-Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
+Наиболее актуальные уведомления см. на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network) .
 
 ## <a name="key-benefits"></a>Основные преимущества
 
@@ -76,7 +76,7 @@ ms.locfileid: "74378694"
 
   По умолчанию ресурсы служб Azure, защищенные виртуальными сетями, недоступны из локальных сетей. Чтобы разрешить трафик из локальной среды, необходимо также разрешить общедоступные IP-адреса (обычно это NAT) из локальных каналов или каналов ExpressRoute. Эти IP-адреса можно добавить с помощью конфигурации брандмауэра IP для ресурсов службы Azure.
 
-  ExpressRoute. Если вы используете [expressroute](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для общедоступного пиринга или пиринга Майкрософт из локальной сети, вам потребуется выяснить IP-адреса NAT, которые вы используете. Для общедоступного пиринга каждый канал ExpressRoute использует два IP-адреса NAT, которые по умолчанию применяются к трафику службы Azure, когда трафик входит в Microsoft Azureную магистральную сеть. Для пиринга Майкрософт IP-адреса NAT являются либо клиентами, либо предоставленными поставщиком услуг. Чтобы разрешить доступ к ресурсам службы, необходимо разрешить эти общедоступные IP-адреса в параметрах брандмауэра для IP-адресов ресурсов. Чтобы найти IP-адреса канала ExpressRoute общедоступного пиринга, отправьте запрос в [службу поддержки с помощью ExpressRoute](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) через портал Azure. Дополнительные сведения о протоколе NAT для общедоступного и пиринга Майкрософт см. в статье [требования к NAT для expressroute](../expressroute/expressroute-nat.md?toc=%2fazure%2fvirtual-network%2ftoc.json#nat-requirements-for-azure-public-peering).
+  ExpressRoute. Если вы используете [expressroute](../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) для общедоступного пиринга или пиринга Майкрософт из локальной сети, вам потребуется выяснить IP-адреса NAT, которые вы используете. Для общедоступного пиринга каждый канал ExpressRoute использует два IP-адреса NAT, которые по умолчанию применяются к трафику службы Azure, когда трафик входит в Microsoft Azureную магистральную сеть. Для пиринга Майкрософт IP-адреса NAT являются либо клиентами, либо предоставленными поставщиком услуг.Чтобы разрешить доступ к ресурсам служб, необходимо разрешить эти общедоступные IP-адреса в настройках брандмауэра IP-адресов ресурсов.Чтобы найти IP-адреса канала ExpressRoute для общедоступного пиринга, [отправьте запрос по ExpressRoute в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) через портал Azure. Дополнительные сведения о протоколе NAT для общедоступного и пиринга Майкрософт см. в статье [требования к NAT для expressroute](../expressroute/expressroute-nat.md?toc=%2fazure%2fvirtual-network%2ftoc.json#nat-requirements-for-azure-public-peering).
 
 ![Защита служб Azure в виртуальных сетях](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
@@ -139,17 +139,17 @@ ms.locfileid: "74378694"
 
 Политики конечной точки службы виртуальной сети позволяют фильтровать трафик виртуальной сети в службах Azure. Этот фильтр разрешает только определенные ресурсы службы Azure через конечные точки службы. Политики конечных точек служб предоставляют возможность детального контроля доступа трафика из виртуальной сети к службам Azure. Дополнительные сведения см. в статье [политики конечной точки службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
 
-## <a name="faqs"></a>Часто задаваемые вопросы
+## <a name="faqs"></a>Частые вопросы
 
 Часто задаваемые вопросы см. в разделе [вопросы и ответы о конечной точке службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Следующие шаги
 
-- [Настройка конечных точек службы виртуальной сети](tutorial-restrict-network-access-to-resources.md)
+- [Настройка конечных точек служб для виртуальной сети](tutorial-restrict-network-access-to-resources.md)
 - [Защита учетной записи хранения Azure в виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Защита базы данных SQL Azure в виртуальной сети](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Защита хранилища данных SQL Azure в виртуальной сети](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fsql-data-warehouse%2ftoc.json)
 - [Интеграция служб Azure в виртуальные сети](virtual-network-for-azure-services.md)
-- [Политики конечных точек служб для виртуальной сети (предварительная версия)](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
+- [Политики конечных точек служб для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
 - [Шаблон Azure Resource Manager](https://azure.microsoft.com/resources/templates/201-vnet-2subnets-service-endpoints-storage-integration)
 

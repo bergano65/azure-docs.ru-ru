@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: menchi
 ms.openlocfilehash: 8fc12dde9f441a972efbc5d91ac53b5f9d738690
-ms.sourcegitcommit: 87781a4207c25c4831421c7309c03fce5fb5793f
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/28/2020
 ms.locfileid: "76547104"
 ---
 # <a name="glossary-of-terms-for-azure-iot-edge"></a>Глоссарий терминов Azure IoT Edge
@@ -21,6 +21,6 @@ ms.locfileid: "76547104"
 
 [!INCLUDE [azure-iot-hub-edge-glossary-includes](../../includes/azure-iot-hub-edge-glossary-includes.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Глоссарий центра Интернета вещей](../iot-hub/iot-hub-devguide-glossary.md)

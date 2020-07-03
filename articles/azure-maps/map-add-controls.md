@@ -1,19 +1,19 @@
 ---
 title: Добавление элементов управления в карту | Карты Microsoft Azure
 description: Добавление элемента управления "Масштаб", элемента управления "высота", элемента управления "поворот" и выбора стиля на карту в Microsoft Azure Maps.
-author: farah-alyasari
-ms.author: v-faalya
+author: philmea
+ms.author: philmea
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: e386c136e7d0258d00c22c627dfa5047ba803169
-ms.sourcegitcommit: 2823677304c10763c21bcb047df90f86339e476a
+ms.openlocfilehash: 094dc9fd01ec71f378a173a2b4fa64cc672d7c97
+ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77209772"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "80334558"
 ---
 # <a name="add-controls-to-a-map"></a>Добавление элементов управления на карту
 
@@ -75,7 +75,20 @@ map.controls.add(new atlas.control.Compass(), {
 
 ## <a name="a-map-with-all-controls"></a>Карта со всеми элементами управления
 
-В следующем примере кода в правый нижний угол на карте добавляются элементы управления выбора стиля, масштаба, наклона и компаса. Обратите внимание, как они автоматически располагаются в стеке. Порядок выполнения элементов управления из сценария определяет их порядок появления на карте. Чтобы изменить порядок элементов управления на карте, измените их порядок в сценарии.
+Несколько элементов управления могут быть помещены в массив и добавлены в карту сразу и расположены в одной области на карте, чтобы упростить разработку. Следующий пример добавляет стандартные элементы управления навигацией в карту с помощью этого подхода.
+
+```javascript
+map.controls.add([
+    new atlas.control.ZoomControl(),
+    new atlas.control.CompassControl(),
+    new atlas.control.PitchControl(),
+    new atlas.control.StyleControl()
+], {
+    position: "top-right"
+});
+```
+
+В следующем примере кода добавляются элементы управления "Масштаб", "Компас", "высота" и "Выбор стиля" в правый верхний угол сопоставлений. Обратите внимание, как они автоматически располагаются в стеке. Порядок выполнения элементов управления из сценария определяет их порядок появления на карте. Чтобы изменить порядок элементов управления на карте, можно изменить их порядок в массиве.
 
 <br/>
 
@@ -91,12 +104,12 @@ map.controls.add(new atlas.control.Compass(), {
 <br/>
 
 <iframe height="700" style="width: 100%;" scrolling="no" title="Параметры элемента управления навигацией" src="//codepen.io/azuremaps/embed/LwBZMx/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/LwBZMx/'>Параметры навигации по управлению</a> пером Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/LwBZMx/'>Параметры навигации по управлению</a> пером<a href='https://codepen.io/azuremaps'>@azuremaps</a>с помощью Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Если необходимо создать настраиваемые элементы управления навигацией, создайте класс, который расширяется из класса `atlas.Control` или Создайте HTML-элемент и поместите его над элементом div Map. Этот элемент управления пользовательского интерфейса вызывает функцию Maps `setCamera` для перемещения карты. 
+Если необходимо создать настраиваемые элементы управления навигацией, создайте класс, который расширяется из `atlas.Control` класса, или Создайте HTML-элемент и поместите его над элементом div Map. Этот элемент управления пользовательского интерфейса вызывает функцию `setCamera` Maps для перемещения карты. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -115,17 +128,17 @@ map.controls.add(new atlas.control.Compass(), {
 Полные примеры кода см. в следующих статьях:
 
 > [!div class="nextstepaction"]
-> [Добавление маркера](./map-add-pin.md)
+> [Добавление ПИН-кода](./map-add-pin.md)
 
 > [!div class="nextstepaction"]
 > [Добавление всплывающего окна](./map-add-popup.md)
 
 > [!div class="nextstepaction"]
-> [Добавить слой линий](map-add-line-layer.md)
+> [Добавление слоя линий](map-add-line-layer.md)
 
 > [!div class="nextstepaction"]
 > [Добавление слоя многоугольников](map-add-shape.md)
 
 > [!div class="nextstepaction"]
-> [Добавление слоя пузырьков](map-add-bubble-layer.md)
+> [Добавить пузырьковый слой](map-add-bubble-layer.md)
 
